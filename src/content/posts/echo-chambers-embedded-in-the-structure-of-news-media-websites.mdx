@@ -1,0 +1,46 @@
+---
+title: "Echo Chambers Embedded in the Structure of News Media Websites"
+description: "I have nearly always voraciously consumed the news; each day chowing down on newsletters and long-form articles and imbibing The Economist’s Daily Espresso briefing. However,…"
+author: "Hans W. A. Hanley"
+tags: ["News media","Networks"]
+legacyPath: "/echo-chambers-embedded-in-the-structure-of-news-media-websites"
+featured: false
+draft: false
+---
+I have nearly always voraciously consumed the news; each day chowing down on newsletters and long-form articles and imbibing [The Economist’s Daily Espresso briefing](https://www.economist.com/espresso). However, recently, I have been considering what news I have been taking in, my news diet being somewhat one-note and seriously lacking in ideological diversity. (This self-reflection was actually prompted by a recent doctor’s visit, where the physician also recommended widening my food palette). I have, as a result, been trying to balance my media diet, reading everything from the Wall Street Journal and the Economist to the Washington Post and Foreign Affairs. However, as I sought out more nutritious and diverse news, I stopped and wondered why I had only been consuming a select number and ideologically narrow newspapers in the first place. I don’t regularly use social media, so it was not the curation algorithms of Facebook and Twitter. This made me wonder if the entire structure of online news media was primed to sequester people into silos, and if so what are some of the consequences. In this piece, I explore these questions.
+
+To explore the structure of the news media ecosystem, I first needed some data. To begin, I decided to analyze the hyperlink/URL interconnections of nearly 1000 random news websites (950 to be exact). I wanted to see if more liberal sites connected more frequently with liberal sites and vice versa. If so, just being on a more liberal news site could cause users to click more often and visit more liberal sites versus conservative sites. This perhaps was a factor perpetuating my own media echo chamber.
+
+Getting a list of news sites off of [https://mediabiasfactcheck.com/](https://mediabiasfactcheck.com/), I collected these websites’ web pages from [Common Crawl](https://commoncrawl.org/)\-widely considered the most complete publicly available source of web crawl data. Using all the web pages indexed by Common Crawl for these 950 websites since 2014, I managed to see when and how often these different news websites referenced or hyperlinked to each other.
+
+To measure each website’s approximate partisanship level (_i.e._ whether the news website is conservative or liberal), I used [a dataset from researchers at Northeastern University](https://cbw.sh/static/pdf/robertson-2018-pacmhci.pdf). This dataset tries to understand the partisanship of websites using the percentage of time that given websites are shared on Twitter by Democrats and Republicans. The dataset presents partisanship data for websites on a scale of -1 (liberal/Democratic-leaning) to +1 (conservative/Republican-leaning).
+
+![Pictured here is the distribution of the partisanship of each website in our 950 websites selected (-1 (liberal/Democratic-leaning) to +1 (conservative/Republican-leaning). There was an overall liberal bias, despite my s](/artifacts/legacy/echo-chambers-embedded-in-the-structure-of-news-media-websites/figure-01.png)
+
+Pictured here is the distribution of the partisanship of each website in our 950 websites selected (-1 (liberal/Democratic-leaning) to +1 (conservative/Republican-leaning). There was an overall liberal bias, despite my selection being random, with a median partisanship level of -0.11 (Democratic-leaning) and an average of -0.12 within the 950 websites.
+
+With all the data in hand, I was ready to answer my question. I first created a graph based on the hyperlink connections between my set of 950 news websites.
+
+![Pictured here are the connections amongst different news websites. Each node represents a different website while the directed edges represent whether each website links to another one. The more blue a website, the more ](/artifacts/legacy/echo-chambers-embedded-in-the-structure-of-news-media-websites/figure-02.png)
+
+Pictured here are the connections amongst different news websites. Each node represents a different website while the directed edges represent whether each website links to another one. The more blue a website, the more liberal; the more red a website, the more conservative. As seen, blue websites are clumped and well connected on the left; while more conservative websites are grouped and clustered together on the right. The assortativity based on the polarization levels is 0.448.
+
+As seen in the above figure, there is a general trend of websites that are more liberal to connect more often with websites that are more liberal (see the left blue cluster). Similarly, looking at the right side of the graph, we see that the more conservative websites are also bunched together.
+
+  
+
+A measure of how much polarized websites/nodes prefer to hyperlink/connect to similarly politically polarized websites can be calculated using the assortativity coefficient for network graphs (-1 disassortative to +1 assortative). For the above graph, we see an assortativity of 0.448, indicating a moderate to high-level of self-selection. This suggests that for the 950 that I gathered the liberal websites truly do connect to more of the liberal websites and the conservative websites also truly connect more often to the conservative. Birds of a feather fly together is apparently also true of websites.
+
+  
+
+I had answered my question. Baked into the structure (even of 950 seemingly random websites), was a bias for websites to connect and hyperlink to similarly polarized websites. However, I needed to know one other thing.
+
+As many of you know, (if you have been following my blog for a while), I have been doing a good amount of research into conspiracy theories. I now wanted to know if the websites that were in these political echo chambers were more likely to link with/have similarities with conspiracy theory websites. Using a list of the connections and hyperlinks of 863 conspiracy theory websites (Flat-Earth, QAnon, COVID, UFOs/Aliens,9/11), I had gathered through my previous research, I now sought to answer this final question. (You can see the details on how I collected these 863 conspiracy theory websites and their hyperlink connections [in my new research paper](https://www.hanshanley.com/publications#:~:text=Methods%20in%20the,In%20Submission)).
+
+![Pictured is the percentage of shared domain connections that news websites have with our conspiracy theory websites as a function of their URLs polarization level. On average, as websites become more polarized they share](/artifacts/legacy/echo-chambers-embedded-in-the-structure-of-news-media-websites/figure-03.png)
+
+Pictured is the percentage of shared domain connections that news websites have with our conspiracy theory websites as a function of their URLs polarization level. On average, as websites become more polarized they share more connections with conspiracy theory websites.
+
+As seen in the above graph, as websites become more and more polarized, linking to more and more one-sided websites, they actually share more hyperlink connections with conspiracy theory websites. Simply, the deeper in the rabbit hole of polarization a website travels, the more likely it is to hyperlink to many of the same websites that conspiracy theories websites do. The echo chambers of websites corresponded with these news websites having more in common with conspiracy theory websites.
+
+I had found that not only do news websites hyperlink/connect more with websites that have more in common with them ideologically but also as websites get more polarized in this way, they become more similar to conspiracy theory websites!

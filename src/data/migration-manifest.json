@@ -17,36 +17,42 @@
     "sourcePath": "/echo-chambers-embedded-in-the-structure-of-news-media-websites",
     "targetPath": "/echo-chambers-embedded-in-the-structure-of-news-media-websites/",
     "title": "Echo Chambers Embedded in the Structure of News Media Websites",
-    "status": "pending"
+    "status": "migrated",
+    "notes": "3 original inline images copied locally; publication date requires confirmation."
   },
   {
     "sourcePath": "/oh-q-what-art-thou",
     "targetPath": "/oh-q-what-art-thou/",
     "title": "Oh Q, What Art Thou?",
-    "status": "pending"
+    "status": "migrated",
+    "notes": "3 original inline images copied locally; publication date requires confirmation."
   },
   {
     "sourcePath": "/oh-q-where-art-thou",
     "targetPath": "/oh-q-where-art-thou/",
     "title": "Oh Q, Where Art Thou?",
-    "status": "pending"
+    "status": "migrated",
+    "notes": "5 original inline images copied locally; publication date requires confirmation."
   },
   {
     "sourcePath": "/the-influx-of-russian-misinfo-on-the-rrussia-subreddit",
     "targetPath": "/the-influx-of-russian-misinfo-on-the-rrussia-subreddit/",
     "title": "The Influx of Russian Misinfo on the r/Russia Subreddit",
-    "status": "pending"
+    "status": "migrated",
+    "notes": "6 original inline images copied locally; publication date requires confirmation."
   },
   {
     "sourcePath": "/timeline-of-events-in-the-build-up-to-the-russo-ukrainian-war",
     "targetPath": "/timeline-of-events-in-the-build-up-to-the-russo-ukrainian-war/",
     "title": "Timeline of Events in the Build-up to the Russo-Ukrainian War",
-    "status": "pending"
+    "status": "migrated",
+    "notes": "11 original inline images copied locally; publication date requires confirmation."
   },
   {
     "sourcePath": "/us-summit-for-democracy",
     "targetPath": "/us-summit-for-democracy/",
     "title": "U.S. Summit for Democracy",
-    "status": "pending"
+    "status": "migrated",
+    "notes": "6 original inline images copied locally; publication date requires confirmation."
   }
 ]
