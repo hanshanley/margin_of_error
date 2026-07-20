@@ -6,6 +6,9 @@ const confidenceLevels = [
 	{ label: '99%', z: 2.576 },
 ];
 
+const clamp = (value: number, minimum: number, maximum = Number.POSITIVE_INFINITY) =>
+	Math.min(maximum, Math.max(minimum, value));
+
 export default function MarginOfErrorCalculator() {
 	const sampleId = useId();
 	const proportionId = useId();
@@ -15,9 +18,8 @@ export default function MarginOfErrorCalculator() {
 	const [confidenceIndex, setConfidenceIndex] = useState(1);
 
 	const result = useMemo(() => {
-		const boundedSample = Math.max(1, sampleSize);
-		const p = Math.min(100, Math.max(0, proportion)) / 100;
-		return confidenceLevels[confidenceIndex].z * Math.sqrt((p * (1 - p)) / boundedSample) * 100;
+		const p = proportion / 100;
+		return confidenceLevels[confidenceIndex].z * Math.sqrt((p * (1 - p)) / sampleSize) * 100;
 	}, [confidenceIndex, proportion, sampleSize]);
 
 	return (
@@ -31,7 +33,10 @@ export default function MarginOfErrorCalculator() {
 						min="1"
 						step="1"
 						value={sampleSize}
-						onChange={(event) => setSampleSize(Number(event.target.value))}
+						onChange={(event) => {
+							const value = event.currentTarget.valueAsNumber;
+							setSampleSize(Number.isFinite(value) ? Math.round(clamp(value, 1)) : 1);
+						}}
 					/>
 				</label>
 				<label htmlFor={proportionId}>
@@ -44,7 +49,10 @@ export default function MarginOfErrorCalculator() {
 							max="100"
 							step="1"
 							value={proportion}
-							onChange={(event) => setProportion(Number(event.target.value))}
+							onChange={(event) => {
+								const value = event.currentTarget.valueAsNumber;
+								setProportion(Number.isFinite(value) ? clamp(value, 0, 100) : 0);
+							}}
 						/>
 						<i>%</i>
 					</span>

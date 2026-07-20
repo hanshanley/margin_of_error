@@ -1,0 +1,63 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+	post: CollectionEntry<'posts'>;
+}
+
+const { post } = Astro.props;
+const { artifacts } = post.data;
+
+interface ResourceLink {
+	label: string;
+	href: string;
+	external: boolean;
+}
+
+const links: ResourceLink[] = [];
+if (artifacts?.code) {
+	links.push({
+		label: 'Code',
+		href: artifacts.code.repository,
+		external: true,
+	});
+}
+if (artifacts?.data?.length) {
+	links.push({
+		label: 'Data',
+		href: '#data',
+		external: false,
+	});
+}
+if (artifacts?.outputs?.length) {
+	links.push({
+		label: 'Outputs',
+		href: '#outputs',
+		external: false,
+	});
+}
+if (artifacts?.explore) {
+	links.push({
+		label: 'Interactive',
+		href: artifacts.explore.kind === 'external' ? artifacts.explore.url : '#explore',
+		external: artifacts.explore.kind === 'external',
+	});
+}
+---
+
+{
+	links.length > 0 && (
+		<nav class="post-resources" aria-label="Further materials">
+			<p>Further materials</p>
+			<div>
+				{links.map((link, index) => (
+					<a href={link.href}>
+						<span>{String(index + 1).padStart(2, '0')}</span>
+						{link.label}
+						{link.external && <i aria-hidden="true">↗</i>}
+					</a>
+				))}
+			</div>
+		</nav>
+	)
+}

@@ -2,6 +2,7 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { load } from 'cheerio';
+import sharp from 'sharp';
 import TurndownService from 'turndown';
 
 const projectRoot = fileURLToPath(new URL('../', import.meta.url));
@@ -18,7 +19,7 @@ const tagsByPath = {
 	'/us-summit-for-democracy': ['Democracy', 'Data'],
 };
 
-const archiveOrderByPath = {
+const sortOrderByPath = {
 	'/the-influx-of-russian-misinfo-on-the-rrussia-subreddit': 70,
 	'/timeline-of-events-in-the-build-up-to-the-russo-ukrainian-war': 60,
 	'/echo-chambers-embedded-in-the-structure-of-news-media-websites': 50,
@@ -32,6 +33,17 @@ const turndown = new TurndownService({
 	bulletListMarker: '-',
 	codeBlockStyle: 'fenced',
 	emDelimiter: '_',
+});
+turndown.addRule('local-image', {
+	filter: (node) =>
+		node.nodeName === 'IMG' && node.getAttribute('src')?.startsWith('/artifacts/legacy/'),
+	replacement: (_content, node) => {
+		const source = node.getAttribute('src');
+		const alt = node.getAttribute('alt') ?? '';
+		const width = node.getAttribute('width');
+		const height = node.getAttribute('height');
+		return `\n\n<img src="${source}" alt={${JSON.stringify(alt)}} width="${width}" height="${height}" loading="lazy" decoding="async" />\n\n`;
+	},
 });
 
 function cleanGoogleRedirect(href) {
@@ -56,8 +68,9 @@ function imageExtension(contentType) {
 const remigrateAll = process.argv.includes('--all');
 const entries = manifest.filter(
 	(item) =>
-		item.status === 'pending' ||
-		(remigrateAll && !['/home', '/my-first-blog-post'].includes(item.sourcePath)),
+		item.sourcePath &&
+		(item.status === 'pending' ||
+			(remigrateAll && !['/home', '/my-first-blog-post'].includes(item.sourcePath))),
 );
 
 for (const entry of entries) {
@@ -98,16 +111,23 @@ for (const entry of entries) {
 			imageNumber += 1;
 			const extension = imageExtension(imageResponse.headers.get('content-type') ?? '');
 			const fileName = `figure-${String(imageNumber).padStart(2, '0')}.${extension}`;
+			const imageBuffer = Buffer.from(await imageResponse.arrayBuffer());
+			const metadata = await sharp(imageBuffer).metadata();
 			await mkdir(assetDirectory, { recursive: true });
-			await writeFile(join(assetDirectory, fileName), Buffer.from(await imageResponse.arrayBuffer()));
+			await writeFile(join(assetDirectory, fileName), imageBuffer);
 			$(image).attr('src', `/artifacts/legacy/${slug}/${fileName}`);
 			$(image).attr(
 				'alt',
 				caption.slice(0, 220) || `${entry.title}, figure ${String(imageNumber).padStart(2, '0')}`,
 			);
+			if (metadata.width && metadata.height) {
+				$(image).attr('width', String(metadata.width)).attr('height', String(metadata.height));
+			}
 			thumbnail ??= {
 				src: `/artifacts/legacy/${slug}/${fileName}`,
 				alt: $(image).attr('alt'),
+				width: metadata.width,
+				height: metadata.height,
 			};
 		}
 	}
@@ -139,9 +159,15 @@ for (const entry of entries) {
 		'author: "Hans W. A. Hanley"',
 		`tags: ${JSON.stringify(tagsByPath[entry.sourcePath] ?? ['Archive'])}`,
 		`legacyPath: ${JSON.stringify(entry.sourcePath)}`,
-		`archiveOrder: ${archiveOrderByPath[entry.sourcePath] ?? 0}`,
+		`sortOrder: ${sortOrderByPath[entry.sourcePath] ?? 0}`,
 		...(thumbnail
-			? ['thumbnail:', `  src: ${JSON.stringify(thumbnail.src)}`, `  alt: ${JSON.stringify(thumbnail.alt)}`]
+			? [
+					'thumbnail:',
+					`  src: ${JSON.stringify(thumbnail.src)}`,
+					`  alt: ${JSON.stringify(thumbnail.alt)}`,
+					...(thumbnail.width ? [`  width: ${thumbnail.width}`] : []),
+					...(thumbnail.height ? [`  height: ${thumbnail.height}`] : []),
+				]
 			: []),
 		'featured: false',
 		'draft: false',
