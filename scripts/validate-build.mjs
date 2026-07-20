@@ -76,6 +76,25 @@ const homeRedirect = await text('home/index.html');
 assert.match(homeRedirect, /http-equiv="refresh"/);
 assert.match(homeRedirect, /rel="canonical" href="https:\/\/www\.themarginoferror\.com\/"/);
 
+const archive = await text('archive/index.html');
+const expectedArchiveOrder = [
+	'the-influx-of-russian-misinfo-on-the-rrussia-subreddit',
+	'timeline-of-events-in-the-build-up-to-the-russo-ukrainian-war',
+	'echo-chambers-embedded-in-the-structure-of-news-media-websites',
+	'us-summit-for-democracy',
+	'oh-q-where-art-thou',
+	'oh-q-what-art-thou',
+	'my-first-blog-post',
+];
+const archivePositions = expectedArchiveOrder.map((slug) => archive.indexOf(`href="/${slug}"`));
+assert.ok(archivePositions.every((position) => position >= 0), 'Archive is missing a legacy post');
+assert.ok(
+	archivePositions.every((position, index) => index === 0 || position > archivePositions[index - 1]),
+	'Archive posts are not newest-first',
+);
+assert.equal([...archive.matchAll(/class="archive-thumb"/g)].length, expectedArchiveOrder.length);
+assert.match(archive, /class="archive-thumb"[^>]*>[\s\S]*?<img /);
+
 const outputDirectory = fileURLToPath(root);
 for (const file of await collectTextFiles(outputDirectory)) {
 	const contents = await readFile(file, 'utf8');

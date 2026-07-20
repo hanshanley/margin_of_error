@@ -1,10 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { comparePostsNewestFirst } from '../lib/posts';
 
-const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(
-	(a, b) => (b.data.publishedAt?.valueOf() ?? 0) - (a.data.publishedAt?.valueOf() ?? 0),
-);
+const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(comparePostsNewestFirst);
 ---
 
 <BaseLayout title="Archive" description="Every dispatch published in The Margin of Error.">
@@ -18,7 +17,21 @@ const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(
 			{posts.map((post) => (
 				<li>
 					<p>{post.data.publishedAt?.getFullYear() ?? '—'}</p>
-					<h2><a href={post.data.legacyPath ?? `/${post.id}`}>{post.data.title}</a></h2>
+					<a class="archive-thumb" href={post.data.legacyPath ?? `/${post.id}`} tabindex="-1">
+						{post.data.thumbnail || post.data.hero ? (
+							<img
+								src={(post.data.thumbnail ?? post.data.hero)?.src}
+								alt={(post.data.thumbnail ?? post.data.hero)?.alt}
+								loading="lazy"
+							/>
+						) : (
+							<span aria-hidden="true">±</span>
+						)}
+					</a>
+					<div>
+						<h2><a href={post.data.legacyPath ?? `/${post.id}`}>{post.data.title}</a></h2>
+						<p>{post.data.description}</p>
+					</div>
 					<p>{post.data.tags.join(', ')}</p>
 				</li>
 			))}

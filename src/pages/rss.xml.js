@@ -1,10 +1,9 @@
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
+import { comparePostsNewestFirst } from '../lib/posts';
 
 export async function GET(context) {
-	const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(
-		(a, b) => (b.data.publishedAt?.valueOf() ?? 0) - (a.data.publishedAt?.valueOf() ?? 0),
-	);
+	const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(comparePostsNewestFirst);
 
 	return rss({
 		title: 'The Margin of Error',

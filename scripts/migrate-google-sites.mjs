@@ -18,6 +18,15 @@ const tagsByPath = {
 	'/us-summit-for-democracy': ['Democracy', 'Data'],
 };
 
+const archiveOrderByPath = {
+	'/the-influx-of-russian-misinfo-on-the-rrussia-subreddit': 70,
+	'/timeline-of-events-in-the-build-up-to-the-russo-ukrainian-war': 60,
+	'/echo-chambers-embedded-in-the-structure-of-news-media-websites': 50,
+	'/us-summit-for-democracy': 40,
+	'/oh-q-where-art-thou': 30,
+	'/oh-q-what-art-thou': 20,
+};
+
 const turndown = new TurndownService({
 	headingStyle: 'atx',
 	bulletListMarker: '-',
@@ -75,6 +84,7 @@ for (const entry of entries) {
 	const slug = entry.sourcePath.slice(1);
 	const assetDirectory = join(projectRoot, 'public/artifacts/legacy', slug);
 	let imageNumber = 0;
+	let thumbnail;
 
 	for (const cell of articleCells) {
 		const caption = $(cell).text().replace(/\s+/g, ' ').trim();
@@ -95,6 +105,10 @@ for (const entry of entries) {
 				'alt',
 				caption.slice(0, 220) || `${entry.title}, figure ${String(imageNumber).padStart(2, '0')}`,
 			);
+			thumbnail ??= {
+				src: `/artifacts/legacy/${slug}/${fileName}`,
+				alt: $(image).attr('alt'),
+			};
 		}
 	}
 
@@ -125,6 +139,10 @@ for (const entry of entries) {
 		'author: "Hans W. A. Hanley"',
 		`tags: ${JSON.stringify(tagsByPath[entry.sourcePath] ?? ['Archive'])}`,
 		`legacyPath: ${JSON.stringify(entry.sourcePath)}`,
+		`archiveOrder: ${archiveOrderByPath[entry.sourcePath] ?? 0}`,
+		...(thumbnail
+			? ['thumbnail:', `  src: ${JSON.stringify(thumbnail.src)}`, `  alt: ${JSON.stringify(thumbnail.alt)}`]
+			: []),
 		'featured: false',
 		'draft: false',
 		'---',
