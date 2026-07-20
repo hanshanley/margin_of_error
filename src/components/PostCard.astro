@@ -8,6 +8,7 @@ interface Props {
 
 const { post, index } = Astro.props;
 const path = post.data.legacyPath ?? `/${post.id}`;
+const thumbnail = post.data.thumbnail ?? post.data.hero;
 const artifactCount = [
 	post.data.artifacts?.code,
 	post.data.artifacts?.data?.length,
@@ -18,6 +19,15 @@ const artifactCount = [
 
 <article class="post-row">
 	<p class="post-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</p>
+	<a class="post-thumb" href={path} tabindex="-1">
+		{
+			thumbnail ? (
+				<img src={thumbnail.src} alt={thumbnail.alt} loading={index === 0 ? 'eager' : 'lazy'} />
+			) : (
+				<span aria-hidden="true">±</span>
+			)
+		}
+	</a>
 	<div class="post-summary">
 		<p class="post-meta">
 			{post.data.publishedAt ? post.data.publishedAt.toLocaleDateString('en-US', { dateStyle: 'long' }) : 'From the archive'}
