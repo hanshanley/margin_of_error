@@ -1,0 +1,36 @@
+---
+title: "Full artifact state"
+description: "A private content fixture exercising every optional post workspace."
+tags:
+  - Fixture
+draft: true
+artifacts:
+  code:
+    description: "Example source metadata for component development."
+    repository: "https://github.com/hanshanley/margin_of_error"
+    revision: "main"
+    path: "src/components/explorations"
+    language: "TypeScript"
+    license: "Repository license"
+  data:
+    - title: "Illustrative survey inputs"
+      description: "Small synthetic values used only to exercise the artifact renderer."
+      url: "https://github.com/hanshanley/margin_of_error"
+      source: "Synthetic fixture"
+      format: "CSV"
+  outputs:
+    - title: "Illustrative estimate"
+      description: "A fixture output for the workspace layout."
+      url: "https://github.com/hanshanley/margin_of_error"
+      kind: "figure"
+      format: "SVG"
+  explore:
+    kind: "local"
+    module: "margin-of-error-calculator"
+    title: "Sampling margin calculator"
+    description: "Change a sample size, proportion, and confidence level."
+    fallback: "The calculator estimates a normal-approximation margin of error for a proportion."
+---
+
+This entry is not published. It exists to keep all optional workspace states type-safe and
+testable.
