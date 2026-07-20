@@ -1,0 +1,78 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+	title?: string;
+	description?: string;
+	image?: string;
+	type?: 'website' | 'article';
+	publishedAt?: Date;
+}
+
+const {
+	title,
+	description = 'Essays, evidence, and computational detours by Hans W. A. Hanley.',
+	image = '/social-card.svg',
+	type = 'website',
+	publishedAt,
+} = Astro.props;
+
+const siteTitle = 'The Margin of Error';
+const pageTitle = title ? `${title} — ${siteTitle}` : siteTitle;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const socialImage = new URL(image, Astro.site);
+const structuredData =
+	type === 'article'
+		? {
+				'@context': 'https://schema.org',
+				'@type': 'BlogPosting',
+				headline: title,
+				description,
+				datePublished: publishedAt?.toISOString(),
+				author: { '@type': 'Person', name: 'Hans W. A. Hanley' },
+				mainEntityOfPage: canonical.href,
+			}
+		: {
+				'@context': 'https://schema.org',
+				'@type': 'WebSite',
+				name: siteTitle,
+				url: Astro.site?.href,
+				description,
+			};
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<meta name="theme-color" content="#f2efe7" />
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<link rel="canonical" href={canonical} />
+		<link rel="alternate" type="application/rss+xml" title={siteTitle} href="/rss.xml" />
+		<meta property="og:type" content={type} />
+		<meta property="og:title" content={pageTitle} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonical} />
+		<meta property="og:image" content={socialImage} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={pageTitle} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={socialImage} />
+		<title>{pageTitle}</title>
+		<script is:inline>document.documentElement.classList.add('js');</script>
+		<script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+	</head>
+	<body>
+		<a class="skip-link" href="#content">Skip to the writing</a>
+		<Header />
+		<main id="content">
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>

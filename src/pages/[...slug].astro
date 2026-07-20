@@ -1,0 +1,51 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostWorkspace from '../components/PostWorkspace.astro';
+
+export async function getStaticPaths() {
+	const posts = await getCollection('posts', ({ data }) => !data.draft);
+	return posts.map((post) => ({
+		params: { slug: (post.data.legacyPath ?? `/${post.id}`).replace(/^\/|\/$/g, '') },
+		props: { post },
+	}));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<BaseLayout
+	title={post.data.title}
+	description={post.data.description}
+	image={post.data.hero?.src}
+	type="article"
+	publishedAt={post.data.publishedAt}
+>
+	<article class="post">
+		<header class="post-header">
+			<p class="post-section">{post.data.tags.join(' / ') || 'Dispatch'}</p>
+			<h1>{post.data.title}</h1>
+			<p class="post-description">{post.data.description}</p>
+			<div class="byline">
+				<p>By {post.data.author}</p>
+				<p>
+					{post.data.publishedAt
+						? post.data.publishedAt.toLocaleDateString('en-US', { dateStyle: 'long' })
+						: 'From the original archive'}
+				</p>
+			</div>
+		</header>
+
+		{post.data.hero && (
+			<figure class="hero-figure">
+				<img src={post.data.hero.src} alt={post.data.hero.alt} />
+				{post.data.hero.caption && <figcaption>{post.data.hero.caption}</figcaption>}
+			</figure>
+		)}
+
+		<PostWorkspace post={post}>
+			<Content />
+		</PostWorkspace>
+	</article>
+</BaseLayout>

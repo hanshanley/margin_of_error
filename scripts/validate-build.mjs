@@ -1,0 +1,72 @@
+import assert from 'node:assert/strict';
+import { readdir, readFile } from 'node:fs/promises';
+import { join, relative } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const root = new URL('../dist/', import.meta.url);
+
+async function text(path) {
+	return readFile(new URL(path, root), 'utf8');
+}
+
+async function collectTextFiles(directory) {
+	const files = [];
+	for (const entry of await readdir(directory, { withFileTypes: true })) {
+		const path = join(directory, entry.name);
+		if (entry.isDirectory()) {
+			files.push(...(await collectTextFiles(path)));
+		} else if (/\.(?:html|xml|css|js|txt)$/.test(entry.name)) {
+			files.push(path);
+		}
+	}
+	return files;
+}
+
+const requiredFiles = [
+	'index.html',
+	'404.html',
+	'about/index.html',
+	'archive/index.html',
+	'home/index.html',
+	'my-first-blog-post/index.html',
+	'rss.xml',
+	'robots.txt',
+	'sitemap-index.xml',
+	'CNAME',
+];
+
+for (const file of requiredFiles) {
+	await assert.doesNotReject(() => text(file), `Missing production file: ${file}`);
+}
+
+assert.equal((await text('CNAME')).trim(), 'www.themarginoferror.com');
+
+const sitemapIndex = await text('sitemap-index.xml');
+assert.match(sitemapIndex, /https:\/\/www\.themarginoferror\.com\/sitemap-0\.xml/);
+
+const sitemap = await text('sitemap-0.xml');
+assert.match(sitemap, /https:\/\/www\.themarginoferror\.com\/my-first-blog-post\//);
+assert.doesNotMatch(sitemap, /https:\/\/www\.themarginoferror\.com\/home\//);
+
+const narrativePost = await text('my-first-blog-post/index.html');
+assert.match(narrativePost, /id="tab-article"/);
+assert.doesNotMatch(narrativePost, /id="tab-code"/);
+assert.doesNotMatch(narrativePost, /id="tab-data"/);
+assert.doesNotMatch(narrativePost, /id="tab-outputs"/);
+assert.doesNotMatch(narrativePost, /id="tab-explore"/);
+
+const homeRedirect = await text('home/index.html');
+assert.match(homeRedirect, /http-equiv="refresh"/);
+assert.match(homeRedirect, /rel="canonical" href="https:\/\/www\.themarginoferror\.com\/"/);
+
+const outputDirectory = fileURLToPath(root);
+for (const file of await collectTextFiles(outputDirectory)) {
+	const contents = await readFile(file, 'utf8');
+	assert.doesNotMatch(
+		contents,
+		/hanshanley\.github\.io/,
+		`github.io leaked into ${relative(outputDirectory, file)}`,
+	);
+}
+
+console.log('Production artifact checks passed.');

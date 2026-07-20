@@ -1,0 +1,60 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostCard from '../components/PostCard.astro';
+
+const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(
+	(a, b) => (b.data.publishedAt?.valueOf() ?? 0) - (a.data.publishedAt?.valueOf() ?? 0),
+);
+---
+
+<BaseLayout>
+	<section class="home-lede">
+		<div class="home-deck">
+			<p class="issue-mark">Vol. I / Field notes</p>
+			<h1>
+				Arguments are stronger when the <em>work</em> is visible.
+			</h1>
+			<p class="dek">
+				Essays on computer science, disinformation, statistics, and world events—with the
+				code, data, outputs, and experiments attached when they exist.
+			</p>
+		</div>
+		<aside class="margin-note">
+			<p class="margin-symbol">±</p>
+			<p>
+				<strong>A note on uncertainty</strong>
+				This is a publication for claims that can show their seams.
+			</p>
+		</aside>
+	</section>
+
+	<section class="dispatches" aria-labelledby="dispatches-title">
+		<header class="section-heading">
+			<p class="kicker">Recent dispatches</p>
+			<h2 id="dispatches-title">From the notebook</h2>
+			<p>{String(posts.length).padStart(2, '0')} pieces in this edition</p>
+		</header>
+		<div class="post-list">
+			{posts.map((post, index) => <PostCard post={post} index={index} />)}
+		</div>
+	</section>
+
+	<section class="site-method">
+		<p class="kicker">How to read this site</p>
+		<ol>
+			<li>
+				<span>01</span>
+				<div><strong>Read</strong><p>The article remains the argument, not a wrapper around a demo.</p></div>
+			</li>
+			<li>
+				<span>02</span>
+				<div><strong>Inspect</strong><p>Code, data, and outputs appear only when the work has them.</p></div>
+			</li>
+			<li>
+				<span>03</span>
+				<div><strong>Test</strong><p>Selected posts include a small instrument you can operate yourself.</p></div>
+			</li>
+		</ol>
+	</section>
+</BaseLayout>

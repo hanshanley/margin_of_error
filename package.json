@@ -1,0 +1,30 @@
+{
+  "name": "margin-of-error",
+  "type": "module",
+  "version": "0.1.0",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check": "astro check",
+    "test": "npm run build && node scripts/validate-build.mjs"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^7.0.3",
+    "@astrojs/react": "^6.0.1",
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.3",
+    "astro": "^7.0.8",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9",
+    "cheerio": "^1.2.0",
+    "typescript": "^6.0.3"
+  }
+}

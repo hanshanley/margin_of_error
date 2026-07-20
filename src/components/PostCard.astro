@@ -1,0 +1,32 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+	post: CollectionEntry<'posts'>;
+	index: number;
+}
+
+const { post, index } = Astro.props;
+const path = post.data.legacyPath ?? `/${post.id}`;
+const artifactCount = [
+	post.data.artifacts?.code,
+	post.data.artifacts?.data?.length,
+	post.data.artifacts?.outputs?.length,
+	post.data.artifacts?.explore,
+].filter(Boolean).length;
+---
+
+<article class="post-row">
+	<p class="post-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</p>
+	<div class="post-summary">
+		<p class="post-meta">
+			{post.data.publishedAt ? post.data.publishedAt.toLocaleDateString('en-US', { dateStyle: 'long' }) : 'From the archive'}
+			{artifactCount > 0 && <span> · {artifactCount} field note{artifactCount === 1 ? '' : 's'}</span>}
+		</p>
+		<h2><a href={path}>{post.data.title}</a></h2>
+		<p>{post.data.description}</p>
+	</div>
+	<div class="post-tags" aria-label="Topics">
+		{post.data.tags.map((tag) => <span>{tag}</span>)}
+	</div>
+</article>

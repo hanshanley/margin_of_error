@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(
+	(a, b) => (b.data.publishedAt?.valueOf() ?? 0) - (a.data.publishedAt?.valueOf() ?? 0),
+);
+---
+
+<BaseLayout title="Archive" description="Every dispatch published in The Margin of Error.">
+	<section class="standard-page archive-page">
+		<header class="page-heading">
+			<p class="kicker">Complete index</p>
+			<h1>The archive</h1>
+			<p>Writing on systems, evidence, politics, and the places where they collide.</p>
+		</header>
+		<ol class="archive-list">
+			{posts.map((post) => (
+				<li>
+					<p>{post.data.publishedAt?.getFullYear() ?? '—'}</p>
+					<h2><a href={post.data.legacyPath ?? `/${post.id}`}>{post.data.title}</a></h2>
+					<p>{post.data.tags.join(', ')}</p>
+				</li>
+			))}
+		</ol>
+	</section>
+</BaseLayout>

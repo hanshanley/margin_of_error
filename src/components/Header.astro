@@ -1,0 +1,34 @@
+---
+const path = Astro.url.pathname;
+const nav = [
+	{ href: '/', label: 'Latest' },
+	{ href: '/archive/', label: 'Archive' },
+	{ href: '/about/', label: 'About' },
+];
+---
+
+<header class="site-header">
+	<div class="edition-line" aria-hidden="true">
+		<span>Independent notes on systems and society</span>
+		<span>Est. 2021</span>
+	</div>
+	<div class="masthead">
+		<a class="wordmark" href="/" aria-label="The Margin of Error, home">
+			<span class="wordmark-the">The</span>
+			<span class="wordmark-main">Margin <i>of</i> Error</span>
+		</a>
+		<nav aria-label="Primary navigation">
+			<ul>
+				{
+					nav.map((item) => (
+						<li>
+							<a href={item.href} aria-current={path === item.href ? 'page' : undefined}>
+								{item.label}
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</nav>
+	</div>
+</header>

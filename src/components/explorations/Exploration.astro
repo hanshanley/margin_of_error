@@ -1,0 +1,11 @@
+---
+import MarginOfErrorCalculator from './MarginOfErrorCalculator';
+
+interface Props {
+	module: 'margin-of-error-calculator';
+}
+
+const { module } = Astro.props;
+---
+
+{module === 'margin-of-error-calculator' && <MarginOfErrorCalculator client:visible />}
