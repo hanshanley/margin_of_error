@@ -1,51 +1,79 @@
 [
   {
+    "slug": "new-covid-19-conspiracy-theories-gain-traction-as-old-ones-re-emerge",
     "title": "New COVID-19 conspiracy theories gain traction as old ones re-emerge",
     "authors": "Hans Hanley",
     "outlet": "Atlantic Council Digital Forensic Research Lab",
     "publishedAt": "2021-08-11",
-    "url": "https://dfrlab.org/2021/08/11/new-covid-19-conspiracy-theories-gain-traction-as-old-ones-re-emerge/"
+    "sortOrder": 39,
+    "description": "How pro-Kremlin outlets and social platforms helped evolving COVID-19 vaccine, treatment, and identification conspiracies gain traction.",
+    "url": "https://dfrlab.org/2021/08/11/new-covid-19-conspiracy-theories-gain-traction-as-old-ones-re-emerge/",
+    "originalUrl": "https://medium.com/dfrlab/new-covid-19-conspiracy-theories-gain-traction-as-old-ones-re-emerge-c28e58539198"
   },
   {
+    "slug": "misinformation-regarding-frances-covid-19-health-passes-spread-on-twitter",
     "title": "Misinformation regarding France's COVID-19 health passes spread on Twitter",
     "authors": "Hans Hanley",
     "outlet": "Atlantic Council Digital Forensic Research Lab",
     "publishedAt": "2021-08-04",
-    "url": "https://dfrlab.org/2021/08/04/misinformation-regarding-frances-covid-19-health-passes-spread-on-twitter/"
+    "sortOrder": 38,
+    "description": "An examination of how far-right media, political figures, and inauthentic accounts amplified misleading claims about France's health-pass policy.",
+    "url": "https://dfrlab.org/2021/08/04/misinformation-regarding-frances-covid-19-health-passes-spread-on-twitter/",
+    "originalUrl": "https://medium.com/dfrlab/misinformation-regarding-frances-covid-19-health-passes-spread-on-twitter-ba344920bc16"
   },
   {
+    "slug": "iranian-social-media-exploit-us-based-conspiracies-regarding-uss-liberty-incident",
     "title": "Iranian social media exploit US-based conspiracies regarding USS Liberty incident",
     "authors": "Hans Hanley and Alyssa Kann",
     "outlet": "Atlantic Council Digital Forensic Research Lab",
     "publishedAt": "2021-07-26",
-    "url": "https://dfrlab.org/2021/07/26/iranian-social-media-exploit-us-based-conspiracies-regarding-uss-liberty-incident/"
+    "sortOrder": 37,
+    "description": "How Iranian social media accounts repurposed U.S.-based conspiracy theories about the USS Liberty to promote anti-Israel narratives.",
+    "url": "https://dfrlab.org/2021/07/26/iranian-social-media-exploit-us-based-conspiracies-regarding-uss-liberty-incident/",
+    "originalUrl": "https://medium.com/dfrlab/iranian-social-media-exploit-us-based-conspiracies-regarding-uss-liberty-incident-95bc8960dcfa"
   },
   {
+    "slug": "china-weaponizes-discovery-of-graves-at-canadian-residential-schools",
     "title": "China weaponizes discovery of graves at Canadian residential schools to avoid Xinjiang criticism",
     "authors": "Hans Hanley",
     "outlet": "Atlantic Council Digital Forensic Research Lab",
     "publishedAt": "2021-07-21",
-    "url": "https://dfrlab.org/2021/07/21/china-weaponizes-discovery-of-graves-at-canadian-residential-schools-to-avoid-xinjiang-criticism/"
+    "sortOrder": 36,
+    "description": "How Chinese outlets and diplomats used the discovery of Indigenous children's graves in Canada to deflect criticism over Xinjiang.",
+    "url": "https://dfrlab.org/2021/07/21/china-weaponizes-discovery-of-graves-at-canadian-residential-schools-to-avoid-xinjiang-criticism/",
+    "originalUrl": "https://medium.com/dfrlab/china-weaponizes-discovery-of-graves-at-canadian-residential-schools-to-avoid-xinjiang-criticism-6bf618a6e954"
   },
   {
+    "slug": "pro-kremlin-media-echo-chinese-outlets-covid-lab-leak",
     "title": "Pro-Kremlin media echo Chinese outlets that COVID lab leak theory is a U.S. disinfo campaign",
     "authors": "Hans Hanley",
     "outlet": "Atlantic Council Digital Forensic Research Lab",
     "publishedAt": "2021-07-14",
-    "url": "https://dfrlab.org/2021/07/14/pro-kremlin-media-echo-chinese-outlets-that-covid-lab-leak-theory-is-a-u-s-disinfo-campaign/"
+    "sortOrder": 35,
+    "description": "How pro-Kremlin media echoed Chinese claims that renewed U.S. interest in the COVID-19 lab-leak theory was a disinformation campaign.",
+    "url": "https://dfrlab.org/2021/07/14/pro-kremlin-media-echo-chinese-outlets-that-covid-lab-leak-theory-is-a-u-s-disinfo-campaign/",
+    "originalUrl": "https://medium.com/dfrlab/pro-kremlin-media-echo-chinese-outlets-that-covid-lab-leak-theory-is-a-u-s-disinfo-campaign-7f1bdc28f0a4"
   },
   {
+    "slug": "iranian-accounts-promote-anti-israel-hashtags",
     "title": "Iranian accounts promote anti-Israel hashtags in the wake of the Israel-Hamas war",
     "authors": "Hans Hanley",
     "outlet": "Atlantic Council Digital Forensic Research Lab",
     "publishedAt": "2021-07-01",
-    "url": "https://dfrlab.org/2021/07/01/iranian-accounts-promote-anti-israel-hashtags-in-the-wake-of-the-israel-hamas-war/"
+    "sortOrder": 34,
+    "description": "An investigation of coordinated Iranian accounts that revived #COVID1948 and promoted anti-Israel hashtags during and after the 2021 conflict.",
+    "url": "https://dfrlab.org/2021/07/01/iranian-accounts-promote-anti-israel-hashtags-in-the-wake-of-the-israel-hamas-war/",
+    "originalUrl": "https://medium.com/dfrlab/iranian-accounts-promote-anti-israel-hashtags-in-the-wake-of-the-israel-hamas-war-c1240ec25152"
   },
   {
+    "slug": "nigerian-twitter-users-flock-to-vpns",
     "title": "Nigerian Twitter users flock to VPNs amid dubious legal threats",
     "authors": "Jean Le Roux and Hans Hanley",
     "outlet": "Disinfo Africa and Atlantic Council Digital Forensic Research Lab",
     "publishedAt": "2021-06-24",
-    "url": "https://dfrlab.org/2021/06/24/nigerian-twitter-users-flock-to-vpns-amid-dubious-legal-threats/"
+    "sortOrder": 33,
+    "description": "How Nigerian Twitter users turned to VPNs to circumvent the government's platform ban despite threats of prosecution.",
+    "url": "https://dfrlab.org/2021/06/24/nigerian-twitter-users-flock-to-vpns-amid-dubious-legal-threats/",
+    "originalUrl": "https://medium.com/dfrlab/nigerian-twitter-users-flock-to-vpns-amid-dubious-legal-threats-395101f95cd3"
   }
 ]
