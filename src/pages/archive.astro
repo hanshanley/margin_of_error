@@ -64,8 +64,9 @@ const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(com
 								})}
 							</time>
 							<div>
-								<h3><a href={article.url}>{article.title} ↗</a></h3>
+								<h3><a href={`/fieldwork/${article.slug}/`}>{article.title}</a></h3>
 								<p>{article.authors} · {article.outlet}</p>
+								<a class="external-read" href={article.url}>Read on DFRLab ↗</a>
 							</div>
 						</li>
 					))

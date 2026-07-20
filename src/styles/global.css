@@ -148,8 +148,7 @@ main {
 
 .home-lede {
 	display: grid;
-	grid-template-columns: minmax(0, 4.5fr) minmax(220px, 1fr);
-	gap: clamp(2rem, 7vw, 7rem);
+	grid-template-columns: 1fr;
 	width: var(--page);
 	margin: 0 auto;
 	padding: clamp(4rem, 9vw, 8rem) 0;
@@ -203,25 +202,6 @@ main {
 	margin: 2.2rem 0 0;
 	font-size: clamp(1.15rem, 2vw, 1.6rem);
 	line-height: 1.42;
-}
-
-.margin-note {
-	align-self: end;
-	padding-top: 1rem;
-	border-top: 1px solid var(--ink);
-	color: var(--muted);
-	font-size: 0.86rem;
-	line-height: 1.35;
-}
-
-.margin-note strong {
-	display: block;
-	margin-bottom: 0.4rem;
-	color: var(--ink);
-	font-family: var(--sans);
-	font-size: 0.72rem;
-	letter-spacing: 0.06em;
-	text-transform: uppercase;
 }
 
 .margin-symbol {
@@ -323,6 +303,28 @@ main {
 	font-size: 3rem;
 }
 
+.fieldwork-thumb {
+	align-content: space-between;
+	padding: 0.8rem;
+	background: var(--signal);
+	color: var(--paper);
+	font-family: var(--mono);
+}
+
+.fieldwork-thumb span {
+	justify-self: start;
+	color: var(--paper);
+	font-size: 0.65rem;
+	letter-spacing: 0.14em;
+}
+
+.fieldwork-thumb strong {
+	justify-self: end;
+	font-size: clamp(2.5rem, 5vw, 4.8rem);
+	font-weight: 400;
+	line-height: 0.8;
+}
+
 .post-summary h2 {
 	margin: 0.35rem 0 0.7rem;
 	font-size: clamp(1.7rem, 3vw, 2.9rem);
@@ -353,43 +355,6 @@ main {
 .post-tags span::before {
 	content: "§ ";
 	color: var(--signal);
-}
-
-.site-method {
-	width: var(--page);
-	margin: 0 auto;
-	padding: clamp(4rem, 8vw, 8rem) 0;
-}
-
-.site-method ol {
-	margin: 0;
-	padding: 0;
-	border-top: 3px double var(--ink);
-	list-style: none;
-}
-
-.site-method li {
-	display: grid;
-	grid-template-columns: 0.4fr 3.6fr;
-	gap: 2rem;
-	padding: 1.7rem 0;
-	border-bottom: 1px solid var(--rule);
-}
-
-.site-method li > span {
-	color: var(--signal);
-	font-family: var(--mono);
-	font-size: 0.72rem;
-}
-
-.site-method strong {
-	font-size: 1.8rem;
-	font-weight: 500;
-}
-
-.site-method li p {
-	margin: 0;
-	color: var(--muted);
 }
 
 .post {
@@ -884,6 +849,126 @@ main {
 	margin: 0.35rem 0 0;
 }
 
+.external-read {
+	display: inline-block;
+	margin-top: 0.55rem;
+	font-family: var(--sans);
+	font-size: 0.68rem;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+
+.fieldwork-preview {
+	width: var(--page);
+	margin: 0 auto;
+	padding: clamp(4rem, 9vw, 8rem) 0;
+}
+
+.fieldwork-preview > header {
+	display: grid;
+	grid-template-columns: minmax(140px, 0.7fr) minmax(0, 3.3fr);
+	gap: clamp(2rem, 7vw, 7rem);
+	align-items: start;
+	padding-bottom: clamp(3rem, 6vw, 5rem);
+	border-bottom: 3px double var(--ink);
+}
+
+.fieldwork-mark {
+	display: grid;
+	aspect-ratio: 1;
+	align-content: space-between;
+	padding: 1rem;
+	border: 1px solid var(--ink);
+	background: var(--signal);
+	color: var(--paper);
+	font-family: var(--mono);
+}
+
+.fieldwork-mark span {
+	font-size: 0.7rem;
+	letter-spacing: 0.14em;
+}
+
+.fieldwork-mark strong {
+	font-size: clamp(3rem, 8vw, 6rem);
+	font-weight: 400;
+	line-height: 0.8;
+}
+
+.fieldwork-preview h1 {
+	max-width: 950px;
+	margin: 0;
+	font-size: clamp(2.8rem, 6.5vw, 6.5rem);
+	font-weight: 500;
+	letter-spacing: -0.06em;
+	line-height: 0.94;
+}
+
+.fieldwork-description {
+	max-width: 760px;
+	margin: 2rem 0 0;
+	font-size: 1.35rem;
+	line-height: 1.4;
+}
+
+.fieldwork-details {
+	display: grid;
+	grid-template-columns: 2.5fr 1fr;
+	gap: clamp(2rem, 7vw, 7rem);
+	padding: 2rem 0;
+	border-bottom: 1px solid var(--ink);
+}
+
+.fieldwork-details dl {
+	margin: 0;
+}
+
+.fieldwork-details dl div {
+	display: grid;
+	grid-template-columns: 0.8fr 2.2fr;
+	gap: 1rem;
+	padding: 0.75rem 0;
+	border-bottom: 1px solid var(--rule);
+}
+
+.fieldwork-details dt {
+	font-family: var(--mono);
+	font-size: 0.65rem;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+
+.fieldwork-details dd {
+	margin: 0;
+}
+
+.fieldwork-actions {
+	display: grid;
+	align-content: start;
+	gap: 0.8rem;
+}
+
+.fieldwork-actions a {
+	font-family: var(--sans);
+	font-size: 0.72rem;
+	letter-spacing: 0.07em;
+	text-transform: uppercase;
+}
+
+.fieldwork-actions .primary-action {
+	padding: 1rem;
+	background: var(--ink);
+	color: var(--paper);
+	text-decoration: none;
+}
+
+.fieldwork-back {
+	margin-top: 3rem;
+	font-family: var(--mono);
+	font-size: 0.68rem;
+	text-transform: uppercase;
+}
+
 .archive-list p {
 	margin: 0;
 	color: var(--muted);
@@ -1078,6 +1163,15 @@ main {
 	.external-list li {
 		grid-template-columns: 1fr;
 		gap: 0.45rem;
+	}
+
+	.fieldwork-preview > header,
+	.fieldwork-details {
+		grid-template-columns: 1fr;
+	}
+
+	.fieldwork-mark {
+		width: 130px;
 	}
 
 	.site-footer {

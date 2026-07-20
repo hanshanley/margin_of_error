@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import externalArticles from '../../data/external-articles.json';
+
+export function getStaticPaths() {
+	return externalArticles.map((article) => ({
+		params: { slug: article.slug },
+		props: { article },
+	}));
+}
+
+const { article } = Astro.props;
+const publishedAt = new Date(`${article.publishedAt}T12:00:00Z`);
+---
+
+<BaseLayout title={article.title} description={article.description}>
+	<article class="fieldwork-preview">
+		<header>
+			<div class="fieldwork-mark" aria-hidden="true">
+				<span>DFR</span>
+				<strong>{publishedAt.getUTCFullYear().toString().slice(-2)}</strong>
+			</div>
+			<div>
+				<p class="kicker">Published elsewhere</p>
+				<h1>{article.title}</h1>
+				<p class="fieldwork-description">{article.description}</p>
+			</div>
+		</header>
+
+		<div class="fieldwork-details">
+			<dl>
+				<div><dt>Authors</dt><dd>{article.authors}</dd></div>
+				<div><dt>Published</dt><dd>{publishedAt.toLocaleDateString('en-US', {
+					year: 'numeric',
+					month: 'long',
+					day: 'numeric',
+					timeZone: 'UTC',
+				})}</dd></div>
+				<div><dt>Outlet</dt><dd>{article.outlet}</dd></div>
+			</dl>
+			<div class="fieldwork-actions">
+				<a class="primary-action" href={article.url}>Read on DFRLab ↗</a>
+				<a href={article.originalUrl}>Original Medium edition ↗</a>
+			</div>
+		</div>
+
+		<p class="fieldwork-back"><a href="/archive/">← Return to the archive</a></p>
+	</article>
+</BaseLayout>

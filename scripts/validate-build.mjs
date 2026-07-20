@@ -84,6 +84,7 @@ assert.match(homeRedirect, /http-equiv="refresh"/);
 assert.match(homeRedirect, /rel="canonical" href="https:\/\/www\.themarginoferror\.com\/"/);
 
 const archive = await text('archive/index.html');
+const homepage = await text('index.html');
 const expectedArchiveOrder = [
 	'who-are-the-real-americans-heritage',
 	'a-continent-at-a-crossroads-natos',
@@ -126,6 +127,20 @@ const externalArticles = JSON.parse(
 );
 for (const article of externalArticles) {
 	assert.match(archive, new RegExp(article.url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
+	assert.match(archive, new RegExp(`/fieldwork/${article.slug}/`));
+	assert.match(homepage, new RegExp(`/fieldwork/${article.slug}/`));
+	const preview = await text(`fieldwork/${article.slug}/index.html`);
+	assert.match(preview, new RegExp(article.url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
+	assert.match(preview, /Read on DFRLab/);
+	assert.match(
+		sitemap,
+		new RegExp(
+			`https://www.themarginoferror.com/fieldwork/${article.slug}/`.replace(
+				/[.*+?^${}()|[\]\\]/g,
+				'\\$&',
+			),
+		),
+	);
 }
 assert.equal([...archive.matchAll(/class="external-list"/g)].length, 1);
 
