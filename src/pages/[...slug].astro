@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PostResources from '../components/PostResources.astro';
 import PostWorkspace from '../components/PostWorkspace.astro';
 
 export async function getStaticPaths() {
@@ -34,8 +35,11 @@ const { Content } = await render(post);
 						? post.data.publishedAt.toLocaleDateString('en-US', { dateStyle: 'long' })
 						: 'From the original archive'}
 				</p>
+				{post.data.originalUrl && <p><a href={post.data.originalUrl}>Original edition ↗</a></p>}
 			</div>
 		</header>
+
+		<PostResources post={post} />
 
 		{post.data.hero && (
 			<figure class="hero-figure">

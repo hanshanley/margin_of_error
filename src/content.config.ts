@@ -62,12 +62,15 @@ const postSchema = z.object({
 	tags: z.array(z.string()).default([]),
 	featured: z.boolean().default(false),
 	draft: z.boolean().default(false),
-	archiveOrder: z.number().int().optional(),
+	sortOrder: z.number().int(),
 	legacyPath: z.string().startsWith('/').optional(),
+	originalUrl: z.url().optional(),
 	thumbnail: z
 		.object({
 			src: z.string(),
 			alt: z.string(),
+			width: z.number().int().positive().optional(),
+			height: z.number().int().positive().optional(),
 		})
 		.optional(),
 	hero: z

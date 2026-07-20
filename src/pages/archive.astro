@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { comparePostsNewestFirst } from '../lib/posts';
+import externalArticles from '../data/external-articles.json';
 
 const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(comparePostsNewestFirst);
 ---
@@ -17,12 +18,20 @@ const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(com
 			{posts.map((post) => (
 				<li>
 					<p>{post.data.publishedAt?.getFullYear() ?? '—'}</p>
-					<a class="archive-thumb" href={post.data.legacyPath ?? `/${post.id}`} tabindex="-1">
+					<a
+						class="archive-thumb"
+						href={post.data.legacyPath ?? `/${post.id}`}
+						tabindex="-1"
+						aria-hidden="true"
+					>
 						{post.data.thumbnail || post.data.hero ? (
 							<img
 								src={(post.data.thumbnail ?? post.data.hero)?.src}
-								alt={(post.data.thumbnail ?? post.data.hero)?.alt}
+								alt=""
+								width={post.data.thumbnail?.width}
+								height={post.data.thumbnail?.height}
 								loading="lazy"
+								decoding="async"
 							/>
 						) : (
 							<span aria-hidden="true">±</span>
@@ -36,5 +45,32 @@ const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(com
 				</li>
 			))}
 		</ol>
+		<section class="external-archive" aria-labelledby="external-title">
+			<header class="section-heading">
+				<p class="kicker">Fieldwork elsewhere</p>
+				<h2 id="external-title">Published with DFRLab</h2>
+				<p>{String(externalArticles.length).padStart(2, '0')} external pieces</p>
+			</header>
+			<ol class="external-list">
+				{
+					externalArticles.map((article) => (
+						<li>
+							<time datetime={article.publishedAt}>
+								{new Date(`${article.publishedAt}T12:00:00Z`).toLocaleDateString('en-US', {
+									year: 'numeric',
+									month: 'short',
+									day: 'numeric',
+									timeZone: 'UTC',
+								})}
+							</time>
+							<div>
+								<h3><a href={article.url}>{article.title} ↗</a></h3>
+								<p>{article.authors} · {article.outlet}</p>
+							</div>
+						</li>
+					))
+				}
+			</ol>
+		</section>
 	</section>
 </BaseLayout>

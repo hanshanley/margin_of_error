@@ -53,13 +53,20 @@ const manifest = JSON.parse(
 	await readFile(new URL('src/data/migration-manifest.json', projectRoot), 'utf8'),
 );
 for (const entry of manifest) {
-	const sourceFile =
-		entry.sourcePath === '/home'
-			? 'home/index.html'
-			: `${entry.sourcePath.replace(/^\//, '')}/index.html`;
-	await assert.doesNotReject(() => text(sourceFile), `Legacy route is missing: ${entry.sourcePath}`);
+	if (entry.sourcePath) {
+		const sourceFile =
+			entry.sourcePath === '/home'
+				? 'home/index.html'
+				: `${entry.sourcePath.replace(/^\//, '')}/index.html`;
+		await assert.doesNotReject(() => text(sourceFile), `Legacy route is missing: ${entry.sourcePath}`);
+	}
 
 	if (entry.status === 'migrated') {
+		const targetFile =
+			entry.targetPath === '/'
+				? 'index.html'
+				: `${entry.targetPath.replace(/^\/|\/$/g, '')}/index.html`;
+		await assert.doesNotReject(() => text(targetFile), `Migrated route is missing: ${entry.targetPath}`);
 		const canonicalUrl = `https://www.themarginoferror.com${entry.targetPath}`;
 		assert.match(sitemap, new RegExp(canonicalUrl.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
 	}
@@ -78,6 +85,11 @@ assert.match(homeRedirect, /rel="canonical" href="https:\/\/www\.themarginoferro
 
 const archive = await text('archive/index.html');
 const expectedArchiveOrder = [
+	'who-are-the-real-americans-heritage',
+	'a-continent-at-a-crossroads-natos',
+	'the-republican-party-after-trump',
+	'media-coverage-of-kamala-harris-and',
+	'the-shrinking-swing-state-map',
 	'the-influx-of-russian-misinfo-on-the-rrussia-subreddit',
 	'timeline-of-events-in-the-build-up-to-the-russo-ukrainian-war',
 	'echo-chambers-embedded-in-the-structure-of-news-media-websites',
@@ -94,6 +106,28 @@ assert.ok(
 );
 assert.equal([...archive.matchAll(/class="archive-thumb"/g)].length, expectedArchiveOrder.length);
 assert.match(archive, /class="archive-thumb"[^>]*>[\s\S]*?<img /);
+assert.doesNotMatch(archive, /class="archive-thumb"[^>]*aria-hidden="(?!true)"/);
+
+const mediaCoverage = await text('media-coverage-of-kamala-harris-and/index.html');
+assert.match(mediaCoverage, /class="post-resources"/);
+assert.match(mediaCoverage, />Code</);
+assert.match(mediaCoverage, />Interactive</);
+
+const natoSpending = await text('a-continent-at-a-crossroads-natos/index.html');
+assert.match(natoSpending, />Code</);
+assert.match(natoSpending, />Data</);
+
+const swingStates = await text('the-shrinking-swing-state-map/index.html');
+assert.match(swingStates, />Data</);
+assert.match(swingStates, />Interactive</);
+
+const externalArticles = JSON.parse(
+	await readFile(new URL('src/data/external-articles.json', projectRoot), 'utf8'),
+);
+for (const article of externalArticles) {
+	assert.match(archive, new RegExp(article.url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
+}
+assert.equal([...archive.matchAll(/class="external-list"/g)].length, 1);
 
 const outputDirectory = fileURLToPath(root);
 for (const file of await collectTextFiles(outputDirectory)) {
@@ -103,6 +137,41 @@ for (const file of await collectTextFiles(outputDirectory)) {
 		/hanshanley\.github\.io/,
 		`github.io leaked into ${relative(outputDirectory, file)}`,
 	);
+	assert.doesNotMatch(contents, /written by<a/i, `Missing footer space in ${relative(outputDirectory, file)}`);
+	assert.doesNotMatch(
+		contents,
+		/Thanks for reading The Margin of Error!/i,
+		`Substack promotion leaked into ${relative(outputDirectory, file)}`,
+	);
+	assert.doesNotMatch(
+		contents,
+		/substackcdn\.com/,
+		`Substack CDN dependency leaked into ${relative(outputDirectory, file)}`,
+	);
+
+	for (const match of contents.matchAll(/<img\b[^>]*src="\/artifacts\/[^"]+"[^>]*>/g)) {
+		assert.match(match[0], /\bwidth="\d+"/, `Image width missing in ${relative(outputDirectory, file)}`);
+		assert.match(match[0], /\bheight="\d+"/, `Image height missing in ${relative(outputDirectory, file)}`);
+		assert.match(
+			match[0],
+			/\bloading="(?:lazy|eager)"/,
+			`Image loading strategy missing in ${relative(outputDirectory, file)}`,
+		);
+		assert.match(match[0], /\bdecoding="async"/, `Async decoding missing in ${relative(outputDirectory, file)}`);
+	}
+
+	for (const match of contents.matchAll(/<iframe\b[^>]*>/g)) {
+		assert.match(
+			match[0],
+			/src="https:\/\/datawrapper\.dwcdn\.net\//,
+			`Unapproved iframe host in ${relative(outputDirectory, file)}`,
+		);
+		assert.match(
+			match[0],
+			/sandbox="allow-scripts allow-same-origin"/,
+			`Iframe sandbox missing in ${relative(outputDirectory, file)}`,
+		);
+	}
 	assert.doesNotMatch(
 		contents,
 		/googleusercontent\.com/,

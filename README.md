@@ -18,7 +18,9 @@ output.
 
 Posts live in `src/content/posts` and are validated by `src/content.config.ts`. Every post has an
 Article view. Add any of the `code`, `data`, `outputs`, or `explore` artifact groups to expose the
-matching workspace tab; leave them out for narrative-only posts.
+matching workspace tab and its separate top-of-article resource badge; leave them out for
+narrative-only posts. Every post also requires a unique numeric `sortOrder`; higher values appear
+first without forcing uncertain legacy publication dates into the public byline.
 
 The interactive component name in frontmatter must exist in the allowlist in
 `src/components/explorations/Exploration.astro`. Keep small supporting files in `public/artifacts`.
@@ -26,9 +28,11 @@ Use an authoritative external host or GitHub Release for large datasets and gene
 
 `src/data/migration-manifest.json` tracks the Google Sites migration and legacy paths.
 
-The migration can be reproduced with `npm run migrate:legacy`. Pass `-- --all` to refresh every
-legacy article after changing the converter. Before publishing, confirm original dates and the
-license/attribution for every migrated image.
+The Google Sites migration can be reproduced with `npm run migrate:legacy`. Pass `-- --all` to
+refresh every legacy article after changing the converter. Run `npm run migrate:substack` to refresh
+the five locally reproduced Substack posts. DFRLab pieces remain external links in
+`src/data/external-articles.json`. Before publishing, confirm the license/attribution for every
+migrated image.
 
 ## Visual language
 

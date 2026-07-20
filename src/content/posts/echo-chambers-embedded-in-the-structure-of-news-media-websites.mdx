@@ -4,10 +4,12 @@ description: "I have nearly always voraciously consumed the news; each day chowi
 author: "Hans W. A. Hanley"
 tags: ["News media","Networks"]
 legacyPath: "/echo-chambers-embedded-in-the-structure-of-news-media-websites"
-archiveOrder: 50
+sortOrder: 50
 thumbnail:
   src: "/artifacts/legacy/echo-chambers-embedded-in-the-structure-of-news-media-websites/figure-01.png"
   alt: "Pictured here is the distribution of the partisanship of each website in our 950 websites selected (-1 (liberal/Democratic-leaning) to +1 (conservative/Republican-leaning). There was an overall liberal bias, despite my s"
+  width: 661
+  height: 391
 featured: false
 draft: false
 ---
@@ -19,13 +21,13 @@ Getting a list of news sites off of [https://mediabiasfactcheck.com/](https://me
 
 To measure each website’s approximate partisanship level (_i.e._ whether the news website is conservative or liberal), I used [a dataset from researchers at Northeastern University](https://cbw.sh/static/pdf/robertson-2018-pacmhci.pdf). This dataset tries to understand the partisanship of websites using the percentage of time that given websites are shared on Twitter by Democrats and Republicans. The dataset presents partisanship data for websites on a scale of -1 (liberal/Democratic-leaning) to +1 (conservative/Republican-leaning).
 
-![Pictured here is the distribution of the partisanship of each website in our 950 websites selected (-1 (liberal/Democratic-leaning) to +1 (conservative/Republican-leaning). There was an overall liberal bias, despite my s](/artifacts/legacy/echo-chambers-embedded-in-the-structure-of-news-media-websites/figure-01.png)
+<img src="/artifacts/legacy/echo-chambers-embedded-in-the-structure-of-news-media-websites/figure-01.png" alt={"Pictured here is the distribution of the partisanship of each website in our 950 websites selected (-1 (liberal/Democratic-leaning) to +1 (conservative/Republican-leaning). There was an overall liberal bias, despite my s"} width="661" height="391" loading="lazy" decoding="async" />
 
 Pictured here is the distribution of the partisanship of each website in our 950 websites selected (-1 (liberal/Democratic-leaning) to +1 (conservative/Republican-leaning). There was an overall liberal bias, despite my selection being random, with a median partisanship level of -0.11 (Democratic-leaning) and an average of -0.12 within the 950 websites.
 
 With all the data in hand, I was ready to answer my question. I first created a graph based on the hyperlink connections between my set of 950 news websites.
 
-![Pictured here are the connections amongst different news websites. Each node represents a different website while the directed edges represent whether each website links to another one. The more blue a website, the more ](/artifacts/legacy/echo-chambers-embedded-in-the-structure-of-news-media-websites/figure-02.png)
+<img src="/artifacts/legacy/echo-chambers-embedded-in-the-structure-of-news-media-websites/figure-02.png" alt={"Pictured here are the connections amongst different news websites. Each node represents a different website while the directed edges represent whether each website links to another one. The more blue a website, the more "} width="493" height="445" loading="lazy" decoding="async" />
 
 Pictured here are the connections amongst different news websites. Each node represents a different website while the directed edges represent whether each website links to another one. The more blue a website, the more liberal; the more red a website, the more conservative. As seen, blue websites are clumped and well connected on the left; while more conservative websites are grouped and clustered together on the right. The assortativity based on the polarization levels is 0.448.
 
@@ -41,7 +43,7 @@ I had answered my question. Baked into the structure (even of 950 seemingly rand
 
 As many of you know, (if you have been following my blog for a while), I have been doing a good amount of research into conspiracy theories. I now wanted to know if the websites that were in these political echo chambers were more likely to link with/have similarities with conspiracy theory websites. Using a list of the connections and hyperlinks of 863 conspiracy theory websites (Flat-Earth, QAnon, COVID, UFOs/Aliens,9/11), I had gathered through my previous research, I now sought to answer this final question. (You can see the details on how I collected these 863 conspiracy theory websites and their hyperlink connections [in my new research paper](https://www.hanshanley.com/publications#:~:text=Methods%20in%20the,In%20Submission)).
 
-![Pictured is the percentage of shared domain connections that news websites have with our conspiracy theory websites as a function of their URLs polarization level. On average, as websites become more polarized they share](/artifacts/legacy/echo-chambers-embedded-in-the-structure-of-news-media-websites/figure-03.png)
+<img src="/artifacts/legacy/echo-chambers-embedded-in-the-structure-of-news-media-websites/figure-03.png" alt={"Pictured is the percentage of shared domain connections that news websites have with our conspiracy theory websites as a function of their URLs polarization level. On average, as websites become more polarized they share"} width="623" height="381" loading="lazy" decoding="async" />
 
 Pictured is the percentage of shared domain connections that news websites have with our conspiracy theory websites as a function of their URLs polarization level. On average, as websites become more polarized they share more connections with conspiracy theory websites.
 

@@ -54,5 +54,45 @@
     "title": "U.S. Summit for Democracy",
     "status": "migrated",
     "notes": "6 original inline images copied locally; publication date requires confirmation."
+  },
+  {
+    "sourceUrl": "https://themarginoferror.substack.com/p/who-are-the-real-americans-heritage",
+    "sourcePlatform": "Substack",
+    "targetPath": "/who-are-the-real-americans-heritage/",
+    "title": "Who are the \"Real\" Americans? Heritage, Culture, and the Striving to Define An American Identity on the New Right",
+    "status": "migrated",
+    "notes": "7 inline images copied locally."
+  },
+  {
+    "sourceUrl": "https://themarginoferror.substack.com/p/a-continent-at-a-crossroads-natos",
+    "sourcePlatform": "Substack",
+    "targetPath": "/a-continent-at-a-crossroads-natos/",
+    "title": "A Continent at a Crossroads: NATO's Big Bet on Defense",
+    "status": "migrated",
+    "notes": "5 inline images copied locally."
+  },
+  {
+    "sourceUrl": "https://themarginoferror.substack.com/p/the-republican-party-after-trump",
+    "sourcePlatform": "Substack",
+    "targetPath": "/the-republican-party-after-trump/",
+    "title": "The Republican Party After Trump. National Conservatism and The Rejection of Globalism",
+    "status": "migrated",
+    "notes": "2 inline images copied locally."
+  },
+  {
+    "sourceUrl": "https://themarginoferror.substack.com/p/media-coverage-of-kamala-harris-and",
+    "sourcePlatform": "Substack",
+    "targetPath": "/media-coverage-of-kamala-harris-and/",
+    "title": "Media Coverage of Kamala Harris and Donald Trump 2023-2024",
+    "status": "migrated",
+    "notes": "4 inline images copied locally."
+  },
+  {
+    "sourceUrl": "https://themarginoferror.substack.com/p/the-shrinking-swing-state-map",
+    "sourcePlatform": "Substack",
+    "targetPath": "/the-shrinking-swing-state-map/",
+    "title": "The Shrinking Swing State Map",
+    "status": "migrated",
+    "notes": "3 inline images copied locally."
   }
 ]
