@@ -26,6 +26,17 @@ Use an authoritative external host or GitHub Release for large datasets and gene
 
 `src/data/migration-manifest.json` tracks the Google Sites migration and legacy paths.
 
+The migration can be reproduced with `npm run migrate:legacy`. Pass `-- --all` to refresh every
+legacy article after changing the converter. Before publishing, confirm original dates and the
+license/attribution for every migrated image.
+
+## Visual language
+
+This is a typography-led statistical broadsheet, not a generic application dashboard. Preserve the
+ruled margins, restrained ink palette, asymmetrical editorial composition, and post-specific
+graphics. Avoid stock gradient heroes, glass panels, bento/card grids, excessive pills, ornamental
+charts, and other interchangeable "AI-generated website" motifs.
+
 ## Deployment
 
 Pushes to `main` are built and published by `.github/workflows/deploy.yml`. GitHub Pages must use

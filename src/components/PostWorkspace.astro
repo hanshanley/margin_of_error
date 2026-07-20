@@ -171,5 +171,6 @@ const tabs = [
 		}
 
 		window.addEventListener('hashchange', () => selectTab(workspace, window.location.hash.slice(1)));
+		window.addEventListener('popstate', () => selectTab(workspace, window.location.hash.slice(1)));
 	}
 </script>
