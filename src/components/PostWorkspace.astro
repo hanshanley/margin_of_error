@@ -19,7 +19,6 @@ const tabs = [
 
 <div class="post-workspace" data-workspace>
 	<div class="workspace-rule">
-		<p>Read the argument. Inspect the evidence.</p>
 		<nav class="workspace-tabs" role="tablist" aria-label="Post materials">
 			{
 				tabs.map((tab, index) => (
@@ -31,7 +30,6 @@ const tabs = [
 						aria-selected={index === 0 ? 'true' : 'false'}
 						tabindex={index === 0 ? 0 : -1}
 					>
-						<span>{String(index + 1).padStart(2, '0')}</span>
 						{tab.label}
 					</a>
 				))
@@ -47,7 +45,6 @@ const tabs = [
 	{
 		artifacts?.code && (
 			<section id="panel-code" class="tab-panel artifact-panel" role="tabpanel" aria-labelledby="tab-code">
-				<p class="kicker">Source ledger</p>
 				<h2 class="panel-title">Code</h2>
 				<p class="artifact-intro">{artifacts.code.description}</p>
 				<dl class="artifact-metadata">
@@ -64,7 +61,6 @@ const tabs = [
 	{
 		artifacts?.data?.length && (
 			<section id="panel-data" class="tab-panel artifact-panel" role="tabpanel" aria-labelledby="tab-data">
-				<p class="kicker">Evidence register</p>
 				<h2 class="panel-title">Data</h2>
 				<div class="artifact-list">
 					{artifacts.data.map((item, index) => (
@@ -90,7 +86,6 @@ const tabs = [
 	{
 		artifacts?.outputs?.length && (
 			<section id="panel-outputs" class="tab-panel artifact-panel" role="tabpanel" aria-labelledby="tab-outputs">
-				<p class="kicker">Result sheet</p>
 				<h2 class="panel-title">Outputs</h2>
 				<div class="artifact-list">
 					{artifacts.outputs.map((item, index) => (
@@ -111,7 +106,6 @@ const tabs = [
 	{
 		artifacts?.explore && (
 			<section id="panel-explore" class="tab-panel artifact-panel" role="tabpanel" aria-labelledby="tab-explore">
-				<p class="kicker">Reader's desk</p>
 				<h2 class="panel-title">{artifacts.explore.title}</h2>
 				<p class="artifact-intro">{artifacts.explore.description}</p>
 				{artifacts.explore.kind === 'local' ? (

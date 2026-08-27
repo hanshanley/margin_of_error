@@ -87,10 +87,15 @@ Confirm licensing and attribution before publishing newly migrated media.
 | `npm test` | Build and validate the production artifact |
 | `npm run build` | Generate the static site in `dist/` |
 | `npm run preview` | Serve the production build locally |
+| `npm run generate:favicons` | Rebuild browser icons from `public/favicon.svg` |
 
 Application code lives in `src/`, publication assets in `public/`, migration
 tools in `scripts/`, and deployment configuration in
 `.github/workflows/deploy.yml`.
+
+The editable site icon is [`public/favicon.svg`](public/favicon.svg). After
+changing it, run `npm run generate:favicons` to refresh the PNG browser and
+home-screen variants.
 
 ## Visual language
 
