@@ -46,19 +46,6 @@ canonical metadata, and a custom 404 page. GitHub Actions publishes the
 finished artifact to GitHub Pages at
 [www.themarginoferror.com](https://www.themarginoferror.com).
 
-## Quickstart
-
-You need Git and Node.js 22.12 or newer.
-
-```bash
-git clone https://github.com/hanshanley/margin_of_error.git
-cd margin_of_error
-npm ci
-npm run dev
-```
-
-Open **<http://localhost:4321>**.
-
 ## Authoring
 
 Posts live in [`src/content/posts`](src/content/posts) and are validated by
