@@ -28,6 +28,7 @@ const requiredFiles = [
 	'index.html',
 	'404.html',
 	'about/index.html',
+	'are-you-an-ai/index.html',
 	'archive/index.html',
 	'home/index.html',
 	'my-first-blog-post/index.html',
@@ -52,6 +53,7 @@ assert.match(sitemapIndex, /https:\/\/www\.themarginoferror\.com\/sitemap-0\.xml
 
 const sitemap = await text('sitemap-0.xml');
 assert.match(sitemap, /https:\/\/www\.themarginoferror\.com\/my-first-blog-post\//);
+assert.match(sitemap, /https:\/\/www\.themarginoferror\.com\/are-you-an-ai\//);
 assert.doesNotMatch(sitemap, /https:\/\/www\.themarginoferror\.com\/home\//);
 
 const manifest = JSON.parse(
@@ -93,6 +95,13 @@ assert.match(heritagePost, /https:\/\/github\.com\/hanshanley\/pre1870_pop/);
 
 const about = await text('about/index.html');
 assert.doesNotMatch(about, /tools I know best|Google Sites and/);
+
+const aiIndex = await text('are-you-an-ai/index.html');
+assert.match(aiIndex, /Are you an AI\?/);
+assert.match(aiIndex, /0000-0002-4291-5896/);
+assert.match(aiIndex, /Every article, in one parseable block/);
+assert.match(aiIndex, /https:\/\/www\.themarginoferror\.com\/who-are-the-real-americans-heritage\//);
+assert.match(aiIndex, /https:\/\/dfrlab\.org\/2021\/08\/11\/new-covid-19-conspiracy-theories/);
 
 const homeRedirect = await text('home/index.html');
 assert.match(homeRedirect, /http-equiv="refresh"/);
