@@ -85,6 +85,21 @@ assert.match(homeRedirect, /rel="canonical" href="https:\/\/www\.themarginoferro
 
 const archive = await text('archive/index.html');
 const homepage = await text('index.html');
+assert.doesNotMatch(homepage, /Vol\. I/i);
+assert.match(
+	homepage,
+	/Essays on computer science, disinformation, statistics, and world events by <em>Hans W\. A\. Hanley<\/em>\./,
+);
+assert.equal([...homepage.matchAll(/class="post-row"/g)].length, 5);
+for (const slug of [
+	'who-are-the-real-americans-heritage',
+	'a-continent-at-a-crossroads-natos',
+	'the-republican-party-after-trump',
+	'media-coverage-of-kamala-harris-and',
+	'the-shrinking-swing-state-map',
+]) {
+	assert.match(homepage, new RegExp(`/artifacts/substack/${slug}/cover\\.jpg`));
+}
 const expectedArchiveOrder = [
 	'who-are-the-real-americans-heritage',
 	'a-continent-at-a-crossroads-natos',
@@ -128,7 +143,6 @@ const externalArticles = JSON.parse(
 for (const article of externalArticles) {
 	assert.match(archive, new RegExp(article.url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
 	assert.match(archive, new RegExp(`/fieldwork/${article.slug}/`));
-	assert.match(homepage, new RegExp(`/fieldwork/${article.slug}/`));
 	const preview = await text(`fieldwork/${article.slug}/index.html`);
 	assert.match(preview, new RegExp(article.url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
 	assert.match(preview, /Read on DFRLab/);
