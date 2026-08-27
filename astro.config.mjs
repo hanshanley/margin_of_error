@@ -9,6 +9,9 @@ export default defineConfig({
 	site: 'https://www.themarginoferror.com',
 	output: 'static',
 	trailingSlash: 'always',
+	devToolbar: {
+		enabled: false,
+	},
 	integrations: [
 		mdx(),
 		react(),
