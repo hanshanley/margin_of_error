@@ -143,33 +143,41 @@ select {
 	border-bottom: 2px solid var(--signal);
 }
 
+.masthead nav .subscribe-link {
+	padding: 0.5rem 0.7rem;
+	background: var(--signal);
+	color: var(--paper);
+}
+
 main {
 	min-height: 60vh;
 }
 
 .home-lede {
 	display: grid;
-	grid-template-columns: 1fr;
+	grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+	gap: clamp(2rem, 5vw, 5rem);
+	align-items: center;
 	width: var(--page);
 	margin: 0 auto;
 	padding: clamp(3rem, 6vw, 5rem) 0;
 }
 
 .home-deck {
-	position: relative;
-	padding-left: clamp(1.5rem, 5vw, 4.5rem);
-	border-left: 2px solid var(--signal);
+	min-width: 0;
 }
 
-.home-deck::before {
-	position: absolute;
-	top: -1.15rem;
-	left: -0.37rem;
-	width: 0.62rem;
-	height: 0.62rem;
-	border: 1px solid var(--signal);
-	border-radius: 50%;
-	content: "";
+.lead-image {
+	display: block;
+	overflow: hidden;
+	aspect-ratio: 16 / 9;
+	background: var(--paper-deep);
+}
+
+.lead-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 
 .issue-mark,
@@ -185,31 +193,70 @@ main {
 }
 
 .home-deck h1 {
-	max-width: 980px;
+	max-width: 760px;
 	margin: 0;
-	font-size: clamp(2.75rem, 5vw, 4.75rem);
+	font-size: clamp(2.5rem, 4.6vw, 4.5rem);
 	font-weight: 500;
 	letter-spacing: -0.045em;
 	line-height: 1;
 }
 
-.home-deck h1 em {
-	color: var(--signal);
-	font-weight: 400;
+.home-deck h1 a {
+	text-decoration: none;
+}
+
+.lead-date {
+	margin: -0.35rem 0 1rem;
+	color: var(--muted);
+	font-family: var(--mono);
+	font-size: 0.65rem;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+}
+
+.lead-date span {
+	white-space: nowrap;
+}
+
+.lead-subtitle {
+	max-width: 700px;
+	margin: 1rem 0 0;
+	font-size: clamp(1.15rem, 2vw, 1.55rem);
+	font-style: italic;
+	line-height: 1.3;
 }
 
 .dek {
 	max-width: 690px;
-	margin: 2.2rem 0 0;
-	font-size: clamp(1.15rem, 2vw, 1.6rem);
+	margin: 1rem 0 0;
+	font-size: clamp(1rem, 1.5vw, 1.2rem);
 	line-height: 1.42;
 }
 
-.margin-symbol {
-	margin: 0 0 1rem;
-	color: var(--signal);
-	font-size: 4rem;
-	line-height: 1;
+.lead-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	margin-top: 1.5rem;
+}
+
+.lead-actions a {
+	padding: 0.75rem 1rem;
+	font-family: var(--sans);
+	font-size: 0.72rem;
+	letter-spacing: 0.08em;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.lead-actions .primary-action {
+	background: var(--ink);
+	color: var(--paper);
+}
+
+.lead-actions .subscribe-action {
+	border: 1px solid var(--signal);
+	color: var(--signal-dark);
 }
 
 .dispatches {
