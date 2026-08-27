@@ -152,7 +152,7 @@ main {
 	grid-template-columns: 1fr;
 	width: var(--page);
 	margin: 0 auto;
-	padding: clamp(4rem, 9vw, 8rem) 0;
+	padding: clamp(3rem, 6vw, 5rem) 0;
 }
 
 .home-deck {
@@ -213,7 +213,7 @@ main {
 }
 
 .dispatches {
-	padding: clamp(3rem, 7vw, 6rem) max(20px, calc((100vw - 1180px) / 2));
+	padding: clamp(2.5rem, 5vw, 4rem) max(20px, calc((100vw - 1180px) / 2));
 	background: var(--ink);
 	color: var(--paper);
 }
@@ -251,7 +251,7 @@ main {
 	display: grid;
 	grid-template-columns: 0.25fr minmax(150px, 0.9fr) minmax(0, 2.35fr) 0.8fr;
 	gap: 2rem;
-	padding: 2.2rem 0;
+	padding: 1.6rem 0;
 	border-top: 1px solid #4c4942;
 }
 
@@ -380,7 +380,7 @@ main {
 	display: grid;
 	grid-template-columns: minmax(0, 4fr) minmax(180px, 1fr);
 	column-gap: 4rem;
-	padding: clamp(3.5rem, 8vw, 7rem) 0 3rem;
+	padding: clamp(2.5rem, 5vw, 4.5rem) 0 2rem;
 	border-bottom: 1px solid var(--ink);
 }
 
@@ -447,7 +447,7 @@ main {
 }
 
 .article-panel {
-	padding: clamp(2.5rem, 5vw, 4.5rem) 0;
+	padding: clamp(2rem, 4vw, 3.5rem) 0;
 }
 
 .post-materials {
@@ -651,12 +651,12 @@ main {
 .standard-page {
 	width: var(--page);
 	margin: 0 auto;
-	padding: clamp(4rem, 9vw, 8rem) 0;
+	padding: clamp(3rem, 6vw, 5rem) 0;
 }
 
 .page-heading {
 	max-width: 850px;
-	margin-bottom: 4rem;
+	margin-bottom: 2.5rem;
 }
 
 .page-heading h1,
@@ -685,7 +685,7 @@ main {
 	grid-template-columns: 0.8fr minmax(120px, 0.8fr) minmax(0, 2.5fr) 0.8fr;
 	gap: 2rem;
 	align-items: center;
-	padding: 1.3rem 0;
+	padding: 1rem 0;
 	border-bottom: 1px solid var(--rule);
 }
 
@@ -721,7 +721,7 @@ main {
 }
 
 .external-archive {
-	margin-top: clamp(5rem, 10vw, 9rem);
+	margin-top: clamp(3rem, 6vw, 5rem);
 }
 
 .external-archive .section-heading {
@@ -740,7 +740,7 @@ main {
 	grid-template-columns: 180px 200px minmax(0, 1fr);
 	gap: 2rem;
 	align-items: center;
-	padding: 1.25rem 0;
+	padding: 1rem 0;
 	border-bottom: 1px solid var(--rule);
 }
 
@@ -780,15 +780,15 @@ main {
 .fieldwork-preview {
 	width: var(--page);
 	margin: 0 auto;
-	padding: clamp(4rem, 9vw, 8rem) 0;
+	padding: clamp(3rem, 6vw, 5rem) 0;
 }
 
 .fieldwork-preview > header {
 	display: grid;
 	grid-template-columns: minmax(140px, 0.7fr) minmax(0, 3.3fr);
-	gap: clamp(2rem, 7vw, 7rem);
+	gap: clamp(2rem, 4vw, 4rem);
 	align-items: start;
-	padding-bottom: clamp(3rem, 6vw, 5rem);
+	padding-bottom: clamp(2rem, 4vw, 3rem);
 	border-bottom: 3px double var(--ink);
 }
 
@@ -818,8 +818,8 @@ main {
 .fieldwork-details {
 	display: grid;
 	grid-template-columns: 2.5fr 1fr;
-	gap: clamp(2rem, 7vw, 7rem);
-	padding: 2rem 0;
+	gap: clamp(2rem, 4vw, 4rem);
+	padding: 1.5rem 0;
 	border-bottom: 1px solid var(--ink);
 }
 
@@ -884,7 +884,7 @@ main {
 .about-grid {
 	display: grid;
 	grid-template-columns: 3fr 1fr;
-	gap: clamp(3rem, 9vw, 9rem);
+	gap: clamp(2rem, 5vw, 5rem);
 }
 
 .about-grid .prose {
@@ -910,7 +910,7 @@ main {
 .not-found {
 	width: var(--page);
 	margin: 0 auto;
-	padding: clamp(5rem, 12vw, 11rem) 0;
+	padding: clamp(4rem, 8vw, 7rem) 0;
 }
 
 .not-found > p:not(.margin-symbol, .kicker) {
@@ -981,8 +981,8 @@ main {
 	}
 
 	.home-lede {
-		gap: 3rem;
-		padding: 4rem 0;
+		gap: 2rem;
+		padding: 2.5rem 0;
 	}
 
 	.home-deck h1 {
