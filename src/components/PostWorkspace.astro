@@ -8,163 +8,59 @@ interface Props {
 
 const { post } = Astro.props;
 const { artifacts } = post.data;
-const tabs = [
-	{ id: 'article', label: 'Article', available: true },
-	{ id: 'code', label: 'Code', available: Boolean(artifacts?.code) },
-	{ id: 'data', label: 'Data', available: Boolean(artifacts?.data?.length) },
-	{ id: 'outputs', label: 'Outputs', available: Boolean(artifacts?.outputs?.length) },
-	{ id: 'explore', label: 'Explore', available: Boolean(artifacts?.explore) },
-].filter((tab) => tab.available);
+const hasMaterials = Boolean(
+	artifacts?.code || artifacts?.data?.length || artifacts?.outputs?.length,
+);
 ---
 
-<div class="post-workspace" data-workspace>
-	<div class="workspace-rule">
-		<nav class="workspace-tabs" role="tablist" aria-label="Post materials">
-			{
-				tabs.map((tab, index) => (
-					<a
-						id={`tab-${tab.id}`}
-						href={`#${tab.id}`}
-						role="tab"
-						aria-controls={`panel-${tab.id}`}
-						aria-selected={index === 0 ? 'true' : 'false'}
-						tabindex={index === 0 ? 0 : -1}
-					>
-						{tab.label}
-					</a>
-				))
-			}
-		</nav>
-	</div>
+<div class="post-workspace">
+	{
+		hasMaterials && (
+			<aside class="post-materials" aria-labelledby="materials-heading">
+				<h2 id="materials-heading">Materials</h2>
+				<ul>
+					{artifacts?.code && (
+						<li>
+							<span>Code</span>
+							<a href={artifacts.code.repository}>Analysis repository ↗</a>
+						</li>
+					)}
+					{artifacts?.data?.map((item) => (
+						<li>
+							<span>Data</span>
+							<a href={item.url}>{item.title} ↗</a>
+						</li>
+					))}
+					{artifacts?.outputs?.map((item) => (
+						<li>
+							<span>Output</span>
+							<a href={item.url}>{item.title} ↗</a>
+						</li>
+					))}
+				</ul>
+			</aside>
+		)
+	}
 
-	<section id="panel-article" class="tab-panel article-panel" role="tabpanel" aria-labelledby="tab-article">
-		<h2 class="panel-title">Article</h2>
+	<section class="article-panel">
+		<h2 class="visually-hidden">Article</h2>
 		<div class="prose"><slot /></div>
 	</section>
 
 	{
-		artifacts?.code && (
-			<section id="panel-code" class="tab-panel artifact-panel" role="tabpanel" aria-labelledby="tab-code">
-				<h2 class="panel-title">Code</h2>
-				<p class="artifact-intro">{artifacts.code.description}</p>
-				<dl class="artifact-metadata">
-					<div><dt>Repository</dt><dd><a href={artifacts.code.repository}>Open source</a></dd></div>
-					{artifacts.code.revision && <div><dt>Revision</dt><dd><code>{artifacts.code.revision}</code></dd></div>}
-					{artifacts.code.path && <div><dt>Path</dt><dd><code>{artifacts.code.path}</code></dd></div>}
-					{artifacts.code.language && <div><dt>Language</dt><dd>{artifacts.code.language}</dd></div>}
-					{artifacts.code.license && <div><dt>License</dt><dd>{artifacts.code.license}</dd></div>}
-				</dl>
-			</section>
-		)
-	}
-
-	{
-		artifacts?.data?.length && (
-			<section id="panel-data" class="tab-panel artifact-panel" role="tabpanel" aria-labelledby="tab-data">
-				<h2 class="panel-title">Data</h2>
-				<div class="artifact-list">
-					{artifacts.data.map((item, index) => (
-						<article>
-							<p class="artifact-index">{String(index + 1).padStart(2, '0')}</p>
-							<div>
-								<h3><a href={item.url}>{item.title}</a></h3>
-								<p>{item.description}</p>
-								<p class="artifact-facts">
-									Source: {item.source}
-									{item.version && <> · Version: {item.version}</>}
-									{item.format && <> · {item.format}</>}
-									{item.size && <> · {item.size}</>}
-								</p>
-							</div>
-						</article>
-					))}
-				</div>
-			</section>
-		)
-	}
-
-	{
-		artifacts?.outputs?.length && (
-			<section id="panel-outputs" class="tab-panel artifact-panel" role="tabpanel" aria-labelledby="tab-outputs">
-				<h2 class="panel-title">Outputs</h2>
-				<div class="artifact-list">
-					{artifacts.outputs.map((item, index) => (
-						<article>
-							<p class="artifact-index">{String(index + 1).padStart(2, '0')}</p>
-							<div>
-								<p class="output-kind">{item.kind}</p>
-								<h3><a href={item.url}>{item.title}</a></h3>
-								<p>{item.description}</p>
-							</div>
-						</article>
-					))}
-				</div>
-			</section>
-		)
-	}
-
-	{
 		artifacts?.explore && (
-			<section id="panel-explore" class="tab-panel artifact-panel" role="tabpanel" aria-labelledby="tab-explore">
-				<h2 class="panel-title">{artifacts.explore.title}</h2>
-				<p class="artifact-intro">{artifacts.explore.description}</p>
+			<section class="post-exploration" aria-labelledby="exploration-heading">
+				<h2 id="exploration-heading">{artifacts.explore.title}</h2>
+				<p>{artifacts.explore.description}</p>
 				{artifacts.explore.kind === 'local' ? (
 					<>
 						<Exploration module={artifacts.explore.module} />
 						<noscript><p class="fallback-note">{artifacts.explore.fallback}</p></noscript>
 					</>
 				) : (
-					<p><a class="external-demo" href={artifacts.explore.url}>Open the external exploration ↗</a></p>
+					<p><a href={artifacts.explore.url}>Open the external exploration ↗</a></p>
 				)}
 			</section>
 		)
 	}
 </div>
-
-<script>
-	const selectTab = (workspace: HTMLElement, id: string, moveFocus = false) => {
-		const tabs = [...workspace.querySelectorAll<HTMLAnchorElement>('[role="tab"]')];
-		if (!tabs.some((tab) => tab.hash === `#${id}`)) id = 'article';
-
-		for (const tab of tabs) {
-			const selected = tab.hash === `#${id}`;
-			tab.setAttribute('aria-selected', String(selected));
-			tab.tabIndex = selected ? 0 : -1;
-			if (moveFocus && selected) tab.focus();
-		}
-
-		for (const panel of workspace.querySelectorAll<HTMLElement>('[role="tabpanel"]')) {
-			panel.hidden = panel.id !== `panel-${id}`;
-		}
-	};
-
-	for (const workspace of document.querySelectorAll<HTMLElement>('[data-workspace]')) {
-		const initialId = window.location.hash.slice(1) || 'article';
-		selectTab(workspace, initialId);
-
-		const tabs = [...workspace.querySelectorAll<HTMLAnchorElement>('[role="tab"]')];
-		for (const [index, tab] of tabs.entries()) {
-			tab.addEventListener('click', (event) => {
-				event.preventDefault();
-				const id = tab.hash.slice(1);
-				history.pushState(null, '', `#${id}`);
-				selectTab(workspace, id);
-			});
-			tab.addEventListener('keydown', (event) => {
-				if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
-				event.preventDefault();
-				let nextIndex = index;
-				if (event.key === 'ArrowLeft') nextIndex = (index - 1 + tabs.length) % tabs.length;
-				if (event.key === 'ArrowRight') nextIndex = (index + 1) % tabs.length;
-				if (event.key === 'Home') nextIndex = 0;
-				if (event.key === 'End') nextIndex = tabs.length - 1;
-				const id = tabs[nextIndex].hash.slice(1);
-				history.pushState(null, '', `#${id}`);
-				selectTab(workspace, id, true);
-			});
-		}
-
-		window.addEventListener('hashchange', () => selectTab(workspace, window.location.hash.slice(1)));
-		window.addEventListener('popstate', () => selectTab(workspace, window.location.hash.slice(1)));
-	}
-</script>
