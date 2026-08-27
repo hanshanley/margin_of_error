@@ -55,6 +55,7 @@ const externalExploreSchema = z.object({
 
 const postSchema = z.object({
 	title: z.string(),
+	subtitle: z.string().optional(),
 	description: z.string(),
 	publishedAt: z.coerce.date().optional(),
 	updatedAt: z.coerce.date().optional(),

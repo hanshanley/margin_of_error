@@ -12,6 +12,8 @@ const manifest = JSON.parse(await readFile(manifestPath, 'utf8'));
 const articles = [
 	{
 		slug: 'who-are-the-real-americans-heritage',
+		title: 'Who are the "Real" Americans?',
+		subtitle: 'Heritage, Culture, and the Striving to Define An American Identity on the New Right',
 		tags: ['American identity', 'Immigration', 'Politics'],
 		artifacts: {
 			data: [
@@ -227,7 +229,8 @@ for (const article of articles) {
 		.trim();
 	const frontmatter = [
 		'---',
-		`title: ${JSON.stringify(title)}`,
+		`title: ${JSON.stringify(article.title ?? title)}`,
+		...(article.subtitle ? [`subtitle: ${JSON.stringify(article.subtitle)}`] : []),
 		`description: ${JSON.stringify(description)}`,
 		`publishedAt: ${JSON.stringify(publishedAt)}`,
 		`sortOrder: ${Math.floor(new Date(publishedAt).valueOf() / 1000)}`,
