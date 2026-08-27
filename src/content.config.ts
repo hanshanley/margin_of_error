@@ -18,6 +18,7 @@ const codeSchema = z.object({
 });
 
 const dataItemSchema = z.object({
+	label: z.string().optional(),
 	title: z.string(),
 	description: z.string(),
 	url: z.url(),

@@ -452,28 +452,15 @@ main {
 
 .post-materials {
 	display: flex;
-	gap: 1.5rem;
 	align-items: baseline;
 	max-width: 740px;
-	margin: 2rem 0 0 clamp(0px, 12vw, 150px);
-	padding: 0.75rem 1rem;
-	background: color-mix(in srgb, var(--ink) 5%, transparent);
-}
-
-.post-materials h2 {
-	flex: none;
-	margin: 0;
-	font-family: var(--mono);
-	font-size: 0.65rem;
-	font-weight: 400;
-	letter-spacing: 0.08em;
-	text-transform: uppercase;
+	margin: 1.5rem 0 0 clamp(0px, 12vw, 150px);
 }
 
 .post-materials ul {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 0.45rem 1.5rem;
+	gap: 0.45rem 1.75rem;
 	margin: 0;
 	padding: 0;
 	list-style: none;
@@ -486,7 +473,7 @@ main {
 }
 
 .post-materials li span {
-	color: var(--muted);
+	color: var(--signal);
 	font-family: var(--mono);
 	font-size: 0.62rem;
 	letter-spacing: 0.06em;
@@ -496,6 +483,7 @@ main {
 .post-materials a {
 	font-family: var(--sans);
 	font-size: 0.78rem;
+	text-underline-offset: 0.2rem;
 }
 
 .prose {
@@ -526,6 +514,31 @@ main {
 	border-left: 2px solid var(--signal);
 	font-size: 1.3rem;
 	font-style: italic;
+}
+
+.prose .footnotes {
+	margin-top: 3rem;
+	color: var(--muted);
+	font-size: 0.82rem;
+	line-height: 1.45;
+}
+
+.prose .footnotes h2 {
+	margin: 0 0 0.75rem;
+	font-family: var(--mono);
+	font-size: 0.65rem;
+	font-weight: 400;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.prose .footnotes ol {
+	margin: 0;
+	padding-left: 1.25rem;
+}
+
+.prose .footnotes li + li {
+	margin-top: 0.6rem;
 }
 
 .prose iframe {

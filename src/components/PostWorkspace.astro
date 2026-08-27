@@ -16,8 +16,7 @@ const hasMaterials = Boolean(
 <div class="post-workspace">
 	{
 		hasMaterials && (
-			<aside class="post-materials" aria-labelledby="materials-heading">
-				<h2 id="materials-heading">Materials</h2>
+			<aside class="post-materials" aria-label="Article materials">
 				<ul>
 					{artifacts?.code && (
 						<li>
@@ -27,7 +26,7 @@ const hasMaterials = Boolean(
 					)}
 					{artifacts?.data?.map((item) => (
 						<li>
-							<span>Data</span>
+							<span>{item.label ?? 'Data'}</span>
 							<a href={item.url}>{item.title} ↗</a>
 						</li>
 					))}
