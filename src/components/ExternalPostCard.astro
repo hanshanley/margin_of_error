@@ -1,4 +1,6 @@
 ---
+import { formatFrenchRepublicanDate } from '../lib/french-republican-calendar';
+
 interface ExternalArticle {
 	slug: string;
 	title: string;
@@ -32,6 +34,7 @@ const publishedAt = new Date(`${article.publishedAt}T12:00:00Z`);
 				day: 'numeric',
 				timeZone: 'UTC',
 			})}
+			<span class="republican-date"> · {formatFrenchRepublicanDate(publishedAt)}</span>
 			<span> · Published elsewhere</span>
 		</p>
 		<h2><a href={path}>{article.title}</a></h2>

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import externalArticles from '../../data/external-articles.json';
+import { formatFrenchRepublicanDate } from '../../lib/french-republican-calendar';
 
 export function getStaticPaths() {
 	return externalArticles.map((article) => ({
@@ -35,7 +36,7 @@ const publishedAt = new Date(`${article.publishedAt}T12:00:00Z`);
 					month: 'long',
 					day: 'numeric',
 					timeZone: 'UTC',
-				})}</dd></div>
+				})} · {formatFrenchRepublicanDate(publishedAt)}</dd></div>
 				<div><dt>Outlet</dt><dd>{article.outlet}</dd></div>
 			</dl>
 			<div class="fieldwork-actions">

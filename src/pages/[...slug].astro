@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PostResources from '../components/PostResources.astro';
 import PostWorkspace from '../components/PostWorkspace.astro';
+import { formatFrenchRepublicanDate } from '../lib/french-republican-calendar';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('posts', ({ data }) => !data.draft);
@@ -32,7 +33,10 @@ const { Content } = await render(post);
 				<p>By {post.data.author}</p>
 				<p>
 					{post.data.publishedAt
-						? post.data.publishedAt.toLocaleDateString('en-US', { dateStyle: 'long' })
+						? `${post.data.publishedAt.toLocaleDateString('en-US', {
+								dateStyle: 'long',
+								timeZone: 'UTC',
+							})} · ${formatFrenchRepublicanDate(post.data.publishedAt)}`
 						: 'From the original archive'}
 				</p>
 				{post.data.originalUrl && <p><a href={post.data.originalUrl}>Original edition ↗</a></p>}
