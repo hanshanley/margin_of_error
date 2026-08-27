@@ -1,7 +1,6 @@
 ---
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PostResources from '../components/PostResources.astro';
 import PostWorkspace from '../components/PostWorkspace.astro';
 import { formatFrenchRepublicanDate } from '../lib/french-republican-calendar';
 
@@ -42,8 +41,6 @@ const { Content } = await render(post);
 				{post.data.originalUrl && <p><a href={post.data.originalUrl}>Original edition ↗</a></p>}
 			</div>
 		</header>
-
-		<PostResources post={post} />
 
 		{post.data.hero && (
 			<figure class="hero-figure">

@@ -13,6 +13,17 @@ const articles = [
 	{
 		slug: 'who-are-the-real-americans-heritage',
 		tags: ['American identity', 'Immigration', 'Politics'],
+		artifacts: {
+			data: [
+				{
+					title: 'Pre-1870 U.S. population data',
+					description: 'Data and analysis used to examine ancestry and the U.S. population before 1870.',
+					url: 'https://github.com/hanshanley/pre1870_pop',
+					source: 'Hans W. A. Hanley',
+					format: 'GitHub repository',
+				},
+			],
+		},
 	},
 	{
 		slug: 'a-continent-at-a-crossroads-natos',
@@ -52,12 +63,6 @@ const articles = [
 				description: 'Website list and analysis materials for the candidate-coverage comparison.',
 				repository: 'https://github.com/hanshanley/harris-trump-coverage',
 			},
-			explore: {
-				url: 'https://datawrapper.dwcdn.net/3FS7c/2/',
-				title: 'Explore candidate coverage',
-				description: 'Open the interactive comparison of language used to describe Kamala Harris.',
-				fallback: 'The article includes static figures if the interactive chart is unavailable.',
-			},
 		},
 	},
 	{
@@ -73,12 +78,6 @@ const articles = [
 					format: 'CSV',
 				},
 			],
-			explore: {
-				url: 'https://datawrapper.dwcdn.net/vC8z5/1/',
-				title: 'Explore the swing-state map',
-				description: 'Open the interactive history of changing presidential battlegrounds.',
-				fallback: 'The article includes static figures if the interactive map is unavailable.',
-			},
 		},
 	},
 ];

@@ -34,6 +34,8 @@ const requiredFiles = [
 	'robots.txt',
 	'sitemap-index.xml',
 	'CNAME',
+	'favicon-32.png',
+	'apple-touch-icon.png',
 ];
 
 for (const file of requiredFiles) {
@@ -81,6 +83,9 @@ assert.doesNotMatch(narrativePost, /id="tab-explore"/);
 
 const heritagePost = await text('who-are-the-real-americans-heritage/index.html');
 assert.match(heritagePost, /June 29, 2026 · 11 Messidor, An CCXXXIV/);
+assert.match(heritagePost, /id="tab-data"/);
+assert.match(heritagePost, /https:\/\/github\.com\/hanshanley\/pre1870_pop/);
+assert.doesNotMatch(heritagePost, /id="tab-explore"/);
 
 const about = await text('about/index.html');
 assert.doesNotMatch(about, /tools I know best|Google Sites and/);
@@ -137,9 +142,10 @@ assert.match(archive, /class="archive-thumb"[^>]*>[\s\S]*?<img /);
 assert.doesNotMatch(archive, /class="archive-thumb"[^>]*aria-hidden="(?!true)"/);
 
 const mediaCoverage = await text('media-coverage-of-kamala-harris-and/index.html');
-assert.match(mediaCoverage, /class="post-resources"/);
+assert.doesNotMatch(mediaCoverage, /class="post-resources"/);
+assert.match(mediaCoverage, /id="tab-code"/);
+assert.doesNotMatch(mediaCoverage, /id="tab-explore"/);
 assert.match(mediaCoverage, />Code</);
-assert.match(mediaCoverage, />Interactive</);
 
 const natoSpending = await text('a-continent-at-a-crossroads-natos/index.html');
 assert.match(natoSpending, />Code</);
@@ -147,7 +153,7 @@ assert.match(natoSpending, />Data</);
 
 const swingStates = await text('the-shrinking-swing-state-map/index.html');
 assert.match(swingStates, />Data</);
-assert.match(swingStates, />Interactive</);
+assert.doesNotMatch(swingStates, /id="tab-explore"/);
 
 const externalArticles = JSON.parse(
 	await readFile(new URL('src/data/external-articles.json', projectRoot), 'utf8'),
