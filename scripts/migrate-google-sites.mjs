@@ -8,7 +8,10 @@ import TurndownService from 'turndown';
 const projectRoot = fileURLToPath(new URL('../', import.meta.url));
 const manifestPath = join(projectRoot, 'src/data/migration-manifest.json');
 const manifest = JSON.parse(await readFile(manifestPath, 'utf8'));
-const origin = 'https://www.themarginoferror.com';
+const origin = process.env.GOOGLE_SITES_ORIGIN?.replace(/\/$/, '');
+if (!origin) {
+	throw new Error('Set GOOGLE_SITES_ORIGIN to the published Google Sites source URL.');
+}
 
 const tagsByPath = {
 	'/echo-chambers-embedded-in-the-structure-of-news-media-websites': ['News media', 'Networks'],

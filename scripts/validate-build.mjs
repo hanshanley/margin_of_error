@@ -86,6 +86,7 @@ assert.match(homeRedirect, /rel="canonical" href="https:\/\/www\.themarginoferro
 const archive = await text('archive/index.html');
 const homepage = await text('index.html');
 assert.doesNotMatch(homepage, /Vol\. I/i);
+assert.doesNotMatch(homepage, /field notes?/i);
 assert.match(
 	homepage,
 	/Essays on computer science, disinformation, statistics, and world events by <em>Hans W\. A\. Hanley<\/em>\./,

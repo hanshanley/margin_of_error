@@ -11,12 +11,6 @@ const path = post.data.legacyPath ?? `/${post.id}`;
 const thumbnail = post.data.thumbnail ?? post.data.hero;
 const thumbnailWidth = post.data.thumbnail?.width;
 const thumbnailHeight = post.data.thumbnail?.height;
-const artifactCount = [
-	post.data.artifacts?.code,
-	post.data.artifacts?.data?.length,
-	post.data.artifacts?.outputs?.length,
-	post.data.artifacts?.explore,
-].filter(Boolean).length;
 ---
 
 <article class="post-row">
@@ -40,7 +34,6 @@ const artifactCount = [
 	<div class="post-summary">
 		<p class="post-meta">
 			{post.data.publishedAt ? post.data.publishedAt.toLocaleDateString('en-US', { dateStyle: 'long' }) : 'From the archive'}
-			{artifactCount > 0 && <span> · {artifactCount} field note{artifactCount === 1 ? '' : 's'}</span>}
 		</p>
 		<h2><a href={path}>{post.data.title}</a></h2>
 		<p>{post.data.description}</p>
