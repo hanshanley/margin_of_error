@@ -21,7 +21,7 @@ const hasMaterials = Boolean(
 					{artifacts?.code && (
 						<li>
 							<span>Code</span>
-							<a href={artifacts.code.repository}>Analysis repository ↗</a>
+							<a href={artifacts.code.repository}>{artifacts.code.title ?? 'Analysis repository'} ↗</a>
 						</li>
 					)}
 					{artifacts?.data?.map((item) => (

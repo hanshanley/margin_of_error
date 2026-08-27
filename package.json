@@ -13,6 +13,7 @@
     "check": "astro check",
     "test": "npm run build && node scripts/validate-build.mjs",
     "generate:favicons": "node scripts/generate-favicons.mjs",
+    "sync:external-thumbnails": "node scripts/download-external-thumbnails.mjs",
     "migrate:legacy": "node scripts/migrate-google-sites.mjs",
     "migrate:substack": "node scripts/migrate-substack.mjs"
   },

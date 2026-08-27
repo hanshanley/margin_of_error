@@ -85,6 +85,21 @@ const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(com
 									{formatFrenchRepublicanDate(new Date(`${article.publishedAt}T12:00:00Z`))}
 								</span>
 							</time>
+							<a
+								class="archive-thumb"
+								href={`/fieldwork/${article.slug}/`}
+								tabindex="-1"
+								aria-hidden="true"
+							>
+								<img
+									src={article.thumbnail.src}
+									alt=""
+									width={article.thumbnail.width}
+									height={article.thumbnail.height}
+									loading="lazy"
+									decoding="async"
+								/>
+							</a>
 							<div>
 								<h3><a href={`/fieldwork/${article.slug}/`}>{article.title}</a></h3>
 								<p>{article.authors} · {article.outlet}</p>

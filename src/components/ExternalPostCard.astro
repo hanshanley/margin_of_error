@@ -8,6 +8,12 @@ interface ExternalArticle {
 	outlet: string;
 	publishedAt: string;
 	description: string;
+	thumbnail: {
+		src: string;
+		alt: string;
+		width: number;
+		height: number;
+	};
 }
 
 interface Props {
@@ -23,8 +29,14 @@ const publishedAt = new Date(`${article.publishedAt}T12:00:00Z`);
 <article class="post-row">
 	<p class="post-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</p>
 	<a class="post-thumb fieldwork-thumb" href={path} tabindex="-1" aria-hidden="true">
-		<span>DFR</span>
-		<strong>{publishedAt.getUTCFullYear().toString().slice(-2)}</strong>
+		<img
+			src={article.thumbnail.src}
+			alt=""
+			width={article.thumbnail.width}
+			height={article.thumbnail.height}
+			loading="lazy"
+			decoding="async"
+		/>
 	</a>
 	<div class="post-summary">
 		<p class="post-meta">

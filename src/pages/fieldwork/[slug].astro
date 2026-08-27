@@ -14,13 +14,18 @@ const { article } = Astro.props;
 const publishedAt = new Date(`${article.publishedAt}T12:00:00Z`);
 ---
 
-<BaseLayout title={article.title} description={article.description}>
+<BaseLayout title={article.title} description={article.description} image={article.thumbnail.src}>
 	<article class="fieldwork-preview">
 		<header>
-			<div class="fieldwork-mark" aria-hidden="true">
-				<span>DFR</span>
-				<strong>{publishedAt.getUTCFullYear().toString().slice(-2)}</strong>
-			</div>
+			<img
+				class="fieldwork-cover"
+				src={article.thumbnail.src}
+				alt={article.thumbnail.alt}
+				width={article.thumbnail.width}
+				height={article.thumbnail.height}
+				loading="eager"
+				decoding="async"
+			/>
 			<div>
 				<p class="kicker">Published elsewhere</p>
 				<h1>{article.title}</h1>

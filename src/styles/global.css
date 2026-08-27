@@ -737,8 +737,9 @@ main {
 
 .external-list li {
 	display: grid;
-	grid-template-columns: 0.8fr 3.2fr;
+	grid-template-columns: 180px 200px minmax(0, 1fr);
 	gap: 2rem;
+	align-items: center;
 	padding: 1.25rem 0;
 	border-bottom: 1px solid var(--rule);
 }
@@ -791,26 +792,11 @@ main {
 	border-bottom: 3px double var(--ink);
 }
 
-.fieldwork-mark {
-	display: grid;
+.fieldwork-cover {
+	width: 100%;
 	aspect-ratio: 1;
-	align-content: space-between;
-	padding: 1rem;
 	border: 1px solid var(--ink);
-	background: var(--signal);
-	color: var(--paper);
-	font-family: var(--mono);
-}
-
-.fieldwork-mark span {
-	font-size: 0.7rem;
-	letter-spacing: 0.14em;
-}
-
-.fieldwork-mark strong {
-	font-size: clamp(3rem, 8vw, 6rem);
-	font-weight: 400;
-	line-height: 0.8;
+	object-fit: cover;
 }
 
 .fieldwork-preview h1 {
@@ -1065,8 +1051,8 @@ main {
 	}
 
 	.external-list li {
-		grid-template-columns: 1fr;
-		gap: 0.45rem;
+		grid-template-columns: 0.7fr 0.8fr 1.95fr;
+		gap: 1rem;
 	}
 
 	.fieldwork-preview > header,
@@ -1074,7 +1060,7 @@ main {
 		grid-template-columns: 1fr;
 	}
 
-	.fieldwork-mark {
+	.fieldwork-cover {
 		width: 130px;
 	}
 
