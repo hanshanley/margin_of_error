@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { comparePostsNewestFirst } from '../lib/posts';
+import { comparePostsNewestFirst, getPostPath } from '../lib/posts';
 import { formatFrenchRepublicanDate } from '../lib/french-republican-calendar';
 import externalArticles from '../data/external-articles.json';
 
@@ -37,7 +37,7 @@ const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(com
 					</p>
 					<a
 						class="archive-thumb"
-						href={post.data.legacyPath ?? `/${post.id}`}
+						href={getPostPath(post)}
 						tabindex="-1"
 						aria-hidden="true"
 					>
@@ -55,7 +55,7 @@ const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(com
 						)}
 					</a>
 					<div>
-						<h2><a href={post.data.legacyPath ?? `/${post.id}`}>{post.data.title}</a></h2>
+						<h2><a href={getPostPath(post)}>{post.data.title}</a></h2>
 						<p>{post.data.description}</p>
 					</div>
 					<p>{post.data.tags.join(', ')}</p>
