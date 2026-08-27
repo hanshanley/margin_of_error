@@ -999,7 +999,16 @@ main {
 	}
 
 	.masthead nav ul {
-		gap: 1rem;
+		display: grid;
+		grid-template-columns: repeat(4, auto);
+		gap: 0.4rem;
+		justify-content: space-between;
+		width: 100%;
+		font-size: 0.7rem;
+	}
+
+	.masthead nav .subscribe-link {
+		padding: 0.4rem 0.5rem;
 	}
 
 	.home-lede,
