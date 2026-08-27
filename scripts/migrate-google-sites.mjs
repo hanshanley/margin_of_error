@@ -147,7 +147,7 @@ for (const entry of entries) {
 	const firstParagraph =
 		markdown
 			.split(/\n{2,}/)
-			.find((block) => !/^(?:#|!\[)/.test(block) && block.length > 80) ?? '';
+			.find((block) => !/^(?:#|!\[|<img\b)/i.test(block) && block.length > 80) ?? '';
 	const plainText = firstParagraph
 		.replace(/!\[([^\]]*)\]\([^)]+\)/g, '$1')
 		.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
