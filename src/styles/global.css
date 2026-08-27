@@ -420,57 +420,65 @@ main {
 	font-size: 0.78rem;
 }
 
-.workspace-rule {
-	position: sticky;
-	z-index: 10;
-	top: 0;
-	display: flex;
-	margin-top: 2rem;
-	padding: 0.55rem 0;
-	border-block: 1px solid var(--ink);
-	background: color-mix(in srgb, var(--paper) 94%, transparent);
-	backdrop-filter: blur(6px);
-}
-
-.workspace-tabs {
-	display: flex;
-	gap: 1.25rem;
-	overflow-x: auto;
-}
-
-.workspace-tabs a {
-	padding: 0.25rem 0;
-	border-bottom: 2px solid transparent;
-	font-family: var(--sans);
-	font-size: 0.72rem;
-	letter-spacing: 0.08em;
-	text-decoration: none;
-	text-transform: uppercase;
-	white-space: nowrap;
-}
-
-.workspace-tabs a[aria-selected="true"] {
-	border-color: var(--signal);
-}
-
-.tab-panel {
-	padding: clamp(2rem, 4vw, 4rem) 0;
-}
-
-.panel-title {
-	margin: 0 0 1.5rem;
-	font-size: clamp(2rem, 4vw, 3.5rem);
-	font-weight: 500;
-	letter-spacing: -0.05em;
-}
-
-.article-panel .panel-title {
+.visually-hidden {
 	position: absolute;
 	width: 1px;
 	height: 1px;
 	overflow: hidden;
 	clip: rect(0 0 0 0);
 	white-space: nowrap;
+}
+
+.article-panel {
+	padding: clamp(2.5rem, 5vw, 4.5rem) 0;
+}
+
+.post-materials {
+	display: flex;
+	gap: 1.5rem;
+	align-items: baseline;
+	max-width: 740px;
+	margin: 2rem 0 0 clamp(0px, 12vw, 150px);
+	padding: 0.75rem 1rem;
+	background: color-mix(in srgb, var(--ink) 5%, transparent);
+}
+
+.post-materials h2 {
+	flex: none;
+	margin: 0;
+	font-family: var(--mono);
+	font-size: 0.65rem;
+	font-weight: 400;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.post-materials ul {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.45rem 1.5rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.post-materials li {
+	display: flex;
+	gap: 0.5rem;
+	align-items: baseline;
+}
+
+.post-materials li span {
+	color: var(--muted);
+	font-family: var(--mono);
+	font-size: 0.62rem;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+
+.post-materials a {
+	font-family: var(--sans);
+	font-size: 0.78rem;
 }
 
 .prose {
@@ -509,80 +517,9 @@ main {
 	border: 1px solid var(--rule);
 }
 
-.prose code,
-.artifact-metadata code {
+.prose code {
 	font-family: var(--mono);
 	font-size: 0.85em;
-}
-
-.artifact-panel {
-	max-width: 900px;
-	margin: 0 auto;
-}
-
-.artifact-intro {
-	max-width: 660px;
-	margin: -1.5rem 0 3rem;
-	font-size: 1.2rem;
-}
-
-.artifact-metadata {
-	margin: 0;
-	border-top: 3px double var(--ink);
-}
-
-.artifact-metadata div {
-	display: grid;
-	grid-template-columns: 1fr 3fr;
-	gap: 2rem;
-	padding: 1rem 0;
-	border-bottom: 1px solid var(--rule);
-}
-
-.artifact-metadata dt,
-.artifact-facts,
-.output-kind {
-	font-family: var(--mono);
-	font-size: 0.65rem;
-	letter-spacing: 0.06em;
-	text-transform: uppercase;
-}
-
-.artifact-metadata dd {
-	margin: 0;
-}
-
-.artifact-list {
-	border-top: 3px double var(--ink);
-}
-
-.artifact-list article {
-	display: grid;
-	grid-template-columns: 0.4fr 3.6fr;
-	gap: 2rem;
-	padding: 1.5rem 0;
-	border-bottom: 1px solid var(--rule);
-}
-
-.artifact-index {
-	color: var(--signal);
-	font-family: var(--mono);
-	font-size: 0.7rem;
-}
-
-.artifact-list h3 {
-	margin: 0;
-	font-size: 1.55rem;
-	font-weight: 500;
-}
-
-.artifact-list p {
-	margin: 0.4rem 0;
-}
-
-.artifact-facts,
-.output-kind {
-	color: var(--muted);
 }
 
 .calculator {
@@ -1066,14 +1003,9 @@ main {
 		font-size: clamp(2.5rem, 11vw, 3.75rem);
 	}
 
-	.workspace-rule {
-		grid-template-columns: 1fr;
-		margin-inline: -14px;
-		padding-inline: 14px;
-	}
-
-	.workspace-tabs {
-		gap: 1rem;
+	.post-materials {
+		align-items: flex-start;
+		margin-left: 0;
 	}
 
 	.prose {

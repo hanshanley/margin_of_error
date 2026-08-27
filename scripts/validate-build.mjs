@@ -75,17 +75,13 @@ for (const entry of manifest) {
 }
 
 const narrativePost = await text('my-first-blog-post/index.html');
-assert.match(narrativePost, /id="tab-article"/);
-assert.doesNotMatch(narrativePost, /id="tab-code"/);
-assert.doesNotMatch(narrativePost, /id="tab-data"/);
-assert.doesNotMatch(narrativePost, /id="tab-outputs"/);
-assert.doesNotMatch(narrativePost, /id="tab-explore"/);
+assert.doesNotMatch(narrativePost, /class="post-materials"/);
 
 const heritagePost = await text('who-are-the-real-americans-heritage/index.html');
 assert.match(heritagePost, /June 29, 2026 · 11 Messidor, An CCXXXIV/);
-assert.match(heritagePost, /id="tab-data"/);
+assert.match(heritagePost, /class="post-materials"/);
+assert.match(heritagePost, />Data</);
 assert.match(heritagePost, /https:\/\/github\.com\/hanshanley\/pre1870_pop/);
-assert.doesNotMatch(heritagePost, /id="tab-explore"/);
 
 const about = await text('about/index.html');
 assert.doesNotMatch(about, /tools I know best|Google Sites and/);
@@ -143,8 +139,7 @@ assert.doesNotMatch(archive, /class="archive-thumb"[^>]*aria-hidden="(?!true)"/)
 
 const mediaCoverage = await text('media-coverage-of-kamala-harris-and/index.html');
 assert.doesNotMatch(mediaCoverage, /class="post-resources"/);
-assert.match(mediaCoverage, /id="tab-code"/);
-assert.doesNotMatch(mediaCoverage, /id="tab-explore"/);
+assert.match(mediaCoverage, /class="post-materials"/);
 assert.match(mediaCoverage, />Code</);
 
 const natoSpending = await text('a-continent-at-a-crossroads-natos/index.html');
@@ -153,7 +148,6 @@ assert.match(natoSpending, />Data</);
 
 const swingStates = await text('the-shrinking-swing-state-map/index.html');
 assert.match(swingStates, />Data</);
-assert.doesNotMatch(swingStates, /id="tab-explore"/);
 
 const externalArticles = JSON.parse(
 	await readFile(new URL('src/data/external-articles.json', projectRoot), 'utf8'),
