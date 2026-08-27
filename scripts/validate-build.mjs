@@ -108,10 +108,13 @@ assert.doesNotMatch(homepage, /Vol\. I/i);
 assert.doesNotMatch(homepage, /field notes?/i);
 assert.match(
 	homepage,
-	/Essays on computer science, disinformation, statistics, and world events by <em>Hans W\. A\. Hanley<\/em>\./,
+	/<p class="kicker">Latest essay<\/p>/,
 );
+assert.match(homepage, /<h1 id="lead-story-title"><a href="\/who-are-the-real-americans-heritage\/">/);
+assert.match(homepage, />Read article<\/a>/);
+assert.match(homepage, />Subscribe<\/a>/);
 assert.match(homepage, /June 29, 2026[\s\S]{0,120}11 Messidor, An CCXXXIV/);
-assert.equal([...homepage.matchAll(/class="post-row"/g)].length, 5);
+assert.equal([...homepage.matchAll(/class="post-row"/g)].length, 4);
 for (const slug of [
 	'who-are-the-real-americans-heritage',
 	'a-continent-at-a-crossroads-natos',

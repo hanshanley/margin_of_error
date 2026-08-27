@@ -4,9 +4,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import ExternalPostCard from '../components/ExternalPostCard.astro';
 import PostCard from '../components/PostCard.astro';
 import externalArticles from '../data/external-articles.json';
-import { comparePostsNewestFirst } from '../lib/posts';
+import { formatFrenchRepublicanDate } from '../lib/french-republican-calendar';
+import { comparePostsNewestFirst, getPostPath } from '../lib/posts';
 
 const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(comparePostsNewestFirst);
+const subscribeUrl =
+	'https://docs.google.com/forms/d/e/1FAIpQLSeHPhVHdJ0xdCYq3wDYjkOIxgVdErP4qszNOBQYrnyzTz3xyQ/viewform';
 const recentItems = [
 	...posts.map((post) => ({ kind: 'post' as const, sortOrder: post.data.sortOrder, post })),
 	...externalArticles.map((article) => ({
@@ -16,15 +19,61 @@ const recentItems = [
 	})),
 ].sort((a, b) => b.sortOrder - a.sortOrder);
 const latestItems = recentItems.slice(0, 5);
+const [leadItem, ...remainingItems] = latestItems;
+if (!leadItem) throw new Error('The homepage requires at least one published article.');
+
+const leadPath =
+	leadItem.kind === 'post' ? getPostPath(leadItem.post) : `/fieldwork/${leadItem.article.slug}/`;
+const leadTitle = leadItem.kind === 'post' ? leadItem.post.data.title : leadItem.article.title;
+const leadSubtitle = leadItem.kind === 'post' ? leadItem.post.data.subtitle : undefined;
+const leadDescription =
+	leadItem.kind === 'post' ? leadItem.post.data.description : leadItem.article.description;
+const leadImage =
+	leadItem.kind === 'post'
+		? (leadItem.post.data.thumbnail ?? leadItem.post.data.hero)
+		: leadItem.article.thumbnail;
+const leadPublishedAt =
+	leadItem.kind === 'post'
+		? leadItem.post.data.publishedAt
+		: new Date(`${leadItem.article.publishedAt}T12:00:00Z`);
 ---
 
 <BaseLayout>
-	<section class="home-lede">
+	<section class="home-lede" aria-labelledby="lead-story-title">
+		<a class="lead-image" href={leadPath} tabindex="-1" aria-hidden="true">
+			{
+				leadImage && (
+					<img
+						src={leadImage.src}
+						alt=""
+						width={'width' in leadImage ? leadImage.width : undefined}
+						height={'height' in leadImage ? leadImage.height : undefined}
+						loading="eager"
+						decoding="async"
+					/>
+				)
+			}
+		</a>
 		<div class="home-deck">
-			<h1>
-				Essays on computer science, disinformation, statistics, and world events by{' '}
-				<em>Hans W. A. Hanley</em>.
-			</h1>
+			<p class="kicker">Latest essay</p>
+			{
+				leadPublishedAt && (
+					<p class="lead-date">
+						{leadPublishedAt.toLocaleDateString('en-US', {
+							dateStyle: 'long',
+							timeZone: 'UTC',
+						})}
+						<span> · {formatFrenchRepublicanDate(leadPublishedAt)}</span>
+					</p>
+				)
+			}
+			<h1 id="lead-story-title"><a href={leadPath}>{leadTitle}</a></h1>
+			{leadSubtitle && <p class="lead-subtitle">{leadSubtitle}</p>}
+			<p class="dek">{leadDescription}</p>
+			<div class="lead-actions">
+				<a class="primary-action" href={leadPath}>Read article</a>
+				<a class="subscribe-action" href={subscribeUrl}>Subscribe</a>
+			</div>
 		</div>
 	</section>
 
@@ -32,14 +81,14 @@ const latestItems = recentItems.slice(0, 5);
 		<header class="section-heading">
 			<p class="kicker">Recent dispatches</p>
 			<h2 id="dispatches-title">From the notebook</h2>
-			<p>{String(latestItems.length).padStart(2, '0')} latest pieces</p>
+			<p>{String(remainingItems.length).padStart(2, '0')} more pieces</p>
 		</header>
 		<div class="post-list">
 			{
-				latestItems.map((item, index) =>
+				remainingItems.map((item, index) =>
 					item.kind === 'post'
-						? <PostCard post={item.post} index={index} />
-						: <ExternalPostCard article={item.article} index={index} />
+						? <PostCard post={item.post} index={index + 1} />
+						: <ExternalPostCard article={item.article} index={index + 1} />
 				)
 			}
 		</div>
