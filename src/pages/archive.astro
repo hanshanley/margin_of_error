@@ -13,7 +13,6 @@ const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(com
 		<header class="page-heading">
 			<p class="kicker">Complete index</p>
 			<h1>The archive</h1>
-			<p>Writing on systems, evidence, politics, and the places where they collide.</p>
 		</header>
 		<ol class="archive-list">
 			{posts.map((post) => (
