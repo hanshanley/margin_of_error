@@ -64,6 +64,15 @@ const structuredData =
 		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content={socialImage} />
 		<title>{pageTitle}</title>
+		<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-Z7D94VTT03"></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
+			gtag('config', 'G-Z7D94VTT03');
+		</script>
 		<script is:inline>document.documentElement.classList.add('js');</script>
 		<script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 	</head>
