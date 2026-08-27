@@ -117,8 +117,11 @@ for (const article of articles) {
 
 	const title = $('meta[property="og:title"]').attr('content')?.trim();
 	const description = $('meta[property="og:description"]').attr('content')?.trim();
+	const coverSource = $('meta[property="og:image"]').attr('content');
 	const publishedAt = html.match(/"datePublished"\s*:\s*"([^"]+)"/)?.[1];
-	if (!title || !description || !publishedAt) throw new Error(`Missing metadata for ${sourceUrl}`);
+	if (!title || !description || !coverSource || !publishedAt) {
+		throw new Error(`Missing metadata for ${sourceUrl}`);
+	}
 
 	body.find('.subscribe-widget, .button-wrapper, button, form, script, style').remove();
 	body.find('p, div').each((_, element) => {
@@ -142,8 +145,22 @@ for (const article of articles) {
 	});
 
 	const assetDirectory = join(projectRoot, 'public/artifacts/substack', article.slug);
+	const coverResponse = await fetch(coverSource);
+	if (!coverResponse.ok) throw new Error(`Could not fetch cover image for ${sourceUrl}`);
+	const coverBuffer = Buffer.from(await coverResponse.arrayBuffer());
+	const coverMetadata = await sharp(coverBuffer).metadata();
+	const coverFileName = `cover.${extensionFor(coverResponse.headers.get('content-type') ?? '')}`;
+	const coverPath = `/artifacts/substack/${article.slug}/${coverFileName}`;
+	await mkdir(assetDirectory, { recursive: true });
+	await writeFile(join(assetDirectory, coverFileName), coverBuffer);
+
 	let imageNumber = 0;
-	let thumbnail;
+	const thumbnail = {
+		src: coverPath,
+		alt: `${title} cover image`,
+		width: coverMetadata.width,
+		height: coverMetadata.height,
+	};
 
 	for (const image of body.find('img').toArray()) {
 		const source = $(image).attr('src') ?? $(image).attr('data-src');
@@ -168,7 +185,6 @@ for (const article of articles) {
 		if (metadata.width && metadata.height) {
 			$(image).attr('width', String(metadata.width)).attr('height', String(metadata.height));
 		}
-		thumbnail ??= { src: localPath, alt, width: metadata.width, height: metadata.height };
 	}
 	body.find('a').each((_, anchor) => {
 		const link = $(anchor);

@@ -15,16 +15,16 @@ const recentItems = [
 		article,
 	})),
 ].sort((a, b) => b.sortOrder - a.sortOrder);
+const latestItems = recentItems.slice(0, 5);
 ---
 
 <BaseLayout>
 	<section class="home-lede">
 		<div class="home-deck">
-			<p class="issue-mark">Vol. I / Field notes</p>
-			<p class="dek">
+			<h1>
 				Essays on computer science, disinformation, statistics, and world events by Hans W. A.
 				Hanley.
-			</p>
+			</h1>
 		</div>
 	</section>
 
@@ -32,11 +32,11 @@ const recentItems = [
 		<header class="section-heading">
 			<p class="kicker">Recent dispatches</p>
 			<h2 id="dispatches-title">From the notebook</h2>
-			<p>{String(recentItems.length).padStart(2, '0')} pieces in this edition</p>
+			<p>{String(latestItems.length).padStart(2, '0')} latest pieces</p>
 		</header>
 		<div class="post-list">
 			{
-				recentItems.map((item, index) =>
+				latestItems.map((item, index) =>
 					item.kind === 'post'
 						? <PostCard post={item.post} index={index} />
 						: <ExternalPostCard article={item.article} index={index} />
