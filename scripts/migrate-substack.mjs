@@ -18,7 +18,8 @@ const articles = [
 		artifacts: {
 			data: [
 				{
-					title: 'Pre-1870 U.S. population data',
+					label: 'Code + data',
+					title: 'Pre-1870 U.S. population repository',
 					description: 'Data and analysis used to examine ancestry and the U.S. population before 1870.',
 					url: 'https://github.com/hanshanley/pre1870_pop',
 					source: 'Hans W. A. Hanley',
@@ -261,7 +262,8 @@ for (const article of articles) {
 						? [
 								'  data:',
 								...article.artifacts.data.flatMap((item) => [
-									`    - title: ${JSON.stringify(item.title)}`,
+									...(item.label ? [`    - label: ${JSON.stringify(item.label)}`] : []),
+									`${item.label ? '      ' : '    - '}title: ${JSON.stringify(item.title)}`,
 									`      description: ${JSON.stringify(item.description)}`,
 									`      url: ${JSON.stringify(item.url)}`,
 									`      source: ${JSON.stringify(item.source)}`,

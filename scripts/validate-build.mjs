@@ -88,7 +88,7 @@ assert.match(
 	/class="post-subtitle">Heritage, Culture, and the Striving to Define An American Identity on the New Right/,
 );
 assert.match(heritagePost, /class="post-materials"/);
-assert.match(heritagePost, />Data</);
+assert.match(heritagePost, />Code \+ data</);
 assert.match(heritagePost, /https:\/\/github\.com\/hanshanley\/pre1870_pop/);
 
 const about = await text('about/index.html');
