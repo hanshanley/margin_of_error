@@ -272,6 +272,10 @@ main {
 	color: #aaa399;
 }
 
+.republican-date {
+	white-space: nowrap;
+}
+
 .post-thumb,
 .archive-thumb {
 	display: grid;
@@ -777,7 +781,7 @@ main {
 
 .archive-list li {
 	display: grid;
-	grid-template-columns: 0.35fr minmax(120px, 0.8fr) minmax(0, 2.5fr) 0.8fr;
+	grid-template-columns: 0.8fr minmax(120px, 0.8fr) minmax(0, 2.5fr) 0.8fr;
 	gap: 2rem;
 	align-items: center;
 	padding: 1.3rem 0;
@@ -796,6 +800,12 @@ main {
 	font-family: var(--serif);
 	font-size: 0.95rem;
 	text-transform: none;
+}
+
+.archive-date,
+.external-list time {
+	display: grid;
+	gap: 0.25rem;
 }
 
 .archive-thumb {
@@ -1152,7 +1162,7 @@ main {
 	}
 
 	.archive-list li {
-		grid-template-columns: 0.25fr 0.8fr 1.95fr;
+		grid-template-columns: 0.7fr 0.8fr 1.95fr;
 		gap: 1rem;
 	}
 

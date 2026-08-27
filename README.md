@@ -5,8 +5,7 @@
   <p>An independent data-journalism publication by Hans W. A. Hanley.</p>
   <p>
     <a href="https://www.themarginoferror.com">Read the publication</a> ·
-    <a href="https://www.themarginoferror.com/archive/">Browse the archive</a> ·
-    <a href="#quickstart">Run locally</a>
+    <a href="https://www.themarginoferror.com/archive/">Browse the archive</a>
   </p>
   <p>
     <a href="https://github.com/hanshanley/margin_of_error/actions/workflows/deploy.yml">

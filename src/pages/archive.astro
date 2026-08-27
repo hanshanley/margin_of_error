@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { comparePostsNewestFirst } from '../lib/posts';
+import { formatFrenchRepublicanDate } from '../lib/french-republican-calendar';
 import externalArticles from '../data/external-articles.json';
 
 const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(comparePostsNewestFirst);
@@ -17,7 +18,23 @@ const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(com
 		<ol class="archive-list">
 			{posts.map((post) => (
 				<li>
-					<p>{post.data.publishedAt?.getFullYear() ?? '—'}</p>
+					<p>
+						{post.data.publishedAt ? (
+							<time class="archive-date" datetime={post.data.publishedAt.toISOString()}>
+								<span>
+									{post.data.publishedAt.toLocaleDateString('en-US', {
+										year: 'numeric',
+										month: 'short',
+										day: 'numeric',
+										timeZone: 'UTC',
+									})}
+								</span>
+								<span>{formatFrenchRepublicanDate(post.data.publishedAt)}</span>
+							</time>
+						) : (
+							'—'
+						)}
+					</p>
 					<a
 						class="archive-thumb"
 						href={post.data.legacyPath ?? `/${post.id}`}
@@ -56,12 +73,17 @@ const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(com
 					externalArticles.map((article) => (
 						<li>
 							<time datetime={article.publishedAt}>
-								{new Date(`${article.publishedAt}T12:00:00Z`).toLocaleDateString('en-US', {
-									year: 'numeric',
-									month: 'short',
-									day: 'numeric',
-									timeZone: 'UTC',
-								})}
+								<span>
+									{new Date(`${article.publishedAt}T12:00:00Z`).toLocaleDateString('en-US', {
+										year: 'numeric',
+										month: 'short',
+										day: 'numeric',
+										timeZone: 'UTC',
+									})}
+								</span>
+								<span>
+									{formatFrenchRepublicanDate(new Date(`${article.publishedAt}T12:00:00Z`))}
+								</span>
 							</time>
 							<div>
 								<h3><a href={`/fieldwork/${article.slug}/`}>{article.title}</a></h3>

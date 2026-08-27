@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import { formatFrenchRepublicanDate } from '../lib/french-republican-calendar';
 
 interface Props {
 	post: CollectionEntry<'posts'>;
@@ -33,7 +34,19 @@ const thumbnailHeight = post.data.thumbnail?.height;
 	</a>
 	<div class="post-summary">
 		<p class="post-meta">
-			{post.data.publishedAt ? post.data.publishedAt.toLocaleDateString('en-US', { dateStyle: 'long' }) : 'From the archive'}
+			{
+				post.data.publishedAt ? (
+					<time datetime={post.data.publishedAt.toISOString()}>
+						{post.data.publishedAt.toLocaleDateString('en-US', {
+							dateStyle: 'long',
+							timeZone: 'UTC',
+						})}
+						<span class="republican-date"> · {formatFrenchRepublicanDate(post.data.publishedAt)}</span>
+					</time>
+				) : (
+					'From the archive'
+				)
+			}
 		</p>
 		<h2><a href={path}>{post.data.title}</a></h2>
 		<p>{post.data.description}</p>

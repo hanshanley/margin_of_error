@@ -79,6 +79,12 @@ assert.doesNotMatch(narrativePost, /id="tab-data"/);
 assert.doesNotMatch(narrativePost, /id="tab-outputs"/);
 assert.doesNotMatch(narrativePost, /id="tab-explore"/);
 
+const heritagePost = await text('who-are-the-real-americans-heritage/index.html');
+assert.match(heritagePost, /June 29, 2026 · 11 Messidor, An CCXXXIV/);
+
+const about = await text('about/index.html');
+assert.doesNotMatch(about, /tools I know best|Google Sites and/);
+
 const homeRedirect = await text('home/index.html');
 assert.match(homeRedirect, /http-equiv="refresh"/);
 assert.match(homeRedirect, /rel="canonical" href="https:\/\/www\.themarginoferror\.com\/"/);
@@ -91,6 +97,7 @@ assert.match(
 	homepage,
 	/Essays on computer science, disinformation, statistics, and world events by <em>Hans W\. A\. Hanley<\/em>\./,
 );
+assert.match(homepage, /June 29, 2026[\s\S]{0,120}11 Messidor, An CCXXXIV/);
 assert.equal([...homepage.matchAll(/class="post-row"/g)].length, 5);
 for (const slug of [
 	'who-are-the-real-americans-heritage',
