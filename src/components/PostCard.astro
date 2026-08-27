@@ -50,6 +50,7 @@ const thumbnailHeight = post.data.thumbnail?.height;
 			}
 		</p>
 		<h2><a href={path}>{post.data.title}</a></h2>
+		{post.data.subtitle && <p class="post-subtitle">{post.data.subtitle}</p>}
 		<p>{post.data.description}</p>
 	</div>
 	<div class="post-tags" aria-label="Topics">

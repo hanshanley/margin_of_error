@@ -79,6 +79,11 @@ assert.doesNotMatch(narrativePost, /class="post-materials"/);
 
 const heritagePost = await text('who-are-the-real-americans-heritage/index.html');
 assert.match(heritagePost, /June 29, 2026 · 11 Messidor, An CCXXXIV/);
+assert.match(heritagePost, /<h1>Who are the &quot;Real&quot; Americans\?<\/h1>/);
+assert.match(
+	heritagePost,
+	/class="post-subtitle">Heritage, Culture, and the Striving to Define An American Identity on the New Right/,
+);
 assert.match(heritagePost, /class="post-materials"/);
 assert.match(heritagePost, />Data</);
 assert.match(heritagePost, /https:\/\/github\.com\/hanshanley\/pre1870_pop/);

@@ -14,10 +14,13 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
+const pageTitle = post.data.subtitle
+	? `${post.data.title} — ${post.data.subtitle}`
+	: post.data.title;
 ---
 
 <BaseLayout
-	title={post.data.title}
+	title={pageTitle}
 	description={post.data.description}
 	image={post.data.hero?.src}
 	type="article"
@@ -27,6 +30,7 @@ const { Content } = await render(post);
 		<header class="post-header">
 			<p class="post-section">{post.data.tags.join(' / ') || 'Dispatch'}</p>
 			<h1>{post.data.title}</h1>
+			{post.data.subtitle && <p class="post-subtitle">{post.data.subtitle}</p>}
 			<p class="post-description">{post.data.description}</p>
 			<div class="byline">
 				<p>By {post.data.author}</p>
