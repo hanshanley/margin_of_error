@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { readdir, readFile } from 'node:fs/promises';
 import { join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { load } from 'cheerio';
 
 const root = new URL('../dist/', import.meta.url);
 const projectRoot = new URL('../', import.meta.url);
@@ -10,13 +11,13 @@ async function text(path) {
 	return readFile(new URL(path, root), 'utf8');
 }
 
-async function collectTextFiles(directory) {
+async function collectFiles(directory) {
 	const files = [];
 	for (const entry of await readdir(directory, { withFileTypes: true })) {
 		const path = join(directory, entry.name);
 		if (entry.isDirectory()) {
-			files.push(...(await collectTextFiles(path)));
-		} else if (/\.(?:html|xml|css|js|txt)$/.test(entry.name)) {
+			files.push(...(await collectFiles(path)));
+		} else {
 			files.push(path);
 		}
 	}
@@ -34,8 +35,10 @@ const requiredFiles = [
 	'robots.txt',
 	'sitemap-index.xml',
 	'CNAME',
+	'logo.png',
 	'favicon-32.png',
 	'apple-touch-icon.png',
+	'social-card.png',
 ];
 
 for (const file of requiredFiles) {
@@ -176,7 +179,40 @@ for (const article of externalArticles) {
 assert.equal([...archive.matchAll(/class="external-list"/g)].length, 1);
 
 const outputDirectory = fileURLToPath(root);
-for (const file of await collectTextFiles(outputDirectory)) {
+const outputFiles = await collectFiles(outputDirectory);
+const outputFileNames = new Set(outputFiles.map((file) => relative(outputDirectory, file)));
+
+for (const file of outputFiles.filter((file) => file.endsWith('.html'))) {
+	const fileName = relative(outputDirectory, file);
+	const $ = load(await readFile(file, 'utf8'));
+	assert.ok($('title').text().trim(), `Page title missing in ${fileName}`);
+	assert.ok(
+		$('meta[name="description"]').attr('content')?.trim(),
+		`Meta description missing in ${fileName}`,
+	);
+	assert.ok($('link[rel="canonical"]').attr('href'), `Canonical URL missing in ${fileName}`);
+	if (fileName !== 'home/index.html') {
+		assert.equal($('h1').length, 1, `Expected one page heading in ${fileName}`);
+	}
+
+	const ids = new Set();
+	$('[id]').each((_, element) => {
+		const id = $(element).attr('id');
+		assert.ok(!ids.has(id), `Duplicate id "${id}" in ${fileName}`);
+		ids.add(id);
+	});
+
+	$('[href], [src]').each((_, element) => {
+		const reference = $(element).attr('href') ?? $(element).attr('src');
+		if (!reference?.startsWith('/') || reference.startsWith('//')) return;
+		const path = reference.split(/[?#]/)[0];
+		const target =
+			path === '/' ? 'index.html' : path.endsWith('/') ? `${path.slice(1)}index.html` : path.slice(1);
+		assert.ok(outputFileNames.has(target), `Missing internal target "${reference}" in ${fileName}`);
+	});
+}
+
+for (const file of outputFiles.filter((file) => /\.(?:html|xml|css|js|txt)$/.test(file))) {
 	const contents = await readFile(file, 'utf8');
 	assert.doesNotMatch(
 		contents,

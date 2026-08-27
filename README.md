@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="public/favicon.svg" width="96" alt="The Margin of Error mark">
+  <img src="public/logo.png" width="128" alt="The Margin of Error logo">
   <h1>The Margin of Error</h1>
   <p><strong>Essays on computer science, disinformation, statistics, and world events.</strong></p>
   <p>An independent data-journalism publication by Hans W. A. Hanley.</p>
@@ -87,15 +87,15 @@ Confirm licensing and attribution before publishing newly migrated media.
 | `npm test` | Build and validate the production artifact |
 | `npm run build` | Generate the static site in `dist/` |
 | `npm run preview` | Serve the production build locally |
-| `npm run generate:favicons` | Rebuild browser icons from `public/favicon.svg` |
+| `npm run generate:favicons` | Rebuild browser and sharing images from `public/logo.png` |
 
 Application code lives in `src/`, publication assets in `public/`, migration
 tools in `scripts/`, and deployment configuration in
 `.github/workflows/deploy.yml`.
 
-The editable site icon is [`public/favicon.svg`](public/favicon.svg). After
-changing it, run `npm run generate:favicons` to refresh the PNG browser and
-home-screen variants.
+The canonical publication logo is [`public/logo.png`](public/logo.png). After
+changing it, run `npm run generate:favicons` to refresh the browser,
+home-screen, and social-sharing variants.
 
 ## Visual language
 

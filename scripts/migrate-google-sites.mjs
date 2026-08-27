@@ -141,6 +141,7 @@ for (const entry of entries) {
 		.filter(Boolean)
 		.join('\n\n')
 		.replace(/^(#{1,6})\s*\n+([^\n#].*)$/gm, '$1 $2')
+		.replace(/^# /gm, '## ')
 		.replace(/([\p{L}\p{N}”’")])(?=\[[^\]]+\]\(https?:)/gu, '$1 ')
 		.replace(/^#{1,6}\s*$/gm, '')
 		.replace(/\n{3,}/g, '\n\n');
