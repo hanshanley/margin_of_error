@@ -89,6 +89,10 @@ const homeRedirect = await text('home/index.html');
 assert.match(homeRedirect, /http-equiv="refresh"/);
 assert.match(homeRedirect, /rel="canonical" href="https:\/\/www\.themarginoferror\.com\/"/);
 
+const qAnonHosting = await text('oh-q-where-art-thou/index.html');
+assert.doesNotMatch(qAnonHosting, /description" content="&lt;img|description" content="<img/);
+assert.match(qAnonHosting, /web hosts, platforms, and news sites/);
+
 const archive = await text('archive/index.html');
 const homepage = await text('index.html');
 assert.doesNotMatch(homepage, /Vol\. I/i);
