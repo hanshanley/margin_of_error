@@ -8,6 +8,7 @@ const linkSchema = z.object({
 });
 
 const codeSchema = z.object({
+	title: z.string().optional(),
 	description: z.string(),
 	repository: z.url(),
 	revision: z.string().optional(),

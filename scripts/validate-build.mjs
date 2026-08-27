@@ -136,12 +136,18 @@ const expectedArchiveOrder = [
 	'my-first-blog-post',
 ];
 const archivePositions = expectedArchiveOrder.map((slug) => archive.indexOf(`href="/${slug}/"`));
+const externalArticles = JSON.parse(
+	await readFile(new URL('src/data/external-articles.json', projectRoot), 'utf8'),
+);
 assert.ok(archivePositions.every((position) => position >= 0), 'Archive is missing a legacy post');
 assert.ok(
 	archivePositions.every((position, index) => index === 0 || position > archivePositions[index - 1]),
 	'Archive posts are not newest-first',
 );
-assert.equal([...archive.matchAll(/class="archive-thumb"/g)].length, expectedArchiveOrder.length);
+assert.equal(
+	[...archive.matchAll(/class="archive-thumb"/g)].length,
+	expectedArchiveOrder.length + externalArticles.length,
+);
 assert.match(archive, /class="archive-thumb"[^>]*>[\s\S]*?<img /);
 assert.doesNotMatch(archive, /class="archive-thumb"[^>]*aria-hidden="(?!true)"/);
 
@@ -157,15 +163,14 @@ assert.match(natoSpending, />Data</);
 const swingStates = await text('the-shrinking-swing-state-map/index.html');
 assert.match(swingStates, />Data</);
 
-const externalArticles = JSON.parse(
-	await readFile(new URL('src/data/external-articles.json', projectRoot), 'utf8'),
-);
 for (const article of externalArticles) {
 	assert.match(archive, new RegExp(article.url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
 	assert.match(archive, new RegExp(`/fieldwork/${article.slug}/`));
 	const preview = await text(`fieldwork/${article.slug}/index.html`);
 	assert.match(preview, new RegExp(article.url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
 	assert.match(preview, /Read on DFRLab/);
+	assert.match(preview, new RegExp(article.thumbnail.src.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
+	assert.match(archive, new RegExp(article.thumbnail.src.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
 	assert.match(
 		sitemap,
 		new RegExp(

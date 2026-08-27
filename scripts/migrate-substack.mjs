@@ -33,6 +33,7 @@ const articles = [
 		tags: ['NATO', 'Defense', 'Europe'],
 		artifacts: {
 			code: {
+				title: 'NATO spending analysis repository',
 				description: 'Source code and analysis for the NATO military-spending figures.',
 				repository: 'https://github.com/hanshanley/nato-and-adversaries-spending',
 			},
@@ -63,6 +64,7 @@ const articles = [
 		tags: ['Media', 'Elections', 'Data'],
 		artifacts: {
 			code: {
+				title: 'Candidate coverage analysis repository',
 				description: 'Website list and analysis materials for the candidate-coverage comparison.',
 				repository: 'https://github.com/hanshanley/harris-trump-coverage',
 			},
@@ -254,6 +256,7 @@ for (const article of articles) {
 					...(article.artifacts.code
 						? [
 								'  code:',
+								`    title: ${JSON.stringify(article.artifacts.code.title)}`,
 								`    description: ${JSON.stringify(article.artifacts.code.description)}`,
 								`    repository: ${JSON.stringify(article.artifacts.code.repository)}`,
 							]
