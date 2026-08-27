@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import { formatFrenchRepublicanDate } from '../lib/french-republican-calendar';
+import { getPostPath } from '../lib/posts';
 
 interface Props {
 	post: CollectionEntry<'posts'>;
@@ -8,7 +9,7 @@ interface Props {
 }
 
 const { post, index } = Astro.props;
-const path = post.data.legacyPath ?? `/${post.id}`;
+const path = getPostPath(post);
 const thumbnail = post.data.thumbnail ?? post.data.hero;
 const thumbnailWidth = post.data.thumbnail?.width;
 const thumbnailHeight = post.data.thumbnail?.height;

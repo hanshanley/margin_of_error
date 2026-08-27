@@ -126,7 +126,7 @@ const expectedArchiveOrder = [
 	'oh-q-what-art-thou',
 	'my-first-blog-post',
 ];
-const archivePositions = expectedArchiveOrder.map((slug) => archive.indexOf(`href="/${slug}"`));
+const archivePositions = expectedArchiveOrder.map((slug) => archive.indexOf(`href="/${slug}/"`));
 assert.ok(archivePositions.every((position) => position >= 0), 'Archive is missing a legacy post');
 assert.ok(
 	archivePositions.every((position, index) => index === 0 || position > archivePositions[index - 1]),
