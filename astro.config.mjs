@@ -17,6 +17,10 @@ export default defineConfig({
 		react(),
 		sitemap({
 			filter: (page) => page !== 'https://www.themarginoferror.com/home/',
+			customPages: [
+				'https://www.themarginoferror.com/professional_profanity/',
+				'https://www.themarginoferror.com/professional_profanity/activity/',
+			],
 		}),
 	],
 });
