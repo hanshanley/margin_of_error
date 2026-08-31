@@ -3,6 +3,9 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  schedule:
+    # Republish after congressional_record refreshes its data and site at 07:20 UTC.
+    - cron: "20 9 * * *"
   workflow_dispatch:
 
 permissions:
@@ -20,6 +23,17 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
+
+      - name: Checkout congressional dashboard
+        uses: actions/checkout@v7
+        with:
+          repository: hanshanley/congressional_record
+          path: congressional-record-source
+
+      - name: Stage congressional dashboard
+        run: |
+          mkdir -p public/professional_profanity
+          cp -R congressional-record-source/site/. public/professional_profanity/
 
       - name: Build and upload site
         uses: withastro/action@v6
