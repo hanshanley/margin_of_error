@@ -4,8 +4,8 @@ on:
   push:
     branches: [main]
   schedule:
-    # Republish after congressional_record refreshes its data and site at 07:20 UTC.
-    - cron: "20 9 * * *"
+    # Republish after both daily congressional_record refresh windows.
+    - cron: "20 9,21 * * *"
   workflow_dispatch:
 
 permissions:
