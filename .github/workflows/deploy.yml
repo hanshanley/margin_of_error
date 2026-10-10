@@ -32,8 +32,8 @@ jobs:
 
       - name: Stage congressional dashboard
         run: |
-          mkdir -p public/professional_profanity
-          cp -R congressional-record-source/site/. public/professional_profanity/
+          mkdir -p public/congressional_profanity
+          cp -R congressional-record-source/site/. public/congressional_profanity/
 
       - name: Build and upload site
         uses: withastro/action@v6

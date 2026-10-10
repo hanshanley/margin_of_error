@@ -55,6 +55,19 @@ const sitemap = await text('sitemap-0.xml');
 assert.match(sitemap, /https:\/\/www\.themarginoferror\.com\/my-first-blog-post\//);
 assert.match(sitemap, /https:\/\/www\.themarginoferror\.com\/are-you-an-ai\//);
 assert.doesNotMatch(sitemap, /https:\/\/www\.themarginoferror\.com\/home\//);
+assert.match(sitemap, /https:\/\/www\.themarginoferror\.com\/congressional_profanity\/activity\//);
+assert.doesNotMatch(sitemap, /professional_profanity/);
+
+for (const [legacy, target] of [
+	['professional_profanity/index.html', 'congressional_profanity/'],
+	['professional_profanity/activity/index.html', 'congressional_profanity/activity/'],
+	['professional_profanity/activity.html', 'congressional_profanity/activity/'],
+]) {
+	const redirect = await text(legacy);
+	const escaped = `https://www.themarginoferror.com/${target}`.replace(/[./]/g, '\\$&');
+	assert.match(redirect, new RegExp(`http-equiv="refresh" content="0; url=${escaped}"`), legacy);
+	assert.match(redirect, new RegExp(`rel="canonical" href="${escaped}"`), legacy);
+}
 
 const manifest = JSON.parse(
 	await readFile(new URL('src/data/migration-manifest.json', projectRoot), 'utf8'),
