@@ -1,0 +1,65 @@
+---
+title: "Floor-Letter Words: The Rise of Congressional Profanity"
+subtitle: "The last decade has seen a spike in profanity and a continued decline in courtesy in the U.S. House and Senate—and it is keeping this C-SPAN listener awake."
+description: "A look at profanity, slurs, and formal courtesy in congressional floor speeches, with interactive graphs and reproducible analysis."
+publishedAt: "2026-10-11T23:09:43.280Z"
+sortOrder: 1791760183
+author: "Hans W. A. Hanley"
+tags: ["Congress", "Politics", "Data"]
+legacyPath: "/floor-letter-words-the-rise-of-congressional-profanity"
+originalUrl: "https://themarginoferror.substack.com/p/72e9b0ed-0414-4498-a154-2d410d6aefa3"
+thumbnail:
+  src: "/artifacts/congressional-record/profanity_per_1k_last50.png"
+  alt: "Democratic and Republican profanity rates in congressional floor speeches over the past 50 years."
+  width: 1959
+  height: 1093
+artifacts:
+  code:
+    title: "Congressional Record analysis"
+    description: "Source code, curated word lists, and reproducible figures for the congressional language analysis."
+    repository: "https://github.com/hanshanley/congressional_record"
+  data:
+    - label: "Explore"
+      title: "Interactive congressional language graphs"
+      description: "Compare historical trends and recent member-level profanity and slur rates by party and chamber."
+      url: "https://www.themarginoferror.com/congressional_profanity/"
+      source: "Stanford Hein corpus and GovInfo Congressional Record"
+      format: "Interactive dashboard with JSON and CSV downloads"
+featured: true
+draft: false
+---
+
+As a longtime listener of C-SPAN (I often use C-SPAN’s [Washington Today](https://www.c-span.org/podcasts/subpage/?series=washingtonToday) podcast to fall asleep), I have noticed over the past few years — perhaps somewhat prudishly — an increase in swear words, curses, and profanity lacing the speeches of congressional figures. While [Section 945 of the House Manual for the U.S. House of Representatives](https://www.govinfo.gov/content/pkg/HMAN-119/html/HMAN-119-pg792.htm) discourages the use of “profanity or vulgarity in debate” and the [U.S. Senate has rules about “disorderly language” that impugns the character of other senators](https://www.congress.gov/crs-product/R45241), there has been a definite uptick in foul language from lawmakers jolting me awake at night.
+
+<img src="/artifacts/congressional-record/profanity_per_1k_last50.png" alt="Profanity matches per 1,000 words in House and Senate floor language, Democrats versus Republicans, 1977–2026." width="1959" height="1093" loading="lazy" decoding="async" />
+
+So is the amount of profanity in congressional speeches increasing? To get at this, I used [congressional transcripts of floor speeches](https://www.govinfo.gov/app/collection/crec) as well as a [public list of swear words](https://github.com/hanshanley/congressional_record/blob/master/analysis/score/lexicons/profanity.txt) and measured the usage of common curse words over the past 50 years in both the U.S. Senate and the House of Representatives. As seen above, starting around 2017, the use of vulgarity has skyrocketed, reaching its peak over the last year — it was not just my imagination or a weird selection of speeches by C-SPAN for its podcast.
+
+Specifically, the usage of foul language in speeches on the Senate and House floors is over 16 times the level in 2017 — this is particularly egregious in the U.S. House, with expletives jumping to 16.5 times their levels in 2017 compared to 14.7 times in the U.S. Senate. Notably, in the last three presidential terms, the party with worse language has always been the opposition — with Democrats using more obscenities and four-letter words when Donald Trump was in office from 2017 to 2021; Republicans using more from 2021 to 2025 under Joe Biden’s presidency; and Democrats using more profane language since the beginning of the current Donald Trump term.
+
+This recent rise in profanity has not gone unnoticed. In addition to it being lampooned on [The Daily Show](https://youtu.be/OQxKVsFRp-w?t=137), the spike has piqued the interest of numerous academic researchers. The increase can be somewhat attributed to politicians’ desire to appear more “relatable.” As [UC San Diego professors Benjamin Bergen and Pamela Ban argue, politicians often use profanity to signal themselves as “one of the people,” speaking like their constituents and not like the elite. If the language seems unscripted or like a genuine outburst of emotion, all the better; the profanity is often interpreted as “moral outrage” on behalf of their voters.](https://today.ucsd.edu/story/why-are-politicians-swearing-more)
+
+However, not all vulgarities are the same. Much of the bad language used openly on the debate floors of the U.S. legislative branch does not consist of the ethnic and gender slurs of years gone by. [Much recent scholarship](https://journals.sagepub.com/doi/10.1177/2158244017723689), including work by Professor Bergen, has found [weakening reactions to and increasing use of traditional swear words](http://theconversation.com/wtf-slurs-offend-young-adults-more-than-swearing-125193) amongst the U.S. population. Simultaneously, societal taboos against discriminatory slurs based on race, gender, disability, or sexual orientation have strengthened.
+
+<img src="/artifacts/congressional-record/slurs_per_1k.png" alt="Slur matches per 1,000 words in House and Senate floor language, Democrats versus Republicans, 1873–2026." width="1959" height="1093" loading="lazy" decoding="async" />
+
+Indeed, using a [public list of slurs](https://github.com/hanshanley/congressional_record/blob/master/analysis/score/lexicons/slurs.txt) to examine speeches in the U.S. House and Senate, I found that the use of many of these words bottomed out during the 1980s, with few daring now to utter these words in public debate. The uptick in swear words and the corresponding plummeting of race, gender, disabilities, or sexual orientation-based slurs can maybe be seen as the society-wide adoption of a new set of language taboos.
+
+Perhaps more worrying than the rapid rise in profanity on the Senate and House floors — except when I am trying to fall asleep to C-SPAN — is the overall decline in decorum in both chambers. From the same dataset of House and Senate speeches, I looked for formal usages of formal courtesies such as “my honorable colleague” or “my worthy opponent.”<sup><a id="footnote-anchor-1" href="#footnote-1" aria-label="Read footnote 1">1</a></sup> Over the last 50 years, there has been a steady decline in this polite language, with usage rates nose-diving in the 2000s.
+
+<img src="/artifacts/congressional-record/formal_courtesy_per_1k_last50.png" alt="Formal courtesy matches per 1,000 words in House and Senate floor language, Democrats versus Republicans, 1977–2026." width="1957" height="1093" loading="lazy" decoding="async" />
+
+The rise in profanity and decline in respectful language go beyond the abandonment of simple niceties. Lack of respect and harsh language do not make for a productive workplace and good interactions. Research by [William D. Schreckhise at the University of Arkansas and colleagues found that civility is associated with higher rates of legislative productivity and lower rates of gridlock](https://www.cambridge.org/core/journals/state-politics-and-policy-quarterly/article/legislative-civility-gridlock-polarization-and-productivity/84BA72451B61D9EA30E262940B13C998). In an experimental study of U.S. voters, researchers at Stony Brook University and the Hebrew University of Jerusalem [also found that “warmer interactions” among U.S. political leaders resulted in reduced political polarization](https://onlinelibrary.wiley.com/doi/10.1111/pops.12699).
+
+However, recent events do not portend a slowdown in the use of profanity and foul language by either Republicans or Democrats. During a recent U.S. Senate hearing, [Missouri Republican Senator Eric Schmitt called former special counsel Jack Smith a “dirtbag”](https://www.nytimes.com/2026/09/29/us/politics/jack-smith-congress-testimony.html) after accusing him of committing perjury by lying about his whereabouts in early 2024. [After Deputy White House Chief of Staff Stephen Miller called the Texas Democratic Senate nominee James Talarico “transgender” — he is a cisgender male — the official Democratic Party X account responded to Miller by posting “shut up you ugly f—”](https://thehill.com/homenews/campaign/5898874-democratic-national-committee-stephen-miller-criticism/).
+
+Unfortunately, it seems I may have to find another podcast to lull me to sleep.
+
+_Explore the [interactive graphs](https://www.themarginoferror.com/congressional_profanity/) or browse the [analysis code on GitHub](https://github.com/hanshanley/congressional_record)._
+
+<section class="footnotes" aria-label="Footnotes">
+  <h2>Notes</h2>
+  <ol>
+    <li id="footnote-1">The full list of formulaic courtesies can be found here: <a href="https://github.com/hanshanley/congressional_record/blob/master/analysis/score/lexicons/formal_courtesy.txt">https://github.com/hanshanley/congressional_record/blob/master/analysis/score/lexicons/formal_courtesy.txt</a> <a href="#footnote-anchor-1" aria-label="Back to footnote reference 1">↩</a></li>
+  </ol>
+</section>

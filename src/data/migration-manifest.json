@@ -94,5 +94,13 @@
     "title": "The Shrinking Swing State Map",
     "status": "migrated",
     "notes": "3 inline images copied locally."
+  },
+  {
+    "sourceUrl": "https://themarginoferror.substack.com/p/72e9b0ed-0414-4498-a154-2d410d6aefa3",
+    "sourcePlatform": "Substack",
+    "targetPath": "/floor-letter-words-the-rise-of-congressional-profanity/",
+    "title": "Floor-Letter Words: The Rise of Congressional Profanity",
+    "status": "migrated",
+    "notes": "Author-provided reader preview imported; three inline charts use corrected local congressional_record figures. Original prose, source links, and footnote preserved."
   }
 ]
