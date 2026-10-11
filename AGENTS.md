@@ -4,12 +4,6 @@ Read [PUBLISHING.md](PUBLISHING.md) before importing or publishing an article. I
 Substack reader previews, project figures, validation, deployment, and updating
 `hanshanley.github.io/_data/writing.yml` after the article is live.
 
-## Article publishing
-
-Read [PUBLISHING.md](PUBLISHING.md) before importing or publishing an article. It covers
-Substack reader previews, project figures, validation, deployment, and updating
-`hanshanley.github.io/_data/writing.yml` after the article is live.
-
 ## Development
 
 When starting the dev server, use background mode:
