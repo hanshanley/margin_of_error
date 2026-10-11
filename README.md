@@ -20,3 +20,8 @@ science, disinformation, statistics, politics, and world events.
 The archive brings together work first published on Substack, reporting
 published with the Atlantic Council's Digital Forensic Research Lab, earlier
 essays, and new writing.
+
+## Publishing
+
+See [PUBLISHING.md](PUBLISHING.md) for the complete Substack-to-website workflow,
+project figures, validation, deployment, and personal-site article updates.
