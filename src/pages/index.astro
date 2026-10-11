@@ -69,7 +69,7 @@ const leadPublishedAt =
 			}
 			<h1 id="lead-story-title"><a href={leadPath}>{leadTitle}</a></h1>
 			{leadSubtitle && <p class="lead-subtitle">{leadSubtitle}</p>}
-			<p class="dek">{leadDescription}</p>
+			{!leadSubtitle && <p class="dek">{leadDescription}</p>}
 			<div class="lead-actions">
 				<a class="primary-action" href={leadPath}>Read article</a>
 				<a class="subscribe-action" href={subscribeUrl}>Subscribe</a>

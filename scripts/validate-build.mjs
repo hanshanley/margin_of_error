@@ -137,6 +137,10 @@ assert.match(homepage, /<h1 id="lead-story-title"><a href="\/floor-letter-words-
 assert.match(homepage, />Read article<\/a>/);
 assert.match(homepage, />Subscribe<\/a>/);
 assert.match(homepage, /October 11, 2026/);
+const leadPreview = load(homepage);
+assert.equal(leadPreview('.home-deck .dek').length, 0);
+assert.match(leadPreview('.home-deck .lead-subtitle').text(), /it is keeping this C-SPAN listener awake/);
+assert.doesNotMatch(leadPreview('.home-deck').text(), /A look at profanity, slurs, and formal courtesy/);
 assert.equal([...homepage.matchAll(/class="post-row"/g)].length, 4);
 for (const slug of [
 	'who-are-the-real-americans-heritage',
