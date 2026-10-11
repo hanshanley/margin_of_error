@@ -32,6 +32,7 @@ const requiredFiles = [
 	'archive/index.html',
 	'home/index.html',
 	'my-first-blog-post/index.html',
+	'floor-letter-words-the-rise-of-congressional-profanity/index.html',
 	'rss.xml',
 	'robots.txt',
 	'sitemap-index.xml',
@@ -132,21 +133,22 @@ assert.match(
 	homepage,
 	/<p class="kicker">Latest essay<\/p>/,
 );
-assert.match(homepage, /<h1 id="lead-story-title"><a href="\/who-are-the-real-americans-heritage\/">/);
+assert.match(homepage, /<h1 id="lead-story-title"><a href="\/floor-letter-words-the-rise-of-congressional-profanity\/">/);
 assert.match(homepage, />Read article<\/a>/);
 assert.match(homepage, />Subscribe<\/a>/);
-assert.match(homepage, /June 29, 2026[\s\S]{0,120}11 Messidor, An CCXXXIV/);
+assert.match(homepage, /October 11, 2026/);
 assert.equal([...homepage.matchAll(/class="post-row"/g)].length, 4);
 for (const slug of [
 	'who-are-the-real-americans-heritage',
 	'a-continent-at-a-crossroads-natos',
 	'the-republican-party-after-trump',
 	'media-coverage-of-kamala-harris-and',
-	'the-shrinking-swing-state-map',
 ]) {
 	assert.match(homepage, new RegExp(`/artifacts/substack/${slug}/cover\\.jpg`));
 }
+assert.match(homepage, /\/artifacts\/congressional-record\/profanity_per_1k_last50\.png/);
 const expectedArchiveOrder = [
+	'floor-letter-words-the-rise-of-congressional-profanity',
 	'who-are-the-real-americans-heritage',
 	'a-continent-at-a-crossroads-natos',
 	'the-republican-party-after-trump',
@@ -187,6 +189,28 @@ assert.match(natoSpending, />Data</);
 
 const swingStates = await text('the-shrinking-swing-state-map/index.html');
 assert.match(swingStates, />Data</);
+
+const congressSlug = 'floor-letter-words-the-rise-of-congressional-profanity';
+const congressionalPost = load(await text(`${congressSlug}/index.html`));
+assert.equal(congressionalPost('h1').text(), 'Floor-Letter Words: The Rise of Congressional Profanity');
+assert.match(congressionalPost('.post-subtitle').text(), /continued decline in courtesy/);
+assert.match(congressionalPost('.prose').text(), /Unfortunately, it seems I may have to find another podcast/);
+assert.equal(congressionalPost('.prose img').length, 3);
+for (const file of [
+	'profanity_per_1k_last50.png',
+	'slurs_per_1k.png',
+	'formal_courtesy_per_1k_last50.png',
+]) {
+	assert.equal(congressionalPost(`.prose img[src="/artifacts/congressional-record/${file}"]`).length, 1);
+	await assert.doesNotReject(() => readFile(new URL(`artifacts/congressional-record/${file}`, root)));
+}
+assert.equal(congressionalPost('#footnote-anchor-1').attr('href'), '#footnote-1');
+assert.equal(congressionalPost('#footnote-1 a[href="#footnote-anchor-1"]').length, 1);
+assert.match(congressionalPost('.post-materials').text(), /Interactive congressional language graphs/);
+assert.equal(congressionalPost('a[href="https://www.themarginoferror.com/congressional_profanity/"]').length, 2);
+assert.match(aiIndex, new RegExp(`https://www\\.themarginoferror\\.com/${congressSlug}/`));
+const feed = load(await text('rss.xml'), { xml: true });
+assert.equal(feed('item').first().find('link').text(), `https://www.themarginoferror.com/${congressSlug}/`);
 
 for (const article of externalArticles) {
 	assert.match(archive, new RegExp(article.url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
