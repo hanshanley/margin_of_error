@@ -19,7 +19,8 @@ the code lives in `congressional_record` and the existing interactive dashboard 
 `https://www.themarginoferror.com/congressional_profanity/`.
 
 Read each repository's instructions before editing. Work from the repository root unless a
-command says otherwise.
+command says otherwise. In this repository, `CLAUDE.md` is a symlink to `AGENTS.md`;
+edit the shared instructions once, not through both filenames.
 
 ## 1. Establish the source and preserve existing work
 
