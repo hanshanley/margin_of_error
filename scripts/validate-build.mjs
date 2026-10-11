@@ -198,6 +198,13 @@ const congressSlug = 'floor-letter-words-the-rise-of-congressional-profanity';
 const congressionalPost = load(await text(`${congressSlug}/index.html`));
 assert.equal(congressionalPost('h1').text(), 'Floor-Letter Words: The Rise of Congressional Profanity');
 assert.match(congressionalPost('.post-subtitle').text(), /continued decline in courtesy/);
+assert.equal(congressionalPost('.post-description').length, 0);
+assert.doesNotMatch(congressionalPost.html(), /A look at profanity, slurs, and formal courtesy/);
+assert.equal(congressionalPost('meta[name="description"]').attr('content'), congressionalPost('.post-subtitle').text());
+assert.doesNotMatch(archive, /A look at profanity, slurs, and formal courtesy/);
+const congressionalArchiveEntry = load(archive)(`h2 a[href="/${congressSlug}/"]`).closest('li');
+assert.equal(congressionalArchiveEntry.find('.archive-subtitle').length, 1);
+assert.equal(congressionalArchiveEntry.find('.archive-subtitle').parent().find('p').length, 1);
 assert.match(congressionalPost('.prose').text(), /Unfortunately, it seems I may have to find another podcast/);
 assert.equal(congressionalPost('.prose img').length, 3);
 for (const file of [

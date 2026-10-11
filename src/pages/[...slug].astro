@@ -31,7 +31,7 @@ const pageTitle = post.data.subtitle
 			<p class="post-section">{post.data.tags.join(' / ') || 'Dispatch'}</p>
 			<h1>{post.data.title}</h1>
 			{post.data.subtitle && <p class="post-subtitle">{post.data.subtitle}</p>}
-			<p class="post-description">{post.data.description}</p>
+			{post.data.description !== post.data.subtitle && <p class="post-description">{post.data.description}</p>}
 			<div class="byline">
 				<p>By {post.data.author}</p>
 				<p>
