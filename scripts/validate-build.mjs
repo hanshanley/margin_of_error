@@ -142,6 +142,11 @@ assert.equal(leadPreview('.home-deck .dek').length, 0);
 assert.match(leadPreview('.home-deck .lead-subtitle').text(), /it is keeping this C-SPAN listener awake/);
 assert.doesNotMatch(leadPreview('.home-deck').text(), /A look at profanity, slurs, and formal courtesy/);
 assert.equal([...homepage.matchAll(/class="post-row"/g)].length, 4);
+const archiveAction = leadPreview('.dispatches > .dispatches-footer > .archive-action');
+assert.equal(archiveAction.length, 1);
+assert.equal(archiveAction.attr('href'), '/archive/');
+assert.equal(archiveAction.text(), 'View archive');
+assert.equal(archiveAction.parent().prev().attr('class'), 'post-list');
 for (const slug of [
 	'who-are-the-real-americans-heritage',
 	'a-continent-at-a-crossroads-natos',

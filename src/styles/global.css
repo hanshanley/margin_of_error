@@ -240,7 +240,8 @@ main {
 	margin-top: 1.25rem;
 }
 
-.lead-actions a {
+.lead-actions a,
+.archive-action {
 	padding: 0.75rem 1rem;
 	font-family: var(--sans);
 	font-size: 0.72rem;
@@ -292,6 +293,27 @@ main {
 
 .post-list {
 	border-bottom: 1px solid #706b61;
+}
+
+.dispatches-footer {
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 1.5rem;
+}
+
+.archive-action {
+	background: var(--paper);
+	color: var(--ink);
+}
+
+.archive-action:hover {
+	background: var(--paper-deep);
+	color: var(--ink);
+}
+
+.archive-action:focus-visible {
+	outline: 2px solid var(--paper);
+	outline-offset: 4px;
 }
 
 .post-row {
