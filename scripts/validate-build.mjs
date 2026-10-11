@@ -211,6 +211,7 @@ const congressionalArchiveEntry = load(archive)(`h2 a[href="/${congressSlug}/"]`
 assert.equal(congressionalArchiveEntry.find('.archive-subtitle').length, 1);
 assert.equal(congressionalArchiveEntry.find('.archive-subtitle').parent().find('p').length, 1);
 assert.match(congressionalPost('.prose').text(), /Unfortunately, it seems I may have to find another podcast/);
+assert.match(congressionalPost('.prose').text(), /Explore and see which members of Congress use the most profanity in interactive graphs or browse the analysis code on GitHub\./);
 assert.equal(congressionalPost('.prose img').length, 3);
 for (const file of [
 	'profanity_per_1k_last50.png',
