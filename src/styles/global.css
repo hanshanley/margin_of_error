@@ -275,6 +275,10 @@ main {
 	border-bottom: 1px solid #706b61;
 }
 
+.dispatches .section-heading {
+	grid-template-columns: 1fr;
+}
+
 .section-heading h2 {
 	margin: 0;
 	font-size: clamp(2.2rem, 4vw, 4rem);
