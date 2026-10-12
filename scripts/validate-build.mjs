@@ -204,6 +204,10 @@ assert.match(swingStates, />Data</);
 const congressSlug = 'floor-letter-words-the-rise-of-congressional-profanity';
 const congressionalPost = load(await text(`${congressSlug}/index.html`));
 assert.equal(congressionalPost('h1').text(), 'Floor-Letter Words: The Rise of Congressional Profanity');
+assert.equal(
+	congressionalPost('.post-header a:contains("Original edition")').attr('href'),
+	'https://themarginoferror.substack.com/p/floor-letter-words-the-rise-of-congressional',
+);
 assert.match(congressionalPost('.post-subtitle').text(), /continued decline in courtesy/);
 assert.equal(congressionalPost('.post-description').length, 0);
 assert.doesNotMatch(congressionalPost.html(), /A look at profanity, slurs, and formal courtesy/);
