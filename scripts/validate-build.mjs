@@ -138,6 +138,8 @@ assert.match(homepage, />Read article<\/a>/);
 assert.match(homepage, />Subscribe<\/a>/);
 assert.match(homepage, /October 11, 2026/);
 const leadPreview = load(homepage);
+assert.equal(leadPreview('.dispatches > .section-heading').text().trim(), 'Recent dispatches');
+assert.equal(leadPreview('.dispatches > .section-heading > h2#dispatches-title').length, 1);
 assert.equal(leadPreview('.home-deck .dek').length, 0);
 assert.match(leadPreview('.home-deck .lead-subtitle').text(), /it is keeping this C-SPAN listener awake/);
 assert.doesNotMatch(leadPreview('.home-deck').text(), /A look at profanity, slurs, and formal courtesy/);
