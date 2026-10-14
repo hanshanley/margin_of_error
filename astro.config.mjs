@@ -20,6 +20,7 @@ export default defineConfig({
 			customPages: [
 				'https://www.themarginoferror.com/congressional_profanity/',
 				'https://www.themarginoferror.com/congressional_profanity/activity/',
+				'https://www.themarginoferror.com/uk_decline/',
 			],
 		}),
 	],

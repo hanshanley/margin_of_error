@@ -18,6 +18,14 @@ The publication is at `https://www.themarginoferror.com/`; the personal index is
 the code lives in `congressional_record` and the existing interactive dashboard is at
 `https://www.themarginoferror.com/congressional_profanity/`.
 
+The UK evidence project lives in `hanshanley/uk_decline` and is published at
+`https://www.themarginoferror.com/uk_decline/`. Deployment checks out its `master`
+branch, installs its small `requirements-site.txt`, and builds the saved figures,
+downloads, and methodology directly into `public/uk_decline/`. The topic pages
+embed their charts directly, without an iframe or a dependency on the personal site.
+The UK project refreshes supported sources weekly; this publication picks up
+successful saved updates during its twice-daily deployments.
+
 Read each repository's instructions before editing. Work from the repository root unless a
 command says otherwise. In this repository, `CLAUDE.md` is a symlink to `AGENTS.md`;
 edit the shared instructions once, not through both filenames.

@@ -58,6 +58,7 @@ assert.match(sitemap, /https:\/\/www\.themarginoferror\.com\/are-you-an-ai\//);
 assert.doesNotMatch(sitemap, /https:\/\/www\.themarginoferror\.com\/home\//);
 assert.match(sitemap, /https:\/\/www\.themarginoferror\.com\/congressional_profanity\/activity\//);
 assert.doesNotMatch(sitemap, /professional_profanity/);
+assert.match(sitemap, /https:\/\/www\.themarginoferror\.com\/uk_decline\//);
 
 for (const [legacy, target] of [
 	['professional_profanity/index.html', 'congressional_profanity/'],
@@ -258,6 +259,18 @@ assert.equal([...archive.matchAll(/class="external-list"/g)].length, 1);
 const outputDirectory = fileURLToPath(root);
 const outputFiles = await collectFiles(outputDirectory);
 const outputFileNames = new Set(outputFiles.map((file) => relative(outputDirectory, file)));
+
+if (outputFileNames.has('uk_decline/index.html')) {
+	const ukHome = load(await text('uk_decline/index.html'));
+	assert.equal(ukHome('.topic-card').length, 16);
+	assert.equal(ukHome('iframe').length, 0);
+	for (const link of ukHome('.topic-card > a').toArray()) {
+		const page = `uk_decline/${ukHome(link).attr('href')}`;
+		const topic = load(await text(page));
+		assert.ok(topic('.chart-gallery figure img').length > 0, `No embedded charts in ${page}`);
+		assert.equal(topic('iframe').length, 0);
+	}
+}
 
 for (const file of outputFiles.filter((file) => file.endsWith('.html'))) {
 	const fileName = relative(outputDirectory, file);
