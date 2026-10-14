@@ -345,8 +345,10 @@ if (outputFileNames.has('uk_decline/index.html')) {
 for (const file of outputFiles.filter((file) => file.endsWith('.html'))) {
 	const fileName = relative(outputDirectory, file);
 	const $ = load(await readFile(file, 'utf8'));
-	if ($('meta[name="generator"]').attr('content')?.startsWith('Astro') && $('.site-header').length) {
-		const analysisNav = $('.site-header nav a[href="/interactive-analysis/"]');
+	if ($('.site-header').length) {
+		const analysisNav = $('.site-header nav[aria-label="Primary navigation"] a').filter((_, element) =>
+			new URL($(element).attr('href'), 'https://www.themarginoferror.com').pathname === '/interactive-analysis/',
+		);
 		assert.equal(analysisNav.length, 1, `Interactive analysis navigation missing in ${fileName}`);
 		assert.equal(analysisNav.text(), 'Interactive analysis');
 		assert.equal(

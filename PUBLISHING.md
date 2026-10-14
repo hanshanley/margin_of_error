@@ -214,6 +214,10 @@ A push to `main` automatically runs `.github/workflows/deploy.yml`. It also stag
 latest congressional dashboard from `hanshanley/congressional_record/site/`.
 Do not dispatch a duplicate deploy while the push-triggered run is active.
 
+The congressional and UK projects render their own publication mastheads. Navigation
+changes must also update both projects' page generators and tests; regenerate the
+committed congressional HTML before publishing. Updating Astro's header alone is not enough.
+
 ```bash
 gh run list --repo hanshanley/margin_of_error --workflow deploy.yml \
   --limit 5 --json databaseId,headSha,status,conclusion,url
