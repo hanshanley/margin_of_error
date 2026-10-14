@@ -135,27 +135,27 @@ assert.equal(
 	analysis('link[rel="canonical"]').attr('href'),
 	'https://www.themarginoferror.com/interactive-analysis/',
 );
-const firstAnalysis = analysis('.analysis-list > li').first();
-assert.equal(firstAnalysis.find('h2 a').text(), 'The language of Congress');
+const congressionalAnalysis = analysis('.analysis-list > li').eq(1);
+assert.equal(congressionalAnalysis.find('h2 a').text(), 'The language of Congress');
 assert.equal(
-	firstAnalysis.find('h2 a').attr('href'),
+	congressionalAnalysis.find('h2 a').attr('href'),
 	'https://www.themarginoferror.com/congressional_profanity/',
 );
 assert.equal(
-	firstAnalysis.find('.primary-action').attr('href'),
+	congressionalAnalysis.find('.primary-action').attr('href'),
 	'https://www.themarginoferror.com/congressional_profanity/',
 );
-assert.equal(firstAnalysis.find('.primary-action').text(), 'Open analysis');
+assert.equal(congressionalAnalysis.find('.primary-action').text(), 'Open analysis');
 assert.equal(
-	firstAnalysis.find('a:contains("Read the essay")').attr('href'),
+	congressionalAnalysis.find('a:contains("Read the essay")').attr('href'),
 	'/floor-letter-words-the-rise-of-congressional-profanity/',
 );
 assert.equal(
-	firstAnalysis.find('img').attr('src'),
+	congressionalAnalysis.find('img').attr('src'),
 	'/artifacts/congressional-record/profanity_per_1k_last50.png',
 );
 assert.equal(analysis('.analysis-list > li').length, 2);
-const ukAnalysis = analysis('.analysis-list > li').eq(1);
+const ukAnalysis = analysis('.analysis-list > li').first();
 assert.equal(ukAnalysis.find('h2 a').text(), 'The UK, in context');
 for (const link of ukAnalysis.find('a').toArray()) {
 	assert.equal(analysis(link).attr('href'), 'https://www.themarginoferror.com/uk_decline/');
