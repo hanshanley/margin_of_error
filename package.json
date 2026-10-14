@@ -7,11 +7,11 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node scripts/build-website-charts.mjs",
     "preview": "astro preview",
     "astro": "astro",
     "check": "astro check",
-    "test": "npm run build && node scripts/validate-build.mjs",
+    "test": "node --test scripts/build-website-charts.test.mjs && npm run build && node scripts/validate-build.mjs",
     "generate:favicons": "node scripts/generate-favicons.mjs",
     "sync:external-thumbnails": "node scripts/download-external-thumbnails.mjs",
     "migrate:legacy": "node scripts/migrate-google-sites.mjs",

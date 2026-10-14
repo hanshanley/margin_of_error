@@ -98,6 +98,16 @@ Preserve image bytes when copying; measure real width and height with the existi
 dependency. Supply meaningful alt text, dimensions, `loading="lazy"` for inline figures,
 and `decoding="async"`. A homepage thumbnail can reuse an inline graph.
 
+The build generates website-only chart versions in `dist/`, matching the `--paper` colour
+in `src/styles/global.css`. Original images in `public/` and the source projects remain
+unchanged for Substack and research use. The export replaces only registered, exact
+background colours; it preserves dimensions, plotted colours, transparency, and chart data.
+Charts get lossless `.website.png` copies, and built pages link to those copies.
+Original image URLs remain available with their original bytes.
+Register new authored article charts in `src/data/website-chart-images.json`; do not add
+photographs, screenshots, or third-party graphics. Staged UK and congressional chart
+directories are handled automatically, and their pages use the publication background.
+
 If an image is not available in the project, copy the author's image into a suitable
 `public/artifacts/` directory. Do not leave dependencies on Substack image-CDN URLs or
 placeholder images. Keep figure order and captions intact.
