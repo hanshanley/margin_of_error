@@ -35,6 +35,27 @@ jobs:
           mkdir -p public/congressional_profanity
           cp -R congressional-record-source/site/. public/congressional_profanity/
 
+      - name: Checkout UK evidence project
+        uses: actions/checkout@v7
+        with:
+          repository: hanshanley/uk_decline
+          ref: master
+          path: uk-decline-source
+
+      - name: Set up the UK page builder
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: uk-decline-source/requirements-site.txt
+
+      - name: Build and stage embedded UK pages
+        run: |
+          pip install -r uk-decline-source/requirements-site.txt
+          python uk-decline-source/scripts/build_site.py
+          mkdir -p public/uk_decline
+          cp -R uk-decline-source/_site/. public/uk_decline/
+
       - name: Build and upload site
         uses: withastro/action@v6
 
