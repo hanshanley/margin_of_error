@@ -154,6 +154,16 @@ assert.equal(
 	firstAnalysis.find('img').attr('src'),
 	'/artifacts/congressional-record/profanity_per_1k_last50.png',
 );
+assert.equal(analysis('.analysis-list > li').length, 2);
+const ukAnalysis = analysis('.analysis-list > li').eq(1);
+assert.equal(ukAnalysis.find('h2 a').text(), 'The UK, in context');
+for (const link of ukAnalysis.find('a').toArray()) {
+	assert.equal(analysis(link).attr('href'), 'https://www.themarginoferror.com/uk_decline/');
+}
+assert.equal(
+	ukAnalysis.find('img').attr('src'),
+	'https://www.themarginoferror.com/uk_decline/outputs/uk_decline_scorecard.png',
+);
 const homepage = await text('index.html');
 assert.doesNotMatch(homepage, /Vol\. I/i);
 assert.doesNotMatch(homepage, /field notes?/i);
