@@ -137,6 +137,7 @@ select {
 
 .masthead nav a {
 	text-decoration: none;
+	white-space: nowrap;
 }
 
 .masthead nav a[aria-current="page"] {
@@ -730,6 +731,40 @@ main {
 	font-size: 1.3rem;
 }
 
+.analysis-list {
+	margin: 0;
+	padding: 0;
+	border-top: 3px double var(--ink);
+	list-style: none;
+}
+
+.analysis-list li {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+	gap: clamp(1.5rem, 4vw, 3rem);
+	align-items: center;
+	padding: 2rem 0;
+	border-bottom: 1px solid var(--rule);
+}
+
+.analysis-preview {
+	display: block;
+	background: var(--paper-deep);
+}
+
+.analysis-list h2 {
+	margin: 0;
+	font-size: clamp(1.8rem, 3vw, 2.8rem);
+	font-weight: 500;
+	letter-spacing: -0.04em;
+	line-height: 1.1;
+}
+
+.analysis-list li > div > p {
+	margin: 1rem 0 0;
+	color: var(--muted);
+}
+
 .archive-list {
 	margin: 0;
 	padding: 0;
@@ -1087,6 +1122,13 @@ main {
 	text-transform: uppercase;
 }
 
+@media (max-width: 900px) {
+	.masthead {
+		grid-template-columns: 1fr;
+		gap: 1.2rem;
+	}
+}
+
 @media (max-width: 760px) {
 	:root {
 		--page: calc(100vw - 28px);
@@ -1104,16 +1146,9 @@ main {
 		justify-content: end;
 	}
 
-	.masthead {
-		grid-template-columns: 1fr;
-		gap: 1.2rem;
-	}
-
 	.masthead nav ul {
-		display: grid;
-		grid-template-columns: repeat(4, auto);
-		gap: 0.4rem;
-		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 1rem;
 		width: 100%;
 		font-size: 0.7rem;
 	}
@@ -1125,7 +1160,8 @@ main {
 	.home-lede,
 	.post-header,
 	.about-grid,
-	.calculator {
+	.calculator,
+	.analysis-list li {
 		grid-template-columns: 1fr;
 	}
 

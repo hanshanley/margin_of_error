@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+	title="Interactive analysis"
+	description="Explore the data behind The Margin of Error, starting with profanity, slurs, and formal courtesy in Congress."
+>
+	<section class="standard-page">
+		<header class="page-heading">
+			<h1>Interactive analysis</h1>
+			<p>Explore the data behind the essays.</p>
+		</header>
+		<ul class="analysis-list">
+			<li>
+				<a
+					class="analysis-preview"
+					href="https://www.themarginoferror.com/congressional_profanity/"
+					tabindex="-1"
+					aria-hidden="true"
+				>
+					<img
+						src="/artifacts/congressional-record/profanity_per_1k_last50.png"
+						alt=""
+						width="1959"
+						height="1093"
+						loading="eager"
+						decoding="async"
+					/>
+				</a>
+				<div>
+					<h2><a href="https://www.themarginoferror.com/congressional_profanity/">The language of Congress</a></h2>
+					<p>
+						Compare profanity, slurs, and formal courtesy in House and Senate floor
+						speeches. Explore historical trends and see which members use the most profanity.
+					</p>
+					<div class="lead-actions">
+						<a class="primary-action" href="https://www.themarginoferror.com/congressional_profanity/">Open analysis</a>
+						<a href="/floor-letter-words-the-rise-of-congressional-profanity/">Read the essay</a>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</section>
+</BaseLayout>
