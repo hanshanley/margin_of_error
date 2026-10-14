@@ -30,6 +30,7 @@ const requiredFiles = [
 	'about/index.html',
 	'are-you-an-ai/index.html',
 	'archive/index.html',
+	'interactive-analysis/index.html',
 	'home/index.html',
 	'my-first-blog-post/index.html',
 	'floor-letter-words-the-rise-of-congressional-profanity/index.html',
@@ -55,6 +56,7 @@ assert.match(sitemapIndex, /https:\/\/www\.themarginoferror\.com\/sitemap-0\.xml
 const sitemap = await text('sitemap-0.xml');
 assert.match(sitemap, /https:\/\/www\.themarginoferror\.com\/my-first-blog-post\//);
 assert.match(sitemap, /https:\/\/www\.themarginoferror\.com\/are-you-an-ai\//);
+assert.match(sitemap, /https:\/\/www\.themarginoferror\.com\/interactive-analysis\//);
 assert.doesNotMatch(sitemap, /https:\/\/www\.themarginoferror\.com\/home\//);
 assert.match(sitemap, /https:\/\/www\.themarginoferror\.com\/congressional_profanity\/activity\//);
 assert.doesNotMatch(sitemap, /professional_profanity/);
@@ -127,6 +129,31 @@ assert.doesNotMatch(qAnonHosting, /description" content="&lt;img|description" co
 assert.match(qAnonHosting, /web hosts, platforms, and news sites/);
 
 const archive = await text('archive/index.html');
+const analysis = load(await text('interactive-analysis/index.html'));
+assert.equal(analysis('h1').text(), 'Interactive analysis');
+assert.equal(
+	analysis('link[rel="canonical"]').attr('href'),
+	'https://www.themarginoferror.com/interactive-analysis/',
+);
+const firstAnalysis = analysis('.analysis-list > li').first();
+assert.equal(firstAnalysis.find('h2 a').text(), 'The language of Congress');
+assert.equal(
+	firstAnalysis.find('h2 a').attr('href'),
+	'https://www.themarginoferror.com/congressional_profanity/',
+);
+assert.equal(
+	firstAnalysis.find('.primary-action').attr('href'),
+	'https://www.themarginoferror.com/congressional_profanity/',
+);
+assert.equal(firstAnalysis.find('.primary-action').text(), 'Open analysis');
+assert.equal(
+	firstAnalysis.find('a:contains("Read the essay")').attr('href'),
+	'/floor-letter-words-the-rise-of-congressional-profanity/',
+);
+assert.equal(
+	firstAnalysis.find('img').attr('src'),
+	'/artifacts/congressional-record/profanity_per_1k_last50.png',
+);
 const homepage = await text('index.html');
 assert.doesNotMatch(homepage, /Vol\. I/i);
 assert.doesNotMatch(homepage, /field notes?/i);
@@ -275,6 +302,16 @@ if (outputFileNames.has('uk_decline/index.html')) {
 for (const file of outputFiles.filter((file) => file.endsWith('.html'))) {
 	const fileName = relative(outputDirectory, file);
 	const $ = load(await readFile(file, 'utf8'));
+	if ($('.site-header').length) {
+		const analysisNav = $('.site-header nav a[href="/interactive-analysis/"]');
+		assert.equal(analysisNav.length, 1, `Interactive analysis navigation missing in ${fileName}`);
+		assert.equal(analysisNav.text(), 'Interactive analysis');
+		assert.equal(
+			analysisNav.attr('aria-current'),
+			fileName === 'interactive-analysis/index.html' ? 'page' : undefined,
+			`Incorrect interactive analysis navigation state in ${fileName}`,
+		);
+	}
 	assert.ok($('title').text().trim(), `Page title missing in ${fileName}`);
 	assert.ok(
 		$('meta[name="description"]').attr('content')?.trim(),
