@@ -1,0 +1,68 @@
+[
+  {
+    "directory": "artifacts/congressional-record",
+    "background": "#f7f5f0"
+  },
+  {
+    "directory": "congressional_profanity/figures",
+    "background": "#f7f5f0"
+  },
+  {
+    "directory": "uk_decline/outputs",
+    "background": "#f7f5f0"
+  },
+  {
+    "directory": "uk_decline/data/processed",
+    "background": "#f7f5f0"
+  },
+  {
+    "directory": "artifacts/legacy/echo-chambers-embedded-in-the-structure-of-news-media-websites",
+    "background": "#ffffff",
+    "files": ["figure-01.png", "figure-02.png", "figure-03.png"]
+  },
+  {
+    "directory": "artifacts/legacy/oh-q-what-art-thou",
+    "background": "#ffffff",
+    "files": ["figure-03.png"]
+  },
+  {
+    "directory": "artifacts/legacy/oh-q-where-art-thou",
+    "background": "#ffffff",
+    "files": ["figure-04.png", "figure-05.png"]
+  },
+  {
+    "directory": "artifacts/legacy/the-influx-of-russian-misinfo-on-the-rrussia-subreddit",
+    "background": "#ffffff",
+    "files": ["figure-02.png", "figure-03.png", "figure-04.png", "figure-05.png", "figure-06.png"]
+  },
+  {
+    "directory": "artifacts/legacy/us-summit-for-democracy",
+    "background": "#ffffff",
+    "files": ["figure-02.png", "figure-03.png", "figure-04.png", "figure-05.png", "figure-06.png"]
+  },
+  {
+    "directory": "artifacts/substack/a-continent-at-a-crossroads-natos",
+    "background": "#f9f4f0",
+    "files": ["figure-01.jpg", "figure-03.jpg", "figure-04.jpg", "figure-05.jpg"]
+  },
+  {
+    "directory": "artifacts/substack/media-coverage-of-kamala-harris-and",
+    "background": "#ffffff",
+    "files": ["figure-01.jpg", "figure-02.jpg", "figure-03.jpg", "figure-04.jpg"]
+  },
+  {
+    "directory": "artifacts/substack/the-republican-party-after-trump",
+    "background": "#ffffff",
+    "files": ["figure-01.jpg", "figure-02.jpg"]
+  },
+  {
+    "directory": "artifacts/substack/the-shrinking-swing-state-map",
+    "background": "#ffffff",
+    "files": ["figure-01.png", "figure-02.png", "figure-03.png"]
+  },
+  {
+    "directory": "artifacts/substack/who-are-the-real-americans-heritage",
+    "background": "#f6f5f0",
+    "files": ["figure-02.jpg", "figure-03.jpg", "figure-04.jpg", "figure-05.jpg", "figure-06.jpg"]
+  }
+]

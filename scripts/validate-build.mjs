@@ -3,6 +3,8 @@ import { readdir, readFile } from 'node:fs/promises';
 import { join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { load } from 'cheerio';
+import sharp from 'sharp';
+import chartImageGroups from '../src/data/website-chart-images.json' with { type: 'json' };
 
 const root = new URL('../dist/', import.meta.url);
 const projectRoot = new URL('../', import.meta.url);
@@ -42,6 +44,7 @@ const requiredFiles = [
 	'favicon-32.png',
 	'apple-touch-icon.png',
 	'social-card.png',
+	'website-chart-theme.css',
 ];
 
 for (const file of requiredFiles) {
@@ -49,6 +52,36 @@ for (const file of requiredFiles) {
 }
 
 assert.equal((await text('CNAME')).trim(), 'www.themarginoferror.com');
+const sourceCss = await readFile(new URL('src/styles/global.css', projectRoot), 'utf8');
+const paperHex = sourceCss.match(/--paper:\s*(#[0-9a-f]{6})\s*;/i)?.[1];
+assert.ok(paperHex, 'Publication paper colour is missing');
+assert.ok((await text('website-chart-theme.css')).includes(`--paper: ${paperHex};`));
+const paperRgb = [1, 3, 5].map((offset) => Number.parseInt(paperHex.slice(offset, offset + 2), 16));
+const publicRoot = new URL('public/', projectRoot);
+const publicFiles = await collectFiles(fileURLToPath(publicRoot));
+for (const group of chartImageGroups.filter((group) => group.directory.startsWith('artifacts/'))) {
+	const sources = group.files
+		? group.files.map((file) => `${group.directory}/${file}`)
+		: publicFiles.map((file) => relative(fileURLToPath(publicRoot), file))
+			.filter((file) => file.startsWith(`${group.directory}/`) && file.endsWith('.png'));
+	const background = [1, 3, 5].map((offset) => Number.parseInt(group.background.slice(offset, offset + 2), 16));
+	for (const source of sources) {
+		const destination = source.replace(/\.(?:png|jpe?g)$/i, '.website.png');
+		const original = await sharp(fileURLToPath(new URL(source, publicRoot))).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
+		const website = await sharp(fileURLToPath(new URL(destination, root))).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
+		assert.equal(website.info.width, original.info.width, `Chart width changed: ${source}`);
+		assert.equal(website.info.height, original.info.height, `Chart height changed: ${source}`);
+		const expected = Buffer.from(original.data);
+		const alreadyThemed = expected[3] === 255 && paperRgb.every((value, channel) => expected[channel] === value);
+		for (let offset = 0; !alreadyThemed && offset < expected.length; offset += 4) {
+			if (expected[offset + 3] === 255 && background.every((value, channel) => expected[offset + channel] === value)) {
+				paperRgb.forEach((value, channel) => { expected[offset + channel] = value; });
+			}
+		}
+		assert.ok(website.data.equals(expected), `Non-background chart pixels changed: ${source}`);
+		assert.ok((await readFile(new URL(source, publicRoot))).equals(await readFile(new URL(source, root))), `Original image changed: ${source}`);
+	}
+}
 
 const sitemapIndex = await text('sitemap-index.xml');
 assert.match(sitemapIndex, /https:\/\/www\.themarginoferror\.com\/sitemap-0\.xml/);
@@ -152,7 +185,7 @@ assert.equal(
 );
 assert.equal(
 	congressionalAnalysis.find('img').attr('src'),
-	'/artifacts/congressional-record/profanity_per_1k_last50.png',
+	'/artifacts/congressional-record/profanity_per_1k_last50.website.png',
 );
 assert.equal(analysis('.analysis-list > li').length, 2);
 const ukAnalysis = analysis('.analysis-list > li').first();
@@ -161,7 +194,7 @@ for (const link of ukAnalysis.find('a').toArray()) {
 	assert.equal(analysis(link).attr('href'), 'https://www.themarginoferror.com/uk_decline/');
 }
 assert.equal(
-	ukAnalysis.find('img').attr('src'),
+	new URL(ukAnalysis.find('img').attr('src'), 'https://www.themarginoferror.com').href.replace(/\.website\.png$/, '.png'),
 	'https://www.themarginoferror.com/uk_decline/outputs/uk_decline_scorecard.png',
 );
 const homepage = await text('index.html');
@@ -195,7 +228,7 @@ for (const slug of [
 ]) {
 	assert.match(homepage, new RegExp(`/artifacts/substack/${slug}/cover\\.jpg`));
 }
-assert.match(homepage, /\/artifacts\/congressional-record\/profanity_per_1k_last50\.png/);
+assert.match(homepage, /\/artifacts\/congressional-record\/profanity_per_1k_last50\.website\.png/);
 const expectedArchiveOrder = [
 	'floor-letter-words-the-rise-of-congressional-profanity',
 	'who-are-the-real-americans-heritage',
@@ -262,7 +295,7 @@ for (const file of [
 	'slurs_per_1k.png',
 	'formal_courtesy_per_1k_last50.png',
 ]) {
-	assert.equal(congressionalPost(`.prose img[src="/artifacts/congressional-record/${file}"]`).length, 1);
+	assert.equal(congressionalPost(`.prose img[src="/artifacts/congressional-record/${file.replace(/\.png$/, '.website.png')}"]`).length, 1);
 	await assert.doesNotReject(() => readFile(new URL(`artifacts/congressional-record/${file}`, root)));
 }
 assert.equal(congressionalPost('#footnote-anchor-1').attr('href'), '#footnote-1');
@@ -312,7 +345,7 @@ if (outputFileNames.has('uk_decline/index.html')) {
 for (const file of outputFiles.filter((file) => file.endsWith('.html'))) {
 	const fileName = relative(outputDirectory, file);
 	const $ = load(await readFile(file, 'utf8'));
-	if ($('.site-header').length) {
+	if ($('meta[name="generator"]').attr('content')?.startsWith('Astro') && $('.site-header').length) {
 		const analysisNav = $('.site-header nav a[href="/interactive-analysis/"]');
 		assert.equal(analysisNav.length, 1, `Interactive analysis navigation missing in ${fileName}`);
 		assert.equal(analysisNav.text(), 'Interactive analysis');
