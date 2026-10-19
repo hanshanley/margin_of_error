@@ -50,6 +50,7 @@ const leadPublishedAt =
 						height={'height' in leadImage ? leadImage.height : undefined}
 						loading="eager"
 						decoding="async"
+						style={leadItem.kind === 'post' && leadItem.post.data.thumbnail?.fit === 'contain' ? 'object-fit: contain' : undefined}
 					/>
 				)
 			}

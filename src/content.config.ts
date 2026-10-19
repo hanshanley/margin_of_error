@@ -74,6 +74,7 @@ const postSchema = z.object({
 			alt: z.string(),
 			width: z.number().int().positive().optional(),
 			height: z.number().int().positive().optional(),
+			fit: z.enum(['cover', 'contain']).optional(),
 		})
 		.optional(),
 	hero: z
