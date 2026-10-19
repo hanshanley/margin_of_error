@@ -191,9 +191,13 @@ assert.equal(
 assert.equal(analysis('.analysis-list > li').length, 2);
 const ukAnalysis = analysis('.analysis-list > li').first();
 assert.equal(ukAnalysis.find('h2 a').text(), 'The UK, in context');
-for (const link of ukAnalysis.find('a').toArray()) {
+for (const link of ukAnalysis.find('h2 a, .analysis-preview, .primary-action').toArray()) {
 	assert.equal(analysis(link).attr('href'), 'https://www.themarginoferror.com/uk_decline/');
 }
+assert.equal(
+	ukAnalysis.find('.lead-actions a:contains("Read the essay")').attr('href'),
+	'/broken-britain-the-headwinds-battering-the-island-nation/',
+);
 assert.equal(
 	new URL(ukAnalysis.find('img').attr('src'), 'https://www.themarginoferror.com').href.replace(/\.website\.png$/, '.png'),
 	'https://www.themarginoferror.com/uk_decline/outputs/uk_decline_scorecard.png',
