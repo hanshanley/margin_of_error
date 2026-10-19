@@ -327,7 +327,7 @@ assert.equal(britainPost('meta[name="description"]').attr('content'), britainPos
 assert.match(britainPost('.byline').text(), /October 19, 2026/);
 assert.equal(
 	britainPost('.post-header a:contains("Original edition")').attr('href'),
-	'https://themarginoferror.substack.com/p/8f1edb7d-4cf0-493b-8044-b57aa7cb8cec',
+	'https://themarginoferror.substack.com/p/broken-britain-the-headwinds-battering',
 );
 assert.match(britainPost('.prose').text(), /“This is not Winston Churchill we’re dealing with,”/);
 assert.match(britainPost('.prose').text(), /the U.K.’s problems may be too complicated to solve simply by swapping prime ministers/);
@@ -365,6 +365,11 @@ assert.deepEqual(
 		'Tommy Robinson’s tweets about Afghan “invaders” and about a “two-tiered” justice system.',
 	],
 );
+const twitterScreenshot = britainPost('.prose img[src="/artifacts/uk-decline/tommy-robinson-post.png"]');
+assert.equal(twitterScreenshot.length, 1);
+assert.match(twitterScreenshot.attr('style'), /margin-inline:\s*auto/);
+assert.equal(twitterScreenshot.next().prop('tagName'), 'H6');
+assert.match(twitterScreenshot.next().attr('style'), /text-align:\s*center/);
 assert.equal(britainPost('#footnote-anchor-1').attr('href'), '#footnote-1');
 assert.equal(britainPost('#footnote-1 a[href="#footnote-anchor-1"]').length, 1);
 assert.equal(
