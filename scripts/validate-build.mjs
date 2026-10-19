@@ -365,6 +365,10 @@ assert.deepEqual(
 		'Tommy Robinson’s tweets about Afghan “invaders” and about a “two-tiered” justice system.',
 	],
 );
+const burnhamPhoto = britainPost('.prose img[src="/artifacts/uk-decline/andy-burnham.jpeg"]');
+assert.equal(burnhamPhoto.length, 1);
+assert.equal(burnhamPhoto.next().prop('tagName'), 'H6');
+assert.match(burnhamPhoto.next().attr('style'), /text-align:\s*center/);
 const twitterScreenshot = britainPost('.prose img[src="/artifacts/uk-decline/tommy-robinson-post.png"]');
 assert.equal(twitterScreenshot.length, 1);
 assert.match(twitterScreenshot.attr('style'), /margin-inline:\s*auto/);
