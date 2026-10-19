@@ -141,7 +141,7 @@ Important fields:
 | `sortOrder` | Integer Unix seconds derived from the intended publication date; this controls newest-first ordering |
 | `legacyPath` | `/<slug>`, matching the article's public route |
 | `originalUrl` | The supplied reader URL or actual published source, not the editor URL |
-| `thumbnail` | Local image path, useful alt text, and real dimensions |
+| `thumbnail` | Local image path, useful alt text, and real dimensions; set `fit: "contain"` for charts that must not be cropped in previews |
 | `draft` | `false` only when the author has authorized publication |
 
 Compute the ordering value rather than guessing it:

@@ -27,6 +27,7 @@ const thumbnailHeight = post.data.thumbnail?.height;
 					height={thumbnailHeight}
 					loading={index === 0 ? 'eager' : 'lazy'}
 					decoding="async"
+					style={post.data.thumbnail?.fit === 'contain' ? 'object-fit: contain' : undefined}
 				/>
 			) : (
 				<span aria-hidden="true">±</span>

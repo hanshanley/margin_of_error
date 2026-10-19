@@ -64,5 +64,27 @@
     "directory": "artifacts/substack/who-are-the-real-americans-heritage",
     "background": "#f6f5f0",
     "files": ["figure-02.jpg", "figure-03.jpg", "figure-04.jpg", "figure-05.jpg", "figure-06.jpg"]
+  },
+  {
+    "directory": "artifacts/uk-decline",
+    "background": "#f7f5f0",
+    "files": [
+      "uk_decline_scorecard.png",
+      "crime_csew_total.png",
+      "uk_real_gdp_relative_to_peers.png",
+      "median_disposable_income_oecd_history.png",
+      "sterling_currency_strength_v2.png",
+      "household_electricity_prices.png",
+      "industrial_electricity_prices.png",
+      "tuition_by_country_to_france.png",
+      "rtt_waiting_list_per_1000.png",
+      "ae_4hr_pct.png",
+      "uk_austerity_spending_investment.png",
+      "rail_london_casl.png",
+      "public_capital_investment.png",
+      "government_borrowing_costs.png",
+      "net_migration_by_origin.png",
+      "gb_voting_intention_average.png"
+    ]
   }
 ]

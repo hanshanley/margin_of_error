@@ -48,6 +48,7 @@ const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(com
 								height={post.data.thumbnail?.height}
 								loading="lazy"
 								decoding="async"
+								style={post.data.thumbnail?.fit === 'contain' ? 'object-fit: contain' : undefined}
 							/>
 						) : (
 							<span aria-hidden="true">±</span>

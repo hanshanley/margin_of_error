@@ -36,6 +36,7 @@ const requiredFiles = [
 	'home/index.html',
 	'my-first-blog-post/index.html',
 	'floor-letter-words-the-rise-of-congressional-profanity/index.html',
+	'broken-britain-the-headwinds-battering-the-island-nation/index.html',
 	'rss.xml',
 	'robots.txt',
 	'sitemap-index.xml',
@@ -204,15 +205,26 @@ assert.match(
 	homepage,
 	/<p class="kicker">Latest essay<\/p>/,
 );
-assert.match(homepage, /<h1 id="lead-story-title"><a href="\/floor-letter-words-the-rise-of-congressional-profanity\/">/);
+const britainSlug = 'broken-britain-the-headwinds-battering-the-island-nation';
+assert.match(homepage, new RegExp(`<h1 id="lead-story-title"><a href="/${britainSlug}/">`));
 assert.match(homepage, />Read article<\/a>/);
 assert.match(homepage, />Subscribe<\/a>/);
-assert.match(homepage, /October 11, 2026/);
+assert.match(homepage, /October 19, 2026/);
 const leadPreview = load(homepage);
 assert.equal(leadPreview('.dispatches > .section-heading').text().trim(), 'Recent dispatches');
 assert.equal(leadPreview('.dispatches > .section-heading > h2#dispatches-title').length, 1);
 assert.equal(leadPreview('.home-deck .dek').length, 0);
-assert.match(leadPreview('.home-deck .lead-subtitle').text(), /it is keeping this C-SPAN listener awake/);
+assert.equal(
+	leadPreview('.home-deck .lead-subtitle').text(),
+	'Stagnant incomes, strained public services, and fractured politics are bringing Britain to a standstill',
+);
+assert.equal(
+	leadPreview('.home-lede .lead-image img').attr('src'),
+	'/artifacts/uk-decline/uk_decline_scorecard.website.png',
+);
+assert.equal(leadPreview('.home-lede .lead-image img').attr('width'), '3343');
+assert.equal(leadPreview('.home-lede .lead-image img').attr('height'), '2200');
+assert.match(leadPreview('.home-lede .lead-image img').attr('style'), /object-fit:\s*contain/);
 assert.doesNotMatch(leadPreview('.home-deck').text(), /A look at profanity, slurs, and formal courtesy/);
 assert.equal([...homepage.matchAll(/class="post-row"/g)].length, 4);
 const archiveAction = leadPreview('.dispatches > .dispatches-footer > .archive-action');
@@ -224,12 +236,12 @@ for (const slug of [
 	'who-are-the-real-americans-heritage',
 	'a-continent-at-a-crossroads-natos',
 	'the-republican-party-after-trump',
-	'media-coverage-of-kamala-harris-and',
 ]) {
 	assert.match(homepage, new RegExp(`/artifacts/substack/${slug}/cover\\.jpg`));
 }
 assert.match(homepage, /\/artifacts\/congressional-record\/profanity_per_1k_last50\.website\.png/);
 const expectedArchiveOrder = [
+	britainSlug,
 	'floor-letter-words-the-rise-of-congressional-profanity',
 	'who-are-the-real-americans-heritage',
 	'a-continent-at-a-crossroads-natos',
@@ -304,7 +316,73 @@ assert.match(congressionalPost('.post-materials').text(), /Interactive congressi
 assert.equal(congressionalPost('a[href="https://www.themarginoferror.com/congressional_profanity/"]').length, 2);
 assert.match(aiIndex, new RegExp(`https://www\\.themarginoferror\\.com/${congressSlug}/`));
 const feed = load(await text('rss.xml'), { xml: true });
-assert.equal(feed('item').first().find('link').text(), `https://www.themarginoferror.com/${congressSlug}/`);
+assert.equal(feed('item').first().find('link').text(), `https://www.themarginoferror.com/${britainSlug}/`);
+assert.equal(feed('item').eq(1).find('link').text(), `https://www.themarginoferror.com/${congressSlug}/`);
+
+const britainPost = load(await text(`${britainSlug}/index.html`));
+assert.equal(britainPost('h1').text(), 'Broken Britain: The Headwinds Battering the Island Nation');
+assert.equal(britainPost('.post-subtitle').text(), leadPreview('.home-deck .lead-subtitle').text());
+assert.equal(britainPost('.post-description').length, 0);
+assert.equal(britainPost('meta[name="description"]').attr('content'), britainPost('.post-subtitle').text());
+assert.match(britainPost('.byline').text(), /October 19, 2026/);
+assert.equal(
+	britainPost('.post-header a:contains("Original edition")').attr('href'),
+	'https://themarginoferror.substack.com/p/8f1edb7d-4cf0-493b-8044-b57aa7cb8cec',
+);
+assert.match(britainPost('.prose').text(), /“This is not Winston Churchill we’re dealing with,”/);
+assert.match(britainPost('.prose').text(), /the U.K.’s problems may be too complicated to solve simply by swapping prime ministers/);
+assert.doesNotMatch(britainPost('.prose').text(), /reader-supported publication|consider becoming a free or paid subscriber/);
+const britainFigures = [
+	'andy-burnham.jpeg',
+	'crime_csew_total.website.png',
+	'uk_real_gdp_relative_to_peers.website.png',
+	'median_disposable_income_oecd_history.website.png',
+	'sterling_currency_strength_v2.website.png',
+	'household_electricity_prices.website.png',
+	'industrial_electricity_prices.website.png',
+	'tuition_by_country_to_france.website.png',
+	'rtt_waiting_list_per_1000.website.png',
+	'ae_4hr_pct.website.png',
+	'uk_austerity_spending_investment.website.png',
+	'rail_london_casl.website.png',
+	'public_capital_investment.website.png',
+	'government_borrowing_costs.website.png',
+	'tommy-robinson-post.png',
+	'net_migration_by_origin.website.png',
+	'gb_voting_intention_average.website.png',
+];
+assert.deepEqual(
+	britainPost('.prose img').toArray().map((image) => britainPost(image).attr('src')),
+	britainFigures.map((file) => `/artifacts/uk-decline/${file}`),
+);
+for (const image of britainPost('.prose img').toArray()) {
+	assert.ok(britainPost(image).attr('alt')?.trim(), 'UK article figure needs meaningful alt text');
+}
+assert.deepEqual(
+	britainPost('.prose h6').toArray().map((heading) => britainPost(heading).text()).filter(Boolean),
+	[
+		'Prime Minister Andrew “Andy” Burnham holds a press conference in his office.',
+		'Tommy Robinson’s tweets about Afghan “invaders” and about a “two-tiered” justice system.',
+	],
+);
+assert.equal(britainPost('#footnote-anchor-1').attr('href'), '#footnote-1');
+assert.equal(britainPost('#footnote-1 a[href="#footnote-anchor-1"]').length, 1);
+assert.equal(
+	britainPost('#footnote-1 a[href^="https://www.oecd.org/"]').attr('href'),
+	'https://www.oecd.org/content/dam/oecd/en/about/programmes/oecd-data-collection-programme/society/income-distribution-database/income-distribution-guidelines.pdf',
+);
+assert.equal(britainPost('.prose a[href="https://www.themarginoferror.com/uk_decline/"]').length, 1);
+assert.equal(britainPost('.post-materials a[href="https://www.themarginoferror.com/uk_decline/"]').length, 1);
+assert.equal(britainPost('.post-materials a[href="https://github.com/hanshanley/uk_decline"]').length, 1);
+assert.match(aiIndex, new RegExp(`https://www\\.themarginoferror\\.com/${britainSlug}/`));
+const britainArchiveEntry = load(archive)(`h2 a[href="/${britainSlug}/"]`).closest('li');
+assert.equal(britainArchiveEntry.find('.archive-subtitle').length, 1);
+assert.equal(
+	britainArchiveEntry.find('img').attr('src'),
+	'/artifacts/uk-decline/uk_decline_scorecard.website.png',
+);
+assert.match(britainArchiveEntry.find('img').attr('style'), /object-fit:\s*contain/);
+assert.match(sitemap, new RegExp(`https://www\\.themarginoferror\\.com/${britainSlug}/`));
 
 for (const article of externalArticles) {
 	assert.match(archive, new RegExp(article.url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
