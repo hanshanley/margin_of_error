@@ -26,6 +26,25 @@ embed their charts directly, without an iframe or a dependency on the personal s
 The UK project refreshes supported sources weekly; this publication picks up
 successful saved updates during its twice-daily deployments.
 
+China business-presence histories are staged at `/china-us-relations/` from
+`hanshanley/china-us-relation-change`. Deployment runs its offline
+`scripts/build_business_publication.py` against the committed business snapshot,
+not its data collector or its complete exchange/Weibo site. For local validation,
+stage the same business-only export before `npm test`:
+
+```bash
+../china-us-relation-change/.venv/bin/python \
+  ../china-us-relation-change/scripts/build_business_publication.py \
+  --output public/china-us-relations
+```
+
+The public manifest records the source revision and complete-data checksums.
+Origin controls select panels and table columns; year controls affect only the
+exact table, not the full-history charts or downloads. The website recolours
+previews, while links marked `data-original-chart` retain the original Substack
+and Margin of Error download backgrounds. Adding an analysis tool does not
+create an article or require a personal-site writing-index entry.
+
 Read each repository's instructions before editing. Work from the repository root unless a
 command says otherwise. In this repository, `CLAUDE.md` is a symlink to `AGENTS.md`;
 edit the shared instructions once, not through both filenames.

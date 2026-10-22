@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import { readdir, readFile } from 'node:fs/promises';
 import { join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -46,6 +47,9 @@ const requiredFiles = [
 	'apple-touch-icon.png',
 	'social-card.png',
 	'website-chart-theme.css',
+	'china-us-relations/index.html',
+	'china-us-relations/publication-manifest.json',
+	'china-us-relations/downloads/business-presence.json',
 ];
 
 for (const file of requiredFiles) {
@@ -95,6 +99,7 @@ assert.doesNotMatch(sitemap, /https:\/\/www\.themarginoferror\.com\/home\//);
 assert.match(sitemap, /https:\/\/www\.themarginoferror\.com\/congressional_profanity\/activity\//);
 assert.doesNotMatch(sitemap, /professional_profanity/);
 assert.match(sitemap, /https:\/\/www\.themarginoferror\.com\/uk_decline\//);
+assert.match(sitemap, /https:\/\/www\.themarginoferror\.com\/china-us-relations\//);
 
 for (const [legacy, target] of [
 	['professional_profanity/index.html', 'congressional_profanity/'],
@@ -188,7 +193,40 @@ assert.equal(
 	congressionalAnalysis.find('img').attr('src'),
 	'/artifacts/congressional-record/profanity_per_1k_last50.website.png',
 );
-assert.equal(analysis('.analysis-list > li').length, 2);
+assert.equal(analysis('.analysis-list > li').length, 3);
+const chinaAnalysis = analysis('.analysis-list > li').eq(2);
+assert.equal(chinaAnalysis.find('h2 a').text(), 'U.S. and European businesses in China');
+for (const link of chinaAnalysis.find('h2 a, .analysis-preview, .primary-action').toArray()) {
+	assert.equal(analysis(link).attr('href'), 'https://www.themarginoferror.com/china-us-relations/');
+}
+assert.equal(chinaAnalysis.find('img').attr('src'),
+	'/china-us-relations/figures/business_presence/themarginoferror/us-affiliates-china.website.png');
+const china = load(await text('china-us-relations/index.html'));
+assert.equal(china('link[rel="canonical"]').attr('href'), 'https://www.themarginoferror.com/china-us-relations/');
+assert.equal(china('.publication-header nav a').length, 4);
+assert.equal(china('svg[role="img"]').length, 5);
+assert.equal(china('#business-controls').length, 1);
+assert.ok(china('#business-controls').is('[hidden]'), 'Controls must progressively enhance the no-JS page');
+assert.equal(china('#annual-values [data-business-year]').length, 24);
+assert.equal(china('#business-benchmark-background[open]').length, 0);
+assert.equal(china('iframe').length, 0);
+assert.equal(china('link[href="/website-chart-theme.css"]').length, 1);
+const chinaManifest = JSON.parse(await text('china-us-relations/publication-manifest.json'));
+assert.match(chinaManifest.source_revision, /^[0-9a-f]{40}$/);
+assert.equal(chinaManifest.source_repository, 'hanshanley/china-us-relation-change');
+const businessData = JSON.parse(await text('china-us-relations/downloads/business-presence.json'));
+assert.equal(businessData.observations.length, chinaManifest.observations);
+assert.equal(chinaManifest.dataset_sha256, createHash('sha256')
+	.update(await readFile(new URL('china-us-relations/downloads/business-presence.json', root))).digest('hex'));
+for (const [path, checksum] of Object.entries(chinaManifest.files)) {
+	const bytes = await readFile(new URL(`china-us-relations/${path}`, root));
+	assert.equal(createHash('sha256').update(bytes).digest('hex'), checksum, `China source asset changed: ${path}`);
+}
+for (const link of china('a[href^="figures/"]').toArray()) {
+	const node = china(link);
+	assert.ok(node.is('[data-original-chart]'));
+	assert.doesNotMatch(node.attr('href'), /\.website\.png$/);
+}
 const ukAnalysis = analysis('.analysis-list > li').first();
 assert.equal(ukAnalysis.find('h2 a').text(), 'The UK, in context');
 for (const link of ukAnalysis.find('h2 a, .analysis-preview, .primary-action').toArray()) {

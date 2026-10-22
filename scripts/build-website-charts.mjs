@@ -83,11 +83,12 @@ export function themeChartPage(html, pagePath, images) {
 	});
 	$('a[href], meta[property="og:image"], meta[name="twitter:image"]').each((_, element) => {
 		const node = $(element);
+		if (node.is('a[data-original-chart]')) return;
 		const attribute = node.is('a') ? 'href' : 'content';
 		const output = replacement(node.attr(attribute));
 		if (output) setAttribute(element, attribute, output);
 	});
-	if (!hasCharts && !/^(?:uk_decline|congressional_profanity)\//.test(pagePath)) return html;
+	if (!hasCharts && !/^(?:uk_decline|congressional_profanity|china-us-relations)\//.test(pagePath)) return html;
 	if (!$('link[href="/website-chart-theme.css"]').length) {
 		const offset = $('head')[0]?.sourceCodeLocation?.endTag?.startOffset;
 		if (offset === undefined) throw new Error(`Missing chart page head in ${pagePath}`);
