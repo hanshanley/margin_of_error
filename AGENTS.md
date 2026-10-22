@@ -6,6 +6,9 @@ Substack reader previews, project figures, validation, deployment, and updating
 
 ## Development
 
+Keep the Interactive analysis list newest first. Prepend new analyses rather than
+appending them; only the first preview image should use eager loading.
+
 When starting the dev server, use background mode:
 
 ```

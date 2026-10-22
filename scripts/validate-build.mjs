@@ -174,7 +174,7 @@ assert.equal(
 	analysis('link[rel="canonical"]').attr('href'),
 	'https://www.themarginoferror.com/interactive-analysis/',
 );
-const congressionalAnalysis = analysis('.analysis-list > li').eq(1);
+const congressionalAnalysis = analysis('.analysis-list > li').eq(2);
 assert.equal(congressionalAnalysis.find('h2 a').text(), 'The language of Congress');
 assert.equal(
 	congressionalAnalysis.find('h2 a').attr('href'),
@@ -194,30 +194,46 @@ assert.equal(
 	'/artifacts/congressional-record/profanity_per_1k_last50.website.png',
 );
 assert.equal(analysis('.analysis-list > li').length, 3);
-const chinaAnalysis = analysis('.analysis-list > li').eq(2);
-assert.equal(chinaAnalysis.find('h2 a').text(), 'U.S. and European businesses in China');
+const chinaAnalysis = analysis('.analysis-list > li').first();
+assert.equal(chinaAnalysis.find('h2 a').text(), 'U.S.–China connections');
+assert.equal(chinaAnalysis.find('img').attr('loading'), 'eager');
+assert.equal(analysis('.analysis-list img[loading=eager]').length, 1);
 for (const link of chinaAnalysis.find('h2 a, .analysis-preview, .primary-action').toArray()) {
 	assert.equal(analysis(link).attr('href'), 'https://www.themarginoferror.com/china-us-relations/');
 }
 assert.equal(chinaAnalysis.find('img').attr('src'),
-	'/china-us-relations/figures/business_presence/themarginoferror/us-affiliates-china.website.png');
+	'/china-us-relations/figures/goods_trade/themarginoferror/bea-CHN-USA-goods.website.png');
 const china = load(await text('china-us-relations/index.html'));
 assert.equal(china('link[rel="canonical"]').attr('href'), 'https://www.themarginoferror.com/china-us-relations/');
-assert.equal(china('.publication-header nav a').length, 4);
-assert.equal(china('svg[role="img"]').length, 5);
-assert.equal(china('#business-controls').length, 1);
-assert.ok(china('#business-controls').is('[hidden]'), 'Controls must progressively enhance the no-JS page');
-assert.equal(china('#annual-values [data-business-year]').length, 24);
-assert.equal(china('#business-benchmark-background[open]').length, 0);
+assert.equal(china('.publication-header nav a').length, 5);
+assert.equal(china('h1').text(), 'U.S.–China connections');
+assert.equal(china('#exchange-data').length, 1);
+assert.equal(china('#chart svg[role=img]').length, 1);
+assert.equal(china('.analysis-tabs a').length, 6);
+assert.match(china('.analysis-scope').text(), /2025.*2026/);
+assert.equal(china('#geography option[value=TWN]').length, 0);
+assert.equal(china('form.controls[hidden]').length, 1);
 assert.equal(china('iframe').length, 0);
 assert.equal(china('link[href="/website-chart-theme.css"]').length, 1);
 const chinaManifest = JSON.parse(await text('china-us-relations/publication-manifest.json'));
 assert.match(chinaManifest.source_revision, /^[0-9a-f]{40}$/);
 assert.equal(chinaManifest.source_repository, 'hanshanley/china-us-relation-change');
 const businessData = JSON.parse(await text('china-us-relations/downloads/business-presence.json'));
-assert.equal(businessData.observations.length, chinaManifest.observations);
-assert.equal(chinaManifest.dataset_sha256, createHash('sha256')
-	.update(await readFile(new URL('china-us-relations/downloads/business-presence.json', root))).digest('hex'));
+assert.equal(chinaManifest.version, 2);
+assert.equal(businessData.observations.length, 74);
+const exchangeData = JSON.parse(await text('china-us-relations/downloads/exchange.json'));
+assert.equal(exchangeData.observations.length, chinaManifest.observations);
+assert.ok(exchangeData.observations.some(r => r.frequency === 'annual' && r.year === 2025 && r.value !== null));
+assert.ok(exchangeData.observations.some(r => r.frequency === 'ytd' && r.year === 2026 && r.value !== null));
+for (const [name, hash] of Object.entries(chinaManifest.datasets)) {
+	assert.equal(createHash('sha256').update(await readFile(new URL(`china-us-relations/downloads/${name}.json`, root))).digest('hex'), hash);
+}
+for (const name of ['comparisons.html', 'language-learning.html', 'business-presence.html', 'weibo.html']) {
+	const page = load(await text(`china-us-relations/${name}`));
+	assert.equal(page('.analysis-tabs a[aria-current=page]').length, 1);
+	assert.equal(page('iframe').length, 0);
+	for (const link of page('a[href^="figures/"]').toArray()) assert.ok(page(link).is('[data-original-chart]'));
+}
 for (const [path, checksum] of Object.entries(chinaManifest.files)) {
 	const bytes = await readFile(new URL(`china-us-relations/${path}`, root));
 	assert.equal(createHash('sha256').update(bytes).digest('hex'), checksum, `China source asset changed: ${path}`);
@@ -227,7 +243,7 @@ for (const link of china('a[href^="figures/"]').toArray()) {
 	assert.ok(node.is('[data-original-chart]'));
 	assert.doesNotMatch(node.attr('href'), /\.website\.png$/);
 }
-const ukAnalysis = analysis('.analysis-list > li').first();
+const ukAnalysis = analysis('.analysis-list > li').eq(1);
 assert.equal(ukAnalysis.find('h2 a').text(), 'The UK, in context');
 for (const link of ukAnalysis.find('h2 a, .analysis-preview, .primary-action').toArray()) {
 	assert.equal(analysis(link).attr('href'), 'https://www.themarginoferror.com/uk_decline/');

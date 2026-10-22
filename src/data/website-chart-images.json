@@ -8,12 +8,9 @@
     "background": "#f7f5f0"
   },
   {
-    "directory": "china-us-relations/figures/business_presence/themarginoferror",
-    "background": "#f7f5f0"
-  },
-  {
-    "directory": "china-us-relations/figures/business_presence/substack",
-    "background": "#f5f5f5"
+    "directory": "china-us-relations/figures/goods_trade/themarginoferror",
+    "background": "#f7f5f0",
+    "files": ["bea-CHN-USA-goods.png"]
   },
   {
     "directory": "uk_decline/outputs",
