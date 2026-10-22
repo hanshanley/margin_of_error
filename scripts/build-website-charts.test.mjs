@@ -80,7 +80,22 @@ test('interactive dashboards get the publication background even without raster 
 	const html = '<!doctype html><html><head></head><body><svg role="img"></svg></body></html>';
 	assert.match(themeChartPage(html, 'congressional_profanity/index.html', new Map()), /website-chart-theme.css/);
 	assert.match(themeChartPage(html, 'uk_decline/nhs.html', new Map()), /website-chart-theme.css/);
+	assert.match(themeChartPage(html, 'china-us-relations/index.html', new Map()), /website-chart-theme.css/);
 	assert.equal(themeChartPage(html, 'about/index.html', new Map()), html);
 	const redirect = '<!doctype html><meta http-equiv="refresh" content="0; url=activity/"><h1>Redirecting</h1>';
 	assert.equal(themeChartPage(redirect, 'congressional_profanity/activity.html', new Map()), redirect);
+});
+
+test('explicit original-background downloads are preserved while previews are themed', () => {
+	const html = '<html><head></head><body><img src="figures/a.png">' +
+		'<a data-original-chart href="figures/a.png">Margin of Error PNG</a>' +
+		'<a data-original-chart href="figures/b.png">Substack PNG</a></body></html>';
+	const themed = themeChartPage(html, 'china-us-relations/index.html', new Map([
+		['/china-us-relations/figures/a.png', '/china-us-relations/figures/a.website.png'],
+		['/china-us-relations/figures/b.png', '/china-us-relations/figures/b.website.png'],
+	]));
+	assert.match(themed, /src="\/china-us-relations\/figures\/a.website.png"/);
+	assert.match(themed, /data-original-chart href="figures\/a.png"/);
+	assert.match(themed, /data-original-chart href="figures\/b.png"/);
+	assert.match(themed, /website-chart-theme.css/);
 });
