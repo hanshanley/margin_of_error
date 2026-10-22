@@ -56,17 +56,17 @@ jobs:
           mkdir -p public/uk_decline
           cp -R uk-decline-source/_site/. public/uk_decline/
 
-      - name: Checkout China business analysis
+      - name: Checkout U.S.–China analysis
         uses: actions/checkout@v7
         with:
           repository: hanshanley/china-us-relation-change
           ref: main
           path: china-us-source
 
-      - name: Build and stage China business histories
+      - name: Build and stage collective U.S.–China analysis
         run: |
           pip install -r china-us-source/requirements-exchange.txt
-          python china-us-source/scripts/build_business_publication.py --output public/china-us-relations
+          python china-us-source/scripts/build_exchange_publication.py --output public/china-us-relations
 
       - name: Build and upload site
         uses: withastro/action@v6

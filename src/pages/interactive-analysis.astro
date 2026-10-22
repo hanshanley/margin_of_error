@@ -4,13 +4,42 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout
 	title="Interactive analysis"
-	description="Explore congressional language, change in the United Kingdom, and U.S. and European business presence in China."
+	description="Explore U.S.–China connections, change in the United Kingdom, and the language of Congress."
 >
 	<section class="standard-page">
 		<header class="page-heading">
 			<h1>Interactive analysis</h1>
 		</header>
 		<ul class="analysis-list">
+			<li>
+				<a
+					class="analysis-preview"
+					href="https://www.themarginoferror.com/china-us-relations/"
+					tabindex="-1"
+					aria-hidden="true"
+				>
+					<img
+						src="/china-us-relations/figures/goods_trade/themarginoferror/bea-CHN-USA-goods.png"
+						alt=""
+						width="3000"
+						height="1800"
+						loading="eager"
+						decoding="async"
+					/>
+				</a>
+				<div>
+					<h2><a href="https://www.themarginoferror.com/china-us-relations/">U.S.–China connections</a></h2>
+					<p>
+						Students, travel, trade, language learning, business, and U.S. media on Weibo.
+						Explore two-way histories, with annual data through 2025 and partial-year
+						updates in 2026 where available.
+					</p>
+					<div class="lead-actions">
+						<a class="primary-action" href="https://www.themarginoferror.com/china-us-relations/">Open analysis</a>
+						<a href="https://github.com/hanshanley/china-us-relation-change">Code + data</a>
+					</div>
+				</div>
+			</li>
 			<li>
 				<a
 					class="analysis-preview"
@@ -23,7 +52,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 						alt=""
 						width="3307"
 						height="1803"
-						loading="eager"
+						loading="lazy"
 						decoding="async"
 					/>
 				</a>
@@ -65,35 +94,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 					<div class="lead-actions">
 						<a class="primary-action" href="https://www.themarginoferror.com/congressional_profanity/">Open analysis</a>
 						<a href="/floor-letter-words-the-rise-of-congressional-profanity/">Read the essay</a>
-					</div>
-				</div>
-			</li>
-			<li>
-				<a
-					class="analysis-preview"
-					href="https://www.themarginoferror.com/china-us-relations/"
-					tabindex="-1"
-					aria-hidden="true"
-				>
-					<img
-						src="/china-us-relations/figures/business_presence/themarginoferror/us-affiliates-china.png"
-						alt=""
-						width="3000"
-						height="1800"
-						loading="lazy"
-						decoding="async"
-					/>
-				</a>
-				<div>
-					<h2><a href="https://www.themarginoferror.com/china-us-relations/">U.S. and European businesses in China</a></h2>
-					<p>
-						Explore annual business-presence histories from 2000 onward, where reported.
-						Compare U.S., EU, UK, and Norwegian coverage, with exact values, source
-						definitions, and complete downloads. Affiliate counts are not branch counts.
-					</p>
-					<div class="lead-actions">
-						<a class="primary-action" href="https://www.themarginoferror.com/china-us-relations/">Open analysis</a>
-						<a href="https://github.com/hanshanley/china-us-relation-change">Code + data</a>
 					</div>
 				</div>
 			</li>
