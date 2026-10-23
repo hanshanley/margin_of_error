@@ -29,7 +29,7 @@ successful saved updates during its twice-daily deployments.
 The collective U.S.–China analysis is staged at `/china-us-relations/` from
 `hanshanley/china-us-relation-change`. Deployment runs its offline
 `scripts/build_exchange_publication.py` against the committed public snapshots.
-It includes students, travel, goods/services trade, language, business and public
+It includes students, travel, immigration, goods/services trade, language, business and public
 Weibo research aggregates, never raw posts or source PDFs/workbooks. For local
 validation, stage the same export before `npm test`:
 
@@ -40,8 +40,18 @@ validation, stage the same export before `npm test`:
 ```
 
 The public manifest records the source revision and complete-data checksums.
+Travel keeps historical all-mode arrivals separate from recent NTTO air-survey
+estimates; the 2026 air estimates cover January-June only. Immigration keeps UN
+resident-stock benchmarks separate from fiscal-year permanent-resident grants,
+and birthplace separate from nationality. Language defaults to actual
+Chinese/Japanese/Korean college course enrollments, not global AP participation.
+School enrollment estimates and reported high-school program availability are
+separate dated snapshots, never a combined national learner count.
 The exchange explorer has geography, direction, measure and display controls;
-other topic pages have indicator selectors. Charts redraw for the screen rather
+Travel & tourism has its own direct visitor-arrival view. Immigration has a
+separate page for fiscal-year permanent-resident grants, not visas or visitor
+trips; birthplace histories and the FY2025 nationality snapshot are not spliced.
+The remaining topic pages have indicator selectors. Charts redraw for the screen rather
 than requiring horizontal scrolling. Annual 2025 data and separate 2026
 partial-year observations retain their actual periods; older series are not
 extended artificially. Definitions, source restrictions and full tables remain
