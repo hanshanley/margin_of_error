@@ -25,9 +25,7 @@ html {
 
 body {
 	margin: 0;
-	background:
-		linear-gradient(90deg, transparent 0, transparent calc(50% - 1px), rgba(23, 23, 19, 0.018) 50%, transparent calc(50% + 1px)),
-		var(--paper);
+	background: var(--paper);
 	font-size: 18px;
 	line-height: 1.58;
 }
