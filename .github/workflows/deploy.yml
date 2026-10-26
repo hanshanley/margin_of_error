@@ -68,28 +68,7 @@ jobs:
           pip install -r china-us-source/requirements-exchange.txt
           python china-us-source/scripts/build_exchange_publication.py --output public/china-us-relations
 
-      - name: Checkout political ads evidence
-        uses: actions/checkout@v7
-        with:
-          repository: hanshanley/political-ads
-          ref: main
-          path: political-ads-source
-
-      - name: Set up political ads dashboard
-        uses: actions/setup-node@v6
-        with:
-          node-version: "22"
-
-      - name: Build and stage political ads
-        run: |
-          pip install -e political-ads-source
-          python -m political_ads.cli --root political-ads-source build
-          python -m political_ads.cli --root political-ads-source validate
-          npm ci --prefix political-ads-source/web
-          npm run build --prefix political-ads-source/web
-          mkdir -p public/political-ads
-          cp -R political-ads-source/site/. public/political-ads/
-
+      # Political ads are unpublished until explicitly approved for publication.
       - name: Build and upload site
         uses: withastro/action@v6
 
