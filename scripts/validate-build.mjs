@@ -51,6 +51,11 @@ const requiredFiles = [
 	'china-us-relations/index.html',
 	'china-us-relations/publication-manifest.json',
 	'china-us-relations/downloads/business-presence.json',
+	'political-ads/index.html',
+	'political-ads/report.html',
+	'political-ads/data/dataset.json',
+	'political-ads/data/ads.csv',
+	'political-ads/preview.svg',
 ];
 
 for (const file of requiredFiles) {
@@ -175,7 +180,7 @@ assert.equal(
 	analysis('link[rel="canonical"]').attr('href'),
 	'https://www.themarginoferror.com/interactive-analysis/',
 );
-const congressionalAnalysis = analysis('.analysis-list > li').eq(2);
+const congressionalAnalysis = analysis('.analysis-list > li').eq(3);
 assert.equal(congressionalAnalysis.find('h2 a').text(), 'The language of Congress');
 assert.equal(
 	congressionalAnalysis.find('h2 a').attr('href'),
@@ -194,10 +199,22 @@ assert.equal(
 	congressionalAnalysis.find('img').attr('src'),
 	'/artifacts/congressional-record/profanity_per_1k_last50.website.png',
 );
-assert.equal(analysis('.analysis-list > li').length, 3);
-const chinaAnalysis = analysis('.analysis-list > li').first();
+assert.equal(analysis('.analysis-list > li').length, 4);
+const adsAnalysis = analysis('.analysis-list > li').first();
+assert.equal(adsAnalysis.find('h2 a').text(), 'The language of political ads');
+assert.equal(adsAnalysis.find('img').attr('loading'), 'eager');
+for (const link of adsAnalysis.find('h2 a, .analysis-preview, .primary-action').toArray()) {
+	assert.equal(analysis(link).attr('href'), 'https://www.themarginoferror.com/political-ads/');
+}
+const adsSnapshot = JSON.parse(await text('political-ads/data/dataset.json'));
+assert.ok(adsSnapshot.ads.length > 0);
+assert.ok(adsSnapshot.examples.length > 0);
+assert.ok(adsSnapshot.ads.every(ad => ad.text && ad.segments.length));
+assert.match(await text('political-ads/report.html'), /Download the complete text and evidence/);
+assert.match(sitemap, /https:\/\/www\.themarginoferror\.com\/political-ads\//);
+const chinaAnalysis = analysis('.analysis-list > li').eq(1);
 assert.equal(chinaAnalysis.find('h2 a').text(), 'U.S.–China Exchange');
-assert.equal(chinaAnalysis.find('img').attr('loading'), 'eager');
+assert.equal(chinaAnalysis.find('img').attr('loading'), 'lazy');
 assert.equal(analysis('.analysis-list img[loading=eager]').length, 1);
 for (const link of chinaAnalysis.find('h2 a, .analysis-preview, .primary-action').toArray()) {
 	assert.equal(analysis(link).attr('href'), 'https://www.themarginoferror.com/china-us-relations/');
@@ -260,7 +277,7 @@ for (const link of china('a[href^="figures/"]').toArray()) {
 	assert.ok(node.is('[data-original-chart]'));
 	assert.doesNotMatch(node.attr('href'), /\.website\.png$/);
 }
-const ukAnalysis = analysis('.analysis-list > li').eq(1);
+const ukAnalysis = analysis('.analysis-list > li').eq(2);
 assert.equal(ukAnalysis.find('h2 a').text(), 'The UK, in context');
 for (const link of ukAnalysis.find('h2 a, .analysis-preview, .primary-action').toArray()) {
 	assert.equal(analysis(link).attr('href'), 'https://www.themarginoferror.com/uk_decline/');

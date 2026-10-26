@@ -18,6 +18,7 @@ export default defineConfig({
 		sitemap({
 			filter: (page) => page !== 'https://www.themarginoferror.com/home/',
 			customPages: [
+				'https://www.themarginoferror.com/political-ads/',
 				'https://www.themarginoferror.com/congressional_profanity/',
 				'https://www.themarginoferror.com/congressional_profanity/activity/',
 				'https://www.themarginoferror.com/uk_decline/',
