@@ -436,6 +436,7 @@ assert.match(chinaPost('.prose').text(), /will inspire a few members of Gen Z an
 assert.equal(chinaPost('.post-materials a[href="https://www.themarginoferror.com/china-us-relations/"]').length, 1);
 assert.equal(chinaPost('.post-materials a[href="https://github.com/hanshanley/china-us-relation-change"]').length, 1);
 assert.equal(chinaAnalysis.find('a:contains("Read the essay")').attr('href'), `/${chinaSlug}/`);
+assert.equal(chinaAnalysis.find('.lead-actions a[href="https://github.com/hanshanley/china-us-relation-change"]').length, 0);
 assert.match(aiIndex, new RegExp(`https://www\\.themarginoferror\\.com/${chinaSlug}/`));
 assert.match(sitemap, new RegExp(`https://www\\.themarginoferror\\.com/${chinaSlug}/`));
 
