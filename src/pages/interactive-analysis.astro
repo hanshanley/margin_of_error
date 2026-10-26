@@ -4,13 +4,41 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout
 	title="Interactive analysis"
-	description="Explore U.S.–China Exchange, change in the United Kingdom, and the language of Congress."
+	description="Explore political ad language, U.S.–China Exchange, change in the United Kingdom, and the language of Congress."
 >
 	<section class="standard-page">
 		<header class="page-heading">
 			<h1>Interactive analysis</h1>
 		</header>
 		<ul class="analysis-list">
+			<li>
+				<a
+					class="analysis-preview"
+					href="https://www.themarginoferror.com/political-ads/"
+					tabindex="-1"
+					aria-hidden="true"
+				>
+					<img
+						src="/political-ads/preview.svg"
+						alt=""
+						width="1200"
+						height="630"
+						loading="eager"
+						decoding="async"
+					/>
+				</a>
+				<div>
+					<h2><a href="https://www.themarginoferror.com/political-ads/">The language of political ads</a></h2>
+					<p>
+						Compare what Democratic- and Republican-aligned publishers say in 2026 federal
+						ad releases. Read issue-language patterns, opponent portrayals, and the original
+						transcripts behind the evidence.
+					</p>
+					<div class="lead-actions">
+						<a class="primary-action" href="https://www.themarginoferror.com/political-ads/">Open analysis</a>
+					</div>
+				</div>
+			</li>
 			<li>
 				<a
 					class="analysis-preview"
@@ -23,7 +51,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 						alt=""
 						width="1672"
 						height="941"
-						loading="eager"
+						loading="lazy"
 						decoding="async"
 					/>
 				</a>
