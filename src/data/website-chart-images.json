@@ -1,5 +1,20 @@
 [
   {
+    "directory": "artifacts/china-us-relations/china-is-trending-understanding-china",
+    "background": "#f7f5f0",
+    "files": [
+      "us-china-favorability.png",
+      "chn-from_us-air_visitors-levels.png",
+      "chn-to_us-visitors-levels.png",
+      "chn-from_us-study_abroad-levels.png",
+      "chinese-bachelors.png",
+      "chn-to_us-international_students-levels.png",
+      "new-permanent-resident-arrivals.png",
+      "bea-USA-CHN-goods.png",
+      "bea-CHN-USA-goods.png"
+    ]
+  },
+  {
     "directory": "artifacts/congressional-record",
     "background": "#f7f5f0"
   },

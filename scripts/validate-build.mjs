@@ -38,6 +38,7 @@ const requiredFiles = [
 	'my-first-blog-post/index.html',
 	'floor-letter-words-the-rise-of-congressional-profanity/index.html',
 	'broken-britain-the-headwinds-battering-the-island-nation/index.html',
+	'china-is-trending-understanding-china/index.html',
 	'rss.xml',
 	'robots.txt',
 	'sitemap-index.xml',
@@ -195,24 +196,24 @@ assert.equal(
 );
 assert.equal(analysis('.analysis-list > li').length, 3);
 const chinaAnalysis = analysis('.analysis-list > li').first();
-assert.equal(chinaAnalysis.find('h2 a').text(), 'U.S.–China connections');
+assert.equal(chinaAnalysis.find('h2 a').text(), 'U.S.–China Exchange');
 assert.equal(chinaAnalysis.find('img').attr('loading'), 'eager');
 assert.equal(analysis('.analysis-list img[loading=eager]').length, 1);
 for (const link of chinaAnalysis.find('h2 a, .analysis-preview, .primary-action').toArray()) {
 	assert.equal(analysis(link).attr('href'), 'https://www.themarginoferror.com/china-us-relations/');
 }
 assert.equal(chinaAnalysis.find('img').attr('src'),
-	'/artifacts/china-us-relations/cooling-ties-across-the-harbor.webp');
+	'/artifacts/china-us-relations/us-china-fractured-network.webp');
 assert.equal(chinaAnalysis.find('img').attr('width'), '1672');
 assert.equal(chinaAnalysis.find('img').attr('height'), '941');
 const china = load(await text('china-us-relations/index.html'));
 assert.equal(china('link[rel="canonical"]').attr('href'), 'https://www.themarginoferror.com/china-us-relations/');
 assert.equal(china('.publication-header nav a').length, 5);
-assert.equal(china('h1').text(), 'U.S.–China connections');
+assert.equal(china('h1').text(), 'Student exchanges');
 assert.equal(china('#exchange-data').length, 1);
 assert.equal(china('#chart svg[role=img]').length, 1);
-assert.equal(china('.analysis-tabs a').length, 8);
-assert.match(china('.analysis-scope').text(), /2025.*2026/);
+assert.equal(china('.analysis-tabs a').length, 10);
+assert.equal(china('.analysis-scope').text(), 'Academic ending years through 2025');
 assert.equal(china('#geography option[value=TWN]').length, 0);
 assert.equal(china('form.controls[hidden]').length, 1);
 assert.equal(china('iframe').length, 0);
@@ -222,7 +223,7 @@ assert.match(chinaManifest.source_revision, /^[0-9a-f]{40}$/);
 assert.equal(chinaManifest.source_repository, 'hanshanley/china-us-relation-change');
 const businessData = JSON.parse(await text('china-us-relations/downloads/business-presence.json'));
 assert.equal(chinaManifest.version, 2);
-assert.equal(businessData.observations.length, 74);
+assert.equal(businessData.observations.length, 468);
 const exchangeData = JSON.parse(await text('china-us-relations/downloads/exchange.json'));
 assert.equal(exchangeData.observations.length, chinaManifest.observations);
 assert.ok(exchangeData.observations.some(r => r.frequency === 'annual' && r.year === 2025 && r.value !== null));
@@ -230,22 +231,26 @@ assert.ok(exchangeData.observations.some(r => r.frequency === 'ytd' && r.year ==
 for (const [name, hash] of Object.entries(chinaManifest.datasets)) {
 	assert.equal(createHash('sha256').update(await readFile(new URL(`china-us-relations/downloads/${name}.json`, root))).digest('hex'), hash);
 }
-for (const name of ['travel.html', 'immigration.html', 'comparisons.html', 'language-learning.html', 'business-presence.html', 'weibo.html']) {
+for (const name of ['travel.html', 'immigration.html', 'language-learning.html', 'business-presence.html', 'weibo.html']) {
 	const page = load(await text(`china-us-relations/${name}`));
 	assert.equal(page('.analysis-tabs a[aria-current=page]').length, 1);
 	assert.equal(page('iframe').length, 0);
 	for (const link of page('a[href^="figures/"]').toArray()) assert.ok(page(link).is('[data-original-chart]'));
 }
+const comparisonDirectory = load(await text('china-us-relations/comparisons.html'));
+assert.equal(comparisonDirectory('.comparison-directory').length, 3);
+assert.equal(comparisonDirectory('#regional-topic-routes').length, 1);
 const travel = load(await text('china-us-relations/travel.html'));
 assert.equal(travel('#measure option[selected]').attr('value'), 'visitors');
 assert.match(travel('.travel-definition').text(), /not just tourism/);
 const immigration = load(await text('china-us-relations/immigration.html'));
 assert.equal(immigration('#green-card-grants').length, 1);
-assert.equal(immigration('#latest-admissions').length, 1);
+assert.equal(immigration('#new-permanent-resident-arrivals').length, 1);
+assert.equal(immigration('#latest-admissions').length, 0);
 const migrationData = JSON.parse(await text('china-us-relations/downloads/immigration.json'));
-assert.equal(migrationData.observations.length, 102);
+assert.equal(migrationData.observations.length, 206);
 assert.equal(migrationData.observations.find(r => r.series_id === 'un_stock:USA:CHN' && r.year === 2024).value, 60434);
-assert.equal(migrationData.observations.find(r => r.series_id === 'ohss_nationality:total').value, 65670);
+assert.equal(migrationData.observations.find(r => r.series_id === 'ohss_nationality:total' && r.year === 2025).value, 65670);
 for (const [path, checksum] of Object.entries(chinaManifest.files)) {
 	const bytes = await readFile(new URL(`china-us-relations/${path}`, root));
 	assert.equal(createHash('sha256').update(bytes).digest('hex'), checksum, `China source asset changed: ${path}`);
@@ -276,25 +281,26 @@ assert.match(
 	/<p class="kicker">Latest essay<\/p>/,
 );
 const britainSlug = 'broken-britain-the-headwinds-battering-the-island-nation';
-assert.match(homepage, new RegExp(`<h1 id="lead-story-title"><a href="/${britainSlug}/">`));
+const chinaSlug = 'china-is-trending-understanding-china';
+const chinaSubtitle = 'Chinese culture is having its moment in the sun. So why are fewer Americans visiting, studying, and learning about China?';
+assert.match(homepage, new RegExp(`<h1 id="lead-story-title"><a href="/${chinaSlug}/">`));
 assert.match(homepage, />Read article<\/a>/);
 assert.match(homepage, />Subscribe<\/a>/);
-assert.match(homepage, /October 19, 2026/);
+assert.match(homepage, /October 26, 2026/);
 const leadPreview = load(homepage);
 assert.equal(leadPreview('.dispatches > .section-heading').text().trim(), 'Recent dispatches');
 assert.equal(leadPreview('.dispatches > .section-heading > h2#dispatches-title').length, 1);
 assert.equal(leadPreview('.home-deck .dek').length, 0);
 assert.equal(
 	leadPreview('.home-deck .lead-subtitle').text(),
-	'Stagnant incomes, strained public services, and fractured politics are bringing Britain to a standstill',
+	chinaSubtitle,
 );
 assert.equal(
 	leadPreview('.home-lede .lead-image img').attr('src'),
-	'/artifacts/uk-decline/uk_decline_scorecard.website.png',
+	`/artifacts/china-us-relations/${chinaSlug}/cover.png`,
 );
-assert.equal(leadPreview('.home-lede .lead-image img').attr('width'), '3343');
-assert.equal(leadPreview('.home-lede .lead-image img').attr('height'), '2200');
-assert.match(leadPreview('.home-lede .lead-image img').attr('style'), /object-fit:\s*contain/);
+assert.equal(leadPreview('.home-lede .lead-image img').attr('width'), '1672');
+assert.equal(leadPreview('.home-lede .lead-image img').attr('height'), '941');
 assert.doesNotMatch(leadPreview('.home-deck').text(), /A look at profanity, slurs, and formal courtesy/);
 assert.equal([...homepage.matchAll(/class="post-row"/g)].length, 4);
 const archiveAction = leadPreview('.dispatches > .dispatches-footer > .archive-action');
@@ -305,12 +311,12 @@ assert.equal(archiveAction.parent().prev().attr('class'), 'post-list');
 for (const slug of [
 	'who-are-the-real-americans-heritage',
 	'a-continent-at-a-crossroads-natos',
-	'the-republican-party-after-trump',
 ]) {
 	assert.match(homepage, new RegExp(`/artifacts/substack/${slug}/cover\\.jpg`));
 }
 assert.match(homepage, /\/artifacts\/congressional-record\/profanity_per_1k_last50\.website\.png/);
 const expectedArchiveOrder = [
+	chinaSlug,
 	britainSlug,
 	'floor-letter-words-the-rise-of-congressional-profanity',
 	'who-are-the-real-americans-heritage',
@@ -386,12 +392,56 @@ assert.match(congressionalPost('.post-materials').text(), /Interactive congressi
 assert.equal(congressionalPost('a[href="https://www.themarginoferror.com/congressional_profanity/"]').length, 2);
 assert.match(aiIndex, new RegExp(`https://www\\.themarginoferror\\.com/${congressSlug}/`));
 const feed = load(await text('rss.xml'), { xml: true });
-assert.equal(feed('item').first().find('link').text(), `https://www.themarginoferror.com/${britainSlug}/`);
-assert.equal(feed('item').eq(1).find('link').text(), `https://www.themarginoferror.com/${congressSlug}/`);
+assert.equal(feed('item').first().find('link').text(), `https://www.themarginoferror.com/${chinaSlug}/`);
+assert.equal(feed('item').eq(1).find('link').text(), `https://www.themarginoferror.com/${britainSlug}/`);
+assert.equal(feed('item').eq(2).find('link').text(), `https://www.themarginoferror.com/${congressSlug}/`);
+
+const chinaPost = load(await text(`${chinaSlug}/index.html`));
+assert.equal(chinaPost('h1').text(), "China Is Trending. Understanding China Isn't");
+assert.equal(chinaPost('.post-subtitle').text(), chinaSubtitle);
+assert.equal(chinaPost('.post-description').length, 0);
+assert.equal(chinaPost('meta[name="description"]').attr('content'), chinaSubtitle);
+assert.match(chinaPost('.byline').text(), /October 26, 2026/);
+assert.equal(chinaPost('.post-header a:contains("Original edition")').attr('href'),
+	'https://themarginoferror.substack.com/p/5d87f9d4-239d-4733-a54a-ca1b14fcca51');
+const chinaFigures = [
+	'us-china-favorability.website.png',
+	'hongya-cave-chongqing.jpeg',
+	'chn-from_us-air_visitors-levels.website.png',
+	'chn-to_us-visitors-levels.website.png',
+	'chn-from_us-study_abroad-levels.website.png',
+	'chinese-bachelors.website.png',
+	'chn-to_us-international_students-levels.website.png',
+	'new-permanent-resident-arrivals.website.png',
+	'bea-USA-CHN-goods.website.png',
+	'bea-CHN-USA-goods.website.png',
+];
+assert.deepEqual(chinaPost('.prose img').toArray().map(image => chinaPost(image).attr('src')),
+	chinaFigures.map(file => `/artifacts/china-us-relations/${chinaSlug}/${file}`));
+for (const image of chinaPost('.prose img').toArray()) {
+	const node = chinaPost(image);
+	assert.ok(node.attr('alt')?.trim());
+	assert.equal(node.attr('loading'), 'lazy');
+	assert.equal(node.attr('decoding'), 'async');
+	assert.ok(Number(node.attr('width')) > 0 && Number(node.attr('height')) > 0);
+}
+assert.doesNotMatch(chinaPost('.prose').html(), /substackcdn\.com|subscription-widget|reader-supported publication/);
+for (const number of [1, 2]) {
+	assert.equal(chinaPost(`#footnote-anchor-${number}`).attr('href'), `#footnote-${number}`);
+	assert.equal(chinaPost(`#footnote-${number} a[href="#footnote-anchor-${number}"]`).length, 1);
+}
+assert.equal(chinaPost('.prose h6').length, 2);
+assert.match(chinaPost('.prose h6').last().text(), /Hongya Cave \(洪崖洞, Hóngyádòng\)/);
+assert.match(chinaPost('.prose').text(), /will inspire a few members of Gen Z and Gen Alpha to learn some 汉字 and visit China for themselves/);
+assert.equal(chinaPost('.post-materials a[href="https://www.themarginoferror.com/china-us-relations/"]').length, 1);
+assert.equal(chinaPost('.post-materials a[href="https://github.com/hanshanley/china-us-relation-change"]').length, 1);
+assert.equal(chinaAnalysis.find('a:contains("Read the essay")').attr('href'), `/${chinaSlug}/`);
+assert.match(aiIndex, new RegExp(`https://www\\.themarginoferror\\.com/${chinaSlug}/`));
+assert.match(sitemap, new RegExp(`https://www\\.themarginoferror\\.com/${chinaSlug}/`));
 
 const britainPost = load(await text(`${britainSlug}/index.html`));
 assert.equal(britainPost('h1').text(), 'Broken Britain: The Headwinds Battering the Island Nation');
-assert.equal(britainPost('.post-subtitle').text(), leadPreview('.home-deck .lead-subtitle').text());
+assert.equal(britainPost('.post-subtitle').text(), 'Stagnant incomes, strained public services, and fractured politics are bringing Britain to a standstill');
 assert.equal(britainPost('.post-description').length, 0);
 assert.equal(britainPost('meta[name="description"]').attr('content'), britainPost('.post-subtitle').text());
 assert.match(britainPost('.byline').text(), /October 19, 2026/);
