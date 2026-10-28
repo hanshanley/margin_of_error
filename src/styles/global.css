@@ -357,6 +357,7 @@ main {
 	align-items: center;
 	justify-items: center;
 	aspect-ratio: 16 / 9;
+	border: 1px solid var(--rule);
 	background: #262620;
 	text-decoration: none;
 }
