@@ -357,7 +357,8 @@ main {
 	align-items: center;
 	justify-items: center;
 	aspect-ratio: 16 / 9;
-	border: 1px solid var(--rule);
+	padding: 5px;
+	border: 1px solid #4c4942;
 	background: #262620;
 	text-decoration: none;
 }
@@ -380,10 +381,6 @@ main {
 .archive-thumb span {
 	color: var(--signal);
 	font-size: 3rem;
-}
-
-.fieldwork-thumb {
-	padding: 0;
 }
 
 .post-summary h2 {
@@ -808,6 +805,7 @@ main {
 }
 
 .archive-thumb {
+	border-color: var(--rule);
 	background: var(--paper-deep);
 }
 
