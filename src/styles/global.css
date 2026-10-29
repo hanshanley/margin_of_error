@@ -349,6 +349,11 @@ main {
 	text-decoration: none;
 }
 
+.lead-image {
+	padding: 0;
+	border: 0;
+}
+
 .post-thumb,
 .archive-thumb {
 	align-self: start;
