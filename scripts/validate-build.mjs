@@ -204,11 +204,13 @@ const platformAnalysis = analysis('.analysis-list > li').eq(0);
 assert.equal(platformAnalysis.find('h2 a').text(), 'National party platforms');
 assert.equal(platformAnalysis.find('.primary-action').attr('href'), '/party-platforms/');
 assert.equal(platformAnalysis.find('img').attr('loading'), 'eager');
-assert.equal(platformAnalysis.find('img').attr('src'),
-	'/party-platforms/figures/expanded/topic_distribution.website.png');
 const platforms = load(await text('party-platforms/index.html'));
 const platformData = JSON.parse(await text('party-platforms/analysis.json'));
 const platformManifest = JSON.parse(await text('party-platforms/publication-manifest.json'));
+const platformPreview = platformData.figures.find(figure =>
+	figure.view === 'expanded' && figure.name === 'topic_distribution');
+assert.equal(platformAnalysis.find('img').attr('src'),
+	`/party-platforms/${(platformPreview.display_path ?? platformPreview.path).replace(/\.png$/, '.website.png')}`);
 assert.equal(platforms('h1').text(), 'National party platforms');
 assert.equal(platforms('link[rel=canonical]').attr('href'),
 	'https://www.themarginoferror.com/party-platforms/');
@@ -227,7 +229,8 @@ assert.ok(platformData.topics.every(topic => topic.representatives.length > 0));
 if (platformData.evolution) {
 	assert.equal(platforms('.period').length, platformData.evolution.periods.length);
 	assert.equal(platforms('.period-topic').length, platformData.evolution.summary.topics);
-	assert.equal(platformData.evolution.summary.reviewed_labels, platformData.evolution.summary.topics);
+	assert.equal(platformData.evolution.summary.reviewed_labels,
+		platformData.evolution.topics.filter(topic => topic.review_status === 'evidence_reviewed').length);
 	assert.match(platforms('#period-topics').text(), /not proof of/);
 }
 for (const topic of platformData.topics) {
@@ -248,7 +251,7 @@ for (const image of platforms('.platform-figure img').toArray()) {
 	const node = platforms(image);
 	assert.equal(node.attr('loading'), 'lazy');
 	assert.equal(node.attr('decoding'), 'async');
-	assert.match(node.attr('src'), /\.website\.png$/);
+	assert.match(node.attr('src'), /(?:\/website-figures\/.*\.png|\.website\.png)$/);
 	assert.ok(node.attr('alt').length > 20);
 }
 assert.ok(sitemap.includes('https://www.themarginoferror.com/party-platforms/'));

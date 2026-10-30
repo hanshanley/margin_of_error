@@ -15,7 +15,7 @@ const platformPreview = platformFigure('expanded', 'topic_distribution');
 		<ul class="analysis-list">
 			<li>
 				<a class="analysis-preview" href="/party-platforms/" tabindex="-1" aria-hidden="true">
-					<img src={`/party-platforms/${platformPreview.path}`} alt=""
+					<img src={`/party-platforms/${platformPreview.display_path ?? platformPreview.path}`} alt=""
 						width={platformPreview.width} height={platformPreview.height}
 						loading="eager" decoding="async" />
 				</a>
