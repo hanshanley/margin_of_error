@@ -75,7 +75,10 @@ python ../dsa/scripts/build_platform_publication.py --output public/party-platfo
 The output must be absent or empty; do not overwrite a stale export in place.
 The Astro page reads `analysis.json` at build time. Its manifest records the exact
 source revision and original-file hashes; website-only recolored PNGs do not replace
-the originals or their checksums. Topic search covers representative packets, not
+the originals or their checksums. Dedicated project-generated Margin of Error
+variants are used when present; both those originals and the Substack figures
+remain byte-preserved. The existing website export maps their registered paper
+colours to the current publication paper. Topic search covers representative packets, not
 the entire downloaded corpus. This is an analysis tool, not a new authored essay.
 
 Read each repository's instructions before editing. Work from the repository root unless a

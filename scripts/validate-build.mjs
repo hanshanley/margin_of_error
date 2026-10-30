@@ -253,6 +253,15 @@ for (const image of platforms('.platform-figure img').toArray()) {
 	assert.equal(node.attr('decoding'), 'async');
 	assert.match(node.attr('src'), /(?:\/website-figures\/.*\.png|\.website\.png)$/);
 	assert.ok(node.attr('alt').length > 20);
+	if (node.attr('src').includes('/website-figures/')) {
+		const path = new URL(node.attr('src').slice(1), root);
+		const metadata = await sharp(fileURLToPath(path)).metadata();
+		assert.equal(metadata.width, Number(node.attr('width')));
+		assert.equal(metadata.height, Number(node.attr('height')));
+		const pixel = await sharp(fileURLToPath(path))
+			.extract({ left: 0, top: 0, width: 1, height: 1 }).removeAlpha().raw().toBuffer();
+		assert.deepEqual([...pixel], paperRgb, 'Platform website variant must match publication paper');
+	}
 }
 assert.ok(sitemap.includes('https://www.themarginoferror.com/party-platforms/'));
 const chinaAnalysis = analysis('.analysis-list > li').eq(1);
