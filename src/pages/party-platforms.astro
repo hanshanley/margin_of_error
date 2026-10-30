@@ -26,12 +26,14 @@ const archive = data.downloads.find((entry) => entry.path.endsWith('claim_docume
 			<p class="intro">What do Democratic, Republican, and DSA national documents emphasize?
 				Explore their subjects, how emphasis differs, and how the observed documents change over time.</p>
 			<p class="scope">{number(data.summary.claims)} analyzed claims &middot; {totalDocuments} documents
-				&middot; {data.topics.length} exploratory topics &middot; Cutoff: October 26, 2026</p>
+				&middot; {data.topics.length} pooled topics &middot; Cutoff: October 26, 2026</p>
 		</header>
 
 		<nav class="section-nav" aria-label="Analysis sections">
 			<a href="#overview">Overall topics</a><a href="#sensitivity">Adopted-only sensitivity</a>
-			<a href="#time">Changes over time</a><a href="#topics">Claims and sources</a>
+			<a href="#time">Changes over time</a>
+			{data.evolution && <a href="#period-topics">Period discoveries</a>}
+			<a href="#topics">Claims and sources</a>
 			<a href="#methods">Methods</a><a href="#downloads">Downloads</a>
 		</nav>
 
@@ -377,8 +379,7 @@ const archive = data.downloads.find((entry) => entry.path.endsWith('claim_docume
 	@media (max-width: 700px) {
 		.party-summaries { grid-template-columns: 1fr; gap: 0.4rem; }
 		th, td { padding: 0.4rem 0.2rem; }
-		table { font-size: 0.75rem; }
-		table { table-layout: fixed; }
+		table { font-size: 0.75rem; table-layout: fixed; }
 		table th:first-child { width: 42%; }
 		.intro { font-size: 1.1rem; }
 	}
