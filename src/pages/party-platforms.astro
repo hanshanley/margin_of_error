@@ -17,7 +17,8 @@ const archive = data.downloads.find((entry) => entry.path.endsWith('claim_docume
 
 <BaseLayout title="National party platforms"
 	description="Compare the topics, relative emphasis, source evidence, and historical coverage of Democratic, Republican, and DSA national documents."
-	image="/party-platforms/figures/expanded/topic_distribution.png">
+	image={`/party-platforms/${platformFigure('expanded', 'topic_distribution').display_path ??
+		platformFigure('expanded', 'topic_distribution').path}`}>
 	<div class="platform-page">
 		<header class="page-heading">
 			<p class="kicker">National documents, 2000&ndash;2026</p>
@@ -138,6 +139,10 @@ const archive = data.downloads.find((entry) => entry.path.endsWith('claim_docume
 					clustering, and keywords independently within each period, allowing the themes and
 					cluster counts to differ. It finds {data.evolution.summary.topics} period-qualified
 					topics; numeric topic IDs do not identify the same issue across different fits.</p>
+				<p>{data.evolution.summary.reviewed_labels} of these {data.evolution.summary.topics}
+					period-specific labels are marked evidence-reviewed in the source release.
+					Unreviewed labels remain explicitly identified as unreviewed model outputs;
+					their representative claims and source excerpts are available below.</p>
 				<p>Adjacent-period centroid matches are candidate thematic similarities, not proof of
 					emergence, disappearance, splits, merges, stance change, or causal change.
 					Unclustered claims remain visible. In 2004&ndash;2007 and 2008&ndash;2011, only two
@@ -164,9 +169,11 @@ const archive = data.downloads.find((entry) => entry.path.endsWith('claim_docume
 							<details class="period-topic" id={topic.topic_id}>
 								<summary>{topic.title}</summary>
 								<p>{topic.summary}</p><p class="caveat">{topic.caveat}</p>
-								<p class="label-origin">Evidence-reviewed label;
+								<p class="label-origin">Label provenance:
 									{topic.label_origin === 'assistant_source_bound_revision'
 										? ' assistant source-bound revision.' : ' original local Gemma wording.'}
+									{topic.review_status === 'evidence_reviewed'
+										? ' Evidence-reviewed against its packet.' : ' Unreviewed model label.'}
 									Not independent human gold.</p>
 								{topic.representatives.map((claim) => (
 									<div class="claim">
@@ -267,7 +274,7 @@ const archive = data.downloads.find((entry) => entry.path.endsWith('claim_docume
 				supporting evidence. Its strict and expanded spaces are fitted separately and their
 				coordinates are not directly comparable. Offline replay verifies artifact reproduction,
 				not semantic truth.</p>
-			<p><a href="/party-platforms/downloads/methods-and-results.md">Full methods and results</a>
+			<p><a href="/party-platforms/downloads/methods-and-results.md">Full methods and results (Markdown)</a>
 				&middot; <a href={source}>Pinned source code and provenance</a>
 				&middot; <a href="/party-platforms/downloads/topics/replay_audit.json">Offline replay audit</a></p>
 		</section>
@@ -329,8 +336,9 @@ const archive = data.downloads.find((entry) => entry.path.endsWith('claim_docume
 
 <style>
 	.platform-page { width: var(--page); margin: 0 auto; padding-bottom: 4rem; overflow-wrap: anywhere; }
-	.page-heading { max-width: 900px; }
-	h1 { font-size: clamp(2.4rem, 5vw, 4.5rem); line-height: 1.1; margin: 0.6rem 0 1.2rem; }
+	.page-heading { max-width: 900px; padding-top: 2rem; }
+	.page-heading h1 { font-size: clamp(2.4rem, 5vw, 4.5rem); line-height: 1.1; margin: 0.6rem 0 1.2rem; }
+	.page-heading .scope { font-size: 0.88rem; }
 	.intro { font-size: 1.25rem; }
 	.scope, .coverage, .label-origin, .locator, .revision { color: var(--muted); font-size: 0.88rem; }
 	.section-nav { display: flex; flex-wrap: wrap; gap: 0.7rem 1.5rem; padding: 1rem 0; border-block: 1px solid var(--rule); font-family: var(--sans); }
@@ -370,6 +378,8 @@ const archive = data.downloads.find((entry) => entry.path.endsWith('claim_docume
 		.party-summaries { grid-template-columns: 1fr; gap: 0.4rem; }
 		th, td { padding: 0.4rem 0.2rem; }
 		table { font-size: 0.75rem; }
+		table { table-layout: fixed; }
+		table th:first-child { width: 42%; }
 		.intro { font-size: 1.1rem; }
 	}
 </style>

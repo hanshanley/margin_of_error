@@ -7,11 +7,12 @@ interface Props {
 }
 const { figure, caption } = Astro.props;
 const path = `/party-platforms/${figure.path}`;
+const displayPath = `/party-platforms/${figure.display_path ?? figure.path}`;
 ---
 
 <figure class="platform-figure">
 	<a href={path} data-original-chart aria-label={`Open full-size chart: ${caption}`}>
-		<img src={path} alt={caption} width={figure.width} height={figure.height}
+		<img src={displayPath} alt={caption} width={figure.width} height={figure.height}
 			loading="lazy" decoding="async" />
 	</a>
 	<figcaption>
@@ -19,6 +20,7 @@ const path = `/party-platforms/${figure.path}`;
 		<span class="figure-downloads">
 			<a href={path} data-original-chart>Original PNG</a>
 			<a href={path.replace(/\.png$/, '.svg')} data-original-chart>SVG</a>
+			{figure.display_path && <a href={displayPath} data-original-chart>Website PNG</a>}
 		</span>
 	</figcaption>
 </figure>

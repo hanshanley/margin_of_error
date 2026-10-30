@@ -4,6 +4,7 @@ export interface PlatformFigure {
 	view: string;
 	name: string;
 	path: string;
+	display_path?: string;
 	width: number;
 	height: number;
 }
@@ -33,6 +34,7 @@ interface Topic {
 	summary: string;
 	caveat: string;
 	label_origin: string;
+	review_status: string;
 	shares: Share[];
 	representatives: Claim[];
 }
