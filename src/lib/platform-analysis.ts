@@ -1,0 +1,85 @@
+import { readFileSync } from 'node:fs';
+
+export interface PlatformFigure {
+	view: string;
+	name: string;
+	path: string;
+	width: number;
+	height: number;
+}
+
+interface Share {
+	view: string;
+	group: string;
+	available: string;
+	share: string;
+	claims: string;
+}
+
+interface Claim {
+	claim_id: string;
+	group: string;
+	claim_text: string;
+	title: string;
+	publication_date: string;
+	source_url: string;
+	locator: string;
+	evidence: string;
+}
+
+interface Topic {
+	topic_id: string;
+	title: string;
+	summary: string;
+	caveat: string;
+	label_origin: string;
+	shares: Share[];
+	representatives: Claim[];
+}
+
+interface PeriodFit {
+	period: string;
+	period_start: number;
+	topics: number;
+	claims: number;
+	documents: number;
+	groups_present: string[];
+	fit: {
+		selected_parameters: { method: string; coverage: number; cosine_silhouette: number };
+	};
+}
+
+interface Publication {
+	source_revision: string;
+	summary: {
+		claims: number;
+		claims_by_group: Record<string, number>;
+		documents_by_group: Record<string, number>;
+		bundles_by_group: Record<string, number>;
+		corpus: { assistant_source_repaired_blocks: number };
+		views: Record<string, { group_passages: Record<string, number> }>;
+	};
+	topic_summary: { assistant_revised_labels: number };
+	topics: Topic[];
+	figures: PlatformFigure[];
+	downloads: { path: string; bytes: number }[];
+	evolution: {
+		summary: { topics: number; reviewed_labels: number };
+		periods: PeriodFit[];
+		topics: Topic[];
+	} | null;
+}
+
+export const platforms: Publication = JSON.parse(
+	readFileSync('public/party-platforms/analysis.json', 'utf8'),
+);
+export const organizations = [
+	{ id: 'democratic', name: 'Democratic Party' },
+	{ id: 'republican', name: 'Republican Party' },
+	{ id: 'dsa', name: 'Democratic Socialists of America' },
+];
+export const platformFigure = (view: string, name: string) => {
+	const figure = platforms.figures.find((entry) => entry.view === view && entry.name === name);
+	if (!figure) throw new Error(`Missing platform figure: ${view}/${name}`);
+	return figure;
+};

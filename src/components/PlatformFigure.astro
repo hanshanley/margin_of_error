@@ -1,0 +1,31 @@
+---
+import type { PlatformFigure } from '../lib/platform-analysis';
+
+interface Props {
+	figure: PlatformFigure;
+	caption: string;
+}
+const { figure, caption } = Astro.props;
+const path = `/party-platforms/${figure.path}`;
+---
+
+<figure class="platform-figure">
+	<a href={path} data-original-chart aria-label={`Open full-size chart: ${caption}`}>
+		<img src={path} alt={caption} width={figure.width} height={figure.height}
+			loading="lazy" decoding="async" />
+	</a>
+	<figcaption>
+		{caption}
+		<span class="figure-downloads">
+			<a href={path} data-original-chart>Original PNG</a>
+			<a href={path.replace(/\.png$/, '.svg')} data-original-chart>SVG</a>
+		</span>
+	</figcaption>
+</figure>
+
+<style>
+	.platform-figure { margin: 1.8rem 0 2.5rem; }
+	img { width: 100%; }
+	figcaption { margin-top: 0.6rem; color: var(--muted); font-size: 0.88rem; }
+	.figure-downloads { display: inline-flex; gap: 1rem; margin-left: 1rem; }
+</style>

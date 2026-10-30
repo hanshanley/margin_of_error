@@ -1,16 +1,34 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { platformFigure } from '../lib/platform-analysis';
+const platformPreview = platformFigure('expanded', 'topic_distribution');
 ---
 
 <BaseLayout
 	title="Interactive analysis"
-	description="Explore U.S.–China Exchange, change in the United Kingdom, and the language of Congress."
+	description="Explore national party platforms, U.S.–China Exchange, change in the United Kingdom, and the language of Congress."
 >
 	<section class="standard-page">
 		<header class="page-heading">
 			<h1>Interactive analysis</h1>
 		</header>
 		<ul class="analysis-list">
+			<li>
+				<a class="analysis-preview" href="/party-platforms/" tabindex="-1" aria-hidden="true">
+					<img src={`/party-platforms/${platformPreview.path}`} alt=""
+						width={platformPreview.width} height={platformPreview.height}
+						loading="eager" decoding="async" />
+				</a>
+				<div>
+					<h2><a href="/party-platforms/">National party platforms</a></h2>
+					<p>Compare Democratic, Republican, and DSA national documents: topics, relative
+						emphasis, historical coverage, and the claims and sources behind the charts.</p>
+					<div class="lead-actions">
+						<a class="primary-action" href="/party-platforms/">Open analysis</a>
+						<a href="/party-platforms/#downloads">Download the complete data</a>
+					</div>
+				</div>
+			</li>
 			<li>
 				<a
 					class="analysis-preview"

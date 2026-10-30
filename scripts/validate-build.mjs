@@ -34,6 +34,8 @@ const requiredFiles = [
 	'are-you-an-ai/index.html',
 	'archive/index.html',
 	'interactive-analysis/index.html',
+	'party-platforms/index.html',
+	'party-platforms/publication-manifest.json',
 	'home/index.html',
 	'my-first-blog-post/index.html',
 	'floor-letter-words-the-rise-of-congressional-profanity/index.html',
@@ -175,7 +177,7 @@ assert.equal(
 	analysis('link[rel="canonical"]').attr('href'),
 	'https://www.themarginoferror.com/interactive-analysis/',
 );
-const congressionalAnalysis = analysis('.analysis-list > li').eq(2);
+const congressionalAnalysis = analysis('.analysis-list > li').eq(3);
 assert.equal(congressionalAnalysis.find('h2 a').text(), 'The language of Congress');
 assert.equal(
 	congressionalAnalysis.find('h2 a').attr('href'),
@@ -194,14 +196,66 @@ assert.equal(
 	congressionalAnalysis.find('img').attr('src'),
 	'/artifacts/congressional-record/profanity_per_1k_last50.website.png',
 );
-assert.equal(analysis('.analysis-list > li').length, 3);
+assert.equal(analysis('.analysis-list > li').length, 4);
 assert.doesNotMatch(analysis.html(), /political-ads|The language of political ads/);
 assert.doesNotMatch(sitemap, /political-ads/);
 await assert.rejects(readdir(new URL('political-ads/', root)), { code: 'ENOENT' });
-const chinaAnalysis = analysis('.analysis-list > li').eq(0);
+const platformAnalysis = analysis('.analysis-list > li').eq(0);
+assert.equal(platformAnalysis.find('h2 a').text(), 'National party platforms');
+assert.equal(platformAnalysis.find('.primary-action').attr('href'), '/party-platforms/');
+assert.equal(platformAnalysis.find('img').attr('loading'), 'eager');
+assert.equal(platformAnalysis.find('img').attr('src'),
+	'/party-platforms/figures/expanded/topic_distribution.website.png');
+const platforms = load(await text('party-platforms/index.html'));
+const platformData = JSON.parse(await text('party-platforms/analysis.json'));
+const platformManifest = JSON.parse(await text('party-platforms/publication-manifest.json'));
+assert.equal(platforms('h1').text(), 'National party platforms');
+assert.equal(platforms('link[rel=canonical]').attr('href'),
+	'https://www.themarginoferror.com/party-platforms/');
+assert.equal(platforms('#topic-list > .topic').length, 24);
+assert.equal(platforms('.platform-figure').length, platformData.figures.length);
+assert.equal(platforms('iframe').length, 0);
+assert.equal(platforms('#topic-query[type=search]').length, 1);
+assert.equal(platformData.summary.claims, 26483);
+assert.equal(platformData.source_revision, platformManifest.source_revision);
+assert.equal(platformManifest.source_repository, 'hanshanley/dsa');
+assert.match(platformManifest.source_revision, /^[0-9a-f]{40}$/);
+assert.match(platforms('#time').text(), /Missing periods remain gaps/);
+assert.match(platforms('#methods').text(), /not a claim-by-claim certification/);
+assert.match(platforms('#downloads').text(), /not metadata-only/);
+assert.ok(platformData.topics.every(topic => topic.representatives.length > 0));
+if (platformData.evolution) {
+	assert.equal(platforms('.period').length, platformData.evolution.periods.length);
+	assert.equal(platforms('.period-topic').length, platformData.evolution.summary.topics);
+	assert.equal(platformData.evolution.summary.reviewed_labels, platformData.evolution.summary.topics);
+	assert.match(platforms('#period-topics').text(), /not proof of/);
+}
+for (const topic of platformData.topics) {
+	assert.equal(platforms(`#${topic.topic_id} > summary`).text(), topic.title);
+	assert.equal(platforms(`#${topic.topic_id} .claim`).length, topic.representatives.length);
+}
+for (const [path, checksum] of Object.entries(platformManifest.files)) {
+	assert.equal(
+		createHash('sha256').update(await readFile(new URL(`party-platforms/${path}`, root))).digest('hex'),
+		checksum,
+		`Platform source asset changed: ${path}`,
+	);
+}
+for (const anchor of platforms('a[data-original-chart]').toArray()) {
+	assert.doesNotMatch(platforms(anchor).attr('href'), /\.website\.png$/);
+}
+for (const image of platforms('.platform-figure img').toArray()) {
+	const node = platforms(image);
+	assert.equal(node.attr('loading'), 'lazy');
+	assert.equal(node.attr('decoding'), 'async');
+	assert.match(node.attr('src'), /\.website\.png$/);
+	assert.ok(node.attr('alt').length > 20);
+}
+assert.ok(sitemap.includes('https://www.themarginoferror.com/party-platforms/'));
+const chinaAnalysis = analysis('.analysis-list > li').eq(1);
 assert.equal(chinaAnalysis.find('h2 a').text(), 'U.S.–China Exchange');
 assert.equal(chinaAnalysis.find('img').attr('loading'), 'lazy');
-assert.equal(analysis('.analysis-list img[loading=eager]').length, 0);
+assert.equal(analysis('.analysis-list img[loading=eager]').length, 1);
 for (const link of chinaAnalysis.find('h2 a, .analysis-preview, .primary-action').toArray()) {
 	assert.equal(analysis(link).attr('href'), 'https://www.themarginoferror.com/china-us-relations/');
 }
@@ -263,7 +317,7 @@ for (const link of china('a[href^="figures/"]').toArray()) {
 	assert.ok(node.is('[data-original-chart]'));
 	assert.doesNotMatch(node.attr('href'), /\.website\.png$/);
 }
-const ukAnalysis = analysis('.analysis-list > li').eq(1);
+const ukAnalysis = analysis('.analysis-list > li').eq(2);
 assert.equal(ukAnalysis.find('h2 a').text(), 'The UK, in context');
 for (const link of ukAnalysis.find('h2 a, .analysis-preview, .primary-action').toArray()) {
 	assert.equal(analysis(link).attr('href'), 'https://www.themarginoferror.com/uk_decline/');
