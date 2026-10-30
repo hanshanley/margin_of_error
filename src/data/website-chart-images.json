@@ -1,5 +1,9 @@
 [
   {
+    "directory": "party-platforms/figures",
+    "background": "#ffffff"
+  },
+  {
     "directory": "artifacts/china-us-relations/china-is-trending-understanding-china",
     "background": "#f7f5f0",
     "files": [

@@ -68,6 +68,21 @@ jobs:
           pip install -r china-us-source/requirements-exchange.txt
           python china-us-source/scripts/build_exchange_publication.py --output public/china-us-relations
 
+      - name: Checkout verified national platform analysis
+        uses: actions/checkout@v7
+        with:
+          repository: hanshanley/dsa
+          ref: cf2ae6e6368c4d4d38ab851e313e35b15874e903
+          path: party-platforms-source
+          sparse-checkout: |
+            scripts
+            data/analysis/national_claims/full
+            figures/national_claims/full/topics
+            report
+
+      - name: Stage reviewed platform figures and complete downloads
+        run: python party-platforms-source/scripts/build_platform_publication.py --output public/party-platforms
+
       # Political ads are unpublished until explicitly approved for publication.
       - name: Build and upload site
         uses: withastro/action@v6

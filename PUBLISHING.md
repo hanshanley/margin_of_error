@@ -61,6 +61,23 @@ and Margin of Error download backgrounds. Adding an analysis tool does not
 create an article or require a personal-site writing-index entry.
 Prepend new Interactive analysis entries; only the first preview loads eagerly.
 
+The national Democratic/Republican/DSA comparison lives at `/party-platforms/`.
+Deployment pins `hanshanley/dsa` to a verified source commit and runs its stdlib-only
+offline exporter. It validates the reviewed topic replay, complete claim/source
+accounting, and ZIP contents before staging original figures and full-text downloads.
+No extraction, fitting, model downloads, or Libertarian partial results run during
+publication. For local checks, use a clean checkout of the workflow's pinned revision:
+
+```bash
+python ../dsa/scripts/build_platform_publication.py --output public/party-platforms
+```
+
+The output must be absent or empty; do not overwrite a stale export in place.
+The Astro page reads `analysis.json` at build time. Its manifest records the exact
+source revision and original-file hashes; website-only recolored PNGs do not replace
+the originals or their checksums. Topic search covers representative packets, not
+the entire downloaded corpus. This is an analysis tool, not a new authored essay.
+
 Read each repository's instructions before editing. Work from the repository root unless a
 command says otherwise. In this repository, `CLAUDE.md` is a symlink to `AGENTS.md`;
 edit the shared instructions once, not through both filenames.
