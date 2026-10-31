@@ -78,6 +78,7 @@ jobs:
             scripts
             data/analysis/national_claims/full
             figures/national_claims/full/topics
+            figures/national_claims/full/themarginoferror
             report
 
       - name: Stage reviewed platform figures and complete downloads

@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PlatformFigure from '../components/PlatformFigure.astro';
-import { platforms as data, organizations, platformFigure } from '../lib/platform-analysis';
+import { platforms as data, organizations, platformFigure, initialIssue, platformPreview } from '../lib/platform-analysis';
 
 const source = `https://github.com/hanshanley/dsa/tree/${data.source_revision}`;
 const number = (value: number) => value.toLocaleString('en-US');
@@ -13,13 +13,16 @@ const percent = (topic: typeof data.topics[number], view: string, group: string)
 };
 const totalDocuments = Object.values(data.summary.documents_by_group).reduce((a, b) => a + b, 0);
 const archive = data.downloads.find((entry) => entry.path.endsWith('claim_documents.zip'))!;
+const issueTopics = data.topics;
 ---
 
 <BaseLayout title="National party platforms"
 	description="Compare the topics, relative emphasis, source evidence, and historical coverage of Democratic, Republican, and DSA national documents."
-	image={`/party-platforms/${platformFigure('expanded', 'topic_distribution').display_path ??
-		platformFigure('expanded', 'topic_distribution').path}`}>
+	image={`/party-platforms/${platformPreview.display_path ?? platformPreview.path}`}>
 	<div class="platform-page">
+		{data.preview_only && <p class="qualification" role="status">Local development preview, not a
+			verified publication. Charts and period discoveries are drafts; the combined archive
+			still contains the previous committed snapshot. Do not publish this build.</p>}
 		<header class="page-heading">
 			<p class="kicker">National documents, 2000&ndash;2026</p>
 			<h1>National party platforms</h1>
@@ -30,7 +33,8 @@ const archive = data.downloads.find((entry) => entry.path.endsWith('claim_docume
 		</header>
 
 		<nav class="section-nav" aria-label="Analysis sections">
-			<a href="#overview">Overall topics</a><a href="#sensitivity">Adopted-only sensitivity</a>
+			<a href="#issues">Compare an issue</a><a href="#overview">Coverage</a>
+			<a href="#sensitivity">Adopted-only sensitivity</a>
 			<a href="#time">Changes over time</a>
 			{data.evolution && <a href="#period-topics">Period discoveries</a>}
 			<a href="#topics">Claims and sources</a>
@@ -42,8 +46,51 @@ const archive = data.downloads.find((entry) => entry.path.endsWith('claim_docume
 			labeled DSA national resolutions and statements; the adopted-only view excludes them.
 			The separate Libertarian expansion is not included in this completed release.</p>
 
+		<section id="issues" aria-labelledby="issues-title">
+			<h2 id="issues-title">Compare an issue</h2>
+			<p>One subject at a time, with the three organizations in the same chart. Choose overall
+				emphasis or changes over observed document periods. These learned topics include
+				political narratives as well as policy subjects; shared language does not mean shared positions.</p>
+			<div id="issue-picker" class="issue-picker" hidden>
+				<label>Subject
+					<select id="issue-topic">
+						{issueTopics.map(topic => (
+							<option value={topic.topic_id} selected={topic.topic_id === initialIssue.topic_id}>{topic.title}</option>
+						))}
+					</select>
+				</label>
+				<label>Comparison
+					<select id="issue-kind"><option value="overall">Overall emphasis</option>
+						<option value="time">Over time</option></select>
+				</label>
+				<label>Source scope
+					<select id="issue-view"><option value="expanded">Expanded corpus</option>
+						<option value="strict">Adopted platforms/programs only</option></select>
+				</label>
+			</div>
+			{issueTopics.map(topic => (
+				<details class="issue-panel" data-topic={topic.topic_id}
+					id={`issue-${topic.topic_id}`} open={topic.topic_id === initialIssue.topic_id}>
+					<summary>{topic.title}</summary>
+					<p>{topic.summary}</p>
+					<p class="caveat">{topic.caveat}</p>
+					{['expanded', 'strict'].map(view => ['overall', 'time'].map(kind => (
+						<details class="issue-chart" data-view={view} data-kind={kind}
+							open={view === 'expanded' && kind === 'overall'}>
+							<summary>{view === 'expanded' ? 'Expanded corpus' : 'Adopted platforms/programs only'}:
+								{kind === 'overall' ? ' overall emphasis' : ' over time'}</summary>
+							<PlatformFigure figure={platformFigure(`${view}/issues`, `${topic.topic_id}_${kind}`)}
+								caption={`${topic.title}: ${kind === 'overall' ? 'overall document-weighted shares' : 'observed-period shares with missing evidence left as gaps'}, ${view} view.`} />
+						</details>
+					)))}
+					<p><a href={`#${topic.topic_id}`}>Read this topic's representative claims and exact source evidence</a></p>
+				</details>
+			))}
+			<noscript><p>Without JavaScript, expand any subject above to open its four comparison charts.</p></noscript>
+		</section>
+
 		<section id="overview" aria-labelledby="overview-title">
-			<h2 id="overview-title">Overall topics</h2>
+			<h2 id="overview-title">Coverage and overall emphasis</h2>
 			<p>Each organization receives its own normalized distribution. Documents and predefined DSA
 				fallback-period bundles receive equal weight within an organization; the number of extracted
 				claims does not determine an organization's weight.</p>
@@ -66,17 +113,15 @@ const archive = data.downloads.find((entry) => entry.path.endsWith('claim_docume
 					</div>
 				))}
 			</div>
-			<PlatformFigure figure={platformFigure('expanded', 'topic_distribution')}
-				caption="Expanded corpus: document-weighted topic shares within each organization." />
 			<p>Relative emphasis compares each organization's share with the equally weighted average
 				of the other two. A value of +1 indicates twice the smoothed share; &minus;1 indicates half.
 				Pairwise comparisons use the same topic taxonomy. Neither comparison establishes agreement.</p>
-			<PlatformFigure figure={platformFigure('expanded', 'vs_rest_emphasis')}
-				caption="Expanded corpus: log2 relative emphasis against the other two organizations." />
 			<details>
-				<summary>Pairwise topic-emphasis comparisons</summary>
-				<PlatformFigure figure={platformFigure('expanded', 'pairwise_emphasis')}
-					caption="Expanded corpus: pairwise log2 topic-emphasis ratios." />
+				<summary>Supporting all-topic comparisons, in readable pages</summary>
+				{data.figures.filter(figure => figure.view === 'expanded').map(figure => (
+					<PlatformFigure figure={figure}
+						caption={`Expanded corpus: ${figure.name.replaceAll('_', ' ')}. These are exploratory language-emphasis comparisons.`} />
+				))}
 			</details>
 		</section>
 
@@ -91,12 +136,10 @@ const archive = data.downloads.find((entry) => entry.path.endsWith('claim_docume
 				for all genre and period differences.</p>
 			<details>
 				<summary>Show adopted-only shares and relative-emphasis charts</summary>
-				<PlatformFigure figure={platformFigure('strict', 'topic_distribution')}
-					caption="Adopted platforms and programs only: document-weighted topic shares." />
-				<PlatformFigure figure={platformFigure('strict', 'vs_rest_emphasis')}
-					caption="Adopted platforms and programs only: relative emphasis against the other organizations." />
-				<PlatformFigure figure={platformFigure('strict', 'pairwise_emphasis')}
-					caption="Adopted platforms and programs only: pairwise topic-emphasis ratios." />
+				{data.figures.filter(figure => figure.view === 'strict').map(figure => (
+					<PlatformFigure figure={figure}
+						caption={`Adopted platforms/programs only: ${figure.name.replaceAll('_', ' ')}.`} />
+				))}
 			</details>
 		</section>
 
@@ -110,28 +153,9 @@ const archive = data.downloads.find((entry) => entry.path.endsWith('claim_docume
 				both other organizations in that period; missing comparators remain unavailable, rather than
 				changing the baseline. DSA's earlier fallback documents are not equivalent to a continuous
 				series of adopted platforms.</p>
-			{['expanded', 'strict'].map((view) => (
-				<details>
-					<summary>{view === 'expanded' ? 'Expanded corpus' : 'Adopted platforms/programs only'}:
-						organization timelines and topic trends</summary>
-					{organizations.map((group) => (
-						<details>
-							<summary>{group.name}: topic shares and relative emphasis</summary>
-							<PlatformFigure figure={platformFigure(view, `time_${group.id}_share`)}
-								caption={`${group.name}, ${view} view: observed-period topic shares; gaps are not zeroes.`} />
-							<PlatformFigure figure={platformFigure(view, `time_${group.id}_relative`)}
-								caption={`${group.name}, ${view} view: observed-period relative emphasis; unavailable baselines remain gaps.`} />
-						</details>
-					))}
-					<details>
-						<summary>All topics: side-by-side temporal trends</summary>
-						{[1, 2, 3, 4].map((page) => (
-							<PlatformFigure figure={platformFigure(view, `time_trends_${page}`)}
-								caption={`${view === 'expanded' ? 'Expanded' : 'Adopted-only'} topic-share trends, panel ${page} of 4.`} />
-						))}
-					</details>
-				</details>
-			))}
+			<p><a href="#issues" data-show-timeline>Choose an issue above and view its timeline</a>.
+				The same pooled topic definitions are used across periods. Independent period-specific
+				topic discovery is a separate analysis below, not the same timeline.</p>
 		</section>
 
 		{data.evolution && (
@@ -308,6 +332,30 @@ const archive = data.downloads.find((entry) => entry.path.endsWith('claim_docume
 </BaseLayout>
 
 <script>
+	const issuePicker = document.querySelector<HTMLElement>('#issue-picker')!;
+	const issueTopic = document.querySelector<HTMLSelectElement>('#issue-topic')!;
+	const issueKind = document.querySelector<HTMLSelectElement>('#issue-kind')!;
+	const issueView = document.querySelector<HTMLSelectElement>('#issue-view')!;
+	const issuePanels = [...document.querySelectorAll<HTMLDetailsElement>('.issue-panel')];
+	const updateIssue = () => {
+		for (const panel of issuePanels) {
+			panel.hidden = panel.dataset.topic !== issueTopic.value;
+			if (!panel.hidden) panel.open = true;
+			for (const chart of panel.querySelectorAll<HTMLDetailsElement>('.issue-chart')) {
+				chart.hidden = chart.dataset.view !== issueView.value || chart.dataset.kind !== issueKind.value;
+				if (!chart.hidden) chart.open = true;
+			}
+		}
+	};
+	if (issuePanels.length) {
+		issuePicker.hidden = false;
+		for (const control of [issueTopic, issueKind, issueView]) control.addEventListener('change', updateIssue);
+		updateIssue();
+		document.querySelector('[data-show-timeline]')?.addEventListener('click', () => {
+			issueKind.value = 'time';
+			updateIssue();
+		});
+	}
 	const filter = document.querySelector<HTMLElement>('#topic-filter')!;
 	const input = document.querySelector<HTMLInputElement>('#topic-query')!;
 	const results = document.querySelector<HTMLElement>('#topic-results')!;
@@ -324,6 +372,12 @@ const archive = data.downloads.find((entry) => entry.path.endsWith('claim_docume
 	};
 	input.addEventListener('input', update);
 	const revealAnchor = () => {
+		const issue = issuePanels.find((entry) => `#${entry.id}` === window.location.hash);
+		if (issue) {
+			issueTopic.value = issue.dataset.topic!;
+			updateIssue();
+			requestAnimationFrame(() => issue.scrollIntoView());
+		}
 		const topic = topics.find((entry) => `#${entry.id}` === window.location.hash);
 		if (topic) {
 			input.value = '';
@@ -375,12 +429,18 @@ const archive = data.downloads.find((entry) => entry.path.endsWith('claim_docume
 	#topic-results { color: var(--muted); font-size: 0.85rem; }
 	.download-list { padding-left: 1.3rem; }
 	.download-list li { margin-bottom: 0.5rem; }
+	.issue-picker { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1.4fr); gap: 1rem; margin-block: 1.5rem; }
+	.issue-picker[hidden] { display: none; }
+	.issue-picker label { font: 0.9rem var(--sans); min-width: 0; }
+	.issue-picker select { display: block; width: 100%; min-width: 0; margin-top: 0.5rem; padding: 0.6rem; font-size: 1rem; color: var(--ink); background: var(--paper); border: 1px solid var(--rule); border-radius: 0; }
+	.issue-panel > summary { font-size: 1.2rem; }
 	code { font-size: 0.8em; }
 	@media (max-width: 700px) {
 		.party-summaries { grid-template-columns: 1fr; gap: 0.4rem; }
 		th, td { padding: 0.4rem 0.2rem; }
 		table { font-size: 0.75rem; table-layout: fixed; }
 		table th:first-child { width: 42%; }
+		.issue-picker { grid-template-columns: 1fr; }
 		.intro { font-size: 1.1rem; }
 	}
 </style>
