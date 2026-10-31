@@ -62,14 +62,16 @@ create an article or require a personal-site writing-index entry.
 Prepend new Interactive analysis entries; only the first preview loads eagerly.
 
 The national Democratic/Republican/DSA comparison lives at `/party-platforms/`.
-Deployment pins `hanshanley/dsa` to a verified source commit and runs its stdlib-only
-offline exporter. It validates the reviewed topic replay, complete claim/source
+Deployment pins `hanshanley/dsa` to a verified source commit and runs its
+offline exporter with the source package and its numerical/image audit dependencies.
+It validates the reviewed topic replay, complete claim/source
 accounting, and ZIP contents before staging original figures and full-text downloads.
 No extraction, fitting, model downloads, or Libertarian partial results run during
 publication. For local checks, use a clean checkout of the workflow's pinned revision:
 
 ```bash
-python ../dsa/scripts/build_platform_publication.py --output public/party-platforms
+PYTHONPATH=../dsa/src ../dsa/.venv/bin/python \
+  ../dsa/scripts/build_platform_publication.py --output public/party-platforms
 ```
 
 The output must be absent or empty; do not overwrite a stale export in place.
@@ -85,15 +87,27 @@ overviews, and individual overall/over-time subject charts. Broad views show
 absolute shares, distinctive emphasis, and pairwise differences across three
 pages. The six expanded density maps retain the artist's numbered examples;
 their complete texts and source links come from exported `density_regions`,
-not manually reconstructed captions. Mobile maps crop the same original image
-to its map panel and show the complete examples as readable HTML. Mobile overview
+not manually reconstructed captions. The primary KDE display is an interactive
+canvas: hover previews a reviewed issue, click/tap pins it, and keyboard issue
+selection and arrow keys provide equivalent access. Both compared groups show
+reviewed source-bound group summaries and paired differences, with their supporting
+claims and excerpts. These summaries synthesize selected documents, not independently
+certified or exhaustive party positions.
+`density-map.json` joins every frozen expanded KDE point to pooled issue
+assignments by claim ID, retaining original coordinates, log densities, global
+axis limits and common color bound. Pair displays include only those two groups.
+All 24 issue labels remain available on the map; the three identity clusters
+still stay out of subject rankings. Original annotated maps and numbered evidence
+remain in native disclosures, including when JavaScript or the map fetch fails.
+Mobile maps use the same responsive canvas, with positions stacked underneath;
+archived images retain their original map crop. Mobile overview
 charts render the same ordered subjects, weighted shares and unsmoothed differences
 as readable bars and values, with a full-chart link retaining sensitivity markers.
 Only the expanded analysis is presented: do not render adopted-only controls,
 strict charts or strict share columns. There are 21 displayed substantive subjects;
 three identity clusters remain in denominators but not charts or rankings.
 Each displayed subject shows its two expanded chart modes and written summary.
-The original export retains all four PNG/SVG pairs
+The original export retains all four PNG chart modes
 for research reproducibility; retired dense timeline panels are not publication inputs.
 All displayed subjects and chart modes remain available through native disclosures without
 JavaScript. Draft local fixtures must set `preview_only: true` in both the

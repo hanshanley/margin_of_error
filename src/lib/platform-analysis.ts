@@ -93,6 +93,25 @@ interface Publication {
 export const platforms: Publication = JSON.parse(
 	readFileSync('public/party-platforms/analysis.json', 'utf8'),
 );
+export interface DensityMap {
+	groups: string[];
+	points: [string, number, number, number, number, number, number, number][];
+	limits: [number, number][];
+	color_bound: number;
+	topics: {
+		topic_id: string;
+		title: string;
+		summary: string;
+		caveat: string;
+		displayed: boolean;
+		examples: Claim[];
+		positions: Record<string, { summary: string; caveat: string; supporting_claim_ids: string[] }>;
+		differences: Record<string, { summary: string; supporting_claim_ids: string[] }>;
+	}[];
+}
+export const densityMap: DensityMap = JSON.parse(
+	readFileSync('public/party-platforms/density-map.json', 'utf8'),
+);
 export const platformRepository = `https://github.com/hanshanley/dsa/tree/${platforms.source_revision}`;
 export const organizations = [
 	{ id: 'democratic', name: 'Democratic Party' },

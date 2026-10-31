@@ -42,6 +42,27 @@
 .platform-page .wide-chart { overflow-x: auto; }
 .platform-page .mapped-evidence li { padding-block: 0.6rem; max-width: 900px; }
 .platform-page .mapped-evidence li > p:first-child { margin-top: 0; }
+.platform-page .density-explorer-controls { display: flex; align-items: end; gap: 1rem; margin-bottom: 1.5rem; }
+.platform-page .density-explorer-controls label { flex: 1; min-width: 0; font: 0.85rem var(--sans); }
+.platform-page #density-unpin { padding: 0.7rem; border: 1px solid var(--rule); background: transparent; color: var(--ink); font: 0.85rem var(--sans); cursor: pointer; }
+.platform-page #density-unpin:disabled { opacity: 0.5; cursor: default; }
+.platform-page .density-interactive-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 2rem; align-items: start; }
+.platform-page .density-canvas-wrap { position: relative; }
+.platform-page #density-canvas { display: block; width: 100%; aspect-ratio: 1.5; cursor: crosshair; }
+.platform-page #density-canvas:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.platform-page #density-tooltip { position: absolute; max-width: 220px; padding: 0.5rem 0.7rem; background: var(--paper); border: 1px solid var(--rule); font: 0.8rem var(--sans); pointer-events: none; }
+.platform-page .density-gradient { height: 0.6rem; background: linear-gradient(to right, var(--density-second), #F7F5F0, var(--density-first)); }
+.platform-page .density-scale-values, .platform-page .density-scale-labels { display: flex; justify-content: space-between; gap: 1rem; margin-top: 0.4rem; font: 0.75rem var(--sans); color: var(--muted); }
+.platform-page .density-scale-labels > :last-child { text-align: right; }
+.platform-page .density-map-wrap > p { font-size: 0.85rem; }
+.platform-page .density-topic > h3 { margin-top: 0; }
+.platform-page .density-topic-summary { font-size: 0.95rem; }
+.platform-page .density-position { border-top: 1px solid var(--rule); margin-top: 1.2rem; }
+.platform-page .density-position h4 { margin: 0.8rem 0; font: 600 0.95rem var(--sans); }
+.platform-page .density-source-example { font-size: 0.9rem; }
+.platform-page .density-source-example blockquote { margin-block: 0.8rem; }
+.platform-page .density-source-example details { font-size: 0.85rem; }
+.platform-page .density-source-example summary { font-size: 0.8rem; }
 
 .platform-page .issue-picker {
 	display: grid;
@@ -114,6 +135,9 @@
 }
 
 @media (max-width: 700px) {
+	.platform-page .density-interactive-grid { grid-template-columns: 1fr; gap: 1rem; }
+	.platform-page .density-explorer-controls { align-items: start; flex-direction: column; }
+	.platform-page .density-explorer-controls label { width: 100%; }
 	.platform-page .analysis-deck { font-size: 1.05rem; }
 	.platform-page .issue-picker,
 	.platform-page .party-summaries { grid-template-columns: 1fr; gap: 0.8rem; }

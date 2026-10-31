@@ -1,0 +1,264 @@
+---
+import { densityMap, organizations, platforms } from '../lib/platform-analysis';
+---
+
+<div id="density-explorer" data-map-src={`/party-platforms/density-map.json?source=${platforms.source_revision}`} hidden>
+	<p id="density-instructions">Hover over the map to identify an issue. Click or tap to keep it selected
+		and read how both organizations discuss it.</p>
+	<div class="density-explorer-controls">
+		<label>Issue on the map
+			<select id="density-topic">{densityMap.topics.map((topic, index) =>
+				<option value={index}>{topic.title}</option>)}</select>
+		</label>
+		<button id="density-unpin" type="button" disabled>Resume hover</button>
+	</div>
+	<div class="density-interactive-grid">
+		<div class="density-map-wrap">
+			<div class="density-canvas-wrap">
+				<canvas id="density-canvas" tabindex="0" role="img"
+					aria-label="Interactive language density map. Use the issue selector or arrow keys to explore issues."
+					aria-describedby="density-instructions" />
+				<div id="density-tooltip" hidden />
+			</div>
+			<div class="density-scale" aria-hidden="true">
+				<div class="density-gradient" />
+				<div class="density-scale-values"><span id="density-negative" /><span>0</span><span id="density-positive" /></div>
+				<div class="density-scale-labels"><span id="density-second-label" /><span id="density-first-label" /></div>
+			</div>
+			<p class="qualification">Color shows the original natural-log density contrast.
+				Outlined points belong to the selected issue, not a region boundary.</p>
+			<p id="density-map-status" role="status">Loading the interactive map&hellip;</p>
+		</div>
+		<div class="density-comparison" aria-live="polite" aria-atomic="false">
+			{densityMap.topics.map((topic, index) =>
+				<article class="density-topic" data-index={index} data-topic={topic.topic_id} hidden>
+					<h3>{topic.title}</h3>
+					{Object.entries(topic.differences).map(([pair, difference]) =>
+						<p class="density-difference" data-pair={pair} hidden>{difference.summary}</p>)}
+					<p class="summary-label">How the documents discuss this issue</p>
+					<div class="density-positions">{organizations.map(group =>
+						<section class="density-position" data-group={group.id}>
+							<h4>{group.name}</h4>
+							{topic.positions[group.id] && <p class="density-position-summary">{topic.positions[group.id].summary}</p>}
+							{topic.positions[group.id]?.caveat && <p class="qualification">{topic.positions[group.id].caveat}</p>}
+							<details class="density-position-evidence" open={!topic.positions[group.id]}>
+							<summary>Supporting source statements</summary>
+							{topic.examples.filter(example => example.group === group.id).map(example =>
+								<div class="density-source-example" data-claim={example.claim_id}>
+									<blockquote><p>{example.claim_text}</p></blockquote>
+									<p class="claim-source"><a href={example.source_url}>{example.title}</a>
+										{' '}&middot; {example.publication_date}</p>
+									<details><summary>Source excerpt</summary><p>{example.evidence}</p></details>
+								</div>
+							)}
+							{!topic.examples.some(example => example.group === group.id) &&
+								<p>No eligible example is available for this group in this cluster.
+									This does not establish that the organization has no position.</p>}
+							</details>
+						</section>
+					)}</div>
+					<details>
+						<summary>About this issue cluster</summary>
+						<p class="density-topic-summary">{topic.summary}</p>
+					</details>
+					{topic.displayed
+						? <p><a href={`#issue-${topic.topic_id}`} data-overall-issue={topic.topic_id}>Explore this subject &rarr;</a></p>
+						: <p class="qualification">An organization-identity cluster: retained in the map,
+							but omitted from subject rankings.</p>}
+					<p class="qualification">Selected source examples across 2000&ndash;2026, not an exhaustive
+						or current party position.{topic.caveat && ` ${topic.caveat}`}</p>
+				</article>
+			)}
+		</div>
+	</div>
+</div>
+
+<script>
+	import type { DensityMap } from '../lib/platform-analysis';
+
+	const root = document.querySelector<HTMLElement>('#density-explorer')!;
+	const canvas = root.querySelector<HTMLCanvasElement>('canvas')!;
+	const context = canvas.getContext('2d')!;
+	const cached = document.createElement('canvas');
+	const base = cached.getContext('2d')!;
+	const topic = root.querySelector<HTMLSelectElement>('#density-topic')!;
+	const pair = document.querySelector<HTMLSelectElement>('#density-pair')!;
+	const unpin = root.querySelector<HTMLButtonElement>('#density-unpin')!;
+	const tooltip = root.querySelector<HTMLElement>('#density-tooltip')!;
+	const status = root.querySelector<HTMLElement>('#density-map-status')!;
+	const palette: Record<string, string> = { democratic: '#3D6F8C', republican: '#C85A3D', dsa: '#C2993E' };
+	const names: Record<string, string> = { democratic: 'Democratic', republican: 'Republican', dsa: 'DSA' };
+	let data: DensityMap;
+	let points: { x: number; y: number; issue: number }[] = [];
+	let pressedPoint: typeof points[number] | undefined;
+	let selected = -1;
+	let pinned = false;
+	let width = 0;
+	let height = 0;
+	let frame = 0;
+
+	const draw = () => {
+		context.clearRect(0, 0, width, height);
+		context.drawImage(cached, 0, 0, width, height);
+		context.strokeStyle = '#252525';
+		context.lineWidth = 0.6;
+		context.globalAlpha = 0.7;
+		for (const point of points) {
+			if (point.issue !== selected) continue;
+			context.beginPath();
+			context.arc(point.x, point.y, 2.2, 0, 2 * Math.PI);
+			context.stroke();
+		}
+		context.globalAlpha = 1;
+	};
+	const selectIssue = (index: number) => {
+		if (index === selected) return;
+		selected = index;
+		topic.value = String(index);
+		root.dataset.topic = data.topics[index].topic_id;
+		const groups = pair.value.split('_vs_');
+		for (const panel of root.querySelectorAll<HTMLElement>('.density-topic')) {
+			panel.hidden = Number(panel.dataset.index) !== index;
+			for (const position of panel.querySelectorAll<HTMLElement>('.density-position')) {
+				position.hidden = !groups.includes(position.dataset.group!);
+			}
+			for (const difference of panel.querySelectorAll<HTMLElement>('.density-difference')) {
+				difference.hidden = difference.dataset.pair !== pair.value;
+			}
+		}
+		draw();
+	};
+	const color = (value: number, first: string, second: string) => {
+		const endpoint = palette[value >= 0 ? first : second].slice(1);
+		const neutral = [247, 245, 240];
+		const amount = Math.min(1, Math.abs(value) / data.color_bound);
+		return `rgb(${neutral.map((channel, index) =>
+			Math.round(channel + (parseInt(endpoint.slice(index * 2, index * 2 + 2), 16) - channel) * amount)).join(',')})`;
+	};
+	const render = () => {
+		if (!data) return;
+		const [first, second] = pair.value.split('_vs_');
+		const firstIndex = data.groups.indexOf(first);
+		const secondIndex = data.groups.indexOf(second);
+		const rectangle = canvas.getBoundingClientRect();
+		width = rectangle.width;
+		height = rectangle.height;
+		if (!width || !height) return;
+		const ratio = window.devicePixelRatio || 1;
+		for (const element of [canvas, cached]) {
+			element.width = Math.round(width * ratio);
+			element.height = Math.round(height * ratio);
+		}
+		context.setTransform(canvas.width / width, 0, 0, canvas.height / height, 0, 0);
+		base.setTransform(cached.width / width, 0, 0, cached.height / height, 0, 0);
+		base.fillStyle = getComputedStyle(root).getPropertyValue('--paper').trim() || '#f2efe7';
+		base.fillRect(0, 0, width, height);
+		base.globalAlpha = 0.65;
+		points = [];
+		for (const row of data.points) {
+			if (row[4] !== firstIndex && row[4] !== secondIndex) continue;
+			const x = 16 + (row[1] - data.limits[0][0]) / (data.limits[0][1] - data.limits[0][0]) * (width - 32);
+			const y = height - 16 - (row[2] - data.limits[1][0]) / (data.limits[1][1] - data.limits[1][0]) * (height - 32);
+			points.push({ x, y, issue: row[3] });
+			const densities = [row[5], row[6], row[7]];
+			base.fillStyle = color(densities[firstIndex] - densities[secondIndex], first, second);
+			base.beginPath();
+			base.arc(x, y, 1.3, 0, 2 * Math.PI);
+			base.fill();
+		}
+		base.globalAlpha = 1;
+		root.style.setProperty('--density-first', palette[first]);
+		root.style.setProperty('--density-second', palette[second]);
+		root.querySelector('#density-first-label')!.textContent = `Denser ${names[first]} language`;
+		root.querySelector('#density-second-label')!.textContent = `Denser ${names[second]} language`;
+		root.querySelector('#density-negative')!.textContent = `-${data.color_bound.toFixed(2)}`;
+		root.querySelector('#density-positive')!.textContent = `+${data.color_bound.toFixed(2)}`;
+		selected = -1;
+		selectIssue(Number(topic.value));
+		tooltip.hidden = true;
+	};
+	const nearest = (event: MouseEvent) => {
+		const rectangle = canvas.getBoundingClientRect();
+		const x = event.clientX - rectangle.left, y = event.clientY - rectangle.top;
+		let best: typeof points[number] | undefined, distance = 100;
+		for (const point of points) {
+			const squared = (point.x - x) ** 2 + (point.y - y) ** 2;
+			if (squared < distance) { best = point; distance = squared; }
+		}
+		return best;
+	};
+	canvas.addEventListener('pointermove', event => {
+		if (!data || event.pointerType === 'touch') return;
+		cancelAnimationFrame(frame);
+		frame = requestAnimationFrame(() => {
+			const point = nearest(event);
+			tooltip.hidden = !point;
+			if (!point) return;
+			tooltip.textContent = data.topics[point.issue].title;
+			tooltip.style.left = `${Math.max(8, Math.min(point.x + 12, width - 228))}px`;
+			tooltip.style.top = `${Math.max(8, Math.min(point.y + 12, height - 70))}px`;
+			if (!pinned) selectIssue(point.issue);
+		});
+	});
+	canvas.addEventListener('pointerleave', () => {
+		cancelAnimationFrame(frame);
+		tooltip.hidden = true;
+	});
+	canvas.addEventListener('pointerdown', event => {
+		// Click events round coordinates; retain the precise pointer hit in dense regions.
+		pressedPoint = data ? nearest(event) : undefined;
+	});
+	canvas.addEventListener('pointercancel', () => { pressedPoint = undefined; });
+	canvas.addEventListener('click', event => {
+		if (!data) return;
+		const point = pressedPoint ?? nearest(event);
+		pressedPoint = undefined;
+		if (!point) return;
+		selectIssue(point.issue);
+		pinned = true;
+		unpin.disabled = false;
+		status.textContent = 'Issue kept selected. Resume hover to explore another.';
+	});
+	const release = () => {
+		pinned = false;
+		unpin.disabled = true;
+		status.textContent = 'Hover or tap a point to explore an issue.';
+	};
+	unpin.addEventListener('click', release);
+	topic.addEventListener('change', () => {
+		if (!data) return;
+		selectIssue(Number(topic.value));
+		pinned = true;
+		unpin.disabled = false;
+		status.textContent = 'Issue kept selected. Resume hover to explore another.';
+	});
+	canvas.addEventListener('keydown', event => {
+		if (!data) return;
+		if (event.key === 'Escape') release();
+		if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+		event.preventDefault();
+		selectIssue((selected + (event.key === 'ArrowRight' ? 1 : data.topics.length - 1)) % data.topics.length);
+		pinned = true;
+		unpin.disabled = false;
+		status.textContent = 'Issue kept selected. Resume hover to explore another.';
+	});
+	pair.addEventListener('change', render);
+	new ResizeObserver(render).observe(canvas);
+	const observer = new IntersectionObserver(async entries => {
+		if (!entries.some(entry => entry.isIntersecting)) return;
+		observer.disconnect();
+		root.hidden = false;
+		try {
+			const response = await fetch(root.dataset.mapSrc!);
+			if (!response.ok) throw new Error(`Map request failed: ${response.status}`);
+			data = await response.json();
+			render();
+			root.dataset.ready = 'true';
+			for (const original of document.querySelectorAll<HTMLDetailsElement>('.density-original')) original.open = false;
+			status.textContent = 'Hover or tap a point to explore an issue.';
+		} catch {
+			root.hidden = true;
+		}
+	});
+	observer.observe(document.querySelector('#density')!);
+</script>
