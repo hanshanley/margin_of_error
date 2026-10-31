@@ -11,11 +11,191 @@ const percent = (topic: typeof data.topics[number], group: string) => {
 	return row?.available === 'True' ? `${(100 * Number(row.share)).toFixed(1)}%` : 'Not observed';
 };
 const evidence = (id: string) => `/party-platforms/sources/#${id}`;
+const overviewViews = [
+	{ id: 'topic_distribution', title: 'Share of attention',
+		summary: 'See how each organization divides its attention among the same subjects. The bars use equal document or fallback-bundle weights, not raw claim counts.' },
+	{ id: 'vs_rest_emphasis', title: 'Distinctive emphasis',
+		summary: 'Compare each organization with the equally weighted average of the other two. Positive percentage-point differences indicate greater attention; they do not measure agreement or ideological distance.' },
+	{ id: 'pairwise_emphasis', title: 'Party-to-party differences',
+		summary: 'Compare subject emphasis for each pair of organizations. Percentage-point differences describe attention to a subject, not whether the organizations take the same position.' },
+];
+const shortNames: Record<string, string> = { democratic: 'Democratic', republican: 'Republican', dsa: 'DSA' };
+const colors: Record<string, string> = { democratic: '#3d7699', republican: '#c65a3b', dsa: '#c39a36' };
+const overviewTopics = [...data.topics].sort((a, b) =>
+	organizations.reduce((sum, group) => sum + Number(share(b, group.id)?.share) -
+		Number(share(a, group.id)?.share), 0));
+const mobileColumns = (kind: string) => kind === 'pairwise_emphasis' ? [
+	{ group: 'democratic', baseline: ['republican'] },
+	{ group: 'democratic', baseline: ['dsa'] },
+	{ group: 'republican', baseline: ['dsa'] },
+] : organizations.map(group => ({
+	group: group.id,
+	baseline: kind === 'topic_distribution' ? []
+		: organizations.filter(other => other.id !== group.id).map(other => other.id),
+}));
+const mobileValue = (topic: typeof data.topics[number], column: ReturnType<typeof mobileColumns>[number], view = 'expanded') => {
+	const value = (group: string) => Number(topic.shares.find(row => row.view === view && row.group === group)?.share);
+	return value(column.group) - (column.baseline.length
+		? column.baseline.reduce((sum, group) => sum + value(group), 0) / column.baseline.length : 0);
+};
+const mobileBounds = Object.fromEntries(overviewViews.map(view => {
+	const maximum = Math.max(...data.topics.flatMap(topic => ['expanded', 'strict'].flatMap(source =>
+		mobileColumns(view.id).map(column => Math.abs(mobileValue(topic, column, source))))));
+	return [view.id, view.id === 'topic_distribution' ? Math.max(0.05, Math.ceil(maximum * 20) / 20)
+		: Math.max(0.01, Math.ceil(maximum * 100) / 100)];
+}));
+const densityPairs = [
+	{ id: 'democratic_vs_republican', title: 'Democratic and Republican' },
+	{ id: 'democratic_vs_dsa', title: 'Democratic and DSA' },
+	{ id: 'republican_vs_dsa', title: 'Republican and DSA' },
+];
+const partyOverviews = [
+	{ id: 'democratic', summary: 'Support for vulnerable communities, international cooperation, and energy and infrastructure investment lead the largest subjects. Presidential records and partisan critiques also feature prominently: attention is not simply a list of policy promises.',
+		topic: 'topic-002', claim: 'democratic-2024-normalized-51d7cbe64123-005' },
+	{ id: 'republican', summary: 'Governing authority, national leadership, and support for communities recur throughout these platforms. Rights and freedom are distinctive themes, mixing concrete proposals with statements about legitimate government.',
+		topic: 'topic-005', claim: 'republican-2008-normalized-92a9f5c7906a-006' },
+	{ id: 'dsa', summary: 'Critiques of capitalism, democratic representation, and material insecurity lead its largest subjects. Labor organizing and the Israeli-Palestinian conflict also receive more relative attention than in the other organizations.',
+		topic: 'topic-020', claim: 'dsa-2003-mission-normalized-20f699d8e4de-002' },
+].map(overview => {
+	const topic = data.topics.find(topic => topic.topic_id === overview.topic)!;
+	const example = topic.representatives.find(claim => claim.claim_id === overview.claim);
+	if (!example) throw new Error(`Missing party overview evidence: ${overview.claim}`);
+	return { ...overview, example };
+});
 ---
 
 <PlatformLayout title="National party platforms" active="issues"
-	description="Compare what national party documents emphasize, and how that attention changes over time.">
-	<section id="issues" aria-label="Compare an issue">
+	description="Compare national party documents through subject charts and language maps.">
+	<nav class="section-links" aria-label="Explore the analysis">
+		<a href="#overview">The big picture</a>
+		<a href="#density">Language maps</a>
+		<a href="#issues">Explore a subject</a>
+	</nav>
+
+	<section id="overview" class="reader-section" aria-labelledby="overview-title">
+		<h2 id="overview-title">The big picture</h2>
+		<div id="overview-picker" class="issue-picker" hidden>
+			<label>View
+				<select id="overview-kind">{overviewViews.map(view =>
+					<option value={view.id}>{view.title}</option>)}</select>
+			</label>
+			<label>Subjects
+				<select id="overview-page">{[1, 2, 3].map(page =>
+					<option value={page}>Page {page} of 3</option>)}</select>
+			</label>
+		</div>
+		{overviewViews.map(view => [1, 2, 3].map(page => (
+			<details class="overview-chart" data-kind={view.id} data-page={page}
+				open={view.id === 'topic_distribution' && page === 1}>
+				<summary>{view.title}: page {page}</summary>
+				<p class="view-summary">{view.summary}</p>
+				<div class="mobile-overview" aria-label={`${view.title}, page ${page}`}>
+					{overviewTopics.slice((page - 1) * 8, page * 8).map(topic => (
+						<div class="mobile-topic" data-topic={topic.topic_id}>
+							<h3><a href={`#issue-${topic.topic_id}`} data-overall-issue={topic.topic_id}>{topic.title}</a></h3>
+							{mobileColumns(view.id).map(column => {
+								const value = mobileValue(topic, column);
+								const difference = view.id !== 'topic_distribution';
+								const label = `${shortNames[column.group]}${column.baseline.length
+									? ` minus ${column.baseline.length === 2 ? 'others' : shortNames[column.baseline[0]]}` : ''}`;
+								return <div class="mobile-value" data-group={column.group}
+									data-baseline={column.baseline.join(',')} data-value={value}>
+									<span class="mobile-party">{label}</span>
+									<span class:list={['mobile-track', { difference }]} aria-hidden="true">
+										<span style={`background:${value < 0 ? column.baseline.length === 2 ? '#77736d' : colors[column.baseline[0]] : colors[column.group]};width:${Math.abs(value) / mobileBounds[view.id] * (difference ? 50 : 100)}%;left:${difference ? value < 0 ? 50 - Math.abs(value) / mobileBounds[view.id] * 50 : 50 : 0}%`}></span>
+									</span>
+									<span class="mobile-number">{difference && value > 0 ? '+' : ''}{(100 * value).toFixed(1)}{difference ? ' pp' : '%'}</span>
+								</div>;
+							})}
+						</div>
+					))}
+					<p class="caveat">Same scale across subjects. {view.id !== 'topic_distribution' && 'pp = percentage points. '}
+						<a href={`/party-platforms/${platformFigure('expanded', `${view.id}${page === 1 ? '' : `_${page}`}`).path}`}>Full chart and sensitivity markers</a>.</p>
+				</div>
+				<div class="wide-chart" tabindex="0" role="region" aria-label={`${view.title}, page ${page}`}>
+					<PlatformFigure figure={platformFigure('expanded', `${view.id}${page === 1 ? '' : `_${page}`}`)}
+						caption={`${view.title}, page ${page} of 3. All organizations use the same subjects and chart scales.`} />
+				</div>
+			</details>
+		)))}
+		<p class="qualification">The updated analysis shows {data.topics.length} substantive subjects.
+			Three party-identity clusters are omitted from these rankings, but their claims remain
+			in the denominators. Shared subjects do not necessarily mean shared positions.</p>
+		<h3 class="overview-subheading">What the documents say</h3>
+		<div class="party-summaries">
+			{organizations.map(group => {
+				const overview = partyOverviews.find(overview => overview.id === group.id)!;
+				return <article class="party-summary" data-party={group.id}>
+					<h3>{group.name}</h3>
+					<p>{overview.summary}</p>
+					<p class="summary-label">Largest subjects</p>
+					<ol>
+						{[...data.topics].sort((a, b) =>
+							Number(share(b, group.id)?.share) - Number(share(a, group.id)?.share)
+						).slice(0, 3).map(topic => (
+							<li><a href={`#issue-${topic.topic_id}`} data-overall-issue={topic.topic_id}>{topic.title}</a>
+								<span class="topic-percent">{percent(topic, group.id)}</span></li>
+						))}
+					</ol>
+					<p class="summary-label">A stated position</p>
+					<blockquote><p>{overview.example.claim_text}</p></blockquote>
+					<p class="claim-source"><a href={overview.example.source_url}>{overview.example.title}</a>
+						{' '}&middot; <a href={evidence(overview.topic)}>Read the source evidence</a></p>
+					<p class="coverage">{data.summary.documents_by_group[group.id]} documents &middot;
+						{number(data.summary.claims_by_group[group.id])} analyzed claims</p>
+				</article>;
+			})}
+		</div>
+		<p class="qualification">These are summaries of observed documents across 2000&ndash;2026,
+			not exhaustive descriptions of current beliefs. DSA coverage includes national
+			resolutions and statements alongside platforms/programs; periods and genres differ.</p>
+	</section>
+
+	<section id="density" class="reader-section" aria-labelledby="density-title">
+		<h2 id="density-title">Where the language differs</h2>
+		<p>These KDE maps compare the concentration of each organization's language in a shared
+			semantic space. Numbered examples connect the patterns to actual source claims.
+			Similar language does not imply the same policy position.</p>
+		<div id="density-picker" class="issue-picker" hidden>
+			<label>Organizations
+				<select id="density-pair">{densityPairs.map(pair =>
+					<option value={pair.id}>{pair.title}</option>)}</select>
+			</label>
+			<label>Examples
+				<select id="density-page"><option value="1">First set</option>
+					<option value="2">Second set</option></select>
+			</label>
+		</div>
+		{densityPairs.map(pair => [1, 2].map(page => (
+			<details class="density-chart" data-pair={pair.id} data-page={page}
+				open={pair.id === densityPairs[0].id && page === 1}>
+				<summary>{pair.title}: example set {page}</summary>
+				<h3 class="chart-heading">{pair.title}</h3>
+				<PlatformFigure figure={platformFigure('expanded/density_details', `${pair.id}_${page}`)}
+					caption={`${pair.title}: expanded language density, example set ${page}. Colors show natural-log density ratios; markers locate examples, not region boundaries.`} />
+				<details class="mapped-evidence">
+					<summary>Mapped claims and their sources</summary>
+					<ol>{data.density_regions.filter(region => region.view === 'expanded' &&
+						region.figure === `density_details/${pair.id}_${page}.png`).map(region => (
+						<li value={Number(region.marker)}>
+							<p>{region.example_text}</p>
+							<p class="claim-source"><a href={region.source_url}>{region.example_title}</a>
+								{' '}&middot; {region.example_publication_date}</p>
+							<p class="locator">{region.locator} &middot; {region.passages} claims / {region.bundles} bundles.
+								Example ln density ratio: {Number(region.example_log_density_ratio).toFixed(2)}.</p>
+						</li>
+					))}</ol>
+				</details>
+			</details>
+		)))}
+		<p class="qualification">Density is estimated in the shared {data.summary.views.expanded.dimensions}-dimensional
+			space; the two-dimensional map is a display only. Keywords are retrieval aids,
+			not reviewed subject labels. This is an exploratory comparison, not a measure of agreement.</p>
+	</section>
+
+	<section id="issues" class="reader-section" aria-labelledby="issues-title">
+		<h2 id="issues-title">Explore a subject</h2>
+		<p>Read the subject summary, compare attention across organizations, and follow it over time.</p>
 		<div id="issue-picker" class="issue-picker" hidden>
 			<label>Subject
 				<select id="issue-topic">
@@ -34,6 +214,7 @@ const evidence = (id: string) => `/party-platforms/sources/#${id}`;
 				id={`issue-${topic.topic_id}`} open={topic.topic_id === initialIssue.topic_id}>
 				<summary>{topic.title}</summary>
 				<h2 class="issue-title">{topic.title}</h2>
+				<p class="subject-summary">{topic.summary}</p>
 				{['overall', 'time'].map(kind => (
 					<details class="issue-chart" data-view="expanded" data-kind={kind}
 						open={kind === 'overall'}>
@@ -47,7 +228,6 @@ const evidence = (id: string) => `/party-platforms/sources/#${id}`;
 				<p><a href={evidence(topic.topic_id)}>Read representative claims and source excerpts &rarr;</a></p>
 				<details class="chart-notes">
 					<summary>Sources and how to read this chart</summary>
-					<p>{topic.summary}</p>
 					<p>{topic.caveat}</p>
 					<p>These charts compare attention, not agreement or ideological distance.
 						Each document or predefined DSA period bundle receives equal weight within its organization.
@@ -73,34 +253,32 @@ const evidence = (id: string) => `/party-platforms/sources/#${id}`;
 		<noscript><p>Expand a subject to see its overall and over-time charts.</p></noscript>
 	</section>
 
-	<section id="overview" class="reader-section" aria-labelledby="overview-title">
-		<h2 id="overview-title">What each organization emphasizes</h2>
-		<p>The three largest subjects in each organization's document-weighted distribution.
-			Shared subjects do not necessarily mean shared positions.</p>
-		<div class="party-summaries">
-			{organizations.map(group => (
-				<div>
-					<h3>{group.name}</h3>
-					<ol>
-						{[...data.topics].sort((a, b) =>
-							Number(share(b, group.id)?.share) -
-							Number(share(a, group.id)?.share)
-						).slice(0, 3).map(topic => (
-							<li><a href={`#issue-${topic.topic_id}`} data-overall-issue={topic.topic_id}>{topic.title}</a>
-								<span class="topic-percent">{percent(topic, group.id)}</span></li>
-						))}
-					</ol>
-					<p class="coverage">{data.summary.documents_by_group[group.id]} documents &middot;
-						{number(data.summary.claims_by_group[group.id])} analyzed claims</p>
-				</div>
-			))}
-		</div>
-		<p class="qualification">Coverage differs by organization and period. This release compares
-			Democratic, Republican, and DSA national documents only.</p>
-	</section>
 </PlatformLayout>
 
 <script>
+	const overviewKind = document.querySelector<HTMLSelectElement>('#overview-kind')!;
+	const overviewPage = document.querySelector<HTMLSelectElement>('#overview-page')!;
+	const densityPair = document.querySelector<HTMLSelectElement>('#density-pair')!;
+	const densityPage = document.querySelector<HTMLSelectElement>('#density-page')!;
+	const updateComparisons = () => {
+		for (const chart of document.querySelectorAll<HTMLDetailsElement>('.overview-chart')) {
+			chart.hidden = chart.dataset.kind !== overviewKind.value || chart.dataset.page !== overviewPage.value;
+			if (!chart.hidden) chart.open = true;
+		}
+		for (const chart of document.querySelectorAll<HTMLDetailsElement>('.density-chart')) {
+			chart.hidden = chart.dataset.pair !== densityPair.value || chart.dataset.page !== densityPage.value;
+			if (!chart.hidden) chart.open = true;
+		}
+	};
+	for (const control of [overviewKind, overviewPage, densityPair, densityPage]) {
+		control.addEventListener('change', updateComparisons);
+	}
+	document.querySelector<HTMLElement>('#overview-picker')!.hidden = false;
+	document.querySelector<HTMLElement>('#density-picker')!.hidden = false;
+	if (window.matchMedia('(max-width: 700px)').matches) {
+		for (const evidence of document.querySelectorAll<HTMLDetailsElement>('.mapped-evidence')) evidence.open = true;
+	}
+	updateComparisons();
 	const picker = document.querySelector<HTMLElement>('#issue-picker')!;
 	const subject = document.querySelector<HTMLSelectElement>('#issue-topic')!;
 	const kind = document.querySelector<HTMLSelectElement>('#issue-kind')!;
@@ -121,7 +299,7 @@ const evidence = (id: string) => `/party-platforms/sources/#${id}`;
 		if (issue) {
 			subject.value = issue.dataset.topic!;
 			update();
-			requestAnimationFrame(() => issue.scrollIntoView());
+			requestAnimationFrame(() => issue.scrollIntoView({ behavior: 'instant' }));
 			return;
 		}
 		const oldTopic = panels.find(panel => `#${panel.dataset.topic}` === hash);

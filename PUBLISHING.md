@@ -80,10 +80,20 @@ variants are used when present; both those originals and the Substack figures
 remain byte-preserved. The existing website export maps their registered paper
 colours to the current publication paper. Topic search covers representative packets, not
 the entire downloaded corpus. This is an analysis tool, not a new authored essay.
-The primary comparison selects one topic and overall/over-time emphasis.
+The comparison combines broad subject views, source-linked KDE maps, party
+overviews, and individual overall/over-time subject charts. Broad views show
+absolute shares, distinctive emphasis, and pairwise differences across three
+pages. The six expanded density maps retain the artist's numbered examples;
+their complete texts and source links come from exported `density_regions`,
+not manually reconstructed captions. Mobile maps crop the same original image
+to its map panel and show the complete examples as readable HTML. Mobile overview
+charts render the same ordered subjects, weighted shares and unsmoothed differences
+as readable bars and values, with a full-chart link retaining sensitivity markers.
 Only the expanded analysis is presented: do not render adopted-only controls,
-strict charts or strict share columns. Each of the 24 pooled topics shows its
-two expanded chart modes. The original export retains all four PNG/SVG pairs
+strict charts or strict share columns. There are 21 displayed substantive subjects;
+three identity clusters remain in denominators but not charts or rankings.
+Each displayed subject shows its two expanded chart modes and written summary.
+The original export retains all four PNG/SVG pairs
 for research reproducibility; retired dense timeline panels are not publication inputs.
 All displayed subjects and chart modes remain available through native disclosures without
 JavaScript. Draft local fixtures must set `preview_only: true` in both the
@@ -94,7 +104,10 @@ Interactive analysis preview and social image, not an image inside the analysis
 pages. Keep it under
 `public/artifacts/party-platforms/`, separate from the generated chart export;
 preserve its original bytes and do not register it for chart recoloring.
-The comparison page leads with controls and one issue chart. Representative
+The comparison page leads with a broad view and its interpretation, followed
+by party overviews, KDE comparisons, and subject exploration. Party overviews
+distinguish pooled attention from stated positions and cite representative claims.
+Representative
 claim packets are available on `/party-platforms/sources/`, linked from the
 selected chart rather than appended to the comparison. Do not add period-discovery
 sections, technical diagnostics, or download inventories to these pages.

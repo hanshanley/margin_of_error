@@ -83,7 +83,7 @@ const percent = (topic: typeof data.topics[number], group: string) => {
 			input.value = '';
 			update();
 			topic.open = true;
-			requestAnimationFrame(() => topic.scrollIntoView());
+			requestAnimationFrame(() => topic.scrollIntoView({ behavior: 'instant' }));
 		}
 	};
 	filter.hidden = false;

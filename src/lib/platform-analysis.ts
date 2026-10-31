@@ -51,6 +51,22 @@ interface PeriodFit {
 	};
 }
 
+interface DensityRegion {
+	view: string;
+	pair: string;
+	figure: string;
+	marker: string;
+	terms: string;
+	passages: string;
+	bundles: string;
+	example_text: string;
+	example_title: string;
+	example_publication_date: string;
+	example_log_density_ratio: string;
+	source_url: string;
+	locator: string;
+}
+
 interface Publication {
 	preview_only?: boolean;
 	source_revision: string;
@@ -60,11 +76,12 @@ interface Publication {
 		documents_by_group: Record<string, number>;
 		bundles_by_group: Record<string, number>;
 		corpus: { assistant_source_repaired_blocks: number };
-		views: Record<string, { group_passages: Record<string, number> }>;
+		views: Record<string, { dimensions: number; group_passages: Record<string, number> }>;
 	};
 	topic_summary: { assistant_revised_labels: number };
 	topics: Topic[];
 	figures: PlatformFigure[];
+	density_regions: DensityRegion[];
 	downloads: { path: string; bytes: number }[];
 	evolution: {
 		summary: { topics: number; reviewed_labels: number };
