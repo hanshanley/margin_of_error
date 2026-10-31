@@ -15,10 +15,6 @@ const evidence = (id: string) => `/party-platforms/sources/#${id}`;
 const overviewViews = [
 	{ id: 'topic_distribution', title: 'Share of attention',
 		summary: 'See how each organization divides its attention among the same subjects. The bars use equal document or fallback-bundle weights, not raw claim counts.' },
-	{ id: 'vs_rest_emphasis', title: 'Distinctive emphasis',
-		summary: 'Compare each organization with the equally weighted average of the other two. Positive percentage-point differences indicate greater attention; they do not measure agreement or ideological distance.' },
-	{ id: 'pairwise_emphasis', title: 'Party-to-party differences',
-		summary: 'Compare subject emphasis for each pair of organizations. Percentage-point differences describe attention to a subject, not whether the organizations take the same position.' },
 ];
 const shortNames: Record<string, string> = { democratic: 'Democratic', republican: 'Republican', dsa: 'DSA' };
 const colors: Record<string, string> = { democratic: '#3d7699', republican: '#c65a3b', dsa: '#c39a36' };
@@ -86,6 +82,7 @@ const partyOverviews = [
 	description="Compare national party documents through subject charts and language maps.">
 	<nav class="section-links" aria-label="Explore the analysis">
 		<a href="#overview">Compare issues</a>
+		<a href="#organization-patterns">Overall patterns by organization</a>
 		<a href="#density">Language maps</a>
 	</nav>
 
@@ -99,35 +96,12 @@ const partyOverviews = [
 			))}</ul>
 		</details>
 		<div id="overview-picker" hidden>
-			<label><span class="control-label">Comparison</span>
-				<select id="overview-kind">{overviewViews.map(view =>
-					<option value={view.id}>{view.title}</option>)}
-				</select>
-			</label>
-			<div>
 			<div id="overview-subject-controls">
 				<nav class="overview-pages" aria-label="Browse issues">
 					<button type="button" id="overview-subject-previous" data-overview-step="-1" aria-label="Previous issue" disabled>Previous</button>
 					<span id="overview-subject-range" class="subject-count" role="status" aria-live="polite">1 of {data.topics.length}</span>
 					<button type="button" id="overview-subject-next" data-overview-step="1" aria-label="Next issue">Next</button>
 				</nav>
-			</div>
-			<div id="overview-pagination" class="overview-pagination" hidden>
-				<span class="pagination-label">Subjects</span>
-				<nav class="overview-pages" aria-label="Browse subject pages">
-					<button type="button" id="overview-previous" disabled>Previous</button>
-					{[1, 2, 3].map(page => (
-						<button type="button" data-overview-page={page}
-							aria-label={`Subjects ${(page - 1) * 8 + 1}–${Math.min(page * 8, data.topics.length)}`}
-							aria-current={page === 1 ? 'page' : undefined}>
-							{(page - 1) * 8 + 1}–{Math.min(page * 8, data.topics.length)}
-						</button>
-					))}
-					<button type="button" id="overview-next">Next</button>
-				</nav>
-				<p id="overview-range" class="overview-range" role="status" aria-live="polite"
-					data-total={data.topics.length}>Subjects 1–8 of {data.topics.length}</p>
-			</div>
 			</div>
 		</div>
 		</div>
@@ -222,8 +196,8 @@ const partyOverviews = [
 				</div>
 			</details>
 		)))}
-		<details class="party-overview">
-		<summary>Overall patterns by organization</summary>
+		<section id="organization-patterns" class="party-overview" aria-labelledby="organization-patterns-title">
+		<h2 id="organization-patterns-title">Overall patterns by organization</h2>
 		<div class="party-summaries">
 			{organizations.map(group => {
 				const overview = partyOverviews.find(overview => overview.id === group.id)!;
@@ -251,7 +225,7 @@ const partyOverviews = [
 		<p class="qualification">These are summaries of observed documents across 2000&ndash;2026,
 			not exhaustive descriptions of current beliefs. DSA coverage includes national
 			resolutions and statements alongside platforms/programs; periods and genres differ.</p>
-		</details>
+		</section>
 	</section>
 
 	<section id="density" class="reader-section" aria-labelledby="density-title">
@@ -264,41 +238,8 @@ const partyOverviews = [
 				<select id="density-pair">{densityPairs.map(pair =>
 					<option value={pair.id}>{pair.title}</option>)}</select>
 			</label>
-			<label>Original examples
-				<select id="density-page"><option value="1">First set</option>
-					<option value="2">Second set</option></select>
-			</label>
 		</div>
 		<DensityExplorer />
-		{densityPairs.map(pair => [1, 2].map(page => (
-			<details class="density-chart" data-pair={pair.id} data-page={page}
-				open={pair.id === densityPairs[0].id && page === 1}>
-				<summary>{pair.title}: example set {page}</summary>
-				<h3 class="chart-heading">{pair.title}</h3>
-				<details class="density-original" open>
-				<summary>Original annotated map and numbered source examples</summary>
-				<PlatformFigure figure={platformFigure('expanded/density_details', `${pair.id}_${page}`)}
-					caption={`${pair.title}: expanded language density, example set ${page}. Colors show natural-log density ratios; markers locate examples, not region boundaries.`} />
-				<details class="mapped-evidence">
-					<summary>Mapped claims and their sources</summary>
-					<ol>{data.density_regions.filter(region => region.view === 'expanded' &&
-						region.figure === `density_details/${pair.id}_${page}.png`).map(region => (
-						<li value={Number(region.marker)}>
-							<p>{region.example_text}</p>
-							<p class="claim-source"><a href={region.source_url}>{region.example_title}</a>
-								{' '}&middot; {region.example_publication_date}</p>
-							<p class="locator">{region.locator} &middot; {region.passages} claims / {region.bundles} bundles.
-								Example ln density ratio: {Number(region.example_log_density_ratio).toFixed(2)}.</p>
-						</li>
-					))}</ol>
-				</details>
-				</details>
-			</details>
-		)))}
-		<p class="qualification">Density is estimated in the shared {data.summary.views.expanded.dimensions}-dimensional
-			space; the two-dimensional map is a display only. Hover labels come from the
-			reviewed pooled issue clusters; the original numbered examples identify local language regions.
-			This is an exploratory comparison, not a measure of agreement.</p>
 	</section>
 
 </PlatformLayout>
@@ -307,7 +248,7 @@ const partyOverviews = [
 	const drawTimeline = (canvas: HTMLCanvasElement) => {
 		const width = canvas.getBoundingClientRect().width;
 		if (!width) return;
-		const height = 300;
+		const height = 320;
 		const ratio = window.devicePixelRatio || 1;
 		canvas.width = Math.round(width * ratio);
 		canvas.height = height * ratio;
@@ -320,7 +261,7 @@ const partyOverviews = [
 		const maximum = Math.max(0.01, ...periods.flatMap(period => period.values.filter(value => value !== null) as number[]));
 		const tick = [0.005, 0.01, 0.02, 0.025, 0.05, 0.1, 0.2, 0.25].find(value => value >= maximum / 4) ?? 0.25;
 		const upper = Math.ceil(maximum / tick) * tick;
-		const left = 38, right = width - 106, top = 18, bottom = height - 40;
+		const left = 40, right = width - 116, top = 24, bottom = height - 46;
 		const x = (index: number) => left + (right - left) * index / (periods.length - 1);
 		const y = (value: number) => bottom - (bottom - top) * value / upper;
 		context.font = `12px ${style.fontFamily}`;
@@ -330,11 +271,13 @@ const partyOverviews = [
 			context.fillStyle = style.getPropertyValue('--muted');
 			context.fillText(`${+(100 * value).toFixed(1)}%`, left - 8, y(value));
 			context.strokeStyle = style.getPropertyValue('--rule');
-			context.lineWidth = 0.6;
+			context.globalAlpha = value === 0 ? 0.8 : 0.45;
+			context.lineWidth = value === 0 ? 0.8 : 0.6;
 			context.beginPath();
 			context.moveTo(left, y(value));
 			context.lineTo(right, y(value));
 			context.stroke();
+			context.globalAlpha = 1;
 		}
 		context.textAlign = 'center';
 		periods.forEach((period, index) => {
@@ -346,8 +289,11 @@ const partyOverviews = [
 			context.strokeStyle = colors[group];
 			context.fillStyle = colors[group];
 			context.lineWidth = 2;
+			context.lineCap = 'round';
+			context.lineJoin = 'round';
 			context.beginPath();
 			let connected = false;
+			const last = periods.findLastIndex(period => period.values[group] !== null);
 			periods.forEach((period, index) => {
 				const value = period.values[group];
 				if (value === null) { connected = false; return; }
@@ -360,16 +306,19 @@ const partyOverviews = [
 				const value = period.values[group];
 				if (value === null) return;
 				context.beginPath();
-				if (group === 0) context.arc(x(index), y(value), 3.5, 0, 2 * Math.PI);
-				else if (group === 1) context.rect(x(index) - 3, y(value) - 3, 6, 6);
+				if (group === 0) context.arc(x(index), y(value), 3, 0, 2 * Math.PI);
+				else if (group === 1) context.rect(x(index) - 2.7, y(value) - 2.7, 5.4, 5.4);
 				else {
-					context.moveTo(x(index), y(value) - 4);
-					context.lineTo(x(index) + 4, y(value));
-					context.lineTo(x(index), y(value) + 4);
-					context.lineTo(x(index) - 4, y(value));
+					context.moveTo(x(index), y(value) - 3.5);
+					context.lineTo(x(index) + 3.5, y(value));
+					context.lineTo(x(index), y(value) + 3.5);
+					context.lineTo(x(index) - 3.5, y(value));
 					context.closePath();
 				}
+				context.fillStyle = index === last ? colors[group] : style.getPropertyValue('--paper');
 				context.fill();
+				context.lineWidth = 1.4;
+				context.stroke();
 			});
 			const index = periods.findLastIndex(period => period.values[group] !== null);
 			if (index !== -1) {
@@ -378,21 +327,26 @@ const partyOverviews = [
 			}
 		}
 		labels.sort((a, b) => a.target - b.target);
-		for (let index = 1; index < labels.length; index++) labels[index].labelY = Math.max(labels[index].target, labels[index - 1].labelY + 32);
+		for (let index = 1; index < labels.length; index++) labels[index].labelY = Math.max(labels[index].target, labels[index - 1].labelY + 38);
 		if (labels.length) {
 			labels[labels.length - 1].labelY = Math.min(bottom - 10, labels[labels.length - 1].labelY);
-			for (let index = labels.length - 2; index >= 0; index--) labels[index].labelY = Math.min(labels[index].labelY, labels[index + 1].labelY - 32);
+			for (let index = labels.length - 2; index >= 0; index--) labels[index].labelY = Math.min(labels[index].labelY, labels[index + 1].labelY - 38);
 		}
 		context.textAlign = 'left';
 		for (const label of labels) {
 			context.strokeStyle = style.getPropertyValue('--rule');
 			context.lineWidth = 0.8;
+			context.setLineDash(label.index < periods.length - 1 ? [2, 3] : []);
 			context.beginPath();
 			context.moveTo(x(label.index) + 5, label.target);
 			context.lineTo(right + 10, label.labelY);
 			context.stroke();
+			context.setLineDash([]);
+			context.fillStyle = style.getPropertyValue('--ink');
+			context.font = `500 13px ${style.fontFamily}`;
+			context.fillText(names[label.group], right + 14, label.labelY - 8);
+			context.font = `12px ${style.fontFamily}`;
 			context.fillStyle = colors[label.group];
-			context.fillText(names[label.group], right + 14, label.labelY - 7);
 			context.fillText(`${(100 * label.value).toFixed(1)}%${label.index < periods.length - 1 ? ` (${periods[label.index].label.slice(2)})` : ''}`, right + 14, label.labelY + 7);
 		}
 	};
@@ -403,28 +357,17 @@ const partyOverviews = [
 	document.fonts.ready.then(() => {
 		for (const canvas of document.querySelectorAll<HTMLCanvasElement>('.issue-time-chart')) drawTimeline(canvas);
 	});
-	const overviewKind = document.querySelector<HTMLSelectElement>('#overview-kind')!;
-	const overviewPages = [...document.querySelectorAll<HTMLButtonElement>('[data-overview-page]')];
-	const overviewPrevious = document.querySelector<HTMLButtonElement>('#overview-previous')!;
-	const overviewNext = document.querySelector<HTMLButtonElement>('#overview-next')!;
-	const overviewRange = document.querySelector<HTMLElement>('#overview-range')!;
 	const subjectIndex = document.querySelector<HTMLDetailsElement>('#overview-subject-index')!;
 	const overviewSubjects = [...subjectIndex.querySelectorAll<HTMLAnchorElement>('[data-overview-subject]')];
 	const subjectSteps = [...document.querySelectorAll<HTMLButtonElement>('[data-overview-step]')];
 	const subjectRange = document.querySelector<HTMLElement>('#overview-subject-range')!;
 	let overviewSubject = 0;
-	let overviewPage = 1;
-	const densityPair = document.querySelector<HTMLSelectElement>('#density-pair')!;
-	const densityPage = document.querySelector<HTMLSelectElement>('#density-page')!;
 	const updateComparisons = () => {
-		const positions = overviewKind.value === 'topic_distribution';
-		const page = positions ? Math.floor(overviewSubject / 8) + 1 : overviewPage;
+		const page = Math.floor(overviewSubject / 8) + 1;
 		for (const chart of document.querySelectorAll<HTMLDetailsElement>('.overview-chart')) {
-			chart.hidden = chart.dataset.kind !== overviewKind.value || chart.dataset.page !== String(page);
+			chart.hidden = chart.dataset.page !== String(page);
 			if (!chart.hidden) chart.open = true;
 		}
-		document.querySelector<HTMLElement>('#overview-subject-controls')!.hidden = !positions;
-		document.querySelector<HTMLElement>('#overview-pagination')!.hidden = positions;
 		for (const topic of document.querySelectorAll<HTMLElement>('.position-overview .mobile-topic')) {
 			topic.hidden = topic.dataset.topic !== overviewSubjects[overviewSubject].dataset.overviewSubject;
 		}
@@ -446,41 +389,7 @@ const partyOverviews = [
 				? overviewSubject === 0 : overviewSubject === overviewSubjects.length - 1;
 		}
 		subjectRange.textContent = `${overviewSubject + 1} of ${overviewSubjects.length}`;
-		for (const button of overviewPages) {
-			if (Number(button.dataset.overviewPage) === overviewPage) {
-				button.setAttribute('aria-current', 'page');
-				overviewRange.textContent = `${button.getAttribute('aria-label')} of ${overviewRange.dataset.total}`;
-			} else {
-				button.removeAttribute('aria-current');
-			}
-		}
-		overviewPrevious.disabled = overviewPage === 1;
-		overviewNext.disabled = overviewPage === overviewPages.length;
-		for (const chart of document.querySelectorAll<HTMLDetailsElement>('.density-chart')) {
-			chart.hidden = chart.dataset.pair !== densityPair.value || chart.dataset.page !== densityPage.value;
-			if (!chart.hidden) chart.open = true;
-		}
 	};
-	for (const control of [overviewKind, densityPair, densityPage]) {
-		control.addEventListener('change', () => {
-			subjectIndex.open = false;
-			updateComparisons();
-		});
-	}
-	for (const button of overviewPages) {
-		button.addEventListener('click', () => {
-			overviewPage = Number(button.dataset.overviewPage);
-			updateComparisons();
-		});
-	}
-	overviewPrevious.addEventListener('click', () => {
-		overviewPage = Math.max(1, overviewPage - 1);
-		updateComparisons();
-	});
-	overviewNext.addEventListener('click', () => {
-		overviewPage = Math.min(overviewPages.length, overviewPage + 1);
-		updateComparisons();
-	});
 	for (const button of subjectSteps) {
 		button.addEventListener('click', () => {
 			overviewSubject = Math.max(0, Math.min(overviewSubjects.length - 1, overviewSubject + Number(button.dataset.overviewStep)));
@@ -491,7 +400,6 @@ const partyOverviews = [
 		link.addEventListener('click', event => {
 			event.preventDefault();
 			overviewSubject = index;
-			overviewKind.value = 'topic_distribution';
 			subjectIndex.open = false;
 			updateComparisons();
 			document.querySelector<HTMLElement>('.overview-chart:not([hidden]) .mobile-topic:not([hidden]) h3')?.focus();
@@ -508,16 +416,12 @@ const partyOverviews = [
 	});
 	document.querySelector<HTMLElement>('#overview-picker')!.hidden = false;
 	document.querySelector<HTMLElement>('#density-picker')!.hidden = false;
-	if (window.matchMedia('(max-width: 700px)').matches) {
-		for (const evidence of document.querySelectorAll<HTMLDetailsElement>('.mapped-evidence')) evidence.open = true;
-	}
 	updateComparisons();
 	const reveal = () => {
 		const hash = window.location.hash;
 		const index = overviewSubjects.findIndex(link => `#issue-${link.dataset.overviewSubject}` === hash);
 		if (index !== -1) {
 			overviewSubject = index;
-			overviewKind.value = 'topic_distribution';
 			updateComparisons();
 			requestAnimationFrame(() => document.querySelector<HTMLElement>(hash)?.scrollIntoView({ behavior: 'instant' }));
 			return;
@@ -528,7 +432,6 @@ const partyOverviews = [
 		} else if (['#methods', '#downloads', '#sensitivity'].includes(hash) || hash.startsWith('#period-')) {
 			window.location.replace(document.querySelector<HTMLAnchorElement>('#platform-repository')!.href);
 		} else if (hash === '#time') {
-			overviewKind.value = 'topic_distribution';
 			updateComparisons();
 		} else if (hash === '#issues') {
 			document.querySelector<HTMLElement>('#overview')!.scrollIntoView();
@@ -537,7 +440,6 @@ const partyOverviews = [
 	for (const link of document.querySelectorAll<HTMLAnchorElement>('[data-overall-issue]')) {
 		link.addEventListener('click', () => {
 			overviewSubject = overviewSubjects.findIndex(subject => subject.dataset.overviewSubject === link.dataset.overallIssue);
-			overviewKind.value = 'topic_distribution';
 			updateComparisons();
 		});
 	}

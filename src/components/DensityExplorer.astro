@@ -2,6 +2,9 @@
 import { densityMap, organizations, platforms } from '../lib/platform-analysis';
 ---
 
+<noscript><p>Interactive maps require JavaScript. <a href="/party-platforms/sources/">Read the issue evidence instead.</a></p></noscript>
+<p id="density-fallback" hidden>The interactive map could not load.
+	<a href="/party-platforms/sources/">Read the issue evidence instead.</a></p>
 <div id="density-explorer" data-map-src={`/party-platforms/density-map.json?source=${platforms.source_revision}`} hidden>
 	<p id="density-instructions">Hover over the map to identify an issue. Click or tap to keep it selected
 		and read how both organizations discuss it.</p>
@@ -35,14 +38,14 @@ import { densityMap, organizations, platforms } from '../lib/platform-analysis';
 					<h3>{topic.title}</h3>
 					{Object.entries(topic.differences).map(([pair, difference]) =>
 						<p class="density-difference" data-pair={pair} hidden>{difference.summary}</p>)}
-					<p class="summary-label">How the documents discuss this issue</p>
-					<div class="density-positions">{organizations.map(group =>
+					<div class="density-positions">{organizations.filter(group =>
+						topic.positions[group.id]?.summary || topic.examples.some(example => example.group === group.id)).map(group =>
 						<section class="density-position" data-group={group.id}>
 							<h4>{group.name}</h4>
 							{topic.positions[group.id] && <p class="density-position-summary">{topic.positions[group.id].summary}</p>}
-							{topic.positions[group.id]?.caveat && <p class="qualification">{topic.positions[group.id].caveat}</p>}
-							<details class="density-position-evidence" open={!topic.positions[group.id]}>
+							<details class="density-position-evidence">
 							<summary>Supporting source statements</summary>
+							{topic.positions[group.id]?.caveat && <p class="qualification">{topic.positions[group.id].caveat}</p>}
 							{topic.examples.filter(example => example.group === group.id).map(example =>
 								<div class="density-source-example" data-claim={example.claim_id}>
 									<blockquote><p>{example.claim_text}</p></blockquote>
@@ -51,22 +54,22 @@ import { densityMap, organizations, platforms } from '../lib/platform-analysis';
 									<details><summary>Source excerpt</summary><p>{example.evidence}</p></details>
 								</div>
 							)}
-							{!topic.examples.some(example => example.group === group.id) &&
-								<p>No eligible example is available for this group in this cluster.
-									This does not establish that the organization has no position.</p>}
 							</details>
 						</section>
 					)}</div>
 					<details>
 						<summary>About this issue cluster</summary>
 						<p class="density-topic-summary">{topic.summary}</p>
-					</details>
-					{topic.displayed
-						? <p><a href={`#issue-${topic.topic_id}`} data-overall-issue={topic.topic_id}>Explore this subject &rarr;</a></p>
-						: <p class="qualification">An organization-identity cluster: retained in the map,
+						{!topic.displayed && <p class="qualification">An organization-identity cluster: retained in the map,
 							but omitted from subject rankings.</p>}
-					<p class="qualification">Selected source examples across 2000&ndash;2026, not an exhaustive
-						or current party position.{topic.caveat && ` ${topic.caveat}`}</p>
+						{organizations.filter(group => !topic.examples.some(example => example.group === group.id)).map(group =>
+							<p class="qualification">No eligible source example is available for {group.name} in this cluster.
+								This does not establish that the organization has no position.</p>)}
+						<p class="qualification">Selected source examples across 2000&ndash;2026, not an exhaustive
+							or current party position.{topic.caveat && ` ${topic.caveat}`}</p>
+					</details>
+					{topic.displayed &&
+						<p><a href={`#issue-${topic.topic_id}`} data-overall-issue={topic.topic_id}>Explore this subject &rarr;</a></p>}
 				</article>
 			)}
 		</div>
@@ -254,10 +257,10 @@ import { densityMap, organizations, platforms } from '../lib/platform-analysis';
 			data = await response.json();
 			render();
 			root.dataset.ready = 'true';
-			for (const original of document.querySelectorAll<HTMLDetailsElement>('.density-original')) original.open = false;
 			status.textContent = 'Hover or tap a point to explore an issue.';
 		} catch {
 			root.hidden = true;
+			document.querySelector<HTMLElement>('#density-fallback')!.hidden = false;
 		}
 	});
 	observer.observe(document.querySelector('#density')!);

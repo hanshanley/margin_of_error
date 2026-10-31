@@ -232,10 +232,18 @@ assert.equal(platforms('#density-explorer').attr('data-map-src'),
 	`/party-platforms/density-map.json?source=${platformData.source_revision}`);
 assert.equal(platforms('#density-canvas[tabindex="0"]').length, 1);
 assert.equal(platforms('#density-topic option').length, densityMap.topics.length);
-assert.equal(platforms('.density-original[open]').length, 6, 'Original maps must survive unavailable JavaScript or data');
+assert.equal(platforms('.density-original').length, 0, 'Original annotated maps were removed from the reading page');
+assert.equal(platforms('.density-position-evidence[open], .density-topic > details[open]').length, 0,
+	'Source statements and cluster caveats must not clutter the initial comparison');
+assert.equal(platforms('#density-fallback a').attr('href'), '/party-platforms/sources/');
 const mappedClaims = new Map(densityMap.points.map(point => [point[0], point]));
 for (const [index, topic] of densityMap.topics.entries()) {
 	const panel = platforms(`.density-topic[data-topic="${topic.topic_id}"]`);
+	for (const group of densityMap.groups) {
+		assert.equal(panel.find(`.density-position[data-group="${group}"]`).length,
+			topic.positions[group]?.summary || topic.examples.some(example => example.group === group) ? 1 : 0,
+			'Do not render empty group sections');
+	}
 	assert.equal(panel.find('h3').text(), topic.title);
 	assert.equal(panel.find('.density-topic-summary').text(), topic.summary);
 	const reviewed = platformData.positions.find(position => position.topic_id === topic.topic_id);
@@ -306,26 +314,25 @@ assert.equal(platforms('.position-overview .issue-time-chart').length, platformD
 assert.equal(platforms('[data-overview-step]').length, 2, 'Use one set of issue navigation controls');
 assert.doesNotMatch(platforms('#overview').text(), /The updated analysis shows/);
 assert.doesNotMatch(platforms('#density').text(), /\bKDE\b/);
-assert.equal(platforms('.party-overview:not([open])').length, 1);
-assert.equal(platforms('.overview-chart').length, 9);
-assert.equal(platforms('.density-chart').length, 6);
+assert.equal(platforms('section#organization-patterns.party-overview').length, 1);
+assert.equal(platforms('#organization-patterns > h2').text(), 'Overall patterns by organization');
+assert.equal(platforms('details.party-overview').length, 0);
+assert.equal(platforms('.section-links a[href="#organization-patterns"]').length, 1);
+assert.equal(platforms('.overview-chart').length, 3);
+assert.equal(platforms('.overview-chart:not([data-kind="topic_distribution"])').length, 0);
+assert.equal(platforms('#overview-kind, #overview-pagination, [data-overview-page], #density-page, .density-chart, .density-original').length, 0);
+assert.doesNotMatch(platforms('#density').text(), /First set|Second set|Original annotated map|Density is estimated in the shared/);
 assert.equal(platforms('.party-summary').length, 3);
 assert.equal(platforms('#overview-page').length, 0, 'Subject navigation must not use an opaque page dropdown');
-assert.deepEqual(platforms('[data-overview-page]').toArray().map(button =>
-	platforms(button).attr('aria-label')), ['Subjects 1–8', 'Subjects 9–16', 'Subjects 17–21']);
-assert.equal(platforms('[data-overview-page][aria-current="page"]').attr('data-overview-page'), '1');
-assert.equal(platforms('#overview-previous[disabled], #overview-next:not([disabled])').length, 2);
-assert.equal(platforms('#overview-range[role="status"][aria-live="polite"]').length, 1);
 assert.equal(platforms('#overview-subject-previous[disabled], #overview-subject-next:not([disabled])').length, 2);
 assert.equal(platforms('#overview-subject-range[role="status"][aria-live="polite"]').text(), '1 of 21');
-assert.equal(platforms('#overview-pagination[hidden]').length, 1);
 assert.deepEqual(platforms('.subject-index [data-overview-subject]').toArray().map(link =>
 	platforms(link).attr('data-overview-subject')), [...platformData.topics].sort((a, b) =>
 		['democratic', 'republican', 'dsa'].reduce((sum, group) => sum +
 			Number(b.shares.find(row => row.view === 'expanded' && row.group === group).share) -
 			Number(a.shares.find(row => row.view === 'expanded' && row.group === group).share), 0)
 	).map(topic => topic.topic_id));
-for (const view of ['topic_distribution', 'vs_rest_emphasis', 'pairwise_emphasis']) {
+for (const view of ['topic_distribution']) {
 	for (const page of [1, 2, 3]) {
 		const name = `${view}${page === 1 ? '' : `_${page}`}`;
 		const figure = platformData.figures.find(entry => entry.view === 'expanded' && entry.name === name);
@@ -369,23 +376,6 @@ for (const view of ['topic_distribution', 'vs_rest_emphasis', 'pairwise_emphasis
 		}
 	}
 }
-for (const pair of ['democratic_vs_republican', 'democratic_vs_dsa', 'republican_vs_dsa']) {
-	for (const page of [1, 2]) {
-		const figure = platformData.figures.find(entry =>
-			entry.view === 'expanded/density_details' && entry.name === `${pair}_${page}`);
-		const chart = platforms(`.density-chart[data-pair="${pair}"][data-page="${page}"]`);
-		assert.equal(chart.find('a[data-original-chart]').attr('href'), `/party-platforms/${figure.path}?source=${platformData.source_revision}`);
-		const regions = platformData.density_regions.filter(region =>
-			region.view === 'expanded' && region.figure === `density_details/${pair}_${page}.png`);
-		assert.equal(regions.length, 3);
-		assert.equal(chart.find('.mapped-evidence li').length, regions.length);
-		for (const [index, region] of regions.entries()) {
-			const example = chart.find('.mapped-evidence li').eq(index);
-			assert.equal(example.find('p').first().text(), region.example_text);
-			assert.equal(example.find('a').attr('href'), region.source_url);
-		}
-	}
-}
 for (const topic of platformData.topics) {
 	const issue = platforms(`#issue-${topic.topic_id}`);
 	assert.equal(issue.children('h3').text(), topic.title);
@@ -410,7 +400,7 @@ for (const topic of platformData.topics) {
 		assert.equal(platformSources(`#${topic.topic_id} tbody tr`).eq(index).find('td').first().text(), expectedShare);
 	}
 }
-assert.equal(platforms('.platform-figure').length, 15);
+assert.equal(platforms('.platform-figure').length, 3);
 assert.equal(platforms('.issue-timeline noscript').length, platformData.topics.length);
 assert.equal(platformSources('.platform-figure').length, 0);
 assert.ok(platformPages.every(page => page('iframe').length === 0));

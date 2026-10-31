@@ -46,7 +46,6 @@
 .platform-page .overview-toolbar .subject-index[open] > summary { margin-bottom: 0; }
 .platform-page .overview-toolbar .subject-index ul { position: absolute; top: 100%; left: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); columns: auto; gap: 0.5rem 1.5rem; width: min(40rem, calc(100vw - 3rem)); max-height: 50vh; overflow-y: auto; box-sizing: border-box; margin-top: 1rem; padding: 1rem 1rem 1rem 2rem; background: var(--paper); border: 1px solid var(--rule); }
 .platform-page #overview-picker { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 0.75rem 1.25rem; margin: 0; }
-.platform-page #overview-picker select { width: 16rem; margin: 0; padding: 0.5rem 0.7rem; border: 1px solid var(--rule); font: 0.9rem var(--sans); }
 .platform-page .control-label { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .platform-page .comparison-footer { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.75rem 1.5rem; padding-block: 1rem; border-top: 1px solid var(--rule); font: 0.85rem var(--sans); }
 .platform-page .comparison-footer .comparison-notes { flex: 1; min-width: 12rem; margin: 0; }
@@ -54,7 +53,6 @@
 .platform-page .comparison-notes p { max-width: 44rem; font: 0.9rem/1.6 var(--sans); }
 .platform-page .comparison-links { display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; }
 .platform-page .party-overview { border-top: 1px solid var(--rule); padding-top: 1rem; }
-.platform-page .party-overview > summary { font-weight: 400; }
 .platform-page .subject-index ul { columns: 2; column-gap: 2rem; padding-left: 1.2rem; }
 .platform-page .subject-index li { break-inside: avoid; margin-bottom: 0.5rem; font-size: 0.9rem; }
 .platform-page .party-summary { border-top: 2px solid var(--rule); padding-top: 0.7rem; font-size: 0.95rem; }
@@ -70,8 +68,8 @@
 .platform-page .position-overview h3 { margin: 0 0 0.8rem; font-size: 1.35rem; scroll-margin-top: 6rem; }
 .platform-page .issue-comparison.with-history { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 2rem; align-items: center; }
 .platform-page .issue-timeline { min-width: 0; margin: 0; font: 0.85rem/1.5 var(--sans); }
-.platform-page .issue-timeline > figcaption { font: 600 1rem var(--sans); margin-bottom: 0.5rem; }
-.platform-page .issue-time-chart { display: none; width: 100%; height: 300px; font-family: var(--sans); }
+.platform-page .issue-timeline > figcaption { font: 600 0.95rem Arial, sans-serif; margin-bottom: 0.6rem; }
+.platform-page .issue-time-chart { display: none; width: 100%; height: 320px; font-family: Arial, sans-serif; }
 .js .platform-page .issue-time-chart { display: block; }
 .platform-page .timeline-caption { color: var(--muted); margin-top: 0; font-size: 0.8rem; }
 .platform-page .timeline-values > summary { font-size: 0.8rem; font-weight: 400; color: var(--muted); }
@@ -103,6 +101,10 @@
 .platform-page .density-topic-summary { font-size: 0.95rem; }
 .platform-page .density-position { border-top: 1px solid var(--rule); margin-top: 1.2rem; }
 .platform-page .density-position h4 { margin: 0.8rem 0; font: 600 0.95rem var(--sans); }
+.platform-page .density-position-summary { font: 1rem/1.55 var(--sans); }
+.platform-page .density-position-evidence > summary,
+.platform-page .density-topic > details > summary { font: 400 0.85rem var(--sans); color: var(--muted); }
+.platform-page .density-topic > .density-difference { font: 1rem/1.55 var(--sans); }
 .platform-page .density-source-example { font-size: 0.9rem; }
 .platform-page .density-source-example blockquote { margin-block: 0.8rem; }
 .platform-page .density-source-example details { font-size: 0.85rem; }
@@ -188,8 +190,6 @@
 	.platform-page .overview-toolbar { gap: 0.75rem; }
 	.platform-page .overview-toolbar .subject-index ul { grid-template-columns: 1fr; }
 	.platform-page #overview-picker { flex: 1 1 100%; justify-content: space-between; gap: 0.75rem; }
-	.platform-page #overview-picker select { width: 100%; }
-	.platform-page #overview-picker > label { flex: 1 1 100%; }
 	.platform-page .overview-toolbar .overview-pages { flex-wrap: nowrap; }
 	.platform-page .comparison-footer { align-items: start; }
 	.platform-page .position-overview .mobile-topic,
