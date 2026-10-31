@@ -87,10 +87,21 @@ All subjects and chart modes remain available through native disclosures without
 JavaScript. Draft local fixtures must set `preview_only: true` in both the
 analysis and manifest: the page identifies them, and production validation
 rejects them. Replace a draft with a fresh verified export before release.
-The author-supplied Three Platform Booklets illustration is the page cover,
-Interactive analysis preview, and social image. Keep it under
+The author-supplied Three Platform Booklets illustration is the
+Interactive analysis preview and social image, not an image inside the analysis
+pages. Keep it under
 `public/artifacts/party-platforms/`, separate from the generated chart export;
 preserve its original bytes and do not register it for chart recoloring.
+The comparison page leads with controls and one issue chart. Representative
+claim packets are available on `/party-platforms/sources/`, linked from the
+selected chart rather than appended to the comparison. Do not add period-discovery
+sections, technical diagnostics, or download inventories to these pages.
+Use one bottom link to the pinned GitHub source for code, full data and methods;
+the Interactive analysis listing also links directly to GitHub. Complete local
+export assets remain byte-preserved for existing direct links and audits.
+Legacy evidence fragments open claim packets; retired methods, downloads and
+period fragments go to the pinned GitHub source. All issue selections and
+representative packets remain available without JavaScript.
 
 Read each repository's instructions before editing. Work from the repository root unless a
 command says otherwise. In this repository, `CLAUDE.md` is a symlink to `AGENTS.md`;

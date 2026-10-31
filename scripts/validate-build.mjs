@@ -35,6 +35,7 @@ const requiredFiles = [
 	'archive/index.html',
 	'interactive-analysis/index.html',
 	'party-platforms/index.html',
+	'party-platforms/sources/index.html',
 	'party-platforms/publication-manifest.json',
 	'home/index.html',
 	'my-first-blog-post/index.html',
@@ -205,6 +206,8 @@ assert.equal(platformAnalysis.find('h2 a').text(), 'National party platforms');
 assert.equal(platformAnalysis.find('.primary-action').attr('href'), '/party-platforms/');
 assert.equal(platformAnalysis.find('img').attr('loading'), 'eager');
 const platforms = load(await text('party-platforms/index.html'));
+const platformSources = load(await text('party-platforms/sources/index.html'));
+const platformPages = [platforms, platformSources];
 const platformData = JSON.parse(await text('party-platforms/analysis.json'));
 const platformManifest = JSON.parse(await text('party-platforms/publication-manifest.json'));
 assert.ok(!platformManifest.preview_only && !platformData.preview_only, 'A draft preview cannot be published');
@@ -214,14 +217,13 @@ assert.deepEqual(platformCoverBytes,
 	await readFile(new URL(`public${platformCoverPath}`, projectRoot)),
 	'The supplied platform illustration must not be recolored');
 const platformCoverSize = await sharp(platformCoverBytes).metadata();
-for (const image of [platforms('.platform-cover img'), platformAnalysis.find('img')]) {
-	assert.equal(image.attr('src'), platformCoverPath);
-	assert.equal(Number(image.attr('width')), platformCoverSize.width);
-	assert.equal(Number(image.attr('height')), platformCoverSize.height);
-	assert.equal(image.attr('loading'), 'eager');
-	assert.equal(image.attr('decoding'), 'async');
-}
-assert.match(platforms('.platform-cover img').attr('alt'), /Illustration.*Democratic.*Republican.*DSA/);
+const platformPreview = platformAnalysis.find('img');
+assert.equal(platformPreview.attr('src'), platformCoverPath);
+assert.equal(Number(platformPreview.attr('width')), platformCoverSize.width);
+assert.equal(Number(platformPreview.attr('height')), platformCoverSize.height);
+assert.equal(platformPreview.attr('loading'), 'eager');
+assert.equal(platformPreview.attr('decoding'), 'async');
+assert.equal(platformPreview.attr('alt'), '');
 for (const selector of ['meta[property="og:image"]', 'meta[name="twitter:image"]']) {
 	assert.equal(platforms(selector).attr('content'),
 		`https://www.themarginoferror.com${platformCoverPath}`);
@@ -229,7 +231,20 @@ for (const selector of ['meta[property="og:image"]', 'meta[name="twitter:image"]
 assert.equal(platforms('h1').text(), 'National party platforms');
 assert.equal(platforms('link[rel=canonical]').attr('href'),
 	'https://www.themarginoferror.com/party-platforms/');
-assert.equal(platforms('#topic-list > .topic').length, 24);
+for (const [index, page] of platformPages.entries()) {
+	assert.equal(page(`img[src="${platformCoverPath}"]`).length, 0,
+		'The key illustration belongs on the listing and social cards, not inside analysis pages');
+	assert.equal(page('#methods, #downloads, #period-topics, .analysis-tabs, .figure-downloads').length, 0,
+		'Analysis pages must not contain technical/download inventories or period discovery');
+	assert.equal(page('link[rel=canonical]').attr('href'),
+		`https://www.themarginoferror.com/party-platforms/${index === 0 ? '' : 'sources/'}`);
+	assert.equal(page('#platform-repository').length, 1);
+	assert.equal(page('#platform-repository').attr('href'),
+		`https://github.com/hanshanley/dsa/tree/${platformData.source_revision}`);
+}
+assert.equal(platforms('#topic-list, #methods, #downloads, #period-topics').length, 0,
+	'Evidence, diagnostics and period fits must not clutter the issue comparison page');
+assert.equal(platformSources('#topic-list > .topic').length, platformData.topics.length);
 assert.equal(platforms('#issue-topic option').length, platformData.topics.length);
 assert.equal(platforms('.issue-panel').length, platformData.topics.length);
 assert.equal(platforms('.issue-chart').length, 4 * platformData.topics.length);
@@ -242,27 +257,23 @@ for (const topic of platformData.topics) {
 		}
 	}
 }
-assert.equal(platforms('.platform-figure').length, platformData.figures.length);
-assert.equal(platforms('iframe').length, 0);
-assert.equal(platforms('#topic-query[type=search]').length, 1);
+assert.equal(platforms('.platform-figure').length, 4 * platformData.topics.length);
+assert.equal(platformSources('.platform-figure').length, 0);
+assert.ok(platformPages.every(page => page('iframe').length === 0));
+assert.equal(platformSources('#topic-query[type=search]').length, 1);
 assert.equal(platformData.summary.claims, 26483);
 assert.equal(platformData.source_revision, platformManifest.source_revision);
 assert.equal(platformManifest.source_repository, 'hanshanley/dsa');
 assert.match(platformManifest.source_revision, /^[0-9a-f]{40}$/);
-assert.match(platforms('#time').text(), /Missing periods remain gaps/);
-assert.match(platforms('#methods').text(), /not a claim-by-claim certification/);
-assert.match(platforms('#downloads').text(), /not metadata-only/);
+assert.match(platforms('#issues').text(), /Missing periods remain gaps/);
+assert.equal(platformAnalysis.find('a:contains("Code and data on GitHub")').attr('href'),
+	`https://github.com/hanshanley/dsa/tree/${platformData.source_revision}`);
 assert.ok(platformData.topics.every(topic => topic.representatives.length > 0));
-if (platformData.evolution) {
-	assert.equal(platforms('.period').length, platformData.evolution.periods.length);
-	assert.equal(platforms('.period-topic').length, platformData.evolution.summary.topics);
-	assert.equal(platformData.evolution.summary.reviewed_labels,
-		platformData.evolution.topics.filter(topic => topic.review_status === 'evidence_reviewed').length);
-	assert.match(platforms('#period-topics').text(), /not proof of/);
-}
 for (const topic of platformData.topics) {
-	assert.equal(platforms(`#${topic.topic_id} > summary`).text(), topic.title);
-	assert.equal(platforms(`#${topic.topic_id} .claim`).length, topic.representatives.length);
+	assert.equal(platformSources(`#${topic.topic_id} > summary`).text(), topic.title);
+	assert.equal(platformSources(`#${topic.topic_id} .claim`).length, topic.representatives.length);
+	assert.equal(platforms(`#issue-${topic.topic_id} > p a`).attr('href'),
+		`/party-platforms/sources/#${topic.topic_id}`);
 }
 for (const [path, checksum] of Object.entries(platformManifest.files)) {
 	assert.equal(
@@ -271,26 +282,29 @@ for (const [path, checksum] of Object.entries(platformManifest.files)) {
 		`Platform source asset changed: ${path}`,
 	);
 }
-for (const anchor of platforms('a[data-original-chart]').toArray()) {
-	assert.doesNotMatch(platforms(anchor).attr('href'), /\.website\.png$/);
-}
-for (const image of platforms('.platform-figure img').toArray()) {
-	const node = platforms(image);
-	assert.equal(node.attr('loading'), 'lazy');
-	assert.equal(node.attr('decoding'), 'async');
-	assert.match(node.attr('src'), /(?:\/website-figures\/.*\.png|\.website\.png)$/);
-	assert.ok(node.attr('alt').length > 20);
-	if (node.attr('src').includes('/website-figures/')) {
-		const path = new URL(node.attr('src').slice(1), root);
-		const metadata = await sharp(fileURLToPath(path)).metadata();
-		assert.equal(metadata.width, Number(node.attr('width')));
-		assert.equal(metadata.height, Number(node.attr('height')));
-		const pixel = await sharp(fileURLToPath(path))
-			.extract({ left: 0, top: 0, width: 1, height: 1 }).removeAlpha().raw().toBuffer();
-		assert.deepEqual([...pixel], paperRgb, 'Platform website variant must match publication paper');
+for (const page of platformPages) {
+	for (const anchor of page('a[data-original-chart]').toArray()) {
+		assert.doesNotMatch(page(anchor).attr('href'), /\.website\.png$/);
+	}
+	for (const image of page('.platform-figure img').toArray()) {
+		const node = page(image);
+		assert.equal(node.attr('loading'), 'lazy');
+		assert.equal(node.attr('decoding'), 'async');
+		assert.match(node.attr('src'), /(?:\/website-figures\/.*\.png|\.website\.png)$/);
+		assert.ok(node.attr('alt').length > 20);
+		if (node.attr('src').includes('/website-figures/')) {
+			const path = new URL(node.attr('src').slice(1), root);
+			const metadata = await sharp(fileURLToPath(path)).metadata();
+			assert.equal(metadata.width, Number(node.attr('width')));
+			assert.equal(metadata.height, Number(node.attr('height')));
+			const pixel = await sharp(fileURLToPath(path))
+				.extract({ left: 0, top: 0, width: 1, height: 1 }).removeAlpha().raw().toBuffer();
+			assert.deepEqual([...pixel], paperRgb, 'Platform website variant must match publication paper');
+		}
 	}
 }
 assert.ok(sitemap.includes('https://www.themarginoferror.com/party-platforms/'));
+assert.ok(sitemap.includes('https://www.themarginoferror.com/party-platforms/sources/'));
 const chinaAnalysis = analysis('.analysis-list > li').eq(1);
 assert.equal(chinaAnalysis.find('h2 a').text(), 'U.S.–China Exchange');
 assert.equal(chinaAnalysis.find('img').attr('loading'), 'lazy');

@@ -1,0 +1,105 @@
+.platform-page {
+	width: var(--page);
+	margin: 0 auto;
+	padding-bottom: 4rem;
+	overflow-wrap: anywhere;
+}
+
+.platform-page .analysis-heading {
+	padding: 2rem 0 1.5rem;
+}
+
+.platform-page h1 {
+	font-size: clamp(2.2rem, 4vw, 3.3rem);
+	line-height: 1.1;
+	margin: 0.6rem 0 1rem;
+}
+
+.platform-page .analysis-deck { max-width: 760px; font-size: 1.2rem; }
+.platform-page .scope,
+.platform-page .coverage,
+.platform-page .caveat,
+.platform-page .label-origin,
+.platform-page .locator { color: var(--muted); font-size: 0.88rem; }
+.platform-page .reader-section { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); }
+.platform-page h2 { font-size: 1.8rem; line-height: 1.2; }
+.platform-page h3 { font-size: 1.2rem; line-height: 1.3; }
+.platform-page section > p { max-width: 900px; }
+.platform-page .qualification { max-width: 900px; color: var(--muted); }
+
+.platform-page .issue-picker {
+	display: grid;
+	grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1.4fr);
+	gap: 1.5rem;
+	margin: 1.8rem 0;
+}
+
+.platform-page [hidden] { display: none !important; }
+.platform-page .issue-picker label { font: 0.85rem var(--sans); min-width: 0; }
+.platform-page select,
+.platform-page input {
+	display: block;
+	width: 100%;
+	min-width: 0;
+	margin-top: 0.5rem;
+	padding: 0.7rem 0.15rem;
+	font-size: 1rem;
+	color: var(--ink);
+	background: var(--paper);
+	border: 0;
+	border-bottom: 1px solid var(--rule);
+	border-radius: 0;
+}
+
+.platform-page details { margin: 1rem 0; }
+.platform-page summary { cursor: pointer; font: 600 0.95rem var(--sans); }
+.platform-page details[open] > summary { margin-bottom: 1rem; }
+.platform-page .issue-title { display: none; }
+.js .platform-page .issue-title { display: block; }
+.platform-page .issue-panel .platform-figure { max-width: 960px; margin-inline: auto; }
+.js .platform-page .issue-panel > summary,
+.js .platform-page .issue-chart > summary { display: none; }
+.platform-page .party-summaries { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
+.platform-page .party-summaries ol { padding-left: 1.4rem; font-size: 0.95rem; }
+.platform-page .party-summaries li { margin-bottom: 0.7rem; }
+.platform-page .topic-percent { color: var(--muted); white-space: nowrap; margin-left: 0.5rem; }
+.platform-page .topic { border-top: 1px solid var(--rule); padding: 1rem 0; margin: 0; scroll-margin-top: 1rem; }
+.platform-page .topic > summary { font-size: 1.05rem; }
+.platform-page .claim { max-width: 900px; padding-block: 0.8rem; border-top: 1px solid var(--rule); }
+.platform-page .claim-source { font-size: 0.9rem; margin-bottom: 0.4rem; }
+.platform-page .claim > p { margin-top: 0.4rem; }
+.platform-page .claim details { font-size: 0.9rem; }
+.platform-page blockquote { margin-inline: 0; padding-left: 1rem; border-left: 2px solid var(--rule); }
+.platform-page .table-wrap { margin-block: 1.5rem; }
+.platform-page table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+.platform-page th,
+.platform-page td { padding: 0.6rem; text-align: left; border-bottom: 1px solid var(--rule); }
+.platform-page caption { text-align: left; color: var(--muted); margin-bottom: 0.5rem; }
+.platform-page #topic-filter { margin: 1.5rem 0; max-width: 720px; }
+.platform-page #topic-filter label { font-family: var(--sans); }
+.platform-page #topic-results { color: var(--muted); font-size: 0.85rem; }
+.platform-page .repository-link { margin-top: 2.5rem; }
+.platform-page code { font-size: 0.8em; }
+
+@media (min-width: 701px) {
+	.js .platform-page .issue-title {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip-path: inset(50%);
+		white-space: nowrap;
+	}
+}
+
+@media (max-width: 700px) {
+	.platform-page .analysis-deck { font-size: 1.05rem; }
+	.platform-page .issue-picker,
+	.platform-page .party-summaries { grid-template-columns: 1fr; gap: 0.8rem; }
+	.platform-page th,
+	.platform-page td { padding: 0.4rem 0.2rem; }
+	.platform-page table { font-size: 0.75rem; table-layout: fixed; }
+	.platform-page table th:first-child { width: 42%; }
+}

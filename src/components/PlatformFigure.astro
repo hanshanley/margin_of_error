@@ -17,11 +17,6 @@ const displayPath = `/party-platforms/${figure.display_path ?? figure.path}`;
 	</a>
 	<figcaption>
 		{caption}
-		<span class="figure-downloads">
-			<a href={path} data-original-chart>Original PNG</a>
-			<a href={path.replace(/\.png$/, '.svg')} data-original-chart>SVG</a>
-			{figure.display_path && <a href={displayPath} data-original-chart>Website PNG</a>}
-		</span>
 	</figcaption>
 </figure>
 
@@ -29,5 +24,4 @@ const displayPath = `/party-platforms/${figure.display_path ?? figure.path}`;
 	.platform-figure { margin: 1.8rem 0 2.5rem; }
 	img { width: 100%; }
 	figcaption { margin-top: 0.6rem; color: var(--muted); font-size: 0.88rem; }
-	.figure-downloads { display: inline-flex; gap: 1rem; margin-left: 1rem; }
 </style>
