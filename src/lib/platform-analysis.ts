@@ -97,6 +97,26 @@ interface Publication {
 export const platforms: Publication = JSON.parse(
 	readFileSync('public/party-platforms/analysis.json', 'utf8'),
 );
+const [timelineHeader, ...timelineRows] = readFileSync(
+	'public/party-platforms/downloads/topics/temporal_shares.csv', 'utf8',
+).trim().split(/\r?\n/);
+const timelineColumns = timelineHeader.split(',');
+export const timelineShares = timelineRows.map(line => {
+	const fields = line.split(',');
+	if (fields.length !== timelineColumns.length || line.includes('"')) {
+		throw new Error('Unexpected temporal share CSV format');
+	}
+	return Object.fromEntries(timelineColumns.map((column, index) => [column, fields[index]]));
+}).filter(row => row.view === 'expanded').map(row => {
+	const value = row.available === 'True' ? Number(row.share) : null;
+	if (value !== null && (!Number.isFinite(value) || value < 0 || value > 1)) {
+		throw new Error(`Invalid temporal share: ${row.topic_id}/${row.group}/${row.period}`);
+	}
+	return {
+		topic: row.topic_id, group: row.group, start: Number(row.period_start),
+		end: Number(row.period_end), partial: row.partial_period === 'True', value,
+	};
+});
 export interface DensityMap {
 	groups: string[];
 	points: [string, number, number, number, number, number, number, number][];

@@ -2,7 +2,7 @@
 import PlatformLayout from '../layouts/PlatformLayout.astro';
 import PlatformFigure from '../components/PlatformFigure.astro';
 import DensityExplorer from '../components/DensityExplorer.astro';
-import { platforms as data, organizations, platformFigure, initialIssue } from '../lib/platform-analysis';
+import { platforms as data, organizations, platformFigure, timelineShares } from '../lib/platform-analysis';
 
 const number = (value: number) => value.toLocaleString('en-US');
 const share = (topic: typeof data.topics[number], group: string) =>
@@ -29,6 +29,18 @@ const groupPosition = (topic: string, group: string) => {
 	const summary = data.positions.find(position => position.topic_id === topic)?.groups[group]?.summary;
 	if (!summary) throw new Error(`Missing reviewed group position: ${topic}/${group}`);
 	return summary;
+};
+const topicTimeline = (topic: string) => {
+	const rows = timelineShares.filter(row => row.topic === topic);
+	return [...new Set(rows.map(row => row.start))].sort((a, b) => a - b).map(start => {
+		const period = rows.filter(row => row.start === start);
+		const first = period[0];
+		if (period.length !== organizations.length) throw new Error(`Incomplete timeline: ${topic}/${start}`);
+		return {
+			label: `${start}\u2013${String(first.partial ? 2026 : first.end).slice(2)}${first.partial ? '*' : ''}`,
+			values: organizations.map(group => period.find(row => row.group === group.id)!.value),
+		};
+	});
 };
 const mobileColumns = (kind: string) => kind === 'pairwise_emphasis' ? [
 	{ group: 'democratic', baseline: ['republican'] },
@@ -73,25 +85,31 @@ const partyOverviews = [
 <PlatformLayout title="National party platforms" active="issues"
 	description="Compare national party documents through subject charts and language maps.">
 	<nav class="section-links" aria-label="Explore the analysis">
-		<a href="#overview">The big picture</a>
+		<a href="#overview">Compare issues</a>
 		<a href="#density">Language maps</a>
-		<a href="#issues">Explore a subject</a>
 	</nav>
 
 	<section id="overview" class="reader-section" aria-labelledby="overview-title">
-		<h2 id="overview-title">The big picture</h2>
-		<div id="overview-picker" class="issue-picker" hidden>
-			<label>View
+		<h2 id="overview-title">Compare the issues</h2>
+		<div class="overview-toolbar">
+		<details id="overview-subject-index" class="subject-index">
+			<summary>Choose an issue</summary>
+			<ul>{overviewTopics.map(topic => (
+				<li><a href={`#issue-${topic.topic_id}`} data-overview-subject={topic.topic_id}>{topic.title}</a></li>
+			))}</ul>
+		</details>
+		<div id="overview-picker" hidden>
+			<label><span class="control-label">Comparison</span>
 				<select id="overview-kind">{overviewViews.map(view =>
-					<option value={view.id}>{view.title}</option>)}</select>
+					<option value={view.id}>{view.title}</option>)}
+				</select>
 			</label>
 			<div>
 			<div id="overview-subject-controls">
-				<span class="pagination-label">Issue</span>
 				<nav class="overview-pages" aria-label="Browse issues">
-					<button type="button" id="overview-subject-previous" data-overview-step="-1" disabled>Previous issue</button>
+					<button type="button" id="overview-subject-previous" data-overview-step="-1" aria-label="Previous issue" disabled>Previous</button>
 					<span id="overview-subject-range" class="subject-count" role="status" aria-live="polite">1 of {data.topics.length}</span>
-					<button type="button" id="overview-subject-next" data-overview-step="1">Next issue</button>
+					<button type="button" id="overview-subject-next" data-overview-step="1" aria-label="Next issue">Next</button>
 				</nav>
 			</div>
 			<div id="overview-pagination" class="overview-pagination" hidden>
@@ -112,22 +130,19 @@ const partyOverviews = [
 			</div>
 			</div>
 		</div>
-		<details id="overview-subject-index" class="subject-index">
-			<summary>Browse all {data.topics.length} subjects by name</summary>
-			<ul>{overviewTopics.map(topic => (
-				<li><a href={`#issue-${topic.topic_id}`} data-overview-subject={topic.topic_id}>{topic.title}</a></li>
-			))}</ul>
-		</details>
+		</div>
 		{overviewViews.map(view => [1, 2, 3].map(page => (
 			<details class="overview-chart" data-kind={view.id} data-page={page}
 				open={view.id === 'topic_distribution' && page === 1}>
 				<summary>{view.title}: page {page}</summary>
-				<p class="view-summary">{view.summary}</p>
 				<div class:list={['mobile-overview', { 'position-overview': view.id === 'topic_distribution' }]}
 					aria-label={`${view.title}, page ${page}`}>
 					{overviewTopics.slice((page - 1) * 8, page * 8).map(topic => (
-						<div class="mobile-topic" data-topic={topic.topic_id}>
-							<h3><a href={`#issue-${topic.topic_id}`} data-overall-issue={topic.topic_id}>{topic.title}</a></h3>
+						<div class="mobile-topic" data-topic={topic.topic_id}
+							id={view.id === 'topic_distribution' ? `issue-${topic.topic_id}` : undefined}>
+							<h3 tabindex="-1">{topic.title}</h3>
+							<div class:list={['issue-comparison', { 'with-history': view.id === 'topic_distribution' }]}>
+							<div data-issue-positions={view.id === 'topic_distribution' ? '' : undefined}>
 							{mobileColumns(view.id).map(column => {
 								const value = mobileValue(topic, column);
 								const difference = view.id !== 'topic_distribution';
@@ -146,26 +161,69 @@ const partyOverviews = [
 										: <p class="group-position">{groupPosition(topic.topic_id, column.group)}</p>}
 								</div>;
 							})}
+							</div>
+							{view.id === 'topic_distribution' && <figure class="issue-timeline"
+								data-png={`/party-platforms/${platformFigure('expanded/issues', `${topic.topic_id}_time`).path}?source=${data.source_revision}`}>
+								<figcaption>Over time</figcaption>
+								<canvas class="issue-time-chart" data-timeline={JSON.stringify(topicTimeline(topic.topic_id))}
+									role="img" aria-label={`Document-weighted share of attention over time: ${topic.title}. Exact values are available below.`}></canvas>
+								<p class="timeline-caption">Weighted attention &middot; gaps mean no documents &middot; *partial period</p>
+								<details class="timeline-values">
+									<summary>Period values and source qualifications</summary>
+									<div class="table-wrap"><table>
+										<caption>{topic.title}: share of attention in observed periods</caption>
+										<thead><tr><th>Period</th>{organizations.map(group => <th>{shortNames[group.id]}</th>)}</tr></thead>
+										<tbody>{topicTimeline(topic.topic_id).map(period => <tr>
+											<th scope="row">{period.label}</th>{period.values.map(value =>
+												<td>{value === null ? 'Not observed' : `${(100 * value).toFixed(1)}%`}</td>)}
+										</tr>)}</tbody>
+									</table></div>
+									<p>{topic.caveat}</p>
+								</details>
+								<noscript><PlatformFigure figure={platformFigure('expanded/issues', `${topic.topic_id}_time`)}
+									caption="Share of attention in observed four-year periods. Missing periods remain gaps." /></noscript>
+							</figure>}
+							</div>
 						</div>
 					))}
-					<p class="caveat">Same scale across subjects. {view.id !== 'topic_distribution'
-						? 'pp = percentage points. '
-						: "Summaries describe sampled documents across years, not every member's views or a current consensus. "}
-						<a href={`/party-platforms/${platformFigure('expanded', `${view.id}${page === 1 ? '' : `_${page}`}`).path}?source=${data.source_revision}`}>
-							{view.id === 'topic_distribution' ? 'Full-size PNG comparison' : 'Full chart and sensitivity markers'}
-						</a>.</p>
-					{view.id === 'topic_distribution' && <nav class="overview-pages" data-overview-footer hidden aria-label="Continue through issues">
-						<button type="button" data-overview-step="-1">Previous issue</button>
-						<button type="button" data-overview-step="1">Next issue</button>
-					</nav>}
 				</div>
 				<div class="wide-chart" tabindex="0" role="region" aria-label={`${view.title}, page ${page}`}>
 					<PlatformFigure figure={platformFigure('expanded', `${view.id}${page === 1 ? '' : `_${page}`}`)}
 						caption={`${view.title}, page ${page} of 3. All organizations use the same subjects and chart scales.`} />
 				</div>
+				<div class="comparison-footer">
+					<details class="comparison-notes">
+						<summary>About this comparison</summary>
+						<p class="view-summary">{view.summary}</p>
+						{view.id === 'topic_distribution' && <>
+							<p class="timeline-methods">Timelines use the same subjects across seven four-year periods.
+								Missing periods remain gaps. The final period is partial through October 26, 2026.
+								Reused platforms are not new observations, and DSA fallback documents are not
+								a continuous series of adopted platforms. Each document or predefined DSA period
+								bundle receives equal weight within its organization.</p>
+							<p class="caveat">Overall bars use the same scale across subjects; each timeline shares one scale across groups.
+								Summaries describe sampled documents
+								across years, not every member's views or a current consensus.</p>
+						</>}
+						{view.id !== 'topic_distribution' && <p class="caveat">pp = percentage points.
+							The same scale is used across subjects; full charts retain sensitivity markers.</p>}
+					</details>
+					<div class="comparison-links">
+						{view.id === 'topic_distribution' && <a data-overview-evidence
+							href={evidence(overviewTopics[(page - 1) * 8].topic_id)}>Read source evidence</a>}
+						{view.id === 'topic_distribution' && <a data-overview-timeline-download
+							href={`/party-platforms/${platformFigure('expanded/issues', `${overviewTopics[(page - 1) * 8].topic_id}_time`).path}?source=${data.source_revision}`}>Timeline PNG</a>}
+						<a data-overview-download
+							data-share-chart={`/party-platforms/${platformFigure('expanded', `${view.id}${page === 1 ? '' : `_${page}`}`).path}?source=${data.source_revision}`}
+							href={`/party-platforms/${platformFigure('expanded', `${view.id}${page === 1 ? '' : `_${page}`}`).path}?source=${data.source_revision}`}>
+							Overall PNG
+						</a>
+					</div>
+				</div>
 			</details>
 		)))}
-		<h3 class="overview-subheading">What the documents say</h3>
+		<details class="party-overview">
+		<summary>Overall patterns by organization</summary>
 		<div class="party-summaries">
 			{organizations.map(group => {
 				const overview = partyOverviews.find(overview => overview.id === group.id)!;
@@ -193,11 +251,12 @@ const partyOverviews = [
 		<p class="qualification">These are summaries of observed documents across 2000&ndash;2026,
 			not exhaustive descriptions of current beliefs. DSA coverage includes national
 			resolutions and statements alongside platforms/programs; periods and genres differ.</p>
+		</details>
 	</section>
 
 	<section id="density" class="reader-section" aria-labelledby="density-title">
 		<h2 id="density-title">Where the language differs</h2>
-		<p>These KDE maps compare the concentration of each organization's language in a shared
+		<p>These maps compare the concentration of each organization's language in a shared
 			semantic space. Explore the issues and source statements behind the points.
 			Similar language does not imply the same policy position.</p>
 		<div id="density-picker" class="issue-picker" hidden>
@@ -238,81 +297,112 @@ const partyOverviews = [
 		)))}
 		<p class="qualification">Density is estimated in the shared {data.summary.views.expanded.dimensions}-dimensional
 			space; the two-dimensional map is a display only. Hover labels come from the
-			reviewed pooled issue clusters; the original numbered examples identify local KDE regions.
+			reviewed pooled issue clusters; the original numbered examples identify local language regions.
 			This is an exploratory comparison, not a measure of agreement.</p>
-	</section>
-
-	<section id="issues" class="reader-section" aria-labelledby="issues-title">
-		<h2 id="issues-title">Explore a subject</h2>
-		<p>Read the subject summary, compare attention across organizations, and follow it over time.</p>
-		<div id="issue-picker" class="issue-picker" hidden>
-			<div>
-				<span class="pagination-label">Issue</span>
-				<nav class="overview-pages" aria-label="Browse individual issue charts">
-					<button type="button" id="issue-previous">Previous issue</button>
-					<span id="issue-range" class="subject-count" role="status" aria-live="polite">
-						{overviewTopics.findIndex(topic => topic.topic_id === initialIssue.topic_id) + 1} of {data.topics.length}
-					</span>
-					<button type="button" id="issue-next">Next issue</button>
-				</nav>
-				<select id="issue-topic" hidden aria-label="Selected issue">
-					{overviewTopics.map(topic => (
-						<option value={topic.topic_id} selected={topic.topic_id === initialIssue.topic_id}>{topic.title}</option>
-					))}
-				</select>
-			</div>
-			<label>Comparison
-				<select id="issue-kind"><option value="overall">Overall emphasis</option>
-					<option value="time">Over time</option></select>
-			</label>
-		</div>
-		{data.topics.map(topic => (
-			<details class="issue-panel" data-topic={topic.topic_id}
-				id={`issue-${topic.topic_id}`} open={topic.topic_id === initialIssue.topic_id}>
-				<summary>{topic.title}</summary>
-				<h2 class="issue-title">{topic.title}</h2>
-				<p class="subject-summary">{topic.summary}</p>
-				{['overall', 'time'].map(kind => (
-					<details class="issue-chart" data-view="expanded" data-kind={kind}
-						open={kind === 'overall'}>
-						<summary>{kind === 'overall' ? 'Overall emphasis' : 'Over time'}</summary>
-						<PlatformFigure figure={platformFigure('expanded/issues', `${topic.topic_id}_${kind}`)}
-							caption={kind === 'overall'
-								? 'Share of document-weighted attention devoted to this subject.'
-								: 'Share of attention in observed four-year periods. Missing periods remain gaps.'} />
-					</details>
-				))}
-				<p><a href={evidence(topic.topic_id)}>Read representative claims and source excerpts &rarr;</a></p>
-				<details class="chart-notes">
-					<summary>Sources and how to read this chart</summary>
-					<p>{topic.caveat}</p>
-					<p>These charts compare attention, not agreement or ideological distance.
-						Each document or predefined DSA period bundle receives equal weight within its organization.
-						Claim counts do not determine an organization's weight.</p>
-					<p>The analysis includes Democratic and Republican platforms, and DSA national
-						platforms/programs, resolutions and statements.</p>
-					<p>Timelines use the same subjects across seven four-year periods. The final period is
-						partial through October 26, 2026. Reused platforms are not new observations, and
-						DSA fallback documents are not a continuous series of adopted platforms.</p>
-					<div class="table-wrap">
-						<table>
-							<caption>Overall document-weighted shares</caption>
-							<thead><tr><th>Organization</th><th>Share of attention</th></tr></thead>
-							<tbody>{organizations.map(group => (
-								<tr><th scope="row">{group.name}</th>
-									<td>{percent(topic, group.id)}</td></tr>
-							))}</tbody>
-						</table>
-					</div>
-				</details>
-			</details>
-		))}
-		<noscript><p>Expand a subject to see its overall and over-time charts.</p></noscript>
 	</section>
 
 </PlatformLayout>
 
 <script>
+	const drawTimeline = (canvas: HTMLCanvasElement) => {
+		const width = canvas.getBoundingClientRect().width;
+		if (!width) return;
+		const height = 300;
+		const ratio = window.devicePixelRatio || 1;
+		canvas.width = Math.round(width * ratio);
+		canvas.height = height * ratio;
+		const context = canvas.getContext('2d')!;
+		context.scale(ratio, ratio);
+		const periods: { label: string; values: (number | null)[] }[] = JSON.parse(canvas.dataset.timeline!);
+		const names = ['Democratic', 'Republican', 'DSA'];
+		const colors = ['#3d7699', '#c65a3b', '#c39a36'];
+		const style = getComputedStyle(canvas);
+		const maximum = Math.max(0.01, ...periods.flatMap(period => period.values.filter(value => value !== null) as number[]));
+		const tick = [0.005, 0.01, 0.02, 0.025, 0.05, 0.1, 0.2, 0.25].find(value => value >= maximum / 4) ?? 0.25;
+		const upper = Math.ceil(maximum / tick) * tick;
+		const left = 38, right = width - 106, top = 18, bottom = height - 40;
+		const x = (index: number) => left + (right - left) * index / (periods.length - 1);
+		const y = (value: number) => bottom - (bottom - top) * value / upper;
+		context.font = `12px ${style.fontFamily}`;
+		context.textBaseline = 'middle';
+		context.textAlign = 'right';
+		for (let value = 0; value <= upper + tick / 2; value += tick) {
+			context.fillStyle = style.getPropertyValue('--muted');
+			context.fillText(`${+(100 * value).toFixed(1)}%`, left - 8, y(value));
+			context.strokeStyle = style.getPropertyValue('--rule');
+			context.lineWidth = 0.6;
+			context.beginPath();
+			context.moveTo(left, y(value));
+			context.lineTo(right, y(value));
+			context.stroke();
+		}
+		context.textAlign = 'center';
+		periods.forEach((period, index) => {
+			if (width < 400 && index % 2 !== 0) return;
+			context.fillText(width < 400 ? period.label.slice(2) : period.label, x(index), bottom + 22);
+		});
+		const labels: { group: number; index: number; value: number; target: number; labelY: number }[] = [];
+		for (let group = 0; group < names.length; group++) {
+			context.strokeStyle = colors[group];
+			context.fillStyle = colors[group];
+			context.lineWidth = 2;
+			context.beginPath();
+			let connected = false;
+			periods.forEach((period, index) => {
+				const value = period.values[group];
+				if (value === null) { connected = false; return; }
+				if (connected) context.lineTo(x(index), y(value));
+				else context.moveTo(x(index), y(value));
+				connected = true;
+			});
+			context.stroke();
+			periods.forEach((period, index) => {
+				const value = period.values[group];
+				if (value === null) return;
+				context.beginPath();
+				if (group === 0) context.arc(x(index), y(value), 3.5, 0, 2 * Math.PI);
+				else if (group === 1) context.rect(x(index) - 3, y(value) - 3, 6, 6);
+				else {
+					context.moveTo(x(index), y(value) - 4);
+					context.lineTo(x(index) + 4, y(value));
+					context.lineTo(x(index), y(value) + 4);
+					context.lineTo(x(index) - 4, y(value));
+					context.closePath();
+				}
+				context.fill();
+			});
+			const index = periods.findLastIndex(period => period.values[group] !== null);
+			if (index !== -1) {
+				const value = periods[index].values[group]!;
+				labels.push({ group, index, value, target: y(value), labelY: y(value) });
+			}
+		}
+		labels.sort((a, b) => a.target - b.target);
+		for (let index = 1; index < labels.length; index++) labels[index].labelY = Math.max(labels[index].target, labels[index - 1].labelY + 32);
+		if (labels.length) {
+			labels[labels.length - 1].labelY = Math.min(bottom - 10, labels[labels.length - 1].labelY);
+			for (let index = labels.length - 2; index >= 0; index--) labels[index].labelY = Math.min(labels[index].labelY, labels[index + 1].labelY - 32);
+		}
+		context.textAlign = 'left';
+		for (const label of labels) {
+			context.strokeStyle = style.getPropertyValue('--rule');
+			context.lineWidth = 0.8;
+			context.beginPath();
+			context.moveTo(x(label.index) + 5, label.target);
+			context.lineTo(right + 10, label.labelY);
+			context.stroke();
+			context.fillStyle = colors[label.group];
+			context.fillText(names[label.group], right + 14, label.labelY - 7);
+			context.fillText(`${(100 * label.value).toFixed(1)}%${label.index < periods.length - 1 ? ` (${periods[label.index].label.slice(2)})` : ''}`, right + 14, label.labelY + 7);
+		}
+	};
+	const timelineObserver = new ResizeObserver(entries => {
+		for (const entry of entries) drawTimeline(entry.target as HTMLCanvasElement);
+	});
+	for (const canvas of document.querySelectorAll<HTMLCanvasElement>('.issue-time-chart')) timelineObserver.observe(canvas);
+	document.fonts.ready.then(() => {
+		for (const canvas of document.querySelectorAll<HTMLCanvasElement>('.issue-time-chart')) drawTimeline(canvas);
+	});
 	const overviewKind = document.querySelector<HTMLSelectElement>('#overview-kind')!;
 	const overviewPages = [...document.querySelectorAll<HTMLButtonElement>('[data-overview-page]')];
 	const overviewPrevious = document.querySelector<HTMLButtonElement>('#overview-previous')!;
@@ -337,6 +427,15 @@ const partyOverviews = [
 		document.querySelector<HTMLElement>('#overview-pagination')!.hidden = positions;
 		for (const topic of document.querySelectorAll<HTMLElement>('.position-overview .mobile-topic')) {
 			topic.hidden = topic.dataset.topic !== overviewSubjects[overviewSubject].dataset.overviewSubject;
+		}
+		for (const chart of document.querySelectorAll<HTMLElement>('.overview-chart[data-kind="topic_distribution"]')) {
+			const topic = chart.querySelector<HTMLElement>(`[data-topic="${overviewSubjects[overviewSubject].dataset.overviewSubject}"]`);
+			if (topic) {
+				chart.querySelector<HTMLAnchorElement>('[data-overview-evidence]')!.href =
+					`/party-platforms/sources/#${topic.dataset.topic}`;
+				const timelineDownload = chart.querySelector<HTMLAnchorElement>('[data-overview-timeline-download]')!;
+				timelineDownload.href = topic.querySelector<HTMLElement>('.issue-timeline')!.dataset.png!;
+			}
 		}
 		for (const [index, link] of overviewSubjects.entries()) {
 			if (index === overviewSubject) link.setAttribute('aria-current', 'true');
@@ -363,7 +462,10 @@ const partyOverviews = [
 		}
 	};
 	for (const control of [overviewKind, densityPair, densityPage]) {
-		control.addEventListener('change', updateComparisons);
+		control.addEventListener('change', () => {
+			subjectIndex.open = false;
+			updateComparisons();
+		});
 	}
 	for (const button of overviewPages) {
 		button.addEventListener('click', () => {
@@ -392,73 +494,53 @@ const partyOverviews = [
 			overviewKind.value = 'topic_distribution';
 			subjectIndex.open = false;
 			updateComparisons();
-			document.querySelector<HTMLElement>('.overview-chart:not([hidden]) .mobile-topic:not([hidden]) h3 a')?.focus();
+			document.querySelector<HTMLElement>('.overview-chart:not([hidden]) .mobile-topic:not([hidden]) h3')?.focus();
 		});
 	}
+	document.addEventListener('click', event => {
+		if (event.target instanceof Node && !subjectIndex.contains(event.target)) subjectIndex.open = false;
+	});
+	subjectIndex.addEventListener('keydown', event => {
+		if (event.key === 'Escape') {
+			subjectIndex.open = false;
+			subjectIndex.querySelector<HTMLElement>('summary')!.focus();
+		}
+	});
 	document.querySelector<HTMLElement>('#overview-picker')!.hidden = false;
-	for (const footer of document.querySelectorAll<HTMLElement>('[data-overview-footer]')) footer.hidden = false;
 	document.querySelector<HTMLElement>('#density-picker')!.hidden = false;
 	if (window.matchMedia('(max-width: 700px)').matches) {
 		for (const evidence of document.querySelectorAll<HTMLDetailsElement>('.mapped-evidence')) evidence.open = true;
 	}
 	updateComparisons();
-	const picker = document.querySelector<HTMLElement>('#issue-picker')!;
-	const subject = document.querySelector<HTMLSelectElement>('#issue-topic')!;
-	const kind = document.querySelector<HTMLSelectElement>('#issue-kind')!;
-	const panels = [...document.querySelectorAll<HTMLDetailsElement>('.issue-panel')];
-	const issuePrevious = document.querySelector<HTMLButtonElement>('#issue-previous')!;
-	const issueNext = document.querySelector<HTMLButtonElement>('#issue-next')!;
-	const issueRange = document.querySelector<HTMLElement>('#issue-range')!;
-	const update = () => {
-		issuePrevious.disabled = subject.selectedIndex === 0;
-		issueNext.disabled = subject.selectedIndex === subject.options.length - 1;
-		issueRange.textContent = `${subject.selectedIndex + 1} of ${subject.options.length}`;
-		for (const panel of panels) {
-			panel.hidden = panel.dataset.topic !== subject.value;
-			if (!panel.hidden) panel.open = true;
-			for (const chart of panel.querySelectorAll<HTMLDetailsElement>('.issue-chart')) {
-				chart.hidden = chart.dataset.kind !== kind.value;
-				if (!chart.hidden) chart.open = true;
-			}
-		}
-	};
 	const reveal = () => {
 		const hash = window.location.hash;
-		const issue = panels.find(panel => `#${panel.id}` === hash);
-		if (issue) {
-			subject.value = issue.dataset.topic!;
-			update();
-			requestAnimationFrame(() => issue.scrollIntoView({ behavior: 'instant' }));
+		const index = overviewSubjects.findIndex(link => `#issue-${link.dataset.overviewSubject}` === hash);
+		if (index !== -1) {
+			overviewSubject = index;
+			overviewKind.value = 'topic_distribution';
+			updateComparisons();
+			requestAnimationFrame(() => document.querySelector<HTMLElement>(hash)?.scrollIntoView({ behavior: 'instant' }));
 			return;
 		}
-		const oldTopic = panels.find(panel => `#${panel.dataset.topic}` === hash);
+		const oldTopic = overviewSubjects.find(link => `#${link.dataset.overviewSubject}` === hash);
 		if (oldTopic || hash === '#topics') {
 			window.location.replace(`/party-platforms/sources/${hash}`);
 		} else if (['#methods', '#downloads', '#sensitivity'].includes(hash) || hash.startsWith('#period-')) {
 			window.location.replace(document.querySelector<HTMLAnchorElement>('#platform-repository')!.href);
 		} else if (hash === '#time') {
-			kind.value = 'time';
-			update();
+			overviewKind.value = 'topic_distribution';
+			updateComparisons();
+		} else if (hash === '#issues') {
+			document.querySelector<HTMLElement>('#overview')!.scrollIntoView();
 		}
 	};
-	picker.hidden = false;
-	for (const control of [subject, kind]) control.addEventListener('change', update);
-	issuePrevious.addEventListener('click', () => {
-		subject.selectedIndex = Math.max(0, subject.selectedIndex - 1);
-		update();
-	});
-	issueNext.addEventListener('click', () => {
-		subject.selectedIndex = Math.min(subject.options.length - 1, subject.selectedIndex + 1);
-		update();
-	});
 	for (const link of document.querySelectorAll<HTMLAnchorElement>('[data-overall-issue]')) {
 		link.addEventListener('click', () => {
-			subject.value = link.dataset.overallIssue!;
-			kind.value = 'overall';
-			update();
+			overviewSubject = overviewSubjects.findIndex(subject => subject.dataset.overviewSubject === link.dataset.overallIssue);
+			overviewKind.value = 'topic_distribution';
+			updateComparisons();
 		});
 	}
 	window.addEventListener('hashchange', reveal);
-	update();
 	reveal();
 </script>

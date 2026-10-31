@@ -40,6 +40,21 @@
 .platform-page .overview-pages button:disabled { opacity: 0.4; cursor: default; }
 .platform-page .overview-pages button:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
 .platform-page .overview-range { margin: 0.5rem 0 0; font: 0.8rem var(--sans); color: var(--muted); }
+.platform-page .overview-toolbar { position: sticky; top: 0; z-index: 5; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem 1.25rem; padding-block: 0.9rem; margin-top: 1.2rem; background: var(--paper); border-bottom: 1px solid var(--rule); }
+.platform-page .overview-toolbar .subject-index { position: relative; margin: 0; }
+.platform-page .overview-toolbar .subject-index > summary { font-weight: 400; }
+.platform-page .overview-toolbar .subject-index[open] > summary { margin-bottom: 0; }
+.platform-page .overview-toolbar .subject-index ul { position: absolute; top: 100%; left: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); columns: auto; gap: 0.5rem 1.5rem; width: min(40rem, calc(100vw - 3rem)); max-height: 50vh; overflow-y: auto; box-sizing: border-box; margin-top: 1rem; padding: 1rem 1rem 1rem 2rem; background: var(--paper); border: 1px solid var(--rule); }
+.platform-page #overview-picker { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 0.75rem 1.25rem; margin: 0; }
+.platform-page #overview-picker select { width: 16rem; margin: 0; padding: 0.5rem 0.7rem; border: 1px solid var(--rule); font: 0.9rem var(--sans); }
+.platform-page .control-label { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.platform-page .comparison-footer { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.75rem 1.5rem; padding-block: 1rem; border-top: 1px solid var(--rule); font: 0.85rem var(--sans); }
+.platform-page .comparison-footer .comparison-notes { flex: 1; min-width: 12rem; margin: 0; }
+.platform-page .comparison-notes > summary { font-size: 0.85rem; font-weight: 400; color: var(--muted); }
+.platform-page .comparison-notes p { max-width: 44rem; font: 0.9rem/1.6 var(--sans); }
+.platform-page .comparison-links { display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; }
+.platform-page .party-overview { border-top: 1px solid var(--rule); padding-top: 1rem; }
+.platform-page .party-overview > summary { font-weight: 400; }
 .platform-page .subject-index ul { columns: 2; column-gap: 2rem; padding-left: 1.2rem; }
 .platform-page .subject-index li { break-inside: avoid; margin-bottom: 0.5rem; font-size: 0.9rem; }
 .platform-page .party-summary { border-top: 2px solid var(--rule); padding-top: 0.7rem; font-size: 0.95rem; }
@@ -51,13 +66,20 @@
 .platform-page .mobile-overview { display: none; }
 .platform-page .position-overview { display: block; }
 .platform-page .overview-chart[data-kind="topic_distribution"] .wide-chart { display: none; }
-.platform-page .position-overview .mobile-topic { margin: 0; padding-block: 1.5rem; border-top: 1px solid var(--rule); }
-.platform-page .position-overview h3 { margin: 0 0 0.8rem; font-size: 1.15rem; }
-.platform-page .position-overview h3 a { color: var(--ink); text-decoration: none; }
-.platform-page .position-overview h3 a:hover { text-decoration: underline; }
-.platform-page .position-overview .mobile-value { display: grid; grid-template-columns: 6.75rem 12rem minmax(0, 1fr); gap: 1.5rem; align-items: center; padding-block: 0.65rem; font: 0.95rem/1.5 var(--sans); }
+.platform-page .position-overview .mobile-topic { margin: 0; padding-block: 1.5rem; scroll-margin-top: 6rem; }
+.platform-page .position-overview h3 { margin: 0 0 0.8rem; font-size: 1.35rem; scroll-margin-top: 6rem; }
+.platform-page .issue-comparison.with-history { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 2rem; align-items: center; }
+.platform-page .issue-timeline { min-width: 0; margin: 0; font: 0.85rem/1.5 var(--sans); }
+.platform-page .issue-timeline > figcaption { font: 600 1rem var(--sans); margin-bottom: 0.5rem; }
+.platform-page .issue-time-chart { display: none; width: 100%; height: 300px; font-family: var(--sans); }
+.js .platform-page .issue-time-chart { display: block; }
+.platform-page .timeline-caption { color: var(--muted); margin-top: 0; font-size: 0.8rem; }
+.platform-page .timeline-values > summary { font-size: 0.8rem; font-weight: 400; color: var(--muted); }
+.platform-page .position-overview .mobile-value { display: grid; grid-template-columns: 6.75rem 10.5rem minmax(0, 1fr); gap: 1.25rem; align-items: center; padding-block: 0.75rem; font: 1rem/1.55 var(--sans); }
+.platform-page .with-history .mobile-value { grid-template-columns: 5.5rem 6.5rem minmax(0, 1fr); gap: 1rem; }
 .platform-page .position-overview .mobile-party { font-weight: 600; }
 .platform-page .position-overview .mobile-track { position: relative; width: 8rem; height: 0.65rem; }
+.platform-page .with-history .mobile-track { width: 4rem; }
 .platform-page .position-overview .mobile-fill { position: absolute; height: 100%; }
 .platform-page .position-overview .mobile-number { position: absolute; top: 50%; transform: translate(5px, -50%); font: 0.85rem var(--sans); color: var(--ink); white-space: nowrap; }
 .platform-page .position-overview .group-position { margin: 0; }
@@ -156,7 +178,22 @@
 	}
 }
 
+@media (max-width: 1000px) {
+	.platform-page .issue-comparison.with-history { grid-template-columns: 1fr; gap: 1rem; }
+	.platform-page .with-history .mobile-value { grid-template-columns: 6.75rem 10.5rem minmax(0, 1fr); }
+	.platform-page .with-history .mobile-track { width: 8rem; }
+}
+
 @media (max-width: 700px) {
+	.platform-page .overview-toolbar { gap: 0.75rem; }
+	.platform-page .overview-toolbar .subject-index ul { grid-template-columns: 1fr; }
+	.platform-page #overview-picker { flex: 1 1 100%; justify-content: space-between; gap: 0.75rem; }
+	.platform-page #overview-picker select { width: 100%; }
+	.platform-page #overview-picker > label { flex: 1 1 100%; }
+	.platform-page .overview-toolbar .overview-pages { flex-wrap: nowrap; }
+	.platform-page .comparison-footer { align-items: start; }
+	.platform-page .position-overview .mobile-topic,
+	.platform-page .position-overview h3 { scroll-margin-top: 12rem; }
 	.platform-page .position-overview .mobile-value { grid-template-columns: 6rem minmax(0, 1fr); gap: 0.5rem 1rem; }
 	.platform-page .position-overview .mobile-track { width: calc(100% - 3.5rem); }
 	.platform-page .position-overview .mobile-track > .mobile-number { height: auto; }

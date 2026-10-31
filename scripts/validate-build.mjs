@@ -300,9 +300,13 @@ for (const [index, page] of platformPages.entries()) {
 assert.equal(platforms('#topic-list, #methods, #downloads, #period-topics').length, 0,
 	'Evidence, diagnostics and period fits must not clutter the issue comparison page');
 assert.equal(platformSources('#topic-list > .topic').length, platformData.topics.length);
-assert.equal(platforms('#issue-topic option').length, platformData.topics.length);
-assert.equal(platforms('.issue-panel').length, platformData.topics.length);
-assert.equal(platforms('.issue-chart').length, 2 * platformData.topics.length);
+assert.equal(platforms('#issues, #issue-picker, #issue-topic, #issue-kind, .issue-panel').length, 0,
+	'Issues and their timelines must share the top explorer, not a duplicate lower section');
+assert.equal(platforms('.position-overview .issue-time-chart').length, platformData.topics.length);
+assert.equal(platforms('[data-overview-step]').length, 2, 'Use one set of issue navigation controls');
+assert.doesNotMatch(platforms('#overview').text(), /The updated analysis shows/);
+assert.doesNotMatch(platforms('#density').text(), /\bKDE\b/);
+assert.equal(platforms('.party-overview:not([open])').length, 1);
 assert.equal(platforms('.overview-chart').length, 9);
 assert.equal(platforms('.density-chart').length, 6);
 assert.equal(platforms('.party-summary').length, 3);
@@ -314,8 +318,7 @@ assert.equal(platforms('#overview-previous[disabled], #overview-next:not([disabl
 assert.equal(platforms('#overview-range[role="status"][aria-live="polite"]').length, 1);
 assert.equal(platforms('#overview-subject-previous[disabled], #overview-subject-next:not([disabled])').length, 2);
 assert.equal(platforms('#overview-subject-range[role="status"][aria-live="polite"]').text(), '1 of 21');
-assert.equal(platforms('#overview-pagination[hidden], #issue-topic[hidden]').length, 2);
-assert.equal(platforms('#issue-previous, #issue-next').length, 2);
+assert.equal(platforms('#overview-pagination[hidden]').length, 1);
 assert.deepEqual(platforms('.subject-index [data-overview-subject]').toArray().map(link =>
 	platforms(link).attr('data-overview-subject')), [...platformData.topics].sort((a, b) =>
 		['democratic', 'republican', 'dsa'].reduce((sum, group) => sum +
@@ -385,26 +388,30 @@ for (const pair of ['democratic_vs_republican', 'democratic_vs_dsa', 'republican
 }
 for (const topic of platformData.topics) {
 	const issue = platforms(`#issue-${topic.topic_id}`);
-	assert.equal(issue.children('summary').text(), topic.title);
-	assert.equal(issue.children('.subject-summary').text(), topic.summary);
-	for (const kind of ['overall', 'time']) {
-		const chart = issue.find(`.issue-chart[data-view="expanded"][data-kind="${kind}"]`);
-		assert.equal(chart.find('img').length, 1);
-		const figure = platformData.figures.find(entry =>
-			entry.view === 'expanded/issues' && entry.name === `${topic.topic_id}_${kind}`);
-		assert.equal(chart.find('a[data-original-chart]').attr('href'), `/party-platforms/${figure.path}?source=${platformData.source_revision}`);
+	assert.equal(issue.children('h3').text(), topic.title);
+	const figure = platformData.figures.find(entry =>
+		entry.view === 'expanded/issues' && entry.name === `${topic.topic_id}_time`);
+	assert.equal(issue.find('.issue-timeline').attr('data-png'), `/party-platforms/${figure.path}?source=${platformData.source_revision}`);
+	const periods = JSON.parse(issue.find('canvas').attr('data-timeline'));
+	assert.equal(periods.length, 7);
+	assert.equal(issue.find('thead th').length, 4);
+	assert.equal(issue.find('tbody tr').length, periods.length);
+	for (const [index, period] of periods.entries()) {
+		const row = issue.find('tbody tr').eq(index);
+		assert.equal(row.find('th').text(), period.label);
+		assert.deepEqual(row.find('td').toArray().map(cell => platforms(cell).text()),
+			period.values.map(value => value === null ? 'Not observed' : `${(100 * value).toFixed(1)}%`));
 	}
-	assert.equal(issue.find('thead th').length, 2);
 	assert.equal(platformSources(`#${topic.topic_id} thead th`).length, 3);
 	for (const row of topic.shares.filter(row => row.view === 'expanded')) {
 		const expectedShare = row.available === 'True'
 			? `${(100 * Number(row.share)).toFixed(1)}%` : 'Not observed';
 		const index = ['democratic', 'republican', 'dsa'].indexOf(row.group);
-		assert.equal(issue.find('tbody tr').eq(index).find('td').first().text(), expectedShare);
 		assert.equal(platformSources(`#${topic.topic_id} tbody tr`).eq(index).find('td').first().text(), expectedShare);
 	}
 }
-assert.equal(platforms('.platform-figure').length, 2 * platformData.topics.length + 15);
+assert.equal(platforms('.platform-figure').length, 15);
+assert.equal(platforms('.issue-timeline noscript').length, platformData.topics.length);
 assert.equal(platformSources('.platform-figure').length, 0);
 assert.ok(platformPages.every(page => page('iframe').length === 0));
 assert.equal(platformSources('#topic-query[type=search]').length, 1);
@@ -412,15 +419,14 @@ assert.equal(platformData.summary.claims, 26483);
 assert.equal(platformData.source_revision, platformManifest.source_revision);
 assert.equal(platformManifest.source_repository, 'hanshanley/dsa');
 assert.match(platformManifest.source_revision, /^[0-9a-f]{40}$/);
-assert.match(platforms('#issues').text(), /Missing periods remain gaps/);
+assert.match(platforms('#overview').text(), /Missing periods remain gaps/);
 assert.equal(platformAnalysis.find('a:contains("Code and data on GitHub")').attr('href'),
 	`https://github.com/hanshanley/dsa/tree/${platformData.source_revision}`);
 assert.ok(platformData.topics.every(topic => topic.representatives.length > 0));
 for (const topic of platformData.topics) {
 	assert.equal(platformSources(`#${topic.topic_id} > summary`).text(), topic.title);
 	assert.equal(platformSources(`#${topic.topic_id} .claim`).length, topic.representatives.length);
-	assert.equal(platforms(`#issue-${topic.topic_id} > p a`).attr('href'),
-		`/party-platforms/sources/#${topic.topic_id}`);
+	assert.equal(platforms(`#issue-${topic.topic_id}`).length, 1);
 }
 for (const [path, checksum] of Object.entries(platformManifest.files)) {
 	assert.equal(
