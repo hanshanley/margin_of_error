@@ -9,6 +9,8 @@ const singularVerbs = {
 	combine: 'combines', welcome: 'welcomes', praise: 'praises', oppose: 'opposes',
 	reject: 'rejects', seek: 'seeks', advocate: 'advocates', connect: 'connects',
 	move: 'moves', call: 'calls', prioritize: 'prioritizes',
+	commit: 'commits', critique: 'critiques', emphasize: 'emphasizes',
+	link: 'links', pair: 'pairs',
 };
 const parallelClauses = [
 	['and link sustainable prosperity', 'and links sustainable prosperity'],
@@ -34,6 +36,15 @@ const parallelClauses = [
 export function partyPositionSummary(group, summary) {
 	const party = parties[group];
 	if (!party) throw new Error(`Unknown position organization: ${group}`);
+	if (/^Sampled (documents|platforms)\b/.test(summary)) {
+		return summary.replace(/^Sampled/, `${party}'s sampled`);
+	}
+	if (/^Samples(?:\s|,)/.test(summary)) {
+		return summary.replace(/^Samples/, `${party}'s sampled documents`);
+	}
+	if (/^Platforms\s/.test(summary)) {
+		return summary.replace(/^Platforms/, `${party}'s platforms`);
+	}
 	let copy = summary.replace(/^Documents (repeatedly )?(\w+)/, (_, adverb, verb) => {
 		if (!singularVerbs[verb]) throw new Error(`Unrecognized summary verb: ${verb}`);
 		return `${party} ${adverb ?? ''}${singularVerbs[verb]}`;

@@ -310,6 +310,7 @@ for (const [index, page] of platformPages.entries()) {
 assert.equal(platforms('#topic-list, #methods, #downloads, #period-topics').length, 0,
 	'Evidence, diagnostics and period fits must not clutter the issue comparison page');
 assert.equal(platformSources('#topic-list > .topic').length, platformData.topics.length);
+const platformOverviewPages = Array.from({ length: Math.ceil(platformData.topics.length / 8) }, (_, index) => index + 1);
 assert.equal(platforms('#issues, #issue-picker, #issue-topic, #issue-kind, .issue-panel').length, 0,
 	'Issues and their timelines must share the top explorer, not a duplicate lower section');
 assert.equal(platforms('.position-overview .issue-time-chart').length, platformData.topics.length);
@@ -320,14 +321,14 @@ assert.equal(platforms('section#organization-patterns.party-overview').length, 1
 assert.equal(platforms('#organization-patterns > h2').text(), 'Overall patterns by organization');
 assert.equal(platforms('details.party-overview').length, 0);
 assert.equal(platforms('.section-links a[href="#organization-patterns"]').length, 1);
-assert.equal(platforms('.overview-chart').length, 3);
+assert.equal(platforms('.overview-chart').length, platformOverviewPages.length);
 assert.equal(platforms('.overview-chart:not([data-kind="topic_distribution"])').length, 0);
 assert.equal(platforms('#overview-kind, #overview-pagination, [data-overview-page], #density-page, .density-chart, .density-original').length, 0);
 assert.doesNotMatch(platforms('#density').text(), /First set|Second set|Original annotated map|Density is estimated in the shared/);
 assert.equal(platforms('.party-summary').length, 3);
 assert.equal(platforms('#overview-page').length, 0, 'Subject navigation must not use an opaque page dropdown');
 assert.equal(platforms('#overview-subject-previous[disabled], #overview-subject-next:not([disabled])').length, 2);
-assert.equal(platforms('#overview-subject-range[role="status"][aria-live="polite"]').text(), '1 of 21');
+assert.equal(platforms('#overview-subject-range[role="status"][aria-live="polite"]').text(), `1 of ${platformData.topics.length}`);
 assert.deepEqual(platforms('.subject-index [data-overview-subject]').toArray().map(link =>
 	platforms(link).attr('data-overview-subject')), [...platformData.topics].sort((a, b) =>
 		['democratic', 'republican', 'dsa'].reduce((sum, group) => sum +
@@ -335,7 +336,7 @@ assert.deepEqual(platforms('.subject-index [data-overview-subject]').toArray().m
 			Number(a.shares.find(row => row.view === 'expanded' && row.group === group).share), 0)
 	).map(topic => topic.topic_id));
 for (const view of ['topic_distribution']) {
-	for (const page of [1, 2, 3]) {
+	for (const page of platformOverviewPages) {
 		const name = `${view}${page === 1 ? '' : `_${page}`}`;
 		const figure = platformData.figures.find(entry => entry.view === 'expanded' && entry.name === name);
 		const chart = platforms(`.overview-chart[data-kind="${view}"][data-page="${page}"]`);
@@ -402,12 +403,12 @@ for (const topic of platformData.topics) {
 		assert.equal(platformSources(`#${topic.topic_id} tbody tr`).eq(index).find('td').first().text(), expectedShare);
 	}
 }
-assert.equal(platforms('.platform-figure').length, 3);
+assert.equal(platforms('.platform-figure').length, platformOverviewPages.length);
 assert.equal(platforms('.issue-timeline noscript').length, platformData.topics.length);
 assert.equal(platformSources('.platform-figure').length, 0);
 assert.ok(platformPages.every(page => page('iframe').length === 0));
 assert.equal(platformSources('#topic-query[type=search]').length, 1);
-assert.equal(platformData.summary.claims, 26483);
+assert.equal(platformData.summary.claims, 26069);
 assert.equal(platformData.source_revision, platformManifest.source_revision);
 assert.equal(platformManifest.source_repository, 'hanshanley/dsa');
 assert.match(platformManifest.source_revision, /^[0-9a-f]{40}$/);

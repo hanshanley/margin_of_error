@@ -42,3 +42,19 @@ test('rejects unknown organizations and unsupported opening formats', () => {
 	assert.throws(() => partyPositionSummary('dsa', 'Unreviewed text.'), /Unrecognized position summary opening/);
 	assert.throws(() => partyPositionSummary('dsa', 'Documents invent a policy.'), /Unrecognized summary verb/);
 });
+
+test('names parties in current summaries without losing sampled or historical scope', () => {
+	assert.equal(partyPositionSummary('democratic', 'Documents pair infrastructure investment with jobs.'),
+		'The Democratic Party pairs infrastructure investment with jobs.');
+	assert.equal(partyPositionSummary('dsa', 'Sampled documents treat healthcare as a right.'),
+		"DSA's sampled documents treat healthcare as a right.");
+	assert.equal(partyPositionSummary('republican', 'Sampled platforms support affordable access.'),
+		"The Republican Party's sampled platforms support affordable access.");
+	assert.equal(partyPositionSummary('republican',
+		"Samples, chiefly from 2024, praise Trump's record while promising renewed implementation."),
+		"The Republican Party's sampled documents, chiefly from 2024, praise Trump's record while promising renewed implementation.");
+	assert.equal(partyPositionSummary('democratic', 'Platforms combine diplomacy and, by 2024, ceasefire language.'),
+		"The Democratic Party's platforms combine diplomacy and, by 2024, ceasefire language.");
+	assert.equal(partyPositionSummary('dsa', 'Samples support diplomacy; they favor military cuts.'),
+		"DSA's sampled documents support diplomacy; they favor military cuts.");
+});

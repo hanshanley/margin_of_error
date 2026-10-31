@@ -2,7 +2,7 @@
 import PlatformLayout from '../layouts/PlatformLayout.astro';
 import PlatformFigure from '../components/PlatformFigure.astro';
 import DensityExplorer from '../components/DensityExplorer.astro';
-import { platforms as data, organizations, platformFigure, timelineShares } from '../lib/platform-analysis';
+import { platforms as data, densityMap, organizations, platformFigure, timelineShares } from '../lib/platform-analysis';
 import { partyPositionSummary } from '../lib/platform-position-copy.mjs';
 
 const number = (value: number) => value.toLocaleString('en-US');
@@ -22,6 +22,7 @@ const colors: Record<string, string> = { democratic: '#3d7699', republican: '#c6
 const overviewTopics = [...data.topics].sort((a, b) =>
 	organizations.reduce((sum, group) => sum + Number(share(b, group.id)?.share) -
 		Number(share(a, group.id)?.share), 0));
+const overviewPages = Array.from({ length: Math.ceil(overviewTopics.length / 8) }, (_, index) => index + 1);
 const groupPosition = (topic: string, group: string) => {
 	const summary = data.positions.find(position => position.topic_id === topic)?.groups[group]?.summary;
 	if (!summary) throw new Error(`Missing reviewed group position: ${topic}/${group}`);
@@ -64,18 +65,20 @@ const densityPairs = [
 	{ id: 'democratic_vs_dsa', title: 'Democratic and DSA' },
 	{ id: 'republican_vs_dsa', title: 'Republican and DSA' },
 ];
-const partyOverviews = [
-	{ id: 'democratic', summary: "The Democratic Party's largest subjects include support for vulnerable communities, international cooperation, and energy and infrastructure investment. Presidential records and partisan critiques also feature prominently: attention is not simply a list of policy promises.",
-		topic: 'topic-002', claim: 'democratic-2024-normalized-51d7cbe64123-005' },
-	{ id: 'republican', summary: "The Republican Party's platforms repeatedly address governing authority, national leadership, and support for communities. Rights and freedom are distinctive themes, mixing concrete proposals with statements about legitimate government.",
-		topic: 'topic-005', claim: 'republican-2008-normalized-92a9f5c7906a-006' },
-	{ id: 'dsa', summary: "DSA's largest subjects include critiques of capitalism, democratic representation, and material insecurity. Labor organizing and the Israeli-Palestinian conflict also receive more relative attention than in the other organizations.",
-		topic: 'topic-020', claim: 'dsa-2003-mission-normalized-20f699d8e4de-002' },
-].map(overview => {
-	const topic = data.topics.find(topic => topic.topic_id === overview.topic)!;
-	const example = topic.representatives.find(claim => claim.claim_id === overview.claim);
-	if (!example) throw new Error(`Missing party overview evidence: ${overview.claim}`);
-	return { ...overview, example };
+const partyOverviews = organizations.map(group => {
+	const subjects = [...data.topics].sort((a, b) =>
+		Number(share(b, group.id)?.share) - Number(share(a, group.id)?.share)).slice(0, 3);
+	const positions = subjects.map(subject => densityMap.topics.find(topic => topic.topic_id === subject.topic_id)!);
+	if (positions.some(topic => !topic?.positions[group.id])) {
+		throw new Error(`Missing reviewed party overview positions: ${group.id}`);
+	}
+	const supporting = positions[0].positions[group.id].supporting_claim_ids;
+	const example = subjects[0].representatives.find(claim =>
+		claim.group === group.id && supporting.includes(claim.claim_id)) ??
+		positions[0].examples.find(claim => claim.group === group.id && supporting.includes(claim.claim_id));
+	if (!example) throw new Error(`Missing reviewed party overview evidence: ${group.id}`);
+	return { id: group.id, summary: positions.map(topic => partyPositionSummary(group.id, topic.positions[group.id].summary)).join(' '),
+		topic: subjects[0].topic_id, example };
 });
 ---
 
@@ -106,7 +109,7 @@ const partyOverviews = [
 			</div>
 		</div>
 		</div>
-		{overviewViews.map(view => [1, 2, 3].map(page => (
+		{overviewViews.map(view => overviewPages.map(page => (
 			<details class="overview-chart" data-kind={view.id} data-page={page}
 				open={view.id === 'topic_distribution' && page === 1}>
 				<summary>{view.title}: page {page}</summary>
@@ -164,7 +167,7 @@ const partyOverviews = [
 				</div>
 				<div class="wide-chart" tabindex="0" role="region" aria-label={`${view.title}, page ${page}`}>
 					<PlatformFigure figure={platformFigure('expanded', `${view.id}${page === 1 ? '' : `_${page}`}`)}
-						caption={`${view.title}, page ${page} of 3. All organizations use the same subjects and chart scales.`} />
+						caption={`${view.title}, page ${page} of ${overviewPages.length}. All organizations use the same subjects and chart scales.`} />
 				</div>
 				<div class="comparison-footer">
 					<details class="comparison-notes">
