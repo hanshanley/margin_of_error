@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PlatformFigure from '../components/PlatformFigure.astro';
-import { platforms as data, organizations, platformFigure, initialIssue, platformPreview } from '../lib/platform-analysis';
+import { platforms as data, organizations, platformFigure, initialIssue, platformCover } from '../lib/platform-analysis';
 
 const source = `https://github.com/hanshanley/dsa/tree/${data.source_revision}`;
 const number = (value: number) => value.toLocaleString('en-US');
@@ -18,7 +18,7 @@ const issueTopics = data.topics;
 
 <BaseLayout title="National party platforms"
 	description="Compare the topics, relative emphasis, source evidence, and historical coverage of Democratic, Republican, and DSA national documents."
-	image={`/party-platforms/${platformPreview.display_path ?? platformPreview.path}`}>
+	image={platformCover.src}>
 	<div class="platform-page">
 		{data.preview_only && <p class="qualification" role="status">Local development preview, not a
 			verified publication. Charts and period discoveries are drafts; the combined archive
@@ -30,6 +30,11 @@ const issueTopics = data.topics;
 				Explore their subjects, how emphasis differs, and how the observed documents change over time.</p>
 			<p class="scope">{number(data.summary.claims)} analyzed claims &middot; {totalDocuments} documents
 				&middot; {data.topics.length} pooled topics &middot; Cutoff: October 26, 2026</p>
+			<figure class="platform-cover">
+				<img src={platformCover.src} alt={platformCover.alt}
+					width={platformCover.width} height={platformCover.height}
+					loading="eager" decoding="async" fetchpriority="high" />
+			</figure>
 		</header>
 
 		<nav class="section-nav" aria-label="Analysis sections">
@@ -395,6 +400,8 @@ const issueTopics = data.topics;
 	.page-heading { max-width: 900px; padding-top: 2rem; }
 	.page-heading h1 { font-size: clamp(2.4rem, 5vw, 4.5rem); line-height: 1.1; margin: 0.6rem 0 1.2rem; }
 	.page-heading .scope { font-size: 0.88rem; }
+	.platform-cover { margin: 1.5rem 0 0; }
+	.platform-cover img { display: block; width: 100%; height: auto; }
 	.intro { font-size: 1.25rem; }
 	.scope, .coverage, .label-origin, .locator, .revision { color: var(--muted); font-size: 0.88rem; }
 	.section-nav { display: flex; flex-wrap: wrap; gap: 0.7rem 1.5rem; padding: 1rem 0; border-block: 1px solid var(--rule); font-family: var(--sans); }

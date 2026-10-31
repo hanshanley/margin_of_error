@@ -208,12 +208,24 @@ const platforms = load(await text('party-platforms/index.html'));
 const platformData = JSON.parse(await text('party-platforms/analysis.json'));
 const platformManifest = JSON.parse(await text('party-platforms/publication-manifest.json'));
 assert.ok(!platformManifest.preview_only && !platformData.preview_only, 'A draft preview cannot be published');
-const initialIssueId = platforms('#issue-topic option[selected]').attr('value');
-const platformPreview = platformData.figures.find(figure =>
-	figure.view === 'expanded/issues' && figure.name === `${initialIssueId}_overall`);
-assert.ok(platformPreview, 'Interactive analysis preview must show an individual issue');
-assert.equal(platformAnalysis.find('img').attr('src'),
-	`/party-platforms/${(platformPreview.display_path ?? platformPreview.path).replace(/\.png$/, '.website.png')}`);
+const platformCoverPath = '/artifacts/party-platforms/three-platform-booklets-one-conversation.png';
+const platformCoverBytes = await readFile(new URL(platformCoverPath.slice(1), root));
+assert.deepEqual(platformCoverBytes,
+	await readFile(new URL(`public${platformCoverPath}`, projectRoot)),
+	'The supplied platform illustration must not be recolored');
+const platformCoverSize = await sharp(platformCoverBytes).metadata();
+for (const image of [platforms('.platform-cover img'), platformAnalysis.find('img')]) {
+	assert.equal(image.attr('src'), platformCoverPath);
+	assert.equal(Number(image.attr('width')), platformCoverSize.width);
+	assert.equal(Number(image.attr('height')), platformCoverSize.height);
+	assert.equal(image.attr('loading'), 'eager');
+	assert.equal(image.attr('decoding'), 'async');
+}
+assert.match(platforms('.platform-cover img').attr('alt'), /Illustration.*Democratic.*Republican.*DSA/);
+for (const selector of ['meta[property="og:image"]', 'meta[name="twitter:image"]']) {
+	assert.equal(platforms(selector).attr('content'),
+		`https://www.themarginoferror.com${platformCoverPath}`);
+}
 assert.equal(platforms('h1').text(), 'National party platforms');
 assert.equal(platforms('link[rel=canonical]').attr('href'),
 	'https://www.themarginoferror.com/party-platforms/');

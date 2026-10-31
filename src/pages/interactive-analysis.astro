@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { platformPreview } from '../lib/platform-analysis';
+import { platformCover } from '../lib/platform-analysis';
 ---
 
 <BaseLayout
@@ -14,8 +14,8 @@ import { platformPreview } from '../lib/platform-analysis';
 		<ul class="analysis-list">
 			<li>
 				<a class="analysis-preview" href="/party-platforms/" tabindex="-1" aria-hidden="true">
-					<img src={`/party-platforms/${platformPreview.display_path ?? platformPreview.path}`} alt=""
-						width={platformPreview.width} height={platformPreview.height}
+					<img src={platformCover.src} alt=""
+						width={platformCover.width} height={platformCover.height}
 						loading="eager" decoding="async" />
 				</a>
 				<div>
