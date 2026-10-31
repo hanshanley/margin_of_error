@@ -3,10 +3,10 @@ import PlatformLayout from '../../layouts/PlatformLayout.astro';
 import { platforms as data, organizations } from '../../lib/platform-analysis';
 
 const number = (value: number) => value.toLocaleString('en-US');
-const share = (topic: typeof data.topics[number], view: string, group: string) =>
-	topic.shares.find(row => row.view === view && row.group === group);
-const percent = (topic: typeof data.topics[number], view: string, group: string) => {
-	const row = share(topic, view, group);
+const share = (topic: typeof data.topics[number], group: string) =>
+	topic.shares.find(row => row.view === 'expanded' && row.group === group);
+const percent = (topic: typeof data.topics[number], group: string) => {
+	const row = share(topic, group);
 	return row?.available === 'True' ? `${(100 * Number(row.share)).toFixed(1)}%` : 'Not observed';
 };
 ---
@@ -37,12 +37,11 @@ const percent = (topic: typeof data.topics[number], view: string, group: string)
 						<div class="table-wrap">
 							<table>
 								<caption>Document-weighted shares; claim counts are unweighted</caption>
-								<thead><tr><th>Organization</th><th>All documents</th><th>Adopted only</th><th>Claims</th></tr></thead>
+								<thead><tr><th>Organization</th><th>Share of attention</th><th>Claims</th></tr></thead>
 								<tbody>{organizations.map(group => (
 									<tr><th scope="row">{group.name}</th>
-										<td>{percent(topic, 'expanded', group.id)}</td>
-										<td>{percent(topic, 'strict', group.id)}</td>
-										<td>{number(Number(share(topic, 'expanded', group.id)?.claims ?? 0))}</td></tr>
+										<td>{percent(topic, group.id)}</td>
+										<td>{number(Number(share(topic, group.id)?.claims ?? 0))}</td></tr>
 								))}</tbody>
 							</table>
 						</div>

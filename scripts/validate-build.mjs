@@ -236,6 +236,9 @@ for (const [index, page] of platformPages.entries()) {
 		'The key illustration belongs on the listing and social cards, not inside analysis pages');
 	assert.equal(page('#methods, #downloads, #period-topics, .analysis-tabs, .figure-downloads').length, 0,
 		'Analysis pages must not contain technical/download inventories or period discovery');
+	assert.equal(page('#issue-view, [data-view="strict"], img[src*="/strict/"]').length, 0,
+		'Only the expanded analysis is presented on the website');
+	assert.doesNotMatch(page('thead').text(), /Adopted only/);
 	assert.equal(page('link[rel=canonical]').attr('href'),
 		`https://www.themarginoferror.com/party-platforms/${index === 0 ? '' : 'sources/'}`);
 	assert.equal(page('#platform-repository').length, 1);
@@ -247,17 +250,28 @@ assert.equal(platforms('#topic-list, #methods, #downloads, #period-topics').leng
 assert.equal(platformSources('#topic-list > .topic').length, platformData.topics.length);
 assert.equal(platforms('#issue-topic option').length, platformData.topics.length);
 assert.equal(platforms('.issue-panel').length, platformData.topics.length);
-assert.equal(platforms('.issue-chart').length, 4 * platformData.topics.length);
+assert.equal(platforms('.issue-chart').length, 2 * platformData.topics.length);
 for (const topic of platformData.topics) {
 	const issue = platforms(`#issue-${topic.topic_id}`);
 	assert.equal(issue.children('summary').text(), topic.title);
-	for (const view of ['expanded', 'strict']) {
-		for (const kind of ['overall', 'time']) {
-			assert.equal(issue.find(`.issue-chart[data-view="${view}"][data-kind="${kind}"] img`).length, 1);
-		}
+	for (const kind of ['overall', 'time']) {
+		const chart = issue.find(`.issue-chart[data-view="expanded"][data-kind="${kind}"]`);
+		assert.equal(chart.find('img').length, 1);
+		const figure = platformData.figures.find(entry =>
+			entry.view === 'expanded/issues' && entry.name === `${topic.topic_id}_${kind}`);
+		assert.equal(chart.find('a[data-original-chart]').attr('href'), `/party-platforms/${figure.path}`);
+	}
+	assert.equal(issue.find('thead th').length, 2);
+	assert.equal(platformSources(`#${topic.topic_id} thead th`).length, 3);
+	for (const row of topic.shares.filter(row => row.view === 'expanded')) {
+		const expectedShare = row.available === 'True'
+			? `${(100 * Number(row.share)).toFixed(1)}%` : 'Not observed';
+		const index = ['democratic', 'republican', 'dsa'].indexOf(row.group);
+		assert.equal(issue.find('tbody tr').eq(index).find('td').first().text(), expectedShare);
+		assert.equal(platformSources(`#${topic.topic_id} tbody tr`).eq(index).find('td').first().text(), expectedShare);
 	}
 }
-assert.equal(platforms('.platform-figure').length, 4 * platformData.topics.length);
+assert.equal(platforms('.platform-figure').length, 2 * platformData.topics.length);
 assert.equal(platformSources('.platform-figure').length, 0);
 assert.ok(platformPages.every(page => page('iframe').length === 0));
 assert.equal(platformSources('#topic-query[type=search]').length, 1);

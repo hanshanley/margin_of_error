@@ -4,10 +4,10 @@ import PlatformFigure from '../components/PlatformFigure.astro';
 import { platforms as data, organizations, platformFigure, initialIssue } from '../lib/platform-analysis';
 
 const number = (value: number) => value.toLocaleString('en-US');
-const share = (topic: typeof data.topics[number], view: string, group: string) =>
-	topic.shares.find(row => row.view === view && row.group === group);
-const percent = (topic: typeof data.topics[number], view: string, group: string) => {
-	const row = share(topic, view, group);
+const share = (topic: typeof data.topics[number], group: string) =>
+	topic.shares.find(row => row.view === 'expanded' && row.group === group);
+const percent = (topic: typeof data.topics[number], group: string) => {
+	const row = share(topic, group);
 	return row?.available === 'True' ? `${(100 * Number(row.share)).toFixed(1)}%` : 'Not observed';
 };
 const evidence = (id: string) => `/party-platforms/sources/#${id}`;
@@ -28,27 +28,22 @@ const evidence = (id: string) => `/party-platforms/sources/#${id}`;
 				<select id="issue-kind"><option value="overall">Overall emphasis</option>
 					<option value="time">Over time</option></select>
 			</label>
-			<label>Sources
-				<select id="issue-view"><option value="expanded">All national documents</option>
-					<option value="strict">Adopted platforms only</option></select>
-			</label>
 		</div>
 		{data.topics.map(topic => (
 			<details class="issue-panel" data-topic={topic.topic_id}
 				id={`issue-${topic.topic_id}`} open={topic.topic_id === initialIssue.topic_id}>
 				<summary>{topic.title}</summary>
 				<h2 class="issue-title">{topic.title}</h2>
-				{['expanded', 'strict'].map(view => ['overall', 'time'].map(kind => (
-					<details class="issue-chart" data-view={view} data-kind={kind}
-						open={view === 'expanded' && kind === 'overall'}>
-						<summary>{view === 'expanded' ? 'All national documents' : 'Adopted platforms only'}:
-							{kind === 'overall' ? ' overall emphasis' : ' over time'}</summary>
-						<PlatformFigure figure={platformFigure(`${view}/issues`, `${topic.topic_id}_${kind}`)}
+				{['overall', 'time'].map(kind => (
+					<details class="issue-chart" data-view="expanded" data-kind={kind}
+						open={kind === 'overall'}>
+						<summary>{kind === 'overall' ? 'Overall emphasis' : 'Over time'}</summary>
+						<PlatformFigure figure={platformFigure('expanded/issues', `${topic.topic_id}_${kind}`)}
 							caption={kind === 'overall'
 								? 'Share of document-weighted attention devoted to this subject.'
 								: 'Share of attention in observed four-year periods. Missing periods remain gaps.'} />
 					</details>
-				)))}
+				))}
 				<p><a href={evidence(topic.topic_id)}>Read representative claims and source excerpts &rarr;</a></p>
 				<details class="chart-notes">
 					<summary>Sources and how to read this chart</summary>
@@ -57,27 +52,25 @@ const evidence = (id: string) => `/party-platforms/sources/#${id}`;
 					<p>These charts compare attention, not agreement or ideological distance.
 						Each document or predefined DSA period bundle receives equal weight within its organization.
 						Claim counts do not determine an organization's weight.</p>
-					<p>All national documents includes DSA resolutions and statements. Adopted platforms only
-						retains three DSA platforms/programs, rather than all 122 DSA documents; the Democratic
-						and Republican sources are unchanged.</p>
+					<p>The analysis includes Democratic and Republican platforms, and DSA national
+						platforms/programs, resolutions and statements.</p>
 					<p>Timelines use the same subjects across seven four-year periods. The final period is
 						partial through October 26, 2026. Reused platforms are not new observations, and
 						DSA fallback documents are not a continuous series of adopted platforms.</p>
 					<div class="table-wrap">
 						<table>
 							<caption>Overall document-weighted shares</caption>
-							<thead><tr><th>Organization</th><th>All documents</th><th>Adopted only</th></tr></thead>
+							<thead><tr><th>Organization</th><th>Share of attention</th></tr></thead>
 							<tbody>{organizations.map(group => (
 								<tr><th scope="row">{group.name}</th>
-									<td>{percent(topic, 'expanded', group.id)}</td>
-									<td>{percent(topic, 'strict', group.id)}</td></tr>
+									<td>{percent(topic, group.id)}</td></tr>
 							))}</tbody>
 						</table>
 					</div>
 				</details>
 			</details>
 		))}
-		<noscript><p>Expand a subject to see its overall and over-time charts for both source selections.</p></noscript>
+		<noscript><p>Expand a subject to see its overall and over-time charts.</p></noscript>
 	</section>
 
 	<section id="overview" class="reader-section" aria-labelledby="overview-title">
@@ -90,11 +83,11 @@ const evidence = (id: string) => `/party-platforms/sources/#${id}`;
 					<h3>{group.name}</h3>
 					<ol>
 						{[...data.topics].sort((a, b) =>
-							Number(share(b, 'expanded', group.id)?.share) -
-							Number(share(a, 'expanded', group.id)?.share)
+							Number(share(b, group.id)?.share) -
+							Number(share(a, group.id)?.share)
 						).slice(0, 3).map(topic => (
 							<li><a href={`#issue-${topic.topic_id}`} data-overall-issue={topic.topic_id}>{topic.title}</a>
-								<span class="topic-percent">{percent(topic, 'expanded', group.id)}</span></li>
+								<span class="topic-percent">{percent(topic, group.id)}</span></li>
 						))}
 					</ol>
 					<p class="coverage">{data.summary.documents_by_group[group.id]} documents &middot;
@@ -111,14 +104,13 @@ const evidence = (id: string) => `/party-platforms/sources/#${id}`;
 	const picker = document.querySelector<HTMLElement>('#issue-picker')!;
 	const subject = document.querySelector<HTMLSelectElement>('#issue-topic')!;
 	const kind = document.querySelector<HTMLSelectElement>('#issue-kind')!;
-	const view = document.querySelector<HTMLSelectElement>('#issue-view')!;
 	const panels = [...document.querySelectorAll<HTMLDetailsElement>('.issue-panel')];
 	const update = () => {
 		for (const panel of panels) {
 			panel.hidden = panel.dataset.topic !== subject.value;
 			if (!panel.hidden) panel.open = true;
 			for (const chart of panel.querySelectorAll<HTMLDetailsElement>('.issue-chart')) {
-				chart.hidden = chart.dataset.view !== view.value || chart.dataset.kind !== kind.value;
+				chart.hidden = chart.dataset.kind !== kind.value;
 				if (!chart.hidden) chart.open = true;
 			}
 		}
@@ -143,12 +135,11 @@ const evidence = (id: string) => `/party-platforms/sources/#${id}`;
 		}
 	};
 	picker.hidden = false;
-	for (const control of [subject, kind, view]) control.addEventListener('change', update);
+	for (const control of [subject, kind]) control.addEventListener('change', update);
 	for (const link of document.querySelectorAll<HTMLAnchorElement>('[data-overall-issue]')) {
 		link.addEventListener('click', () => {
 			subject.value = link.dataset.overallIssue!;
 			kind.value = 'overall';
-			view.value = 'expanded';
 			update();
 		});
 	}
