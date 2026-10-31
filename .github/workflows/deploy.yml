@@ -72,16 +72,21 @@ jobs:
         uses: actions/checkout@v7
         with:
           repository: hanshanley/dsa
-          ref: 54f671b97af9d21aa52136b64f2dc722487173fd
+          ref: 1e9cf54e00390c74eb8487bbc9a37dd988d111f1
           path: party-platforms-source
           sparse-checkout: |
             scripts
+            src
             data/analysis/national_claims/full
             figures/national_claims/full
             report
 
       - name: Stage reviewed platform figures and complete downloads
-        run: python party-platforms-source/scripts/build_platform_publication.py --output public/party-platforms
+        env:
+          PYTHONPATH: party-platforms-source/src
+        run: |
+          python -m pip install numpy scikit-learn Pillow matplotlib
+          python party-platforms-source/scripts/build_platform_publication.py --output public/party-platforms
 
       # Political ads are unpublished until explicitly approved for publication.
       - name: Build and upload site

@@ -1,6 +1,7 @@
 ---
 import PlatformLayout from '../layouts/PlatformLayout.astro';
 import PlatformFigure from '../components/PlatformFigure.astro';
+import DensityExplorer from '../components/DensityExplorer.astro';
 import { platforms as data, organizations, platformFigure, initialIssue } from '../lib/platform-analysis';
 
 const number = (value: number) => value.toLocaleString('en-US');
@@ -154,23 +155,26 @@ const partyOverviews = [
 	<section id="density" class="reader-section" aria-labelledby="density-title">
 		<h2 id="density-title">Where the language differs</h2>
 		<p>These KDE maps compare the concentration of each organization's language in a shared
-			semantic space. Numbered examples connect the patterns to actual source claims.
+			semantic space. Explore the issues and source statements behind the points.
 			Similar language does not imply the same policy position.</p>
 		<div id="density-picker" class="issue-picker" hidden>
 			<label>Organizations
 				<select id="density-pair">{densityPairs.map(pair =>
 					<option value={pair.id}>{pair.title}</option>)}</select>
 			</label>
-			<label>Examples
+			<label>Original examples
 				<select id="density-page"><option value="1">First set</option>
 					<option value="2">Second set</option></select>
 			</label>
 		</div>
+		<DensityExplorer />
 		{densityPairs.map(pair => [1, 2].map(page => (
 			<details class="density-chart" data-pair={pair.id} data-page={page}
 				open={pair.id === densityPairs[0].id && page === 1}>
 				<summary>{pair.title}: example set {page}</summary>
 				<h3 class="chart-heading">{pair.title}</h3>
+				<details class="density-original" open>
+				<summary>Original annotated map and numbered source examples</summary>
 				<PlatformFigure figure={platformFigure('expanded/density_details', `${pair.id}_${page}`)}
 					caption={`${pair.title}: expanded language density, example set ${page}. Colors show natural-log density ratios; markers locate examples, not region boundaries.`} />
 				<details class="mapped-evidence">
@@ -186,11 +190,13 @@ const partyOverviews = [
 						</li>
 					))}</ol>
 				</details>
+				</details>
 			</details>
 		)))}
 		<p class="qualification">Density is estimated in the shared {data.summary.views.expanded.dimensions}-dimensional
-			space; the two-dimensional map is a display only. Keywords are retrieval aids,
-			not reviewed subject labels. This is an exploratory comparison, not a measure of agreement.</p>
+			space; the two-dimensional map is a display only. Hover labels come from the
+			reviewed pooled issue clusters; the original numbered examples identify local KDE regions.
+			This is an exploratory comparison, not a measure of agreement.</p>
 	</section>
 
 	<section id="issues" class="reader-section" aria-labelledby="issues-title">

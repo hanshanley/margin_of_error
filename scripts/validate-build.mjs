@@ -210,6 +210,58 @@ const platformSources = load(await text('party-platforms/sources/index.html'));
 const platformPages = [platforms, platformSources];
 const platformData = JSON.parse(await text('party-platforms/analysis.json'));
 const platformManifest = JSON.parse(await text('party-platforms/publication-manifest.json'));
+const densityMap = JSON.parse(await text('party-platforms/density-map.json'));
+assert.equal(densityMap.schema_version, 1);
+assert.equal(densityMap.view, 'expanded');
+assert.deepEqual(densityMap.groups, ['democratic', 'republican', 'dsa']);
+assert.equal(densityMap.points.length, platformData.summary.claims);
+assert.equal(new Set(densityMap.points.map(point => point[0])).size, densityMap.points.length);
+assert.equal(densityMap.topics.length, 24);
+assert.equal(densityMap.topics.filter(topic => topic.displayed).length, platformData.topics.length);
+assert.ok(Number.isFinite(densityMap.color_bound) && densityMap.color_bound > 0);
+assert.ok(densityMap.limits.every(([low, high]) => Number.isFinite(low) && Number.isFinite(high) && high > low));
+for (const point of densityMap.points) {
+	assert.equal(point.length, 8);
+	assert.ok(point.slice(1).every(Number.isFinite));
+	assert.ok(Number.isInteger(point[3]) && point[3] >= 0 && point[3] < densityMap.topics.length);
+	assert.ok(Number.isInteger(point[4]) && point[4] >= 0 && point[4] < densityMap.groups.length);
+	assert.ok(point[1] > densityMap.limits[0][0] && point[1] < densityMap.limits[0][1]);
+	assert.ok(point[2] > densityMap.limits[1][0] && point[2] < densityMap.limits[1][1]);
+}
+assert.equal(platforms('#density-explorer').attr('data-map-src'),
+	`/party-platforms/density-map.json?source=${platformData.source_revision}`);
+assert.equal(platforms('#density-canvas[tabindex="0"]').length, 1);
+assert.equal(platforms('#density-topic option').length, densityMap.topics.length);
+assert.equal(platforms('.density-original[open]').length, 6, 'Original maps must survive unavailable JavaScript or data');
+const mappedClaims = new Map(densityMap.points.map(point => [point[0], point]));
+for (const [index, topic] of densityMap.topics.entries()) {
+	const panel = platforms(`.density-topic[data-topic="${topic.topic_id}"]`);
+	assert.equal(panel.find('h3').text(), topic.title);
+	assert.equal(panel.find('.density-topic-summary').text(), topic.summary);
+	const reviewed = platformData.positions.find(position => position.topic_id === topic.topic_id);
+	assert.deepEqual(topic.positions, reviewed?.groups ?? {});
+	assert.deepEqual(topic.differences, reviewed?.pairs ?? {});
+	for (const [group, position] of Object.entries(topic.positions)) {
+		assert.equal(panel.find(`.density-position[data-group="${group}"] .density-position-summary`).text(),
+			position.summary);
+		assert.ok(position.supporting_claim_ids.every(id =>
+			topic.examples.some(example => example.claim_id === id && example.group === group)));
+	}
+	for (const [pair, difference] of Object.entries(topic.differences)) {
+		assert.equal(panel.find(`.density-difference[data-pair="${pair}"]`).text(), difference.summary);
+		assert.ok(difference.supporting_claim_ids.every(id =>
+			topic.examples.some(example => example.claim_id === id && pair.split('_vs_').includes(example.group))));
+	}
+	for (const example of topic.examples) {
+		const point = mappedClaims.get(example.claim_id);
+		assert.equal(point[3], index);
+		assert.equal(densityMap.groups[point[4]], example.group);
+		const rendered = panel.find(`.density-source-example[data-claim="${example.claim_id}"]`);
+		assert.equal(rendered.find('blockquote p').text(), example.claim_text);
+		assert.equal(rendered.find('.claim-source a').attr('href'), example.source_url);
+		assert.equal(rendered.find('details p').text(), example.evidence);
+	}
+}
 assert.ok(!platformManifest.preview_only && !platformData.preview_only, 'A draft preview cannot be published');
 const platformCoverPath = '/artifacts/party-platforms/three-platform-booklets-one-conversation.png';
 const platformCoverBytes = await readFile(new URL(platformCoverPath.slice(1), root));
