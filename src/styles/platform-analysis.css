@@ -26,6 +26,22 @@
 .platform-page h3 { font-size: 1.2rem; line-height: 1.3; }
 .platform-page section > p { max-width: 900px; }
 .platform-page .qualification { max-width: 900px; color: var(--muted); }
+.platform-page .section-links { display: flex; flex-wrap: wrap; gap: 0.7rem 1.8rem; font: 0.9rem var(--sans); }
+.platform-page #overview { margin-top: 1.8rem; padding-top: 0; border-top: 0; }
+.platform-page #overview > h2 { margin-top: 0; }
+.platform-page .view-summary,
+.platform-page .subject-summary { max-width: 900px; line-height: 1.65; }
+.platform-page .overview-subheading { margin-top: 2rem; }
+.platform-page .party-summary { border-top: 2px solid var(--rule); padding-top: 0.7rem; font-size: 0.95rem; }
+.platform-page .party-summary[data-party="democratic"] { border-color: #3d7699; }
+.platform-page .party-summary[data-party="republican"] { border-color: #c65a3b; }
+.platform-page .party-summary[data-party="dsa"] { border-color: #c39a36; }
+.platform-page .summary-label { margin-top: 1.5rem; font: 600 0.8rem var(--sans); color: var(--muted); }
+.platform-page .party-summary blockquote { font-size: 0.95rem; }
+.platform-page .mobile-overview { display: none; }
+.platform-page .wide-chart { overflow-x: auto; }
+.platform-page .mapped-evidence li { padding-block: 0.6rem; max-width: 900px; }
+.platform-page .mapped-evidence li > p:first-child { margin-top: 0; }
 
 .platform-page .issue-picker {
 	display: grid;
@@ -58,7 +74,9 @@
 .js .platform-page .issue-title { display: block; }
 .platform-page .issue-panel .platform-figure { max-width: 960px; margin-inline: auto; }
 .js .platform-page .issue-panel > summary,
-.js .platform-page .issue-chart > summary { display: none; }
+.js .platform-page .issue-chart > summary,
+.js .platform-page .overview-chart > summary,
+.js .platform-page .density-chart > summary { display: none; }
 .platform-page .party-summaries { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
 .platform-page .party-summaries ol { padding-left: 1.4rem; font-size: 0.95rem; }
 .platform-page .party-summaries li { margin-bottom: 0.7rem; }
@@ -82,7 +100,8 @@
 .platform-page code { font-size: 0.8em; }
 
 @media (min-width: 701px) {
-	.js .platform-page .issue-title {
+	.js .platform-page .issue-title,
+	.js .platform-page .chart-heading {
 		position: absolute;
 		width: 1px;
 		height: 1px;
@@ -102,4 +121,15 @@
 	.platform-page td { padding: 0.4rem 0.2rem; }
 	.platform-page table { font-size: 0.75rem; table-layout: fixed; }
 	.platform-page table th:first-child { width: 42%; }
+	.platform-page .wide-chart { display: none; }
+	.platform-page .mobile-overview { display: block; }
+	.platform-page .mobile-topic { margin-block: 1.5rem; }
+	.platform-page .mobile-topic h3 { font-size: 0.95rem; font-weight: 400; margin-bottom: 0.7rem; }
+	.platform-page .mobile-value { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 4.5rem; gap: 0.5rem; align-items: center; margin-block: 0.4rem; font: 0.75rem var(--sans); }
+	.platform-page .mobile-track { position: relative; height: 0.65rem; }
+	.platform-page .mobile-track > span { position: absolute; height: 100%; }
+	.platform-page .mobile-track.difference::before { content: ''; position: absolute; left: 50%; height: 1.15rem; top: -0.25rem; border-left: 1px solid var(--rule); }
+	.platform-page .mobile-number { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+	.platform-page .density-chart .platform-figure > a { display: block; overflow: hidden; aspect-ratio: 1.05; }
+	.platform-page .density-chart .platform-figure img { width: 200%; max-width: none; margin: -20% 0 0 -7%; }
 }

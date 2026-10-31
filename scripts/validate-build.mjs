@@ -251,9 +251,67 @@ assert.equal(platformSources('#topic-list > .topic').length, platformData.topics
 assert.equal(platforms('#issue-topic option').length, platformData.topics.length);
 assert.equal(platforms('.issue-panel').length, platformData.topics.length);
 assert.equal(platforms('.issue-chart').length, 2 * platformData.topics.length);
+assert.equal(platforms('.overview-chart').length, 9);
+assert.equal(platforms('.density-chart').length, 6);
+assert.equal(platforms('.party-summary').length, 3);
+for (const view of ['topic_distribution', 'vs_rest_emphasis', 'pairwise_emphasis']) {
+	for (const page of [1, 2, 3]) {
+		const name = `${view}${page === 1 ? '' : `_${page}`}`;
+		const figure = platformData.figures.find(entry => entry.view === 'expanded' && entry.name === name);
+		const chart = platforms(`.overview-chart[data-kind="${view}"][data-page="${page}"]`);
+		assert.equal(chart.find('a[data-original-chart]').attr('href'), `/party-platforms/${figure.path}`);
+		assert.ok(chart.find('.view-summary').text().length > 80);
+		const ordered = [...platformData.topics].sort((a, b) =>
+			['democratic', 'republican', 'dsa'].reduce((sum, group) => sum +
+				Number(b.shares.find(row => row.view === 'expanded' && row.group === group).share) -
+				Number(a.shares.find(row => row.view === 'expanded' && row.group === group).share), 0)
+		).slice((page - 1) * 8, page * 8);
+		assert.deepEqual(chart.find('.mobile-topic').toArray().map(topic =>
+			platforms(topic).attr('data-topic')), ordered.map(topic => topic.topic_id));
+		for (const topic of ordered) {
+			const cells = chart.find(`.mobile-topic[data-topic="${topic.topic_id}"] .mobile-value`);
+			assert.equal(cells.length, 3);
+			const columns = view === 'pairwise_emphasis'
+				? [['democratic', 'republican'], ['democratic', 'dsa'], ['republican', 'dsa']]
+				: ['democratic', 'republican', 'dsa'].map(group => [group,
+					view === 'topic_distribution' ? '' : ['democratic', 'republican', 'dsa']
+						.filter(other => other !== group).join(',')]);
+			for (const [index, [group, baseline]] of columns.entries()) {
+				const cell = cells.eq(index);
+				assert.equal(cell.attr('data-group'), group);
+				assert.equal(cell.attr('data-baseline'), baseline);
+				const share = id => Number(topic.shares.find(row => row.view === 'expanded' && row.group === id).share);
+				const others = baseline ? baseline.split(',') : [];
+				const expected = share(group) - (others.length
+					? others.reduce((sum, other) => sum + share(other), 0) / others.length : 0);
+				assert.ok(Math.abs(Number(cell.attr('data-value')) - expected) < 1e-12);
+				assert.equal(cell.find('.mobile-number').text(),
+					`${view !== 'topic_distribution' && expected > 0 ? '+' : ''}${(100 * expected).toFixed(1)}${view === 'topic_distribution' ? '%' : ' pp'}`);
+			}
+		}
+	}
+}
+for (const pair of ['democratic_vs_republican', 'democratic_vs_dsa', 'republican_vs_dsa']) {
+	for (const page of [1, 2]) {
+		const figure = platformData.figures.find(entry =>
+			entry.view === 'expanded/density_details' && entry.name === `${pair}_${page}`);
+		const chart = platforms(`.density-chart[data-pair="${pair}"][data-page="${page}"]`);
+		assert.equal(chart.find('a[data-original-chart]').attr('href'), `/party-platforms/${figure.path}`);
+		const regions = platformData.density_regions.filter(region =>
+			region.view === 'expanded' && region.figure === `density_details/${pair}_${page}.png`);
+		assert.equal(regions.length, 3);
+		assert.equal(chart.find('.mapped-evidence li').length, regions.length);
+		for (const [index, region] of regions.entries()) {
+			const example = chart.find('.mapped-evidence li').eq(index);
+			assert.equal(example.find('p').first().text(), region.example_text);
+			assert.equal(example.find('a').attr('href'), region.source_url);
+		}
+	}
+}
 for (const topic of platformData.topics) {
 	const issue = platforms(`#issue-${topic.topic_id}`);
 	assert.equal(issue.children('summary').text(), topic.title);
+	assert.equal(issue.children('.subject-summary').text(), topic.summary);
 	for (const kind of ['overall', 'time']) {
 		const chart = issue.find(`.issue-chart[data-view="expanded"][data-kind="${kind}"]`);
 		assert.equal(chart.find('img').length, 1);
@@ -271,7 +329,7 @@ for (const topic of platformData.topics) {
 		assert.equal(platformSources(`#${topic.topic_id} tbody tr`).eq(index).find('td').first().text(), expectedShare);
 	}
 }
-assert.equal(platforms('.platform-figure').length, 2 * platformData.topics.length);
+assert.equal(platforms('.platform-figure').length, 2 * platformData.topics.length + 15);
 assert.equal(platformSources('.platform-figure').length, 0);
 assert.ok(platformPages.every(page => page('iframe').length === 0));
 assert.equal(platformSources('#topic-query[type=search]').length, 1);
