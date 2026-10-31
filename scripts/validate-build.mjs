@@ -207,14 +207,29 @@ assert.equal(platformAnalysis.find('img').attr('loading'), 'eager');
 const platforms = load(await text('party-platforms/index.html'));
 const platformData = JSON.parse(await text('party-platforms/analysis.json'));
 const platformManifest = JSON.parse(await text('party-platforms/publication-manifest.json'));
+assert.ok(!platformManifest.preview_only && !platformData.preview_only, 'A draft preview cannot be published');
+const initialIssueId = platforms('#issue-topic option[selected]').attr('value');
 const platformPreview = platformData.figures.find(figure =>
-	figure.view === 'expanded' && figure.name === 'topic_distribution');
+	figure.view === 'expanded/issues' && figure.name === `${initialIssueId}_overall`);
+assert.ok(platformPreview, 'Interactive analysis preview must show an individual issue');
 assert.equal(platformAnalysis.find('img').attr('src'),
 	`/party-platforms/${(platformPreview.display_path ?? platformPreview.path).replace(/\.png$/, '.website.png')}`);
 assert.equal(platforms('h1').text(), 'National party platforms');
 assert.equal(platforms('link[rel=canonical]').attr('href'),
 	'https://www.themarginoferror.com/party-platforms/');
 assert.equal(platforms('#topic-list > .topic').length, 24);
+assert.equal(platforms('#issue-topic option').length, platformData.topics.length);
+assert.equal(platforms('.issue-panel').length, platformData.topics.length);
+assert.equal(platforms('.issue-chart').length, 4 * platformData.topics.length);
+for (const topic of platformData.topics) {
+	const issue = platforms(`#issue-${topic.topic_id}`);
+	assert.equal(issue.children('summary').text(), topic.title);
+	for (const view of ['expanded', 'strict']) {
+		for (const kind of ['overall', 'time']) {
+			assert.equal(issue.find(`.issue-chart[data-view="${view}"][data-kind="${kind}"] img`).length, 1);
+		}
+	}
+}
 assert.equal(platforms('.platform-figure').length, platformData.figures.length);
 assert.equal(platforms('iframe').length, 0);
 assert.equal(platforms('#topic-query[type=search]').length, 1);

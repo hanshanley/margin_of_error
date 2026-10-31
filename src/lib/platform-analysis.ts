@@ -52,6 +52,7 @@ interface PeriodFit {
 }
 
 interface Publication {
+	preview_only?: boolean;
 	source_revision: string;
 	summary: {
 		claims: number;
@@ -85,3 +86,6 @@ export const platformFigure = (view: string, name: string) => {
 	if (!figure) throw new Error(`Missing platform figure: ${view}/${name}`);
 	return figure;
 };
+export const initialIssue = platforms.topics.find(topic => topic.title.includes('Labor Rights')) ??
+	platforms.topics[0];
+export const platformPreview = platformFigure('expanded/issues', `${initialIssue.topic_id}_overall`);
