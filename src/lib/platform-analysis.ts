@@ -88,4 +88,9 @@ export const platformFigure = (view: string, name: string) => {
 };
 export const initialIssue = platforms.topics.find(topic => topic.title.includes('Labor Rights')) ??
 	platforms.topics[0];
-export const platformPreview = platformFigure('expanded/issues', `${initialIssue.topic_id}_overall`);
+export const platformCover = {
+	src: '/artifacts/party-platforms/three-platform-booklets-one-conversation.png',
+	alt: 'Illustration of Democratic, Republican, and DSA platform booklets linked by strips of text.',
+	width: 1672,
+	height: 941,
+};
