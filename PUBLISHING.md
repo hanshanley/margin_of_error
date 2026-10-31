@@ -80,10 +80,12 @@ variants are used when present; both those originals and the Substack figures
 remain byte-preserved. The existing website export maps their registered paper
 colours to the current publication paper. Topic search covers representative packets, not
 the entire downloaded corpus. This is an analysis tool, not a new authored essay.
-The primary comparison selects one topic, overall/over-time emphasis, and
-expanded/adopted-only sources. Each of the 24 pooled topics requires all four
-PNG/SVG chart pairs; retired dense timeline panels are not publication inputs.
-All subjects and chart modes remain available through native disclosures without
+The primary comparison selects one topic and overall/over-time emphasis.
+Only the expanded analysis is presented: do not render adopted-only controls,
+strict charts or strict share columns. Each of the 24 pooled topics shows its
+two expanded chart modes. The original export retains all four PNG/SVG pairs
+for research reproducibility; retired dense timeline panels are not publication inputs.
+All displayed subjects and chart modes remain available through native disclosures without
 JavaScript. Draft local fixtures must set `preview_only: true` in both the
 analysis and manifest: the page identifies them, and production validation
 rejects them. Replace a draft with a fresh verified export before release.
