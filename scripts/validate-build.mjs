@@ -312,8 +312,12 @@ assert.deepEqual(platforms('[data-overview-page]').toArray().map(button =>
 assert.equal(platforms('[data-overview-page][aria-current="page"]').attr('data-overview-page'), '1');
 assert.equal(platforms('#overview-previous[disabled], #overview-next:not([disabled])').length, 2);
 assert.equal(platforms('#overview-range[role="status"][aria-live="polite"]').length, 1);
-assert.deepEqual(platforms('.subject-index [data-overall-issue]').toArray().map(link =>
-	platforms(link).attr('data-overall-issue')), [...platformData.topics].sort((a, b) =>
+assert.equal(platforms('#overview-subject-previous[disabled], #overview-subject-next:not([disabled])').length, 2);
+assert.equal(platforms('#overview-subject-range[role="status"][aria-live="polite"]').text(), '1 of 21');
+assert.equal(platforms('#overview-pagination[hidden], #issue-topic[hidden]').length, 2);
+assert.equal(platforms('#issue-previous, #issue-next').length, 2);
+assert.deepEqual(platforms('.subject-index [data-overview-subject]').toArray().map(link =>
+	platforms(link).attr('data-overview-subject')), [...platformData.topics].sort((a, b) =>
 		['democratic', 'republican', 'dsa'].reduce((sum, group) => sum +
 			Number(b.shares.find(row => row.view === 'expanded' && row.group === group).share) -
 			Number(a.shares.find(row => row.view === 'expanded' && row.group === group).share), 0)
@@ -351,6 +355,13 @@ for (const view of ['topic_distribution', 'vs_rest_emphasis', 'pairwise_emphasis
 				assert.ok(Math.abs(Number(cell.attr('data-value')) - expected) < 1e-12);
 				assert.equal(cell.find('.mobile-number').text(),
 					`${view !== 'topic_distribution' && expected > 0 ? '+' : ''}${(100 * expected).toFixed(1)}${view === 'topic_distribution' ? '%' : ' pp'}`);
+				if (view === 'topic_distribution') {
+					const position = platformData.positions.find(position => position.topic_id === topic.topic_id);
+					assert.equal(cell.find('.group-position').text(), position.groups[group].summary);
+					assert.ok(cell.find('.mobile-number').attr('style').startsWith('left:'));
+				} else {
+					assert.equal(cell.find('.group-position').length, 0, 'Share gaps must not imply reviewed positions');
+				}
 			}
 		}
 	}

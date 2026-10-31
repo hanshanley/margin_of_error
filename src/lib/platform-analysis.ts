@@ -80,6 +80,10 @@ interface Publication {
 	};
 	topic_summary: { assistant_revised_labels: number };
 	topics: Topic[];
+	positions: {
+		topic_id: string;
+		groups: Record<string, { summary: string }>;
+	}[];
 	figures: PlatformFigure[];
 	density_regions: DensityRegion[];
 	downloads: { path: string; bytes: number }[];

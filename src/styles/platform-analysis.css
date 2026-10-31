@@ -34,6 +34,7 @@
 .platform-page .overview-subheading { margin-top: 2rem; }
 .platform-page .pagination-label { display: block; margin-bottom: 0.5rem; font: 0.85rem var(--sans); }
 .platform-page .overview-pages { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.platform-page .overview-pages .subject-count { align-self: center; padding-inline: 0.5rem; font: 0.85rem var(--sans); color: var(--muted); }
 .platform-page .overview-pages button { border: 1px solid var(--rule); background: transparent; color: var(--ink); padding: 0.5rem 0.7rem; font: 0.85rem var(--sans); cursor: pointer; }
 .platform-page .overview-pages button[aria-current="page"] { border-color: var(--ink); background: var(--ink); color: var(--paper); }
 .platform-page .overview-pages button:disabled { opacity: 0.4; cursor: default; }
@@ -48,6 +49,18 @@
 .platform-page .summary-label { margin-top: 1.5rem; font: 600 0.8rem var(--sans); color: var(--muted); }
 .platform-page .party-summary blockquote { font-size: 0.95rem; }
 .platform-page .mobile-overview { display: none; }
+.platform-page .position-overview { display: block; }
+.platform-page .overview-chart[data-kind="topic_distribution"] .wide-chart { display: none; }
+.platform-page .position-overview .mobile-topic { margin: 0; padding-block: 1.5rem; border-top: 1px solid var(--rule); }
+.platform-page .position-overview h3 { margin: 0 0 0.8rem; font-size: 1.15rem; }
+.platform-page .position-overview h3 a { color: var(--ink); text-decoration: none; }
+.platform-page .position-overview h3 a:hover { text-decoration: underline; }
+.platform-page .position-overview .mobile-value { display: grid; grid-template-columns: 6.75rem 12rem minmax(0, 1fr); gap: 1.5rem; align-items: center; padding-block: 0.65rem; font: 0.95rem/1.5 var(--sans); }
+.platform-page .position-overview .mobile-party { font-weight: 600; }
+.platform-page .position-overview .mobile-track { position: relative; width: 8rem; height: 0.65rem; }
+.platform-page .position-overview .mobile-fill { position: absolute; height: 100%; }
+.platform-page .position-overview .mobile-number { position: absolute; top: 50%; transform: translate(5px, -50%); font: 0.85rem var(--sans); color: var(--ink); white-space: nowrap; }
+.platform-page .position-overview .group-position { margin: 0; }
 .platform-page .wide-chart { overflow-x: auto; }
 .platform-page .mapped-evidence li { padding-block: 0.6rem; max-width: 900px; }
 .platform-page .mapped-evidence li > p:first-child { margin-top: 0; }
@@ -144,6 +157,11 @@
 }
 
 @media (max-width: 700px) {
+	.platform-page .position-overview .mobile-value { grid-template-columns: 6rem minmax(0, 1fr); gap: 0.5rem 1rem; }
+	.platform-page .position-overview .mobile-track { width: calc(100% - 3.5rem); }
+	.platform-page .position-overview .mobile-track > .mobile-number { height: auto; }
+	.platform-page .position-overview .group-position { grid-column: 1 / -1; }
+	.platform-page .position-overview .mobile-topic h3 { font-size: 1.15rem; }
 	.platform-page .subject-index ul { columns: 1; }
 	.platform-page .density-interactive-grid { grid-template-columns: 1fr; gap: 1rem; }
 	.platform-page .density-explorer-controls { align-items: start; flex-direction: column; }

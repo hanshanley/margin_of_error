@@ -25,6 +25,11 @@ const colors: Record<string, string> = { democratic: '#3d7699', republican: '#c6
 const overviewTopics = [...data.topics].sort((a, b) =>
 	organizations.reduce((sum, group) => sum + Number(share(b, group.id)?.share) -
 		Number(share(a, group.id)?.share), 0));
+const groupPosition = (topic: string, group: string) => {
+	const summary = data.positions.find(position => position.topic_id === topic)?.groups[group]?.summary;
+	if (!summary) throw new Error(`Missing reviewed group position: ${topic}/${group}`);
+	return summary;
+};
 const mobileColumns = (kind: string) => kind === 'pairwise_emphasis' ? [
 	{ group: 'democratic', baseline: ['republican'] },
 	{ group: 'democratic', baseline: ['dsa'] },
@@ -80,7 +85,16 @@ const partyOverviews = [
 				<select id="overview-kind">{overviewViews.map(view =>
 					<option value={view.id}>{view.title}</option>)}</select>
 			</label>
-			<div class="overview-pagination">
+			<div>
+			<div id="overview-subject-controls">
+				<span class="pagination-label">Issue</span>
+				<nav class="overview-pages" aria-label="Browse issues">
+					<button type="button" id="overview-subject-previous" data-overview-step="-1" disabled>Previous issue</button>
+					<span id="overview-subject-range" class="subject-count" role="status" aria-live="polite">1 of {data.topics.length}</span>
+					<button type="button" id="overview-subject-next" data-overview-step="1">Next issue</button>
+				</nav>
+			</div>
+			<div id="overview-pagination" class="overview-pagination" hidden>
 				<span class="pagination-label">Subjects</span>
 				<nav class="overview-pages" aria-label="Browse subject pages">
 					<button type="button" id="overview-previous" disabled>Previous</button>
@@ -96,11 +110,12 @@ const partyOverviews = [
 				<p id="overview-range" class="overview-range" role="status" aria-live="polite"
 					data-total={data.topics.length}>Subjects 1–8 of {data.topics.length}</p>
 			</div>
+			</div>
 		</div>
-		<details class="subject-index">
+		<details id="overview-subject-index" class="subject-index">
 			<summary>Browse all {data.topics.length} subjects by name</summary>
 			<ul>{overviewTopics.map(topic => (
-				<li><a href={`#issue-${topic.topic_id}`} data-overall-issue={topic.topic_id}>{topic.title}</a></li>
+				<li><a href={`#issue-${topic.topic_id}`} data-overview-subject={topic.topic_id}>{topic.title}</a></li>
 			))}</ul>
 		</details>
 		{overviewViews.map(view => [1, 2, 3].map(page => (
@@ -108,28 +123,41 @@ const partyOverviews = [
 				open={view.id === 'topic_distribution' && page === 1}>
 				<summary>{view.title}: page {page}</summary>
 				<p class="view-summary">{view.summary}</p>
-				<div class="mobile-overview" aria-label={`${view.title}, page ${page}`}>
+				<div class:list={['mobile-overview', { 'position-overview': view.id === 'topic_distribution' }]}
+					aria-label={`${view.title}, page ${page}`}>
 					{overviewTopics.slice((page - 1) * 8, page * 8).map(topic => (
 						<div class="mobile-topic" data-topic={topic.topic_id}>
 							<h3><a href={`#issue-${topic.topic_id}`} data-overall-issue={topic.topic_id}>{topic.title}</a></h3>
 							{mobileColumns(view.id).map(column => {
 								const value = mobileValue(topic, column);
 								const difference = view.id !== 'topic_distribution';
+								const proportion = Math.abs(value) / mobileBounds[view.id];
 								const label = `${shortNames[column.group]}${column.baseline.length
 									? ` minus ${column.baseline.length === 2 ? 'others' : shortNames[column.baseline[0]]}` : ''}`;
 								return <div class="mobile-value" data-group={column.group}
 									data-baseline={column.baseline.join(',')} data-value={value}>
 									<span class="mobile-party">{label}</span>
-									<span class:list={['mobile-track', { difference }]} aria-hidden="true">
-										<span style={`background:${value < 0 ? column.baseline.length === 2 ? '#77736d' : colors[column.baseline[0]] : colors[column.group]};width:${Math.abs(value) / mobileBounds[view.id] * (difference ? 50 : 100)}%;left:${difference ? value < 0 ? 50 - Math.abs(value) / mobileBounds[view.id] * 50 : 50 : 0}%`}></span>
+									<span class:list={['mobile-track', { difference }]} aria-hidden={difference ? 'true' : undefined}>
+										<span class="mobile-fill" style={`background:${value < 0 ? column.baseline.length === 2 ? '#77736d' : colors[column.baseline[0]] : colors[column.group]};width:${proportion * (difference ? 50 : 100)}%;left:${difference ? value < 0 ? 50 - proportion * 50 : 50 : 0}%`}></span>
+										{!difference && <span class="mobile-number" style={`left:${proportion * 100}%;color:${colors[column.group]}`}>{(100 * value).toFixed(1)}%</span>}
 									</span>
-									<span class="mobile-number">{difference && value > 0 ? '+' : ''}{(100 * value).toFixed(1)}{difference ? ' pp' : '%'}</span>
+									{difference
+										? <span class="mobile-number">{value > 0 ? '+' : ''}{(100 * value).toFixed(1)} pp</span>
+										: <p class="group-position">{groupPosition(topic.topic_id, column.group)}</p>}
 								</div>;
 							})}
 						</div>
 					))}
-					<p class="caveat">Same scale across subjects. {view.id !== 'topic_distribution' && 'pp = percentage points. '}
-						<a href={`/party-platforms/${platformFigure('expanded', `${view.id}${page === 1 ? '' : `_${page}`}`).path}`}>Full chart and sensitivity markers</a>.</p>
+					<p class="caveat">Same scale across subjects. {view.id !== 'topic_distribution'
+						? 'pp = percentage points. '
+						: "Summaries describe sampled documents across years, not every member's views or a current consensus. "}
+						<a href={`/party-platforms/${platformFigure('expanded', `${view.id}${page === 1 ? '' : `_${page}`}`).path}?source=${data.source_revision}`}>
+							{view.id === 'topic_distribution' ? 'Full-size PNG comparison' : 'Full chart and sensitivity markers'}
+						</a>.</p>
+					{view.id === 'topic_distribution' && <nav class="overview-pages" data-overview-footer hidden aria-label="Continue through issues">
+						<button type="button" data-overview-step="-1">Previous issue</button>
+						<button type="button" data-overview-step="1">Next issue</button>
+					</nav>}
 				</div>
 				<div class="wide-chart" tabindex="0" role="region" aria-label={`${view.title}, page ${page}`}>
 					<PlatformFigure figure={platformFigure('expanded', `${view.id}${page === 1 ? '' : `_${page}`}`)}
@@ -221,13 +249,21 @@ const partyOverviews = [
 		<h2 id="issues-title">Explore a subject</h2>
 		<p>Read the subject summary, compare attention across organizations, and follow it over time.</p>
 		<div id="issue-picker" class="issue-picker" hidden>
-			<label>Subject
-				<select id="issue-topic">
-					{data.topics.map(topic => (
+			<div>
+				<span class="pagination-label">Issue</span>
+				<nav class="overview-pages" aria-label="Browse individual issue charts">
+					<button type="button" id="issue-previous">Previous issue</button>
+					<span id="issue-range" class="subject-count" role="status" aria-live="polite">
+						{overviewTopics.findIndex(topic => topic.topic_id === initialIssue.topic_id) + 1} of {data.topics.length}
+					</span>
+					<button type="button" id="issue-next">Next issue</button>
+				</nav>
+				<select id="issue-topic" hidden aria-label="Selected issue">
+					{overviewTopics.map(topic => (
 						<option value={topic.topic_id} selected={topic.topic_id === initialIssue.topic_id}>{topic.title}</option>
 					))}
 				</select>
-			</label>
+			</div>
 			<label>Comparison
 				<select id="issue-kind"><option value="overall">Overall emphasis</option>
 					<option value="time">Over time</option></select>
@@ -285,14 +321,35 @@ const partyOverviews = [
 	const overviewPrevious = document.querySelector<HTMLButtonElement>('#overview-previous')!;
 	const overviewNext = document.querySelector<HTMLButtonElement>('#overview-next')!;
 	const overviewRange = document.querySelector<HTMLElement>('#overview-range')!;
+	const subjectIndex = document.querySelector<HTMLDetailsElement>('#overview-subject-index')!;
+	const overviewSubjects = [...subjectIndex.querySelectorAll<HTMLAnchorElement>('[data-overview-subject]')];
+	const subjectSteps = [...document.querySelectorAll<HTMLButtonElement>('[data-overview-step]')];
+	const subjectRange = document.querySelector<HTMLElement>('#overview-subject-range')!;
+	let overviewSubject = 0;
 	let overviewPage = 1;
 	const densityPair = document.querySelector<HTMLSelectElement>('#density-pair')!;
 	const densityPage = document.querySelector<HTMLSelectElement>('#density-page')!;
 	const updateComparisons = () => {
+		const positions = overviewKind.value === 'topic_distribution';
+		const page = positions ? Math.floor(overviewSubject / 8) + 1 : overviewPage;
 		for (const chart of document.querySelectorAll<HTMLDetailsElement>('.overview-chart')) {
-			chart.hidden = chart.dataset.kind !== overviewKind.value || chart.dataset.page !== String(overviewPage);
+			chart.hidden = chart.dataset.kind !== overviewKind.value || chart.dataset.page !== String(page);
 			if (!chart.hidden) chart.open = true;
 		}
+		document.querySelector<HTMLElement>('#overview-subject-controls')!.hidden = !positions;
+		document.querySelector<HTMLElement>('#overview-pagination')!.hidden = positions;
+		for (const topic of document.querySelectorAll<HTMLElement>('.position-overview .mobile-topic')) {
+			topic.hidden = topic.dataset.topic !== overviewSubjects[overviewSubject].dataset.overviewSubject;
+		}
+		for (const [index, link] of overviewSubjects.entries()) {
+			if (index === overviewSubject) link.setAttribute('aria-current', 'true');
+			else link.removeAttribute('aria-current');
+		}
+		for (const button of subjectSteps) {
+			button.disabled = Number(button.dataset.overviewStep) < 0
+				? overviewSubject === 0 : overviewSubject === overviewSubjects.length - 1;
+		}
+		subjectRange.textContent = `${overviewSubject + 1} of ${overviewSubjects.length}`;
 		for (const button of overviewPages) {
 			if (Number(button.dataset.overviewPage) === overviewPage) {
 				button.setAttribute('aria-current', 'page');
@@ -325,7 +382,24 @@ const partyOverviews = [
 		overviewPage = Math.min(overviewPages.length, overviewPage + 1);
 		updateComparisons();
 	});
+	for (const button of subjectSteps) {
+		button.addEventListener('click', () => {
+			overviewSubject = Math.max(0, Math.min(overviewSubjects.length - 1, overviewSubject + Number(button.dataset.overviewStep)));
+			updateComparisons();
+		});
+	}
+	for (const [index, link] of overviewSubjects.entries()) {
+		link.addEventListener('click', event => {
+			event.preventDefault();
+			overviewSubject = index;
+			overviewKind.value = 'topic_distribution';
+			subjectIndex.open = false;
+			updateComparisons();
+			document.querySelector<HTMLElement>('.overview-chart:not([hidden]) .mobile-topic:not([hidden]) h3 a')?.focus();
+		});
+	}
 	document.querySelector<HTMLElement>('#overview-picker')!.hidden = false;
+	for (const footer of document.querySelectorAll<HTMLElement>('[data-overview-footer]')) footer.hidden = false;
 	document.querySelector<HTMLElement>('#density-picker')!.hidden = false;
 	if (window.matchMedia('(max-width: 700px)').matches) {
 		for (const evidence of document.querySelectorAll<HTMLDetailsElement>('.mapped-evidence')) evidence.open = true;
@@ -335,7 +409,13 @@ const partyOverviews = [
 	const subject = document.querySelector<HTMLSelectElement>('#issue-topic')!;
 	const kind = document.querySelector<HTMLSelectElement>('#issue-kind')!;
 	const panels = [...document.querySelectorAll<HTMLDetailsElement>('.issue-panel')];
+	const issuePrevious = document.querySelector<HTMLButtonElement>('#issue-previous')!;
+	const issueNext = document.querySelector<HTMLButtonElement>('#issue-next')!;
+	const issueRange = document.querySelector<HTMLElement>('#issue-range')!;
 	const update = () => {
+		issuePrevious.disabled = subject.selectedIndex === 0;
+		issueNext.disabled = subject.selectedIndex === subject.options.length - 1;
+		issueRange.textContent = `${subject.selectedIndex + 1} of ${subject.options.length}`;
 		for (const panel of panels) {
 			panel.hidden = panel.dataset.topic !== subject.value;
 			if (!panel.hidden) panel.open = true;
@@ -366,6 +446,14 @@ const partyOverviews = [
 	};
 	picker.hidden = false;
 	for (const control of [subject, kind]) control.addEventListener('change', update);
+	issuePrevious.addEventListener('click', () => {
+		subject.selectedIndex = Math.max(0, subject.selectedIndex - 1);
+		update();
+	});
+	issueNext.addEventListener('click', () => {
+		subject.selectedIndex = Math.min(subject.options.length - 1, subject.selectedIndex + 1);
+		update();
+	});
 	for (const link of document.querySelectorAll<HTMLAnchorElement>('[data-overall-issue]')) {
 		link.addEventListener('click', () => {
 			subject.value = link.dataset.overallIssue!;
