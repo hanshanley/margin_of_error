@@ -311,7 +311,7 @@ for (const view of ['topic_distribution', 'vs_rest_emphasis', 'pairwise_emphasis
 		const name = `${view}${page === 1 ? '' : `_${page}`}`;
 		const figure = platformData.figures.find(entry => entry.view === 'expanded' && entry.name === name);
 		const chart = platforms(`.overview-chart[data-kind="${view}"][data-page="${page}"]`);
-		assert.equal(chart.find('a[data-original-chart]').attr('href'), `/party-platforms/${figure.path}`);
+		assert.equal(chart.find('a[data-original-chart]').attr('href'), `/party-platforms/${figure.path}?source=${platformData.source_revision}`);
 		assert.ok(chart.find('.view-summary').text().length > 80);
 		const ordered = [...platformData.topics].sort((a, b) =>
 			['democratic', 'republican', 'dsa'].reduce((sum, group) => sum +
@@ -348,7 +348,7 @@ for (const pair of ['democratic_vs_republican', 'democratic_vs_dsa', 'republican
 		const figure = platformData.figures.find(entry =>
 			entry.view === 'expanded/density_details' && entry.name === `${pair}_${page}`);
 		const chart = platforms(`.density-chart[data-pair="${pair}"][data-page="${page}"]`);
-		assert.equal(chart.find('a[data-original-chart]').attr('href'), `/party-platforms/${figure.path}`);
+		assert.equal(chart.find('a[data-original-chart]').attr('href'), `/party-platforms/${figure.path}?source=${platformData.source_revision}`);
 		const regions = platformData.density_regions.filter(region =>
 			region.view === 'expanded' && region.figure === `density_details/${pair}_${page}.png`);
 		assert.equal(regions.length, 3);
@@ -369,7 +369,7 @@ for (const topic of platformData.topics) {
 		assert.equal(chart.find('img').length, 1);
 		const figure = platformData.figures.find(entry =>
 			entry.view === 'expanded/issues' && entry.name === `${topic.topic_id}_${kind}`);
-		assert.equal(chart.find('a[data-original-chart]').attr('href'), `/party-platforms/${figure.path}`);
+		assert.equal(chart.find('a[data-original-chart]').attr('href'), `/party-platforms/${figure.path}?source=${platformData.source_revision}`);
 	}
 	assert.equal(issue.find('thead th').length, 2);
 	assert.equal(platformSources(`#${topic.topic_id} thead th`).length, 3);
@@ -408,13 +408,17 @@ for (const [path, checksum] of Object.entries(platformManifest.files)) {
 }
 for (const page of platformPages) {
 	for (const anchor of page('a[data-original-chart]').toArray()) {
-		assert.doesNotMatch(page(anchor).attr('href'), /\.website\.png$/);
+		const chartUrl = new URL(page(anchor).attr('href'), 'https://www.themarginoferror.com');
+		assert.doesNotMatch(chartUrl.pathname, /\.website\.png$/);
+		assert.equal(chartUrl.searchParams.get('source'), platformData.source_revision);
 	}
 	for (const image of page('.platform-figure img').toArray()) {
 		const node = page(image);
 		assert.equal(node.attr('loading'), 'lazy');
 		assert.equal(node.attr('decoding'), 'async');
-		assert.match(node.attr('src'), /(?:\/website-figures\/.*\.png|\.website\.png)$/);
+		const imageUrl = new URL(node.attr('src'), 'https://www.themarginoferror.com');
+		assert.match(imageUrl.pathname, /(?:\/website-figures\/.*\.png|\.website\.png)$/);
+		assert.equal(imageUrl.searchParams.get('source'), platformData.source_revision);
 		assert.ok(node.attr('alt').length > 20);
 		if (node.attr('src').includes('/website-figures/')) {
 			const path = new URL(node.attr('src').slice(1), root);
