@@ -32,6 +32,15 @@
 .platform-page .view-summary,
 .platform-page .subject-summary { max-width: 900px; line-height: 1.65; }
 .platform-page .overview-subheading { margin-top: 2rem; }
+.platform-page .pagination-label { display: block; margin-bottom: 0.5rem; font: 0.85rem var(--sans); }
+.platform-page .overview-pages { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.platform-page .overview-pages button { border: 1px solid var(--rule); background: transparent; color: var(--ink); padding: 0.5rem 0.7rem; font: 0.85rem var(--sans); cursor: pointer; }
+.platform-page .overview-pages button[aria-current="page"] { border-color: var(--ink); background: var(--ink); color: var(--paper); }
+.platform-page .overview-pages button:disabled { opacity: 0.4; cursor: default; }
+.platform-page .overview-pages button:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.platform-page .overview-range { margin: 0.5rem 0 0; font: 0.8rem var(--sans); color: var(--muted); }
+.platform-page .subject-index ul { columns: 2; column-gap: 2rem; padding-left: 1.2rem; }
+.platform-page .subject-index li { break-inside: avoid; margin-bottom: 0.5rem; font-size: 0.9rem; }
 .platform-page .party-summary { border-top: 2px solid var(--rule); padding-top: 0.7rem; font-size: 0.95rem; }
 .platform-page .party-summary[data-party="democratic"] { border-color: #3d7699; }
 .platform-page .party-summary[data-party="republican"] { border-color: #c65a3b; }
@@ -135,6 +144,7 @@
 }
 
 @media (max-width: 700px) {
+	.platform-page .subject-index ul { columns: 1; }
 	.platform-page .density-interactive-grid { grid-template-columns: 1fr; gap: 1rem; }
 	.platform-page .density-explorer-controls { align-items: start; flex-direction: column; }
 	.platform-page .density-explorer-controls label { width: 100%; }

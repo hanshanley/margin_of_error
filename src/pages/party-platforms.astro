@@ -80,11 +80,29 @@ const partyOverviews = [
 				<select id="overview-kind">{overviewViews.map(view =>
 					<option value={view.id}>{view.title}</option>)}</select>
 			</label>
-			<label>Subjects
-				<select id="overview-page">{[1, 2, 3].map(page =>
-					<option value={page}>Page {page} of 3</option>)}</select>
-			</label>
+			<div class="overview-pagination">
+				<span class="pagination-label">Subjects</span>
+				<nav class="overview-pages" aria-label="Browse subject pages">
+					<button type="button" id="overview-previous" disabled>Previous</button>
+					{[1, 2, 3].map(page => (
+						<button type="button" data-overview-page={page}
+							aria-label={`Subjects ${(page - 1) * 8 + 1}–${Math.min(page * 8, data.topics.length)}`}
+							aria-current={page === 1 ? 'page' : undefined}>
+							{(page - 1) * 8 + 1}–{Math.min(page * 8, data.topics.length)}
+						</button>
+					))}
+					<button type="button" id="overview-next">Next</button>
+				</nav>
+				<p id="overview-range" class="overview-range" role="status" aria-live="polite"
+					data-total={data.topics.length}>Subjects 1–8 of {data.topics.length}</p>
+			</div>
 		</div>
+		<details class="subject-index">
+			<summary>Browse all {data.topics.length} subjects by name</summary>
+			<ul>{overviewTopics.map(topic => (
+				<li><a href={`#issue-${topic.topic_id}`} data-overall-issue={topic.topic_id}>{topic.title}</a></li>
+			))}</ul>
+		</details>
 		{overviewViews.map(view => [1, 2, 3].map(page => (
 			<details class="overview-chart" data-kind={view.id} data-page={page}
 				open={view.id === 'topic_distribution' && page === 1}>
@@ -263,22 +281,50 @@ const partyOverviews = [
 
 <script>
 	const overviewKind = document.querySelector<HTMLSelectElement>('#overview-kind')!;
-	const overviewPage = document.querySelector<HTMLSelectElement>('#overview-page')!;
+	const overviewPages = [...document.querySelectorAll<HTMLButtonElement>('[data-overview-page]')];
+	const overviewPrevious = document.querySelector<HTMLButtonElement>('#overview-previous')!;
+	const overviewNext = document.querySelector<HTMLButtonElement>('#overview-next')!;
+	const overviewRange = document.querySelector<HTMLElement>('#overview-range')!;
+	let overviewPage = 1;
 	const densityPair = document.querySelector<HTMLSelectElement>('#density-pair')!;
 	const densityPage = document.querySelector<HTMLSelectElement>('#density-page')!;
 	const updateComparisons = () => {
 		for (const chart of document.querySelectorAll<HTMLDetailsElement>('.overview-chart')) {
-			chart.hidden = chart.dataset.kind !== overviewKind.value || chart.dataset.page !== overviewPage.value;
+			chart.hidden = chart.dataset.kind !== overviewKind.value || chart.dataset.page !== String(overviewPage);
 			if (!chart.hidden) chart.open = true;
 		}
+		for (const button of overviewPages) {
+			if (Number(button.dataset.overviewPage) === overviewPage) {
+				button.setAttribute('aria-current', 'page');
+				overviewRange.textContent = `${button.getAttribute('aria-label')} of ${overviewRange.dataset.total}`;
+			} else {
+				button.removeAttribute('aria-current');
+			}
+		}
+		overviewPrevious.disabled = overviewPage === 1;
+		overviewNext.disabled = overviewPage === overviewPages.length;
 		for (const chart of document.querySelectorAll<HTMLDetailsElement>('.density-chart')) {
 			chart.hidden = chart.dataset.pair !== densityPair.value || chart.dataset.page !== densityPage.value;
 			if (!chart.hidden) chart.open = true;
 		}
 	};
-	for (const control of [overviewKind, overviewPage, densityPair, densityPage]) {
+	for (const control of [overviewKind, densityPair, densityPage]) {
 		control.addEventListener('change', updateComparisons);
 	}
+	for (const button of overviewPages) {
+		button.addEventListener('click', () => {
+			overviewPage = Number(button.dataset.overviewPage);
+			updateComparisons();
+		});
+	}
+	overviewPrevious.addEventListener('click', () => {
+		overviewPage = Math.max(1, overviewPage - 1);
+		updateComparisons();
+	});
+	overviewNext.addEventListener('click', () => {
+		overviewPage = Math.min(overviewPages.length, overviewPage + 1);
+		updateComparisons();
+	});
 	document.querySelector<HTMLElement>('#overview-picker')!.hidden = false;
 	document.querySelector<HTMLElement>('#density-picker')!.hidden = false;
 	if (window.matchMedia('(max-width: 700px)').matches) {
