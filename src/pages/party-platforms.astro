@@ -3,6 +3,7 @@ import PlatformLayout from '../layouts/PlatformLayout.astro';
 import PlatformFigure from '../components/PlatformFigure.astro';
 import DensityExplorer from '../components/DensityExplorer.astro';
 import { platforms as data, organizations, platformFigure, timelineShares } from '../lib/platform-analysis';
+import { partyPositionSummary } from '../lib/platform-position-copy.mjs';
 
 const number = (value: number) => value.toLocaleString('en-US');
 const share = (topic: typeof data.topics[number], group: string) =>
@@ -24,7 +25,7 @@ const overviewTopics = [...data.topics].sort((a, b) =>
 const groupPosition = (topic: string, group: string) => {
 	const summary = data.positions.find(position => position.topic_id === topic)?.groups[group]?.summary;
 	if (!summary) throw new Error(`Missing reviewed group position: ${topic}/${group}`);
-	return summary;
+	return partyPositionSummary(group, summary);
 };
 const topicTimeline = (topic: string) => {
 	const rows = timelineShares.filter(row => row.topic === topic);
@@ -64,11 +65,11 @@ const densityPairs = [
 	{ id: 'republican_vs_dsa', title: 'Republican and DSA' },
 ];
 const partyOverviews = [
-	{ id: 'democratic', summary: 'Support for vulnerable communities, international cooperation, and energy and infrastructure investment lead the largest subjects. Presidential records and partisan critiques also feature prominently: attention is not simply a list of policy promises.',
+	{ id: 'democratic', summary: "The Democratic Party's largest subjects include support for vulnerable communities, international cooperation, and energy and infrastructure investment. Presidential records and partisan critiques also feature prominently: attention is not simply a list of policy promises.",
 		topic: 'topic-002', claim: 'democratic-2024-normalized-51d7cbe64123-005' },
-	{ id: 'republican', summary: 'Governing authority, national leadership, and support for communities recur throughout these platforms. Rights and freedom are distinctive themes, mixing concrete proposals with statements about legitimate government.',
+	{ id: 'republican', summary: "The Republican Party's platforms repeatedly address governing authority, national leadership, and support for communities. Rights and freedom are distinctive themes, mixing concrete proposals with statements about legitimate government.",
 		topic: 'topic-005', claim: 'republican-2008-normalized-92a9f5c7906a-006' },
-	{ id: 'dsa', summary: 'Critiques of capitalism, democratic representation, and material insecurity lead its largest subjects. Labor organizing and the Israeli-Palestinian conflict also receive more relative attention than in the other organizations.',
+	{ id: 'dsa', summary: "DSA's largest subjects include critiques of capitalism, democratic representation, and material insecurity. Labor organizing and the Israeli-Palestinian conflict also receive more relative attention than in the other organizations.",
 		topic: 'topic-020', claim: 'dsa-2003-mission-normalized-20f699d8e4de-002' },
 ].map(overview => {
 	const topic = data.topics.find(topic => topic.topic_id === overview.topic)!;
@@ -78,7 +79,7 @@ const partyOverviews = [
 });
 ---
 
-<PlatformLayout title="National party platforms" active="issues"
+<PlatformLayout title="Party Priorities and Positions" active="issues"
 	description="Compare national party documents through subject charts and language maps.">
 	<nav class="section-links" aria-label="Explore the analysis">
 		<a href="#overview">Compare issues</a>
@@ -236,7 +237,7 @@ const partyOverviews = [
 		<div id="density-picker" class="issue-picker" hidden>
 			<label>Organizations
 				<select id="density-pair">{densityPairs.map(pair =>
-					<option value={pair.id}>{pair.title}</option>)}</select>
+					<option value={pair.id} selected={pair.id === 'democratic_vs_dsa'}>{pair.title}</option>)}</select>
 			</label>
 		</div>
 		<DensityExplorer />

@@ -1,5 +1,6 @@
 ---
 import { densityMap, organizations, platforms } from '../lib/platform-analysis';
+import { partyPositionSummary } from '../lib/platform-position-copy.mjs';
 ---
 
 <noscript><p>Interactive maps require JavaScript. <a href="/party-platforms/sources/">Read the issue evidence instead.</a></p></noscript>
@@ -42,7 +43,7 @@ import { densityMap, organizations, platforms } from '../lib/platform-analysis';
 						topic.positions[group.id]?.summary || topic.examples.some(example => example.group === group.id)).map(group =>
 						<section class="density-position" data-group={group.id}>
 							<h4>{group.name}</h4>
-							{topic.positions[group.id] && <p class="density-position-summary">{topic.positions[group.id].summary}</p>}
+							{topic.positions[group.id] && <p class="density-position-summary">{partyPositionSummary(group.id, topic.positions[group.id].summary)}</p>}
 							<details class="density-position-evidence">
 							<summary>Supporting source statements</summary>
 							{topic.positions[group.id]?.caveat && <p class="qualification">{topic.positions[group.id].caveat}</p>}

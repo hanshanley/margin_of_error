@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { load } from 'cheerio';
 import sharp from 'sharp';
 import chartImageGroups from '../src/data/website-chart-images.json' with { type: 'json' };
+import { partyPositionSummary } from '../src/lib/platform-position-copy.mjs';
 
 const root = new URL('../dist/', import.meta.url);
 const projectRoot = new URL('../', import.meta.url);
@@ -202,7 +203,7 @@ assert.doesNotMatch(analysis.html(), /political-ads|The language of political ad
 assert.doesNotMatch(sitemap, /political-ads/);
 await assert.rejects(readdir(new URL('political-ads/', root)), { code: 'ENOENT' });
 const platformAnalysis = analysis('.analysis-list > li').eq(0);
-assert.equal(platformAnalysis.find('h2 a').text(), 'National party platforms');
+assert.equal(platformAnalysis.find('h2 a').text(), 'Party Priorities and Positions');
 assert.equal(platformAnalysis.find('.primary-action').attr('href'), '/party-platforms/');
 assert.equal(platformAnalysis.find('img').attr('loading'), 'eager');
 const platforms = load(await text('party-platforms/index.html'));
@@ -251,7 +252,7 @@ for (const [index, topic] of densityMap.topics.entries()) {
 	assert.deepEqual(topic.differences, reviewed?.pairs ?? {});
 	for (const [group, position] of Object.entries(topic.positions)) {
 		assert.equal(panel.find(`.density-position[data-group="${group}"] .density-position-summary`).text(),
-			position.summary);
+			partyPositionSummary(group, position.summary));
 		assert.ok(position.supporting_claim_ids.every(id =>
 			topic.examples.some(example => example.claim_id === id && example.group === group)));
 	}
@@ -288,7 +289,8 @@ for (const selector of ['meta[property="og:image"]', 'meta[name="twitter:image"]
 	assert.equal(platforms(selector).attr('content'),
 		`https://www.themarginoferror.com${platformCoverPath}`);
 }
-assert.equal(platforms('h1').text(), 'National party platforms');
+assert.equal(platforms('h1').text(), 'Party Priorities and Positions');
+assert.equal(platforms('#density-pair option[selected]').attr('value'), 'democratic_vs_dsa');
 assert.equal(platforms('link[rel=canonical]').attr('href'),
 	'https://www.themarginoferror.com/party-platforms/');
 for (const [index, page] of platformPages.entries()) {
@@ -367,7 +369,7 @@ for (const view of ['topic_distribution']) {
 					`${view !== 'topic_distribution' && expected > 0 ? '+' : ''}${(100 * expected).toFixed(1)}${view === 'topic_distribution' ? '%' : ' pp'}`);
 				if (view === 'topic_distribution') {
 					const position = platformData.positions.find(position => position.topic_id === topic.topic_id);
-					assert.equal(cell.find('.group-position').text(), position.groups[group].summary);
+					assert.equal(cell.find('.group-position').text(), partyPositionSummary(group, position.groups[group].summary));
 					assert.ok(cell.find('.mobile-number').attr('style').startsWith('left:'));
 				} else {
 					assert.equal(cell.find('.group-position').length, 0, 'Share gaps must not imply reviewed positions');
