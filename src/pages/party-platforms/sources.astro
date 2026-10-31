@@ -1,0 +1,95 @@
+---
+import PlatformLayout from '../../layouts/PlatformLayout.astro';
+import { platforms as data, organizations } from '../../lib/platform-analysis';
+
+const number = (value: number) => value.toLocaleString('en-US');
+const share = (topic: typeof data.topics[number], view: string, group: string) =>
+	topic.shares.find(row => row.view === view && row.group === group);
+const percent = (topic: typeof data.topics[number], view: string, group: string) => {
+	const row = share(topic, view, group);
+	return row?.available === 'True' ? `${(100 * Number(row.share)).toFixed(1)}%` : 'Not observed';
+};
+---
+
+<PlatformLayout title="Claims and sources" active="sources"
+	description="Inspect representative claims behind the charts and their exact source excerpts.">
+	<section id="topics" aria-label="Representative claims">
+		<p>These packets are samples, not the complete corpus.
+			Normalized claims and their exact source excerpts are shown separately.</p>
+		<div id="topic-filter" hidden>
+			<label for="topic-query">Search subjects and representative claims</label>
+			<input id="topic-query" type="search" placeholder="For example: housing or collective bargaining" />
+			<p id="topic-results" role="status" aria-live="polite"></p>
+		</div>
+		<div id="topic-list">
+			{data.topics.map(topic => (
+				<details class="topic" id={topic.topic_id}>
+					<summary>{topic.title}</summary>
+					<p>{topic.summary}</p>
+					<p class="caveat">{topic.caveat}</p>
+					<p><a href={`/party-platforms/#issue-${topic.topic_id}`}>Compare this subject &rarr;</a></p>
+					<details>
+						<summary>Overall shares and label provenance</summary>
+						<p class="label-origin">{topic.label_origin === 'assistant_source_bound_revision'
+							? 'Assistant source-bound revision of the model label.'
+							: 'Unedited local Gemma label.'}
+							Reviewed against this bounded evidence packet, not independent human gold.</p>
+						<div class="table-wrap">
+							<table>
+								<caption>Document-weighted shares; claim counts are unweighted</caption>
+								<thead><tr><th>Organization</th><th>All documents</th><th>Adopted only</th><th>Claims</th></tr></thead>
+								<tbody>{organizations.map(group => (
+									<tr><th scope="row">{group.name}</th>
+										<td>{percent(topic, 'expanded', group.id)}</td>
+										<td>{percent(topic, 'strict', group.id)}</td>
+										<td>{number(Number(share(topic, 'expanded', group.id)?.claims ?? 0))}</td></tr>
+								))}</tbody>
+							</table>
+						</div>
+					</details>
+					{topic.representatives.map(claim => (
+						<div class="claim">
+							<p class="claim-source"><a href={claim.source_url}>{claim.title}</a>
+								&middot; {claim.publication_date}</p>
+							<p>{claim.claim_text}</p>
+							<details><summary>Source excerpt and claim identifier</summary>
+								<blockquote>{claim.evidence}</blockquote>
+								<p class="locator">{claim.locator}<br /><code>{claim.claim_id}</code></p>
+							</details>
+						</div>
+					))}
+				</details>
+			))}
+		</div>
+	</section>
+</PlatformLayout>
+
+<script>
+	const filter = document.querySelector<HTMLElement>('#topic-filter')!;
+	const input = document.querySelector<HTMLInputElement>('#topic-query')!;
+	const results = document.querySelector<HTMLElement>('#topic-results')!;
+	const topics = [...document.querySelectorAll<HTMLDetailsElement>('#topic-list > .topic')];
+	const update = () => {
+		const query = input.value.trim().toLocaleLowerCase();
+		let count = 0;
+		for (const topic of topics) {
+			topic.hidden = !topic.textContent?.toLocaleLowerCase().includes(query);
+			if (!topic.hidden) count += 1;
+		}
+		results.textContent = `${count} of ${topics.length} topics shown. Search covers representative packets only.`;
+	};
+	const reveal = () => {
+		const topic = topics.find(entry => `#${entry.id}` === window.location.hash);
+		if (topic) {
+			input.value = '';
+			update();
+			topic.open = true;
+			requestAnimationFrame(() => topic.scrollIntoView());
+		}
+	};
+	filter.hidden = false;
+	input.addEventListener('input', update);
+	window.addEventListener('hashchange', reveal);
+	update();
+	reveal();
+</script>

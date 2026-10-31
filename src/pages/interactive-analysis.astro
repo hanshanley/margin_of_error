@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { platformCover } from '../lib/platform-analysis';
+import { platformCover, platformRepository } from '../lib/platform-analysis';
 ---
 
 <BaseLayout
@@ -24,7 +24,7 @@ import { platformCover } from '../lib/platform-analysis';
 						emphasis, historical coverage, and the claims and sources behind the charts.</p>
 					<div class="lead-actions">
 						<a class="primary-action" href="/party-platforms/">Open analysis</a>
-						<a href="/party-platforms/#downloads">Download the complete data</a>
+						<a href={platformRepository}>Code and data on GitHub</a>
 					</div>
 				</div>
 			</li>

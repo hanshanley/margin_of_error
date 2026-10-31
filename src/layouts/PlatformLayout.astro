@@ -1,0 +1,31 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { platforms, platformCover, platformRepository } from '../lib/platform-analysis';
+import '../styles/platform-analysis.css';
+
+interface Props {
+	title: string;
+	description: string;
+	active: 'issues' | 'sources';
+}
+const { title, description, active } = Astro.props;
+---
+
+<BaseLayout title={title} description={description} image={platformCover.src}>
+	<div class="platform-page">
+		{platforms.preview_only && <p class="qualification" role="status">Local development preview,
+			not a verified publication. Do not publish this build.</p>}
+		<header class="analysis-heading">
+			<div>
+				<p class="kicker">National documents, 2000&ndash;2026</p>
+				<h1>{title}</h1>
+				<p class="analysis-deck">{description}</p>
+				<p class="scope">Democratic Party &middot; Republican Party &middot; DSA</p>
+			</div>
+		</header>
+		{active === 'sources' && <p><a href="/party-platforms/">&larr; Back to the comparison</a></p>}
+		<slot />
+		<p class="repository-link"><a id="platform-repository" href={platformRepository}>
+			Code, data and methods on GitHub &rarr;</a></p>
+	</div>
+</BaseLayout>

@@ -76,6 +76,7 @@ interface Publication {
 export const platforms: Publication = JSON.parse(
 	readFileSync('public/party-platforms/analysis.json', 'utf8'),
 );
+export const platformRepository = `https://github.com/hanshanley/dsa/tree/${platforms.source_revision}`;
 export const organizations = [
 	{ id: 'democratic', name: 'Democratic Party' },
 	{ id: 'republican', name: 'Republican Party' },
