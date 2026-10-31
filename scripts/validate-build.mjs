@@ -306,6 +306,18 @@ assert.equal(platforms('.issue-chart').length, 2 * platformData.topics.length);
 assert.equal(platforms('.overview-chart').length, 9);
 assert.equal(platforms('.density-chart').length, 6);
 assert.equal(platforms('.party-summary').length, 3);
+assert.equal(platforms('#overview-page').length, 0, 'Subject navigation must not use an opaque page dropdown');
+assert.deepEqual(platforms('[data-overview-page]').toArray().map(button =>
+	platforms(button).attr('aria-label')), ['Subjects 1–8', 'Subjects 9–16', 'Subjects 17–21']);
+assert.equal(platforms('[data-overview-page][aria-current="page"]').attr('data-overview-page'), '1');
+assert.equal(platforms('#overview-previous[disabled], #overview-next:not([disabled])').length, 2);
+assert.equal(platforms('#overview-range[role="status"][aria-live="polite"]').length, 1);
+assert.deepEqual(platforms('.subject-index [data-overall-issue]').toArray().map(link =>
+	platforms(link).attr('data-overall-issue')), [...platformData.topics].sort((a, b) =>
+		['democratic', 'republican', 'dsa'].reduce((sum, group) => sum +
+			Number(b.shares.find(row => row.view === 'expanded' && row.group === group).share) -
+			Number(a.shares.find(row => row.view === 'expanded' && row.group === group).share), 0)
+	).map(topic => topic.topic_id));
 for (const view of ['topic_distribution', 'vs_rest_emphasis', 'pairwise_emphasis']) {
 	for (const page of [1, 2, 3]) {
 		const name = `${view}${page === 1 ? '' : `_${page}`}`;
