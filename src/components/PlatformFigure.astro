@@ -1,13 +1,13 @@
 ---
-import type { PlatformFigure } from '../lib/platform-analysis';
+import { platforms, type PlatformFigure } from '../lib/platform-analysis';
 
 interface Props {
 	figure: PlatformFigure;
 	caption: string;
 }
 const { figure, caption } = Astro.props;
-const path = `/party-platforms/${figure.path}`;
-const displayPath = `/party-platforms/${figure.display_path ?? figure.path}`;
+const path = `/party-platforms/${figure.path}?source=${platforms.source_revision}`;
+const displayPath = `/party-platforms/${figure.display_path ?? figure.path}?source=${platforms.source_revision}`;
 ---
 
 <figure class="platform-figure">
