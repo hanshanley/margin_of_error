@@ -235,8 +235,14 @@ assert.equal(platforms('#density-canvas[tabindex="0"]').length, 1);
 assert.equal(platforms('#density-topic option').length, densityMap.topics.length);
 assert.equal(platforms('#density-pair option[value="dsa_vs_democratic_republican"]').text(),
 	'DSA vs. Democrats + Republicans');
-assert.match(platforms('#density-combined-note').text(), /equal-weight/);
-assert.match(platforms('#density-combined-note').text(), /not a merged party platform/);
+assert.equal(platforms('#density-combined-note').length, 0);
+assert.doesNotMatch(platforms('#density').text(), /The combined side is an equal-weight/);
+assert.equal(platforms('#density-instructions').length, 1);
+assert.equal(platforms('#density > p').first().next().attr('id'), 'density-instructions',
+	'Map instructions must directly follow the introductory paragraph');
+assert.equal(platforms('#density-instructions').text().replace(/\s+/g, ' ').trim(),
+	'Hover over the map to identify an issue. Click or tap to keep it selected and read how the selected organizations discuss it.');
+assert.equal(platforms('#density-canvas').attr('aria-describedby'), 'density-instructions');
 assert.equal(platforms('.density-original').length, 0, 'Original annotated maps were removed from the reading page');
 assert.equal(platforms('.density-position-evidence[open], .density-topic > details[open]').length, 0,
 	'Source statements and cluster caveats must not clutter the initial comparison');

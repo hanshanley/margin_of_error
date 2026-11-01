@@ -8,12 +8,6 @@ import { densityComparisons } from '../lib/platform-density-comparison.mjs';
 <p id="density-fallback" hidden>The interactive map could not load.
 	<a href="/party-platforms/sources/">Read the issue evidence instead.</a></p>
 <div id="density-explorer" data-map-src={`/party-platforms/density-map.json?source=${platforms.source_revision}`} hidden>
-	<p id="density-instructions">Hover over the map to identify an issue. Click or tap to keep it selected
-		and read how the selected organizations discuss it.</p>
-	<p id="density-combined-note" class="qualification" hidden>The combined side is an equal-weight
-		mixture of the Democratic and Republican language densities, not a merged party platform.
-		Color shows log p(DSA) minus log((p(Democratic) + p(Republican)) / 2).
-		All three positions remain separate; the two differences below retain their reviewed pairwise summaries.</p>
 	<div class="density-explorer-controls">
 		<label>Issue on the map
 			<select id="density-topic">{densityMap.topics.map((topic, index) =>
@@ -162,7 +156,6 @@ import { densityComparisons } from '../lib/platform-density-comparison.mjs';
 		if (!data) return;
 		const [first, second] = pair.value.split('_vs_');
 		const groups = [...densityGroups(first), ...densityGroups(second)];
-		root.querySelector<HTMLElement>('#density-combined-note')!.hidden = pair.value !== 'dsa_vs_democratic_republican';
 		const rectangle = canvas.getBoundingClientRect();
 		width = rectangle.width;
 		height = rectangle.height;
