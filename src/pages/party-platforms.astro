@@ -3,6 +3,7 @@ import PlatformLayout from '../layouts/PlatformLayout.astro';
 import PlatformFigure from '../components/PlatformFigure.astro';
 import DensityExplorer from '../components/DensityExplorer.astro';
 import AttentionShares from '../components/AttentionShares.astro';
+import CaucusIssues from '../components/CaucusIssues.astro';
 import { platforms as data, densityMap, organizations, platformFigure, timelineShares } from '../lib/platform-analysis';
 import { claimDisplayText, partyPositionSummary } from '../lib/platform-position-copy.mjs';
 
@@ -84,6 +85,7 @@ const partyOverviews = organizations.map(group => {
 		<a href="#overview">Compare issues</a>
 		<a href="#organization-patterns">Overall patterns by organization</a>
 		<a href="#density">Language maps</a>
+		<a href="#caucuses">Inside DSA</a>
 	</nav>
 
 	<section id="overview" class="reader-section" aria-labelledby="overview-title">
@@ -243,6 +245,7 @@ const partyOverviews = organizations.map(group => {
 		<DensityExplorer />
 	</section>
 
+	<CaucusIssues />
 </PlatformLayout>
 
 <script>

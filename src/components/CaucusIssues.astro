@@ -1,0 +1,140 @@
+---
+import { readFileSync } from 'node:fs';
+
+interface Example {
+	claim_id: string;
+	claim_text: string;
+	evidence: string;
+	source_url: string;
+	title: string;
+	locator: string;
+}
+interface Caucus {
+	id: string;
+	name: string;
+	share: number;
+	claims: number;
+	baseline: number;
+	ratio: number | null;
+	examples: Example[];
+}
+interface Topic {
+	id: string;
+	title: string;
+	summary: string;
+	groups: Caucus[];
+}
+const data: { source_revision: string; eligible_claims: number; topics: Topic[] } =
+	JSON.parse(readFileSync('public/party-platforms/caucuses/analysis.json', 'utf8'));
+const percent = (value: number) => `${(100 * value).toFixed(1)}%`;
+const ratio = (value: number | null) => value === null ? 'Undefined' : `${value.toFixed(1)}\u00d7`;
+---
+
+<section id="caucuses" class="reader-section" aria-labelledby="caucuses-title">
+	<h2 id="caucuses-title">Inside DSA: thirteen caucuses and networks</h2>
+	<p>How do DSA's internal groups divide their attention? These twelve themes compare
+		thirteen flagship statements, using {data.eligible_claims.toLocaleString('en-US')} normalized claims.
+		Each row pairs a share of attention with a source-backed example of what that group says.</p>
+	<p class="qualification">One statement per group, not a timeline or a measure of membership.
+		The themes overlap; some reflect shared wording and ideological self-description rather
+		than distinct policy issues. They were learned separately from the national-party subjects above.</p>
+	<details class="caucus-index">
+		<summary>Choose a caucus theme</summary>
+		<ul>{data.topics.map(topic => <li><a href={`#caucus-${topic.id}`}>{topic.title}</a></li>)}</ul>
+	</details>
+	{data.topics.map((topic, index) => (
+		<details id={`caucus-${topic.id}`} class="caucus-issue" open={index === 0} data-caucus-topic={topic.id}>
+			<summary>{topic.title}</summary>
+			<p class="caucus-theme-summary">{topic.summary}</p>
+			<div class="caucus-column-headings" aria-hidden="true">
+				<span>Caucus / network</span><span>Attention share</span><span>A statement on this theme</span>
+			</div>
+			{topic.groups.map(group => (
+				<div class="caucus-row" data-caucus={group.id} data-share={group.share} data-ratio={group.ratio}>
+					<h3>{group.name}</h3>
+					<div class="caucus-measure">
+						<div class="caucus-bar-line">
+							<span class="caucus-track" aria-hidden="true">
+								<span style={`width:${group.share * 100}%`}></span>
+							</span>
+							<span class="caucus-percent">{percent(group.share)}</span>
+						</div>
+						<span class="caucus-ratio">{ratio(group.ratio)}{group.ratio !== null && ' others'}</span>
+					</div>
+					<div class="caucus-statement">
+						{group.examples.length ? <>
+							<p>{group.examples[0].claim_text}</p>
+							<details class="caucus-evidence">
+								<summary>Source evidence</summary>
+								{group.examples.map(example => <div data-claim={example.claim_id}>
+									<p><a href={example.source_url}>{example.title}</a></p>
+									<blockquote>{example.evidence}</blockquote>
+									<p class="locator">{example.locator}</p>
+								</div>)}
+							</details>
+						</> : <p class="caucus-empty">No eligible claims assigned to this theme in the sampled statement.</p>}
+					</div>
+				</div>
+			))}
+			<p class="caucus-note">Shares use all eligible claims in each group's statement. All bars use a 0&ndash;100% scale.
+				Multipliers compare with the equally weighted average of the other twelve groups;
+				they use unrounded shares, with no smoothing. A zero baseline is undefined.
+				Zero attention does not mean opposition. Examples are not exhaustive position summaries.</p>
+		</details>
+	))}
+	<p class="caucus-source"><a href={`https://github.com/hanshanley/dsa/tree/${data.source_revision}/data/analysis/dsa_caucuses`}>
+		Caucus analysis, complete claims and sources</a></p>
+</section>
+
+<style>
+	.caucus-index ul { columns: 2; column-gap: 2rem; padding-left: 1.2rem; }
+	.caucus-index li { break-inside: avoid; margin-bottom: 0.6rem; font: 0.9rem/1.5 var(--sans); }
+	.caucus-issue { border-top: 1px solid var(--rule); padding-top: 1.1rem; scroll-margin-top: 1rem; }
+	.caucus-issue > summary { font-family: var(--serif, Georgia, serif); font-size: 1.3rem; line-height: 1.35; }
+	.caucus-theme-summary { max-width: 55rem; font: 0.95rem/1.65 var(--sans); color: var(--muted); }
+	.caucus-column-headings, .caucus-row {
+		display: grid; grid-template-columns: 11rem 11rem minmax(0, 1fr);
+		gap: 1.5rem; align-items: start;
+	}
+	.caucus-column-headings { margin-top: 1.8rem; color: var(--muted); font: 0.75rem var(--sans); }
+	.caucus-row { padding-block: 1.15rem; border-bottom: 1px solid color-mix(in srgb, var(--rule) 55%, transparent); }
+	.caucus-row h3 { margin: 0; font: 600 0.95rem/1.5 var(--sans); }
+	.caucus-bar-line { display: flex; align-items: center; gap: 0.6rem; min-height: 1.4rem; }
+	.caucus-track { flex: 1; height: 0.6rem; }
+	.caucus-track > span { display: block; height: 100%; background: #b28e3b; }
+	.caucus-percent { width: 3.2rem; font: 0.85rem var(--sans); color: #947123; font-variant-numeric: tabular-nums; }
+	.caucus-ratio { display: block; margin-top: 0.3rem; font: 0.75rem var(--sans); color: var(--muted); font-variant-numeric: tabular-nums; }
+	.caucus-statement { min-width: 0; font: 0.95rem/1.6 var(--sans); }
+	.caucus-statement p { margin: 0; }
+	.caucus-empty, .caucus-note { color: var(--muted); }
+	.caucus-note, .caucus-source { font: 0.8rem/1.6 var(--sans); }
+	.caucus-statement .caucus-evidence { margin: 0.5rem 0 0; }
+	.caucus-evidence > summary { font: 0.8rem var(--sans); color: var(--muted); }
+	.caucus-evidence blockquote { margin: 0.8rem 0; padding-left: 1rem; border-left: 2px solid var(--rule); font: 0.9rem/1.6 var(--sans); }
+	.caucus-evidence > div + div { margin-top: 1rem; }
+	@media (max-width: 700px) {
+		.caucus-index ul { columns: 1; }
+		.caucus-column-headings { display: none; }
+		.caucus-row { grid-template-columns: minmax(0, 1fr) 9rem; gap: 0.6rem 1rem; }
+		.caucus-statement { grid-column: 1 / -1; }
+		.caucus-issue > summary { font-size: 1.15rem; }
+	}
+</style>
+
+<script>
+	const revealCaucusTheme = () => {
+		const target = document.getElementById(location.hash.slice(1));
+		if (!target || (target.id !== 'caucuses' && !target.matches('.caucus-issue'))) return;
+		if (target instanceof HTMLDetailsElement) target.open = true;
+		requestAnimationFrame(() => target.scrollIntoView({ behavior: 'instant', block: 'start' }));
+	};
+	document.querySelectorAll<HTMLAnchorElement>('.caucus-index a').forEach(link =>
+		link.addEventListener('click', () => {
+			const target = document.getElementById(link.hash.slice(1));
+			if (target instanceof HTMLDetailsElement) target.open = true;
+		}));
+	window.addEventListener('hashchange', revealCaucusTheme);
+	window.addEventListener('load', revealCaucusTheme, { once: true });
+	document.fonts.ready.then(revealCaucusTheme);
+	revealCaucusTheme();
+</script>

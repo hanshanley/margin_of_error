@@ -113,6 +113,16 @@ All displayed subjects and chart modes remain available through native disclosur
 JavaScript. Draft local fixtures must set `preview_only: true` in both the
 analysis and manifest: the page identifies them, and production validation
 rejects them. Replace a draft with a fresh verified export before release.
+
+The bottom of the comparison includes a separate thirteen-caucus snapshot.
+After the national export, run `scripts/build_caucus_publication.py --output
+public/party-platforms/caucuses` from the same pinned DSA checkout. This offline
+export checks the current numerical hashes, reviewed labels, exact ratios, and
+source excerpts. Caucus themes are learned separately, not national-party topic
+IDs or a timeline. All thirteen groups remain visible in every theme; zero
+attention is not opposition. The build tests every rendered share and source
+excerpt against the verified export.
+
 The author-supplied Three Platform Booklets illustration is the
 Interactive analysis preview and social image, not an image inside the analysis
 pages. Keep it under
