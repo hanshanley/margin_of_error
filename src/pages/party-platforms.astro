@@ -4,6 +4,7 @@ import PlatformFigure from '../components/PlatformFigure.astro';
 import DensityExplorer from '../components/DensityExplorer.astro';
 import { platforms as data, densityMap, organizations, platformFigure, timelineShares } from '../lib/platform-analysis';
 import { partyPositionSummary } from '../lib/platform-position-copy.mjs';
+import { densityComparisons as densityPairs } from '../lib/platform-density-comparison.mjs';
 
 const number = (value: number) => value.toLocaleString('en-US');
 const share = (topic: typeof data.topics[number], group: string) =>
@@ -60,11 +61,6 @@ const mobileBounds = Object.fromEntries(overviewViews.map(view => {
 	return [view.id, view.id === 'topic_distribution' ? Math.max(0.05, Math.ceil(maximum * 20) / 20)
 		: Math.max(0.01, Math.ceil(maximum * 100) / 100)];
 }));
-const densityPairs = [
-	{ id: 'democratic_vs_republican', title: 'Democratic and Republican' },
-	{ id: 'democratic_vs_dsa', title: 'Democratic and DSA' },
-	{ id: 'republican_vs_dsa', title: 'Republican and DSA' },
-];
 const partyOverviews = organizations.map(group => {
 	const subjects = [...data.topics].sort((a, b) =>
 		Number(share(b, group.id)?.share) - Number(share(a, group.id)?.share)).slice(0, 3);

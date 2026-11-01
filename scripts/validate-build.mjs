@@ -233,6 +233,10 @@ assert.equal(platforms('#density-explorer').attr('data-map-src'),
 	`/party-platforms/density-map.json?source=${platformData.source_revision}`);
 assert.equal(platforms('#density-canvas[tabindex="0"]').length, 1);
 assert.equal(platforms('#density-topic option').length, densityMap.topics.length);
+assert.equal(platforms('#density-pair option[value="dsa_vs_democratic_republican"]').text(),
+	'DSA vs. Democrats + Republicans');
+assert.match(platforms('#density-combined-note').text(), /equal-weight/);
+assert.match(platforms('#density-combined-note').text(), /not a merged party platform/);
 assert.equal(platforms('.density-original').length, 0, 'Original annotated maps were removed from the reading page');
 assert.equal(platforms('.density-position-evidence[open], .density-topic > details[open]').length, 0,
 	'Source statements and cluster caveats must not clutter the initial comparison');
