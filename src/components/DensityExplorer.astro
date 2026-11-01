@@ -9,12 +9,18 @@ import AttentionShares from './AttentionShares.astro';
 <p id="density-fallback" hidden>The interactive map could not load.
 	<a href="/party-platforms/sources/">Read the issue evidence instead.</a></p>
 <div id="density-explorer" data-map-src={`/party-platforms/density-map.json?source=${platforms.source_revision}`} hidden>
-	<div class="density-explorer-controls">
-		<label>Issue on the map
-			<select id="density-topic">{densityMap.topics.map((topic, index) =>
-				<option value={index}>{topic.title}</option>)}</select>
+	<div id="density-picker" class="density-explorer-controls">
+		<label>Compare
+			<select id="density-pair">{densityComparisons.map(pair =>
+				<option value={pair.id} selected={pair.id === 'dsa_vs_democratic_republican'}>{pair.title}</option>)}</select>
 		</label>
-		<button id="density-unpin" type="button" disabled>Resume hover</button>
+		<div class="density-issue-control">
+			<label>Issue
+				<select id="density-topic">{densityMap.topics.map((topic, index) =>
+					<option value={index}>{topic.title}</option>)}</select>
+			</label>
+			<button id="density-unpin" type="button" hidden disabled>Unpin issue</button>
+		</div>
 	</div>
 	<div class="density-interactive-grid">
 		<div class="density-map-wrap">
@@ -244,12 +250,16 @@ import AttentionShares from './AttentionShares.astro';
 		if (!point) return;
 		selectIssue(point.issue);
 		pinned = true;
+		unpin.hidden = false;
 		unpin.disabled = false;
-		status.textContent = 'Issue kept selected. Resume hover to explore another.';
+		status.textContent = 'Issue pinned. Unpin it to resume hover.';
 	});
 	const release = () => {
+		const restoreFocus = document.activeElement === unpin;
 		pinned = false;
+		unpin.hidden = true;
 		unpin.disabled = true;
+		if (restoreFocus) canvas.focus({ preventScroll: true });
 		status.textContent = 'Hover or tap a point to explore an issue.';
 	};
 	unpin.addEventListener('click', release);
@@ -257,8 +267,9 @@ import AttentionShares from './AttentionShares.astro';
 		if (!data) return;
 		selectIssue(Number(topic.value));
 		pinned = true;
+		unpin.hidden = false;
 		unpin.disabled = false;
-		status.textContent = 'Issue kept selected. Resume hover to explore another.';
+		status.textContent = 'Issue pinned. Unpin it to resume hover.';
 	});
 	canvas.addEventListener('keydown', event => {
 		if (!data) return;
@@ -267,8 +278,9 @@ import AttentionShares from './AttentionShares.astro';
 		event.preventDefault();
 		selectIssue((selected + (event.key === 'ArrowRight' ? 1 : data.topics.length - 1)) % data.topics.length);
 		pinned = true;
+		unpin.hidden = false;
 		unpin.disabled = false;
-		status.textContent = 'Issue kept selected. Resume hover to explore another.';
+		status.textContent = 'Issue pinned. Unpin it to resume hover.';
 	});
 	pair.addEventListener('change', render);
 	new ResizeObserver(render).observe(canvas);

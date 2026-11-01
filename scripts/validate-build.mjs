@@ -241,7 +241,14 @@ assert.equal(platforms('#density-instructions').length, 1);
 assert.equal(platforms('#density > p').first().next().attr('id'), 'density-instructions',
 	'Map instructions must directly follow the introductory paragraph');
 assert.equal(platforms('#density-instructions').text().replace(/\s+/g, ' ').trim(),
-	'Hover over the map to identify an issue. Click or tap to keep it selected and read how the selected organizations discuss it.');
+	'Hover to explore an issue. Click or tap to pin it.');
+assert.equal(platforms('#density-picker #density-pair').length, 1,
+	'Both map selectors must share one compact control row');
+assert.equal(platforms('#density-picker #density-topic').length, 1);
+assert.equal(platforms('#density > #density-picker').length, 0,
+	'Do not recreate a separate organization selector above the map controls');
+assert.equal(platforms('#density-unpin[hidden][disabled]').length, 1,
+	'Only show the unpin action when an issue is pinned');
 assert.equal(platforms('#density-canvas').attr('aria-describedby'), 'density-instructions');
 assert.equal(platforms('.density-original').length, 0, 'Original annotated maps were removed from the reading page');
 assert.equal(platforms('.density-position-evidence[open], .density-topic-footer > details[open]').length, 0,

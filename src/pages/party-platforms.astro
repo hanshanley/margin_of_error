@@ -5,7 +5,6 @@ import DensityExplorer from '../components/DensityExplorer.astro';
 import AttentionShares from '../components/AttentionShares.astro';
 import { platforms as data, densityMap, organizations, platformFigure, timelineShares } from '../lib/platform-analysis';
 import { claimDisplayText, partyPositionSummary } from '../lib/platform-position-copy.mjs';
-import { densityComparisons as densityPairs } from '../lib/platform-density-comparison.mjs';
 
 const number = (value: number) => value.toLocaleString('en-US');
 const share = (topic: typeof data.topics[number], group: string) =>
@@ -240,14 +239,7 @@ const partyOverviews = organizations.map(group => {
 		<p>These maps compare the concentration of each organization's language in a shared
 			semantic space. Explore the issues and source statements behind the points.
 			Similar language does not imply the same policy position.</p>
-		<p id="density-instructions">Hover over the map to identify an issue. Click or tap to keep it selected
-			and read how the selected organizations discuss it.</p>
-		<div id="density-picker" class="issue-picker" hidden>
-			<label>Organizations
-				<select id="density-pair">{densityPairs.map(pair =>
-					<option value={pair.id} selected={pair.id === 'dsa_vs_democratic_republican'}>{pair.title}</option>)}</select>
-			</label>
-		</div>
+		<p id="density-instructions">Hover to explore an issue. Click or tap to pin it.</p>
 		<DensityExplorer />
 	</section>
 
@@ -438,7 +430,6 @@ const partyOverviews = organizations.map(group => {
 		}
 	});
 	document.querySelector<HTMLElement>('#overview-picker')!.hidden = false;
-	document.querySelector<HTMLElement>('#density-picker')!.hidden = false;
 	updateComparisons();
 	const reveal = () => {
 		const hash = window.location.hash;

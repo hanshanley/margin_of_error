@@ -84,10 +84,14 @@
 .platform-page .wide-chart { overflow-x: auto; }
 .platform-page .mapped-evidence li { padding-block: 0.6rem; max-width: 900px; }
 .platform-page .mapped-evidence li > p:first-child { margin-top: 0; }
-.platform-page .density-explorer-controls { display: flex; align-items: end; gap: 1rem; margin-bottom: 1.5rem; }
-.platform-page .density-explorer-controls label { flex: 1; min-width: 0; font: 0.85rem var(--sans); }
-.platform-page #density-unpin { padding: 0.7rem; border: 1px solid var(--rule); background: transparent; color: var(--ink); font: 0.85rem var(--sans); cursor: pointer; }
-.platform-page #density-unpin:disabled { opacity: 0.5; cursor: default; }
+.platform-page .density-explorer-controls { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); align-items: end; gap: 0.75rem; margin: 1.25rem 0; }
+.platform-page .density-explorer-controls label { flex: 1; min-width: 0; font: 0.8rem var(--sans); color: var(--muted); }
+.platform-page .density-issue-control { display: flex; align-items: end; gap: 0.75rem; min-width: 0; }
+.platform-page .density-explorer-controls select { height: 2.75rem; margin-top: 0.35rem; padding: 0.5rem 0.65rem; border: 1px solid var(--rule); border-radius: 4px; font: 0.9rem var(--sans); }
+.platform-page #density-unpin { flex-shrink: 0; height: 2.75rem; padding: 0.5rem 0.75rem; border: 1px solid var(--rule); border-radius: 4px; background: transparent; color: var(--ink); font: 0.8rem var(--sans); cursor: pointer; }
+.platform-page .density-explorer-controls select:focus-visible,
+.platform-page #density-unpin:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.platform-page #density-unpin:hover { background: color-mix(in srgb, var(--ink) 4%, var(--paper)); }
 .platform-page .density-interactive-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 2rem; align-items: start; }
 .platform-page .density-canvas-wrap { position: relative; }
 .platform-page #density-canvas { display: block; width: 100%; aspect-ratio: 1.5; cursor: crosshair; }
@@ -225,8 +229,9 @@
 	.platform-page .position-overview .mobile-topic h3 { font-size: 1.15rem; }
 	.platform-page .subject-index ul { columns: 1; }
 	.platform-page .density-interactive-grid { grid-template-columns: 1fr; gap: 1rem; }
-	.platform-page .density-explorer-controls { align-items: start; flex-direction: column; }
-	.platform-page .density-explorer-controls label { width: 100%; }
+	.platform-page .density-explorer-controls { grid-template-columns: 1fr; }
+	.platform-page .density-issue-control { flex-wrap: wrap; }
+	.platform-page .density-issue-control label { flex-basis: 100%; }
 	.platform-page .analysis-deck { font-size: 1.05rem; }
 	.platform-page .issue-picker,
 	.platform-page .party-summaries { grid-template-columns: 1fr; gap: 0.8rem; }
