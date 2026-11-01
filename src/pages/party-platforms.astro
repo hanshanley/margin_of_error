@@ -2,6 +2,7 @@
 import PlatformLayout from '../layouts/PlatformLayout.astro';
 import PlatformFigure from '../components/PlatformFigure.astro';
 import DensityExplorer from '../components/DensityExplorer.astro';
+import AttentionShares from '../components/AttentionShares.astro';
 import { platforms as data, densityMap, organizations, platformFigure, timelineShares } from '../lib/platform-analysis';
 import { claimDisplayText, partyPositionSummary } from '../lib/platform-position-copy.mjs';
 import { densityComparisons as densityPairs } from '../lib/platform-density-comparison.mjs';
@@ -159,6 +160,7 @@ const partyOverviews = organizations.map(group => {
 									caption="Share of attention in observed four-year periods. Missing periods remain gaps." /></noscript>
 							</figure>}
 							</div>
+							{view.id === 'topic_distribution' && <AttentionShares topicId={topic.topic_id} />}
 						</div>
 					))}
 				</div>

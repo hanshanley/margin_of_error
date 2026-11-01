@@ -248,8 +248,59 @@ assert.equal(platforms('.density-position-evidence[open], .density-topic-footer 
 	'Source statements and cluster caveats must not clutter the initial comparison');
 assert.equal(platforms('#density-fallback a').attr('href'), '/party-platforms/sources/');
 const mappedClaims = new Map(densityMap.points.map(point => [point[0], point]));
+const [attentionHeader, ...attentionRows] = (await text('party-platforms/downloads/topics/shares.csv'))
+	.trim().split(/\r?\n/);
+const attentionColumns = attentionHeader.split(',');
+const attentionShares = {};
+for (const line of attentionRows) {
+	const fields = line.split(',');
+	assert.equal(fields.length, attentionColumns.length);
+	const row = Object.fromEntries(attentionColumns.map((column, index) => [column, fields[index]]));
+	if (row.view === 'expanded') {
+		assert.equal(row.available, 'True');
+		(attentionShares[row.topic_id] ??= {})[row.group] = Number(row.share);
+	}
+}
+const attentionDirections = [
+	['democratic_vs_republican', 'democratic', 'republican'],
+	['democratic_vs_dsa', 'dsa', 'democratic'],
+	['republican_vs_dsa', 'dsa', 'republican'],
+	['dsa_vs_democratic_republican', 'dsa', 'democratic_republican'],
+];
+assert.equal(platforms('.attention-summary').length, densityMap.topics.length);
+assert.equal(platforms('.attention-table').length, platformData.topics.length);
+assert.equal(platforms('.attention-table[open], .attention-methods[open]').length, 0);
 for (const [index, topic] of densityMap.topics.entries()) {
 	const panel = platforms(`.density-topic[data-topic="${topic.topic_id}"]`);
+	const shares = attentionShares[topic.topic_id];
+	assert.deepEqual(Object.keys(shares).sort(), [...densityMap.groups].sort());
+	const comparisons = [panel.find('.attention-summary')];
+	if (topic.displayed) {
+		comparisons.push(platforms(`.mobile-topic[data-topic="${topic.topic_id}"] .attention-table`));
+	}
+	for (const container of comparisons) {
+		assert.equal(container.length, 1);
+		assert.equal(container.attr('data-attention-topic'), topic.topic_id);
+		assert.equal(container.find('[data-comparison]').length, 4);
+		for (const [id, numerator, denominator] of attentionDirections) {
+			const row = container.find(`[data-comparison="${id}"]`);
+			const first = shares[numerator];
+			const second = denominator === 'democratic_republican'
+				? (shares.democratic + shares.republican) / 2 : shares[denominator];
+			const ratio = second > 0 ? first / second : null;
+			assert.equal(row.attr('data-numerator'), numerator);
+			assert.equal(row.attr('data-denominator'), denominator);
+			assert.equal(Number(row.attr('data-numerator-share')), first);
+			assert.equal(Number(row.attr('data-denominator-share')), second);
+			assert.equal(ratio === null ? row.attr('data-ratio') : Number(row.attr('data-ratio')), ratio === null ? undefined : ratio);
+			const ratioElement = row.find('.attention-ratio > strong, .attention-table-ratio');
+			assert.equal(ratioElement.text(), ratio === null ? 'Not defined' : `${ratio.toFixed(2)}\u00d7`);
+			const percentages = row.find('.attention-values dd').length
+				? row.find('.attention-values dd') : row.find('td');
+			assert.equal(percentages.eq(0).text(), `${(100 * first).toFixed(2)}%`);
+			assert.equal(percentages.eq(1).text(), `${(100 * second).toFixed(2)}%`);
+		}
+	}
 	assert.equal(panel.find('.density-takeaways > .density-section-label').text(), 'Key differences');
 	assert.equal(panel.find('.density-positions > .density-section-label').text(), 'Party positions');
 	assert.equal(panel.find('.density-topic-footer > details > summary').text(), 'About this issue cluster');
@@ -410,10 +461,10 @@ for (const topic of platformData.topics) {
 	assert.notEqual(periods[reused - 1].values[1], null);
 	assert.notEqual(periods[reused + 1].values[1], null);
 	assert.match(issue.find('.timeline-caption').text().replace(/\s+/g, ' '), /Republican dots bridge the reused 2020 platform/);
-	assert.equal(issue.find('thead th').length, 4);
-	assert.equal(issue.find('tbody tr').length, periods.length);
+	assert.equal(issue.find('.timeline-values thead th').length, 4);
+	assert.equal(issue.find('.timeline-values tbody tr').length, periods.length);
 	for (const [index, period] of periods.entries()) {
-		const row = issue.find('tbody tr').eq(index);
+		const row = issue.find('.timeline-values tbody tr').eq(index);
 		assert.equal(row.find('th').text(), period.label);
 		assert.deepEqual(row.find('td').toArray().map(cell => platforms(cell).text()),
 			period.values.map(value => value === null ? 'Not observed' : `${(100 * value).toFixed(1)}%`));

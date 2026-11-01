@@ -99,6 +99,19 @@
 .platform-page .density-map-wrap > p { font-size: 0.85rem; }
 .platform-page .density-topic > h3 { margin: 0 0 1.25rem; font-size: 1.35rem; }
 .platform-page .density-topic-summary { font-size: 0.95rem; }
+.platform-page .attention-summary { margin-bottom: 1.25rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--rule); font-family: var(--sans); }
+.platform-page .attention-heading { margin: 0 0 0.75rem; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.platform-page .attention-ratio { display: flex; align-items: baseline; gap: 0.75rem; margin: 0 0 0.75rem; font-size: 0.85rem; }
+.platform-page .attention-ratio > strong { flex-shrink: 0; font-size: 1.75rem; font-variant-numeric: tabular-nums; }
+.platform-page .attention-values { margin: 0; font-size: 0.85rem; }
+.platform-page .attention-values > div { display: flex; justify-content: space-between; gap: 1rem; margin-top: 0.4rem; }
+.platform-page .attention-values dd { margin: 0; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.platform-page .attention-methods { margin-top: 0.75rem; font-size: 0.8rem; color: var(--muted); }
+.platform-page .attention-methods > summary { font-weight: 400; }
+.platform-page .attention-table { margin-top: 1.25rem; font: 0.85rem/1.5 var(--sans); }
+.platform-page .attention-table table { font-size: 0.85rem; }
+.platform-page .attention-table td { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.platform-page .attention-table-ratio { font-weight: 600; }
 .platform-page .density-section-label { margin: 0 0 0.9rem; font: 600 0.75rem var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
 .platform-page .density-takeaways { padding: 1rem; background: color-mix(in srgb, var(--ink) 3%, var(--paper)); border-left: 2px solid var(--rule); }
 .platform-page .density-difference-block + .density-difference-block { margin-top: 1rem; }

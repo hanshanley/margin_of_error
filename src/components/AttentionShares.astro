@@ -1,0 +1,54 @@
+---
+import { attentionShares } from '../lib/platform-analysis';
+import { attentionComparison, densityComparisons } from '../lib/platform-density-comparison.mjs';
+
+interface Props {
+	topicId: string;
+	interactive?: boolean;
+}
+const { topicId, interactive = false } = Astro.props;
+const names: Record<string, string> = {
+	democratic: 'Democratic', republican: 'Republican', dsa: 'DSA',
+	democratic_republican: 'Democrat & Republican average',
+};
+const percent = (value: number | null) => value === null ? 'Not observed' : `${(100 * value).toFixed(2)}%`;
+const entries = densityComparisons.map(pair => ({
+	id: pair.id, ...attentionComparison(attentionShares[topicId], pair.id),
+}));
+const ratioText = (entry: typeof entries[number]) => entry.ratio === null
+	? entry.numeratorShare === null || entry.denominatorShare === null ? 'Not observed' : 'Not defined'
+	: `${entry.ratio.toFixed(2)}\u00d7`;
+const note = 'Weighted policy-claim shares across 2000\u20132026, not language density or policy agreement. Ratios use unrounded shares; 1\u00d7 means equal attention. The combined baseline gives Democrats and Republicans equal weight.';
+---
+
+{interactive ? <section class="attention-summary" data-attention-topic={topicId}>
+	<h4 class="attention-heading">Policy attention</h4>
+	{entries.map(entry => <div class="attention-comparison" data-comparison={entry.id}
+		data-numerator={entry.numerator} data-denominator={entry.denominator}
+		data-numerator-share={entry.numeratorShare} data-denominator-share={entry.denominatorShare}
+		data-ratio={entry.ratio} hidden={entry.id !== 'dsa_vs_democratic_republican'}>
+		<p class="attention-ratio"><strong>{ratioText(entry)}</strong>
+			<span>{names[entry.numerator]} / {names[entry.denominator]}</span></p>
+		<dl class="attention-values">
+			<div><dt>{names[entry.numerator]}</dt><dd>{percent(entry.numeratorShare)}</dd></div>
+			<div><dt>{names[entry.denominator]}</dt><dd>{percent(entry.denominatorShare)}</dd></div>
+		</dl>
+		{entry.ratio === null && entry.denominatorShare === 0 &&
+			<p class="qualification">A ratio is not defined when the baseline share is 0%.</p>}
+	</div>)}
+	<details class="attention-methods"><summary>About attention shares</summary><p>{note}</p></details>
+</section> : <details class="attention-table" data-attention-topic={topicId}>
+	<summary>Attention-share ratios</summary>
+	<div class="table-wrap"><table>
+		<thead><tr><th>Comparison (first / second)</th><th>First share</th><th>Second share</th><th>Ratio</th></tr></thead>
+		<tbody>{entries.map(entry => <tr data-comparison={entry.id}
+			data-numerator={entry.numerator} data-denominator={entry.denominator}
+			data-numerator-share={entry.numeratorShare} data-denominator-share={entry.denominatorShare}
+			data-ratio={entry.ratio}>
+			<th scope="row">{names[entry.numerator]} / {names[entry.denominator]}</th>
+			<td>{percent(entry.numeratorShare)}</td><td>{percent(entry.denominatorShare)}</td>
+			<td class="attention-table-ratio">{ratioText(entry)}</td>
+		</tr>)}</tbody>
+	</table></div>
+	<p class="qualification">{note} A zero baseline has no defined ratio.</p>
+</details>}

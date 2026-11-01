@@ -2,6 +2,7 @@
 import { densityMap, organizations, platforms } from '../lib/platform-analysis';
 import { claimDisplayText, partyPositionSummary } from '../lib/platform-position-copy.mjs';
 import { densityComparisons } from '../lib/platform-density-comparison.mjs';
+import AttentionShares from './AttentionShares.astro';
 ---
 
 <noscript><p>Interactive maps require JavaScript. <a href="/party-platforms/sources/">Read the issue evidence instead.</a></p></noscript>
@@ -36,6 +37,7 @@ import { densityComparisons } from '../lib/platform-density-comparison.mjs';
 			{densityMap.topics.map((topic, index) =>
 				<article class="density-topic" data-index={index} data-topic={topic.topic_id} hidden>
 					<h3>{topic.title}</h3>
+					<AttentionShares topicId={topic.topic_id} interactive />
 					<section class="density-takeaways">
 						<h4 class="density-section-label">Key differences</h4>
 					{Object.entries(topic.differences).map(([pair, difference]) =>
@@ -140,6 +142,9 @@ import { densityComparisons } from '../lib/platform-density-comparison.mjs';
 		const differences = combined ? ['democratic_vs_dsa', 'republican_vs_dsa'] : [pair.value];
 		for (const panel of root.querySelectorAll<HTMLElement>('.density-topic')) {
 			panel.hidden = Number(panel.dataset.index) !== index;
+			for (const comparison of panel.querySelectorAll<HTMLElement>('.attention-comparison')) {
+				comparison.hidden = comparison.dataset.comparison !== pair.value;
+			}
 			for (const position of panel.querySelectorAll<HTMLElement>('.density-position')) {
 				position.hidden = !groups.includes(position.dataset.group!);
 			}

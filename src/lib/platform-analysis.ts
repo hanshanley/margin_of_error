@@ -136,6 +136,32 @@ export interface DensityMap {
 export const densityMap: DensityMap = JSON.parse(
 	readFileSync('public/party-platforms/density-map.json', 'utf8'),
 );
+const [shareHeader, ...shareRows] = readFileSync(
+	'public/party-platforms/downloads/topics/shares.csv', 'utf8',
+).trim().split(/\r?\n/);
+const shareColumns = shareHeader.split(',');
+export const attentionShares: Record<string, Record<string, number | null>> = {};
+for (const line of shareRows) {
+	const fields = line.split(',');
+	if (fields.length !== shareColumns.length || line.includes('"')) {
+		throw new Error('Unexpected attention share CSV format');
+	}
+	const row = Object.fromEntries(shareColumns.map((column, index) => [column, fields[index]]));
+	if (row.view !== 'expanded') continue;
+	const value = row.available === 'True' ? Number(row.share) : null;
+	if (!['True', 'False'].includes(row.available) || !densityMap.groups.includes(row.group) ||
+		(value !== null && (!row.share || !Number.isFinite(value) || value < 0 || value > 1))) {
+		throw new Error(`Invalid attention share: ${row.topic_id}/${row.group}`);
+	}
+	const shares = attentionShares[row.topic_id] ??= {};
+	if (row.group in shares) throw new Error(`Duplicate attention share: ${row.topic_id}/${row.group}`);
+	shares[row.group] = value;
+}
+for (const topic of densityMap.topics) {
+	if (densityMap.groups.some(group => !(group in (attentionShares[topic.topic_id] ?? {})))) {
+		throw new Error(`Missing attention shares: ${topic.topic_id}`);
+	}
+}
 export const platformRepository = `https://github.com/hanshanley/dsa/tree/${platforms.source_revision}`;
 export const organizations = [
 	{ id: 'democratic', name: 'Democratic Party' },
