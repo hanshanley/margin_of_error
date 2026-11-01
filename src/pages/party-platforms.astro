@@ -140,8 +140,9 @@ const partyOverviews = organizations.map(group => {
 								data-png={`/party-platforms/${platformFigure('expanded/issues', `${topic.topic_id}_time`).path}?source=${data.source_revision}`}>
 								<figcaption>Over time</figcaption>
 								<canvas class="issue-time-chart" data-timeline={JSON.stringify(topicTimeline(topic.topic_id))}
-									role="img" aria-label={`Document-weighted share of attention over time: ${topic.title}. Exact values are available below.`}></canvas>
-								<p class="timeline-caption">Weighted attention &middot; gaps mean no documents &middot; *partial period</p>
+									role="img" aria-label={`Document-weighted share of attention over time: ${topic.title}. Republican dots bridge the reused 2020 platform, not a separate observation. Exact values are available below.`}></canvas>
+								<p class="timeline-caption">Weighted attention &middot; *partial period. Republican dots bridge
+									the reused 2020 platform; other gaps mean no documents.</p>
 								<details class="timeline-values">
 									<summary>Period values and source qualifications</summary>
 									<div class="table-wrap"><table>
@@ -308,6 +309,20 @@ const partyOverviews = organizations.map(group => {
 				connected = true;
 			});
 			context.stroke();
+			if (group === 1) {
+				const gap = periods.findIndex(period => period.label.startsWith('2020'));
+				const before = periods[gap - 1]?.values[group];
+				const after = periods[gap + 1]?.values[group];
+				if (gap > 0 && periods[gap].values[group] === null && before != null && after != null) {
+					context.save();
+					context.setLineDash([1, 5]);
+					context.beginPath();
+					context.moveTo(x(gap - 1), y(before));
+					context.lineTo(x(gap + 1), y(after));
+					context.stroke();
+					context.restore();
+				}
+			}
 			periods.forEach((period, index) => {
 				const value = period.values[group];
 				if (value === null) return;

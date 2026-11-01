@@ -97,14 +97,25 @@
 .platform-page .density-scale-values, .platform-page .density-scale-labels { display: flex; justify-content: space-between; gap: 1rem; margin-top: 0.4rem; font: 0.75rem var(--sans); color: var(--muted); }
 .platform-page .density-scale-labels > :last-child { text-align: right; }
 .platform-page .density-map-wrap > p { font-size: 0.85rem; }
-.platform-page .density-topic > h3 { margin-top: 0; }
+.platform-page .density-topic > h3 { margin: 0 0 1.25rem; font-size: 1.35rem; }
 .platform-page .density-topic-summary { font-size: 0.95rem; }
-.platform-page .density-position { border-top: 1px solid var(--rule); margin-top: 1.2rem; }
-.platform-page .density-position h4 { margin: 0.8rem 0; font: 600 0.95rem var(--sans); }
-.platform-page .density-position-summary { font: 1rem/1.55 var(--sans); }
+.platform-page .density-section-label { margin: 0 0 0.9rem; font: 600 0.75rem var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.platform-page .density-takeaways { padding: 1rem; background: color-mix(in srgb, var(--ink) 3%, var(--paper)); border-left: 2px solid var(--rule); }
+.platform-page .density-difference-block + .density-difference-block { margin-top: 1rem; }
+.platform-page .density-difference-label { margin: 0 0 0.35rem; font: 600 0.85rem var(--sans); }
+.platform-page .density-difference { margin: 0; font: 0.95rem/1.55 var(--sans); }
+.platform-page .density-positions { margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); }
+.platform-page .density-position { margin-top: 1.25rem; padding-left: 1rem; border-left: 2px solid var(--rule); }
+.platform-page .density-position[data-group="democratic"] { border-color: #3d7699; }
+.platform-page .density-position[data-group="republican"] { border-color: #c65a3b; }
+.platform-page .density-position[data-group="dsa"] { border-color: #c39a36; }
+.platform-page .density-position h5 { margin: 0 0 0.5rem; font: 600 0.95rem var(--sans); }
+.platform-page .density-position-summary { margin: 0; font: 0.95rem/1.55 var(--sans); }
+.platform-page .density-position-evidence { margin: 0.65rem 0 0; }
+.platform-page .density-topic-footer { margin-top: 1.5rem; padding-top: 0.25rem; border-top: 1px solid var(--rule); }
+.platform-page .density-subject-link { margin: 1rem 0 0; font: 0.9rem var(--sans); }
 .platform-page .density-position-evidence > summary,
-.platform-page .density-topic > details > summary { font: 400 0.85rem var(--sans); color: var(--muted); }
-.platform-page .density-topic > .density-difference { font: 1rem/1.55 var(--sans); }
+.platform-page .density-topic-footer > details > summary { font: 400 0.85rem var(--sans); color: var(--muted); }
 .platform-page .density-source-example { font-size: 0.9rem; }
 .platform-page .density-source-example blockquote { margin-block: 0.8rem; }
 .platform-page .density-source-example details { font-size: 0.85rem; }

@@ -244,12 +244,15 @@ assert.equal(platforms('#density-instructions').text().replace(/\s+/g, ' ').trim
 	'Hover over the map to identify an issue. Click or tap to keep it selected and read how the selected organizations discuss it.');
 assert.equal(platforms('#density-canvas').attr('aria-describedby'), 'density-instructions');
 assert.equal(platforms('.density-original').length, 0, 'Original annotated maps were removed from the reading page');
-assert.equal(platforms('.density-position-evidence[open], .density-topic > details[open]').length, 0,
+assert.equal(platforms('.density-position-evidence[open], .density-topic-footer > details[open]').length, 0,
 	'Source statements and cluster caveats must not clutter the initial comparison');
 assert.equal(platforms('#density-fallback a').attr('href'), '/party-platforms/sources/');
 const mappedClaims = new Map(densityMap.points.map(point => [point[0], point]));
 for (const [index, topic] of densityMap.topics.entries()) {
 	const panel = platforms(`.density-topic[data-topic="${topic.topic_id}"]`);
+	assert.equal(panel.find('.density-takeaways > .density-section-label').text(), 'Key differences');
+	assert.equal(panel.find('.density-positions > .density-section-label').text(), 'Party positions');
+	assert.equal(panel.find('.density-topic-footer > details > summary').text(), 'About this issue cluster');
 	for (const group of densityMap.groups) {
 		assert.equal(panel.find(`.density-position[data-group="${group}"]`).length,
 			topic.positions[group]?.summary || topic.examples.some(example => example.group === group) ? 1 : 0,
@@ -267,7 +270,7 @@ for (const [index, topic] of densityMap.topics.entries()) {
 			topic.examples.some(example => example.claim_id === id && example.group === group)));
 	}
 	for (const [pair, difference] of Object.entries(topic.differences)) {
-		assert.equal(panel.find(`.density-difference[data-pair="${pair}"]`).text(), difference.summary);
+		assert.equal(panel.find(`.density-takeaways .density-difference-block[data-pair="${pair}"] .density-difference`).text(), difference.summary);
 		assert.ok(difference.supporting_claim_ids.every(id =>
 			topic.examples.some(example => example.claim_id === id && pair.split('_vs_').includes(example.group))));
 	}
@@ -402,6 +405,11 @@ for (const topic of platformData.topics) {
 	assert.equal(issue.find('.issue-timeline').attr('data-png'), `/party-platforms/${figure.path}?source=${platformData.source_revision}`);
 	const periods = JSON.parse(issue.find('canvas').attr('data-timeline'));
 	assert.equal(periods.length, 7);
+	const reused = periods.findIndex(period => period.label.startsWith('2020'));
+	assert.equal(periods[reused].values[1], null, 'The reused Republican platform must not become a new observation');
+	assert.notEqual(periods[reused - 1].values[1], null);
+	assert.notEqual(periods[reused + 1].values[1], null);
+	assert.match(issue.find('.timeline-caption').text().replace(/\s+/g, ' '), /Republican dots bridge the reused 2020 platform/);
 	assert.equal(issue.find('thead th').length, 4);
 	assert.equal(issue.find('tbody tr').length, periods.length);
 	for (const [index, period] of periods.entries()) {
