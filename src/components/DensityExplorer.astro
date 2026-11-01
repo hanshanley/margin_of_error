@@ -1,6 +1,6 @@
 ---
 import { densityMap, organizations, platforms } from '../lib/platform-analysis';
-import { partyPositionSummary } from '../lib/platform-position-copy.mjs';
+import { claimDisplayText, partyPositionSummary } from '../lib/platform-position-copy.mjs';
 import { densityComparisons } from '../lib/platform-density-comparison.mjs';
 ---
 
@@ -59,10 +59,13 @@ import { densityComparisons } from '../lib/platform-density-comparison.mjs';
 							{topic.positions[group.id]?.caveat && <p class="qualification">{topic.positions[group.id].caveat}</p>}
 							{topic.examples.filter(example => example.group === group.id).map(example =>
 								<div class="density-source-example" data-claim={example.claim_id}>
-									<blockquote><p>{example.claim_text}</p></blockquote>
+									<blockquote><p>{claimDisplayText(example.claim_text)}</p></blockquote>
 									<p class="claim-source"><a href={example.source_url}>{example.title}</a>
 										{' '}&middot; {example.publication_date}</p>
-									<details><summary>Source excerpt</summary><p>{example.evidence}</p></details>
+									<details><summary>Source excerpt</summary><p>{example.evidence}</p>
+										{claimDisplayText(example.claim_text) !== example.claim_text &&
+											<p class="qualification">Original extracted wording: {example.claim_text}</p>}
+									</details>
 								</div>
 							)}
 							</details>
@@ -101,7 +104,7 @@ import { densityComparisons } from '../lib/platform-density-comparison.mjs';
 	const unpin = root.querySelector<HTMLButtonElement>('#density-unpin')!;
 	const tooltip = root.querySelector<HTMLElement>('#density-tooltip')!;
 	const status = root.querySelector<HTMLElement>('#density-map-status')!;
-	const palette: Record<string, string> = { democratic: '#3D6F8C', republican: '#C85A3D', dsa: '#C2993E', democratic_republican: '#6B7280' };
+	const palette: Record<string, string> = { democratic: '#3D6F8C', republican: '#C85A3D', dsa: '#C2993E', democratic_republican: '#B19CD9' };
 	const names: Record<string, string> = { democratic: 'Democratic', republican: 'Republican', dsa: 'DSA', democratic_republican: 'combined Democratic + Republican' };
 	let data: DensityMap;
 	let points: { x: number; y: number; issue: number }[] = [];

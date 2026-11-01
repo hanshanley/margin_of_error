@@ -1,6 +1,13 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { partyPositionSummary } from '../src/lib/platform-position-copy.mjs';
+import { claimDisplayText, partyPositionSummary } from '../src/lib/platform-position-copy.mjs';
+
+test('removes redundant extraction wording without rewriting source language', () => {
+	assert.equal(claimDisplayText('Commitment to commit to upholding American values at home and abroad.'),
+		'Commitment to upholding American values at home and abroad.');
+	assert.equal(claimDisplayText('Democrats commit to upholding American values at home and abroad.'),
+		'Democrats commit to upholding American values at home and abroad.');
+});
 
 test('names the party without changing the supported policy list', () => {
 	const policies = 'targeted federal investment, Medicaid and community-based services, affordable housing, mental-health and substance-use treatment, and assistance for veterans, disabled people, low-income communities, and returning citizens.';

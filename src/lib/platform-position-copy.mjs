@@ -33,6 +33,10 @@ const parallelClauses = [
 	['and promise continuation;', 'and promises continuation;'],
 ];
 
+export function claimDisplayText(text) {
+	return text.replace(/^Commitment to commit to\b/, 'Commitment to');
+}
+
 export function partyPositionSummary(group, summary) {
 	const party = parties[group];
 	if (!party) throw new Error(`Unknown position organization: ${group}`);

@@ -1,6 +1,7 @@
 ---
 import PlatformLayout from '../../layouts/PlatformLayout.astro';
 import { platforms as data, organizations } from '../../lib/platform-analysis';
+import { claimDisplayText } from '../../lib/platform-position-copy.mjs';
 
 const number = (value: number) => value.toLocaleString('en-US');
 const share = (topic: typeof data.topics[number], group: string) =>
@@ -15,7 +16,8 @@ const percent = (topic: typeof data.topics[number], group: string) => {
 	description="Inspect representative claims behind the charts and their exact source excerpts.">
 	<section id="topics" aria-label="Representative claims">
 		<p>These packets are samples, not the complete corpus.
-			Normalized claims and their exact source excerpts are shown separately.</p>
+			Normalized claims and their exact source excerpts are shown separately.
+			Redundant extraction wording is cleaned for display; the original is preserved.</p>
 		<div id="topic-filter" hidden>
 			<label for="topic-query">Search subjects and representative claims</label>
 			<input id="topic-query" type="search" placeholder="For example: housing or collective bargaining" />
@@ -50,9 +52,11 @@ const percent = (topic: typeof data.topics[number], group: string) => {
 						<div class="claim">
 							<p class="claim-source"><a href={claim.source_url}>{claim.title}</a>
 								&middot; {claim.publication_date}</p>
-							<p>{claim.claim_text}</p>
+							<p class="claim-text">{claimDisplayText(claim.claim_text)}</p>
 							<details><summary>Source excerpt and claim identifier</summary>
 								<blockquote>{claim.evidence}</blockquote>
+								{claimDisplayText(claim.claim_text) !== claim.claim_text &&
+									<p class="qualification">Original extracted wording: {claim.claim_text}</p>}
 								<p class="locator">{claim.locator}<br /><code>{claim.claim_id}</code></p>
 							</details>
 						</div>

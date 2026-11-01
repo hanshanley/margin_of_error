@@ -3,7 +3,7 @@ import PlatformLayout from '../layouts/PlatformLayout.astro';
 import PlatformFigure from '../components/PlatformFigure.astro';
 import DensityExplorer from '../components/DensityExplorer.astro';
 import { platforms as data, densityMap, organizations, platformFigure, timelineShares } from '../lib/platform-analysis';
-import { partyPositionSummary } from '../lib/platform-position-copy.mjs';
+import { claimDisplayText, partyPositionSummary } from '../lib/platform-position-copy.mjs';
 import { densityComparisons as densityPairs } from '../lib/platform-density-comparison.mjs';
 
 const number = (value: number) => value.toLocaleString('en-US');
@@ -214,7 +214,11 @@ const partyOverviews = organizations.map(group => {
 						))}
 					</ol>
 					<p class="summary-label">A stated position</p>
-					<blockquote><p>{overview.example.claim_text}</p></blockquote>
+					<blockquote><p>{claimDisplayText(overview.example.claim_text)}</p></blockquote>
+					{claimDisplayText(overview.example.claim_text) !== overview.example.claim_text &&
+						<details class="qualification"><summary>Original extracted wording</summary>
+							<p>{overview.example.claim_text}</p>
+						</details>}
 					<p class="claim-source"><a href={overview.example.source_url}>{overview.example.title}</a>
 						{' '}&middot; <a href={evidence(overview.topic)}>Read the source evidence</a></p>
 					<p class="coverage">{data.summary.documents_by_group[group.id]} documents &middot;
@@ -236,7 +240,7 @@ const partyOverviews = organizations.map(group => {
 		<div id="density-picker" class="issue-picker" hidden>
 			<label>Organizations
 				<select id="density-pair">{densityPairs.map(pair =>
-					<option value={pair.id} selected={pair.id === 'democratic_vs_dsa'}>{pair.title}</option>)}</select>
+					<option value={pair.id} selected={pair.id === 'dsa_vs_democratic_republican'}>{pair.title}</option>)}</select>
 			</label>
 		</div>
 		<DensityExplorer />

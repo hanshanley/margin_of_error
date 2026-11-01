@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { load } from 'cheerio';
 import sharp from 'sharp';
 import chartImageGroups from '../src/data/website-chart-images.json' with { type: 'json' };
-import { partyPositionSummary } from '../src/lib/platform-position-copy.mjs';
+import { claimDisplayText, partyPositionSummary } from '../src/lib/platform-position-copy.mjs';
 
 const root = new URL('../dist/', import.meta.url);
 const projectRoot = new URL('../', import.meta.url);
@@ -270,9 +270,13 @@ for (const [index, topic] of densityMap.topics.entries()) {
 		assert.equal(point[3], index);
 		assert.equal(densityMap.groups[point[4]], example.group);
 		const rendered = panel.find(`.density-source-example[data-claim="${example.claim_id}"]`);
-		assert.equal(rendered.find('blockquote p').text(), example.claim_text);
+		assert.equal(rendered.find('blockquote p').text(), claimDisplayText(example.claim_text));
 		assert.equal(rendered.find('.claim-source a').attr('href'), example.source_url);
-		assert.equal(rendered.find('details p').text(), example.evidence);
+		assert.equal(rendered.find('details p').first().text(), example.evidence);
+		if (claimDisplayText(example.claim_text) !== example.claim_text) {
+			assert.equal(rendered.find('details p.qualification').text(),
+				`Original extracted wording: ${example.claim_text}`);
+		}
 	}
 }
 assert.ok(!platformManifest.preview_only && !platformData.preview_only, 'A draft preview cannot be published');
@@ -294,7 +298,8 @@ for (const selector of ['meta[property="og:image"]', 'meta[name="twitter:image"]
 		`https://www.themarginoferror.com${platformCoverPath}`);
 }
 assert.equal(platforms('h1').text(), 'Party Priorities and Positions');
-assert.equal(platforms('#density-pair option[selected]').attr('value'), 'democratic_vs_dsa');
+assert.equal(platforms('#density-pair option[selected]').attr('value'), 'dsa_vs_democratic_republican');
+assert.doesNotMatch(platforms('.party-summary blockquote').text(), /Commitment to commit to/);
 assert.equal(platforms('link[rel=canonical]').attr('href'),
 	'https://www.themarginoferror.com/party-platforms/');
 for (const [index, page] of platformPages.entries()) {
