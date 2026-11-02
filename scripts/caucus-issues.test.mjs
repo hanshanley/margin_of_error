@@ -32,6 +32,11 @@ test('share links have unique real targets and the DSA title remains on the exis
 	assert.equal(new URL($('link[rel="canonical"]').attr('href')).pathname, '/party-platforms/');
 	const listing = load(readFileSync('dist/interactive-analysis/index.html', 'utf8'));
 	assert.equal(listing('h2 a[href="/party-platforms/"]').text(), 'DSA in Context: Party Platforms and Caucuses');
+	const actions = listing('.analysis-list > li').first().find('.lead-actions a');
+	assert.deepEqual(actions.toArray().map(link => listing(link).attr('href')), [
+		'/party-platforms/',
+		'/what-matters-most-to-americas-democratic-socialists/',
+	]);
 });
 
 test('caucus comparisons follow the existing national analysis and work without scripts', () => {

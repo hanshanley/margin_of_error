@@ -498,8 +498,7 @@ assert.equal(platformData.source_revision, platformManifest.source_revision);
 assert.equal(platformManifest.source_repository, 'hanshanley/dsa');
 assert.match(platformManifest.source_revision, /^[0-9a-f]{40}$/);
 assert.match(platforms('#overview').text(), /Missing periods remain gaps/);
-assert.equal(platformAnalysis.find('a:contains("Code and data on GitHub")').attr('href'),
-	`https://github.com/hanshanley/dsa/tree/${platformData.source_revision}`);
+assert.equal(platformAnalysis.find('a[href*="github.com"]').length, 0);
 assert.ok(platformData.topics.every(topic => topic.representatives.length > 0));
 for (const topic of platformData.topics) {
 	assert.equal(platformSources(`#${topic.topic_id} > summary`).text(), topic.title);
