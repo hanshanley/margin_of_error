@@ -16,7 +16,6 @@
 }
 
 .platform-page .analysis-deck { max-width: 760px; font-size: 1.2rem; }
-.platform-page .scope,
 .platform-page .coverage,
 .platform-page .caveat,
 .platform-page .label-origin,

@@ -27,6 +27,7 @@ test('share links have unique real targets and the DSA title remains on the exis
 		}
 	}
 	assert.match($('h1').text(), /^DSA in Context: Party Platforms and Caucuses$/);
+	assert.equal($('.analysis-heading .scope').length, 0);
 	assert.match($('title').text(), /DSA in Context: Party Platforms and Caucuses/);
 	assert.match($('meta[property="og:title"]').attr('content'), /DSA in Context/);
 	assert.equal(new URL($('link[rel="canonical"]').attr('href')).pathname, '/party-platforms/');

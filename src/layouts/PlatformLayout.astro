@@ -20,7 +20,6 @@ const { title, description, active } = Astro.props;
 				<p class="kicker">{active === 'issues' ? 'Party documents and caucus statements' : 'National documents, 2000\u20132026'}</p>
 				<h1>{title}</h1>
 				<p class="analysis-deck">{description}</p>
-				<p class="scope">Democratic Party &middot; Republican Party &middot; DSA</p>
 			</div>
 		</header>
 		{active === 'sources' && <p><a href="/party-platforms/">&larr; Back to the comparison</a></p>}
