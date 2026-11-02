@@ -72,7 +72,7 @@ jobs:
         uses: actions/checkout@v7
         with:
           repository: hanshanley/dsa
-          ref: fc353fc0db97970c2e3ed898cc7cd82288a2637e
+          ref: 6b3ac8292dc745eb8ed041eeb79ed1b5ebf2bc1f
           path: party-platforms-source
           sparse-checkout: |
             scripts
