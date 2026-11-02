@@ -43,6 +43,7 @@ const requiredFiles = [
 	'floor-letter-words-the-rise-of-congressional-profanity/index.html',
 	'broken-britain-the-headwinds-battering-the-island-nation/index.html',
 	'china-is-trending-understanding-china/index.html',
+	'what-matters-most-to-americas-democratic-socialists/index.html',
 	'rss.xml',
 	'robots.txt',
 	'sitemap-index.xml',
@@ -203,7 +204,9 @@ assert.doesNotMatch(analysis.html(), /political-ads|The language of political ad
 assert.doesNotMatch(sitemap, /political-ads/);
 await assert.rejects(readdir(new URL('political-ads/', root)), { code: 'ENOENT' });
 const platformAnalysis = analysis('.analysis-list > li').eq(0);
-assert.equal(platformAnalysis.find('h2 a').text(), 'Party Priorities and Positions');
+assert.equal(platformAnalysis.find('h2 a').text(), 'DSA in Context: Party Platforms and Caucuses');
+assert.equal(platformAnalysis.find('a:contains("Read the essay")').attr('href'),
+	'/what-matters-most-to-americas-democratic-socialists/');
 assert.equal(platformAnalysis.find('.primary-action').attr('href'), '/party-platforms/');
 assert.equal(platformAnalysis.find('img').attr('loading'), 'eager');
 const platforms = load(await text('party-platforms/index.html'));
@@ -364,7 +367,7 @@ for (const selector of ['meta[property="og:image"]', 'meta[name="twitter:image"]
 	assert.equal(platforms(selector).attr('content'),
 		`https://www.themarginoferror.com${platformCoverPath}`);
 }
-assert.equal(platforms('h1').text(), 'Party Priorities and Positions');
+assert.equal(platforms('h1').text(), 'DSA in Context: Party Platforms and Caucuses');
 assert.equal(platforms('#density-pair option[selected]').attr('value'), 'dsa_vs_democratic_republican');
 assert.doesNotMatch(platforms('.party-summary blockquote').text(), /Commitment to commit to/);
 assert.equal(platforms('link[rel=canonical]').attr('href'),
@@ -394,7 +397,8 @@ assert.equal(platforms('[data-overview-step]').length, 2, 'Use one set of issue 
 assert.doesNotMatch(platforms('#overview').text(), /The updated analysis shows/);
 assert.doesNotMatch(platforms('#density').text(), /\bKDE\b/);
 assert.equal(platforms('section#organization-patterns.party-overview').length, 1);
-assert.equal(platforms('#organization-patterns > h2').text(), 'Overall patterns by organization');
+assert.equal(platforms('#organization-patterns > h2').clone().children('.section-link').remove().end().text().trim(),
+	'Overall patterns by organization');
 assert.equal(platforms('details.party-overview').length, 0);
 assert.equal(platforms('.section-links a[href="#organization-patterns"]').length, 1);
 assert.equal(platforms('.overview-chart').length, platformOverviewPages.length);
@@ -457,7 +461,7 @@ for (const view of ['topic_distribution']) {
 }
 for (const topic of platformData.topics) {
 	const issue = platforms(`#issue-${topic.topic_id}`);
-	assert.equal(issue.children('h3').text(), topic.title);
+	assert.equal(issue.children('h3').clone().children('.section-link').remove().end().text().trim(), topic.title);
 	const figure = platformData.figures.find(entry =>
 		entry.view === 'expanded/issues' && entry.name === `${topic.topic_id}_time`);
 	assert.equal(issue.find('.issue-timeline').attr('data-png'), `/party-platforms/${figure.path}?source=${platformData.source_revision}`);
@@ -624,21 +628,24 @@ assert.match(
 const britainSlug = 'broken-britain-the-headwinds-battering-the-island-nation';
 const chinaSlug = 'china-is-trending-understanding-china';
 const chinaSubtitle = 'Chinese culture is having its moment in the sun. So why are fewer Americans visiting, studying, and learning about China?';
-assert.match(homepage, new RegExp(`<h1 id="lead-story-title"><a href="/${chinaSlug}/">`));
+const dsaSlug = 'what-matters-most-to-americas-democratic-socialists';
+const dsaTitle = "What Matters Most to America's Democratic Socialists?";
+const dsaSubtitle = 'The DSA’s growing influence within the Democratic Party and what 25 years of political platforms reveal about its priorities.';
+assert.match(homepage, new RegExp(`<h1 id="lead-story-title"><a href="/${dsaSlug}/">`));
 assert.match(homepage, />Read article<\/a>/);
 assert.match(homepage, />Subscribe<\/a>/);
-assert.match(homepage, /October 26, 2026/);
+assert.match(homepage, /November 1, 2026/);
 const leadPreview = load(homepage);
 assert.equal(leadPreview('.dispatches > .section-heading').text().trim(), 'Recent dispatches');
 assert.equal(leadPreview('.dispatches > .section-heading > h2#dispatches-title').length, 1);
 assert.equal(leadPreview('.home-deck .dek').length, 0);
 assert.equal(
 	leadPreview('.home-deck .lead-subtitle').text(),
-	chinaSubtitle,
+	dsaSubtitle,
 );
 assert.equal(
 	leadPreview('.home-lede .lead-image img').attr('src'),
-	`/artifacts/china-us-relations/${chinaSlug}/cover.png`,
+	`/artifacts/party-platforms/${dsaSlug}/cover.png`,
 );
 assert.equal(leadPreview('.home-lede .lead-image img').attr('width'), '1672');
 assert.equal(leadPreview('.home-lede .lead-image img').attr('height'), '941');
@@ -651,12 +658,12 @@ assert.equal(archiveAction.text(), 'View archive');
 assert.equal(archiveAction.parent().prev().attr('class'), 'post-list');
 for (const slug of [
 	'who-are-the-real-americans-heritage',
-	'a-continent-at-a-crossroads-natos',
 ]) {
 	assert.match(homepage, new RegExp(`/artifacts/substack/${slug}/cover\\.jpg`));
 }
 assert.match(homepage, /\/artifacts\/congressional-record\/profanity_per_1k_last50\.website\.png/);
 const expectedArchiveOrder = [
+	dsaSlug,
 	chinaSlug,
 	britainSlug,
 	'floor-letter-words-the-rise-of-congressional-profanity',
@@ -733,9 +740,39 @@ assert.match(congressionalPost('.post-materials').text(), /Interactive congressi
 assert.equal(congressionalPost('a[href="https://www.themarginoferror.com/congressional_profanity/"]').length, 2);
 assert.match(aiIndex, new RegExp(`https://www\\.themarginoferror\\.com/${congressSlug}/`));
 const feed = load(await text('rss.xml'), { xml: true });
-assert.equal(feed('item').first().find('link').text(), `https://www.themarginoferror.com/${chinaSlug}/`);
-assert.equal(feed('item').eq(1).find('link').text(), `https://www.themarginoferror.com/${britainSlug}/`);
-assert.equal(feed('item').eq(2).find('link').text(), `https://www.themarginoferror.com/${congressSlug}/`);
+assert.equal(feed('item').first().find('link').text(), `https://www.themarginoferror.com/${dsaSlug}/`);
+assert.equal(feed('item').eq(1).find('link').text(), `https://www.themarginoferror.com/${chinaSlug}/`);
+assert.equal(feed('item').eq(2).find('link').text(), `https://www.themarginoferror.com/${britainSlug}/`);
+assert.equal(feed('item').eq(3).find('link').text(), `https://www.themarginoferror.com/${congressSlug}/`);
+
+const dsaPost = load(await text(`${dsaSlug}/index.html`));
+assert.equal(dsaPost('h1').text(), dsaTitle);
+assert.equal(dsaPost('.post-subtitle').text(), dsaSubtitle);
+assert.equal(dsaPost('.post-description').length, 0);
+assert.equal(dsaPost('meta[name="description"]').attr('content'), dsaSubtitle);
+assert.match(dsaPost('.byline').text(), /November 1, 2026/);
+assert.equal(dsaPost('.post-header a:contains("Original edition")').attr('href'),
+	'https://themarginoferror.substack.com/p/44c6ec98-fba2-4f13-bebe-fe682acad874');
+assert.deepEqual(dsaPost('.prose h2').toArray().map(node => dsaPost(node).text()),
+	['What Sets the DSA Apart?', 'The DSA and the Democratic Party']);
+assert.equal(dsaPost('.prose ol > li').length, 5);
+assert.equal(dsaPost('.prose blockquote').length, 5);
+assert.equal(dsaPost('.prose a').length, 72);
+assert.equal(dsaPost('.prose img').length, 1);
+const dsaImage = dsaPost('.prose img');
+assert.equal(dsaImage.attr('src'), `/artifacts/party-platforms/${dsaSlug}/where-dsa-stands-apart.website.png`);
+assert.equal(dsaImage.attr('width'), '4050');
+assert.equal(dsaImage.attr('height'), '3037');
+assert.equal(dsaImage.attr('loading'), 'lazy');
+assert.equal(dsaImage.attr('decoding'), 'async');
+assert.ok(dsaImage.attr('alt')?.trim());
+assert.equal(dsaPost('.prose a[href="https://www.themarginoferror.com/party-platforms/#caucuses"]').length, 1);
+assert.equal(dsaPost('.post-materials a[href="https://www.themarginoferror.com/party-platforms/"]').length, 1);
+assert.equal(dsaPost('.post-materials a[href="https://github.com/hanshanley/dsa"]').length, 1);
+assert.doesNotMatch(dsaPost('.prose').html(), /substackcdn\.com|subscription-widget|reader-supported publication|utm_source/);
+assert.match(dsaPost('.prose').text(), /it will ultimately be up to American voters to decide/);
+assert.match(aiIndex, new RegExp(`https://www\\.themarginoferror\\.com/${dsaSlug}/`));
+assert.match(sitemap, new RegExp(`https://www\\.themarginoferror\\.com/${dsaSlug}/`));
 
 const chinaPost = load(await text(`${chinaSlug}/index.html`));
 assert.equal(chinaPost('h1').text(), "China Is Trending. Understanding China Isn't");

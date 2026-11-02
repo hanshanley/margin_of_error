@@ -188,9 +188,11 @@ node --input-type=module - "SUBSTACK_READER_URL" <<'JS'
 const response = await fetch(process.argv[2]);
 if (!response.ok) throw new Error(`Source request failed: ${response.status}`);
 const html = await response.text();
+const { load } = await import('cheerio');
+const embedded = load(html)('script#preloads-json[type="application/json"]').text();
 const match = html.match(/window\._preloads\s*=\s*JSON\.parse\(("(?:[^"\\]|\\.)*")\)/);
-if (!match) throw new Error("No embedded preview data; use the browser or an author export.");
-const { post } = JSON.parse(JSON.parse(match[1]));
+if (!embedded && !match) throw new Error("No embedded preview data; use the browser or an author export.");
+const { post } = embedded ? JSON.parse(embedded) : JSON.parse(JSON.parse(match[1]));
 if (!post?.body_html) throw new Error("No article body; request an accessible source.");
 console.log(JSON.stringify({
   title: post.title,

@@ -1,5 +1,10 @@
 [
   {
+    "directory": "artifacts/party-platforms/what-matters-most-to-americas-democratic-socialists",
+    "background": "#f7f5f0",
+    "files": ["where-dsa-stands-apart.png"]
+  },
+  {
     "directory": "party-platforms/figures",
     "background": "#f7f5f0"
   },
