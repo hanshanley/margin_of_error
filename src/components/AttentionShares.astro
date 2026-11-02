@@ -1,6 +1,7 @@
 ---
 import { attentionShares } from '../lib/platform-analysis';
 import { attentionComparison, densityComparisons } from '../lib/platform-density-comparison.mjs';
+import SectionLink from './SectionLink.astro';
 
 interface Props {
 	topicId: string;
@@ -24,6 +25,7 @@ const note = 'Weighted policy-claim shares across 2000\u20132026, not language d
 {interactive ? <section class="attention-summary" data-attention-topic={topicId}>
 	<h4 class="attention-heading">Policy attention</h4>
 	{entries.map(entry => <div class="attention-comparison" data-comparison={entry.id}
+		id={`map-${entry.id}-${topicId}`}
 		data-numerator={entry.numerator} data-denominator={entry.denominator}
 		data-numerator-share={entry.numeratorShare} data-denominator-share={entry.denominatorShare}
 		data-ratio={entry.ratio} hidden={entry.id !== 'dsa_vs_democratic_republican'}>
@@ -35,10 +37,12 @@ const note = 'Weighted policy-claim shares across 2000\u20132026, not language d
 		</dl>
 		{entry.ratio === null && entry.denominatorShare === 0 &&
 			<p class="qualification">A ratio is not defined when the baseline share is 0%.</p>}
+		<SectionLink href={`#map-${entry.id}-${topicId}`} label="this language-map comparison and issue" />
 	</div>)}
 	<details class="attention-methods"><summary>About attention shares</summary><p>{note}</p></details>
 </section> : <details class="attention-table" data-attention-topic={topicId}>
 	<summary>Attention-share ratios</summary>
+	<SectionLink id={`ratios-${topicId}`} href={`#ratios-${topicId}`} label="these attention-share ratios" />
 	<div class="table-wrap"><table>
 		<thead><tr><th>Comparison (first / second)</th><th>First share</th><th>Second share</th><th>Ratio</th></tr></thead>
 		<tbody>{entries.map(entry => <tr data-comparison={entry.id}

@@ -127,6 +127,15 @@ native theme and statement disclosures without JavaScript. Zero attention is not
 opposition. The build tests rendered shares, ratios, ordering, bar scales and
 original source excerpts against the verified export.
 
+The reader-facing title is **DSA in Context: Party Platforms and Caucuses**.
+Keep `/party-platforms/` and its existing fragments stable. Small copy-link
+controls target sections, organization summaries, individual issues, timelines,
+ratio tables, and caucus statements/evidence. Map links restore both the comparison
+and pinned issue, even before the lazy-loaded map has fetched its data. Native
+links remain usable without clipboard access; deep links open the relevant
+disclosures. Explicit issue/caucus/map selections update the address without
+adding a history entry for every selection; map hover does not rewrite it.
+
 The author-supplied Three Platform Booklets illustration is the
 Interactive analysis preview and social image, not an image inside the analysis
 pages. Keep it under

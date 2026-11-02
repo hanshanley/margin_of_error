@@ -17,7 +17,7 @@ const { title, description, active } = Astro.props;
 			not a verified publication. Do not publish this build.</p>}
 		<header class="analysis-heading">
 			<div>
-				<p class="kicker">National documents, 2000&ndash;2026</p>
+				<p class="kicker">{active === 'issues' ? 'Party documents and caucus statements' : 'National documents, 2000\u20132026'}</p>
 				<h1>{title}</h1>
 				<p class="analysis-deck">{description}</p>
 				<p class="scope">Democratic Party &middot; Republican Party &middot; DSA</p>

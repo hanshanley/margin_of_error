@@ -123,6 +123,17 @@ import AttentionShares from './AttentionShares.astro';
 	let width = 0;
 	let height = 0;
 	let frame = 0;
+	const shareSelection = () => {
+		const link = root.querySelector<HTMLAnchorElement>('.density-topic:not([hidden]) .attention-comparison:not([hidden]) [data-share-link]')!;
+		history.replaceState(null, '', link.hash);
+	};
+	const pin = (updateAddress = true) => {
+		pinned = true;
+		unpin.hidden = false;
+		unpin.disabled = false;
+		status.textContent = 'Issue pinned. Unpin it to resume hover.';
+		if (updateAddress) shareSelection();
+	};
 
 	const draw = () => {
 		context.clearRect(0, 0, width, height);
@@ -249,10 +260,7 @@ import AttentionShares from './AttentionShares.astro';
 		pressedPoint = undefined;
 		if (!point) return;
 		selectIssue(point.issue);
-		pinned = true;
-		unpin.hidden = false;
-		unpin.disabled = false;
-		status.textContent = 'Issue pinned. Unpin it to resume hover.';
+		pin();
 	});
 	const release = () => {
 		const restoreFocus = document.activeElement === unpin;
@@ -261,15 +269,13 @@ import AttentionShares from './AttentionShares.astro';
 		unpin.disabled = true;
 		if (restoreFocus) canvas.focus({ preventScroll: true });
 		status.textContent = 'Hover or tap a point to explore an issue.';
+		history.replaceState(null, '', '#density');
 	};
 	unpin.addEventListener('click', release);
 	topic.addEventListener('change', () => {
 		if (!data) return;
 		selectIssue(Number(topic.value));
-		pinned = true;
-		unpin.hidden = false;
-		unpin.disabled = false;
-		status.textContent = 'Issue pinned. Unpin it to resume hover.';
+		pin();
 	});
 	canvas.addEventListener('keydown', event => {
 		if (!data) return;
@@ -277,12 +283,27 @@ import AttentionShares from './AttentionShares.astro';
 		if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
 		event.preventDefault();
 		selectIssue((selected + (event.key === 'ArrowRight' ? 1 : data.topics.length - 1)) % data.topics.length);
-		pinned = true;
-		unpin.hidden = false;
-		unpin.disabled = false;
-		status.textContent = 'Issue pinned. Unpin it to resume hover.';
+		pin();
 	});
-	pair.addEventListener('change', render);
+	pair.addEventListener('change', () => {
+		render();
+		if (data) shareSelection();
+	});
+	const reveal = () => {
+		const target = document.getElementById(location.hash.slice(1));
+		if (!target?.matches('.attention-comparison') || !root.contains(target)) return;
+		const panel = target.closest<HTMLElement>('.density-topic')!;
+		pair.value = target.dataset.comparison!;
+		topic.value = panel.dataset.index!;
+		if (data) {
+			render();
+			pin(false);
+		}
+		requestAnimationFrame(() => document.getElementById('density')!.scrollIntoView({ behavior: 'instant' }));
+	};
+	window.addEventListener('hashchange', reveal);
+	window.addEventListener('load', reveal, { once: true });
+	document.fonts.ready.then(reveal);
 	new ResizeObserver(render).observe(canvas);
 	const observer = new IntersectionObserver(async entries => {
 		if (!entries.some(entry => entry.isIntersecting)) return;
@@ -295,10 +316,12 @@ import AttentionShares from './AttentionShares.astro';
 			render();
 			root.dataset.ready = 'true';
 			status.textContent = 'Hover or tap a point to explore an issue.';
+			reveal();
 		} catch {
 			root.hidden = true;
 			document.querySelector<HTMLElement>('#density-fallback')!.hidden = false;
 		}
 	});
 	observer.observe(document.querySelector('#density')!);
+	reveal();
 </script>

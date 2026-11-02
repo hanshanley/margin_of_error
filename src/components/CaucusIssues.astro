@@ -1,5 +1,6 @@
 ---
 import { readFileSync } from 'node:fs';
+import SectionLink from './SectionLink.astro';
 
 interface Example {
 	claim_id: string;
@@ -36,7 +37,7 @@ const positionId = (topic: string, group: string) => `caucus-position-${topic}-$
 ---
 
 <section id="caucuses" class="reader-section" aria-labelledby="caucuses-title">
-	<h2 id="caucuses-title">Inside DSA</h2>
+	<h2 id="caucuses-title">Inside DSA <SectionLink href="#caucuses" label="the DSA caucus comparisons" /></h2>
 	<p class="caucus-intro">Compare the priorities of thirteen caucuses and networks,
 		through the issues emphasized in their own statements.</p>
 	<div class="caucus-toolbar" hidden>
@@ -57,7 +58,7 @@ const positionId = (topic: string, group: string) => `caucus-position-${topic}-$
 		return (
 			<details id={`caucus-${topic.id}`} class="caucus-issue" open={index === 0} data-caucus-topic={topic.id}>
 				<summary>{topic.title}</summary>
-				<h3 class="caucus-theme-title" tabindex="-1">{topic.title}</h3>
+				<h3 class="caucus-theme-title" tabindex="-1">{topic.title} <SectionLink href={`#caucus-${topic.id}`} label={`the caucus comparison on ${topic.title}`} /></h3>
 				<p class="caucus-theme-summary">{topic.summary}</p>
 				<div class="caucus-comparison">
 					<div class="caucus-chart">
@@ -87,11 +88,12 @@ const positionId = (topic: string, group: string) => `caucus-position-${topic}-$
 								data-caucus-position={group.id} open={groupIndex === 0}>
 								<summary>{group.name}</summary>
 								<p class="caucus-position-label">From its statement</p>
-								<h4 class="caucus-position-name" tabindex="-1">{group.name}</h4>
+								<h4 class="caucus-position-name" tabindex="-1">{group.name} <SectionLink href={`#${positionId(topic.id, group.id)}`} label={`${group.name} on ${topic.title}`} /></h4>
 								{group.examples.length ? <>
 									<p class="caucus-statement">{displayClaim(group.examples[0].claim_text)}</p>
 									<details class="caucus-evidence">
 										<summary>Read the source evidence</summary>
+										<SectionLink id={`caucus-evidence-${topic.id}-${group.id}`} href={`#caucus-evidence-${topic.id}-${group.id}`} label={`the source evidence for ${group.name} on ${topic.title}`} />
 										{group.examples.map(example => <div data-claim={example.claim_id}>
 											<p class="caucus-original">{example.claim_text}</p>
 											<blockquote>{example.evidence}</blockquote>
@@ -229,6 +231,7 @@ const positionId = (topic: string, group: string) => `caucus-position-${topic}-$
 		rows.forEach(row => row.addEventListener('click', event => {
 			event.preventDefault();
 			showPosition(panel, row.dataset.caucus!);
+			history.replaceState(null, '', row.hash);
 			if (matchMedia('(max-width: 760px)').matches) {
 				const position = panel.querySelector<HTMLElement>('.caucus-position:not([hidden])')!;
 				position.scrollIntoView({ behavior: 'instant', block: 'start' });
@@ -243,9 +246,13 @@ const positionId = (topic: string, group: string) => `caucus-position-${topic}-$
 			});
 		});
 	});
-	select.addEventListener('change', () => showIssue(panels.findIndex(panel => panel.dataset.caucusTopic === select.value)));
+	const selectIssue = (index: number) => {
+		showIssue(index);
+		history.replaceState(null, '', `#${panels[index].id}`);
+	};
+	select.addEventListener('change', () => selectIssue(panels.findIndex(panel => panel.dataset.caucusTopic === select.value)));
 	steps.forEach(button => button.addEventListener('click', () => {
-		showIssue(Math.max(0, Math.min(panels.length - 1, current + Number(button.dataset.caucusStep))));
+		selectIssue(Math.max(0, Math.min(panels.length - 1, current + Number(button.dataset.caucusStep))));
 	}));
 	const reveal = () => {
 		const target = document.getElementById(location.hash.slice(1));
@@ -253,12 +260,16 @@ const positionId = (topic: string, group: string) => `caucus-position-${topic}-$
 		const panel = target.closest<HTMLDetailsElement>('.caucus-issue');
 		if (panel) {
 			showIssue(panels.indexOf(panel));
-			if (target instanceof HTMLDetailsElement && target.dataset.caucusPosition) {
-				showPosition(panel, target.dataset.caucusPosition);
+			const position = target.closest<HTMLElement>('.caucus-position');
+			if (position) {
+				showPosition(panel, position.dataset.caucusPosition!);
+			}
+			for (let element: HTMLElement | null = target; element && element !== panel; element = element.parentElement) {
+				if (element instanceof HTMLDetailsElement) element.open = true;
 			}
 		}
 		if (target === section || panel) {
-			requestAnimationFrame(() => (target.dataset.caucusPosition ? target : panel ?? section)
+			requestAnimationFrame(() => (target.closest('.caucus-position') ? target : panel ?? section)
 				.scrollIntoView({ behavior: 'instant', block: 'start' }));
 		}
 	};

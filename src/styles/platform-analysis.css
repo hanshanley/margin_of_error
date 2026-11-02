@@ -27,6 +27,9 @@
 .platform-page section > p { max-width: 900px; }
 .platform-page .qualification { max-width: 900px; color: var(--muted); }
 .platform-page .section-links { display: flex; flex-wrap: wrap; gap: 0.7rem 1.8rem; font: 0.9rem var(--sans); }
+.platform-page .party-summary,
+.platform-page .timeline-values,
+.platform-page .attention-table { scroll-margin-top: 6rem; }
 .platform-page #overview { margin-top: 1.8rem; padding-top: 0; border-top: 0; }
 .platform-page #overview > h2 { margin-top: 0; }
 .platform-page .view-summary,

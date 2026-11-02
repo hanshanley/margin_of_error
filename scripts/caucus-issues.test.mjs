@@ -6,6 +6,34 @@ import { load } from 'cheerio';
 const data = JSON.parse(readFileSync('public/party-platforms/caucuses/analysis.json', 'utf8'));
 const $ = load(readFileSync('dist/party-platforms/index.html', 'utf8'));
 
+test('share links have unique real targets and the DSA title remains on the existing route', () => {
+	const ids = $('[id]').toArray().map(element => $(element).attr('id'));
+	assert.equal(new Set(ids).size, ids.length);
+	for (const link of $('[data-share-link]').toArray()) {
+		const target = $(link).attr('href').slice(1);
+		assert.ok(ids.includes(target), `Missing share target: ${target}`);
+	}
+	for (const topic of $('.mobile-topic').toArray()) {
+		const id = $(topic).attr('data-topic');
+		assert.equal($(`#issue-${id} [data-share-link][href="#issue-${id}"]`).length, 1);
+		assert.equal($(`#ratios-${id}[data-share-link]`).length, 1);
+		assert.equal($(`#timeline-${id}[data-share-link]`).length, 1);
+		assert.equal($(`#ratios-${id}`).closest('details').hasClass('attention-table'), true);
+		assert.equal($(`#timeline-${id}`).closest('details').hasClass('timeline-values'), true);
+	}
+	for (const panel of $('.density-topic').toArray()) {
+		for (const comparison of $(panel).find('.attention-comparison').toArray()) {
+			assert.equal($(comparison).find('[data-share-link]').attr('href'), `#${$(comparison).attr('id')}`);
+		}
+	}
+	assert.match($('h1').text(), /^DSA in Context: Party Platforms and Caucuses$/);
+	assert.match($('title').text(), /DSA in Context: Party Platforms and Caucuses/);
+	assert.match($('meta[property="og:title"]').attr('content'), /DSA in Context/);
+	assert.equal(new URL($('link[rel="canonical"]').attr('href')).pathname, '/party-platforms/');
+	const listing = load(readFileSync('dist/interactive-analysis/index.html', 'utf8'));
+	assert.equal(listing('h2 a[href="/party-platforms/"]').text(), 'DSA in Context: Party Platforms and Caucuses');
+});
+
 test('caucus comparisons follow the existing national analysis and work without scripts', () => {
 	assert.equal($('#density').next().attr('id'), 'caucuses');
 	assert.equal($('.section-links a[href="#caucuses"]').length, 1);

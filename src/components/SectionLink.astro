@@ -1,0 +1,43 @@
+---
+interface Props {
+	href: string;
+	label: string;
+	id?: string;
+}
+const { href, label, id } = Astro.props;
+---
+
+<a class="section-link" id={id} href={href} aria-label={`Link to ${label}`} data-share-link data-link-label={label}>Link</a>
+<span class="link-status" role="status"></span>
+
+<style>
+	.section-link { display: inline-block; margin-left: 0.75rem; color: var(--muted); font: 400 0.75rem/1.5 Arial, sans-serif; text-decoration: none; white-space: nowrap; vertical-align: baseline; }
+	.section-link:hover { text-decoration: underline; }
+	.section-link:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+	.section-link[id] { scroll-margin-top: 6rem; }
+	.link-status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+</style>
+
+<script>
+	for (const link of document.querySelectorAll<HTMLAnchorElement>('[data-share-link]')) {
+		if (!navigator.clipboard?.writeText) continue;
+		link.textContent = 'Copy link';
+		link.setAttribute('aria-label', `Copy link to ${link.dataset.linkLabel}`);
+		link.addEventListener('click', async event => {
+			event.preventDefault();
+			try {
+				await navigator.clipboard.writeText(link.href);
+				link.textContent = 'Copied';
+				link.nextElementSibling!.textContent = 'Link copied.';
+				setTimeout(() => {
+					link.textContent = 'Copy link';
+					link.nextElementSibling!.textContent = '';
+				}, 2000);
+			} catch {
+				link.textContent = 'Link';
+				link.nextElementSibling!.textContent = 'Copy unavailable. Copy the address from your browser.';
+				window.location.assign(link.href);
+			}
+		});
+	}
+</script>
