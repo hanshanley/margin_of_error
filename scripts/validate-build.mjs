@@ -751,7 +751,7 @@ assert.equal(dsaPost('.post-description').length, 0);
 assert.equal(dsaPost('meta[name="description"]').attr('content'), dsaSubtitle);
 assert.match(dsaPost('.byline').text(), /November 1, 2026/);
 assert.equal(dsaPost('.post-header a:contains("Original edition")').attr('href'),
-	'https://themarginoferror.substack.com/p/44c6ec98-fba2-4f13-bebe-fe682acad874');
+	'https://themarginoferror.substack.com/p/what-matters-most-to-americas-democratic');
 assert.deepEqual(dsaPost('.prose h2').toArray().map(node => dsaPost(node).text()),
 	['What Sets the DSA Apart?', 'The DSA and the Democratic Party']);
 assert.equal(dsaPost('.prose ol > li').length, 5);
