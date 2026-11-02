@@ -119,9 +119,13 @@ After the national export, run `scripts/build_caucus_publication.py --output
 public/party-platforms/caucuses` from the same pinned DSA checkout. This offline
 export checks the current numerical hashes, reviewed labels, exact ratios, and
 source excerpts. Caucus themes are learned separately, not national-party topic
-IDs or a timeline. All thirteen groups remain visible in every theme; zero
-attention is not opposition. The build tests every rendered share and source
-excerpt against the verified export.
+IDs or a timeline. Show one theme at a time, with all thirteen groups ranked by
+attention share beside a selected source-backed statement. Bars share an explicitly
+labeled scale within each theme, not across themes. On mobile, give each bar its
+own line and let readers move between the chart and selected statement. Keep
+native theme and statement disclosures without JavaScript. Zero attention is not
+opposition. The build tests rendered shares, ratios, ordering, bar scales and
+original source excerpts against the verified export.
 
 The author-supplied Three Platform Booklets illustration is the
 Interactive analysis preview and social image, not an image inside the analysis

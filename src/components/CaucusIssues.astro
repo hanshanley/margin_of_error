@@ -27,114 +27,245 @@ interface Topic {
 const data: { source_revision: string; eligible_claims: number; topics: Topic[] } =
 	JSON.parse(readFileSync('public/party-platforms/caucuses/analysis.json', 'utf8'));
 const percent = (value: number) => `${(100 * value).toFixed(1)}%`;
-const ratio = (value: number | null) => value === null ? 'Undefined' : `${value.toFixed(1)}\u00d7`;
+const ratio = (value: number | null) => value === null ? '\u2014' : `${value.toFixed(1)}\u00d7`;
+const displayClaim = (text: string) => text
+	.replace(/^Commitment to /, 'Commits to ')
+	.replace(/^Support for /, 'Supports ')
+	.replace(/^Opposition to /, 'Opposes ');
+const positionId = (topic: string, group: string) => `caucus-position-${topic}-${group}`;
 ---
 
 <section id="caucuses" class="reader-section" aria-labelledby="caucuses-title">
-	<h2 id="caucuses-title">Inside DSA: thirteen caucuses and networks</h2>
-	<p>How do DSA's internal groups divide their attention? These twelve themes compare
-		thirteen flagship statements, using {data.eligible_claims.toLocaleString('en-US')} normalized claims.
-		Each row pairs a share of attention with a source-backed example of what that group says.</p>
-	<p class="qualification">One statement per group, not a timeline or a measure of membership.
-		The themes overlap; some reflect shared wording and ideological self-description rather
-		than distinct policy issues. They were learned separately from the national-party subjects above.</p>
-	<details class="caucus-index">
-		<summary>Choose a caucus theme</summary>
-		<ul>{data.topics.map(topic => <li><a href={`#caucus-${topic.id}`}>{topic.title}</a></li>)}</ul>
-	</details>
-	{data.topics.map((topic, index) => (
-		<details id={`caucus-${topic.id}`} class="caucus-issue" open={index === 0} data-caucus-topic={topic.id}>
-			<summary>{topic.title}</summary>
-			<p class="caucus-theme-summary">{topic.summary}</p>
-			<div class="caucus-column-headings" aria-hidden="true">
-				<span>Caucus / network</span><span>Attention share</span><span>A statement on this theme</span>
-			</div>
-			{topic.groups.map(group => (
-				<div class="caucus-row" data-caucus={group.id} data-share={group.share} data-ratio={group.ratio}>
-					<h3>{group.name}</h3>
-					<div class="caucus-measure">
-						<div class="caucus-bar-line">
-							<span class="caucus-track" aria-hidden="true">
-								<span style={`width:${group.share * 100}%`}></span>
-							</span>
-							<span class="caucus-percent">{percent(group.share)}</span>
+	<h2 id="caucuses-title">Inside DSA</h2>
+	<p class="caucus-intro">Compare the priorities of thirteen caucuses and networks,
+		through the issues emphasized in their own statements.</p>
+	<div class="caucus-toolbar" hidden>
+		<label for="caucus-topic-select">Compare an issue
+			<select id="caucus-topic-select">
+				{data.topics.map(topic => <option value={topic.id}>{topic.title}</option>)}
+			</select>
+		</label>
+		<nav class="overview-pages" aria-label="Browse caucus issues">
+			<button type="button" data-caucus-step="-1" disabled aria-label="Previous caucus issue">Previous</button>
+			<span class="subject-count" role="status" aria-live="polite" id="caucus-topic-count">1 of {data.topics.length}</span>
+			<button type="button" data-caucus-step="1" aria-label="Next caucus issue">Next</button>
+		</nav>
+	</div>
+	{data.topics.map((topic, index) => {
+		const groups = [...topic.groups].sort((a, b) => b.share - a.share || a.name.localeCompare(b.name));
+		const ceiling = Math.max(0.1, Math.ceil(Math.max(...groups.map(group => group.share)) * 10) / 10);
+		return (
+			<details id={`caucus-${topic.id}`} class="caucus-issue" open={index === 0} data-caucus-topic={topic.id}>
+				<summary>{topic.title}</summary>
+				<h3 class="caucus-theme-title" tabindex="-1">{topic.title}</h3>
+				<p class="caucus-theme-summary">{topic.summary}</p>
+				<div class="caucus-comparison">
+					<div class="caucus-chart">
+						<div class="caucus-chart-heading" aria-hidden="true">
+							<span>Caucus</span>
+							<span class="caucus-axis"><span>0%</span><span>{Math.round(ceiling * 100)}%</span></span>
+							<span>Share</span><span>vs others</span>
 						</div>
-						<span class="caucus-ratio">{ratio(group.ratio)}{group.ratio !== null && ' others'}</span>
+						{groups.map((group, groupIndex) => (
+							<a class="caucus-row" href={`#${positionId(topic.id, group.id)}`}
+								data-caucus={group.id} data-share={group.share} data-ratio={group.ratio}
+								aria-current={groupIndex === 0 ? 'true' : undefined}>
+								<span class="caucus-name">{group.name}</span>
+								<span class="caucus-track" aria-hidden="true">
+									<span style={`width:${group.share / ceiling * 100}%`}></span>
+								</span>
+								<span class="caucus-percent">{percent(group.share)}</span>
+								<span class="caucus-ratio">{ratio(group.ratio)}</span>
+							</a>
+						))}
+						<p class="caucus-chart-caption">Share of attention in each statement.
+							<span class="caucus-interaction-hint"> Select a caucus to read its statement.</span></p>
 					</div>
-					<div class="caucus-statement">
-						{group.examples.length ? <>
-							<p>{group.examples[0].claim_text}</p>
-							<details class="caucus-evidence">
-								<summary>Source evidence</summary>
-								{group.examples.map(example => <div data-claim={example.claim_id}>
-									<p><a href={example.source_url}>{example.title}</a></p>
-									<blockquote>{example.evidence}</blockquote>
-									<p class="locator">{example.locator}</p>
-								</div>)}
+					<div class="caucus-positions" aria-label="Statements on this issue">
+						{groups.map((group, groupIndex) => (
+							<details id={positionId(topic.id, group.id)} class="caucus-position"
+								data-caucus-position={group.id} open={groupIndex === 0}>
+								<summary>{group.name}</summary>
+								<p class="caucus-position-label">From its statement</p>
+								<h4 class="caucus-position-name" tabindex="-1">{group.name}</h4>
+								{group.examples.length ? <>
+									<p class="caucus-statement">{displayClaim(group.examples[0].claim_text)}</p>
+									<details class="caucus-evidence">
+										<summary>Read the source evidence</summary>
+										{group.examples.map(example => <div data-claim={example.claim_id}>
+											<p class="caucus-original">{example.claim_text}</p>
+											<blockquote>{example.evidence}</blockquote>
+											<p class="caucus-citation"><a href={example.source_url}>{example.title}</a></p>
+											<p class="locator">{example.locator}</p>
+										</div>)}
+									</details>
+								</> : <p class="caucus-empty">No eligible claims assigned to this theme in the sampled statement.
+									This does not mean opposition.</p>}
+								<button type="button" class="caucus-back">Back to the comparison</button>
 							</details>
-						</> : <p class="caucus-empty">No eligible claims assigned to this theme in the sampled statement.</p>}
+						))}
 					</div>
 				</div>
-			))}
-			<p class="caucus-note">Shares use all eligible claims in each group's statement. All bars use a 0&ndash;100% scale.
-				Multipliers compare with the equally weighted average of the other twelve groups;
-				they use unrounded shares, with no smoothing. A zero baseline is undefined.
-				Zero attention does not mean opposition. Examples are not exhaustive position summaries.</p>
+			</details>
+		);
+	})}
+	<div class="caucus-footer">
+		<p>One statement per group. Themes overlap; attention is not membership or agreement.</p>
+		<details class="caucus-methods">
+			<summary>About these comparisons</summary>
+			<p>The twelve themes use {data.eligible_claims.toLocaleString('en-US')} normalized claims.
+				Shares use all eligible claims in each group's statement. Bars share one scale within each issue;
+				compare the percentages across issues. “vs others” divides a group's share by the equally weighted
+				average of the other twelve, using unrounded shares and no smoothing. A zero baseline is undefined.
+				Zero attention does not mean opposition.</p>
+			<p>These are snapshots, not timelines. Some themes reflect shared wording or ideological identity rather
+				than distinct policy issues. They were learned separately from the national-party subjects.
+				Selected statements are examples, not exhaustive position summaries. Original extracted wording
+				and exact excerpts are retained in the source evidence.</p>
+			<a href={`https://github.com/hanshanley/dsa/tree/${data.source_revision}/data/analysis/dsa_caucuses`}>
+				Complete caucus analysis, claims and sources</a>
 		</details>
-	))}
-	<p class="caucus-source"><a href={`https://github.com/hanshanley/dsa/tree/${data.source_revision}/data/analysis/dsa_caucuses`}>
-		Caucus analysis, complete claims and sources</a></p>
+	</div>
 </section>
 
 <style>
-	.caucus-index ul { columns: 2; column-gap: 2rem; padding-left: 1.2rem; }
-	.caucus-index li { break-inside: avoid; margin-bottom: 0.6rem; font: 0.9rem/1.5 var(--sans); }
-	.caucus-issue { border-top: 1px solid var(--rule); padding-top: 1.1rem; scroll-margin-top: 1rem; }
-	.caucus-issue > summary { font-family: var(--serif, Georgia, serif); font-size: 1.3rem; line-height: 1.35; }
-	.caucus-theme-summary { max-width: 55rem; font: 0.95rem/1.65 var(--sans); color: var(--muted); }
-	.caucus-column-headings, .caucus-row {
-		display: grid; grid-template-columns: 11rem 11rem minmax(0, 1fr);
-		gap: 1.5rem; align-items: start;
+	.caucus-intro { max-width: 42rem; }
+	.caucus-toolbar { display: flex; justify-content: space-between; align-items: end; gap: 1.5rem; padding-block: 0.75rem 1.25rem; border-bottom: 1px solid var(--rule); }
+	.caucus-toolbar > label { flex: 0 1 32rem; font: 0.85rem Arial, sans-serif; color: var(--muted); }
+	.caucus-toolbar select { font: 1rem/1.5 var(--serif); color: var(--ink); padding: 0.5rem 1.5rem 0.5rem 0; }
+	.caucus-toolbar nav { flex-shrink: 0; padding-bottom: 0.15rem; }
+	.caucus-issue { scroll-margin-top: 1.5rem; }
+	.caucus-issue > summary { font: 600 1.3rem/1.3 var(--serif); }
+	.caucus-theme-title { display: none; margin: 1.5rem 0 0.75rem; }
+	.caucus-theme-summary { max-width: 61rem; margin-bottom: 1.75rem; font: 1rem/1.65 var(--serif); color: var(--muted); }
+	.caucus-comparison { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 3rem; align-items: start; }
+	.caucus-chart-heading, .caucus-row { display: grid; grid-template-columns: minmax(8.5rem, 11rem) minmax(2rem, 1fr) 3.3rem 3.8rem; gap: 0.85rem; align-items: center; }
+	.caucus-chart-heading { padding: 0 0.4rem 0.75rem; border-bottom: 1px solid var(--rule); font: 0.72rem/1.4 Arial, sans-serif; color: var(--muted); }
+	.caucus-chart-heading > :nth-last-child(-n+2) { text-align: right; white-space: nowrap; }
+	.caucus-axis { display: flex; justify-content: space-between; }
+	.caucus-row { min-height: 2.85rem; padding: 0.65rem 0.4rem; text-decoration: none; font: 0.9rem/1.35 Arial, sans-serif; color: var(--ink); }
+	.caucus-row:hover, .caucus-row[aria-current="true"] { background: color-mix(in srgb, var(--ink) 4%, transparent); color: var(--ink); }
+	.caucus-row:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+	.caucus-row[aria-current="true"] .caucus-name { font-weight: 600; }
+	.caucus-track { display: block; height: 0.65rem; }
+	.caucus-track > span { display: block; height: 100%; background: #c39a36; opacity: 0.65; }
+	.caucus-row[aria-current="true"] .caucus-track > span { opacity: 1; }
+	.caucus-percent, .caucus-ratio { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+	.caucus-ratio { color: var(--muted); }
+	.caucus-chart-caption { margin: 1rem 0 0; font: 0.78rem/1.6 Arial, sans-serif; color: var(--muted); }
+	.caucus-interaction-hint { display: none; }
+	.caucus-positions { padding-left: 1.75rem; border-left: 1px solid var(--rule); min-width: 0; }
+	.caucus-positions .caucus-position { margin: 0; }
+	.caucus-position-label { margin: 0 0 0.5rem; font: 0.75rem/1.5 Arial, sans-serif; color: var(--muted); }
+	.caucus-position-name { display: none; margin: 0 0 1rem; font: 600 1.1rem/1.4 Arial, sans-serif; }
+	.caucus-statement, .caucus-empty { margin: 0; font: 1.2rem/1.6 var(--serif); }
+	.caucus-empty { color: var(--muted); font-size: 1rem; }
+	.caucus-evidence { padding-top: 1rem; }
+	.caucus-evidence > summary { font: 400 0.8rem Arial, sans-serif; color: var(--muted); }
+	.caucus-evidence > div + div { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--rule); }
+	.caucus-evidence blockquote { font: 0.95rem/1.6 var(--serif); }
+	.caucus-original, .caucus-citation { font: 0.85rem/1.55 Arial, sans-serif; }
+	.caucus-back { display: none; }
+	.caucus-footer { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--rule); color: var(--muted); }
+	.caucus-footer > p { margin: 0 0 0.65rem; font: 0.8rem/1.5 Arial, sans-serif; }
+	.caucus-methods > summary { font: 400 0.8rem Arial, sans-serif; }
+	.caucus-methods p, .caucus-methods > a { max-width: 50rem; font: 0.9rem/1.6 var(--serif); }
+	:global(.js) .caucus-issue > summary, :global(.js) .caucus-position > summary { display: none; }
+	:global(.js) .caucus-theme-title, :global(.js) .caucus-position-name { display: block; }
+	:global(.js) .caucus-interaction-hint { display: inline; }
+	@media (max-width: 1000px) {
+		.caucus-comparison { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 1.5rem; }
+		.caucus-chart-heading, .caucus-row { grid-template-columns: minmax(7rem, 9rem) minmax(2rem, 1fr) 2.9rem 3.2rem; gap: 0.55rem; }
+		.caucus-positions { padding-left: 1.25rem; }
 	}
-	.caucus-column-headings { margin-top: 1.8rem; color: var(--muted); font: 0.75rem var(--sans); }
-	.caucus-row { padding-block: 1.15rem; border-bottom: 1px solid color-mix(in srgb, var(--rule) 55%, transparent); }
-	.caucus-row h3 { margin: 0; font: 600 0.95rem/1.5 var(--sans); }
-	.caucus-bar-line { display: flex; align-items: center; gap: 0.6rem; min-height: 1.4rem; }
-	.caucus-track { flex: 1; height: 0.6rem; }
-	.caucus-track > span { display: block; height: 100%; background: #b28e3b; }
-	.caucus-percent { width: 3.2rem; font: 0.85rem var(--sans); color: #947123; font-variant-numeric: tabular-nums; }
-	.caucus-ratio { display: block; margin-top: 0.3rem; font: 0.75rem var(--sans); color: var(--muted); font-variant-numeric: tabular-nums; }
-	.caucus-statement { min-width: 0; font: 0.95rem/1.6 var(--sans); }
-	.caucus-statement p { margin: 0; }
-	.caucus-empty, .caucus-note { color: var(--muted); }
-	.caucus-note, .caucus-source { font: 0.8rem/1.6 var(--sans); }
-	.caucus-statement .caucus-evidence { margin: 0.5rem 0 0; }
-	.caucus-evidence > summary { font: 0.8rem var(--sans); color: var(--muted); }
-	.caucus-evidence blockquote { margin: 0.8rem 0; padding-left: 1rem; border-left: 2px solid var(--rule); font: 0.9rem/1.6 var(--sans); }
-	.caucus-evidence > div + div { margin-top: 1rem; }
-	@media (max-width: 700px) {
-		.caucus-index ul { columns: 1; }
-		.caucus-column-headings { display: none; }
-		.caucus-row { grid-template-columns: minmax(0, 1fr) 9rem; gap: 0.6rem 1rem; }
-		.caucus-statement { grid-column: 1 / -1; }
-		.caucus-issue > summary { font-size: 1.15rem; }
+	@media (max-width: 760px) {
+		.caucus-toolbar { flex-wrap: wrap; gap: 1rem; }
+		.caucus-toolbar > label { flex-basis: 100%; }
+		.caucus-comparison { grid-template-columns: 1fr; gap: 1.5rem; }
+		.caucus-positions { border-left: 0; border-top: 1px solid var(--rule); padding: 1.25rem 0 0; }
+		.caucus-chart-heading, .caucus-row { grid-template-columns: minmax(0, 1fr) 2.9rem 3.1rem; column-gap: 0.75rem; }
+		.caucus-chart-heading > :first-child { display: none; }
+		.caucus-row { font-size: 0.85rem; row-gap: 0.25rem; padding-block: 0.6rem; }
+		.caucus-name { grid-column: 1 / -1; }
+		.caucus-chart-heading { font-size: 0.68rem; }
+		.caucus-theme-summary { font-size: 0.95rem; }
+		.caucus-statement { font-size: 1.1rem; }
+		:global(.js) .caucus-back { display: block; margin-top: 1.5rem; border: 0; border-bottom: 1px solid var(--rule); padding: 0 0 0.25rem; background: none; font: 0.8rem/1.5 Arial, sans-serif; color: var(--muted); cursor: pointer; }
 	}
 </style>
 
 <script>
-	const revealCaucusTheme = () => {
-		const target = document.getElementById(location.hash.slice(1));
-		if (!target || (target.id !== 'caucuses' && !target.matches('.caucus-issue'))) return;
-		if (target instanceof HTMLDetailsElement) target.open = true;
-		requestAnimationFrame(() => target.scrollIntoView({ behavior: 'instant', block: 'start' }));
+	const section = document.querySelector<HTMLElement>('#caucuses')!;
+	const panels = [...section.querySelectorAll<HTMLDetailsElement>('.caucus-issue')];
+	const select = section.querySelector<HTMLSelectElement>('#caucus-topic-select')!;
+	const count = section.querySelector<HTMLElement>('#caucus-topic-count')!;
+	const steps = [...section.querySelectorAll<HTMLButtonElement>('[data-caucus-step]')];
+	let current = 0;
+	const showIssue = (index: number) => {
+		current = index;
+		panels.forEach((panel, position) => {
+			panel.hidden = position !== index;
+			if (!panel.hidden) panel.open = true;
+		});
+		select.value = panels[index].dataset.caucusTopic!;
+		count.textContent = `${index + 1} of ${panels.length}`;
+		steps.forEach(button => {
+			button.disabled = Number(button.dataset.caucusStep) < 0 ? index === 0 : index === panels.length - 1;
+		});
 	};
-	document.querySelectorAll<HTMLAnchorElement>('.caucus-index a').forEach(link =>
-		link.addEventListener('click', () => {
-			const target = document.getElementById(link.hash.slice(1));
-			if (target instanceof HTMLDetailsElement) target.open = true;
+	const showPosition = (panel: HTMLDetailsElement, group: string) => {
+		panel.querySelectorAll<HTMLDetailsElement>('.caucus-position').forEach(position => {
+			position.hidden = position.dataset.caucusPosition !== group;
+			position.open = !position.hidden;
+		});
+		panel.querySelectorAll<HTMLAnchorElement>('.caucus-row').forEach(row => {
+			if (row.dataset.caucus === group) row.setAttribute('aria-current', 'true');
+			else row.removeAttribute('aria-current');
+		});
+	};
+	panels.forEach(panel => {
+		const rows = [...panel.querySelectorAll<HTMLAnchorElement>('.caucus-row')];
+		showPosition(panel, rows[0].dataset.caucus!);
+		rows.forEach(row => row.addEventListener('click', event => {
+			event.preventDefault();
+			showPosition(panel, row.dataset.caucus!);
+			if (matchMedia('(max-width: 760px)').matches) {
+				const position = panel.querySelector<HTMLElement>('.caucus-position:not([hidden])')!;
+				position.scrollIntoView({ behavior: 'instant', block: 'start' });
+				position.querySelector<HTMLElement>('.caucus-position-name')!.focus({ preventScroll: true });
+			}
 		}));
-	window.addEventListener('hashchange', revealCaucusTheme);
-	window.addEventListener('load', revealCaucusTheme, { once: true });
-	document.fonts.ready.then(revealCaucusTheme);
-	revealCaucusTheme();
+		panel.querySelectorAll<HTMLButtonElement>('.caucus-back').forEach(button => {
+			button.addEventListener('click', () => {
+				const row = panel.querySelector<HTMLElement>('.caucus-row[aria-current="true"]')!;
+				row.scrollIntoView({ behavior: 'instant', block: 'center' });
+				row.focus({ preventScroll: true });
+			});
+		});
+	});
+	select.addEventListener('change', () => showIssue(panels.findIndex(panel => panel.dataset.caucusTopic === select.value)));
+	steps.forEach(button => button.addEventListener('click', () => {
+		showIssue(Math.max(0, Math.min(panels.length - 1, current + Number(button.dataset.caucusStep))));
+	}));
+	const reveal = () => {
+		const target = document.getElementById(location.hash.slice(1));
+		if (!target || !section.contains(target)) return;
+		const panel = target.closest<HTMLDetailsElement>('.caucus-issue');
+		if (panel) {
+			showIssue(panels.indexOf(panel));
+			if (target instanceof HTMLDetailsElement && target.dataset.caucusPosition) {
+				showPosition(panel, target.dataset.caucusPosition);
+			}
+		}
+		if (target === section || panel) {
+			requestAnimationFrame(() => (target.dataset.caucusPosition ? target : panel ?? section)
+				.scrollIntoView({ behavior: 'instant', block: 'start' }));
+		}
+	};
+	section.querySelector<HTMLElement>('.caucus-toolbar')!.hidden = false;
+	showIssue(0);
+	window.addEventListener('hashchange', reveal);
+	window.addEventListener('load', reveal, { once: true });
+	document.fonts.ready.then(reveal);
+	reveal();
 </script>
