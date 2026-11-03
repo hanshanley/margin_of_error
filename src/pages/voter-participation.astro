@@ -1,0 +1,128 @@
+---
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/voter-participation.css';
+
+const dataRoot = resolve('public/voter-participation');
+const national = JSON.parse(readFileSync(resolve(dataRoot, 'data/national.json'), 'utf8'));
+const manifest = JSON.parse(readFileSync(resolve(dataRoot, 'publication-manifest.json'), 'utf8'));
+const snapshot = national.filter((row: { year: number; denominator: string; age_group: string }) =>
+	row.year === 2024 && row.denominator === 'cvap' && row.age_group === 'All ages');
+const labels: Record<string, string> = {
+	overall: 'Overall', race: 'Race / ethnicity', education: 'Education', sex: 'Sex',
+};
+---
+
+<BaseLayout title="Who participates? Voter turnout across time"
+	description="Explore voter participation across presidential and midterm elections, demographic groups, states, and a North Carolina precinct pilot."
+	image="/voter-participation/preview.png">
+	<div class="participation-page">
+		<header class="participation-heading">
+			<p class="kicker">Voter participation · 1964–2024</p>
+			<h1>Who participates?</h1>
+			<p class="participation-deck">Turnout across elections, populations, and places.
+				Not who people vote for, but whether they vote at all.</p>
+			<p>Compare demographic groups in national surveys, explore state turnout,
+				or look inside North Carolina’s precincts. Presidential and midterm elections
+				remain separate, and each view identifies the population behind its percentage.</p>
+		</header>
+		<p class="participation-scope"><strong>Two different questions.</strong>{' '}
+			Census estimates describe participation among adult citizens or all adult residents.
+			The NC precinct pilot describes participation among registered voters—not all eligible residents.
+			It is not a nationwide precinct map.</p>
+
+		<noscript><p class="participation-scope">Interactive controls require JavaScript.
+			The 2024 national snapshot, source definitions, and complete downloads below
+			remain available without it.</p></noscript>
+		<section class="participation-explorer" aria-label="Voter participation explorer">
+			<nav aria-label="Participation analysis views">
+				<button type="button" data-view="national" class="active">National trends</button>
+				<button type="button" data-view="states">State turnout</button>
+				<button type="button" data-view="precincts">NC precincts</button>
+				<button type="button" data-view="coverage">Coverage</button>
+			</nav>
+			<div class="controls" aria-label="Data filters">
+				<label>Election type<select id="type"><option value="all">Presidential + midterm</option><option value="presidential">Presidential</option><option value="midterm">Midterm</option></select></label>
+				<label>Election year<select id="year"></select></label>
+				<label id="basis-label">Population denominator<select id="basis"><option value="cvap">Adult citizens (CPS)</option><option value="vap">All adult residents (CPS)</option></select></label>
+				<label id="dimension-label">Compare<select id="dimension"></select></label>
+				<label id="group-label">Group<select id="group"></select></label>
+				<label id="minimum-label" hidden>Minimum registrations<select id="minimum"><option value="1">1</option><option value="25" selected>25</option><option value="100">100</option></select></label>
+			</div>
+			<p id="measure" class="measure"></p>
+			<div id="notice" class="notice" role="status" hidden></div>
+			<section class="participation-panel">
+				<div class="panel-heading"><div><p id="subtitle" class="eyebrow"></p><h2 id="title">Participation across elections</h2></div><div id="key"></div></div>
+				<div id="visualization" aria-live="polite"><p class="empty">Loading the saved analysis. The snapshot and downloads below remain available.</p></div>
+				<p id="caption" class="caption"></p>
+			</section>
+			<details class="participation-panel" id="table-panel">
+				<summary>Explore the underlying observations</summary>
+				<label class="table-search">Search <input id="search" type="search" placeholder="State, county, precinct, or group" /></label>
+				<div class="table-wrap"><table><caption class="sr-only">Observations for the current selection</caption><thead id="table-head"></thead><tbody id="table-body"></tbody></table></div>
+				<p id="table-note" class="caption"></p>
+			</details>
+			<div id="tooltip" role="tooltip" hidden></div>
+		</section>
+
+		<details class="participation-reference" id="national-snapshot">
+			<summary>Read the 2024 national snapshot</summary>
+			<p>Percent of civilian noninstitutionalized adult citizens who reported voting.
+				These are CPS survey estimates, not validated individual voting records.
+				Race-alone categories overlap Hispanic ethnicity.</p>
+			<div class="table-wrap"><table>
+				<caption>2024 presidential election · adult citizens</caption>
+				<thead><tr><th scope="col">Comparison</th><th scope="col">Group</th><th scope="col">Reported turnout</th></tr></thead>
+				<tbody>{snapshot.map((row: { dimension: string; group: string; turnout_pct: number }) => <tr>
+					<td>{labels[row.dimension]}</td><td>{row.group}</td><td class="numeric">{row.turnout_pct.toFixed(1)}%</td>
+				</tr>)}</tbody>
+			</table></div>
+		</details>
+		<details class="participation-reference" id="definitions">
+			<summary>What is being measured?</summary>
+			<dl>
+				<dt>Adult citizens (CPS)</dt><dd>Civilian noninstitutionalized adults who are citizens.
+					This is not a count of the legally eligible population. Turnout is self-reported.</dd>
+				<dt>All adult residents (CPS)</dt><dd>The same survey population, including noncitizens.
+					Do not compare this denominator directly with citizen turnout.</dd>
+				<dt>NC registered voters</dt><dd>Historical voter-history participants divided by election-time
+					active and inactive registrations. Voter-history totals differ from official ballots cast;
+					the reconciliation download preserves both.</dd>
+			</dl>
+			<p>National observations extend to 1964 and state observations to 1972, where supported.
+				Citizen-based education and sex estimates cover 2000–2024; older education and sex
+				series use all adult residents. Race definitions, citizenship measurement, and
+				voting-age rules change across the historical series. Chart lines break at the documented transitions.</p>
+			<p>NC precinct counts cover 2002–2024. The available election-year map snapshots are
+				2006, 2012, 2014, 2016, 2020, 2022, and 2024. Other years do not borrow newer maps.
+				Matching a precinct ID is not independent certification of election-day boundaries
+				or proof that a precinct stayed unchanged. NC education is not available.</p>
+			<p>Missing participation, inconsistent counts, and zero denominators have no displayed rate.
+				Unmatched records stay in the downloads. Other states’ precinct sources are{' '}
+				<strong>not assessed</strong>, not declared unavailable. State-level CPS estimates
+				do not fill those gaps.</p>
+			<div id="methods"></div>
+		</details>
+		<section class="participation-downloads" id="downloads" aria-labelledby="download-title">
+			<h2 id="download-title">Data behind the analysis</h2>
+			<p>Full observations and geometry, including flagged and unmatched records—not metadata-only exports.</p>
+			<div class="download-links">
+				<a href="/voter-participation/data/complete-analysis.zip" download>Complete analysis (ZIP)</a>
+				<a href="/voter-participation/data/national.csv" download>National series</a>
+				<a href="/voter-participation/data/states.csv" download>State series</a>
+				<a id="nc-download" href="/voter-participation/data/nc/2024.csv" download>NC 2024 precinct observations</a>
+				<a href="/voter-participation/data/coverage.csv" download>Coverage inventory</a>
+				<a href="/voter-participation/data/nc/official-reconciliation.csv" download>NC official-total reconciliation</a>
+				<a href="/voter-participation/data/sources.json" download>Sources and checksums</a>
+			</div>
+		</section>
+		<p class="participation-sources">Sources:{' '}
+			<a href="https://www.census.gov/data/tables/time-series/demo/voting-and-registration/voting-historical-time-series.html">U.S. Census Bureau</a>{' '}
+			and <a href="https://www.ncsbe.gov/results-data/voter-history-data">North Carolina State Board of Elections</a>.{' '}
+			Candidate vote totals are never used as demographic participation.{' '}
+			<a href={`${manifest.source_repository}/tree/${manifest.source_revision}`}>Code, full data, and methods</a>.
+		</p>
+	</div>
+	<script is:inline src="/voter-participation/app.js" defer></script>
+</BaseLayout>

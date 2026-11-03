@@ -61,6 +61,31 @@ and Margin of Error download backgrounds. Adding an analysis tool does not
 create an article or require a personal-site writing-index entry.
 Prepend new Interactive analysis entries; only the first preview loads eagerly.
 
+The voter-participation integration is at `/voter-participation/`, with native Astro
+markup rather than an iframe. Its project source is `hanshanley/voter-participation`,
+pinned to the reviewed revision in `scripts/stage-voter-participation.mjs` and
+the deployment workflow. Stage its committed export locally before checking/building:
+
+```bash
+node scripts/stage-voter-participation.mjs ../voter-participation
+```
+
+The destination `public/voter-participation/` must be empty or absent. The offline
+export copies all saved observations and the complete-analysis ZIP byte-for-byte,
+records their checksums and source revision, and adapts only the renderer for its
+nested route and responsive publication layout. It creates a data-derived preview;
+it does not rerun or download source research. Stage a fresh export after changing
+the pinned source revision, updating both the script and workflow together.
+
+The page separates citizen/resident CPS denominators from NC registered-voter
+participation. National/state series are not nationwide precinct data. NC has seven
+election-year boundary snapshots; missing geometry never borrows a different year.
+The other 50 jurisdictions remain explicitly unassessed. A server-rendered 2024
+national table, methods, sources, and complete downloads work without JavaScript.
+This is an analysis tool, not a new essay, so it needs no personal-site writing entry.
+Until publication is explicitly approved, keep this integration on a review branch:
+pushing `main` deploys the site automatically.
+
 The national Democratic/Republican/DSA comparison lives at `/party-platforms/`.
 Deployment pins `hanshanley/dsa` to a verified source commit and runs its
 offline exporter with the source package and its numerical/image audit dependencies.

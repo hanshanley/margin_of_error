@@ -7,6 +7,7 @@ import { load } from 'cheerio';
 import sharp from 'sharp';
 import chartImageGroups from '../src/data/website-chart-images.json' with { type: 'json' };
 import { claimDisplayText, partyPositionSummary } from '../src/lib/platform-position-copy.mjs';
+import { sourceRevision as participationRevision } from './stage-voter-participation.mjs';
 
 const root = new URL('../dist/', import.meta.url);
 const projectRoot = new URL('../', import.meta.url);
@@ -35,6 +36,10 @@ const requiredFiles = [
 	'are-you-an-ai/index.html',
 	'archive/index.html',
 	'interactive-analysis/index.html',
+	'voter-participation/index.html',
+	'voter-participation/publication-manifest.json',
+	'voter-participation/preview.png',
+	'voter-participation/data/complete-analysis.zip',
 	'party-platforms/index.html',
 	'party-platforms/sources/index.html',
 	'party-platforms/publication-manifest.json',
@@ -101,6 +106,7 @@ const sitemap = await text('sitemap-0.xml');
 assert.match(sitemap, /https:\/\/www\.themarginoferror\.com\/my-first-blog-post\//);
 assert.match(sitemap, /https:\/\/www\.themarginoferror\.com\/are-you-an-ai\//);
 assert.match(sitemap, /https:\/\/www\.themarginoferror\.com\/interactive-analysis\//);
+assert.match(sitemap, /https:\/\/www\.themarginoferror\.com\/voter-participation\//);
 assert.doesNotMatch(sitemap, /https:\/\/www\.themarginoferror\.com\/home\//);
 assert.match(sitemap, /https:\/\/www\.themarginoferror\.com\/congressional_profanity\/activity\//);
 assert.doesNotMatch(sitemap, /professional_profanity/);
@@ -180,7 +186,7 @@ assert.equal(
 	analysis('link[rel="canonical"]').attr('href'),
 	'https://www.themarginoferror.com/interactive-analysis/',
 );
-const congressionalAnalysis = analysis('.analysis-list > li').eq(3);
+const congressionalAnalysis = analysis('.analysis-list > li').eq(4);
 assert.equal(congressionalAnalysis.find('h2 a').text(), 'The language of Congress');
 assert.equal(
 	congressionalAnalysis.find('h2 a').attr('href'),
@@ -199,16 +205,39 @@ assert.equal(
 	congressionalAnalysis.find('img').attr('src'),
 	'/artifacts/congressional-record/profanity_per_1k_last50.website.png',
 );
-assert.equal(analysis('.analysis-list > li').length, 4);
+assert.equal(analysis('.analysis-list > li').length, 5);
 assert.doesNotMatch(analysis.html(), /political-ads|The language of political ads/);
 assert.doesNotMatch(sitemap, /political-ads/);
 await assert.rejects(readdir(new URL('political-ads/', root)), { code: 'ENOENT' });
-const platformAnalysis = analysis('.analysis-list > li').eq(0);
+const participationAnalysis = analysis('.analysis-list > li').eq(0);
+assert.equal(participationAnalysis.find('h2 a').text(), 'Who participates?');
+assert.equal(participationAnalysis.find('.primary-action').attr('href'), '/voter-participation/');
+assert.equal(participationAnalysis.find('img').attr('loading'), 'eager');
+assert.equal(participationAnalysis.find('img').attr('src'), '/voter-participation/preview.png');
+const participation = load(await text('voter-participation/index.html'));
+const participationManifest = JSON.parse(await text('voter-participation/publication-manifest.json'));
+assert.equal(participationManifest.source_revision, participationRevision);
+assert.equal(participation('h1').text(), 'Who participates?');
+assert.equal(participation('iframe').length, 0);
+assert.equal(participation('link[rel="canonical"]').attr('href'),
+	'https://www.themarginoferror.com/voter-participation/');
+assert.equal(participation('#national-snapshot tbody tr').length, 13);
+assert.match(participation('#definitions').text(), /not assessed/);
+assert.match(participation('.participation-scope').first().text(), /not a nationwide precinct map/);
+assert.equal(participation('#downloads a[download]').length, 7);
+assert.equal(participation('script[src="/voter-participation/app.js"]').length, 1);
+for (const file of participationManifest.files) {
+	const bytes = await readFile(new URL(`voter-participation/${file.path}`, root));
+	assert.equal(bytes.length, file.bytes, `Participation asset size changed: ${file.path}`);
+	assert.equal(createHash('sha256').update(bytes).digest('hex'), file.sha256,
+		`Participation asset checksum changed: ${file.path}`);
+}
+const platformAnalysis = analysis('.analysis-list > li').eq(1);
 assert.equal(platformAnalysis.find('h2 a').text(), 'DSA in Context: Party Platforms and Caucuses');
 assert.equal(platformAnalysis.find('a:contains("Read the essay")').attr('href'),
 	'/what-matters-most-to-americas-democratic-socialists/');
 assert.equal(platformAnalysis.find('.primary-action').attr('href'), '/party-platforms/');
-assert.equal(platformAnalysis.find('img').attr('loading'), 'eager');
+assert.equal(platformAnalysis.find('img').attr('loading'), 'lazy');
 const platforms = load(await text('party-platforms/index.html'));
 const platformSources = load(await text('party-platforms/sources/index.html'));
 const platformPages = [platforms, platformSources];
@@ -360,7 +389,7 @@ const platformPreview = platformAnalysis.find('img');
 assert.equal(platformPreview.attr('src'), platformCoverPath);
 assert.equal(Number(platformPreview.attr('width')), platformCoverSize.width);
 assert.equal(Number(platformPreview.attr('height')), platformCoverSize.height);
-assert.equal(platformPreview.attr('loading'), 'eager');
+assert.equal(platformPreview.attr('loading'), 'lazy');
 assert.equal(platformPreview.attr('decoding'), 'async');
 assert.equal(platformPreview.attr('alt'), '');
 for (const selector of ['meta[property="og:image"]', 'meta[name="twitter:image"]']) {
@@ -539,7 +568,7 @@ for (const page of platformPages) {
 }
 assert.ok(sitemap.includes('https://www.themarginoferror.com/party-platforms/'));
 assert.ok(sitemap.includes('https://www.themarginoferror.com/party-platforms/sources/'));
-const chinaAnalysis = analysis('.analysis-list > li').eq(1);
+const chinaAnalysis = analysis('.analysis-list > li').eq(2);
 assert.equal(chinaAnalysis.find('h2 a').text(), 'U.S.–China Exchange');
 assert.equal(chinaAnalysis.find('img').attr('loading'), 'lazy');
 assert.equal(analysis('.analysis-list img[loading=eager]').length, 1);
@@ -604,7 +633,7 @@ for (const link of china('a[href^="figures/"]').toArray()) {
 	assert.ok(node.is('[data-original-chart]'));
 	assert.doesNotMatch(node.attr('href'), /\.website\.png$/);
 }
-const ukAnalysis = analysis('.analysis-list > li').eq(2);
+const ukAnalysis = analysis('.analysis-list > li').eq(3);
 assert.equal(ukAnalysis.find('h2 a').text(), 'The UK, in context');
 for (const link of ukAnalysis.find('h2 a, .analysis-preview, .primary-action').toArray()) {
 	assert.equal(analysis(link).attr('href'), 'https://www.themarginoferror.com/uk_decline/');

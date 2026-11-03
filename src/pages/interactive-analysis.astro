@@ -5,7 +5,7 @@ import { platformCover } from '../lib/platform-analysis';
 
 <BaseLayout
 	title="Interactive analysis"
-	description="Explore DSA, national party platforms and caucuses, U.S.–China Exchange, change in the United Kingdom, and the language of Congress."
+	description="Explore voter participation, DSA and party platforms, U.S.–China Exchange, change in the United Kingdom, and the language of Congress."
 >
 	<section class="standard-page">
 		<header class="page-heading">
@@ -13,10 +13,24 @@ import { platformCover } from '../lib/platform-analysis';
 		</header>
 		<ul class="analysis-list">
 			<li>
+				<a class="analysis-preview" href="/voter-participation/" tabindex="-1" aria-hidden="true">
+					<img src="/voter-participation/preview.png" alt="" width="1200" height="675"
+						loading="eager" decoding="async" />
+				</a>
+				<div>
+					<h2><a href="/voter-participation/">Who participates?</a></h2>
+					<p>Compare turnout across presidential and midterm elections, demographic groups,
+						and states, with a North Carolina precinct pilot. Participation, not party choice.</p>
+					<div class="lead-actions">
+						<a class="primary-action" href="/voter-participation/">Open analysis</a>
+					</div>
+				</div>
+			</li>
+			<li>
 				<a class="analysis-preview" href="/party-platforms/" tabindex="-1" aria-hidden="true">
 					<img src={platformCover.src} alt=""
 						width={platformCover.width} height={platformCover.height}
-						loading="eager" decoding="async" />
+						loading="lazy" decoding="async" />
 				</a>
 				<div>
 					<h2><a href="/party-platforms/">DSA in Context: Party Platforms and Caucuses</a></h2>

@@ -1,0 +1,67 @@
+.participation-page {
+	width: var(--page);
+	margin: 0 auto;
+	padding: 2.5rem 0 3rem;
+}
+.participation-heading { max-width: 860px; }
+.participation-heading h1 { margin: .25rem 0 1rem; font-size: clamp(2.6rem, 6vw, 4.5rem); line-height: 1.08; letter-spacing: -.045em; }
+.participation-deck { font-size: 1.35rem; line-height: 1.45; color: var(--muted); }
+.participation-scope { border-left: 3px solid var(--rule); padding: .8rem 1.15rem; margin: 1.5rem 0 2rem; background: var(--paper-deep); font-size: .95rem; }
+.participation-explorer { display: none; font-family: var(--sans); }
+.js .participation-explorer { display: block; }
+.participation-explorer nav { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; border-bottom: 1px solid var(--rule); margin-bottom: 1.5rem; }
+.participation-explorer nav button { padding: .75rem 0; border: 0; border-bottom: 3px solid transparent; background: none; color: var(--muted); cursor: pointer; font-size: .9rem; }
+.participation-explorer nav button.active { border-bottom-color: var(--signal); color: var(--ink); }
+.participation-explorer .controls { display: flex; flex-wrap: wrap; gap: 1rem; }
+.participation-explorer label { display: flex; flex-direction: column; gap: .4rem; font-size: .76rem; color: var(--muted); }
+.participation-explorer select, .participation-explorer input { max-width: 100%; min-height: 42px; padding: .45rem .6rem; border: 1px solid var(--rule); border-radius: 0; background: var(--paper); color: var(--ink); font-size: .85rem; }
+.participation-explorer :is(button, select, input, summary):focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; }
+.participation-explorer .measure, .participation-explorer .caption { color: var(--muted); font-size: .8rem; line-height: 1.6; }
+.participation-explorer .notice { margin: 1rem 0; border-left: 3px solid var(--rule); padding: .75rem 1rem; background: var(--paper-deep); font-size: .8rem; line-height: 1.6; }
+.participation-panel { border-block: 1px solid var(--rule); padding: 1.25rem 0; margin-bottom: 1.5rem; }
+.participation-explorer .panel-heading { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+.participation-explorer .eyebrow { color: var(--muted); text-transform: uppercase; letter-spacing: .08em; font-size: .68rem; margin: 0; }
+.participation-explorer h2 { font-family: var(--serif); font-size: 1.7rem; font-weight: 400; margin: .25rem 0; line-height: 1.2; }
+.participation-explorer #visualization { min-height: 220px; }
+.participation-explorer svg { display: block; width: 100%; height: auto; }
+.participation-explorer .axis-label { fill: var(--muted); font-size: 13px; }
+.participation-explorer .chart-grid { stroke: var(--paper-deep); stroke-width: 1; }
+.participation-explorer .chart-line { fill: none; stroke-width: 2; }
+.participation-explorer .chart-point { stroke: var(--paper); stroke-width: 1.5; }
+.participation-explorer .map-feature { stroke: var(--paper); stroke-width: .4; vector-effect: non-scaling-stroke; cursor: pointer; }
+.participation-explorer .map-feature:hover, .participation-explorer .map-feature:focus { stroke: var(--ink); stroke-width: 1.5; outline: none; }
+.participation-explorer .map-label { font-size: 10px; fill: var(--muted); pointer-events: none; }
+.participation-explorer .legend { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; font-size: .72rem; color: var(--muted); }
+.participation-explorer .legend span { display: inline-flex; align-items: center; gap: .35rem; }
+.participation-explorer .swatch { display: inline-block; width: 10px; height: 10px; background: var(--color); }
+.participation-explorer .ramp { display: inline-block; width: 110px; height: 10px; background: linear-gradient(to right, #edf3ef, #64a59b, #1a686e); }
+.participation-explorer .empty { color: var(--muted); text-align: center; padding: 3rem 1rem; font-size: .9rem; }
+.participation-page .table-wrap { max-height: 430px; overflow: auto; }
+.participation-page table { border-collapse: collapse; width: 100%; font-family: var(--sans); font-size: .8rem; text-align: left; }
+.participation-page th, .participation-page td { padding: .6rem .8rem; border-bottom: 1px solid var(--paper-deep); }
+.participation-explorer td { white-space: nowrap; }
+.participation-page th { position: sticky; top: 0; background: var(--paper); }
+.participation-page .numeric { text-align: right; font-variant-numeric: tabular-nums; }
+.participation-page caption { text-align: left; padding: .75rem 0; color: var(--muted); }
+.participation-page summary { cursor: pointer; font-family: var(--sans); font-size: .95rem; }
+.participation-explorer .table-search { margin: 1rem 0; max-width: 300px; }
+.participation-explorer #tooltip { position: fixed; z-index: 20; pointer-events: none; max-width: min(330px, calc(100vw - 24px)); border: 1px solid var(--rule); background: var(--paper); padding: .75rem 1rem; font-size: .8rem; line-height: 1.6; }
+.participation-explorer [hidden] { display: none !important; }
+.participation-reference { border-bottom: 1px solid var(--rule); padding: 1rem 0; }
+.participation-reference p, .participation-reference dd, .participation-reference li { font-size: .95rem; }
+.participation-reference dt { font-weight: 700; }
+.participation-reference dd { margin: .25rem 0 1rem; }
+.participation-downloads { padding: 1.5rem 0; }
+.participation-downloads h2 { margin: 0; font-size: 1.5rem; }
+.participation-downloads p, .participation-sources { font-size: .9rem; color: var(--muted); }
+.participation-page .download-links { display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; font-family: var(--sans); font-size: .85rem; }
+.participation-page .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.participation-sources a { overflow-wrap: anywhere; }
+@media (max-width: 700px) {
+	.participation-page { padding-top: 1.5rem; }
+	.participation-deck { font-size: 1.15rem; }
+	.participation-explorer .panel-heading { flex-direction: column; align-items: flex-start; }
+	.participation-explorer .controls { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+	.participation-explorer .controls label { min-width: 0; }
+	.participation-page th, .participation-page td { padding: .6rem .4rem; }
+}

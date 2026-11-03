@@ -91,8 +91,19 @@ jobs:
           python party-platforms-source/scripts/build_caucus_publication.py --output public/party-platforms/caucuses
 
       # Political ads are unpublished until explicitly approved for publication.
+      - name: Checkout verified voter participation analysis
+        uses: actions/checkout@v7
+        with:
+          repository: hanshanley/voter-participation
+          ref: a4b2593ca0a81c75586666aeae27fbbd6a98c3a2
+          path: voter-participation-source
+          sparse-checkout: |
+            public
+
       - name: Build and upload site
         uses: withastro/action@v6
+        with:
+          build-cmd: node scripts/stage-voter-participation.mjs voter-participation-source && npm run build
 
   deploy:
     environment:
