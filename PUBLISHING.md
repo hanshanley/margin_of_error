@@ -72,21 +72,116 @@ node scripts/stage-voter-participation.mjs ../voter-participation
 
 The destination `public/voter-participation/` must be empty or absent. The offline
 export copies all saved observations and the complete-analysis ZIP byte-for-byte,
-records their checksums and source revision, and adapts only the renderer for its
-nested route and responsive publication layout. It creates a data-derived preview;
+records their checksums and source revision, and retains an adapted legacy renderer
+for export compatibility. The native page uses the website-owned
+`public/scripts/participation-explorer.js` for state histories, national demographic
+trends and county/precinct search, selection, zoom and pan. It creates a data-derived preview;
 it does not rerun or download source research. Stage a fresh export after changing
 the pinned source revision, updating both the script and workflow together.
 
 The page separates citizen/resident CPS denominators from NC registered-voter
 participation. National/state series are not nationwide precinct data. NC has seven
 election-year boundary snapshots; missing geometry never borrows a different year.
-The other 50 jurisdictions remain explicitly unassessed. A server-rendered 2024
+Other jurisdictions' precinct participation remains explicitly unassessed. A server-rendered 2024
 national table, methods, sources, and complete downloads work without JavaScript.
 This is an analysis tool, not a new essay, so it needs no personal-site writing entry.
-Until publication is explicitly approved, keep this integration on a review branch:
-pushing `main` deploys the site automatically.
+Publication was explicitly approved on November 4, 2026. Publish the reviewed
+integration to `main`; pushing `main` deploys the site automatically. Source
+updates remain pinned to reviewed snapshots rather than following live research changes.
 
-The separate 2026 NC panel uses an immutable preliminary snapshot from the same
+After `npm run build`, serve `dist/` with `npm run preview -- --host 127.0.0.1
+--port 4321`. Run the source-matched interaction checks with the existing research
+Python environment (Playwright/Chromium required):
+
+```bash
+../voter-participation/.venv/bin/python scripts/check-participation-browser.py
+```
+
+The check covers state time-series values, map orientation, selection, zoom/pan,
+precinct counts, deep links, minimum-registration suppression, unavailable
+boundary years, current reporting, complete-download endpoints, mobile overflow,
+and no-JavaScript/failed-fetch fallbacks. Optional `--screenshots /path/to/output`
+captures the desktop and mobile views.
+The map accepts ordinary wheel/trackpad scrolling and two-pointer pinch gestures,
+alongside buttons and keyboard navigation. A double-click after a feature fit
+zooms around the fitted view instead of reusing stale screen coordinates.
+Browser checks exercise wheel, touch pinch and actual chart-path continuity.
+
+The regular explorer uses one year selector for presidential and midterm elections,
+including 1994 even when a selected demographic series has no estimate. An explicit
+gap message links back to available overall participation rather than hiding that year.
+It includes a `2026 · Provisional` year option in States and
+Demographics. State views explicitly select official administrative ballots,
+in-person early voting or returned mail, without pooling them. Map shading shows
+coverage when participation coloring is selected, rather than implying comparable turnout rates. Demographic counts select
+a state and voting mode, retain source dates and never enter CPS turnout-rate lines.
+Source-coverage tables and complete-download links live in a Methods disclosure.
+Historical chart ranges and tick labels use only actual nonmissing plotted observations;
+demographic groups use directly labeled panels instead of overlapping group lines.
+Alaska and Hawaii have separately fitted conic projections; state labels use geographic
+anchors and Northeast callouts rather than bounding-box centers.
+Citizen-turnout chart lines break before 1994, not between 1994 and 1996:
+the Census voting FAQ dates consistent CPS citizenship measurement to 1994.
+The display corrects the older pinned export's overbroad pre-1996 warning without
+rewriting that immutable export.
+
+The reviewed supplements live in `public/participation-context/` and
+`public/participation-methods/`; neither modifies the pinned historical export.
+Their `latest.json` pointers select immutable, checksummed snapshots. The context
+supplement contains the expanded seven-feed official 2026 snapshot (48 jurisdictions
+with observations, 47 with early/mail observations, 11 with nonzero demographic
+breakdowns), attributed partisan context and Census geometry. Party colors are
+D-minus-R shares of all source-reported contest votes, not participation; House
+aggregates are not statewide winner margins. The 1994 Clerk transcription reconciles
+exactly to all three national sums; Louisiana's untabulated votes stay missing.
+The 2024 House parser must reconcile to all 50 state recaps and national party/total
+sums, including source-specific treatment of fusion labels and write-ins.
+The FEC parser handles the separate state-name/code columns in 2010 and requires
+all 50 voting states in each House summary. Presidential derivations reconcile
+state by state; New York in 2000 remains missing because its party residual is
+negative, without discarding the other 50 reconciled jurisdictions.
+County joins require complete one-to-one geographic identity and provider-total
+reconciliation; rejected collections remain uncolored. California currently passes.
+The 119th-Congress districts are used only for 2024 results, never 2026 redistricting.
+Zoom reveals supported county/district detail and NC precinct participation; gray
+outlines without matched results are explicitly geographic context, not zero votes.
+
+Voting-method history covers national CPS observations for every election in
+1996–2024 and state EAVS reports in 2008–2024. National subgroup method estimates
+cover 2018–2024 and use a separate source-matched group selector. These shares are
+among reported voters or matched administrative units, never the eligible population.
+CPS histories break at the 2004 questionnaire and 2018 universe changes; EAVS uses
+unconnected points because coverage and definitions vary. State percentages match
+each method numerator to reporting units with valid positive participation totals;
+unavailable flags override contradictory numbers. Preserve missing codes, source
+comments, F2 participation bases, ward identities and statewide/local exclusions.
+Provisional and early in-person are distinct F1e/F1f fields; 2008 F1g is Other.
+Never sum overlapping mail, absentee, military/overseas and provisional categories.
+Earlier unsupported observations remain missing. The national history and complete
+downloads are server-rendered for no-JavaScript use.
+The compact methods panel shows reported categories first and retains missing
+categories in a disclosure. Its history axis starts at zero and adapts to the
+observed range; a new state's default method prefers an actually reported share.
+
+To collect a new draft without replacing a completed snapshot, use the existing
+research Python environment and a fresh snapshot ID. `--source-snapshot-id` copies
+an earlier raw cache while preserving original source timestamps and checksums:
+
+```bash
+../voter-participation/.venv/bin/python scripts/collect-voting-methods.py --export
+../voter-participation/.venv/bin/python scripts/collect-participation-context.py
+../voter-participation/.venv/bin/python -m pytest -q scripts/test-participation-collectors.py
+```
+
+The complete-methods ZIP contains every normalized national/state/jurisdiction
+observation, registered original, instrument/codebook, manifest and collector.
+The context ZIP includes all geometry, returns, the actual seven-feed nationwide
+snapshot and originals. These are complete datasets, not metadata-only downloads.
+Rebuild before browser checks so the preview actually serves the current source.
+Review newly collected drafts before updating the published snapshot pointers;
+collection alone does not approve a new deployment input.
+
+The 2026 NC source-audit panel uses an immutable preliminary snapshot from the same
 pinned project revision. It renders statewide reporting and race counts without
 JavaScript; the shared `current.js` adds county, race/ethnicity/sex and request-type
 filters. Election-night reported ballots/registrations are explicitly incomplete.
@@ -103,8 +198,9 @@ snapshot, not an automatically refreshing live feed.
 Each complete snapshot ZIP includes all observations, original public
 aggregate files, timestamps and checksums; no individual voter records are used.
 
-The nationwide 2026 panel additionally stages `nationwide.js` and
-`data/nationwide/`. It checks all 50 states and DC against civicAPI's public
+The pinned export retains `nationwide.js` and `data/nationwide/` byte-for-byte, but
+the native page's website-owned renderer controls the source-audit panel and uses
+the supplemental nationwide snapshot when present. It checks all 50 states and DC against civicAPI's public
 aggregate early-vote feed and exposes only reported state/mode demographic
 breakdowns, not requested ballots or party preferences. Verified state-office
 ballot feeds remain separate, with explicit denominator definitions.

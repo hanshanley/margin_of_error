@@ -1,0 +1,515 @@
+"""Exercise the built participation atlas against its saved source observations."""
+
+import argparse
+import json
+from pathlib import Path
+
+from playwright.sync_api import expect, sync_playwright
+
+
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument("--base-url", default="http://127.0.0.1:4321")
+parser.add_argument("--screenshots", type=Path)
+args = parser.parse_args()
+url = args.base_url.rstrip("/") + "/voter-participation/"
+data = Path(__file__).resolve().parents[1] / "public/voter-participation/data"
+states = json.loads((data / "states.json").read_text())
+national = json.loads((data / "national.json").read_text())
+records = json.loads((data / "nc/2024.json").read_text())["records"]
+current_pointer = json.loads((data / "current/latest.json").read_text())
+current = json.loads((data / "current" / current_pointer["snapshot_id"] / "snapshot.json").read_text())
+current_ballots = next(row["ballots_cast"] for row in current["reporting"] if row["county_id"] == "0")
+public = data.parents[1]
+context_pointer = json.loads((public / "participation-context/latest.json").read_text())
+context_root = public / "participation-context" / context_pointer["snapshot_id"]
+nationwide = json.loads((context_root / "nationwide/snapshot.json").read_text())
+margins = json.loads((context_root / "margins.json").read_text())
+methods_pointer = json.loads((public / "participation-methods/latest.json").read_text())
+methods_root = public / "participation-methods" / methods_pointer["snapshot_id"]
+method_states = json.loads((methods_root / "states.json").read_text())
+method_national = json.loads((methods_root / "national.json").read_text())
+selected = next(row for row in records if row["county"] == "WAKE"
+                and row["precinct"] == "01-01" and row["dimension"] == "overall")
+key = selected["county"] + "|" + selected["precinct"]
+
+
+def screenshot(page, name):
+    if args.screenshots:
+        args.screenshots.mkdir(parents=True, exist_ok=True)
+        page.evaluate("document.activeElement?.blur(); window.scrollTo({top: 0, behavior: 'instant'})")
+        page.screenshot(path=str(args.screenshots / name), full_page=True)
+
+
+def viewport(page):
+    return [float(v) for v in page.locator("svg.turnout-map").get_attribute("viewBox").split()]
+
+
+def tab(page, name):
+    page.get_by_role("tab", name=name, exact=True).click()
+
+
+def no_overflow(page):
+    assert page.evaluate("document.documentElement.scrollWidth <= innerWidth"), "Page overflows horizontally"
+
+def observed_ticks(page, selector):
+    for chart in page.locator(selector).all():
+        years = set(chart.locator(".chart-point").evaluate_all("points => points.map(p => +p.dataset.year)"))
+        ticks = {int(value) for value in chart.locator(".year-tick").all_text_contents()}
+        assert ticks <= years, f"Chart labels unobserved years: {ticks - years}"
+
+def connected(page, selector, *years):
+    chart = page.locator(selector)
+    points = [chart.locator(f'.chart-point[data-year="{year}"]').evaluate(
+        "p => p.getAttribute('cx') + ',' + p.getAttribute('cy')") for year in years]
+    segments = chart.locator(".chart-line").evaluate_all(
+        "paths => paths.map(p => p.getAttribute('d').match(/[ML][^ML]+/g).map(s => s.slice(1).trim()))")
+    return any(all(point in segment for point in points) for segment in segments)
+
+
+with sync_playwright() as p:
+    browser = p.chromium.launch()
+    context = browser.new_context(viewport={"width": 1360, "height": 1000})
+    page = context.new_page()
+    errors = []
+    page.on("pageerror", lambda error: errors.append(str(error)))
+    page.goto(url)
+    expect(page.locator(".map-feature[data-state]")).to_have_count(51)
+    expect(page.locator("#selection-panel h3")).to_have_text("North Carolina")
+    assert page.locator("#state-history .chart-point").count() > 15
+    assert connected(page, "#state-history", 1994, 1996)
+    assert not connected(page, "#state-history", 1992, 1994)
+    assert page.locator("#visualization").bounding_box()["y"] < 570
+    assert not page.locator("#updates-panel").is_visible()
+    no_overflow(page)
+    # North must be above south, including after fitting the Albers projection.
+    north = page.locator('[data-state="North Dakota"]').bounding_box()
+    south = page.locator('[data-state="South Dakota"]').bounding_box()
+    assert north["y"] < south["y"]
+    alaska = page.locator('[data-state="Alaska"]').bounding_box()
+    assert 1.8 < alaska["width"] / alaska["height"] < 1.95, "Alaska is distorted"
+    anchors = page.locator(".state-label").evaluate_all("""labels => labels.map(label => {
+        const path = [...document.querySelectorAll('.map-feature[data-state]')]
+            .find(path => path.dataset.state === label.dataset.labelState);
+        return [label.dataset.labelState, path.isPointInFill(new DOMPoint(+label.getAttribute('x'), +label.getAttribute('y')))];
+    })""")
+    assert all(inside for _, inside in anchors), f"State label outside its boundary: {anchors}"
+    labels = page.locator(".state-label, .external-label").all()
+    for index, label in enumerate(labels):
+        a = label.bounding_box()
+        for other in labels[index + 1:]:
+            b = other.bounding_box()
+            assert not (a["x"] < b["x"] + b["width"] and a["x"] + a["width"] > b["x"]
+                        and a["y"] < b["y"] + b["height"] and a["y"] + a["height"] > b["y"]), \
+                f"Overlapping state labels: {label.text_content()}, {other.text_content()}"
+    page.locator('.external-label[data-label-state="Rhode Island"]').focus()
+    page.keyboard.press("Enter")
+    expect(page.locator("#state-select")).to_have_value("Rhode Island")
+    page.locator("#state-select").select_option("North Carolina")
+    page.locator("#map-reset").click()
+    screenshot(page, "participation-redesign-states.png")
+
+    page.locator('[data-state="Washington"]').click()
+    expect(page.locator("#state-select")).to_have_value("Washington")
+    page.locator("#state-select").select_option("California")
+    expect(page.locator("#selection-panel h3")).to_have_text("California")
+    expected = next(row for row in states if row["state"] == "California"
+                    and row["year"] == 2024 and row["denominator"] == "cvap")
+    expect(page.locator("#selection-panel .selection-rate")).to_have_text(f'{expected["turnout_pct"]:.1f}%')
+    points = page.locator("#state-history .chart-point").evaluate_all(
+        "points => points.map(p => [+p.dataset.year, +p.dataset.rate])")
+    expected_points = sorted((row["year"], row["turnout_pct"]) for row in states
+                             if row["state"] == "California" and row["denominator"] == "cvap"
+                             and row["turnout_pct"] is not None)
+    assert sorted(tuple(point) for point in points) == expected_points
+    observed_ticks(page, "#state-history svg")
+    page.locator('#state-history [data-year="2020"]').focus()
+    page.keyboard.press("Enter")
+    expect(page.locator("#year")).to_have_value("2020")
+
+    before_zoom = viewport(page)[2]
+    page.locator("#map-zoom-in").click()
+    assert abs(viewport(page)[2] - before_zoom / 2) < .001
+    map_svg = page.locator("svg.turnout-map")
+    map_svg.focus()
+    page.keyboard.press("+")
+    assert abs(viewport(page)[2] - before_zoom / 4) < .001
+    before = viewport(page)
+    page.keyboard.press("ArrowRight")
+    assert viewport(page)[0] > before[0]
+    rect = map_svg.bounding_box()
+    before = viewport(page)
+    page.mouse.move(rect["x"] + rect["width"] / 2, rect["y"] + rect["height"] / 2)
+    page.mouse.down()
+    page.mouse.move(rect["x"] + rect["width"] / 2 + 60, rect["y"] + rect["height"] / 2, steps=6)
+    page.mouse.up()
+    assert viewport(page)[0] < before[0]
+    expect(page.locator("#state-select")).to_have_value("California")
+    page.locator("#map-reset").click()
+    assert viewport(page) == [0, 0, 1000, 610]
+    map_svg = page.locator("svg.turnout-map")
+    # Finish any smooth page scroll from earlier focus/clicks before measuring wheel behavior.
+    page.evaluate("window.scrollTo({top: scrollY, behavior: 'instant'})")
+    rect = map_svg.bounding_box()
+    page.mouse.move(rect["x"] + rect["width"] / 2, rect["y"] + rect["height"] / 2)
+    map_svg.evaluate("svg => svg.addEventListener('wheel', e => window.mapWheelPrevented = e.defaultPrevented, {once: true})")
+    page.mouse.wheel(0, -300)
+    page.wait_for_function("document.querySelector('svg.turnout-map').viewBox.baseVal.width < 900")
+    assert viewport(page)[2] < 1000
+    assert page.evaluate("window.mapWheelPrevented")
+    after_wheel = map_svg.bounding_box()
+    assert abs(after_wheel["y"] - rect["y"]) < 1, (rect, after_wheel)
+    page.locator("#map-reset").click()
+    page.locator('[data-state="California"]').click()
+    fitted = viewport(page)
+    map_svg.dispatch_event("dblclick", {"clientX": rect["x"] + rect["width"] * .2,
+                                      "clientY": rect["y"] + rect["height"] / 2})
+    zoomed = viewport(page)
+    assert abs(zoomed[2] - fitted[2] / 2) < .001
+    assert abs(zoomed[0] + zoomed[2] / 2 - fitted[0] - fitted[2] / 2) < .001
+    page.locator("#map-reset").click()
+    page.locator("#year").select_option("2022")
+    expect(page.locator("#year")).to_have_value("2022")
+    assert {2020, 2022, 2024} <= set(page.locator("#state-history .chart-point").evaluate_all(
+        "points => points.map(p => +p.dataset.year)"))
+    page.locator(".explorer-options summary").click()
+    page.locator("#basis").select_option("vap")
+    assert connected(page, "#state-history", 1992, 1994, 1996)
+    expected = next(row for row in states if row["state"] == "California"
+                    and row["year"] == 2022 and row["denominator"] == "vap")
+    expect(page.locator("#selection-panel .selection-rate")).to_have_text(f'{expected["turnout_pct"]:.1f}%')
+    page.locator("#basis").select_option("cvap")
+    page.locator(".explorer-options summary").click()
+
+    # Methods preserve matched reporting coverage, real missingness and definition breaks.
+    page.locator("#year").select_option("2024")
+    page.locator("#state-select").select_option("California")
+    expected_method = next(row for row in method_states if row["year"] == 2024
+                           and row["state_code"] == "CA" and row["mode"] == "early_in_person")
+    method_row = page.locator('#method-observations tr[data-method="early_in_person"]')
+    expect(method_row).to_have_attribute("data-share", str(expected_method["share_pct"]))
+    expect(method_row).to_contain_text(f'{expected_method["reported_count"]:,}')
+    expect(method_row).to_contain_text(f'{expected_method["matched_units"]}/{expected_method["total_units"]}')
+    assert page.locator("#method-history .method-point").count() == 9
+    assert page.locator("#method-history .chart-line").count() == 0
+    page.locator("#map-level").select_option("county")
+    expect(page.locator('.substate-feature[data-level="county"]')).to_have_count(58)
+    expect(page.locator("#geography-note")).to_contain_text("58 with party-margin returns")
+    page.locator('.substate-feature[data-geography="06037"]').dispatch_event("click")
+    expect(page.locator("#substate-detail")).to_contain_text("Los Angeles")
+    page.locator("#state-select").select_option("California")
+    page.locator("#map-level").select_option("district")
+    expect(page.locator('.substate-feature[data-level="district"]')).to_have_count(52)
+    screenshot(page, "participation-final-districts-methods.png")
+    page.locator("#year").select_option("2026")
+    expect(page.locator("#geography-note")).to_contain_text("not substituted for 2026")
+    expect(page.locator(".substate-feature")).to_have_count(0)
+    page.locator("#year").select_option("1994")
+    page.locator("#map-reset").click()
+    assert page.locator('[data-state="North Carolina"]').get_attribute("fill") != "#d6d3cb"
+    expect(page.locator("#method-observations")).to_contain_text("State reporting begins in 2008")
+    page.locator("#year").select_option("2010")
+    assert page.locator('[data-state="North Carolina"]').get_attribute("fill") != "#d6d3cb"
+    page.locator("#year").select_option("2000")
+    assert page.locator('[data-state="New York"]').get_attribute("fill") == "#d6d3cb"
+    assert page.locator('[data-state="California"]').get_attribute("fill") != "#d6d3cb"
+    page.locator("#year").select_option("2024")
+    page.locator("#state-select").select_option("North Carolina")
+    page.locator("#map-level").select_option("precinct")
+    expect(page.locator('.substate-feature[data-level="precinct"]')).to_have_count(2656)
+    page.locator(f'.substate-feature[data-geography="{key}"]').dispatch_event("click")
+    expect(page.locator("#substate-detail")).to_contain_text("Wake")
+    page.get_by_role("button", name="Open precinct participation", exact=True).click()
+    expect(page.locator(".map-feature.selected")).to_have_attribute("data-key", key)
+    expect(page.locator("#selection-panel .selection-rate")).to_have_text(f'{selected["turnout_pct"]:.1f}%')
+    page.locator("#precinct-county").select_option("")
+    tab(page, "States")
+    page.locator("#map-level").select_option("auto")
+
+    method_example = browser.new_page(viewport={"width": 1360, "height": 1000})
+    method_example.goto(url + "?state=Mississippi&year=2024")
+    expect(method_example.locator("#method-history-mode")).to_have_value("election_day")
+    missing = method_example.locator(".method-missing")
+    expect(missing).to_contain_text("methods not reported")
+    assert missing.get_attribute("open") is None
+    assert method_example.locator("#method-observations > table tbody tr").count() == 2
+    method_example.locator("#method-history-mode").select_option("early_in_person")
+    expect(method_example.locator("#method-history .method-point").first).to_be_visible()
+    assert float(method_example.locator("#method-history svg").get_attribute("data-scale-max")) < 25
+    screenshot(method_example, "participation-compact-mississippi-methods.png")
+    missing.locator("summary").click()
+    expect(missing.locator('tr[data-method="early_in_person"]')).to_be_visible()
+    no_overflow(method_example)
+
+    tab(page, "Demographics")
+    page.locator("#year").select_option("2024")
+    page.locator("#dimension").select_option("overall")
+    assert connected(page, ".demographic-card svg", 1994, 1996)
+    assert not connected(page, ".demographic-card svg", 1992, 1994)
+    page.locator("#dimension").select_option("race")
+    expect(page.locator("#visualization .chart-point").first).to_be_visible()
+    race_rows = [row for row in national if row["year"] == 2024
+                 and row["dimension"] == "race" and row["age_group"] == "All ages"
+                 and row["denominator"] == "cvap"]
+    assert page.locator(".group-snapshot li").count() == len(race_rows)
+    for row in race_rows:
+        expect(page.locator(".group-snapshot")).to_contain_text(f'{row["turnout_pct"]:.1f}%')
+    observed_ticks(page, ".demographic-card svg")
+    screenshot(page, "participation-redesign-demographics.png")
+    overall_method = next(row for row in method_national if row["year"] == 2024 and row["category"] == "Overall")
+    expect(page.locator('#method-observations tr[data-method="mail"]')).to_have_attribute(
+        "data-share", str(overall_method["methods"]["mail"]))
+    page.locator("#method-history-mode").select_option("early_in_person")
+    assert page.locator("#method-history .method-point").count() == 15
+    assert page.locator("#method-history .chart-line").count() == 3
+    page.locator("#method-group").select_option(label="Age · 18 to 24 years")
+    assert page.locator("#method-history .method-point").count() == 4
+    screenshot(page, "participation-final-demographic-methods.png")
+    page.locator("#dimension").select_option("education")
+    education = [row for row in national if row["dimension"] == "education"
+                 and row["age_group"] == "All ages" and row["denominator"] == "cvap"]
+    expect(page.locator(".demographic-card")).to_have_count(len({row["group"] for row in education}))
+    assert "1972" not in page.locator(".year-tick").all_text_contents()
+    assert page.locator('#year option[value="1994"]').count() == 1
+    for name in {row["group"] for row in education}:
+        card = page.locator(".demographic-card").filter(has=page.get_by_role("heading", name=name, exact=True))
+        value = next(row["turnout_pct"] for row in education if row["year"] == 2024 and row["group"] == name)
+        expect(card.locator(".demographic-value")).to_have_text(f"{value:.1f}%")
+        rendered = card.locator(".chart-point").evaluate_all("points => points.map(p => [+p.dataset.year, +p.dataset.rate])")
+        assert sorted(tuple(point) for point in rendered) == sorted(
+            (row["year"], row["turnout_pct"]) for row in education if row["group"] == name and row["turnout_pct"] is not None)
+    observed_ticks(page, ".demographic-card svg")
+    screenshot(page, "participation-refined-education.png")
+    page.locator("#year").select_option("1994")
+    expect(page.locator(".observation-gap")).to_contain_text("1994")
+    expect(page.locator("#method-observations")).to_contain_text("National history begins in 1996")
+    page.get_by_role("button", name="Show overall participation in 1994").click()
+    expect(page.locator("#dimension")).to_have_value("overall")
+    expect(page.locator(".group-snapshot")).to_contain_text("48.3%")
+    page.locator("#dimension").select_option("education")
+
+    # Provisional observations belong to the normal controls, but never masquerade as CPS rates.
+    page.locator("#year").select_option("2026")
+    expect(page.locator("#provisional-status")).to_be_visible()
+    expect(page.locator("#visualization")).to_contain_text("No 2026 education breakdown")
+    page.locator("#dimension").select_option("race")
+    expect(page.locator("#current-state-select")).to_have_value("GA")
+    ga_race = [row for row in nationwide["demographics"] if row["state_code"] == "GA"
+               and row["mode"] == "in_person_early" and row["dimension"] == "race"]
+    expect(page.locator(".provisional-bars li")).to_have_count(len(ga_race))
+    for row in ga_race:
+        item = page.locator(".provisional-bars li").filter(has=page.get_by_text(row["group"], exact=True))
+        expect(item.locator("strong")).to_have_text(f'{row["ballots"]:,}')
+    assert page.locator("#visualization .chart-point").count() == 0
+    expect(page.locator(".count-source")).to_contain_text(ga_race[0]["source_date"])
+    screenshot(page, "participation-refined-provisional-demographics.png")
+    provisional_link = page.url
+    page.reload()
+    expect(page.locator(".provisional-bars li")).to_have_count(len(ga_race))
+    expect(page.locator("#year")).to_have_value("2026")
+    page.locator("#mode").select_option("mail_returned")
+    returned = [row for row in nationwide["demographics"] if row["state_code"] == "GA"
+                and row["mode"] == "mail_returned" and row["dimension"] == "race"]
+    expect(page.locator(".provisional-bars li")).to_have_count(len(returned))
+    assert sorted(page.locator(".provisional-bars li").evaluate_all("items => items.map(i => +i.dataset.ballots)")) == sorted(row["ballots"] for row in returned)
+    page.locator("#current-state-select").select_option("AL")
+    expect(page.locator("#visualization")).to_contain_text("No 2026")
+    page.locator("#year").select_option("2024")
+    expect(page.locator("#provisional-status")).not_to_be_visible()
+    expect(page.locator(".demographic-card").first).to_be_visible()
+    tab(page, "States")
+    page.locator("#year").select_option("2026")
+    page.locator("#mode").select_option("official")
+    page.locator("#state-select").select_option("North Carolina")
+    official = next(row for row in nationwide["reporting"] if row["state_code"] == "NC")
+    expect(page.locator("#selection-panel .selection-rate")).to_have_text(f'{official["ballots"]:,}')
+    expect(page.locator("#selection-panel")).to_contain_text("not final turnout")
+    expect(page.locator("#selection-panel")).to_contain_text(official["source_update_label"])
+    assert all(year <= 2024 for year in page.locator("#state-history .chart-point").evaluate_all(
+        "points => points.map(p => +p.dataset.year)"))
+    assert "20%" not in page.locator("#key").inner_text()
+    screenshot(page, "participation-refined-provisional-states.png")
+    page.locator("#state-select").select_option("Georgia")
+    expect(page.locator("#selection-panel .selection-rate")).to_have_text("Not reported")
+    page.locator("#mode").select_option("in_person_early")
+    ga_total = next(row for row in nationwide["early_voting"] if row["state_code"] == "GA" and row["mode"] == "in_person_early")
+    expect(page.locator("#selection-panel .selection-rate")).to_have_text(f'{ga_total["ballots"]:,}')
+
+    tab(page, "Precincts")
+    expect(page.locator('#year option[value="2026"]')).to_have_count(0)
+    page.locator("#dimension").select_option("overall")
+    expect(page.locator(".map-feature[data-key]")).to_have_count(2656)
+    page.locator("#precinct-county").select_option("WAKE")
+    expect(page.locator('.map-feature:not([data-county="WAKE"])')).to_have_count(0)
+    expect(page.locator('[data-key="WAKE|01-01"]')).to_have_count(1)
+    assert viewport(page)[2] < 1000
+    option = next(value for value in page.locator("#precinct-options option").evaluate_all(
+        "options => options.map(o => o.value)") if value.startswith("WAKE · 01-01 ·"))
+    page.locator("#precinct-search").fill(option)
+    page.locator("#precinct-search").dispatch_event("change")
+    expect(page.locator(".map-feature.selected")).to_have_attribute("data-key", key)
+    expect(page.locator("#selection-panel .selection-rate")).to_have_text(f'{selected["turnout_pct"]:.1f}%')
+    expect(page.locator(".selection-stats")).to_contain_text(f'{selected["participants"]:,}')
+    expect(page.locator(".selection-stats")).to_contain_text(f'{selected["registered"]:,}')
+    assert page.locator(".precinct-label").evaluate(
+        "label => parseFloat(getComputedStyle(label).strokeWidth) * label.getScreenCTM().a") < 3
+    detail_view = viewport(page)
+    page.locator("#map-zoom-out").click()
+    assert viewport(page)[2] > detail_view[2]
+    page.locator("#map-zoom-in").click()
+    assert abs(viewport(page)[2] - detail_view[2]) < 0.001
+    screenshot(page, "participation-redesign-precincts.png")
+    deep_link = page.url
+    page.reload()
+    expect(page.locator(".map-feature.selected")).to_have_attribute("data-key", key)
+    expect(page.locator("#precinct-county")).to_have_value("WAKE")
+    tab(page, "States")
+    tab(page, "Precincts")
+    expect(page.locator(".map-feature.selected")).to_have_attribute("data-key", key)
+    assert abs(viewport(page)[2] - detail_view[2]) < 0.001
+    page.locator(".explorer-options summary").click()
+    page.locator("#minimum").select_option("100")
+    page.locator("#precinct-search").fill("")
+    page.locator("#dimension").select_option("race")
+    low = next(row for row in records if row["county"] == "WAKE" and row["dimension"] == "race"
+               and row["precinct"] and 0 < row["registered"] < 100 and row["turnout_pct"] is not None)
+    page.locator("#group").select_option(low["group"])
+    page.locator("#precinct-search").fill(low["precinct"])
+    page.locator("#precinct-search").dispatch_event("change")
+    expect(page.locator("#selection-panel .selection-rate")).to_have_text("Not available")
+    expect(page.locator("#selection-panel")).to_contain_text("rate withheld")
+    page.locator(".explorer-options summary").click()
+    page.locator("#year").select_option("2022")
+    expect(page.locator(".map-feature.selected")).to_have_count(0)
+    expect(page.locator("#precinct-search")).to_have_value("")
+    page.locator("#precinct-county").select_option("")
+    expect(page.locator(".map-feature[data-key]")).to_have_count(2652)
+    page.locator("#year").select_option("2018")
+    expect(page.locator("#visualization")).to_contain_text("No verified 2018 precinct boundary snapshot")
+    expect(page.locator("svg.turnout-map")).to_have_count(0)
+    expect(page.locator("#table-note")).to_contain_text("observations")
+    assert not page.locator("#map-tools").is_visible()
+
+    tab(page, "Methods & data")
+    page.locator("#updates-panel > summary").click()
+    expect(page.locator("#national-current-state")).to_be_enabled()
+    expect(page.locator("#nc-current-ballots")).to_have_text(f"{current_ballots:,}")
+    page.locator("#participation-model summary").click()
+    expect(page.locator("#model-summary")).to_contain_text("98")
+    page.locator("#participation-cps summary").click()
+    expect(page.locator("#cps-summary")).to_contain_text("34 of 34")
+    assert page.locator('#downloads a[download]').count() == 9
+    for link in page.locator('#downloads a[download]').all():
+        response = context.request.head(link.get_attribute("href") if link.get_attribute("href").startswith("http")
+                                        else args.base_url + link.get_attribute("href"))
+        assert response.ok, f"Download failed: {response.url}"
+    assert not errors, errors
+
+    mobile = browser.new_page(viewport={"width": 390, "height": 844}, is_mobile=True, has_touch=True)
+    mobile.on("pageerror", lambda error: errors.append(str(error)))
+    mobile.goto(url)
+    expect(mobile.locator(".map-feature[data-state]")).to_have_count(51)
+    no_overflow(mobile)
+    mobile.locator("svg.turnout-map").scroll_into_view_if_needed()
+    mobile.evaluate("window.scrollTo({top: scrollY, behavior: 'instant'})")
+    rect = mobile.locator("svg.turnout-map").bounding_box()
+    cx, cy = rect["x"] + rect["width"] / 2, rect["y"] + rect["height"] / 2
+    cdp = mobile.context.new_cdp_session(mobile)
+    before_pinch = viewport(mobile)
+    touches = lambda distance: [{"x": cx - distance / 2, "y": cy, "id": 31},
+                                {"x": cx + distance / 2, "y": cy, "id": 32}]
+    cdp.send("Input.dispatchTouchEvent", {"type": "touchStart", "touchPoints": touches(40)})
+    for distance in [48, 60, 72, 80]:
+        cdp.send("Input.dispatchTouchEvent", {"type": "touchMove", "touchPoints": touches(distance)})
+    mobile.wait_for_function("""width =>
+        Math.abs(document.querySelector('svg.turnout-map').viewBox.baseVal.width - width) < .01""",
+        arg=before_pinch[2] / 2)
+    cdp.send("Input.dispatchTouchEvent", {"type": "touchEnd", "touchPoints": [touches(80)[1]]})
+    before_pan = viewport(mobile)
+    cdp.send("Input.dispatchTouchEvent", {"type": "touchMove",
+                                        "touchPoints": [{"x": cx - 20, "y": cy, "id": 31}]})
+    mobile.wait_for_function("x => document.querySelector('svg.turnout-map').viewBox.baseVal.x < x",
+                             arg=before_pan[0])
+    cdp.send("Input.dispatchTouchEvent", {"type": "touchEnd", "touchPoints": []})
+    cdp.send("Input.dispatchTouchEvent", {"type": "touchStart", "touchPoints": touches(80)})
+    for distance in [72, 60, 48, 40]:
+        cdp.send("Input.dispatchTouchEvent", {"type": "touchMove", "touchPoints": touches(distance)})
+    cdp.send("Input.dispatchTouchEvent", {"type": "touchEnd", "touchPoints": []})
+    mobile.wait_for_function("""width =>
+        Math.abs(document.querySelector('svg.turnout-map').viewBox.baseVal.width - width) < .01""",
+        arg=before_pinch[2])
+    assert mobile.locator("#state-select").input_value() == "North Carolina"
+    mobile.locator("#map-reset").click()
+    screenshot(mobile, "participation-redesign-mobile.png")
+    tab(mobile, "Demographics")
+    mobile.locator("#dimension").select_option("education")
+    expect(mobile.locator(".demographic-card").first).to_be_visible()
+    no_overflow(mobile)
+    screenshot(mobile, "participation-refined-mobile-education.png")
+    mobile.goto(url + "?state=Mississippi&year=2024")
+    expect(mobile.locator("#method-history-mode")).to_have_value("election_day")
+    no_overflow(mobile)
+    screenshot(mobile, "participation-compact-mobile-methods.png")
+    mobile.goto(provisional_link)
+    expect(mobile.locator(".provisional-bars li")).to_have_count(len(ga_race))
+    no_overflow(mobile)
+    screenshot(mobile, "participation-refined-mobile-provisional.png")
+    mobile.goto(deep_link)
+    expect(mobile.locator(".map-feature.selected")).to_have_attribute("data-key", key)
+    no_overflow(mobile)
+    mobile.locator("#map-zoom-out").click()
+    assert viewport(mobile)[2] > detail_view[2]
+    mobile.locator("#map-zoom-in").click()
+    assert abs(viewport(mobile)[2] - detail_view[2]) < 0.001
+    screenshot(mobile, "participation-redesign-mobile-precinct.png")
+
+    offline = browser.new_page(java_script_enabled=False)
+    offline.goto(url)
+    expect(offline.locator("#national-snapshot")).to_be_visible()
+    expect(offline.locator("#downloads")).to_be_visible()
+    assert offline.locator("#national-snapshot tbody tr").count() == 13
+    assert offline.locator("#method-reference tbody tr").count() == 15
+    assert offline.locator('#downloads a[download]').count() == 9
+    broken = browser.new_page()
+    broken.route("**/data/states.json", lambda route: route.abort())
+    broken.goto(url)
+    expect(broken.locator("#notice")).to_contain_text("Cannot load")
+    tab(broken, "Methods & data")
+    expect(broken.locator("#downloads")).to_be_visible()
+    assert not broken.locator("#map-tools").is_visible()
+    broken_geometry = browser.new_page()
+    broken_geometry.route("**/nc/geometry-2024.geojson", lambda route: route.abort())
+    broken_geometry.goto(url + "?view=precincts&year=2024")
+    expect(broken_geometry.locator("#notice")).to_contain_text("could not be loaded")
+    expect(broken_geometry.locator("#selection-panel")).to_contain_text("No selection data available")
+    assert not broken_geometry.locator("#map-tools").is_visible()
+    broken_current = browser.new_page()
+    broken_current.route("**/nationwide/latest.json", lambda route: route.abort())
+    broken_current.route("**/nationwide/snapshot.json", lambda route: route.abort())
+    broken_current.goto(url)
+    expect(broken_current.locator(".map-feature[data-state]")).to_have_count(51)
+    broken_current.locator("#year").select_option("2026")
+    expect(broken_current.locator("#notice")).to_contain_text("2026 observations could not be loaded")
+    expect(broken_current.locator("#selection-panel .selection-rate")).to_have_text("Not reported")
+    broken_context = browser.new_page()
+    broken_context.route("**/participation-context/latest.json", lambda route: route.abort())
+    broken_context.goto(url)
+    expect(broken_context.locator(".map-feature[data-state]")).to_have_count(51)
+    broken_context.locator("#year").select_option("2026")
+    broken_context.locator("#mode").select_option("official")
+    broken_context.locator("#state-select").select_option("Nebraska")
+    nebraska = next(row for row in nationwide["reporting"] if row["state_code"] == "NE")
+    expect(broken_context.locator("#selection-panel .selection-rate")).to_have_text(f'{nebraska["ballots"]:,}')
+    broken_methods = browser.new_page()
+    broken_methods.route("**/participation-methods/**/national.json", lambda route: route.abort())
+    broken_methods.goto(url)
+    expect(broken_methods.locator(".map-feature[data-state]")).to_have_count(51)
+    expect(broken_methods.locator("#method-observations")).to_contain_text("Historical voting methods could not be loaded")
+    tab(broken_methods, "Methods & data")
+    expect(broken_methods.locator("#downloads")).to_be_visible()
+    assert not errors, errors
+    browser.close()
+
+print("PASS: source-matched state histories, demographics, precinct search, zoom/pan, "
+      "deep links, suppression, boundary gaps, observed-year axes, geographic labels/Alaska, "
+      "historical methods, 1994/2010 context, county/district/precinct drilldown, "
+      "integrated provisional counts, downloads, mobile and no-JS/fetch-error fallbacks.")

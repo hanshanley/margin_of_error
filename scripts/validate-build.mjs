@@ -212,6 +212,9 @@ await assert.rejects(readdir(new URL('political-ads/', root)), { code: 'ENOENT' 
 const participationAnalysis = analysis('.analysis-list > li').eq(0);
 assert.equal(participationAnalysis.find('h2 a').text(), 'Who participates?');
 assert.equal(participationAnalysis.find('.primary-action').attr('href'), '/voter-participation/');
+assert.equal(participationAnalysis.find('a:contains("Code and complete data")').attr('href'),
+	'https://github.com/hanshanley/voter-participation');
+assert.match(participationAnalysis.find('p').text(), /provisional 2026 ballot counts/);
 assert.equal(participationAnalysis.find('img').attr('loading'), 'eager');
 assert.equal(participationAnalysis.find('img').attr('src'), '/voter-participation/preview.png');
 const participation = load(await text('voter-participation/index.html'));
@@ -224,8 +227,25 @@ assert.equal(participation('link[rel="canonical"]').attr('href'),
 assert.equal(participation('#national-snapshot tbody tr').length, 13);
 assert.match(participation('#definitions').text(), /not assessed/);
 assert.match(participation('.participation-scope').first().text(), /not a nationwide precinct map/);
-assert.equal(participation('#downloads a[download]').length, 7);
-assert.equal(participation('script[src="/voter-participation/app.js"]').length, 1);
+assert.equal(participation('#downloads a[download]').length, 9);
+assert.equal(participation('#type').length, 0);
+for (const id of ['map-color', 'map-level', 'method-group', 'method-history-mode']) {
+	assert.equal(participation(`#${id}`).length, 1);
+}
+assert.equal(participation('#method-reference tbody tr').length, 15);
+assert.match(participation('#method-reference').text(), /unknown method\/timing/);
+assert.equal(participation('script[src="/voter-participation/app.js"]').length, 0);
+assert.equal(participation('script[src="/scripts/participation-explorer.js"][type="module"]').length, 1);
+assert.equal(participation('.participation-nav [role="tab"]').length, 4);
+assert.equal(participation('.participation-nav [data-view="updates"]').length, 0);
+assert.equal(participation('#updates-panel[data-section="methods"] > summary').length, 1);
+for (const id of ['state-select', 'precinct-county', 'precinct-search', 'precinct-options',
+	'map-zoom-in', 'map-zoom-out', 'map-reset', 'selection-panel', 'current-state-select',
+	'mode', 'provisional-status']) {
+	assert.equal(participation(`#${id}`).length, 1, `Missing participation control: ${id}`);
+}
+assert.ok(participation.html().indexOf('id="historical-explorer"')
+	< participation.html().indexOf('id="updates-panel"'));
 assert.equal(participation('script[src="/voter-participation/current.js"]').length, 1);
 assert.match(participation('#current-participation').text(), /unofficial/);
 assert.match(participation('#current-participation').text(), /never add them together/);
@@ -241,9 +261,10 @@ assert.ok(currentSnapshot.demographics.every(row => row.turnout_pct === null && 
 assert.equal(participation('#nc-current-ballots').text(),
 	currentSnapshot.reporting.find(row => row.county_id === '0').ballots_cast.toLocaleString('en-US'));
 assert.ok(participationManifest.files.some(file => file.path === 'current.js' && file.original));
-assert.equal(participation('script[src="/voter-participation/nationwide.js"]').length, 1);
-const nationwidePointer = JSON.parse(await text('voter-participation/data/nationwide/latest.json'));
-const nationwideSnapshot = JSON.parse(await text(`voter-participation/data/nationwide/${nationwidePointer.snapshot_id}/snapshot.json`));
+assert.equal(participation('script[src="/voter-participation/nationwide.js"]').length, 0);
+const contextPointer = JSON.parse(await text('participation-context/latest.json'));
+const nationwideSnapshot = JSON.parse(await text(`participation-context/${contextPointer.snapshot_id}/nationwide/snapshot.json`));
+assert.equal(nationwideSnapshot.reporting.length, 7);
 assert.equal(nationwideSnapshot.audit.jurisdictions_assessed, 51);
 assert.equal(participation('[data-current-state]').length, 51);
 assert.equal(new Set(nationwideSnapshot.coverage.map(row => row.state_code)).size, 51);
@@ -251,6 +272,13 @@ assert.equal(participation('#nationwide-participation a[download]').length, 5);
 assert.match(participation('#nationwide-participation').text(), /not demographic turnout rates/);
 assert.match(participation('#nationwide-participation').text(), /never add the columns/);
 assert.ok(nationwideSnapshot.demographics.every(row => row.turnout_pct === null && !('party' in row)));
+const methodsPointer = JSON.parse(await text('participation-methods/latest.json'));
+const methodStates = JSON.parse(await text(`participation-methods/${methodsPointer.snapshot_id}/states.json`));
+assert.equal(new Set(methodStates.map(row => row.year)).size, 9);
+for (const row of methodStates) {
+	assert.ok(row.matched_units <= row.reporting_units && row.reporting_units <= row.total_units);
+	if (row.share_pct !== null) assert.ok(row.share_pct >= 0 && row.share_pct <= 100);
+}
 assert.ok(participationManifest.files.some(file => file.path === 'nationwide.js' && file.original));
 assert.equal(participation('script[src="/voter-participation/model.js"]').length, 1);
 const participationModel = JSON.parse(await text('voter-participation/data/model/validation.json'));

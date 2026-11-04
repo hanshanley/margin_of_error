@@ -1,0 +1,52 @@
+state_code,state,status,official_status,inperson_status,returned_status,demographic_dimensions,failed_sources,retained_sources,assessment_url
+AL,Alabama,official_data_only,reported,not_reported,not_reported,[],0,0,https://civicapi.org/api/v2/early-vote/AL/capabilities
+AK,Alaska,early_data_only,not_yet_ingested,reported,reported,[],0,0,https://civicapi.org/api/v2/early-vote/AK/capabilities
+AZ,Arizona,early_data_only,not_yet_ingested,not_reported,reported,[],0,0,https://civicapi.org/api/v2/early-vote/AZ/capabilities
+AR,Arkansas,early_data_only,not_yet_ingested,reported,reported,[],0,0,https://civicapi.org/api/v2/early-vote/AR/capabilities
+CA,California,early_data_only,not_yet_ingested,reported,reported,[],0,0,https://civicapi.org/api/v2/early-vote/CA/capabilities
+CO,Colorado,early_data_only,not_yet_ingested,reported,reported,"[""age_range"", ""gender""]",0,0,https://civicapi.org/api/v2/early-vote/CO/capabilities
+CT,Connecticut,early_data_only,not_yet_ingested,not_reported,reported,"[""age_range""]",0,0,https://civicapi.org/api/v2/early-vote/CT/capabilities
+DE,Delaware,early_data_only,not_yet_ingested,not_reported,reported,"[""age_range""]",0,0,https://civicapi.org/api/v2/early-vote/DE/capabilities
+DC,District of Columbia,not_reported_by_assessed_sources,not_yet_ingested,not_reported,not_reported,[],0,0,https://civicapi.org/api/v2/early-vote/DC/capabilities
+FL,Florida,early_data_only,not_yet_ingested,reported,reported,[],0,0,https://civicapi.org/api/v2/early-vote/FL/capabilities
+GA,Georgia,early_data_only,not_yet_ingested,reported,reported,"[""age_range"", ""ethnicity"", ""gender"", ""race""]",0,0,https://civicapi.org/api/v2/early-vote/GA/capabilities
+HI,Hawaii,early_data_only,not_yet_ingested,reported,reported,[],0,0,https://civicapi.org/api/v2/early-vote/HI/capabilities
+ID,Idaho,early_data_only,not_yet_ingested,reported,reported,[],0,0,https://civicapi.org/api/v2/early-vote/ID/capabilities
+IL,Illinois,early_data_only,not_yet_ingested,reported,reported,[],0,0,https://civicapi.org/api/v2/early-vote/IL/capabilities
+IN,Indiana,early_data_only,not_yet_ingested,reported,reported,[],0,0,https://civicapi.org/api/v2/early-vote/IN/capabilities
+IA,Iowa,early_data_only,not_yet_ingested,reported,reported,"[""age_range""]",0,0,https://civicapi.org/api/v2/early-vote/IA/capabilities
+KS,Kansas,early_data_only,not_yet_ingested,reported,reported,"[""age_range"", ""gender""]",0,0,https://civicapi.org/api/v2/early-vote/KS/capabilities
+KY,Kentucky,early_data_only,not_yet_ingested,reported,reported,[],0,0,https://civicapi.org/api/v2/early-vote/KY/capabilities
+LA,Louisiana,early_data_only,not_yet_ingested,reported,reported,[],0,0,https://civicapi.org/api/v2/early-vote/LA/capabilities
+ME,Maine,early_data_only,not_yet_ingested,reported,reported,[],0,0,https://civicapi.org/api/v2/early-vote/ME/capabilities
+MD,Maryland,early_data_only,not_yet_ingested,not_reported,reported,[],0,0,https://civicapi.org/api/v2/early-vote/MD/capabilities
+MA,Massachusetts,not_reported_by_assessed_sources,not_yet_ingested,not_reported,not_reported,[],0,0,https://civicapi.org/api/v2/early-vote/MA/capabilities
+MI,Michigan,early_data_only,not_yet_ingested,not_reported,reported,"[""age_range""]",0,0,https://civicapi.org/api/v2/early-vote/MI/capabilities
+MN,Minnesota,early_data_only,not_yet_ingested,reported,reported,[],0,0,https://civicapi.org/api/v2/early-vote/MN/capabilities
+MS,Mississippi,early_data_only,not_yet_ingested,not_reported,reported,[],0,0,https://civicapi.org/api/v2/early-vote/MS/capabilities
+MO,Missouri,early_data_only,not_yet_ingested,reported,reported,[],0,0,https://civicapi.org/api/v2/early-vote/MO/capabilities
+MT,Montana,early_data_only,not_yet_ingested,not_reported,reported,[],0,0,https://civicapi.org/api/v2/early-vote/MT/capabilities
+NE,Nebraska,official_and_early_data,reported,reported,reported,[],0,0,https://civicapi.org/api/v2/early-vote/NE/capabilities
+NV,Nevada,early_data_only,not_yet_ingested,reported,reported,"[""age_range""]",0,0,https://civicapi.org/api/v2/early-vote/NV/capabilities
+NH,New Hampshire,not_reported_by_assessed_sources,not_yet_ingested,not_reported,not_reported,[],0,0,https://civicapi.org/api/v2/early-vote/NH/capabilities
+NJ,New Jersey,early_data_only,not_yet_ingested,reported,reported,[],0,0,https://civicapi.org/api/v2/early-vote/NJ/capabilities
+NM,New Mexico,official_and_early_data,reported,reported,reported,[],0,0,https://civicapi.org/api/v2/early-vote/NM/capabilities
+NY,New York,early_data_only,not_yet_ingested,reported,not_reported,[],0,0,https://civicapi.org/api/v2/early-vote/NY/capabilities
+NC,North Carolina,official_and_early_data,reported,reported,reported,"[""ethnicity"", ""gender"", ""race""]",0,0,https://civicapi.org/api/v2/early-vote/NC/capabilities
+ND,North Dakota,official_and_early_data,reported,reported,reported,[],0,0,https://civicapi.org/api/v2/early-vote/ND/capabilities
+OH,Ohio,early_data_only,not_yet_ingested,reported,reported,[],0,0,https://civicapi.org/api/v2/early-vote/OH/capabilities
+OK,Oklahoma,early_data_only,not_yet_ingested,not_reported,reported,[],0,0,https://civicapi.org/api/v2/early-vote/OK/capabilities
+OR,Oregon,official_and_early_data,reported,not_reported,reported,[],0,0,https://civicapi.org/api/v2/early-vote/OR/capabilities
+PA,Pennsylvania,early_data_only,not_yet_ingested,not_reported,reported,[],0,0,https://civicapi.org/api/v2/early-vote/PA/capabilities
+RI,Rhode Island,early_data_only,not_yet_ingested,reported,reported,"[""age_range""]",0,0,https://civicapi.org/api/v2/early-vote/RI/capabilities
+SC,South Carolina,early_data_only,not_yet_ingested,reported,reported,"[""ethnicity"", ""race""]",0,0,https://civicapi.org/api/v2/early-vote/SC/capabilities
+SD,South Dakota,official_and_early_data,reported,not_reported,reported,[],0,0,https://civicapi.org/api/v2/early-vote/SD/capabilities
+TN,Tennessee,early_data_only,not_yet_ingested,reported,not_reported,[],0,0,https://civicapi.org/api/v2/early-vote/TN/capabilities
+TX,Texas,early_data_only,not_yet_ingested,reported,reported,[],0,0,https://civicapi.org/api/v2/early-vote/TX/capabilities
+UT,Utah,early_data_only,not_yet_ingested,reported,reported,[],0,0,https://civicapi.org/api/v2/early-vote/UT/capabilities
+VT,Vermont,early_data_only,not_yet_ingested,reported,reported,[],0,0,https://civicapi.org/api/v2/early-vote/VT/capabilities
+VA,Virginia,early_data_only,not_yet_ingested,reported,reported,[],0,0,https://civicapi.org/api/v2/early-vote/VA/capabilities
+WA,Washington,early_data_only,not_yet_ingested,not_reported,reported,[],0,0,https://civicapi.org/api/v2/early-vote/WA/capabilities
+WV,West Virginia,early_data_only,not_yet_ingested,reported,reported,[],0,0,https://civicapi.org/api/v2/early-vote/WV/capabilities
+WI,Wisconsin,early_data_only,not_yet_ingested,reported,reported,[],0,0,https://civicapi.org/api/v2/early-vote/WI/capabilities
+WY,Wyoming,early_data_only,not_yet_ingested,not_reported,reported,[],0,0,https://civicapi.org/api/v2/early-vote/WY/capabilities
