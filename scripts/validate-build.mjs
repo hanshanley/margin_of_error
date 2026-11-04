@@ -261,6 +261,23 @@ assert.equal(participation('#participation-model a[download]').length, 4);
 assert.match(participation('#participation-model').text(), /No modeled 2026 demographic turnout/);
 assert.ok(participationModel.predictions.every(row => row.last_training_year < row.year && row.year <= 2024));
 assert.ok(participationManifest.files.some(file => file.path === 'model.js' && file.original));
+assert.equal(participation('script[src="/voter-participation/cps.js"]').length, 1);
+const participationCps = JSON.parse(await text('voter-participation/data/cps/inputs.json'));
+assert.equal(participationCps.release_2026_allowed, false);
+assert.equal(participationCps.published_comparisons_passed, true);
+assert.ok(participationCps.comparisons.length > 0 && participationCps.comparisons.every(row => row.passed));
+assert.equal(participation('#cps-rows tr').length, participationCps.years.length);
+assert.equal(participation('#participation-cps a[download]').length, 5);
+assert.match(participation('#participation-cps').text(), /not a 2026 estimate/);
+assert.match(participation('#participation-cps').text(), /Unknown responses are not reported nonvoters/);
+assert.ok(participationManifest.files.some(file => file.path === 'cps.js' && file.original));
+for (const row of participationCps.summaries) {
+	const rendered = participation('#cps-rows tr').filter((_, element) =>
+		participation(element).find('th').text() === String(row.year)).text();
+	assert.ok(rendered.includes(row.sample_n.toLocaleString('en-US')));
+	assert.ok(rendered.includes(row.reported_voting_pct.toFixed(2)));
+	assert.ok(rendered.includes(row.unknown_pct.toFixed(2)));
+}
 for (const score of participationModel.scores.filter(row => row.slice === 'year')) {
 	const rendered = participation('#model-rows tr').filter((_, row) =>
 		participation(row).find('th').text() === String(score.value)).text();

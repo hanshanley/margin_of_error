@@ -5,7 +5,7 @@ import { dirname, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
 
-export const sourceRevision = '31de13a2f98325e9389a468d1eb295d47c9aaba0';
+export const sourceRevision = '792e3d91609f7ee929c35b5ec15c13710db94be8';
 const sha256 = (bytes) => createHash('sha256').update(bytes).digest('hex');
 
 function replaceOnce(text, before, after) {
@@ -73,7 +73,7 @@ async function filesUnder(directory) {
 export async function stage(source, output) {
 	const revision = execFileSync('git', ['-C', source, 'rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
 	if (revision !== sourceRevision) throw new Error(`Expected verified source ${sourceRevision}, got ${revision}`);
-	const dirty = execFileSync('git', ['-C', source, 'status', '--porcelain', '--', 'public/app.js', 'public/current.js', 'public/nationwide.js', 'public/model.js', 'public/data'],
+	const dirty = execFileSync('git', ['-C', source, 'status', '--porcelain', '--', 'public/app.js', 'public/current.js', 'public/nationwide.js', 'public/model.js', 'public/cps.js', 'public/data'],
 		{ encoding: 'utf8' }).trim();
 	if (dirty) throw new Error('Participation source assets have uncommitted changes');
 	const input = join(source, 'public/data');
@@ -96,7 +96,9 @@ export async function stage(source, output) {
 	}
 	for (const name of ['data/complete-analysis.zip', 'data/national.csv', 'data/states.csv',
 		'data/nc/2024.csv', 'data/nc/2004.csv', 'data/coverage.csv', 'data/nationwide/latest.json',
-		'data/model/validation.json', 'data/model/backtests.csv', 'data/model/complete-validation.zip']) {
+		'data/model/validation.json', 'data/model/backtests.csv', 'data/model/complete-validation.zip',
+		'data/cps/inputs.json', 'data/cps/joint-cells.csv', 'data/cps/marginals.csv',
+		'data/cps/published-comparisons.csv', 'data/cps/complete-inputs.zip']) {
 		if (!files.some(file => file.path === name)) throw new Error(`Missing complete dataset: ${name}`);
 	}
 	const script = await readFile(join(source, 'public/app.js'), 'utf8');
@@ -104,11 +106,12 @@ export async function stage(source, output) {
 	await copyFile(join(source, 'public/current.js'), join(output, 'current.js'));
 	await copyFile(join(source, 'public/nationwide.js'), join(output, 'nationwide.js'));
 	await copyFile(join(source, 'public/model.js'), join(output, 'model.js'));
+	await copyFile(join(source, 'public/cps.js'), join(output, 'cps.js'));
 	await sharp(Buffer.from(previewSvg(national))).png().toFile(join(output, 'preview.png'));
-	for (const name of ['app.js', 'current.js', 'nationwide.js', 'model.js', 'preview.png']) {
+	for (const name of ['app.js', 'current.js', 'nationwide.js', 'model.js', 'cps.js', 'preview.png']) {
 		const bytes = await readFile(join(output, name));
 		files.push({ path: name, bytes: bytes.length, sha256: sha256(bytes),
-			original: name === 'current.js' || name === 'nationwide.js' || name === 'model.js' });
+			original: name === 'current.js' || name === 'nationwide.js' || name === 'model.js' || name === 'cps.js' });
 	}
 	await writeFile(join(output, 'publication-manifest.json'), JSON.stringify({
 		source_repository: 'https://github.com/hanshanley/voter-participation',

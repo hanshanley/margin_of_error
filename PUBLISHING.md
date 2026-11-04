@@ -130,7 +130,23 @@ The server-rendered summary and per-year validation table, explicit limitations,
 full method, every prediction/error, inputs and ZIP downloads work without
 JavaScript. A category selector adds age/race/sex/education error diagnostics;
 neither website staging nor election-night collection trains on incomplete 2026
-feeds. The richer public-microdata model in the protocol is proposed, not fitted.
+feeds. The richer public-microdata model in the protocol is not yet fitted.
+
+The separate input-audit disclosure stages `cps.js` and `data/cps/`. It exposes
+independently parsed 2022 and 2024 public Census voting-survey inputs, not NYT
+estimates. The overall survey counts, reported-voting rates, unknown-outcome
+shares and published-table reconciliation are server-rendered; the selector adds
+age, exclusive race/Hispanic origin, sex and education diagnostics. Unknowns
+(including supplement noninterviews) remain separate from reported nonvoters.
+Reported voting uses all included civilian adult citizens, not only known
+yes/no respondents. These self-reports are not validated turnout, and published
+table agreement audits parsing rather than predictive performance.
+Every observed joint cell, every projected marginal, all comparisons and a
+complete ZIP with anonymized public survey originals, documentation and source
+hashes are downloadable. Fine cells are sparse research inputs, not precise
+subgroup estimates. Replicate-weight uncertainty, compatible population inputs
+and a frozen confirmation specification remain outstanding. Keep all 2026
+modeled turnout withheld; this input stage does not reverse the failed baseline.
 
 The national Democratic/Republican/DSA comparison lives at `/party-platforms/`.
 Deployment pins `hanshanley/dsa` to a verified source commit and runs its

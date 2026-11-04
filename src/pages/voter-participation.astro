@@ -49,6 +49,9 @@ const groupLabels: Record<string, string> = { age_range: 'Age', gender: 'Gender'
 const modelValidation = JSON.parse(readFileSync(resolve(dataRoot, 'data/model/validation.json'), 'utf8'));
 type ModelScore = { slice: string; value: number; tests: number; model_mae_pp: number; baseline_mae_pp: number };
 const modelYears: ModelScore[] = modelValidation.scores.filter((row: ModelScore) => row.slice === 'year');
+const cpsInputs = JSON.parse(readFileSync(resolve(dataRoot, 'data/cps/inputs.json'), 'utf8'));
+type CpsSummary = { year: number; sample_n: number; reported_voting_pct: number; unknown_pct: number };
+const cpsObservations = cpsInputs.summaries.reduce((total: number, row: CpsSummary) => total + row.sample_n, 0);
 ---
 
 <BaseLayout title="Who participates? Voter turnout across time"
@@ -111,12 +114,59 @@ const modelYears: ModelScore[] = modelValidation.scores.filter((row: ModelScore)
 				demographic groups are not independent samples. Current matched inputs and uncertainty
 				estimates remain missing; historical patterns alone cannot identify 2026 participation shifts.</p>
 			<p>The full method describes separate registered-voter administrative and citizen-population
-				survey tracks. A richer public-microdata model is proposed, not already implemented.</p>
+				survey tracks. Joint-demographic survey inputs are audited below; the richer model
+				is not yet fitted.</p>
 			<div class="download-links">
 				<a href="/voter-participation/data/model/methodology.md" download>Independent methodology</a>
 				<a href="/voter-participation/data/model/backtests.csv" download>Every prediction and error (CSV)</a>
 				<a href="/voter-participation/data/model/validation.json" download>Full validation (JSON)</a>
 				<a href="/voter-participation/data/model/complete-validation.zip" download>Complete validation + input tables (ZIP)</a>
+			</div>
+		</details>
+
+		<details class="participation-current participation-model" id="participation-cps"
+			data-data-root="/voter-participation/data/">
+			<summary>Building the next model: independent survey inputs</summary>
+			<p>We have acquired and audited the public 2022 and 2024 Census voting surveys.
+				Joint demographics come from actual anonymized survey records, not multiplied
+				marginal shares. The richer model is not yet fitted; the earlier failed experiment is unchanged.</p>
+			<p id="cps-summary" aria-live="polite">{formatNumber(cpsObservations)} adult-citizen survey
+				observations across {cpsInputs.years.join(' and ')};{' '}
+				{cpsInputs.comparisons.filter((row: { passed: boolean }) => row.passed).length} of{' '}
+				{cpsInputs.comparisons.length} published-rate checks passed.
+				Historical inputs only, not a 2026 estimate.</p>
+			<div class="nc-current-controls">
+				<label>Input diagnostic<select id="cps-dimension" disabled>
+					<option value="overall">Overall</option><option value="age">Age</option>
+					<option value="race_ethnicity">Exclusive race / Hispanic origin</option>
+					<option value="sex">Sex</option><option value="education">Education</option>
+				</select></label>
+			</div>
+			<p id="cps-error" role="status" hidden></p>
+			<div class="table-wrap" tabindex="0" role="region" aria-label="Independent survey input audit">
+				<table><caption>Reported voting among all civilian adult citizens.
+					Unknown responses are not reported nonvoters.</caption>
+					<thead><tr><th scope="col">Year</th><th scope="col">Group</th>
+						<th scope="col">Survey observations</th><th scope="col">Reported voting</th>
+						<th scope="col">Unknown outcome</th></tr></thead>
+					<tbody id="cps-rows">{cpsInputs.summaries.map((row: CpsSummary) => <tr>
+						<th scope="row">{row.year}</th><td>All</td>
+						<td class="numeric">{formatNumber(row.sample_n)}</td>
+						<td class="numeric">{row.reported_voting_pct.toFixed(2)}%</td>
+						<td class="numeric">{row.unknown_pct.toFixed(2)}%</td>
+					</tr>)}</tbody>
+				</table>
+			</div>
+			<p>Unknown includes supplement noninterviews, don’t know and refused responses.
+				Reported voting and unknown shares use the same all-adult-citizen denominator.
+				These are historical self-reports, not validated turnout. Fine joint cells can be sparse;
+				replicate-weight uncertainty and compatible population inputs remain outstanding.</p>
+			<div class="download-links">
+				<a href="/voter-participation/data/cps/joint-cells.csv" download>Every observed joint cell (CSV)</a>
+				<a href="/voter-participation/data/cps/marginals.csv" download>All projected marginals (CSV)</a>
+				<a href="/voter-participation/data/cps/published-comparisons.csv" download>All published-rate checks (CSV)</a>
+				<a href="/voter-participation/data/cps/inputs.json" download>Complete input audit (JSON)</a>
+				<a href="/voter-participation/data/cps/complete-inputs.zip" download>All observations + original public survey files (ZIP)</a>
 			</div>
 		</details>
 
@@ -340,4 +390,5 @@ const modelYears: ModelScore[] = modelValidation.scores.filter((row: ModelScore)
 	<script is:inline src="/voter-participation/current.js" defer></script>
 	<script is:inline src="/voter-participation/nationwide.js" defer></script>
 	<script is:inline src="/voter-participation/model.js" defer></script>
+	<script is:inline src="/voter-participation/cps.js" defer></script>
 </BaseLayout>
