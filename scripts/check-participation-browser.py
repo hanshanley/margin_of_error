@@ -34,6 +34,10 @@ method_states = json.loads((methods_root / "states.json").read_text())
 method_national = json.loads((methods_root / "national.json").read_text())
 local_pointer = json.loads((public / "participation-local.json").read_text())
 local_root = data.parents[2] / "data" / local_pointer["base_url"].split("/data/", 1)[1]
+precinct_pointer = json.loads((public / "participation-precincts.json").read_text())
+precinct_root = data.parents[2] / "data" / precinct_pointer["base_url"].split("/data/", 1)[1]
+precinct_index = json.loads((precinct_root / "index.json").read_text())
+current_shapes = json.loads(gzip.decompress((precinct_root / "NM.geojson.gz").read_bytes()))["features"]
 selected = next(row for row in records if row["county"] == "WAKE"
                 and row["precinct"] == "01-01" and row["dimension"] == "overall")
 key = selected["county"] + "|" + selected["precinct"]
@@ -81,6 +85,22 @@ with sync_playwright() as p:
     page.goto(url)
     expect(page.locator("#year")).to_have_value("2026")
     expect(page.locator("#provisional-status")).to_be_visible()
+    expect(page.locator("#map-level")).to_have_value("precinct")
+    expect(page.locator("#map-color")).to_have_value("turnout")
+    expect(page.locator('.substate-feature[data-level="precinct"]')).to_have_count(len(current_shapes), timeout=30000)
+    expected_rates = {f["properties"]["key"]: f["properties"]["reported_pct"] for f in current_shapes}
+    actual_rates = page.locator('.substate-feature[data-level="precinct"]').evaluate_all(
+        "paths => Object.fromEntries(paths.map(p => [p.dataset.geography, p.dataset.rate === '' ? null : +p.dataset.rate]))")
+    assert actual_rates == expected_rates, "Rendered precinct rates differ from the audited source join"
+    assert set(page.locator(".map-feature[data-state]").evaluate_all(
+        "paths => paths.map(p => p.getAttribute('fill'))")) == {"#d6d3cb"}
+    neutral = page.locator('.substate-feature[data-match="county_precinct_set_mismatch"], .substate-feature[data-match="rate_withheld"]')
+    assert set(neutral.evaluate_all("paths => paths.map(p => p.getAttribute('fill'))")) == {"#edf0f3"}
+    assert len(set(page.locator('.substate-feature[data-match="matched"]').evaluate_all(
+        "paths => paths.map(p => p.getAttribute('fill'))"))) > 10
+    expect(page.locator('.substate-feature[data-level="county"]')).to_have_count(0)
+    expect(page.locator("#coverage-note")).to_contain_text(f'{precinct_index["colored_precincts"]:,} colored precincts')
+    screenshot(page, "participation-default-precinct-coverage.png")
     default_demographics = context.new_page()
     default_demographics.on("pageerror", lambda error: errors.append(str(error)))
     default_demographics.goto(url + "?view=national")
@@ -89,7 +109,7 @@ with sync_playwright() as p:
     tab(default_demographics, "Precincts")
     expect(default_demographics.locator("#year")).to_have_value("2024")
     default_demographics.close()
-    page.goto(url + "?year=2024")
+    page.goto(url + "?year=2024&map-level=auto&map-color=margin")
     expect(page.locator("#year")).to_have_value("2024")
     expect(page.locator(".map-feature[data-state]")).to_have_count(51)
     expect(page.locator("#selection-panel h3")).to_have_text("North Carolina")
@@ -624,6 +644,34 @@ with sync_playwright() as p:
 
     current_page = context.new_page()
     current_page.on("pageerror", lambda error: errors.append(str(error)))
+    current_page.goto(url + "?state=New+Mexico&year=2026&mode=official")
+    expect(current_page.locator('.substate-feature[data-level="precinct"]')).to_have_count(len(current_shapes), timeout=30000)
+    mapped = next(f["properties"] for f in current_shapes if f["properties"]["reported_pct"] is not None
+                  and f["properties"]["county"] == "Dona Ana")
+    mapped_row = next(row for row in current_local["precincts"] if row["state_code"] == "NM"
+                      and row["unit_key"] == mapped["unit_key"])
+    current_page.locator(f'.substate-feature[data-geography="{mapped["key"]}"]').dispatch_event("click")
+    expect(current_page.locator("#current-unit-select")).to_have_value(mapped["unit_key"])
+    expect(current_page.locator("#current-unit-detail .selection-rate")).to_have_text(f'{mapped_row["ballots"]:,}')
+    expect(current_page.locator("#substate-detail .selection-rate")).to_have_text(f'{mapped["reported_pct"]:.1f}%')
+    expect(current_page.locator("#substate-detail")).to_contain_text("source-defined eligible voters")
+    screenshot(current_page, "participation-2026-colored-precinct.png")
+    current_page.locator("#state-select").select_option("New Mexico")
+    unmatched = next(f["properties"] for f in current_shapes if f["properties"]["match_status"] == "county_precinct_set_mismatch")
+    current_page.locator(f'.substate-feature[data-geography="{unmatched["key"]}"]').dispatch_event("click")
+    expect(current_page.locator("#substate-detail")).to_contain_text("county boundary and reporting precinct sets differ")
+    expect(current_page.locator("#substate-detail .selection-rate")).to_have_text("Not available")
+    current_page.locator("#state-select").select_option("Nebraska")
+    expect(current_page.locator("#geography-note")).to_contain_text("No matched 2026 precinct participation")
+    expect(current_page.locator(".substate-feature")).to_have_count(0)
+    assert set(current_page.locator(".map-feature[data-state]").evaluate_all(
+        "paths => paths.map(p => p.getAttribute('fill'))")) == {"#d6d3cb"}
+    current_page.goto(url + "?year=2024")
+    expect(current_page.locator('.substate-feature[data-level="precinct"]')).to_have_count(2656)
+    expect(current_page.locator("#title")).to_have_text("Precinct participation in North Carolina")
+    for name in ["NM.geojson.gz", "originals/NM-precincts-20260717.zip", "checksums.json"]:
+        response = context.request.head(precinct_pointer["base_url"] + name)
+        assert response.ok, f"Complete precinct download failed: {response.url}"
     current_page.goto(url + "?state=New+Mexico&year=2026&mode=official&map-color=turnout&map-level=county")
     nm_county = next(row for row in current_local["counties"] if row["state_code"] == "NM" and row["county"] == "Bernalillo")
     nm_unit = next(row for row in current_local["precincts"] if row["state_code"] == "NM"
@@ -670,6 +718,11 @@ with sync_playwright() as p:
     current_page.locator("#current-county-select").select_option(label="WAKE")
     expect(current_page.locator("#current-unit-navigation")).to_contain_text("County counts only")
     mobile.goto(url + "?state=New+Mexico&year=2026&mode=official")
+    expect(mobile.locator('.substate-feature[data-level="precinct"]')).to_have_count(len(current_shapes), timeout=30000)
+    mobile.locator(f'.substate-feature[data-geography="{mapped["key"]}"]').dispatch_event("click")
+    expect(mobile.locator("#current-unit-select")).to_have_value(mapped["unit_key"])
+    no_overflow(mobile)
+    screenshot(mobile, "participation-2026-colored-precinct-mobile.png")
     mobile.locator("#current-county-select").select_option(nm_county["county_id"])
     mobile.locator("#current-unit-select").select_option(nm_unit["unit_key"])
     expect(mobile.locator("#current-unit-detail .selection-rate")).to_have_text(f'{nm_unit["ballots"]:,}')
@@ -679,6 +732,13 @@ with sync_playwright() as p:
     broken_local_current.route("**/participation-current/**/local.json", lambda route: route.abort())
     broken_local_current.goto(url + "?state=New+Mexico&year=2026")
     expect(broken_local_current.locator("#selection-panel")).to_contain_text("No local counts inferred")
+    broken_precinct_current = browser.new_page()
+    broken_precinct_current.route("**/NM.geojson.gz", lambda route: route.abort())
+    broken_precinct_current.goto(url + "?state=New+Mexico&year=2026")
+    expect(broken_precinct_current.locator("#geography-note")).to_contain_text("Geographic detail could not be loaded")
+    expect(broken_precinct_current.locator(".substate-feature")).to_have_count(0)
+    assert set(broken_precinct_current.locator(".map-feature[data-state]").evaluate_all(
+        "paths => paths.map(p => p.getAttribute('fill'))")) == {"#d6d3cb"}
 
     offline = browser.new_page(java_script_enabled=False)
     offline.goto(url)

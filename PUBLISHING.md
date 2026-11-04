@@ -155,8 +155,8 @@ count tables, suppression and year selection without dropping the precinct ID.
 and builds small, county-sharded indexes during `npm run build`.
 Histories match the official county + precinct identifier, not constant geography
 or a stable electorate; no boundary crosswalk is claimed. Missing years and
-small/inconsistent rates are not filled. Other states still lack verified
-precinct participation inputs, and county/district context is not labeled as precinct turnout.
+small/inconsistent rates are not filled. Historical precinct participation outside
+NC remains unavailable; county/district context is not labeled as precinct turnout.
 
 The nationwide local supplement contains 67,525 EAC reporting-unit observations for
 all 50 states and D.C., every even election year from 2004 through 2024. These are
@@ -215,9 +215,9 @@ South Dakota vote centers and special rows are counts only. Duplicate source
 names retain distinct snapshot-local row ordinals, not invented stable IDs.
 New Mexico's electorate retains its source label, "Eligible Voters"; it is not
 silently treated as registration or Census CVAP. County shading uses explicitly
-contextual 2024 Census geometry with unique state/name matches. No 2026 precinct
-polygons or longitudinal precinct crosswalks are claimed. Complete ZIPs include
-all normalized datasets, county/precinct CSVs and raw source captures; the smaller
+contextual 2024 Census geometry with unique state/name matches when that detail
+level is explicitly selected. No longitudinal precinct crosswalks are claimed.
+Complete ZIPs include all normalized datasets, county/precinct CSVs and raw source captures; the smaller
 browser JSON omits only duplicated bulk datasets.
 The current browser JSON and complete downloads are served from their pinned
 `c65c8b262cb421fc094578885c0c20f6d120d776` raw-GitHub revision.
@@ -228,6 +228,30 @@ space for the other analyses' CI-generated assets, which can exceed local copies
 New snapshots require first publishing their immutable data revision, then
 updating the route and validation together. Missing, truncated or changed remote
 data must stop publication, not fall back to metadata or drop observations.
+
+The default color layer is now precinct participation, not state or county shading.
+Unmatched areas stay neutral, including at the national extent; state histories and
+explicit county/district context remain selectable. Precinct detail disables party-margin
+coloring because precinct candidate returns have not been joined.
+`scripts/build-current-precincts.py` joins the RGIS July 2026 NM release to the
+saved election-night source using county + explicit `VTD_NUM` (Voting District Number).
+Eight updated Sandoval shapes retain older Census VTD/GEOCODE values; those older
+fields are preserved but never used as the new precinct numbers. Whole county
+precinct sets must match uniquely and source ballot/electorate totals must reconcile.
+The audited map contains 2,177 shapes, with 1,202 colored precincts across 30 counties.
+Bernalillo, San Juan and Santa Fe remain entirely neutral because their reporting
+sets differ; six additional matched precincts have small or unavailable rates.
+These are July reference boundaries, not certified election-night geography, and
+matching IDs do not establish boundary stability across elections. No county or
+state values are allocated into precincts. Other states are not claimed as covered.
+
+The complete geometry, joined rates, county-set audit, checksums and original GIS
+ZIP/metadata live in `data/participation-precincts/20261104T230000Z/`.
+`public/participation-precincts.json` pins that data's immutable Git revision.
+Complete existing 2026 reporting downloads retain every unmatched source row.
+Browser checks compare every rendered rate with the audited GeoJSON, assert
+neutral state/unsupported precinct fills, exercise matched and mismatched selections,
+and verify desktop/mobile behavior, historical NC coverage and failed-fetch fallbacks.
 
 The reviewed supplements live in `public/participation-context/` and
 `public/participation-methods/`; neither modifies the pinned historical export.

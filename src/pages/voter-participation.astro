@@ -68,6 +68,7 @@ const methodsPointerPath = resolve('public/participation-methods/latest.json');
 const methodsPointer = existsSync(methodsPointerPath) ? JSON.parse(readFileSync(methodsPointerPath, 'utf8')) : null;
 const methodsPath = methodsPointer ? `/participation-methods/${methodsPointer.snapshot_id}/` : '';
 const localPointer = JSON.parse(readFileSync(resolve('public/participation-local.json'), 'utf8'));
+const precinctPointer = JSON.parse(readFileSync(resolve('public/participation-precincts.json'), 'utf8'));
 type MethodRow = { year: number; category: string; universe: string; methods: Record<string, number | null> };
 const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve('public', methodsPath.slice(1), 'national.json'), 'utf8'))
 	.filter((row: MethodRow) => row.category === 'Overall').sort((a: MethodRow, b: MethodRow) => a.year - b.year) : [];
@@ -100,8 +101,8 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 					<label id="county-label" hidden>County<select id="precinct-county"><option value="">All counties</option></select></label>
 					<label id="precinct-search-label" hidden>Find a precinct<input id="precinct-search" type="search" list="precinct-options" placeholder="ID or precinct name" autocomplete="off" /><datalist id="precinct-options"></datalist></label>
 					<label>Year<select id="year"></select></label>
-					<label id="map-color-label">Map color<select id="map-color"><option value="margin">Election margin</option><option value="turnout">Participation</option></select></label>
-					<label id="map-level-label">Detail<select id="map-level"><option value="auto">As you zoom</option><option value="county">Counties / municipalities</option><option value="district">Congressional districts</option><option value="precinct">NC precincts</option></select></label>
+					<label id="map-color-label">Map color<select id="map-color"><option value="margin">Election margin</option><option value="turnout" selected>Participation</option></select></label>
+					<label id="map-level-label">Detail<select id="map-level"><option value="precinct">Precincts · verified coverage</option><option value="auto">As you zoom</option><option value="county">Counties / municipalities</option><option value="district">Congressional districts</option></select></label>
 					<label id="current-state-label" hidden>State<select id="current-state-select"></select></label>
 					<label id="mode-label" hidden>Reported ballots<select id="mode"></select></label>
 					<label id="dimension-label" hidden>Compare<select id="dimension"></select></label>
@@ -486,6 +487,11 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 				<a href={`${localPointer.base_url}observations.csv.gz`} download>Complete nationwide local participation observations (CSV · gzip)</a>
 				<a href={`${localPointer.base_url}coverage.json`}>Every state and election year: local-data coverage (JSON)</a>
 				<a href={`${localPointer.base_url}checksums.json`}>Local data and boundary checksums (JSON)</a>
+				<a href={`${precinctPointer.base_url}NM.geojson.gz`}>Complete 2026 NM precinct map and matched participation (GeoJSON · gzip)</a>
+				<a href={`${precinctPointer.base_url}audit.json`}>2026 precinct identity matches and withheld counties (JSON)</a>
+				<a href={`${precinctPointer.base_url}originals/NM-precincts-20260717.zip`}>Original July 2026 NM precinct boundaries (ZIP)</a>
+				<a href={`${precinctPointer.base_url}index.json`}>2026 precinct-map sources, definitions and limitations (JSON)</a>
+				<a href={`${precinctPointer.base_url}checksums.json`}>2026 precinct-map and source checksums (JSON)</a>
 				{localAudit.length > 0 && <><a href={`${nationwidePath}complete-snapshot.zip`} download>Complete 2026 observations + original sources (ZIP)</a>
 					<a href={`${nationwidePath}counties.csv`} download>All 2026 county counts (CSV)</a>
 					<a href={`${nationwidePath}precincts.csv`} download>All 2026 precinct / reporting-row counts (CSV)</a></>}
