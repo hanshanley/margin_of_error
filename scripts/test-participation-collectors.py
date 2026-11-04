@@ -16,6 +16,31 @@ def module(name):
 
 methods = module("collect-voting-methods")
 context = module("collect-participation-context")
+local = module("build-local-participation")
+
+
+def test_local_rates_require_exact_identity_and_consistent_denominators():
+    row = eavs(2024, [["AL", "0100100000", "Autauga", 80, 60, "", "", "", 20, "", "", ""]])[0]
+    key = ("AL", "0100100000", "Autauga")
+    registration = {"registered": 100, "registration_field": "a1a", "registration_comment": "Original note"}
+    assert local.local_record(row, {key: registration})["turnout_pct"] == 80
+    assert local.local_record(row, {("AL", "0100100000", "Another county"): registration})["turnout_pct"] is None
+    assert local.local_record(row, {key: {**registration, "registered": 79}})["turnout_pct"] is None
+    assert local.local_record(row, {key: registration})["registration_comment"] == "Original note"
+    assert local.reported({"a1a": 100, "a1a_notavailable": "X"}, "a1a") is None
+
+
+def test_local_geography_requires_id_name_and_unique_reporting_area():
+    county = {"01001": {"properties": {"name": "Autauga County"}}}
+    town = {"5500225": {"properties": {"name": "Ackley town"}}}
+    row = {"state_code": "AL", "jurisdiction_id": "0100100000", "jurisdiction": "AUTAUGA",
+           "statewide_unit": False, "supplemental_unit": False}
+    assert local.match_geography(row, county, {}, "01") == {"level": "county", "key": "01001"}
+    assert local.match_geography({**row, "jurisdiction": "Other"}, county, {}, "01") is None
+    assert local.match_geography({**row, "statewide_unit": True}, county, {}, "01") is None
+    wi = {**row, "jurisdiction_id": "00225", "jurisdiction": "TOWN OF ACKLEY - LANGLADE COUNTY"}
+    assert local.match_geography(wi, {}, town, "55") == {"level": "municipality", "key": "5500225"}
+    assert local.match_geography({**wi, "jurisdiction": "ACKLEY WARD 1"}, {}, town, "55") is None
 
 
 def eavs(year, rows):
