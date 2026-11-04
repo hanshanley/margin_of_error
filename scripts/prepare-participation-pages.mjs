@@ -5,7 +5,7 @@ import { copyFile, mkdtemp, readdir, readFile, rmdir, stat, unlink, writeFile } 
 import { tmpdir } from 'node:os';
 import { join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { participationDownload, participationRelease } from '../public/scripts/participation-downloads.js';
+import { participationCurrentRoot, participationDownload, participationRelease } from '../public/scripts/participation-downloads.js';
 
 const repository = 'hanshanley/margin_of_error';
 const sha256 = bytes => createHash('sha256').update(bytes).digest('hex');
@@ -39,6 +39,16 @@ export function verifyReleaseAssets(files, assets) {
 	}
 }
 
+export async function verifyRemoteFiles(files, fetcher = fetch) {
+	for (const file of files) {
+		const response = await fetcher(file.url);
+		assert.ok(response.ok, `Missing pinned complete data: ${file.path}`);
+		const bytes = Buffer.from(await response.arrayBuffer());
+		assert.equal(bytes.length, file.bytes, `Pinned data size changed: ${file.path}`);
+		assert.equal(sha256(bytes), file.sha256, `Pinned data checksum changed: ${file.path}`);
+	}
+}
+
 export async function preparePages(output, upload = false) {
 	const paths = await filesUnder(output);
 	const files = [];
@@ -51,13 +61,15 @@ export async function preparePages(output, upload = false) {
 	}
 	assert.ok(files.length, 'Prepare a fresh, complete build before publishing');
 	assert.equal(new Set(files.map(file => file.name)).size, files.length, 'Release asset names must be unique');
+	const pinnedFiles = files.filter(file => file.url.startsWith(participationCurrentRoot));
+	const releaseFiles = files.filter(file => !pinnedFiles.includes(file));
 	let release = JSON.parse(gh(['api', `repos/${repository}/releases/tags/${participationRelease}`]));
 	if (upload) {
 		const existing = new Set(release.assets.map(asset => asset.name));
 		const temporary = await mkdtemp(join(tmpdir(), 'participation-downloads-'));
 		const staged = [];
 		try {
-			for (const file of files.filter(file => !existing.has(file.name))) {
+			for (const file of releaseFiles.filter(file => !existing.has(file.name))) {
 				const path = join(temporary, file.name);
 				await copyFile(join(output, file.path.slice(1)), path);
 				staged.push(path);
@@ -69,7 +81,8 @@ export async function preparePages(output, upload = false) {
 		}
 		release = JSON.parse(gh(['api', `repos/${repository}/releases/tags/${participationRelease}`]));
 	}
-	verifyReleaseAssets(files, release.assets);
+	verifyReleaseAssets(releaseFiles, release.assets);
+	await verifyRemoteFiles(pinnedFiles);
 	for (const path of paths.filter(path => path.endsWith('.html'))) {
 		const html = await readFile(path, 'utf8');
 		const rewritten = rewriteDownloadHtml(html, files);

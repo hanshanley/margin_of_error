@@ -2,6 +2,7 @@
 import { existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { participationCurrentRoot } from '../../public/scripts/participation-downloads.js';
 import '../styles/voter-participation.css';
 
 const dataRoot = resolve('public/voter-participation');
@@ -39,12 +40,13 @@ const contextPointer = existsSync(contextPointerPath) ? JSON.parse(readFileSync(
 const nationwidePointer = JSON.parse(readFileSync(resolve(dataRoot, 'data/nationwide/latest.json'), 'utf8'));
 const supplementPointerPath = resolve('public/participation-current/latest.json');
 const supplementPointer = existsSync(supplementPointerPath) ? JSON.parse(readFileSync(supplementPointerPath, 'utf8')) : null;
-const nationwideRoot = supplementPointer ? '/participation-current/'
+const nationwideRoot = supplementPointer ? participationCurrentRoot
 	: contextPointer ? `/participation-context/${contextPointer.snapshot_id}/` : '/voter-participation/data/';
 const nationwideDirectory = supplementPointer ? `${supplementPointer.snapshot_id}/`
 	: contextPointer ? 'nationwide/' : `nationwide/${nationwidePointer.snapshot_id}/`;
 const nationwidePath = nationwideRoot + nationwideDirectory;
-const nationwide = JSON.parse(readFileSync(resolve('public', nationwidePath.slice(1), 'snapshot.json'), 'utf8'));
+const nationwideLocalPath = supplementPointer ? `participation-current/${supplementPointer.snapshot_id}/` : nationwidePath.slice(1);
+const nationwide = JSON.parse(readFileSync(resolve('public', nationwideLocalPath, 'snapshot.json'), 'utf8'));
 type LocalAudit = { state_code: string; counties: number; source_rows: number; precinct_rows: number; rows_with_rate: number };
 const localAudit: LocalAudit[] = nationwide.local_audit ?? [];
 const earlyFor = (state: string, mode: string): EarlyRow | undefined => nationwide.early_voting.find(

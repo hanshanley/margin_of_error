@@ -1,8 +1,9 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
+import { createHash } from 'node:crypto';
 import { previewSvg, publicationScript } from './stage-voter-participation.mjs';
 import { participationDownload } from '../public/scripts/participation-downloads.js';
-import { rewriteDownloadHtml, verifyReleaseAssets } from './prepare-participation-pages.mjs';
+import { rewriteDownloadHtml, verifyReleaseAssets, verifyRemoteFiles } from './prepare-participation-pages.mjs';
 import { appendPrecinctHistory } from './build-precinct-histories.mjs';
 
 test('precinct histories retain source counts, missing rates and groups without merging county IDs', () => {
@@ -30,10 +31,23 @@ test('bulk download routing preserves full snapshots and leaves interactive JSON
 	assert.equal(participationDownload('/participation-methods/20261104T183000Z/states.json'),
 		'/participation-methods/20261104T183000Z/states.json');
 	assert.equal(participationDownload('/party-platforms/complete-analysis.zip'), '/party-platforms/complete-analysis.zip');
+	const current = participationDownload('/participation-current/20261104T220424Z/local.json');
+	assert.ok(current.startsWith('https://raw.githubusercontent.com/hanshanley/margin_of_error/c65c8b262cb421fc094578885c0c20f6d120d776/'));
+	assert.ok(current.endsWith('/20261104T220424Z/local.json'));
+	assert.equal(participationDownload('/participation-current/latest.json'), '/participation-current/latest.json');
 	assert.equal(rewriteDownloadHtml(`<a href="${path}" download>Full data</a><script>fetch("${path}")</script>`,
 		[{ path, url }]), `<a href="${url}" download>Full data</a><script>fetch("${path}")</script>`);
 });
 
+test('pinned current data must be complete and byte-identical before removing site copies', async () => {
+	const bytes = Buffer.from('{"complete":[1,2,3]}');
+	const file = { path: '/current.json', url: 'source', bytes: bytes.length,
+		sha256: createHash('sha256').update(bytes).digest('hex') };
+	await verifyRemoteFiles([file], async () => new Response(bytes));
+	await assert.rejects(verifyRemoteFiles([file], async () => new Response('', { status: 404 })), /Missing pinned complete data/);
+	await assert.rejects(verifyRemoteFiles([file], async () => new Response('short')), /size changed/);
+	await assert.rejects(verifyRemoteFiles([{ ...file, sha256: 'changed' }], async () => new Response(bytes)), /checksum changed/);
+});
 test('missing, truncated or changed release downloads stop Pages publication', () => {
 	const file = { name: 'full.zip', bytes: 42, sha256: 'abc', url: 'https://example.org/full.zip' };
 	const asset = { name: file.name, size: file.bytes, digest: 'sha256:abc', browser_download_url: file.url };

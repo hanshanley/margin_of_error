@@ -216,6 +216,15 @@ contextual 2024 Census geometry with unique state/name matches. No 2026 precinct
 polygons or longitudinal precinct crosswalks are claimed. Complete ZIPs include
 all normalized datasets, county/precinct CSVs and raw source captures; the smaller
 browser JSON omits only duplicated bulk datasets.
+The current browser JSON and complete downloads are served from their pinned
+`c65c8b262cb421fc094578885c0c20f6d120d776` raw-GitHub revision.
+`participation-downloads.js` centralizes that exact snapshot route.
+The Pages preparer fetches and byte-verifies every current file before removing
+only its build-output copy; the staged originals stay intact. This reserves
+space for the other analyses' CI-generated assets, which can exceed local copies.
+New snapshots require first publishing their immutable data revision, then
+updating the route and validation together. Missing, truncated or changed remote
+data must stop publication, not fall back to metadata or drop observations.
 
 The reviewed supplements live in `public/participation-context/` and
 `public/participation-methods/`; neither modifies the pinned historical export.
