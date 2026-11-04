@@ -38,6 +38,7 @@ const state = {
   context: null, contextPath: "", margins: [], contextError: "", subshapes: new Map(),
   drillKey: "", drillToken: 0, drillTimer: null, subSelection: null,
   methods: null, methodStates: [], methodNational: [], methodsPath: "", methodsError: "",
+  precinctHistories: new Map(),
 };
 const fmt = value => value == null ? "—" : value.toLocaleString("en-US");
 const pct = value => value == null ? "Not available" : value.toFixed(1) + "%";
@@ -520,11 +521,25 @@ function seriesChart(container, rows, { width = 720, height = 390, compact = fal
       };
       for (const row of observations) {
         const previous = segment.at(-1);
-        if (previous && (row.year - previous.year !== 2
-          || (dimension === "race" && previous.year < 2004 && row.year >= 2004)
-          || ($("basis").value === "cvap" && previous.year < 1994 && row.year >= 1994)
-          || (dimension === "education" && previous.year < 1992 && row.year >= 1992)
-          || (previous.year < 1972 && row.year >= 1972))) flush();
+        if (previous) {
+          const change = dimension === "race" && previous.year < 2004 && row.year >= 2004 ? "Race categories changed in 2004."
+            : dimension !== "precinct" && $("basis").value === "cvap" && previous.year < 1994 && row.year >= 1994
+              ? "Citizenship measurement changed in 1994."
+              : dimension === "education" && previous.year < 1992 && row.year >= 1992 ? "Education categories changed in 1992."
+                : previous.year < 1972 && row.year >= 1972 ? "Survey definitions changed in 1972." : "";
+          if (row.year - previous.year !== 2) flush();
+          else if (change) {
+            const label = `${previous.year}–${row.year}: ${change} Estimates are not directly comparable.`;
+            const connector = svgNode("path", {
+              d: `M${x(previous.year)},${y(previous.turnout_pct)} L${x(row.year)},${y(row.turnout_pct)}`,
+              class: "chart-definition-break", stroke: color, tabindex: "0", role: "img", "aria-label": label,
+              "data-from-year": previous.year, "data-to-year": row.year,
+            });
+            bindTooltip(connector, label);
+            chart.append(connector);
+            flush();
+          }
+        }
         segment.push(row);
       }
       flush();
@@ -537,7 +552,13 @@ function seriesChart(container, rows, { width = 720, height = 390, compact = fal
         bindTooltip(point, `${name} · ${row.year}\n${pct(row.turnout_pct)} reported voting`);
         const selectYear = () => {
           if ([...$("year").options].some(option => option.value === String(row.year))) {
-            if ($("year").value !== String(row.year)) state.precinct = "";
+            if (dimension === "precinct" && state.view === "states") {
+              $("year").value = String(row.year);
+              $("dimension").value = "overall";
+              showView("precincts");
+              return;
+            }
+            if (dimension !== "precinct" && $("year").value !== String(row.year)) state.precinct = "";
             $("year").value = String(row.year); configure(); render();
           }
         };
@@ -567,7 +588,7 @@ function nationalView() {
   header(`${$("year").value} selected · National Census survey estimates`,
     dimension === "overall" ? "Participation over time" : `Participation by ${$("dimension").selectedOptions[0].textContent.toLowerCase()}`,
     `Share of ${basis === "cvap" ? "adult citizens" : "all adult residents, including noncitizens"} who reported voting.`,
-    "Each point is an observed election year. Lines do not bridge missing elections or documented definition changes.");
+    "Each point is an observed election year. Dashed connectors mark survey-definition changes; missing elections remain gaps.");
   $("map-tools").hidden = true; $("map-help").hidden = true;
   state.map = null;
   $("key").replaceChildren();
@@ -717,8 +738,8 @@ function stateDetail() {
     seriesChart(chart, rows, { width: 300, height: 210, compact: true });
   } else chart.append(html("p", "selection-note", "No historical series for this population."));
   panel.append(html("p", "selection-note", basis === "cvap"
-    ? "CPS survey estimates. Citizenship measurement changes in 1994; earlier observations are shown separately."
-    : "CPS survey estimates. Gaps and definition changes are not interpolated."));
+    ? "CPS survey estimates. The dashed 1992–1994 connector marks a citizenship-measurement change, not missing data."
+    : "CPS survey estimates. Dashed connectors mark definition changes; missing elections remain gaps."));
   const election = marginRow("state", stateCode());
   if (election) panel.append(html("h4", "", `${election.office} · map context`),
     html("p", "selection-note", `${marginLabel(election)} · ${fmt(election.contest_votes)} contest votes. `
@@ -958,6 +979,8 @@ function featurePath(item, value, label, action, attrs = {}) {
 function stateMap(byName, provisional = false) {
   const previousViewport = state.map?.view === "states" ? state.viewport : null;
   const svg = createMap(1000, 610, "United States turnout map. Select a state, or use the state selector for its historical graph.");
+  state.map.stateHeading = ["subtitle", "title", "measure", "caption"].map(id => $(id).textContent);
+  state.map.stateCoverage = $("coverage-note").textContent;
   state.drillKey = ""; ++state.drillToken;
   const items = new Map(), paths = new Map();
   const labels = [], callouts = [];
@@ -1037,13 +1060,19 @@ function projectInside(feature, point) {
     }
     const code = stateCode(), selected = map.stateItems.get(code);
     let level = $("map-level").value;
-    if (level === "auto") level = code === "NC" && zoomLevel >= 12 && state.audits.some(row => row.year === year)
+    if (level === "auto") level = code === "NC" && zoomLevel >= 8 && state.audits.some(row => row.year === year)
       ? "precinct" : state.margins.some(row => row.year === year && row.state_code === code && row.level === "county")
         ? "county" : state.context.district_result_years.includes(year) ? "district" : "county";
     const key = `${year}|${code}|${level}|${$("map-color").value}|${zoomLevel >= 2.3}`;
     if (key === state.drillKey) return;
     state.drillKey = key;
     const token = ++state.drillToken;
+    if (map.precinctLayer) {
+      map.precinctLayer = false;
+      header(...map.stateHeading);
+      $("coverage-note").textContent = map.stateCoverage;
+      stateDetail();
+    }
     map.detail.replaceChildren(); $("substate-detail")?.replaceChildren();
     $("geography-note").hidden = zoomLevel < 2.3;
     for (const label of map.svg.querySelectorAll(".map-label, .map-callout-line")) label.style.display = zoomLevel >= 2.3 ? "none" : "";
@@ -1089,17 +1118,22 @@ function projectInside(feature, point) {
         : election ? `${election.office} · ${marginLabel(election)} · ${fmt(election.contest_votes)} contest votes`
           : "No matched election return; boundary context only";
       const path = featurePath(item, rate, `${name} · ${year}\n${description}`, () => {
-        const panel = $("substate-detail");
-        panel.replaceChildren(html("h4", "", name), html("p", "selection-note", description));
-        if (election) panel.append(sourceLink(election),
-          html("p", "selection-note", "Party-vote margin, not turnout or necessarily the winner's margin; ranked-choice and independent candidacies can differ."));
         if (level === "precinct") {
+          state.precinct = id;
+          state.county = p.county;
+          state.subSelection = { item: p, row };
+          precinctDetail(state.subSelection);
           const button = html("button", "selection-link", "Open precinct participation");
           button.type = "button";
           button.addEventListener("click", () => {
             state.county = p.county; state.precinct = id; $("dimension").value = "overall"; showView("precincts");
           });
-          panel.append(button);
+          $("selection-panel").append(button);
+        } else {
+          const panel = $("substate-detail");
+          panel.replaceChildren(html("h4", "", name), html("p", "selection-note", description));
+          if (election) panel.append(sourceLink(election),
+            html("p", "selection-note", "Party-vote margin, not turnout or necessarily the winner's margin; ranked-choice and independent candidacies can differ."));
         }
         for (const other of map.detail.querySelectorAll(".selected")) other.classList.remove("selected");
         path.classList.add("selected");
@@ -1107,6 +1141,17 @@ function projectInside(feature, point) {
       }, { class: "map-feature substate-feature", "data-geography": id, "data-level": level,
         tabindex: "-1", fill: partisan ? marginFill(election?.margin_pp) : fill(rate) });
       map.detail.append(path);
+    }
+    if (level === "precinct") {
+      map.precinctLayer = true;
+      header(`${year} ${typeFor(year)} election · North Carolina precinct records`,
+        "Precinct participation in North Carolina",
+        "Participants recorded in voter history / election-time registered voters. Select a precinct for its history.",
+        "Registered-voter participation, not CPS citizen/resident turnout. Gray: missing or inconsistent rates, or fewer than 25 registrations.");
+      $("coverage-note").textContent = "Verified precinct histories cover North Carolina, 2002–2024. County + precinct IDs are matched, not fixed boundaries or the same electorate.";
+      const selectedItem = features.find(feature => keyFor(feature.properties) === state.precinct)?.properties;
+      state.subSelection = selectedItem ? { item: selectedItem, row: participation.get(state.precinct) } : null;
+      precinctDetail(state.subSelection);
     }
     if (level === "precinct") ramp();
     else if (partisan) marginLegend(level === "district" ? "U.S. House" : "President");
@@ -1117,31 +1162,77 @@ function projectInside(feature, point) {
         : level === "district" ? "2024 election · 119th Congress. "
           : "2024 Census boundaries" + (year === 2026 ? " shown as geographic context, not certified 2026 election boundaries. " : ". "))
       + (partisan ? "Party returns are separate from participation. " : "")
-      + "Click a shape for counts; keep zooming or choose Detail.";
+      + (level === "precinct" ? "Select a precinct for its participation history."
+        : code === "NC" && state.audits.some(row => row.year === year)
+          ? "Keep zooming for precinct participation and histories."
+          : "Click a shape for counts. Verified precinct participation is currently North Carolina only.");
   }
 function resetMap() {
   if (!state.map) return;
   if (state.view === "precincts" && state.projected?.length) fit(combinedBounds(state.projected));
   else setViewport([0, 0, ...state.map.full]);
 }
-function precinctDetail() {
+async function precinctHistory(container, item, dimension, group, minimum) {
+  container.textContent = "Loading this precinct's participation history…";
+  try {
+    if (!state.precinctHistories.has(item.county)) {
+      const response = await fetch(`/participation-precinct-history/nc/${encodeURIComponent(item.county)}.json`);
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      state.precinctHistories.set(item.county, await response.json());
+    }
+    if (!container.isConnected) return;
+    const history = state.precinctHistories.get(item.county);
+    const groupIndex = history.groups.findIndex(([d, g]) => d === dimension && g === group);
+    const rows = (history.precincts[item.precinct] ?? []).filter(row => row[1] === groupIndex)
+      .map(([year, , participants, registered, turnout, quality]) => ({
+        year, participants, registered, turnout_pct: registered >= minimum ? turnout : null, quality,
+        series: `${titleCase(item.county)} · precinct ${item.precinct}`,
+      }));
+    seriesChart(container, rows, { width: 300, height: 210, compact: true, dimension: "precinct" });
+    container.querySelector("svg")?.setAttribute("aria-label", `${item.county} precinct ${item.precinct}: ${group} participation history`);
+    const table = html("table", "precinct-history-table");
+    const head = html("thead"), heading = html("tr");
+    for (const label of ["Year", "Participants", "Registered", "Rate"]) heading.append(html("th", "", label));
+    head.append(heading); table.append(head);
+    const body = html("tbody");
+    for (const row of [...rows].reverse()) {
+      const tr = html("tr");
+      for (const value of [String(row.year), fmt(row.participants), fmt(row.registered), pct(row.turnout_pct)])
+        tr.append(html("td", "", value));
+      tr.dataset.year = String(row.year);
+      if (row.quality.length) tr.title = row.quality.join(" ");
+      body.append(tr);
+    }
+    table.append(body);
+    const detail = html("details");
+    detail.append(html("summary", "", "Every observed year and count"), table);
+    container.append(detail);
+  } catch (error) {
+    if (container.isConnected) container.replaceChildren(html("p", "selection-note",
+      `Precinct history could not be loaded: ${error.message}. No values have been inferred.`));
+  }
+}
+function precinctDetail(selection = null) {
   const panel = $("selection-panel"), year = Number($("year").value);
-  const item = state.precinct ? state.precinctItems.get(state.precinct) : null;
+  const inStates = state.view === "states";
+  const item = inStates ? selection?.item : state.precinct ? state.precinctItems.get(state.precinct) : null;
   panel.replaceChildren(html("p", "eyebrow", `${year} · ${typeFor(year)}`));
   if (!item) {
     panel.append(html("h3", "", state.county ? `${titleCase(state.county)} County` : "Inside North Carolina"),
       html("p", "selection-note", "Choose a county, search a precinct ID or name, or click a shape on the map."),
-      html("h4", "", `${fmt(state.projected?.length ?? 0)} mapped shapes`),
+      html("h4", "", `${fmt(inStates ? state.map.detail.childElementCount : state.projected?.length ?? 0)} mapped shapes`),
       html("p", "selection-note", "Zoom with the controls, double-click, or use + / − with the map focused. Drag or use arrow keys to pan."),
       html("p", "selection-note", "Coverage is North Carolina only. Other states do not yet have verified precinct inputs."));
     return;
   }
-  const row = state.precinctRows.get(state.precinct), minimum = Number($("minimum").value);
+  const row = inStates ? selection.row : state.precinctRows.get(state.precinct);
+  const minimum = inStates ? 25 : Number($("minimum").value);
+  const dimension = inStates ? "overall" : $("dimension").value, group = inStates ? "All" : $("group").value;
   const value = row && row.registered >= minimum ? row.turnout_pct : null;
   panel.append(html("h3", "", item.label || `Precinct ${item.precinct}`),
     html("p", "selection-note", `${titleCase(item.county)} County · precinct ${item.precinct || "unassigned"}`),
     html("p", `selection-rate${value == null ? " selection-unavailable" : ""}`, pct(value)),
-    html("p", "selection-basis", `${$("group").value} · participants / registered voters`));
+    html("p", "selection-basis", `${group} · participants / registered voters`));
   const stats = html("dl", "selection-stats");
   for (const [name, number] of [["Participants", row?.participants], ["Registered voters", row?.registered]]) {
     const div = html("div"); div.append(html("dt", "", name), html("dd", "", fmt(number))); stats.append(div);
@@ -1149,11 +1240,16 @@ function precinctDetail() {
   panel.append(stats);
   const reasons = row ? [...row.quality] : ["No matching observation for this group."];
   if (row && row.registered < minimum) reasons.push(`Fewer than ${minimum} registrations: rate withheld.`);
-  if (!state.projected.some(shape => keyFor(shape.feature.properties) === state.precinct))
+  if (!inStates && !state.projected.some(shape => keyFor(shape.feature.properties) === state.precinct))
     reasons.push("No matching election-year shape: this observation cannot be located on the map.");
   panel.append(html("p", "selection-note", reasons.length ? reasons.join(" ")
     : "A voter-history participation rate, not a share of all eligible residents."));
-  panel.append(html("p", "selection-note", "Precinct boundaries and IDs change. No cross-year precinct trend is inferred."));
+  panel.append(html("h4", "", `Precinct ${item.precinct} over time`));
+  const history = html("div", "precinct-history"); history.id = "precinct-history";
+  panel.append(history);
+  panel.append(html("p", "selection-note",
+    "Matched by official county + precinct ID, not a boundary crosswalk or the same electorate. Boundaries and IDs can change. Missing years remain gaps; small or inconsistent rates are withheld."));
+  precinctHistory(history, item, dimension, group, minimum);
   const link = html("a", "selection-link", `Download all ${year} precinct observations`);
   link.href = `/voter-participation/data/nc/${year}.csv`; link.download = "";
   panel.append(link);
@@ -1275,7 +1371,7 @@ async function main() {
     button.addEventListener("click", () => showView(button.dataset.view));
   $("basis").addEventListener("change", () => { configure(); render(); });
   $("dimension").addEventListener("change", () => { configure(); render(); });
-  $("year").addEventListener("change", () => { state.precinct = ""; configure(); render(); });
+  $("year").addEventListener("change", () => { configure(); render(); });
   $("group").addEventListener("change", () => { configure(); render(); });
   $("mode").addEventListener("change", () => { configureGroups(); render(); });
   $("current-state-select").addEventListener("change", () => {
@@ -1303,11 +1399,15 @@ async function main() {
   });
   $("precinct-search").addEventListener("change", () => {
     const value = $("precinct-search").value, key = state.searchItems?.get(value);
-    if (key) selectPrecinct(key);
+    if (key) {
+      if (key !== state.precinct) selectPrecinct(key);
+    }
     else if (value) {
       const matches = [...(state.precinctItems?.entries() ?? [])].filter(([, item]) =>
         item.precinct.toLowerCase() === value.trim().toLowerCase());
-      if (matches.length === 1) selectPrecinct(matches[0][0]);
+      if (matches.length === 1) {
+        if (matches[0][0] !== state.precinct) selectPrecinct(matches[0][0]);
+      }
       else note("Choose a county and a precinct suggestion; this search does not uniquely identify a mapped precinct.");
     }
   });

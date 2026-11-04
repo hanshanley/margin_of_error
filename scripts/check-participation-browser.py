@@ -78,6 +78,13 @@ with sync_playwright() as p:
     assert page.locator("#state-history .chart-point").count() > 15
     assert connected(page, "#state-history", 1994, 1996)
     assert not connected(page, "#state-history", 1992, 1994)
+    bridge = page.locator('#state-history .chart-definition-break[data-from-year="1992"][data-to-year="1994"]')
+    expect(bridge).to_have_count(1)
+    expect(bridge).to_have_attribute("aria-label", "1992–1994: Citizenship measurement changed in 1994. Estimates are not directly comparable.")
+    assert bridge.evaluate("p => getComputedStyle(p).strokeDasharray") != "none"
+    endpoints = page.locator('#state-history .chart-point[data-year="1992"], #state-history .chart-point[data-year="1994"]').evaluate_all(
+        "points => points.map(p => p.getAttribute('cx') + ',' + p.getAttribute('cy'))")
+    assert all(point in bridge.get_attribute("d") for point in endpoints)
     assert page.locator("#visualization").bounding_box()["y"] < 570
     assert not page.locator("#updates-panel").is_visible()
     no_overflow(page)
@@ -174,6 +181,7 @@ with sync_playwright() as p:
     page.locator(".explorer-options summary").click()
     page.locator("#basis").select_option("vap")
     assert connected(page, "#state-history", 1992, 1994, 1996)
+    expect(page.locator('#state-history .chart-definition-break[data-to-year="1994"]')).to_have_count(0)
     expected = next(row for row in states if row["state"] == "California"
                     and row["year"] == 2022 and row["denominator"] == "vap")
     expect(page.locator("#selection-panel .selection-rate")).to_have_text(f'{expected["turnout_pct"]:.1f}%')
@@ -214,10 +222,37 @@ with sync_playwright() as p:
     assert page.locator('[data-state="California"]').get_attribute("fill") != "#d6d3cb"
     page.locator("#year").select_option("2024")
     page.locator("#state-select").select_option("North Carolina")
-    page.locator("#map-level").select_option("precinct")
+    page.locator("#map-level").select_option("auto")
+    page.locator("#map-zoom-in").click()
+    expect(page.locator('.substate-feature[data-level="precinct"]')).to_have_count(2656)
+    expect(page.locator("#title")).to_have_text("Precinct participation in North Carolina")
+    expect(page.locator("#measure")).to_contain_text("registered voters")
+    expect(page.locator("#caption")).to_contain_text("not CPS")
+    page.locator(f'.substate-feature[data-geography="{key}"]').dispatch_event("click")
+    expect(page.locator("#selection-panel")).to_contain_text("Wake")
+    expect(page.locator("#state-history")).to_have_count(0)
+    expect(page.locator("#precinct-history .chart-point").first).to_be_visible()
+    history_expected = []
+    for year in range(2002, 2025, 2):
+        source = json.loads((data / f"nc/{year}.json").read_text())["records"]
+        history_expected.extend((year, row["turnout_pct"], row["participants"], row["registered"])
+                                for row in source if row["county"] == "WAKE" and row["precinct"] == "01-01"
+                                and row["dimension"] == "overall" and row["turnout_pct"] is not None
+                                and row["registered"] >= 25)
+    actual = page.locator("#precinct-history .chart-point").evaluate_all(
+        "points => points.map(p => [+p.dataset.year, +p.dataset.rate])")
+    assert sorted(tuple(row) for row in actual) == sorted((year, rate) for year, rate, _, _ in history_expected)
+    expect(page.locator("#selection-panel")).to_contain_text("not a boundary crosswalk")
+    screenshot(page, "participation-inline-precinct-history.png")
+    page.locator("#map-reset").click()
+    expect(page.locator("#state-history")).to_be_visible()
+    expect(page.locator("#title")).to_have_text("Participation across the United States")
+    expect(page.locator("#measure")).to_contain_text("adult citizens")
+    page.locator("#state-select").select_option("North Carolina")
+    page.locator("#map-zoom-in").click()
     expect(page.locator('.substate-feature[data-level="precinct"]')).to_have_count(2656)
     page.locator(f'.substate-feature[data-geography="{key}"]').dispatch_event("click")
-    expect(page.locator("#substate-detail")).to_contain_text("Wake")
+    expect(page.locator("#precinct-history .chart-point").first).to_be_visible()
     page.get_by_role("button", name="Open precinct participation", exact=True).click()
     expect(page.locator(".map-feature.selected")).to_have_attribute("data-key", key)
     expect(page.locator("#selection-panel .selection-rate")).to_have_text(f'{selected["turnout_pct"]:.1f}%')
@@ -245,6 +280,7 @@ with sync_playwright() as p:
     page.locator("#dimension").select_option("overall")
     assert connected(page, ".demographic-card svg", 1994, 1996)
     assert not connected(page, ".demographic-card svg", 1992, 1994)
+    expect(page.locator('.demographic-card .chart-definition-break[data-from-year="1992"][data-to-year="1994"]')).to_have_count(1)
     page.locator("#dimension").select_option("race")
     expect(page.locator("#visualization .chart-point").first).to_be_visible()
     race_rows = [row for row in national if row["year"] == 2024
@@ -350,6 +386,23 @@ with sync_playwright() as p:
     expect(page.locator("#selection-panel .selection-rate")).to_have_text(f'{selected["turnout_pct"]:.1f}%')
     expect(page.locator(".selection-stats")).to_contain_text(f'{selected["participants"]:,}')
     expect(page.locator(".selection-stats")).to_contain_text(f'{selected["registered"]:,}')
+    expect(page.locator("#precinct-history .chart-point").first).to_be_visible()
+    history_rows = page.locator("#precinct-history .chart-point").evaluate_all(
+        "points => points.map(p => [+p.dataset.year, +p.dataset.rate])")
+    assert sorted(tuple(row) for row in history_rows) == sorted((year, rate) for year, rate, _, _ in history_expected)
+    history_year = page.locator("#precinct-history .chart-point[data-year='2022']")
+    history_year.evaluate("point => point.scrollIntoView({block: 'center', behavior: 'instant'})")
+    history_year.click()
+    expect(page.locator("#year")).to_have_value("2022")
+    expect(page.locator(".map-feature.selected")).to_have_attribute("data-key", key)
+    page.locator("#precinct-history .chart-point[data-year='2024']").click()
+    expect(page.locator("#year")).to_have_value("2024")
+    expect(page.locator(".map-feature.selected")).to_have_attribute("data-key", key)
+    expect(page.locator("#precinct-history .chart-point").first).to_be_visible()
+    for year, rate, participants, registered in history_expected:
+        count_row = page.locator(f'#precinct-history tr[data-year="{year}"]')
+        expect(count_row).to_contain_text(f"{participants:,}")
+        expect(count_row).to_contain_text(f"{registered:,}")
     assert page.locator(".precinct-label").evaluate(
         "label => parseFloat(getComputedStyle(label).strokeWidth) * label.getScreenCTM().a") < 3
     detail_view = viewport(page)
@@ -377,10 +430,15 @@ with sync_playwright() as p:
     page.locator("#precinct-search").dispatch_event("change")
     expect(page.locator("#selection-panel .selection-rate")).to_have_text("Not available")
     expect(page.locator("#selection-panel")).to_contain_text("rate withheld")
+    expect(page.locator("#precinct-history table")).to_be_attached()
+    expect(page.locator('#precinct-history .chart-point[data-year="2024"]')).to_have_count(0)
     page.locator(".explorer-options summary").click()
+    page.locator("#dimension").select_option("overall")
+    page.locator("#precinct-search").fill("01-01")
+    page.locator("#precinct-search").dispatch_event("change")
     page.locator("#year").select_option("2022")
-    expect(page.locator(".map-feature.selected")).to_have_count(0)
-    expect(page.locator("#precinct-search")).to_have_value("")
+    expect(page.locator(".map-feature.selected")).to_have_attribute("data-key", key)
+    expect(page.locator("#precinct-search")).not_to_have_value("")
     page.locator("#precinct-county").select_option("")
     expect(page.locator(".map-feature[data-key]")).to_have_count(2652)
     page.locator("#year").select_option("2018")
@@ -455,6 +513,7 @@ with sync_playwright() as p:
     screenshot(mobile, "participation-refined-mobile-provisional.png")
     mobile.goto(deep_link)
     expect(mobile.locator(".map-feature.selected")).to_have_attribute("data-key", key)
+    expect(mobile.locator("#precinct-history .chart-point").first).to_be_visible()
     no_overflow(mobile)
     mobile.locator("#map-zoom-out").click()
     assert viewport(mobile)[2] > detail_view[2]
@@ -482,6 +541,11 @@ with sync_playwright() as p:
     expect(broken_geometry.locator("#notice")).to_contain_text("could not be loaded")
     expect(broken_geometry.locator("#selection-panel")).to_contain_text("No selection data available")
     assert not broken_geometry.locator("#map-tools").is_visible()
+    broken_history = browser.new_page()
+    broken_history.route("**/participation-precinct-history/**", lambda route: route.abort())
+    broken_history.goto(deep_link)
+    expect(broken_history.locator("#precinct-history")).to_contain_text("No values have been inferred")
+    expect(broken_history.locator("#selection-panel .selection-rate")).to_have_text(f'{selected["turnout_pct"]:.1f}%')
     broken_current = browser.new_page()
     broken_current.route("**/nationwide/latest.json", lambda route: route.abort())
     broken_current.route("**/nationwide/snapshot.json", lambda route: route.abort())

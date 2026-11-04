@@ -48,7 +48,12 @@
 .participation-explorer .compact-map .map-label, .participation-explorer .compact-map .map-callout-line { display: none; }
 .participation-explorer .axis-label { fill: var(--muted); font: 11px var(--sans); }
 .participation-explorer .chart-grid { stroke: var(--rule); stroke-width: .6; stroke-opacity: .6; }
-.participation-explorer .chart-line { fill: none; stroke-width: 2; }
+.participation-explorer .chart-line, .participation-explorer .chart-definition-break { fill: none; stroke-width: 2; }
+.participation-explorer .chart-definition-break { stroke-dasharray: 3 3; }
+.precinct-history-table { width: 100%; margin-top: .75rem; border-collapse: collapse; font-size: .65rem; font-variant-numeric: tabular-nums; }
+.precinct-history-table :is(th, td) { padding: .35rem .2rem; text-align: right; border-bottom: 1px solid var(--rule); }
+.precinct-history-table :is(th, td):first-child { text-align: left; }
+.precinct-history details { margin-top: .6rem; font-size: .7rem; }
 .participation-explorer .chart-point { stroke: var(--paper); stroke-width: 1.5; cursor: pointer; }
 .participation-explorer .legend { display: flex; flex-wrap: wrap; gap: .6rem 1rem; color: var(--muted); font-size: .67rem; }
 .participation-explorer .legend span { display: inline-flex; gap: .4rem; align-items: center; }

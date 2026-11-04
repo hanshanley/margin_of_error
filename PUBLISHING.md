@@ -143,6 +143,20 @@ Citizen-turnout chart lines break before 1994, not between 1994 and 1996:
 the Census voting FAQ dates consistent CPS citizenship measurement to 1994.
 The display corrects the older pinned export's overbroad pre-1996 warning without
 rewriting that immutable export.
+Adjacent observed years at survey-definition boundaries have dashed, labeled
+connectors rather than unexplained holes. Solid lines still stop at those boundaries;
+genuinely missing election years remain unconnected.
+
+Zooming into North Carolina in Auto detail reveals election-year precinct shapes.
+Selecting one replaces the state-history panel with the selected precinct's counts
+and 2002–2024 history. The Precincts view also supports group-specific histories,
+count tables, suppression and year selection without dropping the precinct ID.
+`scripts/build-precinct-histories.mjs` verifies the original per-year export checksums
+and builds small, county-sharded indexes during `npm run build`.
+Histories match the official county + precinct identifier, not constant geography
+or a stable electorate; no boundary crosswalk is claimed. Missing years and
+small/inconsistent rates are not filled. Other states still lack verified
+precinct participation inputs, and county/district context is not labeled as precinct turnout.
 
 The reviewed supplements live in `public/participation-context/` and
 `public/participation-methods/`; neither modifies the pinned historical export.

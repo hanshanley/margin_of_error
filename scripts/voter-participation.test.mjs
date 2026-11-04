@@ -3,6 +3,24 @@ import test from 'node:test';
 import { previewSvg, publicationScript } from './stage-voter-participation.mjs';
 import { participationDownload } from '../public/scripts/participation-downloads.js';
 import { rewriteDownloadHtml, verifyReleaseAssets } from './prepare-participation-pages.mjs';
+import { appendPrecinctHistory } from './build-precinct-histories.mjs';
+
+test('precinct histories retain source counts, missing rates and groups without merging county IDs', () => {
+	const histories = new Map();
+	const row = { county: 'WAKE', precinct: '01-01', dimension: 'overall', group: 'All',
+		participants: 75, registered: 100, turnout_pct: 75, quality: [] };
+	appendPrecinctHistory(histories, 2020, [row, { ...row, county: 'DURHAM', participants: 60, turnout_pct: 60 },
+		{ ...row, dimension: 'race', group: 'Example', participants: 12, registered: 20, turnout_pct: 60 }]);
+	appendPrecinctHistory(histories, 2024, [{ ...row, registered: 50, turnout_pct: null, quality: ['inconsistent_counts'] }]);
+	const wake = histories.get('WAKE');
+	assert.deepEqual(wake.groups, [['overall', 'All'], ['race', 'Example']]);
+	assert.deepEqual(wake.precincts['01-01'], [
+		[2020, 0, 75, 100, 75, []], [2020, 1, 12, 20, 60, []],
+		[2024, 0, 75, 50, null, ['inconsistent_counts']],
+	]);
+	assert.deepEqual(histories.get('DURHAM').precincts['01-01'], [[2020, 0, 60, 100, 60, []]]);
+	assert.ok(!wake.precincts['01-01'].some(row => row[0] === 2022));
+});
 
 test('bulk download routing preserves full snapshots and leaves interactive JSON local', () => {
 	const path = '/participation-methods/20261104T183000Z/complete-methods.zip';
