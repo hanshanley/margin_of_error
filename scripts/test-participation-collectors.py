@@ -20,6 +20,14 @@ local = module("build-local-participation")
 current_local = module("collect-current-participation")
 
 
+def test_missing_historical_ids_never_merge_duplicate_names_or_elections():
+    assert local.historical_source_id(None, 2004, 2) == "source-row:2004:2"
+    assert local.historical_source_id("", 2004, 3) != local.historical_source_id(None, 2004, 2)
+    assert local.historical_source_id(None, 2006, 2) != local.historical_source_id(None, 2004, 2)
+    assert local.historical_source_id("0100100000", 2004, 2) == "0100100000"
+    assert local.normalized_id(None) == ""
+
+
 def test_local_rates_require_exact_identity_and_consistent_denominators():
     row = eavs(2024, [["AL", "0100100000", "Autauga", 80, 60, "", "", "", 20, "", "", ""]])[0]
     key = ("AL", "0100100000", "Autauga")

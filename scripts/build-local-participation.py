@@ -30,7 +30,11 @@ def digest(content):
 
 
 def normalized_id(value):
-    return str(value).strip().removesuffix(".0")
+    return "" if value is None else str(value).strip().removesuffix(".0")
+
+
+def historical_source_id(value, year, source_row):
+    return normalized_id(value) or f"source-row:{year}:{source_row}"
 
 
 def identity(row):
@@ -170,7 +174,8 @@ def historical_extensions(cache, output, codes):
             if year not in (2004, 2006) or code not in codes:
                 continue
             writer.writerow(values_row)
-            identifier = normalized_id(source["FIPSCode"])
+            source_row = len(rows) + 2
+            identifier = historical_source_id(source["FIPSCode"], year, source_row)
             name = source["Jurisdiction_Name"]
             methods_data = {mode: methods.count(source.get("turnout_" + suffix))
                             for mode, suffix in (("election_day", "ed"), ("early_in_person", "ev"),
@@ -194,6 +199,9 @@ def historical_extensions(cache, output, codes):
                     "harmonization": "EAC jurisdiction-level series; no county-collapse equal allocations used.",
                 },
             }
+            if not normalized_id(source["FIPSCode"]):
+                observation["source_details"].update(
+                    missing_jurisdiction_id=True, source_row=source_row)
             registration = {
                 "registered": methods.count(source["regist_tot"]),
                 "registration_field": "1a+1b" if year == 2004 else "Q022006Total",
@@ -201,6 +209,8 @@ def historical_extensions(cache, output, codes):
                 "registration_definition": "EAC harmonized source registration total; jurisdiction rules vary.",
             }
             row = local_record(observation, {(code, identifier, name): registration})
+            if row["source_details"].get("missing_jurisdiction_id"):
+                row["quality"].append("No source jurisdiction ID; identity is limited to this saved source row, not matched across elections.")
             row["quality"].append("2004/2006 count ballots counted; definitions differ from later cast-ballot totals. EAC harmonized totals can reflect incomplete component reporting.")
             rows.append(row)
     book.close()
@@ -485,6 +495,7 @@ def build(output, cache=None, research=Path("../voter-participation"), reuse_geo
             "Reporting boundaries, registration dates and participation measurement can change.",
             "Illinois counties and Jackson County MO are not shaded because separate city election offices can exclude part of the Census county.",
             "Historical unit keys use IDs and standardized names, not a constant-geography crosswalk.",
+            "Missing historical source IDs use election-specific rows of the archived source CSV, never name-only cross-election matches.",
             "All original survey inputs are retained in the complete historical methods download.",
         ],
     })
