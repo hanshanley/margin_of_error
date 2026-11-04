@@ -543,6 +543,21 @@ with sync_playwright() as p:
     local_page.locator('.substate-feature[data-geography="5500100"]').dispatch_event("click")
     expect(local_page.locator("#local-detail")).to_contain_text("748 participants; 886 registrations")
     screenshot(local_page, "participation-national-wisconsin.png")
+    local_page.locator("#year").select_option("2004")
+    appleton = [row for row in wi_rows if row["year"] == 2004 and row["jurisdiction"] == "APPLETON"]
+    assert len(appleton) == 2 and len({row["history_key"] for row in appleton}) == 2
+    for row in appleton:
+        option = local_page.locator("#local-unit-select option").filter(
+            has_text=f'APPLETON · 2004 source row {row["source_details"]["source_row"]}')
+        expect(option).to_have_count(1)
+        local_page.locator("#local-unit-select").select_option(row["history_key"])
+        expect(local_page.locator("#local-detail")).to_contain_text("No source jurisdiction ID")
+        observed = local_page.locator("#local-detail tr[data-year]")
+        expect(observed).to_have_count(1)
+        expect(observed).to_contain_text(f'{row["total_participation"]:,}')
+    local_page.locator("#year").select_option("2006")
+    expect(local_page.locator("#local-detail")).to_contain_text("No verified observation for this election.")
+    local_page.locator("#year").select_option("2024")
     local_page.locator("#state-select").select_option("Alabama")
     expect(local_page.locator('.substate-feature[data-level="county"]')).to_have_count(67)
     al_rows = json.loads(gzip.decompress((local_root / "states/AL.json.gz").read_bytes()))

@@ -161,6 +161,9 @@ precinct participation inputs, and county/district context is not labeled as pre
 The nationwide local supplement contains 67,525 EAC reporting-unit observations for
 all 50 states and D.C., every even election year from 2004 through 2024. These are
 county, municipal and statewide administrative units, not nationwide precincts.
+Early rows without a source jurisdiction ID retain election-specific archived CSV
+row identities, not name-only cross-election matches. Duplicate display names remain
+separately selectable with their election and source row; their counts are never merged.
 The map uses matching election-year Census boundaries; Wisconsin and New England
 use county subdivisions where available. Selection exposes participation,
 registrations and the complete available unit history. Registration matches now

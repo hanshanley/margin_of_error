@@ -125,7 +125,9 @@ async function localNavigation(container) {
       .sort((a, b) => a.jurisdiction.localeCompare(b.jurisdiction));
     const label = html("label", "selection-note", "Reporting unit");
     const select = html("select"); select.id = "local-unit-select";
-    options(select, [["", "Choose a reporting unit…"], ...uniqueRows.map(row => [localKey(row), row.jurisdiction])],
+    options(select, [["", "Choose a reporting unit…"], ...uniqueRows.map(row => [localKey(row),
+      row.source_details?.missing_jurisdiction_id
+        ? `${row.jurisdiction} · ${row.year} source row ${row.source_details.source_row}` : row.jurisdiction])],
       state.localSelection?.code === code ? state.localSelection.key : "");
     label.htmlFor = select.id;
     select.addEventListener("change", () => {
