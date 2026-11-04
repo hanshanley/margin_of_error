@@ -5,7 +5,7 @@ import { dirname, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
 
-export const sourceRevision = '5a0985776609a7f9bb3a226777f342c9b472bd87';
+export const sourceRevision = 'c36cb907276bf74f5d6577b6c6242fa60bef7f61';
 const sha256 = (bytes) => createHash('sha256').update(bytes).digest('hex');
 
 function replaceOnce(text, before, after) {
@@ -73,7 +73,7 @@ async function filesUnder(directory) {
 export async function stage(source, output) {
 	const revision = execFileSync('git', ['-C', source, 'rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
 	if (revision !== sourceRevision) throw new Error(`Expected verified source ${sourceRevision}, got ${revision}`);
-	const dirty = execFileSync('git', ['-C', source, 'status', '--porcelain', '--', 'public/app.js', 'public/current.js', 'public/data'],
+	const dirty = execFileSync('git', ['-C', source, 'status', '--porcelain', '--', 'public/app.js', 'public/current.js', 'public/nationwide.js', 'public/data'],
 		{ encoding: 'utf8' }).trim();
 	if (dirty) throw new Error('Participation source assets have uncommitted changes');
 	const input = join(source, 'public/data');
@@ -95,16 +95,18 @@ export async function stage(source, output) {
 		files.push({ path: name, bytes: bytes.length, sha256: sha256(bytes), original: true });
 	}
 	for (const name of ['data/complete-analysis.zip', 'data/national.csv', 'data/states.csv',
-		'data/nc/2024.csv', 'data/nc/2004.csv', 'data/coverage.csv']) {
+		'data/nc/2024.csv', 'data/nc/2004.csv', 'data/coverage.csv', 'data/nationwide/latest.json']) {
 		if (!files.some(file => file.path === name)) throw new Error(`Missing complete dataset: ${name}`);
 	}
 	const script = await readFile(join(source, 'public/app.js'), 'utf8');
 	await writeFile(join(output, 'app.js'), publicationScript(script));
 	await copyFile(join(source, 'public/current.js'), join(output, 'current.js'));
+	await copyFile(join(source, 'public/nationwide.js'), join(output, 'nationwide.js'));
 	await sharp(Buffer.from(previewSvg(national))).png().toFile(join(output, 'preview.png'));
-	for (const name of ['app.js', 'current.js', 'preview.png']) {
+	for (const name of ['app.js', 'current.js', 'nationwide.js', 'preview.png']) {
 		const bytes = await readFile(join(output, name));
-		files.push({ path: name, bytes: bytes.length, sha256: sha256(bytes), original: name === 'current.js' });
+		files.push({ path: name, bytes: bytes.length, sha256: sha256(bytes),
+			original: name === 'current.js' || name === 'nationwide.js' });
 	}
 	await writeFile(join(output, 'publication-manifest.json'), JSON.stringify({
 		source_repository: 'https://github.com/hanshanley/voter-participation',

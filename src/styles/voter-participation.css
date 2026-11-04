@@ -74,6 +74,11 @@
 .nc-current-chart li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .4rem 1rem; margin: .9rem 0; font-size: .75rem; }
 .nc-current-chart strong { font-variant-numeric: tabular-nums; font-weight: 400; }
 .nc-current-chart i { grid-column: 1 / -1; height: 5px; background: var(--signal); }
+.national-current-coverage { margin: 1.5rem 0; }
+.national-current-coverage .table-wrap { margin-top: .75rem; }
+.national-current-coverage th[scope="row"] { position: static; font-weight: 400; }
+.national-current-coverage td { min-width: 115px; vertical-align: top; }
+.national-current-coverage small { display: block; margin-top: .3rem; color: var(--muted); font-size: .68rem; }
 @media (max-width: 700px) {
 	.participation-page { padding-top: 1.5rem; }
 	.participation-deck { font-size: 1.15rem; }

@@ -103,6 +103,23 @@ snapshot, not an automatically refreshing live feed.
 Each complete snapshot ZIP includes all observations, original public
 aggregate files, timestamps and checksums; no individual voter records are used.
 
+The nationwide 2026 panel additionally stages `nationwide.js` and
+`data/nationwide/`. It checks all 50 states and DC against civicAPI's public
+aggregate early-vote feed and exposes only reported state/mode demographic
+breakdowns, not requested ballots or party preferences. Verified state-office
+ballot feeds remain separate, with explicit denominator definitions.
+The complete 51-jurisdiction coverage table, source dates, initial Georgia race
+chart and all five full-download links are server-rendered, including without
+JavaScript. Missing provider coverage is not a claim of universal unavailability.
+The NYT reference is not ingested because automated access is denied.
+The research workflow requests nationwide and NC captures independently every
+15 minutes November 4–5 UTC, then hourly November 6–19 UTC; GitHub can delay starts.
+A source failure retains its last valid observations with their original dates
+and an explicit retained/failure status. Every full nationwide source ZIP also
+includes original bytes for any retained observations. Collection commits new
+research data but does not deploy this website; reviewed website pins remain
+intentional.
+
 The national Democratic/Republican/DSA comparison lives at `/party-platforms/`.
 Deployment pins `hanshanley/dsa` to a verified source commit and runs its
 offline exporter with the source package and its numerical/image audit dependencies.

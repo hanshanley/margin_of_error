@@ -26,6 +26,26 @@ const formatTime = (value: string) => new Date(value).toLocaleString('en-US', {
 	timeZone: 'America/New_York', month: 'long', day: 'numeric', year: 'numeric',
 	hour: 'numeric', minute: '2-digit', timeZoneName: 'short',
 });
+type EarlyRow = { state_code: string; mode: string; geography_level: string; ballots: number;
+	source_date: string; source_url: string };
+type CoverageRow = { state_code: string; state: string; status: string; demographic_dimensions: string[];
+	retained_sources: number; failed_sources: number };
+type GroupRow = { state_code: string; mode: string; dimension: string; group: string;
+	ballots: number; demographic_source_total: number; source_date: string };
+type OfficialRow = { state_code: string; ballots: number; source_url: string; denominator_basis: string;
+	source_update_label: string };
+const nationwidePointer = JSON.parse(readFileSync(resolve(dataRoot, 'data/nationwide/latest.json'), 'utf8'));
+const nationwidePath = `/voter-participation/data/nationwide/${nationwidePointer.snapshot_id}/`;
+const nationwide = JSON.parse(readFileSync(resolve(dataRoot, `data/nationwide/${nationwidePointer.snapshot_id}/snapshot.json`), 'utf8'));
+const earlyFor = (state: string, mode: string): EarlyRow | undefined => nationwide.early_voting.find(
+	(row: EarlyRow) => row.state_code === state && row.mode === mode && row.geography_level === 'state');
+const officialFor = (state: string): OfficialRow | undefined => nationwide.reporting.find(
+	(row: OfficialRow) => row.state_code === state);
+const nationwideRace: GroupRow[] = nationwide.demographics.filter((row: GroupRow) =>
+	row.state_code === 'GA' && row.mode === 'in_person_early' && row.dimension === 'race'
+	&& row.demographic_source_total > 0).sort((a: GroupRow, b: GroupRow) => b.ballots - a.ballots);
+const nationwideMaximum = Math.max(1, ...nationwideRace.map(row => row.ballots));
+const groupLabels: Record<string, string> = { age_range: 'Age', gender: 'Gender', race: 'Race', ethnicity: 'Ethnicity' };
 ---
 
 <BaseLayout title="Who participates? Voter turnout across time"
@@ -33,7 +53,7 @@ const formatTime = (value: string) => new Date(value).toLocaleString('en-US', {
 	image="/voter-participation/preview.png">
 	<div class="participation-page">
 		<header class="participation-heading">
-			<p class="kicker">Voter participation · 1964–2024</p>
+			<p class="kicker">Voter participation · 1964–2024 · separate 2026 updates</p>
 			<h1>Who participates?</h1>
 			<p class="participation-deck">Turnout across elections, populations, and places.
 				Not who people vote for, but whether they vote at all.</p>
@@ -45,6 +65,84 @@ const formatTime = (value: string) => new Date(value).toLocaleString('en-US', {
 			Census estimates describe participation among adult citizens or all adult residents.
 			The NC precinct pilot describes participation among registered voters—not all eligible residents.
 			It is not a nationwide precinct map.</p>
+
+		<section class="participation-current" id="nationwide-participation"
+			data-data-root="/voter-participation/data/" aria-labelledby="nationwide-title">
+			<p class="kicker">November 3, 2026 · nationwide · preliminary</p>
+			<h2 id="nationwide-title">Participation updates across states</h2>
+			<p id="national-current-asof">Saved nationwide capture: {formatTime(nationwide.retrieved_at)}.
+				Source data dates differ and are shown separately; not a live feed.</p>
+			<p id="national-current-summary">{nationwide.audit.jurisdictions_with_data} jurisdictions with data;{' '}
+				{nationwide.audit.jurisdictions_with_demographic_counts} states with nonzero demographic counts;{' '}
+				{nationwide.audit.jurisdictions_with_official_ballots} official administrative ballot feeds.
+				All 50 states and DC assessed.</p>
+			<p>Counts below describe early participation, not full-election turnout.
+				No matched group population denominator is available. Race, ethnicity, gender and age
+				counts are not demographic turnout rates, and no national percentage is pooled from them.
+				Party affiliation is summed out; no candidate votes or preferences are used.</p>
+			<p id="national-current-error" role="status" hidden></p>
+			<div class="nc-current-controls">
+				<label>State<select id="national-current-state"><option value="GA">Georgia</option></select></label>
+				<label>Voting mode<select id="national-current-mode"><option value="in_person_early">In-person early voting</option><option value="mail_returned">Returned mail ballots</option></select></label>
+				<label>Demographic counts<select id="national-current-dimension"><option value="race">Race</option></select></label>
+			</div>
+			<h3 id="national-current-selection">Georgia · in-person early voting</h3>
+			<p id="national-current-total">Reported in-person early voting: {earlyFor('GA', 'in_person_early') ? formatNumber(earlyFor('GA', 'in_person_early')!.ballots) : 'Not reported'}.
+				Source data date: {earlyFor('GA', 'in_person_early')?.source_date ?? 'Not reported'}.</p>
+			<p id="national-current-mode-note">These counts do not cover the full election and are not turnout rates.</p>
+			<ul class="nc-current-chart" id="national-current-chart" aria-label="Reported demographic ballot counts">
+				{nationwideRace.map(row => <li><span>{row.group}</span><strong>{formatNumber(row.ballots)}</strong>
+					<i aria-hidden="true" style={`width:${100 * row.ballots / nationwideMaximum}%`}></i></li>)}
+			</ul>
+			<p id="national-current-group-note">Demographic source date: {nationwideRace[0]?.source_date ?? 'Not reported'}.
+				Counts, not group turnout rates; group definitions differ by state.</p>
+			<p id="national-current-official">Official full-election ballots have not been ingested for Georgia.
+				Missing is not zero turnout.</p>
+			<details open class="national-current-coverage">
+				<summary>All 50 states and DC: source coverage and reported counts</summary>
+				<div class="table-wrap" tabindex="0" role="region" aria-label="Nationwide participation source coverage">
+					<table>
+						<caption>Source-specific dates, not a simultaneous national count.
+							Administrative ballots overlap early voting: never add the columns.</caption>
+						<thead><tr><th scope="col">State</th><th scope="col">In-person early</th>
+							<th scope="col">Mail returned</th><th scope="col">Official ballots reported</th>
+							<th scope="col">Nonzero demographic data</th><th scope="col">Coverage</th></tr></thead>
+						<tbody>{nationwide.coverage.map((row: CoverageRow) => {
+							const inperson = earlyFor(row.state_code, 'in_person_early');
+							const returned = earlyFor(row.state_code, 'mail_returned');
+							const official = officialFor(row.state_code);
+							return <tr data-current-state={row.state_code}>
+								<th scope="row">{row.state}</th>
+								<td>{inperson ? <><a href={inperson.source_url}>{formatNumber(inperson.ballots)}</a><small>{inperson.source_date}</small></> : 'Not reported'}</td>
+								<td>{returned ? <><a href={returned.source_url}>{formatNumber(returned.ballots)}</a><small>{returned.source_date}</small></> : 'Not reported'}</td>
+								<td>{official ? <><a href={official.source_url}>{formatNumber(official.ballots)}</a>
+									<small>{official.denominator_basis.replaceAll('_', ' ')}</small>
+									<small>{official.source_update_label}</small></> : 'Not yet ingested'}</td>
+								<td>{row.demographic_dimensions.map(value => groupLabels[value]).join(', ') || 'Not reported'}</td>
+								<td>{row.status.replaceAll('_', ' ')}
+									{row.retained_sources > 0 && <small>Retained after source failure</small>}
+									{row.failed_sources > 0 && <small>{row.failed_sources} failed sources</small>}</td>
+							</tr>;
+						})}</tbody>
+					</table>
+				</div>
+			</details>
+			<p>Missing from an assessed provider does not mean unavailable everywhere.
+				Undated or all-zero demographic responses are not evidence that no members of a group voted.
+				Registered, active-registered and estimated-eligible voter denominators remain distinct.
+				No 2026 education or national precinct turnout is inferred.</p>
+			<p>Sources: <a href="https://www.civicapi.org/early-vote">civicAPI public aggregate early-vote tracker</a>{' '}
+				and verified state election-office administrative reports. civicAPI is not a certified
+				government turnout series. The <a href={nationwide.reference_not_ingested.url}>NYT 2026 tracker</a> could not be ingested because
+				automated access was denied; no figures are attributed to it.</p>
+			<div class="download-links">
+				<a id="national-current-complete" href={`${nationwidePath}complete-snapshot.zip`} download>Complete nationwide snapshot + original sources (ZIP)</a>
+				<a id="national-current-early" href={`${nationwidePath}early_voting.csv`} download>All early-voting observations (CSV)</a>
+				<a id="national-current-demographics" href={`${nationwidePath}demographics.csv`} download>All demographic observations (CSV)</a>
+				<a id="national-current-reporting" href={`${nationwidePath}reporting.csv`} download>All administrative ballots (CSV)</a>
+				<a id="national-current-coverage" href={`${nationwidePath}coverage.csv`} download>All 51 jurisdictions (CSV)</a>
+			</div>
+		</section>
 
 		<section class="participation-current" id="current-participation"
 			data-data-root="/voter-participation/data/" aria-labelledby="current-title">
@@ -186,4 +284,5 @@ const formatTime = (value: string) => new Date(value).toLocaleString('en-US', {
 	</div>
 	<script is:inline src="/voter-participation/app.js" defer></script>
 	<script is:inline src="/voter-participation/current.js" defer></script>
+	<script is:inline src="/voter-participation/nationwide.js" defer></script>
 </BaseLayout>

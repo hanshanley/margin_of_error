@@ -241,6 +241,29 @@ assert.ok(currentSnapshot.demographics.every(row => row.turnout_pct === null && 
 assert.equal(participation('#nc-current-ballots').text(),
 	currentSnapshot.reporting.find(row => row.county_id === '0').ballots_cast.toLocaleString('en-US'));
 assert.ok(participationManifest.files.some(file => file.path === 'current.js' && file.original));
+assert.equal(participation('script[src="/voter-participation/nationwide.js"]').length, 1);
+const nationwidePointer = JSON.parse(await text('voter-participation/data/nationwide/latest.json'));
+const nationwideSnapshot = JSON.parse(await text(`voter-participation/data/nationwide/${nationwidePointer.snapshot_id}/snapshot.json`));
+assert.equal(nationwideSnapshot.audit.jurisdictions_assessed, 51);
+assert.equal(participation('[data-current-state]').length, 51);
+assert.equal(new Set(nationwideSnapshot.coverage.map(row => row.state_code)).size, 51);
+assert.equal(participation('#nationwide-participation a[download]').length, 5);
+assert.match(participation('#nationwide-participation').text(), /not demographic turnout rates/);
+assert.match(participation('#nationwide-participation').text(), /never add the columns/);
+assert.ok(nationwideSnapshot.demographics.every(row => row.turnout_pct === null && !('party' in row)));
+assert.ok(participationManifest.files.some(file => file.path === 'nationwide.js' && file.original));
+for (const row of nationwideSnapshot.coverage) {
+	const rendered = participation(`[data-current-state="${row.state_code}"]`).text();
+	assert.ok(rendered.includes(row.state));
+	for (const mode of ['in_person_early', 'mail_returned']) {
+		const total = nationwideSnapshot.early_voting.find(item =>
+			item.state_code === row.state_code && item.mode === mode && item.geography_level === 'state');
+		if (total) {
+			assert.ok(rendered.includes(total.ballots.toLocaleString('en-US')));
+			assert.ok(rendered.includes(total.source_date));
+		}
+	}
+}
 for (const file of participationManifest.files) {
 	const bytes = await readFile(new URL(`voter-participation/${file.path}`, root));
 	assert.equal(bytes.length, file.bytes, `Participation asset size changed: ${file.path}`);
