@@ -59,13 +59,14 @@ const cpsObservations = cpsInputs.summaries.reduce((total: number, row: CpsSumma
 const methodsPointerPath = resolve('public/participation-methods/latest.json');
 const methodsPointer = existsSync(methodsPointerPath) ? JSON.parse(readFileSync(methodsPointerPath, 'utf8')) : null;
 const methodsPath = methodsPointer ? `/participation-methods/${methodsPointer.snapshot_id}/` : '';
+const localPointer = JSON.parse(readFileSync(resolve('public/participation-local.json'), 'utf8'));
 type MethodRow = { year: number; category: string; universe: string; methods: Record<string, number | null> };
 const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve('public', methodsPath.slice(1), 'national.json'), 'utf8'))
 	.filter((row: MethodRow) => row.category === 'Overall').sort((a: MethodRow, b: MethodRow) => a.year - b.year) : [];
 ---
 
 <BaseLayout title="Who participates? Voter turnout across time"
-	description="Explore voter participation across presidential and midterm elections, demographic groups, states, and a North Carolina precinct pilot."
+	description="Explore voter participation across elections, demographic groups, all 50 states, historical local reporting units, and verified North Carolina precincts."
 	image="/artifacts/voter-participation/voter-participation-editorial.png">
 	<div class="participation-page" data-active-view="states">
 		<header class="participation-heading">
@@ -92,7 +93,7 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 					<label id="precinct-search-label" hidden>Find a precinct<input id="precinct-search" type="search" list="precinct-options" placeholder="ID or precinct name" autocomplete="off" /><datalist id="precinct-options"></datalist></label>
 					<label>Year<select id="year"></select></label>
 					<label id="map-color-label">Map color<select id="map-color"><option value="margin">Election margin</option><option value="turnout">Participation</option></select></label>
-					<label id="map-level-label">Detail<select id="map-level"><option value="auto">As you zoom</option><option value="county">Counties</option><option value="district">Congressional districts</option><option value="precinct">NC precincts</option></select></label>
+					<label id="map-level-label">Detail<select id="map-level"><option value="auto">As you zoom</option><option value="county">Counties / municipalities</option><option value="district">Congressional districts</option><option value="precinct">NC precincts</option></select></label>
 					<label id="current-state-label" hidden>State<select id="current-state-select"></select></label>
 					<label id="mode-label" hidden>Reported ballots<select id="mode"></select></label>
 					<label id="dimension-label" hidden>Compare<select id="dimension"></select></label>
@@ -415,6 +416,11 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 				<dt>NC registered voters</dt><dd>Historical voter-history participants divided by election-time
 					active and inactive registrations. Voter-history totals differ from official ballots cast;
 					the reconciliation download preserves both.</dd>
+				<dt>Administrative local participation</dt><dd>EAC-reported participants divided by reported total
+					registrations, including active and inactive records. These are county, municipal or statewide
+					reporting offices, not uniformly precincts or an eligible-population denominator.
+					Counts cover all 50 states and D.C. in 2008–2024; registration-rate matches currently cover
+					2014–2024. Unmatched boundaries and earlier missing denominators are not filled.</dd>
 			</dl>
 			<p>National observations extend to 1964 and state observations to 1972, where supported.
 				Citizen-based education and sex estimates cover 2000–2024; older education and sex
@@ -447,6 +453,9 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 				<a href="/voter-participation/data/sources.json" download>Sources and checksums</a>
 				{contextPointer && <a href={`/participation-context/${contextPointer.snapshot_id}/complete-context.zip`} download>Complete map context + original sources (ZIP)</a>}
 				{methodsPointer && <a href={`${methodsPath}complete-methods.zip`} download>Complete historical voting methods + original sources (ZIP)</a>}
+				<a href={`${localPointer.base_url}observations.csv.gz`} download>Complete nationwide local participation observations (CSV · gzip)</a>
+				<a href={`${localPointer.base_url}coverage.json`}>Every state and election year: local-data coverage (JSON)</a>
+				<a href={`${localPointer.base_url}checksums.json`}>Local data and boundary checksums (JSON)</a>
 			</div>
 		</section>
 		{methodsPointer && <details id="method-reference" class="participation-reference participation-secondary" data-section="methods">

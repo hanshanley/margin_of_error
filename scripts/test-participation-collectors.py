@@ -43,6 +43,18 @@ def test_local_geography_requires_id_name_and_unique_reporting_area():
     assert local.match_geography({**wi, "jurisdiction": "ACKLEY WARD 1"}, {}, town, "55") is None
 
 
+def test_registration_ingestion_preserves_comments_missing_flags_and_exact_names():
+    source = (b"State,FIPSCode,Jurisdiction,A1a,A1a_NotAvailable,A1Comments\n"
+              b"AL,0100100000,Autauga,100,,Original registration note\n"
+              b"AL,0100100000,Other office,90,X,Unavailable despite numeric cell\n")
+    rows = local.registration_records(source, "source.csv")
+    assert rows[("AL", "0100100000", "Autauga")]["registered"] == 100
+    assert rows[("AL", "0100100000", "Autauga")]["registration_comment"] == "Original registration note"
+    assert rows[("AL", "0100100000", "Other office")]["registered"] is None
+    with pytest.raises(ValueError, match="Duplicate registration identity"):
+        local.registration_records(source + source.splitlines(keepends=True)[1], "source.csv")
+
+
 def eavs(year, rows):
     prefix = "QF1" if 2010 <= year <= 2014 else "F1"
     stream = io.StringIO()

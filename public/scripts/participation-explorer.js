@@ -39,6 +39,8 @@ const state = {
   drillKey: "", drillToken: 0, drillTimer: null, subSelection: null,
   methods: null, methodStates: [], methodNational: [], methodsPath: "", methodsError: "",
   precinctHistories: new Map(),
+  local: null, localPath: "", localStates: new Map(), localGeometry: new Map(),
+  localSelection: null, localError: "",
 };
 const fmt = value => value == null ? "—" : value.toLocaleString("en-US");
 const pct = value => value == null ? "Not available" : value.toFixed(1) + "%";
@@ -69,6 +71,179 @@ async function get(path) {
   const response = await fetch("/voter-participation/data/" + path);
   if (!response.ok) throw new Error(`${path}: HTTP ${response.status}`);
   return response.json();
+}
+async function localGet(path) {
+  const response = await fetch(state.localPath + path);
+  if (!response.ok) throw new Error(`${path}: HTTP ${response.status}`);
+  if (!path.endsWith(".gz")) return response.json();
+  if (!globalThis.DecompressionStream) throw new Error("This browser cannot read compressed local data; the complete download remains available");
+  return new Response(response.body.pipeThrough(new DecompressionStream("gzip"))).json();
+}
+async function loadLocal() {
+  try {
+    const response = await fetch("/participation-local.json");
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const pointer = await response.json();
+    state.localPath = pointer.base_url;
+    state.local = await localGet("index.json");
+    const link = html("a", "", "Complete nationwide local participation observations (CSV · gzip)");
+    link.href = state.localPath + "observations.csv.gz"; link.download = "";
+    if (!$("downloads").querySelector(`a[href="${link.getAttribute("href")}"]`))
+      $("downloads").querySelector(".download-links").append(link);
+    const coverage = html("a", "", "Every state and election year: local-data coverage (JSON)");
+    coverage.href = state.localPath + "coverage.json";
+    if (!$("downloads").querySelector(`a[href="${coverage.getAttribute("href")}"]`))
+      $("downloads").querySelector(".download-links").append(coverage);
+  } catch (error) {
+    state.localError = `Nationwide local observations could not be loaded: ${error.message}.`;
+  }
+}
+async function localRows(code) {
+  if (!state.localStates.has(code)) {
+    const promise = localGet(`states/${code}.json.gz`).catch(error => {
+      state.localStates.delete(code); throw error;
+    });
+    state.localStates.set(code, promise);
+  }
+  return state.localStates.get(code);
+}
+const localKey = row => row.history_key;
+async function localNavigation(container) {
+  const code = stateCode(), year = Number($("year").value);
+  container.append(html("h4", "", "Local participation"));
+  if (!state.local) {
+    container.append(html("p", "selection-note", state.localError || "Local observations are unavailable."));
+    return;
+  }
+  container.append(html("p", "selection-note", "Loading reporting units…"));
+  try {
+    const rows = await localRows(code);
+    if (!container.isConnected) return;
+    const current = rows.filter(row => row.year === year);
+    const uniqueRows = [...new Map(rows.map(row => [localKey(row), row])).values()]
+      .sort((a, b) => a.jurisdiction.localeCompare(b.jurisdiction));
+    const label = html("label", "selection-note", "Reporting unit");
+    const select = html("select"); select.id = "local-unit-select";
+    options(select, [["", "Choose a reporting unit…"], ...uniqueRows.map(row => [localKey(row), row.jurisdiction])],
+      state.localSelection?.code === code ? state.localSelection.key : "");
+    label.htmlFor = select.id;
+    select.addEventListener("change", () => {
+      state.localSelection = select.value ? { code, key: select.value } : null;
+      if (state.localSelection) localDetail(rows, state.localSelection.key);
+      else $("local-detail")?.replaceChildren(html("p", "selection-note",
+        "Select a reporting unit to see its counts and history."));
+    });
+    container.replaceChildren(html("h4", "", "Local participation"),
+      html("p", "selection-note", current.length
+        ? `${fmt(current.length)} reported units in ${year}. Choose one for its complete available history, or zoom into the map.`
+        : `No verified local observations for ${year}. Other available years remain accessible below; no year is filled or substituted.`),
+      label, select, html("p", "selection-note",
+        "EAC reporting units are counties, municipalities or state offices—not uniformly precincts. Precinct-specific inputs remain separately identified."));
+    if (state.localSelection?.code === code && select.value) localDetail(rows, select.value);
+  } catch (error) {
+    if (container.isConnected) container.replaceChildren(html("p", "selection-note",
+      `Local observations could not be loaded: ${error.message}. No values inferred.`));
+  }
+}
+function localDetail(rows, key) {
+  const host = $("local-detail");
+  if (!host) return;
+  const history = rows.filter(row => localKey(row) === key).sort((a, b) => a.year - b.year);
+  if (!history.length) return;
+  const year = Number($("year").value), row = history.find(value => value.year === year);
+  const name = history[0].jurisdiction;
+  host.replaceChildren(html("h4", "", name), html("p", "selection-rate", pct(row?.turnout_pct)),
+    html("p", "selection-basis", "Reported participants / total registrations"),
+    html("p", "selection-note", `${year}: ${fmt(row?.total_participation)} participants; ${fmt(row?.registered)} registrations. `
+      + (row ? row.quality.join(" ") : "No verified observation for this election.")));
+  const chart = html("div", "state-chart"); chart.id = "local-history"; host.append(chart);
+  const chartRows = history.map(value => ({
+    ...value, participants: value.total_participation, series: name, warnings: [],
+  }));
+  seriesChart(chart, chartRows, { width: 300, height: 210, compact: true, dimension: "local" });
+  chart.querySelector("svg")?.setAttribute("aria-label", `${name}: reported participants / total registrations over time`);
+  host.append(html("p", "selection-note",
+    "Total registrations include active and inactive records; not citizen or eligible-population turnout. IDs and names are matched across years, not constant boundaries or the same electorate. Missing rates remain gaps."));
+  const details = html("details"), table = html("table", "precinct-history-table"), head = html("thead"), tr = html("tr");
+  for (const value of ["Year", "Participants", "Registered", "Rate"]) tr.append(html("th", "", value));
+  head.append(tr); table.append(head);
+  const body = html("tbody");
+  for (const value of [...history].reverse()) {
+    const line = html("tr"); line.dataset.year = value.year;
+    for (const text of [String(value.year), fmt(value.total_participation), fmt(value.registered), pct(value.turnout_pct)])
+      line.append(html("td", "", text));
+    body.append(line);
+  }
+  table.append(body);
+  details.append(html("summary", "", "Every observed year and count"), table); host.append(details);
+  const source = row || history.at(-1);
+  host.append(sourceLink(source));
+  if (source.registration_comment) host.append(html("p", "selection-note", source.registration_comment));
+  const metadata = html("details");
+  metadata.append(html("summary", "", "Original participation reporting notes"),
+    html("p", "selection-note", JSON.stringify(source.source_details)));
+  host.append(metadata);
+}
+async function drawLocalGeography(map, selected, code, year, token) {
+  const rows = await localRows(code);
+  const current = rows.filter(row => row.year === year);
+  const municipality = state.local.geometry[String(year)]?.municipality?.[code];
+  const level = municipality ? "municipality" : "county";
+  const file = state.local.geometry[String(year)]?.[level]?.[code];
+  if (!file) {
+    $("geography-note").textContent = `No verified ${year} local boundary collection for ${state.selectedState}. Reporting-unit histories remain available in the sidebar.`;
+    return;
+  }
+  if (!state.localGeometry.has(file)) state.localGeometry.set(file, await localGet(file));
+  if (token !== state.drillToken || state.map !== map) return;
+  const collection = state.localGeometry.get(file);
+  const panel = $("selection-panel"), navigation = html("div", "substate-detail"), detail = html("div", "substate-detail");
+  navigation.id = "local-navigation"; detail.id = "local-detail";
+  detail.append(html("p", "selection-note", "Select a reporting unit on the map or above to see its counts and history."));
+  panel.replaceChildren(html("p", "eyebrow", `${year} · administrative reporting`),
+    html("h3", "", state.selectedState), navigation, detail);
+  localNavigation(navigation);
+  const byKey = new Map(current.filter(row => row.geography?.level === level).map(row => [row.geography.key, row]));
+  let observed = 0;
+  for (const feature of collection.features) {
+    const p = feature.properties, row = byKey.get(p.key), item = projectInside(feature, selected.point);
+    const rate = row?.turnout_pct;
+    if (rate != null) observed++;
+    const path = featurePath(item, rate, `${p.name} · ${year}\n${pct(rate)} · ${fmt(row?.total_participation)} participants / ${fmt(row?.registered)} registrations`
+      + (row ? "" : "\nNo matched reporting unit; boundary context only"), () => {
+      const host = $("local-detail");
+      if (row) {
+        state.localSelection = { code, key: localKey(row) };
+        if ($("local-unit-select")) $("local-unit-select").value = localKey(row);
+        localDetail(rows, localKey(row));
+      } else if (host) {
+        state.localSelection = null;
+        if ($("local-unit-select")) $("local-unit-select").value = "";
+        host.replaceChildren(html("h4", "", p.name),
+          html("p", "selection-note", `No uniquely matched ${year} reporting unit. Missing is not zero turnout.`));
+      }
+      for (const other of map.detail.querySelectorAll(".selected")) other.classList.remove("selected");
+      path.classList.add("selected"); fit(item.bounds);
+    }, { class: "map-feature substate-feature", "data-geography": p.key, "data-level": level,
+      tabindex: "-1" });
+    path.classList.toggle("selected", Boolean(row && state.localSelection?.code === code
+      && state.localSelection.key === localKey(row)));
+    map.detail.append(path);
+  }
+  map.localLayer = true;
+  map.stateTable ||= { rows: state.table, columns: state.columns };
+  setTable(current, [["jurisdiction", "Reporting unit"], ["year", "Year"],
+    ["total_participation", "Participants"], ["registered", "Total registrations"],
+    ["turnout_pct", "Participation / registrations"], ["quality", "Notes"]]);
+  header(`${year} ${typeFor(year)} election · EAC local reporting units`,
+    `Local participation in ${state.selectedState}`,
+    "Reported participants / total registrations. Select a reporting unit for its available history.",
+    "Administrative registrations include active and inactive records. These are not CPS population rates or nationwide precinct data. Gray means a missing or unmatched rate.");
+  ramp();
+  $("coverage-note").textContent = "Local reporting-unit histories: 50 states and D.C., 2008–2024. Registration-rate inputs currently match 2014–2024. Reporting geography and source completeness vary; missing years are never filled.";
+  $("geography-note").textContent = `${state.selectedState} · ${year} Census boundaries · ${fmt(collection.features.length)} ${level === "municipality" ? "municipalities / county subdivisions" : "counties / equivalents"} · ${fmt(byKey.size)} matched reporting units · ${fmt(observed)} with participation rates. `
+    + ($("map-color").value === "margin" ? "No verified local party margins here; this layer shows participation instead. " : "")
+    + "These units are not precincts. Use the sidebar for counts and histories even when a denominator or boundary match is unavailable.";
 }
 async function loadCurrent() {
   try {
@@ -523,7 +698,7 @@ function seriesChart(container, rows, { width = 720, height = 390, compact = fal
         const previous = segment.at(-1);
         if (previous) {
           const change = dimension === "race" && previous.year < 2004 && row.year >= 2004 ? "Race categories changed in 2004."
-            : dimension !== "precinct" && $("basis").value === "cvap" && previous.year < 1994 && row.year >= 1994
+            : !["precinct", "local"].includes(dimension) && $("basis").value === "cvap" && previous.year < 1994 && row.year >= 1994
               ? "Citizenship measurement changed in 1994."
               : dimension === "education" && previous.year < 1992 && row.year >= 1992 ? "Education categories changed in 1992."
                 : previous.year < 1972 && row.year >= 1972 ? "Survey definitions changed in 1972." : "";
@@ -547,9 +722,11 @@ function seriesChart(container, rows, { width = 720, height = 390, compact = fal
         const selected = row.year === Number($("year").value), size = selected ? 4.5 : compact ? 2.6 : 3.5;
         const point = svgNode("circle", { cx: x(row.year), cy: y(row.turnout_pct), r: size });
         for (const [key, value] of Object.entries({ fill: color, class: "chart-point", tabindex: "0",
-          role: "button", "aria-label": `${name}, ${row.year}, ${pct(row.turnout_pct)} reported voting`,
+          role: "button", "aria-label": `${name}, ${row.year}, ${pct(row.turnout_pct)}`
+            + (dimension === "local" ? " participants / total registrations" : " reported voting"),
           "aria-pressed": String(selected), "data-year": row.year, "data-rate": row.turnout_pct })) point.setAttribute(key, value);
-        bindTooltip(point, `${name} · ${row.year}\n${pct(row.turnout_pct)} reported voting`);
+        bindTooltip(point, `${name} · ${row.year}\n${pct(row.turnout_pct)}`
+          + (dimension === "local" ? " participants / total registrations" : " reported voting"));
         const selectYear = () => {
           if ([...$("year").options].some(option => option.value === String(row.year))) {
             if (dimension === "precinct" && state.view === "states") {
@@ -746,6 +923,9 @@ function stateDetail() {
       + (election.office === "U.S. House" ? "State aggregate of district party votes, not a statewide winner or seat margin. " : "")
       + "Candidate votes are not ballots cast or a participation rate."), sourceLink(election));
   const detail = html("div", "substate-detail"); detail.id = "substate-detail"; panel.append(detail);
+  const local = html("div", "substate-detail"); local.id = "local-navigation"; panel.append(local);
+  const localSelection = html("div", "substate-detail"); localSelection.id = "local-detail"; panel.append(localSelection);
+  localNavigation(local);
   methodsView();
   if (state.selectedState === "North Carolina") {
     const button = html("button", "selection-link", "Explore North Carolina precincts");
@@ -777,7 +957,7 @@ function statesView() {
   $("coverage-note").textContent = provisional && state.current
     ? `${state.current.coverage.filter(row => row.status !== "no_data").length} jurisdictions have a saved observation; `
       + `${state.current.reporting.length} state-office full-election feeds. Available observations show one feed per state, preferring official ballots, then in-person early, then returned mail; modes are never added.`
-    : "State histories use CPS survey estimates. Zoom or select a state for finer geographic detail. Verified precinct participation remains North Carolina only.";
+    : "State histories use CPS survey estimates. Zoom for available local administrative participation; reporting units are not uniformly precincts. Precinct-specific coverage remains explicitly identified.";
   if (provisional && state.current) {
     const withData = new Set([...state.current.reporting, ...state.current.early_voting].map(row => row.state_code)).size;
     $("coverage-note").textContent = $("coverage-note").textContent.replace(/^\d+ jurisdictions/, `${withData} jurisdictions`);
@@ -1044,7 +1224,7 @@ function projectInside(feature, point) {
   }
   async function updateGeography() {
     const map = state.map;
-    if (state.view !== "states" || !map?.stateItems || !state.context) return;
+    if (state.view !== "states" || !map?.stateItems || (!state.context && !state.local)) return;
     const zoomLevel = map.full[0] / state.viewport[2], year = Number($("year").value);
     const center = new DOMPoint(state.viewport[0] + state.viewport[2] / 2, state.viewport[1] + state.viewport[3] / 2);
     const currentBounds = map.stateItems.get(stateCode())?.bounds;
@@ -1061,14 +1241,17 @@ function projectInside(feature, point) {
     const code = stateCode(), selected = map.stateItems.get(code);
     let level = $("map-level").value;
     if (level === "auto") level = code === "NC" && zoomLevel >= 8 && state.audits.some(row => row.year === year)
-      ? "precinct" : state.margins.some(row => row.year === year && row.state_code === code && row.level === "county")
-        ? "county" : state.context.district_result_years.includes(year) ? "district" : "county";
+      ? "precinct" : state.local?.years.includes(year) ? "county"
+        : state.margins.some(row => row.year === year && row.state_code === code && row.level === "county")
+        ? "county" : state.context?.district_result_years.includes(year) ? "district" : "county";
     const key = `${year}|${code}|${level}|${$("map-color").value}|${zoomLevel >= 2.3}`;
     if (key === state.drillKey) return;
     state.drillKey = key;
     const token = ++state.drillToken;
-    if (map.precinctLayer) {
+    if (map.precinctLayer || map.localLayer) {
+      if (map.localLayer && map.stateTable) setTable(map.stateTable.rows, map.stateTable.columns);
       map.precinctLayer = false;
+      map.localLayer = false;
       header(...map.stateHeading);
       $("coverage-note").textContent = map.stateCoverage;
       stateDetail();
@@ -1083,6 +1266,11 @@ function projectInside(feature, point) {
     }
     if (!selected) return;
     const unavailable = text => { $("geography-note").textContent = text; };
+    if (level === "county" && state.local?.years.includes(year)
+      && ($("map-color").value !== "margin" || !state.margins.some(row =>
+        row.year === year && row.state_code === code && row.level === "county")))
+      return drawLocalGeography(map, selected, code, year, token);
+    if (!state.context) return unavailable("Election-context boundaries could not be loaded. Local reporting-unit histories remain available in the sidebar.");
     if (level === "precinct" && (code !== "NC" || !state.audits.some(row => row.year === year)))
       return unavailable(`No verified ${year} precinct boundaries and participation inputs for ${state.selectedState}. Other years' shapes are not substituted.`);
     if (level === "district" && !state.context.district_result_years.includes(year))
@@ -1422,7 +1610,7 @@ async function main() {
       : (tabs.indexOf(tab) + (event.key === "ArrowRight" ? 1 : -1) + tabs.length) % tabs.length;
     tabs[index].focus(); showView(tabs[index].dataset.view);
   });
-  await Promise.all([loadContext(), loadMethods()]);
+  await Promise.all([loadContext(), loadMethods(), loadLocal()]);
   const [national, states, geometry, ncSummary, audits] = await Promise.all([
     get("national.json"), get("states.json"), get("states.geojson"), get("nc/summary.json"), get("geometry-audit.json"),
     loadCurrent(),

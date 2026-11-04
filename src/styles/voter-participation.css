@@ -113,6 +113,8 @@
 .selection-panel .selection-unavailable { font-size: 1.15rem; }
 .selection-panel h4 { font-size: .74rem; font-weight: 500; margin: 1.5rem 0 .7rem; }
 .selection-panel .selection-note { font-size: .72rem; color: var(--muted); line-height: 1.6; }
+#local-navigation select { display: block; width: 100%; margin-top: .35rem; }
+#local-detail .selection-note { overflow-wrap: anywhere; }
 .selection-panel .selection-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; border-block: 1px solid var(--rule); padding: 1rem 0; margin: 1.25rem 0; }
 .selection-panel dt { font-size: .65rem; color: var(--muted); }
 .selection-panel dd { font-size: 1rem; margin: .3rem 0 0; font-variant-numeric: tabular-nums; }

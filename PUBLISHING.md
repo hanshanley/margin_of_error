@@ -158,6 +158,33 @@ or a stable electorate; no boundary crosswalk is claimed. Missing years and
 small/inconsistent rates are not filled. Other states still lack verified
 precinct participation inputs, and county/district context is not labeled as precinct turnout.
 
+The nationwide local supplement contains 57,952 EAC reporting-unit observations for
+all 50 states and D.C., every even election year from 2008 through 2024. These are
+county, municipal and statewide administrative units, not nationwide precincts.
+The map uses matching election-year Census boundaries; Wisconsin and New England
+use county subdivisions where available. Selection exposes participation,
+registrations and the complete available unit history. Rates currently match
+registration records for 2014–2024; earlier unmatched denominators remain missing.
+Alaska's statewide office is never allocated into boroughs. Illinois county offices
+and Jackson County, Missouri, are not painted onto entire counties because separately
+administered cities can change the reporting area. Unmatched and ambiguous units
+remain in the complete dataset and sidebar, not silently discarded.
+
+`scripts/build-local-participation.py` verifies original EAC checksums, joins
+registrations only on exact source identity, and records Census-source checksums.
+The committed compressed state and geometry shards are under
+`data/participation-local/20261104T204000Z/`; `checksums.json` covers every output.
+`public/participation-local.json` pins the runtime to their immutable Git commit on
+raw GitHub, whose browser CORS is verified in interaction checks. This avoids
+duplicating another 60 MB in the size-limited Pages artifact. Browsers decompress
+the gzip JSON shards; a failed fetch/decompression leaves an explicit error and
+the complete CSV-gzip download available. No original staged research export changes.
+The CSV contains every observation, source note, reporting basis and missingness
+flag, not merely coverage metadata. `coverage.json` includes every state and
+historical election-year combination, including unsupported years and provisional
+2026. A history key standardizes source names alongside the reporting ID, but
+does not establish stable boundaries. National precinct ingestion remains unfinished.
+
 The reviewed supplements live in `public/participation-context/` and
 `public/participation-methods/`; neither modifies the pinned historical export.
 Their `latest.json` pointers select immutable, checksummed snapshots. The context

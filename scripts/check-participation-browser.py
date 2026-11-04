@@ -1,6 +1,7 @@
 """Exercise the built participation atlas against its saved source observations."""
 
 import argparse
+import gzip
 import json
 from pathlib import Path
 
@@ -28,6 +29,7 @@ methods_pointer = json.loads((public / "participation-methods/latest.json").read
 methods_root = public / "participation-methods" / methods_pointer["snapshot_id"]
 method_states = json.loads((methods_root / "states.json").read_text())
 method_national = json.loads((methods_root / "national.json").read_text())
+local_root = data.parents[2] / "data/participation-local/20261104T204000Z"
 selected = next(row for row in records if row["county"] == "WAKE"
                 and row["precinct"] == "01-01" and row["dimension"] == "overall")
 key = selected["county"] + "|" + selected["precinct"]
@@ -455,7 +457,7 @@ with sync_playwright() as p:
     expect(page.locator("#model-summary")).to_contain_text("98")
     page.locator("#participation-cps summary").click()
     expect(page.locator("#cps-summary")).to_contain_text("34 of 34")
-    assert page.locator('#downloads a[download]').count() == 9
+    assert page.locator('#downloads a[download]').count() == 10
     for link in page.locator('#downloads a[download]').all():
         response = context.request.head(link.get_attribute("href") if link.get_attribute("href").startswith("http")
                                         else args.base_url + link.get_attribute("href"))
@@ -521,13 +523,64 @@ with sync_playwright() as p:
     assert abs(viewport(mobile)[2] - detail_view[2]) < 0.001
     screenshot(mobile, "participation-redesign-mobile-precinct.png")
 
+    local_page = context.new_page()
+    local_page.on("pageerror", lambda error: errors.append(str(error)))
+    local_page.goto(url + "?state=Wisconsin&year=2024&map-color=turnout&map-level=county")
+    local_page.locator('[data-state="Wisconsin"]').click()
+    wi_rows = json.loads(gzip.decompress((local_root / "states/WI.json.gz").read_bytes()))
+    wi = next(row for row in wi_rows if row["year"] == 2024 and row["jurisdiction_id"] == "00100")
+    expect(local_page.locator('.substate-feature[data-level="municipality"]')).to_have_count(1850)
+    expect(local_page.locator("#title")).to_have_text("Local participation in Wisconsin")
+    expect(local_page.locator("#geography-note")).to_contain_text("1,845 matched reporting units")
+    local_page.locator("#local-unit-select").select_option(wi["history_key"])
+    expect(local_page.locator("#local-detail .selection-rate")).to_have_text(f'{wi["turnout_pct"]:.1f}%')
+    expected_history = [r for r in wi_rows if r["history_key"] == wi["history_key"] and r["turnout_pct"] is not None]
+    expect(local_page.locator("#local-history .chart-point")).to_have_count(len(expected_history))
+    local_page.locator('.substate-feature[data-geography="5500100"]').dispatch_event("click")
+    expect(local_page.locator("#local-detail")).to_contain_text("748 participants; 886 registrations")
+    screenshot(local_page, "participation-national-wisconsin.png")
+    local_page.locator("#state-select").select_option("Alabama")
+    expect(local_page.locator('.substate-feature[data-level="county"]')).to_have_count(67)
+    al_rows = json.loads(gzip.decompress((local_root / "states/AL.json.gz").read_bytes()))
+    al = next(row for row in al_rows if row["year"] == 2024 and row["jurisdiction_id"] == "0100100000")
+    local_page.locator('.substate-feature[data-geography="01001"]').dispatch_event("click")
+    expect(local_page.locator("#local-detail .selection-rate")).to_have_text(f'{al["turnout_pct"]:.1f}%')
+    local_page.locator("#local-history .chart-point[data-year='2014']").click()
+    expect(local_page.locator("#year")).to_have_value("2014")
+    expect(local_page.locator("#local-unit-select")).to_have_value(al["history_key"])
+    expect(local_page.locator('.substate-feature[data-level="county"]')).to_have_count(67)
+    local_page.locator("#year").select_option("2008")
+    expect(local_page.locator("#local-detail .selection-rate")).to_have_text("Not available")
+    expect(local_page.locator("#local-detail")).to_contain_text("No matched reported registration denominator")
+    expect(local_page.locator('.substate-feature[data-level="county"]')).to_have_count(67)
+    local_page.locator("#year").select_option("1994")
+    expect(local_page.locator("#local-navigation")).to_contain_text("No verified local observations for 1994")
+    expect(local_page.locator("#local-history .chart-point")).to_have_count(6)
+    local_page.locator("#state-select").select_option("Alaska")
+    expect(local_page.locator("#local-unit-select option")).to_have_count(2)
+    expect(local_page.locator("#local-navigation")).to_contain_text("No verified local observations for 1994")
+    local_page.locator("#year").select_option("2024")
+    expect(local_page.locator("#geography-note")).to_contain_text("0 matched reporting units")
+    mobile.goto(url + "?state=Wisconsin&year=2024&map-color=turnout&map-level=county")
+    mobile.locator('[data-state="Wisconsin"]').click()
+    expect(mobile.locator('.substate-feature[data-level="municipality"]')).to_have_count(1850)
+    mobile.locator("#local-unit-select").select_option(wi["history_key"])
+    expect(mobile.locator("#local-detail .selection-rate")).to_have_text(f'{wi["turnout_pct"]:.1f}%')
+    no_overflow(mobile)
+    screenshot(mobile, "participation-national-local-mobile.png")
+    broken_local = browser.new_page()
+    broken_local.route("**/states/WI.json.gz", lambda route: route.abort())
+    broken_local.goto(url + "?state=Wisconsin&year=2024")
+    expect(broken_local.locator(".map-feature[data-state]")).to_have_count(51)
+    expect(broken_local.locator("#local-navigation")).to_contain_text("No values inferred")
+
     offline = browser.new_page(java_script_enabled=False)
     offline.goto(url)
     expect(offline.locator("#national-snapshot")).to_be_visible()
     expect(offline.locator("#downloads")).to_be_visible()
     assert offline.locator("#national-snapshot tbody tr").count() == 13
     assert offline.locator("#method-reference tbody tr").count() == 15
-    assert offline.locator('#downloads a[download]').count() == 9
+    assert offline.locator('#downloads a[download]').count() == 10
     broken = browser.new_page()
     broken.route("**/data/states.json", lambda route: route.abort())
     broken.goto(url)
@@ -575,5 +628,5 @@ with sync_playwright() as p:
 
 print("PASS: source-matched state histories, demographics, precinct search, zoom/pan, "
       "deep links, suppression, boundary gaps, observed-year axes, geographic labels/Alaska, "
-      "historical methods, 1994/2010 context, county/district/precinct drilldown, "
+      "historical methods, 1994/2010 context, county/district/precinct drilldown, nationwide local histories, "
       "integrated provisional counts, downloads, mobile and no-JS/fetch-error fallbacks.")
