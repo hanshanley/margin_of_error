@@ -226,6 +226,21 @@ assert.match(participation('#definitions').text(), /not assessed/);
 assert.match(participation('.participation-scope').first().text(), /not a nationwide precinct map/);
 assert.equal(participation('#downloads a[download]').length, 7);
 assert.equal(participation('script[src="/voter-participation/app.js"]').length, 1);
+assert.equal(participation('script[src="/voter-participation/current.js"]').length, 1);
+assert.match(participation('#current-participation').text(), /unofficial/);
+assert.match(participation('#current-participation').text(), /never add them together/);
+assert.match(participation('#current-participation').text(), /not demographic turnout rates/);
+assert.equal(participation('#nc-current-chart li').length, 8);
+assert.equal(participation('#current-participation a[download]').length, 3);
+const currentPointer = JSON.parse(await text('voter-participation/data/current/latest.json'));
+const currentSnapshot = JSON.parse(await text(`voter-participation/data/current/${currentPointer.snapshot_id}/snapshot.json`));
+assert.equal(currentSnapshot.status, 'preliminary');
+assert.equal(currentSnapshot.audit.county_count, 100);
+assert.equal(currentSnapshot.reporting.length, 101);
+assert.ok(currentSnapshot.demographics.every(row => row.turnout_pct === null && !('party' in row)));
+assert.equal(participation('#nc-current-ballots').text(),
+	currentSnapshot.reporting.find(row => row.county_id === '0').ballots_cast.toLocaleString('en-US'));
+assert.ok(participationManifest.files.some(file => file.path === 'current.js' && file.original));
 for (const file of participationManifest.files) {
 	const bytes = await readFile(new URL(`voter-participation/${file.path}`, root));
 	assert.equal(bytes.length, file.bytes, `Participation asset size changed: ${file.path}`);

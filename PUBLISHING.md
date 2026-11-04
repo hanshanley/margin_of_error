@@ -86,6 +86,18 @@ This is an analysis tool, not a new essay, so it needs no personal-site writing 
 Until publication is explicitly approved, keep this integration on a review branch:
 pushing `main` deploys the site automatically.
 
+The separate 2026 NC panel uses an immutable preliminary snapshot from the same
+pinned project revision. It renders statewide reporting and race counts without
+JavaScript; the shared `current.js` adds county, race/ethnicity/sex and request-type
+filters. Election-night reported ballots/registrations are explicitly incomplete.
+The earlier absentee demographic counts overlap that feed and are never added to
+it or presented as group turnout rates. Historical series still end in 2024.
+Refresh the research source with `python -m scripts.current` followed by
+`python -m scripts.build`, test, commit and push it, then update both source pins
+and stage a new export. This is a saved snapshot, not an automatically refreshing
+live feed. Each complete snapshot ZIP includes all observations, original public
+aggregate files, timestamps and checksums; no individual voter records are used.
+
 The national Democratic/Republican/DSA comparison lives at `/party-platforms/`.
 Deployment pins `hanshanley/dsa` to a verified source commit and runs its
 offline exporter with the source package and its numerical/image audit dependencies.

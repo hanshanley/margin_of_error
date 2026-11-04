@@ -5,7 +5,7 @@ import { dirname, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
 
-export const sourceRevision = 'a4b2593ca0a81c75586666aeae27fbbd6a98c3a2';
+export const sourceRevision = 'd87cfe325bac49f347f044e796c7584146e96308';
 const sha256 = (bytes) => createHash('sha256').update(bytes).digest('hex');
 
 function replaceOnce(text, before, after) {
@@ -73,7 +73,7 @@ async function filesUnder(directory) {
 export async function stage(source, output) {
 	const revision = execFileSync('git', ['-C', source, 'rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
 	if (revision !== sourceRevision) throw new Error(`Expected verified source ${sourceRevision}, got ${revision}`);
-	const dirty = execFileSync('git', ['-C', source, 'status', '--porcelain', '--', 'public/app.js', 'public/data'],
+	const dirty = execFileSync('git', ['-C', source, 'status', '--porcelain', '--', 'public/app.js', 'public/current.js', 'public/data'],
 		{ encoding: 'utf8' }).trim();
 	if (dirty) throw new Error('Participation source assets have uncommitted changes');
 	const input = join(source, 'public/data');
@@ -100,10 +100,11 @@ export async function stage(source, output) {
 	}
 	const script = await readFile(join(source, 'public/app.js'), 'utf8');
 	await writeFile(join(output, 'app.js'), publicationScript(script));
+	await copyFile(join(source, 'public/current.js'), join(output, 'current.js'));
 	await sharp(Buffer.from(previewSvg(national))).png().toFile(join(output, 'preview.png'));
-	for (const name of ['app.js', 'preview.png']) {
+	for (const name of ['app.js', 'current.js', 'preview.png']) {
 		const bytes = await readFile(join(output, name));
-		files.push({ path: name, bytes: bytes.length, sha256: sha256(bytes), original: false });
+		files.push({ path: name, bytes: bytes.length, sha256: sha256(bytes), original: name === 'current.js' });
 	}
 	await writeFile(join(output, 'publication-manifest.json'), JSON.stringify({
 		source_repository: 'https://github.com/hanshanley/voter-participation',

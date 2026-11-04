@@ -12,6 +12,20 @@ const snapshot = national.filter((row: { year: number; denominator: string; age_
 const labels: Record<string, string> = {
 	overall: 'Overall', race: 'Race / ethnicity', education: 'Education', sex: 'Sex',
 };
+const currentPointer = JSON.parse(readFileSync(resolve(dataRoot, 'data/current/latest.json'), 'utf8'));
+const currentPath = `/voter-participation/data/current/${currentPointer.snapshot_id}/`;
+const current = JSON.parse(readFileSync(resolve(dataRoot, `data/current/${currentPointer.snapshot_id}/snapshot.json`), 'utf8'));
+const currentState = current.reporting.find((row: { county_id: string }) => row.county_id === '0');
+const currentRace = current.demographics.filter((row: { county: string; request_type: string; dimension: string }) =>
+	row.county === 'STATEWIDE' && row.request_type === 'All methods' && row.dimension === 'race')
+	.sort((a: { ballots: number }, b: { ballots: number }) => b.ballots - a.ballots);
+const currentMaximum = Math.max(1, ...currentRace.map((row: { ballots: number }) => row.ballots));
+const currentSource = (name: string) => current.sources.find((row: { file: string }) => row.file === name);
+const formatNumber = (value: number) => value.toLocaleString('en-US');
+const formatTime = (value: string) => new Date(value).toLocaleString('en-US', {
+	timeZone: 'America/New_York', month: 'long', day: 'numeric', year: 'numeric',
+	hour: 'numeric', minute: '2-digit', timeZoneName: 'short',
+});
 ---
 
 <BaseLayout title="Who participates? Voter turnout across time"
@@ -31,6 +45,52 @@ const labels: Record<string, string> = {
 			Census estimates describe participation among adult citizens or all adult residents.
 			The NC precinct pilot describes participation among registered voters—not all eligible residents.
 			It is not a nationwide precinct map.</p>
+
+		<section class="participation-current" id="current-participation"
+			data-data-root="/voter-participation/data/" aria-labelledby="current-title">
+			<p class="kicker">November 3, 2026 · North Carolina · unofficial</p>
+			<h2 id="current-title">Election-night participation reporting</h2>
+			<p id="nc-current-asof">Saved snapshot retrieved {formatTime(current.retrieved_at)}. Not a live feed.</p>
+			<p id="nc-current-reporting-time">Election-night file updated {formatTime(currentSource('reporting.json').last_modified)}.</p>
+			<p id="nc-current-error" role="status" hidden></p>
+			<div class="nc-current-controls">
+				<label>Reporting geography<select id="nc-current-county"><option value="STATEWIDE">North Carolina statewide</option></select></label>
+				<label>Demographic counts<select id="nc-current-dimension"><option value="race">Race</option><option value="ethnicity">Ethnicity</option><option value="sex">Sex</option></select></label>
+				<label>Absentee request type<select id="nc-current-method"><option value="All methods">All request types</option></select></label>
+			</div>
+			<dl class="nc-current-stats">
+				<div><dt>Ballots reported so far</dt><dd id="nc-current-ballots">{currentState.ballots_cast > 0 ? formatNumber(currentState.ballots_cast) : 'Not reported'}</dd></div>
+				<div><dt>Reported ballots / registered voters</dt><dd id="nc-current-fraction">{currentState.reported_ballot_fraction_pct == null ? 'No validated fraction' : `${currentState.reported_ballot_fraction_pct.toFixed(2)}%`}</dd></div>
+				<div><dt>Precincts reporting / total</dt><dd id="nc-current-precincts">{formatNumber(currentState.precincts_reporting)} / {formatNumber(currentState.precincts_total)}</dd></div>
+			</dl>
+			<p id="nc-current-county-note">Reporting geography: North Carolina.
+				Source update label: {currentState.source_update_label}.
+				Registered-voter denominator: {formatNumber(currentState.registered_voters)}.</p>
+			<p>These are incomplete reporting counts, not final turnout. Precinct reporting is
+				not the fraction of all ballots counted.</p>
+			<h3>Earlier absentee / early-voting demographic counts</h3>
+			<p id="nc-current-absentee-time">Demographic file updated {formatTime(currentSource('absentee-state.csv').last_modified)};
+				it does not cover Election Day in-person voting.</p>
+			<ul class="nc-current-chart" id="nc-current-chart" aria-label="Reported absentee and early-voting ballot counts">
+				{currentRace.map((row: { group: string; ballots: number }) => <li>
+					<span>{row.group}</span><strong>{formatNumber(row.ballots)}</strong>
+					<i aria-hidden="true" style={`width:${100 * row.ballots / currentMaximum}%`}></i>
+				</li>)}
+			</ul>
+			<p id="nc-current-group-note">{formatNumber(currentRace.reduce((sum: number, row: { ballots: number }) => sum + row.ballots, 0))}
+				{' '}reported absentee/early-voting ballots in this selection. Counts, not demographic turnout rates.</p>
+			<p>The feeds overlap and have different update times: never add them together.
+				No matched group denominator is available here; race, ethnicity and sex counts
+				are not turnout rates. No age, education, or precinct-level 2026 turnout is inferred.
+				Party affiliation is summed out; no candidate votes are used.</p>
+			<p>Sources:{' '}<a href="https://er.ncsbe.gov/">NC election-night reporting</a>{' '}
+				and <a href="https://www.ncsbe.gov/results-data/absentee-and-provisional-data">NC aggregate absentee / early-voting files</a>.</p>
+			<div class="download-links">
+				<a id="nc-current-complete" href={`${currentPath}complete-snapshot.zip`} download>Complete snapshot + original aggregate sources (ZIP)</a>
+				<a id="nc-current-demographics" href={`${currentPath}demographics.csv`} download>All demographic observations (CSV)</a>
+				<a id="nc-current-reporting-download" href={`${currentPath}reporting.csv`} download>All reporting observations (CSV)</a>
+			</div>
+		</section>
 
 		<noscript><p class="participation-scope">Interactive controls require JavaScript.
 			The 2024 national snapshot, source definitions, and complete downloads below
@@ -125,4 +185,5 @@ const labels: Record<string, string> = {
 		</p>
 	</div>
 	<script is:inline src="/voter-participation/app.js" defer></script>
+	<script is:inline src="/voter-participation/current.js" defer></script>
 </BaseLayout>
