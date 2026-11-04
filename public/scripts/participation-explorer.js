@@ -35,6 +35,7 @@ const state = {
   precinctRows: new Map(), precinctItems: new Map(), searchItems: new Map(), projected: [],
   loadedPrecinctYear: null, loadedCounty: "",
   current: null, currentError: "", countState: params.get("countState") || "GA",
+  currentPath: "", currentLocal: null, currentCounty: "", currentUnit: "",
   context: null, contextPath: "", margins: [], contextError: "", subshapes: new Map(),
   drillKey: "", drillToken: 0, drillTimer: null, subSelection: null,
   methods: null, methodStates: [], methodNational: [], methodsPath: "", methodsError: "",
@@ -153,7 +154,7 @@ function localDetail(rows, key) {
   const year = Number($("year").value), row = history.find(value => value.year === year);
   const name = history[0].jurisdiction;
   host.replaceChildren(html("h4", "", name), html("p", "selection-rate", pct(row?.turnout_pct)),
-    html("p", "selection-basis", "Reported participants / total registrations"),
+    html("p", "selection-basis", "Reported participants / source registrations"),
     html("p", "selection-note", `${year}: ${fmt(row?.total_participation)} participants; ${fmt(row?.registered)} registrations. `
       + (row ? row.quality.join(" ") : "No verified observation for this election.")));
   const chart = html("div", "state-chart"); chart.id = "local-history"; host.append(chart);
@@ -163,7 +164,7 @@ function localDetail(rows, key) {
   seriesChart(chart, chartRows, { width: 300, height: 210, compact: true, dimension: "local" });
   chart.querySelector("svg")?.setAttribute("aria-label", `${name}: reported participants / total registrations over time`);
   host.append(html("p", "selection-note",
-    "Total registrations include active and inactive records; not citizen or eligible-population turnout. IDs and names are matched across years, not constant boundaries or the same electorate. Missing rates remain gaps."));
+    "Registration definitions and dates vary; these are not citizen or eligible-population turnout rates. 2004/2006 count ballots counted, not the later cast-ballot definition. IDs and names are matched across years, not constant boundaries or the same electorate. Missing rates remain gaps."));
   const details = html("details"), table = html("table", "precinct-history-table"), head = html("thead"), tr = html("tr");
   for (const value of ["Year", "Participants", "Registered", "Rate"]) tr.append(html("th", "", value));
   head.append(tr); table.append(head);
@@ -177,8 +178,23 @@ function localDetail(rows, key) {
   table.append(body);
   details.append(html("summary", "", "Every observed year and count"), table); host.append(details);
   const source = row || history.at(-1);
+  if (row?.methods) {
+    const breakdown = html("details"), methodTable = html("table", "precinct-history-table");
+    methodTable.append(html("caption", "", "Source-defined ballot-method counts; unavailable modes remain missing."));
+    const methodBody = html("tbody");
+    for (const [mode, count] of Object.entries(row.methods)) {
+      const line = html("tr");
+      line.append(html("th", "", methodLabels[mode] || mode.replaceAll("_", " ")),
+        html("td", "", count == null ? "Not reported" : fmt(count)));
+      methodBody.append(line);
+    }
+    methodTable.append(methodBody);
+    breakdown.append(html("summary", "", "Reported voting-method counts"), methodTable);
+    host.append(breakdown);
+  }
   host.append(sourceLink(source));
   if (source.registration_comment) host.append(html("p", "selection-note", source.registration_comment));
+  if (source.registration_definition) host.append(html("p", "selection-note", source.registration_definition));
   const metadata = html("details");
   metadata.append(html("summary", "", "Original participation reporting notes"),
     html("p", "selection-note", JSON.stringify(source.source_details)));
@@ -238,9 +254,9 @@ async function drawLocalGeography(map, selected, code, year, token) {
   header(`${year} ${typeFor(year)} election · EAC local reporting units`,
     `Local participation in ${state.selectedState}`,
     "Reported participants / total registrations. Select a reporting unit for its available history.",
-    "Administrative registrations include active and inactive records. These are not CPS population rates or nationwide precinct data. Gray means a missing or unmatched rate.");
+    "Registration definitions and dates vary by source. These are not CPS population rates or nationwide precinct data. Gray means a missing or unmatched rate.");
   ramp();
-  $("coverage-note").textContent = "Local reporting-unit histories: 50 states and D.C., 2008–2024. Registration-rate inputs currently match 2014–2024. Reporting geography and source completeness vary; missing years are never filled.";
+  $("coverage-note").textContent = `Local reporting-unit histories: 50 states and D.C., ${Math.min(...state.local.years)}–2024. Reporting geography, registration definitions and source completeness vary; missing years are never filled.`;
   $("geography-note").textContent = `${state.selectedState} · ${year} Census boundaries · ${fmt(collection.features.length)} ${level === "municipality" ? "municipalities / county subdivisions" : "counties / equivalents"} · ${fmt(byKey.size)} matched reporting units · ${fmt(observed)} with participation rates. `
     + ($("map-color").value === "margin" ? "No verified local party margins here; this layer shows participation instead. " : "")
     + "These units are not precincts. Use the sidebar for counts and histories even when a denominator or boundary match is unavailable.";
@@ -249,19 +265,163 @@ async function loadCurrent() {
   try {
     const audit = $("nationwide-participation");
     if (state.contextPath || audit?.dataset.snapshotDirectory) {
-      const path = state.contextPath ? state.contextPath + "nationwide/snapshot.json"
-        : audit.dataset.dataRoot + audit.dataset.snapshotDirectory + "snapshot.json";
+      const path = audit?.dataset.snapshotDirectory
+        ? audit.dataset.dataRoot + audit.dataset.snapshotDirectory + "snapshot.json"
+        : state.contextPath + "nationwide/snapshot.json";
       const response = await fetch(path);
       if (!response.ok) throw new Error(`${path}: HTTP ${response.status}`);
       state.current = await response.json();
+      state.currentPath = path.replace(/snapshot\.json$/, "");
       return;
     }
     const pointer = await get("nationwide/latest.json");
+    state.currentPath = `/voter-participation/data/nationwide/${pointer.snapshot_id}/`;
     state.current = await get(`nationwide/${pointer.snapshot_id}/snapshot.json`);
   } catch (error) {
     state.currentError = `Saved 2026 observations could not be loaded: ${error.message}.`;
   }
 }
+    async function currentLocal() {
+      if (!state.current?.local_file) return null;
+      if (!state.currentLocal) state.currentLocal = fetch(state.currentPath + state.current.local_file)
+        .then(response => {
+          if (!response.ok) throw new Error(`Local 2026 counts: HTTP ${response.status}`);
+          return response.json();
+        }).catch(error => { state.currentLocal = null; throw error; });
+      return state.currentLocal;
+    }
+    const countyName = value => value.normalize("NFKD").replace(/[\u0300-\u036f]/g, "")
+      .toUpperCase().replace(/\s*\(VOTE CENTER\)/g, "").replace(/\b(COUNTY|PARISH)\b/g, "")
+      .replace(/[^A-Z0-9]/g, "");
+    const electorateLabel = row => row.denominator_basis.replaceAll("_", " ");
+    function currentCountDetail(host, row, county = false) {
+      host.replaceChildren(html("h4", "", county ? row.county : row.unit),
+        html("p", "selection-rate", fmt(row.ballots)),
+        html("p", "selection-basis", "2026 ballots reported · unofficial"),
+        html("p", "selection-note", `${fmt(row.denominator)} ${electorateLabel(row)}; `
+          + `${pct(row.reported_pct)} reported-ballot fraction. Not final turnout or a CPS estimate.`),
+        html("p", "selection-note", `Source update: ${row.source_update_label || "not supplied"}. `
+          + row.quality.join(" ")), sourceLink(row));
+      if (county) host.append(html("p", "selection-note",
+        `${fmt(row.reported_units)} / ${fmt(row.total_units)} source precincts reporting. `
+        + `${fmt(row.source_rows)} source rows available below; special units and vote centers are identified separately.`));
+      else host.append(html("p", "selection-note",
+        `${row.unit_kind.replaceAll("_", " ")}. County + snapshot-local row ordinal identifies this 2026 reporting row, not a stable historical precinct. No verified 2026 precinct polygon is claimed.`));
+    }
+    async function currentNavigation(container) {
+      container.append(html("p", "selection-note", "Loading 2026 local counts…"));
+      const code = stateCode();
+      try {
+        const data = await currentLocal();
+        if (!container.isConnected || code !== stateCode()) return;
+        const counties = data?.counties.filter(row => row.state_code === code) ?? [];
+        if (!counties.length) {
+          container.replaceChildren(html("h4", "", "2026 local reporting"),
+            html("p", "selection-note", "No verified full-election county/precinct counts ingested for this state yet. Statewide early/mail observations above are separate, not final turnout."));
+          return;
+        }
+        const label = html("label", "selection-note", "2026 county");
+        const select = html("select"); select.id = "current-county-select"; label.htmlFor = select.id;
+        options(select, [["", "Choose a county…"], ...counties.map(row => [row.county_id, row.county])],
+          state.currentCounty.startsWith(code + "|") ? state.currentCounty.slice(code.length + 1) : "");
+        const detail = html("div", "substate-detail"); detail.id = "current-county-detail";
+        const units = html("div", "substate-detail"); units.id = "current-unit-navigation";
+        container.replaceChildren(html("h4", "", "2026 local reporting"), label, select, detail, units);
+        const choose = () => {
+          const county = counties.find(row => row.county_id === select.value);
+          state.currentCounty = code + "|" + select.value; state.currentUnit = "";
+          detail.replaceChildren(); units.replaceChildren();
+          if (!county) return;
+          currentCountDetail(detail, county, true);
+          const rows = data.precincts.filter(row => row.state_code === code && row.county_id === county.county_id);
+          setTable(rows.length ? rows : [county], rows.length
+            ? [["county", "County"], ["unit", "Source precinct / reporting location"], ["unit_kind", "Unit type"],
+              ["ballots", "Ballots reported"], ["denominator", "Source electorate"],
+              ["reported_pct", "Reported-ballot fraction"], ["quality", "Notes"]]
+            : [["county", "County"], ["ballots", "Ballots reported"], ["denominator", "Source electorate"],
+              ["reported_pct", "Reported-ballot fraction"], ["quality", "Notes"]]);
+          if (!rows.length) {
+            units.append(html("p", "selection-note", "County counts only; no verified 2026 precinct count table ingested here."));
+            return;
+          }
+          const unitLabel = html("label", "selection-note", "Precinct / source reporting row");
+          const unitSelect = html("select"); unitSelect.id = "current-unit-select"; unitLabel.htmlFor = unitSelect.id;
+          options(unitSelect, [["", "Choose a precinct / reporting row…"],
+            ...rows.map(row => [row.unit_key, row.unit
+              + (rows.filter(other => other.unit === row.unit).length > 1 ? ` · source row ${row.unit_key.split("|").at(-1)}` : "")
+              + (row.unit_kind === "precinct" ? "" : ` · ${row.unit_kind.replaceAll("_", " ")}`)])]);
+          const unitDetail = html("div", "substate-detail"); unitDetail.id = "current-unit-detail";
+          unitSelect.addEventListener("change", () => {
+            state.currentUnit = unitSelect.value;
+            const row = rows.find(row => row.unit_key === unitSelect.value);
+            if (row) currentCountDetail(unitDetail, row);
+            else unitDetail.replaceChildren();
+          });
+          units.append(unitLabel, unitSelect, unitDetail,
+            html("p", "selection-note", "Every source row is available in the observations table and complete downloads. No early/mail counts are added to these ballot totals."));
+        };
+        select.addEventListener("change", choose);
+        if (select.value) choose();
+      } catch (error) {
+        if (container.isConnected) container.replaceChildren(html("p", "selection-note",
+          `${error.message}. No local counts inferred; complete downloads remain in Methods & data.`));
+      }
+    }
+    async function drawCurrentGeography(map, selected, code, token) {
+      const data = await currentLocal(), file = state.context?.geometry.county?.[code];
+      if (!file) {
+        $("geography-note").textContent = "County context boundaries could not be loaded. Verified 2026 county/precinct counts remain accessible in the sidebar.";
+        return;
+      }
+      if (!state.subshapes.has(file)) state.subshapes.set(file, await contextGet(file));
+      if (token !== state.drillToken || state.map !== map) return;
+      const counties = data?.counties.filter(row => row.state_code === code) ?? [];
+      const byName = new Map(), duplicates = new Set();
+      for (const row of counties) {
+        const key = countyName(row.county);
+        if (byName.has(key)) duplicates.add(key);
+        byName.set(key, row);
+      }
+      for (const key of duplicates) byName.delete(key);
+      const features = state.subshapes.get(file).features;
+      const shapeCounts = new Map();
+      for (const feature of features) {
+        const key = countyName(feature.properties.name);
+        shapeCounts.set(key, (shapeCounts.get(key) || 0) + 1);
+      }
+      let observed = 0;
+      for (const feature of features) {
+        const key = countyName(feature.properties.name);
+        const row = shapeCounts.get(key) === 1 ? byName.get(key) : null;
+        const item = projectInside(feature, selected.point), rate = row?.reported_pct;
+        if (rate != null) observed++;
+        const path = featurePath(item, rate,
+          `${feature.properties.name} · 2026\n${fmt(row?.ballots)} ballots reported · ${pct(rate)}`
+          + (row ? "\nUnofficial reported-ballot fraction, not final turnout" : "\nNo matched county counts"), () => {
+            if (row && $("current-county-select")) {
+              $("current-county-select").value = row.county_id;
+              $("current-county-select").dispatchEvent(new Event("change"));
+            }
+            for (const other of map.detail.querySelectorAll(".selected")) other.classList.remove("selected");
+            path.classList.add("selected"); fit(item.bounds);
+          }, { class: "map-feature substate-feature", "data-geography": feature.properties.key,
+            "data-level": "county", tabindex: "-1" });
+        map.detail.append(path);
+      }
+      map.localLayer = true;
+      map.stateTable ||= { rows: state.table, columns: state.columns };
+      setTable(counties, [["county", "County"], ["ballots", "Ballots reported"],
+        ["denominator", "Source electorate"], ["reported_pct", "Reported-ballot fraction"],
+        ["reported_units", "Precincts reporting"], ["total_units", "Total precincts"], ["quality", "Notes"]]);
+      header("2026 midterms · unofficial administrative counts", `Local participation in ${state.selectedState}`,
+        "Reported ballots / source-defined electorate. Select a county, then a precinct or reporting row in the sidebar.",
+        "Not final turnout. 2024 Census counties provide contextual shapes, not certified 2026 election or precinct boundaries. Source electorate definitions vary by state.");
+      ramp();
+      $("geography-note").textContent = `${state.selectedState} · ${fmt(counties.length)} county observations · `
+        + `${fmt(observed)} uniquely name-matched county rates on 2024 contextual boundaries. `
+        + "Precinct counts are available through the sidebar where verified; precinct polygons are not yet verified. "
+        + ($("map-color").value === "margin" ? "This local layer shows participation, not party margins." : "");
+    }
 async function contextGet(path) {
     const response = await fetch(state.contextPath + path);
     if (!response.ok) throw new Error(`${path}: HTTP ${response.status}`);
@@ -697,7 +857,10 @@ function seriesChart(container, rows, { width = 720, height = 390, compact = fal
       for (const row of observations) {
         const previous = segment.at(-1);
         if (previous) {
-          const change = dimension === "race" && previous.year < 2004 && row.year >= 2004 ? "Race categories changed in 2004."
+          const change = dimension === "local"
+            && (previous.year >= 2008 && previous.year <= 2018) !== (row.year >= 2008 && row.year <= 2018)
+            ? "EAC question changed between ballots counted and ballots cast (whether counted or not)."
+            : dimension === "race" && previous.year < 2004 && row.year >= 2004 ? "Race categories changed in 2004."
             : !["precinct", "local"].includes(dimension) && $("basis").value === "cvap" && previous.year < 1994 && row.year >= 1994
               ? "Citizenship measurement changed in 1994."
               : dimension === "education" && previous.year < 1992 && row.year >= 1992 ? "Education categories changed in 1992."
@@ -902,6 +1065,9 @@ function stateDetail() {
       if (selected.validated_pct != null) panel.append(html("p", "selection-note",
         `${selected.validated_pct.toFixed(1)}% reported ballots / ${selected.denominator_basis.replaceAll("_", " ")} (${fmt(selected.denominator)}). Not a CPS survey rate.`));
     }
+    const navigation = html("div", "substate-detail");
+    navigation.id = "current-local-navigation"; panel.append(navigation);
+    currentNavigation(navigation);
   } else if (selected?.turnout_pct != null && national?.turnout_pct != null) {
     const difference = selected.turnout_pct - national.turnout_pct;
     panel.append(html("p", "selection-note", `${Math.abs(difference).toFixed(1)} percentage points `
@@ -925,7 +1091,7 @@ function stateDetail() {
   const detail = html("div", "substate-detail"); detail.id = "substate-detail"; panel.append(detail);
   const local = html("div", "substate-detail"); local.id = "local-navigation"; panel.append(local);
   const localSelection = html("div", "substate-detail"); localSelection.id = "local-detail"; panel.append(localSelection);
-  localNavigation(local);
+  if (!provisional) localNavigation(local);
   methodsView();
   if (state.selectedState === "North Carolina") {
     const button = html("button", "selection-link", "Explore North Carolina precincts");
@@ -1244,7 +1410,7 @@ function projectInside(feature, point) {
       ? "precinct" : state.local?.years.includes(year) ? "county"
         : state.margins.some(row => row.year === year && row.state_code === code && row.level === "county")
         ? "county" : state.context?.district_result_years.includes(year) ? "district" : "county";
-    const key = `${year}|${code}|${level}|${$("map-color").value}|${zoomLevel >= 2.3}`;
+    const key = `${year}|${code}|${level}|${$("map-color").value}|${$("mode").value}|${zoomLevel >= 2.3}`;
     if (key === state.drillKey) return;
     state.drillKey = key;
     const token = ++state.drillToken;
@@ -1261,11 +1427,15 @@ function projectInside(feature, point) {
     for (const label of map.svg.querySelectorAll(".map-label, .map-callout-line")) label.style.display = zoomLevel >= 2.3 ? "none" : "";
     if (zoomLevel < 2.3) {
       if ($("map-color").value === "margin") marginLegend(year % 4 === 0 ? "President" : "U.S. House aggregate");
-      else if (!isProvisional()) ramp();
+      else if (isProvisional()) legend([["Count reported", "#718ba5"], ["Not yet available", "#edf0f3"]]);
+      else ramp();
       return;
     }
     if (!selected) return;
     const unavailable = text => { $("geography-note").textContent = text; };
+    if (year === 2026 && level === "county" && state.current?.local_file
+      && ["available", "official"].includes($("mode").value))
+      return drawCurrentGeography(map, selected, code, token);
     if (level === "county" && state.local?.years.includes(year)
       && ($("map-color").value !== "margin" || !state.margins.some(row =>
         row.year === year && row.state_code === code && row.level === "county")))

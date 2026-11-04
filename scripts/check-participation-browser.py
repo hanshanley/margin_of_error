@@ -23,13 +23,17 @@ current_ballots = next(row["ballots_cast"] for row in current["reporting"] if ro
 public = data.parents[1]
 context_pointer = json.loads((public / "participation-context/latest.json").read_text())
 context_root = public / "participation-context" / context_pointer["snapshot_id"]
-nationwide = json.loads((context_root / "nationwide/snapshot.json").read_text())
+supplement_pointer = json.loads((public / "participation-current/latest.json").read_text())
+supplement_root = public / "participation-current" / supplement_pointer["snapshot_id"]
+nationwide = json.loads((supplement_root / "snapshot.json").read_text())
+current_local = json.loads((supplement_root / "local.json").read_text())
 margins = json.loads((context_root / "margins.json").read_text())
 methods_pointer = json.loads((public / "participation-methods/latest.json").read_text())
 methods_root = public / "participation-methods" / methods_pointer["snapshot_id"]
 method_states = json.loads((methods_root / "states.json").read_text())
 method_national = json.loads((methods_root / "national.json").read_text())
-local_root = data.parents[2] / "data/participation-local/20261104T204000Z"
+local_pointer = json.loads((public / "participation-local.json").read_text())
+local_root = data.parents[2] / "data" / local_pointer["base_url"].split("/data/", 1)[1]
 selected = next(row for row in records if row["county"] == "WAKE"
                 and row["precinct"] == "01-01" and row["dimension"] == "overall")
 key = selected["county"] + "|" + selected["precinct"]
@@ -457,7 +461,7 @@ with sync_playwright() as p:
     expect(page.locator("#model-summary")).to_contain_text("98")
     page.locator("#participation-cps summary").click()
     expect(page.locator("#cps-summary")).to_contain_text("34 of 34")
-    assert page.locator('#downloads a[download]').count() == 10
+    assert page.locator('#downloads a[download]').count() == 13
     for link in page.locator('#downloads a[download]').all():
         response = context.request.head(link.get_attribute("href") if link.get_attribute("href").startswith("http")
                                         else args.base_url + link.get_attribute("href"))
@@ -550,12 +554,24 @@ with sync_playwright() as p:
     expect(local_page.locator("#local-unit-select")).to_have_value(al["history_key"])
     expect(local_page.locator('.substate-feature[data-level="county"]')).to_have_count(67)
     local_page.locator("#year").select_option("2008")
-    expect(local_page.locator("#local-detail .selection-rate")).to_have_text("Not available")
-    expect(local_page.locator("#local-detail")).to_contain_text("No matched reported registration denominator")
+    al_2008 = next(row for row in al_rows if row["year"] == 2008 and row["history_key"] == al["history_key"])
+    expect(local_page.locator("#local-detail .selection-rate")).to_have_text(f'{al_2008["turnout_pct"]:.1f}%')
     expect(local_page.locator('.substate-feature[data-level="county"]')).to_have_count(67)
+    local_page.locator("#year").select_option("2004")
+    expect(local_page.locator("#geography-note")).to_contain_text("No verified 2004 local boundary collection")
+    expect(local_page.locator(".substate-feature")).to_have_count(0)
+    al_2004 = next(row for row in al_rows if row["year"] == 2004 and row["jurisdiction_id"] == "0100100000")
+    local_page.locator("#local-unit-select").select_option(al_2004["history_key"])
+    expect(local_page.locator("#local-detail .selection-rate")).to_have_text(f'{al_2004["turnout_pct"]:.1f}%')
+    expect(local_page.locator("#local-detail")).to_contain_text("2004/2006 count ballots counted")
+    expect(local_page.locator('#local-history .chart-definition-break[data-from-year="2006"][data-to-year="2008"]')).to_have_count(1)
+    expect(local_page.locator('#local-history .chart-definition-break[data-from-year="2018"][data-to-year="2020"]')).to_have_count(1)
+    expect(local_page.locator("#local-detail")).to_contain_text("Reported voting-method counts")
+    local_page.locator("#local-unit-select").select_option(al["history_key"])
     local_page.locator("#year").select_option("1994")
     expect(local_page.locator("#local-navigation")).to_contain_text("No verified local observations for 1994")
-    expect(local_page.locator("#local-history .chart-point")).to_have_count(6)
+    expect(local_page.locator("#local-history .chart-point")).to_have_count(sum(
+        row["history_key"] == al["history_key"] and row["turnout_pct"] is not None for row in al_rows))
     local_page.locator("#state-select").select_option("Alaska")
     expect(local_page.locator("#local-unit-select option")).to_have_count(2)
     expect(local_page.locator("#local-navigation")).to_contain_text("No verified local observations for 1994")
@@ -574,13 +590,71 @@ with sync_playwright() as p:
     expect(broken_local.locator(".map-feature[data-state]")).to_have_count(51)
     expect(broken_local.locator("#local-navigation")).to_contain_text("No values inferred")
 
+    current_page = context.new_page()
+    current_page.on("pageerror", lambda error: errors.append(str(error)))
+    current_page.goto(url + "?state=New+Mexico&year=2026&mode=official&map-color=turnout&map-level=county")
+    nm_county = next(row for row in current_local["counties"] if row["state_code"] == "NM" and row["county"] == "Bernalillo")
+    nm_unit = next(row for row in current_local["precincts"] if row["state_code"] == "NM"
+                   and row["county_id"] == nm_county["county_id"] and row["reported_pct"] is not None)
+    expect(current_page.locator("#current-county-select option")).to_have_count(34)
+    current_page.locator("#current-county-select").select_option(nm_county["county_id"])
+    current_page.locator("#current-unit-select").select_option(nm_unit["unit_key"])
+    expect(current_page.locator("#current-unit-detail .selection-rate")).to_have_text(f'{nm_unit["ballots"]:,}')
+    expect(current_page.locator("#current-unit-detail")).to_contain_text(f'{nm_unit["reported_pct"]:.1f}%')
+    expect(current_page.locator("#current-unit-detail")).to_contain_text("eligible voters source definition")
+    current_page.locator('[data-state="New Mexico"]').click()
+    expect(current_page.locator('.substate-feature[data-level="county"]')).to_have_count(33)
+    expect(current_page.locator("#geography-note")).to_contain_text("33 uniquely name-matched")
+    current_page.locator('.substate-feature[data-geography="35001"]').dispatch_event("click")
+    expect(current_page.locator("#current-county-select")).to_have_value(nm_county["county_id"])
+    expect(current_page.locator("#current-county-detail .selection-rate")).to_have_text(f'{nm_county["ballots"]:,}')
+    current_page.locator("#map-reset").click()
+    expect(current_page.locator("#key")).to_contain_text("Count reported")
+    current_page.locator('[data-state="New Mexico"]').click()
+    current_page.locator("#mode").select_option("mail_returned")
+    expect(current_page.locator("#title")).not_to_have_text("Local participation in New Mexico")
+    current_page.locator("#mode").select_option("official")
+    current_page.locator("#state-select").select_option("Nebraska")
+    ne_unit = next(row for row in current_local["precincts"] if row["state_code"] == "NE" and row["unit_kind"] == "precinct")
+    current_page.locator("#current-county-select").select_option(ne_unit["county_id"])
+    current_page.locator("#current-unit-select").select_option(ne_unit["unit_key"])
+    expect(current_page.locator("#current-unit-detail .selection-rate")).to_have_text(f'{ne_unit["ballots"]:,}')
+    expect(current_page.locator("#current-unit-detail")).to_contain_text("Not available")
+    expect(current_page.locator("#current-unit-detail")).to_contain_text("County allocation does not reconcile")
+    current_page.locator("#state-select").select_option("South Dakota")
+    duplicate = [row for row in current_local["precincts"] if row["state_code"] == "SD"
+                 and row["unit"] == "Sacred Heart Church Hall"]
+    assert len(duplicate) == 2
+    current_page.locator("#current-county-select").select_option(duplicate[0]["county_id"])
+    option_labels = []
+    for row in duplicate:
+        current_page.locator("#current-unit-select").select_option(row["unit_key"])
+        expect(current_page.locator("#current-unit-detail .selection-rate")).to_have_text(f'{row["ballots"]:,}')
+        expect(current_page.locator("#current-unit-detail")).to_contain_text("vote center")
+        expect(current_page.locator("#current-unit-detail")).to_contain_text("Not available")
+        option_labels.append(current_page.locator("#current-unit-select option:checked").inner_text())
+    assert len(set(option_labels)) == 2
+    current_page.locator("#state-select").select_option("North Carolina")
+    current_page.locator("#current-county-select").select_option(label="WAKE")
+    expect(current_page.locator("#current-unit-navigation")).to_contain_text("County counts only")
+    mobile.goto(url + "?state=New+Mexico&year=2026&mode=official")
+    mobile.locator("#current-county-select").select_option(nm_county["county_id"])
+    mobile.locator("#current-unit-select").select_option(nm_unit["unit_key"])
+    expect(mobile.locator("#current-unit-detail .selection-rate")).to_have_text(f'{nm_unit["ballots"]:,}')
+    no_overflow(mobile)
+    screenshot(mobile, "participation-2026-mobile-precinct-counts.png")
+    broken_local_current = browser.new_page()
+    broken_local_current.route("**/participation-current/**/local.json", lambda route: route.abort())
+    broken_local_current.goto(url + "?state=New+Mexico&year=2026")
+    expect(broken_local_current.locator("#selection-panel")).to_contain_text("No local counts inferred")
+
     offline = browser.new_page(java_script_enabled=False)
     offline.goto(url)
     expect(offline.locator("#national-snapshot")).to_be_visible()
     expect(offline.locator("#downloads")).to_be_visible()
     assert offline.locator("#national-snapshot tbody tr").count() == 13
     assert offline.locator("#method-reference tbody tr").count() == 15
-    assert offline.locator('#downloads a[download]').count() == 10
+    assert offline.locator('#downloads a[download]').count() == 13
     broken = browser.new_page()
     broken.route("**/data/states.json", lambda route: route.abort())
     broken.goto(url)
@@ -602,6 +676,7 @@ with sync_playwright() as p:
     broken_current = browser.new_page()
     broken_current.route("**/nationwide/latest.json", lambda route: route.abort())
     broken_current.route("**/nationwide/snapshot.json", lambda route: route.abort())
+    broken_current.route("**/participation-current/**/snapshot.json", lambda route: route.abort())
     broken_current.goto(url)
     expect(broken_current.locator(".map-feature[data-state]")).to_have_count(51)
     broken_current.locator("#year").select_option("2026")

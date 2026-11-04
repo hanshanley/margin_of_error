@@ -37,10 +37,16 @@ type OfficialRow = { state_code: string; ballots: number; source_url: string; de
 const contextPointerPath = resolve('public/participation-context/latest.json');
 const contextPointer = existsSync(contextPointerPath) ? JSON.parse(readFileSync(contextPointerPath, 'utf8')) : null;
 const nationwidePointer = JSON.parse(readFileSync(resolve(dataRoot, 'data/nationwide/latest.json'), 'utf8'));
-const nationwideRoot = contextPointer ? `/participation-context/${contextPointer.snapshot_id}/` : '/voter-participation/data/';
-const nationwideDirectory = contextPointer ? 'nationwide/' : `nationwide/${nationwidePointer.snapshot_id}/`;
+const supplementPointerPath = resolve('public/participation-current/latest.json');
+const supplementPointer = existsSync(supplementPointerPath) ? JSON.parse(readFileSync(supplementPointerPath, 'utf8')) : null;
+const nationwideRoot = supplementPointer ? '/participation-current/'
+	: contextPointer ? `/participation-context/${contextPointer.snapshot_id}/` : '/voter-participation/data/';
+const nationwideDirectory = supplementPointer ? `${supplementPointer.snapshot_id}/`
+	: contextPointer ? 'nationwide/' : `nationwide/${nationwidePointer.snapshot_id}/`;
 const nationwidePath = nationwideRoot + nationwideDirectory;
 const nationwide = JSON.parse(readFileSync(resolve('public', nationwidePath.slice(1), 'snapshot.json'), 'utf8'));
+type LocalAudit = { state_code: string; counties: number; source_rows: number; precinct_rows: number; rows_with_rate: number };
+const localAudit: LocalAudit[] = nationwide.local_audit ?? [];
 const earlyFor = (state: string, mode: string): EarlyRow | undefined => nationwide.early_voting.find(
 	(row: EarlyRow) => row.state_code === state && row.mode === mode && row.geography_level === 'state');
 const officialFor = (state: string): OfficialRow | undefined => nationwide.reporting.find(
@@ -130,7 +136,8 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 			<details id="notice-panel" class="explorer-notes" hidden><summary>Data notes for this view</summary>
 				<p id="notice" role="status"></p></details>
 			<p class="participation-scope" id="coverage-note">State charts use Census survey estimates.
-				Precinct drill-down is currently available only for North Carolina; it is not a nationwide precinct map.</p>
+				Historical precinct maps cover North Carolina; verified 2026 precinct count tables cover
+				New Mexico and reported locations in Nebraska and South Dakota. This is not a nationwide precinct map.</p>
 			<section id="voting-methods" class="voting-methods" aria-labelledby="voting-methods-title" hidden>
 				<div class="voting-methods-heading"><div><p class="eyebrow">How ballots were cast</p>
 					<h2 id="voting-methods-title">Voting methods</h2></div>
@@ -329,6 +336,23 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 				Undated or all-zero demographic responses are not evidence that no members of a group voted.
 				Registered, active-registered and estimated-eligible voter denominators remain distinct.
 				No 2026 education or national precinct turnout is inferred.</p>
+			{localAudit.length > 0 && <section id="current-local-coverage">
+				<h3>2026 county and precinct reporting</h3>
+				<p>Select 2026 and a state, then zoom into counties or use the county/precinct selectors.
+					Counts are unofficial saved observations, not certified turnout. County shapes are
+					2024 Census context; verified 2026 precinct polygons are not yet available here.</p>
+				<div class="table-wrap"><table><caption>Audited source rows; reporting locations are not uniformly residential precincts.</caption>
+					<thead><tr><th>State</th><th>Counties</th><th>Source rows</th><th>Precinct-labeled rows</th><th>Rows with validated fractions</th></tr></thead>
+					<tbody>{localAudit.map(row => <tr data-local-current-state={row.state_code}>
+						<th scope="row">{row.state_code}</th><td>{formatNumber(row.counties)}</td>
+						<td>{formatNumber(row.source_rows)}</td><td>{formatNumber(row.precinct_rows)}</td>
+						<td>{formatNumber(row.rows_with_rate)}</td></tr>)}</tbody>
+				</table></div>
+				<p>New Mexico source rows reconcile to each county. Nebraska precinct allocations do not reconcile,
+					so individual rates are withheld. South Dakota vote centers and special rows may repeat
+					the county electorate; those are counts only. All such rows and caveats remain in the downloads.
+					North Carolina currently has county counts, not a verified 2026 precinct table.</p>
+			</section>}
 			<p>Sources: <a href="https://www.civicapi.org/early-vote">civicAPI public aggregate early-vote tracker</a>{' '}
 				and verified state election-office administrative reports. civicAPI is not a certified
 				government turnout series. The <a href={nationwide.reference_not_ingested.url}>NYT 2026 tracker</a>{' '}
@@ -339,6 +363,9 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 				<a id="national-current-demographics" href={`${nationwidePath}demographics.csv`} download>All demographic observations (CSV)</a>
 				<a id="national-current-reporting" href={`${nationwidePath}reporting.csv`} download>All administrative ballots (CSV)</a>
 				<a id="national-current-coverage" href={`${nationwidePath}coverage.csv`} download>All 51 jurisdictions (CSV)</a>
+				{localAudit.length > 0 && <><a href={`${nationwidePath}counties.csv`} download>All 2026 county observations (CSV)</a>
+					<a href={`${nationwidePath}precincts.csv`} download>All 2026 precinct / reporting rows (CSV)</a>
+					<a href={`${nationwidePath}checksums.json`}>2026 download checksums (JSON)</a></>}
 			</div>
 		</section>
 
@@ -417,10 +444,11 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 					active and inactive registrations. Voter-history totals differ from official ballots cast;
 					the reconciliation download preserves both.</dd>
 				<dt>Administrative local participation</dt><dd>EAC-reported participants divided by reported total
-					registrations, including active and inactive records. These are county, municipal or statewide
+					registrations, with source-specific active/inactive rules. These are county, municipal or statewide
 					reporting offices, not uniformly precincts or an eligible-population denominator.
-					Counts cover all 50 states and D.C. in 2008–2024; registration-rate matches currently cover
-					2014–2024. Unmatched boundaries and earlier missing denominators are not filled.</dd>
+					Counts extend to 2004–2024. The 2004/2006 harmonized totals count ballots counted,
+					while later cast-ballot definitions differ. Unmatched boundaries and missing denominators
+					are not filled; no 2004/2006 election-year map is substituted.</dd>
 			</dl>
 			<p>National observations extend to 1964 and state observations to 1972, where supported.
 				Citizen-based education and sex estimates cover 2000–2024; older education and sex
@@ -433,8 +461,8 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 				Matching a precinct ID is not independent certification of election-day boundaries
 				or proof that a precinct stayed unchanged. NC education is not available.</p>
 			<p>Missing participation, inconsistent counts, and zero denominators have no displayed rate.
-				Unmatched records stay in the downloads. Other states’ precinct sources are{' '}
-				<strong>not assessed</strong>, not declared unavailable. State-level CPS estimates
+				Unmatched records stay in the downloads. Outside the explicitly listed precinct sources,
+				additional precinct inputs remain unverified, not declared unavailable. State-level CPS estimates
 				do not fill those gaps.</p>
 			<div id="methods"></div>
 		</details>
@@ -456,6 +484,9 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 				<a href={`${localPointer.base_url}observations.csv.gz`} download>Complete nationwide local participation observations (CSV · gzip)</a>
 				<a href={`${localPointer.base_url}coverage.json`}>Every state and election year: local-data coverage (JSON)</a>
 				<a href={`${localPointer.base_url}checksums.json`}>Local data and boundary checksums (JSON)</a>
+				{localAudit.length > 0 && <><a href={`${nationwidePath}complete-snapshot.zip`} download>Complete 2026 observations + original sources (ZIP)</a>
+					<a href={`${nationwidePath}counties.csv`} download>All 2026 county counts (CSV)</a>
+					<a href={`${nationwidePath}precincts.csv`} download>All 2026 precinct / reporting-row counts (CSV)</a></>}
 			</div>
 		</section>
 		{methodsPointer && <details id="method-reference" class="participation-reference participation-secondary" data-section="methods">

@@ -87,7 +87,7 @@ not as an in-page chart. Keep it outside chart recoloring and the pinned researc
 The page separates citizen/resident CPS denominators from NC registered-voter
 participation. National/state series are not nationwide precinct data. NC has seven
 election-year boundary snapshots; missing geometry never borrows a different year.
-Other jurisdictions' precinct participation remains explicitly unassessed. A server-rendered 2024
+Additional precinct sources are identified explicitly rather than inferred. A server-rendered 2024
 national table, methods, sources, and complete downloads work without JavaScript.
 This is an analysis tool, not a new essay, so it needs no personal-site writing entry.
 Publication was explicitly approved on November 4, 2026. Publish the reviewed
@@ -158,13 +158,15 @@ or a stable electorate; no boundary crosswalk is claimed. Missing years and
 small/inconsistent rates are not filled. Other states still lack verified
 precinct participation inputs, and county/district context is not labeled as precinct turnout.
 
-The nationwide local supplement contains 57,952 EAC reporting-unit observations for
-all 50 states and D.C., every even election year from 2008 through 2024. These are
+The nationwide local supplement contains 67,525 EAC reporting-unit observations for
+all 50 states and D.C., every even election year from 2004 through 2024. These are
 county, municipal and statewide administrative units, not nationwide precincts.
 The map uses matching election-year Census boundaries; Wisconsin and New England
 use county subdivisions where available. Selection exposes participation,
-registrations and the complete available unit history. Rates currently match
-registration records for 2014–2024; earlier unmatched denominators remain missing.
+registrations and the complete available unit history. Registration matches now
+include 2008 A1 and separate 2010/2012 NVRA sources, including the revised 2010
+Texas and Illinois files. Source-specific active/inactive definitions and comments
+are retained; unmatched or invalid denominators remain missing.
 Alaska's statewide office is never allocated into boroughs. Illinois county offices
 and Jackson County, Missouri, are not painted onto entire counties because separately
 administered cities can change the reporting area. Unmatched and ambiguous units
@@ -173,10 +175,10 @@ remain in the complete dataset and sidebar, not silently discarded.
 `scripts/build-local-participation.py` verifies original EAC checksums, joins
 registrations only on exact source identity, and records Census-source checksums.
 The committed compressed state and geometry shards are under
-`data/participation-local/20261104T204000Z/`; `checksums.json` covers every output.
+`data/participation-local/20261104T220000Z/`; `checksums.json` covers every output.
 `public/participation-local.json` pins the runtime to their immutable Git commit on
 raw GitHub, whose browser CORS is verified in interaction checks. This avoids
-duplicating another 60 MB in the size-limited Pages artifact. Browsers decompress
+duplicating another 74 MB in the size-limited Pages artifact. Browsers decompress
 the gzip JSON shards; a failed fetch/decompression leaves an explicit error and
 the complete CSV-gzip download available. No original staged research export changes.
 The CSV contains every observation, source note, reporting basis and missingness
@@ -184,6 +186,36 @@ flag, not merely coverage metadata. `coverage.json` includes every state and
 historical election-year combination, including unsupported years and provisional
 2026. A history key standardizes source names alongside the reporting ID, but
 does not establish stable boundaries. National precinct ingestion remains unfinished.
+
+The 2004/2006 extension uses the EAC's September 2026 V2 jurisdiction-level series,
+not the county-collapsed file that equally allocates some cross-county jurisdictions.
+The original 136 MB workbook is preserved in the immutable
+`participation-sources-20261104-late` release. Its URL, size and SHA-256 are in the
+local index; the unmodified guide and all 2004/2006 source columns are in `originals/`.
+No election-year geometry is verified for these two years, so only counts,
+source-method detail and reporting-unit histories are exposed. These years count
+ballots counted; the 2008–2018 EAC question counts cast ballots whether counted
+or not. Dashed chart connectors identify definition transitions.
+
+The current 2026 supplement is separately pinned by
+`public/participation-current/latest.json`. Refresh it with the existing research
+environment and `scripts/collect-current-participation.py --output
+public/participation-current/NEW_UTC_TIMESTAMP --previous
+public/participation-current/PREVIOUS_TIMESTAMP`. The collector refreshes all
+50 states/DC, retains complete previous source datasets after failed/regressed
+sources, and only publishes its pointer after all local audits pass.
+The saved local coverage is 292 counties (NC, NE, NM, SD) and 4,290 source rows
+(NE, NM, SD), not nationwide precinct coverage. County sums reconcile to the
+same-capture state totals; individual fractions additionally require both ballot
+and electorate row sums to reconcile. Nebraska rows fail that allocation test;
+South Dakota vote centers and special rows are counts only. Duplicate source
+names retain distinct snapshot-local row ordinals, not invented stable IDs.
+New Mexico's electorate retains its source label, "Eligible Voters"; it is not
+silently treated as registration or Census CVAP. County shading uses explicitly
+contextual 2024 Census geometry with unique state/name matches. No 2026 precinct
+polygons or longitudinal precinct crosswalks are claimed. Complete ZIPs include
+all normalized datasets, county/precinct CSVs and raw source captures; the smaller
+browser JSON omits only duplicated bulk datasets.
 
 The reviewed supplements live in `public/participation-context/` and
 `public/participation-methods/`; neither modifies the pinned historical export.

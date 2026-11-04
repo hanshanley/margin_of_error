@@ -17,6 +17,7 @@ def module(name):
 methods = module("collect-voting-methods")
 context = module("collect-participation-context")
 local = module("build-local-participation")
+current_local = module("collect-current-participation")
 
 
 def test_local_rates_require_exact_identity_and_consistent_denominators():
@@ -53,6 +54,73 @@ def test_registration_ingestion_preserves_comments_missing_flags_and_exact_names
     assert rows[("AL", "0100100000", "Other office")]["registered"] is None
     with pytest.raises(ValueError, match="Duplicate registration identity"):
         local.registration_records(source + source.splitlines(keepends=True)[1], "source.csv")
+
+
+def test_2008_registration_field_keeps_source_definition_and_unavailable_flag():
+    source = (b"JurisID,JurisName,STATE_,A1,A1_NotAvailable,A1_Comments,A2\n"
+              b"0100100000,Autauga,AL,100,,Source note,only active voters\n"
+              b"0100300000,Baldwin,AL,90,X,Unavailable,both active and inactive\n")
+    rows = local.registration_records(source, "source.csv")
+    assert rows[("AL", "0100100000", "Autauga")]["registered"] == 100
+    assert rows[("AL", "0100100000", "Autauga")]["registration_definition"] == "only active voters"
+    assert rows[("AL", "0100100000", "Autauga")]["registration_comment"] == "Source note"
+    assert rows[("AL", "0100300000", "Baldwin")]["registered"] is None
+
+
+def test_state_only_registration_override_requires_matching_fips_and_ignores_blank_rows():
+    source = b"JurisID,JurisName,A1a\n4800100000,Anderson,100\n,,\n"
+    rows = local.registration_records(source, "source.csv", ("TX", "48"))
+    assert rows[("TX", "4800100000", "Anderson")]["registered"] == 100
+    with pytest.raises(ValueError, match="different state"):
+        local.registration_records(source.replace(b"48001", b"17001"), "source.csv", ("TX", "48"))
+
+
+def portal_fixture(monkeypatch, rows, county_name="Bernalillo", ballots=80, denominator=100):
+    monkeypatch.setitem(current_local.PORTALS, "NM", ("page", "service", 1))
+    page = ('<input id="hidElectionDate" value="11/3/2026" />'
+            '<input id="hidElectionType" value="General" />'
+            '<div class="provisional-results-wrapper"><h1>' + county_name + '</h1>'
+            '<div id="countyturnout02"></div>')
+    for name, count, electorate in rows:
+        page += (f'<div class="county-precinct">{name}</div>'
+                 f'<div class="county-cast"><span>{count}</span></div>'
+                 f'<div class="county-counted"><span>{electorate}</span></div>')
+    payload = [{"CountyID": "02", "CountyName": county_name, "calcVoterTurnout": str(ballots),
+                "Voters": denominator, "PrecinctsReporting": len(rows), "TotalPrecincts": len(rows),
+                "CountyPercent": ballots / denominator, "CurrentDateTime": None}]
+    official = {"ballots": ballots, "denominator": denominator, "denominator_basis": "eligible_voters_source_definition",
+                "source_update_label": "11/4/2026"}
+    return page, payload, "NM", official, {"source_url": "source"}
+
+
+def test_2026_precinct_rates_require_reconciled_county_counts(monkeypatch):
+    inputs = portal_fixture(monkeypatch, [("PCT 1", 50, 60), ("PCT 2", 30, 40)])
+    counties, rows = current_local.parse_portal(*inputs)
+    assert counties[0]["rows_reconcile"]
+    assert rows[1]["reported_pct"] == 75
+    assert rows[1]["denominator_basis"] == "eligible_voters_source_definition"
+    page, payload, code, official, provenance = inputs
+    bad = page.replace("<span>30</span>", "<span>20</span>")
+    counties, rows = current_local.parse_portal(bad, payload, code, official, provenance)
+    assert not counties[0]["rows_reconcile"]
+    assert all(row["reported_pct"] is None for row in rows)
+    with pytest.raises(ValueError, match="statewide totals"):
+        current_local.parse_portal(page, payload, code, {**official, "ballots": 81}, provenance)
+    with pytest.raises(ValueError, match="election identity"):
+        current_local.parse_portal(page.replace("11/3/2026", "11/5/2024"), payload, code, official, provenance)
+
+
+def test_vote_centers_duplicate_names_and_countywide_rows_are_not_precinct_rates(monkeypatch):
+    inputs = portal_fixture(monkeypatch, [("Church Hall", 0, 100), ("Church Hall", 80, 100)],
+                            county_name="Oglala Lakota (Vote Center)")
+    counties, rows = current_local.parse_portal(*inputs)
+    assert not counties[0]["rows_reconcile"]
+    assert len({row["unit_key"] for row in rows}) == 2
+    assert all(row["unit_kind"] == "vote_center" and row["reported_pct"] is None for row in rows)
+    inputs = portal_fixture(monkeypatch, [("PCT 1", 80, 100), ("Countywide", 0, 100)])
+    _, rows = current_local.parse_portal(*inputs)
+    assert rows[1]["unit_kind"] == "countywide"
+    assert all(row["reported_pct"] is None for row in rows)
 
 
 def eavs(year, rows):

@@ -1,0 +1,38 @@
+{
+  "coverage.csv": {
+    "bytes": 6999,
+    "sha256": "dc8a2fc6b67395e749415ce64777a3d5998bc866fba0e9df942e73c746ba1a21"
+  },
+  "precincts.csv": {
+    "bytes": 2003380,
+    "sha256": "a46b43b0276ee46eca45217da9e13872194316c5b9fdd9cbf1de2fad0124786c"
+  },
+  "snapshot.json": {
+    "bytes": 2595019,
+    "sha256": "3686633a86c1ca71890015bf98e690ed48540e519d3312a07251bca5a5c70578"
+  },
+  "counties.csv": {
+    "bytes": 122092,
+    "sha256": "965fbf7d9748e792376e29aa6824a649575ee87ca485f64735b731b8c051fb00"
+  },
+  "reporting.csv": {
+    "bytes": 1918,
+    "sha256": "2a10a90c0f9ec654aa49c100262f2256d0d1723d33a25a9c82089c4d58c707e7"
+  },
+  "complete-snapshot.zip": {
+    "bytes": 1288070,
+    "sha256": "3734886ed3c5cbbc406f6adacd60dff2b1b543c42546fc39e89e46da1220dc08"
+  },
+  "demographics.csv": {
+    "bytes": 32170,
+    "sha256": "6725f9d6bdb246db00f03378f1e657e4bdfee3608e9ecf42b2a4851b33a1528c"
+  },
+  "local.json": {
+    "bytes": 3444515,
+    "sha256": "0128bda2273d19a9ed9afd620a509d858374add4ec4ca84e80dfd0c69c1de04f"
+  },
+  "early_voting.csv": {
+    "bytes": 1156534,
+    "sha256": "628e7bbf3676374e29be8a388de487d9a5c4be77269bc9b9011df74d669f671b"
+  }
+}
