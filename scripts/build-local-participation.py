@@ -16,6 +16,7 @@ from pathlib import Path
 
 import requests
 import shapefile
+import openpyxl
 
 
 spec = importlib.util.spec_from_file_location(
@@ -51,24 +52,33 @@ def reported(row, field):
     return methods.count(row.get(field))
 
 
-def registration_records(content, name):
+def registration_records(content, name, source_state=None):
     records = {}
     for _, values in methods.datasets(content, name):
         header_index = next((i for i, row in enumerate(values[:20])
-                             if any(str(v).lower() in ("a1a", "qa1a") for v in row)), None)
+                             if any(str(v).lower() in ("a1", "a1a", "qa1a") for v in row)), None)
         if header_index is None:
             continue
         fields = [str(value).lower() for value in values[header_index]]
         for values_row in values[header_index + 1:]:
             row = dict(zip(fields, values_row))
             key = identity(row)
+            if not key[1]:
+                continue
+            if source_state and not key[0]:
+                code, fips = source_state
+                if not re.fullmatch(fips + r"\d{8}", key[1]):
+                    raise ValueError(f"Registration source contains a different state: {key}")
+                key = code, key[1], key[2]
             if not key[0] or not key[1]:
                 continue
-            field = "qa1a" if "qa1a" in row else "a1a"
+            field = next(field for field in ("qa1a", "a1a", "a1") if field in row)
             record = {
                 "registered": reported(row, field),
                 "registration_field": field,
-                "registration_comment": str(row.get("a1comments") or row.get("qa1_comment") or ""),
+                "registration_comment": str(row.get("a1comments") or row.get("a1_comments")
+                                            or row.get("qa1_comment") or ""),
+                "registration_definition": str(row.get("a2") or row.get("qa2") or ""),
             }
             if key in records:
                 raise ValueError(f"Duplicate registration identity: {key}")
@@ -83,6 +93,7 @@ def local_record(row, registrations):
     key = row["state_code"], row["jurisdiction_id"], row["jurisdiction"]
     result.update(registrations.get(key, {
         "registered": None, "registration_field": None, "registration_comment": "",
+        "registration_definition": "",
     }))
     participants, registered = result["total_participation"], result["registered"]
     quality = []
@@ -98,8 +109,104 @@ def local_record(row, registrations):
         100 * participants / registered
         if participants is not None and registered and participants <= registered else None)
     result["quality"] = quality
-    result["registration_basis"] = "Reported total registrations (active and inactive), not eligible population."
+    result["registration_definition"] = result.get("registration_definition", "")
+    result["registration_basis"] = "Source-reported registrations; active/inactive rules and dates vary. Not eligible population."
     return result
+
+
+REGISTRATION_SOURCES = {
+    "2010": ("EAC2010registration.source", "input.xls",
+             "https://www.eac.gov/sites/default/files/eac_assets/1/6/2010EAVS_A_Final.xls"),
+    "2010-TX": ("EAC2010TXregistration.source", "input.xls",
+                "https://www.eac.gov/sites/default/files/eac_assets/1/28/TX_2010%20NVRA_SectionA_Resubmitted.xls"),
+    "2010-IL": ("EAC2010ILregistration.source", "input.xls",
+                "https://www.eac.gov/sites/default/files/eac_assets/1/28/IL_2010%20NVRA%20Data%20(UPDATED)3.xls"),
+    "2012": ("EAC2012registration.source", "input.xlsx",
+             "https://www.eac.gov/sites/default/files/eac_assets/1/1/2012EAVS_NVRAData.xlsx"),
+}
+TIME_SERIES = "https://www.eac.gov/sites/default/files/2026-09/EAVS_Time_Series_2004_2024.xlsx"
+
+
+def historical_extensions(cache, output, codes):
+    originals = output / "originals"
+    originals.mkdir(parents=True, exist_ok=True)
+    registrations, sources = {}, {}
+    for key, (filename, kind, url) in REGISTRATION_SOURCES.items():
+        path = cache / filename
+        if not path.exists():
+            response = requests.get(url, timeout=(15, 120))
+            response.raise_for_status()
+            path.write_bytes(response.content)
+        content = path.read_bytes()
+        registrations[key] = registration_records(content, kind, ("TX", "48") if key == "2010-TX" else None)
+        sources[key] = {"url": url, "sha256": digest(content), "bytes": len(content)}
+        (originals / (key + "-" + kind)).write_bytes(content)
+    for code in ("TX", "IL"):
+        registrations["2010"] = {key: value for key, value in registrations["2010"].items() if key[0] != code}
+        corrected = registrations["2010-" + code]
+        if not corrected or {key[0] for key in corrected} != {code}:
+            raise ValueError(f"Unrecognized revised 2010 registration source for {code}")
+        registrations["2010"].update(corrected)
+    path = cache / "EAC-jurisdiction-timeseries.xlsx"
+    sources["2004-2006"] = {
+        "url": TIME_SERIES, "sha256": digest(path.read_bytes()), "bytes": path.stat().st_size,
+        "archived_url": "https://github.com/hanshanley/margin_of_error/releases/download/participation-sources-20261104-late/EAC-jurisdiction-timeseries.xlsx",
+        "used_rows": "originals/eac-2004-2006-all-source-fields.csv.gz",
+        "guide_url": "https://www.eac.gov/sites/default/files/2026-09/EAVS_Time_Series_User_Guide_v2.1.docx",
+    }
+    (originals / "eac-timeseries-guide.docx").write_bytes((cache / "EAC-timeseries-guide.docx").read_bytes())
+    book = openpyxl.load_workbook(path, read_only=True, data_only=True)
+    values = iter(book.active.values)
+    header = next(values)
+    rows = []
+    with gzip.open(originals / "eac-2004-2006-all-source-fields.csv.gz", "wt", newline="") as stream:
+        writer = csv.writer(stream)
+        writer.writerow(header)
+        for values_row in values:
+            source = dict(zip(header, values_row))
+            if not source.get("Year"):
+                continue
+            year, code = int(source["Year"]), source["State_Abbr"]
+            if year not in (2004, 2006) or code not in codes:
+                continue
+            writer.writerow(values_row)
+            identifier = normalized_id(source["FIPSCode"])
+            name = source["Jurisdiction_Name"]
+            methods_data = {mode: methods.count(source.get("turnout_" + suffix))
+                            for mode, suffix in (("election_day", "ed"), ("early_in_person", "ev"),
+                                                 ("domestic_absentee", "mail"), ("uocava", "uocava"),
+                                                 ("provisional", "prov"), ("other", "oth"), ("all_mail", "allmail"))}
+            total = methods.count(source["turnout_tot"])
+            if total == 0 and not any(value is not None for value in methods_data.values()):
+                total = None
+            observation = {
+                "year": year, "state_code": code, "jurisdiction_id": identifier,
+                "jurisdiction": name, "total_participation": total,
+                "statewide_unit": code == "AK" or identifier.zfill(10).endswith("00000000"),
+                "supplemental_unit": name.upper().startswith("UOCAVA"),
+                "methods": methods_data, "source_url": TIME_SERIES,
+                "source_details": {
+                    "basis": "EAC V2 harmonized counted-ballot total, not the later cast-ballot definition.",
+                    "total_field": "2a" if year == 2004 else "Q34Total",
+                    "registration_field": "1a+1b" if year == 2004 else "Q022006Total",
+                    "turnout_comment": source.get("turnout_com"), "registration_comment": source.get("regist_com"),
+                    "raw_total": source["turnout_tot"], "raw_registration": source["regist_tot"],
+                    "harmonization": "EAC jurisdiction-level series; no county-collapse equal allocations used.",
+                },
+            }
+            registration = {
+                "registered": methods.count(source["regist_tot"]),
+                "registration_field": "1a+1b" if year == 2004 else "Q022006Total",
+                "registration_comment": str(source.get("regist_com") or ""),
+                "registration_definition": "EAC harmonized source registration total; jurisdiction rules vary.",
+            }
+            row = local_record(observation, {(code, identifier, name): registration})
+            row["quality"].append("2004/2006 count ballots counted; definitions differ from later cast-ballot totals. EAC harmonized totals can reflect incomplete component reporting.")
+            rows.append(row)
+    book.close()
+    if {r["year"] for r in rows} != {2004, 2006}:
+        raise ValueError("Missing historical extension years")
+    return rows, registrations, sources
 
 
 def name_key(value):
@@ -245,7 +352,7 @@ def collect_geometry(output, cache, years, state_features, research):
     return geometry, sources, failures
 
 
-def build(output, cache=None, research=Path("../voter-participation"), reuse_geometry=False):
+def build(output, cache=None, research=Path("../voter-participation"), reuse_geometry=False, supplement_cache=None):
     root = Path("public/participation-methods")
     root /= json.loads((root / "latest.json").read_text())["snapshot_id"]
     index = json.loads((root / "index.json").read_text())
@@ -262,6 +369,10 @@ def build(output, cache=None, research=Path("../voter-participation"), reuse_geo
     years = sorted({row["year"] for row in state_rows} | {2026})
     rows = []
     provenance = {}
+    supplemental_registrations, supplemental_sources = {}, {}
+    if supplement_cache:
+        earlier, supplemental_registrations, supplemental_sources = historical_extensions(supplement_cache, output, codes)
+        rows.extend(earlier)
     with zipfile.ZipFile(io.BytesIO(source_bytes)) as archive:
         for year in index["state_years"]:
             filename = f"eavs-{year}." + ("csv" if year == 2018 else "zip")
@@ -275,12 +386,14 @@ def build(output, cache=None, research=Path("../voter-participation"), reuse_geo
             if digest(observations_bytes) != checksums[observations_path.name]:
                 raise ValueError(f"Changed normalized participation: {observations_path.name}")
             registrations = registration_records(original, filename)
+            registrations.update(supplemental_registrations.get(str(year), {}))
             observations = json.loads(observations_bytes)
             joined = [local_record(row, registrations) for row in observations]
             rows.extend(joined)
             print(year, "units", len(joined), "states", len({r["state_code"] for r in joined}),
                   "matched registration rates", sum(r["turnout_pct"] is not None for r in joined),
                   flush=True)
+    source_years = sorted({row["year"] for row in rows})
     grouped = defaultdict(list)
     for row in rows:
         row["history_key"] = row["jurisdiction_id"].zfill(10) + "|" + name_key(row["jurisdiction"])
@@ -303,7 +416,7 @@ def build(output, cache=None, research=Path("../voter-participation"), reuse_geo
         geo, geo_sources, geo_failures = collect_geometry(
             output, cache, index["state_years"], state_features, research) if cache else ({}, {}, [])
     fips = {f["properties"]["STUSAB"]: f["properties"]["STATE"] for f in state_features}
-    for year in index["state_years"]:
+    for year in source_years:
         for code in codes:
             features = {}
             for level in ("county", "municipality"):
@@ -358,13 +471,16 @@ def build(output, cache=None, research=Path("../voter-participation"), reuse_geo
     write_json(output / "index.json", {
         "source_snapshot_id": index["snapshot_id"], "sources": provenance,
         "collector_sha256": digest(Path(__file__).read_bytes()),
-        "state_codes": codes, "years": index["state_years"], "records": len(rows),
+        "state_codes": codes, "years": source_years, "records": len(rows),
+        "supplemental_sources": supplemental_sources,
         "coverage": "coverage.json",
         "geometry": geo, "geometry_sources": geo_sources, "geometry_failures": geo_failures,
         "notes": [
             "EAC county, municipal and statewide reporting units are not nationwide precinct data.",
             "Only exact state, reporting-unit ID and name matches join registrations to participation.",
-            "A1a/QA1a is reported total registration, not citizen voting-age population.",
+            "A1 (2008), QA1a and A1a are source-reported registrations, not citizen voting-age population. Early active/inactive definitions vary and are preserved.",
+            "2004/2006 use EAC V2 jurisdiction-level harmonized counts, not the equally allocated county-collapse file.",
+            "No 2004/2006 election-year geometry is substituted; reporting-unit counts and histories remain accessible.",
             "Earlier unmatched denominators remain missing; observations are never interpolated.",
             "Reporting boundaries, registration dates and participation measurement can change.",
             "Illinois counties and Jackson County MO are not shaded because separate city election offices can exclude part of the Census county.",
@@ -386,5 +502,6 @@ if __name__ == "__main__":
     parser.add_argument("--geometry-cache", type=Path)
     parser.add_argument("--research", type=Path, default=Path("../voter-participation"))
     parser.add_argument("--reuse-geometry", action="store_true")
+    parser.add_argument("--supplement-cache", type=Path)
     args = parser.parse_args()
-    build(args.output, args.geometry_cache, args.research, args.reuse_geometry)
+    build(args.output, args.geometry_cache, args.research, args.reuse_geometry, args.supplement_cache)
