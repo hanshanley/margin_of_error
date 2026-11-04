@@ -18,6 +18,54 @@ methods = module("collect-voting-methods")
 context = module("collect-participation-context")
 local = module("build-local-participation")
 current_local = module("collect-current-participation")
+current_precincts = module("build-current-precincts")
+
+
+def test_current_precinct_number_requires_an_explicit_unambiguous_identity():
+    assert current_precincts.precinct_number("PCT 001", "Bernalillo") == "1"
+    assert current_precincts.precinct_number("PREC 048", "Rio Arriba") == "48"
+    assert current_precincts.precinct_number("001", "Colfax") == "1"
+    assert current_precincts.precinct_number("PRECINCT 7- LORDSBURG NORTH/WEST", "Hidalgo") == "7"
+    assert current_precincts.precinct_number("PRECINCT 1 - OTHER", "Bernalillo") is None
+    assert current_precincts.precinct_number("PRECINCT 1/2", "Hidalgo") is None
+    assert current_precincts.precinct_number("EARLY 001", "Colfax") is None
+
+
+def test_current_precinct_join_is_county_scoped_and_withholds_entire_mismatched_sets():
+    def feature(county, number):
+        return {"properties": {"county": county, "precinct": str(number)}}
+
+    def row(county, number, ballots=60, denominator=100):
+        return {"state_code": "NM", "county": county, "county_id": county,
+                "unit": f"PCT {number:03}", "unit_key": f"{county}|{number}", "unit_kind": "precinct",
+                "ballots": ballots, "denominator": denominator, "denominator_basis": "source_electorate",
+                "reported_pct": ballots / denominator * 100, "source_url": "source", "source_update_label": ""}
+
+    counties = [{"state_code": "NM", "county": county, "county_id": county, "rows_reconcile": True}
+                for county in ["Catron", "Mora"]]
+    features = [feature("Catron", 1), feature("Mora", 1)]
+    rows = [row("Catron", 1), row("Mora", 1, 80), row("Mora", 2)]
+    audit = current_precincts.join_precincts(features, rows, counties)
+    assert features[0]["properties"]["reported_pct"] == 60
+    assert features[0]["properties"]["unit_key"] == "Catron|1"
+    assert features[1]["properties"]["reported_pct"] is None
+    assert features[1]["properties"]["unit_key"] is None
+    assert audit[1]["reporting_only_ids"] == ["2"]
+    assert not audit[1]["exact_precinct_set"]
+    for invalid_rows, invalid_counties in [
+        ([rows[0], rows[0]], counties),
+        ([{**rows[0], "unit_kind": "vote_center"}], counties),
+        ([{**rows[0], "county_id": "Other office"}], counties),
+        ([rows[0]], [{**counties[0], "rows_reconcile": False}]),
+    ]:
+        polygon = feature("Catron", 1)
+        current_precincts.join_precincts([polygon], invalid_rows, invalid_counties)
+        assert polygon["properties"]["reported_pct"] is None
+    for observation in [row("Catron", 1, 10, 20), {**rows[0], "reported_pct": None}]:
+        polygon = feature("Catron", 1)
+        current_precincts.join_precincts([polygon], [observation], counties)
+        assert polygon["properties"]["reported_pct"] is None
+        assert polygon["properties"]["match_status"] == "rate_withheld"
 
 
 def test_missing_historical_ids_never_merge_duplicate_names_or_elections():
