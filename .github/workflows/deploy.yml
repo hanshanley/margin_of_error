@@ -103,7 +103,9 @@ jobs:
       - name: Build and upload site
         uses: withastro/action@v6
         with:
-          build-cmd: node scripts/stage-voter-participation.mjs voter-participation-source && npm run build
+          build-cmd: node scripts/stage-voter-participation.mjs voter-participation-source && npm run build && node scripts/prepare-participation-pages.mjs
+        env:
+          GH_TOKEN: ${{ github.token }}
 
   deploy:
     environment:

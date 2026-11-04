@@ -1,3 +1,6 @@
+import { installParticipationDownloads, participationDownload } from "./participation-downloads.js";
+
+installParticipationDownloads(document.querySelector(".participation-page"));
 const $ = id => document.getElementById(id);
 const NS = "http://www.w3.org/2000/svg";
 const MAX_MAP_ZOOM = 256;
@@ -96,7 +99,7 @@ async function contextGet(path) {
       state.contextPath = `/participation-context/${pointer.snapshot_id}/`;
       [state.context, state.margins] = await Promise.all([contextGet("index.json"), contextGet("margins.json")]);
       const link = html("a", "", "Complete map context + original sources (ZIP)");
-      link.href = state.contextPath + "complete-context.zip"; link.download = "";
+      link.href = participationDownload(state.contextPath + "complete-context.zip"); link.download = "";
       if (!$("downloads").querySelector(`a[href="${link.getAttribute("href")}"]`))
         $("downloads").querySelector(".download-links").append(link);
     } catch (error) {
@@ -154,7 +157,7 @@ async function loadMethods() {
     const [index, states, national] = await Promise.all([read("index.json"), read("states.json"), read("national.json")]);
     Object.assign(state, { methods: index, methodStates: states, methodNational: national, methodsPath: path });
     const link = html("a", "", "Complete historical voting methods + original sources (ZIP)");
-    link.href = path + "complete-methods.zip"; link.download = "";
+    link.href = participationDownload(path + "complete-methods.zip"); link.download = "";
     if (!$("downloads").querySelector(`a[href="${link.getAttribute("href")}"]`))
       $("downloads").querySelector(".download-links").append(link);
   } catch (error) {

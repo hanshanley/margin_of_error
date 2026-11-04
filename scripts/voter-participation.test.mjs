@@ -1,6 +1,29 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { previewSvg, publicationScript } from './stage-voter-participation.mjs';
+import { participationDownload } from '../public/scripts/participation-downloads.js';
+import { rewriteDownloadHtml, verifyReleaseAssets } from './prepare-participation-pages.mjs';
+
+test('bulk download routing preserves full snapshots and leaves interactive JSON local', () => {
+	const path = '/participation-methods/20261104T183000Z/complete-methods.zip';
+	const url = participationDownload(path);
+	assert.ok(url.endsWith('/participation-methods__20261104T183000Z__complete-methods.zip'));
+	assert.equal(participationDownload(url), url);
+	assert.equal(participationDownload('/participation-methods/20261104T183000Z/states.json'),
+		'/participation-methods/20261104T183000Z/states.json');
+	assert.equal(participationDownload('/party-platforms/complete-analysis.zip'), '/party-platforms/complete-analysis.zip');
+	assert.equal(rewriteDownloadHtml(`<a href="${path}" download>Full data</a><script>fetch("${path}")</script>`,
+		[{ path, url }]), `<a href="${url}" download>Full data</a><script>fetch("${path}")</script>`);
+});
+
+test('missing, truncated or changed release downloads stop Pages publication', () => {
+	const file = { name: 'full.zip', bytes: 42, sha256: 'abc', url: 'https://example.org/full.zip' };
+	const asset = { name: file.name, size: file.bytes, digest: 'sha256:abc', browser_download_url: file.url };
+	verifyReleaseAssets([file], [asset]);
+	assert.throws(() => verifyReleaseAssets([file], []), /Missing complete download/);
+	assert.throws(() => verifyReleaseAssets([file], [{ ...asset, size: 2 }]), /size changed/);
+	assert.throws(() => verifyReleaseAssets([file], [{ ...asset, digest: 'sha256:changed' }]), /checksum changed/);
+});
 
 const renderer = [
 	'fetch("data/" + path)',

@@ -94,6 +94,20 @@ Publication was explicitly approved on November 4, 2026. Publish the reviewed
 integration to `main`; pushing `main` deploys the site automatically. Source
 updates remain pinned to reviewed snapshots rather than following live research changes.
 
+The complete site exceeds GitHub Pages' 1 GB limit when bulk participation downloads
+are duplicated in its artifact. `scripts/prepare-participation-pages.mjs` verifies
+CSV/ZIP downloads and jurisdiction-detail JSON against the immutable
+`voter-participation-data-20261104` GitHub release before removing only their build-output
+copies. Original staged exports remain unchanged. Interactive JSON stays on the website.
+The publishing step rewrites static download links, including no-JavaScript fallbacks;
+the native renderer also routes dynamically created links. `/participation-downloads.json`
+records every relocated path, complete file size, SHA-256 and download URL.
+New research snapshots require a new release tag and byte-verified assets, not replacements
+of existing release files. Run the preparer after the normal build to reproduce the
+Pages artifact; `--upload` adds missing assets to the pre-created release without
+overwriting existing files. Publication fails on any missing or changed release asset,
+or if the resulting site exceeds 1 GB.
+
 After `npm run build`, serve `dist/` with `npm run preview -- --host 127.0.0.1
 --port 4321`. Run the source-matched interaction checks with the existing research
 Python environment (Playwright/Chromium required):
