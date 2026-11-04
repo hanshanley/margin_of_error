@@ -92,10 +92,15 @@ JavaScript; the shared `current.js` adds county, race/ethnicity/sex and request-
 filters. Election-night reported ballots/registrations are explicitly incomplete.
 The earlier absentee demographic counts overlap that feed and are never added to
 it or presented as group turnout rates. Historical series still end in 2024.
-Refresh the research source with `python -m scripts.current` followed by
-`python -m scripts.build`, test, commit and push it, then update both source pins
-and stage a new export. This is a saved snapshot, not an automatically refreshing
-live feed. Each complete snapshot ZIP includes all observations, original public
+For frequent updates, refresh the research source with
+`python -m scripts.current --update-downloads`, which rebundles saved historical
+data without downloading or recomputing it. Research GitHub Actions also collects
+and commits validated snapshots every 15 minutes during November 4–5 UTC, 2026;
+see the project's README for the exact window and manual trigger. Website exports
+remain pinned: after checking a new source commit, update both source pins and
+stage a new export. Collection does not deploy this website. The page shows a saved
+snapshot, not an automatically refreshing live feed.
+Each complete snapshot ZIP includes all observations, original public
 aggregate files, timestamps and checksums; no individual voter records are used.
 
 The national Democratic/Republican/DSA comparison lives at `/party-platforms/`.

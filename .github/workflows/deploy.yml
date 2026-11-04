@@ -95,7 +95,7 @@ jobs:
         uses: actions/checkout@v7
         with:
           repository: hanshanley/voter-participation
-          ref: d87cfe325bac49f347f044e796c7584146e96308
+          ref: 5a0985776609a7f9bb3a226777f342c9b472bd87
           path: voter-participation-source
           sparse-checkout: |
             public

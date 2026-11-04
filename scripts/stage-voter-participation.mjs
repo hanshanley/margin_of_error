@@ -5,7 +5,7 @@ import { dirname, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
 
-export const sourceRevision = 'd87cfe325bac49f347f044e796c7584146e96308';
+export const sourceRevision = '5a0985776609a7f9bb3a226777f342c9b472bd87';
 const sha256 = (bytes) => createHash('sha256').update(bytes).digest('hex');
 
 function replaceOnce(text, before, after) {
