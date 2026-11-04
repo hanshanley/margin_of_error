@@ -46,6 +46,9 @@ const nationwideRace: GroupRow[] = nationwide.demographics.filter((row: GroupRow
 	&& row.demographic_source_total > 0).sort((a: GroupRow, b: GroupRow) => b.ballots - a.ballots);
 const nationwideMaximum = Math.max(1, ...nationwideRace.map(row => row.ballots));
 const groupLabels: Record<string, string> = { age_range: 'Age', gender: 'Gender', race: 'Race', ethnicity: 'Ethnicity' };
+const modelValidation = JSON.parse(readFileSync(resolve(dataRoot, 'data/model/validation.json'), 'utf8'));
+type ModelScore = { slice: string; value: number; tests: number; model_mae_pp: number; baseline_mae_pp: number };
+const modelYears: ModelScore[] = modelValidation.scores.filter((row: ModelScore) => row.slice === 'year');
 ---
 
 <BaseLayout title="Who participates? Voter turnout across time"
@@ -65,6 +68,57 @@ const groupLabels: Record<string, string> = { age_range: 'Age', gender: 'Gender'
 			Census estimates describe participation among adult citizens or all adult residents.
 			The NC precinct pilot describes participation among registered voters—not all eligible residents.
 			It is not a nationwide precinct map.</p>
+
+		<details class="participation-current participation-model" id="participation-model"
+			data-data-root="/voter-participation/data/">
+			<summary>Our independent method and reliability tests</summary>
+			<p>We use independently acquired public Census and administrative inputs, not NYT model
+				estimates, commercial voter files or candidate preferences. The first historical
+				prototype did not beat a simple baseline. <strong>No modeled 2026 demographic turnout
+				rates are released.</strong></p>
+			<p>The prototype transfers each group’s average log-odds turnout gap from three earlier
+				same-type elections, using only earlier national turnout. Carry-forward uses the
+				group’s last same-type turnout rate. Presidential and midterm elections stay separate.</p>
+			<div class="nc-current-controls">
+				<label>Validation category<select id="model-dimension" disabled>
+					<option value="all">All categories</option><option value="age">Age</option>
+					<option value="race">Race / ethnicity</option><option value="sex">Sex</option>
+					<option value="education">Education</option>
+				</select></label>
+			</div>
+			<p id="model-summary" aria-live="polite">{modelValidation.summary.tests} historical tests.
+				Candidate mean absolute error: {modelValidation.summary.model_mae_pp.toFixed(2)} pp;
+				carry-forward: {modelValidation.summary.baseline_mae_pp.toFixed(2)} pp. Lower is better.</p>
+			<p>Historical reliability screen: {modelValidation.historical_gate_passed ? 'passed' : 'not passed'}.
+				This is a research prototype, not a 2026 estimate.</p>
+			<p id="model-error" role="status" hidden></p>
+			<div class="table-wrap" tabindex="0" role="region" aria-label="Independent-model historical tests">
+				<table><caption>Mean absolute error in percentage points, not uncertainty intervals.</caption>
+					<thead><tr><th scope="col">Held-out year</th><th scope="col">Election</th>
+						<th scope="col">Tests</th><th scope="col">Candidate error</th>
+						<th scope="col">Carry-forward error</th></tr></thead>
+					<tbody id="model-rows">{modelYears.map(row => <tr>
+						<th scope="row">{row.value}</th>
+						<td>{row.value % 4 === 0 ? 'presidential' : 'midterm'}</td>
+						<td class="numeric">{row.tests}</td>
+						<td class="numeric">{row.model_mae_pp.toFixed(2)}</td>
+						<td class="numeric">{row.baseline_mae_pp.toFixed(2)}</td>
+					</tr>)}</tbody>
+				</table>
+			</div>
+			<p>These are retrospective year holdouts using current archived CPS tables, not verified historical
+				release vintages. Comparison targets are self-reported, not validated turnout. Overlapping
+				demographic groups are not independent samples. Current matched inputs and uncertainty
+				estimates remain missing; historical patterns alone cannot identify 2026 participation shifts.</p>
+			<p>The full method describes separate registered-voter administrative and citizen-population
+				survey tracks. A richer public-microdata model is proposed, not already implemented.</p>
+			<div class="download-links">
+				<a href="/voter-participation/data/model/methodology.md" download>Independent methodology</a>
+				<a href="/voter-participation/data/model/backtests.csv" download>Every prediction and error (CSV)</a>
+				<a href="/voter-participation/data/model/validation.json" download>Full validation (JSON)</a>
+				<a href="/voter-participation/data/model/complete-validation.zip" download>Complete validation + input tables (ZIP)</a>
+			</div>
+		</details>
 
 		<section class="participation-current" id="nationwide-participation"
 			data-data-root="/voter-participation/data/" aria-labelledby="nationwide-title">
@@ -133,8 +187,8 @@ const groupLabels: Record<string, string> = { age_range: 'Age', gender: 'Gender'
 				No 2026 education or national precinct turnout is inferred.</p>
 			<p>Sources: <a href="https://www.civicapi.org/early-vote">civicAPI public aggregate early-vote tracker</a>{' '}
 				and verified state election-office administrative reports. civicAPI is not a certified
-				government turnout series. The <a href={nationwide.reference_not_ingested.url}>NYT 2026 tracker</a> could not be ingested because
-				automated access was denied; no figures are attributed to it.</p>
+				government turnout series. The <a href={nationwide.reference_not_ingested.url}>NYT 2026 tracker</a>{' '}
+				is a methodological reference only; its estimates are not ingested, republished or used to train our work.</p>
 			<div class="download-links">
 				<a id="national-current-complete" href={`${nationwidePath}complete-snapshot.zip`} download>Complete nationwide snapshot + original sources (ZIP)</a>
 				<a id="national-current-early" href={`${nationwidePath}early_voting.csv`} download>All early-voting observations (CSV)</a>
@@ -285,4 +339,5 @@ const groupLabels: Record<string, string> = { age_range: 'Age', gender: 'Gender'
 	<script is:inline src="/voter-participation/app.js" defer></script>
 	<script is:inline src="/voter-participation/current.js" defer></script>
 	<script is:inline src="/voter-participation/nationwide.js" defer></script>
+	<script is:inline src="/voter-participation/model.js" defer></script>
 </BaseLayout>

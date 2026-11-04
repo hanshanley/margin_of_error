@@ -111,7 +111,8 @@ ballot feeds remain separate, with explicit denominator definitions.
 The complete 51-jurisdiction coverage table, source dates, initial Georgia race
 chart and all five full-download links are server-rendered, including without
 JavaScript. Missing provider coverage is not a claim of universal unavailability.
-The NYT reference is not ingested because automated access is denied.
+The NYT reference is methodological only. Do not ingest, republish or train on its
+modeled figures or supplied article tables.
 The research workflow requests nationwide and NC captures independently every
 15 minutes November 4–5 UTC, then hourly November 6–19 UTC; GitHub can delay starts.
 A source failure retains its last valid observations with their original dates
@@ -119,6 +120,17 @@ and an explicit retained/failure status. Every full nationwide source ZIP also
 includes original bytes for any retained observations. Collection commits new
 research data but does not deploy this website; reviewed website pins remain
 intentional.
+
+The independent-method disclosure stages `model.js` and `data/model/`. Its
+participation-only historical experiment uses public Census citizen-denominator
+rates, with prior-year-only, same-election-type training and a carry-forward
+comparison. It is not a 2026 demographic turnout estimator: the first candidate
+fails its historical screen, and all 2026 modeled rates remain withheld.
+The server-rendered summary and per-year validation table, explicit limitations,
+full method, every prediction/error, inputs and ZIP downloads work without
+JavaScript. A category selector adds age/race/sex/education error diagnostics;
+neither website staging nor election-night collection trains on incomplete 2026
+feeds. The richer public-microdata model in the protocol is proposed, not fitted.
 
 The national Democratic/Republican/DSA comparison lives at `/party-platforms/`.
 Deployment pins `hanshanley/dsa` to a verified source commit and runs its

@@ -252,6 +252,21 @@ assert.match(participation('#nationwide-participation').text(), /not demographic
 assert.match(participation('#nationwide-participation').text(), /never add the columns/);
 assert.ok(nationwideSnapshot.demographics.every(row => row.turnout_pct === null && !('party' in row)));
 assert.ok(participationManifest.files.some(file => file.path === 'nationwide.js' && file.original));
+assert.equal(participation('script[src="/voter-participation/model.js"]').length, 1);
+const participationModel = JSON.parse(await text('voter-participation/data/model/validation.json'));
+assert.equal(participationModel.release_2026.allowed, false);
+assert.deepEqual(participationModel.estimates_2026, []);
+assert.equal(participation('#model-rows tr').length, participationModel.summary.years.length);
+assert.equal(participation('#participation-model a[download]').length, 4);
+assert.match(participation('#participation-model').text(), /No modeled 2026 demographic turnout/);
+assert.ok(participationModel.predictions.every(row => row.last_training_year < row.year && row.year <= 2024));
+assert.ok(participationManifest.files.some(file => file.path === 'model.js' && file.original));
+for (const score of participationModel.scores.filter(row => row.slice === 'year')) {
+	const rendered = participation('#model-rows tr').filter((_, row) =>
+		participation(row).find('th').text() === String(score.value)).text();
+	assert.ok(rendered.includes(score.model_mae_pp.toFixed(2)));
+	assert.ok(rendered.includes(score.baseline_mae_pp.toFixed(2)));
+}
 for (const row of nationwideSnapshot.coverage) {
 	const rendered = participation(`[data-current-state="${row.state_code}"]`).text();
 	assert.ok(rendered.includes(row.state));

@@ -79,6 +79,8 @@
 .national-current-coverage th[scope="row"] { position: static; font-weight: 400; }
 .national-current-coverage td { min-width: 115px; vertical-align: top; }
 .national-current-coverage small { display: block; margin-top: .3rem; color: var(--muted); font-size: .68rem; }
+.participation-model th[scope="row"] { position: static; font-weight: 400; }
+.participation-model td { white-space: nowrap; }
 @media (max-width: 700px) {
 	.participation-page { padding-top: 1.5rem; }
 	.participation-deck { font-size: 1.15rem; }
