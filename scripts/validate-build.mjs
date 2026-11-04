@@ -216,8 +216,15 @@ assert.equal(participationAnalysis.find('a:contains("Code and complete data")').
 	'https://github.com/hanshanley/voter-participation');
 assert.match(participationAnalysis.find('p').text(), /provisional 2026 ballot counts/);
 assert.equal(participationAnalysis.find('img').attr('loading'), 'eager');
-assert.equal(participationAnalysis.find('img').attr('src'), '/voter-participation/preview.png');
+assert.equal(participationAnalysis.find('img').attr('src'),
+	'/artifacts/voter-participation/voter-participation-editorial.png');
+assert.equal(participationAnalysis.find('img').attr('width'), '1536');
+assert.equal(participationAnalysis.find('img').attr('height'), '1024');
 const participation = load(await text('voter-participation/index.html'));
+assert.equal(participation('meta[property="og:image"]').attr('content'),
+	'https://www.themarginoferror.com/artifacts/voter-participation/voter-participation-editorial.png');
+assert.equal(participation('meta[name="twitter:image"]').attr('content'),
+	participation('meta[property="og:image"]').attr('content'));
 const participationManifest = JSON.parse(await text('voter-participation/publication-manifest.json'));
 assert.equal(participationManifest.source_revision, participationRevision);
 assert.equal(participation('h1').text(), 'Who participates?');

@@ -79,6 +79,11 @@ trends and county/precinct search, selection, zoom and pan. It creates a data-de
 it does not rerun or download source research. Stage a fresh export after changing
 the pinned source revision, updating both the script and workflow together.
 
+The author-supplied editorial thumbnail is stored byte-for-byte at
+`public/artifacts/voter-participation/voter-participation-editorial.png`.
+Use it for the Interactive analysis preview and the explorer's social image,
+not as an in-page chart. Keep it outside chart recoloring and the pinned research export.
+
 The page separates citizen/resident CPS denominators from NC registered-voter
 participation. National/state series are not nationwide precinct data. NC has seven
 election-year boundary snapshots; missing geometry never borrows a different year.
