@@ -684,7 +684,7 @@ function configure() {
       : state.national.filter(row => row.denominator === $("basis").value && row.turnout_pct != null);
   const years = unique([...rows.map(row => row.year), ...(!precincts ? [2026] : [])]);
   const preferred = previousYear && years.includes(Number(previousYear)) ? previousYear
-    : years.includes(2024) ? "2024" : String(years.filter(year => year !== 2026).sort((a, b) => b - a)[0] ?? 2026);
+    : String(Math.max(...years));
   options($("year"), years.sort((a, b) => b - a)
     .map(year => [String(year), year === 2026 ? "2026 · Provisional" : String(year)]), preferred);
   if (previousYear && previousYear !== $("year").value) state.precinct = "";
