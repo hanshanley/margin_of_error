@@ -41,6 +41,18 @@
       {"file": "originals/service.json.gz", "label": "Official November 2026 Vermont voting-area service definition (JSON · gzip)"},
       {"file": "audit.json", "label": "Vermont town/split joins, withheld units and complete boundary-overlap audit (JSON)"}
     ]
+  }, {
+    "label": "Idaho 2026 precinct results and separate provisional participation",
+    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/664ef298d33a26fb52deb399596aad76a11098ed/data/precinct-results/20261105-idaho-01/",
+    "data_directory": "data/precinct-results/20261105-idaho-01",
+    "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-idaho-maps-20261105/complete-idaho-2026-precinct-maps.zip",
+    "complete_download_bytes": 34504158,
+    "complete_download_sha256": "e8057feb5f6ceddeb2c88a39be934bb2ebf8957eb71387477df8c0c6b9ac2d57",
+    "publication": "snapshot_ready",
+    "source_documents": [
+      {"file": "originals/item.json.gz", "label": "Official 2026 Idaho precinct reference identity, attribution and license metadata (JSON · gzip)"},
+      {"file": "audit.json", "label": "Idaho complete-county joins, withheld reporting units and full reference-overlap audit (JSON)"}
+    ]
   }],
   "source_batches": [{
     "label": "2022 precinct sources from 25 states",

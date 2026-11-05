@@ -388,7 +388,10 @@ website count-download registration passed the build, Astro check, Pages
 preparer (**94 byte-identical relocated originals**, **986,195,213-byte**
 artifact) and focused desktop/mobile checks with and without JavaScript.
 All **32** full-download links, latest-year default and honest Idaho state
-fallback pass. Exact deployed registration verification remains pending.
+fallback pass. Registration commit `51491ed9fc9d29001daa3c7b8b8981229a238f70`
+deployed successfully in exact run **41960223557**. Production registry, ledger
+and renderer bytes match the commit; all four desktop/mobile, JS/no-JS
+full-download and honest fallback scenarios pass live.
 
 The Secretary of State's `https://voteidaho.gov/data-and-dashboards/`
 explicitly links precinct boundaries for **both 2026 primary and general
@@ -445,11 +448,26 @@ It includes every original workbook, PDF, API capture, complete native/geographi
 GIS export, metadata/attribution, receipt, unmatched row and audit. The complete
 official webpage's HTML/frontend is not redistributed.
 
-Next: commit and release this immutable data snapshot; independently redownload
-the complete ZIP. Register the exact data commit, then build and test desktop/
-mobile selection, every candidate count/fill, separate available/withheld rates,
-zoom, year switching, full downloads and truthful state fallback. Do not claim
-live coverage before exact-deployment and production checks pass. Pursue official
+Immutable release `voter-precinct-idaho-maps-20261105` targets exact data commit
+`664ef298d33a26fb52deb399596aad76a11098ed`; the complete asset was independently
+redownloaded and verified for tag target, length, SHA-256 and ZIP CRCs.
+The website registration pins that exact data revision, initially `snapshot_ready`.
+The new source-specific detail branch labels ballots and source-registered
+voters separately, without borrowing Minnesota's opening-registration definition.
+Quality flags are human-readable; withheld rates are explicit.
+
+Astro check has zero errors/warnings and five existing hints. Build, all four
+built-in caucus tests and Pages preparation pass: **94 byte-identical relocated
+originals**, **986,198,395-byte** artifact. Focused production-preview checks
+pass for all 448 exact candidate counts/fills, red/blue selections, available
+and withheld source-defined rates, button/wheel zoom, 2024/2026 switching,
+county/district state fallback, desktop/mobile layout, all **35** full-download
+links, no-JavaScript downloads and aborted-fetch fallback. ND ballot-only,
+MN opening/day-of registration and VT municipal-selection regressions pass.
+The source-specific detail branch is now verified in a real browser.
+
+Next: verify the exact UI deployment and production checks before changing
+`snapshot_ready` to `live_verified_partial`. Do not claim live coverage yet. Pursue official
 crosswalks, the six overlap counties, pooled scope and registration discrepancies
 without rewriting the immutable count review or borrowing older boundaries.
 
@@ -464,14 +482,23 @@ are cached in session `files/precinct-expansion-sources/SD-2026/`.
 
 The advertised `https://electionresults.sd.gov/ResultsExport.aspx` uses public
 ASP.NET postbacks for **Statewide Export** and **Legislative Export**, not direct
-guessed data URLs. The initial browser capture stopped before accepting a file
-because its literal body-text date assertion failed; inspect normalized rendered
-identity before retrying the advertised downloads. No SD result export or
-precinct reconciliation is claimed yet. Turnout is div-based rather than an
+guessed data URLs. Initial identity checks stopped before accepting a file
+because CSS renders the header uppercase. Whitespace/case normalization confirms
+the exact general-election date. Both complete original workbooks are acquired:
+**38,361 bytes/13 sheets statewide**, **84,741 bytes/72 sheets legislative**.
+They contain **county aggregates, not precinct rows**. The separately advertised
+Aurora county export (**24,170 bytes/15 sheets**) contains actual precinct rows.
+Candidate-column order is reversed relative to the statewide export; parse by
+candidate identity, never column position. The remaining 65 county originals are
+being acquired through their advertised public export links, preserving each
+unaltered workbook and receipt. No SD precinct reconciliation is claimed yet.
+Turnout is div-based rather than an
 HTML table. Vote-center rows can repeat the entire county registration
 denominator; never sum those repetitions or manufacture precinct rates.
-Next: retain and inspect both advertised complete exports, reconcile actual
-candidate precinct/county/state identities and keep participation scope separate.
+Next: finish all 66 county originals, reconcile actual candidate precinct/county/
+state identities against the independent statewide workbook and official party
+labels, and keep participation scope separate. No correct-election SD geometry
+has been acquired yet.
 
 ## Resume procedure for every work session or scheduled prompt
 

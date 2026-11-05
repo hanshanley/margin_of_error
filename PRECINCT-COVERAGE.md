@@ -38,7 +38,7 @@ Checkmarks are reserved for verified, complete live coverage.
 | [ ] | Georgia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Hawaii | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Iowa | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Idaho | acquired_reconciled | correct_election_reference_pending | withheld | counts_passed_map_withheld | full_counts_download_only | acquired_precinct_counts_and_provisional_rates |
+| [ ] | Idaho | acquired | reference_acquired | validated_partial | passed | snapshot_ready | acquired_precinct_counts_and_provisional_rates |
 | [ ] | Illinois | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Indiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Kansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |

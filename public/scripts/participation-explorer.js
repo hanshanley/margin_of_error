@@ -485,6 +485,11 @@ async function loadCurrentPrecincts() {
       panel.append(html("p", "selection-note", participation.measure === "reported_ballots"
         ? `Separate participation statistics: ${fmt(participation.ballots)} ballots reported. `
         + "No precinct electorate denominator; no participation rate. " + participation.quality
+        : participation.measure === "reported_ballots_and_registration"
+        ? `Separate participation statistics: ${fmt(participation.ballots)} reported ballots / `
+        + `${fmt(participation.registered)} source-registered voters. `
+        + (participation.reported_pct == null ? "Rate withheld. " : `${pct(participation.reported_pct)}. `)
+        + `${participation.basis} ${participation.quality.replaceAll("_", " ")}.`
         : !participation.reported
         ? "Separate participation statistics: not yet reported for this precinct. No participation rate; original source values remain in the downloads."
         : `Separate participation statistics: ${fmt(participation.ballots)} reported voters / `
