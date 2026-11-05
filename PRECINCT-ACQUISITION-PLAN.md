@@ -1681,8 +1681,17 @@ Clark-only scope, prior statewide 2022 originals retained, no overflow,
 2026 precinct/margin default and exact NV state fallback without invented
 precincts. Local proof:
 `files/nevada-clark-historical-local-browser-proof.json`.
-Temporary preview helper is stopped. Next: Hans UI commit/push and exact
-run/SHA production verification before marking this publication done.
+Temporary preview helper is stopped. Hans UI commit
+`6816cc057344a096ff7349d9aa57a58ea81062bb` deployed successfully in exact
+Pages run **41980202677**. The source-matched production checker passed:
+all **47** identical complete downloads across desktop/mobile with and
+without JavaScript, explicit Clark-only scope, no overflow, unchanged
+2026 precinct/margin default, exact Nevada state fallback, and no
+invented precincts. Only NV 2022 changes among all 1,632 ledger cells.
+Proofs are `files/nevada-clark-historical-exact-pages-run.json` and
+`files/nevada-clark-historical-live-browser-proof.json`. This publication
+is done; do not repeat its completed live suite. It adds no maps, rates,
+or statewide Nevada completion.
 The native election selector reaches elections
 before 1964, providing a concrete later historical route without replacing
 the remaining 2026 work.
@@ -1735,8 +1744,8 @@ to `silverstateelection.nv.gov` and the ordinary web tool encounters a
 real additional-security challenge. Pursue the legitimate official
 county aggregate/result/export alternatives; do not describe the state
 as permanently unavailable or download personal voter lists as a substitute.
-Next: finish full-source validation, independently reconstruct and
-publish the complete Clark historical originals; preserve the acquired
+The Clark historical originals are now independently reconstructed,
+published and production-verified as recorded above; preserve the acquired
 Washoe PDF and native GIS catalog without treating county summaries or
 1990–2013 reference names as modern precinct coverage. Continue official
 2026 precinct-statement alternatives in parallel. Independently reconcile
@@ -1785,6 +1794,60 @@ geometry is retained. The item gives no explicit election applicability.
 Seek actual general-election precinct returns and independent applicability
 evidence; do not map or infer turnout from this reference alone.
 
+## DC 2026: native plurality precinct map and separate provisional participation
+
+The actual DCBOE homepage declares its `2026-General-Election` results app.
+All **18 complete original bodies / 4,609,414 bytes** are retained with exact
+source receipts: full **10,011-row CSV**, XML, PDF, election metadata,
+144-precinct inventory, citywide counts and participation, native precinct
+and ward map responses, and the original embedded-reference JavaScript.
+This is not a metadata-only download. Do not reacquire those originals.
+
+The map uses the explicitly **non-RCV Council-chair plurality contest**,
+not the delegate contest's first ranks. All **144 precincts** reconcile
+candidate-by-candidate between CSV and independently requested native map JSON,
+then to citywide JSON and XML: **161,936 DEM, 10,629 REP, 2,013 write-in**.
+OVER/UNDER VOTES are excluded by native record identity, never counted as
+Republican candidate votes despite source citywide PartyCode quirks.
+Independent CSV, XML and voter-summary totals agree on **185,086 ballots**
+and **457,371 source-registered voters**. Reported registration fractions
+are explicitly provisional election-night shares, not final turnout,
+citizen/resident denominators or group-specific participation.
+Eleven precincts have a **+1 ballot** difference against this local contest's
+candidate + over + under accounting: 10, 15, 27, 28, 45, 55, 59, 60,
+63, 71 and 72. Preserve and flag those differences; never allocate or repair.
+The source update is **November 4, 2026, 04:36:21.283 UTC**;
+outstanding ballots remain, with the source receipt deadline November 13.
+
+Metadata explicitly selects `OCTO_VotingPrecinct_2019.json` for this election.
+The full literal TopoJSON is extracted from native statistics module **834**
+using the existing Acorn parser, without executing the downloaded bundle.
+This is an election-selected reference, **not newly surveyed/certified 2026
+boundaries or proof of stability across elections**. Its 144 complete IDs
+join uniquely. The official browser's unmodified geometry independently
+confirms three source overlap pairs: **1/130, 79/80 and 80/132**.
+Following the established ND policy, exclude ambiguous strips from both
+precincts, never assign them, and preserve whole-precinct counts, original
+reference and excluded-area mask. All 144 retain nonambiguous geometry;
+no topology repair is performed. Validate zero remaining distinct-precinct
+overlaps above the audited `1e-10` square-degree numeric tolerance.
+
+Immutable snapshot: `data/precinct-results/20261105-dc-01/`.
+Complete ZIP: **1,461,521 bytes**, SHA-256
+`7c181a8b03255bd26aded22b2ea91e60211386d3e766c91173920c56d96b6d2d`.
+All **329 collector tests** pass, including wrong election/RCV rejection,
+independent count mismatch, duplicates/missing precincts, over/under identity,
+suppression, retained ballot-accounting discrepancies, signed arcs, exact
+reference sets, geometry ambiguity and executable-export rejection.
+Independent proof now passes: every original and receipt is rehydrated from
+all **27 ZIP members**; all 144 decoded shapes exactly match captured
+native-browser features; every snapshot and the ZIP reproduce byte-for-byte.
+Session proof: `files/dc-2026-offline-reproduction-proof.json`.
+Next commit sources as Hans, publish and redownload the immutable release, append the supplement without
+losing the prior 47 complete downloads, update only DC 2026 among 1,632 cells,
+and verify local and exact-SHA production interaction/default/zoom/colors.
+Do not mark DC statewide complete or call provisional shares final turnout.
+
 ## Maryland 2026: native general reference link is an unexpanded template
 
 The actual official `https://elections.maryland.gov/elections/2026/index.html`
@@ -1819,8 +1882,25 @@ reporting concerns the **2020 general election**; do not extend that to
 2026 or older elections without source-specific checks.
 The actual county-board directory is acquired. Legitimate next routes
 declared there include Anne Arundel's board, `https://www.777vote.org/`
-for Montgomery, and Frederick's elections page. Acquisition of these
-three actual county homepages is bounded and underway.
+for Montgomery, and Frederick's elections page. Anne Arundel's original
+homepage and its declared county general-result page are acquired.
+Montgomery's declared `https://www.777vote.org/` fails the older Python
+TLS stack, but ordinary curl with normal certificate verification succeeds
+and redirects to `https://mcg.montgomerycountymd.gov/elections/index2.html`.
+Its actual county general-result page is acquired. Frederick's declared
+homepage timed out after 60 seconds with ordinary curl; this is an access
+observation, not proof that no county data exists.
+
+Montgomery's actual **Voter Count Report, 4:00 p.m. (Excel)** declaration
+now yields a real **13,946-byte XLSX**, not the state's broken reference
+template. The native `2026GG Voter Turnout` sheet has **72 data rows /
+71 unique precinct IDs**, six native affiliation columns, and a cached
+footer. The duplicate precinct identity and repeated values remain
+unresolved; preserve all rows and do not deduplicate, sum, or interpret
+this partial-day workbook as final/all-mode participation, registration,
+candidate results, or demographic rates. The actual precinct-reference
+index is also acquired, but its declared jurisdictional PDFs are under
+**2022**, not independent 2026 applicability evidence.
 The state election index's Box folders are explicitly **Polling Place
 Plans and Canvass Schedules**, not result exports or verified precinct
 boundaries; do not relabel them.

@@ -43,6 +43,209 @@ ri_maps = module("build-rhode-island-precinct-results")
 fl_monroe = module("review-florida-monroe-precinct-results")
 mo_christian = module("review-missouri-christian-precinct-results")
 clark_originals = module("archive-clark-historical-sources")
+dc_maps = module("build-dc-precinct-results")
+
+
+def dc_count_fixture():
+    import xml.etree.ElementTree as ET
+
+    info = dict(ElectionName="General Election", ElectionCode="G",
+        ElectionDate="2026-11-03T00:00:00", LastUpdated="2026-11-04T04:36:21.283Z",
+        ElectionResultsTypeName="Election Night Unofficial Results",
+        PrecintsJsonMap="OCTO_VotingPrecinct_2019.json", TotalPrecincts=2, PrecinctsCounted=2)
+    names = ["DEM Candidate A", "REP Candidate B", "Write-in", "OVER VOTES", "UNDER VOTES"]
+    parties = ["DEM", "REP", "NPN", "", ""]
+    votes = [[35, 15, 1, 1, 8], [10, 5, 1, 1, 3]]
+    totals = [45, 20, 2, 2, 11]
+    stream = io.StringIO(newline="")
+    writer = csv.writer(stream, lineterminator="\n")
+    writer.writerow(dc_maps.HEADERS)
+    precinct_map = []
+    for pid, registered, ballots, counts in [(1, 100, 60, votes[0]), (2, 50, 20, votes[1])]:
+        for cid, name, candidate, party, value in [
+            ("-2", "REGISTERED VOTERS - TOTAL", "", "CITYWIDE", registered),
+            ("-1", "BALLOTS CAST - TOTAL", "", "CITYWIDE", ballots),
+            *(("6", dc_maps.OFFICE, name, party, value)
+              for name, party, value in zip(names, parties, counts)),
+        ]:
+            writer.writerow(["11/3/2026 12:00:00 AM", "General Election", cid, name,
+                             pid, 1, candidate, party, value])
+        precinct_map.append(dict(ContestNumber=6, OfficeName=dc_maps.OFFICE,
+            IsRCV=False, PrecinctNumber=pid,
+            ElectionData=[dict(Contestant=n, Votes=v, PartyCode=p or "REP")
+                          for n, p, v in zip(names, parties, counts)]))
+    citywide = dict(ContestNumber=6, OfficeName=dc_maps.OFFICE, IsRCV=False,
+        ElectionData=[dict(Contestant=n, Votes=v, PartyCode=p or "REP")
+                      for n, p, v in zip(names, parties, totals)])
+    xml = ET.Element("XmlExportViewModel")
+    ET.SubElement(xml, "ElectionName").text = "General Election"
+    ET.SubElement(xml, "ElectionDate").text = "2026-11-03T00:00:00"
+    contests = ET.SubElement(xml, "ContestList")
+    for name, values in [(dc_maps.OFFICE, dict(zip(names, totals))),
+                         ("REGISTERED VOTERS - TOTAL", {"": 150}),
+                         ("BALLOTS CAST - TOTAL", {"": 80})]:
+        contest = ET.SubElement(contests, "ContestDataExportViewModel")
+        ET.SubElement(contest, "ContestName").text = name
+        data = ET.SubElement(contest, "ElectionData")
+        for candidate, value in values.items():
+            item = ET.SubElement(data, "ElectionDataExportViewModel")
+            if candidate:
+                ET.SubElement(item, "Candidate").text = candidate
+            ET.SubElement(item, "Votes").text = str(value)
+    return dict(raw=stream.getvalue().encode(), info=info,
+        inventory=dict(PrecinctNumberList=[1, 2]), citywide=[citywide], xml_raw=ET.tostring(xml),
+        summary=dict(SummaryType="c", WardNumber=None, PrecinctNumber=None, Party=None,
+                     RegisteredVoters=150, TotalBallotsCast=80, ElectionDayVoters=50,
+                     EarlyVotes=0, AbsenteeSpecialBallotVotes=30),
+        precinct_map=dict(cityWideResults=[citywide], wardPrecinctResults=precinct_map))
+
+
+def dc_topology_fixture():
+    return dict(type="Topology", transform=dict(scale=[0.001, 0.001], translate=[-77, 38.9]),
+        arcs=[[[0, 0], [1, 0], [0, 1], [-1, 0], [0, -1]],
+              [[5, 0], [1, 0], [0, 1], [-1, 0], [0, -1]]],
+        objects=dict(precinct_octo=dict(type="GeometryCollection", geometries=[
+            dict(type="Polygon", properties=dict(NAME="Precinct 1", OBJECTID=1), arcs=[[0]]),
+            dict(type="Polygon", properties=dict(NAME="Precinct 2", OBJECTID=2), arcs=[[-2]])])))
+
+
+def test_dc_reconciles_precinct_csv_native_json_xml_and_separate_participation():
+    rows, statistics, audit = dc_maps.review_counts(**dc_count_fixture())
+    assert rows[0]["contest_votes"] == 51
+    assert rows[0]["republican_votes"] == 15
+    assert rows[0]["other_votes"] == 1
+    assert rows[0]["overvotes"] == 1 and rows[0]["undervotes"] == 8
+    assert statistics[0]["ballots"] == 60 and statistics[0]["registered"] == 100
+    assert statistics[0]["reported_pct"] == 60
+    assert "not final turnout" in statistics[0]["basis"]
+    assert audit["final_turnout_rates"] == audit["demographic_rates"] == 0
+    assert audit["registered"] == 150 and audit["ballots"] == 80
+    assert audit["separate_contest_accounting_differences"] == []
+
+
+@pytest.mark.parametrize("change", ["wrong_election", "rcv", "duplicate", "missing_precinct",
+                                   "native_count", "aggregate", "party", "negative", "xml"])
+def test_dc_rejects_wrong_scope_ambiguous_rows_and_nonreconciling_counts(change):
+    args = dc_count_fixture()
+    if change == "wrong_election":
+        args["info"]["ElectionDate"] = "2024-11-05T00:00:00"
+    elif change == "rcv":
+        args["citywide"][0]["IsRCV"] = True
+    elif change == "duplicate":
+        args["raw"] += args["raw"].splitlines(keepends=True)[1]
+    elif change == "missing_precinct":
+        args["precinct_map"]["wardPrecinctResults"].pop()
+    elif change == "native_count":
+        args["precinct_map"]["wardPrecinctResults"][0]["ElectionData"][0]["Votes"] += 1
+    elif change == "aggregate":
+        args["summary"]["TotalBallotsCast"] -= 1
+    elif change == "party":
+        args["raw"] = args["raw"].replace(b"DEM Candidate A,DEM", b"DEM Candidate A,REP")
+    elif change == "negative":
+        args["raw"] = args["raw"].replace(b"CITYWIDE,100", b"CITYWIDE,-100")
+    elif change == "xml":
+        args["xml_raw"] = args["xml_raw"].replace(b"<Votes>150", b"<Votes>149")
+    with pytest.raises(ValueError):
+        dc_maps.review_counts(**args)
+
+
+def test_dc_withholds_inconsistent_rates_without_repairing_native_ballot_counts():
+    args = dc_count_fixture()
+    args["raw"] = args["raw"].replace(b"CITYWIDE,100", b"CITYWIDE,50")
+    args["xml_raw"] = args["xml_raw"].replace(b"<Votes>150", b"<Votes>100")
+    args["summary"]["RegisteredVoters"] = 100
+    _, stats, audit = dc_maps.review_counts(**args)
+    assert stats[0]["registered"] == 50 and stats[0]["ballots"] == 60
+    assert stats[0]["reported_pct"] is None
+    assert stats[1]["reported_pct"] == 40
+    assert audit["provisional_reported_fractions"] == 1
+
+
+def test_dc_retains_contest_accounting_difference_without_using_votes_as_ballots():
+    args = dc_count_fixture()
+    args["raw"] = args["raw"].replace(b"CITYWIDE,60", b"CITYWIDE,61")
+    args["xml_raw"] = args["xml_raw"].replace(b"<Votes>80", b"<Votes>81")
+    args["summary"].update(TotalBallotsCast=81, ElectionDayVoters=51)
+    rows, stats, audit = dc_maps.review_counts(**args)
+    assert rows[0]["contest_votes"] == 51 and stats[0]["ballots"] == 61
+    assert audit["separate_contest_accounting_differences"] == [
+        dict(precinct=1, ballots_minus_contest_accounting=1)]
+
+
+def test_dc_decodes_forward_and_reversed_native_arcs_and_joins_complete_ids():
+    features = dc_maps.topology_features(dc_topology_fixture())
+    rows, stats, _ = dc_maps.review_counts(**dc_count_fixture())
+    mapped, audit = dc_maps.mapped_precincts(rows, stats, features)
+    assert len(mapped) == audit["mapped_units"] == 2
+    assert mapped[0]["properties"]["source_object_ids"] == [1]
+    assert mapped[0]["properties"]["participation"]["ballots"] == 60
+    assert mapped[1]["geometry"]["coordinates"][0][0] == pytest.approx([-76.995, 38.9])
+
+
+@pytest.mark.parametrize("change", ["missing", "duplicate", "unknown", "projection", "arc"])
+def test_dc_rejects_ambiguous_reference_sets_invalid_arcs_and_geometry(change):
+    topology = dc_topology_fixture()
+    if change == "arc":
+        topology["objects"]["precinct_octo"]["geometries"][0]["arcs"] = [[999]]
+    features = None
+    if change != "arc":
+        features = dc_maps.topology_features(topology)
+        if change == "missing":
+            features.pop()
+        elif change == "duplicate":
+            features.append(features[0])
+        elif change == "unknown":
+            features[0]["properties"]["NAME"] = "Precinct 3"
+        elif change == "projection":
+            features[0]["geometry"]["coordinates"][0][0][0] = 100000
+    rows, stats, _ = dc_maps.review_counts(**dc_count_fixture())
+    with pytest.raises(ValueError):
+        dc_maps.mapped_precincts(rows, stats, features or dc_maps.topology_features(topology))
+
+
+def test_dc_withholds_ambiguous_strips_from_both_precincts_without_allocating_counts():
+    topology = dc_topology_fixture()
+    topology["arcs"][1][0][0] = 0
+    topology["arcs"][1][1][0] = 2
+    topology["arcs"][1][3][0] = -2
+    features = dc_maps.topology_features(topology)
+    rows, stats, _ = dc_maps.review_counts(**dc_count_fixture())
+    mapped, audit = dc_maps.mapped_precincts(rows, stats, features)
+    assert len(mapped) == 1 and audit["withheld_units"] == ["1"]
+    assert len(audit["all_reference_overlap_pairs"]) == 1
+    assert len(audit["ambiguity_mask"]["features"]) == 2
+    assert audit["topology_repairs"] == []
+    assert mapped[0]["properties"]["contest_votes"] == 16
+    assert mapped[0]["properties"]["participation"]["ballots"] == 20
+    assert "never an allocation" in mapped[0]["properties"]["boundary_provenance"]
+
+
+def test_explicit_mapped_participation_updates_only_its_exact_coverage_cell():
+    index = dict(coverage={})
+    before = precinct_coverage.build_rows(index)
+    index["coverage"] = {"2026": {"DC": dict(partial=True, source_url="reviewed",
+        next_action="Review certification", notes="Not final turnout",
+        participation="acquired_precinct_counts_and_registration")}}
+    after = precinct_coverage.build_rows(index)
+    changed = [(a, b) for a, b in zip(before, after) if a != b]
+    assert len(before) == len(after) == 1632
+    assert len(changed) == 1
+    assert changed[0][1]["state_code"] == "DC" and changed[0][1]["year"] == 2026
+    assert changed[0][1]["participation"] == "acquired_precinct_counts_and_registration"
+    assert changed[0][1]["complete"] == "no"
+
+
+def test_dc_extracts_only_the_election_declared_literal_module_without_executing_code():
+    prefix = ('webpackJsonp([0],Array(10).concat([function(e){'
+              'var i={"./reference.json":11};},function(e){e.exports=')
+    bundle = (prefix + json.dumps(dc_topology_fixture()) + "}]))").encode()
+    extracted = dc_maps.extract_reference(bundle, "reference.json")
+    assert extracted == dict(module_id=11, topology=dc_topology_fixture())
+    with pytest.raises(ValueError):
+        dc_maps.extract_reference(bundle, "another-year.json")
+    executable = (prefix + '(()=>{throw Error("must not execute")})()' + "}]))").encode()
+    with pytest.raises(ValueError, match="Executable expression"):
+        dc_maps.extract_reference(executable, "reference.json")
 
 
 def clark_index_fixture():

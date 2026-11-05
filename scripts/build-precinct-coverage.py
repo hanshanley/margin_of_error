@@ -170,6 +170,8 @@ def build_rows(index=None, published=False, source_batches=None):
                            next_action=coverage["next_action"], notes=coverage["notes"])
                 if year == 2026 and code == "MN":
                     row["participation"] = "acquired_precinct_counts_and_registration"
+                if coverage.get("participation"):
+                    row["participation"] = coverage["participation"]
             rows.append(row)
     return rows
 
