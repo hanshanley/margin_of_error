@@ -28,6 +28,7 @@ historical_sources = module("acquire-historical-precinct-sources")
 nd_review = module("review-north-dakota-precinct-results")
 nd_maps = module("build-north-dakota-precinct-results")
 vt_review = module("review-vermont-precinct-results")
+vt_maps = module("build-vermont-precinct-results")
 
 
 def vt_fixture():
@@ -119,6 +120,118 @@ def test_vt_incomplete_or_different_municipal_district_scope_withholds_the_rate(
     _, statistics = vt_review.vt_results(source, metadata, turnout)
     assert statistics[0]["registered_turnout_pct"] is None
     assert "incomplete_or_different_district_scope" in statistics[0]["quality_flags"]
+
+
+def vt_boundary_fixture():
+    features = []
+    for oid, town, district, west, tid in [
+            (1, "FIRST", "A", -73, 1), (2, "SECOND", "A", -72.7, 2),
+            (3, "SECOND", "B", -72.5, 2)]:
+        features.append(dict(attributes=dict(OBJECTID=oid, TOWN=town, HOUSE_NAME=district,
+            SEN_NAME="S", TOWN_GEOID=f"50001{tid:05}", CNTY="1"),
+            geometry=dict(rings=[[[west, 43], [west, 43.1], [west + .1, 43.1],
+                                  [west + .1, 43], [west, 43]]])))
+    return dict(geometryType="esriGeometryPolygon", spatialReference=dict(wkid=4326), features=features)
+
+
+def test_vt_maps_dissolve_wards_once_without_allocating_municipal_participation():
+    rows, _ = vt_review.vt_results(*vt_fixture())
+    boundary = vt_boundary_fixture()
+    extra = json.loads(json.dumps(boundary["features"][0]))
+    extra["attributes"]["OBJECTID"] = 4
+    for point in extra["geometry"]["rings"][0]:
+        point[0] += .1
+    boundary["features"].append(extra)
+    mapped, audit = vt_maps.mapped_splits(rows, boundary)
+    assert len(mapped) == 3 and sum(f["properties"]["contest_votes"] for f in mapped) == 39
+    first = mapped[0]
+    assert first["properties"]["source_object_ids"] == [1, 4]
+    assert nd_maps.shape(first["geometry"]).area == pytest.approx(.02)
+    assert first["properties"]["reporting_unit_kind"] == "town_legislative_split"
+    assert "participation" not in first["properties"] and not audit["withheld_units"]
+
+
+@pytest.mark.parametrize("change", ["missing", "extra"])
+def test_vt_maps_require_the_entire_town_split_set(change):
+    rows, _ = vt_review.vt_results(*vt_fixture())
+    boundary = vt_boundary_fixture()
+    if change == "missing":
+        boundary["features"].pop()
+    else:
+        extra = json.loads(json.dumps(boundary["features"][-1]))
+        extra["attributes"].update(OBJECTID=4, HOUSE_NAME="C")
+        for point in extra["geometry"]["rings"][0]:
+            point[0] += .2
+        boundary["features"].append(extra)
+    mapped, audit = vt_maps.mapped_splits(rows, boundary)
+    assert len(mapped) == 1 and mapped[0]["properties"]["town"] == "FIRST"
+    assert not audit["towns"]["SECOND"]["exact"] and len(audit["withheld_units"]) == 2
+
+
+def test_vt_maps_normalize_district_separators_but_never_infer_town_aliases():
+    rows, _ = vt_review.vt_results(*vt_fixture())
+    boundary = vt_boundary_fixture()
+    rows[0].update(house_district="CHITTENDEN-1", senate_district="CHITTENDEN-CENTRAL_")
+    boundary["features"][0]["attributes"].update(
+        HOUSE_NAME="Chittenden 1", SEN_NAME="Chittenden Central")
+    mapped, _ = vt_maps.mapped_splits(rows, boundary)
+    assert len(mapped) == 3
+    rows[0]["town"] = "FIRST CITY"
+    mapped, audit = vt_maps.mapped_splits(rows, boundary)
+    assert len(mapped) == 2 and not audit["towns"]["FIRST CITY"]["exact"]
+
+
+@pytest.mark.parametrize("unreported", [False, True])
+def test_vt_maps_withhold_whole_towns_for_overlapping_reference_units(unreported):
+    rows, _ = vt_review.vt_results(*vt_fixture())
+    boundary = vt_boundary_fixture()
+    if unreported:
+        extra = json.loads(json.dumps(boundary["features"][0]))
+        extra["attributes"].update(OBJECTID=4, TOWN="UNREPORTED", TOWN_GEOID="5000100003")
+        boundary["features"].append(extra)
+    else:
+        boundary["features"][1]["geometry"] = boundary["features"][0]["geometry"]
+    mapped, audit = vt_maps.mapped_splits(rows, boundary)
+    assert len(mapped) == (2 if unreported else 0)
+    assert audit["overlap_pairs"] and not audit["towns"]["FIRST"]["exact"]
+    if not unreported:
+        assert not audit["towns"]["SECOND"]["exact"]
+
+
+def test_vt_maps_reject_overlapping_ward_parts_in_the_same_reporting_split():
+    rows, _ = vt_review.vt_results(*vt_fixture())
+    boundary = vt_boundary_fixture()
+    extra = json.loads(json.dumps(boundary["features"][0]))
+    extra["attributes"]["OBJECTID"] = 4
+    boundary["features"].append(extra)
+    mapped, audit = vt_maps.mapped_splits(rows, boundary)
+    assert len(mapped) == 2 and audit["internal_overlaps"]
+    assert not audit["towns"]["FIRST"]["exact"]
+
+
+@pytest.mark.parametrize("change", ["duplicate", "wrong_geoid", "wrong_county", "projection", "truncated"])
+def test_vt_maps_reject_incomplete_or_inconsistent_geographic_identity(change):
+    rows, _ = vt_review.vt_results(*vt_fixture())
+    boundary = vt_boundary_fixture()
+    if change == "duplicate":
+        boundary["features"].append(boundary["features"][0])
+    elif change == "wrong_geoid":
+        boundary["features"][0]["attributes"]["TOWN_GEOID"] = "5100100001"
+    elif change == "wrong_county":
+        boundary["features"][0]["attributes"]["CNTY"] = "3"
+    elif change == "projection":
+        boundary["spatialReference"]["wkid"] = 3857
+    else:
+        boundary["exceededTransferLimit"] = True
+    with pytest.raises(ValueError):
+        vt_maps.mapped_splits(rows, boundary)
+
+
+def test_vt_maps_reject_reporting_identity_collisions_after_normalization():
+    rows, _ = vt_review.vt_results(*vt_fixture())
+    rows.append(dict(rows[0], house_district="A_"))
+    with pytest.raises(ValueError, match="collide"):
+        vt_maps.mapped_splits(rows, vt_boundary_fixture())
 
 
 def nd_boundary_fixture():

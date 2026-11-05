@@ -212,7 +212,8 @@ named write-ins: **304,588 candidate votes**, **594 overvotes**, **6,247 blanks*
 and **311,429 reported House-contest total**. The source's compact `ovc` ("other")
 column includes blanks/overvotes; it is **not** other-candidate votes.
 Source `countyId` values are local IDs, not FIPS. These are not established
-polling precincts; no geography or map join is claimed.
+polling precincts; this immutable count review claims no geography or map join.
+The subsequent mapped supplement is documented separately below.
 
 The separate **247-town** feed has **311,009** votes cast and **506,512**
 registrations. The ordinary public app confirms `tvr` = registered voters,
@@ -244,13 +245,66 @@ layout and no-JavaScript page. The unchanged map renderer already passed its
 full live regression in the ND publication; do not repeat it solely for this
 additional static source-review link.
 
-Next: verify the exact deployed VT download link and ledger, then acquire
-official 2026 town/legislative-split or polling geography with a source-backed
-identity crosswalk. Do not attach split counts to entire towns. Resolve
+Website integration commit `81a237cbd3d1f55f6fd80cd7ec52039b0935d93e` is
+under exact deployment verification in run **41956593219**. Next: finish that
+verification and publish the independently audited mapped supplement below.
+Do not attach split counts to entire towns. Resolve
 Colchester's reporting scope, the five ballot discrepancies, and registration
 definitions; reconcile the remaining preserved office tabs.
 The general SOS results page returned HTTP 403 to requests; no bypass was used.
 The public election portal and its normally requested static JSON were accessible.
+
+## Vermont 2026 conservative mapped supplement
+
+Acquired the official VCGI item
+`029e24e674234e2f8c1e3ae059931fcb`, owned by `Publisher_VCGI`, and its
+advertised service:
+`https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_VT_VOTE_AREAS_2026_general_WM_v1/FeatureServer`.
+The service explicitly identifies the September 2026 release for the
+**November 2026 general election**, not the separately captured August-primary
+reference. All **318** source features are retained in both native Esri and
+GeoJSON exports, with an independent count, item/service/layer metadata and
+exact URL/length/hash receipts. General cache:
+session `files/precinct-expansion-sources/VT-2026-general-boundaries/`.
+Do not repeat or substitute the separate primary capture.
+
+The mapper normalizes only case, whitespace, hyphens and underscores in district
+labels, keeping town identities literal apart from case. Every town's entire
+House/Senate split set must agree. Ward parts are dissolved into reporting
+splits and votes counted once. This yields **248 mapped/colorable reporting
+splits**, **44 Republican-leading and 204 Democratic-leading**, not certified
+polling-precinct coverage. All **283** original normalized rows and all
+**247** municipal participation observations remain byte-identical to the
+published count review; no municipal denominator or rate is attached to a split.
+
+**35 rows in 25 towns remain unmapped**. The official reference has **22**
+overlapping pairs; the largest overlap occupies over **38%** of one reporting
+shape. Entire affected towns are withheld rather than clipping, assigning
+ambiguous areas, or pretending a substantial defect is numerical noise.
+Essex Town/Essex Junction City have different literal municipality labels in
+the GIS reference; their four rows stay withheld pending documented identities.
+Unmatched unincorporated areas are preserved, not assigned host-town votes.
+The mapped subset has valid, nonoverlapping geometry at the explicit
+`1e-10`-square-degree overlap tolerance, using the existing `1e-9`-degree
+native-geometry processing grid. Every published shape was independently
+compared with the original GeoJSON union.
+
+Reproduce with `scripts/build-vermont-precinct-results.py`, supplying the
+original archive basename. All **82 collector tests pass**, including ward
+dissolution without duplicated votes, full-town scope checks, overlaps with
+unreported areas, literal town identity, punctuation collisions, geographic
+identity, projection and truncation. Every output file reproduces byte-for-byte
+from only distributed originals. Full archive CRCs, member bytes, source
+checksums and unchanged original count-review files pass independent checks.
+
+Data: `data/precinct-results/20261105-vermont-03/`.
+Complete archive: `complete-vermont-2026-reporting-split-maps.zip`,
+**4,857,690 bytes**, SHA-256
+`0c3777c6a5691d8fe97709c12ed56ed06c7757ad56a5efe74cea392f011e274c`.
+Status: independently validated local snapshot; release upload, website
+registration and exact live map verification remain pending. Do not label
+this as live or complete. After publication, move to the next unacquired
+2026 jurisdiction rather than repeatedly rerunning unchanged national layers.
 
 ## Resume procedure for every work session or scheduled prompt
 
@@ -282,7 +336,7 @@ counts where available.
 
 Concrete next investigations already identified:
 
-- **North Dakota 2026 is the next concrete acquisition to normalize.** The
+- **North Dakota 2026 is acquired and live-verified; do not normalize it again.** The
   official archive links current results to `https://resultsnd.sos.nd.gov/`,
   while `https://results.sos.nd.gov/` defaults to the older 2024 election.
   The new public API identifies election **348**, `2026 General Election`,
@@ -292,8 +346,8 @@ Concrete next investigations already identified:
   It contains `ElectionData`, `TurnoutData`, and `ContestData`, including nested
   county and precinct rows. The committed count review and complete release are
   documented above. Cached sources and checksums are in the session's
-  `files/precinct-expansion-sources/ND-2026/`; this is **reconciled count coverage,
-  not a published map**. Public feeds:
+  `files/precinct-expansion-sources/ND-2026/`; the initial count review is
+  superseded for mapping by the live-verified partial supplement above. Public feeds:
   `https://api.resultsnd.sos.nd.gov/Election/GetElectionInfo?cId=north-dakota`,
   `https://api.resultsnd.sos.nd.gov/Turnout/GetTurnout?cId=north-dakota&electionID=348`.
   GIS manifest:
