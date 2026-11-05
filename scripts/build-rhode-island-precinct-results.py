@@ -117,6 +117,9 @@ def mapped_precincts(rows, boundary):
             properties = dict(row, county=town, precinct_code=code, match_status="matched",
                 margin_pp=margin, source_object_ids=[p["OBJECTID"]], official_boundary=True,
                 congressional_district=str(p["Congress"]), reference_precinct=code,
+                ballot_scope="Native Election Day, Early Voting and Mail Ballots candidate counts. "
+                    "Federal and limited-only reporting units are retained separately, never allocated. "
+                    "Candidate votes are not ballots cast, turnout or demographic participation.",
                 boundary_date="2022-2032 RIGIS reference; not a new 2026 survey",
                 quality_flags="decade_reference;precinct_rates_withheld",
                 boundary_provenance=ATTRIBUTION + ". The source explicitly recommends this "

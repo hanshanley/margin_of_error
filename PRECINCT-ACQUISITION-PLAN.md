@@ -1186,7 +1186,26 @@ archive filename when reproducing: `index.json` intentionally records
 `complete-rhode-island-2026-precinct-maps.zip`; renaming it changes index
 and checksum bytes. Immutable overwrite refusal passes. Proof:
 `files/ri-2026-map-independent-validation.json`.
-Map release, site registration and live checks remain pending. Next:
+Revision 01 was released at immutable tag
+`voter-precinct-rhode-island-maps-20261105`, targeting
+`46733eeeb532449ba54ed222fed92af7d2c5c554`. A complete remote redownload
+matches all 27 members, the exact size/hash above and local originals.
+Proof: `files/ri-2026-map-release-verification.json`. It was never registered
+as a live map.
+
+Pre-registration UI-contract review found that native result rows lacked
+the renderer's `ballot_scope` presentation field. Immutable revision 02,
+`data/precinct-results/20261105-rhode-island-02/`, adds explicit native
+Election Day / Early Voting / Mail Ballots scope to every mapped feature.
+Every count, candidate/mode value, polygon, exclusion and separate locality
+observation is unchanged. The renderer is unchanged. All 206 collector
+tests pass; all 27 revised archive members/CRCs/bytes and original receipts
+pass, and distributed-original-only byte reproduction and overwrite refusal
+pass again. Revision 02 ZIP: **6,098,657 bytes**, SHA-256
+`a348107161caf1f50d0952e61d05d94d1edef9d91dbb13e2e85cc4e50f559c95`.
+Proof: `files/ri-2026-map-02-independent-validation.json`.
+
+Revision 02 release, site registration and live checks remain pending. Next:
 publish/verify this full conservative map package, then continue the
 remaining newest state/year cells. Do not mark RI or nationwide coverage
 complete, infer demographic participation, or map administrative counts.
