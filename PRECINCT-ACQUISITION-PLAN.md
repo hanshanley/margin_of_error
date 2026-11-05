@@ -1396,17 +1396,56 @@ output and archive byte**, and immutable overwrite refusal:
 All **231 collector tests** pass, including wrong county/year, changed
 receipts, missing/suppressed counts, duplicate/name-collision identities,
 missing candidate vectors, source-scope changes and independent total/mode
-disagreements. Release, remote-byte verification and UI registration are
-next. This is **one county, not statewide Florida**, with **zero new
-maps or precinct participation rates**.
+disagreements. Hans source commit
+`2f26a01abe473bec14b5a601b7795c18a35af92a` is pinned by immutable tag
+`voter-precinct-florida-monroe-20261105`. The complete remote asset
+redownload passes exact tag target, size, SHA-256, full local-byte equality,
+all ZIP members/CRCs and all six original receipts:
+`files/florida-monroe-2026-remote-byte-proof.json`.
+Only after that proof is it registered as a full-count source review,
+increasing complete-data links from 44 to **45**, with the server-rendered
+label explicitly **Monroe County only**. Astro check, seven participation
+tests, the production build and four build-time caucus checks pass.
+The whole validator reaches only the unchanged unrelated UK assertion
+(line 1077, 23 cards versus 16), not a whole-suite pass.
+The Pages preparer verifies **94 byte-identical relocated files** and a
+**986,215,113-byte** site. Bounded desktop/mobile with and without JavaScript
+passes all **45** identical complete downloads, explicit county-only scope,
+all 1,632 ledger cells with exactly one changed FL cell, three immutable
+provenance files, unchanged renderer, no overflow, 2026 precinct/margin
+defaults and exact FL state-result fallback without invented precincts:
+`files/florida-monroe-2026-local-browser-proof.json`.
+Exact deployment and production proof are next.
+This is **one county, not statewide Florida**, with
+**zero new maps or precinct participation rates**.
 
 The supervisor's current official domain is `www.votemonroeflkeys.gov`,
 not the older guessed hostname. Its declared
 `/Where-to-Vote/Precinct-Details-Demographics` page explicitly lists
 precincts **1–33** and several **NEW 2026** polling-place changes.
 Polling locations establish neither polygon geometry nor stable electorates.
-The declared `/Where-to-Vote/Maps` page needs inspection of its embedded
-resource. A direct homepage request returned **403**, retained with its
+The declared `/Where-to-Vote/Maps` page's actual HTML lists a current
+precinct PDF explicitly dated **September 2, 2025**, at
+`https://mcgis4.monroecounty-fl.gov/MCGIS/Maps/MC_Voting_Precincts.pdf`.
+Its declared shapefile catalogue is
+`https://mcgis4.monroecounty-fl.gov/MCGIS/Data-Download/MCGIS_Data_Download.html`
+(search `Precincts`). The actual **11,533,295-byte / nine-page** PDF,
+**42,562-byte** catalogue HTML and declared **6,447,598-byte** complete
+`SF/Voting_Precincts.zip` have now been acquired successfully with receipts
+in `files/precinct-expansion-sources/FL-2026-MON-reference/`.
+The original ZIP passes CRC and has eight full members. Its DBF has
+**153 polygon records / 33 distinct literal precinct numbers 1–33**,
+including multiple islands per number; native metadata and ZIP members
+are explicitly dated **December 23, 2025**, not 2026.
+The source projection is NAD83(2011) Florida East, US survey feet
+(EPSG:6438); do not treat native coordinates as longitude/latitude.
+These are acquired **2025 current-reference** originals, not established
+2026 boundaries. Do not copy candidate counts onto every repeated island
+record or infer applicability from matching 33 IDs. Seek explicit election
+validity before a separately audited grouped-geometry supplement.
+The text-only fetch initially omitted the main map content, so inspect
+original HTML before concluding absence.
+A direct homepage request returned **403**, retained with its
 full body/receipt in `files/precinct-expansion-sources/FL-2026-MON-reference/`;
 the ordinary fetch tool can read the site. Never turn that access difference
 into a claim that boundaries do not exist. Seek an explicit 2026 reference
