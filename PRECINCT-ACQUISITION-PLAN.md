@@ -4439,14 +4439,20 @@ UI commit `8c2c4c0188300d04f8a5b91a650ec1f31f5cc497` build succeeded
 in run `42048268675`, but Pages remained `updating_pages` until its
 600,000-ms timeout. A deploy-only retry reused the successful artifact but
 immediately returned `Deployment cancelled` for the same Pages build version.
-No data/build failure was reported. Publish the meaningful plan/CT findings
-as a new commit to obtain a fresh Pages build version, without changing
-these already-validated UI inputs or replacing the release.
-Verify that fresh exact deployment and unqueried public files/live browser
-result before marking publication finished. Then
-continue consolidated 2026 reviews, establishing correct-election geography
-independently before any new map join. Do not reacquire or re-review these
-finished 94 counts.
+No data/build failure was reported. Meaningful plan/CT findings commit
+`62ebd86d5cc65986738a5dafc5316b362d5ed83b` obtained a fresh Pages build
+version without changing the validated UI inputs or replacing the release.
+Its exact run **42051043255 succeeded**, and Linn is **live verified**:
+all five unqueried public files match, all four desktop/mobile and
+JavaScript/no-JavaScript browser modes pass, **116 complete links** retain
+all **108 older links**, and all seven new table/PDF endpoints and the ZIP
+match their full original bytes. Latest-election, precinct, red-blue and
+zoom behavior remain unchanged. Proofs:
+`files/iowa-linn-native-publication-proof-01.json` and
+`files/iowa-linn-native-live-browser-proof-01.json`. No further deployment
+recovery is pending. Continue consolidated 2026 reviews, establishing
+correct-election geography independently before any new map join.
+Do not reacquire or re-review these finished 94 counts.
 
 ### Next consolidated review: Connecticut House scope and fusion lines
 
@@ -4478,6 +4484,63 @@ review and complete-original package with focused fusion/scope tests;
 independently establish primary report identity and native town geography
 before map approval. This arithmetic-only preflight makes no public map,
 participation or completion-status change.
+
+### Additional historical county bulk source verified November 5, 2026
+
+The repeated request for consolidated sources led to an additional complete
+historical source, **Paul Heideman's U.S. County Election Results**:
+`https://github.com/pmheideman/us-county-election-results`.
+Release **v1.0.0**, published September 26, 2026, resolves to commit
+`155b35015f4b9801c07c05b800c380218c6462b3`. Its complete **9,500,264-byte**
+ZIP was actually acquired and verified, not merely catalogued:
+SHA-256 `e422fbfb1c56bed6787d08e59eed83d13b4ccf567510c69f94d2802a34b8e625`,
+all **11 members**, all **10 publisher member checksums** and every CRC.
+The complete download is
+`https://github.com/pmheideman/us-county-election-results/releases/download/v1.0.0/us_county_election_results_v1.0.0.zip`.
+
+The actual long table has **420,503 candidate rows**, across **48 states**
+and all **18 even years, 1990-2024**, including midterms; presidential
+coverage starts in 1992. Alaska, Hawaii and D.C. are excluded. There are
+**200,171 House**, **126,220 Senate** and **94,112 presidential** rows;
+**812 runoff rows** must remain separate from **419,691 general rows**.
+The full ZIP also includes **120,191 county summaries**, **41 gap records**,
+**524 no-ballot records**, **1,870 provenance rows**, **135 corrections**,
+the data dictionary and Parquet counterpart. Coverage is not universally
+complete, and unopposed races not on a ballot are not missing zero-vote races.
+
+An actual count-type screen found one unflagged fractional native count:
+**Alabama 2010 House, Montgomery County, District 02, Bobby Bright,
+23,334.16236**, source `al_sos_file_2010`. Preserve this literal source row,
+withhold it pending original-source review, and do not round or silently
+repair it. Retain the publisher's flagged totals, aggregated other candidates
+and placeholder identities; reconcile full candidate vectors and fusion
+lines before new maps. These are candidate results, **not ballot counts,
+eligible-voter turnout, demographic participation or precinct geography**.
+
+The compilation license is CC BY 4.0 but expressly preserves upstream
+per-source restrictions. Complete originals and pinned README, license,
+citation and release metadata remain in
+`files/historical-county-bulk-20261105-01/`; use the publisher's complete
+ZIP link rather than an unreviewed public mirror. The durable acquisition
+audit is
+`data/precinct-source-reviews/20261105-historical-county-bulk-01/acquisition.json`.
+No public map, denominator, source registry or state/year completion flag
+changes from acquisition alone.
+
+**Bulk-first execution remains mandatory:** finish actionable 2026
+consolidated-source reviews first, then use this one complete original for
+2024, 2022 and older county-result backfill rather than recollecting each
+state. Use independently acquired precinct packages where they exist and
+county returns where precinct coverage is unavailable. Individual state or
+county collection is a gap-filling fallback, not the default. UF's
+state-level turnout estimates and historical participation series remain
+separate from these candidate-result sources.
+
+The deployed nationwide subtitle was rechecked directly during this request:
+**"Voter turnout across elections, places and demographic groups."**
+The Interactive analysis preview also retains nationwide presidential/midterm
+scope. The newly successful Linn deployment preserves that already-published
+copy; no further subtitle change or duplicate browser suite is necessary.
 
 ## Resume procedure for every work session or scheduled prompt
 

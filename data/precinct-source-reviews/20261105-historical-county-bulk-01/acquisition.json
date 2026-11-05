@@ -1,0 +1,69 @@
+{
+  "status": "complete_original_acquired_not_map_or_turnout_approval",
+  "acquired_date": "2026-11-05",
+  "publisher": "Paul Heideman",
+  "repository": "pmheideman/us-county-election-results",
+  "tag": "v1.0.0",
+  "source_commit": "155b35015f4b9801c07c05b800c380218c6462b3",
+  "release_published_at": "2026-09-26T11:40:59Z",
+  "complete_download_url": "https://github.com/pmheideman/us-county-election-results/releases/download/v1.0.0/us_county_election_results_v1.0.0.zip",
+  "complete_download_bytes": 9500264,
+  "complete_download_sha256": "e422fbfb1c56bed6787d08e59eed83d13b4ccf567510c69f94d2802a34b8e625",
+  "archive_members": 11,
+  "publisher_member_checksums_verified": 10,
+  "all_archive_crcs_verified": true,
+  "csv_rows": {
+    "us_county_results_long.csv": 420503,
+    "us_county_results_summary.csv": 120191,
+    "us_county_results_gaps.csv": 41,
+    "us_county_results_no_ballot.csv": 524,
+    "SOURCES.csv": 1870,
+    "data_corrections_log.csv": 135
+  },
+  "actual_state_count": 48,
+  "excluded_jurisdictions": ["AK", "HI", "DC"],
+  "actual_election_years": [
+    1990, 1992, 1994, 1996, 1998, 2000, 2002, 2004, 2006,
+    2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024
+  ],
+  "office_rows": {
+    "house": 200171,
+    "senate": 126220,
+    "president": 94112
+  },
+  "stage_rows": {
+    "general": 419691,
+    "runoff": 812
+  },
+  "blank_vote_rows": 0,
+  "noninteger_or_negative_vote_rows": 1,
+  "retained_noninteger_count": {
+    "year": 2010,
+    "office": "house",
+    "state_po": "AL",
+    "county_fips": "01101",
+    "county_name": "Montgomery",
+    "district": "02",
+    "stage": "general",
+    "candidate": "Bobby Bright",
+    "party": "Democratic",
+    "votes": "23334.16236",
+    "source": "al_sos_file_2010",
+    "quality_flag": ""
+  },
+  "quality_flag_rows": {
+    "": 365675,
+    "placeholder_name": 19,
+    "initials_only": 2541,
+    "totals_possibly_inflated": 57,
+    "surname_only": 435,
+    "other_candidates_aggregated": 51776
+  },
+  "candidate_votes_are_not_ballots_or_turnout": true,
+  "maps_approved": false,
+  "complete_state_year_flags_changed": 0,
+  "compilation_license": "CC BY 4.0; upstream per-source restrictions are retained in SOURCES.csv and the pinned LICENSE-DATA.md",
+  "license_document_url": "https://raw.githubusercontent.com/pmheideman/us-county-election-results/155b35015f4b9801c07c05b800c380218c6462b3/LICENSE-DATA.md",
+  "original_storage": "Complete original archive, pinned README/license/citation, release metadata and acquisition proof retained in session files/historical-county-bulk-20261105-01; complete publisher download remains available above. No unreviewed public mirror.",
+  "next_action": "Use this bulk original for 2024, 2022 and older county-result backfill after 2026 priorities. Review row-level provenance and licensing, distinguish general/runoff/no-ballot/gaps, reconcile full candidate/fusion vectors and exact-election geography, and withhold the fractional Alabama count pending native-source review. Never round it, infer precincts, or treat candidate votes as turnout."
+}
