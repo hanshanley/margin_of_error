@@ -49,12 +49,12 @@ Checkmarks are reserved for verified, complete live coverage.
 | [ ] | Missouri | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Mississippi | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Montana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Carolina | acquired | reference_acquired | pending | pending | not_published | not_acquired |
+| [ ] | North Carolina | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
 | [ ] | North Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Nebraska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | New Hampshire | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | New Jersey | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Mexico | acquired | reference_acquired | pending | pending | not_published | published_partial_reference_map |
+| [ ] | New Mexico | acquired | reference_acquired | validated_partial | passed | snapshot_ready | published_partial_reference_map |
 | [ ] | Nevada | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | New York | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Ohio | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
@@ -79,56 +79,56 @@ Checkmarks are reserved for verified, complete live coverage.
 | Done | State | Candidate returns | Boundaries | Join | Validation | Publication | Participation |
 |---|---|---|---|---|---|---|---|
 | [ ] | Alaska | absent_from_reviewed_release | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Alabama | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | Arkansas | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | Arizona | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | California | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | Colorado | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | Connecticut | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | District of Columbia | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | Delaware | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | Florida | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | Georgia | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | Hawaii | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | Iowa | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | Idaho | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | Illinois | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | Indiana | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | Kansas | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | Kentucky | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | Louisiana | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | Massachusetts | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | Maryland | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | Maine | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | Michigan | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | Minnesota | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | Missouri | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | Mississippi | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | Montana | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | North Carolina | acquired | acquired | pending | pending | not_published | published_counts_and_reference_map |
-| [ ] | North Dakota | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | Nebraska | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | New Hampshire | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | New Jersey | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | New Mexico | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | Nevada | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | New York | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | Ohio | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | Oklahoma | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | Oregon | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | Pennsylvania | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | Rhode Island | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | South Carolina | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | South Dakota | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | Tennessee | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | Texas | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | Utah | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | Virginia | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | Vermont | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | Washington | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | Wisconsin | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | West Virginia | acquired | acquired | pending | pending | not_published | not_acquired |
-| [ ] | Wyoming | acquired | acquired | pending | pending | not_published | not_acquired |
+| [ ] | Alabama | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | Arkansas | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | Arizona | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | California | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | Colorado | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | Connecticut | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | District of Columbia | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | Delaware | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | Florida | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | Georgia | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | Hawaii | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | Iowa | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | Idaho | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | Illinois | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | Indiana | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | Kansas | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | Kentucky | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | Louisiana | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | Massachusetts | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | Maryland | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | Maine | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | Michigan | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | Minnesota | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | Missouri | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | Mississippi | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | Montana | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | North Carolina | acquired | reference_acquired | validated_partial | passed | snapshot_ready | published_counts_and_reference_map |
+| [ ] | North Dakota | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | Nebraska | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | New Hampshire | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | New Jersey | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | New Mexico | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | Nevada | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | New York | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | Ohio | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | Oklahoma | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | Oregon | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | Pennsylvania | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | Rhode Island | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | South Carolina | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | South Dakota | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | Tennessee | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | Texas | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | Utah | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | Virginia | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | Vermont | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | Washington | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | Wisconsin | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | West Virginia | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
+| [ ] | Wyoming | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
 
 ## 2022
 

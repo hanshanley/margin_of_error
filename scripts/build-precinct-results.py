@@ -166,12 +166,13 @@ def main():
     parser.add_argument("--sources", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--archive", type=Path, required=True)
+    parser.add_argument("--resume", action="store_true", help="Resume an unpublished partial build without a completed index")
     args = parser.parse_args()
-    if args.output.exists():
+    if args.output.exists() and (not args.resume or (args.output / "index.json").exists()):
         raise ValueError("Use a new immutable output directory")
-    args.output.mkdir(parents=True)
+    args.output.mkdir(parents=True, exist_ok=args.resume)
     originals = args.output / "originals"
-    originals.mkdir()
+    originals.mkdir(exist_ok=args.resume)
     sys.path.insert(0, str(ROOT.parent / "voter-participation"))
     from scripts.build import simplify
 
@@ -270,6 +271,9 @@ def main():
         source = original(f"NYT-2024-{code}.geojson.gz", NYT_DATA + f"{code}-precincts-with-results.geojson.gz")
         features = json.loads(gzip.decompress(source))["features"]
         seen, mapped, mismatches = set(), [], []
+        prior_file = args.output / f"2024/{code}.geojson.gz"
+        prior = {f["properties"]["key"]: f for f in
+                 json.loads(gzip.decompress(prior_file.read_bytes()))["features"]} if prior_file.exists() else {}
         normalized = {}
         for identity, source_row in grouped[code].items():
             dem, rep, total = [integer(source_row[k]) for k in ["votes_dem", "votes_rep", "votes_total"]]
@@ -284,6 +288,9 @@ def main():
             if p["state"] != code or identity in seen:
                 raise ValueError("Wrong state or duplicate NYT geometry")
             seen.add(identity)
+            if feature["geometry"] is None:
+                mismatches.append(dict(key=identity, reason="source_geometry_missing"))
+                continue
             source_row = grouped[code].get(identity)
             if not source_row or any(integer(source_row[field]) != integer(p[field])
                                      for field in ["votes_dem", "votes_rep", "votes_total"]):
@@ -294,7 +301,8 @@ def main():
                 raise ValueError("Invalid NYT vote totals/boundary provenance")
             row = normalized[identity]
             feature["properties"] = dict(row, official_boundary=p["official_boundary"], match_status="matched")
-            feature["geometry"] = simplified(feature["geometry"])
+            cached = prior.get(row["key"])
+            feature["geometry"] = cached["geometry"] if cached and cached["properties"] == feature["properties"] else simplified(feature["geometry"])
             mapped.append(feature)
         audits[f"2024-{code}"] = dict(source_shapes=len(features), source_rows=len(normalized),
             matched_shapes=len(mapped), mismatched_shapes=mismatches,
