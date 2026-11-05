@@ -29,8 +29,14 @@
     "fetched_at": "2026-11-05T20:38:45.430126+00:00",
     "file": "official-results-index.html",
     "final_url": "https://www.chesco.org/156/Voter-Services",
-    "bytes": 127079,
-    "sha256": "b94136e4a0052d7df38a4762f726031cbe9921375db2c4bda0ad0115db7cd73b"
+    "bytes": 127062,
+    "sha256": "a7d42218c590e57e972e54910bb7825ff99c90cdf9b8b2cd1c2af673a115a859",
+    "redaction": {
+      "original_sha256": "b94136e4a0052d7df38a4762f726031cbe9921375db2c4bda0ad0115db7cd73b",
+      "original_bytes": 127079,
+      "replacements": 2,
+      "reason": "Explicitly removes public-page Google/Mapbox and instrumentation keys. Complete original privately retained."
+    }
   },
   {
     "url": "https://www.livevoterturnout.com/ENR/chesterpaenr/4/contests_4.csv",

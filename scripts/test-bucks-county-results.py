@@ -1,4 +1,5 @@
 import importlib.util
+import hashlib
 import json
 from pathlib import Path
 import shutil
@@ -133,4 +134,25 @@ def test_redacted_snapshot_cannot_be_misrepresented_as_an_original(tmp_path):
     del native["redaction"]
     (source / "receipts.json").write_text(json.dumps(receipts))
     with pytest.raises(ValueError, match="HTML token-redaction receipt"):
+        REVIEW.load_originals(source)
+
+
+@pytest.mark.parametrize("filename", ["official-results-index.html", "native-results.redacted.html"])
+@pytest.mark.parametrize("family", ["google", "mapbox", "telemetry"])
+def test_service_keys_fail_in_every_html_even_with_matching_receipts(tmp_path, filename, family):
+    source = tmp_path / "source"
+    shutil.copytree(ORIGINALS, source)
+    path = source / filename
+    key = {
+        "google": b"AIza" + b"0" * 35,
+        "mapbox": b"pk." + b"synthetic-not-a-service-credential",
+        "telemetry": b'instrumentationKey: "synthetic-not-a-service-credential"',
+    }[family]
+    data = path.read_bytes() + b"\n<!-- " + key + b" -->\n"
+    path.write_bytes(data)
+    receipts = json.loads((source / "receipts.json").read_bytes())
+    receipt = next(row for row in receipts if row["file"] == filename)
+    receipt.update(bytes=len(data), sha256=hashlib.sha256(data).hexdigest())
+    (source / "receipts.json").write_text(json.dumps(receipts))
+    with pytest.raises(ValueError, match="Unredacted public service key"):
         REVIEW.load_originals(source)

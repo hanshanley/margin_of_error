@@ -29,13 +29,13 @@
     "fetched_at": "2026-11-05T20:38:45.480999+00:00",
     "file": "official-results-index.html",
     "final_url": "https://www.franklincountypa.gov/departments/elections-voter-registration/",
-    "bytes": 379439,
-    "sha256": "e5a19c45f3afe521e7501671ea25de72c2b76ad9113d9cc84402e9a55553c9d5",
+    "bytes": 379429,
+    "sha256": "6584a4b795456e687e9c928ab75d89d7b8493626f0717a19d9b1be2164e03424",
     "redaction": {
-      "kind": "public_map_service_and_instrumentation_keys",
-      "replacements": 2,
+      "original_sha256": "345eabf303027ddfdc2c7776519b2755e1d6fdfd73682fa58ed5cc85b01779ad",
       "original_bytes": 379429,
-      "original_sha256": "345eabf303027ddfdc2c7776519b2755e1d6fdfd73682fa58ed5cc85b01779ad"
+      "replacements": 3,
+      "reason": "Explicitly removes public-page Google/Mapbox and instrumentation keys. Complete original privately retained."
     }
   },
   {

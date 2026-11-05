@@ -47,7 +47,7 @@
     "Ballots minus candidate votes is unclassified, not inferred undervotes or overvotes.",
     "Explicit provisional candidate zeroes do not establish zero provisional ballots.",
     "Printed report timestamp has no independently established timezone.",
-    "Native HTML omits map-service access tokens; the complete original is retained privately and hashed.",
+    "Native and linking HTML omit public service and telemetry keys; complete originals are retained privately and hashed.",
     "No new map, precinct completeness, final certification or blanket upstream license is asserted."
   ],
   "table_rows": {

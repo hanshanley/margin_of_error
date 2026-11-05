@@ -14,6 +14,13 @@ import zipfile
 from bs4 import BeautifulSoup
 
 
+PUBLIC_SERVICE_KEY = re.compile(rb"\b(?:AIza[0-9A-Za-z_-]{35}|[ps]k\.[A-Za-z0-9._-]+)")
+PUBLIC_TELEMETRY_KEY = re.compile(
+    rb"""((?:['"]?(?:[A-Za-z_$]*instrumentationKey|licenseKey)['"]?)\s*[:=]\s*['"])(?!\[REDACTED_PUBLIC_SERVICE_KEY\])([^'"\r\n]+)(['"])""",
+    re.I,
+)
+
+
 COUNTIES = {
     "Chester": {
         "fips": "42029", "id": "4", "account": "chesterpaenr",
@@ -97,12 +104,14 @@ def load_originals(folder, county):
                 or receipt["status"] != 200 or receipt["bytes"] != len(data)
                 or receipt["sha256"] != hashlib.sha256(data).hexdigest()):
             raise ValueError("Original acquisition receipt mismatch")
+        if name.endswith(".html") and (
+                PUBLIC_SERVICE_KEY.search(data) or PUBLIC_TELEMETRY_KEY.search(data)):
+            raise ValueError("Unredacted public service key in source HTML")
         redaction = receipt.get("redaction")
         if name.endswith(".html") and redaction:
             if (not re.fullmatch(r"[a-f0-9]{64}", redaction.get("original_sha256", ""))
                     or redaction.get("original_bytes", 0) <= 0
-                    or redaction.get("replacements", 0) != data.count(b"[REDACTED_PUBLIC_SERVICE_KEY]")
-                    or re.search(rb"\b[ps]k\.[A-Za-z0-9._-]+", data)):
+                    or redaction.get("replacements", 0) != data.count(b"[REDACTED_PUBLIC_SERVICE_KEY]")):
                 raise ValueError("Invalid explicit HTML redaction receipt")
         elif name == "native-results.redacted.html":
             raise ValueError("Native HTML requires an explicit redaction receipt")

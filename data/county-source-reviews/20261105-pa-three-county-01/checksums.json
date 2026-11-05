@@ -40,12 +40,12 @@
     "sha256": "a60ff0e12893644ac8218e06dff9b8217a828be04e52c95f6dc5ddd34a7f2539"
   },
   "originals/chester/official-results-index.html": {
-    "bytes": 127079,
-    "sha256": "b94136e4a0052d7df38a4762f726031cbe9921375db2c4bda0ad0115db7cd73b"
+    "bytes": 127062,
+    "sha256": "a7d42218c590e57e972e54910bb7825ff99c90cdf9b8b2cd1c2af673a115a859"
   },
   "originals/chester/receipts.json": {
-    "bytes": 1737,
-    "sha256": "0014672373860ca5df2624c93b35e35aa9f4583b48aa182bff6d7497bb7bc83c"
+    "bytes": 2040,
+    "sha256": "d76c49138f86c4cc9c8db24226c17e94bdc245ce0e04d6877f0dbd296cfc7b71"
   },
   "originals/chester/summary.csv": {
     "bytes": 4708,
@@ -60,12 +60,12 @@
     "sha256": "68c0dfcc617daaed03bcd3a25206ecc515bcac20a63258ce5cb621ba1b266ac5"
   },
   "originals/franklin/official-results-index.html": {
-    "bytes": 379439,
-    "sha256": "e5a19c45f3afe521e7501671ea25de72c2b76ad9113d9cc84402e9a55553c9d5"
+    "bytes": 379429,
+    "sha256": "6584a4b795456e687e9c928ab75d89d7b8493626f0717a19d9b1be2164e03424"
   },
   "originals/franklin/receipts.json": {
-    "bytes": 2054,
-    "sha256": "899b9f9bd14716a475c8d2c246ee3e2868f47aa25d9213c7f88c1ac27f83186a"
+    "bytes": 2121,
+    "sha256": "349a82eabfd6d48b5c9b1e8ff7d4f9fab47c1475b3a1d2146aeedcb4b42c2e11"
   },
   "originals/franklin/summary.csv": {
     "bytes": 2120,
@@ -88,7 +88,7 @@
     "sha256": "3d320102ad47c3632635859a37f5bdefa24574380fcecef24e87113ad6c4ad13"
   },
   "review-pa-vendor-county-results.py": {
-    "bytes": 23018,
-    "sha256": "85530b423243bc28b4bef454dbeabca97f9d77d00edf68e5db90c0d0879f49a9"
+    "bytes": 23431,
+    "sha256": "3fabfd808b984bda6cc3c2ed66e56023fe9bfdabda10a8104c2e8a30fbf33f0f"
   }
 }

@@ -1,0 +1,58 @@
+{
+  "status": "complete_zip_withdrawn_due_to_source_key_exposure",
+  "seven_count_only_csv_assets_unaffected": true,
+  "replacement_verification": "../20261105-source-key-remediation-01/verification.json",
+  "release_tag": "voter-county-pennsylvania-three-county-20261105-01",
+  "data_commit": "8293db8a8bda6ab561e139708495425fcea0c206",
+  "assets": [
+    {
+      "file": "complete-pa-three-county-2026-04.zip",
+      "bytes": 512144,
+      "sha256": "17bc71dac1aab8796d513e08cd92dd6b0579c3f37c685068c54c874d0ef524c5",
+      "downloaded_back_and_verified": true
+    },
+    {
+      "file": "county-candidate-mode-counts.csv",
+      "bytes": 57184,
+      "sha256": "e88abc0ceef4cda96034f46d5374b9d5bd0e62f456c9cae3dc3db3d269242aba",
+      "downloaded_back_and_verified": true
+    },
+    {
+      "file": "county-candidate-results.csv",
+      "bytes": 15895,
+      "sha256": "f0c4240f8ac420347d924c8f2f6ff70874d874ae5fc865eba0274b163c0b1b7e",
+      "downloaded_back_and_verified": true
+    },
+    {
+      "file": "county-contest-totals.csv",
+      "bytes": 8605,
+      "sha256": "78a54dac66b84f42b4d5e8db4c5119b4f7bb62e0750849bd13d150e4b00e979d",
+      "downloaded_back_and_verified": true
+    },
+    {
+      "file": "county-office-party-totals.csv",
+      "bytes": 1840,
+      "sha256": "14316531e119917b90bb9ad7e8bc6e2046cca2da120a426ec6101aa238b3b5a2",
+      "downloaded_back_and_verified": true
+    },
+    {
+      "file": "county-participation.csv",
+      "bytes": 704,
+      "sha256": "baa86b43141781ac7870114528f3a74c4e364688996560014314320fb99eaa8a",
+      "downloaded_back_and_verified": true
+    },
+    {
+      "file": "native-unit-candidate-counts.csv",
+      "bytes": 1270787,
+      "sha256": "d86aa40cc0e8d3fddc21e3310c0c1ea4fdbc87388e76c753c7061b65efaeb550",
+      "downloaded_back_and_verified": true
+    },
+    {
+      "file": "native-unit-participation.csv",
+      "bytes": 44195,
+      "sha256": "f331b76f7d10d9edd8bbc5e18085705674c653a95034ff9615a876ab97f49065",
+      "downloaded_back_and_verified": true
+    }
+  ],
+  "all_eight_complete_assets_match": true
+}

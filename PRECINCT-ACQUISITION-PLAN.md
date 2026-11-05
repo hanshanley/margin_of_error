@@ -2,6 +2,21 @@
 
 ## Objective and priority
 
+**Source-key remediation takes priority over new publication.** On November 5,
+GitHub reported Google API keys copied from public county linking HTML. The
+affected current Bucks, Chester and Franklin pages are now explicitly sanitized,
+with byte-original hashes retained privately. All 40 county parser/source tests
+and 10 official-merge guards pass; election counts and geometry are unchanged.
+The three affected complete ZIPs (Bucks, national county map, and unpublished
+three-county batch) were withdrawn. Sanitized replacement release and current
+download-link deployment are pending. Do not republish their old ZIPs or copy
+unsanitized snapshots. Both county reviewers now reject Google/Mapbox and
+telemetry key patterns in every HTML file, even with matching acquisition hashes.
+GitHub alerts #1/#2 remain open with unknown key validity: the keys appear
+county/vendor-owned, cannot be rotated from this repository, and historical
+copies remain. No published-history rewrite was authorized. See
+`data/county-source-reviews/20261105-source-key-remediation-01/`.
+
 **November 5, 2026: the latest user instruction is counties instead of further
 precinct expansion.** Make counties the default map detail and primary acquisition
 unit across all 50 states and D.C., newest elections first. Preserve existing
@@ -130,7 +145,7 @@ shared reviewer preserves all 104 county candidate/ballot-option rows across
 461 native unit participation records and 6,362 native candidate observations,
 including all 520 explicit unit zeroes. Their 438,869 actual reported ballots
 remain separate from 437,079 House candidate votes and native registrations.
-All 13 focused parser tests pass; independent native CSV/mode/party/Census
+All 19 focused parser tests pass; independent native CSV/mode/party/Census
 checks and byte-identical complete ZIP reproduction pass. Data and originals
 are under `data/county-source-reviews/20261105-pa-three-county-01/`; publication
 evidence is under `data/county-source-reviews/20261105-pa-three-county-publication-01/`.
@@ -143,8 +158,11 @@ labels and accounting fields remain separate; ballot options never become
 party totals. Franklin's 195 under/6 overvotes fully explain its House ballot
 gap; Lehigh's 1,003 reported undervotes leave 46 unclassified ballots, not
 inferred overvotes. Missing native accounting fields remain blank, not zero.
-Public download release, UI deployment and production proof
-remain pending. No new map, demographic turnout, certification, or statewide
+Data/tools commit `8293db8a8bda6ab561e139708495425fcea0c206` and immutable
+release `voter-county-pennsylvania-three-county-20261105-01` were published,
+but that release's complete ZIP has since been withdrawn for source-key
+remediation; its seven count-only CSV assets are unaffected. The sanitized
+replacement and UI deployment remain pending. No new map, demographic turnout, certification, or statewide
 completeness is approved. Northampton's complete county-declared native HTML
 is also retained privately; its separate count/party review remains pending.
 
