@@ -1009,10 +1009,17 @@ proof: `files/hi-historical-local-browser-validation.json`. New build
 assertions check every source-batch download, provenance/checksum link
 and review-pending scope. At its required **pre-relocation build stage**,
 the whole-site validator passes these assertions and again stops only
-at the unchanged UK **23 vs. 16** card-count assertion. Exact historical
-registration deployment/live proof remains pending. Generic download
-labels accurately include PDF/text originals, not only CSVs. No map
-renderer or pinned research export changed.
+at the unchanged UK **23 vs. 16** card-count assertion. Historical
+registration commit `99a45fa008b73930f432782e3f2544eaa21fad59`
+was pushed as Hans (author and committer) and exact Pages run
+**41968220027 succeeded**. Production proof
+`files/hi-historical-live-browser-validation.json` passes the exact
+registry/all-1,632-cell ledger/unchanged renderer bytes, all **39**
+complete downloads, the four-year archive's exact URL and review-pending
+label, desktop/mobile JS/no-JS, 2026 default, honest Hawaii state
+red/blue fallback, zoom and failed-registry-fetch fallback.
+Generic download labels accurately include PDF/text originals, not
+only CSVs. No map renderer or pinned research export changed.
 The multiyear source-batch ledger path preserves each actual election,
 does not claim reconciled votes/turnout and does not override an existing
 independently validated partial map with unreviewed official originals.
@@ -1027,12 +1034,68 @@ aligned with the Esri Streets basemap. Its native spatial reference is
 historical release**, not yet geometry/overlap/ballot-scope reviewed,
 not joined, not published and not established for 2026.
 
-Next: finish the full-download registration's exact live proof, then
-review each year independently and acquire its correct-year references. Continue
+Next: review each year independently and acquire its correct-year references. Continue
 newest-first acquisition and distinguish acquired originals from reviewed
 candidate totals, validated geometry and live maps. Hawaii is **not
 complete**, and the other 2026 states/DC and all historical ledger cells
 remain actionable.
+
+## Rhode Island 2026: complete native export acquired; review not yet published
+
+The official Board of Elections archive page
+`https://elections.ri.gov/elections/previous-election-results` returns HTTP
+403 to both browser retrieval and Requests. This is **not unavailability**:
+the actual official current interface is reachable at
+`https://electionresults.ri.gov/results/public/rhodeisland/elections/2026StatewideGeneralElection`.
+Its browser-discovered public endpoint
+`https://electionresults.ri.gov/results/public/api/elections/rhodeisland/2026StatewideGeneralElection/data`
+is completely acquired: **1,497,865 bytes**, 453 contests and 40 child
+localities. Its exact original and receipt are cached under session
+`files/precinct-expansion-sources/RI-2026/`, with the complete original
+HTML, rendered interface, actual main bundle and all public-response receipts.
+
+The native response explicitly advertises
+`jurisdiction.mediaExportPath=RhodeIsland/export-2026StatewideGeneralElection.json`.
+The actual main bundle explicitly sets CDN `/cdn/results`; it is not an
+invented endpoint. The **complete** original
+`https://electionresults.ri.gov/cdn/results/RhodeIsland/export-2026StatewideGeneralElection.json`
+is cached as `official-media-export.json`: **11,103,548 bytes**, SHA-256
+`5ad4afd10211821e360e4d5ca1714fedd318557e94a682dad8ba062af9a99b2f`.
+It identifies **November 3, 2026**, Statewide General Election, created
+`2026-11-05T01:03:12.7660788Z`, with complete statewide and 40-locality
+originals, including every candidate's native precinct and voting-mode rows.
+Do **not redownload this acquired snapshot**.
+
+Exploratory evidence `exploratory-house-scope.json` verifies all seven
+House candidate identities, names, native IDs, party values and total
+counts against the separate public parent API. All totals and all **21**
+candidate/mode totals reconcile across state, localities and native
+reporting units. District 1 has Amo 111,639, Keenan 44,786, DeSouza 6,178,
+write-ins 228; District 2 has Magaziner 120,586, Mellor 73,663,
+write-ins 510. Preserve null native write-in party values; the API
+represents these as an all-null party object with a display color.
+
+There are **458 distinct native House reporting units**, **not 458
+established residential precincts**. All source `isVirtual` values are
+false, including four units in the separate **Federal** locality:
+native IDs 1491/1497/1494/1500, Federal Precinct #1/#1S/#2/#2S.
+Ordinary-town native rows also include limited-only clerk's-office
+records, e.g. Barrington 0107. There are 41 locality/House comparisons
+where native result-unit count differs from `precinctsParticipating`;
+retain these rather than silently dropping records or calling them
+geographic precincts. Same-locality candidate unit sets agree.
+The parent API's statewide `ballotsCast=0` is **not** a usable turnout
+numerator or proof of no participation; retain separate local facts
+without substituting candidate totals or summing incompatible scopes.
+
+This is **session-cache acquisition and exploratory evidence**, not a
+committed immutable review, complete public download, accepted boundary
+join or new mapped coverage. Next: implement/test an offline native
+review preserving every source ID and mode, verify all repeated facts
+and independently reproduce its complete original-backed download;
+separately review local participation and acquire authoritative
+2026 geographic references. Do not mark the RI ledger cell complete,
+borrow 2024 boundaries or map Federal/limited-only votes onto households.
 
 ## Resume procedure for every work session or scheduled prompt
 
