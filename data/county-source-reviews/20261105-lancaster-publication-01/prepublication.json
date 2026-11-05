@@ -1,0 +1,29 @@
+{
+  "added_complete_urls": [
+    "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-lancaster-20261105-01/complete-lancaster-2026-county-results-01.zip",
+    "https://raw.githubusercontent.com/hanshanley/margin_of_error/3aabcede13986955f094d706015486ad7a7c3362/data/county-source-reviews/20261105-lancaster-reviewed-01/county-contest-accounting-modes.csv",
+    "https://raw.githubusercontent.com/hanshanley/margin_of_error/3aabcede13986955f094d706015486ad7a7c3362/data/county-source-reviews/20261105-lancaster-reviewed-01/county-contest-accounting.csv",
+    "https://raw.githubusercontent.com/hanshanley/margin_of_error/3aabcede13986955f094d706015486ad7a7c3362/data/county-source-reviews/20261105-lancaster-reviewed-01/county-literal-party-totals.csv",
+    "https://raw.githubusercontent.com/hanshanley/margin_of_error/3aabcede13986955f094d706015486ad7a7c3362/data/county-source-reviews/20261105-lancaster-reviewed-01/county-option-mode-results.csv",
+    "https://raw.githubusercontent.com/hanshanley/margin_of_error/3aabcede13986955f094d706015486ad7a7c3362/data/county-source-reviews/20261105-lancaster-reviewed-01/county-option-results.csv",
+    "https://raw.githubusercontent.com/hanshanley/margin_of_error/3aabcede13986955f094d706015486ad7a7c3362/data/county-source-reviews/20261105-lancaster-reviewed-01/county-participation.csv",
+    "https://raw.githubusercontent.com/hanshanley/margin_of_error/3aabcede13986955f094d706015486ad7a7c3362/data/county-source-reviews/20261105-lancaster-reviewed-01/native-party-statistics.csv",
+    "https://raw.githubusercontent.com/hanshanley/margin_of_error/3aabcede13986955f094d706015486ad7a7c3362/data/county-source-reviews/20261105-lancaster-reviewed-01/native-unit-participation.csv"
+  ],
+  "expected_unique_complete_download_urls": 250,
+  "lineage_review": {
+    "historical_cleanup_or_owner_rotation_claimed": false,
+    "newer_exposure_8293db8_is_ancestor": false,
+    "older_bucks_exposure_3d2be9_already_in_existing_main": true,
+    "older_exposure_not_introduced_by_this_batch": true,
+    "publication_commit": "a48e3c21ddcfe101211f34693f3093cbe233637f"
+  },
+  "maps_changed": false,
+  "prior_complete_download_urls": 241,
+  "prior_reviews_preserved_exactly": true,
+  "registry_sha256": "fa48e7b5f11067063d11ad863acd7965f748267f7592c7c7900c218a75a423de",
+  "tracked_html_source_screen": {
+    "files": 38,
+    "service_or_telemetry_key_matches": 0
+  }
+}

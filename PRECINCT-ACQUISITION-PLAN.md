@@ -266,8 +266,30 @@ Its ZIP is 763,713 bytes with SHA-256
 Sixteen new regressions and 35 existing county-parser regressions pass.
 York's alternate government host timed out and its declared Clarity page
 returned HTTP403; retain those bounded failures without bypassing the denial.
-Lancaster release/website integration is pending; no new geometry, map,
-demographic turnout, certification or statewide completion is approved.
+Release `voter-county-pennsylvania-lancaster-20261105-01` is pinned to publication
+data/tools commit `3aabcede13986955f094d706015486ad7a7c3362`; all nine release
+assets and all eight commit-pinned CSV URLs were downloaded and byte-verified.
+The website update preserves all previous 241 complete download URLs and adds
+exactly nine, for 250. Local four-mode browser proof passes exact set equality.
+Astro check, participation tests, build and Pages preparation pass; 94 relocated
+bulk files are byte-identical and the prepared local site is 987,318,167 bytes.
+Broad validation still fails only the known unrelated UK topic-card assertion
+(23 actual versus 16 expected); it is not reported as passing.
+Registry-only publication commit `a48e3c21ddcfe101211f34693f3093cbe233637f`
+passed exact Pages run `42122234060` on attempt 1. Production four-mode browser
+proof passes exact 250-URL set equality, preserving all previous 241 URLs;
+both production source-review/county registry files are byte-identical to the
+reviewed sources. CI prepared 997,456,587 bytes and uploaded a 491,866,474-byte
+artifact, recorded separately from local preparation. Complete deployment,
+production browser/source verification and checksummed evidence are persisted
+in the publication directory. No frontend or map changes follow that proof.
+All 38 current tracked HTML files pass service/telemetry screening without
+printing matching values. The newer exposed three-county commit is excluded
+from this publication ancestry; older Bucks exposure `3d2be9` was already an
+ancestor of existing main and is not claimed removed. Alerts #1/#2 remain
+open with unknown validity, without confirmed owner rotation or revocation.
+No new geometry, map, demographic turnout, certification or statewide
+completion is approved.
 Its separate county-parent linking page has not been independently acquired.
 
 The reusable 2026 county-results and separate UF/state participation pipelines

@@ -1,0 +1,47 @@
+{
+  "all_250_urls_exact_in_all_four_modes": true,
+  "all_eight_commit_pinned_csvs_downloaded_and_byte_identical": true,
+  "all_nine_release_assets_downloaded_and_byte_identical": true,
+  "ci_bulk_files_byte_identical": 94,
+  "ci_compressed_artifact_bytes": 491866474,
+  "ci_log_sha256": "fe30173bde2a0135b05fc55bcfec68858df34b38878a11154c9e902fa1d03196",
+  "ci_prepared_site_bytes": 997456587,
+  "historical_exposure_cleanup_claimed": false,
+  "historical_secret_alerts": [
+    {
+      "number": 2,
+      "resolution": null,
+      "secret_type": "google_api_key",
+      "state": "open",
+      "validity": "unknown"
+    },
+    {
+      "number": 1,
+      "resolution": null,
+      "secret_type": "google_api_key",
+      "state": "open",
+      "validity": "unknown"
+    }
+  ],
+  "maps_changed": false,
+  "owner_rotation_or_revocation_confirmed": false,
+  "previous_241_urls_preserved": true,
+  "production_source_files": [
+    {
+      "byte_identical": true,
+      "bytes": 42145,
+      "file": "participation-source-reviews.json",
+      "sha256": "fa48e7b5f11067063d11ad863acd7965f748267f7592c7c7900c218a75a423de"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 7163,
+      "file": "county-results.json",
+      "sha256": "d725c5005ee7da0cb1954a1a03c5505f4391ee2ab1ba3e3162f416d70dba17bf"
+    }
+  ],
+  "publication_commit": "a48e3c21ddcfe101211f34693f3093cbe233637f",
+  "successful_attempt": 1,
+  "successful_run": 42122234060,
+  "verified_at_utc": "2026-11-05T22:40:28.714744+00:00"
+}

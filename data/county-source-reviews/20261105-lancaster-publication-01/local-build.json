@@ -1,0 +1,23 @@
+{
+  "astro_check": "pass",
+  "broad_validation": "known unrelated UK topic-card assertion fails: actual 23, expected 16, scripts/validate-build.mjs:1125",
+  "build": "pass",
+  "byte_identical_bulk_files": 94,
+  "county_parser_tests": {
+    "failed": 0,
+    "passed": 51
+  },
+  "log_sha256": {
+    "lancaster-astro-check-01.log": "181607a1b90882e6cb8f9020bf9b877e8903e3196415dc71fa2f8ab85511c357",
+    "lancaster-build-01.log": "1b7ab9657082962fa24236b08d30f166f2baa8f293ac9171aff5bac0ce5e1769",
+    "lancaster-build-validation-01.log": "3ac42a5f821bab97f1406c81af52d775eb6686ae2440e629b4c41bdde3cca4a8",
+    "lancaster-pages-preparation-01.log": "5d900377ad7f6f6346c29709ec59d02e599e64d4645a19863ec6b2a9e2572d9d",
+    "lancaster-participation-tests-01.log": "b8bc657010fb1bd831263ba34de16ef2fe2bdcae5aa8c32c7b245e81e88f6fae"
+  },
+  "pages_preparation": "pass",
+  "participation_tests": {
+    "failed": 0,
+    "passed": 7
+  },
+  "prepared_site_bytes": 987318167
+}
