@@ -39,7 +39,7 @@ def build(source, output):
         raise ValueError("County overview omits reviewed counties")
     data = dict(type="FeatureCollection", year=index["year"],
                 geometry_scope="Display-simplified 2026 Census county reference; full shapes remain in the complete download.",
-                source_directory=source.as_posix(), features=features)
+                features=features)
     raw = json.dumps(data, separators=(",", ":"), allow_nan=False).encode() + b"\n"
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_bytes(gzip.compress(raw, mtime=0))

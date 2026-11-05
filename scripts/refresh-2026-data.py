@@ -3,6 +3,7 @@
 import argparse
 from datetime import datetime, timezone
 import hashlib
+import gzip
 import importlib.util
 import json
 import os
@@ -111,12 +112,16 @@ def unchanged(kind, output, previous):
         return (current["version"] == candidate["version"]
                 and [(r["url"], r["sha256"]) for r in current["receipts"][-2:]]
                 == [(r["url"], r["sha256"]) for r in candidate["receipts"][-2:]])
-    if digest(old / "county-results.json.gz") != digest(output / "county-results.json.gz"):
+    if gzip.decompress((old / "county-results.json.gz").read_bytes()) != gzip.decompress(
+            (output / "county-results.json.gz").read_bytes()):
         return False
     if not previous.get("party_votes"):
         return False
     party_old = ROOT / previous["party_votes"]["data_directory"]
-    return read(party_old / "audit.json")["files"] == read(output / "party-votes/audit.json")["files"]
+    files = read(output / "party-votes/audit.json")["files"]
+    return (set(files) == set(read(party_old / "audit.json")["files"])
+            and all(gzip.decompress((party_old / name).read_bytes())
+                    == gzip.decompress((output / "party-votes" / name).read_bytes()) for name in files))
 
 
 def publish(kind, output, archive, work, run_id, previous):
@@ -141,18 +146,25 @@ def publish(kind, output, archive, work, run_id, previous):
         shutil.copytree(output / "party-votes", destination / "party-votes")
         index = read(destination / "index.json")
         old_index = read(ROOT / previous["data_directory"] / "index.json")
+        source_checksums = read(output / "checksums.json")
+        old_checksums = read(ROOT / previous["data_directory"] / "checksums.json")
         for code, coverage in index["coverage"].items():
             native = output / coverage["file"]
             old_coverage = old_index["coverage"].get(code)
-            source_checksums = read(output / "checksums.json")
-            old_checksums = read(ROOT / previous["data_directory"] / "checksums.json")
             coverage["sha256"] = source_checksums[coverage["file"]]["sha256"]
+            coverage["uncompressed_sha256"] = hashlib.sha256(gzip.decompress(native.read_bytes())).hexdigest()
             old_hash = (old_coverage.get("sha256") or old_checksums.get(old_coverage["file"], {}).get("sha256")
                         if old_coverage else None)
-            if (old_coverage and source_checksums[coverage["file"]]["sha256"]
-                    == old_hash):
+            old_semantic_hash = old_coverage.get("uncompressed_sha256") if old_coverage else None
+            if old_coverage and old_semantic_hash is None:
+                old_native = ROOT / previous["data_directory"] / old_coverage["file"]
+                if old_native.is_file():
+                    old_semantic_hash = hashlib.sha256(gzip.decompress(old_native.read_bytes())).hexdigest()
+            if old_coverage and (coverage["sha256"] == old_hash
+                                 or coverage["uncompressed_sha256"] == old_semantic_hash):
                 from urllib.parse import urljoin
                 coverage["file"] = urljoin(previous["base_url"], old_coverage["file"])
+                coverage["sha256"] = old_hash
             else:
                 target = destination / coverage["file"]
                 target.parent.mkdir(parents=True, exist_ok=True)

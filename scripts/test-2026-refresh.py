@@ -1,4 +1,5 @@
 import csv
+import gzip
 import importlib.util
 import io
 from pathlib import Path
@@ -91,3 +92,24 @@ def test_county_refresh_cannot_replace_good_publication_with_partial_state_or_co
         refresh.validate_county_coverage(old, old, rows, rows[:1])
     with pytest.raises(ValueError, match="year"):
         refresh.validate_county_coverage(old, {**old, "boundary_reference_year": 2024}, rows, rows)
+
+
+def test_unchanged_data_is_not_republished_for_platform_only_gzip_header_changes(tmp_path, monkeypatch):
+    monkeypatch.setattr(refresh, "ROOT", tmp_path)
+    old, new = tmp_path / "old", tmp_path / "new"
+    old.mkdir()
+    (old / "parties").mkdir()
+    (new / "party-votes").mkdir(parents=True)
+    raw = gzip.compress(b"original rows\n", mtime=0)
+    other_platform = bytearray(raw)
+    other_platform[9] = 3 if raw[9] != 3 else 255
+    (old / "county-results.json.gz").write_bytes(raw)
+    (new / "county-results.json.gz").write_bytes(other_platform)
+    for folder in (old / "parties", new / "party-votes"):
+        refresh.write(folder / "audit.json", {"files": {"county-party-totals.csv.gz": {}}})
+    (old / "parties/county-party-totals.csv.gz").write_bytes(raw)
+    (new / "party-votes/county-party-totals.csv.gz").write_bytes(other_platform)
+    previous = {"data_directory": "old", "party_votes": {"data_directory": "old/parties"}}
+    assert refresh.unchanged("county", new, previous)
+    (new / "party-votes/county-party-totals.csv.gz").write_bytes(gzip.compress(b"changed votes\n", mtime=0))
+    assert not refresh.unchanged("county", new, previous)

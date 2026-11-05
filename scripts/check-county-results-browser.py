@@ -23,6 +23,9 @@ pointer = json.loads((root / "public/county-results.json").read_text())
 directory = root / pointer["data_directory"]
 index = json.loads((directory / "index.json").read_text())
 rows = json.loads((directory / "margins.json").read_text())
+uf_pointer_path = root / "public/uf-turnout.json"
+uf_pointer = json.loads(uf_pointer_path.read_bytes()) if uf_pointer_path.exists() else None
+uf_rows = json.loads((root / uf_pointer["data_directory"] / "turnout.json").read_bytes()) if uf_pointer else []
 precinct_pointer = json.loads((root / "public/precinct-results.json").read_text())
 precinct_coverage = {}
 for snapshot in [precinct_pointer, *precinct_pointer.get("additional_snapshots", [])]:
@@ -40,7 +43,7 @@ download_count = (18 + len(precinct_pointer["source_reviews"]) + len(precinct_po
                   + 3 * (1 + len(pointer.get("previous_snapshots", [])))
                   + sum(1 + len(review["tables"]) for review in participation_reviews))
 for name in ["county-results.json", "precinct-results.json", "precinct-coverage.csv",
-             "scripts/participation-explorer.js"]:
+             "scripts/participation-explorer.js"] + (["uf-turnout.json"] if uf_pointer else []):
     response = requests.get(base + "/" + name, timeout=90)
     response.raise_for_status()
     assert response.content == (root / "public" / name).read_bytes(), f"Not current source: {name}"
@@ -123,10 +126,26 @@ with sync_playwright() as p:
                 assert parties["complete_download_url"] in downloads
                 assert {parties["base_url"] + table["file"] for table in parties["tables"]} <= downloads
                 expect(page.locator("#downloads")).to_contain_text("test data are withheld")
+            if uf_pointer:
+                assert uf_pointer["complete_download_url"] in downloads
+                assert uf_pointer["base_url"] + "originals/turnout.csv" in downloads
+                table_rows = page.locator('table[data-uf-turnout="2026"] tbody tr')
+                expect(table_rows).to_have_count(len(uf_rows))
+                expected_uf = [[row["STATE_ABV"],
+                    "Not reported" if row["TOTAL_BALLOTS_COUNTED"] is None else f'{row["TOTAL_BALLOTS_COUNTED"]:,}',
+                    row["SOURCE"], "Not reported" if row["VEP"] is None else f'{row["VEP"]:,}',
+                    "Not reported" if row["VEP_TURNOUT_RATE"] is None else f'{row["VEP_TURNOUT_RATE"]:.2f}%',
+                    "Not reported" if row["VAP_TURNOUT_RATE"] is None else f'{row["VAP_TURNOUT_RATE"]:.2f}%']
+                    for row in uf_rows]
+                actual_uf = table_rows.evaluate_all("rows => rows.map(row => [row.dataset.stateCode,"
+                    "...[...row.querySelectorAll('td')].map(cell => cell.textContent.trim())])")
+                assert actual_uf == expected_uf, "UF table differs from source counts, statuses or own-denominator rates"
             expect(page.locator("#downloads")).to_contain_text(f"{len(index['coverage'])} states")
             expect(page.locator("#downloads")).to_contain_text("not precinct results")
             assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
             mode = {"mobile": mobile, "javascript": javascript, "complete_downloads": len(downloads)}
+            if uf_pointer:
+                mode["uf_rows_source_matched"] = len(uf_rows)
             if javascript:
                 mode["overview_transport"] = "raw gzip" if mobile else "server response"
             if not javascript:
