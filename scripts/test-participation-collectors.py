@@ -51,6 +51,18 @@ def test_original_source_downloads_do_not_claim_validated_maps_or_participation(
     assert row["participation"] == "not_acquired"
 
 
+def test_historical_acquisition_never_produces_a_metadata_only_archive(tmp_path, monkeypatch):
+    (tmp_path / "public").mkdir()
+    (tmp_path / "public/precinct-source-inventory.json").write_text(json.dumps({
+        "states": {"AZ": {"elections": {"1964": []}}}}))
+    monkeypatch.setattr(historical_sources, "ROOT", tmp_path)
+    monkeypatch.setattr("sys.argv", ["acquire", "--year", "1964", "--output", str(tmp_path / "data"),
+                                   "--archive", str(tmp_path / "empty.zip")])
+    with pytest.raises(ValueError, match="metadata-only"):
+        historical_sources.main()
+    assert not (tmp_path / "empty.zip").exists()
+
+
 def mn_fixture():
     precincts, counties, statewide, table = [], [], [], {}
     for district in range(1, 9):

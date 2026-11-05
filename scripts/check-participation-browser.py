@@ -33,9 +33,17 @@ results_pointer = json.loads((public / "participation-results/latest.json").read
 results_root = public / "participation-results" / results_pointer["snapshot_id"]
 result_rows = json.loads((results_root / "margins.json").read_text())
 precinct_results_pointer = json.loads((public / "precinct-results.json").read_text())
-expected_downloads = 18 + len(precinct_results_pointer.get("source_reviews", []))
+expected_downloads = (18 + len(precinct_results_pointer.get("source_reviews", []))
+                      + len(precinct_results_pointer.get("source_batches", []))
+                      + 3 * len(precinct_results_pointer.get("additional_snapshots", [])))
 precinct_results_root = public.parent / precinct_results_pointer["data_directory"]
 precinct_results_index = json.loads((precinct_results_root / "index.json").read_text())
+for snapshot in precinct_results_pointer.get("additional_snapshots", []):
+    additional = json.loads((public.parent / snapshot["data_directory"] / "index.json").read_text())
+    for year, codes in additional["coverage"].items():
+        precinct_results_index["coverage"].setdefault(year, {}).update({
+            code: dict(coverage, data_directory=snapshot["data_directory"]) for code, coverage in codes.items()
+        })
 margins = [row for row in margins if row["year"] != 2026] + result_rows
 methods_pointer = json.loads((public / "participation-methods/latest.json").read_text())
 methods_root = public / "participation-methods" / methods_pointer["snapshot_id"]
@@ -94,16 +102,18 @@ def result_color(margin):
 
 def check_precinct_results(page, year, code):
     coverage = precinct_results_index["coverage"][str(year)][code]
-    features = json.loads(gzip.decompress((precinct_results_root / coverage["file"]).read_bytes()))["features"]
+    root = public.parent / coverage.get("data_directory", precinct_results_pointer["data_directory"])
+    features = json.loads(gzip.decompress((root / coverage["file"]).read_bytes()))["features"]
     expected = {p["key"]: [p["margin_pp"], p["contest_votes"], result_color(p["margin_pp"])]
                 for feature in features for p in [feature["properties"]]
-                if p["match_status"] == "matched" and p["margin_pp"] is not None}
+                if feature["geometry"] and p["match_status"] == "matched" and p["margin_pp"] is not None}
     paths = page.locator('.substate-feature[data-color-level="precinct"]')
     expect(paths).to_have_count(len(expected), timeout=60000)
     actual = paths.evaluate_all(
         "paths => Object.fromEntries(paths.map(p => [p.dataset.geography, "
         "[+p.dataset.margin, +p.dataset.totalVotes, p.getAttribute('fill')]]))")
     assert actual == expected, f"{year} {code}: candidate counts/margins/colors differ from audited precinct results"
+    return features
 
 
 with sync_playwright() as p:
@@ -133,7 +143,8 @@ with sync_playwright() as p:
     assert result_colors(page) == expected_colors, "State colors must match all 50 actual election-result margins"
     expect(page.locator("#key")).to_contain_text("R+35")
     expect(page.locator("#key")).to_contain_text("D+35")
-    expect(page.locator("#coverage-note")).to_contain_text("2 states")
+    current_codes = precinct_results_index["coverage"]["2026"]
+    expect(page.locator("#coverage-note")).to_contain_text(f'{len(set(current_codes) - {"DC"})} states')
     expect(page.locator("#caption")).to_contain_text("excludes separately reported")
     screenshot(page, "participation-default-red-blue-results.png")
     page.locator("#state-select").select_option("New Mexico")
@@ -158,6 +169,23 @@ with sync_playwright() as p:
     expect(page.locator("#substate-detail")).to_contain_text("not turnout")
     assert page.locator("#substate-detail").bounding_box()["y"] < page.locator("#selection-panel h3").first.bounding_box()["y"]
     screenshot(page, "participation-2026-actual-precinct-results.png")
+    for code in sorted(set(current_codes) - {"NC", "NM"}):
+        page.locator("#state-select").select_option(names[code])
+        shapes = check_precinct_results(page, 2026, code)
+        if code == "MN":
+            page.locator('.substate-feature[data-color-level="precinct"]').first.dispatch_event("click")
+            expect(page.locator("#substate-detail")).to_contain_text("Separate participation statistics")
+            screenshot(page, "participation-2026-minnesota.png")
+            missing = next(f["properties"] for f in shapes if f["properties"]["margin_pp"] is not None
+                           and not f["properties"]["participation"]["reported"])
+            page.locator(f'.substate-feature[data-geography="{missing["key"]}"]').dispatch_event("click")
+            expect(page.locator("#substate-detail")).to_contain_text("not yet reported for this precinct")
+    for year in sorted((year for year in precinct_results_index["coverage"] if int(year) < 2024), reverse=True):
+        page.locator("#year").select_option(year)
+        for code in sorted(precinct_results_index["coverage"][year]):
+            page.locator("#state-select").select_option(names[code])
+            check_precinct_results(page, int(year), code)
+        print(f"PASS: actual candidate counts and exact red/blue fills in every acquired {year} state/DC layer", flush=True)
     page.locator("#year").select_option("2024")
     for code in sorted(precinct_results_index["coverage"]["2024"]):
         page.locator("#state-select").select_option(names[code])

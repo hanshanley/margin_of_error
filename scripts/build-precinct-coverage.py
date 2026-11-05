@@ -176,6 +176,8 @@ def write_ledger(index=None, published=False):
         "boundaries, silently allocate county early/mail votes, or extrapolate state colors into precinct results.",
         "Full source downloads, state caveats, licenses and unmapped rows must remain available.", "",
         "Status key: `not_reviewed` = still to investigate; `acquired` = source saved, not yet mapped;",
+        "`acquired_originals_review_pending` = complete original file saved, contest/ballot scope unverified;",
+        "`full_originals_download_only` = complete source download, not validated maps or inferred turnout;",
         "`reference_acquired` = reference geometry, not certified election-day boundaries;",
         "`validated_partial` = audited subset only; `snapshot_ready` = data built, not yet verified live;",
         "`published_partial` = the acquired layer passed live browser checks, not complete statewide coverage.",

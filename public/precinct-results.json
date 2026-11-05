@@ -4,5 +4,22 @@
   "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-results-20261105/complete-precinct-results.zip",
   "complete_download_bytes": 1367560488,
   "complete_download_sha256": "2b5bc00871e3a4f8bb9aba193bafabde2e274a8345dfb684a4dff2af2bff8f17",
+  "publication": "live_verified_partial",
+  "additional_snapshots": [{
+    "label": "Minnesota 2026 and original nationwide 2020 precinct results",
+    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/391c681d58f04b57676d1824d5e1c1e4c5bed464/data/precinct-results/20261105-expansion-01/",
+    "data_directory": "data/precinct-results/20261105-expansion-01",
+    "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-expansion-20261105/complete-additional-precinct-results.zip",
+    "complete_download_bytes": 398235632,
+    "complete_download_sha256": "f0d46aa827cda1f0c47a3f5089a859c44c61e497b9386a89598878eef9d4c094"
+  }],
+  "source_batches": [{
+    "label": "2022 precinct sources from 25 states",
+    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/b6453452206c4902f73d2434ea88906e1d02d5b9/data/precinct-source-reviews/20261105/2022/",
+    "data_directory": "data/precinct-source-reviews/20261105/2022",
+    "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-sources-2022-20261105/complete-2022-precinct-source-batch.zip",
+    "complete_download_bytes": 22214839,
+    "complete_download_sha256": "3525bd75010236853748ed04edc0545c1a24834a0a0c9deb411d8c11885494d1"
+  }],
   "source_reviews": ["data/precinct-source-reviews/20261105/DE/audit.json"]
 }

@@ -33,6 +33,62 @@ These are candidate-result layers, not participation rates. Existing participati
 series and NC precinct participation histories remain separate. No state/year is
 declared fully complete.
 
+## Acquisition batch at `391c681`
+
+- Minnesota 2026: **4,105** exact county/precinct joins to September 18, 2026
+  official reference boundaries; **4,073** nonzero colorable precincts. House
+  candidate counts reconcile from precinct to county to congressional district.
+- Separate Minnesota voting statistics: **4,105** rows, using the official 2026
+  media field layout. Only 2,490 precincts report statistics; **1,735 rates are
+  withheld**, including incomplete reporting, small/inconsistent denominators,
+  15 ballot-mode discrepancies, and House counts exceeding reported voters.
+  Keep the original values and quality flags; do not repair them by substituting
+  candidate votes for voters or calling an election-night fraction final turnout.
+- Original 2020 NYT release: **146,596** reporting shapes across **46 states and
+  D.C.**, with **142,609** colorable shapes. Preserve 96 missing-count Nevada
+  rows as missing. Alabama, Alaska, Louisiana, and Virginia are absent from this
+  source, not established unavailable. Reconstructed boundaries lack individual
+  official flags, and some jurisdictions report by municipality.
+- Complete source ZIP is byte-verified after upload:
+  `voter-precinct-expansion-20261105/complete-additional-precinct-results.zip`,
+  **398,235,632 bytes**, SHA-256
+  `f0d46aa827cda1f0c47a3f5089a859c44c61e497b9386a89598878eef9d4c094`.
+  This includes the full 276 MB original 2020 national GeoJSON gzip, not just
+  metadata or the simplified map layers.
+- Primary 2024 and NC/NM 2026 deployment `41944997086` passed the full live
+  browser suite, including zoom, exact candidate colors/counts, and fallbacks.
+  The new supplement is **snapshot-ready, not yet live-verified**. Finish its
+  local/browser/deployment verification before changing that status.
+
+## 2022 original-source batch at `b645345`
+
+Acquired **3,683,815 complete original CSV rows** for AZ, CO, CT, FL, GA, IA, LA,
+MI, MN, MS, ND, NM, NV, NY, OR, PA, RI, SC, SD, TN, TX, UT, WI, WV, and WY.
+Each file matches the exact Git blob from the reviewed archive inventory and has
+an immutable source-commit URL. All original rows, ballot-mode columns, and
+repository documentation are retained. The CSV structure audit found no malformed
+rows, but **does not independently reconcile candidate totals or establish
+complete statewide ballot coverage**. Georgia supplies separate ballot-mode
+columns rather than a candidate-total column; do not silently manufacture totals.
+
+The complete archive is
+`voter-precinct-sources-2022-20261105/complete-2022-precinct-source-batch.zip`,
+**22,214,839 bytes**, SHA-256
+`3525bd75010236853748ed04edc0545c1a24834a0a0c9deb411d8c11885494d1`.
+Keep these cells `acquired_originals_review_pending` / `full_originals_download_only`
+until actual contest/scope/count reconciliation and correct-election geometry
+checks pass. These are **not 25 published maps or turnout datasets**.
+
+Next executable historical work: independently reconcile these 2022 returns and
+acquire correct-election geometry; acquire county-only original leads for other
+states rather than repeatedly downloading these 25 completed source files.
+Broader Harvard search identified MIT datasets `doi:10.7910/DVN/EOKNGW` (House),
+`doi:10.7910/DVN/IAD3XR` (Senate), and `doi:10.7910/DVN/UYQIEP` (state packages).
+House file `13996912` has 784,248 observations and MD5
+`8922970b43a9c0db4830b1a164988b5c`, but metadata/export/download requests returned
+HTTP 403. These are identified leads, **not acquired data**. Use legitimate
+published alternatives; do not bypass access restrictions.
+
 ## Resume procedure for every work session or scheduled prompt
 
 1. Read `AGENTS.md`, `CLAUDE.md`, `PUBLISHING.md`, this plan, and the newest rows
@@ -74,7 +130,11 @@ Concrete next investigations already identified:
   `https://electionresultsfiles.sos.mn.gov/20261103/PrctTbl.txt`.
   Read the field layout at
   `https://electionresults.sos.mn.gov/Results/MediaFileLayout/Index?erselectionId=201`.
-  These links are inspected leads, not yet acquired or validated result layers.
+  This batch is now acquired at `391c681`; do not redownload its immutable
+  snapshot. The field-layout URL sometimes returns a CAPTCHA to direct requests;
+  its publicly accessible 2026 text was independently read and confirms all
+  twelve voting-statistics fields. Use published documentation, never a challenge
+  page as source data. The builder rejects HTML responses before caching them.
 - California: inspect the official 2026 media files and county exports; determine
   whether each feed contains actual precinct results rather than only counts of
   reporting precincts.

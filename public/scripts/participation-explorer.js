@@ -451,10 +451,20 @@ async function loadCurrentPrecincts() {
       const response = await fetch("/precinct-results.json");
       if (!response.ok) throw new Error(`Result pointer: HTTP ${response.status}`);
       const pointer = await response.json();
-      state.precinctResultsPath = pointer.base_url;
-      const index = await fetch(state.precinctResultsPath + "index.json");
-      if (!index.ok) throw new Error(`Precinct result coverage: HTTP ${index.status}`);
-      state.precinctResults = await index.json();
+      for (const snapshot of [pointer, ...(pointer.additional_snapshots || [])]) {
+        const index = await fetch(snapshot.base_url + "index.json");
+        if (!index.ok) throw new Error(`Precinct result coverage: HTTP ${index.status}`);
+        const data = await index.json();
+        state.precinctResults ||= { coverage: {} };
+        for (const [year, states] of Object.entries(data.coverage)) {
+          state.precinctResults.coverage[year] ||= {};
+          for (const [code, coverage] of Object.entries(states)) {
+            state.precinctResults.coverage[year][code] = {
+              ...coverage, data_url: new URL(coverage.file, snapshot.base_url).href,
+            };
+          }
+        }
+      }
     } catch (error) {
       state.precinctResultsError = `Precinct candidate returns could not be loaded: ${error.message}.`;
     }
@@ -469,6 +479,15 @@ async function loadCurrentPrecincts() {
       html("p", "selection-note", p.ballot_scope),
       html("p", "selection-note", "Candidate-vote margin, not turnout or demographic participation. Matching precinct identifiers does not establish unchanged boundaries across elections."));
     if (p.official_boundary === false) panel.append(html("p", "selection-note", "Approximate boundary reconstructed by The New York Times, not an official precinct shape."));
+    if (p.boundary_provenance) panel.append(html("p", "selection-note", p.boundary_provenance));
+    if (p.participation) {
+      const participation = p.participation;
+      panel.append(html("p", "selection-note", !participation.reported
+        ? "Separate participation statistics: not yet reported for this precinct. No participation rate; original source values remain in the downloads."
+        : `Separate participation statistics: ${fmt(participation.ballots)} reported voters / `
+        + `${fmt(participation.denominator)} registered at opening plus election-day registrations; `
+        + `${pct(participation.reported_pct)}. ${participation.quality}. Missing, inconsistent or small denominators have no rate.`));
+    }
     panel.append(sourceLink(p));
     panel.parentElement.prepend(panel);
   }
@@ -476,7 +495,7 @@ async function loadCurrentPrecincts() {
     const coverage = state.precinctResults.coverage[year][code], key = `${year}|${code}`;
     if (!state.precinctResultShapes.has(key)) {
       const promise = (async () => {
-        const response = await fetch(state.precinctResultsPath + coverage.file);
+        const response = await fetch(coverage.data_url);
         if (!response.ok) throw new Error(`Precinct candidate results: HTTP ${response.status}`);
         if (!globalThis.DecompressionStream) throw new Error("Compressed precinct results are unsupported by this browser; complete downloads remain available");
         return new Response(response.body.pipeThrough(new DecompressionStream("gzip"))).json();
@@ -487,7 +506,7 @@ async function loadCurrentPrecincts() {
     if (token !== state.drillToken || state.map !== map) return;
     for (const feature of data.features) {
       const p = feature.properties;
-      if (p.match_status !== "matched" || p.margin_pp == null) continue;
+      if (!feature.geometry || p.match_status !== "matched" || p.margin_pp == null) continue;
       const item = projectInside(feature, selected.point);
       const path = featurePath(item, null,
         `${p.county} · ${p.precinct} · ${year}\n${p.office} · ${marginLabel(p)} · ${fmt(p.contest_votes)} contest votes\n${p.ballot_scope}`, () => {
@@ -511,7 +530,7 @@ async function loadCurrentPrecincts() {
       + `${codes.filter(value => value !== "DC").length} states${codes.includes("DC") ? " and D.C." : ""}. `
       + `${fmt(coverage.colored)} colored reporting areas in this state. Partial coverage is not every precinct or all ballot modes. `
       + "Whole-state red/blue result colors remain beneath unmatched areas. "
-      + (year === 2024 ? "2024 source: The New York Times; original state caveats and license are in Methods & data." : "");
+      + ([2020, 2024].includes(year) ? `${year} source: The New York Times; original state caveats and license are in Methods & data.` : "");
     $("geography-note").textContent = `${selected.feature.properties.NAME} · ${fmt(coverage.colored)} verified candidate-result shapes `
       + `on ${coverage.boundary_date} boundaries. ${coverage.notes}`;
     marginLegend(coverage.office);

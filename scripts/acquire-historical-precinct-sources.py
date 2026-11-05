@@ -49,6 +49,8 @@ def main():
             raise ValueError(f"{code}: review multiple statewide source leads")
         if files:
             leads.append((code, state, files[0]))
+    if not leads:
+        raise ValueError("No matching original source files; refusing a metadata-only archive")
     args.output.mkdir(parents=True, exist_ok=True)
 
     def acquire(lead):
