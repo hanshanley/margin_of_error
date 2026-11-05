@@ -189,7 +189,7 @@ Checkmarks are reserved for verified, complete live coverage.
 | [ ] | Washington | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Wisconsin | acquired_originals_review_pending | not_reviewed | pending | source_bytes_verified_scope_pending | full_originals_download_only | not_inferred_from_candidate_votes |
 | [ ] | West Virginia | acquired_originals_review_pending | not_reviewed | pending | source_bytes_verified_scope_pending | full_originals_download_only | not_inferred_from_candidate_votes |
-| [ ] | Wyoming | acquired_originals_review_pending | not_reviewed | pending | complete_advertised_originals_pdf_identity_and_zip_crc_verified | full_originals_download_only | not_reconciled |
+| [ ] | Wyoming | acquired_candidate_counts_reconciled | not_reviewed | withheld | candidate_counts_passed_printed_ballot_total_conflict_map_withheld | full_counts_download_only | acquired_precinct_ballot_counts_printed_total_conflict |
 
 ## 2020
 

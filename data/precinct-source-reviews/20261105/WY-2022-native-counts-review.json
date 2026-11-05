@@ -1,0 +1,22 @@
+{
+  "year": 2022,
+  "state_code": "WY",
+  "office": "US House and 439 separate precinct ballot counts; Natrona printed total conflict retained",
+  "candidate_results": "acquired_candidate_counts_reconciled",
+  "boundaries": "not_reviewed",
+  "join": "withheld",
+  "validation": "candidate_counts_passed_printed_ballot_total_conflict_map_withheld",
+  "publication": "full_counts_download_only",
+  "participation": "acquired_precinct_ballot_counts_printed_total_conflict",
+  "source_url": "https://sos.wyo.gov/Elections/Docs/2022/2022GeneralResults.aspx",
+  "data_directory": "data/precinct-source-reviews/20261105/WY-2022-native-counts",
+  "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/c29d5fe5f72096a4d0c7366c3611ddf3b8a040a8/data/precinct-source-reviews/20261105/WY-2022-native-counts/",
+  "count_csv": "precinct-counts.csv",
+  "reporting_units": 439,
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-wyoming-2022-counts-20261105/complete-wyoming-2022-native-count-review-01.zip",
+  "complete_download_bytes": 4885475,
+  "complete_download_sha256": "5c160354623564d7584279a448e8662188058ffdcb47b75ecd31b0a2d24d1e7b",
+  "maps_approved": false,
+  "next_action": "Acquire actual 2022 geometry for the 439 native precinct identifiers. Preserve Natrona printed county ballots 22957 versus precinct/state 22955; acquire independently advertised county originals before a formal follow-up. Do not repair counts, infer registrations or turnout rates, or borrow 2026 geography.",
+  "notes": "All 439 native precinct House vectors across 23 counties, 3073 candidate/category cells and 439 separate ballot counts independently match the original acquired CSV. Candidate vectors reconcile at precinct/county/state levels. Native precinct ballots and the statewide total are 198198, separately from 193902 candidate/write-in votes. All 35 date-coerced CSV identifiers retain explicit native Excel-format crosswalks and workbook/sheet/row evidence, including workbooks that store the same displayed ID as different cell types. Natrona's printed county ballot total 22957 conflicts with both its summed precinct ballots and statewide county value 22955. No ballots are manufactured, moved or subtracted. Native Selvig (C) and acquired CSV CTRY remain distinct literal labels. The complete archive includes all 55 advertised SOS originals, complete acquired CSV and provenance, all normalized rows, native references, conflict and portable code. No approved geometry, maps, registrations, rates or demographic coverage."
+}

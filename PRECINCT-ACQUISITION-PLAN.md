@@ -2986,10 +2986,13 @@ CSV endpoints, including the **432-row / 118,060-byte** native count table:
 The renderer and pinned research export are unchanged.
 
 Ancillary UI commit **`67598577278dbd7121403e70bcb2873835458db7`** is
-pushed as Hans. Exact deployment **42010632843** is in progress under bounded
-watcher `wyoming-native-count-ui-live-publication`; public registry/renderer/CSV
-bytes must remain unchanged until its source-matched production checks finish.
-The local preview has been stopped.
+pushed as Hans. Exact deployment **42010632843** succeeded and all four
+production browser modes passed **67** exact complete-download links and all
+four entire CSV endpoints, including the 432-row native table. Unqueried public
+registry, county index, ledger and renderer bytes match the exact commit:
+`files/wyoming-native-count-ui-deployment-01.json` and
+`files/wyoming-native-count-ui-live-browser-proof-01.json`.
+The local preview has been stopped; do not repeat this completed suite.
 
 The official-linked LSO House web map
 `7d70f77b3ba449e09f576a92deac27a5` returns an explicit HTTP/API 403 permission
@@ -3001,9 +3004,7 @@ and complete **35-page** `2026_Districts_and_Precincts_by_County.pdf` in session
 `63edd0934157ae7b246a2ff25837e5719df89a35421725c781bb7e2ed05b3103`.
 It is a potential identity reference, not November boundary approval.
 
-**Next executable actions:** finish exact-live ancillary UI
-verification for all 67 complete links and the full 432-row count endpoint.
-Seek county-issued precinct
+**Next executable actions:** seek county-issued precinct
 detail for Washakie's third-party conflict and actual 2026 geometry for all
 432 native units; do not borrow 2022's 439-unit geometry. Acquire
 actual-election geometry before mapping. Do not infer registrations or turnout rates.
@@ -3044,13 +3045,28 @@ is byte-identical:
 The complete archive `complete-wyoming-2022-native-count-review-01.zip` is
 **4,885,475 bytes**, SHA-256
 `5c160354623564d7584279a448e8662188058ffdcb47b75ecd31b0a2d24d1e7b`.
-This batch is locally verified, not yet pushed, release-verified or UI-registered.
+Source commit **`c29d5fe5f72096a4d0c7366c3611ddf3b8a040a8`** is
+pushed as Hans. Immutable release
+**`voter-precinct-wyoming-2022-counts-20261105`** targets that exact commit.
+The entire remotely redownloaded ZIP, CRC, all 63 checked files and all 55
+original-body receipts pass:
+`files/wyoming-2022-native-count-remote-release-proof-01.json`.
+Separate count-review metadata now registers this verified complete download;
+the ancillary UI passes **43** Wyoming/coverage cases, Astro check (zero errors
+and warnings; five existing hints), normal build/chart tests and canonical
+Pages preparation. All **94** relocated downloads remain byte-identical;
+the prepared site is **986,265,144 bytes**. Four source-matched local browser
+modes pass **68** exact complete-download links and all **five** entire CSV
+endpoints, including the 439-row / **101,411-byte** native table:
+`files/wyoming-2022-native-count-ui-local-browser-proof-01.json`.
+Only the WY2022 ledger row changes; all **1,632** cells remain incomplete.
+The pinned research export and renderer are unchanged, including the 2026
+default. Exact-live ancillary UI verification is next.
 
-**Next executable actions:** after the pending exact 2026 UI deployment succeeds,
-push this useful source batch as Hans, bind a fresh immutable complete-data
-release to its exact source commit, redownload/verify the entire ZIP and register
-the separate 2022 count-review metadata. Only then change the WY2022 worklist
-row or add its complete UI download. An independent county-issued alternative
+**Next executable actions:** finish the 68-link ancillary UI integration;
+expect only the WY2022 ledger row to change and all 1,632 cells to remain
+incomplete. Verify both whole Wyoming CSV endpoints (432/439 rows) alongside
+the three existing participation tables. An independent county-issued alternative
 is the advertised 18-page 2022 EL-45 summary, DocumentCenter **7601**, on
 `https://www.natronacounty-wy.gov/659/Election-Results-Archive`; its native text
 confirms **22,955** ballots. Acquire the complete advertised EL-45, EL-30
@@ -3061,6 +3077,15 @@ Its separate 2026 summary/statistics original (DocumentCenter **14007**) is
 a concrete new participation lead, not a basis for borrowing county
 registrations into precinct rates. Preserve snapshots rather than replacing
 this already-built native review.
+
+Direct requests to all four advertised county PDFs (2026 statistics **14007**;
+2022 EL-45 **7601**, EL-30 **7600**, EL-52 **7602**) also returned **HTTP 403**.
+The complete response bodies and receipts are preserved separately in session
+`files/wyoming-natrona-2026-2022-official-followup-02/`; **zero PDF originals**
+were acquired. Publicly indexed text is still a lead, not a byte-preserved
+county-original acquisition or a basis for normalizing new participation rows.
+Seek independently published originals or proceed to other 2026 jurisdictions;
+do not bypass access restrictions or relabel these responses as election data.
 
 ## Resume procedure for every work session or scheduled prompt
 
