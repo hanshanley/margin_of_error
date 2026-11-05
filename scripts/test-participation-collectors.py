@@ -20,6 +20,68 @@ context = module("collect-participation-context")
 local = module("build-local-participation")
 current_local = module("collect-current-participation")
 current_precincts = module("build-current-precincts")
+precinct_results = module("build-precinct-results")
+precinct_coverage = module("build-precinct-coverage")
+
+
+def test_precinct_worklist_covers_every_state_and_year_newest_first():
+    rows = precinct_coverage.build_rows()
+    assert len(rows) == len({(r["state_code"], r["year"]) for r in rows}) == 1632
+    assert list(dict.fromkeys(r["year"] for r in rows)) == list(range(2026, 1963, -2))
+    for year in range(1964, 2027, 2):
+        assert len({r["state_code"] for r in rows if r["year"] == year}) == 51
+    assert all(r["complete"] == "no" for r in rows)
+    assert next(r for r in rows if r["state_code"] == "AK" and r["year"] == 2024)["candidate_results"] == "absent_from_reviewed_release"
+
+
+def test_nm_precinct_results_reconcile_and_never_treat_suppression_as_zero():
+    candidates = [dict(RaceID=11186, OfficeSeqNo="190", CountyName="Example", PrecinctName="PCT 001",
+                       CandidateID=party, PartyCode=party, calcCandidateVotes=votes)
+                  for party, votes in [("DEM", "12"), ("REP", "8")]]
+    counties = [dict(row) for row in candidates]
+    rows = precinct_results.nm_results(candidates, counties)
+    assert rows[0]["margin_pp"] == 20
+    assert rows[0]["county_reconciled"]
+    candidates[0]["calcCandidateVotes"] = "*"
+    rows = precinct_results.nm_results(candidates, counties)
+    assert rows[0]["democratic_votes"] is None
+    assert rows[0]["contest_votes"] is None and rows[0]["margin_pp"] is None
+    assert not rows[0]["county_reconciled"]
+    candidates[0]["calcCandidateVotes"] = "11"
+    with pytest.raises(ValueError, match="do not reconcile"):
+        precinct_results.nm_results(candidates, counties)
+    with pytest.raises(ValueError, match="Duplicate"):
+        precinct_results.nm_results(candidates + candidates, counties)
+
+
+def test_precinct_join_withholds_whole_mismatched_or_unreconciled_counties():
+    def shape(county, precinct):
+        return {"properties": {"county": county, "precinct": precinct}}
+    features = [shape("Matched", "1"), shape("Mismatch", "1"), shape("Mismatch", "2"),
+                shape("Suppressed", "1")]
+    rows = [dict(county=county, precinct="1", reporting_unit_kind="precinct",
+                 county_reconciled=county != "Suppressed", margin_pp=20)
+            for county in ["Matched", "Mismatch", "Suppressed"]]
+    audit = precinct_results.join_counties(features, rows)
+    assert sum(row["colored_precincts"] for row in audit) == 1
+    assert features[0]["properties"]["match_status"] == "matched"
+    assert all(f["properties"]["match_status"] != "matched" for f in features[1:])
+    assert all("margin_pp" not in f["properties"] for f in features[1:])
+
+
+def test_nc_results_keep_nonresidential_votes_separate_and_check_ballot_modes():
+    base = dict(zip(["County", "Precinct", "Contest Name", "Choice", "Choice Party",
+                     "Election Date", "Real Precinct", "Election Day", "Early Voting",
+                     "Absentee by Mail", "Provisional", "Total Votes"],
+                    ["WAKE", "01-01", "US HOUSE OF REPRESENTATIVES DISTRICT 02", "Candidate",
+                     "DEM", "11/03/2026", "Y", "10", "0", "0", "0", "10"]))
+    administrative = dict(base, Precinct="EARLY SITE", **{"Real Precinct": "N", "Election Day": "0", "Early Voting": "10"})
+    rows = precinct_results.nc_results([base, administrative])
+    assert [r["reporting_unit_kind"] for r in rows] == ["precinct", "administrative"]
+    assert sum(r["contest_votes"] for r in rows) == 20
+    assert "excludes separately reported" in rows[0]["ballot_scope"]
+    with pytest.raises(ValueError, match="modes do not reconcile"):
+        precinct_results.nc_results([dict(base, **{"Total Votes": "11"})])
 
 
 def house_fixture():

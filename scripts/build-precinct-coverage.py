@@ -1,8 +1,6 @@
 """Maintain the complete state/election worklist, newest elections first."""
 
 import csv
-import gzip
-import io
 import json
 from pathlib import Path
 
