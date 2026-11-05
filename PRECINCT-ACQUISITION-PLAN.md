@@ -116,8 +116,60 @@ The official current-portal GIS manifest was generated March 9, 2026. Sampled
 Adams County has **five split polygons for one House reporting unit**, using UUID
 boundary IDs, not the reporting ID. This is a one-county diagnostic, not a
 statewide unavailability finding. Keep `full_counts_download_only` and withhold
-geometry until the reporting-unit/split crosswalk is established and all
-county-sharded geometry is reviewed. State fallback remains in place.
+geometry in this immutable initial review until the reporting-unit/split
+crosswalk is established. The subsequent mapped supplement is documented below;
+do not overwrite the original count review.
+
+## North Dakota 2026 mapped supplement at `4c9682b`
+
+The official Secretary of State election-resources page links its **2026 boundary
+package**, and the linked GIS layer explicitly describes **2026 election precinct
+splits**. Acquired all **912** GIS split records, both complete native Esri and
+GeoJSON exports, full layer metadata, and the original 2026 geodatabase ZIP.
+The native Esri ring roles preserve holes misgrouped in the service's GeoJSON
+export. The complete original exports are retained for independent review.
+
+Join the explicit **CountyID + Precinct** fields to the county-scoped reporting
+labels, requiring each county's entire code set to match. Do not infer this join
+from part-ID prefixes. This yields **338** reporting-unit geometries across
+**51 counties**, **335** with nonzero candidate results. All split parts are
+dissolved into one reporting-unit shape; candidate votes are counted once.
+All **358** original normalized House rows remain byte-equivalent to the original
+count review, including the 20 unmapped rows. All 358 ballot rows remain separate
+and all participation rates remain withheld for missing precinct denominators.
+
+Remaining source defects: **Morton** uses county ID `30859` instead of `38059`;
+**Towner** has an extra `48150` precinct label. Both counties remain withheld
+without independently documented corrections. The source also has **200**
+overlapping reference-geometry pairs. Their ambiguous strips are removed from
+both affected precincts, not assigned to either, so state fallback remains
+visible there. **172** units are affected; the largest excluded fraction is
+**0.363%**. Votes still describe the entire reporting unit, never an allocation
+to the clipped area. The excluded-area GeoJSON and per-unit areas are retained.
+The geometry pipeline records **26** area-preserving topology repairs, uses a
+`1e-9`-degree processing grid, and checks remaining overlaps against an explicit
+`1e-10`-square-degree numerical tolerance.
+
+Immutable data: `data/precinct-results/20261105-north-dakota-02/`.
+Reproduce with `scripts/build-north-dakota-precinct-results.py`; **59** collector
+tests cover count reconciliation, split dissolution, holes, wrong parent IDs,
+wrong reporting sets, substantive repair rejection, duplicate geometry, and
+ambiguity masks without vote reallocation. Seven existing renderer tests pass.
+The complete archive was uploaded and independently redownloaded byte-for-byte:
+`voter-precinct-north-dakota-maps-20261105/complete-north-dakota-2026-precinct-maps.zip`,
+**12,179,890 bytes**, SHA-256
+`355f116484e104eac422a6a24057600af70ec6ada83e3eb34c3c57bbebdb54d0`.
+
+Publication status: **snapshot ready; exact live deployment verification
+pending**. The full production-preview browser suite passes, including exact
+North Dakota counts/fills, truthful ballot-count/no-denominator details, selection
+and zoom; every acquired 2020/2024 jurisdiction; mobile, downloads, no-JS and
+failed-fetch fallbacks. Astro check has zero errors/warnings and five existing
+hints; build and all four built-in caucus tests pass. Pages preparation verifies
+94 byte-identical relocated originals and a **986,189,318-byte** artifact.
+Do not mark the supplement live-verified before the exact deployed browser
+checks pass. The website now uses source-specific documentation links instead
+of attaching the NYT 2020 license to every supplemental dataset.
 
 ## Resume procedure for every work session or scheduled prompt
 
@@ -170,9 +222,13 @@ Concrete next investigations already identified:
   `https://resultsnd.sos.nd.gov/gis/states/north-dakota/counties-precincts/38001-precincts.json`
   is the acquired Adams sample. Replace the county FIPS only with IDs from the
   official county layer; the advertised statewide `precincts.json` returns 404.
-  Next: acquire all county shards, establish the split/reporting-unit crosswalk,
-  audit parent-scoped IDs and reporting scopes, and publish only verified joins
-  as a separate immutable supplemental batch. The API's `registeredVoters`
+  All **53** old-portal county shards have now been acquired in session cache
+  (**635** features); their exploratory prefix diagnostics are not a validated
+  crosswalk. The explicitly identified 2026 Secretary of State GIS source and
+  mapped supplement above supersede those diagnostics for publication.
+  Next: finish exact live verification of that supplement, then move to another
+  2026 jurisdiction; retain Morton/Towner corrections as explicit follow-ups.
+  Do not repeat the completed old-shard acquisition. The API's `registeredVoters`
   field is not a registration definition: the official explanatory page defines
   eligible voters as the Census annual estimate of residents age 18+. Precinct
   leaves omit this denominator; retain counts and withhold rates rather than
@@ -294,10 +350,11 @@ make concrete acquisition/integration progress, validate and commit useful
 batches, and report actual gains and unresolved gaps honestly. It must not
 repeatedly announce existing partial coverage as completion.
 
-Recurring prompt **#2** is active at a **15-minute interval** in the current CLI
-session, replacing the initial prompt #1. It reads the updated plan, prioritizes
-the ND crosswalk and remaining 2026 jurisdictions, and recognizes the completed
-live suite rather than restarting old checks. Inspect active schedules to verify
+Recurring prompt **#3** is active at a **15-minute interval** in the current CLI
+session, replacing stopped prompts #1 and #2. It reads the updated plan, recognizes
+the completed ND geometry acquisition and 338-unit mapped supplement, prioritizes
+remaining 2026 jurisdictions, and resumes only unfinished exact live verification
+rather than restarting old checks. Inspect active schedules to verify
 its current status; the document alone does not establish a running scheduler.
 
 Stop the recurring schedule when the requested acquisition/publication work is

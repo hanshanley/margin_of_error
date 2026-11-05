@@ -499,20 +499,21 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 					<a href={`${precinctResultsPointer.base_url}checksums.json`}>Precinct candidate-result and original-source checksums (JSON)</a>
 				</>}
 				{precinctSourceReviews.map((review: { year: number; state_code: string; complete_download_url: string }) =>
-					<a href={review.complete_download_url} download>{review.year} {review.state_code} precinct returns: complete counts and original sources; geometry withheld (ZIP)</a>)}
+					<a href={review.complete_download_url} download>{review.year} {review.state_code} source review: complete counts and original sources; mapped geometry withheld in this review (ZIP)</a>)}
 				{precinctSourceBatches.map((batch: { label: string; base_url: string; complete_download_url: string }) => <>
 					<a href={batch.complete_download_url} download>{batch.label}: complete original precinct CSVs and source documentation; scope and geometry review pending (ZIP)</a>
 					<a href={`${batch.base_url}acquisition.json`}>{batch.label}: file provenance and row-count audit (JSON)</a>
 					<a href={`${batch.base_url}checksums.json`}>{batch.label}: source checksums (JSON)</a>
 				</>)}
-				{additionalPrecinctSnapshots.map((snapshot: { label: string; base_url: string; complete_download_url: string }) => <>
-					<a href={snapshot.complete_download_url} download>{snapshot.label}: complete precinct results, geometry, participation statistics, licenses and original sources (ZIP)</a>
+				{additionalPrecinctSnapshots.map((snapshot: { label: string; base_url: string; complete_download_url: string;
+					source_documents?: { file: string; label: string }[] }) => <>
+					<a href={snapshot.complete_download_url} download>{snapshot.label}: complete precinct results, geometry, participation statistics, source documentation and originals (ZIP)</a>
 					<a href={`${snapshot.base_url}results.csv.gz`} download>{snapshot.label}: all candidate-result reporting rows (CSV · gzip)</a>
 					<a href={`${snapshot.base_url}participation.json.gz`} download>{snapshot.label}: separate precinct participation statistics (JSON · gzip)</a>
 					<a href={`${snapshot.base_url}audit.json`}>{snapshot.label}: join and count audit (JSON)</a>
 					<a href={`${snapshot.base_url}checksums.json`}>{snapshot.label}: checksums (JSON)</a>
-					<a href={`${snapshot.base_url}originals/NYT-2020-LICENSE.txt`}>The New York Times / The Upshot 2020 MIT license</a>
-					<a href={`${snapshot.base_url}originals/NYT-2020-README.md`}>Original 2020 state caveats and boundary reconstruction notes</a>
+					{snapshot.source_documents?.map(document =>
+						<a href={`${snapshot.base_url}${document.file}`}>{document.label}</a>)}
 				</>)}
 				<a href="/voter-participation/data/complete-analysis.zip" download>Complete analysis (ZIP)</a>
 				<a href="/voter-participation/data/national.csv" download>National series</a>

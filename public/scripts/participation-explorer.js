@@ -482,7 +482,10 @@ async function loadCurrentPrecincts() {
     if (p.boundary_provenance) panel.append(html("p", "selection-note", p.boundary_provenance));
     if (p.participation) {
       const participation = p.participation;
-      panel.append(html("p", "selection-note", !participation.reported
+      panel.append(html("p", "selection-note", participation.measure === "reported_ballots"
+        ? `Separate participation statistics: ${fmt(participation.ballots)} ballots reported. `
+        + "No precinct electorate denominator; no participation rate. " + participation.quality
+        : !participation.reported
         ? "Separate participation statistics: not yet reported for this precinct. No participation rate; original source values remain in the downloads."
         : `Separate participation statistics: ${fmt(participation.ballots)} reported voters / `
         + `${fmt(participation.denominator)} registered at opening plus election-day registrations; `

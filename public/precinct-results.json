@@ -12,7 +12,23 @@
     "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-expansion-20261105/complete-additional-precinct-results.zip",
     "complete_download_bytes": 398235632,
     "complete_download_sha256": "f0d46aa827cda1f0c47a3f5089a859c44c61e497b9386a89598878eef9d4c094",
-    "publication": "live_verified_partial"
+    "publication": "live_verified_partial",
+    "source_documents": [
+      {"file": "originals/NYT-2020-LICENSE.txt", "label": "The New York Times / The Upshot 2020 MIT license"},
+      {"file": "originals/NYT-2020-README.md", "label": "Original 2020 state caveats and boundary reconstruction notes"}
+    ]
+  }, {
+    "label": "North Dakota 2026 precinct results and separate ballot counts",
+    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/4c9682b0d34a0a1e47762b037a13bbc718de9187/data/precinct-results/20261105-north-dakota-02/",
+    "data_directory": "data/precinct-results/20261105-north-dakota-02",
+    "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-north-dakota-maps-20261105/complete-north-dakota-2026-precinct-maps.zip",
+    "complete_download_bytes": 12179890,
+    "complete_download_sha256": "355f116484e104eac422a6a24057600af70ec6ada83e3eb34c3c57bbebdb54d0",
+    "publication": "snapshot_ready",
+    "source_documents": [
+      {"file": "originals/layer.json.gz", "label": "Official 2026 North Dakota precinct-layer definition and attribution (JSON · gzip)"},
+      {"file": "2026/ND-ambiguous-reference-areas.geojson.gz", "label": "Ambiguous overlapping reference-boundary strips excluded from precinct coloring (GeoJSON · gzip)"}
+    ]
   }],
   "source_batches": [{
     "label": "2022 precinct sources from 25 states",

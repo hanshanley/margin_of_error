@@ -180,6 +180,16 @@ with sync_playwright() as p:
                            and not f["properties"]["participation"]["reported"])
             page.locator(f'.substate-feature[data-geography="{missing["key"]}"]').dispatch_event("click")
             expect(page.locator("#substate-detail")).to_contain_text("not yet reported for this precinct")
+        if code == "ND":
+            page.locator('.substate-feature[data-color-level="precinct"]').first.dispatch_event("click")
+            expect(page.locator("#substate-detail")).to_contain_text("ballots reported")
+            expect(page.locator("#substate-detail")).to_contain_text("No precinct electorate denominator")
+            expect(page.locator("#substate-detail")).not_to_contain_text("registered at opening")
+            before = viewport(page)
+            page.locator("#map-zoom-in").click()
+            assert viewport(page)[2] < before[2]
+            check_precinct_results(page, 2026, code)
+            screenshot(page, "participation-2026-north-dakota.png")
     for year in sorted((year for year in precinct_results_index["coverage"] if int(year) < 2024), reverse=True):
         page.locator("#year").select_option(year)
         for code in sorted(precinct_results_index["coverage"][year]):

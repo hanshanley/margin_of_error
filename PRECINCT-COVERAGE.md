@@ -53,7 +53,7 @@ Checkmarks are reserved for verified, complete live coverage.
 | [ ] | Mississippi | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Montana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | North Carolina | acquired | reference_acquired | validated_partial | passed | published_partial | not_acquired |
-| [ ] | North Dakota | acquired_reconciled | reference_crosswalk_pending | withheld | counts_passed_map_withheld | full_counts_download_only | acquired_precinct_ballot_counts |
+| [ ] | North Dakota | acquired | reference_acquired | validated_partial | passed | snapshot_ready | acquired_precinct_ballot_counts |
 | [ ] | Nebraska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | New Hampshire | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | New Jersey | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
