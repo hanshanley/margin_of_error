@@ -2,7 +2,7 @@
 
 ## Objective and priority
 
-**Source-key remediation takes priority over new publication.** On November 5,
+**Current-source key cleanup is live; historical exposures remain unresolved.** On November 5,
 GitHub reported Google API keys copied from public county linking HTML. The
 affected current Bucks, Chester and Franklin pages are now explicitly sanitized,
 with byte-original hashes retained privately. All 40 county parser/source tests
@@ -13,15 +13,28 @@ downloaded-back byte-verified in immutable release
 `voter-county-source-redaction-20261105-01`, pinned to sanitized data commit
 `28cdb2c434e01ab2fe45696970e95b4454900a08`. That commit descends directly
 from the previous live main revision, not the exposed three-county commit.
-Current download-link deployment is pending; it replaces two unsafe ZIP URLs
+Exact Pages run `42109764552` for revision
+`142d4086f3977c52a73062e5cf08184ff712a36f` succeeded. Production registry
+bytes and all four browser modes pass with exactly 225 complete download URLs.
+The deployment replaces two unsafe ZIP URLs
 and repins seven byte-unchanged Bucks CSVs to the sanitized source revision,
-while retaining the other 216 complete download URLs. Do not republish old ZIPs or copy
+while retaining the other 216 complete download URLs. A nested party-download
+reference was also repaired; the build now rejects all three retired archives.
+All seven repinned public CSVs are byte-identical to reviewed election tables.
+The broad site validator still fails an unrelated pre-existing UK topic-card
+assertion (23 actual versus 16 expected); the participation checks, build,
+94-download Pages preparation and focused production checks pass.
+Do not republish old ZIPs or copy
 unsanitized snapshots. Both county reviewers now reject Google/Mapbox and
 telemetry key patterns in every HTML file, even with matching acquisition hashes.
 GitHub alerts #1/#2 remain open with unknown key validity: the keys appear
 county/vendor-owned, cannot be rotated from this repository, and historical
 copies remain. No published-history rewrite was authorized. See
 `data/county-source-reviews/20261105-source-key-remediation-01/`.
+Continue safe acquisition while owner revocation/history authorization is
+blocked. Publish only from the clean
+`voter-participation-source-key-cleanup-20261105` lineage; do not merge the
+original acquisition branch's exposed ancestry into main.
 
 **November 5, 2026: the latest user instruction is counties instead of further
 precinct expansion.** Make counties the default map detail and primary acquisition
@@ -172,6 +185,17 @@ replacement is now byte-verified in `voter-county-source-redaction-20261105-01`;
 its three-county UI integration remains pending. No new map, demographic turnout, certification, or statewide
 completeness is approved. Northampton's complete county-declared native HTML
 is also retained privately; its separate count/party review remains pending.
+After the security deployment, the exact Northampton government-to-vendor
+link was reverified and both complete primary pages were freshly acquired.
+The native report explicitly declares the 2026 general election and unofficial
+results. All 631 native tables, including 630 candidate tables, are now extracted
+without interpreting duplicated accessible labels, allocating counts or
+promoting coverage. Complete HTML, extraction and receipts remain private in
+`files/northampton-primary-refresh-20261105-01/`; the acquisition audit is
+`data/county-source-reviews/20261105-northampton-primary-01/source-acquisition.json`.
+Next reconcile county/unit candidate and participation totals, accounting and
+literal parties, then apply the fail-closed source-key checks before publishing
+any original HTML or complete package. No new public download or map is claimed.
 
 The reusable 2026 county-results and separate UF/state participation pipelines
 are implemented and published. Both passed real acquisition and original-backed

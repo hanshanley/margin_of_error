@@ -1,0 +1,45 @@
+{
+  "status": "complete_primary_html_acquired_count_review_pending",
+  "state": "PA",
+  "county_fips": "42095",
+  "county_name": "Northampton",
+  "county_declares_exact_native_results_url": true,
+  "native_headings": [
+    "2026 General Election",
+    "IN ACCORDANCE WITH ACT 88'S REPORTING REQUIREMENTS, NORTHAMPTON COUNTY RECEIVED A TOTAL OF 38,593 MAIL-IN BALLOTS BY 8PM ON ELECTION DAY",
+    "Unofficial Election Results"
+  ],
+  "complete_native_html_retained_privately": true,
+  "complete_table_extraction_retained_privately": true,
+  "acquisition": [
+    {
+      "file": "official-index.html",
+      "url": "https://www.norcopa.gov/election-result",
+      "bytes": 3278906,
+      "sha256": "677e8ee27248ad936e0f821ca238e73279a738e4efb24229a46f1aa4956f505f",
+      "http_status": 200,
+      "fetched_at": "2026-11-05T21:23:52.658982+00:00"
+    },
+    {
+      "file": "native-results.html",
+      "url": "https://www.livevoterturnout.com/ENR/northamptonpaenr/12/en/Index_12.html",
+      "bytes": 2096599,
+      "sha256": "1d544a6a117046f8d228a668b78bc128b38cac240a5592f272d24fdfa1307517",
+      "http_status": 200,
+      "fetched_at": "2026-11-05T21:23:53.383749+00:00"
+    }
+  ],
+  "native_tables": 631,
+  "candidate_tables": 630,
+  "candidate_count_review_approved": false,
+  "candidate_party_review_approved": false,
+  "county_map_promotion_approved": false,
+  "public_originals_or_downloads_published": false,
+  "next_action": "Reconcile county/unit candidate and participation counts, report accounting and literal parties; retain unallocated observations and apply fail-closed redaction before any public HTML package",
+  "session_artifact_directory": "files/northampton-primary-refresh-20261105-01",
+  "private_originals_service_key_patterns_detected": {
+    "official-index.html": false,
+    "native-results.html": false
+  },
+  "public_html_sanitization_and_review_pending": true
+}
