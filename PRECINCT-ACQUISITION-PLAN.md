@@ -319,7 +319,7 @@ this completed publication or reinterpret the unresolved 324-ballot difference.
 Next actionable work remains genuine 2026 Maine/Pennsylvania county sources,
 followed by the scoped 2016 historical House export.
 
-Montgomery County official 2026 alternative, reviewed and awaiting publication:
+Montgomery County official 2026 alternative, released and locally verified:
 Fresh actual HTTP acquisition found a newly declared General Election dashboard
 and PDF on the county's official results index, despite an older web-search
 cache still showing only the primary. Do not infer the available election from
@@ -366,10 +366,16 @@ office/party vectors. All 68 focused county tests pass. Complete ZIP:
 `f40f5454fc6332e5828770f7d51eb313186d58f7ceb5c0dd2851de7eb24f32d3`.
 Publication proofs are kept separately in
 `data/county-source-reviews/20261105-montgomery-publication-01/`.
-No new geometry, statewide Pennsylvania completion, demographic estimate or
-precinct-ledger promotion is approved. Next: release byte verification, a
-download-only registry entry retaining all 194 existing URLs, local checks and
-the exact useful UI deployment; do not repeat unchanged map suites.
+Data commit `ddb9e8c86c772b41431cd5c7e0d1fd4eeb615563` pins all ten complete
+CSV links. Release `voter-county-pennsylvania-montgomery-20261105-01` contains
+the complete ZIP; all eleven endpoints were downloaded and byte-matched.
+The download-only registry entry leaves every prior review object unchanged.
+Astro check, seven participation tests, build/four built-in tests and Pages
+preparation pass. Four local desktop/mobile JS/no-JS checks retain all 194
+previous URLs and expose all 205 complete downloads. No new geometry, statewide
+Pennsylvania completion, demographic estimate or precinct-ledger promotion is
+approved. Next: exact useful UI deployment and production checks; do not repeat
+unchanged map suites.
 
 Bucks County official 2026 alternative, released and production-verified:
 `data/county-source-reviews/20261105-bucks-reviewed-02/` retains the county's

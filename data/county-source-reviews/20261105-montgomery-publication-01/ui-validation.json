@@ -1,0 +1,11 @@
+{
+  "status": "pass",
+  "change_scope": "complete Montgomery County download registry entry only; maps, renderer and coverage ledgers unchanged",
+  "checks": [
+    {"command": "npm run check", "exit_code": 0, "errors": 0, "warnings": 0, "preexisting_hints": 5},
+    {"command": "node --test scripts/voter-participation.test.mjs", "exit_code": 0, "passed": 7},
+    {"command": "npm run build", "exit_code": 0, "built_in_caucus_tests_passed": 4},
+    {"command": "node scripts/prepare-participation-pages.mjs", "exit_code": 0, "verified_bulk_downloads": 94, "prepared_site_bytes": 987278394},
+    {"command": "scripts/check-county-results-browser.py --tables-only", "exit_code": 0, "proof": "local-browser.json", "display_modes": 4, "complete_download_urls": 205, "previous_complete_urls_retained": 194}
+  ]
+}

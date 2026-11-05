@@ -1,6 +1,31 @@
 {
   "reviews": [
     {
+      "id": "pennsylvania-montgomery-20261105-01",
+      "label": "Montgomery County, Pennsylvania 2026: complete county returns, split portions and separate participation",
+      "data_directory": "data/county-source-reviews/20261105-montgomery-reviewed-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ddb9e8c86c772b41431cd5c7e0d1fd4eeb615563/data/county-source-reviews/20261105-montgomery-reviewed-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-montgomery-20261105-01/complete-montgomery-2026-county-results-01.zip",
+      "complete_download_bytes": 587034,
+      "complete_download_sha256": "f40f5454fc6332e5828770f7d51eb313186d58f7ceb5c0dd2851de7eb24f32d3",
+      "review_status": "complete_county_reports_and_counts_reviewed_unofficial",
+      "maps_approved": false,
+      "scope_note": "Montgomery County only, unofficial November 3, 2026 general election; printed PDF update November 4 at 2:07:10 PM, timezone unestablished. JSON export/generation UTC timestamps are retained separately. The 428 of 428 reporting counter applies only to Election Day in-person ballots; counting is still updating. House votes total 389,901: DEM 268,823, REP 120,367 and 711 unresolved write-ins with no native party label. These are separate from 392,630 county ballots and 628,331 registrations (printed 62.49%). All 3,634 native candidate rows and mode vectors reconcile across complete vendor CSV, native JSON and county PDF, including six explicit zeroes. The PDF supplies 25 separate unresolved-write-in lines omitted from CSV/JSON; blank party does not mean Nonpartisan. Its PDF-only vote-for-seven commission has 6,743 selections, not 6,743 ballots or voters. All 431 native portions from 428 parent precincts remain separate, including three split parents; parent-only deduplication would lose participation counts. Native under/overvotes and unclassified portion residuals are retained without assigning write-ins to units. Mail returned 109,191 and counted 107,547 are separate processing observations. All original source bytes are retained. This is not statewide Pennsylvania completion, a new map, demographic turnout or final certification; existing maps are unchanged.",
+      "tables": [
+        {"file": "county-candidate-results.csv", "label": "Montgomery County only: all 71 candidate, ballot-option and unresolved-write-in lines across 25 separate contests; native parties and selection limits retained (CSV)"},
+        {"file": "county-candidate-mode-counts.csv", "label": "Montgomery County only: all 213 Election Day, Mail-in and Provisional candidate/option/write-in counts, including explicit zeroes (CSV)"},
+        {"file": "county-office-party-totals.csv", "label": "Montgomery County only: all 16 office/literal-party/kind totals; blank-party unresolved write-ins separate, ballot questions excluded (CSV)"},
+        {"file": "county-contest-totals.csv", "label": "Montgomery County only: all 25 contest totals, separate ballots, registrations, unresolved write-ins, selection limits and reporting counters (CSV)"},
+        {"file": "county-participation.csv", "label": "Montgomery County only: separate county ballots by mode, registrations, printed registered-voter rate and distinct PDF/JSON update timestamps (CSV)"},
+        {"file": "county-ballot-processing.csv", "label": "Montgomery County only: all nine native returned, counted, pending and rejected mail/provisional/military observations, not candidate votes (CSV)"},
+        {"file": "native-portion-participation.csv", "label": "Montgomery County only: all 431 exact parent/split-portion ballot and registration observations counted once; no geometry approved (CSV)"},
+        {"file": "native-portion-contest-accounting.csv", "label": "Montgomery County only: all 1,630 portion/contest native ballot, under/overvote and unclassified residual vectors (CSV)"},
+        {"file": "native-portion-candidate-counts.csv", "label": "Montgomery County only: all 3,634 complete native vendor rows, all source fields, split identities and six explicit zeroes retained (CSV)"},
+        {"file": "native-json-candidate-counts.csv", "label": "Montgomery County only: all 3,634 native JSON observations with exact identities, voting modes and original row ordinals; no geometry approved (CSV)"}
+      ],
+      "coverage": []
+    },
+    {
       "id": "pennsylvania-bucks-20261105-01",
       "label": "Bucks County, Pennsylvania 2026: complete county returns and separate participation, counting partial",
       "data_directory": "data/county-source-reviews/20261105-bucks-reviewed-02",

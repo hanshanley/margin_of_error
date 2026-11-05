@@ -1,0 +1,96 @@
+{
+  "status": "pass",
+  "source_commit": "ddb9e8c86c772b41431cd5c7e0d1fd4eeb615563",
+  "release": "voter-county-pennsylvania-montgomery-20261105-01",
+  "all_full_downloads_byte_identical": true,
+  "endpoints": [
+    {
+      "file": "complete-montgomery-2026-county-results-01.zip",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-montgomery-20261105-01/complete-montgomery-2026-county-results-01.zip",
+      "status": 200,
+      "bytes": 587034,
+      "sha256": "f40f5454fc6332e5828770f7d51eb313186d58f7ceb5c0dd2851de7eb24f32d3",
+      "checked_at": "2026-11-05T19:27:31.332342+00:00"
+    },
+    {
+      "file": "county-ballot-processing.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ddb9e8c86c772b41431cd5c7e0d1fd4eeb615563/data/county-source-reviews/20261105-montgomery-reviewed-01/county-ballot-processing.csv",
+      "status": 200,
+      "bytes": 339,
+      "sha256": "beed9c75e5118234e67406b710a6db3221c8117c0685fb401ed8f6b9e0238976",
+      "checked_at": "2026-11-05T19:27:31.523560+00:00"
+    },
+    {
+      "file": "county-candidate-mode-counts.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ddb9e8c86c772b41431cd5c7e0d1fd4eeb615563/data/county-source-reviews/20261105-montgomery-reviewed-01/county-candidate-mode-counts.csv",
+      "status": 200,
+      "bytes": 27956,
+      "sha256": "f33a7584457ea4fef143704642ad2ab7f350129947804f4352f6a50d95714079",
+      "checked_at": "2026-11-05T19:27:31.635721+00:00"
+    },
+    {
+      "file": "county-candidate-results.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ddb9e8c86c772b41431cd5c7e0d1fd4eeb615563/data/county-source-reviews/20261105-montgomery-reviewed-01/county-candidate-results.csv",
+      "status": 200,
+      "bytes": 8690,
+      "sha256": "7f56ca535d7ba583077bff4cb9f8895c7e08d9ee64306f903e02cb7978096267",
+      "checked_at": "2026-11-05T19:27:31.756411+00:00"
+    },
+    {
+      "file": "county-contest-totals.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ddb9e8c86c772b41431cd5c7e0d1fd4eeb615563/data/county-source-reviews/20261105-montgomery-reviewed-01/county-contest-totals.csv",
+      "status": 200,
+      "bytes": 2848,
+      "sha256": "2007ae636453d640899d564f1971c7ce22f3721214fe6561a595b2a61abab2f8",
+      "checked_at": "2026-11-05T19:27:31.872716+00:00"
+    },
+    {
+      "file": "county-office-party-totals.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ddb9e8c86c772b41431cd5c7e0d1fd4eeb615563/data/county-source-reviews/20261105-montgomery-reviewed-01/county-office-party-totals.csv",
+      "status": 200,
+      "bytes": 993,
+      "sha256": "7fc4d69da340c7535dd64fa36354f8ddc7f467107c8979d9018180f6cbf6fdc9",
+      "checked_at": "2026-11-05T19:27:32.010253+00:00"
+    },
+    {
+      "file": "county-participation.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ddb9e8c86c772b41431cd5c7e0d1fd4eeb615563/data/county-source-reviews/20261105-montgomery-reviewed-01/county-participation.csv",
+      "status": 200,
+      "bytes": 510,
+      "sha256": "bcf5eb3a05eb32e13bd9bc09db81c03059d43339b8145ed7881da9968227b41b",
+      "checked_at": "2026-11-05T19:27:32.152672+00:00"
+    },
+    {
+      "file": "native-json-candidate-counts.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ddb9e8c86c772b41431cd5c7e0d1fd4eeb615563/data/county-source-reviews/20261105-montgomery-reviewed-01/native-json-candidate-counts.csv",
+      "status": 200,
+      "bytes": 393939,
+      "sha256": "4cd91dcc73d481591468831da7280b7d667a9e30f1e1cce4659160e48bb5feb8",
+      "checked_at": "2026-11-05T19:27:32.314747+00:00"
+    },
+    {
+      "file": "native-portion-candidate-counts.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ddb9e8c86c772b41431cd5c7e0d1fd4eeb615563/data/county-source-reviews/20261105-montgomery-reviewed-01/native-portion-candidate-counts.csv",
+      "status": 200,
+      "bytes": 611054,
+      "sha256": "912b31fa9d0af07dee6eb5b8bc8a62faa6d4a700259a3247f4975b55438a6e5a",
+      "checked_at": "2026-11-05T19:27:32.723905+00:00"
+    },
+    {
+      "file": "native-portion-contest-accounting.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ddb9e8c86c772b41431cd5c7e0d1fd4eeb615563/data/county-source-reviews/20261105-montgomery-reviewed-01/native-portion-contest-accounting.csv",
+      "status": 200,
+      "bytes": 194135,
+      "sha256": "19773cdd57e9faddc24ad8ed9417121b5558a34da9bc5e0ba7edacb5ca03cdf3",
+      "checked_at": "2026-11-05T19:27:32.890895+00:00"
+    },
+    {
+      "file": "native-portion-participation.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ddb9e8c86c772b41431cd5c7e0d1fd4eeb615563/data/county-source-reviews/20261105-montgomery-reviewed-01/native-portion-participation.csv",
+      "status": 200,
+      "bytes": 16049,
+      "sha256": "7ebf3bde4e61383393b19802fdefd1f5e0e87fdb91849dfdf50efe714743374b",
+      "checked_at": "2026-11-05T19:27:33.034859+00:00"
+    }
+  ]
+}
