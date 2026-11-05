@@ -1,0 +1,30 @@
+{
+  "all-contest-results.csv": {
+    "bytes": 27938,
+    "sha256": "42b8dbc5e50bc149cdec53be56538bbaf50e83a3c292473713660071b3152388"
+  },
+  "audit.json": {
+    "bytes": 1428,
+    "sha256": "8acdfdfec9e70df1bbaf97836191e05c2abccedc622c6d6c9438323520b017bb"
+  },
+  "county-house-results.csv": {
+    "bytes": 633,
+    "sha256": "56acfef2003cda1d8d8ab22eead75d20c468b02af4115656cc2cbfa9ac36efcf"
+  },
+  "county-participation.csv": {
+    "bytes": 314,
+    "sha256": "ad7b700798acc077148b82e81a46130ec54052ea9bbef0eaa10ec50a8f5d60db"
+  },
+  "review.py": {
+    "bytes": 12535,
+    "sha256": "dec638f996483106797db10ca429ed8be2bc50f3c44d89e181067f269ca360f7"
+  },
+  "source/daviess-2026-general-cumulative.pdf": {
+    "bytes": 258815,
+    "sha256": "a93197d2b4b3e92191d5612da2cce67f4c43a40ffb84ab7728576db1a4169433"
+  },
+  "source/sources.json": {
+    "bytes": 2831,
+    "sha256": "c55d1d08d190022af56a6eb44946d33d196ba25ee631b194fc36cf66ab6b927a"
+  }
+}

@@ -70,6 +70,109 @@ az_2026 = module("review-arizona-2026-native-results")
 az_maricopa = module("build-arizona-maricopa-precinct-results")
 az_pima = module("review-arizona-pima-2026-native-results")
 mi_2026 = module("review-michigan-2026-native-results")
+ky_2026 = module("review-kentucky-2026-native-results")
+
+
+def kentucky_words(values):
+    return [(edge - 18, 176, edge, 184, value)
+            for edge, value in zip(ky_2026.EDGES, values)]
+
+
+def test_kentucky_numeric_columns_preserve_zero_and_reject_missing_cells():
+    words = kentucky_words(["1,000", "0", "2", "3", "1,005"])
+    assert ky_2026.count_cells(words) == [1000, 0, 2, 3, 1005]
+    assert ky_2026.count_cells([]) == [None] * 5
+    with pytest.raises(ValueError, match="Missing"):
+        ky_2026.count_cells(words[:-1])
+
+
+@pytest.mark.parametrize("change,error", [
+    ("duplicate", "Duplicate"), ("position", "position"),
+    ("malformed", "integer"), ("mode_sum", "total differs"),
+])
+def test_kentucky_numeric_columns_fail_closed(change, error):
+    words = kentucky_words(["1", "0", "2", "3", "6"])
+    if change == "duplicate":
+        words.append(words[0])
+    elif change == "position":
+        words[0] = (240, 176, 267, 184, "1")
+    elif change == "malformed":
+        words[0] = (240, 176, ky_2026.EDGES[0], 184, "1,00")
+    else:
+        words[-1] = (620, 176, ky_2026.EDGES[-1], 184, "7")
+    with pytest.raises(ValueError, match=error):
+        ky_2026.count_cells(words)
+
+
+@pytest.mark.parametrize("change,error", [
+    ("duplicate_option", "Duplicate"), ("missing_total", "totals"),
+    ("reordered_totals", "totals"), ("mode_conflict", "sum differs"),
+])
+def test_kentucky_contests_require_every_option_mode_and_printed_total(change, error):
+    rows = [
+        dict(choice="A", party="REP", counts=[2, 0, 1, 1, 4]),
+        dict(choice="B", party="DEM", counts=[0, 1, 0, 0, 1]),
+        dict(choice="Cast Votes:", party="", counts=[2, 1, 1, 1, 5]),
+        dict(choice="Undervotes:", party="", counts=[0] * 5),
+        dict(choice="Overvotes:", party="", counts=[0] * 5),
+    ]
+    if change == "duplicate_option":
+        rows[1]["choice"] = "A"
+    elif change == "missing_total":
+        rows.pop()
+    elif change == "reordered_totals":
+        rows[-1], rows[-2] = rows[-2], rows[-1]
+    else:
+        rows[0]["counts"] = [1, 1, 1, 1, 4]
+    with pytest.raises(ValueError, match=error):
+        ky_2026.finish_contest(dict(contest="Example", source_pdf_page=1, rows=rows))
+
+
+@pytest.fixture(scope="module")
+def kentucky_source():
+    return Path(__file__).parents[1] / "data/precinct-source-reviews/20261105/KY-2026-native-county-counts-01/source"
+
+
+def test_kentucky_complete_report_retains_unnamed_zero_option_and_separate_ballots(kentucky_source):
+    contests, (ballots, reporting), house = ky_2026.review_pdf(
+        (kentucky_source / ky_2026.ORIGINAL).read_bytes())
+    assert len(contests) == 36 and reporting == "17 of 17 = 100.00%"
+    assert sum(len(contest["rows"]) for contest in contests) == 181
+    unnamed = [row for contest in contests for row in contest["rows"] if not row["choice"]]
+    assert unnamed == [dict(choice="", party="", counts=[0] * 5)]
+    assert ballots == 31918 and house["rows"][-3]["counts"][4] == 31521
+    assert sum(row["counts"][4] for row in house["rows"][-3:]) == ballots
+
+
+def test_kentucky_archive_only_rebuild_preserves_all_counts_and_original(kentucky_source, tmp_path):
+    archives = []
+    source = kentucky_source
+    for name in ["first", "second"]:
+        output, archive = tmp_path / name, tmp_path / (name + ".zip")
+        audit = ky_2026.build(source, output, archive)
+        assert not audit["maps_approved"] and audit["registered_voters"] is None
+        participation = list(csv.DictReader((output / "county-participation.csv").open()))
+        assert len(participation) == 1 and participation[0]["ballots_cast_total"] == "31918"
+        assert participation[0]["registered_voters_total"] == participation[0]["turnout_rate"] == ""
+        all_rows = list(csv.DictReader((output / "all-contest-results.csv").open()))
+        assert len(all_rows) == len({row["source_row_id"] for row in all_rows}) == 181
+        assert sum(row["kind"] == "unnamed_option" for row in all_rows) == 1
+        assert (output / "source" / ky_2026.ORIGINAL).read_bytes() == (
+            kentucky_source / ky_2026.ORIGINAL).read_bytes()
+        archives.append(archive.read_bytes())
+        with zipfile.ZipFile(archive) as package:
+            checksums = json.loads(package.read("checksums.json"))
+            assert set(package.namelist()) == set(checksums) | {"checksums.json"}
+            for member, expected in checksums.items():
+                raw = package.read(member)
+                assert len(raw) == expected["bytes"]
+                assert hashlib.sha256(raw).hexdigest() == expected["sha256"]
+            if name == "first":
+                package.extractall(tmp_path / "extracted")
+                source = tmp_path / "extracted/source"
+        with pytest.raises(ValueError, match="overwrite"):
+            ky_2026.build(kentucky_source, output, tmp_path / "other.zip")
+    assert archives[0] == archives[1]
 
 
 def test_michigan_pdf_cells_align_right_edges_and_keep_missing_distinct_from_zero():

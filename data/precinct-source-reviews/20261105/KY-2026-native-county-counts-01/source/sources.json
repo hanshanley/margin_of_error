@@ -1,0 +1,73 @@
+[
+  {
+    "file": "official-2026-index.html",
+    "url": "https://elect.ky.gov/results/2020-2029/Pages/2026.aspx",
+    "final_url": "https://elect.ky.gov/results/2020-2029/Pages/2026.aspx",
+    "status": 403,
+    "bytes": 1484,
+    "sha256": "c63ce6ea35f4c9222adec971e8f644cc80325ee02f0203241b8a97a932df0f09",
+    "content_type": "text/html",
+    "acquired_at": "2026-11-05T13:46:53.031323+00:00"
+  },
+  {
+    "file": "official-data-index.html",
+    "url": "https://vrsws.sos.ky.gov/liveresults/Data",
+    "final_url": "https://vrsws.sos.ky.gov/liveresults/Data",
+    "status": 404,
+    "bytes": 44,
+    "sha256": "629e3850c1d6e82ed263d71de41520b79255ac99ecd3c5c15f2732e03c992645",
+    "content_type": "text/html",
+    "acquired_at": "2026-11-05T13:46:53.102562+00:00"
+  },
+  {
+    "file": "official-live-results.html",
+    "url": "https://vrsws.sos.ky.gov/liveresults/",
+    "final_url": "https://vrsws.sos.ky.gov/liveresults/",
+    "status": 403,
+    "bytes": 2469,
+    "sha256": "2b2ea476aa644deb0d3cf2570fd6f2fe5ff2f3df67b03b737341c73055e33a92",
+    "content_type": "text/html",
+    "acquired_at": "2026-11-05T13:47:17.470669+00:00"
+  },
+  {
+    "file": "official-county-map.html",
+    "url": "https://vrsws.sos.ky.gov/liveresults/CountyMap",
+    "final_url": "https://vrsws.sos.ky.gov/liveresults/CountyMap",
+    "status": 403,
+    "bytes": 2468,
+    "sha256": "07eae1dd7b46912e00ab50d1713b4d20dbe434a44ee393e774323315af032bac",
+    "content_type": "text/html",
+    "acquired_at": "2026-11-05T13:47:17.485242+00:00"
+  },
+  {
+    "file": "daviess-results-index.html",
+    "url": "https://www.daviessky.org/election-results/",
+    "final_url": "https://www.daviessky.org/election-results/",
+    "status": 200,
+    "bytes": 178481,
+    "sha256": "1afe2bc56be69d0c5600e1abf5873c9794fa70f83eded5700bcd566e9d7c63bd",
+    "content_type": "text/html; charset=UTF-8",
+    "acquired_at": "2026-11-05T13:47:17.556006+00:00"
+  },
+  {
+    "file": "daviess-2026-general-cumulative.pdf",
+    "url": "https://www.daviessky.org/wp-content/uploads/2026/11/Cumulative.pdf",
+    "final_url": "https://www.daviessky.org/wp-content/uploads/2026/11/Cumulative.pdf",
+    "status": 200,
+    "bytes": 258815,
+    "sha256": "a93197d2b4b3e92191d5612da2cce67f4c43a40ffb84ab7728576db1a4169433",
+    "content_type": "application/pdf",
+    "acquired_at": "2026-11-05T13:47:36.765105+00:00"
+  },
+  {
+    "file": "official-live-browser.html",
+    "url": "https://vrsws.sos.ky.gov/liveresults/",
+    "final_url": "https://vrsws.sos.ky.gov/liveresults/",
+    "status": 403,
+    "bytes": 2468,
+    "sha256": "535ddf1397fb2f448a919fe9c642f8fe72990cb317543eebaf9d1e4f7e11039a",
+    "content_type": "text/html",
+    "acquired_at": "2026-11-05T13:47:57.481153+00:00",
+    "method": "ordinary Chromium navigation; no authentication or access-control workaround"
+  }
+]

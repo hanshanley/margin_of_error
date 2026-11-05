@@ -3988,7 +3988,7 @@ map approvals. Proofs:
 verification. The Maricopa live flag records its already completed exact
 20c6/42031647109 proof, not another unverified map.
 
-### Michigan 2026: native county sources released; UI locally verified
+### Michigan 2026: native county sources and UI live-verified
 
 The official state elections/results pages return actual **403** responses;
 the indexed Muskegon route returns **404**. Their original bodies and receipts
@@ -4091,12 +4091,71 @@ unrelated UK topic-card baseline (**23 versus 16**, now line 1097).
 Pages preparation verifies **94** existing relocated bulk files and produces
 a **986,299,926-byte** artifact.
 
-**Current executable work:** commit/push this locally verified UI registration
-as Hans and finish one bounded, exact-commit production browser/full-download
-proof before calling Michigan UI live. Never
-replace existing source packages or rerun completed count/map suites instead of
-acquisition. Continue another 2026 jurisdiction during the bounded deployment;
-retain Pima's declared-map 404 as a bounded follow-up.
+UI commit **061fa034ed4607c2d3fc7d5f15fb7c8bf98528d2** is pushed as Hans,
+without attribution trailers. Exact Pages run **42038698098** succeeded.
+All five unqueried production metadata/renderer files match the committed bytes.
+Desktop/mobile with and without JavaScript pass **103** complete downloads,
+preserving all **94** older links; all eight entire Michigan tables/original
+workbook and the full **23-member / 22-checksum** ZIP pass. Source-matched scope,
+no overflow, unchanged default 2026/precinct/red-blue fallback and zoom pass.
+Proofs: `files/michigan-ui-publication-proof-01.json` and
+`files/michigan-ui-live-browser-proof-01.json`. Do not repeat this finished suite
+or modify the immutable package. Continue remaining 2026 jurisdictions; retain
+Pima's declared-map 404 as a bounded follow-up.
+
+### Kentucky 2026: complete Daviess county report reviewed
+
+The official 2026 index and statewide live-results/CountyMap routes return actual
+**403** responses. The advertised Data route returns **404**. Ordinary Chromium
+navigation also returns **403**, explicitly identifying a firewall bot/scraping
+policy. All seven original responses and receipts remain in
+`files/precinct-expansion-sources/KY-2026-official-01/`.
+Do not bypass or keep retrying this portal; use independent county declarations.
+
+Daviess's official `https://www.daviessky.org/election-results/` returns **200**
+and declares the actual November general-election PDF:
+`https://www.daviessky.org/wp-content/uploads/2026/11/Cumulative.pdf`.
+The complete original has **13 pages / 258,815 bytes**, SHA-256
+`a93197d2b4b3e92191d5612da2cce67f4c43a40ffb84ab7728576db1a4169433`.
+Every page explicitly identifies the November 3, 2026 general election, Daviess
+County, unofficial results, and native run **8:15 PM / November 3, 2026**.
+
+All **36** native contest tables reconcile every option and printed Cast Votes
+across the five literal columns: absentee mail-in, absentee walk-in, early voting,
+Election Day voting, and total. The complete normalized table preserves **181**
+rows / **905** numeric cells, independently compared with the original's text
+sequence on every page. The county-surveyor table's unnamed explicit-zero row is
+retained with an empty native name and separate extraction identity, not an
+invented candidate. Printed multi-seat vote-opportunity totals are not ballots.
+
+The repeated county header supplies **31,918 ballots**, counted once, and
+**17 of 17 polling places**. This reporting counter is not a geographic precinct
+inventory. Native House 2nd District options sum to **31,521 candidate votes**
+(Republican **17,980**, Democratic **12,849**, independent **692**);
+**386 undervotes + 11 overvotes** reconcile to county ballots. Registrations and
+turnout rates remain missing. This is **one county only**, not statewide coverage,
+and no new geometry, demographic estimate or map is approved.
+
+Standalone reviewer: `scripts/review-kentucky-2026-native-results.py`.
+Generated complete package:
+`data/precinct-source-reviews/20261105/KY-2026-native-county-counts-01/`.
+It contains all three complete CSVs, the entire original PDF, seven-source
+receipt manifest, audit, portable reviewer and checksums. Six discovery/error
+originals remain in the acquisition cache; no vendor frontend assets redistributed.
+No separate open-data license was found in the acquired declarations.
+The **8-member / 7-checksum**, **306,401-byte** full ZIP has SHA-256
+`43ded14f7e7978d471f5554556ad024cb5353a7e9dcdca9a557f64d9eba45974`.
+Executing only the extracted portable reviewer/originals reproduces the archive
+byte-for-byte. All **11** focused parser/reconciliation/missingness/archive
+regressions pass. Independent proof: `files/kentucky-2026-package-proof-01.json`.
+
+**Current executable work:** commit/push this reviewed source batch as Hans,
+create a new immutable complete-ZIP release and anonymously verify its entire
+contents before registering the county-only participation/coverage downloads.
+Then build and verify local and exact-commit production UI without changing the
+existing maps or older links. Continue other independent Kentucky counties or the
+remaining 2026 state/DC queue; Iowa's official results archive has been discovered
+but not acquired. Do not retry Kentucky's explicit statewide bot-policy block.
 
 ## Resume procedure for every work session or scheduled prompt
 

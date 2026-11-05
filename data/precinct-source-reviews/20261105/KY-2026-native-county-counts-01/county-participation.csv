@@ -1,0 +1,2 @@
+year,state_code,county,native_county_id,source_row_id,maps_approved,ballots_cast_total,registered_voters_total,turnout_rate,native_reporting_counter,quality_flags
+2026,KY,Daviess County,,daviess:county:pdf:1,False,31918,,,17 of 17 = 100.00%,provisional;county_only;native_polling_places_not_geographic_precincts

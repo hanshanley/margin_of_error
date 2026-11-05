@@ -1,0 +1,182 @@
+year,state_code,county,source_pdf_page,contest,source_row_id,choice,party,kind,Absentee Mail-In,Absentee Walk-in,Early Voting,Election Day Voting,Total
+2026,KY,Daviess County,1,STRAIGHT PARTY,daviess:pdf:1:contest:1:row:1,Republican Party,REP,option,212,73,1871,6446,8602
+2026,KY,Daviess County,1,STRAIGHT PARTY,daviess:pdf:1:contest:1:row:2,Democratic Party,DEM,option,470,52,1803,3752,6077
+2026,KY,Daviess County,1,STRAIGHT PARTY,daviess:pdf:1:contest:1:row:3,Kentucky Party,KY,option,5,2,34,176,217
+2026,KY,Daviess County,1,STRAIGHT PARTY,daviess:pdf:1:contest:1:row:4,Cast Votes:,,total,687,127,3708,10374,14896
+2026,KY,Daviess County,1,STRAIGHT PARTY,daviess:pdf:1:contest:1:row:5,Undervotes:,,total,687,197,4470,11648,17002
+2026,KY,Daviess County,1,STRAIGHT PARTY,daviess:pdf:1:contest:1:row:6,Overvotes:,,total,2,0,4,14,20
+2026,KY,Daviess County,1,UNITED STATES SENATOR - (Vote for One),daviess:pdf:1:contest:2:row:1,Andy BARR,REP,option,437,174,3743,13054,17408
+2026,KY,Daviess County,1,UNITED STATES SENATOR - (Vote for One),daviess:pdf:1:contest:2:row:2,Charles BOOKER,DEM,option,910,135,4215,8160,13420
+2026,KY,Daviess County,1,UNITED STATES SENATOR - (Vote for One),daviess:pdf:1:contest:2:row:3,Christopher CAMPBELL,KY,option,19,10,159,575,763
+2026,KY,Daviess County,1,UNITED STATES SENATOR - (Vote for One),daviess:pdf:1:contest:2:row:4,Thomas Michael MURPHY (W),,option,0,0,0,1,1
+2026,KY,Daviess County,1,UNITED STATES SENATOR - (Vote for One),daviess:pdf:1:contest:2:row:5,Cast Votes:,,total,1366,319,8117,21790,31592
+2026,KY,Daviess County,1,UNITED STATES SENATOR - (Vote for One),daviess:pdf:1:contest:2:row:6,Undervotes:,,total,8,5,57,232,302
+2026,KY,Daviess County,1,UNITED STATES SENATOR - (Vote for One),daviess:pdf:1:contest:2:row:7,Overvotes:,,total,2,0,8,14,24
+2026,KY,Daviess County,2,UNITED STATES REPRESENTATIVE in CONGRESS 2nd Congressional District - (Vote for One),daviess:pdf:2:contest:3:row:1,S. Brett GUTHRIE,REP,option,453,178,3884,13465,17980
+2026,KY,Daviess County,2,UNITED STATES REPRESENTATIVE in CONGRESS 2nd Congressional District - (Vote for One),daviess:pdf:2:contest:3:row:2,Megan WINGFIELD,DEM,option,892,129,4086,7742,12849
+2026,KY,Daviess County,2,UNITED STATES REPRESENTATIVE in CONGRESS 2nd Congressional District - (Vote for One),daviess:pdf:2:contest:3:row:3,Thomas A. LOECKEN,IND,option,19,8,128,537,692
+2026,KY,Daviess County,2,UNITED STATES REPRESENTATIVE in CONGRESS 2nd Congressional District - (Vote for One),daviess:pdf:2:contest:3:row:4,Cast Votes:,,total,1364,315,8098,21744,31521
+2026,KY,Daviess County,2,UNITED STATES REPRESENTATIVE in CONGRESS 2nd Congressional District - (Vote for One),daviess:pdf:2:contest:3:row:5,Undervotes:,,total,12,8,82,284,386
+2026,KY,Daviess County,2,UNITED STATES REPRESENTATIVE in CONGRESS 2nd Congressional District - (Vote for One),daviess:pdf:2:contest:3:row:6,Overvotes:,,total,0,1,2,8,11
+2026,KY,Daviess County,2,STATE SENATOR 8th Senatorial District - (Vote for One),daviess:pdf:2:contest:4:row:1,Gary M. BOSWELL,REP,option,426,167,3676,12911,17180
+2026,KY,Daviess County,2,STATE SENATOR 8th Senatorial District - (Vote for One),daviess:pdf:2:contest:4:row:2,Vicki QUISENBERRY,DEM,option,938,150,4426,8821,14335
+2026,KY,Daviess County,2,STATE SENATOR 8th Senatorial District - (Vote for One),daviess:pdf:2:contest:4:row:3,Cast Votes:,,total,1364,317,8102,21732,31515
+2026,KY,Daviess County,2,STATE SENATOR 8th Senatorial District - (Vote for One),daviess:pdf:2:contest:4:row:4,Undervotes:,,total,12,7,77,295,391
+2026,KY,Daviess County,2,STATE SENATOR 8th Senatorial District - (Vote for One),daviess:pdf:2:contest:4:row:5,Overvotes:,,total,0,0,3,9,12
+2026,KY,Daviess County,2,STATE REPRESENTATIVE 7th Representative District - (Vote for One),daviess:pdf:2:contest:5:row:1,Suzanne MILES,REP,option,195,77,1897,6005,8174
+2026,KY,Daviess County,2,STATE REPRESENTATIVE 7th Representative District - (Vote for One),daviess:pdf:2:contest:5:row:2,Laurie C. CAMPBELL,DEM,option,371,57,2097,4001,6526
+2026,KY,Daviess County,2,STATE REPRESENTATIVE 7th Representative District - (Vote for One),daviess:pdf:2:contest:5:row:3,Cast Votes:,,total,566,134,3994,10006,14700
+2026,KY,Daviess County,2,STATE REPRESENTATIVE 7th Representative District - (Vote for One),daviess:pdf:2:contest:5:row:4,Undervotes:,,total,9,2,36,157,204
+2026,KY,Daviess County,2,STATE REPRESENTATIVE 7th Representative District - (Vote for One),daviess:pdf:2:contest:5:row:5,Overvotes:,,total,0,0,0,4,4
+2026,KY,Daviess County,3,STATE REPRESENTATIVE 13th Representative District - (Vote for One),daviess:pdf:3:contest:6:row:1,D. J. JOHNSON,REP,option,243,76,1709,5055,7083
+2026,KY,Daviess County,3,STATE REPRESENTATIVE 13th Representative District - (Vote for One),daviess:pdf:3:contest:6:row:2,Rhondalyn RANDOLPH,DEM,option,467,72,1962,3227,5728
+2026,KY,Daviess County,3,STATE REPRESENTATIVE 13th Representative District - (Vote for One),daviess:pdf:3:contest:6:row:3,Cast Votes:,,total,710,148,3671,8282,12811
+2026,KY,Daviess County,3,STATE REPRESENTATIVE 13th Representative District - (Vote for One),daviess:pdf:3:contest:6:row:4,Undervotes:,,total,9,4,38,121,172
+2026,KY,Daviess County,3,STATE REPRESENTATIVE 13th Representative District - (Vote for One),daviess:pdf:3:contest:6:row:5,Overvotes:,,total,0,0,1,3,4
+2026,KY,Daviess County,3,STATE REPRESENTATIVE 14th Representative District - (Vote for One),daviess:pdf:3:contest:7:row:1,Wes PATE,REP,option,23,20,232,2449,2724
+2026,KY,Daviess County,3,STATE REPRESENTATIVE 14th Representative District - (Vote for One),daviess:pdf:3:contest:7:row:2,Donna HAYNES,DEM,option,57,16,208,948,1229
+2026,KY,Daviess County,3,STATE REPRESENTATIVE 14th Representative District - (Vote for One),daviess:pdf:3:contest:7:row:3,Cast Votes:,,total,80,36,440,3397,3953
+2026,KY,Daviess County,3,STATE REPRESENTATIVE 14th Representative District - (Vote for One),daviess:pdf:3:contest:7:row:4,Undervotes:,,total,2,0,2,65,69
+2026,KY,Daviess County,3,STATE REPRESENTATIVE 14th Representative District - (Vote for One),daviess:pdf:3:contest:7:row:5,Overvotes:,,total,0,0,0,1,1
+2026,KY,Daviess County,3,PROPERTY VALUATION ADMINISTRATOR - (Vote for One),daviess:pdf:3:contest:8:row:1,Rachel Pence FOSTER,REP,option,552,205,4444,14132,19333
+2026,KY,Daviess County,3,PROPERTY VALUATION ADMINISTRATOR - (Vote for One),daviess:pdf:3:contest:8:row:2,William T. POGUE JR.,DEM,option,787,109,3505,7279,11680
+2026,KY,Daviess County,3,PROPERTY VALUATION ADMINISTRATOR - (Vote for One),daviess:pdf:3:contest:8:row:3,Cast Votes:,,total,1339,314,7949,21411,31013
+2026,KY,Daviess County,3,PROPERTY VALUATION ADMINISTRATOR - (Vote for One),daviess:pdf:3:contest:8:row:4,Undervotes:,,total,37,10,226,617,890
+2026,KY,Daviess County,3,PROPERTY VALUATION ADMINISTRATOR - (Vote for One),daviess:pdf:3:contest:8:row:5,Overvotes:,,total,0,0,7,8,15
+2026,KY,Daviess County,4,COUNTY JUDGE/EXECUTIVE - (Vote for One),daviess:pdf:4:contest:9:row:1,Charlie CASTLEN,REP,option,385,146,3179,10837,14547
+2026,KY,Daviess County,4,COUNTY JUDGE/EXECUTIVE - (Vote for One),daviess:pdf:4:contest:9:row:2,"William ""Rod"" KUEGEL JR.",DEM,option,975,175,4957,10956,17063
+2026,KY,Daviess County,4,COUNTY JUDGE/EXECUTIVE - (Vote for One),daviess:pdf:4:contest:9:row:3,Cast Votes:,,total,1360,321,8136,21793,31610
+2026,KY,Daviess County,4,COUNTY JUDGE/EXECUTIVE - (Vote for One),daviess:pdf:4:contest:9:row:4,Undervotes:,,total,16,3,43,233,295
+2026,KY,Daviess County,4,COUNTY JUDGE/EXECUTIVE - (Vote for One),daviess:pdf:4:contest:9:row:5,Overvotes:,,total,0,0,3,10,13
+2026,KY,Daviess County,4,COUNTY ATTORNEY - (Vote for One),daviess:pdf:4:contest:10:row:1,John BURLEW,REP,option,682,222,4848,16059,21811
+2026,KY,Daviess County,4,COUNTY ATTORNEY - (Vote for One),daviess:pdf:4:contest:10:row:2,Cast Votes:,,total,682,222,4848,16059,21811
+2026,KY,Daviess County,4,COUNTY ATTORNEY - (Vote for One),daviess:pdf:4:contest:10:row:3,Undervotes:,,total,694,102,3330,5972,10098
+2026,KY,Daviess County,4,COUNTY ATTORNEY - (Vote for One),daviess:pdf:4:contest:10:row:4,Overvotes:,,total,0,0,4,5,9
+2026,KY,Daviess County,4,COUNTY CLERK - (Vote for One),daviess:pdf:4:contest:11:row:1,Leslie A. McCARTY,REP,option,772,249,5265,16568,22854
+2026,KY,Daviess County,4,COUNTY CLERK - (Vote for One),daviess:pdf:4:contest:11:row:2,Cast Votes:,,total,772,249,5265,16568,22854
+2026,KY,Daviess County,4,COUNTY CLERK - (Vote for One),daviess:pdf:4:contest:11:row:3,Undervotes:,,total,604,75,2916,5464,9059
+2026,KY,Daviess County,4,COUNTY CLERK - (Vote for One),daviess:pdf:4:contest:11:row:4,Overvotes:,,total,0,0,1,4,5
+2026,KY,Daviess County,5,SHERIFF - (Vote for One),daviess:pdf:5:contest:12:row:1,Bradley R. YOUNGMAN,REP,option,711,233,5052,16450,22446
+2026,KY,Daviess County,5,SHERIFF - (Vote for One),daviess:pdf:5:contest:12:row:2,Cast Votes:,,total,711,233,5052,16450,22446
+2026,KY,Daviess County,5,SHERIFF - (Vote for One),daviess:pdf:5:contest:12:row:3,Undervotes:,,total,665,91,3130,5586,9472
+2026,KY,Daviess County,5,SHERIFF - (Vote for One),daviess:pdf:5:contest:12:row:4,Overvotes:,,total,0,0,0,0,0
+2026,KY,Daviess County,5,JAILER - (Vote for One),daviess:pdf:5:contest:13:row:1,Art MAGLINGER,REP,option,700,226,4976,16318,22220
+2026,KY,Daviess County,5,JAILER - (Vote for One),daviess:pdf:5:contest:13:row:2,Cast Votes:,,total,700,226,4976,16318,22220
+2026,KY,Daviess County,5,JAILER - (Vote for One),daviess:pdf:5:contest:13:row:3,Undervotes:,,total,676,98,3202,5714,9690
+2026,KY,Daviess County,5,JAILER - (Vote for One),daviess:pdf:5:contest:13:row:4,Overvotes:,,total,0,0,4,4,8
+2026,KY,Daviess County,5,COUNTY COMMISSIONER Central District - (Vote for One),daviess:pdf:5:contest:14:row:1,Larry CONDER,REP,option,588,200,4386,15115,20289
+2026,KY,Daviess County,5,COUNTY COMMISSIONER Central District - (Vote for One),daviess:pdf:5:contest:14:row:2,Bruce KUNZE (W),,option,196,43,1216,1474,2929
+2026,KY,Daviess County,5,COUNTY COMMISSIONER Central District - (Vote for One),daviess:pdf:5:contest:14:row:3,Cast Votes:,,total,784,243,5602,16589,23218
+2026,KY,Daviess County,5,COUNTY COMMISSIONER Central District - (Vote for One),daviess:pdf:5:contest:14:row:4,Undervotes:,,total,592,80,2577,5434,8683
+2026,KY,Daviess County,5,COUNTY COMMISSIONER Central District - (Vote for One),daviess:pdf:5:contest:14:row:5,Overvotes:,,total,0,1,3,13,17
+2026,KY,Daviess County,6,COUNTY COMMISSIONER Eastern District - (Vote for One),daviess:pdf:6:contest:15:row:1,Joe HAGAN,REP,option,453,176,3784,13313,17726
+2026,KY,Daviess County,6,COUNTY COMMISSIONER Eastern District - (Vote for One),daviess:pdf:6:contest:15:row:2,Sagan STORM,DEM,option,873,132,4061,7803,12869
+2026,KY,Daviess County,6,COUNTY COMMISSIONER Eastern District - (Vote for One),daviess:pdf:6:contest:15:row:3,Cast Votes:,,total,1326,308,7845,21116,30595
+2026,KY,Daviess County,6,COUNTY COMMISSIONER Eastern District - (Vote for One),daviess:pdf:6:contest:15:row:4,Undervotes:,,total,50,16,333,911,1310
+2026,KY,Daviess County,6,COUNTY COMMISSIONER Eastern District - (Vote for One),daviess:pdf:6:contest:15:row:5,Overvotes:,,total,0,0,4,9,13
+2026,KY,Daviess County,6,COUNTY COMMISSIONER Western District - (Vote for One),daviess:pdf:6:contest:16:row:1,Christopher T. CASTLEN,REP,option,666,219,4820,15739,21444
+2026,KY,Daviess County,6,COUNTY COMMISSIONER Western District - (Vote for One),daviess:pdf:6:contest:16:row:2,Cast Votes:,,total,666,219,4820,15739,21444
+2026,KY,Daviess County,6,COUNTY COMMISSIONER Western District - (Vote for One),daviess:pdf:6:contest:16:row:3,Undervotes:,,total,710,105,3361,6291,10467
+2026,KY,Daviess County,6,COUNTY COMMISSIONER Western District - (Vote for One),daviess:pdf:6:contest:16:row:4,Overvotes:,,total,0,0,1,6,7
+2026,KY,Daviess County,6,CORONER - (Vote for One),daviess:pdf:6:contest:17:row:1,Jeffrey S. JONES,REP,option,683,219,4857,16020,21779
+2026,KY,Daviess County,6,CORONER - (Vote for One),daviess:pdf:6:contest:17:row:2,Cast Votes:,,total,683,219,4857,16020,21779
+2026,KY,Daviess County,6,CORONER - (Vote for One),daviess:pdf:6:contest:17:row:3,Undervotes:,,total,693,105,3322,6016,10136
+2026,KY,Daviess County,6,CORONER - (Vote for One),daviess:pdf:6:contest:17:row:4,Overvotes:,,total,0,0,3,0,3
+2026,KY,Daviess County,7,COUNTY SURVEYOR - (Vote for One),daviess:pdf:7:contest:18:row:1,,,unnamed_option,0,0,0,0,0
+2026,KY,Daviess County,7,COUNTY SURVEYOR - (Vote for One),daviess:pdf:7:contest:18:row:2,Cast Votes:,,total,0,0,0,0,0
+2026,KY,Daviess County,7,COUNTY SURVEYOR - (Vote for One),daviess:pdf:7:contest:18:row:3,Undervotes:,,total,1376,324,8182,22036,31918
+2026,KY,Daviess County,7,COUNTY SURVEYOR - (Vote for One),daviess:pdf:7:contest:18:row:4,Overvotes:,,total,0,0,0,0,0
+2026,KY,Daviess County,7,JUSTICE of the PEACE Central Magisterial District - (Vote for One),daviess:pdf:7:contest:19:row:1,Chris SAALWAECHTER,DEM,option,357,57,1725,3704,5843
+2026,KY,Daviess County,7,JUSTICE of the PEACE Central Magisterial District - (Vote for One),daviess:pdf:7:contest:19:row:2,Cast Votes:,,total,357,57,1725,3704,5843
+2026,KY,Daviess County,7,JUSTICE of the PEACE Central Magisterial District - (Vote for One),daviess:pdf:7:contest:19:row:3,Undervotes:,,total,142,51,1042,2881,4116
+2026,KY,Daviess County,7,JUSTICE of the PEACE Central Magisterial District - (Vote for One),daviess:pdf:7:contest:19:row:4,Overvotes:,,total,0,0,1,3,4
+2026,KY,Daviess County,7,CONSTABLE Central Magisterial District - (Vote for One),daviess:pdf:7:contest:20:row:1,Steve NAVE,REP,option,235,69,1495,4586,6385
+2026,KY,Daviess County,7,CONSTABLE Central Magisterial District - (Vote for One),daviess:pdf:7:contest:20:row:2,Cast Votes:,,total,235,69,1495,4586,6385
+2026,KY,Daviess County,7,CONSTABLE Central Magisterial District - (Vote for One),daviess:pdf:7:contest:20:row:3,Undervotes:,,total,264,39,1273,2000,3576
+2026,KY,Daviess County,7,CONSTABLE Central Magisterial District - (Vote for One),daviess:pdf:7:contest:20:row:4,Overvotes:,,total,0,0,0,2,2
+2026,KY,Daviess County,8,JUSTICE of the PEACE Eastern Magisterial District - (Vote for One),daviess:pdf:8:contest:21:row:1,Anthony COBB,REP,option,224,83,1574,6215,8096
+2026,KY,Daviess County,8,JUSTICE of the PEACE Eastern Magisterial District - (Vote for One),daviess:pdf:8:contest:21:row:2,Cast Votes:,,total,224,83,1574,6215,8096
+2026,KY,Daviess County,8,JUSTICE of the PEACE Eastern Magisterial District - (Vote for One),daviess:pdf:8:contest:21:row:3,Undervotes:,,total,251,44,1093,2361,3749
+2026,KY,Daviess County,8,JUSTICE of the PEACE Eastern Magisterial District - (Vote for One),daviess:pdf:8:contest:21:row:4,Overvotes:,,total,0,0,0,1,1
+2026,KY,Daviess County,8,CONSTABLE Eastern Magisterial District - (Vote for One),daviess:pdf:8:contest:22:row:1,Dan BENNETT,REP,option,226,84,1598,6219,8127
+2026,KY,Daviess County,8,CONSTABLE Eastern Magisterial District - (Vote for One),daviess:pdf:8:contest:22:row:2,Cast Votes:,,total,226,84,1598,6219,8127
+2026,KY,Daviess County,8,CONSTABLE Eastern Magisterial District - (Vote for One),daviess:pdf:8:contest:22:row:3,Undervotes:,,total,249,43,1069,2358,3719
+2026,KY,Daviess County,8,CONSTABLE Eastern Magisterial District - (Vote for One),daviess:pdf:8:contest:22:row:4,Overvotes:,,total,0,0,0,0,0
+2026,KY,Daviess County,8,JUSTICE of the PEACE Western Magisterial District - (Vote for One),daviess:pdf:8:contest:23:row:1,Cathy KRAMER,REP,option,180,49,1530,4673,6432
+2026,KY,Daviess County,8,JUSTICE of the PEACE Western Magisterial District - (Vote for One),daviess:pdf:8:contest:23:row:2,Cast Votes:,,total,180,49,1530,4673,6432
+2026,KY,Daviess County,8,JUSTICE of the PEACE Western Magisterial District - (Vote for One),daviess:pdf:8:contest:23:row:3,Undervotes:,,total,222,40,1216,2198,3676
+2026,KY,Daviess County,8,JUSTICE of the PEACE Western Magisterial District - (Vote for One),daviess:pdf:8:contest:23:row:4,Overvotes:,,total,0,0,1,0,1
+2026,KY,Daviess County,9,CONSTABLE Western Magisterial District - (Vote for One),daviess:pdf:9:contest:24:row:1,Scotty SMITH,REP,option,188,53,1569,4799,6609
+2026,KY,Daviess County,9,CONSTABLE Western Magisterial District - (Vote for One),daviess:pdf:9:contest:24:row:2,Cast Votes:,,total,188,53,1569,4799,6609
+2026,KY,Daviess County,9,CONSTABLE Western Magisterial District - (Vote for One),daviess:pdf:9:contest:24:row:3,Undervotes:,,total,214,36,1177,2072,3499
+2026,KY,Daviess County,9,CONSTABLE Western Magisterial District - (Vote for One),daviess:pdf:9:contest:24:row:4,Overvotes:,,total,0,0,1,0,1
+2026,KY,Daviess County,9,CIRCUIT JUDGE 6th Judicial Circuit 1st Division (Unexpired Term) - (Vote for One),daviess:pdf:9:contest:25:row:1,Bryce CALDWELL,,option,645,142,3702,12190,16679
+2026,KY,Daviess County,9,CIRCUIT JUDGE 6th Judicial Circuit 1st Division (Unexpired Term) - (Vote for One),daviess:pdf:9:contest:25:row:2,Cast Votes:,,total,645,142,3702,12190,16679
+2026,KY,Daviess County,9,CIRCUIT JUDGE 6th Judicial Circuit 1st Division (Unexpired Term) - (Vote for One),daviess:pdf:9:contest:25:row:3,Undervotes:,,total,731,182,4477,9837,15227
+2026,KY,Daviess County,9,CIRCUIT JUDGE 6th Judicial Circuit 1st Division (Unexpired Term) - (Vote for One),daviess:pdf:9:contest:25:row:4,Overvotes:,,total,0,0,3,9,12
+2026,KY,Daviess County,9,DISTRICT JUDGE 6th Judicial District 1st Division - (Vote for One),daviess:pdf:9:contest:26:row:1,J. Nick PAYNE,,option,420,114,2833,9210,12577
+2026,KY,Daviess County,9,DISTRICT JUDGE 6th Judicial District 1st Division - (Vote for One),daviess:pdf:9:contest:26:row:2,Lelah ROGERS,,option,586,122,3422,7793,11923
+2026,KY,Daviess County,9,DISTRICT JUDGE 6th Judicial District 1st Division - (Vote for One),daviess:pdf:9:contest:26:row:3,Cast Votes:,,total,1006,236,6255,17003,24500
+2026,KY,Daviess County,9,DISTRICT JUDGE 6th Judicial District 1st Division - (Vote for One),daviess:pdf:9:contest:26:row:4,Undervotes:,,total,369,88,1916,5015,7388
+2026,KY,Daviess County,9,DISTRICT JUDGE 6th Judicial District 1st Division - (Vote for One),daviess:pdf:9:contest:26:row:5,Overvotes:,,total,1,0,11,18,30
+2026,KY,Daviess County,10,DISTRICT JUDGE 6th Judicial District 2nd Division - (Vote for One),daviess:pdf:10:contest:27:row:1,Phillip J. PAGE,,option,456,104,2729,7725,11014
+2026,KY,Daviess County,10,DISTRICT JUDGE 6th Judicial District 2nd Division - (Vote for One),daviess:pdf:10:contest:27:row:2,Brian L. QUATTROCCHI,,option,492,124,3240,8595,12451
+2026,KY,Daviess County,10,DISTRICT JUDGE 6th Judicial District 2nd Division - (Vote for One),daviess:pdf:10:contest:27:row:3,Cast Votes:,,total,948,228,5969,16320,23465
+2026,KY,Daviess County,10,DISTRICT JUDGE 6th Judicial District 2nd Division - (Vote for One),daviess:pdf:10:contest:27:row:4,Undervotes:,,total,428,96,2208,5703,8435
+2026,KY,Daviess County,10,DISTRICT JUDGE 6th Judicial District 2nd Division - (Vote for One),daviess:pdf:10:contest:27:row:5,Overvotes:,,total,0,0,5,13,18
+2026,KY,Daviess County,10,DISTRICT JUDGE 6th Judicial District 3rd Division - (Vote for One),daviess:pdf:10:contest:28:row:1,Shannon MEYER,,option,681,157,3935,12316,17089
+2026,KY,Daviess County,10,DISTRICT JUDGE 6th Judicial District 3rd Division - (Vote for One),daviess:pdf:10:contest:28:row:2,Cast Votes:,,total,681,157,3935,12316,17089
+2026,KY,Daviess County,10,DISTRICT JUDGE 6th Judicial District 3rd Division - (Vote for One),daviess:pdf:10:contest:28:row:3,Undervotes:,,total,695,167,4243,9715,14820
+2026,KY,Daviess County,10,DISTRICT JUDGE 6th Judicial District 3rd Division - (Vote for One),daviess:pdf:10:contest:28:row:4,Overvotes:,,total,0,0,4,5,9
+2026,KY,Daviess County,10,SOIL and WATER CONSERVATION DISTRICT SUPERVISORS - (Vote for Three),daviess:pdf:10:contest:29:row:1,Mark IRBY,,option,533,106,2788,8549,11976
+2026,KY,Daviess County,10,SOIL and WATER CONSERVATION DISTRICT SUPERVISORS - (Vote for Three),daviess:pdf:10:contest:29:row:2,Dustin WARREN,,option,576,107,3223,9794,13700
+2026,KY,Daviess County,10,SOIL and WATER CONSERVATION DISTRICT SUPERVISORS - (Vote for Three),daviess:pdf:10:contest:29:row:3,Jeffrey Maitland RICE,,option,425,75,2121,6325,8946
+2026,KY,Daviess County,10,SOIL and WATER CONSERVATION DISTRICT SUPERVISORS - (Vote for Three),daviess:pdf:10:contest:29:row:4,David Kyle RICE,,option,436,88,2384,7067,9975
+2026,KY,Daviess County,10,SOIL and WATER CONSERVATION DISTRICT SUPERVISORS - (Vote for Three),daviess:pdf:10:contest:29:row:5,Cast Votes:,,total,1970,376,10516,31735,44597
+2026,KY,Daviess County,10,SOIL and WATER CONSERVATION DISTRICT SUPERVISORS - (Vote for Three),daviess:pdf:10:contest:29:row:6,Undervotes:,,total,2158,596,14003,34307,51064
+2026,KY,Daviess County,10,SOIL and WATER CONSERVATION DISTRICT SUPERVISORS - (Vote for Three),daviess:pdf:10:contest:29:row:7,Overvotes:,,total,0,0,9,22,31
+2026,KY,Daviess County,11,MEMBER BOARD of EDUCATION 1st Educational District - (Vote for One),daviess:pdf:11:contest:30:row:1,James M. MORGAN,,option,79,27,441,1977,2524
+2026,KY,Daviess County,11,MEMBER BOARD of EDUCATION 1st Educational District - (Vote for One),daviess:pdf:11:contest:30:row:2,Cast Votes:,,total,79,27,441,1977,2524
+2026,KY,Daviess County,11,MEMBER BOARD of EDUCATION 1st Educational District - (Vote for One),daviess:pdf:11:contest:30:row:3,Undervotes:,,total,97,28,534,1836,2495
+2026,KY,Daviess County,11,MEMBER BOARD of EDUCATION 1st Educational District - (Vote for One),daviess:pdf:11:contest:30:row:4,Overvotes:,,total,0,0,1,1,2
+2026,KY,Daviess County,11,MEMBER BOARD of EDUCATION 2nd Educational District - (Vote for One),daviess:pdf:11:contest:31:row:1,Tom PAYNE,,option,52,17,387,1226,1682
+2026,KY,Daviess County,11,MEMBER BOARD of EDUCATION 2nd Educational District - (Vote for One),daviess:pdf:11:contest:31:row:2,Alex KING,,option,87,18,552,1720,2377
+2026,KY,Daviess County,11,MEMBER BOARD of EDUCATION 2nd Educational District - (Vote for One),daviess:pdf:11:contest:31:row:3,Cast Votes:,,total,139,35,939,2946,4059
+2026,KY,Daviess County,11,MEMBER BOARD of EDUCATION 2nd Educational District - (Vote for One),daviess:pdf:11:contest:31:row:4,Undervotes:,,total,38,18,355,989,1400
+2026,KY,Daviess County,11,MEMBER BOARD of EDUCATION 2nd Educational District - (Vote for One),daviess:pdf:11:contest:31:row:5,Overvotes:,,total,0,0,3,4,7
+2026,KY,Daviess County,11,MEMBER BOARD of EDUCATION Owensboro Independent Educational District - (Vote for Two),daviess:pdf:11:contest:32:row:1,Andy GAMBLIN,,option,59,8,370,791,1228
+2026,KY,Daviess County,11,MEMBER BOARD of EDUCATION Owensboro Independent Educational District - (Vote for Two),daviess:pdf:11:contest:32:row:2,Tyler SAGARDOY,,option,117,15,668,1103,1903
+2026,KY,Daviess County,11,MEMBER BOARD of EDUCATION Owensboro Independent Educational District - (Vote for Two),daviess:pdf:11:contest:32:row:3,Jeremy LUCKETT,,option,168,30,713,1524,2435
+2026,KY,Daviess County,11,MEMBER BOARD of EDUCATION Owensboro Independent Educational District - (Vote for Two),daviess:pdf:11:contest:32:row:4,Ashley Kirtley JOHNSON,,option,271,41,1163,2252,3727
+2026,KY,Daviess County,11,MEMBER BOARD of EDUCATION Owensboro Independent Educational District - (Vote for Two),daviess:pdf:11:contest:32:row:5,Cast Votes:,,total,615,94,2914,5670,9293
+2026,KY,Daviess County,11,MEMBER BOARD of EDUCATION Owensboro Independent Educational District - (Vote for Two),daviess:pdf:11:contest:32:row:6,Undervotes:,,total,339,80,1676,3168,5263
+2026,KY,Daviess County,11,MEMBER BOARD of EDUCATION Owensboro Independent Educational District - (Vote for Two),daviess:pdf:11:contest:32:row:7,Overvotes:,,total,4,0,13,28,45
+2026,KY,Daviess County,12,CITY COMMISSIONERS City of Owensboro - (Vote for up to Four),daviess:pdf:12:contest:33:row:1,John Ross MARTIN,,option,195,45,1335,3164,4739
+2026,KY,Daviess County,12,CITY COMMISSIONERS City of Owensboro - (Vote for up to Four),daviess:pdf:12:contest:33:row:2,Tyler GOAD,,option,201,42,1240,2491,3974
+2026,KY,Daviess County,12,CITY COMMISSIONERS City of Owensboro - (Vote for up to Four),daviess:pdf:12:contest:33:row:3,Jeff SANFORD,,option,279,58,1681,3383,5401
+2026,KY,Daviess County,12,CITY COMMISSIONERS City of Owensboro - (Vote for up to Four),daviess:pdf:12:contest:33:row:4,Bob GLENN,,option,451,67,2358,3685,6561
+2026,KY,Daviess County,12,CITY COMMISSIONERS City of Owensboro - (Vote for up to Four),daviess:pdf:12:contest:33:row:5,Curtis MAGLINGER,,option,261,61,1556,3165,5043
+2026,KY,Daviess County,12,CITY COMMISSIONERS City of Owensboro - (Vote for up to Four),daviess:pdf:12:contest:33:row:6,Pamela L. SMITH-WRIGHT,,option,485,70,2386,3850,6791
+2026,KY,Daviess County,12,CITY COMMISSIONERS City of Owensboro - (Vote for up to Four),daviess:pdf:12:contest:33:row:7,Steve JOHNSON,,option,254,49,1457,2842,4602
+2026,KY,Daviess County,12,CITY COMMISSIONERS City of Owensboro - (Vote for up to Four),daviess:pdf:12:contest:33:row:8,Sharon Gail NeSMITH,,option,430,72,2133,3340,5975
+2026,KY,Daviess County,12,CITY COMMISSIONERS City of Owensboro - (Vote for up to Four),daviess:pdf:12:contest:33:row:9,Cast Votes:,,total,2556,464,14146,25920,43086
+2026,KY,Daviess County,12,CITY COMMISSIONERS City of Owensboro - (Vote for up to Four),daviess:pdf:12:contest:33:row:10,Undervotes:,,total,1228,228,6654,14008,22118
+2026,KY,Daviess County,12,CITY COMMISSIONERS City of Owensboro - (Vote for up to Four),daviess:pdf:12:contest:33:row:11,Overvotes:,,total,2,1,13,39,55
+2026,KY,Daviess County,12,MAYOR City of Whitesville - (Vote for One),daviess:pdf:12:contest:34:row:1,Pamela A. MORRIS,,option,4,0,3,97,104
+2026,KY,Daviess County,12,MAYOR City of Whitesville - (Vote for One),daviess:pdf:12:contest:34:row:2,Cast Votes:,,total,4,0,3,97,104
+2026,KY,Daviess County,12,MAYOR City of Whitesville - (Vote for One),daviess:pdf:12:contest:34:row:3,Undervotes:,,total,2,0,6,62,70
+2026,KY,Daviess County,12,MAYOR City of Whitesville - (Vote for One),daviess:pdf:12:contest:34:row:4,Overvotes:,,total,0,0,0,0,0
+2026,KY,Daviess County,13,CITY COMMISSIONERS City of Whitesville - (Vote for up to Four),daviess:pdf:13:contest:35:row:1,"Joseph ""Buddy"" MATTINGLY",,option,3,0,4,84,91
+2026,KY,Daviess County,13,CITY COMMISSIONERS City of Whitesville - (Vote for up to Four),daviess:pdf:13:contest:35:row:2,Maranda J. WARD,,option,2,0,3,76,81
+2026,KY,Daviess County,13,CITY COMMISSIONERS City of Whitesville - (Vote for up to Four),daviess:pdf:13:contest:35:row:3,"William ""Bill"" WHITSELL",,option,1,0,4,36,41
+2026,KY,Daviess County,13,CITY COMMISSIONERS City of Whitesville - (Vote for up to Four),daviess:pdf:13:contest:35:row:4,Greg BEYKE,,option,0,0,5,92,97
+2026,KY,Daviess County,13,CITY COMMISSIONERS City of Whitesville - (Vote for up to Four),daviess:pdf:13:contest:35:row:5,Jackie BICKETT,,option,1,0,5,86,92
+2026,KY,Daviess County,13,CITY COMMISSIONERS City of Whitesville - (Vote for up to Four),daviess:pdf:13:contest:35:row:6,Clarence Julian MERRITT,,option,0,0,4,44,48
+2026,KY,Daviess County,13,CITY COMMISSIONERS City of Whitesville - (Vote for up to Four),daviess:pdf:13:contest:35:row:7,Cast Votes:,,total,7,0,25,418,450
+2026,KY,Daviess County,13,CITY COMMISSIONERS City of Whitesville - (Vote for up to Four),daviess:pdf:13:contest:35:row:8,Undervotes:,,total,17,0,11,214,242
+2026,KY,Daviess County,13,CITY COMMISSIONERS City of Whitesville - (Vote for up to Four),daviess:pdf:13:contest:35:row:9,Overvotes:,,total,0,0,0,1,1
+2026,KY,Daviess County,13,CONSTITUTIONAL AMENDMENT 1,daviess:pdf:13:contest:36:row:1,YES,,option,761,182,4831,13661,19435
+2026,KY,Daviess County,13,CONSTITUTIONAL AMENDMENT 1,daviess:pdf:13:contest:36:row:2,NO,,option,421,87,2329,5563,8400
+2026,KY,Daviess County,13,CONSTITUTIONAL AMENDMENT 1,daviess:pdf:13:contest:36:row:3,Cast Votes:,,total,1182,269,7160,19224,27835
+2026,KY,Daviess County,13,CONSTITUTIONAL AMENDMENT 1,daviess:pdf:13:contest:36:row:4,Undervotes:,,total,194,54,1000,2783,4031
+2026,KY,Daviess County,13,CONSTITUTIONAL AMENDMENT 1,daviess:pdf:13:contest:36:row:5,Overvotes:,,total,0,1,22,29,52
