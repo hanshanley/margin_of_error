@@ -1,0 +1,157 @@
+[
+  {
+    "doi": "10.7910/DVN/EOKNGW",
+    "requested_url": "https://api.datacite.org/dois/10.7910/DVN/EOKNGW",
+    "checked_at_utc": "2026-11-05T16:21:16.930652+00:00",
+    "permission_approval": false,
+    "final_url": "https://api.datacite.org/dois/10.7910/DVN/EOKNGW",
+    "http_status": 200,
+    "response_file": "EOKNGW.response",
+    "bytes": 6482,
+    "sha256": "2ef1b3108ecfdd3fa59fbf9fc79a01e088df8c6a6c516cbf5db276e93f6c13ed",
+    "titles": [
+      {
+        "title": "U.S. House of Representatives Precinct-Level Returns 2022"
+      }
+    ],
+    "rights_list": [
+      {
+        "rightsUri": "info:eu-repo/semantics/openAccess"
+      },
+      {
+        "lang": "en",
+        "rights": "Creative Commons Zero v1.0 Universal",
+        "rightsUri": "https://creativecommons.org/publicdomain/zero/1.0/legalcode",
+        "schemeUri": "https://spdx.org/licenses/",
+        "rightsIdentifier": "cc0-1.0",
+        "rightsIdentifierScheme": "SPDX"
+      }
+    ],
+    "publisher": "Harvard Dataverse",
+    "registered_dataset_url": "https://dataverse.harvard.edu/citation?persistentId=doi:10.7910/DVN/EOKNGW"
+  },
+  {
+    "doi": "10.7910/DVN/IVIXLK",
+    "requested_url": "https://api.datacite.org/dois/10.7910/DVN/IVIXLK",
+    "checked_at_utc": "2026-11-05T16:21:16.931009+00:00",
+    "permission_approval": false,
+    "final_url": "https://api.datacite.org/dois/10.7910/DVN/IVIXLK",
+    "http_status": 200,
+    "response_file": "IVIXLK.response",
+    "bytes": 10206,
+    "sha256": "d6cf5cd9aaf59f59ccc61ba8912d4501607dcabbf7ed0cadf10c8718aebbc564",
+    "titles": [
+      {
+        "title": "U.S. House of Representatives Precinct-Level Returns 2018"
+      }
+    ],
+    "rights_list": [
+      {
+        "rightsUri": "info:eu-repo/semantics/openAccess"
+      },
+      {
+        "lang": "en",
+        "rights": "Creative Commons Zero v1.0 Universal",
+        "rightsUri": "https://creativecommons.org/publicdomain/zero/1.0/legalcode",
+        "schemeUri": "https://spdx.org/licenses/",
+        "rightsIdentifier": "cc0-1.0",
+        "rightsIdentifierScheme": "SPDX"
+      }
+    ],
+    "publisher": "Harvard Dataverse",
+    "registered_dataset_url": "https://dataverse.harvard.edu/citation?persistentId=doi:10.7910/DVN/IVIXLK"
+  },
+  {
+    "doi": "10.7910/DVN/PSKDUJ",
+    "requested_url": "https://api.datacite.org/dois/10.7910/DVN/PSKDUJ",
+    "checked_at_utc": "2026-11-05T16:21:16.931158+00:00",
+    "permission_approval": false,
+    "final_url": "https://api.datacite.org/dois/10.7910/DVN/PSKDUJ",
+    "http_status": 200,
+    "response_file": "PSKDUJ.response",
+    "bytes": 21814,
+    "sha256": "4789acada930a1e95bf5a02c75d926448eaa9663c5d4f54662672ac1542ef6ca",
+    "titles": [
+      {
+        "title": "U.S. House of Representatives Precinct-Level Returns 2016"
+      }
+    ],
+    "rights_list": [
+      {
+        "rightsUri": "info:eu-repo/semantics/openAccess"
+      },
+      {
+        "lang": "en",
+        "rights": "Creative Commons Zero v1.0 Universal",
+        "rightsUri": "https://creativecommons.org/publicdomain/zero/1.0/legalcode",
+        "schemeUri": "https://spdx.org/licenses/",
+        "rightsIdentifier": "cc0-1.0",
+        "rightsIdentifierScheme": "SPDX"
+      }
+    ],
+    "publisher": "Harvard Dataverse",
+    "registered_dataset_url": "https://dataverse.harvard.edu/citation?persistentId=doi:10.7910/DVN/PSKDUJ"
+  },
+  {
+    "doi": "10.7910/DVN/USBYR4",
+    "requested_url": "https://api.datacite.org/dois/10.7910/DVN/USBYR4",
+    "checked_at_utc": "2026-11-05T16:21:17.362442+00:00",
+    "permission_approval": false,
+    "final_url": "https://api.datacite.org/dois/10.7910/DVN/USBYR4",
+    "http_status": 200,
+    "response_file": "USBYR4.response",
+    "bytes": 5661,
+    "sha256": "e4cd0ceb54e7afb10cd93e22ab5b24d9da3b2b6c7239941984d7e02262e66f51",
+    "titles": [
+      {
+        "title": "U.S. House of Representatives Precinct-Level Returns 2024"
+      }
+    ],
+    "rights_list": [
+      {
+        "rightsUri": "info:eu-repo/semantics/openAccess"
+      },
+      {
+        "lang": "en",
+        "rights": "Creative Commons Zero v1.0 Universal",
+        "rightsUri": "https://creativecommons.org/publicdomain/zero/1.0/legalcode",
+        "schemeUri": "https://spdx.org/licenses/",
+        "rightsIdentifier": "cc0-1.0",
+        "rightsIdentifierScheme": "SPDX"
+      }
+    ],
+    "publisher": "Harvard Dataverse",
+    "registered_dataset_url": "https://dataverse.harvard.edu/citation?persistentId=doi:10.7910/DVN/USBYR4"
+  },
+  {
+    "doi": "10.7910/DVN/VLGF2M",
+    "requested_url": "https://api.datacite.org/dois/10.7910/DVN/VLGF2M",
+    "checked_at_utc": "2026-11-05T16:21:17.402536+00:00",
+    "permission_approval": false,
+    "final_url": "https://api.datacite.org/dois/10.7910/DVN/VLGF2M",
+    "http_status": 200,
+    "response_file": "VLGF2M.response",
+    "bytes": 16788,
+    "sha256": "6305e1183c1d625dd55ab79912f9cc331587b296aacb1b80939e0477e83d2caf",
+    "titles": [
+      {
+        "title": "U.S. House of Representatives Precinct-Level Returns 2020"
+      }
+    ],
+    "rights_list": [
+      {
+        "rightsUri": "info:eu-repo/semantics/openAccess"
+      },
+      {
+        "lang": "en",
+        "rights": "Creative Commons Zero v1.0 Universal",
+        "rightsUri": "https://creativecommons.org/publicdomain/zero/1.0/legalcode",
+        "schemeUri": "https://spdx.org/licenses/",
+        "rightsIdentifier": "cc0-1.0",
+        "rightsIdentifierScheme": "SPDX"
+      }
+    ],
+    "publisher": "Harvard Dataverse",
+    "registered_dataset_url": "https://dataverse.harvard.edu/citation?persistentId=doi:10.7910/DVN/VLGF2M"
+  }
+]

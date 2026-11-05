@@ -1,0 +1,57 @@
+[
+  {
+    "doi": "10.7910/DVN/EOKNGW",
+    "requested_url": "https://dataverse.harvard.edu/api/datasets/:persistentId/",
+    "checked_at_utc": "2026-11-05T16:20:01.860174+00:00",
+    "permission_approval": false,
+    "final_url": "https://dataverse.harvard.edu/api/datasets/:persistentId/?persistentId=doi%3A10.7910%2FDVN%2FEOKNGW",
+    "http_status": 403,
+    "response_file": "EOKNGW.response",
+    "bytes": 199,
+    "sha256": "5b13fb5957b84ef7bb9d0b6cd509c947ff6a37d67efdac2b896ddd3b908aad10"
+  },
+  {
+    "doi": "10.7910/DVN/IVIXLK",
+    "requested_url": "https://dataverse.harvard.edu/api/datasets/:persistentId/",
+    "checked_at_utc": "2026-11-05T16:20:01.860590+00:00",
+    "permission_approval": false,
+    "final_url": "https://dataverse.harvard.edu/api/datasets/:persistentId/?persistentId=doi%3A10.7910%2FDVN%2FIVIXLK",
+    "http_status": 403,
+    "response_file": "IVIXLK.response",
+    "bytes": 199,
+    "sha256": "5b13fb5957b84ef7bb9d0b6cd509c947ff6a37d67efdac2b896ddd3b908aad10"
+  },
+  {
+    "doi": "10.7910/DVN/PSKDUJ",
+    "requested_url": "https://dataverse.harvard.edu/api/datasets/:persistentId/",
+    "checked_at_utc": "2026-11-05T16:20:01.860664+00:00",
+    "permission_approval": false,
+    "final_url": "https://dataverse.harvard.edu/api/datasets/:persistentId/?persistentId=doi%3A10.7910%2FDVN%2FPSKDUJ",
+    "http_status": 403,
+    "response_file": "PSKDUJ.response",
+    "bytes": 199,
+    "sha256": "5b13fb5957b84ef7bb9d0b6cd509c947ff6a37d67efdac2b896ddd3b908aad10"
+  },
+  {
+    "doi": "10.7910/DVN/USBYR4",
+    "requested_url": "https://dataverse.harvard.edu/api/datasets/:persistentId/",
+    "checked_at_utc": "2026-11-05T16:20:01.947031+00:00",
+    "permission_approval": false,
+    "final_url": "https://dataverse.harvard.edu/api/datasets/:persistentId/?persistentId=doi%3A10.7910%2FDVN%2FUSBYR4",
+    "http_status": 403,
+    "response_file": "USBYR4.response",
+    "bytes": 199,
+    "sha256": "5b13fb5957b84ef7bb9d0b6cd509c947ff6a37d67efdac2b896ddd3b908aad10"
+  },
+  {
+    "doi": "10.7910/DVN/VLGF2M",
+    "requested_url": "https://dataverse.harvard.edu/api/datasets/:persistentId/",
+    "checked_at_utc": "2026-11-05T16:20:01.947360+00:00",
+    "permission_approval": false,
+    "final_url": "https://dataverse.harvard.edu/api/datasets/:persistentId/?persistentId=doi%3A10.7910%2FDVN%2FVLGF2M",
+    "http_status": 403,
+    "response_file": "VLGF2M.response",
+    "bytes": 199,
+    "sha256": "5b13fb5957b84ef7bb9d0b6cd509c947ff6a37d67efdac2b896ddd3b908aad10"
+  }
+]

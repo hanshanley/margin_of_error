@@ -17,6 +17,10 @@ ROOT = Path(__file__).resolve().parents[1]
 ACQUISITION = ROOT / "data/precinct-source-reviews/20261105-historical-county-bulk-01/acquisition.json"
 OFFICES = ("house", "president", "senate")
 CODES = "AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY DC".split()
+DOCUMENTED_LICENSE_STATUSES = {
+    "cc0_verified", "mit_repo", "no_license_file", "not_stated", "state_permissive",
+    "state_conditional", "state_restrictive", "terms_unreachable", "cc_by_sa_secondary",
+}
 
 
 def key(row):
@@ -105,6 +109,42 @@ def csv_bytes(rows):
     return stream.getvalue().encode()
 
 
+def provenance(rows, sources):
+    fields = ("source", "office", "state_po", "year")
+    groups = defaultdict(list)
+    for row in rows:
+        groups[tuple(row[field] for field in fields)].append(row)
+    index = {}
+    for row in sources:
+        identity = tuple(row[field] for field in fields)
+        if identity in index:
+            raise ValueError("Duplicate scoped source identity")
+        index[identity] = row
+    if set(groups) != set(index):
+        raise ValueError("Candidate/source identity inventories differ")
+    report, undocumented = [], []
+    for identity, candidates in sorted(groups.items(), key=lambda item: (-int(item[0][3]), item[0])):
+        source = index[identity]
+        if not re.fullmatch(r"\d+", source["n_rows"]) or int(source["n_rows"]) != len(candidates):
+            raise ValueError("Declared source row count differs from candidate rows: " + repr(identity))
+        documented = source["license_status"] in DOCUMENTED_LICENSE_STATUSES
+        record = dict(zip(fields, identity), candidate_rows=len(candidates),
+            declared_candidate_rows=source["n_rows"],
+            counties=len({row["county_fips"] for row in candidates}),
+            districts=len({row["district"] for row in candidates}),
+            publisher_license_status=source["license_status"],
+            license_status_documented=documented, independent_reuse_approved=False)
+        report.append(record)
+        if not documented:
+            undocumented.append({field: record[field] for field in
+                                 (*fields, "publisher_license_status")})
+    return report, dict(source_records=len(sources), source_groups=len(groups),
+        matched_candidate_rows=sum(len(group) for group in groups.values()),
+        all_scoped_source_keys_and_row_counts_match=True,
+        undocumented_license_status_records=undocumented,
+        independent_reuse_approved=False)
+
+
 def coverage(report, gaps, no_ballot, current_index, state_codes):
     grouped, native_gaps, native_absences = defaultdict(list), Counter(), Counter()
     for row in report:
@@ -156,11 +196,17 @@ def review(archive_path, output):
         rows, summaries = table("us_county_results_long.csv"), table("us_county_results_summary.csv")
         report, parties, accepted, audit = reconcile(rows, summaries)
         sources = table("SOURCES.csv")
+        source_review, source_audit = provenance(rows, sources)
         audit.update(input_rows=len(rows), source_commit=acquisition["source_commit"],
             complete_original_url=acquisition["complete_download_url"],
             complete_original_sha256=acquisition["complete_download_sha256"],
             stage_rows=dict(Counter(row["stage"] for row in rows)),
             source_license_statuses=dict(Counter(row["license_status"] for row in sources)),
+            source_reference_review=source_audit,
+            native_candidate_identity_limits=[
+                "President 1992-1996 and Senate 1990-2014 name only major-party nominees.",
+                "Preserve native aggregate Other rows; never invent missing candidate or party identities.",
+            ],
             compilation_attribution="Paul Heideman (2026), U.S. county-level election results, v1.0.0, CC BY 4.0.",
             publication_status="Local derived tables only. Arithmetic is not source certification, reuse permission, "
             "correct-election geometry approval or proof of complete coverage. Preserve upstream license terms.",
@@ -172,7 +218,8 @@ def review(archive_path, output):
                           table("us_county_results_no_ballot.csv"), index, state_codes)
     output.mkdir(parents=True, exist_ok=False)
     for name, records in (("county-review.csv", report), ("county-party-totals.csv", parties),
-                          ("candidate-party-lines.csv", accepted), ("county-candidate-coverage.csv", ledger)):
+                          ("candidate-party-lines.csv", accepted), ("county-candidate-coverage.csv", ledger),
+                          ("source-reference-review.csv", source_review)):
         (output / (name + ".gz")).write_bytes(gzip.compress(csv_bytes(records), mtime=0))
     (output / "audit.json").write_text(json.dumps(audit, indent=2) + "\n")
     (output / "checksums.json").write_text(json.dumps({

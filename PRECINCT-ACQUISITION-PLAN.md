@@ -39,6 +39,15 @@ with exact deployment and hosted-refresh run records alongside it. The current
 county and UF pointers reference that proof; partial coverage and source estimates
 remain explicitly labeled.
 
+The historical-download/ledger page update in `d269eb1e1b12add3cd3c33d2c1ac09069026962b`
+also passed exact Pages run `42062339000` and four-mode production checks.
+All 134 complete download links are present, including the original historical
+archive and the separate 4,896-cell county ledger; all 52 UF rows still match
+their source values/statuses. Pointer, ledger and renderer public bytes match
+the committed source. This focused check deliberately did not repeat unchanged
+maps. Evidence is
+`data/county-source-reviews/20261105-refresh-live-01/historical-downloads-production-browser.json`.
+
 The six-hour/manual workflow `.github/workflows/refresh-2026-data.yml` has
 actually passed hosted run `42060180039` (`source=uf`): all 13 focused tests
 passed, the fresh official source was unchanged, and the previous public
@@ -70,9 +79,38 @@ the county ledger. The four generated historical tables remain private in
 `files/historical-county-reviewed-01/` until source-specific reuse terms are reviewed;
 do not mirror them just because the compilation carries CC BY 4.0.
 
+Historical provenance now has executable, fail-closed checks as well:
+all 420,503 rows resolve to exactly 1,870 distinct
+`source + office + state + year` records, and every declared source row count
+matches. Do not join only on the shared source token. Missing/duplicate source
+identities and declared count disagreements stop review. All 27 focused tests
+passed. The new complete local review is `files/historical-county-reviewed-02/`;
+its persisted audit and complete source-reference table are in
+`data/county-source-reviews/20261105-historical-provenance-01/`.
+
+Five license-status literals are not documented by the native dictionary:
+Montana 2022 House says `believed_cc0`; Delaware House 1990/1992/1994/1996
+says `downloaded by curl` with other provenance fields shifted. Preserve these
+as native exceptions rather than silently repairing them or treating them as
+permission. President 1992–1996 and Senate 1990–2014 name only major-party
+nominees; native aggregate Other rows cannot recover unnamed parties/candidates.
+
+Direct Harvard Dataverse pages/API were blocked. The DataCite DOI registry
+alternative returned original metadata for all five cited House datasets,
+confirming their titles and explicit CC0 declarations:
+2024 `10.7910/DVN/USBYR4`, 2022 `10.7910/DVN/EOKNGW`,
+2020 `10.7910/DVN/VLGF2M`, 2018 `10.7910/DVN/IVIXLK`,
+2016 `10.7910/DVN/PSKDUJ`. Both failed direct responses and successful registry
+responses, timestamps and checksums are retained in the provenance review.
+This does not approve every compiler correction/name override, a different
+office/source, all upstream terms, or historical county geography.
+
 Next: review historical upstream provenance/reuse, quality flags, gaps, no-ballot
-records and election-year county crosswalks, starting with 2024/2022, and acquire
-genuine 2026 Maine/Pennsylvania/D.C. alternatives. Do not repeat the completed
+records and election-year county crosswalks, starting with the now-identified
+2024/2022 MEDSL House sources. Build a scoped complete export with source/name
+override exceptions before approving its maps; do not hold those years for all
+older mixed-license sources. Acquire genuine 2026 Maine/Pennsylvania/D.C.
+alternatives in parallel. Do not repeat the completed
 county map or pipeline suites unless their counts/renderer actually change.
 UF's currently published
 2026 CSV labels all 52 rows as Initial Estimate, not final administrative ballots.

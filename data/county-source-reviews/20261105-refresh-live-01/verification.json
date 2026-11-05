@@ -36,5 +36,9 @@
     "UF rows retain source estimates and their own denominators.",
     "PA test sources excluded; ME county joins and DC source coverage remain gaps.",
     "Historical source-specific reuse, provenance, quality and election-year geography remain unapproved."
-  ]
+  ],
+  "updated_download_page_verified_revision": "d269eb1e1b12add3cd3c33d2c1ac09069026962b",
+  "updated_download_page_verified_pages_run": 42062339000,
+  "complete_downloads_verified_in_updated_production_page": 134,
+  "updated_download_page_browser_scope": "Exact public pointer, ledger and renderer bytes; source-matched UF rows and retained complete downloads in four display modes. Unchanged maps were not repeated."
 }

@@ -79,3 +79,30 @@ def test_county_ledger_preserves_named_gaps_missingness_and_distinct_map_approva
     current = ledger[(2026, "house", "NY")]
     assert current["county_candidate_maps"] == 1 and not current["fully_complete"]
     assert ledger[(2026, "president", "NY")]["status"] == "no_regular_presidential_election"
+
+
+def source():
+    return dict(source="native", office="house", state_po="NY", year="2024",
+                n_rows="1", license_status="cc0_verified")
+
+
+def test_source_reference_uses_office_state_and_year_not_just_shared_source_token():
+    rows = [candidate(), {**candidate(), "office": "senate"}]
+    sources = [source(), {**source(), "office": "senate"}]
+    report, audit = historical.provenance(rows, sources)
+    assert audit["matched_candidate_rows"] == 2 and audit["source_groups"] == 2
+    assert all(not row["independent_reuse_approved"] for row in report)
+
+
+@pytest.mark.parametrize("sources", [[], [source(), source()], [{**source(), "n_rows": "2"}]])
+def test_missing_duplicate_or_miscounted_source_references_fail_closed(sources):
+    with pytest.raises(ValueError):
+        historical.provenance([candidate()], sources)
+
+
+def test_undocumented_license_literal_remains_flagged_not_repaired_or_approved():
+    report, audit = historical.provenance([candidate()], [{**source(), "license_status": "downloaded by curl"}])
+    assert report[0]["publisher_license_status"] == "downloaded by curl"
+    assert not report[0]["license_status_documented"]
+    assert len(audit["undocumented_license_status_records"]) == 1
+    assert not audit["independent_reuse_approved"]

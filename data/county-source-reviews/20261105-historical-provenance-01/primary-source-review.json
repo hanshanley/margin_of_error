@@ -1,0 +1,20 @@
+{
+  "checked_source": "House dataset DOI references cited by the pinned historical compilation",
+  "direct_dataverse_api_status": "All five returned403; original responses and receipts retained.",
+  "alternative": "DataCite DOI registry; all five original metadata responses returned200.",
+  "registry_titles_and_cc0_declarations_verified": true,
+  "independent_compilation_reuse_approved": false,
+  "candidate_data_or_map_approval": false,
+  "dataset_dois_by_year": {
+    "2024": "10.7910/DVN/USBYR4",
+    "2022": "10.7910/DVN/EOKNGW",
+    "2020": "10.7910/DVN/VLGF2M",
+    "2018": "10.7910/DVN/IVIXLK",
+    "2016": "10.7910/DVN/PSKDUJ"
+  },
+  "remaining_checks": [
+    "Review source-specific corrections and candidate-name overrides.",
+    "Do not extend these five House dataset declarations to other offices, other source tokens or the entire compilation.",
+    "Historical election-year geography, upstream reconstruction and coverage gaps remain unapproved."
+  ]
+}

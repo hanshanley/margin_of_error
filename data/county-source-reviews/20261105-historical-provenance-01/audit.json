@@ -1,0 +1,99 @@
+{
+  "summary_rows": 120191,
+  "arithmetic_matched_summaries": 120191,
+  "accepted_integer_counties": 120190,
+  "withheld_counties": 1,
+  "literal_vote_exceptions": [
+    {
+      "line": 103299,
+      "year": "2010",
+      "office": "house",
+      "state_fips": "01",
+      "state": "Alabama",
+      "state_po": "AL",
+      "county_fips": "01101",
+      "county_name": "Montgomery",
+      "district": "02",
+      "stage": "general",
+      "candidate": "Bobby Bright",
+      "party": "Democratic",
+      "party_group": "DEM",
+      "votes": "23334.16236",
+      "source": "al_sos_file_2010",
+      "quality_flag": ""
+    }
+  ],
+  "input_rows": 420503,
+  "source_commit": "155b35015f4b9801c07c05b800c380218c6462b3",
+  "complete_original_url": "https://github.com/pmheideman/us-county-election-results/releases/download/v1.0.0/us_county_election_results_v1.0.0.zip",
+  "complete_original_sha256": "e422fbfb1c56bed6787d08e59eed83d13b4ccf567510c69f94d2802a34b8e625",
+  "stage_rows": {
+    "general": 419691,
+    "runoff": 812
+  },
+  "source_license_statuses": {
+    "not_stated": 317,
+    "no_license_file": 164,
+    "cc0_verified": 1213,
+    "terms_unreachable": 28,
+    "state_permissive": 38,
+    "mit_repo": 21,
+    "state_restrictive": 60,
+    "downloaded by curl": 4,
+    "believed_cc0": 1,
+    "state_conditional": 22,
+    "cc_by_sa_secondary": 2
+  },
+  "source_reference_review": {
+    "source_records": 1870,
+    "source_groups": 1870,
+    "matched_candidate_rows": 420503,
+    "all_scoped_source_keys_and_row_counts_match": true,
+    "undocumented_license_status_records": [
+      {
+        "source": "mt_medsl_2022",
+        "office": "house",
+        "state_po": "MT",
+        "year": "2022",
+        "publisher_license_status": "believed_cc0"
+      },
+      {
+        "source": "de_sos_report_1996",
+        "office": "house",
+        "state_po": "DE",
+        "year": "1996",
+        "publisher_license_status": "downloaded by curl"
+      },
+      {
+        "source": "de_sos_report_1994",
+        "office": "house",
+        "state_po": "DE",
+        "year": "1994",
+        "publisher_license_status": "downloaded by curl"
+      },
+      {
+        "source": "de_sos_report_1992",
+        "office": "house",
+        "state_po": "DE",
+        "year": "1992",
+        "publisher_license_status": "downloaded by curl"
+      },
+      {
+        "source": "de_sos_report_1990",
+        "office": "house",
+        "state_po": "DE",
+        "year": "1990",
+        "publisher_license_status": "downloaded by curl"
+      }
+    ],
+    "independent_reuse_approved": false
+  },
+  "native_candidate_identity_limits": [
+    "President 1992-1996 and Senate 1990-2014 name only major-party nominees.",
+    "Preserve native aggregate Other rows; never invent missing candidate or party identities."
+  ],
+  "compilation_attribution": "Paul Heideman (2026), U.S. county-level election results, v1.0.0, CC BY 4.0.",
+  "publication_status": "Local derived tables only. Arithmetic is not source certification, reuse permission, correct-election geometry approval or proof of complete coverage. Preserve upstream license terms.",
+  "candidate_votes_are_not_ballots_or_turnout": true,
+  "new_maps_approved": false
+}

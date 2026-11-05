@@ -1,0 +1,62 @@
+{
+  "audit.json": {
+    "bytes": 3200,
+    "sha256": "036abf96bf184deaade8513d089c5c46edfee766da9946f22508cc704c631a9d"
+  },
+  "originals/datacite/EOKNGW.response": {
+    "bytes": 6482,
+    "sha256": "2ef1b3108ecfdd3fa59fbf9fc79a01e088df8c6a6c516cbf5db276e93f6c13ed"
+  },
+  "originals/datacite/IVIXLK.response": {
+    "bytes": 10206,
+    "sha256": "d6cf5cd9aaf59f59ccc61ba8912d4501607dcabbf7ed0cadf10c8718aebbc564"
+  },
+  "originals/datacite/PSKDUJ.response": {
+    "bytes": 21814,
+    "sha256": "4789acada930a1e95bf5a02c75d926448eaa9663c5d4f54662672ac1542ef6ca"
+  },
+  "originals/datacite/USBYR4.response": {
+    "bytes": 5661,
+    "sha256": "e4cd0ceb54e7afb10cd93e22ab5b24d9da3b2b6c7239941984d7e02262e66f51"
+  },
+  "originals/datacite/VLGF2M.response": {
+    "bytes": 16788,
+    "sha256": "6305e1183c1d625dd55ab79912f9cc331587b296aacb1b80939e0477e83d2caf"
+  },
+  "originals/datacite/receipts.json": {
+    "bytes": 5581,
+    "sha256": "327d182ea0abbf99d935597cb095a50ffd1c295c8733415a80db16576d714740"
+  },
+  "originals/dataverse/EOKNGW.response": {
+    "bytes": 199,
+    "sha256": "5b13fb5957b84ef7bb9d0b6cd509c947ff6a37d67efdac2b896ddd3b908aad10"
+  },
+  "originals/dataverse/IVIXLK.response": {
+    "bytes": 199,
+    "sha256": "5b13fb5957b84ef7bb9d0b6cd509c947ff6a37d67efdac2b896ddd3b908aad10"
+  },
+  "originals/dataverse/PSKDUJ.response": {
+    "bytes": 199,
+    "sha256": "5b13fb5957b84ef7bb9d0b6cd509c947ff6a37d67efdac2b896ddd3b908aad10"
+  },
+  "originals/dataverse/USBYR4.response": {
+    "bytes": 199,
+    "sha256": "5b13fb5957b84ef7bb9d0b6cd509c947ff6a37d67efdac2b896ddd3b908aad10"
+  },
+  "originals/dataverse/VLGF2M.response": {
+    "bytes": 199,
+    "sha256": "5b13fb5957b84ef7bb9d0b6cd509c947ff6a37d67efdac2b896ddd3b908aad10"
+  },
+  "originals/dataverse/receipts.json": {
+    "bytes": 2498,
+    "sha256": "d883c521144c6fa78e2f8bf6f7e1e2514e6b6234423f7f358b4366ed2f277cc8"
+  },
+  "primary-source-review.json": {
+    "bytes": 972,
+    "sha256": "28b64956aef1e0771c65c2084e33968e5b5eee499a7c1b695e8875f276296b37"
+  },
+  "source-reference-review.csv.gz": {
+    "bytes": 17582,
+    "sha256": "75ec4044bf7621d9c6ef8bc599d0efec299da82319ac0e50358c6048d6b19fb4"
+  }
+}
