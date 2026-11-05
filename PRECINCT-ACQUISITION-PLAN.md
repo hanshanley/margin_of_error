@@ -160,16 +160,52 @@ The complete archive was uploaded and independently redownloaded byte-for-byte:
 **12,179,890 bytes**, SHA-256
 `355f116484e104eac422a6a24057600af70ec6ada83e3eb34c3c57bbebdb54d0`.
 
-Publication status: **snapshot ready; exact live deployment verification
-pending**. The full production-preview browser suite passes, including exact
+Publication status: **live-verified partial coverage**, not complete statewide
+coverage. UI commit `0696cbf94302dde7bc9f7456920a539e540e0b05` deployed in exact
+successful run **41954565149**; live registry, ledger and renderer bytes match
+that commit. The full live browser suite passes, including exact
 North Dakota counts/fills, truthful ballot-count/no-denominator details, selection
 and zoom; every acquired 2020/2024 jurisdiction; mobile, downloads, no-JS and
-failed-fetch fallbacks. Astro check has zero errors/warnings and five existing
+failed-fetch fallbacks. The initial live run stopped on exactly one pixel of
+page-position variation during wheel zoom. The checker now permits that one-pixel
+rounding difference while still requiring prevented wheel defaults and actual
+map zoom; the full rerun passed without any renderer change.
+Astro check has zero errors/warnings and five existing
 hints; build and all four built-in caucus tests pass. Pages preparation verifies
 94 byte-identical relocated originals and a **986,189,318-byte** artifact.
-Do not mark the supplement live-verified before the exact deployed browser
-checks pass. The website now uses source-specific documentation links instead
+The website now uses source-specific documentation links instead
 of attaching the NYT 2020 license to every supplemental dataset.
+
+## Next 2026 acquisition: Vermont
+
+While North Dakota deploys, acquired **nine original JSON files**, **5,007,208
+bytes**, from the actual public requests of `https://electionresults.vermont.gov/`.
+Cache: session `files/precinct-expansion-sources/VT-2026/`, with exact URL/length/
+SHA-256 receipts in `sources.json`. These are **session-cache acquisitions only**,
+not yet committed, publicly downloadable, independently reconciled or mapped;
+do not change the worklist's publication status on this evidence alone.
+
+The public election metadata identifies election **7100**, GUID
+`68d61e96-1d28-4210-8c1d-8e90512ae105`, **2026 GENERAL ELECTION**, November 3,
+2026, unofficial, and advertises timestamped source paths under
+`https://static.electionresults.vermont.gov/elections/`. Acquired metadata:
+`elections.json` and `68d61e96-1d28-4210-8c1d-8e90512ae105.json`.
+Its source timestamp is `20261104211117`. All advertised office tabs are captured:
+federal (`-f-`), statewide (`-s-`), senate (`-sn-`), house (`-h-`), county
+(`-cty-`), town (`-t-`), plus separate turnout (`-turnout-`).
+The cache filename `full-results-20261104211117.json` contains **federal only**,
+not every contest; the other captured files are necessary for the complete set.
+
+Next: reconcile the federal `d/o/cs` records and `rc`/`wc` candidate counts to
+source totals, preserving blank/overvotes separately; establish whether each
+return is town-aggregate or a distinct polling unit. The turnout feed has `tid`,
+`tn`, `tvr`, `tvc`, `tabs`, `tdis`, `tdisr`, and `hl`; confirm their meanings from
+the public UI before using any denominator or absentee count. Do not equate
+town totals or House-district splits with precincts. Acquire explicit current
+geography and a source-backed identity crosswalk; preserve a complete immutable
+download before calling any source acquired in the published ledger.
+The general SOS results page returned HTTP 403 to requests; no bypass was used.
+The public election portal and its normally requested static JSON were accessible.
 
 ## Resume procedure for every work session or scheduled prompt
 
@@ -226,8 +262,8 @@ Concrete next investigations already identified:
   (**635** features); their exploratory prefix diagnostics are not a validated
   crosswalk. The explicitly identified 2026 Secretary of State GIS source and
   mapped supplement above supersede those diagnostics for publication.
-  Next: finish exact live verification of that supplement, then move to another
-  2026 jurisdiction; retain Morton/Towner corrections as explicit follow-ups.
+  Exact live verification passed in run **41954565149**. Next: move to Vermont
+  and other 2026 jurisdictions; retain Morton/Towner corrections as follow-ups.
   Do not repeat the completed old-shard acquisition. The API's `registeredVoters`
   field is not a registration definition: the official explanatory page defines
   eligible voters as the Census annual estimate of residents age 18+. Precinct

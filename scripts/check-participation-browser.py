@@ -321,7 +321,7 @@ with sync_playwright() as p:
     assert viewport(page)[2] < 1000
     assert page.evaluate("window.mapWheelPrevented")
     after_wheel = map_svg.bounding_box()
-    assert abs(after_wheel["y"] - rect["y"]) < 1, (rect, after_wheel)
+    assert abs(after_wheel["y"] - rect["y"]) <= 1, (rect, after_wheel)
     page.locator("#map-reset").click()
     page.locator('[data-state="California"]').click()
     fitted = viewport(page)

@@ -24,7 +24,7 @@
     "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-north-dakota-maps-20261105/complete-north-dakota-2026-precinct-maps.zip",
     "complete_download_bytes": 12179890,
     "complete_download_sha256": "355f116484e104eac422a6a24057600af70ec6ada83e3eb34c3c57bbebdb54d0",
-    "publication": "snapshot_ready",
+    "publication": "live_verified_partial",
     "source_documents": [
       {"file": "originals/layer.json.gz", "label": "Official 2026 North Dakota precinct-layer definition and attribution (JSON · gzip)"},
       {"file": "2026/ND-ambiguous-reference-areas.geojson.gz", "label": "Ambiguous overlapping reference-boundary strips excluded from precinct coloring (GeoJSON · gzip)"}
