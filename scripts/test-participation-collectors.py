@@ -55,6 +55,93 @@ wy_originals = module("archive-wyoming-election-sources")
 wy_native_text = module("recover-wyoming-native-pdf-text")
 wy_review = module("review-wyoming-precinct-results")
 wy_2022 = module("review-wyoming-2022-native-results")
+va_2026 = module("review-virginia-2026-native-results")
+
+
+@pytest.mark.parametrize("kind", ["candidate", "write_in", "zero", "both_fields", "missing", "negative"])
+def test_virginia_native_write_in_field_is_a_count_not_a_boolean(kind):
+    row = dict(CandidateId="cs1", OfficeId="cc1", CandidateName="Candidate",
+               TOTAL_VOTES="10", WriteInVote="0")
+    if kind in {"write_in", "zero", "both_fields"}:
+        row.update(CandidateId="wi-cc1", CandidateName="WRITE IN VOTES", TOTAL_VOTES="",
+                   WriteInVote="0" if kind == "zero" else "3")
+    if kind == "both_fields":
+        row["TOTAL_VOTES"] = "3"
+    elif kind == "missing":
+        row["TOTAL_VOTES"] = ""
+    elif kind == "negative":
+        row["TOTAL_VOTES"] = "-1"
+    if kind in {"both_fields", "missing", "negative"}:
+        with pytest.raises(ValueError):
+            va_2026.candidate_count(row)
+    else:
+        assert va_2026.candidate_count(row) == (
+            (10, "TOTAL_VOTES") if kind == "candidate" else
+            (0 if kind == "zero" else 3, "WriteInVote"))
+
+
+@pytest.mark.parametrize("failure", [None, "duplicate", "applications", "returned", "negative"])
+def test_virginia_demographics_keep_applications_returns_and_missing_receipts_separate(failure):
+    rows = []
+    for age, gender, receipt, value in [
+        ("18 to 25", "F", "", "3"), ("18 to 25", "F", "Mail", "2"),
+        ("Over 65", "U", "", "4"), ("41 to 65", "M", "In Person", "0"),
+    ]:
+        rows.append(dict(zip(va_2026.DEMOGRAPHIC_FIELDS,
+            ["COUNTY", "01", age, gender, "", "In Person", receipt, value])))
+    translated = lambda text: [dict(languageId="en", text=text)]
+    data = dict(statistics=[dict(name=translated("Absentee (updates at noon each day)"),
+        groups=[dict(name=translated("Absentee Applications by Application Type"),
+                     children=[dict(name=translated("In Person"), value=9)]),
+                dict(name=translated("Absentee Ballots Returned by Method"),
+                     children=[dict(name=translated("Mail"), value=2),
+                               dict(name=translated("In Person"), value=0)])])])
+    if failure == "duplicate":
+        rows.append(rows[0].copy())
+    elif failure == "applications":
+        data["statistics"][0]["groups"][0]["children"][0]["value"] = 10
+    elif failure == "returned":
+        data["statistics"][0]["groups"][1]["children"][0]["value"] = 3
+    elif failure == "negative":
+        rows[0]["TheCount"] = "-1"
+    if failure:
+        with pytest.raises(ValueError):
+            va_2026.review_demographics(rows, data)
+    else:
+        review, normalized, grouped = va_2026.review_demographics(rows, data)
+        assert review["absentee_applications"] == 9 and review["returned_absentee_ballots"] == 2
+        assert [row["returned_ballots"] for row in normalized] == [None, 2, None, 0]
+        assert [(row["absentee_applications"], row["returned_absentee_ballots"]) for row in grouped] == [
+            (5, 2), (0, 0), (4, None)]
+        assert all(row["registered_voters"] is row["turnout_rate"] is None for row in grouped)
+
+
+def test_virginia_candidate_summary_conflict_is_retained_without_changing_precinct_counts():
+    rows, items = [], []
+    for district, suffix in enumerate(["st", "nd", "rd"] + ["th"] * 8, 1):
+        office = f"Member, House of Representatives ({district}{suffix} District)"
+        options = []
+        for candidate, name, value in [("d", "Democrat", 5), ("r", "Republican", 4), ("wi", "WRITE IN VOTES", 1)]:
+            identity = f"wi-cc{district}" if candidate == "wi" else f"cs-{candidate}-{district}"
+            options.append(dict(nativeId=identity, voteCount=value))
+            rows.append(dict(CandidateId=identity, CandidateName=name,
+                TOTAL_VOTES="" if candidate == "wi" else str(value),
+                WriteInVote=str(value) if candidate == "wi" else "0",
+                ElectionName="2026 November General", ElectionDate="2026-11-03",
+                ElectionType="General", OfficeTitle=office, OfficeId=f"cc{district}",
+                DistrictType="congressional", DistrictName=f"{district:02d}", NumberOfSeats="1",
+                LocalityCode="001", LocalityName="COUNTY", PrecinctId="0101",
+                PrecinctName="101 - NATIVE", Party=candidate))
+        items.append(dict(name=[dict(languageId="en", text=office)],
+                          summaryResults=dict(ballotOptions=options), voteTotal=10))
+    items[0]["summaryResults"]["ballotOptions"][0]["voteCount"] = 6
+    items[0]["voteTotal"] = 11
+    review, units = va_2026.review_candidates(rows, dict(ballotItems=items))
+    assert len(review["candidate_vector_conflicts"]) == 1
+    assert review["original_csv_candidate_votes"] == 110 and review["summary_candidate_votes"] == 111
+    assert all(unit["candidate_votes"] == 10 and unit["ballots"] is None for unit in units)
+    assert sum(not unit["state_candidate_vector_matches"] for unit in units) == 1
+    assert all(not unit["maps_approved"] for unit in units)
 
 
 @pytest.mark.parametrize("failure", [

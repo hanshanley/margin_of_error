@@ -3061,12 +3061,18 @@ endpoints, including the 439-row / **101,411-byte** native table:
 `files/wyoming-2022-native-count-ui-local-browser-proof-01.json`.
 Only the WY2022 ledger row changes; all **1,632** cells remain incomplete.
 The pinned research export and renderer are unchanged, including the 2026
-default. Exact-live ancillary UI verification is next.
+default. Exact-live ancillary UI verification subsequently passed below.
 
-**Next executable actions:** finish the 68-link ancillary UI integration;
-expect only the WY2022 ledger row to change and all 1,632 cells to remain
-incomplete. Verify both whole Wyoming CSV endpoints (432/439 rows) alongside
-the three existing participation tables. An independent county-issued alternative
+Ancillary UI **`b9290a3d5edf3d6481ee35e360d38f4e7bfb55a6`** is pushed
+as Hans and exact deployment **42012683301** succeeded. All four production
+modes pass the 68 exact complete-download links and five whole CSV endpoints.
+Unqueried public metadata matches that exact commit:
+`files/wyoming-2022-native-count-ui-deployment-01.json` and
+`files/wyoming-2022-native-count-ui-live-browser-proof-01.json`.
+Do not repeat this completed suite.
+
+**Next executable actions:** retain the bounded Wyoming geometry/count conflicts
+and continue unreviewed 2026 jurisdictions. An independent county-issued alternative
 is the advertised 18-page 2022 EL-45 summary, DocumentCenter **7601**, on
 `https://www.natronacounty-wy.gov/659/Election-Results-Archive`; its native text
 confirms **22,955** ballots. Acquire the complete advertised EL-45, EL-30
@@ -3086,6 +3092,70 @@ were acquired. Publicly indexed text is still a lead, not a byte-preserved
 county-original acquisition or a basis for normalizing new participation rows.
 Seek independently published originals or proceed to other 2026 jurisdictions;
 do not bypass access restrictions or relabel these responses as election data.
+
+## Virginia 2026 native precinct and demographic report review
+
+The official Virginia results index explicitly links the
+**2026 November General**, **November 3, 2026** public Enhanced Voting app.
+Acquired its actual browser-observed JSON, official registration/turnout
+definitions and all four advertised complete reports, not guessed export URLs:
+Election Results, Election Turnout, Election Change Log and EnrAbsenteeRawCSV.
+The native JSON identifies production, unofficial results, publish version
+`e5af7981-c42c-45c0-9923-b33f316e79bd`, as of
+**November 5, 2026, 02:19:25 UTC**. The official historical turnout page says
+November turnout is published after certification; do not extend 2025 figures.
+
+`scripts/review-virginia-2026-native-results.py` now preserves and independently
+reviews all **32 HTTP originals**, complete receipts and all **46,418**
+original result rows. Native results/change-log CSV bytes are CP1252, unlike
+the UTF-8 demographic/turnout CSVs; originals are not transcoded. The native
+`WriteInVote` column contains actual write-in **counts**, not booleans. Write-in
+rows have a blank `TOTAL_VOTES`; use the explicit `wi-<OfficeId>` identity and
+literal `WRITE IN VOTES` before reading that separate count column. Explicit
+zeroes remain zeroes; genuinely missing totals remain missing.
+
+The review retains **2,537** House district/reporting-unit vectors across
+**133 counties and independent cities**, **10,471** candidate cells and a
+separate **2,529-row** native precinct turnout table. Every original House
+district vector differs from the newer JSON: CSV candidate/write-in votes total
+**2,912,898** versus **3,568,142** in the native summaries. All **11** conflicts
+remain explicit; no missing votes are allocated. All **985** missing precinct
+`TotalVoteTurnout` values remain missing. Its **1,375,326** known-vote subtotal
+is not statewide turnout. The precinct active/inactive/total registration sums
+independently match all 133 native locality registration vectors. Rates and
+geometry/maps remain withheld; registration totals are not group denominators.
+
+The complete **16,250-row** absentee demographic report *does* independently
+reconcile all **nine** native application-type totals and all **five** native
+returned-method totals: **1,777,541 applications**, separately from
+**1,672,941 returned absentee ballots**. A complete **2,286-row** grouped table
+retains native locality, congressional district, age range and gender, with
+separate application/return counts and blank registration/rate fields. All
+**5,003** blank receipt-type records remain explicit; they are not silently
+classified as returned or converted to zero. Applications and returns are
+overlapping measurements, never additive. Returned does not mean accepted or
+counted; these are not all voting or final demographic turnout rates.
+
+The complete package is
+`data/precinct-source-reviews/20261105/VA-2026-native-counts/`, including all
+32 original bodies, 40 checked files, the full original **335,814-row** change
+log, all source CSVs, all four normalized tables, conflicts and portable code.
+Twelve new regressions pass; the combined Virginia/Wyoming/coverage selector
+passes **55** cases. ZIP CRC, every original receipt, complete table checks and
+a byte-identical portable offline rebuild pass:
+`files/virginia-2026-native-count-package-proof-01.json`.
+The complete ZIP is **8,604,105 bytes**, SHA-256
+`3c57c2878d77b2dcda0cfccd5fa7abe8f396dd361229a2ae3dd80162cec609cb`.
+This source batch is locally verified; immutable release and UI registration
+are next. Do not mark the VA2026 worklist cell complete or claim new map coverage.
+
+**Next executable actions:** commit/push this useful source batch as Hans, bind
+a new immutable complete release to its exact source commit, redownload/verify
+the whole archive and register separate lightweight VA2026 metadata. Only then
+regenerate the ledger and publish its complete UI download. Seek a current
+native precinct detail snapshot that reconciles to the newer House summaries
+and explicit 2026 boundary evidence before mapping. Preserve this complete
+earlier export and all conflicts rather than replacing or repairing it.
 
 ## Resume procedure for every work session or scheduled prompt
 
