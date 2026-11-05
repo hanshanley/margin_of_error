@@ -1,0 +1,122 @@
+{
+  "source_commit": "155b35015f4b9801c07c05b800c380218c6462b3",
+  "new_year": 2018,
+  "known_2018_withheld_counties": [
+    {
+      "year": "2018",
+      "office": "house",
+      "state_code": "AL",
+      "county_fips": "01107",
+      "candidate_rows": "1",
+      "arithmetic_matches_source_summary": "True",
+      "integer_counts_accepted": "True",
+      "withheld_reasons": "publisher_qa:T1_ratio_to_presidential",
+      "source_quality_flags": "one_party_race",
+      "source_stages": "general",
+      "accepted_for_scoped_export": "False",
+      "fully_complete": "False",
+      "map_approved": "False"
+    },
+    {
+      "year": "2018",
+      "office": "house",
+      "state_code": "FL",
+      "county_fips": "12057",
+      "candidate_rows": "8",
+      "arithmetic_matches_source_summary": "True",
+      "integer_counts_accepted": "True",
+      "withheld_reasons": "publisher_qa:T1_ratio_to_presidential;publisher_qa:T2_house_vs_senate",
+      "source_quality_flags": "excludes_unopposed_seat",
+      "source_stages": "general",
+      "accepted_for_scoped_export": "False",
+      "fully_complete": "False",
+      "map_approved": "False"
+    },
+    {
+      "year": "2018",
+      "office": "house",
+      "state_code": "FL",
+      "county_fips": "12095",
+      "candidate_rows": "6",
+      "arithmetic_matches_source_summary": "True",
+      "integer_counts_accepted": "True",
+      "withheld_reasons": "publisher_qa:T1_ratio_to_presidential;publisher_qa:T2_house_vs_senate",
+      "source_quality_flags": "excludes_unopposed_seat",
+      "source_stages": "general",
+      "accepted_for_scoped_export": "False",
+      "fully_complete": "False",
+      "map_approved": "False"
+    },
+    {
+      "year": "2018",
+      "office": "house",
+      "state_code": "FL",
+      "county_fips": "12099",
+      "candidate_rows": "6",
+      "arithmetic_matches_source_summary": "True",
+      "integer_counts_accepted": "True",
+      "withheld_reasons": "publisher_qa:T1_ratio_to_presidential;publisher_qa:T2_house_vs_senate",
+      "source_quality_flags": "excludes_unopposed_seat",
+      "source_stages": "general",
+      "accepted_for_scoped_export": "False",
+      "fully_complete": "False",
+      "map_approved": "False"
+    },
+    {
+      "year": "2018",
+      "office": "house",
+      "state_code": "ND",
+      "county_fips": "38079",
+      "candidate_rows": "4",
+      "arithmetic_matches_source_summary": "True",
+      "integer_counts_accepted": "True",
+      "withheld_reasons": "publisher_qa:T1_ratio_to_presidential",
+      "source_quality_flags": "",
+      "source_stages": "general",
+      "accepted_for_scoped_export": "False",
+      "fully_complete": "False",
+      "map_approved": "False"
+    }
+  ],
+  "outside_selected_source_replacements": [
+    {
+      "state_code": "ME",
+      "decision": "Current official-source replacement outside MEDSL subset; do not apply superseded MEDSL warnings to it."
+    },
+    {
+      "state_code": "IN",
+      "decision": "Current official-source replacement outside MEDSL subset; do not apply superseded MEDSL warnings to it."
+    },
+    {
+      "state_code": "NY",
+      "decision": "Current official-source replacement outside MEDSL subset; do not apply superseded MEDSL warnings to it."
+    },
+    {
+      "state_code": "TX",
+      "decision": "Current official-source replacement outside MEDSL subset; do not apply superseded MEDSL warnings to it."
+    }
+  ],
+  "compiler_party_labels_not_independently_verified": true,
+  "native_identity_flags_preserved": true,
+  "source_review_input_csv_lines": [
+    4,
+    13,
+    14,
+    34,
+    42,
+    45,
+    59,
+    72,
+    73,
+    95,
+    96,
+    97,
+    98,
+    101
+  ],
+  "native_auxiliary_gap_rows": 2,
+  "native_auxiliary_no_ballot_rows": 60,
+  "new_maps_approved": false,
+  "fully_complete": false,
+  "published": false
+}

@@ -207,6 +207,31 @@ Do not silently replace measured participation or infer demographic turnout from
 these state-level estimates. Recurring schedule #4 replaces obsolete precinct-first
 schedule #3 and follows this county-first priority.
 
+2018 consolidated House extension, prepared while Monroe deploys:
+`data/historical-house-counties/20261105-medsl-03/` adds 8,851 reviewed
+candidate/party rows in 2,443 counties across 42 states. All 25 rows from
+five flagged county vectors are retained separately: 01107, 12057, 12095,
+12099 and 38079. Five New York House QA entries are outside the current
+MEDSL subset because the compiler replaced that year's New York House
+source; the Senate-only warnings also do not apply. Maine, Indiana and Texas
+2018 official replacements remain outside this source-specific subset.
+Compiler-filled party labels and all native surname/initial flags are
+preserved, not independently certified as original ballot identities.
+
+The four-year scope has 41,321 raw rows, 41,221 reviewed rows and 100 withheld
+rows, with 204 honest state/year cells and no map/completeness approval.
+It preserves all prior 2024/2022/2020 rows in every table, two native auxiliary
+coverage gaps and 60 no-ballot records. Every nonarchive file reproduces
+outside the repository and every raw/reviewed/withheld partition and literal
+party county/state sum independently reconciles. The portable tool also now
+handles macOS's symlinked temporary directory paths. All 51 focused tests
+passed before that path-only fix; all eight exporter tests and actual
+portable reproduction passed afterward. Proof is
+`data/county-source-reviews/20261105-historical-house-03/`.
+No public historical pointer has changed yet. Finish its immutable release,
+retained-download integration and exact live verification after the known
+Monroe deployment watcher completes; do not supersede pending publication.
+
 D.C. official follow-up:
 `data/county-source-reviews/20261105-dc-official-01/` retains all seven native
 JSON/CSV/XML/PDF data/report originals and exact HTTP/hash receipts. Its complete

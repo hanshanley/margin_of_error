@@ -1,0 +1,29 @@
+{
+  "status": "every_nonarchive_output_byte_reproduced",
+  "files": [
+    "audit.json",
+    "checksums.json",
+    "county-review.csv.gz",
+    "reviewed-candidate-party-lines.csv.gz",
+    "reviewed-county-party-totals.csv.gz",
+    "reviewed-state-party-sums.csv.gz",
+    "scoped-sources.csv.gz",
+    "source-candidate-party-lines.csv.gz",
+    "source-coverage-gaps.csv.gz",
+    "source-no-ballot.csv.gz",
+    "source-reference-review.csv.gz",
+    "state-coverage.csv.gz",
+    "withheld-candidate-party-lines.csv.gz",
+    "year-coverage.csv.gz"
+  ],
+  "prior_three_year_tables_all_unchanged": true,
+  "source_rows": 41321,
+  "reviewed_rows": 41221,
+  "withheld_rows": 100,
+  "county_party_totals": 30778,
+  "state_party_sums": 758,
+  "source_partition_and_every_literal_party_sum_independently_reconciled": true,
+  "macos_symlinked_temporary_directory_reproduction_passed": true,
+  "new_maps_approved": false,
+  "published": false
+}

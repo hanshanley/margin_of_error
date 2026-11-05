@@ -1,4 +1,4 @@
-"""Export scoped 2024/2022/2020 MEDSL-origin House counts, preserving withheld observations."""
+"""Export scoped 2024/2022/2020/2018 MEDSL-origin House counts, preserving withheld observations."""
 
 import argparse
 from collections import Counter, defaultdict
@@ -13,7 +13,7 @@ import zipfile
 
 
 ROOT = Path(__file__).resolve().parents[1]
-YEARS = ("2024", "2022", "2020")
+YEARS = ("2024", "2022", "2020", "2018")
 SOURCE_FIELDS = ("source", "office", "state_po", "year")
 PROVENANCE = ROOT / "data/county-source-reviews/20261105-historical-provenance-01"
 spec = importlib.util.spec_from_file_location("historical", Path(__file__).with_name("review-historical-county-results.py"))
@@ -176,12 +176,16 @@ def export(archive_path, source_review, output):
             "The compiler excluded Maine's 2020 federal/UOCAVA 23000 bucket from its county release. "
             "Do not allocate it into counties or call the reviewed-county state sum complete.",
             "Party/candidate labels are the compiler's literals, not independently verified original ballot labels.",
+            "The compiler fills some originally blank parties from other labeled rows for the same "
+            "state/district/candidate; preserve compiler literals, not a claim of independent ballot identity review.",
             "Preserve surname_only/initials_only flags; no identities or zeros are invented.",
             "Compiler 2024 Oregon major-party overrides use secondary Wikipedia facts; code and attribution retained.",
             "Generated candidate_name_overrides.csv is not in the pinned repository; no complete name audit is claimed.",
             "The pinned QA CSV has 53 records, while correction-log prose says 64; Yazoo 2022 is separately withheld.",
             "NJ 2022 and 2024 are already official-source replacements, outside this MEDSL-only scope. "
             "The old NJ 2022 MEDSL duplication warning is not a defect in the current official-source rows.",
+            "Maine, Indiana, New York and Texas House 2018 are official-source replacements outside this scope. "
+            "Superseded MEDSL warnings and Senate-only anomalies do not invalidate those current House replacements.",
             "Native Montana 2022 believed_cc0 remains unchanged; the 2022 House DOI independently declares CC0.",
             "No new county maps, historical boundary crosswalks, turnout or demographic participation estimates.",
             "Full mixed-source original archive is referenced by URL and checksum, not mirrored under a blanket license.",
@@ -204,7 +208,7 @@ def export(archive_path, source_review, output):
             if path.is_file():
                 package.write(path, path.relative_to(ROOT).as_posix())
         for path in [Path(__file__), Path(historical.__file__), historical.ACQUISITION]:
-            package.write(path, path.relative_to(ROOT).as_posix())
+            package.write(path, path.resolve().relative_to(ROOT).as_posix())
         package.writestr("originals/compiler/data_corrections_log.csv", corrections)
     return audit
 
