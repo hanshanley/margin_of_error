@@ -1,0 +1,22 @@
+{
+  "year": 2026,
+  "state_code": "VA",
+  "office": "US House precinct vectors, separate incomplete precinct turnout and absentee age/gender counts",
+  "candidate_results": "acquired_precinct_counts_summary_conflict",
+  "boundaries": "not_reviewed",
+  "join": "withheld",
+  "validation": "absentee_demographics_passed_candidate_summary_conflict_map_withheld",
+  "publication": "full_counts_download_only",
+  "participation": "reviewed_absentee_demographic_counts_precinct_turnout_incomplete",
+  "source_url": "https://www.elections.virginia.gov/results/",
+  "data_directory": "data/precinct-source-reviews/20261105/VA-2026-native-counts",
+  "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/09deda073923c36a6fba557b5c4fcf03957af324/data/precinct-source-reviews/20261105/VA-2026-native-counts/",
+  "count_csv": "precinct-counts.csv",
+  "reporting_units": 2537,
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-virginia-native-counts-20261105/complete-virginia-2026-native-count-review-01.zip",
+  "complete_download_bytes": 8604105,
+  "complete_download_sha256": "3c57c2878d77b2dcda0cfccd5fa7abe8f396dd361229a2ae3dd80162cec609cb",
+  "maps_approved": false,
+  "next_action": "Acquire a current native precinct detail snapshot that independently reconciles all 11 House district summaries and exact 2026 boundary evidence. Preserve this complete earlier export and all missing turnout/mode cells; do not allocate aggregate differences, substitute candidate votes for ballots or infer demographic denominators.",
+  "notes": "Unofficial November 3, 2026 election; native JSON as of November 5, 2026 02:19:25 UTC. Complete 2537 House district/reporting-unit vectors across all 133 counties and independent cities preserve 10471 native candidate cells. Write-in counts use WriteInVote, not the deliberately blank TOTAL_VOTES field. Original CSV candidate/write-in votes total 2912898 versus 3568142 in the newer native summaries; all 11 district conflicts remain. The separate 2529-row turnout table retains 985 missing totals and all missing modes; its 1375326 known subtotal is not statewide turnout. Precinct registration vectors independently match all 133 locality summaries, but all rates remain withheld. Complete 16250 native absentee demographic records and 2286 locality/district/age/gender groups reconcile all nine application-type and five returned-method totals: 1777541 applications, separately from 1672941 returned absentee ballots. These overlap and must not be added; returned does not mean accepted or counted, and these are not all voting or final demographic turnout rates. All 5003 blank receipt-type records remain missing, not returned zeroes. The full archive includes all 32 original HTTP bodies, all four advertised reports including the complete change log, receipts, 40 checked files, complete normalized tables, conflicts and portable code. No approved geometry, maps or group registration denominators."
+}

@@ -3146,13 +3146,29 @@ a byte-identical portable offline rebuild pass:
 `files/virginia-2026-native-count-package-proof-01.json`.
 The complete ZIP is **8,604,105 bytes**, SHA-256
 `3c57c2878d77b2dcda0cfccd5fa7abe8f396dd361229a2ae3dd80162cec609cb`.
-This source batch is locally verified; immutable release and UI registration
-are next. Do not mark the VA2026 worklist cell complete or claim new map coverage.
+Source batch **`09deda073923c36a6fba557b5c4fcf03957af324`** is committed/pushed
+as Hans. Immutable release **`voter-precinct-virginia-native-counts-20261105`**
+is bound to that exact source commit. The whole remote ZIP was redownloaded;
+its exact bytes/SHA/size, CRC, exact member set, all 40 file checksums and all
+32 decompressed original receipts pass. Every remote member equals the pinned
+source. Proof: `files/virginia-2026-native-count-remote-release-proof-01.json`.
+Separate lightweight VA2026 metadata now references this verified release;
+ancillary UI/ledger validation and publication are next. Do not mark the VA2026
+worklist cell complete or claim new map coverage.
 
-**Next executable actions:** commit/push this useful source batch as Hans, bind
-a new immutable complete release to its exact source commit, redownload/verify
-the whole archive and register separate lightweight VA2026 metadata. Only then
-regenerate the ledger and publish its complete UI download. Seek a current
+Ancillary UI local validation is complete: only the VA2026 ledger row changes;
+all 1,632 cells remain incomplete and renderer/colors/default/zoom are unchanged.
+All 55 focused tests pass. Astro reports zero errors/warnings and five existing
+hints; the normal build and four chart tests pass. Pages preparation verifies
+94 unchanged relocated assets and a **986,267,164-byte** site. All four local
+browser modes pass **69 exact complete-download links and six whole CSV
+endpoints**, including the **2,537-row**, **1,743,695-byte** Virginia count CSV,
+SHA-256 `cd176fb55504293452cc6ac4d0d034f9d0ef777d5aa828e6c1819d03c9617b6e`.
+Proof: `files/virginia-2026-native-count-ui-local-browser-proof-01.json`.
+Exact production deployment/browser verification remains next; do not claim
+this new ancillary UI is already live.
+
+**Next executable actions:** Hans commit/push and exact-live proof, then seek a current
 native precinct detail snapshot that reconciles to the newer House summaries
 and explicit 2026 boundary evidence before mapping. Preserve this complete
 earlier export and all conflicts rather than replacing or repairing it.

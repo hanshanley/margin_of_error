@@ -72,7 +72,7 @@ Checkmarks are reserved for verified, complete live coverage.
 | [ ] | Tennessee | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Texas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Utah | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Virginia | acquired_precinct_counts_summary_conflict | not_reviewed | withheld | absentee_demographics_passed_candidate_summary_conflict_map_withheld | full_counts_download_only | reviewed_absentee_demographic_counts_precinct_turnout_incomplete |
 | [ ] | Vermont | acquired | reference_acquired | validated_partial | passed | published_partial | acquired_municipal_counts_and_provisional_rates |
 | [ ] | Washington | acquired | reference_acquired | validated_partial | passed | published_partial | not_acquired |
 | [ ] | Wisconsin | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
