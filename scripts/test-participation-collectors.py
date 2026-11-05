@@ -40,6 +40,114 @@ hi_historical = module("archive-hawaii-historical-sources")
 ct_originals = module("archive-connecticut-election-sources")
 ri_review = module("review-rhode-island-precinct-results")
 ri_maps = module("build-rhode-island-precinct-results")
+fl_monroe = module("review-florida-monroe-precinct-results")
+
+
+def florida_monroe_fixture():
+    rows, summary = [], []
+    for name, party, total in [('Candidate "One"', "DEM", 60), ("Two", "REP", 60), ("Three", "NPA", 6)]:
+        common = dict(zip(fl_monroe.SUMMARY_FIELDS[:3], [fl_monroe.CONTEST, name, party]))
+        for unit in ("1-Shared Hall", "2-Shared Hall"):
+            modes = ["0", "20", "20", "20"] if total == 60 else ["-", "-", "-", "-"]
+            rows.append(dict(common, **dict(zip(fl_monroe.MODES, modes)),
+                             **{"Precinct Name": unit, "Total Votes": str(total), "% of Total Votes": "0.00"}))
+        modes = ["0", "40", "40", "40"] if total == 60 else ["0", "4", "4", "4"]
+        summary.append(dict(common, **dict(zip(fl_monroe.MODES, modes)),
+                            **{"Total Votes": str(total * 2), "% of Total Votes": "0.00"}))
+    return rows, summary
+
+
+def test_florida_monroe_reconciles_candidates_without_merging_polling_places_or_imputing_modes():
+    rows, summary = florida_monroe_fixture()
+    buffer = io.StringIO(newline="")
+    writer = csv.DictWriter(buffer, fieldnames=fl_monroe.PRECINCT_FIELDS)
+    writer.writeheader()
+    writer.writerows(rows)
+    results, native, audit = fl_monroe.review(fl_monroe.read_table(buffer.getvalue().encode()),
+                                              summary, expected_units=2)
+    assert len(results) == 2 and len({row["key"] for row in results}) == 2
+    assert sum(row["contest_votes"] for row in results) == 252
+    assert json.loads(results[0]["candidate_votes"])['Candidate "One"'] == 60
+    assert native[-1]["parsed_votes"]["modes"] == dict.fromkeys(fl_monroe.MODES)
+    assert audit["suppressed_native_mode_fields"] == 8
+    comparisons = [row for row in audit["mode_comparisons"] if row["party"] == "NPA"]
+    assert all(row["status"] == "withheld_suppressed" for row in comparisons)
+    assert all("registered" not in row and "turnout_rate" not in row for row in results)
+
+
+@pytest.mark.parametrize("change,message", [
+    ("duplicate", "Duplicate"),
+    ("missing", "total differs|matrix"),
+    ("blank-mode", "Invalid or missing"),
+    ("suppressed-total", "Invalid or missing"),
+    ("wrong-contest", "House contest"),
+    ("summary-total", "total differs"),
+    ("mode-total", "mode total differs"),
+    ("scope", "reporting scope"),
+    ("name-collision", "candidate/party scope"),
+])
+def test_florida_monroe_rejects_bad_scope_missing_counts_and_independent_mismatches(change, message):
+    rows, summary = florida_monroe_fixture()
+    units = 2
+    if change == "duplicate":
+        rows.append(rows[0].copy())
+    elif change == "missing":
+        rows.pop(0)
+    elif change == "blank-mode":
+        rows[0]["Mail Votes"] = ""
+    elif change == "suppressed-total":
+        rows[0]["Total Votes"] = "-"
+    elif change == "wrong-contest":
+        rows[0]["Contest"] = "Representative in Congress Dist 27"
+    elif change == "summary-total":
+        summary[0].update({"Total Votes": "121", "Mail Votes": "41"})
+    elif change == "mode-total":
+        summary[0].update({"Mail Votes": "41", "Early Votes": "39"})
+    elif change == "scope":
+        units = 3
+    elif change == "name-collision":
+        for row in rows + summary:
+            if row["Party"] == "REP":
+                row["Candidate Issue"] = 'Candidate "One"'
+    with pytest.raises(ValueError, match=message):
+        fl_monroe.review(rows, summary, expected_units=units)
+
+
+@pytest.mark.parametrize("change", ["bytes", "county", "year", "failed"])
+def test_florida_monroe_rejects_changed_or_wrong_source_receipts(tmp_path, change):
+    raw, url = b"<html>original</html>", fl_monroe.SOURCE + "Reports/"
+    name = "official-reports.html"
+    receipt = dict(url=url, resolved_url=url, status_code=200, bytes=len(raw),
+                   sha256=hashlib.sha256(raw).hexdigest())
+    if change == "bytes":
+        raw += b"changed"
+    elif change in ("county", "year"):
+        receipt["url"] = url.replace("MON", "PAL") if change == "county" else url.replace("4109", "2024")
+    else:
+        receipt["status_code"] = 403
+    (tmp_path / name).write_bytes(raw)
+    (tmp_path / (name + ".source.json")).write_text(json.dumps(receipt))
+    with pytest.raises(ValueError, match="original receipt"):
+        fl_monroe.original(tmp_path, name, url)
+
+
+@pytest.mark.parametrize("old,new,message", [
+    ("2026", "2024", "election identity"),
+    ("/MON/", "/PAL/", "election identity"),
+    ("Registered Voters:", "Missing field:", "participation field"),
+    ("33 / 33", "32 / 33", "reporting scope"),
+])
+def test_florida_monroe_checks_independent_html_election_county_and_count_scope(old, new, message):
+    raw = ('<img src="//s3.amazonaws.com/vr-enr/MON/wf_banner.jpg">'
+           '<div id="ElectionName"><h1>November 3, 2026 General</h1></div>'
+           '<h2>Election Date: 11/3/2026</h2>'
+           '<div class="TurnoutLabel">Registered Voters: </div><div class="TurnoutValue">54,704</div>'
+           '<div class="TurnoutLabel">Ballots Cast: </div><div class="TurnoutValue">32,506</div>'
+           '<div class="TurnoutLabel">Voter Turnout: </div><div class="TurnoutValue">59.42%</div>'
+           '<div class="PrecinctsValue">33 / 33</div>')
+    assert fl_monroe.html_statistics(raw.encode())["ballots"] == 32506
+    with pytest.raises(ValueError, match=message):
+        fl_monroe.html_statistics(raw.replace(old, new).encode())
 
 
 def connecticut_report_fixture():

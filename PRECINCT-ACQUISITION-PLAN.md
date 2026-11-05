@@ -1273,8 +1273,8 @@ The 2022 report has **16 negative candidate Unknown-mode adjustments**;
 negative, flagged source values, never clamped, silently treated as missing,
 or approved for participation rates. Native `CO` values such as 0/1 are
 not established fusion-parent IDs; do not infer candidate grouping from them.
-Next CT action: finish the complete-original archive and independent
-receipt/byte/reproduction checks; then resolve the summary discrepancy,
+The complete-original archive and independent receipt/byte/reproduction
+checks are finished and live (exact proof below). Next resolve the summary discrepancy,
 native ID collisions, original name quoting and fusion scope with supported
 source-scoped exports before any result/rate/map normalization.
 
@@ -1329,8 +1329,14 @@ JavaScript passes all 44 full downloads, the exact new ZIP and provenance
 links, all 1,632 ledger cells, unchanged renderer, 2026 default and CT state
 result fallback without invented precincts or rates:
 `files/ct-2016-2026-local-browser-proof.json`.
-Exact deployment and production proof are next. Do not mark this archive
-live or claim any new CT result map/rate yet.
+Hans registration commit `70ae13643cc915fbb7c061de98386dc7a4fc1aec`
+deployed successfully in exact Pages run **41973265542**. Production passes
+the same bounded desktop/mobile with and without JavaScript checks, all
+44 complete downloads, three immutable CT provenance documents, all 1,632
+ledger cells, unchanged renderer, 2026 default and honest CT state fallback:
+`files/ct-2016-2026-live-browser-proof.json`. Exact run metadata:
+`files/ct-2016-2026-exact-pages-run.json`. The full originals are live;
+this adds **zero** CT maps or precinct participation rates.
 
 Independent 2026 identity follow-up exercised the application's actual
 `pollingplaces: "<native ID>("` export filter, preserving the request
@@ -1353,6 +1359,76 @@ town sets before using any shape. UF/VEST has explicit 2016/2018 reconstructed
 reference candidates; their 2020-Census-based shapes have documented
 election-year corrections, not authority to map 2026. They remain leads,
 not acquired maps.
+
+## Florida 2026: Monroe reviewed counts; Palm Beach county-only originals
+
+Offline builder: `scripts/review-florida-monroe-precinct-results.py`.
+Snapshot: `data/precinct-source-reviews/20261105/FL-2026-MON/`.
+Official identity: **MON / election 4109 / November 3, 2026 General**,
+`https://enr.electionsfl.org/MON/4109/Reports/`. Six complete originals
+retain both source HTML pages, both all-office CSVs and both full PDFs:
+**1,483,944 uncompressed bytes**. The native precinct CSV has **1,551
+candidate/option rows**; all **71** independently exported county-summary
+candidate/options reconcile across **28 contests**. The House contest is
+the literal `Representative in Congress Dist 28`: **99 candidate rows /
+33 distinct complete precinct names**, REP **17,423**, DEM **14,328**,
+NPA **367**, total **32,118**. Shared polling-place names remain separate
+precincts; native full labels remain the identities, not fuzzy matches.
+
+All **1,216** native suppressed mode fields remain missing in normalized
+records, with their original dash strings retained. Unsuppressed mode
+vectors reconcile; suppressed groups are explicitly not testable and are
+never reconstructed from residuals or assigned zero. Separate county
+HTML snapshots agree on **32,506 ballots / 54,704 registered**, displayed
+**59.42%**, and **33 / 33** reporting. These are native unofficial
+**Monroe County** counts and a source-displayed percentage, not precinct
+denominators or demographic turnout. The current supervisor homepage
+instead reports **55,151 active registered voters as of November 5**;
+do not substitute a different snapshot/definition into election turnout.
+
+Complete ZIP: `complete-florida-monroe-2026.zip`, **282,651 bytes**,
+SHA-256 `992684207ebbd291a19f071a22c9b1a0afe2e3e7adaa46432a9d92d85d2617d0`.
+Independent proof checks every receipt, all **12** ZIP members/CRCs/local
+bytes, every original all-office candidate total, the 33 complete House
+vectors, every suppressed field, original-only reproduction of **every
+output and archive byte**, and immutable overwrite refusal:
+`files/florida-monroe-2026-independent-archive-proof.json`.
+All **231 collector tests** pass, including wrong county/year, changed
+receipts, missing/suppressed counts, duplicate/name-collision identities,
+missing candidate vectors, source-scope changes and independent total/mode
+disagreements. Release, remote-byte verification and UI registration are
+next. This is **one county, not statewide Florida**, with **zero new
+maps or precinct participation rates**.
+
+The supervisor's current official domain is `www.votemonroeflkeys.gov`,
+not the older guessed hostname. Its declared
+`/Where-to-Vote/Precinct-Details-Demographics` page explicitly lists
+precincts **1–33** and several **NEW 2026** polling-place changes.
+Polling locations establish neither polygon geometry nor stable electorates.
+The declared `/Where-to-Vote/Maps` page needs inspection of its embedded
+resource. A direct homepage request returned **403**, retained with its
+full body/receipt in `files/precinct-expansion-sources/FL-2026-MON-reference/`;
+the ordinary fetch tool can read the site. Never turn that access difference
+into a claim that boundaries do not exist. Seek an explicit 2026 reference
+and independent election-defined precinct ballot/registration records.
+
+Palm Beach has independently acquired complete **PAL / election 4131**
+county summary HTML/CSV/PDF plus report-index and ArcGIS definition originals
+in `files/precinct-expansion-sources/FL-2026-PAL/`. Its native `/Precincts`
+endpoint returns **404** with an explicit unpublished-material response;
+the reports index advertises summary exports only. The **814 reporting
+units** shown by its summary are not precinct candidate returns. Three
+CivicPlus map/June-2026 ZIP/PDF requests returned **403 challenge HTML**,
+not valid geometry. Both alleged binary bodies are **5,662 bytes of HTML**.
+The county-linked ArcGIS item `85e93905c13b43debf37a6cba372ba05` has a
+June-2026 modified timestamp but explicitly describes **2023–2024**
+precincts; do not relabel it as 2026. Its `PRECINCTS/FeatureServer/0`
+service is only a lead pending election-vintage and full scope checks.
+Old declared S3 `county.js` / `election.js` URLs return 404 XML.
+All successful and failed original bodies/receipts are retained. Continue
+official browser/download/GIS alternatives and additional Florida counties;
+never allocate Palm Beach county totals into precincts or call the Monroe
+subset statewide complete.
 
 ## Resume procedure for every work session or scheduled prompt
 
