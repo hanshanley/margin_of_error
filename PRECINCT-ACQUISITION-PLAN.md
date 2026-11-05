@@ -322,8 +322,11 @@ match that commit byte-for-byte; every focused preview check above also passes
 live. The complete mapped supplement is **live-verified partial coverage**,
 not every precinct. Proceed with Idaho and other unacquired 2026 jurisdictions
 rather than rerunning unchanged national layers.
+Final status commit `5c71828190a324b92650091de7b9184ae8ba64f8` deployed
+successfully in exact run **41959532077**. The production registry, full ledger
+and unchanged renderer match that commit byte-for-byte.
 
-## Idaho 2026 complete originals acquired; count review in progress
+## Idaho 2026 complete count review
 
 The official public portal
 `https://results.voteidaho.gov/results/public/id/elections/nov2026` identifies
@@ -397,10 +400,10 @@ receipts. Cache:
 session `files/precinct-expansion-sources/ID-2026-general-boundaries/`.
 No export is truncated. All rows have `ACTIVE=Y`, with effective/inactive dates
 retained for election-date checks. This is a genuine official 2026 reference,
-not the portal's `Idaho2025` basemap; joins and topology are not yet validated.
+not the portal's `Idaho2025` basemap.
 
-An independent conservative join/topology diagnostic supports **448 units in
-14 whole counties**, before publication. It removes only the universal result
+The independently reproduced conservative mapper supports **448 units in
+14 whole counties**, before website publication. It removes only the universal result
 county suffix ` County` and normalizes textual case, punctuation and numeric
 padding; no abbreviated-name expansion, renumbering or ID-only matching.
 County scope must match completely after separately reported pooled units are
@@ -412,13 +415,63 @@ silently assigned. The other name/code mismatches require official crosswalks;
 for example, similar numeric IDs are demonstrably not a safe statewide join.
 Keep all 986 returns and separate participation records regardless of mapping.
 
-Next: commit/release the validated immutable count review and verify the full
-upload before registering its download. Validate the acquired 2026 reference's
-effective dates, county/precinct names and explicit congressional districts;
-obtain documented crosswalks for mismatches and exclude pooled reporting units.
-Preserve native polygon ring roles and audit all-reference overlaps before
-publishing any map. Do not redownload completed originals or relabel the older
-basemap. No Idaho map is claimed yet.
+## Idaho 2026 conservative mapped supplement
+
+Data: `data/precinct-results/20261105-idaho-01/`.
+Reproduce with `scripts/build-idaho-precinct-results.py`; **115 collector tests**
+and seven participation tests pass. Match only unique, complete county-scoped
+textual precinct-name sets and explicit congressional districts, using the
+reference's actual effective/inactive intervals on November 3, 2026. Preserve
+native polygon ring roles, including holes. Audit **all 976 reference features**
+for overlaps, including reference areas with no matched result. Any invalid
+geometry, ambiguous scope or overlap above the established tolerance withholds
+the whole implicated county. Do not decode numeric IDs or allocate pooled votes.
+
+The **448 mapped/colorable units** comprise **315 Republican-leading**,
+**132 Democratic-leading**, and **one tied** unit. **538 source reporting rows**
+remain unmapped, not deleted. Of the mapped units, **435** retain a separate
+provisional ballots/source-registration fraction and **13** have their rate
+explicitly withheld. Source registrations are not assumed to be registrations
+at opening, eligible voters, or demographic denominators. Every one of the
+986 original result rows and 986 separate participation rows remains unchanged.
+
+Independent checks pass for every output/original checksum, all mapped candidate
+and participation fields, native-ring versus published polygon areas, zero
+final cross-precinct overlaps, ZIP CRCs/exact members/bytes, and byte-for-byte
+reproduction using only the distributed originals and immutable count review.
+The complete archive `complete-idaho-2026-precinct-maps.zip` is **34,504,158 bytes**,
+SHA-256 `e8057feb5f6ceddeb2c88a39be934bb2ebf8957eb71387477df8c0c6b9ac2d57`.
+It includes every original workbook, PDF, API capture, complete native/geographic
+GIS export, metadata/attribution, receipt, unmatched row and audit. The complete
+official webpage's HTML/frontend is not redistributed.
+
+Next: commit and release this immutable data snapshot; independently redownload
+the complete ZIP. Register the exact data commit, then build and test desktop/
+mobile selection, every candidate count/fill, separate available/withheld rates,
+zoom, year switching, full downloads and truthful state fallback. Do not claim
+live coverage before exact-deployment and production checks pass. Pursue official
+crosswalks, the six overlap counties, pooled scope and registration discrepancies
+without rewriting the immutable count review or borrowing older boundaries.
+
+## South Dakota 2026 official export acquisition
+
+The actual official `https://electionresults.sd.gov/Default.aspx` identifies
+**General Election November 3, 2026**, unofficial, with **671/671 precincts**
+and **66/66 counties** reporting. Search also returns a stale special-election
+page; verify the election in each actual response instead of trusting that
+cached title. Complete home, export and turnout pages and URL/size/hash receipts
+are cached in session `files/precinct-expansion-sources/SD-2026/`.
+
+The advertised `https://electionresults.sd.gov/ResultsExport.aspx` uses public
+ASP.NET postbacks for **Statewide Export** and **Legislative Export**, not direct
+guessed data URLs. The initial browser capture stopped before accepting a file
+because its literal body-text date assertion failed; inspect normalized rendered
+identity before retrying the advertised downloads. No SD result export or
+precinct reconciliation is claimed yet. Turnout is div-based rather than an
+HTML table. Vote-center rows can repeat the entire county registration
+denominator; never sum those repetitions or manufacture precinct rates.
+Next: retain and inspect both advertised complete exports, reconcile actual
+candidate precinct/county/state identities and keep participation scope separate.
 
 ## Resume procedure for every work session or scheduled prompt
 

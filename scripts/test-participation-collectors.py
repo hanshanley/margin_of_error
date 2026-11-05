@@ -30,6 +30,7 @@ nd_maps = module("build-north-dakota-precinct-results")
 vt_review = module("review-vermont-precinct-results")
 vt_maps = module("build-vermont-precinct-results")
 id_review = module("review-idaho-precinct-results")
+id_maps = module("build-idaho-precinct-results")
 
 
 def idaho_fixture():
@@ -156,6 +157,98 @@ def test_idaho_missing_and_inconsistent_ballot_denominators(problem):
     else:
         with pytest.raises(ValueError):
             id_review.idaho_results(summary, precincts, ballots, metadata)
+
+
+def idaho_map_fixture():
+    rows, statistics, _ = id_review.idaho_results(*idaho_fixture())
+    features = []
+    for i, row in enumerate(rows):
+        x, y = -116 + 2 * i, 43
+        features.append(dict(attributes=dict(OBJECTID=i + 1, COUNTY=row["county"][:-7],
+            PCNCT_NME="000" + row["precinct"], STATE_PR_ID=f"reference-{i}",
+            CNTY_PR_ID=f"unrelated-{i}", CONGR_DIST=row["congressional_district"],
+            ACTIVE="Y", DATE_ACT=1704067200000, DATE_INACT=32503680000000),
+            geometry=dict(rings=[[[x, y], [x, y + 1], [x + 1, y + 1], [x + 1, y], [x, y]]])))
+    return rows, statistics, dict(geometryType="esriGeometryPolygon",
+        spatialReference=dict(wkid=4326), features=features)
+
+
+def test_idaho_map_preserves_counts_and_source_defined_participation_without_decoding_ids():
+    rows, statistics, boundary = idaho_map_fixture()
+    mapped, audit = id_maps.mapped_precincts(rows, statistics, boundary)
+    assert len(mapped) == 3 and all(c["exact"] for c in audit["counties"].values())
+    for feature, row in zip(mapped, rows):
+        p = feature["properties"]
+        assert all(p[field] == value for field, value in row.items())
+        assert p["participation"]["measure"] == "reported_ballots_and_registration"
+        assert p["participation"]["reported_pct"] == 30
+        assert p["participation"]["ballots"] == 30
+        assert p["participation"]["registered"] == 100
+        assert p["reference_county_precinct_id"].startswith("unrelated-")
+
+
+@pytest.mark.parametrize("problem", ["name", "district", "invalid_ring", "future"])
+def test_idaho_map_withholds_whole_county_for_scope_district_geometry_or_date_conflicts(problem):
+    rows, statistics, boundary = idaho_map_fixture()
+    feature = boundary["features"][0]
+    if problem == "name":
+        feature["attributes"]["PCNCT_NME"] = "Different precinct"
+    elif problem == "district":
+        feature["attributes"]["CONGR_DIST"] = "2"
+    elif problem == "future":
+        feature["attributes"]["DATE_ACT"] = id_maps.ELECTION_MS + 1
+    else:
+        feature["geometry"]["rings"][0].pop()
+    mapped, audit = id_maps.mapped_precincts(rows, statistics, boundary)
+    assert len(mapped) == 1 and mapped[0]["properties"]["county"] == "Second County"
+    assert not audit["counties"]["First"]["exact"]
+    assert audit["counties"]["Second"]["exact"]
+
+
+def test_idaho_map_uses_election_activity_interval_not_only_current_active_flag():
+    rows, statistics, boundary = idaho_map_fixture()
+    boundary["features"][0]["attributes"]["ACTIVE"] = "N"
+    mapped, _ = id_maps.mapped_precincts(rows, statistics, boundary)
+    assert len(mapped) == 3
+
+
+def test_idaho_map_audits_overlaps_against_unmatched_reference_features_too():
+    rows, statistics, boundary = idaho_map_fixture()
+    boundary["features"][0]["attributes"]["PCNCT_NME"] = "Unmatched"
+    boundary["features"][0]["geometry"] = boundary["features"][2]["geometry"]
+    mapped, audit = id_maps.mapped_precincts(rows, statistics, boundary)
+    assert not mapped and len(audit["all_reference_overlap_pairs"]) == 1
+    assert all(not c["exact"] for c in audit["counties"].values())
+
+
+def test_idaho_map_retains_pooled_units_in_downloads_without_allocating_them():
+    rows, statistics, boundary = idaho_map_fixture()
+    pooled = dict(rows[0], key="ID|First County|Absentee", precinct="Absentee",
+                  reporting_unit_kind="pooled_absentee_or_early_unit")
+    rows.append(pooled)
+    statistics.append(dict(statistics[0], key=pooled["key"], precinct="Absentee",
+        reported_pct=None, quality_flags=["pooled_nongeographic_reporting_unit"]))
+    mapped, audit = id_maps.mapped_precincts(rows, statistics, boundary)
+    assert len(mapped) == 3 and audit["reporting_units"] == 4
+    assert audit["excluded_pooled_reporting_units"] == audit["withheld_units"] == [pooled["key"]]
+
+
+@pytest.mark.parametrize("problem", ["duplicate_feature", "ambiguous_name", "truncated",
+                                     "projection", "missing_statistics"])
+def test_idaho_map_rejects_duplicate_or_incomplete_sources(problem):
+    rows, statistics, boundary = idaho_map_fixture()
+    if problem == "duplicate_feature":
+        boundary["features"].append(boundary["features"][0])
+    elif problem == "ambiguous_name":
+        boundary["features"][1]["attributes"]["PCNCT_NME"] = "0001"
+    elif problem == "truncated":
+        boundary["exceededTransferLimit"] = True
+    elif problem == "projection":
+        boundary["spatialReference"]["wkid"] = 102605
+    else:
+        statistics.pop()
+    with pytest.raises(ValueError):
+        id_maps.mapped_precincts(rows, statistics, boundary)
 
 
 def vt_fixture():
