@@ -2,14 +2,14 @@
 
 ## Objective and priority
 
-**November 5 security escalation: rewritten history is being published.** The
+**November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated
 `git-filter-repo --sensitive-data-removal` rewrite removed Google API key patterns
 throughout all 297 commits, including older common history. All 4,777 rewritten
 blobs (2,746,430,005 bytes) were scanned with zero matches; the current main tree
 was byte-identical before download-link migration. All 69 original branch/tag
-refs require new commit IDs. The 68 non-main refs have been updated atomically
-with exact old-SHA leases; main is held until the migrated UI passes validation.
+refs required new commit IDs. The 68 non-main refs were updated atomically
+with exact old-SHA leases; main followed only after migrated UI validation.
 The first full transfer exceeded GitHub's push-size limit; four verified ancestor
 batches transferred clean history without dropping election data. No release
 asset was replaced or deleted during this history rewrite.
@@ -25,25 +25,50 @@ checks all reachable history; Pages also checks tracked source files before
 building. Existing GitHub secret scanning and push protection are enabled.
 Type-check, build, seven participation tests and 94-download Pages preparation
 pass; the unrelated UK topic-card validator still fails 23 versus 16.
-Local prepared size is 987,318,238 bytes. Main deployment and production proof
-remain pending; see `data/county-source-reviews/20261105-history-key-remediation-01/`.
+Local prepared size is 987,318,238 bytes. Main revision
+`ab48cd71228be2354f2cc4a50cdc6a61c9fda0c5` passed Pages run `42127917576`
+and full-history security run `42127917557`. Production registry bytes match,
+and all four browser modes retain the exact 250 complete download URLs.
+All 69 original public refs are verified clean; all 224 assets in 65 releases
+are unchanged. The transfer-only staging branch was removed through the API
+after Git transport rejected its deletion. See
+`data/county-source-reviews/20261105-history-key-remediation-01/`.
 
 **Do not push any old local branch or tag.** Only use rewritten publication
-history, currently in the `security-remediated-worktree-01` session worktree.
+history. The recurring acquisition checkout now uses
+`voter-participation-clean-counties-20261105`, based on verified main. Its known
+old local refs were translated only after checked-out tree equality checks.
+One unpublished branch needed a separate isolated rewrite: its sole tree
+difference is credential text in the Bucks linking HTML; all other work remains.
+The acquisition clone's 4,818 reachable blobs pass with zero Google key matches.
+The earlier `security-remediated-worktree-01` remains a verified publication
+reference, not the next acquisition checkout.
 GitHub alerts #1/#2 remain open with unknown validity. Revocation still requires
 the Google project owner; repository access cannot rotate these copied
 county/vendor keys. Historical cached commit views require GitHub Support
 follow-up; do not claim that a ref rewrite revoked credentials or erased caches.
+The owner/support handoff is saved with the audit; it is not a submitted ticket.
 
-**Next acquired county: Dauphin.** Nineteen full government HTML responses are
+**Next publication: Dauphin, reviewed but not yet UI live.** Nineteen full government HTML responses are
 retained privately with successful receipts: the index, eight contest summaries,
 the native precinct-progress list, eight precinct/municipality reports and the
 declared method-report parent. The House snapshot contains 114,641 candidate
 votes (DEM 68,655; REP 45,507; native NONPARTISAN write-in 479), not ballots or
 turnout. Precinct and municipality tables are parallel geographic summaries,
-not two voting modes. Reconcile all eight contests and preserve literal parties,
-native zeros, snapshot qualifications and missing participation before any public
-package. Butler's actual index returned HTTP404; the response and receipt are
+not two voting modes. All eight contests and 23 county candidate lines reconcile
+separately with 1,597 precinct and 460 municipality observations, retaining
+128 and 39 explicit zeros. All five state-House precinct scopes partition the
+158 county precincts without overlap; split municipalities are not deduplicated.
+The seven CSVs, all 19 screened originals, receipts and portable reviewer form
+a 150,018-byte complete ZIP with 30 unique members. Packaged offline reproduction
+is byte-identical; eight focused tests pass. The native mail-reporting zero is
+commented-out HTML, not observed mail ballots. Ballots, registrations, turnout
+and voting-method totals remain unavailable; absent REP rows in HD104/HD105
+remain absent. No new map, demographic turnout or certification is approved.
+Release and UI verification remain pending. See
+`data/county-source-reviews/20261105-dauphin-reviewed-01/` and
+`data/county-source-reviews/20261105-dauphin-publication-01/`.
+Butler's actual index returned HTTP404; the response and receipt are
 retained rather than treating a cached search page as a successful acquisition.
 
 **Earlier current-source cleanup (historical record).** On November 5,

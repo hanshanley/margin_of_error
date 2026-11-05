@@ -1,0 +1,9 @@
+year,state_code,county_fips,county,office,district_literal,contest,native_status,source_update_literal,in_person_reporting_literal,in_person_precincts_reported,in_person_precincts_total,counted_ballot_scope_literal,mail_ballots,provisional_ballots,final_certified
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,UNOFFICIAL RESULTS,11/3/2026 10:41:50 PM,In-Person Precincts Reporting - 158 of 158,158,158,Totals include all ballots counted.,,,False
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,UNOFFICIAL RESULTS,11/3/2026 10:41:50 PM,In-Person Precincts Reporting - 158 of 158,158,158,Totals include all ballots counted.,,,False
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,UNOFFICIAL RESULTS,11/3/2026 10:41:50 PM,In-Person Precincts Reporting - 25 of 25,25,25,Totals include all ballots counted.,,,False
+2026,PA,42043,Dauphin,state_house,103,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD103,UNOFFICIAL RESULTS,11/3/2026 10:41:50 PM,In-Person Precincts Reporting - 17 of 17,17,17,Totals include all ballots counted.,,,False
+2026,PA,42043,Dauphin,state_house,104,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD104,UNOFFICIAL RESULTS,11/3/2026 10:41:50 PM,In-Person Precincts Reporting - 28 of 28,28,28,Totals include all ballots counted.,,,False
+2026,PA,42043,Dauphin,state_house,105,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD105,UNOFFICIAL RESULTS,11/3/2026 10:41:50 PM,In-Person Precincts Reporting - 30 of 30,30,30,Totals include all ballots counted.,,,False
+2026,PA,42043,Dauphin,state_house,106,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD106,UNOFFICIAL RESULTS,11/3/2026 10:41:50 PM,In-Person Precincts Reporting - 37 of 37,37,37,Totals include all ballots counted.,,,False
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,UNOFFICIAL RESULTS,11/3/2026 10:41:50 PM,In-Person Precincts Reporting - 46 of 46,46,46,Totals include all ballots counted.,,,False

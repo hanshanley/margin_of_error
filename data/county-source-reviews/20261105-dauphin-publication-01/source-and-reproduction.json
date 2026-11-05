@@ -1,0 +1,16 @@
+{
+  "screened_originals": 19,
+  "archive_members": 30,
+  "checked_payload_members": 29,
+  "county_candidate_rows": 23,
+  "independent_geography_reconciliation": [
+    "precinct",
+    "municipality"
+  ],
+  "archive_bytes": 150018,
+  "archive_sha256": "fb82e0f1cc1a808623c4222ca186865376c9324ef562eb3b0fc62a12eb9b4d7d",
+  "packaged_offline_reproduction_byte_identical": true,
+  "focused_tests_passed": 8,
+  "maps_approved": false,
+  "participation_denominators_acquired": false
+}

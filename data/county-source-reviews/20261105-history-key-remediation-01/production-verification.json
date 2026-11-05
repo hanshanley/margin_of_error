@@ -1,0 +1,23 @@
+{
+  "runs": {
+    "42127917576": {
+      "conclusion": "success",
+      "databaseId": 42127917576,
+      "headSha": "ab48cd71228be2354f2cc4a50cdc6a61c9fda0c5",
+      "status": "completed",
+      "url": "https://github.com/hanshanley/margin_of_error/actions/runs/42127917576"
+    },
+    "42127917557": {
+      "conclusion": "success",
+      "databaseId": 42127917557,
+      "headSha": "ab48cd71228be2354f2cc4a50cdc6a61c9fda0c5",
+      "status": "completed",
+      "url": "https://github.com/hanshanley/margin_of_error/actions/runs/42127917557"
+    }
+  },
+  "exact_complete_downloads": 250,
+  "four_modes": true,
+  "registry_bytes": 42128,
+  "registry_sha256": "1b0df17b55d5e9738ff278e346e248dfc26932b8684f1551730eb57e12e19c64",
+  "registry_byte_identical": true
+}

@@ -1,0 +1,21 @@
+{
+  "updated_refs": {
+    "refs/heads/main": {
+      "before": "1deca91c85b3aae5a0c47b92b3aac93bc7cb0952",
+      "after": "8d7c716259bef8e891fb27aee1028904a29a7472"
+    },
+    "refs/heads/voter-participation-bucks-publication-20261105": {
+      "before": "ba84a93da019aa25835281768df68702af18952b",
+      "after": "a4725e00ae4162dc8710a2fb775409d4e71b9ada"
+    },
+    "refs/heads/voter-participation-source-key-cleanup-20261105": {
+      "before": "68119df41532cb24d19964df703fac6b2a67a619",
+      "after": "14f0bf1c67ad0d4f3924b9a964bc7fc6d8be1d15"
+    }
+  },
+  "checked_out_tree_equality_verified": [
+    "refs/heads/voter-participation-bucks-publication-20261105",
+    "refs/heads/voter-participation-source-key-cleanup-20261105"
+  ],
+  "uncommitted_tracked_changes": false
+}

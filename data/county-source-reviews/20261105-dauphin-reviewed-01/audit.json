@@ -1,0 +1,38 @@
+{
+  "status": "candidate_counts_reviewed_participation_unavailable",
+  "year": 2026,
+  "state_code": "PA",
+  "county_fips": "42043",
+  "county": "Dauphin",
+  "native_contests": 8,
+  "native_candidate_rows": 23,
+  "table_rows": {
+    "county-candidate-results.csv": 23,
+    "county-contest-totals.csv": 8,
+    "county-contest-party-totals.csv": 23,
+    "county-participation.csv": 1,
+    "native-precinct-candidate-counts.csv": 1597,
+    "native-municipality-candidate-counts.csv": 460,
+    "native-contest-reporting.csv": 8
+  },
+  "geographic_explicit_zeroes": {
+    "precinct": 128,
+    "municipality": 39
+  },
+  "fully_complete": false,
+  "maps_approved": false,
+  "demographic_turnout_approved": false,
+  "limitations": [
+    "Unofficial snapshot; reporting every in-person precinct does not establish final counting.",
+    "The native detail says totals include all ballots counted, not all ballots received.",
+    "Precinct and municipality tables reconcile separately; never add the two geographic levels.",
+    "Mail reporting markup is commented out, not an observed zero-mail count.",
+    "No ballot, registration, turnout or demographic denominator was acquired.",
+    "Parties are literal HTML values; NONPARTISAN write-ins are not independent candidates.",
+    "Absent Republican rows in HD104 and HD105 are missing, not manufactured zeroes.",
+    "State legislative districts are explicit; the House heading does not supply a district number.",
+    "The method-report parent and precinct-progress list are retained, not inferred method totals.",
+    "Source update timezone is unestablished; detail timestamps have only minute precision.",
+    "No geometry, complete statewide results or certified participation is asserted."
+  ]
+}

@@ -1,0 +1,1372 @@
+<script src="/js/jquery-3.3.1.js"></script>
+<link href="/css/master.css" rel="stylesheet" />
+<title>Current Results</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="refresh" content="30">
+<meta https-equiv="refresh" content="30">
+
+
+<!--####################################################
+C S S - bootstrap, custom styles
+####################################################-->
+<!-- Custom styles for this template -->
+
+<link href="/css/master.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet" type="text/css">
+
+<!-- Bootstrap core CSS -->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<body>
+
+    <div>
+
+        <section>
+            <center><img src="/Images/Banner&logo.jpg"></center>
+        </section>
+
+    </div>
+    <nav class="navbar navbar-expand-md navbar-dark bg- sticky-top rounded">
+        <!-- One of the primary actions on mobile is to call a business - This displays a phone button on mobile only -->
+
+        <div class="navbar-toggler-right">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+
+        <strong>
+            <a class="navbar-brand" href="#">
+                <!-- <img src="img/bootstrapcreative-icon.svg" width="25" height="25" class="d-inline-block align-top" alt="American Warrior Training">-->
+                <span>Dauphin County Elections</span>
+            </a>
+        </strong>
+
+        <div class="collapse navbar-collapse" id="navbar">
+            <nav class="nav d-flex flex-column flex-md-row w-100 justify-content-end">
+
+
+                <a class="flex-fill text-center text-light nav-link" href="https://elections.dauphincounty.gov/">Election Results Home</a>
+                <a class="flex-fill text-center text-light nav-link" href="https://www.dos.pa.gov/VotingElections/OtherServicesEvents/VotingElectionStatistics/Pages/VotingElectionStatistics.aspx">Voter Registration Statistics</a>
+                <a class="flex-fill text-center text-light nav-link" href="/Canvassing_Process.htm">Canvassing Process</a>
+                <a class="flex-fill text-center text-light nav-link" href="https://www.dauphincounty.gov/government/support-services/registration-elections">Information For Voters</a>
+
+            </nav>
+
+        </div>
+    </nav>
+
+    <div style="position: absolute; top: 52%; right: 5px;" class="MachineUpdate1 pt-3">Last update:  11/03/2026 10:41 PM</div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3 race-pt3 pt-3">
+                <div class="sidenav">
+                    <center><h4 style="color:gold">Elections</h4></center>
+
+                            <button class="dropdown-btn">
+                                2026
+                                <i class="fa fa-caret-down" id="2026"></i>
+                            </button>
+                            <div class="dropdown-container">
+                                        <a id="font" href="/?key=42">2026 General Election Results</a>
+                                        <a id="font" href="/?key=41">2026 Primary Election Results</a>
+                            </div>
+                        <!-- else -->
+                        <!-- { -->
+                        <!-- <button class="dropdown-btn"> -->
+                        <!-- 2015-2007 -->
+                        <!-- <i class="fa fa-caret-down"></i> -->
+                        <!-- </button> -->
+                        <!-- break; -->
+                        <!-- } -->
+                            <button class="dropdown-btn">
+                                2025
+                                <i class="fa fa-caret-down" id="2025"></i>
+                            </button>
+                            <div class="dropdown-container">
+                                        <a id="font" href="/?key=40">2025 Municipal General Election Results</a>
+                                        <a id="font" href="/?key=39">2025 Municipal Primary Election Results</a>
+                            </div>
+                        <!-- else -->
+                        <!-- { -->
+                        <!-- <button class="dropdown-btn"> -->
+                        <!-- 2015-2007 -->
+                        <!-- <i class="fa fa-caret-down"></i> -->
+                        <!-- </button> -->
+                        <!-- break; -->
+                        <!-- } -->
+                            <button class="dropdown-btn">
+                                2024
+                                <i class="fa fa-caret-down" id="2024"></i>
+                            </button>
+                            <div class="dropdown-container">
+                                        <a id="font" href="/?key=38">2024 Presidential General Election Results</a>
+                                        <a id="font" href="/?key=37">2024 Presidential Primary Election Results</a>
+                            </div>
+                        <!-- else -->
+                        <!-- { -->
+                        <!-- <button class="dropdown-btn"> -->
+                        <!-- 2015-2007 -->
+                        <!-- <i class="fa fa-caret-down"></i> -->
+                        <!-- </button> -->
+                        <!-- break; -->
+                        <!-- } -->
+                            <button class="dropdown-btn">
+                                2023
+                                <i class="fa fa-caret-down" id="2023"></i>
+                            </button>
+                            <div class="dropdown-container">
+                                        <a id="font" href="/?key=36">2023 Municipal General Election Results</a>
+                                        <a id="font" href="/?key=35">2023 Municipal Primary Election Results</a>
+                            </div>
+                        <!-- else -->
+                        <!-- { -->
+                        <!-- <button class="dropdown-btn"> -->
+                        <!-- 2015-2007 -->
+                        <!-- <i class="fa fa-caret-down"></i> -->
+                        <!-- </button> -->
+                        <!-- break; -->
+                        <!-- } -->
+                            <button class="dropdown-btn">
+                                2022
+                                <i class="fa fa-caret-down" id="2022"></i>
+                            </button>
+                            <div class="dropdown-container">
+                                        <a id="font" href="/?key=34">2022 General Election Results</a>
+                                        <a id="font" href="/?key=33&amp;category=US%20SENATOR&amp;race=US%20SENATOR">2022 General Primary Recount Results</a>
+                                        <a id="font" href="/?key=32"> 2022 General Primary Election Results</a>
+                            </div>
+                        <!-- else -->
+                        <!-- { -->
+                        <!-- <button class="dropdown-btn"> -->
+                        <!-- 2015-2007 -->
+                        <!-- <i class="fa fa-caret-down"></i> -->
+                        <!-- </button> -->
+                        <!-- break; -->
+                        <!-- } -->
+                            <button class="dropdown-btn">
+                                2021
+                                <i class="fa fa-caret-down" id="2021"></i>
+                            </button>
+                            <div class="dropdown-container">
+                                        <a id="font" href="/?key=31&amp;category=STATE%20JUDGES&amp;race=STATE%20JUDGES">2021 Municipal Recount Election Results</a>
+                                        <a id="font" href="/?key=30">2021 Municipal Election Results</a>
+                                        <a id="font" href="/?key=29">2021 Municipal Primary Election Results</a>
+                            </div>
+                        <!-- else -->
+                        <!-- { -->
+                        <!-- <button class="dropdown-btn"> -->
+                        <!-- 2015-2007 -->
+                        <!-- <i class="fa fa-caret-down"></i> -->
+                        <!-- </button> -->
+                        <!-- break; -->
+                        <!-- } -->
+                            <button class="dropdown-btn">
+                                2020
+                                <i class="fa fa-caret-down" id="2020"></i>
+                            </button>
+                            <div class="dropdown-container">
+                                        <a id="font" href="/Graph?key=28">2020 General Election Results</a>
+                            </div>
+                        <!-- else -->
+                        <!-- { -->
+                        <!-- <button class="dropdown-btn"> -->
+                        <!-- 2015-2007 -->
+                        <!-- <i class="fa fa-caret-down"></i> -->
+                        <!-- </button> -->
+                        <!-- break; -->
+                        <!-- } -->
+                        <!-- else -->
+                        <!-- { -->
+                        <!-- <button class="dropdown-btn"> -->
+                        <!-- 2015-2007 -->
+                        <!-- <i class="fa fa-caret-down"></i> -->
+                        <!-- </button> -->
+                        <!-- break; -->
+                        <!-- } -->
+                        <!-- else -->
+                        <!-- { -->
+                        <!-- <button class="dropdown-btn"> -->
+                        <!-- 2015-2007 -->
+                        <!-- <i class="fa fa-caret-down"></i> -->
+                        <!-- </button> -->
+                        <!-- break; -->
+                        <!-- } -->
+                        <!-- else -->
+                        <!-- { -->
+                        <!-- <button class="dropdown-btn"> -->
+                        <!-- 2015-2007 -->
+                        <!-- <i class="fa fa-caret-down"></i> -->
+                        <!-- </button> -->
+                        <!-- break; -->
+                        <!-- } -->
+                        <!-- else -->
+                        <!-- { -->
+                        <!-- <button class="dropdown-btn"> -->
+                        <!-- 2015-2007 -->
+                        <!-- <i class="fa fa-caret-down"></i> -->
+                        <!-- </button> -->
+                        <!-- break; -->
+                        <!-- } -->
+                        <!-- else -->
+                        <!-- { -->
+                        <!-- <button class="dropdown-btn"> -->
+                        <!-- 2015-2007 -->
+                        <!-- <i class="fa fa-caret-down"></i> -->
+                        <!-- </button> -->
+                        <!-- break; -->
+                        <!-- } -->
+                        <!-- else -->
+                        <!-- { -->
+                        <!-- <button class="dropdown-btn"> -->
+                        <!-- 2015-2007 -->
+                        <!-- <i class="fa fa-caret-down"></i> -->
+                        <!-- </button> -->
+                        <!-- break; -->
+                        <!-- } -->
+                        <!-- else -->
+                        <!-- { -->
+                        <!-- <button class="dropdown-btn"> -->
+                        <!-- 2015-2007 -->
+                        <!-- <i class="fa fa-caret-down"></i> -->
+                        <!-- </button> -->
+                        <!-- break; -->
+                        <!-- } -->
+                        <!-- else -->
+                        <!-- { -->
+                        <!-- <button class="dropdown-btn"> -->
+                        <!-- 2015-2007 -->
+                        <!-- <i class="fa fa-caret-down"></i> -->
+                        <!-- </button> -->
+                        <!-- break; -->
+                        <!-- } -->
+                        <!-- else -->
+                        <!-- { -->
+                        <!-- <button class="dropdown-btn"> -->
+                        <!-- 2015-2007 -->
+                        <!-- <i class="fa fa-caret-down"></i> -->
+                        <!-- </button> -->
+                        <!-- break; -->
+                        <!-- } -->
+                        <!-- else -->
+                        <!-- { -->
+                        <!-- <button class="dropdown-btn"> -->
+                        <!-- 2015-2007 -->
+                        <!-- <i class="fa fa-caret-down"></i> -->
+                        <!-- </button> -->
+                        <!-- break; -->
+                        <!-- } -->
+                        <!-- else -->
+                        <!-- { -->
+                        <!-- <button class="dropdown-btn"> -->
+                        <!-- 2015-2007 -->
+                        <!-- <i class="fa fa-caret-down"></i> -->
+                        <!-- </button> -->
+                        <!-- break; -->
+                        <!-- } -->
+                        <!-- else -->
+                        <!-- { -->
+                        <!-- <button class="dropdown-btn"> -->
+                        <!-- 2015-2007 -->
+                        <!-- <i class="fa fa-caret-down"></i> -->
+                        <!-- </button> -->
+                        <!-- break; -->
+                        <!-- } -->
+                        <!-- else -->
+                        <!-- { -->
+                        <!-- <button class="dropdown-btn"> -->
+                        <!-- 2015-2007 -->
+                        <!-- <i class="fa fa-caret-down"></i> -->
+                        <!-- </button> -->
+                        <!-- break; -->
+                        <!-- } -->
+
+                    <div><a href="https://www.dauphinc.org/electionarchive/">Historical Archives</a></div>
+
+                </div>
+                <div style="float:right;" class="MachineUpdate2 pt-3">Last update:  11/03/2026 10:41 PM</div>
+            </div>
+            <div class="col-lg-6 col-xs-height border-none font-size15 margin-bottm15 pl-5">
+                <br />
+                <br />
+                <div style="margin-left:-15px">
+
+                    <strong class="">In-Person <br />Total Precincts Reporting: 158 <span> of </span>158</strong>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-lg-6">
+
+                        <table class="color-blue font-size15" border="1" width="80%">
+                            <tbody>
+                                <tr>
+                                    <td class="center"><strong>Precinct Name</strong></td>
+                                </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="City--1st Ward, 1st Precinct"><strong>City--1st Ward, 1st Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="City--1st Ward, 2nd Precinct"><strong>City--1st Ward, 2nd Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="City--1st Ward, 3rd Precinct"><strong>City--1st Ward, 3rd Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="City--2nd Ward, 1st Precinct"><strong>City--2nd Ward, 1st Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="City--2nd Ward, 2nd Precinct"><strong>City--2nd Ward, 2nd Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="City--3rd Ward"><strong>City--3rd Ward</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="City--4th Ward"><strong>City--4th Ward</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="City--5th Ward"><strong>City--5th Ward</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="City--6th Ward"><strong>City--6th Ward</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="City--7th Ward, 1st Precinct"><strong>City--7th Ward, 1st Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="City--7th Ward, 2nd Precinct"><strong>City--7th Ward, 2nd Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="City--8th Ward"><strong>City--8th Ward</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="City--9th Ward, 1st Precinct"><strong>City--9th Ward, 1st Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="City--9th Ward, 2nd Precinct"><strong>City--9th Ward, 2nd Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="City--9th Ward, 3rd Precinct"><strong>City--9th Ward, 3rd Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="City--9th Ward, 4th Precinct"><strong>City--9th Ward, 4th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="City--9th Ward, 5th Precinct"><strong>City--9th Ward, 5th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="City--10th Ward, 1st Precinct"><strong>City--10th Ward, 1st Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="City--10th Ward, 2nd Precinct"><strong>City--10th Ward, 2nd Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="City--10th Ward, 3rd Precinct"><strong>City--10th Ward, 3rd Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="City--10th Ward, 4th Precinct"><strong>City--10th Ward, 4th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="City--11th Ward"><strong>City--11th Ward</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="City--12th Ward"><strong>City--12th Ward</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="City--13th Ward, 1st Precinct"><strong>City--13th Ward, 1st Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="City--13th Ward, 2nd Precinct"><strong>City--13th Ward, 2nd Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="City--13th Ward, 3rd Precinct"><strong>City--13th Ward, 3rd Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="City--14th Ward"><strong>City--14th Ward</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="City--15th Ward"><strong>City--15th Ward</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Berrysburg Borough"><strong>Berrysburg Borough</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Dauphin Borough"><strong>Dauphin Borough</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Elizabethville Borough"><strong>Elizabethville Borough</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Gratz Borough"><strong>Gratz Borough</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Halifax Borough"><strong>Halifax Borough</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Highspire Borough"><strong>Highspire Borough</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Hummelstown--1st Precinct"><strong>Hummelstown--1st Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Hummelstown--2nd Precinct"><strong>Hummelstown--2nd Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Lykens Borough--1st Ward"><strong>Lykens Borough--1st Ward</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Lykens Borough--2nd Ward"><strong>Lykens Borough--2nd Ward</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Middletown--1st Ward, 1st Precinct"><strong>Middletown--1st Ward, 1st Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Middletown--1st Ward, 2nd Precinct"><strong>Middletown--1st Ward, 2nd Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Middletown--2nd Ward"><strong>Middletown--2nd Ward</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Middletown--3rd Ward, 1st Precinct"><strong>Middletown--3rd Ward, 1st Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Middletown--3rd Ward, 2nd Precinct"><strong>Middletown--3rd Ward, 2nd Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Millersburg Borough"><strong>Millersburg Borough</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Paxtang Borough"><strong>Paxtang Borough</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Penbrook Borough--1st Ward"><strong>Penbrook Borough--1st Ward</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Penbrook Borough--2nd Ward"><strong>Penbrook Borough--2nd Ward</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Penbrook Borough--3rd Ward"><strong>Penbrook Borough--3rd Ward</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Penbrook Borough--4th Ward"><strong>Penbrook Borough--4th Ward</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Royalton Borough--1st Ward"><strong>Royalton Borough--1st Ward</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Royalton Borough--2nd Ward"><strong>Royalton Borough--2nd Ward</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Steelton--1st Ward"><strong>Steelton--1st Ward</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Steelton--2nd Ward"><strong>Steelton--2nd Ward</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Steelton--3rd Ward"><strong>Steelton--3rd Ward</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Steelton--4th Ward"><strong>Steelton--4th Ward</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Pillow Borough"><strong>Pillow Borough</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Williamstown--1st Ward"><strong>Williamstown--1st Ward</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Williamstown--2nd Ward"><strong>Williamstown--2nd Ward</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Conewago Twp--1st Precinct"><strong>Conewago Twp--1st Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Conewago Twp--2nd Precinct"><strong>Conewago Twp--2nd Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Derry Township--1st Precinct"><strong>Derry Township--1st Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Derry Township--2nd Precinct"><strong>Derry Township--2nd Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Derry Township--3rd Precinct"><strong>Derry Township--3rd Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Derry Township--4th Precinct"><strong>Derry Township--4th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Derry Township--5th Precinct"><strong>Derry Township--5th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Derry Township--6th Precinct"><strong>Derry Township--6th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Derry Township--7th Precinct"><strong>Derry Township--7th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Derry Township--8th Precinct"><strong>Derry Township--8th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Derry Township--9th Precinct"><strong>Derry Township--9th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Derry Township--10th Precinct"><strong>Derry Township--10th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Derry Township--11th Precinct"><strong>Derry Township--11th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Derry Township--12th Precinct"><strong>Derry Township--12th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Derry Township--13th Precinct"><strong>Derry Township--13th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Derry Township--14th Precinct"><strong>Derry Township--14th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Derry Township--15th Precinct"><strong>Derry Township--15th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="East Hanover Township--1st Precinct"><strong>East Hanover Township--1st Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="East Hanover Township--2nd Precinct"><strong>East Hanover Township--2nd Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Halifax Twp--1st Precinct"><strong>Halifax Twp--1st Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Halifax Twp--2nd Precinct"><strong>Halifax Twp--2nd Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                    <div class="col-lg-6">
+
+                        <table class="color-blue font-size15" border="1" width="80%">
+                            <tbody>
+                                <tr>
+                                    <td class="center"><strong>Precinct Name</strong></td>
+                                </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Jackson Township"><strong>Jackson Township</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Jefferson Township"><strong>Jefferson Township</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Londonderry Twp--1st Precinct"><strong>Londonderry Twp--1st Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Londonderry Twp--2nd Precinct"><strong>Londonderry Twp--2nd Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Londonderry Twp--3rd Precinct"><strong>Londonderry Twp--3rd Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Lower Paxton Twp--1st Precinct"><strong>Lower Paxton Twp--1st Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Lower Paxton Twp--2nd Precinct"><strong>Lower Paxton Twp--2nd Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Lower Paxton Twp--3rd precinct"><strong>Lower Paxton Twp--3rd precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Lower Paxton Twp--4th Precinct"><strong>Lower Paxton Twp--4th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Lower Paxton Twp--5th Precinct"><strong>Lower Paxton Twp--5th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Lower Paxton Twp--6th Precinct"><strong>Lower Paxton Twp--6th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Lower Paxton Twp--7th Precinct"><strong>Lower Paxton Twp--7th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Lower Paxton Twp--8th Precinct"><strong>Lower Paxton Twp--8th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Lower Paxton Twp--9th Precinct"><strong>Lower Paxton Twp--9th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Lower Paxton Twp--10th Precinct"><strong>Lower Paxton Twp--10th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Lower Paxton Twp--11th Precinct"><strong>Lower Paxton Twp--11th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Lower Paxton Twp--12th Precinct"><strong>Lower Paxton Twp--12th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Lower Paxton Twp--13th Precinct"><strong>Lower Paxton Twp--13th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Lower Paxton Twp--14th Precinct"><strong>Lower Paxton Twp--14th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Lower Paxton Twp--15th Precinct"><strong>Lower Paxton Twp--15th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Lower Paxton Twp--16th Precinct"><strong>Lower Paxton Twp--16th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Lower Paxton Twp--17th Precinct"><strong>Lower Paxton Twp--17th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Lower Paxton Twp--18th Precinct"><strong>Lower Paxton Twp--18th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Lower Paxton Twp--19th Precinct"><strong>Lower Paxton Twp--19th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Lower Paxton Twp--20th Precinct"><strong>Lower Paxton Twp--20th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Lower Paxton Twp--21st Precinct"><strong>Lower Paxton Twp--21st Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Lower Paxton Twp--22nd Precinct"><strong>Lower Paxton Twp--22nd Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Lower Paxton Twp--23rd Precinct"><strong>Lower Paxton Twp--23rd Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Lower Paxton Twp--24th Precinct"><strong>Lower Paxton Twp--24th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Lower Paxton Twp--25th Precinct"><strong>Lower Paxton Twp--25th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Lower Paxton Twp--26th Precinct"><strong>Lower Paxton Twp--26th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Lower Paxton Twp--27th Precinct"><strong>Lower Paxton Twp--27th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Lower Swatara Twp--1st Precinct"><strong>Lower Swatara Twp--1st Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Lower Swatara Twp--2nd Precinct"><strong>Lower Swatara Twp--2nd Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Lower Swatara Twp--3rd Precinct"><strong>Lower Swatara Twp--3rd Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Lower Swatara Twp--4th Precinct"><strong>Lower Swatara Twp--4th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Lykens Township"><strong>Lykens Township</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Middle Paxton Twp--1st Precinct"><strong>Middle Paxton Twp--1st Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Middle Paxton Twp--2nd Precinct"><strong>Middle Paxton Twp--2nd Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Middle Paxton Twp--3rd Precinct"><strong>Middle Paxton Twp--3rd Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Mifflin Township"><strong>Mifflin Township</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Reed Township"><strong>Reed Township</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Rush Township"><strong>Rush Township</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="South Hanover Twp--1st Precinct"><strong>South Hanover Twp--1st Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="South Hanover Twp--2nd Precinct"><strong>South Hanover Twp--2nd Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="South Hanover Twp--3rd Precinct"><strong>South Hanover Twp--3rd Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Susquehanna Twp--1st Ward"><strong>Susquehanna Twp--1st Ward</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Susquehanna Twp--2nd Ward"><strong>Susquehanna Twp--2nd Ward</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Susquehanna Twp--3rd Ward"><strong>Susquehanna Twp--3rd Ward</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Susquehanna Twp--4th Ward"><strong>Susquehanna Twp--4th Ward</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Susquehanna Twp--5th Ward"><strong>Susquehanna Twp--5th Ward</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Susquehanna Twp--6th Ward"><strong>Susquehanna Twp--6th Ward</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Susquehanna Twp--7th Ward"><strong>Susquehanna Twp--7th Ward</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Susquehanna Twp--8th Ward"><strong>Susquehanna Twp--8th Ward</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Susquehanna Twp--9th Ward"><strong>Susquehanna Twp--9th Ward</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Swatara Township--1st Precinct"><strong>Swatara Township--1st Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Swatara Township--2nd Precinct"><strong>Swatara Township--2nd Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Swatara Township--3rd Precinct"><strong>Swatara Township--3rd Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Swatara Township--4th Precinct"><strong>Swatara Township--4th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Swatara Township--5th Precinct"><strong>Swatara Township--5th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Swatara Township--6th Precinct"><strong>Swatara Township--6th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Swatara Township--7th Precinct"><strong>Swatara Township--7th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Swatara Township--8th Precinct"><strong>Swatara Township--8th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Swatara Township--9th Precinct"><strong>Swatara Township--9th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Swatara Township--10th Precinct"><strong>Swatara Township--10th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Upper Paxton Twp--1st Precinct"><strong>Upper Paxton Twp--1st Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Upper Paxton Twp--2nd Precinct"><strong>Upper Paxton Twp--2nd Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Washington Township"><strong>Washington Township</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Wayne Township"><strong>Wayne Township</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="West Hanover Twp--1st Precinct"><strong>West Hanover Twp--1st Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="West Hanover Twp--2nd Precinct"><strong>West Hanover Twp--2nd Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="West Hanover Twp--3rd Precinct"><strong>West Hanover Twp--3rd Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="West Hanover Twp--4th Precinct"><strong>West Hanover Twp--4th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="West Hanover Twp--5th Precinct"><strong>West Hanover Twp--5th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="West Hanover Twp--6th Precinct"><strong>West Hanover Twp--6th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="West Hanover Twp--7th Precinct"><strong>West Hanover Twp--7th Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Wiconisco Twp--1st Precinct"><strong>Wiconisco Twp--1st Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Wiconisco Twp--2nd Precinct"><strong>Wiconisco Twp--2nd Precinct</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center" style="width:150px;height:40px;">
+                                                <span class="font-weight-bolder">&#10004;</span>
+                                            <span id="Williams Twp"><strong>Williams Twp</strong></span>
+                                        </td>
+                                    </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+
+                </div>
+
+                <br />
+                <br />
+            </div>
+
+
+        </div>
+    </div>
+
+    <script>
+    $(document).ready(function () {
+
+        $("#ElectionLinks").hide();
+
+        $("span").click(function () {
+
+            $("td").each(function (a, b) {
+                $(this).css("background-color", "#1D2A56");
+            });
+
+            var currentSpanElement = $(this).attr('id');
+            //$(this).parent().css("background-color", "wheat");
+
+            var url = '/Election/Links';
+            var lihtml = "";
+            var yearInput= { "Year": currentSpanElement };
+            $.getJSON(url, yearInput, function (data) {
+                $.each(data, function (a, b) {
+                    if (b !== undefined) {
+                        var navigateURL = '/Precinct';
+                        navigateURL = navigateURL + "?key=" + b.Key;
+                        lihtml += "<li id='" + b.Key + "'><a href='" + navigateURL + "' Style='text-decoration:none'>" + b.Value+"</a> </li>";
+                    }
+                });
+                $("#ElectionLinks").show();
+                $("#ElectLinks").html(lihtml);
+            });
+        });
+
+        var key = 42;
+        if (key === 0) {
+            $("#ElectionLinks").hide();
+        }
+        else {
+            var currentSpanElement = $('span#' + key + '')[0];
+            currentSpanElement.click();
+        }
+
+
+
+    });
+
+    </script>
+
+    <!--
+             ####################################################
+             JAVASCRIPT - jquery, bootstrap, plugins
+             Placed at the end of the document so the pages load faster
+             ####################################################
+             -->
+    <!-- jQuery - Grab from a CDN and if not available grab a local copy -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>
+        window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')
+    </script>
+
+
+    <!-- Bootstrap core JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+    <!--JS File-->
+    <script src="/js/master.js"></script>
+
+    <!-- Google Analytics code goes here if needed -->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-32384192-4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-32384192-4');
+    </script>
+
+</body>
+<footer>
+
+    <div>
+
+        <section>
+            <center><img alt="Footer_Banner_IMG" src="/Images/Footer.gif"></center>
+        </section>
+
+    </div>
+
+</footer>

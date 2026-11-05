@@ -5,7 +5,7 @@
   "rewritten_commits": 297,
   "original_refs_requiring_rewrite": 69,
   "nonmain_refs_publicly_rewritten_and_verified": 68,
-  "main_publication": "pending_exact_deployment_and_production_verification",
+  "main_publication": "live_verified",
   "public_raw_downloads_byte_verified": 133,
   "exact_complete_downloads_in_each_of_four_local_modes": 250,
   "vermont_filename_correction": {
@@ -41,5 +41,16 @@
   "remaining_provider_action": "Google project owner must revoke/rotate or verify adequate restrictions; repository credentials cannot do this.",
   "remaining_github_action": "Request cached historical commit-view cleanup through GitHub Support; do not claim a ref rewrite deletes cached objects.",
   "first_changed_original_commit": "1b11ba7f4f377c19145a87522749cd2de789d9b1",
-  "private_old_clones": "Do not push pre-rewrite branches or tags."
+  "private_old_clones": "Do not push pre-rewrite branches or tags.",
+  "main_commit": "ab48cd71228be2354f2cc4a50cdc6a61c9fda0c5",
+  "pages_run": 42127917576,
+  "security_run": 42127917557,
+  "original_public_refs_rewritten_and_verified": 69,
+  "public_release_assets_preserved": 224,
+  "production_exact_complete_downloads": 250,
+  "production_four_modes_verified": true,
+  "acquisition_clone_reachable_history_google_matches": 0,
+  "acquisition_clone_scanned_blobs": 4818,
+  "acquisition_branch": "voter-participation-clean-counties-20261105",
+  "temporary_remote_staging_branch_removed": true
 }

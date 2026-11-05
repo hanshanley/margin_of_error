@@ -1,0 +1,10 @@
+{
+  "ref": "refs/heads/voter-participation-analysis",
+  "before": "bf53f5cb639dd203270a1f91f245c9698e2d724f",
+  "after": "1c64ce1d63e47ef93aaba3a79f577e5f0c6231f3",
+  "changed_paths": [
+    "data/county-source-reviews/20261105-bucks-reviewed-01/originals/official-results-index.html"
+  ],
+  "only_credential_replacements": true,
+  "published": false
+}

@@ -1,0 +1,118 @@
+{
+  "audit.json": {
+    "bytes": 1745,
+    "sha256": "03cf97b686eefb58cde37a4f4df1c7e6826b3f0f70a571e1112ab5522db177c6"
+  },
+  "county-candidate-results.csv": {
+    "bytes": 2520,
+    "sha256": "c8a9cfd6152301ba8c2948cfbdfbd52a538e697b7e8347ea370d987c45059977"
+  },
+  "county-contest-party-totals.csv": {
+    "bytes": 2235,
+    "sha256": "9f6d9011bfd30936523d0ec633025706f04ea2ac65abda6aac709328103d8faa"
+  },
+  "county-contest-totals.csv": {
+    "bytes": 872,
+    "sha256": "6e30480bc71e0b7249c604f95d818a40dc3a0f11bf9252e03c92d94535d6447a"
+  },
+  "county-participation.csv": {
+    "bytes": 237,
+    "sha256": "a7489dc2dedb8e639257e68b2ec3db788d9eeb8f33712a1e10cdcef37b37ef13"
+  },
+  "native-contest-reporting.csv": {
+    "bytes": 1983,
+    "sha256": "9954c77127d639e05f97368acb8208a28a96fc0a8a47a9258a2b8e912876740a"
+  },
+  "native-municipality-candidate-counts.csv": {
+    "bytes": 60769,
+    "sha256": "a82d48869cc6e17db64bf8116e846424d6a278ba11c3c9db83923ae6a549e769"
+  },
+  "native-precinct-candidate-counts.csv": {
+    "bytes": 217810,
+    "sha256": "048285884a7bee1b77e434a4c59df45ed0dbed6c174d2acc99c52d6bafa4ef7c"
+  },
+  "originals/native-detail-01.html": {
+    "bytes": 395149,
+    "sha256": "1e5a759b7f8b855a0e36a0312d2250c1dc1c15827a414a0f19c6bdf6445911d3"
+  },
+  "originals/native-detail-02.html": {
+    "bytes": 75555,
+    "sha256": "c41262c6a1b31d567e070580820265a7a1e3c3599e6aa7c5e579643d366640a4"
+  },
+  "originals/native-detail-03.html": {
+    "bytes": 324490,
+    "sha256": "558465f918bd80a910cdb8880ad0593b76e49ee1544123a02be9bef0b6868dde"
+  },
+  "originals/native-detail-04.html": {
+    "bytes": 82432,
+    "sha256": "32e07af89401f7c7b3048759cebc1908e67e2d94f7c9889bb1af475aaa0b7cd2"
+  },
+  "originals/native-detail-05.html": {
+    "bytes": 50809,
+    "sha256": "d07cd31d25239e327c32594a33c8ed5d86a7532fc585df63e431e7f9935fea3a"
+  },
+  "originals/native-detail-06.html": {
+    "bytes": 61687,
+    "sha256": "9f235f220ac19c126ff920ae723fda58699f2596c7f43031e1a8f18e957233a7"
+  },
+  "originals/native-detail-07.html": {
+    "bytes": 62109,
+    "sha256": "e3ca697acac53c0c2400e9b6cdea4946a876579e10e67bea56af3d84840d6c5d"
+  },
+  "originals/native-detail-08.html": {
+    "bytes": 92235,
+    "sha256": "fb49d0bd08ec629d536106813585851d063722af23267718bac678c1cc463374"
+  },
+  "originals/native-detail-09.html": {
+    "bytes": 121543,
+    "sha256": "9a8ad6109c670fd00423aa8664b74c71616e625f5ea36d49c9972298eea4d8df"
+  },
+  "originals/native-report-01.html": {
+    "bytes": 45241,
+    "sha256": "161cc391bc22fc622e67732fa1f36c169f06070731bce78864b59b97944b56fc"
+  },
+  "originals/native-report-02.html": {
+    "bytes": 42801,
+    "sha256": "0a63c56bb98880bfd6e5ee830952f8f75b43856d82307788a93b0653a90544bb"
+  },
+  "originals/native-report-03.html": {
+    "bytes": 42809,
+    "sha256": "2c5c767a885dc56bbbba26115d9c4f7a57ac7e5b778a769841cf01b651d3b082"
+  },
+  "originals/native-report-04.html": {
+    "bytes": 42817,
+    "sha256": "7d5e38aa8f9d0f3d754f04843bae62283362ca0760eb7502f158a75f4bb888b4"
+  },
+  "originals/native-report-05.html": {
+    "bytes": 40380,
+    "sha256": "3a24d2a44539ad11083e45732b900df6bd7a67a323148db32204f31b2f3abab7"
+  },
+  "originals/native-report-06.html": {
+    "bytes": 40384,
+    "sha256": "f09b46850a023b68214c2975b9f4a7ba7930016cf298b3eb53ce6b6da9020e5e"
+  },
+  "originals/native-report-07.html": {
+    "bytes": 42820,
+    "sha256": "c716cbb1d58bbd8afe0f7d4aae3a74ec546cde29aac34f022246aaf1e806951b"
+  },
+  "originals/native-report-08.html": {
+    "bytes": 42822,
+    "sha256": "9002d5a196cd11ad465b42a6908633b9585945bb21f6350b664c12fc0c06922a"
+  },
+  "originals/native-report-09.html": {
+    "bytes": 90374,
+    "sha256": "1d8f518803ea6cac2bbb0159a46f30c54be8fae18dd5aa8924472fc629463a2f"
+  },
+  "originals/official-index.html": {
+    "bytes": 33973,
+    "sha256": "9c94b08f4401acfe028db71795dbaeac7dc1455e72b9228a8d094e6f8a9abe57"
+  },
+  "originals/receipts.json": {
+    "bytes": 12508,
+    "sha256": "9e9828e0d161047b772831b277f6d3dbf33ec8a4345882d1842aca297dab45ac"
+  },
+  "review-dauphin-county-results.py": {
+    "bytes": 16024,
+    "sha256": "29aa78f05b08bd706eb6b3dfcc8429e2d55fe8dd3df24e7ac56f55401c13d3dc"
+  }
+}

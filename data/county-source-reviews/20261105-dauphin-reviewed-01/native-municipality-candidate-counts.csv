@@ -1,0 +1,461 @@
+year,state_code,county_fips,county,office,district_literal,contest,geography_level,native_unit,candidate,party_literal,votes
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,City of Harrisburg,JOSH SHAPIRO,DEM,11498
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,City of Harrisburg,STACY GARRITY,REP,1353
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,City of Harrisburg,KEN KRAWCHUK,LIBRT,221
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,City of Harrisburg,WRITE-IN1,NONPARTISAN,38
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Berrysburg Borough,JOSH SHAPIRO,DEM,38
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Berrysburg Borough,STACY GARRITY,REP,95
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Berrysburg Borough,KEN KRAWCHUK,LIBRT,1
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Berrysburg Borough,WRITE-IN1,NONPARTISAN,0
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Dauphin Borough,JOSH SHAPIRO,DEM,185
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Dauphin Borough,STACY GARRITY,REP,163
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Dauphin Borough,KEN KRAWCHUK,LIBRT,9
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Dauphin Borough,WRITE-IN1,NONPARTISAN,2
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Elizabethville Borough,JOSH SHAPIRO,DEM,162
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Elizabethville Borough,STACY GARRITY,REP,280
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Elizabethville Borough,KEN KRAWCHUK,LIBRT,11
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Elizabethville Borough,WRITE-IN1,NONPARTISAN,2
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Gratz Borough,JOSH SHAPIRO,DEM,81
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Gratz Borough,STACY GARRITY,REP,148
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Gratz Borough,KEN KRAWCHUK,LIBRT,8
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Gratz Borough,WRITE-IN1,NONPARTISAN,0
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Halifax Borough,JOSH SHAPIRO,DEM,104
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Halifax Borough,STACY GARRITY,REP,131
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Halifax Borough,KEN KRAWCHUK,LIBRT,9
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Halifax Borough,WRITE-IN1,NONPARTISAN,1
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Highspire Borough,JOSH SHAPIRO,DEM,578
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Highspire Borough,STACY GARRITY,REP,263
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Highspire Borough,KEN KRAWCHUK,LIBRT,13
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Highspire Borough,WRITE-IN1,NONPARTISAN,3
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Hummelstown Borough,JOSH SHAPIRO,DEM,1157
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Hummelstown Borough,STACY GARRITY,REP,812
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Hummelstown Borough,KEN KRAWCHUK,LIBRT,46
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Hummelstown Borough,WRITE-IN1,NONPARTISAN,2
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Lykens Borough,JOSH SHAPIRO,DEM,253
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Lykens Borough,STACY GARRITY,REP,365
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Lykens Borough,KEN KRAWCHUK,LIBRT,17
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Lykens Borough,WRITE-IN1,NONPARTISAN,0
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Middletown Borough,JOSH SHAPIRO,DEM,1917
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Middletown Borough,STACY GARRITY,REP,1136
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Middletown Borough,KEN KRAWCHUK,LIBRT,70
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Middletown Borough,WRITE-IN1,NONPARTISAN,4
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Millersburg Borough,JOSH SHAPIRO,DEM,389
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Millersburg Borough,STACY GARRITY,REP,486
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Millersburg Borough,KEN KRAWCHUK,LIBRT,27
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Millersburg Borough,WRITE-IN1,NONPARTISAN,1
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Paxtang Borough,JOSH SHAPIRO,DEM,547
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Paxtang Borough,STACY GARRITY,REP,149
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Paxtang Borough,KEN KRAWCHUK,LIBRT,15
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Paxtang Borough,WRITE-IN1,NONPARTISAN,2
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Penbrook Borough,JOSH SHAPIRO,DEM,731
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Penbrook Borough,STACY GARRITY,REP,234
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Penbrook Borough,KEN KRAWCHUK,LIBRT,22
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Penbrook Borough,WRITE-IN1,NONPARTISAN,1
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Royalton Borough,JOSH SHAPIRO,DEM,186
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Royalton Borough,STACY GARRITY,REP,245
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Royalton Borough,KEN KRAWCHUK,LIBRT,7
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Royalton Borough,WRITE-IN1,NONPARTISAN,1
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Steelton Borough,JOSH SHAPIRO,DEM,1180
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Steelton Borough,STACY GARRITY,REP,364
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Steelton Borough,KEN KRAWCHUK,LIBRT,31
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Steelton Borough,WRITE-IN1,NONPARTISAN,1
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Pillow Borough,JOSH SHAPIRO,DEM,51
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Pillow Borough,STACY GARRITY,REP,77
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Pillow Borough,KEN KRAWCHUK,LIBRT,1
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Pillow Borough,WRITE-IN1,NONPARTISAN,0
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Williamstown Borough,JOSH SHAPIRO,DEM,145
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Williamstown Borough,STACY GARRITY,REP,227
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Williamstown Borough,KEN KRAWCHUK,LIBRT,9
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Williamstown Borough,WRITE-IN1,NONPARTISAN,2
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Conewago Township,JOSH SHAPIRO,DEM,660
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Conewago Township,STACY GARRITY,REP,770
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Conewago Township,KEN KRAWCHUK,LIBRT,33
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Conewago Township,WRITE-IN1,NONPARTISAN,1
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Derry Township,JOSH SHAPIRO,DEM,7215
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Derry Township,STACY GARRITY,REP,3611
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Derry Township,KEN KRAWCHUK,LIBRT,175
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Derry Township,WRITE-IN1,NONPARTISAN,15
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,East Hanover Township,JOSH SHAPIRO,DEM,1167
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,East Hanover Township,STACY GARRITY,REP,1449
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,East Hanover Township,KEN KRAWCHUK,LIBRT,52
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,East Hanover Township,WRITE-IN1,NONPARTISAN,5
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Halifax Township,JOSH SHAPIRO,DEM,565
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Halifax Township,STACY GARRITY,REP,973
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Halifax Township,KEN KRAWCHUK,LIBRT,37
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Halifax Township,WRITE-IN1,NONPARTISAN,4
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Jackson Township,JOSH SHAPIRO,DEM,300
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Jackson Township,STACY GARRITY,REP,604
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Jackson Township,KEN KRAWCHUK,LIBRT,17
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Jackson Township,WRITE-IN1,NONPARTISAN,0
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Jefferson Township,JOSH SHAPIRO,DEM,58
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Jefferson Township,STACY GARRITY,REP,140
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Jefferson Township,KEN KRAWCHUK,LIBRT,3
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Jefferson Township,WRITE-IN1,NONPARTISAN,1
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Londonderry Township,JOSH SHAPIRO,DEM,824
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Londonderry Township,STACY GARRITY,REP,1273
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Londonderry Township,KEN KRAWCHUK,LIBRT,51
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Londonderry Township,WRITE-IN1,NONPARTISAN,1
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Lower Paxton Township,JOSH SHAPIRO,DEM,15864
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Lower Paxton Township,STACY GARRITY,REP,8471
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Lower Paxton Township,KEN KRAWCHUK,LIBRT,430
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Lower Paxton Township,WRITE-IN1,NONPARTISAN,30
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Lower Swatara Township,JOSH SHAPIRO,DEM,2098
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Lower Swatara Township,STACY GARRITY,REP,1685
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Lower Swatara Township,KEN KRAWCHUK,LIBRT,75
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Lower Swatara Township,WRITE-IN1,NONPARTISAN,3
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Lykens Township,JOSH SHAPIRO,DEM,101
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Lykens Township,STACY GARRITY,REP,250
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Lykens Township,KEN KRAWCHUK,LIBRT,9
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Lykens Township,WRITE-IN1,NONPARTISAN,0
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Middle Paxton Township,JOSH SHAPIRO,DEM,1244
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Middle Paxton Township,STACY GARRITY,REP,1465
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Middle Paxton Township,KEN KRAWCHUK,LIBRT,48
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Middle Paxton Township,WRITE-IN1,NONPARTISAN,4
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Mifflin Township,JOSH SHAPIRO,DEM,44
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Mifflin Township,STACY GARRITY,REP,173
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Mifflin Township,KEN KRAWCHUK,LIBRT,5
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Mifflin Township,WRITE-IN1,NONPARTISAN,0
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Reed Township,JOSH SHAPIRO,DEM,35
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Reed Township,STACY GARRITY,REP,91
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Reed Township,KEN KRAWCHUK,LIBRT,3
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Reed Township,WRITE-IN1,NONPARTISAN,0
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Rush Township,JOSH SHAPIRO,DEM,24
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Rush Township,STACY GARRITY,REP,70
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Rush Township,KEN KRAWCHUK,LIBRT,4
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Rush Township,WRITE-IN1,NONPARTISAN,0
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,South Hanover Township,JOSH SHAPIRO,DEM,1954
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,South Hanover Township,STACY GARRITY,REP,1564
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,South Hanover Township,KEN KRAWCHUK,LIBRT,81
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,South Hanover Township,WRITE-IN1,NONPARTISAN,8
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Susquehanna Township,JOSH SHAPIRO,DEM,9649
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Susquehanna Township,STACY GARRITY,REP,2802
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Susquehanna Township,KEN KRAWCHUK,LIBRT,196
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Susquehanna Township,WRITE-IN1,NONPARTISAN,20
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Swatara Township,JOSH SHAPIRO,DEM,6816
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Swatara Township,STACY GARRITY,REP,3011
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Swatara Township,KEN KRAWCHUK,LIBRT,167
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Swatara Township,WRITE-IN1,NONPARTISAN,15
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Upper Paxton Township,JOSH SHAPIRO,DEM,516
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Upper Paxton Township,STACY GARRITY,REP,1036
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Upper Paxton Township,KEN KRAWCHUK,LIBRT,18
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Upper Paxton Township,WRITE-IN1,NONPARTISAN,2
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Washington Townshp,JOSH SHAPIRO,DEM,294
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Washington Townshp,STACY GARRITY,REP,559
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Washington Townshp,KEN KRAWCHUK,LIBRT,13
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Washington Townshp,WRITE-IN1,NONPARTISAN,0
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Wayne Township,JOSH SHAPIRO,DEM,208
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Wayne Township,STACY GARRITY,REP,477
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Wayne Township,KEN KRAWCHUK,LIBRT,12
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Wayne Township,WRITE-IN1,NONPARTISAN,1
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,West Hanover Township,JOSH SHAPIRO,DEM,3097
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,West Hanover Township,STACY GARRITY,REP,2654
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,West Hanover Township,KEN KRAWCHUK,LIBRT,76
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,West Hanover Township,WRITE-IN1,NONPARTISAN,5
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Wiconisco Township,JOSH SHAPIRO,DEM,123
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Wiconisco Township,STACY GARRITY,REP,260
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Wiconisco Township,KEN KRAWCHUK,LIBRT,4
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Wiconisco Township,WRITE-IN1,NONPARTISAN,1
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Williams Township,JOSH SHAPIRO,DEM,124
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Williams Township,STACY GARRITY,REP,247
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Williams Township,KEN KRAWCHUK,LIBRT,6
+2026,PA,42043,Dauphin,governor_lieutenant_governor,,GOVERNOR AND LIEUTENANT GOVERNOR,municipality,Williams Township,WRITE-IN1,NONPARTISAN,0
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,City of Harrisburg,JANELLE STELSON,DEM,11437
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,City of Harrisburg,SCOTT PERRY,REP,1613
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,City of Harrisburg,WRITE-IN1,NONPARTISAN,68
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Berrysburg Borough,JANELLE STELSON,DEM,29
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Berrysburg Borough,SCOTT PERRY,REP,106
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Berrysburg Borough,WRITE-IN1,NONPARTISAN,0
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Dauphin Borough,JANELLE STELSON,DEM,179
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Dauphin Borough,SCOTT PERRY,REP,179
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Dauphin Borough,WRITE-IN1,NONPARTISAN,1
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Elizabethville Borough,JANELLE STELSON,DEM,134
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Elizabethville Borough,SCOTT PERRY,REP,318
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Elizabethville Borough,WRITE-IN1,NONPARTISAN,1
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Gratz Borough,JANELLE STELSON,DEM,65
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Gratz Borough,SCOTT PERRY,REP,175
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Gratz Borough,WRITE-IN1,NONPARTISAN,1
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Halifax Borough,JANELLE STELSON,DEM,100
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Halifax Borough,SCOTT PERRY,REP,145
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Halifax Borough,WRITE-IN1,NONPARTISAN,0
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Highspire Borough,JANELLE STELSON,DEM,555
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Highspire Borough,SCOTT PERRY,REP,298
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Highspire Borough,WRITE-IN1,NONPARTISAN,4
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Hummelstown Borough,JANELLE STELSON,DEM,1066
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Hummelstown Borough,SCOTT PERRY,REP,934
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Hummelstown Borough,WRITE-IN1,NONPARTISAN,21
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Lykens Borough,JANELLE STELSON,DEM,226
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Lykens Borough,SCOTT PERRY,REP,404
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Lykens Borough,WRITE-IN1,NONPARTISAN,2
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Middletown Borough,JANELLE STELSON,DEM,1825
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Middletown Borough,SCOTT PERRY,REP,1290
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Middletown Borough,WRITE-IN1,NONPARTISAN,16
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Millersburg Borough,JANELLE STELSON,DEM,338
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Millersburg Borough,SCOTT PERRY,REP,553
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Millersburg Borough,WRITE-IN1,NONPARTISAN,5
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Paxtang Borough,JANELLE STELSON,DEM,535
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Paxtang Borough,SCOTT PERRY,REP,174
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Paxtang Borough,WRITE-IN1,NONPARTISAN,3
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Penbrook Borough,JANELLE STELSON,DEM,724
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Penbrook Borough,SCOTT PERRY,REP,262
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Penbrook Borough,WRITE-IN1,NONPARTISAN,6
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Royalton Borough,JANELLE STELSON,DEM,177
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Royalton Borough,SCOTT PERRY,REP,262
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Royalton Borough,WRITE-IN1,NONPARTISAN,2
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Steelton Borough,JANELLE STELSON,DEM,1176
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Steelton Borough,SCOTT PERRY,REP,394
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Steelton Borough,WRITE-IN1,NONPARTISAN,4
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Pillow Borough,JANELLE STELSON,DEM,43
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Pillow Borough,SCOTT PERRY,REP,87
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Pillow Borough,WRITE-IN1,NONPARTISAN,0
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Williamstown Borough,JANELLE STELSON,DEM,127
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Williamstown Borough,SCOTT PERRY,REP,252
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Williamstown Borough,WRITE-IN1,NONPARTISAN,2
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Conewago Township,JANELLE STELSON,DEM,593
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Conewago Township,SCOTT PERRY,REP,864
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Conewago Township,WRITE-IN1,NONPARTISAN,7
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Derry Township,JANELLE STELSON,DEM,6778
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Derry Township,SCOTT PERRY,REP,4213
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Derry Township,WRITE-IN1,NONPARTISAN,43
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,East Hanover Township,JANELLE STELSON,DEM,1075
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,East Hanover Township,SCOTT PERRY,REP,1583
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,East Hanover Township,WRITE-IN1,NONPARTISAN,19
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Halifax Township,JANELLE STELSON,DEM,496
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Halifax Township,SCOTT PERRY,REP,1077
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Halifax Township,WRITE-IN1,NONPARTISAN,3
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Jackson Township,JANELLE STELSON,DEM,272
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Jackson Township,SCOTT PERRY,REP,651
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Jackson Township,WRITE-IN1,NONPARTISAN,2
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Jefferson Township,JANELLE STELSON,DEM,54
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Jefferson Township,SCOTT PERRY,REP,148
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Jefferson Township,WRITE-IN1,NONPARTISAN,0
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Londonderry Township,JANELLE STELSON,DEM,767
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Londonderry Township,SCOTT PERRY,REP,1381
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Londonderry Township,WRITE-IN1,NONPARTISAN,7
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Lower Paxton Township,JANELLE STELSON,DEM,14999
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Lower Paxton Township,SCOTT PERRY,REP,9725
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Lower Paxton Township,WRITE-IN1,NONPARTISAN,93
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Lower Swatara Township,JANELLE STELSON,DEM,1975
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Lower Swatara Township,SCOTT PERRY,REP,1895
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Lower Swatara Township,WRITE-IN1,NONPARTISAN,10
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Lykens Township,JANELLE STELSON,DEM,92
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Lykens Township,SCOTT PERRY,REP,264
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Lykens Township,WRITE-IN1,NONPARTISAN,3
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Middle Paxton Township,JANELLE STELSON,DEM,1140
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Middle Paxton Township,SCOTT PERRY,REP,1607
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Middle Paxton Township,WRITE-IN1,NONPARTISAN,8
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Mifflin Township,JANELLE STELSON,DEM,29
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Mifflin Township,SCOTT PERRY,REP,190
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Mifflin Township,WRITE-IN1,NONPARTISAN,3
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Reed Township,JANELLE STELSON,DEM,33
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Reed Township,SCOTT PERRY,REP,95
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Reed Township,WRITE-IN1,NONPARTISAN,1
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Rush Township,JANELLE STELSON,DEM,23
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Rush Township,SCOTT PERRY,REP,74
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Rush Township,WRITE-IN1,NONPARTISAN,1
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,South Hanover Township,JANELLE STELSON,DEM,1802
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,South Hanover Township,SCOTT PERRY,REP,1777
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,South Hanover Township,WRITE-IN1,NONPARTISAN,25
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Susquehanna Township,JANELLE STELSON,DEM,9325
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Susquehanna Township,SCOTT PERRY,REP,3299
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Susquehanna Township,WRITE-IN1,NONPARTISAN,45
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Swatara Township,JANELLE STELSON,DEM,6539
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Swatara Township,SCOTT PERRY,REP,3428
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Swatara Township,WRITE-IN1,NONPARTISAN,39
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Upper Paxton Township,JANELLE STELSON,DEM,444
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Upper Paxton Township,SCOTT PERRY,REP,1121
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Upper Paxton Township,WRITE-IN1,NONPARTISAN,8
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Washington Townshp,JANELLE STELSON,DEM,275
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Washington Townshp,SCOTT PERRY,REP,593
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Washington Townshp,WRITE-IN1,NONPARTISAN,2
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Wayne Township,JANELLE STELSON,DEM,176
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Wayne Township,SCOTT PERRY,REP,519
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Wayne Township,WRITE-IN1,NONPARTISAN,3
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,West Hanover Township,JANELLE STELSON,DEM,2835
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,West Hanover Township,SCOTT PERRY,REP,2982
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,West Hanover Township,WRITE-IN1,NONPARTISAN,20
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Wiconisco Township,JANELLE STELSON,DEM,100
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Wiconisco Township,SCOTT PERRY,REP,291
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Wiconisco Township,WRITE-IN1,NONPARTISAN,0
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Williams Township,JANELLE STELSON,DEM,97
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Williams Township,SCOTT PERRY,REP,284
+2026,PA,42043,Dauphin,us_house,,REPRESENTATIVE IN CONGRESS,municipality,Williams Township,WRITE-IN1,NONPARTISAN,1
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Berrysburg Borough,NATHAN WOOD,DEM,27
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Berrysburg Borough,GREG ROTHMAN,REP,107
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Berrysburg Borough,WRITE-IN1,NONPARTISAN,0
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Elizabethville Borough,NATHAN WOOD,DEM,124
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Elizabethville Borough,GREG ROTHMAN,REP,326
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Elizabethville Borough,WRITE-IN1,NONPARTISAN,1
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Gratz Borough,NATHAN WOOD,DEM,56
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Gratz Borough,GREG ROTHMAN,REP,182
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Gratz Borough,WRITE-IN1,NONPARTISAN,0
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Halifax Borough,NATHAN WOOD,DEM,96
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Halifax Borough,GREG ROTHMAN,REP,151
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Halifax Borough,WRITE-IN1,NONPARTISAN,0
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Lykens Borough,NATHAN WOOD,DEM,190
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Lykens Borough,GREG ROTHMAN,REP,438
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Lykens Borough,WRITE-IN1,NONPARTISAN,2
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Millersburg Borough,NATHAN WOOD,DEM,317
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Millersburg Borough,GREG ROTHMAN,REP,577
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Millersburg Borough,WRITE-IN1,NONPARTISAN,6
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Pillow Borough,NATHAN WOOD,DEM,36
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Pillow Borough,GREG ROTHMAN,REP,95
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Pillow Borough,WRITE-IN1,NONPARTISAN,0
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Williamstown Borough,NATHAN WOOD,DEM,119
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Williamstown Borough,GREG ROTHMAN,REP,263
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Williamstown Borough,WRITE-IN1,NONPARTISAN,2
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Halifax Township,NATHAN WOOD,DEM,408
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Halifax Township,GREG ROTHMAN,REP,1159
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Halifax Township,WRITE-IN1,NONPARTISAN,0
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Jackson Township,NATHAN WOOD,DEM,246
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Jackson Township,GREG ROTHMAN,REP,678
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Jackson Township,WRITE-IN1,NONPARTISAN,0
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Jefferson Township,NATHAN WOOD,DEM,47
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Jefferson Township,GREG ROTHMAN,REP,155
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Jefferson Township,WRITE-IN1,NONPARTISAN,0
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Lykens Township,NATHAN WOOD,DEM,66
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Lykens Township,GREG ROTHMAN,REP,293
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Lykens Township,WRITE-IN1,NONPARTISAN,0
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Mifflin Township,NATHAN WOOD,DEM,25
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Mifflin Township,GREG ROTHMAN,REP,195
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Mifflin Township,WRITE-IN1,NONPARTISAN,1
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Reed Township,NATHAN WOOD,DEM,29
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Reed Township,GREG ROTHMAN,REP,100
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Reed Township,WRITE-IN1,NONPARTISAN,0
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Rush Township,NATHAN WOOD,DEM,17
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Rush Township,GREG ROTHMAN,REP,79
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Rush Township,WRITE-IN1,NONPARTISAN,1
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Upper Paxton Township,NATHAN WOOD,DEM,373
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Upper Paxton Township,GREG ROTHMAN,REP,1194
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Upper Paxton Township,WRITE-IN1,NONPARTISAN,2
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Washington Townshp,NATHAN WOOD,DEM,238
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Washington Townshp,GREG ROTHMAN,REP,631
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Washington Townshp,WRITE-IN1,NONPARTISAN,0
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Wayne Township,NATHAN WOOD,DEM,157
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Wayne Township,GREG ROTHMAN,REP,538
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Wayne Township,WRITE-IN1,NONPARTISAN,1
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Wiconisco Township,NATHAN WOOD,DEM,95
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Wiconisco Township,GREG ROTHMAN,REP,296
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Wiconisco Township,WRITE-IN1,NONPARTISAN,0
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Williams Township,NATHAN WOOD,DEM,82
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Williams Township,GREG ROTHMAN,REP,300
+2026,PA,42043,Dauphin,state_senate,34,SENATOR IN THE GENERAL ASSEMBLY - SD34,municipality,Williams Township,WRITE-IN1,NONPARTISAN,0
+2026,PA,42043,Dauphin,state_house,103,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD103,municipality,City of Harrisburg,NATE DAVIDSON,DEM,7513
+2026,PA,42043,Dauphin,state_house,103,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD103,municipality,City of Harrisburg,CINDI WARD,REP,902
+2026,PA,42043,Dauphin,state_house,103,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD103,municipality,City of Harrisburg,WRITE-IN1,NONPARTISAN,39
+2026,PA,42043,Dauphin,state_house,104,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD104,municipality,City of Harrisburg,DAVE MADSEN,DEM,4019
+2026,PA,42043,Dauphin,state_house,104,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD104,municipality,City of Harrisburg,WRITE-IN1,NONPARTISAN,105
+2026,PA,42043,Dauphin,state_house,104,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD104,municipality,Highspire Borough,DAVE MADSEN,DEM,630
+2026,PA,42043,Dauphin,state_house,104,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD104,municipality,Highspire Borough,WRITE-IN1,NONPARTISAN,80
+2026,PA,42043,Dauphin,state_house,104,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD104,municipality,Paxtang Borough,DAVE MADSEN,DEM,576
+2026,PA,42043,Dauphin,state_house,104,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD104,municipality,Paxtang Borough,WRITE-IN1,NONPARTISAN,35
+2026,PA,42043,Dauphin,state_house,104,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD104,municipality,Steelton Borough,DAVE MADSEN,DEM,1303
+2026,PA,42043,Dauphin,state_house,104,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD104,municipality,Steelton Borough,WRITE-IN1,NONPARTISAN,53
+2026,PA,42043,Dauphin,state_house,104,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD104,municipality,Lower Swatara Township,DAVE MADSEN,DEM,772
+2026,PA,42043,Dauphin,state_house,104,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD104,municipality,Lower Swatara Township,WRITE-IN1,NONPARTISAN,62
+2026,PA,42043,Dauphin,state_house,104,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD104,municipality,Swatara Township,DAVE MADSEN,DEM,7577
+2026,PA,42043,Dauphin,state_house,104,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD104,municipality,Swatara Township,WRITE-IN1,NONPARTISAN,577
+2026,PA,42043,Dauphin,state_house,105,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD105,municipality,Penbrook Borough,JUSTIN FLEMING,DEM,817
+2026,PA,42043,Dauphin,state_house,105,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD105,municipality,Penbrook Borough,WRITE-IN1,NONPARTISAN,56
+2026,PA,42043,Dauphin,state_house,105,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD105,municipality,Lower Paxton Township,JUSTIN FLEMING,DEM,10288
+2026,PA,42043,Dauphin,state_house,105,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD105,municipality,Lower Paxton Township,WRITE-IN1,NONPARTISAN,707
+2026,PA,42043,Dauphin,state_house,105,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD105,municipality,Susquehanna Township,JUSTIN FLEMING,DEM,10527
+2026,PA,42043,Dauphin,state_house,105,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD105,municipality,Susquehanna Township,WRITE-IN1,NONPARTISAN,502
+2026,PA,42043,Dauphin,state_house,106,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD106,municipality,Hummelstown Borough,ANJU SINGH,DEM,820
+2026,PA,42043,Dauphin,state_house,106,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD106,municipality,Hummelstown Borough,TOM MEHAFFIE,REP,1192
+2026,PA,42043,Dauphin,state_house,106,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD106,municipality,Hummelstown Borough,WRITE-IN1,NONPARTISAN,4
+2026,PA,42043,Dauphin,state_house,106,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD106,municipality,Middletown Borough,ANJU SINGH,DEM,1514
+2026,PA,42043,Dauphin,state_house,106,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD106,municipality,Middletown Borough,TOM MEHAFFIE,REP,1602
+2026,PA,42043,Dauphin,state_house,106,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD106,municipality,Middletown Borough,WRITE-IN1,NONPARTISAN,6
+2026,PA,42043,Dauphin,state_house,106,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD106,municipality,Royalton Borough,ANJU SINGH,DEM,140
+2026,PA,42043,Dauphin,state_house,106,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD106,municipality,Royalton Borough,TOM MEHAFFIE,REP,300
+2026,PA,42043,Dauphin,state_house,106,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD106,municipality,Royalton Borough,WRITE-IN1,NONPARTISAN,0
+2026,PA,42043,Dauphin,state_house,106,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD106,municipality,Conewago Township,ANJU SINGH,DEM,470
+2026,PA,42043,Dauphin,state_house,106,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD106,municipality,Conewago Township,TOM MEHAFFIE,REP,985
+2026,PA,42043,Dauphin,state_house,106,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD106,municipality,Conewago Township,WRITE-IN1,NONPARTISAN,6
+2026,PA,42043,Dauphin,state_house,106,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD106,municipality,Derry Township,ANJU SINGH,DEM,5582
+2026,PA,42043,Dauphin,state_house,106,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD106,municipality,Derry Township,TOM MEHAFFIE,REP,5361
+2026,PA,42043,Dauphin,state_house,106,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD106,municipality,Derry Township,WRITE-IN1,NONPARTISAN,31
+2026,PA,42043,Dauphin,state_house,106,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD106,municipality,East Hanover Township,ANJU SINGH,DEM,860
+2026,PA,42043,Dauphin,state_house,106,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD106,municipality,East Hanover Township,TOM MEHAFFIE,REP,1812
+2026,PA,42043,Dauphin,state_house,106,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD106,municipality,East Hanover Township,WRITE-IN1,NONPARTISAN,1
+2026,PA,42043,Dauphin,state_house,106,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD106,municipality,Londonderry Township,ANJU SINGH,DEM,578
+2026,PA,42043,Dauphin,state_house,106,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD106,municipality,Londonderry Township,TOM MEHAFFIE,REP,1563
+2026,PA,42043,Dauphin,state_house,106,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD106,municipality,Londonderry Township,WRITE-IN1,NONPARTISAN,4
+2026,PA,42043,Dauphin,state_house,106,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD106,municipality,Lower Swatara Township,ANJU SINGH,DEM,950
+2026,PA,42043,Dauphin,state_house,106,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD106,municipality,Lower Swatara Township,TOM MEHAFFIE,REP,1828
+2026,PA,42043,Dauphin,state_house,106,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD106,municipality,Lower Swatara Township,WRITE-IN1,NONPARTISAN,17
+2026,PA,42043,Dauphin,state_house,106,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD106,municipality,South Hanover Township,ANJU SINGH,DEM,1450
+2026,PA,42043,Dauphin,state_house,106,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD106,municipality,South Hanover Township,TOM MEHAFFIE,REP,2118
+2026,PA,42043,Dauphin,state_house,106,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD106,municipality,South Hanover Township,WRITE-IN1,NONPARTISAN,17
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Berrysburg Borough,KATHRYN WATERS,DEM,21
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Berrysburg Borough,JOE KERWIN,REP,114
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Berrysburg Borough,WRITE-IN1,NONPARTISAN,0
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Dauphin Borough,KATHRYN WATERS,DEM,156
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Dauphin Borough,JOE KERWIN,REP,202
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Dauphin Borough,WRITE-IN1,NONPARTISAN,0
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Elizabethville Borough,KATHRYN WATERS,DEM,95
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Elizabethville Borough,JOE KERWIN,REP,358
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Elizabethville Borough,WRITE-IN1,NONPARTISAN,1
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Gratz Borough,KATHRYN WATERS,DEM,38
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Gratz Borough,JOE KERWIN,REP,201
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Gratz Borough,WRITE-IN1,NONPARTISAN,0
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Halifax Borough,KATHRYN WATERS,DEM,77
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Halifax Borough,JOE KERWIN,REP,169
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Halifax Borough,WRITE-IN1,NONPARTISAN,0
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Lykens Borough,KATHRYN WATERS,DEM,157
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Lykens Borough,JOE KERWIN,REP,475
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Lykens Borough,WRITE-IN1,NONPARTISAN,2
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Millersburg Borough,KATHRYN WATERS,DEM,264
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Millersburg Borough,JOE KERWIN,REP,636
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Millersburg Borough,WRITE-IN1,NONPARTISAN,2
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Pillow Borough,KATHRYN WATERS,DEM,27
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Pillow Borough,JOE KERWIN,REP,104
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Pillow Borough,WRITE-IN1,NONPARTISAN,0
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Williamstown Borough,KATHRYN WATERS,DEM,100
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Williamstown Borough,JOE KERWIN,REP,281
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Williamstown Borough,WRITE-IN1,NONPARTISAN,3
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Halifax Township,KATHRYN WATERS,DEM,344
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Halifax Township,JOE KERWIN,REP,1232
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Halifax Township,WRITE-IN1,NONPARTISAN,1
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Jackson Township,KATHRYN WATERS,DEM,190
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Jackson Township,JOE KERWIN,REP,730
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Jackson Township,WRITE-IN1,NONPARTISAN,0
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Jefferson Township,KATHRYN WATERS,DEM,35
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Jefferson Township,JOE KERWIN,REP,165
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Jefferson Township,WRITE-IN1,NONPARTISAN,0
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Lower Paxton Township,KATHRYN WATERS,DEM,5743
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Lower Paxton Township,JOE KERWIN,REP,5431
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Lower Paxton Township,WRITE-IN1,NONPARTISAN,15
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Lykens Township,KATHRYN WATERS,DEM,45
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Lykens Township,JOE KERWIN,REP,315
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Lykens Township,WRITE-IN1,NONPARTISAN,0
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Middle Paxton Township,KATHRYN WATERS,DEM,949
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Middle Paxton Township,JOE KERWIN,REP,1805
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Middle Paxton Township,WRITE-IN1,NONPARTISAN,3
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Mifflin Township,KATHRYN WATERS,DEM,20
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Mifflin Township,JOE KERWIN,REP,202
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Mifflin Township,WRITE-IN1,NONPARTISAN,1
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Reed Township,KATHRYN WATERS,DEM,25
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Reed Township,JOE KERWIN,REP,103
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Reed Township,WRITE-IN1,NONPARTISAN,0
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Rush Township,KATHRYN WATERS,DEM,18
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Rush Township,JOE KERWIN,REP,80
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Rush Township,WRITE-IN1,NONPARTISAN,1
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Upper Paxton Township,KATHRYN WATERS,DEM,285
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Upper Paxton Township,JOE KERWIN,REP,1291
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Upper Paxton Township,WRITE-IN1,NONPARTISAN,2
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Washington Townshp,KATHRYN WATERS,DEM,185
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Washington Townshp,JOE KERWIN,REP,681
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Washington Townshp,WRITE-IN1,NONPARTISAN,1
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Wayne Township,KATHRYN WATERS,DEM,129
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Wayne Township,JOE KERWIN,REP,568
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Wayne Township,WRITE-IN1,NONPARTISAN,1
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,West Hanover Township,KATHRYN WATERS,DEM,2527
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,West Hanover Township,JOE KERWIN,REP,3288
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,West Hanover Township,WRITE-IN1,NONPARTISAN,13
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Wiconisco Township,KATHRYN WATERS,DEM,77
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Wiconisco Township,JOE KERWIN,REP,313
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Wiconisco Township,WRITE-IN1,NONPARTISAN,0
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Williams Township,KATHRYN WATERS,DEM,69
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Williams Township,JOE KERWIN,REP,313
+2026,PA,42043,Dauphin,state_house,125,REPRESENTATIVE IN THE GENERAL ASSEMBLY - HD125,municipality,Williams Township,WRITE-IN1,NONPARTISAN,1

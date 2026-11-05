@@ -1,0 +1,295 @@
+[
+  {
+    "file": "official-index.html",
+    "url": "https://elections.dauphincounty.gov/?key=42",
+    "final_url": "https://elections.dauphincounty.gov/?key=42",
+    "status": 200,
+    "bytes": 33973,
+    "sha256": "9c94b08f4401acfe028db71795dbaeac7dc1455e72b9228a8d094e6f8a9abe57",
+    "retrieved_at_utc": "2026-11-05T22:51:31.105235+00:00",
+    "screening": {
+      "original_sha256": "9c94b08f4401acfe028db71795dbaeac7dc1455e72b9228a8d094e6f8a9abe57",
+      "original_bytes": 33973,
+      "replacements": 0
+    }
+  },
+  {
+    "file": "native-report-01.html",
+    "native_label": "GOVERNOR AND LT GOVERNOR",
+    "url": "https://elections.dauphincounty.gov/?key=42&race=GOVERNOR%20AND%20LT%20GOVERNOR",
+    "final_url": "https://elections.dauphincounty.gov/?key=42&race=GOVERNOR%20AND%20LT%20GOVERNOR",
+    "status": 200,
+    "bytes": 45241,
+    "sha256": "161cc391bc22fc622e67732fa1f36c169f06070731bce78864b59b97944b56fc",
+    "retrieved_at_utc": "2026-11-05T22:51:41.976166+00:00",
+    "screening": {
+      "original_sha256": "161cc391bc22fc622e67732fa1f36c169f06070731bce78864b59b97944b56fc",
+      "original_bytes": 45241,
+      "replacements": 0
+    }
+  },
+  {
+    "file": "native-report-02.html",
+    "native_label": "REPRESENTATIVE IN CONGRESS",
+    "url": "https://elections.dauphincounty.gov/?key=42&race=REPRESENTATIVE%20IN%20CONGRESS",
+    "final_url": "https://elections.dauphincounty.gov/?key=42&race=REPRESENTATIVE%20IN%20CONGRESS",
+    "status": 200,
+    "bytes": 42801,
+    "sha256": "0a63c56bb98880bfd6e5ee830952f8f75b43856d82307788a93b0653a90544bb",
+    "retrieved_at_utc": "2026-11-05T22:51:41.975377+00:00",
+    "screening": {
+      "original_sha256": "0a63c56bb98880bfd6e5ee830952f8f75b43856d82307788a93b0653a90544bb",
+      "original_bytes": 42801,
+      "replacements": 0
+    }
+  },
+  {
+    "file": "native-report-03.html",
+    "native_label": "STATE SEN 34",
+    "url": "https://elections.dauphincounty.gov/?key=42&race=STATE%20SEN%2034",
+    "final_url": "https://elections.dauphincounty.gov/?key=42&race=STATE%20SEN%2034",
+    "status": 200,
+    "bytes": 42809,
+    "sha256": "2c5c767a885dc56bbbba26115d9c4f7a57ac7e5b778a769841cf01b651d3b082",
+    "retrieved_at_utc": "2026-11-05T22:51:41.976198+00:00",
+    "screening": {
+      "original_sha256": "2c5c767a885dc56bbbba26115d9c4f7a57ac7e5b778a769841cf01b651d3b082",
+      "original_bytes": 42809,
+      "replacements": 0
+    }
+  },
+  {
+    "file": "native-report-04.html",
+    "native_label": "HD 103",
+    "url": "https://elections.dauphincounty.gov/?key=42&race=HD%20103",
+    "final_url": "https://elections.dauphincounty.gov/?key=42&race=HD%20103",
+    "status": 200,
+    "bytes": 42817,
+    "sha256": "7d5e38aa8f9d0f3d754f04843bae62283362ca0760eb7502f158a75f4bb888b4",
+    "retrieved_at_utc": "2026-11-05T22:51:41.976127+00:00",
+    "screening": {
+      "original_sha256": "7d5e38aa8f9d0f3d754f04843bae62283362ca0760eb7502f158a75f4bb888b4",
+      "original_bytes": 42817,
+      "replacements": 0
+    }
+  },
+  {
+    "file": "native-report-05.html",
+    "native_label": "HD 104",
+    "url": "https://elections.dauphincounty.gov/?key=42&race=HD%20104",
+    "final_url": "https://elections.dauphincounty.gov/?key=42&race=HD%20104",
+    "status": 200,
+    "bytes": 40380,
+    "sha256": "3a24d2a44539ad11083e45732b900df6bd7a67a323148db32204f31b2f3abab7",
+    "retrieved_at_utc": "2026-11-05T22:51:42.141822+00:00",
+    "screening": {
+      "original_sha256": "3a24d2a44539ad11083e45732b900df6bd7a67a323148db32204f31b2f3abab7",
+      "original_bytes": 40380,
+      "replacements": 0
+    }
+  },
+  {
+    "file": "native-report-06.html",
+    "native_label": "HD 105",
+    "url": "https://elections.dauphincounty.gov/?key=42&race=HD%20105",
+    "final_url": "https://elections.dauphincounty.gov/?key=42&race=HD%20105",
+    "status": 200,
+    "bytes": 40384,
+    "sha256": "f09b46850a023b68214c2975b9f4a7ba7930016cf298b3eb53ce6b6da9020e5e",
+    "retrieved_at_utc": "2026-11-05T22:51:42.144207+00:00",
+    "screening": {
+      "original_sha256": "f09b46850a023b68214c2975b9f4a7ba7930016cf298b3eb53ce6b6da9020e5e",
+      "original_bytes": 40384,
+      "replacements": 0
+    }
+  },
+  {
+    "file": "native-report-07.html",
+    "native_label": "HD 106",
+    "url": "https://elections.dauphincounty.gov/?key=42&race=HD%20106",
+    "final_url": "https://elections.dauphincounty.gov/?key=42&race=HD%20106",
+    "status": 200,
+    "bytes": 42820,
+    "sha256": "c716cbb1d58bbd8afe0f7d4aae3a74ec546cde29aac34f022246aaf1e806951b",
+    "retrieved_at_utc": "2026-11-05T22:51:42.141781+00:00",
+    "screening": {
+      "original_sha256": "c716cbb1d58bbd8afe0f7d4aae3a74ec546cde29aac34f022246aaf1e806951b",
+      "original_bytes": 42820,
+      "replacements": 0
+    }
+  },
+  {
+    "file": "native-report-08.html",
+    "native_label": "HD 125",
+    "url": "https://elections.dauphincounty.gov/?key=42&race=HD%20125",
+    "final_url": "https://elections.dauphincounty.gov/?key=42&race=HD%20125",
+    "status": 200,
+    "bytes": 42822,
+    "sha256": "9002d5a196cd11ad465b42a6908633b9585945bb21f6350b664c12fc0c06922a",
+    "retrieved_at_utc": "2026-11-05T22:51:42.138558+00:00",
+    "screening": {
+      "original_sha256": "9002d5a196cd11ad465b42a6908633b9585945bb21f6350b664c12fc0c06922a",
+      "original_bytes": 42822,
+      "replacements": 0
+    }
+  },
+  {
+    "file": "native-report-09.html",
+    "native_label": "In-Person Ballot Precinct List",
+    "url": "https://elections.dauphincounty.gov/Machine?key=42",
+    "final_url": "https://elections.dauphincounty.gov/Machine?key=42",
+    "status": 200,
+    "bytes": 90374,
+    "sha256": "1d8f518803ea6cac2bbb0159a46f30c54be8fae18dd5aa8924472fc629463a2f",
+    "retrieved_at_utc": "2026-11-05T22:51:42.312199+00:00",
+    "screening": {
+      "original_sha256": "1d8f518803ea6cac2bbb0159a46f30c54be8fae18dd5aa8924472fc629463a2f",
+      "original_bytes": 90374,
+      "replacements": 0
+    }
+  },
+  {
+    "file": "native-detail-01.html",
+    "native_contest": "GOVERNOR AND LT GOVERNOR",
+    "native_label": "Click here for precincts results",
+    "url": "https://elections.dauphincounty.gov/Races?key=42&race=GOVERNOR%20AND%20LIEUTENANT%20GOVERNOR",
+    "final_url": "https://elections.dauphincounty.gov/Races?key=42&race=GOVERNOR%20AND%20LIEUTENANT%20GOVERNOR",
+    "status": 200,
+    "bytes": 395149,
+    "sha256": "1e5a759b7f8b855a0e36a0312d2250c1dc1c15827a414a0f19c6bdf6445911d3",
+    "retrieved_at_utc": "2026-11-05T22:52:10.200248+00:00",
+    "screening": {
+      "original_sha256": "1e5a759b7f8b855a0e36a0312d2250c1dc1c15827a414a0f19c6bdf6445911d3",
+      "original_bytes": 395149,
+      "replacements": 0
+    }
+  },
+  {
+    "file": "native-detail-02.html",
+    "native_contest": "HD 125",
+    "native_label": "Click here for precinct by ballot",
+    "url": "https://www.dauphincounty.gov/public-records/registration-elections/election2026",
+    "final_url": "https://www.dauphincounty.gov/public-records/registration-elections/election2026",
+    "status": 200,
+    "bytes": 75555,
+    "sha256": "c41262c6a1b31d567e070580820265a7a1e3c3599e6aa7c5e579643d366640a4",
+    "retrieved_at_utc": "2026-11-05T22:52:10.350036+00:00",
+    "screening": {
+      "original_sha256": "c41262c6a1b31d567e070580820265a7a1e3c3599e6aa7c5e579643d366640a4",
+      "original_bytes": 75555,
+      "replacements": 0
+    }
+  },
+  {
+    "file": "native-detail-03.html",
+    "native_contest": "REPRESENTATIVE IN CONGRESS",
+    "native_label": "Click here for precincts results",
+    "url": "https://elections.dauphincounty.gov/Races?key=42&race=REPRESENTATIVE%20IN%20CONGRESS",
+    "final_url": "https://elections.dauphincounty.gov/Races?key=42&race=REPRESENTATIVE%20IN%20CONGRESS",
+    "status": 200,
+    "bytes": 324490,
+    "sha256": "558465f918bd80a910cdb8880ad0593b76e49ee1544123a02be9bef0b6868dde",
+    "retrieved_at_utc": "2026-11-05T22:52:10.181066+00:00",
+    "screening": {
+      "original_sha256": "558465f918bd80a910cdb8880ad0593b76e49ee1544123a02be9bef0b6868dde",
+      "original_bytes": 324490,
+      "replacements": 0
+    }
+  },
+  {
+    "file": "native-detail-04.html",
+    "native_contest": "STATE SEN 34",
+    "native_label": "Click here for precincts results",
+    "url": "https://elections.dauphincounty.gov/Races?key=42&race=SENATOR%20IN%20THE%20GENERAL%20ASSEMBLY%20-%20SD34",
+    "final_url": "https://elections.dauphincounty.gov/Races?key=42&race=SENATOR%20IN%20THE%20GENERAL%20ASSEMBLY%20-%20SD34",
+    "status": 200,
+    "bytes": 82432,
+    "sha256": "32e07af89401f7c7b3048759cebc1908e67e2d94f7c9889bb1af475aaa0b7cd2",
+    "retrieved_at_utc": "2026-11-05T22:52:10.128385+00:00",
+    "screening": {
+      "original_sha256": "32e07af89401f7c7b3048759cebc1908e67e2d94f7c9889bb1af475aaa0b7cd2",
+      "original_bytes": 82432,
+      "replacements": 0
+    }
+  },
+  {
+    "file": "native-detail-05.html",
+    "native_contest": "HD 103",
+    "native_label": "Click here for precincts results",
+    "url": "https://elections.dauphincounty.gov/Races?key=42&race=REPRESENTATIVE%20IN%20THE%20GENERAL%20ASSEMBLY%20-%20HD103",
+    "final_url": "https://elections.dauphincounty.gov/Races?key=42&race=REPRESENTATIVE%20IN%20THE%20GENERAL%20ASSEMBLY%20-%20HD103",
+    "status": 200,
+    "bytes": 50809,
+    "sha256": "d07cd31d25239e327c32594a33c8ed5d86a7532fc585df63e431e7f9935fea3a",
+    "retrieved_at_utc": "2026-11-05T22:52:10.286782+00:00",
+    "screening": {
+      "original_sha256": "d07cd31d25239e327c32594a33c8ed5d86a7532fc585df63e431e7f9935fea3a",
+      "original_bytes": 50809,
+      "replacements": 0
+    }
+  },
+  {
+    "file": "native-detail-06.html",
+    "native_contest": "HD 104",
+    "native_label": "Click here for precincts results",
+    "url": "https://elections.dauphincounty.gov/Races?key=42&race=REPRESENTATIVE%20IN%20THE%20GENERAL%20ASSEMBLY%20-%20HD104",
+    "final_url": "https://elections.dauphincounty.gov/Races?key=42&race=REPRESENTATIVE%20IN%20THE%20GENERAL%20ASSEMBLY%20-%20HD104",
+    "status": 200,
+    "bytes": 61687,
+    "sha256": "9f235f220ac19c126ff920ae723fda58699f2596c7f43031e1a8f18e957233a7",
+    "retrieved_at_utc": "2026-11-05T22:52:10.365219+00:00",
+    "screening": {
+      "original_sha256": "9f235f220ac19c126ff920ae723fda58699f2596c7f43031e1a8f18e957233a7",
+      "original_bytes": 61687,
+      "replacements": 0
+    }
+  },
+  {
+    "file": "native-detail-07.html",
+    "native_contest": "HD 105",
+    "native_label": "Click here for precincts results",
+    "url": "https://elections.dauphincounty.gov/Races?key=42&race=REPRESENTATIVE%20IN%20THE%20GENERAL%20ASSEMBLY%20-%20HD105",
+    "final_url": "https://elections.dauphincounty.gov/Races?key=42&race=REPRESENTATIVE%20IN%20THE%20GENERAL%20ASSEMBLY%20-%20HD105",
+    "status": 200,
+    "bytes": 62109,
+    "sha256": "e3ca697acac53c0c2400e9b6cdea4946a876579e10e67bea56af3d84840d6c5d",
+    "retrieved_at_utc": "2026-11-05T22:52:10.376691+00:00",
+    "screening": {
+      "original_sha256": "e3ca697acac53c0c2400e9b6cdea4946a876579e10e67bea56af3d84840d6c5d",
+      "original_bytes": 62109,
+      "replacements": 0
+    }
+  },
+  {
+    "file": "native-detail-08.html",
+    "native_contest": "HD 106",
+    "native_label": "Click here for precincts results",
+    "url": "https://elections.dauphincounty.gov/Races?key=42&race=REPRESENTATIVE%20IN%20THE%20GENERAL%20ASSEMBLY%20-%20HD106",
+    "final_url": "https://elections.dauphincounty.gov/Races?key=42&race=REPRESENTATIVE%20IN%20THE%20GENERAL%20ASSEMBLY%20-%20HD106",
+    "status": 200,
+    "bytes": 92235,
+    "sha256": "fb49d0bd08ec629d536106813585851d063722af23267718bac678c1cc463374",
+    "retrieved_at_utc": "2026-11-05T22:52:10.473773+00:00",
+    "screening": {
+      "original_sha256": "fb49d0bd08ec629d536106813585851d063722af23267718bac678c1cc463374",
+      "original_bytes": 92235,
+      "replacements": 0
+    }
+  },
+  {
+    "file": "native-detail-09.html",
+    "native_contest": "HD 125",
+    "native_label": "Click here for precincts results",
+    "url": "https://elections.dauphincounty.gov/Races?key=42&race=REPRESENTATIVE%20IN%20THE%20GENERAL%20ASSEMBLY%20-%20HD125",
+    "final_url": "https://elections.dauphincounty.gov/Races?key=42&race=REPRESENTATIVE%20IN%20THE%20GENERAL%20ASSEMBLY%20-%20HD125",
+    "status": 200,
+    "bytes": 121543,
+    "sha256": "9a8ad6109c670fd00423aa8664b74c71616e625f5ea36d49c9972298eea4d8df",
+    "retrieved_at_utc": "2026-11-05T22:52:10.556856+00:00",
+    "screening": {
+      "original_sha256": "9a8ad6109c670fd00423aa8664b74c71616e625f5ea36d49c9972298eea4d8df",
+      "original_bytes": 121543,
+      "replacements": 0
+    }
+  }
+]
