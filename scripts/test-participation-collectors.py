@@ -29,6 +29,133 @@ nd_review = module("review-north-dakota-precinct-results")
 nd_maps = module("build-north-dakota-precinct-results")
 vt_review = module("review-vermont-precinct-results")
 vt_maps = module("build-vermont-precinct-results")
+id_review = module("review-idaho-precinct-results")
+
+
+def idaho_fixture():
+    from collections import Counter
+
+    text = lambda value: [dict(languageId="en", text=value)]
+    metadata = dict(election=dict(id=id_review.ELECTION, jurisdictionId=id_review.JURISDICTION,
+        electionDate="2026-11-03", isPrimary=False, isProduction=True,
+        name=text("General Election - November 3, 2026")),
+        voterRegistration=[dict(localityName=text("First County"), total=200),
+                           dict(localityName=text("Second County"), total=100)], ballotItems=[])
+    precincts, ballots, summary = [], [], Counter()
+    for district, county, identifiers in [(1, "First County", ["001", "002"]), (2, "Second County", ["003"])]:
+        candidates = [dict(nativeId=f"{party}{district}", name=text(f"{party} candidate {district}"),
+            party=dict(abbreviation=party), voteCount=votes * len(identifiers))
+            for party, votes in [("DEM", 20), ("REP", 7), ("IND", 1)]]
+        metadata["ballotItems"].append(dict(name=text(f"United States Representative District {district}"),
+            voteFor=text("Vote for 1"), voteTotal=28 * len(identifiers),
+            summaryResults=dict(ballotOptions=candidates)))
+        for precinct in identifiers:
+            options = [(c["name"][0]["text"], c["nativeId"], id_review.PARTIES[c["party"]["abbreviation"]],
+                        c["voteCount"] // len(identifiers)) for c in candidates]
+            options += [("Ballots Cast", "", None, 30), ("Over Votes", "", None, 1), ("Under Votes", "", None, 1)]
+            for name, choice, party, votes in options:
+                row = (county, f"United States Representative District {district}", f"usrep{district}",
+                       name, choice, party, votes, 1)
+                precincts.append((precinct,) + row)
+                summary[row[:6] + (row[7],)] += votes
+            ballots.append((county, precinct, 95, 5, 100, 30, "30 %"))
+    summary = [key[:6] + (votes, key[6]) for key, votes in summary.items()]
+    return summary, precincts, ballots, metadata
+
+
+def test_idaho_reconciles_candidates_statistics_and_separate_participation():
+    rows, statistics, audit = id_review.idaho_results(*idaho_fixture())
+    assert len(rows) == len(statistics) == 3
+    assert rows[0]["precinct"] == "001" and rows[0]["contest_votes"] == 28
+    assert rows[0]["other_votes"] == 1 and rows[0]["reported_ballots"] == 30
+    assert rows[0]["margin_pp"] == pytest.approx(1300 / 28)
+    assert all(r["reported_pct"] == 30 and r["quality_flags"] == [] for r in statistics)
+    assert audit["original_precinct_rows"] == 18 and not audit["county_registration_disagreements"]
+
+
+def test_idaho_accepts_only_explicit_terminal_party_label_variants():
+    summary, precincts, ballots, metadata = idaho_fixture()
+    summary = [r[:5] + (r[5] + " Party" if r[5] else r[5],) + r[6:] for r in summary]
+    precincts = [r[:6] + (r[6] + " Party" if r[6] else r[6],) + r[7:] for r in precincts]
+    rows, statistics, _ = id_review.idaho_results(summary, precincts, ballots, metadata)
+    assert sum(r["contest_votes"] for r in rows) == 84
+    assert all(r["reported_pct"] == 30 for r in statistics)
+
+
+@pytest.mark.parametrize("problem", ["duplicate", "missing", "county_total", "district_total",
+                                     "candidate_name", "party", "wrong_election", "negative", "noninteger"])
+def test_idaho_rejects_bad_candidate_scope_and_counts(problem):
+    summary, precincts, ballots, metadata = idaho_fixture()
+    if problem == "duplicate":
+        precincts.append(precincts[0])
+    elif problem == "missing":
+        precincts.pop(0)
+    elif problem == "county_total":
+        row = list(summary[0]); row[6] += 1; summary[0] = tuple(row)
+    elif problem == "district_total":
+        metadata["ballotItems"][0]["summaryResults"]["ballotOptions"][0]["voteCount"] += 1
+        metadata["ballotItems"][0]["voteTotal"] += 1
+    elif problem == "candidate_name":
+        metadata["ballotItems"][0]["summaryResults"]["ballotOptions"][0]["name"][0]["text"] = "Different"
+    elif problem == "party":
+        metadata["ballotItems"][0]["summaryResults"]["ballotOptions"][0]["party"]["abbreviation"] = "REP"
+    elif problem == "wrong_election":
+        metadata["election"]["electionDate"] = "2024-11-05"
+    else:
+        row = list(precincts[0]); row[7] = -1 if problem == "negative" else 20.5; precincts[0] = tuple(row)
+    with pytest.raises(ValueError):
+        id_review.idaho_results(summary, precincts, ballots, metadata)
+
+
+def test_idaho_withholds_entire_pooled_county_without_allocating_ballots():
+    summary, precincts, ballots, metadata = idaho_fixture()
+    precincts = [("Absentee",) + r[1:] if r[0] == "002" else r for r in precincts]
+    ballots = [(r[0], "Absentee") + r[2:] if r[1] == "002" else r for r in ballots]
+    rows, statistics, audit = id_review.idaho_results(summary, precincts, ballots, metadata)
+    assert audit["pooled_counties"] == ["First County"]
+    assert sum(r["ballots"] for r in statistics) == 90
+    assert [r["reported_pct"] for r in statistics] == [None, None, 30]
+    assert rows[1]["reporting_unit_kind"] == "pooled_absentee_or_early_unit"
+
+
+def test_idaho_county_registration_disagreement_withholds_only_affected_county():
+    summary, precincts, ballots, metadata = idaho_fixture()
+    metadata["voterRegistration"][0]["total"] = 201
+    _, statistics, audit = id_review.idaho_results(summary, precincts, ballots, metadata)
+    assert [r["reported_pct"] for r in statistics] == [None, None, 30]
+    assert audit["county_registration_disagreements"] == [dict(county="First County", workbook=200, api=201)]
+
+
+@pytest.mark.parametrize("problem", ["small", "components", "over_registration", "ballot_mismatch",
+                                     "duplicate_ballot", "missing_ballot", "missing_statistic"])
+def test_idaho_missing_and_inconsistent_ballot_denominators(problem):
+    summary, precincts, ballots, metadata = idaho_fixture()
+    row = list(ballots[0])
+    if problem == "small":
+        row[2:5] = [20, 0, 20]
+    elif problem == "components":
+        row[2] = 94
+    elif problem == "over_registration":
+        row[2:5] = [24, 5, 29]
+    elif problem == "ballot_mismatch":
+        row[5] = 29
+    elif problem == "duplicate_ballot":
+        ballots.append(ballots[0])
+    elif problem == "missing_ballot":
+        ballots.pop()
+    elif problem == "missing_statistic":
+        precincts = [r for r in precincts if r[4] != "Under Votes"]
+        summary = [r for r in summary if r[3] != "Under Votes"]
+    ballots[0] = tuple(row)
+    if problem in {"small", "components", "over_registration", "ballot_mismatch"}:
+        _, statistics, _ = id_review.idaho_results(summary, precincts, ballots, metadata)
+        assert statistics[0]["reported_pct"] is None
+        assert statistics[0]["ballots"] == (29 if problem == "ballot_mismatch" else 30)
+        assert statistics[0]["house_contest_ballots"] == 30
+        assert statistics[-1]["reported_pct"] == 30
+    else:
+        with pytest.raises(ValueError):
+            id_review.idaho_results(summary, precincts, ballots, metadata)
 
 
 def vt_fixture():
@@ -385,6 +512,11 @@ def test_source_review_accepts_manifest_provenance_without_claiming_mapped_parti
     (tmp_path / "review.json").write_text(json.dumps(review))
     row = next(r for r in precinct_coverage.build_rows() if r["year"] == 2026 and r["state_code"] == "VT")
     assert row["boundary_source"] == "" and row["join"] == "withheld"
+    review.update(state_code="ID")
+    review.pop("sources")
+    (tmp_path / "review.json").write_text(json.dumps(review))
+    row = next(r for r in precinct_coverage.build_rows() if r["year"] == 2026 and r["state_code"] == "ID")
+    assert row["boundary_source"] == "" and row["publication"] == "full_counts_download_only"
 
 
 def test_historical_source_acquisition_requires_exact_reviewed_bytes_without_inventing_turnout():

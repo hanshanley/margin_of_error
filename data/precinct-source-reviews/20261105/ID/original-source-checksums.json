@@ -1,0 +1,32 @@
+{
+  "public-response-01.json": {
+    "url": "https://results.voteidaho.gov/results/public/api/elections/id/nov2026/closeraces",
+    "bytes": 381368,
+    "sha256": "550a9f1b82b2daae007b0ceabb00f66fcb693f9a34a23e1409eaa430ce52131f"
+  },
+  "public-response-02.json": {
+    "url": "https://results.voteidaho.gov/results/public/api/elections/id/nov2026/data",
+    "bytes": 522644,
+    "sha256": "939dba8e14b4d996cbcd67fc33bd75d7dd75667562dd901720a07c7aaa2233a8"
+  },
+  "ballots-by-precinct.xlsx": {
+    "url": "https://results.voteidaho.gov/cdn/results/8c9d6490-6c2e-460e-8e42-0d1c8609ce42/Ballots%20Cast%20by%20Precinct_b93eea82-a25a-4555-a1f0-257bc6f15eeb.xlsx",
+    "bytes": 44341,
+    "sha256": "2c78333c826cad738ce1c4c997379fe9a5279d24ddf5dde43e297d2c6602e5e7"
+  },
+  "summary-results.pdf": {
+    "url": "https://results.voteidaho.gov/cdn/results/8c9d6490-6c2e-460e-8e42-0d1c8609ce42/Summary%20Results%20with%20Contest-Level%20Details_db7e1f17-7e82-4da8-9438-a8c69fb15682.PDF",
+    "bytes": 181055,
+    "sha256": "0446d2d3d408c1dc41748b72721fbbf34c528bb0bb554ad13f677d412fab7327"
+  },
+  "precinct-results.pdf": {
+    "url": "https://results.voteidaho.gov/cdn/results/8c9d6490-6c2e-460e-8e42-0d1c8609ce42/Detailed%20Results%20with%20Write-Ins%20by%20Contest%20Table_04859608-9df3-4ef6-a4dc-ee9ade14a8e5.pdf",
+    "bytes": 368908,
+    "sha256": "7bbdbe4c4bbb4842d146f8d4822b8fbae428e95e1a3f2ab6cffb60ee5eff9f84"
+  },
+  "summary-and-precinct-results.xlsx": {
+    "url": "https://results.voteidaho.gov/cdn/results/8c9d6490-6c2e-460e-8e42-0d1c8609ce42/Results_4b8f24fc-12bc-49fc-8b65-ab538eee0752.xlsx",
+    "bytes": 4790377,
+    "sha256": "205df98c557b509d415bef548b20a3a4d51a2378d7aba6aa7148d89c713be8e5"
+  }
+}

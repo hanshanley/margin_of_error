@@ -36,7 +36,7 @@
     "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-vermont-maps-20261105/complete-vermont-2026-reporting-split-maps.zip",
     "complete_download_bytes": 4857690,
     "complete_download_sha256": "0c3777c6a5691d8fe97709c12ed56ed06c7757ad56a5efe74cea392f011e274c",
-    "publication": "snapshot_ready",
+    "publication": "live_verified_partial",
     "source_documents": [
       {"file": "originals/service.json.gz", "label": "Official November 2026 Vermont voting-area service definition (JSON · gzip)"},
       {"file": "audit.json", "label": "Vermont town/split joins, withheld units and complete boundary-overlap audit (JSON)"}

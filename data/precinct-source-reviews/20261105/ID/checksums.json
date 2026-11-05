@@ -1,0 +1,42 @@
+{
+  "audit.json": {
+    "bytes": 4663,
+    "sha256": "d3d422de101badf8df981f6546a3b0e7703f0d504da0d940aa6497ff4edaa943"
+  },
+  "original-source-checksums.json": {
+    "bytes": 1708,
+    "sha256": "5371cead0859a68f536341c034a35dbb628ff6e16e77b1f80975ae0dff53a707"
+  },
+  "originals/ballots-by-precinct.xlsx.gz": {
+    "bytes": 40473,
+    "sha256": "d2dfd29e7e915c1ee9b53e5544b4a89053a4d2a3baeb5e30fd7ea6ede9bb0714"
+  },
+  "originals/precinct-results.pdf.gz": {
+    "bytes": 226323,
+    "sha256": "4fa4ecadfc92642beb3562fe70038df5aeabd780f709554162d86d29e387e9c2"
+  },
+  "originals/public-response-01.json.gz": {
+    "bytes": 29429,
+    "sha256": "fef232fc3b97f193ed2c3a606a70362a8051139822f1e372766c82ecb34a419f"
+  },
+  "originals/public-response-02.json.gz": {
+    "bytes": 33827,
+    "sha256": "0f2d04147b5e4b2a1e4b21f72a20dd1a32704fcb02b443dfa74e47624a871c25"
+  },
+  "originals/summary-and-precinct-results.xlsx.gz": {
+    "bytes": 3491252,
+    "sha256": "2c8783c92430a171d46a94386f21621f74f45bddd25e8a462076d5ec68d3fae4"
+  },
+  "originals/summary-results.pdf.gz": {
+    "bytes": 118350,
+    "sha256": "631fd3f79e99d1fed5596cccf180882127dc695118c09fa71ddc28ffca89697e"
+  },
+  "participation.json.gz": {
+    "bytes": 36414,
+    "sha256": "45a0720c1770af7647124e13d62263d5f3f2161b06f5c35ee21426478fc689f8"
+  },
+  "results.csv.gz": {
+    "bytes": 35125,
+    "sha256": "0afab29a679bd0a8f247a857691832085fa476be842960eeb65bea569da08ccd"
+  }
+}

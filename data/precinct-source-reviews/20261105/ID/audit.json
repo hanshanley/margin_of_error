@@ -1,0 +1,111 @@
+{
+  "year": 2026,
+  "state_code": "ID",
+  "complete": "no",
+  "reporting_units": 986,
+  "counties": 44,
+  "candidate_results": "acquired_reconciled",
+  "participation": "acquired_precinct_counts_and_provisional_rates",
+  "boundaries": "correct_election_reference_pending",
+  "join": "withheld",
+  "validation": "counts_passed_map_withheld",
+  "publication": "full_counts_download_only",
+  "source_url": "https://results.voteidaho.gov/results/public/id/elections/nov2026",
+  "election_id": "01000000-9c16-51a0-5d47-08df20ba1eaa",
+  "election_version": "f7c0af8a-b1f1-4001-b755-129b96f07982",
+  "source_updated": "2026-11-04T22:15:32.675786Z",
+  "original_sources": 6,
+  "original_bytes": 6288693,
+  "candidate_totals": {
+    "democratic_votes": 242058,
+    "republican_votes": 414312,
+    "other_votes": 53032,
+    "contest_votes": 709402
+  },
+  "ballots": 731980,
+  "registrations": 1055089,
+  "rates_available": 815,
+  "rates_withheld": 171,
+  "reconciliation": {
+    "original_summary_rows": 6302,
+    "original_precinct_rows": 141838,
+    "pooled_counties": [
+      "Boise County",
+      "Boundary County",
+      "Gem County",
+      "Idaho County",
+      "Nez Perce County",
+      "Owyhee County",
+      "Shoshone County"
+    ],
+    "county_registration_disagreements": [
+      {
+        "county": "Twin Falls County",
+        "workbook": 41878,
+        "api": 42990
+      }
+    ],
+    "house_ballot_disagreements": [
+      {
+        "county": "Bear Lake County",
+        "precinct": "Montpelier #3",
+        "house_contest_ballots": 321,
+        "ballot_report": 322
+      },
+      {
+        "county": "Boundary County",
+        "precinct": "Absentee",
+        "house_contest_ballots": 1839,
+        "ballot_report": 1939
+      },
+      {
+        "county": "Butte County",
+        "precinct": "Arco 1",
+        "house_contest_ballots": 394,
+        "ballot_report": 395
+      },
+      {
+        "county": "Butte County",
+        "precinct": "Arco 2",
+        "house_contest_ballots": 232,
+        "ballot_report": 465
+      },
+      {
+        "county": "Idaho County",
+        "precinct": "015-Harpster",
+        "house_contest_ballots": 139,
+        "ballot_report": 141
+      },
+      {
+        "county": "Nez Perce County",
+        "precinct": "GIFFORD 30",
+        "house_contest_ballots": 86,
+        "ballot_report": 153
+      },
+      {
+        "county": "Nez Perce County",
+        "precinct": "RIMROCK 23",
+        "house_contest_ballots": 110,
+        "ballot_report": 217
+      }
+    ],
+    "district_candidate_totals": {
+      "usrep1": {
+        "BrendanJ.Gomez-0-Constitution": 3413,
+        "KayleePeterson-0-Democratic": 108996,
+        "SarahZabel-0-Independent": 23004,
+        "RussFulcher-0-Republican": 243591
+      },
+      "usrep2": {
+        "EllieGilbreath-1-Democratic": 133062,
+        "EmreHouser-2-Independent": 7848,
+        "TrippCharlesHutchinson-3-Independent": 11628,
+        "WillJohanson-4-Libertarian": 7139,
+        "MikeSimpson-5-Republican": 170721
+      }
+    }
+  },
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-idaho-20261105/complete-idaho-2026-source-review.zip",
+  "notes": "All original precinct candidate/statistic rows reconcile to the complete county-summary workbook. House candidates additionally reconcile by native candidate identity to both district API totals; only the explicit optional terminal ' Party' label is normalized between county exports. candidate votes plus overvotes and undervotes equal House-contest ballots for every unit. Separate ballot-report disagreements remain explicit and have no participation rate. Other contests' candidate semantics are not independently reviewed. Registration and ballot counts remain separate from candidate votes. Provisional fractions are withheld for entire counties with separately reported absentee/early units or an API registration disagreement, and for small, missing or inconsistent local denominators. Source percentages and all original counts are retained, never allocated or repaired. These are source reporting units, not verified polling-precinct geography or demographic participation estimates. The complete ZIP retains both complete XLSX workbooks, both PDFs, both public JSON captures, all normalized House and participation rows, receipts and audits. No boundaries are mapped.",
+  "next_action": "Acquire explicitly identified 2026 precinct geography and documented reporting-unit crosswalks. Resolve pooled absentee/early scope, Twin Falls registration disagreement and local denominators before enabling withheld rates. Do not substitute the portal's Idaho2025 basemap."
+}

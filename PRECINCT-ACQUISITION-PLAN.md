@@ -316,9 +316,12 @@ red/blue selection, separate municipal participation, button/wheel zoom,
 Selecting a small split legitimately reaches the maximum zoom; control tests
 first zoom out before testing zoom in. Geographic fetch errors are disclosed
 in the geography note, not the general caption. No renderer change was needed.
-Status remains **snapshot_ready** until the exact deployment and live map
-verification pass. After publication, move to the next unacquired 2026
-jurisdiction rather than repeatedly rerunning unchanged national layers.
+UI commit `84d9645d439f453afca788b410ab66d6d2d0143b` deployed successfully in
+exact run **41958527818**. The live registry, ledger and unchanged renderer
+match that commit byte-for-byte; every focused preview check above also passes
+live. The complete mapped supplement is **live-verified partial coverage**,
+not every precinct. Proceed with Idaho and other unacquired 2026 jurisdictions
+rather than rerunning unchanged national layers.
 
 ## Idaho 2026 complete originals acquired; count review in progress
 
@@ -351,11 +354,51 @@ disagree with the API's county total; special absentee/early units and small,
 zero or inconsistent denominators require explicit scope flags and withheld
 rates, not fabricated turnout.
 
-Next: persist a reproducible immutable review and full-source archive; reconcile
-House candidates to both district API totals and validate ballot/registration
-scope before registering the download. Then obtain explicit 2026 boundaries and
-reporting-unit crosswalks. The portal's `Idaho2025` basemap is not evidence of
-correct 2026 precinct geography; no map is claimed or older geometry substituted.
+The reproducible count review is now built at
+`data/precinct-source-reviews/20261105/ID/` using
+`scripts/review-idaho-precinct-results.py`. **102 collector tests pass.**
+All **986 House rows** reconcile to both district APIs by original native
+candidate identity and name. County party labels differ only by an explicitly
+accepted terminal ` Party`, not by candidate aliases. Candidate totals are
+**242,058 Democratic**, **414,312 Republican**, **53,032 other**:
+**709,402 candidate votes**, never turnout. House votes plus overvotes and
+undervotes equal each unit's own House-contest ballot total.
+
+Separate ballot totals independently match every county API total. **Seven**
+House-contest versus separate-ballot disagreements are retained, with rates
+withheld. Entire counties with separately reported absentee/early units or an
+API registration disagreement also have no rate; no pooled ballots are
+allocated. There are **815 provisional registered-voter fractions** and
+**171 withheld rates**, with raw published percentages and every source count
+preserved. These are source reporting units, not verified polling precincts or
+demographic groups. All original-source hashes, normalized totals, rate flags,
+unique identities and complete ZIP members/CRCs pass independent validation.
+Every review file reproduces byte-for-byte using only the six distributed
+originals and their receipts.
+
+Complete review ZIP: **4,016,510 bytes**, SHA-256
+`0b7eb5da2d55c80c9bb005741d2e95774d45db209d21f9cd753dc99b764bd8be`.
+Release/upload and website count-download registration remain pending.
+
+The Secretary of State's `https://voteidaho.gov/data-and-dashboards/`
+explicitly links precinct boundaries for **both 2026 primary and general
+elections** to official ArcGIS item `0b4fbe4f3104487da8bc5087f9321705`,
+owner `State_of_Idaho`, authoritative/public. All **976** features were
+acquired, with an independent count, complete original projected Esri export,
+geographic Esri and GeoJSON exports, item/service/layer metadata and source
+receipts. Cache:
+session `files/precinct-expansion-sources/ID-2026-general-boundaries/`.
+No export is truncated. All rows have `ACTIVE=Y`, with effective/inactive dates
+retained for election-date checks. This is a genuine official 2026 reference,
+not the portal's `Idaho2025` basemap; joins and topology are not yet validated.
+
+Next: commit/release the validated immutable count review and verify the full
+upload before registering its download. Validate the acquired 2026 reference's
+effective dates, county/precinct names and explicit congressional districts;
+obtain documented crosswalks for mismatches and exclude pooled reporting units.
+Preserve native polygon ring roles and audit all-reference overlaps before
+publishing any map. Do not redownload completed originals or relabel the older
+basemap. No Idaho map is claimed yet.
 
 ## Resume procedure for every work session or scheduled prompt
 
