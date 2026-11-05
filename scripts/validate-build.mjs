@@ -232,9 +232,20 @@ assert.equal(participation('iframe').length, 0);
 assert.equal(participation('link[rel="canonical"]').attr('href'),
 	'https://www.themarginoferror.com/voter-participation/');
 assert.equal(participation('#national-snapshot tbody tr').length, 13);
-assert.match(participation('#definitions').text(), /not assessed/);
+assert.match(participation('#definitions').text(), /unverified, not declared unavailable/);
 assert.match(participation('.participation-scope').first().text(), /not a nationwide precinct map/);
-assert.equal(participation('#downloads a[download]').length, 9);
+const precinctResultsPointer = JSON.parse(await text('precinct-results.json'));
+assert.equal(participation('#downloads a[download]').length,
+	18 + (precinctResultsPointer.source_reviews ?? []).length
+	+ (precinctResultsPointer.source_batches ?? []).length
+	+ 3 * (precinctResultsPointer.additional_snapshots ?? []).length);
+for (const path of precinctResultsPointer.source_reviews ?? []) {
+	const review = JSON.parse(await readFile(new URL(`../${path}`, import.meta.url), 'utf8'));
+	const link = participation('#downloads a[download]').filter((_, element) =>
+		participation(element).attr('href') === review.complete_download_url);
+	assert.equal(link.length, 1, `Missing complete source-review download: ${path}`);
+	assert.match(link.text(), new RegExp(`${review.year} ${review.state_code} source review`));
+}
 assert.equal(participation('#type').length, 0);
 for (const id of ['map-color', 'map-level', 'method-group', 'method-history-mode']) {
 	assert.equal(participation(`#${id}`).length, 1);
@@ -269,13 +280,14 @@ assert.equal(participation('#nc-current-ballots').text(),
 	currentSnapshot.reporting.find(row => row.county_id === '0').ballots_cast.toLocaleString('en-US'));
 assert.ok(participationManifest.files.some(file => file.path === 'current.js' && file.original));
 assert.equal(participation('script[src="/voter-participation/nationwide.js"]').length, 0);
-const contextPointer = JSON.parse(await text('participation-context/latest.json'));
-const nationwideSnapshot = JSON.parse(await text(`participation-context/${contextPointer.snapshot_id}/nationwide/snapshot.json`));
+const participationCurrentPointer = JSON.parse(await text('participation-current/latest.json'));
+const nationwideSnapshot = JSON.parse(await text(`participation-current/${participationCurrentPointer.snapshot_id}/snapshot.json`));
 assert.equal(nationwideSnapshot.reporting.length, 7);
 assert.equal(nationwideSnapshot.audit.jurisdictions_assessed, 51);
 assert.equal(participation('[data-current-state]').length, 51);
 assert.equal(new Set(nationwideSnapshot.coverage.map(row => row.state_code)).size, 51);
-assert.equal(participation('#nationwide-participation a[download]').length, 5);
+assert.equal(participation('#nationwide-participation a[download]').length,
+	5 + ((nationwideSnapshot.local_audit ?? []).length ? 2 : 0));
 assert.match(participation('#nationwide-participation').text(), /not demographic turnout rates/);
 assert.match(participation('#nationwide-participation').text(), /never add the columns/);
 assert.ok(nationwideSnapshot.demographics.every(row => row.turnout_pct === null && !('party' in row)));

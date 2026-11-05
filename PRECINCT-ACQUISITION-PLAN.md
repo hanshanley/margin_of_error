@@ -888,8 +888,33 @@ originals. Proof: session `files/hi-2026-independent-validation.json`.
 Complete ZIP: `complete-hawaii-2026-source-review.zip`,
 **4,331,576 bytes**, SHA-256
 `e2d932615412d2d77436bda6566fa2c32692fff8b5ee622c47294afcead49d3f`.
-Release/publication verification is the next pending step; do not call it
-live before checking the exact immutable asset and deployed registry.
+The immutable release `voter-precinct-hawaii-20261105` targets exact
+data/parser/tests commit `b01c32e84cb6346e6478f80c404eb82ec3e6bc7b`,
+authored and committed as Hans without attribution trailers. An independent
+full redownload verifies the remote tag, complete asset length/hash and
+all 14 members/CRCs/bytes. Proof: session
+`files/hi-2026-release-verification.json`. The count-only source-review
+registry and generated 1,632-cell ledger now include Hawaii; exact UI
+local validation passes: **179 collector tests**, **seven participation
+Node tests**, all four build-time caucus checks, Astro check/build,
+`git diff --check`, all **94** complete relocated asset bytes and a
+**986,202,521-byte** prepared Pages artifact. Desktop/mobile with and
+without JavaScript show all **38** complete download links. JS checks
+retain default 2026, source-matched Hawaii **state** red/blue fallback
+without fabricated precincts, working zoom and failed-registry-fetch
+fallback. Registry, all 1,632 ledger cells and renderer match exact local
+publication bytes. Proof: session `files/hi-2026-local-browser-validation.json`.
+
+The build validator's obsolete participation-only wording, nine-download
+constant and original-context national snapshot assumptions now follow
+the current source registry and rendered nationwide snapshot, checking
+every complete review link. All participation assertions pass. The full
+site validator then reaches an **unrelated pre-existing UK topic-card
+assertion**, `scripts/validate-build.mjs`: it expects 16 but the current
+unchanged UK export has 23. The committed baseline contains the same UK
+assertion; no UK source was modified. Do not report the site-wide
+validator as passing or modify unrelated UK work to conceal the failure.
+Exact deployment/live verification is still pending.
 
 The advertised official GIS follow-up page is
 `https://elections.hawaii.gov/resources/maps/geographic-information-systems-gis-files/`.
@@ -897,14 +922,54 @@ It labels its precinct sources **2022 Elections** and **2018 Elections**;
 the current link is
 `https://geoportal.hawaii.gov/datasets/HiStateGIS::election-precincts/about`.
 Neither the map page's September 28, 2026 update nor a currently linked
-2022 layer proves exact 2026 boundary vintage. No geometry has been
+older reference proves exact 2026 boundary vintage. Following that
+dataset's own metadata identifies item
+`37f83ac7f930421b97976956cccbd840`, owner `HawaiiStateGIS`, and exact layer
+`https://geodata.hawaii.gov/arcgis/rest/services/AdminBnd/MapServer/13`.
+The layer is explicitly **Election Precincts - 2024**, sourced from the
+Office of Elections in **May 2024**, despite the older heading on the
+elections GIS-link page. Treat it as a 2024 lead, not 2026 geometry.
+Its advertised original metadata is
+`https://files.hawaii.gov/dbedt/op/gis/data/precincts.pdf`.
+The item URL already includes `/13`; do not append another layer suffix.
+Session `official-geoportal-layer.json` is an unexpected response from
+the initial duplicated suffix, **not accepted layer metadata**; the
+validated exact response is `official-precinct-layer.json`.
+No geometry has been
 accepted or precinct map published. Seek explicit election-vintage
 confirmation and a validated geographic/mode crosswalk before a separate
 immutable mapped supplement; keep all overseas records separate.
 
-The cached official results page also advertises complete general-election
-originals for 2024, 2022, 2020, 2018 and earlier. Exact URL case differs
-by year; extract actual links rather than guessing paths. Continue
+All **39 actually advertised** general-election originals for **2024,
+2022, 2020 and 2018** are now acquired in session
+`files/precinct-expansion-sources/HI-{year}/`, including complete statewide
+and county PDFs, precinct PDFs, Statements of Vote, media/summary text
+and three recount documents. Per-file receipts and the combined
+`files/hi-2024-2018-original-acquisition.json` preserve all URLs, final
+URLs, bytes and SHA-256 values. Complete totals: **2024: 10 files,
+23,490,452 bytes; 2022: 11 files, 21,400,912 bytes; 2020: nine files,
+4,725,894 bytes; 2018: nine files, 5,083,966 bytes**. These acquired
+historical originals have **not** been normalized, independently
+reconciled, released or registered as new coverage; do not mark them
+reviewed or complete.
+
+Do not reuse the 2026 text parser: **2024 uses BOM-marked UTF-16 CSV**,
+**2022 uses BOM-less UTF-16LE CSV**, and **2020/2018 use UTF-8 CSV**.
+The 2024/2022 `Format#1` metadata and headers omit a trailing empty
+column present in every data row. Preserve this, rather than truncating
+or rejecting valid rows. Original media candidate-record counts are
+**17,944 / 9,050 / 9,497 / 8,030** in newest-first order; summary counts
+are **182 / 255 / 226 / 148**. 2020/2018 distinguish absentee/early/
+election columns; do not relabel them as 2026 Mail/In-Person.
+The first acquisition attempt incorrectly assumed 2026 `FormatVersion`
+text and stopped. The resumed attempt retained all completed PDFs
+without redownloading and recorded the actual historical formats and
+all 39 originals. Exact URL case differs by year; extract actual links
+rather than guessing paths.
+
+Next: reproduce/package the full historical originals with their exact
+format/vintage notes, publish a complete immutable download, then review
+each year independently and acquire its correct-year references. Continue
 newest-first acquisition and distinguish acquired originals from reviewed
 candidate totals, validated geometry and live maps. Hawaii is **not
 complete**, and the other 2026 states/DC and all historical ledger cells

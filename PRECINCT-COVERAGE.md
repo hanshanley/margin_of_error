@@ -36,7 +36,7 @@ Checkmarks are reserved for verified, complete live coverage.
 | [ ] | Delaware | acquired_reconciled | older_reference_withheld | withheld | counts_passed_map_withheld | full_counts_download_only | not_acquired |
 | [ ] | Florida | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Georgia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Hawaii | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Hawaii | acquired_reconciled | reviewed_official_page_exact_year_reference_pending | withheld | native_candidate_counts_passed_ballot_differences_retained | full_counts_download_only | acquired_reporting_unit_counts_rates_withheld |
 | [ ] | Iowa | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Idaho | acquired | reference_acquired | validated_partial | passed | published_partial | acquired_precinct_counts_and_provisional_rates |
 | [ ] | Illinois | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
