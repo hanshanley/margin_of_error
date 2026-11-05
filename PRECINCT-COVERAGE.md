@@ -25,7 +25,7 @@ Checkmarks are reserved for verified, complete live coverage.
 
 | Done | State | Candidate returns | Boundaries | Join | Validation | Publication | Participation |
 |---|---|---|---|---|---|---|---|
-| [ ] | Alaska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alaska | acquired_reconciled | correct_election_reference_acquired_review_pending | withheld | counts_passed_map_withheld | full_counts_download_only | acquired_reporting_unit_counts_rates_withheld |
 | [ ] | Alabama | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Arkansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Arizona | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |

@@ -473,8 +473,11 @@ colors/counts, separate source-defined participation and withheld rates,
 button/wheel zoom, year switching, ND/MN/VT regressions, desktop/mobile,
 all 35 complete downloads, no-JavaScript and failed-fetch fallbacks.
 The map is **live-verified partial coverage**, not complete Idaho coverage.
-The final registry/ledger status update still needs its exact metadata deployment
-verification; do not repeat the unchanged full national browser suite.
+The final registry/ledger status update deployed in commit
+`bbe629c459e53ad29b2008e62a99f56cd2645a94`, exact successful run
+**41962727822**. Production registry, ledger and unchanged renderer match that
+commit byte-for-byte, and the focused publication suite confirms Idaho's final
+partial-live status. Do not repeat the unchanged full national browser suite.
 Pursue official crosswalks, the six overlap counties, pooled scope and registration
 discrepancies without rewriting the immutable review or borrowing older boundaries.
 
@@ -563,8 +566,7 @@ uploaded asset was independently redownloaded: tag target, length, SHA-256,
 ZIP CRCs and every archived byte match. Seven participation regression tests
 also pass. Registration now adds its complete download and persistent audit
 to the 1,632-cell ledger, keeping `full_counts_download_only` and map joins
-withheld. Next: finish the focused local browser checks and exact production
-deployment verification; do not claim this website registration live yet.
+withheld. Local and exact production verification are documented below.
 
 Local publication checks now pass: Astro has zero errors/warnings and the
 same five existing hints; the production build and four caucus tests pass.
@@ -573,8 +575,16 @@ Pages preparation verifies **94 byte-identical relocated originals** and a
 new full SD archive appear on desktop/mobile with and without JavaScript.
 The 2026 default, honest red/blue SD state fallback, absence of fabricated
 precincts, zoom and failed-registry-fetch fallback all pass. The final Idaho
-partial-live status also matches the generated ledger. Exact production
-verification is the remaining publication gate.
+partial-live status also matches the generated ledger.
+
+Website registration commit `bbe629c459e53ad29b2008e62a99f56cd2645a94`
+deployed successfully in exact run **41962727822**. Production registry,
+full 1,632-cell ledger and unchanged renderer match that commit byte-for-byte.
+All four desktop/mobile, JS/no-JS checks pass live, including all 36 complete
+downloads, the independently hashed full SD archive, latest 2026 default,
+honest SD state colors, no fabricated precincts, zoom and failed-fetch
+fallback. Idaho's final partial-live status is also exact-verified.
+This is a live **complete count download**, not a South Dakota precinct map.
 
 ## South Dakota 2026 county geometry follow-up
 
@@ -669,8 +679,23 @@ ZIP CRCs/exact members/bytes. All review files reproduce byte-for-byte using
 only the six distributed originals and their receipts. Complete archive:
 `complete-alaska-2026-source-review.zip`, **1,213,200 bytes**, SHA-256
 `a38164a74cb3d433587891fdf243484f273a88f27f8439ceeeeb9da9c6772b3a`.
-Release and website registration are still pending; do not claim this
-download live yet.
+Data/parser/tests commit `683cd3f50e38b7555ff656df5c39eb59b1c061f6` is
+pushed, authored and committed as Hans. Immutable release
+`voter-precinct-alaska-20261105` targets that exact commit. The entire
+uploaded ZIP was independently redownloaded: tag target, length, SHA-256,
+CRCs and every archived byte match. Website registration is now being
+verified; do not claim this download linked live yet.
+
+Registration passes seven participation regression tests, Astro check
+(zero errors/warnings, five existing hints), the production build and four
+caucus tests. Pages preparation verifies **94 byte-identical relocated
+originals** and a **986,201,012-byte** artifact. Focused production-preview
+checks pass on desktop/mobile with and without JavaScript: all **37**
+complete-download links, full AK ZIP length/hash, actual 1,632-cell ledger,
+honest AK whole-state red/blue fallback without fabricated precincts,
+latest 2026 default, zoom and failed-registry-fetch fallback. Idaho's final
+partial-live and SD count-only metadata remain correct. Exact live
+deployment verification is the remaining publication gate.
 
 The **402 unique native shape IDs** exactly match the geographic result
 set, but this alone is not a validated map. The original map format has
@@ -679,6 +704,18 @@ ring roles, antimeridian handling, topology and actual 2026 reference scope
 before a new immutable mapped supplement. Retain all 121 nongeographic
 units without inventing residential locations or distributing district votes.
 Other original contests remain available but have not yet been reviewed.
+
+Full-path exploratory decoding examined all **478 polygon parts and 27
+inner paths**, not a sample. There are no out-of-range coordinates or
+antimeridian path jumps. Only **88 units** pass the initial strict polygon
+repair check; **314** require additional handling of degenerate native
+paths or zero-area line remnants returned by `make_valid`. Nine polygon
+repairs preserve area. This is not a finding of source unavailability:
+independently audit polygonal footprints and retain all source remnants
+before accepting any area-preserving extraction. The zero overlaps found
+among the 88 passing units are **not a statewide overlap audit** because
+the other 314 references were excluded. Do not publish that subset before
+checking overlaps against every full reference footprint.
 
 ## Resume procedure for every work session or scheduled prompt
 
