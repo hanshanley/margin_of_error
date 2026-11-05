@@ -3832,7 +3832,7 @@ exact commit. The whole anonymous remote archive is byte-identical with all
 **97** members; **96** checksums, **66** native original receipts and **14**
 reference original receipts retained. Proof:
 `files/arizona-maricopa-2026-maps-remote-release-proof-02.json`.
-The pinned partial snapshot is now registered as `snapshot_ready`, not
+The pinned partial snapshot was initially registered as `snapshot_ready`, not
 live-verified, with no mapped participation rates.
 
 Only AZ2026 changes in the **1,632-cell** worklist; all cells remain incomplete.
@@ -3951,13 +3951,34 @@ every file and ZIP byte-for-byte. Proof:
 Complete ZIP: **20,538,473 bytes**, SHA-256
 `e04858bd262a48276dfcbee83b14dbc5965978799181005b2319bb24efdff3d8`.
 
-**Current executable work:** commit/push the verified Pima source package as Hans,
-publish a new immutable complete release and verify its entire remote archive.
-Then register its complete ZIP and three complete tables through the existing
-separate participation-review mechanism, preserving statewide Arizona scope and
-all 90 older download URLs. Publish the proven Maricopa live flag in that UI
-batch; regenerate only AZ2026 in the 1,632-cell ledger. Test the new actual
-download/UI matrix and its exact deployment before claiming it live. Never
+Hans source commit **`d39d1a1b35f571936a90bb08f8757822851811eb`** is pushed.
+The new immutable release
+`voter-precinct-arizona-pima-native-reference-20261105-01` targets that exact
+source commit. Its entire anonymous remote ZIP independently passes all **126**
+member comparisons, **125** checksums and the exact SHA/byte count above. Proof:
+`files/arizona-pima-2026-remote-release-proof-01.json`.
+
+The separate Pima participation-review registration now passes actual local
+desktop/mobile by JavaScript/no-JavaScript checks: **94 complete links** retain
+all **90** older URLs; both full **265-row** normalized CSVs, the entire
+**799-row/379-column** source CSV and complete **126-member** ZIP are byte-exact.
+County-only scope and the missing 2026 geometry are visible without JavaScript;
+no inferred rates or new map joins. The existing renderer is unchanged;
+2026/precinct/margin defaults, 936-color Arizona loading, selection and zoom
+health remain intact. Proof:
+`files/arizona-pima-ui-local-browser-proof-01.json`.
+Seven scoped coverage/review tests and seven participation JavaScript tests pass;
+Astro check has zero errors/warnings and the production build passes. Serial
+validation reaches only the previously documented unrelated UK 23-versus-16 card
+assertion. Subsequent Pages preparation verifies **94** byte-identical relocated
+files and **986,289,171 bytes**. Only AZ2026 `publication` and `notes` change in
+the **1,632-cell** ledger; statewide counts and every incomplete flag remain.
+
+**Current executable work:** commit/push this locally verified UI batch as Hans
+and finish its exact deployment/unqueried-source/browser proof before claiming
+the Pima downloads live. The Maricopa live flag in the batch records its already
+completed exact 20c6/42031647109 production proof, not a new unverified map.
+Continue Michigan source acquisition while that bounded deployment runs. Never
 replace existing source packages or rerun completed count/map suites instead of
 acquisition. Continue another 2026 jurisdiction during the bounded deployment;
 retain Pima's declared-map 404 as a bounded follow-up.

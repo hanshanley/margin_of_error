@@ -32,6 +32,31 @@
           "notes": "All 67 native county mail-return rows agree across two complete official PDFs and sum to 1,163,183. Supplemental update November 4, 2026, 4:08:50 PM; no separate timestamp is inferred for the standalone report. Mail returns and precinct-reporting progress are not final turnout or House candidate results. Do not splice these observations into an older provider snapshot."
         }
       ]
+    },
+    {
+      "id": "arizona-pima-20261105-01",
+      "label": "Pima County, Arizona 2026: all 265 native precinct participation observations and House vectors",
+      "data_directory": "data/precinct-source-reviews/20261105/AZ-PIMA-2026-native-reference-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d39d1a1b35f571936a90bb08f8757822851811eb/data/precinct-source-reviews/20261105/AZ-PIMA-2026-native-reference-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-arizona-pima-native-reference-20261105-01/complete-arizona-pima-2026-native-and-reference-01.zip",
+      "complete_download_bytes": 20538473,
+      "complete_download_sha256": "e04858bd262a48276dfcbee83b14dbc5965978799181005b2319bb24efdff3d8",
+      "review_status": "complete_sources_and_counts_verified",
+      "maps_approved": false,
+      "scope_note": "Pima County only, November 3, 2026 general election: 343,064 ballots and 657,885 registrations across 265 native precincts, independently reconciled against the complete official CSV and dashboard. The 339,732 House candidate votes are not ballots. Count repeated registrations once, retain the one Not Reported record and native printed percentages, and do not infer voting-mode labels for the three unnamed CSV components. Analysis rates and demographic estimates remain withheld. Complete 265-base and 972-union reference geometries are available, but the dashboard-declared 2026 map returns HTTP404; no new map joins approved.",
+      "tables": [
+        {"file": "precinct-participation.csv", "label": "Pima County only: all 265 native precinct ballot, registration and blank-ballot observations; source percentages/status retained, analysis rates withheld (CSV)"},
+        {"file": "precinct-results.csv", "label": "Pima County only: all 265 complete House vectors, county/dashboard codes and separate media IDs; candidate votes are not ballots (CSV)"},
+        {"file": "original-county-results.csv.gz", "label": "Pima County only: complete original 799-row, 379-column all-contest general-election results, including every unnamed component and county total (CSV · gzip)"}
+      ],
+      "coverage": [
+        {
+          "state_code": "AZ",
+          "years": [2026],
+          "status": "reviewed_county_precinct_voter_counts",
+          "notes": "Additional Pima County-only review: all 265 native precincts, 343,064 ballots and 657,885 registrations reconcile between complete official CSV and dashboard; all 374 ballot/option columns sum to county totals and all 265 House vectors independently match statewide native counts by unique literal names. Preserve both code namespaces and one Not Reported record; registrations counted once, no inferred component modes or analysis rates. Complete 265-base/972-union GIS references retained, but the actual declared 2026 map returns HTTP404 and no new GIS joins are approved. Does not replace statewide Arizona coverage or the separately verified Maricopa map."
+        }
+      ]
     }
   ]
 }
