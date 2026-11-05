@@ -4378,6 +4378,51 @@ Do not repeat the already acquired 25-state 2022 batch, successful nationwide
 copy live suite or completed Kentucky production suite. Keep the acquisition
 schedule active and all 1,632 state/year completion flags honest.
 
+### Linn County, Iowa 2026: all 94 native precinct participation/House tables
+
+The pending Linn native review is now reproducible:
+`scripts/review-iowa-linn-2026-native-results.py` verifies both complete
+original PDF hashes, every election/status header and all 521 sequential
+pages. All **94 distinct contiguous native precincts** reconcile to the
+independently printed county summary in every reported voting mode:
+**160,717 registrations; 107,457 ballots (66,530 Election Day, 40,927
+Absentee); 20 blank ballots; and separately 105,838 House candidate votes
+(65,501 Election Day, 40,337 Absentee)**. Every candidate and write-in vector
+also reconciles. Dave Bushaw's unprinted party stays missing, explicit zeros
+remain zero, and missing mode-specific registrations remain missing.
+
+The package has all 94 participation observations, 282 precinct House-mode
+rows, separate county participation/House tables, all 1,425 county/precinct
+candidate-mode rows, both entire all-contest originals, receipts, portable
+code, audit and checksums. County rows must not be added to precinct rows;
+native Total is the sum of Election Day and Absentee, not an additional mode.
+Each reported registered-voter rate uses only that same unit's own native
+registrations and is checked against its printed rate. It is not VEP, CPS,
+demographic or mode-specific turnout. House margins instead use all candidate
+and write-in votes; printed House percentages are retained separately.
+
+Snapshot: `data/precinct-source-reviews/20261105/IA-LINN-2026-native-counts-01/`.
+The complete **2,061,367-byte** ZIP has **11 members**, including **10**
+checksums; SHA-256
+`9fdf74ae6d8f48c5d89188e340d10e857fea56fc6ab49bd155320d91c0104362`.
+Archive-only offline rebuild reproduces every file and ZIP byte-for-byte.
+Proof: `files/iowa-linn-native-archive-replay-proof-01.json`.
+Ten focused regressions cover missing versus explicit zero, separate percentage
+columns, malformed/duplicate/unreviewed positions and inconsistent native
+precinct/mode inventories. From the extracted ZIP, with PyMuPDF installed:
+
+```bash
+python review.py --source source --output /path/to/new-linn-review \
+  --archive /path/to/new-linn-review.zip
+```
+
+This is **Linn County only**, unofficial November 3, 2026 results, not
+statewide or demographic participation. No precinct geometry or new map is
+approved and no state/year is complete. First publish the immutable full ZIP
+and register the county-scoped source tables; then continue consolidated
+2026 reviews, establishing correct-election geography independently before
+any new map join. Do not reacquire or re-review these finished 94 counts.
+
 ## Resume procedure for every work session or scheduled prompt
 
 1. Read `AGENTS.md`, `CLAUDE.md`, `PUBLISHING.md`, this plan, and the newest rows

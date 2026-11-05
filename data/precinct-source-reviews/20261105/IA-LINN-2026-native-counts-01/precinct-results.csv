@@ -1,0 +1,283 @@
+year,state_code,county,reporting_unit,unit_type,source_pdf_page,maps_approved,contest,native_mode,total_votes,democratic_votes,republican_votes,other_votes,dem_minus_rep_pct
+2026,IA,Linn County,Cedar Rapids 01,native_precinct,1,False,United States Representative District 2,total,1461,796,617,48,12.251882
+2026,IA,Linn County,Cedar Rapids 01,native_precinct,1,False,United States Representative District 2,election_day,911,405,466,40,-6.695939
+2026,IA,Linn County,Cedar Rapids 01,native_precinct,1,False,United States Representative District 2,absentee,550,391,151,8,43.636364
+2026,IA,Linn County,Cedar Rapids 02,native_precinct,7,False,United States Representative District 2,total,1126,706,378,42,29.129663
+2026,IA,Linn County,Cedar Rapids 02,native_precinct,7,False,United States Representative District 2,election_day,710,404,275,31,18.169014
+2026,IA,Linn County,Cedar Rapids 02,native_precinct,7,False,United States Representative District 2,absentee,416,302,103,11,47.836538
+2026,IA,Linn County,Cedar Rapids 03,native_precinct,12,False,United States Representative District 2,total,1561,930,589,42,21.844971
+2026,IA,Linn County,Cedar Rapids 03,native_precinct,12,False,United States Representative District 2,election_day,937,492,412,33,8.537887
+2026,IA,Linn County,Cedar Rapids 03,native_precinct,12,False,United States Representative District 2,absentee,624,438,177,9,41.826923
+2026,IA,Linn County,Cedar Rapids 04,native_precinct,18,False,United States Representative District 2,total,1390,801,543,46,18.561151
+2026,IA,Linn County,Cedar Rapids 04,native_precinct,18,False,United States Representative District 2,election_day,799,379,391,29,-1.501877
+2026,IA,Linn County,Cedar Rapids 04,native_precinct,18,False,United States Representative District 2,absentee,591,422,152,17,45.685279
+2026,IA,Linn County,Cedar Rapids 05,native_precinct,24,False,United States Representative District 2,total,1424,934,444,46,34.410112
+2026,IA,Linn County,Cedar Rapids 05,native_precinct,24,False,United States Representative District 2,election_day,823,482,312,29,20.656136
+2026,IA,Linn County,Cedar Rapids 05,native_precinct,24,False,United States Representative District 2,absentee,601,452,132,17,53.244592
+2026,IA,Linn County,Cedar Rapids 06,native_precinct,30,False,United States Representative District 2,total,1427,874,509,44,25.578136
+2026,IA,Linn County,Cedar Rapids 06,native_precinct,30,False,United States Representative District 2,election_day,847,436,376,35,7.083825
+2026,IA,Linn County,Cedar Rapids 06,native_precinct,30,False,United States Representative District 2,absentee,580,438,133,9,52.586207
+2026,IA,Linn County,Cedar Rapids 07,native_precinct,36,False,United States Representative District 2,total,2009,1008,953,48,2.73768
+2026,IA,Linn County,Cedar Rapids 07,native_precinct,36,False,United States Representative District 2,election_day,1136,457,642,37,-16.285211
+2026,IA,Linn County,Cedar Rapids 07,native_precinct,36,False,United States Representative District 2,absentee,873,551,311,11,27.491409
+2026,IA,Linn County,Cedar Rapids 08,native_precinct,42,False,United States Representative District 2,total,1957,1225,675,57,28.104241
+2026,IA,Linn County,Cedar Rapids 08,native_precinct,42,False,United States Representative District 2,election_day,1008,553,413,42,13.888889
+2026,IA,Linn County,Cedar Rapids 08,native_precinct,42,False,United States Representative District 2,absentee,949,672,262,15,43.203372
+2026,IA,Linn County,Cedar Rapids 09,native_precinct,47,False,United States Representative District 2,total,1632,1053,519,60,32.720588
+2026,IA,Linn County,Cedar Rapids 09,native_precinct,47,False,United States Representative District 2,election_day,1008,584,373,51,20.93254
+2026,IA,Linn County,Cedar Rapids 09,native_precinct,47,False,United States Representative District 2,absentee,624,469,146,9,51.762821
+2026,IA,Linn County,Cedar Rapids 10,native_precinct,52,False,United States Representative District 2,total,921,613,276,32,36.590662
+2026,IA,Linn County,Cedar Rapids 10,native_precinct,52,False,United States Representative District 2,election_day,573,354,197,22,27.399651
+2026,IA,Linn County,Cedar Rapids 10,native_precinct,52,False,United States Representative District 2,absentee,348,259,79,10,51.724138
+2026,IA,Linn County,Cedar Rapids 11,native_precinct,57,False,United States Representative District 2,total,1045,621,364,60,24.593301
+2026,IA,Linn County,Cedar Rapids 11,native_precinct,57,False,United States Representative District 2,election_day,594,319,235,40,14.141414
+2026,IA,Linn County,Cedar Rapids 11,native_precinct,57,False,United States Representative District 2,absentee,451,302,129,20,38.359202
+2026,IA,Linn County,Cedar Rapids 12,native_precinct,63,False,United States Representative District 2,total,847,581,228,38,41.676505
+2026,IA,Linn County,Cedar Rapids 12,native_precinct,63,False,United States Representative District 2,election_day,432,272,133,27,32.175926
+2026,IA,Linn County,Cedar Rapids 12,native_precinct,63,False,United States Representative District 2,absentee,415,309,95,11,51.566265
+2026,IA,Linn County,Cedar Rapids 13,native_precinct,69,False,United States Representative District 2,total,1236,775,386,75,31.472492
+2026,IA,Linn County,Cedar Rapids 13,native_precinct,69,False,United States Representative District 2,election_day,738,397,282,59,15.582656
+2026,IA,Linn County,Cedar Rapids 13,native_precinct,69,False,United States Representative District 2,absentee,498,378,104,16,55.02008
+2026,IA,Linn County,Cedar Rapids 14,native_precinct,74,False,United States Representative District 2,total,494,361,103,30,52.226721
+2026,IA,Linn County,Cedar Rapids 14,native_precinct,74,False,United States Representative District 2,election_day,331,237,79,15,47.734139
+2026,IA,Linn County,Cedar Rapids 14,native_precinct,74,False,United States Representative District 2,absentee,163,124,24,15,61.349693
+2026,IA,Linn County,Cedar Rapids 15,native_precinct,80,False,United States Representative District 2,total,1226,819,340,67,39.070147
+2026,IA,Linn County,Cedar Rapids 15,native_precinct,80,False,United States Representative District 2,election_day,766,449,264,53,24.151436
+2026,IA,Linn County,Cedar Rapids 15,native_precinct,80,False,United States Representative District 2,absentee,460,370,76,14,63.913043
+2026,IA,Linn County,Cedar Rapids 16,native_precinct,86,False,United States Representative District 2,total,971,700,211,60,50.360453
+2026,IA,Linn County,Cedar Rapids 16,native_precinct,86,False,United States Representative District 2,election_day,577,388,140,49,42.980936
+2026,IA,Linn County,Cedar Rapids 16,native_precinct,86,False,United States Representative District 2,absentee,394,312,71,11,61.167513
+2026,IA,Linn County,Cedar Rapids 17,native_precinct,92,False,United States Representative District 2,total,944,665,244,35,44.597458
+2026,IA,Linn County,Cedar Rapids 17,native_precinct,92,False,United States Representative District 2,election_day,450,296,132,22,36.444444
+2026,IA,Linn County,Cedar Rapids 17,native_precinct,92,False,United States Representative District 2,absentee,494,369,112,13,52.024291
+2026,IA,Linn County,Cedar Rapids 18,native_precinct,98,False,United States Representative District 2,total,588,441,116,31,55.272109
+2026,IA,Linn County,Cedar Rapids 18,native_precinct,98,False,United States Representative District 2,election_day,372,261,91,20,45.698925
+2026,IA,Linn County,Cedar Rapids 18,native_precinct,98,False,United States Representative District 2,absentee,216,180,25,11,71.759259
+2026,IA,Linn County,Cedar Rapids 19,native_precinct,104,False,United States Representative District 2,total,1370,837,466,67,27.080292
+2026,IA,Linn County,Cedar Rapids 19,native_precinct,104,False,United States Representative District 2,election_day,793,417,326,50,11.47541
+2026,IA,Linn County,Cedar Rapids 19,native_precinct,104,False,United States Representative District 2,absentee,577,420,140,17,48.526863
+2026,IA,Linn County,Cedar Rapids 20,native_precinct,110,False,United States Representative District 2,total,1001,654,312,35,34.165834
+2026,IA,Linn County,Cedar Rapids 20,native_precinct,110,False,United States Representative District 2,election_day,618,366,231,21,21.84466
+2026,IA,Linn County,Cedar Rapids 20,native_precinct,110,False,United States Representative District 2,absentee,383,288,81,14,54.046997
+2026,IA,Linn County,Cedar Rapids 21,native_precinct,115,False,United States Representative District 2,total,1222,678,487,57,15.630115
+2026,IA,Linn County,Cedar Rapids 21,native_precinct,115,False,United States Representative District 2,election_day,738,349,348,41,0.135501
+2026,IA,Linn County,Cedar Rapids 21,native_precinct,115,False,United States Representative District 2,absentee,484,329,139,16,39.256198
+2026,IA,Linn County,Cedar Rapids 22,native_precinct,121,False,United States Representative District 2,total,1123,716,357,50,31.967943
+2026,IA,Linn County,Cedar Rapids 22,native_precinct,121,False,United States Representative District 2,election_day,664,368,257,39,16.716867
+2026,IA,Linn County,Cedar Rapids 22,native_precinct,121,False,United States Representative District 2,absentee,459,348,100,11,54.030501
+2026,IA,Linn County,Cedar Rapids 23,native_precinct,126,False,United States Representative District 2,total,1151,757,337,57,36.490009
+2026,IA,Linn County,Cedar Rapids 23,native_precinct,126,False,United States Representative District 2,election_day,655,388,221,46,25.496183
+2026,IA,Linn County,Cedar Rapids 23,native_precinct,126,False,United States Representative District 2,absentee,496,369,116,11,51.008065
+2026,IA,Linn County,Cedar Rapids 24,native_precinct,131,False,United States Representative District 2,total,612,466,99,47,59.96732
+2026,IA,Linn County,Cedar Rapids 24,native_precinct,131,False,United States Representative District 2,election_day,356,257,71,28,52.247191
+2026,IA,Linn County,Cedar Rapids 24,native_precinct,131,False,United States Representative District 2,absentee,256,209,28,19,70.703125
+2026,IA,Linn County,Cedar Rapids 25,native_precinct,137,False,United States Representative District 2,total,1012,767,191,54,56.916996
+2026,IA,Linn County,Cedar Rapids 25,native_precinct,137,False,United States Representative District 2,election_day,559,378,147,34,41.323792
+2026,IA,Linn County,Cedar Rapids 25,native_precinct,137,False,United States Representative District 2,absentee,453,389,44,20,76.15894
+2026,IA,Linn County,Cedar Rapids 26,native_precinct,143,False,United States Representative District 2,total,1625,1090,490,45,36.923077
+2026,IA,Linn County,Cedar Rapids 26,native_precinct,143,False,United States Representative District 2,election_day,821,471,321,29,18.270402
+2026,IA,Linn County,Cedar Rapids 26,native_precinct,143,False,United States Representative District 2,absentee,804,619,169,16,55.970149
+2026,IA,Linn County,Cedar Rapids 27,native_precinct,149,False,United States Representative District 2,total,1850,1196,599,55,32.27027
+2026,IA,Linn County,Cedar Rapids 27,native_precinct,149,False,United States Representative District 2,election_day,951,527,382,42,15.247108
+2026,IA,Linn County,Cedar Rapids 27,native_precinct,149,False,United States Representative District 2,absentee,899,669,217,13,50.278087
+2026,IA,Linn County,Cedar Rapids 28,native_precinct,155,False,United States Representative District 2,total,1515,1126,338,51,52.013201
+2026,IA,Linn County,Cedar Rapids 28,native_precinct,155,False,United States Representative District 2,election_day,888,595,250,43,38.851351
+2026,IA,Linn County,Cedar Rapids 28,native_precinct,155,False,United States Representative District 2,absentee,627,531,88,8,70.653907
+2026,IA,Linn County,Cedar Rapids 29,native_precinct,161,False,United States Representative District 2,total,1811,1023,730,58,16.178907
+2026,IA,Linn County,Cedar Rapids 29,native_precinct,161,False,United States Representative District 2,election_day,1121,535,537,49,-0.178412
+2026,IA,Linn County,Cedar Rapids 29,native_precinct,161,False,United States Representative District 2,absentee,690,488,193,9,42.753623
+2026,IA,Linn County,Cedar Rapids 30,native_precinct,167,False,United States Representative District 2,total,1541,949,528,64,27.319922
+2026,IA,Linn County,Cedar Rapids 30,native_precinct,167,False,United States Representative District 2,election_day,965,506,407,52,10.259067
+2026,IA,Linn County,Cedar Rapids 30,native_precinct,167,False,United States Representative District 2,absentee,576,443,121,12,55.902778
+2026,IA,Linn County,Cedar Rapids 31,native_precinct,172,False,United States Representative District 2,total,1260,842,367,51,37.698413
+2026,IA,Linn County,Cedar Rapids 31,native_precinct,172,False,United States Representative District 2,election_day,798,488,277,33,26.441103
+2026,IA,Linn County,Cedar Rapids 31,native_precinct,172,False,United States Representative District 2,absentee,462,354,90,18,57.142857
+2026,IA,Linn County,Cedar Rapids 32,native_precinct,177,False,United States Representative District 2,total,934,665,236,33,45.931478
+2026,IA,Linn County,Cedar Rapids 32,native_precinct,177,False,United States Representative District 2,election_day,537,357,159,21,36.871508
+2026,IA,Linn County,Cedar Rapids 32,native_precinct,177,False,United States Representative District 2,absentee,397,308,77,12,58.186398
+2026,IA,Linn County,Cedar Rapids 33,native_precinct,182,False,United States Representative District 2,total,1191,744,384,63,30.2267
+2026,IA,Linn County,Cedar Rapids 33,native_precinct,182,False,United States Representative District 2,election_day,716,393,282,41,15.502793
+2026,IA,Linn County,Cedar Rapids 33,native_precinct,182,False,United States Representative District 2,absentee,475,351,102,22,52.421053
+2026,IA,Linn County,Cedar Rapids 34,native_precinct,187,False,United States Representative District 2,total,911,620,239,52,41.822173
+2026,IA,Linn County,Cedar Rapids 34,native_precinct,187,False,United States Representative District 2,election_day,599,377,184,38,32.220367
+2026,IA,Linn County,Cedar Rapids 34,native_precinct,187,False,United States Representative District 2,absentee,312,243,55,14,60.25641
+2026,IA,Linn County,Cedar Rapids 35,native_precinct,192,False,United States Representative District 2,total,661,443,179,39,39.939486
+2026,IA,Linn County,Cedar Rapids 35,native_precinct,192,False,United States Representative District 2,election_day,433,266,135,32,30.254042
+2026,IA,Linn County,Cedar Rapids 35,native_precinct,192,False,United States Representative District 2,absentee,228,177,44,7,58.333333
+2026,IA,Linn County,Cedar Rapids 36,native_precinct,198,False,United States Representative District 2,total,623,475,122,26,56.661316
+2026,IA,Linn County,Cedar Rapids 36,native_precinct,198,False,United States Representative District 2,election_day,339,243,78,18,48.672566
+2026,IA,Linn County,Cedar Rapids 36,native_precinct,198,False,United States Representative District 2,absentee,284,232,44,8,66.197183
+2026,IA,Linn County,Cedar Rapids 37,native_precinct,204,False,United States Representative District 2,total,1320,975,291,54,51.818182
+2026,IA,Linn County,Cedar Rapids 37,native_precinct,204,False,United States Representative District 2,election_day,688,456,192,40,38.372093
+2026,IA,Linn County,Cedar Rapids 37,native_precinct,204,False,United States Representative District 2,absentee,632,519,99,14,66.455696
+2026,IA,Linn County,Cedar Rapids 38,native_precinct,210,False,United States Representative District 2,total,1366,849,454,63,28.916545
+2026,IA,Linn County,Cedar Rapids 38,native_precinct,210,False,United States Representative District 2,election_day,775,424,303,48,15.612903
+2026,IA,Linn County,Cedar Rapids 38,native_precinct,210,False,United States Representative District 2,absentee,591,425,151,15,46.362098
+2026,IA,Linn County,Cedar Rapids 39,native_precinct,216,False,United States Representative District 2,total,1178,765,359,54,34.465195
+2026,IA,Linn County,Cedar Rapids 39,native_precinct,216,False,United States Representative District 2,election_day,762,449,273,40,23.097113
+2026,IA,Linn County,Cedar Rapids 39,native_precinct,216,False,United States Representative District 2,absentee,416,316,86,14,55.288462
+2026,IA,Linn County,Cedar Rapids 40,native_precinct,222,False,United States Representative District 2,total,898,538,327,33,23.496659
+2026,IA,Linn County,Cedar Rapids 40,native_precinct,222,False,United States Representative District 2,election_day,548,299,221,28,14.233577
+2026,IA,Linn County,Cedar Rapids 40,native_precinct,222,False,United States Representative District 2,absentee,350,239,106,5,38.0
+2026,IA,Linn County,Cedar Rapids 41,native_precinct,228,False,United States Representative District 2,total,1252,766,432,54,26.677316
+2026,IA,Linn County,Cedar Rapids 41,native_precinct,228,False,United States Representative District 2,election_day,646,345,265,36,12.383901
+2026,IA,Linn County,Cedar Rapids 41,native_precinct,228,False,United States Representative District 2,absentee,606,421,167,18,41.914191
+2026,IA,Linn County,Cedar Rapids 42,native_precinct,234,False,United States Representative District 2,total,764,505,195,64,40.575916
+2026,IA,Linn County,Cedar Rapids 42,native_precinct,234,False,United States Representative District 2,election_day,476,292,139,45,32.142857
+2026,IA,Linn County,Cedar Rapids 42,native_precinct,234,False,United States Representative District 2,absentee,288,213,56,19,54.513889
+2026,IA,Linn County,Cedar Rapids 43,native_precinct,240,False,United States Representative District 2,total,837,593,196,48,47.431302
+2026,IA,Linn County,Cedar Rapids 43,native_precinct,240,False,United States Representative District 2,election_day,442,285,128,29,35.520362
+2026,IA,Linn County,Cedar Rapids 43,native_precinct,240,False,United States Representative District 2,absentee,395,308,68,19,60.759494
+2026,IA,Linn County,Cedar Rapids 44,native_precinct,246,False,United States Representative District 2,total,1128,727,348,53,33.599291
+2026,IA,Linn County,Cedar Rapids 44,native_precinct,246,False,United States Representative District 2,election_day,723,425,253,45,23.789765
+2026,IA,Linn County,Cedar Rapids 44,native_precinct,246,False,United States Representative District 2,absentee,405,302,95,8,51.111111
+2026,IA,Linn County,Cedar Rapids 45,native_precinct,252,False,United States Representative District 2,total,488,295,164,29,26.844262
+2026,IA,Linn County,Cedar Rapids 45,native_precinct,252,False,United States Representative District 2,election_day,312,171,122,19,15.705128
+2026,IA,Linn County,Cedar Rapids 45,native_precinct,252,False,United States Representative District 2,absentee,176,124,42,10,46.590909
+2026,IA,Linn County,Cedar Rapids 46,native_precinct,258,False,United States Representative District 2,total,1004,610,358,36,25.099602
+2026,IA,Linn County,Cedar Rapids 46,native_precinct,258,False,United States Representative District 2,election_day,560,306,233,21,13.035714
+2026,IA,Linn County,Cedar Rapids 46,native_precinct,258,False,United States Representative District 2,absentee,444,304,125,15,40.315315
+2026,IA,Linn County,Cedar Rapids 47,native_precinct,264,False,United States Representative District 2,total,1133,724,364,45,31.774051
+2026,IA,Linn County,Cedar Rapids 47,native_precinct,264,False,United States Representative District 2,election_day,689,389,265,35,17.997097
+2026,IA,Linn County,Cedar Rapids 47,native_precinct,264,False,United States Representative District 2,absentee,444,335,99,10,53.153153
+2026,IA,Linn County,Cedar Rapids 48,native_precinct,270,False,United States Representative District 2,total,888,530,312,46,24.54955
+2026,IA,Linn County,Cedar Rapids 48,native_precinct,270,False,United States Representative District 2,election_day,562,288,234,40,9.608541
+2026,IA,Linn County,Cedar Rapids 48,native_precinct,270,False,United States Representative District 2,absentee,326,242,78,6,50.306748
+2026,IA,Linn County,Cedar Rapids 49,native_precinct,276,False,United States Representative District 2,total,473,332,108,33,47.357294
+2026,IA,Linn County,Cedar Rapids 49,native_precinct,276,False,United States Representative District 2,election_day,343,233,81,29,44.314869
+2026,IA,Linn County,Cedar Rapids 49,native_precinct,276,False,United States Representative District 2,absentee,130,99,27,4,55.384615
+2026,IA,Linn County,Cedar Rapids 50,native_precinct,282,False,United States Representative District 2,total,495,370,110,15,52.525253
+2026,IA,Linn County,Cedar Rapids 50,native_precinct,282,False,United States Representative District 2,election_day,345,244,90,11,44.637681
+2026,IA,Linn County,Cedar Rapids 50,native_precinct,282,False,United States Representative District 2,absentee,150,126,20,4,70.666667
+2026,IA,Linn County,Cedar Rapids 51,native_precinct,288,False,United States Representative District 2,total,1609,928,616,65,19.390926
+2026,IA,Linn County,Cedar Rapids 51,native_precinct,288,False,United States Representative District 2,election_day,865,424,400,41,2.774566
+2026,IA,Linn County,Cedar Rapids 51,native_precinct,288,False,United States Representative District 2,absentee,744,504,216,24,38.709677
+2026,IA,Linn County,Fairfax,native_precinct,294,False,United States Representative District 2,total,1622,843,710,69,8.199753
+2026,IA,Linn County,Fairfax,native_precinct,294,False,United States Representative District 2,election_day,1162,531,570,61,-3.356282
+2026,IA,Linn County,Fairfax,native_precinct,294,False,United States Representative District 2,absentee,460,312,140,8,37.391304
+2026,IA,Linn County,Hiawatha 01,native_precinct,299,False,United States Representative District 2,total,1199,703,434,62,22.435363
+2026,IA,Linn County,Hiawatha 01,native_precinct,299,False,United States Representative District 2,election_day,714,361,308,45,7.422969
+2026,IA,Linn County,Hiawatha 01,native_precinct,299,False,United States Representative District 2,absentee,485,342,126,17,44.536082
+2026,IA,Linn County,Hiawatha 02,native_precinct,304,False,United States Representative District 2,total,833,527,272,34,30.612245
+2026,IA,Linn County,Hiawatha 02,native_precinct,304,False,United States Representative District 2,election_day,590,345,217,28,21.694915
+2026,IA,Linn County,Hiawatha 02,native_precinct,304,False,United States Representative District 2,absentee,243,182,55,6,52.263374
+2026,IA,Linn County,Hiawatha 03,native_precinct,309,False,United States Representative District 2,total,1324,698,582,44,8.761329
+2026,IA,Linn County,Hiawatha 03,native_precinct,309,False,United States Representative District 2,election_day,739,330,382,27,-7.036536
+2026,IA,Linn County,Hiawatha 03,native_precinct,309,False,United States Representative District 2,absentee,585,368,200,17,28.717949
+2026,IA,Linn County,Marion 01,native_precinct,314,False,United States Representative District 2,total,1681,935,704,42,13.74182
+2026,IA,Linn County,Marion 01,native_precinct,314,False,United States Representative District 2,election_day,1017,506,482,29,2.359882
+2026,IA,Linn County,Marion 01,native_precinct,314,False,United States Representative District 2,absentee,664,429,222,13,31.174699
+2026,IA,Linn County,Marion 02,native_precinct,319,False,United States Representative District 2,total,1212,680,508,24,14.191419
+2026,IA,Linn County,Marion 02,native_precinct,319,False,United States Representative District 2,election_day,795,393,384,18,1.132075
+2026,IA,Linn County,Marion 02,native_precinct,319,False,United States Representative District 2,absentee,417,287,124,6,39.088729
+2026,IA,Linn County,Marion 03,native_precinct,324,False,United States Representative District 2,total,1668,781,849,38,-4.076739
+2026,IA,Linn County,Marion 03,native_precinct,324,False,United States Representative District 2,election_day,928,347,556,25,-22.521552
+2026,IA,Linn County,Marion 03,native_precinct,324,False,United States Representative District 2,absentee,740,434,293,13,19.054054
+2026,IA,Linn County,Marion 04,native_precinct,329,False,United States Representative District 2,total,1512,904,562,46,22.619048
+2026,IA,Linn County,Marion 04,native_precinct,329,False,United States Representative District 2,election_day,761,382,348,31,4.467806
+2026,IA,Linn County,Marion 04,native_precinct,329,False,United States Representative District 2,absentee,751,522,214,15,41.011984
+2026,IA,Linn County,Marion 05,native_precinct,334,False,United States Representative District 2,total,753,419,302,32,15.537849
+2026,IA,Linn County,Marion 05,native_precinct,334,False,United States Representative District 2,election_day,424,199,200,25,-0.235849
+2026,IA,Linn County,Marion 05,native_precinct,334,False,United States Representative District 2,absentee,329,220,102,7,35.866261
+2026,IA,Linn County,Marion 06,native_precinct,339,False,United States Representative District 2,total,1296,779,474,43,23.533951
+2026,IA,Linn County,Marion 06,native_precinct,339,False,United States Representative District 2,election_day,797,419,357,21,7.779172
+2026,IA,Linn County,Marion 06,native_precinct,339,False,United States Representative District 2,absentee,499,360,117,22,48.697395
+2026,IA,Linn County,Marion 07,native_precinct,344,False,United States Representative District 2,total,1079,614,426,39,17.42354
+2026,IA,Linn County,Marion 07,native_precinct,344,False,United States Representative District 2,election_day,730,357,343,30,1.917808
+2026,IA,Linn County,Marion 07,native_precinct,344,False,United States Representative District 2,absentee,349,257,83,9,49.856734
+2026,IA,Linn County,Marion 08,native_precinct,349,False,United States Representative District 2,total,1206,700,461,45,19.817579
+2026,IA,Linn County,Marion 08,native_precinct,349,False,United States Representative District 2,election_day,672,337,305,30,4.761905
+2026,IA,Linn County,Marion 08,native_precinct,349,False,United States Representative District 2,absentee,534,363,156,15,38.764045
+2026,IA,Linn County,Marion 09,native_precinct,354,False,United States Representative District 2,total,1322,789,479,54,23.449319
+2026,IA,Linn County,Marion 09,native_precinct,354,False,United States Representative District 2,election_day,696,348,313,35,5.028736
+2026,IA,Linn County,Marion 09,native_precinct,354,False,United States Representative District 2,absentee,626,441,166,19,43.929712
+2026,IA,Linn County,Marion 10,native_precinct,359,False,United States Representative District 2,total,766,447,280,39,21.801567
+2026,IA,Linn County,Marion 10,native_precinct,359,False,United States Representative District 2,election_day,496,259,208,29,10.282258
+2026,IA,Linn County,Marion 10,native_precinct,359,False,United States Representative District 2,absentee,270,188,72,10,42.962963
+2026,IA,Linn County,Marion 11,native_precinct,364,False,United States Representative District 2,total,881,502,343,36,18.047673
+2026,IA,Linn County,Marion 11,native_precinct,364,False,United States Representative District 2,election_day,474,234,215,25,4.008439
+2026,IA,Linn County,Marion 11,native_precinct,364,False,United States Representative District 2,absentee,407,268,128,11,34.398034
+2026,IA,Linn County,Marion 12,native_precinct,369,False,United States Representative District 2,total,1116,725,322,69,36.111111
+2026,IA,Linn County,Marion 12,native_precinct,369,False,United States Representative District 2,election_day,686,394,234,58,23.323615
+2026,IA,Linn County,Marion 12,native_precinct,369,False,United States Representative District 2,absentee,430,331,88,11,56.511628
+2026,IA,Linn County,Marion 13,native_precinct,374,False,United States Representative District 2,total,1199,674,462,63,17.681401
+2026,IA,Linn County,Marion 13,native_precinct,374,False,United States Representative District 2,election_day,750,344,354,52,-1.333333
+2026,IA,Linn County,Marion 13,native_precinct,374,False,United States Representative District 2,absentee,449,330,108,11,49.443207
+2026,IA,Linn County,Marion 14,native_precinct,379,False,United States Representative District 2,total,865,546,293,26,29.248555
+2026,IA,Linn County,Marion 14,native_precinct,379,False,United States Representative District 2,election_day,457,251,184,22,14.660832
+2026,IA,Linn County,Marion 14,native_precinct,379,False,United States Representative District 2,absentee,408,295,109,4,45.588235
+2026,IA,Linn County,Marion 15,native_precinct,384,False,United States Representative District 2,total,1147,688,412,47,24.062772
+2026,IA,Linn County,Marion 15,native_precinct,384,False,United States Representative District 2,election_day,584,308,244,32,10.958904
+2026,IA,Linn County,Marion 15,native_precinct,384,False,United States Representative District 2,absentee,563,380,168,15,37.655417
+2026,IA,Linn County,Marion 16,native_precinct,389,False,United States Representative District 2,total,907,564,296,47,29.54796
+2026,IA,Linn County,Marion 16,native_precinct,389,False,United States Representative District 2,election_day,547,290,221,36,12.61426
+2026,IA,Linn County,Marion 16,native_precinct,389,False,United States Representative District 2,absentee,360,274,75,11,55.277778
+2026,IA,Linn County,Marion 17,native_precinct,394,False,United States Representative District 2,total,1246,705,497,44,16.693419
+2026,IA,Linn County,Marion 17,native_precinct,394,False,United States Representative District 2,election_day,860,419,402,39,1.976744
+2026,IA,Linn County,Marion 17,native_precinct,394,False,United States Representative District 2,absentee,386,286,95,5,49.481865
+2026,IA,Linn County,Marion 18,native_precinct,399,False,United States Representative District 2,total,518,342,144,32,38.223938
+2026,IA,Linn County,Marion 18,native_precinct,399,False,United States Representative District 2,election_day,336,216,97,23,35.416667
+2026,IA,Linn County,Marion 18,native_precinct,399,False,United States Representative District 2,absentee,182,126,47,9,43.406593
+2026,IA,Linn County,Mount Vernon 01,native_precinct,404,False,United States Representative District 2,total,1229,846,343,40,40.927583
+2026,IA,Linn County,Mount Vernon 01,native_precinct,404,False,United States Representative District 2,election_day,933,597,301,35,31.725616
+2026,IA,Linn County,Mount Vernon 01,native_precinct,404,False,United States Representative District 2,absentee,296,249,42,5,69.932432
+2026,IA,Linn County,Mount Vernon 02,native_precinct,409,False,United States Representative District 2,total,983,694,254,35,44.760936
+2026,IA,Linn County,Mount Vernon 02,native_precinct,409,False,United States Representative District 2,election_day,619,387,210,22,28.594507
+2026,IA,Linn County,Mount Vernon 02,native_precinct,409,False,United States Representative District 2,absentee,364,307,44,13,72.252747
+2026,IA,Linn County,Robins,native_precinct,414,False,United States Representative District 2,total,2221,949,1200,72,-11.301216
+2026,IA,Linn County,Robins,native_precinct,414,False,United States Representative District 2,election_day,1499,542,898,59,-23.749166
+2026,IA,Linn County,Robins,native_precinct,414,False,United States Representative District 2,absentee,722,407,302,13,14.542936
+2026,IA,Linn County,Bertram Township,native_precinct,419,False,United States Representative District 2,total,1556,764,745,47,1.22108
+2026,IA,Linn County,Bertram Township,native_precinct,419,False,United States Representative District 2,election_day,918,353,530,35,-19.281046
+2026,IA,Linn County,Bertram Township,native_precinct,419,False,United States Representative District 2,absentee,638,411,215,12,30.721003
+2026,IA,Linn County,Boulder - Buffalo,native_precinct,424,False,United States Representative District 2,total,517,205,289,23,-16.247582
+2026,IA,Linn County,Boulder - Buffalo,native_precinct,424,False,United States Representative District 2,election_day,421,150,252,19,-24.228029
+2026,IA,Linn County,Boulder - Buffalo,native_precinct,424,False,United States Representative District 2,absentee,96,55,37,4,18.75
+2026,IA,Linn County,Brown - Linn,native_precinct,430,False,United States Representative District 2,total,1466,613,780,73,-11.391542
+2026,IA,Linn County,Brown - Linn,native_precinct,430,False,United States Representative District 2,election_day,1129,414,652,63,-21.080602
+2026,IA,Linn County,Brown - Linn,native_precinct,430,False,United States Representative District 2,absentee,337,199,128,10,21.068249
+2026,IA,Linn County,Clinton Township,native_precinct,435,False,United States Representative District 2,total,419,182,222,15,-9.546539
+2026,IA,Linn County,Clinton Township,native_precinct,435,False,United States Representative District 2,election_day,281,92,175,14,-29.537367
+2026,IA,Linn County,Clinton Township,native_precinct,435,False,United States Representative District 2,absentee,138,90,47,1,31.15942
+2026,IA,Linn County,Fairfax Township,native_precinct,440,False,United States Representative District 2,total,728,342,352,34,-1.373626
+2026,IA,Linn County,Fairfax Township,native_precinct,440,False,United States Representative District 2,election_day,497,203,268,26,-13.078471
+2026,IA,Linn County,Fairfax Township,native_precinct,440,False,United States Representative District 2,absentee,231,139,84,8,23.809524
+2026,IA,Linn County,Fayette Township,native_precinct,445,False,United States Representative District 2,total,929,420,467,42,-5.059203
+2026,IA,Linn County,Fayette Township,native_precinct,445,False,United States Representative District 2,election_day,776,323,414,39,-11.726804
+2026,IA,Linn County,Fayette Township,native_precinct,445,False,United States Representative District 2,absentee,153,97,53,3,28.75817
+2026,IA,Linn County,Franklin Township,native_precinct,450,False,United States Representative District 2,total,1485,771,641,73,8.754209
+2026,IA,Linn County,Franklin Township,native_precinct,450,False,United States Representative District 2,election_day,1164,546,554,64,-0.687285
+2026,IA,Linn County,Franklin Township,native_precinct,450,False,United States Representative District 2,absentee,321,225,87,9,42.990654
+2026,IA,Linn County,Grant Township,native_precinct,455,False,United States Representative District 2,total,606,252,322,32,-11.551155
+2026,IA,Linn County,Grant Township,native_precinct,455,False,United States Representative District 2,election_day,502,201,273,28,-14.342629
+2026,IA,Linn County,Grant Township,native_precinct,455,False,United States Representative District 2,absentee,104,51,49,4,1.923077
+2026,IA,Linn County,Jackson Township,native_precinct,460,False,United States Representative District 2,total,653,270,353,30,-12.710567
+2026,IA,Linn County,Jackson Township,native_precinct,460,False,United States Representative District 2,election_day,538,198,313,27,-21.375465
+2026,IA,Linn County,Jackson Township,native_precinct,460,False,United States Representative District 2,absentee,115,72,40,3,27.826087
+2026,IA,Linn County,Maine Township,native_precinct,465,False,United States Representative District 2,total,908,397,458,53,-6.718062
+2026,IA,Linn County,Maine Township,native_precinct,465,False,United States Representative District 2,election_day,773,329,397,47,-8.796895
+2026,IA,Linn County,Maine Township,native_precinct,465,False,United States Representative District 2,absentee,135,68,61,6,5.185185
+2026,IA,Linn County,Marion Township 01,native_precinct,471,False,United States Representative District 2,total,770,301,440,29,-18.051948
+2026,IA,Linn County,Marion Township 01,native_precinct,471,False,United States Representative District 2,election_day,468,125,321,22,-41.880342
+2026,IA,Linn County,Marion Township 01,native_precinct,471,False,United States Representative District 2,absentee,302,176,119,7,18.874172
+2026,IA,Linn County,Marion Township 02,native_precinct,476,False,United States Representative District 2,total,523,253,254,16,-0.191205
+2026,IA,Linn County,Marion Township 02,native_precinct,476,False,United States Representative District 2,election_day,240,97,130,13,-13.75
+2026,IA,Linn County,Marion Township 02,native_precinct,476,False,United States Representative District 2,absentee,283,156,124,3,11.30742
+2026,IA,Linn County,Monroe Township 01,native_precinct,481,False,United States Representative District 2,total,1314,511,753,50,-18.417047
+2026,IA,Linn County,Monroe Township 01,native_precinct,481,False,United States Representative District 2,election_day,885,282,564,39,-31.864407
+2026,IA,Linn County,Monroe Township 01,native_precinct,481,False,United States Representative District 2,absentee,429,229,189,11,9.324009
+2026,IA,Linn County,Monroe Township 02,native_precinct,486,False,United States Representative District 2,total,1100,441,618,41,-16.090909
+2026,IA,Linn County,Monroe Township 02,native_precinct,486,False,United States Representative District 2,election_day,668,201,439,28,-35.628743
+2026,IA,Linn County,Monroe Township 02,native_precinct,486,False,United States Representative District 2,absentee,432,240,179,13,14.12037
+2026,IA,Linn County,Otter Creek Township,native_precinct,491,False,United States Representative District 2,total,850,293,516,41,-26.235294
+2026,IA,Linn County,Otter Creek Township,native_precinct,491,False,United States Representative District 2,election_day,706,223,448,35,-31.869688
+2026,IA,Linn County,Otter Creek Township,native_precinct,491,False,United States Representative District 2,absentee,144,70,68,6,1.388889
+2026,IA,Linn County,Putnam Township,native_precinct,496,False,United States Representative District 2,total,1666,838,758,70,4.801921
+2026,IA,Linn County,Putnam Township,native_precinct,496,False,United States Representative District 2,election_day,1312,580,671,61,-6.935976
+2026,IA,Linn County,Putnam Township,native_precinct,496,False,United States Representative District 2,absentee,354,258,87,9,48.305085
+2026,IA,Linn County,Spring Grove Township,native_precinct,502,False,United States Representative District 2,total,350,127,204,19,-22.0
+2026,IA,Linn County,Spring Grove Township,native_precinct,502,False,United States Representative District 2,election_day,287,95,176,16,-28.222997
+2026,IA,Linn County,Spring Grove Township,native_precinct,502,False,United States Representative District 2,absentee,63,32,28,3,6.349206
+2026,IA,Linn County,Washington Township,native_precinct,507,False,United States Representative District 2,total,1708,736,883,89,-8.606557
+2026,IA,Linn County,Washington Township,native_precinct,507,False,United States Representative District 2,election_day,1371,528,769,74,-17.57841
+2026,IA,Linn County,Washington Township,native_precinct,507,False,United States Representative District 2,absentee,337,208,114,15,27.893175

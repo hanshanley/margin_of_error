@@ -1,0 +1,95 @@
+year,state_code,county,reporting_unit,unit_type,source_pdf_page,maps_approved,registered_voters_total,ballots_total,ballots_election_day,ballots_absentee,blank_ballots_total,blank_ballots_election_day,blank_ballots_absentee,native_registered_turnout_percent,registered_turnout_percent,quality_flags
+2026,IA,Linn County,Cedar Rapids 01,native_precinct,1,False,2254,1492,936,556,0,0,0,66.19,66.193434,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 02,native_precinct,7,False,1724,1142,723,419,0,0,0,66.24,66.241299,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 03,native_precinct,12,False,2159,1581,949,632,0,0,0,73.23,73.228346,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 04,native_precinct,18,False,1853,1410,810,600,0,0,0,76.09,76.092822,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 05,native_precinct,24,False,2415,1457,849,608,0,0,0,60.33,60.331263,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 06,native_precinct,30,False,2224,1444,857,587,0,0,0,64.93,64.928058,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 07,native_precinct,36,False,2662,2032,1150,882,0,0,0,76.33,76.333584,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 08,native_precinct,42,False,2591,1978,1019,959,0,0,0,76.34,76.341181,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 09,native_precinct,47,False,2344,1663,1030,633,0,0,0,70.95,70.947099,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 10,native_precinct,52,False,1639,940,587,353,0,0,0,57.35,57.352044,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 11,native_precinct,57,False,1626,1060,605,455,0,0,0,65.19,65.190652,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 12,native_precinct,63,False,1395,859,437,422,1,0,1,61.58,61.577061,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 13,native_precinct,69,False,1989,1250,748,502,1,1,0,62.85,62.845651,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 14,native_precinct,74,False,893,504,338,166,0,0,0,56.44,56.43897,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 15,native_precinct,80,False,1900,1241,772,469,0,0,0,65.32,65.315789,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 16,native_precinct,86,False,1440,987,588,399,0,0,0,68.54,68.541667,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 17,native_precinct,92,False,1404,954,453,501,0,0,0,67.95,67.948718,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 18,native_precinct,98,False,999,600,379,221,0,0,0,60.06,60.06006,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 19,native_precinct,104,False,2015,1385,803,582,0,0,0,68.73,68.734491,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 20,native_precinct,110,False,1676,1012,626,386,0,0,0,60.38,60.381862,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 21,native_precinct,115,False,1779,1239,749,490,0,0,0,69.65,69.645868,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 22,native_precinct,121,False,1712,1145,675,470,2,1,1,66.88,66.880841,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 23,native_precinct,126,False,1828,1173,669,504,0,0,0,64.17,64.16849,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 24,native_precinct,131,False,1649,627,363,264,0,0,0,38.02,38.023044,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 25,native_precinct,137,False,1835,1020,565,455,0,0,0,55.59,55.585831,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 26,native_precinct,143,False,2147,1642,828,814,2,0,2,76.48,76.478808,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 27,native_precinct,149,False,2494,1877,968,909,0,0,0,75.26,75.260626,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 28,native_precinct,155,False,2086,1529,893,636,0,0,0,73.30,73.298178,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 29,native_precinct,161,False,2390,1834,1138,696,0,0,0,76.74,76.736402,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 30,native_precinct,167,False,2351,1573,989,584,0,0,0,66.91,66.907699,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 31,native_precinct,172,False,1974,1283,809,474,0,0,0,64.99,64.994934,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 32,native_precinct,177,False,1713,961,549,412,3,0,3,56.10,56.100409,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 33,native_precinct,182,False,1855,1222,732,490,0,0,0,65.88,65.876011,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 34,native_precinct,187,False,1553,928,611,317,0,0,0,59.76,59.755312,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 35,native_precinct,192,False,1255,679,441,238,0,0,0,54.10,54.103586,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 36,native_precinct,198,False,1370,630,341,289,1,0,1,45.99,45.985401,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 37,native_precinct,204,False,2320,1346,706,640,0,0,0,58.02,58.017241,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 38,native_precinct,210,False,2124,1384,783,601,0,0,0,65.16,65.160075,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 39,native_precinct,216,False,2004,1202,774,428,1,0,1,59.98,59.98004,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 40,native_precinct,222,False,1435,910,552,358,0,0,0,63.41,63.414634,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 41,native_precinct,228,False,1823,1277,660,617,1,0,1,70.05,70.049369,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 42,native_precinct,234,False,1408,776,480,296,0,0,0,55.11,55.113636,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 43,native_precinct,240,False,1507,847,447,400,0,0,0,56.20,56.20438,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 44,native_precinct,246,False,1817,1151,739,412,0,0,0,63.35,63.346175,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 45,native_precinct,252,False,719,496,318,178,1,1,0,68.98,68.984701,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 46,native_precinct,258,False,1466,1025,571,454,0,0,0,69.92,69.918145,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 47,native_precinct,264,False,1733,1153,700,453,1,0,1,66.53,66.532025,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 48,native_precinct,270,False,1523,905,573,332,0,0,0,59.42,59.422193,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 49,native_precinct,276,False,962,480,349,131,0,0,0,49.90,49.89605,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 50,native_precinct,282,False,1100,515,360,155,0,0,0,46.82,46.818182,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Cedar Rapids 51,native_precinct,288,False,2426,1634,879,755,1,0,1,67.35,67.353669,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Fairfax,native_precinct,294,False,2246,1646,1183,463,1,1,0,73.29,73.285841,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Hiawatha 01,native_precinct,299,False,1805,1217,722,495,0,0,0,67.42,67.423823,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Hiawatha 02,native_precinct,304,False,1587,845,600,245,0,0,0,53.25,53.245117,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Hiawatha 03,native_precinct,309,False,1822,1338,746,592,0,0,0,73.44,73.435785,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Marion 01,native_precinct,314,False,2315,1705,1029,676,0,0,0,73.65,73.650108,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Marion 02,native_precinct,319,False,1672,1235,812,423,0,0,0,73.86,73.863636,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Marion 03,native_precinct,324,False,2258,1693,940,753,0,0,0,74.98,74.977857,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Marion 04,native_precinct,329,False,2010,1530,772,758,0,0,0,76.12,76.119403,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Marion 05,native_precinct,334,False,1070,761,426,335,1,0,1,71.12,71.121495,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Marion 06,native_precinct,339,False,2031,1316,810,506,0,0,0,64.80,64.795667,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Marion 07,native_precinct,344,False,1479,1096,743,353,0,0,0,74.10,74.104124,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Marion 08,native_precinct,349,False,1614,1221,680,541,0,0,0,75.65,75.650558,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Marion 09,native_precinct,354,False,2011,1349,711,638,0,0,0,67.08,67.081054,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Marion 10,native_precinct,359,False,1382,773,499,274,0,0,0,55.93,55.93343,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Marion 11,native_precinct,364,False,1292,896,481,415,0,0,0,69.35,69.349845,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Marion 12,native_precinct,369,False,1908,1132,695,437,0,0,0,59.33,59.32914,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Marion 13,native_precinct,374,False,1866,1217,761,456,0,0,0,65.22,65.219721,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Marion 14,native_precinct,379,False,1256,877,465,412,0,0,0,69.82,69.824841,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Marion 15,native_precinct,384,False,1875,1162,593,569,0,0,0,61.97,61.973333,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Marion 16,native_precinct,389,False,1489,933,561,372,0,0,0,62.66,62.659503,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Marion 17,native_precinct,394,False,1854,1266,873,393,0,0,0,68.28,68.28479,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Marion 18,native_precinct,399,False,1003,525,342,183,0,0,0,52.34,52.342971,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Mount Vernon 01,native_precinct,404,False,1670,1246,948,298,0,0,0,74.61,74.610778,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Mount Vernon 02,native_precinct,409,False,2051,993,628,365,0,0,0,48.42,48.415407,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Robins,native_precinct,414,False,2849,2252,1520,732,0,0,0,79.05,79.045279,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Bertram Township,native_precinct,419,False,2049,1572,925,647,1,0,1,76.72,76.720351,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Boulder - Buffalo,native_precinct,424,False,732,527,429,98,0,0,0,71.99,71.994536,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Brown - Linn,native_precinct,430,False,2138,1484,1141,343,1,0,1,69.41,69.410664,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Clinton Township,native_precinct,435,False,576,425,284,141,0,0,0,73.78,73.784722,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Fairfax Township,native_precinct,440,False,994,737,505,232,0,0,0,74.14,74.144869,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Fayette Township,native_precinct,445,False,1411,938,782,156,0,0,0,66.48,66.477675,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Franklin Township,native_precinct,450,False,2148,1507,1183,324,1,1,0,70.16,70.158287,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Grant Township,native_precinct,455,False,916,620,515,105,0,0,0,67.69,67.68559,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Jackson Township,native_precinct,460,False,979,663,545,118,0,0,0,67.72,67.722165,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Maine Township,native_precinct,465,False,1352,924,788,136,0,0,0,68.34,68.343195,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Marion Township 01,native_precinct,471,False,1042,778,475,303,0,0,0,74.66,74.664107,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Marion Township 02,native_precinct,476,False,706,523,240,283,0,0,0,74.08,74.07932,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Monroe Township 01,native_precinct,481,False,1763,1328,895,433,0,0,0,75.33,75.326149,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Monroe Township 02,native_precinct,486,False,1424,1109,673,436,0,0,0,77.88,77.879213,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Otter Creek Township,native_precinct,491,False,1157,864,719,145,0,0,0,74.68,74.675886,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Putnam Township,native_precinct,496,False,2280,1689,1333,356,0,0,0,74.08,74.078947,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Spring Grove Township,native_precinct,502,False,564,356,293,63,0,0,0,63.12,63.120567,unofficial;county_scoped;registered_denominator_not_vep_or_demographic
+2026,IA,Linn County,Washington Township,native_precinct,507,False,2511,1735,1395,340,0,0,0,69.10,69.095978,unofficial;county_scoped;registered_denominator_not_vep_or_demographic

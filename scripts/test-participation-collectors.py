@@ -72,6 +72,79 @@ az_pima = module("review-arizona-pima-2026-native-results")
 mi_2026 = module("review-michigan-2026-native-results")
 ky_2026 = module("review-kentucky-2026-native-results")
 ia_consolidated = module("review-iowa-2026-consolidated-results")
+ia_linn = module("review-iowa-linn-2026-native-results")
+
+
+def iowa_linn_words(values, edges=(198, 238, 278)):
+    return [(edge - 18, 176, edge, 187, value) for edge, value in zip(edges, values)]
+
+
+def test_iowa_linn_columns_keep_missing_registrations_zero_and_separate_percent():
+    box = (20, 178, 100, 189)
+    assert ia_linn.cells(iowa_linn_words(["1,000"]), box) == ([1000, None, None], None)
+    words = iowa_linn_words(["3", "0", "3"], (198, 278, 318))
+    words.append((210, 176, 238, 187, "12.34%"))
+    assert ia_linn.cells(words, box, contest=True) == ([3, 0, 3], "12.34%")
+    with pytest.raises(ValueError, match="Missing"):
+        ia_linn.vector([3, None, 3], "ballot")
+
+
+@pytest.mark.parametrize("change,error", [
+    ("duplicate", "Duplicate"), ("position", "position"),
+    ("malformed", "integer"), ("percent_as_count", "percentage"),
+])
+def test_iowa_linn_columns_reject_unreviewed_layout_or_counts(change, error):
+    words = iowa_linn_words(["3", "0", "3"], (198, 278, 318))
+    if change == "duplicate":
+        words.append(words[0])
+    elif change == "position":
+        words[0] = (180, 176, 202, 187, "3")
+    elif change == "malformed":
+        words[0] = (180, 176, 198, 187, "1,00")
+    else:
+        words.append((210, 176, 238, 187, "3"))
+    with pytest.raises(ValueError, match=error):
+        ia_linn.cells(words, (20, 178, 100, 189), contest=True)
+
+
+def iowa_linn_tables():
+    stats = dict(unit="A", registered=[20, None, None], ballots=[9, 6, 3], blank=[1, 1, 0])
+    counts = [[3, 2, 1], [4, 3, 1], [1, 1, 0], [0, 0, 0], [0, 0, 0]]
+    house = dict(unit="A", options={label: dict(counts=value) for label, value in zip(ia_linn.OPTIONS, counts)},
+                 total=[8, 6, 2])
+    other_stats, other_house = copy.deepcopy(stats), copy.deepcopy(house)
+    other_stats["unit"] = other_house["unit"] = "B"
+    county, county_house = copy.deepcopy(stats), copy.deepcopy(house)
+    county["unit"] = county_house["unit"] = "Linn County"
+    for field in ("registered", "ballots", "blank"):
+        county[field] = [value * 2 if value is not None else None for value in county[field]]
+    county_house["total"] = [value * 2 for value in county_house["total"]]
+    for option in county_house["options"].values():
+        option["counts"] = [value * 2 for value in option["counts"]]
+    return ([county], [county_house]), ([stats, other_stats], [house, other_house])
+
+
+def test_iowa_linn_reconciles_every_native_registration_and_option_mode():
+    summary, detail = iowa_linn_tables()
+    ia_linn.reconcile(summary, detail)
+
+
+@pytest.mark.parametrize("change,error", [
+    ("duplicate_unit", "Duplicate"), ("missing_ballot", "ballots"),
+    ("invented_mode_registration", "registered"), ("candidate_mode", "candidate/mode"),
+])
+def test_iowa_linn_reconciliation_fails_closed(change, error):
+    summary, detail = iowa_linn_tables()
+    if change == "duplicate_unit":
+        detail[0][1]["unit"] = detail[1][1]["unit"] = "A"
+    elif change == "missing_ballot":
+        detail[0][1]["ballots"][1] = None
+    elif change == "invented_mode_registration":
+        detail[0][1]["registered"][1] = 0
+    else:
+        detail[1][1]["options"]["REP Joe Mitchell"]["counts"][1] += 1
+    with pytest.raises(ValueError, match=error):
+        ia_linn.reconcile(summary, detail)
 
 
 def iowa_consolidated_rows():

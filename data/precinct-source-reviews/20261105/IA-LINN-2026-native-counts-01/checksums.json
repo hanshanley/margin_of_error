@@ -1,0 +1,42 @@
+{
+  "all-house-candidate-mode-counts.csv": {
+    "bytes": 191754,
+    "sha256": "3c2855740cae1c247f282d4fb6e05b1e77fad66382a723dd9f2a77b328a26511"
+  },
+  "audit.json": {
+    "bytes": 1120,
+    "sha256": "3ba50355b4cf84ccd91fb92526b4a920fe965c7d323c55e106a3960c93d677fd"
+  },
+  "county-participation.csv": {
+    "bytes": 467,
+    "sha256": "f4c4f271ff7a08b57169328ff3a2794a30b4e10d36f0083d12c1b082d2876db9"
+  },
+  "county-results.csv": {
+    "bytes": 562,
+    "sha256": "3ad1cc6636faae6252ebf9683f06016af6b08680e8154bf1dba4fc5e7b4fd440"
+  },
+  "precinct-participation.csv": {
+    "bytes": 16385,
+    "sha256": "7a880c32174b1dd5830fada0c0b4d559ad7bb61239065966fdfa963f7be46fe7"
+  },
+  "precinct-results.csv": {
+    "bytes": 38178,
+    "sha256": "4656091aff6ab1a20bca99a7acb9c648f8f4e7d27cd189814fb0fdbff82bff5d"
+  },
+  "review.py": {
+    "bytes": 15059,
+    "sha256": "4c54373740af427747b01ef2e8f9ad08ffe10f48e39d868b78c4dd18eb1942a9"
+  },
+  "source/linn-2026-general-precinct.pdf": {
+    "bytes": 1757695,
+    "sha256": "f9c01726731a42b144006c635fc5e99a105fb7c6521c6d8626f7579dc8ca5504"
+  },
+  "source/linn-2026-general-summary.pdf": {
+    "bytes": 36494,
+    "sha256": "a2d194adfef5761933857f2b57e719297d793b41d54dfd53e2f68015b800572d"
+  },
+  "source/sources.json": {
+    "bytes": 926,
+    "sha256": "b3b2d531fa48b543ef78a47a8bee55fd252688abda5473cc3fb85987d20a1da3"
+  }
+}

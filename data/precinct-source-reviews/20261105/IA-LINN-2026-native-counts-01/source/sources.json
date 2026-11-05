@@ -1,0 +1,22 @@
+[
+  {
+    "file": "linn-2026-general-summary.pdf",
+    "url": "https://gis.linncountyiowa.gov/web-data/elections/year/2026/20261103GE/sum.pdf",
+    "final_url": "https://gis.linncountyiowa.gov/web-data/elections/year/2026/20261103GE/sum.pdf",
+    "status": 200,
+    "bytes": 36494,
+    "sha256": "a2d194adfef5761933857f2b57e719297d793b41d54dfd53e2f68015b800572d",
+    "content_type": "application/pdf",
+    "acquired_at": "2026-11-05T14:00:20.131371+00:00"
+  },
+  {
+    "file": "linn-2026-general-precinct.pdf",
+    "url": "https://gis.linncountyiowa.gov/web-data/elections/year/2026/20261103GE/pct.pdf",
+    "final_url": "https://gis.linncountyiowa.gov/web-data/elections/year/2026/20261103GE/pct.pdf",
+    "status": 200,
+    "bytes": 1757695,
+    "sha256": "f9c01726731a42b144006c635fc5e99a105fb7c6521c6d8626f7579dc8ca5504",
+    "content_type": "application/pdf",
+    "acquired_at": "2026-11-05T14:00:20.486056+00:00"
+  }
+]

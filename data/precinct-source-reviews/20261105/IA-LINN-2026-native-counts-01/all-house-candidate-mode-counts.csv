@@ -1,0 +1,1426 @@
+year,state_code,county,reporting_unit,unit_type,source_pdf_page,maps_approved,contest,native_mode,native_option,party,votes,printed_total_vote_percent
+2026,IA,Linn County,Linn County,county,1,False,United States Representative District 2,total,REP Joe Mitchell,REP,39254,36.53%
+2026,IA,Linn County,Linn County,county,1,False,United States Representative District 2,total,DEM Lindsay James,DEM,62228,57.91%
+2026,IA,Linn County,Linn County,county,1,False,United States Representative District 2,total,LIB Rick Stewart,LIB,3058,2.85%
+2026,IA,Linn County,Linn County,county,1,False,United States Representative District 2,total,Dave Bushaw,,1230,1.14%
+2026,IA,Linn County,Linn County,county,1,False,United States Representative District 2,total,Write-In Totals,,68,0.06%
+2026,IA,Linn County,Linn County,county,1,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,28704,
+2026,IA,Linn County,Linn County,county,1,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,33512,
+2026,IA,Linn County,Linn County,county,1,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,2305,
+2026,IA,Linn County,Linn County,county,1,False,United States Representative District 2,election_day,Dave Bushaw,,927,
+2026,IA,Linn County,Linn County,county,1,False,United States Representative District 2,election_day,Write-In Totals,,53,
+2026,IA,Linn County,Linn County,county,1,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,10550,
+2026,IA,Linn County,Linn County,county,1,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,28716,
+2026,IA,Linn County,Linn County,county,1,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,753,
+2026,IA,Linn County,Linn County,county,1,False,United States Representative District 2,absentee,Dave Bushaw,,303,
+2026,IA,Linn County,Linn County,county,1,False,United States Representative District 2,absentee,Write-In Totals,,15,
+2026,IA,Linn County,Cedar Rapids 01,native_precinct,1,False,United States Representative District 2,total,REP Joe Mitchell,REP,617,41.35%
+2026,IA,Linn County,Cedar Rapids 01,native_precinct,1,False,United States Representative District 2,total,DEM Lindsay James,DEM,796,53.35%
+2026,IA,Linn County,Cedar Rapids 01,native_precinct,1,False,United States Representative District 2,total,LIB Rick Stewart,LIB,37,2.48%
+2026,IA,Linn County,Cedar Rapids 01,native_precinct,1,False,United States Representative District 2,total,Dave Bushaw,,11,0.74%
+2026,IA,Linn County,Cedar Rapids 01,native_precinct,1,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Cedar Rapids 01,native_precinct,1,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,466,
+2026,IA,Linn County,Cedar Rapids 01,native_precinct,1,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,405,
+2026,IA,Linn County,Cedar Rapids 01,native_precinct,1,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,32,
+2026,IA,Linn County,Cedar Rapids 01,native_precinct,1,False,United States Representative District 2,election_day,Dave Bushaw,,8,
+2026,IA,Linn County,Cedar Rapids 01,native_precinct,1,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 01,native_precinct,1,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,151,
+2026,IA,Linn County,Cedar Rapids 01,native_precinct,1,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,391,
+2026,IA,Linn County,Cedar Rapids 01,native_precinct,1,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,5,
+2026,IA,Linn County,Cedar Rapids 01,native_precinct,1,False,United States Representative District 2,absentee,Dave Bushaw,,3,
+2026,IA,Linn County,Cedar Rapids 01,native_precinct,1,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 02,native_precinct,7,False,United States Representative District 2,total,REP Joe Mitchell,REP,378,33.10%
+2026,IA,Linn County,Cedar Rapids 02,native_precinct,7,False,United States Representative District 2,total,DEM Lindsay James,DEM,706,61.82%
+2026,IA,Linn County,Cedar Rapids 02,native_precinct,7,False,United States Representative District 2,total,LIB Rick Stewart,LIB,31,2.71%
+2026,IA,Linn County,Cedar Rapids 02,native_precinct,7,False,United States Representative District 2,total,Dave Bushaw,,10,0.88%
+2026,IA,Linn County,Cedar Rapids 02,native_precinct,7,False,United States Representative District 2,total,Write-In Totals,,1,0.09%
+2026,IA,Linn County,Cedar Rapids 02,native_precinct,7,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,275,
+2026,IA,Linn County,Cedar Rapids 02,native_precinct,7,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,404,
+2026,IA,Linn County,Cedar Rapids 02,native_precinct,7,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,24,
+2026,IA,Linn County,Cedar Rapids 02,native_precinct,7,False,United States Representative District 2,election_day,Dave Bushaw,,7,
+2026,IA,Linn County,Cedar Rapids 02,native_precinct,7,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 02,native_precinct,7,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,103,
+2026,IA,Linn County,Cedar Rapids 02,native_precinct,7,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,302,
+2026,IA,Linn County,Cedar Rapids 02,native_precinct,7,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,7,
+2026,IA,Linn County,Cedar Rapids 02,native_precinct,7,False,United States Representative District 2,absentee,Dave Bushaw,,3,
+2026,IA,Linn County,Cedar Rapids 02,native_precinct,7,False,United States Representative District 2,absentee,Write-In Totals,,1,
+2026,IA,Linn County,Cedar Rapids 03,native_precinct,12,False,United States Representative District 2,total,REP Joe Mitchell,REP,589,37.25%
+2026,IA,Linn County,Cedar Rapids 03,native_precinct,12,False,United States Representative District 2,total,DEM Lindsay James,DEM,930,58.82%
+2026,IA,Linn County,Cedar Rapids 03,native_precinct,12,False,United States Representative District 2,total,LIB Rick Stewart,LIB,35,2.21%
+2026,IA,Linn County,Cedar Rapids 03,native_precinct,12,False,United States Representative District 2,total,Dave Bushaw,,5,0.32%
+2026,IA,Linn County,Cedar Rapids 03,native_precinct,12,False,United States Representative District 2,total,Write-In Totals,,2,0.13%
+2026,IA,Linn County,Cedar Rapids 03,native_precinct,12,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,412,
+2026,IA,Linn County,Cedar Rapids 03,native_precinct,12,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,492,
+2026,IA,Linn County,Cedar Rapids 03,native_precinct,12,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,27,
+2026,IA,Linn County,Cedar Rapids 03,native_precinct,12,False,United States Representative District 2,election_day,Dave Bushaw,,5,
+2026,IA,Linn County,Cedar Rapids 03,native_precinct,12,False,United States Representative District 2,election_day,Write-In Totals,,1,
+2026,IA,Linn County,Cedar Rapids 03,native_precinct,12,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,177,
+2026,IA,Linn County,Cedar Rapids 03,native_precinct,12,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,438,
+2026,IA,Linn County,Cedar Rapids 03,native_precinct,12,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,8,
+2026,IA,Linn County,Cedar Rapids 03,native_precinct,12,False,United States Representative District 2,absentee,Dave Bushaw,,0,
+2026,IA,Linn County,Cedar Rapids 03,native_precinct,12,False,United States Representative District 2,absentee,Write-In Totals,,1,
+2026,IA,Linn County,Cedar Rapids 04,native_precinct,18,False,United States Representative District 2,total,REP Joe Mitchell,REP,543,38.51%
+2026,IA,Linn County,Cedar Rapids 04,native_precinct,18,False,United States Representative District 2,total,DEM Lindsay James,DEM,801,56.81%
+2026,IA,Linn County,Cedar Rapids 04,native_precinct,18,False,United States Representative District 2,total,LIB Rick Stewart,LIB,39,2.77%
+2026,IA,Linn County,Cedar Rapids 04,native_precinct,18,False,United States Representative District 2,total,Dave Bushaw,,7,0.50%
+2026,IA,Linn County,Cedar Rapids 04,native_precinct,18,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Cedar Rapids 04,native_precinct,18,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,391,
+2026,IA,Linn County,Cedar Rapids 04,native_precinct,18,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,379,
+2026,IA,Linn County,Cedar Rapids 04,native_precinct,18,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,26,
+2026,IA,Linn County,Cedar Rapids 04,native_precinct,18,False,United States Representative District 2,election_day,Dave Bushaw,,3,
+2026,IA,Linn County,Cedar Rapids 04,native_precinct,18,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 04,native_precinct,18,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,152,
+2026,IA,Linn County,Cedar Rapids 04,native_precinct,18,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,422,
+2026,IA,Linn County,Cedar Rapids 04,native_precinct,18,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,13,
+2026,IA,Linn County,Cedar Rapids 04,native_precinct,18,False,United States Representative District 2,absentee,Dave Bushaw,,4,
+2026,IA,Linn County,Cedar Rapids 04,native_precinct,18,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 05,native_precinct,24,False,United States Representative District 2,total,REP Joe Mitchell,REP,444,30.47%
+2026,IA,Linn County,Cedar Rapids 05,native_precinct,24,False,United States Representative District 2,total,DEM Lindsay James,DEM,934,64.10%
+2026,IA,Linn County,Cedar Rapids 05,native_precinct,24,False,United States Representative District 2,total,LIB Rick Stewart,LIB,31,2.13%
+2026,IA,Linn County,Cedar Rapids 05,native_precinct,24,False,United States Representative District 2,total,Dave Bushaw,,15,1.03%
+2026,IA,Linn County,Cedar Rapids 05,native_precinct,24,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Cedar Rapids 05,native_precinct,24,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,312,
+2026,IA,Linn County,Cedar Rapids 05,native_precinct,24,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,482,
+2026,IA,Linn County,Cedar Rapids 05,native_precinct,24,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,22,
+2026,IA,Linn County,Cedar Rapids 05,native_precinct,24,False,United States Representative District 2,election_day,Dave Bushaw,,7,
+2026,IA,Linn County,Cedar Rapids 05,native_precinct,24,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 05,native_precinct,24,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,132,
+2026,IA,Linn County,Cedar Rapids 05,native_precinct,24,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,452,
+2026,IA,Linn County,Cedar Rapids 05,native_precinct,24,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,9,
+2026,IA,Linn County,Cedar Rapids 05,native_precinct,24,False,United States Representative District 2,absentee,Dave Bushaw,,8,
+2026,IA,Linn County,Cedar Rapids 05,native_precinct,24,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 06,native_precinct,30,False,United States Representative District 2,total,REP Joe Mitchell,REP,509,35.25%
+2026,IA,Linn County,Cedar Rapids 06,native_precinct,30,False,United States Representative District 2,total,DEM Lindsay James,DEM,874,60.53%
+2026,IA,Linn County,Cedar Rapids 06,native_precinct,30,False,United States Representative District 2,total,LIB Rick Stewart,LIB,33,2.29%
+2026,IA,Linn County,Cedar Rapids 06,native_precinct,30,False,United States Representative District 2,total,Dave Bushaw,,11,0.76%
+2026,IA,Linn County,Cedar Rapids 06,native_precinct,30,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Cedar Rapids 06,native_precinct,30,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,376,
+2026,IA,Linn County,Cedar Rapids 06,native_precinct,30,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,436,
+2026,IA,Linn County,Cedar Rapids 06,native_precinct,30,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,26,
+2026,IA,Linn County,Cedar Rapids 06,native_precinct,30,False,United States Representative District 2,election_day,Dave Bushaw,,9,
+2026,IA,Linn County,Cedar Rapids 06,native_precinct,30,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 06,native_precinct,30,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,133,
+2026,IA,Linn County,Cedar Rapids 06,native_precinct,30,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,438,
+2026,IA,Linn County,Cedar Rapids 06,native_precinct,30,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,7,
+2026,IA,Linn County,Cedar Rapids 06,native_precinct,30,False,United States Representative District 2,absentee,Dave Bushaw,,2,
+2026,IA,Linn County,Cedar Rapids 06,native_precinct,30,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 07,native_precinct,36,False,United States Representative District 2,total,REP Joe Mitchell,REP,953,46.90%
+2026,IA,Linn County,Cedar Rapids 07,native_precinct,36,False,United States Representative District 2,total,DEM Lindsay James,DEM,1008,49.61%
+2026,IA,Linn County,Cedar Rapids 07,native_precinct,36,False,United States Representative District 2,total,LIB Rick Stewart,LIB,37,1.82%
+2026,IA,Linn County,Cedar Rapids 07,native_precinct,36,False,United States Representative District 2,total,Dave Bushaw,,9,0.44%
+2026,IA,Linn County,Cedar Rapids 07,native_precinct,36,False,United States Representative District 2,total,Write-In Totals,,2,0.10%
+2026,IA,Linn County,Cedar Rapids 07,native_precinct,36,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,642,
+2026,IA,Linn County,Cedar Rapids 07,native_precinct,36,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,457,
+2026,IA,Linn County,Cedar Rapids 07,native_precinct,36,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,28,
+2026,IA,Linn County,Cedar Rapids 07,native_precinct,36,False,United States Representative District 2,election_day,Dave Bushaw,,7,
+2026,IA,Linn County,Cedar Rapids 07,native_precinct,36,False,United States Representative District 2,election_day,Write-In Totals,,2,
+2026,IA,Linn County,Cedar Rapids 07,native_precinct,36,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,311,
+2026,IA,Linn County,Cedar Rapids 07,native_precinct,36,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,551,
+2026,IA,Linn County,Cedar Rapids 07,native_precinct,36,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,9,
+2026,IA,Linn County,Cedar Rapids 07,native_precinct,36,False,United States Representative District 2,absentee,Dave Bushaw,,2,
+2026,IA,Linn County,Cedar Rapids 07,native_precinct,36,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 08,native_precinct,42,False,United States Representative District 2,total,REP Joe Mitchell,REP,675,34.13%
+2026,IA,Linn County,Cedar Rapids 08,native_precinct,42,False,United States Representative District 2,total,DEM Lindsay James,DEM,1225,61.93%
+2026,IA,Linn County,Cedar Rapids 08,native_precinct,42,False,United States Representative District 2,total,LIB Rick Stewart,LIB,43,2.17%
+2026,IA,Linn County,Cedar Rapids 08,native_precinct,42,False,United States Representative District 2,total,Dave Bushaw,,14,0.71%
+2026,IA,Linn County,Cedar Rapids 08,native_precinct,42,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Cedar Rapids 08,native_precinct,42,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,413,
+2026,IA,Linn County,Cedar Rapids 08,native_precinct,42,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,553,
+2026,IA,Linn County,Cedar Rapids 08,native_precinct,42,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,31,
+2026,IA,Linn County,Cedar Rapids 08,native_precinct,42,False,United States Representative District 2,election_day,Dave Bushaw,,11,
+2026,IA,Linn County,Cedar Rapids 08,native_precinct,42,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 08,native_precinct,42,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,262,
+2026,IA,Linn County,Cedar Rapids 08,native_precinct,42,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,672,
+2026,IA,Linn County,Cedar Rapids 08,native_precinct,42,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,12,
+2026,IA,Linn County,Cedar Rapids 08,native_precinct,42,False,United States Representative District 2,absentee,Dave Bushaw,,3,
+2026,IA,Linn County,Cedar Rapids 08,native_precinct,42,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 09,native_precinct,47,False,United States Representative District 2,total,REP Joe Mitchell,REP,519,31.21%
+2026,IA,Linn County,Cedar Rapids 09,native_precinct,47,False,United States Representative District 2,total,DEM Lindsay James,DEM,1053,63.32%
+2026,IA,Linn County,Cedar Rapids 09,native_precinct,47,False,United States Representative District 2,total,LIB Rick Stewart,LIB,40,2.41%
+2026,IA,Linn County,Cedar Rapids 09,native_precinct,47,False,United States Representative District 2,total,Dave Bushaw,,20,1.20%
+2026,IA,Linn County,Cedar Rapids 09,native_precinct,47,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Cedar Rapids 09,native_precinct,47,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,373,
+2026,IA,Linn County,Cedar Rapids 09,native_precinct,47,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,584,
+2026,IA,Linn County,Cedar Rapids 09,native_precinct,47,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,35,
+2026,IA,Linn County,Cedar Rapids 09,native_precinct,47,False,United States Representative District 2,election_day,Dave Bushaw,,16,
+2026,IA,Linn County,Cedar Rapids 09,native_precinct,47,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 09,native_precinct,47,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,146,
+2026,IA,Linn County,Cedar Rapids 09,native_precinct,47,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,469,
+2026,IA,Linn County,Cedar Rapids 09,native_precinct,47,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,5,
+2026,IA,Linn County,Cedar Rapids 09,native_precinct,47,False,United States Representative District 2,absentee,Dave Bushaw,,4,
+2026,IA,Linn County,Cedar Rapids 09,native_precinct,47,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 10,native_precinct,52,False,United States Representative District 2,total,REP Joe Mitchell,REP,276,29.36%
+2026,IA,Linn County,Cedar Rapids 10,native_precinct,52,False,United States Representative District 2,total,DEM Lindsay James,DEM,613,65.21%
+2026,IA,Linn County,Cedar Rapids 10,native_precinct,52,False,United States Representative District 2,total,LIB Rick Stewart,LIB,22,2.34%
+2026,IA,Linn County,Cedar Rapids 10,native_precinct,52,False,United States Representative District 2,total,Dave Bushaw,,9,0.96%
+2026,IA,Linn County,Cedar Rapids 10,native_precinct,52,False,United States Representative District 2,total,Write-In Totals,,1,0.11%
+2026,IA,Linn County,Cedar Rapids 10,native_precinct,52,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,197,
+2026,IA,Linn County,Cedar Rapids 10,native_precinct,52,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,354,
+2026,IA,Linn County,Cedar Rapids 10,native_precinct,52,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,16,
+2026,IA,Linn County,Cedar Rapids 10,native_precinct,52,False,United States Representative District 2,election_day,Dave Bushaw,,5,
+2026,IA,Linn County,Cedar Rapids 10,native_precinct,52,False,United States Representative District 2,election_day,Write-In Totals,,1,
+2026,IA,Linn County,Cedar Rapids 10,native_precinct,52,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,79,
+2026,IA,Linn County,Cedar Rapids 10,native_precinct,52,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,259,
+2026,IA,Linn County,Cedar Rapids 10,native_precinct,52,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,6,
+2026,IA,Linn County,Cedar Rapids 10,native_precinct,52,False,United States Representative District 2,absentee,Dave Bushaw,,4,
+2026,IA,Linn County,Cedar Rapids 10,native_precinct,52,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 11,native_precinct,57,False,United States Representative District 2,total,REP Joe Mitchell,REP,364,34.34%
+2026,IA,Linn County,Cedar Rapids 11,native_precinct,57,False,United States Representative District 2,total,DEM Lindsay James,DEM,621,58.58%
+2026,IA,Linn County,Cedar Rapids 11,native_precinct,57,False,United States Representative District 2,total,LIB Rick Stewart,LIB,34,3.21%
+2026,IA,Linn County,Cedar Rapids 11,native_precinct,57,False,United States Representative District 2,total,Dave Bushaw,,26,2.45%
+2026,IA,Linn County,Cedar Rapids 11,native_precinct,57,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Cedar Rapids 11,native_precinct,57,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,235,
+2026,IA,Linn County,Cedar Rapids 11,native_precinct,57,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,319,
+2026,IA,Linn County,Cedar Rapids 11,native_precinct,57,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,22,
+2026,IA,Linn County,Cedar Rapids 11,native_precinct,57,False,United States Representative District 2,election_day,Dave Bushaw,,18,
+2026,IA,Linn County,Cedar Rapids 11,native_precinct,57,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 11,native_precinct,57,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,129,
+2026,IA,Linn County,Cedar Rapids 11,native_precinct,57,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,302,
+2026,IA,Linn County,Cedar Rapids 11,native_precinct,57,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,12,
+2026,IA,Linn County,Cedar Rapids 11,native_precinct,57,False,United States Representative District 2,absentee,Dave Bushaw,,8,
+2026,IA,Linn County,Cedar Rapids 11,native_precinct,57,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 12,native_precinct,63,False,United States Representative District 2,total,REP Joe Mitchell,REP,228,26.54%
+2026,IA,Linn County,Cedar Rapids 12,native_precinct,63,False,United States Representative District 2,total,DEM Lindsay James,DEM,581,67.64%
+2026,IA,Linn County,Cedar Rapids 12,native_precinct,63,False,United States Representative District 2,total,LIB Rick Stewart,LIB,25,2.91%
+2026,IA,Linn County,Cedar Rapids 12,native_precinct,63,False,United States Representative District 2,total,Dave Bushaw,,13,1.51%
+2026,IA,Linn County,Cedar Rapids 12,native_precinct,63,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Cedar Rapids 12,native_precinct,63,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,133,
+2026,IA,Linn County,Cedar Rapids 12,native_precinct,63,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,272,
+2026,IA,Linn County,Cedar Rapids 12,native_precinct,63,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,19,
+2026,IA,Linn County,Cedar Rapids 12,native_precinct,63,False,United States Representative District 2,election_day,Dave Bushaw,,8,
+2026,IA,Linn County,Cedar Rapids 12,native_precinct,63,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 12,native_precinct,63,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,95,
+2026,IA,Linn County,Cedar Rapids 12,native_precinct,63,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,309,
+2026,IA,Linn County,Cedar Rapids 12,native_precinct,63,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,6,
+2026,IA,Linn County,Cedar Rapids 12,native_precinct,63,False,United States Representative District 2,absentee,Dave Bushaw,,5,
+2026,IA,Linn County,Cedar Rapids 12,native_precinct,63,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 13,native_precinct,69,False,United States Representative District 2,total,REP Joe Mitchell,REP,386,30.88%
+2026,IA,Linn County,Cedar Rapids 13,native_precinct,69,False,United States Representative District 2,total,DEM Lindsay James,DEM,775,62.00%
+2026,IA,Linn County,Cedar Rapids 13,native_precinct,69,False,United States Representative District 2,total,LIB Rick Stewart,LIB,47,3.76%
+2026,IA,Linn County,Cedar Rapids 13,native_precinct,69,False,United States Representative District 2,total,Dave Bushaw,,24,1.92%
+2026,IA,Linn County,Cedar Rapids 13,native_precinct,69,False,United States Representative District 2,total,Write-In Totals,,4,0.32%
+2026,IA,Linn County,Cedar Rapids 13,native_precinct,69,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,282,
+2026,IA,Linn County,Cedar Rapids 13,native_precinct,69,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,397,
+2026,IA,Linn County,Cedar Rapids 13,native_precinct,69,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,35,
+2026,IA,Linn County,Cedar Rapids 13,native_precinct,69,False,United States Representative District 2,election_day,Dave Bushaw,,20,
+2026,IA,Linn County,Cedar Rapids 13,native_precinct,69,False,United States Representative District 2,election_day,Write-In Totals,,4,
+2026,IA,Linn County,Cedar Rapids 13,native_precinct,69,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,104,
+2026,IA,Linn County,Cedar Rapids 13,native_precinct,69,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,378,
+2026,IA,Linn County,Cedar Rapids 13,native_precinct,69,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,12,
+2026,IA,Linn County,Cedar Rapids 13,native_precinct,69,False,United States Representative District 2,absentee,Dave Bushaw,,4,
+2026,IA,Linn County,Cedar Rapids 13,native_precinct,69,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 14,native_precinct,74,False,United States Representative District 2,total,REP Joe Mitchell,REP,103,20.44%
+2026,IA,Linn County,Cedar Rapids 14,native_precinct,74,False,United States Representative District 2,total,DEM Lindsay James,DEM,361,71.63%
+2026,IA,Linn County,Cedar Rapids 14,native_precinct,74,False,United States Representative District 2,total,LIB Rick Stewart,LIB,21,4.17%
+2026,IA,Linn County,Cedar Rapids 14,native_precinct,74,False,United States Representative District 2,total,Dave Bushaw,,9,1.79%
+2026,IA,Linn County,Cedar Rapids 14,native_precinct,74,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Cedar Rapids 14,native_precinct,74,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,79,
+2026,IA,Linn County,Cedar Rapids 14,native_precinct,74,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,237,
+2026,IA,Linn County,Cedar Rapids 14,native_precinct,74,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,10,
+2026,IA,Linn County,Cedar Rapids 14,native_precinct,74,False,United States Representative District 2,election_day,Dave Bushaw,,5,
+2026,IA,Linn County,Cedar Rapids 14,native_precinct,74,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 14,native_precinct,74,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,24,
+2026,IA,Linn County,Cedar Rapids 14,native_precinct,74,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,124,
+2026,IA,Linn County,Cedar Rapids 14,native_precinct,74,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,11,
+2026,IA,Linn County,Cedar Rapids 14,native_precinct,74,False,United States Representative District 2,absentee,Dave Bushaw,,4,
+2026,IA,Linn County,Cedar Rapids 14,native_precinct,74,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 15,native_precinct,80,False,United States Representative District 2,total,REP Joe Mitchell,REP,340,27.40%
+2026,IA,Linn County,Cedar Rapids 15,native_precinct,80,False,United States Representative District 2,total,DEM Lindsay James,DEM,819,66.00%
+2026,IA,Linn County,Cedar Rapids 15,native_precinct,80,False,United States Representative District 2,total,LIB Rick Stewart,LIB,43,3.46%
+2026,IA,Linn County,Cedar Rapids 15,native_precinct,80,False,United States Representative District 2,total,Dave Bushaw,,24,1.93%
+2026,IA,Linn County,Cedar Rapids 15,native_precinct,80,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Cedar Rapids 15,native_precinct,80,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,264,
+2026,IA,Linn County,Cedar Rapids 15,native_precinct,80,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,449,
+2026,IA,Linn County,Cedar Rapids 15,native_precinct,80,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,35,
+2026,IA,Linn County,Cedar Rapids 15,native_precinct,80,False,United States Representative District 2,election_day,Dave Bushaw,,18,
+2026,IA,Linn County,Cedar Rapids 15,native_precinct,80,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 15,native_precinct,80,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,76,
+2026,IA,Linn County,Cedar Rapids 15,native_precinct,80,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,370,
+2026,IA,Linn County,Cedar Rapids 15,native_precinct,80,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,8,
+2026,IA,Linn County,Cedar Rapids 15,native_precinct,80,False,United States Representative District 2,absentee,Dave Bushaw,,6,
+2026,IA,Linn County,Cedar Rapids 15,native_precinct,80,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 16,native_precinct,86,False,United States Representative District 2,total,REP Joe Mitchell,REP,211,21.38%
+2026,IA,Linn County,Cedar Rapids 16,native_precinct,86,False,United States Representative District 2,total,DEM Lindsay James,DEM,700,70.92%
+2026,IA,Linn County,Cedar Rapids 16,native_precinct,86,False,United States Representative District 2,total,LIB Rick Stewart,LIB,40,4.05%
+2026,IA,Linn County,Cedar Rapids 16,native_precinct,86,False,United States Representative District 2,total,Dave Bushaw,,19,1.92%
+2026,IA,Linn County,Cedar Rapids 16,native_precinct,86,False,United States Representative District 2,total,Write-In Totals,,1,0.10%
+2026,IA,Linn County,Cedar Rapids 16,native_precinct,86,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,140,
+2026,IA,Linn County,Cedar Rapids 16,native_precinct,86,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,388,
+2026,IA,Linn County,Cedar Rapids 16,native_precinct,86,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,33,
+2026,IA,Linn County,Cedar Rapids 16,native_precinct,86,False,United States Representative District 2,election_day,Dave Bushaw,,15,
+2026,IA,Linn County,Cedar Rapids 16,native_precinct,86,False,United States Representative District 2,election_day,Write-In Totals,,1,
+2026,IA,Linn County,Cedar Rapids 16,native_precinct,86,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,71,
+2026,IA,Linn County,Cedar Rapids 16,native_precinct,86,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,312,
+2026,IA,Linn County,Cedar Rapids 16,native_precinct,86,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,7,
+2026,IA,Linn County,Cedar Rapids 16,native_precinct,86,False,United States Representative District 2,absentee,Dave Bushaw,,4,
+2026,IA,Linn County,Cedar Rapids 16,native_precinct,86,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 17,native_precinct,92,False,United States Representative District 2,total,REP Joe Mitchell,REP,244,25.58%
+2026,IA,Linn County,Cedar Rapids 17,native_precinct,92,False,United States Representative District 2,total,DEM Lindsay James,DEM,665,69.71%
+2026,IA,Linn County,Cedar Rapids 17,native_precinct,92,False,United States Representative District 2,total,LIB Rick Stewart,LIB,22,2.31%
+2026,IA,Linn County,Cedar Rapids 17,native_precinct,92,False,United States Representative District 2,total,Dave Bushaw,,13,1.36%
+2026,IA,Linn County,Cedar Rapids 17,native_precinct,92,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Cedar Rapids 17,native_precinct,92,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,132,
+2026,IA,Linn County,Cedar Rapids 17,native_precinct,92,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,296,
+2026,IA,Linn County,Cedar Rapids 17,native_precinct,92,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,15,
+2026,IA,Linn County,Cedar Rapids 17,native_precinct,92,False,United States Representative District 2,election_day,Dave Bushaw,,7,
+2026,IA,Linn County,Cedar Rapids 17,native_precinct,92,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 17,native_precinct,92,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,112,
+2026,IA,Linn County,Cedar Rapids 17,native_precinct,92,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,369,
+2026,IA,Linn County,Cedar Rapids 17,native_precinct,92,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,7,
+2026,IA,Linn County,Cedar Rapids 17,native_precinct,92,False,United States Representative District 2,absentee,Dave Bushaw,,6,
+2026,IA,Linn County,Cedar Rapids 17,native_precinct,92,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 18,native_precinct,98,False,United States Representative District 2,total,REP Joe Mitchell,REP,116,19.33%
+2026,IA,Linn County,Cedar Rapids 18,native_precinct,98,False,United States Representative District 2,total,DEM Lindsay James,DEM,441,73.50%
+2026,IA,Linn County,Cedar Rapids 18,native_precinct,98,False,United States Representative District 2,total,LIB Rick Stewart,LIB,21,3.50%
+2026,IA,Linn County,Cedar Rapids 18,native_precinct,98,False,United States Representative District 2,total,Dave Bushaw,,8,1.33%
+2026,IA,Linn County,Cedar Rapids 18,native_precinct,98,False,United States Representative District 2,total,Write-In Totals,,2,0.33%
+2026,IA,Linn County,Cedar Rapids 18,native_precinct,98,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,91,
+2026,IA,Linn County,Cedar Rapids 18,native_precinct,98,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,261,
+2026,IA,Linn County,Cedar Rapids 18,native_precinct,98,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,16,
+2026,IA,Linn County,Cedar Rapids 18,native_precinct,98,False,United States Representative District 2,election_day,Dave Bushaw,,3,
+2026,IA,Linn County,Cedar Rapids 18,native_precinct,98,False,United States Representative District 2,election_day,Write-In Totals,,1,
+2026,IA,Linn County,Cedar Rapids 18,native_precinct,98,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,25,
+2026,IA,Linn County,Cedar Rapids 18,native_precinct,98,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,180,
+2026,IA,Linn County,Cedar Rapids 18,native_precinct,98,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,5,
+2026,IA,Linn County,Cedar Rapids 18,native_precinct,98,False,United States Representative District 2,absentee,Dave Bushaw,,5,
+2026,IA,Linn County,Cedar Rapids 18,native_precinct,98,False,United States Representative District 2,absentee,Write-In Totals,,1,
+2026,IA,Linn County,Cedar Rapids 19,native_precinct,104,False,United States Representative District 2,total,REP Joe Mitchell,REP,466,33.65%
+2026,IA,Linn County,Cedar Rapids 19,native_precinct,104,False,United States Representative District 2,total,DEM Lindsay James,DEM,837,60.43%
+2026,IA,Linn County,Cedar Rapids 19,native_precinct,104,False,United States Representative District 2,total,LIB Rick Stewart,LIB,45,3.25%
+2026,IA,Linn County,Cedar Rapids 19,native_precinct,104,False,United States Representative District 2,total,Dave Bushaw,,22,1.59%
+2026,IA,Linn County,Cedar Rapids 19,native_precinct,104,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Cedar Rapids 19,native_precinct,104,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,326,
+2026,IA,Linn County,Cedar Rapids 19,native_precinct,104,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,417,
+2026,IA,Linn County,Cedar Rapids 19,native_precinct,104,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,31,
+2026,IA,Linn County,Cedar Rapids 19,native_precinct,104,False,United States Representative District 2,election_day,Dave Bushaw,,19,
+2026,IA,Linn County,Cedar Rapids 19,native_precinct,104,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 19,native_precinct,104,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,140,
+2026,IA,Linn County,Cedar Rapids 19,native_precinct,104,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,420,
+2026,IA,Linn County,Cedar Rapids 19,native_precinct,104,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,14,
+2026,IA,Linn County,Cedar Rapids 19,native_precinct,104,False,United States Representative District 2,absentee,Dave Bushaw,,3,
+2026,IA,Linn County,Cedar Rapids 19,native_precinct,104,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 20,native_precinct,110,False,United States Representative District 2,total,REP Joe Mitchell,REP,312,30.83%
+2026,IA,Linn County,Cedar Rapids 20,native_precinct,110,False,United States Representative District 2,total,DEM Lindsay James,DEM,654,64.62%
+2026,IA,Linn County,Cedar Rapids 20,native_precinct,110,False,United States Representative District 2,total,LIB Rick Stewart,LIB,20,1.98%
+2026,IA,Linn County,Cedar Rapids 20,native_precinct,110,False,United States Representative District 2,total,Dave Bushaw,,15,1.48%
+2026,IA,Linn County,Cedar Rapids 20,native_precinct,110,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Cedar Rapids 20,native_precinct,110,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,231,
+2026,IA,Linn County,Cedar Rapids 20,native_precinct,110,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,366,
+2026,IA,Linn County,Cedar Rapids 20,native_precinct,110,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,12,
+2026,IA,Linn County,Cedar Rapids 20,native_precinct,110,False,United States Representative District 2,election_day,Dave Bushaw,,9,
+2026,IA,Linn County,Cedar Rapids 20,native_precinct,110,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 20,native_precinct,110,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,81,
+2026,IA,Linn County,Cedar Rapids 20,native_precinct,110,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,288,
+2026,IA,Linn County,Cedar Rapids 20,native_precinct,110,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,8,
+2026,IA,Linn County,Cedar Rapids 20,native_precinct,110,False,United States Representative District 2,absentee,Dave Bushaw,,6,
+2026,IA,Linn County,Cedar Rapids 20,native_precinct,110,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 21,native_precinct,115,False,United States Representative District 2,total,REP Joe Mitchell,REP,487,39.31%
+2026,IA,Linn County,Cedar Rapids 21,native_precinct,115,False,United States Representative District 2,total,DEM Lindsay James,DEM,678,54.72%
+2026,IA,Linn County,Cedar Rapids 21,native_precinct,115,False,United States Representative District 2,total,LIB Rick Stewart,LIB,43,3.47%
+2026,IA,Linn County,Cedar Rapids 21,native_precinct,115,False,United States Representative District 2,total,Dave Bushaw,,14,1.13%
+2026,IA,Linn County,Cedar Rapids 21,native_precinct,115,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Cedar Rapids 21,native_precinct,115,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,348,
+2026,IA,Linn County,Cedar Rapids 21,native_precinct,115,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,349,
+2026,IA,Linn County,Cedar Rapids 21,native_precinct,115,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,30,
+2026,IA,Linn County,Cedar Rapids 21,native_precinct,115,False,United States Representative District 2,election_day,Dave Bushaw,,11,
+2026,IA,Linn County,Cedar Rapids 21,native_precinct,115,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 21,native_precinct,115,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,139,
+2026,IA,Linn County,Cedar Rapids 21,native_precinct,115,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,329,
+2026,IA,Linn County,Cedar Rapids 21,native_precinct,115,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,13,
+2026,IA,Linn County,Cedar Rapids 21,native_precinct,115,False,United States Representative District 2,absentee,Dave Bushaw,,3,
+2026,IA,Linn County,Cedar Rapids 21,native_precinct,115,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 22,native_precinct,121,False,United States Representative District 2,total,REP Joe Mitchell,REP,357,31.18%
+2026,IA,Linn County,Cedar Rapids 22,native_precinct,121,False,United States Representative District 2,total,DEM Lindsay James,DEM,716,62.53%
+2026,IA,Linn County,Cedar Rapids 22,native_precinct,121,False,United States Representative District 2,total,LIB Rick Stewart,LIB,34,2.97%
+2026,IA,Linn County,Cedar Rapids 22,native_precinct,121,False,United States Representative District 2,total,Dave Bushaw,,15,1.31%
+2026,IA,Linn County,Cedar Rapids 22,native_precinct,121,False,United States Representative District 2,total,Write-In Totals,,1,0.09%
+2026,IA,Linn County,Cedar Rapids 22,native_precinct,121,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,257,
+2026,IA,Linn County,Cedar Rapids 22,native_precinct,121,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,368,
+2026,IA,Linn County,Cedar Rapids 22,native_precinct,121,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,28,
+2026,IA,Linn County,Cedar Rapids 22,native_precinct,121,False,United States Representative District 2,election_day,Dave Bushaw,,10,
+2026,IA,Linn County,Cedar Rapids 22,native_precinct,121,False,United States Representative District 2,election_day,Write-In Totals,,1,
+2026,IA,Linn County,Cedar Rapids 22,native_precinct,121,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,100,
+2026,IA,Linn County,Cedar Rapids 22,native_precinct,121,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,348,
+2026,IA,Linn County,Cedar Rapids 22,native_precinct,121,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,6,
+2026,IA,Linn County,Cedar Rapids 22,native_precinct,121,False,United States Representative District 2,absentee,Dave Bushaw,,5,
+2026,IA,Linn County,Cedar Rapids 22,native_precinct,121,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 23,native_precinct,126,False,United States Representative District 2,total,REP Joe Mitchell,REP,337,28.73%
+2026,IA,Linn County,Cedar Rapids 23,native_precinct,126,False,United States Representative District 2,total,DEM Lindsay James,DEM,757,64.54%
+2026,IA,Linn County,Cedar Rapids 23,native_precinct,126,False,United States Representative District 2,total,LIB Rick Stewart,LIB,39,3.32%
+2026,IA,Linn County,Cedar Rapids 23,native_precinct,126,False,United States Representative District 2,total,Dave Bushaw,,18,1.53%
+2026,IA,Linn County,Cedar Rapids 23,native_precinct,126,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Cedar Rapids 23,native_precinct,126,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,221,
+2026,IA,Linn County,Cedar Rapids 23,native_precinct,126,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,388,
+2026,IA,Linn County,Cedar Rapids 23,native_precinct,126,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,30,
+2026,IA,Linn County,Cedar Rapids 23,native_precinct,126,False,United States Representative District 2,election_day,Dave Bushaw,,16,
+2026,IA,Linn County,Cedar Rapids 23,native_precinct,126,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 23,native_precinct,126,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,116,
+2026,IA,Linn County,Cedar Rapids 23,native_precinct,126,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,369,
+2026,IA,Linn County,Cedar Rapids 23,native_precinct,126,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,9,
+2026,IA,Linn County,Cedar Rapids 23,native_precinct,126,False,United States Representative District 2,absentee,Dave Bushaw,,2,
+2026,IA,Linn County,Cedar Rapids 23,native_precinct,126,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 24,native_precinct,131,False,United States Representative District 2,total,REP Joe Mitchell,REP,99,15.79%
+2026,IA,Linn County,Cedar Rapids 24,native_precinct,131,False,United States Representative District 2,total,DEM Lindsay James,DEM,466,74.32%
+2026,IA,Linn County,Cedar Rapids 24,native_precinct,131,False,United States Representative District 2,total,LIB Rick Stewart,LIB,27,4.31%
+2026,IA,Linn County,Cedar Rapids 24,native_precinct,131,False,United States Representative District 2,total,Dave Bushaw,,20,3.19%
+2026,IA,Linn County,Cedar Rapids 24,native_precinct,131,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Cedar Rapids 24,native_precinct,131,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,71,
+2026,IA,Linn County,Cedar Rapids 24,native_precinct,131,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,257,
+2026,IA,Linn County,Cedar Rapids 24,native_precinct,131,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,16,
+2026,IA,Linn County,Cedar Rapids 24,native_precinct,131,False,United States Representative District 2,election_day,Dave Bushaw,,12,
+2026,IA,Linn County,Cedar Rapids 24,native_precinct,131,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 24,native_precinct,131,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,28,
+2026,IA,Linn County,Cedar Rapids 24,native_precinct,131,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,209,
+2026,IA,Linn County,Cedar Rapids 24,native_precinct,131,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,11,
+2026,IA,Linn County,Cedar Rapids 24,native_precinct,131,False,United States Representative District 2,absentee,Dave Bushaw,,8,
+2026,IA,Linn County,Cedar Rapids 24,native_precinct,131,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 25,native_precinct,137,False,United States Representative District 2,total,REP Joe Mitchell,REP,191,18.73%
+2026,IA,Linn County,Cedar Rapids 25,native_precinct,137,False,United States Representative District 2,total,DEM Lindsay James,DEM,767,75.20%
+2026,IA,Linn County,Cedar Rapids 25,native_precinct,137,False,United States Representative District 2,total,LIB Rick Stewart,LIB,42,4.12%
+2026,IA,Linn County,Cedar Rapids 25,native_precinct,137,False,United States Representative District 2,total,Dave Bushaw,,12,1.18%
+2026,IA,Linn County,Cedar Rapids 25,native_precinct,137,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Cedar Rapids 25,native_precinct,137,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,147,
+2026,IA,Linn County,Cedar Rapids 25,native_precinct,137,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,378,
+2026,IA,Linn County,Cedar Rapids 25,native_precinct,137,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,27,
+2026,IA,Linn County,Cedar Rapids 25,native_precinct,137,False,United States Representative District 2,election_day,Dave Bushaw,,7,
+2026,IA,Linn County,Cedar Rapids 25,native_precinct,137,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 25,native_precinct,137,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,44,
+2026,IA,Linn County,Cedar Rapids 25,native_precinct,137,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,389,
+2026,IA,Linn County,Cedar Rapids 25,native_precinct,137,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,15,
+2026,IA,Linn County,Cedar Rapids 25,native_precinct,137,False,United States Representative District 2,absentee,Dave Bushaw,,5,
+2026,IA,Linn County,Cedar Rapids 25,native_precinct,137,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 26,native_precinct,143,False,United States Representative District 2,total,REP Joe Mitchell,REP,490,29.84%
+2026,IA,Linn County,Cedar Rapids 26,native_precinct,143,False,United States Representative District 2,total,DEM Lindsay James,DEM,1090,66.38%
+2026,IA,Linn County,Cedar Rapids 26,native_precinct,143,False,United States Representative District 2,total,LIB Rick Stewart,LIB,34,2.07%
+2026,IA,Linn County,Cedar Rapids 26,native_precinct,143,False,United States Representative District 2,total,Dave Bushaw,,11,0.67%
+2026,IA,Linn County,Cedar Rapids 26,native_precinct,143,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Cedar Rapids 26,native_precinct,143,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,321,
+2026,IA,Linn County,Cedar Rapids 26,native_precinct,143,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,471,
+2026,IA,Linn County,Cedar Rapids 26,native_precinct,143,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,24,
+2026,IA,Linn County,Cedar Rapids 26,native_precinct,143,False,United States Representative District 2,election_day,Dave Bushaw,,5,
+2026,IA,Linn County,Cedar Rapids 26,native_precinct,143,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 26,native_precinct,143,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,169,
+2026,IA,Linn County,Cedar Rapids 26,native_precinct,143,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,619,
+2026,IA,Linn County,Cedar Rapids 26,native_precinct,143,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,10,
+2026,IA,Linn County,Cedar Rapids 26,native_precinct,143,False,United States Representative District 2,absentee,Dave Bushaw,,6,
+2026,IA,Linn County,Cedar Rapids 26,native_precinct,143,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 27,native_precinct,149,False,United States Representative District 2,total,REP Joe Mitchell,REP,599,31.91%
+2026,IA,Linn County,Cedar Rapids 27,native_precinct,149,False,United States Representative District 2,total,DEM Lindsay James,DEM,1196,63.72%
+2026,IA,Linn County,Cedar Rapids 27,native_precinct,149,False,United States Representative District 2,total,LIB Rick Stewart,LIB,48,2.56%
+2026,IA,Linn County,Cedar Rapids 27,native_precinct,149,False,United States Representative District 2,total,Dave Bushaw,,7,0.37%
+2026,IA,Linn County,Cedar Rapids 27,native_precinct,149,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Cedar Rapids 27,native_precinct,149,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,382,
+2026,IA,Linn County,Cedar Rapids 27,native_precinct,149,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,527,
+2026,IA,Linn County,Cedar Rapids 27,native_precinct,149,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,35,
+2026,IA,Linn County,Cedar Rapids 27,native_precinct,149,False,United States Representative District 2,election_day,Dave Bushaw,,7,
+2026,IA,Linn County,Cedar Rapids 27,native_precinct,149,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 27,native_precinct,149,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,217,
+2026,IA,Linn County,Cedar Rapids 27,native_precinct,149,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,669,
+2026,IA,Linn County,Cedar Rapids 27,native_precinct,149,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,13,
+2026,IA,Linn County,Cedar Rapids 27,native_precinct,149,False,United States Representative District 2,absentee,Dave Bushaw,,0,
+2026,IA,Linn County,Cedar Rapids 27,native_precinct,149,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 28,native_precinct,155,False,United States Representative District 2,total,REP Joe Mitchell,REP,338,22.11%
+2026,IA,Linn County,Cedar Rapids 28,native_precinct,155,False,United States Representative District 2,total,DEM Lindsay James,DEM,1126,73.64%
+2026,IA,Linn County,Cedar Rapids 28,native_precinct,155,False,United States Representative District 2,total,LIB Rick Stewart,LIB,31,2.03%
+2026,IA,Linn County,Cedar Rapids 28,native_precinct,155,False,United States Representative District 2,total,Dave Bushaw,,19,1.24%
+2026,IA,Linn County,Cedar Rapids 28,native_precinct,155,False,United States Representative District 2,total,Write-In Totals,,1,0.07%
+2026,IA,Linn County,Cedar Rapids 28,native_precinct,155,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,250,
+2026,IA,Linn County,Cedar Rapids 28,native_precinct,155,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,595,
+2026,IA,Linn County,Cedar Rapids 28,native_precinct,155,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,26,
+2026,IA,Linn County,Cedar Rapids 28,native_precinct,155,False,United States Representative District 2,election_day,Dave Bushaw,,16,
+2026,IA,Linn County,Cedar Rapids 28,native_precinct,155,False,United States Representative District 2,election_day,Write-In Totals,,1,
+2026,IA,Linn County,Cedar Rapids 28,native_precinct,155,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,88,
+2026,IA,Linn County,Cedar Rapids 28,native_precinct,155,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,531,
+2026,IA,Linn County,Cedar Rapids 28,native_precinct,155,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,5,
+2026,IA,Linn County,Cedar Rapids 28,native_precinct,155,False,United States Representative District 2,absentee,Dave Bushaw,,3,
+2026,IA,Linn County,Cedar Rapids 28,native_precinct,155,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 29,native_precinct,161,False,United States Representative District 2,total,REP Joe Mitchell,REP,730,39.80%
+2026,IA,Linn County,Cedar Rapids 29,native_precinct,161,False,United States Representative District 2,total,DEM Lindsay James,DEM,1023,55.78%
+2026,IA,Linn County,Cedar Rapids 29,native_precinct,161,False,United States Representative District 2,total,LIB Rick Stewart,LIB,46,2.51%
+2026,IA,Linn County,Cedar Rapids 29,native_precinct,161,False,United States Representative District 2,total,Dave Bushaw,,12,0.65%
+2026,IA,Linn County,Cedar Rapids 29,native_precinct,161,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Cedar Rapids 29,native_precinct,161,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,537,
+2026,IA,Linn County,Cedar Rapids 29,native_precinct,161,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,535,
+2026,IA,Linn County,Cedar Rapids 29,native_precinct,161,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,39,
+2026,IA,Linn County,Cedar Rapids 29,native_precinct,161,False,United States Representative District 2,election_day,Dave Bushaw,,10,
+2026,IA,Linn County,Cedar Rapids 29,native_precinct,161,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 29,native_precinct,161,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,193,
+2026,IA,Linn County,Cedar Rapids 29,native_precinct,161,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,488,
+2026,IA,Linn County,Cedar Rapids 29,native_precinct,161,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,7,
+2026,IA,Linn County,Cedar Rapids 29,native_precinct,161,False,United States Representative District 2,absentee,Dave Bushaw,,2,
+2026,IA,Linn County,Cedar Rapids 29,native_precinct,161,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 30,native_precinct,167,False,United States Representative District 2,total,REP Joe Mitchell,REP,528,33.57%
+2026,IA,Linn County,Cedar Rapids 30,native_precinct,167,False,United States Representative District 2,total,DEM Lindsay James,DEM,949,60.33%
+2026,IA,Linn County,Cedar Rapids 30,native_precinct,167,False,United States Representative District 2,total,LIB Rick Stewart,LIB,47,2.99%
+2026,IA,Linn County,Cedar Rapids 30,native_precinct,167,False,United States Representative District 2,total,Dave Bushaw,,16,1.02%
+2026,IA,Linn County,Cedar Rapids 30,native_precinct,167,False,United States Representative District 2,total,Write-In Totals,,1,0.06%
+2026,IA,Linn County,Cedar Rapids 30,native_precinct,167,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,407,
+2026,IA,Linn County,Cedar Rapids 30,native_precinct,167,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,506,
+2026,IA,Linn County,Cedar Rapids 30,native_precinct,167,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,40,
+2026,IA,Linn County,Cedar Rapids 30,native_precinct,167,False,United States Representative District 2,election_day,Dave Bushaw,,11,
+2026,IA,Linn County,Cedar Rapids 30,native_precinct,167,False,United States Representative District 2,election_day,Write-In Totals,,1,
+2026,IA,Linn County,Cedar Rapids 30,native_precinct,167,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,121,
+2026,IA,Linn County,Cedar Rapids 30,native_precinct,167,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,443,
+2026,IA,Linn County,Cedar Rapids 30,native_precinct,167,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,7,
+2026,IA,Linn County,Cedar Rapids 30,native_precinct,167,False,United States Representative District 2,absentee,Dave Bushaw,,5,
+2026,IA,Linn County,Cedar Rapids 30,native_precinct,167,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 31,native_precinct,172,False,United States Representative District 2,total,REP Joe Mitchell,REP,367,28.60%
+2026,IA,Linn County,Cedar Rapids 31,native_precinct,172,False,United States Representative District 2,total,DEM Lindsay James,DEM,842,65.63%
+2026,IA,Linn County,Cedar Rapids 31,native_precinct,172,False,United States Representative District 2,total,LIB Rick Stewart,LIB,34,2.65%
+2026,IA,Linn County,Cedar Rapids 31,native_precinct,172,False,United States Representative District 2,total,Dave Bushaw,,16,1.25%
+2026,IA,Linn County,Cedar Rapids 31,native_precinct,172,False,United States Representative District 2,total,Write-In Totals,,1,0.08%
+2026,IA,Linn County,Cedar Rapids 31,native_precinct,172,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,277,
+2026,IA,Linn County,Cedar Rapids 31,native_precinct,172,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,488,
+2026,IA,Linn County,Cedar Rapids 31,native_precinct,172,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,21,
+2026,IA,Linn County,Cedar Rapids 31,native_precinct,172,False,United States Representative District 2,election_day,Dave Bushaw,,11,
+2026,IA,Linn County,Cedar Rapids 31,native_precinct,172,False,United States Representative District 2,election_day,Write-In Totals,,1,
+2026,IA,Linn County,Cedar Rapids 31,native_precinct,172,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,90,
+2026,IA,Linn County,Cedar Rapids 31,native_precinct,172,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,354,
+2026,IA,Linn County,Cedar Rapids 31,native_precinct,172,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,13,
+2026,IA,Linn County,Cedar Rapids 31,native_precinct,172,False,United States Representative District 2,absentee,Dave Bushaw,,5,
+2026,IA,Linn County,Cedar Rapids 31,native_precinct,172,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 32,native_precinct,177,False,United States Representative District 2,total,REP Joe Mitchell,REP,236,24.56%
+2026,IA,Linn County,Cedar Rapids 32,native_precinct,177,False,United States Representative District 2,total,DEM Lindsay James,DEM,665,69.20%
+2026,IA,Linn County,Cedar Rapids 32,native_precinct,177,False,United States Representative District 2,total,LIB Rick Stewart,LIB,25,2.60%
+2026,IA,Linn County,Cedar Rapids 32,native_precinct,177,False,United States Representative District 2,total,Dave Bushaw,,7,0.73%
+2026,IA,Linn County,Cedar Rapids 32,native_precinct,177,False,United States Representative District 2,total,Write-In Totals,,1,0.10%
+2026,IA,Linn County,Cedar Rapids 32,native_precinct,177,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,159,
+2026,IA,Linn County,Cedar Rapids 32,native_precinct,177,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,357,
+2026,IA,Linn County,Cedar Rapids 32,native_precinct,177,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,14,
+2026,IA,Linn County,Cedar Rapids 32,native_precinct,177,False,United States Representative District 2,election_day,Dave Bushaw,,6,
+2026,IA,Linn County,Cedar Rapids 32,native_precinct,177,False,United States Representative District 2,election_day,Write-In Totals,,1,
+2026,IA,Linn County,Cedar Rapids 32,native_precinct,177,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,77,
+2026,IA,Linn County,Cedar Rapids 32,native_precinct,177,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,308,
+2026,IA,Linn County,Cedar Rapids 32,native_precinct,177,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,11,
+2026,IA,Linn County,Cedar Rapids 32,native_precinct,177,False,United States Representative District 2,absentee,Dave Bushaw,,1,
+2026,IA,Linn County,Cedar Rapids 32,native_precinct,177,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 33,native_precinct,182,False,United States Representative District 2,total,REP Joe Mitchell,REP,384,31.42%
+2026,IA,Linn County,Cedar Rapids 33,native_precinct,182,False,United States Representative District 2,total,DEM Lindsay James,DEM,744,60.88%
+2026,IA,Linn County,Cedar Rapids 33,native_precinct,182,False,United States Representative District 2,total,LIB Rick Stewart,LIB,39,3.19%
+2026,IA,Linn County,Cedar Rapids 33,native_precinct,182,False,United States Representative District 2,total,Dave Bushaw,,19,1.55%
+2026,IA,Linn County,Cedar Rapids 33,native_precinct,182,False,United States Representative District 2,total,Write-In Totals,,5,0.41%
+2026,IA,Linn County,Cedar Rapids 33,native_precinct,182,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,282,
+2026,IA,Linn County,Cedar Rapids 33,native_precinct,182,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,393,
+2026,IA,Linn County,Cedar Rapids 33,native_precinct,182,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,28,
+2026,IA,Linn County,Cedar Rapids 33,native_precinct,182,False,United States Representative District 2,election_day,Dave Bushaw,,11,
+2026,IA,Linn County,Cedar Rapids 33,native_precinct,182,False,United States Representative District 2,election_day,Write-In Totals,,2,
+2026,IA,Linn County,Cedar Rapids 33,native_precinct,182,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,102,
+2026,IA,Linn County,Cedar Rapids 33,native_precinct,182,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,351,
+2026,IA,Linn County,Cedar Rapids 33,native_precinct,182,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,11,
+2026,IA,Linn County,Cedar Rapids 33,native_precinct,182,False,United States Representative District 2,absentee,Dave Bushaw,,8,
+2026,IA,Linn County,Cedar Rapids 33,native_precinct,182,False,United States Representative District 2,absentee,Write-In Totals,,3,
+2026,IA,Linn County,Cedar Rapids 34,native_precinct,187,False,United States Representative District 2,total,REP Joe Mitchell,REP,239,25.75%
+2026,IA,Linn County,Cedar Rapids 34,native_precinct,187,False,United States Representative District 2,total,DEM Lindsay James,DEM,620,66.81%
+2026,IA,Linn County,Cedar Rapids 34,native_precinct,187,False,United States Representative District 2,total,LIB Rick Stewart,LIB,32,3.45%
+2026,IA,Linn County,Cedar Rapids 34,native_precinct,187,False,United States Representative District 2,total,Dave Bushaw,,18,1.94%
+2026,IA,Linn County,Cedar Rapids 34,native_precinct,187,False,United States Representative District 2,total,Write-In Totals,,2,0.22%
+2026,IA,Linn County,Cedar Rapids 34,native_precinct,187,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,184,
+2026,IA,Linn County,Cedar Rapids 34,native_precinct,187,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,377,
+2026,IA,Linn County,Cedar Rapids 34,native_precinct,187,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,21,
+2026,IA,Linn County,Cedar Rapids 34,native_precinct,187,False,United States Representative District 2,election_day,Dave Bushaw,,15,
+2026,IA,Linn County,Cedar Rapids 34,native_precinct,187,False,United States Representative District 2,election_day,Write-In Totals,,2,
+2026,IA,Linn County,Cedar Rapids 34,native_precinct,187,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,55,
+2026,IA,Linn County,Cedar Rapids 34,native_precinct,187,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,243,
+2026,IA,Linn County,Cedar Rapids 34,native_precinct,187,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,11,
+2026,IA,Linn County,Cedar Rapids 34,native_precinct,187,False,United States Representative District 2,absentee,Dave Bushaw,,3,
+2026,IA,Linn County,Cedar Rapids 34,native_precinct,187,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 35,native_precinct,192,False,United States Representative District 2,total,REP Joe Mitchell,REP,179,26.36%
+2026,IA,Linn County,Cedar Rapids 35,native_precinct,192,False,United States Representative District 2,total,DEM Lindsay James,DEM,443,65.24%
+2026,IA,Linn County,Cedar Rapids 35,native_precinct,192,False,United States Representative District 2,total,LIB Rick Stewart,LIB,27,3.98%
+2026,IA,Linn County,Cedar Rapids 35,native_precinct,192,False,United States Representative District 2,total,Dave Bushaw,,12,1.77%
+2026,IA,Linn County,Cedar Rapids 35,native_precinct,192,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Cedar Rapids 35,native_precinct,192,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,135,
+2026,IA,Linn County,Cedar Rapids 35,native_precinct,192,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,266,
+2026,IA,Linn County,Cedar Rapids 35,native_precinct,192,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,23,
+2026,IA,Linn County,Cedar Rapids 35,native_precinct,192,False,United States Representative District 2,election_day,Dave Bushaw,,9,
+2026,IA,Linn County,Cedar Rapids 35,native_precinct,192,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 35,native_precinct,192,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,44,
+2026,IA,Linn County,Cedar Rapids 35,native_precinct,192,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,177,
+2026,IA,Linn County,Cedar Rapids 35,native_precinct,192,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,4,
+2026,IA,Linn County,Cedar Rapids 35,native_precinct,192,False,United States Representative District 2,absentee,Dave Bushaw,,3,
+2026,IA,Linn County,Cedar Rapids 35,native_precinct,192,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 36,native_precinct,198,False,United States Representative District 2,total,REP Joe Mitchell,REP,122,19.37%
+2026,IA,Linn County,Cedar Rapids 36,native_precinct,198,False,United States Representative District 2,total,DEM Lindsay James,DEM,475,75.40%
+2026,IA,Linn County,Cedar Rapids 36,native_precinct,198,False,United States Representative District 2,total,LIB Rick Stewart,LIB,17,2.70%
+2026,IA,Linn County,Cedar Rapids 36,native_precinct,198,False,United States Representative District 2,total,Dave Bushaw,,9,1.43%
+2026,IA,Linn County,Cedar Rapids 36,native_precinct,198,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Cedar Rapids 36,native_precinct,198,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,78,
+2026,IA,Linn County,Cedar Rapids 36,native_precinct,198,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,243,
+2026,IA,Linn County,Cedar Rapids 36,native_precinct,198,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,12,
+2026,IA,Linn County,Cedar Rapids 36,native_precinct,198,False,United States Representative District 2,election_day,Dave Bushaw,,6,
+2026,IA,Linn County,Cedar Rapids 36,native_precinct,198,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 36,native_precinct,198,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,44,
+2026,IA,Linn County,Cedar Rapids 36,native_precinct,198,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,232,
+2026,IA,Linn County,Cedar Rapids 36,native_precinct,198,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,5,
+2026,IA,Linn County,Cedar Rapids 36,native_precinct,198,False,United States Representative District 2,absentee,Dave Bushaw,,3,
+2026,IA,Linn County,Cedar Rapids 36,native_precinct,198,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 37,native_precinct,204,False,United States Representative District 2,total,REP Joe Mitchell,REP,291,21.62%
+2026,IA,Linn County,Cedar Rapids 37,native_precinct,204,False,United States Representative District 2,total,DEM Lindsay James,DEM,975,72.44%
+2026,IA,Linn County,Cedar Rapids 37,native_precinct,204,False,United States Representative District 2,total,LIB Rick Stewart,LIB,33,2.45%
+2026,IA,Linn County,Cedar Rapids 37,native_precinct,204,False,United States Representative District 2,total,Dave Bushaw,,21,1.56%
+2026,IA,Linn County,Cedar Rapids 37,native_precinct,204,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Cedar Rapids 37,native_precinct,204,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,192,
+2026,IA,Linn County,Cedar Rapids 37,native_precinct,204,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,456,
+2026,IA,Linn County,Cedar Rapids 37,native_precinct,204,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,24,
+2026,IA,Linn County,Cedar Rapids 37,native_precinct,204,False,United States Representative District 2,election_day,Dave Bushaw,,16,
+2026,IA,Linn County,Cedar Rapids 37,native_precinct,204,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 37,native_precinct,204,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,99,
+2026,IA,Linn County,Cedar Rapids 37,native_precinct,204,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,519,
+2026,IA,Linn County,Cedar Rapids 37,native_precinct,204,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,9,
+2026,IA,Linn County,Cedar Rapids 37,native_precinct,204,False,United States Representative District 2,absentee,Dave Bushaw,,5,
+2026,IA,Linn County,Cedar Rapids 37,native_precinct,204,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 38,native_precinct,210,False,United States Representative District 2,total,REP Joe Mitchell,REP,454,32.80%
+2026,IA,Linn County,Cedar Rapids 38,native_precinct,210,False,United States Representative District 2,total,DEM Lindsay James,DEM,849,61.34%
+2026,IA,Linn County,Cedar Rapids 38,native_precinct,210,False,United States Representative District 2,total,LIB Rick Stewart,LIB,44,3.18%
+2026,IA,Linn County,Cedar Rapids 38,native_precinct,210,False,United States Representative District 2,total,Dave Bushaw,,18,1.30%
+2026,IA,Linn County,Cedar Rapids 38,native_precinct,210,False,United States Representative District 2,total,Write-In Totals,,1,0.07%
+2026,IA,Linn County,Cedar Rapids 38,native_precinct,210,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,303,
+2026,IA,Linn County,Cedar Rapids 38,native_precinct,210,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,424,
+2026,IA,Linn County,Cedar Rapids 38,native_precinct,210,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,36,
+2026,IA,Linn County,Cedar Rapids 38,native_precinct,210,False,United States Representative District 2,election_day,Dave Bushaw,,11,
+2026,IA,Linn County,Cedar Rapids 38,native_precinct,210,False,United States Representative District 2,election_day,Write-In Totals,,1,
+2026,IA,Linn County,Cedar Rapids 38,native_precinct,210,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,151,
+2026,IA,Linn County,Cedar Rapids 38,native_precinct,210,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,425,
+2026,IA,Linn County,Cedar Rapids 38,native_precinct,210,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,8,
+2026,IA,Linn County,Cedar Rapids 38,native_precinct,210,False,United States Representative District 2,absentee,Dave Bushaw,,7,
+2026,IA,Linn County,Cedar Rapids 38,native_precinct,210,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 39,native_precinct,216,False,United States Representative District 2,total,REP Joe Mitchell,REP,359,29.87%
+2026,IA,Linn County,Cedar Rapids 39,native_precinct,216,False,United States Representative District 2,total,DEM Lindsay James,DEM,765,63.64%
+2026,IA,Linn County,Cedar Rapids 39,native_precinct,216,False,United States Representative District 2,total,LIB Rick Stewart,LIB,37,3.08%
+2026,IA,Linn County,Cedar Rapids 39,native_precinct,216,False,United States Representative District 2,total,Dave Bushaw,,16,1.33%
+2026,IA,Linn County,Cedar Rapids 39,native_precinct,216,False,United States Representative District 2,total,Write-In Totals,,1,0.08%
+2026,IA,Linn County,Cedar Rapids 39,native_precinct,216,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,273,
+2026,IA,Linn County,Cedar Rapids 39,native_precinct,216,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,449,
+2026,IA,Linn County,Cedar Rapids 39,native_precinct,216,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,26,
+2026,IA,Linn County,Cedar Rapids 39,native_precinct,216,False,United States Representative District 2,election_day,Dave Bushaw,,13,
+2026,IA,Linn County,Cedar Rapids 39,native_precinct,216,False,United States Representative District 2,election_day,Write-In Totals,,1,
+2026,IA,Linn County,Cedar Rapids 39,native_precinct,216,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,86,
+2026,IA,Linn County,Cedar Rapids 39,native_precinct,216,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,316,
+2026,IA,Linn County,Cedar Rapids 39,native_precinct,216,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,11,
+2026,IA,Linn County,Cedar Rapids 39,native_precinct,216,False,United States Representative District 2,absentee,Dave Bushaw,,3,
+2026,IA,Linn County,Cedar Rapids 39,native_precinct,216,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 40,native_precinct,222,False,United States Representative District 2,total,REP Joe Mitchell,REP,327,35.93%
+2026,IA,Linn County,Cedar Rapids 40,native_precinct,222,False,United States Representative District 2,total,DEM Lindsay James,DEM,538,59.12%
+2026,IA,Linn County,Cedar Rapids 40,native_precinct,222,False,United States Representative District 2,total,LIB Rick Stewart,LIB,24,2.64%
+2026,IA,Linn County,Cedar Rapids 40,native_precinct,222,False,United States Representative District 2,total,Dave Bushaw,,7,0.77%
+2026,IA,Linn County,Cedar Rapids 40,native_precinct,222,False,United States Representative District 2,total,Write-In Totals,,2,0.22%
+2026,IA,Linn County,Cedar Rapids 40,native_precinct,222,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,221,
+2026,IA,Linn County,Cedar Rapids 40,native_precinct,222,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,299,
+2026,IA,Linn County,Cedar Rapids 40,native_precinct,222,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,20,
+2026,IA,Linn County,Cedar Rapids 40,native_precinct,222,False,United States Representative District 2,election_day,Dave Bushaw,,6,
+2026,IA,Linn County,Cedar Rapids 40,native_precinct,222,False,United States Representative District 2,election_day,Write-In Totals,,2,
+2026,IA,Linn County,Cedar Rapids 40,native_precinct,222,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,106,
+2026,IA,Linn County,Cedar Rapids 40,native_precinct,222,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,239,
+2026,IA,Linn County,Cedar Rapids 40,native_precinct,222,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,4,
+2026,IA,Linn County,Cedar Rapids 40,native_precinct,222,False,United States Representative District 2,absentee,Dave Bushaw,,1,
+2026,IA,Linn County,Cedar Rapids 40,native_precinct,222,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 41,native_precinct,228,False,United States Representative District 2,total,REP Joe Mitchell,REP,432,33.83%
+2026,IA,Linn County,Cedar Rapids 41,native_precinct,228,False,United States Representative District 2,total,DEM Lindsay James,DEM,766,59.98%
+2026,IA,Linn County,Cedar Rapids 41,native_precinct,228,False,United States Representative District 2,total,LIB Rick Stewart,LIB,39,3.05%
+2026,IA,Linn County,Cedar Rapids 41,native_precinct,228,False,United States Representative District 2,total,Dave Bushaw,,14,1.10%
+2026,IA,Linn County,Cedar Rapids 41,native_precinct,228,False,United States Representative District 2,total,Write-In Totals,,1,0.08%
+2026,IA,Linn County,Cedar Rapids 41,native_precinct,228,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,265,
+2026,IA,Linn County,Cedar Rapids 41,native_precinct,228,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,345,
+2026,IA,Linn County,Cedar Rapids 41,native_precinct,228,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,26,
+2026,IA,Linn County,Cedar Rapids 41,native_precinct,228,False,United States Representative District 2,election_day,Dave Bushaw,,10,
+2026,IA,Linn County,Cedar Rapids 41,native_precinct,228,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 41,native_precinct,228,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,167,
+2026,IA,Linn County,Cedar Rapids 41,native_precinct,228,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,421,
+2026,IA,Linn County,Cedar Rapids 41,native_precinct,228,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,13,
+2026,IA,Linn County,Cedar Rapids 41,native_precinct,228,False,United States Representative District 2,absentee,Dave Bushaw,,4,
+2026,IA,Linn County,Cedar Rapids 41,native_precinct,228,False,United States Representative District 2,absentee,Write-In Totals,,1,
+2026,IA,Linn County,Cedar Rapids 42,native_precinct,234,False,United States Representative District 2,total,REP Joe Mitchell,REP,195,25.13%
+2026,IA,Linn County,Cedar Rapids 42,native_precinct,234,False,United States Representative District 2,total,DEM Lindsay James,DEM,505,65.08%
+2026,IA,Linn County,Cedar Rapids 42,native_precinct,234,False,United States Representative District 2,total,LIB Rick Stewart,LIB,44,5.67%
+2026,IA,Linn County,Cedar Rapids 42,native_precinct,234,False,United States Representative District 2,total,Dave Bushaw,,16,2.06%
+2026,IA,Linn County,Cedar Rapids 42,native_precinct,234,False,United States Representative District 2,total,Write-In Totals,,4,0.52%
+2026,IA,Linn County,Cedar Rapids 42,native_precinct,234,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,139,
+2026,IA,Linn County,Cedar Rapids 42,native_precinct,234,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,292,
+2026,IA,Linn County,Cedar Rapids 42,native_precinct,234,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,30,
+2026,IA,Linn County,Cedar Rapids 42,native_precinct,234,False,United States Representative District 2,election_day,Dave Bushaw,,13,
+2026,IA,Linn County,Cedar Rapids 42,native_precinct,234,False,United States Representative District 2,election_day,Write-In Totals,,2,
+2026,IA,Linn County,Cedar Rapids 42,native_precinct,234,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,56,
+2026,IA,Linn County,Cedar Rapids 42,native_precinct,234,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,213,
+2026,IA,Linn County,Cedar Rapids 42,native_precinct,234,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,14,
+2026,IA,Linn County,Cedar Rapids 42,native_precinct,234,False,United States Representative District 2,absentee,Dave Bushaw,,3,
+2026,IA,Linn County,Cedar Rapids 42,native_precinct,234,False,United States Representative District 2,absentee,Write-In Totals,,2,
+2026,IA,Linn County,Cedar Rapids 43,native_precinct,240,False,United States Representative District 2,total,REP Joe Mitchell,REP,196,23.14%
+2026,IA,Linn County,Cedar Rapids 43,native_precinct,240,False,United States Representative District 2,total,DEM Lindsay James,DEM,593,70.01%
+2026,IA,Linn County,Cedar Rapids 43,native_precinct,240,False,United States Representative District 2,total,LIB Rick Stewart,LIB,40,4.72%
+2026,IA,Linn County,Cedar Rapids 43,native_precinct,240,False,United States Representative District 2,total,Dave Bushaw,,7,0.83%
+2026,IA,Linn County,Cedar Rapids 43,native_precinct,240,False,United States Representative District 2,total,Write-In Totals,,1,0.12%
+2026,IA,Linn County,Cedar Rapids 43,native_precinct,240,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,128,
+2026,IA,Linn County,Cedar Rapids 43,native_precinct,240,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,285,
+2026,IA,Linn County,Cedar Rapids 43,native_precinct,240,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,26,
+2026,IA,Linn County,Cedar Rapids 43,native_precinct,240,False,United States Representative District 2,election_day,Dave Bushaw,,3,
+2026,IA,Linn County,Cedar Rapids 43,native_precinct,240,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 43,native_precinct,240,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,68,
+2026,IA,Linn County,Cedar Rapids 43,native_precinct,240,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,308,
+2026,IA,Linn County,Cedar Rapids 43,native_precinct,240,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,14,
+2026,IA,Linn County,Cedar Rapids 43,native_precinct,240,False,United States Representative District 2,absentee,Dave Bushaw,,4,
+2026,IA,Linn County,Cedar Rapids 43,native_precinct,240,False,United States Representative District 2,absentee,Write-In Totals,,1,
+2026,IA,Linn County,Cedar Rapids 44,native_precinct,246,False,United States Representative District 2,total,REP Joe Mitchell,REP,348,30.23%
+2026,IA,Linn County,Cedar Rapids 44,native_precinct,246,False,United States Representative District 2,total,DEM Lindsay James,DEM,727,63.16%
+2026,IA,Linn County,Cedar Rapids 44,native_precinct,246,False,United States Representative District 2,total,LIB Rick Stewart,LIB,31,2.69%
+2026,IA,Linn County,Cedar Rapids 44,native_precinct,246,False,United States Representative District 2,total,Dave Bushaw,,21,1.82%
+2026,IA,Linn County,Cedar Rapids 44,native_precinct,246,False,United States Representative District 2,total,Write-In Totals,,1,0.09%
+2026,IA,Linn County,Cedar Rapids 44,native_precinct,246,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,253,
+2026,IA,Linn County,Cedar Rapids 44,native_precinct,246,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,425,
+2026,IA,Linn County,Cedar Rapids 44,native_precinct,246,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,27,
+2026,IA,Linn County,Cedar Rapids 44,native_precinct,246,False,United States Representative District 2,election_day,Dave Bushaw,,17,
+2026,IA,Linn County,Cedar Rapids 44,native_precinct,246,False,United States Representative District 2,election_day,Write-In Totals,,1,
+2026,IA,Linn County,Cedar Rapids 44,native_precinct,246,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,95,
+2026,IA,Linn County,Cedar Rapids 44,native_precinct,246,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,302,
+2026,IA,Linn County,Cedar Rapids 44,native_precinct,246,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,4,
+2026,IA,Linn County,Cedar Rapids 44,native_precinct,246,False,United States Representative District 2,absentee,Dave Bushaw,,4,
+2026,IA,Linn County,Cedar Rapids 44,native_precinct,246,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 45,native_precinct,252,False,United States Representative District 2,total,REP Joe Mitchell,REP,164,33.06%
+2026,IA,Linn County,Cedar Rapids 45,native_precinct,252,False,United States Representative District 2,total,DEM Lindsay James,DEM,295,59.48%
+2026,IA,Linn County,Cedar Rapids 45,native_precinct,252,False,United States Representative District 2,total,LIB Rick Stewart,LIB,22,4.44%
+2026,IA,Linn County,Cedar Rapids 45,native_precinct,252,False,United States Representative District 2,total,Dave Bushaw,,6,1.21%
+2026,IA,Linn County,Cedar Rapids 45,native_precinct,252,False,United States Representative District 2,total,Write-In Totals,,1,0.20%
+2026,IA,Linn County,Cedar Rapids 45,native_precinct,252,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,122,
+2026,IA,Linn County,Cedar Rapids 45,native_precinct,252,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,171,
+2026,IA,Linn County,Cedar Rapids 45,native_precinct,252,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,13,
+2026,IA,Linn County,Cedar Rapids 45,native_precinct,252,False,United States Representative District 2,election_day,Dave Bushaw,,5,
+2026,IA,Linn County,Cedar Rapids 45,native_precinct,252,False,United States Representative District 2,election_day,Write-In Totals,,1,
+2026,IA,Linn County,Cedar Rapids 45,native_precinct,252,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,42,
+2026,IA,Linn County,Cedar Rapids 45,native_precinct,252,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,124,
+2026,IA,Linn County,Cedar Rapids 45,native_precinct,252,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,9,
+2026,IA,Linn County,Cedar Rapids 45,native_precinct,252,False,United States Representative District 2,absentee,Dave Bushaw,,1,
+2026,IA,Linn County,Cedar Rapids 45,native_precinct,252,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 46,native_precinct,258,False,United States Representative District 2,total,REP Joe Mitchell,REP,358,34.93%
+2026,IA,Linn County,Cedar Rapids 46,native_precinct,258,False,United States Representative District 2,total,DEM Lindsay James,DEM,610,59.51%
+2026,IA,Linn County,Cedar Rapids 46,native_precinct,258,False,United States Representative District 2,total,LIB Rick Stewart,LIB,29,2.83%
+2026,IA,Linn County,Cedar Rapids 46,native_precinct,258,False,United States Representative District 2,total,Dave Bushaw,,6,0.59%
+2026,IA,Linn County,Cedar Rapids 46,native_precinct,258,False,United States Representative District 2,total,Write-In Totals,,1,0.10%
+2026,IA,Linn County,Cedar Rapids 46,native_precinct,258,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,233,
+2026,IA,Linn County,Cedar Rapids 46,native_precinct,258,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,306,
+2026,IA,Linn County,Cedar Rapids 46,native_precinct,258,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,17,
+2026,IA,Linn County,Cedar Rapids 46,native_precinct,258,False,United States Representative District 2,election_day,Dave Bushaw,,3,
+2026,IA,Linn County,Cedar Rapids 46,native_precinct,258,False,United States Representative District 2,election_day,Write-In Totals,,1,
+2026,IA,Linn County,Cedar Rapids 46,native_precinct,258,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,125,
+2026,IA,Linn County,Cedar Rapids 46,native_precinct,258,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,304,
+2026,IA,Linn County,Cedar Rapids 46,native_precinct,258,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,12,
+2026,IA,Linn County,Cedar Rapids 46,native_precinct,258,False,United States Representative District 2,absentee,Dave Bushaw,,3,
+2026,IA,Linn County,Cedar Rapids 46,native_precinct,258,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 47,native_precinct,264,False,United States Representative District 2,total,REP Joe Mitchell,REP,364,31.57%
+2026,IA,Linn County,Cedar Rapids 47,native_precinct,264,False,United States Representative District 2,total,DEM Lindsay James,DEM,724,62.79%
+2026,IA,Linn County,Cedar Rapids 47,native_precinct,264,False,United States Representative District 2,total,LIB Rick Stewart,LIB,32,2.78%
+2026,IA,Linn County,Cedar Rapids 47,native_precinct,264,False,United States Representative District 2,total,Dave Bushaw,,12,1.04%
+2026,IA,Linn County,Cedar Rapids 47,native_precinct,264,False,United States Representative District 2,total,Write-In Totals,,1,0.09%
+2026,IA,Linn County,Cedar Rapids 47,native_precinct,264,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,265,
+2026,IA,Linn County,Cedar Rapids 47,native_precinct,264,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,389,
+2026,IA,Linn County,Cedar Rapids 47,native_precinct,264,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,24,
+2026,IA,Linn County,Cedar Rapids 47,native_precinct,264,False,United States Representative District 2,election_day,Dave Bushaw,,10,
+2026,IA,Linn County,Cedar Rapids 47,native_precinct,264,False,United States Representative District 2,election_day,Write-In Totals,,1,
+2026,IA,Linn County,Cedar Rapids 47,native_precinct,264,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,99,
+2026,IA,Linn County,Cedar Rapids 47,native_precinct,264,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,335,
+2026,IA,Linn County,Cedar Rapids 47,native_precinct,264,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,8,
+2026,IA,Linn County,Cedar Rapids 47,native_precinct,264,False,United States Representative District 2,absentee,Dave Bushaw,,2,
+2026,IA,Linn County,Cedar Rapids 47,native_precinct,264,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 48,native_precinct,270,False,United States Representative District 2,total,REP Joe Mitchell,REP,312,34.48%
+2026,IA,Linn County,Cedar Rapids 48,native_precinct,270,False,United States Representative District 2,total,DEM Lindsay James,DEM,530,58.56%
+2026,IA,Linn County,Cedar Rapids 48,native_precinct,270,False,United States Representative District 2,total,LIB Rick Stewart,LIB,38,4.20%
+2026,IA,Linn County,Cedar Rapids 48,native_precinct,270,False,United States Representative District 2,total,Dave Bushaw,,5,0.55%
+2026,IA,Linn County,Cedar Rapids 48,native_precinct,270,False,United States Representative District 2,total,Write-In Totals,,3,0.33%
+2026,IA,Linn County,Cedar Rapids 48,native_precinct,270,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,234,
+2026,IA,Linn County,Cedar Rapids 48,native_precinct,270,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,288,
+2026,IA,Linn County,Cedar Rapids 48,native_precinct,270,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,32,
+2026,IA,Linn County,Cedar Rapids 48,native_precinct,270,False,United States Representative District 2,election_day,Dave Bushaw,,5,
+2026,IA,Linn County,Cedar Rapids 48,native_precinct,270,False,United States Representative District 2,election_day,Write-In Totals,,3,
+2026,IA,Linn County,Cedar Rapids 48,native_precinct,270,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,78,
+2026,IA,Linn County,Cedar Rapids 48,native_precinct,270,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,242,
+2026,IA,Linn County,Cedar Rapids 48,native_precinct,270,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,6,
+2026,IA,Linn County,Cedar Rapids 48,native_precinct,270,False,United States Representative District 2,absentee,Dave Bushaw,,0,
+2026,IA,Linn County,Cedar Rapids 48,native_precinct,270,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 49,native_precinct,276,False,United States Representative District 2,total,REP Joe Mitchell,REP,108,22.50%
+2026,IA,Linn County,Cedar Rapids 49,native_precinct,276,False,United States Representative District 2,total,DEM Lindsay James,DEM,332,69.17%
+2026,IA,Linn County,Cedar Rapids 49,native_precinct,276,False,United States Representative District 2,total,LIB Rick Stewart,LIB,21,4.38%
+2026,IA,Linn County,Cedar Rapids 49,native_precinct,276,False,United States Representative District 2,total,Dave Bushaw,,11,2.29%
+2026,IA,Linn County,Cedar Rapids 49,native_precinct,276,False,United States Representative District 2,total,Write-In Totals,,1,0.21%
+2026,IA,Linn County,Cedar Rapids 49,native_precinct,276,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,81,
+2026,IA,Linn County,Cedar Rapids 49,native_precinct,276,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,233,
+2026,IA,Linn County,Cedar Rapids 49,native_precinct,276,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,19,
+2026,IA,Linn County,Cedar Rapids 49,native_precinct,276,False,United States Representative District 2,election_day,Dave Bushaw,,9,
+2026,IA,Linn County,Cedar Rapids 49,native_precinct,276,False,United States Representative District 2,election_day,Write-In Totals,,1,
+2026,IA,Linn County,Cedar Rapids 49,native_precinct,276,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,27,
+2026,IA,Linn County,Cedar Rapids 49,native_precinct,276,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,99,
+2026,IA,Linn County,Cedar Rapids 49,native_precinct,276,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,2,
+2026,IA,Linn County,Cedar Rapids 49,native_precinct,276,False,United States Representative District 2,absentee,Dave Bushaw,,2,
+2026,IA,Linn County,Cedar Rapids 49,native_precinct,276,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 50,native_precinct,282,False,United States Representative District 2,total,REP Joe Mitchell,REP,110,21.36%
+2026,IA,Linn County,Cedar Rapids 50,native_precinct,282,False,United States Representative District 2,total,DEM Lindsay James,DEM,370,71.84%
+2026,IA,Linn County,Cedar Rapids 50,native_precinct,282,False,United States Representative District 2,total,LIB Rick Stewart,LIB,7,1.36%
+2026,IA,Linn County,Cedar Rapids 50,native_precinct,282,False,United States Representative District 2,total,Dave Bushaw,,8,1.55%
+2026,IA,Linn County,Cedar Rapids 50,native_precinct,282,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Cedar Rapids 50,native_precinct,282,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,90,
+2026,IA,Linn County,Cedar Rapids 50,native_precinct,282,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,244,
+2026,IA,Linn County,Cedar Rapids 50,native_precinct,282,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,6,
+2026,IA,Linn County,Cedar Rapids 50,native_precinct,282,False,United States Representative District 2,election_day,Dave Bushaw,,5,
+2026,IA,Linn County,Cedar Rapids 50,native_precinct,282,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 50,native_precinct,282,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,20,
+2026,IA,Linn County,Cedar Rapids 50,native_precinct,282,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,126,
+2026,IA,Linn County,Cedar Rapids 50,native_precinct,282,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,1,
+2026,IA,Linn County,Cedar Rapids 50,native_precinct,282,False,United States Representative District 2,absentee,Dave Bushaw,,3,
+2026,IA,Linn County,Cedar Rapids 50,native_precinct,282,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 51,native_precinct,288,False,United States Representative District 2,total,REP Joe Mitchell,REP,616,37.70%
+2026,IA,Linn County,Cedar Rapids 51,native_precinct,288,False,United States Representative District 2,total,DEM Lindsay James,DEM,928,56.79%
+2026,IA,Linn County,Cedar Rapids 51,native_precinct,288,False,United States Representative District 2,total,LIB Rick Stewart,LIB,49,3.00%
+2026,IA,Linn County,Cedar Rapids 51,native_precinct,288,False,United States Representative District 2,total,Dave Bushaw,,16,0.98%
+2026,IA,Linn County,Cedar Rapids 51,native_precinct,288,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Cedar Rapids 51,native_precinct,288,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,400,
+2026,IA,Linn County,Cedar Rapids 51,native_precinct,288,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,424,
+2026,IA,Linn County,Cedar Rapids 51,native_precinct,288,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,31,
+2026,IA,Linn County,Cedar Rapids 51,native_precinct,288,False,United States Representative District 2,election_day,Dave Bushaw,,10,
+2026,IA,Linn County,Cedar Rapids 51,native_precinct,288,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Cedar Rapids 51,native_precinct,288,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,216,
+2026,IA,Linn County,Cedar Rapids 51,native_precinct,288,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,504,
+2026,IA,Linn County,Cedar Rapids 51,native_precinct,288,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,18,
+2026,IA,Linn County,Cedar Rapids 51,native_precinct,288,False,United States Representative District 2,absentee,Dave Bushaw,,6,
+2026,IA,Linn County,Cedar Rapids 51,native_precinct,288,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Fairfax,native_precinct,294,False,United States Representative District 2,total,REP Joe Mitchell,REP,710,43.13%
+2026,IA,Linn County,Fairfax,native_precinct,294,False,United States Representative District 2,total,DEM Lindsay James,DEM,843,51.22%
+2026,IA,Linn County,Fairfax,native_precinct,294,False,United States Representative District 2,total,LIB Rick Stewart,LIB,46,2.79%
+2026,IA,Linn County,Fairfax,native_precinct,294,False,United States Representative District 2,total,Dave Bushaw,,23,1.40%
+2026,IA,Linn County,Fairfax,native_precinct,294,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Fairfax,native_precinct,294,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,570,
+2026,IA,Linn County,Fairfax,native_precinct,294,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,531,
+2026,IA,Linn County,Fairfax,native_precinct,294,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,38,
+2026,IA,Linn County,Fairfax,native_precinct,294,False,United States Representative District 2,election_day,Dave Bushaw,,23,
+2026,IA,Linn County,Fairfax,native_precinct,294,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Fairfax,native_precinct,294,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,140,
+2026,IA,Linn County,Fairfax,native_precinct,294,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,312,
+2026,IA,Linn County,Fairfax,native_precinct,294,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,8,
+2026,IA,Linn County,Fairfax,native_precinct,294,False,United States Representative District 2,absentee,Dave Bushaw,,0,
+2026,IA,Linn County,Fairfax,native_precinct,294,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Hiawatha 01,native_precinct,299,False,United States Representative District 2,total,REP Joe Mitchell,REP,434,35.66%
+2026,IA,Linn County,Hiawatha 01,native_precinct,299,False,United States Representative District 2,total,DEM Lindsay James,DEM,703,57.76%
+2026,IA,Linn County,Hiawatha 01,native_precinct,299,False,United States Representative District 2,total,LIB Rick Stewart,LIB,42,3.45%
+2026,IA,Linn County,Hiawatha 01,native_precinct,299,False,United States Representative District 2,total,Dave Bushaw,,19,1.56%
+2026,IA,Linn County,Hiawatha 01,native_precinct,299,False,United States Representative District 2,total,Write-In Totals,,1,0.08%
+2026,IA,Linn County,Hiawatha 01,native_precinct,299,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,308,
+2026,IA,Linn County,Hiawatha 01,native_precinct,299,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,361,
+2026,IA,Linn County,Hiawatha 01,native_precinct,299,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,32,
+2026,IA,Linn County,Hiawatha 01,native_precinct,299,False,United States Representative District 2,election_day,Dave Bushaw,,12,
+2026,IA,Linn County,Hiawatha 01,native_precinct,299,False,United States Representative District 2,election_day,Write-In Totals,,1,
+2026,IA,Linn County,Hiawatha 01,native_precinct,299,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,126,
+2026,IA,Linn County,Hiawatha 01,native_precinct,299,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,342,
+2026,IA,Linn County,Hiawatha 01,native_precinct,299,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,10,
+2026,IA,Linn County,Hiawatha 01,native_precinct,299,False,United States Representative District 2,absentee,Dave Bushaw,,7,
+2026,IA,Linn County,Hiawatha 01,native_precinct,299,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Hiawatha 02,native_precinct,304,False,United States Representative District 2,total,REP Joe Mitchell,REP,272,32.19%
+2026,IA,Linn County,Hiawatha 02,native_precinct,304,False,United States Representative District 2,total,DEM Lindsay James,DEM,527,62.37%
+2026,IA,Linn County,Hiawatha 02,native_precinct,304,False,United States Representative District 2,total,LIB Rick Stewart,LIB,22,2.60%
+2026,IA,Linn County,Hiawatha 02,native_precinct,304,False,United States Representative District 2,total,Dave Bushaw,,11,1.30%
+2026,IA,Linn County,Hiawatha 02,native_precinct,304,False,United States Representative District 2,total,Write-In Totals,,1,0.12%
+2026,IA,Linn County,Hiawatha 02,native_precinct,304,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,217,
+2026,IA,Linn County,Hiawatha 02,native_precinct,304,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,345,
+2026,IA,Linn County,Hiawatha 02,native_precinct,304,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,18,
+2026,IA,Linn County,Hiawatha 02,native_precinct,304,False,United States Representative District 2,election_day,Dave Bushaw,,10,
+2026,IA,Linn County,Hiawatha 02,native_precinct,304,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Hiawatha 02,native_precinct,304,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,55,
+2026,IA,Linn County,Hiawatha 02,native_precinct,304,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,182,
+2026,IA,Linn County,Hiawatha 02,native_precinct,304,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,4,
+2026,IA,Linn County,Hiawatha 02,native_precinct,304,False,United States Representative District 2,absentee,Dave Bushaw,,1,
+2026,IA,Linn County,Hiawatha 02,native_precinct,304,False,United States Representative District 2,absentee,Write-In Totals,,1,
+2026,IA,Linn County,Hiawatha 03,native_precinct,309,False,United States Representative District 2,total,REP Joe Mitchell,REP,582,43.50%
+2026,IA,Linn County,Hiawatha 03,native_precinct,309,False,United States Representative District 2,total,DEM Lindsay James,DEM,698,52.17%
+2026,IA,Linn County,Hiawatha 03,native_precinct,309,False,United States Representative District 2,total,LIB Rick Stewart,LIB,33,2.47%
+2026,IA,Linn County,Hiawatha 03,native_precinct,309,False,United States Representative District 2,total,Dave Bushaw,,11,0.82%
+2026,IA,Linn County,Hiawatha 03,native_precinct,309,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Hiawatha 03,native_precinct,309,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,382,
+2026,IA,Linn County,Hiawatha 03,native_precinct,309,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,330,
+2026,IA,Linn County,Hiawatha 03,native_precinct,309,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,19,
+2026,IA,Linn County,Hiawatha 03,native_precinct,309,False,United States Representative District 2,election_day,Dave Bushaw,,8,
+2026,IA,Linn County,Hiawatha 03,native_precinct,309,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Hiawatha 03,native_precinct,309,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,200,
+2026,IA,Linn County,Hiawatha 03,native_precinct,309,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,368,
+2026,IA,Linn County,Hiawatha 03,native_precinct,309,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,14,
+2026,IA,Linn County,Hiawatha 03,native_precinct,309,False,United States Representative District 2,absentee,Dave Bushaw,,3,
+2026,IA,Linn County,Hiawatha 03,native_precinct,309,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Marion 01,native_precinct,314,False,United States Representative District 2,total,REP Joe Mitchell,REP,704,41.29%
+2026,IA,Linn County,Marion 01,native_precinct,314,False,United States Representative District 2,total,DEM Lindsay James,DEM,935,54.84%
+2026,IA,Linn County,Marion 01,native_precinct,314,False,United States Representative District 2,total,LIB Rick Stewart,LIB,35,2.05%
+2026,IA,Linn County,Marion 01,native_precinct,314,False,United States Representative District 2,total,Dave Bushaw,,7,0.41%
+2026,IA,Linn County,Marion 01,native_precinct,314,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Marion 01,native_precinct,314,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,482,
+2026,IA,Linn County,Marion 01,native_precinct,314,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,506,
+2026,IA,Linn County,Marion 01,native_precinct,314,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,22,
+2026,IA,Linn County,Marion 01,native_precinct,314,False,United States Representative District 2,election_day,Dave Bushaw,,7,
+2026,IA,Linn County,Marion 01,native_precinct,314,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Marion 01,native_precinct,314,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,222,
+2026,IA,Linn County,Marion 01,native_precinct,314,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,429,
+2026,IA,Linn County,Marion 01,native_precinct,314,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,13,
+2026,IA,Linn County,Marion 01,native_precinct,314,False,United States Representative District 2,absentee,Dave Bushaw,,0,
+2026,IA,Linn County,Marion 01,native_precinct,314,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Marion 02,native_precinct,319,False,United States Representative District 2,total,REP Joe Mitchell,REP,508,41.13%
+2026,IA,Linn County,Marion 02,native_precinct,319,False,United States Representative District 2,total,DEM Lindsay James,DEM,680,55.06%
+2026,IA,Linn County,Marion 02,native_precinct,319,False,United States Representative District 2,total,LIB Rick Stewart,LIB,16,1.30%
+2026,IA,Linn County,Marion 02,native_precinct,319,False,United States Representative District 2,total,Dave Bushaw,,8,0.65%
+2026,IA,Linn County,Marion 02,native_precinct,319,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Marion 02,native_precinct,319,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,384,
+2026,IA,Linn County,Marion 02,native_precinct,319,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,393,
+2026,IA,Linn County,Marion 02,native_precinct,319,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,11,
+2026,IA,Linn County,Marion 02,native_precinct,319,False,United States Representative District 2,election_day,Dave Bushaw,,7,
+2026,IA,Linn County,Marion 02,native_precinct,319,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Marion 02,native_precinct,319,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,124,
+2026,IA,Linn County,Marion 02,native_precinct,319,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,287,
+2026,IA,Linn County,Marion 02,native_precinct,319,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,5,
+2026,IA,Linn County,Marion 02,native_precinct,319,False,United States Representative District 2,absentee,Dave Bushaw,,1,
+2026,IA,Linn County,Marion 02,native_precinct,319,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Marion 03,native_precinct,324,False,United States Representative District 2,total,REP Joe Mitchell,REP,849,50.15%
+2026,IA,Linn County,Marion 03,native_precinct,324,False,United States Representative District 2,total,DEM Lindsay James,DEM,781,46.13%
+2026,IA,Linn County,Marion 03,native_precinct,324,False,United States Representative District 2,total,LIB Rick Stewart,LIB,30,1.77%
+2026,IA,Linn County,Marion 03,native_precinct,324,False,United States Representative District 2,total,Dave Bushaw,,8,0.47%
+2026,IA,Linn County,Marion 03,native_precinct,324,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Marion 03,native_precinct,324,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,556,
+2026,IA,Linn County,Marion 03,native_precinct,324,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,347,
+2026,IA,Linn County,Marion 03,native_precinct,324,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,21,
+2026,IA,Linn County,Marion 03,native_precinct,324,False,United States Representative District 2,election_day,Dave Bushaw,,4,
+2026,IA,Linn County,Marion 03,native_precinct,324,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Marion 03,native_precinct,324,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,293,
+2026,IA,Linn County,Marion 03,native_precinct,324,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,434,
+2026,IA,Linn County,Marion 03,native_precinct,324,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,9,
+2026,IA,Linn County,Marion 03,native_precinct,324,False,United States Representative District 2,absentee,Dave Bushaw,,4,
+2026,IA,Linn County,Marion 03,native_precinct,324,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Marion 04,native_precinct,329,False,United States Representative District 2,total,REP Joe Mitchell,REP,562,36.73%
+2026,IA,Linn County,Marion 04,native_precinct,329,False,United States Representative District 2,total,DEM Lindsay James,DEM,904,59.08%
+2026,IA,Linn County,Marion 04,native_precinct,329,False,United States Representative District 2,total,LIB Rick Stewart,LIB,33,2.16%
+2026,IA,Linn County,Marion 04,native_precinct,329,False,United States Representative District 2,total,Dave Bushaw,,13,0.85%
+2026,IA,Linn County,Marion 04,native_precinct,329,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Marion 04,native_precinct,329,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,348,
+2026,IA,Linn County,Marion 04,native_precinct,329,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,382,
+2026,IA,Linn County,Marion 04,native_precinct,329,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,19,
+2026,IA,Linn County,Marion 04,native_precinct,329,False,United States Representative District 2,election_day,Dave Bushaw,,12,
+2026,IA,Linn County,Marion 04,native_precinct,329,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Marion 04,native_precinct,329,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,214,
+2026,IA,Linn County,Marion 04,native_precinct,329,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,522,
+2026,IA,Linn County,Marion 04,native_precinct,329,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,14,
+2026,IA,Linn County,Marion 04,native_precinct,329,False,United States Representative District 2,absentee,Dave Bushaw,,1,
+2026,IA,Linn County,Marion 04,native_precinct,329,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Marion 05,native_precinct,334,False,United States Representative District 2,total,REP Joe Mitchell,REP,302,39.68%
+2026,IA,Linn County,Marion 05,native_precinct,334,False,United States Representative District 2,total,DEM Lindsay James,DEM,419,55.06%
+2026,IA,Linn County,Marion 05,native_precinct,334,False,United States Representative District 2,total,LIB Rick Stewart,LIB,25,3.29%
+2026,IA,Linn County,Marion 05,native_precinct,334,False,United States Representative District 2,total,Dave Bushaw,,7,0.92%
+2026,IA,Linn County,Marion 05,native_precinct,334,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Marion 05,native_precinct,334,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,200,
+2026,IA,Linn County,Marion 05,native_precinct,334,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,199,
+2026,IA,Linn County,Marion 05,native_precinct,334,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,20,
+2026,IA,Linn County,Marion 05,native_precinct,334,False,United States Representative District 2,election_day,Dave Bushaw,,5,
+2026,IA,Linn County,Marion 05,native_precinct,334,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Marion 05,native_precinct,334,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,102,
+2026,IA,Linn County,Marion 05,native_precinct,334,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,220,
+2026,IA,Linn County,Marion 05,native_precinct,334,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,5,
+2026,IA,Linn County,Marion 05,native_precinct,334,False,United States Representative District 2,absentee,Dave Bushaw,,2,
+2026,IA,Linn County,Marion 05,native_precinct,334,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Marion 06,native_precinct,339,False,United States Representative District 2,total,REP Joe Mitchell,REP,474,36.02%
+2026,IA,Linn County,Marion 06,native_precinct,339,False,United States Representative District 2,total,DEM Lindsay James,DEM,779,59.19%
+2026,IA,Linn County,Marion 06,native_precinct,339,False,United States Representative District 2,total,LIB Rick Stewart,LIB,25,1.90%
+2026,IA,Linn County,Marion 06,native_precinct,339,False,United States Representative District 2,total,Dave Bushaw,,16,1.22%
+2026,IA,Linn County,Marion 06,native_precinct,339,False,United States Representative District 2,total,Write-In Totals,,2,0.15%
+2026,IA,Linn County,Marion 06,native_precinct,339,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,357,
+2026,IA,Linn County,Marion 06,native_precinct,339,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,419,
+2026,IA,Linn County,Marion 06,native_precinct,339,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,14,
+2026,IA,Linn County,Marion 06,native_precinct,339,False,United States Representative District 2,election_day,Dave Bushaw,,5,
+2026,IA,Linn County,Marion 06,native_precinct,339,False,United States Representative District 2,election_day,Write-In Totals,,2,
+2026,IA,Linn County,Marion 06,native_precinct,339,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,117,
+2026,IA,Linn County,Marion 06,native_precinct,339,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,360,
+2026,IA,Linn County,Marion 06,native_precinct,339,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,11,
+2026,IA,Linn County,Marion 06,native_precinct,339,False,United States Representative District 2,absentee,Dave Bushaw,,11,
+2026,IA,Linn County,Marion 06,native_precinct,339,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Marion 07,native_precinct,344,False,United States Representative District 2,total,REP Joe Mitchell,REP,426,38.87%
+2026,IA,Linn County,Marion 07,native_precinct,344,False,United States Representative District 2,total,DEM Lindsay James,DEM,614,56.02%
+2026,IA,Linn County,Marion 07,native_precinct,344,False,United States Representative District 2,total,LIB Rick Stewart,LIB,27,2.46%
+2026,IA,Linn County,Marion 07,native_precinct,344,False,United States Representative District 2,total,Dave Bushaw,,12,1.09%
+2026,IA,Linn County,Marion 07,native_precinct,344,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Marion 07,native_precinct,344,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,343,
+2026,IA,Linn County,Marion 07,native_precinct,344,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,357,
+2026,IA,Linn County,Marion 07,native_precinct,344,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,20,
+2026,IA,Linn County,Marion 07,native_precinct,344,False,United States Representative District 2,election_day,Dave Bushaw,,10,
+2026,IA,Linn County,Marion 07,native_precinct,344,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Marion 07,native_precinct,344,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,83,
+2026,IA,Linn County,Marion 07,native_precinct,344,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,257,
+2026,IA,Linn County,Marion 07,native_precinct,344,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,7,
+2026,IA,Linn County,Marion 07,native_precinct,344,False,United States Representative District 2,absentee,Dave Bushaw,,2,
+2026,IA,Linn County,Marion 07,native_precinct,344,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Marion 08,native_precinct,349,False,United States Representative District 2,total,REP Joe Mitchell,REP,461,37.76%
+2026,IA,Linn County,Marion 08,native_precinct,349,False,United States Representative District 2,total,DEM Lindsay James,DEM,700,57.33%
+2026,IA,Linn County,Marion 08,native_precinct,349,False,United States Representative District 2,total,LIB Rick Stewart,LIB,37,3.03%
+2026,IA,Linn County,Marion 08,native_precinct,349,False,United States Representative District 2,total,Dave Bushaw,,7,0.57%
+2026,IA,Linn County,Marion 08,native_precinct,349,False,United States Representative District 2,total,Write-In Totals,,1,0.08%
+2026,IA,Linn County,Marion 08,native_precinct,349,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,305,
+2026,IA,Linn County,Marion 08,native_precinct,349,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,337,
+2026,IA,Linn County,Marion 08,native_precinct,349,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,24,
+2026,IA,Linn County,Marion 08,native_precinct,349,False,United States Representative District 2,election_day,Dave Bushaw,,5,
+2026,IA,Linn County,Marion 08,native_precinct,349,False,United States Representative District 2,election_day,Write-In Totals,,1,
+2026,IA,Linn County,Marion 08,native_precinct,349,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,156,
+2026,IA,Linn County,Marion 08,native_precinct,349,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,363,
+2026,IA,Linn County,Marion 08,native_precinct,349,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,13,
+2026,IA,Linn County,Marion 08,native_precinct,349,False,United States Representative District 2,absentee,Dave Bushaw,,2,
+2026,IA,Linn County,Marion 08,native_precinct,349,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Marion 09,native_precinct,354,False,United States Representative District 2,total,REP Joe Mitchell,REP,479,35.51%
+2026,IA,Linn County,Marion 09,native_precinct,354,False,United States Representative District 2,total,DEM Lindsay James,DEM,789,58.49%
+2026,IA,Linn County,Marion 09,native_precinct,354,False,United States Representative District 2,total,LIB Rick Stewart,LIB,34,2.52%
+2026,IA,Linn County,Marion 09,native_precinct,354,False,United States Representative District 2,total,Dave Bushaw,,19,1.41%
+2026,IA,Linn County,Marion 09,native_precinct,354,False,United States Representative District 2,total,Write-In Totals,,1,0.07%
+2026,IA,Linn County,Marion 09,native_precinct,354,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,313,
+2026,IA,Linn County,Marion 09,native_precinct,354,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,348,
+2026,IA,Linn County,Marion 09,native_precinct,354,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,23,
+2026,IA,Linn County,Marion 09,native_precinct,354,False,United States Representative District 2,election_day,Dave Bushaw,,11,
+2026,IA,Linn County,Marion 09,native_precinct,354,False,United States Representative District 2,election_day,Write-In Totals,,1,
+2026,IA,Linn County,Marion 09,native_precinct,354,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,166,
+2026,IA,Linn County,Marion 09,native_precinct,354,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,441,
+2026,IA,Linn County,Marion 09,native_precinct,354,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,11,
+2026,IA,Linn County,Marion 09,native_precinct,354,False,United States Representative District 2,absentee,Dave Bushaw,,8,
+2026,IA,Linn County,Marion 09,native_precinct,354,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Marion 10,native_precinct,359,False,United States Representative District 2,total,REP Joe Mitchell,REP,280,36.22%
+2026,IA,Linn County,Marion 10,native_precinct,359,False,United States Representative District 2,total,DEM Lindsay James,DEM,447,57.83%
+2026,IA,Linn County,Marion 10,native_precinct,359,False,United States Representative District 2,total,LIB Rick Stewart,LIB,24,3.10%
+2026,IA,Linn County,Marion 10,native_precinct,359,False,United States Representative District 2,total,Dave Bushaw,,15,1.94%
+2026,IA,Linn County,Marion 10,native_precinct,359,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Marion 10,native_precinct,359,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,208,
+2026,IA,Linn County,Marion 10,native_precinct,359,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,259,
+2026,IA,Linn County,Marion 10,native_precinct,359,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,17,
+2026,IA,Linn County,Marion 10,native_precinct,359,False,United States Representative District 2,election_day,Dave Bushaw,,12,
+2026,IA,Linn County,Marion 10,native_precinct,359,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Marion 10,native_precinct,359,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,72,
+2026,IA,Linn County,Marion 10,native_precinct,359,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,188,
+2026,IA,Linn County,Marion 10,native_precinct,359,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,7,
+2026,IA,Linn County,Marion 10,native_precinct,359,False,United States Representative District 2,absentee,Dave Bushaw,,3,
+2026,IA,Linn County,Marion 10,native_precinct,359,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Marion 11,native_precinct,364,False,United States Representative District 2,total,REP Joe Mitchell,REP,343,38.28%
+2026,IA,Linn County,Marion 11,native_precinct,364,False,United States Representative District 2,total,DEM Lindsay James,DEM,502,56.03%
+2026,IA,Linn County,Marion 11,native_precinct,364,False,United States Representative District 2,total,LIB Rick Stewart,LIB,29,3.24%
+2026,IA,Linn County,Marion 11,native_precinct,364,False,United States Representative District 2,total,Dave Bushaw,,6,0.67%
+2026,IA,Linn County,Marion 11,native_precinct,364,False,United States Representative District 2,total,Write-In Totals,,1,0.11%
+2026,IA,Linn County,Marion 11,native_precinct,364,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,215,
+2026,IA,Linn County,Marion 11,native_precinct,364,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,234,
+2026,IA,Linn County,Marion 11,native_precinct,364,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,22,
+2026,IA,Linn County,Marion 11,native_precinct,364,False,United States Representative District 2,election_day,Dave Bushaw,,3,
+2026,IA,Linn County,Marion 11,native_precinct,364,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Marion 11,native_precinct,364,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,128,
+2026,IA,Linn County,Marion 11,native_precinct,364,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,268,
+2026,IA,Linn County,Marion 11,native_precinct,364,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,7,
+2026,IA,Linn County,Marion 11,native_precinct,364,False,United States Representative District 2,absentee,Dave Bushaw,,3,
+2026,IA,Linn County,Marion 11,native_precinct,364,False,United States Representative District 2,absentee,Write-In Totals,,1,
+2026,IA,Linn County,Marion 12,native_precinct,369,False,United States Representative District 2,total,REP Joe Mitchell,REP,322,28.45%
+2026,IA,Linn County,Marion 12,native_precinct,369,False,United States Representative District 2,total,DEM Lindsay James,DEM,725,64.05%
+2026,IA,Linn County,Marion 12,native_precinct,369,False,United States Representative District 2,total,LIB Rick Stewart,LIB,49,4.33%
+2026,IA,Linn County,Marion 12,native_precinct,369,False,United States Representative District 2,total,Dave Bushaw,,20,1.77%
+2026,IA,Linn County,Marion 12,native_precinct,369,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Marion 12,native_precinct,369,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,234,
+2026,IA,Linn County,Marion 12,native_precinct,369,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,394,
+2026,IA,Linn County,Marion 12,native_precinct,369,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,39,
+2026,IA,Linn County,Marion 12,native_precinct,369,False,United States Representative District 2,election_day,Dave Bushaw,,19,
+2026,IA,Linn County,Marion 12,native_precinct,369,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Marion 12,native_precinct,369,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,88,
+2026,IA,Linn County,Marion 12,native_precinct,369,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,331,
+2026,IA,Linn County,Marion 12,native_precinct,369,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,10,
+2026,IA,Linn County,Marion 12,native_precinct,369,False,United States Representative District 2,absentee,Dave Bushaw,,1,
+2026,IA,Linn County,Marion 12,native_precinct,369,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Marion 13,native_precinct,374,False,United States Representative District 2,total,REP Joe Mitchell,REP,462,37.96%
+2026,IA,Linn County,Marion 13,native_precinct,374,False,United States Representative District 2,total,DEM Lindsay James,DEM,674,55.38%
+2026,IA,Linn County,Marion 13,native_precinct,374,False,United States Representative District 2,total,LIB Rick Stewart,LIB,42,3.45%
+2026,IA,Linn County,Marion 13,native_precinct,374,False,United States Representative District 2,total,Dave Bushaw,,20,1.64%
+2026,IA,Linn County,Marion 13,native_precinct,374,False,United States Representative District 2,total,Write-In Totals,,1,0.08%
+2026,IA,Linn County,Marion 13,native_precinct,374,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,354,
+2026,IA,Linn County,Marion 13,native_precinct,374,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,344,
+2026,IA,Linn County,Marion 13,native_precinct,374,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,33,
+2026,IA,Linn County,Marion 13,native_precinct,374,False,United States Representative District 2,election_day,Dave Bushaw,,18,
+2026,IA,Linn County,Marion 13,native_precinct,374,False,United States Representative District 2,election_day,Write-In Totals,,1,
+2026,IA,Linn County,Marion 13,native_precinct,374,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,108,
+2026,IA,Linn County,Marion 13,native_precinct,374,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,330,
+2026,IA,Linn County,Marion 13,native_precinct,374,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,9,
+2026,IA,Linn County,Marion 13,native_precinct,374,False,United States Representative District 2,absentee,Dave Bushaw,,2,
+2026,IA,Linn County,Marion 13,native_precinct,374,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Marion 14,native_precinct,379,False,United States Representative District 2,total,REP Joe Mitchell,REP,293,33.41%
+2026,IA,Linn County,Marion 14,native_precinct,379,False,United States Representative District 2,total,DEM Lindsay James,DEM,546,62.26%
+2026,IA,Linn County,Marion 14,native_precinct,379,False,United States Representative District 2,total,LIB Rick Stewart,LIB,21,2.39%
+2026,IA,Linn County,Marion 14,native_precinct,379,False,United States Representative District 2,total,Dave Bushaw,,5,0.57%
+2026,IA,Linn County,Marion 14,native_precinct,379,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Marion 14,native_precinct,379,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,184,
+2026,IA,Linn County,Marion 14,native_precinct,379,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,251,
+2026,IA,Linn County,Marion 14,native_precinct,379,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,18,
+2026,IA,Linn County,Marion 14,native_precinct,379,False,United States Representative District 2,election_day,Dave Bushaw,,4,
+2026,IA,Linn County,Marion 14,native_precinct,379,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Marion 14,native_precinct,379,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,109,
+2026,IA,Linn County,Marion 14,native_precinct,379,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,295,
+2026,IA,Linn County,Marion 14,native_precinct,379,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,3,
+2026,IA,Linn County,Marion 14,native_precinct,379,False,United States Representative District 2,absentee,Dave Bushaw,,1,
+2026,IA,Linn County,Marion 14,native_precinct,379,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Marion 15,native_precinct,384,False,United States Representative District 2,total,REP Joe Mitchell,REP,412,35.46%
+2026,IA,Linn County,Marion 15,native_precinct,384,False,United States Representative District 2,total,DEM Lindsay James,DEM,688,59.21%
+2026,IA,Linn County,Marion 15,native_precinct,384,False,United States Representative District 2,total,LIB Rick Stewart,LIB,36,3.10%
+2026,IA,Linn County,Marion 15,native_precinct,384,False,United States Representative District 2,total,Dave Bushaw,,11,0.95%
+2026,IA,Linn County,Marion 15,native_precinct,384,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Marion 15,native_precinct,384,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,244,
+2026,IA,Linn County,Marion 15,native_precinct,384,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,308,
+2026,IA,Linn County,Marion 15,native_precinct,384,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,26,
+2026,IA,Linn County,Marion 15,native_precinct,384,False,United States Representative District 2,election_day,Dave Bushaw,,6,
+2026,IA,Linn County,Marion 15,native_precinct,384,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Marion 15,native_precinct,384,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,168,
+2026,IA,Linn County,Marion 15,native_precinct,384,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,380,
+2026,IA,Linn County,Marion 15,native_precinct,384,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,10,
+2026,IA,Linn County,Marion 15,native_precinct,384,False,United States Representative District 2,absentee,Dave Bushaw,,5,
+2026,IA,Linn County,Marion 15,native_precinct,384,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Marion 16,native_precinct,389,False,United States Representative District 2,total,REP Joe Mitchell,REP,296,31.73%
+2026,IA,Linn County,Marion 16,native_precinct,389,False,United States Representative District 2,total,DEM Lindsay James,DEM,564,60.45%
+2026,IA,Linn County,Marion 16,native_precinct,389,False,United States Representative District 2,total,LIB Rick Stewart,LIB,29,3.11%
+2026,IA,Linn County,Marion 16,native_precinct,389,False,United States Representative District 2,total,Dave Bushaw,,15,1.61%
+2026,IA,Linn County,Marion 16,native_precinct,389,False,United States Representative District 2,total,Write-In Totals,,3,0.32%
+2026,IA,Linn County,Marion 16,native_precinct,389,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,221,
+2026,IA,Linn County,Marion 16,native_precinct,389,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,290,
+2026,IA,Linn County,Marion 16,native_precinct,389,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,24,
+2026,IA,Linn County,Marion 16,native_precinct,389,False,United States Representative District 2,election_day,Dave Bushaw,,9,
+2026,IA,Linn County,Marion 16,native_precinct,389,False,United States Representative District 2,election_day,Write-In Totals,,3,
+2026,IA,Linn County,Marion 16,native_precinct,389,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,75,
+2026,IA,Linn County,Marion 16,native_precinct,389,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,274,
+2026,IA,Linn County,Marion 16,native_precinct,389,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,5,
+2026,IA,Linn County,Marion 16,native_precinct,389,False,United States Representative District 2,absentee,Dave Bushaw,,6,
+2026,IA,Linn County,Marion 16,native_precinct,389,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Marion 17,native_precinct,394,False,United States Representative District 2,total,REP Joe Mitchell,REP,497,39.26%
+2026,IA,Linn County,Marion 17,native_precinct,394,False,United States Representative District 2,total,DEM Lindsay James,DEM,705,55.69%
+2026,IA,Linn County,Marion 17,native_precinct,394,False,United States Representative District 2,total,LIB Rick Stewart,LIB,31,2.45%
+2026,IA,Linn County,Marion 17,native_precinct,394,False,United States Representative District 2,total,Dave Bushaw,,13,1.03%
+2026,IA,Linn County,Marion 17,native_precinct,394,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Marion 17,native_precinct,394,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,402,
+2026,IA,Linn County,Marion 17,native_precinct,394,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,419,
+2026,IA,Linn County,Marion 17,native_precinct,394,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,29,
+2026,IA,Linn County,Marion 17,native_precinct,394,False,United States Representative District 2,election_day,Dave Bushaw,,10,
+2026,IA,Linn County,Marion 17,native_precinct,394,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Marion 17,native_precinct,394,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,95,
+2026,IA,Linn County,Marion 17,native_precinct,394,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,286,
+2026,IA,Linn County,Marion 17,native_precinct,394,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,2,
+2026,IA,Linn County,Marion 17,native_precinct,394,False,United States Representative District 2,absentee,Dave Bushaw,,3,
+2026,IA,Linn County,Marion 17,native_precinct,394,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Marion 18,native_precinct,399,False,United States Representative District 2,total,REP Joe Mitchell,REP,144,27.43%
+2026,IA,Linn County,Marion 18,native_precinct,399,False,United States Representative District 2,total,DEM Lindsay James,DEM,342,65.14%
+2026,IA,Linn County,Marion 18,native_precinct,399,False,United States Representative District 2,total,LIB Rick Stewart,LIB,19,3.62%
+2026,IA,Linn County,Marion 18,native_precinct,399,False,United States Representative District 2,total,Dave Bushaw,,13,2.48%
+2026,IA,Linn County,Marion 18,native_precinct,399,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Marion 18,native_precinct,399,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,97,
+2026,IA,Linn County,Marion 18,native_precinct,399,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,216,
+2026,IA,Linn County,Marion 18,native_precinct,399,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,15,
+2026,IA,Linn County,Marion 18,native_precinct,399,False,United States Representative District 2,election_day,Dave Bushaw,,8,
+2026,IA,Linn County,Marion 18,native_precinct,399,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Marion 18,native_precinct,399,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,47,
+2026,IA,Linn County,Marion 18,native_precinct,399,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,126,
+2026,IA,Linn County,Marion 18,native_precinct,399,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,4,
+2026,IA,Linn County,Marion 18,native_precinct,399,False,United States Representative District 2,absentee,Dave Bushaw,,5,
+2026,IA,Linn County,Marion 18,native_precinct,399,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Mount Vernon 01,native_precinct,404,False,United States Representative District 2,total,REP Joe Mitchell,REP,343,27.53%
+2026,IA,Linn County,Mount Vernon 01,native_precinct,404,False,United States Representative District 2,total,DEM Lindsay James,DEM,846,67.90%
+2026,IA,Linn County,Mount Vernon 01,native_precinct,404,False,United States Representative District 2,total,LIB Rick Stewart,LIB,25,2.01%
+2026,IA,Linn County,Mount Vernon 01,native_precinct,404,False,United States Representative District 2,total,Dave Bushaw,,14,1.12%
+2026,IA,Linn County,Mount Vernon 01,native_precinct,404,False,United States Representative District 2,total,Write-In Totals,,1,0.08%
+2026,IA,Linn County,Mount Vernon 01,native_precinct,404,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,301,
+2026,IA,Linn County,Mount Vernon 01,native_precinct,404,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,597,
+2026,IA,Linn County,Mount Vernon 01,native_precinct,404,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,23,
+2026,IA,Linn County,Mount Vernon 01,native_precinct,404,False,United States Representative District 2,election_day,Dave Bushaw,,11,
+2026,IA,Linn County,Mount Vernon 01,native_precinct,404,False,United States Representative District 2,election_day,Write-In Totals,,1,
+2026,IA,Linn County,Mount Vernon 01,native_precinct,404,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,42,
+2026,IA,Linn County,Mount Vernon 01,native_precinct,404,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,249,
+2026,IA,Linn County,Mount Vernon 01,native_precinct,404,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,2,
+2026,IA,Linn County,Mount Vernon 01,native_precinct,404,False,United States Representative District 2,absentee,Dave Bushaw,,3,
+2026,IA,Linn County,Mount Vernon 01,native_precinct,404,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Mount Vernon 02,native_precinct,409,False,United States Representative District 2,total,REP Joe Mitchell,REP,254,25.58%
+2026,IA,Linn County,Mount Vernon 02,native_precinct,409,False,United States Representative District 2,total,DEM Lindsay James,DEM,694,69.89%
+2026,IA,Linn County,Mount Vernon 02,native_precinct,409,False,United States Representative District 2,total,LIB Rick Stewart,LIB,23,2.32%
+2026,IA,Linn County,Mount Vernon 02,native_precinct,409,False,United States Representative District 2,total,Dave Bushaw,,11,1.11%
+2026,IA,Linn County,Mount Vernon 02,native_precinct,409,False,United States Representative District 2,total,Write-In Totals,,1,0.10%
+2026,IA,Linn County,Mount Vernon 02,native_precinct,409,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,210,
+2026,IA,Linn County,Mount Vernon 02,native_precinct,409,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,387,
+2026,IA,Linn County,Mount Vernon 02,native_precinct,409,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,14,
+2026,IA,Linn County,Mount Vernon 02,native_precinct,409,False,United States Representative District 2,election_day,Dave Bushaw,,8,
+2026,IA,Linn County,Mount Vernon 02,native_precinct,409,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Mount Vernon 02,native_precinct,409,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,44,
+2026,IA,Linn County,Mount Vernon 02,native_precinct,409,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,307,
+2026,IA,Linn County,Mount Vernon 02,native_precinct,409,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,9,
+2026,IA,Linn County,Mount Vernon 02,native_precinct,409,False,United States Representative District 2,absentee,Dave Bushaw,,3,
+2026,IA,Linn County,Mount Vernon 02,native_precinct,409,False,United States Representative District 2,absentee,Write-In Totals,,1,
+2026,IA,Linn County,Robins,native_precinct,414,False,United States Representative District 2,total,REP Joe Mitchell,REP,1200,53.29%
+2026,IA,Linn County,Robins,native_precinct,414,False,United States Representative District 2,total,DEM Lindsay James,DEM,949,42.14%
+2026,IA,Linn County,Robins,native_precinct,414,False,United States Representative District 2,total,LIB Rick Stewart,LIB,52,2.31%
+2026,IA,Linn County,Robins,native_precinct,414,False,United States Representative District 2,total,Dave Bushaw,,20,0.89%
+2026,IA,Linn County,Robins,native_precinct,414,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Robins,native_precinct,414,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,898,
+2026,IA,Linn County,Robins,native_precinct,414,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,542,
+2026,IA,Linn County,Robins,native_precinct,414,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,41,
+2026,IA,Linn County,Robins,native_precinct,414,False,United States Representative District 2,election_day,Dave Bushaw,,18,
+2026,IA,Linn County,Robins,native_precinct,414,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Robins,native_precinct,414,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,302,
+2026,IA,Linn County,Robins,native_precinct,414,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,407,
+2026,IA,Linn County,Robins,native_precinct,414,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,11,
+2026,IA,Linn County,Robins,native_precinct,414,False,United States Representative District 2,absentee,Dave Bushaw,,2,
+2026,IA,Linn County,Robins,native_precinct,414,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Bertram Township,native_precinct,419,False,United States Representative District 2,total,REP Joe Mitchell,REP,745,47.39%
+2026,IA,Linn County,Bertram Township,native_precinct,419,False,United States Representative District 2,total,DEM Lindsay James,DEM,764,48.60%
+2026,IA,Linn County,Bertram Township,native_precinct,419,False,United States Representative District 2,total,LIB Rick Stewart,LIB,34,2.16%
+2026,IA,Linn County,Bertram Township,native_precinct,419,False,United States Representative District 2,total,Dave Bushaw,,12,0.76%
+2026,IA,Linn County,Bertram Township,native_precinct,419,False,United States Representative District 2,total,Write-In Totals,,1,0.06%
+2026,IA,Linn County,Bertram Township,native_precinct,419,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,530,
+2026,IA,Linn County,Bertram Township,native_precinct,419,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,353,
+2026,IA,Linn County,Bertram Township,native_precinct,419,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,27,
+2026,IA,Linn County,Bertram Township,native_precinct,419,False,United States Representative District 2,election_day,Dave Bushaw,,7,
+2026,IA,Linn County,Bertram Township,native_precinct,419,False,United States Representative District 2,election_day,Write-In Totals,,1,
+2026,IA,Linn County,Bertram Township,native_precinct,419,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,215,
+2026,IA,Linn County,Bertram Township,native_precinct,419,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,411,
+2026,IA,Linn County,Bertram Township,native_precinct,419,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,7,
+2026,IA,Linn County,Bertram Township,native_precinct,419,False,United States Representative District 2,absentee,Dave Bushaw,,5,
+2026,IA,Linn County,Bertram Township,native_precinct,419,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Boulder - Buffalo,native_precinct,424,False,United States Representative District 2,total,REP Joe Mitchell,REP,289,54.84%
+2026,IA,Linn County,Boulder - Buffalo,native_precinct,424,False,United States Representative District 2,total,DEM Lindsay James,DEM,205,38.90%
+2026,IA,Linn County,Boulder - Buffalo,native_precinct,424,False,United States Representative District 2,total,LIB Rick Stewart,LIB,13,2.47%
+2026,IA,Linn County,Boulder - Buffalo,native_precinct,424,False,United States Representative District 2,total,Dave Bushaw,,10,1.90%
+2026,IA,Linn County,Boulder - Buffalo,native_precinct,424,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Boulder - Buffalo,native_precinct,424,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,252,
+2026,IA,Linn County,Boulder - Buffalo,native_precinct,424,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,150,
+2026,IA,Linn County,Boulder - Buffalo,native_precinct,424,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,10,
+2026,IA,Linn County,Boulder - Buffalo,native_precinct,424,False,United States Representative District 2,election_day,Dave Bushaw,,9,
+2026,IA,Linn County,Boulder - Buffalo,native_precinct,424,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Boulder - Buffalo,native_precinct,424,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,37,
+2026,IA,Linn County,Boulder - Buffalo,native_precinct,424,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,55,
+2026,IA,Linn County,Boulder - Buffalo,native_precinct,424,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,3,
+2026,IA,Linn County,Boulder - Buffalo,native_precinct,424,False,United States Representative District 2,absentee,Dave Bushaw,,1,
+2026,IA,Linn County,Boulder - Buffalo,native_precinct,424,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Brown - Linn,native_precinct,430,False,United States Representative District 2,total,REP Joe Mitchell,REP,780,52.56%
+2026,IA,Linn County,Brown - Linn,native_precinct,430,False,United States Representative District 2,total,DEM Lindsay James,DEM,613,41.31%
+2026,IA,Linn County,Brown - Linn,native_precinct,430,False,United States Representative District 2,total,LIB Rick Stewart,LIB,52,3.50%
+2026,IA,Linn County,Brown - Linn,native_precinct,430,False,United States Representative District 2,total,Dave Bushaw,,20,1.35%
+2026,IA,Linn County,Brown - Linn,native_precinct,430,False,United States Representative District 2,total,Write-In Totals,,1,0.07%
+2026,IA,Linn County,Brown - Linn,native_precinct,430,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,652,
+2026,IA,Linn County,Brown - Linn,native_precinct,430,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,414,
+2026,IA,Linn County,Brown - Linn,native_precinct,430,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,46,
+2026,IA,Linn County,Brown - Linn,native_precinct,430,False,United States Representative District 2,election_day,Dave Bushaw,,16,
+2026,IA,Linn County,Brown - Linn,native_precinct,430,False,United States Representative District 2,election_day,Write-In Totals,,1,
+2026,IA,Linn County,Brown - Linn,native_precinct,430,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,128,
+2026,IA,Linn County,Brown - Linn,native_precinct,430,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,199,
+2026,IA,Linn County,Brown - Linn,native_precinct,430,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,6,
+2026,IA,Linn County,Brown - Linn,native_precinct,430,False,United States Representative District 2,absentee,Dave Bushaw,,4,
+2026,IA,Linn County,Brown - Linn,native_precinct,430,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Clinton Township,native_precinct,435,False,United States Representative District 2,total,REP Joe Mitchell,REP,222,52.24%
+2026,IA,Linn County,Clinton Township,native_precinct,435,False,United States Representative District 2,total,DEM Lindsay James,DEM,182,42.82%
+2026,IA,Linn County,Clinton Township,native_precinct,435,False,United States Representative District 2,total,LIB Rick Stewart,LIB,13,3.06%
+2026,IA,Linn County,Clinton Township,native_precinct,435,False,United States Representative District 2,total,Dave Bushaw,,2,0.47%
+2026,IA,Linn County,Clinton Township,native_precinct,435,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Clinton Township,native_precinct,435,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,175,
+2026,IA,Linn County,Clinton Township,native_precinct,435,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,92,
+2026,IA,Linn County,Clinton Township,native_precinct,435,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,12,
+2026,IA,Linn County,Clinton Township,native_precinct,435,False,United States Representative District 2,election_day,Dave Bushaw,,2,
+2026,IA,Linn County,Clinton Township,native_precinct,435,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Clinton Township,native_precinct,435,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,47,
+2026,IA,Linn County,Clinton Township,native_precinct,435,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,90,
+2026,IA,Linn County,Clinton Township,native_precinct,435,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,1,
+2026,IA,Linn County,Clinton Township,native_precinct,435,False,United States Representative District 2,absentee,Dave Bushaw,,0,
+2026,IA,Linn County,Clinton Township,native_precinct,435,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Fairfax Township,native_precinct,440,False,United States Representative District 2,total,REP Joe Mitchell,REP,352,47.76%
+2026,IA,Linn County,Fairfax Township,native_precinct,440,False,United States Representative District 2,total,DEM Lindsay James,DEM,342,46.40%
+2026,IA,Linn County,Fairfax Township,native_precinct,440,False,United States Representative District 2,total,LIB Rick Stewart,LIB,29,3.93%
+2026,IA,Linn County,Fairfax Township,native_precinct,440,False,United States Representative District 2,total,Dave Bushaw,,5,0.68%
+2026,IA,Linn County,Fairfax Township,native_precinct,440,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Fairfax Township,native_precinct,440,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,268,
+2026,IA,Linn County,Fairfax Township,native_precinct,440,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,203,
+2026,IA,Linn County,Fairfax Township,native_precinct,440,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,22,
+2026,IA,Linn County,Fairfax Township,native_precinct,440,False,United States Representative District 2,election_day,Dave Bushaw,,4,
+2026,IA,Linn County,Fairfax Township,native_precinct,440,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Fairfax Township,native_precinct,440,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,84,
+2026,IA,Linn County,Fairfax Township,native_precinct,440,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,139,
+2026,IA,Linn County,Fairfax Township,native_precinct,440,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,7,
+2026,IA,Linn County,Fairfax Township,native_precinct,440,False,United States Representative District 2,absentee,Dave Bushaw,,1,
+2026,IA,Linn County,Fairfax Township,native_precinct,440,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Fayette Township,native_precinct,445,False,United States Representative District 2,total,REP Joe Mitchell,REP,467,49.79%
+2026,IA,Linn County,Fayette Township,native_precinct,445,False,United States Representative District 2,total,DEM Lindsay James,DEM,420,44.78%
+2026,IA,Linn County,Fayette Township,native_precinct,445,False,United States Representative District 2,total,LIB Rick Stewart,LIB,33,3.52%
+2026,IA,Linn County,Fayette Township,native_precinct,445,False,United States Representative District 2,total,Dave Bushaw,,9,0.96%
+2026,IA,Linn County,Fayette Township,native_precinct,445,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Fayette Township,native_precinct,445,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,414,
+2026,IA,Linn County,Fayette Township,native_precinct,445,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,323,
+2026,IA,Linn County,Fayette Township,native_precinct,445,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,31,
+2026,IA,Linn County,Fayette Township,native_precinct,445,False,United States Representative District 2,election_day,Dave Bushaw,,8,
+2026,IA,Linn County,Fayette Township,native_precinct,445,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Fayette Township,native_precinct,445,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,53,
+2026,IA,Linn County,Fayette Township,native_precinct,445,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,97,
+2026,IA,Linn County,Fayette Township,native_precinct,445,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,2,
+2026,IA,Linn County,Fayette Township,native_precinct,445,False,United States Representative District 2,absentee,Dave Bushaw,,1,
+2026,IA,Linn County,Fayette Township,native_precinct,445,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Franklin Township,native_precinct,450,False,United States Representative District 2,total,REP Joe Mitchell,REP,641,42.53%
+2026,IA,Linn County,Franklin Township,native_precinct,450,False,United States Representative District 2,total,DEM Lindsay James,DEM,771,51.16%
+2026,IA,Linn County,Franklin Township,native_precinct,450,False,United States Representative District 2,total,LIB Rick Stewart,LIB,48,3.19%
+2026,IA,Linn County,Franklin Township,native_precinct,450,False,United States Representative District 2,total,Dave Bushaw,,24,1.59%
+2026,IA,Linn County,Franklin Township,native_precinct,450,False,United States Representative District 2,total,Write-In Totals,,1,0.07%
+2026,IA,Linn County,Franklin Township,native_precinct,450,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,554,
+2026,IA,Linn County,Franklin Township,native_precinct,450,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,546,
+2026,IA,Linn County,Franklin Township,native_precinct,450,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,42,
+2026,IA,Linn County,Franklin Township,native_precinct,450,False,United States Representative District 2,election_day,Dave Bushaw,,21,
+2026,IA,Linn County,Franklin Township,native_precinct,450,False,United States Representative District 2,election_day,Write-In Totals,,1,
+2026,IA,Linn County,Franklin Township,native_precinct,450,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,87,
+2026,IA,Linn County,Franklin Township,native_precinct,450,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,225,
+2026,IA,Linn County,Franklin Township,native_precinct,450,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,6,
+2026,IA,Linn County,Franklin Township,native_precinct,450,False,United States Representative District 2,absentee,Dave Bushaw,,3,
+2026,IA,Linn County,Franklin Township,native_precinct,450,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Grant Township,native_precinct,455,False,United States Representative District 2,total,REP Joe Mitchell,REP,322,51.94%
+2026,IA,Linn County,Grant Township,native_precinct,455,False,United States Representative District 2,total,DEM Lindsay James,DEM,252,40.65%
+2026,IA,Linn County,Grant Township,native_precinct,455,False,United States Representative District 2,total,LIB Rick Stewart,LIB,18,2.90%
+2026,IA,Linn County,Grant Township,native_precinct,455,False,United States Representative District 2,total,Dave Bushaw,,14,2.26%
+2026,IA,Linn County,Grant Township,native_precinct,455,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Grant Township,native_precinct,455,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,273,
+2026,IA,Linn County,Grant Township,native_precinct,455,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,201,
+2026,IA,Linn County,Grant Township,native_precinct,455,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,15,
+2026,IA,Linn County,Grant Township,native_precinct,455,False,United States Representative District 2,election_day,Dave Bushaw,,13,
+2026,IA,Linn County,Grant Township,native_precinct,455,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Grant Township,native_precinct,455,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,49,
+2026,IA,Linn County,Grant Township,native_precinct,455,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,51,
+2026,IA,Linn County,Grant Township,native_precinct,455,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,3,
+2026,IA,Linn County,Grant Township,native_precinct,455,False,United States Representative District 2,absentee,Dave Bushaw,,1,
+2026,IA,Linn County,Grant Township,native_precinct,455,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Jackson Township,native_precinct,460,False,United States Representative District 2,total,REP Joe Mitchell,REP,353,53.24%
+2026,IA,Linn County,Jackson Township,native_precinct,460,False,United States Representative District 2,total,DEM Lindsay James,DEM,270,40.72%
+2026,IA,Linn County,Jackson Township,native_precinct,460,False,United States Representative District 2,total,LIB Rick Stewart,LIB,20,3.02%
+2026,IA,Linn County,Jackson Township,native_precinct,460,False,United States Representative District 2,total,Dave Bushaw,,9,1.36%
+2026,IA,Linn County,Jackson Township,native_precinct,460,False,United States Representative District 2,total,Write-In Totals,,1,0.15%
+2026,IA,Linn County,Jackson Township,native_precinct,460,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,313,
+2026,IA,Linn County,Jackson Township,native_precinct,460,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,198,
+2026,IA,Linn County,Jackson Township,native_precinct,460,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,17,
+2026,IA,Linn County,Jackson Township,native_precinct,460,False,United States Representative District 2,election_day,Dave Bushaw,,9,
+2026,IA,Linn County,Jackson Township,native_precinct,460,False,United States Representative District 2,election_day,Write-In Totals,,1,
+2026,IA,Linn County,Jackson Township,native_precinct,460,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,40,
+2026,IA,Linn County,Jackson Township,native_precinct,460,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,72,
+2026,IA,Linn County,Jackson Township,native_precinct,460,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,3,
+2026,IA,Linn County,Jackson Township,native_precinct,460,False,United States Representative District 2,absentee,Dave Bushaw,,0,
+2026,IA,Linn County,Jackson Township,native_precinct,460,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Maine Township,native_precinct,465,False,United States Representative District 2,total,REP Joe Mitchell,REP,458,49.57%
+2026,IA,Linn County,Maine Township,native_precinct,465,False,United States Representative District 2,total,DEM Lindsay James,DEM,397,42.97%
+2026,IA,Linn County,Maine Township,native_precinct,465,False,United States Representative District 2,total,LIB Rick Stewart,LIB,35,3.79%
+2026,IA,Linn County,Maine Township,native_precinct,465,False,United States Representative District 2,total,Dave Bushaw,,17,1.84%
+2026,IA,Linn County,Maine Township,native_precinct,465,False,United States Representative District 2,total,Write-In Totals,,1,0.11%
+2026,IA,Linn County,Maine Township,native_precinct,465,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,397,
+2026,IA,Linn County,Maine Township,native_precinct,465,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,329,
+2026,IA,Linn County,Maine Township,native_precinct,465,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,29,
+2026,IA,Linn County,Maine Township,native_precinct,465,False,United States Representative District 2,election_day,Dave Bushaw,,17,
+2026,IA,Linn County,Maine Township,native_precinct,465,False,United States Representative District 2,election_day,Write-In Totals,,1,
+2026,IA,Linn County,Maine Township,native_precinct,465,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,61,
+2026,IA,Linn County,Maine Township,native_precinct,465,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,68,
+2026,IA,Linn County,Maine Township,native_precinct,465,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,6,
+2026,IA,Linn County,Maine Township,native_precinct,465,False,United States Representative District 2,absentee,Dave Bushaw,,0,
+2026,IA,Linn County,Maine Township,native_precinct,465,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Marion Township 01,native_precinct,471,False,United States Representative District 2,total,REP Joe Mitchell,REP,440,56.56%
+2026,IA,Linn County,Marion Township 01,native_precinct,471,False,United States Representative District 2,total,DEM Lindsay James,DEM,301,38.69%
+2026,IA,Linn County,Marion Township 01,native_precinct,471,False,United States Representative District 2,total,LIB Rick Stewart,LIB,21,2.70%
+2026,IA,Linn County,Marion Township 01,native_precinct,471,False,United States Representative District 2,total,Dave Bushaw,,7,0.90%
+2026,IA,Linn County,Marion Township 01,native_precinct,471,False,United States Representative District 2,total,Write-In Totals,,1,0.13%
+2026,IA,Linn County,Marion Township 01,native_precinct,471,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,321,
+2026,IA,Linn County,Marion Township 01,native_precinct,471,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,125,
+2026,IA,Linn County,Marion Township 01,native_precinct,471,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,16,
+2026,IA,Linn County,Marion Township 01,native_precinct,471,False,United States Representative District 2,election_day,Dave Bushaw,,5,
+2026,IA,Linn County,Marion Township 01,native_precinct,471,False,United States Representative District 2,election_day,Write-In Totals,,1,
+2026,IA,Linn County,Marion Township 01,native_precinct,471,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,119,
+2026,IA,Linn County,Marion Township 01,native_precinct,471,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,176,
+2026,IA,Linn County,Marion Township 01,native_precinct,471,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,5,
+2026,IA,Linn County,Marion Township 01,native_precinct,471,False,United States Representative District 2,absentee,Dave Bushaw,,2,
+2026,IA,Linn County,Marion Township 01,native_precinct,471,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Marion Township 02,native_precinct,476,False,United States Representative District 2,total,REP Joe Mitchell,REP,254,48.57%
+2026,IA,Linn County,Marion Township 02,native_precinct,476,False,United States Representative District 2,total,DEM Lindsay James,DEM,253,48.37%
+2026,IA,Linn County,Marion Township 02,native_precinct,476,False,United States Representative District 2,total,LIB Rick Stewart,LIB,12,2.29%
+2026,IA,Linn County,Marion Township 02,native_precinct,476,False,United States Representative District 2,total,Dave Bushaw,,4,0.76%
+2026,IA,Linn County,Marion Township 02,native_precinct,476,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Marion Township 02,native_precinct,476,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,130,
+2026,IA,Linn County,Marion Township 02,native_precinct,476,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,97,
+2026,IA,Linn County,Marion Township 02,native_precinct,476,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,9,
+2026,IA,Linn County,Marion Township 02,native_precinct,476,False,United States Representative District 2,election_day,Dave Bushaw,,4,
+2026,IA,Linn County,Marion Township 02,native_precinct,476,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Marion Township 02,native_precinct,476,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,124,
+2026,IA,Linn County,Marion Township 02,native_precinct,476,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,156,
+2026,IA,Linn County,Marion Township 02,native_precinct,476,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,3,
+2026,IA,Linn County,Marion Township 02,native_precinct,476,False,United States Representative District 2,absentee,Dave Bushaw,,0,
+2026,IA,Linn County,Marion Township 02,native_precinct,476,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Monroe Township 01,native_precinct,481,False,United States Representative District 2,total,REP Joe Mitchell,REP,753,56.70%
+2026,IA,Linn County,Monroe Township 01,native_precinct,481,False,United States Representative District 2,total,DEM Lindsay James,DEM,511,38.48%
+2026,IA,Linn County,Monroe Township 01,native_precinct,481,False,United States Representative District 2,total,LIB Rick Stewart,LIB,37,2.79%
+2026,IA,Linn County,Monroe Township 01,native_precinct,481,False,United States Representative District 2,total,Dave Bushaw,,12,0.90%
+2026,IA,Linn County,Monroe Township 01,native_precinct,481,False,United States Representative District 2,total,Write-In Totals,,1,0.08%
+2026,IA,Linn County,Monroe Township 01,native_precinct,481,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,564,
+2026,IA,Linn County,Monroe Township 01,native_precinct,481,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,282,
+2026,IA,Linn County,Monroe Township 01,native_precinct,481,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,29,
+2026,IA,Linn County,Monroe Township 01,native_precinct,481,False,United States Representative District 2,election_day,Dave Bushaw,,9,
+2026,IA,Linn County,Monroe Township 01,native_precinct,481,False,United States Representative District 2,election_day,Write-In Totals,,1,
+2026,IA,Linn County,Monroe Township 01,native_precinct,481,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,189,
+2026,IA,Linn County,Monroe Township 01,native_precinct,481,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,229,
+2026,IA,Linn County,Monroe Township 01,native_precinct,481,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,8,
+2026,IA,Linn County,Monroe Township 01,native_precinct,481,False,United States Representative District 2,absentee,Dave Bushaw,,3,
+2026,IA,Linn County,Monroe Township 01,native_precinct,481,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Monroe Township 02,native_precinct,486,False,United States Representative District 2,total,REP Joe Mitchell,REP,618,55.73%
+2026,IA,Linn County,Monroe Township 02,native_precinct,486,False,United States Representative District 2,total,DEM Lindsay James,DEM,441,39.77%
+2026,IA,Linn County,Monroe Township 02,native_precinct,486,False,United States Representative District 2,total,LIB Rick Stewart,LIB,31,2.80%
+2026,IA,Linn County,Monroe Township 02,native_precinct,486,False,United States Representative District 2,total,Dave Bushaw,,8,0.72%
+2026,IA,Linn County,Monroe Township 02,native_precinct,486,False,United States Representative District 2,total,Write-In Totals,,2,0.18%
+2026,IA,Linn County,Monroe Township 02,native_precinct,486,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,439,
+2026,IA,Linn County,Monroe Township 02,native_precinct,486,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,201,
+2026,IA,Linn County,Monroe Township 02,native_precinct,486,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,21,
+2026,IA,Linn County,Monroe Township 02,native_precinct,486,False,United States Representative District 2,election_day,Dave Bushaw,,6,
+2026,IA,Linn County,Monroe Township 02,native_precinct,486,False,United States Representative District 2,election_day,Write-In Totals,,1,
+2026,IA,Linn County,Monroe Township 02,native_precinct,486,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,179,
+2026,IA,Linn County,Monroe Township 02,native_precinct,486,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,240,
+2026,IA,Linn County,Monroe Township 02,native_precinct,486,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,10,
+2026,IA,Linn County,Monroe Township 02,native_precinct,486,False,United States Representative District 2,absentee,Dave Bushaw,,2,
+2026,IA,Linn County,Monroe Township 02,native_precinct,486,False,United States Representative District 2,absentee,Write-In Totals,,1,
+2026,IA,Linn County,Otter Creek Township,native_precinct,491,False,United States Representative District 2,total,REP Joe Mitchell,REP,516,59.72%
+2026,IA,Linn County,Otter Creek Township,native_precinct,491,False,United States Representative District 2,total,DEM Lindsay James,DEM,293,33.91%
+2026,IA,Linn County,Otter Creek Township,native_precinct,491,False,United States Representative District 2,total,LIB Rick Stewart,LIB,31,3.59%
+2026,IA,Linn County,Otter Creek Township,native_precinct,491,False,United States Representative District 2,total,Dave Bushaw,,8,0.93%
+2026,IA,Linn County,Otter Creek Township,native_precinct,491,False,United States Representative District 2,total,Write-In Totals,,2,0.23%
+2026,IA,Linn County,Otter Creek Township,native_precinct,491,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,448,
+2026,IA,Linn County,Otter Creek Township,native_precinct,491,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,223,
+2026,IA,Linn County,Otter Creek Township,native_precinct,491,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,27,
+2026,IA,Linn County,Otter Creek Township,native_precinct,491,False,United States Representative District 2,election_day,Dave Bushaw,,7,
+2026,IA,Linn County,Otter Creek Township,native_precinct,491,False,United States Representative District 2,election_day,Write-In Totals,,1,
+2026,IA,Linn County,Otter Creek Township,native_precinct,491,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,68,
+2026,IA,Linn County,Otter Creek Township,native_precinct,491,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,70,
+2026,IA,Linn County,Otter Creek Township,native_precinct,491,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,4,
+2026,IA,Linn County,Otter Creek Township,native_precinct,491,False,United States Representative District 2,absentee,Dave Bushaw,,1,
+2026,IA,Linn County,Otter Creek Township,native_precinct,491,False,United States Representative District 2,absentee,Write-In Totals,,1,
+2026,IA,Linn County,Putnam Township,native_precinct,496,False,United States Representative District 2,total,REP Joe Mitchell,REP,758,44.88%
+2026,IA,Linn County,Putnam Township,native_precinct,496,False,United States Representative District 2,total,DEM Lindsay James,DEM,838,49.62%
+2026,IA,Linn County,Putnam Township,native_precinct,496,False,United States Representative District 2,total,LIB Rick Stewart,LIB,49,2.90%
+2026,IA,Linn County,Putnam Township,native_precinct,496,False,United States Representative District 2,total,Dave Bushaw,,20,1.18%
+2026,IA,Linn County,Putnam Township,native_precinct,496,False,United States Representative District 2,total,Write-In Totals,,1,0.06%
+2026,IA,Linn County,Putnam Township,native_precinct,496,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,671,
+2026,IA,Linn County,Putnam Township,native_precinct,496,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,580,
+2026,IA,Linn County,Putnam Township,native_precinct,496,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,43,
+2026,IA,Linn County,Putnam Township,native_precinct,496,False,United States Representative District 2,election_day,Dave Bushaw,,17,
+2026,IA,Linn County,Putnam Township,native_precinct,496,False,United States Representative District 2,election_day,Write-In Totals,,1,
+2026,IA,Linn County,Putnam Township,native_precinct,496,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,87,
+2026,IA,Linn County,Putnam Township,native_precinct,496,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,258,
+2026,IA,Linn County,Putnam Township,native_precinct,496,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,6,
+2026,IA,Linn County,Putnam Township,native_precinct,496,False,United States Representative District 2,absentee,Dave Bushaw,,3,
+2026,IA,Linn County,Putnam Township,native_precinct,496,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Spring Grove Township,native_precinct,502,False,United States Representative District 2,total,REP Joe Mitchell,REP,204,57.30%
+2026,IA,Linn County,Spring Grove Township,native_precinct,502,False,United States Representative District 2,total,DEM Lindsay James,DEM,127,35.67%
+2026,IA,Linn County,Spring Grove Township,native_precinct,502,False,United States Representative District 2,total,LIB Rick Stewart,LIB,14,3.93%
+2026,IA,Linn County,Spring Grove Township,native_precinct,502,False,United States Representative District 2,total,Dave Bushaw,,5,1.40%
+2026,IA,Linn County,Spring Grove Township,native_precinct,502,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Spring Grove Township,native_precinct,502,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,176,
+2026,IA,Linn County,Spring Grove Township,native_precinct,502,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,95,
+2026,IA,Linn County,Spring Grove Township,native_precinct,502,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,12,
+2026,IA,Linn County,Spring Grove Township,native_precinct,502,False,United States Representative District 2,election_day,Dave Bushaw,,4,
+2026,IA,Linn County,Spring Grove Township,native_precinct,502,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Spring Grove Township,native_precinct,502,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,28,
+2026,IA,Linn County,Spring Grove Township,native_precinct,502,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,32,
+2026,IA,Linn County,Spring Grove Township,native_precinct,502,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,2,
+2026,IA,Linn County,Spring Grove Township,native_precinct,502,False,United States Representative District 2,absentee,Dave Bushaw,,1,
+2026,IA,Linn County,Spring Grove Township,native_precinct,502,False,United States Representative District 2,absentee,Write-In Totals,,0,
+2026,IA,Linn County,Washington Township,native_precinct,507,False,United States Representative District 2,total,REP Joe Mitchell,REP,883,50.89%
+2026,IA,Linn County,Washington Township,native_precinct,507,False,United States Representative District 2,total,DEM Lindsay James,DEM,736,42.42%
+2026,IA,Linn County,Washington Township,native_precinct,507,False,United States Representative District 2,total,LIB Rick Stewart,LIB,62,3.57%
+2026,IA,Linn County,Washington Township,native_precinct,507,False,United States Representative District 2,total,Dave Bushaw,,27,1.56%
+2026,IA,Linn County,Washington Township,native_precinct,507,False,United States Representative District 2,total,Write-In Totals,,0,0.00%
+2026,IA,Linn County,Washington Township,native_precinct,507,False,United States Representative District 2,election_day,REP Joe Mitchell,REP,769,
+2026,IA,Linn County,Washington Township,native_precinct,507,False,United States Representative District 2,election_day,DEM Lindsay James,DEM,528,
+2026,IA,Linn County,Washington Township,native_precinct,507,False,United States Representative District 2,election_day,LIB Rick Stewart,LIB,49,
+2026,IA,Linn County,Washington Township,native_precinct,507,False,United States Representative District 2,election_day,Dave Bushaw,,25,
+2026,IA,Linn County,Washington Township,native_precinct,507,False,United States Representative District 2,election_day,Write-In Totals,,0,
+2026,IA,Linn County,Washington Township,native_precinct,507,False,United States Representative District 2,absentee,REP Joe Mitchell,REP,114,
+2026,IA,Linn County,Washington Township,native_precinct,507,False,United States Representative District 2,absentee,DEM Lindsay James,DEM,208,
+2026,IA,Linn County,Washington Township,native_precinct,507,False,United States Representative District 2,absentee,LIB Rick Stewart,LIB,13,
+2026,IA,Linn County,Washington Township,native_precinct,507,False,United States Representative District 2,absentee,Dave Bushaw,,2,
+2026,IA,Linn County,Washington Township,native_precinct,507,False,United States Representative District 2,absentee,Write-In Totals,,0,

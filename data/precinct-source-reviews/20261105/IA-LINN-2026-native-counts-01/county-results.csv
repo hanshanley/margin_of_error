@@ -1,0 +1,4 @@
+year,state_code,county,reporting_unit,unit_type,source_pdf_page,maps_approved,contest,native_mode,total_votes,democratic_votes,republican_votes,other_votes,dem_minus_rep_pct
+2026,IA,Linn County,Linn County,county,1,False,United States Representative District 2,total,105838,62228,39254,4356,21.706759
+2026,IA,Linn County,Linn County,county,1,False,United States Representative District 2,election_day,65501,33512,28704,3285,7.340346
+2026,IA,Linn County,Linn County,county,1,False,United States Representative District 2,absentee,40337,28716,10550,1071,45.035575

@@ -1,0 +1,2 @@
+year,state_code,county,reporting_unit,unit_type,source_pdf_page,maps_approved,registered_voters_total,ballots_total,ballots_election_day,ballots_absentee,blank_ballots_total,blank_ballots_election_day,blank_ballots_absentee,native_registered_turnout_percent,registered_turnout_percent,quality_flags
+2026,IA,Linn County,Linn County,county,1,False,160717,107457,66530,40927,20,5,15,66.86,66.861004,unofficial;county_scoped;registered_denominator_not_vep_or_demographic

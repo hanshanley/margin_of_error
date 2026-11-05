@@ -1,0 +1,34 @@
+{
+  "year": 2026,
+  "state_code": "IA",
+  "scope": "Linn County only",
+  "native_summary_pages": 10,
+  "native_precinct_pages": 511,
+  "precincts": 94,
+  "ballots": [
+    107457,
+    66530,
+    40927
+  ],
+  "registered_voters": 160717,
+  "blank_ballots": [
+    20,
+    5,
+    15
+  ],
+  "house_votes": [
+    105838,
+    65501,
+    40337
+  ],
+  "participation_rows": 94,
+  "house_mode_rows": 282,
+  "complete_candidate_mode_rows": 1425,
+  "all_precinct_options_and_modes_reconcile": true,
+  "maps_approved": false,
+  "geometry_approved": false,
+  "rate_definition": "Ballots divided by each native unit's own total registrations only; no mode-specific, VEP, CPS or demographic rate.",
+  "native_percentage_note": "Preserve printed House percentages separately; they are not substituted for all-candidate margin denominators.",
+  "license_note": "Official public aggregate election reports; no separate open-data license found in acquired declarations.",
+  "next_action": "Obtain and reconcile correct-election native precinct boundaries without changing literal identities; continue remaining 2026 bulk-source reviews."
+}
