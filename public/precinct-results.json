@@ -105,6 +105,20 @@
       {"file": "count-review/audit.json", "label": "Washington all-39-county original inventory, 36-county House count reconciliation and withheld-source discrepancies (JSON)"},
       {"file": "audit.json", "label": "Washington complete literal reporting/CD joins, geometry exclusions and unmatched-unit audit (JSON)"}
     ]
+  }, {
+    "label": "Virginia 2026 partial House precinct results (710 precincts; official current-reference shapes)",
+    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5b1665d31deb80c7c4d5a57b7f8c8d8bf93daedc/data/precinct-results/20261105-virginia-02/",
+    "data_directory": "data/precinct-results/20261105-virginia-02",
+    "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-virginia-maps-20261105-02/complete-virginia-2026-supported-precinct-maps-02.zip",
+    "complete_download_bytes": 83374714,
+    "complete_download_sha256": "f829118617e54ff12f4680b4d2758cd03d2a08fd8162bb90597d902ab81fb788",
+    "publication": "snapshot_ready",
+    "participation_available": true,
+    "source_documents": [
+      {"file": "reference-geometry-audit.json", "label": "Virginia complete native-fragment audit, literal identities, overlaps and all withheld precincts (JSON)"},
+      {"file": "count-review/locality-house-scope-review.json", "label": "Virginia all 145 locality/House candidate-method vectors and unallocated residuals (JSON)"},
+      {"file": "count-review/current-reference-geometry/originals/official-current-boundary-map.gz", "label": "Archived Virginia official current-boundary page; reference is not certified election-day geometry (HTML · gzip)"}
+    ]
   }],
   "source_batches": [{
     "label": "2022 precinct sources from 25 states",

@@ -3343,12 +3343,35 @@ members/CRC and all **393 checksums**. The full ZIP has **83,374,714 bytes**,
 SHA-256 `f829118617e54ff12f4680b4d2758cd03d2a08fd8162bb90597d902ab81fb788`.
 Proof: `files/virginia-supported-precinct-package-proof-02.json`.
 Twelve additional focused map/provenance cases bring the combined selector to
-**88 passing cases**. The package is not yet registered in the public map.
+**88 passing cases**.
 
-**Next executable actions:** commit/push the supported map source as Hans,
-bind and independently verify its new complete immutable release, then register
-the snapshot and verify actual map interactions and its exact production
-deployment. Do not repeat the finished count-only suite as a substitute.
+Hans source commit **`5b1665d31deb80c7c4d5a57b7f8c8d8bf93daedc`** is pushed.
+Immutable release **`voter-precinct-virginia-maps-20261105-02`** resolves to that
+exact commit. The whole archive was anonymously redownloaded: HTTP 200, exact
+size/SHA/CRC/member set, all 393 checksums and every decompressed original
+receipt match the source. Proof:
+`files/virginia-supported-precinct-remote-release-proof-02.json`.
+
+The public registry now appends this snapshot, preserving all earlier entries.
+Only VA2026 changes in the 1,632-cell worklist; all cells remain incomplete,
+and the new map's publication status is `snapshot_ready` pending live proof.
+Renderer/default/red-blue palette/zoom code is byte-unchanged. Seven targeted
+Node integration cases pass; Astro reports zero errors/warnings and five
+existing hints; build/four chart cases pass. Pages preparation preserves all
+94 byte-identical relocated assets and a **986,270,621-byte** site.
+Four source-matched local browser modes pass all **73** complete-data links,
+retaining all **70** previous links, all seven whole count CSV endpoints,
+all 710 exact precinct counts/margins/fills, all 133 Virginia county background
+fills, actual native ballot/registration details with rates withheld, selection
+fit, buttons, wheel, post-fit double-click, mobile two-pointer pinch, year
+switches, state fallback and no overflow. Proofs:
+`files/virginia-supported-precinct-local-browser-proof-02.json`,
+`files/virginia-supported-precinct-local-downloads-proof-02.json`.
+
+**Next executable actions:** push the validated UI as Hans and verify its exact
+successful production deployment, unqueried metadata and actual map/download
+browser checks before a live flag. Then continue the next 2026 jurisdiction;
+do not repeat the finished count-only suite as a substitute.
 Preserve all source fragments, unmatched identities and exclusions. Approve only
 explicitly supported scopes; do not repair the earlier export, allocate missing
 county modes to precincts, borrow older geometry or mark the VA2026 cell complete.
