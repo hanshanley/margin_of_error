@@ -3,7 +3,7 @@ import { installParticipationDownloads, participationDownload } from "./particip
 installParticipationDownloads(document.querySelector(".participation-page"));
 const $ = id => document.getElementById(id);
 const NS = "http://www.w3.org/2000/svg";
-const MAX_MAP_ZOOM = 256;
+const MAX_MAP_ZOOM = 16384;
 const root = document.querySelector(".participation-page");
 const params = new URLSearchParams(location.search);
 const colors = ["#284766", "#8c98a6"];

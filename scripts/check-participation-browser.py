@@ -172,6 +172,20 @@ with sync_playwright() as p:
     for code in sorted(set(current_codes) - {"NC", "NM"}):
         page.locator("#state-select").select_option(names[code])
         shapes = check_precinct_results(page, 2026, code)
+        if code == "DC":
+            path = page.locator('.substate-feature[data-color-level="precinct"]').first
+            bounds = path.evaluate("p => { const b = p.getBBox(); return [b.width, b.height]; }")
+            path.dispatch_event("click")
+            fitted = viewport(page)
+            assert fitted[2] <= 1.25 * max(bounds[0], bounds[1] * fitted[2] / fitted[3]), (
+                "The national zoom cap prevents fitting the selected DC precinct")
+            expect(page.locator("#substate-detail")).to_contain_text("D.C. Council chair")
+            expect(page.locator("#substate-detail")).to_contain_text("not final turnout")
+            page.locator("#map-zoom-out").click()
+            before = viewport(page)
+            page.locator("#map-zoom-in").click()
+            assert viewport(page)[2] < before[2]
+            check_precinct_results(page, 2026, code)
         if code == "MN":
             page.locator('.substate-feature[data-color-level="precinct"]').first.dispatch_event("click")
             expect(page.locator("#substate-detail")).to_contain_text("Separate participation statistics")

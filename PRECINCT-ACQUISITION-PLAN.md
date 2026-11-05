@@ -1843,9 +1843,34 @@ Independent proof now passes: every original and receipt is rehydrated from
 all **27 ZIP members**; all 144 decoded shapes exactly match captured
 native-browser features; every snapshot and the ZIP reproduce byte-for-byte.
 Session proof: `files/dc-2026-offline-reproduction-proof.json`.
-Next commit sources as Hans, publish and redownload the immutable release, append the supplement without
-losing the prior 47 complete downloads, update only DC 2026 among 1,632 cells,
-and verify local and exact-SHA production interaction/default/zoom/colors.
+Sources are committed/pushed as Hans at
+`3f76e06af13cc1344f34da09be159eae042745f0`. Immutable release
+`voter-precinct-dc-maps-20261105` was downloaded in full; its exact tag target,
+entire ZIP bytes/SHA and pinned raw index/map/audit match. Remote proof:
+`files/dc-2026-remote-release-proof.json`.
+Registry appends one `snapshot_ready` supplement, retaining all prior
+47 complete downloads and bringing the total to **50**. Only **DC 2026**
+changes among 1,632 ledger cells; it remains incomplete.
+
+Local desktop/mobile with and without JavaScript now pass exact source-matched
+144-precinct margins/counts/fills, separate participation and provenance/
+accounting warnings, year switching, exact Nevada state fallback, 2026
+precinct/margin default, all 50 identical download links and no overflow.
+Source-matched fit checks exposed the nationwide **256x** zoom cap preventing
+DC urban precinct selection from reaching its actual geometry. The only
+renderer change raises that bounded maximum to **16,384x**; selection now fits
+actual precinct bounds. Button zoom, real wheel, post-fit double-click and
+real mobile two-pointer pinch are verified, preserving all exact count/colors.
+An existing browser regression file now tests the actual DC feature fit.
+Local proof: `files/dc-2026-local-browser-proof.json`. Seven targeted JS tests,
+the normal build and Pages preparer pass; **94** existing bulk downloads remain
+byte-verified and the prepared site is **986,222,920 bytes**. The previously
+documented unrelated UK whole-validator card-count mismatch is not fixed or
+reported as a passing whole suite.
+
+Next publish this UI commit, watch its exact SHA/Pages run and repeat the new
+source-matched production proof before setting the DC live flag. Then publish
+the verified flag/ledger and verify that exact final deployment.
 Do not mark DC statewide complete or call provisional shares final turnout.
 
 ## Maryland 2026: native general reference link is an unexpanded template
