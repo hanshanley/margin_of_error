@@ -98,7 +98,7 @@
     "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-washington-maps-20261105/complete-washington-2026-precinct-maps-03.zip",
     "complete_download_bytes": 116917377,
     "complete_download_sha256": "46f7a1a8e251bb740e51da255fcb31ee92a7b29fb1bfed79fcf4cff7d5ce4c9c",
-    "publication": "snapshot_ready",
+    "publication": "live_verified_partial",
     "participation_available": false,
     "source_documents": [
       {"file": "2026/WA-ambiguous-reference-areas.geojson.gz", "label": "Washington overlapping reference strips excluded from both precincts; complete original shapes remain in the ZIP (GeoJSON · gzip)"},

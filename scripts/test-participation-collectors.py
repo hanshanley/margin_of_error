@@ -48,6 +48,57 @@ boston_maps = module("build-boston-precinct-results")
 worcester_review = module("review-worcester-precinct-results")
 wa_review = module("review-washington-precinct-results")
 wa_maps = module("build-washington-precinct-results")
+house_county_sources = module("acquire-house-county-results")
+
+
+def house_county_source_fixture():
+    regions = {}
+    for index, code in enumerate(sorted(house_county_sources.STATES)):
+        for district in range(1, 10 if index < 35 else 9):
+            regions[f"{code.lower()}-{district:02}"] = dict(
+                type="Congressional District", election_id=len(regions) + 1)
+    return dict(test_data=False, country="US", province="US", election_date="2026-11-03T05:00:00Z",
+                election_type="House of Representatives", election_scope="General", region_results=regions)
+
+
+def test_house_county_acquisition_uses_only_complete_unique_declared_district_endpoints():
+    source = house_county_source_fixture()
+    declared = house_county_sources.declared_districts(source)
+    assert declared["al-01"]["url"] == house_county_sources.API + str(
+        source["region_results"]["al-01"]["election_id"])
+    assert declared["al-01"]["district"] == "AL-01"
+
+
+@pytest.mark.parametrize("change", ["test-data", "date", "scope", "missing-district", "duplicate-id", "boolean-id"])
+def test_house_county_acquisition_rejects_wrong_election_and_ambiguous_endpoint_inventories(change):
+    source = house_county_source_fixture()
+    if change == "test-data":
+        source["test_data"] = True
+    elif change == "date":
+        source["election_date"] = "2024-11-05"
+    elif change == "scope":
+        source["election_scope"] = "Primary"
+    elif change == "missing-district":
+        source["region_results"].pop("al-01")
+    elif change == "duplicate-id":
+        source["region_results"]["al-02"]["election_id"] = source["region_results"]["al-01"]["election_id"]
+    else:
+        source["region_results"]["al-01"]["election_id"] = True
+    with pytest.raises(ValueError):
+        house_county_sources.declared_districts(source)
+
+
+def test_house_county_acquisition_binds_child_state_and_district_without_relabeling_noncounty_regions():
+    declared = house_county_sources.declared_districts(house_county_source_fixture())["al-01"]
+    data = dict(test_data=False, country="US", province="AL", district="AL-01",
+                election_date="2026-11-03", election_type="House of Representatives",
+                election_scope="General", region_results={"overseas": dict(type="Overseas")})
+    house_county_sources.district_scope(data, declared)
+    assert data["region_results"]["overseas"]["type"] == "Overseas"
+    for changed in [dict(data, province="AK"), dict(data, district="AL-02"),
+                    dict(data, region_results=[])]:
+        with pytest.raises(ValueError):
+            house_county_sources.district_scope(changed, declared)
 
 
 def test_washington_geometry_requires_complete_literal_names_or_explicit_numbers_and_cd():

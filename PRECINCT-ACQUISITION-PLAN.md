@@ -2357,7 +2357,7 @@ The parser now explicitly uses **100 x (D - R) / all candidate votes**;
 focused regressions cover both party leads. The map builder independently
 rejects any normalized margin inconsistent with the underlying counts.
 
-### Washington mapped supplement: source verified, publication pending
+### Washington mapped supplement: verified in production
 
 Canonical builder: `scripts/build-washington-precinct-results.py`.
 Complete literal name or explicit precinct-number **plus CD** sets match in
@@ -2406,7 +2406,7 @@ its complete original-backed ZIP and all-5,804-row CSV. It explicitly declares
 `participation_available:false`, avoiding an invented statistics download.
 All **53 existing** download links remain unchanged; there are now **55**.
 All **1,632** state/year cells remain incomplete, and only **WA/2026** changes
-to `snapshot_ready` pending actual production verification.
+to `published_partial` after actual production verification.
 
 The seven focused Node tests, normal build and Pages preparation pass.
 Astro check has zero errors/warnings and the same five existing hints.
@@ -2420,13 +2420,76 @@ exact Nevada state fallback, honest excluded-strip/Pierce caveats, no inferred
 participation, preserved 2026 defaults and no overflow or JS errors.
 Proof: `files/washington-2026-local-browser-proof.json`.
 
-**Next executable actions:** push the UI/ledger batch as Hans, verify its exact
-new Pages deployment and unqueried production bytes/four browser modes before
-a live flag. Then expand
-actual county coverage (now explicitly approved) and pursue the remaining
-precinct crosswalks, Pierce rings, King identities and Jefferson/Walla Walla
-accounting. Native participation definitions and denominators remain a
-separate review; no final or demographic turnout is inferred.
+UI commit `330751cc1b88242a6efa1aa54672f8224cdfa8fb` was pushed as Hans.
+Its exact Pages run **41995134972** succeeded, including build and deploy.
+The same full four-mode checker passes against unqueried production URLs:
+all 1,499 exact colored paths, counts and independently derived signs,
+all 55 complete download links with the previous 53 retained, selection-fit,
+buttons, wheel, post-fit double-click, real mobile pinch, year changes,
+defaults, fallback, no overflow/errors and no inferred participation.
+Proofs: `files/washington-2026-exact-ui-deployment.json` and
+`files/washington-2026-live-browser-proof.json`.
+The registry now marks this supplement `live_verified_partial`.
+
+The separate county-summary review now reconciles **all 39 counties**, using
+both workbook Summary Results sheets and every native API candidate
+ID/name/literal-party/count. Each complete county vector is accumulated only
+after validation. Their roll-up exactly equals every state candidate vector:
+**1,409,690 D + 805,088 R + 9,234 other = 2,224,012** House candidate votes.
+This does not approve any new precinct joins or turnout fields. King's
+unexplained contest-ballot gaps and Jefferson/Walla Walla's zero reported
+ballots remain explicit accounting warnings, distinct from candidate-vector
+reconciliation. Canonical session proof is
+`files/washington-2026-county-summary-audit-02.json`; do not use audit-01.
+
+## Nationwide 2026 county results: complete district originals acquired
+
+The user explicitly permits counties instead of precincts, or both. Preserve
+precinct priority where reviewed shapes exist; never label a county fill as
+a precinct or mark precinct coverage complete because counties are available.
+
+`scripts/acquire-house-county-results.py` follows the **435 actual declared
+district election IDs** from the archived national House response, rather than
+guessing endpoints. All 435 original responses and byte/status/URL/SHA receipts
+are retained in `files/national-2026-county-breakdowns-20261105/`.
+**418** pass strict production/election/state/district scope checks.
+All **17 Pennsylvania** bodies explicitly set **`test_data:true`**; they
+remain archived and withheld, not relaxed into production data.
+The 406-test collector suite passes, including eight acquisition regressions.
+
+The provider mixes geographic levels. Among accepted sources, 379 expose
+County alone; the others include Town, independent City, Parish, Planning
+Region, Township, Borough, House District, State and Overseas. These are not
+additive layers. In particular use Connecticut's current planning regions
+instead of obsolete counties, Virginia's independent cities as county
+equivalents, and Alaska's explicit borough/census-area references without
+pooling overlapping House districts or statewide totals. Preserve unallocated
+overseas results; do not assign them to a guessed county.
+
+The official 2026 Census directory explicitly declares the complete
+`tl_2026_us_county.zip`. Full original/index/receipts are acquired in
+`files/census-2026-county-reference/`: **83,378,454 bytes**, SHA-256
+`b527c9ba7aeb8f17ef118f026eae5e5a938aa1d00b873bc32342d0dce59321c0`.
+ZIP CRC and all seven native members pass. Its 3,235 native records include
+all **nine Connecticut planning regions** and **30 Alaska county equivalents**.
+Native projection is NAD83 geographic; explicitly transform to WGS84 for
+display. This is a 2026 Census county reference, not certified election
+precinct geometry; do not silently substitute the site's 2024 county shapes.
+
+**Next executable actions:** implement strict literal candidate-vector and
+county-identity reconciliation for each actual district; require all declared
+state districts to pass before aggregating county fragments. Preserve missing
+or ambiguous references, source timestamps, nested levels, unlocated votes,
+all rejected responses and exact failure reasons. Acquire legitimate
+Pennsylvania alternatives. Package complete originals, normalized full rows,
+audits and reproducible tools before immutable release and county-layer
+integration. Add 2026 geometry, correctly label House aggregate margins,
+merge the supplement after current-results refresh, preserve red/blue signs,
+precinct priority, state fallback, 2026 defaults, zoom and full JS/no-JS
+downloads. Pursue the remaining Washington precinct crosswalks, Pierce rings,
+King identities and Jefferson/Walla Walla accounting independently. Native
+participation denominators remain a separate review; no final or demographic
+turnout is inferred.
 
 ## Resume procedure for every work session or scheduled prompt
 
