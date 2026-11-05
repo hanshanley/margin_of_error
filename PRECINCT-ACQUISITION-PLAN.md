@@ -1564,7 +1564,15 @@ exactly one changed MO cell, immutable provenance, unchanged renderer,
 no overflow, 2026 precinct/margin default and exact MO state fallback
 without invented precincts:
 `files/missouri-christian-2026-local-browser-proof.json`.
-Hans UI commit/push and exact production proof are next.
+Hans UI commit `9c9325c119aeb22334f97356620dfc5ac8493ed3` is pushed.
+Its exact Pages run **41976901201** completed successfully, with the run's
+SHA checked before the production checker ran. Live desktop/mobile with
+and without JavaScript passes the same four configurations, all **46**
+complete downloads, county-only scope, one MO cell among 1,632, immutable
+provenance, unchanged renderer and exact state fallback:
+`files/missouri-christian-2026-exact-pages-run.json` and
+`files/missouri-christian-2026-live-browser-proof.json`.
+This publication is finished; do not repeat its acquisition or release.
 Keep MO 2026 `complete=no`; this is one county, not statewide Missouri.
 Seek explicitly election-applicable boundaries and residential absentee
 definitions while continuing the remaining 2026 state/DC queue.
@@ -1600,19 +1608,97 @@ numeric `PREC`, `CONGRESS` and other district fields.
 Members and metadata sync/modification date are **March 25, 2026**;
 metadata creation date is **February 12, 2019**, not an election date.
 Native projection is NAD83 Nevada East FIPS 2701, US survey feet.
-Full vintage/election applicability, metadata, uniqueness and topology
-remain to review; no join or map is approved from a modified timestamp.
+The native `PREC` values are all nonnull and unique: **1,015 distinct IDs**,
+range **1000–7930**. Native congressional-district counts are **323** in
+district 1, **289** in district 3 and **403** in district 4. Metadata
+inspection found maintenance dates but no explicit general-election
+applicability text. Election applicability and topology remain unapproved;
+no join or map is approved from a modified timestamp.
+
+The captured historical selector has **140 choices**, including a blank
+choice. Its newest actual election is `26PE` / **2026 PRIMARY ELECTION
+(06/09/2026)**, followed by `24G` / **2024 GENERAL ELECTION (11/05/2024)**.
+There is **no 2026 general choice in this captured selector**. Do not invent
+or submit `26G`. Native category `3` is `STATEMENT OF VOTE (RESULTS BY
+PRECINCT)`; category `4` is turnout data by voting method. Valid fresh
+ASP.NET form submissions, preserving native hidden state, successfully
+selected `24G`, `22G` and `20G` with category `3`. Complete index responses
+are saved in `files/precinct-expansion-sources/NV-CLARK-HISTORICAL/`.
+They declare **200**, **200** and **264** PDF/Data report links respectively.
+Acquisition of all **664** declared report bodies is in progress, not yet
+a published or reconciled historical package. The archive reaches elections
+before 1964, providing a concrete later historical route without replacing
+the remaining 2026 work.
+
+Washoe's actual homepage and `results/2026data.php` report index were
+acquired in full with receipts, along with its linked public dashboard:
+`https://electionresults.washoecounty.gov/`.
+The dashboard requires normal JavaScript/Blazor rendering. Waiting for
+`networkidle` timed out; an independent DOM-ready browser navigation
+succeeded with no page errors or failed requests. It displays **General
+2026**, **Washoe County - General Election 2026 Unofficial Results**, update
+**11/4/2026 6:20 PM**, and a real `Download PDF` link under
+`https://gis.washoecounty.us/webservices/gisdataservice/ElectionResults/resultpdf/`.
+That is a declared county-summary export, not precinct results. The actual
+2026 report-index statements currently linked are explicitly **primary**
+reports. Personal mail-ballot, signature-cure and in-person voter-list
+downloads are deliberately excluded; they are not aggregate participation
+substitutes. Raw originals and the separately labeled derived browser
+observation are in `files/precinct-expansion-sources/NV-2026-WASHOE/`.
 
 The Silver State endpoint reached from `https://results.nv.gov/` redirects
 to `silverstateelection.nv.gov` and the ordinary web tool encounters a
 real additional-security challenge. Pursue the legitimate official
 county aggregate/result/export alternatives; do not describe the state
 as permanently unavailable or download personal voter lists as a substitute.
-Next: inspect actual historical form choices and election-night aggregate
-report routes for a 2026 precinct statement; acquire the declared full
-aggregate report and election-applicable boundaries, independently reconcile
-native units, then package all originals before registry/publication.
+Next: finish the complete declared historical report acquisition and
+original-backed package; fetch Washoe's actual county PDF and review the
+GIS index's declared Election Archive geodatabase. Continue official
+2026 precinct-statement alternatives in parallel. Independently reconcile
+native units and election-applicable boundaries before mapping; package
+all originals before registry/publication.
 NV 2026 remains incomplete and unchanged in the public ledger.
+
+## Colorado 2026: actual state results and Douglas map application
+
+The full official
+`https://www.sos.state.co.us/pubs/elections/resultsData.html`
+index identifies **2026 General Election** and declares
+`https://results.enr.clarityelections.com/CO/127407/`.
+The actual state and Douglas (`CO/Douglas/127427/`) result requests return
+**HTTP 403**; an ordinary browser navigation to Douglas also returned a
+CloudFront 403, not candidate data. The county elections homepage returned
+403 separately. Preserve these access results and pursue legitimate
+official alternatives, not a bypass or a claim that returns do not exist.
+
+The declared Douglas district/precinct map application
+`d20d97824bee4291bbd2505443bcb8a3` and its full **121,176-byte** configuration
+were acquired successfully from ArcGIS. Its actual web-map data source is
+`1f8e398b9e204897832bc689e95c9459` on `dougco.maps.arcgis.com`.
+The item title is `Douglas County District/Precinct Maps Application`;
+its March 2026 modified date is not itself an election applicability
+statement. Inspect the declared map's layer definitions and vintage before
+any join. All original bodies and exact receipts, including failed HTML,
+are retained in `files/precinct-expansion-sources/CO-2026-DOUGLAS/`.
+No new Colorado map, precinct counts or turnout is claimed.
+
+## Maryland 2026: native general reference link is an unexpanded template
+
+The actual official `https://elections.maryland.gov/elections/2026/index.html`
+declares unofficial general results and
+`https://elections.maryland.gov/elections/2026/election_data/index.html`.
+All three full index/result/data pages were acquired with HTTP 200 receipts.
+The data index currently lists **primary** candidate exports only.
+Its visible `State Precinct Reference for the 2026 General Election (Excel)`
+label is not proof of a workbook: the actual href contains the literal
+unexpanded `{*GENERAL_ELECTION_CODE*}` placeholder. Following that exact
+declared link returns **14,548 bytes of HTML with HTTP 200**, not XLSX.
+The acquisition correctly rejected its missing ZIP/XLSX signature.
+Retain the failed original body/receipt, do not invent a replacement
+election code, and do not claim a general-election reference was acquired.
+Original cache: `files/precinct-expansion-sources/MD-2026/`.
+Continue actual county aggregate/precinct reports and later state updates;
+neither primary returns nor source-index labels become 2026 general data.
 
 ## Resume procedure for every work session or scheduled prompt
 
