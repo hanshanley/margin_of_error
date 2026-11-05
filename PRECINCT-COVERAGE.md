@@ -32,7 +32,7 @@ Checkmarks are reserved for verified, complete live coverage.
 | [ ] | California | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Colorado | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Connecticut | acquired_originals_review_pending | not_reviewed | pending | complete_source_bytes_and_candidate_registry_section_structure_verified | full_originals_download_only | not_reconciled |
-| [ ] | District of Columbia | acquired | reference_acquired | validated_partial | passed | snapshot_ready | acquired_precinct_counts_and_registration |
+| [ ] | District of Columbia | acquired | reference_acquired | validated_partial | passed | published_partial | acquired_precinct_counts_and_registration |
 | [ ] | Delaware | acquired_reconciled | older_reference_withheld | withheld | counts_passed_map_withheld | full_counts_download_only | not_acquired |
 | [ ] | Florida | acquired_reconciled | election_year_reference_pending | withheld | all_office_native_candidate_totals_passed_suppressed_modes_retained | full_counts_download_only | county_counts_only_precinct_denominators_not_acquired |
 | [ ] | Georgia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |

@@ -72,7 +72,7 @@
     "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-dc-maps-20261105/complete-dc-2026-precinct-maps.zip",
     "complete_download_bytes": 1461521,
     "complete_download_sha256": "7c181a8b03255bd26aded22b2ea91e60211386d3e766c91173920c56d96b6d2d",
-    "publication": "snapshot_ready",
+    "publication": "live_verified_partial",
     "source_documents": [
       {"file": "2026/DC-ambiguous-reference-areas.geojson.gz", "label": "DC ambiguous overlapping reference strips excluded from both precincts; full original boundaries remain in complete ZIP (GeoJSON · gzip)"},
       {"file": "audit.json", "label": "DC plurality counts, separately reconciled provisional participation, local-contest accounting differences and complete reference-overlap audit (JSON)"}

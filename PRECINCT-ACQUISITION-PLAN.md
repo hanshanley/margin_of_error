@@ -1848,7 +1848,8 @@ Sources are committed/pushed as Hans at
 `voter-precinct-dc-maps-20261105` was downloaded in full; its exact tag target,
 entire ZIP bytes/SHA and pinned raw index/map/audit match. Remote proof:
 `files/dc-2026-remote-release-proof.json`.
-Registry appends one `snapshot_ready` supplement, retaining all prior
+Registry appends one `live_verified_partial` supplement after the production
+proof below, retaining all prior
 47 complete downloads and bringing the total to **50**. Only **DC 2026**
 changes among 1,632 ledger cells; it remains incomplete.
 
@@ -1868,10 +1869,17 @@ byte-verified and the prepared site is **986,222,920 bytes**. The previously
 documented unrelated UK whole-validator card-count mismatch is not fixed or
 reported as a passing whole suite.
 
-Next publish this UI commit, watch its exact SHA/Pages run and repeat the new
-source-matched production proof before setting the DC live flag. Then publish
-the verified flag/ledger and verify that exact final deployment.
-Do not mark DC statewide complete or call provisional shares final turnout.
+The DC UI is committed/pushed as Hans at
+`43a0d0d42899dcb192e92c9d30157b58320d8d51`. Its exact Pages run
+**41982827435** completed successfully. Unqueried production registry,
+ledger and renderer bytes match that exact commit; the new source-matched
+desktop/mobile JS/no-JS browser proof also passes against production.
+Proofs: `files/dc-2026-ui-exact-pages-run.json` and
+`files/dc-2026-live-browser-proof.json`. This evidence permits the DC live
+flag and corresponding ledger publication update, not statewide completion.
+The flag/ledger publication must also receive exact-SHA deployment and
+production-byte/browser verification before its bounded publication todo
+is closed. Never call these provisional fractions final turnout.
 
 ## Maryland 2026: native general reference link is an unexpanded template
 
@@ -1920,8 +1928,14 @@ Montgomery's actual **Voter Count Report, 4:00 p.m. (Excel)** declaration
 now yields a real **13,946-byte XLSX**, not the state's broken reference
 template. The native `2026GG Voter Turnout` sheet has **72 data rows /
 71 unique precinct IDs**, six native affiliation columns, and a cached
-footer. The duplicate precinct identity and repeated values remain
-unresolved; preserve all rows and do not deduplicate, sum, or interpret
+footer. The duplicate source code is now identified as **05-06**:
+Excel rows **19/20** are `05-06 WHITE OAK MIDDLE SCHOOL` and
+`05-06 White Oaks MS`. Their six native affiliation values are identical:
+DEM **417**, REP **72**, GRN **1**, WCP **0**, UNA **6**, OTH **131**.
+The cached footer equals the raw row-column sums **including both rows**;
+it is not independently established unique-person participation.
+The reason for the duplicate remains unresolved; preserve both complete
+native labels and all values and do not silently deduplicate, pool, or interpret
 this partial-day workbook as final/all-mode participation, registration,
 candidate results, or demographic rates. The actual precinct-reference
 index is also acquired, but its declared jurisdictional PDFs are under
@@ -1929,6 +1943,71 @@ index is also acquired, but its declared jurisdictional PDFs are under
 The state election index's Box folders are explicitly **Polling Place
 Plans and Canvass Schedules**, not result exports or verified precinct
 boundaries; do not relabel them.
+
+The actual state directory's Howard County homepage is now acquired
+with normal verified requests: it redirects to
+`https://www.howardcountymd.gov/boards-commissions/board-elections`
+(**349,259 bytes**). Its declared 2026 general-result page is acquired:
+`https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_by_county_14.html`
+(**65,305 bytes**, SHA-256
+`f4268847471bbde3e2ba659fe887f891872fe3cd6fc11b671f79f83d82a7f9dd`).
+It is a county aggregate, not precinct returns. The actually declared
+`election-results-monthly-registration-reports` index is also acquired
+(**304,761 bytes**); its data-file declarations currently concern 2024,
+and its monthly 2026 registration declarations stop at September.
+Neither establishes November 2026 precinct ballots or denominators.
+Three complete new HTML bodies and receipts are retained in the Maryland
+cache; no extra map, rate or statewide-completion claim is made.
+Continue legitimate remaining county-board declarations or actual state
+general-data updates, preserving broken/primary-only link evidence.
+
+## Massachusetts 2026: complete city originals; mode and OCR checks remain
+
+The state publication-policy URL
+`https://www.sec.state.ma.us/divisions/elections/voting-information/announcing-certifying.htm`
+returned **HTTP 403 / 883 bytes** through an ordinary request. Preserve its
+original body and receipt; do not treat that access failure as evidence that
+local results are unavailable or guess exports. Independent city alternatives
+were acquired normally, without overwriting the failed response.
+
+Boston's actual
+`https://www.boston.gov/departments/elections/unofficial-election-results`
+is acquired in full (**392,645 bytes**). Its native HTML has citywide/district
+candidate summaries, not a verified combined precinct export.
+Followed exact declarations, not invented filenames:
+`https://www.boston.gov/sites/default/files/file/2026/11/20261103-Election-Night-Reporting-FAQs.pdf`
+(**62,623 bytes / two pages**) and
+`https://www.boston.gov/sites/default/files/file/2026/11/UNOFFICIAL-CENTRAL-TABULATION-RESULTS-11.03.26.pdf`
+(**4,097,653 bytes / 288 pages**).
+The FAQ explicitly distinguishes the **275** precinct machine tallies,
+central-tabulation early/absentee ballots, and later combined online counts;
+it lists provisional, overseas, hand-counted and later-arriving ballots
+outside initial reporting. The acquired precinct-column PDF is explicitly
+**CENTRAL TABULATION**, not combined/all-mode precinct results.
+Never add its ballots to an already combined report, represent its margins as
+all-mode margins, or infer final participation from candidate counts.
+
+Worcester's actual
+`https://www.worcesterma.gov/elections/election-results` index
+(**69,813 bytes**) declares the November 3, 2026 unofficial report at
+`https://www.worcesterma.gov/election-results/20261103.pdf`.
+The complete **1,588,318-byte / 60-page** PDF and receipt are acquired.
+All 60 pages have zero extractable native text; this is a scanned source,
+not evidence of no precinct counts. Preserve complete page images and
+use local OCR followed by source-image/count reconciliation. Tesseract
+is not installed; the existing macOS Swift/Vision toolchain is available.
+The rendered first page visibly reports **120,952 registered** and
+**144,608 ballots**, exceeding registration. Do not silently drop ballot
+style rows, repair the source, or publish a turnout fraction from it.
+Establish full page/precinct/contest scope and reconcile all originals first.
+
+Cache: `files/precinct-expansion-sources/MA-2026/`. Five successful complete
+originals total **6,211,052 bytes**, plus the retained failed policy body;
+each has an exact URL/status/size/SHA-256/retrieval receipt.
+No Massachusetts map, rate, source-review completion or statewide completion
+is registered from these acquisitions. Next execute local OCR/count review,
+follow Boston's actual declared results archive for combined precinct exports,
+and seek independently established exact-election reference applicability.
 
 ## Resume procedure for every work session or scheduled prompt
 
