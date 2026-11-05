@@ -43,7 +43,7 @@ def test_fusion_lines_zeroes_and_literal_identity_flags_survive_without_false_st
                for r in tables["reviewed-state-party-sums.csv"])
     assert audit["native_quality_flags"]["surname_only"] == 1
     coverage = tables["state-coverage.csv"]
-    assert len(coverage) == 204 and all(not row["fully_complete"] and not row["map_approved"] for row in coverage)
+    assert len(coverage) == 255 and all(not row["fully_complete"] and not row["map_approved"] for row in coverage)
     assert next(row for row in coverage if (row["year"], row["state_code"]) == ("2024", "AK"))[
         "status"] == "outside_selected_source_origin_or_missing"
 
@@ -77,7 +77,7 @@ def test_yazoo_prose_only_exception_and_zero_padded_machine_fips_are_not_lost():
 
 def test_office_origin_year_and_qa_office_are_scoped_independently():
     rows = [candidate(), candidate(office="senate", candidate="Senator"),
-            candidate(year="2016", candidate="Earlier"),
+            candidate(year="2014", candidate="Earlier"),
             candidate(source="replacement", county_fips="36003", candidate="Official replacement")]
     tables, _ = run(rows, [dict(sample="SE", year="2024", cty_fips="36001", test="T1")],
                     {"replacement": "sos_file"})
@@ -120,3 +120,38 @@ def test_2018_qa_is_scoped_to_current_medsl_house_not_official_replacements_or_s
     assert tables["reviewed-candidate-party-lines.csv"] == [rows[1]]
     scope = next(row for row in audit["years"] if row["year"] == "2018")
     assert scope["reviewed_counties"] == scope["withheld_counties"] == 1
+
+
+def test_2016_literal_zero_party_line_is_preserved_without_reclassifying_or_losing_votes():
+    rows = [candidate(year="2016", state_po="KY", state_fips="21", county_fips="21111",
+                      candidate="John A. Yarmuth"),
+            candidate(year="2016", state_po="KY", state_fips="21", county_fips="21111",
+                      candidate="John A. Yarmuth", party="Other", party_group="OTHER", votes="0")]
+    tables, audit = run(rows)
+    assert tables["reviewed-candidate-party-lines.csv"] == rows
+    assert {(r["party"], r["votes"]) for r in tables["reviewed-county-party-totals.csv"]} == {
+        ("Democratic", 10), ("Other", 0)}
+    assert next(row for row in audit["years"] if row["year"] == "2016")["reviewed_counties"] == 1
+
+
+def test_2016_missouri_noncounty_bucket_withholds_only_affected_county_vectors():
+    rows = [candidate(year="2016", state_po="MO", state_fips="29", county_fips=fips)
+            for fips in ["29047", "29095", "29165", "29001"]]
+    rows.append(candidate(year="2020", state_po="MO", state_fips="29", county_fips="29047"))
+    tables, _ = run(rows)
+    assert tables["source-candidate-party-lines.csv"] == rows
+    assert tables["withheld-candidate-party-lines.csv"] == rows[:3]
+    assert tables["reviewed-candidate-party-lines.csv"] == [rows[4], rows[3]]
+    assert all("known_county_undercount" in row["withheld_reasons"]
+               for row in tables["county-review.csv"] if row["year"] == "2016"
+               and row["county_fips"] in {"29047", "29095", "29165"})
+
+
+def test_2016_machine_qa_removes_entire_county_without_hiding_other_years_or_offices():
+    rows = [candidate(year="2016", state_po="AL", state_fips="01", county_fips="01099"),
+            candidate(year="2016", state_po="AL", state_fips="01", county_fips="01001"),
+            candidate(year="2018", state_po="AL", state_fips="01", county_fips="01099")]
+    tables, _ = run(rows, [dict(sample="HE", year="2016", cty_fips="1099", test="T1"),
+                          dict(sample="SE", year="2016", cty_fips="1001", test="T2")])
+    assert tables["withheld-candidate-party-lines.csv"] == [rows[0]]
+    assert tables["reviewed-candidate-party-lines.csv"] == [rows[2], rows[1]]

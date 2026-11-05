@@ -1,0 +1,54 @@
+{
+  "audit.json": {
+    "bytes": 13747,
+    "sha256": "28a604d157c89c523cbcf7ca1e3378c2ad401c7202c1f7c77c06792d7a25bf8c"
+  },
+  "county-review.csv.gz": {
+    "bytes": 39190,
+    "sha256": "e6894e61909a322328ea0da8a7bd95c7815655f3597663438ddc80b62f0cfa89"
+  },
+  "reviewed-candidate-party-lines.csv.gz": {
+    "bytes": 485043,
+    "sha256": "cfc41c6c679a48b27ccbf23a858752c0bd6bf90837b7b9054aa436361fcbc757"
+  },
+  "reviewed-county-party-totals.csv.gz": {
+    "bytes": 197073,
+    "sha256": "ab83c7159bcf016c8b09469f88db32470865e5c15fffda3d62b3bc9487e5bcf4"
+  },
+  "reviewed-state-party-sums.csv.gz": {
+    "bytes": 8938,
+    "sha256": "f57931a6ff93e1c76c65acce52644697738039ae6fc2b92822ebdc680ac2d741"
+  },
+  "scoped-sources.csv.gz": {
+    "bytes": 4515,
+    "sha256": "6621fe88372a38e88ae9626be26f7e77631366f873ab6eae68e1da7824a2e5b6"
+  },
+  "source-candidate-party-lines.csv.gz": {
+    "bytes": 486058,
+    "sha256": "b2fcc774face710b1787febe4e09cffd8efd5701194ab012802fc510578f0427"
+  },
+  "source-coverage-gaps.csv.gz": {
+    "bytes": 244,
+    "sha256": "a119c8727a83f7e24f620061f5b3c2a87d87dc20ce15ad381254364ceead6c8e"
+  },
+  "source-no-ballot.csv.gz": {
+    "bytes": 1237,
+    "sha256": "309dbdf4067fa153e3842290af6481d4b7e9af52d375e1da61c0957db5a65e34"
+  },
+  "source-reference-review.csv.gz": {
+    "bytes": 2416,
+    "sha256": "f09230e5dea3dc77c77c7f3fa1ad453002e97c97dbfe4604341c5110552cc4d2"
+  },
+  "state-coverage.csv.gz": {
+    "bytes": 2218,
+    "sha256": "d8f39ce61f4e2f8adf71b43f6098dc26a7a64df3a1254c2fea0fd9beca98430c"
+  },
+  "withheld-candidate-party-lines.csv.gz": {
+    "bytes": 2550,
+    "sha256": "dc5514ef23081d67dfca01dc32aaf1507f7479286868a9893ed856477c43e4bd"
+  },
+  "year-coverage.csv.gz": {
+    "bytes": 268,
+    "sha256": "6ee49e1511d7fb509cb2ea97d8f13738b861351fb90ddb91f0663ef1166a1b1f"
+  }
+}

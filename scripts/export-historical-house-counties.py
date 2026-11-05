@@ -1,4 +1,4 @@
-"""Export scoped 2024/2022/2020/2018 MEDSL-origin House counts, preserving withheld observations."""
+"""Export scoped 2024/2022/2020/2018/2016 MEDSL-origin House counts, preserving withheld observations."""
 
 import argparse
 from collections import Counter, defaultdict
@@ -13,7 +13,7 @@ import zipfile
 
 
 ROOT = Path(__file__).resolve().parents[1]
-YEARS = ("2024", "2022", "2020", "2018")
+YEARS = ("2024", "2022", "2020", "2018", "2016")
 SOURCE_FIELDS = ("source", "office", "state_po", "year")
 PROVENANCE = ROOT / "data/county-source-reviews/20261105-historical-provenance-01"
 spec = importlib.util.spec_from_file_location("historical", Path(__file__).with_name("review-historical-county-results.py"))
@@ -46,6 +46,8 @@ def build_tables(rows, summaries, sources, qa):
             reasons.add("correction_log_100:district_totals_repeated_in_counties")
         if (row["year"], row["county_fips"]) == ("2022", "28163"):
             reasons.add("correction_log_101:unresolved_yazoo_county")
+        if row["year"] == "2016" and row["county_fips"] in {"29047", "29095", "29165"}:
+            reasons.add("native_missouri_noncounty_bucket:known_county_undercount")
         row["withheld_reasons"] = ";".join(sorted(reasons))
         row["accepted_for_scoped_export"] = not reasons
         row["fully_complete"] = False
@@ -173,11 +175,17 @@ def export(archive_path, source_review, output):
             "State sums contain only reviewed counties, not guaranteed complete statewide or district totals.",
             "Native auxiliary gaps/no-ballot records are metadata, never invented zero-vote candidates. "
             "Their documented overlay methods do not approve historical map joins.",
-            "The compiler excluded Maine's 2020 federal/UOCAVA 23000 bucket from its county release. "
-            "Do not allocate it into counties or call the reviewed-county state sum complete.",
+            "The compiler excluded Maine's 2016 federal/UOCAVA 23099 and 2020 23000 buckets from its county release. "
+            "Do not allocate those buckets into counties or call the reviewed-county state sum complete.",
             "Party/candidate labels are the compiler's literals, not independently verified original ballot labels.",
             "The compiler fills some originally blank parties from other labeled rows for the same "
             "state/district/candidate; preserve compiler literals, not a claim of independent ballot identity review.",
+            "The older GA/KY 2016 blank-party warnings are superseded by the compiler's later fixed entry. "
+            "Native Other/write-in labels and the explicit zero-vote Other line for John A. Yarmuth remain unchanged.",
+            "Missouri 2016 Clay, Jackson and Platte vectors are withheld because the compiler excludes "
+            "127,894 Kansas City votes in a noncounty bucket. Never apportion those votes by guesswork.",
+            "Kentucky/Florida 2016 have documented small clean-rebuild residual differences; "
+            "reviewed means arithmetic against this pinned release, not independent certified-count verification.",
             "Preserve surname_only/initials_only flags; no identities or zeros are invented.",
             "Compiler 2024 Oregon major-party overrides use secondary Wikipedia facts; code and attribution retained.",
             "Generated candidate_name_overrides.csv is not in the pinned repository; no complete name audit is claimed.",
@@ -186,6 +194,8 @@ def export(archive_path, source_review, output):
             "The old NJ 2022 MEDSL duplication warning is not a defect in the current official-source rows.",
             "Maine, Indiana, New York and Texas House 2018 are official-source replacements outside this scope. "
             "Superseded MEDSL warnings and Senate-only anomalies do not invalidate those current House replacements.",
+            "Idaho, Illinois, Indiana, North Carolina, New York, Texas and Virginia House 2016 are outside "
+            "this MEDSL-only scope; Florida and Kentucky also have separate official-source county vectors.",
             "Native Montana 2022 believed_cc0 remains unchanged; the 2022 House DOI independently declares CC0.",
             "No new county maps, historical boundary crosswalks, turnout or demographic participation estimates.",
             "Full mixed-source original archive is referenced by URL and checksum, not mirrored under a blanket license.",
@@ -202,7 +212,7 @@ def export(archive_path, source_review, output):
             if path.suffix != ".zip":
                 package.write(path, path.name)
         for path in sorted(source_review.rglob("*")):
-            if path.is_file():
+            if path.is_file() and path != source_review / "data_corrections_log.csv":
                 package.write(path, "originals/compiler/" + path.relative_to(source_review).as_posix())
         for path in sorted(PROVENANCE.rglob("*")):
             if path.is_file():

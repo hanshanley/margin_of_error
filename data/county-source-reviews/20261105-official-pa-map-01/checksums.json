@@ -1,0 +1,50 @@
+{
+  "archive-integrity.json": {
+    "bytes": 275,
+    "sha256": "26c75ec17603ed3a5861ddc88908d6df60e5c5992f74135bcbd4242653107a1c"
+  },
+  "deployment.json": {
+    "bytes": 4957,
+    "sha256": "2bf5168e195d742b9f5550b8d26c4d211285c5376191e2db1bb676bb3a13d6ac"
+  },
+  "fail-closed-review.json": {
+    "bytes": 152,
+    "sha256": "58bde489a7c86e9416cd1239d8fde84e2d05775f99cc4344a933d2f992306154"
+  },
+  "independent-party-reconciliation.json": {
+    "bytes": 624,
+    "sha256": "cf204c0bd813ed91a3e5ef426e6a40575d53ba910124310869467997327ec819"
+  },
+  "local-browser.json": {
+    "bytes": 39614,
+    "sha256": "5c82e9c15efd90dc401bc673cce089d2d95a2164939a2abf82b8ac8724a1b561"
+  },
+  "local-retention.json": {
+    "bytes": 37523,
+    "sha256": "28307e6693e60b1c47c452266b47754a12009008aa26258c8b1e1137c9962a1f"
+  },
+  "merge-review.json": {
+    "bytes": 1339,
+    "sha256": "053b67ec305c46c5e5291eada4e2936c1519cbebab23d27625741e88507879c0"
+  },
+  "production-browser.json": {
+    "bytes": 39625,
+    "sha256": "16662b32e0c331b7c88924d8cc3206a1122cfd7e3ab24553ffd2886072269889"
+  },
+  "refresh-reproduction.json": {
+    "bytes": 402,
+    "sha256": "5bb7e894e5ef6d80d880b7e14b778515b60aa2dee1b281240b03326dc213fc39"
+  },
+  "registry-retention.json": {
+    "bytes": 336,
+    "sha256": "3da72c04958f3bebeab177c57db953b4e3c545071cfcd389d7c8567a9ecb4df2"
+  },
+  "release-verification.json": {
+    "bytes": 840,
+    "sha256": "b30a964822e09366c0775694201a92ff5c696144003a627eb449f2a2d3125c88"
+  },
+  "ui-validation.json": {
+    "bytes": 1238,
+    "sha256": "62fa33b9b00efe5d760f4c85eb58e3d122f1b9f6db06b54784d9c6bc5e902922"
+  }
+}

@@ -22,7 +22,9 @@
   "pages_preparation": {
     "command": "node scripts/prepare-participation-pages.mjs",
     "byte_identical_bulk_downloads": 94,
-    "site_bytes": 987284649
+    "site_bytes": 987284453,
+    "initial_full_map_build_bytes": 987284649,
+    "final_rebuild": "Restored exact prior-snapshot label; rebuilt and rechecked all four display modes for retained tables and downloads."
   },
   "browser": {
     "command": "python scripts/check-county-results-browser.py --base-url http://127.0.0.1:4321 --output data/county-source-reviews/20261105-official-pa-map-01/local-browser.json --baseline-downloads BASELINE_205_URLS.json",

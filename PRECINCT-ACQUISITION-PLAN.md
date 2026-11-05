@@ -14,15 +14,16 @@ colors are visible without selecting a state or zooming. Commit `ad36234`,
 successful Pages run `42058221971`, and the saved production browser proof
 verify all 48 state drilldowns, national own-county colors, zoom and 121 complete
 downloads. Do not repeat that completed fix. The existing
-2026 release has 48 states, 3,060 county equivalents and 3,050 nonzero candidate
-margins. Maine/Pennsylvania county joins and D.C. remain gaps, not completed cells.
+2026 release now has 49 state scopes, 3,063 county equivalents and 3,053 nonzero
+candidate margins. Pennsylvania is only 3 of 67 counties; Maine and D.C. remain
+county-map gaps, not completed cells.
 State colors are fallback only in uncovered states; explicit zero-vote counties
 have no candidate margin. The new lightweight overview uses the reviewed 2026
 Census shapes; four counties retain unsimplified native geometry because display
 simplification would produce invalid polygons. Full native shapes and complete
 candidate/source downloads remain unchanged.
 
-The active county-map batch independently joins the already reviewed official
+The published county-map batch independently joins the already reviewed official
 Monroe, Bucks and Montgomery reports to their exact 2026 Census county identities
 (42089, 42017 and 42091). The merged candidate snapshot retains all 3,060
 previous county vectors and adds 753,168 candidate votes: 49 state scopes,
@@ -37,9 +38,28 @@ tests pass; replay of all 435 saved district responses exactly reproduces the
 complete archive and retains all 49 state scopes. The full local four-mode
 map suite passed all 3,053 own-county colors, 49 state drilldowns, Pennsylvania
 selection/fallback, historical isolation, zoom and 212 complete downloads,
-including all previous 205. Exact production deployment remains pending.
+including all previous 205. Exact Pages run `42100096558` for UI commit
+`274845049f5a4b1da431cd1531755cc29ef1432f` succeeded. The full four-mode
+production suite independently passed the same counts, all 49 state drilldowns,
+partial Pennsylvania selection/fallback, historical isolation, zoom, existing
+precinct priority and failure fallbacks. All 52 UF rows remain source-matched.
 Review evidence is recorded under
 `data/county-source-reviews/20261105-official-pa-map-01/`.
+
+The next historical download batch adds 2016 from the same pinned consolidated
+archive, not another state-by-state acquisition. Its review covers 11,728
+candidate/party rows in 2,184 counties across 41 states. All 31 excluded rows
+from seven county vectors remain downloadable: four native machine-QA flags
+and Missouri's Clay, Jackson and Platte counties, which are undercounted because
+the compiler omits the unallocatable Kansas City bucket. No votes are apportioned.
+The five-year export preserves every earlier 2024/2022/2020/2018 table row
+unchanged, all literal parties and explicit zeros, and 255 partial state/year
+coverage cells. All 11 exporter tests, independent source/party reconciliation,
+unique archive-member checks and packaged offline reproduction pass. Native
+GA/KY party-fill provenance and FL/KY clean-rebuild residual limitations are
+retained; no original ballot-party certification is claimed. Review evidence is
+under `data/county-source-reviews/20261105-historical-house-04/`. Release and UI
+publication are next; the prerequisite Pennsylvania map proof is complete.
 
 The reusable 2026 county-results and separate UF/state participation pipelines
 are implemented and published. Both passed real acquisition and original-backed
