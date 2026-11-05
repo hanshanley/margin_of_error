@@ -34,7 +34,8 @@ for snapshot in [precinct_pointer, *precinct_pointer.get("additional_snapshots",
 baseline = set(json.loads(args.baseline_downloads.read_text())) if args.baseline_downloads else set()
 download_count = (18 + len(precinct_pointer["source_reviews"]) + len(precinct_pointer["source_batches"])
                   + sum(3 if s.get("participation_available", True) else 2
-                        for s in precinct_pointer["additional_snapshots"]) + 3)
+                        for s in precinct_pointer["additional_snapshots"])
+                  + 3 * (1 + len(pointer.get("previous_snapshots", []))))
 for name in ["county-results.json", "precinct-results.json", "precinct-coverage.csv",
              "scripts/participation-explorer.js"]:
     response = requests.get(base + "/" + name, timeout=90)
@@ -110,7 +111,7 @@ with sync_playwright() as p:
             downloads = set(links.evaluate_all("links => links.map(a => a.getAttribute('href'))"))
             assert baseline <= downloads, f"Lost complete downloads: {baseline - downloads}"
             assert pointer["complete_download_url"] in downloads
-            expect(page.locator("#downloads")).to_contain_text("47 states")
+            expect(page.locator("#downloads")).to_contain_text(f"{len(index['coverage'])} states")
             expect(page.locator("#downloads")).to_contain_text("not precinct results")
             assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
             mode = {"mobile": mobile, "javascript": javascript, "complete_downloads": len(downloads)}
@@ -133,7 +134,7 @@ with sync_playwright() as p:
             page.locator("#map-level").select_option("county")
             mapped = {code: county(page, code, names[code]) for code in sorted(index["coverage"])}
             assert sum(mapped.values()) == index["colored_counties"]
-            for code in ["IL", "ME", "PA", "DC"]:
+            for code in [*index["withheld_states"], "DC"]:
                 page.locator("#state-select").select_option(names[code])
                 expect(page.locator(".substate-feature")).to_have_count(0)
                 expect(page.locator("#geography-note")).to_contain_text("No verified 2026 county")

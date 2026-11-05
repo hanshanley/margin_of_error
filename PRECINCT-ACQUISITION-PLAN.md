@@ -2665,8 +2665,10 @@ County candidates plus all explicit unlocated vectors still equal each district.
 New immutable package: `data/county-results/20261105-house-02/`.
 It passes **417 district reviews / 48 states / 3,060 county equivalents**,
 including all **17 Illinois districts / 102 actual counties**.
-All **3,055** nonzero county margins are colorable; the same five explicit
-zero-vote counties remain uncolored. Maine's 165 write-in mismatch and all
+All **3,050** nonzero county margins are colorable; **ten** explicit
+zero-vote counties remain uncolored, including five in Illinois. The earlier
+3,055/five-zero prose was a reporting-count error, not the package's actual
+index or candidate counts. Maine's 165 write-in mismatch and all
 17 Pennsylvania test-flagged sources remain withheld. D.C. remains outside
 the 435-voting-district source. No precinct cell is marked complete.
 
@@ -2695,11 +2697,26 @@ The Pennsylvania root returns a blocked Incapsula document despite HTTP 200,
 and Maine's state index returns 403 in both direct and ordinary browser access.
 Those are access evidence, not result data; no challenge was solved or bypassed.
 
-**Next executable actions:** commit/push the new source package and parser/tests
-as Hans; create and independently byte-verify a **new immutable release**, without
-replacing `house-01`. Pin the UI to that exact source commit/release, update the
-48-state scope/3,060-row downloads and actual withheld list, and test Illinois's
-102 source-matched colors alongside the existing precinct/zoom/download behavior.
+Source package and parser/tests are committed/pushed as Hans at
+`6b6b96caed4fa4f7c66fd206a64bd709310a69f2`. New immutable release
+`voter-county-house-20261105-02` targets that exact commit, without replacing
+`house-01`. The UI update retains the original snapshot as download history,
+preserving all 58 prior complete download links and adding three new ones.
+
+Complete public release download, exact tag/source binding, SHA-256 and ZIP CRC
+verification passed: `files/national-2026-county-remote-release-proof-02.json`.
+Local source-matched browser checks passed for all **48 states / 3,050 actual
+fills**, including Illinois's **102 county rows / 97 actual colors**.
+Desktop/mobile and JavaScript/no-JavaScript retain **all 58** previous complete
+downloads among **61** links. Precinct priority, county backdrops, selection,
+button/wheel/real-touch zoom, historical isolation and fetch-failure fallbacks
+all pass: `files/national-2026-county-local-browser-proof-02.json`.
+Renderer syntax, seven Node tests, 41 focused collector cases, Astro check
+(zero errors), normal build and canonical Pages preparation pass. All 94
+relocated assets remain byte-identical; prepared output is **986,245,090 bytes**.
+
+**Next executable actions:** publish the UI pinned to that source commit/release
+and verify its exact Pages deployment and unqueried production.
 Only after its exact Pages deployment and unqueried production pass may the
 new pointer become `live_verified_partial`. Keep the old complete download.
 

@@ -33,11 +33,12 @@ results_pointer = json.loads((public / "participation-results/latest.json").read
 results_root = public / "participation-results" / results_pointer["snapshot_id"]
 result_rows = json.loads((results_root / "margins.json").read_text())
 precinct_results_pointer = json.loads((public / "precinct-results.json").read_text())
+county_pointer = json.loads((public / "county-results.json").read_text()) if (public / "county-results.json").exists() else None
 expected_downloads = (18 + len(precinct_results_pointer.get("source_reviews", []))
                       + len(precinct_results_pointer.get("source_batches", []))
                       + sum(3 if row.get("participation_available", True) else 2
                             for row in precinct_results_pointer.get("additional_snapshots", []))
-                      + (3 if (public / "county-results.json").exists() else 0))
+                      + (3 * (1 + len(county_pointer.get("previous_snapshots", []))) if county_pointer else 0))
 precinct_results_root = public.parent / precinct_results_pointer["data_directory"]
 precinct_results_index = json.loads((precinct_results_root / "index.json").read_text())
 for snapshot in precinct_results_pointer.get("additional_snapshots", []):

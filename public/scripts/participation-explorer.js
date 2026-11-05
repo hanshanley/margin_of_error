@@ -520,7 +520,8 @@ async function loadCurrentPrecincts() {
             + `${fmt(election.republican_votes)} Republican; ${fmt(election.other_votes)} other. `
             + `${election.district_count} House district fragment${election.district_count === 1 ? "" : "s"} reconciled.`),
           html("p", "selection-note", "County / equivalent candidate results on 2026 Census reference boundaries, "
-            + "not precinct results, unique voters or turnout. Explicit overseas returns remain unallocated in the complete audit."),
+            + "not precinct results, unique voters or turnout. Explicit overseas returns and zero-only unresolved "
+            + "Chicago reporting placeholders remain unallocated in the complete audit; no city votes are merged into Cook."),
           sourceLink(election));
         panel.parentElement.prepend(panel);
         for (const other of map.detail.querySelectorAll(".selected")) other.classList.remove("selected");
@@ -538,7 +539,7 @@ async function loadCurrentPrecincts() {
       "House district fragments are summed only within their actual county. 2026 Census county reference boundaries, not precincts.");
     $("coverage-note").textContent = `${year} county / equivalent results: ${Object.keys(state.countyResults.coverage).length} states; `
       + `${fmt(state.countyResults.colored_counties)} colored counties. Precinct layers take priority where verified. `
-      + "Illinois, Maine and Pennsylvania county joins remain withheld; D.C. is outside this 435-district source. "
+      + "Maine and Pennsylvania county joins remain withheld; D.C. is outside this 435-district source. "
       + "Whole-state colors remain where county results are missing. Candidate votes are not turnout.";
     $("geography-note").textContent = `${selected.feature.properties.NAME} · ${fmt(coverage.counties)} 2026 Census counties / equivalents; `
       + `${fmt(coverage.colored_counties)} with county-level House candidate colors. `

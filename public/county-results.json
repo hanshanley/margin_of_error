@@ -1,11 +1,28 @@
 {
-  "label": "2026 U.S. House county / equivalent results",
+  "label": "2026 U.S. House county / equivalent results (48 states)",
   "year": 2026,
-  "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/c9a4d78227693f5d0562aa9a280ceef36afc1d0e/data/county-results/20261105-house-01/",
-  "data_directory": "data/county-results/20261105-house-01",
-  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-house-20261105/complete-2026-house-county-results-01.zip",
-  "complete_download_bytes": 138508764,
-  "complete_download_sha256": "abd1c5d6abab56652e16f507af25be2481e76e61b8d80c2aae08baa137bcf9f7",
-  "publication": "live_verified_partial",
-  "participation_available": false
+  "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/",
+  "data_directory": "data/county-results/20261105-house-02",
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-house-20261105-02/complete-2026-house-county-results-02.zip",
+  "complete_download_bytes": 139681390,
+  "complete_download_sha256": "eacd3f041bbd888f055bd8403b057b60d7605a6bc59e0b3c627a9ee8209bcae7",
+  "publication": "snapshot_ready",
+  "participation_available": false,
+  "normalized_counties": 3060,
+  "states": 48,
+  "previous_snapshots": [
+    {
+      "label": "2026 U.S. House county / equivalent results (original 47-state snapshot)",
+      "year": 2026,
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/c9a4d78227693f5d0562aa9a280ceef36afc1d0e/data/county-results/20261105-house-01/",
+      "data_directory": "data/county-results/20261105-house-01",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-house-20261105/complete-2026-house-county-results-01.zip",
+      "complete_download_bytes": 138508764,
+      "complete_download_sha256": "abd1c5d6abab56652e16f507af25be2481e76e61b8d80c2aae08baa137bcf9f7",
+      "publication": "live_verified_partial",
+      "participation_available": false,
+      "normalized_counties": 2958,
+      "states": 47
+    }
+  ]
 }
