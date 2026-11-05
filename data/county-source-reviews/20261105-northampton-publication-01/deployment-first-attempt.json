@@ -1,0 +1,10 @@
+{
+  "run_id": 42115185047,
+  "head_sha": "fb05bd3745dc2a16d1e348ac75ae5924b8d415e2",
+  "attempt": 1,
+  "build_and_upload": "success",
+  "deployment": "timed_out_after_10_minutes_syncing_files",
+  "deployment_cancel_confirmed": true,
+  "action_taken": "retry_failed_deploy_job_only_reusing_verified_artifact",
+  "production_verified": false
+}

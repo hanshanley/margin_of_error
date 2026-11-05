@@ -182,8 +182,8 @@ release `voter-county-pennsylvania-three-county-20261105-01` were published,
 but that release's complete ZIP has since been withdrawn for source-key
 remediation; its seven count-only CSV assets are unaffected. The sanitized
 replacement is now byte-verified in `voter-county-source-redaction-20261105-01`;
-its three-county UI integration now passes local four-mode browser validation
-alongside Northampton, with production verification pending. No new map, demographic turnout, certification, or statewide
+its three-county UI integration is now live alongside Northampton, with exact
+local/production four-mode download verification. No new map, demographic turnout, certification, or statewide
 completeness is approved.
 After the security deployment, the exact Northampton government-to-vendor
 link was reverified and both complete primary pages were freshly acquired.
@@ -214,15 +214,27 @@ Release `voter-county-pennsylvania-northampton-20261105-01` is pinned to clean
 data/tools commit `7f4d6dc4ed1a4e4637aa0f2f5772ef14fe81e990`. All eight
 released assets were downloaded back and byte-verified. Both reviewers pass
 35 combined tests. All 14 immutable Northampton/three-county CSV URLs are
-also byte-verified; their combined website update must preserve the previous
-225 complete download URLs and add exactly 16, for 241. The local browser proof
-passes exact 241-URL set equality on desktop/mobile with and without JavaScript.
+also byte-verified; their combined website update preserves the previous
+225 complete download URLs and adds exactly 16, for 241. Local and production
+browser proofs pass exact 241-URL set equality on desktop/mobile with and
+without JavaScript.
 Astro check, participation tests, build and Pages preparation pass; 94 relocated
 bulk files are byte-identical and the prepared site is 987,308,169 bytes.
 The broad validator still reaches the unrelated UK topic-card assertion
 (23 actual versus 16 expected); it is not reported as passing.
-Production deployment and verification are next; no new map, demographic turnout,
-certification or statewide completeness is approved.
+Production commit `fb05bd3745dc2a16d1e348ac75ae5924b8d415e2` passed exact Pages
+run `42115185047` on attempt 2. Attempt 1 built/uploaded successfully but timed
+out after ten minutes syncing files; retrying only the failed deploy job reused
+the same artifact and succeeded. CI prepared 997,446,589 bytes and uploaded a
+491,854,048-byte artifact, both recorded separately from local preparation.
+Both production registry files are byte-identical to reviewed sources; map
+data remain unchanged. No new map, demographic turnout, certification or
+statewide completeness is approved. Pennsylvania's map remains 3/67 counties;
+separately review county geometry/House identities before any four-county merge.
+The publication directory records first-attempt failure, successful deployment,
+production browser proof, final verification and checksums. Historical secret
+alerts #1/#2 remain open with unknown validity; no owner rotation or authorized
+history cleanup is claimed.
 
 The reusable 2026 county-results and separate UF/state participation pipelines
 are implemented and published. Both passed real acquisition and original-backed
