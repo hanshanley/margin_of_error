@@ -35,6 +35,160 @@ id_maps = module("build-idaho-precinct-results")
 sd_review = module("review-south-dakota-precinct-results")
 ak_review = module("review-alaska-precinct-results")
 ak_boundaries = module("review-alaska-precinct-boundaries")
+hi_review = module("review-hawaii-precinct-results")
+
+
+def hawaii_fixture():
+    rows, summary = [], []
+    for contest, label, overseas, names in [
+            ("30", "20-01", "OS I", ["(D) CASE, Ed", "(R) LAM, Adriel C.",
+                                    "(G) CONLEY, Jordan S.", "(N) BERNING, Nathan M."]),
+            ("5", "01-01", "OS II", ["(D) TOKUDA, Jill N.", "(R) AWA, Brenton"])]:
+        for i, name in enumerate(names, 1):
+            record = dict.fromkeys(hi_review.SUMMARY_HEADER, "")
+            record.update({"#Contest ID": contest, "Contest Title": hi_review.CONTESTS[contest],
+                "Contest Type": "OF", "Registered Voters": "200", "Total Precincts": "3",
+                "Counted Precincts": "2", "Candidate ID": str(i), "Candidate Name": name,
+                "Mail Votes": "3", "In-Person Votes": "2", "Total Votes": "5", "_source_lines": [2, 2]})
+            for mode in hi_review.MODES:
+                for kind in ("Blank", "Over", "Invalid"):
+                    record[f"{mode} {kind} Votes"] = "1" if (mode, kind) == ("Mail", "Blank") else "0"
+            summary.append(record)
+            for suffix, split, unit_label, votes, ballots, registration, reporting in [
+                    ("1", "", label, "3", str(len(names) * 3 + 1), "100", "1"),
+                    ("2", "VSC", label, "2", str(len(names) * 2), "0", "0"),
+                    ("3", "", overseas, "0", "0", "0", "1")]:
+                row = dict.fromkeys(hi_review.MEDIA_HEADER, "")
+                row.update({hi_review.LABEL: unit_label, "Split_Name": split,
+                    "precinct_splitId": contest + suffix, "Reg_voters": registration, "Ballots": ballots,
+                    "Reporting": reporting, "Contest_id": contest,
+                    "Contest_title": hi_review.CONTESTS[contest], "Choice_id": str(i),
+                    "Candidate_name": name, "Candidate_Type": "C",
+                    "Mail votes": "0" if split else votes, "In-Person votes": votes if split else "0",
+                    "_source_lines": [len(rows) + 4, len(rows) + 4]})
+                rows.append(row)
+    return rows, summary
+
+
+def test_hawaii_reconciles_modes_without_merging_vsc_or_double_counting_registration():
+    results, statistics, audit = hi_review.review(*hawaii_fixture())
+    assert len(results) == len(statistics) == 6 and len({r["key"] for r in results}) == 6
+    assert sum(r["registered"] for r in statistics) == 200
+    assert all(r["reported_pct"] is None for r in statistics)
+    vsc = [r for r in results if r["source_split_label"] == "VSC"]
+    assert len(vsc) == 2 and all(r["source_reporting"] == 0 and r["contest_votes"] > 0 for r in vsc)
+    assert sum(r["other_votes"] for r in results) == 10
+    assert audit["reporting_unit_kinds"]["overseas_reporting_unit"] == 2
+    assert all(v["native_minus_summary"] == 0 for v in audit["ballot_accounting_by_mode"].values())
+
+
+def test_hawaii_retains_ballot_discrepancies_without_repairing_counts_or_creating_rates():
+    rows, summary = hawaii_fixture()
+    for row in rows:
+        if row["precinct_splitId"] == "301":
+            row["Ballots"] = "14"
+    results, statistics, audit = hi_review.review(rows, summary)
+    assert next(r for r in statistics if r["source_unit_id"] == "301")["ballots"] == 14
+    assert audit["ballot_accounting_by_mode"]["Mail"]["native_minus_summary"] == 1
+    assert all(r["reported_pct"] is None for r in statistics)
+    assert sum(r["contest_votes"] for r in results) == 30
+
+
+@pytest.mark.parametrize("change", ["candidate_id", "candidate_name", "party", "missing_count",
+                                   "mode_swap", "duplicate_candidate", "missing_unit", "unit_facts",
+                                   "unknown_split", "summary_scope", "summary_registration"])
+def test_hawaii_rejects_ambiguous_source_identity_missing_counts_and_incomplete_scope(change):
+    rows, summary = hawaii_fixture()
+    if change == "candidate_id":
+        rows[0]["Choice_id"] = "999"
+    elif change == "candidate_name":
+        rows[0]["Candidate_name"] = "(D) Different person"
+    elif change == "party":
+        rows[0]["Choice_party"] = "R"
+    elif change == "missing_count":
+        rows[0]["Mail votes"] = ""
+    elif change == "mode_swap":
+        rows[0]["In-Person votes"] = "1"
+    elif change == "duplicate_candidate":
+        rows.append(dict(rows[0]))
+    elif change == "missing_unit":
+        rows[:] = [r for r in rows if r["precinct_splitId"] != "302"]
+    elif change == "unit_facts":
+        rows[0]["Ballots"] = "999"
+    elif change == "unknown_split":
+        for row in rows:
+            if row["precinct_splitId"] == "302":
+                row["Split_Name"] = "UNKNOWN"
+    elif change == "summary_scope":
+        for row in summary:
+            if row["#Contest ID"] == "30":
+                row["Counted Precincts"] = "3"
+    else:
+        for row in summary:
+            if row["#Contest ID"] == "30":
+                row["Registered Voters"] = "100"
+    with pytest.raises(ValueError):
+        hi_review.review(rows, summary)
+
+
+def test_hawaii_multiline_native_csv_preserves_actual_source_line_ranges():
+    buffer = io.StringIO(newline="")
+    writer = csv.writer(buffer, delimiter="\t")
+    writer.writerow([f"Column{i}" for i in range(1, 17)])
+    writer.writerow(["#FormatVersion 1"] + [""] * 15)
+    writer.writerow(hi_review.MEDIA_HEADER)
+    first = [""] * 16
+    first[10] = "(D) A quoted name\nand running mate"
+    writer.writerow(first)
+    writer.writerow([""] * 16)
+    records = hi_review.read_table(buffer.getvalue().encode(), media=True)
+    assert records[0]["Candidate_name"] == first[10]
+    assert records[0]["_source_lines"] == [4, 5] and records[1]["_source_lines"] == [6, 6]
+    with pytest.raises(ValueError, match="header"):
+        hi_review.read_table(buffer.getvalue().replace("precinct_splitId", "unknown").encode(), media=True)
+
+
+def test_hawaii_rejects_missing_candidate_and_wrong_summary_mode_totals():
+    rows, summary = hawaii_fixture()
+    with pytest.raises(ValueError, match="candidate"):
+        hi_review.review(rows[1:], summary)
+    summary[0]["Total Votes"] = "6"
+    with pytest.raises(ValueError, match="ballot modes"):
+        hi_review.review(rows, summary)
+
+
+def test_hawaii_pdf_comparison_keeps_native_zero_denominators_and_pdf_only_overseas_modes():
+    results, statistics, _ = hi_review.review(*hawaii_fixture())
+    observations = []
+    for row, stats in zip(results, statistics):
+        mode = "In-Person" if row["source_split_label"] else "Mail"
+        registration = 100 if row["source_split_label"] else stats["registered"]
+        observations.append(dict(label=mode + " " + row["source_precinct_label"], pages=[1],
+            participation={"PRECINCT REGISTRATION": registration, mode + " TURNOUT": stats["ballots"]},
+            candidate_votes={row["source_office"] + "|" + name: votes
+                             for name, votes in json.loads(row["candidate_votes"]).items()}))
+    for name in ("OS I", "OS II"):
+        observations.append(dict(label="In-Person " + name, pages=[99], candidate_votes={},
+            participation={"PRECINCT REGISTRATION": 0, "In-Person TURNOUT": 0}))
+    pdfs = {"precinct.pdf": dict(printed_on="test", records=observations)}
+    for name in ("cch.pdf", "coh.pdf", "cok.pdf", "com.pdf", "histatewide.pdf"):
+        pdfs[name] = dict(printed_on="test", records=[dict(candidate_votes={}, participation={})])
+    audit = hi_review.compare_pdf_observations(results, statistics, pdfs)
+    assert audit["native_units_compared"] == 6 and audit["pdf_units"] == 8
+    assert audit["difference_fields"] == {"registered": 2}
+    assert len(audit["pdf_only_units"]) == 2
+    assert all(r["registered"] == 0 for r in statistics if r["source_split_label"])
+    assert all(r["reported_pct"] is None for r in statistics)
+
+
+def test_hawaii_rejects_wrong_election_pdf_even_with_a_correct_looking_precinct_label():
+    with hi_review.fitz.open() as document:
+        page = document.new_page()
+        page.insert_text((20, 20), "GENERAL ELECTION 2024 - State of Hawaii - Statewide\n"
+                         "November 5, 2024\nREPORT 3\nMail 01-01")
+        original = document.tobytes()
+    with pytest.raises(ValueError, match="election"):
+        hi_review.pdf_observations({"cch.pdf": original})
 
 
 def alaska_boundary_fixture(overlap=False):

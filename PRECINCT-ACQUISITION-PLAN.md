@@ -814,6 +814,102 @@ changing the registry or coverage ledger. Do not overwrite either completed
 review or repeat these original downloads. Continue other 2026 states/DC
 and the acquired 2022 batch while independent publication steps run.
 
+## Hawaii 2026: complete native count review; maps and rates withheld
+
+The official `https://elections.hawaii.gov/election-results/` page advertises
+eight available 2026 general-election originals under
+`https://elections.hawaii.gov/wp-content/results/2026 General/`:
+`media.txt`, `summary.txt`, `precinct.pdf`, `histatewide.pdf`, `cch.pdf`,
+`coh.pdf`, `com.pdf`, and `cok.pdf`. The Statement of Vote label does not
+currently have a download link; do not invent one. All eight complete
+originals are acquired with exact final URLs, lengths and SHA-256 receipts.
+No website frontend HTML is redistributed.
+
+The PDFs identify **November 3, 2026**, **REPORT 3**, not certified results.
+The statewide summary was printed November 4 at **09:09:04 am** and the
+precinct report at **09:10:37 am**; county print times differ. The native
+tab-delimited media file contains **25,766 all-contest candidate records**,
+including quoted multiline names; the summary has **202 records**.
+The parser preserves physical CSV start/end lines rather than treating
+multiline names as additional records. House contests have native IDs
+`30` (District I) and `5` (District II), with **1,438 candidate rows**
+covering **496 distinct native reporting-unit IDs**.
+
+Preserved scope: **247 geographic display labels with blank splits**,
+**247 separate `VSC` split IDs**, and **OS I / OS II** blank-split units.
+All blank-split units have native `Reporting=1`; all VSC units have
+`Reporting=0`, despite nonzero in-person votes. Never turn that flag into
+zero votes or merge identities by display-name similarity. Party fields
+are blank; the candidate names carry explicit `(D)`, `(R)`, `(G)` or `(N)`
+prefixes. Third-party votes and zero units are retained.
+
+All six candidate identities and both ballot modes reconcile exactly
+between complete media and summary text and the statewide PDF:
+Case **115,188**, Lam **34,958**, Conley **5,792**, Berning **2,097**,
+Tokuda **126,197**, Awa **61,839**. Candidate votes total **346,071**;
+they are not the ballot numerator. House district denominators
+**223 / 273** and counted flags **112 / 137** agree with the literal
+reporting units; they are not established geographic precinct totals.
+The summary repeats **853,399 statewide registrations** for both
+districts. Sum unique native unit registrations once, not those repeated
+district fields.
+
+Actual unresolved source discrepancies are retained, not repaired:
+
+- Native unit ballots total **365,903**, versus **365,897** in the
+  statewide summary. Mail is **348,388 / 348,387** and in-person
+  **17,515 / 17,510**. Summary candidate/blank/over/invalid accounting
+  matches the statewide PDF exactly; native unit ballot counts do not.
+- The complete **806-page** precinct PDF contains **498** distinct
+  literal precinct/mode records. All **496** native units match their
+  PDF candidate counts and ballot counts exactly. The two PDF-only
+  records are zero-count **In-Person OS I / OS II**; preserve them rather
+  than inventing additional native media rows.
+- **235** VSC records have native registration zero but positive
+  precinct registration in the corresponding PDF. All differences and
+  PDF page references are saved. The native review has **261**
+  zero-registration units and **230** ballots-above-native-registration
+  flags. Do not copy PDF registrations into native rows or create rates.
+- The four county PDFs sum to the same candidate counts and
+  registrations as the statewide summary, but **two additional
+  in-person ballots**. Their distinct printed snapshots remain separate.
+
+Immutable review: `data/precinct-source-reviews/20261105/HI/`, produced by
+`scripts/review-hawaii-precinct-results.py`. It includes all eight complete
+compressed originals, all 496 normalized House and participation rows,
+all six PDF observations, the complete discrepancy audit and checksums.
+**179 collector tests pass**, including 17 new Hawaii native-identity,
+mode, missing-count, source-line, PDF-vintage and denominator-preservation
+cases. Independent checks verify every original/output receipt, all
+**14 ZIP members** and CRCs, raw candidate/mode/participation rows, and
+byte-identical review **and ZIP** reproduction solely from distributed
+originals. Proof: session `files/hi-2026-independent-validation.json`.
+
+Complete ZIP: `complete-hawaii-2026-source-review.zip`,
+**4,331,576 bytes**, SHA-256
+`e2d932615412d2d77436bda6566fa2c32692fff8b5ee622c47294afcead49d3f`.
+Release/publication verification is the next pending step; do not call it
+live before checking the exact immutable asset and deployed registry.
+
+The advertised official GIS follow-up page is
+`https://elections.hawaii.gov/resources/maps/geographic-information-systems-gis-files/`.
+It labels its precinct sources **2022 Elections** and **2018 Elections**;
+the current link is
+`https://geoportal.hawaii.gov/datasets/HiStateGIS::election-precincts/about`.
+Neither the map page's September 28, 2026 update nor a currently linked
+2022 layer proves exact 2026 boundary vintage. No geometry has been
+accepted or precinct map published. Seek explicit election-vintage
+confirmation and a validated geographic/mode crosswalk before a separate
+immutable mapped supplement; keep all overseas records separate.
+
+The cached official results page also advertises complete general-election
+originals for 2024, 2022, 2020, 2018 and earlier. Exact URL case differs
+by year; extract actual links rather than guessing paths. Continue
+newest-first acquisition and distinguish acquired originals from reviewed
+candidate totals, validated geometry and live maps. Hawaii is **not
+complete**, and the other 2026 states/DC and all historical ledger cells
+remain actionable.
+
 ## Resume procedure for every work session or scheduled prompt
 
 1. Read `AGENTS.md`, `CLAUDE.md`, `PUBLISHING.md`, this plan, and the newest rows
