@@ -65,6 +65,36 @@ downloaded back and byte-verified, including the 1,346,170-byte complete ZIP.
 The UI build, Astro check, seven participation tests and four included caucus
 tests pass. Exact UI deployment and production table proof remain pending.
 
+A fresh Maine alternative-source probe retained both complete Bangor Daily News
+2026 House API responses, explicitly without demo parameters and with native
+`test_data: false`. All 17 county/district fragments match the saved official
+2026 Census identities, and their 34 named-candidate rows reconcile to all
+municipal candidate rows. District 1 also reconciles to its topline; District 2
+does not: county sums are short by 84 Republican and 46 Democratic votes.
+Its separate 6,021 blanks and 125 write-ins cannot be allocated by county, and
+municipal combined `other` is three below their district sum. Keep these gaps,
+literal parties and noncandidate observations separate. Kennebec occurs in both
+districts; never discard either fragment. Probe evidence is under
+`data/county-source-reviews/20261105-maine-bdn-source-probe-01/`; complete originals
+and all native county candidate lines remain in the persistent session artifacts.
+No new public download or map is approved: publisher redistribution terms,
+counting/round scope and the five District-1-only county vectors need separate
+review. Do not weaken the all-district validation guard or claim Maine complete.
+An independent official follow-up retained both complete accessible Secretary
+of State pages and all 16 native federal/governor UOCAVA observations from the
+November 4 announcement. Its District 2 named-candidate counts are 1,731 and
+211, not the publisher's 46/84 gap; no county allocation or proof of inclusion
+in the publisher totals is supplied. Do not add them to those totals.
+District 1's missing write-in row remains missing, not zero. The advertised
+PDF returned HTTP 403, with the complete denial body preserved; it is not an
+acquired PDF. The accessible election-results index still declares June primary
+and special-election results, not November general county returns.
+
+The active 15-minute continuation prompt is now schedule **#5**, replacing
+stale schedule #4. It follows current plan statuses, skips already-verified
+coloring and unchanged map suites, and prioritizes these genuine 2026 gaps
+before older historical expansion.
+
 The reusable 2026 county-results and separate UF/state participation pipelines
 are implemented and published. Both passed real acquisition and original-backed
 release verification. Fresh county snapshot `20261105T155645Z` updates three
