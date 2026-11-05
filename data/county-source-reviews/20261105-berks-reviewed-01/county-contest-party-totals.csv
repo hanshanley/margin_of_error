@@ -1,0 +1,46 @@
+year,state_code,county_fips,county,office,district_literal,contest,party_literal,votes
+2026,PA,42011,Berks,governor_lieutenant_governor,,Governor and Lieutenant Governor,Democratic,79238
+2026,PA,42011,Berks,governor_lieutenant_governor,,Governor and Lieutenant Governor,Libertarian,2101
+2026,PA,42011,Berks,governor_lieutenant_governor,,Governor and Lieutenant Governor,Republican,61518
+2026,PA,42011,Berks,governor_lieutenant_governor,,Governor and Lieutenant Governor,Write-in,136
+2026,PA,42011,Berks,us_house,4,Representative in Congress 4th District,Democratic,26730
+2026,PA,42011,Berks,us_house,4,Representative in Congress 4th District,Republican,27050
+2026,PA,42011,Berks,us_house,4,Representative in Congress 4th District,Write-in,54
+2026,PA,42011,Berks,us_house,6,Representative in Congress 6th District,Democratic,40616
+2026,PA,42011,Berks,us_house,6,Representative in Congress 6th District,Republican,25551
+2026,PA,42011,Berks,us_house,6,Representative in Congress 6th District,Write-in,92
+2026,PA,42011,Berks,us_house,9,Representative in Congress 9th District,Democratic,8491
+2026,PA,42011,Berks,us_house,9,Representative in Congress 9th District,Republican,13350
+2026,PA,42011,Berks,us_house,9,Representative in Congress 9th District,Write-in,20
+2026,PA,42011,Berks,state_house,124,Representative in the General Assembly 124th District,Democratic,4253
+2026,PA,42011,Berks,state_house,124,Representative in the General Assembly 124th District,Republican,6298
+2026,PA,42011,Berks,state_house,124,Representative in the General Assembly 124th District,Write-in,4
+2026,PA,42011,Berks,state_house,126,Representative in the General Assembly 126th District,Democratic,11708
+2026,PA,42011,Berks,state_house,126,Representative in the General Assembly 126th District,Republican,5608
+2026,PA,42011,Berks,state_house,126,Representative in the General Assembly 126th District,Write-in,24
+2026,PA,42011,Berks,state_house,127,Representative in the General Assembly 127th District,Democratic,8345
+2026,PA,42011,Berks,state_house,127,Representative in the General Assembly 127th District,Write-in,287
+2026,PA,42011,Berks,state_house,128,Representative in the General Assembly 128th District,Democratic,12207
+2026,PA,42011,Berks,state_house,128,Representative in the General Assembly 128th District,Republican,14178
+2026,PA,42011,Berks,state_house,128,Representative in the General Assembly 128th District,Write-in,31
+2026,PA,42011,Berks,state_house,129,Representative in the General Assembly 129th District,Democratic,13876
+2026,PA,42011,Berks,state_house,129,Representative in the General Assembly 129th District,Write-in,560
+2026,PA,42011,Berks,state_house,130,Representative in the General Assembly 130th District,Democratic,11235
+2026,PA,42011,Berks,state_house,130,Representative in the General Assembly 130th District,Republican,15442
+2026,PA,42011,Berks,state_house,130,Representative in the General Assembly 130th District,Write-in,34
+2026,PA,42011,Berks,state_house,5,Representative in the General Assembly 5th District,Democratic,9909
+2026,PA,42011,Berks,state_house,5,Representative in the General Assembly 5th District,Republican,15490
+2026,PA,42011,Berks,state_house,5,Representative in the General Assembly 5th District,Write-in,28
+2026,PA,42011,Berks,state_house,99,Representative in the General Assembly 99th District,Democratic,2909
+2026,PA,42011,Berks,state_house,99,Representative in the General Assembly 99th District,Republican,3820
+2026,PA,42011,Berks,state_house,99,Representative in the General Assembly 99th District,Write-in,9
+2026,PA,42011,Berks,state_senate,24,Senator in the General Assembly 24th District,Democratic,9835
+2026,PA,42011,Berks,state_senate,24,Senator in the General Assembly 24th District,Green,440
+2026,PA,42011,Berks,state_senate,24,Senator in the General Assembly 24th District,Republican,12240
+2026,PA,42011,Berks,state_senate,24,Senator in the General Assembly 24th District,Write-in,13
+2026,PA,42011,Berks,state_senate,44,Senator in the General Assembly 44th District,Democratic,1697
+2026,PA,42011,Berks,state_senate,44,Senator in the General Assembly 44th District,Republican,1686
+2026,PA,42011,Berks,state_senate,44,Senator in the General Assembly 44th District,Write-in,3
+2026,PA,42011,Berks,state_senate,48,Senator in the General Assembly 48th District,Democratic,13428
+2026,PA,42011,Berks,state_senate,48,Senator in the General Assembly 48th District,Republican,20290
+2026,PA,42011,Berks,state_senate,48,Senator in the General Assembly 48th District,Write-in,41

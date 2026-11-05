@@ -1,0 +1,116 @@
+{
+  "year": 2026,
+  "state_code": "PA",
+  "county_fips": "42011",
+  "county": "Berks",
+  "status": "reviewed_unofficial_county_snapshot",
+  "maps_approved": false,
+  "native_status_and_update": "NOVEMBER 3, 2026 -- UNOFFICIAL RESULTS -- Updated: 11-4-2026 8:20 AM",
+  "native_header_timezone": "unestablished",
+  "native_unit_rows": 202,
+  "native_candidate_rows": 2216,
+  "native_winner_only_rows": 681,
+  "county_candidate_rows": 45,
+  "contests": 15,
+  "native_aggregate_matches": true,
+  "raw_and_joined_candidate_records_equal": true,
+  "stable_capture_metadata": true,
+  "candidate_explicit_zeroes": 332,
+  "congressional_scope_overlaps": {
+    "4310": [
+      "Representative in Congress 4th District",
+      "Representative in Congress 6th District"
+    ],
+    "7001": [
+      "Representative in Congress 4th District",
+      "Representative in Congress 9th District"
+    ]
+  },
+  "participation": {
+    "year": 2026,
+    "state_code": "PA",
+    "county_fips": "42011",
+    "county": "Berks",
+    "registered_voters": 275941,
+    "ballots_cast": 143855,
+    "reported_ballots_per_registered_percent": "52.132521",
+    "basis": "unofficial native ballots cast / native registered voters",
+    "native_unit_count": 202,
+    "certified": false,
+    "eligible_population_turnout": null,
+    "demographic_turnout": null
+  },
+  "voting_methods": [
+    {
+      "year": 2026,
+      "state_code": "PA",
+      "county_fips": "42011",
+      "county": "Berks",
+      "native_field": "mail",
+      "count": 27931,
+      "observed_units": 202,
+      "null_units": 0,
+      "absent_units": 0,
+      "explicit_zero_units": 1,
+      "status": "observed"
+    },
+    {
+      "year": 2026,
+      "state_code": "PA",
+      "county_fips": "42011",
+      "county": "Berks",
+      "native_field": "electionday",
+      "count": 115924,
+      "observed_units": 202,
+      "null_units": 0,
+      "absent_units": 0,
+      "explicit_zero_units": 0,
+      "status": "observed"
+    },
+    {
+      "year": 2026,
+      "state_code": "PA",
+      "county_fips": "42011",
+      "county": "Berks",
+      "native_field": "earlyvote",
+      "count": null,
+      "observed_units": 0,
+      "null_units": 202,
+      "absent_units": 0,
+      "explicit_zero_units": 0,
+      "status": "field_all_null"
+    },
+    {
+      "year": 2026,
+      "state_code": "PA",
+      "county_fips": "42011",
+      "county": "Berks",
+      "native_field": "provisional",
+      "count": null,
+      "observed_units": 0,
+      "null_units": 0,
+      "absent_units": 202,
+      "explicit_zero_units": 0,
+      "status": "field_not_supplied"
+    }
+  ],
+  "participation_record_edit_ms": [
+    1793767339792
+  ],
+  "candidate_record_edit_ms": [
+    1793767356714,
+    1793798994659
+  ],
+  "denied_item_preserved_not_used": "item-776019e4a1ce442ab1d116d0823fdc8d.json",
+  "source_terms": "Native metadata and Apache license retained; no new license applied to county data.",
+  "qualifications": [
+    "County-only, unofficial, not certified or final counting.",
+    "Candidate votes are not ballots, unique voters or demographic turnout.",
+    "Participation is summed once per native unit, never from repeated candidate joins.",
+    "Early-in-person values are all null; provisional field is absent, not zero.",
+    "Congressional native unit identifiers overlap across districts; no allocation or district geometry.",
+    "Native header, participation and candidate edit timestamps are distinct and retained.",
+    "Winner-only records are not a complete candidate dataset.",
+    "Denied item metadata was not bypassed and is not a successful data acquisition."
+  ]
+}

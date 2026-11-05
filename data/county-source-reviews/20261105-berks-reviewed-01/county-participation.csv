@@ -1,0 +1,2 @@
+year,state_code,county_fips,county,registered_voters,ballots_cast,reported_ballots_per_registered_percent,basis,native_unit_count,certified,eligible_population_turnout,demographic_turnout
+2026,PA,42011,Berks,275941,143855,52.132521,unofficial native ballots cast / native registered voters,202,False,,

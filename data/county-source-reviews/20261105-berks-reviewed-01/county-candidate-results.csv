@@ -1,0 +1,46 @@
+year,state_code,county_fips,county,office,district_literal,contest,candidate,party_literal,votes
+2026,PA,42011,Berks,governor_lieutenant_governor,,Governor and Lieutenant Governor,Josh Shapiro,Democratic,79238
+2026,PA,42011,Berks,governor_lieutenant_governor,,Governor and Lieutenant Governor,Ken Krawchuk,Libertarian,2101
+2026,PA,42011,Berks,governor_lieutenant_governor,,Governor and Lieutenant Governor,Stacy Garrity,Republican,61518
+2026,PA,42011,Berks,governor_lieutenant_governor,,Governor and Lieutenant Governor,Write-in,Write-in,136
+2026,PA,42011,Berks,us_house,4,Representative in Congress 4th District,Aurora Stuski,Republican,27050
+2026,PA,42011,Berks,us_house,4,Representative in Congress 4th District,Madeleine Dean,Democratic,26730
+2026,PA,42011,Berks,us_house,4,Representative in Congress 4th District,Write-in,Write-in,54
+2026,PA,42011,Berks,us_house,6,Representative in Congress 6th District,Chrissy Houlahan,Democratic,40616
+2026,PA,42011,Berks,us_house,6,Representative in Congress 6th District,Marty Young,Republican,25551
+2026,PA,42011,Berks,us_house,6,Representative in Congress 6th District,Write-in,Write-in,92
+2026,PA,42011,Berks,us_house,9,Representative in Congress 9th District,Dan Meuser,Republican,13350
+2026,PA,42011,Berks,us_house,9,Representative in Congress 9th District,Rachel Wallace,Democratic,8491
+2026,PA,42011,Berks,us_house,9,Representative in Congress 9th District,Write-in,Write-in,20
+2026,PA,42011,Berks,state_house,124,Representative in the General Assembly 124th District,Jamie Barton,Republican,6298
+2026,PA,42011,Berks,state_house,124,Representative in the General Assembly 124th District,Tina Burns,Democratic,4253
+2026,PA,42011,Berks,state_house,124,Representative in the General Assembly 124th District,Write-in,Write-in,4
+2026,PA,42011,Berks,state_house,126,Representative in the General Assembly 126th District,Jacklyn Rusnock,Democratic,11708
+2026,PA,42011,Berks,state_house,126,Representative in the General Assembly 126th District,Miguel Vasquez,Republican,5608
+2026,PA,42011,Berks,state_house,126,Representative in the General Assembly 126th District,Write-in,Write-in,24
+2026,PA,42011,Berks,state_house,127,Representative in the General Assembly 127th District,Manny Guzman,Democratic,8345
+2026,PA,42011,Berks,state_house,127,Representative in the General Assembly 127th District,Write-in,Write-in,287
+2026,PA,42011,Berks,state_house,128,Representative in the General Assembly 128th District,Andy Wagner,Democratic,12207
+2026,PA,42011,Berks,state_house,128,Representative in the General Assembly 128th District,Mark M. Gillen,Republican,14178
+2026,PA,42011,Berks,state_house,128,Representative in the General Assembly 128th District,Write-in,Write-in,31
+2026,PA,42011,Berks,state_house,129,Representative in the General Assembly 129th District,Johanny Cepeda-Freytiz,Democratic,13876
+2026,PA,42011,Berks,state_house,129,Representative in the General Assembly 129th District,Write-in,Write-in,560
+2026,PA,42011,Berks,state_house,130,Representative in the General Assembly 130th District,Erik Bonnett,Democratic,11235
+2026,PA,42011,Berks,state_house,130,Representative in the General Assembly 130th District,Melissa Brewer,Republican,15442
+2026,PA,42011,Berks,state_house,130,Representative in the General Assembly 130th District,Write-in,Write-in,34
+2026,PA,42011,Berks,state_house,5,Representative in the General Assembly 5th District,Andres R. F. Santiago,Democratic,9909
+2026,PA,42011,Berks,state_house,5,Representative in the General Assembly 5th District,Eric Weaknecht,Republican,15490
+2026,PA,42011,Berks,state_house,5,Representative in the General Assembly 5th District,Write-in,Write-in,28
+2026,PA,42011,Berks,state_house,99,Representative in the General Assembly 99th District,Dave Zimmerman,Republican,3820
+2026,PA,42011,Berks,state_house,99,Representative in the General Assembly 99th District,Ethan Gabrick,Democratic,2909
+2026,PA,42011,Berks,state_house,99,Representative in the General Assembly 99th District,Write-in,Write-in,9
+2026,PA,42011,Berks,state_senate,24,Senator in the General Assembly 24th District,Chris Thomas,Democratic,9835
+2026,PA,42011,Berks,state_senate,24,Senator in the General Assembly 24th District,Mike Schonewolf,Green,440
+2026,PA,42011,Berks,state_senate,24,Senator in the General Assembly 24th District,Tracy E. Pennycuick,Republican,12240
+2026,PA,42011,Berks,state_senate,24,Senator in the General Assembly 24th District,Write-in,Write-in,13
+2026,PA,42011,Berks,state_senate,44,Senator in the General Assembly 44th District,Katie Muth,Democratic,1697
+2026,PA,42011,Berks,state_senate,44,Senator in the General Assembly 44th District,Melissa Dicranian,Republican,1686
+2026,PA,42011,Berks,state_senate,44,Senator in the General Assembly 44th District,Write-in,Write-in,3
+2026,PA,42011,Berks,state_senate,48,Senator in the General Assembly 48th District,Chris Gebhard,Republican,20290
+2026,PA,42011,Berks,state_senate,48,Senator in the General Assembly 48th District,Wayne Moyer,Democratic,13428
+2026,PA,42011,Berks,state_senate,48,Senator in the General Assembly 48th District,Write-in,Write-in,41

@@ -88,18 +88,31 @@ change was made. See
 Butler's actual index returned HTTP404; the response and receipt are
 retained rather than treating a cached search page as a successful acquisition.
 
-**Next acquisition: Berks primary ArcGIS data.** The county's actual Election
-Results page independently links the same dashboard as the discovery queue.
-Its native item is titled "County Of Berks: 2026 General Election Results Master
-Dashboard" and its full metadata/configuration are preserved privately with
-HTTP200 receipts and zero Google key matches. The surrounding county page has a
-stale primary-election description, so native dataset election identity and
-timestamps must be established before accepting any counts. Follow the
-dashboard's explicitly referenced items and child dashboards, acquire complete
-unpadded native records with receipts, and validate independent totals and
-missingness. Do not assume the master dashboard is itself a complete dataset.
-Preserve source terms, parties, district scopes and actual reporting methods.
-No Berks data, participation rate or map promotion is yet approved.
+**Berks primary data reviewed; publication next.** The actual county Election
+Results page links the reviewed 2026 General Election master dashboard despite
+stale primary-election prose on the parent. Fifty-nine screened source responses
+retain complete metadata, child dashboards, query inputs, native terms and
+receipts. One declared item returned an API403 inside HTTP200; that denial is
+preserved, not bypassed or counted as acquired data. Long GET query failures
+were recovered using documented POST queries, with exact object-ID completeness.
+All 202 separate participation rows reconcile to 143,855 ballots and 275,941
+native registered voters; mail 27,931 plus Election Day 115,924 equals ballots.
+Early-vote values are all null and the provisional field is absent, not zero.
+This is an unofficial ballots/native-registration ratio, not eligible-population
+or demographic turnout. All 2,216 full candidate rows match the separate joined
+table and native server aggregates: 45 county candidate lines across 15 contests.
+The 681 winner-only rows are independently checked against each named candidate's
+own votes and contest maximum, never substituted for complete candidate data.
+Literal parties and 332 explicit candidate zeros remain intact. Congressional
+unit IDs 4310 and 7001 overlap district scopes; participation is counted once
+per native unit, not from repeated candidate joins. Native header and separate
+participation/candidate edit times remain distinct. Eight complete CSVs,
+all sources, portable reviewer, audit and checksums form a deterministic
+71-member ZIP. Eleven focused tests and byte-identical packaged offline
+reproduction pass; rerun after final reviewer changes before publishing.
+No new map coverage, demographic turnout, certification or final counting is
+approved. Publish immutable data and verify every public byte before adding
+the nine download links, preserving the existing 258.
 
 **Earlier current-source cleanup (historical record).** On November 5,
 GitHub reported Google API keys copied from public county linking HTML. The

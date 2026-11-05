@@ -1,0 +1,5 @@
+year,state_code,county_fips,county,native_field,count,observed_units,null_units,absent_units,explicit_zero_units,status
+2026,PA,42011,Berks,mail,27931,202,0,0,1,observed
+2026,PA,42011,Berks,electionday,115924,202,0,0,0,observed
+2026,PA,42011,Berks,earlyvote,,0,202,0,0,field_all_null
+2026,PA,42011,Berks,provisional,,0,0,202,0,field_not_supplied
