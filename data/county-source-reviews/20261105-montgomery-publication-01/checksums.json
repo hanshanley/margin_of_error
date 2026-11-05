@@ -1,0 +1,46 @@
+{
+  "deployment.json": {
+    "bytes": 5052,
+    "sha256": "dea07e2b2fcf365bf040eaede19c540b449215441949c9d0c9800434e9aa1634"
+  },
+  "focused-tests.json": {
+    "bytes": 294,
+    "sha256": "72218b242c9ae894412846e311581b39b1673bd34c80c4b069d1883c708a16ae"
+  },
+  "immutable-integrity.json": {
+    "bytes": 349,
+    "sha256": "e75bca709429909418fe695d12f0656161e3738926edb49cdcb7e01226fd2d83"
+  },
+  "independent-party-reconciliation.json": {
+    "bytes": 4600,
+    "sha256": "66fb70514f282cfcb0d9b11b06b0da4d23c9ccf41cb32fbf5db2e49adb33a36c"
+  },
+  "local-browser.json": {
+    "bytes": 36247,
+    "sha256": "25b48bd86e8f9fc3f6d6b47bb9ee13f7041f91c4dbc25d6eae06db9fed62de9f"
+  },
+  "production-browser.json": {
+    "bytes": 36258,
+    "sha256": "bf1d493e710323794d1094c41012a3dc8f9ccbf2b734f4244107763ba0fb1160"
+  },
+  "registry-retention.json": {
+    "bytes": 328,
+    "sha256": "dae224042820ecae5465328be321630b101bc98ce4b32945f6833abaf560ebab"
+  },
+  "release-verification.json": {
+    "bytes": 5164,
+    "sha256": "acec563f407da8592f7be3c7885fd05299c0f1de0e9d6e05fc88fd5bdef4e2f8"
+  },
+  "reproduction.json": {
+    "bytes": 281,
+    "sha256": "03aaef649e819c920cfacd376b28f4d0c3ce4a7d902c6f540ad7336bbb2971e6"
+  },
+  "source-discovery.json": {
+    "bytes": 3515,
+    "sha256": "95223a8514516c7fab2fc801b9d84a2bbfe9731abfd84a81609716d838053105"
+  },
+  "ui-validation.json": {
+    "bytes": 808,
+    "sha256": "0bd84c24e4804e16a70a1c27ccfef5e01ad9a1154c7ba20d34d378f685dbde12"
+  }
+}

@@ -319,7 +319,7 @@ this completed publication or reinterpret the unresolved 324-ballot difference.
 Next actionable work remains genuine 2026 Maine/Pennsylvania county sources,
 followed by the scoped 2016 historical House export.
 
-Montgomery County official 2026 alternative, released and locally verified:
+Montgomery County official 2026 alternative, released and production-verified:
 Fresh actual HTTP acquisition found a newly declared General Election dashboard
 and PDF on the county's official results index, despite an older web-search
 cache still showing only the primary. Do not infer the available election from
@@ -372,10 +372,21 @@ the complete ZIP; all eleven endpoints were downloaded and byte-matched.
 The download-only registry entry leaves every prior review object unchanged.
 Astro check, seven participation tests, build/four built-in tests and Pages
 preparation pass. Four local desktop/mobile JS/no-JS checks retain all 194
-previous URLs and expose all 205 complete downloads. No new geometry, statewide
-Pennsylvania completion, demographic estimate or precinct-ledger promotion is
-approved. Next: exact useful UI deployment and production checks; do not repeat
-unchanged map suites.
+previous URLs and expose all 205 complete downloads.
+
+Useful UI commit `d9e2c2e0e5b697b8ce8653fdfc37c21982426977` is on main;
+exact Pages run `42094445197` succeeded. All four production desktop/mobile
+JS/no-JS checks pass against the exact registry, renderer and pointer bytes,
+retain all 194 prior URLs and expose all 205 complete downloads. The 52 UF
+rows, 204 historical state/year scope cells across 2024/2022/2020/2018 and
+4,896 county candidate-ledger rows are unchanged. All 20 immutable package
+files still match the pinned data commit and the package manifest. The
+temporary preview is stopped; publication proof checksums are saved separately.
+No new geometry, statewide Pennsylvania completion, demographic estimate,
+county-map fill or precinct-ledger promotion is approved. Next actionable work
+remains genuine 2026 Maine/Pennsylvania county alternatives, followed by the
+scoped 2016 historical House export. Keep schedule #4 active; do not repeat
+completed source reviews or unchanged map suites.
 
 Bucks County official 2026 alternative, released and production-verified:
 `data/county-source-reviews/20261105-bucks-reviewed-02/` retains the county's

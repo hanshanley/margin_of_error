@@ -1,0 +1,9 @@
+{
+  "status": "pass",
+  "immutable_data_commit": "ddb9e8c86c772b41431cd5c7e0d1fd4eeb615563",
+  "files_verified_against_pinned_commit": 20,
+  "manifest_entries_verified": 19,
+  "manifest_sha256": "389ad6c65ddf69a3624136bb5b3c7a98f66b34e1b3ec0c193548837478b38571",
+  "portable_reviewer_matches_repository": true,
+  "immutable_files_unchanged": true
+}
