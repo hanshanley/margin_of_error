@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "focused_tests_passed": 16,
+  "native_candidate_county_table_rows_independently_matched": 31,
+  "native_unit_candidate_rows_independently_matched": 2015,
+  "official_county_identity_matched": true,
+  "packaged_offline_reproduction_byte_identical": true,
+  "all_archive_html_key_guards_passed": true,
+  "complete_archive": {
+    "file": "complete-northampton-2026-county-results-01.zip",
+    "bytes": 322312,
+    "sha256": "d5e29bb452d7a3b29801f70f1b7b6b1496ed9eeb3fdcd98193bdd66308029d9d"
+  },
+  "ballots_cast": 129290,
+  "house_candidate_votes": 127555,
+  "house_votes": {
+    "DEM": 72478,
+    "REP": 54763,
+    "unlabeled_write_in": 314
+  },
+  "countywide_house_ballot_residual_unclassified": 1735,
+  "native_units": 155,
+  "explicit_native_unit_zeroes": 220,
+  "new_map_approved": false,
+  "fully_complete": false
+}

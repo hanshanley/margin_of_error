@@ -1,0 +1,14 @@
+year,state_code,county_fips,county,office,party_html_prefix_literal,votes
+2026,PA,42095,Northampton,governor_lieutenant_governor,,152
+2026,PA,42095,Northampton,governor_lieutenant_governor,DEM,78215
+2026,PA,42095,Northampton,governor_lieutenant_governor,LIB,1807
+2026,PA,42095,Northampton,governor_lieutenant_governor,REP,47189
+2026,PA,42095,Northampton,state_house,,158
+2026,PA,42095,Northampton,state_house,DEM,72487
+2026,PA,42095,Northampton,state_house,REP,55103
+2026,PA,42095,Northampton,state_senate,,222
+2026,PA,42095,Northampton,state_senate,DEM,77936
+2026,PA,42095,Northampton,state_senate,REP,49467
+2026,PA,42095,Northampton,us_house,,314
+2026,PA,42095,Northampton,us_house,DEM,72478
+2026,PA,42095,Northampton,us_house,REP,54763

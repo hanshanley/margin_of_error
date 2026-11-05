@@ -183,8 +183,7 @@ but that release's complete ZIP has since been withdrawn for source-key
 remediation; its seven count-only CSV assets are unaffected. The sanitized
 replacement is now byte-verified in `voter-county-source-redaction-20261105-01`;
 its three-county UI integration remains pending. No new map, demographic turnout, certification, or statewide
-completeness is approved. Northampton's complete county-declared native HTML
-is also retained privately; its separate count/party review remains pending.
+completeness is approved.
 After the security deployment, the exact Northampton government-to-vendor
 link was reverified and both complete primary pages were freshly acquired.
 The native report explicitly declares the 2026 general election and unofficial
@@ -193,9 +192,25 @@ without interpreting duplicated accessible labels, allocating counts or
 promoting coverage. Complete HTML, extraction and receipts remain private in
 `files/northampton-primary-refresh-20261105-01/`; the acquisition audit is
 `data/county-source-reviews/20261105-northampton-primary-01/source-acquisition.json`.
-Next reconcile county/unit candidate and participation totals, accounting and
-literal parties, then apply the fail-closed source-key checks before publishing
-any original HTML or complete package. No new public download or map is claimed.
+Northampton's separate count review now passes 16 focused tests, independent
+matching of all 31 county and 2,015 unit candidate rows against the complete
+table extraction, and byte-identical offline ZIP reproduction using only its
+packaged originals and reviewer. All 155 native units and four nonoverlapping
+office partitions reconcile; all 220 explicit candidate zeroes remain.
+County ballots are 129,290, registrations 234,834 and printed turnout 55.1%.
+House candidate votes are 127,555: DEM 72,478, REP 54,763 and 314 write-ins
+with a blank native party prefix, not inferred NON or independent affiliation.
+The 1,735-ballot House residual stays unclassified. The native 38,593 mail
+receipt notice is separate from 38,154 reported mail ballots; Election Day
+and mail counting remain partial despite 155/155 reporting. Missing district
+ballots, unit participation, candidate modes and under/overvotes stay absent.
+Complete screened originals, seven CSVs, portable code and checksums are under
+`data/county-source-reviews/20261105-northampton-reviewed-01/`; independent
+proof is under `data/county-source-reviews/20261105-northampton-publication-01/`.
+The 322,312-byte complete ZIP has SHA-256
+`d5e29bb452d7a3b29801f70f1b7b6b1496ed9eeb3fdcd98193bdd66308029d9d`.
+Its release and UI integration are next; no new map, demographic turnout,
+certification or statewide completeness is approved.
 
 The reusable 2026 county-results and separate UF/state participation pipelines
 are implemented and published. Both passed real acquisition and original-backed
