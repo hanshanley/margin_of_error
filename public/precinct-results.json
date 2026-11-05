@@ -53,6 +53,17 @@
       {"file": "originals/item.json.gz", "label": "Official 2026 Idaho precinct reference identity, attribution and license metadata (JSON · gzip)"},
       {"file": "audit.json", "label": "Idaho complete-county joins, withheld reporting units and full reference-overlap audit (JSON)"}
     ]
+  }, {
+    "label": "Rhode Island 2026 precinct results with 2022-2032 RIGIS reference and separate locality counts",
+    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f1ba1e85307ab3a4b730f473327c6b47d61944a4/data/precinct-results/20261105-rhode-island-02/",
+    "data_directory": "data/precinct-results/20261105-rhode-island-02",
+    "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-rhode-island-maps-20261105-02/complete-rhode-island-2026-precinct-maps.zip",
+    "complete_download_bytes": 6098657,
+    "complete_download_sha256": "a348107161caf1f50d0952e61d05d94d1edef9d91dbb13e2e85cc4e50f559c95",
+    "source_documents": [
+      {"file": "originals/item.json.gz", "label": "RIGIS 2022-2032 reference identity, attribution, terms and local-change warning (JSON · gzip)"},
+      {"file": "audit.json", "label": "Rhode Island complete-town joins, withheld reporting units and full reference-overlap audit (JSON)"}
+    ]
   }],
   "source_batches": [{
     "label": "2022 precinct sources from 25 states",

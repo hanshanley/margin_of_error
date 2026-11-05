@@ -1205,8 +1205,29 @@ pass again. Revision 02 ZIP: **6,098,657 bytes**, SHA-256
 `a348107161caf1f50d0952e61d05d94d1edef9d91dbb13e2e85cc4e50f559c95`.
 Proof: `files/ri-2026-map-02-independent-validation.json`.
 
-Revision 02 release, site registration and live checks remain pending. Next:
-publish/verify this full conservative map package, then continue the
+Revision 02 release tag `voter-precinct-rhode-island-maps-20261105-02`
+targets **`f1ba1e85307ab3a4b730f473327c6b47d61944a4`**. Its complete
+remote redownload passes exact tag, size, hash, all 27 archive members/CRCs
+and byte comparisons: `files/ri-2026-map-02-release-verification.json`.
+The registry now pins this verified revision, with attribution/terms and
+audit links. The additional participation-download label is deliberately
+generic: RI has separate **locality** statistics, not precinct denominators.
+The map renderer remains byte-identical.
+
+Local publication checks pass: Astro check, seven participation tests,
+production build and four build-time caucus checks. The whole build
+validator reaches only the unchanged unrelated UK assertion at line 1077
+(23 cards versus 16); it was run before Pages relocation, not after.
+The Pages preparer verifies all **94** complete relocated assets and a
+**986,209,496-byte** site. Desktop/mobile with and without JavaScript pass
+all **43** full download links, exact registry/1,632-cell ledger/unchanged
+renderer bytes, source geometry, all 306 precinct keys/counts/colors,
+selection provenance/scope, zoom out/in, state fallback, honest withheld
+participation rates and failed-registry-fetch fallback. Proof:
+`files/ri-2026-map-02-local-browser-validation.json`.
+
+Deployment and exact live proof remain pending; do not mark live yet.
+Next: publish this verified conservative map, then continue the
 remaining newest state/year cells. Do not mark RI or nationwide coverage
 complete, infer demographic participation, or map administrative counts.
 
