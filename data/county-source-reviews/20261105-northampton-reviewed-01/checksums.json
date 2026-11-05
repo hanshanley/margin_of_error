@@ -1,0 +1,50 @@
+{
+  "audit.json": {
+    "bytes": 2399,
+    "sha256": "3ae7099c087f0678d4d7cc3b186ccfdf9381826a43d7804af448abec8d5a83b7"
+  },
+  "county-ballot-mode-counts.csv": {
+    "bytes": 205,
+    "sha256": "7278a497e38684280ddb93a6418b455ea63d17f55c0a720698e563610cb7fcde"
+  },
+  "county-candidate-results.csv": {
+    "bytes": 4216,
+    "sha256": "b4d8134d63eec62dc3c46fc9a665886727d9f929fc2e663b9419f8e8c30e6bb5"
+  },
+  "county-contest-totals.csv": {
+    "bytes": 1356,
+    "sha256": "991f029ac0ac1165dd17779b64381b589a983f9375368645a910c5be881c72af"
+  },
+  "county-office-party-totals.csv": {
+    "bytes": 753,
+    "sha256": "1dad6dc917a15f8375507645758b630d0b100ef24655c68f62789728f920e019"
+  },
+  "county-participation.csv": {
+    "bytes": 606,
+    "sha256": "759c8ff0c0dc7ae31c2ed8af8f324a75bf7a9b4dbce656e7fe6bca3ed8b4dc34"
+  },
+  "native-unit-candidate-counts.csv": {
+    "bytes": 289995,
+    "sha256": "8c6e919810a46b925118ac7f082aa083f308aa8ccfbf18038e138b28a73d086d"
+  },
+  "native-unit-contest-coverage.csv": {
+    "bytes": 75657,
+    "sha256": "d6900366646ee0b66293cf433cc00dec449b1c80ba7d18b56dbc4dc7306346b5"
+  },
+  "originals/native-results.html": {
+    "bytes": 2096599,
+    "sha256": "1d544a6a117046f8d228a668b78bc128b38cac240a5592f272d24fdfa1307517"
+  },
+  "originals/official-index.html": {
+    "bytes": 3278906,
+    "sha256": "677e8ee27248ad936e0f821ca238e73279a738e4efb24229a46f1aa4956f505f"
+  },
+  "originals/receipts.json": {
+    "bytes": 1049,
+    "sha256": "f6a89ab87005ec12a3ec694323b3368eac3543ebd6a02349daf407f3da7581df"
+  },
+  "review-northampton-county-results.py": {
+    "bytes": 15763,
+    "sha256": "9258d97d22ddba40d8259f1a57fe336673a5ccca4d8da82d9455bbe16255d678"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "status": "county_counts_reviewed_not_final_certified",
+  "participation": {
+    "year": 2026,
+    "state_code": "PA",
+    "county_fips": "42095",
+    "county": "Northampton",
+    "ballots_cast": 129290,
+    "registered_voters": 234834,
+    "native_printed_turnout": "55.1%",
+    "house_candidate_votes": 127555,
+    "native_status_literal": "Unofficial Election Results",
+    "source_update_literal": "11/4/2026 3:29:55 PM",
+    "counting_qualifications_json": "[\"Mail-in Ballots: Partially Reported\", \"Election Day Votes: Partially Reported\", \"Provisional Ballots: None\"]",
+    "ballot_receipt_notice_literal": "IN ACCORDANCE WITH ACT 88'S REPORTING REQUIREMENTS, NORTHAMPTON COUNTY RECEIVED A TOTAL OF 38,593 MAIL-IN BALLOTS BY 8PM ON ELECTION DAY",
+    "final_certified_turnout": false
+  },
+  "native_units": 155,
+  "native_contests": 10,
+  "native_unit_explicit_zeroes": 220,
+  "source_urls": {
+    "official-index.html": "https://www.norcopa.gov/election-result",
+    "native-results.html": "https://www.livevoterturnout.com/ENR/northamptonpaenr/12/en/Index_12.html"
+  },
+  "table_rows": {
+    "county-participation.csv": 1,
+    "county-ballot-mode-counts.csv": 3,
+    "county-candidate-results.csv": 31,
+    "county-office-party-totals.csv": 13,
+    "county-contest-totals.csv": 10,
+    "native-unit-candidate-counts.csv": 2015,
+    "native-unit-contest-coverage.csv": 620
+  },
+  "maps_approved": false,
+  "fully_complete": false,
+  "demographic_turnout_approved": false,
+  "limitations": [
+    "Unofficial snapshot; native mail-in and Election Day counting remain partial.",
+    "Candidate votes, ballots cast, ballot receipt notices and registrations are distinct.",
+    "Party identifiers are literal visible HTML prefixes, not CSV party fields.",
+    "Write-in has no explicit party prefix; its party remains blank, not NON or independent.",
+    "Native reporting units are preserved for count reconciliation only; no new boundaries.",
+    "No unit ballot/registration dataset or candidate voting-mode breakdown was acquired.",
+    "Missing under/overvotes and district ballot denominators remain blank, not zero.",
+    "Countywide ballot residuals are unclassified; do not infer their cause.",
+    "Source update timezone is unestablished; reporting 100% is not finished counting.",
+    "Complete source HTML is explicitly screened/redacted with original-hash receipts."
+  ]
+}

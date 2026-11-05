@@ -1,0 +1,4 @@
+year,state_code,county_fips,county,ballot_mode_literal,ballots_cast
+2026,PA,42095,Northampton,Election Day,91136
+2026,PA,42095,Northampton,Mail-in Ballots,38154
+2026,PA,42095,Northampton,Provisional,0

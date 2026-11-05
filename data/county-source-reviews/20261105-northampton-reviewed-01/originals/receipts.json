@@ -1,0 +1,30 @@
+[
+  {
+    "file": "official-index.html",
+    "url": "https://www.norcopa.gov/election-result",
+    "bytes": 3278906,
+    "sha256": "677e8ee27248ad936e0f821ca238e73279a738e4efb24229a46f1aa4956f505f",
+    "http_status": 200,
+    "fetched_at": "2026-11-05T21:23:52.658982+00:00",
+    "redaction": {
+      "original_sha256": "677e8ee27248ad936e0f821ca238e73279a738e4efb24229a46f1aa4956f505f",
+      "original_bytes": 3278906,
+      "replacements": 0,
+      "kind": "public_service_and_telemetry_keys"
+    }
+  },
+  {
+    "file": "native-results.html",
+    "url": "https://www.livevoterturnout.com/ENR/northamptonpaenr/12/en/Index_12.html",
+    "bytes": 2096599,
+    "sha256": "1d544a6a117046f8d228a668b78bc128b38cac240a5592f272d24fdfa1307517",
+    "http_status": 200,
+    "fetched_at": "2026-11-05T21:23:53.383749+00:00",
+    "redaction": {
+      "original_sha256": "1d544a6a117046f8d228a668b78bc128b38cac240a5592f272d24fdfa1307517",
+      "original_bytes": 2096599,
+      "replacements": 0,
+      "kind": "public_service_and_telemetry_keys"
+    }
+  }
+]
