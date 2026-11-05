@@ -29,6 +29,18 @@
       {"file": "originals/layer.json.gz", "label": "Official 2026 North Dakota precinct-layer definition and attribution (JSON · gzip)"},
       {"file": "2026/ND-ambiguous-reference-areas.geojson.gz", "label": "Ambiguous overlapping reference-boundary strips excluded from precinct coloring (GeoJSON · gzip)"}
     ]
+  }, {
+    "label": "Vermont 2026 reporting-split results and separate municipal participation",
+    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7deca2dad49cdf72515fd83abb065f5bcd628ac6/data/precinct-results/20261105-vermont-03/",
+    "data_directory": "data/precinct-results/20261105-vermont-03",
+    "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-vermont-maps-20261105/complete-vermont-2026-reporting-split-maps.zip",
+    "complete_download_bytes": 4857690,
+    "complete_download_sha256": "0c3777c6a5691d8fe97709c12ed56ed06c7757ad56a5efe74cea392f011e274c",
+    "publication": "snapshot_ready",
+    "source_documents": [
+      {"file": "originals/service.json.gz", "label": "Official November 2026 Vermont voting-area service definition (JSON · gzip)"},
+      {"file": "audit.json", "label": "Vermont town/split joins, withheld units and complete boundary-overlap audit (JSON)"}
+    ]
   }],
   "source_batches": [{
     "label": "2022 precinct sources from 25 states",

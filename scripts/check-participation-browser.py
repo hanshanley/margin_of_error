@@ -190,6 +190,18 @@ with sync_playwright() as p:
             assert viewport(page)[2] < before[2]
             check_precinct_results(page, 2026, code)
             screenshot(page, "participation-2026-north-dakota.png")
+        if code == "VT":
+            page.locator('.substate-feature[data-color-level="precinct"]').first.dispatch_event("click")
+            expect(page.locator("#substate-detail")).to_contain_text("town-legislative reporting splits")
+            expect(page.locator("#substate-detail")).to_contain_text("Municipal registration and participation remain separate")
+            expect(page.locator("#substate-detail")).not_to_contain_text("Separate participation statistics")
+            assert all("participation" not in feature["properties"] for feature in shapes)
+            page.locator("#map-zoom-out").click()
+            before = viewport(page)
+            page.locator("#map-zoom-in").click()
+            assert viewport(page)[2] < before[2]
+            check_precinct_results(page, 2026, code)
+            screenshot(page, "participation-2026-vermont.png")
     for year in sorted((year for year in precinct_results_index["coverage"] if int(year) < 2024), reverse=True):
         page.locator("#year").select_option(year)
         for code in sorted(precinct_results_index["coverage"][year]):

@@ -192,7 +192,7 @@ independently redownloaded and byte-verified release:
 `7002f19e5002205cf3dcde93dd2870b1704d27a634c86b91b968b77e036a1df9`.
 The immutable release tag targets exact data commit
 `1ed9421a357a382c8b2b88474e7d104605d3fa31`. Website/worklist integration is
-pending exact deployment verification; this is **count/download coverage, not
+live-verified; this is **count/download coverage, not
 mapped precinct coverage**.
 
 The public election metadata identifies election **7100**, GUID
@@ -245,9 +245,11 @@ layout and no-JavaScript page. The unchanged map renderer already passed its
 full live regression in the ND publication; do not repeat it solely for this
 additional static source-review link.
 
-Website integration commit `81a237cbd3d1f55f6fd80cd7ec52039b0935d93e` is
-under exact deployment verification in run **41956593219**. Next: finish that
-verification and publish the independently audited mapped supplement below.
+Website integration commit `81a237cbd3d1f55f6fd80cd7ec52039b0935d93e` deployed
+successfully in exact run **41956593219**. The live registry, full ledger and
+unchanged renderer match that commit byte-for-byte. Live JS/no-JS checks pass
+for the complete 412,981-byte download, correct source scope, 2026 default and
+mobile layout. Next: publish the independently audited mapped supplement below.
 Do not attach split counts to entire towns. Resolve
 Colchester's reporting scope, the five ballot discrepancies, and registration
 definitions; reconcile the remaining preserved office tabs.
@@ -301,10 +303,59 @@ Data: `data/precinct-results/20261105-vermont-03/`.
 Complete archive: `complete-vermont-2026-reporting-split-maps.zip`,
 **4,857,690 bytes**, SHA-256
 `0c3777c6a5691d8fe97709c12ed56ed06c7757ad56a5efe74cea392f011e274c`.
-Status: independently validated local snapshot; release upload, website
-registration and exact live map verification remain pending. Do not label
-this as live or complete. After publication, move to the next unacquired
-2026 jurisdiction rather than repeatedly rerunning unchanged national layers.
+Data commit: `7deca2dad49cdf72515fd83abb065f5bcd628ac6`. The immutable release
+`voter-precinct-vermont-maps-20261105` targets that exact commit; its full ZIP
+was independently redownloaded and verified for length, SHA-256 and CRCs.
+Website registration passes seven renderer tests, Astro check (zero errors and
+warnings, five existing hints), build, four caucus tests and Pages preparation:
+**94 byte-identical relocated originals**, **986,193,681-byte** artifact.
+Focused production-preview checks pass for every mapped count and exact fill,
+red/blue selection, separate municipal participation, button/wheel zoom,
+2024/2026 switching, county/district state fallback, desktop/mobile layout,
+31 complete-download links, no-JavaScript content and aborted-fetch fallback.
+Selecting a small split legitimately reaches the maximum zoom; control tests
+first zoom out before testing zoom in. Geographic fetch errors are disclosed
+in the geography note, not the general caption. No renderer change was needed.
+Status remains **snapshot_ready** until the exact deployment and live map
+verification pass. After publication, move to the next unacquired 2026
+jurisdiction rather than repeatedly rerunning unchanged national layers.
+
+## Idaho 2026 complete originals acquired; count review in progress
+
+The official public portal
+`https://results.voteidaho.gov/results/public/id/elections/nov2026` identifies
+the production November 3, 2026 general election, unofficial, state election
+`01000000-9c16-51a0-5d47-08df20ba1eaa`, publish version
+`f7c0af8a-b1f1-4001-b755-129b96f07982`, as of
+`2026-11-04T22:15:32.675786Z`. Its statewide JSON is a summary, not precinct
+results: precinct and turnout arrays are empty, and registration rows describe
+44 counties. Do not mistake them for precinct observations.
+
+The portal's visible **Download Reports** button opens a normal report page
+with complete advertised downloads. Acquired both XLSX workbooks and both PDF
+reports, retaining the already captured public `/data` and `/closeraces` JSON:
+**six complete originals, 6,288,693 bytes**, with exact public URLs, sizes and
+SHA-256 receipts in session
+`files/precinct-expansion-sources/ID-2026/sources.json`. Unrelated basemap
+responses are excluded. Do not reacquire these originals or retry the failed
+exact-accessible-name selector/network-idle wait.
+
+The results workbook has **141,838 precinct-result rows** and **6,302 county
+summary rows**. An independent diagnostic finds no duplicate identities and
+exact reconciliation of every precinct-to-county candidate/statistic key.
+Both result and ballot workbooks identify the same **986 reporting units**
+across all **44 counties**. Separate reported totals are **731,980 ballots**
+and **1,055,089 registrations**. This is diagnostic evidence, not yet a
+released normalized count review or mapped coverage. Twin Falls registrations
+disagree with the API's county total; special absentee/early units and small,
+zero or inconsistent denominators require explicit scope flags and withheld
+rates, not fabricated turnout.
+
+Next: persist a reproducible immutable review and full-source archive; reconcile
+House candidates to both district API totals and validate ballot/registration
+scope before registering the download. Then obtain explicit 2026 boundaries and
+reporting-unit crosswalks. The portal's `Idaho2025` basemap is not evidence of
+correct 2026 precinct geography; no map is claimed or older geometry substituted.
 
 ## Resume procedure for every work session or scheduled prompt
 
