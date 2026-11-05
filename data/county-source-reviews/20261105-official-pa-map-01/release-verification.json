@@ -1,0 +1,25 @@
+{
+  "status": "pass",
+  "data_commit": "cbff6e4a4bcd8b4569f447b0d994a34ca79ca10f",
+  "release_tag": "voter-county-official-pa-20261105-01",
+  "archive_bytes": 149531275,
+  "archive_sha256": "85e228abdc6ebc5e2741196d441c973e4023d88b4dc50170d864d219ee4f788d",
+  "downloaded_archive_byte_identical": true,
+  "pinned_raw_files_byte_verified": [
+    "audit.json",
+    "county-results.csv",
+    "county-results.json.gz",
+    "geometry/PA.geojson.gz",
+    "index.json",
+    "margins.json",
+    "merge-official-county-results.py",
+    "party-votes/audit.json",
+    "party-votes/checksums.json",
+    "party-votes/county-district-candidate-totals.csv.gz",
+    "party-votes/county-party-totals.csv.gz",
+    "party-votes/district-candidate-totals.csv.gz",
+    "party-votes/state-party-totals.csv.gz",
+    "state-codes.json",
+    "checksums.json"
+  ]
+}

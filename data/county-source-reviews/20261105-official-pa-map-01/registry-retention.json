@@ -1,0 +1,9 @@
+{
+  "status": "pass",
+  "all_previous_county_snapshot_objects_unchanged": true,
+  "previous_current_snapshot_retained_exactly": true,
+  "official_review_registry_unchanged": true,
+  "uf_historical_house_and_precinct_pointers_unchanged": true,
+  "previous_complete_download_urls_retained": 205,
+  "current_complete_download_urls": 212
+}

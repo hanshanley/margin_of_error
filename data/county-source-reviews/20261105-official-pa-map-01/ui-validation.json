@@ -1,0 +1,33 @@
+{
+  "status": "pass",
+  "astro_check": {
+    "command": "npm run check",
+    "errors": 0,
+    "warnings": 0,
+    "preexisting_hints": 5
+  },
+  "participation_tests": {
+    "command": "node --test scripts/voter-participation.test.mjs",
+    "passed": 7
+  },
+  "hosted_refresh_test_gate": {
+    "command": "python -m pytest -q scripts/test-county-party-votes.py scripts/test-official-county-merge.py scripts/test-2026-refresh.py",
+    "passed": 23
+  },
+  "build": {
+    "command": "npm run build",
+    "passed": true,
+    "included_caucus_tests_passed": 4
+  },
+  "pages_preparation": {
+    "command": "node scripts/prepare-participation-pages.mjs",
+    "byte_identical_bulk_downloads": 94,
+    "site_bytes": 987284649
+  },
+  "browser": {
+    "command": "python scripts/check-county-results-browser.py --base-url http://127.0.0.1:4321 --output data/county-source-reviews/20261105-official-pa-map-01/local-browser.json --baseline-downloads BASELINE_205_URLS.json",
+    "proof": "local-browser.json",
+    "display_modes": 4,
+    "tables_only": false
+  }
+}

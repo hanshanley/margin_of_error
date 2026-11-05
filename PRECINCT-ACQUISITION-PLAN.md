@@ -30,9 +30,15 @@ previous county vectors and adds 753,168 candidate votes: 49 state scopes,
 counties; uncovered counties retain state fallback. Provider Pennsylvania test
 data remains excluded, and D.C. delegate/RCV counts remain download-only.
 Full literal-party and county/district candidate tables are extended without
-inventing complete Pennsylvania state or district totals. This batch is not
-live until its immutable release, full local map suite and exact deployment
-checks pass. Review evidence is being recorded under
+inventing complete Pennsylvania state or district totals. Data/tools commit
+`cbff6e4a4bcd8b4569f447b0d994a34ca79ca10f` and immutable release
+`voter-county-official-pa-20261105-01` are byte-verified. All 23 hosted-refresh
+tests pass; replay of all 435 saved district responses exactly reproduces the
+complete archive and retains all 49 state scopes. The full local four-mode
+map suite passed all 3,053 own-county colors, 49 state drilldowns, Pennsylvania
+selection/fallback, historical isolation, zoom and 212 complete downloads,
+including all previous 205. Exact production deployment remains pending.
+Review evidence is recorded under
 `data/county-source-reviews/20261105-official-pa-map-01/`.
 
 The reusable 2026 county-results and separate UF/state participation pipelines

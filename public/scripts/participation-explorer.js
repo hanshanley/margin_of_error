@@ -537,7 +537,7 @@ async function loadCurrentPrecincts() {
       map.countyOverview.style.display = "";
       $("coverage-note").textContent = `${year} county / equivalent results: ${Object.keys(state.countyResults.coverage).length} states; `
         + `${fmt(state.countyResults.colored_counties)} counties colored by their own candidate votes. `
-        + "State colors are fallback only in uncovered states. Candidate votes are not turnout.";
+        + "State colors remain only where county returns are missing. Pennsylvania has partial county coverage. Candidate votes are not turnout.";
       $("geography-note").hidden = false;
       $("geography-note").textContent = "County colors are visible at national scale. Select a county to zoom; "
         + "full 2026 Census county shapes load as you zoom. The national overview uses display-simplified copies.";
@@ -548,9 +548,9 @@ async function loadCurrentPrecincts() {
       html("p", "selection-note", `${election.office} · ${fmt(election.contest_votes)} candidate votes. `
         + `${fmt(election.democratic_votes)} Democratic; ${fmt(election.republican_votes)} Republican; `
         + `${fmt(election.other_votes)} other. ${election.district_count} House district fragments reconciled.`),
-      html("p", "selection-note", "County / equivalent candidate results on 2026 Census reference boundaries, "
+      html("p", "selection-note", election.source_note || ("County / equivalent candidate results on 2026 Census reference boundaries, "
         + "not precinct results, unique voters or turnout. Explicit overseas returns and zero-only unresolved "
-        + "Chicago reporting placeholders remain unallocated in the complete audit; no city votes are merged into Cook."),
+        + "Chicago reporting placeholders remain unallocated in the complete audit; no city votes are merged into Cook.")),
       sourceLink(election));
     panel.parentElement.prepend(panel);
   }
@@ -593,10 +593,11 @@ async function loadCurrentPrecincts() {
       "House district fragments are summed only within their actual county. 2026 Census county reference boundaries, not precincts.");
     $("coverage-note").textContent = `${year} county / equivalent results: ${Object.keys(state.countyResults.coverage).length} states; `
       + `${fmt(state.countyResults.colored_counties)} colored counties. Counties are the default detail. `
-      + "Maine and Pennsylvania county joins remain withheld; D.C. is outside this 435-district source. "
+      + "Pennsylvania has only independently reviewed official county supplements; Maine remains withheld. D.C. is outside this House source. "
       + "Whole-state colors remain where county results are missing. Candidate votes are not turnout.";
     $("geography-note").textContent = `${selected.feature.properties.NAME} · ${fmt(coverage.counties)} 2026 Census counties / equivalents; `
       + `${fmt(coverage.colored_counties)} with county-level House candidate colors. `
+      + (coverage.scope_note ? `${coverage.scope_note} ` : "")
       + "County fallback, not precinct coloring. Explicit overseas returns stay unallocated; zero-vote rows have no margin. "
       + "Select a county for its counts.";
     marginLegend("U.S. House aggregate");

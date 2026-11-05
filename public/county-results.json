@@ -1,18 +1,60 @@
 {
   "year": 2026,
-  "data_directory": "data/county-results/20261105T155645Z",
-  "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d0aed525f1b078aceaecec9cc9430b3999a9c0ba/data/county-results/20261105T155645Z/",
-  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-2026-20261105t155645z/complete-county-results.zip",
-  "complete_download_bytes": 139939933,
-  "complete_download_sha256": "e2ed05fc4684c34d8b3712a5068ae691f8dc696ac85834d39238ce276e71fffd",
+  "data_directory": "data/county-results/20261105-official-pa-01",
+  "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/cbff6e4a4bcd8b4569f447b0d994a34ca79ca10f/data/county-results/20261105-official-pa-01/",
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-official-pa-20261105-01/complete-county-results-pa-01.zip",
+  "complete_download_bytes": 149531275,
+  "complete_download_sha256": "85e228abdc6ebc5e2741196d441c973e4023d88b4dc50170d864d219ee4f788d",
   "label": "2026 U.S. House county / equivalent results",
   "overview_url": "/county-results-overview.geojson.gz",
-  "states": 48,
-  "normalized_counties": 3060,
+  "states": 49,
+  "normalized_counties": 3063,
   "participation_available": false,
-  "publication": "live_verified_partial",
-  "production_review": "data/county-source-reviews/20261105-refresh-live-01/production-browser.json",
+  "publication": "reviewed_partial",
+  "official_supplement": {
+    "counties": ["42089", "42017", "42091"],
+    "new_precinct_coverage": 0,
+    "state_completion_promoted": false
+  },
   "previous_snapshots": [
+    {
+      "year": 2026,
+      "data_directory": "data/county-results/20261105T155645Z",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d0aed525f1b078aceaecec9cc9430b3999a9c0ba/data/county-results/20261105T155645Z/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-2026-20261105t155645z/complete-county-results.zip",
+      "complete_download_bytes": 139939933,
+      "complete_download_sha256": "e2ed05fc4684c34d8b3712a5068ae691f8dc696ac85834d39238ce276e71fffd",
+      "label": "2026 U.S. House county / equivalent results",
+      "overview_url": "/county-results-overview.geojson.gz",
+      "states": 48,
+      "normalized_counties": 3060,
+      "participation_available": false,
+      "publication": "live_verified_partial",
+      "production_review": "data/county-source-reviews/20261105-refresh-live-01/production-browser.json",
+      "party_votes": {
+        "data_directory": "data/county-results/20261105T155645Z/party-votes",
+        "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d0aed525f1b078aceaecec9cc9430b3999a9c0ba/data/county-results/20261105T155645Z/party-votes/",
+        "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-2026-20261105t155645z/complete-county-results.zip",
+        "tables": [
+          {
+            "file": "county-party-totals.csv.gz",
+            "label": "Every county-party total: 9608 rows"
+          },
+          {
+            "file": "county-district-candidate-totals.csv.gz",
+            "label": "Every county/district candidate: 12075 rows"
+          },
+          {
+            "file": "state-party-totals.csv.gz",
+            "label": "Every full-state party total: 220 rows"
+          },
+          {
+            "file": "district-candidate-totals.csv.gz",
+            "label": "Every accepted House district candidate: 1318 rows"
+          }
+        ]
+      }
+    },
     {
       "label": "2026 U.S. House county / equivalent results (48 states)",
       "year": 2026,
@@ -68,17 +110,17 @@
     }
   ],
   "party_votes": {
-    "data_directory": "data/county-results/20261105T155645Z/party-votes",
-    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d0aed525f1b078aceaecec9cc9430b3999a9c0ba/data/county-results/20261105T155645Z/party-votes/",
-    "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-2026-20261105t155645z/complete-county-results.zip",
+    "data_directory": "data/county-results/20261105-official-pa-01/party-votes",
+    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/cbff6e4a4bcd8b4569f447b0d994a34ca79ca10f/data/county-results/20261105-official-pa-01/party-votes/",
+    "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-official-pa-20261105-01/complete-county-results-pa-01.zip",
     "tables": [
       {
         "file": "county-party-totals.csv.gz",
-        "label": "Every county-party total: 9608 rows"
+        "label": "Every county-party total: 9617 rows; Pennsylvania covers three counties only"
       },
       {
         "file": "county-district-candidate-totals.csv.gz",
-        "label": "Every county/district candidate: 12075 rows"
+        "label": "Every county/district candidate: 12093 rows; literal parties and write-ins retained"
       },
       {
         "file": "state-party-totals.csv.gz",

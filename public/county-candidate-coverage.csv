@@ -37,7 +37,7 @@ year,office,state_code,status,source_candidate_rows,source_counties,arithmetic_m
 2026,house,OH,reviewed_partial_county_map,,88,88,88,0,0,0,88,False
 2026,house,OK,reviewed_partial_county_map,,77,77,77,0,0,0,77,False
 2026,house,OR,reviewed_partial_county_map,,36,36,36,0,0,0,36,False
-2026,house,PA,not_reviewed_in_this_pipeline,,,,,,0,0,0,False
+2026,house,PA,reviewed_partial_county_map,,3,3,3,0,0,0,3,False
 2026,house,RI,reviewed_partial_county_map,,5,5,5,0,0,0,5,False
 2026,house,SC,reviewed_partial_county_map,,46,46,46,0,0,0,46,False
 2026,house,SD,reviewed_partial_county_map,,66,66,66,0,0,0,66,False
