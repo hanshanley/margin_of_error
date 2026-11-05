@@ -1,0 +1,11 @@
+{
+  "status": "pass",
+  "replayed_all_original_provider_districts": 435,
+  "last_good_state_scopes_retained": 49,
+  "last_good_counties_retained": 3063,
+  "official_counties_retained": 3,
+  "merged_records_byte_identical": true,
+  "complete_archive_byte_identical": true,
+  "archive_sha256": "85e228abdc6ebc5e2741196d441c973e4023d88b4dc50170d864d219ee4f788d",
+  "network_acquisition_repeated": false
+}

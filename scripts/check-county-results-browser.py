@@ -240,6 +240,15 @@ with sync_playwright() as p:
             page.locator("#map-level").select_option("county")
             mapped = {code: county(page, code, names[code]) for code in sorted(index["coverage"])}
             assert sum(mapped.values()) == index["colored_counties"]
+            if index["coverage"].get("PA", {}).get("coverage_status") == "partial_official_counties":
+                county(page, "PA", names["PA"])
+                expect(page.locator("#geography-note")).to_contain_text("remaining Pennsylvania counties use state fallback")
+                expect(page.locator('.map-feature[data-state="Pennsylvania"]')).to_have_attribute("data-color-level", "state")
+                for fips in ["42017", "42091", "42089"]:
+                    page.locator(f'.substate-feature[data-geography="{fips}"]').dispatch_event("click")
+                    expect(page.locator("#substate-detail")).to_contain_text("Only this county is covered")
+                    expect(page.locator("#substate-detail")).to_contain_text("not ballots or turnout")
+                mode["partial_pennsylvania_counties"] = 3
             for code in [*index["withheld_states"], "DC"]:
                 page.locator("#state-select").select_option(names[code])
                 expect(page.locator(".substate-feature")).to_have_count(0)

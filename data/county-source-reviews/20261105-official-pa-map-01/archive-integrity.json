@@ -1,0 +1,8 @@
+{
+  "status": "pass",
+  "files_verified": 140,
+  "bytes": 149531275,
+  "sha256": "85e228abdc6ebc5e2741196d441c973e4023d88b4dc50170d864d219ee4f788d",
+  "complete_original_provider_and_census_archives_present": true,
+  "complete_reviewed_official_county_packages_present": 3
+}

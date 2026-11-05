@@ -1,0 +1,27 @@
+{
+  "status": "pass",
+  "tables": {
+    "county-party-totals.csv.gz": {
+      "original_rows_retained": 9608,
+      "new_rows": 9617
+    },
+    "county-district-candidate-totals.csv.gz": {
+      "original_rows_retained": 12075,
+      "new_rows": 12093
+    },
+    "state-party-totals.csv.gz": {
+      "original_rows_retained": 220,
+      "new_rows": 220
+    },
+    "district-candidate-totals.csv.gz": {
+      "original_rows_retained": 1318,
+      "new_rows": 1318
+    }
+  },
+  "county_candidate_totals": {
+    "42089": 60481,
+    "42017": 302786,
+    "42091": 389901
+  },
+  "blank_party_montgomery_write_ins_retained": 711
+}

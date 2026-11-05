@@ -1,0 +1,47 @@
+{
+  "status": "pass",
+  "base_counties_unchanged": 3060,
+  "new_counties": [
+    {
+      "geography": "42089",
+      "geography_name": "Monroe County",
+      "democratic_votes": 35157,
+      "republican_votes": 25190,
+      "other_votes": 134,
+      "total_votes": 60481,
+      "margin_pp": 16.479555562904054
+    },
+    {
+      "geography": "42017",
+      "geography_name": "Bucks County",
+      "democratic_votes": 158908,
+      "republican_votes": 142796,
+      "other_votes": 1082,
+      "total_votes": 302786,
+      "margin_pp": 5.321249991743343
+    },
+    {
+      "geography": "42091",
+      "geography_name": "Montgomery County",
+      "democratic_votes": 268823,
+      "republican_votes": 120367,
+      "other_votes": 711,
+      "total_votes": 389901,
+      "margin_pp": 38.075306295700706
+    }
+  ],
+  "states": 49,
+  "mapped_counties": 3063,
+  "colored_counties": 3053,
+  "total_candidate_votes": 103809380,
+  "pa_county_scope": "3 of 67; no statewide completion",
+  "native_boundary_reference_year": 2026,
+  "d_c_added": false,
+  "precinct_coverage_added": 0,
+  "archive_bytes": 149531275,
+  "archive_sha256": "85e228abdc6ebc5e2741196d441c973e4023d88b4dc50170d864d219ee4f788d",
+  "focused_tests": {
+    "passed": 19,
+    "command": "python -m pytest -q scripts/test-official-county-merge.py scripts/test-2026-refresh.py"
+  }
+}

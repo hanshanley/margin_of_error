@@ -22,6 +22,19 @@ Census shapes; four counties retain unsimplified native geometry because display
 simplification would produce invalid polygons. Full native shapes and complete
 candidate/source downloads remain unchanged.
 
+The active county-map batch independently joins the already reviewed official
+Monroe, Bucks and Montgomery reports to their exact 2026 Census county identities
+(42089, 42017 and 42091). The merged candidate snapshot retains all 3,060
+previous county vectors and adds 753,168 candidate votes: 49 state scopes,
+3,063 counties and 3,053 colorable counties. Pennsylvania remains only 3 of 67
+counties; uncovered counties retain state fallback. Provider Pennsylvania test
+data remains excluded, and D.C. delegate/RCV counts remain download-only.
+Full literal-party and county/district candidate tables are extended without
+inventing complete Pennsylvania state or district totals. This batch is not
+live until its immutable release, full local map suite and exact deployment
+checks pass. Review evidence is being recorded under
+`data/county-source-reviews/20261105-official-pa-map-01/`.
+
 The reusable 2026 county-results and separate UF/state participation pipelines
 are implemented and published. Both passed real acquisition and original-backed
 release verification. Fresh county snapshot `20261105T155645Z` updates three

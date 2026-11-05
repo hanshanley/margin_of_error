@@ -83,11 +83,17 @@ def county_candidate(work, previous, replay_source=None):
         command(sys.executable, SCRIPTS / "acquire-house-county-results.py",
                 "--national-source", national, "--output", provider)
     output, archive = work / "reviewed", work / "complete-county-results.zip"
+    official = previous.get("official_supplement", False)
+    review_archive = work / "provider-county-results.zip" if official else archive
     with (work / "county-review.log").open("w") as log:
         command(sys.executable, SCRIPTS / "review-house-county-results.py",
                 "--source-cache", provider, "--reference-cache", reference,
-                "--state-codes", old / "state-codes.json", "--output", output, "--archive", archive, "--map",
+                "--state-codes", old / "state-codes.json", "--output", output, "--archive", review_archive, "--map",
                 stdout=log)
+    if official:
+        supplement = load("merge-official-county-results")
+        supplement.merge(output, reference)
+        supplement.archive(output, archive)
     validate_county_coverage(read(old / "index.json"), read(output / "index.json"),
                             read(old / "margins.json"), read(output / "margins.json"))
     load("build-county-overview").build(output, work / "county-overview.geojson.gz")
@@ -195,6 +201,8 @@ def publish(kind, output, archive, work, run_id, previous):
                        publication="reviewed_pending_live_verification",
                        previous_snapshots=[{k: v for k, v in previous.items() if k != "previous_snapshots"},
                                            *previous.get("previous_snapshots", [])])
+        if index.get("official_supplement"):
+            pointer["official_supplement"] = index["official_supplement"]
         labels = {"county-party-totals.csv.gz": "Every county-party total",
                   "county-district-candidate-totals.csv.gz": "Every county/district candidate",
                   "state-party-totals.csv.gz": "Every full-state party total",
