@@ -112,7 +112,7 @@
     "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-virginia-maps-20261105-02/complete-virginia-2026-supported-precinct-maps-02.zip",
     "complete_download_bytes": 83374714,
     "complete_download_sha256": "f829118617e54ff12f4680b4d2758cd03d2a08fd8162bb90597d902ab81fb788",
-    "publication": "snapshot_ready",
+    "publication": "live_verified_partial",
     "participation_available": true,
     "source_documents": [
       {"file": "reference-geometry-audit.json", "label": "Virginia complete native-fragment audit, literal identities, overlaps and all withheld precincts (JSON)"},

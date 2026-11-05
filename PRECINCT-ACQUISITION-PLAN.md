@@ -3368,13 +3368,90 @@ switches, state fallback and no overflow. Proofs:
 `files/virginia-supported-precinct-local-browser-proof-02.json`,
 `files/virginia-supported-precinct-local-downloads-proof-02.json`.
 
-**Next executable actions:** push the validated UI as Hans and verify its exact
-successful production deployment, unqueried metadata and actual map/download
-browser checks before a live flag. Then continue the next 2026 jurisdiction;
-do not repeat the finished count-only suite as a substitute.
+Hans UI commit **`a92b2eef7f87bba5d1c10b90c44a86b4a0fe2714`** is pushed.
+Its exact deployment **42020447353** succeeded; unqueried production metadata
+matches the commit. All four desktop/mobile by JavaScript/no-JavaScript modes
+pass **73 complete-data links and seven whole CSV endpoints**. The production
+map suite independently passes all **710** exact precinct counts/margins/fills,
+all **133** county background colors, the Pennsylvania state fallback, native
+ballot/registration details with withheld rates, actual feature fit, buttons,
+wheel, post-fit double-click, two-pointer mobile pinch and year switches.
+Proofs: `files/virginia-supported-precinct-ui-02-deployment-01.json`,
+`files/virginia-supported-precinct-ui-02-live-browser-proof-01.json`,
+`files/virginia-supported-precinct-live-browser-proof-02.json`.
+The registry now marks the mapped subset `live_verified_partial`; only VA2026
+changes to `published_partial` in the worklist, with all 1,632 cells incomplete.
+Do not rerun this finished map or count-only production suite as a substitute
+for new acquisition.
+
+**Next executable actions:** continue the next 2026 jurisdiction.
 Preserve all source fragments, unmatched identities and exclusions. Approve only
 explicitly supported scopes; do not repair the earlier export, allocate missing
 county modes to precincts, borrow older geometry or mark the VA2026 cell complete.
+
+## Oklahoma 2026: official export portal access observations
+
+The official November 3 general-election page explicitly declares
+`https://results.okelections.us/OKER/?elecDate=20261103`; do not substitute a
+guessed hostname or guessed API. The complete **134,096-byte** agency page and
+its navigation are preserved in session `files/precinct-expansion-sources/OK-2026-native-01/`.
+The declared portal returned HTTP **403** to both ordinary HTTP (**118 bytes**)
+and ordinary public Chromium (**520 bytes**). Both original response bodies,
+URLs, statuses, sizes and decompressed SHA-256 receipts are retained; no access
+challenge was bypassed. These are access observations, not proof that data do
+not exist.
+
+Followed the real Oklahoma County election-board page (**2,715,111 bytes**),
+Tulsa County homepage (**26,390 bytes**), its declared election-board page
+(**24,420 bytes**) and actual election-results page (**18,747 bytes**).
+Oklahoma County's "Election Returns" points to the state elections homepage.
+Tulsa's results page advertises the official state 2026, 2025 and 2024 indexes,
+not an independent county precinct export. No new counts, turnout rates,
+boundaries or mapped precincts are approved from these HTML/access receipts.
+Preserve the prior county/state coloring and keep the OK2026 cell incomplete.
+
+**Next executable actions:** seek independent official county statements or
+an accessible agency-published export, without bypasses or invented endpoints.
+Do not repeatedly request the denied portal; continue other 2026 jurisdictions
+while this access gap remains.
+
+## Alabama and Arkansas 2026: new native acquisitions in progress
+
+Alabama's actual official results URL is
+`https://www2.alabamavotes.gov/electionNight/statewideResultsByContest.aspx?ecode=1001305`.
+Its **111,462-byte** original explicitly advertises an ASP.NET
+`hlnkExportData` postback, not a guessed static file. Submitting that public form
+returned the full **263,261-byte** `sosEnrExport.xlsx`, decompressed-original
+SHA-256 `cdbde2527f3f232c82565e900b34d544bc81b3d553e4d8aac9c454057c4f3d60`.
+`AllResults` has **5,613 county-level candidate rows across all 67 counties**,
+all explicitly labeled election `1001305`, `2026 GENERAL ELECTION`.
+The separate `Statistics` sheet has **67** nonempty county observations totaling
+**1,693,621 ballots**, followed by formatted blank rows; these blanks are not
+zero observations. It has no registered-voter column. All originals/receipts
+are in `files/precinct-expansion-sources/AL-2026-native-01/`.
+The actual county selector supplies all 67 county URLs. Validate the workbook,
+independent county/state summaries and native county identifiers before any
+portable review/publication; county rows are not precinct results or group rates.
+
+Arkansas's official results index explicitly links the actual public application
+`https://arkansas.tally-enr.com/#bucket=results&filter=Federal&contest=eafd140a-9378-43a2-bd6d-f8661524139b`.
+Ordinary browser navigation confirms **November 3, 2026**, unofficial election
+**`11b07106-031e-4d7c-911a-d01fb473d6dd`**, version **`v173`**. Actual browser
+requests expose full election metadata, separate native turnout, federal contest
+results, contest search, GIS manifest and county geometry. The actual Download
+menu offers **Full Election**, **Current View**, **Selected Contest**, each in
+CSV or JSON; acquire the full native election, not just the visible federal cards.
+The GIS manifest declares precinct ID **`PPartID`** and label **`PPartName`**;
+its March 9, 2026 generation date alone does not certify election-day geometry.
+Complete captured originals and receipts are in
+`files/precinct-expansion-sources/AR-2026-native-01/`.
+
+**Next executable actions:** finish the full Arkansas CSV/JSON downloads through
+the actual public UI, inspect their native reporting-unit scope, reconcile
+precinct candidate vectors and separate turnout against official parents, and
+follow actual precinct geometry declarations. Finish Alabama's complete count
+review and original county summaries. No maps, rates, crosswalks, ledger
+completion or new live coverage are claimed by these acquisition observations.
 
 ## Resume procedure for every work session or scheduled prompt
 

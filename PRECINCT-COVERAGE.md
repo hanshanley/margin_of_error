@@ -72,7 +72,7 @@ Checkmarks are reserved for verified, complete live coverage.
 | [ ] | Tennessee | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Texas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Utah | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Virginia | acquired | reference_acquired | validated_partial | passed | snapshot_ready | native_precinct_counts_and_registration_rates_withheld |
+| [ ] | Virginia | acquired | reference_acquired | validated_partial | passed | published_partial | native_precinct_counts_and_registration_rates_withheld |
 | [ ] | Vermont | acquired | reference_acquired | validated_partial | passed | published_partial | acquired_municipal_counts_and_provisional_rates |
 | [ ] | Washington | acquired | reference_acquired | validated_partial | passed | published_partial | not_acquired |
 | [ ] | Wisconsin | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
