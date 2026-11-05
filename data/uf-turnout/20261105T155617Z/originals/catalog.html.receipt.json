@@ -1,0 +1,12 @@
+{
+  "file": "originals/catalog.html",
+  "url": "https://election.lab.ufl.edu/data-archive/national/",
+  "status": 200,
+  "bytes": 71574,
+  "sha256": "ea9562a7c0991815b3db4b3321bda35d4b4fbb39ed6bff61508ceb9889b81f2f",
+  "retrieved_at": "2026-11-05T15:56:18.128526+00:00",
+  "headers": {
+    "Date": "Thu, 05 Nov 2026 15:56:17 GMT",
+    "Content-Type": "text/html; charset=UTF-8"
+  }
+}
