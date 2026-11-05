@@ -26,6 +26,82 @@ precinct_coverage = module("build-precinct-coverage")
 additional_precincts = module("build-additional-precinct-results")
 historical_sources = module("acquire-historical-precinct-sources")
 nd_review = module("review-north-dakota-precinct-results")
+nd_maps = module("build-north-dakota-precinct-results")
+
+
+def nd_boundary_fixture():
+    def part(object_id, west):
+        return dict(attributes=dict(OBJECTID=object_id, CountyID=38001, CountyName="Adams",
+                                    Precinct="013901", PPartID="0139010" + str(object_id)),
+                    geometry=dict(rings=[[[west, 46], [west, 47], [west + 1, 47],
+                                          [west + 1, 46], [west, 46]]]))
+    return dict(geometryType="esriGeometryPolygon", spatialReference=dict(wkid=4326),
+                features=[part(1, -103), part(2, -102)])
+
+
+def test_nd_maps_dissolve_splits_without_duplicating_votes_or_inventing_turnout():
+    rows, stats = nd_review.nd_results(*nd_fixture())
+    mapped, audit = nd_maps.mapped_precincts(rows, stats, nd_boundary_fixture())
+    assert len(mapped) == 1 and mapped[0]["properties"]["contest_votes"] == 100
+    assert nd_maps.shape(mapped[0]["geometry"]).area == pytest.approx(2)
+    assert mapped[0]["properties"]["source_object_ids"] == [1, 2]
+    assert mapped[0]["properties"]["participation"]["denominator"] is None
+    assert audit["counties"]["38001"]["exact"]
+
+
+def test_nd_maps_withhold_whole_counties_for_wrong_parent_or_reporting_sets():
+    rows, stats = nd_review.nd_results(*nd_fixture())
+    for field, value in [("CountyID", 30859), ("Precinct", "01390")]:
+        boundary = nd_boundary_fixture()
+        boundary["features"][0]["attributes"][field] = value
+        mapped, audit = nd_maps.mapped_precincts(rows, stats, boundary)
+        assert mapped == [] and not audit["counties"]["38001"]["exact"]
+    boundary = nd_boundary_fixture()
+    boundary["features"].append(boundary["features"][0])
+    with pytest.raises(ValueError, match="Duplicate"):
+        nd_maps.mapped_precincts(rows, stats, boundary)
+    boundary["exceededTransferLimit"] = True
+    with pytest.raises(ValueError, match="Incomplete"):
+        nd_maps.mapped_precincts(rows, stats, boundary)
+
+
+def test_nd_native_ring_roles_keep_holes_and_reject_substantive_repairs():
+    outer = [[-103, 46], [-103, 48], [-101, 48], [-101, 46], [-103, 46]]
+    hole = [[-102.5, 46.5], [-101.5, 46.5], [-101.5, 47.5], [-102.5, 47.5], [-102.5, 46.5]]
+    polygon, repair = nd_maps.esri_polygon([outer, hole])
+    assert polygon.area == pytest.approx(3) and repair is None
+    with pytest.raises(ValueError, match="changes polygon area"):
+        nd_maps.esri_polygon([[[-103, 46], [-101, 48], [-103, 48], [-101, 46], [-103, 46]]])
+
+
+def test_nd_maps_withhold_counties_with_overlapping_reporting_units():
+    rows, stats = nd_review.nd_results(*nd_fixture())
+    rows.append(dict(rows[0], key="ND|38001|3902", precinct="3902"))
+    stats.append(dict(stats[0], key="ND|38001|3902", precinct="3902", precinct_name="013902"))
+    boundary = nd_boundary_fixture()
+    boundary["features"][1]["attributes"]["Precinct"] = "013902"
+    boundary["features"][1]["geometry"] = boundary["features"][0]["geometry"]
+    mapped, audit = nd_maps.mapped_precincts(rows, stats, boundary)
+    assert mapped == [] and not audit["counties"]["38001"]["exact"]
+    assert len(audit["source_cross_precinct_overlaps"]) == 1
+
+
+def test_nd_maps_mask_ambiguous_strips_without_reallocating_votes():
+    rows, stats = nd_review.nd_results(*nd_fixture())
+    rows.append(dict(rows[0], key="ND|38001|3902", precinct="3902"))
+    stats.append(dict(stats[0], key="ND|38001|3902", precinct="3902", precinct_name="013902"))
+    boundary = nd_boundary_fixture()
+    boundary["features"][1]["attributes"]["Precinct"] = "013902"
+    boundary["features"][1]["geometry"]["rings"] = [
+        [[-102.5, 46], [-102.5, 47], [-101.5, 47], [-101.5, 46], [-102.5, 46]]]
+    mapped, audit = nd_maps.mapped_precincts(rows, stats, boundary)
+    assert len(mapped) == 2 and len(audit["masked_reporting_units"]) == 2
+    polygons = [nd_maps.shape(f["geometry"]) for f in mapped]
+    assert sum(p.area for p in polygons) == pytest.approx(1)
+    assert polygons[0].intersection(polygons[1]).area == 0
+    assert [f["properties"]["contest_votes"] for f in mapped] == [100, 100]
+    assert all("Counts still describe the entire reporting unit" in f["properties"]["boundary_provenance"]
+               for f in mapped)
 
 
 def nd_fixture():
