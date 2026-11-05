@@ -1,0 +1,42 @@
+{
+  "year": 2026,
+  "state_code": "ND",
+  "candidate_results": "acquired_reconciled",
+  "boundaries": "reference_crosswalk_pending",
+  "join": "withheld",
+  "validation": "counts_passed_map_withheld",
+  "publication": "full_counts_download_only",
+  "participation": "acquired_precinct_ballot_counts",
+  "complete": "no",
+  "reporting_units": 358,
+  "counties": 53,
+  "source_url": "https://resultsnd.sos.nd.gov/results/north-dakota/348/FullDataFile.json",
+  "sources": {
+    "election.json": "https://api.resultsnd.sos.nd.gov/Election/GetElectionInfo?cId=north-dakota",
+    "configuration.json": "https://api.resultsnd.sos.nd.gov/Election/GetElectionConfig?cId=north-dakota&electionID=348",
+    "turnout.json": "https://api.resultsnd.sos.nd.gov/Turnout/GetTurnout?cId=north-dakota&electionID=348",
+    "manifest.json": "https://resultsnd.sos.nd.gov/gis/states/north-dakota/manifest.json",
+    "counties.json": "https://resultsnd.sos.nd.gov/gis/states/north-dakota/counties.json",
+    "38001-precincts.json": "https://resultsnd.sos.nd.gov/gis/states/north-dakota/counties-precincts/38001-precincts.json",
+    "full-results.json": "https://resultsnd.sos.nd.gov/results/north-dakota/348/FullDataFile.json"
+  },
+  "boundary_source": "https://resultsnd.sos.nd.gov/gis/states/north-dakota/manifest.json",
+  "boundary_sample_county": "38001",
+  "boundary_features": 5,
+  "boundary_sample_reporting_units": 1,
+  "boundary_vintage": "2026-03-09T19:40:04.188622+00:00",
+  "election_version": "v75",
+  "source_updated": "2026-11-05T01:30:08.5674284Z",
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-north-dakota-20261105/complete-north-dakota-precinct-source-review.zip",
+  "candidate_totals": {
+    "democratic_votes": 85892,
+    "republican_votes": 134477,
+    "other_votes": 14226,
+    "contest_votes": 234595
+  },
+  "ballots": 239057,
+  "rates_withheld": 358,
+  "candidate_ballot_discrepancies": 0,
+  "notes": "All 358 House candidate and ballot rows reconcile to all 53 counties and statewide totals. Candidate totals are not turnout. Separate precinct ballot counts have no electorate denominator; all rates are withheld. The official explanatory page defines eligible voters as estimated residents age 18+, despite the API's registeredVoters field name. The official current-portal GIS manifest is dated March 2026, but its sampled Adams County file has five split polygons with UUID boundary IDs for one reporting unit. Only this county was sampled; no statewide boundary review or documented split-to-reporting-unit crosswalk is claimed. No geometry is mapped and no counts are allocated. The complete ZIP includes the full all-contest original JSON, normalized House and ballot rows, the original API captures, GIS manifest, county reference and sampled split boundaries.",
+  "next_action": "Acquire all county-sharded precinct geometry and an official split/reporting-unit crosswalk; validate correct-election reporting scopes and polygon unions before mapping. Seek precinct electorate denominators separately."
+}

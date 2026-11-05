@@ -25,6 +25,81 @@ precinct_results = module("build-precinct-results")
 precinct_coverage = module("build-precinct-coverage")
 additional_precincts = module("build-additional-precinct-results")
 historical_sources = module("acquire-historical-precinct-sources")
+nd_review = module("review-north-dakota-precinct-results")
+
+
+def nd_fixture():
+    choices = [dict(Name=name, PartyID=party, TotalVotes=votes,
+                    Votes=[dict(VoteTypeID="1", Votes=votes)])
+               for name, party, votes in [("A", "DEM", 70), ("B", "REP", 30), ("write-in", "NON", 0)]]
+    precinct = dict(LocationID="3901", LocationName="013901", TotalVotes=100, Choices=choices)
+    county = dict(LocationID="38001", LocationName="Adams", TotalVotes=100,
+                  Choices=choices, Locations={"3901": precinct})
+    house = dict(ContestID="22055", ContestName="Representative in Congress",
+                 TotalVotes=100, Choices=choices, TotalPrecincts=1, PrecinctsReporting=1,
+                 Locations={"38001": county})
+    ballot = dict(LocationID="3901", TotalBallotsCast=110,
+                  BallotsCast=[dict(VoteTypeID="1", BallotsCast=110)])
+    county_ballot = dict(ballot, LocationID="38001", Locations={"3901": ballot})
+    turnout = dict(ballot, TotalPrecincts=1, PrecinctsReporting=1, Locations={"38001": county_ballot})
+    source = dict(ElectionData=dict(ElectionID="348", IsOfficial=False),
+                  TurnoutData=turnout, ContestData=[house])
+    identity = dict(electionID="348", isOfficial=False, turnout=dict(totalBallotsCast=110),
+                    response=dict(id="348", name="2026 General Election", date="2026-11-03T00:00:00",
+                                  parties={"DEM": {}, "REP": {}, "NON": {}}))
+    return json.loads(json.dumps(source)), identity
+
+
+def test_nd_counts_reconcile_without_relabeling_candidate_votes_or_borrowing_denominators():
+    source, identity = nd_fixture()
+    rows, participation = nd_review.nd_results(source, identity)
+    assert rows[0]["contest_votes"] == 100 and rows[0]["margin_pp"] == 40
+    assert participation[0]["ballots"] == 110
+    assert participation[0]["denominator"] is None and participation[0]["reported_pct"] is None
+    precinct = source["ContestData"][0]["Locations"]["38001"]["Locations"]["3901"]
+    precinct["Choices"][0]["TotalVotes"] = precinct["Choices"][0]["Votes"][0]["Votes"] = 71
+    precinct["TotalVotes"] = 101
+    with pytest.raises(ValueError, match="counts do not reconcile"):
+        nd_review.nd_results(source, identity)
+
+
+def test_nd_explicit_zero_buckets_are_not_missing_counts_and_inconsistent_modes_are_rejected():
+    source, _ = nd_fixture()
+    house = source["ContestData"][0]
+    zero = house["Choices"][-1]
+    del zero["TotalVotes"]
+    assert nd_review.candidate_totals(house)[("write-in", "NON")] == 0
+    del zero["Votes"][0]["Votes"]
+    with pytest.raises(ValueError, match="do not substitute zero"):
+        nd_review.candidate_totals(house)
+    source, identity = nd_fixture()
+    source["ContestData"][0]["Choices"][0]["Votes"].append(dict(VoteTypeID="2", Votes=70))
+    with pytest.raises(ValueError, match="one explicit All"):
+        nd_review.nd_results(source, identity)
+    source, identity = nd_fixture()
+    identity["response"]["date"] = "2024-11-05T00:00:00"
+    with pytest.raises(ValueError, match="election identity"):
+        nd_review.nd_results(source, identity)
+
+
+def test_source_review_accepts_manifest_provenance_without_claiming_mapped_participation(tmp_path, monkeypatch):
+    states = tmp_path / "public/voter-participation/data"
+    states.mkdir(parents=True)
+    (states / "states.geojson").write_text(
+        (precinct_coverage.ROOT / "public/voter-participation/data/states.geojson").read_text())
+    review = dict(year=2026, state_code="ND", candidate_results="acquired_reconciled",
+                  boundaries="reference_crosswalk_pending", join="withheld",
+                  validation="counts_passed_map_withheld", publication="full_counts_download_only",
+                  participation="acquired_precinct_ballot_counts", next_action="Review polygon splits",
+                  source_url="full-results.json", boundary_source="manifest.json",
+                  notes="Counts only", complete_download_url="full.zip")
+    (tmp_path / "review.json").write_text(json.dumps(review))
+    (tmp_path / "public/precinct-results.json").write_text(json.dumps({"source_reviews": ["review.json"]}))
+    monkeypatch.setattr(precinct_coverage, "ROOT", tmp_path)
+    row = next(r for r in precinct_coverage.build_rows() if r["year"] == 2026 and r["state_code"] == "ND")
+    assert row["publication"] == "full_counts_download_only" and row["join"] == "withheld"
+    assert row["participation"] == "acquired_precinct_ballot_counts"
+    assert row["boundary_source"] == "manifest.json" and row["complete"] == "no"
 
 
 def test_historical_source_acquisition_requires_exact_reviewed_bytes_without_inventing_turnout():

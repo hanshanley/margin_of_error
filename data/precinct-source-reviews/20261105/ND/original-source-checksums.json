@@ -1,0 +1,37 @@
+{
+  "election.json": {
+    "url": "https://api.resultsnd.sos.nd.gov/Election/GetElectionInfo?cId=north-dakota",
+    "bytes": 159123,
+    "sha256": "c4c7d4d49ec2fcbb8356b3b25e10c61f26c30aad45443822c497c6bbe989af99"
+  },
+  "configuration.json": {
+    "url": "https://api.resultsnd.sos.nd.gov/Election/GetElectionConfig?cId=north-dakota&electionID=348",
+    "bytes": 118,
+    "sha256": "96c5e6b57eaaad21164b0819de7b92bd023f48a3f9aa5dac07990620b1a32bdb"
+  },
+  "turnout.json": {
+    "url": "https://api.resultsnd.sos.nd.gov/Turnout/GetTurnout?cId=north-dakota&electionID=348",
+    "bytes": 17446,
+    "sha256": "fe1e4b380824b0d7930d68621054cf171368466e485691163b220604ebe5ac2f"
+  },
+  "manifest.json": {
+    "url": "https://resultsnd.sos.nd.gov/gis/states/north-dakota/manifest.json",
+    "bytes": 655,
+    "sha256": "285985e1db53aacce5a430a9d5df785bf63ed898c0e275bfc2d71b18f9dd3faa"
+  },
+  "counties.json": {
+    "url": "https://resultsnd.sos.nd.gov/gis/states/north-dakota/counties.json",
+    "bytes": 19513366,
+    "sha256": "e13ed6f53664e83cf4d0656fc65d9f8bc53d9a7af30417e8ea24b59245414d8a"
+  },
+  "38001-precincts.json": {
+    "url": "https://resultsnd.sos.nd.gov/gis/states/north-dakota/counties-precincts/38001-precincts.json",
+    "bytes": 60464,
+    "sha256": "bcc889ebe6a6fe576813e0cfa8c10418533c87112bdb586d82a985c160c08909"
+  },
+  "full-results.json": {
+    "url": "https://resultsnd.sos.nd.gov/results/north-dakota/348/FullDataFile.json",
+    "bytes": 5779260,
+    "sha256": "db08609d12a579ea2f3d140c951512455c04e78170f7c31276f34a54cf33d30a"
+  }
+}
