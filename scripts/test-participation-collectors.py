@@ -45,6 +45,68 @@ mo_christian = module("review-missouri-christian-precinct-results")
 clark_originals = module("archive-clark-historical-sources")
 dc_maps = module("build-dc-precinct-results")
 boston_maps = module("build-boston-precinct-results")
+worcester_review = module("review-worcester-precinct-results")
+
+
+def worcester_reading_fixture():
+    precincts = [f"{ward}-{precinct}" for ward in range(1, 11) for precinct in range(1, 7)]
+    for code in ("4-2A", "7-5A"):
+        precincts.insert(precincts.index(code[:-1]) + 1, code)
+    entries = []
+    for first, factor in ((15, 6), (27, 1), (39, 2), (51, 3)):
+        for offset, count in ((0, 38), (1, 25)):
+            for row in range(1, count + 1):
+                for column in range(1, 6):
+                    value = factor * column
+                    if offset == 1 and row == 24:
+                        value = 0
+                    elif offset == 1 and row == 25:
+                        value *= 61
+                    entries.append(dict(file=f"page-{first + offset:03}-row-{row:03}-col-{column}.png",
+                                        result=[[str(value), 1.0]]))
+    return entries, precincts
+
+
+def test_worcester_complete_source_groups_preserve_split_precincts_and_printed_zeros():
+    entries, precincts = worcester_reading_fixture()
+    values, footers = worcester_review.reconcile_counts(entries, {}, precincts)
+    assert values["overall"]["4-2A"] == [6, 12, 18, 24, 30]
+    assert values["overall"]["7-5A"] == [6, 12, 18, 24, 30]
+    assert values["overall"]["10-6"] == [0] * 5
+    assert footers["overall"] == [61 * n for n in [6, 12, 18, 24, 30]]
+
+
+@pytest.mark.parametrize("result", [None, [], [["1l", .99]], [["", 1]], [["-1", 1]],
+                                   [["1.5", 1]], [["1", 1], ["2", 1]]])
+def test_worcester_missing_or_ambiguous_ocr_is_never_zero_or_repaired(result):
+    entries, precincts = worcester_reading_fixture()
+    entries[0]["result"] = result
+    with pytest.raises(ValueError, match="Missing or ambiguous"):
+        worcester_review.reconcile_counts(entries, {}, precincts)
+    values, _ = worcester_review.reconcile_counts(entries, {entries[0]["file"]: 6}, precincts)
+    assert values["overall"]["1-1"][0] == 6
+
+
+@pytest.mark.parametrize("change", ["duplicate", "missing", "footer", "mode", "identity", "review"])
+def test_worcester_rejects_incomplete_inventory_bad_footers_and_mode_disagreement(change):
+    entries, precincts = worcester_reading_fixture()
+    manual = {}
+    if change == "duplicate":
+        entries[-1] = entries[0]
+    elif change == "missing":
+        entries.pop()
+    elif change == "footer":
+        entries[-1]["result"][0][0] = "9999"
+    elif change == "mode":
+        for name in ("page-027-row-001-col-1.png", "page-028-row-025-col-1.png"):
+            entry = next(entry for entry in entries if entry["file"] == name)
+            entry["result"][0][0] = str(int(entry["result"][0][0]) + 1)
+    elif change == "identity":
+        precincts[-1] = precincts[0]
+    else:
+        manual["page-999-row-001-col-1.png"] = 0
+    with pytest.raises(ValueError):
+        worcester_review.reconcile_counts(entries, manual, precincts)
 
 
 def boston_page_fixture(columns=None):

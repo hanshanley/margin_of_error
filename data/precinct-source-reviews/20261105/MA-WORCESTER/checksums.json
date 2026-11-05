@@ -1,0 +1,22 @@
+{
+  "audit.json": {
+    "bytes": 11209,
+    "sha256": "ec22c529b7734c99379c832232c5f6b4e4f28c0a5cce5c745413c8f2488b2f30"
+  },
+  "complete-inputs.tar.gz": {
+    "bytes": 80875119,
+    "sha256": "e1186dad094cae15906cc744366f59fc03c57edd65549cb7f9f1a3aa043a069b"
+  },
+  "inputs.json.gz": {
+    "bytes": 138315,
+    "sha256": "d494f78f5882237b61b51359ff124661602850f99631c872577ee0baa7db367a"
+  },
+  "results.csv.gz": {
+    "bytes": 5638,
+    "sha256": "a283a82eef8b83deaac933b8d88f42c27e2c6f97b0328df7cc3d76ef49e78224"
+  },
+  "review-worcester-precinct-results.py": {
+    "bytes": 16036,
+    "sha256": "4207fcc0021478293635aec738f9d38b1323e1cf018e94b5a8acaab339c1932f"
+  }
+}

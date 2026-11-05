@@ -1,0 +1,228 @@
+{
+  "year": 2026,
+  "state_code": "MA",
+  "municipality": "Worcester",
+  "office": "Governor and lieutenant governor",
+  "complete": "no",
+  "candidate_results": "acquired_reconciled_city_subset",
+  "boundaries": "correct_election_reference_pending",
+  "join": "withheld",
+  "validation": "counts_passed_map_withheld",
+  "publication": "full_counts_download_only",
+  "participation": "not_inferred_from_contest_counts",
+  "reporting_units": 62,
+  "reporting_groups": 4,
+  "result_rows": 248,
+  "source_count_cells": 1260,
+  "source_pages": 60,
+  "governor_panels": [
+    15,
+    16,
+    27,
+    28,
+    39,
+    40,
+    51,
+    52
+  ],
+  "visually_reviewed_unknown_or_conflicting_cells": 35,
+  "original_pdf_and_crop_pixels_reproduced": true,
+  "candidate_footers": {
+    "overall": [
+      31811,
+      13750,
+      2038,
+      69,
+      662
+    ],
+    "election_day": [
+      20054,
+      10344,
+      1415,
+      51,
+      441
+    ],
+    "early_voting_1": [
+      6547,
+      1837,
+      319,
+      12,
+      120
+    ],
+    "early_voting_2": [
+      5210,
+      1569,
+      304,
+      6,
+      101
+    ]
+  },
+  "original_source_captures": 17,
+  "original_source_bytes": 39195208,
+  "original_source_receipts": {
+    "official-boston-three-card-state-election-instructions.html": {
+      "url": "https://content.boston.gov/news/ready-vote-heres-how-cast-your-3-ballot-cards",
+      "resolved_url": "https://content.boston.gov/news/ready-vote-heres-how-cast-your-3-ballot-cards",
+      "status": 503,
+      "content_type": "text/html",
+      "bytes": 535,
+      "sha256": "2e7f5b4cc0590f6fff266da49210e9530ce4c9b780a315cf40643dea47fb0ec6",
+      "retrieved_at": "2026-11-05T07:19:50.185766+00:00"
+    },
+    "official-state-multiple-card-ballot-advisory-26-10.pdf": {
+      "url": "https://www.sec.state.ma.us/divisions/elections/download/advisories/advisory-26-10.pdf",
+      "resolved_url": "https://www.sec.state.ma.us/divisions/elections/download/advisories/advisory-26-10.pdf",
+      "status": 403,
+      "content_type": "text/html",
+      "bytes": 883,
+      "sha256": "5db20eacc84ecb4df684dc974e94fd82de0780bb89180db91afb838d9332493c",
+      "retrieved_at": "2026-11-05T07:19:49.886764+00:00"
+    },
+    "official-worcester-declared-2026-general-results.pdf": {
+      "url": "https://www.worcesterma.gov/election-results/20261103.pdf",
+      "resolved_url": "https://www.worcesterma.gov/election-results/20261103.pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 1588318,
+      "sha256": "2e6a56d549da7fad167874a9b9599ad4434a1b9da5b574571e1742184c39a004",
+      "retrieved_at": "2026-11-05T06:52:55.710621+00:00"
+    },
+    "official-worcester-declared-complete-ward-precinct-map.pdf": {
+      "url": "https://www.worcesterma.gov/elections/document-center/wp_all.pdf",
+      "resolved_url": "https://www.worcesterma.gov/elections/document-center/wp_all.pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 11798024,
+      "sha256": "227fed520dec7dbade0138e17f1956b25b96afa72bb54fe1cce6e02288ad2a4a",
+      "retrieved_at": "2026-11-05T07:41:05.664788+00:00"
+    },
+    "official-worcester-declared-current-gis-experience-data.json": {
+      "url": "https://www.arcgis.com/sharing/rest/content/items/503920c4ab1b4404bee9dce73114538d/data?f=json",
+      "resolved_url": "https://www.arcgis.com/sharing/rest/content/items/503920c4ab1b4404bee9dce73114538d/data?f=json",
+      "status": 200,
+      "content_type": "application/json;charset=utf-8",
+      "bytes": 157368,
+      "sha256": "743192606ef705677a586315c79fd216324c711a5ee0b8b7f74cb34fd8c4e0a0",
+      "retrieved_at": "2026-11-05T07:41:06.906565+00:00"
+    },
+    "official-worcester-declared-current-gis-experience-item.json": {
+      "url": "https://www.arcgis.com/sharing/rest/content/items/503920c4ab1b4404bee9dce73114538d?f=json",
+      "resolved_url": "https://www.arcgis.com/sharing/rest/content/items/503920c4ab1b4404bee9dce73114538d?f=json",
+      "status": 200,
+      "content_type": "application/json;charset=utf-8",
+      "bytes": 3062,
+      "sha256": "1ffa970968562473cee360f1cf76ce08966ea80ca58666e512b22966b920fd06",
+      "retrieved_at": "2026-11-05T07:41:06.799883+00:00"
+    },
+    "official-worcester-declared-elections-page.html": {
+      "url": "https://www.worcesterma.gov/elections",
+      "resolved_url": "https://www.worcesterma.gov/elections",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 90608,
+      "sha256": "e1dbc23236038fe36cc56db20bfed7cfd8b8ae3bfdcaf928581ff013b812d21f",
+      "retrieved_at": "2026-11-05T07:34:04.456932+00:00"
+    },
+    "official-worcester-declared-house-district-ward-precinct-map.pdf": {
+      "url": "https://www.worcesterma.gov/elections/document-center/state-representative-districts.pdf",
+      "resolved_url": "https://www.worcesterma.gov/elections/document-center/state-representative-districts.pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 9943179,
+      "sha256": "2fd1f4c38fc83aa8c8109030bc2fc82e7bae3654284b6d6b6402735f82f3fe4a",
+      "retrieved_at": "2026-11-05T07:41:06.129425+00:00"
+    },
+    "official-worcester-declared-november-2026-voter-guide.pdf": {
+      "url": "https://www.worcesterma.gov/elections/document-center/2026-state-election-guide.pdf",
+      "resolved_url": "https://www.worcesterma.gov/elections/document-center/2026-state-election-guide.pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 291952,
+      "sha256": "299e802defcd6b5ff8ba657fcf1ead58000a506eb5513c7362845fef11a19e58",
+      "retrieved_at": "2026-11-05T07:19:49.811983+00:00"
+    },
+    "official-worcester-declared-precinct-experience.html": {
+      "url": "https://experience.arcgis.com/experience/c1bfa1552cd34985b53d4ba5bcb5b56d",
+      "resolved_url": "https://experience.arcgis.com/experience/c1bfa1552cd34985b53d4ba5bcb5b56d",
+      "status": 200,
+      "content_type": "text/html",
+      "bytes": 5433,
+      "sha256": "d183d08124a3215b7d102a980bd27ab2d198233375ce2b9d085ee37511f9a184",
+      "retrieved_at": "2026-11-05T07:34:30.670997+00:00"
+    },
+    "official-worcester-declared-senate-district-ward-precinct-map.pdf": {
+      "url": "https://www.worcesterma.gov/elections/document-center/state-senate-districts.pdf",
+      "resolved_url": "https://www.worcesterma.gov/elections/document-center/state-senate-districts.pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 14760104,
+      "sha256": "9d61874f92769cc9ffe15edbac03cc77ba335b133fc4244e35569227ded1bff1",
+      "retrieved_at": "2026-11-05T07:41:06.710885+00:00"
+    },
+    "official-worcester-district-ward-precinct-maps-index.html": {
+      "url": "https://www.worcesterma.gov/elections/candidates",
+      "resolved_url": "https://www.worcesterma.gov/elections/candidates",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 98432,
+      "sha256": "826abb6d35910efba7778d0ca804920ba5042674512d8427c358accbf53f49ab",
+      "retrieved_at": "2026-11-05T07:37:12.255875+00:00"
+    },
+    "official-worcester-online-gis-maps-index.html": {
+      "url": "https://www.worcesterma.gov/innovation-technology/gis/online-maps",
+      "resolved_url": "https://www.worcesterma.gov/innovation-technology/gis/online-maps",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 78798,
+      "sha256": "905735db848f23dde870e07feb321135b99542c0bc14a8e082da1cb029d2360f",
+      "retrieved_at": "2026-11-05T07:37:12.584493+00:00"
+    },
+    "official-worcester-precinct-experience-data.json": {
+      "url": "https://www.arcgis.com/sharing/rest/content/items/c1bfa1552cd34985b53d4ba5bcb5b56d/data?f=json",
+      "resolved_url": "https://www.arcgis.com/sharing/rest/content/items/c1bfa1552cd34985b53d4ba5bcb5b56d/data?f=json",
+      "status": 200,
+      "content_type": "application/json;charset=utf-8",
+      "bytes": 225066,
+      "sha256": "6c6b759a221435bec6b3536d9145e347d7faa69282d28b27844fc4998beea57f",
+      "retrieved_at": "2026-11-05T07:34:30.960311+00:00"
+    },
+    "official-worcester-precinct-experience-item.json": {
+      "url": "https://www.arcgis.com/sharing/rest/content/items/c1bfa1552cd34985b53d4ba5bcb5b56d?f=json",
+      "resolved_url": "https://www.arcgis.com/sharing/rest/content/items/c1bfa1552cd34985b53d4ba5bcb5b56d?f=json",
+      "status": 200,
+      "content_type": "application/json;charset=utf-8",
+      "bytes": 1349,
+      "sha256": "334c30555e62ebdee93d4d107567054809276f08c55c963bb627890808925364",
+      "retrieved_at": "2026-11-05T07:34:30.756009+00:00"
+    },
+    "official-worcester-results-index.html": {
+      "url": "https://www.worcesterma.gov/elections/election-results",
+      "resolved_url": "https://www.worcesterma.gov/elections/election-results",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 69813,
+      "sha256": "552af34b6b434cff59eb620c05a27b62f707e27c2cd18825c70ef58b02b178b4",
+      "retrieved_at": "2026-11-05T06:52:31.086958+00:00"
+    },
+    "official-worcester-your-vote-counts.html": {
+      "url": "https://www.worcesterma.gov/elections/your-vote-counts",
+      "resolved_url": "https://www.worcesterma.gov/elections/your-vote-counts",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 82284,
+      "sha256": "ba48d35912270da6eaba2701ed590eaa614b15fd1c0740a60eabe72835de0ba2",
+      "retrieved_at": "2026-11-05T07:19:49.523781+00:00"
+    }
+  },
+  "precinct_candidate_mode_relations_verified": 310,
+  "split_precincts_preserved": [
+    "4-2A",
+    "7-5A"
+  ],
+  "source_url": "https://www.worcesterma.gov/elections/election-results",
+  "source_pdf_url": "https://www.worcesterma.gov/election-results/20261103.pdf",
+  "source_pdf_sha256": "2e6a56d549da7fad167874a9b9599ad4434a1b9da5b574571e1742184c39a004",
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-worcester-counts-20261105/complete-worcester-2026-governor-count-review.zip",
+  "notes": "Worcester CITY ONLY, unofficial November 3, 2026 governor report: all 62 actual precinct identities and four reporting groups reconcile to their native candidate/write-in/blank footers, and all 310 precinct/candidate mode equations pass. The original 60-page PDF, native rasters, both local OCR readings, crop provenance and 35 explicit visual judgments are retained. Printed zeros are reviewed as zeros; missing OCR is never zero and letters are not deleted to obtain numbers. The city's declared election dashboard explicitly describes 2025 municipal results, not this election; it is not repurposed as 2026 geometry. The 144,608 ballot-counter / 120,952 registration anomaly remains unexplained and unused. No registration denominator, unique-voter count, turnout, demographic rate or map is inferred. Massachusetts statewide coverage remains incomplete.",
+  "next_action": "Obtain independently applicable 2026 precinct geometry and resolve split units before mapping; clarify actual ballot-card counter definitions. Preserve Boston's separate central-only mapped subset and do not replace it with a Worcester-only layer."
+}

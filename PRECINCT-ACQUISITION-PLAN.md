@@ -2026,13 +2026,14 @@ Worcester report has now been rasterized at 240 dpi and locally OCRed on **all
 Text alternatives, confidence, normalized bounds, native PDF/image/output/helper
 hashes and engine provenance are preserved. Structure: four three-page summary
 groups, followed by four twelve-page precinct SOV groups; overall, election day,
-early voting #1 and early voting #2. Counts remain **unverified**. Do not rerun
+early voting #1 and early voting #2. Governor counts are now independently
+reconciled as described below; the other contests remain unverified. Do not rerun
 unchanged OCR, discard alphabetic split precincts such as Ward 4 Precinct 2A,
 turn blank cells into zeros, or infer unique voters from ballot-style counters.
 The unexplained 144,608 / 120,952 ballot/registration anomaly remains unresolved.
-Only the actual first-page governor **ticket-party labels** have been visually
-checked and approved for Boston's identical statewide tickets, not any Worcester
-votes: Healey/Driscoll DEM, Minogue/Oliver REP, James/Kittredge IND.
+The actual first-page governor **ticket-party labels** are visually checked:
+Healey/Driscoll DEM, Minogue/Oliver REP, James/Kittredge IND. The separately
+reconciled Worcester governor counts do not approve any other contest.
 
 The actual official November 3 polling-locations page embeds Experience
 `30b1667d4997442795ae4096b825bc19`. Normal browser navigation acquired its
@@ -2123,22 +2124,115 @@ registry, ledger and unchanged renderer also match local bytes exactly:
 `files/boston-2026-ui-unqueried-production-proof.json`.
 Only after these checks is Boston marked **live_verified_partial**, with only
 the MA 2026 publication cell changing; all 1,632 cells remain incomplete.
-The final flag/ledger commit still needs exact deployment and production proof.
-Massachusetts is not complete; continue independent Worcester SOV reconciliation
-or another 2026 source during deployment.
+The final flag/ledger commit
+`aa45cd25515a530c690c40f386f8c9392790c833` also deployed successfully in exact
+Pages run **41987244820**. Final unqueried production bytes and all four browser
+configurations passed again:
+`files/boston-2026-final-exact-pages-run.json`,
+`files/boston-2026-final-unqueried-production-proof.json`, and
+`files/boston-2026-final-live-browser-proof.json`.
+Boston's bounded publication is complete; do not repeat this finished suite
+instead of acquiring new sources. Massachusetts and nationwide coverage remain
+incomplete.
 
 Worcester's actual governor SOV panels are now visually identified on PDF
 **15/16, 27/28, 39/40 and 51/52** for the four modes. The overall
 15/16 pair has **62 precincts**, preserving **4-2A and 7-5A**, with a native
 footer **31,811 DEM; 13,750 REP; 2,038 IND; 69 write-ins; 662 blanks**.
-These visibly read values are not yet approved count rows. Full-page OCR
-merges vertical numeric runs and misses cells, particularly in sparse early
-modes; strict completeness diagnostics reject those matrices. Next use bounded
-row/cell crops or a higher-resolution second reading for these eight actual
-panels, not guessed zeros or repeating all 60 pages unchanged. Independently
-reconcile all 62 identities, every candidate/footer and overall=ED+early1+early2.
-Clarify ballot-card/style definitions through actual documentation before any
-unique-person fraction; acquire applicable reference before mapping Worcester.
+Full-page OCR merged vertical numeric runs and missed cells, particularly in
+sparse early modes; those incomplete matrices were rejected, not repaired.
+
+### Worcester governor count review: complete package verified; publication pending
+
+The bounded second reading is now complete. Independently detected actual source
+grid borders yielded **1,260** candidate/write-in/blank cells. Every original
+eight-panel raster is pixel-identical to a fresh 240-dpi render of the complete
+PDF. The canonical parser also reproduces every parent crop from original PDF
+pixels and every tightened crop from unchanged parent grayscale pixels.
+Apple Vision and independent, entirely local RapidOCR readings are preserved.
+No source data was uploaded to an OCR service. Rectangular all-ink cropping,
+upscaling and white padding are recorded; no inpainting, component removal,
+letter deletion, numeral substitution or missing-to-zero conversion was used.
+
+Both engines' **35** missing/noninteger or conflicting cells were explicitly
+read on native-image crops, including actual printed zeros. All **62** actual
+identities were read in every one of the four panel pairs, preserving **4-2A**
+and **7-5A**. All four five-field native city footers reconcile, and all **310**
+per-precinct candidate/write-in/blank equations satisfy
+**overall = Election Day + early voting #1 + early voting #2**:
+
+| Source reporting group | DEM | REP | IND | Write-ins | Blanks |
+|---|---:|---:|---:|---:|---:|
+| Overall | 31,811 | 13,750 | 2,038 | 69 | 662 |
+| Election Day | 20,054 | 10,344 | 1,415 | 51 | 441 |
+| Early voting #1 | 6,547 | 1,837 | 319 | 12 | 120 |
+| Early voting #2 | 5,210 | 1,569 | 304 | 6 | 101 |
+
+These are **unofficial November 3 governor contest counts for Worcester CITY
+ONLY**. The four source groups are not summed together; overall already includes
+the other three. Their accounting totals are not unique voters, statewide
+results, final turnout or demographic participation.
+
+Canonical script: `scripts/review-worcester-precinct-results.py`.
+Snapshot: `data/precinct-source-reviews/20261105/MA-WORCESTER/`.
+Complete ZIP: `complete-worcester-2026-governor-count-review.zip`,
+**81,047,687 bytes**, SHA-256
+`b801bba010f18826af0043a723d819d4a9ce88fb76e930f190fd2dc4ac5ad009`.
+Includes **248 normalized precinct/group rows**, **17 complete source captures
+/ 39,195,208 raw bytes**, all receipts, the full original 60-page PDF, all 60
+native rasters and full OCR, both independent cell readings, all crop manifests,
+identity evidence, explicit judgments and the canonical reproduction script.
+The nested `complete-inputs.tar.gz` contains **2,946 complete input files /
+91,944,306 raw bytes**, not metadata-only placeholders; `inputs.json.gz` records
+every byte length and SHA-256. Session-local JSON path identifiers are normalized
+to basenames without altering OCR observations; both hashes are retained.
+
+`files/verify-worcester-2026-package.py` independently compares all 248 exported
+rows/counts/margins/source panels against the prior native reconciliation,
+verifies every source/input checksum, and runs the archived parser using
+**archive-only** inputs. The rebuilt complete ZIP is **byte-identical**.
+Proof: `files/worcester-2026-offline-reproduction-proof.json`.
+All **366 collector tests pass**, including 14 focused Worcester regressions
+for split units, actual zeros, ambiguous/missing OCR, explicit judgments,
+duplicate/missing inventory, footer defects and mode discrepancies.
+
+The official `Your Vote Counts` page and its declared two-page November 2026
+voter guide were acquired in full; neither resolves the card counter. The
+ordinary state advisory request returned 403; Boston's card instruction page
+returned 503. Those complete failure bodies and receipts remain archived.
+The **144,608 / 120,952** ballot/registration anomaly is still unexplained and
+unused. Never divide the ballot counter by three or infer turnout.
+
+The city's actual elections page labels its declared Experience
+`c1bfa1552cd34985b53d4ba5bcb5b56d` **2025 - Municipal Election Map Dashboard**;
+the acquired item/config corroborate that election. It is not 2026 authority.
+Independent official alternatives are now acquired: the actual
+`/elections/candidates` map index, complete ward/precinct map
+`/elections/document-center/wp_all.pdf` (**11,798,024 bytes**), and complete
+House/Senate maps (**9,943,179 / 14,760,104 bytes**). The ward map explicitly
+prints **June 10, 2026**, with boundaries effective December 31, 2021; the
+House map prints January 19, 2022 and the Senate PDF metadata is February 2023.
+The June 2026 polling list includes additional split labels absent from the
+62-row source: do not infer missing returns, combine split shapes or allocate
+counts into them.
+
+The actual city GIS page also declares Worcester Atlas Experience
+`503920c4ab1b4404bee9dce73114538d`. Its acquired config selects webmap
+`644498610e3c493787e07c0cbc6ac4b7`; the acquired webmap declares
+`Administrative_Boundaries_and_Elections/FeatureServer/5` as
+**Ward-Precinct Boundaries**, item `f14e934ee09441b6b7acc72667a9ebb9`.
+These two newest webmap captures are in the separate
+`MA-2026/worcester-reference-followup/` cache, not retroactively included in the
+completed count archive. Next acquire that actual layer/item/full native ID
+inventory and geometry, audit split identities and November 2026 applicability.
+No Worcester geometry or participation file is published from count accounting.
+
+Next publication: commit/push this verified source batch as Hans, publish and
+redownload its immutable full release, then add a city-and-contest-scoped count
+download without replacing Boston's MA map shard. Verify the exact deployment
+and preserve every prior complete download. The MA 2026 ledger must retain the
+live Boston subset and stay incomplete; the Worcester count review is additional,
+not replacement or statewide map completion.
 
 ## Resume procedure for every work session or scheduled prompt
 
