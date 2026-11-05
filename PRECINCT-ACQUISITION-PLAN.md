@@ -1040,7 +1040,7 @@ candidate totals, validated geometry and live maps. Hawaii is **not
 complete**, and the other 2026 states/DC and all historical ledger cells
 remain actionable.
 
-## Rhode Island 2026: complete native export acquired; review not yet published
+## Rhode Island 2026: complete count review live; conservative reference map reviewed
 
 The official Board of Elections archive page
 `https://elections.ri.gov/elections/previous-election-results` returns HTTP
@@ -1131,11 +1131,65 @@ pass exact registry/ledger/renderer bytes, all **40** download links and
 correct RI review/original-batch labels. JavaScript checks also pass the
 2026 default, source-matched RI state red/blue fallback, zoom and failed
 registry-fetch behavior. Session proof:
-`files/ri-2026-local-browser-validation.json`. Live proof remains pending.
-Geometry and all rates remain withheld. Next: finish the exact site/live proof,
-separately review local participation and acquire authoritative 2026
-geographic references. Do not mark the RI ledger cell complete, borrow
-2024 boundaries or map Federal/limited-only votes onto households.
+`files/ri-2026-local-browser-validation.json`.
+Exact site commit **`7d0db02061a3b6db2317ad478524ad73eb2286e1`**
+deployed successfully in Pages run **41969630072**. Exact production
+proof repeats every preceding desktop/mobile, JavaScript/no-JavaScript,
+40-link, source-byte, default, state-color, zoom and failed-fetch check:
+`files/ri-2026-live-browser-validation.json`. The complete 458-row count
+review is live, not a precinct-map or rate claim.
+
+### Conservative Rhode Island reference geometry: independent local proof
+
+The actual RIGIS item `9104ca2e5e9b4cdb9985e8935ef2514d`, owned by
+`URIEDC_RIGIS`, publishes `BND_Voting_Precincts_2022/FeatureServer`.
+Its source description explicitly recommends the post-2022-redistricting
+reference for **2022-2032** elections, warning that local changes remain
+possible. It is **not relabeled a newly surveyed/certified 2026 snapshot**.
+Full attribution/terms are retained: RIGIS, Election Data Services Inc,
+each RI city/town Board of Canvassers and RI Department of State
+Elections Division. All **416** native EPSG3438 and geographic features
+match the complete native object-ID response and each other's attributes.
+Every HTTP original and source receipt is preserved in session cache
+`files/precinct-expansion-sources/RI-2026/boundary-reference/`.
+
+`scripts/build-rhode-island-precinct-results.py` requires unique literal
+town + four-digit native label identities, complete town sets, explicit
+congressional-district agreement, nonvirtual scope and sound nonoverlapping
+geometry. All Federal and literal LIMITED units are excluded, **not
+allocated**, including Richmond's one nonzero limited-only Republican vote.
+The map has **306 colored result units across 37 complete towns**.
+Whole Cranston is withheld because boundary `0727` has no native return;
+whole Providence is withheld because `28XX` is unassigned (Congress=0)
+and absent from native returns. No suffix stripping, ID-prefix decoding,
+borrowed precinct year, boundary clipping or vote allocation. All **458**
+returns and **416** original boundaries remain downloadable; **152**
+return rows are unmapped, including 40 LIMITED and four Federal units.
+The 40 locality participation observations remain separate and all
+precinct rates remain withheld.
+
+The complete geometry audit finds **zero** overlap pairs above 1e-10
+square degrees, with the established 1e-9-degree coordinate grid. Three
+self-touching rings receive area-preserving repairs, all documented.
+**206 collector tests pass**, including nine new conservative map cases:
+complete sets, zero votes, nonzero excluded votes, source scope, incomplete
+sets, House conflicts, unassigned areas, overlap and duplicate identities.
+
+Immutable local snapshot `data/precinct-results/20261105-rhode-island-01/`
+and complete ZIP **6,092,731 bytes**, SHA-256
+`ec40b9fc967cdeb90356e0353184d79aa3ab07e4fd49f0fd9bf9b52b5a58ded9`.
+Independent proof verifies all **27** archive members/CRCs/bytes, every
+mapped native candidate/mode value, every original polygon, complete
+eligible-town sets, all exclusions and zero overlaps, and reproduces the
+entire output/ZIP **solely from distributed originals**. Preserve the
+archive filename when reproducing: `index.json` intentionally records
+`complete-rhode-island-2026-precinct-maps.zip`; renaming it changes index
+and checksum bytes. Immutable overwrite refusal passes. Proof:
+`files/ri-2026-map-independent-validation.json`.
+Map release, site registration and live checks remain pending. Next:
+publish/verify this full conservative map package, then continue the
+remaining newest state/year cells. Do not mark RI or nationwide coverage
+complete, infer demographic participation, or map administrative counts.
 
 ## Resume procedure for every work session or scheduled prompt
 

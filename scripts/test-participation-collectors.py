@@ -38,6 +38,7 @@ ak_boundaries = module("review-alaska-precinct-boundaries")
 hi_review = module("review-hawaii-precinct-results")
 hi_historical = module("archive-hawaii-historical-sources")
 ri_review = module("review-rhode-island-precinct-results")
+ri_maps = module("build-rhode-island-precinct-results")
 
 
 def rhode_island_fixture():
@@ -118,6 +119,65 @@ def test_rhode_island_rejects_missing_or_conflicting_native_scope_and_independen
 def test_rhode_island_never_imputes_missing_invalid_or_boolean_counts(value):
     with pytest.raises(ValueError):
         ri_review.count(value)
+
+
+def rhode_island_map_fixture():
+    rows = ri_review.review(*rhode_island_fixture())[0]
+    features = []
+    for i, row in enumerate([r for r in rows if r["locality"] == "Town"], 1):
+        row["precinct"] = f"SCHOOL (TOWN 010{i})"
+        row["reporting_unit_kind"] = "native_reporting_unit_geography_unverified"
+        x = -71 + i * .02
+        features.append(dict(attributes=dict(OBJECTID=i, TOWN="Town", DISTRICT=f"010{i}",
+            DISTRICTN=100 + i, Congress=i), geometry=dict(rings=[
+                [[x, 41], [x, 41.01], [x + .01, 41.01], [x + .01, 41], [x, 41]]])))
+    limited = dict(rows[0], key="limited", precinct="TOWN HALL - LIMITED (TOWN 0103)",
+                   democratic_votes=0, republican_votes=1, other_votes=0, contest_votes=1)
+    rows.append(limited)
+    return rows, dict(geometryType="esriGeometryPolygon",
+                     spatialReference=dict(wkid=4326), features=features)
+
+
+def test_rhode_island_maps_complete_town_sets_without_allocating_federal_or_nonzero_limited_votes():
+    rows, boundary = rhode_island_map_fixture()
+    rows[0].update(democratic_votes=0, republican_votes=0, other_votes=0, contest_votes=0)
+    mapped, audit = ri_maps.mapped_precincts(rows, boundary)
+    assert len(mapped) == 2 and audit["towns"]["Town"]["exact"]
+    assert audit["rates_available"] == 0 and len(audit["excluded_reporting_units"]) == 3
+    assert next(f["properties"] for f in mapped if f["properties"]["key"] == rows[0]["key"])["margin_pp"] is None
+    assert all("participation" not in f["properties"] and
+               "2022-2032" in f["properties"]["boundary_date"] for f in mapped)
+    assert "limited" in audit["withheld_units"]
+
+
+@pytest.mark.parametrize("change", ["set", "congress", "unassigned", "overlap", "label", "virtual"])
+def test_rhode_island_withholds_entire_town_for_reference_scope_or_geometry_conflicts(change):
+    rows, boundary = rhode_island_map_fixture()
+    if change == "set":
+        boundary["features"].pop()
+    elif change == "congress":
+        boundary["features"][1]["attributes"]["Congress"] = 1
+    elif change == "unassigned":
+        boundary["features"][1]["attributes"].update(DISTRICT="28XX", Congress=0)
+    elif change == "overlap":
+        boundary["features"][1]["geometry"] = boundary["features"][0]["geometry"]
+    elif change == "label":
+        rows[0]["precinct"] = "SCHOOL (OTHER TOWN 0101)"
+    else:
+        rows[0]["source_is_virtual"] = True
+    mapped, audit = ri_maps.mapped_precincts(rows, boundary)
+    assert not mapped and not audit["towns"]["Town"]["exact"]
+
+
+@pytest.mark.parametrize("change", ["result", "reference"])
+def test_rhode_island_rejects_duplicate_mapping_identities(change):
+    rows, boundary = rhode_island_map_fixture()
+    if change == "result":
+        rows.append(rows[0])
+    else:
+        boundary["features"].append(boundary["features"][0])
+    with pytest.raises(ValueError):
+        ri_maps.mapped_precincts(rows, boundary)
 
 
 @pytest.mark.parametrize("encoding", ["utf-16", "utf-16-le"])
