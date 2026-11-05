@@ -1,7 +1,12 @@
 """Maintain the complete state/election worklist, newest elections first."""
 
+import argparse
 import csv
 import json
+import re
+import subprocess
+from concurrent.futures import ThreadPoolExecutor
+from datetime import datetime, timezone
 from pathlib import Path
 
 
@@ -17,11 +22,48 @@ FIELDS = [
 ]
 
 
+def refresh_sources():
+    features = json.loads((ROOT / "public/voter-participation/data/states.geojson").read_text())["features"]
+    codes = sorted(f["properties"]["STUSAB"] for f in features
+                   if f["properties"]["STUSAB"] not in {"PR", "GU", "VI", "MP", "AS"})
+
+    def review(code):
+        repository = f"openelections/openelections-data-{code.lower()}"
+        branch = "main" if code == "MD" else "master"
+        request = subprocess.run(["gh", "api", f"repos/{repository}/git/trees/{branch}?recursive=1"],
+                                 capture_output=True, text=True, check=True)
+        tree = json.loads(request.stdout)
+        if tree.get("truncated"):
+            raise ValueError(f"{code}: truncated source inventory; do not mark archive reviewed")
+        years = {str(year): [] for year in YEARS}
+        for item in tree["tree"]:
+            path = item["path"]
+            lower = path.lower()
+            match = re.search(r"(?:^|/)((?:19|20)\d{2})11\d{2}__", path)
+            if (item["type"] == "blob" and lower.endswith(".csv") and match
+                and "general" in lower and ("precinct" in lower or "ward" in lower)
+                and not any(word in lower for word in ["primary", "runoff", "special"])
+                and match.group(1) in years):
+                years[match.group(1)].append(dict(path=path, git_blob=item["sha"], bytes=item.get("size"),
+                    url=f"https://github.com/{repository}/blob/{branch}/{path}"))
+        print(code, sum(bool(files) for files in years.values()), "elections with general precinct-file leads", flush=True)
+        return code, dict(repository=repository, branch=branch, tree_sha=tree["sha"],
+                          truncated=False, elections=years)
+
+    states = dict(ThreadPoolExecutor(max_workers=4).map(review, codes))
+    target = ROOT / "public/precinct-source-inventory.json"
+    target.write_text(json.dumps(dict(reviewed_at=datetime.now(timezone.utc).isoformat(),
+        scope="Complete recursive OpenElections archive inventory for all 51 jurisdictions; November general-election precinct/ward filenames are leads, not validated ballot scope, licensing, joins or publication. No match here does not establish unavailability elsewhere.",
+        states=states), indent=2) + "\n")
+
+
 def build_rows(index=None):
     features = json.loads((ROOT / "public/voter-participation/data/states.geojson").read_text())["features"]
     states = sorted((f["properties"]["STUSAB"], f["properties"]["NAME"]) for f in features
                     if f["properties"]["STUSAB"] not in {"PR", "GU", "VI", "MP", "AS"})
     assert len(states) == 51 and len(set(code for code, _ in states)) == 51
+    inventory_path = ROOT / "public/precinct-source-inventory.json"
+    inventory = json.loads(inventory_path.read_text())["states"] if inventory_path.exists() else {}
     rows = []
     for year in YEARS:
         for code, name in states:
@@ -33,6 +75,14 @@ def build_rows(index=None):
                 next_action="Review state and county archives for this election; acquire exact-year returns and boundaries.",
                 notes="Not reviewed is not a finding of unavailability. State/CPS and county observations do not count as precinct coverage.",
             )
+            reviewed = inventory.get(code)
+            if reviewed:
+                files = reviewed["elections"][str(year)]
+                row.update(candidate_results="source_identified" if files else "reviewed_archive_no_match",
+                           results_source=files[0]["url"] if files else "https://github.com/" + reviewed["repository"])
+                row["notes"] += (f" OpenElections full tree reviewed: {len(files)} general precinct CSV leads. "
+                                 "These filenames are not proof of correct contest, residential ballot allocation, boundary vintage or licensing. "
+                                 "No match in this one archive does not establish absence from state/county or other historical archives.")
             if code == "NC" and 2002 <= year <= 2024:
                 row["participation"] = "published_counts"
                 row["notes"] += " NC residential voter-history participation is published; not candidate votes."
@@ -110,6 +160,11 @@ def write_ledger(index=None):
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--refresh-sources", action="store_true")
+    args = parser.parse_args()
+    if args.refresh_sources:
+        refresh_sources()
     pointer = ROOT / "public/precinct-results.json"
     index = None
     if pointer.exists():

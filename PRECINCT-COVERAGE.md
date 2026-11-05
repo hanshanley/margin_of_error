@@ -22,57 +22,57 @@ Checkmarks are reserved for verified, complete live coverage.
 
 | Done | State | Candidate returns | Boundaries | Join | Validation | Publication | Participation |
 |---|---|---|---|---|---|---|---|
-| [ ] | Alaska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Alabama | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arkansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arizona | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | California | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Colorado | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Connecticut | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | District of Columbia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Delaware | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Florida | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Georgia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Hawaii | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Iowa | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Idaho | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Illinois | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Indiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kentucky | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Louisiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Massachusetts | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maryland | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Michigan | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Minnesota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Missouri | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Mississippi | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Montana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alaska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alabama | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arkansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arizona | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | California | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Colorado | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Connecticut | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | District of Columbia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Delaware | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Florida | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Georgia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Hawaii | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Iowa | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Idaho | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Illinois | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Indiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kentucky | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Louisiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Massachusetts | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Michigan | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Minnesota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Missouri | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Mississippi | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Montana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | North Carolina | acquired | reference_acquired | pending | pending | not_published | not_acquired |
-| [ ] | North Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nebraska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Hampshire | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Jersey | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nebraska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Hampshire | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Jersey | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | New Mexico | acquired | reference_acquired | pending | pending | not_published | published_partial_reference_map |
-| [ ] | Nevada | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New York | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Ohio | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oklahoma | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oregon | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Pennsylvania | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Rhode Island | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Tennessee | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Texas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Utah | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Vermont | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Washington | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wisconsin | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | West Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wyoming | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nevada | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New York | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Ohio | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oklahoma | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oregon | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Pennsylvania | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Rhode Island | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Tennessee | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Texas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Utah | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Vermont | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Washington | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wisconsin | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | West Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wyoming | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 
 ## 2024
 
@@ -134,1678 +134,1678 @@ Checkmarks are reserved for verified, complete live coverage.
 
 | Done | State | Candidate returns | Boundaries | Join | Validation | Publication | Participation |
 |---|---|---|---|---|---|---|---|
-| [ ] | Alaska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Alabama | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arkansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arizona | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | California | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Colorado | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Connecticut | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | District of Columbia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Delaware | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Florida | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Georgia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Hawaii | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Iowa | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Idaho | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Illinois | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Indiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kentucky | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Louisiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Massachusetts | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maryland | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Michigan | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Minnesota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Missouri | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Mississippi | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Montana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Carolina | not_reviewed | not_reviewed | pending | pending | not_published | published_counts_and_reference_map |
-| [ ] | North Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nebraska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Hampshire | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Jersey | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Mexico | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nevada | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New York | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Ohio | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oklahoma | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oregon | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Pennsylvania | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Rhode Island | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Tennessee | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Texas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Utah | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Vermont | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Washington | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wisconsin | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | West Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wyoming | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alaska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alabama | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arkansas | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arizona | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | California | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Colorado | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Connecticut | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | District of Columbia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Delaware | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Florida | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Georgia | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Hawaii | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Iowa | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Idaho | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Illinois | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Indiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kentucky | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Louisiana | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Massachusetts | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Michigan | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Minnesota | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Missouri | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Mississippi | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Montana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | published_counts_and_reference_map |
+| [ ] | North Dakota | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nebraska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Hampshire | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Jersey | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Mexico | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nevada | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New York | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Ohio | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oklahoma | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oregon | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Pennsylvania | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Rhode Island | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Carolina | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Dakota | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Tennessee | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Texas | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Utah | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Vermont | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Washington | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wisconsin | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | West Virginia | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wyoming | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 
 ## 2020
 
 | Done | State | Candidate returns | Boundaries | Join | Validation | Publication | Participation |
 |---|---|---|---|---|---|---|---|
-| [ ] | Alaska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Alabama | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arkansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arizona | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | California | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Colorado | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Connecticut | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | District of Columbia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Delaware | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Florida | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Georgia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Hawaii | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Iowa | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Idaho | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Illinois | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Indiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kentucky | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Louisiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Massachusetts | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maryland | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Michigan | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Minnesota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Missouri | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Mississippi | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Montana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Carolina | not_reviewed | not_reviewed | pending | pending | not_published | published_counts_and_reference_map |
-| [ ] | North Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nebraska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Hampshire | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Jersey | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Mexico | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nevada | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New York | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Ohio | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oklahoma | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oregon | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Pennsylvania | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Rhode Island | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Tennessee | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Texas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Utah | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Vermont | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Washington | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wisconsin | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | West Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wyoming | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alaska | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alabama | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arkansas | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arizona | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | California | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Colorado | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Connecticut | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | District of Columbia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Delaware | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Florida | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Georgia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Hawaii | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Iowa | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Idaho | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Illinois | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Indiana | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kansas | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kentucky | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Louisiana | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Massachusetts | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Michigan | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Minnesota | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Missouri | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Mississippi | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Montana | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | published_counts_and_reference_map |
+| [ ] | North Dakota | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nebraska | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Hampshire | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Jersey | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Mexico | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nevada | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New York | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Ohio | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oklahoma | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oregon | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Pennsylvania | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Rhode Island | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Carolina | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Dakota | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Tennessee | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Texas | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Utah | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Vermont | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Washington | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wisconsin | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | West Virginia | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wyoming | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 
 ## 2018
 
 | Done | State | Candidate returns | Boundaries | Join | Validation | Publication | Participation |
 |---|---|---|---|---|---|---|---|
-| [ ] | Alaska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Alabama | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arkansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arizona | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | California | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Colorado | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Connecticut | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | District of Columbia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Delaware | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Florida | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Georgia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Hawaii | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Iowa | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Idaho | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Illinois | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Indiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kentucky | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Louisiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Massachusetts | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maryland | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Michigan | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Minnesota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Missouri | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Mississippi | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Montana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Carolina | not_reviewed | not_reviewed | pending | pending | not_published | published_counts |
-| [ ] | North Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nebraska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Hampshire | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Jersey | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Mexico | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nevada | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New York | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Ohio | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oklahoma | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oregon | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Pennsylvania | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Rhode Island | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Tennessee | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Texas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Utah | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Vermont | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Washington | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wisconsin | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | West Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wyoming | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alaska | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alabama | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arkansas | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arizona | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | California | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Colorado | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Connecticut | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | District of Columbia | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Delaware | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Florida | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Georgia | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Hawaii | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Iowa | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Idaho | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Illinois | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Indiana | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kansas | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kentucky | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Louisiana | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Massachusetts | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Michigan | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Minnesota | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Missouri | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Mississippi | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Montana | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | published_counts |
+| [ ] | North Dakota | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nebraska | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Hampshire | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Jersey | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Mexico | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nevada | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New York | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Ohio | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oklahoma | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oregon | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Pennsylvania | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Rhode Island | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Carolina | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Dakota | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Tennessee | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Texas | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Utah | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Vermont | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Washington | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wisconsin | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | West Virginia | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wyoming | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 
 ## 2016
 
 | Done | State | Candidate returns | Boundaries | Join | Validation | Publication | Participation |
 |---|---|---|---|---|---|---|---|
-| [ ] | Alaska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Alabama | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arkansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arizona | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | California | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Colorado | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Connecticut | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | District of Columbia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Delaware | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Florida | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Georgia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Hawaii | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Iowa | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Idaho | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Illinois | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Indiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kentucky | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Louisiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Massachusetts | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maryland | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Michigan | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Minnesota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Missouri | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Mississippi | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Montana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Carolina | not_reviewed | not_reviewed | pending | pending | not_published | published_counts_and_reference_map |
-| [ ] | North Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nebraska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Hampshire | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Jersey | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Mexico | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nevada | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New York | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Ohio | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oklahoma | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oregon | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Pennsylvania | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Rhode Island | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Tennessee | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Texas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Utah | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Vermont | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Washington | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wisconsin | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | West Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wyoming | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alaska | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alabama | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arkansas | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arizona | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | California | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Colorado | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Connecticut | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | District of Columbia | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Delaware | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Florida | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Georgia | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Hawaii | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Iowa | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Idaho | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Illinois | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Indiana | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kansas | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kentucky | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Louisiana | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Massachusetts | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Michigan | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Minnesota | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Missouri | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Mississippi | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Montana | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | published_counts_and_reference_map |
+| [ ] | North Dakota | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nebraska | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Hampshire | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Jersey | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Mexico | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nevada | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New York | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Ohio | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oklahoma | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oregon | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Pennsylvania | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Rhode Island | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Carolina | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Dakota | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Tennessee | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Texas | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Utah | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Vermont | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Washington | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wisconsin | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | West Virginia | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wyoming | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 
 ## 2014
 
 | Done | State | Candidate returns | Boundaries | Join | Validation | Publication | Participation |
 |---|---|---|---|---|---|---|---|
-| [ ] | Alaska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Alabama | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arkansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arizona | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | California | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Colorado | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Connecticut | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | District of Columbia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Delaware | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Florida | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Georgia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Hawaii | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Iowa | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Idaho | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Illinois | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Indiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kentucky | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Louisiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Massachusetts | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maryland | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Michigan | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Minnesota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Missouri | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Mississippi | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Montana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Carolina | not_reviewed | not_reviewed | pending | pending | not_published | published_counts_and_reference_map |
-| [ ] | North Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nebraska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Hampshire | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Jersey | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Mexico | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nevada | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New York | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Ohio | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oklahoma | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oregon | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Pennsylvania | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Rhode Island | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Tennessee | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Texas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Utah | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Vermont | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Washington | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wisconsin | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | West Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wyoming | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alaska | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alabama | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arkansas | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arizona | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | California | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Colorado | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Connecticut | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | District of Columbia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Delaware | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Florida | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Georgia | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Hawaii | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Iowa | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Idaho | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Illinois | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Indiana | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kansas | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kentucky | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Louisiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Massachusetts | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Michigan | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Minnesota | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Missouri | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Mississippi | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Montana | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | published_counts_and_reference_map |
+| [ ] | North Dakota | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nebraska | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Hampshire | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Jersey | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Mexico | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nevada | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New York | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Ohio | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oklahoma | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oregon | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Pennsylvania | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Rhode Island | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Carolina | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Dakota | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Tennessee | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Texas | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Utah | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Vermont | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Washington | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wisconsin | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | West Virginia | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wyoming | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 
 ## 2012
 
 | Done | State | Candidate returns | Boundaries | Join | Validation | Publication | Participation |
 |---|---|---|---|---|---|---|---|
-| [ ] | Alaska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Alabama | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arkansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arizona | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | California | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Colorado | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Connecticut | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | District of Columbia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Delaware | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Florida | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Georgia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Hawaii | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Iowa | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Idaho | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Illinois | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Indiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kentucky | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Louisiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Massachusetts | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maryland | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Michigan | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Minnesota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Missouri | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Mississippi | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Montana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Carolina | not_reviewed | not_reviewed | pending | pending | not_published | published_counts_and_reference_map |
-| [ ] | North Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nebraska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Hampshire | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Jersey | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Mexico | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nevada | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New York | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Ohio | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oklahoma | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oregon | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Pennsylvania | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Rhode Island | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Tennessee | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Texas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Utah | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Vermont | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Washington | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wisconsin | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | West Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wyoming | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alaska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alabama | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arkansas | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arizona | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | California | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Colorado | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Connecticut | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | District of Columbia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Delaware | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Florida | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Georgia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Hawaii | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Iowa | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Idaho | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Illinois | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Indiana | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kansas | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kentucky | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Louisiana | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Massachusetts | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Michigan | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Minnesota | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Missouri | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Mississippi | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Montana | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | published_counts_and_reference_map |
+| [ ] | North Dakota | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nebraska | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Hampshire | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Jersey | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Mexico | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nevada | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New York | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Ohio | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oklahoma | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oregon | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Pennsylvania | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Rhode Island | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Carolina | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Tennessee | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Texas | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Utah | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Vermont | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Washington | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wisconsin | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | West Virginia | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wyoming | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 
 ## 2010
 
 | Done | State | Candidate returns | Boundaries | Join | Validation | Publication | Participation |
 |---|---|---|---|---|---|---|---|
-| [ ] | Alaska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Alabama | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arkansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arizona | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | California | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Colorado | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Connecticut | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | District of Columbia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Delaware | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Florida | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Georgia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Hawaii | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Iowa | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Idaho | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Illinois | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Indiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kentucky | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Louisiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Massachusetts | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maryland | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Michigan | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Minnesota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Missouri | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Mississippi | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Montana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Carolina | not_reviewed | not_reviewed | pending | pending | not_published | published_counts |
-| [ ] | North Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nebraska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Hampshire | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Jersey | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Mexico | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nevada | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New York | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Ohio | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oklahoma | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oregon | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Pennsylvania | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Rhode Island | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Tennessee | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Texas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Utah | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Vermont | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Washington | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wisconsin | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | West Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wyoming | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alaska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alabama | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arkansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arizona | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | California | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Colorado | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Connecticut | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | District of Columbia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Delaware | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Florida | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Georgia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Hawaii | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Iowa | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Idaho | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Illinois | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Indiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kentucky | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Louisiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Massachusetts | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Michigan | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Minnesota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Missouri | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Mississippi | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Montana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | published_counts |
+| [ ] | North Dakota | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nebraska | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Hampshire | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Jersey | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Mexico | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nevada | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New York | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Ohio | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oklahoma | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oregon | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Pennsylvania | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Rhode Island | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Tennessee | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Texas | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Utah | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Vermont | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Washington | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wisconsin | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | West Virginia | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wyoming | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 
 ## 2008
 
 | Done | State | Candidate returns | Boundaries | Join | Validation | Publication | Participation |
 |---|---|---|---|---|---|---|---|
-| [ ] | Alaska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Alabama | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arkansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arizona | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | California | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Colorado | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Connecticut | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | District of Columbia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Delaware | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Florida | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Georgia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Hawaii | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Iowa | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Idaho | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Illinois | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Indiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kentucky | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Louisiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Massachusetts | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maryland | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Michigan | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Minnesota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Missouri | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Mississippi | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Montana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Carolina | not_reviewed | not_reviewed | pending | pending | not_published | published_counts |
-| [ ] | North Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nebraska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Hampshire | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Jersey | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Mexico | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nevada | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New York | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Ohio | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oklahoma | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oregon | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Pennsylvania | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Rhode Island | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Tennessee | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Texas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Utah | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Vermont | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Washington | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wisconsin | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | West Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wyoming | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alaska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alabama | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arkansas | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arizona | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | California | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Colorado | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Connecticut | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | District of Columbia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Delaware | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Florida | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Georgia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Hawaii | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Iowa | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Idaho | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Illinois | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Indiana | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kentucky | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Louisiana | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Massachusetts | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Michigan | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Minnesota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Missouri | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Mississippi | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Montana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | published_counts |
+| [ ] | North Dakota | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nebraska | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Hampshire | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Jersey | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Mexico | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nevada | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New York | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Ohio | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oklahoma | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oregon | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Pennsylvania | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Rhode Island | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Carolina | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Tennessee | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Texas | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Utah | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Vermont | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Washington | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wisconsin | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | West Virginia | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wyoming | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 
 ## 2006
 
 | Done | State | Candidate returns | Boundaries | Join | Validation | Publication | Participation |
 |---|---|---|---|---|---|---|---|
-| [ ] | Alaska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Alabama | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arkansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arizona | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | California | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Colorado | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Connecticut | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | District of Columbia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Delaware | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Florida | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Georgia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Hawaii | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Iowa | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Idaho | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Illinois | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Indiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kentucky | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Louisiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Massachusetts | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maryland | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Michigan | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Minnesota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Missouri | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Mississippi | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Montana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Carolina | not_reviewed | not_reviewed | pending | pending | not_published | published_counts_and_reference_map |
-| [ ] | North Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nebraska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Hampshire | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Jersey | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Mexico | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nevada | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New York | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Ohio | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oklahoma | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oregon | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Pennsylvania | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Rhode Island | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Tennessee | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Texas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Utah | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Vermont | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Washington | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wisconsin | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | West Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wyoming | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alaska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alabama | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arkansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arizona | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | California | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Colorado | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Connecticut | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | District of Columbia | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Delaware | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Florida | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Georgia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Hawaii | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Iowa | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Idaho | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Illinois | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Indiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kentucky | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Louisiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Massachusetts | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Michigan | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Minnesota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Missouri | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Mississippi | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Montana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | published_counts_and_reference_map |
+| [ ] | North Dakota | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nebraska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Hampshire | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Jersey | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Mexico | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nevada | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New York | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Ohio | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oklahoma | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oregon | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Pennsylvania | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Rhode Island | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Carolina | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Tennessee | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Texas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Utah | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Vermont | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Washington | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wisconsin | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | West Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wyoming | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 
 ## 2004
 
 | Done | State | Candidate returns | Boundaries | Join | Validation | Publication | Participation |
 |---|---|---|---|---|---|---|---|
-| [ ] | Alaska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Alabama | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arkansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arizona | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | California | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Colorado | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Connecticut | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | District of Columbia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Delaware | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Florida | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Georgia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Hawaii | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Iowa | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Idaho | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Illinois | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Indiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kentucky | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Louisiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Massachusetts | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maryland | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Michigan | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Minnesota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Missouri | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Mississippi | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Montana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Carolina | not_reviewed | not_reviewed | pending | pending | not_published | published_counts |
-| [ ] | North Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nebraska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Hampshire | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Jersey | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Mexico | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nevada | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New York | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Ohio | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oklahoma | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oregon | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Pennsylvania | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Rhode Island | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Tennessee | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Texas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Utah | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Vermont | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Washington | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wisconsin | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | West Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wyoming | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alaska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alabama | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arkansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arizona | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | California | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Colorado | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Connecticut | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | District of Columbia | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Delaware | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Florida | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Georgia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Hawaii | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Iowa | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Idaho | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Illinois | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Indiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kentucky | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Louisiana | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Massachusetts | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Michigan | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Minnesota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Missouri | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Mississippi | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Montana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | published_counts |
+| [ ] | North Dakota | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nebraska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Hampshire | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Jersey | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Mexico | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nevada | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New York | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Ohio | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oklahoma | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oregon | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Pennsylvania | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Rhode Island | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Tennessee | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Texas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Utah | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Vermont | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Washington | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wisconsin | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | West Virginia | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wyoming | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 
 ## 2002
 
 | Done | State | Candidate returns | Boundaries | Join | Validation | Publication | Participation |
 |---|---|---|---|---|---|---|---|
-| [ ] | Alaska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Alabama | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arkansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arizona | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | California | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Colorado | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Connecticut | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | District of Columbia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Delaware | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Florida | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Georgia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Hawaii | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Iowa | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Idaho | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Illinois | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Indiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kentucky | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Louisiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Massachusetts | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maryland | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Michigan | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Minnesota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Missouri | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Mississippi | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Montana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Carolina | not_reviewed | not_reviewed | pending | pending | not_published | published_counts |
-| [ ] | North Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nebraska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Hampshire | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Jersey | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Mexico | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nevada | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New York | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Ohio | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oklahoma | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oregon | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Pennsylvania | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Rhode Island | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Tennessee | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Texas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Utah | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Vermont | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Washington | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wisconsin | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | West Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wyoming | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alaska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alabama | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arkansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arizona | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | California | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Colorado | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Connecticut | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | District of Columbia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Delaware | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Florida | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Georgia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Hawaii | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Iowa | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Idaho | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Illinois | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Indiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kentucky | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Louisiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Massachusetts | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Michigan | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Minnesota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Missouri | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Mississippi | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Montana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | published_counts |
+| [ ] | North Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nebraska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Hampshire | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Jersey | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Mexico | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nevada | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New York | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Ohio | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oklahoma | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oregon | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Pennsylvania | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Rhode Island | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Tennessee | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Texas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Utah | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Vermont | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Washington | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wisconsin | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | West Virginia | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wyoming | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 
 ## 2000
 
 | Done | State | Candidate returns | Boundaries | Join | Validation | Publication | Participation |
 |---|---|---|---|---|---|---|---|
-| [ ] | Alaska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Alabama | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arkansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arizona | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | California | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Colorado | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Connecticut | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | District of Columbia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Delaware | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Florida | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Georgia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Hawaii | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Iowa | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Idaho | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Illinois | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Indiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kentucky | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Louisiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Massachusetts | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maryland | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Michigan | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Minnesota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Missouri | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Mississippi | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Montana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nebraska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Hampshire | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Jersey | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Mexico | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nevada | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New York | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Ohio | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oklahoma | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oregon | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Pennsylvania | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Rhode Island | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Tennessee | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Texas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Utah | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Vermont | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Washington | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wisconsin | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | West Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wyoming | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alaska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alabama | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arkansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arizona | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | California | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Colorado | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Connecticut | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | District of Columbia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Delaware | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Florida | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Georgia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Hawaii | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Iowa | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Idaho | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Illinois | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Indiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kentucky | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Louisiana | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Massachusetts | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Michigan | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Minnesota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Missouri | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Mississippi | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Montana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nebraska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Hampshire | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Jersey | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Mexico | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nevada | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New York | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Ohio | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oklahoma | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oregon | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Pennsylvania | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Rhode Island | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Tennessee | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Texas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Utah | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Vermont | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Washington | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wisconsin | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | West Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wyoming | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 
 ## 1998
 
 | Done | State | Candidate returns | Boundaries | Join | Validation | Publication | Participation |
 |---|---|---|---|---|---|---|---|
-| [ ] | Alaska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Alabama | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arkansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arizona | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | California | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Colorado | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Connecticut | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | District of Columbia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Delaware | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Florida | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Georgia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Hawaii | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Iowa | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Idaho | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Illinois | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Indiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kentucky | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Louisiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Massachusetts | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maryland | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Michigan | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Minnesota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Missouri | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Mississippi | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Montana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nebraska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Hampshire | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Jersey | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Mexico | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nevada | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New York | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Ohio | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oklahoma | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oregon | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Pennsylvania | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Rhode Island | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Tennessee | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Texas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Utah | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Vermont | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Washington | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wisconsin | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | West Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wyoming | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alaska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alabama | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arkansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arizona | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | California | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Colorado | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Connecticut | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | District of Columbia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Delaware | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Florida | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Georgia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Hawaii | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Iowa | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Idaho | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Illinois | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Indiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kentucky | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Louisiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Massachusetts | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Michigan | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Minnesota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Missouri | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Mississippi | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Montana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nebraska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Hampshire | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Jersey | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Mexico | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nevada | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New York | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Ohio | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oklahoma | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oregon | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Pennsylvania | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Rhode Island | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Tennessee | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Texas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Utah | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Vermont | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Washington | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wisconsin | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | West Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wyoming | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 
 ## 1996
 
 | Done | State | Candidate returns | Boundaries | Join | Validation | Publication | Participation |
 |---|---|---|---|---|---|---|---|
-| [ ] | Alaska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Alabama | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arkansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arizona | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | California | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Colorado | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Connecticut | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | District of Columbia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Delaware | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Florida | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Georgia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Hawaii | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Iowa | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Idaho | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Illinois | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Indiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kentucky | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Louisiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Massachusetts | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maryland | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Michigan | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Minnesota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Missouri | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Mississippi | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Montana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nebraska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Hampshire | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Jersey | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Mexico | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nevada | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New York | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Ohio | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oklahoma | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oregon | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Pennsylvania | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Rhode Island | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Tennessee | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Texas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Utah | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Vermont | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Washington | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wisconsin | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | West Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wyoming | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alaska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alabama | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arkansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arizona | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | California | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Colorado | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Connecticut | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | District of Columbia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Delaware | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Florida | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Georgia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Hawaii | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Iowa | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Idaho | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Illinois | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Indiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kentucky | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Louisiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Massachusetts | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Michigan | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Minnesota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Missouri | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Mississippi | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Montana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nebraska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Hampshire | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Jersey | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Mexico | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nevada | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New York | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Ohio | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oklahoma | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oregon | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Pennsylvania | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Rhode Island | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Tennessee | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Texas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Utah | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Vermont | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Washington | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wisconsin | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | West Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wyoming | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 
 ## 1994
 
 | Done | State | Candidate returns | Boundaries | Join | Validation | Publication | Participation |
 |---|---|---|---|---|---|---|---|
-| [ ] | Alaska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Alabama | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arkansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arizona | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | California | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Colorado | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Connecticut | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | District of Columbia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Delaware | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Florida | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Georgia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Hawaii | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Iowa | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Idaho | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Illinois | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Indiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kentucky | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Louisiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Massachusetts | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maryland | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Michigan | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Minnesota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Missouri | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Mississippi | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Montana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nebraska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Hampshire | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Jersey | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Mexico | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nevada | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New York | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Ohio | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oklahoma | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oregon | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Pennsylvania | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Rhode Island | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Tennessee | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Texas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Utah | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Vermont | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Washington | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wisconsin | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | West Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wyoming | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alaska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alabama | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arkansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arizona | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | California | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Colorado | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Connecticut | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | District of Columbia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Delaware | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Florida | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Georgia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Hawaii | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Iowa | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Idaho | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Illinois | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Indiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kentucky | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Louisiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Massachusetts | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Michigan | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Minnesota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Missouri | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Mississippi | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Montana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nebraska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Hampshire | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Jersey | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Mexico | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nevada | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New York | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Ohio | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oklahoma | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oregon | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Pennsylvania | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Rhode Island | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Tennessee | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Texas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Utah | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Vermont | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Washington | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wisconsin | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | West Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wyoming | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 
 ## 1992
 
 | Done | State | Candidate returns | Boundaries | Join | Validation | Publication | Participation |
 |---|---|---|---|---|---|---|---|
-| [ ] | Alaska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Alabama | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arkansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arizona | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | California | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Colorado | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Connecticut | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | District of Columbia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Delaware | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Florida | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Georgia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Hawaii | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Iowa | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Idaho | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Illinois | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Indiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kentucky | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Louisiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Massachusetts | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maryland | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Michigan | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Minnesota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Missouri | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Mississippi | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Montana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nebraska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Hampshire | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Jersey | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Mexico | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nevada | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New York | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Ohio | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oklahoma | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oregon | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Pennsylvania | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Rhode Island | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Tennessee | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Texas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Utah | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Vermont | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Washington | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wisconsin | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | West Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wyoming | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alaska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alabama | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arkansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arizona | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | California | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Colorado | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Connecticut | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | District of Columbia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Delaware | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Florida | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Georgia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Hawaii | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Iowa | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Idaho | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Illinois | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Indiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kentucky | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Louisiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Massachusetts | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Michigan | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Minnesota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Missouri | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Mississippi | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Montana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nebraska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Hampshire | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Jersey | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Mexico | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nevada | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New York | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Ohio | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oklahoma | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oregon | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Pennsylvania | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Rhode Island | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Tennessee | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Texas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Utah | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Vermont | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Washington | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wisconsin | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | West Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wyoming | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 
 ## 1990
 
 | Done | State | Candidate returns | Boundaries | Join | Validation | Publication | Participation |
 |---|---|---|---|---|---|---|---|
-| [ ] | Alaska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Alabama | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arkansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arizona | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | California | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Colorado | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Connecticut | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | District of Columbia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Delaware | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Florida | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Georgia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Hawaii | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Iowa | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Idaho | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Illinois | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Indiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kentucky | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Louisiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Massachusetts | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maryland | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Michigan | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Minnesota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Missouri | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Mississippi | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Montana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nebraska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Hampshire | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Jersey | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Mexico | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nevada | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New York | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Ohio | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oklahoma | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oregon | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Pennsylvania | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Rhode Island | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Tennessee | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Texas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Utah | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Vermont | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Washington | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wisconsin | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | West Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wyoming | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alaska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alabama | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arkansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arizona | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | California | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Colorado | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Connecticut | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | District of Columbia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Delaware | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Florida | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Georgia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Hawaii | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Iowa | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Idaho | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Illinois | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Indiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kentucky | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Louisiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Massachusetts | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Michigan | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Minnesota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Missouri | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Mississippi | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Montana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nebraska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Hampshire | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Jersey | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Mexico | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nevada | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New York | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Ohio | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oklahoma | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oregon | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Pennsylvania | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Rhode Island | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Tennessee | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Texas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Utah | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Vermont | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Washington | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wisconsin | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | West Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wyoming | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 
 ## 1988
 
 | Done | State | Candidate returns | Boundaries | Join | Validation | Publication | Participation |
 |---|---|---|---|---|---|---|---|
-| [ ] | Alaska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Alabama | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arkansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arizona | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | California | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Colorado | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Connecticut | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | District of Columbia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Delaware | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Florida | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Georgia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Hawaii | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Iowa | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Idaho | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Illinois | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Indiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kentucky | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Louisiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Massachusetts | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maryland | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Michigan | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Minnesota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Missouri | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Mississippi | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Montana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nebraska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Hampshire | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Jersey | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Mexico | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nevada | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New York | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Ohio | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oklahoma | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oregon | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Pennsylvania | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Rhode Island | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Tennessee | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Texas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Utah | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Vermont | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Washington | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wisconsin | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | West Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wyoming | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alaska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alabama | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arkansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arizona | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | California | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Colorado | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Connecticut | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | District of Columbia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Delaware | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Florida | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Georgia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Hawaii | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Iowa | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Idaho | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Illinois | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Indiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kentucky | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Louisiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Massachusetts | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Michigan | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Minnesota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Missouri | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Mississippi | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Montana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nebraska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Hampshire | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Jersey | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Mexico | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nevada | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New York | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Ohio | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oklahoma | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oregon | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Pennsylvania | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Rhode Island | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Tennessee | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Texas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Utah | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Vermont | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Washington | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wisconsin | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | West Virginia | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wyoming | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 
 ## 1986
 
 | Done | State | Candidate returns | Boundaries | Join | Validation | Publication | Participation |
 |---|---|---|---|---|---|---|---|
-| [ ] | Alaska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Alabama | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arkansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arizona | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | California | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Colorado | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Connecticut | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | District of Columbia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Delaware | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Florida | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Georgia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Hawaii | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Iowa | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Idaho | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Illinois | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Indiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kentucky | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Louisiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Massachusetts | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maryland | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Michigan | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Minnesota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Missouri | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Mississippi | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Montana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nebraska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Hampshire | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Jersey | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Mexico | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nevada | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New York | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Ohio | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oklahoma | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oregon | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Pennsylvania | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Rhode Island | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Tennessee | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Texas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Utah | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Vermont | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Washington | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wisconsin | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | West Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wyoming | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alaska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alabama | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arkansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arizona | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | California | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Colorado | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Connecticut | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | District of Columbia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Delaware | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Florida | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Georgia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Hawaii | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Iowa | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Idaho | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Illinois | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Indiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kentucky | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Louisiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Massachusetts | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Michigan | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Minnesota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Missouri | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Mississippi | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Montana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nebraska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Hampshire | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Jersey | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Mexico | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nevada | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New York | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Ohio | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oklahoma | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oregon | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Pennsylvania | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Rhode Island | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Tennessee | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Texas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Utah | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Vermont | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Washington | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wisconsin | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | West Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wyoming | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 
 ## 1984
 
 | Done | State | Candidate returns | Boundaries | Join | Validation | Publication | Participation |
 |---|---|---|---|---|---|---|---|
-| [ ] | Alaska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Alabama | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arkansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arizona | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | California | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Colorado | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Connecticut | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | District of Columbia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Delaware | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Florida | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Georgia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Hawaii | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Iowa | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Idaho | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Illinois | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Indiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kentucky | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Louisiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Massachusetts | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maryland | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Michigan | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Minnesota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Missouri | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Mississippi | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Montana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nebraska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Hampshire | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Jersey | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Mexico | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nevada | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New York | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Ohio | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oklahoma | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oregon | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Pennsylvania | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Rhode Island | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Tennessee | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Texas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Utah | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Vermont | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Washington | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wisconsin | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | West Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wyoming | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alaska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alabama | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arkansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arizona | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | California | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Colorado | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Connecticut | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | District of Columbia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Delaware | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Florida | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Georgia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Hawaii | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Iowa | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Idaho | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Illinois | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Indiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kentucky | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Louisiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Massachusetts | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Michigan | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Minnesota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Missouri | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Mississippi | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Montana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nebraska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Hampshire | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Jersey | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Mexico | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nevada | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New York | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Ohio | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oklahoma | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oregon | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Pennsylvania | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Rhode Island | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Tennessee | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Texas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Utah | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Vermont | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Washington | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wisconsin | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | West Virginia | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wyoming | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 
 ## 1982
 
 | Done | State | Candidate returns | Boundaries | Join | Validation | Publication | Participation |
 |---|---|---|---|---|---|---|---|
-| [ ] | Alaska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Alabama | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arkansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arizona | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | California | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Colorado | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Connecticut | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | District of Columbia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Delaware | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Florida | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Georgia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Hawaii | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Iowa | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Idaho | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Illinois | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Indiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kentucky | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Louisiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Massachusetts | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maryland | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Michigan | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Minnesota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Missouri | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Mississippi | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Montana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nebraska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Hampshire | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Jersey | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Mexico | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nevada | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New York | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Ohio | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oklahoma | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oregon | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Pennsylvania | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Rhode Island | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Tennessee | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Texas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Utah | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Vermont | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Washington | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wisconsin | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | West Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wyoming | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alaska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alabama | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arkansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arizona | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | California | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Colorado | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Connecticut | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | District of Columbia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Delaware | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Florida | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Georgia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Hawaii | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Iowa | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Idaho | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Illinois | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Indiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kentucky | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Louisiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Massachusetts | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Michigan | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Minnesota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Missouri | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Mississippi | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Montana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nebraska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Hampshire | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Jersey | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Mexico | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nevada | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New York | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Ohio | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oklahoma | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oregon | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Pennsylvania | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Rhode Island | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Tennessee | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Texas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Utah | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Vermont | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Washington | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wisconsin | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | West Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wyoming | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 
 ## 1980
 
 | Done | State | Candidate returns | Boundaries | Join | Validation | Publication | Participation |
 |---|---|---|---|---|---|---|---|
-| [ ] | Alaska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Alabama | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arkansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arizona | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | California | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Colorado | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Connecticut | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | District of Columbia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Delaware | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Florida | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Georgia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Hawaii | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Iowa | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Idaho | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Illinois | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Indiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kentucky | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Louisiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Massachusetts | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maryland | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Michigan | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Minnesota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Missouri | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Mississippi | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Montana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nebraska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Hampshire | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Jersey | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Mexico | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nevada | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New York | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Ohio | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oklahoma | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oregon | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Pennsylvania | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Rhode Island | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Tennessee | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Texas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Utah | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Vermont | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Washington | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wisconsin | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | West Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wyoming | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alaska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alabama | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arkansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arizona | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | California | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Colorado | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Connecticut | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | District of Columbia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Delaware | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Florida | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Georgia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Hawaii | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Iowa | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Idaho | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Illinois | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Indiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kentucky | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Louisiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Massachusetts | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Michigan | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Minnesota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Missouri | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Mississippi | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Montana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nebraska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Hampshire | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Jersey | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Mexico | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nevada | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New York | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Ohio | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oklahoma | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oregon | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Pennsylvania | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Rhode Island | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Tennessee | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Texas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Utah | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Vermont | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Washington | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wisconsin | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | West Virginia | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wyoming | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 
 ## 1978
 
 | Done | State | Candidate returns | Boundaries | Join | Validation | Publication | Participation |
 |---|---|---|---|---|---|---|---|
-| [ ] | Alaska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Alabama | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arkansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arizona | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | California | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Colorado | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Connecticut | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | District of Columbia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Delaware | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Florida | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Georgia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Hawaii | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Iowa | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Idaho | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Illinois | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Indiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kentucky | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Louisiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Massachusetts | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maryland | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Michigan | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Minnesota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Missouri | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Mississippi | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Montana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nebraska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Hampshire | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Jersey | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Mexico | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nevada | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New York | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Ohio | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oklahoma | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oregon | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Pennsylvania | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Rhode Island | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Tennessee | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Texas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Utah | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Vermont | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Washington | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wisconsin | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | West Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wyoming | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alaska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alabama | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arkansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arizona | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | California | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Colorado | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Connecticut | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | District of Columbia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Delaware | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Florida | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Georgia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Hawaii | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Iowa | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Idaho | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Illinois | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Indiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kentucky | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Louisiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Massachusetts | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Michigan | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Minnesota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Missouri | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Mississippi | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Montana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nebraska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Hampshire | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Jersey | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Mexico | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nevada | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New York | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Ohio | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oklahoma | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oregon | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Pennsylvania | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Rhode Island | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Tennessee | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Texas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Utah | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Vermont | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Washington | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wisconsin | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | West Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wyoming | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 
 ## 1976
 
 | Done | State | Candidate returns | Boundaries | Join | Validation | Publication | Participation |
 |---|---|---|---|---|---|---|---|
-| [ ] | Alaska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Alabama | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arkansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arizona | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | California | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Colorado | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Connecticut | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | District of Columbia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Delaware | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Florida | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Georgia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Hawaii | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Iowa | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Idaho | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Illinois | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Indiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kentucky | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Louisiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Massachusetts | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maryland | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Michigan | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Minnesota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Missouri | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Mississippi | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Montana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nebraska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Hampshire | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Jersey | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Mexico | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nevada | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New York | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Ohio | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oklahoma | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oregon | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Pennsylvania | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Rhode Island | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Tennessee | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Texas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Utah | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Vermont | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Washington | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wisconsin | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | West Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wyoming | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alaska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alabama | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arkansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arizona | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | California | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Colorado | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Connecticut | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | District of Columbia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Delaware | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Florida | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Georgia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Hawaii | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Iowa | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Idaho | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Illinois | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Indiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kentucky | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Louisiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Massachusetts | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Michigan | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Minnesota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Missouri | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Mississippi | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Montana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nebraska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Hampshire | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Jersey | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Mexico | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nevada | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New York | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Ohio | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oklahoma | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oregon | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Pennsylvania | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Rhode Island | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Tennessee | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Texas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Utah | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Vermont | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Washington | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wisconsin | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | West Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wyoming | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 
 ## 1974
 
 | Done | State | Candidate returns | Boundaries | Join | Validation | Publication | Participation |
 |---|---|---|---|---|---|---|---|
-| [ ] | Alaska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Alabama | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arkansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arizona | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | California | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Colorado | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Connecticut | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | District of Columbia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Delaware | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Florida | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Georgia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Hawaii | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Iowa | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Idaho | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Illinois | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Indiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kentucky | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Louisiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Massachusetts | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maryland | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Michigan | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Minnesota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Missouri | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Mississippi | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Montana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nebraska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Hampshire | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Jersey | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Mexico | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nevada | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New York | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Ohio | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oklahoma | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oregon | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Pennsylvania | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Rhode Island | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Tennessee | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Texas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Utah | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Vermont | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Washington | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wisconsin | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | West Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wyoming | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alaska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alabama | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arkansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arizona | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | California | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Colorado | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Connecticut | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | District of Columbia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Delaware | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Florida | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Georgia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Hawaii | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Iowa | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Idaho | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Illinois | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Indiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kentucky | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Louisiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Massachusetts | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Michigan | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Minnesota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Missouri | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Mississippi | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Montana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nebraska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Hampshire | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Jersey | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Mexico | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nevada | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New York | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Ohio | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oklahoma | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oregon | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Pennsylvania | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Rhode Island | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Tennessee | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Texas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Utah | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Vermont | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Washington | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wisconsin | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | West Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wyoming | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 
 ## 1972
 
 | Done | State | Candidate returns | Boundaries | Join | Validation | Publication | Participation |
 |---|---|---|---|---|---|---|---|
-| [ ] | Alaska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Alabama | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arkansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arizona | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | California | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Colorado | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Connecticut | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | District of Columbia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Delaware | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Florida | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Georgia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Hawaii | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Iowa | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Idaho | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Illinois | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Indiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kentucky | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Louisiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Massachusetts | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maryland | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Michigan | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Minnesota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Missouri | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Mississippi | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Montana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nebraska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Hampshire | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Jersey | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Mexico | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nevada | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New York | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Ohio | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oklahoma | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oregon | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Pennsylvania | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Rhode Island | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Tennessee | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Texas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Utah | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Vermont | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Washington | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wisconsin | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | West Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wyoming | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alaska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alabama | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arkansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arizona | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | California | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Colorado | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Connecticut | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | District of Columbia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Delaware | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Florida | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Georgia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Hawaii | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Iowa | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Idaho | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Illinois | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Indiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kentucky | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Louisiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Massachusetts | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Michigan | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Minnesota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Missouri | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Mississippi | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Montana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nebraska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Hampshire | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Jersey | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Mexico | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nevada | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New York | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Ohio | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oklahoma | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oregon | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Pennsylvania | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Rhode Island | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Tennessee | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Texas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Utah | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Vermont | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Washington | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wisconsin | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | West Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wyoming | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 
 ## 1970
 
 | Done | State | Candidate returns | Boundaries | Join | Validation | Publication | Participation |
 |---|---|---|---|---|---|---|---|
-| [ ] | Alaska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Alabama | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arkansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arizona | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | California | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Colorado | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Connecticut | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | District of Columbia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Delaware | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Florida | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Georgia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Hawaii | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Iowa | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Idaho | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Illinois | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Indiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kentucky | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Louisiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Massachusetts | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maryland | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Michigan | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Minnesota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Missouri | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Mississippi | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Montana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nebraska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Hampshire | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Jersey | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Mexico | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nevada | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New York | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Ohio | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oklahoma | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oregon | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Pennsylvania | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Rhode Island | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Tennessee | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Texas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Utah | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Vermont | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Washington | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wisconsin | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | West Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wyoming | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alaska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alabama | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arkansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arizona | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | California | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Colorado | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Connecticut | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | District of Columbia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Delaware | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Florida | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Georgia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Hawaii | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Iowa | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Idaho | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Illinois | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Indiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kentucky | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Louisiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Massachusetts | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Michigan | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Minnesota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Missouri | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Mississippi | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Montana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nebraska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Hampshire | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Jersey | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Mexico | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nevada | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New York | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Ohio | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oklahoma | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oregon | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Pennsylvania | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Rhode Island | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Tennessee | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Texas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Utah | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Vermont | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Washington | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wisconsin | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | West Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wyoming | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 
 ## 1968
 
 | Done | State | Candidate returns | Boundaries | Join | Validation | Publication | Participation |
 |---|---|---|---|---|---|---|---|
-| [ ] | Alaska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Alabama | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arkansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arizona | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | California | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Colorado | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Connecticut | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | District of Columbia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Delaware | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Florida | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Georgia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Hawaii | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Iowa | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Idaho | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Illinois | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Indiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kentucky | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Louisiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Massachusetts | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maryland | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Michigan | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Minnesota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Missouri | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Mississippi | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Montana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nebraska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Hampshire | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Jersey | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Mexico | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nevada | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New York | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Ohio | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oklahoma | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oregon | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Pennsylvania | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Rhode Island | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Tennessee | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Texas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Utah | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Vermont | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Washington | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wisconsin | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | West Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wyoming | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alaska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alabama | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arkansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arizona | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | California | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Colorado | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Connecticut | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | District of Columbia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Delaware | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Florida | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Georgia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Hawaii | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Iowa | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Idaho | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Illinois | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Indiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kentucky | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Louisiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Massachusetts | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Michigan | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Minnesota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Missouri | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Mississippi | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Montana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nebraska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Hampshire | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Jersey | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Mexico | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nevada | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New York | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Ohio | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oklahoma | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oregon | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Pennsylvania | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Rhode Island | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Tennessee | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Texas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Utah | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Vermont | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Washington | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wisconsin | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | West Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wyoming | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 
 ## 1966
 
 | Done | State | Candidate returns | Boundaries | Join | Validation | Publication | Participation |
 |---|---|---|---|---|---|---|---|
-| [ ] | Alaska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Alabama | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arkansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arizona | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | California | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Colorado | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Connecticut | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | District of Columbia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Delaware | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Florida | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Georgia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Hawaii | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Iowa | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Idaho | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Illinois | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Indiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kentucky | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Louisiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Massachusetts | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maryland | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Michigan | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Minnesota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Missouri | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Mississippi | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Montana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nebraska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Hampshire | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Jersey | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Mexico | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nevada | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New York | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Ohio | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oklahoma | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oregon | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Pennsylvania | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Rhode Island | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Tennessee | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Texas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Utah | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Vermont | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Washington | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wisconsin | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | West Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wyoming | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alaska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alabama | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arkansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arizona | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | California | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Colorado | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Connecticut | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | District of Columbia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Delaware | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Florida | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Georgia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Hawaii | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Iowa | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Idaho | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Illinois | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Indiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kentucky | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Louisiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Massachusetts | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Michigan | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Minnesota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Missouri | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Mississippi | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Montana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nebraska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Hampshire | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Jersey | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Mexico | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nevada | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New York | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Ohio | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oklahoma | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oregon | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Pennsylvania | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Rhode Island | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Tennessee | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Texas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Utah | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Vermont | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Washington | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wisconsin | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | West Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wyoming | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 
 ## 1964
 
 | Done | State | Candidate returns | Boundaries | Join | Validation | Publication | Participation |
 |---|---|---|---|---|---|---|---|
-| [ ] | Alaska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Alabama | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arkansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Arizona | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | California | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Colorado | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Connecticut | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | District of Columbia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Delaware | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Florida | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Georgia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Hawaii | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Iowa | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Idaho | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Illinois | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Indiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kansas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kentucky | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Louisiana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Massachusetts | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maryland | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Michigan | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Minnesota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Missouri | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Mississippi | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Montana | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | North Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nebraska | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Hampshire | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Jersey | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New Mexico | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Nevada | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | New York | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Ohio | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oklahoma | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Oregon | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Pennsylvania | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Rhode Island | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Carolina | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | South Dakota | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Tennessee | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Texas | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Utah | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Vermont | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Washington | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wisconsin | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | West Virginia | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wyoming | not_reviewed | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alaska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Alabama | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arkansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Arizona | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | California | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Colorado | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Connecticut | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | District of Columbia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Delaware | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Florida | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Georgia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Hawaii | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Iowa | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Idaho | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Illinois | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Indiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kentucky | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Louisiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Massachusetts | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Michigan | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Minnesota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Missouri | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Mississippi | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Montana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | North Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nebraska | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Hampshire | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Jersey | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New Mexico | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Nevada | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | New York | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Ohio | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oklahoma | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Oregon | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Pennsylvania | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Rhode Island | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | South Dakota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Tennessee | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Texas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Utah | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Vermont | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Washington | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wisconsin | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | West Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wyoming | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
