@@ -78,6 +78,21 @@ def test_vt_municipal_discrepancies_withhold_rates_without_modifying_counts():
     assert "house_contest_total_differs_from_municipal_votes_cast" in statistics[1]["quality_flags"]
 
 
+def test_vt_sparse_named_writeins_keep_source_identity_and_party():
+    source, metadata, turnout = vt_fixture()
+    office = source["d"][0]["o"][0]
+    named = dict(cid=40, cn="A", pn=None, vc=2)
+    office["cs"][0]["wc"].append(named)
+    office["cs"][-1]["wc"].append(named)
+    office["cs"][0]["sc"] += 2
+    office["cs"][-1]["sc"] += 2
+    office["cd"][0]["ovc"] += 2
+    turnout["d"][0]["tvc"] += 2
+    rows, _ = vt_review.vt_results(source, metadata, turnout)
+    assert rows[0]["democratic_votes"] == 7 and rows[0]["other_votes"] == 5
+    assert sum(r["other_votes"] for r in rows) == 11
+
+
 @pytest.mark.parametrize("change", ["duplicate", "missing_count", "wrong_election", "wrong_split", "wrong_rollup"])
 def test_vt_rejects_ambiguous_units_missing_counts_and_inconsistent_rollups(change):
     source, metadata, turnout = vt_fixture()

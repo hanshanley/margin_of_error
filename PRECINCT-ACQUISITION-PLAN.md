@@ -170,20 +170,30 @@ failed-fetch fallbacks. The initial live run stopped on exactly one pixel of
 page-position variation during wheel zoom. The checker now permits that one-pixel
 rounding difference while still requiring prevented wheel defaults and actual
 map zoom; the full rerun passed without any renderer change.
+Final status commit `b614fbc988c3efbfcddefaccf220e815b53f50e5` deployed
+successfully in exact run **41955692859**; the live registry, full ledger and
+unchanged renderer match that commit byte-for-byte.
 Astro check has zero errors/warnings and five existing
 hints; build and all four built-in caucus tests pass. Pages preparation verifies
 94 byte-identical relocated originals and a **986,189,318-byte** artifact.
 The website now uses source-specific documentation links instead
 of attaching the NYT 2020 license to every supplemental dataset.
 
-## Next 2026 acquisition: Vermont
+## Vermont 2026 source/count review at `1ed9421`
 
-While North Dakota deploys, acquired **nine original JSON files**, **5,007,208
+Acquired **nine original JSON files**, **5,007,208
 bytes**, from the actual public requests of `https://electionresults.vermont.gov/`.
 Cache: session `files/precinct-expansion-sources/VT-2026/`, with exact URL/length/
-SHA-256 receipts in `sources.json`. These are **session-cache acquisitions only**,
-not yet committed, publicly downloadable, independently reconciled or mapped;
-do not change the worklist's publication status on this evidence alone.
+SHA-256 receipts in `sources.json`. All nine originals are now committed under
+`data/precinct-source-reviews/20261105/VT/` and included in the complete,
+independently redownloaded and byte-verified release:
+`voter-precinct-vermont-20261105/complete-vermont-2026-source-review.zip`,
+**412,981 bytes**, SHA-256
+`7002f19e5002205cf3dcde93dd2870b1704d27a634c86b91b968b77e036a1df9`.
+The immutable release tag targets exact data commit
+`1ed9421a357a382c8b2b88474e7d104605d3fa31`. Website/worklist integration is
+pending exact deployment verification; this is **count/download coverage, not
+mapped precinct coverage**.
 
 The public election metadata identifies election **7100**, GUID
 `68d61e96-1d28-4210-8c1d-8e90512ae105`, **2026 GENERAL ELECTION**, November 3,
@@ -196,14 +206,49 @@ federal (`-f-`), statewide (`-s-`), senate (`-sn-`), house (`-h-`), county
 The cache filename `full-results-20261104211117.json` contains **federal only**,
 not every contest; the other captured files are necessary for the complete set.
 
-Next: reconcile the federal `d/o/cs` records and `rc`/`wc` candidate counts to
-source totals, preserving blank/overvotes separately; establish whether each
-return is town-aggregate or a distinct polling unit. The turnout feed has `tid`,
-`tn`, `tvr`, `tvc`, `tabs`, `tdis`, `tdisr`, and `hl`; confirm their meanings from
-the public UI before using any denominator or absentee count. Do not equate
-town totals or House-district splits with precincts. Acquire explicit current
-geography and a source-backed identity crosswalk; preserve a complete immutable
-download before calling any source acquired in the published ledger.
+Reconciled all **283 town/House-district/Senate-district reporting splits** to
+the election metadata and statewide totals, candidate by candidate including
+named write-ins: **304,588 candidate votes**, **594 overvotes**, **6,247 blanks**,
+and **311,429 reported House-contest total**. The source's compact `ovc` ("other")
+column includes blanks/overvotes; it is **not** other-candidate votes.
+Source `countyId` values are local IDs, not FIPS. These are not established
+polling precincts; no geography or map join is claimed.
+
+The separate **247-town** feed has **311,009** votes cast and **506,512**
+registrations. The ordinary public app confirms `tvr` = registered voters,
+`tvc` = votes cast and `tdisr/tdis` = districts reporting/total. The exact app
+URL/hash and field definitions are preserved; copyrighted app code is not
+redistributed. `tabs` remains uninterpreted. **241 provisional municipal
+registered-voter fractions** are available; **six are withheld**. Grand Isle,
+Orwell, Rockingham, West Rutland and Winooski disagree with House-contest
+accounting; Colchester reports a different number of districts from its
+legislative-split rows. Retain the original values and all flags, without
+reallocation. Registration active/inactive definitions remain unspecified;
+these rates are neither citizen/resident turnout nor demographic estimates.
+
+Reproduce with `scripts/review-vermont-precinct-results.py`; **69 collector
+tests pass**, including sparse write-ins, duplicate/unknown units, missing
+counts, rollup errors, municipal disagreement and district-scope suppression.
+Independent checks validate every original hash, normalized total, unique key,
+municipal rate, ZIP member and CRC. All six office tabs are preserved, but only
+federal House and municipal turnout are normalized; other offices remain
+unreviewed.
+Every review file was also reproduced byte-for-byte from only the nine
+distributed original JSON files and their receipts. Website integration passes
+all seven renderer tests, Astro check (zero errors/warnings, five existing
+hints), build, the four built-in caucus tests, and Pages preparation:
+94 byte-identical relocated originals and a **986,190,710-byte** artifact.
+Focused production-preview checks pass for the VT complete-download link,
+28 download-section links, honest municipal-only ledger, 2026 default, mobile
+layout and no-JavaScript page. The unchanged map renderer already passed its
+full live regression in the ND publication; do not repeat it solely for this
+additional static source-review link.
+
+Next: verify the exact deployed VT download link and ledger, then acquire
+official 2026 town/legislative-split or polling geography with a source-backed
+identity crosswalk. Do not attach split counts to entire towns. Resolve
+Colchester's reporting scope, the five ballot discrepancies, and registration
+definitions; reconcile the remaining preserved office tabs.
 The general SOS results page returned HTTP 403 to requests; no bypass was used.
 The public election portal and its normally requested static JSON were accessible.
 
