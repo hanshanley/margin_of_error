@@ -345,7 +345,12 @@ def main():
         inventory = {name: archive_inputs(folder, originals / (name + ".tar.gz")) for name, folder in
                      [("provider", args.source_cache), ("census-reference", args.reference_cache)]}
         write_json("inputs.json.gz", inventory)
-        for name in [Path(__file__).name, "acquire-house-county-results.py"]:
+        party_exports = importlib.util.spec_from_file_location(
+            "county_party_exports", Path(__file__).with_name("export-county-party-votes.py"))
+        party_module = importlib.util.module_from_spec(party_exports)
+        party_exports.loader.exec_module(party_module)
+        party_module.export(args.output, args.output / "party-votes")
+        for name in [Path(__file__).name, "acquire-house-county-results.py", "export-county-party-votes.py"]:
             (args.output / name).write_bytes(Path(__file__).with_name(name).read_bytes())
     write_json("audit.json", audit)
     if args.archive:

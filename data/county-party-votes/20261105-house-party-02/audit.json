@@ -1,0 +1,142 @@
+{
+  "year": 2026,
+  "office": "U.S. House",
+  "declared_districts": 435,
+  "source_districts": 418,
+  "withheld_states": [
+    "PA"
+  ],
+  "excluded_districts": {
+    "pa-01": {
+      "state_code": "PA",
+      "error": "Wrong 2026 House election, jurisdiction, scope or test-data flag"
+    },
+    "pa-02": {
+      "state_code": "PA",
+      "error": "Wrong 2026 House election, jurisdiction, scope or test-data flag"
+    },
+    "pa-03": {
+      "state_code": "PA",
+      "error": "Wrong 2026 House election, jurisdiction, scope or test-data flag"
+    },
+    "pa-04": {
+      "state_code": "PA",
+      "error": "Wrong 2026 House election, jurisdiction, scope or test-data flag"
+    },
+    "pa-05": {
+      "state_code": "PA",
+      "error": "Wrong 2026 House election, jurisdiction, scope or test-data flag"
+    },
+    "pa-06": {
+      "state_code": "PA",
+      "error": "Wrong 2026 House election, jurisdiction, scope or test-data flag"
+    },
+    "pa-07": {
+      "state_code": "PA",
+      "error": "Wrong 2026 House election, jurisdiction, scope or test-data flag"
+    },
+    "pa-08": {
+      "state_code": "PA",
+      "error": "Wrong 2026 House election, jurisdiction, scope or test-data flag"
+    },
+    "pa-09": {
+      "state_code": "PA",
+      "error": "Wrong 2026 House election, jurisdiction, scope or test-data flag"
+    },
+    "pa-10": {
+      "state_code": "PA",
+      "error": "Wrong 2026 House election, jurisdiction, scope or test-data flag"
+    },
+    "pa-11": {
+      "state_code": "PA",
+      "error": "Wrong 2026 House election, jurisdiction, scope or test-data flag"
+    },
+    "pa-12": {
+      "state_code": "PA",
+      "error": "Wrong 2026 House election, jurisdiction, scope or test-data flag"
+    },
+    "pa-13": {
+      "state_code": "PA",
+      "error": "Wrong 2026 House election, jurisdiction, scope or test-data flag"
+    },
+    "pa-14": {
+      "state_code": "PA",
+      "error": "Wrong 2026 House election, jurisdiction, scope or test-data flag"
+    },
+    "pa-15": {
+      "state_code": "PA",
+      "error": "Wrong 2026 House election, jurisdiction, scope or test-data flag"
+    },
+    "pa-16": {
+      "state_code": "PA",
+      "error": "Wrong 2026 House election, jurisdiction, scope or test-data flag"
+    },
+    "pa-17": {
+      "state_code": "PA",
+      "error": "Wrong 2026 House election, jurisdiction, scope or test-data flag"
+    }
+  },
+  "state_party_coverage": 49,
+  "county_party_coverage": 48,
+  "counties": 3060,
+  "literal_parties": [
+    "America First",
+    "American Constitution",
+    "Conservative",
+    "Constitution",
+    "Democratic",
+    "Florida Forward Party",
+    "Green",
+    "Independent",
+    "Independent American",
+    "Independent Party of Florida",
+    "Independent/Unenrolled",
+    "Kentucky Party",
+    "Legal Marijuana Now",
+    "Libertarian",
+    "Natural Law",
+    "Nebraska Working People",
+    "No Labels",
+    "No Party Affiliation",
+    "No Party Preference",
+    "No Political Party",
+    "Nonpartisan",
+    "Other",
+    "Pacific Green",
+    "Republican",
+    "Socialism PSL",
+    "Socialist Workers",
+    "U.S. Taxpayers",
+    "Unaffiliated",
+    "Unenrolled",
+    "Unity",
+    "Workers",
+    "Working Class",
+    "Working Class Party",
+    "Write-In"
+  ],
+  "scope": "Unofficial candidate votes, not ballots, unique voters, party registration or demographic turnout. Party labels and candidate names are literal, including independents and fusion lines; no inferred affiliation. County party totals aggregate only actual county fragments. State party totals include all declared district candidate votes in accepted states, including unlocated returns; an invalid district withholds its entire state rather than publishing a partial state total. Withheld county states retain missing located counts. Absent parties have no invented zero rows; explicitly reported zero candidate votes remain zero.",
+  "source_snapshot": "20261105-house-02",
+  "files": {
+    "county-party-totals.csv.gz": {
+      "rows": 9608,
+      "bytes": 74960,
+      "sha256": "dbd2b6174ece264a24bbf972fa7a9bfc8d7d232f3c745ee817d30039b34898a6"
+    },
+    "county-district-candidate-totals.csv.gz": {
+      "rows": 12075,
+      "bytes": 139067,
+      "sha256": "e5d81083af5752de40cd622143c556afa7afcc9e849a7d268b5b409136cd4829"
+    },
+    "state-party-totals.csv.gz": {
+      "rows": 220,
+      "bytes": 2372,
+      "sha256": "66aa47b5af7617abc979356dc9a99371320d67d455ea683094e3efecfe04da21"
+    },
+    "district-candidate-totals.csv.gz": {
+      "rows": 1318,
+      "bytes": 24530,
+      "sha256": "d926f6dc85a0532b98b252c5f6c5d1b2e6a21e31a77f4ea7758e0da237002ec6"
+    }
+  }
+}
