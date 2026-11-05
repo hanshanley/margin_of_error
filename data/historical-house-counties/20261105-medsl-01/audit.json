@@ -1,0 +1,224 @@
+{
+  "summary_rows": 5366,
+  "arithmetic_matched_summaries": 5366,
+  "accepted_integer_counties": 5366,
+  "withheld_counties": 0,
+  "literal_vote_exceptions": [],
+  "years": [
+    {
+      "year": "2024",
+      "office": "house",
+      "source_states": 43,
+      "reviewed_states": 43,
+      "source_candidate_rows": 11782,
+      "reviewed_candidate_rows": 11776,
+      "withheld_candidate_rows": 6,
+      "source_counties": 2667,
+      "reviewed_counties": 2664,
+      "withheld_counties": 3,
+      "reviewed_candidate_votes": 128055858,
+      "fully_complete": false,
+      "map_approved": false
+    },
+    {
+      "year": "2022",
+      "office": "house",
+      "source_states": 43,
+      "reviewed_states": 43,
+      "source_candidate_rows": 9666,
+      "reviewed_candidate_rows": 9620,
+      "withheld_candidate_rows": 46,
+      "source_counties": 2699,
+      "reviewed_counties": 2690,
+      "withheld_counties": 9,
+      "reviewed_candidate_votes": 94326162,
+      "fully_complete": false,
+      "map_approved": false
+    }
+  ],
+  "input_rows": 21448,
+  "reviewed_candidate_rows": 21396,
+  "withheld_candidate_rows": 52,
+  "reviewed_counties": 5354,
+  "full_archive_source_reference_review": {
+    "source_records": 1870,
+    "source_groups": 1870,
+    "matched_candidate_rows": 420503,
+    "all_scoped_source_keys_and_row_counts_match": true,
+    "undocumented_license_status_records": [
+      {
+        "source": "mt_medsl_2022",
+        "office": "house",
+        "state_po": "MT",
+        "year": "2022",
+        "publisher_license_status": "believed_cc0"
+      },
+      {
+        "source": "de_sos_report_1996",
+        "office": "house",
+        "state_po": "DE",
+        "year": "1996",
+        "publisher_license_status": "downloaded by curl"
+      },
+      {
+        "source": "de_sos_report_1994",
+        "office": "house",
+        "state_po": "DE",
+        "year": "1994",
+        "publisher_license_status": "downloaded by curl"
+      },
+      {
+        "source": "de_sos_report_1992",
+        "office": "house",
+        "state_po": "DE",
+        "year": "1992",
+        "publisher_license_status": "downloaded by curl"
+      },
+      {
+        "source": "de_sos_report_1990",
+        "office": "house",
+        "state_po": "DE",
+        "year": "1990",
+        "publisher_license_status": "downloaded by curl"
+      }
+    ],
+    "independent_reuse_approved": false
+  },
+  "literal_parties": [
+    "Alliance",
+    "American Constitution",
+    "Approval Voting",
+    "Center",
+    "Common Sense",
+    "Conservative",
+    "Conservative/Common Sense",
+    "Constitution",
+    "Constitution Party",
+    "Constitutional Conservative",
+    "Csp",
+    "Css",
+    "Dem/Prog",
+    "Democrat / Independent",
+    "Democrat / Progressive",
+    "Democratic",
+    "Democratic-Farmer-Labor",
+    "Democratic-Npl",
+    "Forward",
+    "Grassroots Legalize Cannabis",
+    "Green",
+    "Independent",
+    "Independent American Party",
+    "Independent Nomination",
+    "Independent Party",
+    "Itkis Campaign",
+    "Larouche",
+    "Legal Marijuana Now",
+    "Legalize Marijuana Now",
+    "Libertarian",
+    "Libertarian Party Of Nevada",
+    "Liberty Caucus",
+    "Medical Freedom",
+    "Moderate",
+    "No Affiliation",
+    "No Party Affiliation",
+    "No Political Party",
+    "Non-Partisan Delaware",
+    "Nonpartisan",
+    "Other",
+    "Pacific Green",
+    "Parent Party",
+    "Peace And Justice",
+    "Prog/Dem",
+    "Progressive",
+    "Republican",
+    "Republican/Conservative",
+    "Republican/Libertarian",
+    "Socialist Workers Party",
+    "The Better Party",
+    "Truth/Truth",
+    "Unaffiliated",
+    "Unenrolled/Independent",
+    "United Citizen",
+    "United Utah",
+    "United Utah Party",
+    "Unity",
+    "Us Taxpayers",
+    "Working Class",
+    "Working Class Party",
+    "Working Families",
+    "Writein"
+  ],
+  "native_quality_flags": {
+    "": 21380,
+    "initials_only": 13,
+    "surname_only": 55
+  },
+  "pinned_qa_records": 53,
+  "new_maps_approved": false,
+  "candidate_votes_are_not_ballots_or_turnout": true,
+  "source_commit": "155b35015f4b9801c07c05b800c380218c6462b3",
+  "complete_original_url": "https://github.com/pmheideman/us-county-election-results/releases/download/v1.0.0/us_county_election_results_v1.0.0.zip",
+  "complete_original_sha256": "e422fbfb1c56bed6787d08e59eed83d13b4ccf567510c69f94d2802a34b8e625",
+  "scope": "2024/2022 House only; native source origin=medsl; other origins/offices/years excluded.",
+  "compilation_attribution": "Paul Heideman (2026), U.S. county-level election results, v1.0.0, CC BY 4.0.",
+  "upstream_attribution": "MIT Election Data and Science Lab; dataset DOI/title/CC0 declarations below.",
+  "dataset_declarations": {
+    "2024": {
+      "doi": "10.7910/DVN/USBYR4",
+      "titles": [
+        {
+          "title": "U.S. House of Representatives Precinct-Level Returns 2024"
+        }
+      ],
+      "rights": [
+        {
+          "rightsUri": "info:eu-repo/semantics/openAccess"
+        },
+        {
+          "lang": "en",
+          "rights": "Creative Commons Zero v1.0 Universal",
+          "rightsUri": "https://creativecommons.org/publicdomain/zero/1.0/legalcode",
+          "schemeUri": "https://spdx.org/licenses/",
+          "rightsIdentifier": "cc0-1.0",
+          "rightsIdentifierScheme": "SPDX"
+        }
+      ]
+    },
+    "2022": {
+      "doi": "10.7910/DVN/EOKNGW",
+      "titles": [
+        {
+          "title": "U.S. House of Representatives Precinct-Level Returns 2022"
+        }
+      ],
+      "rights": [
+        {
+          "rightsUri": "info:eu-repo/semantics/openAccess"
+        },
+        {
+          "lang": "en",
+          "rights": "Creative Commons Zero v1.0 Universal",
+          "rightsUri": "https://creativecommons.org/publicdomain/zero/1.0/legalcode",
+          "schemeUri": "https://spdx.org/licenses/",
+          "rightsIdentifier": "cc0-1.0",
+          "rightsIdentifierScheme": "SPDX"
+        }
+      ]
+    }
+  },
+  "changes": "Selected MEDSL-origin House rows; reconciled full county vectors; withheld known QA anomalies; summed literal compiler party labels without recoding. Official replacement sources are outside this scope.",
+  "limitations": [
+    "Reviewed means scoped arithmetic/provenance checks and known-anomaly exclusions, not official certification.",
+    "All raw scoped rows are retained; withheld rows never enter reviewed county or state aggregates.",
+    "State sums contain only reviewed counties, not guaranteed complete statewide or district totals.",
+    "Party/candidate labels are the compiler's literals, not independently verified original ballot labels.",
+    "Preserve surname_only/initials_only flags; no identities or zeros are invented.",
+    "Compiler 2024 Oregon major-party overrides use secondary Wikipedia facts; code and attribution retained.",
+    "Generated candidate_name_overrides.csv is not in the pinned repository; no complete name audit is claimed.",
+    "The pinned QA CSV has 53 records, while correction-log prose says 64; Yazoo 2022 is separately withheld.",
+    "NJ 2022 and 2024 are already official-source replacements, outside this MEDSL-only scope. The old NJ 2022 MEDSL duplication warning is not a defect in the current official-source rows.",
+    "Native Montana 2022 believed_cc0 remains unchanged; the 2022 House DOI independently declares CC0.",
+    "No new county maps, historical boundary crosswalks, turnout or demographic participation estimates.",
+    "Full mixed-source original archive is referenced by URL and checksum, not mirrored under a blanket license."
+  ]
+}

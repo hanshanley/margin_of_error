@@ -105,11 +105,43 @@ responses, timestamps and checksums are retained in the provenance review.
 This does not approve every compiler correction/name override, a different
 office/source, all upstream terms, or historical county geography.
 
-Next: review historical upstream provenance/reuse, quality flags, gaps, no-ballot
-records and election-year county crosswalks, starting with the now-identified
-2024/2022 MEDSL House sources. Build a scoped complete export with source/name
-override exceptions before approving its maps; do not hold those years for all
-older mixed-license sources. Acquire genuine 2026 Maine/Pennsylvania/D.C.
+The provenance publication `e2f115732731645b6a0f7b996296a18cadffde08`
+passed exact Pages run `42064163206`. A subsequent public-byte check matched
+the county/UF pointers, county ledger and unchanged renderer, and retained all
+134 complete download links.
+
+The first scoped historical House export is prepared, not yet live:
+2024 has 11,776 reviewed candidate/party rows in 2,664 counties across 43 states;
+2022 has 9,620 rows in 2,690 counties across 43 states. The complete scoped source
+has 21,448 rows and 62 literal compiler party labels. All 52 rows from 12 flagged
+county/year vectors are retained separately, never summed into reviewed exports.
+The 53-record pinned QA file is not the 64 flags mentioned in stale correction
+prose; Yazoo, MS, 2022 is an additional prose-only exclusion.
+Both NJ 2022 and 2024 are already official-source replacements, outside this
+MEDSL-only scope. The old NJ 2022 duplication warning does not invalidate the
+current official replacement. Do not rely on stale correction prose without
+checking the current scoped source record.
+
+The exporter is `scripts/export-historical-house-counties.py`; its complete
+tables are in `data/historical-house-counties/20261105-medsl-01/`.
+Every state/year is listed in its separate 102-cell scope ledger, including
+jurisdictions outside this source family. All completeness/map flags remain
+false. State-party sums are reviewed-county sums, not certified full-state
+results. Keep compiler literals, all 68 surname/initial flags and secondary
+Oregon 2024 party-override provenance; the generated name-override CSV is absent
+from the pinned tree. The full mixed-license original remains linked, not
+mirrored under a blanket permission claim. Packaged tools reproduced all
+nonarchive output bytes outside the repository. All 33 focused tests passed.
+Originals, exact hashes and reproduction proof are in
+`data/county-source-reviews/20261105-historical-house-01/`.
+
+Next: publish and download-verify this complete scoped archive, integrate its
+downloads and honest coverage table, then verify the exact production deployment.
+Continue 2020/2018/2016 source-specific quality review next: their unresolved
+party labels, Missouri noncounty buckets and Texas source undercoverage need
+separate handling rather than a blanket extrapolation from the two newest years.
+Historical maps still require election-year county crosswalks.
+Acquire genuine 2026 Maine/Pennsylvania/D.C.
 alternatives in parallel. Do not repeat the completed
 county map or pipeline suites unless their counts/renderer actually change.
 UF's currently published

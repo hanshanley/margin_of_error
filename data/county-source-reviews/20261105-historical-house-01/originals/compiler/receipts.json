@@ -1,0 +1,56 @@
+[
+  {
+    "path": "R/output/qa_medsl_sweep_flags.csv",
+    "source_commit": "155b35015f4b9801c07c05b800c380218c6462b3",
+    "url": "https://raw.githubusercontent.com/pmheideman/us-county-election-results/155b35015f4b9801c07c05b800c380218c6462b3/R/output/qa_medsl_sweep_flags.csv",
+    "git_blob_sha": "11bbc8ad5a66134ecf34fec9de2e97a12aa3cbdc",
+    "bytes": 5088,
+    "sha256": "ef17f94c2a70672fdbe68d2b4e1419a38e3eb0f38fef05f1b50c70326004ce38",
+    "retrieved_at_utc": "2026-11-05T16:33:52.264575+00:00"
+  },
+  {
+    "path": "R/data_creation/01cb_candidate_party_overrides.R",
+    "source_commit": "155b35015f4b9801c07c05b800c380218c6462b3",
+    "url": "https://raw.githubusercontent.com/pmheideman/us-county-election-results/155b35015f4b9801c07c05b800c380218c6462b3/R/data_creation/01cb_candidate_party_overrides.R",
+    "git_blob_sha": "4bf569112d25c0e5b2247f60d6ab1e261c551f0f",
+    "bytes": 4958,
+    "sha256": "0d755b61dd0073991c3e5537729c3b3910f64ac239f1c81e70af1d9f199cb1f3",
+    "retrieved_at_utc": "2026-11-05T16:33:52.505333+00:00"
+  },
+  {
+    "path": "LICENSE-DATA.md",
+    "source_commit": "155b35015f4b9801c07c05b800c380218c6462b3",
+    "url": "https://raw.githubusercontent.com/pmheideman/us-county-election-results/155b35015f4b9801c07c05b800c380218c6462b3/LICENSE-DATA.md",
+    "git_blob_sha": "2d2ba17f684855221f9449542ee19bf089455c2d",
+    "bytes": 1376,
+    "sha256": "01b81ebd58f0a3b745198a5c28bffe89556b51383eaade3ff3ee13e0e547c3cc",
+    "retrieved_at_utc": "2026-11-05T16:33:52.756225+00:00"
+  },
+  {
+    "path": "LICENSE",
+    "source_commit": "155b35015f4b9801c07c05b800c380218c6462b3",
+    "url": "https://raw.githubusercontent.com/pmheideman/us-county-election-results/155b35015f4b9801c07c05b800c380218c6462b3/LICENSE",
+    "git_blob_sha": "1e14bc17486b44b33f7a7581951fd62bec693498",
+    "bytes": 1070,
+    "sha256": "7f65352273ba461d3798f616fea68c2173f377c86bd74e9421d1bc13603d3f11",
+    "retrieved_at_utc": "2026-11-05T16:33:52.994314+00:00"
+  },
+  {
+    "path": "README.md",
+    "source_commit": "155b35015f4b9801c07c05b800c380218c6462b3",
+    "url": "https://raw.githubusercontent.com/pmheideman/us-county-election-results/155b35015f4b9801c07c05b800c380218c6462b3/README.md",
+    "git_blob_sha": "3d8501a91756d84fdb2965b9a9d3db9ebc820318",
+    "bytes": 4126,
+    "sha256": "a63b5a7aa4daca3d0a6a2025cccf972de5ce4195bfed1d5da66335e2d5fcecc1",
+    "retrieved_at_utc": "2026-11-05T16:33:53.252986+00:00"
+  },
+  {
+    "path": "docs/DECISIONS.md",
+    "source_commit": "155b35015f4b9801c07c05b800c380218c6462b3",
+    "url": "https://raw.githubusercontent.com/pmheideman/us-county-election-results/155b35015f4b9801c07c05b800c380218c6462b3/docs/DECISIONS.md",
+    "git_blob_sha": "82f1fbc1870ff849b267d3169bf1228ad6a6c95b",
+    "bytes": 50037,
+    "sha256": "c8a45f9381c72d3bbad44e477414ae331c583b543f07912a5d0244fc4c9a5c5e",
+    "retrieved_at_utc": "2026-11-05T16:33:53.535490+00:00"
+  }
+]
