@@ -22,6 +22,7 @@ ROOT = Path(__file__).resolve().parents[1]
 NYT = "https://github.com/nytimes/presidential-precinct-map-2024"
 NM = "https://electionresults.sos.nm.gov/resultsSW.aspx?type=FED&map=CTY"
 NC = "https://www.ncsbe.gov/results-data/election-results/historical-election-results-data"
+DE = "https://elections.delaware.gov/results/enr/GE2026.html"
 NYT_DATA = "https://int.nyt.com/newsgraphics/elections/map-data/2024/national/"
 CSV_FIELDS = ["year", "state_code", "key", "county", "precinct", "office",
               "democratic_votes", "republican_votes", "other_votes", "contest_votes",
@@ -125,6 +126,53 @@ def nc_results(source):
                            NC, "precinct" if real else "administrative"))
     if not rows:
         raise ValueError("No NC House precinct returns")
+    return rows
+
+
+def de_results(source, statewide):
+    contest = "Representative In Congress"
+    expected, totals, groups, seen = {}, defaultdict(int), defaultdict(list), set()
+    modes = ["Machine Votes", "Absentee Votes", "Early Voting Votes", "Total Votes"]
+    for row in statewide:
+        if row["Contest Title"] != contest:
+            continue
+        if row["Election Id"] != "GE2026" or row["Election Date"] != "2026-11-03":
+            raise ValueError("Wrong DE election identity")
+        key = (row["Candidate Name"], row["Party Name"])
+        if key in expected:
+            raise ValueError("Duplicate DE statewide candidate")
+        expected[key] = {mode: integer(row[mode]) for mode in modes}
+    for row in source:
+        if row["Contest Title"] != contest:
+            continue
+        if row["Election Id"] != "GE2026" or not row["Election District"].startswith("Election District "):
+            raise ValueError("Wrong DE election/district identity")
+        key = (row["Candidate Name"], row["Party Name"])
+        identity = (row["Election District"], key)
+        if identity in seen or key not in expected:
+            raise ValueError("Duplicate or unknown DE candidate/district")
+        seen.add(identity)
+        counts = {mode: integer(row[mode]) for mode in modes}
+        if None in counts.values() or counts["Total Votes"] != sum(counts[mode] for mode in modes[:-1]):
+            raise ValueError("DE candidate ballot modes do not reconcile")
+        for mode, count in counts.items():
+            totals[(key, mode)] += count
+        groups[row["Election District"]].append(row)
+    if not expected or not groups or any(
+        totals[(key, mode)] != count for key, counts in expected.items() for mode, count in counts.items()
+    ):
+        raise ValueError("DE precinct/state candidate totals do not reconcile")
+    rows = []
+    for district, candidates in groups.items():
+        if {(r["Candidate Name"], r["Party Name"]) for r in candidates} != set(expected):
+            raise ValueError("DE district omits a candidate")
+        sums = defaultdict(int)
+        for candidate in candidates:
+            party = {"Democratic Party": "DEM", "Republican Party": "REP"}.get(candidate["Party Name"], "OTHER")
+            sums[party] += integer(candidate["Total Votes"])
+        rows.append(result(2026, "DE", "", district.removeprefix("Election District "),
+                           "U.S. House", sums["DEM"], sums["REP"], sums["OTHER"],
+                           "Official district-reported machine, absentee and early voting counts", DE))
     return rows
 
 

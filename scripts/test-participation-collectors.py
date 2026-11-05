@@ -82,6 +82,23 @@ def test_precinct_join_withholds_whole_mismatched_or_unreconciled_counties():
     assert all("margin_pp" not in f["properties"] for f in features[1:])
 
 
+def test_de_results_reconcile_every_candidate_and_ballot_mode_before_geometry():
+    source = [dict(zip(["Contest Title", "Election Id", "Election District", "Candidate Name",
+                       "Party Name", "Machine Votes", "Absentee Votes", "Early Voting Votes", "Total Votes"],
+                      ["Representative In Congress", "GE2026", "Election District 01-01",
+                       party, party, "5", "2", "3", "10"]))
+              for party in ["Democratic Party", "Republican Party"]]
+    statewide = [dict(row, **{"Election Date": "2026-11-03"}) for row in source]
+    rows = precinct_results.de_results(source, statewide)
+    assert len(rows) == 1 and rows[0]["precinct"] == "01-01" and rows[0]["contest_votes"] == 20
+    with pytest.raises(ValueError, match="ballot modes"):
+        precinct_results.de_results([dict(source[0], **{"Total Votes": "11"}), source[1]], statewide)
+    with pytest.raises(ValueError, match="Duplicate"):
+        precinct_results.de_results(source + source, statewide)
+    with pytest.raises(ValueError, match="precinct/state"):
+        precinct_results.de_results(source[:1], statewide)
+
+
 def test_nc_results_keep_nonresidential_votes_separate_and_check_ballot_modes():
     base = dict(zip(["County", "Precinct", "Contest Name", "Choice", "Choice Party",
                      "Election Date", "Real Precinct", "Election Day", "Early Voting",

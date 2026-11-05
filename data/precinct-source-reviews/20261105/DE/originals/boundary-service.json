@@ -1,0 +1,219 @@
+{
+ "currentVersion": 11.3,
+ "cimVersion": "3.3.0",
+ "serviceDescription": "<DIV STYLE=\"text-align:Left;\"><DIV><P><SPAN>The Delaware General Assembly consists of  62 legislators in Delaware. The General Assembly is comprised of 21 Senators and 41 Representatives.  Senators are elected to 4 years terms and Representatives are elected to 2 years terms.  The dataset reflects the current General Assembly.The districts were created after the 2010 decennial census and will be updated again after the 2020 decennial census if necessary. Districts are created based on information from the decennial census.Election district boundaries (RD-ED) updated in November 2023.<\/SPAN><\/P><\/DIV><\/DIV>",
+ "hasVersionedData": false,
+ "hasArchivedData": false,
+ "hasBranchVersionedData": false,
+ "supportsDisconnectedEditing": false,
+ "supportsDatumTransformation": true,
+ "supportsReturnServiceEditsOption": true,
+ "returnServiceEditsHaveSR": true,
+ "supportsQueryDataElements": true,
+ "datesInUnknownTimezone": false,
+ "supportsRelationshipsResource": true,
+ "syncEnabled": false,
+ "syncCapabilities": {
+  "supportsRegisterReplicaForServer": true,
+  "supportsSyncDirectionControl": true,
+  "supportsPerLayerSync": true,
+  "supportsPerReplicaSync": true,
+  "supportsAttachmentsSyncDirection": true,
+  "supportsSyncModelNone": true,
+  "supportsDurableUrlForSyncModelNone": false
+ },
+ "supportedExportFormats": "sqlite,filegdb,shapefile,csv,geojson",
+ "extractChangesCapabilities": {
+  "supportsReturnIdsOnly": false,
+  "supportsReturnExtentOnly": false,
+  "supportsReturnAttachments": false,
+  "supportsLayerQueries": false,
+  "supportsGeometry": false,
+  "supportsFeatureReturn": false,
+  "supportsReturnHasGeometryUpdates": false,
+  "supportsFieldsToCompare": false,
+  "supportsServerGens": false
+ },
+ "supportedQueryFormats": "JSON",
+ "maxRecordCount": 2000,
+ "maxRecordCountFactor": 1,
+ "capabilities": "Query",
+ "description": "<DIV STYLE=\"text-align:Left;\"><DIV><P><SPAN>The Delaware General Assembly consists of  62 legislators in Delaware. The General Assembly is comprised of 21 Senators and 41 Representatives.  Senators are elected to 4 years terms and Representatives are elected to 2 years terms.  The dataset reflects the current General Assembly.The districts were created after the 2010 decennial census and will be updated again after the 2020 decennial census if necessary. Districts are created based on information from the decennial census.Election district boundaries (RD-ED) updated in November 2023.<\/SPAN><\/P><\/DIV><\/DIV>",
+ "copyrightText": "The Delaware General Assembly & Department of Elections",
+ "advancedEditingCapabilities": {
+  "supportsSplit": false,
+  "supportsReturnServiceEditsInSourceSR": true,
+  "supportsAsyncApplyEdits": true,
+  "supportsApplyEditsbyUploadID": true,
+  "supportedApplyEditsUploadIDFormats": "JSON",
+  "supportsMultipatchOptionForServiceEdits": true,
+  "supportedApplyEditsOptions": {"supportedEditingOptions": 0}
+ },
+ "spatialReference": {
+  "wkid": 102100,
+  "latestWkid": 3857,
+  "xyTolerance": 0.001,
+  "zTolerance": 0.001,
+  "mTolerance": 0.001,
+  "falseX": -20037700,
+  "falseY": -30241100,
+  "xyUnits": 10000,
+  "falseZ": -100000,
+  "zUnits": 10000,
+  "falseM": -100000,
+  "mUnits": 10000
+ },
+ "initialExtent": {
+  "xmin": -8514891.961961664,
+  "ymin": 4643354.2309,
+  "xmax": -8269102.950038336,
+  "ymax": 4842649.6784,
+  "spatialReference": {
+   "wkid": 102100,
+   "latestWkid": 3857,
+   "xyTolerance": 0.001,
+   "zTolerance": 0.001,
+   "mTolerance": 0.001,
+   "falseX": -20037700,
+   "falseY": -30241100,
+   "xyUnits": 10000,
+   "falseZ": -100000,
+   "zUnits": 10000,
+   "falseM": -100000,
+   "mUnits": 10000
+  }
+ },
+ "fullExtent": {
+  "xmin": -8436795.6652,
+  "ymin": 4643354.2309,
+  "xmax": -8347199.2468,
+  "ymax": 4842649.6784,
+  "spatialReference": {
+   "wkid": 102100,
+   "latestWkid": 3857,
+   "xyTolerance": 0.001,
+   "zTolerance": 0.001,
+   "mTolerance": 0.001,
+   "falseX": -20037700,
+   "falseY": -30241100,
+   "xyUnits": 10000,
+   "falseZ": -100000,
+   "zUnits": 10000,
+   "falseM": -100000,
+   "mUnits": 10000
+  }
+ },
+ "allowGeometryUpdates": false,
+ "allowTrueCurvesUpdates": true,
+ "onlyAllowTrueCurveUpdatesByTrueCurveClients": true,
+ "supportsApplyEditsWithGlobalIds": false,
+ "supportsTrueCurve": true,
+ "units": "esriMeters",
+ "documentInfo": {
+  "Title": "Senate Representative Election and County Political Districts",
+  "Author": "",
+  "Comments": "<DIV STYLE=\"text-align:Left;\"><DIV><P><SPAN>The Delaware General Assembly consists of  62 legislators in Delaware. The General Assembly is comprised of 21 Senators and 41 Representatives.  Senators are elected to 4 years terms and Representatives are elected to 2 years terms.  The dataset reflects the current General Assembly.The districts were created after the 2010 decennial census and will be updated again after the 2020 decennial census if necessary. Districts are created based on information from the decennial census.Election district boundaries (RD-ED) updated in November 2023.<\/SPAN><\/P><\/DIV><\/DIV>",
+  "Subject": "To provide the boundaries for the State of Delaware Senate, House of Representative and Elections Boundaries for use in mapping and analysis, along with the boundaries for County Council and Levy Court Districts, School Board Nominating Districts, and Wilmington City Council Districts.",
+  "Category": "",
+  "Keywords": "Delaware,FirstMap,Senate,Representative,Election Districts,Legislature,County Council,Levy Court,School Board Districts,Wilmington City Council"
+ },
+ "supportsQueryDomains": true,
+ "supportsQueryContingentValues": true,
+ "layers": [
+  {
+   "id": 0,
+   "name": "Election Districts",
+   "parentLayerId": -1,
+   "defaultVisibility": false,
+   "subLayerIds": null,
+   "minScale": 0,
+   "maxScale": 0,
+   "type": "Feature Layer",
+   "geometryType": "esriGeometryPolygon"
+  },
+  {
+   "id": 1,
+   "name": "Senate Districts",
+   "parentLayerId": -1,
+   "defaultVisibility": false,
+   "subLayerIds": null,
+   "minScale": 0,
+   "maxScale": 0,
+   "type": "Feature Layer",
+   "geometryType": "esriGeometryPolygon"
+  },
+  {
+   "id": 2,
+   "name": "House of Representatives",
+   "parentLayerId": -1,
+   "defaultVisibility": false,
+   "subLayerIds": null,
+   "minScale": 0,
+   "maxScale": 0,
+   "type": "Feature Layer",
+   "geometryType": "esriGeometryPolygon"
+  },
+  {
+   "id": 3,
+   "name": "County Political Boundaries",
+   "parentLayerId": -1,
+   "defaultVisibility": false,
+   "subLayerIds": null,
+   "minScale": 0,
+   "maxScale": 0,
+   "type": "Feature Layer",
+   "geometryType": "esriGeometryPolygon"
+  },
+  {
+   "id": 4,
+   "name": "School Board Nominating Districts",
+   "parentLayerId": -1,
+   "defaultVisibility": false,
+   "subLayerIds": null,
+   "minScale": 0,
+   "maxScale": 0,
+   "type": "Feature Layer",
+   "geometryType": "esriGeometryPolygon"
+  },
+  {
+   "id": 5,
+   "name": "Wilmington City Council Districts",
+   "parentLayerId": -1,
+   "defaultVisibility": false,
+   "subLayerIds": null,
+   "minScale": 0,
+   "maxScale": 0,
+   "type": "Feature Layer",
+   "geometryType": "esriGeometryPolygon"
+  }
+ ],
+ "tables": [],
+ "relationships": [],
+ "enableZDefaults": false,
+ "allowUpdateWithoutMValues": false,
+ "supportsVCSProjection": true,
+ "datumTransformations": [
+  {
+   "geoTransforms": [
+    {
+     "wkid": 108190,
+     "latestWkid": 108190,
+     "transformForward": false,
+     "name": "WGS_1984_(ITRF00)_To_NAD_1983"
+    }
+   ]
+  },
+  {
+   "geoTransforms": [
+    {
+     "wkid": 108190,
+     "latestWkid": 108190,
+     "transformForward": true,
+     "name": "WGS_1984_(ITRF00)_To_NAD_1983"
+    }
+   ]
+  }
+ ],
+ "referenceScale": 0,
+ "hasSharedTemplates": true
+}

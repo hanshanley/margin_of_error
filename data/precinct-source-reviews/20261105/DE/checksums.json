@@ -1,0 +1,38 @@
+{
+  "audit.json": {
+    "bytes": 2456,
+    "sha256": "6aa808f1fa70db95d475864bbd9bc41e83fefa664d3ecaa0c5cf855a86527441"
+  },
+  "originals/boundary-layer.json": {
+    "bytes": 6745,
+    "sha256": "997e05e1d6c87dbc1d3a693c08cb7c4c97b657b5abc35469c4a0c450644f795d"
+  },
+  "originals/boundary-service.json": {
+    "bytes": 7659,
+    "sha256": "119c4fe0fc1adf8bb5a9b705e1752d09f133fd8beb612546e330be18e680b5a5"
+  },
+  "originals/district-results.json": {
+    "bytes": 3768888,
+    "sha256": "6c65c8ced354b678f271038c903b551ccd7bd83038f593e662556458ab55c3bf"
+  },
+  "originals/districts.geojson": {
+    "bytes": 7019296,
+    "sha256": "336273fedf7d2fca81f97ba027844cfede7e05e6510071903a733672b711db19"
+  },
+  "originals/results-page.html": {
+    "bytes": 50121,
+    "sha256": "81dee2215ee233e21411ef7879896aa98ca430eff838a5165ed9d40b6407522e"
+  },
+  "originals/results-page.js": {
+    "bytes": 20313,
+    "sha256": "ee821c831ae08bdfb53294692807dc67efd8896ab04eb02deb889f3e0598be58"
+  },
+  "originals/statewide-results.json": {
+    "bytes": 65250,
+    "sha256": "a7a8282f4a70eafcfb05fc932e2becc0df8371ed69ffef28f05391684ba3ca1c"
+  },
+  "results.csv.gz": {
+    "bytes": 12776,
+    "sha256": "ca80281d513a886a7ba0f4189cbe306ca736674564f10c90e3c662b1eb49e620"
+  }
+}

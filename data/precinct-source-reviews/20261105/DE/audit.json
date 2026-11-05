@@ -1,0 +1,44 @@
+{
+  "year": 2026,
+  "state_code": "DE",
+  "candidate_results": "acquired_reconciled",
+  "boundaries": "older_reference_withheld",
+  "join": "withheld",
+  "validation": "counts_passed_map_withheld",
+  "publication": "full_counts_download_only",
+  "complete": "no",
+  "reporting_units": 530,
+  "source_candidate_rows": 9385,
+  "boundary_features": 531,
+  "boundary_vintage": "November 2023, per official service metadata",
+  "reporting_only": [
+    "02-27",
+    "31-16",
+    "41-16"
+  ],
+  "boundary_only": [
+    "01-17",
+    "02-22",
+    "02-23",
+    "06-16"
+  ],
+  "source_url": "https://elections.delaware.gov/results/enr/GE2026.html",
+  "sources": {
+    "district-results.json": "https://elections.delaware.gov/results/enr/Election_ByElectionDistrict_ID_GE2026.json",
+    "statewide-results.json": "https://elections.delaware.gov/results/enr/Election_StatewideResults_ID_GE2026.json",
+    "boundary-service.json": "https://enterprise.firstmap.delaware.gov/arcgis/rest/services/Boundaries/DE_Political_Boundaries/FeatureServer?f=pjson",
+    "boundary-layer.json": "https://enterprise.firstmap.delaware.gov/arcgis/rest/services/Boundaries/DE_Political_Boundaries/FeatureServer/0?f=pjson",
+    "districts.geojson": "https://enterprise.firstmap.delaware.gov/arcgis/rest/services/Boundaries/DE_Political_Boundaries/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=geojson&resultRecordCount=2000",
+    "results-page.html": "https://elections.delaware.gov/results/enr/GE2026.html",
+    "results-page.js": "https://elections.delaware.gov/results/enr/js/results.js"
+  },
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-results-20261105/complete-delaware-precinct-source-review.zip",
+  "candidate_totals": {
+    "democratic_votes": 243467,
+    "republican_votes": 134966,
+    "other_votes": 0,
+    "contest_votes": 378433
+  },
+  "notes": "All 2026 House district/candidate ballot-mode totals reconcile exactly to official statewide totals. The current official boundary service identifies its election-district update as November 2023; reporting-only and boundary-only IDs are listed in this audit. No older geometry is relabeled 2026 or mapped. Complete normalized returns and all original source captures are retained in the separate full source ZIP.",
+  "next_action": "Obtain verified 2026 election-district boundaries; resolve reporting-only and boundary-only identities before mapping."
+}
