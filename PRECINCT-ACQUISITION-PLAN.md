@@ -2142,7 +2142,7 @@ footer **31,811 DEM; 13,750 REP; 2,038 IND; 69 write-ins; 662 blanks**.
 Full-page OCR merged vertical numeric runs and missed cells, particularly in
 sparse early modes; those incomplete matrices were rejected, not repaired.
 
-### Worcester governor count review: source/release and local UI verified
+### Worcester governor count review: source/release and production UI verified
 
 The bounded second reading is now complete. Independently detected actual source
 grid borders yielded **1,260** candidate/write-in/blank cells. Every original
@@ -2235,7 +2235,7 @@ tag-to-source checks pass:
 `files/worcester-2026-remote-release-proof.json`.
 No original or immutable asset is replaced.
 
-The pending UI adds only the city/office-scoped count-review download; all
+The published UI adds only the city/office-scoped count-review download; all
 **52** existing complete downloads remain, for **53** total. The registry's
 mapped snapshots, Boston's live flag/MA shard, and renderer are unchanged.
 Ledger regeneration still has **1,632 incomplete cells**; only the **MA 2026
@@ -2252,7 +2252,15 @@ the prior 52, city-and-governor-only wording, no false county/participation
 label, unchanged registry/map renderer, preserved Boston map and 2026 defaults,
 unqueried static bytes, no overflow/errors and the notes-only ledger change.
 Proof: `files/worcester-2026-local-browser-proof.json`.
-Next finish the exact UI deployment and production proof; no live claim yet.
+UI commit `e8631f8168a7f5589df6bc7ff274b07464fb8987` passed exact Pages run
+**41990181780**, including build and deploy. Unqueried production registry,
+ledger and renderer bytes match the committed sources. All four production
+desktop/mobile x JS/no-JS checks pass, retaining all **53** complete downloads,
+Boston's **252** colored precincts and central-tabulation-only warning, working
+zoom and the 2026 defaults. Proofs:
+`files/worcester-2026-exact-ui-deployment.json` and
+`files/worcester-2026-live-browser-proof.json`. This verifies the count-download
+publication, not a Worcester map or participation rate.
 
 The separate Atlas follow-up now contains the complete actual layer/item,
 native object-ID query and GeoJSON, each with full receipt. The **371,500-byte**
@@ -2268,6 +2276,75 @@ Do not treat the service's November 2026 edit timestamp as proof of election
 applicability, merge split areas into a broader result row, infer five zero
 returns, or manufacture a 7-5A shape. This bounded reference/scope follow-up
 remains open; it does not block the complete, explicitly unmapped count download.
+
+## Washington 2026: all county originals acquired; House count review
+
+The official Secretary of State elections index declares the current VoteWA
+portal. Its actual public 2026 election and all **39** declared county APIs
+are acquired, together with **both complete published Excel exports for every
+county (78 originals)**, native metadata, full receipts and ZIP integrity
+checks. Empty native `precincts` arrays and `includePrecinctResults=false`
+do not establish missing precinct counts: the published workbooks contain
+populated **Precinct Results** sheets.
+
+The official precinct-shapefile index explicitly declares both **2026 General**
+boundary packages, created October 15, 2026: **8,119 base records** and
+**13,774 split records**, across all 39 counties. Complete original ZIPs,
+metadata, projection, inventories and schemas are retained. Native records
+are not presumed unique reporting units; inspect county/name/St_Code/CD/LD
+and complete base/split identity universes before dissolving or joining.
+
+Canonical parser: `scripts/review-washington-precinct-results.py`.
+It verifies original-byte receipts and declared county/report bindings, exact
+election and production/general-election scope, both workbook schemas and
+complete identity inventories. Each accepted House contest's detailed counts
+sum exactly to its county summary, every native summary candidate
+ID/name/literal-party/count agrees, all explicitly reported counts agree
+between exports, and candidate votes + overvotes + undervotes equal explicit
+single-seat contest ballots for each reporting row. All **391 collector tests**
+pass, including **24 focused Washington cases**.
+
+**36 counties / 5,804 House reporting rows pass**. Keep **King** withheld for
+duplicate House reporting identities and **Jefferson / Walla Walla** withheld
+for House ballot-accounting discrepancies. These are source-specific open
+issues, not permission to repair, deduplicate or allocate counts. Some
+All Results count cells are blank while the detailed export explicitly
+supplies counts: preserve the original blanks and use only separately explicit
+detailed counts after independent summary/API checks, never missing-to-zero.
+Source party whitespace is retained literally in validation; surrounding
+whitespace is ignored only for party classification. This matters for
+Okanogan's explicitly Democratic John Duresky label.
+
+Other-office review is independent: Pacific's Timberland library measure and
+Wahkiakum's commissioner contest do not sum to their county summaries; full
+diagnostics and originals remain without discarding separately verified House
+contests. No participation rate, demographic inference or map is approved.
+King's official index announces its first precinct release November 6 at
+4 p.m.; do not mistake a county summary for a precinct file.
+
+The canonical complete count package is
+`data/precinct-source-reviews/20261105/WA/`. Its ZIP is
+`complete-washington-2026-count-review.zip`, **109,998,129 bytes**, SHA-256
+`dd51f894522ba53cd7ad392babb4c234c768a1d2bf0d2eb19365423fcd46bd82`.
+Both full input archives are below GitHub's individual-file limit: the largest
+committed file is **64,248,062 bytes**. Independent full input/checksum and
+78-workbook CRC verification passes. The archived parser rebuilds the complete
+ZIP **byte-identically using archive-only inputs**.
+Proof: `files/washington-2026-offline-reproduction-proof.json`.
+Validated House candidate totals are **932,493 Democratic + 671,234 Republican
++ 6,640 other = 1,610,367** across the 36 accepted counties; these are neither
+statewide totals nor unique voters. Release verification is the remaining
+source-publication gate; no registry, ledger or live flag changes yet.
+
+**Next executable actions:** finish the remote full-byte proof;
+commit and release the immutable source package as Hans; then audit exact
+base/split reporting-name universes and explicit CD agreement for the 36
+validated counties. Map only complete unambiguous county joins after
+geometry validity/overlap checks. Pursue authoritative King identities and
+Jefferson/Walla Walla accounting corrections rather than guessed prefixes or
+invented ballots. Separate native ballot/registration records are archived,
+but their definitions, duplicates and denominators still need independent
+review before any participation fractions.
 
 ## Resume procedure for every work session or scheduled prompt
 

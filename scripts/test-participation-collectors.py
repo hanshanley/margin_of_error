@@ -46,6 +46,136 @@ clark_originals = module("archive-clark-historical-sources")
 dc_maps = module("build-dc-precinct-results")
 boston_maps = module("build-boston-precinct-results")
 worcester_review = module("review-worcester-precinct-results")
+wa_review = module("review-washington-precinct-results")
+
+
+def washington_fixture():
+    import copy
+    office = "Congressional District 4 - U.S. Representative"
+    values = [("Ballots Cast", "", "", 36), ("D", "42", "(Prefers Democratic Party)", 10),
+              ("R", "18", "(Prefers Republican Party)", 20), ("Write-in", "48", "", 2),
+              ("Over Votes", "", "", 1), ("Under Votes", "", "", 3)]
+    summary = [dict(zip(wa_review.SUMMARY_FIELDS, [office, "10", name, choice, party, total]))
+               for name, choice, party, total in values]
+    precincts = [dict(row, Precinct=precinct, Total=row["Total"] if precinct == "1" else 0)
+                 for precinct in ["1", "1A"] for row in summary]
+    original = {"Summary Results": summary, "Precinct Results": precincts}
+    detailed = {name: [dict(row, **{"Votes Allowed": 1}) for row in rows] for name, rows in original.items()}
+    options = [dict(nativeId=choice, name=[dict(languageId="en", text=name)],
+                    party=dict(name=[dict(languageId="en", text=party)] if party else None,
+                               standardName=None), voteCount=total)
+               for name, choice, party, total in values if choice]
+    native = dict(election=dict(electionDate="2026-11-03"),
+                  ballotItems=[dict(name=[dict(languageId="en", text=office)],
+                                    summaryResults=dict(ballotOptions=options), voteTotal=32)])
+    return copy.deepcopy(original), copy.deepcopy(detailed), copy.deepcopy(native)
+
+
+def test_washington_reconciles_every_export_and_native_candidate_without_filling_zero_rows():
+    original, detailed, native = washington_fixture()
+    rows, audit = wa_review.reconcile_county(original, detailed, native, "Example County", "county-id")
+    assert len(rows) == 2 and rows[0]["reported_ballots"] == 36 and rows[0]["contest_votes"] == 32
+    assert rows[0]["other_votes"] == 2 and rows[0]["margin_pp"] == 31.25
+    assert rows[1]["precinct"] == "1A" and rows[1]["margin_pp"] is None
+    assert rows[0]["key"] != rows[1]["key"] and audit["all_native_house_candidate_names_ids_parties_counts_reconcile"]
+    assert not any(key in rows[0] for key in ["turnout_rate", "registration", "voters"])
+
+
+@pytest.mark.parametrize("value", [None, "", "0", "1l", -1, 1.5, True, float("inf"), float("nan")])
+def test_washington_missing_or_invalid_counts_are_not_repaired_or_zero_filled(value):
+    original, detailed, native = washington_fixture()
+    detailed["Precinct Results"][0]["Total"] = value
+    with pytest.raises(ValueError):
+        wa_review.reconcile_county(original, detailed, native, "Example County", "county-id")
+
+
+@pytest.mark.parametrize("change", ["duplicate", "exports", "summary", "accounting", "date",
+                                   "candidate-id", "candidate-name", "party", "native-count", "native-inventory"])
+def test_washington_rejects_bad_inventories_totals_scope_and_candidate_bindings(change):
+    original, detailed, native = washington_fixture()
+    if change == "duplicate":
+        original["Precinct Results"].append(dict(original["Precinct Results"][0]))
+    elif change == "exports":
+        original["Precinct Results"][1]["Total"] += 1
+    elif change == "summary":
+        original["Precinct Results"][1]["Total"] += 1
+        detailed["Precinct Results"][1]["Total"] += 1
+    elif change == "accounting":
+        for book in [original, detailed]:
+            book["Summary Results"][4]["Total"] += 1
+            book["Precinct Results"][4]["Total"] += 1
+    elif change == "date":
+        native["election"]["electionDate"] = "2024-11-05"
+    elif change == "candidate-id":
+        native["ballotItems"][0]["summaryResults"]["ballotOptions"][0]["nativeId"] = "99"
+    elif change == "candidate-name":
+        native["ballotItems"][0]["summaryResults"]["ballotOptions"][0]["name"][0]["text"] = "Other"
+    elif change == "party":
+        native["ballotItems"][0]["summaryResults"]["ballotOptions"][0]["party"]["name"][0]["text"] = "Other"
+    elif change == "native-count":
+        native["ballotItems"][0]["summaryResults"]["ballotOptions"][0]["voteCount"] += 1
+    else:
+        native["ballotItems"].append(dict(native["ballotItems"][0]))
+    with pytest.raises(ValueError):
+        wa_review.reconcile_county(original, detailed, native, "Example County", "county-id")
+
+
+def test_washington_reader_rejects_unknown_columns_and_preserves_literal_split_labels(tmp_path):
+    original, detailed, _ = washington_fixture()
+    path = tmp_path / "source.xlsx"
+    book = openpyxl.Workbook()
+    book.remove(book.active)
+    for name, fields in [("Summary Results", wa_review.SUMMARY_FIELDS),
+                         ("Precinct Results", wa_review.PRECINCT_FIELDS)]:
+        sheet = book.create_sheet(name)
+        sheet.append(fields)
+        for row in original[name]:
+            sheet.append([row[field] for field in fields])
+    book.save(path)
+    actual = wa_review.read_workbook(path, False)
+    assert {row["Precinct"] for row in actual["Precinct Results"]} == {"1", "1A"}
+    assert actual["Precinct Results"][6]["Total"] == 0
+    book["Precinct Results"].cell(2, 8, "Unexpected observation")
+    book.save(path)
+    with pytest.raises(ValueError, match="Unexpected nonempty"):
+        wa_review.read_workbook(path, False)
+
+
+def test_washington_blank_original_is_retained_and_only_explicit_detailed_count_is_used():
+    original, detailed, native = washington_fixture()
+    original["Precinct Results"][0]["Total"] = None
+    rows, audit = wa_review.reconcile_county(original, detailed, native, "Example County", "county-id")
+    assert original["Precinct Results"][0]["Total"] is None
+    assert rows[0]["reported_ballots"] == 36
+    assert audit["office_reviews"][detailed["Summary Results"][0]["Office Name"]]["missing_original_count_cells"] == 1
+
+
+def test_washington_preserves_native_party_whitespace_but_classifies_its_explicit_democratic_label():
+    original, detailed, native = washington_fixture()
+    for book in [original, detailed]:
+        for rows in book.values():
+            for row in rows:
+                if row["Party"] == "(Prefers Democratic Party)":
+                    row["Party"] = " " + row["Party"]
+    native["ballotItems"][0]["summaryResults"]["ballotOptions"][0]["party"]["name"][0]["text"] = \
+        " (Prefers Democratic Party)"
+    rows, _ = wa_review.reconcile_county(original, detailed, native, "Example County", "county-id")
+    assert rows[0]["democratic_votes"] == 10 and rows[0]["other_votes"] == 2
+    assert detailed["Summary Results"][1]["Party"] == " (Prefers Democratic Party)"
+
+
+def test_washington_bad_local_contest_is_audited_without_discarding_reconciled_house_rows():
+    import copy
+    original, detailed, native = washington_fixture()
+    for book in [original, detailed]:
+        for name in book:
+            book[name] += [dict(row, **{"Office Name": "Local office"}) for row in copy.deepcopy(book[name])]
+    local_contest = copy.deepcopy(native["ballotItems"][0])
+    local_contest["name"][0]["text"] = "Local office"
+    native["ballotItems"].append(local_contest)
+    detailed["Precinct Results"][-1]["Total"] += 1
+    rows, audit = wa_review.reconcile_county(original, detailed, native, "Example County", "county-id")
+    assert len(rows) == 2 and audit["office_reviews"]["Local office"]["status"] == "not_reconciled"
 
 
 def worcester_reading_fixture():

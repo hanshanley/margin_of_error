@@ -1,0 +1,26 @@
+{
+  "audit.json": {
+    "bytes": 187162,
+    "sha256": "0c0bf02cddd9a0eda51a4ebb2d7ed8733c891ad88d093bfea01a1504d1995106"
+  },
+  "inputs.json.gz": {
+    "bytes": 17727,
+    "sha256": "a4bc2a3c20b4c2016fc1ab8b92fdc849bd764fc72ac862117efd364ab69db521"
+  },
+  "originals/native-counties.tar.gz": {
+    "bytes": 45339062,
+    "sha256": "4fcdabb811bae6c45256a1418d294a5dd2ccef13fbcfb6d3da444ee012f1ac68"
+  },
+  "originals/official-discovery.tar.gz": {
+    "bytes": 64248062,
+    "sha256": "e839aaf237e9b53f630f5bd8b07117448b7aa9095625b777a414919897a29017"
+  },
+  "results.json.gz": {
+    "bytes": 184321,
+    "sha256": "126f0377603d288712f76e0d0ac643dc6cef8cdc1f16e52a8b404b249554f128"
+  },
+  "review-washington-precinct-results.py": {
+    "bytes": 20089,
+    "sha256": "a35becd8c7df23a3bd78b1b69ef1e2afc5731a73a5b7fac0b18474e135a810a2"
+  }
+}
