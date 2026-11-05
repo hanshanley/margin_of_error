@@ -3467,9 +3467,27 @@ the complete archive byte-identically using only the extracted package.
 ZIP: **1,726,378 bytes**, SHA-256
 `447081ce84d9755e323aaae2b21016f9e77281157f3a4d38057ef6b9d65883f2`.
 Proof: `files/alabama-native-count-package-proof-01.json`.
-Next: commit/push this validated source package as Hans, publish a new immutable
-release pinned to that source commit, verify its whole public download, then
-register the complete native tables and verify their actual UI deployment.
+Hans source commit **`11401d43852bf1808babc38136ce5cd71452d2a0`** is pushed.
+Immutable release **`voter-precinct-alabama-native-counts-20261105`** is pinned to
+that exact commit. Its entire anonymous public download matches the local archive;
+all 76 file checksums, 70 original receipts, exact archive members and CRC pass.
+Remote proof: `files/alabama-native-count-remote-release-proof-01.json`.
+
+The registered source review pins this exact source and release and adds four
+complete downloads: the whole ZIP, all 73 county-by-House vectors, all 67 separate
+native participation observations and the complete 5,613-row candidate table.
+Only AL2026 changes in the 1,632-cell ledger; all cells remain incomplete.
+All previous source entries and the renderer/map configuration remain unchanged.
+Local source-matched checks pass **81 complete links**, retaining all **77**
+older downloads, **13 whole CSV endpoints**, and all four desktop/mobile by
+JavaScript/no-JavaScript modes, with no overflow and 2026 still the default.
+Proof: `files/alabama-native-count-ui-local-browser-proof-01.json`.
+Five focused coverage tests pass; the complete production build and Pages
+preparer pass, verifying **94** byte-identical relocated downloads and a
+**986,275,862-byte** artifact. This metadata-only integration does not repeat
+unchanged renderer suites. The previously documented unrelated UK full-validator
+failure remains outside this batch. Next: commit/push the integration as Hans,
+then verify its exact deployment and actual public bytes/download modes.
 
 Arkansas's official results index explicitly links the actual public application
 `https://arkansas.tally-enr.com/#bucket=results&filter=Federal&contest=eafd140a-9378-43a2-bd6d-f8661524139b`.
@@ -3560,7 +3578,9 @@ its actual visible text succeeds. Clicking the real "Arkansas - U.S. Senate
 Results" button then selects Arkansas County and captures its actual
 `GetContestResults?...&locationId=05001` response (**42,163 bytes**,
 `native-public-response-017`). The page now explicitly offers "View Precinct
-Results". County selection alone does not request precinct geometry. All new
+Results". Like the county control, follow its actual visible text rather than
+assuming a button role; the guessed button-role locator times out.
+County selection alone does not request precinct geometry. All new
 originals remain in the session cache, separate from the released count package;
 never mutate the immutable package's earlier original set.
 
