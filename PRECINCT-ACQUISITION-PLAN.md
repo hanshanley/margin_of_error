@@ -1114,8 +1114,25 @@ then reproduces identical output/ZIP **only from distributed originals**
 and verifies immutable-overwrite refusal:
 session `files/ri-2026-independent-validation.json`.
 **197 collector tests pass**, including 13 focused Rhode Island cases.
-Release and site registration remain pending. Geometry and all rates
-remain withheld. Next: finish the complete download's release/live proof,
+Release tag **`voter-precinct-rhode-island-20261105`** targets data/parser
+commit **`1b0227cf65efd04686620e2495cd858266b64f40`**. Full remote
+redownload verifies the exact tag, ZIP size/hash and all 10 members against
+the reviewed originals/output; session `files/ri-2026-release-verification.json`.
+Site registration now adds the complete RI download and regenerates both
+**1,632-cell** ledgers without accepting precinct geometry or rates.
+Astro check, all seven participation JavaScript tests and the production
+build (including four build-time caucus checks) pass. The whole build
+validator, run **before** relocation, passes the changed participation
+assertions and stops at the existing unrelated UK topic-card assertion
+(line 1077: 23 actual versus 16 expected); it is not reported as passing.
+Pages preparation verifies all 94 complete relocated assets and produces
+a **986,205,928-byte** site. Desktop/mobile with and without JavaScript
+pass exact registry/ledger/renderer bytes, all **40** download links and
+correct RI review/original-batch labels. JavaScript checks also pass the
+2026 default, source-matched RI state red/blue fallback, zoom and failed
+registry-fetch behavior. Session proof:
+`files/ri-2026-local-browser-validation.json`. Live proof remains pending.
+Geometry and all rates remain withheld. Next: finish the exact site/live proof,
 separately review local participation and acquire authoritative 2026
 geographic references. Do not mark the RI ledger cell complete, borrow
 2024 boundaries or map Federal/limited-only votes onto households.

@@ -64,7 +64,7 @@ Checkmarks are reserved for verified, complete live coverage.
 | [ ] | Oklahoma | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Oregon | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Pennsylvania | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Rhode Island | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Rhode Island | acquired_reconciled | exact_year_reference_pending | withheld | native_and_independent_api_candidate_mode_totals_passed | full_counts_download_only | acquired_locality_counts_rates_withheld |
 | [ ] | South Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | South Dakota | acquired_reconciled | correct_election_reference_pending | withheld | counts_passed_map_withheld | full_counts_download_only | acquired_precinct_counts_and_provisional_rates |
 | [ ] | Tennessee | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
