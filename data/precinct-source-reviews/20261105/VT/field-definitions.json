@@ -1,0 +1,18 @@
+{
+  "source": {
+    "url": "https://electionresults.vermont.gov/chunk-3WQ2LQCO.js",
+    "bytes": 3608924,
+    "sha256": "6d7af6eacc27e1f9b3c191e8a6a9deb19b4ac856ac3aa2227cc876f595526ada"
+  },
+  "note": "Field meanings verified against the normally served public app; copyrighted app code is not redistributed.",
+  "fields": {
+    "tvr": "Registered Voters",
+    "tvc": "Votes Cast",
+    "tdisr": "Districts Reporting",
+    "tdis": "Total districts",
+    "tabs": "Uninterpreted; retained only as a raw source value."
+  },
+  "compact_other_counts": "The compact display's ovc includes blank votes and overvotes; never use it as other-candidate votes.",
+  "registration_scope": "Municipal source-reported registrations; active/inactive definition unspecified.",
+  "boundary_scope": "No geography acquired or crosswalk validated; legislative splits are not verified polling precincts."
+}

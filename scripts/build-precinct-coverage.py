@@ -140,7 +140,7 @@ def build_rows(index=None, published=False, source_batches=None):
                 row.update({field: review[field] for field in [
                     "candidate_results", "boundaries", "join", "validation", "publication", "next_action"]})
                 row.update(results_source=review["source_url"],
-                           boundary_source=review.get("boundary_source") or review["sources"]["boundary-service.json"],
+                           boundary_source=review.get("boundary_source") or review["sources"].get("boundary-service.json", ""),
                            notes=review["notes"] + " Complete ZIP: " + review["complete_download_url"])
                 if review.get("participation"):
                     row["participation"] = review["participation"]

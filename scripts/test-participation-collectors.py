@@ -27,6 +27,83 @@ additional_precincts = module("build-additional-precinct-results")
 historical_sources = module("acquire-historical-precinct-sources")
 nd_review = module("review-north-dakota-precinct-results")
 nd_maps = module("build-north-dakota-precinct-results")
+vt_review = module("review-vermont-precinct-results")
+
+
+def vt_fixture():
+    towns = [dict(townId=1, townName="FIRST"), dict(townId=2, townName="SECOND")]
+    districts, nodes, compact = [], [], []
+    for tid, district in [(1, "A"), (2, "A"), (2, "B")]:
+        town = towns[tid - 1]["townName"]
+        districts.append(dict(townId=tid, townName=town, repDistrict=district,
+                              senateDistrict="S", countyId=1, countyName="EXAMPLE"))
+        rc = [dict(cid=cid, cn=name, pn=party, vc=votes) for cid, name, party, votes in
+              [(1, "A", "DEMOCRATIC", 7), (2, "B", "REPUBLICAN", 3), (3, "C", "INDEPENDENT", 2)]]
+        nodes.append(dict(tid=tid, tn=town, repd=district, send="S", vf=1, sc=15, sv=1, bv=1,
+                          rc=rc, wc=[dict(cid=0, cn="OTHER WRITE-IN", pn=None, vc=1)]))
+        compact.append(dict(tn=town, repd=district, send="S", vc1=7, vc2=3, vc3=2, ovc=3))
+    parent = json.loads(json.dumps(nodes[0]))
+    parent.update(tid=0, tn="STATE WIDE", sc=45, sv=3, bv=3)
+    for candidate in parent["rc"] + parent["wc"]:
+        candidate["vc"] *= 3
+    source = dict(d=[dict(pid=0, o=[dict(oid=4, on="REPRESENTATIVE TO CONGRESS",
+        vf=1, cid1=1, cid2=2, cid3=3, cs=nodes + [parent], cd=compact)])])
+    metadata = dict(electionDetails=dict(electionId=7100, electionGuid=vt_review.GUID,
+        electionName="2026 GENERAL ELECTION", electionDate="2026-11-03T00:00:00",
+        isGeneralElection=True, isOfficial=False), towns=towns, townDistricts=districts)
+    turnout = dict(d=[dict(tid=tid, tn=town["townName"], tvr=100 * tid, tvc=15 * tid,
+        tabs=0, tdis=tid, tdisr=tid, hl=[]) for tid, town in enumerate(towns, 1)])
+    return source, metadata, turnout
+
+
+def test_vt_splits_reconcile_without_relabeling_municipal_turnout_as_precinct_data():
+    rows, statistics = vt_review.vt_results(*vt_fixture())
+    assert len(rows) == 3 and len({r["key"] for r in rows}) == 3
+    assert rows[0]["contest_votes"] == 13 and rows[0]["reported_contest_total"] == 15
+    assert rows[0]["other_votes"] == 3 and rows[0]["margin_pp"] == pytest.approx(400 / 13)
+    assert all(r["reporting_unit_kind"] == "town_legislative_split" for r in rows)
+    assert len(statistics) == 2 and statistics[1]["ballots"] == 30
+    assert statistics[1]["registered_turnout_pct"] == 15
+    assert statistics[1]["reporting_unit_kind"] == "municipality"
+    assert sum(r["ballots"] for r in statistics) == 45
+
+
+def test_vt_municipal_discrepancies_withhold_rates_without_modifying_counts():
+    source, metadata, turnout = vt_fixture()
+    turnout["d"][1]["tvc"] = 29
+    rows, statistics = vt_review.vt_results(source, metadata, turnout)
+    assert sum(r["reported_contest_total"] for r in rows) == 45
+    assert statistics[1]["ballots"] == 29 and statistics[1]["registered_turnout_pct"] is None
+    assert statistics[0]["registered_turnout_pct"] == 15
+    assert "house_contest_total_differs_from_municipal_votes_cast" in statistics[1]["quality_flags"]
+
+
+@pytest.mark.parametrize("change", ["duplicate", "missing_count", "wrong_election", "wrong_split", "wrong_rollup"])
+def test_vt_rejects_ambiguous_units_missing_counts_and_inconsistent_rollups(change):
+    source, metadata, turnout = vt_fixture()
+    office = source["d"][0]["o"][0]
+    if change == "duplicate":
+        office["cs"].insert(0, office["cs"][0])
+    elif change == "missing_count":
+        office["cs"][0]["rc"][0]["vc"] = None
+    elif change == "wrong_election":
+        metadata["electionDetails"]["electionDate"] = "2024-11-05T00:00:00"
+    elif change == "wrong_split":
+        office["cs"][0]["send"] = "OTHER"
+    else:
+        office["cs"][-1]["rc"][0]["vc"] += 1
+        office["cs"][-1]["sc"] += 1
+    with pytest.raises(ValueError):
+        vt_review.vt_results(source, metadata, turnout)
+
+
+@pytest.mark.parametrize("districts,reported", [(1, 0), (2, 2)])
+def test_vt_incomplete_or_different_municipal_district_scope_withholds_the_rate(districts, reported):
+    source, metadata, turnout = vt_fixture()
+    turnout["d"][0].update(tdis=districts, tdisr=reported)
+    _, statistics = vt_review.vt_results(source, metadata, turnout)
+    assert statistics[0]["registered_turnout_pct"] is None
+    assert "incomplete_or_different_district_scope" in statistics[0]["quality_flags"]
 
 
 def nd_boundary_fixture():
@@ -176,6 +253,10 @@ def test_source_review_accepts_manifest_provenance_without_claiming_mapped_parti
     assert row["publication"] == "full_counts_download_only" and row["join"] == "withheld"
     assert row["participation"] == "acquired_precinct_ballot_counts"
     assert row["boundary_source"] == "manifest.json" and row["complete"] == "no"
+    review.update(state_code="VT", boundary_source="", sources={"election.json": "election.json"})
+    (tmp_path / "review.json").write_text(json.dumps(review))
+    row = next(r for r in precinct_coverage.build_rows() if r["year"] == 2026 and r["state_code"] == "VT")
+    assert row["boundary_source"] == "" and row["join"] == "withheld"
 
 
 def test_historical_source_acquisition_requires_exact_reviewed_bytes_without_inventing_turnout():

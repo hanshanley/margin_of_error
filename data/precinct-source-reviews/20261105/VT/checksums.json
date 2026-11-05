@@ -1,0 +1,58 @@
+{
+  "audit.json": {
+    "bytes": 8510,
+    "sha256": "55439e4878f429135f9dc52d8f42fde477488050e226505810386e80774b5347"
+  },
+  "field-definitions.json": {
+    "bytes": 884,
+    "sha256": "44d3fae24ba17cd0f044319737ed3702f27623066676a7ec29f6ffa4514a6180"
+  },
+  "municipal-participation.json.gz": {
+    "bytes": 9411,
+    "sha256": "53295965463fa9d4f56d4caa5691b7a10ecbb9750e6df1ddc1c4e1a82dbb8672"
+  },
+  "original-source-checksums.json": {
+    "bytes": 2336,
+    "sha256": "57aae9334b82f0d820bbddedbd2f961e84c29206cf3913049eca47b0ba571267"
+  },
+  "originals/county-20261104211117.json.gz": {
+    "bytes": 132284,
+    "sha256": "5f77ad19742833e9576398e86eac0592645b46addcb809cbad0309f523b79b03"
+  },
+  "originals/election.json.gz": {
+    "bytes": 8514,
+    "sha256": "d07e082c63229186b77273a458ec4166624f5baae7a70f04a7683a37882ce39c"
+  },
+  "originals/elections.json.gz": {
+    "bytes": 7046,
+    "sha256": "bc243d6afd39a3fefe42c797e8387e1b5975bcde0a718260d9a6fbc90d2b0da1"
+  },
+  "originals/full-results-20261104211117.json.gz": {
+    "bytes": 18648,
+    "sha256": "81e771e9be64ca32b005eb6fd57eecb46bb0f7c949160566fe2fc5c1d0777912"
+  },
+  "originals/house-20261104211117.json.gz": {
+    "bytes": 35443,
+    "sha256": "35649d0c1fc8c1e23bc6345ada507e7ca05f1ddba1daab5d83c65595b27ed96b"
+  },
+  "originals/senate-20261104211117.json.gz": {
+    "bytes": 25261,
+    "sha256": "b1f3d9d3e70b5047eab6cf159a1d7f23adf62a2a85745cba8e114f295197d8e7"
+  },
+  "originals/stateWide-20261104211117.json.gz": {
+    "bytes": 94481,
+    "sha256": "a659a123244d0ffe38c89068bc2107e827be0f8b8013f664ec9281361952546b"
+  },
+  "originals/town-20261104211117.json.gz": {
+    "bytes": 56891,
+    "sha256": "3c4814339924b637f3cd151f109aa73ff2c4182958bbf81d41a707a395a45e69"
+  },
+  "originals/turnOut-20261104211117.json.gz": {
+    "bytes": 4403,
+    "sha256": "ca44c07287ad8e914c17842a0b4503e24e522150232784811df0bf538c112f76"
+  },
+  "results.csv.gz": {
+    "bytes": 14526,
+    "sha256": "dbcedc6b0bc03fd1c529d3c95641261050d41acbb68b0e3701f624a7d934b913"
+  }
+}

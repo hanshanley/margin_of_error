@@ -1,0 +1,47 @@
+{
+  "election.json": {
+    "url": "https://static.electionresults.vermont.gov/elections/68d61e96-1d28-4210-8c1d-8e90512ae105.json",
+    "bytes": 119973,
+    "sha256": "cdb4e3aeb43d272374208381840f964f3445d0c684371bfa2a77370efdfb4c7f"
+  },
+  "elections.json": {
+    "url": "https://static.electionresults.vermont.gov/elections/elections.json",
+    "bytes": 76015,
+    "sha256": "d1f9325b641a6f97535e589cce0d894a939a5e102c83987e8bd2c18a0aa3b1c3"
+  },
+  "full-results-20261104211117.json": {
+    "url": "https://static.electionresults.vermont.gov/elections/68d61e96-1d28-4210-8c1d-8e90512ae105-f-20261104211117.json",
+    "bytes": 321910,
+    "sha256": "a55daafa76ddb1285bf14295aeb7b6369a9c7f0e2f7f178ce1458ac35924df23"
+  },
+  "stateWide-20261104211117.json": {
+    "url": "https://static.electionresults.vermont.gov/elections/68d61e96-1d28-4210-8c1d-8e90512ae105-s-20261104211117.json",
+    "bytes": 1310380,
+    "sha256": "5c91bb9cf649cd981e28875d7d7a1b5e1a954727cb46ee45a1d2bbcc290fc609"
+  },
+  "senate-20261104211117.json": {
+    "url": "https://static.electionresults.vermont.gov/elections/68d61e96-1d28-4210-8c1d-8e90512ae105-sn-20261104211117.json",
+    "bytes": 328996,
+    "sha256": "e0fd3f9cb3ed4bef8b546dd2d3cec16f0d1b6f13be855a92fbe5b78df823dd01"
+  },
+  "house-20261104211117.json": {
+    "url": "https://static.electionresults.vermont.gov/elections/68d61e96-1d28-4210-8c1d-8e90512ae105-h-20261104211117.json",
+    "bytes": 400642,
+    "sha256": "c1d5048e64e36552d5dd6d4a56b98c15041241315aae87a80765e6dad45111d2"
+  },
+  "county-20261104211117.json": {
+    "url": "https://static.electionresults.vermont.gov/elections/68d61e96-1d28-4210-8c1d-8e90512ae105-cty-20261104211117.json",
+    "bytes": 1797844,
+    "sha256": "a5f90e20645c0c40e852df8a9ce902d9244c9cc6160fd737cbb832d061a17768"
+  },
+  "town-20261104211117.json": {
+    "url": "https://static.electionresults.vermont.gov/elections/68d61e96-1d28-4210-8c1d-8e90512ae105-t-20261104211117.json",
+    "bytes": 629922,
+    "sha256": "daaffa2400ed0eb0a9bcf9f4e5b262fc81235e7ed100ee0290b4a2a1846313ac"
+  },
+  "turnOut-20261104211117.json": {
+    "url": "https://static.electionresults.vermont.gov/elections/68d61e96-1d28-4210-8c1d-8e90512ae105-turnout-20261104211117.json",
+    "bytes": 21526,
+    "sha256": "9bbec22d77d3f81870f38690fc24b5c6e6ccd00a47e94093fa319ab84a80f549"
+  }
+}
