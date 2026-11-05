@@ -65,6 +65,201 @@ va_maps = module("build-virginia-2026-precinct-results")
 ar_2026 = module("review-arkansas-2026-native-results")
 al_2026 = module("review-alabama-2026-native-results")
 ar_geometry = module("review-arkansas-2026-reference-geometry")
+az_2026 = module("review-arizona-2026-native-results")
+
+
+def arizona_native_example(democratic=2):
+    def modes(votes):
+        return [dict(groupName=name, voteCount=votes if name == "Election Day" else 0,
+                     isFromVirtualPrecinct=False) for name in sorted(az_2026.MODES)]
+
+    def option(identity, name, party, votes, precincts):
+        return dict(id=identity, name=name, politicalParty=party, voteCount=votes,
+                    groupResults=modes(votes), precinctResults=precincts)
+
+    counties, statewide = [], {}
+    for number, (code, name) in enumerate(az_2026.COUNTIES.items()):
+        key = list(az_2026.HOUSE)[number % 9]
+        options = []
+        for identity, label, party, votes in [
+                ("D", "Native D", "DEM", democratic), ("R", "Native R", "REP", 1)]:
+            precinct = dict(id="1", name="Native precinct", isVirtual=False,
+                voteCount=votes, reportingStatus="Partially Reported", groupResults=modes(votes))
+            options.append(option(identity, label, party, votes, [precinct]))
+        contest = dict(id=key, name=az_2026.HOUSE[key], type="State", contestType="Candidate",
+                       voteFor=1, rankedChoiceResults=None, ballotOptions=options,
+                       precinctsReporting=1, precinctsParticipating=1)
+        counties.append(dict(id=code, name=name, ballotItems=[contest]))
+        if key not in statewide:
+            parent = copy.deepcopy(contest)
+            for entry in parent["ballotOptions"]:
+                entry.update(voteCount=0, precinctResults=None,
+                    politicalParty={"DEM": "Democratic", "REP": "Republican"}[entry["politicalParty"]],
+                    groupResults=modes(0))
+            statewide[key] = parent
+        for parent, child in zip(statewide[key]["ballotOptions"], options):
+            parent["voteCount"] += child["voteCount"]
+            parent["groupResults"] = modes(parent["voteCount"])
+    return dict(electionDate="2026-11-03", electionName="2026 General Election",
+        createdAt="2026-11-05T00:00:00Z",
+        results=dict(id="01000000-0496-9e5d-0291-08dbda35db79", name="Arizona",
+                     ballotItems=list(statewide.values())), localResults=counties)
+
+
+def arizona_api_example(data):
+    text = lambda value: [dict(languageId="en", text=value)]
+    uuid = lambda value: f"00000000-0000-0000-0000-{value:012x}"
+
+    def contests(native):
+        return [dict(name=text(contest["name"]),
+            voteTotal=sum(option["voteCount"] for option in contest["ballotOptions"]),
+            summaryResults=dict(ballotOptions=[
+                dict(id=uuid(ord(option["id"])), nativeId=option["id"],
+                     name=text(option["name"]), voteCount=option["voteCount"],
+                     groupResults=[dict(groupName=text(mode["groupName"]), voteCount=mode["voteCount"])
+                                   for mode in option["groupResults"]])
+                for option in contest["ballotOptions"]])) for contest in native]
+
+    root = dict(jurisdiction=dict(id=data["results"]["id"], name=text("Arizona"),
+                mediaExportPath="Arizona/export-110326GeneralElection.json", childLocalities=[]),
+                election=dict(electionDate="2026-11-03", isPrimary=False, isProduction=True,
+                    isOfficialResults=False, name=text("2026 General Election"),
+                    jurisdictionId=data["results"]["id"], totalVoters=150, ballotsCast=0,
+                    publishVersionId="fixture", parties=[
+                        dict(name=text("Democratic"), abbreviation="DEM"),
+                        dict(name=text("Republican"), abbreviation="REP")]),
+                ballotItems=contests(data["results"]["ballotItems"]),
+                localityElections=[], voterRegistration=[])
+    localities = {}
+    for number, county in enumerate(data["localResults"], start=1):
+        identity = uuid(number)
+        election = dict(root["election"], id=uuid(number + 100), jurisdictionId=identity,
+                        totalVoters=10.0, ballotsCast=5.0)
+        root["jurisdiction"]["childLocalities"].append(dict(id=identity.upper(),
+            name=text(county["name"]), turnoutPercent=0.5))
+        root["localityElections"].append(election)
+        root["voterRegistration"].append(dict(id=identity, localityName=text(county["name"]),
+                                              activeVoters=0, inactiveVoters=0, total=10))
+        localities[county["name"]] = dict(jurisdiction=dict(id=identity, name=text(county["name"])),
+            election=election, ballotItems=contests(county["ballotItems"]),
+            precincts=[dict(id=uuid(999), name=text("Native precinct"), isVirtual=False, reportingStatus=2)],
+            voterTurnout=[dict(id=uuid(999), precinctName="Native precinct", ballotsCast=5.0,
+                              voterTurnout=5, voterRegistration=10)])
+    return root, localities
+
+
+def test_arizona_native_counts_keep_county_qualified_ids_and_literal_party_descriptions():
+    data = arizona_native_example()
+    root, _ = arizona_api_example(data)
+    rows, originals, audit = az_2026.review_native(data, az_2026.party_aliases(root))
+    assert len(rows) == 15 and len({row["county_code"] for row in rows}) == 15
+    assert all(row["precinct_code"] == "1" and row["total_votes"] == 3
+               and row["margin_pp"] == pytest.approx(100 / 3)
+               and row["turnout_rate"] is None and not row["maps_approved"] for row in rows)
+    assert any(row["native_party"] == "DEM" and row["state_declared_party"] == "Democratic"
+               for row in originals)
+    assert audit["native_party_description_differences"] and not audit["maps_approved"]
+
+
+@pytest.mark.parametrize("failure", [
+    "date", "county", "county_duplicate", "candidate_name", "party", "missing_count",
+    "boolean_count", "missing_mode", "duplicate_precinct", "precinct_name", "state_residual",
+])
+def test_arizona_native_rejects_missing_ambiguous_or_conflicting_source_records(failure):
+    data = arizona_native_example()
+    root, _ = arizona_api_example(data)
+    option = data["localResults"][0]["ballotItems"][0]["ballotOptions"][0]
+    if failure == "date":
+        data["electionDate"] = "2024-11-05"
+    elif failure == "county":
+        data["localResults"][0]["name"] = "Another County"
+    elif failure == "county_duplicate":
+        data["localResults"].append(copy.deepcopy(data["localResults"][0]))
+    elif failure == "candidate_name":
+        option["name"] = "Native D "
+    elif failure == "party":
+        option["politicalParty"] = "REP"
+    elif failure == "missing_count":
+        option["precinctResults"][0].pop("voteCount")
+    elif failure == "boolean_count":
+        option["precinctResults"][0]["voteCount"] = False
+    elif failure == "missing_mode":
+        option["precinctResults"][0]["groupResults"].pop()
+    elif failure == "duplicate_precinct":
+        option["precinctResults"].append(copy.deepcopy(option["precinctResults"][0]))
+    elif failure == "precinct_name":
+        option["precinctResults"][0]["name"] = "Different precinct"
+    elif failure == "state_residual":
+        parent = data["results"]["ballotItems"][0]["ballotOptions"][0]
+        parent["voteCount"] += 1
+        next(mode for mode in parent["groupResults"] if mode["groupName"] == "Election Day")["voteCount"] += 1
+    with pytest.raises(ValueError):
+        az_2026.review_native(data, az_2026.party_aliases(root))
+
+
+def test_arizona_explicit_zero_is_preserved_without_turning_votes_into_ballots():
+    data = arizona_native_example(democratic=0)
+    root, localities = arizona_api_example(data)
+    rows, _, _ = az_2026.review_native(data, az_2026.party_aliases(root))
+    participation, _, audit = az_2026.review_api(data, root, localities)
+    assert rows[0]["democratic_votes"] == 0 and rows[0]["total_votes"] == 1
+    assert participation[0]["ballots"] == 5 and participation[0]["turnout_rate"] is None
+    assert audit["native_state_ballot_field"] == 0 and audit["observed_county_ballot_sum"] == 75
+    assert not audit["native_state_ballot_field_matches_counties"]
+    assert not audit["native_registration_components_match_totals"] and not audit["rates_approved"]
+
+
+def test_arizona_missing_virtual_participation_is_not_zero_or_a_house_precinct():
+    data = arizona_native_example()
+    root, localities = arizona_api_example(data)
+    localities["Mohave County"]["precincts"].append(dict(
+        id="00000000-0000-0000-0000-000000000222",
+        name=[dict(languageId="en", text="Non-Resident Property Owners")],
+        isVirtual=True, reportingStatus=2))
+    rows, _, audit = az_2026.review_api(data, root, localities)
+    missing = [row for row in rows if not row["native_observation_present"]]
+    assert len(missing) == 1 and missing[0]["native_virtual_precinct"]
+    assert missing[0]["ballots"] is None and missing[0]["registered_voters"] is None
+    assert len(audit["missing_participation_rows"]) == 1
+
+
+def test_arizona_county_api_different_native_ids_are_not_assumed_to_be_media_ids():
+    data = arizona_native_example()
+    root, localities = arizona_api_example(data)
+    localities["Apache County"]["ballotItems"][0]["summaryResults"]["ballotOptions"][0]["nativeId"] = "local-id"
+    _, _, audit = az_2026.review_api(data, root, localities)
+    matched = next(row for row in audit["api_option_correspondence"]
+                   if row["county_code"] == "01" and row["media_option_id"] == "D")
+    assert matched["api_native_option_id"] == "local-id"
+    assert not matched["certifies_shared_id_namespace"]
+
+
+@pytest.mark.parametrize("failure", [
+    "test_election", "wrong_date", "wrong_option", "mode", "precinct_label",
+    "registration", "fractional_ballots", "county_scope",
+])
+def test_arizona_api_rejects_identity_mode_denominator_and_election_conflicts(failure):
+    data = arizona_native_example()
+    root, localities = arizona_api_example(data)
+    first = next(iter(localities.values()))
+    if failure == "test_election":
+        first["election"]["isProduction"] = False
+    elif failure == "wrong_date":
+        first["election"]["electionDate"] = "2024-11-05"
+    elif failure == "wrong_option":
+        root["ballotItems"][0]["summaryResults"]["ballotOptions"][0]["nativeId"] = "unknown"
+    elif failure == "mode":
+        root["ballotItems"][0]["summaryResults"]["ballotOptions"][0]["groupResults"][0]["voteCount"] += 1
+    elif failure == "precinct_label":
+        first["voterTurnout"][0]["precinctName"] = "Native precinct "
+    elif failure == "registration":
+        first["voterTurnout"][0]["voterRegistration"] = 0
+    elif failure == "fractional_ballots":
+        first["voterTurnout"][0]["ballotsCast"] = 5.5
+    elif failure == "county_scope":
+        localities.pop("Apache County")
+    with pytest.raises(ValueError):
+        az_2026.review_api(data, root, localities)
 
 
 def arkansas_reference_fixture():

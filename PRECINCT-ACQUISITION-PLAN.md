@@ -3676,17 +3676,89 @@ ZIP is also fully redownloaded through its registered link and matches every
 one of its **30 archive members** byte-for-byte, including all original pages
 and diagnostics. No overflow; 2026 remains the default.
 Proof: `files/arkansas-reference-geometry-ui-local-browser-proof-01.json`.
-Commit/push and exact live UI publication verification are next.
+Hans UI commit **`eec343ede2c28a5109780dcec3cb5c3ed67f12de`** is pushed.
+Exact deployment **42026945203** succeeds. Its unqueried public metadata and
+renderer bytes match the source, and the full live four-mode browser matrix
+passes **82 complete links**, all **13 entire CSV endpoints**, and all **30**
+members of the independently released reference ZIP. All 81 older complete
+links remain. Proof:
+`files/arkansas-reference-geometry-ui-publication-proof-01.json`.
+No additional Arkansas map joins or participation rates are approved.
 
 **Next executable actions:** Alabama's exact live verification is complete;
-do not repeat its successful matrix. The new Arkansas complete-reference
-download integration's source-matched browser checks pass; commit/push as Hans and
-verify that exact live deployment. Then obtain explicit county crosswalk/election-applicability evidence
+do not repeat its successful matrix. Arkansas's complete-reference download
+integration is also live-verified; do not repeat its successful matrix.
+Obtain explicit county crosswalk/election-applicability evidence
 and review source-declared label formats without fuzzy matching. Alabama's
 native county-name/FIPS correspondence is another bounded map-enabling task;
 never pad its non-FIPS native codes. Keep new map joins and analysis rates
 withheld until their exact requirements pass. Do not repeat completed live
 matrices as a substitute for acquisition.
+
+### Arizona 2026: complete native candidate export and actual precinct participation
+
+The actual native application's root response explicitly declares
+`jurisdiction.mediaExportPath="Arizona/export-110326GeneralElection.json"`.
+Complete media export acquired HTTP200, **72,592,544 bytes**:
+`https://app.enhancedvoting.com/cdn/results/Arizona/export-110326GeneralElection.json`.
+Root application API:
+`https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/data`.
+Election identity is **November 3, 2026**, `2026 General Election`, production,
+unofficial; media created `2026-11-05T03:50:47.2427526Z`.
+Direct `azsos.gov/press` returned HTTP403; that actual response is retained,
+not described as acquired declaration HTML or retried. The independently acquired
+native API declaration establishes the exact complete media export.
+
+All **15** county pages and their actual API responses were acquired by following
+the app's real county-navigation controls, not guessed routes. Complete factual
+media/API originals and receipts are cached in
+`files/precinct-expansion-sources/AZ-2026-native-01/`.
+Frontend HTML, controls, incidental tokens and tracking URLs are discovery
+artifacts, not redistributable election datasets.
+
+The export contains **99** statewide contests, **415** county contest scopes,
+**143,533** precinct option rows and **1,762** county-qualified precinct identities
+with **1,762** complete House vectors. State/federal contests are present;
+this is not all local county races. Native precinct/county/state candidate and
+mode vectors reconcile. Preserve **282** party-description differences and literal
+candidate-name spacing. County API candidate native IDs use a different namespace
+from the statewide media IDs; independently compare unique literal county,
+contest and candidate names and all counts/modes, retaining both source IDs.
+Do not silently substitute one namespace for the other.
+
+The county API inventory includes **1,763** precincts with **1,762** actual
+ballot/registration observations. The extra Mohave virtual precinct,
+`225_Non-Resident Property Owners`, UUID
+`01000000-68b8-edcd-0283-08df2653ea59`, has no turnout observation:
+keep its participation missing, not zero. Observed precinct counts reconcile
+to every county's **2,248,900** total ballots and **4,374,827** total registrations.
+The source's duplicate `voterTurnout` field is a count, not a percent.
+The root statewide ballot field is **0**, contradicting positive county totals;
+retain and flag it, do not call it zero turnout or silently replace it.
+Native active/inactive registration components also fail to explain positive
+totals. No rates, API-precinct/media-ID crosswalk or geometry joins approved.
+
+The completed offline reviewer passes **23 focused tests**. All **145,556**
+normalized state/county/precinct option rows, **1,762** House vectors, **1,763**
+participation inventory rows, **15** county participation rows and **2,023**
+independent API option comparisons are verified against actual originals.
+The portable package includes all **66** factual media/API originals and receipts,
+full options, county/precinct participation, explicit option-namespace diagnostics,
+audit and the standalone reviewer. All **75** checksums and **76** archive members
+pass; extraction and rebuilding from only the released-style archive reproduces
+every file and the ZIP byte-for-byte. Independent proof:
+`files/arizona-2026-native-package-proof-01.json`.
+Complete ZIP: **15,695,907 bytes**, SHA-256
+`8c8626b93899f8f9b935d1d7076a47b1bb75fd850c344f992066faa162ae0cc3`.
+The generated source package is preserved at
+`data/precinct-source-reviews/20261105/AZ-2026-native-counts/`.
+
+**Current executable work:** commit/push the verified source batch as Hans, publish
+an immutable complete source release pinned to that commit, verify the entire
+anonymous remote archive, then register downloads/worklist with honest no-map
+status and verify that exact UI deployment. No Arizona new map coverage is
+published. Do not reacquire the complete cached snapshot or repeat passed Arkansas
+live matrices.
 
 ## Resume procedure for every work session or scheduled prompt
 

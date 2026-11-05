@@ -1,0 +1,4938 @@
+{
+  "year": 2026,
+  "state_code": "AZ",
+  "complete": "no",
+  "maps_approved": false,
+  "rates_available": false,
+  "native_created_at": "2026-11-05T03:50:47.2427526Z",
+  "native_counties": 15,
+  "statewide_contests": 99,
+  "county_contests": 415,
+  "precinct_house_vectors": 1762,
+  "native_precinct_identities": 1762,
+  "precinct_option_rows": 143533,
+  "all_native_option_rows": 145556,
+  "all_candidate_and_mode_scopes_reconcile": true,
+  "virtual_precincts": 0,
+  "split_house_identities": [],
+  "native_party_description_differences": [
+    {
+      "county_code": "10",
+      "contest_id": "AZ-10",
+      "option_id": "28",
+      "native_party": "No Labels Party",
+      "state_party": "No Labels"
+    },
+    {
+      "county_code": "10",
+      "contest_id": "AZ-74",
+      "option_id": "StephenNealJr.-4-No Labels",
+      "native_party": "No Labels Party",
+      "state_party": "No Labels"
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-2",
+      "option_id": "4",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-2",
+      "option_id": "5",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-10",
+      "option_id": "25",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-10",
+      "option_id": "26",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-10",
+      "option_id": "28",
+      "native_party": "NOL",
+      "state_party": "No Labels"
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-10",
+      "option_id": "27",
+      "native_party": "GRN",
+      "state_party": "Green"
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-10",
+      "option_id": "GertritrudeGonzalez-5-Republican",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-10",
+      "option_id": "AliceNovoa-6-Republican",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-16",
+      "option_id": "40",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-16",
+      "option_id": "39",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-17",
+      "option_id": "41",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-17",
+      "option_id": "42",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-46",
+      "option_id": "104",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-46",
+      "option_id": "105",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-46",
+      "option_id": "106",
+      "native_party": "GRN",
+      "state_party": "Green"
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-46",
+      "option_id": "Royce\"Rj\"MarkJenkins-4-Republican",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-47",
+      "option_id": "107",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-47",
+      "option_id": "108",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-47",
+      "option_id": "109",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-47",
+      "option_id": "110",
+      "native_party": "GRN",
+      "state_party": "Green"
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-71",
+      "option_id": "187",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-71",
+      "option_id": "188",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-71",
+      "option_id": "189",
+      "native_party": "GRN",
+      "state_party": "Green"
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-72",
+      "option_id": "190",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-72",
+      "option_id": "191",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-73",
+      "option_id": "192",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-73",
+      "option_id": "193",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-74",
+      "option_id": "194",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-74",
+      "option_id": "195",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-74",
+      "option_id": "GerardDavis-3-Green",
+      "native_party": "GRN",
+      "state_party": "Green"
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-74",
+      "option_id": "StephenNealJr.-4-No Labels",
+      "native_party": "NOL",
+      "state_party": "No Labels"
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-75",
+      "option_id": "196",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-75",
+      "option_id": "197",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-76",
+      "option_id": "199",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-76",
+      "option_id": "198",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-76",
+      "option_id": "201",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-76",
+      "option_id": "200",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-76",
+      "option_id": "202",
+      "native_party": "GRN",
+      "state_party": "Green"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-1",
+      "option_id": "2",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-1",
+      "option_id": "1",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-1",
+      "option_id": "DevGupta-4-Independent",
+      "native_party": "IND",
+      "state_party": "Independent"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-1",
+      "option_id": "GageDylanThunder-5-",
+      "native_party": "NON",
+      "state_party": "Other"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-2",
+      "option_id": "5",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-2",
+      "option_id": "4",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-3",
+      "option_id": "7",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-3",
+      "option_id": "9",
+      "native_party": "NOL",
+      "state_party": "No Labels"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-3",
+      "option_id": "8",
+      "native_party": "GRN",
+      "state_party": "Green"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-3",
+      "option_id": "JacobParkman-4-Republican",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-4",
+      "option_id": "11",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-4",
+      "option_id": "10",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-4",
+      "option_id": "12",
+      "native_party": "NOL",
+      "state_party": "No Labels"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-4",
+      "option_id": "StevenSanders-4-No Labels",
+      "native_party": "NOL",
+      "state_party": "No Labels"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-5",
+      "option_id": "14",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-5",
+      "option_id": "13",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-7",
+      "option_id": "20",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-7",
+      "option_id": "19",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-8",
+      "option_id": "21",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-8",
+      "option_id": "22",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-9",
+      "option_id": "24",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-9",
+      "option_id": "23",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-9",
+      "option_id": "WilliamPerry-4-Independent",
+      "native_party": "IND",
+      "state_party": "Independent"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-9",
+      "option_id": "G.SevilleHatch-3-Independent",
+      "native_party": "IND",
+      "state_party": "Independent"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-10",
+      "option_id": "26",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-10",
+      "option_id": "25",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-10",
+      "option_id": "27",
+      "native_party": "GRN",
+      "state_party": "Green"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-10",
+      "option_id": "28",
+      "native_party": "NOL",
+      "state_party": "No Labels"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-10",
+      "option_id": "AliceNovoa-6-Republican",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-10",
+      "option_id": "GertritrudeGonzalez-5-Republican",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-12",
+      "option_id": "32",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-12",
+      "option_id": "31",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-42",
+      "option_id": "92",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-42",
+      "option_id": "91",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-42",
+      "option_id": "90",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-13",
+      "option_id": "33",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-13",
+      "option_id": "34",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-13",
+      "option_id": "FrankBertone-3-Republican",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-43",
+      "option_id": "94",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-43",
+      "option_id": "93",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-43",
+      "option_id": "95",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-43",
+      "option_id": "96",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-43",
+      "option_id": "97",
+      "native_party": "NOL",
+      "state_party": "No Labels"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-14",
+      "option_id": "36",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-14",
+      "option_id": "35",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-44",
+      "option_id": "100",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-44",
+      "option_id": "101",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-44",
+      "option_id": "99",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-44",
+      "option_id": "98",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-15",
+      "option_id": "37",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-15",
+      "option_id": "38",
+      "native_party": "NOL",
+      "state_party": "No Labels"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-45",
+      "option_id": "102",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-45",
+      "option_id": "103",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-18",
+      "option_id": "44",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-18",
+      "option_id": "43",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-48",
+      "option_id": "112",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-48",
+      "option_id": "113",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-48",
+      "option_id": "111",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-19",
+      "option_id": "46",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-19",
+      "option_id": "45",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-49",
+      "option_id": "115",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-49",
+      "option_id": "116",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-49",
+      "option_id": "114",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-20",
+      "option_id": "47",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-20",
+      "option_id": "48",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-20",
+      "option_id": "49",
+      "native_party": "IND",
+      "state_party": "Independent"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-50",
+      "option_id": "117",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-50",
+      "option_id": "118",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-50",
+      "option_id": "120",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-50",
+      "option_id": "119",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-50",
+      "option_id": "121",
+      "native_party": "NOL",
+      "state_party": "No Labels"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-21",
+      "option_id": "51",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-21",
+      "option_id": "50",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-51",
+      "option_id": "125",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-51",
+      "option_id": "124",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-51",
+      "option_id": "123",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-51",
+      "option_id": "122",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-22",
+      "option_id": "52",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-22",
+      "option_id": "53",
+      "native_party": "NOL",
+      "state_party": "No Labels"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-22",
+      "option_id": "GaryHatch-3-Republican",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-52",
+      "option_id": "128",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-52",
+      "option_id": "127",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-52",
+      "option_id": "126",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-23",
+      "option_id": "55",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-23",
+      "option_id": "54",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-53",
+      "option_id": "131",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-53",
+      "option_id": "132",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-53",
+      "option_id": "129",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-53",
+      "option_id": "130",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-24",
+      "option_id": "57",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-24",
+      "option_id": "56",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-54",
+      "option_id": "135",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-54",
+      "option_id": "133",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-54",
+      "option_id": "134",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-25",
+      "option_id": "58",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-25",
+      "option_id": "59",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-55",
+      "option_id": "137",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-55",
+      "option_id": "136",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-26",
+      "option_id": "61",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-26",
+      "option_id": "60",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-56",
+      "option_id": "140",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-56",
+      "option_id": "139",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-56",
+      "option_id": "138",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-32",
+      "option_id": "71",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-62",
+      "option_id": "158",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-62",
+      "option_id": "157",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-33",
+      "option_id": "73",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-33",
+      "option_id": "72",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-63",
+      "option_id": "162",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-63",
+      "option_id": "161",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-63",
+      "option_id": "160",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-63",
+      "option_id": "159",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-34",
+      "option_id": "75",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-34",
+      "option_id": "74",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-64",
+      "option_id": "165",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-64",
+      "option_id": "164",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-64",
+      "option_id": "163",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-35",
+      "option_id": "76",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-35",
+      "option_id": "77",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-65",
+      "option_id": "166",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-65",
+      "option_id": "168",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-65",
+      "option_id": "167",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-36",
+      "option_id": "79",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-36",
+      "option_id": "78",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-66",
+      "option_id": "171",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-66",
+      "option_id": "172",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-66",
+      "option_id": "170",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-66",
+      "option_id": "169",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-66",
+      "option_id": "173",
+      "native_party": "GRN",
+      "state_party": "Green"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-37",
+      "option_id": "81",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-37",
+      "option_id": "80",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-67",
+      "option_id": "176",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-67",
+      "option_id": "174",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-67",
+      "option_id": "175",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-38",
+      "option_id": "82",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-38",
+      "option_id": "83",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-68",
+      "option_id": "177",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-68",
+      "option_id": "178",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-68",
+      "option_id": "179",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-68",
+      "option_id": "180",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-39",
+      "option_id": "84",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-39",
+      "option_id": "85",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-69",
+      "option_id": "183",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-69",
+      "option_id": "181",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-69",
+      "option_id": "182",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-40",
+      "option_id": "86",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-70",
+      "option_id": "184",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-70",
+      "option_id": "185",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-70",
+      "option_id": "186",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-71",
+      "option_id": "188",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-71",
+      "option_id": "187",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-71",
+      "option_id": "189",
+      "native_party": "GRN",
+      "state_party": "Green"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-72",
+      "option_id": "191",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-72",
+      "option_id": "190",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-73",
+      "option_id": "193",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-73",
+      "option_id": "192",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-74",
+      "option_id": "195",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-74",
+      "option_id": "194",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-74",
+      "option_id": "StephenNealJr.-4-No Labels",
+      "native_party": "NOL",
+      "state_party": "No Labels"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-74",
+      "option_id": "GerardDavis-3-Green",
+      "native_party": "GRN",
+      "state_party": "Green"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-75",
+      "option_id": "197",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-75",
+      "option_id": "196",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-76",
+      "option_id": "201",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-76",
+      "option_id": "200",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-76",
+      "option_id": "199",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-76",
+      "option_id": "198",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-76",
+      "option_id": "202",
+      "native_party": "GRN",
+      "state_party": "Green"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-2",
+      "option_id": "4",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-2",
+      "option_id": "5",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-5",
+      "option_id": "13",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-5",
+      "option_id": "14",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-6",
+      "option_id": "15",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-6",
+      "option_id": "16",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-6",
+      "option_id": "18",
+      "native_party": "GRN",
+      "state_party": "Green"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-6",
+      "option_id": "MichaelDorland-5-Independent",
+      "native_party": "IND",
+      "state_party": "Independent"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-7",
+      "option_id": "19",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-7",
+      "option_id": "20",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-10",
+      "option_id": "25",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-10",
+      "option_id": "26",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-10",
+      "option_id": "27",
+      "native_party": "GRN",
+      "state_party": "Green"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-10",
+      "option_id": "28",
+      "native_party": "NOL",
+      "state_party": "No Labels"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-10",
+      "option_id": "GertritrudeGonzalez-5-Republican",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-10",
+      "option_id": "AliceNovoa-6-Republican",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-16",
+      "option_id": "39",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-16",
+      "option_id": "40",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-17",
+      "option_id": "41",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-17",
+      "option_id": "42",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-20",
+      "option_id": "47",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-20",
+      "option_id": "48",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-20",
+      "option_id": "49",
+      "native_party": "IND",
+      "state_party": "Independent"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-25",
+      "option_id": "58",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-25",
+      "option_id": "59",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-26",
+      "option_id": "60",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-26",
+      "option_id": "61",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-27",
+      "option_id": "62",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-27",
+      "option_id": "63",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-33",
+      "option_id": "73",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-33",
+      "option_id": "72",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-46",
+      "option_id": "104",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-46",
+      "option_id": "105",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-46",
+      "option_id": "106",
+      "native_party": "GRN",
+      "state_party": "Green"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-46",
+      "option_id": "Royce\"Rj\"MarkJenkins-4-Republican",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-47",
+      "option_id": "107",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-47",
+      "option_id": "108",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-47",
+      "option_id": "109",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-47",
+      "option_id": "110",
+      "native_party": "GRN",
+      "state_party": "Green"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-50",
+      "option_id": "118",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-50",
+      "option_id": "117",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-50",
+      "option_id": "120",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-50",
+      "option_id": "119",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-50",
+      "option_id": "121",
+      "native_party": "NOL",
+      "state_party": "No Labels"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-55",
+      "option_id": "136",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-55",
+      "option_id": "137",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-56",
+      "option_id": "140",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-56",
+      "option_id": "139",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-56",
+      "option_id": "138",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-57",
+      "option_id": "142",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-57",
+      "option_id": "143",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-57",
+      "option_id": "141",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-57",
+      "option_id": "144",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-63",
+      "option_id": "162",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-63",
+      "option_id": "161",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-63",
+      "option_id": "159",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-63",
+      "option_id": "160",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-71",
+      "option_id": "187",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-71",
+      "option_id": "188",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-71",
+      "option_id": "189",
+      "native_party": "GRN",
+      "state_party": "Green"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-72",
+      "option_id": "190",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-72",
+      "option_id": "191",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-73",
+      "option_id": "192",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-73",
+      "option_id": "193",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-74",
+      "option_id": "194",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-74",
+      "option_id": "195",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-74",
+      "option_id": "GerardDavis-3-Green",
+      "native_party": "GRN",
+      "state_party": "Green"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-74",
+      "option_id": "StephenNealJr.-4-No Labels",
+      "native_party": "NOL",
+      "state_party": "No Labels"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-75",
+      "option_id": "196",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-75",
+      "option_id": "197",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-76",
+      "option_id": "199",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-76",
+      "option_id": "198",
+      "native_party": "REP",
+      "state_party": "Republican"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-76",
+      "option_id": "201",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-76",
+      "option_id": "200",
+      "native_party": "DEM",
+      "state_party": "Democratic"
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-76",
+      "option_id": "202",
+      "native_party": "GRN",
+      "state_party": "Green"
+    }
+  ],
+  "county_contest_scopes": [
+    {
+      "county_code": "07",
+      "contest_id": "AZ-9",
+      "precincts": 11,
+      "precincts_reporting": 11,
+      "precincts_participating": 11
+    },
+    {
+      "county_code": "07",
+      "contest_id": "AZ-10",
+      "precincts": 11,
+      "precincts_reporting": 11,
+      "precincts_participating": 11
+    },
+    {
+      "county_code": "07",
+      "contest_id": "AZ-40",
+      "precincts": 11,
+      "precincts_reporting": 11,
+      "precincts_participating": 11
+    },
+    {
+      "county_code": "07",
+      "contest_id": "AZ-70",
+      "precincts": 11,
+      "precincts_reporting": 11,
+      "precincts_participating": 11
+    },
+    {
+      "county_code": "07",
+      "contest_id": "AZ-71",
+      "precincts": 11,
+      "precincts_reporting": 11,
+      "precincts_participating": 11
+    },
+    {
+      "county_code": "07",
+      "contest_id": "AZ-72",
+      "precincts": 11,
+      "precincts_reporting": 11,
+      "precincts_participating": 11
+    },
+    {
+      "county_code": "07",
+      "contest_id": "AZ-73",
+      "precincts": 11,
+      "precincts_reporting": 11,
+      "precincts_participating": 11
+    },
+    {
+      "county_code": "07",
+      "contest_id": "AZ-74",
+      "precincts": 11,
+      "precincts_reporting": 11,
+      "precincts_participating": 11
+    },
+    {
+      "county_code": "07",
+      "contest_id": "AZ-75",
+      "precincts": 11,
+      "precincts_reporting": 11,
+      "precincts_participating": 11
+    },
+    {
+      "county_code": "07",
+      "contest_id": "AZ-76",
+      "precincts": 11,
+      "precincts_reporting": 11,
+      "precincts_participating": 11
+    },
+    {
+      "county_code": "07",
+      "contest_id": "AZ-77",
+      "precincts": 11,
+      "precincts_reporting": 11,
+      "precincts_participating": 11
+    },
+    {
+      "county_code": "07",
+      "contest_id": "AZ-92",
+      "precincts": 11,
+      "precincts_reporting": 11,
+      "precincts_participating": 11
+    },
+    {
+      "county_code": "07",
+      "contest_id": "AZ-93",
+      "precincts": 11,
+      "precincts_reporting": 11,
+      "precincts_participating": 11
+    },
+    {
+      "county_code": "07",
+      "contest_id": "AZ-94",
+      "precincts": 11,
+      "precincts_reporting": 11,
+      "precincts_participating": 11
+    },
+    {
+      "county_code": "07",
+      "contest_id": "AZ-95",
+      "precincts": 11,
+      "precincts_reporting": 11,
+      "precincts_participating": 11
+    },
+    {
+      "county_code": "07",
+      "contest_id": "AZ-96",
+      "precincts": 11,
+      "precincts_reporting": 11,
+      "precincts_participating": 11
+    },
+    {
+      "county_code": "07",
+      "contest_id": "AZ-97",
+      "precincts": 11,
+      "precincts_reporting": 11,
+      "precincts_participating": 11
+    },
+    {
+      "county_code": "07",
+      "contest_id": "AZ-98",
+      "precincts": 11,
+      "precincts_reporting": 11,
+      "precincts_participating": 11
+    },
+    {
+      "county_code": "07",
+      "contest_id": "AZ-99",
+      "precincts": 11,
+      "precincts_reporting": 11,
+      "precincts_participating": 11
+    },
+    {
+      "county_code": "02",
+      "contest_id": "AZ-6",
+      "precincts": 43,
+      "precincts_reporting": 43,
+      "precincts_participating": 43
+    },
+    {
+      "county_code": "02",
+      "contest_id": "AZ-7",
+      "precincts": 12,
+      "precincts_reporting": 12,
+      "precincts_participating": 12
+    },
+    {
+      "county_code": "02",
+      "contest_id": "AZ-10",
+      "precincts": 55,
+      "precincts_reporting": 55,
+      "precincts_participating": 55
+    },
+    {
+      "county_code": "02",
+      "contest_id": "AZ-29",
+      "precincts": 48,
+      "precincts_reporting": 48,
+      "precincts_participating": 48
+    },
+    {
+      "county_code": "02",
+      "contest_id": "AZ-31",
+      "precincts": 7,
+      "precincts_reporting": 7,
+      "precincts_participating": 7
+    },
+    {
+      "county_code": "02",
+      "contest_id": "AZ-59",
+      "precincts": 48,
+      "precincts_reporting": 48,
+      "precincts_participating": 48
+    },
+    {
+      "county_code": "02",
+      "contest_id": "AZ-61",
+      "precincts": 7,
+      "precincts_reporting": 7,
+      "precincts_participating": 7
+    },
+    {
+      "county_code": "02",
+      "contest_id": "AZ-71",
+      "precincts": 55,
+      "precincts_reporting": 55,
+      "precincts_participating": 55
+    },
+    {
+      "county_code": "02",
+      "contest_id": "AZ-72",
+      "precincts": 55,
+      "precincts_reporting": 55,
+      "precincts_participating": 55
+    },
+    {
+      "county_code": "02",
+      "contest_id": "AZ-73",
+      "precincts": 55,
+      "precincts_reporting": 55,
+      "precincts_participating": 55
+    },
+    {
+      "county_code": "02",
+      "contest_id": "AZ-74",
+      "precincts": 55,
+      "precincts_reporting": 55,
+      "precincts_participating": 55
+    },
+    {
+      "county_code": "02",
+      "contest_id": "AZ-75",
+      "precincts": 55,
+      "precincts_reporting": 55,
+      "precincts_participating": 55
+    },
+    {
+      "county_code": "02",
+      "contest_id": "AZ-76",
+      "precincts": 55,
+      "precincts_reporting": 55,
+      "precincts_participating": 55
+    },
+    {
+      "county_code": "02",
+      "contest_id": "AZ-77",
+      "precincts": 55,
+      "precincts_reporting": 55,
+      "precincts_participating": 55
+    },
+    {
+      "county_code": "02",
+      "contest_id": "AZ-87",
+      "precincts": 55,
+      "precincts_reporting": 55,
+      "precincts_participating": 55
+    },
+    {
+      "county_code": "02",
+      "contest_id": "AZ-88",
+      "precincts": 55,
+      "precincts_reporting": 55,
+      "precincts_participating": 55
+    },
+    {
+      "county_code": "02",
+      "contest_id": "AZ-90",
+      "precincts": 55,
+      "precincts_reporting": 55,
+      "precincts_participating": 55
+    },
+    {
+      "county_code": "02",
+      "contest_id": "AZ-92",
+      "precincts": 55,
+      "precincts_reporting": 55,
+      "precincts_participating": 55
+    },
+    {
+      "county_code": "02",
+      "contest_id": "AZ-93",
+      "precincts": 55,
+      "precincts_reporting": 55,
+      "precincts_participating": 55
+    },
+    {
+      "county_code": "02",
+      "contest_id": "AZ-94",
+      "precincts": 55,
+      "precincts_reporting": 55,
+      "precincts_participating": 55
+    },
+    {
+      "county_code": "02",
+      "contest_id": "AZ-95",
+      "precincts": 55,
+      "precincts_reporting": 55,
+      "precincts_participating": 55
+    },
+    {
+      "county_code": "02",
+      "contest_id": "AZ-96",
+      "precincts": 55,
+      "precincts_reporting": 55,
+      "precincts_participating": 55
+    },
+    {
+      "county_code": "02",
+      "contest_id": "AZ-97",
+      "precincts": 55,
+      "precincts_reporting": 55,
+      "precincts_participating": 55
+    },
+    {
+      "county_code": "02",
+      "contest_id": "AZ-98",
+      "precincts": 55,
+      "precincts_reporting": 55,
+      "precincts_participating": 55
+    },
+    {
+      "county_code": "02",
+      "contest_id": "AZ-99",
+      "precincts": 55,
+      "precincts_reporting": 55,
+      "precincts_participating": 55
+    },
+    {
+      "county_code": "10",
+      "contest_id": "AZ-2",
+      "precincts": 19,
+      "precincts_reporting": 19,
+      "precincts_participating": 19
+    },
+    {
+      "county_code": "10",
+      "contest_id": "AZ-10",
+      "precincts": 19,
+      "precincts_reporting": 19,
+      "precincts_participating": 19
+    },
+    {
+      "county_code": "10",
+      "contest_id": "AZ-16",
+      "precincts": 9,
+      "precincts_reporting": 9,
+      "precincts_participating": 9
+    },
+    {
+      "county_code": "10",
+      "contest_id": "AZ-17",
+      "precincts": 10,
+      "precincts_reporting": 10,
+      "precincts_participating": 10
+    },
+    {
+      "county_code": "10",
+      "contest_id": "AZ-46",
+      "precincts": 9,
+      "precincts_reporting": 9,
+      "precincts_participating": 9
+    },
+    {
+      "county_code": "10",
+      "contest_id": "AZ-47",
+      "precincts": 10,
+      "precincts_reporting": 10,
+      "precincts_participating": 10
+    },
+    {
+      "county_code": "10",
+      "contest_id": "AZ-71",
+      "precincts": 19,
+      "precincts_reporting": 19,
+      "precincts_participating": 19
+    },
+    {
+      "county_code": "10",
+      "contest_id": "AZ-72",
+      "precincts": 19,
+      "precincts_reporting": 19,
+      "precincts_participating": 19
+    },
+    {
+      "county_code": "10",
+      "contest_id": "AZ-73",
+      "precincts": 19,
+      "precincts_reporting": 19,
+      "precincts_participating": 19
+    },
+    {
+      "county_code": "10",
+      "contest_id": "AZ-74",
+      "precincts": 19,
+      "precincts_reporting": 19,
+      "precincts_participating": 19
+    },
+    {
+      "county_code": "10",
+      "contest_id": "AZ-75",
+      "precincts": 19,
+      "precincts_reporting": 19,
+      "precincts_participating": 19
+    },
+    {
+      "county_code": "10",
+      "contest_id": "AZ-76",
+      "precincts": 19,
+      "precincts_reporting": 19,
+      "precincts_participating": 19
+    },
+    {
+      "county_code": "10",
+      "contest_id": "AZ-77",
+      "precincts": 19,
+      "precincts_reporting": 19,
+      "precincts_participating": 19
+    },
+    {
+      "county_code": "10",
+      "contest_id": "AZ-92",
+      "precincts": 19,
+      "precincts_reporting": 19,
+      "precincts_participating": 19
+    },
+    {
+      "county_code": "10",
+      "contest_id": "AZ-93",
+      "precincts": 19,
+      "precincts_reporting": 19,
+      "precincts_participating": 19
+    },
+    {
+      "county_code": "10",
+      "contest_id": "AZ-94",
+      "precincts": 19,
+      "precincts_reporting": 19,
+      "precincts_participating": 19
+    },
+    {
+      "county_code": "10",
+      "contest_id": "AZ-95",
+      "precincts": 19,
+      "precincts_reporting": 19,
+      "precincts_participating": 19
+    },
+    {
+      "county_code": "10",
+      "contest_id": "AZ-96",
+      "precincts": 19,
+      "precincts_reporting": 19,
+      "precincts_participating": 19
+    },
+    {
+      "county_code": "10",
+      "contest_id": "AZ-97",
+      "precincts": 19,
+      "precincts_reporting": 19,
+      "precincts_participating": 19
+    },
+    {
+      "county_code": "10",
+      "contest_id": "AZ-98",
+      "precincts": 19,
+      "precincts_reporting": 19,
+      "precincts_participating": 19
+    },
+    {
+      "county_code": "10",
+      "contest_id": "AZ-99",
+      "precincts": 19,
+      "precincts_reporting": 19,
+      "precincts_participating": 19
+    },
+    {
+      "county_code": "15",
+      "contest_id": "AZ-7",
+      "precincts": 27,
+      "precincts_reporting": 27,
+      "precincts_participating": 27
+    },
+    {
+      "county_code": "15",
+      "contest_id": "AZ-9",
+      "precincts": 20,
+      "precincts_reporting": 20,
+      "precincts_participating": 20
+    },
+    {
+      "county_code": "15",
+      "contest_id": "AZ-10",
+      "precincts": 47,
+      "precincts_reporting": 47,
+      "precincts_participating": 47
+    },
+    {
+      "county_code": "15",
+      "contest_id": "AZ-33",
+      "precincts": 26,
+      "precincts_reporting": 26,
+      "precincts_participating": 26
+    },
+    {
+      "county_code": "15",
+      "contest_id": "AZ-35",
+      "precincts": 21,
+      "precincts_reporting": 21,
+      "precincts_participating": 21
+    },
+    {
+      "county_code": "15",
+      "contest_id": "AZ-63",
+      "precincts": 26,
+      "precincts_reporting": 26,
+      "precincts_participating": 26
+    },
+    {
+      "county_code": "15",
+      "contest_id": "AZ-65",
+      "precincts": 21,
+      "precincts_reporting": 21,
+      "precincts_participating": 21
+    },
+    {
+      "county_code": "15",
+      "contest_id": "AZ-71",
+      "precincts": 47,
+      "precincts_reporting": 47,
+      "precincts_participating": 47
+    },
+    {
+      "county_code": "15",
+      "contest_id": "AZ-72",
+      "precincts": 47,
+      "precincts_reporting": 47,
+      "precincts_participating": 47
+    },
+    {
+      "county_code": "15",
+      "contest_id": "AZ-73",
+      "precincts": 47,
+      "precincts_reporting": 47,
+      "precincts_participating": 47
+    },
+    {
+      "county_code": "15",
+      "contest_id": "AZ-74",
+      "precincts": 47,
+      "precincts_reporting": 47,
+      "precincts_participating": 47
+    },
+    {
+      "county_code": "15",
+      "contest_id": "AZ-75",
+      "precincts": 47,
+      "precincts_reporting": 47,
+      "precincts_participating": 47
+    },
+    {
+      "county_code": "15",
+      "contest_id": "AZ-76",
+      "precincts": 47,
+      "precincts_reporting": 47,
+      "precincts_participating": 47
+    },
+    {
+      "county_code": "15",
+      "contest_id": "AZ-77",
+      "precincts": 47,
+      "precincts_reporting": 47,
+      "precincts_participating": 47
+    },
+    {
+      "county_code": "15",
+      "contest_id": "AZ-92",
+      "precincts": 47,
+      "precincts_reporting": 47,
+      "precincts_participating": 47
+    },
+    {
+      "county_code": "15",
+      "contest_id": "AZ-93",
+      "precincts": 47,
+      "precincts_reporting": 47,
+      "precincts_participating": 47
+    },
+    {
+      "county_code": "15",
+      "contest_id": "AZ-94",
+      "precincts": 47,
+      "precincts_reporting": 47,
+      "precincts_participating": 47
+    },
+    {
+      "county_code": "15",
+      "contest_id": "AZ-95",
+      "precincts": 47,
+      "precincts_reporting": 47,
+      "precincts_participating": 47
+    },
+    {
+      "county_code": "15",
+      "contest_id": "AZ-96",
+      "precincts": 47,
+      "precincts_reporting": 47,
+      "precincts_participating": 47
+    },
+    {
+      "county_code": "15",
+      "contest_id": "AZ-97",
+      "precincts": 47,
+      "precincts_reporting": 47,
+      "precincts_participating": 47
+    },
+    {
+      "county_code": "15",
+      "contest_id": "AZ-98",
+      "precincts": 47,
+      "precincts_reporting": 47,
+      "precincts_participating": 47
+    },
+    {
+      "county_code": "15",
+      "contest_id": "AZ-99",
+      "precincts": 47,
+      "precincts_reporting": 47,
+      "precincts_participating": 47
+    },
+    {
+      "county_code": "09",
+      "contest_id": "AZ-2",
+      "precincts": 2,
+      "precincts_reporting": 2,
+      "precincts_participating": 2
+    },
+    {
+      "county_code": "09",
+      "contest_id": "AZ-9",
+      "precincts": 22,
+      "precincts_reporting": 22,
+      "precincts_participating": 22
+    },
+    {
+      "county_code": "09",
+      "contest_id": "AZ-10",
+      "precincts": 24,
+      "precincts_reporting": 24,
+      "precincts_participating": 24
+    },
+    {
+      "county_code": "09",
+      "contest_id": "AZ-16",
+      "precincts": 2,
+      "precincts_reporting": 2,
+      "precincts_participating": 2
+    },
+    {
+      "county_code": "09",
+      "contest_id": "AZ-40",
+      "precincts": 22,
+      "precincts_reporting": 22,
+      "precincts_participating": 22
+    },
+    {
+      "county_code": "09",
+      "contest_id": "AZ-46",
+      "precincts": 2,
+      "precincts_reporting": 2,
+      "precincts_participating": 2
+    },
+    {
+      "county_code": "09",
+      "contest_id": "AZ-70",
+      "precincts": 22,
+      "precincts_reporting": 22,
+      "precincts_participating": 22
+    },
+    {
+      "county_code": "09",
+      "contest_id": "AZ-71",
+      "precincts": 24,
+      "precincts_reporting": 24,
+      "precincts_participating": 24
+    },
+    {
+      "county_code": "09",
+      "contest_id": "AZ-72",
+      "precincts": 24,
+      "precincts_reporting": 24,
+      "precincts_participating": 24
+    },
+    {
+      "county_code": "09",
+      "contest_id": "AZ-73",
+      "precincts": 24,
+      "precincts_reporting": 24,
+      "precincts_participating": 24
+    },
+    {
+      "county_code": "09",
+      "contest_id": "AZ-74",
+      "precincts": 24,
+      "precincts_reporting": 24,
+      "precincts_participating": 24
+    },
+    {
+      "county_code": "09",
+      "contest_id": "AZ-75",
+      "precincts": 24,
+      "precincts_reporting": 24,
+      "precincts_participating": 24
+    },
+    {
+      "county_code": "09",
+      "contest_id": "AZ-76",
+      "precincts": 24,
+      "precincts_reporting": 24,
+      "precincts_participating": 24
+    },
+    {
+      "county_code": "09",
+      "contest_id": "AZ-77",
+      "precincts": 24,
+      "precincts_reporting": 24,
+      "precincts_participating": 24
+    },
+    {
+      "county_code": "09",
+      "contest_id": "AZ-92",
+      "precincts": 24,
+      "precincts_reporting": 24,
+      "precincts_participating": 24
+    },
+    {
+      "county_code": "09",
+      "contest_id": "AZ-93",
+      "precincts": 24,
+      "precincts_reporting": 24,
+      "precincts_participating": 24
+    },
+    {
+      "county_code": "09",
+      "contest_id": "AZ-94",
+      "precincts": 24,
+      "precincts_reporting": 24,
+      "precincts_participating": 24
+    },
+    {
+      "county_code": "09",
+      "contest_id": "AZ-95",
+      "precincts": 24,
+      "precincts_reporting": 24,
+      "precincts_participating": 24
+    },
+    {
+      "county_code": "09",
+      "contest_id": "AZ-96",
+      "precincts": 24,
+      "precincts_reporting": 24,
+      "precincts_participating": 24
+    },
+    {
+      "county_code": "09",
+      "contest_id": "AZ-97",
+      "precincts": 24,
+      "precincts_reporting": 24,
+      "precincts_participating": 24
+    },
+    {
+      "county_code": "09",
+      "contest_id": "AZ-98",
+      "precincts": 24,
+      "precincts_reporting": 24,
+      "precincts_participating": 24
+    },
+    {
+      "county_code": "09",
+      "contest_id": "AZ-99",
+      "precincts": 24,
+      "precincts_reporting": 24,
+      "precincts_participating": 24
+    },
+    {
+      "county_code": "13",
+      "contest_id": "AZ-7",
+      "precincts": 24,
+      "precincts_reporting": 24,
+      "precincts_participating": 24
+    },
+    {
+      "county_code": "13",
+      "contest_id": "AZ-10",
+      "precincts": 24,
+      "precincts_reporting": 24,
+      "precincts_participating": 24
+    },
+    {
+      "county_code": "13",
+      "contest_id": "AZ-29",
+      "precincts": 3,
+      "precincts_reporting": 3,
+      "precincts_participating": 3
+    },
+    {
+      "county_code": "13",
+      "contest_id": "AZ-31",
+      "precincts": 21,
+      "precincts_reporting": 21,
+      "precincts_participating": 21
+    },
+    {
+      "county_code": "13",
+      "contest_id": "AZ-59",
+      "precincts": 3,
+      "precincts_reporting": 3,
+      "precincts_participating": 3
+    },
+    {
+      "county_code": "13",
+      "contest_id": "AZ-61",
+      "precincts": 21,
+      "precincts_reporting": 21,
+      "precincts_participating": 21
+    },
+    {
+      "county_code": "13",
+      "contest_id": "AZ-71",
+      "precincts": 24,
+      "precincts_reporting": 24,
+      "precincts_participating": 24
+    },
+    {
+      "county_code": "13",
+      "contest_id": "AZ-72",
+      "precincts": 24,
+      "precincts_reporting": 24,
+      "precincts_participating": 24
+    },
+    {
+      "county_code": "13",
+      "contest_id": "AZ-73",
+      "precincts": 24,
+      "precincts_reporting": 24,
+      "precincts_participating": 24
+    },
+    {
+      "county_code": "13",
+      "contest_id": "AZ-74",
+      "precincts": 24,
+      "precincts_reporting": 24,
+      "precincts_participating": 24
+    },
+    {
+      "county_code": "13",
+      "contest_id": "AZ-75",
+      "precincts": 24,
+      "precincts_reporting": 24,
+      "precincts_participating": 24
+    },
+    {
+      "county_code": "13",
+      "contest_id": "AZ-76",
+      "precincts": 24,
+      "precincts_reporting": 24,
+      "precincts_participating": 24
+    },
+    {
+      "county_code": "13",
+      "contest_id": "AZ-77",
+      "precincts": 24,
+      "precincts_reporting": 24,
+      "precincts_participating": 24
+    },
+    {
+      "county_code": "13",
+      "contest_id": "AZ-87",
+      "precincts": 24,
+      "precincts_reporting": 24,
+      "precincts_participating": 24
+    },
+    {
+      "county_code": "13",
+      "contest_id": "AZ-88",
+      "precincts": 24,
+      "precincts_reporting": 24,
+      "precincts_participating": 24
+    },
+    {
+      "county_code": "13",
+      "contest_id": "AZ-90",
+      "precincts": 24,
+      "precincts_reporting": 24,
+      "precincts_participating": 24
+    },
+    {
+      "county_code": "13",
+      "contest_id": "AZ-92",
+      "precincts": 24,
+      "precincts_reporting": 24,
+      "precincts_participating": 24
+    },
+    {
+      "county_code": "13",
+      "contest_id": "AZ-93",
+      "precincts": 24,
+      "precincts_reporting": 24,
+      "precincts_participating": 24
+    },
+    {
+      "county_code": "13",
+      "contest_id": "AZ-94",
+      "precincts": 24,
+      "precincts_reporting": 24,
+      "precincts_participating": 24
+    },
+    {
+      "county_code": "13",
+      "contest_id": "AZ-95",
+      "precincts": 24,
+      "precincts_reporting": 24,
+      "precincts_participating": 24
+    },
+    {
+      "county_code": "13",
+      "contest_id": "AZ-96",
+      "precincts": 24,
+      "precincts_reporting": 24,
+      "precincts_participating": 24
+    },
+    {
+      "county_code": "13",
+      "contest_id": "AZ-97",
+      "precincts": 24,
+      "precincts_reporting": 24,
+      "precincts_participating": 24
+    },
+    {
+      "county_code": "13",
+      "contest_id": "AZ-98",
+      "precincts": 24,
+      "precincts_reporting": 24,
+      "precincts_participating": 24
+    },
+    {
+      "county_code": "13",
+      "contest_id": "AZ-99",
+      "precincts": 24,
+      "precincts_reporting": 24,
+      "precincts_participating": 24
+    },
+    {
+      "county_code": "06",
+      "contest_id": "AZ-6",
+      "precincts": 6,
+      "precincts_reporting": 6,
+      "precincts_participating": 6
+    },
+    {
+      "county_code": "06",
+      "contest_id": "AZ-10",
+      "precincts": 6,
+      "precincts_reporting": 6,
+      "precincts_participating": 6
+    },
+    {
+      "county_code": "06",
+      "contest_id": "AZ-29",
+      "precincts": 6,
+      "precincts_reporting": 6,
+      "precincts_participating": 6
+    },
+    {
+      "county_code": "06",
+      "contest_id": "AZ-59",
+      "precincts": 6,
+      "precincts_reporting": 6,
+      "precincts_participating": 6
+    },
+    {
+      "county_code": "06",
+      "contest_id": "AZ-71",
+      "precincts": 6,
+      "precincts_reporting": 6,
+      "precincts_participating": 6
+    },
+    {
+      "county_code": "06",
+      "contest_id": "AZ-72",
+      "precincts": 6,
+      "precincts_reporting": 6,
+      "precincts_participating": 6
+    },
+    {
+      "county_code": "06",
+      "contest_id": "AZ-73",
+      "precincts": 6,
+      "precincts_reporting": 6,
+      "precincts_participating": 6
+    },
+    {
+      "county_code": "06",
+      "contest_id": "AZ-74",
+      "precincts": 6,
+      "precincts_reporting": 6,
+      "precincts_participating": 6
+    },
+    {
+      "county_code": "06",
+      "contest_id": "AZ-75",
+      "precincts": 6,
+      "precincts_reporting": 6,
+      "precincts_participating": 6
+    },
+    {
+      "county_code": "06",
+      "contest_id": "AZ-76",
+      "precincts": 6,
+      "precincts_reporting": 6,
+      "precincts_participating": 6
+    },
+    {
+      "county_code": "06",
+      "contest_id": "AZ-77",
+      "precincts": 6,
+      "precincts_reporting": 6,
+      "precincts_participating": 6
+    },
+    {
+      "county_code": "06",
+      "contest_id": "AZ-87",
+      "precincts": 6,
+      "precincts_reporting": 6,
+      "precincts_participating": 6
+    },
+    {
+      "county_code": "06",
+      "contest_id": "AZ-88",
+      "precincts": 6,
+      "precincts_reporting": 6,
+      "precincts_participating": 6
+    },
+    {
+      "county_code": "06",
+      "contest_id": "AZ-90",
+      "precincts": 6,
+      "precincts_reporting": 6,
+      "precincts_participating": 6
+    },
+    {
+      "county_code": "06",
+      "contest_id": "AZ-92",
+      "precincts": 6,
+      "precincts_reporting": 6,
+      "precincts_participating": 6
+    },
+    {
+      "county_code": "06",
+      "contest_id": "AZ-93",
+      "precincts": 6,
+      "precincts_reporting": 6,
+      "precincts_participating": 6
+    },
+    {
+      "county_code": "06",
+      "contest_id": "AZ-94",
+      "precincts": 6,
+      "precincts_reporting": 6,
+      "precincts_participating": 6
+    },
+    {
+      "county_code": "06",
+      "contest_id": "AZ-95",
+      "precincts": 6,
+      "precincts_reporting": 6,
+      "precincts_participating": 6
+    },
+    {
+      "county_code": "06",
+      "contest_id": "AZ-96",
+      "precincts": 6,
+      "precincts_reporting": 6,
+      "precincts_participating": 6
+    },
+    {
+      "county_code": "06",
+      "contest_id": "AZ-97",
+      "precincts": 6,
+      "precincts_reporting": 6,
+      "precincts_participating": 6
+    },
+    {
+      "county_code": "06",
+      "contest_id": "AZ-98",
+      "precincts": 6,
+      "precincts_reporting": 6,
+      "precincts_participating": 6
+    },
+    {
+      "county_code": "06",
+      "contest_id": "AZ-99",
+      "precincts": 6,
+      "precincts_reporting": 6,
+      "precincts_participating": 6
+    },
+    {
+      "county_code": "01",
+      "contest_id": "AZ-2",
+      "precincts": 44,
+      "precincts_reporting": 44,
+      "precincts_participating": 44
+    },
+    {
+      "county_code": "01",
+      "contest_id": "AZ-10",
+      "precincts": 44,
+      "precincts_reporting": 44,
+      "precincts_participating": 44
+    },
+    {
+      "county_code": "01",
+      "contest_id": "AZ-16",
+      "precincts": 44,
+      "precincts_reporting": 44,
+      "precincts_participating": 44
+    },
+    {
+      "county_code": "01",
+      "contest_id": "AZ-46",
+      "precincts": 44,
+      "precincts_reporting": 44,
+      "precincts_participating": 44
+    },
+    {
+      "county_code": "01",
+      "contest_id": "AZ-71",
+      "precincts": 44,
+      "precincts_reporting": 44,
+      "precincts_participating": 44
+    },
+    {
+      "county_code": "01",
+      "contest_id": "AZ-72",
+      "precincts": 44,
+      "precincts_reporting": 44,
+      "precincts_participating": 44
+    },
+    {
+      "county_code": "01",
+      "contest_id": "AZ-73",
+      "precincts": 44,
+      "precincts_reporting": 44,
+      "precincts_participating": 44
+    },
+    {
+      "county_code": "01",
+      "contest_id": "AZ-74",
+      "precincts": 44,
+      "precincts_reporting": 44,
+      "precincts_participating": 44
+    },
+    {
+      "county_code": "01",
+      "contest_id": "AZ-75",
+      "precincts": 44,
+      "precincts_reporting": 44,
+      "precincts_participating": 44
+    },
+    {
+      "county_code": "01",
+      "contest_id": "AZ-76",
+      "precincts": 44,
+      "precincts_reporting": 44,
+      "precincts_participating": 44
+    },
+    {
+      "county_code": "01",
+      "contest_id": "AZ-77",
+      "precincts": 44,
+      "precincts_reporting": 44,
+      "precincts_participating": 44
+    },
+    {
+      "county_code": "01",
+      "contest_id": "AZ-92",
+      "precincts": 44,
+      "precincts_reporting": 44,
+      "precincts_participating": 44
+    },
+    {
+      "county_code": "01",
+      "contest_id": "AZ-93",
+      "precincts": 44,
+      "precincts_reporting": 44,
+      "precincts_participating": 44
+    },
+    {
+      "county_code": "01",
+      "contest_id": "AZ-94",
+      "precincts": 44,
+      "precincts_reporting": 44,
+      "precincts_participating": 44
+    },
+    {
+      "county_code": "01",
+      "contest_id": "AZ-95",
+      "precincts": 44,
+      "precincts_reporting": 44,
+      "precincts_participating": 44
+    },
+    {
+      "county_code": "01",
+      "contest_id": "AZ-96",
+      "precincts": 44,
+      "precincts_reporting": 44,
+      "precincts_participating": 44
+    },
+    {
+      "county_code": "01",
+      "contest_id": "AZ-97",
+      "precincts": 44,
+      "precincts_reporting": 44,
+      "precincts_participating": 44
+    },
+    {
+      "county_code": "01",
+      "contest_id": "AZ-98",
+      "precincts": 44,
+      "precincts_reporting": 44,
+      "precincts_participating": 44
+    },
+    {
+      "county_code": "01",
+      "contest_id": "AZ-99",
+      "precincts": 44,
+      "precincts_reporting": 44,
+      "precincts_participating": 44
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-2",
+      "precincts": 39,
+      "precincts_reporting": 0,
+      "precincts_participating": 39
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-10",
+      "precincts": 39,
+      "precincts_reporting": 0,
+      "precincts_participating": 39
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-16",
+      "precincts": 3,
+      "precincts_reporting": 0,
+      "precincts_participating": 3
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-17",
+      "precincts": 36,
+      "precincts_reporting": 0,
+      "precincts_participating": 36
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-46",
+      "precincts": 3,
+      "precincts_reporting": 0,
+      "precincts_participating": 3
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-47",
+      "precincts": 36,
+      "precincts_reporting": 0,
+      "precincts_participating": 36
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-71",
+      "precincts": 39,
+      "precincts_reporting": 0,
+      "precincts_participating": 39
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-72",
+      "precincts": 39,
+      "precincts_reporting": 0,
+      "precincts_participating": 39
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-73",
+      "precincts": 39,
+      "precincts_reporting": 0,
+      "precincts_participating": 39
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-74",
+      "precincts": 39,
+      "precincts_reporting": 0,
+      "precincts_participating": 39
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-75",
+      "precincts": 39,
+      "precincts_reporting": 0,
+      "precincts_participating": 39
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-76",
+      "precincts": 39,
+      "precincts_reporting": 0,
+      "precincts_participating": 39
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-77",
+      "precincts": 39,
+      "precincts_reporting": 0,
+      "precincts_participating": 39
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-87",
+      "precincts": 39,
+      "precincts_reporting": 0,
+      "precincts_participating": 39
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-88",
+      "precincts": 39,
+      "precincts_reporting": 0,
+      "precincts_participating": 39
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-90",
+      "precincts": 39,
+      "precincts_reporting": 0,
+      "precincts_participating": 39
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-92",
+      "precincts": 39,
+      "precincts_reporting": 0,
+      "precincts_participating": 39
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-93",
+      "precincts": 39,
+      "precincts_reporting": 0,
+      "precincts_participating": 39
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-94",
+      "precincts": 39,
+      "precincts_reporting": 0,
+      "precincts_participating": 39
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-95",
+      "precincts": 39,
+      "precincts_reporting": 0,
+      "precincts_participating": 39
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-96",
+      "precincts": 39,
+      "precincts_reporting": 0,
+      "precincts_participating": 39
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-97",
+      "precincts": 39,
+      "precincts_reporting": 0,
+      "precincts_participating": 39
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-98",
+      "precincts": 39,
+      "precincts_reporting": 0,
+      "precincts_participating": 39
+    },
+    {
+      "county_code": "04",
+      "contest_id": "AZ-99",
+      "precincts": 39,
+      "precincts_reporting": 0,
+      "precincts_participating": 39
+    },
+    {
+      "county_code": "pima",
+      "contest_id": "AZ-6",
+      "precincts": 151,
+      "precincts_reporting": 0,
+      "precincts_participating": 151
+    },
+    {
+      "county_code": "pima",
+      "contest_id": "AZ-7",
+      "precincts": 114,
+      "precincts_reporting": 0,
+      "precincts_participating": 114
+    },
+    {
+      "county_code": "pima",
+      "contest_id": "AZ-10",
+      "precincts": 265,
+      "precincts_reporting": 0,
+      "precincts_participating": 265
+    },
+    {
+      "county_code": "pima",
+      "contest_id": "AZ-26",
+      "precincts": 14,
+      "precincts_reporting": 0,
+      "precincts_participating": 14
+    },
+    {
+      "county_code": "pima",
+      "contest_id": "AZ-27",
+      "precincts": 61,
+      "precincts_reporting": 0,
+      "precincts_participating": 61
+    },
+    {
+      "county_code": "pima",
+      "contest_id": "AZ-28",
+      "precincts": 64,
+      "precincts_reporting": 0,
+      "precincts_participating": 64
+    },
+    {
+      "county_code": "pima",
+      "contest_id": "AZ-29",
+      "precincts": 16,
+      "precincts_reporting": 0,
+      "precincts_participating": 16
+    },
+    {
+      "county_code": "pima",
+      "contest_id": "AZ-30",
+      "precincts": 54,
+      "precincts_reporting": 0,
+      "precincts_participating": 54
+    },
+    {
+      "county_code": "pima",
+      "contest_id": "AZ-31",
+      "precincts": 38,
+      "precincts_reporting": 0,
+      "precincts_participating": 38
+    },
+    {
+      "county_code": "pima",
+      "contest_id": "AZ-33",
+      "precincts": 18,
+      "precincts_reporting": 0,
+      "precincts_participating": 18
+    },
+    {
+      "county_code": "pima",
+      "contest_id": "AZ-56",
+      "precincts": 14,
+      "precincts_reporting": 0,
+      "precincts_participating": 14
+    },
+    {
+      "county_code": "pima",
+      "contest_id": "AZ-57",
+      "precincts": 61,
+      "precincts_reporting": 0,
+      "precincts_participating": 61
+    },
+    {
+      "county_code": "pima",
+      "contest_id": "AZ-58",
+      "precincts": 64,
+      "precincts_reporting": 0,
+      "precincts_participating": 64
+    },
+    {
+      "county_code": "pima",
+      "contest_id": "AZ-59",
+      "precincts": 16,
+      "precincts_reporting": 0,
+      "precincts_participating": 16
+    },
+    {
+      "county_code": "pima",
+      "contest_id": "AZ-60",
+      "precincts": 54,
+      "precincts_reporting": 0,
+      "precincts_participating": 54
+    },
+    {
+      "county_code": "pima",
+      "contest_id": "AZ-61",
+      "precincts": 38,
+      "precincts_reporting": 0,
+      "precincts_participating": 38
+    },
+    {
+      "county_code": "pima",
+      "contest_id": "AZ-63",
+      "precincts": 18,
+      "precincts_reporting": 0,
+      "precincts_participating": 18
+    },
+    {
+      "county_code": "pima",
+      "contest_id": "AZ-71",
+      "precincts": 265,
+      "precincts_reporting": 0,
+      "precincts_participating": 265
+    },
+    {
+      "county_code": "pima",
+      "contest_id": "AZ-72",
+      "precincts": 265,
+      "precincts_reporting": 0,
+      "precincts_participating": 265
+    },
+    {
+      "county_code": "pima",
+      "contest_id": "AZ-73",
+      "precincts": 265,
+      "precincts_reporting": 0,
+      "precincts_participating": 265
+    },
+    {
+      "county_code": "pima",
+      "contest_id": "AZ-74",
+      "precincts": 265,
+      "precincts_reporting": 0,
+      "precincts_participating": 265
+    },
+    {
+      "county_code": "pima",
+      "contest_id": "AZ-75",
+      "precincts": 265,
+      "precincts_reporting": 0,
+      "precincts_participating": 265
+    },
+    {
+      "county_code": "pima",
+      "contest_id": "AZ-76",
+      "precincts": 265,
+      "precincts_reporting": 0,
+      "precincts_participating": 265
+    },
+    {
+      "county_code": "pima",
+      "contest_id": "AZ-77",
+      "precincts": 265,
+      "precincts_reporting": 0,
+      "precincts_participating": 265
+    },
+    {
+      "county_code": "pima",
+      "contest_id": "AZ-86",
+      "precincts": 265,
+      "precincts_reporting": 0,
+      "precincts_participating": 265
+    },
+    {
+      "county_code": "pima",
+      "contest_id": "AZ-89",
+      "precincts": 265,
+      "precincts_reporting": 0,
+      "precincts_participating": 265
+    },
+    {
+      "county_code": "pima",
+      "contest_id": "AZ-91",
+      "precincts": 265,
+      "precincts_reporting": 0,
+      "precincts_participating": 265
+    },
+    {
+      "county_code": "pima",
+      "contest_id": "AZ-92",
+      "precincts": 265,
+      "precincts_reporting": 0,
+      "precincts_participating": 265
+    },
+    {
+      "county_code": "pima",
+      "contest_id": "AZ-93",
+      "precincts": 265,
+      "precincts_reporting": 0,
+      "precincts_participating": 265
+    },
+    {
+      "county_code": "pima",
+      "contest_id": "AZ-94",
+      "precincts": 265,
+      "precincts_reporting": 0,
+      "precincts_participating": 265
+    },
+    {
+      "county_code": "pima",
+      "contest_id": "AZ-95",
+      "precincts": 265,
+      "precincts_reporting": 0,
+      "precincts_participating": 265
+    },
+    {
+      "county_code": "pima",
+      "contest_id": "AZ-96",
+      "precincts": 265,
+      "precincts_reporting": 0,
+      "precincts_participating": 265
+    },
+    {
+      "county_code": "pima",
+      "contest_id": "AZ-97",
+      "precincts": 265,
+      "precincts_reporting": 0,
+      "precincts_participating": 265
+    },
+    {
+      "county_code": "pima",
+      "contest_id": "AZ-98",
+      "precincts": 265,
+      "precincts_reporting": 0,
+      "precincts_participating": 265
+    },
+    {
+      "county_code": "pima",
+      "contest_id": "AZ-99",
+      "precincts": 265,
+      "precincts_reporting": 0,
+      "precincts_participating": 265
+    },
+    {
+      "county_code": "03",
+      "contest_id": "AZ-2",
+      "precincts": 56,
+      "precincts_reporting": 0,
+      "precincts_participating": 56
+    },
+    {
+      "county_code": "03",
+      "contest_id": "AZ-10",
+      "precincts": 56,
+      "precincts_reporting": 0,
+      "precincts_participating": 56
+    },
+    {
+      "county_code": "03",
+      "contest_id": "AZ-11",
+      "precincts": 1,
+      "precincts_reporting": 0,
+      "precincts_participating": 1
+    },
+    {
+      "county_code": "03",
+      "contest_id": "AZ-16",
+      "precincts": 37,
+      "precincts_reporting": 0,
+      "precincts_participating": 37
+    },
+    {
+      "county_code": "03",
+      "contest_id": "AZ-17",
+      "precincts": 18,
+      "precincts_reporting": 0,
+      "precincts_participating": 18
+    },
+    {
+      "county_code": "03",
+      "contest_id": "AZ-41",
+      "precincts": 1,
+      "precincts_reporting": 0,
+      "precincts_participating": 1
+    },
+    {
+      "county_code": "03",
+      "contest_id": "AZ-46",
+      "precincts": 37,
+      "precincts_reporting": 0,
+      "precincts_participating": 37
+    },
+    {
+      "county_code": "03",
+      "contest_id": "AZ-47",
+      "precincts": 18,
+      "precincts_reporting": 0,
+      "precincts_participating": 18
+    },
+    {
+      "county_code": "03",
+      "contest_id": "AZ-71",
+      "precincts": 56,
+      "precincts_reporting": 0,
+      "precincts_participating": 56
+    },
+    {
+      "county_code": "03",
+      "contest_id": "AZ-72",
+      "precincts": 56,
+      "precincts_reporting": 0,
+      "precincts_participating": 56
+    },
+    {
+      "county_code": "03",
+      "contest_id": "AZ-73",
+      "precincts": 56,
+      "precincts_reporting": 0,
+      "precincts_participating": 56
+    },
+    {
+      "county_code": "03",
+      "contest_id": "AZ-74",
+      "precincts": 56,
+      "precincts_reporting": 0,
+      "precincts_participating": 56
+    },
+    {
+      "county_code": "03",
+      "contest_id": "AZ-75",
+      "precincts": 56,
+      "precincts_reporting": 0,
+      "precincts_participating": 56
+    },
+    {
+      "county_code": "03",
+      "contest_id": "AZ-76",
+      "precincts": 56,
+      "precincts_reporting": 0,
+      "precincts_participating": 56
+    },
+    {
+      "county_code": "03",
+      "contest_id": "AZ-92",
+      "precincts": 56,
+      "precincts_reporting": 0,
+      "precincts_participating": 56
+    },
+    {
+      "county_code": "03",
+      "contest_id": "AZ-93",
+      "precincts": 56,
+      "precincts_reporting": 0,
+      "precincts_participating": 56
+    },
+    {
+      "county_code": "03",
+      "contest_id": "AZ-94",
+      "precincts": 56,
+      "precincts_reporting": 0,
+      "precincts_participating": 56
+    },
+    {
+      "county_code": "03",
+      "contest_id": "AZ-95",
+      "precincts": 56,
+      "precincts_reporting": 0,
+      "precincts_participating": 56
+    },
+    {
+      "county_code": "03",
+      "contest_id": "AZ-96",
+      "precincts": 56,
+      "precincts_reporting": 0,
+      "precincts_participating": 56
+    },
+    {
+      "county_code": "03",
+      "contest_id": "AZ-97",
+      "precincts": 56,
+      "precincts_reporting": 0,
+      "precincts_participating": 56
+    },
+    {
+      "county_code": "03",
+      "contest_id": "AZ-98",
+      "precincts": 56,
+      "precincts_reporting": 0,
+      "precincts_participating": 56
+    },
+    {
+      "county_code": "03",
+      "contest_id": "AZ-99",
+      "precincts": 56,
+      "precincts_reporting": 0,
+      "precincts_participating": 56
+    },
+    {
+      "county_code": "03",
+      "contest_id": "AZ-77",
+      "precincts": 56,
+      "precincts_reporting": 0,
+      "precincts_participating": 56
+    },
+    {
+      "county_code": "14",
+      "contest_id": "AZ-2",
+      "precincts": 57,
+      "precincts_reporting": 55,
+      "precincts_participating": 57
+    },
+    {
+      "county_code": "14",
+      "contest_id": "AZ-10",
+      "precincts": 57,
+      "precincts_reporting": 55,
+      "precincts_participating": 57
+    },
+    {
+      "county_code": "14",
+      "contest_id": "AZ-11",
+      "precincts": 54,
+      "precincts_reporting": 53,
+      "precincts_participating": 54
+    },
+    {
+      "county_code": "14",
+      "contest_id": "AZ-40",
+      "precincts": 3,
+      "precincts_reporting": 2,
+      "precincts_participating": 3
+    },
+    {
+      "county_code": "14",
+      "contest_id": "AZ-41",
+      "precincts": 54,
+      "precincts_reporting": 53,
+      "precincts_participating": 54
+    },
+    {
+      "county_code": "14",
+      "contest_id": "AZ-70",
+      "precincts": 3,
+      "precincts_reporting": 2,
+      "precincts_participating": 3
+    },
+    {
+      "county_code": "14",
+      "contest_id": "AZ-71",
+      "precincts": 57,
+      "precincts_reporting": 55,
+      "precincts_participating": 57
+    },
+    {
+      "county_code": "14",
+      "contest_id": "AZ-72",
+      "precincts": 57,
+      "precincts_reporting": 55,
+      "precincts_participating": 57
+    },
+    {
+      "county_code": "14",
+      "contest_id": "AZ-73",
+      "precincts": 57,
+      "precincts_reporting": 55,
+      "precincts_participating": 57
+    },
+    {
+      "county_code": "14",
+      "contest_id": "AZ-74",
+      "precincts": 57,
+      "precincts_reporting": 55,
+      "precincts_participating": 57
+    },
+    {
+      "county_code": "14",
+      "contest_id": "AZ-75",
+      "precincts": 57,
+      "precincts_reporting": 55,
+      "precincts_participating": 57
+    },
+    {
+      "county_code": "14",
+      "contest_id": "AZ-76",
+      "precincts": 57,
+      "precincts_reporting": 55,
+      "precincts_participating": 57
+    },
+    {
+      "county_code": "14",
+      "contest_id": "AZ-77",
+      "precincts": 57,
+      "precincts_reporting": 55,
+      "precincts_participating": 57
+    },
+    {
+      "county_code": "14",
+      "contest_id": "AZ-92",
+      "precincts": 57,
+      "precincts_reporting": 55,
+      "precincts_participating": 57
+    },
+    {
+      "county_code": "14",
+      "contest_id": "AZ-93",
+      "precincts": 57,
+      "precincts_reporting": 55,
+      "precincts_participating": 57
+    },
+    {
+      "county_code": "14",
+      "contest_id": "AZ-94",
+      "precincts": 57,
+      "precincts_reporting": 55,
+      "precincts_participating": 57
+    },
+    {
+      "county_code": "14",
+      "contest_id": "AZ-95",
+      "precincts": 57,
+      "precincts_reporting": 55,
+      "precincts_participating": 57
+    },
+    {
+      "county_code": "14",
+      "contest_id": "AZ-96",
+      "precincts": 57,
+      "precincts_reporting": 55,
+      "precincts_participating": 57
+    },
+    {
+      "county_code": "14",
+      "contest_id": "AZ-97",
+      "precincts": 57,
+      "precincts_reporting": 55,
+      "precincts_participating": 57
+    },
+    {
+      "county_code": "14",
+      "contest_id": "AZ-98",
+      "precincts": 57,
+      "precincts_reporting": 55,
+      "precincts_participating": 57
+    },
+    {
+      "county_code": "14",
+      "contest_id": "AZ-99",
+      "precincts": 57,
+      "precincts_reporting": 55,
+      "precincts_participating": 57
+    },
+    {
+      "county_code": "05",
+      "contest_id": "AZ-2",
+      "precincts": 2,
+      "precincts_reporting": 2,
+      "precincts_participating": 2
+    },
+    {
+      "county_code": "05",
+      "contest_id": "AZ-6",
+      "precincts": 21,
+      "precincts_reporting": 21,
+      "precincts_participating": 21
+    },
+    {
+      "county_code": "05",
+      "contest_id": "AZ-10",
+      "precincts": 23,
+      "precincts_reporting": 23,
+      "precincts_participating": 23
+    },
+    {
+      "county_code": "05",
+      "contest_id": "AZ-16",
+      "precincts": 2,
+      "precincts_reporting": 2,
+      "precincts_participating": 2
+    },
+    {
+      "county_code": "05",
+      "contest_id": "AZ-29",
+      "precincts": 21,
+      "precincts_reporting": 21,
+      "precincts_participating": 21
+    },
+    {
+      "county_code": "05",
+      "contest_id": "AZ-46",
+      "precincts": 2,
+      "precincts_reporting": 2,
+      "precincts_participating": 2
+    },
+    {
+      "county_code": "05",
+      "contest_id": "AZ-59",
+      "precincts": 21,
+      "precincts_reporting": 21,
+      "precincts_participating": 21
+    },
+    {
+      "county_code": "05",
+      "contest_id": "AZ-71",
+      "precincts": 23,
+      "precincts_reporting": 23,
+      "precincts_participating": 23
+    },
+    {
+      "county_code": "05",
+      "contest_id": "AZ-72",
+      "precincts": 23,
+      "precincts_reporting": 23,
+      "precincts_participating": 23
+    },
+    {
+      "county_code": "05",
+      "contest_id": "AZ-73",
+      "precincts": 23,
+      "precincts_reporting": 23,
+      "precincts_participating": 23
+    },
+    {
+      "county_code": "05",
+      "contest_id": "AZ-74",
+      "precincts": 23,
+      "precincts_reporting": 23,
+      "precincts_participating": 23
+    },
+    {
+      "county_code": "05",
+      "contest_id": "AZ-75",
+      "precincts": 23,
+      "precincts_reporting": 23,
+      "precincts_participating": 23
+    },
+    {
+      "county_code": "05",
+      "contest_id": "AZ-76",
+      "precincts": 23,
+      "precincts_reporting": 23,
+      "precincts_participating": 23
+    },
+    {
+      "county_code": "05",
+      "contest_id": "AZ-77",
+      "precincts": 23,
+      "precincts_reporting": 23,
+      "precincts_participating": 23
+    },
+    {
+      "county_code": "05",
+      "contest_id": "AZ-87",
+      "precincts": 23,
+      "precincts_reporting": 23,
+      "precincts_participating": 23
+    },
+    {
+      "county_code": "05",
+      "contest_id": "AZ-88",
+      "precincts": 23,
+      "precincts_reporting": 23,
+      "precincts_participating": 23
+    },
+    {
+      "county_code": "05",
+      "contest_id": "AZ-90",
+      "precincts": 23,
+      "precincts_reporting": 23,
+      "precincts_participating": 23
+    },
+    {
+      "county_code": "05",
+      "contest_id": "AZ-92",
+      "precincts": 23,
+      "precincts_reporting": 23,
+      "precincts_participating": 23
+    },
+    {
+      "county_code": "05",
+      "contest_id": "AZ-93",
+      "precincts": 23,
+      "precincts_reporting": 23,
+      "precincts_participating": 23
+    },
+    {
+      "county_code": "05",
+      "contest_id": "AZ-94",
+      "precincts": 23,
+      "precincts_reporting": 23,
+      "precincts_participating": 23
+    },
+    {
+      "county_code": "05",
+      "contest_id": "AZ-95",
+      "precincts": 23,
+      "precincts_reporting": 23,
+      "precincts_participating": 23
+    },
+    {
+      "county_code": "05",
+      "contest_id": "AZ-96",
+      "precincts": 23,
+      "precincts_reporting": 23,
+      "precincts_participating": 23
+    },
+    {
+      "county_code": "05",
+      "contest_id": "AZ-97",
+      "precincts": 23,
+      "precincts_reporting": 23,
+      "precincts_participating": 23
+    },
+    {
+      "county_code": "05",
+      "contest_id": "AZ-98",
+      "precincts": 23,
+      "precincts_reporting": 23,
+      "precincts_participating": 23
+    },
+    {
+      "county_code": "05",
+      "contest_id": "AZ-99",
+      "precincts": 23,
+      "precincts_reporting": 23,
+      "precincts_participating": 23
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-1",
+      "precincts": 210,
+      "precincts_reporting": 206,
+      "precincts_participating": 210
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-2",
+      "precincts": 6,
+      "precincts_reporting": 3,
+      "precincts_participating": 6
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-3",
+      "precincts": 135,
+      "precincts_reporting": 129,
+      "precincts_participating": 135
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-4",
+      "precincts": 151,
+      "precincts_reporting": 149,
+      "precincts_participating": 151
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-5",
+      "precincts": 127,
+      "precincts_reporting": 127,
+      "precincts_participating": 127
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-7",
+      "precincts": 24,
+      "precincts_reporting": 24,
+      "precincts_participating": 24
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-8",
+      "precincts": 186,
+      "precincts_reporting": 185,
+      "precincts_participating": 186
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-9",
+      "precincts": 117,
+      "precincts_reporting": 117,
+      "precincts_participating": 117
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-10",
+      "precincts": 956,
+      "precincts_reporting": 940,
+      "precincts_participating": 956
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-12",
+      "precincts": 48,
+      "precincts_reporting": 48,
+      "precincts_participating": 48
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-42",
+      "precincts": 48,
+      "precincts_reporting": 48,
+      "precincts_participating": 48
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-13",
+      "precincts": 61,
+      "precincts_reporting": 59,
+      "precincts_participating": 61
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-43",
+      "precincts": 61,
+      "precincts_reporting": 59,
+      "precincts_participating": 61
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-14",
+      "precincts": 70,
+      "precincts_reporting": 70,
+      "precincts_participating": 70
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-44",
+      "precincts": 70,
+      "precincts_reporting": 70,
+      "precincts_participating": 70
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-15",
+      "precincts": 58,
+      "precincts_reporting": 58,
+      "precincts_participating": 58
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-45",
+      "precincts": 58,
+      "precincts_reporting": 58,
+      "precincts_participating": 58
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-18",
+      "precincts": 58,
+      "precincts_reporting": 54,
+      "precincts_participating": 58
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-48",
+      "precincts": 58,
+      "precincts_reporting": 54,
+      "precincts_participating": 58
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-19",
+      "precincts": 40,
+      "precincts_reporting": 40,
+      "precincts_participating": 40
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-49",
+      "precincts": 40,
+      "precincts_reporting": 40,
+      "precincts_participating": 40
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-20",
+      "precincts": 45,
+      "precincts_reporting": 45,
+      "precincts_participating": 45
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-50",
+      "precincts": 45,
+      "precincts_reporting": 45,
+      "precincts_participating": 45
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-21",
+      "precincts": 44,
+      "precincts_reporting": 39,
+      "precincts_participating": 44
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-51",
+      "precincts": 44,
+      "precincts_reporting": 39,
+      "precincts_participating": 44
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-22",
+      "precincts": 50,
+      "precincts_reporting": 48,
+      "precincts_participating": 50
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-52",
+      "precincts": 50,
+      "precincts_reporting": 48,
+      "precincts_participating": 50
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-23",
+      "precincts": 45,
+      "precincts_reporting": 45,
+      "precincts_participating": 45
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-53",
+      "precincts": 45,
+      "precincts_reporting": 45,
+      "precincts_participating": 45
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-24",
+      "precincts": 46,
+      "precincts_reporting": 46,
+      "precincts_participating": 46
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-54",
+      "precincts": 46,
+      "precincts_reporting": 46,
+      "precincts_participating": 46
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-25",
+      "precincts": 31,
+      "precincts_reporting": 31,
+      "precincts_participating": 31
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-55",
+      "precincts": 31,
+      "precincts_reporting": 31,
+      "precincts_participating": 31
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-26",
+      "precincts": 5,
+      "precincts_reporting": 2,
+      "precincts_participating": 5
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-56",
+      "precincts": 5,
+      "precincts_reporting": 2,
+      "precincts_participating": 5
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-32",
+      "precincts": 41,
+      "precincts_reporting": 41,
+      "precincts_participating": 41
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-62",
+      "precincts": 41,
+      "precincts_reporting": 41,
+      "precincts_participating": 41
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-33",
+      "precincts": 22,
+      "precincts_reporting": 22,
+      "precincts_participating": 22
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-63",
+      "precincts": 22,
+      "precincts_reporting": 22,
+      "precincts_participating": 22
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-34",
+      "precincts": 39,
+      "precincts_reporting": 39,
+      "precincts_participating": 39
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-64",
+      "precincts": 39,
+      "precincts_reporting": 39,
+      "precincts_participating": 39
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-35",
+      "precincts": 47,
+      "precincts_reporting": 47,
+      "precincts_participating": 47
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-65",
+      "precincts": 47,
+      "precincts_reporting": 47,
+      "precincts_participating": 47
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-36",
+      "precincts": 36,
+      "precincts_reporting": 36,
+      "precincts_participating": 36
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-66",
+      "precincts": 36,
+      "precincts_reporting": 36,
+      "precincts_participating": 36
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-37",
+      "precincts": 54,
+      "precincts_reporting": 54,
+      "precincts_participating": 54
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-67",
+      "precincts": 54,
+      "precincts_reporting": 54,
+      "precincts_participating": 54
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-38",
+      "precincts": 65,
+      "precincts_reporting": 65,
+      "precincts_participating": 65
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-68",
+      "precincts": 65,
+      "precincts_reporting": 65,
+      "precincts_participating": 65
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-39",
+      "precincts": 49,
+      "precincts_reporting": 49,
+      "precincts_participating": 49
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-69",
+      "precincts": 49,
+      "precincts_reporting": 49,
+      "precincts_participating": 49
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-40",
+      "precincts": 2,
+      "precincts_reporting": 2,
+      "precincts_participating": 2
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-70",
+      "precincts": 2,
+      "precincts_reporting": 2,
+      "precincts_participating": 2
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-71",
+      "precincts": 956,
+      "precincts_reporting": 940,
+      "precincts_participating": 956
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-72",
+      "precincts": 956,
+      "precincts_reporting": 940,
+      "precincts_participating": 956
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-73",
+      "precincts": 956,
+      "precincts_reporting": 940,
+      "precincts_participating": 956
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-74",
+      "precincts": 956,
+      "precincts_reporting": 940,
+      "precincts_participating": 956
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-75",
+      "precincts": 956,
+      "precincts_reporting": 940,
+      "precincts_participating": 956
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-76",
+      "precincts": 956,
+      "precincts_reporting": 940,
+      "precincts_participating": 956
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-77",
+      "precincts": 956,
+      "precincts_reporting": 940,
+      "precincts_participating": 956
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-78",
+      "precincts": 956,
+      "precincts_reporting": 940,
+      "precincts_participating": 956
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-79",
+      "precincts": 956,
+      "precincts_reporting": 940,
+      "precincts_participating": 956
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-80",
+      "precincts": 956,
+      "precincts_reporting": 940,
+      "precincts_participating": 956
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-81",
+      "precincts": 956,
+      "precincts_reporting": 940,
+      "precincts_participating": 956
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-82",
+      "precincts": 956,
+      "precincts_reporting": 940,
+      "precincts_participating": 956
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-83",
+      "precincts": 956,
+      "precincts_reporting": 940,
+      "precincts_participating": 956
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-84",
+      "precincts": 956,
+      "precincts_reporting": 940,
+      "precincts_participating": 956
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-85",
+      "precincts": 956,
+      "precincts_reporting": 940,
+      "precincts_participating": 956
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-92",
+      "precincts": 956,
+      "precincts_reporting": 940,
+      "precincts_participating": 956
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-93",
+      "precincts": 956,
+      "precincts_reporting": 940,
+      "precincts_participating": 956
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-94",
+      "precincts": 956,
+      "precincts_reporting": 940,
+      "precincts_participating": 956
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-95",
+      "precincts": 956,
+      "precincts_reporting": 940,
+      "precincts_participating": 956
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-96",
+      "precincts": 956,
+      "precincts_reporting": 940,
+      "precincts_participating": 956
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-97",
+      "precincts": 956,
+      "precincts_reporting": 940,
+      "precincts_participating": 956
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-98",
+      "precincts": 956,
+      "precincts_reporting": 940,
+      "precincts_participating": 956
+    },
+    {
+      "county_code": "maricopa",
+      "contest_id": "AZ-99",
+      "precincts": 956,
+      "precincts_reporting": 940,
+      "precincts_participating": 956
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-2",
+      "precincts": 59,
+      "precincts_reporting": 59,
+      "precincts_participating": 59
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-5",
+      "precincts": 46,
+      "precincts_reporting": 46,
+      "precincts_participating": 46
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-6",
+      "precincts": 27,
+      "precincts_reporting": 27,
+      "precincts_participating": 27
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-7",
+      "precincts": 4,
+      "precincts_reporting": 4,
+      "precincts_participating": 4
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-10",
+      "precincts": 136,
+      "precincts_reporting": 136,
+      "precincts_participating": 136
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-16",
+      "precincts": 1,
+      "precincts_reporting": 1,
+      "precincts_participating": 1
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-17",
+      "precincts": 33,
+      "precincts_reporting": 33,
+      "precincts_participating": 33
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-20",
+      "precincts": 3,
+      "precincts_reporting": 3,
+      "precincts_participating": 3
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-25",
+      "precincts": 32,
+      "precincts_reporting": 32,
+      "precincts_participating": 32
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-26",
+      "precincts": 61,
+      "precincts_reporting": 61,
+      "precincts_participating": 61
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-27",
+      "precincts": 5,
+      "precincts_reporting": 5,
+      "precincts_participating": 5
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-33",
+      "precincts": 1,
+      "precincts_reporting": 1,
+      "precincts_participating": 1
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-46",
+      "precincts": 1,
+      "precincts_reporting": 1,
+      "precincts_participating": 1
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-47",
+      "precincts": 33,
+      "precincts_reporting": 33,
+      "precincts_participating": 33
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-50",
+      "precincts": 3,
+      "precincts_reporting": 3,
+      "precincts_participating": 3
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-55",
+      "precincts": 32,
+      "precincts_reporting": 32,
+      "precincts_participating": 32
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-56",
+      "precincts": 61,
+      "precincts_reporting": 61,
+      "precincts_participating": 61
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-57",
+      "precincts": 5,
+      "precincts_reporting": 5,
+      "precincts_participating": 5
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-63",
+      "precincts": 1,
+      "precincts_reporting": 1,
+      "precincts_participating": 1
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-71",
+      "precincts": 136,
+      "precincts_reporting": 136,
+      "precincts_participating": 136
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-72",
+      "precincts": 136,
+      "precincts_reporting": 136,
+      "precincts_participating": 136
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-73",
+      "precincts": 136,
+      "precincts_reporting": 136,
+      "precincts_participating": 136
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-74",
+      "precincts": 136,
+      "precincts_reporting": 136,
+      "precincts_participating": 136
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-75",
+      "precincts": 136,
+      "precincts_reporting": 136,
+      "precincts_participating": 136
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-76",
+      "precincts": 136,
+      "precincts_reporting": 136,
+      "precincts_participating": 136
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-77",
+      "precincts": 136,
+      "precincts_reporting": 136,
+      "precincts_participating": 136
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-87",
+      "precincts": 136,
+      "precincts_reporting": 136,
+      "precincts_participating": 136
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-88",
+      "precincts": 136,
+      "precincts_reporting": 136,
+      "precincts_participating": 136
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-90",
+      "precincts": 136,
+      "precincts_reporting": 136,
+      "precincts_participating": 136
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-92",
+      "precincts": 136,
+      "precincts_reporting": 136,
+      "precincts_participating": 136
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-93",
+      "precincts": 136,
+      "precincts_reporting": 136,
+      "precincts_participating": 136
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-94",
+      "precincts": 136,
+      "precincts_reporting": 136,
+      "precincts_participating": 136
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-95",
+      "precincts": 136,
+      "precincts_reporting": 136,
+      "precincts_participating": 136
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-96",
+      "precincts": 136,
+      "precincts_reporting": 136,
+      "precincts_participating": 136
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-97",
+      "precincts": 136,
+      "precincts_reporting": 136,
+      "precincts_participating": 136
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-98",
+      "precincts": 136,
+      "precincts_reporting": 136,
+      "precincts_participating": 136
+    },
+    {
+      "county_code": "12",
+      "contest_id": "AZ-99",
+      "precincts": 136,
+      "precincts_reporting": 136,
+      "precincts_participating": 136
+    }
+  ],
+  "native_ids_are_not_fips": true,
+  "candidate_counts_are_not_ballots": true,
+  "api_review": {
+    "native_publish_version": "75c8f94a-2339-4d88-9d7c-66ad422a3e55",
+    "full_file_api_candidate_cells": 2023,
+    "all_api_candidate_and_mode_scopes_match": true,
+    "native_api_precincts": 1763,
+    "native_participation_observations": 1762,
+    "missing_participation_rows": [
+      {
+        "year": 2026,
+        "state_code": "AZ",
+        "county_code": "09",
+        "county": "Mohave County",
+        "native_county_uuid": "01000000-0496-9e5d-cc92-08dbda36ae92",
+        "precinct_code": "01000000-68b8-edcd-0283-08df2653ea59",
+        "precinct": "225_Non-Resident Property Owners",
+        "ballots": null,
+        "registered_voters": null,
+        "native_voter_turnout_count": null,
+        "native_virtual_precinct": true,
+        "native_reporting_status": 2,
+        "native_observation_present": false,
+        "turnout_rate": null,
+        "quality": "Native administrative counts; no inferred rate, candidate-ID or geometry join."
+      }
+    ],
+    "observed_county_ballot_sum": 2248900,
+    "native_county_registration_sum": 4374827,
+    "native_state_ballot_field": 0,
+    "native_state_ballot_field_matches_counties": false,
+    "native_registration_components_match_totals": false,
+    "all_observed_precinct_county_participation_scopes_reconcile": true,
+    "candidate_and_participation_id_namespaces_not_joined": true,
+    "rates_approved": false,
+    "api_option_correspondence_table": "api-option-correspondence.csv"
+  }
+}
