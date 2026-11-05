@@ -378,7 +378,14 @@ originals and their receipts.
 
 Complete review ZIP: **4,016,510 bytes**, SHA-256
 `0b7eb5da2d55c80c9bb005741d2e95774d45db209d21f9cd753dc99b764bd8be`.
-Release/upload and website count-download registration remain pending.
+Immutable release `voter-precinct-idaho-20261105` targets exact data commit
+`5c71828190a324b92650091de7b9184ae8ba64f8`; the complete uploaded asset was
+independently redownloaded and passed size, SHA-256 and ZIP CRC checks. The
+website count-download registration passed the build, Astro check, Pages
+preparer (**94 byte-identical relocated originals**, **986,195,213-byte**
+artifact) and focused desktop/mobile checks with and without JavaScript.
+All **32** full-download links, latest-year default and honest Idaho state
+fallback pass. Exact deployed registration verification remains pending.
 
 The Secretary of State's `https://voteidaho.gov/data-and-dashboards/`
 explicitly links precinct boundaries for **both 2026 primary and general
@@ -391,6 +398,19 @@ session `files/precinct-expansion-sources/ID-2026-general-boundaries/`.
 No export is truncated. All rows have `ACTIVE=Y`, with effective/inactive dates
 retained for election-date checks. This is a genuine official 2026 reference,
 not the portal's `Idaho2025` basemap; joins and topology are not yet validated.
+
+An independent conservative join/topology diagnostic supports **448 units in
+14 whole counties**, before publication. It removes only the universal result
+county suffix ` County` and normalizes textual case, punctuation and numeric
+padding; no abbreviated-name expansion, renumbering or ID-only matching.
+County scope must match completely after separately reported pooled units are
+excluded, and every explicit congressional district must agree. All **976**
+native-ring geometries are valid after one area-preserving repair. Six tiny
+cross-reference overlap pairs exceed the existing `1e-10` square-degree
+tolerance; the six implicated counties remain withheld, not clipped or
+silently assigned. The other name/code mismatches require official crosswalks;
+for example, similar numeric IDs are demonstrably not a safe statewide join.
+Keep all 986 returns and separate participation records regardless of mapping.
 
 Next: commit/release the validated immutable count review and verify the full
 upload before registering its download. Validate the acquired 2026 reference's
