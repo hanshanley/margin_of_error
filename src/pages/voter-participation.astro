@@ -69,6 +69,7 @@ const methodsPointer = existsSync(methodsPointerPath) ? JSON.parse(readFileSync(
 const methodsPath = methodsPointer ? `/participation-methods/${methodsPointer.snapshot_id}/` : '';
 const localPointer = JSON.parse(readFileSync(resolve('public/participation-local.json'), 'utf8'));
 const precinctPointer = JSON.parse(readFileSync(resolve('public/participation-precincts.json'), 'utf8'));
+const resultsPointer = JSON.parse(readFileSync(resolve('public/participation-results/latest.json'), 'utf8'));
 type MethodRow = { year: number; category: string; universe: string; methods: Record<string, number | null> };
 const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve('public', methodsPath.slice(1), 'national.json'), 'utf8'))
 	.filter((row: MethodRow) => row.category === 'Overall').sort((a: MethodRow, b: MethodRow) => a.year - b.year) : [];
@@ -101,7 +102,7 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 					<label id="county-label" hidden>County<select id="precinct-county"><option value="">All counties</option></select></label>
 					<label id="precinct-search-label" hidden>Find a precinct<input id="precinct-search" type="search" list="precinct-options" placeholder="ID or precinct name" autocomplete="off" /><datalist id="precinct-options"></datalist></label>
 					<label>Year<select id="year"></select></label>
-					<label id="map-color-label">Map color<select id="map-color"><option value="margin">Election margin</option><option value="turnout" selected>Participation</option></select></label>
+					<label id="map-color-label">Map color<select id="map-color"><option value="margin" selected>Election results · red / blue</option><option value="turnout">Participation</option></select></label>
 					<label id="map-level-label">Detail<select id="map-level"><option value="precinct">Precincts · verified coverage</option><option value="auto">As you zoom</option><option value="county">Counties / municipalities</option><option value="district">Congressional districts</option></select></label>
 					<label id="current-state-label" hidden>State<select id="current-state-select"></select></label>
 					<label id="mode-label" hidden>Reported ballots<select id="mode"></select></label>
@@ -483,6 +484,8 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 				<a href="/voter-participation/data/nc/official-reconciliation.csv" download>NC official-total reconciliation</a>
 				<a href="/voter-participation/data/sources.json" download>Sources and checksums</a>
 				{contextPointer && <a href={`/participation-context/${contextPointer.snapshot_id}/complete-context.zip`} download>Complete map context + original sources (ZIP)</a>}
+				<a href={`/participation-results/${resultsPointer.snapshot_id}/complete-results.zip`} download>Complete 2026 election results + original source (ZIP)</a>
+				<a href={`/participation-results/${resultsPointer.snapshot_id}/margins.csv`} download>All 50 states and 435 House district results (CSV)</a>
 				{methodsPointer && <a href={`${methodsPath}complete-methods.zip`} download>Complete historical voting methods + original sources (ZIP)</a>}
 				<a href={`${localPointer.base_url}observations.csv.gz`} download>Complete nationwide local participation observations (CSV · gzip)</a>
 				<a href={`${localPointer.base_url}coverage.json`}>Every state and election year: local-data coverage (JSON)</a>

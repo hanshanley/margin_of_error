@@ -1,6 +1,7 @@
 import csv
 import importlib.util
 import io
+import json
 from pathlib import Path
 
 import openpyxl
@@ -19,6 +20,78 @@ context = module("collect-participation-context")
 local = module("build-local-participation")
 current_local = module("collect-current-participation")
 current_precincts = module("build-current-precincts")
+
+
+def house_fixture():
+    root = Path(__file__).resolve().parents[1] / "public/participation-results"
+    pointer = json.loads((root / "latest.json").read_text())
+    return json.loads((root / pointer["snapshot_id"] / "originals/house-2026.json").read_text())
+
+
+def test_house_state_results_cover_all_districts_and_reconcile_every_party():
+    source = house_fixture()
+    states = {key.split("-")[0].upper() for key in source["region_results"]} | {"DC"}
+    rows = context.house_results(source, states, "source")
+    districts = [row for row in rows if row["level"] == "district"]
+    statewide = [row for row in rows if row["level"] == "state"]
+    assert len(districts) == 435
+    assert {row["state_code"] for row in statewide} == states - {"DC"}
+    expected = context.provider_votes(source["candidates"])
+    for index, field in enumerate(["democratic_votes", "republican_votes", "other_votes"]):
+        assert sum(row[field] for row in statewide) == expected[index]
+    for row in statewide:
+        assert row["contest_votes"] == sum(d["contest_votes"] for d in districts
+                                          if d["state_code"] == row["state_code"])
+        assert row["margin_pp"] == pytest.approx(
+            100 * (row["democratic_votes"] - row["republican_votes"]) / row["contest_votes"], abs=.00001)
+
+
+@pytest.mark.parametrize("field,value", [
+    ("test_data", True), ("election_date", "2024-11-05"), ("province", "CA"),
+    ("election_type", "Senate"), ("election_scope", "Primary"),
+])
+def test_house_refresh_rejects_wrong_election_identity(field, value):
+    source = house_fixture()
+    source[field] = value
+    with pytest.raises(ValueError, match="Wrong election"):
+        context.house_results(source, {key.split("-")[0].upper() for key in source["region_results"]}, "source")
+
+
+def test_house_refresh_rejects_missing_duplicate_and_unreconciled_results():
+    source = house_fixture()
+    states = {key.split("-")[0].upper() for key in source["region_results"]}
+    source["region_results"].pop("ak-al")
+    with pytest.raises(ValueError, match="435 voting districts"):
+        context.house_results(source, states, "source")
+    source = house_fixture()
+    source["region_results"]["ak-00"] = source["region_results"]["ak-al"]
+    with pytest.raises(ValueError, match="Duplicate"):
+        context.house_results(source, states, "source")
+    source = house_fixture()
+    source["candidates"][0]["votes"] += 1
+    with pytest.raises(ValueError, match="reconcile"):
+        context.house_results(source, states, "source")
+
+
+def test_failed_house_refresh_keeps_the_previous_published_pointer(tmp_path, monkeypatch):
+    source = house_fixture()
+    source["test_data"] = True
+    class Response:
+        def raise_for_status(self):
+            pass
+
+        def json(self):
+            return source
+
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.setattr(context.requests, "get", lambda *args, **kwargs: Response())
+    pointer = tmp_path / "public/participation-results/latest.json"
+    pointer.parent.mkdir(parents=True)
+    pointer.write_text('{"snapshot_id":"previous"}')
+    with pytest.raises(ValueError, match="Wrong election"):
+        context.refresh_results("invalid", set())
+    assert json.loads(pointer.read_text()) == {"snapshot_id": "previous"}
+    assert not (pointer.parent / "invalid").exists()
 
 
 def test_current_precinct_number_requires_an_explicit_unambiguous_identity():

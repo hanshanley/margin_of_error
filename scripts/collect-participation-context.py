@@ -193,6 +193,81 @@ def provider_votes(candidates):
     return result
 
 
+def house_results(current, states, source_url):
+    if (current.get("test_data") is not False
+            or not current["election_date"].startswith("2026-11-03")
+            or current["election_type"] != "House of Representatives"
+            or current["election_scope"] != "General" or current["province"] != "US"):
+        raise ValueError("Wrong election, office, scope or test-data response")
+    rows, by_state, districts = [], defaultdict(lambda: [0, 0, 0]), set()
+    for key, region in current["region_results"].items():
+        if region["type"] != "Congressional District":
+            raise ValueError("Unexpected House breakdown geography")
+        code, district = key.upper().split("-")
+        if code not in states or code == "DC":
+            raise ValueError("Unexpected voting-district state")
+        district = "00" if district == "AL" else f"{int(district):02}"
+        geography = code + "-" + district
+        if geography in districts:
+            raise ValueError("Duplicate 2026 voting districts")
+        districts.add(geography)
+        votes = provider_votes(region["candidates"])
+        by_state[code] = [a + b for a, b in zip(by_state[code], votes)]
+        rows.append(margin(*votes, year=2026, state_code=code, level="district", geography=geography,
+                           office="U.S. House", source_url=source_url, provisional=True,
+                           source_update_label=current["last_updated"], reporting_pct=region["percent_reporting"]))
+    if len(districts) != 435 or set(by_state) != set(states) - {"DC"}:
+        raise ValueError("2026 House source must cover 435 voting districts and all 50 states")
+    if provider_votes(current["candidates"]) != [sum(v[i] for v in by_state.values()) for i in range(3)]:
+        raise ValueError("2026 district party counts do not reconcile to national party totals")
+    rows.extend(margin(*votes, year=2026, state_code=code, level="state", geography=code,
+                       office="U.S. House", source_url=source_url, provisional=True,
+                       source_update_label=current["last_updated"]) for code, votes in sorted(by_state.items()))
+    return rows
+
+
+def refresh_results(snapshot_id, states):
+    output = Path("public/participation-results") / snapshot_id
+    if output.exists():
+        raise ValueError("Results snapshot already exists; use a new snapshot ID")
+    url = "https://civicapi.org/api/v2/race/87524"
+    response = requests.get(url, timeout=(15, 90))
+    response.raise_for_status()
+    current = response.json()
+    rows = house_results(current, states, url)
+    save(output / "margins.json", rows)
+    original = output / "originals/house-2026.json"
+    original.parent.mkdir(parents=True, exist_ok=True)
+    original.write_bytes(response.content)
+    with (output / "margins.csv").open("w", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=sorted({key for row in rows for key in row}))
+        writer.writeheader()
+        writer.writerows(rows)
+    save(output / "index.json", {
+        "snapshot_id": snapshot_id, "captured_at": datetime.now(timezone.utc).isoformat(),
+        "source_url": url, "source_update_label": current["last_updated"], "provider": "civicAPI",
+        "year": 2026, "office": "U.S. House", "states": 50, "districts": 435, "provisional": True,
+        "notes": [
+            "All 435 voting districts; state aggregates reconcile to national party totals.",
+            "D-minus-R / all contest votes; state aggregates are not statewide winners or seat margins.",
+            "Candidate returns are election-result context, not participation rates.",
+            "No precinct candidate-return join is claimed. Whole-state result colors are the fallback.",
+            "DC has no voting House district and is not included in the 435-district source.",
+        ],
+    })
+    with zipfile.ZipFile(output / "complete-results.zip", "w", zipfile.ZIP_DEFLATED) as archive:
+        for path in sorted(output.rglob("*")):
+            if path.is_file() and path.name != "complete-results.zip":
+                archive.write(path, str(path.relative_to(output)))
+        archive.write(__file__, "collector.py")
+    files = [{"path": str(path.relative_to(output)), "bytes": path.stat().st_size,
+              "sha256": digest(path.read_bytes())} for path in sorted(output.rglob("*")) if path.is_file()]
+    save(output / "checksums.json", files)
+    save(output.parent / "latest.json", {"snapshot_id": snapshot_id})
+    print(json.dumps({"snapshot_id": snapshot_id, "state_results": 50, "district_results": 435,
+                      "source_updated": current["last_updated"]}), flush=True)
+
+
 def name_key(name):
     return re.sub(r"[^a-z0-9]", "", re.sub(r"\s+(county|parish)$", "", name.lower()))
 
@@ -220,11 +295,15 @@ def main():
     parser.add_argument("--research", type=Path, default=Path("../voter-participation"))
     parser.add_argument("--snapshot-id", default=datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ"))
     parser.add_argument("--source-snapshot-id")
+    parser.add_argument("--results-only", action="store_true", help="Refresh complete 2026 House returns without rebuilding historical context")
     args = parser.parse_args()
     research = args.research.resolve()
     sys.path.insert(0, str(research))
     from scripts.build import simplify
     from scripts.nationwide import STATES
+    if args.results_only:
+        refresh_results(args.snapshot_id, STATES)
+        return
     output = Path("public/participation-context") / args.snapshot_id
     if (output / "index.json").exists():
         raise ValueError("This supplemental output already exists; use a new snapshot ID")
@@ -334,36 +413,7 @@ def main():
 
     url = "https://civicapi.org/api/v2/race/87524"
     current = json.loads(capture("house-2026.json", url))
-    if current.get("test_data") is not False or not current["election_date"].startswith("2026-11-03"):
-        raise ValueError("Wrong election or test-data response")
-    if current["election_type"] != "House of Representatives" or current["election_scope"] != "General":
-        raise ValueError("Wrong office or election scope")
-    by_state = defaultdict(lambda: [0, 0, 0])
-    for key, region in current["region_results"].items():
-        if region["type"] != "Congressional District":
-            raise ValueError("Unexpected House breakdown geography")
-        code, district = key.upper().split("-")
-        if code not in STATES:
-            continue
-        district = "00" if district == "AL" else f"{int(district):02}"
-        votes = provider_votes(region["candidates"])
-        by_state[code] = [a + b for a, b in zip(by_state[code], votes)]
-        rows.append(margin(*votes, year=2026, state_code=code, level="district", geography=code + "-" + district,
-                           office="U.S. House", source_url=url, provisional=True,
-                           source_update_label=current["last_updated"], reporting_pct=region["percent_reporting"]))
-    if len([row for row in rows if row["year"] == 2026 and row["level"] == "district"]) != 435:
-        raise ValueError("2026 House source does not cover 435 voting districts")
-    districts_2026 = [row for row in rows if row["year"] == 2026 and row["level"] == "district"]
-    if len({row["geography"] for row in districts_2026}) != 435:
-        raise ValueError("Duplicate 2026 voting districts")
-    national_votes = provider_votes(current["candidates"])
-    district_votes = [sum(votes[i] for votes in by_state.values()) for i in range(3)]
-    if national_votes != district_votes:
-        raise ValueError("2026 district party counts do not reconcile to national party totals")
-    for code, votes in by_state.items():
-        rows.append(margin(*votes, year=2026, state_code=code, level="state", geography=code,
-                           office="U.S. House", source_url=url, provisional=True,
-                           source_update_label=current["last_updated"]))
+    rows.extend(house_results(current, STATES, url))
 
     url = ("https://civicapi.org/api/v2/race/search?"
            "startDate=2024-11-05&endDate=2024-11-05&query=President&limit=1000")

@@ -3,6 +3,7 @@
 import argparse
 import gzip
 import json
+import math
 from pathlib import Path
 
 from playwright.sync_api import expect, sync_playwright
@@ -28,6 +29,10 @@ supplement_root = public / "participation-current" / supplement_pointer["snapsho
 nationwide = json.loads((supplement_root / "snapshot.json").read_text())
 current_local = json.loads((supplement_root / "local.json").read_text())
 margins = json.loads((context_root / "margins.json").read_text())
+results_pointer = json.loads((public / "participation-results/latest.json").read_text())
+results_root = public / "participation-results" / results_pointer["snapshot_id"]
+result_rows = json.loads((results_root / "margins.json").read_text())
+margins = [row for row in margins if row["year"] != 2026] + result_rows
 methods_pointer = json.loads((public / "participation-methods/latest.json").read_text())
 methods_root = public / "participation-methods" / methods_pointer["snapshot_id"]
 method_states = json.loads((methods_root / "states.json").read_text())
@@ -86,6 +91,39 @@ with sync_playwright() as p:
     expect(page.locator("#year")).to_have_value("2026")
     expect(page.locator("#provisional-status")).to_be_visible()
     expect(page.locator("#map-level")).to_have_value("precinct")
+    expect(page.locator("#map-color")).to_have_value("margin")
+    expect(page.locator("#map-color option[value=margin]")).to_be_enabled()
+    expect(page.locator(".map-feature[data-state]")).to_have_count(51)
+    expect(page.locator(".substate-feature")).to_have_count(0)
+    names = {row["state_code"]: row["state"] for row in nationwide["coverage"]}
+    expected_colors = {}
+    for row in result_rows:
+        if row["level"] != "state":
+            continue
+        t = min(1, abs(row["margin_pp"]) / 35)
+        destination = [137, 40, 45] if row["margin_pp"] < 0 else [37, 75, 120]
+        rgb = [math.floor(c + t * (end - c) + .5) for c, end in zip([237, 232, 220], destination)]
+        expected_colors[names[row["state_code"]]] = "rgb(" + ",".join(map(str, rgb)) + ")"
+    expected_colors["District of Columbia"] = "#d6d3cb"
+    def result_colors(target):
+        return target.locator(".map-feature[data-state]").evaluate_all(
+            "paths => Object.fromEntries(paths.map(p => [p.dataset.state, p.getAttribute('fill')]))")
+    assert result_colors(page) == expected_colors, "State colors must match all 50 actual election-result margins"
+    expect(page.locator("#key")).to_contain_text("R+35")
+    expect(page.locator("#key")).to_contain_text("D+35")
+    expect(page.locator("#coverage-note")).to_contain_text("50 states")
+    expect(page.locator("#coverage-note")).to_contain_text("435 voting House districts")
+    screenshot(page, "participation-default-red-blue-results.png")
+    page.locator("#state-select").select_option("New Mexico")
+    expect(page.locator("#geography-note")).to_contain_text("Whole-state red/blue")
+    assert result_colors(page) == expected_colors
+    for detail in ["county", "district", "auto", "precinct"]:
+        page.locator("#map-level").select_option(detail)
+        expect(page.locator("#map-color")).to_have_value("margin")
+        expect(page.locator(".substate-feature")).to_have_count(0)
+        assert result_colors(page) == expected_colors, f"Unavailable {detail} returns must retain whole-state result colors"
+        expect(page.locator("#key")).to_contain_text("D+35")
+    page.goto(url + "?map-color=turnout")
     expect(page.locator("#map-color")).to_have_value("turnout")
     expect(page.locator('.substate-feature[data-level="precinct"]')).to_have_count(len(current_shapes), timeout=30000)
     expected_rates = {f["properties"]["key"]: f["properties"]["reported_pct"] for f in current_shapes}
@@ -262,6 +300,10 @@ with sync_playwright() as p:
     page.locator("#state-select").select_option("North Carolina")
     page.locator("#map-level").select_option("auto")
     page.locator("#map-zoom-in").click()
+    expect(page.locator(".substate-feature")).to_have_count(0)
+    expect(page.locator("#geography-note")).to_contain_text("Whole-state red/blue")
+    expect(page.locator("#map-color")).to_have_value("margin")
+    page.locator("#map-color").select_option("turnout")
     expect(page.locator('.substate-feature[data-level="precinct"]')).to_have_count(2656)
     expect(page.locator("#title")).to_have_text("Precinct participation in North Carolina")
     expect(page.locator("#measure")).to_contain_text("registered voters")
@@ -493,7 +535,7 @@ with sync_playwright() as p:
     expect(page.locator("#model-summary")).to_contain_text("98")
     page.locator("#participation-cps summary").click()
     expect(page.locator("#cps-summary")).to_contain_text("34 of 34")
-    assert page.locator('#downloads a[download]').count() == 13
+    assert page.locator('#downloads a[download]').count() == 15
     for link in page.locator('#downloads a[download]').all():
         response = context.request.head(link.get_attribute("href") if link.get_attribute("href").startswith("http")
                                         else args.base_url + link.get_attribute("href"))
@@ -505,6 +547,8 @@ with sync_playwright() as p:
     mobile.goto(url)
     expect(mobile.locator("#year")).to_have_value("2026")
     expect(mobile.locator("#provisional-status")).to_be_visible()
+    expect(mobile.locator("#map-color")).to_have_value("margin")
+    assert result_colors(mobile) == expected_colors
     no_overflow(mobile)
     screenshot(mobile, "participation-latest-election-mobile.png")
     mobile.locator("#year").select_option("2024")
@@ -644,7 +688,7 @@ with sync_playwright() as p:
 
     current_page = context.new_page()
     current_page.on("pageerror", lambda error: errors.append(str(error)))
-    current_page.goto(url + "?state=New+Mexico&year=2026&mode=official")
+    current_page.goto(url + "?state=New+Mexico&year=2026&mode=official&map-color=turnout")
     expect(current_page.locator('.substate-feature[data-level="precinct"]')).to_have_count(len(current_shapes), timeout=30000)
     mapped = next(f["properties"] for f in current_shapes if f["properties"]["reported_pct"] is not None
                   and f["properties"]["county"] == "Dona Ana")
@@ -666,7 +710,7 @@ with sync_playwright() as p:
     expect(current_page.locator(".substate-feature")).to_have_count(0)
     assert set(current_page.locator(".map-feature[data-state]").evaluate_all(
         "paths => paths.map(p => p.getAttribute('fill'))")) == {"#d6d3cb"}
-    current_page.goto(url + "?year=2024")
+    current_page.goto(url + "?year=2024&map-color=turnout")
     expect(current_page.locator('.substate-feature[data-level="precinct"]')).to_have_count(2656)
     expect(current_page.locator("#title")).to_have_text("Precinct participation in North Carolina")
     for name in ["NM.geojson.gz", "originals/NM-precincts-20260717.zip", "checksums.json"]:
@@ -717,7 +761,7 @@ with sync_playwright() as p:
     current_page.locator("#state-select").select_option("North Carolina")
     current_page.locator("#current-county-select").select_option(label="WAKE")
     expect(current_page.locator("#current-unit-navigation")).to_contain_text("County counts only")
-    mobile.goto(url + "?state=New+Mexico&year=2026&mode=official")
+    mobile.goto(url + "?state=New+Mexico&year=2026&mode=official&map-color=turnout")
     expect(mobile.locator('.substate-feature[data-level="precinct"]')).to_have_count(len(current_shapes), timeout=30000)
     mobile.locator(f'.substate-feature[data-geography="{mapped["key"]}"]').dispatch_event("click")
     expect(mobile.locator("#current-unit-select")).to_have_value(mapped["unit_key"])
@@ -734,7 +778,7 @@ with sync_playwright() as p:
     expect(broken_local_current.locator("#selection-panel")).to_contain_text("No local counts inferred")
     broken_precinct_current = browser.new_page()
     broken_precinct_current.route("**/NM.geojson.gz", lambda route: route.abort())
-    broken_precinct_current.goto(url + "?state=New+Mexico&year=2026")
+    broken_precinct_current.goto(url + "?state=New+Mexico&year=2026&map-color=turnout")
     expect(broken_precinct_current.locator("#geography-note")).to_contain_text("Geographic detail could not be loaded")
     expect(broken_precinct_current.locator(".substate-feature")).to_have_count(0)
     assert set(broken_precinct_current.locator(".map-feature[data-state]").evaluate_all(
@@ -746,7 +790,12 @@ with sync_playwright() as p:
     expect(offline.locator("#downloads")).to_be_visible()
     assert offline.locator("#national-snapshot tbody tr").count() == 13
     assert offline.locator("#method-reference tbody tr").count() == 15
-    assert offline.locator('#downloads a[download]').count() == 13
+    assert offline.locator('#downloads a[download]').count() == 15
+    broken_results = browser.new_page()
+    broken_results.route("**/participation-results/**/margins.json", lambda route: route.abort())
+    broken_results.goto(url)
+    expect(broken_results.locator("#notice")).to_contain_text("previously saved result context is retained")
+    assert len([color for color in result_colors(broken_results).values() if color != "#d6d3cb"]) == 50
     broken = browser.new_page()
     broken.route("**/data/states.json", lambda route: route.abort())
     broken.goto(url)

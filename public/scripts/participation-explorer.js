@@ -39,6 +39,7 @@ const state = {
   currentPrecincts: null, currentPrecinctPath: "", currentPrecinctShapes: new Map(), currentPrecinctError: "",
   currentPrecinctSelection: "",
   context: null, contextPath: "", margins: [], contextError: "", subshapes: new Map(),
+  results: null, resultsError: "",
   drillKey: "", drillToken: 0, drillTimer: null, subSelection: null,
   methods: null, methodStates: [], methodNational: [], methodsPath: "", methodsError: "",
   precinctHistories: new Map(),
@@ -540,6 +541,18 @@ async function contextGet(path) {
     } catch (error) {
       state.contextError = `Election-map context is unavailable: ${error.message}.`;
       state.contextPath = "";
+    }
+    try {
+      const pointer = await fetch("/participation-results/latest.json");
+      if (!pointer.ok) throw new Error(`HTTP ${pointer.status}`);
+      const path = `/participation-results/${(await pointer.json()).snapshot_id}/`;
+      const responses = await Promise.all(["index.json", "margins.json"].map(file => fetch(path + file)));
+      if (responses.some(response => !response.ok)) throw new Error("Result snapshot could not be loaded");
+      const [index, rows] = await Promise.all(responses.map(response => response.json()));
+      state.results = index;
+      state.margins = [...state.margins.filter(row => row.year !== index.year), ...rows];
+    } catch (error) {
+      state.resultsError = `Latest result refresh unavailable; previously saved result context is retained. ${error.message}.`;
     }
 }
 function options(element, values, preferred = element.value) {
@@ -1201,9 +1214,6 @@ function stateDetail() {
   for (const path of state.mapPaths) path.classList.toggle("selected", path.dataset.state === state.selectedState);
 }
 function statesView() {
-  const precinctColors = $("map-level").value === "precinct";
-  $("map-color").querySelector('[value="margin"]').disabled = precinctColors;
-  if (precinctColors) $("map-color").value = "turnout";
   const year = Number($("year").value), basis = $("basis").value;
   const provisional = isProvisional();
   const rows = provisional ? [...currentStateRows()] : state.states.filter(row => row.year === year && row.denominator === basis);
@@ -1230,7 +1240,19 @@ function statesView() {
     const withData = new Set([...state.current.reporting, ...state.current.early_voting].map(row => row.state_code)).size;
     $("coverage-note").textContent = $("coverage-note").textContent.replace(/^\d+ jurisdictions/, `${withData} jurisdictions`);
   }
-  if ($("map-color").value === "margin") marginLegend(year % 4 === 0 ? "President" : "U.S. House aggregate");
+  if ($("map-color").value === "margin") {
+    const office = year % 4 === 0 ? "President" : "U.S. House";
+    const count = state.margins.filter(row => row.year === year && row.level === "state" && row.office === office).length;
+    header(`${year} ${typeFor(year)} election · ${provisional ? "unofficial reported results" : "election-result context"}`,
+      "Election results across the United States",
+      `Blue: Democratic advantage. Red: Republican advantage. ${office === "U.S. House" ? "State totals aggregate U.S. House district votes." : "Presidential party-vote margins."}`,
+      "Whole-state result colors remain wherever verified local candidate returns are missing. Colors do not represent participation rates or House seat margins. Alaska and Hawaii are separate-scale insets.");
+    $("coverage-note").textContent = `${count} states with ${year} ${office} results. `
+      + (provisional && state.results ? `All ${state.results.districts} voting House districts; civicAPI source updated ${state.results.source_update_label}. DC has no voting House district in this source. ` : "")
+      + "Precinct participation counts remain available separately; they are never substituted for candidate returns.";
+    marginLegend(office === "U.S. House" ? "U.S. House aggregate" : office);
+    if (state.resultsError && provisional) note(state.resultsError);
+  }
   if (state.contextError) note(state.contextError);
   stateMap(byName, provisional);
   stateDetail();
@@ -1426,7 +1448,7 @@ function featurePath(item, value, label, action, attrs = {}) {
 }
 function stateMap(byName, provisional = false) {
   const previousViewport = state.map?.view === "states" ? state.viewport : null;
-  const svg = createMap(1000, 610, "United States turnout map. Select a state, or use the state selector for its historical graph.");
+  const svg = createMap(1000, 610, `United States ${$("map-color").value === "margin" ? "red and blue election-result" : "participation"} map. Select a state for its results and participation history.`);
   state.map.stateHeading = ["subtitle", "title", "measure", "caption"].map(id => $(id).textContent);
   state.map.stateCoverage = $("coverage-note").textContent;
   state.drillKey = ""; ++state.drillToken;
@@ -1448,10 +1470,11 @@ function stateMap(byName, provisional = false) {
       };
       const election = marginRow("state", abbreviation);
       const partisan = $("map-color").value === "margin";
-      const precinctColors = $("map-level").value === "precinct";
+      const precinctColors = $("map-level").value === "precinct" && !partisan;
       const path = featurePath(item, row?.turnout_pct,
-        `${name} · ${$("year").value}\n${provisional ? `${fmt(row?.ballots)} ballots · ${row ? modeFor(row) : "not reported"} · provisional` : `${pct(row?.turnout_pct)} reported voting`}\n${marginLabel(election)}`,
-        select, { "data-state": name, tabindex: "0",
+        `${name} · ${$("year").value}\n${partisan ? `${election?.office || "Election"} · ${marginLabel(election)} · ${fmt(election?.contest_votes)} contest votes\nWhole-state result color; not a precinct result or participation rate`
+          : provisional ? `${fmt(row?.ballots)} ballots · ${row ? modeFor(row) : "not reported"} · provisional` : `${pct(row?.turnout_pct)} reported voting`}`,
+        select, { "data-state": name, "data-color-level": partisan ? "state" : precinctColors ? "none" : "state", tabindex: "0",
           ...(partisan ? { fill: marginFill(election?.margin_pp) }
             : provisional ? { fill: row ? "#718ba5" : "#d6d3cb" } : {}),
           ...(precinctColors ? { fill: "#d6d3cb" } : {}) });
@@ -1515,7 +1538,7 @@ function projectInside(feature, point) {
       ? "precinct" : state.local?.years.includes(year) ? "county"
         : state.margins.some(row => row.year === year && row.state_code === code && row.level === "county")
         ? "county" : state.context?.district_result_years.includes(year) ? "district" : "county";
-    if (level === "precinct" && zoomLevel < 2.3) {
+    if (level === "precinct" && zoomLevel < 2.3 && $("map-color").value !== "margin") {
       if (year === 2026 && state.currentPrecincts?.states.NM) code = "NM";
       else if (state.audits.some(row => row.year === year)) code = "NC";
     }
@@ -1544,16 +1567,19 @@ function projectInside(feature, point) {
     if (!selected) return;
     const unavailable = text => {
       $("geography-note").textContent = text;
-      if (level === "precinct") legend([["No verified precinct participation", "#d6d3cb"]]);
+      if ($("map-color").value === "margin") marginLegend(year % 4 === 0 ? "President" : "U.S. House aggregate");
+      else if (level === "precinct") legend([["No verified precinct participation", "#d6d3cb"]]);
     };
+    if ($("map-color").value === "margin"
+      && !state.margins.some(row => row.year === year && row.state_code === code && row.level === level))
+      return unavailable(`No verified ${year} ${level} candidate-return join for ${state.selectedState}. `
+        + "Whole-state red/blue election-result colors remain; participation rates are not used as election results.");
     if (year === 2026 && level === "precinct")
       return drawCurrentPrecinctGeography(map, selected, code, token);
-    if (year === 2026 && level === "county" && state.current?.local_file
+    if (year === 2026 && level === "county" && $("map-color").value !== "margin" && state.current?.local_file
       && ["available", "official"].includes($("mode").value))
       return drawCurrentGeography(map, selected, code, token);
-    if (level === "county" && state.local?.years.includes(year)
-      && ($("map-color").value !== "margin" || !state.margins.some(row =>
-        row.year === year && row.state_code === code && row.level === "county")))
+    if (level === "county" && state.local?.years.includes(year) && $("map-color").value !== "margin")
       return drawLocalGeography(map, selected, code, year, token);
     if (!state.context) return unavailable("Election-context boundaries could not be loaded. Local reporting-unit histories remain available in the sidebar.");
     if (level === "precinct" && (code !== "NC" || !state.audits.some(row => row.year === year)))
@@ -1584,6 +1610,7 @@ function projectInside(feature, point) {
     for (const feature of features) {
       const p = feature.properties, id = level === "precinct" ? keyFor(p) : p.key;
       const election = returns.get(id), row = participation.get(id);
+      if (partisan && election?.margin_pp == null) continue;
       const rate = row && row.registered >= 25 ? row.turnout_pct : null;
       const item = projectInside(feature, selected.point);
       const name = level === "precinct" ? `${titleCase(p.county)} · precinct ${p.precinct}` : p.name;

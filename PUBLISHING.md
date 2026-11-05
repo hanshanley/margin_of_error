@@ -229,10 +229,18 @@ New snapshots require first publishing their immutable data revision, then
 updating the route and validation together. Missing, truncated or changed remote
 data must stop publication, not fall back to metadata or drop observations.
 
-The default color layer is now precinct participation, not state or county shading.
-Unmatched areas stay neutral, including at the national extent; state histories and
-explicit county/district context remain selectable. Precinct detail disables party-margin
-coloring because precinct candidate returns have not been joined.
+The default color layer is red/blue election results, including with precinct detail selected.
+Where a verified local candidate-return join is missing, retain the whole-state result color;
+never substitute participation shading, force gray, or disable result colors. The separate
+Participation option retains the audited precinct-rate map and neutral unsupported areas.
+The 2026 result snapshot in `public/participation-results/` covers all 50 states and
+435 voting House districts. District party votes reconcile exactly to national totals.
+State colors use D-minus-R divided by all contest votes, not statewide winners, House seats
+or turnout. DC has no voting House district in this source. Refresh separately with
+`python scripts/collect-participation-context.py --results-only`; invalid identity,
+missing/duplicate districts or failed reconciliation must leave the previous pointer intact.
+Its complete CSV/ZIP downloads retain every state/district result and the original source.
+No 2026 precinct candidate-return join is claimed; the result layer uses state fallback.
 `scripts/build-current-precincts.py` joins the RGIS July 2026 NM release to the
 saved election-night source using county + explicit `VTD_NUM` (Voting District Number).
 Eight updated Sandoval shapes retain older Census VTD/GEOCODE values; those older
@@ -249,8 +257,10 @@ The complete geometry, joined rates, county-set audit, checksums and original GI
 ZIP/metadata live in `data/participation-precincts/20261104T230000Z/`.
 `public/participation-precincts.json` pins that data's immutable Git revision.
 Complete existing 2026 reporting downloads retain every unmatched source row.
-Browser checks compare every rendered rate with the audited GeoJSON, assert
-neutral state/unsupported precinct fills, exercise matched and mismatched selections,
+Browser checks compare all 50 default state result colors with the actual saved party
+margins, verify state fallback under every unsupported detail selection, and compare
+every explicitly selected participation rate with the audited GeoJSON. They assert
+neutral unsupported participation fills, exercise matched and mismatched selections,
 and verify desktop/mobile behavior, historical NC coverage and failed-fetch fallbacks.
 
 The reviewed supplements live in `public/participation-context/` and
