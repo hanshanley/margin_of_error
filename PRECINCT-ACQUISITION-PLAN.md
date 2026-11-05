@@ -3774,12 +3774,63 @@ Actual source-matched desktop/mobile by JavaScript/no-JavaScript checks pass
 Arizona tables. No overflow; 2026 remains default.
 Proof: `files/arizona-native-counts-ui-local-browser-proof-01.json`.
 
-**Current executable work:** commit/push this verified download registration
-as Hans and verify its exact live deployment. No Arizona new map coverage is
-published. Next acquire actual source-declared 2026 precinct geography and
-explicit identifier correspondence; do not treat distinct API UUIDs, media
-precinct codes or county codes as interchangeable. Do not reacquire the complete
-cached snapshot or repeat passed Arkansas live matrices.
+Hans UI commit **`18ec855708bbcf32f53ec4c3c2867cacdddd4b28`** is pushed.
+Its exact deployment/browser verifier is already running as
+`arizona-native-counts-ui-publication-01`; await its result without a duplicate
+watcher. No new Arizona map coverage is yet published.
+
+Complete Maricopa 2026 reference acquired in
+`files/precinct-expansion-sources/AZ-MARICOPA-2026-geometry-01/`:
+**956** features in four complete object-ID-bounded pages, with matching
+before/after ID sets and unchanged layer edit version. All **14** original
+responses and receipts are retained, including the actual denied approved-map
+PDF response (HTTP403; not a successful PDF acquisition).
+The public item `d54dad69d3954287849087b949fb561f`, owned by
+`MaricopaElectionsGIS`, explicitly declares **956** precincts approved
+**October 1, 2025**, effective **January 2, 2026**, for primary/general federal
+results. The acquired official reprecincting page also says October 1, 2025;
+earlier search-derived November 20 wording was incorrect and must not be used.
+The item warns that numbers were reused rather than renumbered alphabetically.
+
+All **956** native Maricopa House records match unique literal reference
+`BdVal + " " + BdName` labels, with independently agreeing numeric `PctNum`.
+No fuzzy matching, name trimming, case folding, zero-padding or UUID substitution
+is used. Raw media IDs do not literally equal four-character `BdVal` strings;
+keep both namespaces and this explicit correspondence.
+All polygons are valid. Native-coordinate intersections projected to EPSG:5070
+find **four** material overlap pairs affecting **seven** precincts, exceeding
+both 1 square meter and 0.0000001 of the smaller precinct; another 37 positive
+intersections are below that existing audit threshold. The seven affected
+precincts must be withheld whole, not clipped or repaired. Initial independent
+diagnostics are preserved in the acquisition cache; these alone are not map
+approval or a published crosswalk.
+
+The reproducible fail-closed builder and **21** new focused cases pass;
+Arizona plus coverage now passes **49** tests. The final complete supplement is
+`data/precinct-results/20261105-arizona-maricopa-02/`, retaining all **76**
+byte-identical native count-package members, all **14** reference responses,
+full statewide **1,762-row** CSV, explicit **956-row** correspondence, every
+overlap/withheld unit, original metadata/license and portable builder.
+All **949** mapped shapes are byte-semantically unchanged from their reference
+coordinates. **936** have positive candidate counts; **13** explicit zero-vote
+units retain null margins and remain uncolored. Positive counts are preserved
+even where the native reporting-status label says "Not Reported".
+No API participation UUIDs, denominators or rates are joined to map features.
+Independent verification checks every feature/count/identity, all **96**
+checksums and **97** ZIP members; archive-only rebuilding reproduces all files
+and ZIP byte-for-byte. Proof:
+`files/arizona-maricopa-2026-maps-package-proof-01.json`.
+Complete ZIP: **18,768,461 bytes**, SHA-256
+`f50a20f1daa0a1f418dacff60b1657694b7f544da6e771cf2dcde846f25f0c01`.
+
+**Current executable work:** commit/push this source package as Hans; publish
+and fully redownload a new immutable complete-map release; then add the pinned
+partial Arizona snapshot, preserve all earlier downloads, update only AZ2026
+in the 1,632-cell worklist, and test actual 936 precinct fills/counts/colors,
+county fallback and zoom on desktop/mobile and no-JavaScript downloads before
+publishing. Finish the already-running exact Arizona count-download deployment
+verification before changing its registry inputs. Do not reacquire cached
+originals or repeat passed Arkansas live matrices.
 
 ## Resume procedure for every work session or scheduled prompt
 

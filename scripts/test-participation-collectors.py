@@ -66,6 +66,101 @@ ar_2026 = module("review-arkansas-2026-native-results")
 al_2026 = module("review-alabama-2026-native-results")
 ar_geometry = module("review-arkansas-2026-reference-geometry")
 az_2026 = module("review-arizona-2026-native-results")
+az_maricopa = module("build-arizona-maricopa-precinct-results")
+
+
+def maricopa_example():
+    rows, features = [], []
+    for number, name, x in [(1, "ACACIA", -112.1), (2, "ACOMA", -112.08)]:
+        rows.append(dict(year=2026, state_code="AZ", county_code="maricopa",
+            county="Maricopa County", native_virtual_precinct="False", contest_id="AZ-1",
+            precinct=f"{number:04} {name}", precinct_code=str(number), total_votes=4,
+            democratic_votes=3, republican_votes=1, other_votes=0, margin_pp=50,
+            office="U.S. Representative in Congress - District No. 1",
+            native_reporting_status="Not Reported"))
+        features.append(dict(type="Feature", properties=dict(OBJECTID=number,
+            BdVal=f"{number:04}", BdName=name, PctNum=number),
+            geometry=dict(type="Polygon", coordinates=[[
+                [x, 33.4], [x + 0.01, 33.4], [x + 0.01, 33.41],
+                [x, 33.41], [x, 33.4]]])))
+    return rows, features
+
+
+def test_arizona_maricopa_literal_join_preserves_native_geometry_and_counts():
+    rows, features = maricopa_example()
+    mapped, audit = az_maricopa.mapped_precincts(rows, features)
+    assert len(mapped) == 2 and not audit["withheld_units"]
+    assert mapped[0]["geometry"] == features[0]["geometry"]
+    assert mapped[0]["properties"]["contest_votes"] == 4
+    assert mapped[0]["properties"]["native_reporting_status"] == "Not Reported"
+    assert not audit["participation_joined"] and not audit["rates_available"]
+
+
+@pytest.mark.parametrize("change", ["name_case", "name_spacing", "missing", "extra",
+    "duplicate_native", "duplicate_reference", "wrong_id", "wrong_reference_id",
+    "virtual", "wrong_election", "wrong_county", "wrong_contest", "wrong_margin", "missing_count"])
+def test_arizona_maricopa_rejects_ambiguous_or_incomplete_join(change):
+    rows, features = maricopa_example()
+    if change == "name_case":
+        features[0]["properties"]["BdName"] = "Acacia"
+    elif change == "name_spacing":
+        features[0]["properties"]["BdName"] = "ACACIA "
+    elif change == "missing":
+        features.pop()
+    elif change == "extra":
+        rows.pop()
+    elif change == "duplicate_native":
+        rows.append(copy.deepcopy(rows[0]))
+    elif change == "duplicate_reference":
+        features.append(copy.deepcopy(features[0]))
+    elif change == "wrong_id":
+        rows[0]["precinct_code"] = "99"
+    elif change == "wrong_reference_id":
+        features[0]["properties"]["PctNum"] = 99
+    elif change == "virtual":
+        rows[0]["native_virtual_precinct"] = "True"
+    elif change == "wrong_election":
+        rows[0]["year"] = 2024
+    elif change == "wrong_county":
+        rows[0]["county_code"] = "pima"
+    elif change == "wrong_contest":
+        rows[0]["contest_id"] = "AZ-10"
+    elif change == "wrong_margin":
+        rows[0]["margin_pp"] = 0
+    elif change == "missing_count":
+        rows[0]["democratic_votes"] = None
+    with pytest.raises(ValueError):
+        az_maricopa.mapped_precincts(rows, features)
+
+
+def test_arizona_maricopa_preserves_zero_without_filling_missing_margin():
+    rows, features = maricopa_example()
+    rows[0].update(total_votes=0, democratic_votes=0, republican_votes=0, margin_pp=None)
+    mapped, audit = az_maricopa.mapped_precincts(rows, features)
+    assert len(mapped) == 2 and audit["colored_units"] == 1
+    assert mapped[0]["properties"]["margin_pp"] is None
+
+
+@pytest.mark.parametrize("geometry", [None, dict(type="Polygon", coordinates=[]),
+    dict(type="Point", coordinates=[-112.1, 33.4]),
+    dict(type="Polygon", coordinates=[[[-112.1, 33.4], [-112.09, 33.41],
+        [-112.09, 33.4], [-112.1, 33.41], [-112.1, 33.4]]])])
+def test_arizona_maricopa_withholds_invalid_whole_shape(geometry):
+    rows, features = maricopa_example()
+    features[0]["geometry"] = geometry
+    mapped, audit = az_maricopa.mapped_precincts(rows, features)
+    assert len(mapped) == 1
+    assert audit["withheld_units"][0]["precinct"] == "0001 ACACIA"
+
+
+def test_arizona_maricopa_material_overlap_withholds_both_without_repair():
+    rows, features = maricopa_example()
+    features[1]["geometry"] = copy.deepcopy(features[0]["geometry"])
+    original = copy.deepcopy(features)
+    mapped, audit = az_maricopa.mapped_precincts(rows, features)
+    assert not mapped and len(audit["withheld_units"]) == 2
+    assert audit["overlap_pairs"][0]["material"]
+    assert features == original
 
 
 def arizona_native_example(democratic=2):

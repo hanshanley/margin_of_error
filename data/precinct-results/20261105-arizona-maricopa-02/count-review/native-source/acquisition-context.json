@@ -1,0 +1,36 @@
+{
+  "official_platform_declaration": "https://azsos.gov/news/1077",
+  "official_press_declaration": "https://azsos.gov/press",
+  "native_application_declares_media_export": true,
+  "nonredistributed_frontend_and_blocked_response_receipts": {
+    "official-press": {
+      "url": "https://azsos.gov/press",
+      "final_url": "https://azsos.gov/press",
+      "status": 403,
+      "bytes": 5382,
+      "sha256": "26150922c13b38fc041674b269ae5b1a0c6a714b2a95500d532b81bc43bde302",
+      "file": "originals/official-press.gz",
+      "acquired_at": "2026-11-05T12:24:37.756322+00:00",
+      "headers": {
+        "Date": "Thu, 05 Nov 2026 12:24:37 GMT",
+        "Content-Type": "text/html; charset=UTF-8"
+      }
+    },
+    "native-public-state-page": {
+      "url": "https://app.enhancedvoting.com/results/public/Arizona/110326GeneralElection",
+      "final_url": "https://app.enhancedvoting.com/results/public/Arizona/110326GeneralElection",
+      "status": 200,
+      "bytes": 9684,
+      "sha256": "0343add6fe83c299e428eebe44b129d8667c7462cdde1656abd1e1d86e4109c5",
+      "file": "originals/native-public-state-page.gz",
+      "acquired_at": "2026-11-05T12:26:45.162706+00:00",
+      "headers": {
+        "Date": "Thu, 05 Nov 2026 12:26:45 GMT",
+        "Content-Type": "text/html"
+      }
+    }
+  },
+  "original_count": 66,
+  "geometry_approved": false,
+  "limitation": "Direct SOS press request is HTTP403. Full factual native media/API originals are acquired; no blocked HTML, frontend document or third-party map is redistributed."
+}
