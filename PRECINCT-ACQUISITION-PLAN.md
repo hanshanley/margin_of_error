@@ -57,8 +57,12 @@ declared fully complete.
   metadata or the simplified map layers.
 - Primary 2024 and NC/NM 2026 deployment `41944997086` passed the full live
   browser suite, including zoom, exact candidate colors/counts, and fallbacks.
-  The new supplement is **snapshot-ready, not yet live-verified**. Finish its
-  local/browser/deployment verification before changing that status.
+  Expanded UI commit `8652eeec7df17cee362624c6fa22f8dfa9000ac2` deployed
+  successfully in exact run **41949760328**. Its full live browser suite passed:
+  actual candidate counts and exact fills in all 47 acquired 2020 jurisdictions
+  and all 50 acquired 2024 jurisdictions; MN/NC/NM 2026; zoom/pan, histories,
+  mobile, downloads, and no-JS/fetch-error fallbacks. The supplement is now
+  **live-verified partial coverage**, not complete state/year coverage.
 
 ## 2022 original-source batch at `b645345`
 
@@ -88,6 +92,32 @@ House file `13996912` has 784,248 observations and MD5
 `8922970b43a9c0db4830b1a164988b5c`, but metadata/export/download requests returned
 HTTP 403. These are identified leads, **not acquired data**. Use legitimate
 published alternatives; do not bypass access restrictions.
+
+## North Dakota 2026 count acquisition at `dc3dce1`
+
+All **358** House reporting rows and separate precinct ballot counts reconcile
+through **53 counties** to statewide totals: **234,595 House votes** and
+**239,057 ballots**. Candidate votes are not turnout. All **358 precinct rates**
+remain withheld because the source omits an appropriate precinct denominator.
+The [official terminology](https://www.sos.nd.gov/elections/election-results)
+defines eligible voters as the Census annual estimate of residents age 18+,
+despite the API field being named `registeredVoters`.
+
+The complete, independently redownloaded and byte-verified archive is
+`voter-precinct-north-dakota-20261105/complete-north-dakota-precinct-source-review.zip`,
+**2,426,904 bytes**, SHA-256
+`2d33d487e1eca9cab798b8ed192ef43495025598206ba39e79816f9fae2fc6c6`.
+Data: `data/precinct-source-reviews/20261105/ND/`. The archive contains the full
+all-contest original, every normalized House and ballot row, all reviewed API/GIS
+captures and original-byte checksums. Reproduce with
+`scripts/review-north-dakota-precinct-results.py`; 54 collector tests pass.
+
+The official current-portal GIS manifest was generated March 9, 2026. Sampled
+Adams County has **five split polygons for one House reporting unit**, using UUID
+boundary IDs, not the reporting ID. This is a one-county diagnostic, not a
+statewide unavailability finding. Keep `full_counts_download_only` and withhold
+geometry until the reporting-unit/split crosswalk is established and all
+county-sharded geometry is reviewed. State fallback remains in place.
 
 ## Resume procedure for every work session or scheduled prompt
 
@@ -119,6 +149,35 @@ counts where available.
 
 Concrete next investigations already identified:
 
+- **North Dakota 2026 is the next concrete acquisition to normalize.** The
+  official archive links current results to `https://resultsnd.sos.nd.gov/`,
+  while `https://results.sos.nd.gov/` defaults to the older 2024 election.
+  The new public API identifies election **348**, `2026 General Election`,
+  November 3, 2026, unofficial, source version `v75`. The advertised complete
+  original has been acquired and reconciled (5,779,260 uncompressed bytes):
+  `https://resultsnd.sos.nd.gov/results/north-dakota/348/FullDataFile.json`.
+  It contains `ElectionData`, `TurnoutData`, and `ContestData`, including nested
+  county and precinct rows. The committed count review and complete release are
+  documented above. Cached sources and checksums are in the session's
+  `files/precinct-expansion-sources/ND-2026/`; this is **reconciled count coverage,
+  not a published map**. Public feeds:
+  `https://api.resultsnd.sos.nd.gov/Election/GetElectionInfo?cId=north-dakota`,
+  `https://api.resultsnd.sos.nd.gov/Turnout/GetTurnout?cId=north-dakota&electionID=348`.
+  GIS manifest:
+  `https://resultsnd.sos.nd.gov/gis/states/north-dakota/manifest.json`
+  (generated March 9, 2026; precinct ID field `boundary_id`, name `CntyPrecSp`).
+  Actual geometry is county-sharded:
+  `https://resultsnd.sos.nd.gov/gis/states/north-dakota/counties-precincts/38001-precincts.json`
+  is the acquired Adams sample. Replace the county FIPS only with IDs from the
+  official county layer; the advertised statewide `precincts.json` returns 404.
+  Next: acquire all county shards, establish the split/reporting-unit crosswalk,
+  audit parent-scoped IDs and reporting scopes, and publish only verified joins
+  as a separate immutable supplemental batch. The API's `registeredVoters`
+  field is not a registration definition: the official explanatory page defines
+  eligible voters as the Census annual estimate of residents age 18+. Precinct
+  leaves omit this denominator; retain counts and withhold rates rather than
+  borrowing county denominators. Update supplemental download metadata for a
+  non-NYT batch rather than displaying 2020 license links for unrelated data.
 - Minnesota: official election ID `201` exposes federal results by precinct;
   investigate the official September 18, 2026 precinct boundary release and exact
   county/precinct identifiers. Verify election identity and reconcile totals.
@@ -211,10 +270,12 @@ Use `snapshot_ready` before live verification; use `published_partial` only for
 live-verified mapped subsets. Withheld geometry stays withheld. Do not mark a
 state/year complete merely because one source release is exhausted.
 
-The full live suite for `5a6fb2a` was started after its exact deployment in shell
-`402`. Check its actual outcome before launching another copy or setting the
-publication flag; this statement is not a claim that the suite passed. Shell IDs
-are session-local; the persistent GitHub deployment run ID is `41944997086`.
+The original primary suite passed after exact deployment `41944997086`.
+The expanded suite passed after exact deployment `41949760328` (session shell
+`449`). Do not rerun these completed checks as a substitute for new acquisition.
+For a metadata-only follow-up with unchanged renderer and geometry, verify its
+exact deployment, live registry/worklist, complete downloads and unchanged
+renderer bytes rather than duplicating the entire source-matched matrix.
 
 ## Commits and recurring execution
 
@@ -233,9 +294,11 @@ make concrete acquisition/integration progress, validate and commit useful
 batches, and report actual gains and unresolved gaps honestly. It must not
 repeatedly announce existing partial coverage as completion.
 
-Recurring prompt **#1** was created with a **15-minute interval** in the current
-CLI session. Inspect active schedules to verify its current status; the document
-alone does not establish that a scheduler is still running.
+Recurring prompt **#2** is active at a **15-minute interval** in the current CLI
+session, replacing the initial prompt #1. It reads the updated plan, prioritizes
+the ND crosswalk and remaining 2026 jurisdictions, and recognizes the completed
+live suite rather than restarting old checks. Inspect active schedules to verify
+its current status; the document alone does not establish a running scheduler.
 
 Stop the recurring schedule when the requested acquisition/publication work is
 finished, when the user asks to stop, or when no actionable work remains after

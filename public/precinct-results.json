@@ -11,7 +11,8 @@
     "data_directory": "data/precinct-results/20261105-expansion-01",
     "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-expansion-20261105/complete-additional-precinct-results.zip",
     "complete_download_bytes": 398235632,
-    "complete_download_sha256": "f0d46aa827cda1f0c47a3f5089a859c44c61e497b9386a89598878eef9d4c094"
+    "complete_download_sha256": "f0d46aa827cda1f0c47a3f5089a859c44c61e497b9386a89598878eef9d4c094",
+    "publication": "live_verified_partial"
   }],
   "source_batches": [{
     "label": "2022 precinct sources from 25 states",
@@ -21,5 +22,8 @@
     "complete_download_bytes": 22214839,
     "complete_download_sha256": "3525bd75010236853748ed04edc0545c1a24834a0a0c9deb411d8c11885494d1"
   }],
-  "source_reviews": ["data/precinct-source-reviews/20261105/DE/audit.json"]
+  "source_reviews": [
+    "data/precinct-source-reviews/20261105/DE/audit.json",
+    "data/precinct-source-reviews/20261105/ND/audit.json"
+  ]
 }
