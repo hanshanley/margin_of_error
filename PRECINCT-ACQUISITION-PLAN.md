@@ -1543,13 +1543,76 @@ regressions** covering combined/absentee identities, missing/duplicate
 units and pages, wrong county/year/party/election, repeated registration,
 source percentages, independent mismatches and changed/failed originals.
 
-Next: commit/push this source snapshot as Hans; publish immutable tag
-`voter-precinct-missouri-christian-20261105` and full
-`complete-missouri-christian-2026.zip`; redownload and prove exact remote
-bytes before registering a **Christian County only** complete-data link.
+Hans source commit `b30aa24882968e614cb9a89e4812a154f0de18ab` is pushed
+and pinned by immutable tag `voter-precinct-missouri-christian-20261105`.
+The full `complete-missouri-christian-2026.zip` remote redownload passes
+exact tag target, asset size, SHA-256, full local-byte equality, all
+10 ZIP members/CRCs, all four original receipts and three immutable
+provenance files:
+`files/missouri-christian-2026-remote-byte-proof.json`.
+Only after that proof is it registered as a **Christian County only**
+complete-data link, increasing full downloads from 45 to **46**.
+Astro check passes with zero errors/warnings and five existing hints;
+all seven participation tests, the production build and four build-time
+caucus tests pass. The whole validator reaches only the unchanged unrelated
+UK assertion (23 cards versus 16, line 1077), not a whole-suite pass.
+The Pages preparer verifies **94 byte-identical relocated downloads**;
+the prepared site is **986,216,216 bytes**. Bounded desktop/mobile with
+and without JavaScript passes all **46** identical complete downloads,
+explicit Christian and Monroe county-only scope, all 1,632 cells with
+exactly one changed MO cell, immutable provenance, unchanged renderer,
+no overflow, 2026 precinct/margin default and exact MO state fallback
+without invented precincts:
+`files/missouri-christian-2026-local-browser-proof.json`.
+Hans UI commit/push and exact production proof are next.
 Keep MO 2026 `complete=no`; this is one county, not statewide Missouri.
-Then seek explicitly election-applicable boundaries and residential
-absentee definitions while continuing the remaining 2026 state/DC queue.
+Seek explicitly election-applicable boundaries and residential absentee
+definitions while continuing the remaining 2026 state/DC queue.
+
+## Nevada 2026: Clark declared aggregate app and original precinct GIS acquired
+
+The actual official
+`https://www.clarkcountynv.gov/government/departments/elections/26g-info`
+page identifies **November 3, 2026** and links its unofficial county
+election-night results. Its `Statement of Vote` and CVR entries currently
+have **no link**; this is a bounded current-page observation, not an
+absence claim. Historical aggregate results have a separate real native
+selector at
+`https://elections.clarkcountynv.gov/electionresultsTV/results.aspx`;
+inspect that form's actual election and report choices before guessing files.
+The linked county app
+`https://elections.clarkcountynv.gov/ElectionResults_NV/EnrEng/EnrMain`
+has been fully acquired (**467,327 bytes**, HTTP 200). It identifies
+`2026 General Election` / `Unofficial Results`, shows county registration
+**1,528,706**, and has county contest selection, but no precinct,
+download or export string in this exact HTML. Do not turn county contest
+totals into precinct records. Inspect actual declared form/data routes.
+
+All six complete source bodies and exact receipts are retained in
+`files/precinct-expansion-sources/NV-2026-CLARK/`: general index,
+election-night index and app, historical aggregate selector, GIS index,
+and the GIS index's actual
+`https://mapsrv.clarkcountynv.gov/pub/crel/crel-shp.zip`.
+The original **3,529,197-byte ZIP / 100 members** is HTTP 200 with passing
+CRC, despite the ordinary web tool returning 502 at that same link.
+Its `gisdata/crel/shapefil/precinct_p.shp` has **1,015 records** and native
+numeric `PREC`, `CONGRESS` and other district fields.
+Members and metadata sync/modification date are **March 25, 2026**;
+metadata creation date is **February 12, 2019**, not an election date.
+Native projection is NAD83 Nevada East FIPS 2701, US survey feet.
+Full vintage/election applicability, metadata, uniqueness and topology
+remain to review; no join or map is approved from a modified timestamp.
+
+The Silver State endpoint reached from `https://results.nv.gov/` redirects
+to `silverstateelection.nv.gov` and the ordinary web tool encounters a
+real additional-security challenge. Pursue the legitimate official
+county aggregate/result/export alternatives; do not describe the state
+as permanently unavailable or download personal voter lists as a substitute.
+Next: inspect actual historical form choices and election-night aggregate
+report routes for a 2026 precinct statement; acquire the declared full
+aggregate report and election-applicable boundaries, independently reconcile
+native units, then package all originals before registry/publication.
+NV 2026 remains incomplete and unchanged in the public ledger.
 
 ## Resume procedure for every work session or scheduled prompt
 

@@ -49,7 +49,7 @@ Checkmarks are reserved for verified, complete live coverage.
 | [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Michigan | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Minnesota | acquired | reference_acquired | validated_partial | passed | published_partial | acquired_precinct_counts_and_registration |
-| [ ] | Missouri | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Missouri | acquired_reconciled | election_year_reference_pending | withheld | house_vectors_and_native_participation_independently_reconciled | full_counts_download_only | native_reporting_unit_counts_centralized_absentee_unallocated |
 | [ ] | Mississippi | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Montana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | North Carolina | acquired | reference_acquired | validated_partial | passed | published_partial | not_acquired |
