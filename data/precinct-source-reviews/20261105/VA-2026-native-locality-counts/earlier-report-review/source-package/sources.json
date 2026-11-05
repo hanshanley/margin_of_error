@@ -1,0 +1,281 @@
+{
+  "official-results-index": {
+    "url": "https://www.elections.virginia.gov/results/",
+    "resolved_url": "https://www.elections.virginia.gov/results/",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "fetched_at": "2026-11-05T10:41:15.251343+00:00",
+    "bytes": 37828,
+    "sha256": "0db17cb8c1bcf4b41af0c958c1173a402fd25bb1e19a641cd6308936b49ec7b7"
+  },
+  "official-registration-turnout": {
+    "url": "https://www.elections.virginia.gov/resultsreports/registrationturnout-statistics/",
+    "resolved_url": "https://www.elections.virginia.gov/resultsreports/registrationturnout-statistics/",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "fetched_at": "2026-11-05T10:41:15.372880+00:00",
+    "bytes": 38871,
+    "sha256": "a964c169a940d50809348ca722dcd366b2651a2e567020e1e6160236855b5c21"
+  },
+  "official-2026-enr-page": {
+    "url": "https://enr.elections.virginia.gov/results/public/virginia/elections/2026-November-General",
+    "resolved_url": "https://enr.elections.virginia.gov/results/public/virginia/elections/2026-November-General",
+    "status": 200,
+    "content_type": "text/html",
+    "fetched_at": "2026-11-05T10:41:15.488879+00:00",
+    "bytes": 13955,
+    "sha256": "e1251d5757d5d715fa26e33de57d56cbf4aa6fa92cf318ad8c15b45f69bbc8d2"
+  },
+  "browser-39d6afb587414a43": {
+    "url": "https://enr.elections.virginia.gov/results/public/virginia/elections/2026-November-General",
+    "status": 200,
+    "bytes": 13944,
+    "sha256": "53f24b409140681c663efc6546ece4ebe34e68491ca7bb67e7e17d3eb36c45ef",
+    "saved_at": "2026-11-05T10:41:42.618111+00:00",
+    "capture": "native_public_browser_response"
+  },
+  "browser-fbbcb9f87a9319f4": {
+    "url": "https://enr.elections.virginia.gov/results/public/chunk-UIUCHE43.js",
+    "status": 200,
+    "bytes": 114,
+    "sha256": "15ce7c6c71b9026769d8625d3063ab4a5b992aa587cea680dd9e47236034eea0",
+    "saved_at": "2026-11-05T10:41:42.619504+00:00",
+    "capture": "native_public_browser_response"
+  },
+  "browser-23bb42a1ab087848": {
+    "url": "https://enr.elections.virginia.gov/results/public/chunk-Y3DS5NPS.js",
+    "status": 200,
+    "bytes": 87030,
+    "sha256": "a57b47c05e9e60830b8b1c9052f8a11504f526cb6ca544e94406241dc0c111f6",
+    "saved_at": "2026-11-05T10:41:42.623220+00:00",
+    "capture": "native_public_browser_response"
+  },
+  "browser-a34e16cca0f30f55": {
+    "url": "https://enr.elections.virginia.gov/results/public/chunk-4ERHI5WB.js",
+    "status": 200,
+    "bytes": 3280,
+    "sha256": "94095a941d6b80c874c370794927e9a9e64f09818c152f3cf10b9e14a63d5053",
+    "saved_at": "2026-11-05T10:41:42.624370+00:00",
+    "capture": "native_public_browser_response"
+  },
+  "browser-7c8a8a472cc77fab": {
+    "url": "https://enr.elections.virginia.gov/results/public/chunk-RJM5S7BD.js",
+    "status": 200,
+    "bytes": 2109,
+    "sha256": "65f9e9873acbe8a755f6d5f6b5664d62bb5f51b9b9b19218150ac7d24830612b",
+    "saved_at": "2026-11-05T10:41:42.625324+00:00",
+    "capture": "native_public_browser_response"
+  },
+  "browser-8591b25359b52849": {
+    "url": "https://enr.elections.virginia.gov/results/public/chunk-JVUU5FNY.js",
+    "status": 200,
+    "bytes": 45236,
+    "sha256": "cb9eb314f0d9a923f146a81df8de9f3811f7dd3402c116fbf76fb7a6651f575c",
+    "saved_at": "2026-11-05T10:41:42.627481+00:00",
+    "capture": "native_public_browser_response"
+  },
+  "browser-de3abbeb6fbe5549": {
+    "url": "https://enr.elections.virginia.gov/results/public/chunk-RR57C6MF.js",
+    "status": 200,
+    "bytes": 4059,
+    "sha256": "91347de4fcd5ebb10e7b7a2942ffa997bb4ec40f367019aeac41161e2b157e87",
+    "saved_at": "2026-11-05T10:41:42.628428+00:00",
+    "capture": "native_public_browser_response"
+  },
+  "browser-5b5ca443519ff637": {
+    "url": "https://enr.elections.virginia.gov/results/public/chunk-E5Q6ZXFP.js",
+    "status": 200,
+    "bytes": 50395,
+    "sha256": "b8d8e962c61609c3f1ad04e4b13c4465ac280c5f8e3d4a17d98fc61b93ecaad8",
+    "saved_at": "2026-11-05T10:41:42.630871+00:00",
+    "capture": "native_public_browser_response"
+  },
+  "browser-22f4b4bc1977cc24": {
+    "url": "https://enr.elections.virginia.gov/results/public/chunk-FGGLJ3AQ.js",
+    "status": 200,
+    "bytes": 62359,
+    "sha256": "8b62926b23d7ee0dbe14a58f1398684c49d5a8de514fb71d9b24c3d9d1e6f984",
+    "saved_at": "2026-11-05T10:41:42.633549+00:00",
+    "capture": "native_public_browser_response"
+  },
+  "browser-11c0a49d42534386": {
+    "url": "https://enr.elections.virginia.gov/results/public/chunk-BR32T4O4.js",
+    "status": 200,
+    "bytes": 47554,
+    "sha256": "e4160abbce1789571273709fc4926ba4862511f500ad6963cecc9e438f45fdd7",
+    "saved_at": "2026-11-05T10:41:42.635886+00:00",
+    "capture": "native_public_browser_response"
+  },
+  "browser-cb1fb9aa5c440314": {
+    "url": "https://enr.elections.virginia.gov/results/public/polyfills-2FSRUXKO.js",
+    "status": 200,
+    "bytes": 35726,
+    "sha256": "55055d0448a86a0f8f80bc06d40b9c3be9cc44c5c467db50937be0222fb5d43f",
+    "saved_at": "2026-11-05T10:41:42.637818+00:00",
+    "capture": "native_public_browser_response"
+  },
+  "browser-daaec9f79e72483f": {
+    "url": "https://enr.elections.virginia.gov/results/public/chunk-ZO47VK66.js",
+    "status": 200,
+    "bytes": 31244,
+    "sha256": "3c2f3b8a2dd4ec894fac427bc9a1340b204d4f7f91b78f4d5ffe7b5eccfb6661",
+    "saved_at": "2026-11-05T10:41:42.639540+00:00",
+    "capture": "native_public_browser_response"
+  },
+  "browser-910182a67dc64692": {
+    "url": "https://enr.elections.virginia.gov/results/public/scripts-TTWY4XDY.js",
+    "status": 200,
+    "bytes": 80449,
+    "sha256": "ea8be8187bb4d47ab2129508159765ca2f3f6f176b772f79557fe25620dd5389",
+    "saved_at": "2026-11-05T10:41:42.643157+00:00",
+    "capture": "native_public_browser_response"
+  },
+  "browser-7c5f8dabad989380": {
+    "url": "https://enr.elections.virginia.gov/results/public/main-V2JJQ2MX.js",
+    "status": 200,
+    "bytes": 1423876,
+    "sha256": "0d0cf1ea0d1e67984bf14620a534b8f6bb6bc3175115112e0b1ec0a6f8530957",
+    "saved_at": "2026-11-05T10:41:42.686364+00:00",
+    "capture": "native_public_browser_response"
+  },
+  "browser-1ecb5b3fcbd82581": {
+    "url": "https://enr.elections.virginia.gov/results/public/chunk-3YTFOSVP.js",
+    "status": 200,
+    "bytes": 23031,
+    "sha256": "88f908d303b73884860e13ed91c0f985e25da189a7d1e3c0eef609190fd9778d",
+    "saved_at": "2026-11-05T10:41:42.688396+00:00",
+    "capture": "native_public_browser_response"
+  },
+  "browser-49675d3524b8cb33": {
+    "url": "https://enr.elections.virginia.gov/results/public/chunk-Z24DEZ23.js",
+    "status": 200,
+    "bytes": 91477,
+    "sha256": "9a8648d9326c910fb0ead5fed7b3e83fad85033c4d5f6809a5c69e3481109e60",
+    "saved_at": "2026-11-05T10:41:42.692741+00:00",
+    "capture": "native_public_browser_response"
+  },
+  "browser-6cf63189490ab321": {
+    "url": "https://enr.elections.virginia.gov/results/public/chunk-EQDQRRRY.js",
+    "status": 200,
+    "bytes": 1279,
+    "sha256": "ce82103a3c08f314f838ecb8b9d816f26047cc92b8fcc222d94d72145ca20e65",
+    "saved_at": "2026-11-05T10:41:42.693579+00:00",
+    "capture": "native_public_browser_response"
+  },
+  "browser-e09e375350020f6e": {
+    "url": "https://enr.elections.virginia.gov/results/public/chunk-HS4D2KZZ.js",
+    "status": 200,
+    "bytes": 384399,
+    "sha256": "a5702848f1cc9532396ee7f67402926b8b187b34b7205d08970a48e6395684b9",
+    "saved_at": "2026-11-05T10:41:42.706275+00:00",
+    "capture": "native_public_browser_response"
+  },
+  "browser-0f0470084a4d0d4f": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/virginia/2026-November-General/closeraces",
+    "status": 200,
+    "bytes": 873913,
+    "sha256": "489dba5db3d3f2ec7f1b519046c92e2252e0ebfeda85e928361b918a135d69f8",
+    "saved_at": "2026-11-05T10:41:42.728983+00:00",
+    "capture": "native_public_browser_response"
+  },
+  "browser-1657a8451bae522c": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/virginia/2026-November-General/data",
+    "status": 200,
+    "bytes": 1977240,
+    "sha256": "e33d8517defeccad11e7bc807cc64e25bbab1ed024befc1a8ad2af8de92031c8",
+    "saved_at": "2026-11-05T10:41:42.781754+00:00",
+    "capture": "native_public_browser_response"
+  },
+  "browser-c2082dc4cb86b3fa": {
+    "url": "https://enr.elections.virginia.gov/results/public/mapbox-gl-csp-worker.js",
+    "status": 200,
+    "bytes": 447802,
+    "sha256": "85b69611eb1f070f169f1465372eeb41a7b4d6eaefdc626e8e2b9cb42caff2de",
+    "saved_at": "2026-11-05T10:41:42.813457+00:00",
+    "capture": "native_public_browser_response"
+  },
+  "browser-39d6afb587414a43-98b9239202f8": {
+    "url": "https://enr.elections.virginia.gov/results/public/virginia/elections/2026-November-General",
+    "status": 200,
+    "method": "GET",
+    "content_type": "text/html",
+    "fetched_at": "2026-11-05T10:42:54.651729+00:00",
+    "bytes": 13946,
+    "sha256": "98b9239202f8a1a4fba703a6d80398d9614520d37242f693d55054b28e8b11c3",
+    "capture": "native_public_browser_response"
+  },
+  "browser-e7ea8f4901c48d78-19a9b3008304": {
+    "url": "https://enr.elections.virginia.gov/results/public/chunk-DZRIOM66.js",
+    "status": 200,
+    "method": "GET",
+    "content_type": "application/javascript",
+    "fetched_at": "2026-11-05T10:42:54.762301+00:00",
+    "bytes": 14240,
+    "sha256": "19a9b3008304e9ba87ac475426a4d93cd0e981d562786ec901260ef8ac8947d4",
+    "capture": "native_public_browser_response"
+  },
+  "browser-29aa03e4acf849c9-6360210e0c03": {
+    "url": "https://enr.elections.virginia.gov/results/public/chunk-AN3GS2F4.js",
+    "status": 200,
+    "method": "GET",
+    "content_type": "application/javascript",
+    "fetched_at": "2026-11-05T10:42:54.764970+00:00",
+    "bytes": 62232,
+    "sha256": "6360210e0c036d38ef034a8f36e0c4140c068715195e021094ab66f1cf1bd7d8",
+    "capture": "native_public_browser_response"
+  },
+  "browser-7cff6c9ec02428c7-d593268f05b6": {
+    "url": "https://enr.elections.virginia.gov/results/public/chunk-DWQELMWJ.js",
+    "status": 200,
+    "method": "GET",
+    "content_type": "application/javascript",
+    "fetched_at": "2026-11-05T10:42:54.766190+00:00",
+    "bytes": 5684,
+    "sha256": "d593268f05b6eee7231a52f98540dedb95b729c033077ed4b03d6e5e2b972b33",
+    "capture": "native_public_browser_response"
+  },
+  "report-election-turnout": {
+    "url": "https://enr.elections.virginia.gov/cdn/results/d2c804ee-4ec2-46bb-91d7-5b41526eab03/Election%20Turnout_3684dea2-57f5-4d01-ad2c-c1f4c01bda8d.csv",
+    "resolved_url": "https://enr.elections.virginia.gov/cdn/results/d2c804ee-4ec2-46bb-91d7-5b41526eab03/Election%20Turnout_3684dea2-57f5-4d01-ad2c-c1f4c01bda8d.csv",
+    "status": 200,
+    "content_type": "application/octet-stream",
+    "fetched_at": "2026-11-05T10:44:58.852908+00:00",
+    "bytes": 323208,
+    "sha256": "aabd29abccd761d06e624858698f61794fa9138050bd1643ec7176b485dfea61",
+    "reviewed_csv_encoding": "utf-8-sig",
+    "csv_records_including_header": 2530
+  },
+  "report-election-results": {
+    "url": "https://enr.elections.virginia.gov/cdn/results/d2c804ee-4ec2-46bb-91d7-5b41526eab03/Election%20Results_f69f5bf2-5c46-4847-bfef-036e3cc0a069.csv",
+    "resolved_url": "https://enr.elections.virginia.gov/cdn/results/d2c804ee-4ec2-46bb-91d7-5b41526eab03/Election%20Results_f69f5bf2-5c46-4847-bfef-036e3cc0a069.csv",
+    "status": 200,
+    "content_type": "application/octet-stream",
+    "fetched_at": "2026-11-05T10:44:59.073467+00:00",
+    "bytes": 12167271,
+    "sha256": "8450495be128917bca0e38b57eab0c19dd5dfe8f2dc41643cac531e16a1e3b14",
+    "reviewed_csv_encoding": "cp1252",
+    "csv_records_including_header": 46419
+  },
+  "report-election-change-log-report": {
+    "url": "https://enr.elections.virginia.gov/cdn/results/d2c804ee-4ec2-46bb-91d7-5b41526eab03/Election%20Change%20Log_0ee84069-8cf1-4ac5-afd1-57c1daff6a9f.csv",
+    "resolved_url": "https://enr.elections.virginia.gov/cdn/results/d2c804ee-4ec2-46bb-91d7-5b41526eab03/Election%20Change%20Log_0ee84069-8cf1-4ac5-afd1-57c1daff6a9f.csv",
+    "status": 200,
+    "content_type": "application/octet-stream",
+    "fetched_at": "2026-11-05T10:45:22.926059+00:00",
+    "bytes": 91612469,
+    "sha256": "1bb0f3805db4c058c0e325016d8d475f9f4f181da5f51b418f4fa3d4dfaaba97",
+    "reviewed_csv_encoding": "cp1252",
+    "csv_records_including_header": 335815
+  },
+  "report-enrabsenteerawcsv": {
+    "url": "https://enr.elections.virginia.gov/cdn/results/d2c804ee-4ec2-46bb-91d7-5b41526eab03/EnrAbsenteeRawCSV_dd7ce8c5-e1d6-4bea-9214-2f9d720a8829.csv",
+    "resolved_url": "https://enr.elections.virginia.gov/cdn/results/d2c804ee-4ec2-46bb-91d7-5b41526eab03/EnrAbsenteeRawCSV_dd7ce8c5-e1d6-4bea-9214-2f9d720a8829.csv",
+    "status": 200,
+    "content_type": "application/octet-stream",
+    "fetched_at": "2026-11-05T10:45:24.421954+00:00",
+    "bytes": 1882838,
+    "sha256": "7f6b8347208cfac00ca84f0a67dcb492a4e064cf305560dc6797583c34f85cff",
+    "reviewed_csv_encoding": "utf-8-sig",
+    "csv_records_including_header": 16251
+  }
+}

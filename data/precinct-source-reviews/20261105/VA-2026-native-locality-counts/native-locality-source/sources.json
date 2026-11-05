@@ -1,0 +1,2788 @@
+{
+  "parent-state": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/virginia/2026-November-General/data",
+    "status": 200,
+    "bytes": 1977240,
+    "sha256": "e33d8517defeccad11e7bc807cc64e25bbab1ed024befc1a8ad2af8de92031c8",
+    "saved_at": "2026-11-05T10:41:42.781754+00:00",
+    "capture": "native_public_browser_response"
+  },
+  "locality-001": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/accomack-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 394761,
+    "sha256": "3711de9d01cd5df7da755c1d2354ff9c51f358b1ef5ec261e05486f4211cf83e",
+    "fetched_at": "2026-11-05T10:58:27.143058+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "reused_original": true
+  },
+  "locality-007": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/amelia-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 169095,
+    "sha256": "6911f2838214ec86b0be50ebd4c99b66e4f7609c8e5ff8a5b4f8d2ad83ec6fa9",
+    "fetched_at": "2026-11-05T11:02:32.329953+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-005": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/alleghany-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 197528,
+    "sha256": "34c543ea174b30df3dff2ea3906f2127791b61ab3a046a1e62c91d6d53f93d23",
+    "fetched_at": "2026-11-05T11:02:32.333367+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-003": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/albemarle-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 203272,
+    "sha256": "a9d9bd39dfb06d20d6e5ceff6bdc198d6f2e6ff9266d703c2926e5dfa6bb1a4b",
+    "fetched_at": "2026-11-05T11:02:32.367678+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-510": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/alexandria-city/2026-November-General/data",
+    "status": 200,
+    "bytes": 174408,
+    "sha256": "a928bf1e2b4c98999737dead4908ecceb4dad4f245d2da04d10b20dd98a5d919",
+    "fetched_at": "2026-11-05T11:02:32.410386+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-011": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/appomattox-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 196876,
+    "sha256": "85b630d890d8d389973667dff4b03ce77e05bcf1e07a41578e4dedacd99a70fe",
+    "fetched_at": "2026-11-05T11:02:32.434101+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-009": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/amherst-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 189985,
+    "sha256": "30d4dba67aedb55f739b869e88ceb21a74421f7711f9bf1793641bda1d438582",
+    "fetched_at": "2026-11-05T11:02:32.469632+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-017": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/bath-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 176622,
+    "sha256": "aeb8b618c4b96e38c8fbcb43b62a91e230097d86b5131e75f4b8d9436ba0ff3d",
+    "fetched_at": "2026-11-05T11:02:32.517350+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-013": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/arlington-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 235418,
+    "sha256": "40b973e0744e004d395b0f41e6bdfa768ea525c4a92c8719fd9bd6d6c5d62d34",
+    "fetched_at": "2026-11-05T11:02:32.524282+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-015": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/augusta-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 190271,
+    "sha256": "59f78af961d05380cc15296df133b88d8d6714a51bb15122eb90def9aaba80ce",
+    "fetched_at": "2026-11-05T11:02:32.530017+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-019": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/bedford-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 203580,
+    "sha256": "578b0a18b8073399b5cd1f8fcee9456378300e2344df3d014cd80192505997e1",
+    "fetched_at": "2026-11-05T11:02:32.574956+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-021": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/bland-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 166383,
+    "sha256": "89041be549f396124545b7cc884866186f5c3e88a80b4a8ebf8e99259a67b025",
+    "fetched_at": "2026-11-05T11:02:32.609641+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-023": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/botetourt-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 198399,
+    "sha256": "48c4438a8c876dbda02779d88bdbdd4991159772693d4d855a2c67b53a031a62",
+    "fetched_at": "2026-11-05T11:02:32.618559+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-520": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/bristol-city/2026-November-General/data",
+    "status": 200,
+    "bytes": 186548,
+    "sha256": "0347c7e496f5319dc797441c318ed3ed406c80706490fccff234c20a82b20137",
+    "fetched_at": "2026-11-05T11:02:32.631210+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-025": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/brunswick-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 194642,
+    "sha256": "636ecbf2a716137da22fbf514924d08707bf76fa8657431af25011272e2efb5c",
+    "fetched_at": "2026-11-05T11:02:32.657821+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-027": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/buchanan-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 177901,
+    "sha256": "b523f4e4afef1b440a609ff351a85fed5541a34e50c53be8daeeb2d6e076b72c",
+    "fetched_at": "2026-11-05T11:02:32.700651+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-029": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/buckingham-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 169806,
+    "sha256": "f0f5f8417ffb0666ee078d7c94df6d1b570b8e6bc50c05ac13a0c7d21c4e8fba",
+    "fetched_at": "2026-11-05T11:02:32.707210+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-530": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/buena-vista-city/2026-November-General/data",
+    "status": 200,
+    "bytes": 176353,
+    "sha256": "4a69e4a2c456dbabd862d6188d38df87b94e41018ef7c62250a3c186d5155775",
+    "fetched_at": "2026-11-05T11:02:32.726685+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-031": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/campbell-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 189084,
+    "sha256": "33726bb23eecd1f9b4c20b7796770fe3df176060e5d8738d73e9b2e2397d90dc",
+    "fetched_at": "2026-11-05T11:02:32.754977+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-033": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/caroline-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 192181,
+    "sha256": "5fbef7a6a3c9f4cce8130364b2bbfc2394101e51cf92420a2b779865b7920f31",
+    "fetched_at": "2026-11-05T11:02:32.794800+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-035": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/carroll-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 183083,
+    "sha256": "66f8a3baeec03a0883e311a4060a7705633d83cdfd4f3df7430977e759abab74",
+    "fetched_at": "2026-11-05T11:02:32.801754+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-036": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/charles-city-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 169125,
+    "sha256": "9f8d2984b625fff1c3e615923eb04064e23b7d887f3952ee9f343cc04e65f991",
+    "fetched_at": "2026-11-05T11:02:32.810014+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-037": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/charlotte-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 214443,
+    "sha256": "5ffe032ebe286a9bfcc22acd01e893a32b8b43bf0acf87314635bf5c27a12f4e",
+    "fetched_at": "2026-11-05T11:02:32.866582+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-540": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/charlottesville-city/2026-November-General/data",
+    "status": 200,
+    "bytes": 170967,
+    "sha256": "a47960f472eba590e9f9a2095c8cbd05a2f4ba26c8fcf987289eeb334dc1ba2b",
+    "fetched_at": "2026-11-05T11:02:32.877062+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-550": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/chesapeake-city/2026-November-General/data",
+    "status": 200,
+    "bytes": 251353,
+    "sha256": "7a04642a811324a216c0e09c4ff8075580f883f1d481d69313453b624a4a0192",
+    "fetched_at": "2026-11-05T11:02:32.886600+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-041": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/chesterfield-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 213138,
+    "sha256": "06f828cded14a34bf83c539fd591908417aa0b8633a432d9ea51817304e9c116",
+    "fetched_at": "2026-11-05T11:02:32.895420+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-043": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/clarke-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 176545,
+    "sha256": "dc0c82131db372bb2f4c2410a56476247ef8252810626a3c3b8d29173ee7b42c",
+    "fetched_at": "2026-11-05T11:02:32.952077+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-570": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/colonial-heights-city/2026-November-General/data",
+    "status": 200,
+    "bytes": 188704,
+    "sha256": "b46d30e8ec950bccc6d7e8e2f6150010ba8597817ce44598f178a02e8e99be17",
+    "fetched_at": "2026-11-05T11:02:32.956918+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-580": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/covington-city/2026-November-General/data",
+    "status": 200,
+    "bytes": 183905,
+    "sha256": "2e1e511b965858143d9585e5402fb1ed59ece89a8fbc1c4e524b6d44137ac805",
+    "fetched_at": "2026-11-05T11:02:32.975648+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-045": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/craig-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 180480,
+    "sha256": "986f5831a1b197962fbd4709ff78f1f469cbef4e33a49797b0f83be67a8eed34",
+    "fetched_at": "2026-11-05T11:02:32.986925+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-049": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/cumberland-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 175131,
+    "sha256": "81ffc9bdfc220d3355f55d43a029c442f43872880b3d8ea69df57c8e467d111b",
+    "fetched_at": "2026-11-05T11:02:33.040019+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-047": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/culpeper-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 172256,
+    "sha256": "9daf8a6f640221b53dd076c9e46f935ba4221cfd240bfb72c0a66706300a7166",
+    "fetched_at": "2026-11-05T11:02:33.079852+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-590": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/danville-city/2026-November-General/data",
+    "status": 200,
+    "bytes": 202895,
+    "sha256": "df002f06a973b6cea9ff78f380dc8806dc6d47a4e109632f9a0025371e0dbfde",
+    "fetched_at": "2026-11-05T11:02:33.098957+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-053": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/dinwiddie-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 182690,
+    "sha256": "c1846e60d8bc1aeb8bcd93c036af836fce2c0b75f5889bb34f8cde08ecea99db",
+    "fetched_at": "2026-11-05T11:02:33.154690+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-051": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/dickenson-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 202086,
+    "sha256": "e00bd5e5571c8dcf9caaae1384a6945933e27a738467239d128caf18f387251c",
+    "fetched_at": "2026-11-05T11:02:33.163704+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-595": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/emporia-city/2026-November-General/data",
+    "status": 200,
+    "bytes": 193318,
+    "sha256": "27c4e33516a92aad3a6a35d1d2368fefacbd5dd1c827227b602d79f9d92a315c",
+    "fetched_at": "2026-11-05T11:02:33.190240+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-057": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/essex-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 187349,
+    "sha256": "fc65ecabe3dd0cf43ba45d2c9c9b2bdeea320b0e7f5c749ab50f8dd135d8e63a",
+    "fetched_at": "2026-11-05T11:02:33.212364+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-600": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/fairfax-city/2026-November-General/data",
+    "status": 200,
+    "bytes": 211561,
+    "sha256": "e3c87c446527d4906f1349a9b606125faecadf076c3f9430979e8112c51cf987",
+    "fetched_at": "2026-11-05T11:02:33.243474+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-059": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/fairfax-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 312485,
+    "sha256": "34fe94b0f4a07344d40e6756ad977e0235eb9b58fd6e060d7521698e4af0d494",
+    "fetched_at": "2026-11-05T11:02:33.257230+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-061": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/fauquier-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 213405,
+    "sha256": "c02642a8d957efecd6aa5a3c764d0fdd49e45adf26b035f74b2552fcf69b493e",
+    "fetched_at": "2026-11-05T11:02:33.301095+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-610": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/falls-church-city/2026-November-General/data",
+    "status": 200,
+    "bytes": 164226,
+    "sha256": "d73b42374d1a5d7bbc9c61dac90511d68ed2a7a8d7bfd002244f45a5e09e32dc",
+    "fetched_at": "2026-11-05T11:02:33.340149+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-063": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/floyd-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 174038,
+    "sha256": "12e96116d201ee8626994b79b901030ed21f7b71cb6a5cb12d2e5c2bbf374a2a",
+    "fetched_at": "2026-11-05T11:02:33.340219+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-065": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/fluvanna-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 179812,
+    "sha256": "bd3ae146b50e138a611595af31b1d14e75bf440eb4b63339ed2b405367452f96",
+    "fetched_at": "2026-11-05T11:02:33.363917+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-620": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/franklin-city/2026-November-General/data",
+    "status": 200,
+    "bytes": 188598,
+    "sha256": "5bd7f7871f1d14ec4688dc314b8a26ebfbbe1a8290a0147164774c649ce56ce2",
+    "fetched_at": "2026-11-05T11:02:33.390241+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-067": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/franklin-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 198963,
+    "sha256": "506052bc28d08f2d3b2c679db64e8c144f59e9097fa7e6407fbe7375aeabf923",
+    "fetched_at": "2026-11-05T11:02:33.440594+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-630": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/fredericksburg-city/2026-November-General/data",
+    "status": 200,
+    "bytes": 174031,
+    "sha256": "abfde3fa6fe42b348c6250c17649033c177a0cc7e5bee505584c9069d8a44ee4",
+    "fetched_at": "2026-11-05T11:02:33.451209+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-069": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/frederick-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 224618,
+    "sha256": "747f05f7fd326162dbd807199c98f168247e9ff00e08460b7a76991c555f8989",
+    "fetched_at": "2026-11-05T11:02:33.485771+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-640": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/galax-city/2026-November-General/data",
+    "status": 200,
+    "bytes": 164771,
+    "sha256": "aa6318ab40985286cdf46dbcf946817c6f17527edd883ad8176b7b84b7280f09",
+    "fetched_at": "2026-11-05T11:02:33.495206+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-071": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/giles-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 193342,
+    "sha256": "029632206fa0a0023c42145eab9f4de96de5ec340183bbfe347aec4b3f147909",
+    "fetched_at": "2026-11-05T11:02:33.544905+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-075": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/goochland-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 165009,
+    "sha256": "bfe53d1557d8fdcad945ab3545314c9afabd84976f87d2cb62fbf0be40ae7386",
+    "fetched_at": "2026-11-05T11:02:33.571227+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-073": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/gloucester-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 169473,
+    "sha256": "489aab03dee93a9c0e329a8a8855e94a82fc3cf9312a707cf45258d6abe0ae69",
+    "fetched_at": "2026-11-05T11:02:33.578136+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-077": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/grayson-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 249326,
+    "sha256": "85c44f155498dcc282a186fb397cf91f6ea8f43dc2185d2f767282341584565b",
+    "fetched_at": "2026-11-05T11:02:33.582760+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-079": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/greene-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 199608,
+    "sha256": "056ecf431120d4bb2d3e1d055ead9aece36496ca993e73e4e4195f22677c6a4c",
+    "fetched_at": "2026-11-05T11:02:33.629737+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-081": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/greensville-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 194455,
+    "sha256": "0ad47659f880f5125e775e18aed618a46d6d1effb85576d9da155b32945feda1",
+    "fetched_at": "2026-11-05T11:02:33.664981+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-083": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/halifax-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 225967,
+    "sha256": "4feac90c032fac9c6e44a837ecb790cdd967b00094409313b1ce623eb684bcb9",
+    "fetched_at": "2026-11-05T11:02:33.670341+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-650": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/hampton-city/2026-November-General/data",
+    "status": 200,
+    "bytes": 197135,
+    "sha256": "b1560fcbf8d0c9585a6f4d26091d4f57209965ce12cc3159aabd2b138361a1b0",
+    "fetched_at": "2026-11-05T11:02:33.681194+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-085": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/hanover-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 187791,
+    "sha256": "75d97071884d2f1425f4b91fbb3f69f84f2667527d8bc89dab1c10d0c3207fd2",
+    "fetched_at": "2026-11-05T11:02:33.725662+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-087": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/henrico-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 198795,
+    "sha256": "a90fa620a2a8c0cf1c5487183e07e280207c7334925468b6c42181661af5fc8e",
+    "fetched_at": "2026-11-05T11:02:33.753067+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-660": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/harrisonburg-city/2026-November-General/data",
+    "status": 200,
+    "bytes": 178874,
+    "sha256": "9599d6fc1ed5588d0f8b9a3afa8a3b315c18032c2250231c0e0d0d65d2a920af",
+    "fetched_at": "2026-11-05T11:02:33.761584+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-089": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/henry-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 199480,
+    "sha256": "b932659390160d91b0d72facfcef3fbe943445bba854d9e3829e56e3ee0f0943",
+    "fetched_at": "2026-11-05T11:02:33.767696+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-095": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/james-city-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 165075,
+    "sha256": "2eb7b01e9de01f6797e3170b14f53d631569464e4cf17108b7d87c56709d5625",
+    "fetched_at": "2026-11-05T11:02:33.857871+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-670": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/hopewell-city/2026-November-General/data",
+    "status": 200,
+    "bytes": 197574,
+    "sha256": "4f6c957a34f7abf0240d482b5c71b825858102767add4c788a0e6076fd1f5d71",
+    "fetched_at": "2026-11-05T11:02:33.868898+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-091": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/highland-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 170800,
+    "sha256": "21294e8175731bcdb04ef4910b2b3f38a9a1c3442a735ffc3a2872e2183eab80",
+    "fetched_at": "2026-11-05T11:02:33.872417+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-093": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/isle-of-wight-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 209602,
+    "sha256": "ce3a718aa06f10f508a3fecdcd3e7ad28dd6d30ca645a47289502533a9bf99bd",
+    "fetched_at": "2026-11-05T11:02:33.879802+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-101": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/king-william-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 185038,
+    "sha256": "c3711e8765cfd576b28e9e26ad5a5c6a38c6aa7e09aaec1912e50b90e4713311",
+    "fetched_at": "2026-11-05T11:02:33.959270+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-103": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/lancaster-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 211155,
+    "sha256": "02c45a01a17c148772b8ffcfcc3dfe662efb4f0cc868e3d2919cfe91fb5b08f9",
+    "fetched_at": "2026-11-05T11:02:33.972195+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-097": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/king-queen-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 166725,
+    "sha256": "1236f289dde67b61b75c99addc4cc872dd1a31c677f1e11b55bc850fbac21730",
+    "fetched_at": "2026-11-05T11:02:33.979226+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-099": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/king-george-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 167894,
+    "sha256": "a180b53c2386c0fe369e23d899a8f105abab0a3c8820025cadf6e68c4f9c8533",
+    "fetched_at": "2026-11-05T11:02:34.014877+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-678": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/lexington-city/2026-November-General/data",
+    "status": 200,
+    "bytes": 187552,
+    "sha256": "8f3f66187dd5db1f4d10aae7be0dfc94353b28bf2325fed025695f6bf4c5461b",
+    "fetched_at": "2026-11-05T11:02:34.053494+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-105": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/lee-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 203856,
+    "sha256": "9271ba63164249e20eabaa078aec8936f771a73ba5e24e80adf21940d54dabe0",
+    "fetched_at": "2026-11-05T11:02:34.057548+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-107": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/loudoun-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 291731,
+    "sha256": "3a794fa7ff4023f8fc4a3b129356fcf87e827f6be2ad9889891bb7877b61d941",
+    "fetched_at": "2026-11-05T11:02:34.069923+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-109": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/louisa-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 207105,
+    "sha256": "7d1a741f1fdadf7665b0c9cc35113f345c456280eca0960b0ef3ebd7998a3674",
+    "fetched_at": "2026-11-05T11:02:34.132918+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-680": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/lynchburg-city/2026-November-General/data",
+    "status": 200,
+    "bytes": 187129,
+    "sha256": "3481c918fe875267bb431f7f2d6ab6d95f4faaf3355d7f2927ef528d10e99904",
+    "fetched_at": "2026-11-05T11:02:34.144849+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-113": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/madison-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 177047,
+    "sha256": "24104582c4733aaa8b5f8b49b794196ddda7b0a02547386a5312791a8746f73b",
+    "fetched_at": "2026-11-05T11:02:34.163569+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-111": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/lunenburg-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 192549,
+    "sha256": "c66052ed5e179f12e819d0bc9a40ab1f813777e89bd9edd56ffe0f02ec9fa864",
+    "fetched_at": "2026-11-05T11:02:34.172360+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-685": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/manassas-park-city/2026-November-General/data",
+    "status": 200,
+    "bytes": 178027,
+    "sha256": "54d0bd952bd8994462818472fee49ed024c5be85f219e14c97802913181a3e80",
+    "fetched_at": "2026-11-05T11:02:34.233386+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-683": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/manassas-city/2026-November-General/data",
+    "status": 200,
+    "bytes": 199671,
+    "sha256": "7e803d765f7a0778f609ac59066484d8366c433612358d2c7b91166478574caa",
+    "fetched_at": "2026-11-05T11:02:34.245429+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-690": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/martinsville-city/2026-November-General/data",
+    "status": 200,
+    "bytes": 179348,
+    "sha256": "5dc6a6068b2f6c6eb07dfec9db8fff2988875e795842c25dea1e88f674aedce1",
+    "fetched_at": "2026-11-05T11:02:34.260863+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-115": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/mathews-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 173494,
+    "sha256": "3c026e4add79189001f21451e5dd7085d63bf4ace070aefa0fc873e2b0ed44be",
+    "fetched_at": "2026-11-05T11:02:34.268778+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-119": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/middlesex-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 200936,
+    "sha256": "3563160cd718e45b19ae295d01cb7f776a8017d7a0d766461b30626ac3105cdd",
+    "fetched_at": "2026-11-05T11:02:34.334390+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-117": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/mecklenburg-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 238638,
+    "sha256": "df142c23686235a2b71c74f3186b4389d883b790d2db93eff814456dbfc3e023",
+    "fetched_at": "2026-11-05T11:02:34.358424+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-125": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/nelson-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 169586,
+    "sha256": "7c74e42773aba4817ec401b8c12e138a7f802e9a7af1cdf105027ad6798d379e",
+    "fetched_at": "2026-11-05T11:02:34.371468+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-121": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/montgomery-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 187657,
+    "sha256": "e46f36ab44a7f54e093f507ab4f3dda1c5f8371de7a2a7eb8011a3233052f8eb",
+    "fetched_at": "2026-11-05T11:02:34.371580+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-700": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/newport-news-city/2026-November-General/data",
+    "status": 200,
+    "bytes": 238128,
+    "sha256": "bc47aab2aea7c61ebe2ea5fad8e6389352a1c279c7fe2b681dc650efce68d7d8",
+    "fetched_at": "2026-11-05T11:02:34.447985+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-127": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/new-kent-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 174045,
+    "sha256": "206966805057c894e9c5316616317368ad559aabf49557dacc3d92505b264043",
+    "fetched_at": "2026-11-05T11:02:34.452508+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-710": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/norfolk-city/2026-November-General/data",
+    "status": 200,
+    "bytes": 250259,
+    "sha256": "f4a76e74810fc4279cb13644aa4fa39e678ab5cb3f45e7eb5b26a7bc738b0f09",
+    "fetched_at": "2026-11-05T11:02:34.458661+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-131": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/northampton-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 281418,
+    "sha256": "d35857ef8585eaa57d5ee230474c810477ff219329be6a5de5fd428a45848430",
+    "fetched_at": "2026-11-05T11:02:34.485663+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-133": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/northumberland-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 183045,
+    "sha256": "2f068f49c829c2fc74ae4a7671a866f2ed15da7be78b8f6c0dd0a5049da5afb5",
+    "fetched_at": "2026-11-05T11:02:34.545343+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-135": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/nottoway-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 274103,
+    "sha256": "3233a827de8bd8639d886e3e8c5363c61d695423db23216fc56939cc6d8918a9",
+    "fetched_at": "2026-11-05T11:02:34.552272+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-720": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/norton-city/2026-November-General/data",
+    "status": 200,
+    "bytes": 180006,
+    "sha256": "b4295b920006cfa822c1fcc6464dcebe6c34d75ed0b7301417f65b10a5687e65",
+    "fetched_at": "2026-11-05T11:02:34.555855+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-137": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/orange-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 193133,
+    "sha256": "71d2b52b4b2bf22f6945072bcb3187d00acfc26d3866bc8a38fe46d6b2450b74",
+    "fetched_at": "2026-11-05T11:02:34.573655+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-139": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/page-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 212040,
+    "sha256": "06af1437d24fee7b552168b183b700c379f9822765c46d5d7b66158955ee21cd",
+    "fetched_at": "2026-11-05T11:02:34.632976+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-730": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/petersburg-city/2026-November-General/data",
+    "status": 200,
+    "bytes": 216441,
+    "sha256": "2ff007b7e5d0cbaca93399adf9fdb38d5a98283fa88ba71fbd92ea8130ae46b4",
+    "fetched_at": "2026-11-05T11:02:34.647015+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-141": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/patrick-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 183930,
+    "sha256": "8626204467afe96a4394f2db8e0f449ffa95e3a689543a8decbc285b993fca21",
+    "fetched_at": "2026-11-05T11:02:34.658141+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-143": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/pittsylvania-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 212053,
+    "sha256": "8400d4832fec6cd19eefdb11ef57ab3c631b6b8523dbc4ce706e0620776629e5",
+    "fetched_at": "2026-11-05T11:02:34.668778+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-740": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/portsmouth-city/2026-November-General/data",
+    "status": 200,
+    "bytes": 210377,
+    "sha256": "8f6bf97be5f945657e5c2b8b458af88fde2f52034721acaed81f40a45a97ba51",
+    "fetched_at": "2026-11-05T11:02:34.747658+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-145": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/powhatan-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 176499,
+    "sha256": "eb325f582946f120115533cb5254380fc381004a77074c7ef292786a4dda77a7",
+    "fetched_at": "2026-11-05T11:02:34.752550+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-147": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/prince-edward-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 219448,
+    "sha256": "3a671f38924fbf779ecf6a3161fd6658a576182547697112947c2860f03db8d9",
+    "fetched_at": "2026-11-05T11:02:34.762246+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-735": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/poquoson-city/2026-November-General/data",
+    "status": 200,
+    "bytes": 173413,
+    "sha256": "67c8a36cdff5679bb6ab21779c7dae6a375148a0798152e119a894f9854c3c91",
+    "fetched_at": "2026-11-05T11:02:34.763265+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-153": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/prince-william-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 295395,
+    "sha256": "8d9a41531e3ab87eb23c713d93380405dd9ab29c655d2d32b6aea558eb0390ff",
+    "fetched_at": "2026-11-05T11:02:34.838101+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-149": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/prince-george-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 169763,
+    "sha256": "0fded28eadec96c1a74580c9445ec7e2aab84f9c2e63c5aaf355c062a3f9dc3f",
+    "fetched_at": "2026-11-05T11:02:34.849087+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-750": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/radford-city/2026-November-General/data",
+    "status": 200,
+    "bytes": 192561,
+    "sha256": "e8c83846e9e14c4154b370fde8aa73cbed3d5a632388a53a9ed4827263211579",
+    "fetched_at": "2026-11-05T11:02:34.859911+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-155": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/pulaski-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 192192,
+    "sha256": "ca9bc1f47cf273fdaec22972297977015db967ac4ab91a2dd7e9933276d428ca",
+    "fetched_at": "2026-11-05T11:02:34.867395+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-157": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/rappahannock-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 191674,
+    "sha256": "72c540a8474eb652fdb48ff23beb81be6c08f755d68ab40a1de666a81ba34b6b",
+    "fetched_at": "2026-11-05T11:02:34.928913+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-760": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/richmond-city/2026-November-General/data",
+    "status": 200,
+    "bytes": 199600,
+    "sha256": "d6122d4c61c86c304f324454656e85caffabb9ec59e3cf6f3855580dbcbd76f6",
+    "fetched_at": "2026-11-05T11:02:34.941683+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-159": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/richmond-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 169837,
+    "sha256": "18f3cf0133b60e9d922680678f08697fe538eca42feba792cb76fe08397a7940",
+    "fetched_at": "2026-11-05T11:02:34.951307+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-770": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/roanoke-city/2026-November-General/data",
+    "status": 200,
+    "bytes": 181269,
+    "sha256": "4a5c1f433c41a0415b0e77c784eda57d9334f758ef6be8b5cbbec51e0422e93e",
+    "fetched_at": "2026-11-05T11:02:34.959643+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-161": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/roanoke-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 184728,
+    "sha256": "3fea87194130e9d41679aecf4051a3b47cdf08cb326187c473399725becb3542",
+    "fetched_at": "2026-11-05T11:02:35.043685+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-165": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/rockingham-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 275316,
+    "sha256": "6f5d76c6568757bb7a29061eed33fb8b2b6c3afa297e7a976fa2de8fe0e82b59",
+    "fetched_at": "2026-11-05T11:02:35.055800+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-167": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/russell-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 211628,
+    "sha256": "bdf221dfc6395223a3fbf5c0586c4451d4aa22fccdab6fdf8a1126ab8eddc27e",
+    "fetched_at": "2026-11-05T11:02:35.059763+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-163": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/rockbridge-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 194539,
+    "sha256": "dc31061e62d806c112234b3d36e4a862deacdd0499dabb425c9d3ae72f957a86",
+    "fetched_at": "2026-11-05T11:02:35.075611+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-169": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/scott-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 260809,
+    "sha256": "dc7c358fbf6c838c265c4db99a530d888d95d0850a3fce460892c60913d90451",
+    "fetched_at": "2026-11-05T11:02:35.140615+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-171": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/shenandoah-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 239166,
+    "sha256": "4ccf7db74aad5b0026c9633ec38628b17d09bbd4b345ca02ccf6d3d5810e1ca8",
+    "fetched_at": "2026-11-05T11:02:35.150706+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-175": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/southampton-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 283955,
+    "sha256": "6725fdba22d7140bcbb7b6dcf4519c222c3b52015fae3b2b66159a7dc6779627",
+    "fetched_at": "2026-11-05T11:02:35.240758+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-177": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/spotsylvania-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 224117,
+    "sha256": "e95174b9bfc0285ce8ab5e6fe1633429df85bba3e74b87ac695738daa8a9b733",
+    "fetched_at": "2026-11-05T11:02:35.244867+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-173": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/smyth-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 222708,
+    "sha256": "9b224898d670529f268c2dc8f195429cd3e8758e6aae254e8322152d30761e79",
+    "fetched_at": "2026-11-05T11:02:35.259761+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-775": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/salem-city/2026-November-General/data",
+    "status": 200,
+    "bytes": 174485,
+    "sha256": "df7a8718e664d1dba3e69be7deeab54bb83959669f59449e58e942f03911784e",
+    "fetched_at": "2026-11-05T11:02:35.288407+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-790": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/staunton-city/2026-November-General/data",
+    "status": 200,
+    "bytes": 187473,
+    "sha256": "61b1fc6b1a4f7ba5bb07f5e2f076311493bd1f303f04e4f956526f68469d5954",
+    "fetched_at": "2026-11-05T11:02:35.331573+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-179": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/stafford-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 186077,
+    "sha256": "16da2231b30fb51a32ced5f8e6dc1f8cae3be2358e64ca66299b0350c3a4b88a",
+    "fetched_at": "2026-11-05T11:02:35.332665+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-800": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/suffolk-city/2026-November-General/data",
+    "status": 200,
+    "bytes": 225859,
+    "sha256": "0c2864db8cf2080a2b6948b380e7c3de6d571e2dc59e697dd6f8c2b77ee01f58",
+    "fetched_at": "2026-11-05T11:02:35.353077+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-181": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/surry-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 221160,
+    "sha256": "ea5850f1d36895ecf2beec2b4477cab11fd1f558cea6b0d5ab0760f53e2e521f",
+    "fetched_at": "2026-11-05T11:02:35.399033+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-810": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/virginia-beach-city/2026-November-General/data",
+    "status": 200,
+    "bytes": 282688,
+    "sha256": "411acc04a15865e2e9027291a8b7238525bf9f1ab3d651abf191e91b7900542a",
+    "fetched_at": "2026-11-05T11:02:35.446107+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-183": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/sussex-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 239400,
+    "sha256": "89dba4ee6d23bb1a8cd44eef29784d80b0faf0f20183c1c4c31875fd4ca102c7",
+    "fetched_at": "2026-11-05T11:02:35.448258+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-185": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/tazewell-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 235866,
+    "sha256": "a647e024d4d687b1f5b8090343a91941a399cae3b2cbeccd843b2c2aabde4a19",
+    "fetched_at": "2026-11-05T11:02:35.455299+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-187": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/warren-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 179856,
+    "sha256": "3658f28bf6450fb8f269303ed320e05616ae3296b325760f410226d20f5fe326",
+    "fetched_at": "2026-11-05T11:02:35.490873+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-191": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/washington-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 234285,
+    "sha256": "4b2af27d9f3dc4ebb68f5e86e80f7386b74d380f0ee14c5eafd3f9f1ccb1b259",
+    "fetched_at": "2026-11-05T11:02:35.554849+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-830": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/williamsburg-city/2026-November-General/data",
+    "status": 200,
+    "bytes": 168277,
+    "sha256": "33d3c04ca6ed61bd85c0d920c72a44b1d43697044a322f82c49d3c7400bbf690",
+    "fetched_at": "2026-11-05T11:02:35.568689+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-193": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/westmoreland-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 191399,
+    "sha256": "bfdf26c7ef7d1f34e83d50de42932e705da086a14e38a8b44b6bf123cda85925",
+    "fetched_at": "2026-11-05T11:02:35.572920+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-820": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/waynesboro-city/2026-November-General/data",
+    "status": 200,
+    "bytes": 192254,
+    "sha256": "3be64cce3027e08fe8ca3177a98c39bdc5cc086c5d28182f348f20f702fe1fbf",
+    "fetched_at": "2026-11-05T11:02:35.578682+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-840": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/winchester-city/2026-November-General/data",
+    "status": 200,
+    "bytes": 209156,
+    "sha256": "e9c9f897f9f58de2eaf11716fa65aadb895391e3d9430e830bb8bbe3fc107dcc",
+    "fetched_at": "2026-11-05T11:02:35.654713+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-197": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/wythe-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 203493,
+    "sha256": "e891d4597b3e05044229cf004cc4517201e2dc51f75fcd419729ed24c2ef4f2b",
+    "fetched_at": "2026-11-05T11:02:35.659187+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-199": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/york-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 169457,
+    "sha256": "ea0957628f75485d125d38636b020fde622d1f1bd5a0db8db56184167c20cedf",
+    "fetched_at": "2026-11-05T11:02:35.668849+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "locality-195": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/wise-county/2026-November-General/data",
+    "status": 200,
+    "bytes": 209482,
+    "sha256": "29ef0a7a53ddfec45b8d6db1a533d9ff4a4974aa20d5791fb7c24a537c57754d",
+    "fetched_at": "2026-11-05T11:02:35.681112+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-001-01000000-f030-c43d-9f22-08df1fee4fe4": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/accomack-county/2026-November-General/data/ballot-item/01000000-f030-c43d-9f22-08df1fee4fe4",
+    "status": 200,
+    "bytes": 561006,
+    "sha256": "f66f044cf7f31eccde55f29c5f91f2bae2bf53c3cc8bb016796acf3ac8a6fd99",
+    "fetched_at": "2026-11-05T11:00:52.540327+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "reused_original": true
+  },
+  "house-005-01000000-f030-c43d-4ace-08df1fee5161": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/alleghany-county/2026-November-General/data/ballot-item/01000000-f030-c43d-4ace-08df1fee5161",
+    "status": 200,
+    "bytes": 274499,
+    "sha256": "f399ce2075b7b67950083431df009da78c31b92ee5d9cd2cf85f7144f3a1c800",
+    "fetched_at": "2026-11-05T11:02:36.012317+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-003-01000000-f030-c43d-2a25-08df1fee50fc": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/albemarle-county/2026-November-General/data/ballot-item/01000000-f030-c43d-2a25-08df1fee50fc",
+    "status": 200,
+    "bytes": 446071,
+    "sha256": "5a924707f10963b4013ae313b1b37c946e91502e9beb75ad9d24c8d70b9d7d01",
+    "fetched_at": "2026-11-05T11:02:36.087822+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-510-01000000-f030-c43d-cee2-08df1fee4fbf": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/alexandria-city/2026-November-General/data/ballot-item/01000000-f030-c43d-cee2-08df1fee4fbf",
+    "status": 200,
+    "bytes": 495803,
+    "sha256": "9194c4bd1421fe8af0aad097feeec65858c97fb40c2d838090edf302e7f88313",
+    "fetched_at": "2026-11-05T11:02:36.095017+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-007-01000000-f030-c43d-4b6c-08df1fee50ad": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/amelia-county/2026-November-General/data/ballot-item/01000000-f030-c43d-4b6c-08df1fee50ad",
+    "status": 200,
+    "bytes": 217071,
+    "sha256": "f1f7a6f231e017e6fd527ad71cc330abb8bd3d6e2230b988f9d99d6dcd7922fb",
+    "fetched_at": "2026-11-05T11:02:36.195770+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-003-01000000-f030-c43d-2ed1-08df1fee50fc": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/albemarle-county/2026-November-General/data/ballot-item/01000000-f030-c43d-2ed1-08df1fee50fc",
+    "status": 200,
+    "bytes": 231486,
+    "sha256": "be3cee4ac73f5961cd361c4f4b440811fc7c1892763ac288b76d1ae5408c3909",
+    "fetched_at": "2026-11-05T11:02:36.247526+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-009-01000000-f030-c43d-25e5-08df1fee51b7": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/amherst-county/2026-November-General/data/ballot-item/01000000-f030-c43d-25e5-08df1fee51b7",
+    "status": 200,
+    "bytes": 292549,
+    "sha256": "c0a88f7d3424ccdf361be15f2abf6036f78b3c869215c4ed6321f72097f97e85",
+    "fetched_at": "2026-11-05T11:02:36.341557+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-011-01000000-f030-c43d-1aa6-08df1fee4e93": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/appomattox-county/2026-November-General/data/ballot-item/01000000-f030-c43d-1aa6-08df1fee4e93",
+    "status": 200,
+    "bytes": 268174,
+    "sha256": "df5f3a07c331a70805fa524edc96f8d095b822641cbeb9ee759e7e0afda73ba7",
+    "fetched_at": "2026-11-05T11:02:36.404912+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-015-01000000-f030-c43d-9e80-08df1fee5043": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/augusta-county/2026-November-General/data/ballot-item/01000000-f030-c43d-9e80-08df1fee5043",
+    "status": 200,
+    "bytes": 360449,
+    "sha256": "d584b5e1971fc4415121dea290e695abb62f58d2148315513a24cdcbeeccf49e",
+    "fetched_at": "2026-11-05T11:02:36.435886+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-019-01000000-f030-c43d-932e-08df1fee5179": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/bedford-county/2026-November-General/data/ballot-item/01000000-f030-c43d-932e-08df1fee5179",
+    "status": 200,
+    "bytes": 333980,
+    "sha256": "b8b6439a73f9cc77c54fc1853b546a60697be584fc3a1ba1b099e88e2a712441",
+    "fetched_at": "2026-11-05T11:02:36.625211+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-019-01000000-f030-c43d-956b-08df1fee5179": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/bedford-county/2026-November-General/data/ballot-item/01000000-f030-c43d-956b-08df1fee5179",
+    "status": 200,
+    "bytes": 216401,
+    "sha256": "07f2f9ec2fd8413f6a785cefe41c94cd6dec93e71baec7adebcadbfd16915329",
+    "fetched_at": "2026-11-05T11:02:36.632087+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-013-01000000-f030-c43d-01b8-08df1fee50bf": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/arlington-county/2026-November-General/data/ballot-item/01000000-f030-c43d-01b8-08df1fee50bf",
+    "status": 200,
+    "bytes": 769926,
+    "sha256": "79a8bc836a3c5ad80b90be0fb714da49a80273099f54aa83936e06a3096a3eb4",
+    "fetched_at": "2026-11-05T11:02:36.747528+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-017-01000000-f030-c43d-2846-08df1fee4e9e": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/bath-county/2026-November-General/data/ballot-item/01000000-f030-c43d-2846-08df1fee4e9e",
+    "status": 200,
+    "bytes": 224414,
+    "sha256": "813634ec0adcd4a6706064e61990b3a9488f30e2c4562df83aeb225fb185ca80",
+    "fetched_at": "2026-11-05T11:02:36.784129+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-021-01000000-f030-c43d-2364-08df1fee51e9": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/bland-county/2026-November-General/data/ballot-item/01000000-f030-c43d-2364-08df1fee51e9",
+    "status": 200,
+    "bytes": 214365,
+    "sha256": "8c1f258c24e7f5d8dc4703c409e45bcbd5359ea1112642ae79c74f9e4aa7da74",
+    "fetched_at": "2026-11-05T11:02:37.028358+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-520-01000000-f030-c43d-a098-08df1fee514a": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/bristol-city/2026-November-General/data/ballot-item/01000000-f030-c43d-a098-08df1fee514a",
+    "status": 200,
+    "bytes": 222882,
+    "sha256": "dc152d8fd30738dfbc0912298f030dbe211aa16dbad797cdadc0682dae21d25e",
+    "fetched_at": "2026-11-05T11:02:37.076443+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-019-01000000-f030-c43d-9754-08df1fee5179": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/bedford-county/2026-November-General/data/ballot-item/01000000-f030-c43d-9754-08df1fee5179",
+    "status": 200,
+    "bytes": 298510,
+    "sha256": "6c0bc315d54425a75df9c9f49ae2218e30afcb5173c14acd4a59f61575d4f600",
+    "fetched_at": "2026-11-05T11:02:37.082971+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-023-01000000-f030-c43d-244c-08df1fee51e1": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/botetourt-county/2026-November-General/data/ballot-item/01000000-f030-c43d-244c-08df1fee51e1",
+    "status": 200,
+    "bytes": 263774,
+    "sha256": "6cb5d6722cb46d274efdc63591a89a094939cb1cf0cf8a9a3f738a354998dcfc",
+    "fetched_at": "2026-11-05T11:02:37.242059+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-029-01000000-f030-c43d-71c5-08df1fee5015": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/buckingham-county/2026-November-General/data/ballot-item/01000000-f030-c43d-71c5-08df1fee5015",
+    "status": 200,
+    "bytes": 256712,
+    "sha256": "676bcdf3123275bdd7e12c7279bc92a8d46fce53cb23d976f6e952e85b0a509a",
+    "fetched_at": "2026-11-05T11:02:37.304770+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-025-01000000-f030-c43d-d8f4-08df1fee5012": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/brunswick-county/2026-November-General/data/ballot-item/01000000-f030-c43d-d8f4-08df1fee5012",
+    "status": 200,
+    "bytes": 306492,
+    "sha256": "1be66bd33ea4a9367e0ab11a70a7cd4e8b84370d2f7d813b8ca4cdadb59d1379",
+    "fetched_at": "2026-11-05T11:02:37.394754+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-027-01000000-f030-c43d-a067-08df1fee4eaf": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/buchanan-county/2026-November-General/data/ballot-item/01000000-f030-c43d-a067-08df1fee4eaf",
+    "status": 200,
+    "bytes": 278580,
+    "sha256": "36b2ab3609a052ae83b96a1004e13ea4196579ec449aa5302acc7cd85f895800",
+    "fetched_at": "2026-11-05T11:02:37.448936+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-031-01000000-f030-c43d-08fd-08df1fee4e78": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/campbell-county/2026-November-General/data/ballot-item/01000000-f030-c43d-08fd-08df1fee4e78",
+    "status": 200,
+    "bytes": 322761,
+    "sha256": "91669c3c9578836d639789c8f7c03f681158685986afad4cda8f0d84cb5dcaac",
+    "fetched_at": "2026-11-05T11:02:37.523078+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-530-01000000-f030-c43d-c16e-08df1fee5099": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/buena-vista-city/2026-November-General/data/ballot-item/01000000-f030-c43d-c16e-08df1fee5099",
+    "status": 200,
+    "bytes": 195019,
+    "sha256": "d86acbbc66badf71ff9f107141e8baa47b90cc34b8c7504cc4822de4d6c39ca3",
+    "fetched_at": "2026-11-05T11:02:37.607848+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-035-01000000-f030-c43d-8f83-08df1fee4e70": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/carroll-county/2026-November-General/data/ballot-item/01000000-f030-c43d-8f83-08df1fee4e70",
+    "status": 200,
+    "bytes": 283818,
+    "sha256": "c4bbf20a1f0ee0070199076cda873a050ac1adc95e4b1591cf29262337c593bd",
+    "fetched_at": "2026-11-05T11:02:37.637952+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-036-01000000-f030-c43d-d99f-08df1fee51c5": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/charles-city-county/2026-November-General/data/ballot-item/01000000-f030-c43d-d99f-08df1fee51c5",
+    "status": 200,
+    "bytes": 201964,
+    "sha256": "f4d1be8e064a545940faa2489daf0fb7128566701c29fb1ad759f2247c663d51",
+    "fetched_at": "2026-11-05T11:02:37.755134+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-033-01000000-f030-c43d-4ab7-08df1fee4e7b": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/caroline-county/2026-November-General/data/ballot-item/01000000-f030-c43d-4ab7-08df1fee4e7b",
+    "status": 200,
+    "bytes": 382842,
+    "sha256": "dcf728febb35447143c2d61b0525ab43886a84ef35582c1506d1e0699441cf33",
+    "fetched_at": "2026-11-05T11:02:37.946987+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-037-01000000-f030-c43d-3928-08df1fee50dc": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/charlotte-county/2026-November-General/data/ballot-item/01000000-f030-c43d-3928-08df1fee50dc",
+    "status": 200,
+    "bytes": 277869,
+    "sha256": "addc0ab9c8667c1f5fe9aa0ef22b36ed422a0abc6e9bef3241dd9d0eec06d93f",
+    "fetched_at": "2026-11-05T11:02:38.046344+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-540-01000000-f030-c43d-ee1d-08df1fee51cc": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/charlottesville-city/2026-November-General/data/ballot-item/01000000-f030-c43d-ee1d-08df1fee51cc",
+    "status": 200,
+    "bytes": 250107,
+    "sha256": "22b97e12293c255ef39cb2e0586c084653a0418b10233e940a2317719344f100",
+    "fetched_at": "2026-11-05T11:02:38.095397+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-550-01000000-f030-c43d-f5b6-08df1fee5143": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/chesapeake-city/2026-November-General/data/ballot-item/01000000-f030-c43d-f5b6-08df1fee5143",
+    "status": 200,
+    "bytes": 582890,
+    "sha256": "eb7c5c27e62a8000ae63eecd1861e28cb423982e8da5a37a2890246e5b39cc98",
+    "fetched_at": "2026-11-05T11:02:38.266597+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-041-01000000-f030-c43d-04ee-08df1fee5092": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/chesterfield-county/2026-November-General/data/ballot-item/01000000-f030-c43d-04ee-08df1fee5092",
+    "status": 200,
+    "bytes": 554596,
+    "sha256": "7da95cac6ff078d99018ccf45f85941468c68c356e17dbfe19ab75de43505bcb",
+    "fetched_at": "2026-11-05T11:02:38.339371+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-550-01000000-f030-c43d-00a2-08df1fee5144": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/chesapeake-city/2026-November-General/data/ballot-item/01000000-f030-c43d-00a2-08df1fee5144",
+    "status": 200,
+    "bytes": 573781,
+    "sha256": "98ae28d53d0086e3654b329451ab587fc2ec93591c4342933204c89d8923b221",
+    "fetched_at": "2026-11-05T11:02:38.359205+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-043-01000000-f030-c43d-8396-08df1fee4fca": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/clarke-county/2026-November-General/data/ballot-item/01000000-f030-c43d-8396-08df1fee4fca",
+    "status": 200,
+    "bytes": 224434,
+    "sha256": "fd9585f3bdc7704a389cad9dfeb9e30293c430c4450792100d3738dc8c3c514e",
+    "fetched_at": "2026-11-05T11:02:38.478417+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-570-01000000-f030-c43d-b7f1-08df1fee512c": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/colonial-heights-city/2026-November-General/data/ballot-item/01000000-f030-c43d-b7f1-08df1fee512c",
+    "status": 200,
+    "bytes": 237344,
+    "sha256": "2a63a57dd425670037ffa56188c29898a22ec678d9ceeb638cb6753df8d0fb7d",
+    "fetched_at": "2026-11-05T11:02:38.552056+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-041-01000000-f030-c43d-07ce-08df1fee5092": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/chesterfield-county/2026-November-General/data/ballot-item/01000000-f030-c43d-07ce-08df1fee5092",
+    "status": 200,
+    "bytes": 444608,
+    "sha256": "42278190ea0b9b904b81698963d59372049ca38ff013559e59804e7c3e93ea25",
+    "fetched_at": "2026-11-05T11:02:38.561732+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-580-01000000-f030-c43d-855c-08df1fee509d": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/covington-city/2026-November-General/data/ballot-item/01000000-f030-c43d-855c-08df1fee509d",
+    "status": 200,
+    "bytes": 220058,
+    "sha256": "31250a7a8f0fcbbfd982932e7c7928b5213e4e460036a337c6212aa73d526f1a",
+    "fetched_at": "2026-11-05T11:02:38.699874+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-049-01000000-f030-c43d-2c60-08df1fee4e7e": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/cumberland-county/2026-November-General/data/ballot-item/01000000-f030-c43d-2c60-08df1fee4e7e",
+    "status": 200,
+    "bytes": 223101,
+    "sha256": "f908afa9508f9187548e313e252ffb253430331c2a38df7bb98f50143238dee6",
+    "fetched_at": "2026-11-05T11:02:38.746875+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-045-01000000-f030-c43d-a3d1-08df1fee501f": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/craig-county/2026-November-General/data/ballot-item/01000000-f030-c43d-a3d1-08df1fee501f",
+    "status": 200,
+    "bytes": 234362,
+    "sha256": "a8a0891da85034d0cef43be54734768ade3d97c4801d8590e9927b1ff27546ac",
+    "fetched_at": "2026-11-05T11:02:38.961491+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-051-01000000-f030-c43d-6d66-08df1fee5067": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/dickenson-county/2026-November-General/data/ballot-item/01000000-f030-c43d-6d66-08df1fee5067",
+    "status": 200,
+    "bytes": 273517,
+    "sha256": "9cda4aa74577bf9b5124493090eef571fbbcc11b502a3862080eb947617fc915",
+    "fetched_at": "2026-11-05T11:02:39.061014+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-047-01000000-f030-c43d-264c-08df1fee4e9b": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/culpeper-county/2026-November-General/data/ballot-item/01000000-f030-c43d-264c-08df1fee4e9b",
+    "status": 200,
+    "bytes": 390038,
+    "sha256": "287898b9dbe61205f9e1da7cd3fb5c7124a5acda7e81a25308ca63b230cc392a",
+    "fetched_at": "2026-11-05T11:02:39.079082+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-590-01000000-f030-c43d-b1b6-08df1fee514f": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/danville-city/2026-November-General/data/ballot-item/01000000-f030-c43d-b1b6-08df1fee514f",
+    "status": 200,
+    "bytes": 336524,
+    "sha256": "f82aba3fff17b02d52f21397e720dd9c189dafe3a77a14f41c96896f29675f25",
+    "fetched_at": "2026-11-05T11:02:39.105510+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-053-01000000-f030-c43d-a5fb-08df1fee4e73": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/dinwiddie-county/2026-November-General/data/ballot-item/01000000-f030-c43d-a5fb-08df1fee4e73",
+    "status": 200,
+    "bytes": 294643,
+    "sha256": "244cd14f1911b77dbae6c1a299acb3285ce5178c2080c2be65c27f1f87fdf65f",
+    "fetched_at": "2026-11-05T11:02:39.155682+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-595-01000000-f030-c43d-6871-08df1fee50b1": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/emporia-city/2026-November-General/data/ballot-item/01000000-f030-c43d-6871-08df1fee50b1",
+    "status": 200,
+    "bytes": 257765,
+    "sha256": "671fcca6f0e5583420ada1dfd3bb1b8692f51b250a8aab3e4643db6dd30b69e4",
+    "fetched_at": "2026-11-05T11:02:39.256251+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-600-01000000-f030-c43d-b67f-08df1fee51da": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/fairfax-city/2026-November-General/data/ballot-item/01000000-f030-c43d-b67f-08df1fee51da",
+    "status": 200,
+    "bytes": 267035,
+    "sha256": "0850ce407c766016fcc39e5b6e76edc3901db44e6e51717ffa26572168d4337f",
+    "fetched_at": "2026-11-05T11:02:39.296654+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-057-01000000-f030-c43d-69ff-08df1fee50c2": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/essex-county/2026-November-General/data/ballot-item/01000000-f030-c43d-69ff-08df1fee50c2",
+    "status": 200,
+    "bytes": 218052,
+    "sha256": "b84d853202b62af164c9ee2fd3c8c4e52d24690b48a9e99f897a482f0b05297b",
+    "fetched_at": "2026-11-05T11:02:39.337723+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-059-01000000-f030-c43d-8c00-08df1fee50e7": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/fairfax-county/2026-November-General/data/ballot-item/01000000-f030-c43d-8c00-08df1fee50e7",
+    "status": 200,
+    "bytes": 1680777,
+    "sha256": "758c5b1c291dd8eacdefd24b59576f4ec3c6a76974bb0faab8bdfd6f9d4ec406",
+    "fetched_at": "2026-11-05T11:02:39.428986+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-610-01000000-f030-c43d-1959-08df1fee4fab": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/falls-church-city/2026-November-General/data/ballot-item/01000000-f030-c43d-1959-08df1fee4fab",
+    "status": 200,
+    "bytes": 204229,
+    "sha256": "466fe7721db54db593c1bf6f01ea7195ebee412b51e35e080966e7afa8e72f7d",
+    "fetched_at": "2026-11-05T11:02:39.530252+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-061-01000000-f030-c43d-5bbb-08df1fee4fa1": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/fauquier-county/2026-November-General/data/ballot-item/01000000-f030-c43d-5bbb-08df1fee4fa1",
+    "status": 200,
+    "bytes": 409252,
+    "sha256": "eaa4baab76a13a58184b4189cac7db654ae3a961fd6af3856d5609a5c611a56d",
+    "fetched_at": "2026-11-05T11:02:39.649796+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-059-01000000-f030-c43d-9182-08df1fee50e7": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/fairfax-county/2026-November-General/data/ballot-item/01000000-f030-c43d-9182-08df1fee50e7",
+    "status": 200,
+    "bytes": 383671,
+    "sha256": "ddc8bbdc547c05fc079e50be4556ea00809f4786c4c2f5e5662a16b69d2768ab",
+    "fetched_at": "2026-11-05T11:02:39.735939+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-059-01000000-f030-c43d-8ed7-08df1fee50e7": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/fairfax-county/2026-November-General/data/ballot-item/01000000-f030-c43d-8ed7-08df1fee50e7",
+    "status": 200,
+    "bytes": 1128406,
+    "sha256": "77dc82de7ec64d9a946cde218dc83a18ba7616222d052f93305df92879c940ae",
+    "fetched_at": "2026-11-05T11:02:39.790862+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-065-01000000-f030-c43d-402e-08df1fee519f": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/fluvanna-county/2026-November-General/data/ballot-item/01000000-f030-c43d-402e-08df1fee519f",
+    "status": 200,
+    "bytes": 227812,
+    "sha256": "a1ae97a806461f294dc872bd8b62f507a218dc7c2e9bc7b177c7395e63d7d34a",
+    "fetched_at": "2026-11-05T11:02:39.829127+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-063-01000000-f030-c43d-e83b-08df1fee510f": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/floyd-county/2026-November-General/data/ballot-item/01000000-f030-c43d-e83b-08df1fee510f",
+    "status": 200,
+    "bytes": 210399,
+    "sha256": "811d15790f31715b2eedd8f4e6c484cd3000189da9c26a3982e5f1cc8c0996dc",
+    "fetched_at": "2026-11-05T11:02:39.938237+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-620-01000000-f030-c43d-1c38-08df1fee50c6": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/franklin-city/2026-November-General/data/ballot-item/01000000-f030-c43d-1c38-08df1fee50c6",
+    "status": 200,
+    "bytes": 257769,
+    "sha256": "e7586db7a9d60dfc7b224f3905139bcfd381a86b06651b8d794b92d7e1e4f549",
+    "fetched_at": "2026-11-05T11:02:39.986445+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-067-01000000-f030-c43d-5ebd-08df1fee5158": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/franklin-county/2026-November-General/data/ballot-item/01000000-f030-c43d-5ebd-08df1fee5158",
+    "status": 200,
+    "bytes": 340684,
+    "sha256": "d61dc2dab19f168fd63a8e0d0ac4b08fc80e2e350deb73ad26b0328cb14501d9",
+    "fetched_at": "2026-11-05T11:02:39.991502+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-630-01000000-f030-c43d-d818-08df1fee51ef": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/fredericksburg-city/2026-November-General/data/ballot-item/01000000-f030-c43d-d818-08df1fee51ef",
+    "status": 200,
+    "bytes": 256421,
+    "sha256": "a91b4c5d9bdcc23023c57ee52f9952cacef3bb3d0c713088398be0e8a345cb3b",
+    "fetched_at": "2026-11-05T11:02:40.137664+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-069-01000000-f030-c43d-b026-08df1fee517d": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/frederick-county/2026-November-General/data/ballot-item/01000000-f030-c43d-b026-08df1fee517d",
+    "status": 200,
+    "bytes": 400716,
+    "sha256": "2c291839dda54b5d4a90524e9e24197eefeb516309975689689300ba9960c5c9",
+    "fetched_at": "2026-11-05T11:02:40.178848+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-073-01000000-f030-c43d-cf57-08df1fee50ff": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/gloucester-county/2026-November-General/data/ballot-item/01000000-f030-c43d-cf57-08df1fee50ff",
+    "status": 200,
+    "bytes": 241495,
+    "sha256": "48ee74fa9cc3cc1675543cf6d284a709fae3f37e79a13a7d314e836d5d586ab2",
+    "fetched_at": "2026-11-05T11:02:40.256436+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-640-01000000-f030-c43d-6460-08df1fee4d42": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/galax-city/2026-November-General/data/ballot-item/01000000-f030-c43d-6460-08df1fee4d42",
+    "status": 200,
+    "bytes": 183508,
+    "sha256": "21f3478461a285824b9eee7bd4fb0e849e927715a64db107c0bc8335fc226afb",
+    "fetched_at": "2026-11-05T11:02:40.334336+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-071-01000000-f030-c43d-d345-08df1fee50a0": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/giles-county/2026-November-General/data/ballot-item/01000000-f030-c43d-d345-08df1fee50a0",
+    "status": 200,
+    "bytes": 247268,
+    "sha256": "f8adc445efcd074906576ae71b3957161f26cb6080826c815d54d4b580b258c1",
+    "fetched_at": "2026-11-05T11:02:40.409531+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-075-01000000-f030-c43d-ab4d-08df1fee4ea6": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/goochland-county/2026-November-General/data/ballot-item/01000000-f030-c43d-ab4d-08df1fee4ea6",
+    "status": 200,
+    "bytes": 259704,
+    "sha256": "42dc1fcc8c22cde7d2c9f9cab086b235ed79ee98bccd61cfd32cec4d43705a7e",
+    "fetched_at": "2026-11-05T11:02:40.661349+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-077-01000000-f030-c43d-7b35-08df1fee5168": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/grayson-county/2026-November-General/data/ballot-item/01000000-f030-c43d-7b35-08df1fee5168",
+    "status": 200,
+    "bytes": 344205,
+    "sha256": "2bd81fee53d4510fb44db71f18c4d9a67c1546db708a115c2eed128d94d046a5",
+    "fetched_at": "2026-11-05T11:02:40.704153+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-079-01000000-f030-c43d-84fc-08df1fee50bb": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/greene-county/2026-November-General/data/ballot-item/01000000-f030-c43d-84fc-08df1fee50bb",
+    "status": 200,
+    "bytes": 295534,
+    "sha256": "b47882cf2630fe40f01be803aba63d35318ae8f34b74eebbe1cdb2d669852802",
+    "fetched_at": "2026-11-05T11:02:40.773486+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-081-01000000-f030-c43d-4fe1-08df1fee50f3": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/greensville-county/2026-November-General/data/ballot-item/01000000-f030-c43d-4fe1-08df1fee50f3",
+    "status": 200,
+    "bytes": 274739,
+    "sha256": "6b509e751ea482b287cde82a8ce58e80e324e756f77e4cdc990d2aa0d651c394",
+    "fetched_at": "2026-11-05T11:02:40.825091+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-085-01000000-f030-c43d-d80e-08df1fee51a5": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/hanover-county/2026-November-General/data/ballot-item/01000000-f030-c43d-d80e-08df1fee51a5",
+    "status": 200,
+    "bytes": 372048,
+    "sha256": "aa9bd171f6ba7142452b9fa53144697b0f68bb30c0f2564fba7fe570990eebd8",
+    "fetched_at": "2026-11-05T11:02:40.912811+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-083-01000000-f030-c43d-1e4d-08df1fee505c": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/halifax-county/2026-November-General/data/ballot-item/01000000-f030-c43d-1e4d-08df1fee505c",
+    "status": 200,
+    "bytes": 390807,
+    "sha256": "f4379af9807ef9e14415851cdde4eda910d26e0f950c755be973fe68da180d1e",
+    "fetched_at": "2026-11-05T11:02:40.967480+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-085-01000000-f030-c43d-da83-08df1fee51a5": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/hanover-county/2026-November-General/data/ballot-item/01000000-f030-c43d-da83-08df1fee51a5",
+    "status": 200,
+    "bytes": 251369,
+    "sha256": "9cce5c1a7f9545636cb75b39b4e9ae840b76e95863d33471e5f407e275a6b6af",
+    "fetched_at": "2026-11-05T11:02:41.074083+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-660-01000000-f030-c43d-17e5-08df1fee50d6": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/harrisonburg-city/2026-November-General/data/ballot-item/01000000-f030-c43d-17e5-08df1fee50d6",
+    "status": 200,
+    "bytes": 232488,
+    "sha256": "23b7a4b556976a28a08e7c85cff8852d43d870bf9b91a3ee10795fb7cd40fe81",
+    "fetched_at": "2026-11-05T11:02:41.097234+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-087-01000000-f030-c43d-eb62-08df1fee5037": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/henrico-county/2026-November-General/data/ballot-item/01000000-f030-c43d-eb62-08df1fee5037",
+    "status": 200,
+    "bytes": 489353,
+    "sha256": "be36144306a6e2b962d72eced230893ecb000e3369eea029448c913a78a40804",
+    "fetched_at": "2026-11-05T11:02:41.110542+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-650-01000000-f030-c43d-dd33-08df1fee5173": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/hampton-city/2026-November-General/data/ballot-item/01000000-f030-c43d-dd33-08df1fee5173",
+    "status": 200,
+    "bytes": 509565,
+    "sha256": "f5b2189049b3bf78314fa6530fd79bd81f05879b43c776425d75607b2ca0bc48",
+    "fetched_at": "2026-11-05T11:02:41.181201+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-091-01000000-f030-c43d-ab36-08df1fee4ffa": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/highland-county/2026-November-General/data/ballot-item/01000000-f030-c43d-ab36-08df1fee4ffa",
+    "status": 200,
+    "bytes": 200942,
+    "sha256": "76a3940a1b7c469bc60c954a2d79f1bf09d80ca18f8a5a1019e419a468521b46",
+    "fetched_at": "2026-11-05T11:02:41.292700+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-089-01000000-f030-c43d-7953-08df1fee5129": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/henry-county/2026-November-General/data/ballot-item/01000000-f030-c43d-7953-08df1fee5129",
+    "status": 200,
+    "bytes": 347180,
+    "sha256": "9024f21d711f06b90e41b46a965e800349666c672fd950a10636df0cf1e5d32a",
+    "fetched_at": "2026-11-05T11:02:41.533830+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-087-01000000-f030-c43d-eda0-08df1fee5037": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/henrico-county/2026-November-General/data/ballot-item/01000000-f030-c43d-eda0-08df1fee5037",
+    "status": 200,
+    "bytes": 540296,
+    "sha256": "3ab2c79a1cd3ef32ef5b9748cb99e0894890bc6ed0f791ff0e3523cf45ff502a",
+    "fetched_at": "2026-11-05T11:02:41.541060+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-097-01000000-f030-c43d-8b89-08df1fee5132": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/king-queen-county/2026-November-General/data/ballot-item/01000000-f030-c43d-8b89-08df1fee5132",
+    "status": 200,
+    "bytes": 203305,
+    "sha256": "7f51de9b500a83ece6321f9b54b758c6144e663bf52e3a88082a52986d4d70d0",
+    "fetched_at": "2026-11-05T11:02:41.640003+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-670-01000000-f030-c43d-ce38-08df1fee5033": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/hopewell-city/2026-November-General/data/ballot-item/01000000-f030-c43d-ce38-08df1fee5033",
+    "status": 200,
+    "bytes": 262053,
+    "sha256": "e2b008a4132626e7f0f90f306cd77024cc26bc6ed962f3ccb15b6407d5ae4495",
+    "fetched_at": "2026-11-05T11:02:41.670512+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-093-01000000-f030-c43d-3fe2-08df1fee515e": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/isle-of-wight-county/2026-November-General/data/ballot-item/01000000-f030-c43d-3fe2-08df1fee515e",
+    "status": 200,
+    "bytes": 385681,
+    "sha256": "4ae52b929a4e192ee6250b61a1703a5aa58001db44a85282976c422b2f1c89de",
+    "fetched_at": "2026-11-05T11:02:41.735956+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-099-01000000-f030-c43d-5634-08df1fee4e8d": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/king-george-county/2026-November-General/data/ballot-item/01000000-f030-c43d-5634-08df1fee4e8d",
+    "status": 200,
+    "bytes": 250144,
+    "sha256": "02380ff24d8442849f3af1b5e97a4ecaf71de1c1d5b6bb94931cf9403d6a1883",
+    "fetched_at": "2026-11-05T11:02:41.824262+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-101-01000000-f030-c43d-ecaf-08df1fee4eab": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/king-william-county/2026-November-General/data/ballot-item/01000000-f030-c43d-ecaf-08df1fee4eab",
+    "status": 200,
+    "bytes": 227540,
+    "sha256": "8c9d95f2996a104e23f45ed156d77661be19fc412a4e1049b215acf19db56c94",
+    "fetched_at": "2026-11-05T11:02:42.158088+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-095-01000000-f030-c43d-3730-08df1fee4ff8": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/james-city-county/2026-November-General/data/ballot-item/01000000-f030-c43d-3730-08df1fee4ff8",
+    "status": 200,
+    "bytes": 278464,
+    "sha256": "db1565aba187b5bfed3af56f00430ef0bb25a6432c0129837de0f59dcd98486f",
+    "fetched_at": "2026-11-05T11:02:42.165497+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-105-01000000-f030-c43d-deab-08df1fee4fc3": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/lee-county/2026-November-General/data/ballot-item/01000000-f030-c43d-deab-08df1fee4fc3",
+    "status": 200,
+    "bytes": 304533,
+    "sha256": "fd8ee368c1320bda20e6a760d7bb28871b8f795f01af6bd7058471d35038a65e",
+    "fetched_at": "2026-11-05T11:02:42.199117+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-103-01000000-f030-c43d-6117-08df1fee4d3c": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/lancaster-county/2026-November-General/data/ballot-item/01000000-f030-c43d-6117-08df1fee4d3c",
+    "status": 200,
+    "bytes": 253692,
+    "sha256": "482890a35d7851ff1d7d46487818a314a602ab90a5f8b465b4d5be95ae9bee55",
+    "fetched_at": "2026-11-05T11:02:42.204173+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-678-01000000-f030-c43d-0f49-08df1fee5058": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/lexington-city/2026-November-General/data/ballot-item/01000000-f030-c43d-0f49-08df1fee5058",
+    "status": 200,
+    "bytes": 200390,
+    "sha256": "20e0d125147a58a1a7e592a9a850167deb414c201cffc58e9ef4f07a850e61e2",
+    "fetched_at": "2026-11-05T11:02:42.391114+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-111-01000000-f030-c43d-5c3e-08df1fee4fe0": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/lunenburg-county/2026-November-General/data/ballot-item/01000000-f030-c43d-5c3e-08df1fee4fe0",
+    "status": 200,
+    "bytes": 287330,
+    "sha256": "2ac31611e37e12637cd7e2aa40d6b423c17a5dd712895eee66f441703cc01363",
+    "fetched_at": "2026-11-05T11:02:42.428144+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-109-01000000-f030-c43d-7a40-08df1fee502c": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/louisa-county/2026-November-General/data/ballot-item/01000000-f030-c43d-7a40-08df1fee502c",
+    "status": 200,
+    "bytes": 325327,
+    "sha256": "3e1fb9e43c1a7cfa85849afe67e683790bc1ba521199a9af663b707c66cd7fcf",
+    "fetched_at": "2026-11-05T11:02:42.466747+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-107-01000000-f030-c43d-2603-08df1fee51d7": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/loudoun-county/2026-November-General/data/ballot-item/01000000-f030-c43d-2603-08df1fee51d7",
+    "status": 200,
+    "bytes": 1135166,
+    "sha256": "d53d876a23d89acef4a29aef06438f0fd10643f3061cc58f9bd7696cfda0da9d",
+    "fetched_at": "2026-11-05T11:02:42.500774+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-113-01000000-f030-c43d-1060-08df1fee50b8": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/madison-county/2026-November-General/data/ballot-item/01000000-f030-c43d-1060-08df1fee50b8",
+    "status": 200,
+    "bytes": 300007,
+    "sha256": "42659760506051028e375f0fbabe1eca4acefb182bd1b4fef05bc4ecdb3ada36",
+    "fetched_at": "2026-11-05T11:02:42.619704+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-680-01000000-f030-c43d-a74c-08df1fee51d3": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/lynchburg-city/2026-November-General/data/ballot-item/01000000-f030-c43d-a74c-08df1fee51d3",
+    "status": 200,
+    "bytes": 336814,
+    "sha256": "31ea8c36e62a0b3ab04de3f75dae8216862e2fb88eeb5075a05388d669ddf091",
+    "fetched_at": "2026-11-05T11:02:42.632513+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-683-01000000-f030-c43d-1121-08df1fee508b": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/manassas-city/2026-November-General/data/ballot-item/01000000-f030-c43d-1121-08df1fee508b",
+    "status": 200,
+    "bytes": 255352,
+    "sha256": "d0aaa244f89fd5ea89fdda32849fee61e817c5b4f7704a8d021f8637531ceb16",
+    "fetched_at": "2026-11-05T11:02:42.770292+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-115-01000000-f030-c43d-0cd7-08df1fee50ee": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/mathews-county/2026-November-General/data/ballot-item/01000000-f030-c43d-0cd7-08df1fee50ee",
+    "status": 200,
+    "bytes": 198282,
+    "sha256": "6c64eb6d14a471efe232e75f6353589e9df29d2f1ed0c3a7df79873562f355b6",
+    "fetched_at": "2026-11-05T11:02:42.841815+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-690-01000000-f030-c43d-c917-08df1fee51eb": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/martinsville-city/2026-November-General/data/ballot-item/01000000-f030-c43d-c917-08df1fee51eb",
+    "status": 200,
+    "bytes": 221527,
+    "sha256": "124b986fe3889fc71ed86c162f03c809df214b8b142f6632d00b67ffa7d4cc83",
+    "fetched_at": "2026-11-05T11:02:42.956527+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-685-01000000-f030-c43d-4974-08df1fee50f1": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/manassas-park-city/2026-November-General/data/ballot-item/01000000-f030-c43d-4974-08df1fee50f1",
+    "status": 200,
+    "bytes": 210402,
+    "sha256": "4470e9a2d6794402a06e1feb53a8f3575f51d8390fb96fae0752715f6860289b",
+    "fetched_at": "2026-11-05T11:02:42.981291+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-117-01000000-f030-c43d-5e75-08df1fee5028": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/mecklenburg-county/2026-November-General/data/ballot-item/01000000-f030-c43d-5e75-08df1fee5028",
+    "status": 200,
+    "bytes": 419217,
+    "sha256": "f42b8b43ecf07d6f956ad5ffaaaa4d30d73a7bbee9f78ef065d3b17cc70776b4",
+    "fetched_at": "2026-11-05T11:02:42.994869+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-119-01000000-f030-c43d-96ba-08df1fee50d1": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/middlesex-county/2026-November-General/data/ballot-item/01000000-f030-c43d-96ba-08df1fee50d1",
+    "status": 200,
+    "bytes": 243425,
+    "sha256": "92da9393a474017021a10f6bd9743340eaae19645ed8fb7838b44e62fe779151",
+    "fetched_at": "2026-11-05T11:02:43.039827+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-127-01000000-f030-c43d-212a-08df1fee513a": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/new-kent-county/2026-November-General/data/ballot-item/01000000-f030-c43d-212a-08df1fee513a",
+    "status": 200,
+    "bytes": 240185,
+    "sha256": "aaafa41ab48a8fb05a5eefc2fa5f39c307f6c27b5497acdeb6d49ad6f95438fa",
+    "fetched_at": "2026-11-05T11:02:43.167429+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-121-01000000-f030-c43d-5454-08df1fee5135": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/montgomery-county/2026-November-General/data/ballot-item/01000000-f030-c43d-5454-08df1fee5135",
+    "status": 200,
+    "bytes": 364742,
+    "sha256": "9b5c15afd079bcf10dad64606e32b123a385507ba9bc5f4037ed4096eb64f0cf",
+    "fetched_at": "2026-11-05T11:02:43.186637+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-125-01000000-f030-c43d-3519-08df1fee5171": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/nelson-county/2026-November-General/data/ballot-item/01000000-f030-c43d-3519-08df1fee5171",
+    "status": 200,
+    "bytes": 248562,
+    "sha256": "5fce488c1de4b33c45ef08b7855e91b48c871b6d752ff6ad49313d7e9bd247b1",
+    "fetched_at": "2026-11-05T11:02:43.207043+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-133-01000000-f030-c43d-e216-08df1fee4fb1": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/northumberland-county/2026-November-General/data/ballot-item/01000000-f030-c43d-e216-08df1fee4fb1",
+    "status": 200,
+    "bytes": 219617,
+    "sha256": "8d6e8b85a08f5b7dd58459eacedcee1dfd82146e0c5fa9c3063368c26ade9d03",
+    "fetched_at": "2026-11-05T11:02:43.324081+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-700-01000000-f030-c43d-10d5-08df1fee50f6": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/newport-news-city/2026-November-General/data/ballot-item/01000000-f030-c43d-10d5-08df1fee50f6",
+    "status": 200,
+    "bytes": 667319,
+    "sha256": "d9b1b3f09350468538a083bf4db71ede962d4c5fef2f2b3185e4e5f65da71434",
+    "fetched_at": "2026-11-05T11:02:43.330534+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-720-01000000-f030-c43d-89bd-08df1fee5140": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/norton-city/2026-November-General/data/ballot-item/01000000-f030-c43d-89bd-08df1fee5140",
+    "status": 200,
+    "bytes": 192895,
+    "sha256": "33e5641d266dae44067d24b63b6942366758a8622e087d02c1d1b3fccd13e21b",
+    "fetched_at": "2026-11-05T11:02:43.440037+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-710-01000000-f030-c43d-b22e-08df1fee5195": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/norfolk-city/2026-November-General/data/ballot-item/01000000-f030-c43d-b22e-08df1fee5195",
+    "status": 200,
+    "bytes": 738006,
+    "sha256": "f760dbae185b9d3e15c8c4f7f713c1c138ff25c53d3c3084d2fb065834052478",
+    "fetched_at": "2026-11-05T11:02:43.451458+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-131-01000000-f030-c43d-a726-08df1fee512f": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/northampton-county/2026-November-General/data/ballot-item/01000000-f030-c43d-a726-08df1fee512f",
+    "status": 200,
+    "bytes": 340889,
+    "sha256": "21683d780fd3f2a68485fb9f716d52b2d1beec62498f0fd82b1cb5c153ac52d6",
+    "fetched_at": "2026-11-05T11:02:43.500153+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-137-01000000-f030-c43d-0379-08df1fee508f": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/orange-county/2026-November-General/data/ballot-item/01000000-f030-c43d-0379-08df1fee508f",
+    "status": 200,
+    "bytes": 370276,
+    "sha256": "2962541f52b5f75e74755597bdb94c695eeaccb4bff921e7b0ec084c0196832a",
+    "fetched_at": "2026-11-05T11:02:43.593560+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-139-01000000-f030-c43d-0d0b-08df1fee501c": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/page-county/2026-November-General/data/ballot-item/01000000-f030-c43d-0d0b-08df1fee501c",
+    "status": 200,
+    "bytes": 248211,
+    "sha256": "770e6007caafbc8207cafc07c21a9a979682abf732683a741c7ffb8ca79eb8e8",
+    "fetched_at": "2026-11-05T11:02:43.638075+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-730-01000000-f030-c43d-f383-08df1fee4fdb": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/petersburg-city/2026-November-General/data/ballot-item/01000000-f030-c43d-f383-08df1fee4fdb",
+    "status": 200,
+    "bytes": 281052,
+    "sha256": "cff22ce763cab5d527d6014e9e40f05dab0e7517710a072c4b49a4936e51914b",
+    "fetched_at": "2026-11-05T11:02:43.679430+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-735-01000000-f030-c43d-4971-08df1fee4e90": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/poquoson-city/2026-November-General/data/ballot-item/01000000-f030-c43d-4971-08df1fee4e90",
+    "status": 200,
+    "bytes": 198176,
+    "sha256": "b29278e8f8f9c66886e7d25715abea87a50ad1874247ab2a1aa4450b69f2bb98",
+    "fetched_at": "2026-11-05T11:02:43.849845+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-141-01000000-f030-c43d-2f6a-08df1fee4ea9": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/patrick-county/2026-November-General/data/ballot-item/01000000-f030-c43d-2f6a-08df1fee4ea9",
+    "status": 200,
+    "bytes": 267077,
+    "sha256": "1664b927e8882a73d51df05d0a370cbfb8d90ca691b9159fdd00c09d87a6e6e6",
+    "fetched_at": "2026-11-05T11:02:43.855595+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-135-01000000-f030-c43d-79ec-08df1fee5176": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/nottoway-county/2026-November-General/data/ballot-item/01000000-f030-c43d-79ec-08df1fee5176",
+    "status": 200,
+    "bytes": 337740,
+    "sha256": "2112f21156b86e47d47766181ac4c2b93a0779b301aed6e50a0c13bf3afc7197",
+    "fetched_at": "2026-11-05T11:02:43.988036+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-143-01000000-f030-c43d-4507-08df1fee5019": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/pittsylvania-county/2026-November-General/data/ballot-item/01000000-f030-c43d-4507-08df1fee5019",
+    "status": 200,
+    "bytes": 447130,
+    "sha256": "8ab99b30c0c538e515c06fee3353732ef2ea3e4bff1f5eb3e2a858da1b43ae1d",
+    "fetched_at": "2026-11-05T11:02:43.988165+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-145-01000000-f030-c43d-8455-08df1fee513e": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/powhatan-county/2026-November-General/data/ballot-item/01000000-f030-c43d-8455-08df1fee513e",
+    "status": 200,
+    "bytes": 279015,
+    "sha256": "e084a79ef865cd9e5ab7f821fe736592e91d968d9bed70b9d773e9731036035e",
+    "fetched_at": "2026-11-05T11:02:44.048591+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-149-01000000-f030-c43d-8c76-08df1fee50b4": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/prince-george-county/2026-November-General/data/ballot-item/01000000-f030-c43d-8c76-08df1fee50b4",
+    "status": 200,
+    "bytes": 258001,
+    "sha256": "3c4c4ccbfa4841954d76aa80d6140073fb697c72551d0964a1f89a5e56bdd162",
+    "fetched_at": "2026-11-05T11:02:44.083163+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-147-01000000-f030-c43d-4374-08df1fee51d0": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/prince-edward-county/2026-November-General/data/ballot-item/01000000-f030-c43d-4374-08df1fee51d0",
+    "status": 200,
+    "bytes": 306459,
+    "sha256": "65674d1fdc3ea28f2c736c4aedb40a2e9faafb32c367cd0193ca3fa93388be7b",
+    "fetched_at": "2026-11-05T11:02:44.255952+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-153-01000000-f030-c43d-a863-08df1fee4fb5": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/prince-william-county/2026-November-General/data/ballot-item/01000000-f030-c43d-a863-08df1fee4fb5",
+    "status": 200,
+    "bytes": 639275,
+    "sha256": "ae1a4b44de0a8ab47d44e81c072a3d6c8ccc4b7ddcab4f8816a073a96c0eb2e1",
+    "fetched_at": "2026-11-05T11:02:44.283023+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-740-01000000-f030-c43d-b7bd-08df1fee5199": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/portsmouth-city/2026-November-General/data/ballot-item/01000000-f030-c43d-b7bd-08df1fee5199",
+    "status": 200,
+    "bytes": 523344,
+    "sha256": "13488e69077178e4e07537b1334d5618affa3330022affe8bfd12a4daddcd245",
+    "fetched_at": "2026-11-05T11:02:44.289029+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-153-01000000-f030-c43d-abe3-08df1fee4fb5": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/prince-william-county/2026-November-General/data/ballot-item/01000000-f030-c43d-abe3-08df1fee4fb5",
+    "status": 200,
+    "bytes": 1135360,
+    "sha256": "9cbe904b706e0b1ab340c808c8381e28fc189d4f10f79d65c6f7cb29e6ff02d8",
+    "fetched_at": "2026-11-05T11:02:44.345806+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-157-01000000-f030-c43d-d403-08df1fee51b9": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/rappahannock-county/2026-November-General/data/ballot-item/01000000-f030-c43d-d403-08df1fee51b9",
+    "status": 200,
+    "bytes": 247403,
+    "sha256": "0c57d998db19f3ba2a288b26bc7ac71727c83c78338471619d04865372c04dd0",
+    "fetched_at": "2026-11-05T11:02:44.375551+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-750-01000000-f030-c43d-2537-08df1fee5113": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/radford-city/2026-November-General/data/ballot-item/01000000-f030-c43d-2537-08df1fee5113",
+    "status": 200,
+    "bytes": 222889,
+    "sha256": "6dc7b70aadc7f0668f7644043fde63576092b5ed9b9731e72143cac740affb4e",
+    "fetched_at": "2026-11-05T11:02:44.401853+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-159-01000000-f030-c43d-3908-08df1fee4ff0": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/richmond-county/2026-November-General/data/ballot-item/01000000-f030-c43d-3908-08df1fee4ff0",
+    "status": 200,
+    "bytes": 206282,
+    "sha256": "af2c1ec8b7fc92e3430e146d0815cfd9970632c9b2b891844777038206b65c88",
+    "fetched_at": "2026-11-05T11:02:44.465716+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-770-01000000-f030-c43d-c243-08df1fee5096": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/roanoke-city/2026-November-General/data/ballot-item/01000000-f030-c43d-c243-08df1fee5096",
+    "status": 200,
+    "bytes": 304991,
+    "sha256": "4af92693d54bde4f5971799e998fe428bb6ec928f69dc0f937c2d45309d21f3e",
+    "fetched_at": "2026-11-05T11:02:44.507353+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-155-01000000-f030-c43d-fdae-08df1fee51e6": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/pulaski-county/2026-November-General/data/ballot-item/01000000-f030-c43d-fdae-08df1fee51e6",
+    "status": 200,
+    "bytes": 275411,
+    "sha256": "22c26f93273c54dcf5844679d5084e50cfc4c2cff5791a46866cecffe0020356",
+    "fetched_at": "2026-11-05T11:02:44.649386+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-161-01000000-f030-c43d-4588-08df1fee4e97": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/roanoke-county/2026-November-General/data/ballot-item/01000000-f030-c43d-4588-08df1fee4e97",
+    "status": 200,
+    "bytes": 279744,
+    "sha256": "e802404756e62acbff952f1688a8d76626517279450afc2eaa4b2ff296c5bc2b",
+    "fetched_at": "2026-11-05T11:02:44.727077+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-760-01000000-f030-c43d-8e04-08df1fee516d": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/richmond-city/2026-November-General/data/ballot-item/01000000-f030-c43d-8e04-08df1fee516d",
+    "status": 200,
+    "bytes": 778688,
+    "sha256": "cd0fb263cae383b9f4765937c0ed133bfe15ef7d413840789778a3a4900677d3",
+    "fetched_at": "2026-11-05T11:02:44.886882+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-163-01000000-f030-c43d-890b-08df1fee503d": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/rockbridge-county/2026-November-General/data/ballot-item/01000000-f030-c43d-890b-08df1fee503d",
+    "status": 200,
+    "bytes": 283132,
+    "sha256": "c9bfa180c5e5c55210beeb3a4af9819f471a5a49c064374445ddd5c972d12ea5",
+    "fetched_at": "2026-11-05T11:02:45.078320+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-161-01000000-f030-c43d-4301-08df1fee4e97": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/roanoke-county/2026-November-General/data/ballot-item/01000000-f030-c43d-4301-08df1fee4e97",
+    "status": 200,
+    "bytes": 296774,
+    "sha256": "48d7d4d252394bf5aeb0c67a7ae40d7689ff837039d91f4dd99be049296b0637",
+    "fetched_at": "2026-11-05T11:02:45.105292+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-775-01000000-f030-c43d-e7c1-08df1fee510a": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/salem-city/2026-November-General/data/ballot-item/01000000-f030-c43d-e7c1-08df1fee510a",
+    "status": 200,
+    "bytes": 239789,
+    "sha256": "215efb87e7168b7e303cc8f1b2d11802053bcf0adb82eb41c0922893a1aef2a3",
+    "fetched_at": "2026-11-05T11:02:45.274683+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-167-01000000-f030-c43d-1c48-08df1fee4fbb": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/russell-county/2026-November-General/data/ballot-item/01000000-f030-c43d-1c48-08df1fee4fbb",
+    "status": 200,
+    "bytes": 300696,
+    "sha256": "f7ea95870114e34eb0087d273a9abf87779e6266836bc8f9f6677bae75b2e4ea",
+    "fetched_at": "2026-11-05T11:02:45.320264+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-165-01000000-f030-c43d-9008-08df1fee4d21": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/rockingham-county/2026-November-General/data/ballot-item/01000000-f030-c43d-9008-08df1fee4d21",
+    "status": 200,
+    "bytes": 451317,
+    "sha256": "098997df247536988de54dc85d3d8ff3cdabe1c0306d993274f99919aac02c2e",
+    "fetched_at": "2026-11-05T11:02:45.346492+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-169-01000000-f030-c43d-7c2d-08df1fee4ea2": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/scott-county/2026-November-General/data/ballot-item/01000000-f030-c43d-7c2d-08df1fee4ea2",
+    "status": 200,
+    "bytes": 367444,
+    "sha256": "83deb40ad718d43f38527a6d472f2199e5252b7cf29504e9280c9edcc85f97b9",
+    "fetched_at": "2026-11-05T11:02:45.373163+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-171-01000000-f030-c43d-c9cd-08df1fee500f": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/shenandoah-county/2026-November-General/data/ballot-item/01000000-f030-c43d-c9cd-08df1fee500f",
+    "status": 200,
+    "bytes": 327822,
+    "sha256": "4566864594750adbf1f7bac7d7ac1ceaa4236388c731605e80213267a75d76dc",
+    "fetched_at": "2026-11-05T11:02:45.451157+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-173-01000000-f030-c43d-36db-08df1fee5105": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/smyth-county/2026-November-General/data/ballot-item/01000000-f030-c43d-36db-08df1fee5105",
+    "status": 200,
+    "bytes": 300036,
+    "sha256": "be58821bfa80c84d42548068b53071b5baa1e5bc776a7b10cbf6640d66e7eca9",
+    "fetched_at": "2026-11-05T11:02:45.746989+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-175-01000000-f030-c43d-eda2-08df1fee50c9": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/southampton-county/2026-November-General/data/ballot-item/01000000-f030-c43d-eda2-08df1fee50c9",
+    "status": 200,
+    "bytes": 324703,
+    "sha256": "65233fb104483738fb78101de55425bb2f915cc5355125afc47bfbe81b9884b5",
+    "fetched_at": "2026-11-05T11:02:45.784090+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-175-01000000-f030-c43d-ea55-08df1fee50c9": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/southampton-county/2026-November-General/data/ballot-item/01000000-f030-c43d-ea55-08df1fee50c9",
+    "status": 200,
+    "bytes": 362807,
+    "sha256": "7675b5d6802bbca25fdc2af9d4d3341163124686e7ffe9dcb5c93d83039cdb2c",
+    "fetched_at": "2026-11-05T11:02:45.811014+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-790-01000000-f030-c43d-0629-08df1fee5062": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/staunton-city/2026-November-General/data/ballot-item/01000000-f030-c43d-0629-08df1fee5062",
+    "status": 200,
+    "bytes": 223661,
+    "sha256": "840519706b4d039e39505083528b452f69491f47f1dba6609cdf144fe4d6df8a",
+    "fetched_at": "2026-11-05T11:02:46.013731+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-177-01000000-f030-c43d-f765-08df1fee50a3": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/spotsylvania-county/2026-November-General/data/ballot-item/01000000-f030-c43d-f765-08df1fee50a3",
+    "status": 200,
+    "bytes": 631469,
+    "sha256": "1afa810e84c929772dbf3942d4cfc3e2a13a92eb709bb3898cbbf714ea76677f",
+    "fetched_at": "2026-11-05T11:02:46.087849+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-181-01000000-f030-c43d-dd29-08df1fee4ff3": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/surry-county/2026-November-General/data/ballot-item/01000000-f030-c43d-dd29-08df1fee4ff3",
+    "status": 200,
+    "bytes": 277725,
+    "sha256": "6ac4783739906db6293fb190565d1f2bb7cdfcd3f369178f98b2e83cdeb23a69",
+    "fetched_at": "2026-11-05T11:02:46.215248+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-800-01000000-f030-c43d-0c4b-08df1fee4fa7": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/suffolk-city/2026-November-General/data/ballot-item/01000000-f030-c43d-0c4b-08df1fee4fa7",
+    "status": 200,
+    "bytes": 528105,
+    "sha256": "a0fb619a874ea665c9deab1227b6e2c0c1a5c3a24f139c7c730f9c078caa5e6e",
+    "fetched_at": "2026-11-05T11:02:46.260770+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-179-01000000-f030-c43d-ed7c-08df1fee51bc": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/stafford-county/2026-November-General/data/ballot-item/01000000-f030-c43d-ed7c-08df1fee51bc",
+    "status": 200,
+    "bytes": 701353,
+    "sha256": "4308513743c0ec243cca48876cc6406484e790bc9fe602832182f08c12d5fd07",
+    "fetched_at": "2026-11-05T11:02:46.273342+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-183-01000000-f030-c43d-1cf7-08df1fee510d": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/sussex-county/2026-November-General/data/ballot-item/01000000-f030-c43d-1cf7-08df1fee510d",
+    "status": 200,
+    "bytes": 327598,
+    "sha256": "4ee43f18bfc4ca535ad5c30feba9264c48c63734e161ab853df8e285cbf1d756",
+    "fetched_at": "2026-11-05T11:02:46.376641+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-185-01000000-f030-c43d-078d-08df1fee4fc7": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/tazewell-county/2026-November-General/data/ballot-item/01000000-f030-c43d-078d-08df1fee4fc7",
+    "status": 200,
+    "bytes": 354145,
+    "sha256": "984013c4d6a90bc8ff59eb060c23bf6f3aa00caad1d9482c70ff8d632c6fc144",
+    "fetched_at": "2026-11-05T11:02:46.430744+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-810-01000000-f030-c43d-538f-08df1fee4fea": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/virginia-beach-city/2026-November-General/data/ballot-item/01000000-f030-c43d-538f-08df1fee4fea",
+    "status": 200,
+    "bytes": 1343178,
+    "sha256": "d25c57a93879bf577c775258152bacea25be4960771e5e97bcf883776c60ded8",
+    "fetched_at": "2026-11-05T11:02:46.577034+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-187-01000000-f030-c43d-d050-08df1fee4fa3": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/warren-county/2026-November-General/data/ballot-item/01000000-f030-c43d-d050-08df1fee4fa3",
+    "status": 200,
+    "bytes": 250995,
+    "sha256": "0c98b0bcbbfff5af8ef48d23dfcc083c629862eb4ddb35675bc299288eaadcd9",
+    "fetched_at": "2026-11-05T11:02:46.658586+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-191-01000000-f030-c43d-4aea-08df1fee5023": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/washington-county/2026-November-General/data/ballot-item/01000000-f030-c43d-4aea-08df1fee5023",
+    "status": 200,
+    "bytes": 352614,
+    "sha256": "a576e8e2adf0ac2ca6616f73da861783638d5e3da49e35176a6905d45c4fb4c1",
+    "fetched_at": "2026-11-05T11:02:46.705698+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-820-01000000-f030-c43d-3d8d-08df1fee51c0": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/waynesboro-city/2026-November-General/data/ballot-item/01000000-f030-c43d-3d8d-08df1fee51c0",
+    "status": 200,
+    "bytes": 222589,
+    "sha256": "207aa6c5699bf6239a7c3c88bd2dd3fa50bfa2148041717675c725b38e42cf93",
+    "fetched_at": "2026-11-05T11:02:46.730313+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-193-01000000-f030-c43d-14d6-08df1fee4ffe": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/westmoreland-county/2026-November-General/data/ballot-item/01000000-f030-c43d-14d6-08df1fee4ffe",
+    "status": 200,
+    "bytes": 245572,
+    "sha256": "a627c76b85df0c1ecde83faee05f2c86d72ec0ab1105ef0d6a6dfd2efa2a56d2",
+    "fetched_at": "2026-11-05T11:02:46.752985+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-840-01000000-f030-c43d-eec8-08df1fee50cd": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/winchester-city/2026-November-General/data/ballot-item/01000000-f030-c43d-eec8-08df1fee50cd",
+    "status": 200,
+    "bytes": 251186,
+    "sha256": "57f3498038943d7296db1ebcf5b7b7fa385e960cd1858d24f64213263e6392c5",
+    "fetched_at": "2026-11-05T11:02:46.897091+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-830-01000000-f030-c43d-7716-08df1fee51c9": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/williamsburg-city/2026-November-General/data/ballot-item/01000000-f030-c43d-7716-08df1fee51c9",
+    "status": 200,
+    "bytes": 187168,
+    "sha256": "a721764c7aadc9dbdad5c0ba9c54438ab8db43edd7a65cfce0c9dece00063835",
+    "fetched_at": "2026-11-05T11:02:46.970122+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-195-01000000-f030-c43d-e80d-08df1fee4fad": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/wise-county/2026-November-General/data/ballot-item/01000000-f030-c43d-e80d-08df1fee4fad",
+    "status": 200,
+    "bytes": 286827,
+    "sha256": "1a6e66f35ee9e3e0373c7bb9689862395c09016a158f3982858d289ca1403f1a",
+    "fetched_at": "2026-11-05T11:02:46.983931+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-197-01000000-f030-c43d-3296-08df1fee51c3": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/wythe-county/2026-November-General/data/ballot-item/01000000-f030-c43d-3296-08df1fee51c3",
+    "status": 200,
+    "bytes": 274955,
+    "sha256": "ebb669e55c2fd6bd0669f7dee3b4fdedd6cd53180f8b50d71c2abd7d60be3775",
+    "fetched_at": "2026-11-05T11:02:47.187065+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  },
+  "house-199-01000000-f030-c43d-a91d-08df1fee5040": {
+    "url": "https://enr.elections.virginia.gov/results/public/api/elections/york-county/2026-November-General/data/ballot-item/01000000-f030-c43d-a91d-08df1fee5040",
+    "status": 200,
+    "bytes": 253319,
+    "sha256": "807163b47499e2443e15fa891181da2c92f18b5ca1f19f9141a7c35a3b60c965",
+    "fetched_at": "2026-11-05T11:02:47.468538+00:00",
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "etag": null
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "page_url": "https://enr.elections.virginia.gov/results/public/virginia/elections/2026-November-General/reports",
+  "links": [
+    {
+      "text": "Download: Election Turnout",
+      "url": "https://enr.elections.virginia.gov/cdn/results/d2c804ee-4ec2-46bb-91d7-5b41526eab03/Election%20Turnout_3684dea2-57f5-4d01-ad2c-c1f4c01bda8d.csv"
+    },
+    {
+      "text": "Download: Election Results",
+      "url": "https://enr.elections.virginia.gov/cdn/results/d2c804ee-4ec2-46bb-91d7-5b41526eab03/Election%20Results_f69f5bf2-5c46-4847-bfef-036e3cc0a069.csv"
+    },
+    {
+      "text": "Download: Election Change Log Report",
+      "url": "https://enr.elections.virginia.gov/cdn/results/d2c804ee-4ec2-46bb-91d7-5b41526eab03/Election%20Change%20Log_0ee84069-8cf1-4ac5-afd1-57c1daff6a9f.csv"
+    },
+    {
+      "text": "Download: EnrAbsenteeRawCSV, Nov 4, 2026, 4:07 PM",
+      "url": "https://enr.elections.virginia.gov/cdn/results/d2c804ee-4ec2-46bb-91d7-5b41526eab03/EnrAbsenteeRawCSV_dd7ce8c5-e1d6-4bea-9214-2f9d720a8829.csv"
+    }
+  ]
+}

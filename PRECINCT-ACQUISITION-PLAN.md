@@ -3117,7 +3117,7 @@ zeroes remain zeroes; genuinely missing totals remain missing.
 The review retains **2,537** House district/reporting-unit vectors across
 **133 counties and independent cities**, **10,471** candidate cells and a
 separate **2,529-row** native precinct turnout table. Every original House
-district vector differs from the newer JSON: CSV candidate/write-in votes total
+district vector differs from the state JSON: CSV candidate/write-in votes total
 **2,912,898** versus **3,568,142** in the native summaries. All **11** conflicts
 remain explicit; no missing votes are allocated. All **985** missing precinct
 `TotalVoteTurnout` values remain missing. Its **1,375,326** known-vote subtotal
@@ -3152,8 +3152,8 @@ is bound to that exact source commit. The whole remote ZIP was redownloaded;
 its exact bytes/SHA/size, CRC, exact member set, all 40 file checksums and all
 32 decompressed original receipts pass. Every remote member equals the pinned
 source. Proof: `files/virginia-2026-native-count-remote-release-proof-01.json`.
-Separate lightweight VA2026 metadata now references this verified release;
-ancillary UI/ledger validation and publication are next. Do not mark the VA2026
+Separate lightweight VA2026 metadata references this verified release;
+ancillary UI/ledger publication is production-verified below. Do not mark the VA2026
 worklist cell complete or claim new map coverage.
 
 Ancillary UI local validation is complete: only the VA2026 ledger row changes;
@@ -3165,13 +3165,114 @@ browser modes pass **69 exact complete-download links and six whole CSV
 endpoints**, including the **2,537-row**, **1,743,695-byte** Virginia count CSV,
 SHA-256 `cd176fb55504293452cc6ac4d0d034f9d0ef777d5aa828e6c1819d03c9617b6e`.
 Proof: `files/virginia-2026-native-count-ui-local-browser-proof-01.json`.
-Exact production deployment/browser verification remains next; do not claim
-this new ancillary UI is already live.
+UI commit **`6542d09b0f85263ee38b7ac779532e37df0d8a89`** was pushed as Hans.
+Its exact deployment **`42015027552`** succeeded. Unqueried production metadata
+matches that commit; all four live browser modes pass the same **69 complete
+links and six whole CSV endpoints**, with no overflow. Proofs:
+`files/virginia-2026-native-count-ui-deployment-01.json` and
+`files/virginia-2026-native-count-ui-live-browser-proof-01.json`.
+Do not rerun this completed publication suite.
 
-**Next executable actions:** Hans commit/push and exact-live proof, then seek a current
-native precinct detail snapshot that reconciles to the newer House summaries
-and explicit 2026 boundary evidence before mapping. Preserve this complete
-earlier export and all conflicts rather than replacing or repairing it.
+### Native locality/detail expansion and explicit vote-mode reconciliation
+
+Actual public app navigation exposed the locality API and House detail endpoint.
+Using only parent-declared locality slugs and county-declared public contest IDs,
+acquired **279 byte-verified HTTP originals**: the parent snapshot, **133**
+locality roots and **145** locality/House detail snapshots. The actual Accomack
+county/detail browser responses were reused; no disabled or protected details
+were requested. Original bytes, URLs, times, hashes and navigation/endpoint
+derivation are in
+`files/precinct-expansion-sources/VA-2026-native-localities-01/`.
+The portable normalized package below now persists this complete acquisition.
+
+An independent full-snapshot diagnostic establishes:
+
+- All **133 locality candidate summaries exactly reconcile to all 11 parent
+  House candidate vectors**, without adjustments or unlocated vote allocation.
+- All **10,471 precinct candidate cells** exactly match the earlier CSV,
+  using native locality code, literal precinct name, district and candidate ID;
+  there are no unmatched identities or count differences.
+- **69 of 145** locality/House scopes have incomplete precinct sums relative
+  to their county summaries. Source-assigned **Early Voting** vectors differ
+  in **58** scopes and **Mailed Absentee** vectors in **66**. The other three
+  literal mode vectors reconcile. Do not describe this simply as a later
+  snapshot discrepancy or presume every county reports Election-Day-only data.
+- Native JSON provides **2,529 nonmissing precinct turnout counts**, summing
+  to **2,798,626**, separately from **3,593,781** county-level ballots cast.
+  The earlier CSV's 985 blank total cells remain blank in its immutable package.
+  Do not substitute county counts, allocate the difference or claim statewide
+  all-mode precinct turnout or rates.
+
+Diagnostic: `files/virginia-native-locality-count-diagnostic-01.json`.
+The subsequent portable reviewer below independently confirms these counts;
+there is still no geometry or rate approval.
+
+### Complete official current-reference geometry acquisition
+
+The official current-boundary page explicitly links webmap
+`f0a827c63440416a94c9557a537b6ed5`, which declares the independent public
+`Districts_Union_Simplified/FeatureServer/0` layer. Its publisher item
+`f3eb2c0a525d494da8e6190ff2b13182` is public and owned by the ELECT
+organization `M3dium4ePYpmdT4B`; description, attribution and license fields
+are blank, not an asserted open-data license. The separate precinct-vector-tile
+item/data requests return inaccessible-item errors and were not bypassed.
+
+Acquired the full native object-ID query and **all 7,426 polygon fragments**
+in **38 exact-ID pages**. Every ID appears exactly once, with complete native
+attributes and WGS84 GeoJSON; there is no transfer-limit truncation. Preserved
+all original pages and receipts under
+`files/precinct-expansion-sources/VA-2026-geometry-followup-01/`.
+The layer reports a September 2026 data edit, while item metadata was modified
+in 2025. It is the agency's current reference, **not certified election-day
+geometry**. The official page itself cautions that recent local changes may
+take weeks to appear. Do not infer shape vintage solely from either timestamp
+or the `CD_2021` legislative-plan field.
+
+There are **2,532 distinct county/precinct attribute pairs**, including blank
+identities; **155 fragments** have a blank county or precinct component.
+Fragments must be audited and dissolved by a supported identity before any
+join. Blank identities, unmatched precincts, split contests and overlapping or
+invalid shapes cannot be assigned aggregate votes.
+
+### Portable locality/mode review and complete source package
+
+`scripts/review-virginia-2026-locality-results.py` now independently verifies
+all acquired originals, the exact election/locality/contest/candidate identities,
+each candidate's five literal native method counts, every precinct total,
+root/detail summaries and all 11 parent district vectors. All 10,471 earlier CSV
+candidate cells match, as do each native precinct's registration count and the
+earlier report's corresponding literal precinct identity. Positive and negative
+mode residuals remain explicit, never allocated. Source reporting-status flags,
+unreported provisional/post-election modes and original blank CSV totals remain
+visible; current nonmissing JSON totals are a separate observation.
+
+The full package is
+`data/precinct-source-reviews/20261105/VA-2026-native-locality-counts/`.
+It contains **357 original-response files** (279 locality/detail snapshots,
+all 32 earlier report originals and all 46 current-reference acquisition
+responses, retaining the reused parent in both source namespaces), **2,537**
+normalized precinct vectors, **145** locality/House
+summary/method vectors and **2,529** native precinct turnout rows. All earlier
+full reports and demographic tables remain bundled. Full scope residuals,
+versions and both portable reviewers are included; the complete geometry
+fragments are retained as an **unapproved reference**, not mapped precincts.
+
+Nine new focused regressions cover partial/complete mode coverage, negative
+residuals, missing counts/methods, duplicate identities, wrong contests and
+accounting conflicts. The combined Virginia/Wyoming/coverage selector passes
+**64** cases. A portable rebuild using only bundled inputs produces a
+**byte-identical ZIP**; CRC, exact members and all **381 file checksums** pass.
+The ZIP is **73,948,518 bytes**, SHA-256
+`c4c28d7f426cd878b3b50672f4e5858b415c44c0cdcf7347f0ac339bc9521f43`.
+Proof: `files/virginia-native-locality-count-package-proof-01.json`.
+This is a new immutable package; the earlier published package is unchanged.
+Hans source commit/push and whole-archive remote release verification are next.
+
+**Next executable actions:** publish the completed native locality/mode source
+batch and verify the whole immutable remote archive. Independently audit
+the complete reference geometry and exact election-specific joins. Approve only
+explicitly supported scopes; do not repair the earlier export, allocate missing
+county modes to precincts, borrow older geometry or mark the VA2026 cell complete.
 
 ## Resume procedure for every work session or scheduled prompt
 

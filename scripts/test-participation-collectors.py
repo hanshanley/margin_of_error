@@ -56,6 +56,55 @@ wy_native_text = module("recover-wyoming-native-pdf-text")
 wy_review = module("review-wyoming-precinct-results")
 wy_2022 = module("review-wyoming-2022-native-results")
 va_2026 = module("review-virginia-2026-native-results")
+va_localities = module("review-virginia-2026-locality-results")
+
+
+@pytest.mark.parametrize("kind", [
+    "partial", "complete", "negative_residual", "missing_mode", "missing_count",
+    "duplicate_candidate", "duplicate_precinct", "wrong_contest", "wrong_total",
+])
+def test_virginia_native_locality_mode_residuals_are_retained_without_allocation(kind):
+    translated = lambda text: [dict(languageId="en", text=text)]
+
+    def option(early):
+        counts = {"Election Day": 2, "Early Voting": early, "Mailed Absentee": 1,
+                  "Provisional": 0, "Post-Election": 0}
+        return dict(nativeId="cs1", name=translated("Candidate"), party=None, isWriteIn=False,
+            voteCount=sum(counts.values()), groupResults=[
+                dict(groupId=mode, groupName=translated(mode), voteCount=value)
+                for mode, value in counts.items()])
+
+    summary = option(0 if kind == "complete" else 4)
+    precinct = option(5 if kind == "negative_residual" else 0)
+    row = dict(parentBallotItemId="house-1", precinct=dict(id="precinct-1"),
+               voteTotal=precinct["voteCount"], ballotOptions=[precinct])
+    item = dict(id="house-1", summaryResults=dict(ballotOptions=[summary]),
+                voteTotal=summary["voteCount"], breakdownResultCount=1, breakdownResults=[row])
+    if kind == "missing_mode":
+        precinct["groupResults"].pop()
+    elif kind == "missing_count":
+        precinct["groupResults"][0]["voteCount"] = None
+    elif kind == "duplicate_candidate":
+        row["ballotOptions"].append(precinct)
+    elif kind == "duplicate_precinct":
+        item["breakdownResults"].append(row)
+        item["breakdownResultCount"] = 2
+    elif kind == "wrong_contest":
+        row["parentBallotItemId"] = "different-house"
+    elif kind == "wrong_total":
+        row["voteTotal"] += 1
+    if kind not in {"partial", "complete", "negative_residual"}:
+        with pytest.raises(ValueError):
+            va_localities.review_scope(item)
+        return
+    review, units = va_localities.review_scope(item)
+    residual = {"partial": 4, "complete": 0, "negative_residual": -1}[kind]
+    assert review["mode_residuals"]["Early Voting"] == {"cs1": residual}
+    assert review["precinct_mode_allocation_complete"] == (kind == "complete")
+    assert review["negative_residual_conflict"] == (kind == "negative_residual")
+    assert units[0]["candidates"]["cs1"]["votes"] == precinct["voteCount"]
+    assert units[0]["candidates"]["cs1"]["modes"]["Early Voting"] == (
+        5 if kind == "negative_residual" else 0)
 
 
 @pytest.mark.parametrize("kind", ["candidate", "write_in", "zero", "both_fields", "missing", "negative"])
