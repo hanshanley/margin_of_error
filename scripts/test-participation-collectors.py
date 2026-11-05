@@ -71,6 +71,48 @@ az_maricopa = module("build-arizona-maricopa-precinct-results")
 az_pima = module("review-arizona-pima-2026-native-results")
 mi_2026 = module("review-michigan-2026-native-results")
 ky_2026 = module("review-kentucky-2026-native-results")
+ia_consolidated = module("review-iowa-2026-consolidated-results")
+
+
+def iowa_consolidated_rows():
+    return [
+        dict(state="IA", level=level, county=county,
+             contest="United States Representative District 2",
+             candidate=name, party=party, votes=str(votes), contestTotalVotes="12")
+        for level, county in [("county", "Linn"), ("state", "")]
+        for name, party, votes in [("D", "DEM", 7), ("R", "REP", 4), ("Write-in", "", 1)]
+    ]
+
+
+def test_iowa_consolidated_retains_write_ins_and_native_zero():
+    rows = iowa_consolidated_rows()
+    selected, tables, _ = ia_consolidated.review_house_rows(rows)
+    assert len(selected) == 6
+    assert tables["county"][0]["other_and_write_in_votes"] == 1
+    assert tables["county"][0]["dem_minus_rep_pct"] == 25
+    for row in rows:
+        row["votes"] = row["contestTotalVotes"] = "0"
+    _, tables, _ = ia_consolidated.review_house_rows(rows)
+    assert tables["county"][0]["total_candidate_votes"] == 0
+    assert tables["county"][0]["dem_minus_rep_pct"] is None
+
+
+@pytest.mark.parametrize("change,error", [
+    ("missing", "Missing"), ("duplicate", "Duplicate"),
+    ("native_total", "native contest total"), ("state_vector", "statewide district"),
+])
+def test_iowa_consolidated_rejects_missing_duplicate_or_unreconciled_vectors(change, error):
+    rows = iowa_consolidated_rows()
+    if change == "missing":
+        rows[0]["votes"] = ""
+    elif change == "duplicate":
+        rows.append(dict(rows[0]))
+    elif change == "native_total":
+        rows[0]["contestTotalVotes"] = "13"
+    else:
+        rows[3]["votes"], rows[4]["votes"] = "6", "5"
+    with pytest.raises(ValueError, match=error):
+        ia_consolidated.review_house_rows(rows)
 
 
 def kentucky_words(values):

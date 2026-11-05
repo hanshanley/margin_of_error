@@ -1,0 +1,106 @@
+{
+  "audit.json": {
+    "bytes": 1999,
+    "sha256": "23289b064737c100950ae2bd9c1b54aff94124981bc06f3bd49813788d72f9bb"
+  },
+  "county-house-results.csv": {
+    "bytes": 10523,
+    "sha256": "2efae32955043fd84efe943584e83831fd5d104b99311f66d095945608e1181e"
+  },
+  "district-house-results.csv": {
+    "bytes": 555,
+    "sha256": "c2a0d1f56d43fc3724fb84844f39df0a1697410d5b72e315dfff0a9e094b2333"
+  },
+  "house-native-candidate-vectors.csv": {
+    "bytes": 72575,
+    "sha256": "ca509f6f4bf9b610e54b8c4664899ad8bedf2d74eb404d02b79bf704f4015d73"
+  },
+  "iowa-complete-original.csv": {
+    "bytes": 1071983,
+    "sha256": "2fbef3eff79483ca2ac16f8d37689dd4c787c4143def5da9705499c20a46e244"
+  },
+  "review-iowa-2026-consolidated-results.py": {
+    "bytes": 10090,
+    "sha256": "82334e05dd71e13d3e6c53730ff3dc56e0880343e1f9722562800740d97192e5"
+  },
+  "source-bulk/iowa-declared-statewide-index.html": {
+    "bytes": 919,
+    "sha256": "b57eb56c1cd680675f78f3dfb0a18683811384aab545dcea0ea89ab8e597324f"
+  },
+  "source-bulk/iowa-statewide-source-receipt.json": {
+    "bytes": 351,
+    "sha256": "9f3d045361ca95471bc007fa1a6945149eb95be59f42635f78e0b1f08a3481f6"
+  },
+  "source-bulk/pushbuild-complete-original.tar.gz": {
+    "bytes": 2404302,
+    "sha256": "316fb2f0f50defafef6f053db0356e77e4011c94f97cf37199726d28bc04e0f8"
+  },
+  "source-bulk/pushbuild-original-tree.json": {
+    "bytes": 10437,
+    "sha256": "2bfc68e85012de30b4dc597fe7b80da1ac45ce01f363ac1ecd3b0d9d26313b01"
+  },
+  "source-native/AbsenteeCongressional2026.pdf": {
+    "bytes": 5667,
+    "sha256": "6889c8e9931e0472358068ddd84b008ab6340872407f606b8a8005279b4ac8f3"
+  },
+  "source-native/AbsenteeCounty2026.pdf": {
+    "bytes": 5624,
+    "sha256": "0a91d446e886ec564be44c32269a0af685ff7c2faff0eccc24a7417829af9ac2"
+  },
+  "source-native/AbsenteeStateHouse2026.pdf": {
+    "bytes": 5636,
+    "sha256": "776d1533664837ae5d3f9e25ff9b2c939db23e6f847cf210168f791760f14a5f"
+  },
+  "source-native/AbsenteeStateSenate2026.pdf": {
+    "bytes": 5661,
+    "sha256": "ee06e1be806aabc36dbaed879b0b4474df4ea61664070597a3c2d2ade07b95ff"
+  },
+  "source-native/historical-turnout-statistics.pdf": {
+    "bytes": 5561,
+    "sha256": "9ff1aa3ea3b5b0b267f66bbff40544cebe30b96b0246e05b0b4d8b3562f300d9"
+  },
+  "source-native/lee-results-index.html": {
+    "bytes": 5672,
+    "sha256": "9ba31a68401d76a9c7c7be2fa620d249b4e32a473dc3df0eb528b98208541e84"
+  },
+  "source-native/linn-2026-general-precinct.pdf": {
+    "bytes": 1757695,
+    "sha256": "f9c01726731a42b144006c635fc5e99a105fb7c6521c6d8626f7579dc8ca5504"
+  },
+  "source-native/linn-2026-general-summary.pdf": {
+    "bytes": 36494,
+    "sha256": "a2d194adfef5761933857f2b57e719297d793b41d54dfd53e2f68015b800572d"
+  },
+  "source-native/linn-results-index.html": {
+    "bytes": 5662,
+    "sha256": "b96473650d8bf41b12b2b68f16d9c54b319d073af42ecd7cdbf13c505e70035d"
+  },
+  "source-native/marion-2026-general-results.pdf": {
+    "bytes": 481505,
+    "sha256": "4627272fdf72d35b2c0d1a20b715efce5242d042ae5e00242cd7242f8d0ae002"
+  },
+  "source-native/marion-results-index.html": {
+    "bytes": 83785,
+    "sha256": "b32a53a0e20ae5040d1aa178a43010c0b77e8ae4830cb29025362541a2365b89"
+  },
+  "source-native/official-live-results.html": {
+    "bytes": 919,
+    "sha256": "5b6b2e4c42f68b7c494c499afe0e694d10e994d7304c08d2cdea9e5321829234"
+  },
+  "source-native/official-results-index.html": {
+    "bytes": 5558,
+    "sha256": "cc5ccf8ab2766404249491ae9a456369f1c360f338972e3a8dd4a53c1dea50a4"
+  },
+  "source-native/review/marion-native-headers.png": {
+    "bytes": 430724,
+    "sha256": "7a7bb0de601243a7f8d4b410b9dd6a9f6955db9a668a1473c254a7923e3ad512"
+  },
+  "source-native/review/marion-native-page-01.png": {
+    "bytes": 262369,
+    "sha256": "6a13712c2092a7b6dba3a79d5899e077290fb0e37ab7080bc2057f8d1cac73bd"
+  },
+  "source-native/sources.json": {
+    "bytes": 5769,
+    "sha256": "23a527af48c5d31613161052f6d492bf7032e4069563050bd2d46bbf6ed7a422"
+  }
+}

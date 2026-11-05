@@ -1,0 +1,132 @@
+[
+  {
+    "file": "official-results-index.html",
+    "url": "https://sos.iowa.gov/iowans/election-results-statistics",
+    "final_url": "https://sos.iowa.gov/iowans/election-results-statistics",
+    "status": 403,
+    "bytes": 5558,
+    "sha256": "cc5ccf8ab2766404249491ae9a456369f1c360f338972e3a8dd4a53c1dea50a4",
+    "content_type": "text/html; charset=UTF-8",
+    "acquired_at": "2026-11-05T13:59:52.949093+00:00"
+  },
+  {
+    "file": "official-live-results.html",
+    "url": "https://electionresults.iowa.gov/",
+    "final_url": "https://electionresults.iowa.gov/",
+    "status": 403,
+    "bytes": 919,
+    "sha256": "5b6b2e4c42f68b7c494c499afe0e694d10e994d7304c08d2cdea9e5321829234",
+    "content_type": "text/html",
+    "acquired_at": "2026-11-05T13:59:52.941144+00:00"
+  },
+  {
+    "file": "linn-results-index.html",
+    "url": "https://www.linncountyiowa.gov/ElectionServices",
+    "final_url": "https://www.linncountyiowa.gov/ElectionServices",
+    "status": 403,
+    "bytes": 5662,
+    "sha256": "b96473650d8bf41b12b2b68f16d9c54b319d073af42ecd7cdbf13c505e70035d",
+    "content_type": "text/html; charset=UTF-8",
+    "acquired_at": "2026-11-05T13:59:52.951871+00:00"
+  },
+  {
+    "file": "AbsenteeCounty2026.pdf",
+    "url": "https://sos.iowa.gov/elections/pdf/2026/general/AbsenteeCounty2026.pdf",
+    "final_url": "https://sos.iowa.gov/elections/pdf/2026/general/AbsenteeCounty2026.pdf",
+    "status": 403,
+    "bytes": 5624,
+    "sha256": "0a91d446e886ec564be44c32269a0af685ff7c2faff0eccc24a7417829af9ac2",
+    "content_type": "text/html; charset=UTF-8",
+    "acquired_at": "2026-11-05T14:00:19.914958+00:00"
+  },
+  {
+    "file": "AbsenteeStateHouse2026.pdf",
+    "url": "https://sos.iowa.gov/elections/pdf/2026/general/AbsenteeStateHouse2026.pdf",
+    "final_url": "https://sos.iowa.gov/elections/pdf/2026/general/AbsenteeStateHouse2026.pdf",
+    "status": 403,
+    "bytes": 5636,
+    "sha256": "776d1533664837ae5d3f9e25ff9b2c939db23e6f847cf210168f791760f14a5f",
+    "content_type": "text/html; charset=UTF-8",
+    "acquired_at": "2026-11-05T14:00:19.910488+00:00"
+  },
+  {
+    "file": "AbsenteeStateSenate2026.pdf",
+    "url": "https://sos.iowa.gov/elections/pdf/2026/general/AbsenteeStateSenate2026.pdf",
+    "final_url": "https://sos.iowa.gov/elections/pdf/2026/general/AbsenteeStateSenate2026.pdf",
+    "status": 403,
+    "bytes": 5661,
+    "sha256": "ee06e1be806aabc36dbaed879b0b4474df4ea61664070597a3c2d2ade07b95ff",
+    "content_type": "text/html; charset=UTF-8",
+    "acquired_at": "2026-11-05T14:00:19.952390+00:00"
+  },
+  {
+    "file": "AbsenteeCongressional2026.pdf",
+    "url": "https://sos.iowa.gov/elections/pdf/2026/general/AbsenteeCongressional2026.pdf",
+    "final_url": "https://sos.iowa.gov/elections/pdf/2026/general/AbsenteeCongressional2026.pdf",
+    "status": 403,
+    "bytes": 5667,
+    "sha256": "6889c8e9931e0472358068ddd84b008ab6340872407f606b8a8005279b4ac8f3",
+    "content_type": "text/html; charset=UTF-8",
+    "acquired_at": "2026-11-05T14:00:19.959443+00:00"
+  },
+  {
+    "file": "historical-turnout-statistics.pdf",
+    "url": "https://sos.iowa.gov/elections/pdf/turnoutstatistics.pdf",
+    "final_url": "https://sos.iowa.gov/elections/pdf/turnoutstatistics.pdf",
+    "status": 403,
+    "bytes": 5561,
+    "sha256": "9ff1aa3ea3b5b0b267f66bbff40544cebe30b96b0246e05b0b4d8b3562f300d9",
+    "content_type": "text/html; charset=UTF-8",
+    "acquired_at": "2026-11-05T14:00:19.972608+00:00"
+  },
+  {
+    "file": "linn-2026-general-summary.pdf",
+    "url": "https://gis.linncountyiowa.gov/web-data/elections/year/2026/20261103GE/sum.pdf",
+    "final_url": "https://gis.linncountyiowa.gov/web-data/elections/year/2026/20261103GE/sum.pdf",
+    "status": 200,
+    "bytes": 36494,
+    "sha256": "a2d194adfef5761933857f2b57e719297d793b41d54dfd53e2f68015b800572d",
+    "content_type": "application/pdf",
+    "acquired_at": "2026-11-05T14:00:20.131371+00:00"
+  },
+  {
+    "file": "linn-2026-general-precinct.pdf",
+    "url": "https://gis.linncountyiowa.gov/web-data/elections/year/2026/20261103GE/pct.pdf",
+    "final_url": "https://gis.linncountyiowa.gov/web-data/elections/year/2026/20261103GE/pct.pdf",
+    "status": 200,
+    "bytes": 1757695,
+    "sha256": "f9c01726731a42b144006c635fc5e99a105fb7c6521c6d8626f7579dc8ca5504",
+    "content_type": "application/pdf",
+    "acquired_at": "2026-11-05T14:00:20.486056+00:00"
+  },
+  {
+    "file": "marion-results-index.html",
+    "url": "https://www.marioncountyiowa.gov/elections/info/2026_general_election_2026_11_03/",
+    "final_url": "https://www.marioncountyiowa.gov/elections/info/2026_general_election_2026_11_03/",
+    "status": 200,
+    "bytes": 83785,
+    "sha256": "b32a53a0e20ae5040d1aa178a43010c0b77e8ae4830cb29025362541a2365b89",
+    "content_type": "text/html; charset=UTF-8",
+    "acquired_at": "2026-11-05T14:00:20.197382+00:00"
+  },
+  {
+    "file": "marion-2026-general-results.pdf",
+    "url": "https://www.marioncountyiowa.gov/files/election_results/2026_general_election_2026_11_03_29798_.pdf",
+    "final_url": "https://mintchiplab.marioncountyiowa.gov/assets/marion_county/election_results/2026_general_election_2026_11_03_29798_.pdf",
+    "status": 200,
+    "bytes": 481505,
+    "sha256": "4627272fdf72d35b2c0d1a20b715efce5242d042ae5e00242cd7242f8d0ae002",
+    "content_type": "application/pdf",
+    "acquired_at": "2026-11-05T14:00:20.543184+00:00"
+  },
+  {
+    "file": "lee-results-index.html",
+    "url": "https://www.leecountyiowa.gov/newsview.aspx?nid=6161",
+    "final_url": "https://www.leecountyiowa.gov/newsview.aspx?nid=6161",
+    "status": 403,
+    "bytes": 5672,
+    "sha256": "9ba31a68401d76a9c7c7be2fa620d249b4e32a473dc3df0eb528b98208541e84",
+    "content_type": "text/html; charset=UTF-8",
+    "acquired_at": "2026-11-05T14:00:20.305348+00:00"
+  }
+]

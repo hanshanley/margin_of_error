@@ -4310,15 +4310,73 @@ Astro check, seven participation regressions and the production build pass.
 The serial validator passes the participation assertions and reaches only
 the established unrelated UK card mismatch (**23 versus 16**, line 1097).
 The Pages preparer passes and preserves complete download relocation.
-Publication and four-mode browser verification must pass before calling this
-copy live; do not modify verified map data or rendering for this copy change.
+Nationwide copy is **live verified** at Hans commit
+**467a5fcb184d03b89ad813f3ec34aef42d476f26**, successful exact deployment
+**42042763069**. Both unqueried public pages contain the new wording; all five
+public metadata/renderer files still match. Desktop/mobile with and without
+JavaScript pass the new deck, social descriptions, analysis preview,
+**108 complete downloads**, no overflow and unchanged 2026/precinct/red-blue
+defaults. Proofs: `files/nationwide-subtitles-publication-proof-01.json` and
+`files/nationwide-subtitles-live-browser-proof-01.json`. Do not repeat this
+finished live suite.
 
-**Current executable priority:** persist the acquired consolidated originals,
-independently reconcile complete state/county vectors and election identities
-for bulk imports, starting with remaining 2026 gaps. Compare Iowa's county
-vectors against the acquired Linn/Marion originals. Use county acquisition for
-true gaps, not to rebuild available compilations. Do not repeat the already
-acquired 25-state 2022 batch or the completed Kentucky production suite.
+### Iowa 2026: statewide bulk county count review, not map approval
+
+The consolidated source is now concretely processed rather than another
+inventory. `scripts/review-iowa-2026-consolidated-results.py` replays the
+pinned complete original archive, verifies its SHA-256 and Iowa Git blob,
+and preserves **all 6,010 original Iowa rows**. Its **376 House candidate
+rows** include **99 county contests and four statewide district contests**.
+Every candidate/write-in county vector sums exactly to its statewide
+district vector: **1,341,241 candidate votes**, not ballots or turnout.
+All nine Linn/Marion candidate/write-in entries match the independently
+reviewed native reports; the exact three complete official PDFs, native
+visual evidence, original receipts and error bodies are included. Unknown
+parties stay blank and all candidates/write-ins remain in margin denominators.
+
+The independently declared
+`https://results.enr.clarityelections.com/IA/127077/` returns **403**.
+Its full body and receipt are preserved in `source-bulk/`; do not bypass,
+guess result filenames or label provider arithmetic as primary verification
+of all 99 counties. Native reporting counters remain untouched: their unit
+semantics and reporting completion are not inferred from positive county
+counts. No geometry, precinct map, turnout denominator, completed state/year
+or new public layer is approved.
+
+Complete immutable review:
+`data/precinct-source-reviews/20261105-iowa-consolidated-01/`.
+Its **5,149,438-byte** `complete-iowa-county-review.zip` contains **27
+members**, including the full 40-state original archive and CC0 license,
+all native Iowa originals, every derived table, **26** checksums and the
+portable reviewer. ZIP SHA-256:
+`c43cfd5ce7f0b37c9b6166feb962b17b59fe4f934b91ee1d6e7dc1802a88252b`.
+Archive-only offline rebuild reproduces **every file, including the ZIP,
+byte-for-byte**. Proof: `files/iowa-consolidated-archive-replay-proof-01.json`.
+Five focused regressions pass for missing versus explicit zero, all-option
+denominators, duplicate candidates, conflicting native totals and mismatched
+county/state vectors.
+
+To reproduce from the extracted complete ZIP, choose a new output directory:
+
+```bash
+python review-iowa-2026-consolidated-results.py \
+  --bulk-originals source-bulk --native-originals source-native \
+  --output /path/to/new-iowa-review
+```
+
+**Current executable priority:** use already acquired consolidated originals
+for remaining 2026 state/county gap reviews, not new county-by-county rebuilding.
+Iowa county-vector reconciliation and native Linn/Marion cross-checks are
+finished. Next, complete its separately pending native **94-precinct** portable
+review/participation package and independently establish county geometry/source
+scope before map integration; do not treat this count review as that approval.
+The all-40-state arithmetic screen is
+`files/consolidated-election-sources-20261105-01/pushbuild-intake-arithmetic.json`:
+261 native group differences in CT/LA/MD/NJ need source/selection-rule
+interpretation, not automatic repair; missing-count placeholders remain missing.
+Do not repeat the already acquired 25-state 2022 batch, successful nationwide
+copy live suite or completed Kentucky production suite. Keep the acquisition
+schedule active and all 1,632 state/year completion flags honest.
 
 ## Resume procedure for every work session or scheduled prompt
 

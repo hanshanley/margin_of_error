@@ -1,0 +1,377 @@
+state,level,county,contest,candidate,party,votes,pct,contestTotalVotes,precinctsReporting,precinctsTotal,source,sourceUrl,sourceUpdatedAt,fetchedAt
+IA,state,,United States Representative District 1,Christina Bohannan,DEM,182396,52.7421,345826,18,20,Clarity ENR,https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:13+00:00
+IA,state,,United States Representative District 1,Mariannette Miller-Meeks,REP,150471,43.5106,345826,18,20,Clarity ENR,https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:13+00:00
+IA,state,,United States Representative District 1,Michael Bridgford,,12603,3.6443,345826,18,20,Clarity ENR,https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:13+00:00
+IA,state,,United States Representative District 1,Write-in,,356,0.1029,345826,18,20,Clarity ENR,https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:13+00:00
+IA,state,,United States Representative District 2,Lindsay James,DEM,171484,49.5045,346401,22,22,Clarity ENR,https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:13+00:00
+IA,state,,United States Representative District 2,Joe Mitchell,REP,157722,45.5316,346401,22,22,Clarity ENR,https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:13+00:00
+IA,state,,United States Representative District 2,Rick Stewart,LIB,9500,2.7425,346401,22,22,Clarity ENR,https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:13+00:00
+IA,state,,United States Representative District 2,Dave Bushaw,,7469,2.1562,346401,22,22,Clarity ENR,https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:13+00:00
+IA,state,,United States Representative District 2,Write-in,,226,0.0652,346401,22,22,Clarity ENR,https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:13+00:00
+IA,state,,United States Representative District 3,Sarah Trone Garriott,DEM,184951,53.4731,345877,19,21,Clarity ENR,https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:13+00:00
+IA,state,,United States Representative District 3,Zach Nunn,REP,160067,46.2786,345877,19,21,Clarity ENR,https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:13+00:00
+IA,state,,United States Representative District 3,Write-in,,859,0.2484,345877,19,21,Clarity ENR,https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:13+00:00
+IA,state,,United States Representative District 4,Chris McGowan,REP,178845,58.9981,303137,34,36,Clarity ENR,https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:13+00:00
+IA,state,,United States Representative District 4,Dave Dawson,DEM,123940,40.8858,303137,34,36,Clarity ENR,https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:13+00:00
+IA,state,,United States Representative District 4,Write-in,,352,0.1161,303137,34,36,Clarity ENR,https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:13+00:00
+IA,county,Adair,United States Representative District 3,Zach Nunn,REP,2111,67.5304,3126,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Adair,United States Representative District 3,Sarah Trone Garriott,DEM,1010,32.3097,3126,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Adair,United States Representative District 3,Write-in,,5,0.1599,3126,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Adams,United States Representative District 3,Zach Nunn,REP,1077,66.8114,1612,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Adams,United States Representative District 3,Sarah Trone Garriott,DEM,532,33.0025,1612,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Adams,United States Representative District 3,Write-in,,3,0.1861,1612,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Allamakee,United States Representative District 2,Joe Mitchell,REP,3275,57.9749,5649,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Allamakee,United States Representative District 2,Lindsay James,DEM,1997,35.3514,5649,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Allamakee,United States Representative District 2,Dave Bushaw,,219,3.8768,5649,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Allamakee,United States Representative District 2,Rick Stewart,LIB,157,2.7793,5649,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Allamakee,United States Representative District 2,Write-in,,1,0.0177,5649,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Appanoose,United States Representative District 3,Zach Nunn,REP,3189,66.5623,4791,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Appanoose,United States Representative District 3,Sarah Trone Garriott,DEM,1585,33.0829,4791,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Appanoose,United States Representative District 3,Write-in,,17,0.3548,4791,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Audubon,United States Representative District 4,Chris McGowan,REP,1458,62.9262,2317,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Audubon,United States Representative District 4,Dave Dawson,DEM,854,36.858,2317,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Audubon,United States Representative District 4,Write-in,,5,0.2158,2317,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Benton,United States Representative District 2,Joe Mitchell,REP,6709,57.1368,11742,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Benton,United States Representative District 2,Lindsay James,DEM,4350,37.0465,11742,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Benton,United States Representative District 2,Rick Stewart,LIB,428,3.645,11742,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Benton,United States Representative District 2,Dave Bushaw,,241,2.0525,11742,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Benton,United States Representative District 2,Write-in,,14,0.1192,11742,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Black Hawk,United States Representative District 2,Lindsay James,DEM,29233,56.076,52131,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Black Hawk,United States Representative District 2,Joe Mitchell,REP,20551,39.4218,52131,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Black Hawk,United States Representative District 2,Rick Stewart,LIB,1263,2.4227,52131,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Black Hawk,United States Representative District 2,Dave Bushaw,,1057,2.0276,52131,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Black Hawk,United States Representative District 2,Write-in,,27,0.0518,52131,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Boone,United States Representative District 4,Chris McGowan,REP,6413,53.0395,12091,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Boone,United States Representative District 4,Dave Dawson,DEM,5658,46.7951,12091,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Boone,United States Representative District 4,Write-in,,20,0.1654,12091,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Bremer,United States Representative District 2,Joe Mitchell,REP,6146,52.3331,11744,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Bremer,United States Representative District 2,Lindsay James,DEM,4891,41.6468,11744,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Bremer,United States Representative District 2,Rick Stewart,LIB,371,3.1591,11744,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Bremer,United States Representative District 2,Dave Bushaw,,332,2.827,11744,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Bremer,United States Representative District 2,Write-in,,4,0.0341,11744,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Buchanan,United States Representative District 2,Joe Mitchell,REP,4444,52.2516,8505,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Buchanan,United States Representative District 2,Lindsay James,DEM,3394,39.9059,8505,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Buchanan,United States Representative District 2,Dave Bushaw,,396,4.6561,8505,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Buchanan,United States Representative District 2,Rick Stewart,LIB,261,3.0688,8505,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Buchanan,United States Representative District 2,Write-in,,10,0.1176,8505,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Buena Vista,United States Representative District 4,Chris McGowan,REP,3310,57.9989,5707,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Buena Vista,United States Representative District 4,Dave Dawson,DEM,2390,41.8784,5707,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Buena Vista,United States Representative District 4,Write-in,,7,0.1227,5707,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Butler,United States Representative District 2,Joe Mitchell,REP,3967,63.1889,6278,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Butler,United States Representative District 2,Lindsay James,DEM,1959,31.2042,6278,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Butler,United States Representative District 2,Rick Stewart,LIB,201,3.2017,6278,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Butler,United States Representative District 2,Dave Bushaw,,146,2.3256,6278,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Butler,United States Representative District 2,Write-in,,5,0.0796,6278,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Calhoun,United States Representative District 4,Chris McGowan,REP,2434,66.3939,3666,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Calhoun,United States Representative District 4,Dave Dawson,DEM,1225,33.4152,3666,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Calhoun,United States Representative District 4,Write-in,,7,0.1909,3666,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Carroll,United States Representative District 4,Chris McGowan,REP,5620,66.1799,8492,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Carroll,United States Representative District 4,Dave Dawson,DEM,2862,33.7023,8492,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Carroll,United States Representative District 4,Write-in,,10,0.1178,8492,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Cass,United States Representative District 3,Zach Nunn,REP,3531,67.0401,5267,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Cass,United States Representative District 3,Sarah Trone Garriott,DEM,1730,32.846,5267,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Cass,United States Representative District 3,Write-in,,6,0.1139,5267,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Cedar,United States Representative District 1,Mariannette Miller-Meeks,REP,4333,50.1389,8642,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Cedar,United States Representative District 1,Christina Bohannan,DEM,4022,46.5402,8642,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Cedar,United States Representative District 1,Michael Bridgford,,283,3.2747,8642,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Cedar,United States Representative District 1,Write-in,,4,0.0463,8642,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Cerro Gordo,United States Representative District 2,Lindsay James,DEM,9006,48.866,18430,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Cerro Gordo,United States Representative District 2,Joe Mitchell,REP,8748,47.4661,18430,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Cerro Gordo,United States Representative District 2,Rick Stewart,LIB,458,2.4851,18430,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Cerro Gordo,United States Representative District 2,Dave Bushaw,,200,1.0852,18430,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Cerro Gordo,United States Representative District 2,Write-in,,18,0.0977,18430,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Cherokee,United States Representative District 4,Chris McGowan,REP,3073,65.5643,4687,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Cherokee,United States Representative District 4,Dave Dawson,DEM,1607,34.2863,4687,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Cherokee,United States Representative District 4,Write-in,,7,0.1493,4687,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Chickasaw,United States Representative District 2,Joe Mitchell,REP,2758,56.8894,4848,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Chickasaw,United States Representative District 2,Lindsay James,DEM,1703,35.1279,4848,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Chickasaw,United States Representative District 2,Dave Bushaw,,249,5.1361,4848,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Chickasaw,United States Representative District 2,Rick Stewart,LIB,133,2.7434,4848,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Chickasaw,United States Representative District 2,Write-in,,5,0.1031,4848,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Clarke,United States Representative District 3,Zach Nunn,REP,2240,64.1834,3490,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Clarke,United States Representative District 3,Sarah Trone Garriott,DEM,1237,35.4441,3490,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Clarke,United States Representative District 3,Write-in,,13,0.3725,3490,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Clay,United States Representative District 4,Chris McGowan,REP,4258,65.8725,6464,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Clay,United States Representative District 4,Dave Dawson,DEM,2200,34.0347,6464,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Clay,United States Representative District 4,Write-in,,6,0.0928,6464,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Clayton,United States Representative District 2,Joe Mitchell,REP,4145,56.812,7296,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Clayton,United States Representative District 2,Lindsay James,DEM,2638,36.1568,7296,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Clayton,United States Representative District 2,Dave Bushaw,,327,4.4819,7296,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Clayton,United States Representative District 2,Rick Stewart,LIB,183,2.5082,7296,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Clayton,United States Representative District 2,Write-in,,3,0.0411,7296,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Clinton,United States Representative District 1,Christina Bohannan,DEM,8904,48.1636,18487,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Clinton,United States Representative District 1,Mariannette Miller-Meeks,REP,8701,47.0655,18487,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Clinton,United States Representative District 1,Michael Bridgford,,862,4.6627,18487,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Clinton,United States Representative District 1,Write-in,,20,0.1082,18487,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Crawford,United States Representative District 4,Chris McGowan,REP,3010,62.2802,4833,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Crawford,United States Representative District 4,Dave Dawson,DEM,1815,37.5543,4833,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Crawford,United States Representative District 4,Write-in,,8,0.1655,4833,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Dallas,United States Representative District 3,Sarah Trone Garriott,DEM,26400,52.0259,50744,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Dallas,United States Representative District 3,Zach Nunn,REP,24275,47.8382,50744,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Dallas,United States Representative District 3,Write-in,,69,0.136,50744,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Davis,United States Representative District 3,Zach Nunn,REP,2106,71.0526,2964,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Davis,United States Representative District 3,Sarah Trone Garriott,DEM,853,28.7787,2964,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Davis,United States Representative District 3,Write-in,,5,0.1687,2964,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Decatur,United States Representative District 3,Zach Nunn,REP,1897,67.9198,2793,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Decatur,United States Representative District 3,Sarah Trone Garriott,DEM,885,31.6864,2793,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Decatur,United States Representative District 3,Write-in,,11,0.3938,2793,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Delaware,United States Representative District 2,Joe Mitchell,REP,4860,61.4102,7914,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Delaware,United States Representative District 2,Lindsay James,DEM,2662,33.6366,7914,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Delaware,United States Representative District 2,Rick Stewart,LIB,221,2.7925,7914,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Delaware,United States Representative District 2,Dave Bushaw,,171,2.1607,7914,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Delaware,United States Representative District 2,Write-in,,0,0.0,7914,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Des Moines,United States Representative District 1,Christina Bohannan,DEM,7321,49.5131,14786,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Des Moines,United States Representative District 1,Mariannette Miller-Meeks,REP,6801,45.9962,14786,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Des Moines,United States Representative District 1,Michael Bridgford,,645,4.3622,14786,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Des Moines,United States Representative District 1,Write-in,,19,0.1285,14786,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Dickinson,United States Representative District 4,Chris McGowan,REP,6249,66.8915,9342,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Dickinson,United States Representative District 4,Dave Dawson,DEM,3083,33.0015,9342,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Dickinson,United States Representative District 4,Write-in,,10,0.107,9342,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Dubuque,United States Representative District 2,Lindsay James,DEM,22307,51.4876,43325,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Dubuque,United States Representative District 2,Joe Mitchell,REP,19450,44.8932,43325,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Dubuque,United States Representative District 2,Rick Stewart,LIB,1004,2.3174,43325,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Dubuque,United States Representative District 2,Dave Bushaw,,534,1.2325,43325,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Dubuque,United States Representative District 2,Write-in,,30,0.0692,43325,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Emmet,United States Representative District 4,Chris McGowan,REP,2255,64.9669,3471,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Emmet,United States Representative District 4,Dave Dawson,DEM,1211,34.8891,3471,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Emmet,United States Representative District 4,Write-in,,5,0.1441,3471,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Fayette,United States Representative District 2,Joe Mitchell,REP,3842,49.1304,7820,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Fayette,United States Representative District 2,Lindsay James,DEM,2702,34.5524,7820,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Fayette,United States Representative District 2,Dave Bushaw,,1095,14.0026,7820,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Fayette,United States Representative District 2,Rick Stewart,LIB,179,2.289,7820,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Fayette,United States Representative District 2,Write-in,,2,0.0256,7820,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Floyd,United States Representative District 2,Joe Mitchell,REP,3183,52.7773,6031,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Floyd,United States Representative District 2,Lindsay James,DEM,2535,42.0328,6031,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Floyd,United States Representative District 2,Rick Stewart,LIB,185,3.0675,6031,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Floyd,United States Representative District 2,Dave Bushaw,,124,2.056,6031,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Floyd,United States Representative District 2,Write-in,,4,0.0663,6031,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Franklin,United States Representative District 4,Chris McGowan,REP,2458,65.8981,3730,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Franklin,United States Representative District 4,Dave Dawson,DEM,1270,34.0483,3730,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Franklin,United States Representative District 4,Write-in,,2,0.0536,3730,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Fremont,United States Representative District 4,Chris McGowan,REP,1651,64.2913,2568,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Fremont,United States Representative District 4,Dave Dawson,DEM,912,35.514,2568,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Fremont,United States Representative District 4,Write-in,,5,0.1947,2568,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Greene,United States Representative District 3,Zach Nunn,REP,2275,61.8543,3678,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Greene,United States Representative District 3,Sarah Trone Garriott,DEM,1391,37.8195,3678,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Greene,United States Representative District 3,Write-in,,12,0.3263,3678,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Grundy,United States Representative District 2,Joe Mitchell,REP,3628,63.6268,5702,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Grundy,United States Representative District 2,Lindsay James,DEM,1805,31.6556,5702,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Grundy,United States Representative District 2,Rick Stewart,LIB,191,3.3497,5702,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Grundy,United States Representative District 2,Dave Bushaw,,73,1.2803,5702,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Grundy,United States Representative District 2,Write-in,,5,0.0877,5702,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Guthrie,United States Representative District 3,Zach Nunn,REP,3432,66.1017,5192,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Guthrie,United States Representative District 3,Sarah Trone Garriott,DEM,1751,33.725,5192,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Guthrie,United States Representative District 3,Write-in,,9,0.1733,5192,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Hamilton,United States Representative District 4,Chris McGowan,REP,3394,59.2631,5727,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Hamilton,United States Representative District 4,Dave Dawson,DEM,2332,40.7194,5727,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Hamilton,United States Representative District 4,Write-in,,1,0.0175,5727,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Hancock,United States Representative District 4,Chris McGowan,REP,3124,69.5613,4491,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Hancock,United States Representative District 4,Dave Dawson,DEM,1361,30.3051,4491,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Hancock,United States Representative District 4,Write-in,,6,0.1336,4491,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Hardin,United States Representative District 2,Joe Mitchell,REP,3941,60.2876,6537,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Hardin,United States Representative District 2,Lindsay James,DEM,2259,34.5571,6537,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Hardin,United States Representative District 2,Rick Stewart,LIB,210,3.2125,6537,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Hardin,United States Representative District 2,Dave Bushaw,,120,1.8357,6537,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Hardin,United States Representative District 2,Write-in,,7,0.1071,6537,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Harrison,United States Representative District 4,Chris McGowan,REP,3634,64.024,5676,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Harrison,United States Representative District 4,Dave Dawson,DEM,2024,35.6589,5676,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Harrison,United States Representative District 4,Write-in,,18,0.3171,5676,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Henry,United States Representative District 1,Mariannette Miller-Meeks,REP,4232,56.1348,7539,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Henry,United States Representative District 1,Christina Bohannan,DEM,2968,39.3686,7539,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Henry,United States Representative District 1,Michael Bridgford,,331,4.3905,7539,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Henry,United States Representative District 1,Write-in,,8,0.1061,7539,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Howard,United States Representative District 2,Joe Mitchell,REP,2066,55.8077,3702,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Howard,United States Representative District 2,Lindsay James,DEM,1374,37.1151,3702,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Howard,United States Representative District 2,Dave Bushaw,,164,4.43,3702,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Howard,United States Representative District 2,Rick Stewart,LIB,97,2.6202,3702,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Howard,United States Representative District 2,Write-in,,1,0.027,3702,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Humboldt,United States Representative District 4,Chris McGowan,REP,2597,69.5128,3736,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Humboldt,United States Representative District 4,Dave Dawson,DEM,1137,30.4336,3736,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Humboldt,United States Representative District 4,Write-in,,2,0.0535,3736,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Ida,United States Representative District 4,Chris McGowan,REP,1961,72.255,2714,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Ida,United States Representative District 4,Dave Dawson,DEM,748,27.5608,2714,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Ida,United States Representative District 4,Write-in,,5,0.1842,2714,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Iowa,United States Representative District 1,Mariannette Miller-Meeks,REP,4281,54.3895,7871,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Iowa,United States Representative District 1,Christina Bohannan,DEM,3305,41.9896,7871,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Iowa,United States Representative District 1,Michael Bridgford,,280,3.5574,7871,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Iowa,United States Representative District 1,Write-in,,5,0.0635,7871,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Jackson,United States Representative District 1,Mariannette Miller-Meeks,REP,4581,53.9894,8485,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Jackson,United States Representative District 1,Christina Bohannan,DEM,3483,41.0489,8485,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Jackson,United States Representative District 1,Michael Bridgford,,415,4.891,8485,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Jackson,United States Representative District 1,Write-in,,6,0.0707,8485,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Jasper,United States Representative District 1,Mariannette Miller-Meeks,REP,8794,54.1936,16227,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Jasper,United States Representative District 1,Christina Bohannan,DEM,6854,42.2382,16227,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Jasper,United States Representative District 1,Michael Bridgford,,565,3.4819,16227,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Jasper,United States Representative District 1,Write-in,,14,0.0863,16227,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Jefferson,United States Representative District 1,Christina Bohannan,DEM,3617,52.6033,6876,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Jefferson,United States Representative District 1,Mariannette Miller-Meeks,REP,2995,43.5573,6876,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Jefferson,United States Representative District 1,Michael Bridgford,,252,3.6649,6876,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Jefferson,United States Representative District 1,Write-in,,12,0.1745,6876,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Johnson,United States Representative District 1,Christina Bohannan,DEM,56388,75.3538,74831,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Johnson,United States Representative District 1,Mariannette Miller-Meeks,REP,16850,22.5174,74831,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Johnson,United States Representative District 1,Michael Bridgford,,1527,2.0406,74831,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Johnson,United States Representative District 1,Write-in,,66,0.0882,74831,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Jones,United States Representative District 1,Mariannette Miller-Meeks,REP,4552,52.8749,8609,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Jones,United States Representative District 1,Christina Bohannan,DEM,3732,43.35,8609,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Jones,United States Representative District 1,Michael Bridgford,,323,3.7519,8609,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Jones,United States Representative District 1,Write-in,,2,0.0232,8609,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Keokuk,United States Representative District 1,Mariannette Miller-Meeks,REP,2455,63.1592,3887,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Keokuk,United States Representative District 1,Christina Bohannan,DEM,1258,32.3643,3887,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Keokuk,United States Representative District 1,Michael Bridgford,,171,4.3993,3887,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Keokuk,United States Representative District 1,Write-in,,3,0.0772,3887,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Kossuth,United States Representative District 4,Chris McGowan,REP,4467,67.7742,6591,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Kossuth,United States Representative District 4,Dave Dawson,DEM,2119,32.1499,6591,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Kossuth,United States Representative District 4,Write-in,,5,0.0759,6591,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Lee,United States Representative District 1,Mariannette Miller-Meeks,REP,6128,51.1306,11985,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Lee,United States Representative District 1,Christina Bohannan,DEM,5363,44.7476,11985,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Lee,United States Representative District 1,Michael Bridgford,,480,4.005,11985,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Lee,United States Representative District 1,Write-in,,14,0.1168,11985,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Linn,United States Representative District 2,Lindsay James,DEM,62228,58.7955,105838,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Linn,United States Representative District 2,Joe Mitchell,REP,39254,37.0888,105838,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Linn,United States Representative District 2,Rick Stewart,LIB,3058,2.8893,105838,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Linn,United States Representative District 2,Dave Bushaw,,1230,1.1622,105838,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Linn,United States Representative District 2,Write-in,,68,0.0642,105838,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Louisa,United States Representative District 1,Mariannette Miller-Meeks,REP,2228,57.5413,3872,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Louisa,United States Representative District 1,Christina Bohannan,DEM,1470,37.9649,3872,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Louisa,United States Representative District 1,Michael Bridgford,,172,4.4421,3872,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Louisa,United States Representative District 1,Write-in,,2,0.0517,3872,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Lucas,United States Representative District 3,Zach Nunn,REP,2366,68.8792,3435,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Lucas,United States Representative District 3,Sarah Trone Garriott,DEM,1065,31.0044,3435,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Lucas,United States Representative District 3,Write-in,,4,0.1164,3435,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Lyon,United States Representative District 4,Chris McGowan,REP,4344,81.9623,5300,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Lyon,United States Representative District 4,Dave Dawson,DEM,950,17.9245,5300,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Lyon,United States Representative District 4,Write-in,,6,0.1132,5300,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Madison,United States Representative District 3,Zach Nunn,REP,3547,70.1404,5057,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Madison,United States Representative District 3,Sarah Trone Garriott,DEM,1495,29.563,5057,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Madison,United States Representative District 3,Write-in,,15,0.2966,5057,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Mahaska,United States Representative District 1,Mariannette Miller-Meeks,REP,5544,66.6346,8320,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Mahaska,United States Representative District 1,Christina Bohannan,DEM,2488,29.9038,8320,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Mahaska,United States Representative District 1,Michael Bridgford,,287,3.4495,8320,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Mahaska,United States Representative District 1,Write-in,,1,0.012,8320,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Marion,United States Representative District 1,Mariannette Miller-Meeks,REP,9658,60.6544,15923,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Marion,United States Representative District 1,Christina Bohannan,DEM,5664,35.5712,15923,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Marion,United States Representative District 1,Michael Bridgford,,586,3.6802,15923,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Marion,United States Representative District 1,Write-in,,15,0.0942,15923,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Marshall,United States Representative District 4,Dave Dawson,DEM,7163,50.5291,14176,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Marshall,United States Representative District 4,Chris McGowan,REP,7000,49.3792,14176,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Marshall,United States Representative District 4,Write-in,,13,0.0917,14176,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Mills,United States Representative District 4,Chris McGowan,REP,3835,63.357,6053,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Mills,United States Representative District 4,Dave Dawson,DEM,2204,36.4117,6053,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Mills,United States Representative District 4,Write-in,,14,0.2313,6053,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Mitchell,United States Representative District 2,Joe Mitchell,REP,2524,57.2985,4405,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Mitchell,United States Representative District 2,Lindsay James,DEM,1701,38.6152,4405,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Mitchell,United States Representative District 2,Rick Stewart,LIB,123,2.7923,4405,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Mitchell,United States Representative District 2,Dave Bushaw,,56,1.2713,4405,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Mitchell,United States Representative District 2,Write-in,,1,0.0227,4405,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Monona,United States Representative District 4,Chris McGowan,REP,2254,67.3439,3347,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Monona,United States Representative District 4,Dave Dawson,DEM,1087,32.4768,3347,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Monona,United States Representative District 4,Write-in,,6,0.1793,3347,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Monroe,United States Representative District 3,Zach Nunn,REP,2139,70.1082,3051,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Monroe,United States Representative District 3,Sarah Trone Garriott,DEM,907,29.728,3051,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Monroe,United States Representative District 3,Write-in,,5,0.1639,3051,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Montgomery,United States Representative District 3,Zach Nunn,REP,2456,66.4502,3696,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Montgomery,United States Representative District 3,Sarah Trone Garriott,DEM,1231,33.3063,3696,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Montgomery,United States Representative District 3,Write-in,,9,0.2435,3696,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Muscatine,United States Representative District 1,Christina Bohannan,DEM,7980,50.2741,15873,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Muscatine,United States Representative District 1,Mariannette Miller-Meeks,REP,6955,43.8165,15873,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Muscatine,United States Representative District 1,Michael Bridgford,,860,5.418,15873,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Muscatine,United States Representative District 1,Write-in,,78,0.4914,15873,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,O'Brien,United States Representative District 4,Chris McGowan,REP,4127,75.9617,5433,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,O'Brien,United States Representative District 4,Dave Dawson,DEM,1302,23.9647,5433,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,O'Brien,United States Representative District 4,Write-in,,4,0.0736,5433,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Osceola,United States Representative District 4,Chris McGowan,REP,1836,78.4951,2339,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Osceola,United States Representative District 4,Dave Dawson,DEM,501,21.4194,2339,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Osceola,United States Representative District 4,Write-in,,2,0.0855,2339,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Page,United States Representative District 3,Zach Nunn,REP,3470,66.4369,5223,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Page,United States Representative District 3,Sarah Trone Garriott,DEM,1741,33.3333,5223,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Page,United States Representative District 3,Write-in,,12,0.2298,5223,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Palo Alto,United States Representative District 4,Chris McGowan,REP,2649,67.2506,3939,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Palo Alto,United States Representative District 4,Dave Dawson,DEM,1287,32.6733,3939,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Palo Alto,United States Representative District 4,Write-in,,3,0.0762,3939,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Plymouth,United States Representative District 4,Chris McGowan,REP,7740,72.4583,10682,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Plymouth,United States Representative District 4,Dave Dawson,DEM,2931,27.4387,10682,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Plymouth,United States Representative District 4,Write-in,,11,0.103,10682,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Pocahontas,United States Representative District 4,Chris McGowan,REP,1884,70.7207,2664,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Pocahontas,United States Representative District 4,Dave Dawson,DEM,780,29.2793,2664,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Pocahontas,United States Representative District 4,Write-in,,0,0.0,2664,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Polk,United States Representative District 3,Sarah Trone Garriott,DEM,132979,60.562,219575,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Polk,United States Representative District 3,Zach Nunn,REP,85972,39.1538,219575,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Polk,United States Representative District 3,Write-in,,624,0.2842,219575,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Pottawattamie,United States Representative District 4,Chris McGowan,REP,17328,52.1488,33228,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Pottawattamie,United States Representative District 4,Dave Dawson,DEM,15900,47.8512,33228,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Pottawattamie,United States Representative District 4,Write-in,,0,0.0,33228,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Poweshiek,United States Representative District 2,Joe Mitchell,REP,3934,49.7975,7900,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Poweshiek,United States Representative District 2,Lindsay James,DEM,3655,46.2658,7900,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Poweshiek,United States Representative District 2,Rick Stewart,LIB,198,2.5063,7900,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Poweshiek,United States Representative District 2,Dave Bushaw,,107,1.3544,7900,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Poweshiek,United States Representative District 2,Write-in,,6,0.0759,7900,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Ringgold,United States Representative District 3,Zach Nunn,REP,1519,72.4023,2098,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Ringgold,United States Representative District 3,Sarah Trone Garriott,DEM,572,27.2641,2098,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Ringgold,United States Representative District 3,Write-in,,7,0.3337,2098,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Sac,United States Representative District 4,Chris McGowan,REP,2902,70.0966,4140,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Sac,United States Representative District 4,Dave Dawson,DEM,1231,29.7343,4140,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Sac,United States Representative District 4,Write-in,,7,0.1691,4140,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Scott,United States Representative District 1,Christina Bohannan,DEM,39971,54.2907,73624,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Scott,United States Representative District 1,Mariannette Miller-Meeks,REP,30515,41.4471,73624,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Scott,United States Representative District 1,Michael Bridgford,,3086,4.1916,73624,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Scott,United States Representative District 1,Write-in,,52,0.0706,73624,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Shelby,United States Representative District 4,Chris McGowan,REP,3177,66.9688,4744,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Shelby,United States Representative District 4,Dave Dawson,DEM,1562,32.9258,4744,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Shelby,United States Representative District 4,Write-in,,5,0.1054,4744,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Sioux,United States Representative District 4,Chris McGowan,REP,12409,82.7819,14990,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Sioux,United States Representative District 4,Dave Dawson,DEM,2565,17.1114,14990,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Sioux,United States Representative District 4,Write-in,,16,0.1067,14990,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Story,United States Representative District 4,Dave Dawson,DEM,25729,62.3159,41288,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Story,United States Representative District 4,Chris McGowan,REP,15500,37.5412,41288,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Story,United States Representative District 4,Write-in,,59,0.1429,41288,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Tama,United States Representative District 2,Joe Mitchell,REP,3741,53.4505,6999,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Tama,United States Representative District 2,Lindsay James,DEM,2872,41.0344,6999,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Tama,United States Representative District 2,Rick Stewart,LIB,246,3.5148,6999,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Tama,United States Representative District 2,Dave Bushaw,,134,1.9146,6999,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Tama,United States Representative District 2,Write-in,,6,0.0857,6999,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Taylor,United States Representative District 3,Zach Nunn,REP,1596,73.211,2180,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Taylor,United States Representative District 3,Sarah Trone Garriott,DEM,578,26.5138,2180,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Taylor,United States Representative District 3,Write-in,,6,0.2752,2180,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Union,United States Representative District 3,Zach Nunn,REP,2867,61.9222,4630,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Union,United States Representative District 3,Sarah Trone Garriott,DEM,1754,37.8834,4630,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Union,United States Representative District 3,Write-in,,9,0.1944,4630,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Van Buren,United States Representative District 1,Mariannette Miller-Meeks,REP,1897,67.4609,2812,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Van Buren,United States Representative District 1,Christina Bohannan,DEM,810,28.8051,2812,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Van Buren,United States Representative District 1,Michael Bridgford,,103,3.6629,2812,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Van Buren,United States Representative District 1,Write-in,,2,0.0711,2812,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Wapello,United States Representative District 3,Zach Nunn,REP,6380,57.9052,11018,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Wapello,United States Representative District 3,Sarah Trone Garriott,DEM,4625,41.9768,11018,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Wapello,United States Representative District 3,Write-in,,13,0.118,11018,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Warren,United States Representative District 1,Mariannette Miller-Meeks,REP,13843,50.2505,27548,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Warren,United States Representative District 1,Christina Bohannan,DEM,12660,45.9561,27548,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Warren,United States Representative District 1,Michael Bridgford,,1020,3.7026,27548,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Warren,United States Representative District 1,Write-in,,25,0.0908,27548,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Washington,United States Representative District 1,Mariannette Miller-Meeks,REP,5128,53.2558,9629,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Washington,United States Representative District 1,Christina Bohannan,DEM,4138,42.9743,9629,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Washington,United States Representative District 1,Michael Bridgford,,355,3.6868,9629,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Washington,United States Representative District 1,Write-in,,8,0.0831,9629,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Wayne,United States Representative District 3,Zach Nunn,REP,1622,71.8653,2257,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Wayne,United States Representative District 3,Sarah Trone Garriott,DEM,630,27.9132,2257,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Wayne,United States Representative District 3,Write-in,,5,0.2215,2257,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Webster,United States Representative District 4,Chris McGowan,REP,7148,57.2802,12479,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Webster,United States Representative District 4,Dave Dawson,DEM,5318,42.6156,12479,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Webster,United States Representative District 4,Write-in,,13,0.1042,12479,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Winnebago,United States Representative District 4,Chris McGowan,REP,2681,61.5049,4359,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Winnebago,United States Representative District 4,Dave Dawson,DEM,1671,38.3345,4359,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Winnebago,United States Representative District 4,Write-in,,7,0.1606,4359,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Winneshiek,United States Representative District 2,Lindsay James,DEM,4857,47.4363,10239,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Winneshiek,United States Representative District 2,Joe Mitchell,REP,4732,46.2155,10239,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Winneshiek,United States Representative District 2,Dave Bushaw,,440,4.2973,10239,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Winneshiek,United States Representative District 2,Rick Stewart,LIB,205,2.0021,10239,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Winneshiek,United States Representative District 2,Write-in,,5,0.0488,10239,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Woodbury,United States Representative District 4,Chris McGowan,REP,18007,53.9277,33391,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Woodbury,United States Representative District 4,Dave Dawson,DEM,15336,45.9285,33391,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Woodbury,United States Representative District 4,Write-in,,48,0.1438,33391,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Worth,United States Representative District 2,Joe Mitchell,REP,1824,54.1889,3366,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Worth,United States Representative District 2,Lindsay James,DEM,1356,40.2852,3366,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Worth,United States Representative District 2,Rick Stewart,LIB,128,3.8027,3366,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Worth,United States Representative District 2,Dave Bushaw,,54,1.6043,3366,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Worth,United States Representative District 2,Write-in,,4,0.1188,3366,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Wright,United States Representative District 4,Chris McGowan,REP,2658,62.0738,4282,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Wright,United States Representative District 4,Dave Dawson,DEM,1615,37.716,4282,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00
+IA,county,Wright,United States Representative District 4,Write-in,,9,0.2102,4282,,,Clarity ENR (county),https://results.enr.clarityelections.com/IA/127077/,,2026-11-04T17:13:14+00:00

@@ -1,0 +1,5 @@
+year,state_code,county,contest,democratic_votes,republican_votes,other_and_write_in_votes,total_candidate_votes,dem_minus_rep_pct,status
+2026,IA,,United States Representative District 1,182396,150471,12959,345826,9.231521,unofficial_snapshot
+2026,IA,,United States Representative District 2,171484,157722,17195,346401,3.972852,unofficial_snapshot
+2026,IA,,United States Representative District 3,184951,160067,859,345877,7.194465,unofficial_snapshot
+2026,IA,,United States Representative District 4,123940,178845,352,303137,-18.112273,unofficial_snapshot
