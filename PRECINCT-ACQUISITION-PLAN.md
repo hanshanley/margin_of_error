@@ -2323,11 +2323,11 @@ Okanogan's explicitly Democratic John Duresky label.
 Other-office review is independent: Pacific's Timberland library measure and
 Wahkiakum's commissioner contest do not sum to their county summaries; full
 diagnostics and originals remain without discarding separately verified House
-contests. No participation rate, demographic inference or map is approved.
+contests. No participation rate or demographic inference is approved.
 King's official index announces its first precinct release November 6 at
 4 p.m.; do not mistake a county summary for a precinct file.
 
-The canonical complete count package is
+The first, now superseded, complete count package is
 `data/precinct-source-reviews/20261105/WA/`. Its ZIP is
 `complete-washington-2026-count-review.zip`, **109,998,129 bytes**, SHA-256
 `dd51f894522ba53cd7ad392babb4c234c768a1d2bf0d2eb19365423fcd46bd82`.
@@ -2338,8 +2338,7 @@ ZIP **byte-identically using archive-only inputs**.
 Proof: `files/washington-2026-offline-reproduction-proof.json`.
 Validated House candidate totals are **932,493 Democratic + 671,234 Republican
 + 6,640 other = 1,610,367** across the 36 accepted counties; these are neither
-statewide totals nor unique voters. Release verification is the remaining
-source-publication gate; no registry, ledger or live flag changes yet.
+statewide totals nor unique voters. The corrected package below is canonical.
 
 The first source package was committed/pushed as Hans at
 `f219c127274d75a0d0532be52844a8f09467652d`. Its complete remote ZIP and exact
@@ -2395,12 +2394,35 @@ The corrected count archive-only proof also passes, including all original
 inputs, all 78 workbook CRCs and every derived D-minus-R margin:
 `files/washington-2026-offline-reproduction-proof-02.json`.
 
-**Next executable actions:** commit and release both corrected snapshots as
-Hans, redownload both full ZIPs and
-verify exact source tags, then add the immutable mapped pointer and complete
-downloads. Test build/Pages preparation and source-matched desktop/mobile x
-JS/no-JS colors, counts, selection, zoom, state fallback, old downloads and
-year changes. Verify the exact new deployment before a live flag. Then expand
+Both corrected packages are committed/pushed as Hans at
+`4aaa45e0a40ee16c66922637f795fe6fa9fa4ff7` and published as immutable releases
+`voter-precinct-washington-counts-20261105-02` and
+`voter-precinct-washington-maps-20261105`. Both full remote ZIPs match their
+recorded bytes/SHA-256, pass CRC checks and bind to that exact source commit.
+Proof: `files/washington-2026-corrected-remote-release-proof.json`.
+
+The registry now appends only the pinned Washington mapped supplement, with
+its complete original-backed ZIP and all-5,804-row CSV. It explicitly declares
+`participation_available:false`, avoiding an invented statistics download.
+All **53 existing** download links remain unchanged; there are now **55**.
+All **1,632** state/year cells remain incomplete, and only **WA/2026** changes
+to `snapshot_ready` pending actual production verification.
+
+The seven focused Node tests, normal build and Pages preparation pass.
+Astro check has zero errors/warnings and the same five existing hints.
+All **94** relocated bulk assets remain byte-verified; prepared site size is
+**986,233,002 bytes**. `files/check-washington-2026-publication.py` passes on
+the prepared local site for desktop/mobile x JS/no-JS: independently computed
+D-minus-R signs, all **1,499** exact path fills/margins/counts, all55 download
+links and unchanged prior53, actual selection-fit, zoom buttons, desktop wheel
+and post-fit double-click, mobile real two-pointer pinch, year switches,
+exact Nevada state fallback, honest excluded-strip/Pierce caveats, no inferred
+participation, preserved 2026 defaults and no overflow or JS errors.
+Proof: `files/washington-2026-local-browser-proof.json`.
+
+**Next executable actions:** push the UI/ledger batch as Hans, verify its exact
+new Pages deployment and unqueried production bytes/four browser modes before
+a live flag. Then expand
 actual county coverage (now explicitly approved) and pursue the remaining
 precinct crosswalks, Pierce rings, King identities and Jefferson/Walla Walla
 accounting. Native participation definitions and denominators remain a

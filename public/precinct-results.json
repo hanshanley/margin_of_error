@@ -91,6 +91,20 @@
       {"file": "originals/official-boston-declared-2026-reporting-faq.pdf.gz", "label": "Boston official explanation of separate precinct, central and combined reporting scopes (PDF · gzip)"},
       {"file": "audit.json", "label": "Boston 275-precinct native-count/footer reconciliation and app-selected boundary qualification (JSON)"}
     ]
+  }, {
+    "label": "Washington 2026 partial House precinct results (14 counties; not statewide turnout)",
+    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/4aaa45e0a40ee16c66922637f795fe6fa9fa4ff7/data/precinct-results/20261105-washington-03/",
+    "data_directory": "data/precinct-results/20261105-washington-03",
+    "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-washington-maps-20261105/complete-washington-2026-precinct-maps-03.zip",
+    "complete_download_bytes": 116917377,
+    "complete_download_sha256": "46f7a1a8e251bb740e51da255fcb31ee92a7b29fb1bfed79fcf4cff7d5ce4c9c",
+    "publication": "snapshot_ready",
+    "participation_available": false,
+    "source_documents": [
+      {"file": "2026/WA-ambiguous-reference-areas.geojson.gz", "label": "Washington overlapping reference strips excluded from both precincts; complete original shapes remain in the ZIP (GeoJSON · gzip)"},
+      {"file": "count-review/audit.json", "label": "Washington all-39-county original inventory, 36-county House count reconciliation and withheld-source discrepancies (JSON)"},
+      {"file": "audit.json", "label": "Washington complete literal reporting/CD joins, geometry exclusions and unmatched-unit audit (JSON)"}
+    ]
   }],
   "source_batches": [{
     "label": "2022 precinct sources from 25 states",

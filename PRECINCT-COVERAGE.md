@@ -72,7 +72,7 @@ Checkmarks are reserved for verified, complete live coverage.
 | [ ] | Utah | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Vermont | acquired | reference_acquired | validated_partial | passed | published_partial | acquired_municipal_counts_and_provisional_rates |
-| [ ] | Washington | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Washington | acquired | reference_acquired | validated_partial | passed | snapshot_ready | not_acquired |
 | [ ] | Wisconsin | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | West Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Wyoming | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
