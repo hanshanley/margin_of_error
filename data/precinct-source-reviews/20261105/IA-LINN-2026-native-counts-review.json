@@ -1,0 +1,23 @@
+{
+  "year": 2026,
+  "state_code": "IA",
+  "county_name": "Linn",
+  "office": "94 native precinct participation observations and separate U.S. House candidate/mode counts",
+  "source_url": "https://gis.linncountyiowa.gov/web-data/elections/year/2026/20261103GE/pct.pdf",
+  "source_urls": [
+    "https://gis.linncountyiowa.gov/web-data/elections/year/2026/20261103GE/pct.pdf",
+    "https://gis.linncountyiowa.gov/web-data/elections/year/2026/20261103GE/sum.pdf"
+  ],
+  "candidate_results": "acquired_reconciled_county_native_precinct_counts",
+  "boundaries": "not_acquired_for_native_county_review",
+  "join": "withheld_no_native_geometry",
+  "validation": "all_94_native_precincts_candidates_and_modes_reconciled_to_county_summary",
+  "publication": "full_counts_download_only",
+  "participation": "reviewed_county_precinct_ballots_and_native_registered_rates",
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-iowa-linn-native-counts-20261105-01/complete-iowa-linn-2026-native-counts-01.zip",
+  "complete_download_bytes": 2061367,
+  "complete_download_sha256": "9fdf74ae6d8f48c5d89188e340d10e857fea56fc6ab49bd155320d91c0104362",
+  "maps_approved": false,
+  "notes": "Linn County only, unofficial November 3, 2026 general election: all 94 native precincts reconcile 107,457 ballots, 160,717 registrations and 20 blank ballots to the separate county summary. Separately, all five House options and Total/Election Day/Absentee columns reconcile to 105,838 candidate votes. Native precinct names, explicit zeros, missing mode-specific registrations and Dave Bushaw's unprinted party are preserved. Registered-voter rates use each unit's own native registration denominator, not VEP, CPS, demographic or mode-specific turnout. House margins include all candidates/write-ins, not ballot denominators or native printed percentages. Entire original 511-page precinct and 10-page summary reports, all five CSVs, receipts, audit, checksums and portable reviewer retained. Total is the sum of the two modes; county summary rows must not be added to precinct rows. No approved geometry, new map or statewide completeness.",
+  "next_action": "Continue remaining 2026 consolidated-source reviews; independently acquire and reconcile correct-election native Linn precinct boundaries before any new map join. Do not reacquire or re-review these finished 94 count vectors."
+}

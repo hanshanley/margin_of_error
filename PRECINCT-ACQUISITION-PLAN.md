@@ -4418,10 +4418,28 @@ python review.py --source source --output /path/to/new-linn-review \
 
 This is **Linn County only**, unofficial November 3, 2026 results, not
 statewide or demographic participation. No precinct geometry or new map is
-approved and no state/year is complete. First publish the immutable full ZIP
-and register the county-scoped source tables; then continue consolidated
-2026 reviews, establishing correct-election geography independently before
-any new map join. Do not reacquire or re-review these finished 94 counts.
+approved and no state/year is complete. The immutable full ZIP is published
+at release `voter-precinct-iowa-linn-native-counts-20261105-01`, pinned to
+source commit `28e6592ebd1fbf449bd78cdb1b28dc83101ea746`; downloading that
+release verifies every byte and all ten member checksums. The source and
+participation registries now expose all five full CSVs and both entire PDFs.
+Only Iowa 2026 changes in the regenerated 1,632-cell worklist; every
+completion flag remains `no`. No renderer, map input or default changes.
+
+Seventeen focused Python collector/worklist tests, seven participation Node
+tests, production build and Pages preparer pass. Serial site validation
+reaches only the established unrelated UK 23-versus-16 card-count assertion
+at line 1097. Four source-matched local browser modes (desktop/mobile,
+with/without JavaScript) verify **116 complete download links**, every one
+of the **108 older links** unchanged, all seven new table/PDF endpoints and
+the entire ZIP byte-for-byte, clear county scope, responsive layout and
+unchanged latest-election/precinct/red-blue defaults and working zoom.
+Proof: `files/iowa-linn-native-local-browser-proof-01.json`.
+Verify this UI batch's exact successful deployment and unqueried public
+files/live browser result before marking its publication finished. Then
+continue consolidated 2026 reviews, establishing correct-election geography
+independently before any new map join. Do not reacquire or re-review these
+finished 94 counts.
 
 ## Resume procedure for every work session or scheduled prompt
 

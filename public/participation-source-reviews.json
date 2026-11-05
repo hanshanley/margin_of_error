@@ -113,6 +113,35 @@
           "notes": "Daviess County only: 31,918 native ballots are separate from 31,521 House votes; all 36 contests, 181 rows and 905 numeric cells reconcile. Native polling-place counter is not precinct geometry, unnamed zero option stays unnamed, multi-seat vote totals are not ballots, and registrations/rates remain missing. No new map, demographic estimate or statewide Kentucky coverage."
         }
       ]
+    },
+    {
+      "id": "iowa-linn-20261105-01",
+      "label": "Linn County, Iowa 2026: all 94 native precinct participation and separate House counts",
+      "data_directory": "data/precinct-source-reviews/20261105/IA-LINN-2026-native-counts-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/28e6592ebd1fbf449bd78cdb1b28dc83101ea746/data/precinct-source-reviews/20261105/IA-LINN-2026-native-counts-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-iowa-linn-native-counts-20261105-01/complete-iowa-linn-2026-native-counts-01.zip",
+      "complete_download_bytes": 2061367,
+      "complete_download_sha256": "9fdf74ae6d8f48c5d89188e340d10e857fea56fc6ab49bd155320d91c0104362",
+      "review_status": "complete_sources_and_counts_verified",
+      "maps_approved": false,
+      "scope_note": "Linn County only, unofficial November 3, 2026 general election: all 94 native precincts reconcile 107,457 ballots and 160,717 registrations to the county summary, separately from 105,838 House candidate votes. Each registered-voter rate uses only that unit's own native registration denominator, not VEP, CPS, demographic or mode-specific turnout. Native printed percentages and blank ballots are retained separately; Dave Bushaw's unprinted party remains missing and write-ins remain in candidate margins. Total equals Election Day plus Absentee; do not add county summary rows to precinct rows. Both complete original all-contest reports are downloadable. No new map, demographic estimates or statewide Iowa completeness is approved.",
+      "tables": [
+        {"file": "precinct-participation.csv", "label": "Linn County only: all 94 native precinct ballot, registration and blank-ballot observations; separate native/calculated registered-voter rates (CSV)"},
+        {"file": "county-participation.csv", "label": "Linn County only: separate county participation summary; do not add to precinct rows (CSV)"},
+        {"file": "precinct-results.csv", "label": "Linn County only: all 282 native precinct House Total/Election Day/Absentee vectors; candidate votes are not ballots (CSV)"},
+        {"file": "county-results.csv", "label": "Linn County only: separate county House summary and voting modes, not additional precincts or ballots (CSV)"},
+        {"file": "all-house-candidate-mode-counts.csv", "label": "Linn County only: all 1,425 House candidate/write-in mode rows, with county summaries and precinct units explicitly separated (CSV)"},
+        {"file": "source/linn-2026-general-precinct.pdf", "label": "Linn County only: entire original 511-page unofficial November 2026 all-contest precinct report (PDF)"},
+        {"file": "source/linn-2026-general-summary.pdf", "label": "Linn County only: entire original 10-page unofficial November 2026 all-contest county summary (PDF)"}
+      ],
+      "coverage": [
+        {
+          "state_code": "IA",
+          "years": [2026],
+          "status": "reviewed_county_precinct_ballots_and_native_registered_rates",
+          "notes": "Linn County only: all 94 native precinct ballot/registration/blank counts and all House candidate/mode vectors reconcile to the independently printed county summary. Ballots total 107,457, registrations 160,717 and House candidate votes 105,838. Same-unit native registered-voter rates are not VEP, CPS, demographic or mode-specific turnout; county rows and Total/component modes must not be double-counted. Both complete original reports, all rows and native names remain available. No approved geometry, new map or statewide Iowa completeness."
+        }
+      ]
     }
   ]
 }
