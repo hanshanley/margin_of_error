@@ -1,0 +1,63 @@
+{
+  "release": "voter-county-dc-delegate-20261105-01",
+  "source_commit": "7e4262e73e021c3362ae510360513b0187cd95ee",
+  "verified_at_utc": "2026-11-05T18:19:11.977017+00:00",
+  "verified_assets": [
+    {
+      "file": "complete-dc-2026-county-results-01.zip",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-dc-delegate-20261105-01/complete-dc-2026-county-results-01.zip",
+      "bytes": 216186,
+      "sha256": "f63a0430c67f7f6baab1f60f37263618940e63cbed332899dde3a139d3338269",
+      "status": 200
+    },
+    {
+      "file": "all-contest-native-summary.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7e4262e73e021c3362ae510360513b0187cd95ee/data/county-source-reviews/20261105-dc-reviewed-01/all-contest-native-summary.csv",
+      "bytes": 92512,
+      "sha256": "89381d59bd8e7155e6a09cd18fd639bb5cfd1cb934a379f1cd4f9bf4572e786b",
+      "status": 200
+    },
+    {
+      "file": "county-delegate-ballot-accounting.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7e4262e73e021c3362ae510360513b0187cd95ee/data/county-source-reviews/20261105-dc-reviewed-01/county-delegate-ballot-accounting.csv",
+      "bytes": 628,
+      "sha256": "cfc64ff5feb49da2b8a76252550d6c8fc003a3eab806c1d7c40ca9d7321097e4",
+      "status": 200
+    },
+    {
+      "file": "county-delegate-candidate-results.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7e4262e73e021c3362ae510360513b0187cd95ee/data/county-source-reviews/20261105-dc-reviewed-01/county-delegate-candidate-results.csv",
+      "bytes": 1077,
+      "sha256": "60696db99efc81c423646595e92a9fcd2f07cc26d557f0dc89dc21db59903374",
+      "status": 200
+    },
+    {
+      "file": "county-delegate-party-totals.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7e4262e73e021c3362ae510360513b0187cd95ee/data/county-source-reviews/20261105-dc-reviewed-01/county-delegate-party-totals.csv",
+      "bytes": 268,
+      "sha256": "0cd4eab17cddf55a8120e1fd88d6229a4d338423130a7798bd0beac9ae7095e2",
+      "status": 200
+    },
+    {
+      "file": "county-participation.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7e4262e73e021c3362ae510360513b0187cd95ee/data/county-source-reviews/20261105-dc-reviewed-01/county-participation.csv",
+      "bytes": 599,
+      "sha256": "3043f850c2afc35f03fcd7462fc049b85d502f6f5fa376d6c34b9ec104c5bb67",
+      "status": 200
+    },
+    {
+      "file": "native-unit-delegate-counts.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7e4262e73e021c3362ae510360513b0187cd95ee/data/county-source-reviews/20261105-dc-reviewed-01/native-unit-delegate-counts.csv",
+      "bytes": 119879,
+      "sha256": "d2bed741070fc842066dc3b25d8885f102e73dce6ed12884830679e80a39a8ce",
+      "status": 200
+    },
+    {
+      "file": "native-unit-participation.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7e4262e73e021c3362ae510360513b0187cd95ee/data/county-source-reviews/20261105-dc-reviewed-01/native-unit-participation.csv",
+      "bytes": 2347,
+      "sha256": "0b5bb294096a9b469edb13cdbfa2107c234541e2d66da0c19fd3172e016276dc",
+      "status": 200
+    }
+  ]
+}

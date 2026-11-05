@@ -294,8 +294,18 @@ complete ZIP reproduce byte-for-byte outside the repository. Archive size is
 `f63a0430c67f7f6baab1f60f37263618940e63cbed332899dde3a139d3338269`.
 Reproduction proof is in
 `data/county-source-reviews/20261105-dc-publication-01/`.
-Immutable release verification, retained-download integration and exact live
-checks remain pending. Do not mark the D.C. map gap or precinct ledger complete.
+Data/tools commit `7e4262e73e021c3362ae510360513b0187cd95ee` is pushed.
+Release `voter-county-dc-delegate-20261105-01` and every one of its seven pinned
+full CSV endpoints were independently downloaded and matched byte-for-byte.
+The source-review registry now links the complete package and all tables,
+with no precinct-ledger coverage promotion. Retained-download integration
+checks passed in all four local display modes: all 186 complete URLs retain
+the previous 178; all four historical House years, 204 scope cells and 52 UF
+rows remain source-matched. Astro check, seven participation tests, build/four
+caucus tests and Pages preparation pass (987,259,532 bytes after verifying
+94 relocated downloads). County pointers and renderer are unchanged, so their
+completed map suites were not repeated. Exact live verification remains
+pending. Do not mark the D.C. map gap or precinct ledger complete.
 
 Pennsylvania official county alternative, November 5 follow-up:
 `data/county-source-reviews/20261105-monroe-official-01/` retains Monroe's

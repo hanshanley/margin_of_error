@@ -1,6 +1,28 @@
 {
   "reviews": [
     {
+      "id": "dc-delegate-county-20261105-01",
+      "label": "District of Columbia 2026: separate nonvoting-delegate counts and city participation",
+      "data_directory": "data/county-source-reviews/20261105-dc-reviewed-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7e4262e73e021c3362ae510360513b0187cd95ee/data/county-source-reviews/20261105-dc-reviewed-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-dc-delegate-20261105-01/complete-dc-2026-county-results-01.zip",
+      "complete_download_bytes": 216186,
+      "complete_download_sha256": "f63a0430c67f7f6baab1f60f37263618940e63cbed332899dde3a139d3338269",
+      "review_status": "complete_originals_and_counts_reviewed_rcv_round_unverified",
+      "maps_approved": false,
+      "scope_note": "District of Columbia only, Election Night Unofficial Results; native update November 4, 2026, 04:36:21.283 UTC. Nonvoting-delegate candidate votes total 180,979: DEM 157,979, REP 11,583, STG 10,275 and NPN 1,142. These are separate from 185,086 city ballots and 457,371 registrations, not a voting House district or the shadow Senator/Representative offices. All 10,011 original CSV rows reconcile with all 1,478 XML summary records across 363 contests. All 722 party-label disagreements occur on over/undervotes; retain both literals and never add accounting rows to candidate-party totals. Delegate candidates plus 602 overvotes and 3,181 undervotes remain 324 below city ballots; the difference is unresolved, not filled. Native RCV flags do not establish a final round, and hidden EarlyVotes zero does not establish zero early ballots. No new map, precinct completeness, demographic estimate or final certified turnout is approved; existing maps are unchanged.",
+      "tables": [
+        {"file": "county-delegate-candidate-results.csv", "label": "D.C. only: all four native nonvoting-delegate candidate/write-in lines, parties and RCV/status caveats (CSV)"},
+        {"file": "county-delegate-party-totals.csv", "label": "D.C. only: all four literal-party nonvoting-delegate totals, excluding over/undervotes (CSV)"},
+        {"file": "county-delegate-ballot-accounting.csv", "label": "D.C. only: both delegate over/undervote rows with blank CSV and conflicting REP JSON literals, never party votes (CSV)"},
+        {"file": "county-participation.csv", "label": "D.C. only: separate city ballots, registrations, registered-ballot ratio, native voting-mode fields and unresolved 324-ballot difference (CSV)"},
+        {"file": "native-unit-participation.csv", "label": "D.C. only: all 144 native unit ballot and registration observations, counted once with native ward IDs; no new geometry (CSV)"},
+        {"file": "native-unit-delegate-counts.csv", "label": "D.C. only: all 864 native delegate candidate/accounting observations, all explicit zeroes retained; no new geometry (CSV)"},
+        {"file": "all-contest-native-summary.csv", "label": "D.C. only: all 1,478 reconciled native summary rows across 363 separate contests, ballot options and accounting rows kept distinct (CSV)"}
+      ],
+      "coverage": []
+    },
+    {
       "id": "pennsylvania-monroe-20261105-01",
       "label": "Monroe County, Pennsylvania 2026: complete official county returns and separate participation",
       "data_directory": "data/county-source-reviews/20261105-monroe-official-01",
