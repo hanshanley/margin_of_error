@@ -1,0 +1,24 @@
+{
+  "year": 2026,
+  "state_code": "KY",
+  "county_name": "Daviess",
+  "office": "All 36 native contests; county-only ballot count and separate U.S. House vector",
+  "source_url": "https://www.daviessky.org/election-results/",
+  "source_urls": [
+    "https://www.daviessky.org/election-results/",
+    "https://www.daviessky.org/wp-content/uploads/2026/11/Cumulative.pdf"
+  ],
+  "candidate_results": "acquired_reconciled_county_native_counts",
+  "boundaries": "not_acquired_for_native_county_review",
+  "join": "withheld_no_native_geometry",
+  "validation": "all_36_native_contests_modes_and_county_house_ballots_reconciled",
+  "publication": "full_counts_download_only",
+  "participation": "reviewed_county_only_ballot_count_rates_missing",
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-kentucky-native-counts-20261105-01/complete-kentucky-2026-native-county-counts-01.zip",
+  "complete_download_bytes": 306401,
+  "complete_download_sha256": "43ded14f7e7978d471f5554556ad024cb5353a7e9dcdca9a557f64d9eba45974",
+  "maps_approved": false,
+  "rates_available": false,
+  "notes": "Daviess County only, unofficial November 3, 2026 general-election report run at 8:15 PM: 31,918 native county ballots, separately from 31,521 House candidate votes, 386 undervotes and 11 overvotes. All 36 contest tables, 181 option/printed-total rows and all 905 voting-mode/total counts reconcile; unnamed county-surveyor zero row remains unnamed. Multi-seat vote-opportunity totals are not ballot counts. Native 17 of 17 polling places is not a geographic precinct inventory. Registrations and turnout rates remain missing. Entire original 13-page PDF, all three complete CSVs, source receipts, audit, checksums and portable reviewer retained. Six discovery/error originals remain separately preserved. No new geometry, inferred turnout rates, demographic estimates or statewide coverage claim. Statewide portal explicitly blocks bot access; do not bypass or keep retrying it.",
+  "next_action": "Continue independent official Kentucky county declarations and remaining 2026 jurisdictions; acquire actual precinct returns, registration definitions and exact-election boundaries before any new precinct map or rate."
+}

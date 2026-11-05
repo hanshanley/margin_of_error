@@ -87,6 +87,32 @@
           "notes": "Bay and Isabella only: 63 participation records and 59 House vectors; native ballot/registration, candidate, voting-mode and complete workbook reconciliations pass. Retain four zero-count neighboring-county unmatched rows, Bay's unexplained 43-versus-35 native unit counters and Isabella's 22 election-ballot versus House-scope difference. No approved geometry, inferred rates, demographic estimates or statewide coverage."
         }
       ]
+    },
+    {
+      "id": "kentucky-daviess-20261105-01",
+      "label": "Daviess County, Kentucky 2026: native county ballots and all 36 contest tables",
+      "data_directory": "data/precinct-source-reviews/20261105/KY-2026-native-county-counts-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/c3d3fb539eb392091b48e0c327d2be574d46f1f1/data/precinct-source-reviews/20261105/KY-2026-native-county-counts-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-kentucky-native-counts-20261105-01/complete-kentucky-2026-native-county-counts-01.zip",
+      "complete_download_bytes": 306401,
+      "complete_download_sha256": "43ded14f7e7978d471f5554556ad024cb5353a7e9dcdca9a557f64d9eba45974",
+      "review_status": "complete_sources_and_counts_verified",
+      "maps_approved": false,
+      "scope_note": "Daviess County only, unofficial November 3, 2026 general election, native report run at 8:15 PM: 31,918 county ballots, separately from 31,521 House candidate votes, 386 undervotes and 11 overvotes. All 36 contest tables retain every option, voting mode and printed total, including the unnamed explicit-zero county-surveyor row. Multi-seat vote-opportunity totals are not ballot counts. The native 17 of 17 polling places is not a geographic precinct inventory. Registrations and turnout rates remain missing. No new precinct map, demographic estimate or statewide Kentucky participation is inferred.",
+      "tables": [
+        {"file": "county-participation.csv", "label": "Daviess County only: native 31,918-ballot observation, separate reporting counter and missing registrations/rate (CSV)"},
+        {"file": "county-house-results.csv", "label": "Daviess County only: complete House candidate and voting-mode vector, 31,521 votes and separate under/overvotes, not turnout (CSV)"},
+        {"file": "all-contest-results.csv", "label": "Daviess County only: all 181 native rows across 36 contests and five voting-mode/total columns, including unnamed zero row (CSV)"},
+        {"file": "source/daviess-2026-general-cumulative.pdf", "label": "Daviess County only: entire original 13-page unofficial November 2026 general-election report, not a precinct report (PDF)"}
+      ],
+      "coverage": [
+        {
+          "state_code": "KY",
+          "years": [2026],
+          "status": "reviewed_county_only_ballot_count_rates_missing",
+          "notes": "Daviess County only: 31,918 native ballots are separate from 31,521 House votes; all 36 contests, 181 rows and 905 numeric cells reconcile. Native polling-place counter is not precinct geometry, unnamed zero option stays unnamed, multi-seat vote totals are not ballots, and registrations/rates remain missing. No new map, demographic estimate or statewide Kentucky coverage."
+        }
+      ]
     }
   ]
 }

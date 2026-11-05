@@ -4103,7 +4103,7 @@ Proofs: `files/michigan-ui-publication-proof-01.json` and
 or modify the immutable package. Continue remaining 2026 jurisdictions; retain
 Pima's declared-map 404 as a bounded follow-up.
 
-### Kentucky 2026: complete Daviess county report reviewed
+### Kentucky 2026: complete Daviess county source released; UI locally verified
 
 The official 2026 index and statewide live-results/CountyMap routes return actual
 **403** responses. The advertised Data route returns **404**. Ordinary Chromium
@@ -4149,13 +4149,36 @@ Executing only the extracted portable reviewer/originals reproduces the archive
 byte-for-byte. All **11** focused parser/reconciliation/missingness/archive
 regressions pass. Independent proof: `files/kentucky-2026-package-proof-01.json`.
 
-**Current executable work:** commit/push this reviewed source batch as Hans,
-create a new immutable complete-ZIP release and anonymously verify its entire
-contents before registering the county-only participation/coverage downloads.
-Then build and verify local and exact-commit production UI without changing the
-existing maps or older links. Continue other independent Kentucky counties or the
-remaining 2026 state/DC queue; Iowa's official results archive has been discovered
-but not acquired. Do not retry Kentucky's explicit statewide bot-policy block.
+Source commit **c3d3fb539eb392091b48e0c327d2be574d46f1f1** is pushed as Hans,
+without attribution trailers. Immutable release
+**voter-precinct-kentucky-native-counts-20261105-01** contains
+`complete-kentucky-2026-native-county-counts-01.zip`. Its entire anonymous download
+matches the reviewed ZIP, including all **8 members / 7 checksums**.
+Proof: `files/kentucky-2026-remote-release-proof-01.json`.
+
+The separate `KY-2026-native-counts-review.json` sidecar and fourth top-level
+participation review expose all three full CSVs, entire original PDF and full
+ZIP with one-county-only caveats. Only **KY2026** changes among **1,632**
+still-incomplete worklist cells. Every older snapshot, renderer and link remains
+unchanged. All **13** scoped collector/participation-ledger tests and **7**
+renderer/routing tests pass; Astro check and production build pass, including
+four existing caucus regressions. The serial full-site validator passes Kentucky
+and reaches only the unrelated UK **23-versus-16** baseline at line 1097.
+Pages preparation verifies **94** existing relocated files; artifact size
+**986,307,426 bytes**.
+
+Local desktop/mobile with and without JavaScript pass **108 distinct complete
+download links**, preserving all **103** older URLs and verifying every complete
+new CSV/PDF endpoint and full ZIP. County-only scope, missing rates/registrations,
+no overflow, default 2026/precinct/red-blue map behavior and selection/zoom pass.
+Proof: `files/kentucky-ui-local-browser-proof-01.json`.
+
+**Current executable work:** commit/push the locally verified UI as Hans and
+finish one bounded exact-commit production browser/full-download verifier before
+claiming Kentucky UI live. During deployment, continue independent official
+county alternatives or the remaining 2026 state/DC queue; Iowa's official results
+archive is discovered but not acquired. Do not retry Kentucky's statewide
+bot-policy block or rerun completed Michigan suites.
 
 ## Resume procedure for every work session or scheduled prompt
 

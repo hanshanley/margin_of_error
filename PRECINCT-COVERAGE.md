@@ -44,7 +44,7 @@ Checkmarks are reserved for verified, complete live coverage.
 | [ ] | Illinois | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Indiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Kansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Kentucky | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Kentucky | acquired_reconciled_county_native_counts | not_acquired_for_native_county_review | withheld_no_native_geometry | all_36_native_contests_modes_and_county_house_ballots_reconciled | full_counts_download_only | reviewed_county_only_ballot_count_rates_missing |
 | [ ] | Louisiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Massachusetts | acquired | reference_acquired | validated_partial | passed | published_partial | central_tabulation_ballot_counts_only_no_registration_or_rates |
 | [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
