@@ -276,7 +276,13 @@ bulk files are byte-identical and the prepared local site is 987,318,167 bytes.
 Broad validation still fails only the known unrelated UK topic-card assertion
 (23 actual versus 16 expected); it is not reported as passing.
 Registry-only publication commit `a48e3c21ddcfe101211f34693f3093cbe233637f`
-has exact Pages run `42122234060`; production verification is pending.
+passed exact Pages run `42122234060` on attempt 1. Production four-mode browser
+proof passes exact 250-URL set equality, preserving all previous 241 URLs;
+both production source-review/county registry files are byte-identical to the
+reviewed sources. CI prepared 997,456,587 bytes and uploaded a 491,866,474-byte
+artifact, recorded separately from local preparation. Complete deployment,
+production browser/source verification and checksummed evidence are persisted
+in the publication directory. No frontend or map changes follow that proof.
 All 38 current tracked HTML files pass service/telemetry screening without
 printing matching values. The newer exposed three-county commit is excluded
 from this publication ancestry; older Bucks exposure `3d2be9` was already an
