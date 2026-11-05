@@ -119,6 +119,19 @@
       {"file": "count-review/locality-house-scope-review.json", "label": "Virginia all 145 locality/House candidate-method vectors and unallocated residuals (JSON)"},
       {"file": "count-review/current-reference-geometry/originals/official-current-boundary-map.gz", "label": "Archived Virginia official current-boundary page; reference is not certified election-day geometry (HTML · gzip)"}
     ]
+  }, {
+    "label": "Arizona 2026 Maricopa County only: 949 verified precinct shapes, 936 candidate-result colors",
+    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2f4deb6cbb4ea04cb74098f11d5208b08a675565/data/precinct-results/20261105-arizona-maricopa-02/",
+    "data_directory": "data/precinct-results/20261105-arizona-maricopa-02",
+    "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-arizona-maricopa-maps-20261105-02/complete-arizona-maricopa-2026-precinct-maps-02.zip",
+    "complete_download_bytes": 18768461,
+    "complete_download_sha256": "f50a20f1daa0a1f418dacff60b1657694b7f544da6e771cf2dcde846f25f0c01",
+    "publication": "snapshot_ready",
+    "participation_available": false,
+    "source_documents": [
+      {"file": "reference-source/originals/item.gz", "label": "Maricopa official precinct reference: effective January 2, 2026, reused-number warning, attribution and terms (JSON · gzip)"},
+      {"file": "audit.json", "label": "Maricopa complete 956-unit literal code/name correspondence, all overlap pairs and seven whole withheld precincts (JSON)"}
+    ]
   }],
   "source_batches": [{
     "label": "2022 precinct sources from 25 states",

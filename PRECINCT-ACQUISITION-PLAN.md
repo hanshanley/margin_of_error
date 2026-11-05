@@ -3775,9 +3775,12 @@ Arizona tables. No overflow; 2026 remains default.
 Proof: `files/arizona-native-counts-ui-local-browser-proof-01.json`.
 
 Hans UI commit **`18ec855708bbcf32f53ec4c3c2867cacdddd4b28`** is pushed.
-Its exact deployment/browser verifier is already running as
-`arizona-native-counts-ui-publication-01`; await its result without a duplicate
-watcher. No new Arizona map coverage is yet published.
+Its exact deployment **42029690146** succeeds. Unqueried metadata/renderer bytes
+match the exact source. Desktop/mobile by JavaScript/no-JavaScript production
+checks pass **88 complete links** and **18 entire CSV endpoints**, preserving all
+82 earlier links; the complete remote native ZIP matches all **76** members.
+Proof: `files/arizona-native-counts-ui-publication-proof-01.json`.
+No need to rerun this completed count-download matrix.
 
 Complete Maricopa 2026 reference acquired in
 `files/precinct-expansion-sources/AZ-MARICOPA-2026-geometry-01/`:
@@ -3823,14 +3826,44 @@ and ZIP byte-for-byte. Proof:
 Complete ZIP: **18,768,461 bytes**, SHA-256
 `f50a20f1daa0a1f418dacff60b1657694b7f544da6e771cf2dcde846f25f0c01`.
 
-**Current executable work:** commit/push this source package as Hans; publish
-and fully redownload a new immutable complete-map release; then add the pinned
-partial Arizona snapshot, preserve all earlier downloads, update only AZ2026
-in the 1,632-cell worklist, and test actual 936 precinct fills/counts/colors,
-county fallback and zoom on desktop/mobile and no-JavaScript downloads before
-publishing. Finish the already-running exact Arizona count-download deployment
-verification before changing its registry inputs. Do not reacquire cached
-originals or repeat passed Arkansas live matrices.
+Hans source commit **`2f4deb6cbb4ea04cb74098f11d5208b08a675565`** is pushed.
+Immutable release **`voter-precinct-arizona-maricopa-maps-20261105-02`** pins this
+exact commit. The whole anonymous remote archive is byte-identical with all
+**97** members; **96** checksums, **66** native original receipts and **14**
+reference original receipts retained. Proof:
+`files/arizona-maricopa-2026-maps-remote-release-proof-02.json`.
+The pinned partial snapshot is now registered as `snapshot_ready`, not
+live-verified, with no mapped participation rates.
+
+Only AZ2026 changes in the **1,632-cell** worklist; all cells remain incomplete.
+Astro check has zero errors/warnings and five existing hints; production build
+passes. Serial validation reaches only the known unrelated UK topic-card
+mismatch (**23** actual versus **16** expected, line1096); participation
+assertions pass. Pages then verifies **94** byte-identical relocated downloads
+and prepares **986,282,394 bytes**; never run relocation concurrently with
+validation.
+Actual source-matched local desktop/mobile by JavaScript/no-JavaScript tests
+pass **90 complete links**, preserving all **88** older links. Entire new
+**1,762-row** CSV and **97-member** ZIP are redownloaded and byte-verified.
+All **936** actual precinct fills/counts/margins, all **15** county background
+fills, explicit county view, Pennsylvania state fallback, selected-precinct fit,
+buttons, desktop wheel/post-fit double-click, real mobile two-pointer pinch and
+2024/2026 switching pass. No overflow; 2026/precinct/margin defaults retained.
+The map renderer itself is unchanged. Proof:
+`files/arizona-maricopa-map-ui-local-browser-proof-02.json`.
+
+**Current executable work:** commit/push this verified pinned map registration
+as Hans and verify its exact deployment/unqueried public metadata and actual
+map/browser matrix before setting a live flag. While it deploys, acquire the
+official Pima **265-precinct** reference and actual election-map declarations:
+`https://gis.pima.gov/data/contents/metadet.cfm?name=distvote`,
+its declared `https://gisopendata.pima.gov/datasets/districts-voter-precincts`,
+and the official maps page's actual app
+`https://experience.arcgis.com/experience/21445fb10f884caea0aac1ecba764599/`.
+Metadata says boundaries last changed January 2024 (approved September 19, 2023);
+do not infer 2026 applicability from equal counts or borrow 2024 geometry.
+Source-declared 2026 election application/layer linkage remains required.
+Do not reacquire cached originals or repeat completed count-download matrices.
 
 ## Resume procedure for every work session or scheduled prompt
 
