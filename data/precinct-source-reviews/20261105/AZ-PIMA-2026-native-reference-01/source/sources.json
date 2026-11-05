@@ -1,0 +1,480 @@
+{
+  "official-voting-maps": {
+    "url": "https://www.pima.gov/voting-precincts-maps",
+    "final_url": "https://www.pima.gov/voting-precincts-maps",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-11-05T12:59:22.236048+00:00",
+    "file": "originals/official-voting-maps.gz",
+    "bytes": 1198341,
+    "sha256": "b59d6980d40abb78d856dfe6a9aecf15db2fb58abba2d053e5beb38f0e193399"
+  },
+  "official-library-metadata": {
+    "url": "https://gis.pima.gov/data/contents/metadet.cfm?name=distvote",
+    "final_url": "https://gis.pima.gov/data/contents/metadet.cfm?name=distvote",
+    "status": 200,
+    "content_type": "text/html;charset=UTF-8",
+    "retrieved_at": "2026-11-05T12:59:22.565123+00:00",
+    "file": "originals/official-library-metadata.gz",
+    "bytes": 7345,
+    "sha256": "5b549560ec6f6e4086defb675e6df434552c8daa5717bb81d177775921106d08"
+  },
+  "official-declared-dataset": {
+    "url": "https://gisopendata.pima.gov/datasets/districts-voter-precincts",
+    "final_url": "https://gisopendata.pima.gov/datasets/districts-voter-precincts",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-11-05T12:59:22.730921+00:00",
+    "file": "originals/official-declared-dataset.gz",
+    "bytes": 57272,
+    "sha256": "3cf5261783363bf9dceacf44169bfe3b1b91134c8098b5280a799eea6b551fd0"
+  },
+  "official-declared-locator-item": {
+    "url": "https://www.arcgis.com/sharing/rest/content/items/21445fb10f884caea0aac1ecba764599?f=json",
+    "final_url": "https://www.arcgis.com/sharing/rest/content/items/21445fb10f884caea0aac1ecba764599?f=json",
+    "status": 200,
+    "content_type": "application/json;charset=utf-8",
+    "retrieved_at": "2026-11-05T12:59:22.834297+00:00",
+    "file": "originals/official-declared-locator-item.gz",
+    "bytes": 2293,
+    "sha256": "d94cdfa1739facfe13c40d019527790b3df14ef7f1f3a4d3b2051cc6d291047c"
+  },
+  "official-declared-locator-data": {
+    "url": "https://www.arcgis.com/sharing/rest/content/items/21445fb10f884caea0aac1ecba764599/data?f=json",
+    "final_url": "https://www.arcgis.com/sharing/rest/content/items/21445fb10f884caea0aac1ecba764599/data?f=json",
+    "status": 200,
+    "content_type": "application/json;charset=utf-8",
+    "retrieved_at": "2026-11-05T12:59:22.956261+00:00",
+    "file": "originals/official-declared-locator-data.gz",
+    "bytes": 178138,
+    "sha256": "049e95f73e03a5719006035d0430c48ab288f4e3b6fcc563374ddaf9fbb38660"
+  },
+  "official-field-metadata": {
+    "url": "https://gis.pima.gov/data/contents/metafield.cfm?name=distvote",
+    "final_url": "https://gis.pima.gov/data/contents/metafield.cfm?name=distvote",
+    "status": 200,
+    "content_type": "text/html;charset=UTF-8",
+    "retrieved_at": "2026-11-05T13:00:35.201652+00:00",
+    "file": "originals/official-field-metadata.gz",
+    "bytes": 4171,
+    "sha256": "51bb74e1f180f81a45a7523cdc425794af55f48216e3700c9e9e5da90356a433"
+  },
+  "official-portal-dataset-item": {
+    "url": "https://www.arcgis.com/sharing/rest/content/items/29141abf69534ecc8f196516283e1e79?f=json",
+    "final_url": "https://www.arcgis.com/sharing/rest/content/items/29141abf69534ecc8f196516283e1e79?f=json",
+    "status": 200,
+    "content_type": "application/json;charset=utf-8",
+    "retrieved_at": "2026-11-05T13:00:35.266899+00:00",
+    "file": "originals/official-portal-dataset-item.gz",
+    "bytes": 3205,
+    "sha256": "d649b27820d9d48b9212f01f418e5fa5080b35cbc8b677cc3504084605126e9a"
+  },
+  "declared-webmap-1ab372663c0c44d4bd6a12cda4a1ad1e": {
+    "url": "https://www.arcgis.com/sharing/rest/content/items/1ab372663c0c44d4bd6a12cda4a1ad1e?f=json",
+    "final_url": "https://www.arcgis.com/sharing/rest/content/items/1ab372663c0c44d4bd6a12cda4a1ad1e?f=json",
+    "status": 200,
+    "content_type": "application/json;charset=utf-8",
+    "retrieved_at": "2026-11-05T13:00:35.325138+00:00",
+    "file": "originals/declared-webmap-1ab372663c0c44d4bd6a12cda4a1ad1e.gz",
+    "bytes": 1578,
+    "sha256": "24b0ad01c03290117fde9d4d9f3c89643cd9511d0ac91e50b61e985e7a760ac9"
+  },
+  "declared-webmap-data-1ab372663c0c44d4bd6a12cda4a1ad1e": {
+    "url": "https://www.arcgis.com/sharing/rest/content/items/1ab372663c0c44d4bd6a12cda4a1ad1e/data?f=json",
+    "final_url": "https://www.arcgis.com/sharing/rest/content/items/1ab372663c0c44d4bd6a12cda4a1ad1e/data?f=json",
+    "status": 200,
+    "content_type": "application/json;charset=utf-8",
+    "retrieved_at": "2026-11-05T13:00:35.415051+00:00",
+    "file": "originals/declared-webmap-data-1ab372663c0c44d4bd6a12cda4a1ad1e.gz",
+    "bytes": 103740,
+    "sha256": "c941fa3b6eaf957f26ab5e3924c8cd4a1852e394d80353de7af9b8213372f1a7"
+  },
+  "declared-webmap-293fac439fd04a0695b46807118d6665": {
+    "url": "https://www.arcgis.com/sharing/rest/content/items/293fac439fd04a0695b46807118d6665?f=json",
+    "final_url": "https://www.arcgis.com/sharing/rest/content/items/293fac439fd04a0695b46807118d6665?f=json",
+    "status": 200,
+    "content_type": "application/json;charset=utf-8",
+    "retrieved_at": "2026-11-05T13:00:35.475787+00:00",
+    "file": "originals/declared-webmap-293fac439fd04a0695b46807118d6665.gz",
+    "bytes": 3998,
+    "sha256": "cf9201ac0fcddfec76f205ad5ea37111d895b52fe0adc10fd8f2f74e39004604"
+  },
+  "declared-webmap-data-293fac439fd04a0695b46807118d6665": {
+    "url": "https://www.arcgis.com/sharing/rest/content/items/293fac439fd04a0695b46807118d6665/data?f=json",
+    "final_url": "https://www.arcgis.com/sharing/rest/content/items/293fac439fd04a0695b46807118d6665/data?f=json",
+    "status": 200,
+    "content_type": "application/json;charset=utf-8",
+    "retrieved_at": "2026-11-05T13:00:35.690404+00:00",
+    "file": "originals/declared-webmap-data-293fac439fd04a0695b46807118d6665.gz",
+    "bytes": 77267,
+    "sha256": "ef429ed511f1e76b039278e8dff586e32a3d575dc18b7e705c055adaf7131a7e"
+  },
+  "declared-webmap-a5bbf1e622654da194d92f3d6742e4ca": {
+    "url": "https://www.arcgis.com/sharing/rest/content/items/a5bbf1e622654da194d92f3d6742e4ca?f=json",
+    "final_url": "https://www.arcgis.com/sharing/rest/content/items/a5bbf1e622654da194d92f3d6742e4ca?f=json",
+    "status": 200,
+    "content_type": "application/json;charset=utf-8",
+    "retrieved_at": "2026-11-05T13:00:35.758600+00:00",
+    "file": "originals/declared-webmap-a5bbf1e622654da194d92f3d6742e4ca.gz",
+    "bytes": 1389,
+    "sha256": "a025b3282c2874f9a0b81e27d7c32436bdedc8878eeb7d1dfb7793af302050e2"
+  },
+  "declared-webmap-data-a5bbf1e622654da194d92f3d6742e4ca": {
+    "url": "https://www.arcgis.com/sharing/rest/content/items/a5bbf1e622654da194d92f3d6742e4ca/data?f=json",
+    "final_url": "https://www.arcgis.com/sharing/rest/content/items/a5bbf1e622654da194d92f3d6742e4ca/data?f=json",
+    "status": 200,
+    "content_type": "application/json;charset=utf-8",
+    "retrieved_at": "2026-11-05T13:00:35.947695+00:00",
+    "file": "originals/declared-webmap-data-a5bbf1e622654da194d92f3d6742e4ca.gz",
+    "bytes": 170340,
+    "sha256": "a260531ad9f1320f351999592b9b041197d98770042f9bbe3f34d8b3fcc6069c"
+  },
+  "declared-webmap-e00ca96de0284f5f9d7d9510c5e41531": {
+    "url": "https://www.arcgis.com/sharing/rest/content/items/e00ca96de0284f5f9d7d9510c5e41531?f=json",
+    "final_url": "https://www.arcgis.com/sharing/rest/content/items/e00ca96de0284f5f9d7d9510c5e41531?f=json",
+    "status": 200,
+    "content_type": "application/json;charset=utf-8",
+    "retrieved_at": "2026-11-05T13:00:36.022990+00:00",
+    "file": "originals/declared-webmap-e00ca96de0284f5f9d7d9510c5e41531.gz",
+    "bytes": 1336,
+    "sha256": "c2d681412c40371345cd0b017012145bb63a60303db22c6d6a2f4034b5d45bf2"
+  },
+  "declared-webmap-data-e00ca96de0284f5f9d7d9510c5e41531": {
+    "url": "https://www.arcgis.com/sharing/rest/content/items/e00ca96de0284f5f9d7d9510c5e41531/data?f=json",
+    "final_url": "https://www.arcgis.com/sharing/rest/content/items/e00ca96de0284f5f9d7d9510c5e41531/data?f=json",
+    "status": 200,
+    "content_type": "application/json;charset=utf-8",
+    "retrieved_at": "2026-11-05T13:00:36.210942+00:00",
+    "file": "originals/declared-webmap-data-e00ca96de0284f5f9d7d9510c5e41531.gz",
+    "bytes": 86319,
+    "sha256": "9aed9b8d6894cc04cbda10188c4cd9e177f45a4fb9493a45afd89154555ad7ff"
+  },
+  "official-base-layer-before": {
+    "url": "https://gisdata.pima.gov/arcgis1/rest/services/GISOpenData/Boundaries/MapServer/8?f=json",
+    "final_url": "https://gisdata.pima.gov/arcgis1/rest/services/GISOpenData/Boundaries/MapServer/8?f=json",
+    "status": 200,
+    "content_type": "application/json; charset=UTF-8",
+    "retrieved_at": "2026-11-05T13:01:03.086033+00:00",
+    "file": "originals/official-base-layer-before.gz",
+    "bytes": 5296,
+    "sha256": "a16a53193ab288674c946582109190bba933beafaab0195e40671d0836c92922"
+  },
+  "official-app-polygon-item": {
+    "url": "https://www.arcgis.com/sharing/rest/content/items/ba56147f7d54454eab8775c145746676?f=json",
+    "final_url": "https://www.arcgis.com/sharing/rest/content/items/ba56147f7d54454eab8775c145746676?f=json",
+    "status": 200,
+    "content_type": "application/json;charset=utf-8",
+    "retrieved_at": "2026-11-05T13:01:03.157583+00:00",
+    "file": "originals/official-app-polygon-item.gz",
+    "bytes": 3809,
+    "sha256": "d638ddc39993a959a1f511be9e1f684be74c32aef770c75ecb44d0b9907385e5"
+  },
+  "official-app-polygon-layer-before": {
+    "url": "https://services2.arcgis.com/UTBp78iglGpbqp1B/arcgis/rest/services/election_polys_20241004_view/FeatureServer/0?f=json",
+    "final_url": "https://services2.arcgis.com/UTBp78iglGpbqp1B/arcgis/rest/services/election_polys_20241004_view/FeatureServer/0?f=json",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "retrieved_at": "2026-11-05T13:01:03.624583+00:00",
+    "file": "originals/official-app-polygon-layer-before.gz",
+    "bytes": 11280,
+    "sha256": "5d0a358d0c5e7fe060b7ee88a28b696798e511c33cefea9a94ba6e42451e51e3"
+  },
+  "official-base-ids-before": {
+    "url": "https://gisdata.pima.gov/arcgis1/rest/services/GISOpenData/Boundaries/MapServer/8/query?where=1%3D1&returnIdsOnly=true&f=json",
+    "final_url": "https://gisdata.pima.gov/arcgis1/rest/services/GISOpenData/Boundaries/MapServer/8/query?where=1%3D1&returnIdsOnly=true&f=json",
+    "status": 200,
+    "content_type": "application/json; charset=UTF-8",
+    "retrieved_at": "2026-11-05T13:01:32.609920+00:00",
+    "file": "originals/official-base-ids-before.gz",
+    "bytes": 998,
+    "sha256": "76031c45e0bef3d557a0bd7b0b8975838c57313bb1120f412c155a202eaa0c23"
+  },
+  "official-base-features-1": {
+    "url": "https://gisdata.pima.gov/arcgis1/rest/services/GISOpenData/Boundaries/MapServer/8/query?objectIds=1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C9%2C10%2C11%2C12%2C13%2C14%2C15%2C16%2C17%2C18%2C19%2C20%2C21%2C22%2C23%2C24%2C25%2C26%2C27%2C28%2C29%2C30%2C31%2C32%2C33%2C34%2C35%2C36%2C37%2C38%2C39%2C40%2C41%2C42%2C43%2C44%2C45%2C46%2C47%2C48%2C49%2C50%2C51%2C52%2C53%2C54%2C55%2C56%2C57%2C58%2C59%2C60%2C61%2C62%2C63%2C64%2C65%2C66%2C67%2C68%2C69%2C70%2C71%2C72%2C73%2C74%2C75%2C76%2C77%2C78%2C79%2C80%2C81%2C82%2C83%2C84%2C85%2C86%2C87%2C88%2C89%2C90%2C91%2C92%2C93%2C94%2C95%2C96%2C97%2C98%2C99%2C100&outFields=%2A&returnGeometry=true&outSR=4326&f=geojson",
+    "final_url": "https://gisdata.pima.gov/arcgis1/rest/services/GISOpenData/Boundaries/MapServer/8/query?objectIds=1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C9%2C10%2C11%2C12%2C13%2C14%2C15%2C16%2C17%2C18%2C19%2C20%2C21%2C22%2C23%2C24%2C25%2C26%2C27%2C28%2C29%2C30%2C31%2C32%2C33%2C34%2C35%2C36%2C37%2C38%2C39%2C40%2C41%2C42%2C43%2C44%2C45%2C46%2C47%2C48%2C49%2C50%2C51%2C52%2C53%2C54%2C55%2C56%2C57%2C58%2C59%2C60%2C61%2C62%2C63%2C64%2C65%2C66%2C67%2C68%2C69%2C70%2C71%2C72%2C73%2C74%2C75%2C76%2C77%2C78%2C79%2C80%2C81%2C82%2C83%2C84%2C85%2C86%2C87%2C88%2C89%2C90%2C91%2C92%2C93%2C94%2C95%2C96%2C97%2C98%2C99%2C100&outFields=%2A&returnGeometry=true&outSR=4326&f=geojson",
+    "status": 200,
+    "content_type": "application/geo+json; charset=UTF-8",
+    "retrieved_at": "2026-11-05T13:01:33.740371+00:00",
+    "file": "originals/official-base-features-1.gz",
+    "bytes": 1519598,
+    "sha256": "625d5421170d0aef4de794a699c9ddfdd1b67b728d7b7cb9babfc386f93ce427"
+  },
+  "official-base-features-2": {
+    "url": "https://gisdata.pima.gov/arcgis1/rest/services/GISOpenData/Boundaries/MapServer/8/query?objectIds=101%2C102%2C103%2C104%2C105%2C106%2C107%2C108%2C109%2C110%2C111%2C112%2C113%2C114%2C115%2C116%2C117%2C118%2C119%2C120%2C121%2C122%2C123%2C124%2C125%2C126%2C127%2C128%2C129%2C130%2C131%2C132%2C133%2C134%2C135%2C136%2C137%2C138%2C139%2C140%2C141%2C142%2C143%2C144%2C145%2C146%2C147%2C148%2C149%2C150%2C151%2C152%2C153%2C154%2C155%2C156%2C157%2C158%2C159%2C160%2C161%2C162%2C163%2C164%2C165%2C166%2C167%2C168%2C169%2C170%2C171%2C172%2C173%2C174%2C175%2C176%2C177%2C178%2C179%2C180%2C181%2C182%2C183%2C184%2C185%2C186%2C187%2C188%2C189%2C190%2C191%2C192%2C193%2C194%2C195%2C196%2C197%2C198%2C199%2C200&outFields=%2A&returnGeometry=true&outSR=4326&f=geojson",
+    "final_url": "https://gisdata.pima.gov/arcgis1/rest/services/GISOpenData/Boundaries/MapServer/8/query?objectIds=101%2C102%2C103%2C104%2C105%2C106%2C107%2C108%2C109%2C110%2C111%2C112%2C113%2C114%2C115%2C116%2C117%2C118%2C119%2C120%2C121%2C122%2C123%2C124%2C125%2C126%2C127%2C128%2C129%2C130%2C131%2C132%2C133%2C134%2C135%2C136%2C137%2C138%2C139%2C140%2C141%2C142%2C143%2C144%2C145%2C146%2C147%2C148%2C149%2C150%2C151%2C152%2C153%2C154%2C155%2C156%2C157%2C158%2C159%2C160%2C161%2C162%2C163%2C164%2C165%2C166%2C167%2C168%2C169%2C170%2C171%2C172%2C173%2C174%2C175%2C176%2C177%2C178%2C179%2C180%2C181%2C182%2C183%2C184%2C185%2C186%2C187%2C188%2C189%2C190%2C191%2C192%2C193%2C194%2C195%2C196%2C197%2C198%2C199%2C200&outFields=%2A&returnGeometry=true&outSR=4326&f=geojson",
+    "status": 200,
+    "content_type": "application/geo+json; charset=UTF-8",
+    "retrieved_at": "2026-11-05T13:01:34.320950+00:00",
+    "file": "originals/official-base-features-2.gz",
+    "bytes": 1082642,
+    "sha256": "96cd7aad786500470806037f9617ab251edb4476220fc24637de63ce3b444ff5"
+  },
+  "official-base-features-3": {
+    "url": "https://gisdata.pima.gov/arcgis1/rest/services/GISOpenData/Boundaries/MapServer/8/query?objectIds=201%2C202%2C203%2C204%2C205%2C206%2C207%2C208%2C209%2C210%2C211%2C212%2C213%2C214%2C215%2C216%2C217%2C218%2C219%2C220%2C221%2C222%2C223%2C224%2C225%2C226%2C227%2C228%2C229%2C230%2C231%2C232%2C233%2C234%2C235%2C236%2C237%2C238%2C239%2C240%2C241%2C242%2C243%2C244%2C245%2C246%2C247%2C248%2C249%2C250%2C251%2C252%2C253%2C254%2C255%2C256%2C257%2C258%2C259%2C260%2C261%2C262%2C263%2C264%2C265&outFields=%2A&returnGeometry=true&outSR=4326&f=geojson",
+    "final_url": "https://gisdata.pima.gov/arcgis1/rest/services/GISOpenData/Boundaries/MapServer/8/query?objectIds=201%2C202%2C203%2C204%2C205%2C206%2C207%2C208%2C209%2C210%2C211%2C212%2C213%2C214%2C215%2C216%2C217%2C218%2C219%2C220%2C221%2C222%2C223%2C224%2C225%2C226%2C227%2C228%2C229%2C230%2C231%2C232%2C233%2C234%2C235%2C236%2C237%2C238%2C239%2C240%2C241%2C242%2C243%2C244%2C245%2C246%2C247%2C248%2C249%2C250%2C251%2C252%2C253%2C254%2C255%2C256%2C257%2C258%2C259%2C260%2C261%2C262%2C263%2C264%2C265&outFields=%2A&returnGeometry=true&outSR=4326&f=geojson",
+    "status": 200,
+    "content_type": "application/geo+json; charset=UTF-8",
+    "retrieved_at": "2026-11-05T13:01:34.966759+00:00",
+    "file": "originals/official-base-features-3.gz",
+    "bytes": 681288,
+    "sha256": "9649d77ac0825d628457a70303fd9113bcd037b2f0028f61fbf60189b367955c"
+  },
+  "official-base-ids-after": {
+    "url": "https://gisdata.pima.gov/arcgis1/rest/services/GISOpenData/Boundaries/MapServer/8/query?where=1%3D1&returnIdsOnly=true&f=json",
+    "final_url": "https://gisdata.pima.gov/arcgis1/rest/services/GISOpenData/Boundaries/MapServer/8/query?where=1%3D1&returnIdsOnly=true&f=json",
+    "status": 200,
+    "content_type": "application/json; charset=UTF-8",
+    "retrieved_at": "2026-11-05T13:01:35.156989+00:00",
+    "file": "originals/official-base-ids-after.gz",
+    "bytes": 998,
+    "sha256": "76031c45e0bef3d557a0bd7b0b8975838c57313bb1120f412c155a202eaa0c23"
+  },
+  "official-base-layer-after": {
+    "url": "https://gisdata.pima.gov/arcgis1/rest/services/GISOpenData/Boundaries/MapServer/8?f=json",
+    "final_url": "https://gisdata.pima.gov/arcgis1/rest/services/GISOpenData/Boundaries/MapServer/8?f=json",
+    "status": 200,
+    "content_type": "application/json; charset=UTF-8",
+    "retrieved_at": "2026-11-05T13:01:35.320695+00:00",
+    "file": "originals/official-base-layer-after.gz",
+    "bytes": 5296,
+    "sha256": "a16a53193ab288674c946582109190bba933beafaab0195e40671d0836c92922"
+  },
+  "official-app-ids-before": {
+    "url": "https://services2.arcgis.com/UTBp78iglGpbqp1B/arcgis/rest/services/election_polys_20241004_view/FeatureServer/0/query?where=1%3D1&returnIdsOnly=true&f=json",
+    "final_url": "https://services2.arcgis.com/UTBp78iglGpbqp1B/arcgis/rest/services/election_polys_20241004_view/FeatureServer/0/query?where=1%3D1&returnIdsOnly=true&f=json",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "retrieved_at": "2026-11-05T13:01:35.681896+00:00",
+    "file": "originals/official-app-ids-before.gz",
+    "bytes": 3828,
+    "sha256": "c2209f95c8caba23d41651d359307fdabffd9bb09583cbb34f9cd7d3b24db773"
+  },
+  "official-app-ids-after": {
+    "url": "https://services2.arcgis.com/UTBp78iglGpbqp1B/arcgis/rest/services/election_polys_20241004_view/FeatureServer/0/query?where=1%3D1&returnIdsOnly=true&f=json",
+    "final_url": "https://services2.arcgis.com/UTBp78iglGpbqp1B/arcgis/rest/services/election_polys_20241004_view/FeatureServer/0/query?where=1%3D1&returnIdsOnly=true&f=json",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "retrieved_at": "2026-11-05T13:01:35.732064+00:00",
+    "file": "originals/official-app-ids-after.gz",
+    "bytes": 3828,
+    "sha256": "c2209f95c8caba23d41651d359307fdabffd9bb09583cbb34f9cd7d3b24db773"
+  },
+  "official-app-layer-after": {
+    "url": "https://services2.arcgis.com/UTBp78iglGpbqp1B/arcgis/rest/services/election_polys_20241004_view/FeatureServer/0?f=json",
+    "final_url": "https://services2.arcgis.com/UTBp78iglGpbqp1B/arcgis/rest/services/election_polys_20241004_view/FeatureServer/0?f=json",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "retrieved_at": "2026-11-05T13:01:35.884856+00:00",
+    "file": "originals/official-app-layer-after.gz",
+    "bytes": 11280,
+    "sha256": "5d0a358d0c5e7fe060b7ee88a28b696798e511c33cefea9a94ba6e42451e51e3"
+  },
+  "official-elections-2026-page": {
+    "url": "https://www.pima.gov/elections",
+    "final_url": "https://www.pima.gov/elections",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-11-05T13:02:36.313186+00:00",
+    "file": "originals/official-elections-2026-page.gz",
+    "bytes": 1563650,
+    "sha256": "1f3c54c254855df003ab5f1bed0bd7dacf6e8b6aff8336356405762a69750b27"
+  },
+  "official-recorder-district-maps": {
+    "url": "https://www.recorder.pima.gov/districtmaps",
+    "final_url": "https://www.recorder.pima.gov/districtmaps",
+    "status": 403,
+    "content_type": "text/html; charset=UTF-8",
+    "retrieved_at": "2026-11-05T13:02:36.438877+00:00",
+    "file": "originals/official-recorder-district-maps.gz",
+    "bytes": 5458,
+    "sha256": "407b3e27f8d89c811eda3d026f33208e4c3a53ee3091b0b2688c72445dfc9950"
+  },
+  "official-pima-vote-hub": {
+    "url": "https://pima.vote/",
+    "final_url": "https://www.pima.gov/pima-votes",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "transport": "curl",
+    "prior_transport_error": "requests.exceptions.SSLError",
+    "retrieved_at": "2026-11-05T13:02:57.539422+00:00",
+    "file": "originals/official-pima-vote-hub.gz",
+    "bytes": 1113707,
+    "sha256": "5aeaad64dde0e2d101a7ef1f4d2de26cd52246d121e5fd29c6b5938b910ceae3"
+  },
+  "official-app-full-ids-before": {
+    "url": "https://services2.arcgis.com/UTBp78iglGpbqp1B/arcgis/rest/services/election_polys_20241004_view/FeatureServer/0/query?where=1%3D1&returnIdsOnly=true&f=json",
+    "final_url": "https://services2.arcgis.com/UTBp78iglGpbqp1B/arcgis/rest/services/election_polys_20241004_view/FeatureServer/0/query?where=1%3D1&returnIdsOnly=true&f=json",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "transport": "requests",
+    "retrieved_at": "2026-11-05T13:02:57.772607+00:00",
+    "file": "originals/official-app-full-ids-before.gz",
+    "bytes": 3826,
+    "sha256": "4d5be91f48937beafbc80ce78eecbdf0f93e56ea35e2f0b4330aeae4918394b6"
+  },
+  "official-app-full-layer-before": {
+    "url": "https://services2.arcgis.com/UTBp78iglGpbqp1B/arcgis/rest/services/election_polys_20241004_view/FeatureServer/0?f=json",
+    "final_url": "https://services2.arcgis.com/UTBp78iglGpbqp1B/arcgis/rest/services/election_polys_20241004_view/FeatureServer/0?f=json",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "transport": "requests",
+    "retrieved_at": "2026-11-05T13:02:57.970691+00:00",
+    "file": "originals/official-app-full-layer-before.gz",
+    "bytes": 11280,
+    "sha256": "5d0a358d0c5e7fe060b7ee88a28b696798e511c33cefea9a94ba6e42451e51e3"
+  },
+  "official-app-features-1": {
+    "url": "https://services2.arcgis.com/UTBp78iglGpbqp1B/arcgis/rest/services/election_polys_20241004_view/FeatureServer/0/query?objectIds=1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C9%2C10%2C11%2C12%2C13%2C14%2C15%2C16%2C17%2C18%2C19%2C20%2C21%2C22%2C23%2C24%2C25%2C26%2C27%2C28%2C29%2C30%2C31%2C32%2C33%2C34%2C35%2C36%2C37%2C38%2C39%2C40%2C41%2C42%2C43%2C44%2C45%2C46%2C47%2C48%2C49%2C50%2C51%2C52%2C53%2C54%2C55%2C56%2C57%2C58%2C59%2C60%2C61%2C62%2C63%2C64%2C65%2C66%2C67%2C68%2C69%2C70%2C71%2C72%2C73%2C74%2C75%2C76%2C77%2C78%2C79%2C80%2C81%2C82%2C83%2C84%2C85%2C86%2C87%2C88%2C89%2C90%2C91%2C92%2C93%2C94%2C95%2C96%2C97%2C98%2C99%2C100%2C101%2C102%2C103%2C104%2C105%2C106%2C107%2C108%2C109%2C110%2C111%2C112%2C113%2C114%2C115%2C116%2C117%2C118%2C119%2C120%2C121%2C122%2C123%2C124%2C125%2C126%2C127%2C128%2C129%2C130%2C131%2C132%2C133%2C134%2C135%2C136%2C137%2C138%2C139%2C140%2C141%2C142%2C143%2C144%2C145%2C146%2C147%2C148%2C149%2C150%2C151%2C152%2C153%2C154%2C155%2C156%2C157%2C158%2C159%2C160%2C161%2C162%2C163%2C164%2C165%2C166%2C167%2C168%2C169%2C170%2C171%2C172%2C173%2C174%2C175%2C176%2C177%2C178%2C179%2C180%2C181%2C182%2C183%2C184%2C185%2C186%2C187%2C188%2C189%2C190%2C191%2C192%2C193%2C194%2C195%2C196%2C197%2C198%2C199%2C200&outFields=%2A&returnGeometry=true&outSR=4326&f=geojson",
+    "final_url": "https://services2.arcgis.com/UTBp78iglGpbqp1B/arcgis/rest/services/election_polys_20241004_view/FeatureServer/0/query?objectIds=1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C9%2C10%2C11%2C12%2C13%2C14%2C15%2C16%2C17%2C18%2C19%2C20%2C21%2C22%2C23%2C24%2C25%2C26%2C27%2C28%2C29%2C30%2C31%2C32%2C33%2C34%2C35%2C36%2C37%2C38%2C39%2C40%2C41%2C42%2C43%2C44%2C45%2C46%2C47%2C48%2C49%2C50%2C51%2C52%2C53%2C54%2C55%2C56%2C57%2C58%2C59%2C60%2C61%2C62%2C63%2C64%2C65%2C66%2C67%2C68%2C69%2C70%2C71%2C72%2C73%2C74%2C75%2C76%2C77%2C78%2C79%2C80%2C81%2C82%2C83%2C84%2C85%2C86%2C87%2C88%2C89%2C90%2C91%2C92%2C93%2C94%2C95%2C96%2C97%2C98%2C99%2C100%2C101%2C102%2C103%2C104%2C105%2C106%2C107%2C108%2C109%2C110%2C111%2C112%2C113%2C114%2C115%2C116%2C117%2C118%2C119%2C120%2C121%2C122%2C123%2C124%2C125%2C126%2C127%2C128%2C129%2C130%2C131%2C132%2C133%2C134%2C135%2C136%2C137%2C138%2C139%2C140%2C141%2C142%2C143%2C144%2C145%2C146%2C147%2C148%2C149%2C150%2C151%2C152%2C153%2C154%2C155%2C156%2C157%2C158%2C159%2C160%2C161%2C162%2C163%2C164%2C165%2C166%2C167%2C168%2C169%2C170%2C171%2C172%2C173%2C174%2C175%2C176%2C177%2C178%2C179%2C180%2C181%2C182%2C183%2C184%2C185%2C186%2C187%2C188%2C189%2C190%2C191%2C192%2C193%2C194%2C195%2C196%2C197%2C198%2C199%2C200&outFields=%2A&returnGeometry=true&outSR=4326&f=geojson",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "transport": "requests",
+    "retrieved_at": "2026-11-05T13:02:58.619529+00:00",
+    "file": "originals/official-app-features-1.gz",
+    "bytes": 1158263,
+    "sha256": "1c8dfe46b6c515378fc21f2659b9aff08067a9c35dff3653e43dab83a1e2727c"
+  },
+  "official-app-features-2": {
+    "url": "https://services2.arcgis.com/UTBp78iglGpbqp1B/arcgis/rest/services/election_polys_20241004_view/FeatureServer/0/query?objectIds=201%2C202%2C203%2C204%2C205%2C206%2C207%2C208%2C209%2C210%2C211%2C212%2C213%2C214%2C215%2C216%2C217%2C218%2C219%2C220%2C221%2C222%2C223%2C224%2C225%2C226%2C227%2C228%2C229%2C230%2C231%2C232%2C233%2C234%2C235%2C236%2C237%2C238%2C239%2C240%2C241%2C242%2C243%2C244%2C245%2C246%2C247%2C248%2C249%2C250%2C251%2C252%2C253%2C254%2C255%2C256%2C257%2C258%2C259%2C260%2C261%2C262%2C263%2C264%2C265%2C266%2C267%2C268%2C269%2C270%2C271%2C272%2C273%2C274%2C275%2C276%2C277%2C278%2C279%2C280%2C281%2C282%2C283%2C284%2C285%2C286%2C287%2C288%2C289%2C290%2C291%2C292%2C293%2C294%2C295%2C296%2C297%2C298%2C299%2C300%2C301%2C302%2C303%2C304%2C305%2C306%2C307%2C308%2C309%2C310%2C311%2C312%2C313%2C314%2C315%2C316%2C317%2C318%2C319%2C320%2C321%2C322%2C323%2C324%2C325%2C326%2C327%2C328%2C329%2C330%2C331%2C332%2C333%2C334%2C335%2C336%2C337%2C338%2C339%2C340%2C341%2C342%2C343%2C344%2C345%2C346%2C347%2C348%2C349%2C350%2C351%2C352%2C353%2C354%2C355%2C356%2C357%2C358%2C359%2C360%2C361%2C362%2C363%2C364%2C365%2C366%2C367%2C368%2C369%2C370%2C371%2C372%2C373%2C374%2C375%2C376%2C377%2C378%2C379%2C380%2C381%2C382%2C383%2C384%2C385%2C386%2C387%2C388%2C389%2C390%2C391%2C392%2C393%2C394%2C395%2C396%2C397%2C398%2C399%2C400&outFields=%2A&returnGeometry=true&outSR=4326&f=geojson",
+    "final_url": "https://services2.arcgis.com/UTBp78iglGpbqp1B/arcgis/rest/services/election_polys_20241004_view/FeatureServer/0/query?objectIds=201%2C202%2C203%2C204%2C205%2C206%2C207%2C208%2C209%2C210%2C211%2C212%2C213%2C214%2C215%2C216%2C217%2C218%2C219%2C220%2C221%2C222%2C223%2C224%2C225%2C226%2C227%2C228%2C229%2C230%2C231%2C232%2C233%2C234%2C235%2C236%2C237%2C238%2C239%2C240%2C241%2C242%2C243%2C244%2C245%2C246%2C247%2C248%2C249%2C250%2C251%2C252%2C253%2C254%2C255%2C256%2C257%2C258%2C259%2C260%2C261%2C262%2C263%2C264%2C265%2C266%2C267%2C268%2C269%2C270%2C271%2C272%2C273%2C274%2C275%2C276%2C277%2C278%2C279%2C280%2C281%2C282%2C283%2C284%2C285%2C286%2C287%2C288%2C289%2C290%2C291%2C292%2C293%2C294%2C295%2C296%2C297%2C298%2C299%2C300%2C301%2C302%2C303%2C304%2C305%2C306%2C307%2C308%2C309%2C310%2C311%2C312%2C313%2C314%2C315%2C316%2C317%2C318%2C319%2C320%2C321%2C322%2C323%2C324%2C325%2C326%2C327%2C328%2C329%2C330%2C331%2C332%2C333%2C334%2C335%2C336%2C337%2C338%2C339%2C340%2C341%2C342%2C343%2C344%2C345%2C346%2C347%2C348%2C349%2C350%2C351%2C352%2C353%2C354%2C355%2C356%2C357%2C358%2C359%2C360%2C361%2C362%2C363%2C364%2C365%2C366%2C367%2C368%2C369%2C370%2C371%2C372%2C373%2C374%2C375%2C376%2C377%2C378%2C379%2C380%2C381%2C382%2C383%2C384%2C385%2C386%2C387%2C388%2C389%2C390%2C391%2C392%2C393%2C394%2C395%2C396%2C397%2C398%2C399%2C400&outFields=%2A&returnGeometry=true&outSR=4326&f=geojson",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "transport": "requests",
+    "retrieved_at": "2026-11-05T13:02:59.570204+00:00",
+    "file": "originals/official-app-features-2.gz",
+    "bytes": 1373287,
+    "sha256": "d3ff29b3f88af1300f220d8c794bf567dec7792f198d77271f5dd97c0e7acee9"
+  },
+  "official-app-features-3": {
+    "url": "https://services2.arcgis.com/UTBp78iglGpbqp1B/arcgis/rest/services/election_polys_20241004_view/FeatureServer/0/query?objectIds=401%2C402%2C403%2C404%2C405%2C406%2C407%2C408%2C409%2C410%2C411%2C412%2C413%2C414%2C415%2C416%2C417%2C418%2C419%2C420%2C421%2C422%2C423%2C424%2C425%2C426%2C427%2C428%2C429%2C430%2C431%2C432%2C433%2C434%2C435%2C436%2C437%2C438%2C439%2C440%2C441%2C442%2C443%2C444%2C445%2C446%2C447%2C448%2C449%2C450%2C451%2C452%2C453%2C454%2C455%2C456%2C457%2C458%2C459%2C460%2C461%2C462%2C463%2C464%2C465%2C466%2C467%2C468%2C469%2C470%2C471%2C472%2C473%2C474%2C475%2C476%2C477%2C478%2C479%2C480%2C481%2C482%2C483%2C484%2C485%2C486%2C487%2C488%2C489%2C490%2C491%2C492%2C493%2C494%2C495%2C496%2C497%2C498%2C499%2C500%2C501%2C502%2C503%2C504%2C505%2C506%2C507%2C508%2C509%2C510%2C511%2C512%2C513%2C514%2C515%2C516%2C517%2C518%2C519%2C520%2C521%2C522%2C523%2C524%2C525%2C526%2C527%2C528%2C529%2C530%2C531%2C532%2C533%2C534%2C535%2C536%2C537%2C538%2C539%2C540%2C541%2C542%2C543%2C544%2C545%2C546%2C547%2C548%2C549%2C550%2C551%2C552%2C553%2C554%2C555%2C556%2C557%2C558%2C559%2C560%2C561%2C562%2C563%2C564%2C565%2C566%2C567%2C568%2C569%2C570%2C571%2C572%2C573%2C574%2C575%2C576%2C577%2C578%2C579%2C580%2C581%2C582%2C583%2C584%2C585%2C586%2C587%2C588%2C589%2C590%2C591%2C592%2C593%2C594%2C595%2C596%2C597%2C598%2C599%2C600&outFields=%2A&returnGeometry=true&outSR=4326&f=geojson",
+    "final_url": "https://services2.arcgis.com/UTBp78iglGpbqp1B/arcgis/rest/services/election_polys_20241004_view/FeatureServer/0/query?objectIds=401%2C402%2C403%2C404%2C405%2C406%2C407%2C408%2C409%2C410%2C411%2C412%2C413%2C414%2C415%2C416%2C417%2C418%2C419%2C420%2C421%2C422%2C423%2C424%2C425%2C426%2C427%2C428%2C429%2C430%2C431%2C432%2C433%2C434%2C435%2C436%2C437%2C438%2C439%2C440%2C441%2C442%2C443%2C444%2C445%2C446%2C447%2C448%2C449%2C450%2C451%2C452%2C453%2C454%2C455%2C456%2C457%2C458%2C459%2C460%2C461%2C462%2C463%2C464%2C465%2C466%2C467%2C468%2C469%2C470%2C471%2C472%2C473%2C474%2C475%2C476%2C477%2C478%2C479%2C480%2C481%2C482%2C483%2C484%2C485%2C486%2C487%2C488%2C489%2C490%2C491%2C492%2C493%2C494%2C495%2C496%2C497%2C498%2C499%2C500%2C501%2C502%2C503%2C504%2C505%2C506%2C507%2C508%2C509%2C510%2C511%2C512%2C513%2C514%2C515%2C516%2C517%2C518%2C519%2C520%2C521%2C522%2C523%2C524%2C525%2C526%2C527%2C528%2C529%2C530%2C531%2C532%2C533%2C534%2C535%2C536%2C537%2C538%2C539%2C540%2C541%2C542%2C543%2C544%2C545%2C546%2C547%2C548%2C549%2C550%2C551%2C552%2C553%2C554%2C555%2C556%2C557%2C558%2C559%2C560%2C561%2C562%2C563%2C564%2C565%2C566%2C567%2C568%2C569%2C570%2C571%2C572%2C573%2C574%2C575%2C576%2C577%2C578%2C579%2C580%2C581%2C582%2C583%2C584%2C585%2C586%2C587%2C588%2C589%2C590%2C591%2C592%2C593%2C594%2C595%2C596%2C597%2C598%2C599%2C600&outFields=%2A&returnGeometry=true&outSR=4326&f=geojson",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "transport": "requests",
+    "retrieved_at": "2026-11-05T13:03:00.293216+00:00",
+    "file": "originals/official-app-features-3.gz",
+    "bytes": 979745,
+    "sha256": "6fac1da2dfc3ac8684bc6323af6ad3785f71115e7bc6291f6e30e3216b86d943"
+  },
+  "official-app-features-4": {
+    "url": "https://services2.arcgis.com/UTBp78iglGpbqp1B/arcgis/rest/services/election_polys_20241004_view/FeatureServer/0/query?objectIds=601%2C602%2C603%2C604%2C605%2C606%2C607%2C608%2C609%2C610%2C611%2C612%2C613%2C614%2C615%2C616%2C617%2C618%2C619%2C620%2C621%2C622%2C623%2C624%2C625%2C626%2C627%2C628%2C629%2C630%2C631%2C632%2C633%2C634%2C635%2C636%2C637%2C638%2C639%2C640%2C641%2C642%2C643%2C644%2C645%2C646%2C647%2C648%2C649%2C650%2C651%2C652%2C653%2C654%2C655%2C656%2C657%2C658%2C659%2C660%2C661%2C662%2C663%2C664%2C665%2C666%2C667%2C668%2C669%2C670%2C671%2C672%2C673%2C674%2C675%2C676%2C677%2C678%2C679%2C680%2C681%2C682%2C683%2C684%2C685%2C686%2C687%2C688%2C689%2C690%2C691%2C692%2C693%2C694%2C695%2C696%2C697%2C698%2C699%2C700%2C701%2C702%2C703%2C704%2C705%2C706%2C707%2C708%2C709%2C710%2C711%2C712%2C713%2C714%2C715%2C716%2C717%2C718%2C719%2C720%2C721%2C722%2C723%2C724%2C725%2C726%2C727%2C728%2C729%2C730%2C731%2C732%2C733%2C734%2C735%2C736%2C737%2C738%2C739%2C740%2C741%2C742%2C743%2C744%2C745%2C746%2C747%2C748%2C749%2C750%2C751%2C752%2C753%2C754%2C755%2C756%2C757%2C758%2C759%2C760%2C761%2C762%2C763%2C764%2C765%2C766%2C767%2C768%2C769%2C770%2C771%2C772%2C773%2C774%2C775%2C776%2C777%2C778%2C779%2C780%2C781%2C782%2C783%2C784%2C785%2C786%2C787%2C788%2C789%2C790%2C791%2C792%2C793%2C794%2C795%2C796%2C797%2C798%2C799%2C800&outFields=%2A&returnGeometry=true&outSR=4326&f=geojson",
+    "final_url": "https://services2.arcgis.com/UTBp78iglGpbqp1B/arcgis/rest/services/election_polys_20241004_view/FeatureServer/0/query?objectIds=601%2C602%2C603%2C604%2C605%2C606%2C607%2C608%2C609%2C610%2C611%2C612%2C613%2C614%2C615%2C616%2C617%2C618%2C619%2C620%2C621%2C622%2C623%2C624%2C625%2C626%2C627%2C628%2C629%2C630%2C631%2C632%2C633%2C634%2C635%2C636%2C637%2C638%2C639%2C640%2C641%2C642%2C643%2C644%2C645%2C646%2C647%2C648%2C649%2C650%2C651%2C652%2C653%2C654%2C655%2C656%2C657%2C658%2C659%2C660%2C661%2C662%2C663%2C664%2C665%2C666%2C667%2C668%2C669%2C670%2C671%2C672%2C673%2C674%2C675%2C676%2C677%2C678%2C679%2C680%2C681%2C682%2C683%2C684%2C685%2C686%2C687%2C688%2C689%2C690%2C691%2C692%2C693%2C694%2C695%2C696%2C697%2C698%2C699%2C700%2C701%2C702%2C703%2C704%2C705%2C706%2C707%2C708%2C709%2C710%2C711%2C712%2C713%2C714%2C715%2C716%2C717%2C718%2C719%2C720%2C721%2C722%2C723%2C724%2C725%2C726%2C727%2C728%2C729%2C730%2C731%2C732%2C733%2C734%2C735%2C736%2C737%2C738%2C739%2C740%2C741%2C742%2C743%2C744%2C745%2C746%2C747%2C748%2C749%2C750%2C751%2C752%2C753%2C754%2C755%2C756%2C757%2C758%2C759%2C760%2C761%2C762%2C763%2C764%2C765%2C766%2C767%2C768%2C769%2C770%2C771%2C772%2C773%2C774%2C775%2C776%2C777%2C778%2C779%2C780%2C781%2C782%2C783%2C784%2C785%2C786%2C787%2C788%2C789%2C790%2C791%2C792%2C793%2C794%2C795%2C796%2C797%2C798%2C799%2C800&outFields=%2A&returnGeometry=true&outSR=4326&f=geojson",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "transport": "requests",
+    "retrieved_at": "2026-11-05T13:03:01.020202+00:00",
+    "file": "originals/official-app-features-4.gz",
+    "bytes": 972780,
+    "sha256": "f090a57eb7e0f6eba3f4117889d391535281a8fc3a770cd07f313db94a2d0da5"
+  },
+  "official-app-features-5": {
+    "url": "https://services2.arcgis.com/UTBp78iglGpbqp1B/arcgis/rest/services/election_polys_20241004_view/FeatureServer/0/query?objectIds=801%2C802%2C803%2C804%2C805%2C806%2C807%2C808%2C809%2C810%2C811%2C812%2C813%2C814%2C815%2C816%2C817%2C818%2C819%2C820%2C821%2C822%2C823%2C824%2C825%2C826%2C827%2C828%2C829%2C830%2C831%2C832%2C833%2C834%2C835%2C836%2C837%2C838%2C839%2C840%2C841%2C842%2C843%2C844%2C845%2C846%2C847%2C848%2C849%2C850%2C851%2C852%2C853%2C854%2C855%2C856%2C857%2C858%2C859%2C860%2C861%2C862%2C863%2C864%2C865%2C866%2C867%2C868%2C869%2C870%2C871%2C872%2C873%2C874%2C875%2C876%2C877%2C878%2C879%2C880%2C881%2C882%2C883%2C884%2C885%2C886%2C887%2C888%2C889%2C890%2C891%2C892%2C893%2C894%2C895%2C896%2C897%2C898%2C899%2C900%2C901%2C902%2C903%2C904%2C905%2C906%2C907%2C908%2C909%2C910%2C911%2C912%2C913%2C914%2C915%2C916%2C917%2C918%2C919%2C920%2C921%2C922%2C923%2C924%2C925%2C926%2C927%2C928%2C929%2C930%2C931%2C932%2C933%2C934%2C935%2C936%2C937%2C938%2C939%2C940%2C941%2C942%2C943%2C944%2C945%2C946%2C947%2C948%2C949%2C950%2C951%2C952%2C953%2C954%2C955%2C956%2C957%2C958%2C959%2C960%2C961%2C962%2C963%2C964%2C965%2C966%2C967%2C968%2C969%2C970%2C971%2C972&outFields=%2A&returnGeometry=true&outSR=4326&f=geojson",
+    "final_url": "https://services2.arcgis.com/UTBp78iglGpbqp1B/arcgis/rest/services/election_polys_20241004_view/FeatureServer/0/query?objectIds=801%2C802%2C803%2C804%2C805%2C806%2C807%2C808%2C809%2C810%2C811%2C812%2C813%2C814%2C815%2C816%2C817%2C818%2C819%2C820%2C821%2C822%2C823%2C824%2C825%2C826%2C827%2C828%2C829%2C830%2C831%2C832%2C833%2C834%2C835%2C836%2C837%2C838%2C839%2C840%2C841%2C842%2C843%2C844%2C845%2C846%2C847%2C848%2C849%2C850%2C851%2C852%2C853%2C854%2C855%2C856%2C857%2C858%2C859%2C860%2C861%2C862%2C863%2C864%2C865%2C866%2C867%2C868%2C869%2C870%2C871%2C872%2C873%2C874%2C875%2C876%2C877%2C878%2C879%2C880%2C881%2C882%2C883%2C884%2C885%2C886%2C887%2C888%2C889%2C890%2C891%2C892%2C893%2C894%2C895%2C896%2C897%2C898%2C899%2C900%2C901%2C902%2C903%2C904%2C905%2C906%2C907%2C908%2C909%2C910%2C911%2C912%2C913%2C914%2C915%2C916%2C917%2C918%2C919%2C920%2C921%2C922%2C923%2C924%2C925%2C926%2C927%2C928%2C929%2C930%2C931%2C932%2C933%2C934%2C935%2C936%2C937%2C938%2C939%2C940%2C941%2C942%2C943%2C944%2C945%2C946%2C947%2C948%2C949%2C950%2C951%2C952%2C953%2C954%2C955%2C956%2C957%2C958%2C959%2C960%2C961%2C962%2C963%2C964%2C965%2C966%2C967%2C968%2C969%2C970%2C971%2C972&outFields=%2A&returnGeometry=true&outSR=4326&f=geojson",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "transport": "requests",
+    "retrieved_at": "2026-11-05T13:03:01.706199+00:00",
+    "file": "originals/official-app-features-5.gz",
+    "bytes": 779414,
+    "sha256": "b6e11aa9e7d03fc11a396db0e590c160605c359e72a18af4d3f3588bb70846c4"
+  },
+  "official-app-full-ids-after": {
+    "url": "https://services2.arcgis.com/UTBp78iglGpbqp1B/arcgis/rest/services/election_polys_20241004_view/FeatureServer/0/query?where=1%3D1&returnIdsOnly=true&f=json",
+    "final_url": "https://services2.arcgis.com/UTBp78iglGpbqp1B/arcgis/rest/services/election_polys_20241004_view/FeatureServer/0/query?where=1%3D1&returnIdsOnly=true&f=json",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "transport": "requests",
+    "retrieved_at": "2026-11-05T13:03:01.815450+00:00",
+    "file": "originals/official-app-full-ids-after.gz",
+    "bytes": 3826,
+    "sha256": "4d5be91f48937beafbc80ce78eecbdf0f93e56ea35e2f0b4330aeae4918394b6"
+  },
+  "official-app-full-layer-after": {
+    "url": "https://services2.arcgis.com/UTBp78iglGpbqp1B/arcgis/rest/services/election_polys_20241004_view/FeatureServer/0?f=json",
+    "final_url": "https://services2.arcgis.com/UTBp78iglGpbqp1B/arcgis/rest/services/election_polys_20241004_view/FeatureServer/0?f=json",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "transport": "requests",
+    "retrieved_at": "2026-11-05T13:03:01.863240+00:00",
+    "file": "originals/official-app-full-layer-after.gz",
+    "bytes": 11280,
+    "sha256": "5d0a358d0c5e7fe060b7ee88a28b696798e511c33cefea9a94ba6e42451e51e3"
+  },
+  "official-declared-general-results-index": {
+    "url": "https://www.livevoterturnout.com/ENR/pimaazenr/7/en/Index_7.html",
+    "final_url": "https://www.livevoterturnout.com/ENR/pimaazenr/7/en/Index_7.html",
+    "status": 200,
+    "content_type": "text/html",
+    "transport": "requests",
+    "retrieved_at": "2026-11-05T13:05:14.920179+00:00",
+    "file": "originals/official-declared-general-results-index.gz",
+    "bytes": 25006052,
+    "sha256": "dfa62936f170251e4886d2ab50cbb47b11d95f6fdd2b810dac91945ce2244ec0"
+  },
+  "official-general-summary-csv": {
+    "url": "https://content.civicplus.com/api/assets/az-pimacounty/07a8ea65-53fd-47a0-84cb-8784c21e2a18",
+    "final_url": "https://content.civicplus.com/api/assets/az-pimacounty/07a8ea65-53fd-47a0-84cb-8784c21e2a18",
+    "status": 200,
+    "content_type": "text/csv",
+    "transport": "requests",
+    "retrieved_at": "2026-11-05T13:05:15.318793+00:00",
+    "file": "originals/official-general-summary-csv.gz",
+    "bytes": 733389,
+    "sha256": "25387d00ce6bbc65ffef0a5e33d34df03416208b1ae74ebd37efced921fef783"
+  },
+  "official-general-summary-pdf": {
+    "url": "https://content.civicplus.com/api/assets/az-pimacounty/b5c7a903-1ac9-43d6-9070-fc092e320f63",
+    "final_url": "https://content.civicplus.com/api/assets/az-pimacounty/b5c7a903-1ac9-43d6-9070-fc092e320f63",
+    "status": 200,
+    "content_type": "application/pdf",
+    "transport": "requests",
+    "retrieved_at": "2026-11-05T13:05:15.610687+00:00",
+    "file": "originals/official-general-summary-pdf.gz",
+    "bytes": 81652,
+    "sha256": "192da9490f59137172e0b67e5b52736c42e56ec76d29cd9a8124296359c57d45"
+  },
+  "official-general-early-ballots-processed": {
+    "url": "https://content.civicplus.com/api/assets/az-pimacounty/6f78d212-b285-45ec-8540-eb6921530b1e",
+    "final_url": "https://content.civicplus.com/api/assets/az-pimacounty/6f78d212-b285-45ec-8540-eb6921530b1e",
+    "status": 200,
+    "content_type": "application/pdf",
+    "transport": "requests",
+    "retrieved_at": "2026-11-05T13:05:15.920575+00:00",
+    "file": "originals/official-general-early-ballots-processed.gz",
+    "bytes": 337519,
+    "sha256": "09a2a9d45d5c051c55bfb08fc88bd3c87f5bc9392cdd3288d01558293f3141bb"
+  },
+  "official-general-vote-center-early-ballots": {
+    "url": "https://content.civicplus.com/api/assets/az-pimacounty/5cd582d4-a194-4383-a82b-b0fa65c957bc",
+    "final_url": "https://content.civicplus.com/api/assets/az-pimacounty/5cd582d4-a194-4383-a82b-b0fa65c957bc",
+    "status": 200,
+    "content_type": "application/pdf",
+    "transport": "requests",
+    "retrieved_at": "2026-11-05T13:05:16.257237+00:00",
+    "file": "originals/official-general-vote-center-early-ballots.gz",
+    "bytes": 405505,
+    "sha256": "022a0ad119a091725cee35a4d01c1e418c63fe6c4eb17bc47eb14f8d31a7d55f"
+  },
+  "official-general-id-verified-early-ballots": {
+    "url": "https://content.civicplus.com/api/assets/az-pimacounty/ff90a68c-e2b4-4cfb-b3b3-b24dbcc37e36",
+    "final_url": "https://content.civicplus.com/api/assets/az-pimacounty/ff90a68c-e2b4-4cfb-b3b3-b24dbcc37e36",
+    "status": 200,
+    "content_type": "application/pdf",
+    "transport": "requests",
+    "retrieved_at": "2026-11-05T13:05:16.498900+00:00",
+    "file": "originals/official-general-id-verified-early-ballots.gz",
+    "bytes": 408570,
+    "sha256": "77b4cd4db2cd226047138d9220ff69a8a391f19f5a1eaf822c49a58282d5178f"
+  },
+  "official-general-declared-geometry": {
+    "url": "https://www.livevoterturnout.com/ENR/pimaazenr/7/pimaazenr_7.txt",
+    "final_url": "https://www.livevoterturnout.com/ENR/pimaazenr/7/pimaazenr_7.txt",
+    "status": 404,
+    "content_type": "text/html",
+    "transport": "requests",
+    "retrieved_at": "2026-11-05T13:07:31.371844+00:00",
+    "file": "originals/official-general-declared-geometry.gz",
+    "bytes": 1245,
+    "sha256": "dc1d54dab6ec8c00f70137927504e4f222c8395f10760b6beecfcfa94e08249f"
+  }
+}

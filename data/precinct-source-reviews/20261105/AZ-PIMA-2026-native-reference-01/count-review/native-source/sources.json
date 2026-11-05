@@ -1,0 +1,862 @@
+{
+  "official-full-election-json": {
+    "url": "https://app.enhancedvoting.com/cdn/results/Arizona/export-110326GeneralElection.json",
+    "final_url": "https://app.enhancedvoting.com/cdn/results/Arizona/export-110326GeneralElection.json",
+    "status": 200,
+    "bytes": 72592544,
+    "sha256": "28830cab092badf79d30a0d3297ff36b0baa1a4c6e51c224f112790744c60de3",
+    "file": "originals/official-full-election-json.gz",
+    "acquired_at": "2026-11-05T12:25:51.839764+00:00",
+    "headers": {
+      "Date": "Thu, 05 Nov 2026 12:25:49 GMT",
+      "Content-Type": "application/octet-stream",
+      "Last-Modified": "Thu, 05 Nov 2026 03:50:51 GMT",
+      "ETag": "0x8DF3AEFFC1AD700"
+    }
+  },
+  "native-public-response-001": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/closeraces",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/closeraces",
+    "status": 200,
+    "bytes": 2,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "file": "originals/native-public-response-001.gz",
+    "acquired_at": "2026-11-05T12:28:52.434803+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:28:52 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-002": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/data",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/data",
+    "status": 200,
+    "bytes": 820127,
+    "sha256": "3fdbf4fbd8a6928115eaf02551be5ede87b9a964df339dc911017f0ad771edb2",
+    "file": "originals/native-public-response-002.gz",
+    "acquired_at": "2026-11-05T12:28:52.725579+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:28:52 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-003": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/closeraces",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/closeraces",
+    "status": 200,
+    "bytes": 2,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "file": "originals/native-public-response-003.gz",
+    "acquired_at": "2026-11-05T12:30:51.569239+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:30:51 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-004": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/data",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/data",
+    "status": 200,
+    "bytes": 820127,
+    "sha256": "3fdbf4fbd8a6928115eaf02551be5ede87b9a964df339dc911017f0ad771edb2",
+    "file": "originals/native-public-response-004.gz",
+    "acquired_at": "2026-11-05T12:30:51.834945+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:30:51 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-005": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/apache-county-az/110326GeneralElection/data",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/apache-county-az/110326GeneralElection/data",
+    "status": 200,
+    "bytes": 169910,
+    "sha256": "06338443fb78f319f445b1d429cd4a4e240ad5e5fb4eb0b31459ad760267f4c7",
+    "file": "originals/native-public-response-005.gz",
+    "acquired_at": "2026-11-05T12:30:58.422151+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:30:58 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-006": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/apache-county-az/110326GeneralElection/closeraces",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/apache-county-az/110326GeneralElection/closeraces",
+    "status": 200,
+    "bytes": 2,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "file": "originals/native-public-response-006.gz",
+    "acquired_at": "2026-11-05T12:30:58.444099+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:30:58 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-007": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/apache-county-az/110326GeneralElection/data",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/apache-county-az/110326GeneralElection/data",
+    "status": 200,
+    "bytes": 169910,
+    "sha256": "06338443fb78f319f445b1d429cd4a4e240ad5e5fb4eb0b31459ad760267f4c7",
+    "file": "originals/native-public-response-007.gz",
+    "acquired_at": "2026-11-05T12:30:58.450048+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:30:58 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-008": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/closeraces",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/closeraces",
+    "status": 200,
+    "bytes": 2,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "file": "originals/native-public-response-008.gz",
+    "acquired_at": "2026-11-05T12:31:00.348237+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:30:51 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-009": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/data",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/data",
+    "status": 200,
+    "bytes": 820127,
+    "sha256": "3fdbf4fbd8a6928115eaf02551be5ede87b9a964df339dc911017f0ad771edb2",
+    "file": "originals/native-public-response-009.gz",
+    "acquired_at": "2026-11-05T12:31:00.376370+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:30:51 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-010": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/cochise-county-az/110326GeneralElection/closeraces",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/cochise-county-az/110326GeneralElection/closeraces",
+    "status": 200,
+    "bytes": 2,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "file": "originals/native-public-response-010.gz",
+    "acquired_at": "2026-11-05T12:31:01.782128+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:31:01 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-011": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/cochise-county-az/110326GeneralElection/data",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/cochise-county-az/110326GeneralElection/data",
+    "status": 200,
+    "bytes": 209005,
+    "sha256": "03cc07a6a1a75dcb14214b47cbbf9478632df2477a059f92d4ee09221c70f8bf",
+    "file": "originals/native-public-response-011.gz",
+    "acquired_at": "2026-11-05T12:31:01.873626+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:31:01 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-012": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/closeraces",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/closeraces",
+    "status": 200,
+    "bytes": 2,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "file": "originals/native-public-response-012.gz",
+    "acquired_at": "2026-11-05T12:31:03.134737+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:30:51 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-013": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/data",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/data",
+    "status": 200,
+    "bytes": 820127,
+    "sha256": "3fdbf4fbd8a6928115eaf02551be5ede87b9a964df339dc911017f0ad771edb2",
+    "file": "originals/native-public-response-013.gz",
+    "acquired_at": "2026-11-05T12:31:03.182154+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:30:51 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-014": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/coconino-county-az/110326GeneralElection/closeraces",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/coconino-county-az/110326GeneralElection/closeraces",
+    "status": 200,
+    "bytes": 2,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "file": "originals/native-public-response-014.gz",
+    "acquired_at": "2026-11-05T12:31:04.590121+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:31:04 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-015": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/coconino-county-az/110326GeneralElection/data",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/coconino-county-az/110326GeneralElection/data",
+    "status": 200,
+    "bytes": 206714,
+    "sha256": "59e445a606b519220a6ce6820eeb4e9b5745ec9170f4ec03cc5bdf53f2a871c0",
+    "file": "originals/native-public-response-015.gz",
+    "acquired_at": "2026-11-05T12:31:04.673160+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:31:04 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-016": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/closeraces",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/closeraces",
+    "status": 200,
+    "bytes": 2,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "file": "originals/native-public-response-016.gz",
+    "acquired_at": "2026-11-05T12:31:07.460375+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:30:51 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-017": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/data",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/data",
+    "status": 200,
+    "bytes": 820127,
+    "sha256": "3fdbf4fbd8a6928115eaf02551be5ede87b9a964df339dc911017f0ad771edb2",
+    "file": "originals/native-public-response-017.gz",
+    "acquired_at": "2026-11-05T12:31:07.507930+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:30:51 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-018": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/gila-county-az/110326GeneralElection/closeraces",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/gila-county-az/110326GeneralElection/closeraces",
+    "status": 200,
+    "bytes": 2,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "file": "originals/native-public-response-018.gz",
+    "acquired_at": "2026-11-05T12:31:09.008988+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:31:08 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-019": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/gila-county-az/110326GeneralElection/data",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/gila-county-az/110326GeneralElection/data",
+    "status": 200,
+    "bytes": 194607,
+    "sha256": "37e3faabb7fef15053f2d252c24dd21538e1923680e058b8da945c7d7773496b",
+    "file": "originals/native-public-response-019.gz",
+    "acquired_at": "2026-11-05T12:31:09.080413+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:31:08 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-020": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/closeraces",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/closeraces",
+    "status": 200,
+    "bytes": 2,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "file": "originals/native-public-response-020.gz",
+    "acquired_at": "2026-11-05T12:31:10.815400+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:30:51 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-021": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/data",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/data",
+    "status": 200,
+    "bytes": 820127,
+    "sha256": "3fdbf4fbd8a6928115eaf02551be5ede87b9a964df339dc911017f0ad771edb2",
+    "file": "originals/native-public-response-021.gz",
+    "acquired_at": "2026-11-05T12:31:10.864538+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:30:51 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-022": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/graham-county-az/110326GeneralElection/closeraces",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/graham-county-az/110326GeneralElection/closeraces",
+    "status": 200,
+    "bytes": 2,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "file": "originals/native-public-response-022.gz",
+    "acquired_at": "2026-11-05T12:31:12.256233+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:31:12 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-023": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/graham-county-az/110326GeneralElection/data",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/graham-county-az/110326GeneralElection/data",
+    "status": 200,
+    "bytes": 201313,
+    "sha256": "25d1a390e7f4b22e670f96ddee170bdc0ba093df1922279ff92ac48440b6b44e",
+    "file": "originals/native-public-response-023.gz",
+    "acquired_at": "2026-11-05T12:31:12.341687+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:31:12 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-024": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/closeraces",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/closeraces",
+    "status": 200,
+    "bytes": 2,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "file": "originals/native-public-response-024.gz",
+    "acquired_at": "2026-11-05T12:31:14.231259+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:30:51 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-025": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/data",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/data",
+    "status": 200,
+    "bytes": 820127,
+    "sha256": "3fdbf4fbd8a6928115eaf02551be5ede87b9a964df339dc911017f0ad771edb2",
+    "file": "originals/native-public-response-025.gz",
+    "acquired_at": "2026-11-05T12:31:14.280272+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:30:51 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-026": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/greenlee-county-az/110326GeneralElection/closeraces",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/greenlee-county-az/110326GeneralElection/closeraces",
+    "status": 200,
+    "bytes": 2,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "file": "originals/native-public-response-026.gz",
+    "acquired_at": "2026-11-05T12:31:15.682149+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:31:15 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-027": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/greenlee-county-az/110326GeneralElection/data",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/greenlee-county-az/110326GeneralElection/data",
+    "status": 200,
+    "bytes": 173112,
+    "sha256": "661f25bae131b3e2faa95ceb29488dcb79f0f3d5bcbd4faceca63e4aecca50d2",
+    "file": "originals/native-public-response-027.gz",
+    "acquired_at": "2026-11-05T12:31:15.802087+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:31:15 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-028": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/closeraces",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/closeraces",
+    "status": 200,
+    "bytes": 2,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "file": "originals/native-public-response-028.gz",
+    "acquired_at": "2026-11-05T12:31:17.652869+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:30:51 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-029": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/data",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/data",
+    "status": 200,
+    "bytes": 820127,
+    "sha256": "3fdbf4fbd8a6928115eaf02551be5ede87b9a964df339dc911017f0ad771edb2",
+    "file": "originals/native-public-response-029.gz",
+    "acquired_at": "2026-11-05T12:31:17.700865+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:30:51 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-030": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/la-paz-county-az/110326GeneralElection/data",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/la-paz-county-az/110326GeneralElection/data",
+    "status": 200,
+    "bytes": 158403,
+    "sha256": "317636766f47e900f27c371c5b3b26efc734f8b958a8f1d7e3cd9c415bbf50eb",
+    "file": "originals/native-public-response-030.gz",
+    "acquired_at": "2026-11-05T12:31:19.144415+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:31:19 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-031": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/la-paz-county-az/110326GeneralElection/closeraces",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/la-paz-county-az/110326GeneralElection/closeraces",
+    "status": 200,
+    "bytes": 2,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "file": "originals/native-public-response-031.gz",
+    "acquired_at": "2026-11-05T12:31:19.145278+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:31:19 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-032": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/la-paz-county-az/110326GeneralElection/data",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/la-paz-county-az/110326GeneralElection/data",
+    "status": 200,
+    "bytes": 158403,
+    "sha256": "317636766f47e900f27c371c5b3b26efc734f8b958a8f1d7e3cd9c415bbf50eb",
+    "file": "originals/native-public-response-032.gz",
+    "acquired_at": "2026-11-05T12:31:19.173131+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:31:19 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-033": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/closeraces",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/closeraces",
+    "status": 200,
+    "bytes": 2,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "file": "originals/native-public-response-033.gz",
+    "acquired_at": "2026-11-05T12:31:21.072649+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:30:51 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-034": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/data",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/data",
+    "status": 200,
+    "bytes": 820127,
+    "sha256": "3fdbf4fbd8a6928115eaf02551be5ede87b9a964df339dc911017f0ad771edb2",
+    "file": "originals/native-public-response-034.gz",
+    "acquired_at": "2026-11-05T12:31:21.122650+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:30:51 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-035": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/maricopa-county-az/110326GeneralElection/closeraces",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/maricopa-county-az/110326GeneralElection/closeraces",
+    "status": 200,
+    "bytes": 2,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "file": "originals/native-public-response-035.gz",
+    "acquired_at": "2026-11-05T12:31:22.500563+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:31:22 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-036": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/maricopa-county-az/110326GeneralElection/data",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/maricopa-county-az/110326GeneralElection/data",
+    "status": 200,
+    "bytes": 856682,
+    "sha256": "47e13032793d266d85672712347e581d9f1c04e32aab6dfe78a2f13b29380291",
+    "file": "originals/native-public-response-036.gz",
+    "acquired_at": "2026-11-05T12:31:22.650666+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:31:22 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-037": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/closeraces",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/closeraces",
+    "status": 200,
+    "bytes": 2,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "file": "originals/native-public-response-037.gz",
+    "acquired_at": "2026-11-05T12:31:24.473995+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:30:51 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-038": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/data",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/data",
+    "status": 200,
+    "bytes": 820127,
+    "sha256": "3fdbf4fbd8a6928115eaf02551be5ede87b9a964df339dc911017f0ad771edb2",
+    "file": "originals/native-public-response-038.gz",
+    "acquired_at": "2026-11-05T12:31:24.520419+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:30:51 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-039": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/mohave-county-az/110326GeneralElection/closeraces",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/mohave-county-az/110326GeneralElection/closeraces",
+    "status": 200,
+    "bytes": 2,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "file": "originals/native-public-response-039.gz",
+    "acquired_at": "2026-11-05T12:31:25.900520+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:31:25 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-040": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/mohave-county-az/110326GeneralElection/data",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/mohave-county-az/110326GeneralElection/data",
+    "status": 200,
+    "bytes": 180537,
+    "sha256": "3f3c622d9a36ce1c46a4c8ab2ec52a5d40f5c29d0c57cf40ecd85130ff5b91e3",
+    "file": "originals/native-public-response-040.gz",
+    "acquired_at": "2026-11-05T12:31:25.985095+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:31:25 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-041": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/closeraces",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/closeraces",
+    "status": 200,
+    "bytes": 2,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "file": "originals/native-public-response-041.gz",
+    "acquired_at": "2026-11-05T12:31:27.905757+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:30:51 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-042": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/data",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/data",
+    "status": 200,
+    "bytes": 820127,
+    "sha256": "3fdbf4fbd8a6928115eaf02551be5ede87b9a964df339dc911017f0ad771edb2",
+    "file": "originals/native-public-response-042.gz",
+    "acquired_at": "2026-11-05T12:31:27.960549+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:30:51 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-043": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/navajo-county-az/110326GeneralElection/closeraces",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/navajo-county-az/110326GeneralElection/closeraces",
+    "status": 200,
+    "bytes": 2,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "file": "originals/native-public-response-043.gz",
+    "acquired_at": "2026-11-05T12:31:29.344924+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:31:29 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-044": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/navajo-county-az/110326GeneralElection/data",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/navajo-county-az/110326GeneralElection/data",
+    "status": 200,
+    "bytes": 173474,
+    "sha256": "4465a6393be97f9f7680cd795dcfbfb11bfe734816b693ebd55d18f239311663",
+    "file": "originals/native-public-response-044.gz",
+    "acquired_at": "2026-11-05T12:31:29.372594+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:31:29 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-045": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/navajo-county-az/110326GeneralElection/data",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/navajo-county-az/110326GeneralElection/data",
+    "status": 200,
+    "bytes": 173474,
+    "sha256": "4465a6393be97f9f7680cd795dcfbfb11bfe734816b693ebd55d18f239311663",
+    "file": "originals/native-public-response-045.gz",
+    "acquired_at": "2026-11-05T12:31:29.422543+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:31:29 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-046": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/closeraces",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/closeraces",
+    "status": 200,
+    "bytes": 2,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "file": "originals/native-public-response-046.gz",
+    "acquired_at": "2026-11-05T12:31:31.047923+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:30:51 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-047": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/data",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/data",
+    "status": 200,
+    "bytes": 820127,
+    "sha256": "3fdbf4fbd8a6928115eaf02551be5ede87b9a964df339dc911017f0ad771edb2",
+    "file": "originals/native-public-response-047.gz",
+    "acquired_at": "2026-11-05T12:31:31.095506+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:30:51 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-048": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/pima-county-az/110326GeneralElection/closeraces",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/pima-county-az/110326GeneralElection/closeraces",
+    "status": 200,
+    "bytes": 2,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "file": "originals/native-public-response-048.gz",
+    "acquired_at": "2026-11-05T12:31:32.497497+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:31:32 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-049": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/pima-county-az/110326GeneralElection/data",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/pima-county-az/110326GeneralElection/data",
+    "status": 200,
+    "bytes": 345886,
+    "sha256": "daf83506311257dbc98a5341fe1b786397dbe1b74c71d77a4619105eaafeb8a6",
+    "file": "originals/native-public-response-049.gz",
+    "acquired_at": "2026-11-05T12:31:32.603006+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:31:32 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-050": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/closeraces",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/closeraces",
+    "status": 200,
+    "bytes": 2,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "file": "originals/native-public-response-050.gz",
+    "acquired_at": "2026-11-05T12:31:34.490467+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:30:51 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-051": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/data",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/data",
+    "status": 200,
+    "bytes": 820127,
+    "sha256": "3fdbf4fbd8a6928115eaf02551be5ede87b9a964df339dc911017f0ad771edb2",
+    "file": "originals/native-public-response-051.gz",
+    "acquired_at": "2026-11-05T12:31:34.537324+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:30:51 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-052": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/pinal-county-az/110326GeneralElection/closeraces",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/pinal-county-az/110326GeneralElection/closeraces",
+    "status": 200,
+    "bytes": 2,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "file": "originals/native-public-response-052.gz",
+    "acquired_at": "2026-11-05T12:31:35.912682+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:31:35 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-053": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/pinal-county-az/110326GeneralElection/data",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/pinal-county-az/110326GeneralElection/data",
+    "status": 200,
+    "bytes": 327329,
+    "sha256": "39b43a6f087a99de49242a337c951075429d9136fd3f6a4002070faf8f751cdc",
+    "file": "originals/native-public-response-053.gz",
+    "acquired_at": "2026-11-05T12:31:36.022916+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:31:35 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-054": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/closeraces",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/closeraces",
+    "status": 200,
+    "bytes": 2,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "file": "originals/native-public-response-054.gz",
+    "acquired_at": "2026-11-05T12:31:37.901992+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:30:51 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-055": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/data",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/data",
+    "status": 200,
+    "bytes": 820127,
+    "sha256": "3fdbf4fbd8a6928115eaf02551be5ede87b9a964df339dc911017f0ad771edb2",
+    "file": "originals/native-public-response-055.gz",
+    "acquired_at": "2026-11-05T12:31:37.953077+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:30:51 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-056": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/santa-cruz-county-az/110326GeneralElection/closeraces",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/santa-cruz-county-az/110326GeneralElection/closeraces",
+    "status": 200,
+    "bytes": 2,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "file": "originals/native-public-response-056.gz",
+    "acquired_at": "2026-11-05T12:31:39.368174+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:31:39 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-057": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/santa-cruz-county-az/110326GeneralElection/data",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/santa-cruz-county-az/110326GeneralElection/data",
+    "status": 200,
+    "bytes": 187044,
+    "sha256": "a86c71781d908ba94bc35f6c5f7a30dc2a3f3352adc336003aa65a54a78f7239",
+    "file": "originals/native-public-response-057.gz",
+    "acquired_at": "2026-11-05T12:31:39.455005+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:31:39 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-058": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/closeraces",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/closeraces",
+    "status": 200,
+    "bytes": 2,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "file": "originals/native-public-response-058.gz",
+    "acquired_at": "2026-11-05T12:31:41.359158+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:30:51 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-059": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/data",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/data",
+    "status": 200,
+    "bytes": 820127,
+    "sha256": "3fdbf4fbd8a6928115eaf02551be5ede87b9a964df339dc911017f0ad771edb2",
+    "file": "originals/native-public-response-059.gz",
+    "acquired_at": "2026-11-05T12:31:41.407092+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:30:51 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-060": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/yavapai-county-az/110326GeneralElection/closeraces",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/yavapai-county-az/110326GeneralElection/closeraces",
+    "status": 200,
+    "bytes": 2,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "file": "originals/native-public-response-060.gz",
+    "acquired_at": "2026-11-05T12:31:42.797668+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:31:42 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-061": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/yavapai-county-az/110326GeneralElection/data",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/yavapai-county-az/110326GeneralElection/data",
+    "status": 200,
+    "bytes": 188244,
+    "sha256": "c2473ac82afd17356db543c7e5c7eebf5745bb83af9eca910e4b79fa2c78b8eb",
+    "file": "originals/native-public-response-061.gz",
+    "acquired_at": "2026-11-05T12:31:42.874795+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:31:42 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-062": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/closeraces",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/closeraces",
+    "status": 200,
+    "bytes": 2,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "file": "originals/native-public-response-062.gz",
+    "acquired_at": "2026-11-05T12:31:44.717275+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:30:51 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-063": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/data",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/Arizona/110326GeneralElection/data",
+    "status": 200,
+    "bytes": 820127,
+    "sha256": "3fdbf4fbd8a6928115eaf02551be5ede87b9a964df339dc911017f0ad771edb2",
+    "file": "originals/native-public-response-063.gz",
+    "acquired_at": "2026-11-05T12:31:44.763294+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:30:51 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-064": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/yuma-county-az/110326GeneralElection/closeraces",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/yuma-county-az/110326GeneralElection/closeraces",
+    "status": 200,
+    "bytes": 2,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "file": "originals/native-public-response-064.gz",
+    "acquired_at": "2026-11-05T12:31:46.149092+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:31:46 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  "native-public-response-065": {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/yuma-county-az/110326GeneralElection/data",
+    "final_url": "https://app.enhancedvoting.com/results/public/api/elections/yuma-county-az/110326GeneralElection/data",
+    "status": 200,
+    "bytes": 193836,
+    "sha256": "ad5b08a586109c53f4d4c818bbb738cfd1dfe1b12aa748fff5bc2227c961a348",
+    "file": "originals/native-public-response-065.gz",
+    "acquired_at": "2026-11-05T12:31:46.235481+00:00",
+    "headers": {
+      "date": "Thu, 05 Nov 2026 12:31:46 GMT",
+      "content-type": "application/json; charset=utf-8"
+    }
+  }
+}

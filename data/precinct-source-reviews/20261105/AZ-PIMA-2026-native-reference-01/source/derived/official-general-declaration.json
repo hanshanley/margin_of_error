@@ -1,0 +1,17 @@
+{
+  "election": "November 3, 2026 General Election",
+  "election_id": "7",
+  "parent_source": "official-declared-general-results-index",
+  "parent_sha256": "dfa62936f170251e4886d2ab50cbb47b11d95f6fdd2b810dac91945ce2244ec0",
+  "geometry_declaration": "$.getJSON('../pimaazenr_7.txt')",
+  "geometry_url": "https://www.livevoterturnout.com/ENR/pimaazenr/7/pimaazenr_7.txt",
+  "map_join_property": "PRECINCT",
+  "map_lookup_key": "precinctData object key",
+  "aggregate_payload": {
+    "file": "derived/official-general-precinctData.json",
+    "start_byte": 6692,
+    "bytes": 53355,
+    "sha256": "9e5299ccf22d9a2440392bbcceaaae58d1d6decdadf3feced973527e4eb65795"
+  },
+  "original_frontend_retained_for_discovery_only": true
+}

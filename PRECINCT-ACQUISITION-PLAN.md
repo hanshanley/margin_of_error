@@ -3852,18 +3852,115 @@ buttons, desktop wheel/post-fit double-click, real mobile two-pointer pinch and
 The map renderer itself is unchanged. Proof:
 `files/arizona-maricopa-map-ui-local-browser-proof-02.json`.
 
-**Current executable work:** commit/push this verified pinned map registration
-as Hans and verify its exact deployment/unqueried public metadata and actual
-map/browser matrix before setting a live flag. While it deploys, acquire the
-official Pima **265-precinct** reference and actual election-map declarations:
-`https://gis.pima.gov/data/contents/metadet.cfm?name=distvote`,
-its declared `https://gisopendata.pima.gov/datasets/districts-voter-precincts`,
-and the official maps page's actual app
+Hans UI commit **`20c6c948ab8d90b1cc7153556f156809ac1f6af4`** is pushed.
+Its exact deployment **42031647109** succeeds. Unqueried public metadata and
+renderer bytes match the source, and the actual production four-mode matrix
+passes all **936** precinct fills/counts/margins, all **15** county background
+colors, county/state fallback, fit/buttons/wheel/post-fit double-click/real
+mobile pinch, year switching and all **90** complete links retaining **88**.
+The whole **1,762-row** CSV and **97-member** ZIP are byte-verified again through
+their registered links. Proof:
+`files/arizona-maricopa-map-ui-publication-proof-02.json`.
+The partial snapshot's live flag may now be published. Do not rerun this passed
+matrix as a substitute for subsequent acquisition.
+
+### Pima County 2026: complete native CSV/participation and reference acquisition
+
+The actual official county election page, `https://www.pima.gov/elections`,
+declares the November 3, 2026 general-election complete CSV:
+`https://content.civicplus.com/api/assets/az-pimacounty/07a8ea65-53fd-47a0-84cb-8784c21e2a18`.
+Despite its "Summary Results" label, it contains **799** rows and **379** columns:
+three header rows, **three unnamed component records for each of 265 precincts**,
+and a county-total row. Preserve all original columns, including local contests,
+overvotes, undervotes and source padding. Do not infer labels for unnamed
+precinct components or triple-count their repeated registrations.
+The companion official **21-page** Upload 5 PDF independently states **343,064**
+ballots, **657,885** registrations and **100** blank ballots. Its county-mode
+labels do not by themselves establish labels for each unnamed precinct row.
+Three separate complete ballot-processing PDFs are also acquired, not spliced
+into candidate votes or mislabeled as precinct turnout.
+
+The county's actual `https://pima.vote/` hub redirects to
+`https://www.pima.gov/pima-votes` and declares general dashboard election **7**:
+`https://www.livevoterturnout.com/ENR/pimaazenr/7/en/Index_7.html`.
+The dashboard explicitly says **November 3, 2026 General Election** and supplies
+all **265** aggregate `precinctData` observations. Every literal precinct name
+and four-character CSV/dashboard precinct code matches; every ballot and
+registration count agrees. All **374** ballot/option columns sum to their county
+total, registrations counted once per precinct. All **265** complete House
+vectors independently match the existing native statewide media package by
+unique literal county/precinct names; retain both the four-character county code
+and opaque media ID. **339,732 House votes are not 343,064 ballots.**
+Preserve the one `"Not Reported"` record and its actual counts. Native printed
+percentages remain separate; no analysis rates or demographic estimates approved.
+
+The dashboard itself declares `$.getJSON('../pimaazenr_7.txt')` and literal map
+property `PRECINCT` matched against its `precinctData` object keys. The exact
+resolved URL,
+`https://www.livevoterturnout.com/ENR/pimaazenr/7/pimaazenr_7.txt`,
+returns **HTTP404**, not acquired geometry. The actual failed body and receipt
+are retained. The source document has no HTML base URL that would change this
+resolution. Do not invent alternate filenames or substitute an older reference.
+
+Complete independent GIS sources are also acquired by following actual
+declarations, not guessed routes. The county library
+`https://gis.pima.gov/data/contents/metadet.cfm?name=distvote`
+declares its portal dataset; the portal identifies item
+`29141abf69534ecc8f196516283e1e79` and actual service
+`https://gisdata.pima.gov/arcgis1/rest/services/GISOpenData/Boundaries/MapServer/8`.
+All **265** features, all native attributes, three bounded feature pages and
+stable before/after inventories/layer metadata are preserved. Actual field
+metadata declares integer **`PRECINCT`**, not the earlier search-derived
+`DISTRICT` string. The library records changes approved **September 19, 2023**,
+implemented January 2024. Current reference is not independently certified
+November 3, 2026 geometry.
+The actual official precinct locator is
 `https://experience.arcgis.com/experience/21445fb10f884caea0aac1ecba764599/`.
-Metadata says boundaries last changed January 2024 (approved September 19, 2023);
-do not infer 2026 applicability from equal counts or borrow 2024 geometry.
-Source-declared 2026 election application/layer linkage remains required.
-Do not reacquire cached originals or repeat completed count-download matrices.
+Its declared Voting Precincts web map
+`293fac439fd04a0695b46807118d6665` instead uses item
+`ba56147f7d54454eab8775c145746676`, **Election Polygons App View**:
+`https://services2.arcgis.com/UTBp78iglGpbqp1B/arcgis/rest/services/election_polys_20241004_view/FeatureServer/0`.
+All **972** union polygons and attributes, five bounded pages, stable inventories
+and unchanged edit versions are preserved. The view's source-data edit date
+remains in 2024 despite newer schema metadata. Neither these union polygons nor
+the 265 base precincts are approved replacements for the missing election map.
+Diagnostic numeric precinct-label sets and congressional districts agree for
+all 265 base precincts; this is not a literal GIS/media-code join or map approval.
+All 265 base polygons are valid; no repairs or vote allocation performed.
+Recorder district-map access returns actual HTTP403, preserved rather than
+bypassed. The voter hub's Requests TLS failure was resolved using ordinary
+certificate-verified curl; no certificate verification was disabled.
+
+Capture cache:
+`files/precinct-expansion-sources/AZ-PIMA-2026-reference-01/`.
+All **46** actual responses remain there. The complete portable package retains
+all **41 factual originals**, all original GIS metadata/licenses, both full
+geometry datasets, exact raw county CSV, every normalized result/participation
+row, literal name/code correspondence, missing-map response, extracted complete
+dashboard aggregate JSON and provenance, and **76 unchanged members** of the
+statewide native count package. The five successful frontend discovery documents
+remain in the capture cache, not redistributed with incidental frontend tokens.
+No metadata-only download or mapped-only subset.
+
+The fail-closed reviewer has **18 new focused tests**; Arizona/coverage passes
+**67 tests**. Independent proof verifies every record/source, **125 checksums**
+and **126 archive members**, including every source-column sum and exact payload
+slice against the retained dashboard original. Archive-only rebuilding reproduces
+every file and ZIP byte-for-byte. Proof:
+`files/arizona-pima-2026-package-proof-01.json`.
+Complete ZIP: **20,538,473 bytes**, SHA-256
+`e04858bd262a48276dfcbee83b14dbc5965978799181005b2319bb24efdff3d8`.
+
+**Current executable work:** commit/push the verified Pima source package as Hans,
+publish a new immutable complete release and verify its entire remote archive.
+Then register its complete ZIP and three complete tables through the existing
+separate participation-review mechanism, preserving statewide Arizona scope and
+all 90 older download URLs. Publish the proven Maricopa live flag in that UI
+batch; regenerate only AZ2026 in the 1,632-cell ledger. Test the new actual
+download/UI matrix and its exact deployment before claiming it live. Never
+replace existing source packages or rerun completed count/map suites instead of
+acquisition. Continue another 2026 jurisdiction during the bounded deployment;
+retain Pima's declared-map 404 as a bounded follow-up.
 
 ## Resume procedure for every work session or scheduled prompt
 

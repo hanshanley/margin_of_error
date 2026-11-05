@@ -1,0 +1,33 @@
+{
+  "year": 2026,
+  "state_code": "AZ",
+  "county": "Pima County",
+  "election_id": "7",
+  "source_url": "https://content.civicplus.com/api/assets/az-pimacounty/07a8ea65-53fd-47a0-84cb-8784c21e2a18",
+  "source_csv_rows": 799,
+  "source_csv_columns": 379,
+  "precincts": 265,
+  "unnamed_components_per_precinct": 3,
+  "ballot_and_option_columns_reconciled": 374,
+  "ballots": 343064,
+  "registered_voters": 657885,
+  "blank_ballots": 100,
+  "house_votes": 339732,
+  "literal_precinct_names_and_dashboard_codes_agree": true,
+  "complete_independent_house_vectors_agree": true,
+  "native_reporting_statuses": {
+    "Not Reported": 1,
+    "Reported": 264
+  },
+  "registration_counted_once_per_precinct": true,
+  "voting_mode_labels_inferred": false,
+  "maps_approved": false,
+  "rates_available": false,
+  "next_action": "Restore the dashboard-declared 2026 geometry or acquire an explicit same-election crosswalk; do not substitute the 2024 GIS reference. Clarify active/inactive registration definitions before analysis rates.",
+  "discovery_frontend_originals_retained_separately": true,
+  "factual_originals": 41,
+  "general_geometry_download_status": 404,
+  "complete_original_csv_retained": true,
+  "reference_features_acquired": 265,
+  "app_union_features_acquired": 972
+}

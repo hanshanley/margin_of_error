@@ -67,6 +67,97 @@ al_2026 = module("review-alabama-2026-native-results")
 ar_geometry = module("review-arkansas-2026-reference-geometry")
 az_2026 = module("review-arizona-2026-native-results")
 az_maricopa = module("build-arizona-maricopa-precinct-results")
+az_pima = module("review-arizona-pima-2026-native-results")
+
+
+def pima_example():
+    header = ["COUNTY NUMBER", "PRECINCT CODE", "PRECINCT NAME",
+              "REGISTERED VOTERS TOTAL", "BALLOTS CAST TOTAL", "BALLOTS CAST BLANK"]
+    labels = ["", "", "", "VOTERS", "BALLOTS CAST", "BALLOTS CAST"]
+    for contest, candidates in az_pima.HOUSE.items():
+        header.extend(["U.S. Representative in Congress Dist. " + contest[-1]] * len(candidates))
+        labels.extend(candidates)
+    header.append("")
+    labels.append("")
+    table = [header, [""] * len(header), labels]
+    dashboard, media = {}, []
+    for n, registered, ballots, contest in [(1, 20, 5, "AZ-6"), (2, 30, 0, "AZ-7")]:
+        name, code = f"Precinct {n:03}", f"{n:04}"
+        for component in range(3):
+            values = [registered, ballots if component == 0 else 0, 0] + [0] * 12
+            if n == 1 and component == 0:
+                values[3:10] = [2, 1, 1, 0, 0, 0, 1]
+            table.append(["", code, name] + list(map(str, values)) + [""])
+        dashboard[name] = dict(ElectionID="7", PrecinctCode=code, PrecinctName=name,
+            VoterCount=str(registered), RegularCheckIns=str(ballots),
+            RegularTurnout="25" if ballots else "0",
+            StatusValue="Reported" if ballots else "Not Reported")
+        media.append(dict(year="2026", state_code="AZ", county_code="pima", county="Pima County",
+            precinct=name, precinct_code=str(2000 + n), contest_id=contest,
+            total_votes="4" if ballots else "0", democratic_votes="2" if ballots else "0",
+            republican_votes="1" if ballots else "0", other_votes="1" if ballots else "0",
+            native_virtual_precinct="False"))
+    totals = [sum(int(row[i]) for row in table[3:]) for i in range(3, len(header) - 1)]
+    totals[0] = 50
+    table.append(["", "ZZZ", "COUNTY TOTALS"] + list(map(str, totals)) + [""])
+    return table, dashboard, media
+
+
+def test_arizona_pima_reconciles_unnamed_components_without_tripling_registration():
+    table, dashboard, media = pima_example()
+    results, participation, audit = az_pima.review_tables(table, dashboard, media)
+    assert audit["registered_voters"] == 50 and audit["ballots"] == 5
+    assert audit["house_votes"] == 4 and len(participation) == 2
+    assert participation[1]["ballots_cast_total"] == 0
+    assert "not_reported" in participation[1]["quality_flags"]
+    assert results[0]["precinct_code"] == "0001"
+    assert results[0]["native_media_precinct_code"] == "2001"
+    assert not audit["maps_approved"] and not audit["rates_available"]
+    assert all(row["turnout_rate"] == "" for row in participation)
+
+
+@pytest.mark.parametrize("change", ["name_case", "code", "missing_component", "duplicate_component",
+    "registration", "ballots", "turnout_display", "negative", "missing_count", "county_total",
+    "house_vector", "second_house_scope", "candidate", "wrong_election", "wrong_county",
+    "duplicate_media", "duplicate_code"])
+def test_arizona_pima_rejects_incomplete_or_conflicting_native_evidence(change):
+    table, dashboard, media = pima_example()
+    if change == "name_case":
+        table[3][2] = "Precinct 001 "
+    elif change == "code":
+        dashboard["Precinct 001"]["PrecinctCode"] = "1"
+    elif change == "missing_component":
+        table.pop(5)
+    elif change == "duplicate_component":
+        table.insert(5, copy.deepcopy(table[3]))
+    elif change == "registration":
+        table[4][3] = "21"
+    elif change == "ballots":
+        dashboard["Precinct 001"]["RegularCheckIns"] = "6"
+    elif change == "turnout_display":
+        dashboard["Precinct 001"]["RegularTurnout"] = "26"
+    elif change == "negative":
+        table[3][6] = "-1"
+    elif change == "missing_count":
+        table[3][6] = ""
+    elif change == "county_total":
+        table[-1][4] = "6"
+    elif change == "house_vector":
+        media[0]["total_votes"] = "5"
+    elif change == "second_house_scope":
+        table[3][13] = "1"
+    elif change == "candidate":
+        table[2][6] = "Unexpected candidate (DEM)"
+    elif change == "wrong_election":
+        dashboard["Precinct 001"]["ElectionID"] = "6"
+    elif change == "wrong_county":
+        media[0]["county_code"] = "maricopa"
+    elif change == "duplicate_media":
+        media.append(copy.deepcopy(media[0]))
+    elif change == "duplicate_code":
+        table[6][1] = "0001"
+    with pytest.raises(ValueError):
+        az_pima.review_tables(table, dashboard, media)
 
 
 def maricopa_example():
