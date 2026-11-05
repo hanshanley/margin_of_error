@@ -1,0 +1,105 @@
+year,state_code,county_fips,county,office,contest,candidate_literal,party_csv_literal,candidate_html_literal,accessible_html_literal,votes
+2026,PA,42029,Chester,governor_lieutenant_governor,Governor and Lieutenant Governor,DEM Josh Shapiro and Austin Davis,DEM,DEM Josh Shapiro and Austin Davis (DEM),"DEM Josh Shapiro and Austin Davis, DEMOCRATIC PARTY",164083
+2026,PA,42029,Chester,governor_lieutenant_governor,Governor and Lieutenant Governor,REP Stacy Garrity and Jason Richey,REP,REP Stacy Garrity and Jason Richey (REP),"REP Stacy Garrity and Jason Richey, REPUBLICAN PARTY",75744
+2026,PA,42029,Chester,governor_lieutenant_governor,Governor and Lieutenant Governor,LIB Ken Krawchuk and John Thomas,LIB,LIB Ken Krawchuk and John Thomas (LIB),"LIB Ken Krawchuk and John Thomas, LIB",2527
+2026,PA,42029,Chester,governor_lieutenant_governor,Governor and Lieutenant Governor,Write-in,NON,Write-in (NON),"Write-in, NON",395
+2026,PA,42029,Chester,us_house,Representative in Congress 6th District,DEM Chrissy Houlahan,DEM,DEM Chrissy Houlahan (DEM),"DEM Chrissy Houlahan, DEMOCRATIC PARTY",158099
+2026,PA,42029,Chester,us_house,Representative in Congress 6th District,REP Marty Young,REP,REP Marty Young (REP),"REP Marty Young, REPUBLICAN PARTY",84746
+2026,PA,42029,Chester,us_house,Representative in Congress 6th District,Write-in,NON,Write-in (NON),"Write-in, NON",295
+2026,PA,42029,Chester,state_senate,Senator in the General Assembly 44th District,DEM Katie Muth,DEM,DEM Katie Muth (DEM),"DEM Katie Muth, DEMOCRATIC PARTY",59309
+2026,PA,42029,Chester,state_senate,Senator in the General Assembly 44th District,REP Melissa Dicranian,REP,REP Melissa Dicranian (REP),"REP Melissa Dicranian, REPUBLICAN PARTY",33209
+2026,PA,42029,Chester,state_senate,Senator in the General Assembly 44th District,Write-in,NON,Write-in (NON),"Write-in, NON",90
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 13th District,DEM Madelyn Alvarino,DEM,DEM Madelyn Alvarino (DEM),"DEM Madelyn Alvarino, DEMOCRATIC PARTY",13737
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 13th District,REP John Lawrence,REP,REP John Lawrence (REP),"REP John Lawrence, REPUBLICAN PARTY",13127
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 13th District,Write-in,NON,Write-in (NON),"Write-in, NON",27
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 26th District,DEM Paul Friel,DEM,DEM Paul Friel (DEM),"DEM Paul Friel, DEMOCRATIC PARTY",19331
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 26th District,REP Samantha Horosky,REP,REP Samantha Horosky (REP),"REP Samantha Horosky, REPUBLICAN PARTY",10405
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 26th District,Write-in,NON,Write-in (NON),"Write-in, NON",44
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 74th District,DEM Dan Williams,DEM,DEM Dan Williams (DEM),"DEM Dan Williams, DEMOCRATIC PARTY",14666
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 74th District,REP Lorenzo Kelley,REP,REP Lorenzo Kelley (REP),"REP Lorenzo Kelley, REPUBLICAN PARTY",8172
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 74th District,Write-in,NON,Write-in (NON),"Write-in, NON",31
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 155th District,DEM Danielle Friel Otten,DEM,DEM Danielle Friel Otten (DEM),"DEM Danielle Friel Otten, DEMOCRATIC PARTY",22651
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 155th District,Write-in,NON,Write-in (NON),"Write-in, NON",3930
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 156th District,DEM Chris Pielli,DEM,DEM Chris Pielli (DEM),"DEM Chris Pielli, DEMOCRATIC PARTY",19625
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 156th District,REP Kris R. Vollrath,REP,REP Kris R. Vollrath (REP),"REP Kris R. Vollrath, REPUBLICAN PARTY",9370
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 156th District,Write-in,NON,Write-in (NON),"Write-in, NON",28
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 157th District,DEM Melissa Shusterman,DEM,DEM Melissa Shusterman (DEM),"DEM Melissa Shusterman, DEMOCRATIC PARTY",21589
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 157th District,REP Justin J. Pak,REP,REP Justin J. Pak (REP),"REP Justin J. Pak, REPUBLICAN PARTY",10021
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 157th District,Write-in,NON,Write-in (NON),"Write-in, NON",30
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 158th District,DEM Christina D. Sappey,DEM,DEM Christina D. Sappey (DEM),"DEM Christina D. Sappey, DEMOCRATIC PARTY",20892
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 158th District,Write-in,NON,Write-in (NON),"Write-in, NON",4404
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 160th District,DEM Elizabeth Moro,DEM,DEM Elizabeth Moro (DEM),"DEM Elizabeth Moro, DEMOCRATIC PARTY",7032
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 160th District,REP Craig Williams,REP,REP Craig Williams (REP),"REP Craig Williams, REPUBLICAN PARTY",4762
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 160th District,Write-in,NON,Write-in (NON),"Write-in, NON",13
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 167th District,DEM Kristine Howard,DEM,DEM Kristine Howard (DEM),"DEM Kristine Howard, DEMOCRATIC PARTY",20347
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 167th District,REP Joe Lewis,REP,REP Joe Lewis (REP),"REP Joe Lewis, REPUBLICAN PARTY",9825
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 167th District,Write-in,NON,Write-in (NON),"Write-in, NON",25
+2026,PA,42029,Chester,ballot_question,Tredyffrin Township: Home Rule Charter Referendum,YES,NON,YES (NON),"YES, NON",10032
+2026,PA,42029,Chester,ballot_question,Tredyffrin Township: Home Rule Charter Referendum,NO,NON,NO (NON),"NO, NON",4262
+2026,PA,42029,Chester,ballot_question,East Whiteland Township: Board of Supervisors Referendum,YES,NON,YES (NON),"YES, NON",3542
+2026,PA,42029,Chester,ballot_question,East Whiteland Township: Board of Supervisors Referendum,NO,NON,NO (NON),"NO, NON",1959
+2026,PA,42029,Chester,ballot_question,Malvern Borough: Home Rule Charter Referendum,YES,NON,YES (NON),"YES, NON",1014
+2026,PA,42029,Chester,ballot_question,Malvern Borough: Home Rule Charter Referendum,NO,NON,NO (NON),"NO, NON",686
+2026,PA,42055,Franklin,governor_lieutenant_governor,GOVERNOR and LIEUTENANT GOVERNOR,DEM Shapiro / Davis,DEM,DEM Shapiro / Davis,DEM Shapiro / Davis,21601
+2026,PA,42055,Franklin,governor_lieutenant_governor,GOVERNOR and LIEUTENANT GOVERNOR,REP Garrity / Richey,REP,REP Garrity / Richey,REP Garrity / Richey,34768
+2026,PA,42055,Franklin,governor_lieutenant_governor,GOVERNOR and LIEUTENANT GOVERNOR,LIB Krawchuk / Thomas,LIB,LIB Krawchuk / Thomas,LIB Krawchuk / Thomas,907
+2026,PA,42055,Franklin,governor_lieutenant_governor,GOVERNOR and LIEUTENANT GOVERNOR,Write-in,NON,Write-in,Write-in,57
+2026,PA,42055,Franklin,us_house,REPRESENTATIVE IN CONGRESS,DEM Beth Farnham,DEM,DEM Beth Farnham,DEM Beth Farnham,19005
+2026,PA,42055,Franklin,us_house,REPRESENTATIVE IN CONGRESS,REP John Joyce,REP,REP John Joyce,REP John Joyce,38255
+2026,PA,42055,Franklin,us_house,REPRESENTATIVE IN CONGRESS,Write-in,NON,Write-in,Write-in,72
+2026,PA,42055,Franklin,state_house,REPRESENTATIVE IN THE GENERAL ASSEMBLY 81st Legislative,DEM Caleb J. Donahue,DEM,DEM Caleb J. Donahue,DEM Caleb J. Donahue,2140
+2026,PA,42055,Franklin,state_house,REPRESENTATIVE IN THE GENERAL ASSEMBLY 81st Legislative,REP Rich Irvin,REP,REP Rich Irvin,REP Rich Irvin,6462
+2026,PA,42055,Franklin,state_house,REPRESENTATIVE IN THE GENERAL ASSEMBLY 81st Legislative,Write-in,NON,Write-in,Write-in,11
+2026,PA,42055,Franklin,state_house,REPRESENTATIVE IN THE GENERAL ASSEMBLY 89th Legislative,DEM Shannon Michael Jackson,DEM,DEM Shannon Michael Jackson,DEM Shannon Michael Jackson,8815
+2026,PA,42055,Franklin,state_house,REPRESENTATIVE IN THE GENERAL ASSEMBLY 89th Legislative,REP Rob Kauffman,REP,REP Rob Kauffman,REP Rob Kauffman,15594
+2026,PA,42055,Franklin,state_house,REPRESENTATIVE IN THE GENERAL ASSEMBLY 89th Legislative,Write-in,NON,Write-in,Write-in,28
+2026,PA,42055,Franklin,state_house,REPRESENTATIVE IN THE GENERAL ASSEMBLY 90th Legislative,REP Chad G. Reichard,REP,REP Chad G. Reichard,REP Chad G. Reichard,19428
+2026,PA,42055,Franklin,state_house,REPRESENTATIVE IN THE GENERAL ASSEMBLY 90th Legislative,Write-in,NON,Write-in,Write-in,1544
+2026,PA,42077,Lehigh,governor_lieutenant_governor,Governor and Lieutenant Governor,DEM Shapiro / Davis,DEM,DEM Shapiro / Davis (DEM),"DEM Shapiro / Davis, DEMOCRAT",87417
+2026,PA,42077,Lehigh,governor_lieutenant_governor,Governor and Lieutenant Governor,REP Garrity / Richey,REP,REP Garrity / Richey (REP),"REP Garrity / Richey, REPUBLICAN",47482
+2026,PA,42077,Lehigh,governor_lieutenant_governor,Governor and Lieutenant Governor,LIB Krawchuk / Thomas,LIB,LIB Krawchuk / Thomas (LIB),"LIB Krawchuk / Thomas, LIBERTARIAN",1885
+2026,PA,42077,Lehigh,governor_lieutenant_governor,Governor and Lieutenant Governor,Write-in,NON,Write-in (NON),"Write-in, NON",162
+2026,PA,42077,Lehigh,us_house,Representative in Congress in the 7th Congressional Dist,DEM Bob Brooks,DEM,DEM Bob Brooks (DEM),"DEM Bob Brooks, DEMOCRAT",80201
+2026,PA,42077,Lehigh,us_house,Representative in Congress in the 7th Congressional Dist,REP Ryan Mackenzie,REP,REP Ryan Mackenzie (REP),"REP Ryan Mackenzie, REPUBLICAN",56078
+2026,PA,42077,Lehigh,us_house,Representative in Congress in the 7th Congressional Dist,Write-in,NON,Write-in (NON),"Write-in, NON",328
+2026,PA,42077,Lehigh,state_senate,Senator In the General Assembly in the 14th Senatorial D,DEM Nick Miller,DEM,DEM Nick Miller (DEM),"DEM Nick Miller, DEMOCRAT",38309
+2026,PA,42077,Lehigh,state_senate,Senator In the General Assembly in the 14th Senatorial D,REP Omy Maldonado,REP,REP Omy Maldonado (REP),"REP Omy Maldonado, REPUBLICAN",17715
+2026,PA,42077,Lehigh,state_senate,Senator In the General Assembly in the 14th Senatorial D,Write-in,NON,Write-in (NON),"Write-in, NON",84
+2026,PA,42077,Lehigh,state_senate,Senator in the General Assembly in the 16th Senatorial D,DEM Mark Pinsley,DEM,DEM Mark Pinsley (DEM),"DEM Mark Pinsley, DEMOCRAT",38173
+2026,PA,42077,Lehigh,state_senate,Senator in the General Assembly in the 16th Senatorial D,REP Jarrett Coleman,REP,REP Jarrett Coleman (REP),"REP Jarrett Coleman, REPUBLICAN",34264
+2026,PA,42077,Lehigh,state_senate,Senator in the General Assembly in the 16th Senatorial D,Write-in,NON,Write-in (NON),"Write-in, NON",112
+2026,PA,42077,Lehigh,state_senate,Senator in the General Assembly in the 18th Senatorial D,DEM Lisa Boscola,DEM,DEM Lisa Boscola (DEM),"DEM Lisa Boscola, DEMOCRAT",5599
+2026,PA,42077,Lehigh,state_senate,Senator in the General Assembly in the 18th Senatorial D,REP Scott Janney,REP,REP Scott Janney (REP),"REP Scott Janney, REPUBLICAN",1956
+2026,PA,42077,Lehigh,state_senate,Senator in the General Assembly in the 18th Senatorial D,Write-in,NON,Write-in (NON),"Write-in, NON",24
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 22nd Legis,DEM Ce Ce Gerlach,DEM,DEM Ce Ce Gerlach (DEM),"DEM Ce Ce Gerlach, DEMOCRAT",7969
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 22nd Legis,REP Robert E Smith Jr,REP,REP Robert E Smith Jr (REP),"REP Robert E Smith Jr, REPUBLICAN",3283
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 22nd Legis,Write-in,NON,Write-in (NON),"Write-in, NON",38
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 131st Legi,DEM Meriam Sabih,DEM,DEM Meriam Sabih (DEM),"DEM Meriam Sabih, DEMOCRAT",8847
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 131st Legi,REP Milou Mackenzie,REP,REP Milou Mackenzie (REP),"REP Milou Mackenzie, REPUBLICAN",8077
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 131st Legi,Write-in,NON,Write-in (NON),"Write-in, NON",18
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 132nd Legi,DEM Mike Schlossberg,DEM,DEM Mike Schlossberg (DEM),"DEM Mike Schlossberg, DEMOCRAT",17926
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 132nd Legi,REP Caren Lowrey,REP,REP Caren Lowrey (REP),"REP Caren Lowrey, REPUBLICAN",8884
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 132nd Legi,Write-in,NON,Write-in (NON),"Write-in, NON",50
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 133rd Legi,DEM Jeanne McNeill,DEM,DEM Jeanne McNeill (DEM),"DEM Jeanne McNeill, DEMOCRAT",17876
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 133rd Legi,Write-in,NON,Write-in (NON),"Write-in, NON",958
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 134th Legi,DEM Peter Schweyer,DEM,DEM Peter Schweyer (DEM),"DEM Peter Schweyer, DEMOCRAT",12341
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 134th Legi,REP Miriam Maldonado,REP,REP Miriam Maldonado (REP),"REP Miriam Maldonado, REPUBLICAN",5555
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 134th Legi,Write-in,NON,Write-in (NON),"Write-in, NON",33
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 183rd Legi,DEM Deirdre Kamber Todd,DEM,DEM Deirdre Kamber Todd (DEM),"DEM Deirdre Kamber Todd, DEMOCRAT",4283
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 183rd Legi,REP Zach Mako,REP,REP Zach Mako (REP),"REP Zach Mako, REPUBLICAN",5414
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 183rd Legi,Write-in,NON,Write-in (NON),"Write-in, NON",15
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 187th Legi,DEM Rachel Cuevas,DEM,DEM Rachel Cuevas (DEM),"DEM Rachel Cuevas, DEMOCRAT",15581
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 187th Legi,REP Gary Day,REP,REP Gary Day (REP),"REP Gary Day, REPUBLICAN",14904
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 187th Legi,Write-in,NON,Write-in (NON),"Write-in, NON",39
+2026,PA,42077,Lehigh,ballot_question,City of Allentown Referendum,Yes,NON,Yes (NON),"Yes, NON",22900
+2026,PA,42077,Lehigh,ballot_question,City of Allentown Referendum,No,NON,No (NON),"No, NON",3545
+2026,PA,42077,Lehigh,ballot_question,Whitehall Township Referendum,Yes,NON,Yes (NON),"Yes, NON",4066
+2026,PA,42077,Lehigh,ballot_question,Whitehall Township Referendum,No,NON,No (NON),"No, NON",5633
+2026,PA,42077,Lehigh,ballot_question,North Whitehall Township Referendum,Yes,NON,Yes (NON),"Yes, NON",3636
+2026,PA,42077,Lehigh,ballot_question,North Whitehall Township Referendum,No,NON,No (NON),"No, NON",3597
+2026,PA,42077,Lehigh,ballot_question,Lehigh County Referendum 1,Yes,NON,Yes (NON),"Yes, NON",99375
+2026,PA,42077,Lehigh,ballot_question,Lehigh County Referendum 1,No,NON,No (NON),"No, NON",28429
+2026,PA,42077,Lehigh,ballot_question,Lehigh County Referendum 2,Yes,NON,Yes (NON),"Yes, NON",65687
+2026,PA,42077,Lehigh,ballot_question,Lehigh County Referendum 2,No,NON,No (NON),"No, NON",62366
+2026,PA,42077,Lehigh,ballot_question,Lehigh County Referendum 3,Yes,NON,Yes (NON),"Yes, NON",78538
+2026,PA,42077,Lehigh,ballot_question,Lehigh County Referendum 3,No,NON,No (NON),"No, NON",46054

@@ -1,0 +1,94 @@
+{
+  "audit.json": {
+    "bytes": 8639,
+    "sha256": "cfa38b2dcc7ff1baa8ec2df614782c93545cae1d71b636f14887214453bf3d3d"
+  },
+  "county-candidate-mode-counts.csv": {
+    "bytes": 57184,
+    "sha256": "e88abc0ceef4cda96034f46d5374b9d5bd0e62f456c9cae3dc3db3d269242aba"
+  },
+  "county-candidate-results.csv": {
+    "bytes": 15895,
+    "sha256": "f0c4240f8ac420347d924c8f2f6ff70874d874ae5fc865eba0274b163c0b1b7e"
+  },
+  "county-contest-totals.csv": {
+    "bytes": 8605,
+    "sha256": "78a54dac66b84f42b4d5e8db4c5119b4f7bb62e0750849bd13d150e4b00e979d"
+  },
+  "county-office-party-totals.csv": {
+    "bytes": 1840,
+    "sha256": "14316531e119917b90bb9ad7e8bc6e2046cca2da120a426ec6101aa238b3b5a2"
+  },
+  "county-participation.csv": {
+    "bytes": 704,
+    "sha256": "baa86b43141781ac7870114528f3a74c4e364688996560014314320fb99eaa8a"
+  },
+  "native-unit-candidate-counts.csv": {
+    "bytes": 1270787,
+    "sha256": "d86aa40cc0e8d3fddc21e3310c0c1ea4fdbc87388e76c753c7061b65efaeb550"
+  },
+  "native-unit-participation.csv": {
+    "bytes": 44195,
+    "sha256": "f331b76f7d10d9edd8bbc5e18085705674c653a95034ff9615a876ab97f49065"
+  },
+  "originals/chester/contests.csv": {
+    "bytes": 1090,
+    "sha256": "1e21bd18303b99db6c9146c2073c8e23726dc55d9f9ee35ee7fb3c58e44a1a2d"
+  },
+  "originals/chester/native-results.redacted.html": {
+    "bytes": 2984922,
+    "sha256": "a60ff0e12893644ac8218e06dff9b8217a828be04e52c95f6dc5ddd34a7f2539"
+  },
+  "originals/chester/official-results-index.html": {
+    "bytes": 127079,
+    "sha256": "b94136e4a0052d7df38a4762f726031cbe9921375db2c4bda0ad0115db7cd73b"
+  },
+  "originals/chester/receipts.json": {
+    "bytes": 1737,
+    "sha256": "0014672373860ca5df2624c93b35e35aa9f4583b48aa182bff6d7497bb7bc83c"
+  },
+  "originals/chester/summary.csv": {
+    "bytes": 4708,
+    "sha256": "1712c2fb3d61b10f0af22258bb7dbdbc358ee3f99e4f5c6a5d7759f4d9962efb"
+  },
+  "originals/franklin/contests.csv": {
+    "bytes": 469,
+    "sha256": "6c8eb57a267603bc6e82f909fda926d88640cdbcdb30af1a5062859db9acbb63"
+  },
+  "originals/franklin/native-results.redacted.html": {
+    "bytes": 851125,
+    "sha256": "68c0dfcc617daaed03bcd3a25206ecc515bcac20a63258ce5cb621ba1b266ac5"
+  },
+  "originals/franklin/official-results-index.html": {
+    "bytes": 379439,
+    "sha256": "e5a19c45f3afe521e7501671ea25de72c2b76ad9113d9cc84402e9a55553c9d5"
+  },
+  "originals/franklin/receipts.json": {
+    "bytes": 2054,
+    "sha256": "899b9f9bd14716a475c8d2c246ee3e2868f47aa25d9213c7f88c1ac27f83186a"
+  },
+  "originals/franklin/summary.csv": {
+    "bytes": 2120,
+    "sha256": "e6945912588264357c679b2b7707114183249d3f279cd5f398fcdb5c10da3729"
+  },
+  "originals/lehigh/native-results.redacted.html": {
+    "bytes": 3469402,
+    "sha256": "4c40c2bcf209c8e27fddd2d721fde98222622d305962309a1d44ca5468716314"
+  },
+  "originals/lehigh/official-results-index.html": {
+    "bytes": 89420,
+    "sha256": "1c1bc6d8aaf423b649860f88c72be47dab61be71b9ece6a6a208dddc6e08e17d"
+  },
+  "originals/lehigh/receipts.json": {
+    "bytes": 1432,
+    "sha256": "f5d898d78a82c9b9cbbadcc8b40f9b6e3761f9b549f86a64313fd1625034e3a6"
+  },
+  "originals/lehigh/summary.csv": {
+    "bytes": 6228,
+    "sha256": "3d320102ad47c3632635859a37f5bdefa24574380fcecef24e87113ad6c4ad13"
+  },
+  "review-pa-vendor-county-results.py": {
+    "bytes": 23018,
+    "sha256": "85530b423243bc28b4bef454dbeabca97f9d77d00edf68e5db90c0d0879f49a9"
+  }
+}

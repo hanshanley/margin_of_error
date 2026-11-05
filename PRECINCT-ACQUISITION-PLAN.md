@@ -123,6 +123,31 @@ Next, follow these actual links for complete primary report exports, retaining
 write-ins separately where vendor CSV/JSON omits printed PDF lines. The live
 Pennsylvania map remains three counties, not all 67.
 
+Following that directory, complete county-owned linking pages and vendor
+snapshots now independently reconcile Chester, Franklin and Lehigh. The new
+shared reviewer preserves all 104 county candidate/ballot-option rows across
+38 contests, 327 candidate-mode observations, 36 office/literal-party totals,
+461 native unit participation records and 6,362 native candidate observations,
+including all 520 explicit unit zeroes. Their 438,869 actual reported ballots
+remain separate from 437,079 House candidate votes and native registrations.
+All 13 focused parser tests pass; independent native CSV/mode/party/Census
+checks and byte-identical complete ZIP reproduction pass. Data and originals
+are under `data/county-source-reviews/20261105-pa-three-county-01/`; publication
+evidence is under `data/county-source-reviews/20261105-pa-three-county-publication-01/`.
+Chester supplies no native result-status literal; do not invent one. Its 15
+CSV contest-ballot zeroes conflict with positive unit ballot sums and remain
+flagged and unused as real ballot counts. Franklin's House contest supplies
+no district number; none is inferred. Lehigh still explicitly reports partial
+mail and provisional counting. Native prefixes, CSV parties, accessible HTML
+labels and accounting fields remain separate; ballot options never become
+party totals. Franklin's 195 under/6 overvotes fully explain its House ballot
+gap; Lehigh's 1,003 reported undervotes leave 46 unclassified ballots, not
+inferred overvotes. Missing native accounting fields remain blank, not zero.
+Public download release, UI deployment and production proof
+remain pending. No new map, demographic turnout, certification, or statewide
+completeness is approved. Northampton's complete county-declared native HTML
+is also retained privately; its separate count/party review remains pending.
+
 The reusable 2026 county-results and separate UF/state participation pipelines
 are implemented and published. Both passed real acquisition and original-backed
 release verification. Fresh county snapshot `20261105T155645Z` updates three

@@ -1,0 +1,4 @@
+year,state_code,county_fips,county,ballots_counted,registered_voters,native_printed_turnout,registered_ballot_ratio_pct,house_candidate_votes,native_status_literal,source_update_literal,counting_qualifications_json,final_certified_turnout
+2026,PA,42029,Chester,243680,392304,62.1%,62.1150944165749,243140,,11/4/2026 4:00:16 AM,[],False
+2026,PA,42055,Franklin,57533,105937,54.3%,54.30869290238538,57332,Unofficial Election Results,11/4/2026 4:12:58 PM,[],False
+2026,PA,42077,Lehigh,137656,256728,53.6%,53.61939484590695,136607,Unofficial Election Results,11/4/2026 1:35:16 PM,"[""Mail Ballots: Partially Reported"", ""In-Person Ballots: Complete"", ""Provisional Ballots: Partially Reported""]",False
