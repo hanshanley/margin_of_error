@@ -3,6 +3,10 @@
     "bytes": 2220,
     "sha256": "c593a402101a43677e0a28f04f2daf743d675249e1cf245522d6f53ae26d8bba"
   },
+  "production-verification.json": {
+    "bytes": 2917,
+    "sha256": "eda18833e01adf2b32679b60eaaa22883f3311c71382aa646ab2b12565200e95"
+  },
   "public-download-verification.json": {
     "bytes": 3877,
     "sha256": "7f767d49e9fd3c53835cab15176c889855d41fa7fb2a3200f91978c0160d4a8f"

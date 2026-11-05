@@ -1,0 +1,109 @@
+{
+  "ui_commit": "7c3a6a97cc34ca7a1afad604f3db538a6f7f3c54",
+  "base_url": "https://www.themarginoferror.com",
+  "runs": [
+    {
+      "conclusion": "success",
+      "databaseId": 42129773154,
+      "headSha": "7c3a6a97cc34ca7a1afad604f3db538a6f7f3c54",
+      "status": "completed",
+      "workflowName": "Deploy to GitHub Pages"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 42129773151,
+      "headSha": "7c3a6a97cc34ca7a1afad604f3db538a6f7f3c54",
+      "status": "completed",
+      "workflowName": "Check copied source credentials"
+    }
+  ],
+  "public_files": [
+    {
+      "file": "participation-source-reviews.json",
+      "bytes": 45514,
+      "sha256": "098d8d63f4b051c9f04319efa447c3cc68e227f80e71cc5185664930f5f8df15",
+      "byte_identical": true
+    },
+    {
+      "file": "participation-downloads.json",
+      "bytes": 42128,
+      "sha256": "1b0df17b55d5e9738ff278e346e248dfc26932b8684f1551730eb57e12e19c64",
+      "byte_identical": true
+    }
+  ],
+  "production_four_modes_verified": true,
+  "exact_complete_downloads_in_each_mode": 258,
+  "previous_complete_downloads_retained": 250,
+  "new_public_downloads": 8,
+  "exact_download_set_equals_local": true,
+  "modes": [
+    {
+      "mobile": false,
+      "javascript": true,
+      "complete_downloads": 258,
+      "uf_rows_source_matched": 52,
+      "county_candidate_ledger_rows": 4896,
+      "historical_house_years_source_matched": [
+        "2024",
+        "2022",
+        "2020",
+        "2018",
+        "2016"
+      ],
+      "historical_house_scope_cells": 255,
+      "overview_transport": "server response",
+      "map_checks": "not_repeated"
+    },
+    {
+      "mobile": false,
+      "javascript": false,
+      "complete_downloads": 258,
+      "uf_rows_source_matched": 52,
+      "county_candidate_ledger_rows": 4896,
+      "historical_house_years_source_matched": [
+        "2024",
+        "2022",
+        "2020",
+        "2018",
+        "2016"
+      ],
+      "historical_house_scope_cells": 255,
+      "map_checks": "not_repeated"
+    },
+    {
+      "mobile": true,
+      "javascript": true,
+      "complete_downloads": 258,
+      "uf_rows_source_matched": 52,
+      "county_candidate_ledger_rows": 4896,
+      "historical_house_years_source_matched": [
+        "2024",
+        "2022",
+        "2020",
+        "2018",
+        "2016"
+      ],
+      "historical_house_scope_cells": 255,
+      "overview_transport": "raw gzip",
+      "map_checks": "not_repeated"
+    },
+    {
+      "mobile": true,
+      "javascript": false,
+      "complete_downloads": 258,
+      "uf_rows_source_matched": 52,
+      "county_candidate_ledger_rows": 4896,
+      "historical_house_years_source_matched": [
+        "2024",
+        "2022",
+        "2020",
+        "2018",
+        "2016"
+      ],
+      "historical_house_scope_cells": 255,
+      "map_checks": "not_repeated"
+    }
+  ],
+  "maps_changed": false,
+  "coverage_ledgers_changed": false
+}

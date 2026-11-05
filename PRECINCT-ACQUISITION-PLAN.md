@@ -49,7 +49,7 @@ county/vendor keys. Historical cached commit views require GitHub Support
 follow-up; do not claim that a ref rewrite revoked credentials or erased caches.
 The owner/support handoff is saved with the audit; it is not a submitted ticket.
 
-**Next publication: Dauphin downloads published; UI verification pending.** Nineteen full government HTML responses are
+**Dauphin downloads are live verified.** Nineteen full government HTML responses are
 preserved in the reviewed public package with successful receipts: the index, eight contest summaries,
 the native precinct-progress list, eight precinct/municipality reports and the
 declared method-report parent. The House snapshot contains 114,641 candidate
@@ -77,12 +77,29 @@ Pages preparation verifies all 94 bulk downloads and produces 987,326,060 bytes,
 below the 1 GB limit. All four local desktop/mobile and JavaScript/no-JavaScript
 modes pass the exact 258-link set, all 52 UF rows, five historical years and
 255 historical scope cells. Unchanged map suites were not repeated.
-The exact deployment revision and four-mode production checks remain required
-before claiming the UI live. See
+UI revision `7c3a6a97cc34ca7a1afad604f3db538a6f7f3c54` passed Pages run
+`42129773154` and full-history credential check `42129773151`. Production
+registry and download-manifest bytes match the prepared artifact. All four
+production modes independently pass the exact same 258-link set, all 52 UF
+rows, five historical years and 255 scope cells. No map or coverage-ledger
+change was made. See
 `data/county-source-reviews/20261105-dauphin-reviewed-01/` and
 `data/county-source-reviews/20261105-dauphin-publication-01/`.
 Butler's actual index returned HTTP404; the response and receipt are
 retained rather than treating a cached search page as a successful acquisition.
+
+**Next acquisition: Berks primary ArcGIS data.** The county's actual Election
+Results page independently links the same dashboard as the discovery queue.
+Its native item is titled "County Of Berks: 2026 General Election Results Master
+Dashboard" and its full metadata/configuration are preserved privately with
+HTTP200 receipts and zero Google key matches. The surrounding county page has a
+stale primary-election description, so native dataset election identity and
+timestamps must be established before accepting any counts. Follow the
+dashboard's explicitly referenced items and child dashboards, acquire complete
+unpadded native records with receipts, and validate independent totals and
+missingness. Do not assume the master dashboard is itself a complete dataset.
+Preserve source terms, parties, district scopes and actual reporting methods.
+No Berks data, participation rate or map promotion is yet approved.
 
 **Earlier current-source cleanup (historical record).** On November 5,
 GitHub reported Google API keys copied from public county linking HTML. The
