@@ -1,0 +1,41 @@
+{
+  "status": "production_verified",
+  "deployed_commit": "fb05bd3745dc2a16d1e348ac75ae5924b8d415e2",
+  "pages_run": 42115185047,
+  "successful_attempt": 2,
+  "production_registry_byte_identical": true,
+  "unchanged_county_map_pointer_byte_identical": true,
+  "local_browser_modes_passed": 4,
+  "production_browser_modes_passed": 4,
+  "exact_complete_download_urls": 241,
+  "previous_complete_download_urls_preserved": 225,
+  "added_complete_download_urls": 16,
+  "new_source_review_entries": [
+    "pennsylvania-northampton-20261105-01",
+    "pennsylvania-three-county-20261105-01"
+  ],
+  "map_data_changed": false,
+  "new_county_maps_approved": false,
+  "new_demographic_turnout_approved": false,
+  "historical_secret_alerts": [
+    {
+      "number": 2,
+      "resolution": null,
+      "secret_type_display_name": "Google API Key",
+      "state": "open",
+      "validity": "unknown"
+    },
+    {
+      "number": 1,
+      "resolution": null,
+      "secret_type_display_name": "Google API Key",
+      "state": "open",
+      "validity": "unknown"
+    }
+  ],
+  "historical_credential_cleanup_complete": false,
+  "remaining_security_blockers": [
+    "Key-owner action and authorization for historical cleanup; alert validity remains unknown."
+  ],
+  "known_unrelated_validation_failure": "UK topic-card count is 23, expected 16; full validator is not claimed to pass."
+}

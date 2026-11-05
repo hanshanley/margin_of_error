@@ -1,0 +1,42 @@
+{
+  "deployment-first-attempt.json": {
+    "bytes": 342,
+    "sha256": "0f9a16aa1e852166a926b4f709baa804864b76455b89dd3d6a354c05a64b7fbb"
+  },
+  "deployment.json": {
+    "bytes": 358,
+    "sha256": "d818d943fe1c9f426699e526c023f3b17c14960265f0242ffe4a65c69a6cff09"
+  },
+  "local-browser.json": {
+    "bytes": 42474,
+    "sha256": "b161bf16a943485316d04953e12922b71e4242fbf020276941497cd30218baa1"
+  },
+  "local-build.json": {
+    "bytes": 706,
+    "sha256": "9fb744ec46423452e12d3408c0ed28e83d155d69e6300b4d7a8f022e8326ad09"
+  },
+  "prepublication.json": {
+    "bytes": 294,
+    "sha256": "47a45198024fcb8480e087d5f0aea008b7c0915d23f2fd6eebc59bc2d2b2b78c"
+  },
+  "production-browser.json": {
+    "bytes": 42485,
+    "sha256": "f90a99ca4e867c18a8a6d742982eb3a33051a2d052c2cd3db4e1acb3871035dc"
+  },
+  "production-verification.json": {
+    "bytes": 1368,
+    "sha256": "8ded3b024bdbabd27cf10f64972cd48eef801856635b2ce87925a0917939a8d2"
+  },
+  "public-csv-verification.json": {
+    "bytes": 4977,
+    "sha256": "9bca70f84215fb2ab9251e9f8b3cd81f489dfe5b06884f498a2da4ffa6280e02"
+  },
+  "release.json": {
+    "bytes": 3137,
+    "sha256": "335cb21eec5a4c72762fc1b838943d42ab219f2bda4988469966fc6f24e1f589"
+  },
+  "source-and-reproduction.json": {
+    "bytes": 846,
+    "sha256": "201123cbbfb0beed132aa079cad4cbade8f80d3139846b612c1c7450a5446252"
+  }
+}
