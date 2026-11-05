@@ -1,4 +1,4 @@
-"""Export scoped 2024/2022 MEDSL-origin House counts, preserving withheld observations."""
+"""Export scoped 2024/2022/2020 MEDSL-origin House counts, preserving withheld observations."""
 
 import argparse
 from collections import Counter, defaultdict
@@ -13,7 +13,7 @@ import zipfile
 
 
 ROOT = Path(__file__).resolve().parents[1]
-YEARS = ("2024", "2022")
+YEARS = ("2024", "2022", "2020")
 SOURCE_FIELDS = ("source", "office", "state_po", "year")
 PROVENANCE = ROOT / "data/county-source-reviews/20261105-historical-provenance-01"
 spec = importlib.util.spec_from_file_location("historical", Path(__file__).with_name("review-historical-county-results.py"))
@@ -147,13 +147,21 @@ def export(archive_path, source_review, output):
             return list(csv.DictReader(io.StringIO(archive.read(name).decode("utf-8-sig"), newline="")))
 
         qa = list(csv.DictReader(io.StringIO((source_review / "R/output/qa_medsl_sweep_flags.csv").read_text())))
-        tables, audit = build_tables(table("us_county_results_long.csv"), table("us_county_results_summary.csv"),
-                                     table("SOURCES.csv"), qa)
+        candidates = table("us_county_results_long.csv")
+        tables, audit = build_tables(candidates, table("us_county_results_summary.csv"), table("SOURCES.csv"), qa)
+        scopes = {(r["year"], r["office"], r["state_po"]) for r in tables["scoped-sources.csv"]}
+        state_codes = {r["state"].upper(): r["state_po"] for r in candidates}
+        tables["source-coverage-gaps.csv"] = [r for r in table("us_county_results_gaps.csv")
+            if (r["year"], r["office"], state_codes[r["state"]]) in scopes]
+        tables["source-no-ballot.csv"] = [r for r in table("us_county_results_no_ballot.csv")
+            if (r["year"], r["office"], r["state_po"]) in scopes]
+        audit["native_auxiliary_gap_records"] = len(tables["source-coverage-gaps.csv"])
+        audit["native_auxiliary_no_ballot_records"] = len(tables["source-no-ballot.csv"])
         corrections = archive.read("data_corrections_log.csv")
     audit.update(source_commit=acquisition["source_commit"],
         complete_original_url=acquisition["complete_download_url"],
         complete_original_sha256=acquisition["complete_download_sha256"],
-        scope="2024/2022 House only; native source origin=medsl; other origins/offices/years excluded.",
+        scope="/".join(YEARS) + " House only; native source origin=medsl; other origins/offices/years excluded.",
         compilation_attribution="Paul Heideman (2026), U.S. county-level election results, v1.0.0, CC BY 4.0.",
         upstream_attribution="MIT Election Data and Science Lab; dataset DOI/title/CC0 declarations below.",
         dataset_declarations=declarations,
@@ -163,6 +171,10 @@ def export(archive_path, source_review, output):
             "Reviewed means scoped arithmetic/provenance checks and known-anomaly exclusions, not official certification.",
             "All raw scoped rows are retained; withheld rows never enter reviewed county or state aggregates.",
             "State sums contain only reviewed counties, not guaranteed complete statewide or district totals.",
+            "Native auxiliary gaps/no-ballot records are metadata, never invented zero-vote candidates. "
+            "Their documented overlay methods do not approve historical map joins.",
+            "The compiler excluded Maine's 2020 federal/UOCAVA 23000 bucket from its county release. "
+            "Do not allocate it into counties or call the reviewed-county state sum complete.",
             "Party/candidate labels are the compiler's literals, not independently verified original ballot labels.",
             "Preserve surname_only/initials_only flags; no identities or zeros are invented.",
             "Compiler 2024 Oregon major-party overrides use secondary Wikipedia facts; code and attribution retained.",

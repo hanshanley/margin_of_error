@@ -1,0 +1,124 @@
+{
+  "source_commit": "155b35015f4b9801c07c05b800c380218c6462b3",
+  "acquired_qa_and_license_originals": "data/county-source-reviews/20261105-historical-house-01/originals/compiler/",
+  "new_year": 2020,
+  "known_2020_withheld_counties": [
+    {
+      "year": "2020",
+      "office": "house",
+      "state_code": "AL",
+      "county_fips": "01023",
+      "candidate_rows": "2",
+      "arithmetic_matches_source_summary": "True",
+      "integer_counts_accepted": "True",
+      "withheld_reasons": "publisher_qa:T2_house_vs_senate",
+      "source_quality_flags": "one_party_race",
+      "source_stages": "general",
+      "accepted_for_scoped_export": "False",
+      "fully_complete": "False",
+      "map_approved": "False"
+    },
+    {
+      "year": "2020",
+      "office": "house",
+      "state_code": "AL",
+      "county_fips": "01107",
+      "candidate_rows": "2",
+      "arithmetic_matches_source_summary": "True",
+      "integer_counts_accepted": "True",
+      "withheld_reasons": "publisher_qa:T1_ratio_to_presidential;publisher_qa:T2_house_vs_senate",
+      "source_quality_flags": "one_party_race",
+      "source_stages": "general",
+      "accepted_for_scoped_export": "False",
+      "fully_complete": "False",
+      "map_approved": "False"
+    },
+    {
+      "year": "2020",
+      "office": "house",
+      "state_code": "FL",
+      "county_fips": "12021",
+      "candidate_rows": "3",
+      "arithmetic_matches_source_summary": "True",
+      "integer_counts_accepted": "True",
+      "withheld_reasons": "publisher_qa:T1_ratio_to_presidential",
+      "source_quality_flags": "excludes_unopposed_seat",
+      "source_stages": "general",
+      "accepted_for_scoped_export": "False",
+      "fully_complete": "False",
+      "map_approved": "False"
+    },
+    {
+      "year": "2020",
+      "office": "house",
+      "state_code": "MD",
+      "county_fips": "24027",
+      "candidate_rows": "6",
+      "arithmetic_matches_source_summary": "True",
+      "integer_counts_accepted": "True",
+      "withheld_reasons": "publisher_qa:T1_ratio_to_presidential",
+      "source_quality_flags": "",
+      "source_stages": "general",
+      "accepted_for_scoped_export": "False",
+      "fully_complete": "False",
+      "map_approved": "False"
+    },
+    {
+      "year": "2020",
+      "office": "house",
+      "state_code": "MD",
+      "county_fips": "24510",
+      "candidate_rows": "6",
+      "arithmetic_matches_source_summary": "True",
+      "integer_counts_accepted": "True",
+      "withheld_reasons": "publisher_qa:T1_ratio_to_presidential",
+      "source_quality_flags": "",
+      "source_stages": "general",
+      "accepted_for_scoped_export": "False",
+      "fully_complete": "False",
+      "map_approved": "False"
+    },
+    {
+      "year": "2020",
+      "office": "house",
+      "state_code": "TN",
+      "county_fips": "47043",
+      "candidate_rows": "4",
+      "arithmetic_matches_source_summary": "True",
+      "integer_counts_accepted": "True",
+      "withheld_reasons": "publisher_qa:T1_ratio_to_presidential;publisher_qa:T2_house_vs_senate",
+      "source_quality_flags": "one_party_race",
+      "source_stages": "general",
+      "accepted_for_scoped_export": "False",
+      "fully_complete": "False",
+      "map_approved": "False"
+    }
+  ],
+  "superseded_or_scope_limited_corrections": [
+    {
+      "correction_csv_line": 13,
+      "scope": "IN House 2020",
+      "current_origin": "sos_web",
+      "decision": "Official replacement outside MEDSL scope; do not apply obsolete MEDSL warning to it."
+    },
+    {
+      "correction_csv_line": 32,
+      "scope": "ME House 2020",
+      "decision": "Noncounty UOCAVA bucket omitted by original release; preserve partial state sums, never allocate."
+    },
+    {
+      "correction_csv_line": 34,
+      "scope": "Candidate identities",
+      "decision": "Preserve native name flags/literals; do not invent full identities."
+    },
+    {
+      "correction_csv_line": 101,
+      "scope": "2020 House QA",
+      "decision": "All six current-source House flags withheld, with raw candidate rows retained."
+    }
+  ],
+  "native_auxiliary_gap_rows": 2,
+  "native_auxiliary_no_ballot_rows": 55,
+  "new_maps_approved": false,
+  "fully_complete": false
+}

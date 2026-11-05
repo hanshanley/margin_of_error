@@ -1,0 +1,10 @@
+{
+  "reproduction.json": {
+    "bytes": 2899,
+    "sha256": "cc82ab3800120b8de5529f4af59d08308082e0f3c238245d2aa563d5007322b0"
+  },
+  "scope-review.json": {
+    "bytes": 4195,
+    "sha256": "521175786026ff19d4c19ef23a77dc2a4ce9a27a591957759cb86310a16fcfa3"
+  }
+}

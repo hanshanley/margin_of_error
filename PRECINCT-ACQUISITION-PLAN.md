@@ -147,8 +147,32 @@ participation tests, build and four caucus tests passed. The prepared Pages
 artifact is 987,231,960 bytes after 94 relocated downloads were verified.
 The unchanged renderer/maps were deliberately not retested.
 
+The 2020 extension is also prepared while the two-year Pages run completes.
+It adds 10,974 reviewed candidate/party rows in 2,773 counties across 45 states;
+23 raw rows from six additional flagged counties are withheld, not lost.
+The three-year scope contains 32,445 source rows, 32,370 reviewed rows,
+23,445 county-party totals, 565 reviewed-county state-party sums and 81 literal
+compiler party labels. Its separate scope ledger has 153 state/year cells,
+all incomplete and without map approval. Native auxiliary records include
+two source coverage gaps and 55 no-ballot observations; these are not invented
+zero-vote candidates. Maine's 2020 federal/UOCAVA 23000 bucket was excluded by
+the upstream county release and is not allocated into counties here.
+The old Indiana 2020 warning is superseded by a non-MEDSL official replacement,
+outside the selected scope.
+
+All previous 2024/2022 rows in all ten tables remain unchanged. The new
+complete archive reproduced every nonarchive output byte outside the repository;
+34 focused tests passed. Prepared data are
+`data/historical-house-counties/20261105-medsl-02/`, proof is
+`data/county-source-reviews/20261105-historical-house-02/reproduction.json`.
+No new public pointer or live flag has been set for 2020.
+Push data/tools to the work branch before release creation rather than creating
+an unnecessary intermediate main-branch Pages deployment. Keep every link to
+the first immutable release when the three-year page is integrated.
+
 Next: verify the exact production deployment and persist the focused live proof.
-Continue 2020/2018/2016 source-specific quality review next: their unresolved
+Then publish the prepared 2020 extension and validate its exact deployment.
+Continue 2018/2016 source-specific quality review next: their unresolved
 party labels, Missouri noncounty buckets and Texas source undercoverage need
 separate handling rather than a blanket extrapolation from the two newest years.
 Historical maps still require election-year county crosswalks.

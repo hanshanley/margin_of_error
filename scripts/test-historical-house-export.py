@@ -43,7 +43,7 @@ def test_fusion_lines_zeroes_and_literal_identity_flags_survive_without_false_st
                for r in tables["reviewed-state-party-sums.csv"])
     assert audit["native_quality_flags"]["surname_only"] == 1
     coverage = tables["state-coverage.csv"]
-    assert len(coverage) == 102 and all(not row["fully_complete"] and not row["map_approved"] for row in coverage)
+    assert len(coverage) == 153 and all(not row["fully_complete"] and not row["map_approved"] for row in coverage)
     assert next(row for row in coverage if (row["year"], row["state_code"]) == ("2024", "AK"))[
         "status"] == "outside_selected_source_origin_or_missing"
 
@@ -77,7 +77,7 @@ def test_yazoo_prose_only_exception_and_zero_padded_machine_fips_are_not_lost():
 
 def test_office_origin_year_and_qa_office_are_scoped_independently():
     rows = [candidate(), candidate(office="senate", candidate="Senator"),
-            candidate(year="2020", candidate="Earlier"),
+            candidate(year="2018", candidate="Earlier"),
             candidate(source="replacement", county_fips="36003", candidate="Official replacement")]
     tables, _ = run(rows, [dict(sample="SE", year="2024", cty_fips="36001", test="T1")],
                     {"replacement": "sos_file"})
@@ -93,3 +93,14 @@ def test_mixed_origin_partial_county_vector_is_withheld_instead_of_summed_as_com
     assert tables["withheld-candidate-party-lines.csv"] == [rows[0]]
     assert not tables["reviewed-county-party-totals.csv"]
     assert "candidate_summary_disagreement" in tables["county-review.csv"][0]["withheld_reasons"]
+
+
+def test_2020_qa_exclusion_does_not_remove_other_years_or_other_counties():
+    rows = [candidate(year="2020", state_po="MD", state_fips="24", county_fips="24027"),
+            candidate(year="2024", state_po="MD", state_fips="24", county_fips="24027"),
+            candidate(year="2020", state_po="MD", state_fips="24", county_fips="24001")]
+    tables, audit = run(rows, [dict(sample="HE", year="2020", cty_fips="24027", test="T1")])
+    assert tables["withheld-candidate-party-lines.csv"] == [rows[0]]
+    assert tables["reviewed-candidate-party-lines.csv"] == rows[1:]
+    scope = next(row for row in audit["years"] if row["year"] == "2020")
+    assert scope["reviewed_counties"] == scope["withheld_counties"] == 1
