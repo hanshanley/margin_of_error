@@ -1,0 +1,2 @@
+year,state_code,county_fips,county,ballots_counted,registered_voters,native_printed_turnout,registered_ballot_ratio_pct,house_candidate_votes,source_update_literal,result_status,mail_counting_status,in_person_counting_status,final_certified_turnout
+2026,PA,42017,Bucks,305485,487385,62.7%,62.678375411635564,302786,11/04/2026 4:15 PM,UNOFFICIAL RESULTS,Absentee and Mail-In: Partially Reported,In-Person Ballots: Partially Reported,False

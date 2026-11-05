@@ -1,0 +1,66 @@
+{
+  "audit.json": {
+    "bytes": 3060,
+    "sha256": "2add11e1f9880f4d9f706423c7b64c1f035956c46a3640806bdc4bf63b910c20"
+  },
+  "county-candidate-mode-counts.csv": {
+    "bytes": 17230,
+    "sha256": "07b92a5cf85bd180f663e78293f423dd7e8dca2785afa724c3cd1f19c94efc56"
+  },
+  "county-candidate-results.csv": {
+    "bytes": 4651,
+    "sha256": "4d56b262e84210079f218ba79aef1204e28bb69bd06b07cc951b9f9db0ab952c"
+  },
+  "county-contest-totals.csv": {
+    "bytes": 1311,
+    "sha256": "3026f18852ca014cbfacf8cf101f68548e255d40b803eac08d814c90e3cf7052"
+  },
+  "county-office-party-totals.csv": {
+    "bytes": 688,
+    "sha256": "41bc55b7fefabfd66bcc8e3e97008eae550e1eb39934dbe168d090a28c613138"
+  },
+  "county-participation.csv": {
+    "bytes": 440,
+    "sha256": "8fe900355d008dcc02576e891539e3fdd66aaa4301165949f9acd18c73dff133"
+  },
+  "native-unit-candidate-counts.csv": {
+    "bytes": 370189,
+    "sha256": "d9596a7b832838e235716eb9bd849ebcf1ee09ec7ce993d8c784da0f8319d1d4"
+  },
+  "native-unit-participation.csv": {
+    "bytes": 22124,
+    "sha256": "0ac97bb6fffe2e99b628fced717c999250334b860f902d84c83bdd01cba6e097"
+  },
+  "originals/contests.csv": {
+    "bytes": 1044,
+    "sha256": "1f3a583f286f1d486e71ebca1f8ac4ca097951a8adcdb092885e8e04bca6d9e7"
+  },
+  "originals/native-results.redacted.html": {
+    "bytes": 4416112,
+    "sha256": "76998d52adfc47b7281680ab7754230b4aff761d62a198d6ec6d95295f61ac34"
+  },
+  "originals/native-units.csv": {
+    "bytes": 374101,
+    "sha256": "aebea46c1ab91894acec8cdb3b1dddb2db7fb3c8794157fc36af52c804bf52ae"
+  },
+  "originals/official-results-index.html": {
+    "bytes": 106857,
+    "sha256": "0da4d4c343e250fb3d12a2f4b2fcb3409089a091350aa9725e6e2dbd93e340df"
+  },
+  "originals/receipts.json": {
+    "bytes": 2854,
+    "sha256": "b861ef4ed0b4979c1a2595cc605cb8ec0fa7a4c94abbd4725c4ac855ae6aa18c"
+  },
+  "originals/summary.csv": {
+    "bytes": 4899,
+    "sha256": "1186461c12f25fe1ae5bf5f1601876e64531490f601b009a6d45e6882d942603"
+  },
+  "originals/summary.pdf": {
+    "bytes": 108822,
+    "sha256": "d887a33219f4cb30c8c724219dadd5ff24653c7b78a2f25a6cb634ac1d8f1c07"
+  },
+  "review-bucks-2026-county-results.py": {
+    "bytes": 21003,
+    "sha256": "f4ad38ae82a7bb28d7c8affe1c031f151e1caae1b34ec444814332d91bf587d4"
+  }
+}

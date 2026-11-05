@@ -1,0 +1,5 @@
+{
+  "command": "../voter-participation/.venv/bin/python -m pytest -q scripts/test-bucks-county-results.py scripts/test-dc-county-results.py scripts/test-county-party-votes.py scripts/test-monroe-county-results.py",
+  "exit_status": 0,
+  "passed": 49
+}

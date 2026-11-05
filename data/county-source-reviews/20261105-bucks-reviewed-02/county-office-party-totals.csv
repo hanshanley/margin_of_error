@@ -1,0 +1,16 @@
+year,state_code,county_fips,office,party_literal,votes
+2026,PA,42017,governor_lieutenant_governor,Dem,189221
+2026,PA,42017,governor_lieutenant_governor,Lib,3466
+2026,PA,42017,governor_lieutenant_governor,Nonpart,267
+2026,PA,42017,governor_lieutenant_governor,Rep,111093
+2026,PA,42017,state_house,Dem,162411
+2026,PA,42017,state_house,Fwi,713
+2026,PA,42017,state_house,Ind,13322
+2026,PA,42017,state_house,Nonpart,2136
+2026,PA,42017,state_house,Rep,116620
+2026,PA,42017,state_senate,Dem,169356
+2026,PA,42017,state_senate,Nonpart,473
+2026,PA,42017,state_senate,Rep,131029
+2026,PA,42017,us_house,Dem,158908
+2026,PA,42017,us_house,Nonpart,1082
+2026,PA,42017,us_house,Rep,142796

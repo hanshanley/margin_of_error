@@ -1,0 +1,84 @@
+{
+  "status": "every_original_unit_vote_reconciles_to_every_office_literal_party_total",
+  "native_candidate_rows": 3949,
+  "explicit_zeroes": 343,
+  "county_candidate_rows": 46,
+  "office_party_rows": 15,
+  "party_totals": [
+    {
+      "office": "governor_lieutenant_governor",
+      "party_literal": "Dem",
+      "votes": 189221
+    },
+    {
+      "office": "governor_lieutenant_governor",
+      "party_literal": "Lib",
+      "votes": 3466
+    },
+    {
+      "office": "governor_lieutenant_governor",
+      "party_literal": "Nonpart",
+      "votes": 267
+    },
+    {
+      "office": "governor_lieutenant_governor",
+      "party_literal": "Rep",
+      "votes": 111093
+    },
+    {
+      "office": "state_house",
+      "party_literal": "Dem",
+      "votes": 162411
+    },
+    {
+      "office": "state_house",
+      "party_literal": "Fwi",
+      "votes": 713
+    },
+    {
+      "office": "state_house",
+      "party_literal": "Ind",
+      "votes": 13322
+    },
+    {
+      "office": "state_house",
+      "party_literal": "Nonpart",
+      "votes": 2136
+    },
+    {
+      "office": "state_house",
+      "party_literal": "Rep",
+      "votes": 116620
+    },
+    {
+      "office": "state_senate",
+      "party_literal": "Dem",
+      "votes": 169356
+    },
+    {
+      "office": "state_senate",
+      "party_literal": "Nonpart",
+      "votes": 473
+    },
+    {
+      "office": "state_senate",
+      "party_literal": "Rep",
+      "votes": 131029
+    },
+    {
+      "office": "us_house",
+      "party_literal": "Dem",
+      "votes": 158908
+    },
+    {
+      "office": "us_house",
+      "party_literal": "Nonpart",
+      "votes": 1082
+    },
+    {
+      "office": "us_house",
+      "party_literal": "Rep",
+      "votes": 142796
+    }
+  ]
+}

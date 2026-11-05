@@ -1,0 +1,62 @@
+{
+  "status": "original_backed_county_counts_reviewed_counting_partial",
+  "participation": {
+    "year": 2026,
+    "state_code": "PA",
+    "county_fips": "42017",
+    "county": "Bucks",
+    "ballots_counted": 305485,
+    "registered_voters": 487385,
+    "native_printed_turnout": "62.7%",
+    "registered_ballot_ratio_pct": 62.678375411635564,
+    "house_candidate_votes": 302786,
+    "source_update_literal": "11/04/2026 4:15 PM",
+    "result_status": "UNOFFICIAL RESULTS",
+    "mail_counting_status": "Absentee and Mail-In: Partially Reported",
+    "in_person_counting_status": "In-Person Ballots: Partially Reported",
+    "final_certified_turnout": false
+  },
+  "native_contests": 15,
+  "native_units": 304,
+  "native_unit_candidate_rows": 3949,
+  "native_unit_explicit_zeroes": 343,
+  "unit_name_geo_key_differences": 61,
+  "house_literal_party_votes": {
+    "Dem": 158908,
+    "Rep": 142796,
+    "Nonpart": 1082
+  },
+  "source_urls": {
+    "official-results-index.html": "https://buckscounty.gov/1206/Election-Results",
+    "native-results.redacted.html": "https://www.livevoterturnout.com/ENR/buckspaenr/24/en/cyu3o_Index_24.html",
+    "summary.csv": "https://www.livevoterturnout.com/ENR/buckspaenr/24/summary_24.csv",
+    "native-units.csv": "https://www.livevoterturnout.com/ENR/buckspaenr/24/precincts_24.csv",
+    "contests.csv": "https://www.livevoterturnout.com/ENR/buckspaenr/24/contests_24.csv",
+    "summary.pdf": "https://www.livevoterturnout.com/ENR/buckspaenr/24/summary_24.pdf"
+  },
+  "new_maps_approved": false,
+  "fully_complete": false,
+  "limitations": [
+    "Bucks County only; not statewide Pennsylvania coverage or district-wide totals outside the county.",
+    "UNOFFICIAL RESULTS; both Absentee and Mail-In and In-Person Ballots remain Partially Reported.",
+    "All native reporting counters reconcile, but they do not establish completed ballot counting.",
+    "Candidate/write-in votes are separate from ballots, registrations and demographic turnout.",
+    "CSV and accessible-HTML party literals are both retained, not silently standardized.",
+    "Native RegularCheckIns is labeled VOTES CAST; its sum matches county Ballots Counted.",
+    "Native geographic keys and literal unit names remain separate; no geometry or crosswalk is approved.",
+    "Ballots minus candidate votes is unclassified, not inferred undervotes or overvotes.",
+    "Explicit provisional candidate zeroes do not establish zero provisional ballots.",
+    "Printed report timestamp has no independently established timezone.",
+    "Native HTML omits map-service access tokens; the complete original is retained privately and hashed.",
+    "No new map, precinct completeness, final certification or blanket upstream license is asserted."
+  ],
+  "table_rows": {
+    "county-candidate-results.csv": 46,
+    "county-candidate-mode-counts.csv": 138,
+    "county-office-party-totals.csv": 15,
+    "county-contest-totals.csv": 15,
+    "county-participation.csv": 1,
+    "native-unit-participation.csv": 304,
+    "native-unit-candidate-counts.csv": 3949
+  }
+}

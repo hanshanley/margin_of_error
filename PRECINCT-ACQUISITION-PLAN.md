@@ -319,6 +319,54 @@ this completed publication or reinterpret the unresolved 324-ballot difference.
 Next actionable work remains genuine 2026 Maine/Pennsylvania county sources,
 followed by the scoped 2016 historical House export.
 
+Bucks County official 2026 alternative, reviewed; publication in progress:
+`data/county-source-reviews/20261105-bucks-reviewed-02/` retains the county's
+declared native 2026 report with map-service tokens explicitly redacted, the
+unmodified official linking page, three complete original CSV reports,
+five-page original summary PDF and exact HTTP/hash receipts. The complete
+unredacted native HTML remains in the private session acquisition cache;
+the public receipt records both original and redacted bytes/hashes. No CSV,
+PDF, candidate, party or participation data is removed. GitHub rejected the
+first unpublished commit for an embedded map token. A clean branch based on
+the last pushed revision avoids publishing that commit or bypassing protection.
+The printed report update
+is November 4, 2026, 4:15 PM; its timezone is not independently established.
+All results are unofficial. Both Absentee and Mail-In and In-Person Ballots
+explicitly remain Partially Reported despite the native 304 of 304 reporting
+counter. Do not equate reported units with completed counting.
+
+The reusable reviewer reconciles all 46 candidate lines and 138 candidate-mode
+counts across summary CSV, accessible HTML and PDF; all 3,949 native unit
+candidate observations, including 343 explicit zeroes, sum to those same
+county vectors. All 15 contest ballot totals match their native unit sums.
+The four office families separately partition the same 304 county units without
+overlap. The seven complete tables also retain 15 office/literal-party totals,
+15 contest totals, 304 native participation records and separate county
+participation. All 17 package files and the complete ZIP reproduce byte-for-byte
+outside the repository; 49 focused Bucks/D.C./party/Monroe tests pass. A second,
+independent native-unit CSV aggregation matches every office/literal-party total.
+
+House votes are 302,786: Dem 158,908, Rep 142,796 and Nonpart write-ins 1,082.
+These are not the separate 305,485 county Ballots Counted or 487,385 Registered
+Voters. The 2,699-ballot difference stays unclassified, not inferred undervotes
+or overvotes. Preserve both CSV party literals and accessible-HTML labels,
+including Fwi, Ind and Lib in other contests. Provisional candidate zeroes
+do not establish zero provisional ballots. Native RegularCheckIns is labeled
+VOTES CAST; its sum matches county ballots. Preserve all 61 differences between
+native unit names and map keys without normalization or map approval.
+
+The safe complete archive is 368,884 bytes, SHA256
+`7f567f6acdd274df3ea444d1cfb60a21927c2a677e3f65c3cd1eb40209e356bb`.
+Reproduction, independent reconciliation, token-only redaction proof and focused-test receipts are in
+`data/county-source-reviews/20261105-bucks-publication-02/`. Allegheny's
+county-declared Clarity report returned 403; preserve that receipt, use no
+apparent counts and do not retry the blocked endpoint. This Bucks acquisition
+is county counts only, not statewide Pennsylvania completion, a new map,
+new precinct coverage or demographic turnout. Existing map coverage remains
+48 states / 3,060 county equivalents. Next, release and byte-verify the complete
+package and seven pinned CSV endpoints, retain all 186 current page downloads,
+then verify the exact Pages revision in all four display modes.
+
 Pennsylvania official county alternative, November 5 follow-up:
 `data/county-source-reviews/20261105-monroe-official-01/` retains Monroe's
 complete native all-contest workbook, seven declared contest pages, county

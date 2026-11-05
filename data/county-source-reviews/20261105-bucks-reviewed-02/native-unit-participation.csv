@@ -1,0 +1,305 @@
+native_unit_code,native_unit_name,native_geo_key,native_votes_cast,registered_voters,native_printed_turnout_pct,native_status
+30,Bedminster Twp East,Bedminster Twp East,2012,3031,66.38,Reported
+31,Bedminster Twp West,Bedminster Twp West,2000,2912,68.68,Reported
+32,Bensalem Twp Lower East #1,Bensalem Twp Lower East #1,1239,2041,60.71,Reported
+33,Bensalem Twp Lower East #2,Bensalem Twp Lower East #2,1121,2112,53.08,Reported
+34,Bensalem Twp Lower East #3,Bensalem Twp Lower East #3,998,2006,49.75,Reported
+35,Bensalem Twp Lower East #4,Bensalem Twp Lower East #4,485,1175,41.28,Reported
+36,Bensalem Twp Lower East #5,Bensalem Twp Lower East #5,1459,2410,60.54,Reported
+37,Bensalem Twp Lower East #6,Bensalem Twp Lower East #6,856,1483,57.72,Reported
+38,Bensalem Twp Lower East #7,Bensalem Twp Lower East #7,962,1806,53.27,Reported
+39,Bensalem Twp Lower East #8,Bensalem Twp Lower East #8,617,970,63.61,Reported
+40,Bensalem Twp Lower Middle #1,Bensalem Twp Lower Middle #1,1010,1789,56.46,Reported
+41,Bensalem Twp Lower Middle #2,Bensalem Twp Lower Middle #2,606,1013,59.82,Reported
+42,Bensalem Twp Lower Middle #3,Bensalem Twp Lower Middle #3,1228,1942,63.23,Reported
+43,Bensalem Twp Lower Middle #4,Bensalem Twp Lower Middle #4,538,1198,44.91,Reported
+44,Bensalem Twp Lower Middle #5,Bensalem Twp Lower Middle #5,564,1317,42.82,Reported
+45,Bensalem Twp Lower West,Bensalem Twp Lower West,838,1574,53.24,Reported
+46,Bensalem Twp Upper West,Bensalem Twp Upper West,801,1498,53.47,Reported
+47,Bensalem Twp Upper # 1,Bensalem Twp Upper #1,1259,2239,56.23,Reported
+48,Bensalem Twp Upper # 2,Bensalem Twp Upper #2,476,909,52.37,Reported
+49,Bensalem Twp Upper # 3,Bensalem Twp Upper #3,824,1525,54.03,Reported
+50,Bensalem Twp Upper # 4,Bensalem Twp Upper #4,627,1115,56.23,Reported
+51,Bensalem Twp Upper # 5,Bensalem Twp Upper #5,929,1850,50.22,Reported
+52,Bensalem Twp Upper # 6,Bensalem Twp Upper #6,636,959,66.32,Reported
+53,Bensalem Twp Upper # 7,Bensalem Twp Upper #7,682,1326,51.43,Reported
+54,Bensalem Twp Upper # 8,Bensalem Twp Upper #8,733,1462,50.14,Reported
+55,Bensalem Twp Upper # 9,Bensalem Twp Upper #9,1025,1577,65.00,Reported
+56,Bensalem Twp Upper #10,Bensalem Twp Upper #10,1070,1609,66.50,Reported
+57,Bensalem Twp Upper #11,Bensalem Twp Upper #11,1288,2103,61.25,Reported
+58,Bensalem Twp Upper #12,Bensalem Twp Upper #12,753,1353,55.65,Reported
+59,Bridgeton Twp,Bridgeton Twp,651,1001,65.03,Reported
+60,Bristol Boro North 1,Bristol Boro North 1,405,838,48.33,Reported
+61,Bristol Boro North 2,Bristol Boro North 2,364,736,49.46,Reported
+62,Bristol Boro East 1,Bristol Boro East 1,809,1213,66.69,Reported
+63,Bristol Boro East 2,Bristol Boro East 2,567,980,57.86,Reported
+64,Bristol Boro West 1,Bristol Boro West 1,219,453,48.34,Reported
+65,Bristol Boro West 2,Bristol Boro West 2,445,797,55.83,Reported
+66,Bristol Boro West 3,Bristol Boro West 3,299,633,47.24,Reported
+67,Bristol Boro South 1,Bristol Boro South 1,275,526,52.28,Reported
+68,Bristol Boro South 2,Bristol Boro South 2,343,692,49.57,Reported
+69,Bristol Boro South 3,Bristol Boro South 3,217,419,51.79,Reported
+70,Bristol Twp  1st-1st,Bristol Twp 1st-1st,802,1600,50.13,Reported
+71,Bristol Twp  1st-2nd,Bristol Twp 1st-2nd,540,1042,51.82,Reported
+72,Bristol Twp  1st-3rd,Bristol Twp 1st-3rd,590,1260,46.83,Reported
+73,Bristol Twp  2nd-1st,Bristol Twp 2nd-1st,660,1493,44.21,Reported
+74,Bristol Twp  2nd-2nd,Bristol Twp 2nd-2nd,370,726,50.96,Reported
+75,Bristol Twp  2nd-3rd,Bristol Twp 2nd-3rd,575,1127,51.02,Reported
+76,Bristol Twp  3rd-1st,Bristol Twp 3rd-1st,580,1091,53.16,Reported
+77,Bristol Twp  3rd-2nd,Bristol Twp 3rd-2nd,642,1247,51.48,Reported
+78,Bristol Twp  3rd-3rd,Bristol Twp 3rd-3rd,459,889,51.63,Reported
+79,Bristol Twp  4th-1st,Bristol Twp 4th-1st,896,1894,47.31,Reported
+80,Bristol Twp  4th-2nd,Bristol Twp 4th-2nd,853,1612,52.92,Reported
+81,Bristol Twp  4th-3rd,Bristol Twp 4th-3rd,522,1101,47.41,Reported
+82,Bristol Twp  5th-1st,Bristol Twp 5th-1st,739,1407,52.52,Reported
+83,Bristol Twp  5th-2nd,Bristol Twp 5th-2nd,644,1420,45.35,Reported
+84,Bristol Twp  6th-1st,Bristol Twp 6th-1st,481,994,48.39,Reported
+85,Bristol Twp  6th-2nd,Bristol Twp 6th-2nd,576,1088,52.94,Reported
+86,Bristol Twp  6th-3rd,Bristol Twp 6th-3rd,341,754,45.23,Reported
+87,Bristol Twp  7th-1st,Bristol Twp 7th-1st,718,1406,51.07,Reported
+88,Bristol Twp  7th-2nd,Bristol Twp 7th-2nd,697,1423,48.98,Reported
+89,Bristol Twp  8th-1st,Bristol Twp 8th-1st,813,1480,54.93,Reported
+90,Bristol Twp  8th-2nd,Bristol Twp 8th-2nd,989,1797,55.04,Reported
+91,Bristol Twp  9th-1st,Bristol Twp 9th-1st,916,1710,53.57,Reported
+92,Bristol Twp  9th-2nd,Bristol Twp 9th-2nd,960,1629,58.93,Reported
+93,Bristol Twp  9th-3rd,Bristol Twp 9th-3rd,918,1564,58.70,Reported
+94,Bristol Twp 10th-1st,Bristol Twp 10th-1st,522,979,53.32,Reported
+95,Bristol Twp 10th-2nd,Bristol Twp 10th-2nd,523,1042,50.19,Reported
+96,Bristol Twp 10th-3rd,Bristol Twp 10th-3rd,496,884,56.11,Reported
+97,Bristol Twp 11th-1st,Bristol Twp 11th-1st,838,1467,57.12,Reported
+98,Bristol Twp 11th-2nd,Bristol Twp 11th-2nd,896,1523,58.83,Reported
+99,Buckingham Twp Lower #1,Buckingham Twp Lower #1,2146,3304,64.95,Reported
+100,Buckingham Twp Lower #2,Buckingham Twp Lower #2,1138,1575,72.25,Reported
+101,Buckingham Twp Middle #1,Buckingham Twp Middle #1,1676,2552,65.67,Reported
+102,Buckingham Twp Middle #2,Buckingham Twp Middle #2,1026,1471,69.75,Reported
+103,Buckingham Twp Upper #1,Buckingham Twp Upper #1,1636,2352,69.56,Reported
+105,Buckingham Twp Upper #2,Buckingham Twp Upper #2,1767,2599,67.99,Reported
+106,Buckingham Twp Upper #3,Buckingham Twp Upper #3,1107,1610,68.76,Reported
+107,Buckingham Twp Upper #4,Buckingham Twp Upper #4,1268,1876,67.59,Reported
+108,Chalfont Boro,Chalfont Boro,2306,3444,66.96,Reported
+109,Doylestown Boro 1st-1st,Doylestown Boro 1st-1st,856,1124,76.16,Reported
+110,Doylestown Boro 1st-2nd,Doylestown Boro 1st-2nd,744,1069,69.60,Reported
+111,Doylestown Boro 2nd-1st,Doylestown Boro 2nd-1st,775,1171,66.18,Reported
+112,Doylestown Boro 2nd-2nd,Doylestown Boro 2nd-2nd,1332,2001,66.57,Reported
+113,Doylestown Boro 3rd-1st,Doylestown Boro 3rd-1st,625,923,67.71,Reported
+114,Doylestown Boro 3rd-2nd,Doylestown Boro 3rd-2nd,598,921,64.93,Reported
+115,Doylestown Twp #1,Doylestown Twp #1,1254,1806,69.44,Reported
+116,Doylestown Twp #2,Doylestown Twp #2,912,1203,75.81,Reported
+117,Doylestown Twp #3,Doylestown Twp #3,1123,1609,69.79,Reported
+118,Doylestown Twp #4,Doylestown Twp #4,803,1123,71.50,Reported
+119,Doylestown Twp #5,Doylestown Twp #5,1668,2714,61.46,Reported
+120,Doylestown Twp #6,Doylestown Twp #6,1723,2413,71.40,Reported
+121,Doylestown Twp #7,Doylestown Twp #7,1125,1663,67.65,Reported
+122,Doylestown Twp #8,Doylestown Twp #8,1234,1743,70.80,Reported
+123,Dublin Boro,Dublin Boro,1027,1690,60.77,Reported
+124,Durham Twp,Durham Twp,666,965,69.02,Reported
+125,East Rockhill Twp #1,East Rockhill Twp #1,1503,2364,63.58,Reported
+126,East Rockhill Twp #2,East Rockhill Twp #2,1455,2234,65.13,Reported
+127,Falls Twp 1st-1st,Falls Twp 1st-1st,1132,1984,57.06,Reported
+128,Falls Twp 1st-2nd,Falls Twp 1st-2nd,836,1330,62.86,Reported
+129,Falls Twp 1st-3rd,Falls Twp 1st-3rd,603,912,66.12,Reported
+130,Falls Twp 1st-4th,Falls Twp 1st-4th,795,1297,61.30,Reported
+131,Falls Twp 1st-5th,Falls Twp 1st-5th,1273,2616,48.66,Reported
+133,Falls Twp 1st-7th,Falls Twp 1st-7th,752,1889,39.81,Reported
+134,Falls Twp 2nd-1st,Falls Twp 2nd-1st,682,1227,55.58,Reported
+135,Falls Twp 2nd-2nd,Falls Twp 2nd-2nd,612,960,63.75,Reported
+136,Falls Twp 3rd-1st,Falls Twp 3rd-1st,589,954,61.74,Reported
+137,Falls Twp 3rd-2nd,Falls Twp 3rd-2nd,1179,2192,53.79,Reported
+138,Falls Twp 4th-1st,Falls Twp 4th-1st,720,1208,59.60,Reported
+139,Falls Twp 4th-2nd,Falls Twp 4th-2nd,458,810,56.54,Reported
+140,Falls Twp 4th-3rd,Falls Twp 4th-3rd,677,1061,63.81,Reported
+141,Falls Twp 4th-4th,Falls Twp 4th-4th,593,1013,58.54,Reported
+142,Falls Twp 4th-5th,Falls Twp 4th-5th,856,1510,56.69,Reported
+143,Falls Twp 4th-6th,Falls Twp 4th-6th,450,763,58.98,Reported
+144,Falls Twp 4th-7th,Falls Twp 4th-7th,472,797,59.22,Reported
+145,Haycock Twp,Haycock Twp,1259,1804,69.79,Reported
+146,Hilltown Twp Blooming Glen #1,Hilltown Twp Blooming Glen #1,1408,2042,68.95,Reported
+147,Hilltown Twp Blooming Glen #2,Hilltown Twp Blooming Glen #2,1243,2005,62.00,Reported
+148,Hilltown Twp Blooming Glen #3,Hilltown Twp Blooming Glen #3,1244,1978,62.89,Reported
+149,Hilltown Twp Fairhill #1,Hilltown Twp Fairhill #1,1229,2074,59.26,Reported
+150,Hilltown Twp Fairhill #2,Hilltown Twp Fairhill #2,1419,2252,63.01,Reported
+152,Hilltown Twp Hilltown,Hilltown Twp Hilltown,1584,2409,65.75,Reported
+153,Hulmeville Boro,Hulmeville Boro,529,794,66.62,Reported
+154,Ivyland Boro,Ivyland Boro,423,712,59.41,Reported
+155,Langhorne Boro,Langhorne Boro,813,1147,70.88,Reported
+156,Langhorne Manor Boro,Langhorne Manor Boro,518,804,64.43,Reported
+157,Lower Makefield Twp North #1,Lower Makefield Twp North #1,1272,1844,68.98,Reported
+158,Lower Makefield Twp North #2,Lower Makefield Twp North #2,1732,2549,67.95,Reported
+159,Lower Makefield Twp North #3,Lower Makefield Twp North #3,1679,2541,66.08,Reported
+160,Lower Makefield Twp North #4,Lower Makefield Twp North #4,1209,1673,72.27,Reported
+161,Lower Makefield Twp North #5,Lower Makefield Twp North #5,1634,2522,64.79,Reported
+162,Lower Makefield Twp North #6,Lower Makefield Twp North #6,1491,2548,58.52,Reported
+163,Lower Makefield Twp South #1,Lower Makefield Twp South #1,1001,1380,72.54,Reported
+164,Lower Makefield Twp South #2,Lower Makefield Twp South #2,855,1213,70.49,Reported
+165,Lower Makefield Twp South #3,Lower Makefield Twp South #3,1038,1620,64.07,Reported
+167,Lower Makefield Twp South #5,Lower Makefield Twp South #5,967,1338,72.27,Reported
+168,Lower Makefield Twp South #6,Lower Makefield Twp South #6,438,589,74.36,Reported
+169,Lower Makefield Twp South #7,Lower Makefield Twp South #7,1117,1642,68.03,Reported
+170,Lower Makefield Twp South #8,Lower Makefield Twp South #8,860,1230,69.92,Reported
+171,Lower Makefield Twp South #4,Lower Makefield Twp South #4,2131,3100,68.74,Reported
+172,Lower Makefield Twp South #9,Lower Makefield Twp South #9,1572,2237,70.27,Reported
+173,Lower Southampton Twp East #1,Lower Southampton Twp East #1,956,1587,60.24,Reported
+174,Lower Southampton Twp East #2,Lower Southampton Twp East #2,662,1143,57.92,Reported
+175,Lower Southampton Twp East #3,Lower Southampton Twp East #3,915,1475,62.03,Reported
+176,Lower Southampton Twp East #4,Lower Southampton Twp East #4,913,1526,59.83,Reported
+177,Lower Southampton Twp East #5,Lower Southampton Twp East #5,852,1311,64.99,Reported
+178,Lower Southampton Twp West #1,Lower Southampton Twp West #1,460,724,63.54,Reported
+179,Lower Southampton Twp West #2,Lower Southampton Twp West #2,547,845,64.73,Reported
+180,Lower Southampton Twp West #3,Lower Southampton Twp West #3,713,1283,55.57,Reported
+181,Lower Southampton Twp West #4,Lower Southampton Twp West #4,583,1079,54.03,Reported
+182,Lower Southampton Twp West #5,Lower Southampton Twp West #5,477,797,59.85,Reported
+183,Lower Southampton Twp West #6,Lower Southampton Twp West #6,777,1373,56.59,Reported
+184,Lower Southampton Twp West #7,Lower Southampton Twp West #7,536,978,54.81,Reported
+185,Falls Twp 1st-6th,Falls Twp 1st-6th,934,1310,71.30,Reported
+186,Middletown Twp Lower # 1,Middletown Twp Lower #1,1487,2337,63.63,Reported
+187,Middletown Twp Lower # 2,Middletown Twp Lower #2,1222,2000,61.10,Reported
+188,Middletown Twp Lower # 3,Middletown Twp Lower #3,637,994,64.08,Reported
+189,Middletown Twp Lower # 4,Middletown Twp Lower #4,611,931,65.63,Reported
+190,Middletown Twp Lower # 5,Middletown Twp Lower #5,643,934,68.84,Reported
+191,Middletown Twp Lower # 6,Middletown Twp Lower #6,707,1159,61.00,Reported
+192,Middletown Twp Lower # 7,Middletown Twp Lower #7,673,1189,56.60,Reported
+193,Middletown Twp Lower # 8,Middletown Twp Lower #8,782,1245,62.81,Reported
+194,Middletown Twp Lower # 9,Middletown Twp Lower #9,862,1488,57.93,Reported
+195,Middletown Twp Lower #10,Middletown Twp Lower #10,802,1208,66.39,Reported
+196,Middletown Twp Lower #11,Middletown Twp Lower #11,537,863,62.22,Reported
+197,Middletown Twp Lower #12,Middletown Twp Lower #12,439,612,71.73,Reported
+198,Middletown Twp Lower #13,Middletown Twp Lower #13,1707,3535,48.29,Reported
+199,Middletown Twp Upper #1,Middletown Twp Upper #1,1128,1819,62.01,Reported
+200,Middletown Twp Upper #2,Middletown Twp Upper #2,1133,1719,65.91,Reported
+201,Middletown Twp Upper #3,Middletown Twp Upper #3,1809,2706,66.85,Reported
+202,Middletown Twp Upper #4,Middletown Twp Upper #4,1140,1702,66.98,Reported
+203,Middletown Twp Upper #5,Middletown Twp Upper #5,1447,1986,72.86,Reported
+204,Middletown Twp Upper #6,Middletown Twp Upper #6,1131,1499,75.45,Reported
+205,Middletown Twp Upper #7,Middletown Twp Upper #7,1003,1404,71.44,Reported
+206,Middletown Twp Upper #8,Middletown Twp Upper #8,1125,1761,63.88,Reported
+207,Middletown Twp Upper #9,Middletown Twp Upper #9,1168,1472,79.35,Reported
+209,Milford Twp Roeder,Milford Twp Roeder,740,1087,68.08,Reported
+210,Milford Twp Roseville,Milford Twp Roseville,967,1432,67.53,Reported
+211,Milford Twp Shelly,Milford Twp Shelly,1430,2315,61.77,Reported
+212,Milford Twp Trumbauersville,Milford Twp Trumbauersville,1870,2915,64.15,Reported
+213,Morrisville Boro 1st,Morrisville Boro 1st,715,1401,51.03,Reported
+214,Morrisville Boro 2nd,Morrisville Boro 2nd,876,1668,52.52,Reported
+215,Morrisville Boro 3rd,Morrisville Boro 3rd,969,1574,61.56,Reported
+216,Morrisville Boro 4th,Morrisville Boro 4th,839,1699,49.38,Reported
+217,New Britain Boro,New Britain Boro,1293,1949,66.34,Reported
+218,New Britain Twp East,New Britain Twp East,1595,2335,68.31,Reported
+219,New Britain Twp West #1,New Britain Twp West #1,1182,1702,69.45,Reported
+220,New Britain Twp West #2,New Britain Twp West #2,1205,1769,68.12,Reported
+221,New Britain Twp South #1,New Britain Twp South #1,1531,2380,64.33,Reported
+222,New Britain Twp South #2,New Britain Twp South #2,1077,1578,68.25,Reported
+223,New Hope Boro,New Hope Boro,1531,2369,64.63,Reported
+224,Newtown Boro 1st,Newtown Boro 1st,688,990,69.49,Reported
+225,Newtown Boro 2nd,Newtown Boro 2nd,760,1096,69.34,Reported
+226,Newtown Twp #1,Newtown Twp #1,967,1450,66.69,Reported
+227,Newtown Twp #2,Newtown Twp #2,1321,2026,65.20,Reported
+228,Newtown Twp #3,Newtown Twp #3,1158,1643,70.48,Reported
+229,Newtown Twp #4,Newtown Twp #4,666,995,66.93,Reported
+230,Newtown Twp #5,Newtown Twp #5,1096,1670,65.63,Reported
+231,Newtown Twp #6,Newtown Twp #6,1732,2619,66.13,Reported
+232,Newtown Twp #7,Newtown Twp #7,1707,2412,70.77,Reported
+233,Newtown Twp #8,Newtown Twp #8,1909,2968,64.32,Reported
+234,Nockamixon Twp Nockamixon,Nockamixon Twp Nockamixon,915,1453,62.97,Reported
+235,Nockamixon Twp Revere,Nockamixon Twp Revere,803,1314,61.11,Reported
+236,Northampton Twp # 1,Northampton Twp #1,1432,2136,67.04,Reported
+237,Northampton Twp # 2,Northampton Twp #2,920,1326,69.38,Reported
+238,Northampton Twp # 3,Northampton Twp #3,842,1351,62.32,Reported
+239,Northampton Twp # 4,Northampton Twp #4,1445,2275,63.52,Reported
+240,Northampton Twp # 5,Northampton Twp #5,1317,1965,67.02,Reported
+241,Northampton Twp # 6,Northampton Twp #6,1369,2145,63.82,Reported
+242,Northampton Twp # 7,Northampton Twp #7,1121,1696,66.10,Reported
+243,Northampton Twp # 8,Northampton Twp #8,1099,1654,66.44,Reported
+244,Northampton Twp # 9,Northampton Twp #9,1210,1809,66.89,Reported
+245,Northampton Twp #10,Northampton Twp #10,927,1368,67.76,Reported
+246,Northampton Twp #11,Northampton Twp #11,1247,1769,70.49,Reported
+247,Northampton Twp #12,Northampton Twp #12,1082,1571,68.87,Reported
+248,Northampton Twp #13,Northampton Twp #13,1205,1801,66.91,Reported
+249,Northampton Twp #14,Northampton Twp #14,1671,2664,62.73,Reported
+250,Northampton Twp #15,Northampton Twp #15,1157,1681,68.83,Reported
+251,Northampton Twp #16,Northampton Twp #16,808,1273,63.47,Reported
+252,Northampton Twp #17,Northampton Twp #17,748,1078,69.39,Reported
+253,Northampton Twp #18,Northampton Twp #18,957,1522,62.88,Reported
+254,Penndel Boro,Penndel Boro,938,1682,55.77,Reported
+255,Perkasie Boro 1st,Perkasie Boro 1st,1427,2153,66.28,Reported
+256,Perkasie Boro 2nd,Perkasie Boro 2nd,1265,2009,62.97,Reported
+257,Perkasie Boro 3rd,Perkasie Boro 3rd,1855,2856,64.95,Reported
+258,Plumstead Twp #1,Plumstead Twp #1,1317,1920,68.59,Reported
+259,Plumstead Twp #2,Plumstead Twp #2,1479,2145,68.95,Reported
+260,Plumstead Twp #3,Plumstead Twp #3,1461,2258,64.70,Reported
+261,Plumstead Twp #4,Plumstead Twp #4,1762,2773,63.54,Reported
+262,Plumstead Twp #5,Plumstead Twp #5,1273,1987,64.07,Reported
+263,Quakertown Boro 1st-1st,Quakertown Boro 1st-1st,816,1485,54.95,Reported
+264,Quakertown Boro 1st-2nd,Quakertown Boro 1st-2nd,788,1293,60.94,Reported
+265,Quakertown Boro 2nd,Quakertown Boro 2nd,407,844,48.22,Reported
+266,Quakertown Boro 3rd,Quakertown Boro 3rd,910,1593,57.12,Reported
+267,Quakertown Boro 4th,Quakertown Boro 4th,577,1071,53.87,Reported
+268,Richland Twp #1,Richland Twp #1,2277,3848,59.17,Reported
+269,Richland Twp #2,Richland Twp #2,1247,2119,58.85,Reported
+270,Richland Twp #3,Richland Twp #3,1013,1738,58.29,Reported
+271,Richland Twp #4,Richland Twp #4,1477,2466,59.89,Reported
+272,Richlandtown Boro,Richlandtown Boro,502,863,58.17,Reported
+273,Rieglesville Boro,Riegelsville Boro,460,719,63.98,Reported
+274,Sellersville Boro 1st,Sellersville Boro 1st,736,1157,63.61,Reported
+275,Sellersville Boro 2nd,Sellersville Boro 2nd,331,500,66.20,Reported
+276,Sellersville Boro 3rd,Sellersville Boro 3rd,963,1600,60.19,Reported
+277,Silverdale Boro,Silverdale Boro,442,651,67.90,Reported
+278,Solebury Twp Lower 1,Solebury Twp Lower 1,1174,1701,69.02,Reported
+279,Solebury Twp Lower 2,Solebury Twp Lower 2,1103,1676,65.81,Reported
+280,Solebury Twp Middle,Solebury Twp Middle,1740,2504,69.49,Reported
+281,Solebury Twp Upper,Solebury Twp Upper,1446,2073,69.75,Reported
+282,Springfield Twp East,Springfield Twp East,947,1422,66.60,Reported
+283,Springfield Twp Middle,Springfield Twp Middle,942,1426,66.06,Reported
+284,Springfield Twp West,Springfield Twp West,867,1356,63.94,Reported
+285,Telford Boro,Telford Boro,1083,1678,64.54,Reported
+286,Tinicum Twp Delaware,Tinicum Twp Delaware,776,1122,69.16,Reported
+287,Tinicum Twp Tinicum,Tinicum Twp Tinicum,743,1113,66.76,Reported
+288,Tinicum Twp Tohickon,Tinicum Twp Tohickon,817,1156,70.67,Reported
+289,Trumbauersville Boro,Trumbauersville Boro,392,652,60.12,Reported
+290,Tullytown Boro,Tullytown Boro,850,1610,52.80,Reported
+291,Upper Makefield Twp #1,Upper Makefield Twp #1,988,1418,69.68,Reported
+292,Upper Makefield Twp #2,Upper Makefield Twp #2,1336,1957,68.27,Reported
+293,Upper Makefield Twp #3,Upper Makefield Twp #3,1408,2162,65.12,Reported
+294,Upper Makefield Twp #4,Upper Makefield Twp #4,1530,2196,69.67,Reported
+295,Upper Southampton Twp East #1,Upper Southampton Twp East #1,796,1222,65.14,Reported
+296,Upper Southampton Twp East #2,Upper Southampton Twp East #2,1166,1799,64.81,Reported
+297,Upper Southampton Twp North #1,Upper Southampton Twp North #1,413,683,60.47,Reported
+298,Upper Southampton Twp North #2,Upper Southampton Twp North #2,690,1039,66.41,Reported
+299,Upper Southampton Twp North #3,Upper Southampton Twp North #3,577,842,68.53,Reported
+300,Upper Southampton Twp North #4,Upper Southampton Twp North #4,587,937,62.65,Reported
+301,Upper Southampton Twp South #1,Upper Southampton Twp South #1,1153,1890,61.01,Reported
+302,Upper Southampton Twp South #2,Upper Southampton Twp South #2,751,1223,61.41,Reported
+303,Upper Southampton Twp West #1,Upper Southampton Twp West #1,704,1007,69.91,Reported
+304,Upper Southampton Twp West #2,Upper Southampton Twp West #2,747,1165,64.12,Reported
+305,Warminster Twp # 1,Warminster Twp #1,629,1020,61.67,Reported
+306,Warminster Twp # 2,Warminster Twp #2,548,1069,51.26,Reported
+307,Warminster Twp # 3,Warminster Twp #3,1230,2296,53.57,Reported
+308,Warminster Twp # 4,Warminster Twp #4,732,1149,63.71,Reported
+309,Warminster Twp # 5,Warminster Twp #5,801,1244,64.39,Reported
+310,Warminster Twp # 6,Warminster Twp #6,707,1180,59.92,Reported
+311,Warminster Twp # 7,Warminster Twp #7,985,1587,62.07,Reported
+312,Warminster Twp # 8,Warminster Twp #8,955,1452,65.77,Reported
+313,Warminster Twp # 9,Warminster Twp #9,994,1490,66.71,Reported
+314,Warminster Twp #10,Warminster Twp #10,1024,1600,64.00,Reported
+315,Warminster Twp #11,Warminster Twp #11,1240,2011,61.66,Reported
+316,Warminster Twp #12,Warminster Twp #12,1145,1556,73.59,Reported
+317,Warminster Twp #13,Warminster Twp #13,912,1530,59.61,Reported
+318,Warminster Twp #14,Warminster Twp #14,1973,2683,73.54,Reported
+319,Warminster Twp #15,Warminster Twp #15,610,907,67.25,Reported
+320,Warminster Twp #16,Warminster Twp #16,477,1026,46.49,Reported
+321,Warminster Twp #17,Warminster Twp #17,629,996,63.15,Reported
+322,Warrington Twp #1,Warrington Twp #1,1411,2129,66.28,Reported
+323,Warrington Twp #2,Warrington Twp #2,1927,2881,66.89,Reported
+324,Warrington Twp #3,Warrington Twp #3,966,1398,69.10,Reported
+325,Warrington Twp #4,Warrington Twp #4,1361,2180,62.43,Reported
+326,Warrington Twp #5,Warrington Twp #5,1671,2673,62.51,Reported
+328,Warrington Twp #6,Warrington Twp #6,1648,2654,62.09,Reported
+329,Warrington Twp #7,Warrington Twp #7,1952,2961,65.92,Reported
+330,Warrington Twp #8,Warrington Twp #8,1380,2163,63.80,Reported
+331,Warwick Twp #1,Warwick Twp #1,1287,1886,68.24,Reported
+332,Warwick Twp #2,Warwick Twp #2,2293,3338,68.69,Reported
+333,Warwick Twp #3,Warwick Twp #3,1442,2203,65.46,Reported
+334,Warwick Twp #4,Warwick Twp #4,1761,2564,68.68,Reported
+335,Warwick Twp #5,Warwick Twp #5,1035,1499,69.05,Reported
+336,West Rockhill Twp Argus,West Rockhill Twp Argus,869,1330,65.34,Reported
+337,West Rockhill Twp Rockhill,West Rockhill Twp Rockhill,1795,2701,66.46,Reported
+338,Wrightstown Twp,Wrightstown Twp,1837,2775,66.20,Reported
+339,Yardley Boro,Yardley Boro,1570,2278,68.92,Reported

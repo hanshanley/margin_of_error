@@ -1,0 +1,69 @@
+[
+  {
+    "file": "official-results-index.html",
+    "url": "https://buckscounty.gov/1206/Election-Results",
+    "final_url": "https://buckscounty.gov/1206/Election-Results",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 106857,
+    "sha256": "0da4d4c343e250fb3d12a2f4b2fcb3409089a091350aa9725e6e2dbd93e340df",
+    "retrieved_at_utc": "2026-11-05T18:46:26.915438+00:00"
+  },
+  {
+    "file": "native-results.redacted.html",
+    "url": "https://www.livevoterturnout.com/ENR/buckspaenr/24/en/cyu3o_Index_24.html",
+    "final_url": "https://www.livevoterturnout.com/ENR/buckspaenr/24/en/cyu3o_Index_24.html",
+    "status": 200,
+    "content_type": "text/html",
+    "bytes": 4416112,
+    "sha256": "76998d52adfc47b7281680ab7754230b4aff761d62a198d6ec6d95295f61ac34",
+    "retrieved_at_utc": "2026-11-05T18:46:27.121073+00:00",
+    "redaction": {
+      "kind": "map_service_access_tokens",
+      "replacements": 1,
+      "original_sha256": "8bd101acdc7f2d672ca945c7345f4272deb94d775f01127fa9c85ccce1e291a8",
+      "original_bytes": 4416170,
+      "complete_original_retained_privately": true
+    }
+  },
+  {
+    "file": "summary.csv",
+    "url": "https://www.livevoterturnout.com/ENR/buckspaenr/24/summary_24.csv",
+    "final_url": "https://www.livevoterturnout.com/ENR/buckspaenr/24/summary_24.csv",
+    "status": 200,
+    "content_type": "application/octet-stream",
+    "bytes": 4899,
+    "sha256": "1186461c12f25fe1ae5bf5f1601876e64531490f601b009a6d45e6882d942603",
+    "retrieved_at_utc": "2026-11-05T18:47:29.752107+00:00"
+  },
+  {
+    "file": "native-units.csv",
+    "url": "https://www.livevoterturnout.com/ENR/buckspaenr/24/precincts_24.csv",
+    "final_url": "https://www.livevoterturnout.com/ENR/buckspaenr/24/precincts_24.csv",
+    "status": 200,
+    "content_type": "application/octet-stream",
+    "bytes": 374101,
+    "sha256": "aebea46c1ab91894acec8cdb3b1dddb2db7fb3c8794157fc36af52c804bf52ae",
+    "retrieved_at_utc": "2026-11-05T18:47:29.903027+00:00"
+  },
+  {
+    "file": "contests.csv",
+    "url": "https://www.livevoterturnout.com/ENR/buckspaenr/24/contests_24.csv",
+    "final_url": "https://www.livevoterturnout.com/ENR/buckspaenr/24/contests_24.csv",
+    "status": 200,
+    "content_type": "application/octet-stream",
+    "bytes": 1044,
+    "sha256": "1f3a583f286f1d486e71ebca1f8ac4ca097951a8adcdb092885e8e04bca6d9e7",
+    "retrieved_at_utc": "2026-11-05T18:47:29.989846+00:00"
+  },
+  {
+    "file": "summary.pdf",
+    "url": "https://www.livevoterturnout.com/ENR/buckspaenr/24/summary_24.pdf",
+    "final_url": "https://www.livevoterturnout.com/ENR/buckspaenr/24/summary_24.pdf",
+    "status": 200,
+    "content_type": "application/pdf",
+    "bytes": 108822,
+    "sha256": "d887a33219f4cb30c8c724219dadd5ff24653c7b78a2f25a6cb634ac1d8f1c07",
+    "retrieved_at_utc": "2026-11-05T18:47:30.124203+00:00"
+  }
+]

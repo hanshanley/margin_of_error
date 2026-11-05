@@ -1,0 +1,25 @@
+{
+  "status": "map_service_token_only_explicitly_redacted",
+  "complete_original_retained_privately": true,
+  "original_html": {
+    "bytes": 4416170,
+    "sha256": "8bd101acdc7f2d672ca945c7345f4272deb94d775f01127fa9c85ccce1e291a8"
+  },
+  "published_snapshot": {
+    "bytes": 4416112,
+    "sha256": "76998d52adfc47b7281680ab7754230b4aff761d62a198d6ec6d95295f61ac34"
+  },
+  "token_occurrences_removed": 1,
+  "unaltered_originals": 5,
+  "unaltered_reviewed_tables": [
+    "county-candidate-mode-counts.csv",
+    "county-participation.csv",
+    "county-office-party-totals.csv",
+    "county-contest-totals.csv",
+    "county-candidate-results.csv",
+    "native-unit-candidate-counts.csv",
+    "native-unit-participation.csv"
+  ],
+  "no_push_protection_bypass": true,
+  "no_published_history_rewritten": true
+}

@@ -1,0 +1,23 @@
+{
+  "chosen_source": "Bucks County official index -> declared 2026 native report -> UI-declared complete CSV/PDF reports",
+  "report_download_script_receipt": {
+    "url": "https://www.livevoterturnout.com/ENR/shared/scripts/LiveResultsScripts_v4.2.js?v=20261104161509",
+    "final_url": "https://www.livevoterturnout.com/ENR/shared/scripts/LiveResultsScripts_v4.2.js?v=20261104161509",
+    "status": 200,
+    "content_type": "application/javascript",
+    "bytes": 70442,
+    "sha256": "7d03095ca0904a8c25c36d40298a8529f47e2494361b879c1fbee03f16c497fc",
+    "retrieved_at_utc": "2026-11-05T18:46:58.267275+00:00"
+  },
+  "blocked_other_county": {
+    "url": "https://results.enr.clarityelections.com/PA/Allegheny/127287/",
+    "final_url": "https://results.enr.clarityelections.com/PA/Allegheny/127287/",
+    "status": 403,
+    "content_type": "text/html",
+    "bytes": 919,
+    "sha256": "4a84573b3134a36bdc9032e05fc2af8c3f10480ec1333a415eea9ae8ef6cdd14",
+    "retrieved_at_utc": "2026-11-05T18:46:28.875233+00:00"
+  },
+  "blocked_counts_used": false,
+  "no_blocked_endpoint_retried": true
+}

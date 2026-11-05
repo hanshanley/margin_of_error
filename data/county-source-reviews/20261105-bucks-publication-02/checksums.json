@@ -1,0 +1,22 @@
+{
+  "focused-tests.json": {
+    "bytes": 252,
+    "sha256": "125b803b56024a0987176cdd0f22ac758a5e9453b3c64dc4ab57b95bc7da7f1e"
+  },
+  "independent-party-reconciliation.json": {
+    "bytes": 1733,
+    "sha256": "39dbed3dd7b5b4a19f09f2b8a8944db42e7356d918b7d87ad249c2331e54e574"
+  },
+  "redaction-and-data-preservation.json": {
+    "bytes": 806,
+    "sha256": "699b557d0e02cc373d7c63690b89dda377b5146085af4738af20d0c4cbc8005f"
+  },
+  "reproduction.json": {
+    "bytes": 3410,
+    "sha256": "fdb025003279d618a5f180f7a527facaa6c63842e193707366b7dd0697e0f3a3"
+  },
+  "source-discovery.json": {
+    "bytes": 1092,
+    "sha256": "b8badbb1d2103eedd856605b4a86c1165b350d47ebbdbd132462804a22450e1f"
+  }
+}
