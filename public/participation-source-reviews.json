@@ -1,6 +1,28 @@
 {
   "reviews": [
     {
+      "id": "pennsylvania-dauphin-20261105-01",
+      "label": "Dauphin County, Pennsylvania 2026: complete native candidate tables; turnout unavailable",
+      "data_directory": "data/county-source-reviews/20261105-dauphin-reviewed-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/171d62f4b5cb4ab776bc0ed504ce2f1d9d7047c8/data/county-source-reviews/20261105-dauphin-reviewed-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-dauphin-20261105-01/complete-dauphin-2026-county-results-01.zip",
+      "complete_download_bytes": 150018,
+      "complete_download_sha256": "fb82e0f1cc1a808623c4222ca186865376c9324ef562eb3b0fc62a12eb9b4d7d",
+      "review_status": "candidate_counts_reviewed_participation_unavailable",
+      "maps_approved": false,
+      "scope_note": "Dauphin County only, unofficial November 3, 2026 general election; native update November 3 at 10:41:50 PM, timezone unestablished. House candidate votes total 114,641: DEM 68,655, REP 45,507 and native NONPARTISAN write-in 479. All 23 county candidate lines across eight contests reconcile independently with 1,597 precinct and 460 municipality observations, retaining 128 and 39 explicit zeroes. These are parallel geographic tables, not voting methods, and are never added together. The 158 of 158 in-person reporting counter does not establish final counting. The detail says totals include all ballots counted; commented-out mail reporting is not an observed zero-mail count. Ballots, registrations, turnout, voting-method totals and a native congressional district number remain unavailable. Missing REP rows in HD104/HD105 stay absent, not manufactured zeroes. Complete screened HTML originals, receipts, portable code and all seven CSVs are included. No new map, demographic turnout, certification or statewide completion is approved; existing maps are unchanged.",
+      "tables": [
+        {"file": "county-candidate-results.csv", "label": "Dauphin County only: all 23 candidate/write-in lines across eight separate contests, preserving literal parties and absent-party rows (CSV)"},
+        {"file": "county-contest-party-totals.csv", "label": "Dauphin County only: all 23 separate contest/literal-party totals; NONPARTISAN write-ins are not independent candidates (CSV)"},
+        {"file": "county-contest-totals.csv", "label": "Dauphin County only: all eight candidate totals and distinct precinct/municipality coverage counts (CSV)"},
+        {"file": "county-participation.csv", "label": "Dauphin County only: separate candidate votes and explicitly unavailable ballots, registrations and turnout; no inferred rate (CSV)"},
+        {"file": "native-precinct-candidate-counts.csv", "label": "Dauphin County only: all 1,597 native precinct candidate observations and all 128 explicit zeroes, without new geometry (CSV)"},
+        {"file": "native-municipality-candidate-counts.csv", "label": "Dauphin County only: all 460 municipality candidate observations and all 39 explicit zeroes, separate from precinct counts (CSV)"},
+        {"file": "native-contest-reporting.csv", "label": "Dauphin County only: all eight native in-person reporting scopes, update timestamps and counting qualifications; method ballots remain missing (CSV)"}
+      ],
+      "coverage": []
+    },
+    {
       "id": "pennsylvania-lancaster-20261105-01",
       "label": "Lancaster County, Pennsylvania 2026: complete county returns and separate participation, provisional not reported",
       "data_directory": "data/county-source-reviews/20261105-lancaster-reviewed-01",

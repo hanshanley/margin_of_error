@@ -1,0 +1,18 @@
+{
+  "local-ui-verification.json": {
+    "bytes": 2220,
+    "sha256": "c593a402101a43677e0a28f04f2daf743d675249e1cf245522d6f53ae26d8bba"
+  },
+  "public-download-verification.json": {
+    "bytes": 3877,
+    "sha256": "7f767d49e9fd3c53835cab15176c889855d41fa7fb2a3200f91978c0160d4a8f"
+  },
+  "source-and-reproduction.json": {
+    "bytes": 478,
+    "sha256": "3de3bf5c09a09e26742a826ccefd354f96cb9639be4b31cf707be1fba0cbb772"
+  },
+  "source-screening.json": {
+    "bytes": 3975,
+    "sha256": "ecd608956772bb506ff192c46254bff1b77e618cd2e3c21ea81cf8a73aa560f0"
+  }
+}

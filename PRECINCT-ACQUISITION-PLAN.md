@@ -49,8 +49,8 @@ county/vendor keys. Historical cached commit views require GitHub Support
 follow-up; do not claim that a ref rewrite revoked credentials or erased caches.
 The owner/support handoff is saved with the audit; it is not a submitted ticket.
 
-**Next publication: Dauphin, reviewed but not yet UI live.** Nineteen full government HTML responses are
-retained privately with successful receipts: the index, eight contest summaries,
+**Next publication: Dauphin downloads published; UI verification pending.** Nineteen full government HTML responses are
+preserved in the reviewed public package with successful receipts: the index, eight contest summaries,
 the native precinct-progress list, eight precinct/municipality reports and the
 declared method-report parent. The House snapshot contains 114,641 candidate
 votes (DEM 68,655; REP 45,507; native NONPARTISAN write-in 479), not ballots or
@@ -65,7 +65,20 @@ is byte-identical; eight focused tests pass. The native mail-reporting zero is
 commented-out HTML, not observed mail ballots. Ballots, registrations, turnout
 and voting-method totals remain unavailable; absent REP rows in HD104/HD105
 remain absent. No new map, demographic turnout or certification is approved.
-Release and UI verification remain pending. See
+Data/tools commit `171d62f4b5cb4ab776bc0ed504ce2f1d9d7047c8` and immutable
+release `voter-county-pennsylvania-dauphin-20261105-01` are published. All eight
+public downloads (the complete ZIP and seven CSVs) are byte-identical to reviewed
+data, and the archive contains the same CSV bytes. Direct release creation
+returned HTTP500; explicit tag creation, a draft release, asset upload and
+publication through the update-release API succeeded without replacing assets.
+The registry change adds those eight downloads while preserving all 250
+existing links, with no map or coverage-ledger change. Type-check and build pass;
+Pages preparation verifies all 94 bulk downloads and produces 987,326,060 bytes,
+below the 1 GB limit. All four local desktop/mobile and JavaScript/no-JavaScript
+modes pass the exact 258-link set, all 52 UF rows, five historical years and
+255 historical scope cells. Unchanged map suites were not repeated.
+The exact deployment revision and four-mode production checks remain required
+before claiming the UI live. See
 `data/county-source-reviews/20261105-dauphin-reviewed-01/` and
 `data/county-source-reviews/20261105-dauphin-publication-01/`.
 Butler's actual index returned HTTP404; the response and receipt are

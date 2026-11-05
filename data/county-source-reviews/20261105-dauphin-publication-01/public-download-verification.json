@@ -1,0 +1,74 @@
+{
+  "data_commit": "171d62f4b5cb4ab776bc0ed504ce2f1d9d7047c8",
+  "release_id": 435873642,
+  "publication_method": "explicit tag, draft release creation, asset upload, release publication through PATCH; direct public creation returned HTTP500",
+  "verified_public_downloads": 8,
+  "archive_members": 30,
+  "archive_csvs_byte_identical_to_individual_downloads": true,
+  "downloads": [
+    {
+      "file": "complete-dauphin-2026-county-results-01.zip",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-dauphin-20261105-01/complete-dauphin-2026-county-results-01.zip",
+      "status": 200,
+      "bytes": 150018,
+      "sha256": "fb82e0f1cc1a808623c4222ca186865376c9324ef562eb3b0fc62a12eb9b4d7d",
+      "byte_identical_to_reviewed_data": true
+    },
+    {
+      "file": "county-candidate-results.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/171d62f4b5cb4ab776bc0ed504ce2f1d9d7047c8/data/county-source-reviews/20261105-dauphin-reviewed-01/county-candidate-results.csv",
+      "status": 200,
+      "bytes": 2520,
+      "sha256": "c8a9cfd6152301ba8c2948cfbdfbd52a538e697b7e8347ea370d987c45059977",
+      "byte_identical_to_reviewed_data": true
+    },
+    {
+      "file": "county-contest-party-totals.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/171d62f4b5cb4ab776bc0ed504ce2f1d9d7047c8/data/county-source-reviews/20261105-dauphin-reviewed-01/county-contest-party-totals.csv",
+      "status": 200,
+      "bytes": 2235,
+      "sha256": "9f6d9011bfd30936523d0ec633025706f04ea2ac65abda6aac709328103d8faa",
+      "byte_identical_to_reviewed_data": true
+    },
+    {
+      "file": "county-contest-totals.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/171d62f4b5cb4ab776bc0ed504ce2f1d9d7047c8/data/county-source-reviews/20261105-dauphin-reviewed-01/county-contest-totals.csv",
+      "status": 200,
+      "bytes": 872,
+      "sha256": "6e30480bc71e0b7249c604f95d818a40dc3a0f11bf9252e03c92d94535d6447a",
+      "byte_identical_to_reviewed_data": true
+    },
+    {
+      "file": "county-participation.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/171d62f4b5cb4ab776bc0ed504ce2f1d9d7047c8/data/county-source-reviews/20261105-dauphin-reviewed-01/county-participation.csv",
+      "status": 200,
+      "bytes": 237,
+      "sha256": "a7489dc2dedb8e639257e68b2ec3db788d9eeb8f33712a1e10cdcef37b37ef13",
+      "byte_identical_to_reviewed_data": true
+    },
+    {
+      "file": "native-precinct-candidate-counts.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/171d62f4b5cb4ab776bc0ed504ce2f1d9d7047c8/data/county-source-reviews/20261105-dauphin-reviewed-01/native-precinct-candidate-counts.csv",
+      "status": 200,
+      "bytes": 217810,
+      "sha256": "048285884a7bee1b77e434a4c59df45ed0dbed6c174d2acc99c52d6bafa4ef7c",
+      "byte_identical_to_reviewed_data": true
+    },
+    {
+      "file": "native-municipality-candidate-counts.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/171d62f4b5cb4ab776bc0ed504ce2f1d9d7047c8/data/county-source-reviews/20261105-dauphin-reviewed-01/native-municipality-candidate-counts.csv",
+      "status": 200,
+      "bytes": 60769,
+      "sha256": "a82d48869cc6e17db64bf8116e846424d6a278ba11c3c9db83923ae6a549e769",
+      "byte_identical_to_reviewed_data": true
+    },
+    {
+      "file": "native-contest-reporting.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/171d62f4b5cb4ab776bc0ed504ce2f1d9d7047c8/data/county-source-reviews/20261105-dauphin-reviewed-01/native-contest-reporting.csv",
+      "status": 200,
+      "bytes": 1983,
+      "sha256": "9954c77127d639e05f97368acb8208a28a96fc0a8a47a9258a2b8e912876740a",
+      "byte_identical_to_reviewed_data": true
+    }
+  ]
+}

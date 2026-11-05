@@ -1,0 +1,83 @@
+{
+  "type_check_errors": 0,
+  "type_check_warnings": 0,
+  "build": "passed",
+  "bulk_downloads_verified": 94,
+  "prepared_pages_bytes": 987326060,
+  "tables_only": true,
+  "exact_complete_downloads_in_each_of_four_modes": 258,
+  "previous_complete_downloads_retained": 250,
+  "new_public_downloads": 8,
+  "registry_sha256": "098d8d63f4b051c9f04319efa447c3cc68e227f80e71cc5185664930f5f8df15",
+  "modes": [
+    {
+      "mobile": false,
+      "javascript": true,
+      "complete_downloads": 258,
+      "uf_rows_source_matched": 52,
+      "county_candidate_ledger_rows": 4896,
+      "historical_house_years_source_matched": [
+        "2024",
+        "2022",
+        "2020",
+        "2018",
+        "2016"
+      ],
+      "historical_house_scope_cells": 255,
+      "overview_transport": "server response",
+      "map_checks": "not_repeated"
+    },
+    {
+      "mobile": false,
+      "javascript": false,
+      "complete_downloads": 258,
+      "uf_rows_source_matched": 52,
+      "county_candidate_ledger_rows": 4896,
+      "historical_house_years_source_matched": [
+        "2024",
+        "2022",
+        "2020",
+        "2018",
+        "2016"
+      ],
+      "historical_house_scope_cells": 255,
+      "map_checks": "not_repeated"
+    },
+    {
+      "mobile": true,
+      "javascript": true,
+      "complete_downloads": 258,
+      "uf_rows_source_matched": 52,
+      "county_candidate_ledger_rows": 4896,
+      "historical_house_years_source_matched": [
+        "2024",
+        "2022",
+        "2020",
+        "2018",
+        "2016"
+      ],
+      "historical_house_scope_cells": 255,
+      "overview_transport": "raw gzip",
+      "map_checks": "not_repeated"
+    },
+    {
+      "mobile": true,
+      "javascript": false,
+      "complete_downloads": 258,
+      "uf_rows_source_matched": 52,
+      "county_candidate_ledger_rows": 4896,
+      "historical_house_years_source_matched": [
+        "2024",
+        "2022",
+        "2020",
+        "2018",
+        "2016"
+      ],
+      "historical_house_scope_cells": 255,
+      "map_checks": "not_repeated"
+    }
+  ],
+  "maps_changed": false,
+  "coverage_ledgers_changed": false,
+  "unrelated_full_validator_failure_unchanged": "UK topic-card count: 23 actual versus 16 expected"
+}
