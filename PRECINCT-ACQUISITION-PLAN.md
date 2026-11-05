@@ -3974,11 +3974,66 @@ assertion. Subsequent Pages preparation verifies **94** byte-identical relocated
 files and **986,289,171 bytes**. Only AZ2026 `publication` and `notes` change in
 the **1,632-cell** ledger; statewide counts and every incomplete flag remain.
 
-**Current executable work:** commit/push this locally verified UI batch as Hans
-and finish its exact deployment/unqueried-source/browser proof before claiming
-the Pima downloads live. The Maricopa live flag in the batch records its already
-completed exact 20c6/42031647109 production proof, not a new unverified map.
-Continue Michigan source acquisition while that bounded deployment runs. Never
+**Pima publication is now production-verified.** Hans UI commit
+`354e26900b525164c207041c15299a5db3da5ffd` deployed successfully in exact Pages
+run **42035355674**. All five unqueried public metadata/renderer files match
+the committed bytes. Actual desktop/mobile by JavaScript/no-JavaScript checks
+retain **94 complete downloads**, including every older **90** link. Both
+265-record tables, the entire 799-row/379-column original and 126-member/
+125-checksum ZIP pass complete remote checks. County scope, missing geometry,
+2026 defaults, map health and no overflow pass; zero inferred rates or new
+map approvals. Proofs:
+`files/arizona-pima-ui-publication-proof-01.json` and
+`files/arizona-pima-ui-live-browser-proof-01.json`. Do not repeat this finished
+verification. The Maricopa live flag records its already completed exact
+20c6/42031647109 proof, not another unverified map.
+
+### Michigan 2026: native county acquisition and reconciliation underway
+
+The official state elections/results pages return actual **403** responses;
+the indexed Muskegon route returns **404**. Their original bodies and receipts
+are retained, without bypasses. Bay's official election-results index declares
+the November 3, 2026 general-election summary and precinct PDFs. Resolve its
+relative links against the actual HTML `base`, not the index path.
+Complete originals: **11 pages / 68,279 bytes** summary and **222 pages /
+818,675 bytes** precinct report. All **35** native statistics sections reconcile
+to **87,721 registrations**, **50,246 ballots**, **28,269 Election Day**,
+**17,349 Absentee Counting Board**, and **4,628 Early Voting**. All **35**
+U.S. Representative 8th District sections reconcile all six candidate/write-in
+vectors across all four columns to the independent summary: **49,556 votes**.
+The native reporting counter **43 of 43** remains a separate observation,
+not an invented count of geometric precincts or an explained discrepancy.
+The new coordinate-based Bay reviewer passes the entire 233 pages and six
+focused numeric-alignment/identity/reconciliation regressions. Its source-row
+IDs are explicitly extraction identities, not invented native precinct codes.
+
+Isabella's official general-election index explicitly declares the
+`2026NovemberGeneral` Enhanced Voting dashboard. Ordinary browser traffic
+provides the complete **329,254-byte** public election JSON: **28** UUID-keyed
+participation rows, **26,288 ballots**, **44,217 registrations**. Four literal
+neighboring-county names are explicitly **0 ballots / 0 registrations**; preserve
+them and their identities rather than treating them as positive Isabella units.
+The exact U.S. House contest is **Representative in Congress 2nd District**,
+with **25,762 candidate/write-in votes** across **24** native units, separate
+from ballots. The map is explicitly disabled and observed feature IDs are null.
+The native `voterTurnout` field is a count, not a percentage; empty root
+registration/statistics arrays are not zeros.
+
+All four exact report anchors have now been acquired completely: party-detail
+PDF **84,205 bytes**, contest-detail PDF **105,589 bytes**, summary PDF
+**86,773 bytes**, and all-results XLSX **718,003 bytes**. The workbook contains
+all four native sheets (summary, summary-by-group, precinct, precinct-by-group),
+with observed worksheet dimensions **450 / 1,348 / 5,514 / 16,540 rows** and
+78 columns including native blank formatting columns. No metadata-only exports.
+House breakdown acquisition and workbook/API reconciliation remain underway.
+Session originals, exact URLs/hashes and network receipts:
+`files/precinct-expansion-sources/MI-2026-official-01/`.
+No Michigan map, analysis rate, source package or UI registration is approved yet.
+
+**Current executable work:** finish Isabella's actual House precinct response,
+complete workbook/API/native-count reconciliation and focused reviewer tests,
+then archive-only rebuild, immutable Hans source commit/release and whole
+anonymous ZIP verification before scoped UI registration. Never
 replace existing source packages or rerun completed count/map suites instead of
 acquisition. Continue another 2026 jurisdiction during the bounded deployment;
 retain Pima's declared-map 404 as a bounded follow-up.
