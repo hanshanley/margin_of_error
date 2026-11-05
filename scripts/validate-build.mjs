@@ -239,15 +239,43 @@ const sourceReviews = await Promise.all((precinctResultsPointer.source_reviews ?
 	JSON.parse(await readFile(new URL(`../${path}`, import.meta.url), 'utf8'))));
 const participationReviews = JSON.parse(await text('participation-source-reviews.json')).reviews;
 const countyResultsPointer = JSON.parse(await text('county-results.json'));
+const countySnapshots = [countyResultsPointer, ...(countyResultsPointer.previous_snapshots ?? [])];
+const historicalHousePointer = JSON.parse(await text('historical-house-counties.json'));
+const historicalHouseSnapshots = [historicalHousePointer, ...(historicalHousePointer.previous_snapshots ?? [])];
+const ufPointer = JSON.parse(await text('uf-turnout.json'));
+const ufSnapshots = [ufPointer, ...(ufPointer.previous_snapshots ?? [])];
+for (const retiredArchive of [
+	'voter-county-official-pa-20261105-01/complete-county-results-pa-01.zip',
+	'voter-county-pennsylvania-bucks-20261105-01/complete-bucks-2026-county-results-02.zip',
+	'voter-county-pennsylvania-three-county-20261105-01/complete-pa-three-county-2026-04.zip',
+]) {
+	assert.ok(!participation('#downloads a[download]').toArray().some(element =>
+		participation(element).attr('href').endsWith(retiredArchive)),
+		`Withdrawn source archive is still linked: ${retiredArchive}`);
+}
 assert.equal(participation('#downloads a[download]').length,
-	18 + sourceReviews.reduce((count, review) =>
+	21 + sourceReviews.reduce((count, review) =>
 		count + 1 + (review.tables ?? []).length + (review.geometry_review ? 1 : 0), 0)
 	+ (precinctResultsPointer.source_batches ?? []).length
 	+ (precinctResultsPointer.additional_snapshots ?? []).reduce((count, snapshot) =>
 		count + 2 + (snapshot.participation_available !== false ? 1 : 0), 0)
 	+ 3 * (1 + (countyResultsPointer.previous_snapshots ?? []).length)
+	+ historicalHouseSnapshots.reduce((count, snapshot) => count + 1 + snapshot.tables.length, 0)
+	+ countySnapshots.reduce((count, snapshot) =>
+		count + (snapshot.party_votes ? 1 + snapshot.party_votes.tables.length : 0), 0)
+	+ 3 * ufSnapshots.length
 	+ participationReviews.reduce((count, review) => count + review.tables.length +
 		(sourceReviews.some(source => source.complete_download_url === review.complete_download_url) ? 0 : 1), 0));
+for (const snapshot of [
+	...historicalHouseSnapshots, ...countySnapshots.flatMap(snapshot =>
+		snapshot.party_votes ? [snapshot.party_votes] : []),
+]) {
+	for (const url of [snapshot.complete_download_url,
+		...snapshot.tables.map(table => snapshot.base_url + table.file)]) {
+		assert.ok(participation('#downloads a[download]').toArray().some(element =>
+			participation(element).attr('href') === url), `Missing complete county download: ${url}`);
+	}
+}
 for (const review of sourceReviews) {
 	const link = participation('#downloads a[download]').filter((_, element) =>
 		participation(element).attr('href') === review.complete_download_url);

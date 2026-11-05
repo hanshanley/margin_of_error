@@ -8,8 +8,14 @@ affected current Bucks, Chester and Franklin pages are now explicitly sanitized,
 with byte-original hashes retained privately. All 40 county parser/source tests
 and 10 official-merge guards pass; election counts and geometry are unchanged.
 The three affected complete ZIPs (Bucks, national county map, and unpublished
-three-county batch) were withdrawn. Sanitized replacement release and current
-download-link deployment are pending. Do not republish their old ZIPs or copy
+three-county batch) were withdrawn. Their replacements are published and
+downloaded-back byte-verified in immutable release
+`voter-county-source-redaction-20261105-01`, pinned to sanitized data commit
+`28cdb2c434e01ab2fe45696970e95b4454900a08`. That commit descends directly
+from the previous live main revision, not the exposed three-county commit.
+Current download-link deployment is pending; it replaces two unsafe ZIP URLs
+and repins seven byte-unchanged Bucks CSVs to the sanitized source revision,
+while retaining the other 216 complete download URLs. Do not republish old ZIPs or copy
 unsanitized snapshots. Both county reviewers now reject Google/Mapbox and
 telemetry key patterns in every HTML file, even with matching acquisition hashes.
 GitHub alerts #1/#2 remain open with unknown key validity: the keys appear
@@ -162,7 +168,8 @@ Data/tools commit `8293db8a8bda6ab561e139708495425fcea0c206` and immutable
 release `voter-county-pennsylvania-three-county-20261105-01` were published,
 but that release's complete ZIP has since been withdrawn for source-key
 remediation; its seven count-only CSV assets are unaffected. The sanitized
-replacement and UI deployment remain pending. No new map, demographic turnout, certification, or statewide
+replacement is now byte-verified in `voter-county-source-redaction-20261105-01`;
+its three-county UI integration remains pending. No new map, demographic turnout, certification, or statewide
 completeness is approved. Northampton's complete county-declared native HTML
 is also retained privately; its separate count/party review remains pending.
 

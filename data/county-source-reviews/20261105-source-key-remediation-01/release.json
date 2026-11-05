@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "release": "voter-county-source-redaction-20261105-01",
+  "data_commit": "28cdb2c434e01ab2fe45696970e95b4454900a08",
+  "assets": [
+    {
+      "file": "complete-bucks-2026-county-results-03.zip",
+      "bytes": 369141,
+      "sha256": "1d9e592d44acd2ae294e6ed11153110d802b4f3131021b0d0b2af599a7f2b175",
+      "public_bytes_verified": true
+    },
+    {
+      "file": "complete-county-results-pa-sanitized-01.zip",
+      "bytes": 136064334,
+      "sha256": "d44c95ca7c2216990c262e979608aed561653f4d120504c475cf998ab4255dd7",
+      "public_bytes_verified": true
+    },
+    {
+      "file": "complete-pa-three-county-2026-05.zip",
+      "bytes": 512444,
+      "sha256": "b1eaa050626fb402e7ea2850db579a53a6e8f3c3c2e27bdf9485cfd044a5faa9",
+      "public_bytes_verified": true
+    }
+  ],
+  "all_three_public_archives_byte_identical": true
+}
