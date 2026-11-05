@@ -7,6 +7,7 @@ import hashlib
 import io
 import json
 from pathlib import Path
+import zipfile
 
 import requests
 from playwright.sync_api import expect, sync_playwright
@@ -34,9 +35,12 @@ source_reviews = [json.loads((root / path).read_text()) for path in source_regis
 source_links.update(review["complete_download_url"] for review in source_reviews)
 source_links.update(review["base_url"] + table["file"]
                     for review in source_reviews for table in review.get("tables", []))
+source_links.update(review["geometry_review"]["complete_download_url"]
+                    for review in source_reviews if review.get("geometry_review"))
 expected_links = baseline | new_links | source_links
 assert len(baseline) == 61 and len(new_links) == 4 and not baseline & new_links
-proof = dict(base_url=base, source_matched=True, full_csv_endpoints=[], modes=[])
+proof = dict(base_url=base, source_matched=True, full_csv_endpoints=[],
+             full_geometry_archives=[], modes=[])
 
 for name in ["participation-source-reviews.json", "precinct-results.json", "county-results.json",
              "precinct-coverage.csv", "scripts/participation-explorer.js"]:
@@ -60,6 +64,25 @@ for review in registry["reviews"]:
             sha256=hashlib.sha256(response.content).hexdigest()))
 
 for review in source_reviews:
+    if review.get("geometry_review"):
+        geometry = review["geometry_review"]
+        response = requests.get(geometry["complete_download_url"], timeout=120)
+        response.raise_for_status()
+        assert not geometry["maps_approved"]
+        assert len(response.content) == geometry["complete_download_bytes"]
+        assert hashlib.sha256(response.content).hexdigest() == geometry["complete_download_sha256"]
+        directory = root / geometry["data_directory"]
+        with zipfile.ZipFile(io.BytesIO(response.content)) as archive:
+            assert archive.testzip() is None
+            expected_members = {str(path.relative_to(directory))
+                                for path in directory.rglob("*") if path.is_file()}
+            assert set(archive.namelist()) == expected_members
+            for name in expected_members:
+                assert archive.read(name) == (directory / name).read_bytes()
+        proof["full_geometry_archives"].append(dict(
+            source_commit=geometry["source_commit"], bytes=len(response.content),
+            sha256=hashlib.sha256(response.content).hexdigest(),
+            exact_members=len(expected_members), maps_approved=False))
     tables = {table["file"]: table for table in review.get("tables", [])}
     if review.get("count_csv"):
         tables[review["count_csv"]] = dict(file=review["count_csv"], rows=review["reporting_units"])

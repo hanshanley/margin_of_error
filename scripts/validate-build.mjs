@@ -240,7 +240,8 @@ const sourceReviews = await Promise.all((precinctResultsPointer.source_reviews ?
 const participationReviews = JSON.parse(await text('participation-source-reviews.json')).reviews;
 const countyResultsPointer = JSON.parse(await text('county-results.json'));
 assert.equal(participation('#downloads a[download]').length,
-	18 + sourceReviews.reduce((count, review) => count + 1 + (review.tables ?? []).length, 0)
+	18 + sourceReviews.reduce((count, review) =>
+		count + 1 + (review.tables ?? []).length + (review.geometry_review ? 1 : 0), 0)
 	+ (precinctResultsPointer.source_batches ?? []).length
 	+ (precinctResultsPointer.additional_snapshots ?? []).reduce((count, snapshot) =>
 		count + 2 + (snapshot.participation_available !== false ? 1 : 0), 0)
@@ -251,6 +252,12 @@ for (const review of sourceReviews) {
 		participation(element).attr('href') === review.complete_download_url);
 	assert.equal(link.length, 1, `Missing complete source-review download: ${review.complete_download_url}`);
 	assert.match(link.text(), new RegExp(`${review.year} ${review.state_code} source review`));
+	if (review.geometry_review) {
+		const geometryLink = participation('#downloads a[download]').filter((_, element) =>
+			participation(element).attr('href') === review.geometry_review.complete_download_url);
+		assert.equal(geometryLink.length, 1, 'Missing complete reference geometry download');
+		assert.equal(geometryLink.text(), review.geometry_review.label);
+	}
 	for (const table of review.tables ?? []) {
 		const tableLink = participation('#downloads a[download]').filter((_, element) =>
 			participation(element).attr('href') === review.base_url + table.file);

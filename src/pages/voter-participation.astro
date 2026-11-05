@@ -555,9 +555,11 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 					<a href={`${precinctResultsPointer.base_url}checksums.json`}>Precinct candidate-result and original-source checksums (JSON)</a>
 				</>}
 				{precinctSourceReviews.map((review: { year: number; state_code: string; county_name?: string; municipality?: string; office?: string;
+					geometry_review?: { complete_download_url: string; label: string };
 					complete_download_url: string; base_url?: string; tables?: { file: string; label: string }[] }) => <>
 					<a href={review.complete_download_url} download>{review.year} {review.state_code} source review: {review.municipality ? `${review.municipality} city only; ` : review.county_name ? `${review.county_name} County only; ` : ''}{review.office ? `${review.office}; ` : ''}complete counts and original sources; mapped geometry withheld in this review (ZIP)</a>
 					{review.tables?.map(table => <a href={`${review.base_url}${table.file}`} download>{table.label}</a>)}
+					{review.geometry_review && <a href={review.geometry_review.complete_download_url} download>{review.geometry_review.label}</a>}
 				</>)}
 				{precinctSourceBatches.map((batch: { label: string; base_url: string; complete_download_url: string }) => <>
 					<a href={batch.complete_download_url} download>{batch.label}: complete original election files and source documentation; scope and geometry review pending (ZIP)</a>

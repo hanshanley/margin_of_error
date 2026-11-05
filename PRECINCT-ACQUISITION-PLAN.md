@@ -3651,10 +3651,37 @@ Complete ZIP: **27,742,134 bytes**, SHA-256
 `fcac6aa268e557ab8264e0bf167b5a9e1947821fc8e2525b4e7acca81e1e8e3f`.
 Proof: `files/arkansas-reference-geometry-package-proof-01.json`.
 
+Hans source commit **`2913de35ea2cfb028579d559342ecaacd33f8c9d`** is pushed.
+Immutable release **`voter-precinct-arkansas-reference-geometry-20261105`** pins
+that exact commit. The whole anonymous remote archive passes byte equality,
+all 29 checksums, all 23 original receipts, exact members and CRC.
+Remote proof: `files/arkansas-reference-geometry-remote-release-proof-01.json`.
+This is complete reference data, not additional approved precinct-map coverage.
+The released source package and native count package remain immutable.
+
+The public count-review registration now also declares this independent complete
+reference ZIP without changing its existing count-source URL or tables.
+Only AR2026 changes in the 1,632-cell worklist; all cells remain incomplete.
+The additional download explicitly withholds election-day certification and map
+joins. No map source registry, renderer, color, zoom, default year or analysis
+rate changes. Local build and five coverage tests pass; Astro check reports
+zero errors and zero warnings. Pages verifies all 94 relocated downloads and
+prepares a **986,276,515-byte** site. Participation build assertions pass before
+the known unrelated UK homepage topic-card mismatch (23 actual versus 16
+expected); do not change unrelated UK content or its assertion.
+All **19** focused reference/coverage cases pass. Actual local desktop/mobile
+by JavaScript/no-JavaScript checks pass **82 complete downloads**, retaining
+all **81** earlier links, and **13 entire CSV endpoints**. The new reference
+ZIP is also fully redownloaded through its registered link and matches every
+one of its **30 archive members** byte-for-byte, including all original pages
+and diagnostics. No overflow; 2026 remains the default.
+Proof: `files/arkansas-reference-geometry-ui-local-browser-proof-01.json`.
+Commit/push and exact live UI publication verification are next.
+
 **Next executable actions:** Alabama's exact live verification is complete;
-do not repeat its successful matrix. Commit/push the verified Arkansas reference package as Hans and
-publish its own complete immutable release; verify the entire anonymous
-download. Then obtain explicit county crosswalk/election-applicability evidence
+do not repeat its successful matrix. The new Arkansas complete-reference
+download integration's source-matched browser checks pass; commit/push as Hans and
+verify that exact live deployment. Then obtain explicit county crosswalk/election-applicability evidence
 and review source-declared label formats without fuzzy matching. Alabama's
 native county-name/FIPS correspondence is another bounded map-enabling task;
 never pad its non-FIPS native codes. Keep new map joins and analysis rates

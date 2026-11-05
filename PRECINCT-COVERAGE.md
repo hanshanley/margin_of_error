@@ -29,7 +29,7 @@ Checkmarks are reserved for verified, complete live coverage.
 |---|---|---|---|---|---|---|---|
 | [ ] | Alaska | acquired_reconciled | correct_election_reference_acquired_review_pending | withheld | counts_passed_map_withheld | full_counts_download_only | acquired_reporting_unit_counts_rates_withheld |
 | [ ] | Alabama | acquired_reconciled_native_county_counts | not_acquired_for_native_count_review | withheld_native_county_codes_are_not_fips | native_workbook_county_state_summaries_passed | full_counts_download_only | native_county_ballots_registration_and_reported_percentages_analysis_rates_withheld |
-| [ ] | Arkansas | acquired_reconciled_native_precinct_counts | official_portal_reference_acquired_review_pending | withheld_pending_county_qualified_geometry_review | native_json_csv_and_independent_api_counts_passed | full_counts_download_only | native_precinct_ballot_counts_acquired_rates_withheld |
+| [ ] | Arkansas | acquired_reconciled_native_precinct_counts | complete_official_reference_acquired_reviewed_withheld | withheld_unconfirmed_identifier_namespaces_and_geometry_defects | native_json_csv_and_independent_api_counts_passed | full_counts_download_only | native_precinct_ballot_counts_acquired_rates_withheld |
 | [ ] | Arizona | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | California | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Colorado | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
