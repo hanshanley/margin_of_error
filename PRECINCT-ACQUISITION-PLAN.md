@@ -2803,6 +2803,64 @@ historical acquisition. Keep candidate geography, demographic coverage and
 final-turnout approval withheld for this limited review, with all prior
 complete downloads and all 1,632 incomplete precinct cells preserved.
 
+### Wyoming 2026 / 2022 complete official originals
+
+Acquired all advertised general-election originals from the Secretary of State's
+`2026GeneralResults.aspx` and `2022GeneralResults.aspx` indexes: **108 complete
+HTTP bodies, 20,023,241 original bytes**, including **105 PDFs / 1,154 pages**,
+both HTML indexes and the native 2022 ZIP with all three Excel workbooks.
+Both years include separate candidate and ballot reports for **all 23 counties**,
+plus statewide summaries. No 2026 native workbook ZIP was advertised.
+
+The immutable acquisition is
+`data/precinct-source-acquisitions/20261105/WY-2026-2022/`. Reproduce offline with
+its included `archive-wyoming-election-sources.py`, exact original receipts and
+visual identity reviews. The complete archive is
+`complete-wyoming-2026-2022-official-originals-01.zip`,
+**14,727,543 bytes**, SHA-256
+`39f78671041966c0939ce4bce439916aa04368ba413d58615e086f9e314e0d2c`.
+All original bytes, receipts, internal checksums and ZIP CRC pass. A
+network-disabled archive-only rebuild is byte-identical:
+`files/wyoming-2026-2022-official-package-proof-01.json`.
+Nine focused source-inventory, election-date and visual-proof regressions pass.
+
+Thirteen 2026 PDFs use glyph-encoded Type3 fonts with unreadable extracted
+dates. Directly rendered and reviewed every affected original first-page header;
+all explicitly say **November 3, 2026**. Each review is bound to the exact PDF
+SHA-256 and cannot approve changed bytes or another election. This establishes
+document identity, **not recovered numeric tables**. Park's native headers say
+Official while their red banners and the source index say Unofficial; retain
+both statements instead of silently choosing one. Individually dated original
+captures are not a simultaneous, reconciled statewide result snapshot.
+
+The independent 2022 workbook diagnostic now compares all **3,073 House
+category cells and 439 separate precinct ballot counts across all 23 counties**
+to the previously acquired CSV. All counts match; all candidate county and
+statewide vectors reconcile. Thirty-five CSV precinct labels are serialized
+Excel dates. Their actual native `mm-dd` / `m-d` display formats recover explicit
+labels that match the separate ballot workbook; preserve this source-bound
+crosswalk, not fuzzy names or date strings as geographic identifiers. The four
+literal page-continuation markers have no counts and are explicitly excluded.
+Native Selvig `(C)` and CSV `CTRY` party labels remain distinct.
+
+The native Natrona precinct ballot rows sum to **22,955** and agree with the
+statewide county value, but its county workbook and PDF print **22,957** as the
+county total. Retain the two-ballot printed-total conflict without changing any
+original or assigning two ballots to a precinct. Statewide native precinct
+ballots total **198,198**; five candidate/write-in categories total **193,902**,
+with overvotes and undervotes separate. Candidate counts are not turnout.
+The diagnostic proof and full 35-label crosswalk are
+`files/wyoming-2022-independent-native-reconciliation-proof-01.json`; ballot
+approval and all maps remain withheld.
+
+**Next executable actions:** publish and fully redownload the immutable
+108-original archive, then add its pinned source batch and complete download
+without promoting a map or complete state/year. Persist the 2022 native
+reconciliation as a reusable tested reviewer with complete normalized tables
+and explicit Natrona conflict. Reconcile 2026 native numeric reports without
+using corrupted glyph text; acquire actual-election county or precinct
+geometry before mapping. Do not infer registrations or turnout rates.
+
 ## Resume procedure for every work session or scheduled prompt
 
 1. Read `AGENTS.md`, `CLAUDE.md`, `PUBLISHING.md`, this plan, and the newest rows

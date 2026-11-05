@@ -51,6 +51,64 @@ wa_maps = module("build-washington-precinct-results")
 house_county_sources = module("acquire-house-county-results")
 house_county_review = module("review-house-county-results")
 me_pa_participation = module("review-maine-pennsylvania-participation")
+wy_originals = module("archive-wyoming-election-sources")
+
+
+@pytest.mark.parametrize("failure", [None, "missing_county", "wrong_year"])
+def test_wyoming_original_inventory_requires_all_county_results_and_ballot_sources(failure):
+    year = 2026
+    names = [f"{year}_{county.replace(' ', '_')}_County_General_PbP{suffix}.pdf"
+             for county in wy_originals.COUNTIES for suffix in ("", "_TBC")]
+    names += [f"{year}_General_Statewide_{kind}_Summary.pdf"
+              for kind in ("Candidates", "Total_Ballots_Cast")]
+    if failure == "missing_county":
+        names.pop(0)
+    prefix = f"/Elections/Docs/{2022 if failure == 'wrong_year' else year}/Results/General/"
+    raw = "".join(f'<a href="{prefix}{name}">Original</a>' for name in names).encode()
+    raw += b'<a href="/Elections/Docs/2026/2026_Election_Calendar.pdf">Calendar</a>'
+    if failure:
+        with pytest.raises(ValueError, match="county/precinct/ballot"):
+            wy_originals.advertised_files(raw, year)
+    else:
+        result = wy_originals.advertised_files(raw, year)
+        assert len(result) == 48 and all("Calendar" not in url for url in result)
+
+
+@pytest.mark.parametrize("failure", [None, "wrong_year", "truncated"])
+def test_wyoming_original_pdf_requires_complete_native_election_identity(failure):
+    with wy_originals.fitz.open() as document:
+        page = document.new_page()
+        page.insert_text((30, 50), "Wyoming General Election - November "
+                         + ("8, 2022" if failure == "wrong_year" else "3, 2026"))
+        raw = document.tobytes()
+    if failure == "truncated":
+        raw = raw[:-10]
+    if failure:
+        with pytest.raises(ValueError):
+            wy_originals.document_inventory(raw, "results.pdf", 2026)
+    else:
+        assert wy_originals.document_inventory(raw, "results.pdf", 2026)["pdf_pages"] == 1
+
+
+@pytest.mark.parametrize("failure", [None, "changed_source", "wrong_date"])
+def test_wyoming_visual_identity_is_bound_to_exact_reviewed_bytes_and_election(failure):
+    with wy_originals.fitz.open() as document:
+        page = document.new_page()
+        page.insert_text((30, 50), "Unreadable source date requires a separate direct visual review")
+        raw = document.tobytes()
+    identity = dict(year=2026, method="direct_rendered_header_review",
+                    source_sha256=hashlib.sha256(raw).hexdigest(),
+                    literal_election_date="November 3, 2026")
+    if failure == "changed_source":
+        identity["source_sha256"] = "0" * 64
+    if failure == "wrong_date":
+        identity["literal_election_date"] = "November 8, 2022"
+    if failure:
+        with pytest.raises(ValueError, match="exact visual source review"):
+            wy_originals.document_inventory(raw, "native.pdf", 2026, identity)
+    else:
+        assert wy_originals.document_inventory(raw, "native.pdf", 2026, identity)[
+            "election_date_verification"] == "direct_rendered_header_review"
 
 
 @pytest.mark.parametrize("failure", [None, "missing", "inconsistent", "duplicate"])

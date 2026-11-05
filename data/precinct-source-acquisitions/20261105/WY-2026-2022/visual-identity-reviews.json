@@ -1,0 +1,80 @@
+{
+  "2026_Converse_County_General_PbP.pdf": {
+    "year": 2026,
+    "source_sha256": "afc68bb8515c0dd645bfca53816f6e373336618bb4d53219d4a76458e3a268db",
+    "literal_election_date": "November 3, 2026",
+    "method": "direct_rendered_header_review"
+  },
+  "2026_Converse_County_General_PbP_TBC.pdf": {
+    "year": 2026,
+    "source_sha256": "89be8e3549588d274af4d14ef009d13280332084cb1dde89c005cc5143aa741a",
+    "literal_election_date": "November 3, 2026",
+    "method": "direct_rendered_header_review"
+  },
+  "2026_General_Statewide_Ballot_Proposition_Summary.pdf": {
+    "year": 2026,
+    "source_sha256": "825103775a76e7ede2d21185b9e9b5b2f44edad22ab1c65c7b02b0205ac985f6",
+    "literal_election_date": "November 3, 2026",
+    "method": "direct_rendered_header_review"
+  },
+  "2026_General_Statewide_Candidates_Summary.pdf": {
+    "year": 2026,
+    "source_sha256": "9bad3830a8413db6a375e8e2a072dfd7aa946b437fc8c91176c3c557faf51b41",
+    "literal_election_date": "November 3, 2026",
+    "method": "direct_rendered_header_review"
+  },
+  "2026_General_Statewide_House_Candidates_Summary.pdf": {
+    "year": 2026,
+    "source_sha256": "b1b57c01ea2f3bbaf24b168733dffc3b640c60ff4b8066dbf8fc21ee583b85f2",
+    "literal_election_date": "November 3, 2026",
+    "method": "direct_rendered_header_review"
+  },
+  "2026_General_Statewide_Judicial_Summary.pdf": {
+    "year": 2026,
+    "source_sha256": "2a7561c3fc8cb2bfb1ac950af7663b9b50d91df1eca5dbd1c209565bbe19977d",
+    "literal_election_date": "November 3, 2026",
+    "method": "direct_rendered_header_review"
+  },
+  "2026_General_Statewide_Senate_Candidates_Summary.pdf": {
+    "year": 2026,
+    "source_sha256": "920f99f4a00e65e09e18bf8aae03e05f03e5fe3acff5398bfb60a5337a50673b",
+    "literal_election_date": "November 3, 2026",
+    "method": "direct_rendered_header_review"
+  },
+  "2026_General_Statewide_Total_Ballots_Cast_Summary.pdf": {
+    "year": 2026,
+    "source_sha256": "523709262a0568935fffb44ea40d47bca6d0d717d92eb5dbfe87d64b6c368c36",
+    "literal_election_date": "November 3, 2026",
+    "method": "direct_rendered_header_review"
+  },
+  "2026_Laramie_County_General_PbP.pdf": {
+    "year": 2026,
+    "source_sha256": "11a859989ab4a33b49557fe3dada94ccfd15ecfba1cbab6dd0491aaa08722be6",
+    "literal_election_date": "November 3, 2026",
+    "method": "direct_rendered_header_review"
+  },
+  "2026_Lincoln_County_General_PbP.pdf": {
+    "year": 2026,
+    "source_sha256": "9187d578d67cbfbcad92eaf0378903846547f975ecb63f9eaf4eb19247de7dc9",
+    "literal_election_date": "November 3, 2026",
+    "method": "direct_rendered_header_review"
+  },
+  "2026_Lincoln_County_General_PbP_TBC.pdf": {
+    "year": 2026,
+    "source_sha256": "55d8b1ae07141fcaf226721f649530b308251d49dcfce46a4e739457fda5da22",
+    "literal_election_date": "November 3, 2026",
+    "method": "direct_rendered_header_review"
+  },
+  "2026_Park_County_General_PbP.pdf": {
+    "year": 2026,
+    "source_sha256": "c216fad96e4d727315904ed4bc6ba5abddffcde73abfc9f26258a1af8bd3c205",
+    "literal_election_date": "November 3, 2026",
+    "method": "direct_rendered_header_review"
+  },
+  "2026_Park_County_General_PbP_TBC.pdf": {
+    "year": 2026,
+    "source_sha256": "03697c1256b5c8e64f171b8e191e1020e1c910d8a31b467fef0647bad861dac9",
+    "literal_election_date": "November 3, 2026",
+    "method": "direct_rendered_header_review"
+  }
+}
