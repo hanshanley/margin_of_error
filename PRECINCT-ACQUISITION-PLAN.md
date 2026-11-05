@@ -2491,7 +2491,7 @@ King identities and Jefferson/Walla Walla accounting independently. Native
 participation denominators remain a separate review; no final or demographic
 turnout is inferred.
 
-### County package: 47 states reconciled, local UI verification passed
+### County package: 47 states reconciled and live-verified
 
 Canonical parser/builder: `scripts/review-house-county-results.py`.
 Every accepted native county or explicit overseas row carries exactly the
@@ -2586,13 +2586,58 @@ The full county source package is not duplicated into the Pages artifact.
 The general participation checker now accounts for count-only supplements
 and verified 2026 county results instead of expecting absent county layers.
 
-**Next executable actions:** publish this locally verified UI batch as Hans,
-verify the deployment for its exact head and run the county checker against
-unqueried production. Only then change the county registry's
-`snapshot_ready` flag. Continue Illinois/Maine/Pennsylvania source alternatives,
-remaining 2026 precinct scopes, then the historical queue. The precinct
-worklist remains **1,632 incomplete cells**; county coverage is not precinct
-completion, and this UI is not live-verified yet.
+UI commit **`30e68d213c0567a015e8613424a9883a747690ed`** was committed and
+pushed as Hans. Its exact Pages run **`41998429544`** succeeded.
+The county checker passed against **unqueried production**, source-matching
+the registry, renderer and worklist before testing every actual county fill,
+counts/margins, precinct priority, zoom/wheel/real touch pinch, historical
+isolation, all 58 complete download links with all 55 prior links retained,
+desktop/mobile, JavaScript/no-JavaScript and failed-county-fetch fallbacks.
+Proofs: `files/national-2026-county-ui-deployment.json` and
+`files/national-2026-county-live-browser-proof.json`.
+The county registry can now be marked **`live_verified_partial`**.
+
+**Next executable actions:** persist the live flag and independently acquired
+official follow-up originals as Hans; verify the exact status/source-only
+deployment and unqueried registry/renderer/download bytes without repeating
+the unchanged 47-state browser matrix. Continue Illinois/Maine/Pennsylvania
+source alternatives, remaining 2026 precinct scopes, then the historical queue.
+The precinct worklist remains **1,632 incomplete cells**; county coverage is
+not precinct completion.
+
+### Maine / Pennsylvania official follow-up originals acquired during deployment
+
+New complete source package:
+`data/official-election-sources/20261105-maine-pennsylvania-01/`.
+Its `complete-originals.tar.gz` contains **18 full HTTP responses / 16 PDFs /
+92 PDF pages**, all source receipts, complete native indexes, extracted text,
+acquisition inventory and portable acquisition/packaging tools. Archive:
+**4,625,081 bytes**, SHA-256
+`a76cd018b725f5ce2e533e3eeb09bc688d36ba0b5ac74083c9e55e98c6a47e34`.
+Independent receipt/checksum verification and an **archive-only, offline,
+byte-identical rebuild of all three package files** passed:
+`files/official-county-followups-offline-proof-01.json`.
+
+Lewiston's official index declares 14 complete PDFs for all 13 even years
+**2002–2026**, including the separate 2026 declared-write-in report.
+These are **city-only originals**, not statewide Maine or completed precinct
+maps. Direct HTTP returned 404, but ordinary browser navigation and its normal
+request context returned the actual index/PDF bytes with HTTP 200; no challenge
+was solved or bypassed. All original native legacy HTTP document links and
+resolved URLs remain in their receipts. The 2026 general report retains seven
+wards and separate `C-V` central voting; its write-in report labels a separate
+column `Absentees`. Do not assume those modes are interchangeable or allocate
+central returns among wards. Raw text extraction concatenates some numeric
+columns, so use PDF coordinates and original tables before normalizing counts.
+
+Pennsylvania's official current-data index declares two complete 2026 PDFs:
+the eight-page supplemental ballot-counting report and the two-page 12:01 mail
+ballot receipt report. These provide administrative mail returns and precinct
+reporting, **not House candidate votes, final turnout or precinct voter counts**.
+They do not repair the 17 test-flagged candidate APIs or justify a red/blue
+county layer. Next: reconcile actual county rows and report timestamps,
+preserve incomplete/administrative reporting scope, and normalize source-defined
+participation independently of the still-withheld candidate results.
 
 ## Resume procedure for every work session or scheduled prompt
 
