@@ -148,7 +148,7 @@ Checkmarks are reserved for verified, complete live coverage.
 | [ ] | Delaware | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Florida | acquired_originals_review_pending | not_reviewed | pending | source_bytes_verified_scope_pending | full_originals_download_only | not_acquired |
 | [ ] | Georgia | acquired_originals_review_pending | not_reviewed | pending | source_bytes_verified_scope_pending | full_originals_download_only | not_acquired |
-| [ ] | Hawaii | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Hawaii | acquired_originals_review_pending | not_reviewed | pending | complete_source_bytes_and_native_record_structure_verified | full_originals_download_only | not_acquired |
 | [ ] | Iowa | acquired_originals_review_pending | not_reviewed | pending | source_bytes_verified_scope_pending | full_originals_download_only | not_acquired |
 | [ ] | Idaho | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Illinois | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
@@ -260,7 +260,7 @@ Checkmarks are reserved for verified, complete live coverage.
 | [ ] | Delaware | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Florida | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Georgia | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Hawaii | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Hawaii | acquired_originals_review_pending | not_reviewed | pending | complete_source_bytes_and_native_record_structure_verified | full_originals_download_only | not_acquired |
 | [ ] | Iowa | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Idaho | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Illinois | source_identified | not_reviewed | pending | pending | not_published | not_acquired |

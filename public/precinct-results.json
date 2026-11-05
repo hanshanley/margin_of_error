@@ -61,6 +61,13 @@
     "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-sources-2022-20261105/complete-2022-precinct-source-batch.zip",
     "complete_download_bytes": 22214839,
     "complete_download_sha256": "3525bd75010236853748ed04edc0545c1a24834a0a0c9deb411d8c11885494d1"
+  }, {
+    "label": "Hawaii 2024, 2022, 2020 and 2018 official election originals",
+    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/e9607606c1b52ec93ae266ff69f563bb3c57fad5/data/precinct-source-acquisitions/20261105/HI-historical/",
+    "data_directory": "data/precinct-source-acquisitions/20261105/HI-historical",
+    "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-hawaii-historical-20261105/complete-hawaii-historical-originals.zip",
+    "complete_download_bytes": 38713054,
+    "complete_download_sha256": "9a0ce9f92d742d7bf8da230ca061bb6c86d603afff80ba746709110ccbc1ede1"
   }],
   "source_reviews": [
     "data/precinct-source-reviews/20261105/DE/audit.json",

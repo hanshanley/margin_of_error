@@ -246,6 +246,17 @@ for (const path of precinctResultsPointer.source_reviews ?? []) {
 	assert.equal(link.length, 1, `Missing complete source-review download: ${path}`);
 	assert.match(link.text(), new RegExp(`${review.year} ${review.state_code} source review`));
 }
+for (const batch of precinctResultsPointer.source_batches ?? []) {
+	const link = participation('#downloads a[download]').filter((_, element) =>
+		participation(element).attr('href') === batch.complete_download_url);
+	assert.equal(link.length, 1, `Missing complete original-source download: ${batch.label}`);
+	assert.ok(link.text().includes(batch.label));
+	assert.match(link.text(), /scope and geometry review pending/);
+	for (const file of ['acquisition.json', 'checksums.json']) {
+		assert.equal(participation('#downloads a').filter((_, element) =>
+			participation(element).attr('href') === `${batch.base_url}${file}`).length, 1);
+	}
+}
 assert.equal(participation('#type').length, 0);
 for (const id of ['map-color', 'map-level', 'method-group', 'method-history-mode']) {
 	assert.equal(participation(`#${id}`).length, 1);

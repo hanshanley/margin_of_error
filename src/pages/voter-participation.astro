@@ -501,8 +501,8 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 				{precinctSourceReviews.map((review: { year: number; state_code: string; complete_download_url: string }) =>
 					<a href={review.complete_download_url} download>{review.year} {review.state_code} source review: complete counts and original sources; mapped geometry withheld in this review (ZIP)</a>)}
 				{precinctSourceBatches.map((batch: { label: string; base_url: string; complete_download_url: string }) => <>
-					<a href={batch.complete_download_url} download>{batch.label}: complete original precinct CSVs and source documentation; scope and geometry review pending (ZIP)</a>
-					<a href={`${batch.base_url}acquisition.json`}>{batch.label}: file provenance and row-count audit (JSON)</a>
+					<a href={batch.complete_download_url} download>{batch.label}: complete original election files and source documentation; scope and geometry review pending (ZIP)</a>
+					<a href={`${batch.base_url}acquisition.json`}>{batch.label}: file provenance and source-structure audit (JSON)</a>
 					<a href={`${batch.base_url}checksums.json`}>{batch.label}: source checksums (JSON)</a>
 				</>)}
 				{additionalPrecinctSnapshots.map((snapshot: { label: string; base_url: string; complete_download_url: string;

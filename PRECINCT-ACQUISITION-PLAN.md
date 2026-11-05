@@ -914,7 +914,14 @@ assertion**, `scripts/validate-build.mjs`: it expects 16 but the current
 unchanged UK export has 23. The committed baseline contains the same UK
 assertion; no UK source was modified. Do not report the site-wide
 validator as passing or modify unrelated UK work to conceal the failure.
-Exact deployment/live verification is still pending.
+Exact count-publication commit
+`6b6945b976efcebabf64b39cf1a90119108df365` was pushed as Hans
+(author and committer) and Pages run **41967250527 succeeded**.
+Production proof `files/hi-2026-live-browser-validation.json` passes
+all the same exact registry/ledger/renderer, 38-download, desktop/mobile
+JS/no-JS, source-matched Hawaii fallback, zoom and failed-registry-fetch
+checks. The 496-unit Hawaii count review is **live as a full download**;
+precinct geometry and rates remain withheld.
 
 The advertised official GIS follow-up page is
 `https://elections.hawaii.gov/resources/maps/geographic-information-systems-gis-files/`.
@@ -982,11 +989,45 @@ The historical collector tests cover both UTF-16 variants, quoted multiline
 records, omitted trailing header fields, historical voting-mode columns
 and rejection of truncated/ragged records.
 
-Release and site registration of this historical batch are pending.
+Immutable source commit `e9607606c1b52ec93ae266ff69f563bb3c57fad5`
+is published as tag/release `voter-precinct-hawaii-historical-20261105`.
+Full remote redownload verifies the exact tag target, asset size/SHA-256,
+all 42 members and CRCs byte-for-byte; proof:
+`files/hi-historical-release-verification.json`.
+Complete archive:
+`https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-hawaii-historical-20261105/complete-hawaii-historical-originals.zip`.
+All **184 collector tests** pass, including the multiyear ledger regression.
+The source batch is registered locally, with **39** complete-download
+links. All 184 collector tests, seven participation Node tests, four
+build-time caucus checks and Astro check/build pass (zero errors/warnings,
+five existing hints). The Pages preparer verifies all 94 complete
+relocated assets and a **986,205,318-byte** artifact. Local desktop/mobile
+JS/no-JS checks pass all 39 links, the four-year archive's exact URL and
+review-pending label, full registry/ledger/renderer bytes, 2026 default,
+Hawaii state red/blue fallback, zoom and failed-registry-fetch fallback;
+proof: `files/hi-historical-local-browser-validation.json`. New build
+assertions check every source-batch download, provenance/checksum link
+and review-pending scope. At its required **pre-relocation build stage**,
+the whole-site validator passes these assertions and again stops only
+at the unchanged UK **23 vs. 16** card-count assertion. Exact historical
+registration deployment/live proof remains pending. Generic download
+labels accurately include PDF/text originals, not only CSVs. No map
+renderer or pinned research export changed.
 The multiyear source-batch ledger path preserves each actual election,
 does not claim reconciled votes/turnout and does not override an existing
 independently validated partial map with unreviewed official originals.
-Next: finish the immutable release and full-download registration, then
+The official 2024 reference is also now completely acquired in session
+`files/precinct-expansion-sources/HI-2024/boundary-reference/`:
+**250** full native-coordinate polygons, exact advertised layer and
+object-ID responses, and the complete original one-page metadata PDF.
+All object IDs match with no pagination omission. The PDF explicitly
+describes **May 2024** boundaries made for online voter registration and
+aligned with the Esri Streets basemap. Its native spatial reference is
+102202 / latest 3750. This acquisition is **not part of the 39-original
+historical release**, not yet geometry/overlap/ballot-scope reviewed,
+not joined, not published and not established for 2026.
+
+Next: finish the full-download registration's exact live proof, then
 review each year independently and acquire its correct-year references. Continue
 newest-first acquisition and distinguish acquired originals from reviewed
 candidate totals, validated geometry and live maps. Hawaii is **not
