@@ -80,6 +80,13 @@
     "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-hawaii-historical-20261105/complete-hawaii-historical-originals.zip",
     "complete_download_bytes": 38713054,
     "complete_download_sha256": "9a0ce9f92d742d7bf8da230ca061bb6c86d603afff80ba746709110ccbc1ede1"
+  }, {
+    "label": "Connecticut 2026, 2024, 2022, 2020, 2018 and 2016 official election originals",
+    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9ca28444bf05924da3aa4d10234280da48de46df/data/precinct-source-acquisitions/20261105/CT-2016-2026-02/",
+    "data_directory": "data/precinct-source-acquisitions/20261105/CT-2016-2026-02",
+    "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-connecticut-originals-20261105/complete-connecticut-2016-2026-originals.zip",
+    "complete_download_bytes": 3434133,
+    "complete_download_sha256": "bf1756dd874eda8809339b7daccc41a8bbb70955475a8535d868e24854d2f439"
   }],
   "source_reviews": [
     "data/precinct-source-reviews/20261105/DE/audit.json",

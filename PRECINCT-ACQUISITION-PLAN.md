@@ -1234,6 +1234,11 @@ withheld-rate and failed-fetch check:
 `files/ri-2026-map-02-live-browser-validation.json`. Only after that proof,
 the registry marks RI **live-verified partial** and the regenerated ledger
 records partial publication. RI and nationwide coverage are not complete.
+The live-status follow-up **`0a581da4faa433918b86f2160c0977040df66504`**
+also deployed successfully in exact run **41971899185**. Its exact production
+registry/ledger bytes and unchanged renderer pass
+`files/ri-2026-map-02-exact-status-live-proof.json`; the completed map
+interaction suite was not unnecessarily repeated.
 
 Next: continue remaining newest state/year cells. Connecticut 2026 has
 actual full public EMS originals and the supported complete voting-district
@@ -1305,9 +1310,49 @@ The coverage builder now carries an explicit source batch's pending
 participation status instead of calling acquired-but-unreconciled originals
 not acquired. Stronger existing published participation (including NC) is
 preserved. These six captures remain **originals-review-pending**, not
-reconciled counts, validated maps or rates. Release upload/full remote-byte
-verification and download registration are next; do not mark the archive
-live before those checks.
+reconciled counts, validated maps or rates.
+
+Hans data commit **`9ca28444bf05924da3aa4d10234280da48de46df`** is available
+at immutable tag **`voter-precinct-connecticut-originals-20261105`**.
+The full remote archive redownload passes exact tag target, asset size,
+SHA-256, all 118 members/CRCs/local bytes and all 115 original receipts:
+`files/ct-2016-2026-remote-byte-verification.json` and
+`files/ct-2016-2026-remote/remote-tag-and-asset.json`.
+Only after that proof was it added as a third source batch, increasing
+the server-rendered complete-data downloads from 43 to **44**.
+Local publication passes Astro check, seven participation tests, the production
+build and four build-time caucus checks. The whole build validator still stops
+only at the unchanged unrelated UK assertion (line 1077, 23 cards versus 16),
+before relocation. The Pages preparer verifies all **94** relocated originals;
+the site is **986,214,134 bytes**. Bounded desktop/mobile with and without
+JavaScript passes all 44 full downloads, the exact new ZIP and provenance
+links, all 1,632 ledger cells, unchanged renderer, 2026 default and CT state
+result fallback without invented precincts or rates:
+`files/ct-2016-2026-local-browser-proof.json`.
+Exact deployment and production proof are next. Do not mark this archive
+live or claim any new CT result map/rate yet.
+
+Independent 2026 identity follow-up exercised the application's actual
+`pollingplaces: "<native ID>("` export filter, preserving the request
+payload and response receipts in
+`files/precinct-expansion-sources/CT-2026-scoped-native-ids/`.
+Hartford ID **3331** returns **76 bytes / header only**, not explicit zero
+votes. ID **3739** returns **623 bytes / six rows**, four House rows:
+680 Democratic, 17 Republican, 11 Green, zero write-in. Non-House offices
+still leak through the nominal congressional filter. These captures do
+**not** resolve the full report's two nonzero same-label groups: do not
+assign the leftover group to 3331 by elimination. Continue supported
+single-town voting-district exports and native office/polling relationships;
+retain all captured originals in the next count-review package.
+Public ArcGIS discovery is also captured in
+`files/precinct-expansion-sources/CT-2026-reference-discovery/`.
+The first query returns seven leads, including Enfield and Plainville
+municipal services, not verified statewide 2026 precinct geometry.
+Check official service provenance, declared vintage, literal IDs and full
+town sets before using any shape. UF/VEST has explicit 2016/2018 reconstructed
+reference candidates; their 2020-Census-based shapes have documented
+election-year corrections, not authority to map 2026. They remain leads,
+not acquired maps.
 
 ## Resume procedure for every work session or scheduled prompt
 
