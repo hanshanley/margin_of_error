@@ -32,6 +32,119 @@ vt_maps = module("build-vermont-precinct-results")
 id_review = module("review-idaho-precinct-results")
 id_maps = module("build-idaho-precinct-results")
 sd_review = module("review-south-dakota-precinct-results")
+ak_review = module("review-alaska-precinct-results")
+
+
+def alaska_fixture():
+    names = ["R Candidate (REP)", "D Candidate (DEM)", "Other Candidate (NON)"]
+    raw, geographic = [], []
+    totals = [0, 0, 0]
+    for sequence, identifier, label in [
+        ("1", "01-100", "01-100 First"), ("2", "01-200", "01-200 Second"),
+        ("3", "99-999", "HD99 Fed Overseas Absentee"),
+        ("4", "1-1", "District 1 - Absentee"), ("5", "", "District 1 - Early Voting"),
+        ("6", "", "District 1  - Question"),
+    ]:
+        votes = [20, 10, 5]
+        registration = 100 if int(sequence) <= 3 else 0
+        for index, (name, party) in enumerate([("R Candidate", "REP"), ("D Candidate", "DEM"),
+                                             ("Other Candidate", "NON")]):
+            totals[index] += votes[index]
+            row = dict(Pct_seq_nbr=sequence, Pct_Id=identifier, Precinct_name=label,
+                Contest_title=ak_review.OFFICE, Contest_Id="8", candidate_id=str(index),
+                candidate_name=name, Party_Code=party, Selectable_Options="1",
+                Reg_voters=str(registration), total_ballots="40", total_votes=str(votes[index]),
+                total_under_votes="4", total_over_votes="1")
+            row.update({mode + "_votes": str(votes[index] if mode == "Election Day" else 0)
+                        for mode in ak_review.MODES})
+            raw.append(row)
+        if int(sequence) <= 2:
+            geographic.append(dict(number=identifier, name=label.split(" ", 1)[1],
+                contests=[dict(n=0, b=40, v=100, t=35, c=[
+                    dict(n=i, t=votes[i]) for i in [2, 0, 1]])]))
+    data = dict(name="Alaska 2026 General Election", certified=False, updated="11/04/2026 2:11 PM",
+        format="2024", contestNames=[ak_review.OFFICE], candidateNames=names,
+        totals=[dict(n=0, b=240, v=300, t=210, p=3, r=2,
+                     c=[dict(n=i, t=v) for i, v in enumerate(totals)])],
+        precincts=geographic, districts=[dict(number="1")])
+    state = json.loads(json.dumps(data))
+    state.pop("precincts")
+    return raw, state, data, [dict(number=r["number"], coords=[]) for r in geographic]
+
+
+def test_alaska_preserves_pooled_and_federal_units_without_allocating_or_inferring_rates():
+    rows, statistics, audit = ak_review.review(*alaska_fixture())
+    assert len(rows) == len(statistics) == 6 and len({r["key"] for r in rows}) == 6
+    assert sum(r["democratic_votes"] for r in rows) == 60
+    assert sum(r["other_votes"] for r in rows) == 30
+    assert audit["geographic_precincts"] == 2 and audit["pooled_reporting_units"] == 3
+    assert sum(r["ballots"] for r in statistics) == 240
+    assert all(r["reported_pct"] is None for r in statistics)
+    assert rows[-1]["source_precinct_id"] == rows[-2]["source_precinct_id"] == ""
+    assert rows[-1]["key"] != rows[-2]["key"]
+    assert rows[2]["reporting_unit_kind"] == "federal_overseas"
+    assert "pooled_district_ballots_not_allocated_to_residential_precincts" in statistics[0]["quality_flags"]
+
+
+def test_alaska_retains_ballot_balance_discrepancies_without_repairing_counts():
+    raw, state, data, shapes = alaska_fixture()
+    for row in raw[:3]:
+        row["total_under_votes"] = "3"
+    rows, statistics, audit = ak_review.review(raw, state, data, shapes)
+    assert rows[0]["contest_votes"] == 35 and statistics[0]["ballots"] == 40
+    assert statistics[0]["source_under_votes"] == 3 and statistics[0]["reported_pct"] is None
+    assert audit["quality_flag_counts"]["candidate_votes_plus_source_under_over_disagree_with_ballots"] == 1
+
+
+@pytest.mark.parametrize("problem", [
+    "wrong_election", "wrong_format", "mixed_snapshot", "unknown_party", "duplicate_candidate",
+    "missing_count", "repeated_ballots", "candidate_mode_sum", "native_geographic_count",
+    "literal_precinct_name", "unknown_pooled_label", "duplicate_pooled", "missing_pooled",
+    "missing_shape", "duplicate_shape", "statewide_count", "statewide_ballots",
+])
+def test_alaska_rejects_mixed_incomplete_or_ambiguous_originals(problem):
+    raw, state, data, shapes = alaska_fixture()
+    if problem == "wrong_election":
+        data["name"] = state["name"] = "Alaska 2024 General Election"
+    elif problem == "wrong_format":
+        data["format"] = state["format"] = "2022"
+    elif problem == "mixed_snapshot":
+        data["updated"] = "different snapshot"
+    elif problem == "unknown_party":
+        raw[0]["Party_Code"] = "Unverified Party"
+    elif problem == "duplicate_candidate":
+        raw[1]["candidate_id"] = raw[0]["candidate_id"]
+    elif problem == "missing_count":
+        raw[0]["total_votes"] = ""
+    elif problem == "repeated_ballots":
+        raw[0]["total_ballots"] = "41"
+    elif problem == "candidate_mode_sum":
+        raw[0]["Absentee_votes"] = "1"
+    elif problem == "native_geographic_count":
+        data["precincts"][0]["contests"][0]["v"] += 1
+    elif problem == "literal_precinct_name":
+        for row in raw[:3]:
+            row["Precinct_name"] = "01-100 Similar But Unverified"
+    elif problem == "unknown_pooled_label":
+        for row in raw[-3:]:
+            row["Precinct_name"] = "Unknown nonresidential unit"
+    elif problem == "duplicate_pooled":
+        for row in raw[-3:]:
+            row["Precinct_name"] = "District 1 - Absentee"
+    elif problem == "missing_pooled":
+        raw = raw[:-3]
+    elif problem == "missing_shape":
+        shapes.pop()
+    elif problem == "duplicate_shape":
+        shapes.append(shapes[0])
+    elif problem == "statewide_count":
+        for source in (data, state):
+            source["totals"][0]["c"][0]["t"] += 1
+            source["totals"][0]["t"] += 1
+    else:
+        data["totals"][0]["b"] = state["totals"][0]["b"] = 241
+    with pytest.raises(ValueError):
+        ak_review.review(raw, state, data, shapes)
 
 
 def south_dakota_fixture():

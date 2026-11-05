@@ -606,6 +606,80 @@ scope, inspect all polygon parts/overlaps, and test conservative joins.
 Continue other counties without assigning vote-center returns to residential
 precincts or pairing Oglala Lakota duplicates by row order.
 
+The complete Sioux Falls city PDF is also acquired, explicitly dated
+**March 13, 2026**. Its native table uses `01-04`, `01-05`, etc., providing
+actual official formatting evidence between GIS `1-4` and source
+`Precinct-0104`, not just equal row counts. The all-feature native-ring
+diagnostic found no unrepaired invalid originals and one area-preserving
+self-intersection repair, but **20 cross-precinct overlap pairs** exceed the
+established `1e-10`-square-degree tolerance. Their largest area is
+`4.6514208271236006e-08` square degrees. Do not waive that tolerance, silently
+assign overlaps, or declare the county joined. `VP-06` must remain a single
+reporting unit after dissolving its two source parts. The exact diagnostic
+is retained alongside the complete originals; no SD mapped supplement exists.
+
+## Alaska 2026 complete count review
+
+The official homepage advertises the actual general-election page
+`https://www.elections.alaska.gov/enr/26GENR/`. The superficially plausible
+`/enr26/` page does not establish this election's identity and is not the
+accepted source. The actual page's normal public data requests identify
+**Alaska 2026 General Election**, unofficial, updated **November 4, 2026,
+2:11 PM** in the source's displayed time. Schema `format="2024"` describes
+its statistics format, not a 2024 election. Exact data paths advertised by
+the application are `results/statewide.js`, `results/precincts.js`,
+`shapes/districts.js` and `shapes/precincts.js`; those `.js` responses are
+native JSON, not frontend code.
+
+All **six complete native originals, 9,825,641 uncompressed bytes**, are
+acquired: both result JSON responses, both shape responses, the full
+**20,046-row all-contest CSV** and complete summary PDF. Full CSV/PDF URLs
+come from the election response's advertised `precinctReportUrl` and
+`summaryReportUrl`, not guessed filenames. Cache:
+session `files/precinct-expansion-sources/AK-2026/`. Do not repeat this
+completed download or distribute the cached HTML/frontend JavaScript.
+
+Reproduce the immutable review at
+`data/precinct-source-reviews/20261105/AK/` with
+`scripts/review-alaska-precinct-results.py`; **146 collector tests pass**.
+All **523 House reporting units** reconcile by literal candidate name and
+party to both statewide native totals. All **402 geographic precincts**
+also match their exact native IDs, names, candidate counts, ballots and
+registrations. Preserve **120 pooled district units** (40 each for absentee,
+early voting and question ballots) and **one federal overseas unit** rather
+than allocating them into geographic precincts. Blank native IDs remain
+separately identified by their actual source sequence and physical CSV rows.
+The source reports 400/403 precincts, where 403 includes the federal unit;
+this is not certified, complete geographic all-ballot reporting.
+
+Totals: **15,550 Democratic**, **105,647 Republican**, **91,812 other**:
+**213,009 candidate votes**, separately **215,906 ballots** and **605,433
+source registrations**. Other candidates remain individually preserved;
+do not relabel Bill Hill's `NON` votes Democratic. The original source has
+**221** candidate-plus-under/overvote versus ballot discrepancies. Preserve
+them, do not manufacture write-in counts or "correct" ballots. All **523
+rates are withheld**: geographic units omit separately pooled ballot modes;
+pooled/federal reporting units are not residential precincts. These are
+unofficial reported candidate counts, not a final ranked-choice outcome
+or demographic participation.
+
+Independent checks pass for every original/output checksum, every candidate
+and ballot/registration observation, all flags, 523 unique identities and
+ZIP CRCs/exact members/bytes. All review files reproduce byte-for-byte using
+only the six distributed originals and their receipts. Complete archive:
+`complete-alaska-2026-source-review.zip`, **1,213,200 bytes**, SHA-256
+`a38164a74cb3d433587891fdf243484f273a88f27f8439ceeeeb9da9c6772b3a`.
+Release and website registration are still pending; do not claim this
+download live yet.
+
+The **402 unique native shape IDs** exactly match the geographic result
+set, but this alone is not a validated map. The original map format has
+delta-encoded paths grouped by polygon. Independently validate decoding,
+ring roles, antimeridian handling, topology and actual 2026 reference scope
+before a new immutable mapped supplement. Retain all 121 nongeographic
+units without inventing residential locations or distributing district votes.
+Other original contests remain available but have not yet been reviewed.
+
 ## Resume procedure for every work session or scheduled prompt
 
 1. Read `AGENTS.md`, `CLAUDE.md`, `PUBLISHING.md`, this plan, and the newest rows
