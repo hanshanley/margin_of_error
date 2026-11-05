@@ -3,9 +3,17 @@
     "bytes": 422,
     "sha256": "a2aa014386b4fbd7dcd1d96137a04f34dfb50afc70f57453402b63ac2d4b2194"
   },
+  "deployment.json": {
+    "bytes": 4982,
+    "sha256": "9df3a4be6bed99091a27a706f8d5c6609f57ea362dd427ecc1a29db9504619ed"
+  },
   "local-browser.json": {
     "bytes": 27894,
     "sha256": "c727d1b15e972366f58638c9e9a4b1a73ed71ac474ad5e0d0fee2bd20a72d61c"
+  },
+  "production-browser.json": {
+    "bytes": 27905,
+    "sha256": "d4acbf3e1a602a2c5c56ad42a6e11b7f38d50749f610b739f0ae3e203ae757e8"
   },
   "release-verification.json": {
     "bytes": 5585,

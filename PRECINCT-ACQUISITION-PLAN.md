@@ -152,7 +152,7 @@ Exact Pages run `42067422722` for UI commit
 confirms all 145 complete download URLs, both historical years, 102 scope cells,
 all 52 UF rows and unchanged source bytes in all four display modes.
 
-The 2020 extension is released and locally integrated, pending its exact deployment.
+The 2020 extension is released, integrated and production-verified.
 It adds 10,974 reviewed candidate/party rows in 2,773 counties across 45 states;
 23 raw rows from six additional flagged counties are withheld, not lost.
 The three-year scope contains 32,445 source rows, 32,370 reviewed rows,
@@ -184,9 +184,15 @@ participation tests, build and four caucus tests passed. The prepared site is
 987,238,926 bytes after verification of all 94 relocated downloads.
 The source renderer/maps are unchanged and were not redundantly retested.
 
-Next: push the reviewed three-year UI to main, then verify its exact production
-deployment and persist its focused live proof. Do not start a new main push
-before saving that result. Keep the two-year immutable download links.
+UI commit `7f3afe35af3d9ab0d8c2003b62d4b9b145619e69` is live: exact Pages run
+`42072656065` succeeded. Production proof
+`data/county-source-reviews/20261105-historical-house-02/production-browser.json`
+confirms all three year rows, all 153 scope cells, all 158 complete download
+URLs (retaining every previous 145), all 52 UF rows and unchanged source
+pointers/renderer bytes in four display modes. Deployment and aggregate proofs
+are saved beside it. Keep the two-year immutable download links.
+
+Next:
 Continue 2018/2016 source-specific quality review next: their unresolved
 party labels, Missouri noncounty buckets and Texas source undercoverage need
 separate handling rather than a blanket extrapolation from the two newest years.
