@@ -63,7 +63,15 @@ commit `a5baf7cc829cedc6d379e83ae577ed61b2370731` and immutable release
 `voter-county-house-history-20261105-04` are published; all 15 assets were
 downloaded back and byte-verified, including the 1,346,170-byte complete ZIP.
 The UI build, Astro check, seven participation tests and four included caucus
-tests pass. Exact UI deployment and production table proof remain pending.
+tests pass. Exact UI commit `a1b9e4f343af11c1a7352ea33637e5aa20c18351`
+passed Pages run `42102383243`. The four-mode production table suite passed
+all five years, 255 state/year scope cells, 225 complete-download links retaining
+all previous 212, all 52 source-matched UF rows and the separate 4,896-cell
+county candidate ledger. Public pointer/registry/renderer bytes match the
+reviewed sources. The unchanged map suite was deliberately not repeated.
+Deployment, production browser proof and final evidence checksums are saved
+alongside the source/reproduction/release/local UI proofs. The five-year
+download batch is live verified, not nationwide historical completion.
 
 A fresh Maine alternative-source probe retained both complete Bangor Daily News
 2026 House API responses, explicitly without demo parameters and with native
@@ -94,6 +102,26 @@ The active 15-minute continuation prompt is now schedule **#5**, replacing
 stale schedule #4. It follows current plan statuses, skips already-verified
 coloring and unchanged map suites, and prioritizes these genuine 2026 gaps
 before older historical expansion.
+
+A consolidated Pennsylvania source directory now supplies exact result links
+for all 67 counties, each independently matched to its official 2026 Census
+identity. The county-owned Allegheny and Delaware pages independently declare
+their directory links; both result landings return HTTP 403, with full bodies
+retained rather than bypassed. The complete embedded factual snapshot is also
+retained privately: 240 separate races, including 17 House districts with
+417 compiler candidate slots in 73 fragments across 57 counties. All its
+internal county sums reconcile, but independent anchors expose a material
+limitation: Bucks and Monroe match, while all 711 Montgomery House write-ins
+are omitted despite exact agreement on both major-party counts. Compiler party
+labels also differ from the native literals. Do not replace the approved
+Montgomery vector, infer explicit native zeroes from compiler zeroes, promote
+the Philadelphia test source, or treat 66 governor counties as 66 House counties.
+The full 67-county discovery queue and fail-closed review are under
+`data/county-source-reviews/20261105-pa-county-source-directory-01/`; originals
+and the complete factual snapshot remain in persistent session artifacts.
+Next, follow these actual links for complete primary report exports, retaining
+write-ins separately where vendor CSV/JSON omits printed PDF lines. The live
+Pennsylvania map remains three counties, not all 67.
 
 The reusable 2026 county-results and separate UF/state participation pipelines
 are implemented and published. Both passed real acquisition and original-backed

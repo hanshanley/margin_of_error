@@ -1,0 +1,30 @@
+{
+  "deployment.json": {
+    "bytes": 7402,
+    "sha256": "3d12177c1ccd7b4977d7bc15af0ad9c77eca0e8e00ab5635084d3a192d7c6f8a"
+  },
+  "local-browser.json": {
+    "bytes": 39397,
+    "sha256": "97b5526b0e22e5255907457aac29ef884905336f1c45cdb6b758b8815c508e48"
+  },
+  "production-browser.json": {
+    "bytes": 39408,
+    "sha256": "fdd513d7fe7ca2ff5d4b94cd28b927fb284db8da3957f54196c0556b2fb97f7d"
+  },
+  "release-verification.json": {
+    "bytes": 2986,
+    "sha256": "13339f5f7b8ec7df0529c977587fcf74347ece5515fad7d995129942264be1e1"
+  },
+  "reproduction.json": {
+    "bytes": 1630,
+    "sha256": "baba0169477e885b4fc73e565e83619fc156cff5f24ca180f99ccd7a7bcc9144"
+  },
+  "scope-review.json": {
+    "bytes": 11256,
+    "sha256": "8da5be2da3bcf01f0498f1699ad224f94c1a13d36e7f15804df2d51a3efbb559"
+  },
+  "ui-validation.json": {
+    "bytes": 853,
+    "sha256": "916022ade7155bb352de10c370651ac069c43f3934ead76c64aed754cf2a0334"
+  }
+}

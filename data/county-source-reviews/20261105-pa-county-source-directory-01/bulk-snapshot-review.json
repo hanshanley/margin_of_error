@@ -1,0 +1,106 @@
+{
+  "status": "factual_bulk_snapshot_acquired_and_fail_closed_not_approved_for_import",
+  "embedded_snapshot_receipt": {
+    "file": "complete-collator-initial-factual-data.json",
+    "bytes": 211488,
+    "sha256": "d54f6058d6062f23c83faba95bed14f358e07759d12747ad3328a4ec051d9abd",
+    "extracted_from": "directory.html; literal JSON parsed without executing JavaScript"
+  },
+  "native_election": {
+    "id": "2026-general",
+    "name": "2026 General Election",
+    "date": "2026-11-03",
+    "pollsClose": "2026-11-04T01:00:00Z"
+  },
+  "native_final": false,
+  "native_snapshot_fetched_at": "2026-11-05T20:30:02.280Z",
+  "all_240_races_reconcile_internal_county_sums": true,
+  "race_kinds": {
+    "governor": 1,
+    "cd": 17,
+    "sd": 25,
+    "hd": 197
+  },
+  "native_county_source_statuses": {
+    "ok": 61,
+    "stale": 5,
+    "waiting": 1
+  },
+  "house_counties": 57,
+  "house_district_fragments": 73,
+  "house_candidate_slots": 417,
+  "independent_existing_official_anchors": [
+    {
+      "county": "Bucks",
+      "county_fips": "42017",
+      "compiler_party_counts": {
+        "DEM": 158908,
+        "REP": 142796,
+        "party_unspecified": 1082
+      },
+      "official_candidate_total": 302786,
+      "unaccounted_official_candidate_votes": 0,
+      "major_party_counts_match": true,
+      "all_candidate_counts_match": true
+    },
+    {
+      "county": "Monroe",
+      "county_fips": "42089",
+      "compiler_party_counts": {
+        "DEM": 35157,
+        "REP": 25190,
+        "party_unspecified": 134
+      },
+      "official_candidate_total": 60481,
+      "unaccounted_official_candidate_votes": 0,
+      "major_party_counts_match": true,
+      "all_candidate_counts_match": true
+    },
+    {
+      "county": "Montgomery",
+      "county_fips": "42091",
+      "compiler_party_counts": {
+        "DEM": 268823,
+        "REP": 120367,
+        "party_unspecified": 0
+      },
+      "official_candidate_total": 389901,
+      "unaccounted_official_candidate_votes": 711,
+      "major_party_counts_match": true,
+      "all_candidate_counts_match": false
+    }
+  ],
+  "confirmed_primary_landing_acquisitions": [
+    {
+      "file": "allegheny-results-landing.html",
+      "url": "https://results.enr.clarityelections.com/PA/Allegheny/127287/",
+      "final_url": "https://results.enr.clarityelections.com/PA/Allegheny/127287/",
+      "status": 403,
+      "content_type": "text/html",
+      "bytes": 919,
+      "sha256": "146ebc7c9c5ea967afb1b48705c534f8566d874d3e8055f88f00a48131f99e67",
+      "fetched_at": "2026-11-05T20:34:25.588755+00:00"
+    },
+    {
+      "file": "delaware-results-landing.html",
+      "url": "https://results.enr.clarityelections.com/PA/Delaware/127482/",
+      "final_url": "https://results.enr.clarityelections.com/PA/Delaware/127482/",
+      "status": 403,
+      "content_type": "text/html",
+      "bytes": 919,
+      "sha256": "6e4a60638a4928f3ef0511be4f15f0b710bf889af318fcfe0c358b71a6f3dd7d",
+      "fetched_at": "2026-11-05T20:34:25.631312+00:00"
+    }
+  ],
+  "decisions": [
+    "Retain the complete 240-race factual snapshot, not only source metadata.",
+    "The compiler omits all 711 Montgomery House write-ins; internal arithmetic does not establish a complete native candidate vector.",
+    "Compiler party labels differ from primary source literals; never relabel them as native parties.",
+    "Keep the three approved county vectors and the Philadelphia test-data guard unchanged.",
+    "No candidate total, map, public pointer or completeness flag changes.",
+    "Use all 67 exact county source links to pursue complete primary report exports, including separately printed write-ins."
+  ],
+  "maps_approved": false,
+  "fully_complete": false,
+  "new_public_download_approved": false
+}
