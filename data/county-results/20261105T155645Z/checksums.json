@@ -1,0 +1,46 @@
+{
+  "audit.json": {
+    "bytes": 3246760,
+    "sha256": "7dd71bb1fda8ccab7122e00d13171ea951c7f11d3c43ad0495276afeadb651ea"
+  },
+  "county-results.csv": {
+    "bytes": 391296,
+    "sha256": "7aea9fb608e24c046e2dc517da485ac54a4ef7b7fee129cd8e130c32d1e7bb9c"
+  },
+  "county-results.json.gz": {
+    "bytes": 258112,
+    "sha256": "2f1f9b285f008c0fdfcaaf1bcef9a3c6100f3608adade228e2a4fb829a0b1f9c"
+  },
+  "index.json": {
+    "bytes": 21891,
+    "sha256": "8c657b5766f8d6e31b552acd1d4035af47f89d5e6145e2d3763d7fee25a28be8"
+  },
+  "margins.json": {
+    "bytes": 2000676,
+    "sha256": "a21a9b73012c0917fa10f523e4d88c4c8cdeb5cae49bf743d257e9c0d5d1137a"
+  },
+  "party-votes/audit.json": {
+    "bytes": 4617,
+    "sha256": "c7ec70a39ff617b738ee869ac13d2609ea3952e62393b9576f927a7dc588705c"
+  },
+  "party-votes/county-district-candidate-totals.csv.gz": {
+    "bytes": 139021,
+    "sha256": "cfec0cefd648368c9a93be22d21d6ee5634176d2c4cc48a69cfdf76093416c5f"
+  },
+  "party-votes/county-party-totals.csv.gz": {
+    "bytes": 74967,
+    "sha256": "33c01a4eb0087551929a396e03007020f97373afc01366fba493c1207a330781"
+  },
+  "party-votes/district-candidate-totals.csv.gz": {
+    "bytes": 24556,
+    "sha256": "9bb89476e0200eb8b008cb3b422854501ec5211bb1912a6f3edfa611e95d821e"
+  },
+  "party-votes/state-party-totals.csv.gz": {
+    "bytes": 2375,
+    "sha256": "b51d4f7708c836a7c6a9ca11e9173976e5bbf2c9b8698698ce0fec0ce3d6893d"
+  },
+  "state-codes.json": {
+    "bytes": 717,
+    "sha256": "07e4919b7d6ca93929dade31248806afd886ac4fa47215640d976b33bba75f24"
+  }
+}
