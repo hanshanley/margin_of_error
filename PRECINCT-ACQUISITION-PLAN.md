@@ -6,6 +6,11 @@ Expand actual precinct coverage across all 50 states and D.C. and across electio
 years. Two partial 2026 states and one broadly mapped presidential election are
 not an acceptable stopping point.
 
+The user also explicitly accepts **county results instead of precincts, or both**.
+Acquire and publish verified county coverage in parallel with finer precinct
+work; label the geography explicitly. Never paint county totals as precinct
+results, allocate them into precincts, or call candidate margins participation.
+
 Work in this order: **2026, 2024 gaps, 2022, 2020, 2018, 2016, then every earlier
 even year through 1964**. Include midterms. Pursue each jurisdiction separately;
 do not add only one example state per year. While a newer source downloads or
@@ -2336,15 +2341,70 @@ Validated House candidate totals are **932,493 Democratic + 671,234 Republican
 statewide totals nor unique voters. Release verification is the remaining
 source-publication gate; no registry, ledger or live flag changes yet.
 
-**Next executable actions:** finish the remote full-byte proof;
-commit and release the immutable source package as Hans; then audit exact
-base/split reporting-name universes and explicit CD agreement for the 36
-validated counties. Map only complete unambiguous county joins after
-geometry validity/overlap checks. Pursue authoritative King identities and
-Jefferson/Walla Walla accounting corrections rather than guessed prefixes or
-invented ballots. Separate native ballot/registration records are archived,
-but their definitions, duplicates and denominators still need independent
-review before any participation fractions.
+The first source package was committed/pushed as Hans at
+`f219c127274d75a0d0532be52844a8f09467652d`. Its complete remote ZIP and exact
+release-tag target were verified:
+`files/washington-2026-remote-release-proof.json`.
+**Do not use that first package's derived margin sign:** before UI integration,
+the site-convention check found R-minus-D instead of the renderer's D-minus-R.
+All original files and candidate counts are unaffected. The first release is
+explicitly marked superseded; no asset was replaced.
+
+The corrected canonical count version is
+`data/precinct-source-reviews/20261105/WA-02/`, ZIP
+`complete-washington-2026-count-review-02.zip`, **109,998,400 bytes**, SHA-256
+`9dfe1086140b217a23842f0b5bad5601e05f74ebac07962916ed7315c9d11a84`.
+The parser now explicitly uses **100 x (D - R) / all candidate votes**;
+focused regressions cover both party leads. The map builder independently
+rejects any normalized margin inconsistent with the underlying counts.
+
+### Washington mapped supplement: source verified, publication pending
+
+Canonical builder: `scripts/build-washington-precinct-results.py`.
+Complete literal name or explicit precinct-number **plus CD** sets match in
+15 counties. Alternate passing fields must assign every label to the same
+native St_Code; contradictory complete crosswalks are rejected. Only parts
+of one explicit reporting/CD/St_Code identity are dissolved, counting votes
+once. No padding, alias, prefix decoding or guessed boundaries are used.
+
+Pierce has malformed native geographic rings and remains wholly withheld.
+The other **14 counties** yield **1,533 mapped reporting-unit geometries**,
+**1,499** with nonzero candidate results. The source has **294** overlapping
+reference pairs. As in the already-reviewed North Dakota treatment, ambiguous
+strips are excluded from **both** affected precincts, never assigned to either.
+Full original boundaries, excluded-strip GeoJSON and area fractions are
+retained; counts describe the entire reporting unit, not just its unambiguous
+displayed area. Every output geometry is valid and no mapped overlap remains
+above `1e-10` square degrees.
+
+Corrected mapped snapshot:
+`data/precinct-results/20261105-washington-03/`.
+Complete ZIP `complete-washington-2026-precinct-maps-03.zip`,
+**116,917,377 bytes**, SHA-256
+`46f7a1a8e251bb740e51da255fcb31ee92a7b29fb1bfed79fcf4cff7d5ce4c9c`.
+It retains the complete corrected count review, all **5,804** normalized
+House rows (JSON and UI-compatible CSV), all originals, native boundaries,
+unmatched records, geometry/count audits and the standalone build toolchain.
+Independent verification checks every mapped candidate count and margin
+against its actual source vector, every CSV value and geometry, preservation
+of the entire count package and an **archive-only byte-identical mapped ZIP
+rebuild**. Proof: `files/washington-2026-map-offline-reproduction-proof-03.json`.
+All **398 collector tests** pass.
+
+The corrected count archive-only proof also passes, including all original
+inputs, all 78 workbook CRCs and every derived D-minus-R margin:
+`files/washington-2026-offline-reproduction-proof-02.json`.
+
+**Next executable actions:** commit and release both corrected snapshots as
+Hans, redownload both full ZIPs and
+verify exact source tags, then add the immutable mapped pointer and complete
+downloads. Test build/Pages preparation and source-matched desktop/mobile x
+JS/no-JS colors, counts, selection, zoom, state fallback, old downloads and
+year changes. Verify the exact new deployment before a live flag. Then expand
+actual county coverage (now explicitly approved) and pursue the remaining
+precinct crosswalks, Pierce rings, King identities and Jefferson/Walla Walla
+accounting. Native participation definitions and denominators remain a
+separate review; no final or demographic turnout is inferred.
 
 ## Resume procedure for every work session or scheduled prompt
 

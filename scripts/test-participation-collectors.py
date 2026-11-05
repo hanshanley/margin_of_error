@@ -47,6 +47,78 @@ dc_maps = module("build-dc-precinct-results")
 boston_maps = module("build-boston-precinct-results")
 worcester_review = module("review-worcester-precinct-results")
 wa_review = module("review-washington-precinct-results")
+wa_maps = module("build-washington-precinct-results")
+
+
+def test_washington_geometry_requires_complete_literal_names_or_explicit_numbers_and_cd():
+    rows = [dict(key="WA-one", county="Example County", precinct="1", congressional_district="4")]
+    base = dict(County="53001", CountyName="Example", PrecinctNa="Other spelling",
+                PrecinctNu=1, St_Code="EX0001", CD=4, LD=1, _index=0)
+    selected, audits = wa_maps.select_references(rows, dict(precincts=[base], splits=[]))
+    assert audits["Example County"]["strategy"] == "precincts/PrecinctNu"
+    assert "Example County" in selected
+    for changed in [dict(base, CD=5), dict(base, PrecinctNu=2), dict(base, St_Code="")]:
+        selected, _ = wa_maps.select_references(rows, dict(precincts=[changed], splits=[]))
+        assert not selected
+    selected, _ = wa_maps.select_references(
+        rows, dict(precincts=[base, dict(base, PrecinctNu=2, St_Code="EX0002")], splits=[]))
+    assert not selected
+
+
+def test_washington_geometry_never_guesses_padded_codes_or_aliases_or_multiple_source_ids():
+    rows = [dict(key="WA-one", county="Example County", precinct="01", congressional_district="4")]
+    base = dict(County="53001", CountyName="Example", PrecinctNa="1", PrecinctNu=1,
+                St_Code="EX0001", CD=4, LD=1, _index=0)
+    selected, _ = wa_maps.select_references(rows, dict(precincts=[base], splits=[]))
+    assert not selected
+    rows[0]["precinct"] = "1"
+    selected, _ = wa_maps.select_references(
+        rows, dict(precincts=[base, dict(base, St_Code="DIFFERENT")], splits=[]))
+    assert not selected
+
+
+def test_washington_geometry_rejects_complete_but_contradictory_name_number_crosswalks():
+    rows = [dict(key="WA-" + p, county="Example County", precinct=p, congressional_district="4")
+            for p in ["1", "2"]]
+    base = dict(County="53001", CountyName="Example", PrecinctNa="1", PrecinctNu=2,
+                St_Code="EX0001", CD=4, LD=1, _index=0)
+    selected, audits = wa_maps.select_references(rows, dict(precincts=[
+        base, dict(base, PrecinctNa="2", PrecinctNu=1, St_Code="EX0002", _index=1)], splits=[]))
+    assert not selected and audits["Example County"]["conflicting_complete_crosswalks"]
+
+
+@pytest.mark.parametrize("overlap", [False, True, "full"])
+def test_washington_geometry_dissolves_once_and_excludes_ambiguity_without_allocating_counts(overlap):
+    from types import SimpleNamespace
+    from shapely.geometry import shape
+
+    def square(x):
+        return SimpleNamespace(parts=[0], points=[(x, 0), (x, 1), (x + 1, 1), (x + 1, 0), (x, 0)])
+
+    shapes = [square(0), square(2), square(0 if overlap == "full" else .5 if overlap else 4)]
+    reader = SimpleNamespace(shape=lambda index: shapes[index])
+    rows = [dict(key="WA-" + p, county="Example County", precinct=p, congressional_district="4",
+                 democratic_votes=10, republican_votes=20, other_votes=0, contest_votes=30)
+            for p in ["1", "2"]]
+    base = dict(County="53001", CountyName="Example", PrecinctNa="1", PrecinctNu=1,
+                St_Code="EX0001", CD=4, LD=1, _index=0)
+    references = dict(precincts=[base, dict(base, LD=2, _index=1),
+                                dict(base, PrecinctNa="2", PrecinctNu=2, St_Code="EX0002", _index=2)],
+                      splits=[])
+    features, audit = wa_maps.mapped_precincts(rows, references, dict(precincts=reader))
+    if overlap == "full":
+        assert not features and audit["all_reference_overlap_pairs"]
+        assert not audit["counties"]["Example County"]["exact"]
+    else:
+        assert len(features) == 2
+        assert bool(audit["all_reference_overlap_pairs"]) == bool(overlap)
+        assert shape(features[0]["geometry"]).intersection(shape(features[1]["geometry"])).area == 0
+        first = next(f for f in features if f["properties"]["precinct"] == "1")
+        assert len(first["properties"]["source_object_ids"]) == 2
+        assert first["properties"]["contest_votes"] == 30
+        if overlap:
+            assert audit["masked_reporting_units"] and audit["ambiguity_mask"]["features"]
+            assert all("overlapping strips withheld" in f["properties"]["geometry_scope"] for f in features)
 
 
 def washington_fixture():
@@ -75,10 +147,25 @@ def test_washington_reconciles_every_export_and_native_candidate_without_filling
     original, detailed, native = washington_fixture()
     rows, audit = wa_review.reconcile_county(original, detailed, native, "Example County", "county-id")
     assert len(rows) == 2 and rows[0]["reported_ballots"] == 36 and rows[0]["contest_votes"] == 32
-    assert rows[0]["other_votes"] == 2 and rows[0]["margin_pp"] == 31.25
+    assert rows[0]["other_votes"] == 2 and rows[0]["margin_pp"] == -31.25
     assert rows[1]["precinct"] == "1A" and rows[1]["margin_pp"] is None
     assert rows[0]["key"] != rows[1]["key"] and audit["all_native_house_candidate_names_ids_parties_counts_reconcile"]
     assert not any(key in rows[0] for key in ["turnout_rate", "registration", "voters"])
+
+
+def test_washington_democratic_lead_uses_positive_shared_renderer_margin_convention():
+    original, detailed, native = washington_fixture()
+    for book in [original, detailed]:
+        for rows in book.values():
+            for row in rows:
+                if row["Ballot Name"] == "D" and row["Total"]:
+                    row["Total"] = 20
+                elif row["Ballot Name"] == "R" and row["Total"]:
+                    row["Total"] = 10
+    native["ballotItems"][0]["summaryResults"]["ballotOptions"][0]["voteCount"] = 20
+    native["ballotItems"][0]["summaryResults"]["ballotOptions"][1]["voteCount"] = 10
+    rows, _ = wa_review.reconcile_county(original, detailed, native, "Example County", "county-id")
+    assert rows[0]["margin_pp"] == 31.25
 
 
 @pytest.mark.parametrize("value", [None, "", "0", "1l", -1, 1.5, True, float("inf"), float("nan")])

@@ -1,0 +1,5249 @@
+{
+  "status": "partial_count_review_not_map_or_participation_approval",
+  "year": 2026,
+  "state_code": "WA",
+  "complete": "no",
+  "source_url": "https://results.votewa.gov/results/public/washington/20261103",
+  "source_updated": "2026-11-05T04:01:31.3211464Z",
+  "publication": "full_counts_download_only",
+  "candidate_results": "partial_house_counts_reconciled",
+  "boundaries": "acquired_exact_year_join_review_pending",
+  "join": "withheld",
+  "validation": "partial_counts_passed_map_withheld",
+  "expected_counties": 39,
+  "counties": {
+    "adams-county-wa": {
+      "status": "counts_reconciled_geometry_not_reviewed",
+      "all_office_precinct_rows": 3531,
+      "all_office_summary_rows": 149,
+      "native_contests": 27,
+      "office_reviews": {
+        "Adams Co. Fire Dist. No. 4 Special Election Prop. No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Assessor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Auditor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Clerk": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Congressional District 4 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Congressional District 5 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "County Commissioner, District 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Court of Appeals, Division 3, District 2 - Judge Position 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "District Court Judge, Adams County, Position 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "District Court Judge, Adams County, Position 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IL26-001": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IL26-638": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IP26-645": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 13 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 13 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 13 - State Senator": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 9 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 9 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Park and Rec. Dist. No. 2 Special Election Prop. No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Prosecuting Attorney": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Sheriff": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #01": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #03": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #04": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #05": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #07": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Treasurer": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        }
+      },
+      "house_reporting_rows": 30,
+      "house_candidate_totals": {
+        "democratic_votes": 862,
+        "republican_votes": 1888,
+        "other_votes": 14,
+        "contest_votes": 2764
+      },
+      "validated_scope": "U.S. House only; see separate per-office reviews for other contests",
+      "all_nonmissing_original_house_counts_agree": true,
+      "all_house_precinct_sums_reconcile": true,
+      "all_native_house_candidate_names_ids_parties_counts_reconcile": true
+    },
+    "asotin-county-wa": {
+      "status": "counts_reconciled_geometry_not_reviewed",
+      "all_office_precinct_rows": 7445,
+      "all_office_summary_rows": 119,
+      "native_contests": 22,
+      "office_reviews": {
+        "Asotin County Rural Emergency Medical Services Regular Property Tax Levy": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Congressional District 5 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "County Assessor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "County Auditor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "County Clerk": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "County Commissioner District No. 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "County Prosecutor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "County Sheriff": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "County Treasurer": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Court of Appeals, Division 3, District 2 - Judge Position 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "District Court Judge": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Initiative Measure No. IL26-001": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Initiative Measure No. IL26-638": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Initiative Measure No. IP26-645": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Legislative District 9 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Legislative District 9 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Public Utility District Commissioner District No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Supreme Court - Justice Position #01": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Supreme Court - Justice Position #03": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Supreme Court - Justice Position #04": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Supreme Court - Justice Position #05": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Supreme Court - Justice Position #07": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        }
+      },
+      "house_reporting_rows": 66,
+      "house_candidate_totals": {
+        "democratic_votes": 3021,
+        "republican_votes": 4645,
+        "other_votes": 18,
+        "contest_votes": 7684
+      },
+      "validated_scope": "U.S. House only; see separate per-office reviews for other contests",
+      "all_nonmissing_original_house_counts_agree": true,
+      "all_house_precinct_sums_reconcile": true,
+      "all_native_house_candidate_names_ids_parties_counts_reconcile": true
+    },
+    "benton-county-wa": {
+      "status": "counts_reconciled_geometry_not_reviewed",
+      "all_office_precinct_rows": 36165,
+      "all_office_summary_rows": 208,
+      "native_contests": 38,
+      "office_reviews": {
+        "Assessor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        },
+        "Auditor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        },
+        "Clerk": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        },
+        "Commissioner District #2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        },
+        "Commissioner Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        },
+        "Congressional District 4 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 25
+        },
+        "Coroner": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        },
+        "Council Pos. 4": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Court of Appeals, Division 3, District 2 - Judge Position 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        },
+        "District Court Judge 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 25
+        },
+        "District Court Judge 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        },
+        "District Court Judge 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        },
+        "District Court Judge 4": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        },
+        "District Court Judge 5": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        },
+        "Initiative Measure No. IL26-001": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        },
+        "Initiative Measure No. IL26-638": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        },
+        "Initiative Measure No. IP26-645": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        },
+        "Legislative District 14 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 14 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 15 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 15 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 15 - State Senator": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 16 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Legislative District 16 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Legislative District 8 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 16
+        },
+        "Legislative District 8 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 16
+        },
+        "Legislative District 8 - State Senator": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        },
+        "Proposition No. 1 - City of Benton City": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Proposition No. 1 - Kiona-Benton City School District 52": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Proposition No. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Prosecuting Attorney": {
+          "status": "reconciled",
+          "missing_original_count_cells": 25
+        },
+        "Sheriff": {
+          "status": "reconciled",
+          "missing_original_count_cells": 25
+        },
+        "Supreme Court - Justice Position #01": {
+          "status": "reconciled",
+          "missing_original_count_cells": 25
+        },
+        "Supreme Court - Justice Position #03": {
+          "status": "reconciled",
+          "missing_original_count_cells": 25
+        },
+        "Supreme Court - Justice Position #04": {
+          "status": "reconciled",
+          "missing_original_count_cells": 25
+        },
+        "Supreme Court - Justice Position #05": {
+          "status": "reconciled",
+          "missing_original_count_cells": 25
+        },
+        "Supreme Court - Justice Position #07": {
+          "status": "reconciled",
+          "missing_original_count_cells": 25
+        },
+        "Treasurer": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        }
+      },
+      "house_reporting_rows": 250,
+      "house_candidate_totals": {
+        "democratic_votes": 16863,
+        "republican_votes": 20379,
+        "other_votes": 61,
+        "contest_votes": 37303
+      },
+      "validated_scope": "U.S. House only; see separate per-office reviews for other contests",
+      "all_nonmissing_original_house_counts_agree": true,
+      "all_house_precinct_sums_reconcile": true,
+      "all_native_house_candidate_names_ids_parties_counts_reconcile": true
+    },
+    "chelan-county-wa": {
+      "status": "counts_reconciled_geometry_not_reviewed",
+      "all_office_precinct_rows": 14772,
+      "all_office_summary_rows": 161,
+      "native_contests": 29,
+      "office_reviews": {
+        "Assessor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Auditor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Chelan County District Court Judge Position 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Chelan County District Court Judge Position 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "City of Cashmere - Proposition No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Clerk": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Commissioner District No. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Congressional District 8 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Coroner": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Court of Appeals, Division 3, District 3 - Judge Position 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IL26-001": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IL26-638": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IP26-645": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 12 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 12 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 7 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 7 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 7 - State Senator": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Prosecuting Attorney": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Public Utility District Commissioner District 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Public Utility District Commissioner District B": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Sheriff": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #01": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #03": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #04": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #05": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #07": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Treasurer": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Wenatchee School District No. 246 - Proposition No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        }
+      },
+      "house_reporting_rows": 107,
+      "house_candidate_totals": {
+        "democratic_votes": 14752,
+        "republican_votes": 13532,
+        "other_votes": 34,
+        "contest_votes": 28318
+      },
+      "validated_scope": "U.S. House only; see separate per-office reviews for other contests",
+      "all_nonmissing_original_house_counts_agree": true,
+      "all_house_precinct_sums_reconcile": true,
+      "all_native_house_candidate_names_ids_parties_counts_reconcile": true
+    },
+    "clallam-county-wa": {
+      "status": "counts_reconciled_geometry_not_reviewed",
+      "all_office_precinct_rows": 8962,
+      "all_office_summary_rows": 158,
+      "native_contests": 29,
+      "office_reviews": {
+        "Assessor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Auditor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Congressional District 6 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "County Commissioner Dist. No. 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Court of Appeals, Division 2, District 2 - Judge Position 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Director of Community Development": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "District Court 1 Judge": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "District Court 2 Judge": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Fire Protection Dist. 2 Proposition 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Fire Protection Dist. 6 Proposition 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Fire Protection District No. 1 - Proposition 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IL26-001": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IL26-638": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IP26-645": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 24 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 24 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "PUD Commissioner District No. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Proposed Charter Amendment No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Proposed Charter Amendment No. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Proposed Charter Amendment No. 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Prosecuting Attorney": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Quillayute Valley School District 402 - Proposition 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Sheriff": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #01": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #03": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #04": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #05": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #07": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Treasurer": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        }
+      },
+      "house_reporting_rows": 67,
+      "house_candidate_totals": {
+        "democratic_votes": 12582,
+        "republican_votes": 7324,
+        "other_votes": 17,
+        "contest_votes": 19923
+      },
+      "validated_scope": "U.S. House only; see separate per-office reviews for other contests",
+      "all_nonmissing_original_house_counts_agree": true,
+      "all_house_precinct_sums_reconcile": true,
+      "all_native_house_candidate_names_ids_parties_counts_reconcile": true
+    },
+    "clark-county-wa": {
+      "status": "counts_reconciled_geometry_not_reviewed",
+      "all_office_precinct_rows": 71914,
+      "all_office_summary_rows": 246,
+      "native_contests": 45,
+      "office_reviews": {
+        "Battle Ground School District No. 119 Proposition No. 11": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Congressional District 3 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "County Assessor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "County Auditor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "County Clerk": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "County Council Councilor, District No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "County Council Councilor, District No. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "County Council Councilor, District No. 5": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "County Proposition No. 12": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "County Proposition No. 13": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "County Prosecuting Attorney": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "County Sheriff": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "County Treasurer": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "District Court Judge Department No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "District Court Judge Department No. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "District Court Judge Department No. 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "District Court Judge Department No. 4": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "District Court Judge Department No. 5": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "District Court Judge Department No. 6": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Initiative Measure No. IL26-001": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Initiative Measure No. IL26-638": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Initiative Measure No. IP26-645": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Legislative District 17 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 17 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 18 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Legislative District 18 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Legislative District 20 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 20 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 49 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 49 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Proposed Charter Amendment No. 19": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Proposed Charter Amendment No. 20": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Proposed Charter Amendment No. 21": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Proposed Charter Amendment No. 22": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Proposed Charter Amendment No. 23": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Proposed Charter Amendment No. 24": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Proposed Charter Amendment No. 25": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Proposed Charter Amendment No. 26": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Proposed Charter Amendment No. 27": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Public Utility District No. 1 of Clark County Commissioner, District No. 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Supreme Court - Justice Position #01": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Supreme Court - Justice Position #03": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Supreme Court - Justice Position #04": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Supreme Court - Justice Position #05": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Supreme Court - Justice Position #07": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        }
+      },
+      "house_reporting_rows": 375,
+      "house_candidate_totals": {
+        "democratic_votes": 111648,
+        "republican_votes": 71883,
+        "other_votes": 1697,
+        "contest_votes": 185228
+      },
+      "validated_scope": "U.S. House only; see separate per-office reviews for other contests",
+      "all_nonmissing_original_house_counts_agree": true,
+      "all_house_precinct_sums_reconcile": true,
+      "all_native_house_candidate_names_ids_parties_counts_reconcile": true
+    },
+    "columbia-county-wa": {
+      "status": "counts_reconciled_geometry_not_reviewed",
+      "all_office_precinct_rows": 2933,
+      "all_office_summary_rows": 118,
+      "native_contests": 22,
+      "office_reviews": {
+        "Columbia County Assessor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 12
+        },
+        "Columbia County Auditor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 12
+        },
+        "Columbia County Clerk": {
+          "status": "reconciled",
+          "missing_original_count_cells": 12
+        },
+        "Columbia County Commissioner No. 3 ": {
+          "status": "reconciled",
+          "missing_original_count_cells": 15
+        },
+        "Columbia County District Court Judge": {
+          "status": "reconciled",
+          "missing_original_count_cells": 12
+        },
+        "Columbia County Pool District - Proposition No. 1 Operation Excess Levy ": {
+          "status": "reconciled",
+          "missing_original_count_cells": 8
+        },
+        "Columbia County Prosecutor ": {
+          "status": "reconciled",
+          "missing_original_count_cells": 12
+        },
+        "Columbia County Sheriff": {
+          "status": "reconciled",
+          "missing_original_count_cells": 12
+        },
+        "Columbia County Treasurer": {
+          "status": "reconciled",
+          "missing_original_count_cells": 12
+        },
+        "Congressional District 5 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 15
+        },
+        "Court of Appeals, Division 3, District 2 - Judge Position 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 12
+        },
+        "Initiative Measure No. IL26-001": {
+          "status": "reconciled",
+          "missing_original_count_cells": 12
+        },
+        "Initiative Measure No. IL26-638": {
+          "status": "reconciled",
+          "missing_original_count_cells": 12
+        },
+        "Initiative Measure No. IP26-645": {
+          "status": "reconciled",
+          "missing_original_count_cells": 12
+        },
+        "Legislative District 9 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 12
+        },
+        "Legislative District 9 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 15
+        },
+        "Prescott Joint Park and Recreation District - Proposition No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Supreme Court - Justice Position #01": {
+          "status": "reconciled",
+          "missing_original_count_cells": 15
+        },
+        "Supreme Court - Justice Position #03": {
+          "status": "reconciled",
+          "missing_original_count_cells": 15
+        },
+        "Supreme Court - Justice Position #04": {
+          "status": "reconciled",
+          "missing_original_count_cells": 15
+        },
+        "Supreme Court - Justice Position #05": {
+          "status": "reconciled",
+          "missing_original_count_cells": 15
+        },
+        "Supreme Court - Justice Position #07": {
+          "status": "reconciled",
+          "missing_original_count_cells": 15
+        }
+      },
+      "house_reporting_rows": 26,
+      "house_candidate_totals": {
+        "democratic_votes": 572,
+        "republican_votes": 1365,
+        "other_votes": 8,
+        "contest_votes": 1945
+      },
+      "validated_scope": "U.S. House only; see separate per-office reviews for other contests",
+      "all_nonmissing_original_house_counts_agree": true,
+      "all_house_precinct_sums_reconcile": true,
+      "all_native_house_candidate_names_ids_parties_counts_reconcile": true
+    },
+    "cowlitz-county-wa": {
+      "status": "counts_reconciled_geometry_not_reviewed",
+      "all_office_precinct_rows": 12264,
+      "all_office_summary_rows": 149,
+      "native_contests": 27,
+      "office_reviews": {
+        "Assessor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Auditor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Clerk": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Commissioner District 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Commissioner District 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Congressional District 3 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Coroner": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IL26-001": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IL26-638": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IP26-645": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Judge Position 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Judge Position 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Judge Position 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Judge Position 4": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 19 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 19 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 20 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 20 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Proposition 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Prosecuting Attorney": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Sheriff": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #01": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #03": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #04": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #05": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #07": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Treasurer": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        }
+      },
+      "house_reporting_rows": 92,
+      "house_candidate_totals": {
+        "democratic_votes": 19333,
+        "republican_votes": 21910,
+        "other_votes": 374,
+        "contest_votes": 41617
+      },
+      "validated_scope": "U.S. House only; see separate per-office reviews for other contests",
+      "all_nonmissing_original_house_counts_agree": true,
+      "all_house_precinct_sums_reconcile": true,
+      "all_native_house_candidate_names_ids_parties_counts_reconcile": true
+    },
+    "douglas-county-wa": {
+      "status": "counts_reconciled_geometry_not_reviewed",
+      "all_office_precinct_rows": 30364,
+      "all_office_summary_rows": 190,
+      "native_contests": 35,
+      "office_reviews": {
+        "Assessor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 68
+        },
+        "Auditor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 68
+        },
+        "Clerk of Superior Court": {
+          "status": "reconciled",
+          "missing_original_count_cells": 85
+        },
+        "Commissioner District No. 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 85
+        },
+        "Congressional District 4 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 85
+        },
+        "Congressional District 8 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Coroner": {
+          "status": "reconciled",
+          "missing_original_count_cells": 68
+        },
+        "Court of Appeals, Division 3, District 3 - Judge Position 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 68
+        },
+        "District Court Judge": {
+          "status": "reconciled",
+          "missing_original_count_cells": 68
+        },
+        "Douglas County Cemetery District #2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Douglas County Hospital District #2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        },
+        "Eastmont School District No. 206": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        },
+        "Initiative Measure No. IL26-001": {
+          "status": "reconciled",
+          "missing_original_count_cells": 68
+        },
+        "Initiative Measure No. IL26-638": {
+          "status": "reconciled",
+          "missing_original_count_cells": 68
+        },
+        "Initiative Measure No. IP26-645": {
+          "status": "reconciled",
+          "missing_original_count_cells": 68
+        },
+        "Legislative District 13 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Legislative District 13 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Legislative District 13 - State Senator": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Legislative District 7 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 64
+        },
+        "Legislative District 7 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 64
+        },
+        "Legislative District 7 - State Senator": {
+          "status": "reconciled",
+          "missing_original_count_cells": 80
+        },
+        "Proposed Rimrock Meadows Fire Protection District #9": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Proposed Rimrock Meadows Fire Protection District #9 Commissioner No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Proposed Rimrock Meadows Fire Protection District #9 Commissioner No.2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Proposed Rimrock Meadows Fire Protection District #9 Commissioner No.3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Prosecuting Attorney": {
+          "status": "reconciled",
+          "missing_original_count_cells": 68
+        },
+        "Public Hospital District No. 1 - Public Hospital District No. 1, Proposition 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Public Utility District Commissioner No.2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 85
+        },
+        "Sheriff": {
+          "status": "reconciled",
+          "missing_original_count_cells": 85
+        },
+        "Supreme Court - Justice Position #01": {
+          "status": "reconciled",
+          "missing_original_count_cells": 85
+        },
+        "Supreme Court - Justice Position #03": {
+          "status": "reconciled",
+          "missing_original_count_cells": 85
+        },
+        "Supreme Court - Justice Position #04": {
+          "status": "reconciled",
+          "missing_original_count_cells": 85
+        },
+        "Supreme Court - Justice Position #05": {
+          "status": "reconciled",
+          "missing_original_count_cells": 85
+        },
+        "Supreme Court - Justice Position #07": {
+          "status": "reconciled",
+          "missing_original_count_cells": 85
+        },
+        "Treasurer": {
+          "status": "reconciled",
+          "missing_original_count_cells": 68
+        }
+      },
+      "house_reporting_rows": 232,
+      "house_candidate_totals": {
+        "democratic_votes": 5318,
+        "republican_votes": 7927,
+        "other_votes": 22,
+        "contest_votes": 13267
+      },
+      "validated_scope": "U.S. House only; see separate per-office reviews for other contests",
+      "all_nonmissing_original_house_counts_agree": true,
+      "all_house_precinct_sums_reconcile": true,
+      "all_native_house_candidate_names_ids_parties_counts_reconcile": true
+    },
+    "ferry-county-wa": {
+      "status": "counts_reconciled_geometry_not_reviewed",
+      "all_office_precinct_rows": 2394,
+      "all_office_summary_rows": 126,
+      "native_contests": 23,
+      "office_reviews": {
+        "Congressional District 5 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "County Assessor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "County Auditor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "County Clerk": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "County Commissioner #2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "County Sheriff": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "County Treasurer": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Court of Appeals, Division 3, District 1 - Judge Position 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "District Court Judge": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Ferry, Pend Oreille, Stevens Superior Court - Judge Position 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IL26-001": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IL26-638": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IP26-645": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 7 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 7 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 7 - State Senator": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "PUD (Countywide) - Public Utility Commissioner #3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Prosecuting Attorney": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #01": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #03": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #04": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #05": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #07": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        }
+      },
+      "house_reporting_rows": 19,
+      "house_candidate_totals": {
+        "democratic_votes": 843,
+        "republican_votes": 1561,
+        "other_votes": 6,
+        "contest_votes": 2410
+      },
+      "validated_scope": "U.S. House only; see separate per-office reviews for other contests",
+      "all_nonmissing_original_house_counts_agree": true,
+      "all_house_precinct_sums_reconcile": true,
+      "all_native_house_candidate_names_ids_parties_counts_reconcile": true
+    },
+    "franklin-county-wa": {
+      "status": "counts_reconciled_geometry_not_reviewed",
+      "all_office_precinct_rows": 14722,
+      "all_office_summary_rows": 166,
+      "native_contests": 30,
+      "office_reviews": {
+        "Assessor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 10
+        },
+        "Auditor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 8
+        },
+        "Clerk": {
+          "status": "reconciled",
+          "missing_original_count_cells": 8
+        },
+        "Commissioner District 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Congressional District 4 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 10
+        },
+        "Congressional District 5 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Coroner": {
+          "status": "reconciled",
+          "missing_original_count_cells": 8
+        },
+        "Court of Appeals, Division 3, District 2 - Judge Position 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 8
+        },
+        "District Court Judge": {
+          "status": "reconciled",
+          "missing_original_count_cells": 10
+        },
+        "Fire Protection District No. 3 - Proposition No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Initiative Measure No. IL26-001": {
+          "status": "reconciled",
+          "missing_original_count_cells": 8
+        },
+        "Initiative Measure No. IL26-638": {
+          "status": "reconciled",
+          "missing_original_count_cells": 8
+        },
+        "Initiative Measure No. IP26-645": {
+          "status": "reconciled",
+          "missing_original_count_cells": 8
+        },
+        "Legislative District 14 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 14 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 16 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 10
+        },
+        "Legislative District 16 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 10
+        },
+        "Legislative District 8 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 8 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 8 - State Senator": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Port of Pasco, Commissioner District 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 8
+        },
+        "Prosecuting Attorney": {
+          "status": "reconciled",
+          "missing_original_count_cells": 8
+        },
+        "Public Utility District, Commissioner District 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 8
+        },
+        "Sheriff": {
+          "status": "reconciled",
+          "missing_original_count_cells": 10
+        },
+        "Supreme Court - Justice Position #01": {
+          "status": "reconciled",
+          "missing_original_count_cells": 10
+        },
+        "Supreme Court - Justice Position #03": {
+          "status": "reconciled",
+          "missing_original_count_cells": 10
+        },
+        "Supreme Court - Justice Position #04": {
+          "status": "reconciled",
+          "missing_original_count_cells": 10
+        },
+        "Supreme Court - Justice Position #05": {
+          "status": "reconciled",
+          "missing_original_count_cells": 10
+        },
+        "Supreme Court - Justice Position #07": {
+          "status": "reconciled",
+          "missing_original_count_cells": 10
+        },
+        "Treasurer": {
+          "status": "reconciled",
+          "missing_original_count_cells": 8
+        }
+      },
+      "house_reporting_rows": 123,
+      "house_candidate_totals": {
+        "democratic_votes": 8967,
+        "republican_votes": 10692,
+        "other_votes": 28,
+        "contest_votes": 19687
+      },
+      "validated_scope": "U.S. House only; see separate per-office reviews for other contests",
+      "all_nonmissing_original_house_counts_agree": true,
+      "all_house_precinct_sums_reconcile": true,
+      "all_native_house_candidate_names_ids_parties_counts_reconcile": true
+    },
+    "garfield-county-wa": {
+      "status": "counts_reconciled_geometry_not_reviewed",
+      "all_office_precinct_rows": 1276,
+      "all_office_summary_rows": 116,
+      "native_contests": 21,
+      "office_reviews": {
+        "Congressional District 5 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "County Assessor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "County Auditor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "County Clerk": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "County Commissioner - District 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "County Commissioner - District 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "County Prosecuting Attorney": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "County Sheriff": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "County Treasurer": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Court of Appeals, Division 3, District 2 - Judge Position 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "District Court Judge": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IL26-001": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IL26-638": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IP26-645": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 9 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 9 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #01": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #03": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #04": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #05": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #07": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        }
+      },
+      "house_reporting_rows": 11,
+      "house_candidate_totals": {
+        "democratic_votes": 280,
+        "republican_votes": 975,
+        "other_votes": 4,
+        "contest_votes": 1259
+      },
+      "validated_scope": "U.S. House only; see separate per-office reviews for other contests",
+      "all_nonmissing_original_house_counts_agree": true,
+      "all_house_precinct_sums_reconcile": true,
+      "all_native_house_candidate_names_ids_parties_counts_reconcile": true
+    },
+    "grant-county-wa": {
+      "status": "counts_reconciled_geometry_not_reviewed",
+      "all_office_precinct_rows": 12618,
+      "all_office_summary_rows": 185,
+      "native_contests": 34,
+      "office_reviews": {
+        "City of Moses Lake Proposition No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Commissioner District #3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Congressional District 4 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "County Assessor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "County Auditor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "County Clerk": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "County Coroner": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "County Prosecutor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "County Sheriff": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "County Treasurer": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Court of Appeals, Division 3, District 2 - Judge Position 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Grant County District Court Judge #1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Grant County District Court Judge #2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Grant County District Court Judge #3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Grant County Fire Dist. #7 Proposition No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Grant County PUD Commissioner Dist #3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Grant County PUD Commissioner Dist #B AL": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Grant County Proposition No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Grant County Superior Court Judge Position #03": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Hospital District No. 4 Proposition No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IL26-001": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Initiative Measure No. IL26-638": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Initiative Measure No. IP26-645": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Legislative District 13 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Legislative District 13 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Legislative District 13 - State Senator": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Legislative District 16 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 16 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #01": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Supreme Court - Justice Position #03": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Supreme Court - Justice Position #04": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Supreme Court - Justice Position #05": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Supreme Court - Justice Position #07": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Wilson Creek Cemetery Proposition No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        }
+      },
+      "house_reporting_rows": 81,
+      "house_candidate_totals": {
+        "democratic_votes": 5037,
+        "republican_votes": 9991,
+        "other_votes": 10,
+        "contest_votes": 15038
+      },
+      "validated_scope": "U.S. House only; see separate per-office reviews for other contests",
+      "all_nonmissing_original_house_counts_agree": true,
+      "all_house_precinct_sums_reconcile": true,
+      "all_native_house_candidate_names_ids_parties_counts_reconcile": true
+    },
+    "grays-harbor-county-wa": {
+      "status": "counts_reconciled_geometry_not_reviewed",
+      "all_office_precinct_rows": 13220,
+      "all_office_summary_rows": 172,
+      "native_contests": 31,
+      "office_reviews": {
+        "Assessor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Auditor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Clerk": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Commissioner #3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Congressional District 6 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Coroner": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Court of Appeals, Division 2, District 2 - Judge Position 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "District Court #1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "District Court #2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Fire District 1 - - Levy Lid Lift": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Grays Harbor Co. Fire Protection Dist. No.1  -EMS Levy": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Grays Harbor County Fire Protection District No. 2-Levy": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Initiative Measure No. IL26-001": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Initiative Measure No. IL26-638": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Initiative Measure No. IP26-645": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Legislative District 19 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Legislative District 19 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Legislative District 24 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 24 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Montesano Public Services Levy": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "PUD Comm (3)": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Prosecutor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Sch Dist 65 - McCleary - McCleary School District No. 65 - Bonds": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Sheriff": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Supreme Court - Justice Position #01": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Supreme Court - Justice Position #03": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Supreme Court - Justice Position #04": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Supreme Court - Justice Position #05": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Supreme Court - Justice Position #07": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Timberland Regional Library District - Regular Property Tax Levy Lid Lift for Library Services, Operations and Maintenance": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Treasurer": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        }
+      },
+      "house_reporting_rows": 97,
+      "house_candidate_totals": {
+        "democratic_votes": 9715,
+        "republican_votes": 8962,
+        "other_votes": 19,
+        "contest_votes": 18696
+      },
+      "validated_scope": "U.S. House only; see separate per-office reviews for other contests",
+      "all_nonmissing_original_house_counts_agree": true,
+      "all_house_precinct_sums_reconcile": true,
+      "all_native_house_candidate_names_ids_parties_counts_reconcile": true
+    },
+    "island-county-wa": {
+      "status": "counts_reconciled_geometry_not_reviewed",
+      "all_office_precinct_rows": 10831,
+      "all_office_summary_rows": 135,
+      "native_contests": 24,
+      "office_reviews": {
+        "Board of County Commissioners of Island County, Advisory Vote Regarding the use of Consumer Fireworks in Unincorporated Island County": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "City of Langley, Proposition No.1, Governmental Services and Technology Levy": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Congressional District 2 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "District Court Judge": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IL26-001": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IL26-638": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IP26-645": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Island County Assessor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Island County Auditor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Island County Clerk": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Island County Commissioner, District 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Island County Coroner": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Island County Prosecutor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Island County Sheriff": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Island County Treasurer": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 10 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 10 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Port District of South Whidbey Island, Proposition No. 1, Levy for Renovation and Modernization of Port Facilities": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Public Utility District No. 1 - Commissioner District 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #01": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #03": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #04": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #05": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #07": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        }
+      },
+      "house_reporting_rows": 90,
+      "house_candidate_totals": {
+        "democratic_votes": 20610,
+        "republican_votes": 11269,
+        "other_votes": 69,
+        "contest_votes": 31948
+      },
+      "validated_scope": "U.S. House only; see separate per-office reviews for other contests",
+      "all_nonmissing_original_house_counts_agree": true,
+      "all_house_precinct_sums_reconcile": true,
+      "all_native_house_candidate_names_ids_parties_counts_reconcile": true
+    },
+    "jefferson-county-wa": {
+      "status": "review_failed_all_originals_retained",
+      "reason": "Washington House ballot accounting disagrees"
+    },
+    "king-county-wa": {
+      "status": "review_failed_all_originals_retained",
+      "reason": "Congressional District 1 - U.S. Representative: Duplicate Washington reporting identity"
+    },
+    "kitsap-county-wa": {
+      "status": "counts_reconciled_geometry_not_reviewed",
+      "all_office_precinct_rows": 34999,
+      "all_office_summary_rows": 179,
+      "native_contests": 32,
+      "office_reviews": {
+        "Congressional District 6 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Court of Appeals, Division 2, District 2 - Judge Position 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Initiative Measure No. IL26-001": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Initiative Measure No. IL26-638": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Initiative Measure No. IP26-645": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Kitsap County Assessor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Kitsap County Auditor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Kitsap County Clerk": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Kitsap County Commissioner District 3 Comm Dist 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Kitsap County District Court Judge Department 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Kitsap County District Court Judge Department 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Kitsap County District Court Judge Department 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Kitsap County District Court Judge Department 4": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Kitsap County Prosecuting Attorney Prosecuting Attorney": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Kitsap County Public Utility District No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Kitsap County Public Utility District No. 1 Commissioner District 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Kitsap County Sheriff": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Kitsap County Treasurer": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Legislative District 23 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 23 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 26 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Legislative District 26 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Legislative District 26 - State Senator": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Legislative District 35 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 35 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 35 - State Senator": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "South Kitsap School District No. 402": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Supreme Court - Justice Position #01": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Supreme Court - Justice Position #03": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Supreme Court - Justice Position #04": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Supreme Court - Justice Position #05": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Supreme Court - Justice Position #07": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        }
+      },
+      "house_reporting_rows": 246,
+      "house_candidate_totals": {
+        "democratic_votes": 61099,
+        "republican_votes": 34427,
+        "other_votes": 144,
+        "contest_votes": 95670
+      },
+      "validated_scope": "U.S. House only; see separate per-office reviews for other contests",
+      "all_nonmissing_original_house_counts_agree": true,
+      "all_house_precinct_sums_reconcile": true,
+      "all_native_house_candidate_names_ids_parties_counts_reconcile": true
+    },
+    "kittitas-county-wa": {
+      "status": "counts_reconciled_geometry_not_reviewed",
+      "all_office_precinct_rows": 6809,
+      "all_office_summary_rows": 131,
+      "native_contests": 24,
+      "office_reviews": {
+        "Congressional District 8 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "County Assessor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "County Auditor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "County Clerk": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "County Commissioner, District 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "County Coroner": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "County Prosecuting Attorney": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "County Sheriff": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "County Treasurer": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Court of Appeals, Division 3, District 3 - Judge Position 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "District Court Judge Lower County": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "District Court Judge Upper County Office": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IL26-001": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IL26-638": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IP26-645": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 13 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 13 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 13 - State Senator": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Public Utility District No. 1 Commissioner, District 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #01": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #03": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #04": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #05": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #07": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        }
+      },
+      "house_reporting_rows": 54,
+      "house_candidate_totals": {
+        "democratic_votes": 6878,
+        "republican_votes": 7598,
+        "other_votes": 30,
+        "contest_votes": 14506
+      },
+      "validated_scope": "U.S. House only; see separate per-office reviews for other contests",
+      "all_nonmissing_original_house_counts_agree": true,
+      "all_house_precinct_sums_reconcile": true,
+      "all_native_house_candidate_names_ids_parties_counts_reconcile": true
+    },
+    "klickitat-county-wa": {
+      "status": "counts_reconciled_geometry_not_reviewed",
+      "all_office_precinct_rows": 11833,
+      "all_office_summary_rows": 138,
+      "native_contests": 25,
+      "office_reviews": {
+        "Congressional District 4 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 45
+        },
+        "Court of Appeals, Division 3, District 3 - Judge Position 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 36
+        },
+        "Emergency Medical Services District No. 1 Proposition No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 36
+        },
+        "Initiative Measure No. IL26-001": {
+          "status": "reconciled",
+          "missing_original_count_cells": 36
+        },
+        "Initiative Measure No. IL26-638": {
+          "status": "reconciled",
+          "missing_original_count_cells": 36
+        },
+        "Initiative Measure No. IP26-645": {
+          "status": "reconciled",
+          "missing_original_count_cells": 36
+        },
+        "Klickitat County Assessor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 36
+        },
+        "Klickitat County Auditor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 36
+        },
+        "Klickitat County Clerk": {
+          "status": "reconciled",
+          "missing_original_count_cells": 36
+        },
+        "Klickitat County Commissioner 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 45
+        },
+        "Klickitat County East District Court Judge": {
+          "status": "reconciled",
+          "missing_original_count_cells": 16
+        },
+        "Klickitat County Prosecuting Attorney (4 year short & full term)": {
+          "status": "reconciled",
+          "missing_original_count_cells": 36
+        },
+        "Klickitat County Sheriff": {
+          "status": "reconciled",
+          "missing_original_count_cells": 45
+        },
+        "Klickitat County Treasurer": {
+          "status": "reconciled",
+          "missing_original_count_cells": 36
+        },
+        "Klickitat County West District Court Judge": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        },
+        "Legislative District 14 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 15
+        },
+        "Legislative District 14 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 15
+        },
+        "Legislative District 17 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 30
+        },
+        "Legislative District 17 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 30
+        },
+        "Public Utility District 1 Commissioner Pos. 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 45
+        },
+        "Supreme Court - Justice Position #01": {
+          "status": "reconciled",
+          "missing_original_count_cells": 45
+        },
+        "Supreme Court - Justice Position #03": {
+          "status": "reconciled",
+          "missing_original_count_cells": 45
+        },
+        "Supreme Court - Justice Position #04": {
+          "status": "reconciled",
+          "missing_original_count_cells": 45
+        },
+        "Supreme Court - Justice Position #05": {
+          "status": "reconciled",
+          "missing_original_count_cells": 45
+        },
+        "Supreme Court - Justice Position #07": {
+          "status": "reconciled",
+          "missing_original_count_cells": 45
+        }
+      },
+      "house_reporting_rows": 98,
+      "house_candidate_totals": {
+        "democratic_votes": 3899,
+        "republican_votes": 3991,
+        "other_votes": 7,
+        "contest_votes": 7897
+      },
+      "validated_scope": "U.S. House only; see separate per-office reviews for other contests",
+      "all_nonmissing_original_house_counts_agree": true,
+      "all_house_precinct_sums_reconcile": true,
+      "all_native_house_candidate_names_ids_parties_counts_reconcile": true
+    },
+    "lewis-county-wa": {
+      "status": "counts_reconciled_geometry_not_reviewed",
+      "all_office_precinct_rows": 13568,
+      "all_office_summary_rows": 150,
+      "native_contests": 27,
+      "office_reviews": {
+        "Assessor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 12
+        },
+        "Auditor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 15
+        },
+        "Clerk": {
+          "status": "reconciled",
+          "missing_original_count_cells": 12
+        },
+        "Congressional District 3 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 15
+        },
+        "Coroner": {
+          "status": "reconciled",
+          "missing_original_count_cells": 15
+        },
+        "County Commissioner, District 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 15
+        },
+        "District Court Judge, Dept 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 12
+        },
+        "District Court Judge, Dept 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 12
+        },
+        "Fire Protection District No. 6": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Initiative Measure No. IL26-001": {
+          "status": "reconciled",
+          "missing_original_count_cells": 12
+        },
+        "Initiative Measure No. IL26-638": {
+          "status": "reconciled",
+          "missing_original_count_cells": 12
+        },
+        "Initiative Measure No. IP26-645": {
+          "status": "reconciled",
+          "missing_original_count_cells": 12
+        },
+        "Legislative District 19 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 10
+        },
+        "Legislative District 19 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 10
+        },
+        "Legislative District 20 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Legislative District 20 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Prosecuting Attorney": {
+          "status": "reconciled",
+          "missing_original_count_cells": 12
+        },
+        "Public Utility District 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 15
+        },
+        "Sheriff": {
+          "status": "reconciled",
+          "missing_original_count_cells": 15
+        },
+        "Supreme Court - Justice Position #01": {
+          "status": "reconciled",
+          "missing_original_count_cells": 15
+        },
+        "Supreme Court - Justice Position #03": {
+          "status": "reconciled",
+          "missing_original_count_cells": 15
+        },
+        "Supreme Court - Justice Position #04": {
+          "status": "reconciled",
+          "missing_original_count_cells": 15
+        },
+        "Supreme Court - Justice Position #05": {
+          "status": "reconciled",
+          "missing_original_count_cells": 15
+        },
+        "Supreme Court - Justice Position #07": {
+          "status": "reconciled",
+          "missing_original_count_cells": 15
+        },
+        "Timberland Regional Library District - Regular Property Tax Levy Lid Lift for Library Services, Operations and Maintenance": {
+          "status": "reconciled",
+          "missing_original_count_cells": 8
+        },
+        "Transportation Benefit District of Chehalis": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Treasurer": {
+          "status": "reconciled",
+          "missing_original_count_cells": 12
+        }
+      },
+      "house_reporting_rows": 106,
+      "house_candidate_totals": {
+        "democratic_votes": 13179,
+        "republican_votes": 22699,
+        "other_votes": 277,
+        "contest_votes": 36155
+      },
+      "validated_scope": "U.S. House only; see separate per-office reviews for other contests",
+      "all_nonmissing_original_house_counts_agree": true,
+      "all_house_precinct_sums_reconcile": true,
+      "all_native_house_candidate_names_ids_parties_counts_reconcile": true
+    },
+    "lincoln-county-wa": {
+      "status": "counts_reconciled_geometry_not_reviewed",
+      "all_office_precinct_rows": 4922,
+      "all_office_summary_rows": 107,
+      "native_contests": 20,
+      "office_reviews": {
+        "Assessor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Auditor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Clerk": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Commissioner District No. 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Congressional District 5 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Court of Appeals, Division 3, District 1 - Judge Position 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "District Court Judge": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IL26-001": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IL26-638": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IP26-645": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 9 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 9 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Prosecuting Attorney": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Sheriff": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #01": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #03": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #04": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #05": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #07": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Treasurer": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        }
+      },
+      "house_reporting_rows": 46,
+      "house_candidate_totals": {
+        "democratic_votes": 1067,
+        "republican_votes": 2950,
+        "other_votes": 11,
+        "contest_votes": 4028
+      },
+      "validated_scope": "U.S. House only; see separate per-office reviews for other contests",
+      "all_nonmissing_original_house_counts_agree": true,
+      "all_house_precinct_sums_reconcile": true,
+      "all_native_house_candidate_names_ids_parties_counts_reconcile": true
+    },
+    "mason-county-wa": {
+      "status": "counts_reconciled_geometry_not_reviewed",
+      "all_office_precinct_rows": 7926,
+      "all_office_summary_rows": 159,
+      "native_contests": 29,
+      "office_reviews": {
+        "City of Shelton - Sales and Use Tax for Transportation Improvements": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Congressional District 6 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Court of Appeals, Division 2, District 2 - Judge Position 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IL26-001": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IL26-638": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IP26-645": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 35 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 35 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 35 - State Senator": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Mason County - Assessor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Mason County - Auditor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Mason County - Clerk": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Mason County - Coroner": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Mason County - County Commissioner District No. 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Mason County - District Court Judge": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Mason County - Prosecutor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Mason County - Sheriff": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Mason County - Treasurer": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Pioneer School District No. 402 - Replacement of Expiring Educational Programs and Operations Levy": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Public Utility District 1 - Commissioner District 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Public Utility District 3 - Commissioner District 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Sch Dist 65 - McCleary - McCleary School District No. 65 - Bonds": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Southside School District No. 42 - Replacement Educational Programs and Operations Levy": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #01": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #03": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #04": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #05": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #07": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Timberland Regional Library District - Regular Property Tax Levy Lid Lift for Library Services, Operations and Maintenance": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        }
+      },
+      "house_reporting_rows": 58,
+      "house_candidate_totals": {
+        "democratic_votes": 9657,
+        "republican_votes": 8268,
+        "other_votes": 18,
+        "contest_votes": 17943
+      },
+      "validated_scope": "U.S. House only; see separate per-office reviews for other contests",
+      "all_nonmissing_original_house_counts_agree": true,
+      "all_house_precinct_sums_reconcile": true,
+      "all_native_house_candidate_names_ids_parties_counts_reconcile": true
+    },
+    "okanogan-county-wa": {
+      "status": "counts_reconciled_geometry_not_reviewed",
+      "all_office_precinct_rows": 14071,
+      "all_office_summary_rows": 174,
+      "native_contests": 32,
+      "office_reviews": {
+        "Assessor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Auditor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "City of Brewster, Proposition 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Clerk": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Congressional District 4 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Coroner": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "County Commissioner District 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Court of Appeals, Division 3, District 1 - Judge Position 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "District Court Judge Pos. 1 (short & full term)": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "District Court Judge Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Fire District No. 1, Proposition 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IL26-001": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IL26-638": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IP26-645": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 7 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 7 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 7 - State Senator": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Methow Valley EMS, Proposition 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Okanogan Public Utility Commissioner Dist. #1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "PUD (Countywide) - Public Utility Commissioner #3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Prosecuting Attorney": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Public Hospital District No. 1 - Public Hospital District No. 1, Proposition 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Sheriff (short & full term)": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Superior Court Judge Position 2 (2 year unexpired term)": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #01": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #03": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #04": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #05": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #07": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Town of Twisp, Proposition 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Town of Winthrop, Proposition 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Treasurer": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        }
+      },
+      "house_reporting_rows": 100,
+      "house_candidate_totals": {
+        "democratic_votes": 6484,
+        "republican_votes": 7518,
+        "other_votes": 12,
+        "contest_votes": 14014
+      },
+      "validated_scope": "U.S. House only; see separate per-office reviews for other contests",
+      "all_nonmissing_original_house_counts_agree": true,
+      "all_house_precinct_sums_reconcile": true,
+      "all_native_house_candidate_names_ids_parties_counts_reconcile": true
+    },
+    "pacific-county-wa": {
+      "status": "counts_reconciled_geometry_not_reviewed",
+      "all_office_precinct_rows": 5116,
+      "all_office_summary_rows": 138,
+      "native_contests": 25,
+      "office_reviews": {
+        "Assessor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Auditor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Clerk": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Commissioner District 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Congressional District 3 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IL26-001": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IL26-638": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IP26-645": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 19 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 19 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "North District Court Judge": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "North Pacific Emergency Medical Services District No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Pacific County Fire Protection District No. 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Pacific County Fire Protection District No. 6": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Prosecuting Attorney": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Public Utility District No. 2 Commissioner District 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Sheriff": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "South District Court Judge": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #01": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #03": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #04": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #05": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #07": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Timberland Regional Library District - Regular Property Tax Levy Lid Lift for Library Services, Operations and Maintenance": {
+          "status": "not_reconciled",
+          "reason": "Washington precinct totals do not reconcile to county summaries"
+        },
+        "Treasurer": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        }
+      },
+      "house_reporting_rows": 42,
+      "house_candidate_totals": {
+        "democratic_votes": 5326,
+        "republican_votes": 4289,
+        "other_votes": 80,
+        "contest_votes": 9695
+      },
+      "validated_scope": "U.S. House only; see separate per-office reviews for other contests",
+      "all_nonmissing_original_house_counts_agree": true,
+      "all_house_precinct_sums_reconcile": true,
+      "all_native_house_candidate_names_ids_parties_counts_reconcile": true
+    },
+    "pend-oreille-county-wa": {
+      "status": "counts_reconciled_geometry_not_reviewed",
+      "all_office_precinct_rows": 3478,
+      "all_office_summary_rows": 139,
+      "native_contests": 26,
+      "office_reviews": {
+        "Congressional District 5 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "County Assessor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "County Auditor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "County Clerk": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "County Commissioner No. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "County Prosecutor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "County Sheriff": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "County Treasurer": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Court of Appeals, Division 3, District 1 - Judge Position 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "District Court Judge": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Ferry, Pend Oreille, Stevens Superior Court - Judge Position 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Hospital Expansion and Renovation Bonds": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IL26-001": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IL26-638": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IP26-645": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 7 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 7 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 7 - State Senator": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Public Utility Commissioner No. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Riverside School District - Proposition No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Sacheen One Year Excess Levy for Maintenance & Operation": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #01": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #03": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #04": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #05": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #07": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        }
+      },
+      "house_reporting_rows": 27,
+      "house_candidate_totals": {
+        "democratic_votes": 2165,
+        "republican_votes": 4612,
+        "other_votes": 24,
+        "contest_votes": 6801
+      },
+      "validated_scope": "U.S. House only; see separate per-office reviews for other contests",
+      "all_nonmissing_original_house_counts_agree": true,
+      "all_house_precinct_sums_reconcile": true,
+      "all_native_house_candidate_names_ids_parties_counts_reconcile": true
+    },
+    "pierce-county-wa": {
+      "status": "counts_reconciled_geometry_not_reviewed",
+      "all_office_precinct_rows": 125929,
+      "all_office_summary_rows": 357,
+      "native_contests": 65,
+      "office_reviews": {
+        "Auburn School District No. 408 - Proposition No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Auditor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 45
+        },
+        "Charter Amendment No. 52": {
+          "status": "reconciled",
+          "missing_original_count_cells": 36
+        },
+        "Charter Amendment No. 53": {
+          "status": "reconciled",
+          "missing_original_count_cells": 36
+        },
+        "Charter Amendment No. 54": {
+          "status": "reconciled",
+          "missing_original_count_cells": 36
+        },
+        "Charter Amendment No. 55": {
+          "status": "reconciled",
+          "missing_original_count_cells": 36
+        },
+        "Charter Amendment No. 56": {
+          "status": "reconciled",
+          "missing_original_count_cells": 36
+        },
+        "Charter Amendment No. 57": {
+          "status": "reconciled",
+          "missing_original_count_cells": 36
+        },
+        "Charter Amendment No. 58": {
+          "status": "reconciled",
+          "missing_original_count_cells": 36
+        },
+        "City of Milton - Proposition No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "City of Tacoma - Safe Homes for All Initiative Measure No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Congressional District 10 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 10
+        },
+        "Congressional District 6 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Congressional District 8 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 35
+        },
+        "County Council District No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 30
+        },
+        "County Council District No. 5": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "County Council District No. 7": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Court of Appeals, Division 2, District 1 - Judge Position 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 36
+        },
+        "Fire Protection District No. 14 - Proposition No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IL26-001": {
+          "status": "reconciled",
+          "missing_original_count_cells": 36
+        },
+        "Initiative Measure No. IL26-638": {
+          "status": "reconciled",
+          "missing_original_count_cells": 36
+        },
+        "Initiative Measure No. IP26-645": {
+          "status": "reconciled",
+          "missing_original_count_cells": 36
+        },
+        "Legislative District 2 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 2 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 25 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 10
+        },
+        "Legislative District 25 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 10
+        },
+        "Legislative District 26 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 26 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 26 - State Senator": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 27 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 27 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 28 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Legislative District 28 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Legislative District 29 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Legislative District 29 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Legislative District 29 - State Senator": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Legislative District 31 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 25
+        },
+        "Legislative District 31 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 25
+        },
+        "Legislative District 31 - State Senator": {
+          "status": "reconciled",
+          "missing_original_count_cells": 25
+        },
+        "Pierce County District Court - Position No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 36
+        },
+        "Pierce County District Court - Position No. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 36
+        },
+        "Pierce County District Court - Position No. 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 36
+        },
+        "Pierce County District Court - Position No. 4": {
+          "status": "reconciled",
+          "missing_original_count_cells": 36
+        },
+        "Pierce County District Court - Position No. 5": {
+          "status": "reconciled",
+          "missing_original_count_cells": 36
+        },
+        "Pierce County District Court - Position No. 6": {
+          "status": "reconciled",
+          "missing_original_count_cells": 36
+        },
+        "Pierce County District Court - Position No. 7": {
+          "status": "reconciled",
+          "missing_original_count_cells": 45
+        },
+        "Pierce County District Court - Position No. 8": {
+          "status": "reconciled",
+          "missing_original_count_cells": 45
+        },
+        "Pierce Transit - Proposition No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Prosecuting Attorney": {
+          "status": "reconciled",
+          "missing_original_count_cells": 45
+        },
+        "Southeast Electoral District - Judge Position No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Southeast Electoral District - Judge Position No. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Southeast Electoral District - Judge Position No. 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Southeast Electoral District - Judge Position No. 4": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Southeast Electoral District - Judge Position No. 5": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Southeast Electoral District - Judge Position No. 6": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #01": {
+          "status": "reconciled",
+          "missing_original_count_cells": 45
+        },
+        "Supreme Court - Justice Position #03": {
+          "status": "reconciled",
+          "missing_original_count_cells": 45
+        },
+        "Supreme Court - Justice Position #04": {
+          "status": "reconciled",
+          "missing_original_count_cells": 45
+        },
+        "Supreme Court - Justice Position #05": {
+          "status": "reconciled",
+          "missing_original_count_cells": 45
+        },
+        "Supreme Court - Justice Position #07": {
+          "status": "reconciled",
+          "missing_original_count_cells": 45
+        },
+        "Tacoma Municipal Court - Position No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Tacoma Municipal Court - Position No. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Tacoma Municipal Court - Position No. 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Town of South Prairie - Proposition No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Yelm Community Schools - Proposition No. 1 - Educational Programs and Operations Maintenance Levy": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        }
+      },
+      "house_reporting_rows": 745,
+      "house_candidate_totals": {
+        "democratic_votes": 167641,
+        "republican_votes": 110226,
+        "other_votes": 1046,
+        "contest_votes": 278913
+      },
+      "validated_scope": "U.S. House only; see separate per-office reviews for other contests",
+      "all_nonmissing_original_house_counts_agree": true,
+      "all_house_precinct_sums_reconcile": true,
+      "all_native_house_candidate_names_ids_parties_counts_reconcile": true
+    },
+    "san-juan-county-wa": {
+      "status": "counts_reconciled_geometry_not_reviewed",
+      "all_office_precinct_rows": 2495,
+      "all_office_summary_rows": 125,
+      "native_contests": 23,
+      "office_reviews": {
+        "Assessor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Auditor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Clerk": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Congressional District 2 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Council Residency District 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IL26-001": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IL26-638": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IP26-645": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 40 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 40 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Proposition No. 1 - Excess Property Tax Levy for 2027 Lopez Solid Waste Disposal District": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Proposition No. 1 - Property Tax Levy for Fire Protection and Emergency Medical SJC Fire Protection District No. 4": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Proposition No. 1 - Six-Year Property Tax Levy Orcas Island Park and Recreation District": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Proposition No. 1 - Term Length of Port Commissioners Port of Lopez": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Prosecuting Attorney": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "SJC District Court Judge": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Sheriff": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #01": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #03": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #04": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #05": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #07": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Treasurer": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        }
+      },
+      "house_reporting_rows": 23,
+      "house_candidate_totals": {
+        "democratic_votes": 6624,
+        "republican_votes": 1755,
+        "other_votes": 35,
+        "contest_votes": 8414
+      },
+      "validated_scope": "U.S. House only; see separate per-office reviews for other contests",
+      "all_nonmissing_original_house_counts_agree": true,
+      "all_house_precinct_sums_reconcile": true,
+      "all_native_house_candidate_names_ids_parties_counts_reconcile": true
+    },
+    "skagit-county-wa": {
+      "status": "counts_reconciled_geometry_not_reviewed",
+      "all_office_precinct_rows": 49025,
+      "all_office_summary_rows": 174,
+      "native_contests": 31,
+      "office_reviews": {
+        "Assessor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 52
+        },
+        "Auditor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 65
+        },
+        "City of Mount Vernon, Washington (Mount Vernon Transportation Benefit District) Proposition No. 1 - Renewal of Sales and Use Tax for Transportation Improvements": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "City of Sedro-Woolley Proposition No. 1 - Annexation into Central Skagit Rural Partial-County Library District ": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Clerk": {
+          "status": "reconciled",
+          "missing_original_count_cells": 65
+        },
+        "Commissioner District 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 65
+        },
+        "Congressional District 2 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 65
+        },
+        "Coroner": {
+          "status": "reconciled",
+          "missing_original_count_cells": 65
+        },
+        "Fire Protection District No. 5 Proposition No. 1 - Authorizing Regular Property  Tax Levy": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IL26-001": {
+          "status": "reconciled",
+          "missing_original_count_cells": 52
+        },
+        "Initiative Measure No. IL26-638": {
+          "status": "reconciled",
+          "missing_original_count_cells": 52
+        },
+        "Initiative Measure No. IP26-645": {
+          "status": "reconciled",
+          "missing_original_count_cells": 52
+        },
+        "La Conner School District No. 311 Proposition No. 1 - Educational Facility Modernization and  Technology Levy": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Legislative District 10 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 15
+        },
+        "Legislative District 10 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 15
+        },
+        "Legislative District 39 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        },
+        "Legislative District 39 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        },
+        "Legislative District 40 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 30
+        },
+        "Legislative District 40 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 30
+        },
+        "Prosecuting Attorney": {
+          "status": "reconciled",
+          "missing_original_count_cells": 52
+        },
+        "Public Utility District No. 1 Commissioner Position 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 65
+        },
+        "Sheriff": {
+          "status": "reconciled",
+          "missing_original_count_cells": 65
+        },
+        "Skagit County District Court Judge Position 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 52
+        },
+        "Skagit County District Court Judge Position 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 52
+        },
+        "Skagit County District Court Judge Position 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 52
+        },
+        "Supreme Court - Justice Position #01": {
+          "status": "reconciled",
+          "missing_original_count_cells": 65
+        },
+        "Supreme Court - Justice Position #03": {
+          "status": "reconciled",
+          "missing_original_count_cells": 65
+        },
+        "Supreme Court - Justice Position #04": {
+          "status": "reconciled",
+          "missing_original_count_cells": 65
+        },
+        "Supreme Court - Justice Position #05": {
+          "status": "reconciled",
+          "missing_original_count_cells": 65
+        },
+        "Supreme Court - Justice Position #07": {
+          "status": "reconciled",
+          "missing_original_count_cells": 65
+        },
+        "Treasurer": {
+          "status": "reconciled",
+          "missing_original_count_cells": 65
+        }
+      },
+      "house_reporting_rows": 373,
+      "house_candidate_totals": {
+        "democratic_votes": 22312,
+        "republican_votes": 13081,
+        "other_votes": 77,
+        "contest_votes": 35470
+      },
+      "validated_scope": "U.S. House only; see separate per-office reviews for other contests",
+      "all_nonmissing_original_house_counts_agree": true,
+      "all_house_precinct_sums_reconcile": true,
+      "all_native_house_candidate_names_ids_parties_counts_reconcile": true
+    },
+    "skamania-county-wa": {
+      "status": "counts_reconciled_geometry_not_reviewed",
+      "all_office_precinct_rows": 2576,
+      "all_office_summary_rows": 112,
+      "native_contests": 20,
+      "office_reviews": {
+        "Assessor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Auditor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Clerk": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Congressional District 3 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "District Court Judge": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IL26-001": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IL26-638": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IP26-645": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 17 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 17 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Prosecuting Attorney": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Public Utility District, Commissioner No. 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Sheriff": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Skamania County Commissioner District No. 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #01": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #03": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #04": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #05": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #07": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Treasurer": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        }
+      },
+      "house_reporting_rows": 23,
+      "house_candidate_totals": {
+        "democratic_votes": 3003,
+        "republican_votes": 2925,
+        "other_votes": 41,
+        "contest_votes": 5969
+      },
+      "validated_scope": "U.S. House only; see separate per-office reviews for other contests",
+      "all_nonmissing_original_house_counts_agree": true,
+      "all_house_precinct_sums_reconcile": true,
+      "all_native_house_candidate_names_ids_parties_counts_reconcile": true
+    },
+    "snohomish-county-wa": {
+      "status": "counts_reconciled_geometry_not_reviewed",
+      "all_office_precinct_rows": 110235,
+      "all_office_summary_rows": 328,
+      "native_contests": 60,
+      "office_reviews": {
+        "Cascade District Court Judge Position 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Cascade District Court Judge Position 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "City of Bothell - Proposition No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "City of Everett Proposition No. 261": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "City of Everett Proposition No. 262": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "City of Everett Proposition No. 263": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "City of Everett Proposition No. 264": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "City of Everett Proposition No. 265": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Congressional District 1 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 10
+        },
+        "Congressional District 2 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 15
+        },
+        "Congressional District 8 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Court of Appeals, Division 1, District 2 - Judge Position 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        },
+        "Everett District Court Judge Position 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 16
+        },
+        "Everett District Court Judge Position 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 16
+        },
+        "Evergreen District Court Judge Position 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Evergreen District Court Judge Position 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Fire Protection District No. 10 Proposition No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IL26-001": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        },
+        "Initiative Measure No. IL26-638": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        },
+        "Initiative Measure No. IP26-645": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        },
+        "Legislative District 1 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 1 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 10 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 10 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 12 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 12 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 21 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 21 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 21 - State Senator": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 32 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Legislative District 32 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Legislative District 32 - State Senator": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Legislative District 38 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 15
+        },
+        "Legislative District 38 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 12
+        },
+        "Legislative District 38 - State Senator": {
+          "status": "reconciled",
+          "missing_original_count_cells": 15
+        },
+        "Legislative District 39 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Legislative District 39 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Legislative District 44 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 44 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 44 - State Senator": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Monroe School District No. 103 Proposition No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Mukilteo School District No. 6 Proposition No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Proposed Amendments to the Snohomish County Charter Prop 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        },
+        "Proposed Amendments to the Snohomish County Charter Prop 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        },
+        "Proposed Amendments to the Snohomish County Charter Prop 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        },
+        "Proposed Amendments to the Snohomish County Charter Prop 4": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        },
+        "Proposed Amendments to the Snohomish County Charter Prop 5": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        },
+        "Public Hospital District No. 1 - Public Hospital District No. 1, Proposition 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Public Utility District No. 1 - Commissioner District 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 25
+        },
+        "Snohomish County Prosecuting Attorney": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        },
+        "South District Court Judge Position 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "South District Court Judge Position 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "South District Court Judge Position 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "South Snohomish County Fire and Rescue RFA Proposition No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Sultan School District No. 311 Proposition No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #01": {
+          "status": "reconciled",
+          "missing_original_count_cells": 25
+        },
+        "Supreme Court - Justice Position #03": {
+          "status": "reconciled",
+          "missing_original_count_cells": 25
+        },
+        "Supreme Court - Justice Position #04": {
+          "status": "reconciled",
+          "missing_original_count_cells": 25
+        },
+        "Supreme Court - Justice Position #05": {
+          "status": "reconciled",
+          "missing_original_count_cells": 25
+        },
+        "Supreme Court - Justice Position #07": {
+          "status": "reconciled",
+          "missing_original_count_cells": 25
+        }
+      },
+      "house_reporting_rows": 875,
+      "house_candidate_totals": {
+        "democratic_votes": 160767,
+        "republican_votes": 85712,
+        "other_votes": 637,
+        "contest_votes": 247116
+      },
+      "validated_scope": "U.S. House only; see separate per-office reviews for other contests",
+      "all_nonmissing_original_house_counts_agree": true,
+      "all_house_precinct_sums_reconcile": true,
+      "all_native_house_candidate_names_ids_parties_counts_reconcile": true
+    },
+    "spokane-county-wa": {
+      "status": "counts_reconciled_geometry_not_reviewed",
+      "all_office_precinct_rows": 69367,
+      "all_office_summary_rows": 316,
+      "native_contests": 59,
+      "office_reviews": {
+        "Assessor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Auditor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Central Valley School District Proposition No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Cheney School District - Proposition No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Cheney School District - Proposition No. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "City of Liberty Lake Proposition No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Clerk": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Commissioner District 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Commissioner District 4": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Congressional District 5 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Court of Appeals, Division 3, District 1 - Judge Position 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "District Court Judge 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "District Court Judge 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "District Court Judge 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "District Court Judge 4": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "District Court Judge 5": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "District Court Judge 6": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "District Court Judge 7": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "District Court Judge 8": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "East Valley School District Proposition No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Fire Protection District No. 11 Proposition No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Fire Protection District No. 12 Proposition No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Fire Protection District No. 2 Proposition No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Fire Protection District No. 3 Proposition No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Fire Protection District No. 9 Proposition No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Fire Protection District No. 9 Proposition No. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IL26-001": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IL26-638": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IP26-645": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 3 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 3 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 4 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 4 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 6 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 6 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 6 - State Senator": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 7 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 7 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 7 - State Senator": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 9 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 9 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Nine Mile Falls School District - Proposition No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Nine Mile Falls School District - Proposition No. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "PUD District 1 Commissioner District 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Prosecuting Attorney": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Riverside School District - Proposition No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Sheriff": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Spokane School District Proposition No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 8
+        },
+        "Supreme Court - Justice Position #01": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #03": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #04": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #05": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #07": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Town of Rockford Proposition No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Town of Spangle Proposition No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Town of Spangle Proposition No. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Treasurer": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "West Valley School District Proposition No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "West Valley School District Proposition No. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        }
+      },
+      "house_reporting_rows": 453,
+      "house_candidate_totals": {
+        "democratic_votes": 81748,
+        "republican_votes": 72660,
+        "other_votes": 521,
+        "contest_votes": 154929
+      },
+      "validated_scope": "U.S. House only; see separate per-office reviews for other contests",
+      "all_nonmissing_original_house_counts_agree": true,
+      "all_house_precinct_sums_reconcile": true,
+      "all_native_house_candidate_names_ids_parties_counts_reconcile": true
+    },
+    "stevens-county-wa": {
+      "status": "counts_reconciled_geometry_not_reviewed",
+      "all_office_precinct_rows": 9483,
+      "all_office_summary_rows": 152,
+      "native_contests": 28,
+      "office_reviews": {
+        "Assessor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 8
+        },
+        "Auditor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 10
+        },
+        "Clerk": {
+          "status": "reconciled",
+          "missing_original_count_cells": 8
+        },
+        "Commissioner District 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 10
+        },
+        "Congressional District 5 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 10
+        },
+        "Coroner": {
+          "status": "reconciled",
+          "missing_original_count_cells": 10
+        },
+        "Court of Appeals, Division 3, District 1 - Judge Position 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 8
+        },
+        "District Court Judge": {
+          "status": "reconciled",
+          "missing_original_count_cells": 10
+        },
+        "Ferry, Pend Oreille, Stevens Superior Court - Judge Position 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 8
+        },
+        "Initiative Measure No. IL26-001": {
+          "status": "reconciled",
+          "missing_original_count_cells": 8
+        },
+        "Initiative Measure No. IL26-638": {
+          "status": "reconciled",
+          "missing_original_count_cells": 8
+        },
+        "Initiative Measure No. IP26-645": {
+          "status": "reconciled",
+          "missing_original_count_cells": 8
+        },
+        "Legislative District 7 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 8
+        },
+        "Legislative District 7 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 8
+        },
+        "Legislative District 7 - State Senator": {
+          "status": "reconciled",
+          "missing_original_count_cells": 10
+        },
+        "Nine Mile Falls School District - Proposition No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Nine Mile Falls School District - Proposition No. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "PUD District 1 Commissioner District 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 10
+        },
+        "Prosecuting Attorney": {
+          "status": "reconciled",
+          "missing_original_count_cells": 8
+        },
+        "Sheriff": {
+          "status": "reconciled",
+          "missing_original_count_cells": 8
+        },
+        "Stevens County Fire Protection District No. 10 Proposition No. 1 Property Tax Levy For Fire Protection Services": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Stevens County Rural Library District Proposition No. 2 Levy Lift For Library Services": {
+          "status": "reconciled",
+          "missing_original_count_cells": 8
+        },
+        "Supreme Court - Justice Position #01": {
+          "status": "reconciled",
+          "missing_original_count_cells": 10
+        },
+        "Supreme Court - Justice Position #03": {
+          "status": "reconciled",
+          "missing_original_count_cells": 10
+        },
+        "Supreme Court - Justice Position #04": {
+          "status": "reconciled",
+          "missing_original_count_cells": 10
+        },
+        "Supreme Court - Justice Position #05": {
+          "status": "reconciled",
+          "missing_original_count_cells": 10
+        },
+        "Supreme Court - Justice Position #07": {
+          "status": "reconciled",
+          "missing_original_count_cells": 10
+        },
+        "Treasurer": {
+          "status": "reconciled",
+          "missing_original_count_cells": 8
+        }
+      },
+      "house_reporting_rows": 69,
+      "house_candidate_totals": {
+        "democratic_votes": 2373,
+        "republican_votes": 5181,
+        "other_votes": 39,
+        "contest_votes": 7593
+      },
+      "validated_scope": "U.S. House only; see separate per-office reviews for other contests",
+      "all_nonmissing_original_house_counts_agree": true,
+      "all_house_precinct_sums_reconcile": true,
+      "all_native_house_candidate_names_ids_parties_counts_reconcile": true
+    },
+    "thurston-county-wa": {
+      "status": "counts_reconciled_geometry_not_reviewed",
+      "all_office_precinct_rows": 47159,
+      "all_office_summary_rows": 229,
+      "native_contests": 41,
+      "office_reviews": {
+        "Assessor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Auditor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Clerk": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Congressional District 10 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Congressional District 3 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Coroner": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "County Commissioner, District No. 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "County Commissioner, District No. 5": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Court of Appeals, Division 2, District 2 - Judge Position 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "District Court Judge, Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "District Court Judge, Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "District Court Judge, Pos. 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Fire Protection District No. 3 (Lacey) - Proposition No. 1 - Bonds for Fire Stations, Training Facility, Logistics Warehouse": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IL26-001": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IL26-638": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IP26-645": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 19 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 19 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 2 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 2 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 20 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 20 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 22 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 22 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 35 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 35 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 35 - State Senator": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Prosecuting Attorney": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Public Utility District Commissioner, District No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Public Utility District Commissioner, District No. 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Sheriff": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #01": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #03": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #04": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #05": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #07": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Timberland Regional Library District - Regular Property Tax Levy Lid Lift for Library Services, Operations and Maintenance": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Treasurer": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "West Thurston Regional Fire Authority (Littlerock) - Proposition No. 1 - Property Tax for Fire Maintenance and Operations": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "West Thurston Regional Fire Authority (Rochester) - Proposition No. 1 - Property Tax for Fire Maintenance and Operations": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Yelm Community Schools - Proposition No. 1 - Educational Programs and Operations Maintenance Levy": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        }
+      },
+      "house_reporting_rows": 308,
+      "house_candidate_totals": {
+        "democratic_votes": 50135,
+        "republican_votes": 26660,
+        "other_votes": 528,
+        "contest_votes": 77323
+      },
+      "validated_scope": "U.S. House only; see separate per-office reviews for other contests",
+      "all_nonmissing_original_house_counts_agree": true,
+      "all_house_precinct_sums_reconcile": true,
+      "all_native_house_candidate_names_ids_parties_counts_reconcile": true
+    },
+    "wahkiakum-county-wa": {
+      "status": "counts_reconciled_geometry_not_reviewed",
+      "all_office_precinct_rows": 1224,
+      "all_office_summary_rows": 119,
+      "native_contests": 22,
+      "office_reviews": {
+        "Commissioner #1": {
+          "status": "not_reconciled",
+          "reason": "Washington precinct totals do not reconcile to county summaries"
+        },
+        "Commissioner #3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Congressional District 3 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Cou - Eme Med Ser (EMS) Levy - Replacement Existing Levy": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "County Assessor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "County Auditor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "County Clerk": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "County Sheriff": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "County Treasurer": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "District Court Judge": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Fir (Sk - Eme Med Ser (EMS) Levy - Replacement Existing Levy": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IL26-001": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IL26-638": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IP26-645": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 19 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 19 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Prosecuting Attorney": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #01": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #03": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #04": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #05": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #07": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        }
+      },
+      "house_reporting_rows": 11,
+      "house_candidate_totals": {
+        "democratic_votes": 1119,
+        "republican_votes": 1243,
+        "other_votes": 19,
+        "contest_votes": 2381
+      },
+      "validated_scope": "U.S. House only; see separate per-office reviews for other contests",
+      "all_nonmissing_original_house_counts_agree": true,
+      "all_house_precinct_sums_reconcile": true,
+      "all_native_house_candidate_names_ids_parties_counts_reconcile": true
+    },
+    "walla-walla-county-wa": {
+      "status": "review_failed_all_originals_retained",
+      "reason": "Washington House ballot accounting disagrees"
+    },
+    "whatcom-county-wa": {
+      "status": "counts_reconciled_geometry_not_reviewed",
+      "all_office_precinct_rows": 18913,
+      "all_office_summary_rows": 140,
+      "native_contests": 25,
+      "office_reviews": {
+        "City of Bellingham Initiative 26-01 Prohibition of Algorithmic Price-Fixing in the Rental Market": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "City of Bellingham Proposition 2026-06 Authorizing the City's Salary Commission to Set the Mayor's Salary": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "City of Bellingham Proposition 2026-07 Streamlining the City's Contract Review Process to Allow Electronic Signatures": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "City of Lynden Proposition 2026-05 Levy Lid Lift for Public Safety and Essential Community Services": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Congressional District 2 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Fire Protection District 1 Proposition 2026-08 Regular Property Tax Levy Lid Lift": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Initiative Measure No. IL26-001": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Initiative Measure No. IL26-638": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Initiative Measure No. IP26-645": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Legislative District 40 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 40 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 42 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Legislative District 42 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Legislative District 42 - State Senator": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Port of Bellingham Commissioner District 4": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Port of Bellingham Commissioner District 5": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Prosecuting Attorney": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Public Utility District No. 1 Commissioner District 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Supreme Court - Justice Position #01": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Supreme Court - Justice Position #03": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Supreme Court - Justice Position #04": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Supreme Court - Justice Position #05": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Supreme Court - Justice Position #07": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Whatcom County District Court Judge Position 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Whatcom County District Court Judge Position 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        }
+      },
+      "house_reporting_rows": 176,
+      "house_candidate_totals": {
+        "democratic_votes": 69559,
+        "republican_votes": 34454,
+        "other_votes": 546,
+        "contest_votes": 104559
+      },
+      "validated_scope": "U.S. House only; see separate per-office reviews for other contests",
+      "all_nonmissing_original_house_counts_agree": true,
+      "all_house_precinct_sums_reconcile": true,
+      "all_native_house_candidate_names_ids_parties_counts_reconcile": true
+    },
+    "whitman-county-wa": {
+      "status": "counts_reconciled_geometry_not_reviewed",
+      "all_office_precinct_rows": 9648,
+      "all_office_summary_rows": 268,
+      "native_contests": 52,
+      "office_reviews": {
+        "Assessor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 8
+        },
+        "Auditor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 10
+        },
+        "Cem No. 2, Prop No. 2026-1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 4
+        },
+        "Cheney School District - Proposition No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Cheney School District - Proposition No. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "City Palouse, Prop No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "City Palouse, Prop No. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "City Palouse, Prop No. 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "City Tekoa, Prop No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Clerk": {
+          "status": "reconciled",
+          "missing_original_count_cells": 8
+        },
+        "Congressional District 5 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 10
+        },
+        "Coroner": {
+          "status": "reconciled",
+          "missing_original_count_cells": 8
+        },
+        "County Comm. No. 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 8
+        },
+        "Court of Appeals, Division 3, District 2 - Judge Position 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 8
+        },
+        "District Judge, Pos 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 8
+        },
+        "Endicott Cem No. 4, Prop No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Endicott Park No. 7, Prop No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Fire No. 14, Prop No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Fire No. 8, Prop No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Garfield Park No. 2, Prop No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Initiative Measure No. IL26-001": {
+          "status": "reconciled",
+          "missing_original_count_cells": 8
+        },
+        "Initiative Measure No. IL26-638": {
+          "status": "reconciled",
+          "missing_original_count_cells": 8
+        },
+        "Initiative Measure No. IP26-645": {
+          "status": "reconciled",
+          "missing_original_count_cells": 8
+        },
+        "LaCrosse Park No. 1, Prop No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Legislative District 9 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 8
+        },
+        "Legislative District 9 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 10
+        },
+        "Library Prop No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Oakesdale Cem No. 1, Prop No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Oakesdale Park No. 4, Prop No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Pros Atty": {
+          "status": "reconciled",
+          "missing_original_count_cells": 8
+        },
+        "Sheriff": {
+          "status": "reconciled",
+          "missing_original_count_cells": 8
+        },
+        "St. John Cem No. 3, Prop No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 12
+        },
+        "St. John Park No. 3, Prop No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Supreme Court - Justice Position #01": {
+          "status": "reconciled",
+          "missing_original_count_cells": 10
+        },
+        "Supreme Court - Justice Position #03": {
+          "status": "reconciled",
+          "missing_original_count_cells": 10
+        },
+        "Supreme Court - Justice Position #04": {
+          "status": "reconciled",
+          "missing_original_count_cells": 10
+        },
+        "Supreme Court - Justice Position #05": {
+          "status": "reconciled",
+          "missing_original_count_cells": 10
+        },
+        "Supreme Court - Justice Position #07": {
+          "status": "reconciled",
+          "missing_original_count_cells": 10
+        },
+        "Town Albion, Prop No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Town Albion, Prop No. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Town Endicott, Prop No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Town Endicott, Prop No. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Town Endicott, Prop No. 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Town Garfield, Prop No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Town Oakesdale, Prop No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Town Oakesdale, Prop No. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Town Rosalia, Prop No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Town St. John, Prop No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Town St. John, Prop No. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Town Uniontown, Prop No. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Town of Colton, Prop No. 880": {
+          "status": "reconciled",
+          "missing_original_count_cells": 0
+        },
+        "Treasurer": {
+          "status": "reconciled",
+          "missing_original_count_cells": 8
+        }
+      },
+      "house_reporting_rows": 81,
+      "house_candidate_totals": {
+        "democratic_votes": 4661,
+        "republican_votes": 3822,
+        "other_votes": 22,
+        "contest_votes": 8505
+      },
+      "validated_scope": "U.S. House only; see separate per-office reviews for other contests",
+      "all_nonmissing_original_house_counts_agree": true,
+      "all_house_precinct_sums_reconcile": true,
+      "all_native_house_candidate_names_ids_parties_counts_reconcile": true
+    },
+    "yakima-county-wa": {
+      "status": "counts_reconciled_geometry_not_reviewed",
+      "all_office_precinct_rows": 29900,
+      "all_office_summary_rows": 151,
+      "native_contests": 27,
+      "office_reviews": {
+        "Assessor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        },
+        "Auditor": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        },
+        "Clerk": {
+          "status": "reconciled",
+          "missing_original_count_cells": 16
+        },
+        "Congressional District 4 - U.S. Representative": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        },
+        "Coroner": {
+          "status": "reconciled",
+          "missing_original_count_cells": 16
+        },
+        "County Commissioner, District 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 5
+        },
+        "Court of Appeals, Division 3, District 3 - Judge Position 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 16
+        },
+        "Initiative Measure No. IL26-001": {
+          "status": "reconciled",
+          "missing_original_count_cells": 16
+        },
+        "Initiative Measure No. IL26-638": {
+          "status": "reconciled",
+          "missing_original_count_cells": 16
+        },
+        "Initiative Measure No. IP26-645": {
+          "status": "reconciled",
+          "missing_original_count_cells": 16
+        },
+        "Legislative District 14 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 10
+        },
+        "Legislative District 14 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 10
+        },
+        "Legislative District 15 - State Representative Pos. 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 10
+        },
+        "Legislative District 15 - State Representative Pos. 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 10
+        },
+        "Legislative District 15 - State Senator": {
+          "status": "reconciled",
+          "missing_original_count_cells": 8
+        },
+        "Prosecuting Attorney": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        },
+        "Sheriff": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        },
+        "Supreme Court - Justice Position #01": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        },
+        "Supreme Court - Justice Position #03": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        },
+        "Supreme Court - Justice Position #04": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        },
+        "Supreme Court - Justice Position #05": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        },
+        "Supreme Court - Justice Position #07": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        },
+        "Treasurer": {
+          "status": "reconciled",
+          "missing_original_count_cells": 20
+        },
+        "Yakima County District Court Judge, Position 1": {
+          "status": "reconciled",
+          "missing_original_count_cells": 16
+        },
+        "Yakima County District Court Judge, Position 2": {
+          "status": "reconciled",
+          "missing_original_count_cells": 16
+        },
+        "Yakima County District Court Judge, Position 3": {
+          "status": "reconciled",
+          "missing_original_count_cells": 16
+        },
+        "Yakima County District Court Judge, Position 4": {
+          "status": "reconciled",
+          "missing_original_count_cells": 16
+        }
+      },
+      "house_reporting_rows": 224,
+      "house_candidate_totals": {
+        "democratic_votes": 22394,
+        "republican_votes": 22860,
+        "other_votes": 145,
+        "contest_votes": 45399
+      },
+      "validated_scope": "U.S. House only; see separate per-office reviews for other contests",
+      "all_nonmissing_original_house_counts_agree": true,
+      "all_house_precinct_sums_reconcile": true,
+      "all_native_house_candidate_names_ids_parties_counts_reconcile": true
+    }
+  },
+  "reconciled_counties": 36,
+  "house_reporting_rows": 5804,
+  "source_cache_all_originals_retained": true,
+  "participation": "not_inferred_from_candidate_counts",
+  "margin_definition": "100 * (Democratic - Republican) / all candidate votes; positive is Democratic",
+  "notes": "All 39 county APIs and 78 complete native Excel originals are retained. House candidate counts are accepted only after detailed precinct-to-summary reconciliation, native summary candidate ID/name/literal-party/count agreement, explicit-count agreement between exports, and single-seat House ballot accounting. Missing All Results cells remain missing; only separately explicit detailed-export counts are used, never a zero substitution. Non-House contest discrepancies remain in per-office audits. Whole counties with ambiguous House identities or House ballot-accounting discrepancies remain withheld. Complete 2026 General base and split geometry is archived, not yet approved for joining. No map, demographic participation or final turnout is inferred from these unofficial candidate counts.",
+  "next_action": "Audit full base/split identity universes and explicit congressional districts; map only exact complete county joins after validity/overlap review. Resolve King duplicate House labels, Jefferson and Walla Walla House ballot accounting independently without allocations or repairs.",
+  "reproduction": "Extract originals/native-counties.tar.gz and originals/official-discovery.tar.gz into separate empty directories, then run the archived parser with --source-cache, --reference-cache, --output and --archive pointing to new paths.",
+  "original_files": 328,
+  "original_bytes": 150571567,
+  "candidate_totals": {
+    "democratic_votes": 932493,
+    "republican_votes": 671234,
+    "other_votes": 6640,
+    "contest_votes": 1610367
+  },
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-washington-counts-20261105-02/complete-washington-2026-count-review-02.zip"
+}

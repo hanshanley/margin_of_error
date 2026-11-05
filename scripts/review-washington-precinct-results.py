@@ -177,7 +177,7 @@ def reconcile_county(all_results, detailed, native, county_name, county_id):
             key="WA-" + county_id + "-" + quote(precinct, safe="") + "-CD" + match[1],
             **counts, contest_votes=total, reported_ballots=ballots, overvotes=overvotes,
             undervotes=undervotes,
-            margin_pp=100 * (counts["republican_votes"] - counts["democratic_votes"]) / total if total else None,
+            margin_pp=100 * (counts["democratic_votes"] - counts["republican_votes"]) / total if total else None,
             scope="Unofficial native county reporting unit; candidate votes are not turnout."))
     if not house_rows:
         raise ValueError("No Washington House reporting rows")
@@ -290,6 +290,7 @@ def main():
         reconciled_counties=sum(c["status"] == "counts_reconciled_geometry_not_reviewed" for c in counties.values()),
         house_reporting_rows=len(rows), source_cache_all_originals_retained=True,
         participation="not_inferred_from_candidate_counts",
+        margin_definition="100 * (Democratic - Republican) / all candidate votes; positive is Democratic",
         notes="All 39 county APIs and 78 complete native Excel originals are retained. "
               "House candidate counts are accepted only after detailed precinct-to-summary reconciliation, "
               "native summary candidate ID/name/literal-party/count agreement, explicit-count agreement between exports, "
@@ -319,7 +320,7 @@ def main():
         audit["candidate_totals"] = {field: sum(row[field] for row in rows)
             for field in ["democratic_votes", "republican_votes", "other_votes", "contest_votes"]}
         audit["complete_download_url"] = "https://github.com/hanshanley/margin_of_error/releases/download/" \
-            "voter-precinct-washington-counts-20261105/complete-washington-2026-count-review.zip"
+            "voter-precinct-washington-counts-20261105-02/complete-washington-2026-count-review-02.zip"
     (args.output / "audit.json").write_text(json.dumps(audit, indent=2) + "\n")
     if args.archive:
         checksums = {path.relative_to(args.output).as_posix(): dict(bytes=path.stat().st_size,
