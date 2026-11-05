@@ -31,6 +31,125 @@ vt_review = module("review-vermont-precinct-results")
 vt_maps = module("build-vermont-precinct-results")
 id_review = module("review-idaho-precinct-results")
 id_maps = module("build-idaho-precinct-results")
+sd_review = module("review-south-dakota-precinct-results")
+
+
+def south_dakota_fixture():
+    candidates = ["R  Candidate ", "D Candidate"]
+
+    def sheet(items, label, county=None):
+        body = [(None, name, r, d) for name, d, r in items]
+        rows = [("2026 Unofficial General Election Results", None, None, None),
+            ("State of South Dakota", None, None, None),
+            ("Precincts 3 of 3 Reporting (Precincts Partially Reported: 0/3)", None, None, None),
+            (county, None, None, None), (None,) * 4, (None,) * 4,
+            (sd_review.OFFICE, "Precinct" if county else "County", *candidates), *body,
+            (None, "TOTALS", sum(v[2] for v in body), sum(v[3] for v in body))]
+        return sd_review.house_sheet(rows, label, 3)
+
+    sheets = {"01": sheet([("Precinct 1 ", 20, 40), ("Precinct 2", 10, 30)], "first.xlsx", "First County"),
+              "02": sheet([("Center Hall", 5, 15)], "center.xlsx", "Center County")}
+    statewide = sheet([("First", 30, 70), ("Center (Vote Center)", 5, 15)], "statewide.xlsx")
+    facts = dict(year=2026, election="General Election November 3, 2026", counties=[])
+    api = []
+    for code, county, records, registrations, center in [
+        ("01", "First", [("Precinct 1", 65, 100), ("Precinct 2", 45, 100)], 200, False),
+        ("02", "Center", [("Center Hall", 22, 300)], 300, True),
+    ]:
+        facts["counties"].append(dict(code=code, county=county, vote_center=center,
+            records=[dict(label=name, raw_label=name, source_row=i, ballots=b, registered=r)
+                     for i, (name, b, r) in enumerate(records, 1)]))
+        api.append(dict(CountyID=code, CountyName=county + (" (Vote Center)" if center else ""),
+            IsReported=True, PartialPrecincts=0,
+            PrecinctsReporting=len(records), TotalPrecincts=len(records), Voters=registrations,
+            calcVoterTurnout=sum(r[1] for r in records)))
+    catalog = [dict(desc=sd_review.OFFICE, name="D Candidate", Party="Democratic"),
+               dict(desc=sd_review.OFFICE, name="R Candidate", Party="Republican")]
+    return sheets, statewide, facts, api, catalog
+
+
+def test_south_dakota_reconciles_candidates_by_name_and_never_uses_vote_center_denominators():
+    inputs = south_dakota_fixture()
+    # Statewide candidate order may differ from every county workbook.
+    inputs[1]["totals"] = dict(reversed(list(inputs[1]["totals"].items())))
+    rows, statistics, audit = sd_review.review(*inputs)
+    assert len(rows) == len(statistics) == 3
+    assert sum(r["democratic_votes"] for r in rows) == 35
+    assert sum(r["republican_votes"] for r in rows) == 85
+    assert statistics[0]["reported_pct"] == 65 and statistics[1]["reported_pct"] == 45
+    assert statistics[2]["registered"] == 300 and statistics[2]["reported_pct"] is None
+    assert statistics[2]["denominator_scope"] == "county_repeated_at_vote_centers"
+    assert audit["02"]["vote_center"]
+    assert rows[0]["raw_precinct"] == "Precinct 1 "
+
+
+def test_south_dakota_preserves_duplicate_name_rows_without_cross_source_pairing():
+    sheets, statewide, facts, api, catalog = south_dakota_fixture()
+    sheets["01"]["records"][1]["label"] = "Precinct 1"
+    facts["counties"][0]["records"][1]["label"] = "Precinct 1"
+    rows, statistics, audit = sd_review.review(sheets, statewide, facts, api, catalog)
+    assert len(rows) == len({r["key"] for r in rows}) == 3
+    assert len(statistics) == len({r["key"] for r in statistics}) == 3
+    assert all(r["reported_pct"] is None for r in statistics)
+    assert all("ambiguous_reporting_unit_name_no_cross_source_row_pairing" in r["quality_flags"]
+               for r in statistics[:2])
+    assert {r["key"] for r in rows[:2]}.isdisjoint(r["key"] for r in statistics[:2])
+    assert audit["01"]["duplicate_reporting_labels"] == ["Precinct 1"]
+
+
+@pytest.mark.parametrize("problem", ["statewide_total", "candidate", "county_scope", "ballot_total",
+                                     "missing_count", "vote_center_scope", "unknown_party",
+                                     "missing_vote_center_marker"])
+def test_south_dakota_rejects_unreconciled_or_ambiguous_source_data(problem):
+    sheets, statewide, facts, api, catalog = south_dakota_fixture()
+    if problem == "statewide_total":
+        statewide["records"][0]["votes"]["D Candidate"] += 1
+    elif problem == "candidate":
+        sheets["01"]["records"][0]["votes"]["Unknown Candidate"] = 1
+    elif problem == "county_scope":
+        api[0]["CountyID"] = "03"
+    elif problem == "ballot_total":
+        api[0]["calcVoterTurnout"] += 1
+    elif problem == "missing_count":
+        facts["counties"][0]["records"][0]["ballots"] = None
+    elif problem == "vote_center_scope":
+        facts["counties"][1]["records"][0]["registered"] = 22
+    elif problem == "missing_vote_center_marker":
+        api[1]["CountyName"] = "Center"
+    else:
+        catalog[0]["Party"] = "Unverified Party"
+    with pytest.raises(ValueError):
+        sd_review.review(sheets, statewide, facts, api, catalog)
+
+
+def test_south_dakota_keeps_ballot_and_registration_disagreements_without_repairing_rates():
+    sheets, statewide, facts, api, catalog = south_dakota_fixture()
+    facts["counties"][0]["records"][0]["ballots"] = 40
+    api[0]["calcVoterTurnout"] = 85
+    api[0]["Voters"] = 201
+    rows, statistics, audit = sd_review.review(sheets, statewide, facts, api, catalog)
+    assert rows[0]["contest_votes"] == 60 and statistics[0]["ballots"] == 40
+    assert statistics[0]["reported_pct"] is None
+    assert "house_votes_exceed_separately_reported_ballots" in statistics[0]["quality_flags"]
+    assert "county_registration_disagrees_with_api" in statistics[1]["quality_flags"]
+    assert audit["01"]["registration_disagrees"]
+
+
+def test_south_dakota_extracts_every_displayed_fact_without_copying_page_frontend():
+    raw = b'''<input name="ctl00$hidElectionType" value="General">
+      <input name="ctl00$hidElectionDate" value="11/3/2026">
+      <div><div class="turnout-results-box-a"><h1>First</h1><input countyid="01"></div></div>
+      <div id="countyturnout01"><div class="odd"><div class="county-precinct">Precinct 1</div>
+      <div class="county-cast"><span>1,234</span></div>
+      <div class="county-counted"><span>2,000</span></div></div></div><script>unrelated_code()</script>'''
+    facts = sd_review.turnout_facts(raw)
+    row = facts["counties"][0]["records"][0]
+    assert row["ballots"] == 1234 and row["registered"] == 2000
+    assert "unrelated_code" not in str(facts)
+    with pytest.raises(ValueError):
+        sd_review.turnout_facts(raw.replace(b"11/3/2026", b"6/2/2026"))
+    with pytest.raises(ValueError):
+        sd_review.turnout_facts(raw.replace(b"1,234", b""))
 
 
 def idaho_fixture():

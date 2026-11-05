@@ -489,16 +489,73 @@ the exact general-election date. Both complete original workbooks are acquired:
 They contain **county aggregates, not precinct rows**. The separately advertised
 Aurora county export (**24,170 bytes/15 sheets**) contains actual precinct rows.
 Candidate-column order is reversed relative to the statewide export; parse by
-candidate identity, never column position. The remaining 65 county originals are
-being acquired through their advertised public export links, preserving each
-unaltered workbook and receipt. No SD precinct reconciliation is claimed yet.
-Turnout is div-based rather than an
-HTML table. Vote-center rows can repeat the entire county registration
-denominator; never sum those repetitions or manufacture precinct rates.
-Next: finish all 66 county originals, reconcile actual candidate precinct/county/
-state identities against the independent statewide workbook and official party
-labels, and keep participation scope separate. No correct-election SD geometry
-has been acquired yet.
+candidate identity, never column position. All **66 county originals** are now
+acquired through their advertised public export links. The 68 workbooks total
+**1,982,013 bytes**, retaining every sheet and contest, not only the reviewed
+House contest. Do not download this completed batch again.
+
+The official page's normal public requests supply independent county turnout:
+`https://sdresws.azurewebsites.us/ResultsAjax.svc/GetVoterTurnoutData?`,
+and candidate/party metadata:
+`https://sdresws.azurewebsites.us/ResultsAjax.svc/GetCandidates?ElectionType=General&ElectionID=0`.
+Both complete JSON responses are preserved. Catalog office ID `215` is shared
+by the two House candidates; it is not a unique candidate ID or workbook
+contest ID `14869`. The complete nine-page official November 3, 2026
+polling-place PDF is also retained; polling locations are **not polygons**.
+
+## South Dakota 2026 complete count review
+
+Data: `data/precinct-source-reviews/20261105/SD/`. Reproduce with
+`scripts/review-south-dakota-precinct-results.py`; **127 collector tests pass**.
+All **671 House reporting rows**, including zero-count and duplicate-name rows,
+reconcile to all **66 county totals** and the independent statewide workbook.
+Candidate identity and official parties, not column position, establish
+**195,583 Republican**, **109,985 Democratic**, **305,568 candidate votes**.
+Other contests remain available in their complete original workbooks but have
+not yet been independently reviewed.
+
+All **671 separate turnout observations** reconcile to every county API ballot
+total: **310,298 ballots**, not the candidate-vote sum. Independent county
+registrations total **628,563**; the hidden page field `318,265` is nonvoters,
+not registrations. Twelve explicitly identified vote-center counties repeat
+their entire county registration in all **72 center rows**. Never sum those
+denominators or call the resulting ratio residential precinct turnout.
+
+There are **596 provisional source-registration fractions** and **75 withheld
+rates**. All raw counts and flags remain available, including two small/missing
+denominators, one ballot/registration inconsistency and one House/separate-ballot
+disagreement; overlapping flags are not additive. Oglala Lakota has two source
+rows named `Sacred Heart Church Hall`, one zero-count and one nonzero. Both
+original House rows and both turnout rows remain separately identified by
+their own physical source rows. Their cross-source pairing is withheld;
+never match them by row order, count similarity or an invented identity.
+Only whitespace normalization resolves the four trailing-space label differences.
+Explicit vote-center markers must agree across the page, API and statewide
+workbook; the parser does not silently remove conflicting scope markers.
+
+Independent checks pass for every original/output checksum, every candidate
+row and county/state total, every separate ballot/registration observation,
+every rate and withholding flag, unique row identities, and ZIP CRCs/exact
+members/bytes. Every output reproduces byte-for-byte using **only distributed
+files**, without the original website frontend.
+
+The complete archive `complete-south-dakota-2026-source-review.zip` is
+**1,751,516 bytes**, SHA-256
+`e925f182618c1b9c6195ce1f204479df38270ad7145a37868a6f5fb6876439a8`.
+It contains **71 complete native originals, 2,242,570 uncompressed bytes**:
+68 workbooks, two JSON responses and the polling-place PDF. It also contains
+all 671 factual turnout observations and every county heading, complete
+normalized results/participation, audits and source receipts. Original HTML
+URL/size/hash receipts are retained separately; copyrighted frontend/template
+code is not redistributed or falsely claimed to be included.
+
+Next: commit this independently reproduced batch as Hans, publish and
+byte-verify a new immutable complete release, register its full download and
+audit in the state/year ledger, and verify exact production deployment.
+No correct-election SD boundary polygons are acquired yet: keep map joins
+withheld and state fallback intact. Pursue official 2026 reporting-unit
+boundaries and native-ID crosswalks, especially vote-center scope and Oglala
+Lakota's duplicate labels, then continue remaining 2026 jurisdictions.
 
 ## Resume procedure for every work session or scheduled prompt
 
