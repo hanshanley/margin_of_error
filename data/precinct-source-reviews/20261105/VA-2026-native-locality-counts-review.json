@@ -1,0 +1,22 @@
+{
+  "year": 2026,
+  "state_code": "VA",
+  "office": "US House precinct and voting-method vectors; separate native precinct turnout observations",
+  "candidate_results": "acquired_reconciled_locality_summaries_precinct_mode_gaps",
+  "boundaries": "current_reference_acquired_review_pending",
+  "join": "withheld",
+  "validation": "native_method_vectors_passed_residuals_retained_maps_withheld",
+  "publication": "full_counts_download_only",
+  "participation": "native_precinct_counts_and_registration_rates_withheld",
+  "source_url": "https://www.elections.virginia.gov/results/",
+  "data_directory": "data/precinct-source-reviews/20261105/VA-2026-native-locality-counts",
+  "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/b2e53eb9e4a510bb19a8cf2e1cc5243c6eeff9ce/data/precinct-source-reviews/20261105/VA-2026-native-locality-counts/",
+  "count_csv": "precinct-counts.csv",
+  "reporting_units": 2537,
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-virginia-locality-counts-20261105/complete-virginia-2026-native-locality-count-review-01.zip",
+  "complete_download_bytes": 73948518,
+  "complete_download_sha256": "c4c28d7f426cd878b3b50672f4e5858b415c44c0cdcf7347f0ac339bc9521f43",
+  "maps_approved": false,
+  "next_action": "Audit complete current-reference geometry, native null/invalid shapes, exact precinct identities, district splits and overlaps; establish supported 2026 joins before mapping. Preserve all 69 locality/House residual scopes, unreported modes, earlier blank CSV totals and separate native turnout observations. Never allocate county modes into precincts or infer turnout/group rates.",
+  "notes": "Unofficial November 3, 2026 election. All 133 locality House summaries independently match all 11 parent district vectors. All 10471 native precinct candidate cells exactly match the earlier CSV across 2537 district/reporting-unit vectors; source vote-method coverage, not an unexplained newer-snapshot repair, accounts for the discrepancy. In 69 of 145 locality/House scopes, precinct mode vectors do not exhaust county summaries: Early Voting gaps in 58 and Mailed Absentee in 66; the other three literal modes reconcile. Every residual stays unallocated and all source reporting-status flags remain available, including unreported provisional/post-election modes. Native JSON separately provides 2529 nonmissing precinct turnout observations totaling 2798626, versus 3593781 county ballots cast; these are not a complete statewide all-mode precinct total or final rates. Every native precinct registration count matches its earlier literal report identity. The earlier CSV retains all 985 blank total cells. The complete archive includes 357 original-response files with the reused parent retained in both source namespaces, all earlier full reports and absentee demographic tables, 7426 exact-ID official current-reference geometry fragments, 381 checksums and portable reviewers. The agency's current reference is not certified election-day geometry; null/invalid shapes, literal label conflicts and overlaps must be reviewed. No new map, turnout-rate or demographic-denominator approval."
+}

@@ -3266,11 +3266,48 @@ The ZIP is **73,948,518 bytes**, SHA-256
 `c4c28d7f426cd878b3b50672f4e5858b415c44c0cdcf7347f0ac339bc9521f43`.
 Proof: `files/virginia-native-locality-count-package-proof-01.json`.
 This is a new immutable package; the earlier published package is unchanged.
-Hans source commit/push and whole-archive remote release verification are next.
+Hans source commit **`b2e53eb9e4a510bb19a8cf2e1cc5243c6eeff9ce`** is pushed.
+Immutable release **`voter-precinct-virginia-locality-counts-20261105`** is bound
+to that exact source commit. The whole archive was anonymously redownloaded:
+HTTP 200, exact size/SHA/CRC/member set, all 381 file checksums and every one
+of the 357 decompressed original-response receipts pass against the source.
+Proof: `files/virginia-native-locality-count-remote-release-proof-01.json`.
 
-**Next executable actions:** publish the completed native locality/mode source
-batch and verify the whole immutable remote archive. Independently audit
-the complete reference geometry and exact election-specific joins. Approve only
+The new lightweight source-review registration preserves the earlier download
+and adds this complete package. Only the VA2026 worklist row changes; all
+1,632 cells remain incomplete. Renderer/colors/default/zoom are byte-unchanged.
+All 64 focused tests pass. Astro reports zero errors/warnings and five existing
+hints; build/four chart tests pass. Pages preparation preserves 94 byte-identical
+relocated assets and a **986,267,819-byte** site. Four source-matched local
+browser modes pass **70 exact complete-download links and seven whole CSV
+endpoints**, including the **2,537-row**, **6,061,645-byte** native-method CSV,
+SHA-256 `d02d1f1a7e664a78c0b9b69f8d179c0134c4997d7a8f84c54849f05674465597`.
+Proof: `files/virginia-native-locality-count-ui-local-browser-proof-01.json`.
+Hans UI commit/push and exact-live proof are next; do not claim the new
+70-link integration is already live.
+
+The independent full geometry diagnostic is complete in
+`files/virginia-current-reference-geometry-audit-01.json`. It compares the
+actual original report's numeric precinct IDs, preserving source strings and
+documenting only whitespace removal/four-digit zero padding, not deriving IDs
+from display names. All **2,529** result identities match; two geometry-only
+identities (`059/0700`, `159/0502`) remain unassigned. There are **67**
+null/invalid fragments across **63** identities, including **nine null
+geometries**, which remain unmodified. Among 2,468 valid dissolved identities,
+**692** material overlap pairs involve **764** identities; these are withheld.
+Labels are 2,276 literal matches ignoring case/whitespace, nine number-only
+reference labels and **244 unreviewed/conflicting literal labels**. No fuzzy
+matching or invalid-shape repair is approved. There are **1,205** precincts
+whose published method vectors exhaust their locality/House summary scopes;
+**776** also pass the shape/overlap screening, before label, virtual-unit,
+district-split and election-applicability review. This diagnostic is not yet a
+portable tested mapped supplement or map approval.
+
+**Next executable actions:** publish the validated 70-link UI and verify its
+exact deployment without repeating completed suites. Promote the geometry
+diagnostic to a portable tested reviewer and investigate the supported subset,
+native virtual-unit flags, literal label conflicts and election applicability.
+Preserve all source fragments, unmatched identities and exclusions. Approve only
 explicitly supported scopes; do not repair the earlier export, allocate missing
 county modes to precincts, borrow older geometry or mark the VA2026 cell complete.
 
