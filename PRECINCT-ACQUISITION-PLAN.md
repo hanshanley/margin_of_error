@@ -191,14 +191,36 @@ Continue 2018/2016 source-specific quality review next: their unresolved
 party labels, Missouri noncounty buckets and Texas source undercoverage need
 separate handling rather than a blanket extrapolation from the two newest years.
 Historical maps still require election-year county crosswalks.
-Acquire genuine 2026 Maine/Pennsylvania/D.C.
-alternatives in parallel. Do not repeat the completed
+Acquire genuine 2026 Maine/Pennsylvania alternatives in parallel; D.C.'s
+official originals are now acquired separately, as detailed below.
+Do not repeat the completed
 county map or pipeline suites unless their counts/renderer actually change.
 UF's currently published
 2026 CSV labels all 52 rows as Initial Estimate, not final administrative ballots.
 Do not silently replace measured participation or infer demographic turnout from
 these state-level estimates. Recurring schedule #4 replaces obsolete precinct-first
 schedule #3 and follows this county-first priority.
+
+D.C. official follow-up (while the three-year historical deployment runs):
+`data/county-source-reviews/20261105-dc-official-01/` retains all seven native
+JSON/CSV/XML/PDF data/report originals and exact HTTP/hash receipts. Its complete
+CSV has 10,011 rows across 144 reporting precincts. Precinct registrations and
+ballots reconcile to the separate citywide 457,371 registered / 185,086 ballots.
+The four nonvoting-delegate candidate/write-in counts reconcile exactly between
+CSV and citywide JSON (180,979 votes). This is not a voting House district, nor
+the different shadow Representative/Senator contests. Do not merge it silently
+into the current 435-district map or call the map gap filled.
+
+Important next-source handling: JSON gives over/undervotes a spurious REP party
+code; native CSV leaves it blank. Those are ballot-accounting rows, not
+Republican candidate votes. The delegate candidate sum plus 602 overvotes and
+3,181 undervotes is 324 below the separate ballot summary; retain the unresolved
+difference. Native RCV flags do not independently establish a final round.
+EarlyVotes is zero while ShowEarlyVotes is false, not evidence that no early
+ballots were cast. These are acquired originals with reviewed arithmetic,
+not a registered public normalized export or approved 2026 map geometry.
+Use these saved originals for the next scoped review instead of repeating
+app/API discovery.
 
 The user supplied NYT's 2026 Senate precinct-map page and full coverage notes.
 The source-lead audit is

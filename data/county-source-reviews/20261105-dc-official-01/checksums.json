@@ -1,0 +1,38 @@
+{
+  "acquisition.json": {
+    "bytes": 2314,
+    "sha256": "1d4218bb21d033994198fcc1bc4b727ff11725997199cef79934582d95f8c8c4"
+  },
+  "originals/citywide.json": {
+    "bytes": 21971,
+    "sha256": "180047c53fc8b24fb096a30735246dfa4a4f6264bf4f289b3647b52b906d2658"
+  },
+  "originals/election.json": {
+    "bytes": 1151,
+    "sha256": "69ddd1216fe7b6d0f83c2ffb4785bfcda68db39f5b340b85a1d3d45ec4c84944"
+  },
+  "originals/parties.json": {
+    "bytes": 811,
+    "sha256": "fdf6ecc874b71d201ce76ac6d4cf27c2cf5a7a8c417ae5454ed1e926e6fee4e3"
+  },
+  "originals/receipts.json": {
+    "bytes": 2610,
+    "sha256": "07cdc2605d17e95690823882fc340690324b0d1e7c319403bd3f64f077d448a1"
+  },
+  "originals/report.csv": {
+    "bytes": 1025806,
+    "sha256": "e9b44e04cc9070bec07302e47fb4aabfb8536705a12aa926ff5d6092c9532f36"
+  },
+  "originals/report.pdf": {
+    "bytes": 115092,
+    "sha256": "afdd36f5df61c8b9280cb2dc56a79da4c5983e9652c9b7338085dd43829612c1"
+  },
+  "originals/report.xml": {
+    "bytes": 330243,
+    "sha256": "bee40e48767cd699f27cff289be5a39e1b55f85ea07e75423ec395fbd1e5a466"
+  },
+  "originals/voters.json": {
+    "bytes": 259,
+    "sha256": "fd6e5c4d2349d7b536734a31ccdb1ef20eeedc9ed2110dddcb3263268b159887"
+  }
+}

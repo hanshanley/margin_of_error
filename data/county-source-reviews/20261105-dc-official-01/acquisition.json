@@ -1,0 +1,53 @@
+{
+  "status": "originals_acquired_not_registered_for_publication",
+  "official_source": "District of Columbia Board of Elections",
+  "source_page": "https://electionresults.dcboe.org/election_results/2026-General-Election",
+  "election_date": "2026-11-03T00:00:00",
+  "source_update": "2026-11-04T04:36:21.283Z",
+  "source_result_status": "Election Night Unofficial Results",
+  "native_csv_rows": 10011,
+  "native_precincts": 144,
+  "native_zero_rows_retained": 1235,
+  "registered_voters": 457371,
+  "total_ballots_cast": 185086,
+  "precinct_registration_and_ballots_match_city_summary": true,
+  "delegate_candidates": [
+    {
+      "candidate": "REP Denise Rosado",
+      "party": "REP",
+      "votes": 11583
+    },
+    {
+      "candidate": "DEM Robert White",
+      "party": "DEM",
+      "votes": 157979
+    },
+    {
+      "candidate": "STG Kymone Freeman",
+      "party": "STG",
+      "votes": 10275
+    },
+    {
+      "candidate": "Write-in",
+      "party": "NPN",
+      "votes": 1142
+    }
+  ],
+  "delegate_csv_candidate_vector_matches_citywide_json": true,
+  "delegate_candidate_votes": 180979,
+  "delegate_over_votes": 602,
+  "delegate_under_votes": 3181,
+  "delegate_candidate_plus_over_under_votes": 184762,
+  "unexplained_difference_from_total_ballots": 324,
+  "new_maps_approved": false,
+  "fully_complete": false,
+  "limitations": [
+    "Nonvoting delegate contest, not one of the 435 voting U.S. House districts. Keep the shadow United States Representative and Senator contests separate.",
+    "RCV-marked native published tallies; no independently verified round or final ranked-choice outcome.",
+    "Citywide JSON assigns REP to over/undervotes, but the native CSV leaves their party blank. Never count either as Republican candidate votes.",
+    "Delegate candidates plus over/undervotes are 324 below the separate total-ballots summary. Preserve the unexplained difference rather than inventing votes or treating candidate votes as turnout.",
+    "EarlyVotes is natively zero while ShowEarlyVotes is false. Do not infer that no early ballots were cast.",
+    "Native referenced 2019 precinct and 2022 ward maps are not approved 2026 geometry.",
+    "The seven complete official data/report originals are acquired, not a blanket license certification or a new approved normalized export."
+  ]
+}
