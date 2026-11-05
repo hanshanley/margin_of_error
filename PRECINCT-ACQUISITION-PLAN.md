@@ -1226,10 +1226,41 @@ selection provenance/scope, zoom out/in, state fallback, honest withheld
 participation rates and failed-registry-fetch fallback. Proof:
 `files/ri-2026-map-02-local-browser-validation.json`.
 
-Deployment and exact live proof remain pending; do not mark live yet.
-Next: publish this verified conservative map, then continue the
-remaining newest state/year cells. Do not mark RI or nationwide coverage
-complete, infer demographic participation, or map administrative counts.
+Exact site commit **`7d2cef1a5ebeac5a36a220a00d01c96e8b428b1d`**
+deployed successfully in Pages run **41971059459**. The production proof
+passes every preceding desktop/mobile, JavaScript/no-JavaScript, 43-link,
+source-byte, 306-precinct color/count/key, selection, zoom, state-fallback,
+withheld-rate and failed-fetch check:
+`files/ri-2026-map-02-live-browser-validation.json`. Only after that proof,
+the registry marks RI **live-verified partial** and the regenerated ledger
+records partial publication. RI and nationwide coverage are not complete.
+
+Next: continue remaining newest state/year cells. Connecticut 2026 has
+actual full public EMS originals and the supported complete voting-district
+CSV export in `files/precinct-expansion-sources/CT-2026/`, not just leads.
+Election **108**, November 3, 2026, has captured API versions **52337**
+and **52338**. The native export has **27,578** candidate/party/mode rows,
+including **2,967 House rows**, a separate **722-row** registry/voted
+section and a separate ballot-mode section. All House rows' five native
+mode counts sum to their final counts. Do not mistake later sections for
+candidate rows or use the summary CSV's stripped place labels as IDs.
+
+Count reconciliation is **not complete**: the full export includes North
+Canaan House votes **660 Democratic + 550 Republican + 34 Working Families**
+that both captured API versions still report as zero, a **1,244-vote**
+summary discrepancy. Six native place-label collisions and three literal
+report/lookup label disagreements also require explicit source resolution;
+do not merge duplicate labels or invent precinct aliases. The supported
+XML export returns a 26-byte incomplete stub; actual TXT/CSV downloads
+succeed. Raw receipts, all originals and exact diagnostics are retained,
+including `source-structure-and-discrepancies.json`. The public native
+voting-district report is acquired through the application's own
+`GetVotingDistrictValues` / `Default.aspx?action=VotingDistrict` export,
+not scraped county vote allocation. Separate 2024/2022/2020/2018/2016
+official originals are being acquired while RI publication completes.
+Next CT action: validate all report sections/receipt identities, preserve
+the summary discrepancy, resolve the native ID collisions with supported
+source-scoped exports, and archive complete originals before registration.
 
 ## Resume procedure for every work session or scheduled prompt
 
