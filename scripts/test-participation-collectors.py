@@ -50,6 +50,46 @@ wa_review = module("review-washington-precinct-results")
 wa_maps = module("build-washington-precinct-results")
 house_county_sources = module("acquire-house-county-results")
 house_county_review = module("review-house-county-results")
+me_pa_participation = module("review-maine-pennsylvania-participation")
+
+
+@pytest.mark.parametrize("failure", [None, "missing", "inconsistent", "duplicate"])
+def test_lewiston_voter_table_keeps_central_counts_unallocated_and_rejects_bad_columns(failure):
+    doc = me_pa_participation.fitz.open()
+    page = doc.new_page()
+    page.insert_text((25, 70), "Total Number of Voters by Ward during the Election.", fontsize=9)
+    labels = [str(n) for n in range(1, 8)] + ["C-V", "Total"]
+    values = ["10"] * 7 + ["80", "150"]
+    if failure == "missing":
+        values[2] = ""
+    elif failure == "inconsistent":
+        values[-1] = "151"
+    elif failure == "duplicate":
+        labels[1] = "1"
+    for i, (label, value) in enumerate(zip(labels, values)):
+        page.insert_text((30 + 55 * i, 95), label, fontsize=9)
+        if value:
+            page.insert_text((30 + 55 * i, 115), value, fontsize=9)
+    if failure:
+        with pytest.raises(ValueError):
+            me_pa_participation.lewiston_voters(page)
+    else:
+        units, total = me_pa_participation.lewiston_voters(page)
+        assert units == {**{str(n): 10 for n in range(1, 8)}, "C-V": 80}
+        assert total == 150
+    doc.close()
+
+
+@pytest.mark.parametrize("native, expected", [(None, None), ("%", None), ("60%", 60)])
+def test_lewiston_printed_turnout_ignores_referendum_percentages_and_retains_blanks(native, expected):
+    doc = me_pa_participation.fitz.open()
+    page = doc.new_page()
+    page.insert_text((30, 40), "Question: Limit property taxes to 1% of assessed value", fontsize=9)
+    if native is not None:
+        page.insert_text((30, 100), "Percentage of Voter Turnout:", fontsize=9)
+        page.insert_text((220, 100), native, fontsize=9)
+    assert me_pa_participation.printed_turnout(page) == expected
+    doc.close()
 
 
 def house_county_review_fixture(code="WA", state_fips="53"):

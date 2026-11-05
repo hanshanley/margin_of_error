@@ -2720,6 +2720,60 @@ and verify its exact Pages deployment and unqueried production.
 Only after its exact Pages deployment and unqueried production pass may the
 new pointer become `live_verified_partial`. Keep the old complete download.
 
+### Maine / Pennsylvania participation normalized without manufacturing maps
+
+Canonical coordinate-aware reviewer:
+`scripts/review-maine-pennsylvania-participation.py`.
+Reviewed package:
+`data/participation-source-reviews/20261105-maine-pennsylvania-01/`.
+It retains the complete prior original-source archive, source inventory and
+receipts, portable reviewer, full CSV/JSON tables, audit and checksums.
+
+The package has **185 observations**: **13 Lewiston city totals** for every
+even year **2002–2026**, **105 native ward/precinct/central or city-mode counts**,
+and **67 Pennsylvania county mail-return rows**. Rotated historical pages are
+read using their actual displayed PDF word coordinates. The native columns
+and every ward/central sum reconcile to the printed city total. C-V remains
+unallocated Central Voting, never an inferred absentee count or a ward.
+The 2020 report instead gives citywide Absentee/In Person counts; no missing
+ward counts are invented. The 2002 report supplies no registered denominator,
+so no rate is calculated. Twelve subsequent city totals have their own native
+registered denominators; these are not Census/CPS rates or demographic estimates.
+Missing printed percentages remain missing, separate from calculated fractions.
+In particular, the 2004 referendum's **1% property-tax wording is not turnout**.
+
+Lewiston 2026 explicitly reports **14,713 voters / 24,455 registered**,
+with native printed **60%**. The calculated city fraction is about **60.16%**;
+none of the ward rows borrows that city denominator. The city's seven ward
+counts plus separate **6,583 C-V** voters reconcile exactly.
+Original 2002 and 2026 voter tables were also rendered and directly reviewed.
+
+Both independent Pennsylvania PDFs agree on every native county's returned-mail
+count and their **1,163,183** statewide sum. The supplemental report's native
+update is **November 4, 2026, 4:08:50 PM**; this is not an inferred timestamp for
+the separate standalone report. Its **9,055 / 9,065 precincts reported** and
+**9,052,695 registered** remain administrative context, not a turnout denominator
+or inferred election-day voter count. Montour's zero recorded mail returns and
+100% remaining-to-count field do not establish zero voter participation.
+These observations do not overwrite or splice the older provider snapshot's
+different mail-return total, repair Maine's county write-in mismatch, or replace
+Pennsylvania's test-flagged House candidate data.
+
+Seven new targeted regression cases pass, including missing counts, bad sums,
+duplicate columns and unrelated referendum percentages. Independent source,
+CSV and complete-original verification plus a **network-disabled, archive-only,
+byte-identical ZIP rebuild** pass:
+`files/me-pa-participation-review-proof-01.json`.
+Complete ZIP: `complete-maine-pennsylvania-participation-review-01.zip`,
+**4,648,075 bytes**, SHA-256
+`9e614c145f6676d1d89ab01550c4dcc8056f0383a6f415c1d8c788087ffefe3c`.
+
+**Next executable actions:** commit/push this reviewed source batch as Hans,
+publish and byte-verify a new immutable complete download, then expose its
+complete tables with explicit city/mail-return scope. Keep candidate geography,
+demographic coverage and final-turnout approval withheld. Preserve all prior
+complete downloads and all 1,632 incomplete precinct cells.
+
 ## Resume procedure for every work session or scheduled prompt
 
 1. Read `AGENTS.md`, `CLAUDE.md`, `PUBLISHING.md`, this plan, and the newest rows

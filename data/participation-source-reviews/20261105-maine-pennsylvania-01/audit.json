@@ -1,0 +1,48 @@
+{
+  "status": "reviewed_counts_only",
+  "maps_approved": false,
+  "candidate_results": false,
+  "demographic_breakdown_available": false,
+  "lewiston_years": [
+    2002,
+    2004,
+    2006,
+    2008,
+    2010,
+    2012,
+    2014,
+    2016,
+    2018,
+    2020,
+    2022,
+    2024,
+    2026
+  ],
+  "lewiston_city_rows": 13,
+  "lewiston_unit_rows": 105,
+  "pa_counties": 67,
+  "pa_recorded_mail_returns": 1163183,
+  "pa_source_update_literal": "11/4/2026 4:08:50 PM",
+  "pa_overview": {
+    "registered_voters": 9052695,
+    "precincts_reported": 9055,
+    "precincts_remaining": 10,
+    "precincts_total": 9065
+  },
+  "scope_notes": [
+    "Lewiston only, not statewide Maine; native election-specific units are not stable boundaries.",
+    "C-V is unallocated Central Voting, not Absentees and not assigned among wards.",
+    "2020 reports city voting modes rather than ward voter counts; no ward counts are inferred.",
+    "Registered-voter rates exist only for native city totals with an explicit denominator.",
+    "Native printed percentages are retained separately, including blanks and rounded values.",
+    "Pennsylvania records returned mail ballots, not all-mode ballots, candidate votes or final turnout.",
+    "Mail-counting and precinct-reporting progress are not voter participation percentages.",
+    "Montour's explicit zero administrative returns are not evidence of zero voter participation.",
+    "No earlier snapshot is overwritten or silently combined with these dated observations."
+  ],
+  "original_archive": {
+    "file": "complete-originals.tar.gz",
+    "bytes": 4625081,
+    "sha256": "a76cd018b725f5ce2e533e3eeb09bc688d36ba0b5ac74083c9e55e98c6a47e34"
+  }
+}

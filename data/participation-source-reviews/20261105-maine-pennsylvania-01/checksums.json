@@ -1,0 +1,46 @@
+{
+  "audit.json": {
+    "bytes": 1681,
+    "sha256": "0c42b3207bb7ddd7a1786dd33dadf41ccb3e0c406555577ef7dc98bc59751a6f"
+  },
+  "lewiston-city-participation.csv": {
+    "bytes": 3619,
+    "sha256": "fec939e088bd56a2a65453d25ecef768c31af6a39d4c31b5eaa4f4df70e2d813"
+  },
+  "lewiston-city-participation.json": {
+    "bytes": 7552,
+    "sha256": "2f4a6f70a4574a39ed13129f18e41b5e3329b536b39551d95b5eaa087f10c060"
+  },
+  "lewiston-native-voter-counts.csv": {
+    "bytes": 19164,
+    "sha256": "43a36160ee01aadaad235da1dedcbd55523b250f3ba513a02c5eb6d8411c0158"
+  },
+  "lewiston-native-voter-counts.json": {
+    "bytes": 45811,
+    "sha256": "64dd2146af406f0d0fd87c1cf75acf9c4306a06950e2723d3fb1645d803758b9"
+  },
+  "originals/checksums.json": {
+    "bytes": 5407,
+    "sha256": "38345f6eed42453a68953978420fcda6a4e2b63f2d98a7f7303742ec315911e4"
+  },
+  "originals/complete-originals.tar.gz": {
+    "bytes": 4625081,
+    "sha256": "a76cd018b725f5ce2e533e3eeb09bc688d36ba0b5ac74083c9e55e98c6a47e34"
+  },
+  "originals/index.json": {
+    "bytes": 9242,
+    "sha256": "c098deade833a8beb0224e153e439a9116ffda8ed1f04d135c16e5662a9a8dab"
+  },
+  "pennsylvania-county-mail-returns.csv": {
+    "bytes": 30882,
+    "sha256": "99b4aa1e7714b8bdca05a0f4759faa09c054d875dc801f500c1c11024804d8c0"
+  },
+  "pennsylvania-county-mail-returns.json": {
+    "bytes": 57103,
+    "sha256": "69685d99e4b5b7d405901d7183106b4dc518ac38404c36ec5fd42a783aa84f10"
+  },
+  "review-maine-pennsylvania-participation.py": {
+    "bytes": 13188,
+    "sha256": "e9c5a88f714cbb5f55f13ecb595e9262ae0a7c2728dd5d2d44b0cd73fa12f42a"
+  }
+}
