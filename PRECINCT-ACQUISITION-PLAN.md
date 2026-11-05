@@ -9,8 +9,11 @@ precinct datasets, but do not let additional precinct geometry block county work
 Never paint county totals as precinct results, allocate them into precincts, or
 call candidate margins participation.
 
-Immediate publication fix: all available county red/blue candidate colors must
-be visible at national scale, without selecting a state or zooming. The existing
+The national-scale coloring fix is live: all available county red/blue candidate
+colors are visible without selecting a state or zooming. Commit `ad36234`,
+successful Pages run `42058221971`, and the saved production browser proof
+verify all 48 state drilldowns, national own-county colors, zoom and 121 complete
+downloads. Do not repeat that completed fix. The existing
 2026 release has 48 states, 3,060 county equivalents and 3,050 nonzero candidate
 margins. Maine/Pennsylvania county joins and D.C. remain gaps, not completed cells.
 State colors are fallback only in uncovered states; explicit zero-vote counties
@@ -19,8 +22,59 @@ Census shapes; four counties retain unsimplified native geometry because display
 simplification would produce invalid polygons. Full native shapes and complete
 candidate/source downloads remain unchanged.
 
-Next: verify and deploy that fix, then finish the reusable 2026 county-results
-and separately labeled UF/state participation pipelines. UF's currently published
+The reusable 2026 county-results and separate UF/state participation pipelines
+are implemented and published. Both passed real acquisition and original-backed
+release verification. Fresh county snapshot `20261105T155645Z` updates three
+county totals, increasing aggregate candidate votes from 103,052,239 to
+103,056,212 without losing any state or county. UF snapshot `20261105T155617Z`
+activates a separate server-rendered table. Local four-mode browser proof
+`files/county-uf-final-local-proof-01.json` verifies all 52 UF rows, all 48 county
+states, 3,050 own-county colors and 132 complete download links, preserving the
+original 116. Exact deployment `42060138011` for
+`bdeed98e520708527588c4b3a183d4e81546273a` succeeded, and its production
+four-mode proof passed the same counts, colors, links, zoom, historical
+isolation and failure fallbacks. Persistent evidence is
+`data/county-source-reviews/20261105-refresh-live-01/production-browser.json`,
+with exact deployment and hosted-refresh run records alongside it. The current
+county and UF pointers reference that proof; partial coverage and source estimates
+remain explicitly labeled.
+
+The six-hour/manual workflow `.github/workflows/refresh-2026-data.yml` has
+actually passed hosted run `42060180039` (`source=uf`): all 13 focused tests
+passed, the fresh official source was unchanged, and the previous public
+pointer was retained without a duplicate release. Its saved status is
+`files/uf-hosted-refresh-evidence-01/status.json`. Preparation remains the CLI
+default; `--publish` verifies complete releases before immutable pointer updates.
+County coverage regression, malformed UF rows and source failures fail closed.
+Platform-only gzip headers do not create duplicate county snapshots. Unchanged
+geometry is reused by verified content hashes instead of copied per refresh.
+
+The consolidated historical county batch is now arithmetically reviewed:
+all 420,503 candidate/party rows reconcile with all 120,191 county summaries.
+120,190 county/office/year vectors have valid integer counts; one Montgomery
+County, Alabama, 2010 House vector is withheld for the original fractional
+`23334.16236` count. Do not round it. Final rounds across different districts
+retain their stage labels; overlapping general/runoff counts within one district
+are rejected. Literal parties, fusion labels, explicit zeroes and native quality
+flags remain in the local derived tables. All 22 focused historical/party/refresh
+tests passed. The portable reviewer is `scripts/review-historical-county-results.py`;
+its persisted audit is `data/county-source-reviews/20261105-historical-bulk-01/audit.json`.
+
+The distinct county candidate ledger is now `public/county-candidate-coverage.csv`:
+4,896 cells cover all 51 jurisdictions, all even years 1964–2026 and House,
+president and Senate separately, newest first. Unreviewed counts stay blank.
+Presidential midterms are marked no regular presidential election. None of these
+cells is declared fully complete; arithmetic is not map or reuse approval.
+The original full 1990–2024 publisher archive is linked in Downloads, alongside
+the county ledger. The four generated historical tables remain private in
+`files/historical-county-reviewed-01/` until source-specific reuse terms are reviewed;
+do not mirror them just because the compilation carries CC BY 4.0.
+
+Next: review historical upstream provenance/reuse, quality flags, gaps, no-ballot
+records and election-year county crosswalks, starting with 2024/2022, and acquire
+genuine 2026 Maine/Pennsylvania/D.C. alternatives. Do not repeat the completed
+county map or pipeline suites unless their counts/renderer actually change.
+UF's currently published
 2026 CSV labels all 52 rows as Initial Estimate, not final administrative ballots.
 Do not silently replace measured participation or infer demographic turnout from
 these state-level estimates. Recurring schedule #4 replaces obsolete precinct-first

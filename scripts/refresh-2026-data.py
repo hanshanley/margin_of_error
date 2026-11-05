@@ -183,6 +183,7 @@ def publish(kind, output, archive, work, run_id, previous):
                    complete_download_bytes=archive.stat().st_size, complete_download_sha256=digest(archive))
     if kind == "uf":
         pointer.update(label="UF 2026 state/national turnout " + run_id + "; source estimates remain estimates",
+                       publication="reviewed_pending_live_verification",
                        previous_snapshots=([{k: v for k, v in previous.items() if k != "previous_snapshots"},
                                             *previous.get("previous_snapshots", [])] if previous else []))
         pointer_path = ROOT / "public/uf-turnout.json"

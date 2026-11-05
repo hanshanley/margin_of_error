@@ -1,0 +1,30 @@
+{
+  "deployment.json": {
+    "bytes": 302,
+    "sha256": "f3aa4231ca68a9fa40850874ac85d69d9b4c6e517923c3b4cb984a11311bcd30"
+  },
+  "historical-downloads-local-browser.json": {
+    "bytes": 1145,
+    "sha256": "2dc96c519c7dd0b670ecd771a756402d2c640f29a2cd66b8ab36f5bd21f03646"
+  },
+  "hosted-refresh-status.json": {
+    "bytes": 74,
+    "sha256": "0fc81506b03b215499837ab3ee1025c65e3894f5be37025be6d78623e6e80584"
+  },
+  "hosted-refresh.json": {
+    "bytes": 302,
+    "sha256": "cb40d9ef9ae030d4d38f3f09f290769cce653ea1caacc8ca90f642b8b447ccfa"
+  },
+  "local-browser.json": {
+    "bytes": 2942,
+    "sha256": "036ff719c3f27c780217bc6f6eab3831be193fe132e393e8b13fa935341e7362"
+  },
+  "production-browser.json": {
+    "bytes": 2953,
+    "sha256": "fb0ea5eae41be5abeb43c65f4606b56b8ad3e276d3f86bb054b75e5670623996"
+  },
+  "verification.json": {
+    "bytes": 1904,
+    "sha256": "64917049ec8053f038996d9f8e01638d1b57b72e77f0b9a677ce3c00771905bf"
+  }
+}

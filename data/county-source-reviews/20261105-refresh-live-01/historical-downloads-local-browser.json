@@ -1,0 +1,43 @@
+{
+  "base_url": "http://127.0.0.1:4347",
+  "county_states": 48,
+  "modes": [
+    {
+      "mobile": false,
+      "javascript": true,
+      "complete_downloads": 134,
+      "uf_rows_source_matched": 52,
+      "county_candidate_ledger_rows": 4896,
+      "overview_transport": "server response",
+      "map_checks": "not_repeated"
+    },
+    {
+      "mobile": false,
+      "javascript": false,
+      "complete_downloads": 134,
+      "uf_rows_source_matched": 52,
+      "county_candidate_ledger_rows": 4896,
+      "map_checks": "not_repeated"
+    },
+    {
+      "mobile": true,
+      "javascript": true,
+      "complete_downloads": 134,
+      "uf_rows_source_matched": 52,
+      "county_candidate_ledger_rows": 4896,
+      "overview_transport": "raw gzip",
+      "map_checks": "not_repeated"
+    },
+    {
+      "mobile": true,
+      "javascript": false,
+      "complete_downloads": 134,
+      "uf_rows_source_matched": 52,
+      "county_candidate_ledger_rows": 4896,
+      "map_checks": "not_repeated"
+    }
+  ],
+  "failures_tested": [],
+  "status": "passed",
+  "renderer_sha256": "b5a66058036488d3a9e3be80f68efc6cec5f2b0c5b1fc7c76d25084f625aa7ef"
+}

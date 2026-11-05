@@ -10,7 +10,8 @@
   "states": 48,
   "normalized_counties": 3060,
   "participation_available": false,
-  "publication": "reviewed_pending_live_verification",
+  "publication": "live_verified_partial",
+  "production_review": "data/county-source-reviews/20261105-refresh-live-01/production-browser.json",
   "previous_snapshots": [
     {
       "label": "2026 U.S. House county / equivalent results (48 states)",

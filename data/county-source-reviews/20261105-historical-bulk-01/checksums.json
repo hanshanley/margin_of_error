@@ -1,0 +1,10 @@
+{
+  "audit.json": {
+    "bytes": 1758,
+    "sha256": "38538804b37919bcf1f4fa73d58e769da459b0cbc21169b5bdf01d7a9b322a5a"
+  },
+  "coverage.csv.gz": {
+    "bytes": 22636,
+    "sha256": "a1f6681de65ba29b58c4b4b96fe8c3bc80821c84e585633cc03570c0d6ed1e34"
+  }
+}

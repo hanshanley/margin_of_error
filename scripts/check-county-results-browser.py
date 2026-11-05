@@ -1,6 +1,7 @@
 """Verify county integration against pinned counts in local or production Pages."""
 
 import argparse
+import csv
 import gzip
 import hashlib
 import json
@@ -15,6 +16,8 @@ parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("--base-url", default="http://127.0.0.1:4321")
 parser.add_argument("--output", type=Path, required=True)
 parser.add_argument("--baseline-downloads", type=Path)
+parser.add_argument("--tables-only", action="store_true",
+                    help="Check table/download changes without repeating the unchanged map suite")
 args = parser.parse_args()
 root = Path(__file__).resolve().parents[1]
 base = args.base_url.rstrip("/")
@@ -26,6 +29,14 @@ rows = json.loads((directory / "margins.json").read_text())
 uf_pointer_path = root / "public/uf-turnout.json"
 uf_pointer = json.loads(uf_pointer_path.read_bytes()) if uf_pointer_path.exists() else None
 uf_rows = json.loads((root / uf_pointer["data_directory"] / "turnout.json").read_bytes()) if uf_pointer else []
+historical_audit_path = root / "data/county-source-reviews/20261105-historical-bulk-01/audit.json"
+historical_audit = json.loads(historical_audit_path.read_bytes()) if historical_audit_path.exists() else None
+if historical_audit:
+    with (root / "public/county-candidate-coverage.csv").open(newline="") as stream:
+        county_ledger = list(csv.DictReader(stream))
+    assert len(county_ledger) == 4896
+    assert len({(row["year"], row["office"], row["state_code"]) for row in county_ledger}) == 4896
+    assert all(row["fully_complete"] == "False" for row in county_ledger)
 precinct_pointer = json.loads((root / "public/precinct-results.json").read_text())
 precinct_coverage = {}
 for snapshot in [precinct_pointer, *precinct_pointer.get("additional_snapshots", [])]:
@@ -43,6 +54,7 @@ download_count = (18 + len(precinct_pointer["source_reviews"]) + len(precinct_po
                   + 3 * (1 + len(pointer.get("previous_snapshots", [])))
                   + sum(1 + len(review["tables"]) for review in participation_reviews))
 for name in ["county-results.json", "precinct-results.json", "precinct-coverage.csv",
+             *(["county-candidate-coverage.csv"] if historical_audit else []),
              "scripts/participation-explorer.js"] + (["uf-turnout.json"] if uf_pointer else []):
     response = requests.get(base + "/" + name, timeout=90)
     response.raise_for_status()
@@ -121,6 +133,10 @@ with sync_playwright() as p:
             downloads = set(links.evaluate_all("links => links.map(a => a.getAttribute('href'))"))
             assert baseline <= downloads, f"Lost complete downloads: {baseline - downloads}"
             assert pointer["complete_download_url"] in downloads
+            if historical_audit:
+                assert "/county-candidate-coverage.csv" in downloads
+                assert historical_audit["complete_original_url"] in downloads
+                expect(page.locator("#downloads")).to_contain_text("fractional vote count is withheld")
             if pointer.get("party_votes"):
                 parties = pointer["party_votes"]
                 assert parties["complete_download_url"] in downloads
@@ -146,9 +162,13 @@ with sync_playwright() as p:
             mode = {"mobile": mobile, "javascript": javascript, "complete_downloads": len(downloads)}
             if uf_pointer:
                 mode["uf_rows_source_matched"] = len(uf_rows)
+            if historical_audit:
+                mode["county_candidate_ledger_rows"] = len(county_ledger)
             if javascript:
                 mode["overview_transport"] = "raw gzip" if mobile else "server response"
-            if not javascript:
+            if not javascript or args.tables_only:
+                if args.tables_only:
+                    mode["map_checks"] = "not_repeated"
                 context.close()
                 proof["modes"].append(mode)
                 continue
@@ -234,7 +254,7 @@ with sync_playwright() as p:
             proof["modes"].append(mode)
             print(json.dumps(mode), flush=True)
             context.close()
-    for pattern in ["**/county-results.json", "**/geometry/WA.geojson.gz"]:
+    for pattern in ([] if args.tables_only else ["**/county-results.json", "**/geometry/WA.geojson.gz"]):
         context = browser.new_context()
         page = context.new_page()
         page.on("pageerror", lambda error: errors.append(str(error)))
@@ -253,4 +273,5 @@ proof.update(status="passed", renderer_sha256=hashlib.sha256(
     (root / "public/scripts/participation-explorer.js").read_bytes()).hexdigest())
 args.output.parent.mkdir(parents=True, exist_ok=True)
 args.output.write_text(json.dumps(proof, indent=2) + "\n")
-print("Passed: county counts/colors, precinct priority, zoom, historical isolation, four display modes and failure fallbacks.")
+print("Passed: source-matched tables and complete downloads in four display modes." if args.tables_only else
+      "Passed: county counts/colors, precinct priority, zoom, historical isolation, four display modes and failure fallbacks.")

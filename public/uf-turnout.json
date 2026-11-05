@@ -1,5 +1,7 @@
 {
   "year": 2026,
+  "publication": "live_verified_source_estimates",
+  "production_review": "data/county-source-reviews/20261105-refresh-live-01/production-browser.json",
   "data_directory": "data/uf-turnout/20261105T155617Z",
   "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/8ab527e01e67bef95ab9aaf5c5ed4ce084105ad4/data/uf-turnout/20261105T155617Z/",
   "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-uf-2026-20261105t155617z/complete-uf-turnout.zip",

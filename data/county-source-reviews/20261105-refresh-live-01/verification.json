@@ -1,0 +1,40 @@
+{
+  "verified_production_revision": "bdeed98e520708527588c4b3a183d4e81546273a",
+  "verified_pages_run": 42060138011,
+  "verified_hosted_uf_refresh_run": 42060180039,
+  "county_snapshot": "data/county-results/20261105T155645Z",
+  "uf_snapshot": "data/uf-turnout/20261105T155617Z",
+  "county_states": 48,
+  "county_equivalents": 3060,
+  "own_county_colors": 3050,
+  "candidate_votes": 103056212,
+  "uf_rows_source_matched": 52,
+  "uf_source_status": "Initial Estimate",
+  "complete_downloads_verified_in_original_production_proof": 132,
+  "complete_downloads_verified_in_updated_local_page": 134,
+  "county_complete_archive": {
+    "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-2026-20261105t155645z/complete-county-results.zip",
+    "complete_download_bytes": 139939933,
+    "complete_download_sha256": "e2ed05fc4684c34d8b3712a5068ae691f8dc696ac85834d39238ce276e71fffd"
+  },
+  "uf_complete_archive": {
+    "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-uf-2026-20261105t155617z/complete-uf-turnout.zip",
+    "complete_download_bytes": 38013,
+    "complete_download_sha256": "595fff64da2b34dad37e75e92a3ee8a15bbdea64125e80781039939f47483fa1"
+  },
+  "historical_review": {
+    "input_candidate_rows": 420503,
+    "matched_county_summaries": 120191,
+    "accepted_integer_county_vectors": 120190,
+    "withheld_county_vectors": 1,
+    "county_candidate_ledger_cells": 4896,
+    "new_maps_approved": false,
+    "derived_tables_published": false
+  },
+  "limitations": [
+    "Candidate votes are not ballots or demographic participation.",
+    "UF rows retain source estimates and their own denominators.",
+    "PA test sources excluded; ME county joins and DC source coverage remain gaps.",
+    "Historical source-specific reuse, provenance, quality and election-year geography remain unapproved."
+  ]
+}
