@@ -1,0 +1,53 @@
+{
+  "actual_county_url": "https://enr.elections.virginia.gov/results/public/accomack-county/elections/2026-November-General",
+  "observed_requests": [
+    {
+      "url": "https://enr.elections.virginia.gov/results/public/api/elections/accomack-county/2026-November-General/data",
+      "status": 200,
+      "bytes": 394761,
+      "sha256": "3711de9d01cd5df7da755c1d2354ff9c51f358b1ef5ec261e05486f4211cf83e",
+      "fetched_at": "2026-11-05T10:58:27.143058+00:00",
+      "content_type": "application/json; charset=utf-8"
+    },
+    {
+      "url": "https://enr.elections.virginia.gov/results/public/api/elections/accomack-county/2026-November-General/closeraces",
+      "status": 200,
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fetched_at": "2026-11-05T10:58:27.146065+00:00",
+      "content_type": "application/json; charset=utf-8"
+    }
+  ],
+  "summaries": [
+    {
+      "url": "https://enr.elections.virginia.gov/results/public/api/elections/accomack-county/2026-November-General/data",
+      "keys": [
+        "jurisdiction",
+        "election",
+        "localityElections",
+        "ballotItems",
+        "precincts",
+        "pollingPlaces",
+        "statistics",
+        "voterRegistration",
+        "voterTurnout",
+        "ballotItemWithBreakdown"
+      ],
+      "sizes": {
+        "localityElections": 0,
+        "ballotItems": 33,
+        "precincts": 16,
+        "pollingPlaces": 0,
+        "statistics": 0,
+        "voterRegistration": 0,
+        "voterTurnout": 16
+      }
+    },
+    {
+      "url": "https://enr.elections.virginia.gov/results/public/api/elections/accomack-county/2026-November-General/closeraces",
+      "keys": null,
+      "sizes": {}
+    }
+  ],
+  "body_excerpt": "Virginia\n2026 November General\nNovember 3, 2026\nUNOFFICIAL RESULTS\nLast Updated Wednesday, November 4, 2026 at 11:45:20 AM\nThis page auto-refreshes and is updated in real-time.\nSelect Language\nVirginia\n>\nACCOMACK COUNTY\nDownload Reports\nVoters\nELECTION REPORTING STATUS\nINCOMING BALLOTS\nEarly Voting\nElection Night Complete\nElection Day\nElection Night Complete\nMailed Absentee\nElection Night Complete\nProvisional\nNot Reported\nPost-Election\nNot Reported\nPRECINCTS REPORTING\nFully Reported\n0 / 16\nElection Night Complete\n16 / 16\nPartially Reported\n0 / 16\nNot Reported\n0 / 16\nView status for each precinct\nELECTION STATISTICS\nVOTER TURNOUT\n54%\nBallots Cast\n14,224\nRegistered Voters\n26,344\nFilters\nAll\nClose Races\nMy Followed Results\nSearch\nDisplay options\nTotals\nVote Method\nMember, United States Senate\nVote for only one\nVote Method\nFollow\nMulti-County Contest\nCandidate\nPercentage\nVotes\nCandidate\nMark R. Warner\nDemocratic\nPercentage\n50.38%\nVotes\n6,941\nCandidate\nBert Mizusawa\nRepublican\nPercentage\n49"
+}

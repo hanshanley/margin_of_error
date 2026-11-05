@@ -25,6 +25,10 @@ new_links.update(review["base_url"] + table["file"]
                  for review in registry["reviews"] for table in review["tables"])
 source_registry = json.loads((root / "public/precinct-results.json").read_text())
 source_links = {batch["complete_download_url"] for batch in source_registry["source_batches"]}
+for snapshot in source_registry["additional_snapshots"]:
+    source_links.update({snapshot["complete_download_url"], snapshot["base_url"] + "results.csv.gz"})
+    if snapshot.get("participation_available", True):
+        source_links.add(snapshot["base_url"] + "participation.json.gz")
 source_reviews = [json.loads((root / path).read_text()) for path in source_registry["source_reviews"]]
 source_links.update(review["complete_download_url"] for review in source_reviews)
 expected_links = baseline | new_links | source_links

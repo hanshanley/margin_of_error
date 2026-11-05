@@ -1,0 +1,41 @@
+{
+  "actual_link_href": "/results/public/accomack-county/elections/2026-November-General/ballot-items/01000000-f030-c43d-9f22-08df1fee4fe4",
+  "actual_detail_url": "https://enr.elections.virginia.gov/results/public/accomack-county/elections/2026-November-General/ballot-items/01000000-f030-c43d-9f22-08df1fee4fe4",
+  "observed_requests": [
+    {
+      "url": "https://enr.elections.virginia.gov/results/public/api/elections/accomack-county/2026-November-General/data/ballot-item/01000000-f030-c43d-9f22-08df1fee4fe4",
+      "status": 200,
+      "bytes": 561006,
+      "sha256": "f66f044cf7f31eccde55f29c5f91f2bae2bf53c3cc8bb016796acf3ac8a6fd99",
+      "fetched_at": "2026-11-05T11:00:52.540327+00:00",
+      "content_type": "application/json; charset=utf-8"
+    }
+  ],
+  "summaries": [
+    {
+      "url": "https://enr.elections.virginia.gov/results/public/api/elections/accomack-county/2026-November-General/data/ballot-item/01000000-f030-c43d-9f22-08df1fee4fe4",
+      "keys": [
+        "jurisdiction",
+        "election",
+        "localityElections",
+        "ballotItems",
+        "precincts",
+        "pollingPlaces",
+        "statistics",
+        "voterRegistration",
+        "voterTurnout",
+        "ballotItemWithBreakdown"
+      ],
+      "sizes": {
+        "localityElections": 0,
+        "ballotItems": 33,
+        "precincts": 16,
+        "pollingPlaces": 0,
+        "statistics": 0,
+        "voterRegistration": 0,
+        "voterTurnout": 16
+      }
+    }
+  ],
+  "body_excerpt": "Virginia\n2026 November General\nNovember 3, 2026\nUNOFFICIAL RESULTS\nLast Updated Wednesday, November 4, 2026 at 11:45:20 AM\nThis page auto-refreshes and is updated in real-time.\nSelect Language\nVirginia\n>\nACCOMACK COUNTY\n>\nMember, House of Representatives (2nd District)\nMember, House of Representatives (2nd District)\n(Vote for only one)\n\nLast Updated: November 4, 2026, 11:45:20 AM (about 18 hours ago)\n\nCandidate\nPercentage\nVotes\nCandidate\nElaine G. Luria\nDemocratic\nPercentage\n47.77%\nVotes\n6,643\nCandidate\nJen A. Kiggans\nRepublican\nPercentage\n50.90%\nVotes\n7,077\nCandidate\nGeral D. \"Bishop\" Staten\nIndependent\nPercentage\n0.44%\nVotes\n61\nCandidate\nJ. Matt Baker\nIndependent\nPercentage\n0.80%\nVotes\n111\nCandidate\nWrite-In\nPercentage\n0.09%\nVotes\n13\nPRECINCT RESULTS\nFilters\nSearch\nDisplay options\nTotals\nVote Method\n101 - CHINCOTEAGUE (0000,0490)\nVote Method\nCandidate\nPercentage\nVotes\nCandidate\nElaine G. Luria\nDemocratic\nPercentage\n27.91%\nVotes\n355\nCandidate\nJen A. Kiggans\nRepublican\nPercentage\n70.91%\nVotes\n902\nCandidate\nGeral D. \"Bishop\" Staten\nIndependent\nPercentage\n0.39%\nVotes\n5\nCandidate\nJ. Matt Baker\nIndependent\nPercentage\n0.63%\nVotes\n8\nCandidate\nWrite-In\nPercentage\n0.16%\nVotes\n2\nElection Night Complete\n201 - ATLANTIC (0000)\nVote Method\nCandidate\nPercentage\nVotes\nCandidate\nElaine G. Luria\nDemocratic\nPercentage\n20.23%\nVotes\n88\nCandidate\nJen A. Kiggans\nRepublican\nPercentage\n78.16%\nVotes\n340\nCandidate\nGeral D. \"Bishop\" Staten\nIndependent\nPercentage\n0.00%\nVotes\n0\nCandidate\nJ. Matt Baker\nIndependent\nPercentage\n1.38%\nVotes\n6\nCandidate\nWrite-In\nPercentage\n0.23%\nVotes\n1\nElection Night Complete\n202 - GREENBACKVILLE (0000)\nVote Method\nCandidate\nPercentage\nVotes\nCandidate\nElaine G. Luria\nDemocratic\nPercentage\n25.56%\nVotes\n218\nCandidate\nJen A. Kiggans\nRepublican\nPercentage\n72.45%\nVotes\n618\nC"
+}

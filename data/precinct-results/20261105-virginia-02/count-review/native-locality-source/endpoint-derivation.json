@@ -1,0 +1,3734 @@
+{
+  "parent_source_commit": "09deda073923c36a6fba557b5c4fcf03957af324",
+  "parent_publish_version": "e5af7981-c42c-45c0-9923-b33f316e79bd",
+  "election_date": "2026-11-03",
+  "locality_route": "Native parent childLocalities.shortName; exact route observed through locality menu.",
+  "detail_route": "Native locality ballotItems.id; exact data/ballot-item route observed through House precinct link.",
+  "protected_details": "Do not request a protected or disabled precinct breakdown.",
+  "localities": [
+    {
+      "id": "6EB727A2-6F16-4571-BE8A-23EF6CF88072",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "ACCOMACK COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Accomack"
+        },
+        {
+          "languageId": "2",
+          "text": "ACCOMACK \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Accomack"
+        }
+      ],
+      "shortName": "accomack-county",
+      "turnoutPercent": 0.5399332,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "001"
+    },
+    {
+      "id": "E23A5DBA-DC75-4E3B-9606-1D86166490E4",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "ALBEMARLE COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Albemarle"
+        },
+        {
+          "languageId": "2",
+          "text": "ALBEMARLE \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Albemarle"
+        }
+      ],
+      "shortName": "albemarle-county",
+      "turnoutPercent": 0.6379121,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "003"
+    },
+    {
+      "id": "4477AEA8-3FA1-4782-9A78-6CB1B58A7BBA",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "ALEXANDRIA CITY"
+        },
+        {
+          "languageId": "1",
+          "text": "CIUDAD DE ALEXANDRIA"
+        },
+        {
+          "languageId": "2",
+          "text": "ALEXANDRIA \uc2dc"
+        },
+        {
+          "languageId": "5",
+          "text": "Th\u00e0nh ph\u1ed1 Alexandria"
+        }
+      ],
+      "shortName": "alexandria-city",
+      "turnoutPercent": 0.5587399,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "510"
+    },
+    {
+      "id": "C2A43ED2-71B7-4378-84FB-E0116125DD14",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "ALLEGHANY COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Alleghany"
+        },
+        {
+          "languageId": "2",
+          "text": "ALLEGHANY \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Allegheny"
+        }
+      ],
+      "shortName": "alleghany-county",
+      "turnoutPercent": 0.5183846,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "005"
+    },
+    {
+      "id": "98C74C30-BED7-4B5C-91F4-CB13E4119F12",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "AMELIA COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Amelia"
+        },
+        {
+          "languageId": "2",
+          "text": "AMELIA \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Amelia"
+        }
+      ],
+      "shortName": "amelia-county",
+      "turnoutPercent": 0.5976508,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "007"
+    },
+    {
+      "id": "58BF1A2F-4866-4454-A2BE-58458ADDA1D9",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "AMHERST COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Amherst"
+        },
+        {
+          "languageId": "2",
+          "text": "AMHERST \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Amherst"
+        }
+      ],
+      "shortName": "amherst-county",
+      "turnoutPercent": 0.5818905,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "009"
+    },
+    {
+      "id": "ABD59253-76F9-4833-94E8-249D2B53288D",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "APPOMATTOX COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Appomatox"
+        },
+        {
+          "languageId": "2",
+          "text": "APPOMATTOX \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Appomattox"
+        }
+      ],
+      "shortName": "appomattox-county",
+      "turnoutPercent": 0.6004407,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "011"
+    },
+    {
+      "id": "192CF1DC-E8AE-4912-8118-786901249B99",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "ARLINGTON COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "CONDADO DE ARLINGTON"
+        },
+        {
+          "languageId": "2",
+          "text": "ARLINGTON \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Arlington"
+        }
+      ],
+      "shortName": "arlington-county",
+      "turnoutPercent": 0.5462387,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "013"
+    },
+    {
+      "id": "37DE3598-54EB-4396-99A1-2B9FB549DADA",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "AUGUSTA COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Augusta"
+        },
+        {
+          "languageId": "2",
+          "text": "AUGUSTA \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Augusta"
+        }
+      ],
+      "shortName": "augusta-county",
+      "turnoutPercent": 0.5891082,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "015"
+    },
+    {
+      "id": "72CC91CE-FE1E-4FFB-B2F4-DDA8FAB59C62",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "BATH COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Bath"
+        },
+        {
+          "languageId": "2",
+          "text": "BATH \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Bath"
+        }
+      ],
+      "shortName": "bath-county",
+      "turnoutPercent": 0.5466396,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "017"
+    },
+    {
+      "id": "58C5D0F6-8B9F-4D41-8950-F3425483B188",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "BEDFORD COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Bedford"
+        },
+        {
+          "languageId": "2",
+          "text": "BEDFORD \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Bedford"
+        }
+      ],
+      "shortName": "bedford-county",
+      "turnoutPercent": 0.604296,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "019"
+    },
+    {
+      "id": "CEC9E653-2657-4DFD-9B19-C3C98FD2EE94",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "BLAND COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Bland"
+        },
+        {
+          "languageId": "2",
+          "text": "BLAND \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Bland"
+        }
+      ],
+      "shortName": "bland-county",
+      "turnoutPercent": 0.5404182,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "021"
+    },
+    {
+      "id": "2B032E1E-19C3-4B69-ABA4-A96E93293F6C",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "BOTETOURT COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Botetourt"
+        },
+        {
+          "languageId": "2",
+          "text": "BOTETOURT \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Botetourt"
+        }
+      ],
+      "shortName": "botetourt-county",
+      "turnoutPercent": 0.6234856,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "023"
+    },
+    {
+      "id": "E8F11F3B-7CA7-401B-ADFA-E2FAB6E0CF0D",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "BRISTOL CITY"
+        },
+        {
+          "languageId": "1",
+          "text": "Ciudad de Bristol"
+        },
+        {
+          "languageId": "2",
+          "text": "BRISTOL \uc2dc"
+        },
+        {
+          "languageId": "5",
+          "text": "Th\u00e0nh Ph\u1ed1 Bristol"
+        }
+      ],
+      "shortName": "bristol-city",
+      "turnoutPercent": 0.4073383,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "520"
+    },
+    {
+      "id": "CEDE0E32-6CF8-42FA-8ECA-866DCD86E108",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "BRUNSWICK COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Brunswick"
+        },
+        {
+          "languageId": "2",
+          "text": "BRUNSWICK \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Brusnwick"
+        }
+      ],
+      "shortName": "brunswick-county",
+      "turnoutPercent": 0.5227451,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "025"
+    },
+    {
+      "id": "3673C328-515D-49F5-A496-4FDE67B3BCB8",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "BUCHANAN COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Buchanan"
+        },
+        {
+          "languageId": "2",
+          "text": "BUCHANAN \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Buchanan"
+        }
+      ],
+      "shortName": "buchanan-county",
+      "turnoutPercent": 0.3761858,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "027"
+    },
+    {
+      "id": "A9E70EBB-9A6D-48C8-A855-11610EEE93E4",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "BUCKINGHAM COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Buckingham"
+        },
+        {
+          "languageId": "2",
+          "text": "BUCKINGHAM \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Buckingham"
+        }
+      ],
+      "shortName": "buckingham-county",
+      "turnoutPercent": 0.5398268,
+      "percentReporting": 0.4,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "029"
+    },
+    {
+      "id": "0FA48669-A153-4AB8-A46D-4DE8B6E91917",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "BUENA VISTA CITY"
+        },
+        {
+          "languageId": "1",
+          "text": "Ciudad de Buena Vista"
+        },
+        {
+          "languageId": "2",
+          "text": "BUENA VISTA \uc2dc"
+        },
+        {
+          "languageId": "5",
+          "text": "Th\u00e0nh Ph\u1ed1 Buena Vista"
+        }
+      ],
+      "shortName": "buena-vista-city",
+      "turnoutPercent": 0.4262827,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "530"
+    },
+    {
+      "id": "0601551A-896E-4350-978C-5F5D83DC9003",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "CAMPBELL COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Campbell"
+        },
+        {
+          "languageId": "2",
+          "text": "CAMPBELL \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Campbell"
+        }
+      ],
+      "shortName": "campbell-county",
+      "turnoutPercent": 0.5575621,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "031"
+    },
+    {
+      "id": "C88C3E8B-AB3C-4C61-BE1C-5E39E85942E4",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "CAROLINE COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Caroline"
+        },
+        {
+          "languageId": "2",
+          "text": "CAROLINE \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Caroline"
+        }
+      ],
+      "shortName": "caroline-county",
+      "turnoutPercent": 0.5290675,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "033"
+    },
+    {
+      "id": "95A71660-E20E-4352-A2A2-A1BBC04BEA2A",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "CARROLL COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Carroll"
+        },
+        {
+          "languageId": "2",
+          "text": "CARROLL \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Carroll"
+        }
+      ],
+      "shortName": "carroll-county",
+      "turnoutPercent": 0.5175388,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "035"
+    },
+    {
+      "id": "CC74F8B7-2351-4591-BD07-CF263AEEAA54",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "CHARLES CITY COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Charles City"
+        },
+        {
+          "languageId": "2",
+          "text": "CHARLES  CITY \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Charles City"
+        }
+      ],
+      "shortName": "charles-city-county",
+      "turnoutPercent": 0.5673449,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "036"
+    },
+    {
+      "id": "5925E20C-0D85-4262-9972-994FF5260CA8",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "CHARLOTTE COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Charlotte"
+        },
+        {
+          "languageId": "2",
+          "text": "CHARLOTTE \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Charlotte"
+        }
+      ],
+      "shortName": "charlotte-county",
+      "turnoutPercent": 0.5578145,
+      "percentReporting": 0.6,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "037"
+    },
+    {
+      "id": "D2C5D845-EE42-43EB-880A-A86528BF5285",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "CHARLOTTESVILLE CITY"
+        },
+        {
+          "languageId": "1",
+          "text": "Ciudad de Charlottesville"
+        },
+        {
+          "languageId": "2",
+          "text": "CHARLOTTESVILLE \uc2dc"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Charlottesville"
+        }
+      ],
+      "shortName": "charlottesville-city",
+      "turnoutPercent": 0.5335025,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "540"
+    },
+    {
+      "id": "43E4F3D9-A3FE-4B3D-AF24-4A5D94FF819C",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "CHESAPEAKE CITY"
+        },
+        {
+          "languageId": "1",
+          "text": "Ciudad de Chesapeake"
+        },
+        {
+          "languageId": "2",
+          "text": "CHESAPEAKE \uc2dc"
+        },
+        {
+          "languageId": "5",
+          "text": "Th\u00e0nh Ph\u1ed1 Chesapeake"
+        }
+      ],
+      "shortName": "chesapeake-city",
+      "turnoutPercent": 0.5345517,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "550"
+    },
+    {
+      "id": "0D759DE8-2C45-423C-B531-A481041864AB",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "CHESTERFIELD COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Chesterfield"
+        },
+        {
+          "languageId": "2",
+          "text": "CHESTERFIELD \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Chesterfield"
+        }
+      ],
+      "shortName": "chesterfield-county",
+      "turnoutPercent": 0.6030322,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "041"
+    },
+    {
+      "id": "6259FA8C-8FD7-4D2D-AA07-EA69ACC1838E",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "CLARKE COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Clarke"
+        },
+        {
+          "languageId": "2",
+          "text": "CLARKE \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Clarke"
+        }
+      ],
+      "shortName": "clarke-county",
+      "turnoutPercent": 0.6034363,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "043"
+    },
+    {
+      "id": "8F7F679C-9006-4C78-9D68-918A233EB1A6",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "COLONIAL HEIGHTS CITY"
+        },
+        {
+          "languageId": "1",
+          "text": "Ciudad de Colonial Heights"
+        },
+        {
+          "languageId": "2",
+          "text": "COLONIAL HEIGHTS \uc2dc"
+        },
+        {
+          "languageId": "5",
+          "text": "Th\u00e0nh ph\u1ed1 Colonial Heights"
+        }
+      ],
+      "shortName": "colonial-heights-city",
+      "turnoutPercent": 0.4863697,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "570"
+    },
+    {
+      "id": "B2738446-0C64-4AB1-B6CC-4B3A9383E799",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "COVINGTON CITY"
+        },
+        {
+          "languageId": "1",
+          "text": "Ciudad de Covington "
+        },
+        {
+          "languageId": "2",
+          "text": "COVINGTON \uc2dc"
+        },
+        {
+          "languageId": "5",
+          "text": "Th\u00e0nh ph\u1ed1 Covington"
+        }
+      ],
+      "shortName": "covington-city",
+      "turnoutPercent": 0.4430956,
+      "percentReporting": 0.5,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "580"
+    },
+    {
+      "id": "94BF45E6-A12B-4462-B874-6E9D84B34987",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "CRAIG COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Craig"
+        },
+        {
+          "languageId": "2",
+          "text": "CRAIG \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Craig"
+        }
+      ],
+      "shortName": "craig-county",
+      "turnoutPercent": 0.5807253,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "045"
+    },
+    {
+      "id": "1A107694-7303-43BC-B405-F419D7A2FABE",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "CULPEPER COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Culpepper"
+        },
+        {
+          "languageId": "2",
+          "text": "CULPEPER \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Culpeper"
+        }
+      ],
+      "shortName": "culpeper-county",
+      "turnoutPercent": 0.5561849,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "047"
+    },
+    {
+      "id": "11A460EE-9E36-4B49-A583-10B691904476",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "CUMBERLAND COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Cumberland"
+        },
+        {
+          "languageId": "2",
+          "text": "CUMBERLAND \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Cumberland"
+        }
+      ],
+      "shortName": "cumberland-county",
+      "turnoutPercent": 0.6642418,
+      "percentReporting": 0.4,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "049"
+    },
+    {
+      "id": "ABC0CE6D-168F-49ED-ACEE-085C6EBD1F5D",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "DANVILLE CITY"
+        },
+        {
+          "languageId": "1",
+          "text": "Ciudad de Danville"
+        },
+        {
+          "languageId": "2",
+          "text": "DANVILLE \uc2dc"
+        },
+        {
+          "languageId": "5",
+          "text": "Th\u00e0nh Ph\u1ed1 Danville"
+        }
+      ],
+      "shortName": "danville-city",
+      "turnoutPercent": 0.487594,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "590"
+    },
+    {
+      "id": "0A4ADAAA-A4D9-4CEC-BDA0-1E17CF7B0166",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "DICKENSON COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Dickenson"
+        },
+        {
+          "languageId": "2",
+          "text": "DICKENSON \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Dickenson"
+        }
+      ],
+      "shortName": "dickenson-county",
+      "turnoutPercent": 0.505101,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "051"
+    },
+    {
+      "id": "ED3D975B-F364-4F9B-93E2-F6F2C01FD726",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "DINWIDDIE COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Dinwiddie"
+        },
+        {
+          "languageId": "2",
+          "text": "DINWIDDIE \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Dinwiddie"
+        }
+      ],
+      "shortName": "dinwiddie-county",
+      "turnoutPercent": 0.5188777,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "053"
+    },
+    {
+      "id": "03A99444-2DE0-488A-9973-19FCACE9391F",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "EMPORIA CITY"
+        },
+        {
+          "languageId": "1",
+          "text": "Ciudad de Emporia"
+        },
+        {
+          "languageId": "2",
+          "text": "EMPORIA \uc2dc"
+        },
+        {
+          "languageId": "5",
+          "text": "Th\u00e0nh ph\u1ed1 Emporia"
+        }
+      ],
+      "shortName": "emporia-city",
+      "turnoutPercent": 0.4298565,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "595"
+    },
+    {
+      "id": "6894B8D9-24A6-416D-A9E4-85AF7B6204CB",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "ESSEX COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Essex"
+        },
+        {
+          "languageId": "2",
+          "text": "ESSEX \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Essex"
+        }
+      ],
+      "shortName": "essex-county",
+      "turnoutPercent": 0.5775216,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "057"
+    },
+    {
+      "id": "77D8ECF0-D3D7-4C47-B857-7CEA46F1CE88",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "FAIRFAX CITY"
+        },
+        {
+          "languageId": "1",
+          "text": "Ciudad de Fairfax"
+        },
+        {
+          "languageId": "2",
+          "text": "FAIRFAX \uc2dc"
+        },
+        {
+          "languageId": "5",
+          "text": "Th\u00e0nh Ph\u1ed1 Fairfax"
+        }
+      ],
+      "shortName": "fairfax-city",
+      "turnoutPercent": 0.5858644,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "600"
+    },
+    {
+      "id": "D39DF2DD-6D31-498F-BCDF-9D417312C0BC",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "FAIRFAX COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Fairfax"
+        },
+        {
+          "languageId": "2",
+          "text": "FAIRFAX \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Fairfax"
+        }
+      ],
+      "shortName": "fairfax-county",
+      "turnoutPercent": 0.5740911,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "059"
+    },
+    {
+      "id": "6D4C3EE5-976E-4E23-824F-35C16E6F8BD3",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "FALLS CHURCH CITY"
+        },
+        {
+          "languageId": "1",
+          "text": "Ciudad de Falls Church"
+        },
+        {
+          "languageId": "2",
+          "text": "FALLS CHURCH \uc2dc"
+        },
+        {
+          "languageId": "5",
+          "text": "Th\u00e0nh ph\u1ed1 Falls Church"
+        }
+      ],
+      "shortName": "falls-church-city",
+      "turnoutPercent": 0.6444126,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "610"
+    },
+    {
+      "id": "C5267DF7-D919-42BD-BE4E-9983D21C3D00",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "FAUQUIER COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Fauquier"
+        },
+        {
+          "languageId": "2",
+          "text": "FAUQUIER \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Fauquier"
+        }
+      ],
+      "shortName": "fauquier-county",
+      "turnoutPercent": 0.5952971,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "061"
+    },
+    {
+      "id": "7C64F1D1-C00B-4C75-9E54-F2264D81D788",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "FLOYD COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Floyd"
+        },
+        {
+          "languageId": "2",
+          "text": "FLOYD \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Floyd"
+        }
+      ],
+      "shortName": "floyd-county",
+      "turnoutPercent": 0.6089025,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "063"
+    },
+    {
+      "id": "65C8ACA1-3714-4E0A-8C54-0C6803A7D7E6",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "FLUVANNA COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Fluvanna"
+        },
+        {
+          "languageId": "2",
+          "text": "FLUVANNA \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Fluvanna"
+        }
+      ],
+      "shortName": "fluvanna-county",
+      "turnoutPercent": 0.6191302,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "065"
+    },
+    {
+      "id": "E6F3B03D-2353-414D-86C8-322BAFB186AF",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "FRANKLIN CITY"
+        },
+        {
+          "languageId": "1",
+          "text": "Ciudad de Franklin"
+        },
+        {
+          "languageId": "2",
+          "text": "FRANKLIN \uc2dc"
+        },
+        {
+          "languageId": "5",
+          "text": "Th\u00e0nh Ph\u1ed1 Franklin"
+        }
+      ],
+      "shortName": "franklin-city",
+      "turnoutPercent": 0.527616,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "620"
+    },
+    {
+      "id": "991070B4-D7AC-4871-9BBE-B00DE3063B63",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "FRANKLIN COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Franklin"
+        },
+        {
+          "languageId": "2",
+          "text": "FRANKLIN \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Franklin"
+        }
+      ],
+      "shortName": "franklin-county",
+      "turnoutPercent": 0.5675007,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "067"
+    },
+    {
+      "id": "10E9F7F8-FD1C-43E6-B48A-3E0EDD1602F6",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "FREDERICK COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Frederick"
+        },
+        {
+          "languageId": "2",
+          "text": "FREDERICK \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Frederick"
+        }
+      ],
+      "shortName": "frederick-county",
+      "turnoutPercent": 0.5354508,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "069"
+    },
+    {
+      "id": "FF68E485-18A2-4D31-8E03-5F502BF55D60",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "FREDERICKSBURG CITY"
+        },
+        {
+          "languageId": "1",
+          "text": "Ciudad de Fredericksburg"
+        },
+        {
+          "languageId": "2",
+          "text": "FREDERICKSBURG \uc2dc"
+        },
+        {
+          "languageId": "5",
+          "text": "Th\u00e0nh Ph\u1ed1 Fredericksburg"
+        }
+      ],
+      "shortName": "fredericksburg-city",
+      "turnoutPercent": 0.507232,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "630"
+    },
+    {
+      "id": "F759B17F-2B40-421F-BAA6-29242AB5A846",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "GALAX CITY"
+        },
+        {
+          "languageId": "1",
+          "text": "Ciudad de Galax"
+        },
+        {
+          "languageId": "2",
+          "text": "GALAX \uc2dc"
+        },
+        {
+          "languageId": "5",
+          "text": "Th\u00e0nh ph\u1ed1 Galax"
+        }
+      ],
+      "shortName": "galax-city",
+      "turnoutPercent": 0.4499883,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "640"
+    },
+    {
+      "id": "47C8333E-6FB3-4326-8E83-01B5C2EC14A8",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "GILES COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Giles"
+        },
+        {
+          "languageId": "2",
+          "text": "GILES \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Giles"
+        }
+      ],
+      "shortName": "giles-county",
+      "turnoutPercent": 0.5261988,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "071"
+    },
+    {
+      "id": "364698AF-4FB6-44A7-9C89-2BE2E3398BEF",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "GLOUCESTER COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Gloucester"
+        },
+        {
+          "languageId": "2",
+          "text": "GLOUCESTER \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Gloucester"
+        }
+      ],
+      "shortName": "gloucester-county",
+      "turnoutPercent": 0.5678582,
+      "percentReporting": 0.4,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "073"
+    },
+    {
+      "id": "070D8A64-0EEA-4FA0-8437-F1BAE25DF4CF",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "GOOCHLAND COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Goochland"
+        },
+        {
+          "languageId": "2",
+          "text": "GOOCHLAND \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Goochland"
+        }
+      ],
+      "shortName": "goochland-county",
+      "turnoutPercent": 0.6995592,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "075"
+    },
+    {
+      "id": "B1AB3A63-1196-4841-B7DD-68B74C0EED8D",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "GRAYSON COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Grayson"
+        },
+        {
+          "languageId": "2",
+          "text": "GRAYSON \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Grayson"
+        }
+      ],
+      "shortName": "grayson-county",
+      "turnoutPercent": 0.5506272,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "077"
+    },
+    {
+      "id": "45258612-7EC0-4785-812A-9502BE3A6745",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "GREENE COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Greene"
+        },
+        {
+          "languageId": "2",
+          "text": "GREENE \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Greene"
+        }
+      ],
+      "shortName": "greene-county",
+      "turnoutPercent": 0.5968051,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "079"
+    },
+    {
+      "id": "58197BF1-EF16-41C4-9B01-632072556380",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "GREENSVILLE COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Greensville"
+        },
+        {
+          "languageId": "2",
+          "text": "GREENSVILLE \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Greensville"
+        }
+      ],
+      "shortName": "greensville-county",
+      "turnoutPercent": 0.506426,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "081"
+    },
+    {
+      "id": "3DCC013C-7DCB-4237-9C85-7742BF3D8B71",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "HALIFAX COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Halifax"
+        },
+        {
+          "languageId": "2",
+          "text": "HALIFAX \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Halifax"
+        }
+      ],
+      "shortName": "halifax-county",
+      "turnoutPercent": 0.5434968,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "083"
+    },
+    {
+      "id": "B7DFA72D-DB95-48EB-A805-70D78651EADA",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "HAMPTON CITY"
+        },
+        {
+          "languageId": "1",
+          "text": "Ciudad de Hampton"
+        },
+        {
+          "languageId": "2",
+          "text": "HAMPTON \uc2dc"
+        },
+        {
+          "languageId": "5",
+          "text": "Th\u00e0nh ph\u1ed1 Hampton"
+        }
+      ],
+      "shortName": "hampton-city",
+      "turnoutPercent": 0.4701091,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "650"
+    },
+    {
+      "id": "37DD662B-2874-44EE-B4CB-36A04A5F786D",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "HANOVER COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Hanover"
+        },
+        {
+          "languageId": "2",
+          "text": "HANOVER \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Hanover"
+        }
+      ],
+      "shortName": "hanover-county",
+      "turnoutPercent": 0.6742005,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "085"
+    },
+    {
+      "id": "515E71BF-771C-43F2-81C9-655A1FDB78BA",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "HARRISONBURG CITY"
+        },
+        {
+          "languageId": "1",
+          "text": "CIUDAD DE HARRISONBURG"
+        },
+        {
+          "languageId": "2",
+          "text": "HARRISONBURG \uc2dc"
+        },
+        {
+          "languageId": "5",
+          "text": "Th\u00e0nh Ph\u1ed1 Harrisonburg"
+        }
+      ],
+      "shortName": "harrisonburg-city",
+      "turnoutPercent": 0.4682488,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "660"
+    },
+    {
+      "id": "81304D4B-3A9E-4F18-8D7C-06CC644DE2FA",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "HENRICO COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Henrico"
+        },
+        {
+          "languageId": "2",
+          "text": "HENRICO \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Henrico"
+        }
+      ],
+      "shortName": "henrico-county",
+      "turnoutPercent": 0.6003124,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "087"
+    },
+    {
+      "id": "7DCE8CB6-617C-4C87-A978-1B518EA624A6",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "HENRY COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Henry"
+        },
+        {
+          "languageId": "2",
+          "text": "HENRY \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Henry"
+        }
+      ],
+      "shortName": "henry-county",
+      "turnoutPercent": 0.486239,
+      "percentReporting": 0.4,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "089"
+    },
+    {
+      "id": "47A3E574-75C5-415E-ADBA-A4477086AE27",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "HIGHLAND COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Highland"
+        },
+        {
+          "languageId": "2",
+          "text": "HIGHLAND \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Highland"
+        }
+      ],
+      "shortName": "highland-county",
+      "turnoutPercent": 0.6583649,
+      "percentReporting": 0.7,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "091"
+    },
+    {
+      "id": "6092E3E8-6CD5-49C4-AE8C-6EC3E4DD2D3E",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "HOPEWELL CITY"
+        },
+        {
+          "languageId": "1",
+          "text": "Ciudad de Hopewell"
+        },
+        {
+          "languageId": "2",
+          "text": "HOPEWELL \uc2dc"
+        },
+        {
+          "languageId": "5",
+          "text": "Th\u00e0nh ph\u1ed1 Hopewell"
+        }
+      ],
+      "shortName": "hopewell-city",
+      "turnoutPercent": 0.4025833,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "670"
+    },
+    {
+      "id": "F64F237F-7A20-475A-A9DB-778CA8C9510F",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "ISLE OF WIGHT COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Isle of Wright"
+        },
+        {
+          "languageId": "2",
+          "text": "ISLE OF WIGHT \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Isle of Wight"
+        }
+      ],
+      "shortName": "isle-of-wight-county",
+      "turnoutPercent": 0.6161844,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "093"
+    },
+    {
+      "id": "9A772DAE-CD9F-44DF-A961-FC6AEEC28CA4",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "JAMES CITY COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de James City"
+        },
+        {
+          "languageId": "2",
+          "text": "JAMES CITY \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn James City"
+        }
+      ],
+      "shortName": "james-city-county",
+      "turnoutPercent": 0.6516165,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "095"
+    },
+    {
+      "id": "DE4CDBD6-773D-4E33-808B-0E5C9E78B37B",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "KING and QUEEN COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de King & Queen"
+        },
+        {
+          "languageId": "2",
+          "text": "KING & QUEEN \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn King & Queen"
+        }
+      ],
+      "shortName": "king-queen-county",
+      "turnoutPercent": 0.5924682,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "097"
+    },
+    {
+      "id": "DFF6A579-69C5-472E-80E4-C21E0B9C8BEE",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "KING GEORGE COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de King George"
+        },
+        {
+          "languageId": "2",
+          "text": "KING GEORGE \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn King George"
+        }
+      ],
+      "shortName": "king-george-county",
+      "turnoutPercent": 0.5420918,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "099"
+    },
+    {
+      "id": "84399CE9-07E5-4A6B-9AC5-21430D5F9BD5",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "KING WILLIAM COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de King William"
+        },
+        {
+          "languageId": "2",
+          "text": "KING WILLIAM \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn King William"
+        }
+      ],
+      "shortName": "king-william-county",
+      "turnoutPercent": 0.5892881,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "101"
+    },
+    {
+      "id": "DD1B6C7B-C4D0-44AA-BB89-0A757763A3C5",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "LANCASTER COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Lancaster"
+        },
+        {
+          "languageId": "2",
+          "text": "LANCASTER \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Lancaster"
+        }
+      ],
+      "shortName": "lancaster-county",
+      "turnoutPercent": 0.6411909,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "103"
+    },
+    {
+      "id": "F9F6DF75-7B72-41AE-BD24-8C120CD463DA",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "LEE COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Lee"
+        },
+        {
+          "languageId": "2",
+          "text": "LEE \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Lee"
+        }
+      ],
+      "shortName": "lee-county",
+      "turnoutPercent": 0.417836,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "105"
+    },
+    {
+      "id": "DA6AFC8A-50A5-47EE-854D-D539A683543C",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "LEXINGTON CITY"
+        },
+        {
+          "languageId": "1",
+          "text": "Ciudad de Lexington"
+        },
+        {
+          "languageId": "2",
+          "text": "LEXINGTON \uc2dc"
+        },
+        {
+          "languageId": "5",
+          "text": "Th\u00e0nh ph\u1ed1 Lexington"
+        }
+      ],
+      "shortName": "lexington-city",
+      "turnoutPercent": 0.5039425,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "678"
+    },
+    {
+      "id": "17DFA3C2-0991-450B-BC30-2FE415554381",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "LOUDOUN COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Loudoun"
+        },
+        {
+          "languageId": "2",
+          "text": "LOUDOUN \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Loudoun"
+        }
+      ],
+      "shortName": "loudoun-county",
+      "turnoutPercent": 0.5785067,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "107"
+    },
+    {
+      "id": "29420EF7-12A8-4E13-8F23-1CAB5C36E5B9",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "LOUISA COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Louisa"
+        },
+        {
+          "languageId": "2",
+          "text": "LOUISA \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Louisa"
+        }
+      ],
+      "shortName": "louisa-county",
+      "turnoutPercent": 0.5842231,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "109"
+    },
+    {
+      "id": "928939CC-2E2D-4A89-85CF-861491F240B8",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "LUNENBURG COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Lunenburg"
+        },
+        {
+          "languageId": "2",
+          "text": "LUNENBURG \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Lunenburg"
+        }
+      ],
+      "shortName": "lunenburg-county",
+      "turnoutPercent": 0.5533445,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "111"
+    },
+    {
+      "id": "336867E1-5205-43C6-A2AD-F71D89207D70",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "LYNCHBURG CITY"
+        },
+        {
+          "languageId": "1",
+          "text": "Ciudad de Lynchburg"
+        },
+        {
+          "languageId": "2",
+          "text": "LYNCHBURG \uc2dc"
+        },
+        {
+          "languageId": "5",
+          "text": "Th\u00e0nh Ph\u1ed1 Lynchburg"
+        }
+      ],
+      "shortName": "lynchburg-city",
+      "turnoutPercent": 0.4852662,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "680"
+    },
+    {
+      "id": "815C2A06-96F5-4647-AA2D-1B42215B17FB",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "MADISON COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Madison"
+        },
+        {
+          "languageId": "2",
+          "text": "MADISON \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Madison"
+        }
+      ],
+      "shortName": "madison-county",
+      "turnoutPercent": 0.6078269,
+      "percentReporting": 0.4,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "113"
+    },
+    {
+      "id": "A7704EFD-EE4B-4A63-9BC0-B1A61ABBDC47",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "MANASSAS CITY"
+        },
+        {
+          "languageId": "1",
+          "text": "CIUDAD DE MANASSAS"
+        },
+        {
+          "languageId": "2",
+          "text": "MANASSAS \uc2dc"
+        },
+        {
+          "languageId": "5",
+          "text": "Th\u00e0nh Ph\u1ed1 Manassas"
+        }
+      ],
+      "shortName": "manassas-city",
+      "turnoutPercent": 0.5200497,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "683"
+    },
+    {
+      "id": "8DF2A8EB-E565-4F7D-A5DC-4C6BD83D39DB",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "MANASSAS PARK CITY"
+        },
+        {
+          "languageId": "1",
+          "text": "Ciudad de Manassas Park"
+        },
+        {
+          "languageId": "2",
+          "text": "MANASSAS PARK \uc2dc"
+        },
+        {
+          "languageId": "5",
+          "text": "Th\u00e0nh Ph\u1ed1 Manassas Park"
+        }
+      ],
+      "shortName": "manassas-park-city",
+      "turnoutPercent": 0.4574309,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "685"
+    },
+    {
+      "id": "426C1F72-EF68-44B9-9303-AE781D56FD20",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "MARTINSVILLE CITY"
+        },
+        {
+          "languageId": "1",
+          "text": "Ciudad de Martinsville"
+        },
+        {
+          "languageId": "2",
+          "text": "MARTINSVILLE \uc2dc"
+        },
+        {
+          "languageId": "5",
+          "text": "Th\u00e0nh ph\u1ed1 Martinsville"
+        }
+      ],
+      "shortName": "martinsville-city",
+      "turnoutPercent": 0.4581721,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "690"
+    },
+    {
+      "id": "53BB6B6E-2115-439B-B39A-B434686C7F14",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "MATHEWS COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Mathews"
+        },
+        {
+          "languageId": "2",
+          "text": "MATHEWS \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Mathews"
+        }
+      ],
+      "shortName": "mathews-county",
+      "turnoutPercent": 0.6360153,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "115"
+    },
+    {
+      "id": "76CE8D67-2873-4E42-AC66-052F4DACD31B",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "MECKLENBURG COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Mecklenburg"
+        },
+        {
+          "languageId": "2",
+          "text": "MECKLENBURG \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Mecklenburg"
+        }
+      ],
+      "shortName": "mecklenburg-county",
+      "turnoutPercent": 0.5348411,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "117"
+    },
+    {
+      "id": "51782E6A-2AD6-4FF0-94BF-4AF424565E9D",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "MIDDLESEX COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Middlesex"
+        },
+        {
+          "languageId": "2",
+          "text": "MIDDLESEX \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Middlesex"
+        }
+      ],
+      "shortName": "middlesex-county",
+      "turnoutPercent": 0.6565323,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "119"
+    },
+    {
+      "id": "F8D298AF-B74F-45EC-B60A-25F1463CBEEC",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "MONTGOMERY COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Montgomery"
+        },
+        {
+          "languageId": "2",
+          "text": "MONTGOMERY \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Montgomery"
+        }
+      ],
+      "shortName": "montgomery-county",
+      "turnoutPercent": 0.528412,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "121"
+    },
+    {
+      "id": "9D138AB6-CA06-43D6-B877-3807A79F1D75",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "NELSON COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Nelson"
+        },
+        {
+          "languageId": "2",
+          "text": "NELSON \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Nelson"
+        }
+      ],
+      "shortName": "nelson-county",
+      "turnoutPercent": 0.6380523,
+      "percentReporting": 0.4,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "125"
+    },
+    {
+      "id": "3A40C7ED-097C-4ADB-8389-A9021403EBE8",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "NEW KENT COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de New Kent"
+        },
+        {
+          "languageId": "2",
+          "text": "NEW KENT \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn New Kent"
+        }
+      ],
+      "shortName": "new-kent-county",
+      "turnoutPercent": 0.6431857,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "127"
+    },
+    {
+      "id": "CAEC7F81-7E98-4052-9518-8B45F17544B2",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "NEWPORT NEWS CITY"
+        },
+        {
+          "languageId": "1",
+          "text": "Ciudad de Newport News"
+        },
+        {
+          "languageId": "2",
+          "text": "NEWPORT NEWS \uc2dc"
+        },
+        {
+          "languageId": "5",
+          "text": "Th\u00e0nh ph\u1ed1 Newport News"
+        }
+      ],
+      "shortName": "newport-news-city",
+      "turnoutPercent": 0.4575159,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "700"
+    },
+    {
+      "id": "7FCD3EF4-AE62-41F3-ADE4-45332F0F9660",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "NORFOLK CITY"
+        },
+        {
+          "languageId": "1",
+          "text": "Ciudad de Norfolk"
+        },
+        {
+          "languageId": "2",
+          "text": "NORFOLK \uc2dc"
+        },
+        {
+          "languageId": "5",
+          "text": "Th\u00e0nh ph\u1ed1 Norfolk"
+        }
+      ],
+      "shortName": "norfolk-city",
+      "turnoutPercent": 0.4441197,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "710"
+    },
+    {
+      "id": "C01E1A57-9EAD-4806-A5AA-CCDF30105B3C",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "NORTHAMPTON COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Northampton"
+        },
+        {
+          "languageId": "2",
+          "text": "NORTHAMPTON \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Northampton"
+        }
+      ],
+      "shortName": "northampton-county",
+      "turnoutPercent": 0.5956942,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "131"
+    },
+    {
+      "id": "AEC8CE77-BFB8-403C-A856-B960F3299A60",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "NORTHUMBERLAND COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Northumberland"
+        },
+        {
+          "languageId": "2",
+          "text": "NORTHUMBERLAND \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Northumberland"
+        }
+      ],
+      "shortName": "northumberland-county",
+      "turnoutPercent": 0.6423847,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "133"
+    },
+    {
+      "id": "1F97EE2F-1945-4486-944F-CCA72978E4BE",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "NORTON CITY"
+        },
+        {
+          "languageId": "1",
+          "text": "Ciudad de Norton"
+        },
+        {
+          "languageId": "2",
+          "text": "NORTON \uc2dc"
+        },
+        {
+          "languageId": "5",
+          "text": "Th\u00e0nh ph\u1ed1 Norton"
+        }
+      ],
+      "shortName": "norton-city",
+      "turnoutPercent": 0.4101295,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "720"
+    },
+    {
+      "id": "2C2E70FF-0592-4330-B207-B229745B3316",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "NOTTOWAY COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Nottoway"
+        },
+        {
+          "languageId": "2",
+          "text": "NOTTOWAY \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Nottoway"
+        }
+      ],
+      "shortName": "nottoway-county",
+      "turnoutPercent": 0.5177424,
+      "percentReporting": 0.4,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "135"
+    },
+    {
+      "id": "FB9E9285-FA46-4196-8BB8-A8155988963E",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "ORANGE COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Orange"
+        },
+        {
+          "languageId": "2",
+          "text": "ORANGE \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Orange"
+        }
+      ],
+      "shortName": "orange-county",
+      "turnoutPercent": 0.5631977,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "137"
+    },
+    {
+      "id": "B7C61211-00B9-415F-A11E-26579EFB08B4",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "PAGE COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Page"
+        },
+        {
+          "languageId": "2",
+          "text": "PAGE \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Page"
+        }
+      ],
+      "shortName": "page-county",
+      "turnoutPercent": 0.5195103,
+      "percentReporting": 0.5,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "139"
+    },
+    {
+      "id": "26C3B6F7-9C1F-41DA-9807-111D6E44AC3A",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "PATRICK COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Patrick"
+        },
+        {
+          "languageId": "2",
+          "text": "PATRICK \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Patrick"
+        }
+      ],
+      "shortName": "patrick-county",
+      "turnoutPercent": 0.5133525,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "141"
+    },
+    {
+      "id": "37C7A128-0E9D-46D0-B1EE-0C32D634CA3A",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "PETERSBURG CITY"
+        },
+        {
+          "languageId": "1",
+          "text": "Ciudad de Petersburg"
+        },
+        {
+          "languageId": "2",
+          "text": "PETERSBURG \uc2dc"
+        },
+        {
+          "languageId": "5",
+          "text": "Th\u00e0nh ph\u1ed1 Petersburg"
+        }
+      ],
+      "shortName": "petersburg-city",
+      "turnoutPercent": 0.4000316,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "730"
+    },
+    {
+      "id": "892BB81A-250F-4248-AF8C-50121DE2D0F5",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "PITTSYLVANIA COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Pittsylvania"
+        },
+        {
+          "languageId": "2",
+          "text": "PITTSYLVANIA \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Pittsylvania"
+        }
+      ],
+      "shortName": "pittsylvania-county",
+      "turnoutPercent": 0.5665542,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "143"
+    },
+    {
+      "id": "0D3F8B41-A295-4137-935B-FB540D1B8ED3",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "POQUOSON CITY"
+        },
+        {
+          "languageId": "1",
+          "text": "Ciudad de Poquoson"
+        },
+        {
+          "languageId": "2",
+          "text": "POQUOSON \uc2dc"
+        },
+        {
+          "languageId": "5",
+          "text": "Th\u00e0nh Ph\u1ed1 Poquoson"
+        }
+      ],
+      "shortName": "poquoson-city",
+      "turnoutPercent": 0.6062655,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "735"
+    },
+    {
+      "id": "40112BBB-CE42-485F-BC86-3F5CDECE945E",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "PORTSMOUTH CITY"
+        },
+        {
+          "languageId": "1",
+          "text": "Ciudad de Portsmouth"
+        },
+        {
+          "languageId": "2",
+          "text": "PORTSMOUTH \uc2dc"
+        },
+        {
+          "languageId": "5",
+          "text": "Th\u00e0nh ph\u1ed1 Portsmouth"
+        }
+      ],
+      "shortName": "portsmouth-city",
+      "turnoutPercent": 0.4546812,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "740"
+    },
+    {
+      "id": "679FD452-842E-49FB-9A45-E0968F7F1B6C",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "POWHATAN COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Powhatan"
+        },
+        {
+          "languageId": "2",
+          "text": "POWHATAN \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Powhatan"
+        }
+      ],
+      "shortName": "powhatan-county",
+      "turnoutPercent": 0.6638643,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "145"
+    },
+    {
+      "id": "F759A201-4B10-4A3A-8E01-DCF811F36717",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "PRINCE EDWARD COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Prince Edward"
+        },
+        {
+          "languageId": "2",
+          "text": "PRINCE EDWARD \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Prince Edward"
+        }
+      ],
+      "shortName": "prince-edward-county",
+      "turnoutPercent": 0.5396661,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "147"
+    },
+    {
+      "id": "3168CA86-F390-4D95-9026-F5FCB74E95C5",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "PRINCE GEORGE COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Prince George"
+        },
+        {
+          "languageId": "2",
+          "text": "PRINCE GEORGE \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Prince George"
+        }
+      ],
+      "shortName": "prince-george-county",
+      "turnoutPercent": 0.5027318,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "149"
+    },
+    {
+      "id": "32D0C07B-CA5A-48A4-8609-6969AFAADDFA",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "PRINCE WILLIAM COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Prince William"
+        },
+        {
+          "languageId": "2",
+          "text": "PRINCE WILLIAM \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Prince William"
+        }
+      ],
+      "shortName": "prince-william-county",
+      "turnoutPercent": 0.5413494,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "153"
+    },
+    {
+      "id": "C7874A9C-8E73-4FFC-9CF6-7A7485834AAF",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "PULASKI COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Pulaski"
+        },
+        {
+          "languageId": "2",
+          "text": "PULASKI \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Pulaski"
+        }
+      ],
+      "shortName": "pulaski-county",
+      "turnoutPercent": 0.5222545,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "155"
+    },
+    {
+      "id": "12A4D2F2-A441-4AA3-B26E-CD8417D5E748",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "RADFORD CITY"
+        },
+        {
+          "languageId": "1",
+          "text": "Ciudad de Radford"
+        },
+        {
+          "languageId": "2",
+          "text": "RADFORD \uc2dc"
+        },
+        {
+          "languageId": "5",
+          "text": "Th\u00e0nh ph\u1ed1 Radford"
+        }
+      ],
+      "shortName": "radford-city",
+      "turnoutPercent": 0.4915886,
+      "percentReporting": 0.6,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "750"
+    },
+    {
+      "id": "4E9FD94B-046D-43B5-B4A5-1E2519DF2B06",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "RAPPAHANNOCK COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Rappahannock"
+        },
+        {
+          "languageId": "2",
+          "text": "RAPPAHANNOCK \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Rappahannock"
+        }
+      ],
+      "shortName": "rappahannock-county",
+      "turnoutPercent": 0.6350039,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "157"
+    },
+    {
+      "id": "7CE759C9-2F14-406D-88E7-F96F60932410",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "RICHMOND CITY"
+        },
+        {
+          "languageId": "1",
+          "text": "Ciudad de Richmond"
+        },
+        {
+          "languageId": "2",
+          "text": "RICHMOND \uc2dc"
+        },
+        {
+          "languageId": "5",
+          "text": "Th\u00e0nh ph\u1ed1 Richmond"
+        }
+      ],
+      "shortName": "richmond-city",
+      "turnoutPercent": 0.5421668,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "760"
+    },
+    {
+      "id": "23052C45-17B6-453B-A530-6785748C101A",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "RICHMOND COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Richmond"
+        },
+        {
+          "languageId": "2",
+          "text": "RICHMOND \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Richmond"
+        }
+      ],
+      "shortName": "richmond-county",
+      "turnoutPercent": 0.5687618,
+      "percentReporting": 0.4,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "159"
+    },
+    {
+      "id": "C3EDE6C7-8B05-4658-85EC-439FC45A21DC",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "ROANOKE CITY"
+        },
+        {
+          "languageId": "1",
+          "text": "CIUDAD DE ROANOKE"
+        },
+        {
+          "languageId": "2",
+          "text": "ROANOKE \uc2dc"
+        },
+        {
+          "languageId": "5",
+          "text": "Th\u00e0nh ph\u1ed1 Roanoke"
+        }
+      ],
+      "shortName": "roanoke-city",
+      "turnoutPercent": 0.4739158,
+      "percentReporting": 0.4,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "770"
+    },
+    {
+      "id": "193CC144-B56D-4593-B7E3-2250BE0F0A67",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "ROANOKE COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Roanoke"
+        },
+        {
+          "languageId": "2",
+          "text": "ROANOKE \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Roanoke"
+        }
+      ],
+      "shortName": "roanoke-county",
+      "turnoutPercent": 0.5859427,
+      "percentReporting": 0.4,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "161"
+    },
+    {
+      "id": "59E37EC1-18C4-49E6-8775-FF9B0938A14B",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "ROCKBRIDGE COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Rockbridge"
+        },
+        {
+          "languageId": "2",
+          "text": "ROCKBRIDGE \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Rockbridge"
+        }
+      ],
+      "shortName": "rockbridge-county",
+      "turnoutPercent": 0.5871713,
+      "percentReporting": 0.4,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "163"
+    },
+    {
+      "id": "D4008B50-96AA-43A3-9FE5-CCCE1D0D5238",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "ROCKINGHAM COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Rockingham"
+        },
+        {
+          "languageId": "2",
+          "text": "ROCKINGHAM \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Rockingham"
+        }
+      ],
+      "shortName": "rockingham-county",
+      "turnoutPercent": 0.6080277,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "165"
+    },
+    {
+      "id": "CFCD5A45-BE12-402A-A075-BACF0EA331D1",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "RUSSELL COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Russel"
+        },
+        {
+          "languageId": "2",
+          "text": "RUSSELL \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Russell"
+        }
+      ],
+      "shortName": "russell-county",
+      "turnoutPercent": 0.469626,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "167"
+    },
+    {
+      "id": "A0571495-806B-40C2-BCA7-78CC9A887882",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "SALEM CITY"
+        },
+        {
+          "languageId": "1",
+          "text": "Ciudad de Salem"
+        },
+        {
+          "languageId": "2",
+          "text": "SALEM \uc2dc"
+        },
+        {
+          "languageId": "5",
+          "text": "Th\u00e0nh ph\u1ed1 Salem"
+        }
+      ],
+      "shortName": "salem-city",
+      "turnoutPercent": 0.5443628,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "775"
+    },
+    {
+      "id": "F1A1C386-3F46-4371-B014-DD225AC0E70E",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "SCOTT COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Scott"
+        },
+        {
+          "languageId": "2",
+          "text": "SCOTT \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Scott"
+        }
+      ],
+      "shortName": "scott-county",
+      "turnoutPercent": 0.4635529,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "169"
+    },
+    {
+      "id": "FA5C46E6-9FEC-41EA-940F-C45103488A7C",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "SHENANDOAH COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Shenandoah"
+        },
+        {
+          "languageId": "2",
+          "text": "SHENANDOAH \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Shenandoah"
+        }
+      ],
+      "shortName": "shenandoah-county",
+      "turnoutPercent": 0.5427067,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "171"
+    },
+    {
+      "id": "30DE4BCD-9AC2-4455-A274-3981C8C4C0B9",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "SMYTH COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Smyth"
+        },
+        {
+          "languageId": "2",
+          "text": "SMYTH \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Smyth"
+        }
+      ],
+      "shortName": "smyth-county",
+      "turnoutPercent": 0.4839045,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "173"
+    },
+    {
+      "id": "D71D41D3-92A1-471B-85EB-1D95B17695A0",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "SOUTHAMPTON COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Southampton"
+        },
+        {
+          "languageId": "2",
+          "text": "SOUTHAMPTON \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Southampton"
+        }
+      ],
+      "shortName": "southampton-county",
+      "turnoutPercent": 0.5651214,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "175"
+    },
+    {
+      "id": "FE6CA474-C428-451C-B411-47E00C8F0F05",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "SPOTSYLVANIA COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Spotsylvania"
+        },
+        {
+          "languageId": "2",
+          "text": "SPOTSYLVANIA \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Spotsylvania"
+        }
+      ],
+      "shortName": "spotsylvania-county",
+      "turnoutPercent": 0.5398635,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "177"
+    },
+    {
+      "id": "43DF009C-3DEC-457B-A257-F1C89D5AF399",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "STAFFORD COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Stafford"
+        },
+        {
+          "languageId": "2",
+          "text": "STAFFORD \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Stafford"
+        }
+      ],
+      "shortName": "stafford-county",
+      "turnoutPercent": 0.5530024,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "179"
+    },
+    {
+      "id": "3F39021A-8B04-46E9-B049-94C828543E6B",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "STAUNTON CITY"
+        },
+        {
+          "languageId": "1",
+          "text": "Ciudad de Staunton"
+        },
+        {
+          "languageId": "2",
+          "text": "STAUNTON \uc2dc"
+        },
+        {
+          "languageId": "5",
+          "text": "Th\u00e0nh ph\u1ed1 Staunton"
+        }
+      ],
+      "shortName": "staunton-city",
+      "turnoutPercent": 0.5707617,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "790"
+    },
+    {
+      "id": "45D6077A-75E8-4FF0-9DC8-3BA3280D84EA",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "SUFFOLK CITY"
+        },
+        {
+          "languageId": "1",
+          "text": "Ciudad de Suffolk"
+        },
+        {
+          "languageId": "2",
+          "text": "SUFFOLK \uc2dc"
+        },
+        {
+          "languageId": "5",
+          "text": "Th\u00e0nh Ph\u1ed1 Suffolk"
+        }
+      ],
+      "shortName": "suffolk-city",
+      "turnoutPercent": 0.579399,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "800"
+    },
+    {
+      "id": "AF603287-DC51-46B5-9EE0-0564643BBD13",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "SURRY COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Surry"
+        },
+        {
+          "languageId": "2",
+          "text": "SURRY \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Surry"
+        }
+      ],
+      "shortName": "surry-county",
+      "turnoutPercent": 0.6099472,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "181"
+    },
+    {
+      "id": "6093960B-A363-48E7-BD9D-291267BF9817",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "SUSSEX COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Sussex"
+        },
+        {
+          "languageId": "2",
+          "text": "SUSSEX \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Sussex"
+        }
+      ],
+      "shortName": "sussex-county",
+      "turnoutPercent": 0.5174863,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "183"
+    },
+    {
+      "id": "A90BA079-893B-4E60-B13D-AA1D0B424723",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "TAZEWELL COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Tazewell"
+        },
+        {
+          "languageId": "2",
+          "text": "TAZEWELL \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Tazewell"
+        }
+      ],
+      "shortName": "tazewell-county",
+      "turnoutPercent": 0.4670665,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "185"
+    },
+    {
+      "id": "F3EDD419-1070-4351-AA2D-FD7CCE002E6A",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "VIRGINIA BEACH CITY"
+        },
+        {
+          "languageId": "1",
+          "text": "Ciudad de Virginia Beach"
+        },
+        {
+          "languageId": "2",
+          "text": "VIRGINIA BEACH \uc2dc"
+        },
+        {
+          "languageId": "5",
+          "text": "Th\u00e0nh Ph\u1ed1 Virginia Beach"
+        }
+      ],
+      "shortName": "virginia-beach-city",
+      "turnoutPercent": 0.5375445,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "810"
+    },
+    {
+      "id": "065EFE1A-9B36-4596-BA7D-DD6D142F04FA",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "WARREN COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Warren"
+        },
+        {
+          "languageId": "2",
+          "text": "WARREN \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Warren"
+        }
+      ],
+      "shortName": "warren-county",
+      "turnoutPercent": 0.5168242,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "187"
+    },
+    {
+      "id": "16529332-A3CF-4BF0-9651-8D75BF748E83",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "WASHINGTON COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Washington"
+        },
+        {
+          "languageId": "2",
+          "text": "WASHINGTON \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Washington"
+        }
+      ],
+      "shortName": "washington-county",
+      "turnoutPercent": 0.5123739,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "191"
+    },
+    {
+      "id": "039A1273-0B15-4A5F-B544-0D260B04A78D",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "WAYNESBORO CITY"
+        },
+        {
+          "languageId": "1",
+          "text": "Ciudad de Waynesboro"
+        },
+        {
+          "languageId": "2",
+          "text": "WAYNESBORO \uc2dc"
+        },
+        {
+          "languageId": "5",
+          "text": "Th\u00e0nh ph\u1ed1 Waynesboro"
+        }
+      ],
+      "shortName": "waynesboro-city",
+      "turnoutPercent": 0.5277746,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "820"
+    },
+    {
+      "id": "6CF93506-2CD3-43C8-AB1A-3036AF250A86",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "WESTMORELAND COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Westmoreland"
+        },
+        {
+          "languageId": "2",
+          "text": "WESTMORELAND \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Westmoreland"
+        }
+      ],
+      "shortName": "westmoreland-county",
+      "turnoutPercent": 0.5619819,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "193"
+    },
+    {
+      "id": "5716A0EB-C2ED-47D7-924E-8C8AA05275F4",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "WILLIAMSBURG CITY"
+        },
+        {
+          "languageId": "1",
+          "text": "Ciudad de Williamsburg"
+        },
+        {
+          "languageId": "2",
+          "text": "WILLIAMSBURG \uc2dc"
+        },
+        {
+          "languageId": "5",
+          "text": "Th\u00e0nh Ph\u1ed1 Williamsburg"
+        }
+      ],
+      "shortName": "williamsburg-city",
+      "turnoutPercent": 0.5467632,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "830"
+    },
+    {
+      "id": "C571D24D-C0DE-4D50-8BE2-5516DAD071B2",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "WINCHESTER CITY"
+        },
+        {
+          "languageId": "1",
+          "text": "Ciudad de Winchester"
+        },
+        {
+          "languageId": "2",
+          "text": "WINCHESTER \uc2dc"
+        },
+        {
+          "languageId": "5",
+          "text": "Th\u00e0nh ph\u1ed1 Winchester"
+        }
+      ],
+      "shortName": "winchester-city",
+      "turnoutPercent": 0.4814682,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "840"
+    },
+    {
+      "id": "DED68BBD-C6E4-40D3-905D-ADF4647F399F",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "WISE COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Wise"
+        },
+        {
+          "languageId": "2",
+          "text": "WISE \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Wise"
+        }
+      ],
+      "shortName": "wise-county",
+      "turnoutPercent": 0.4290951,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "195"
+    },
+    {
+      "id": "2E31DBB0-BAA3-4F5E-AE46-22900007960F",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "WYTHE COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de Wythe"
+        },
+        {
+          "languageId": "2",
+          "text": "WYTHE \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn Wythe"
+        }
+      ],
+      "shortName": "wythe-county",
+      "turnoutPercent": 0.5063257,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "197"
+    },
+    {
+      "id": "075845F1-6392-45A2-A0F2-E2F87D12441B",
+      "name": [
+        {
+          "languageId": "en",
+          "text": "YORK COUNTY"
+        },
+        {
+          "languageId": "1",
+          "text": "Condado de York"
+        },
+        {
+          "languageId": "2",
+          "text": "YORK \uce74\uc6b4\ud2f0"
+        },
+        {
+          "languageId": "5",
+          "text": "Qu\u1eadn York"
+        }
+      ],
+      "shortName": "york-county",
+      "turnoutPercent": 0.6054634,
+      "percentReporting": 0.3,
+      "precinctsReporting": 1.0,
+      "hasCountGroupStatus": true,
+      "hasPrecinctStatus": true,
+      "mapFeatureId": "199"
+    }
+  ]
+}

@@ -3283,8 +3283,12 @@ browser modes pass **70 exact complete-download links and seven whole CSV
 endpoints**, including the **2,537-row**, **6,061,645-byte** native-method CSV,
 SHA-256 `d02d1f1a7e664a78c0b9b69f8d179c0134c4997d7a8f84c54849f05674465597`.
 Proof: `files/virginia-native-locality-count-ui-local-browser-proof-01.json`.
-Hans UI commit/push and exact-live proof are next; do not claim the new
-70-link integration is already live.
+Hans UI commit **`96a7f30cb2bf1a5d83c8d1673525e8ea1d6f92be`** is pushed.
+Its exact production deployment **42018215942** succeeded; unqueried production
+metadata matches the commit, and all four desktop/mobile by JavaScript/no-JavaScript
+modes pass the 70 exact links and all seven whole CSV endpoints.
+Proof: `files/virginia-native-locality-count-ui-live-browser-proof-01.json`.
+Do not rerun this finished count-only production suite.
 
 The independent full geometry diagnostic is complete in
 `files/virginia-current-reference-geometry-audit-01.json`. It compares the
@@ -3303,10 +3307,48 @@ whose published method vectors exhaust their locality/House summary scopes;
 district-split and election-applicability review. This diagnostic is not yet a
 portable tested mapped supplement or map approval.
 
-**Next executable actions:** publish the validated 70-link UI and verify its
-exact deployment without repeating completed suites. Promote the geometry
-diagnostic to a portable tested reviewer and investigate the supported subset,
-native virtual-unit flags, literal label conflicts and election applicability.
+The portable reviewer is now
+`scripts/review-virginia-2026-reference-geometry.py`, with its full reproducible
+output at `data/precinct-source-reviews/20261105/VA-2026-reference-geometry-audit-01.json`.
+It verifies every input checksum and original receipt, the complete 7,426-ID
+capture, whole-identity validity, material overlaps, numeric formatting and
+literal labels. All 2,529 native units explicitly have `isVirtual:false`.
+After literal-label, virtual-unit and single-House-part gates, **710** precincts
+remain supported candidates, not 776 approved maps. Twelve new geometry cases
+bring the focused Virginia/Wyoming/coverage selector to **76 passing cases**.
+The audit itself does not approve maps or certify election-day boundaries.
+
+The agency's archived current-boundary page explicitly links the captured
+webmap, whose operational layer declares this exact public union layer.
+The layer's actual data edit is **September 22, 2026, 12:45:01.678 UTC**,
+distinct from its older item-creation/metadata dates. A provisional map builder
+has been validated for the 710 supported precincts using that **2026 official
+current reference**, explicitly not certified election-day shapes. It preserves
+all withheld results, raw fragments, method residuals and separate native
+turnout/registration observations, without inferred rates.
+
+`scripts/build-virginia-2026-precinct-results.py` re-runs the complete geometry
+audit and verifies this exact provenance chain before mapping. The complete
+immutable output is `data/precinct-results/20261105-virginia-02/`.
+There are **710 mapped/colored precincts across 57 localities**, with no material
+mapped overlaps and every shape exactly equal to its supported native fragment
+union. All **2,537** reporting vectors remain in complete JSON and CSV-gzip,
+all **2,529** native participation observations remain separately downloadable,
+and all **985** earlier blank totals are preserved. No final/group rates
+or certified election-day shapes are asserted. All earlier source-review
+bytes and **357** decompressed original-response receipts pass.
+
+The archive-only offline rebuild is **byte-identical**, including exact ZIP
+members/CRC and all **393 checksums**. The full ZIP has **83,374,714 bytes**,
+SHA-256 `f829118617e54ff12f4680b4d2758cd03d2a08fd8162bb90597d902ab81fb788`.
+Proof: `files/virginia-supported-precinct-package-proof-02.json`.
+Twelve additional focused map/provenance cases bring the combined selector to
+**88 passing cases**. The package is not yet registered in the public map.
+
+**Next executable actions:** commit/push the supported map source as Hans,
+bind and independently verify its new complete immutable release, then register
+the snapshot and verify actual map interactions and its exact production
+deployment. Do not repeat the finished count-only suite as a substitute.
 Preserve all source fragments, unmatched identities and exclusions. Approve only
 explicitly supported scopes; do not repair the earlier export, allocate missing
 county modes to precincts, borrow older geometry or mark the VA2026 cell complete.

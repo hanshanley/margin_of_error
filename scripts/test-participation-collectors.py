@@ -57,6 +57,125 @@ wy_review = module("review-wyoming-precinct-results")
 wy_2022 = module("review-wyoming-2022-native-results")
 va_2026 = module("review-virginia-2026-native-results")
 va_localities = module("review-virginia-2026-locality-results")
+va_geometry = module("review-virginia-2026-reference-geometry")
+va_maps = module("build-virginia-2026-precinct-results")
+
+
+@pytest.mark.parametrize("kind", [
+    "all_candidate_denominator", "zero", "missing", "negative", "wrong_party", "wrong_total",
+    "incomplete_scope",
+])
+def test_virginia_mapped_candidate_counts_keep_write_ins_and_do_not_infer_turnout(kind):
+    translated = lambda text: [dict(languageId="en", text=text)]
+    candidates = {
+        "d": dict(votes=5, party=dict(abbreviation="D", name=translated("Democratic"))),
+        "r": dict(votes=3, party=dict(abbreviation="R", name=translated("Republican"))),
+        "i": dict(votes=1, party=dict(abbreviation="I", name=translated("Independent"))),
+        "write-in": dict(votes=1, party=None),
+    }
+    if kind == "zero":
+        for candidate in candidates.values():
+            candidate["votes"] = 0
+    elif kind == "missing":
+        candidates["d"]["votes"] = None
+    elif kind == "negative":
+        candidates["d"]["votes"] = -1
+    elif kind == "wrong_party":
+        candidates["d"]["party"]["name"] = translated("Republican")
+    row = dict(locality_code="001", locality="Native locality", precinct="136 - NATIVE",
+        district="2", precinct_uuid="native-uuid", source="native-detail",
+        precinct_mode_allocation_complete="False" if kind == "incomplete_scope" else "True",
+        candidates=json.dumps(candidates), candidate_votes="0" if kind == "zero" else "10")
+    if kind == "wrong_total":
+        row["candidate_votes"] = "11"
+    if kind in {"missing", "negative", "wrong_party", "wrong_total"}:
+        with pytest.raises(ValueError):
+            va_maps.normalized_result(row, "0136 ")
+        return
+    result = va_maps.normalized_result(row, "0136 ")
+    assert result["precinct_code"] == "0136" and result["original_precinct_id"] == "0136 "
+    assert result["margin_pp"] == (None if kind == "zero" else 20)
+    assert result["other_votes"] == (0 if kind == "zero" else 2)
+    assert "participation" not in result and "turnout_rate" not in result
+    assert ("may omit those modes" in result["ballot_scope"]) == (kind == "incomplete_scope")
+
+
+@pytest.mark.parametrize("failure", [None, "dangling_webmap", "different_layer", "old_edit", "old_capture"])
+def test_virginia_current_reference_requires_actual_agency_link_and_2026_data_edit(
+        tmp_path, monkeypatch, failure):
+    source = {
+        "official-current-boundary-map": dict(url=va_maps.REFERENCE, fetched_at="2026-11-05"),
+        "official-district-union-layer": dict(url="https://official.example/FeatureServer/0?f=pjson"),
+        "official-linked-webmap-item": {}, "official-linked-webmap-data": {},
+    }
+    payloads = {
+        "official-current-boundary-map": ("map showing webmap-identity; maps showing the current "
+                                           "election district and precinct boundaries").encode(),
+        "official-linked-webmap-item": json.dumps(
+            dict(id="webmap-identity", orgId="M3dium4ePYpmdT4B")).encode(),
+        "official-linked-webmap-data": json.dumps(dict(operationalLayers=[
+            dict(url="https://official.example/FeatureServer/0")])).encode(),
+        "official-district-union-layer": json.dumps(
+            dict(editingInfo=dict(lastEditDate=1790081101678))).encode(),
+    }
+    if failure == "dangling_webmap":
+        payloads["official-current-boundary-map"] = (
+            b"maps showing the current election district and precinct boundaries")
+    elif failure == "different_layer":
+        payloads["official-linked-webmap-data"] = json.dumps(dict(
+            operationalLayers=[dict(url="https://different.example/FeatureServer/0")])).encode()
+    elif failure == "old_edit":
+        payloads["official-district-union-layer"] = json.dumps(
+            dict(editingInfo=dict(lastEditDate=1727040000000))).encode()
+    elif failure == "old_capture":
+        source["official-current-boundary-map"]["fetched_at"] = "2024-11-05"
+    (tmp_path / "sources.json").write_text(json.dumps(source))
+    monkeypatch.setattr(va_maps.geometry.native.reports, "verified",
+                        lambda _source, key, _receipt: payloads[key])
+    if failure:
+        with pytest.raises(ValueError):
+            va_maps.qualify_current_reference(tmp_path)
+    else:
+        result = va_maps.qualify_current_reference(tmp_path)
+        assert result["data_edit_utc"].startswith("2026-09-22")
+        assert "Not certified election-day shapes." in result["scope"]
+
+
+@pytest.mark.parametrize("kind", ["null", "empty", "line", "crossed_ring", "valid"])
+def test_virginia_native_geometry_withholds_null_and_invalid_fragments_without_repair(kind):
+    geometry = dict(type="Polygon", coordinates=[[[0, 0], [1, 0], [1, 1], [0, 0]]])
+    if kind == "null":
+        geometry = None
+    elif kind == "empty":
+        geometry["coordinates"] = []
+    elif kind == "line":
+        geometry = dict(type="LineString", coordinates=[[0, 0], [1, 1]])
+    elif kind == "crossed_ring":
+        geometry["coordinates"] = [[[0, 0], [1, 1], [1, 0], [0, 1], [0, 0]]]
+    original = json.dumps(geometry)
+    issue = va_geometry.fragment_issue(geometry)
+    assert (issue is None) == (kind == "valid")
+    if kind == "null":
+        assert issue == "native_null_geometry"
+    assert json.dumps(geometry) == original
+
+
+@pytest.mark.parametrize("raw,expected", [
+    ("101", "0101"), ("0136 ", "0136"), ("0101", "0101"),
+    ("00101", None), ("01A1", None), ("-101", None),
+])
+def test_virginia_geometry_identity_formatting_never_guesses_non_numeric_codes(raw, expected):
+    if expected is None:
+        with pytest.raises(ValueError):
+            va_geometry.precinct_code(raw)
+    else:
+        assert va_geometry.precinct_code(raw) == expected
+
+
+def test_virginia_geometry_requires_literal_names_not_abbreviations_or_fuzzy_aliases():
+    assert va_geometry.literal_names_match({"101 - CHINCOTEAGUE"}, {" Chincoteague "})
+    assert not va_geometry.literal_names_match({"104 - AGNOR-HURT"}, {"Agnor Hurt"})
+    assert not va_geometry.literal_names_match({"102 - STUARTS DRAFT ELEMENTARY"}, {"Stuarts Draft Elem."})
 
 
 @pytest.mark.parametrize("kind", [

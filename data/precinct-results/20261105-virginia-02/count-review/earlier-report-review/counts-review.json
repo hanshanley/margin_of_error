@@ -1,0 +1,229 @@
+{
+  "year": 2026,
+  "state_code": "VA",
+  "election_date": "2026-11-03",
+  "as_of": "2026-11-05T02:19:25.4373295Z",
+  "publish_version_id": "e5af7981-c42c-45c0-9923-b33f316e79bd",
+  "is_official": false,
+  "original_files": 32,
+  "original_result_rows": 46418,
+  "candidates": {
+    "units": 2537,
+    "native_candidate_cells": 10471,
+    "original_csv_candidate_votes": 2912898,
+    "summary_candidate_votes": 3568142,
+    "candidate_vector_conflicts": [
+      {
+        "office": "Member, House of Representatives (10th District)",
+        "original_csv": {
+          "cs823": 162630,
+          "cs824": 95648,
+          "cs825": 5199,
+          "wi-cc365": 572
+        },
+        "native_summary": {
+          "cs823": 201952,
+          "cs824": 120509,
+          "cs825": 5898,
+          "wi-cc365": 637
+        }
+      },
+      {
+        "office": "Member, House of Representatives (11th District)",
+        "original_csv": {
+          "cs218": 242435,
+          "cs219": 80005,
+          "cs220": 3985,
+          "wi-cc105": 1032
+        },
+        "native_summary": {
+          "cs218": 247201,
+          "cs219": 81357,
+          "cs220": 4078,
+          "wi-cc105": 1044
+        }
+      },
+      {
+        "office": "Member, House of Representatives (1st District)",
+        "original_csv": {
+          "cs188": 197107,
+          "cs189": 192716,
+          "wi-cc90": 950
+        },
+        "native_summary": {
+          "cs188": 207877,
+          "cs189": 198417,
+          "wi-cc90": 984
+        }
+      },
+      {
+        "office": "Member, House of Representatives (2nd District)",
+        "original_csv": {
+          "cs268": 151908,
+          "cs269": 134867,
+          "cs270": 2554,
+          "cs271": 4256,
+          "wi-cc134": 413
+        },
+        "native_summary": {
+          "cs268": 178741,
+          "cs269": 150095,
+          "cs270": 3004,
+          "cs271": 4576,
+          "wi-cc134": 440
+        }
+      },
+      {
+        "office": "Member, House of Representatives (3rd District)",
+        "original_csv": {
+          "cs115": 108954,
+          "cs116": 44573,
+          "cs117": 2891,
+          "cs118": 2750,
+          "wi-cc57": 374
+        },
+        "native_summary": {
+          "cs115": 179594,
+          "cs116": 59523,
+          "cs117": 3932,
+          "cs118": 3912,
+          "wi-cc57": 507
+        }
+      },
+      {
+        "office": "Member, House of Representatives (4th District)",
+        "original_csv": {
+          "cs443": 187828,
+          "cs444": 75478,
+          "cs445": 3781,
+          "wi-cc203": 660
+        },
+        "native_summary": {
+          "cs443": 223004,
+          "cs444": 81042,
+          "cs445": 4143,
+          "wi-cc203": 731
+        }
+      },
+      {
+        "office": "Member, House of Representatives (5th District)",
+        "original_csv": {
+          "cs60": 120312,
+          "cs61": 151771,
+          "cs62": 5072,
+          "wi-cc28": 611
+        },
+        "native_summary": {
+          "cs60": 173416,
+          "cs61": 181260,
+          "cs62": 5791,
+          "wi-cc28": 713
+        }
+      },
+      {
+        "office": "Member, House of Representatives (6th District)",
+        "original_csv": {
+          "cs829": 104918,
+          "cs830": 139865,
+          "wi-cc367": 521
+        },
+        "native_summary": {
+          "cs829": 140215,
+          "cs830": 175792,
+          "wi-cc367": 609
+        }
+      },
+      {
+        "office": "Member, House of Representatives (7th District)",
+        "original_csv": {
+          "cs479": 113407,
+          "cs480": 91801,
+          "cs481": 2060,
+          "cs482": 1927,
+          "cs483": 629,
+          "cs484": 942,
+          "wi-cc211": 398
+        },
+        "native_summary": {
+          "cs479": 191361,
+          "cs480": 121014,
+          "cs481": 2632,
+          "cs482": 3020,
+          "cs483": 785,
+          "cs484": 1197,
+          "wi-cc211": 543
+        }
+      },
+      {
+        "office": "Member, House of Representatives (8th District)",
+        "original_csv": {
+          "cs236": 175593,
+          "cs237": 46994,
+          "cs238": 3012,
+          "cs239": 2964,
+          "wi-cc115": 668
+        },
+        "native_summary": {
+          "cs236": 248071,
+          "cs237": 56298,
+          "cs238": 3650,
+          "cs239": 3893,
+          "wi-cc115": 860
+        }
+      },
+      {
+        "office": "Member, House of Representatives (9th District)",
+        "original_csv": {
+          "cs790": 82646,
+          "cs791": 162705,
+          "wi-cc354": 516
+        },
+        "native_summary": {
+          "cs790": 99444,
+          "cs791": 193785,
+          "wi-cc354": 595
+        }
+      }
+    ],
+    "maps_approved": false
+  },
+  "turnout": {
+    "units": 2529,
+    "missing_total_vote_turnout": 985,
+    "known_vote_turnout_subtotal": 1375326,
+    "registration_conflicts": [],
+    "turnout_rates_available": false,
+    "scope": "Native precinct totals and modes remain uncorrected; blank totals/modes are missing. Known-count subtotals are not statewide turnout. No candidate votes substitute for ballots."
+  },
+  "demographics": {
+    "native_rows": 16250,
+    "demographic_groups": 2286,
+    "absentee_applications": 1777541,
+    "returned_absentee_ballots": 1672941,
+    "application_type_totals": {
+      "Federal Post Cards Application \u2013 FPCA": 17140,
+      "In Person": 1317875,
+      "Permanent Absentee Application - SBE 703.1": 396594,
+      "Virginia Specific Application - SBE 701": 45544,
+      "Write-In Absentee Ballot, Federal - FWAB": 81,
+      "Annual Absentee Application - SBE 703.1": 15,
+      "Emergency Application - SBE 705": 145,
+      "Temporary Change of Info - SBE 703.1C": 104,
+      "Business/Personal/Medical Emergency Application - SBE 705.1-705.2": 43
+    },
+    "receipt_type_totals": {
+      "Drop Off": 75719,
+      "Mail": 272739,
+      "In Person": 1320068,
+      "Designated Representative": 125,
+      "Mail (Non-USPS)": 4290
+    },
+    "all_native_application_and_returned_method_totals_match": true,
+    "blank_receipt_type": "Not reported; not silently converted to a returned-ballot zero",
+    "scope": "Absentee applications and their explicitly reported returned-ballot subsets only; not all voting, final turnout, accepted/countable ballots or group turnout rates."
+  },
+  "maps_approved": false,
+  "geometry_approved": false,
+  "rates_available": false,
+  "method": "Candidate and write-in columns have different native semantics. Each native House vector is compared independently to the newer statewide JSON. All original source conflicts, missing counts and literal demographic categories remain. Returned absentee counts are not all voting, accepted ballots or group turnout rates."
+}
