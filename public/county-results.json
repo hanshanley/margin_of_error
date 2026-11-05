@@ -1,31 +1,57 @@
 {
-  "label": "2026 U.S. House county / equivalent results (48 states)",
   "year": 2026,
+  "data_directory": "data/county-results/20261105T155645Z",
+  "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d0aed525f1b078aceaecec9cc9430b3999a9c0ba/data/county-results/20261105T155645Z/",
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-2026-20261105t155645z/complete-county-results.zip",
+  "complete_download_bytes": 139939933,
+  "complete_download_sha256": "e2ed05fc4684c34d8b3712a5068ae691f8dc696ac85834d39238ce276e71fffd",
+  "label": "2026 U.S. House county / equivalent results",
   "overview_url": "/county-results-overview.geojson.gz",
-  "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/",
-  "data_directory": "data/county-results/20261105-house-02",
-  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-house-20261105-02/complete-2026-house-county-results-02.zip",
-  "complete_download_bytes": 139681390,
-  "complete_download_sha256": "eacd3f041bbd888f055bd8403b057b60d7605a6bc59e0b3c627a9ee8209bcae7",
-  "publication": "live_verified_partial",
-  "participation_available": false,
-  "normalized_counties": 3060,
   "states": 48,
-  "party_votes": {
-    "label": "2026 U.S. House: every original party and candidate",
-    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6c1c4f2ee35045288e83054af47a93db230b4901/data/county-party-votes/20261105-house-party-02/",
-    "data_directory": "data/county-party-votes/20261105-house-party-02",
-    "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-party-votes-20261105-02/complete-2026-house-party-votes-02.zip",
-    "complete_download_bytes": 1116124,
-    "complete_download_sha256": "6437650836b2bdca56dea542190fafd66b9796850f8631566805148d77e4a6c2",
-    "tables": [
-      {"file": "county-party-totals.csv.gz", "label": "Every county-party total: 9,608 rows, all 34 original party labels"},
-      {"file": "county-district-candidate-totals.csv.gz", "label": "Every county/district candidate: 12,075 rows, literal names, party lines and original source URLs"},
-      {"file": "state-party-totals.csv.gz", "label": "Every state-party total: 220 rows, including unlocated votes and explicit county-coverage gaps"},
-      {"file": "district-candidate-totals.csv.gz", "label": "Every accepted House district candidate: 1,318 rows across 418 districts"}
-    ]
-  },
+  "normalized_counties": 3060,
+  "participation_available": false,
+  "publication": "reviewed_pending_live_verification",
   "previous_snapshots": [
+    {
+      "label": "2026 U.S. House county / equivalent results (48 states)",
+      "year": 2026,
+      "overview_url": "/county-results-overview.geojson.gz",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6b6b96caed4fa4f7c66fd206a64bd709310a69f2/data/county-results/20261105-house-02/",
+      "data_directory": "data/county-results/20261105-house-02",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-house-20261105-02/complete-2026-house-county-results-02.zip",
+      "complete_download_bytes": 139681390,
+      "complete_download_sha256": "eacd3f041bbd888f055bd8403b057b60d7605a6bc59e0b3c627a9ee8209bcae7",
+      "publication": "live_verified_partial",
+      "participation_available": false,
+      "normalized_counties": 3060,
+      "states": 48,
+      "party_votes": {
+        "label": "2026 U.S. House: every original party and candidate",
+        "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6c1c4f2ee35045288e83054af47a93db230b4901/data/county-party-votes/20261105-house-party-02/",
+        "data_directory": "data/county-party-votes/20261105-house-party-02",
+        "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-party-votes-20261105-02/complete-2026-house-party-votes-02.zip",
+        "complete_download_bytes": 1116124,
+        "complete_download_sha256": "6437650836b2bdca56dea542190fafd66b9796850f8631566805148d77e4a6c2",
+        "tables": [
+          {
+            "file": "county-party-totals.csv.gz",
+            "label": "Every county-party total: 9,608 rows, all 34 original party labels"
+          },
+          {
+            "file": "county-district-candidate-totals.csv.gz",
+            "label": "Every county/district candidate: 12,075 rows, literal names, party lines and original source URLs"
+          },
+          {
+            "file": "state-party-totals.csv.gz",
+            "label": "Every state-party total: 220 rows, including unlocated votes and explicit county-coverage gaps"
+          },
+          {
+            "file": "district-candidate-totals.csv.gz",
+            "label": "Every accepted House district candidate: 1,318 rows across 418 districts"
+          }
+        ]
+      }
+    },
     {
       "label": "2026 U.S. House county / equivalent results (original 47-state snapshot)",
       "year": 2026,
@@ -39,5 +65,28 @@
       "normalized_counties": 2958,
       "states": 47
     }
-  ]
+  ],
+  "party_votes": {
+    "data_directory": "data/county-results/20261105T155645Z/party-votes",
+    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d0aed525f1b078aceaecec9cc9430b3999a9c0ba/data/county-results/20261105T155645Z/party-votes/",
+    "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-2026-20261105t155645z/complete-county-results.zip",
+    "tables": [
+      {
+        "file": "county-party-totals.csv.gz",
+        "label": "Every county-party total: 9608 rows"
+      },
+      {
+        "file": "county-district-candidate-totals.csv.gz",
+        "label": "Every county/district candidate: 12075 rows"
+      },
+      {
+        "file": "state-party-totals.csv.gz",
+        "label": "Every full-state party total: 220 rows"
+      },
+      {
+        "file": "district-candidate-totals.csv.gz",
+        "label": "Every accepted House district candidate: 1318 rows"
+      }
+    ]
+  }
 }
