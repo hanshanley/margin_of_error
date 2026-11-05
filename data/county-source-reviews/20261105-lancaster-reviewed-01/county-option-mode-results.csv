@@ -1,0 +1,130 @@
+year,state_code,county_fips,county,contest_id,option_id,native_group_id,native_group_name,votes,native_reporting_status
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cba5-08df2bb51aac,01000000-6d8a-1c75-cbc1-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,81516,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cba5-08df2bb51aac,01000000-6d8a-1c75-cbc1-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,29233,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cba5-08df2bb51aac,01000000-6d8a-1c75-cbc1-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cba5-08df2bb51aac,01000000-6d8a-1c75-cbd2-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,92370,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cba5-08df2bb51aac,01000000-6d8a-1c75-cbd2-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,8951,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cba5-08df2bb51aac,01000000-6d8a-1c75-cbd2-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cba5-08df2bb51aac,01000000-6d8a-1c75-cbe7-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,2634,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cba5-08df2bb51aac,01000000-6d8a-1c75-cbe7-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,320,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cba5-08df2bb51aac,01000000-6d8a-1c75-cbe7-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cba5-08df2bb51aac,01000000-6d8a-1c75-cbf2-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,0,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cba5-08df2bb51aac,01000000-6d8a-1c75-cbf2-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,0,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cba5-08df2bb51aac,01000000-6d8a-1c75-cbf2-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-ce3f-08df2bb51aac,01000000-6d8a-1c75-ce58-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,73418,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-ce3f-08df2bb51aac,01000000-6d8a-1c75-ce58-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,27189,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-ce3f-08df2bb51aac,01000000-6d8a-1c75-ce58-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-ce3f-08df2bb51aac,01000000-6d8a-1c75-ce66-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,102926,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-ce3f-08df2bb51aac,01000000-6d8a-1c75-ce66-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,11342,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-ce3f-08df2bb51aac,01000000-6d8a-1c75-ce66-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-ce3f-08df2bb51aac,01000000-6d8a-1c75-ce6f-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,0,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-ce3f-08df2bb51aac,01000000-6d8a-1c75-ce6f-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,0,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-ce3f-08df2bb51aac,01000000-6d8a-1c75-ce6f-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cdb0-08df2bb51aac,01000000-6d8a-1c75-cdd2-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,38913,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cdb0-08df2bb51aac,01000000-6d8a-1c75-cdd2-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,15271,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cdb0-08df2bb51aac,01000000-6d8a-1c75-cdd2-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cdb0-08df2bb51aac,01000000-6d8a-1c75-cdf7-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,57784,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cdb0-08df2bb51aac,01000000-6d8a-1c75-cdf7-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,7342,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cdb0-08df2bb51aac,01000000-6d8a-1c75-cdf7-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cdb0-08df2bb51aac,01000000-6d8a-1c75-ce03-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,0,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cdb0-08df2bb51aac,01000000-6d8a-1c75-ce03-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,0,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cdb0-08df2bb51aac,01000000-6d8a-1c75-ce03-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-c5d7-08df2bb51aac,01000000-6d8a-1c75-c71d-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,3029,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-c5d7-08df2bb51aac,01000000-6d8a-1c75-c71d-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,1186,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-c5d7-08df2bb51aac,01000000-6d8a-1c75-c71d-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-c5d7-08df2bb51aac,01000000-6d8a-1c75-c78b-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,9108,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-c5d7-08df2bb51aac,01000000-6d8a-1c75-c78b-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,711,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-c5d7-08df2bb51aac,01000000-6d8a-1c75-c78b-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-c5d7-08df2bb51aac,01000000-6d8a-1c75-c7b4-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,0,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-c5d7-08df2bb51aac,01000000-6d8a-1c75-c7b4-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,0,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-c5d7-08df2bb51aac,01000000-6d8a-1c75-c7b4-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-ce71-08df2bb51aac,01000000-6d8a-1c75-ce91-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,8138,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-ce71-08df2bb51aac,01000000-6d8a-1c75-ce91-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,3617,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-ce71-08df2bb51aac,01000000-6d8a-1c75-ce91-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-ce71-08df2bb51aac,01000000-6d8a-1c75-ceb2-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,17066,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-ce71-08df2bb51aac,01000000-6d8a-1c75-ceb2-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,2245,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-ce71-08df2bb51aac,01000000-6d8a-1c75-ceb2-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-ce71-08df2bb51aac,01000000-6d8a-1c75-cec1-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,0,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-ce71-08df2bb51aac,01000000-6d8a-1c75-cec1-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,0,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-ce71-08df2bb51aac,01000000-6d8a-1c75-cec1-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-ce05-08df2bb51aac,01000000-6d8a-1c75-ce1e-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,10316,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-ce05-08df2bb51aac,01000000-6d8a-1c75-ce1e-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,3868,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-ce05-08df2bb51aac,01000000-6d8a-1c75-ce1e-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-ce05-08df2bb51aac,01000000-6d8a-1c75-ce2d-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,12533,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-ce05-08df2bb51aac,01000000-6d8a-1c75-ce2d-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,1692,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-ce05-08df2bb51aac,01000000-6d8a-1c75-ce2d-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-ce05-08df2bb51aac,01000000-6d8a-1c75-ce35-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,0,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-ce05-08df2bb51aac,01000000-6d8a-1c75-ce35-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,0,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-ce05-08df2bb51aac,01000000-6d8a-1c75-ce35-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cc40-08df2bb51aac,01000000-6d8a-1c75-cc5f-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,5406,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cc40-08df2bb51aac,01000000-6d8a-1c75-cc5f-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,2144,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cc40-08df2bb51aac,01000000-6d8a-1c75-cc5f-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cc40-08df2bb51aac,01000000-6d8a-1c75-cc70-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,12462,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cc40-08df2bb51aac,01000000-6d8a-1c75-cc70-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,1383,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cc40-08df2bb51aac,01000000-6d8a-1c75-cc70-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cc40-08df2bb51aac,01000000-6d8a-1c75-cc78-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,0,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cc40-08df2bb51aac,01000000-6d8a-1c75-cc78-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,0,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cc40-08df2bb51aac,01000000-6d8a-1c75-cc78-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cc79-08df2bb51aac,01000000-6d8a-1c75-cc92-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,9619,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cc79-08df2bb51aac,01000000-6d8a-1c75-cc92-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,2556,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cc79-08df2bb51aac,01000000-6d8a-1c75-cc92-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cc79-08df2bb51aac,01000000-6d8a-1c75-cca0-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,3804,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cc79-08df2bb51aac,01000000-6d8a-1c75-cca0-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,442,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cc79-08df2bb51aac,01000000-6d8a-1c75-cca0-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cc79-08df2bb51aac,01000000-6d8a-1c75-ccb2-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,0,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cc79-08df2bb51aac,01000000-6d8a-1c75-ccb2-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,0,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cc79-08df2bb51aac,01000000-6d8a-1c75-ccb2-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cd50-08df2bb51aac,01000000-6d8a-1c75-cd6b-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,14612,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cd50-08df2bb51aac,01000000-6d8a-1c75-cd6b-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,4641,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cd50-08df2bb51aac,01000000-6d8a-1c75-cd6b-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cd50-08df2bb51aac,01000000-6d8a-1c75-cd7a-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,7847,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cd50-08df2bb51aac,01000000-6d8a-1c75-cd7a-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,1204,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cd50-08df2bb51aac,01000000-6d8a-1c75-cd7a-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cd50-08df2bb51aac,01000000-6d8a-1c75-cdae-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,0,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cd50-08df2bb51aac,01000000-6d8a-1c75-cdae-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,0,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cd50-08df2bb51aac,01000000-6d8a-1c75-cdae-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cce3-08df2bb51aac,01000000-6d8a-1c75-cd30-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,9294,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cce3-08df2bb51aac,01000000-6d8a-1c75-cd30-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,4141,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cce3-08df2bb51aac,01000000-6d8a-1c75-cd30-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cce3-08df2bb51aac,01000000-6d8a-1c75-cd44-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,15032,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cce3-08df2bb51aac,01000000-6d8a-1c75-cd44-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,1839,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cce3-08df2bb51aac,01000000-6d8a-1c75-cd44-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cce3-08df2bb51aac,01000000-6d8a-1c75-cd4c-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,0,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cce3-08df2bb51aac,01000000-6d8a-1c75-cd4c-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,0,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cce3-08df2bb51aac,01000000-6d8a-1c75-cd4c-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cbf3-08df2bb51aac,01000000-6d8a-1c75-cc0d-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,6845,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cbf3-08df2bb51aac,01000000-6d8a-1c75-cc0d-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,2674,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cbf3-08df2bb51aac,01000000-6d8a-1c75-cc0d-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cbf3-08df2bb51aac,01000000-6d8a-1c75-cc27-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,11582,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cbf3-08df2bb51aac,01000000-6d8a-1c75-cc27-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,1321,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cbf3-08df2bb51aac,01000000-6d8a-1c75-cc27-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cbf3-08df2bb51aac,01000000-6d8a-1c75-cc35-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,1295,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cbf3-08df2bb51aac,01000000-6d8a-1c75-cc35-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,212,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cbf3-08df2bb51aac,01000000-6d8a-1c75-cc35-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cbf3-08df2bb51aac,01000000-6d8a-1c75-cc3e-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,0,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cbf3-08df2bb51aac,01000000-6d8a-1c75-cc3e-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,0,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-cbf3-08df2bb51aac,01000000-6d8a-1c75-cc3e-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-c82a-08df2bb51aac,01000000-6d8a-1c75-cb63-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,3139,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-c82a-08df2bb51aac,01000000-6d8a-1c75-cb63-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,1122,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-c82a-08df2bb51aac,01000000-6d8a-1c75-cb63-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-c82a-08df2bb51aac,01000000-6d8a-1c75-cb98-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,10613,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-c82a-08df2bb51aac,01000000-6d8a-1c75-cb98-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,846,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-c82a-08df2bb51aac,01000000-6d8a-1c75-cb98-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-c82a-08df2bb51aac,01000000-6d8a-1c75-cba2-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,0,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-c82a-08df2bb51aac,01000000-6d8a-1c75-cba2-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,0,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-c82a-08df2bb51aac,01000000-6d8a-1c75-cba2-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-ccb3-08df2bb51aac,01000000-6d8a-1c75-cccc-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,11651,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-ccb3-08df2bb51aac,01000000-6d8a-1c75-cccc-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,897,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-ccb3-08df2bb51aac,01000000-6d8a-1c75-cccc-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-ccb3-08df2bb51aac,01000000-6d8a-1c75-ccd9-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,4557,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-ccb3-08df2bb51aac,01000000-6d8a-1c75-ccd9-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,1487,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-ccb3-08df2bb51aac,01000000-6d8a-1c75-ccd9-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-ccb3-08df2bb51aac,01000000-6d8a-1c75-cce2-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,0,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-ccb3-08df2bb51aac,01000000-6d8a-1c75-cce2-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,0,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-ccb3-08df2bb51aac,01000000-6d8a-1c75-cce2-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-c7cd-08df2bb51aac,01000000-6d8a-1c75-c800-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,59004,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-c7cd-08df2bb51aac,01000000-6d8a-1c75-c800-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,17938,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-c7cd-08df2bb51aac,01000000-6d8a-1c75-c800-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-c7cd-08df2bb51aac,01000000-6d8a-1c75-c81c-08df2bb51aac,01000000-6d8a-1c75-e7a5-08df2bb51aab,Election Day Voting,113242,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-c7cd-08df2bb51aac,01000000-6d8a-1c75-c81c-08df2bb51aac,01000000-6d8a-1c75-e7b2-08df2bb51aab,Mail Voting,20014,reporting-status-election-night-complete
+2026,PA,42071,Lancaster,01000000-6d8a-1c75-c7cd-08df2bb51aac,01000000-6d8a-1c75-c81c-08df2bb51aac,01000000-6d8a-1c75-e7b4-08df2bb51aab,Provisional Voting,0,reporting-status-not-reported

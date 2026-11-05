@@ -1,0 +1,107 @@
+{
+  "acquired_contests": 14,
+  "as_of_utc": "2026-11-04T16:39:46.2888598Z",
+  "auxiliary_registration_rows": 0,
+  "auxiliary_statistics_rows": 0,
+  "ballots": 216221,
+  "candidate_votes_are_not_ballots": true,
+  "county": "Lancaster",
+  "county_fips": "42071",
+  "district_ballot_totals_by_office": {
+    "GOVERNOR AND LIEUTENANT GOVERNOR": 216221,
+    "REPRESENTATIVE IN CONGRESS": 216221,
+    "REPRESENTATIVE IN THE GENERAL ASSEMBLY": 216221,
+    "SENATOR IN THE GENERAL ASSEMBLY": 134609
+  },
+  "explicit_option_zeroes": 13,
+  "independent_county_parent_acquired": false,
+  "map_promotion_approved": false,
+  "native_all_contest_selections_not_ballots": 987583,
+  "native_ballot_item_count_metadata": 1,
+  "native_ballot_item_count_metadata_is_not_contest_inventory": true,
+  "native_group_reporting_status": [
+    {
+      "groupName": [
+        {
+          "languageId": "en",
+          "text": "Election Day Voting"
+        }
+      ],
+      "order": 1,
+      "reportingStatusClientTextKey": "reporting-status-election-night-complete",
+      "value": null
+    },
+    {
+      "groupName": [
+        {
+          "languageId": "en",
+          "text": "Mail Voting"
+        }
+      ],
+      "order": 2,
+      "reportingStatusClientTextKey": "reporting-status-election-night-complete",
+      "value": null
+    },
+    {
+      "groupName": [
+        {
+          "languageId": "en",
+          "text": "Provisional Voting"
+        }
+      ],
+      "order": 3,
+      "reportingStatusClientTextKey": "reporting-status-not-reported",
+      "value": null
+    }
+  ],
+  "native_options": 43,
+  "native_party_statistics_are_not_validated_participation": true,
+  "native_pdf_turnout_percent": "58.95",
+  "native_precinct_reporting_status": [
+    {
+      "groupName": [
+        {
+          "languageId": null,
+          "text": "Fully Reported"
+        }
+      ],
+      "order": 1,
+      "reportingStatusClientTextKey": "reporting-status-fully-reported",
+      "value": 0
+    },
+    {
+      "groupName": [
+        {
+          "languageId": null,
+          "text": "Partially Reported"
+        }
+      ],
+      "order": 3,
+      "reportingStatusClientTextKey": "reporting-status-partially-reported",
+      "value": 241
+    },
+    {
+      "groupName": [
+        {
+          "languageId": null,
+          "text": "Not Reported"
+        }
+      ],
+      "order": 4,
+      "reportingStatusClientTextKey": "reporting-status-not-reported",
+      "value": 0
+    }
+  ],
+  "native_publish_version_id": "a822aaa8-2296-4ab4-a906-30d9a6d6c7f8",
+  "native_unit_geometry_acquired": false,
+  "native_units": 241,
+  "official_results": false,
+  "publish_date_utc": "2026-11-04T16:40:39.001983Z",
+  "registrations": 366763,
+  "reproduction_command": "python review-lancaster-county-results.py --source originals --output reproduced",
+  "runtime_dependencies": [
+    "pypdf"
+  ],
+  "state_code": "PA",
+  "year": 2026
+}

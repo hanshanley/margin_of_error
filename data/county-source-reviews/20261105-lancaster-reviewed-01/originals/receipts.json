@@ -1,0 +1,147 @@
+[
+  {
+    "bytes": 4694,
+    "file": "election.json",
+    "final_url": "https://electionresults.lancastercountypa.gov/results/public/api/elections/lancaster-county-pa/2026GeneralElection",
+    "http_status": 200,
+    "redaction": {
+      "original_bytes": 4694,
+      "original_sha256": "e3e082e963bbc770c633a4f403a91eac6638fc9a480d63efdeafeb707d17df90",
+      "replacements": 0
+    },
+    "retrieved_at_utc": "2026-11-05T22:13:08.328852+00:00",
+    "sha256": "e3e082e963bbc770c633a4f403a91eac6638fc9a480d63efdeafeb707d17df90",
+    "url": "https://electionresults.lancastercountypa.gov/results/public/api/elections/lancaster-county-pa/2026GeneralElection"
+  },
+  {
+    "bytes": 53,
+    "file": "statistics.json",
+    "final_url": "https://electionresults.lancastercountypa.gov/results/public/api/elections/lancaster-county-pa/2026GeneralElection/stats",
+    "http_status": 200,
+    "redaction": {
+      "original_bytes": 53,
+      "original_sha256": "d53fa9322e0ac9a7c71afd2570229a9fd9a551588ffc63ef4d7a28ed8b007c1c",
+      "replacements": 0
+    },
+    "retrieved_at_utc": "2026-11-05T22:13:08.329265+00:00",
+    "sha256": "d53fa9322e0ac9a7c71afd2570229a9fd9a551588ffc63ef4d7a28ed8b007c1c",
+    "url": "https://electionresults.lancastercountypa.gov/results/public/api/elections/lancaster-county-pa/2026GeneralElection/stats"
+  },
+  {
+    "bytes": 53,
+    "file": "voter-registration.json",
+    "final_url": "https://electionresults.lancastercountypa.gov/results/public/api/elections/lancaster-county-pa/2026GeneralElection/vr",
+    "http_status": 200,
+    "redaction": {
+      "original_bytes": 53,
+      "original_sha256": "d53fa9322e0ac9a7c71afd2570229a9fd9a551588ffc63ef4d7a28ed8b007c1c",
+      "replacements": 0
+    },
+    "retrieved_at_utc": "2026-11-05T22:13:08.329442+00:00",
+    "sha256": "d53fa9322e0ac9a7c71afd2570229a9fd9a551588ffc63ef4d7a28ed8b007c1c",
+    "url": "https://electionresults.lancastercountypa.gov/results/public/api/elections/lancaster-county-pa/2026GeneralElection/vr"
+  },
+  {
+    "bytes": 34226,
+    "file": "turnout.json",
+    "final_url": "https://electionresults.lancastercountypa.gov/results/public/api/elections/lancaster-county-pa/2026GeneralElection/turnout",
+    "http_status": 200,
+    "redaction": {
+      "original_bytes": 34226,
+      "original_sha256": "c52519e103be64215cafc981f49077fbb4e9bf4594ea427ceff4685133431bbd",
+      "replacements": 0
+    },
+    "retrieved_at_utc": "2026-11-05T22:13:08.415820+00:00",
+    "sha256": "c52519e103be64215cafc981f49077fbb4e9bf4594ea427ceff4685133431bbd",
+    "url": "https://electionresults.lancastercountypa.gov/results/public/api/elections/lancaster-county-pa/2026GeneralElection/turnout"
+  },
+  {
+    "bytes": 2,
+    "file": "localities.json",
+    "final_url": "https://electionresults.lancastercountypa.gov/results/public/api/elections/lancaster-county-pa/2026GeneralElection/localities",
+    "http_status": 200,
+    "redaction": {
+      "original_bytes": 2,
+      "original_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "replacements": 0
+    },
+    "retrieved_at_utc": "2026-11-05T22:13:08.485271+00:00",
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "url": "https://electionresults.lancastercountypa.gov/results/public/api/elections/lancaster-county-pa/2026GeneralElection/localities"
+  },
+  {
+    "bytes": 9684,
+    "file": "native-landing.html",
+    "final_url": "https://electionresults.lancastercountypa.gov/results/public/lancaster-county-pa/elections/2026GeneralElection",
+    "http_status": 200,
+    "redaction": {
+      "original_bytes": 9684,
+      "original_sha256": "465fb9fe72bce09a8a43dba0a2ac22bd7d1588c41170451fea818cb040adf3b0",
+      "replacements": 0
+    },
+    "retrieved_at_utc": "2026-11-05T22:12:06.477384+00:00",
+    "sha256": "465fb9fe72bce09a8a43dba0a2ac22bd7d1588c41170451fea818cb040adf3b0",
+    "url": "https://electionresults.lancastercountypa.gov/results/public/lancaster-county-pa/elections/2026GeneralElection"
+  },
+  {
+    "bytes": 151319,
+    "content_type": "application/json; charset=utf-8",
+    "file": "data.json",
+    "final_url": "https://electionresults.lancastercountypa.gov/results/public/api/elections/lancaster-county-pa/2026GeneralElection/data",
+    "http_status": 200,
+    "method": "GET",
+    "redaction": {
+      "original_bytes": 151319,
+      "original_sha256": "a40e641b863a49ca96ac3635d7e01afb4bda11a36bfa6b9b1c42a672d4aa3825",
+      "replacements": 0
+    },
+    "retrieved_at_utc": "2026-11-05T22:14:07.770902+00:00",
+    "sha256": "a40e641b863a49ca96ac3635d7e01afb4bda11a36bfa6b9b1c42a672d4aa3825",
+    "url": "https://electionresults.lancastercountypa.gov/results/public/api/elections/lancaster-county-pa/2026GeneralElection/data"
+  },
+  {
+    "bytes": 35160,
+    "file": "summary-results.pdf",
+    "final_url": "https://electionresults.lancastercountypa.gov/cdn/results/01000000-0c90-bed5-2b89-08dc580b8c0e/Summary%20Results_7d72b450-8ba8-4463-b22a-249ca357055d.PDF",
+    "http_status": 200,
+    "retrieved_at_utc": "2026-11-05T22:15:25.811391+00:00",
+    "sha256": "f93c9e542deb3e64437c6bde441bf07dc97c28cf303150ae8aca1625367f61b5",
+    "url": "https://electionresults.lancastercountypa.gov/cdn/results/01000000-0c90-bed5-2b89-08dc580b8c0e/Summary%20Results_7d72b450-8ba8-4463-b22a-249ca357055d.PDF"
+  },
+  {
+    "bytes": 44529,
+    "file": "summary-voting-methods.pdf",
+    "final_url": "https://electionresults.lancastercountypa.gov/cdn/results/01000000-0c90-bed5-2b89-08dc580b8c0e/Summary%20Results%20with%20Voting%20Methods_4e3525db-6ecc-4bff-84af-2d1d2dc13424.PDF",
+    "http_status": 200,
+    "retrieved_at_utc": "2026-11-05T22:15:25.854692+00:00",
+    "sha256": "8de2a1e2a4792fd65e4983518f5075d9a1563f0d460b0cd7cb91584df2ad5a6e",
+    "url": "https://electionresults.lancastercountypa.gov/cdn/results/01000000-0c90-bed5-2b89-08dc580b8c0e/Summary%20Results%20with%20Voting%20Methods_4e3525db-6ecc-4bff-84af-2d1d2dc13424.PDF"
+  },
+  {
+    "bytes": 35620,
+    "file": "summary-party-details.pdf",
+    "final_url": "https://electionresults.lancastercountypa.gov/cdn/results/01000000-0c90-bed5-2b89-08dc580b8c0e/Summary%20Results%20with%20Party%20Details_62794341-dd94-43ed-a46d-63503eee66b0.PDF",
+    "http_status": 200,
+    "retrieved_at_utc": "2026-11-05T22:15:25.811475+00:00",
+    "sha256": "ecd918de8218f556c82749c2162e39cd1fe862cf1df01396c967e28fa75e9b3e",
+    "url": "https://electionresults.lancastercountypa.gov/cdn/results/01000000-0c90-bed5-2b89-08dc580b8c0e/Summary%20Results%20with%20Party%20Details_62794341-dd94-43ed-a46d-63503eee66b0.PDF"
+  },
+  {
+    "bytes": 206354,
+    "file": "detailed-contest-table.pdf",
+    "final_url": "https://electionresults.lancastercountypa.gov/cdn/results/01000000-0c90-bed5-2b89-08dc580b8c0e/Detailed%20Results%20by%20Contest%20Table_5e8b5772-acc2-47fc-b6eb-f30be71c0c0b.PDF",
+    "http_status": 200,
+    "retrieved_at_utc": "2026-11-05T22:15:25.962896+00:00",
+    "sha256": "0bb198d4256c9b3bb8db908c02ad8d1410936191dbc28be7ff0ea7e4383e6d5f",
+    "url": "https://electionresults.lancastercountypa.gov/cdn/results/01000000-0c90-bed5-2b89-08dc580b8c0e/Detailed%20Results%20by%20Contest%20Table_5e8b5772-acc2-47fc-b6eb-f30be71c0c0b.PDF"
+  },
+  {
+    "bytes": 933754,
+    "file": "detailed-results.pdf",
+    "final_url": "https://electionresults.lancastercountypa.gov/cdn/results/01000000-0c90-bed5-2b89-08dc580b8c0e/Detailed%20Results_addf7283-1385-4cb6-bd6c-73ca1d4266a2.PDF",
+    "http_status": 200,
+    "retrieved_at_utc": "2026-11-05T22:15:25.952180+00:00",
+    "sha256": "3d89543f986bb3159a74e0a1b7f6788b69f18954a242a6441fb6e8cc5fefa8a4",
+    "url": "https://electionresults.lancastercountypa.gov/cdn/results/01000000-0c90-bed5-2b89-08dc580b8c0e/Detailed%20Results_addf7283-1385-4cb6-bd6c-73ca1d4266a2.PDF"
+  }
+]

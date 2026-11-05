@@ -1,0 +1,16 @@
+year,state_code,county_fips,county,native_party_name,native_statistic,native_printed_value,usable_for_party_participation,qualification
+2026,PA,42071,Lancaster,Republican Party,Ballots Cast,0,False,Native zero/blank fields are not validated party participation or denominators.
+2026,PA,42071,Lancaster,Republican Party,VoterRegistration,0,False,Native zero/blank fields are not validated party participation or denominators.
+2026,PA,42071,Lancaster,Republican Party,Turnout,,False,Native zero/blank fields are not validated party participation or denominators.
+2026,PA,42071,Lancaster,Democratic Party,Ballots Cast,0,False,Native zero/blank fields are not validated party participation or denominators.
+2026,PA,42071,Lancaster,Democratic Party,VoterRegistration,0,False,Native zero/blank fields are not validated party participation or denominators.
+2026,PA,42071,Lancaster,Democratic Party,Turnout,,False,Native zero/blank fields are not validated party participation or denominators.
+2026,PA,42071,Lancaster,Libertarian Party,Ballots Cast,0,False,Native zero/blank fields are not validated party participation or denominators.
+2026,PA,42071,Lancaster,Libertarian Party,VoterRegistration,0,False,Native zero/blank fields are not validated party participation or denominators.
+2026,PA,42071,Lancaster,Libertarian Party,Turnout,,False,Native zero/blank fields are not validated party participation or denominators.
+2026,PA,42071,Lancaster,Green Party,Ballots Cast,0,False,Native zero/blank fields are not validated party participation or denominators.
+2026,PA,42071,Lancaster,Green Party,VoterRegistration,0,False,Native zero/blank fields are not validated party participation or denominators.
+2026,PA,42071,Lancaster,Green Party,Turnout,,False,Native zero/blank fields are not validated party participation or denominators.
+2026,PA,42071,Lancaster,Independant Party,Ballots Cast,0,False,Native zero/blank fields are not validated party participation or denominators.
+2026,PA,42071,Lancaster,Independant Party,VoterRegistration,0,False,Native zero/blank fields are not validated party participation or denominators.
+2026,PA,42071,Lancaster,Independant Party,Turnout,,False,Native zero/blank fields are not validated party participation or denominators.
