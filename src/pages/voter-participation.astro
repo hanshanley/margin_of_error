@@ -30,6 +30,8 @@ const historicalCountyReview = JSON.parse(readFileSync(
 const historicalHousePath = resolve('public/historical-house-counties.json');
 const historicalHouse = existsSync(historicalHousePath)
 	? JSON.parse(readFileSync(historicalHousePath, 'utf8')) : null;
+const historicalHouseSnapshots: (PartyVotes & { label: string })[] = historicalHouse
+	? [historicalHouse, ...(historicalHouse.previous_snapshots ?? [])] : [];
 const historicalHouseAudit = historicalHouse
 	? JSON.parse(readFileSync(resolve(historicalHouse.data_directory, 'audit.json'), 'utf8')) : null;
 type HistoricalHouseYear = { year: string; reviewed_states: number; reviewed_counties: number;
@@ -577,7 +579,7 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 				fractional vote count is withheld in our review, not rounded. Original quality flags and upstream
 				source terms remain applicable. These counts are not newly approved maps, ballots or demographic turnout.</p>
 			{historicalHouse && <>
-				<h3>2024 and 2022 House county downloads</h3>
+				<h3>{historicalHouseAudit.years.map((row: HistoricalHouseYear) => row.year).join(', ')} House county downloads</h3>
 				<p>This separate export selects MEDSL-origin House records from the compilation, not other
 					offices or official-source replacements. It retains all {formatNumber(historicalHouseAudit.input_rows)}
 					scoped observations and {historicalHouseAudit.literal_parties.length} literal compiler party labels.
@@ -600,9 +602,15 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 				<p>All {historicalHouseAudit.withheld_candidate_rows} withheld raw rows remain downloadable but do not enter
 					reviewed sums. State-party sums include reviewed counties only, not certified statewide totals.
 					Native surname/initial flags and compiler party-override provenance remain attached;
-					party and candidate identities are not independently reverified. Both New Jersey years are
-					official-source replacements, outside this MEDSL-only scope. The 102-cell download ledger
+					party and candidate identities are not independently reverified. New Jersey 2024 and 2022 are
+					official-source replacements, outside this MEDSL-only scope. The {51 * historicalHouseAudit.years.length}-cell download ledger
 					lists every jurisdiction separately, including excluded or missing source families.</p>
+				{historicalHouseAudit.native_auxiliary_no_ballot_records !== undefined && <p>
+					The auxiliary downloads retain {historicalHouseAudit.native_auxiliary_gap_records} native source
+					coverage gaps and {historicalHouseAudit.native_auxiliary_no_ballot_records} no-ballot observations;
+					these are not invented zero-vote candidates or approved historical boundaries.
+					Maine’s 2020 federal/UOCAVA 23000 bucket was excluded by the compiler, not allocated into counties here.
+				</p>}
 			</>}
 			{precinctResultsPointer && <p>2024 precinct / municipal candidate data: <strong>The New York Times</strong>.
 				Some boundaries are approximate; some New England reporting areas are townships.
@@ -633,13 +641,13 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 				<a href="/precinct-coverage.csv" download>Every state and election, newest first: full precinct worklist (CSV)</a>
 				<a href="/county-candidate-coverage.csv" download>Separate county candidate coverage: all states, years and offices, newest first (CSV)</a>
 				<a href={historicalCountyReview.complete_original_url} download>Paul Heideman: complete 1990–2024 county candidate/party compilation, summaries, source provenance, corrections and gaps (original ZIP)</a>
-				{historicalHouse && <>
-					<a href={historicalHouse.complete_download_url} download>2024/2022: complete scoped candidate/party counts, withheld raw rows, original QA/license records, attribution, checksums and portable tools (ZIP)</a>
-					{historicalHouse.tables.map((table: { file: string; label: string }) =>
-						<a href={`${historicalHouse.base_url}${table.file}`} download>{table.label} (CSV · gzip)</a>)}
-					<a href={`${historicalHouse.base_url}audit.json`}>2024/2022: scope, source declarations, quality exclusions and identity limitations (JSON)</a>
-					<a href={`${historicalHouse.base_url}checksums.json`}>2024/2022: every table and audit checksum (JSON)</a>
-				</>}
+				{historicalHouseSnapshots.map(snapshot => <>
+					<a href={snapshot.complete_download_url} download>{snapshot.label}: complete scoped candidate/party counts, withheld raw rows, original QA/license records, attribution, checksums and portable tools (ZIP)</a>
+					{snapshot.tables.map(table =>
+						<a href={`${snapshot.base_url}${table.file}`} download>{table.label} (CSV · gzip)</a>)}
+					<a href={`${snapshot.base_url}audit.json`}>{snapshot.label}: scope, source declarations, quality exclusions and identity limitations (JSON)</a>
+					<a href={`${snapshot.base_url}checksums.json`}>{snapshot.label}: every table and audit checksum (JSON)</a>
+				</>)}
 				{countyPartySnapshots.map(snapshot => <>
 					<a href={snapshot.party_votes.complete_download_url} download>{snapshot.label}: complete all-party and candidate totals, all original district responses, receipts, audit and portable tools (ZIP)</a>
 					{snapshot.party_votes.tables.map(table =>

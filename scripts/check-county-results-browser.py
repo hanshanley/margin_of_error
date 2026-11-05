@@ -37,8 +37,9 @@ house_audit = json.loads((root / house_pointer["data_directory"] / "audit.json")
 if house_pointer:
     house_coverage = list(csv.DictReader(gzip.open(
         root / house_pointer["data_directory"] / "state-coverage.csv.gz", "rt")))
-    assert len(house_coverage) == 102
-    assert len({(row["year"], row["state_code"]) for row in house_coverage}) == 102
+    expected_cells = 51 * len(house_audit["years"])
+    assert len(house_coverage) == expected_cells
+    assert len({(row["year"], row["state_code"]) for row in house_coverage}) == expected_cells
     assert all(row["fully_complete"] == row["map_approved"] == "False" for row in house_coverage)
 if historical_audit:
     with (root / "public/county-candidate-coverage.csv").open(newline="") as stream:
@@ -46,6 +47,10 @@ if historical_audit:
     assert len(county_ledger) == 4896
     assert len({(row["year"], row["office"], row["state_code"]) for row in county_ledger}) == 4896
     assert all(row["fully_complete"] == "False" for row in county_ledger)
+    if house_pointer:
+        assert {(row["year"], row["state_code"]) for row in house_coverage} == {
+            (year["year"], code) for year in house_audit["years"]
+            for code in {row["state_code"] for row in county_ledger}}
 precinct_pointer = json.loads((root / "public/precinct-results.json").read_text())
 precinct_coverage = {}
 for snapshot in [precinct_pointer, *precinct_pointer.get("additional_snapshots", [])]:
@@ -142,6 +147,10 @@ with sync_playwright() as p:
             assert links.count() >= download_count, "A complete source download is missing"
             downloads = set(links.evaluate_all("links => links.map(a => a.getAttribute('href'))"))
             assert baseline <= downloads, f"Lost complete downloads: {baseline - downloads}"
+            if "complete_download_urls" in proof:
+                assert downloads == set(proof["complete_download_urls"]), "Downloads differ between display modes"
+            else:
+                proof["complete_download_urls"] = sorted(downloads)
             assert pointer["complete_download_url"] in downloads
             if historical_audit:
                 assert "/county-candidate-coverage.csv" in downloads
@@ -153,8 +162,9 @@ with sync_playwright() as p:
                 assert {parties["base_url"] + table["file"] for table in parties["tables"]} <= downloads
                 expect(page.locator("#downloads")).to_contain_text("test data are withheld")
             if house_pointer:
-                assert house_pointer["complete_download_url"] in downloads
-                assert {house_pointer["base_url"] + table["file"] for table in house_pointer["tables"]} <= downloads
+                for snapshot in [house_pointer, *house_pointer.get("previous_snapshots", [])]:
+                    assert snapshot["complete_download_url"] in downloads
+                    assert {snapshot["base_url"] + table["file"] for table in snapshot["tables"]} <= downloads
                 table_rows = page.locator("table[data-historical-house] tbody tr")
                 expect(table_rows).to_have_count(len(house_audit["years"]))
                 actual = table_rows.evaluate_all("rows => rows.map(row => "
@@ -163,6 +173,12 @@ with sync_playwright() as p:
                     f'{row["reviewed_candidate_rows"]:,}', str(row["withheld_counties"])] for row in house_audit["years"]]
                 assert actual == expected, "Historical House coverage differs from scoped source review"
                 expect(page.locator("#downloads")).to_contain_text("not certified statewide totals")
+                if "native_auxiliary_no_ballot_records" in house_audit:
+                    expect(page.locator("#downloads")).to_contain_text(
+                        f'{house_audit["native_auxiliary_gap_records"]} native source coverage gaps')
+                    expect(page.locator("#downloads")).to_contain_text(
+                        f'{house_audit["native_auxiliary_no_ballot_records"]} no-ballot observations')
+                    expect(page.locator("#downloads")).to_contain_text("not invented zero-vote candidates")
             if uf_pointer:
                 assert uf_pointer["complete_download_url"] in downloads
                 assert uf_pointer["base_url"] + "originals/turnout.csv" in downloads

@@ -1,0 +1,114 @@
+{
+  "release": "https://github.com/hanshanley/margin_of_error/releases/tag/voter-county-house-history-20261105-02",
+  "tag": "voter-county-house-history-20261105-02",
+  "source_commit": "d14199b6510e32a9543014933747887c28bf0ca6",
+  "checked_at_utc": "2026-11-05T17:09:52.782383+00:00",
+  "all_assets_downloaded_and_source_matched": true,
+  "files": [
+    {
+      "name": "audit.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-house-history-20261105-02/audit.json",
+      "bytes": 9494,
+      "sha256": "1c763e49e0d4d9fbb44d58d9805a8ec2996283b051910d6854ba31336206209e",
+      "downloaded_bytes_verified": true
+    },
+    {
+      "name": "checksums.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-house-history-20261105-02/checksums.json",
+      "bytes": 1825,
+      "sha256": "d4e4ecb116fbfe87445289bf7fb33f1e66218ea9ec9dee9f131a997480c2a29e",
+      "downloaded_bytes_verified": true
+    },
+    {
+      "name": "complete-historical-house.zip",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-house-history-20261105-02/complete-historical-house.zip",
+      "bytes": 888202,
+      "sha256": "e10f905459c3550f799b17af58a4a7ed707f591b7995772f6c9f08c90085e17c",
+      "downloaded_bytes_verified": true
+    },
+    {
+      "name": "county-review.csv.gz",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-house-history-20261105-02/county-review.csv.gz",
+      "bytes": 25022,
+      "sha256": "d04a7431d5e52770ccb3211c6d45802c2e9c9544c7e9140661f084de23a2856a",
+      "downloaded_bytes_verified": true
+    },
+    {
+      "name": "reviewed-candidate-party-lines.csv.gz",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-house-history-20261105-02/reviewed-candidate-party-lines.csv.gz",
+      "bytes": 302693,
+      "sha256": "58aaf088ac03ea498289f98ebd21590348f8129c02a77061213400bc84913237",
+      "downloaded_bytes_verified": true
+    },
+    {
+      "name": "reviewed-county-party-totals.csv.gz",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-house-history-20261105-02/reviewed-county-party-totals.csv.gz",
+      "bytes": 123994,
+      "sha256": "3322b0597fcfb8040d2a37eb27f6d9fd988d40dcae8a28492e19d5f94c72e665",
+      "downloaded_bytes_verified": true
+    },
+    {
+      "name": "reviewed-state-party-sums.csv.gz",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-house-history-20261105-02/reviewed-state-party-sums.csv.gz",
+      "bytes": 5427,
+      "sha256": "8edf0e307039f2edbf0de2c5cfe14179abee32ea01af248188f11093b8eb6b9a",
+      "downloaded_bytes_verified": true
+    },
+    {
+      "name": "scoped-sources.csv.gz",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-house-history-20261105-02/scoped-sources.csv.gz",
+      "bytes": 3213,
+      "sha256": "dd920d002764badeb92927d0eaab0c770fdf40191e3f2538cced10406f842bba",
+      "downloaded_bytes_verified": true
+    },
+    {
+      "name": "source-candidate-party-lines.csv.gz",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-house-history-20261105-02/source-candidate-party-lines.csv.gz",
+      "bytes": 303231,
+      "sha256": "7f6cb4342be09765442b58604ace1dae62637ee4a0cbd01461a08c0fd95cc23b",
+      "downloaded_bytes_verified": true
+    },
+    {
+      "name": "source-coverage-gaps.csv.gz",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-house-history-20261105-02/source-coverage-gaps.csv.gz",
+      "bytes": 216,
+      "sha256": "80145200dd5d54a234f7c7087101a09a5211ebc73bb41a3267b68835a4d2a0ea",
+      "downloaded_bytes_verified": true
+    },
+    {
+      "name": "source-no-ballot.csv.gz",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-house-history-20261105-02/source-no-ballot.csv.gz",
+      "bytes": 1039,
+      "sha256": "9c1c3b1110b7bfaa478a9aa1bd33263361ef47014b8ca71d2df46d92d134ea29",
+      "downloaded_bytes_verified": true
+    },
+    {
+      "name": "source-reference-review.csv.gz",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-house-history-20261105-02/source-reference-review.csv.gz",
+      "bytes": 1619,
+      "sha256": "ad7adacb5967d8c188a9975e945f2e9e0fa56f866111d9b9914f61edfaf1bf31",
+      "downloaded_bytes_verified": true
+    },
+    {
+      "name": "state-coverage.csv.gz",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-house-history-20261105-02/state-coverage.csv.gz",
+      "bytes": 1433,
+      "sha256": "91b50277f58a10b62652132b6c84b0de7889fe2a230bbbecbcb16bd547b5a363",
+      "downloaded_bytes_verified": true
+    },
+    {
+      "name": "withheld-candidate-party-lines.csv.gz",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-house-history-20261105-02/withheld-candidate-party-lines.csv.gz",
+      "bytes": 1559,
+      "sha256": "6efce8c81a182c8eceba95a11a3c5fd9941cf9299a48098a44b3d32993912b9e",
+      "downloaded_bytes_verified": true
+    },
+    {
+      "name": "year-coverage.csv.gz",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-house-history-20261105-02/year-coverage.csv.gz",
+      "bytes": 218,
+      "sha256": "bafe918b7228a218ce05774350acded54cd7a9e203d71eb4b8c8597051c674ff",
+      "downloaded_bytes_verified": true
+    }
+  ]
+}

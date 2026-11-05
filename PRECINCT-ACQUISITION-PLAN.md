@@ -146,8 +146,13 @@ previous 134. All 52 UF rows remain source-matched. Astro check, seven
 participation tests, build and four caucus tests passed. The prepared Pages
 artifact is 987,231,960 bytes after 94 relocated downloads were verified.
 The unchanged renderer/maps were deliberately not retested.
+Exact Pages run `42067422722` for UI commit
+`235e5a7497e1356b72213927bdf1e13878991c26` succeeded. Production proof
+`data/county-source-reviews/20261105-historical-house-01/production-browser.json`
+confirms all 145 complete download URLs, both historical years, 102 scope cells,
+all 52 UF rows and unchanged source bytes in all four display modes.
 
-The 2020 extension is also prepared while the two-year Pages run completes.
+The 2020 extension is released and locally integrated, pending its exact deployment.
 It adds 10,974 reviewed candidate/party rows in 2,773 counties across 45 states;
 23 raw rows from six additional flagged counties are withheld, not lost.
 The three-year scope contains 32,445 source rows, 32,370 reviewed rows,
@@ -162,16 +167,26 @@ outside the selected scope.
 
 All previous 2024/2022 rows in all ten tables remain unchanged. The new
 complete archive reproduced every nonarchive output byte outside the repository;
-34 focused tests passed. Prepared data are
+34 focused tests passed. Released data are
 `data/historical-house-counties/20261105-medsl-02/`, proof is
 `data/county-source-reviews/20261105-historical-house-02/reproduction.json`.
-No new public pointer or live flag has been set for 2020.
-Push data/tools to the work branch before release creation rather than creating
-an unnecessary intermediate main-branch Pages deployment. Keep every link to
-the first immutable release when the three-year page is integrated.
+Data/tools commit `d14199b6510e32a9543014933747887c28bf0ca6` was pushed to the
+work branch before creating release `voter-county-house-history-20261105-02`;
+all 15 assets were downloaded back and matched byte/SHA256 before changing the
+public pointer. The complete ZIP is 888,202 bytes, SHA256
+`e10f905459c3550f799b17af58a4a7ed707f591b7995772f6c9f08c90085e17c`.
+An independent aggregate reconciliation verifies every literal-party county/state
+sum, every raw/reviewed/withheld partition, all 4,165 explicit zero rows and all
+144 native identity-flag rows. The three-year HTML table and all 158 complete
+download URLs passed four local display modes, retaining every previous 145 URL.
+All 153 scope cells and 52 UF rows remain source-matched. Astro check, seven
+participation tests, build and four caucus tests passed. The prepared site is
+987,238,926 bytes after verification of all 94 relocated downloads.
+The source renderer/maps are unchanged and were not redundantly retested.
 
-Next: verify the exact production deployment and persist the focused live proof.
-Then publish the prepared 2020 extension and validate its exact deployment.
+Next: push the reviewed three-year UI to main, then verify its exact production
+deployment and persist its focused live proof. Do not start a new main push
+before saving that result. Keep the two-year immutable download links.
 Continue 2018/2016 source-specific quality review next: their unresolved
 party labels, Missouri noncounty buckets and Texas source undercoverage need
 separate handling rather than a blanket extrapolation from the two newest years.

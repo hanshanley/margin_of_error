@@ -1,0 +1,10 @@
+{
+  "source_rows_partition_exactly_into_reviewed_and_withheld": true,
+  "every_literal_party_count_matches_reviewed_candidate_lines": true,
+  "every_state_party_sum_matches_reviewed_counties_only": true,
+  "no_complete_or_map_approval_flags": true,
+  "all_persisted_table_checksums_match": true,
+  "explicit_zero_candidate_rows_retained": 4165,
+  "native_identity_flag_rows_retained": 144,
+  "reviewed_votes": 360157359
+}

@@ -1,10 +1,22 @@
 {
+  "aggregate-reconciliation.json": {
+    "bytes": 422,
+    "sha256": "a2aa014386b4fbd7dcd1d96137a04f34dfb50afc70f57453402b63ac2d4b2194"
+  },
+  "local-browser.json": {
+    "bytes": 27894,
+    "sha256": "c727d1b15e972366f58638c9e9a4b1a73ed71ac474ad5e0d0fee2bd20a72d61c"
+  },
+  "release-verification.json": {
+    "bytes": 5585,
+    "sha256": "0b808855c03a1e1384b4d3a1471da7402bbb52111892cd2304247802c7db031f"
+  },
   "reproduction.json": {
     "bytes": 2899,
     "sha256": "cc82ab3800120b8de5529f4af59d08308082e0f3c238245d2aa563d5007322b0"
   },
   "scope-review.json": {
-    "bytes": 4195,
-    "sha256": "521175786026ff19d4c19ef23a77dc2a4ce9a27a591957759cb86310a16fcfa3"
+    "bytes": 4176,
+    "sha256": "eba83c501d3ede5e30127b22224689229530ab7a9ea9b14c4dcbb3d99b954c8e"
   }
 }
