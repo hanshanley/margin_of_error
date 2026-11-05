@@ -57,7 +57,7 @@ def refresh_sources():
         states=states), indent=2) + "\n")
 
 
-def build_rows(index=None):
+def build_rows(index=None, published=False):
     features = json.loads((ROOT / "public/voter-participation/data/states.geojson").read_text())["features"]
     states = sorted((f["properties"]["STUSAB"], f["properties"]["NAME"]) for f in features
                     if f["properties"]["STUSAB"] not in {"PR", "GU", "VI", "MP", "AS"})
@@ -113,15 +113,15 @@ def build_rows(index=None):
             if coverage:
                 row.update(candidate_results="acquired", boundaries="reference_acquired",
                            join="validated_partial" if coverage.get("partial") else "validated",
-                           validation="passed", publication="snapshot_ready",
+                           validation="passed", publication="published_partial" if published else "snapshot_ready",
                            results_source=coverage["source_url"],
                            next_action=coverage["next_action"], notes=coverage["notes"])
             rows.append(row)
     return rows
 
 
-def write_ledger(index=None):
-    rows = build_rows(index)
+def write_ledger(index=None, published=False):
+    rows = build_rows(index, published)
     target = ROOT / "public/precinct-coverage.csv"
     with target.open("w", newline="") as file:
         writer = csv.DictWriter(file, FIELDS)
@@ -142,7 +142,8 @@ def write_ledger(index=None):
         "Full source downloads, state caveats, licenses and unmapped rows must remain available.", "",
         "Status key: `not_reviewed` = still to investigate; `acquired` = source saved, not yet mapped;",
         "`reference_acquired` = reference geometry, not certified election-day boundaries;",
-        "`validated_partial` = audited subset only; `snapshot_ready` = data built, not yet verified live.",
+        "`validated_partial` = audited subset only; `snapshot_ready` = data built, not yet verified live;",
+        "`published_partial` = the acquired layer passed live browser checks, not complete statewide coverage.",
         "Checkmarks are reserved for verified, complete live coverage.", "",
     ]
     for year in YEARS:
@@ -167,7 +168,10 @@ if __name__ == "__main__":
         refresh_sources()
     pointer = ROOT / "public/precinct-results.json"
     index = None
+    published = False
     if pointer.exists():
-        base = json.loads(pointer.read_text())["data_directory"]
+        settings = json.loads(pointer.read_text())
+        base = settings["data_directory"]
         index = json.loads((ROOT / base / "index.json").read_text())
-    write_ledger(index)
+        published = settings.get("publication") == "live_verified_partial"
+    write_ledger(index, published)

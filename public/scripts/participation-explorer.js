@@ -40,6 +40,8 @@ const state = {
   currentPrecinctSelection: "",
   context: null, contextPath: "", margins: [], contextError: "", subshapes: new Map(),
   results: null, resultsError: "",
+  precinctResults: null, precinctResultsPath: "", precinctResultShapes: new Map(),
+  precinctResultSelection: "", precinctResultsError: "",
   drillKey: "", drillToken: 0, drillTimer: null, subSelection: null,
   methods: null, methodStates: [], methodNational: [], methodsPath: "", methodsError: "",
   precinctHistories: new Map(),
@@ -444,6 +446,77 @@ async function loadCurrentPrecincts() {
     state.currentPrecinctError = `2026 precinct geography could not be loaded: ${error.message}.`;
   }
 }
+  async function loadPrecinctResults() {
+    try {
+      const response = await fetch("/precinct-results.json");
+      if (!response.ok) throw new Error(`Result pointer: HTTP ${response.status}`);
+      const pointer = await response.json();
+      state.precinctResultsPath = pointer.base_url;
+      const index = await fetch(state.precinctResultsPath + "index.json");
+      if (!index.ok) throw new Error(`Precinct result coverage: HTTP ${index.status}`);
+      state.precinctResults = await index.json();
+    } catch (error) {
+      state.precinctResultsError = `Precinct candidate returns could not be loaded: ${error.message}.`;
+    }
+  }
+  function precinctResultDetail(p) {
+    const panel = $("substate-detail");
+    panel.replaceChildren(html("h4", "", `${p.county} · ${p.precinct}`),
+      html("p", "selection-rate", marginLabel(p)),
+      html("p", "selection-note", `${p.office} · ${p.year}. `
+        + `${fmt(p.democratic_votes)} Democratic; ${fmt(p.republican_votes)} Republican; `
+        + `${fmt(p.other_votes)} other; ${fmt(p.contest_votes)} total contest votes.`),
+      html("p", "selection-note", p.ballot_scope),
+      html("p", "selection-note", "Candidate-vote margin, not turnout or demographic participation. Matching precinct identifiers does not establish unchanged boundaries across elections."));
+    if (p.official_boundary === false) panel.append(html("p", "selection-note", "Approximate boundary reconstructed by The New York Times, not an official precinct shape."));
+    panel.append(sourceLink(p));
+  }
+  async function drawPrecinctResults(map, selected, code, year, token) {
+    const coverage = state.precinctResults.coverage[year][code], key = `${year}|${code}`;
+    if (!state.precinctResultShapes.has(key)) {
+      const promise = (async () => {
+        const response = await fetch(state.precinctResultsPath + coverage.file);
+        if (!response.ok) throw new Error(`Precinct candidate results: HTTP ${response.status}`);
+        if (!globalThis.DecompressionStream) throw new Error("Compressed precinct results are unsupported by this browser; complete downloads remain available");
+        return new Response(response.body.pipeThrough(new DecompressionStream("gzip"))).json();
+      })().catch(error => { state.precinctResultShapes.delete(key); throw error; });
+      state.precinctResultShapes.set(key, promise);
+    }
+    const data = await state.precinctResultShapes.get(key);
+    if (token !== state.drillToken || state.map !== map) return;
+    for (const feature of data.features) {
+      const p = feature.properties;
+      if (p.match_status !== "matched" || p.margin_pp == null) continue;
+      const item = projectInside(feature, selected.point);
+      const path = featurePath(item, null,
+        `${p.county} · ${p.precinct} · ${year}\n${p.office} · ${marginLabel(p)} · ${fmt(p.contest_votes)} contest votes\n${p.ballot_scope}`, () => {
+          state.precinctResultSelection = p.key;
+          precinctResultDetail(p);
+          for (const other of map.detail.querySelectorAll(".selected")) other.classList.remove("selected");
+          path.classList.add("selected"); fit(item.bounds);
+        }, { class: "map-feature substate-feature", "data-geography": p.key, "data-level": "precinct",
+          "data-color-level": "precinct", "data-margin": p.margin_pp, "data-total-votes": p.contest_votes,
+          "data-match": p.match_status, "data-year": year, fill: marginFill(p.margin_pp), tabindex: "-1" });
+      path.classList.toggle("selected", p.key === state.precinctResultSelection);
+      map.detail.append(path);
+    }
+    map.precinctLayer = true;
+    header(`${year} ${typeFor(year)} election · precinct candidate returns · partial coverage`,
+      `Precinct election results in ${selected.feature.properties.NAME}`,
+      "Red / blue uses each mapped reporting area's own candidate votes, not participation.",
+      coverage.notes);
+    const codes = Object.keys(state.precinctResults.coverage[year]);
+    $("coverage-note").textContent = `${year} precinct / municipal result layers: `
+      + `${codes.filter(value => value !== "DC").length} states${codes.includes("DC") ? " and D.C." : ""}. `
+      + `${fmt(coverage.colored)} colored reporting areas in this state. Partial coverage is not every precinct or all ballot modes. `
+      + "Whole-state red/blue result colors remain beneath unmatched areas. "
+      + (year === 2024 ? "2024 source: The New York Times; original state caveats and license are in Methods & data." : "");
+    $("geography-note").textContent = `${selected.feature.properties.NAME} · ${fmt(coverage.colored)} verified candidate-result shapes `
+      + `on ${coverage.boundary_date} boundaries. ${coverage.notes}`;
+    marginLegend(coverage.office);
+    const chosen = data.features.find(feature => feature.properties.key === state.precinctResultSelection);
+    if (chosen) precinctResultDetail(chosen.properties);
+  }
 function currentPrecinctDetail(p) {
   const description = p.match_status === "county_precinct_set_mismatch"
     ? "No rate mapped: county boundary and reporting precinct sets differ"
@@ -1517,7 +1590,7 @@ function projectInside(feature, point) {
   }
   async function updateGeography() {
     const map = state.map;
-    if (state.view !== "states" || !map?.stateItems || (!state.context && !state.local)) return;
+    if (state.view !== "states" || !map?.stateItems || (!state.context && !state.local && !state.precinctResults)) return;
     const zoomLevel = map.full[0] / state.viewport[2], year = Number($("year").value);
     const center = new DOMPoint(state.viewport[0] + state.viewport[2] / 2, state.viewport[1] + state.viewport[3] / 2);
     const currentBounds = map.stateItems.get(stateCode())?.bounds;
@@ -1533,6 +1606,8 @@ function projectInside(feature, point) {
     }
     let code = stateCode();
     let level = $("map-level").value;
+    if (level === "auto" && $("map-color").value === "margin"
+      && zoomLevel >= 2.3 && state.precinctResults?.coverage[year]?.[code]) level = "precinct";
     if (level === "auto") level = zoomLevel >= 8 && (code === "NC" && state.audits.some(row => row.year === year)
       || year === 2026 && state.currentPrecincts?.states[code] && ["available", "official"].includes($("mode").value))
       ? "precinct" : state.local?.years.includes(year) ? "county"
@@ -1570,6 +1645,9 @@ function projectInside(feature, point) {
       if ($("map-color").value === "margin") marginLegend(year % 4 === 0 ? "President" : "U.S. House aggregate");
       else if (level === "precinct") legend([["No verified precinct participation", "#d6d3cb"]]);
     };
+    if (level === "precinct" && $("map-color").value === "margin"
+      && state.precinctResults?.coverage[year]?.[code])
+      return drawPrecinctResults(map, selected, code, year, token);
     if ($("map-color").value === "margin"
       && !state.margins.some(row => row.year === year && row.state_code === code && row.level === level))
       return unavailable(`No verified ${year} ${level} candidate-return join for ${state.selectedState}. `
@@ -1922,7 +2000,7 @@ async function main() {
       : (tabs.indexOf(tab) + (event.key === "ArrowRight" ? 1 : -1) + tabs.length) % tabs.length;
     tabs[index].focus(); showView(tabs[index].dataset.view);
   });
-  await Promise.all([loadContext(), loadMethods(), loadLocal(), loadCurrentPrecincts()]);
+  await Promise.all([loadContext(), loadMethods(), loadLocal(), loadCurrentPrecincts(), loadPrecinctResults()]);
   const [national, states, geometry, ncSummary, audits] = await Promise.all([
     get("national.json"), get("states.json"), get("states.geojson"), get("nc/summary.json"), get("geometry-audit.json"),
     loadCurrent(),

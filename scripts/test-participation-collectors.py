@@ -54,6 +54,19 @@ def test_nm_precinct_results_reconcile_and_never_treat_suppression_as_zero():
         precinct_results.nm_results(candidates + candidates, counties)
 
 
+def test_precinct_worklist_requires_live_verification_and_never_marks_partial_complete():
+    coverage = dict(partial=True, source_url="source", next_action="Verify remaining precincts",
+                    notes="Residential ballots only")
+    index = {"coverage": {"2026": {"NC": coverage}}}
+    for published, expected in [(False, "snapshot_ready"), (True, "published_partial")]:
+        rows = precinct_coverage.build_rows(index, published=published)
+        nc = next(row for row in rows if row["year"] == 2026 and row["state_code"] == "NC")
+        nm = next(row for row in rows if row["year"] == 2026 and row["state_code"] == "NM")
+        assert nc["publication"] == expected
+        assert nc["join"] == "validated_partial" and nc["complete"] == "no"
+        assert nm["publication"] == "not_published"
+
+
 def test_precinct_join_withholds_whole_mismatched_or_unreconciled_counties():
     def shape(county, precinct):
         return {"properties": {"county": county, "precinct": precinct}}

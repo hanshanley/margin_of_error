@@ -15,7 +15,8 @@ Full source downloads, state caveats, licenses and unmapped rows must remain ava
 
 Status key: `not_reviewed` = still to investigate; `acquired` = source saved, not yet mapped;
 `reference_acquired` = reference geometry, not certified election-day boundaries;
-`validated_partial` = audited subset only; `snapshot_ready` = data built, not yet verified live.
+`validated_partial` = audited subset only; `snapshot_ready` = data built, not yet verified live;
+`published_partial` = the acquired layer passed live browser checks, not complete statewide coverage.
 Checkmarks are reserved for verified, complete live coverage.
 
 ## 2026

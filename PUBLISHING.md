@@ -240,7 +240,25 @@ or turnout. DC has no voting House district in this source. Refresh separately w
 `python scripts/collect-participation-context.py --results-only`; invalid identity,
 missing/duplicate districts or failed reconciliation must leave the previous pointer intact.
 Its complete CSV/ZIP downloads retain every state/district result and the original source.
-No 2026 precinct candidate-return join is claimed; the result layer uses state fallback.
+`scripts/build-precinct-results.py` builds separately audited candidate-result layers, newest first.
+It retains complete source captures and candidate tables (including unmapped and administrative rows).
+The 2026 NM joins require county-scoped unique precinct sets and exact candidate/county reconciliation;
+suppressed counts are missing, never zero, and suppress the corresponding county's map.
+The 2026 NC residential reporting units exclude separately reported early/mail/provisional units;
+label that partial ballot scope explicitly, and do not allocate administrative counts into polygons.
+The NYT 2024 release adds precinct/municipal reporting areas across 49 states and DC, not Alaska.
+Map only geometry identities whose candidate counts reconcile exactly to the complete national CSV.
+Retain mismatches in the audits and full downloads. Approximate boundaries are marked per feature,
+New England includes townships, and the complete original state caveats and NYT C-UDA terms must
+accompany redistribution. Attribute The New York Times in the visible UI and retain downstream terms.
+`public/precinct-results.json` pins the immutable data revision and complete GitHub release ZIP;
+bulk geometry lives under `data/precinct-results/`, not in the size-limited Pages artifact.
+`PRECINCT-COVERAGE.md` and `public/precinct-coverage.csv` track all 1,632 state/election cells,
+2026 first through 1964. Regenerate with `python scripts/build-precinct-coverage.py`.
+Partial coverage is not completion. Do not mark a cell complete without validated live coverage.
+After the full live browser check passes for the pinned snapshot, set its pointer's
+`publication` to `live_verified_partial` and regenerate the worklist. New snapshots must
+omit that flag until their own live checks pass; acquired data alone is `snapshot_ready`.
 `scripts/build-current-precincts.py` joins the RGIS July 2026 NM release to the
 saved election-night source using county + explicit `VTD_NUM` (Voting District Number).
 Eight updated Sandoval shapes retain older Census VTD/GEOCODE values; those older
