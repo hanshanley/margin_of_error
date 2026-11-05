@@ -3988,7 +3988,7 @@ map approvals. Proofs:
 verification. The Maricopa live flag records its already completed exact
 20c6/42031647109 proof, not another unverified map.
 
-### Michigan 2026: native county acquisition and reconciliation underway
+### Michigan 2026: native county sources released; UI locally verified
 
 The official state elections/results pages return actual **403** responses;
 the indexed Muskegon route returns **404**. Their original bodies and receipts
@@ -4065,10 +4065,35 @@ Proof: `files/michigan-2026-package-proof-01.json`.
 Michigan tests for PDF alignment, missing-vs-zero, duplicated identities,
 voting modes, workbook columns, conflicting snapshots and complete reconciliation.
 
-**Current executable work:** source-commit/push the reviewed Michigan package
-as Hans, create a new immutable release and verify its entire anonymous ZIP
-before registering scoped downloads and the MI2026 ledger update. Then build,
-test and finish exact production proof. Never
+Source commit **93b8152e27a68c837ab03197b4fa401f10bc33b0** is pushed.
+Immutable release **voter-precinct-michigan-native-counts-20261105-01**
+contains `complete-michigan-2026-native-county-counts-01.zip`. Its entire
+anonymous download is byte-identical to the reviewed archive, including all
+**23 members / 22 checksums**. Proof:
+`files/michigan-2026-remote-release-proof-01.json`.
+
+The separate `MI-2026-native-counts-review.json` sidecar and participation-review
+registration now expose all eight complete tables/original workbook plus ZIP,
+full county-only caveats and scoped MI2026 ledger status. Only **MI2026**
+changes among the **1,632** still-incomplete cells. The overlapping metadata
+registrations share one complete ZIP link, not duplicate download anchors.
+The map renderer and every older result snapshot remain unchanged.
+
+Local desktop/mobile with and without JavaScript pass: **103 distinct complete
+download links**, all **94 older URLs** retained, every new full CSV/workbook
+endpoint and the entire ZIP verified, all caveats visible, latest-year /
+precinct / red-blue defaults and existing zoom healthy, no overflow.
+Proof: `files/michigan-ui-local-browser-proof-01.json`.
+Two focused ledger tests, seven routing/renderer tests, Astro check and build
+pass; build includes four existing caucus regressions. The serial full-site
+validator passes the Michigan download assertions and reaches only the known
+unrelated UK topic-card baseline (**23 versus 16**, now line 1097).
+Pages preparation verifies **94** existing relocated bulk files and produces
+a **986,299,926-byte** artifact.
+
+**Current executable work:** commit/push this locally verified UI registration
+as Hans and finish one bounded, exact-commit production browser/full-download
+proof before calling Michigan UI live. Never
 replace existing source packages or rerun completed count/map suites instead of
 acquisition. Continue another 2026 jurisdiction during the bounded deployment;
 retain Pima's declared-map 404 as a bounded follow-up.

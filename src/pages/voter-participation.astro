@@ -535,7 +535,8 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 			<div class="download-links">
 				<a href="/precinct-coverage.csv" download>Every state and election, newest first: full precinct worklist (CSV)</a>
 				{participationReviews.map((review: ParticipationReview) => <>
-					<a href={review.complete_download_url} download>{review.label}: complete reviewed counts, original reports, receipts, audits and portable tools (ZIP)</a>
+					{!precinctSourceReviews.some((source: { complete_download_url: string }) => source.complete_download_url === review.complete_download_url) &&
+						<a href={review.complete_download_url} download>{review.label}: complete reviewed counts, original reports, receipts, audits and portable tools (ZIP)</a>}
 					{review.tables.map(table => <a href={`${review.base_url}${table.file}`} download>{table.label}</a>)}
 					<a href={`${review.base_url}audit.json`}>{review.label}: scope and reconciliation audit (JSON)</a>
 					<a href={`${review.base_url}checksums.json`}>{review.label}: complete data and original-source checksums (JSON)</a>

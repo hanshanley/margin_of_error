@@ -49,7 +49,7 @@ Checkmarks are reserved for verified, complete live coverage.
 | [ ] | Massachusetts | acquired | reference_acquired | validated_partial | passed | published_partial | central_tabulation_ballot_counts_only_no_registration_or_rates |
 | [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | reviewed_city_only_voter_counts |
-| [ ] | Michigan | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Michigan | acquired_reconciled_two_county_native_counts | not_acquired_for_native_county_review | withheld_no_native_geometry | native_pdf_json_workbook_candidate_modes_and_ballots_passed_scope_differences_retained | full_counts_download_only | native_two_county_precinct_counts_analysis_rates_withheld |
 | [ ] | Minnesota | acquired | reference_acquired | validated_partial | passed | published_partial | acquired_precinct_counts_and_registration |
 | [ ] | Missouri | acquired_reconciled | election_year_reference_pending | withheld | house_vectors_and_native_participation_independently_reconciled | full_counts_download_only | native_reporting_unit_counts_centralized_absentee_unallocated |
 | [ ] | Mississippi | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |

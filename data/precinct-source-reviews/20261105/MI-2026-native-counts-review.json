@@ -1,0 +1,24 @@
+{
+  "year": 2026,
+  "state_code": "MI",
+  "county_name": "Bay and Isabella",
+  "office": "U.S. House; county-source scope only, not statewide participation",
+  "source_url": "https://www.baycountymi.gov/departments/clerk/elections/election_results.php",
+  "source_urls": [
+    "https://www.baycountymi.gov/departments/clerk/elections/election_results.php",
+    "https://www.isabellacounty.org/departments/county-clerk/services/general-election-information/"
+  ],
+  "candidate_results": "acquired_reconciled_two_county_native_counts",
+  "boundaries": "not_acquired_for_native_county_review",
+  "join": "withheld_no_native_geometry",
+  "validation": "native_pdf_json_workbook_candidate_modes_and_ballots_passed_scope_differences_retained",
+  "publication": "full_counts_download_only",
+  "participation": "native_two_county_precinct_counts_analysis_rates_withheld",
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-michigan-native-counts-20261105-01/complete-michigan-2026-native-county-counts-01.zip",
+  "complete_download_bytes": 4952650,
+  "complete_download_sha256": "504aafb5bbba26a0982504388faa76469b70975e9c7783eb55d79492367dcd09",
+  "maps_approved": false,
+  "rates_available": false,
+  "notes": "Bay and Isabella county sources only, November 3, 2026 general election: 63 participation observations, 59 House vectors and four explicitly zero-count neighboring-county rows absent from House scope. Bay's 35 native report sections reconcile 50,246 ballots, 87,721 registrations and 49,556 House votes across all modes to the independent summary; native reporting counter 43 of 43 remains separately unexplained. Isabella's 28 native UUID/name-qualified participation records reconcile 26,288 ballots and 44,217 registrations, while 24 House units reconcile 25,762 candidate/write-in votes and 26,266 House-scope ballots across API and complete workbook. City of Clare has 22 election ballots but zero House-scope ballots; preserve both without allocating votes. All 449 summary, 1,347 summary-mode, 5,513 precinct and 16,539 precinct-mode workbook observations reconcile. Complete original workbook, five PDFs, three native API responses, four full workbook CSVs, unmatched rows and portable reviewer retained. Six discovery/error frontend originals remain separately preserved. No new geometry, demographic estimates, inferred analysis rates or statewide coverage claim.",
+  "next_action": "Acquire exact-election boundaries and explicit native crosswalks, clarify Bay's reporting-unit counter and Isabella's 22-ballot scope difference and registration definitions, and continue remaining Michigan counties and other 2026 jurisdictions."
+}

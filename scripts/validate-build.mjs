@@ -246,7 +246,8 @@ assert.equal(participation('#downloads a[download]').length,
 	+ (precinctResultsPointer.additional_snapshots ?? []).reduce((count, snapshot) =>
 		count + 2 + (snapshot.participation_available !== false ? 1 : 0), 0)
 	+ 3 * (1 + (countyResultsPointer.previous_snapshots ?? []).length)
-	+ participationReviews.reduce((count, review) => count + 1 + review.tables.length, 0));
+	+ participationReviews.reduce((count, review) => count + review.tables.length +
+		(sourceReviews.some(source => source.complete_download_url === review.complete_download_url) ? 0 : 1), 0));
 for (const review of sourceReviews) {
 	const link = participation('#downloads a[download]').filter((_, element) =>
 		participation(element).attr('href') === review.complete_download_url);

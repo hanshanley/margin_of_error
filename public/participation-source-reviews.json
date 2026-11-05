@@ -57,6 +57,36 @@
           "notes": "Additional Pima County-only review: all 265 native precincts, 343,064 ballots and 657,885 registrations reconcile between complete official CSV and dashboard; all 374 ballot/option columns sum to county totals and all 265 House vectors independently match statewide native counts by unique literal names. Preserve both code namespaces and one Not Reported record; registrations counted once, no inferred component modes or analysis rates. Complete 265-base/972-union GIS references retained, but the actual declared 2026 map returns HTTP404 and no new GIS joins are approved. Does not replace statewide Arizona coverage or the separately verified Maricopa map."
         }
       ]
+    },
+    {
+      "id": "michigan-native-counties-20261105-01",
+      "label": "Bay and Isabella county sources, Michigan 2026: native participation and separate House counts",
+      "data_directory": "data/precinct-source-reviews/20261105/MI-2026-native-county-counts-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/93b8152e27a68c837ab03197b4fa401f10bc33b0/data/precinct-source-reviews/20261105/MI-2026-native-county-counts-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-michigan-native-counts-20261105-01/complete-michigan-2026-native-county-counts-01.zip",
+      "complete_download_bytes": 4952650,
+      "complete_download_sha256": "504aafb5bbba26a0982504388faa76469b70975e9c7783eb55d79492367dcd09",
+      "review_status": "complete_sources_and_counts_verified_scope_differences_retained",
+      "maps_approved": false,
+      "scope_note": "Bay and Isabella county sources only, November 3, 2026 general election; not statewide or demographic participation. Bay's 35 native report sections reconcile 50,246 ballots and 87,721 registrations, separately from 49,556 House votes. Its native 43 of 43 reporting counter is not treated as 43 geographic precincts. Isabella has 28 UUID/name-qualified participation records, 26,288 election ballots and 44,217 registrations, separately from 25,762 House votes across 24 native units. The workbook reports 26,266 House-scope ballots: City of Clare has 22 API election ballots but zero House-scope ballots. Preserve both without inventing a cause or allocating votes. Four named neighboring-county zero-count records absent from House scope remain fully downloadable. All four complete workbook tables reconcile every option, precinct and voting mode. No new geometry, inferred analysis rates or demographic estimates are approved.",
+      "tables": [
+        {"file": "precinct-participation.csv", "label": "Bay and Isabella sources only: all 63 native participation observations; ballots and registrations, not demographic estimates or inferred rates (CSV)"},
+        {"file": "precinct-results.csv", "label": "Bay and Isabella sources only: all 59 complete House vectors; candidate votes and House-scope ballots remain separate from participation (CSV)"},
+        {"file": "unmatched-precincts.csv", "label": "Isabella dashboard: all four native zero-count neighboring-county observations absent from House scope; no invented House returns (CSV)"},
+        {"file": "isabella-summary-results.csv", "label": "Isabella: complete all-contest workbook summary, all 449 native data rows (CSV)"},
+        {"file": "isabella-summary-results-by-group.csv", "label": "Isabella: complete all-contest workbook summary by voting mode, all 1,347 native data rows (CSV)"},
+        {"file": "isabella-precinct-results.csv", "label": "Isabella: complete all-contest workbook precinct results, all 5,513 native data rows (CSV)"},
+        {"file": "isabella-precinct-results-by-group.csv", "label": "Isabella: complete all-contest workbook precinct results by voting mode, all 16,539 native data rows (CSV)"},
+        {"file": "original-isabella-results.xlsx.gz", "label": "Isabella: entire original four-sheet all-results workbook, including all contests and native formatting columns (XLSX · gzip)"}
+      ],
+      "coverage": [
+        {
+          "state_code": "MI",
+          "years": [2026],
+          "status": "native_two_county_precinct_counts_analysis_rates_withheld",
+          "notes": "Bay and Isabella only: 63 participation records and 59 House vectors; native ballot/registration, candidate, voting-mode and complete workbook reconciliations pass. Retain four zero-count neighboring-county unmatched rows, Bay's unexplained 43-versus-35 native unit counters and Isabella's 22 election-ballot versus House-scope difference. No approved geometry, inferred rates, demographic estimates or statewide coverage."
+        }
+      ]
     }
   ]
 }
