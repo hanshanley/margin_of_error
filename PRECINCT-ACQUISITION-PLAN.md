@@ -2985,14 +2985,82 @@ CSV endpoints, including the **432-row / 118,060-byte** native count table:
 `files/wyoming-native-count-ui-local-browser-proof-01.json`.
 The renderer and pinned research export are unchanged.
 
-**Next executable actions:** finish local and exact-live ancillary UI
+Ancillary UI commit **`67598577278dbd7121403e70bcb2873835458db7`** is
+pushed as Hans. Exact deployment **42010632843** is in progress under bounded
+watcher `wyoming-native-count-ui-live-publication`; public registry/renderer/CSV
+bytes must remain unchanged until its source-matched production checks finish.
+The local preview has been stopped.
+
+The official-linked LSO House web map
+`7d70f77b3ba449e09f576a92deac27a5` returns an explicit HTTP/API 403 permission
+error. This is not an acquired precinct layer; do not bypass it or label House
+district geometry as precincts. Independently archived the SOS election index
+and complete **35-page** `2026_Districts_and_Precincts_by_County.pdf` in session
+`files/wyoming-2026-precinct-identity-reference-01/`. Its actual printed date is
+**June 12, 2026**, not election day; the **76,830-byte** PDF SHA-256 is
+`63edd0934157ae7b246a2ff25837e5719df89a35421725c781bb7e2ed05b3103`.
+It is a potential identity reference, not November boundary approval.
+
+**Next executable actions:** finish exact-live ancillary UI
 verification for all 67 complete links and the full 432-row count endpoint.
 Seek county-issued precinct
 detail for Washakie's third-party conflict and actual 2026 geometry for all
-432 native units; do not borrow 2022's 439-unit geometry. Persist the 2022
-native reconciliation as a reusable tested reviewer with complete normalized
-tables, 35 explicit format crosswalks and the Natrona conflict. Acquire
+432 native units; do not borrow 2022's 439-unit geometry. Acquire
 actual-election geometry before mapping. Do not infer registrations or turnout rates.
+
+### Wyoming 2022 independently reconciled native workbook counts
+
+The reusable `scripts/review-wyoming-2022-native-results.py` now independently
+reads the complete native SOS ZIP's three workbooks. All **439 precincts**
+across **23 counties**, **3,073 House-category cells** and **439 separate
+ballot cells** match the separately acquired immutable OpenElections CSV.
+Precinct/county/state candidate vectors reconcile. Native precinct ballots and
+the statewide table total **198,198**, separately from **193,902**
+candidate/write-in votes. Neither number is inferred from the other.
+
+Preserved **35** explicit source-bound Excel-format crosswalks for date-coerced
+CSV identifiers, with native workbook/sheet/row occurrences. Native candidate
+and ballot workbooks need not encode the same displayed precinct as the same
+Excel type: Carbon's candidate identifiers are dates while its ballot
+identifiers can be strings. Require exact independently displayed identifier
+sets and unambiguous date-to-display mappings, not identical storage types.
+Do not guess hyphens or discard leading zeroes.
+
+Natrona's printed county ballot total remains **22,957**, versus **22,955**
+in both its summed precinct counts and the statewide county value. No two
+ballots are manufactured, moved or subtracted. Registrations and rates are
+blank for every normalized row; geometry/maps and ballot approval remain
+withheld. Native Selvig `(C)` and CSV `CTRY` remain distinct literal labels.
+
+The complete review is
+`data/precinct-source-reviews/20261105/WY-2022-native-counts/`: all **55**
+advertised 2022 SOS originals and receipts, complete original acquired CSV
+and documentation/provenance, all 439 normalized rows and source cell
+references, full crosswalks/conflict, portable reviewer and checksums.
+Nine new focused regressions pass. ZIP CRC, **63** checked package files,
+all original receipts and the complete CSV pass; a portable offline rebuild
+is byte-identical:
+`files/wyoming-2022-native-count-package-proof-01.json`.
+The complete archive `complete-wyoming-2022-native-count-review-01.zip` is
+**4,885,475 bytes**, SHA-256
+`5c160354623564d7584279a448e8662188058ffdcb47b75ecd31b0a2d24d1e7b`.
+This batch is locally verified, not yet pushed, release-verified or UI-registered.
+
+**Next executable actions:** after the pending exact 2026 UI deployment succeeds,
+push this useful source batch as Hans, bind a fresh immutable complete-data
+release to its exact source commit, redownload/verify the entire ZIP and register
+the separate 2022 count-review metadata. Only then change the WY2022 worklist
+row or add its complete UI download. An independent county-issued alternative
+is the advertised 18-page 2022 EL-45 summary, DocumentCenter **7601**, on
+`https://www.natronacounty-wy.gov/659/Election-Results-Archive`; its native text
+confirms **22,955** ballots. Acquire the complete advertised EL-45, EL-30
+(DocumentCenter **7600**, 496 pages) and EL-52 (**7602**, 58 pages) originals
+before formal follow-up. The current 2026 county index is
+`https://www.natronacounty-wy.gov/918/Election-Results`, not that archive.
+Its separate 2026 summary/statistics original (DocumentCenter **14007**) is
+a concrete new participation lead, not a basis for borrowing county
+registrations into precinct rates. Preserve snapshots rather than replacing
+this already-built native review.
 
 ## Resume procedure for every work session or scheduled prompt
 
@@ -3057,7 +3125,9 @@ Concrete next investigations already identified:
   leaves omit this denominator; retain counts and withhold rates rather than
   borrowing county denominators. Update supplemental download metadata for a
   non-NYT batch rather than displaying 2020 license links for unrelated data.
-- Minnesota: official election ID `201` exposes federal results by precinct;
+- **Minnesota 2026 is already acquired and live-verified at `391c681` /
+  `8652eee` above; do not redownload its boundaries or originals.** Official
+  election ID `201` exposes federal results by precinct;
   investigate the official September 18, 2026 precinct boundary release and exact
   county/precinct identifiers. Verify election identity and reconcile totals.
   The official media page links to

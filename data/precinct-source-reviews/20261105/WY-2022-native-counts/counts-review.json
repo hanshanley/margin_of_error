@@ -1,0 +1,905 @@
+{
+  "state_code": "WY",
+  "year": 2022,
+  "units": 439,
+  "counties": [
+    {
+      "county": "Albany",
+      "precincts": 11,
+      "category_vector": [
+        5699,
+        6085,
+        306,
+        214,
+        313,
+        19,
+        175
+      ],
+      "precinct_ballots": 12811,
+      "printed_county_ballots": 12811,
+      "statewide_ballots": 12811
+    },
+    {
+      "county": "Big Horn",
+      "precincts": 13,
+      "category_vector": [
+        3449,
+        504,
+        97,
+        108,
+        76,
+        21,
+        67
+      ],
+      "precinct_ballots": 4322,
+      "printed_county_ballots": 4322,
+      "statewide_ballots": 4322
+    },
+    {
+      "county": "Campbell",
+      "precincts": 37,
+      "category_vector": [
+        10446,
+        1215,
+        320,
+        268,
+        177,
+        30,
+        278
+      ],
+      "precinct_ballots": 12734,
+      "printed_county_ballots": 12734,
+      "statewide_ballots": 12734
+    },
+    {
+      "county": "Carbon",
+      "precincts": 19,
+      "category_vector": [
+        3434,
+        892,
+        170,
+        126,
+        61,
+        19,
+        87
+      ],
+      "precinct_ballots": 4789,
+      "printed_county_ballots": 4789,
+      "statewide_ballots": 4789
+    },
+    {
+      "county": "Converse",
+      "precincts": 19,
+      "category_vector": [
+        4044,
+        602,
+        129,
+        209,
+        71,
+        14,
+        84
+      ],
+      "precinct_ballots": 5153,
+      "printed_county_ballots": 5153,
+      "statewide_ballots": 5153
+    },
+    {
+      "county": "Crook",
+      "precincts": 17,
+      "category_vector": [
+        2814,
+        306,
+        69,
+        51,
+        39,
+        9,
+        74
+      ],
+      "precinct_ballots": 3362,
+      "printed_county_ballots": 3362,
+      "statewide_ballots": 3362
+    },
+    {
+      "county": "Fremont",
+      "precincts": 32,
+      "category_vector": [
+        8539,
+        3519,
+        420,
+        686,
+        250,
+        56,
+        264
+      ],
+      "precinct_ballots": 13734,
+      "printed_county_ballots": 13734,
+      "statewide_ballots": 13734
+    },
+    {
+      "county": "Goshen",
+      "precincts": 14,
+      "category_vector": [
+        3835,
+        766,
+        86,
+        76,
+        89,
+        6,
+        78
+      ],
+      "precinct_ballots": 4936,
+      "printed_county_ballots": 4936,
+      "statewide_ballots": 4936
+    },
+    {
+      "county": "Hot Springs",
+      "precincts": 5,
+      "category_vector": [
+        1641,
+        367,
+        55,
+        74,
+        42,
+        9,
+        25
+      ],
+      "precinct_ballots": 2213,
+      "printed_county_ballots": 2213,
+      "statewide_ballots": 2213
+    },
+    {
+      "county": "Johnson",
+      "precincts": 16,
+      "category_vector": [
+        3003,
+        601,
+        100,
+        61,
+        94,
+        21,
+        100
+      ],
+      "precinct_ballots": 3980,
+      "printed_county_ballots": 3980,
+      "statewide_ballots": 3980
+    },
+    {
+      "county": "Laramie",
+      "precincts": 40,
+      "category_vector": [
+        17539,
+        9572,
+        914,
+        863,
+        883,
+        22,
+        418
+      ],
+      "precinct_ballots": 30211,
+      "printed_county_ballots": 30211,
+      "statewide_ballots": 30211
+    },
+    {
+      "county": "Lincoln",
+      "precincts": 15,
+      "category_vector": [
+        6118,
+        998,
+        159,
+        112,
+        102,
+        27,
+        110
+      ],
+      "precinct_ballots": 7626,
+      "printed_county_ballots": 7626,
+      "statewide_ballots": 7626
+    },
+    {
+      "county": "Natrona",
+      "precincts": 46,
+      "category_vector": [
+        15399,
+        5235,
+        656,
+        478,
+        649,
+        93,
+        445
+      ],
+      "precinct_ballots": 22955,
+      "printed_county_ballots": 22957,
+      "statewide_ballots": 22955
+    },
+    {
+      "county": "Niobrara",
+      "precincts": 6,
+      "category_vector": [
+        936,
+        75,
+        16,
+        39,
+        17,
+        5,
+        13
+      ],
+      "precinct_ballots": 1101,
+      "printed_county_ballots": 1101,
+      "statewide_ballots": 1101
+    },
+    {
+      "county": "Park",
+      "precincts": 29,
+      "category_vector": [
+        9658,
+        1922,
+        313,
+        216,
+        562,
+        43,
+        263
+      ],
+      "precinct_ballots": 12977,
+      "printed_county_ballots": 12977,
+      "statewide_ballots": 12977
+    },
+    {
+      "county": "Platte",
+      "precincts": 8,
+      "category_vector": [
+        3107,
+        603,
+        81,
+        118,
+        65,
+        13,
+        56
+      ],
+      "precinct_ballots": 4043,
+      "printed_county_ballots": 4043,
+      "statewide_ballots": 4043
+    },
+    {
+      "county": "Sheridan",
+      "precincts": 29,
+      "category_vector": [
+        8497,
+        2704,
+        312,
+        218,
+        351,
+        48,
+        291
+      ],
+      "precinct_ballots": 12421,
+      "printed_county_ballots": 12421,
+      "statewide_ballots": 12421
+    },
+    {
+      "county": "Sublette",
+      "precincts": 8,
+      "category_vector": [
+        2768,
+        604,
+        71,
+        48,
+        59,
+        8,
+        47
+      ],
+      "precinct_ballots": 3605,
+      "printed_county_ballots": 3605,
+      "statewide_ballots": 3605
+    },
+    {
+      "county": "Sweetwater",
+      "precincts": 35,
+      "category_vector": [
+        8362,
+        2555,
+        493,
+        225,
+        191,
+        56,
+        279
+      ],
+      "precinct_ballots": 12161,
+      "printed_county_ballots": 12161,
+      "statewide_ballots": 12161
+    },
+    {
+      "county": "Teton",
+      "precincts": 17,
+      "category_vector": [
+        2957,
+        6447,
+        335,
+        67,
+        259,
+        62,
+        229
+      ],
+      "precinct_ballots": 10356,
+      "printed_county_ballots": 10356,
+      "statewide_ballots": 10356
+    },
+    {
+      "county": "Uinta",
+      "precincts": 10,
+      "category_vector": [
+        5119,
+        987,
+        178,
+        161,
+        103,
+        41,
+        150
+      ],
+      "precinct_ballots": 6739,
+      "printed_county_ballots": 6739,
+      "statewide_ballots": 6739
+    },
+    {
+      "county": "Washakie",
+      "precincts": 5,
+      "category_vector": [
+        2430,
+        435,
+        93,
+        43,
+        35,
+        11,
+        77
+      ],
+      "precinct_ballots": 3124,
+      "printed_county_ballots": 3124,
+      "statewide_ballots": 3124
+    },
+    {
+      "county": "Weston",
+      "precincts": 8,
+      "category_vector": [
+        2412,
+        256,
+        47,
+        44,
+        33,
+        3,
+        50
+      ],
+      "precinct_ballots": 2845,
+      "printed_county_ballots": 2845,
+      "statewide_ballots": 2845
+    }
+  ],
+  "category_labels": [
+    "Harriet Hageman (R)",
+    "Lynnette GreyBull (D)",
+    "Richard Brubaker (L)",
+    "Marissa Joy Selvig (C)",
+    "Write-Ins",
+    "Overvotes",
+    "Undervotes"
+  ],
+  "statewide_category_vector": [
+    132206,
+    47250,
+    5420,
+    4505,
+    4521,
+    636,
+    3660
+  ],
+  "statewide_ballots": 198198,
+  "candidate_write_in_votes": 193902,
+  "independently_checked_house_cells": 3073,
+  "independently_checked_ballot_cells": 439,
+  "all_acquired_csv_house_and_ballot_cells_match": true,
+  "explicit_non_count_continuation_markers": 4,
+  "native_display_crosswalk": [
+    {
+      "county": "Carbon",
+      "acquired_csv_literal": "2022-01-01 00:00:00",
+      "native_excel_format": "mm-dd",
+      "displayed_precinct": "01-01",
+      "native_workbook_occurrences": [
+        {
+          "workbook": "2022_General_County_PbP.xlsx",
+          "sheet": "Carbon",
+          "native_excel_format": "mm-dd",
+          "row": 5
+        }
+      ]
+    },
+    {
+      "county": "Carbon",
+      "acquired_csv_literal": "2022-01-02 00:00:00",
+      "native_excel_format": "mm-dd",
+      "displayed_precinct": "01-02",
+      "native_workbook_occurrences": [
+        {
+          "workbook": "2022_General_County_PbP.xlsx",
+          "sheet": "Carbon",
+          "native_excel_format": "mm-dd",
+          "row": 6
+        }
+      ]
+    },
+    {
+      "county": "Carbon",
+      "acquired_csv_literal": "2022-02-01 00:00:00",
+      "native_excel_format": "mm-dd",
+      "displayed_precinct": "02-01",
+      "native_workbook_occurrences": [
+        {
+          "workbook": "2022_General_County_PbP.xlsx",
+          "sheet": "Carbon",
+          "native_excel_format": "mm-dd",
+          "row": 7
+        }
+      ]
+    },
+    {
+      "county": "Carbon",
+      "acquired_csv_literal": "2022-02-02 00:00:00",
+      "native_excel_format": "mm-dd",
+      "displayed_precinct": "02-02",
+      "native_workbook_occurrences": [
+        {
+          "workbook": "2022_General_County_PbP.xlsx",
+          "sheet": "Carbon",
+          "native_excel_format": "mm-dd",
+          "row": 8
+        }
+      ]
+    },
+    {
+      "county": "Carbon",
+      "acquired_csv_literal": "2022-03-01 00:00:00",
+      "native_excel_format": "mm-dd",
+      "displayed_precinct": "03-01",
+      "native_workbook_occurrences": [
+        {
+          "workbook": "2022_General_County_PbP.xlsx",
+          "sheet": "Carbon",
+          "native_excel_format": "mm-dd",
+          "row": 9
+        }
+      ]
+    },
+    {
+      "county": "Carbon",
+      "acquired_csv_literal": "2022-03-02 00:00:00",
+      "native_excel_format": "mm-dd",
+      "displayed_precinct": "03-02",
+      "native_workbook_occurrences": [
+        {
+          "workbook": "2022_General_County_PbP.xlsx",
+          "sheet": "Carbon",
+          "native_excel_format": "mm-dd",
+          "row": 10
+        }
+      ]
+    },
+    {
+      "county": "Carbon",
+      "acquired_csv_literal": "2022-04-01 00:00:00",
+      "native_excel_format": "mm-dd",
+      "displayed_precinct": "04-01",
+      "native_workbook_occurrences": [
+        {
+          "workbook": "2022_General_County_PbP.xlsx",
+          "sheet": "Carbon",
+          "native_excel_format": "mm-dd",
+          "row": 11
+        }
+      ]
+    },
+    {
+      "county": "Carbon",
+      "acquired_csv_literal": "2022-05-01 00:00:00",
+      "native_excel_format": "mm-dd",
+      "displayed_precinct": "05-01",
+      "native_workbook_occurrences": [
+        {
+          "workbook": "2022_General_County_PbP.xlsx",
+          "sheet": "Carbon",
+          "native_excel_format": "mm-dd",
+          "row": 12
+        }
+      ]
+    },
+    {
+      "county": "Carbon",
+      "acquired_csv_literal": "2022-06-01 00:00:00",
+      "native_excel_format": "mm-dd",
+      "displayed_precinct": "06-01",
+      "native_workbook_occurrences": [
+        {
+          "workbook": "2022_General_County_PbP.xlsx",
+          "sheet": "Carbon",
+          "native_excel_format": "mm-dd",
+          "row": 13
+        }
+      ]
+    },
+    {
+      "county": "Carbon",
+      "acquired_csv_literal": "2022-07-01 00:00:00",
+      "native_excel_format": "mm-dd",
+      "displayed_precinct": "07-01",
+      "native_workbook_occurrences": [
+        {
+          "workbook": "2022_General_County_PbP.xlsx",
+          "sheet": "Carbon",
+          "native_excel_format": "mm-dd",
+          "row": 14
+        }
+      ]
+    },
+    {
+      "county": "Carbon",
+      "acquired_csv_literal": "2022-08-01 00:00:00",
+      "native_excel_format": "mm-dd",
+      "displayed_precinct": "08-01",
+      "native_workbook_occurrences": [
+        {
+          "workbook": "2022_General_County_PbP.xlsx",
+          "sheet": "Carbon",
+          "native_excel_format": "mm-dd",
+          "row": 15
+        }
+      ]
+    },
+    {
+      "county": "Carbon",
+      "acquired_csv_literal": "2022-09-01 00:00:00",
+      "native_excel_format": "mm-dd",
+      "displayed_precinct": "09-01",
+      "native_workbook_occurrences": [
+        {
+          "workbook": "2022_General_County_PbP.xlsx",
+          "sheet": "Carbon",
+          "native_excel_format": "mm-dd",
+          "row": 16
+        }
+      ]
+    },
+    {
+      "county": "Carbon",
+      "acquired_csv_literal": "2022-10-01 00:00:00",
+      "native_excel_format": "mm-dd",
+      "displayed_precinct": "10-01",
+      "native_workbook_occurrences": [
+        {
+          "workbook": "2022_General_County_PbP.xlsx",
+          "sheet": "Carbon",
+          "native_excel_format": "mm-dd",
+          "row": 17
+        }
+      ]
+    },
+    {
+      "county": "Carbon",
+      "acquired_csv_literal": "2022-11-01 00:00:00",
+      "native_excel_format": "mm-dd",
+      "displayed_precinct": "11-01",
+      "native_workbook_occurrences": [
+        {
+          "workbook": "2022_General_County_PbP.xlsx",
+          "sheet": "Carbon",
+          "native_excel_format": "mm-dd",
+          "row": 18
+        }
+      ]
+    },
+    {
+      "county": "Carbon",
+      "acquired_csv_literal": "2022-11-02 00:00:00",
+      "native_excel_format": "mm-dd",
+      "displayed_precinct": "11-02",
+      "native_workbook_occurrences": [
+        {
+          "workbook": "2022_General_County_PbP.xlsx",
+          "sheet": "Carbon",
+          "native_excel_format": "mm-dd",
+          "row": 19
+        }
+      ]
+    },
+    {
+      "county": "Carbon",
+      "acquired_csv_literal": "2022-12-01 00:00:00",
+      "native_excel_format": "mm-dd",
+      "displayed_precinct": "12-01",
+      "native_workbook_occurrences": [
+        {
+          "workbook": "2022_General_County_PbP.xlsx",
+          "sheet": "Carbon",
+          "native_excel_format": "mm-dd",
+          "row": 20
+        }
+      ]
+    },
+    {
+      "county": "Converse",
+      "acquired_csv_literal": "2022-01-01 00:00:00",
+      "native_excel_format": "mm-dd",
+      "displayed_precinct": "01-01",
+      "native_workbook_occurrences": [
+        {
+          "workbook": "2022_General_County_PbP.xlsx",
+          "sheet": "Converse",
+          "native_excel_format": "mm-dd",
+          "row": 5
+        }
+      ]
+    },
+    {
+      "county": "Converse",
+      "acquired_csv_literal": "2022-02-02 00:00:00",
+      "native_excel_format": "mm-dd",
+      "displayed_precinct": "02-02",
+      "native_workbook_occurrences": [
+        {
+          "workbook": "2022_General_County_PbP.xlsx",
+          "sheet": "Converse",
+          "native_excel_format": "mm-dd",
+          "row": 6
+        }
+      ]
+    },
+    {
+      "county": "Converse",
+      "acquired_csv_literal": "2022-03-01 00:00:00",
+      "native_excel_format": "mm-dd",
+      "displayed_precinct": "03-01",
+      "native_workbook_occurrences": [
+        {
+          "workbook": "2022_General_County_PbP.xlsx",
+          "sheet": "Converse",
+          "native_excel_format": "mm-dd",
+          "row": 7
+        }
+      ]
+    },
+    {
+      "county": "Converse",
+      "acquired_csv_literal": "2022-04-04 00:00:00",
+      "native_excel_format": "mm-dd",
+      "displayed_precinct": "04-04",
+      "native_workbook_occurrences": [
+        {
+          "workbook": "2022_General_County_PbP.xlsx",
+          "sheet": "Converse",
+          "native_excel_format": "mm-dd",
+          "row": 8
+        }
+      ]
+    },
+    {
+      "county": "Converse",
+      "acquired_csv_literal": "2022-06-06 00:00:00",
+      "native_excel_format": "mm-dd",
+      "displayed_precinct": "06-06",
+      "native_workbook_occurrences": [
+        {
+          "workbook": "2022_General_County_PbP.xlsx",
+          "sheet": "Converse",
+          "native_excel_format": "mm-dd",
+          "row": 9
+        }
+      ]
+    },
+    {
+      "county": "Converse",
+      "acquired_csv_literal": "2022-07-07 00:00:00",
+      "native_excel_format": "mm-dd",
+      "displayed_precinct": "07-07",
+      "native_workbook_occurrences": [
+        {
+          "workbook": "2022_General_County_PbP.xlsx",
+          "sheet": "Converse",
+          "native_excel_format": "mm-dd",
+          "row": 10
+        }
+      ]
+    },
+    {
+      "county": "Converse",
+      "acquired_csv_literal": "2022-08-08 00:00:00",
+      "native_excel_format": "mm-dd",
+      "displayed_precinct": "08-08",
+      "native_workbook_occurrences": [
+        {
+          "workbook": "2022_General_County_PbP.xlsx",
+          "sheet": "Converse",
+          "native_excel_format": "mm-dd",
+          "row": 11
+        }
+      ]
+    },
+    {
+      "county": "Converse",
+      "acquired_csv_literal": "2022-09-01 00:00:00",
+      "native_excel_format": "mm-dd",
+      "displayed_precinct": "09-01",
+      "native_workbook_occurrences": [
+        {
+          "workbook": "2022_General_County_PbP.xlsx",
+          "sheet": "Converse",
+          "native_excel_format": "mm-dd",
+          "row": 12
+        }
+      ]
+    },
+    {
+      "county": "Converse",
+      "acquired_csv_literal": "2022-09-02 00:00:00",
+      "native_excel_format": "mm-dd",
+      "displayed_precinct": "09-02",
+      "native_workbook_occurrences": [
+        {
+          "workbook": "2022_General_County_PbP.xlsx",
+          "sheet": "Converse",
+          "native_excel_format": "mm-dd",
+          "row": 13
+        }
+      ]
+    },
+    {
+      "county": "Converse",
+      "acquired_csv_literal": "2022-10-10 00:00:00",
+      "native_excel_format": "m-d",
+      "displayed_precinct": "10-10",
+      "native_workbook_occurrences": [
+        {
+          "workbook": "2022_General_County_PbP.xlsx",
+          "sheet": "Converse",
+          "native_excel_format": "m-d",
+          "row": 14
+        }
+      ]
+    },
+    {
+      "county": "Converse",
+      "acquired_csv_literal": "2022-11-11 00:00:00",
+      "native_excel_format": "m-d",
+      "displayed_precinct": "11-11",
+      "native_workbook_occurrences": [
+        {
+          "workbook": "2022_General_County_PbP.xlsx",
+          "sheet": "Converse",
+          "native_excel_format": "m-d",
+          "row": 15
+        }
+      ]
+    },
+    {
+      "county": "Crook",
+      "acquired_csv_literal": "2022-01-01 00:00:00",
+      "native_excel_format": "mm-dd",
+      "displayed_precinct": "01-01",
+      "native_workbook_occurrences": [
+        {
+          "workbook": "2022_General_County_PbP.xlsx",
+          "sheet": "Crook",
+          "native_excel_format": "mm-dd",
+          "row": 5
+        }
+      ]
+    },
+    {
+      "county": "Crook",
+      "acquired_csv_literal": "2022-01-02 00:00:00",
+      "native_excel_format": "mm-dd",
+      "displayed_precinct": "01-02",
+      "native_workbook_occurrences": [
+        {
+          "workbook": "2022_General_County_PbP.xlsx",
+          "sheet": "Crook",
+          "native_excel_format": "mm-dd",
+          "row": 6
+        }
+      ]
+    },
+    {
+      "county": "Crook",
+      "acquired_csv_literal": "2022-02-02 00:00:00",
+      "native_excel_format": "mm-dd",
+      "displayed_precinct": "02-02",
+      "native_workbook_occurrences": [
+        {
+          "workbook": "2022_General_County_PbP.xlsx",
+          "sheet": "Crook",
+          "native_excel_format": "mm-dd",
+          "row": 7
+        }
+      ]
+    },
+    {
+      "county": "Crook",
+      "acquired_csv_literal": "2022-03-03 00:00:00",
+      "native_excel_format": "mm-dd",
+      "displayed_precinct": "03-03",
+      "native_workbook_occurrences": [
+        {
+          "workbook": "2022_General_County_PbP.xlsx",
+          "sheet": "Crook",
+          "native_excel_format": "mm-dd",
+          "row": 8
+        }
+      ]
+    },
+    {
+      "county": "Crook",
+      "acquired_csv_literal": "2022-07-07 00:00:00",
+      "native_excel_format": "mm-dd",
+      "displayed_precinct": "07-07",
+      "native_workbook_occurrences": [
+        {
+          "workbook": "2022_General_County_PbP.xlsx",
+          "sheet": "Crook",
+          "native_excel_format": "mm-dd",
+          "row": 9
+        }
+      ]
+    },
+    {
+      "county": "Crook",
+      "acquired_csv_literal": "2022-09-09 00:00:00",
+      "native_excel_format": "mm-dd",
+      "displayed_precinct": "09-09",
+      "native_workbook_occurrences": [
+        {
+          "workbook": "2022_General_County_PbP.xlsx",
+          "sheet": "Crook",
+          "native_excel_format": "mm-dd",
+          "row": 10
+        }
+      ]
+    },
+    {
+      "county": "Crook",
+      "acquired_csv_literal": "2022-11-11 00:00:00",
+      "native_excel_format": "m-d",
+      "displayed_precinct": "11-11",
+      "native_workbook_occurrences": [
+        {
+          "workbook": "2022_General_County_PbP.xlsx",
+          "sheet": "Crook",
+          "native_excel_format": "m-d",
+          "row": 11
+        }
+      ]
+    },
+    {
+      "county": "Crook",
+      "acquired_csv_literal": "2022-12-12 00:00:00",
+      "native_excel_format": "m-d",
+      "displayed_precinct": "12-12",
+      "native_workbook_occurrences": [
+        {
+          "workbook": "2022_General_County_PbP.xlsx",
+          "sheet": "Crook",
+          "native_excel_format": "m-d",
+          "row": 12
+        }
+      ]
+    }
+  ],
+  "printed_ballot_conflicts": [
+    {
+      "county": "Natrona",
+      "precinct_sum": 22955,
+      "printed_county_total": 22957,
+      "statewide_county_value": 22955
+    }
+  ],
+  "maps_approved": false,
+  "geometry_approved": false,
+  "turnout_rates_available": false,
+  "ballot_approval": "withheld",
+  "party_note": "Native Selvig (C) and acquired CSV CTRY remain distinct literal labels; no alias inferred.",
+  "method": "Native workbook election/office/category headers, exact cell values and Excel display formats independently reconcile acquired CSV cells. Printed ballot conflicts remain unrepaired; no geographic allocation or registered denominator is inferred."
+}

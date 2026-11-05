@@ -54,6 +54,68 @@ me_pa_participation = module("review-maine-pennsylvania-participation")
 wy_originals = module("archive-wyoming-election-sources")
 wy_native_text = module("recover-wyoming-native-pdf-text")
 wy_review = module("review-wyoming-precinct-results")
+wy_2022 = module("review-wyoming-2022-native-results")
+
+
+@pytest.mark.parametrize("failure", [
+    None, "wrong_year", "wrong_format", "wrong_time", "duplicate", "negative", "missing_total",
+])
+def test_wyoming_2022_native_excel_display_and_ballot_conflict_are_not_silently_repaired(failure):
+    from datetime import datetime
+
+    book = openpyxl.Workbook()
+    sheet = book.active
+    sheet.append([None, "Wyoming General Election - November 8, 2022"])
+    sheet.append([None, None])
+    sheet.append(["Precinct", "Total Ballots Cast"])
+    sheet.append([datetime(2022, 1, 2), 10])
+    sheet["A4"].number_format = "mm-dd"
+    sheet.append(["Precincts Continue\non Next Page", None])
+    sheet.append(["02-02", 0])
+    sheet.append(["Total", 12])
+    if failure == "wrong_year":
+        sheet["B1"] = "November 3, 2026"
+    elif failure == "wrong_format":
+        sheet["A4"].number_format = "yyyy-mm-dd"
+    elif failure == "wrong_time":
+        sheet["A4"] = datetime(2022, 1, 2, 1)
+    elif failure == "duplicate":
+        sheet["A6"] = "01-02"
+    elif failure == "negative":
+        sheet["B6"] = -1
+    elif failure == "missing_total":
+        sheet.delete_rows(7)
+    if failure:
+        with pytest.raises(ValueError):
+            wy_2022.table(sheet, False)
+    else:
+        units, printed, crosswalk, markers = wy_2022.table(sheet, False)
+        assert units == {"01-02": dict(values=[10], row=4), "02-02": dict(values=[0], row=6)}
+        assert printed == [12] and sum(item["values"][0] for item in units.values()) == 10
+        assert crosswalk == {"2022-01-02 00:00:00": dict(acquired_csv_literal="2022-01-02 00:00:00",
+            native_excel_format="mm-dd", displayed_precinct="01-02")} and markers == 1
+
+
+@pytest.mark.parametrize("wrong_header", [False, True])
+def test_wyoming_2022_native_house_categories_must_retain_original_order(wrong_header):
+    book = openpyxl.Workbook()
+    sheet = book.active
+    sheet.append([None, "November 8, 2022"])
+    sheet.append([None] * 8)
+    sheet.append([None, "United States Representative"])
+    labels = wy_2022.CATEGORIES.copy()
+    if wrong_header:
+        labels[2:4] = labels[2:4][::-1]
+    sheet.append(["Precinct", *labels])
+    sheet.append(["001", 1, 2, 3, 4, 0, 0, 0])
+    sheet.append(["Total", 1, 2, 3, 4, 0, 0, 0])
+    if wrong_header:
+        with pytest.raises(ValueError):
+            wy_2022.table(sheet, True)
+    else:
+        units, total, _, _ = wy_2022.table(sheet, True)
+        assert units == {"001": dict(values=[1, 2, 3, 4, 0, 0, 0], row=5)}
+        assert total == [1, 2, 3, 4, 0, 0, 0]
 
 
 @pytest.mark.parametrize("failure", [
