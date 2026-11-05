@@ -1,0 +1,56 @@
+{
+  "status": "passed",
+  "checked_at": "2026-11-05T21:14:03.780601+00:00",
+  "source_commit": "28cdb2c434e01ab2fe45696970e95b4454900a08",
+  "public_csv_assets": [
+    {
+      "file": "county-candidate-results.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/28cdb2c434e01ab2fe45696970e95b4454900a08/data/county-source-reviews/20261105-bucks-reviewed-02/county-candidate-results.csv",
+      "bytes": 4651,
+      "sha256": "4d56b262e84210079f218ba79aef1204e28bb69bd06b07cc951b9f9db0ab952c",
+      "byte_identical": true
+    },
+    {
+      "file": "county-candidate-mode-counts.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/28cdb2c434e01ab2fe45696970e95b4454900a08/data/county-source-reviews/20261105-bucks-reviewed-02/county-candidate-mode-counts.csv",
+      "bytes": 17230,
+      "sha256": "07b92a5cf85bd180f663e78293f423dd7e8dca2785afa724c3cd1f19c94efc56",
+      "byte_identical": true
+    },
+    {
+      "file": "county-office-party-totals.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/28cdb2c434e01ab2fe45696970e95b4454900a08/data/county-source-reviews/20261105-bucks-reviewed-02/county-office-party-totals.csv",
+      "bytes": 688,
+      "sha256": "41bc55b7fefabfd66bcc8e3e97008eae550e1eb39934dbe168d090a28c613138",
+      "byte_identical": true
+    },
+    {
+      "file": "county-contest-totals.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/28cdb2c434e01ab2fe45696970e95b4454900a08/data/county-source-reviews/20261105-bucks-reviewed-02/county-contest-totals.csv",
+      "bytes": 1311,
+      "sha256": "3026f18852ca014cbfacf8cf101f68548e255d40b803eac08d814c90e3cf7052",
+      "byte_identical": true
+    },
+    {
+      "file": "county-participation.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/28cdb2c434e01ab2fe45696970e95b4454900a08/data/county-source-reviews/20261105-bucks-reviewed-02/county-participation.csv",
+      "bytes": 440,
+      "sha256": "8fe900355d008dcc02576e891539e3fdd66aaa4301165949f9acd18c73dff133",
+      "byte_identical": true
+    },
+    {
+      "file": "native-unit-participation.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/28cdb2c434e01ab2fe45696970e95b4454900a08/data/county-source-reviews/20261105-bucks-reviewed-02/native-unit-participation.csv",
+      "bytes": 22124,
+      "sha256": "0ac97bb6fffe2e99b628fced717c999250334b860f902d84c83bdd01cba6e097",
+      "byte_identical": true
+    },
+    {
+      "file": "native-unit-candidate-counts.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/28cdb2c434e01ab2fe45696970e95b4454900a08/data/county-source-reviews/20261105-bucks-reviewed-02/native-unit-candidate-counts.csv",
+      "bytes": 370189,
+      "sha256": "d9596a7b832838e235716eb9bd849ebcf1ee09ec7ce993d8c784da0f8319d1d4",
+      "byte_identical": true
+    }
+  ]
+}

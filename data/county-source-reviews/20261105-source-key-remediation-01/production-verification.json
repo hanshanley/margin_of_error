@@ -1,0 +1,53 @@
+{
+  "status": "current_sources_and_downloads_live_verified_historical_keys_unresolved",
+  "checked_at": "2026-11-05T21:21:53.749451+00:00",
+  "deployment": {
+    "conclusion": "success",
+    "createdAt": "2026-11-05T21:07:43Z",
+    "databaseId": 42109764552,
+    "headSha": "142d4086f3977c52a73062e5cf08184ff712a36f",
+    "status": "completed",
+    "updatedAt": "2026-11-05T21:21:30Z",
+    "url": "https://github.com/hanshanley/margin_of_error/actions/runs/42109764552"
+  },
+  "production_public_assets": [
+    {
+      "file": "county-results.json",
+      "sha256": "d725c5005ee7da0cb1954a1a03c5505f4391ee2ab1ba3e3162f416d70dba17bf",
+      "bytes": 7163,
+      "byte_identical": true
+    },
+    {
+      "file": "participation-source-reviews.json",
+      "sha256": "a39b7ea8199468f8190c6f87a50a28fb863ff607915de7d9e46a385eb6db0dc8",
+      "bytes": 30631,
+      "byte_identical": true
+    }
+  ],
+  "four_browser_modes_passed": true,
+  "exact_complete_download_urls": 225,
+  "legacy_urls_preserved": 216,
+  "unsafe_zip_urls_replaced": 2,
+  "byte_identical_csv_urls_repinned": 7,
+  "tracked_html_files_scanned_clean": 35,
+  "election_counts_and_geometry_unchanged": true,
+  "targeted_parser_and_merge_tests_passed": 50,
+  "unrelated_full_site_uk_assertion_still_fails": true,
+  "github_alerts": [
+    {
+      "number": 2,
+      "resolution": null,
+      "state": "open",
+      "validity": "unknown"
+    },
+    {
+      "number": 1,
+      "resolution": null,
+      "state": "open",
+      "validity": "unknown"
+    }
+  ],
+  "third_party_keys_revoked": false,
+  "history_rewritten": false,
+  "remaining_blocker": "Key-owner revocation/restriction verification and authorization for any published-history rewrite"
+}
