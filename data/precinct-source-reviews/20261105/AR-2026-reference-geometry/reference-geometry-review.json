@@ -1,0 +1,641 @@
+{
+  "year": 2026,
+  "state_code": "AR",
+  "layer": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Boundaries/FeatureServer/11",
+  "reference_features": 2928,
+  "reference_counties": 75,
+  "native_house_vectors": 2769,
+  "native_precinct_identities": 2768,
+  "classifications": {
+    "unmatched": 2194,
+    "unique_literal_name_only_unconfirmed": 427,
+    "conflicting_id_and_literal_name": 6,
+    "id_only_unconfirmed": 142
+  },
+  "duplicate_reference_codes": [
+    {
+      "county_code": "05047",
+      "reference_identifier": "4-D (Oz Rural)",
+      "object_ids": [
+        1772,
+        2122
+      ]
+    },
+    {
+      "county_code": "05115",
+      "reference_identifier": "0205",
+      "object_ids": [
+        2094,
+        2224
+      ]
+    },
+    {
+      "county_code": "05131",
+      "reference_identifier": "13-B3-1",
+      "object_ids": [
+        2086,
+        2087
+      ]
+    },
+    {
+      "county_code": "05143",
+      "reference_identifier": "Greenland Twp-1",
+      "object_ids": [
+        2226,
+        2227,
+        2228
+      ]
+    },
+    {
+      "county_code": "05143",
+      "reference_identifier": "Greenland Twp-2",
+      "object_ids": [
+        1886,
+        2225
+      ]
+    },
+    {
+      "county_code": "05143",
+      "reference_identifier": "Johnson Twp-3",
+      "object_ids": [
+        1572,
+        2231
+      ]
+    },
+    {
+      "county_code": "05143",
+      "reference_identifier": "Spg 40",
+      "object_ids": [
+        2234,
+        2235
+      ]
+    }
+  ],
+  "duplicate_reference_names": [
+    {
+      "county_code": "05047",
+      "reference_identifier": "4-d (oz rural)",
+      "object_ids": [
+        1772,
+        2122
+      ]
+    },
+    {
+      "county_code": "05115",
+      "reference_identifier": "0205",
+      "object_ids": [
+        2094,
+        2224
+      ]
+    },
+    {
+      "county_code": "05131",
+      "reference_identifier": "13-b3-1",
+      "object_ids": [
+        2086,
+        2087
+      ]
+    },
+    {
+      "county_code": "05143",
+      "reference_identifier": "greenland twp-1",
+      "object_ids": [
+        2226,
+        2227,
+        2228
+      ]
+    },
+    {
+      "county_code": "05143",
+      "reference_identifier": "greenland twp-2",
+      "object_ids": [
+        1886,
+        2225
+      ]
+    },
+    {
+      "county_code": "05143",
+      "reference_identifier": "johnson twp-3",
+      "object_ids": [
+        1572,
+        2231
+      ]
+    },
+    {
+      "county_code": "05143",
+      "reference_identifier": "spg 40",
+      "object_ids": [
+        2234,
+        2235
+      ]
+    }
+  ],
+  "invalid_geometry": [
+    {
+      "object_id": 200,
+      "properties": {
+        "objectid": 200,
+        "state_fips": "05",
+        "county_fips": "121",
+        "county_name": "Randolph",
+        "precinct": "29 - Demun Rural",
+        "precinct_code_1": "29 - Demun Rural",
+        "conct": "Randolph29 - Demun Rural",
+        "acres": 21409.16909582,
+        "vtdst10": "DEMUNR",
+        "vtdst20": "000029",
+        "vtdst30": null,
+        "edit_date": "20240105",
+        "globalid": "{6EF48B27-6611-48FA-ADEC-38B08D5F0B20}",
+        "Shape__Area": 86640180.0140532,
+        "Shape__Length": 95990.12676240205
+      },
+      "reason": "Ring Self-intersection[-90.9974925913443 36.29220628767]"
+    },
+    {
+      "object_id": 447,
+      "properties": {
+        "objectid": 447,
+        "state_fips": "05",
+        "county_fips": "003",
+        "county_name": "Ashley",
+        "precinct": "22 - Portland Rural",
+        "precinct_code_1": "22 - Portland Rural",
+        "conct": "Ashley22 - Portland Rural",
+        "acres": 43578.79413525,
+        "vtdst10": "000028",
+        "vtdst20": "000022",
+        "vtdst30": null,
+        "edit_date": null,
+        "globalid": "{9550F750-7823-447D-997A-5895CAD8453C}",
+        "Shape__Area": 176357828.3572959,
+        "Shape__Length": 65009.082375348524
+      },
+      "reason": "Ring Self-intersection[-91.5121622829145 33.2291360413405]"
+    },
+    {
+      "object_id": 707,
+      "properties": {
+        "objectid": 707,
+        "state_fips": "05",
+        "county_fips": "079",
+        "county_name": "Lincoln",
+        "precinct": "025 - Star City W3",
+        "precinct_code_1": "025 - Star City W3",
+        "conct": "Lincoln025 - Star City W3",
+        "acres": 1063.91112075,
+        "vtdst10": "000026",
+        "vtdst20": "000025",
+        "vtdst30": null,
+        "edit_date": null,
+        "globalid": "{92C21F82-135B-4341-A6A7-1C61CAB71F95}",
+        "Shape__Area": 4305512.773886935,
+        "Shape__Length": 17148.9490127116
+      },
+      "reason": "Ring Self-intersection[-91.8298472445593 33.9301284159565]"
+    },
+    {
+      "object_id": 851,
+      "properties": {
+        "objectid": 851,
+        "state_fips": "05",
+        "county_fips": "145",
+        "county_name": "White",
+        "precinct": "29 - Garner City",
+        "precinct_code_1": "29 - Garner City",
+        "conct": "White29 - Garner City",
+        "acres": 539.91360292,
+        "vtdst10": "000029",
+        "vtdst20": "000029",
+        "vtdst30": null,
+        "edit_date": null,
+        "globalid": "{BD9B9883-8FC3-478A-859E-38F417DF2E1F}",
+        "Shape__Area": 2184961.57135653,
+        "Shape__Length": 8591.975263978802
+      },
+      "reason": "Ring Self-intersection[-91.7740810771489 35.1449649517116]"
+    },
+    {
+      "object_id": 1037,
+      "properties": {
+        "objectid": 1037,
+        "state_fips": "05",
+        "county_fips": "137",
+        "county_name": "Stone",
+        "precinct": "Foothills",
+        "precinct_code_1": "Foothills",
+        "conct": "StoneFoothills",
+        "acres": 46795.47126887,
+        "vtdst10": "000001",
+        "vtdst20": "000112",
+        "vtdst30": null,
+        "edit_date": "20251017",
+        "globalid": "{08C891ED-8273-4359-A585-D4ED6F1402DE}",
+        "Shape__Area": 189375310.94413105,
+        "Shape__Length": 86563.98683908985
+      },
+      "reason": "Ring Self-intersection[-92.1033316851289 35.8873415573181]"
+    },
+    {
+      "object_id": 1583,
+      "properties": {
+        "objectid": 1583,
+        "state_fips": "05",
+        "county_fips": "143",
+        "county_name": "Washington",
+        "precinct": "Richland-1",
+        "precinct_code_1": "Richland-1",
+        "conct": "WashingtonRichland-1",
+        "acres": 806.20313617,
+        "vtdst10": "RICHLA",
+        "vtdst20": "000660",
+        "vtdst30": "000660",
+        "edit_date": "20220503",
+        "globalid": "{F232277C-61CA-4159-BA6F-CCBB2F2EC860}",
+        "Shape__Area": 3262601.389766245,
+        "Shape__Length": 15615.877400199139
+      },
+      "reason": "Ring Self-intersection[-94.0324472780639 36.0199416172024]"
+    },
+    {
+      "object_id": 1684,
+      "properties": {
+        "objectid": 1684,
+        "state_fips": "05",
+        "county_fips": "143",
+        "county_name": "Washington",
+        "precinct": "West Fork Twp-1",
+        "precinct_code_1": "West Fork Twp-1",
+        "conct": "WashingtonWest Fork Twp-1",
+        "acres": 10768.68467885,
+        "vtdst10": "WESTFK",
+        "vtdst20": "000880",
+        "vtdst30": "000880",
+        "edit_date": "20220503",
+        "globalid": "{5A3A4BF5-6695-42A8-800A-933230DF8035}",
+        "Shape__Area": 43579495.07120981,
+        "Shape__Length": 56148.951414694406
+      },
+      "reason": "Ring Self-intersection[-94.1687826074652 35.9359668725818]"
+    },
+    {
+      "object_id": 1699,
+      "properties": {
+        "objectid": 1699,
+        "state_fips": "05",
+        "county_fips": "143",
+        "county_name": "Washington",
+        "precinct": "Fay 26",
+        "precinct_code_1": "Fay 26",
+        "conct": "WashingtonFay 26",
+        "acres": 2760.27853435,
+        "vtdst10": "FAYE26",
+        "vtdst20": "000346",
+        "vtdst30": "000346",
+        "edit_date": "20220503",
+        "globalid": "{4340E9D5-40F5-4FDF-BDA8-F05324C6D437}",
+        "Shape__Area": 11170495.59627986,
+        "Shape__Length": 25053.627616243586
+      },
+      "reason": "Ring Self-intersection[-94.2184728135381 36.0351353215952]"
+    },
+    {
+      "object_id": 2196,
+      "properties": {
+        "objectid": 2196,
+        "state_fips": "05",
+        "county_fips": "045",
+        "county_name": "Faulkner",
+        "precinct": "14",
+        "precinct_code_1": "14",
+        "conct": "Faulkner14",
+        "acres": 18796.97613239,
+        "vtdst10": "WESTCA",
+        "vtdst20": "000014",
+        "vtdst30": null,
+        "edit_date": "20250905",
+        "globalid": "{20575625-D926-43C6-9B3C-822668926B70}",
+        "Shape__Area": 75839477.03069054,
+        "Shape__Length": 113212.08970817499
+      },
+      "reason": "Ring Self-intersection[-92.5344325580788 35.0632193624562]"
+    },
+    {
+      "object_id": 2197,
+      "properties": {
+        "objectid": 2197,
+        "state_fips": "05",
+        "county_fips": "045",
+        "county_name": "Faulkner",
+        "precinct": "21",
+        "precinct_code_1": "21",
+        "conct": "Faulkner21",
+        "acres": 5235.84570423,
+        "vtdst10": "VILONI",
+        "vtdst20": "000021",
+        "vtdst30": null,
+        "edit_date": "20250905",
+        "globalid": "{F62ED611-556B-4B37-9373-50F8F9277F3E}",
+        "Shape__Area": 21188718.316973556,
+        "Shape__Length": 45984.078585153446
+      },
+      "reason": "Ring Self-intersection[-92.2343224778816 35.0727753785947]"
+    },
+    {
+      "object_id": 2238,
+      "properties": {
+        "objectid": 2238,
+        "state_fips": "05",
+        "county_fips": "047",
+        "county_name": "Franklin",
+        "precinct": "8-A (Branch City)",
+        "precinct_code_1": "8-A (Branch City)",
+        "conct": "Franklin8-A (Branch City)",
+        "acres": 1795.36744565,
+        "vtdst10": "00008A",
+        "vtdst20": "0008-A",
+        "vtdst30": null,
+        "edit_date": "20251007",
+        "globalid": "{D426FDB8-12EF-4DCE-B693-E48DD2AC971F}",
+        "Shape__Area": 7265623.340455335,
+        "Shape__Length": 22378.44017523069
+      },
+      "reason": "Ring Self-intersection[-93.9398252156017 35.3028918911009]"
+    },
+    {
+      "object_id": 2392,
+      "properties": {
+        "objectid": 2392,
+        "state_fips": "05",
+        "county_fips": "029",
+        "county_name": "Conway",
+        "precinct": "022 - Bentley Rural",
+        "precinct_code_1": "022 - Bentley Rural",
+        "conct": "Conway022 - Bentley Rural",
+        "acres": 11085.75416048,
+        "vtdst10": "BENTRU",
+        "vtdst20": "000022",
+        "vtdst30": null,
+        "edit_date": "20260615",
+        "globalid": "{2779D8A3-7402-4D30-B979-A7506D94399B}",
+        "Shape__Area": 44862634.87223014,
+        "Shape__Length": 56340.47496049311
+      },
+      "reason": "Ring Self-intersection[-92.7540592189525 35.1082748643534]"
+    },
+    {
+      "object_id": 2447,
+      "properties": {
+        "objectid": 2447,
+        "state_fips": "05",
+        "county_fips": "065",
+        "county_name": "Izard",
+        "precinct": "Franklin Rural",
+        "precinct_code_1": "Franklin Rural",
+        "conct": "IzardFranklin Rural",
+        "acres": 14095.280029130001,
+        "vtdst10": "FRKRUR",
+        "vtdst20": "000009",
+        "vtdst30": "009",
+        "edit_date": "20260702",
+        "globalid": "{42D75EB7-0919-4495-986C-F2FBF079B2D4}",
+        "Shape__Area": 57650638.05055552,
+        "Shape__Length": 61278.28045437871
+      },
+      "reason": "Ring Self-intersection[-91.7886342652698 36.1538789907941]"
+    },
+    {
+      "object_id": 2449,
+      "properties": {
+        "objectid": 2449,
+        "state_fips": "05",
+        "county_fips": "125",
+        "county_name": "Saline",
+        "precinct": "15",
+        "precinct_code_1": "15",
+        "conct": "Saline15",
+        "acres": 959.72008739,
+        "vtdst10": "000015",
+        "vtdst20": "000015",
+        "vtdst30": null,
+        "edit_date": "20260826",
+        "globalid": "{C8E9D10E-5A78-4730-B4FC-D47FA65E2BC0}",
+        "Shape__Area": 4190874.1075103,
+        "Shape__Length": 23067.03291261942
+      },
+      "reason": "Ring Self-intersection[-92.5509846114642 34.5851139302387]"
+    },
+    {
+      "object_id": 2652,
+      "properties": {
+        "objectid": 2652,
+        "state_fips": "05",
+        "county_fips": "007",
+        "county_name": "Benton",
+        "precinct": "139",
+        "precinct_code_1": "139",
+        "conct": "Benton139",
+        "acres": 3794.68661945,
+        "vtdst10": null,
+        "vtdst20": null,
+        "vtdst30": "000139",
+        "edit_date": "20231214",
+        "globalid": "{0995D634-FB3E-404D-A704-98E49C81ABA1}",
+        "Shape__Area": 15356613.343296895,
+        "Shape__Length": 34678.1993109951
+      },
+      "reason": "Ring Self-intersection[-94.3310233024903 36.3593134976514]"
+    },
+    {
+      "object_id": 2659,
+      "properties": {
+        "objectid": 2659,
+        "state_fips": "05",
+        "county_fips": "007",
+        "county_name": "Benton",
+        "precinct": "215",
+        "precinct_code_1": "215",
+        "conct": "Benton215",
+        "acres": 1378.3305389700001,
+        "vtdst10": null,
+        "vtdst20": null,
+        "vtdst30": "000215",
+        "edit_date": "20261002",
+        "globalid": "{BC1FC904-0BB8-4CFE-8F35-63A0DB230A39}",
+        "Shape__Area": 5577928.105531185,
+        "Shape__Length": 23751.6839031892
+      },
+      "reason": "Ring Self-intersection[-94.2860404544315 36.3041671490255]"
+    },
+    {
+      "object_id": 2855,
+      "properties": {
+        "objectid": 2855,
+        "state_fips": "05",
+        "county_fips": "007",
+        "county_name": "Benton",
+        "precinct": "424",
+        "precinct_code_1": "424",
+        "conct": "Benton424",
+        "acres": 1006.11280956,
+        "vtdst10": null,
+        "vtdst20": null,
+        "vtdst30": "000424",
+        "edit_date": "20261002",
+        "globalid": "{38795FC5-50B2-4288-A73A-D00B509E00FD}",
+        "Shape__Area": 4071610.37145191,
+        "Shape__Length": 18856.935568887584
+      },
+      "reason": "Ring Self-intersection[-94.2213715358875 36.4234043641462]"
+    },
+    {
+      "object_id": 2874,
+      "properties": {
+        "objectid": 2874,
+        "state_fips": "05",
+        "county_fips": "007",
+        "county_name": "Benton",
+        "precinct": "223",
+        "precinct_code_1": "223",
+        "conct": "Benton223",
+        "acres": 1373.2896767700001,
+        "vtdst10": null,
+        "vtdst20": null,
+        "vtdst30": "000223",
+        "edit_date": "20261002",
+        "globalid": "{34B8C863-FA7F-44D2-9F9F-9472EEAADBAE}",
+        "Shape__Area": 5557528.37834,
+        "Shape__Length": 19751.598432409908
+      },
+      "reason": "Ring Self-intersection[-94.3029974480332 36.3144762507677]"
+    }
+  ],
+  "material_overlaps": [
+    {
+      "left_object_id": 917,
+      "right_object_id": 2395,
+      "area_square_meters": 1.2929305681500032,
+      "smaller_precinct_fraction": 2.1511934674926932e-07
+    },
+    {
+      "left_object_id": 923,
+      "right_object_id": 2394,
+      "area_square_meters": 4.78834366235087,
+      "smaller_precinct_fraction": 1.101001583372757e-06
+    }
+  ],
+  "subthreshold_overlap_pairs": 32,
+  "county_label_conflicts": [],
+  "multi_house_scope": [
+    {
+      "county_code": "05119",
+      "county": "Pulaski",
+      "precinct_code": "276",
+      "precinct": "Precinct 47",
+      "contest_id": "1fb26d77-3a4c-4c93-ae14-2bb1b5d5031a",
+      "classification": "unmatched",
+      "id_reference_objects": [],
+      "name_reference_objects": [],
+      "conflicting_county_label_objects": [],
+      "house_vectors_for_identity": 2,
+      "maps_approved": false
+    },
+    {
+      "county_code": "05119",
+      "county": "Pulaski",
+      "precinct_code": "276",
+      "precinct": "Precinct 47",
+      "contest_id": "8c69fac1-a18e-4c3a-b296-2d2e7c79f1b6",
+      "classification": "unmatched",
+      "id_reference_objects": [],
+      "name_reference_objects": [],
+      "conflicting_county_label_objects": [],
+      "house_vectors_for_identity": 2,
+      "maps_approved": false
+    }
+  ],
+  "native_edit_dates": {
+    "20220503": 472,
+    "20220815": 3,
+    "20220829": 7,
+    "20221006": 20,
+    "20221215": 1,
+    "20230206": 3,
+    "20230404": 8,
+    "20230413": 2,
+    "20230525": 7,
+    "20230714": 9,
+    "20230928": 12,
+    "20231214": 253,
+    "20240105": 3,
+    "20240216": 9,
+    "20240326": 9,
+    "20240613": 2,
+    "20240716": 15,
+    "20240717": 1,
+    "20240718": 3,
+    "20240719": 2,
+    "20240723": 52,
+    "20240814": 1,
+    "20240828": 1,
+    "20241002": 1,
+    "20241209": 5,
+    "20241231": 2,
+    "20250108": 7,
+    "20250114": 8,
+    "20250129": 3,
+    "20250205": 1,
+    "20250211": 4,
+    "20250214": 7,
+    "20250303": 1,
+    "20250321": 2,
+    "20250620": 4,
+    "20250624": 1,
+    "20250625": 2,
+    "20250707": 9,
+    "20250821": 2,
+    "20250826": 2,
+    "20250905": 42,
+    "20250924": 11,
+    "20250925": 23,
+    "20250926": 14,
+    "20250929": 15,
+    "20251007": 7,
+    "20251017": 8,
+    "20251030": 1,
+    "20251121": 3,
+    "20251216": 2,
+    "20260429": 27,
+    "20260518": 7,
+    "20260527": 27,
+    "20260528": 90,
+    "20260603": 4,
+    "20260615": 8,
+    "20260702": 17,
+    "20260708": 8,
+    "20260722": 6,
+    "20260723": 5,
+    "20260728": 2,
+    "20260812": 1,
+    "20260825": 1,
+    "20260826": 2,
+    "20260928": 2,
+    "20261002": 158,
+    "not_reported": 1481
+  },
+  "dependencies": {
+    "shapely": "2.0.7",
+    "pyproj": "3.6.1"
+  },
+  "election_day_geometry_certified": false,
+  "geometry_repaired": false,
+  "maps_approved": false,
+  "scope": "Complete current official reference, not certified election-day geometry. Numeric ID collisions and unique names alone are not approved crosswalks. No polygon repair, fuzzy label matching, pooled vote allocation, missing-count imputation, inferred participation rates or map publication. Material overlaps exceed both 1 square meter and 0.0000001 of the smaller polygon in EPSG:5070.",
+  "original_receipts": 23,
+  "geometry_pages": 15,
+  "complete_object_id_set_verified": true,
+  "native_count_source_commit": "36fb8b109d0044a1d3cc7527a2810cdf70f3dc2d",
+  "native_count_release": "voter-precinct-arkansas-native-counts-20261105",
+  "native_count_table_sha256": "6aa855e89d163d172d75ad3e587b8c914103d8bb5ff30b5b13c4f43c0a5da905",
+  "legacy_notice_redirected": true
+}

@@ -3486,8 +3486,15 @@ Five focused coverage tests pass; the complete production build and Pages
 preparer pass, verifying **94** byte-identical relocated downloads and a
 **986,275,862-byte** artifact. This metadata-only integration does not repeat
 unchanged renderer suites. The previously documented unrelated UK full-validator
-failure remains outside this batch. Next: commit/push the integration as Hans,
-then verify its exact deployment and actual public bytes/download modes.
+failure remains outside this batch.
+Hans UI commit **`686968e68cdd9d45ea41cc8783a0f7fce91cb3f9`** is pushed.
+Its exact deployment **42024792976** succeeds. Unqueried production registries,
+worklist and unchanged renderer bytes match this commit. All four actual
+desktop/mobile by JavaScript/no-JavaScript production modes pass **81 complete
+downloads**, retaining all 77 older links, and **13 whole CSV endpoints**.
+Proofs: `files/alabama-native-count-ui-publication-proof-01.json`,
+`files/alabama-native-count-ui-live-browser-proof-01.json`.
+No new Alabama map, inferred rate or demographic estimate is approved.
 
 Arkansas's official results index explicitly links the actual public application
 `https://arkansas.tally-enr.com/#bucket=results&filter=Federal&contest=eafd140a-9378-43a2-bd6d-f8661524139b`.
@@ -3580,16 +3587,79 @@ Results" button then selects Arkansas County and captures its actual
 `native-public-response-017`). The page now explicitly offers "View Precinct
 Results". Like the county control, follow its actual visible text rather than
 assuming a button role; the guessed button-role locator times out.
-County selection alone does not request precinct geometry. All new
-originals remain in the session cache, separate from the released count package;
-never mutate the immutable package's earlier original set.
+The initial county-only observation did not capture precinct geometry. Completing
+the actual precinct-list and McFall-leaf navigation now exposes the real browser
+request to
+`https://gis.tally-enr.com/gis/states/arkansas/counties-precincts/05001-precincts.json`,
+which returns **HTTP 403**. Preserve this actual network evidence in
+`files/precinct-expansion-sources/AR-2026-native-01/native-app-network-precinct-leaf.json`;
+do not guess alternate Tally paths or repeatedly request the denied asset.
+All new app originals remain separate from the released count package.
 
-**Next executable actions:** follow the real precinct-results/list selection and
-map controls to capture actual precinct-geometry requests; review county-qualified
-identities, election applicability, split House scopes, topology and vote modes
-before maps. Keep analysis rates withheld. Persist Alabama's verified source
-package/release and complete-table integration next. Do not rerun Arkansas's
-finished count-only production matrix as a substitute for acquisition.
+An independent official statewide reference is now completely acquired:
+`https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Boundaries/FeatureServer/11`.
+The historical GIS-office Searcy update notice is present in search's archived
+primary content, but its actual current request redirects to the new GIS Hub.
+The captured current Hub declares organization **`PwY9ZuZRDiI5nXUB`**.
+Its complete eight-item precinct search independently identifies the actual
+service as item **`bf5b2828a59542478f903b62ec83fe48`**. Preserve this current
+catalog/item declaration rather than claiming the redirected response still
+contains the old notice. The official web-map item
+**`ced6585f228c4d7e8fb406c65a5df7ec`** explicitly describes the precinct
+boundaries as public-domain records; full licensing and attribution are retained.
+
+All **2,928 native polygons** across **75 counties** are acquired in **15**
+bounded pages respecting the service's **200-record** limit. Each page's actual
+object IDs match its requested set, with no transfer-limit truncation. Complete
+before/after object-ID sets match. All **23 original receipts** and native edit
+dates are retained. The edit-date field includes 2026 changes through October 2;
+that fact alone does not certify election-day applicability. Session collector:
+`files/acquire-arkansas-2026-official-gis-01.py`; complete capture:
+`files/precinct-expansion-sources/AR-2026-official-gis-01/`.
+
+The tested offline reviewer is
+`scripts/review-arkansas-2026-reference-geometry.py`; immutable package:
+`data/precinct-source-reviews/20261105/AR-2026-reference-geometry/`.
+It preserves every original polygon page, every native geometry attribute,
+all **2,769** reviewed House vectors, all per-vector identity diagnostics and
+the portable reviewer. Every source count remains pinned to the previously
+released native-count review; no count package or existing map is modified.
+Case/whitespace-only literal comparisons produce **427 unique name-only
+unconfirmed** vectors, **142 ID-only unconfirmed** vectors, **six conflicting
+ID/name** vectors and **2,194 unmatched** vectors. None is automatically joined.
+The six conflicts include Garland and Lonoke: a native election location ID can
+point to a different polygon than the actual literal name. Numeric equality is
+not proof that the two systems use the same identifier namespace.
+
+The complete geometry audit retains **18 invalid native polygons**, **two**
+material overlap pairs and **32** subthreshold numerical overlap pairs.
+Materiality uses the established Virginia criteria: both more than one square
+meter and more than 0.0000001 of the smaller polygon in EPSG:5070.
+Seven duplicate reference codes and seven duplicate reference names remain
+explicit. Pulaski native location **276**, "Precinct 47", has two House contest
+scopes and remains unresolved. No shape repair, vote allocation, fuzzy join,
+election-day certification, new map or inferred rate is approved.
+
+**14 focused tests pass**, covering false numeric-ID matches, ID/name conflicts,
+county qualification and county-label conflicts, ambiguous reference identities,
+split House scope, duplicate result identity, null/empty/nonpolygon/self-crossing
+geometry and material overlaps. Independent verification checks all **29 file
+checksums**, all **23 original receipts**, every vector classification, complete
+native object IDs, all invalid-object identities, exact ZIP members and CRC.
+An extracted-archive-only rebuild is **byte-identical**.
+Complete ZIP: **27,742,134 bytes**, SHA-256
+`fcac6aa268e557ab8264e0bf167b5a9e1947821fc8e2525b4e7acca81e1e8e3f`.
+Proof: `files/arkansas-reference-geometry-package-proof-01.json`.
+
+**Next executable actions:** Alabama's exact live verification is complete;
+do not repeat its successful matrix. Commit/push the verified Arkansas reference package as Hans and
+publish its own complete immutable release; verify the entire anonymous
+download. Then obtain explicit county crosswalk/election-applicability evidence
+and review source-declared label formats without fuzzy matching. Alabama's
+native county-name/FIPS correspondence is another bounded map-enabling task;
+never pad its non-FIPS native codes. Keep new map joins and analysis rates
+withheld until their exact requirements pass. Do not repeat completed live
+matrices as a substitute for acquisition.
 
 ## Resume procedure for every work session or scheduled prompt
 

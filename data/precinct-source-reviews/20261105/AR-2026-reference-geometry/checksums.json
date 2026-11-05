@@ -1,0 +1,118 @@
+{
+  "all-reference-properties.csv": {
+    "bytes": 492492,
+    "sha256": "d095e8c049bf49447ab88317d7620ac895d51339720e4fec3ea400ddef92de96"
+  },
+  "native-source/originals/current-official-org-precinct-search.gz": {
+    "bytes": 5227,
+    "sha256": "eaf910631013aea40c1bae8ca86da1299d950ea4fec2a3b21141d779375d57da"
+  },
+  "native-source/originals/current-official-precinct-item.gz": {
+    "bytes": 1267,
+    "sha256": "9336351477f4c9680dab53f6f93fcf7e7bed1fef10c4566d41ee0f1385031118"
+  },
+  "native-source/originals/current-official-precinct-webmap-data.gz": {
+    "bytes": 1330,
+    "sha256": "c57fc8b96d9d19c210f201ad17f4f51f366fc6329ef4c799c187137aec2a33bb"
+  },
+  "native-source/originals/current-official-precinct-webmap-item.gz": {
+    "bytes": 1303,
+    "sha256": "309725fe261ca379d0b5943330ca8b61d5716144f87ae717391a4f6de4db7dff"
+  },
+  "native-source/originals/official-2026-searcy-update-notice.gz": {
+    "bytes": 11978,
+    "sha256": "1113a732a9011cb6881b045848d3464f2cd48cd49663556e4dd139ed65f749af"
+  },
+  "native-source/originals/official-layer-metadata.gz": {
+    "bytes": 2562,
+    "sha256": "39b123b7d7937b93057b197355c9a56ab69fedcedc67328cf5fdb91c46250be6"
+  },
+  "native-source/originals/official-object-ids-after.gz": {
+    "bytes": 6396,
+    "sha256": "c4f35dc3dbb51615ac126ed42ba3a7cd4c69dea1a67cd0217ea510ca4bd1f9e6"
+  },
+  "native-source/originals/official-object-ids-before.gz": {
+    "bytes": 6396,
+    "sha256": "c4f35dc3dbb51615ac126ed42ba3a7cd4c69dea1a67cd0217ea510ca4bd1f9e6"
+  },
+  "native-source/originals/official-precinct-geometry-00000.gz": {
+    "bytes": 1428393,
+    "sha256": "968599891c9ffdffffe2812bbf736af1e297d24bb7db9e36f0665fac7b9fb932"
+  },
+  "native-source/originals/official-precinct-geometry-00200.gz": {
+    "bytes": 755963,
+    "sha256": "8556cbf2053fb7b5406d090e6d6954dfd741e7162dd8b34a1cfb6beab454aa70"
+  },
+  "native-source/originals/official-precinct-geometry-00400.gz": {
+    "bytes": 1628388,
+    "sha256": "d29ed7d82c5777ed2aca619e50f22b97d00bca4069c5f232162b5e73e4332c42"
+  },
+  "native-source/originals/official-precinct-geometry-00600.gz": {
+    "bytes": 2325653,
+    "sha256": "22fa80d57822b11718543f63b687dd81211771b610479005f8c4e9179b7871dd"
+  },
+  "native-source/originals/official-precinct-geometry-00800.gz": {
+    "bytes": 1655307,
+    "sha256": "c249fcd9d7f1f6c4f1da618b6b646984fc3c346cc6b1f39378682ad3b5c434c4"
+  },
+  "native-source/originals/official-precinct-geometry-01000.gz": {
+    "bytes": 1778729,
+    "sha256": "bccb36786db4eea54e4d892744c1cbbe1b15431c329c166c4954a7e9d20810cb"
+  },
+  "native-source/originals/official-precinct-geometry-01200.gz": {
+    "bytes": 1810683,
+    "sha256": "4698857c5c4f78f7307d9ed35e6d0e32000a920601671da7a5da83ba7493d60c"
+  },
+  "native-source/originals/official-precinct-geometry-01400.gz": {
+    "bytes": 1085235,
+    "sha256": "21bbc096e4a18f56b34649b6a892f54253060540ad26b4142128c8813474cc0b"
+  },
+  "native-source/originals/official-precinct-geometry-01600.gz": {
+    "bytes": 2704670,
+    "sha256": "edcccc8aaf5195a1a048f48e8c2269cc54cbe09fe0e60778839617b1361ef06f"
+  },
+  "native-source/originals/official-precinct-geometry-01800.gz": {
+    "bytes": 2374140,
+    "sha256": "2b771d771c0fc37b8a41fb6d928e3dc85b7db4e09eba3798f74b24243b598c25"
+  },
+  "native-source/originals/official-precinct-geometry-02000.gz": {
+    "bytes": 2257504,
+    "sha256": "013ff67e788c2e108601df26df294254d4768f39ebc9e544aca7e170da7f6156"
+  },
+  "native-source/originals/official-precinct-geometry-02200.gz": {
+    "bytes": 2323567,
+    "sha256": "9f39c6e1f0f21ba28ba3209712e78400ca3467de57ed8435c2ca26d94d5d728e"
+  },
+  "native-source/originals/official-precinct-geometry-02400.gz": {
+    "bytes": 916633,
+    "sha256": "04b567c51c3702014a3d0a420df5eba236380d102aa357217a416db3db6b0aeb"
+  },
+  "native-source/originals/official-precinct-geometry-02600.gz": {
+    "bytes": 714158,
+    "sha256": "dfd8ab9e6e5addce6a67f9e2f211b185e82b1da6251fe3ca6660668675dc27e9"
+  },
+  "native-source/originals/official-precinct-geometry-02800.gz": {
+    "bytes": 446842,
+    "sha256": "0d68d174b2572ff6ea2024b23f4c9684f506a2d7939b86e31eff58c4cbf3b7a9"
+  },
+  "native-source/sources.json": {
+    "bytes": 57745,
+    "sha256": "0b734b3f2fb0882cde06f6ceb94d18e83605f9ba60376ec388df727e415a39db"
+  },
+  "reference/precinct-counts.csv": {
+    "bytes": 2632151,
+    "sha256": "6aa855e89d163d172d75ad3e587b8c914103d8bb5ff30b5b13c4f43c0a5da905"
+  },
+  "reference-geometry-review.json": {
+    "bytes": 18260,
+    "sha256": "06adf3ccb15bed265454544bd2683dbb41382df08375e28d3edae0259c307384"
+  },
+  "reporting-vector-geometry-diagnostic.csv": {
+    "bytes": 275970,
+    "sha256": "3cd20be962097ce7ef59d32e9add83f8cabf3176fcb26772145701a9a7ef9046"
+  },
+  "review.py": {
+    "bytes": 12997,
+    "sha256": "2fbd669f43b752eb8e0574ddef72bf4b31f33b567eb1e2aac44e97ddfbb78a82"
+  }
+}

@@ -64,6 +64,95 @@ va_geometry = module("review-virginia-2026-reference-geometry")
 va_maps = module("build-virginia-2026-precinct-results")
 ar_2026 = module("review-arkansas-2026-native-results")
 al_2026 = module("review-alabama-2026-native-results")
+ar_geometry = module("review-arkansas-2026-reference-geometry")
+
+
+def arkansas_reference_fixture():
+    feature = dict(type="Feature", properties=dict(objectid=1, state_fips="05",
+        county_fips="001", county_name="Arkansas", precinct="McFall", precinct_code_1="12",
+        edit_date=None),
+        geometry=dict(type="Polygon", coordinates=[
+            [[-91.5, 34], [-91.4, 34], [-91.4, 34.1], [-91.5, 34.1], [-91.5, 34]]]))
+    row = dict(year="2026", state_code="AR", county_code="05001", county="Arkansas",
+               precinct_code="12", precinct="McFall", contest_id="house1")
+    return row, feature
+
+
+def test_arkansas_reference_exact_identity_does_not_approve_election_geometry():
+    row, feature = arkansas_reference_fixture()
+    report, diagnostic = ar_geometry.audit([row], [feature])
+    assert diagnostic[0]["classification"] == "exact_id_and_literal_name"
+    assert not report["maps_approved"] and not report["election_day_geometry_certified"]
+
+
+@pytest.mark.parametrize("change,expected", [
+    ({"precinct": "Other"}, "id_only_unconfirmed"),
+    ({"precinct_code_1": "99"}, "unique_literal_name_only_unconfirmed"),
+    ({"precinct_code_1": "99", "precinct": "Other"}, "unmatched"),
+    ({"county_fips": "003", "county_name": "Ashley"}, "unmatched"),
+])
+def test_arkansas_reference_unconfirmed_links(change, expected):
+    row, feature = arkansas_reference_fixture()
+    feature["properties"].update(change)
+    assert ar_geometry.diagnose([row], [feature])[0][0]["classification"] == expected
+
+
+def test_arkansas_reference_conflicting_id_and_name_is_not_name_join():
+    row, feature = arkansas_reference_fixture()
+    other = copy.deepcopy(feature)
+    feature["properties"]["precinct"] = "Other"
+    other["properties"].update(objectid=2, precinct_code_1="99")
+    result = ar_geometry.diagnose([row], [feature, other])[0][0]
+    assert result["classification"] == "conflicting_id_and_literal_name"
+
+
+def test_arkansas_reference_duplicate_reference_name_remains_ambiguous():
+    row, feature = arkansas_reference_fixture()
+    other = copy.deepcopy(feature)
+    other["properties"].update(objectid=2, precinct_code_1="99")
+    assert ar_geometry.diagnose([row], [feature, other])[0][0][
+        "classification"] == "ambiguous_reference_identity"
+
+
+def test_arkansas_reference_county_label_conflict_and_split_house_scope_retained():
+    row, feature = arkansas_reference_fixture()
+    feature["properties"]["county_name"] = "Wrong county"
+    other = dict(row, contest_id="house2")
+    result = ar_geometry.diagnose([row, other], [feature])[0]
+    assert all(value["conflicting_county_label_objects"] == [1]
+               and value["house_vectors_for_identity"] == 2
+               and not value["maps_approved"] for value in result)
+
+
+def test_arkansas_reference_duplicate_result_identity_rejected():
+    row, feature = arkansas_reference_fixture()
+    with pytest.raises(ValueError, match="Duplicate native"):
+        ar_geometry.diagnose([row, row], [feature])
+
+
+@pytest.mark.parametrize("geometry,expected", [
+    (None, "native_null_geometry"),
+    ({"type": "Point", "coordinates": [-91, 34]}, "native_nonpolygon_geometry"),
+    ({"type": "Polygon", "coordinates": []}, "native_empty_geometry"),
+])
+def test_arkansas_reference_invalid_geometry_not_repaired(geometry, expected):
+    assert ar_geometry.geometry_issue(geometry) == expected
+
+
+def test_arkansas_reference_self_intersection_not_repaired():
+    geometry = dict(type="Polygon", coordinates=[
+        [[-91.5, 34], [-91.4, 34.1], [-91.5, 34.1], [-91.4, 34], [-91.5, 34]]])
+    assert "Self-intersection" in ar_geometry.geometry_issue(geometry)
+
+
+def test_arkansas_reference_material_overlap_is_reported_without_repair():
+    row, feature = arkansas_reference_fixture()
+    other = copy.deepcopy(feature)
+    other["properties"].update(objectid=2, precinct_code_1="99", precinct="Other")
+    report, _ = ar_geometry.audit([row], [feature, other])
+    assert len(report["material_overlaps"]) == 1
+    assert report["material_overlaps"][0]["smaller_precinct_fraction"] == pytest.approx(1)
+    assert not report["geometry_repaired"] and not report["maps_approved"]
 
 
 def alabama_native_example():
