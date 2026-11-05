@@ -1,0 +1,12 @@
+{
+  "url": "https://agencies2.monroecountypa.gov/ElectionResults/Contest?ct=GOVERNOR+AND+LIEUTENANT+GOVERNOR&id=10",
+  "final_url": "https://agencies2.monroecountypa.gov/ElectionResults/Contest?ct=GOVERNOR+AND+LIEUTENANT+GOVERNOR&id=10",
+  "status": 200,
+  "bytes": 45941,
+  "sha256": "5a2c8b91b8cfe60156ed5a380e807cb5fb2ef350acaa446efea57ef80a3fd523",
+  "acquired_at": "2026-11-05T17:38:03.439896+00:00",
+  "headers": {
+    "Content-Type": "text/html; charset=utf-8",
+    "Date": "Thu, 05 Nov 2026 17:38:02 GMT"
+  }
+}

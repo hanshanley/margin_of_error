@@ -1,0 +1,15 @@
+{
+  "url": "https://agencies2.monroecountypa.gov/ElectionResults/pdf/Act88-2026%20General%20Election.pdf?t=639294790680372981",
+  "final_url": "https://agencies2.monroecountypa.gov/ElectionResults/pdf/Act88-2026%20General%20Election.pdf?t=639294790680372981",
+  "method": "GET",
+  "status": 200,
+  "bytes": 252217,
+  "sha256": "56f2921a04cf6124b64f625842141966f8c3c78a41506721896098652940b361",
+  "acquired_at": "2026-11-05T17:37:48.278327+00:00",
+  "headers": {
+    "Content-Type": "application/pdf",
+    "Last-Modified": "Wed, 04 Nov 2026 04:15:45 GMT",
+    "ETag": "\"1dd6c1329a4b7b9\"",
+    "Date": "Thu, 05 Nov 2026 17:37:48 GMT"
+  }
+}

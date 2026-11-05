@@ -1,0 +1,13 @@
+{
+  "url": "https://agencies2.monroecountypa.gov/ElectionResults/",
+  "final_url": "https://agencies2.monroecountypa.gov/ElectionResults/",
+  "method": "GET",
+  "status": 200,
+  "bytes": 81309,
+  "sha256": "1216bfc4e27513b142301c048ef16b1fee32ca3f7d04a7686d0cddda5bc37d72",
+  "acquired_at": "2026-11-05T17:37:48.063525+00:00",
+  "headers": {
+    "Content-Type": "text/html; charset=utf-8",
+    "Date": "Thu, 05 Nov 2026 17:37:48 GMT"
+  }
+}

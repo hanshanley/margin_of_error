@@ -1,0 +1,14 @@
+year,state_code,county,office,party,candidate_votes
+2026,PA,Monroe,governor,DEMOCRATIC,36822
+2026,PA,Monroe,governor,LIBERTARIAN,994
+2026,PA,Monroe,governor,Nonpartisan,85
+2026,PA,Monroe,governor,REPUBLICAN,22729
+2026,PA,Monroe,state_house,DEMOCRATIC,34309
+2026,PA,Monroe,state_house,Nonpartisan,123
+2026,PA,Monroe,state_house,REPUBLICAN,26196
+2026,PA,Monroe,state_senate,DEMOCRATIC,32059
+2026,PA,Monroe,state_senate,Nonpartisan,109
+2026,PA,Monroe,state_senate,REPUBLICAN,27922
+2026,PA,Monroe,us_house,DEMOCRATIC,35157
+2026,PA,Monroe,us_house,Nonpartisan,134
+2026,PA,Monroe,us_house,REPUBLICAN,25190

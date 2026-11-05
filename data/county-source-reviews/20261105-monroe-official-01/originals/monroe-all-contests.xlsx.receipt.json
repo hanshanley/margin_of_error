@@ -1,0 +1,14 @@
+{
+  "url": "https://agencies2.monroecountypa.gov/ElectionResults?handler=Excel",
+  "final_url": "https://agencies2.monroecountypa.gov/ElectionResults?handler=Excel",
+  "method": "POST",
+  "status": 200,
+  "bytes": 7561,
+  "sha256": "c8168fce8708c7eb2a5222d51c6a184186386c23ba9901a1ac30e3e8ee218869",
+  "acquired_at": "2026-11-05T17:37:48.179793+00:00",
+  "headers": {
+    "Content-Type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    "Content-Disposition": "attachment; filename=ElectionData10.xlsx; filename*=UTF-8''ElectionData10.xlsx",
+    "Date": "Thu, 05 Nov 2026 17:37:48 GMT"
+  }
+}

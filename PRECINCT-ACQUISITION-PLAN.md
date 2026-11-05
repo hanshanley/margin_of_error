@@ -193,7 +193,7 @@ pointers/renderer bytes in four display modes. Deployment and aggregate proofs
 are saved beside it. Keep the two-year immutable download links.
 
 Next:
-Continue 2018/2016 source-specific quality review next: their unresolved
+Continue 2018/2016 source-specific quality review: their unresolved
 party labels, Missouri noncounty buckets and Texas source undercoverage need
 separate handling rather than a blanket extrapolation from the two newest years.
 Historical maps still require election-year county crosswalks.
@@ -207,7 +207,7 @@ Do not silently replace measured participation or infer demographic turnout from
 these state-level estimates. Recurring schedule #4 replaces obsolete precinct-first
 schedule #3 and follows this county-first priority.
 
-D.C. official follow-up (while the three-year historical deployment runs):
+D.C. official follow-up:
 `data/county-source-reviews/20261105-dc-official-01/` retains all seven native
 JSON/CSV/XML/PDF data/report originals and exact HTTP/hash receipts. Its complete
 CSV has 10,011 rows across 144 reporting precincts. Precinct registrations and
@@ -227,6 +227,38 @@ ballots were cast. These are acquired originals with reviewed arithmetic,
 not a registered public normalized export or approved 2026 map geometry.
 Use these saved originals for the next scoped review instead of repeating
 app/API discovery.
+
+Pennsylvania official county alternative, November 5 follow-up:
+`data/county-source-reviews/20261105-monroe-official-01/` retains Monroe's
+complete native all-contest workbook, seven declared contest pages, county
+overview/export form, Act88 PDF and exact HTTP receipts. The reviewer
+`scripts/review-monroe-2026-county-results.py` reconciles all 22 candidate rows,
+66 candidate/mode rows and 715 native reporting-unit/candidate rows against
+every printed contest total and every workbook row. House and state legislative
+district partitions each cover the same 55 native county reporting units without
+overlap; this establishes count scope, not geographic boundaries.
+
+The six complete tables include seven contest totals, 13 county/office/literal
+party totals and the separate county participation observation. Monroe's
+60,481 House candidate votes comprise 35,157 DEMOCRATIC, 25,190 REPUBLICAN and
+134 native Nonpartisan write-ins. Preserve the workbook's Nonpartisan label
+and HTML's blank write-in label separately. These votes are not the county's
+61,025 tabulated ballots or 118,818 eligible registered voters. The separate
+Act88 report's 18,232 received mail ballots are not counted mail ballots or
+candidate mail votes. The native result update is November 3, 2026, 11:04:59 PM;
+all results remain unofficial.
+
+Philadelphia's accessible official overview explicitly says
+`*** Testing in Progress ***`. Its complete original and receipt are retained
+as excluded evidence; none of its apparent counts is promoted. Do not retry
+the previously blocked statewide portal or relax the national provider's
+17 test-data exclusions. Continue other actual official county alternatives.
+This is one county's reviewed counts, not statewide Pennsylvania completion,
+an approved new map or new precinct coverage. Current map coverage remains
+48 states / 3,060 county equivalents. The package reproduces all 33 files
+and its complete ZIP byte-for-byte; all 29 focused tests pass.
+Publication/reproduction receipts live separately in
+`data/county-source-reviews/20261105-monroe-publication-01/`.
 
 The user supplied NYT's 2026 Senate precinct-map page and full coverage notes.
 The source-lead audit is

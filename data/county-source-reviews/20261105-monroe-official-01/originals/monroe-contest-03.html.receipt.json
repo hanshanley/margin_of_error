@@ -1,0 +1,12 @@
+{
+  "url": "https://agencies2.monroecountypa.gov/ElectionResults/Contest?ct=SENATOR+IN+THE+GENERAL+ASSEMBLY+40TH+DISTRICT&id=10",
+  "final_url": "https://agencies2.monroecountypa.gov/ElectionResults/Contest?ct=SENATOR+IN+THE+GENERAL+ASSEMBLY+40TH+DISTRICT&id=10",
+  "status": 200,
+  "bytes": 39049,
+  "sha256": "b3c2b3de427e54ad9118a22926f496aaa66f90c7372d9c29ae3e33b2fa2df8c7",
+  "acquired_at": "2026-11-05T17:38:03.856536+00:00",
+  "headers": {
+    "Content-Type": "text/html; charset=utf-8",
+    "Date": "Thu, 05 Nov 2026 17:38:03 GMT"
+  }
+}

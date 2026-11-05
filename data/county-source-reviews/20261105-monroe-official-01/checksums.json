@@ -1,0 +1,130 @@
+{
+  "audit.json": {
+    "bytes": 1775,
+    "sha256": "08f7827c404c0ee16d79d75c8e18808f34b2f661b8ea683b4b8ed8d57c4a8abc"
+  },
+  "county-candidate-mode-counts.csv": {
+    "bytes": 10732,
+    "sha256": "b64da7a3ef639976ec83ceeb76fde23cbf07cb58e9ca6d585de8eabeb054f243"
+  },
+  "county-candidate-results.csv": {
+    "bytes": 3376,
+    "sha256": "9bdb3466aba3bbe656e47e339aa3db7f353537c9acc660fc800715407f14f065"
+  },
+  "county-contest-totals.csv": {
+    "bytes": 890,
+    "sha256": "c976f99db6456ee765082a7e2ad6f9c762126d080224713abea3c35f4b2b1f16"
+  },
+  "county-office-party-totals.csv": {
+    "bytes": 614,
+    "sha256": "6cb9d966df7b7a74a93c457276b9ea9c06f3e53d3097ee089c0638e38944eef8"
+  },
+  "county-participation.csv": {
+    "bytes": 330,
+    "sha256": "6de156b9454168aa19918f3af58172a5da32fe26a3e4c9dae96331f6f36181fe"
+  },
+  "native-unit-candidate-counts.csv": {
+    "bytes": 114903,
+    "sha256": "0d97e31ccebc212ae88485265448bafa1255308c3f980b68862c53695233e442"
+  },
+  "originals/monroe-act88.pdf": {
+    "bytes": 252217,
+    "sha256": "56f2921a04cf6124b64f625842141966f8c3c78a41506721896098652940b361"
+  },
+  "originals/monroe-act88.pdf.receipt.json": {
+    "bytes": 641,
+    "sha256": "c1cf4ec7bd5c881a73373ed940084529fe0fb31a5d0e645e6b10a8998a45e135"
+  },
+  "originals/monroe-all-contests.xlsx": {
+    "bytes": 7561,
+    "sha256": "c8168fce8708c7eb2a5222d51c6a184186386c23ba9901a1ac30e3e8ee218869"
+  },
+  "originals/monroe-all-contests.xlsx.receipt.json": {
+    "bytes": 616,
+    "sha256": "6805dea031fe91799bb7d0e17cfcda6cdbcd338f4f40b844f1cd7ceb4ca87a46"
+  },
+  "originals/monroe-contest-00.html": {
+    "bytes": 45941,
+    "sha256": "5a2c8b91b8cfe60156ed5a380e807cb5fb2ef350acaa446efea57ef80a3fd523"
+  },
+  "originals/monroe-contest-00.html.receipt.json": {
+    "bytes": 519,
+    "sha256": "595bc8df2d7aa1724afb4b46c08b8c3435ffba163f6fa761c7006c25f070c207"
+  },
+  "originals/monroe-contest-01.html": {
+    "bytes": 16117,
+    "sha256": "7fd5768285d736e1f80ac426a2bc61427ea401fec2062db7193434b20c4750c4"
+  },
+  "originals/monroe-contest-01.html.receipt.json": {
+    "bytes": 533,
+    "sha256": "4a11e896fda7c233fc91a62e969a15cf411219730b2fe5fed67cc3b542184e85"
+  },
+  "originals/monroe-contest-02.html": {
+    "bytes": 37753,
+    "sha256": "6331c0b337a7a9cbcf5643e32903f0413f5a38e41ceddeec94662edef021032b"
+  },
+  "originals/monroe-contest-02.html.receipt.json": {
+    "bytes": 533,
+    "sha256": "4a5a1061597c6945df52f7f259d2872cd9005f910652e5f00a427c91bed18bec"
+  },
+  "originals/monroe-contest-03.html": {
+    "bytes": 39049,
+    "sha256": "b3c2b3de427e54ad9118a22926f496aaa66f90c7372d9c29ae3e33b2fa2df8c7"
+  },
+  "originals/monroe-contest-03.html.receipt.json": {
+    "bytes": 545,
+    "sha256": "2e4a769a07ce4ab0612795b1c1c3d1ff7be4152d73a667e6feb3d83427eb8c1c"
+  },
+  "originals/monroe-contest-04.html": {
+    "bytes": 22698,
+    "sha256": "46ed8bfa5f713999ae0b79e7c6d2ede762924507174ee25a4878c60e60f59c0d"
+  },
+  "originals/monroe-contest-04.html.receipt.json": {
+    "bytes": 561,
+    "sha256": "c3a3fcdce7ab949486facc73e77aaca3db7d1d1e91c6c44e89489686e6830098"
+  },
+  "originals/monroe-contest-05.html": {
+    "bytes": 21849,
+    "sha256": "1de4e6675a2104773498c3c5409cdd37b22044de2ecfa17a3dea86d50b8fd562"
+  },
+  "originals/monroe-contest-05.html.receipt.json": {
+    "bytes": 561,
+    "sha256": "304b743801407e3f77dcf059fed41e36991f75c85ebcd78afcd6a3f84deeb339"
+  },
+  "originals/monroe-contest-06.html": {
+    "bytes": 24186,
+    "sha256": "6921be1d699f7e740fb9315866fe30069ecb11a607d02455a1c4ea3c06b54816"
+  },
+  "originals/monroe-contest-06.html.receipt.json": {
+    "bytes": 561,
+    "sha256": "912eb7cdeca51222e123c35dcede3866230d80922223d1ba090ebbb296bee875"
+  },
+  "originals/monroe-export-form.html": {
+    "bytes": 81309,
+    "sha256": "1216bfc4e27513b142301c048ef16b1fee32ca3f7d04a7686d0cddda5bc37d72"
+  },
+  "originals/monroe-export-form.html.receipt.json": {
+    "bytes": 440,
+    "sha256": "feee247f631cf51ba03bf07f007671adaad5710e03a2bb6ad626639281c8047a"
+  },
+  "originals/monroe.html": {
+    "bytes": 81309,
+    "sha256": "1ace56f3c66dfdeacfe208d137a5a480f689e6c1ae80148264430112a4281465"
+  },
+  "originals/monroe.html.receipt.json": {
+    "bytes": 421,
+    "sha256": "2a104f2a73901ef1c138afb03b4e45ea22bac19808eb3ba996ac3b97285a9946"
+  },
+  "originals/philadelphia.html": {
+    "bytes": 43166,
+    "sha256": "79b62139a8013e5996431c7d25d59734a5d6f13030cf24a45817174c4f68edbf"
+  },
+  "originals/philadelphia.html.receipt.json": {
+    "bytes": 401,
+    "sha256": "ff9defee5c6dc4e4c7822147a9cd138fd9d96817b8a897de50082170230d9bae"
+  },
+  "review-monroe-2026-county-results.py": {
+    "bytes": 18214,
+    "sha256": "8eddb84ca1492eaeae52e21c734eaa4d383a64f25c8448f8f991e6363ba76704"
+  }
+}

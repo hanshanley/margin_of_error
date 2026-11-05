@@ -1,0 +1,36 @@
+{
+  "status": "reviewed_county_only_unofficial_counts",
+  "year": 2026,
+  "state_code": "PA",
+  "county": "Monroe",
+  "fully_complete": false,
+  "maps_approved": false,
+  "source_url": "https://agencies2.monroecountypa.gov/ElectionResults/",
+  "source_update_literal": "11/3/2026 11:04:59 PM",
+  "table_rows": {
+    "county-candidate-results": 22,
+    "county-candidate-mode-counts": 66,
+    "native-unit-candidate-counts": 715,
+    "county-contest-totals": 7,
+    "county-office-party-totals": 13,
+    "county-participation": 1
+  },
+  "native_contests": 7,
+  "native_reporting_units": 55,
+  "total_ballots_tabulated": 61025,
+  "eligible_registered_voters": 118818,
+  "house_candidate_votes": 60481,
+  "scope_notes": [
+    "Monroe County only; not statewide Pennsylvania or an approved map.",
+    "All native workbook, HTML, candidate/mode and reporting-unit vectors reconcile.",
+    "House and state legislative district partitions cover the same native county units without overlap.",
+    "Candidate votes, including literal Nonpartisan write-ins, are not ballots or turnout.",
+    "The workbook's Nonpartisan write-in label and HTML's blank label remain separate native fields.",
+    "Act88 received mail ballots are not counted ballots or candidate mail votes.",
+    "Registered-voter participation uses only this county's explicit native denominator, not VEP or CPS.",
+    "All results remain unofficial; native reported/total counters are not final certification.",
+    "Philadelphia explicitly says Testing in Progress; every Philadelphia count is excluded.",
+    "No geometry, historical crosswalk, demographic estimates or new precinct coverage is approved.",
+    "Official factual returns; no blanket license claim is made for source pages or report design."
+  ]
+}

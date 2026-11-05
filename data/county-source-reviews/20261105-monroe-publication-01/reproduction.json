@@ -1,0 +1,8 @@
+{
+  "status": "all_bytes_reproduced",
+  "files_reproduced": 33,
+  "archive_bytes": 273559,
+  "archive_sha256": "0cd09dde828b4d51949d96723ee9ca84627d6125c2db3e25ee2bcfd1b192def5",
+  "all_checksums_verified": true,
+  "archive_byte_identical": true
+}

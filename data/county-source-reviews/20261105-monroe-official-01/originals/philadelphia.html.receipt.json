@@ -1,0 +1,12 @@
+{
+  "url": "https://vote-results.phila.gov/Default.aspx",
+  "final_url": "https://vote-results.phila.gov/Default.aspx",
+  "status": 200,
+  "bytes": 43166,
+  "sha256": "79b62139a8013e5996431c7d25d59734a5d6f13030cf24a45817174c4f68edbf",
+  "acquired_at": "2026-11-05T17:37:29.586042+00:00",
+  "headers": {
+    "Content-Type": "text/html; charset=utf-8",
+    "Date": "Thu, 05 Nov 2026 17:37:28 GMT"
+  }
+}

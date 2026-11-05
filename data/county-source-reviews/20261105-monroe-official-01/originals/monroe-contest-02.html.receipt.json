@@ -1,0 +1,12 @@
+{
+  "url": "https://agencies2.monroecountypa.gov/ElectionResults/Contest?ct=REPRESENTATIVE+IN+CONGRESS+8TH+DISTRICT&id=10",
+  "final_url": "https://agencies2.monroecountypa.gov/ElectionResults/Contest?ct=REPRESENTATIVE+IN+CONGRESS+8TH+DISTRICT&id=10",
+  "status": 200,
+  "bytes": 37753,
+  "sha256": "6331c0b337a7a9cbcf5643e32903f0413f5a38e41ceddeec94662edef021032b",
+  "acquired_at": "2026-11-05T17:38:03.708752+00:00",
+  "headers": {
+    "Content-Type": "text/html; charset=utf-8",
+    "Date": "Thu, 05 Nov 2026 17:38:03 GMT"
+  }
+}
