@@ -2017,7 +2017,7 @@ is registered from these acquisitions. Next execute local OCR/count review,
 follow Boston's actual declared results archive for combined precinct exports,
 and seek independently established exact-election reference applicability.
 
-### Boston central-only mapped package: source published, UI live verification pending
+### Boston central-only mapped package: source and live UI verified
 
 The declared archive was followed in full. Its only 2026 PDF declaration is the
 September primary, not a combined general-election precinct export. The complete
@@ -2090,7 +2090,8 @@ Source committed/pushed as Hans at
 `voter-precinct-boston-central-maps-20261105` targets that exact commit.
 Full remote asset redownload, size/SHA and tag-to-source checks pass:
 `files/boston-2026-remote-release-proof.json`.
-The registry now appends this source as **snapshot_ready**, not live verified.
+The registry appends this explicitly scoped source; its live flag is set only
+after the exact UI deployment and production checks described below.
 Optional `participation_available: false` omits its nonexistent participation
 download and any participation-statistics ZIP claim; all prior sources retain
 their original downloads. All prior **50** complete downloads remain byte/link
@@ -2110,12 +2111,21 @@ desktop wheel/double-click, real mobile two-pointer pinch, state fallback,
 2026 defaults, year switching and no overflow/page errors. Renderer bytes are
 unchanged. Proof: `files/boston-2026-local-browser-proof.json`.
 
-Next commit/push this bounded UI registration as Hans, watch its exact Pages
-SHA/run, compare production registry/ledger/renderer bytes and run the new
-source-matched suite against production **before** setting the live flag.
-The final flag/ledger commit also needs exact deployment and production proof.
-Massachusetts is not complete. Continue independent Worcester SOV reconciliation
-or another 2026 source while deployment runs.
+UI commit `c5f2cfef130a2184e3b2f880d82a6cb09dd7b9cf`, authored and committed
+as Hans, deployed successfully in exact Pages run **41986198749**.
+`files/boston-2026-ui-exact-pages-run.json` verifies the exact SHA and success.
+The source-matched production suite passes all four desktop/mobile x JS/no-JS
+configurations, all 252 actual colors/counts/margins, source labels/scope,
+precinct fitting/zoom and real touch gestures, 2026 defaults, historical
+switching, state fallback, all 52 downloads and prior 50-link retention.
+Proof: `files/boston-2026-live-browser-proof.json`. Unqueried production
+registry, ledger and unchanged renderer also match local bytes exactly:
+`files/boston-2026-ui-unqueried-production-proof.json`.
+Only after these checks is Boston marked **live_verified_partial**, with only
+the MA 2026 publication cell changing; all 1,632 cells remain incomplete.
+The final flag/ledger commit still needs exact deployment and production proof.
+Massachusetts is not complete; continue independent Worcester SOV reconciliation
+or another 2026 source during deployment.
 
 Worcester's actual governor SOV panels are now visually identified on PDF
 **15/16, 27/28, 39/40 and 51/52** for the four modes. The overall

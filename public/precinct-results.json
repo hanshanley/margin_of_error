@@ -84,7 +84,7 @@
     "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-boston-central-maps-20261105/complete-boston-2026-central-tabulation-precinct-maps.zip",
     "complete_download_bytes": 4790833,
     "complete_download_sha256": "2e7e59b1878508deeb85641323bdba1c31471854157921ab0cd9525addb9aa1a",
-    "publication": "snapshot_ready",
+    "publication": "live_verified_partial",
     "participation_available": false,
     "source_documents": [
       {"file": "originals/official-boston-declared-2026-central-tabulation-results.pdf.gz", "label": "Boston complete 288-page central-tabulation report ONLY, not combined results (PDF · gzip)"},
