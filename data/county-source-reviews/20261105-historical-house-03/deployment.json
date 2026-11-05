@@ -1,0 +1,231 @@
+{
+  "conclusion": "success",
+  "databaseId": 42078976258,
+  "headSha": "cbca780ecbcb0479db77d8cae90fe1c30a471172",
+  "jobs": [
+    {
+      "completedAt": "2026-11-05T17:58:42Z",
+      "conclusion": "success",
+      "databaseId": 127426666479,
+      "name": "build",
+      "startedAt": "2026-11-05T17:53:23Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-05T17:53:27Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-05T17:53:24Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-05T17:54:13Z",
+          "conclusion": "success",
+          "name": "Checkout repository",
+          "number": 2,
+          "startedAt": "2026-11-05T17:53:27Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-05T17:54:18Z",
+          "conclusion": "success",
+          "name": "Checkout congressional dashboard",
+          "number": 3,
+          "startedAt": "2026-11-05T17:54:13Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-05T17:54:18Z",
+          "conclusion": "success",
+          "name": "Stage congressional dashboard",
+          "number": 4,
+          "startedAt": "2026-11-05T17:54:18Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-05T17:54:24Z",
+          "conclusion": "success",
+          "name": "Checkout UK evidence project",
+          "number": 5,
+          "startedAt": "2026-11-05T17:54:18Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-05T17:54:27Z",
+          "conclusion": "success",
+          "name": "Set up the UK page builder",
+          "number": 6,
+          "startedAt": "2026-11-05T17:54:24Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-05T17:54:30Z",
+          "conclusion": "success",
+          "name": "Build and stage embedded UK pages",
+          "number": 7,
+          "startedAt": "2026-11-05T17:54:27Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-05T17:54:38Z",
+          "conclusion": "success",
+          "name": "Checkout U.S.\u2013China analysis",
+          "number": 8,
+          "startedAt": "2026-11-05T17:54:30Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-05T17:55:38Z",
+          "conclusion": "success",
+          "name": "Build and stage collective U.S.\u2013China analysis",
+          "number": 9,
+          "startedAt": "2026-11-05T17:54:38Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-05T17:56:12Z",
+          "conclusion": "success",
+          "name": "Checkout verified national platform analysis",
+          "number": 10,
+          "startedAt": "2026-11-05T17:55:38Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-05T17:56:41Z",
+          "conclusion": "success",
+          "name": "Stage reviewed platform figures and complete downloads",
+          "number": 11,
+          "startedAt": "2026-11-05T17:56:12Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-05T17:56:45Z",
+          "conclusion": "success",
+          "name": "Checkout verified voter participation analysis",
+          "number": 12,
+          "startedAt": "2026-11-05T17:56:41Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-05T17:58:37Z",
+          "conclusion": "success",
+          "name": "Build and upload site",
+          "number": 13,
+          "startedAt": "2026-11-05T17:56:45Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-05T17:58:37Z",
+          "conclusion": "success",
+          "name": "Post Build and upload site",
+          "number": 19,
+          "startedAt": "2026-11-05T17:58:37Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-05T17:58:37Z",
+          "conclusion": "success",
+          "name": "Post Checkout verified voter participation analysis",
+          "number": 20,
+          "startedAt": "2026-11-05T17:58:37Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-05T17:58:38Z",
+          "conclusion": "success",
+          "name": "Post Checkout verified national platform analysis",
+          "number": 21,
+          "startedAt": "2026-11-05T17:58:37Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-05T17:58:38Z",
+          "conclusion": "success",
+          "name": "Post Checkout U.S.\u2013China analysis",
+          "number": 22,
+          "startedAt": "2026-11-05T17:58:38Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-05T17:58:38Z",
+          "conclusion": "success",
+          "name": "Post Set up the UK page builder",
+          "number": 23,
+          "startedAt": "2026-11-05T17:58:38Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-05T17:58:38Z",
+          "conclusion": "success",
+          "name": "Post Checkout UK evidence project",
+          "number": 24,
+          "startedAt": "2026-11-05T17:58:38Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-05T17:58:38Z",
+          "conclusion": "success",
+          "name": "Post Checkout congressional dashboard",
+          "number": 25,
+          "startedAt": "2026-11-05T17:58:38Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-05T17:58:39Z",
+          "conclusion": "success",
+          "name": "Post Checkout repository",
+          "number": 26,
+          "startedAt": "2026-11-05T17:58:38Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-05T17:58:39Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 27,
+          "startedAt": "2026-11-05T17:58:39Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/hanshanley/margin_of_error/actions/runs/42078976258/job/127426666479"
+    },
+    {
+      "completedAt": "2026-11-05T17:59:33Z",
+      "conclusion": "success",
+      "databaseId": 127429607831,
+      "name": "deploy",
+      "startedAt": "2026-11-05T17:58:46Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-05T17:58:48Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-05T17:58:47Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-05T17:59:31Z",
+          "conclusion": "success",
+          "name": "Deploy site",
+          "number": 2,
+          "startedAt": "2026-11-05T17:58:48Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-05T17:59:31Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 3,
+          "startedAt": "2026-11-05T17:59:31Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/hanshanley/margin_of_error/actions/runs/42078976258/job/127429607831"
+    }
+  ],
+  "status": "completed",
+  "url": "https://github.com/hanshanley/margin_of_error/actions/runs/42078976258"
+}

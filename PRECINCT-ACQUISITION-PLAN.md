@@ -207,7 +207,7 @@ Do not silently replace measured participation or infer demographic turnout from
 these state-level estimates. Recurring schedule #4 replaces obsolete precinct-first
 schedule #3 and follows this county-first priority.
 
-2018 consolidated House extension, release-verified and locally verified:
+2018 consolidated House extension, released and production-verified:
 `data/historical-house-counties/20261105-medsl-03/` adds 8,851 reviewed
 candidate/party rows in 2,443 counties across 42 states. All 25 rows from
 five flagged county vectors are retained separately: 01107, 12057, 12095,
@@ -241,8 +241,16 @@ verification of all 94 relocated downloads. All 51 focused data tests pass.
 The four local display modes source-match all four historical years, 204 scope
 cells and 52 UF rows, with 178 complete download links retaining every previous
 165. Proof is `local-browser.json` in the review directory. Renderer/maps
-remain unchanged and were not redundantly retested. Exact production-page
-verification is still required before calling this extension live.
+remain unchanged and were not redundantly retested.
+
+UI commit `cbca780ecbcb0479db77d8cae90fe1c30a471172` is live: exact Pages
+run `42078976258` succeeded. Production proof `production-browser.json`
+in the same review directory confirms all four year rows, all 204 scope cells,
+all 178 complete download URLs (retaining every previous 165), all 52 UF rows
+and exact public pointer/registry/renderer bytes in four display modes.
+The deployment receipt is saved beside it; both publication manifests verify.
+Keep both previous immutable historical snapshots. Next historical work is
+the separate 2016 source-specific review, not another completed 2018 check.
 
 D.C. official follow-up:
 `data/county-source-reviews/20261105-dc-official-01/` retains all seven native

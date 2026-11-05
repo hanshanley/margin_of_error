@@ -1,7 +1,15 @@
 {
+  "deployment.json": {
+    "bytes": 7431,
+    "sha256": "3ad318850d6989d24ca0349d886f1498b2135e2fc2c363e6fddf612344f01676"
+  },
   "local-browser.json": {
     "bytes": 31088,
     "sha256": "0b96da0bceb431ef1389632600c6c4c7bf56d25fedfd0b977e82151e67a4100b"
+  },
+  "production-browser.json": {
+    "bytes": 31099,
+    "sha256": "8a7c15f5253c4ab61d7506e88c9a4be070f01fd62f5134848606ca6398f6145c"
   },
   "release-verification.json": {
     "bytes": 4701,
