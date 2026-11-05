@@ -1,0 +1,68 @@
+{
+  "official-app-item.json": {
+    "url": "https://www.arcgis.com/sharing/rest/content/items/579890d66c7e40ae9f7cc227d76669b1?f=json",
+    "final_url": "https://www.arcgis.com/sharing/rest/content/items/579890d66c7e40ae9f7cc227d76669b1?f=json",
+    "bytes": 1495,
+    "sha256": "d32b932d29bfefadc97a671461bddd2d03bdbfc3207249abd4e3cbb009379883"
+  },
+  "official-app-data.json": {
+    "url": "https://www.arcgis.com/sharing/rest/content/items/579890d66c7e40ae9f7cc227d76669b1/data?f=json",
+    "final_url": "https://www.arcgis.com/sharing/rest/content/items/579890d66c7e40ae9f7cc227d76669b1/data?f=json",
+    "bytes": 49924,
+    "sha256": "9be4ff4e55a7e13c4fdc3ebfee1e88a9ad84a64dffd43f1cbda8f6c046ec94fc"
+  },
+  "official-webmap-item.json": {
+    "url": "https://www.arcgis.com/sharing/rest/content/items/6fac55e6f6914c0da0f90e7e444b3626?f=json",
+    "final_url": "https://www.arcgis.com/sharing/rest/content/items/6fac55e6f6914c0da0f90e7e444b3626?f=json",
+    "bytes": 1043,
+    "sha256": "99175df2dc6480da0d62e42d2b842226a8fbd8076cc8424d078419014fb66b25"
+  },
+  "official-webmap-data.json": {
+    "url": "https://www.arcgis.com/sharing/rest/content/items/6fac55e6f6914c0da0f90e7e444b3626/data?f=json",
+    "final_url": "https://www.arcgis.com/sharing/rest/content/items/6fac55e6f6914c0da0f90e7e444b3626/data?f=json",
+    "bytes": 24832,
+    "sha256": "04024a7be76db220be0117ec545a4c51103322cd3e438be214e28aee678e3da8"
+  },
+  "official-geography-item.json": {
+    "url": "https://www.arcgis.com/sharing/rest/content/items/02dec5e7ae604bff951a95bc8a08f9e8?f=json",
+    "final_url": "https://www.arcgis.com/sharing/rest/content/items/02dec5e7ae604bff951a95bc8a08f9e8?f=json",
+    "bytes": 1364,
+    "sha256": "b4d04453a4e6b7b254a952ce1322285d583c4c103a2615c8a9120672ee9203f9"
+  },
+  "official-service.json": {
+    "url": "https://services3.arcgis.com/AhVzMlCdMxpkPzPE/arcgis/rest/services/AK_Election_Geography/FeatureServer?f=json",
+    "final_url": "https://services3.arcgis.com/AhVzMlCdMxpkPzPE/arcgis/rest/services/AK_Election_Geography/FeatureServer?f=json",
+    "bytes": 3341,
+    "sha256": "22b69607e3bc84ea1a5eaca62dd4779ed4b0bd0783ba90d77a99d807345d264f"
+  },
+  "official-precinct-layer.json": {
+    "url": "https://services3.arcgis.com/AhVzMlCdMxpkPzPE/arcgis/rest/services/AK_Election_Geography/FeatureServer/7?f=json",
+    "final_url": "https://services3.arcgis.com/AhVzMlCdMxpkPzPE/arcgis/rest/services/AK_Election_Geography/FeatureServer/7?f=json",
+    "bytes": 26805,
+    "sha256": "b3480a99e8ffdf407f9aedef44fd88fb75fd8680029668f586b1e1290e726427"
+  },
+  "independent-precinct-count.json": {
+    "url": "https://services3.arcgis.com/AhVzMlCdMxpkPzPE/arcgis/rest/services/AK_Election_Geography/FeatureServer/7/query?where=1%3D1&returnCountOnly=true&f=json",
+    "final_url": "https://services3.arcgis.com/AhVzMlCdMxpkPzPE/arcgis/rest/services/AK_Election_Geography/FeatureServer/7/query?where=1%3D1&returnCountOnly=true&f=json",
+    "bytes": 15,
+    "sha256": "9842916da4504f649aee45a3d33c59aa259e56b96fd5edfd7b6b3b6eda6e3503"
+  },
+  "complete-native-projected-precincts.json": {
+    "url": "https://services3.arcgis.com/AhVzMlCdMxpkPzPE/arcgis/rest/services/AK_Election_Geography/FeatureServer/7/query?where=1%3D1&outFields=%2A&returnGeometry=true&orderByFields=OBJECTID&f=json",
+    "final_url": "https://services3.arcgis.com/AhVzMlCdMxpkPzPE/arcgis/rest/services/AK_Election_Geography/FeatureServer/7/query?where=1%3D1&outFields=%2A&returnGeometry=true&orderByFields=OBJECTID&f=json",
+    "bytes": 28994894,
+    "sha256": "1d731ae471a7734db7ce392fd02979c71cab2f32abe7ba5ef59d5854c92b6a3e"
+  },
+  "complete-native-wgs84-precincts.json": {
+    "url": "https://services3.arcgis.com/AhVzMlCdMxpkPzPE/arcgis/rest/services/AK_Election_Geography/FeatureServer/7/query?where=1%3D1&outFields=%2A&returnGeometry=true&orderByFields=OBJECTID&outSR=4326&f=json",
+    "final_url": "https://services3.arcgis.com/AhVzMlCdMxpkPzPE/arcgis/rest/services/AK_Election_Geography/FeatureServer/7/query?where=1%3D1&outFields=%2A&returnGeometry=true&orderByFields=OBJECTID&outSR=4326&f=json",
+    "bytes": 35529088,
+    "sha256": "26bdd5cba4eb579485262d735c0cfc51f45b4d316359848ae58406a34a5db7ad"
+  },
+  "complete-wgs84-precincts.geojson": {
+    "url": "https://services3.arcgis.com/AhVzMlCdMxpkPzPE/arcgis/rest/services/AK_Election_Geography/FeatureServer/7/query?where=1%3D1&outFields=%2A&returnGeometry=true&orderByFields=OBJECTID&outSR=4326&f=geojson",
+    "final_url": "https://services3.arcgis.com/AhVzMlCdMxpkPzPE/arcgis/rest/services/AK_Election_Geography/FeatureServer/7/query?where=1%3D1&outFields=%2A&returnGeometry=true&orderByFields=OBJECTID&outSR=4326&f=geojson",
+    "bytes": 35547113,
+    "sha256": "fb85c96a20f3a186458cb68b7b414cda822df65e4e6a72e9c4f23dd385e3c31a"
+  }
+}

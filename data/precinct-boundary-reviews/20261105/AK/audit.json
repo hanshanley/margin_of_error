@@ -1,0 +1,224 @@
+{
+  "state_code": "AK",
+  "year": 2026,
+  "reference_features": 402,
+  "boundary_vintage": "current official locator; exact 2026 vintage not independently established",
+  "join": "withheld",
+  "publication": "full_reference_download_only",
+  "complete": false,
+  "exact_2026_native_id_set": true,
+  "exact_export_attributes": true,
+  "independently_checked_projected_vertices": 961583,
+  "inverse_web_mercator_max_error_degrees": 9.094947017729282e-13,
+  "name_differences": [
+    {
+      "precinct": "05-865",
+      "reference_name": "Seward/Lowell Point",
+      "election_name": "Seward-Lowell Point"
+    },
+    {
+      "precinct": "06-250",
+      "reference_name": "Kachemak/Fritz Creek",
+      "election_name": "Kachemak-Fritz Creek"
+    },
+    {
+      "precinct": "06-280",
+      "reference_name": "Seldovia/Kachemak Bay",
+      "election_name": "Seldovia-Kachemak Bay"
+    },
+    {
+      "precinct": "02-755",
+      "reference_name": "Petersburg/Kupreanof",
+      "election_name": "Petersburg-Kupreanof"
+    },
+    {
+      "precinct": "02-750",
+      "reference_name": "Pelican/Elfin Cove",
+      "election_name": "Pelican-Elfin Cove"
+    },
+    {
+      "precinct": "36-114",
+      "reference_name": "Mcgrath",
+      "election_name": "McGrath"
+    },
+    {
+      "precinct": "18-556",
+      "reference_name": "JBER #2",
+      "election_name": "JBER No.2"
+    },
+    {
+      "precinct": "26-375",
+      "reference_name": "Mat-su Campus",
+      "election_name": "Mat-Su Campus"
+    },
+    {
+      "precinct": "18-555",
+      "reference_name": "JBER #1",
+      "election_name": "JBER No.1"
+    }
+  ],
+  "valid_polygon_units": 402,
+  "area_preserving_repairs": [
+    {
+      "precinct": "36-010",
+      "object_id": 220,
+      "reason": "Ring Self-intersection[-154.260842000165 66.0274010001778]",
+      "area_difference": 5.329070518200751e-15
+    },
+    {
+      "precinct": "37-732",
+      "object_id": 236,
+      "reason": "Ring Self-intersection[-159.091720999591 58.9622040000026]",
+      "area_difference": 1.3877787807814457e-16
+    }
+  ],
+  "invalid_reference_units": [],
+  "cross_antimeridian_paths": [],
+  "native_vs_service_geojson_differences": [
+    {
+      "precinct": "05-870",
+      "geojson_invalid": true
+    },
+    {
+      "precinct": "36-010",
+      "geojson_invalid": true
+    },
+    {
+      "precinct": "37-732",
+      "geojson_invalid": true
+    }
+  ],
+  "overlap_scope_complete": true,
+  "overlap_pairs": [
+    {
+      "left": "05-865",
+      "right": "37-756",
+      "area_degrees_squared": 1.4468484456093417e-08,
+      "fraction_of_smaller_unit": 1.2228448308479466e-08
+    },
+    {
+      "left": "04-110",
+      "right": "04-115",
+      "area_degrees_squared": 2.105327384717386e-07,
+      "fraction_of_smaller_unit": 0.00017148179923752888
+    },
+    {
+      "left": "04-125",
+      "right": "04-105",
+      "area_degrees_squared": 8.2015922402903e-07,
+      "fraction_of_smaller_unit": 0.00041575730330992096
+    },
+    {
+      "left": "04-135",
+      "right": "04-115",
+      "area_degrees_squared": 2.417946041794898e-09,
+      "fraction_of_smaller_unit": 1.969450170629447e-06
+    },
+    {
+      "left": "04-135",
+      "right": "04-105",
+      "area_degrees_squared": 2.961665115188426e-06,
+      "fraction_of_smaller_unit": 0.0015013351865371723
+    },
+    {
+      "left": "04-105",
+      "right": "04-130",
+      "area_degrees_squared": 1.532484366678034e-08,
+      "fraction_of_smaller_unit": 5.5554504592580356e-05
+    },
+    {
+      "left": "04-105",
+      "right": "03-320",
+      "area_degrees_squared": 8.574040570229358e-08,
+      "fraction_of_smaller_unit": 9.199741626927984e-05
+    },
+    {
+      "left": "04-115",
+      "right": "04-120",
+      "area_degrees_squared": 3.9282049136492656e-09,
+      "fraction_of_smaller_unit": 3.199576708383064e-06
+    },
+    {
+      "left": "03-320",
+      "right": "04-130",
+      "area_degrees_squared": 9.115013143285484e-08,
+      "fraction_of_smaller_unit": 0.0003304308027805619
+    },
+    {
+      "left": "33-135",
+      "right": "33-155",
+      "area_degrees_squared": 1.5728433397412215e-07,
+      "fraction_of_smaller_unit": 0.0001983517306819157
+    },
+    {
+      "left": "34-235",
+      "right": "33-155",
+      "area_degrees_squared": 1.2341441849250628e-10,
+      "fraction_of_smaller_unit": 1.5563828183370395e-07
+    },
+    {
+      "left": "34-238",
+      "right": "33-155",
+      "area_degrees_squared": 4.6063798025274656e-10,
+      "fraction_of_smaller_unit": 5.809118956245645e-07
+    },
+    {
+      "left": "37-756",
+      "right": "30-590",
+      "area_degrees_squared": 1.3519895940478278e-10,
+      "fraction_of_smaller_unit": 3.008685409840289e-11
+    },
+    {
+      "left": "30-580",
+      "right": "30-555",
+      "area_degrees_squared": 1.7222520097651129e-06,
+      "fraction_of_smaller_unit": 0.00012667317344413161
+    },
+    {
+      "left": "30-605",
+      "right": "30-555",
+      "area_degrees_squared": 3.6878936286366952e-06,
+      "fraction_of_smaller_unit": 3.6047045546600104e-05
+    },
+    {
+      "left": "30-590",
+      "right": "30-555",
+      "area_degrees_squared": 1.0394903271877255e-05,
+      "fraction_of_smaller_unit": 0.00010160421894608152
+    },
+    {
+      "left": "28-480",
+      "right": "27-420",
+      "area_degrees_squared": 1.298500000161387e-09,
+      "fraction_of_smaller_unit": 1.0476274362989481e-06
+    },
+    {
+      "left": "30-555",
+      "right": "26-360",
+      "area_degrees_squared": 3.908092397510855e-07,
+      "fraction_of_smaller_unit": 4.9590329794332676e-05
+    },
+    {
+      "left": "30-555",
+      "right": "30-585",
+      "area_degrees_squared": 1.0310867491782731e-05,
+      "fraction_of_smaller_unit": 0.00010078281738257406
+    },
+    {
+      "left": "26-380",
+      "right": "26-350",
+      "area_degrees_squared": 1.4944943779003089e-07,
+      "fraction_of_smaller_unit": 4.5618062036787446e-05
+    }
+  ],
+  "overlap_tolerance_degrees_squared": 1e-10,
+  "coordinate_grid_degrees": 1e-09,
+  "reference_creation_dates": {
+    "1655494956944": 402
+  },
+  "sample_ballot_urls": [],
+  "official_locator_url": "https://akelections.maps.arcgis.com/apps/webappviewer/index.html?id=579890d66c7e40ae9f7cc227d76669b1",
+  "official_layer_url": "https://services3.arcgis.com/AhVzMlCdMxpkPzPE/arcgis/rest/services/AK_Election_Geography/FeatureServer/7",
+  "source_review": "count-review/audit.json",
+  "interpretation": "Matching IDs, current public use and edit dates do not prove exact-election boundary vintage. No geometry or candidate votes are published as a precinct join. Overlaps and label differences remain unresolved. All original exports are retained."
+}

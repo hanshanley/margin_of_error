@@ -1,0 +1,98 @@
+{
+  "audit.json": {
+    "bytes": 6627,
+    "sha256": "a5390be7319cf634c67e3b9ded645a83e16a1bbb5150156d2f23135781f339ba"
+  },
+  "count-review/audit.json": {
+    "bytes": 3135,
+    "sha256": "efccb2a89500202ef8d7bb342c56f35a3117ea9e17a84fc77cfaece11095d756"
+  },
+  "count-review/checksums.json": {
+    "bytes": 1242,
+    "sha256": "55e605093417cd41b5de74af7d12ba3dca9626ac1461989f1de47e422057ea7f"
+  },
+  "count-review/originals/full-precinct-results.csv.gz": {
+    "bytes": 229009,
+    "sha256": "503ca0f509dab194c14f9bd3f3536601b0efe5cdf2bf76ddb4ca3ca9dbd99ac8"
+  },
+  "count-review/originals/full-statewide-summary.pdf.gz": {
+    "bytes": 261085,
+    "sha256": "c3dc4a03dbaf6f6b27fb71c521e3e7866f550f2e971cc79284bf18cf8126bf21"
+  },
+  "count-review/originals/official-district-shapes.json.gz": {
+    "bytes": 22448,
+    "sha256": "6904f7cb599ccaf7793510067ef4127811ba616753d3e96b92357d53bfe13900"
+  },
+  "count-review/originals/official-precinct-shapes.json.gz": {
+    "bytes": 537351,
+    "sha256": "28ab836adb9bded0febe86cbd616c18543c75f04ae9479b49ca050bf357b8dd0"
+  },
+  "count-review/originals/precincts-original.json.gz": {
+    "bytes": 89639,
+    "sha256": "8999ef6e41c2f84cfc83d53c697cfcb558e9798b7ac61191f599ebce7a08ec64"
+  },
+  "count-review/originals/statewide-original.json.gz": {
+    "bytes": 15370,
+    "sha256": "7654f574b0758e8e2767114a7477a00b07edc140578affde7653d2cfa2712d11"
+  },
+  "count-review/participation.json.gz": {
+    "bytes": 21052,
+    "sha256": "5eb889e4ebb1dbcf6687b19f6bb3d27a790b1d498b6c3ad854f7ae59d6a1d138"
+  },
+  "count-review/results.csv.gz": {
+    "bytes": 29684,
+    "sha256": "ee478593113ef6cd75e24397e8d0f4b2c63902bec3bae6748c5f3d90c3d12fef"
+  },
+  "count-review/sources.json": {
+    "bytes": 1719,
+    "sha256": "d26d1441b53feb48955e3c346d6777c405c75dfdc484493cc515a5b4a1d56675"
+  },
+  "originals/complete-native-projected-precincts.json.gz": {
+    "bytes": 10673433,
+    "sha256": "b1c6fbc8e1a5643f878f2c104166aad456a907b315fe6f04381b7a844894c67f"
+  },
+  "originals/complete-native-wgs84-precincts.json.gz": {
+    "bytes": 11164985,
+    "sha256": "0616bbd375a7a1f8beaa522c6ce12c42911d29d9f141ae159300bcda31715aaa"
+  },
+  "originals/complete-wgs84-precincts.geojson.gz": {
+    "bytes": 11175039,
+    "sha256": "8b72d1c929c8e2d81586b438b81941ff67e1cefb2abd09e840d775e7104f165e"
+  },
+  "originals/independent-precinct-count.json.gz": {
+    "bytes": 35,
+    "sha256": "5bef85317af492cfcb5ceb4d52925cc95b9441e35edbc7887a3d88c469e3a061"
+  },
+  "originals/official-app-data.json.gz": {
+    "bytes": 22820,
+    "sha256": "93ffe946f7f22f712deb1eb87d4d694d633dc25ad86cdc908eafb068a1ff204b"
+  },
+  "originals/official-app-item.json.gz": {
+    "bytes": 790,
+    "sha256": "ae639247c2e809401cddcf4422d5f71ca3c1147175b470f6c2ae9d712b30cc19"
+  },
+  "originals/official-geography-item.json.gz": {
+    "bytes": 769,
+    "sha256": "c81d91ec3c76c50aec8b124c05a06928832124093742630ee6a186437669592f"
+  },
+  "originals/official-precinct-layer.json.gz": {
+    "bytes": 4485,
+    "sha256": "85864fb7f841f065b0afcdaf7e02f237b422e6a1e5e69d8b88de2c8df003b926"
+  },
+  "originals/official-service.json.gz": {
+    "bytes": 1445,
+    "sha256": "d1dc79b8c1c12d8fc7c72f035ce93d600ecb2af0ff266d6ccb21fff8c04bdef8"
+  },
+  "originals/official-webmap-data.json.gz": {
+    "bytes": 2404,
+    "sha256": "baa73c2f29a76261b7f92f547d86480649ea4d72a04c02430c0c40f7c7ddf79e"
+  },
+  "originals/official-webmap-item.json.gz": {
+    "bytes": 588,
+    "sha256": "5114bca6d5bff6f034bbdf625975d1d5683a329213bc39a04705b853af05daa7"
+  },
+  "sources.json": {
+    "bytes": 4781,
+    "sha256": "229f11a958052755b391e13e2a0d75f72f765bf3a81e3c29b7262465a6a90f55"
+  }
+}

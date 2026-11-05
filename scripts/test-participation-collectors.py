@@ -3,6 +3,7 @@ import importlib.util
 import io
 import hashlib
 import json
+import math
 from pathlib import Path
 
 import openpyxl
@@ -33,6 +34,112 @@ id_review = module("review-idaho-precinct-results")
 id_maps = module("build-idaho-precinct-results")
 sd_review = module("review-south-dakota-precinct-results")
 ak_review = module("review-alaska-precinct-results")
+ak_boundaries = module("review-alaska-precinct-boundaries")
+
+
+def alaska_boundary_fixture(overlap=False):
+    features, geographic_features, geojson_features, precincts = [], [], [], []
+    for oid, west in [(1, -150), (2, -149.95 if overlap else -149.8)]:
+        ring = [[west, 61], [west, 61.1], [west + .1, 61.1], [west + .1, 61], [west, 61]]
+        number, name = f"01-{oid}00", f"Precinct {oid}"
+        attributes = dict(OBJECTID=oid, Precinct_Number=f"{number} {name}",
+            HouseDistrict="01", CreationDate=1655494956944, Sample_Ballot_URL=None)
+        projected = [[math.radians(lon) * 6378137,
+                      math.log(math.tan(math.pi / 4 + math.radians(lat) / 2)) * 6378137]
+                     for lon, lat in ring]
+        features.append(dict(attributes=dict(attributes), geometry=dict(rings=[projected])))
+        geographic_features.append(dict(attributes=dict(attributes), geometry=dict(rings=[ring])))
+        geojson_features.append(dict(type="Feature", properties=dict(attributes),
+            geometry=dict(type="Polygon", coordinates=[[list(p) for p in ring]])))
+        precincts.append(dict(number=number, name=name))
+    return (dict(spatialReference=dict(wkid=102100), geometryType="esriGeometryPolygon",
+                 features=features),
+            dict(spatialReference=dict(wkid=4326), geometryType="esriGeometryPolygon",
+                 features=geographic_features),
+            dict(type="FeatureCollection", features=geojson_features),
+            dict(name="Alaska 2026 General Election", precincts=precincts))
+
+
+def test_alaska_locator_matching_ids_and_current_use_do_not_establish_election_vintage():
+    audit = ak_boundaries.audit_references(*alaska_boundary_fixture())
+    assert audit["reference_features"] == audit["valid_polygon_units"] == 2
+    assert audit["overlap_scope_complete"] and not audit["overlap_pairs"]
+    assert audit["join"] == "withheld" and audit["complete"] is False
+    assert "not independently established" in audit["boundary_vintage"]
+    assert audit["reference_creation_dates"] == {"1655494956944": 2}
+
+
+def test_alaska_locator_audits_labels_without_silently_substituting_aliases():
+    fixture = alaska_boundary_fixture()
+    fixture[3]["precincts"][0]["name"] = "Different official label"
+    audit = ak_boundaries.audit_references(*fixture)
+    assert audit["name_differences"] == [dict(precinct="01-100",
+        reference_name="Precinct 1", election_name="Different official label")]
+    assert audit["join"] == "withheld"
+
+
+def test_alaska_locator_checks_overlaps_against_every_reference_including_conflicting_labels():
+    fixture = alaska_boundary_fixture(overlap=True)
+    fixture[3]["precincts"][1]["name"] = "Different label"
+    audit = ak_boundaries.audit_references(*fixture)
+    assert audit["overlap_scope_complete"] and len(audit["overlap_pairs"]) == 1
+    assert math.isclose(audit["overlap_pairs"][0]["area_degrees_squared"], .005)
+    assert audit["join"] == "withheld"
+
+
+def test_alaska_locator_preserves_geojson_defects_without_replacing_native_ring_roles():
+    fixture = alaska_boundary_fixture()
+    ring = fixture[2]["features"][0]["geometry"]["coordinates"][0]
+    ring[1], ring[2] = ring[2], ring[1]
+    audit = ak_boundaries.audit_references(*fixture)
+    assert audit["valid_polygon_units"] == 2
+    assert audit["native_vs_service_geojson_differences"] == [
+        dict(precinct="01-100", geojson_invalid=True)]
+
+
+def test_alaska_locator_does_not_call_a_subset_overlap_audit_statewide():
+    native, geographic, geojson, results = alaska_boundary_fixture()
+    for data in [native, geographic]:
+        ring = data["features"][0]["geometry"]["rings"][0]
+        ring[1], ring[2] = ring[2], ring[1]
+    audit = ak_boundaries.audit_references(native, geographic, geojson, results)
+    assert audit["valid_polygon_units"] == 1
+    assert len(audit["invalid_reference_units"]) == 1
+    assert audit["overlap_scope_complete"] is False
+    assert audit["join"] == "withheld"
+
+
+@pytest.mark.parametrize("problem", [
+    "wrong_election", "wrong_projection", "truncated", "duplicate_object",
+    "missing_unit", "different_attributes", "unknown_id", "wrong_district",
+    "projection_disagreement", "ring_structure", "nonfinite_coordinate",
+])
+def test_alaska_locator_rejects_mixed_incomplete_or_inconsistent_exports(problem):
+    native, geographic, geojson, results = alaska_boundary_fixture()
+    if problem == "wrong_election":
+        results["name"] = "Alaska 2024 General Election"
+    elif problem == "wrong_projection":
+        geographic["spatialReference"]["wkid"] = 3857
+    elif problem == "truncated":
+        native["exceededTransferLimit"] = True
+    elif problem == "duplicate_object":
+        native["features"][1] = native["features"][0]
+    elif problem == "missing_unit":
+        geographic["features"].pop()
+    elif problem == "different_attributes":
+        geojson["features"][0]["properties"]["HouseDistrict"] = "02"
+    elif problem in {"unknown_id", "wrong_district"}:
+        for data, field in [(native, "attributes"), (geographic, "attributes"), (geojson, "properties")]:
+            data["features"][0][field]["Precinct_Number" if problem == "unknown_id" else "HouseDistrict"] = (
+                "01-999 Unknown" if problem == "unknown_id" else "02")
+    elif problem == "projection_disagreement":
+        native["features"][0]["geometry"]["rings"][0][0][0] += 100
+    elif problem == "ring_structure":
+        native["features"][0]["geometry"]["rings"][0].pop()
+    elif problem == "nonfinite_coordinate":
+        geographic["features"][0]["geometry"]["rings"][0][0][0] = float("nan")
+    with pytest.raises(ValueError):
+        ak_boundaries.audit_references(native, geographic, geojson, results)
 
 
 def alaska_fixture():
