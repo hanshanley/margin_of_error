@@ -4025,15 +4025,50 @@ PDF **84,205 bytes**, contest-detail PDF **105,589 bytes**, summary PDF
 all four native sheets (summary, summary-by-group, precinct, precinct-by-group),
 with observed worksheet dimensions **450 / 1,348 / 5,514 / 16,540 rows** and
 78 columns including native blank formatting columns. No metadata-only exports.
-House breakdown acquisition and workbook/API reconciliation remain underway.
 Session originals, exact URLs/hashes and network receipts:
 `files/precinct-expansion-sources/MI-2026-official-01/`.
-No Michigan map, analysis rate, source package or UI registration is approved yet.
+The actual House control now supplies a complete **437,610-byte** public
+breakdown response. All root fields match the captured general-data snapshot
+exactly, apart from the populated breakdown. Native snapshot is
+`013d1afb-8d84-4971-a037-34f9f6a8ffd0`, as of
+`2026-11-04T20:27:07.3018019Z`. All **24** UUID/name-qualified House unit
+vectors and voting modes agree with the workbook and summary.
 
-**Current executable work:** finish Isabella's actual House precinct response,
-complete workbook/API/native-count reconciliation and focused reviewer tests,
-then archive-only rebuild, immutable Hans source commit/release and whole
-anonymous ZIP verification before scoped UI registration. Never
+The four complete workbook tables contain **449 / 1,347 / 5,513 / 16,539**
+data rows; every summary/group/precinct aggregation reconciles for all contests,
+not only House. All four CSV exports have been independently compared
+cell-for-cell with the original workbook. Native House ballots **26,266**
+remain separate from election participation **26,288**: **City of Clare,
+Precinct 1** has **22** API election ballots but **0** native House-scope
+ballots/candidate votes. Preserve this exact discrepancy, not an inferred cause.
+The four neighboring-county zero rows absent from House remain in a separate
+complete unmatched table; do not fabricate their House votes.
+
+Standalone reviewer:
+`scripts/review-michigan-2026-native-results.py`. The complete generated source
+package is
+`data/precinct-source-reviews/20261105/MI-2026-native-county-counts-01/`:
+**63 participation rows**, **59 House vectors**, **4 unmatched rows**,
+all four complete workbook tables, original workbook, **9 factual originals**,
+source/network receipts, audit, portable reviewer and checksums. Six discovery
+frontend/error originals remain separately preserved in the acquisition cache;
+no vendor UI assets are redistributed. No separate open-data license was found
+in the acquired declarations. No Michigan geometry, demographic rates or
+analysis turnout rates are approved.
+
+The **23-member / 22-checksum**, **4,952,650-byte** complete ZIP has SHA-256
+`504aafb5bbba26a0982504388faa76469b70975e9c7783eb55d79492367dcd09`.
+Archive-only offline rebuild is byte-identical; every committed package member,
+checksum and full workbook export passes independent verification.
+Proof: `files/michigan-2026-package-proof-01.json`.
+**84** scoped Michigan/Arizona/coverage tests pass, including **20** focused
+Michigan tests for PDF alignment, missing-vs-zero, duplicated identities,
+voting modes, workbook columns, conflicting snapshots and complete reconciliation.
+
+**Current executable work:** source-commit/push the reviewed Michigan package
+as Hans, create a new immutable release and verify its entire anonymous ZIP
+before registering scoped downloads and the MI2026 ledger update. Then build,
+test and finish exact production proof. Never
 replace existing source packages or rerun completed count/map suites instead of
 acquisition. Continue another 2026 jurisdiction during the bounded deployment;
 retain Pima's declared-map 404 as a bounded follow-up.

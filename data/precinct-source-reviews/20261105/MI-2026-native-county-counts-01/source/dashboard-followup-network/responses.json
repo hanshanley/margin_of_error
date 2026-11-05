@@ -1,0 +1,12 @@
+[
+  {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/isabella-county-mi/2026NovemberGeneral/data/ballot-item/01000000-c639-6905-0576-08df1d7ec4a8",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "retrieved_at": "2026-11-05T13:33:48.169693+00:00",
+    "transport": "ordinary_chromium",
+    "file": "response-001.json.gz",
+    "bytes": 437610,
+    "sha256": "b2b79e187f8ae73806e3670a1bef39e818204d2faf9838a8f44877af47a95f25"
+  }
+]

@@ -1,5 +1,6 @@
 import csv
 import copy
+import gzip
 import importlib.util
 import io
 import hashlib
@@ -68,6 +69,154 @@ ar_geometry = module("review-arkansas-2026-reference-geometry")
 az_2026 = module("review-arizona-2026-native-results")
 az_maricopa = module("build-arizona-maricopa-precinct-results")
 az_pima = module("review-arizona-pima-2026-native-results")
+mi_2026 = module("review-michigan-2026-native-results")
+
+
+def test_michigan_pdf_cells_align_right_edges_and_keep_missing_distinct_from_zero():
+    words = [(178, 121.45, 198, 132.44, "1,061"),
+             (218, 121.13, 238, 132.12, "1,005"),
+             (274, 121.13, 278, 132.12, "0"),
+             (309, 121.13, 318, 132.12, "56")]
+    box = (20, 123.45, 88, 134.44)
+    assert mi_2026.pdf_cells(words, box) == [1061, 1005, 0, 56]
+    assert mi_2026.pdf_cells(words[:1], box) == [1061, None, None, None]
+    with pytest.raises(ValueError, match="Duplicate"):
+        mi_2026.pdf_cells(words + words[:1], box)
+    with pytest.raises(ValueError, match="position"):
+        mi_2026.pdf_cells(words + [(320, 121, 325, 132, "1")], box)
+    with pytest.raises(ValueError, match="integer"):
+        mi_2026.pdf_cells([(178, 121, 198, 132, "1,06")], box)
+
+
+def bay_example():
+    row = dict(precinct="Auburn City, Pct 1", source_pdf_page=1,
+        registered_voters_total=10, ballots=[4, 2, 1, 1], blank=[0, 0, 0, 0],
+        native_turnout_percent="40.00")
+    vectors = [[2, 1, 1, 0], [1, 1, 0, 0], [1, 0, 0, 1]] + [[0] * 4] * 3
+    house = dict(precinct=row["precinct"], source_pdf_page=2,
+                 candidates=dict(zip(mi_2026.BAY_CANDIDATES, vectors)))
+    county, total = copy.deepcopy(row), copy.deepcopy(house)
+    county["precinct"] = total["precinct"] = "Bay County"
+    return ([county], [total]), ([row], [house])
+
+
+def test_michigan_bay_counts_are_not_rates_or_inferred_native_ids():
+    counts, results = mi_2026.review_bay(*bay_example())
+    assert counts[0]["ballots_cast_total"] == results[0]["total_votes"] == 4
+    assert counts[0]["turnout_rate"] == counts[0]["native_precinct_id"] == ""
+    assert not counts[0]["maps_approved"]
+    assert counts[0]["source_row_id"] == "bay:pdf:1"
+
+
+@pytest.mark.parametrize("change", ["duplicate", "identity", "ballots", "candidate_mode"])
+def test_michigan_bay_rejects_incomplete_or_conflicting_unit_reconciliation(change):
+    summary, detail = bay_example()
+    if change == "duplicate":
+        detail[0].append(copy.deepcopy(detail[0][0]))
+        detail[1].append(copy.deepcopy(detail[1][0]))
+    elif change == "identity":
+        detail[1][0]["precinct"] = "Another city, Pct 1"
+    elif change == "ballots":
+        detail[0][0]["ballots"][1] += 1
+    else:
+        detail[1][0]["candidates"][mi_2026.BAY_CANDIDATES[0]][2] += 1
+    with pytest.raises(ValueError):
+        mi_2026.review_bay(summary, detail)
+
+
+@pytest.fixture(scope="module")
+def michigan_isabella_native():
+    root = Path(__file__).parents[1] / (
+        "data/precinct-source-reviews/20261105/MI-2026-native-county-counts-01/source")
+    receipts = json.loads((root / "sources.json").read_text())
+    workbook = gzip.decompress(
+        (root / receipts["official-isabella-all-results-xlsx"]["file"]).read_bytes())
+    payloads = {}
+    for folder in ["dashboard-network", "dashboard-followup-network"]:
+        for receipt in json.loads((root / folder / "responses.json").read_text()):
+            if "/data" in receipt["url"]:
+                payloads[folder] = json.loads(
+                    gzip.decompress((root / folder / receipt["file"]).read_bytes()))
+    return payloads["dashboard-network"], payloads["dashboard-followup-network"], \
+        mi_2026.workbook_tables(workbook)
+
+
+def test_michigan_isabella_preserves_ballot_scope_difference_and_unmatched_zero_rows(
+        michigan_isabella_native):
+    participation, house, unmatched, audit = mi_2026.review_isabella(*michigan_isabella_native)
+    assert sum(row["ballots_cast_total"] for row in participation) > \
+        sum(row["house_scope_ballots"] for row in house)
+    assert all(row["ballots_cast_total"] == row["registered_voters_total"] == 0
+               for row in unmatched)
+    assert len(unmatched) == len(participation) - len(house)
+    assert all(row["turnout_rate"] == "" and not row["maps_approved"] for row in participation)
+    for difference in audit["house_ballot_scope_differences"]:
+        row = next(r for r in participation if r["native_precinct_id"] ==
+                   difference["native_precinct_id"])
+        assert row["ballots_cast_total"] == difference["election_ballots"]
+        assert "house_ballots_differ" in row["quality_flags"]
+
+
+@pytest.mark.parametrize("change, message", [
+    ("duplicate", "identities"), ("missing_count", "native count"),
+    ("boolean_count", "native count"), ("mode_missing", "Incomplete candidate"),
+    ("mode_identity", "voting mode"), ("precinct_identity", "unit identity"),
+    ("workbook_vote", "workbook/API"), ("snapshot", "snapshots"),
+])
+def test_michigan_isabella_rejects_conflicting_sources(michigan_isabella_native, change, message):
+    data, full, tables = copy.deepcopy(michigan_isabella_native)
+    breakdown = full["ballotItemWithBreakdown"]
+    if change == "duplicate":
+        data["voterTurnout"].append(copy.deepcopy(data["voterTurnout"][0]))
+    elif change in {"missing_count", "boolean_count"}:
+        data["voterTurnout"][0]["ballotsCast"] = None if change == "missing_count" else True
+    elif change == "mode_missing":
+        breakdown["breakdownResults"][0]["ballotOptions"][0]["groupResults"].pop()
+    elif change == "mode_identity":
+        breakdown["breakdownResults"][0]["ballotOptions"][0]["groupResults"][0]["groupName"][0][
+            "text"] = "Unreviewed mode"
+    elif change == "precinct_identity":
+        breakdown["breakdownResults"][0]["precinct"]["id"] = data["precincts"][-1]["id"]
+    elif change == "workbook_vote":
+        key = next(key for key in tables["Summary Results"]
+                   if key[0] == mi_2026.ISABELLA_HOUSE and key[2] == "Ben Ambrose")
+        tables["Summary Results"][key] += 1
+    full = dict(copy.deepcopy(data), ballotItemWithBreakdown=breakdown)
+    if change == "snapshot":
+        full["election"]["publishVersionId"] = "another snapshot"
+    with pytest.raises(ValueError, match=message):
+        mi_2026.review_isabella(data, full, tables)
+
+
+@pytest.mark.parametrize("change", ["none", "duplicate", "missing_mode", "boolean", "extra_column"])
+def test_michigan_workbook_requires_complete_unique_mode_and_column_inventory(change):
+    workbook = openpyxl.Workbook()
+    workbook.remove(workbook.active)
+    for name, headers in mi_2026.SHEETS.items():
+        sheet = workbook.create_sheet(name)
+        sheet.append(headers)
+        prefix = ["City, Pct 1"] if name.startswith("Precinct") else []
+        key = prefix + ["House", "1", "Ballots Cast", "", None]
+        rows = [key + [mode, count] for mode, count in zip(mi_2026.MODES, [2, 1, 1])] \
+            if name.endswith("Group") else [key + [4]]
+        if name == "Summary Results by Group" and change == "missing_mode":
+            rows.pop()
+        if name == "Summary Results":
+            if change == "duplicate":
+                rows.append(rows[0][:])
+            elif change == "boolean":
+                rows[0][-1] = True
+            elif change == "extra_column":
+                rows[0].append("Unreviewed")
+        for row in rows:
+            sheet.append(row)
+    stream = io.BytesIO()
+    workbook.save(stream)
+    if change == "none":
+        assert mi_2026.workbook_tables(stream.getvalue())["Summary Results"]
+    else:
+        with pytest.raises(ValueError):
+            mi_2026.workbook_tables(stream.getvalue())
 
 
 def pima_example():

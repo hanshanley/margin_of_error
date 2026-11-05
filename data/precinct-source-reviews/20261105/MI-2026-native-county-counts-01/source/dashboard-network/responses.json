@@ -1,0 +1,22 @@
+[
+  {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/isabella-county-mi/2026NovemberGeneral/closeraces",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "retrieved_at": "2026-11-05T13:24:26.255872+00:00",
+    "transport": "ordinary_chromium",
+    "file": "response-001.json.gz",
+    "bytes": 2,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "url": "https://app.enhancedvoting.com/results/public/api/elections/isabella-county-mi/2026NovemberGeneral/data",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "retrieved_at": "2026-11-05T13:24:26.503893+00:00",
+    "transport": "ordinary_chromium",
+    "file": "response-002.json.gz",
+    "bytes": 329254,
+    "sha256": "2370a133b172f9074dfe38ea9e13cab8e27914ae1b8763bec66df093379ac026"
+  }
+]

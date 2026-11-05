@@ -1,0 +1,106 @@
+{
+  "year": 2026,
+  "state_code": "MI",
+  "scope": "Bay and Isabella county sources only",
+  "participation_rows": 63,
+  "house_rows": 59,
+  "maps_approved": false,
+  "rates_available": false,
+  "bay": {
+    "statistics_sections": 35,
+    "house_sections": 35,
+    "native_election_day_reporting": "43 of 43",
+    "reporting_counter_scope_reconciled": false,
+    "registered_voters": 87721,
+    "ballots": 50246,
+    "house_votes": 49556,
+    "all_ballot_and_house_candidate_modes_reconcile_to_independent_summary": true
+  },
+  "isabella": {
+    "precincts": 28,
+    "house_units": 24,
+    "house_votes": 25762,
+    "house_scope_ballots": 26266,
+    "ballots": 26288,
+    "registered_voters": 44217,
+    "native_as_of": "2026-11-04T20:27:07.3018019Z",
+    "native_publish_version_id": "013d1afb-8d84-4971-a037-34f9f6a8ffd0",
+    "workbook_rows": {
+      "Summary Results": 449,
+      "Summary Results by Group": 1347,
+      "Precinct Results": 5513,
+      "Precinct Results by Group": 16539
+    },
+    "all_workbook_options_units_and_modes_reconcile": true,
+    "complete_api_house_vectors_and_workbook_agree": true,
+    "house_ballot_scope_differences": [
+      {
+        "native_precinct_id": "01000000-c639-6905-679d-08df1d7ec1d0",
+        "precinct": "City of Clare, Precinct 1",
+        "election_ballots": 22,
+        "house_scope_ballots": 0
+      }
+    ],
+    "absent_from_house_scope": [
+      {
+        "year": 2026,
+        "state_code": "MI",
+        "county_code": "isabella",
+        "county": "Isabella County",
+        "precinct": "Pine River Township, Precinct 1 (Gratiot)",
+        "source_row_id": "isabella:uuid:01000000-c639-6905-67f7-08df1d7ec1d0",
+        "native_precinct_id": "01000000-c639-6905-67f7-08df1d7ec1d0",
+        "native_reporting_status": 4,
+        "maps_approved": false,
+        "ballots_cast_total": 0,
+        "registered_voters_total": 0
+      },
+      {
+        "year": 2026,
+        "state_code": "MI",
+        "county_code": "isabella",
+        "county": "Isabella County",
+        "precinct": "Seville Township, Precinct 1 (Gratiot)",
+        "source_row_id": "isabella:uuid:01000000-c639-6905-6863-08df1d7ec1d0",
+        "native_precinct_id": "01000000-c639-6905-6863-08df1d7ec1d0",
+        "native_reporting_status": 4,
+        "maps_approved": false,
+        "ballots_cast_total": 0,
+        "registered_voters_total": 0
+      },
+      {
+        "year": 2026,
+        "state_code": "MI",
+        "county_code": "isabella",
+        "county": "Isabella County",
+        "precinct": "Greendale Township, Precinct 1 (Midland)",
+        "source_row_id": "isabella:uuid:01000000-c639-6905-68c2-08df1d7ec1d0",
+        "native_precinct_id": "01000000-c639-6905-68c2-08df1d7ec1d0",
+        "native_reporting_status": 4,
+        "maps_approved": false,
+        "ballots_cast_total": 0,
+        "registered_voters_total": 0
+      },
+      {
+        "year": 2026,
+        "state_code": "MI",
+        "county_code": "isabella",
+        "county": "Isabella County",
+        "precinct": "Jasper Township, Precinct 1 (Midland)",
+        "source_row_id": "isabella:uuid:01000000-c639-6905-6920-08df1d7ec1d0",
+        "native_precinct_id": "01000000-c639-6905-6920-08df1d7ec1d0",
+        "native_reporting_status": 4,
+        "maps_approved": false,
+        "ballots_cast_total": 0,
+        "registered_voters_total": 0
+      }
+    ],
+    "native_map_enabled": false,
+    "maps_approved": false,
+    "rates_available": false
+  },
+  "factual_originals": 9,
+  "discovery_originals_retained_separately": 6,
+  "license_note": "Official public aggregate election records; no separate open-data license was found in the acquired declarations. Native vendor/UI assets are not redistributed.",
+  "next_action": "Acquire exact-election boundaries and explicit native crosswalks, clarify Bay's 43 reporting counter versus 35 report sections, Isabella's 22-ballot scope difference, and registration definitions. Continue remaining Michigan counties and other 2026 jurisdictions; do not infer missing returns, geometry or rates."
+}
