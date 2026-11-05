@@ -1088,14 +1088,37 @@ The parent API's statewide `ballotsCast=0` is **not** a usable turnout
 numerator or proof of no participation; retain separate local facts
 without substituting candidate totals or summing incompatible scopes.
 
-This is **session-cache acquisition and exploratory evidence**, not a
-committed immutable review, complete public download, accepted boundary
-join or new mapped coverage. Next: implement/test an offline native
-review preserving every source ID and mode, verify all repeated facts
-and independently reproduce its complete original-backed download;
-separately review local participation and acquire authoritative
-2026 geographic references. Do not mark the RI ledger cell complete,
-borrow 2024 boundaries or map Federal/limited-only votes onto households.
+The offline reviewer `scripts/review-rhode-island-precinct-results.py`
+now preserves every House candidate/source identity, reporting status,
+virtual flag and voting mode, including zeros and null write-in parties.
+It rejects incorrect election/locality/candidate identity, missing or
+duplicate native units, inconsistent repeated unit facts, malformed
+counts, missing modes, and failures of independent API/state/local/native
+candidate-mode reconciliation. Native row keys include contest identity;
+unit counts are tracked separately rather than silently merging districts.
+The **40** original locality ballot/registration observations remain
+separate, with **all rates null**. Their raw totals are 364,082 ballots and
+794,266 registered; these are not substituted for the parent's zero
+ballots or presented as reconciled statewide/precinct turnout.
+
+Immutable local review `data/precinct-source-reviews/20261105/RI/`
+contains all five complete HTTP originals (native media, independent
+public API and close-race response, discovery HTML and actual main
+bundle), all **458** normalized House rows, 40 separate locality
+observations and full receipts/audit/checksums. Complete ZIP:
+**1,005,920 bytes**, SHA-256
+`06dc93e688e524e45184dc6bccf83abbfdf849f5d8c487dcad912e857ee3ffa1`.
+Independent proof verifies all 10 archive members/CRCs/bytes, every
+original receipt and every native candidate/mode value in all 458 rows,
+then reproduces identical output/ZIP **only from distributed originals**
+and verifies immutable-overwrite refusal:
+session `files/ri-2026-independent-validation.json`.
+**197 collector tests pass**, including 13 focused Rhode Island cases.
+Release and site registration remain pending. Geometry and all rates
+remain withheld. Next: finish the complete download's release/live proof,
+separately review local participation and acquire authoritative 2026
+geographic references. Do not mark the RI ledger cell complete, borrow
+2024 boundaries or map Federal/limited-only votes onto households.
 
 ## Resume procedure for every work session or scheduled prompt
 

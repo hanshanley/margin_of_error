@@ -37,6 +37,87 @@ ak_review = module("review-alaska-precinct-results")
 ak_boundaries = module("review-alaska-precinct-boundaries")
 hi_review = module("review-hawaii-precinct-results")
 hi_historical = module("archive-hawaii-historical-sources")
+ri_review = module("review-rhode-island-precinct-results")
+
+
+def rhode_island_fixture():
+    import copy
+    names = [("Town", "00000000-0000-0000-0000-000000000001"),
+             ("Federal", "00000000-0000-0000-0000-000000000002")]
+    state, public, localities = [], [], []
+    for identity, title in ri_review.CONTESTS.items():
+        options, independent = [], []
+        for cid, name, party in [("1", "Democrat", "DEMOCRAT"),
+                                 ("2", "Republican", "REPUBLICAN"), ("3", "Write-in", None)]:
+            groups = [dict(groupName=m, voteCount=2, isFromVirtualPrecinct=False)
+                      for m in sorted(ri_review.MODES)]
+            options.append(dict(id=cid, name=name, politicalParty=party,
+                                voteCount=6, groupResults=groups))
+            independent.append(dict(nativeId=cid, name=[dict(languageId="en", text=name)],
+                voteCount=6, party=dict(name=[dict(languageId="en", text=party)]) if party else dict(name=None),
+                groupResults=[dict(groupName=[dict(languageId="en", text=g["groupName"])],
+                                   voteCount=g["voteCount"]) for g in groups]))
+        state.append(dict(id=identity, name=title, contestType="Candidate", voteFor=1, ballotOptions=options))
+        public.append(dict(name=[dict(languageId="en", text=title)],
+                           summaryResults=dict(ballotOptions=independent)))
+    for name, lid in names:
+        contests = copy.deepcopy(state)
+        for contest in contests:
+            contest["precinctsParticipating"] = 0
+            for candidate in contest["ballotOptions"]:
+                groups = [dict(groupName=m, voteCount=1, isFromVirtualPrecinct=False)
+                          for m in sorted(ri_review.MODES)]
+                candidate.update(voteCount=3, groupResults=groups,
+                    precinctResults=[dict(id="unit", name="LIMITED ONLY" if name == "Town" else "Federal #1",
+                        isVirtual=False, reportingStatus="Election Night Complete",
+                        voteCount=3, groupResults=groups)])
+        localities.append(dict(id=lid, name=name, ballotItems=contests))
+    election = dict(electionDate="2026-11-03", name=[dict(languageId="en", text="Statewide General Election")],
+                    ballotsCast=0, totalVoters=10)
+    parent = dict(election=election, ballotItems=public,
+        jurisdiction=dict(name=[dict(languageId="en", text="Rhode Island")],
+            childLocalities=[dict(id=lid.upper(), name=[dict(languageId="en", text=name)]) for name, lid in names]),
+        localityElections=[dict(jurisdictionId=lid, asOf="source-time", ballotsCast=0, totalVoters=5)
+                           for name, lid in names])
+    return dict(electionDate="2026-11-03", electionName="Statewide General Election",
+                results=dict(name="Rhode Island", ballotItems=state), localResults=localities), parent
+
+
+def test_rhode_island_retains_nonresidential_units_zero_counts_and_separate_locality_statistics():
+    results, statistics, audit = ri_review.review(*rhode_island_fixture())
+    assert len(results) == 4 and len({r["key"] for r in results}) == 4
+    assert audit["unique_native_units"] == 2 and len(audit["native_vs_declared_precinct_counts"]) == 4
+    assert {r["reporting_unit_kind"] for r in results} == {"federal_reporting_unit", "limited_only_office"}
+    assert all(r["other_votes"] == 3 and not r["source_is_virtual"] for r in results)
+    assert len(statistics) == 2 and all(r["reported_pct"] is None and r["ballots"] == 0 for r in statistics)
+
+
+@pytest.mark.parametrize("change", ["mode", "candidate", "public", "unit", "duplicate", "locality", "date"])
+def test_rhode_island_rejects_missing_or_conflicting_native_scope_and_independent_totals(change):
+    media, parent = rhode_island_fixture()
+    candidate = media["localResults"][0]["ballotItems"][0]["ballotOptions"][0]
+    if change == "mode":
+        candidate["precinctResults"][0]["groupResults"][0]["voteCount"] = 2
+    elif change == "candidate":
+        candidate["politicalParty"] = "Other"
+    elif change == "public":
+        parent["ballotItems"][0]["summaryResults"]["ballotOptions"][0]["voteCount"] = 9
+    elif change == "unit":
+        candidate["precinctResults"] = []
+    elif change == "duplicate":
+        candidate["precinctResults"].append(candidate["precinctResults"][0])
+    elif change == "locality":
+        media["localResults"].pop()
+    else:
+        media["electionDate"] = "2024-11-05"
+    with pytest.raises(ValueError):
+        ri_review.review(media, parent)
+
+
+@pytest.mark.parametrize("value", [None, True, -1, 1.5, float("inf")])
+def test_rhode_island_never_imputes_missing_invalid_or_boolean_counts(value):
+    with pytest.raises(ValueError):
+        ri_review.count(value)
 
 
 @pytest.mark.parametrize("encoding", ["utf-16", "utf-16-le"])
