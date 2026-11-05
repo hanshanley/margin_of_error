@@ -2017,7 +2017,7 @@ is registered from these acquisitions. Next execute local OCR/count review,
 follow Boston's actual declared results archive for combined precinct exports,
 and seek independently established exact-election reference applicability.
 
-### Boston central-only mapped package: independently reconciled, publication pending
+### Boston central-only mapped package: source published, UI live verification pending
 
 The declared archive was followed in full. Its only 2026 PDF declaration is the
 September primary, not a combined general-election precinct export. The complete
@@ -2085,18 +2085,50 @@ footer, duplicates, unknown/inconsistent IDs, transfer truncation, invalid or
 overlapping geometry, zero counts, and explicit party evidence. Seven relevant
 Node tests pass. No whole-validator success is claimed.
 
-Publication remains pending: commit source as Hans, publish immutable release,
-redownload every byte and verify exact tag/source SHA, then append the snapshot.
-The UI must omit a participation link for this source rather than invent a
-zero-rate artifact or broken download; the pending optional
-`participation_available: false` is backward-compatible with existing sources.
-Retain all prior **50** complete downloads; the Boston ZIP and all-row CSV
-should bring the total to **52**. Regenerate all **1,632** cells, with only
-MA 2026 changing and remaining incomplete. Build/prepare and run a new Boston
-source-matched desktop/mobile JS/no-JS suite including all counts/colors, subset
-warnings, zero-row withholding, zoom/gestures, fallback and defaults, then verify
-its exact deployment before setting the live flag. Continue independent
-Worcester SOV reconciliation or another 2026 source while deployment runs.
+Source committed/pushed as Hans at
+`2b7785f38184428d3e27ea07c4ba1af417976656`. Immutable release
+`voter-precinct-boston-central-maps-20261105` targets that exact commit.
+Full remote asset redownload, size/SHA and tag-to-source checks pass:
+`files/boston-2026-remote-release-proof.json`.
+The registry now appends this source as **snapshot_ready**, not live verified.
+Optional `participation_available: false` omits its nonexistent participation
+download and any participation-statistics ZIP claim; all prior sources retain
+their original downloads. All prior **50** complete downloads remain byte/link
+preserved; Boston's complete ZIP and all-row CSV bring the total to **52**.
+All **1,632** ledger rows remain; only **MA 2026** changes and stays incomplete.
+
+Astro check has zero errors/warnings (five existing hints), the seven relevant
+Node tests, normal build, and Pages preparer pass. All **94** existing relocated
+bulk assets remain byte-verified; prepared site size is **986,227,371 bytes**.
+New `files/check-boston-2026-publication.py` passes on the prepared local site
+for desktop/mobile x JS/no-JS, checking every one of the **252** actual colored
+precincts against source counts/margins/exact red-blue fills; the **23** reported
+zero rows are retained but not colored. It verifies central-only/city-only and
+legacy-reference warnings, correct selection labels/source links, no fabricated
+participation link, all prior 50 downloads, actual precinct fitting, zoom buttons,
+desktop wheel/double-click, real mobile two-pointer pinch, state fallback,
+2026 defaults, year switching and no overflow/page errors. Renderer bytes are
+unchanged. Proof: `files/boston-2026-local-browser-proof.json`.
+
+Next commit/push this bounded UI registration as Hans, watch its exact Pages
+SHA/run, compare production registry/ledger/renderer bytes and run the new
+source-matched suite against production **before** setting the live flag.
+The final flag/ledger commit also needs exact deployment and production proof.
+Massachusetts is not complete. Continue independent Worcester SOV reconciliation
+or another 2026 source while deployment runs.
+
+Worcester's actual governor SOV panels are now visually identified on PDF
+**15/16, 27/28, 39/40 and 51/52** for the four modes. The overall
+15/16 pair has **62 precincts**, preserving **4-2A and 7-5A**, with a native
+footer **31,811 DEM; 13,750 REP; 2,038 IND; 69 write-ins; 662 blanks**.
+These visibly read values are not yet approved count rows. Full-page OCR
+merges vertical numeric runs and misses cells, particularly in sparse early
+modes; strict completeness diagnostics reject those matrices. Next use bounded
+row/cell crops or a higher-resolution second reading for these eight actual
+panels, not guessed zeros or repeating all 60 pages unchanged. Independently
+reconcile all 62 identities, every candidate/footer and overall=ED+early1+early2.
+Clarify ballot-card/style definitions through actual documentation before any
+unique-person fraction; acquire applicable reference before mapping Worcester.
 
 ## Resume procedure for every work session or scheduled prompt
 

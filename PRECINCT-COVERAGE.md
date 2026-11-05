@@ -44,7 +44,7 @@ Checkmarks are reserved for verified, complete live coverage.
 | [ ] | Kansas | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Kentucky | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Louisiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Massachusetts | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Massachusetts | acquired | reference_acquired | validated_partial | passed | snapshot_ready | central_tabulation_ballot_counts_only_no_registration_or_rates |
 | [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Michigan | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
