@@ -77,7 +77,7 @@ Checkmarks are reserved for verified, complete live coverage.
 | [ ] | Washington | acquired | reference_acquired | validated_partial | passed | published_partial | not_acquired |
 | [ ] | Wisconsin | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | West Virginia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Wyoming | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Wyoming | acquired_originals_review_pending | not_reviewed | pending | complete_advertised_originals_pdf_identity_and_zip_crc_verified | full_originals_download_only | not_reconciled |
 
 ## 2024
 
@@ -189,7 +189,7 @@ Checkmarks are reserved for verified, complete live coverage.
 | [ ] | Washington | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Wisconsin | acquired_originals_review_pending | not_reviewed | pending | source_bytes_verified_scope_pending | full_originals_download_only | not_inferred_from_candidate_votes |
 | [ ] | West Virginia | acquired_originals_review_pending | not_reviewed | pending | source_bytes_verified_scope_pending | full_originals_download_only | not_inferred_from_candidate_votes |
-| [ ] | Wyoming | acquired_originals_review_pending | not_reviewed | pending | source_bytes_verified_scope_pending | full_originals_download_only | not_inferred_from_candidate_votes |
+| [ ] | Wyoming | acquired_originals_review_pending | not_reviewed | pending | complete_advertised_originals_pdf_identity_and_zip_crc_verified | full_originals_download_only | not_reconciled |
 
 ## 2020
 

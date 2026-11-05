@@ -23,10 +23,13 @@ baseline = set(json.loads(args.baseline_downloads.read_text()))
 new_links = {review["complete_download_url"] for review in registry["reviews"]}
 new_links.update(review["base_url"] + table["file"]
                  for review in registry["reviews"] for table in review["tables"])
+source_registry = json.loads((root / "public/precinct-results.json").read_text())
+source_links = {batch["complete_download_url"] for batch in source_registry["source_batches"]}
+expected_links = baseline | new_links | source_links
 assert len(baseline) == 61 and len(new_links) == 4 and not baseline & new_links
 proof = dict(base_url=base, source_matched=True, full_csv_endpoints=[], modes=[])
 
-for name in ["participation-source-reviews.json", "county-results.json",
+for name in ["participation-source-reviews.json", "precinct-results.json", "county-results.json",
              "precinct-coverage.csv", "scripts/participation-explorer.js"]:
     response = requests.get(base + "/" + name, timeout=90)
     response.raise_for_status()
@@ -61,8 +64,8 @@ with sync_playwright() as playwright:
                 page.locator("#tab-methods").click()
             links = page.locator("#downloads a[download]").evaluate_all(
                 "links => links.map(a => a.getAttribute('href'))")
-            assert len(links) == len(set(links)) == 65
-            assert set(links) == baseline | new_links
+            assert len(links) == len(set(links)) == len(expected_links)
+            assert set(links) == expected_links
             city_count = 0
             for review in registry["reviews"]:
                 table = page.locator(f'table[data-participation-review="{review["id"]}"]')

@@ -145,7 +145,7 @@ def build_rows(index=None, published=False, source_batches=None, participation_r
                     row["notes"] += (
                         f' Complete original archive acquired: {source["original_files"]} files, '
                         f'{source["original_bytes"]:,} uncompressed bytes. '
-                        "Original receipt SHA-256 values and native text record structure verified; "
+                        "Original receipt SHA-256 values and archived file integrity verified; "
                         "not independently reconciled candidate totals, validated precinct geography, "
                         "or inferred participation. Complete ZIP: " + source["complete_download_url"])
                 else:

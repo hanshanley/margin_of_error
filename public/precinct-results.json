@@ -134,6 +134,13 @@
     "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-nevada-clark-historical-20261105/complete-nevada-clark-2020-2024-originals.zip",
     "complete_download_bytes": 29238218,
     "complete_download_sha256": "aade65d7ae37f3d9c9cde568ac15779d06cb4c5315b3ba8ac8c9a997b406b562"
+  }, {
+    "label": "Wyoming 2026 and 2022 statewide and all 23 counties: complete source originals, not approved maps or turnout",
+    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/b46db3d20c8b16c002a3ebd6f78cb60b5177e110/data/precinct-source-acquisitions/20261105/WY-2026-2022/",
+    "data_directory": "data/precinct-source-acquisitions/20261105/WY-2026-2022",
+    "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-wyoming-originals-20261105/complete-wyoming-2026-2022-official-originals-01.zip",
+    "complete_download_bytes": 14727543,
+    "complete_download_sha256": "39f78671041966c0939ce4bce439916aa04368ba413d58615e086f9e314e0d2c"
   }],
   "source_reviews": [
     "data/precinct-source-reviews/20261105/DE/audit.json",

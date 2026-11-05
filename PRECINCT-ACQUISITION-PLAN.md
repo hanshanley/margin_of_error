@@ -2794,11 +2794,15 @@ all 65 exact download URLs, disclosure interaction and no overflow in all four
 desktop/mobile, JavaScript/no-JavaScript modes:
 `files/me-pa-participation-local-browser-proof-01.json`.
 
-**Next executable actions:** publish this ancillary UI and verify its exact
-Pages deployment, source-matched public registries/worklist and unqueried live
-table/download checks. The county renderer and immutable maps are unchanged
-from their completed full 48-state live suite; do not repeat it instead of
-acquiring new data. Continue remaining 2026 source gaps and actual-election
+UI commit **`96ac461ea4fa1c107a1e48a2776356e3a68c4d3a`** is live in exact
+successful Pages deployment **42004537566**. The unqueried production checker
+passed all four browser modes, every city row/rate, all 65 exact links, three
+entire CSVs and unchanged renderer bytes:
+`files/me-pa-participation-live-browser-proof-01.json`.
+The county renderer and immutable maps are unchanged from their completed full
+48-state live suite; do not repeat it instead of acquiring new data.
+
+**Next executable actions:** continue remaining 2026 source gaps and actual-election
 historical acquisition. Keep candidate geography, demographic coverage and
 final-turnout approval withheld for this limited review, with all prior
 complete downloads and all 1,632 incomplete precinct cells preserved.
@@ -2823,6 +2827,12 @@ All original bytes, receipts, internal checksums and ZIP CRC pass. A
 network-disabled archive-only rebuild is byte-identical:
 `files/wyoming-2026-2022-official-package-proof-01.json`.
 Nine focused source-inventory, election-date and visual-proof regressions pass.
+
+Source commit **`b46db3d20c8b16c002a3ebd6f78cb60b5177e110`** is pushed as Hans.
+Immutable release **`voter-precinct-wyoming-originals-20261105`** targets that
+exact commit. The entire public ZIP matches the local archive byte-for-byte;
+its tag binding, CRC, package checksums and all 108 original receipts pass:
+`files/wyoming-official-originals-remote-release-proof-01.json`.
 
 Thirteen 2026 PDFs use glyph-encoded Type3 fonts with unreadable extracted
 dates. Directly rendered and reviewed every affected original first-page header;
@@ -2853,9 +2863,20 @@ The diagnostic proof and full 35-label crosswalk are
 `files/wyoming-2022-independent-native-reconciliation-proof-01.json`; ballot
 approval and all maps remain withheld.
 
-**Next executable actions:** publish and fully redownload the immutable
-108-original archive, then add its pinned source batch and complete download
-without promoting a map or complete state/year. Persist the 2022 native
+The pinned source batch adds one complete download while retaining every
+previous link. Its two ledger cells remain original-acquired / review-pending,
+not mapped, completed or approved turnout. The generic acquisition note now
+claims archived-file integrity, not readable native text that the Type3 PDFs
+do not provide. Ancillary UI/ledger integration awaits exact live verification.
+Thirteen focused collector/worklist cases, Astro check (zero errors/warnings),
+the normal build and Pages preparation pass; **94** relocated downloads remain
+byte-identical and the prepared site is **986,263,574 bytes**. Four-mode local
+browser checks pass all **66** exact complete-download links, retain the
+13-year city table and verify unmodified renderer bytes:
+`files/wyoming-source-ui-local-browser-proof-01.json`.
+
+**Next executable actions:** verify the source-batch UI's exact deployment,
+unqueried registry/worklist and all 66 complete links. Persist the 2022 native
 reconciliation as a reusable tested reviewer with complete normalized tables
 and explicit Natrona conflict. Reconcile 2026 native numeric reports without
 using corrupted glyph text; acquire actual-election county or precinct
