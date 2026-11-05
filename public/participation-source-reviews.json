@@ -1,6 +1,29 @@
 {
   "reviews": [
     {
+      "id": "pennsylvania-berks-20261105-01",
+      "label": "Berks County, Pennsylvania 2026: complete native participation and candidate tables; unofficial",
+      "data_directory": "data/county-source-reviews/20261105-berks-reviewed-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/1578e77f415c02e24d7c2d31ac6337cb80bdf460/data/county-source-reviews/20261105-berks-reviewed-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-berks-20261105-01/complete-berks-2026-county-results-01.zip",
+      "complete_download_bytes": 699994,
+      "complete_download_sha256": "fae4bb7235154ada6d194e27891b0890cbb8acbfa242fd0e8e12303e760b87ff",
+      "review_status": "native_county_participation_and_candidate_counts_reviewed_unofficial",
+      "maps_approved": false,
+      "scope_note": "Berks County only, unofficial November 3, 2026 general election. The native header says updated November 4 at 8:20 AM, timezone unestablished; distinct participation and candidate edit timestamps are retained separately. The 202 native participation units sum once to 143,855 ballots and 275,941 registered voters: a reported ballots/native-registration ratio, not eligible-population or demographic turnout. Mail 27,931 plus Election Day 115,924 equals ballots in every unit. All 202 early-vote values are null and the provisional field is absent, not zero. All 2,216 full candidate rows match the separate joined table and native server aggregates: 45 county candidate lines across 15 contests, retaining literal parties and 332 explicit candidate zeroes. Missing Republican rows in HD127/HD129 remain absent. House candidate votes total 141,954: Democratic 75,837, Republican 65,951 and Write-in 166, separate from ballots. Native unit IDs 4310 and 7001 overlap congressional districts; participation is never summed from repeated candidate joins or allocated to inferred district geometry. State Senate contests cover only 73 units, not the whole county. The separate 681-row winner-only view is checked against full candidates but is not complete candidate data. All eight CSVs, 59 screened response originals, receipts, native terms, audit and portable reviewer are included. One declared item returned API403; that denial is retained, not bypassed or used as data. No new map, demographic turnout, certification, final counting or statewide completion is approved; existing maps are unchanged.",
+      "tables": [
+        {"file": "county-participation.csv", "label": "Berks County only: separate ballots, native registrations and explicitly defined registered-voter ratio across 202 native units (CSV)"},
+        {"file": "county-voting-method-counts.csv", "label": "Berks County only: observed Mail and Election Day ballots, all-null early voting and absent provisional field, not inferred zeroes (CSV)"},
+        {"file": "county-candidate-results.csv", "label": "Berks County only: all 45 candidate/write-in lines across 15 separate contests, preserving literal parties and absent-party rows (CSV)"},
+        {"file": "county-contest-party-totals.csv", "label": "Berks County only: all 45 separate contest/literal-party totals; candidate votes are not ballots or party turnout (CSV)"},
+        {"file": "county-contest-totals.csv", "label": "Berks County only: all 15 contest totals and native unit scopes, retaining two overlapping congressional unit IDs (CSV)"},
+        {"file": "native-precinct-participation.csv", "label": "Berks County only: all 202 native participation rows, counted once with native edit timestamps; no new geometry approved (CSV)"},
+        {"file": "native-precinct-candidate-counts.csv", "label": "Berks County only: all 2,216 native candidate observations, literal parties, edit timestamps and all 332 explicit zeroes (CSV)"},
+        {"file": "native-winner-only-view.csv", "label": "Berks County only: all 681 winner-only comparison rows, explicitly not a complete candidate dataset (CSV)"}
+      ],
+      "coverage": []
+    },
+    {
       "id": "pennsylvania-dauphin-20261105-01",
       "label": "Dauphin County, Pennsylvania 2026: complete native candidate tables; turnout unavailable",
       "data_directory": "data/county-source-reviews/20261105-dauphin-reviewed-01",

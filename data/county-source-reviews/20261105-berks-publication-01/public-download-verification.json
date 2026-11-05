@@ -1,0 +1,82 @@
+{
+  "data_commit": "1578e77f415c02e24d7c2d31ac6337cb80bdf460",
+  "release_id": 435904912,
+  "asset_id": 715245688,
+  "checked_at_utc": "2026-11-05T23:49:30.805228+00:00",
+  "complete_downloads_verified": 9,
+  "all_local_csvs_match_archive": true,
+  "downloads": [
+    {
+      "file": "complete-berks-2026-county-results-01.zip",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-berks-20261105-01/complete-berks-2026-county-results-01.zip",
+      "status": 200,
+      "bytes": 699994,
+      "sha256": "fae4bb7235154ada6d194e27891b0890cbb8acbfa242fd0e8e12303e760b87ff",
+      "byte_identical": true
+    },
+    {
+      "file": "county-candidate-results.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/1578e77f415c02e24d7c2d31ac6337cb80bdf460/data/county-source-reviews/20261105-berks-reviewed-01/county-candidate-results.csv",
+      "status": 200,
+      "bytes": 5143,
+      "sha256": "e509767ac1175d3353b41a5c0ffbd1b20920af606c8778f3b5801433ad72bd6a",
+      "byte_identical": true
+    },
+    {
+      "file": "county-contest-party-totals.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/1578e77f415c02e24d7c2d31ac6337cb80bdf460/data/county-source-reviews/20261105-berks-reviewed-01/county-contest-party-totals.csv",
+      "status": 200,
+      "bytes": 4558,
+      "sha256": "72452f351d90d4fefea814c53c59da47c23c9be10c8e950f02d0a76b29eb294c",
+      "byte_identical": true
+    },
+    {
+      "file": "county-contest-totals.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/1578e77f415c02e24d7c2d31ac6337cb80bdf460/data/county-source-reviews/20261105-berks-reviewed-01/county-contest-totals.csv",
+      "status": 200,
+      "bytes": 1612,
+      "sha256": "08828c1f73acf6334fa26bed8f2671389647e4df9037119c345060a8c8df21f6",
+      "byte_identical": true
+    },
+    {
+      "file": "county-participation.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/1578e77f415c02e24d7c2d31ac6337cb80bdf460/data/county-source-reviews/20261105-berks-reviewed-01/county-participation.csv",
+      "status": 200,
+      "bytes": 304,
+      "sha256": "33794a48ec5fcbbde44ca526a8dbdb4ce162de9dd6425888677612254e9ac625",
+      "byte_identical": true
+    },
+    {
+      "file": "county-voting-method-counts.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/1578e77f415c02e24d7c2d31ac6337cb80bdf460/data/county-source-reviews/20261105-berks-reviewed-01/county-voting-method-counts.csv",
+      "status": 200,
+      "bytes": 351,
+      "sha256": "9c31e9ddecce10e63db60ada8ca101ed2f5d02f03cf1cf0ea980e51d1de60875",
+      "byte_identical": true
+    },
+    {
+      "file": "native-precinct-candidate-counts.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/1578e77f415c02e24d7c2d31ac6337cb80bdf460/data/county-source-reviews/20261105-berks-reviewed-01/native-precinct-candidate-counts.csv",
+      "status": 200,
+      "bytes": 716117,
+      "sha256": "58f463cce781d7fc1a7ff0cb610c7c388d5e5339e2104823094ef04dbbdeaa49",
+      "byte_identical": true
+    },
+    {
+      "file": "native-precinct-participation.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/1578e77f415c02e24d7c2d31ac6337cb80bdf460/data/county-source-reviews/20261105-berks-reviewed-01/native-precinct-participation.csv",
+      "status": 200,
+      "bytes": 44968,
+      "sha256": "08f0c1b87d2b6ecf404362e3c5dacdff6549e494b2d384a8e299de3dc72d21a6",
+      "byte_identical": true
+    },
+    {
+      "file": "native-winner-only-view.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/1578e77f415c02e24d7c2d31ac6337cb80bdf460/data/county-source-reviews/20261105-berks-reviewed-01/native-winner-only-view.csv",
+      "status": 200,
+      "bytes": 241195,
+      "sha256": "0a65e312eaed87c8103cfb746b1d10d2bd1fe2781e424f59f395b78362457eec",
+      "byte_identical": true
+    }
+  ]
+}

@@ -88,7 +88,7 @@ change was made. See
 Butler's actual index returned HTTP404; the response and receipt are
 retained rather than treating a cached search page as a successful acquisition.
 
-**Berks primary data reviewed; publication next.** The actual county Election
+**Berks primary data published; UI verification next.** The actual county Election
 Results page links the reviewed 2026 General Election master dashboard despite
 stale primary-election prose on the parent. Fifty-nine screened source responses
 retain complete metadata, child dashboards, query inputs, native terms and
@@ -108,11 +108,24 @@ unit IDs 4310 and 7001 overlap district scopes; participation is counted once
 per native unit, not from repeated candidate joins. Native header and separate
 participation/candidate edit times remain distinct. Eight complete CSVs,
 all sources, portable reviewer, audit and checksums form a deterministic
-71-member ZIP. Eleven focused tests and byte-identical packaged offline
-reproduction pass; rerun after final reviewer changes before publishing.
+71-member, 699,994-byte ZIP, SHA256
+`fae4bb7235154ada6d194e27891b0890cbb8acbfa242fd0e8e12303e760b87ff`.
+Eleven focused tests and byte-identical packaged offline reproduction pass
+after final reviewer changes. All 6,215 tracked files and 4,869 reachable
+historical blobs pass credential screening; six scanner regressions pass.
 No new map coverage, demographic turnout, certification or final counting is
-approved. Publish immutable data and verify every public byte before adding
-the nine download links, preserving the existing 258.
+approved. Data commit `1578e77f415c02e24d7c2d31ac6337cb80bdf460` and immutable
+release `voter-county-pennsylvania-berks-20261105-01` are public. The ZIP and all
+eight commit-pinned CSVs were downloaded and match reviewed bytes exactly.
+The registry adds nine download links, preserving the existing 258; require
+the exact 267-link set in four local and production display modes before
+marking UI publication complete.
+All four local modes now pass that exact set, retaining all 258 earlier links,
+all 52 UF rows, five historical years and 255 historical scope cells.
+Seven participation tests, Astro check (zero errors/warnings, five hints),
+build and 94 byte-verified bulk downloads pass. Prepared Pages size is
+987,335,410 bytes, below 1 GB. Exact deployed-revision and production browser
+proof remain required; no unchanged map suite was repeated.
 
 **Earlier current-source cleanup (historical record).** On November 5,
 GitHub reported Google API keys copied from public county linking HTML. The

@@ -1,0 +1,14 @@
+{
+  "local-ui-verification.json": {
+    "bytes": 48905,
+    "sha256": "6171fc220146a9a6ec55383b2050ca154b72dac8838f8c2a7383271d1b023b42"
+  },
+  "public-download-verification.json": {
+    "bytes": 4009,
+    "sha256": "4ed1b1ea29a3db4d6aac51b48b6d2707b6d4f50978c704d900b3fa33c769be02"
+  },
+  "source-and-reproduction.json": {
+    "bytes": 977,
+    "sha256": "279fe54b224b0b5764a6a7da3e3fa7f2d9da5e7a72ca8ad6e525fd7ca635cf04"
+  }
+}
