@@ -1,0 +1,41 @@
+{
+  "source_commit": "17c116bea04a42a364daee08bc028f3beca3737f",
+  "tag": "voter-county-pennsylvania-monroe-20261105-01",
+  "verified_downloads": [
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-monroe-20261105-01/complete-monroe-2026-county-results-01.zip",
+      "bytes": 273559,
+      "sha256": "0cd09dde828b4d51949d96723ee9ca84627d6125c2db3e25ee2bcfd1b192def5"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/17c116bea04a42a364daee08bc028f3beca3737f/data/county-source-reviews/20261105-monroe-official-01/county-candidate-mode-counts.csv",
+      "bytes": 10732,
+      "sha256": "b64da7a3ef639976ec83ceeb76fde23cbf07cb58e9ca6d585de8eabeb054f243"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/17c116bea04a42a364daee08bc028f3beca3737f/data/county-source-reviews/20261105-monroe-official-01/county-candidate-results.csv",
+      "bytes": 3376,
+      "sha256": "9bdb3466aba3bbe656e47e339aa3db7f353537c9acc660fc800715407f14f065"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/17c116bea04a42a364daee08bc028f3beca3737f/data/county-source-reviews/20261105-monroe-official-01/county-contest-totals.csv",
+      "bytes": 890,
+      "sha256": "c976f99db6456ee765082a7e2ad6f9c762126d080224713abea3c35f4b2b1f16"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/17c116bea04a42a364daee08bc028f3beca3737f/data/county-source-reviews/20261105-monroe-official-01/county-office-party-totals.csv",
+      "bytes": 614,
+      "sha256": "6cb9d966df7b7a74a93c457276b9ea9c06f3e53d3097ee089c0638e38944eef8"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/17c116bea04a42a364daee08bc028f3beca3737f/data/county-source-reviews/20261105-monroe-official-01/county-participation.csv",
+      "bytes": 330,
+      "sha256": "6de156b9454168aa19918f3af58172a5da32fe26a3e4c9dae96331f6f36181fe"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/17c116bea04a42a364daee08bc028f3beca3737f/data/county-source-reviews/20261105-monroe-official-01/native-unit-candidate-counts.csv",
+      "bytes": 114903,
+      "sha256": "0d97e31ccebc212ae88485265448bafa1255308c3f980b68862c53695233e442"
+    }
+  ]
+}

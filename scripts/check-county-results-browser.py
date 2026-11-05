@@ -68,6 +68,7 @@ download_count = (18 + len(precinct_pointer["source_reviews"]) + len(precinct_po
                   + 3 * (1 + len(pointer.get("previous_snapshots", [])))
                   + sum(1 + len(review["tables"]) for review in participation_reviews))
 for name in ["county-results.json", "precinct-results.json", "precinct-coverage.csv",
+             *(["participation-source-reviews.json"] if participation_reviews else []),
              *(["county-candidate-coverage.csv"] if historical_audit else []),
              *(["historical-house-counties.json"] if house_pointer else []),
              "scripts/participation-explorer.js"] + (["uf-turnout.json"] if uf_pointer else []):
@@ -152,6 +153,10 @@ with sync_playwright() as p:
             else:
                 proof["complete_download_urls"] = sorted(downloads)
             assert pointer["complete_download_url"] in downloads
+            for review in participation_reviews:
+                assert review["complete_download_url"] in downloads
+                assert {review["base_url"] + table["file"] for table in review["tables"]} <= downloads
+                expect(page.locator("#downloads")).to_contain_text(review["scope_note"])
             if historical_audit:
                 assert "/county-candidate-coverage.csv" in downloads
                 assert historical_audit["complete_original_url"] in downloads

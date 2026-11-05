@@ -1,6 +1,27 @@
 {
   "reviews": [
     {
+      "id": "pennsylvania-monroe-20261105-01",
+      "label": "Monroe County, Pennsylvania 2026: complete official county returns and separate participation",
+      "data_directory": "data/county-source-reviews/20261105-monroe-official-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/17c116bea04a42a364daee08bc028f3beca3737f/data/county-source-reviews/20261105-monroe-official-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-monroe-20261105-01/complete-monroe-2026-county-results-01.zip",
+      "complete_download_bytes": 273559,
+      "complete_download_sha256": "0cd09dde828b4d51949d96723ee9ca84627d6125c2db3e25ee2bcfd1b192def5",
+      "review_status": "complete_sources_and_county_counts_verified",
+      "maps_approved": false,
+      "scope_note": "Monroe County only, unofficial November 3, 2026 general election; source updated November 3 at 11:04:59 PM. All seven contests reconcile across the complete workbook, county overview, detailed reporting-unit tables and candidate voting modes. House candidate votes total 60,481: DEMOCRATIC 35,157, REPUBLICAN 25,190 and native Nonpartisan write-ins 134. These are separate from 61,025 tabulated ballots, 118,818 eligible registered voters and the Act88 report's 18,232 received mail ballots. Preserve the workbook's Nonpartisan and HTML's blank write-in labels separately. Philadelphia explicitly says Testing in Progress and all its counts are excluded. This is not statewide Pennsylvania coverage, a new map or demographic turnout; existing maps are unchanged.",
+      "tables": [
+        {"file": "county-candidate-results.csv", "label": "Monroe County only: all 22 native candidate/party lines across seven contests, not ballots (CSV)"},
+        {"file": "county-candidate-mode-counts.csv", "label": "Monroe County only: all 66 candidate Election Day, Mail-In/Absentee and Provisional counts (CSV)"},
+        {"file": "county-office-party-totals.csv", "label": "Monroe County only: all 13 literal-party county totals, offices kept separate and districts checked for overlap (CSV)"},
+        {"file": "county-contest-totals.csv", "label": "Monroe County only: all seven native contest totals and reporting counters (CSV)"},
+        {"file": "county-participation.csv", "label": "Monroe County only: separate native tabulated ballots, registrations, printed/calculated registered-voter rates and received-mail count (CSV)"},
+        {"file": "native-unit-candidate-counts.csv", "label": "Monroe County only: all 715 native reporting-unit/candidate counts retained for reconciliation, no geometry approved (CSV)"}
+      ],
+      "coverage": []
+    },
+    {
       "id": "maine-pennsylvania-20261105-01",
       "label": "Lewiston 2002–2026 city participation and Pennsylvania 2026 administrative mail returns",
       "data_directory": "data/participation-source-reviews/20261105-maine-pennsylvania-01",

@@ -1,0 +1,14 @@
+{
+  "local-browser.json": {
+    "bytes": 29214,
+    "sha256": "54fa32ec53353690746c14ed9e4eb2d0ea7824c0379b72361625e7a1a20f49b8"
+  },
+  "release-verification.json": {
+    "bytes": 2357,
+    "sha256": "d4d71c752005001b6beeb5d74297b1ea2271d218a239a75ad964342f09aab91f"
+  },
+  "reproduction.json": {
+    "bytes": 248,
+    "sha256": "e8c445c9474cc660f9397a6d873407b54e23c05b18271e61ad141295eb9cc92e"
+  }
+}

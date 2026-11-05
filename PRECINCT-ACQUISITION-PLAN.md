@@ -259,6 +259,18 @@ an approved new map or new precinct coverage. Current map coverage remains
 and its complete ZIP byte-for-byte; all 29 focused tests pass.
 Publication/reproduction receipts live separately in
 `data/county-source-reviews/20261105-monroe-publication-01/`.
+Source/tools commit `17c116bea04a42a364daee08bc028f3beca3737f` is pushed.
+Release `voter-county-pennsylvania-monroe-20261105-01` and every one of its
+six pinned full CSV endpoints were independently downloaded and matched.
+The complete archive is 273,559 bytes, SHA256
+`0cd09dde828b4d51949d96723ee9ca84627d6125c2db3e25ee2bcfd1b192def5`.
+The registry/download-only integration passes Astro check, seven participation
+tests, build/four caucus tests and Pages preparation (987,245,344 bytes).
+All four local browser modes retain the previous 158 complete links among
+165, verify every review's full URLs and caveats, all three historical House
+years and all 52 UF rows. Existing county pointers and renderer are unchanged;
+do not rerun their completed map suite. Exact production deployment/page
+verification is the remaining publication gate.
 
 The user supplied NYT's 2026 Senate precinct-map page and full coverage notes.
 The source-lead audit is
