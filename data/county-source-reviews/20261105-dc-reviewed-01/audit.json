@@ -1,0 +1,62 @@
+{
+  "status": "original_backed_counts_reviewed_not_final_rcv_or_maps",
+  "native_csv_rows": 10011,
+  "native_csv_zero_rows": 1235,
+  "native_contests": 363,
+  "xml_summary_rows": 1478,
+  "accounting_party_literal_disagreements": 722,
+  "native_reporting_units": 144,
+  "participation": {
+    "year": 2026,
+    "state_code": "DC",
+    "county_fips": "11001",
+    "geography": "District of Columbia",
+    "geography_level": "county_equivalent",
+    "registered_voters": 457371,
+    "ballots_cast": 185086,
+    "registered_ballot_ratio_pct": 40.46736675477894,
+    "delegate_candidate_votes": 180979,
+    "delegate_over_under_votes": 3783,
+    "delegate_accounted_votes": 184762,
+    "unresolved_ballot_accounting_difference": 324,
+    "native_election_day_voters": 100319,
+    "native_absentee_special_ballot_votes": 84767,
+    "native_early_votes": 0,
+    "native_show_early_votes": false,
+    "early_ballot_total_established": false,
+    "source_update_literal": "2026-11-04T04:36:21.283Z",
+    "result_status": "Election Night Unofficial Results"
+  },
+  "delegate_candidate_rows": 4,
+  "delegate_literal_party_totals": {
+    "DEM": 157979,
+    "NPN": 1142,
+    "REP": 11583,
+    "STG": 10275
+  },
+  "source_update_literal": "2026-11-04T04:36:21.283Z",
+  "source_election_is_rcv": true,
+  "native_rcv_status_id": 1,
+  "native_rcv_published_display_names": [],
+  "final_rcv_round_verified": false,
+  "new_maps_approved": false,
+  "fully_complete": false,
+  "limitations": [
+    "Nonvoting delegate only, not a voting House district or the shadow Senator/Representative offices.",
+    "Native RCV-marked published tallies; no independently verified round or final ranked-choice outcome.",
+    "Accounting party literals are retained separately, never counted as candidate-party votes.",
+    "The delegate accounting difference is unresolved, not filled or allocated into candidates.",
+    "Native EarlyVotes zero with ShowEarlyVotes false does not establish zero early ballots.",
+    "No new map, 2026 precinct geometry, demographic estimate or final certified turnout is approved.",
+    "Complete native originals remain attached; no blanket upstream license certification is asserted."
+  ],
+  "table_rows": {
+    "county-delegate-candidate-results.csv": 4,
+    "county-delegate-party-totals.csv": 4,
+    "county-delegate-ballot-accounting.csv": 2,
+    "county-participation.csv": 1,
+    "native-unit-participation.csv": 144,
+    "native-unit-delegate-counts.csv": 864,
+    "all-contest-native-summary.csv": 1478
+  }
+}

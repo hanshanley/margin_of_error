@@ -1,0 +1,33 @@
+{
+  "status": "all18_files_and_complete_archive_byte_identical_outside_repository",
+  "files": [
+    "all-contest-native-summary.csv",
+    "audit.json",
+    "checksums.json",
+    "county-delegate-ballot-accounting.csv",
+    "county-delegate-candidate-results.csv",
+    "county-delegate-party-totals.csv",
+    "county-participation.csv",
+    "native-unit-delegate-counts.csv",
+    "native-unit-participation.csv",
+    "originals/citywide.json",
+    "originals/election.json",
+    "originals/parties.json",
+    "originals/receipts.json",
+    "originals/report.csv",
+    "originals/report.pdf",
+    "originals/report.xml",
+    "originals/voters.json",
+    "review-dc-2026-county-results.py"
+  ],
+  "archive_bytes": 216186,
+  "archive_sha256": "f63a0430c67f7f6baab1f60f37263618940e63cbed332899dde3a139d3338269",
+  "independent_native_csv_delegate_party_sums": {
+    "DEM": 157979,
+    "NPN": 1142,
+    "REP": 11583,
+    "STG": 10275
+  },
+  "accounting_never_in_party_sums": true,
+  "new_maps_approved": false
+}

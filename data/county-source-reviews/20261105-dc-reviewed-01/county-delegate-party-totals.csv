@@ -1,0 +1,5 @@
+year,state_code,county_fips,office,party_literal,votes
+2026,DC,11001,nonvoting_us_house_delegate,DEM,157979
+2026,DC,11001,nonvoting_us_house_delegate,NPN,1142
+2026,DC,11001,nonvoting_us_house_delegate,REP,11583
+2026,DC,11001,nonvoting_us_house_delegate,STG,10275

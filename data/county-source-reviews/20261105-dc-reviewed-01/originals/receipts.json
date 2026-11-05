@@ -1,0 +1,65 @@
+[
+  {
+    "file": "election.json",
+    "url": "https://electionresults.dcboe.org/electionResults/getElectionInfo/2026-General-Election",
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "bytes": 1151,
+    "sha256": "69ddd1216fe7b6d0f83c2ffb4785bfcda68db39f5b340b85a1d3d45ec4c84944",
+    "retrieved_at_utc": "2026-11-05T17:17:07.395602+00:00"
+  },
+  {
+    "file": "citywide.json",
+    "url": "https://electionresults.dcboe.org/cityWide/getCityWide/2026-General-Election",
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "bytes": 21971,
+    "sha256": "180047c53fc8b24fb096a30735246dfa4a4f6264bf4f289b3647b52b906d2658",
+    "retrieved_at_utc": "2026-11-05T17:17:07.408212+00:00"
+  },
+  {
+    "file": "voters.json",
+    "url": "https://electionresults.dcboe.org/cityWide/getVoterSummaryInfo/2026-General-Election",
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "bytes": 259,
+    "sha256": "fd6e5c4d2349d7b536734a31ccdb1ef20eeedc9ed2110dddcb3263268b159887",
+    "retrieved_at_utc": "2026-11-05T17:17:07.383398+00:00"
+  },
+  {
+    "file": "parties.json",
+    "url": "https://electionresults.dcboe.org/electionResults/getAllParties",
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "bytes": 811,
+    "sha256": "fdf6ecc874b71d201ce76ac6d4cf27c2cf5a7a8c417ae5454ed1e926e6fee4e3",
+    "retrieved_at_utc": "2026-11-05T17:17:07.448061+00:00"
+  },
+  {
+    "file": "report.pdf",
+    "url": "https://electionresults.dcboe.org/Downloads/Reports/November_3_2026_General_Election_Election_Night_Unofficial_Results.pdf",
+    "status": 200,
+    "content_type": "application/pdf",
+    "bytes": 115092,
+    "sha256": "afdd36f5df61c8b9280cb2dc56a79da4c5983e9652c9b7338085dd43829612c1",
+    "retrieved_at_utc": "2026-11-05T17:17:55.007500+00:00"
+  },
+  {
+    "file": "report.xml",
+    "url": "https://electionresults.dcboe.org/Downloads/Reports/November_3_2026_General_Election_Election_Night_Unofficial_Results.xml",
+    "status": 200,
+    "content_type": "application/xml",
+    "bytes": 330243,
+    "sha256": "bee40e48767cd699f27cff289be5a39e1b55f85ea07e75423ec395fbd1e5a466",
+    "retrieved_at_utc": "2026-11-05T17:17:55.043904+00:00"
+  },
+  {
+    "file": "report.csv",
+    "url": "https://electionresults.dcboe.org/Downloads/Reports/November_3_2026_General_Election_Election_Night_Unofficial_Results.csv",
+    "status": 200,
+    "content_type": "application/txt",
+    "bytes": 1025806,
+    "sha256": "e9b44e04cc9070bec07302e47fb4aabfb8536705a12aa926ff5d6092c9532f36",
+    "retrieved_at_utc": "2026-11-05T17:17:55.090077+00:00"
+  }
+]

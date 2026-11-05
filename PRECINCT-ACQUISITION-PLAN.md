@@ -273,6 +273,30 @@ not a registered public normalized export or approved 2026 map geometry.
 Use these saved originals for the next scoped review instead of repeating
 app/API discovery.
 
+The scoped D.C. count package is now prepared separately in
+`data/county-source-reviews/20261105-dc-reviewed-01/`; it does not overwrite
+those acquisition originals. All 10,011 native CSV rows reconcile with all
+1,478 XML summary records across 363 contests. All 722 party-label differences
+occur on over/undervotes, never candidate lines. Preserve both source literals.
+Seven complete tables retain four delegate candidate lines, four delegate-party
+totals, two accounting lines, the separate city participation record, all 144
+native participation records, all 864 native delegate/candidate/accounting
+records, and all 1,478 all-contest native summary records. The other offices
+and ballot options retain their exact contest names; they are not pooled
+with delegate votes or treated as single-vote ballot totals.
+
+The delegate-party sums are DEM 157,979, REP 11,583, STG 10,275 and NPN 1,142.
+The unresolved 324-ballot difference, native RCV flags, missing final-round
+verification and hidden early-vote display remain explicit. All 34 focused
+D.C./party/Monroe tests pass. Every one of the package's 18 files and the
+complete ZIP reproduce byte-for-byte outside the repository. Archive size is
+216,186 bytes, SHA256
+`f63a0430c67f7f6baab1f60f37263618940e63cbed332899dde3a139d3338269`.
+Reproduction proof is in
+`data/county-source-reviews/20261105-dc-publication-01/`.
+Immutable release verification, retained-download integration and exact live
+checks remain pending. Do not mark the D.C. map gap or precinct ledger complete.
+
 Pennsylvania official county alternative, November 5 follow-up:
 `data/county-source-reviews/20261105-monroe-official-01/` retains Monroe's
 complete native all-contest workbook, seven declared contest pages, county

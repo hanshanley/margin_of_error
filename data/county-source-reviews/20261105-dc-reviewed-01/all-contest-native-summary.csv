@@ -1,0 +1,1479 @@
+contest_number,contest_name,candidate_or_option,row_type,party_csv_literal,party_xml_literal,party_literal_disagreement,votes
+-2,REGISTERED VOTERS - TOTAL,,participation_summary,CITYWIDE,CITYWIDE,False,457371
+-1,BALLOTS CAST - TOTAL,,participation_summary,CITYWIDE,CITYWIDE,False,185086
+4,DELEGATE TO THE HOUSE OF REPRESENTATIVES FROM THE DISTRICT OF COLUMBIA,REP Denise Rosado,candidate_or_option,REP,REP,False,11583
+4,DELEGATE TO THE HOUSE OF REPRESENTATIVES FROM THE DISTRICT OF COLUMBIA,DEM Robert White,candidate_or_option,DEM,DEM,False,157979
+4,DELEGATE TO THE HOUSE OF REPRESENTATIVES FROM THE DISTRICT OF COLUMBIA,STG Kymone Freeman,candidate_or_option,STG,STG,False,10275
+4,DELEGATE TO THE HOUSE OF REPRESENTATIVES FROM THE DISTRICT OF COLUMBIA,Write-in,candidate_or_option,NPN,NPN,False,1142
+4,DELEGATE TO THE HOUSE OF REPRESENTATIVES FROM THE DISTRICT OF COLUMBIA,OVER VOTES,ballot_accounting,,REP,True,602
+4,DELEGATE TO THE HOUSE OF REPRESENTATIVES FROM THE DISTRICT OF COLUMBIA,UNDER VOTES,ballot_accounting,,REP,True,3181
+5,MAYOR OF THE DISTRICT OF COLUMBIA,IND Rhonda Hamilton,candidate_or_option,IND,IND,False,18073
+5,MAYOR OF THE DISTRICT OF COLUMBIA,DEM Janeese Lewis George,candidate_or_option,DEM,DEM,False,151539
+5,MAYOR OF THE DISTRICT OF COLUMBIA,STG Robert L. Gross,candidate_or_option,STG,STG,False,6297
+5,MAYOR OF THE DISTRICT OF COLUMBIA,Write-in,candidate_or_option,NPN,NPN,False,3765
+5,MAYOR OF THE DISTRICT OF COLUMBIA,OVER VOTES,ballot_accounting,,IND,True,424
+5,MAYOR OF THE DISTRICT OF COLUMBIA,UNDER VOTES,ballot_accounting,,IND,True,4977
+6,CHAIRMAN OF THE COUNCIL OF THE DISTRICT OF COLUMBIA,DEM Phil Mendelson,candidate_or_option,DEM,DEM,False,161936
+6,CHAIRMAN OF THE COUNCIL OF THE DISTRICT OF COLUMBIA,REP Abi-Ananiah Prudent,candidate_or_option,REP,REP,False,10629
+6,CHAIRMAN OF THE COUNCIL OF THE DISTRICT OF COLUMBIA,Write-in,candidate_or_option,NPN,NPN,False,2013
+6,CHAIRMAN OF THE COUNCIL OF THE DISTRICT OF COLUMBIA,OVER VOTES,ballot_accounting,,DEM,True,285
+6,CHAIRMAN OF THE COUNCIL OF THE DISTRICT OF COLUMBIA,UNDER VOTES,ballot_accounting,,DEM,True,10212
+7,AT-LARGE MEMBER OF THE COUNCIL OF THE DISTRICT OF COLUMBIA,DEM Oye Owolewa,candidate_or_option,DEM,DEM,False,126272
+7,AT-LARGE MEMBER OF THE COUNCIL OF THE DISTRICT OF COLUMBIA,STG Darryl Moch,candidate_or_option,STG,STG,False,5975
+7,AT-LARGE MEMBER OF THE COUNCIL OF THE DISTRICT OF COLUMBIA,REP Darrell Green,candidate_or_option,REP,REP,False,10788
+7,AT-LARGE MEMBER OF THE COUNCIL OF THE DISTRICT OF COLUMBIA,IND Elissa Silverman,candidate_or_option,IND,IND,False,36903
+7,AT-LARGE MEMBER OF THE COUNCIL OF THE DISTRICT OF COLUMBIA,Write-in,candidate_or_option,NPN,NPN,False,995
+7,AT-LARGE MEMBER OF THE COUNCIL OF THE DISTRICT OF COLUMBIA,OVER VOTES,ballot_accounting,,DEM,True,724
+7,AT-LARGE MEMBER OF THE COUNCIL OF THE DISTRICT OF COLUMBIA,UNDER VOTES,ballot_accounting,,DEM,True,3418
+8,WARD ONE MEMBER OF THE COUNCIL OF THE DISTRICT OF COLUMBIA,REP Jett James Jasper,candidate_or_option,REP,REP,False,1141
+8,WARD ONE MEMBER OF THE COUNCIL OF THE DISTRICT OF COLUMBIA,IND Ryan Prince,candidate_or_option,IND,IND,False,870
+8,WARD ONE MEMBER OF THE COUNCIL OF THE DISTRICT OF COLUMBIA,STG Jude Crannitch,candidate_or_option,STG,STG,False,616
+8,WARD ONE MEMBER OF THE COUNCIL OF THE DISTRICT OF COLUMBIA,DEM Aparna Raj,candidate_or_option,DEM,DEM,False,19072
+8,WARD ONE MEMBER OF THE COUNCIL OF THE DISTRICT OF COLUMBIA,Write-in,candidate_or_option,NPN,NPN,False,391
+8,WARD ONE MEMBER OF THE COUNCIL OF THE DISTRICT OF COLUMBIA,OVER VOTES,ballot_accounting,,REP,True,98
+8,WARD ONE MEMBER OF THE COUNCIL OF THE DISTRICT OF COLUMBIA,UNDER VOTES,ballot_accounting,,REP,True,556
+9,WARD THREE MEMBER OF THE COUNCIL OF THE DISTRICT OF COLUMBIA,DEM Matthew Frumin,candidate_or_option,DEM,DEM,False,22081
+9,WARD THREE MEMBER OF THE COUNCIL OF THE DISTRICT OF COLUMBIA,Write-in,candidate_or_option,NPN,NPN,False,859
+9,WARD THREE MEMBER OF THE COUNCIL OF THE DISTRICT OF COLUMBIA,OVER VOTES,ballot_accounting,,DEM,True,11
+9,WARD THREE MEMBER OF THE COUNCIL OF THE DISTRICT OF COLUMBIA,UNDER VOTES,ballot_accounting,,DEM,True,2786
+10,WARD FIVE MEMBER OF THE COUNCIL OF THE DISTRICT OF COLUMBIA,DEM Zachary Parker,candidate_or_option,DEM,DEM,False,22873
+10,WARD FIVE MEMBER OF THE COUNCIL OF THE DISTRICT OF COLUMBIA,STG Joyce Robinson-Paul,candidate_or_option,STG,STG,False,1618
+10,WARD FIVE MEMBER OF THE COUNCIL OF THE DISTRICT OF COLUMBIA,REP Jeffrey Kihien-Palza,candidate_or_option,REP,REP,False,874
+10,WARD FIVE MEMBER OF THE COUNCIL OF THE DISTRICT OF COLUMBIA,Write-in,candidate_or_option,NPN,NPN,False,102
+10,WARD FIVE MEMBER OF THE COUNCIL OF THE DISTRICT OF COLUMBIA,OVER VOTES,ballot_accounting,,DEM,True,56
+10,WARD FIVE MEMBER OF THE COUNCIL OF THE DISTRICT OF COLUMBIA,UNDER VOTES,ballot_accounting,,DEM,True,456
+11,WARD SIX MEMBER OF THE COUNCIL OF THE DISTRICT OF COLUMBIA,DEM Charles Allen,candidate_or_option,DEM,DEM,False,23657
+11,WARD SIX MEMBER OF THE COUNCIL OF THE DISTRICT OF COLUMBIA,REP Jorge Rice,candidate_or_option,REP,REP,False,2676
+11,WARD SIX MEMBER OF THE COUNCIL OF THE DISTRICT OF COLUMBIA,Write-in,candidate_or_option,NPN,NPN,False,255
+11,WARD SIX MEMBER OF THE COUNCIL OF THE DISTRICT OF COLUMBIA,OVER VOTES,ballot_accounting,,DEM,True,18
+11,WARD SIX MEMBER OF THE COUNCIL OF THE DISTRICT OF COLUMBIA,UNDER VOTES,ballot_accounting,,DEM,True,859
+12,ATTORNEY GENERAL FOR THE DISTRICT OF COLUMBIA,REP Manuel Rivera,candidate_or_option,REP,REP,False,12416
+12,ATTORNEY GENERAL FOR THE DISTRICT OF COLUMBIA,DEM Brian L. Schwalb,candidate_or_option,DEM,DEM,False,165147
+12,ATTORNEY GENERAL FOR THE DISTRICT OF COLUMBIA,Write-in,candidate_or_option,NPN,NPN,False,1237
+12,ATTORNEY GENERAL FOR THE DISTRICT OF COLUMBIA,OVER VOTES,ballot_accounting,,REP,True,443
+12,ATTORNEY GENERAL FOR THE DISTRICT OF COLUMBIA,UNDER VOTES,ballot_accounting,,REP,True,5832
+13,UNITED STATES SENATOR,REP Robert Simmons,candidate_or_option,REP,REP,False,11825
+13,UNITED STATES SENATOR,DEM Paul Strauss,candidate_or_option,DEM,DEM,False,161041
+13,UNITED STATES SENATOR,Write-in,candidate_or_option,NPN,NPN,False,2039
+13,UNITED STATES SENATOR,OVER VOTES,ballot_accounting,,REP,True,369
+13,UNITED STATES SENATOR,UNDER VOTES,ballot_accounting,,REP,True,9477
+14,UNITED STATES REPRESENTATIVE CITYWIDE,REP Ciprian Ivanof,candidate_or_option,REP,REP,False,10247
+14,UNITED STATES REPRESENTATIVE CITYWIDE,DEM Franklin Garcia,candidate_or_option,DEM,DEM,False,161019
+14,UNITED STATES REPRESENTATIVE CITYWIDE,Write-in,candidate_or_option,NPN,NPN,False,1861
+14,UNITED STATES REPRESENTATIVE CITYWIDE,OVER VOTES,ballot_accounting,,REP,True,316
+14,UNITED STATES REPRESENTATIVE CITYWIDE,UNDER VOTES,ballot_accounting,,REP,True,11308
+15,WARD ONE MEMBER OF THE STATE BOARD OF EDUCATION,Ben Williams,candidate_or_option,NPN,NPN,False,16605
+15,WARD ONE MEMBER OF THE STATE BOARD OF EDUCATION,Write-in,candidate_or_option,NPN,NPN,False,261
+15,WARD ONE MEMBER OF THE STATE BOARD OF EDUCATION,OVER VOTES,ballot_accounting,,NPN,True,13
+15,WARD ONE MEMBER OF THE STATE BOARD OF EDUCATION,UNDER VOTES,ballot_accounting,,NPN,True,5865
+16,WARD THREE MEMBER OF THE STATE BOARD OF EDUCATION,Eric Goulet,candidate_or_option,NPN,NPN,False,10163
+16,WARD THREE MEMBER OF THE STATE BOARD OF EDUCATION,Aaron Wesolowski,candidate_or_option,NPN,NPN,False,9700
+16,WARD THREE MEMBER OF THE STATE BOARD OF EDUCATION,Write-in,candidate_or_option,NPN,NPN,False,248
+16,WARD THREE MEMBER OF THE STATE BOARD OF EDUCATION,OVER VOTES,ballot_accounting,,NPN,True,20
+16,WARD THREE MEMBER OF THE STATE BOARD OF EDUCATION,UNDER VOTES,ballot_accounting,,NPN,True,5606
+17,WARD FIVE MEMBER OF THE STATE BOARD OF EDUCATION,Jon Alfuth,candidate_or_option,NPN,NPN,False,4846
+17,WARD FIVE MEMBER OF THE STATE BOARD OF EDUCATION,Lynn Jennings,candidate_or_option,NPN,NPN,False,16623
+17,WARD FIVE MEMBER OF THE STATE BOARD OF EDUCATION,Write-in,candidate_or_option,NPN,NPN,False,232
+17,WARD FIVE MEMBER OF THE STATE BOARD OF EDUCATION,OVER VOTES,ballot_accounting,,NPN,True,39
+17,WARD FIVE MEMBER OF THE STATE BOARD OF EDUCATION,UNDER VOTES,ballot_accounting,,NPN,True,4239
+18,WARD SIX MEMBER OF THE STATE BOARD OF EDUCATION,Amber A. Williams,candidate_or_option,NPN,NPN,False,12852
+18,WARD SIX MEMBER OF THE STATE BOARD OF EDUCATION,David Parker,candidate_or_option,NPN,NPN,False,2853
+18,WARD SIX MEMBER OF THE STATE BOARD OF EDUCATION,Joshua Wiley,candidate_or_option,NPN,NPN,False,6105
+18,WARD SIX MEMBER OF THE STATE BOARD OF EDUCATION,Write-in,candidate_or_option,NPN,NPN,False,350
+18,WARD SIX MEMBER OF THE STATE BOARD OF EDUCATION,OVER VOTES,ballot_accounting,,NPN,True,47
+18,WARD SIX MEMBER OF THE STATE BOARD OF EDUCATION,UNDER VOTES,ballot_accounting,,NPN,True,5258
+19,ANC-1A01,Jaspal S. Bhatia,candidate_or_option,NPN,NPN,False,371
+19,ANC-1A01,Write-in,candidate_or_option,NPN,NPN,False,11
+19,ANC-1A01,OVER VOTES,ballot_accounting,,NPN,True,0
+19,ANC-1A01,UNDER VOTES,ballot_accounting,,NPN,True,137
+20,ANC-1A02,Write-in,candidate_or_option,NPN,NPN,False,34
+20,ANC-1A02,OVER VOTES,ballot_accounting,,NPN,True,0
+20,ANC-1A02,UNDER VOTES,ballot_accounting,,NPN,True,308
+21,ANC-1A03,Joseph Schmitt,candidate_or_option,NPN,NPN,False,253
+21,ANC-1A03,Write-in,candidate_or_option,NPN,NPN,False,4
+21,ANC-1A03,OVER VOTES,ballot_accounting,,NPN,True,0
+21,ANC-1A03,UNDER VOTES,ballot_accounting,,NPN,True,129
+22,ANC-1A04,Jeremy S. Sherman,candidate_or_option,NPN,NPN,False,330
+22,ANC-1A04,John Henderson,candidate_or_option,NPN,NPN,False,101
+22,ANC-1A04,Write-in,candidate_or_option,NPN,NPN,False,5
+22,ANC-1A04,OVER VOTES,ballot_accounting,,NPN,True,0
+22,ANC-1A04,UNDER VOTES,ballot_accounting,,NPN,True,113
+23,ANC-1A05,Christine Miller,candidate_or_option,NPN,NPN,False,296
+23,ANC-1A05,Write-in,candidate_or_option,NPN,NPN,False,3
+23,ANC-1A05,OVER VOTES,ballot_accounting,,NPN,True,1
+23,ANC-1A05,UNDER VOTES,ballot_accounting,,NPN,True,92
+24,ANC-1A06,Anthony Thomas-Davis,candidate_or_option,NPN,NPN,False,246
+24,ANC-1A06,Arjun Singh,candidate_or_option,NPN,NPN,False,219
+24,ANC-1A06,Write-in,candidate_or_option,NPN,NPN,False,2
+24,ANC-1A06,OVER VOTES,ballot_accounting,,NPN,True,2
+24,ANC-1A06,UNDER VOTES,ballot_accounting,,NPN,True,81
+25,ANC-1A07,Shane D. McCarthy,candidate_or_option,NPN,NPN,False,378
+25,ANC-1A07,Write-in,candidate_or_option,NPN,NPN,False,12
+25,ANC-1A07,OVER VOTES,ballot_accounting,,NPN,True,0
+25,ANC-1A07,UNDER VOTES,ballot_accounting,,NPN,True,155
+26,ANC-1A08,Shira Davidson,candidate_or_option,NPN,NPN,False,314
+26,ANC-1A08,Write-in,candidate_or_option,NPN,NPN,False,8
+26,ANC-1A08,OVER VOTES,ballot_accounting,,NPN,True,0
+26,ANC-1A08,UNDER VOTES,ballot_accounting,,NPN,True,165
+27,ANC-1A09,Daniella Kelley,candidate_or_option,NPN,NPN,False,266
+27,ANC-1A09,Write-in,candidate_or_option,NPN,NPN,False,79
+27,ANC-1A09,OVER VOTES,ballot_accounting,,NPN,True,0
+27,ANC-1A09,UNDER VOTES,ballot_accounting,,NPN,True,145
+28,ANC-1A10,Vida Rangel,candidate_or_option,NPN,NPN,False,345
+28,ANC-1A10,Write-in,candidate_or_option,NPN,NPN,False,11
+28,ANC-1A10,OVER VOTES,ballot_accounting,,NPN,True,0
+28,ANC-1A10,UNDER VOTES,ballot_accounting,,NPN,True,154
+29,ANC-1B01,Matt Fay,candidate_or_option,NPN,NPN,False,455
+29,ANC-1B01,Write-in,candidate_or_option,NPN,NPN,False,9
+29,ANC-1B01,OVER VOTES,ballot_accounting,,NPN,True,0
+29,ANC-1B01,UNDER VOTES,ballot_accounting,,NPN,True,152
+30,ANC-1B02,Frank Chauvin,candidate_or_option,NPN,NPN,False,485
+30,ANC-1B02,Write-in,candidate_or_option,NPN,NPN,False,12
+30,ANC-1B02,OVER VOTES,ballot_accounting,,NPN,True,0
+30,ANC-1B02,UNDER VOTES,ballot_accounting,,NPN,True,198
+31,ANC-1B03,David Seidman,candidate_or_option,NPN,NPN,False,260
+31,ANC-1B03,J. Swiderski,candidate_or_option,NPN,NPN,False,88
+31,ANC-1B03,Jamie S. Sycamore,candidate_or_option,NPN,NPN,False,147
+31,ANC-1B03,Write-in,candidate_or_option,NPN,NPN,False,2
+31,ANC-1B03,OVER VOTES,ballot_accounting,,NPN,True,6
+31,ANC-1B03,UNDER VOTES,ballot_accounting,,NPN,True,89
+32,ANC-1B04,Guneev Sharma,candidate_or_option,NPN,NPN,False,670
+32,ANC-1B04,Write-in,candidate_or_option,NPN,NPN,False,23
+32,ANC-1B04,OVER VOTES,ballot_accounting,,NPN,True,0
+32,ANC-1B04,UNDER VOTES,ballot_accounting,,NPN,True,283
+33,ANC-1B05,Alan Kensek,candidate_or_option,NPN,NPN,False,168
+33,ANC-1B05,Lisa Rucker,candidate_or_option,NPN,NPN,False,289
+33,ANC-1B05,Write-in,candidate_or_option,NPN,NPN,False,5
+33,ANC-1B05,OVER VOTES,ballot_accounting,,NPN,True,1
+33,ANC-1B05,UNDER VOTES,ballot_accounting,,NPN,True,139
+34,ANC-1B06,Miguel Trindade Deramo,candidate_or_option,NPN,NPN,False,355
+34,ANC-1B06,Write-in,candidate_or_option,NPN,NPN,False,8
+34,ANC-1B06,OVER VOTES,ballot_accounting,,NPN,True,0
+34,ANC-1B06,UNDER VOTES,ballot_accounting,,NPN,True,147
+35,ANC-1B07,Matthew Holden,candidate_or_option,NPN,NPN,False,378
+35,ANC-1B07,Write-in,candidate_or_option,NPN,NPN,False,9
+35,ANC-1B07,OVER VOTES,ballot_accounting,,NPN,True,0
+35,ANC-1B07,UNDER VOTES,ballot_accounting,,NPN,True,172
+36,ANC-1B08,Brittany Beekman,candidate_or_option,NPN,NPN,False,461
+36,ANC-1B08,Write-in,candidate_or_option,NPN,NPN,False,6
+36,ANC-1B08,OVER VOTES,ballot_accounting,,NPN,True,0
+36,ANC-1B08,UNDER VOTES,ballot_accounting,,NPN,True,178
+37,ANC-1B09,Stephen Hanrahan,candidate_or_option,NPN,NPN,False,403
+37,ANC-1B09,Write-in,candidate_or_option,NPN,NPN,False,19
+37,ANC-1B09,OVER VOTES,ballot_accounting,,NPN,True,0
+37,ANC-1B09,UNDER VOTES,ballot_accounting,,NPN,True,195
+38,ANC-1C01,Howard Bauleke,candidate_or_option,NPN,NPN,False,428
+38,ANC-1C01,Write-in,candidate_or_option,NPN,NPN,False,7
+38,ANC-1C01,OVER VOTES,ballot_accounting,,NPN,True,0
+38,ANC-1C01,UNDER VOTES,ballot_accounting,,NPN,True,198
+39,ANC-1C02,Sterling Speirn,candidate_or_option,NPN,NPN,False,412
+39,ANC-1C02,Write-in,candidate_or_option,NPN,NPN,False,11
+39,ANC-1C02,OVER VOTES,ballot_accounting,,NPN,True,0
+39,ANC-1C02,UNDER VOTES,ballot_accounting,,NPN,True,214
+40,ANC-1C03,Kendall Gibson,candidate_or_option,NPN,NPN,False,444
+40,ANC-1C03,Write-in,candidate_or_option,NPN,NPN,False,11
+40,ANC-1C03,OVER VOTES,ballot_accounting,,NPN,True,0
+40,ANC-1C03,UNDER VOTES,ballot_accounting,,NPN,True,165
+41,ANC-1C04,Marie-Elise Diamond,candidate_or_option,NPN,NPN,False,436
+41,ANC-1C04,Write-in,candidate_or_option,NPN,NPN,False,13
+41,ANC-1C04,OVER VOTES,ballot_accounting,,NPN,True,0
+41,ANC-1C04,UNDER VOTES,ballot_accounting,,NPN,True,170
+42,ANC-1C05,Curtis Harrison,candidate_or_option,NPN,NPN,False,390
+42,ANC-1C05,Write-in,candidate_or_option,NPN,NPN,False,7
+42,ANC-1C05,OVER VOTES,ballot_accounting,,NPN,True,0
+42,ANC-1C05,UNDER VOTES,ballot_accounting,,NPN,True,197
+43,ANC-1C06,Lena Kennell,candidate_or_option,NPN,NPN,False,467
+43,ANC-1C06,Write-in,candidate_or_option,NPN,NPN,False,18
+43,ANC-1C06,OVER VOTES,ballot_accounting,,NPN,True,0
+43,ANC-1C06,UNDER VOTES,ballot_accounting,,NPN,True,208
+44,ANC-1C07,Nancy Shia,candidate_or_option,NPN,NPN,False,323
+44,ANC-1C07,Write-in,candidate_or_option,NPN,NPN,False,18
+44,ANC-1C07,OVER VOTES,ballot_accounting,,NPN,True,0
+44,ANC-1C07,UNDER VOTES,ballot_accounting,,NPN,True,130
+45,ANC-1C08,David Fucillo,candidate_or_option,NPN,NPN,False,429
+45,ANC-1C08,Write-in,candidate_or_option,NPN,NPN,False,6
+45,ANC-1C08,OVER VOTES,ballot_accounting,,NPN,True,0
+45,ANC-1C08,UNDER VOTES,ballot_accounting,,NPN,True,208
+46,ANC-1C09,Malinda Frevert,candidate_or_option,NPN,NPN,False,359
+46,ANC-1C09,Write-in,candidate_or_option,NPN,NPN,False,7
+46,ANC-1C09,OVER VOTES,ballot_accounting,,NPN,True,0
+46,ANC-1C09,UNDER VOTES,ballot_accounting,,NPN,True,131
+47,ANC-1D01,Sam Bell,candidate_or_option,NPN,NPN,False,418
+47,ANC-1D01,Maki Tazawa,candidate_or_option,NPN,NPN,False,134
+47,ANC-1D01,Write-in,candidate_or_option,NPN,NPN,False,5
+47,ANC-1D01,OVER VOTES,ballot_accounting,,NPN,True,0
+47,ANC-1D01,UNDER VOTES,ballot_accounting,,NPN,True,100
+48,ANC-1D02,Susan Patrick,candidate_or_option,NPN,NPN,False,206
+48,ANC-1D02,Write-in,candidate_or_option,NPN,NPN,False,3
+48,ANC-1D02,OVER VOTES,ballot_accounting,,NPN,True,0
+48,ANC-1D02,UNDER VOTES,ballot_accounting,,NPN,True,98
+49,ANC-1D03,Erika Núñez,candidate_or_option,NPN,NPN,False,410
+49,ANC-1D03,Write-in,candidate_or_option,NPN,NPN,False,6
+49,ANC-1D03,OVER VOTES,ballot_accounting,,NPN,True,0
+49,ANC-1D03,UNDER VOTES,ballot_accounting,,NPN,True,108
+50,ANC-1D04,Melissa Wyers,candidate_or_option,NPN,NPN,False,259
+50,ANC-1D04,Write-in,candidate_or_option,NPN,NPN,False,7
+50,ANC-1D04,OVER VOTES,ballot_accounting,,NPN,True,0
+50,ANC-1D04,UNDER VOTES,ballot_accounting,,NPN,True,111
+51,ANC-1D05,Omar Parbhoo,candidate_or_option,NPN,NPN,False,463
+51,ANC-1D05,Write-in,candidate_or_option,NPN,NPN,False,2
+51,ANC-1D05,OVER VOTES,ballot_accounting,,NPN,True,1
+51,ANC-1D05,UNDER VOTES,ballot_accounting,,NPN,True,168
+52,ANC-1D06,Sapna Pandya,candidate_or_option,NPN,NPN,False,295
+52,ANC-1D06,Keith Krosinsky,candidate_or_option,NPN,NPN,False,202
+52,ANC-1D06,Write-in,candidate_or_option,NPN,NPN,False,4
+52,ANC-1D06,OVER VOTES,ballot_accounting,,NPN,True,3
+52,ANC-1D06,UNDER VOTES,ballot_accounting,,NPN,True,101
+53,ANC-1D07,Gary Decker,candidate_or_option,NPN,NPN,False,243
+53,ANC-1D07,Write-in,candidate_or_option,NPN,NPN,False,8
+53,ANC-1D07,OVER VOTES,ballot_accounting,,NPN,True,1
+53,ANC-1D07,UNDER VOTES,ballot_accounting,,NPN,True,116
+54,ANC-1E01,Brad Howard,candidate_or_option,NPN,NPN,False,448
+54,ANC-1E01,Write-in,candidate_or_option,NPN,NPN,False,14
+54,ANC-1E01,OVER VOTES,ballot_accounting,,NPN,True,1
+54,ANC-1E01,UNDER VOTES,ballot_accounting,,NPN,True,148
+55,ANC-1E02,Audra K. Grant,candidate_or_option,NPN,NPN,False,274
+55,ANC-1E02,Michael McGarty,candidate_or_option,NPN,NPN,False,61
+55,ANC-1E02,Dominique D. Satterwhite,candidate_or_option,NPN,NPN,False,76
+55,ANC-1E02,Write-in,candidate_or_option,NPN,NPN,False,3
+55,ANC-1E02,OVER VOTES,ballot_accounting,,NPN,True,3
+55,ANC-1E02,UNDER VOTES,ballot_accounting,,NPN,True,69
+56,ANC-1E03,Philippa Hawker,candidate_or_option,NPN,NPN,False,191
+56,ANC-1E03,Rami Jackson,candidate_or_option,NPN,NPN,False,239
+56,ANC-1E03,Write-in,candidate_or_option,NPN,NPN,False,3
+56,ANC-1E03,OVER VOTES,ballot_accounting,,NPN,True,0
+56,ANC-1E03,UNDER VOTES,ballot_accounting,,NPN,True,125
+57,ANC-1E04,Marc Poe,candidate_or_option,NPN,NPN,False,82
+57,ANC-1E04,Rashida E. Brown,candidate_or_option,NPN,NPN,False,358
+57,ANC-1E04,Write-in,candidate_or_option,NPN,NPN,False,5
+57,ANC-1E04,OVER VOTES,ballot_accounting,,NPN,True,1
+57,ANC-1E04,UNDER VOTES,ballot_accounting,,NPN,True,58
+58,ANC-1E05,Leah Peterson,candidate_or_option,NPN,NPN,False,250
+58,ANC-1E05,Write-in,candidate_or_option,NPN,NPN,False,2
+58,ANC-1E05,OVER VOTES,ballot_accounting,,NPN,True,0
+58,ANC-1E05,UNDER VOTES,ballot_accounting,,NPN,True,103
+59,ANC-1E06,Josh Jacobson,candidate_or_option,NPN,NPN,False,281
+59,ANC-1E06,Write-in,candidate_or_option,NPN,NPN,False,4
+59,ANC-1E06,OVER VOTES,ballot_accounting,,NPN,True,0
+59,ANC-1E06,UNDER VOTES,ballot_accounting,,NPN,True,125
+60,ANC-1E07,Mark A. LeMunyon,candidate_or_option,NPN,NPN,False,239
+60,ANC-1E07,Write-in,candidate_or_option,NPN,NPN,False,1
+60,ANC-1E07,OVER VOTES,ballot_accounting,,NPN,True,0
+60,ANC-1E07,UNDER VOTES,ballot_accounting,,NPN,True,119
+61,ANC-2A01,Write-in,candidate_or_option,NPN,NPN,False,8
+61,ANC-2A01,OVER VOTES,ballot_accounting,,NPN,True,0
+61,ANC-2A01,UNDER VOTES,ballot_accounting,,NPN,True,85
+62,ANC-2A02,Rob Gifford,candidate_or_option,NPN,NPN,False,302
+62,ANC-2A02,Write-in,candidate_or_option,NPN,NPN,False,16
+62,ANC-2A02,OVER VOTES,ballot_accounting,,NPN,True,1
+62,ANC-2A02,UNDER VOTES,ballot_accounting,,NPN,True,122
+63,ANC-2A03,John P. George,candidate_or_option,NPN,NPN,False,206
+63,ANC-2A03,"Trupti ""Trip"" J. Patel",candidate_or_option,NPN,NPN,False,78
+63,ANC-2A03,Write-in,candidate_or_option,NPN,NPN,False,3
+63,ANC-2A03,OVER VOTES,ballot_accounting,,NPN,True,0
+63,ANC-2A03,UNDER VOTES,ballot_accounting,,NPN,True,55
+64,ANC-2A04,Edward Comer,candidate_or_option,NPN,NPN,False,432
+64,ANC-2A04,Write-in,candidate_or_option,NPN,NPN,False,15
+64,ANC-2A04,OVER VOTES,ballot_accounting,,NPN,True,0
+64,ANC-2A04,UNDER VOTES,ballot_accounting,,NPN,True,132
+65,ANC-2A05,Write-in,candidate_or_option,NPN,NPN,False,12
+65,ANC-2A05,OVER VOTES,ballot_accounting,,NPN,True,0
+65,ANC-2A05,UNDER VOTES,ballot_accounting,,NPN,True,156
+66,ANC-2A06,John H. Dolan,candidate_or_option,NPN,NPN,False,267
+66,ANC-2A06,Write-in,candidate_or_option,NPN,NPN,False,6
+66,ANC-2A06,OVER VOTES,ballot_accounting,,NPN,True,0
+66,ANC-2A06,UNDER VOTES,ballot_accounting,,NPN,True,119
+67,ANC-2A07,Write-in,candidate_or_option,NPN,NPN,False,8
+67,ANC-2A07,OVER VOTES,ballot_accounting,,NPN,True,0
+67,ANC-2A07,UNDER VOTES,ballot_accounting,,NPN,True,71
+68,ANC-2A08,Jim Malec,candidate_or_option,NPN,NPN,False,118
+68,ANC-2A08,Write-in,candidate_or_option,NPN,NPN,False,4
+68,ANC-2A08,OVER VOTES,ballot_accounting,,NPN,True,0
+68,ANC-2A08,UNDER VOTES,ballot_accounting,,NPN,True,53
+69,ANC-2A09,Write-in,candidate_or_option,NPN,NPN,False,21
+69,ANC-2A09,OVER VOTES,ballot_accounting,,NPN,True,0
+69,ANC-2A09,UNDER VOTES,ballot_accounting,,NPN,True,88
+70,ANC-2B01,Cameron G. Yen,candidate_or_option,NPN,NPN,False,413
+70,ANC-2B01,Write-in,candidate_or_option,NPN,NPN,False,11
+70,ANC-2B01,OVER VOTES,ballot_accounting,,NPN,True,0
+70,ANC-2B01,UNDER VOTES,ballot_accounting,,NPN,True,172
+71,ANC-2B02,Keaton Dicapo,candidate_or_option,NPN,NPN,False,67
+71,ANC-2B02,Jeffrey Rueckgauer,candidate_or_option,NPN,NPN,False,159
+71,ANC-2B02,Zach Epstein,candidate_or_option,NPN,NPN,False,199
+71,ANC-2B02,Write-in,candidate_or_option,NPN,NPN,False,8
+71,ANC-2B02,OVER VOTES,ballot_accounting,,NPN,True,0
+71,ANC-2B02,UNDER VOTES,ballot_accounting,,NPN,True,106
+72,ANC-2B03,Vincent E. Slatt,candidate_or_option,NPN,NPN,False,407
+72,ANC-2B03,Write-in,candidate_or_option,NPN,NPN,False,13
+72,ANC-2B03,OVER VOTES,ballot_accounting,,NPN,True,0
+72,ANC-2B03,UNDER VOTES,ballot_accounting,,NPN,True,193
+73,ANC-2B04,Madison Crum,candidate_or_option,NPN,NPN,False,403
+73,ANC-2B04,Write-in,candidate_or_option,NPN,NPN,False,6
+73,ANC-2B04,OVER VOTES,ballot_accounting,,NPN,True,0
+73,ANC-2B04,UNDER VOTES,ballot_accounting,,NPN,True,169
+74,ANC-2B05,Alex Marshall,candidate_or_option,NPN,NPN,False,376
+74,ANC-2B05,Write-in,candidate_or_option,NPN,NPN,False,7
+74,ANC-2B05,OVER VOTES,ballot_accounting,,NPN,True,0
+74,ANC-2B05,UNDER VOTES,ballot_accounting,,NPN,True,173
+75,ANC-2B06,Matt Johnson,candidate_or_option,NPN,NPN,False,281
+75,ANC-2B06,Write-in,candidate_or_option,NPN,NPN,False,3
+75,ANC-2B06,OVER VOTES,ballot_accounting,,NPN,True,0
+75,ANC-2B06,UNDER VOTES,ballot_accounting,,NPN,True,104
+76,ANC-2B07,Bill Rubin,candidate_or_option,NPN,NPN,False,137
+76,ANC-2B07,Kendall Simonds,candidate_or_option,NPN,NPN,False,261
+76,ANC-2B07,Write-in,candidate_or_option,NPN,NPN,False,11
+76,ANC-2B07,OVER VOTES,ballot_accounting,,NPN,True,1
+76,ANC-2B07,UNDER VOTES,ballot_accounting,,NPN,True,171
+77,ANC-2B08,Zach Adams,candidate_or_option,NPN,NPN,False,498
+77,ANC-2B08,Write-in,candidate_or_option,NPN,NPN,False,16
+77,ANC-2B08,OVER VOTES,ballot_accounting,,NPN,True,1
+77,ANC-2B08,UNDER VOTES,ballot_accounting,,NPN,True,148
+78,ANC-2B09,Lynn Thompson,candidate_or_option,NPN,NPN,False,497
+78,ANC-2B09,Write-in,candidate_or_option,NPN,NPN,False,26
+78,ANC-2B09,OVER VOTES,ballot_accounting,,NPN,True,0
+78,ANC-2B09,UNDER VOTES,ballot_accounting,,NPN,True,205
+79,ANC-2C01,Michael D. Shankle,candidate_or_option,NPN,NPN,False,269
+79,ANC-2C01,Write-in,candidate_or_option,NPN,NPN,False,21
+79,ANC-2C01,OVER VOTES,ballot_accounting,,NPN,True,0
+79,ANC-2C01,UNDER VOTES,ballot_accounting,,NPN,True,146
+80,ANC-2C02,Nancy Groth,candidate_or_option,NPN,NPN,False,266
+80,ANC-2C02,Write-in,candidate_or_option,NPN,NPN,False,10
+80,ANC-2C02,OVER VOTES,ballot_accounting,,NPN,True,1
+80,ANC-2C02,UNDER VOTES,ballot_accounting,,NPN,True,108
+81,ANC-2C03,Thomas S. Lee,candidate_or_option,NPN,NPN,False,214
+81,ANC-2C03,Darren Sheets,candidate_or_option,NPN,NPN,False,125
+81,ANC-2C03,Write-in,candidate_or_option,NPN,NPN,False,2
+81,ANC-2C03,OVER VOTES,ballot_accounting,,NPN,True,0
+81,ANC-2C03,UNDER VOTES,ballot_accounting,,NPN,True,93
+82,ANC-2C04,Write-in,candidate_or_option,NPN,NPN,False,37
+82,ANC-2C04,OVER VOTES,ballot_accounting,,NPN,True,0
+82,ANC-2C04,UNDER VOTES,ballot_accounting,,NPN,True,314
+83,ANC-2D01,Robyn Lipton,candidate_or_option,NPN,NPN,False,292
+83,ANC-2D01,Write-in,candidate_or_option,NPN,NPN,False,7
+83,ANC-2D01,OVER VOTES,ballot_accounting,,NPN,True,1
+83,ANC-2D01,UNDER VOTES,ballot_accounting,,NPN,True,127
+84,ANC-2D02,Carole L Feld,candidate_or_option,NPN,NPN,False,336
+84,ANC-2D02,Write-in,candidate_or_option,NPN,NPN,False,3
+84,ANC-2D02,OVER VOTES,ballot_accounting,,NPN,True,0
+84,ANC-2D02,UNDER VOTES,ballot_accounting,,NPN,True,91
+85,ANC-2E01,Eric Langenbacher,candidate_or_option,NPN,NPN,False,271
+85,ANC-2E01,Aleria Elyse Butler,candidate_or_option,NPN,NPN,False,104
+85,ANC-2E01,Write-in,candidate_or_option,NPN,NPN,False,4
+85,ANC-2E01,OVER VOTES,ballot_accounting,,NPN,True,0
+85,ANC-2E01,UNDER VOTES,ballot_accounting,,NPN,True,87
+86,ANC-2E02,"Christopher ""Topher"" Mathews",candidate_or_option,NPN,NPN,False,259
+86,ANC-2E02,Write-in,candidate_or_option,NPN,NPN,False,7
+86,ANC-2E02,OVER VOTES,ballot_accounting,,NPN,True,0
+86,ANC-2E02,UNDER VOTES,ballot_accounting,,NPN,True,107
+87,ANC-2E03,Paul Maysak,candidate_or_option,NPN,NPN,False,251
+87,ANC-2E03,Write-in,candidate_or_option,NPN,NPN,False,6
+87,ANC-2E03,OVER VOTES,ballot_accounting,,NPN,True,0
+87,ANC-2E03,UNDER VOTES,ballot_accounting,,NPN,True,101
+88,ANC-2E04,Write-in,candidate_or_option,NPN,NPN,False,2
+88,ANC-2E04,OVER VOTES,ballot_accounting,,NPN,True,0
+88,ANC-2E04,UNDER VOTES,ballot_accounting,,NPN,True,2
+89,ANC-2E05,Mimsy Lindner,candidate_or_option,NPN,NPN,False,209
+89,ANC-2E05,Write-in,candidate_or_option,NPN,NPN,False,7
+89,ANC-2E05,OVER VOTES,ballot_accounting,,NPN,True,0
+89,ANC-2E05,UNDER VOTES,ballot_accounting,,NPN,True,84
+90,ANC-2E06,Stefanie Scott,candidate_or_option,NPN,NPN,False,438
+90,ANC-2E06,Write-in,candidate_or_option,NPN,NPN,False,11
+90,ANC-2E06,OVER VOTES,ballot_accounting,,NPN,True,0
+90,ANC-2E06,UNDER VOTES,ballot_accounting,,NPN,True,147
+91,ANC-2E07,Natalee S. Snider,candidate_or_option,NPN,NPN,False,385
+91,ANC-2E07,Write-in,candidate_or_option,NPN,NPN,False,8
+91,ANC-2E07,OVER VOTES,ballot_accounting,,NPN,True,0
+91,ANC-2E07,UNDER VOTES,ballot_accounting,,NPN,True,202
+92,ANC-2E08,Write-in,candidate_or_option,NPN,NPN,False,15
+92,ANC-2E08,OVER VOTES,ballot_accounting,,NPN,True,0
+92,ANC-2E08,UNDER VOTES,ballot_accounting,,NPN,True,72
+93,ANC-2F01,David R. Rubenstein,candidate_or_option,NPN,NPN,False,412
+93,ANC-2F01,Write-in,candidate_or_option,NPN,NPN,False,13
+93,ANC-2F01,OVER VOTES,ballot_accounting,,NPN,True,0
+93,ANC-2F01,UNDER VOTES,ballot_accounting,,NPN,True,155
+94,ANC-2F02,Write-in,candidate_or_option,NPN,NPN,False,62
+94,ANC-2F02,OVER VOTES,ballot_accounting,,NPN,True,0
+94,ANC-2F02,UNDER VOTES,ballot_accounting,,NPN,True,518
+95,ANC-2F03,Joe Florio,candidate_or_option,NPN,NPN,False,384
+95,ANC-2F03,Write-in,candidate_or_option,NPN,NPN,False,7
+95,ANC-2F03,OVER VOTES,ballot_accounting,,NPN,True,0
+95,ANC-2F03,UNDER VOTES,ballot_accounting,,NPN,True,166
+96,ANC-2F04,Benjamin Dalley,candidate_or_option,NPN,NPN,False,343
+96,ANC-2F04,Write-in,candidate_or_option,NPN,NPN,False,10
+96,ANC-2F04,OVER VOTES,ballot_accounting,,NPN,True,3
+96,ANC-2F04,UNDER VOTES,ballot_accounting,,NPN,True,149
+97,ANC-2F05,Christopher J. Dyer,candidate_or_option,NPN,NPN,False,243
+97,ANC-2F05,Write-in,candidate_or_option,NPN,NPN,False,11
+97,ANC-2F05,OVER VOTES,ballot_accounting,,NPN,True,0
+97,ANC-2F05,UNDER VOTES,ballot_accounting,,NPN,True,98
+98,ANC-2F06,Write-in,candidate_or_option,NPN,NPN,False,18
+98,ANC-2F06,OVER VOTES,ballot_accounting,,NPN,True,0
+98,ANC-2F06,UNDER VOTES,ballot_accounting,,NPN,True,385
+99,ANC-2F07,Kevin Cataldo,candidate_or_option,NPN,NPN,False,350
+99,ANC-2F07,Write-in,candidate_or_option,NPN,NPN,False,8
+99,ANC-2F07,OVER VOTES,ballot_accounting,,NPN,True,0
+99,ANC-2F07,UNDER VOTES,ballot_accounting,,NPN,True,127
+100,ANC-2F08,Write-in,candidate_or_option,NPN,NPN,False,29
+100,ANC-2F08,OVER VOTES,ballot_accounting,,NPN,True,0
+100,ANC-2F08,UNDER VOTES,ballot_accounting,,NPN,True,386
+101,ANC-2G01,Howard Garrett,candidate_or_option,NPN,NPN,False,317
+101,ANC-2G01,Christian Dingus,candidate_or_option,NPN,NPN,False,57
+101,ANC-2G01,Write-in,candidate_or_option,NPN,NPN,False,4
+101,ANC-2G01,OVER VOTES,ballot_accounting,,NPN,True,0
+101,ANC-2G01,UNDER VOTES,ballot_accounting,,NPN,True,69
+102,ANC-2G02,"Alexander M. ""Alex"" Padro",candidate_or_option,NPN,NPN,False,384
+102,ANC-2G02,Write-in,candidate_or_option,NPN,NPN,False,12
+102,ANC-2G02,OVER VOTES,ballot_accounting,,NPN,True,0
+102,ANC-2G02,UNDER VOTES,ballot_accounting,,NPN,True,183
+103,ANC-2G03 2G03,Nicole Shea,candidate_or_option,NPN,NPN,False,471
+103,ANC-2G03 2G03,Write-in,candidate_or_option,NPN,NPN,False,25
+103,ANC-2G03 2G03,OVER VOTES,ballot_accounting,,NPN,True,0
+103,ANC-2G03 2G03,UNDER VOTES,ballot_accounting,,NPN,True,104
+104,ANC-2G04,Steven M. McCarty,candidate_or_option,NPN,NPN,False,313
+104,ANC-2G04,Write-in,candidate_or_option,NPN,NPN,False,8
+104,ANC-2G04,OVER VOTES,ballot_accounting,,NPN,True,0
+104,ANC-2G04,UNDER VOTES,ballot_accounting,,NPN,True,98
+105,ANC-2G05,Write-in,candidate_or_option,NPN,NPN,False,64
+105,ANC-2G05,OVER VOTES,ballot_accounting,,NPN,True,0
+105,ANC-2G05,UNDER VOTES,ballot_accounting,,NPN,True,441
+106,ANC-2G06,Shariff Washington,candidate_or_option,NPN,NPN,False,237
+106,ANC-2G06,Katelyn McNelis,candidate_or_option,NPN,NPN,False,323
+106,ANC-2G06,Write-in,candidate_or_option,NPN,NPN,False,7
+106,ANC-2G06,OVER VOTES,ballot_accounting,,NPN,True,1
+106,ANC-2G06,UNDER VOTES,ballot_accounting,,NPN,True,90
+107,ANC-3/4G01,Lisa R. Gore,candidate_or_option,NPN,NPN,False,657
+107,ANC-3/4G01,Write-in,candidate_or_option,NPN,NPN,False,44
+107,ANC-3/4G01,OVER VOTES,ballot_accounting,,NPN,True,0
+107,ANC-3/4G01,UNDER VOTES,ballot_accounting,,NPN,True,112
+108,ANC-3/4G02,Bruce Sherman,candidate_or_option,NPN,NPN,False,709
+108,ANC-3/4G02,Write-in,candidate_or_option,NPN,NPN,False,17
+108,ANC-3/4G02,OVER VOTES,ballot_accounting,,NPN,True,0
+108,ANC-3/4G02,UNDER VOTES,ballot_accounting,,NPN,True,84
+109,ANC-3/4G03,Shannon Tregar,candidate_or_option,NPN,NPN,False,436
+109,ANC-3/4G03,Carol Grunewald,candidate_or_option,NPN,NPN,False,442
+109,ANC-3/4G03,Write-in,candidate_or_option,NPN,NPN,False,3
+109,ANC-3/4G03,OVER VOTES,ballot_accounting,,NPN,True,0
+109,ANC-3/4G03,UNDER VOTES,ballot_accounting,,NPN,True,64
+110,ANC-3/4G04,Laura Phinizy,candidate_or_option,NPN,NPN,False,625
+110,ANC-3/4G04,Write-in,candidate_or_option,NPN,NPN,False,17
+110,ANC-3/4G04,OVER VOTES,ballot_accounting,,NPN,True,0
+110,ANC-3/4G04,UNDER VOTES,ballot_accounting,,NPN,True,109
+111,ANC-3/4G05,Karrenthya Simmons,candidate_or_option,NPN,NPN,False,404
+111,ANC-3/4G05,Weiqing F. Torti,candidate_or_option,NPN,NPN,False,393
+111,ANC-3/4G05,Write-in,candidate_or_option,NPN,NPN,False,3
+111,ANC-3/4G05,OVER VOTES,ballot_accounting,,NPN,True,1
+111,ANC-3/4G05,UNDER VOTES,ballot_accounting,,NPN,True,49
+112,ANC-3/4G06,Peter Gosselin,candidate_or_option,NPN,NPN,False,519
+112,ANC-3/4G06,Write-in,candidate_or_option,NPN,NPN,False,25
+112,ANC-3/4G06,OVER VOTES,ballot_accounting,,NPN,True,0
+112,ANC-3/4G06,UNDER VOTES,ballot_accounting,,NPN,True,165
+113,ANC-3/4G07,"Elizabeth ""Liz"" Nagy",candidate_or_option,NPN,NPN,False,420
+113,ANC-3/4G07,Write-in,candidate_or_option,NPN,NPN,False,25
+113,ANC-3/4G07,OVER VOTES,ballot_accounting,,NPN,True,0
+113,ANC-3/4G07,UNDER VOTES,ballot_accounting,,NPN,True,126
+114,ANC-3A01,Thaddeus Bradley-Lewis,candidate_or_option,NPN,NPN,False,610
+114,ANC-3A01,Write-in,candidate_or_option,NPN,NPN,False,12
+114,ANC-3A01,OVER VOTES,ballot_accounting,,NPN,True,0
+114,ANC-3A01,UNDER VOTES,ballot_accounting,,NPN,True,253
+115,ANC-3A02,Write-in,candidate_or_option,NPN,NPN,False,29
+115,ANC-3A02,OVER VOTES,ballot_accounting,,NPN,True,0
+115,ANC-3A02,UNDER VOTES,ballot_accounting,,NPN,True,511
+116,ANC-3A03,Isaac Bowers,candidate_or_option,NPN,NPN,False,355
+116,ANC-3A03,Write-in,candidate_or_option,NPN,NPN,False,9
+116,ANC-3A03,OVER VOTES,ballot_accounting,,NPN,True,1
+116,ANC-3A03,UNDER VOTES,ballot_accounting,,NPN,True,151
+117,ANC-3A04,Write-in,candidate_or_option,NPN,NPN,False,64
+117,ANC-3A04,OVER VOTES,ballot_accounting,,NPN,True,0
+117,ANC-3A04,UNDER VOTES,ballot_accounting,,NPN,True,339
+118,ANC-3A05,Ann Lane Mladinov,candidate_or_option,NPN,NPN,False,375
+118,ANC-3A05,Write-in,candidate_or_option,NPN,NPN,False,13
+118,ANC-3A05,OVER VOTES,ballot_accounting,,NPN,True,0
+118,ANC-3A05,UNDER VOTES,ballot_accounting,,NPN,True,141
+119,ANC-3B01,Kevin Lavezzo,candidate_or_option,NPN,NPN,False,258
+119,ANC-3B01,Write-in,candidate_or_option,NPN,NPN,False,3
+119,ANC-3B01,OVER VOTES,ballot_accounting,,NPN,True,1
+119,ANC-3B01,UNDER VOTES,ballot_accounting,,NPN,True,121
+120,ANC-3B02,Kevin Youel Page,candidate_or_option,NPN,NPN,False,315
+120,ANC-3B02,Write-in,candidate_or_option,NPN,NPN,False,8
+120,ANC-3B02,OVER VOTES,ballot_accounting,,NPN,True,0
+120,ANC-3B02,UNDER VOTES,ballot_accounting,,NPN,True,162
+121,ANC-3B03,Melissa Lane,candidate_or_option,NPN,NPN,False,321
+121,ANC-3B03,Write-in,candidate_or_option,NPN,NPN,False,9
+121,ANC-3B03,OVER VOTES,ballot_accounting,,NPN,True,0
+121,ANC-3B03,UNDER VOTES,ballot_accounting,,NPN,True,163
+122,ANC-3B04,Richard Pollock,candidate_or_option,NPN,NPN,False,489
+122,ANC-3B04,Write-in,candidate_or_option,NPN,NPN,False,10
+122,ANC-3B04,OVER VOTES,ballot_accounting,,NPN,True,0
+122,ANC-3B04,UNDER VOTES,ballot_accounting,,NPN,True,258
+123,ANC-3B05,Gupi Howie,candidate_or_option,NPN,NPN,False,315
+123,ANC-3B05,Write-in,candidate_or_option,NPN,NPN,False,13
+123,ANC-3B05,OVER VOTES,ballot_accounting,,NPN,True,0
+123,ANC-3B05,UNDER VOTES,ballot_accounting,,NPN,True,146
+124,ANC-3B06,S Robert Rodriguez,candidate_or_option,NPN,NPN,False,328
+124,ANC-3B06,Write-in,candidate_or_option,NPN,NPN,False,3
+124,ANC-3B06,OVER VOTES,ballot_accounting,,NPN,True,0
+124,ANC-3B06,UNDER VOTES,ballot_accounting,,NPN,True,195
+125,ANC-3C01,Ralph Ives,candidate_or_option,NPN,NPN,False,501
+125,ANC-3C01,Write-in,candidate_or_option,NPN,NPN,False,25
+125,ANC-3C01,OVER VOTES,ballot_accounting,,NPN,True,0
+125,ANC-3C01,UNDER VOTES,ballot_accounting,,NPN,True,247
+126,ANC-3C02,Adam J. Prinzo,candidate_or_option,NPN,NPN,False,569
+126,ANC-3C02,Write-in,candidate_or_option,NPN,NPN,False,14
+126,ANC-3C02,OVER VOTES,ballot_accounting,,NPN,True,0
+126,ANC-3C02,UNDER VOTES,ballot_accounting,,NPN,True,269
+127,ANC-3C03,Janell Marie Pagats,candidate_or_option,NPN,NPN,False,536
+127,ANC-3C03,Write-in,candidate_or_option,NPN,NPN,False,9
+127,ANC-3C03,OVER VOTES,ballot_accounting,,NPN,True,0
+127,ANC-3C03,UNDER VOTES,ballot_accounting,,NPN,True,266
+128,ANC-3C04,Erin Beard,candidate_or_option,NPN,NPN,False,550
+128,ANC-3C04,Write-in,candidate_or_option,NPN,NPN,False,18
+128,ANC-3C04,OVER VOTES,ballot_accounting,,NPN,True,0
+128,ANC-3C04,UNDER VOTES,ballot_accounting,,NPN,True,284
+129,ANC-3C05,Peter Miles,candidate_or_option,NPN,NPN,False,503
+129,ANC-3C05,Write-in,candidate_or_option,NPN,NPN,False,27
+129,ANC-3C05,OVER VOTES,ballot_accounting,,NPN,True,2
+129,ANC-3C05,UNDER VOTES,ballot_accounting,,NPN,True,267
+130,ANC-3C06,Joshua Peacock,candidate_or_option,NPN,NPN,False,452
+130,ANC-3C06,Write-in,candidate_or_option,NPN,NPN,False,15
+130,ANC-3C06,OVER VOTES,ballot_accounting,,NPN,True,0
+130,ANC-3C06,UNDER VOTES,ballot_accounting,,NPN,True,189
+131,ANC-3C07,Gawain Kripke,candidate_or_option,NPN,NPN,False,460
+131,ANC-3C07,Write-in,candidate_or_option,NPN,NPN,False,23
+131,ANC-3C07,OVER VOTES,ballot_accounting,,NPN,True,0
+131,ANC-3C07,UNDER VOTES,ballot_accounting,,NPN,True,252
+132,ANC-3C08,Rick Nash,candidate_or_option,NPN,NPN,False,282
+132,ANC-3C08,Connor O'Brien,candidate_or_option,NPN,NPN,False,254
+132,ANC-3C08,Write-in,candidate_or_option,NPN,NPN,False,3
+132,ANC-3C08,OVER VOTES,ballot_accounting,,NPN,True,0
+132,ANC-3C08,UNDER VOTES,ballot_accounting,,NPN,True,88
+133,ANC-3D01,Andrew J. Heimert,candidate_or_option,NPN,NPN,False,330
+133,ANC-3D01,Write-in,candidate_or_option,NPN,NPN,False,28
+133,ANC-3D01,OVER VOTES,ballot_accounting,,NPN,True,0
+133,ANC-3D01,UNDER VOTES,ballot_accounting,,NPN,True,179
+134,ANC-3D02,Tricia Duncan,candidate_or_option,NPN,NPN,False,300
+134,ANC-3D02,Write-in,candidate_or_option,NPN,NPN,False,11
+134,ANC-3D02,OVER VOTES,ballot_accounting,,NPN,True,2
+134,ANC-3D02,UNDER VOTES,ballot_accounting,,NPN,True,150
+135,ANC-3D03,Gary Langston,candidate_or_option,NPN,NPN,False,309
+135,ANC-3D03,Write-in,candidate_or_option,NPN,NPN,False,12
+135,ANC-3D03,OVER VOTES,ballot_accounting,,NPN,True,0
+135,ANC-3D03,UNDER VOTES,ballot_accounting,,NPN,True,224
+136,ANC-3D04,Mark M. Blumenthal,candidate_or_option,NPN,NPN,False,389
+136,ANC-3D04,Write-in,candidate_or_option,NPN,NPN,False,18
+136,ANC-3D04,OVER VOTES,ballot_accounting,,NPN,True,0
+136,ANC-3D04,UNDER VOTES,ballot_accounting,,NPN,True,138
+137,ANC-3D05,Bernie Horn,candidate_or_option,NPN,NPN,False,260
+137,ANC-3D05,Write-in,candidate_or_option,NPN,NPN,False,9
+137,ANC-3D05,OVER VOTES,ballot_accounting,,NPN,True,0
+137,ANC-3D05,UNDER VOTES,ballot_accounting,,NPN,True,132
+138,ANC-3D06,Marilyn Nowalk,candidate_or_option,NPN,NPN,False,322
+138,ANC-3D06,Write-in,candidate_or_option,NPN,NPN,False,15
+138,ANC-3D06,OVER VOTES,ballot_accounting,,NPN,True,0
+138,ANC-3D06,UNDER VOTES,ballot_accounting,,NPN,True,143
+139,ANC-3D07,J.P. Szymkowicz,candidate_or_option,NPN,NPN,False,291
+139,ANC-3D07,Write-in,candidate_or_option,NPN,NPN,False,14
+139,ANC-3D07,OVER VOTES,ballot_accounting,,NPN,True,0
+139,ANC-3D07,UNDER VOTES,ballot_accounting,,NPN,True,127
+140,ANC-3E01,Matthew Cohen,candidate_or_option,NPN,NPN,False,501
+140,ANC-3E01,Write-in,candidate_or_option,NPN,NPN,False,11
+140,ANC-3E01,OVER VOTES,ballot_accounting,,NPN,True,0
+140,ANC-3E01,UNDER VOTES,ballot_accounting,,NPN,True,170
+141,ANC-3E02,Amy B. Hall,candidate_or_option,NPN,NPN,False,505
+141,ANC-3E02,Write-in,candidate_or_option,NPN,NPN,False,12
+141,ANC-3E02,OVER VOTES,ballot_accounting,,NPN,True,0
+141,ANC-3E02,UNDER VOTES,ballot_accounting,,NPN,True,176
+142,ANC-3E03,Jonathan Bender,candidate_or_option,NPN,NPN,False,473
+142,ANC-3E03,Write-in,candidate_or_option,NPN,NPN,False,32
+142,ANC-3E03,OVER VOTES,ballot_accounting,,NPN,True,1
+142,ANC-3E03,UNDER VOTES,ballot_accounting,,NPN,True,160
+143,ANC-3E04,Tom Quinn,candidate_or_option,NPN,NPN,False,540
+143,ANC-3E04,Write-in,candidate_or_option,NPN,NPN,False,25
+143,ANC-3E04,OVER VOTES,ballot_accounting,,NPN,True,0
+143,ANC-3E04,UNDER VOTES,ballot_accounting,,NPN,True,180
+144,ANC-3E05,John J Mitchell,candidate_or_option,NPN,NPN,False,387
+144,ANC-3E05,Write-in,candidate_or_option,NPN,NPN,False,9
+144,ANC-3E05,OVER VOTES,ballot_accounting,,NPN,True,0
+144,ANC-3E05,UNDER VOTES,ballot_accounting,,NPN,True,182
+145,ANC-3E06,Alexandra Gianinno,candidate_or_option,NPN,NPN,False,408
+145,ANC-3E06,Write-in,candidate_or_option,NPN,NPN,False,21
+145,ANC-3E06,OVER VOTES,ballot_accounting,,NPN,True,0
+145,ANC-3E06,UNDER VOTES,ballot_accounting,,NPN,True,234
+146,ANC-3E07,Write-in,candidate_or_option,NPN,NPN,False,0
+146,ANC-3E07,OVER VOTES,ballot_accounting,,NPN,True,0
+146,ANC-3E07,UNDER VOTES,ballot_accounting,,NPN,True,32
+147,ANC-3E08,Write-in,candidate_or_option,NPN,NPN,False,6
+147,ANC-3E08,OVER VOTES,ballot_accounting,,NPN,True,0
+147,ANC-3E08,UNDER VOTES,ballot_accounting,,NPN,True,34
+148,ANC-3F01,Manolis Priniotakis,candidate_or_option,NPN,NPN,False,479
+148,ANC-3F01,Write-in,candidate_or_option,NPN,NPN,False,12
+148,ANC-3F01,OVER VOTES,ballot_accounting,,NPN,True,0
+148,ANC-3F01,UNDER VOTES,ballot_accounting,,NPN,True,271
+149,ANC-3F02,Write-in,candidate_or_option,NPN,NPN,False,53
+149,ANC-3F02,OVER VOTES,ballot_accounting,,NPN,True,0
+149,ANC-3F02,UNDER VOTES,ballot_accounting,,NPN,True,475
+150,ANC-3F03,Mitchell Baer,candidate_or_option,NPN,NPN,False,575
+150,ANC-3F03,Write-in,candidate_or_option,NPN,NPN,False,9
+150,ANC-3F03,OVER VOTES,ballot_accounting,,NPN,True,1
+150,ANC-3F03,UNDER VOTES,ballot_accounting,,NPN,True,253
+151,ANC-3F04,Tosha Skolnik,candidate_or_option,NPN,NPN,False,372
+151,ANC-3F04,Write-in,candidate_or_option,NPN,NPN,False,13
+151,ANC-3F04,OVER VOTES,ballot_accounting,,NPN,True,0
+151,ANC-3F04,UNDER VOTES,ballot_accounting,,NPN,True,217
+152,ANC-3F05,Spenser H. Dettwyler,candidate_or_option,NPN,NPN,False,258
+152,ANC-3F05,Adrian Jesus Iglesias,candidate_or_option,NPN,NPN,False,180
+152,ANC-3F05,Write-in,candidate_or_option,NPN,NPN,False,2
+152,ANC-3F05,OVER VOTES,ballot_accounting,,NPN,True,0
+152,ANC-3F05,UNDER VOTES,ballot_accounting,,NPN,True,127
+153,ANC-3F06,Write-in,candidate_or_option,NPN,NPN,False,95
+153,ANC-3F06,OVER VOTES,ballot_accounting,,NPN,True,0
+153,ANC-3F06,UNDER VOTES,ballot_accounting,,NPN,True,627
+154,ANC-4A01,Write-in,candidate_or_option,NPN,NPN,False,119
+154,ANC-4A01,OVER VOTES,ballot_accounting,,NPN,True,0
+154,ANC-4A01,UNDER VOTES,ballot_accounting,,NPN,True,781
+155,ANC-4A02,Joan Hoyte,candidate_or_option,NPN,NPN,False,742
+155,ANC-4A02,Write-in,candidate_or_option,NPN,NPN,False,21
+155,ANC-4A02,OVER VOTES,ballot_accounting,,NPN,True,1
+155,ANC-4A02,UNDER VOTES,ballot_accounting,,NPN,True,137
+156,ANC-4A03,Christian X Hara,candidate_or_option,NPN,NPN,False,489
+156,ANC-4A03,Write-in,candidate_or_option,NPN,NPN,False,23
+156,ANC-4A03,OVER VOTES,ballot_accounting,,NPN,True,2
+156,ANC-4A03,UNDER VOTES,ballot_accounting,,NPN,True,280
+157,ANC-4A04,Write-in,candidate_or_option,NPN,NPN,False,100
+157,ANC-4A04,OVER VOTES,ballot_accounting,,NPN,True,0
+157,ANC-4A04,UNDER VOTES,ballot_accounting,,NPN,True,446
+158,ANC-4A05,Kim Patterson,candidate_or_option,NPN,NPN,False,274
+158,ANC-4A05,Write-in,candidate_or_option,NPN,NPN,False,10
+158,ANC-4A05,OVER VOTES,ballot_accounting,,NPN,True,1
+158,ANC-4A05,UNDER VOTES,ballot_accounting,,NPN,True,100
+159,ANC-4A06,Write-in,candidate_or_option,NPN,NPN,False,15
+159,ANC-4A06,OVER VOTES,ballot_accounting,,NPN,True,0
+159,ANC-4A06,UNDER VOTES,ballot_accounting,,NPN,True,218
+160,ANC-4A07,Write-in,candidate_or_option,NPN,NPN,False,21
+160,ANC-4A07,OVER VOTES,ballot_accounting,,NPN,True,0
+160,ANC-4A07,UNDER VOTES,ballot_accounting,,NPN,True,288
+161,ANC-4B01,Dave Cooke,candidate_or_option,NPN,NPN,False,144
+161,ANC-4B01,Carol Joyner,candidate_or_option,NPN,NPN,False,442
+161,ANC-4B01,Write-in,candidate_or_option,NPN,NPN,False,4
+161,ANC-4B01,OVER VOTES,ballot_accounting,,NPN,True,0
+161,ANC-4B01,UNDER VOTES,ballot_accounting,,NPN,True,78
+162,ANC-4B02,Christopher Sousa,candidate_or_option,NPN,NPN,False,450
+162,ANC-4B02,Write-in,candidate_or_option,NPN,NPN,False,24
+162,ANC-4B02,OVER VOTES,ballot_accounting,,NPN,True,0
+162,ANC-4B02,UNDER VOTES,ballot_accounting,,NPN,True,173
+163,ANC-4B03,Write-in,candidate_or_option,NPN,NPN,False,100
+163,ANC-4B03,OVER VOTES,ballot_accounting,,NPN,True,0
+163,ANC-4B03,UNDER VOTES,ballot_accounting,,NPN,True,683
+164,ANC-4B04,Charlie Mayer,candidate_or_option,NPN,NPN,False,594
+164,ANC-4B04,Write-in,candidate_or_option,NPN,NPN,False,14
+164,ANC-4B04,OVER VOTES,ballot_accounting,,NPN,True,0
+164,ANC-4B04,UNDER VOTES,ballot_accounting,,NPN,True,230
+165,ANC-4B05,"Jose ""Joe"" Barrios",candidate_or_option,NPN,NPN,False,312
+165,ANC-4B05,Wayne E. Savage,candidate_or_option,NPN,NPN,False,176
+165,ANC-4B05,Write-in,candidate_or_option,NPN,NPN,False,9
+165,ANC-4B05,OVER VOTES,ballot_accounting,,NPN,True,2
+165,ANC-4B05,UNDER VOTES,ballot_accounting,,NPN,True,106
+166,ANC-4B06,Tiffani Nichole Johnson,candidate_or_option,NPN,NPN,False,620
+166,ANC-4B06,Write-in,candidate_or_option,NPN,NPN,False,15
+166,ANC-4B06,OVER VOTES,ballot_accounting,,NPN,True,0
+166,ANC-4B06,UNDER VOTES,ballot_accounting,,NPN,True,104
+167,ANC-4B07,Julie Patton Lawson,candidate_or_option,NPN,NPN,False,554
+167,ANC-4B07,Write-in,candidate_or_option,NPN,NPN,False,15
+167,ANC-4B07,OVER VOTES,ballot_accounting,,NPN,True,1
+167,ANC-4B07,UNDER VOTES,ballot_accounting,,NPN,True,132
+168,ANC-4B08,Write-in,candidate_or_option,NPN,NPN,False,69
+168,ANC-4B08,OVER VOTES,ballot_accounting,,NPN,True,0
+168,ANC-4B08,UNDER VOTES,ballot_accounting,,NPN,True,530
+169,ANC-4B09,Kency Nittler,candidate_or_option,NPN,NPN,False,524
+169,ANC-4B09,Write-in,candidate_or_option,NPN,NPN,False,19
+169,ANC-4B09,OVER VOTES,ballot_accounting,,NPN,True,2
+169,ANC-4B09,UNDER VOTES,ballot_accounting,,NPN,True,303
+170,ANC-4B10,James D. Gaston III,candidate_or_option,NPN,NPN,False,538
+170,ANC-4B10,Write-in,candidate_or_option,NPN,NPN,False,13
+170,ANC-4B10,OVER VOTES,ballot_accounting,,NPN,True,0
+170,ANC-4B10,UNDER VOTES,ballot_accounting,,NPN,True,129
+171,ANC-4C01,Emily Winternitz,candidate_or_option,NPN,NPN,False,325
+171,ANC-4C01,Write-in,candidate_or_option,NPN,NPN,False,7
+171,ANC-4C01,OVER VOTES,ballot_accounting,,NPN,True,0
+171,ANC-4C01,UNDER VOTES,ballot_accounting,,NPN,True,133
+172,ANC-4C02,Josh Mahan,candidate_or_option,NPN,NPN,False,375
+172,ANC-4C02,Write-in,candidate_or_option,NPN,NPN,False,8
+172,ANC-4C02,OVER VOTES,ballot_accounting,,NPN,True,1
+172,ANC-4C02,UNDER VOTES,ballot_accounting,,NPN,True,183
+173,ANC-4C03,Mike Warburton,candidate_or_option,NPN,NPN,False,304
+173,ANC-4C03,Petrona Xemi Tapepechul,candidate_or_option,NPN,NPN,False,173
+173,ANC-4C03,Write-in,candidate_or_option,NPN,NPN,False,9
+173,ANC-4C03,OVER VOTES,ballot_accounting,,NPN,True,0
+173,ANC-4C03,UNDER VOTES,ballot_accounting,,NPN,True,162
+174,ANC-4C04,Monica E. Arrington,candidate_or_option,NPN,NPN,False,377
+174,ANC-4C04,Write-in,candidate_or_option,NPN,NPN,False,5
+174,ANC-4C04,OVER VOTES,ballot_accounting,,NPN,True,1
+174,ANC-4C04,UNDER VOTES,ballot_accounting,,NPN,True,126
+175,ANC-4C05,Brittany Kademian,candidate_or_option,NPN,NPN,False,491
+175,ANC-4C05,Write-in,candidate_or_option,NPN,NPN,False,16
+175,ANC-4C05,OVER VOTES,ballot_accounting,,NPN,True,1
+175,ANC-4C05,UNDER VOTES,ballot_accounting,,NPN,True,126
+176,ANC-4C06,John Qua,candidate_or_option,NPN,NPN,False,277
+176,ANC-4C06,Christen Boas Hayes,candidate_or_option,NPN,NPN,False,217
+176,ANC-4C06,Write-in,candidate_or_option,NPN,NPN,False,2
+176,ANC-4C06,OVER VOTES,ballot_accounting,,NPN,True,1
+176,ANC-4C06,UNDER VOTES,ballot_accounting,,NPN,True,105
+177,ANC-4C07,Lionel Dripps,candidate_or_option,NPN,NPN,False,353
+177,ANC-4C07,Taunya (Richardson) Martin,candidate_or_option,NPN,NPN,False,233
+177,ANC-4C07,Write-in,candidate_or_option,NPN,NPN,False,10
+177,ANC-4C07,OVER VOTES,ballot_accounting,,NPN,True,0
+177,ANC-4C07,UNDER VOTES,ballot_accounting,,NPN,True,97
+178,ANC-4D01,Matthew Staed,candidate_or_option,NPN,NPN,False,289
+178,ANC-4D01,Write-in,candidate_or_option,NPN,NPN,False,13
+178,ANC-4D01,OVER VOTES,ballot_accounting,,NPN,True,0
+178,ANC-4D01,UNDER VOTES,ballot_accounting,,NPN,True,134
+179,ANC-4D02,Jonathan Hogue,candidate_or_option,NPN,NPN,False,178
+179,ANC-4D02,Abel Amene,candidate_or_option,NPN,NPN,False,176
+179,ANC-4D02,Write-in,candidate_or_option,NPN,NPN,False,7
+179,ANC-4D02,OVER VOTES,ballot_accounting,,NPN,True,1
+179,ANC-4D02,UNDER VOTES,ballot_accounting,,NPN,True,110
+180,ANC-4D03,David Brotman,candidate_or_option,NPN,NPN,False,325
+180,ANC-4D03,Write-in,candidate_or_option,NPN,NPN,False,14
+180,ANC-4D03,OVER VOTES,ballot_accounting,,NPN,True,0
+180,ANC-4D03,UNDER VOTES,ballot_accounting,,NPN,True,140
+181,ANC-4D04,Eliza Cava,candidate_or_option,NPN,NPN,False,434
+181,ANC-4D04,Write-in,candidate_or_option,NPN,NPN,False,16
+181,ANC-4D04,OVER VOTES,ballot_accounting,,NPN,True,1
+181,ANC-4D04,UNDER VOTES,ballot_accounting,,NPN,True,153
+182,ANC-4D05,Stephen Marencic,candidate_or_option,NPN,NPN,False,316
+182,ANC-4D05,Write-in,candidate_or_option,NPN,NPN,False,10
+182,ANC-4D05,OVER VOTES,ballot_accounting,,NPN,True,0
+182,ANC-4D05,UNDER VOTES,ballot_accounting,,NPN,True,132
+183,ANC-4D06,Brian Haupt,candidate_or_option,NPN,NPN,False,216
+183,ANC-4D06,Joey Baietti,candidate_or_option,NPN,NPN,False,240
+183,ANC-4D06,Write-in,candidate_or_option,NPN,NPN,False,17
+183,ANC-4D06,OVER VOTES,ballot_accounting,,NPN,True,0
+183,ANC-4D06,UNDER VOTES,ballot_accounting,,NPN,True,169
+184,ANC-4D07,Brittany Vesce,candidate_or_option,NPN,NPN,False,422
+184,ANC-4D07,Write-in,candidate_or_option,NPN,NPN,False,17
+184,ANC-4D07,OVER VOTES,ballot_accounting,,NPN,True,1
+184,ANC-4D07,UNDER VOTES,ballot_accounting,,NPN,True,191
+185,ANC-4D08,Write-in,candidate_or_option,NPN,NPN,False,98
+185,ANC-4D08,OVER VOTES,ballot_accounting,,NPN,True,0
+185,ANC-4D08,UNDER VOTES,ballot_accounting,,NPN,True,496
+186,ANC-4E01,"Aretha ""Nikki"" Jones",candidate_or_option,NPN,NPN,False,292
+186,ANC-4E01,Write-in,candidate_or_option,NPN,NPN,False,10
+186,ANC-4E01,OVER VOTES,ballot_accounting,,NPN,True,0
+186,ANC-4E01,UNDER VOTES,ballot_accounting,,NPN,True,85
+187,ANC-4E02,Vince Micone,candidate_or_option,NPN,NPN,False,282
+187,ANC-4E02,Write-in,candidate_or_option,NPN,NPN,False,8
+187,ANC-4E02,OVER VOTES,ballot_accounting,,NPN,True,0
+187,ANC-4E02,UNDER VOTES,ballot_accounting,,NPN,True,143
+188,ANC-4E03,Maria Barry,candidate_or_option,NPN,NPN,False,440
+188,ANC-4E03,Write-in,candidate_or_option,NPN,NPN,False,24
+188,ANC-4E03,OVER VOTES,ballot_accounting,,NPN,True,0
+188,ANC-4E03,UNDER VOTES,ballot_accounting,,NPN,True,132
+189,ANC-4E04,Hal Gordon,candidate_or_option,NPN,NPN,False,390
+189,ANC-4E04,Write-in,candidate_or_option,NPN,NPN,False,9
+189,ANC-4E04,OVER VOTES,ballot_accounting,,NPN,True,0
+189,ANC-4E04,UNDER VOTES,ballot_accounting,,NPN,True,168
+190,ANC-4E05,Camsie McAdams,candidate_or_option,NPN,NPN,False,424
+190,ANC-4E05,Write-in,candidate_or_option,NPN,NPN,False,11
+190,ANC-4E05,OVER VOTES,ballot_accounting,,NPN,True,0
+190,ANC-4E05,UNDER VOTES,ballot_accounting,,NPN,True,121
+191,ANC-4E06,Sara Adland,candidate_or_option,NPN,NPN,False,598
+191,ANC-4E06,Write-in,candidate_or_option,NPN,NPN,False,16
+191,ANC-4E06,OVER VOTES,ballot_accounting,,NPN,True,0
+191,ANC-4E06,UNDER VOTES,ballot_accounting,,NPN,True,223
+192,ANC-5A01,Keith J. Sellars,candidate_or_option,NPN,NPN,False,567
+192,ANC-5A01,Write-in,candidate_or_option,NPN,NPN,False,8
+192,ANC-5A01,OVER VOTES,ballot_accounting,,NPN,True,0
+192,ANC-5A01,UNDER VOTES,ballot_accounting,,NPN,True,150
+193,ANC-5A02,Cheryl A. Tracy,candidate_or_option,NPN,NPN,False,604
+193,ANC-5A02,Write-in,candidate_or_option,NPN,NPN,False,18
+193,ANC-5A02,OVER VOTES,ballot_accounting,,NPN,True,1
+193,ANC-5A02,UNDER VOTES,ballot_accounting,,NPN,True,161
+194,ANC-5A03,Emily Singer Lucio,candidate_or_option,NPN,NPN,False,468
+194,ANC-5A03,Skylar Verastequi-Diaz,candidate_or_option,NPN,NPN,False,269
+194,ANC-5A03,Write-in,candidate_or_option,NPN,NPN,False,4
+194,ANC-5A03,OVER VOTES,ballot_accounting,,NPN,True,0
+194,ANC-5A03,UNDER VOTES,ballot_accounting,,NPN,True,82
+195,ANC-5A04,Write-in,candidate_or_option,NPN,NPN,False,0
+195,ANC-5A04,OVER VOTES,ballot_accounting,,NPN,True,0
+195,ANC-5A04,UNDER VOTES,ballot_accounting,,NPN,True,12
+196,ANC-5A05,Dyanna Weston,candidate_or_option,NPN,NPN,False,74
+196,ANC-5A05,Regina A. Smith,candidate_or_option,NPN,NPN,False,129
+196,ANC-5A05,Write-in,candidate_or_option,NPN,NPN,False,6
+196,ANC-5A05,OVER VOTES,ballot_accounting,,NPN,True,1
+196,ANC-5A05,UNDER VOTES,ballot_accounting,,NPN,True,41
+197,ANC-5A06,April Brown,candidate_or_option,NPN,NPN,False,182
+197,ANC-5A06,Derrick O. Holloway Sr.,candidate_or_option,NPN,NPN,False,164
+197,ANC-5A06,Write-in,candidate_or_option,NPN,NPN,False,9
+197,ANC-5A06,OVER VOTES,ballot_accounting,,NPN,True,1
+197,ANC-5A06,UNDER VOTES,ballot_accounting,,NPN,True,72
+198,ANC-5A07,Write-in,candidate_or_option,NPN,NPN,False,6
+198,ANC-5A07,OVER VOTES,ballot_accounting,,NPN,True,0
+198,ANC-5A07,UNDER VOTES,ballot_accounting,,NPN,True,208
+199,ANC-5A08,Dwight Davis,candidate_or_option,NPN,NPN,False,242
+199,ANC-5A08,Elaine Alston,candidate_or_option,NPN,NPN,False,244
+199,ANC-5A08,Debra Whitford,candidate_or_option,NPN,NPN,False,159
+199,ANC-5A08,Write-in,candidate_or_option,NPN,NPN,False,5
+199,ANC-5A08,OVER VOTES,ballot_accounting,,NPN,True,2
+199,ANC-5A08,UNDER VOTES,ballot_accounting,,NPN,True,60
+200,ANC-5A09,Robert T. Oliver,candidate_or_option,NPN,NPN,False,389
+200,ANC-5A09,Write-in,candidate_or_option,NPN,NPN,False,14
+200,ANC-5A09,OVER VOTES,ballot_accounting,,NPN,True,0
+200,ANC-5A09,UNDER VOTES,ballot_accounting,,NPN,True,120
+201,ANC-5B01,Shirley Rivens Smith,candidate_or_option,NPN,NPN,False,415
+201,ANC-5B01,Amy Enchelmeyer,candidate_or_option,NPN,NPN,False,249
+201,ANC-5B01,Write-in,candidate_or_option,NPN,NPN,False,6
+201,ANC-5B01,OVER VOTES,ballot_accounting,,NPN,True,2
+201,ANC-5B01,UNDER VOTES,ballot_accounting,,NPN,True,79
+202,ANC-5B02,Andrew Davis,candidate_or_option,NPN,NPN,False,137
+202,ANC-5B02,Ursula Higgins,candidate_or_option,NPN,NPN,False,207
+202,ANC-5B02,Bree Ryback,candidate_or_option,NPN,NPN,False,331
+202,ANC-5B02,Write-in,candidate_or_option,NPN,NPN,False,4
+202,ANC-5B02,OVER VOTES,ballot_accounting,,NPN,True,1
+202,ANC-5B02,UNDER VOTES,ballot_accounting,,NPN,True,84
+203,ANC-5B03 5B03,Jingwen Sun,candidate_or_option,NPN,NPN,False,264
+203,ANC-5B03 5B03,Elise Scott,candidate_or_option,NPN,NPN,False,385
+203,ANC-5B03 5B03,Write-in,candidate_or_option,NPN,NPN,False,8
+203,ANC-5B03 5B03,OVER VOTES,ballot_accounting,,NPN,True,1
+203,ANC-5B03 5B03,UNDER VOTES,ballot_accounting,,NPN,True,71
+204,ANC-5B04,Rayseen Woodland,candidate_or_option,NPN,NPN,False,281
+204,ANC-5B04,Ra Amin,candidate_or_option,NPN,NPN,False,371
+204,ANC-5B04,Write-in,candidate_or_option,NPN,NPN,False,5
+204,ANC-5B04,OVER VOTES,ballot_accounting,,NPN,True,0
+204,ANC-5B04,UNDER VOTES,ballot_accounting,,NPN,True,117
+205,ANC-5B05,Rachel Williams,candidate_or_option,NPN,NPN,False,256
+205,ANC-5B05,John J. Feeley,candidate_or_option,NPN,NPN,False,153
+205,ANC-5B05,Michael Chaney,candidate_or_option,NPN,NPN,False,309
+205,ANC-5B05,Write-in,candidate_or_option,NPN,NPN,False,9
+205,ANC-5B05,OVER VOTES,ballot_accounting,,NPN,True,0
+205,ANC-5B05,UNDER VOTES,ballot_accounting,,NPN,True,51
+206,ANC-5B06,Maya Vizvary,candidate_or_option,NPN,NPN,False,291
+206,ANC-5B06,Felicia Abney-Barber,candidate_or_option,NPN,NPN,False,276
+206,ANC-5B06,Write-in,candidate_or_option,NPN,NPN,False,11
+206,ANC-5B06,OVER VOTES,ballot_accounting,,NPN,True,1
+206,ANC-5B06,UNDER VOTES,ballot_accounting,,NPN,True,95
+207,ANC-5B07,Zahid Rathore,candidate_or_option,NPN,NPN,False,562
+207,ANC-5B07,Write-in,candidate_or_option,NPN,NPN,False,24
+207,ANC-5B07,OVER VOTES,ballot_accounting,,NPN,True,0
+207,ANC-5B07,UNDER VOTES,ballot_accounting,,NPN,True,184
+208,ANC-5C01,Cierra Craig,candidate_or_option,NPN,NPN,False,340
+208,ANC-5C01,Konyka Dunson,candidate_or_option,NPN,NPN,False,266
+208,ANC-5C01,Write-in,candidate_or_option,NPN,NPN,False,6
+208,ANC-5C01,OVER VOTES,ballot_accounting,,NPN,True,1
+208,ANC-5C01,UNDER VOTES,ballot_accounting,,NPN,True,110
+209,ANC-5C02,Danielle M. Henry,candidate_or_option,NPN,NPN,False,330
+209,ANC-5C02,Shawn Taylor,candidate_or_option,NPN,NPN,False,199
+209,ANC-5C02,Write-in,candidate_or_option,NPN,NPN,False,7
+209,ANC-5C02,OVER VOTES,ballot_accounting,,NPN,True,2
+209,ANC-5C02,UNDER VOTES,ballot_accounting,,NPN,True,115
+210,ANC-5C03,Write-in,candidate_or_option,NPN,NPN,False,56
+210,ANC-5C03,OVER VOTES,ballot_accounting,,NPN,True,0
+210,ANC-5C03,UNDER VOTES,ballot_accounting,,NPN,True,625
+211,ANC-5C04,Shawn Nelson,candidate_or_option,NPN,NPN,False,256
+211,ANC-5C04,Write-in,candidate_or_option,NPN,NPN,False,9
+211,ANC-5C04,OVER VOTES,ballot_accounting,,NPN,True,1
+211,ANC-5C04,UNDER VOTES,ballot_accounting,,NPN,True,72
+212,ANC-5C05,Kris Pritchard,candidate_or_option,NPN,NPN,False,357
+212,ANC-5C05,Write-in,candidate_or_option,NPN,NPN,False,36
+212,ANC-5C05,OVER VOTES,ballot_accounting,,NPN,True,2
+212,ANC-5C05,UNDER VOTES,ballot_accounting,,NPN,True,128
+213,ANC-5C06,Harry (Tommy) Thomas Jr.,candidate_or_option,NPN,NPN,False,375
+213,ANC-5C06,Write-in,candidate_or_option,NPN,NPN,False,11
+213,ANC-5C06,OVER VOTES,ballot_accounting,,NPN,True,0
+213,ANC-5C06,UNDER VOTES,ballot_accounting,,NPN,True,119
+214,ANC-5C07,Latoyia Allen,candidate_or_option,NPN,NPN,False,431
+214,ANC-5C07,Write-in,candidate_or_option,NPN,NPN,False,10
+214,ANC-5C07,OVER VOTES,ballot_accounting,,NPN,True,0
+214,ANC-5C07,UNDER VOTES,ballot_accounting,,NPN,True,131
+215,ANC-5D01,Austin Bowen,candidate_or_option,NPN,NPN,False,619
+215,ANC-5D01,Write-in,candidate_or_option,NPN,NPN,False,31
+215,ANC-5D01,OVER VOTES,ballot_accounting,,NPN,True,0
+215,ANC-5D01,UNDER VOTES,ballot_accounting,,NPN,True,301
+216,ANC-5D02,Pete Loftus,candidate_or_option,NPN,NPN,False,83
+216,ANC-5D02,Sebrena L. Rhodes,candidate_or_option,NPN,NPN,False,142
+216,ANC-5D02,Write-in,candidate_or_option,NPN,NPN,False,2
+216,ANC-5D02,OVER VOTES,ballot_accounting,,NPN,True,2
+216,ANC-5D02,UNDER VOTES,ballot_accounting,,NPN,True,26
+217,ANC-5D03,Marcus C Thaw,candidate_or_option,NPN,NPN,False,404
+217,ANC-5D03,Write-in,candidate_or_option,NPN,NPN,False,17
+217,ANC-5D03,OVER VOTES,ballot_accounting,,NPN,True,0
+217,ANC-5D03,UNDER VOTES,ballot_accounting,,NPN,True,137
+218,ANC-5D04,Melba Davis,candidate_or_option,NPN,NPN,False,385
+218,ANC-5D04,Write-in,candidate_or_option,NPN,NPN,False,20
+218,ANC-5D04,OVER VOTES,ballot_accounting,,NPN,True,0
+218,ANC-5D04,UNDER VOTES,ballot_accounting,,NPN,True,136
+219,ANC-5D05,Rashema Collins,candidate_or_option,NPN,NPN,False,220
+219,ANC-5D05,Justin McCarthy,candidate_or_option,NPN,NPN,False,197
+219,ANC-5D05,Write-in,candidate_or_option,NPN,NPN,False,4
+219,ANC-5D05,OVER VOTES,ballot_accounting,,NPN,True,2
+219,ANC-5D05,UNDER VOTES,ballot_accounting,,NPN,True,34
+220,ANC-5D06,Write-in,candidate_or_option,NPN,NPN,False,47
+220,ANC-5D06,OVER VOTES,ballot_accounting,,NPN,True,0
+220,ANC-5D06,UNDER VOTES,ballot_accounting,,NPN,True,508
+221,ANC-5D07,Juan McCullum,candidate_or_option,NPN,NPN,False,341
+221,ANC-5D07,Write-in,candidate_or_option,NPN,NPN,False,21
+221,ANC-5D07,OVER VOTES,ballot_accounting,,NPN,True,2
+221,ANC-5D07,UNDER VOTES,ballot_accounting,,NPN,True,140
+222,ANC-5D08,Write-in,candidate_or_option,NPN,NPN,False,39
+222,ANC-5D08,OVER VOTES,ballot_accounting,,NPN,True,0
+222,ANC-5D08,UNDER VOTES,ballot_accounting,,NPN,True,359
+223,ANC-5D09,Crystal Green-Campbell,candidate_or_option,NPN,NPN,False,191
+223,ANC-5D09,Write-in,candidate_or_option,NPN,NPN,False,6
+223,ANC-5D09,OVER VOTES,ballot_accounting,,NPN,True,1
+223,ANC-5D09,UNDER VOTES,ballot_accounting,,NPN,True,68
+224,ANC-5E01 5E01,Ana Rodriguez,candidate_or_option,NPN,NPN,False,196
+224,ANC-5E01 5E01,Kyle Gardiner,candidate_or_option,NPN,NPN,False,309
+224,ANC-5E01 5E01,Write-in,candidate_or_option,NPN,NPN,False,5
+224,ANC-5E01 5E01,OVER VOTES,ballot_accounting,,NPN,True,0
+224,ANC-5E01 5E01,UNDER VOTES,ballot_accounting,,NPN,True,70
+225,ANC-5E02,Matt Malinowski,candidate_or_option,NPN,NPN,False,148
+225,ANC-5E02,Karla M. Lewis,candidate_or_option,NPN,NPN,False,219
+225,ANC-5E02,Ada Avitabile,candidate_or_option,NPN,NPN,False,104
+225,ANC-5E02,Write-in,candidate_or_option,NPN,NPN,False,3
+225,ANC-5E02,OVER VOTES,ballot_accounting,,NPN,True,1
+225,ANC-5E02,UNDER VOTES,ballot_accounting,,NPN,True,65
+226,ANC-5E03,Andrew Waks,candidate_or_option,NPN,NPN,False,217
+226,ANC-5E03,Patrick J King,candidate_or_option,NPN,NPN,False,228
+226,ANC-5E03,Write-in,candidate_or_option,NPN,NPN,False,6
+226,ANC-5E03,OVER VOTES,ballot_accounting,,NPN,True,0
+226,ANC-5E03,UNDER VOTES,ballot_accounting,,NPN,True,103
+227,ANC-5E04,Huma Imtiaz,candidate_or_option,NPN,NPN,False,406
+227,ANC-5E04,Write-in,candidate_or_option,NPN,NPN,False,12
+227,ANC-5E04,OVER VOTES,ballot_accounting,,NPN,True,0
+227,ANC-5E04,UNDER VOTES,ballot_accounting,,NPN,True,98
+228,ANC-5E05,Ashton DeLano,candidate_or_option,NPN,NPN,False,389
+228,ANC-5E05,Write-in,candidate_or_option,NPN,NPN,False,12
+228,ANC-5E05,OVER VOTES,ballot_accounting,,NPN,True,0
+228,ANC-5E05,UNDER VOTES,ballot_accounting,,NPN,True,193
+229,ANC-5E06,Tristan Zoerb,candidate_or_option,NPN,NPN,False,207
+229,ANC-5E06,Kirby Vining,candidate_or_option,NPN,NPN,False,224
+229,ANC-5E06,Write-in,candidate_or_option,NPN,NPN,False,9
+229,ANC-5E06,OVER VOTES,ballot_accounting,,NPN,True,3
+229,ANC-5E06,UNDER VOTES,ballot_accounting,,NPN,True,92
+230,ANC-5F01,Nicole Jones,candidate_or_option,NPN,NPN,False,448
+230,ANC-5F01,Write-in,candidate_or_option,NPN,NPN,False,14
+230,ANC-5F01,OVER VOTES,ballot_accounting,,NPN,True,0
+230,ANC-5F01,UNDER VOTES,ballot_accounting,,NPN,True,129
+231,ANC-5F02,Matthew Frichtl,candidate_or_option,NPN,NPN,False,434
+231,ANC-5F02,Write-in,candidate_or_option,NPN,NPN,False,11
+231,ANC-5F02,OVER VOTES,ballot_accounting,,NPN,True,0
+231,ANC-5F02,UNDER VOTES,ballot_accounting,,NPN,True,196
+232,ANC-5F03,Patricia L. Williams,candidate_or_option,NPN,NPN,False,176
+232,ANC-5F03,Shealia Tyson,candidate_or_option,NPN,NPN,False,136
+232,ANC-5F03,Write-in,candidate_or_option,NPN,NPN,False,4
+232,ANC-5F03,OVER VOTES,ballot_accounting,,NPN,True,4
+232,ANC-5F03,UNDER VOTES,ballot_accounting,,NPN,True,64
+233,ANC-5F04,Melissa Coughlin,candidate_or_option,NPN,NPN,False,435
+233,ANC-5F04,Write-in,candidate_or_option,NPN,NPN,False,18
+233,ANC-5F04,OVER VOTES,ballot_accounting,,NPN,True,0
+233,ANC-5F04,UNDER VOTES,ballot_accounting,,NPN,True,159
+234,ANC-5F05,Andrew Pendleton,candidate_or_option,NPN,NPN,False,419
+234,ANC-5F05,Write-in,candidate_or_option,NPN,NPN,False,17
+234,ANC-5F05,OVER VOTES,ballot_accounting,,NPN,True,0
+234,ANC-5F05,UNDER VOTES,ballot_accounting,,NPN,True,132
+235,ANC-5F06,Joe Bishop-Henchman,candidate_or_option,NPN,NPN,False,685
+235,ANC-5F06,Write-in,candidate_or_option,NPN,NPN,False,15
+235,ANC-5F06,OVER VOTES,ballot_accounting,,NPN,True,0
+235,ANC-5F06,UNDER VOTES,ballot_accounting,,NPN,True,282
+236,ANC-5F07,Julia Hedlund,candidate_or_option,NPN,NPN,False,482
+236,ANC-5F07,Write-in,candidate_or_option,NPN,NPN,False,15
+236,ANC-5F07,OVER VOTES,ballot_accounting,,NPN,True,0
+236,ANC-5F07,UNDER VOTES,ballot_accounting,,NPN,True,193
+237,ANC-6A01,Scott Burger,candidate_or_option,NPN,NPN,False,441
+237,ANC-6A01,Write-in,candidate_or_option,NPN,NPN,False,25
+237,ANC-6A01,OVER VOTES,ballot_accounting,,NPN,True,0
+237,ANC-6A01,UNDER VOTES,ballot_accounting,,NPN,True,148
+238,ANC-6A02,Kimberly S. Butler,candidate_or_option,NPN,NPN,False,398
+238,ANC-6A02,Kari Cooke,candidate_or_option,NPN,NPN,False,170
+238,ANC-6A02,Cole Rinner,candidate_or_option,NPN,NPN,False,71
+238,ANC-6A02,Write-in,candidate_or_option,NPN,NPN,False,10
+238,ANC-6A02,OVER VOTES,ballot_accounting,,NPN,True,0
+238,ANC-6A02,UNDER VOTES,ballot_accounting,,NPN,True,151
+239,ANC-6A03,Roberta Shapiro,candidate_or_option,NPN,NPN,False,536
+239,ANC-6A03,Write-in,candidate_or_option,NPN,NPN,False,26
+239,ANC-6A03,OVER VOTES,ballot_accounting,,NPN,True,0
+239,ANC-6A03,UNDER VOTES,ballot_accounting,,NPN,True,200
+240,ANC-6A04,Steve Geimann,candidate_or_option,NPN,NPN,False,534
+240,ANC-6A04,Write-in,candidate_or_option,NPN,NPN,False,25
+240,ANC-6A04,OVER VOTES,ballot_accounting,,NPN,True,0
+240,ANC-6A04,UNDER VOTES,ballot_accounting,,NPN,True,209
+241,ANC-6A05,Morgan Conley,candidate_or_option,NPN,NPN,False,539
+241,ANC-6A05,Write-in,candidate_or_option,NPN,NPN,False,12
+241,ANC-6A05,OVER VOTES,ballot_accounting,,NPN,True,0
+241,ANC-6A05,UNDER VOTES,ballot_accounting,,NPN,True,185
+242,ANC-6A06,Ben Hammer,candidate_or_option,NPN,NPN,False,182
+242,ANC-6A06,Chris Kennedy,candidate_or_option,NPN,NPN,False,138
+242,ANC-6A06,Daniel Aboagye,candidate_or_option,NPN,NPN,False,187
+242,ANC-6A06,"Ray Biggs, II",candidate_or_option,NPN,NPN,False,103
+242,ANC-6A06,Write-in,candidate_or_option,NPN,NPN,False,3
+242,ANC-6A06,OVER VOTES,ballot_accounting,,NPN,True,0
+242,ANC-6A06,UNDER VOTES,ballot_accounting,,NPN,True,106
+243,ANC-6A07,Jeff Giertz,candidate_or_option,NPN,NPN,False,436
+243,ANC-6A07,Write-in,candidate_or_option,NPN,NPN,False,21
+243,ANC-6A07,OVER VOTES,ballot_accounting,,NPN,True,0
+243,ANC-6A07,UNDER VOTES,ballot_accounting,,NPN,True,200
+244,ANC-6B01,Jon Mandel,candidate_or_option,NPN,NPN,False,417
+244,ANC-6B01,Write-in,candidate_or_option,NPN,NPN,False,11
+244,ANC-6B01,OVER VOTES,ballot_accounting,,NPN,True,0
+244,ANC-6B01,UNDER VOTES,ballot_accounting,,NPN,True,185
+245,ANC-6B02,"Gerald ""Jerry"" Sroufe",candidate_or_option,NPN,NPN,False,473
+245,ANC-6B02,Write-in,candidate_or_option,NPN,NPN,False,26
+245,ANC-6B02,OVER VOTES,ballot_accounting,,NPN,True,0
+245,ANC-6B02,UNDER VOTES,ballot_accounting,,NPN,True,219
+246,ANC-6B03,David Sobelsohn,candidate_or_option,NPN,NPN,False,489
+246,ANC-6B03,Write-in,candidate_or_option,NPN,NPN,False,13
+246,ANC-6B03,OVER VOTES,ballot_accounting,,NPN,True,0
+246,ANC-6B03,UNDER VOTES,ballot_accounting,,NPN,True,181
+247,ANC-6B04,Dana White,candidate_or_option,NPN,NPN,False,455
+247,ANC-6B04,Write-in,candidate_or_option,NPN,NPN,False,24
+247,ANC-6B04,OVER VOTES,ballot_accounting,,NPN,True,0
+247,ANC-6B04,UNDER VOTES,ballot_accounting,,NPN,True,180
+248,ANC-6B05,Samuel Pastore,candidate_or_option,NPN,NPN,False,424
+248,ANC-6B05,Write-in,candidate_or_option,NPN,NPN,False,19
+248,ANC-6B05,OVER VOTES,ballot_accounting,,NPN,True,0
+248,ANC-6B05,UNDER VOTES,ballot_accounting,,NPN,True,221
+249,ANC-6B06,Lisa Matsumoto,candidate_or_option,NPN,NPN,False,456
+249,ANC-6B06,Write-in,candidate_or_option,NPN,NPN,False,17
+249,ANC-6B06,OVER VOTES,ballot_accounting,,NPN,True,0
+249,ANC-6B06,UNDER VOTES,ballot_accounting,,NPN,True,169
+250,ANC-6B07,Rachel E Feinstein,candidate_or_option,NPN,NPN,False,595
+250,ANC-6B07,Write-in,candidate_or_option,NPN,NPN,False,19
+250,ANC-6B07,OVER VOTES,ballot_accounting,,NPN,True,0
+250,ANC-6B07,UNDER VOTES,ballot_accounting,,NPN,True,252
+251,ANC-6B08,Jeffrey Menzer,candidate_or_option,NPN,NPN,False,342
+251,ANC-6B08,Write-in,candidate_or_option,NPN,NPN,False,10
+251,ANC-6B08,OVER VOTES,ballot_accounting,,NPN,True,1
+251,ANC-6B08,UNDER VOTES,ballot_accounting,,NPN,True,113
+252,ANC-6B09,Karen Hughes,candidate_or_option,NPN,NPN,False,611
+252,ANC-6B09,Write-in,candidate_or_option,NPN,NPN,False,14
+252,ANC-6B09,OVER VOTES,ballot_accounting,,NPN,True,1
+252,ANC-6B09,UNDER VOTES,ballot_accounting,,NPN,True,180
+253,ANC-6C01,Jeremiah M Foxwell,candidate_or_option,NPN,NPN,False,428
+253,ANC-6C01,Write-in,candidate_or_option,NPN,NPN,False,16
+253,ANC-6C01,OVER VOTES,ballot_accounting,,NPN,True,0
+253,ANC-6C01,UNDER VOTES,ballot_accounting,,NPN,True,170
+254,ANC-6C02,Lea M. Crusey,candidate_or_option,NPN,NPN,False,371
+254,ANC-6C02,Write-in,candidate_or_option,NPN,NPN,False,15
+254,ANC-6C02,OVER VOTES,ballot_accounting,,NPN,True,0
+254,ANC-6C02,UNDER VOTES,ballot_accounting,,NPN,True,190
+255,ANC-6C03,Jay Adelstein,candidate_or_option,NPN,NPN,False,425
+255,ANC-6C03,Write-in,candidate_or_option,NPN,NPN,False,30
+255,ANC-6C03,OVER VOTES,ballot_accounting,,NPN,True,0
+255,ANC-6C03,UNDER VOTES,ballot_accounting,,NPN,True,215
+256,ANC-6C04,Mark Eckenwiler,candidate_or_option,NPN,NPN,False,454
+256,ANC-6C04,Write-in,candidate_or_option,NPN,NPN,False,18
+256,ANC-6C04,OVER VOTES,ballot_accounting,,NPN,True,0
+256,ANC-6C04,UNDER VOTES,ballot_accounting,,NPN,True,168
+257,ANC-6C05,Daniela Kelley McInerney,candidate_or_option,NPN,NPN,False,502
+257,ANC-6C05,Write-in,candidate_or_option,NPN,NPN,False,14
+257,ANC-6C05,OVER VOTES,ballot_accounting,,NPN,True,0
+257,ANC-6C05,UNDER VOTES,ballot_accounting,,NPN,True,183
+258,ANC-6C06,Lorenzo Cinalli,candidate_or_option,NPN,NPN,False,420
+258,ANC-6C06,Write-in,candidate_or_option,NPN,NPN,False,19
+258,ANC-6C06,OVER VOTES,ballot_accounting,,NPN,True,0
+258,ANC-6C06,UNDER VOTES,ballot_accounting,,NPN,True,208
+259,ANC-6C07,Grayson Lewis,candidate_or_option,NPN,NPN,False,703
+259,ANC-6C07,Write-in,candidate_or_option,NPN,NPN,False,13
+259,ANC-6C07,OVER VOTES,ballot_accounting,,NPN,True,0
+259,ANC-6C07,UNDER VOTES,ballot_accounting,,NPN,True,289
+260,ANC-6D01,Write-in,candidate_or_option,NPN,NPN,False,106
+260,ANC-6D01,OVER VOTES,ballot_accounting,,NPN,True,0
+260,ANC-6D01,UNDER VOTES,ballot_accounting,,NPN,True,454
+261,ANC-6D02,Write-in,candidate_or_option,NPN,NPN,False,67
+261,ANC-6D02,OVER VOTES,ballot_accounting,,NPN,True,0
+261,ANC-6D02,UNDER VOTES,ballot_accounting,,NPN,True,685
+262,ANC-6D03,Gail Fast,candidate_or_option,NPN,NPN,False,292
+262,ANC-6D03,Katie L. Henke,candidate_or_option,NPN,NPN,False,253
+262,ANC-6D03,Write-in,candidate_or_option,NPN,NPN,False,7
+262,ANC-6D03,OVER VOTES,ballot_accounting,,NPN,True,0
+262,ANC-6D03,UNDER VOTES,ballot_accounting,,NPN,True,78
+263,ANC-6D04,Manasi Raveendran,candidate_or_option,NPN,NPN,False,332
+263,ANC-6D04,Write-in,candidate_or_option,NPN,NPN,False,23
+263,ANC-6D04,OVER VOTES,ballot_accounting,,NPN,True,0
+263,ANC-6D04,UNDER VOTES,ballot_accounting,,NPN,True,145
+264,ANC-6D05,Timothy M. Taylor,candidate_or_option,NPN,NPN,False,301
+264,ANC-6D05,Write-in,candidate_or_option,NPN,NPN,False,33
+264,ANC-6D05,OVER VOTES,ballot_accounting,,NPN,True,0
+264,ANC-6D05,UNDER VOTES,ballot_accounting,,NPN,True,160
+265,ANC-6D06,Julian Hunt,candidate_or_option,NPN,NPN,False,292
+265,ANC-6D06,Mitchell Calhoun,candidate_or_option,NPN,NPN,False,373
+265,ANC-6D06,Write-in,candidate_or_option,NPN,NPN,False,16
+265,ANC-6D06,OVER VOTES,ballot_accounting,,NPN,True,2
+265,ANC-6D06,UNDER VOTES,ballot_accounting,,NPN,True,204
+266,ANC-6D07,"Fredrica ""Rikki"" Kramer",candidate_or_option,NPN,NPN,False,692
+266,ANC-6D07,Write-in,candidate_or_option,NPN,NPN,False,26
+266,ANC-6D07,OVER VOTES,ballot_accounting,,NPN,True,0
+266,ANC-6D07,UNDER VOTES,ballot_accounting,,NPN,True,244
+267,ANC-6D08,Rhonda Natalie Hamilton,candidate_or_option,NPN,NPN,False,514
+267,ANC-6D08,Write-in,candidate_or_option,NPN,NPN,False,16
+267,ANC-6D08,OVER VOTES,ballot_accounting,,NPN,True,0
+267,ANC-6D08,UNDER VOTES,ballot_accounting,,NPN,True,168
+268,ANC-6E01,Write-in,candidate_or_option,NPN,NPN,False,25
+268,ANC-6E01,OVER VOTES,ballot_accounting,,NPN,True,0
+268,ANC-6E01,UNDER VOTES,ballot_accounting,,NPN,True,345
+269,ANC-6E02,Write-in,candidate_or_option,NPN,NPN,False,20
+269,ANC-6E02,OVER VOTES,ballot_accounting,,NPN,True,0
+269,ANC-6E02,UNDER VOTES,ballot_accounting,,NPN,True,392
+270,ANC-6E03,Kevin M. Rogers,candidate_or_option,NPN,NPN,False,341
+270,ANC-6E03,Write-in,candidate_or_option,NPN,NPN,False,14
+270,ANC-6E03,OVER VOTES,ballot_accounting,,NPN,True,0
+270,ANC-6E03,UNDER VOTES,ballot_accounting,,NPN,True,143
+271,ANC-6E04,Julia Fiedler,candidate_or_option,NPN,NPN,False,386
+271,ANC-6E04,Write-in,candidate_or_option,NPN,NPN,False,10
+271,ANC-6E04,OVER VOTES,ballot_accounting,,NPN,True,1
+271,ANC-6E04,UNDER VOTES,ballot_accounting,,NPN,True,143
+272,ANC-6E05,Write-in,candidate_or_option,NPN,NPN,False,28
+272,ANC-6E05,OVER VOTES,ballot_accounting,,NPN,True,0
+272,ANC-6E05,UNDER VOTES,ballot_accounting,,NPN,True,490
+273,ANC-6E06,Kevin Knight,candidate_or_option,NPN,NPN,False,458
+273,ANC-6E06,Write-in,candidate_or_option,NPN,NPN,False,14
+273,ANC-6E06,OVER VOTES,ballot_accounting,,NPN,True,0
+273,ANC-6E06,UNDER VOTES,ballot_accounting,,NPN,True,221
+274,ANC-6E07,Write-in,candidate_or_option,NPN,NPN,False,33
+274,ANC-6E07,OVER VOTES,ballot_accounting,,NPN,True,0
+274,ANC-6E07,UNDER VOTES,ballot_accounting,,NPN,True,574
+275,ANC-6E08,Write-in,candidate_or_option,NPN,NPN,False,28
+275,ANC-6E08,OVER VOTES,ballot_accounting,,NPN,True,0
+275,ANC-6E08,UNDER VOTES,ballot_accounting,,NPN,True,325
+276,ANC-6E09,Ritanch T. Hans,candidate_or_option,NPN,NPN,False,259
+276,ANC-6E09,Write-in,candidate_or_option,NPN,NPN,False,6
+276,ANC-6E09,OVER VOTES,ballot_accounting,,NPN,True,0
+276,ANC-6E09,UNDER VOTES,ballot_accounting,,NPN,True,128
+277,ANC-7B01,Write-in,candidate_or_option,NPN,NPN,False,59
+277,ANC-7B01,OVER VOTES,ballot_accounting,,NPN,True,0
+277,ANC-7B01,UNDER VOTES,ballot_accounting,,NPN,True,375
+278,ANC-7B02,Jamaal Maurice Pearsall,candidate_or_option,NPN,NPN,False,617
+278,ANC-7B02,Write-in,candidate_or_option,NPN,NPN,False,17
+278,ANC-7B02,OVER VOTES,ballot_accounting,,NPN,True,2
+278,ANC-7B02,UNDER VOTES,ballot_accounting,,NPN,True,196
+279,ANC-7B03,Travis R. Swanson,candidate_or_option,NPN,NPN,False,311
+279,ANC-7B03,Write-in,candidate_or_option,NPN,NPN,False,19
+279,ANC-7B03,OVER VOTES,ballot_accounting,,NPN,True,1
+279,ANC-7B03,UNDER VOTES,ballot_accounting,,NPN,True,128
+280,ANC-7B04,Keith R. Hasan-Towery,candidate_or_option,NPN,NPN,False,491
+280,ANC-7B04,Write-in,candidate_or_option,NPN,NPN,False,19
+280,ANC-7B04,OVER VOTES,ballot_accounting,,NPN,True,0
+280,ANC-7B04,UNDER VOTES,ballot_accounting,,NPN,True,143
+281,ANC-7B05,Write-in,candidate_or_option,NPN,NPN,False,80
+281,ANC-7B05,OVER VOTES,ballot_accounting,,NPN,True,0
+281,ANC-7B05,UNDER VOTES,ballot_accounting,,NPN,True,457
+282,ANC-7B06,Cortez Johnson,candidate_or_option,NPN,NPN,False,497
+282,ANC-7B06,Write-in,candidate_or_option,NPN,NPN,False,22
+282,ANC-7B06,OVER VOTES,ballot_accounting,,NPN,True,0
+282,ANC-7B06,UNDER VOTES,ballot_accounting,,NPN,True,171
+283,ANC-7B07,Jimmie Williams,candidate_or_option,NPN,NPN,False,424
+283,ANC-7B07,Rickey Titus,candidate_or_option,NPN,NPN,False,120
+283,ANC-7B07,Write-in,candidate_or_option,NPN,NPN,False,15
+283,ANC-7B07,OVER VOTES,ballot_accounting,,NPN,True,4
+283,ANC-7B07,UNDER VOTES,ballot_accounting,,NPN,True,124
+284,ANC-7B08,Angela M. Sydnor,candidate_or_option,NPN,NPN,False,441
+284,ANC-7B08,Write-in,candidate_or_option,NPN,NPN,False,17
+284,ANC-7B08,OVER VOTES,ballot_accounting,,NPN,True,1
+284,ANC-7B08,UNDER VOTES,ballot_accounting,,NPN,True,186
+285,ANC-7B09,Kenyatta M. Smith,candidate_or_option,NPN,NPN,False,207
+285,ANC-7B09,Write-in,candidate_or_option,NPN,NPN,False,8
+285,ANC-7B09,OVER VOTES,ballot_accounting,,NPN,True,0
+285,ANC-7B09,UNDER VOTES,ballot_accounting,,NPN,True,74
+286,ANC-7C01,Brian A. Glover,candidate_or_option,NPN,NPN,False,259
+286,ANC-7C01,Write-in,candidate_or_option,NPN,NPN,False,7
+286,ANC-7C01,OVER VOTES,ballot_accounting,,NPN,True,0
+286,ANC-7C01,UNDER VOTES,ballot_accounting,,NPN,True,121
+287,ANC-7C02,Patricia N. Williams,candidate_or_option,NPN,NPN,False,315
+287,ANC-7C02,Write-in,candidate_or_option,NPN,NPN,False,15
+287,ANC-7C02,OVER VOTES,ballot_accounting,,NPN,True,0
+287,ANC-7C02,UNDER VOTES,ballot_accounting,,NPN,True,138
+288,ANC-7C03,Carlos D. Richardson,candidate_or_option,NPN,NPN,False,305
+288,ANC-7C03,Write-in,candidate_or_option,NPN,NPN,False,16
+288,ANC-7C03,OVER VOTES,ballot_accounting,,NPN,True,0
+288,ANC-7C03,UNDER VOTES,ballot_accounting,,NPN,True,150
+289,ANC-7C04,Anthony Lorenzo Green,candidate_or_option,NPN,NPN,False,372
+289,ANC-7C04,Write-in,candidate_or_option,NPN,NPN,False,18
+289,ANC-7C04,OVER VOTES,ballot_accounting,,NPN,True,0
+289,ANC-7C04,UNDER VOTES,ballot_accounting,,NPN,True,134
+290,ANC-7C05,Mary L. Gaffney,candidate_or_option,NPN,NPN,False,313
+290,ANC-7C05,Write-in,candidate_or_option,NPN,NPN,False,19
+290,ANC-7C05,OVER VOTES,ballot_accounting,,NPN,True,2
+290,ANC-7C05,UNDER VOTES,ballot_accounting,,NPN,True,113
+291,ANC-7C06,LaDan W. Johnson,candidate_or_option,NPN,NPN,False,167
+291,ANC-7C06,Devin Turner,candidate_or_option,NPN,NPN,False,282
+291,ANC-7C06,Write-in,candidate_or_option,NPN,NPN,False,5
+291,ANC-7C06,OVER VOTES,ballot_accounting,,NPN,True,1
+291,ANC-7C06,UNDER VOTES,ballot_accounting,,NPN,True,99
+292,ANC-7C07,Antawan Holmes,candidate_or_option,NPN,NPN,False,386
+292,ANC-7C07,Write-in,candidate_or_option,NPN,NPN,False,18
+292,ANC-7C07,OVER VOTES,ballot_accounting,,NPN,True,0
+292,ANC-7C07,UNDER VOTES,ballot_accounting,,NPN,True,121
+293,ANC-7C08,Write-in,candidate_or_option,NPN,NPN,False,76
+293,ANC-7C08,OVER VOTES,ballot_accounting,,NPN,True,0
+293,ANC-7C08,UNDER VOTES,ballot_accounting,,NPN,True,521
+294,ANC-7C09,Carrie N. Brown,candidate_or_option,NPN,NPN,False,291
+294,ANC-7C09,Write-in,candidate_or_option,NPN,NPN,False,9
+294,ANC-7C09,OVER VOTES,ballot_accounting,,NPN,True,0
+294,ANC-7C09,UNDER VOTES,ballot_accounting,,NPN,True,115
+295,ANC-7D01,Josh Taborn,candidate_or_option,NPN,NPN,False,261
+295,ANC-7D01,Write-in,candidate_or_option,NPN,NPN,False,13
+295,ANC-7D01,OVER VOTES,ballot_accounting,,NPN,True,1
+295,ANC-7D01,UNDER VOTES,ballot_accounting,,NPN,True,173
+296,ANC-7D02,Toya Henderson,candidate_or_option,NPN,NPN,False,179
+296,ANC-7D02,Write-in,candidate_or_option,NPN,NPN,False,3
+296,ANC-7D02,OVER VOTES,ballot_accounting,,NPN,True,1
+296,ANC-7D02,UNDER VOTES,ballot_accounting,,NPN,True,122
+297,ANC-7D03,Write-in,candidate_or_option,NPN,NPN,False,48
+297,ANC-7D03,OVER VOTES,ballot_accounting,,NPN,True,0
+297,ANC-7D03,UNDER VOTES,ballot_accounting,,NPN,True,477
+298,ANC-7D04,Katie Murphy,candidate_or_option,NPN,NPN,False,340
+298,ANC-7D04,Charles Boston,candidate_or_option,NPN,NPN,False,246
+298,ANC-7D04,Write-in,candidate_or_option,NPN,NPN,False,7
+298,ANC-7D04,OVER VOTES,ballot_accounting,,NPN,True,0
+298,ANC-7D04,UNDER VOTES,ballot_accounting,,NPN,True,135
+299,ANC-7D05,Nisha Patruni,candidate_or_option,NPN,NPN,False,413
+299,ANC-7D05,Write-in,candidate_or_option,NPN,NPN,False,31
+299,ANC-7D05,OVER VOTES,ballot_accounting,,NPN,True,2
+299,ANC-7D05,UNDER VOTES,ballot_accounting,,NPN,True,149
+300,ANC-7D06,Donte Dominic Massey,candidate_or_option,NPN,NPN,False,186
+300,ANC-7D06,Dominic A. Pacheco,candidate_or_option,NPN,NPN,False,161
+300,ANC-7D06,Write-in,candidate_or_option,NPN,NPN,False,5
+300,ANC-7D06,OVER VOTES,ballot_accounting,,NPN,True,1
+300,ANC-7D06,UNDER VOTES,ballot_accounting,,NPN,True,62
+301,ANC-7D07,Sarah C. Miller,candidate_or_option,NPN,NPN,False,383
+301,ANC-7D07,Write-in,candidate_or_option,NPN,NPN,False,15
+301,ANC-7D07,OVER VOTES,ballot_accounting,,NPN,True,0
+301,ANC-7D07,UNDER VOTES,ballot_accounting,,NPN,True,118
+302,ANC-7D08,Brian Alcorn,candidate_or_option,NPN,NPN,False,373
+302,ANC-7D08,Write-in,candidate_or_option,NPN,NPN,False,14
+302,ANC-7D08,OVER VOTES,ballot_accounting,,NPN,True,1
+302,ANC-7D08,UNDER VOTES,ballot_accounting,,NPN,True,116
+303,ANC-7D09,Ashley Schapitl,candidate_or_option,NPN,NPN,False,482
+303,ANC-7D09,Write-in,candidate_or_option,NPN,NPN,False,14
+303,ANC-7D09,OVER VOTES,ballot_accounting,,NPN,True,0
+303,ANC-7D09,UNDER VOTES,ballot_accounting,,NPN,True,108
+304,ANC-7D10,Dev Myers,candidate_or_option,NPN,NPN,False,489
+304,ANC-7D10,Write-in,candidate_or_option,NPN,NPN,False,16
+304,ANC-7D10,OVER VOTES,ballot_accounting,,NPN,True,0
+304,ANC-7D10,UNDER VOTES,ballot_accounting,,NPN,True,147
+305,ANC-7E01,Write-in,candidate_or_option,NPN,NPN,False,68
+305,ANC-7E01,OVER VOTES,ballot_accounting,,NPN,True,0
+305,ANC-7E01,UNDER VOTES,ballot_accounting,,NPN,True,522
+306,ANC-7E02,Aaron Harris,candidate_or_option,NPN,NPN,False,182
+306,ANC-7E02,Sehree M. Mickel,candidate_or_option,NPN,NPN,False,178
+306,ANC-7E02,Write-in,candidate_or_option,NPN,NPN,False,9
+306,ANC-7E02,OVER VOTES,ballot_accounting,,NPN,True,0
+306,ANC-7E02,UNDER VOTES,ballot_accounting,,NPN,True,70
+307,ANC-7E03,Write-in,candidate_or_option,NPN,NPN,False,23
+307,ANC-7E03,OVER VOTES,ballot_accounting,,NPN,True,0
+307,ANC-7E03,UNDER VOTES,ballot_accounting,,NPN,True,289
+308,ANC-7E04,Write-in,candidate_or_option,NPN,NPN,False,49
+308,ANC-7E04,OVER VOTES,ballot_accounting,,NPN,True,0
+308,ANC-7E04,UNDER VOTES,ballot_accounting,,NPN,True,469
+309,ANC-7E05,Write-in,candidate_or_option,NPN,NPN,False,35
+309,ANC-7E05,OVER VOTES,ballot_accounting,,NPN,True,0
+309,ANC-7E05,UNDER VOTES,ballot_accounting,,NPN,True,311
+310,ANC-7E06,Write-in,candidate_or_option,NPN,NPN,False,39
+310,ANC-7E06,OVER VOTES,ballot_accounting,,NPN,True,0
+310,ANC-7E06,UNDER VOTES,ballot_accounting,,NPN,True,424
+311,ANC-7E07,Jonathan Inman,candidate_or_option,NPN,NPN,False,172
+311,ANC-7E07,Write-in,candidate_or_option,NPN,NPN,False,18
+311,ANC-7E07,OVER VOTES,ballot_accounting,,NPN,True,0
+311,ANC-7E07,UNDER VOTES,ballot_accounting,,NPN,True,113
+312,ANC-7F01,Write-in,candidate_or_option,NPN,NPN,False,15
+312,ANC-7F01,OVER VOTES,ballot_accounting,,NPN,True,0
+312,ANC-7F01,UNDER VOTES,ballot_accounting,,NPN,True,190
+313,ANC-7F02,Zewdi Alem,candidate_or_option,NPN,NPN,False,249
+313,ANC-7F02,Write-in,candidate_or_option,NPN,NPN,False,21
+313,ANC-7F02,OVER VOTES,ballot_accounting,,NPN,True,1
+313,ANC-7F02,UNDER VOTES,ballot_accounting,,NPN,True,161
+314,ANC-7F03,Kimory KSO Orendoff,candidate_or_option,NPN,NPN,False,292
+314,ANC-7F03,Write-in,candidate_or_option,NPN,NPN,False,11
+314,ANC-7F03,OVER VOTES,ballot_accounting,,NPN,True,3
+314,ANC-7F03,UNDER VOTES,ballot_accounting,,NPN,True,166
+315,ANC-7F04,Chanettia Nelson,candidate_or_option,NPN,NPN,False,392
+315,ANC-7F04,Write-in,candidate_or_option,NPN,NPN,False,12
+315,ANC-7F04,OVER VOTES,ballot_accounting,,NPN,True,0
+315,ANC-7F04,UNDER VOTES,ballot_accounting,,NPN,True,140
+316,ANC-7F05,Brittany N. Hughes,candidate_or_option,NPN,NPN,False,325
+316,ANC-7F05,Write-in,candidate_or_option,NPN,NPN,False,18
+316,ANC-7F05,OVER VOTES,ballot_accounting,,NPN,True,1
+316,ANC-7F05,UNDER VOTES,ballot_accounting,,NPN,True,115
+317,ANC-7F06,Frieda Edwards,candidate_or_option,NPN,NPN,False,144
+317,ANC-7F06,Write-in,candidate_or_option,NPN,NPN,False,4
+317,ANC-7F06,OVER VOTES,ballot_accounting,,NPN,True,0
+317,ANC-7F06,UNDER VOTES,ballot_accounting,,NPN,True,74
+318,ANC-7F07,Shirley Thompson-Wright,candidate_or_option,NPN,NPN,False,361
+318,ANC-7F07,Write-in,candidate_or_option,NPN,NPN,False,12
+318,ANC-7F07,OVER VOTES,ballot_accounting,,NPN,True,3
+318,ANC-7F07,UNDER VOTES,ballot_accounting,,NPN,True,105
+319,ANC-7F08,Write-in,candidate_or_option,NPN,NPN,False,128
+319,ANC-7F08,OVER VOTES,ballot_accounting,,NPN,True,0
+319,ANC-7F08,UNDER VOTES,ballot_accounting,,NPN,True,227
+320,ANC-8A01,Tom Donohue,candidate_or_option,NPN,NPN,False,151
+320,ANC-8A01,Kwame T. Perry,candidate_or_option,NPN,NPN,False,223
+320,ANC-8A01,Write-in,candidate_or_option,NPN,NPN,False,4
+320,ANC-8A01,OVER VOTES,ballot_accounting,,NPN,True,0
+320,ANC-8A01,UNDER VOTES,ballot_accounting,,NPN,True,45
+321,ANC-8A02,Anthony Paul Foreman,candidate_or_option,NPN,NPN,False,319
+321,ANC-8A02,Write-in,candidate_or_option,NPN,NPN,False,15
+321,ANC-8A02,OVER VOTES,ballot_accounting,,NPN,True,0
+321,ANC-8A02,UNDER VOTES,ballot_accounting,,NPN,True,131
+322,ANC-8A03,Andrea L. Davis,candidate_or_option,NPN,NPN,False,393
+322,ANC-8A03,Write-in,candidate_or_option,NPN,NPN,False,17
+322,ANC-8A03,OVER VOTES,ballot_accounting,,NPN,True,0
+322,ANC-8A03,UNDER VOTES,ballot_accounting,,NPN,True,115
+323,ANC-8A04,Fria Moore,candidate_or_option,NPN,NPN,False,199
+323,ANC-8A04,Write-in,candidate_or_option,NPN,NPN,False,14
+323,ANC-8A04,OVER VOTES,ballot_accounting,,NPN,True,0
+323,ANC-8A04,UNDER VOTES,ballot_accounting,,NPN,True,98
+324,ANC-8A05,Jason Anderson,candidate_or_option,NPN,NPN,False,113
+324,ANC-8A05,Jared Powell,candidate_or_option,NPN,NPN,False,193
+324,ANC-8A05,Write-in,candidate_or_option,NPN,NPN,False,5
+324,ANC-8A05,OVER VOTES,ballot_accounting,,NPN,True,0
+324,ANC-8A05,UNDER VOTES,ballot_accounting,,NPN,True,83
+325,ANC-8A06,Ty'on L. Jones,candidate_or_option,NPN,NPN,False,395
+325,ANC-8A06,Write-in,candidate_or_option,NPN,NPN,False,28
+325,ANC-8A06,OVER VOTES,ballot_accounting,,NPN,True,0
+325,ANC-8A06,UNDER VOTES,ballot_accounting,,NPN,True,148
+326,ANC-8A07,Tomora D. Redman,candidate_or_option,NPN,NPN,False,260
+326,ANC-8A07,Write-in,candidate_or_option,NPN,NPN,False,4
+326,ANC-8A07,OVER VOTES,ballot_accounting,,NPN,True,0
+326,ANC-8A07,UNDER VOTES,ballot_accounting,,NPN,True,98
+327,ANC-8B01,Malcolm Williams,candidate_or_option,NPN,NPN,False,147
+327,ANC-8B01,Margaret Thomas,candidate_or_option,NPN,NPN,False,165
+327,ANC-8B01,Write-in,candidate_or_option,NPN,NPN,False,9
+327,ANC-8B01,OVER VOTES,ballot_accounting,,NPN,True,2
+327,ANC-8B01,UNDER VOTES,ballot_accounting,,NPN,True,89
+328,ANC-8B02,Betty Scippio,candidate_or_option,NPN,NPN,False,239
+328,ANC-8B02,Write-in,candidate_or_option,NPN,NPN,False,20
+328,ANC-8B02,OVER VOTES,ballot_accounting,,NPN,True,1
+328,ANC-8B02,UNDER VOTES,ballot_accounting,,NPN,True,90
+329,ANC-8B03,Kellie C Jackson,candidate_or_option,NPN,NPN,False,183
+329,ANC-8B03,Write-in,candidate_or_option,NPN,NPN,False,6
+329,ANC-8B03,OVER VOTES,ballot_accounting,,NPN,True,1
+329,ANC-8B03,UNDER VOTES,ballot_accounting,,NPN,True,78
+330,ANC-8B04,Benita V Fundersburg,candidate_or_option,NPN,NPN,False,149
+330,ANC-8B04,Write-in,candidate_or_option,NPN,NPN,False,12
+330,ANC-8B04,OVER VOTES,ballot_accounting,,NPN,True,0
+330,ANC-8B04,UNDER VOTES,ballot_accounting,,NPN,True,92
+331,ANC-8B05,Joseph Johnson,candidate_or_option,NPN,NPN,False,108
+331,ANC-8B05,Write-in,candidate_or_option,NPN,NPN,False,8
+331,ANC-8B05,OVER VOTES,ballot_accounting,,NPN,True,1
+331,ANC-8B05,UNDER VOTES,ballot_accounting,,NPN,True,70
+332,ANC-8B06,Hanna Baker,candidate_or_option,NPN,NPN,False,358
+332,ANC-8B06,Write-in,candidate_or_option,NPN,NPN,False,15
+332,ANC-8B06,OVER VOTES,ballot_accounting,,NPN,True,0
+332,ANC-8B06,UNDER VOTES,ballot_accounting,,NPN,True,152
+333,ANC-8B07,Juanita Beltran,candidate_or_option,NPN,NPN,False,166
+333,ANC-8B07,Write-in,candidate_or_option,NPN,NPN,False,7
+333,ANC-8B07,OVER VOTES,ballot_accounting,,NPN,True,0
+333,ANC-8B07,UNDER VOTES,ballot_accounting,,NPN,True,81
+334,ANC-8C01,Sherrae Gravely,candidate_or_option,NPN,NPN,False,210
+334,ANC-8C01,Write-in,candidate_or_option,NPN,NPN,False,8
+334,ANC-8C01,OVER VOTES,ballot_accounting,,NPN,True,0
+334,ANC-8C01,UNDER VOTES,ballot_accounting,,NPN,True,83
+335,ANC-8C02,Gregory J. White,candidate_or_option,NPN,NPN,False,237
+335,ANC-8C02,Write-in,candidate_or_option,NPN,NPN,False,21
+335,ANC-8C02,OVER VOTES,ballot_accounting,,NPN,True,0
+335,ANC-8C02,UNDER VOTES,ballot_accounting,,NPN,True,98
+336,ANC-8C03,Darrell Chase,candidate_or_option,NPN,NPN,False,262
+336,ANC-8C03,Write-in,candidate_or_option,NPN,NPN,False,15
+336,ANC-8C03,OVER VOTES,ballot_accounting,,NPN,True,0
+336,ANC-8C03,UNDER VOTES,ballot_accounting,,NPN,True,143
+337,ANC-8C04,Kendall Ridley,candidate_or_option,NPN,NPN,False,300
+337,ANC-8C04,Write-in,candidate_or_option,NPN,NPN,False,13
+337,ANC-8C04,OVER VOTES,ballot_accounting,,NPN,True,1
+337,ANC-8C04,UNDER VOTES,ballot_accounting,,NPN,True,127
+338,ANC-8C05,Cheryl Moore,candidate_or_option,NPN,NPN,False,216
+338,ANC-8C05,Write-in,candidate_or_option,NPN,NPN,False,14
+338,ANC-8C05,OVER VOTES,ballot_accounting,,NPN,True,0
+338,ANC-8C05,UNDER VOTES,ballot_accounting,,NPN,True,87
+339,ANC-8C06,Collette Newby,candidate_or_option,NPN,NPN,False,255
+339,ANC-8C06,Write-in,candidate_or_option,NPN,NPN,False,7
+339,ANC-8C06,OVER VOTES,ballot_accounting,,NPN,True,1
+339,ANC-8C06,UNDER VOTES,ballot_accounting,,NPN,True,127
+340,ANC-8C07,Salim Adofo,candidate_or_option,NPN,NPN,False,303
+340,ANC-8C07,Write-in,candidate_or_option,NPN,NPN,False,11
+340,ANC-8C07,OVER VOTES,ballot_accounting,,NPN,True,1
+340,ANC-8C07,UNDER VOTES,ballot_accounting,,NPN,True,93
+341,ANC-8C08,Rene Neal,candidate_or_option,NPN,NPN,False,97
+341,ANC-8C08,Joy Page,candidate_or_option,NPN,NPN,False,238
+341,ANC-8C08,Write-in,candidate_or_option,NPN,NPN,False,9
+341,ANC-8C08,OVER VOTES,ballot_accounting,,NPN,True,6
+341,ANC-8C08,UNDER VOTES,ballot_accounting,,NPN,True,60
+342,ANC-8D01,Dionne Yvette Brown,candidate_or_option,NPN,NPN,False,355
+342,ANC-8D01,Write-in,candidate_or_option,NPN,NPN,False,10
+342,ANC-8D01,OVER VOTES,ballot_accounting,,NPN,True,0
+342,ANC-8D01,UNDER VOTES,ballot_accounting,,NPN,True,89
+343,ANC-8D02,Write-in,candidate_or_option,NPN,NPN,False,0
+343,ANC-8D02,OVER VOTES,ballot_accounting,,NPN,True,0
+343,ANC-8D02,UNDER VOTES,ballot_accounting,,NPN,True,43
+344,ANC-8D03,Write-in,candidate_or_option,NPN,NPN,False,8
+344,ANC-8D03,OVER VOTES,ballot_accounting,,NPN,True,0
+344,ANC-8D03,UNDER VOTES,ballot_accounting,,NPN,True,265
+345,ANC-8D04,Daquan Johnson,candidate_or_option,NPN,NPN,False,130
+345,ANC-8D04,Write-in,candidate_or_option,NPN,NPN,False,4
+345,ANC-8D04,OVER VOTES,ballot_accounting,,NPN,True,1
+345,ANC-8D04,UNDER VOTES,ballot_accounting,,NPN,True,86
+346,ANC-8D05,Write-in,candidate_or_option,NPN,NPN,False,12
+346,ANC-8D05,OVER VOTES,ballot_accounting,,NPN,True,0
+346,ANC-8D05,UNDER VOTES,ballot_accounting,,NPN,True,313
+347,ANC-8D06,Devon Lesesne,candidate_or_option,NPN,NPN,False,326
+347,ANC-8D06,Write-in,candidate_or_option,NPN,NPN,False,18
+347,ANC-8D06,OVER VOTES,ballot_accounting,,NPN,True,0
+347,ANC-8D06,UNDER VOTES,ballot_accounting,,NPN,True,130
+348,ANC-8D07,Write-in,candidate_or_option,NPN,NPN,False,11
+348,ANC-8D07,OVER VOTES,ballot_accounting,,NPN,True,0
+348,ANC-8D07,UNDER VOTES,ballot_accounting,,NPN,True,150
+349,ANC-8D08,Write-in,candidate_or_option,NPN,NPN,False,21
+349,ANC-8D08,OVER VOTES,ballot_accounting,,NPN,True,0
+349,ANC-8D08,UNDER VOTES,ballot_accounting,,NPN,True,319
+350,ANC-8E01,Vickie R. Lipscomb,candidate_or_option,NPN,NPN,False,117
+350,ANC-8E01,Deborah J. Wells,candidate_or_option,NPN,NPN,False,158
+350,ANC-8E01,Write-in,candidate_or_option,NPN,NPN,False,6
+350,ANC-8E01,OVER VOTES,ballot_accounting,,NPN,True,0
+350,ANC-8E01,UNDER VOTES,ballot_accounting,,NPN,True,65
+351,ANC-8E02,Write-in,candidate_or_option,NPN,NPN,False,25
+351,ANC-8E02,OVER VOTES,ballot_accounting,,NPN,True,0
+351,ANC-8E02,UNDER VOTES,ballot_accounting,,NPN,True,303
+352,ANC-8E03,Kelly Mikel Williams,candidate_or_option,NPN,NPN,False,213
+352,ANC-8E03,Write-in,candidate_or_option,NPN,NPN,False,20
+352,ANC-8E03,OVER VOTES,ballot_accounting,,NPN,True,0
+352,ANC-8E03,UNDER VOTES,ballot_accounting,,NPN,True,75
+353,ANC-8E04,Veronica Adams,candidate_or_option,NPN,NPN,False,177
+353,ANC-8E04,Write-in,candidate_or_option,NPN,NPN,False,13
+353,ANC-8E04,OVER VOTES,ballot_accounting,,NPN,True,1
+353,ANC-8E04,UNDER VOTES,ballot_accounting,,NPN,True,127
+354,ANC-8E05,Write-in,candidate_or_option,NPN,NPN,False,115
+354,ANC-8E05,OVER VOTES,ballot_accounting,,NPN,True,0
+354,ANC-8E05,UNDER VOTES,ballot_accounting,,NPN,True,457
+355,ANC-8E06,Write-in,candidate_or_option,NPN,NPN,False,35
+355,ANC-8E06,OVER VOTES,ballot_accounting,,NPN,True,0
+355,ANC-8E06,UNDER VOTES,ballot_accounting,,NPN,True,259
+356,ANC-8E07,Write-in,candidate_or_option,NPN,NPN,False,21
+356,ANC-8E07,OVER VOTES,ballot_accounting,,NPN,True,0
+356,ANC-8E07,UNDER VOTES,ballot_accounting,,NPN,True,280
+357,ANC-8E08,Saudia Jenkins,candidate_or_option,NPN,NPN,False,255
+357,ANC-8E08,Write-in,candidate_or_option,NPN,NPN,False,18
+357,ANC-8E08,OVER VOTES,ballot_accounting,,NPN,True,0
+357,ANC-8E08,UNDER VOTES,ballot_accounting,,NPN,True,131
+358,ANC-8E09,Lacy Martae Williams,candidate_or_option,NPN,NPN,False,223
+358,ANC-8E09,Write-in,candidate_or_option,NPN,NPN,False,10
+358,ANC-8E09,OVER VOTES,ballot_accounting,,NPN,True,0
+358,ANC-8E09,UNDER VOTES,ballot_accounting,,NPN,True,108
+359,ANC-6/8F01,Write-in,candidate_or_option,NPN,NPN,False,111
+359,ANC-6/8F01,OVER VOTES,ballot_accounting,,NPN,True,0
+359,ANC-6/8F01,UNDER VOTES,ballot_accounting,,NPN,True,399
+360,ANC-6/8F02,Antonio Rossi,candidate_or_option,NPN,NPN,False,529
+360,ANC-6/8F02,Write-in,candidate_or_option,NPN,NPN,False,37
+360,ANC-6/8F02,OVER VOTES,ballot_accounting,,NPN,True,0
+360,ANC-6/8F02,UNDER VOTES,ballot_accounting,,NPN,True,345
+361,ANC-6/8F03,Brian Strege,candidate_or_option,NPN,NPN,False,382
+361,ANC-6/8F03,Write-in,candidate_or_option,NPN,NPN,False,22
+361,ANC-6/8F03,OVER VOTES,ballot_accounting,,NPN,True,0
+361,ANC-6/8F03,UNDER VOTES,ballot_accounting,,NPN,True,179
+362,ANC-6/8F04,Write-in,candidate_or_option,NPN,NPN,False,70
+362,ANC-6/8F04,OVER VOTES,ballot_accounting,,NPN,True,0
+362,ANC-6/8F04,UNDER VOTES,ballot_accounting,,NPN,True,806
+363,ANC-6/8F05,Dayan Reynolds,candidate_or_option,NPN,NPN,False,426
+363,ANC-6/8F05,Write-in,candidate_or_option,NPN,NPN,False,24
+363,ANC-6/8F05,OVER VOTES,ballot_accounting,,NPN,True,0
+363,ANC-6/8F05,UNDER VOTES,ballot_accounting,,NPN,True,248
+364,INITIATIVE MEASURE NO. 86,"Yes, to approve",candidate_or_option,NPN,NPN,False,117053
+364,INITIATIVE MEASURE NO. 86,"No, to reject",candidate_or_option,NPN,NPN,False,42615
+364,INITIATIVE MEASURE NO. 86,OVER VOTES,ballot_accounting,,NPN,True,121
+364,INITIATIVE MEASURE NO. 86,UNDER VOTES,ballot_accounting,,NPN,True,25286

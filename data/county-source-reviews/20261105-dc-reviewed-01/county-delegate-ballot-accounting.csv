@@ -1,0 +1,3 @@
+year,state_code,county_fips,office,contest_number,contest_name,candidate_or_accounting_literal,party_csv_literal,party_json_literal,votes,source_update_literal,result_status,native_is_rcv,final_rcv_round_verified
+2026,DC,11001,nonvoting_us_house_delegate,4,DELEGATE TO THE HOUSE OF REPRESENTATIVES FROM THE DISTRICT OF COLUMBIA,OVER VOTES,,REP,602,2026-11-04T04:36:21.283Z,Election Night Unofficial Results,True,False
+2026,DC,11001,nonvoting_us_house_delegate,4,DELEGATE TO THE HOUSE OF REPRESENTATIVES FROM THE DISTRICT OF COLUMBIA,UNDER VOTES,,REP,3181,2026-11-04T04:36:21.283Z,Election Night Unofficial Results,True,False
