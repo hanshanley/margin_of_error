@@ -31,6 +31,15 @@ uf_pointer = json.loads(uf_pointer_path.read_bytes()) if uf_pointer_path.exists(
 uf_rows = json.loads((root / uf_pointer["data_directory"] / "turnout.json").read_bytes()) if uf_pointer else []
 historical_audit_path = root / "data/county-source-reviews/20261105-historical-bulk-01/audit.json"
 historical_audit = json.loads(historical_audit_path.read_bytes()) if historical_audit_path.exists() else None
+house_pointer_path = root / "public/historical-house-counties.json"
+house_pointer = json.loads(house_pointer_path.read_bytes()) if house_pointer_path.exists() else None
+house_audit = json.loads((root / house_pointer["data_directory"] / "audit.json").read_bytes()) if house_pointer else None
+if house_pointer:
+    house_coverage = list(csv.DictReader(gzip.open(
+        root / house_pointer["data_directory"] / "state-coverage.csv.gz", "rt")))
+    assert len(house_coverage) == 102
+    assert len({(row["year"], row["state_code"]) for row in house_coverage}) == 102
+    assert all(row["fully_complete"] == row["map_approved"] == "False" for row in house_coverage)
 if historical_audit:
     with (root / "public/county-candidate-coverage.csv").open(newline="") as stream:
         county_ledger = list(csv.DictReader(stream))
@@ -55,6 +64,7 @@ download_count = (18 + len(precinct_pointer["source_reviews"]) + len(precinct_po
                   + sum(1 + len(review["tables"]) for review in participation_reviews))
 for name in ["county-results.json", "precinct-results.json", "precinct-coverage.csv",
              *(["county-candidate-coverage.csv"] if historical_audit else []),
+             *(["historical-house-counties.json"] if house_pointer else []),
              "scripts/participation-explorer.js"] + (["uf-turnout.json"] if uf_pointer else []):
     response = requests.get(base + "/" + name, timeout=90)
     response.raise_for_status()
@@ -142,6 +152,17 @@ with sync_playwright() as p:
                 assert parties["complete_download_url"] in downloads
                 assert {parties["base_url"] + table["file"] for table in parties["tables"]} <= downloads
                 expect(page.locator("#downloads")).to_contain_text("test data are withheld")
+            if house_pointer:
+                assert house_pointer["complete_download_url"] in downloads
+                assert {house_pointer["base_url"] + table["file"] for table in house_pointer["tables"]} <= downloads
+                table_rows = page.locator("table[data-historical-house] tbody tr")
+                expect(table_rows).to_have_count(len(house_audit["years"]))
+                actual = table_rows.evaluate_all("rows => rows.map(row => "
+                    "[...row.querySelectorAll('th,td')].map(cell => cell.textContent.trim()))")
+                expected = [[row["year"], str(row["reviewed_states"]), f'{row["reviewed_counties"]:,}',
+                    f'{row["reviewed_candidate_rows"]:,}', str(row["withheld_counties"])] for row in house_audit["years"]]
+                assert actual == expected, "Historical House coverage differs from scoped source review"
+                expect(page.locator("#downloads")).to_contain_text("not certified statewide totals")
             if uf_pointer:
                 assert uf_pointer["complete_download_url"] in downloads
                 assert uf_pointer["base_url"] + "originals/turnout.csv" in downloads
@@ -164,6 +185,9 @@ with sync_playwright() as p:
                 mode["uf_rows_source_matched"] = len(uf_rows)
             if historical_audit:
                 mode["county_candidate_ledger_rows"] = len(county_ledger)
+            if house_pointer:
+                mode["historical_house_years_source_matched"] = [row["year"] for row in house_audit["years"]]
+                mode["historical_house_scope_cells"] = len(house_coverage)
             if javascript:
                 mode["overview_transport"] = "raw gzip" if mobile else "server response"
             if not javascript or args.tables_only:

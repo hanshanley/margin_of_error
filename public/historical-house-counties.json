@@ -1,0 +1,24 @@
+{
+  "label": "2024 and 2022 House county candidate / party counts",
+  "data_directory": "data/historical-house-counties/20261105-medsl-01",
+  "base_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-house-history-20261105-01/",
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-house-history-20261105-01/complete-historical-house.zip",
+  "complete_download_bytes": 619935,
+  "complete_download_sha256": "a797670e41bcb11ab6f2c0668810e5782dad9b25e8069c116aa29118585565bf",
+  "publication": "release_verified_partial_downloads",
+  "release_review": "data/county-source-reviews/20261105-historical-house-01/release-verification.json",
+  "new_maps_approved": false,
+  "participation_available": false,
+  "tables": [
+    { "file": "reviewed-candidate-party-lines.csv.gz", "label": "2024/2022: all 21,396 reviewed county/district candidate and literal-party lines" },
+    { "file": "reviewed-county-party-totals.csv.gz", "label": "2024/2022: all 15,121 reviewed county-party totals" },
+    { "file": "reviewed-state-party-sums.csv.gz", "label": "2024/2022: all 372 state-party sums of reviewed counties, not full-state totals" },
+    { "file": "source-candidate-party-lines.csv.gz", "label": "2024/2022: every scoped source row, including withheld observations (21,448 rows)" },
+    { "file": "withheld-candidate-party-lines.csv.gz", "label": "2024/2022: all 52 withheld raw candidate/party rows, excluded from reviewed sums" },
+    { "file": "county-review.csv.gz", "label": "2024/2022: all 5,366 county/year reviews and exact exclusion reasons" },
+    { "file": "state-coverage.csv.gz", "label": "2024/2022: every jurisdiction's scoped download coverage (102 state/year cells)" },
+    { "file": "year-coverage.csv.gz", "label": "2024/2022: source, reviewed and withheld coverage by year" },
+    { "file": "scoped-sources.csv.gz", "label": "2024/2022: all 86 scoped original compiler source records and native license literals" },
+    { "file": "source-reference-review.csv.gz", "label": "2024/2022: all 86 scoped source-row-count and identity checks" }
+  ]
+}

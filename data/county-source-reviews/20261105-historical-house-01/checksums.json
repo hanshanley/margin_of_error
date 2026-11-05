@@ -1,0 +1,46 @@
+{
+  "local-browser.json": {
+    "bytes": 1673,
+    "sha256": "2c84cfa8df9108ff0fbcb782c757286dc828372c61dfcb030d528d6e402836be"
+  },
+  "originals/compiler/LICENSE": {
+    "bytes": 1070,
+    "sha256": "7f65352273ba461d3798f616fea68c2173f377c86bd74e9421d1bc13603d3f11"
+  },
+  "originals/compiler/LICENSE-DATA.md": {
+    "bytes": 1376,
+    "sha256": "01b81ebd58f0a3b745198a5c28bffe89556b51383eaade3ff3ee13e0e547c3cc"
+  },
+  "originals/compiler/R/data_creation/01cb_candidate_party_overrides.R": {
+    "bytes": 4958,
+    "sha256": "0d755b61dd0073991c3e5537729c3b3910f64ac239f1c81e70af1d9f199cb1f3"
+  },
+  "originals/compiler/R/output/qa_medsl_sweep_flags.csv": {
+    "bytes": 5088,
+    "sha256": "ef17f94c2a70672fdbe68d2b4e1419a38e3eb0f38fef05f1b50c70326004ce38"
+  },
+  "originals/compiler/README.md": {
+    "bytes": 4126,
+    "sha256": "a63b5a7aa4daca3d0a6a2025cccf972de5ce4195bfed1d5da66335e2d5fcecc1"
+  },
+  "originals/compiler/docs/DECISIONS.md": {
+    "bytes": 50037,
+    "sha256": "c8a45f9381c72d3bbad44e477414ae331c583b543f07912a5d0244fc4c9a5c5e"
+  },
+  "originals/compiler/receipts.json": {
+    "bytes": 2914,
+    "sha256": "3cd0343014b2ccb9f743bef51d3e929c5db97fb34cf5de1e890effd97179cbe7"
+  },
+  "prior-provenance-deployment.json": {
+    "bytes": 302,
+    "sha256": "cfc4115b5eaec1f1f8b01a1617d059795cdcbbc0aa77ba761cfe91d4894a1f87"
+  },
+  "release-verification.json": {
+    "bytes": 4893,
+    "sha256": "d26fb937c071c8b57ce7e40e30ee98b8110edcfe6f93c9668777f25e7b229d18"
+  },
+  "reproduction.json": {
+    "bytes": 2477,
+    "sha256": "7ab15ac4ead4cad9524912bef5a7106614d305e15d91d6efb6e0198892a383ad"
+  }
+}

@@ -110,7 +110,8 @@ passed exact Pages run `42064163206`. A subsequent public-byte check matched
 the county/UF pointers, county ledger and unchanged renderer, and retained all
 134 complete download links.
 
-The first scoped historical House export is prepared, not yet live:
+The first scoped historical House export is release-verified, awaiting its exact
+production-page check:
 2024 has 11,776 reviewed candidate/party rows in 2,664 counties across 43 states;
 2022 has 9,620 rows in 2,690 counties across 43 states. The complete scoped source
 has 21,448 rows and 62 literal compiler party labels. All 52 rows from 12 flagged
@@ -134,9 +135,19 @@ mirrored under a blanket permission claim. Packaged tools reproduced all
 nonarchive output bytes outside the repository. All 33 focused tests passed.
 Originals, exact hashes and reproduction proof are in
 `data/county-source-reviews/20261105-historical-house-01/`.
+Data/tools commit `9c1590362994ee87c510ebe34a253cea6ba90217` is pushed.
+All 13 assets of release `voter-county-house-history-20261105-01` were downloaded
+back and byte/SHA256 matched before adding the public pointer. The complete ZIP
+is 619,935 bytes, SHA256
+`a797670e41bcb11ab6f2c0668810e5782dad9b25e8069c116aa29118585565bf`.
+The new source-matched HTML coverage table works in desktop/mobile and
+JavaScript/no-JavaScript modes; all 145 complete download links retain the
+previous 134. All 52 UF rows remain source-matched. Astro check, seven
+participation tests, build and four caucus tests passed. The prepared Pages
+artifact is 987,231,960 bytes after 94 relocated downloads were verified.
+The unchanged renderer/maps were deliberately not retested.
 
-Next: publish and download-verify this complete scoped archive, integrate its
-downloads and honest coverage table, then verify the exact production deployment.
+Next: verify the exact production deployment and persist the focused live proof.
 Continue 2020/2018/2016 source-specific quality review next: their unresolved
 party labels, Missouri noncounty buckets and Texas source undercoverage need
 separate handling rather than a blanket extrapolation from the two newest years.
