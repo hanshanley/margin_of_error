@@ -48,7 +48,7 @@
     "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-idaho-maps-20261105/complete-idaho-2026-precinct-maps.zip",
     "complete_download_bytes": 34504158,
     "complete_download_sha256": "e8057feb5f6ceddeb2c88a39be934bb2ebf8957eb71387477df8c0c6b9ac2d57",
-    "publication": "snapshot_ready",
+    "publication": "live_verified_partial",
     "source_documents": [
       {"file": "originals/item.json.gz", "label": "Official 2026 Idaho precinct reference identity, attribution and license metadata (JSON · gzip)"},
       {"file": "audit.json", "label": "Idaho complete-county joins, withheld reporting units and full reference-overlap audit (JSON)"}
@@ -66,6 +66,7 @@
     "data/precinct-source-reviews/20261105/DE/audit.json",
     "data/precinct-source-reviews/20261105/ND/audit.json",
     "data/precinct-source-reviews/20261105/VT/audit.json",
-    "data/precinct-source-reviews/20261105/ID/audit.json"
+    "data/precinct-source-reviews/20261105/ID/audit.json",
+    "data/precinct-source-reviews/20261105/SD/audit.json"
   ]
 }

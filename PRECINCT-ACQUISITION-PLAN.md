@@ -466,10 +466,17 @@ links, no-JavaScript downloads and aborted-fetch fallback. ND ballot-only,
 MN opening/day-of registration and VT municipal-selection regressions pass.
 The source-specific detail branch is now verified in a real browser.
 
-Next: verify the exact UI deployment and production checks before changing
-`snapshot_ready` to `live_verified_partial`. Do not claim live coverage yet. Pursue official
-crosswalks, the six overlap counties, pooled scope and registration discrepancies
-without rewriting the immutable count review or borrowing older boundaries.
+UI commit `4ca90991e6378ee03389f80894f55b81031ec497` deployed successfully in
+exact run **41961338739**. Production registry, ledger and renderer bytes match
+that commit. The focused production suite passes all 448 exact candidate
+colors/counts, separate source-defined participation and withheld rates,
+button/wheel zoom, year switching, ND/MN/VT regressions, desktop/mobile,
+all 35 complete downloads, no-JavaScript and failed-fetch fallbacks.
+The map is **live-verified partial coverage**, not complete Idaho coverage.
+The final registry/ledger status update still needs its exact metadata deployment
+verification; do not repeat the unchanged full national browser suite.
+Pursue official crosswalks, the six overlap counties, pooled scope and registration
+discrepancies without rewriting the immutable review or borrowing older boundaries.
 
 ## South Dakota 2026 official export acquisition
 
@@ -549,13 +556,55 @@ normalized results/participation, audits and source receipts. Original HTML
 URL/size/hash receipts are retained separately; copyrighted frontend/template
 code is not redistributed or falsely claimed to be included.
 
-Next: commit this independently reproduced batch as Hans, publish and
-byte-verify a new immutable complete release, register its full download and
-audit in the state/year ledger, and verify exact production deployment.
-No correct-election SD boundary polygons are acquired yet: keep map joins
-withheld and state fallback intact. Pursue official 2026 reporting-unit
-boundaries and native-ID crosswalks, especially vote-center scope and Oglala
-Lakota's duplicate labels, then continue remaining 2026 jurisdictions.
+Data/parser/tests commit `77916b2106cb331ebe4fb6a5d3501b14b9c536bd` is pushed,
+authored and committed as Hans. Immutable release
+`voter-precinct-south-dakota-20261105` targets that exact commit. The entire
+uploaded asset was independently redownloaded: tag target, length, SHA-256,
+ZIP CRCs and every archived byte match. Seven participation regression tests
+also pass. Registration now adds its complete download and persistent audit
+to the 1,632-cell ledger, keeping `full_counts_download_only` and map joins
+withheld. Next: finish the focused local browser checks and exact production
+deployment verification; do not claim this website registration live yet.
+
+Local publication checks now pass: Astro has zero errors/warnings and the
+same five existing hints; the production build and four caucus tests pass.
+Pages preparation verifies **94 byte-identical relocated originals** and a
+**986,199,529-byte** artifact. All **36** complete-download links and the
+new full SD archive appear on desktop/mobile with and without JavaScript.
+The 2026 default, honest red/blue SD state fallback, absence of fabricated
+precincts, zoom and failed-registry-fetch fallback all pass. The final Idaho
+partial-live status also matches the generated ledger. Exact production
+verification is the remaining publication gate.
+
+## South Dakota 2026 county geometry follow-up
+
+The official Minnehaha precinct page
+`https://minnehahacounty.gov/dept/au/election/precinct_info/precinct_info.php`
+advertises its 2026 maps and public GIS app
+`83db20af25c2402a8390082f51baa059`. That app points to public webmap
+`7cc5bcba864d4d4781b83b229f2b8819`, whose voting-precinct layer is
+`https://gis.minnehahacounty.gov/minnemap/rest/services/Election/Redistricting_2022/MapServer/4`.
+The service name alone is not the election vintage. The separately acquired,
+complete native county PDF is explicitly dated **March 25, 2026** and its
+official link identifies the 2026 map. Direct requests to the county HTML
+page returned 403; the advertised public GIS and PDF downloads work normally.
+Do not bypass the denied HTML page or mistake polling locations for polygons.
+
+Cache: session `files/precinct-expansion-sources/SD-2026-Minnehaha-boundaries/`.
+All **81 reference features** are acquired in complete native Esri,
+geographic Esri and GeoJSON exports, with independent count and full
+app/webmap/service/layer metadata and exact-byte receipts. They represent
+**80 unique displayed labels**; `VP-06` has two source polygon parts.
+The House workbook has 80 Minnehaha reporting rows. Similar row counts
+alone are **not a validated join**: source city names such as `1-4` differ
+from result `Precinct-0104`; explicit native names, scope and formatting
+need review, and all parts/topology must be audited before mapping.
+No SD map is published and this cache does not overwrite the immutable
+count review. Next: establish an official native-label/ID crosswalk, validate
+the current reference against the dated 2026 maps and actual reporting
+scope, inspect all polygon parts/overlaps, and test conservative joins.
+Continue other counties without assigning vote-center returns to residential
+precincts or pairing Oglala Lakota duplicates by row order.
 
 ## Resume procedure for every work session or scheduled prompt
 
