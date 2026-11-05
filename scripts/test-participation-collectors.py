@@ -1,6 +1,7 @@
 import csv
 import importlib.util
 import io
+import hashlib
 import json
 from pathlib import Path
 
@@ -23,6 +24,31 @@ current_precincts = module("build-current-precincts")
 precinct_results = module("build-precinct-results")
 precinct_coverage = module("build-precinct-coverage")
 additional_precincts = module("build-additional-precinct-results")
+historical_sources = module("acquire-historical-precinct-sources")
+
+
+def test_historical_source_acquisition_requires_exact_reviewed_bytes_without_inventing_turnout():
+    raw = b"county,precinct,office,candidate,votes\nExample,1,House,A,10\nExample,2,House,B,*\n"
+    blob = hashlib.sha1(b"blob " + str(len(raw)).encode() + b"\0" + raw).hexdigest()
+    audit = historical_sources.inspect_csv(raw, blob)
+    assert audit["rows"] == 2 and audit["malformed_rows"] == 0
+    assert "turnout" not in audit
+    modes = b"county,precinct,office,candidate,election_day_votes,advanced_votes\nExample,1,House,A,10,5\n"
+    mode_blob = hashlib.sha1(b"blob " + str(len(modes)).encode() + b"\0" + modes).hexdigest()
+    assert historical_sources.inspect_csv(modes, mode_blob)["rows"] == 1
+    with pytest.raises(ValueError, match="changed"):
+        historical_sources.inspect_csv(raw + b"\n", blob)
+
+
+def test_original_source_downloads_do_not_claim_validated_maps_or_participation():
+    batch = dict(year=2022, complete_download_url="full.zip", states={
+        "AZ": dict(source_url="immutable.csv", rows=100, next_action="Reconcile and obtain boundaries")})
+    row = next(r for r in precinct_coverage.build_rows(source_batches=[batch])
+               if r["year"] == 2022 and r["state_code"] == "AZ")
+    assert row["candidate_results"] == "acquired_originals_review_pending"
+    assert row["join"] == "pending" and row["complete"] == "no"
+    assert row["publication"] == "full_originals_download_only"
+    assert row["participation"] == "not_acquired"
 
 
 def mn_fixture():

@@ -57,7 +57,7 @@ def refresh_sources():
         states=states), indent=2) + "\n")
 
 
-def build_rows(index=None, published=False):
+def build_rows(index=None, published=False, source_batches=None):
     features = json.loads((ROOT / "public/voter-participation/data/states.geojson").read_text())["features"]
     states = sorted((f["properties"]["STUSAB"], f["properties"]["NAME"]) for f in features
                     if f["properties"]["STUSAB"] not in {"PR", "GU", "VI", "MP", "AS"})
@@ -66,10 +66,20 @@ def build_rows(index=None, published=False):
     inventory = json.loads(inventory_path.read_text())["states"] if inventory_path.exists() else {}
     pointer = ROOT / "public/precinct-results.json"
     reviews = {}
+    source_rows = {}
     if pointer.exists():
-        for path in json.loads(pointer.read_text()).get("source_reviews", []):
+        registration = json.loads(pointer.read_text())
+        for path in registration.get("source_reviews", []):
             review = json.loads((ROOT / path).read_text())
             reviews[(review["year"], review["state_code"])] = review
+        if source_batches is None:
+            source_batches = [
+                dict(json.loads((ROOT / batch["data_directory"] / "acquisition.json").read_text()),
+                     complete_download_url=batch["complete_download_url"])
+                for batch in registration.get("source_batches", [])]
+    for batch in source_batches or []:
+        for code, source in batch["states"].items():
+            source_rows[(batch["year"], code)] = dict(source, complete_download_url=batch["complete_download_url"])
     rows = []
     for year in YEARS:
         for code, name in states:
@@ -116,6 +126,15 @@ def build_rows(index=None, published=False):
                     row["boundary_source"] = "https://s3.amazonaws.com/dl.ncsbe.gov/ShapeFiles/Precinct/SBE_PRECINCTS_20260824.zip"
                     row["notes"] += " Election-night residential precincts exclude separately reported early/mail units. Do not call these all-ballot residential results."
             coverage = (index or {}).get("coverage", {}).get(str(year), {}).get(code)
+            source = source_rows.get((year, code))
+            if source:
+                row.update(candidate_results="acquired_originals_review_pending",
+                           results_source=source["source_url"], validation="source_bytes_verified_scope_pending",
+                           publication="full_originals_download_only", next_action=source["next_action"])
+                row["notes"] += (f' Complete original archive acquired: {source["rows"]:,} CSV rows. '
+                                 "Exact source Git blob verified; not independently reconciled candidate totals, "
+                                 "validated precinct geography, or inferred participation. Complete ZIP: "
+                                 + source["complete_download_url"])
             review = reviews.get((year, code))
             if review:
                 row.update({field: review[field] for field in [
@@ -126,9 +145,12 @@ def build_rows(index=None, published=False):
             if coverage:
                 row.update(candidate_results="acquired", boundaries="reference_acquired",
                            join="validated_partial" if coverage.get("partial") else "validated",
-                           validation="passed", publication="published_partial" if published else "snapshot_ready",
+                           validation="passed", publication="published_partial" if coverage.get("live_verified", published) else "snapshot_ready",
                            results_source=coverage["source_url"],
+                           boundary_source=coverage.get("boundary_source", coverage["source_url"]),
                            next_action=coverage["next_action"], notes=coverage["notes"])
+                if year == 2026 and code == "MN":
+                    row["participation"] = "acquired_precinct_counts_and_registration"
             rows.append(row)
     return rows
 
@@ -184,7 +206,12 @@ if __name__ == "__main__":
     published = False
     if pointer.exists():
         settings = json.loads(pointer.read_text())
-        base = settings["data_directory"]
-        index = json.loads((ROOT / base / "index.json").read_text())
-        published = settings.get("publication") == "live_verified_partial"
+        index = {"coverage": {}}
+        for snapshot in [settings] + settings.get("additional_snapshots", []):
+            source = json.loads((ROOT / snapshot["data_directory"] / "index.json").read_text())
+            for year, states in source["coverage"].items():
+                index["coverage"].setdefault(year, {}).update({
+                    code: dict(coverage, live_verified=snapshot.get("publication") == "live_verified_partial")
+                    for code, coverage in states.items()
+                })
     write_ledger(index, published)
