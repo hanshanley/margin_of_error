@@ -1,0 +1,185 @@
+{
+  "status": "pass",
+  "method": "Independent stdlib native CSV aggregation and linear PDF write-in-line scan; no reviewer functions used",
+  "office_literal_party_vectors": 16,
+  "native_candidate_rows": 3634,
+  "pdf_writein_lines": 25,
+  "all_office_party_totals_match": true,
+  "writein_records": [
+    {
+      "contest": "Governor and Lieutenant Governor",
+      "election_day": 429,
+      "mail_in": 119,
+      "provisional": 0,
+      "votes": 548
+    },
+    {
+      "contest": "Representative in Congress 1st District",
+      "election_day": 159,
+      "mail_in": 46,
+      "provisional": 0,
+      "votes": 205
+    },
+    {
+      "contest": "Representative in Congress 4th District",
+      "election_day": 343,
+      "mail_in": 87,
+      "provisional": 0,
+      "votes": 430
+    },
+    {
+      "contest": "Representative in Congress 5th District",
+      "election_day": 62,
+      "mail_in": 14,
+      "provisional": 0,
+      "votes": 76
+    },
+    {
+      "contest": "Senator in the General Assembly 4th District",
+      "election_day": 71,
+      "mail_in": 14,
+      "provisional": 0,
+      "votes": 85
+    },
+    {
+      "contest": "Senator in the General Assembly 12th District",
+      "election_day": 133,
+      "mail_in": 22,
+      "provisional": 0,
+      "votes": 155
+    },
+    {
+      "contest": "Senator in the General Assembly 24th District",
+      "election_day": 78,
+      "mail_in": 22,
+      "provisional": 0,
+      "votes": 100
+    },
+    {
+      "contest": "Senator in the General Assembly 44th District",
+      "election_day": 21,
+      "mail_in": 3,
+      "provisional": 0,
+      "votes": 24
+    },
+    {
+      "contest": "Representative in the General Assembly 53rd District",
+      "election_day": 31,
+      "mail_in": 1,
+      "provisional": 0,
+      "votes": 32
+    },
+    {
+      "contest": "Representative in the General Assembly 54th District",
+      "election_day": 571,
+      "mail_in": 69,
+      "provisional": 0,
+      "votes": 640
+    },
+    {
+      "contest": "Representative in the General Assembly 61st District",
+      "election_day": 38,
+      "mail_in": 9,
+      "provisional": 0,
+      "votes": 47
+    },
+    {
+      "contest": "Representative in the General Assembly 70th District",
+      "election_day": 1260,
+      "mail_in": 193,
+      "provisional": 0,
+      "votes": 1453
+    },
+    {
+      "contest": "Representative in the General Assembly 131st District",
+      "election_day": 15,
+      "mail_in": 4,
+      "provisional": 0,
+      "votes": 19
+    },
+    {
+      "contest": "Representative in the General Assembly 146th District",
+      "election_day": 29,
+      "mail_in": 9,
+      "provisional": 0,
+      "votes": 38
+    },
+    {
+      "contest": "Representative in the General Assembly 147th District",
+      "election_day": 23,
+      "mail_in": 6,
+      "provisional": 0,
+      "votes": 29
+    },
+    {
+      "contest": "Representative in the General Assembly 148th District",
+      "election_day": 980,
+      "mail_in": 210,
+      "provisional": 0,
+      "votes": 1190
+    },
+    {
+      "contest": "Representative in the General Assembly 149th District",
+      "election_day": 1153,
+      "mail_in": 176,
+      "provisional": 0,
+      "votes": 1329
+    },
+    {
+      "contest": "Representative in the General Assembly 150th District",
+      "election_day": 20,
+      "mail_in": 13,
+      "provisional": 0,
+      "votes": 33
+    },
+    {
+      "contest": "Representative in the General Assembly 151st District",
+      "election_day": 36,
+      "mail_in": 9,
+      "provisional": 0,
+      "votes": 45
+    },
+    {
+      "contest": "Representative in the General Assembly 152nd District",
+      "election_day": 28,
+      "mail_in": 4,
+      "provisional": 0,
+      "votes": 32
+    },
+    {
+      "contest": "Representative in the General Assembly 153rd District",
+      "election_day": 42,
+      "mail_in": 7,
+      "provisional": 0,
+      "votes": 49
+    },
+    {
+      "contest": "Representative in the General Assembly 154th District",
+      "election_day": 204,
+      "mail_in": 35,
+      "provisional": 0,
+      "votes": 239
+    },
+    {
+      "contest": "Conshohocken Borough Government Study Commission Question",
+      "election_day": 0,
+      "mail_in": 0,
+      "provisional": 0,
+      "votes": 0
+    },
+    {
+      "contest": "Conshohocken Borough Government Study Commission",
+      "election_day": 6107,
+      "mail_in": 636,
+      "provisional": 0,
+      "votes": 6743
+    },
+    {
+      "contest": "Hatfield Township Referendum",
+      "election_day": 0,
+      "mail_in": 0,
+      "provisional": 0,
+      "votes": 0
+    }
+  ]
+}

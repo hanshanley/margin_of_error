@@ -1,0 +1,78 @@
+{
+  "audit.json": {
+    "bytes": 4927,
+    "sha256": "1d20f1a7997b829b19bda90b7b1a0b188b140549ca48e2a19f9d47469948b5af"
+  },
+  "county-ballot-processing.csv": {
+    "bytes": 339,
+    "sha256": "beed9c75e5118234e67406b710a6db3221c8117c0685fb401ed8f6b9e0238976"
+  },
+  "county-candidate-mode-counts.csv": {
+    "bytes": 27956,
+    "sha256": "f33a7584457ea4fef143704642ad2ab7f350129947804f4352f6a50d95714079"
+  },
+  "county-candidate-results.csv": {
+    "bytes": 8690,
+    "sha256": "7f56ca535d7ba583077bff4cb9f8895c7e08d9ee64306f903e02cb7978096267"
+  },
+  "county-contest-totals.csv": {
+    "bytes": 2848,
+    "sha256": "2007ae636453d640899d564f1971c7ce22f3721214fe6561a595b2a61abab2f8"
+  },
+  "county-office-party-totals.csv": {
+    "bytes": 993,
+    "sha256": "7fc4d69da340c7535dd64fa36354f8ddc7f467107c8979d9018180f6cbf6fdc9"
+  },
+  "county-participation.csv": {
+    "bytes": 510,
+    "sha256": "bcf5eb3a05eb32e13bd9bc09db81c03059d43339b8145ed7881da9968227b41b"
+  },
+  "native-json-candidate-counts.csv": {
+    "bytes": 393939,
+    "sha256": "4cd91dcc73d481591468831da7280b7d667a9e30f1e1cce4659160e48bb5feb8"
+  },
+  "native-portion-candidate-counts.csv": {
+    "bytes": 611054,
+    "sha256": "912b31fa9d0af07dee6eb5b8bc8a62faa6d4a700259a3247f4975b55438a6e5a"
+  },
+  "native-portion-contest-accounting.csv": {
+    "bytes": 194135,
+    "sha256": "19773cdd57e9faddc24ad8ed9417121b5558a34da9bc5e0ba7edacb5ca03cdf3"
+  },
+  "native-portion-participation.csv": {
+    "bytes": 16049,
+    "sha256": "7ebf3bde4e61383393b19802fdefd1f5e0e87fdb91849dfdf50efe714743374b"
+  },
+  "originals/ballot-data.txt": {
+    "bytes": 338,
+    "sha256": "9e6d209fc3762f2c4cf6a96af800aa525a192752b421fa90f2ec698d1358f4cd"
+  },
+  "originals/montgomery-dashboard.html": {
+    "bytes": 88296,
+    "sha256": "0cbb93c18e4486058fdca1a1e6c6de01641ebbae89c4e411d211e50b7375080f"
+  },
+  "originals/montgomery-results.json": {
+    "bytes": 886620,
+    "sha256": "953f5d81ed8e4ffb460fcc336756bbed35fbca9f51ea1951abcff5d17e915a1a"
+  },
+  "originals/montgomery-summary.pdf": {
+    "bytes": 232791,
+    "sha256": "cd6d737cee2935796410009e70d0510cd3300ee952375852522b7af2b77cbb40"
+  },
+  "originals/montgomery.html": {
+    "bytes": 28122,
+    "sha256": "64c3205623e166717da87cba472c48556c6ed6eca6e17779884c3936fe2a41e1"
+  },
+  "originals/receipts.json": {
+    "bytes": 2261,
+    "sha256": "cf8726b502117df9d0e8ec199f5fe5f599d3afe6956ed89c5bfbe5bf547e4c3f"
+  },
+  "originals/vendor-portions.csv": {
+    "bytes": 637588,
+    "sha256": "240060b4dbf0597db056bd5d278a9e9a381fcbd7fe6cca0a00d3ce4c54f287b0"
+  },
+  "review-montgomery-2026-county-results.py": {
+    "bytes": 23994,
+    "sha256": "390a0930523421cd8672c54f5e372b2c14bbb1cf1f6bffab05c5971d6d2ecd5e"
+  }
+}

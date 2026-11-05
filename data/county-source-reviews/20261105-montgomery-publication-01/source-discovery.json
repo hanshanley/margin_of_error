@@ -1,0 +1,79 @@
+{
+  "status": "pass",
+  "actual_fresh_http_receipts": [
+    {
+      "name": "montgomery",
+      "url": "https://www.montgomerycountypa.gov/departments/voter-services/election-results",
+      "final_url": "https://www.montgomerycountypa.gov/departments/voter-services/election-results",
+      "status": 200,
+      "acquired_at": "2026-11-05T19:21:04.081902+00:00",
+      "bytes": 28122,
+      "sha256": "64c3205623e166717da87cba472c48556c6ed6eca6e17779884c3936fe2a41e1",
+      "private_original": "montgomery.html",
+      "declared_election_links": [
+        {
+          "label": "2026 General Election Dashboard UNOFFICIAL RESULTS",
+          "href": "https://gis.montcopa.org/opendata/GE2026/"
+        },
+        {
+          "label": "2026 General Election Unofficial Election Results - Election Reporting System",
+          "href": "https://webapp07.montcopa.org/election/2026UnofficialGeneralElectionSummaryReport.pdf"
+        },
+        {
+          "label": "2026 Primary Election Official Election Results - Election Reporting System",
+          "href": "https://webapp07.montcopa.org/election/2026UnofficialPrimaryElectionSummaryReport.pdf"
+        },
+        {
+          "label": "2026 Primary Election Results - Department of State PA",
+          "href": "https://www.electionreturns.pa.gov/"
+        },
+        {
+          "label": "2026 Primary Election Statement of Votes Cast",
+          "href": "/archival-document?id=18946"
+        },
+        {
+          "label": "2026 Primary Legislative Write in Votes (All Statistically Significant)",
+          "href": "/archival-document?id=18954"
+        },
+        {
+          "label": "2026 Primary Committeeperson Write in Votes (All Statistically Significant)",
+          "href": "/archival-document?id=18956"
+        },
+        {
+          "label": "Click here to view results, statistics and other reports from previous Elections.",
+          "href": "/departments/voter-services/election-results/archived-elections"
+        }
+      ]
+    },
+    {
+      "name": "chester",
+      "url": "https://www.chesco.org/2500/Election-Results",
+      "final_url": "https://www.chesco.org/2500/Election-Results",
+      "status": 404,
+      "acquired_at": "2026-11-05T19:21:04.344225+00:00",
+      "bytes": 111548,
+      "sha256": "05a55897b84759374f188d7625942f09d4a2c2aa6fa79116b18d98ee411637b7",
+      "private_original": "chester.html",
+      "declared_election_links": []
+    },
+    {
+      "name": "maine",
+      "url": "https://www.maine.gov/sos/elections-voting/election-results-data",
+      "final_url": "https://www.maine.gov/sos/elections-voting/election-results-data",
+      "status": 403,
+      "acquired_at": "2026-11-05T19:21:04.434252+00:00",
+      "bytes": 919,
+      "sha256": "70cb86db01eabc6ff24abb2e991dbdfccc6e318b0ef7ba210ab6714f0b6de626",
+      "private_original": "maine.html",
+      "declared_election_links": []
+    }
+  ],
+  "source_chain": "Official county index -> county-declared native 2026 dashboard/PDF -> dashboard-declared complete vendor CSV, results JSON and ballot-processing TXT",
+  "excluded_alternatives": {
+    "chester": "Actual requested election-results path returned 404; not proof of no other county source.",
+    "maine": "Actual official results page returned 403; no counts acquired or promoted."
+  },
+  "sources_unmodified": true,
+  "public_source_token_pattern_matches": 0,
+  "source_terms": "Official county factual election returns; no blanket CC0/CC-BY declaration is inferred for source pages or vendor code."
+}

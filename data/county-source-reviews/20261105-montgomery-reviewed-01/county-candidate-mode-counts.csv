@@ -1,0 +1,214 @@
+year,state_code,county_fips,contest,office,selectable_options,candidate,party_literal,row_kind,votes,voting_mode
+2026,PA,42091,Conshohocken Borough Government Study Commission,local_commission,7,Unresolved Write-In,,unresolved_write_in,6107,Election Day
+2026,PA,42091,Conshohocken Borough Government Study Commission,local_commission,7,Unresolved Write-In,,unresolved_write_in,636,Mail-in
+2026,PA,42091,Conshohocken Borough Government Study Commission,local_commission,7,Unresolved Write-In,,unresolved_write_in,0,Provisional
+2026,PA,42091,Conshohocken Borough Government Study Commission Question,ballot_question,1,YES,,ballot_option,904,Election Day
+2026,PA,42091,Conshohocken Borough Government Study Commission Question,ballot_question,1,YES,,ballot_option,417,Mail-in
+2026,PA,42091,Conshohocken Borough Government Study Commission Question,ballot_question,1,YES,,ballot_option,0,Provisional
+2026,PA,42091,Conshohocken Borough Government Study Commission Question,ballot_question,1,NO,,ballot_option,2119,Election Day
+2026,PA,42091,Conshohocken Borough Government Study Commission Question,ballot_question,1,NO,,ballot_option,320,Mail-in
+2026,PA,42091,Conshohocken Borough Government Study Commission Question,ballot_question,1,NO,,ballot_option,0,Provisional
+2026,PA,42091,Conshohocken Borough Government Study Commission Question,ballot_question,1,Unresolved Write-In,,unresolved_write_in,0,Election Day
+2026,PA,42091,Conshohocken Borough Government Study Commission Question,ballot_question,1,Unresolved Write-In,,unresolved_write_in,0,Mail-in
+2026,PA,42091,Conshohocken Borough Government Study Commission Question,ballot_question,1,Unresolved Write-In,,unresolved_write_in,0,Provisional
+2026,PA,42091,Governor and Lieutenant Governor,governor_lieutenant_governor,1,JOSH SHAPIRO AND AUSTIN DAVIS,DEM,listed_candidate,192482,Election Day
+2026,PA,42091,Governor and Lieutenant Governor,governor_lieutenant_governor,1,JOSH SHAPIRO AND AUSTIN DAVIS,DEM,listed_candidate,90767,Mail-in
+2026,PA,42091,Governor and Lieutenant Governor,governor_lieutenant_governor,1,JOSH SHAPIRO AND AUSTIN DAVIS,DEM,listed_candidate,0,Provisional
+2026,PA,42091,Governor and Lieutenant Governor,governor_lieutenant_governor,1,STACY GARRITY AND JASON RICHEY,REP,listed_candidate,88652,Election Day
+2026,PA,42091,Governor and Lieutenant Governor,governor_lieutenant_governor,1,STACY GARRITY AND JASON RICHEY,REP,listed_candidate,14646,Mail-in
+2026,PA,42091,Governor and Lieutenant Governor,governor_lieutenant_governor,1,STACY GARRITY AND JASON RICHEY,REP,listed_candidate,0,Provisional
+2026,PA,42091,Governor and Lieutenant Governor,governor_lieutenant_governor,1,KEN KRAWCHUK AND JOHN THOMAS,LIB,listed_candidate,2844,Election Day
+2026,PA,42091,Governor and Lieutenant Governor,governor_lieutenant_governor,1,KEN KRAWCHUK AND JOHN THOMAS,LIB,listed_candidate,760,Mail-in
+2026,PA,42091,Governor and Lieutenant Governor,governor_lieutenant_governor,1,KEN KRAWCHUK AND JOHN THOMAS,LIB,listed_candidate,0,Provisional
+2026,PA,42091,Governor and Lieutenant Governor,governor_lieutenant_governor,1,Unresolved Write-In,,unresolved_write_in,429,Election Day
+2026,PA,42091,Governor and Lieutenant Governor,governor_lieutenant_governor,1,Unresolved Write-In,,unresolved_write_in,119,Mail-in
+2026,PA,42091,Governor and Lieutenant Governor,governor_lieutenant_governor,1,Unresolved Write-In,,unresolved_write_in,0,Provisional
+2026,PA,42091,Hatfield Township Referendum,ballot_question,1,YES,,ballot_option,3029,Election Day
+2026,PA,42091,Hatfield Township Referendum,ballot_question,1,YES,,ballot_option,1291,Mail-in
+2026,PA,42091,Hatfield Township Referendum,ballot_question,1,YES,,ballot_option,0,Provisional
+2026,PA,42091,Hatfield Township Referendum,ballot_question,1,NO,,ballot_option,2812,Election Day
+2026,PA,42091,Hatfield Township Referendum,ballot_question,1,NO,,ballot_option,855,Mail-in
+2026,PA,42091,Hatfield Township Referendum,ballot_question,1,NO,,ballot_option,0,Provisional
+2026,PA,42091,Hatfield Township Referendum,ballot_question,1,Unresolved Write-In,,unresolved_write_in,0,Election Day
+2026,PA,42091,Hatfield Township Referendum,ballot_question,1,Unresolved Write-In,,unresolved_write_in,0,Mail-in
+2026,PA,42091,Hatfield Township Referendum,ballot_question,1,Unresolved Write-In,,unresolved_write_in,0,Provisional
+2026,PA,42091,Representative in Congress 1st District,us_house,1,BOB HARVIE,DEM,listed_candidate,18976,Election Day
+2026,PA,42091,Representative in Congress 1st District,us_house,1,BOB HARVIE,DEM,listed_candidate,10203,Mail-in
+2026,PA,42091,Representative in Congress 1st District,us_house,1,BOB HARVIE,DEM,listed_candidate,0,Provisional
+2026,PA,42091,Representative in Congress 1st District,us_house,1,BRIAN FITZPATRICK,REP,listed_candidate,21016,Election Day
+2026,PA,42091,Representative in Congress 1st District,us_house,1,BRIAN FITZPATRICK,REP,listed_candidate,4719,Mail-in
+2026,PA,42091,Representative in Congress 1st District,us_house,1,BRIAN FITZPATRICK,REP,listed_candidate,0,Provisional
+2026,PA,42091,Representative in Congress 1st District,us_house,1,Unresolved Write-In,,unresolved_write_in,159,Election Day
+2026,PA,42091,Representative in Congress 1st District,us_house,1,Unresolved Write-In,,unresolved_write_in,46,Mail-in
+2026,PA,42091,Representative in Congress 1st District,us_house,1,Unresolved Write-In,,unresolved_write_in,0,Provisional
+2026,PA,42091,Representative in Congress 4th District,us_house,1,MADELEINE DEAN,DEM,listed_candidate,138628,Election Day
+2026,PA,42091,Representative in Congress 4th District,us_house,1,MADELEINE DEAN,DEM,listed_candidate,66067,Mail-in
+2026,PA,42091,Representative in Congress 4th District,us_house,1,MADELEINE DEAN,DEM,listed_candidate,0,Provisional
+2026,PA,42091,Representative in Congress 4th District,us_house,1,AURORA STUSKI,REP,listed_candidate,73409,Election Day
+2026,PA,42091,Representative in Congress 4th District,us_house,1,AURORA STUSKI,REP,listed_candidate,13005,Mail-in
+2026,PA,42091,Representative in Congress 4th District,us_house,1,AURORA STUSKI,REP,listed_candidate,0,Provisional
+2026,PA,42091,Representative in Congress 4th District,us_house,1,Unresolved Write-In,,unresolved_write_in,343,Election Day
+2026,PA,42091,Representative in Congress 4th District,us_house,1,Unresolved Write-In,,unresolved_write_in,87,Mail-in
+2026,PA,42091,Representative in Congress 4th District,us_house,1,Unresolved Write-In,,unresolved_write_in,0,Provisional
+2026,PA,42091,Representative in Congress 5th District,us_house,1,MARY GAY SCANLON,DEM,listed_candidate,23901,Election Day
+2026,PA,42091,Representative in Congress 5th District,us_house,1,MARY GAY SCANLON,DEM,listed_candidate,11048,Mail-in
+2026,PA,42091,Representative in Congress 5th District,us_house,1,MARY GAY SCANLON,DEM,listed_candidate,0,Provisional
+2026,PA,42091,Representative in Congress 5th District,us_house,1,NICK MANGANARO,REP,listed_candidate,6817,Election Day
+2026,PA,42091,Representative in Congress 5th District,us_house,1,NICK MANGANARO,REP,listed_candidate,1401,Mail-in
+2026,PA,42091,Representative in Congress 5th District,us_house,1,NICK MANGANARO,REP,listed_candidate,0,Provisional
+2026,PA,42091,Representative in Congress 5th District,us_house,1,Unresolved Write-In,,unresolved_write_in,62,Election Day
+2026,PA,42091,Representative in Congress 5th District,us_house,1,Unresolved Write-In,,unresolved_write_in,14,Mail-in
+2026,PA,42091,Representative in Congress 5th District,us_house,1,Unresolved Write-In,,unresolved_write_in,0,Provisional
+2026,PA,42091,Representative in the General Assembly 131st District,state_house,1,MERIAM SABIH,DEM,listed_candidate,3384,Election Day
+2026,PA,42091,Representative in the General Assembly 131st District,state_house,1,MERIAM SABIH,DEM,listed_candidate,1884,Mail-in
+2026,PA,42091,Representative in the General Assembly 131st District,state_house,1,MERIAM SABIH,DEM,listed_candidate,0,Provisional
+2026,PA,42091,Representative in the General Assembly 131st District,state_house,1,MILOU MACKENZIE,REP,listed_candidate,5060,Election Day
+2026,PA,42091,Representative in the General Assembly 131st District,state_house,1,MILOU MACKENZIE,REP,listed_candidate,695,Mail-in
+2026,PA,42091,Representative in the General Assembly 131st District,state_house,1,MILOU MACKENZIE,REP,listed_candidate,0,Provisional
+2026,PA,42091,Representative in the General Assembly 131st District,state_house,1,Unresolved Write-In,,unresolved_write_in,15,Election Day
+2026,PA,42091,Representative in the General Assembly 131st District,state_house,1,Unresolved Write-In,,unresolved_write_in,4,Mail-in
+2026,PA,42091,Representative in the General Assembly 131st District,state_house,1,Unresolved Write-In,,unresolved_write_in,0,Provisional
+2026,PA,42091,Representative in the General Assembly 146th District,state_house,1,JOE CIRESI,DEM,listed_candidate,12471,Election Day
+2026,PA,42091,Representative in the General Assembly 146th District,state_house,1,JOE CIRESI,DEM,listed_candidate,5390,Mail-in
+2026,PA,42091,Representative in the General Assembly 146th District,state_house,1,JOE CIRESI,DEM,listed_candidate,0,Provisional
+2026,PA,42091,Representative in the General Assembly 146th District,state_house,1,JEFFREY T FARTRO,REP,listed_candidate,6697,Election Day
+2026,PA,42091,Representative in the General Assembly 146th District,state_house,1,JEFFREY T FARTRO,REP,listed_candidate,943,Mail-in
+2026,PA,42091,Representative in the General Assembly 146th District,state_house,1,JEFFREY T FARTRO,REP,listed_candidate,0,Provisional
+2026,PA,42091,Representative in the General Assembly 146th District,state_house,1,Unresolved Write-In,,unresolved_write_in,29,Election Day
+2026,PA,42091,Representative in the General Assembly 146th District,state_house,1,Unresolved Write-In,,unresolved_write_in,9,Mail-in
+2026,PA,42091,Representative in the General Assembly 146th District,state_house,1,Unresolved Write-In,,unresolved_write_in,0,Provisional
+2026,PA,42091,Representative in the General Assembly 147th District,state_house,1,MARGARET BURKE,DEM,listed_candidate,10111,Election Day
+2026,PA,42091,Representative in the General Assembly 147th District,state_house,1,MARGARET BURKE,DEM,listed_candidate,5793,Mail-in
+2026,PA,42091,Representative in the General Assembly 147th District,state_house,1,MARGARET BURKE,DEM,listed_candidate,0,Provisional
+2026,PA,42091,Representative in the General Assembly 147th District,state_house,1,DONNA M SCHEUREN,REP,listed_candidate,13407,Election Day
+2026,PA,42091,Representative in the General Assembly 147th District,state_house,1,DONNA M SCHEUREN,REP,listed_candidate,2280,Mail-in
+2026,PA,42091,Representative in the General Assembly 147th District,state_house,1,DONNA M SCHEUREN,REP,listed_candidate,0,Provisional
+2026,PA,42091,Representative in the General Assembly 147th District,state_house,1,Unresolved Write-In,,unresolved_write_in,23,Election Day
+2026,PA,42091,Representative in the General Assembly 147th District,state_house,1,Unresolved Write-In,,unresolved_write_in,6,Mail-in
+2026,PA,42091,Representative in the General Assembly 147th District,state_house,1,Unresolved Write-In,,unresolved_write_in,0,Provisional
+2026,PA,42091,Representative in the General Assembly 148th District,state_house,1,MEGAN GRIFFIN-SHELLEY,DEM,listed_candidate,17784,Election Day
+2026,PA,42091,Representative in the General Assembly 148th District,state_house,1,MEGAN GRIFFIN-SHELLEY,DEM,listed_candidate,9417,Mail-in
+2026,PA,42091,Representative in the General Assembly 148th District,state_house,1,MEGAN GRIFFIN-SHELLEY,DEM,listed_candidate,0,Provisional
+2026,PA,42091,Representative in the General Assembly 148th District,state_house,1,Unresolved Write-In,,unresolved_write_in,980,Election Day
+2026,PA,42091,Representative in the General Assembly 148th District,state_house,1,Unresolved Write-In,,unresolved_write_in,210,Mail-in
+2026,PA,42091,Representative in the General Assembly 148th District,state_house,1,Unresolved Write-In,,unresolved_write_in,0,Provisional
+2026,PA,42091,Representative in the General Assembly 149th District,state_house,1,TIM BRIGGS,DEM,listed_candidate,16294,Election Day
+2026,PA,42091,Representative in the General Assembly 149th District,state_house,1,TIM BRIGGS,DEM,listed_candidate,7422,Mail-in
+2026,PA,42091,Representative in the General Assembly 149th District,state_house,1,TIM BRIGGS,DEM,listed_candidate,0,Provisional
+2026,PA,42091,Representative in the General Assembly 149th District,state_house,1,Unresolved Write-In,,unresolved_write_in,1153,Election Day
+2026,PA,42091,Representative in the General Assembly 149th District,state_house,1,Unresolved Write-In,,unresolved_write_in,176,Mail-in
+2026,PA,42091,Representative in the General Assembly 149th District,state_house,1,Unresolved Write-In,,unresolved_write_in,0,Provisional
+2026,PA,42091,Representative in the General Assembly 150th District,state_house,1,JOE WEBSTER,DEM,listed_candidate,11796,Election Day
+2026,PA,42091,Representative in the General Assembly 150th District,state_house,1,JOE WEBSTER,DEM,listed_candidate,7474,Mail-in
+2026,PA,42091,Representative in the General Assembly 150th District,state_house,1,JOE WEBSTER,DEM,listed_candidate,0,Provisional
+2026,PA,42091,Representative in the General Assembly 150th District,state_house,1,FRANK J PASTELLA,REP,listed_candidate,7614,Election Day
+2026,PA,42091,Representative in the General Assembly 150th District,state_house,1,FRANK J PASTELLA,REP,listed_candidate,1861,Mail-in
+2026,PA,42091,Representative in the General Assembly 150th District,state_house,1,FRANK J PASTELLA,REP,listed_candidate,0,Provisional
+2026,PA,42091,Representative in the General Assembly 150th District,state_house,1,Unresolved Write-In,,unresolved_write_in,20,Election Day
+2026,PA,42091,Representative in the General Assembly 150th District,state_house,1,Unresolved Write-In,,unresolved_write_in,13,Mail-in
+2026,PA,42091,Representative in the General Assembly 150th District,state_house,1,Unresolved Write-In,,unresolved_write_in,0,Provisional
+2026,PA,42091,Representative in the General Assembly 151st District,state_house,1,MELISSA CERRATO,DEM,listed_candidate,14778,Election Day
+2026,PA,42091,Representative in the General Assembly 151st District,state_house,1,MELISSA CERRATO,DEM,listed_candidate,7600,Mail-in
+2026,PA,42091,Representative in the General Assembly 151st District,state_house,1,MELISSA CERRATO,DEM,listed_candidate,0,Provisional
+2026,PA,42091,Representative in the General Assembly 151st District,state_house,1,ALLEN ARTHUR ANDERSON,REP,listed_candidate,8179,Election Day
+2026,PA,42091,Representative in the General Assembly 151st District,state_house,1,ALLEN ARTHUR ANDERSON,REP,listed_candidate,1611,Mail-in
+2026,PA,42091,Representative in the General Assembly 151st District,state_house,1,ALLEN ARTHUR ANDERSON,REP,listed_candidate,0,Provisional
+2026,PA,42091,Representative in the General Assembly 151st District,state_house,1,Unresolved Write-In,,unresolved_write_in,36,Election Day
+2026,PA,42091,Representative in the General Assembly 151st District,state_house,1,Unresolved Write-In,,unresolved_write_in,9,Mail-in
+2026,PA,42091,Representative in the General Assembly 151st District,state_house,1,Unresolved Write-In,,unresolved_write_in,0,Provisional
+2026,PA,42091,Representative in the General Assembly 152nd District,state_house,1,NANCY GUENST,DEM,listed_candidate,12919,Election Day
+2026,PA,42091,Representative in the General Assembly 152nd District,state_house,1,NANCY GUENST,DEM,listed_candidate,5268,Mail-in
+2026,PA,42091,Representative in the General Assembly 152nd District,state_house,1,NANCY GUENST,DEM,listed_candidate,0,Provisional
+2026,PA,42091,Representative in the General Assembly 152nd District,state_house,1,ERIC MAIER,REP,listed_candidate,7433,Election Day
+2026,PA,42091,Representative in the General Assembly 152nd District,state_house,1,ERIC MAIER,REP,listed_candidate,990,Mail-in
+2026,PA,42091,Representative in the General Assembly 152nd District,state_house,1,ERIC MAIER,REP,listed_candidate,0,Provisional
+2026,PA,42091,Representative in the General Assembly 152nd District,state_house,1,Unresolved Write-In,,unresolved_write_in,28,Election Day
+2026,PA,42091,Representative in the General Assembly 152nd District,state_house,1,Unresolved Write-In,,unresolved_write_in,4,Mail-in
+2026,PA,42091,Representative in the General Assembly 152nd District,state_house,1,Unresolved Write-In,,unresolved_write_in,0,Provisional
+2026,PA,42091,Representative in the General Assembly 153rd District,state_house,1,BEN SANCHEZ,DEM,listed_candidate,16620,Election Day
+2026,PA,42091,Representative in the General Assembly 153rd District,state_house,1,BEN SANCHEZ,DEM,listed_candidate,6812,Mail-in
+2026,PA,42091,Representative in the General Assembly 153rd District,state_house,1,BEN SANCHEZ,DEM,listed_candidate,0,Provisional
+2026,PA,42091,Representative in the General Assembly 153rd District,state_house,1,CORY L TONER,REP,listed_candidate,6891,Election Day
+2026,PA,42091,Representative in the General Assembly 153rd District,state_house,1,CORY L TONER,REP,listed_candidate,1012,Mail-in
+2026,PA,42091,Representative in the General Assembly 153rd District,state_house,1,CORY L TONER,REP,listed_candidate,0,Provisional
+2026,PA,42091,Representative in the General Assembly 153rd District,state_house,1,Unresolved Write-In,,unresolved_write_in,42,Election Day
+2026,PA,42091,Representative in the General Assembly 153rd District,state_house,1,Unresolved Write-In,,unresolved_write_in,7,Mail-in
+2026,PA,42091,Representative in the General Assembly 153rd District,state_house,1,Unresolved Write-In,,unresolved_write_in,0,Provisional
+2026,PA,42091,Representative in the General Assembly 154th District,state_house,1,NAPOLEON NELSON,DEM,listed_candidate,20055,Election Day
+2026,PA,42091,Representative in the General Assembly 154th District,state_house,1,NAPOLEON NELSON,DEM,listed_candidate,7125,Mail-in
+2026,PA,42091,Representative in the General Assembly 154th District,state_house,1,NAPOLEON NELSON,DEM,listed_candidate,0,Provisional
+2026,PA,42091,Representative in the General Assembly 154th District,state_house,1,STEPHANIE BERARDI,PFP,listed_candidate,2476,Election Day
+2026,PA,42091,Representative in the General Assembly 154th District,state_house,1,STEPHANIE BERARDI,PFP,listed_candidate,499,Mail-in
+2026,PA,42091,Representative in the General Assembly 154th District,state_house,1,STEPHANIE BERARDI,PFP,listed_candidate,0,Provisional
+2026,PA,42091,Representative in the General Assembly 154th District,state_house,1,Unresolved Write-In,,unresolved_write_in,204,Election Day
+2026,PA,42091,Representative in the General Assembly 154th District,state_house,1,Unresolved Write-In,,unresolved_write_in,35,Mail-in
+2026,PA,42091,Representative in the General Assembly 154th District,state_house,1,Unresolved Write-In,,unresolved_write_in,0,Provisional
+2026,PA,42091,Representative in the General Assembly 53rd District,state_house,1,STEVE MALAGARI,DEM,listed_candidate,12741,Election Day
+2026,PA,42091,Representative in the General Assembly 53rd District,state_house,1,STEVE MALAGARI,DEM,listed_candidate,5878,Mail-in
+2026,PA,42091,Representative in the General Assembly 53rd District,state_house,1,STEVE MALAGARI,DEM,listed_candidate,0,Provisional
+2026,PA,42091,Representative in the General Assembly 53rd District,state_house,1,YANNI LAMBROS,REP,listed_candidate,7610,Election Day
+2026,PA,42091,Representative in the General Assembly 53rd District,state_house,1,YANNI LAMBROS,REP,listed_candidate,1212,Mail-in
+2026,PA,42091,Representative in the General Assembly 53rd District,state_house,1,YANNI LAMBROS,REP,listed_candidate,0,Provisional
+2026,PA,42091,Representative in the General Assembly 53rd District,state_house,1,Unresolved Write-In,,unresolved_write_in,31,Election Day
+2026,PA,42091,Representative in the General Assembly 53rd District,state_house,1,Unresolved Write-In,,unresolved_write_in,1,Mail-in
+2026,PA,42091,Representative in the General Assembly 53rd District,state_house,1,Unresolved Write-In,,unresolved_write_in,0,Provisional
+2026,PA,42091,Representative in the General Assembly 54th District,state_house,1,GREG SCOTT,DEM,listed_candidate,12123,Election Day
+2026,PA,42091,Representative in the General Assembly 54th District,state_house,1,GREG SCOTT,DEM,listed_candidate,3935,Mail-in
+2026,PA,42091,Representative in the General Assembly 54th District,state_house,1,GREG SCOTT,DEM,listed_candidate,0,Provisional
+2026,PA,42091,Representative in the General Assembly 54th District,state_house,1,Unresolved Write-In,,unresolved_write_in,571,Election Day
+2026,PA,42091,Representative in the General Assembly 54th District,state_house,1,Unresolved Write-In,,unresolved_write_in,69,Mail-in
+2026,PA,42091,Representative in the General Assembly 54th District,state_house,1,Unresolved Write-In,,unresolved_write_in,0,Provisional
+2026,PA,42091,Representative in the General Assembly 61st District,state_house,1,LIZ HANBIDGE,DEM,listed_candidate,13987,Election Day
+2026,PA,42091,Representative in the General Assembly 61st District,state_house,1,LIZ HANBIDGE,DEM,listed_candidate,8393,Mail-in
+2026,PA,42091,Representative in the General Assembly 61st District,state_house,1,LIZ HANBIDGE,DEM,listed_candidate,0,Provisional
+2026,PA,42091,Representative in the General Assembly 61st District,state_house,1,ANGELA ILLINGWORTH,REP,listed_candidate,8417,Election Day
+2026,PA,42091,Representative in the General Assembly 61st District,state_house,1,ANGELA ILLINGWORTH,REP,listed_candidate,1832,Mail-in
+2026,PA,42091,Representative in the General Assembly 61st District,state_house,1,ANGELA ILLINGWORTH,REP,listed_candidate,0,Provisional
+2026,PA,42091,Representative in the General Assembly 61st District,state_house,1,Unresolved Write-In,,unresolved_write_in,38,Election Day
+2026,PA,42091,Representative in the General Assembly 61st District,state_house,1,Unresolved Write-In,,unresolved_write_in,9,Mail-in
+2026,PA,42091,Representative in the General Assembly 61st District,state_house,1,Unresolved Write-In,,unresolved_write_in,0,Provisional
+2026,PA,42091,Representative in the General Assembly 70th District,state_house,1,MATT BRADFORD,DEM,listed_candidate,16015,Election Day
+2026,PA,42091,Representative in the General Assembly 70th District,state_house,1,MATT BRADFORD,DEM,listed_candidate,7659,Mail-in
+2026,PA,42091,Representative in the General Assembly 70th District,state_house,1,MATT BRADFORD,DEM,listed_candidate,0,Provisional
+2026,PA,42091,Representative in the General Assembly 70th District,state_house,1,Unresolved Write-In,,unresolved_write_in,1260,Election Day
+2026,PA,42091,Representative in the General Assembly 70th District,state_house,1,Unresolved Write-In,,unresolved_write_in,193,Mail-in
+2026,PA,42091,Representative in the General Assembly 70th District,state_house,1,Unresolved Write-In,,unresolved_write_in,0,Provisional
+2026,PA,42091,Senator in the General Assembly 12th District,state_senate,1,MARIA COLLETT,DEM,listed_candidate,54661,Election Day
+2026,PA,42091,Senator in the General Assembly 12th District,state_senate,1,MARIA COLLETT,DEM,listed_candidate,27235,Mail-in
+2026,PA,42091,Senator in the General Assembly 12th District,state_senate,1,MARIA COLLETT,DEM,listed_candidate,0,Provisional
+2026,PA,42091,Senator in the General Assembly 12th District,state_senate,1,ROBERT F COSTELLO III,REP,listed_candidate,35502,Election Day
+2026,PA,42091,Senator in the General Assembly 12th District,state_senate,1,ROBERT F COSTELLO III,REP,listed_candidate,6217,Mail-in
+2026,PA,42091,Senator in the General Assembly 12th District,state_senate,1,ROBERT F COSTELLO III,REP,listed_candidate,0,Provisional
+2026,PA,42091,Senator in the General Assembly 12th District,state_senate,1,Unresolved Write-In,,unresolved_write_in,133,Election Day
+2026,PA,42091,Senator in the General Assembly 12th District,state_senate,1,Unresolved Write-In,,unresolved_write_in,22,Mail-in
+2026,PA,42091,Senator in the General Assembly 12th District,state_senate,1,Unresolved Write-In,,unresolved_write_in,0,Provisional
+2026,PA,42091,Senator in the General Assembly 24th District,state_senate,1,CHRIS THOMAS,DEM,listed_candidate,34816,Election Day
+2026,PA,42091,Senator in the General Assembly 24th District,state_senate,1,CHRIS THOMAS,DEM,listed_candidate,18344,Mail-in
+2026,PA,42091,Senator in the General Assembly 24th District,state_senate,1,CHRIS THOMAS,DEM,listed_candidate,0,Provisional
+2026,PA,42091,Senator in the General Assembly 24th District,state_senate,1,TRACY E PENNYCUICK,REP,listed_candidate,32425,Election Day
+2026,PA,42091,Senator in the General Assembly 24th District,state_senate,1,TRACY E PENNYCUICK,REP,listed_candidate,6178,Mail-in
+2026,PA,42091,Senator in the General Assembly 24th District,state_senate,1,TRACY E PENNYCUICK,REP,listed_candidate,0,Provisional
+2026,PA,42091,Senator in the General Assembly 24th District,state_senate,1,MIKE SCHONEWOLF,GRE,listed_candidate,1117,Election Day
+2026,PA,42091,Senator in the General Assembly 24th District,state_senate,1,MIKE SCHONEWOLF,GRE,listed_candidate,572,Mail-in
+2026,PA,42091,Senator in the General Assembly 24th District,state_senate,1,MIKE SCHONEWOLF,GRE,listed_candidate,0,Provisional
+2026,PA,42091,Senator in the General Assembly 24th District,state_senate,1,Unresolved Write-In,,unresolved_write_in,78,Election Day
+2026,PA,42091,Senator in the General Assembly 24th District,state_senate,1,Unresolved Write-In,,unresolved_write_in,22,Mail-in
+2026,PA,42091,Senator in the General Assembly 24th District,state_senate,1,Unresolved Write-In,,unresolved_write_in,0,Provisional
+2026,PA,42091,Senator in the General Assembly 44th District,state_senate,1,KATIE MUTH,DEM,listed_candidate,9825,Election Day
+2026,PA,42091,Senator in the General Assembly 44th District,state_senate,1,KATIE MUTH,DEM,listed_candidate,6323,Mail-in
+2026,PA,42091,Senator in the General Assembly 44th District,state_senate,1,KATIE MUTH,DEM,listed_candidate,0,Provisional
+2026,PA,42091,Senator in the General Assembly 44th District,state_senate,1,MELISSA DICRANIAN,REP,listed_candidate,6441,Election Day
+2026,PA,42091,Senator in the General Assembly 44th District,state_senate,1,MELISSA DICRANIAN,REP,listed_candidate,1640,Mail-in
+2026,PA,42091,Senator in the General Assembly 44th District,state_senate,1,MELISSA DICRANIAN,REP,listed_candidate,0,Provisional
+2026,PA,42091,Senator in the General Assembly 44th District,state_senate,1,Unresolved Write-In,,unresolved_write_in,21,Election Day
+2026,PA,42091,Senator in the General Assembly 44th District,state_senate,1,Unresolved Write-In,,unresolved_write_in,3,Mail-in
+2026,PA,42091,Senator in the General Assembly 44th District,state_senate,1,Unresolved Write-In,,unresolved_write_in,0,Provisional
+2026,PA,42091,Senator in the General Assembly 4th District,state_senate,1,ART HAYWOOD,DEM,listed_candidate,35589,Election Day
+2026,PA,42091,Senator in the General Assembly 4th District,state_senate,1,ART HAYWOOD,DEM,listed_candidate,13047,Mail-in
+2026,PA,42091,Senator in the General Assembly 4th District,state_senate,1,ART HAYWOOD,DEM,listed_candidate,0,Provisional
+2026,PA,42091,Senator in the General Assembly 4th District,state_senate,1,TODD JOHNSON,REP,listed_candidate,10437,Election Day
+2026,PA,42091,Senator in the General Assembly 4th District,state_senate,1,TODD JOHNSON,REP,listed_candidate,1482,Mail-in
+2026,PA,42091,Senator in the General Assembly 4th District,state_senate,1,TODD JOHNSON,REP,listed_candidate,0,Provisional
+2026,PA,42091,Senator in the General Assembly 4th District,state_senate,1,Unresolved Write-In,,unresolved_write_in,71,Election Day
+2026,PA,42091,Senator in the General Assembly 4th District,state_senate,1,Unresolved Write-In,,unresolved_write_in,14,Mail-in
+2026,PA,42091,Senator in the General Assembly 4th District,state_senate,1,Unresolved Write-In,,unresolved_write_in,0,Provisional

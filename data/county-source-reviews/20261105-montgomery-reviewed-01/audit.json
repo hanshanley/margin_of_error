@@ -1,0 +1,119 @@
+{
+  "status": "original_backed_county_counts_unofficial",
+  "participation": {
+    "year": 2026,
+    "state_code": "PA",
+    "county_fips": "42091",
+    "county": "Montgomery",
+    "ballots_cast": 392630,
+    "election_day_ballots": 285083,
+    "mail_in_ballots": 107547,
+    "provisional_ballots": 0,
+    "registered_voters": 628331,
+    "native_printed_turnout_pct": "62.49",
+    "result_status": "UNOFFICIAL RESULTS",
+    "reporting_basis": "Election Day in-person only",
+    "source_pdf_update_literal": "11/4/2026 2:07:10 PM",
+    "source_pdf_timezone": "not independently established",
+    "source_json_exported_utc": "2026-11-04T19:20:00Z",
+    "source_json_generated_utc": "2026-11-04T19:21:36Z",
+    "final_certified_turnout": false
+  },
+  "native_json_contests": 24,
+  "native_pdf_contests": 25,
+  "native_parent_precincts": 428,
+  "native_portions": 431,
+  "native_split_parents": [
+    "Horsham 4-1",
+    "Lower Merion 11-3",
+    "Upper Dublin 2-1"
+  ],
+  "native_candidate_rows": 3634,
+  "native_explicit_zeroes": 6,
+  "native_reporting_flag_literals": {
+    "0": 3634
+  },
+  "house_votes": [
+    {
+      "year": 2026,
+      "state_code": "PA",
+      "county_fips": "42091",
+      "office": "us_house",
+      "party_literal": "",
+      "row_kind": "unresolved_write_in",
+      "votes": 711
+    },
+    {
+      "year": 2026,
+      "state_code": "PA",
+      "county_fips": "42091",
+      "office": "us_house",
+      "party_literal": "DEM",
+      "row_kind": "listed_candidate",
+      "votes": 268823
+    },
+    {
+      "year": 2026,
+      "state_code": "PA",
+      "county_fips": "42091",
+      "office": "us_house",
+      "party_literal": "REP",
+      "row_kind": "listed_candidate",
+      "votes": 120367
+    }
+  ],
+  "source_json_metadata": {
+    "title": "Montgomery County, PA - General Election 2026 Results",
+    "status": "unofficial",
+    "disclaimer": "Unofficial results. Totals are preliminary and change as ballots are counted and certified.",
+    "source": "Montgomery County Voter Services",
+    "results_exported_utc": "2026-11-04T19:20:00Z",
+    "generated_utc": "2026-11-04T19:21:36Z",
+    "precincts_total": 428,
+    "precincts_reporting": 428,
+    "contest_count": 24,
+    "record_count": 3634,
+    "vote_types": [
+      "election_day",
+      "mail_in",
+      "provisional"
+    ],
+    "notes": "A precinct counts as reporting once its Election Day votes are posted. Contest totals are county-wide; precinct_results carries the same data broken out by precinct."
+  },
+  "source_urls": {
+    "montgomery.html": "https://www.montgomerycountypa.gov/departments/voter-services/election-results",
+    "montgomery-dashboard.html": "https://gis.montcopa.org/opendata/GE2026/",
+    "montgomery-results.json": "https://gis.montcopa.org/opendata/GE2026/results.json",
+    "vendor-portions.csv": "https://gis.montcopa.org/opendata/GE2026/data/Colorado Export by Portion.csv",
+    "ballot-data.txt": "https://gis.montcopa.org/opendata/GE2026/data/Ballot_Data.txt",
+    "montgomery-summary.pdf": "https://webapp07.montcopa.org/election/2026UnofficialGeneralElectionSummaryReport.pdf"
+  },
+  "limitations": [
+    "Unofficial, still updating; 428/428 reporting applies only to Election Day in-person ballots.",
+    "County counts only, not statewide Pennsylvania completion, demographic turnout or approved maps.",
+    "Candidate votes, unresolved write-ins, ballots, registrations and returned mail remain separate.",
+    "PDF Total Votes excludes its separately printed Unresolved Write-In lines; JSON and CSV omit those lines.",
+    "Unresolved write-ins have no native party label; a blank party is not an invented Nonpartisan affiliation.",
+    "Three native precincts have split portions; use exact parent plus Split_name, not parent-only deduplication.",
+    "The vote-for-seven commission is PDF-only; its 6743 write-in selections are not 6743 ballots or voters.",
+    "Native vendor Reporting_flag values are retained, not used to override the report's reporting status.",
+    "Portion residuals remain unclassified; only county residual sums reconcile to printed unresolved write-ins.",
+    "The PDF timestamp has no independently established timezone; JSON UTC timestamps remain separate.",
+    "Ballot-processing returned, counted, pending and rejected counts are separate native observations.",
+    "Native provisional zeroes are observations at this capture, not final certification."
+  ],
+  "fully_complete": false,
+  "new_maps_approved": false,
+  "table_rows": {
+    "county-candidate-results.csv": 71,
+    "county-candidate-mode-counts.csv": 213,
+    "county-office-party-totals.csv": 16,
+    "county-contest-totals.csv": 25,
+    "county-participation.csv": 1,
+    "county-ballot-processing.csv": 9,
+    "native-portion-participation.csv": 431,
+    "native-portion-contest-accounting.csv": 1630,
+    "native-portion-candidate-counts.csv": 3634,
+    "native-json-candidate-counts.csv": 3634
+  }
+}

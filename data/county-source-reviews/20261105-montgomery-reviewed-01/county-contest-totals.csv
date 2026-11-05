@@ -1,0 +1,26 @@
+contest,office,selectable_options,listed_candidate_votes,unresolved_write_in_votes,ballots_cast,registered_voters,native_printed_turnout_pct,native_precincts_reported,native_precincts_total,native_under_votes,native_over_votes
+Conshohocken Borough Government Study Commission,local_commission,7,0,6743,4113,7243,56.79,7,7,,
+Conshohocken Borough Government Study Commission Question,ballot_question,1,3760,0,4113,7243,56.79,7,7,350,3
+Governor and Lieutenant Governor,governor_lieutenant_governor,1,390151,548,392630,628331,62.49,428,428,860,1071
+Hatfield Township Referendum,ballot_question,1,7987,0,8454,13463,62.79,10,10,465,2
+Representative in Congress 1st District,us_house,1,54914,205,55616,87249,63.74,55,55,490,7
+Representative in Congress 4th District,us_house,1,291109,430,293364,465130,63.07,316,316,1765,60
+Representative in Congress 5th District,us_house,1,43167,76,43650,75952,57.47,59,59,369,38
+Representative in the General Assembly 131st District,state_house,1,11023,19,11115,17926,62.00,9,9,73,0
+Representative in the General Assembly 146th District,state_house,1,25501,38,25630,46092,55.61,23,23,88,3
+Representative in the General Assembly 147th District,state_house,1,31591,29,31745,49695,63.88,23,23,123,2
+Representative in the General Assembly 148th District,state_house,1,27201,1190,33024,50378,65.55,39,39,4628,5
+Representative in the General Assembly 149th District,state_house,1,23716,1329,28743,48937,58.73,36,36,3695,3
+Representative in the General Assembly 150th District,state_house,1,28745,33,28900,46254,62.48,21,21,117,5
+Representative in the General Assembly 151st District,state_house,1,32168,45,32373,49869,64.92,37,37,155,5
+Representative in the General Assembly 152nd District,state_house,1,26610,32,26763,44097,60.69,33,33,118,3
+Representative in the General Assembly 153rd District,state_house,1,31335,49,31578,47054,67.11,43,43,191,3
+Representative in the General Assembly 154th District,state_house,1,30155,239,31832,48042,66.26,45,45,1424,14
+Representative in the General Assembly 53rd District,state_house,1,27441,32,27600,44383,62.19,30,30,124,3
+Representative in the General Assembly 54th District,state_house,1,16058,640,19427,37422,51.91,29,29,2722,7
+Representative in the General Assembly 61st District,state_house,1,32629,47,32856,49039,67.00,33,33,171,9
+Representative in the General Assembly 70th District,state_house,1,23674,1453,31044,49143,63.17,28,28,5917,0
+Senator in the General Assembly 12th District,state_senate,1,123615,155,125128,196555,63.66,141,141,1343,15
+Senator in the General Assembly 24th District,state_senate,1,93452,100,94183,152741,61.66,76,76,608,23
+Senator in the General Assembly 44th District,state_senate,1,24229,24,24496,39314,62.31,17,17,240,3
+Senator in the General Assembly 4th District,state_senate,1,60555,85,61418,93097,65.97,84,84,772,6

@@ -1,0 +1,50 @@
+{
+  "montgomery.html": {
+    "url": "https://www.montgomerycountypa.gov/departments/voter-services/election-results",
+    "final_url": "https://www.montgomerycountypa.gov/departments/voter-services/election-results",
+    "status": 200,
+    "acquired_at": "2026-11-05T19:21:04.081902+00:00",
+    "bytes": 28122,
+    "sha256": "64c3205623e166717da87cba472c48556c6ed6eca6e17779884c3936fe2a41e1"
+  },
+  "montgomery-dashboard.html": {
+    "url": "https://gis.montcopa.org/opendata/GE2026/",
+    "final_url": "https://gis.montcopa.org/opendata/GE2026/",
+    "status": 200,
+    "acquired_at": "2026-11-05T19:21:11.361484+00:00",
+    "bytes": 88296,
+    "sha256": "0cbb93c18e4486058fdca1a1e6c6de01641ebbae89c4e411d211e50b7375080f"
+  },
+  "montgomery-results.json": {
+    "url": "https://gis.montcopa.org/opendata/GE2026/results.json",
+    "final_url": "https://gis.montcopa.org/opendata/GE2026/results.json",
+    "status": 200,
+    "acquired_at": "2026-11-05T19:21:21.270287+00:00",
+    "bytes": 886620,
+    "sha256": "953f5d81ed8e4ffb460fcc336756bbed35fbca9f51ea1951abcff5d17e915a1a"
+  },
+  "vendor-portions.csv": {
+    "url": "https://gis.montcopa.org/opendata/GE2026/data/Colorado Export by Portion.csv",
+    "final_url": "https://gis.montcopa.org/opendata/GE2026/data/Colorado%20Export%20by%20Portion.csv",
+    "status": 200,
+    "acquired_at": "2026-11-05T19:21:32.781729+00:00",
+    "bytes": 637588,
+    "sha256": "240060b4dbf0597db056bd5d278a9e9a381fcbd7fe6cca0a00d3ce4c54f287b0"
+  },
+  "ballot-data.txt": {
+    "url": "https://gis.montcopa.org/opendata/GE2026/data/Ballot_Data.txt",
+    "final_url": "https://gis.montcopa.org/opendata/GE2026/data/Ballot_Data.txt",
+    "status": 200,
+    "acquired_at": "2026-11-05T19:21:32.908361+00:00",
+    "bytes": 338,
+    "sha256": "9e6d209fc3762f2c4cf6a96af800aa525a192752b421fa90f2ec698d1358f4cd"
+  },
+  "montgomery-summary.pdf": {
+    "url": "https://webapp07.montcopa.org/election/2026UnofficialGeneralElectionSummaryReport.pdf",
+    "final_url": "https://webapp07.montcopa.org/election/2026UnofficialGeneralElectionSummaryReport.pdf",
+    "status": 200,
+    "acquired_at": "2026-11-05T19:21:11.514509+00:00",
+    "bytes": 232791,
+    "sha256": "cd6d737cee2935796410009e70d0510cd3300ee952375852522b7af2b77cbb40"
+  }
+}

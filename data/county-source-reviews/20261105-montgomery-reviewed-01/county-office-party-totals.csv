@@ -1,0 +1,17 @@
+year,state_code,county_fips,office,party_literal,row_kind,votes
+2026,PA,42091,governor_lieutenant_governor,,unresolved_write_in,548
+2026,PA,42091,governor_lieutenant_governor,DEM,listed_candidate,283249
+2026,PA,42091,governor_lieutenant_governor,LIB,listed_candidate,3604
+2026,PA,42091,governor_lieutenant_governor,REP,listed_candidate,103298
+2026,PA,42091,local_commission,,unresolved_write_in,6743
+2026,PA,42091,state_house,,unresolved_write_in,5175
+2026,PA,42091,state_house,DEM,listed_candidate,281128
+2026,PA,42091,state_house,PFP,listed_candidate,2975
+2026,PA,42091,state_house,REP,listed_candidate,83744
+2026,PA,42091,state_senate,,unresolved_write_in,364
+2026,PA,42091,state_senate,DEM,listed_candidate,199840
+2026,PA,42091,state_senate,GRE,listed_candidate,1689
+2026,PA,42091,state_senate,REP,listed_candidate,100322
+2026,PA,42091,us_house,,unresolved_write_in,711
+2026,PA,42091,us_house,DEM,listed_candidate,268823
+2026,PA,42091,us_house,REP,listed_candidate,120367

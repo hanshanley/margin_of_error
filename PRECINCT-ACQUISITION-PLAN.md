@@ -319,6 +319,58 @@ this completed publication or reinterpret the unresolved 324-ballot difference.
 Next actionable work remains genuine 2026 Maine/Pennsylvania county sources,
 followed by the scoped 2016 historical House export.
 
+Montgomery County official 2026 alternative, reviewed and awaiting publication:
+Fresh actual HTTP acquisition found a newly declared General Election dashboard
+and PDF on the county's official results index, despite an older web-search
+cache still showing only the primary. Do not infer the available election from
+the search cache. The alternative Chester results path returned 404 and Maine's
+official results page returned 403; both receipts are preserved, not treated
+as evidence that every alternative is unavailable.
+
+`data/county-source-reviews/20261105-montgomery-reviewed-01/` retains six
+complete unmodified originals: county index, native dashboard, vendor portion
+CSV, native results JSON, eight-page county PDF and separate ballot-processing
+TXT, with exact URL/time/hash receipts. No map-service token pattern was found.
+All 3,634 native candidate rows and every voting-mode vector reconcile across
+CSV and JSON, including six explicit zeroes; all 46 listed candidate/option
+lines reconcile with the PDF. The PDF additionally supplies 25 separately
+printed unresolved-write-in lines, including a vote-for-seven local commission
+absent from JSON/CSV. Its 6,743 selections are not 6,743 ballots or voters.
+Unresolved write-ins have no native party label; do not invent one.
+
+House votes are 389,901: DEM 268,823, REP 120,367 and 711 unresolved write-ins
+with a blank party. These are separate from 392,630 county ballots and 628,331
+registrations (printed 62.49%). The PDF update is November 4, 2026, 2:07:10 PM,
+timezone unestablished; native JSON export/generation UTC timestamps are
+retained separately. Reporting 428/428 applies only to Election Day in-person
+ballots, not completed counting. All results remain unofficial and updating.
+Mail returned 109,191 differs from mail counted 107,547; all nine processing
+observations remain separate from candidate votes and participation.
+
+Three parent precincts have genuine split portions. All 431 exact
+parent-plus-split identities are retained; parent-only deduplication would lose
+ballots/registrations. Governor, House and state-House district partitions
+independently cover the same portions. All 1,630 portion/contest accounting
+records retain native under/overvotes and unclassified residuals; only county
+residual sums reconcile to printed unresolved write-ins. Native Reporting_flag
+zeroes are not used to override the county's reporting notice.
+
+The ten complete tables contain 71 candidate/option/write-in lines, 213
+candidate-mode observations, 16 office/literal-party/kind totals, 25 contest
+totals, separate county participation, nine processing observations, 431 portion
+participation rows, 1,630 accounting records and both complete 3,634-row native
+candidate tables. All 20 package files and the ZIP reproduce byte-for-byte
+outside the repository; independent native-CSV/PDF aggregation matches all 16
+office/party vectors. All 68 focused county tests pass. Complete ZIP:
+587,034 bytes, SHA256
+`f40f5454fc6332e5828770f7d51eb313186d58f7ceb5c0dd2851de7eb24f32d3`.
+Publication proofs are kept separately in
+`data/county-source-reviews/20261105-montgomery-publication-01/`.
+No new geometry, statewide Pennsylvania completion, demographic estimate or
+precinct-ledger promotion is approved. Next: release byte verification, a
+download-only registry entry retaining all 194 existing URLs, local checks and
+the exact useful UI deployment; do not repeat unchanged map suites.
+
 Bucks County official 2026 alternative, released and production-verified:
 `data/county-source-reviews/20261105-bucks-reviewed-02/` retains the county's
 declared native 2026 report with map-service tokens explicitly redacted, the

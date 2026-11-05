@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>General Election – November 3, 2026 — Montgomery County Results</title>
+<meta name="description" content="Live unofficial results for the November 3, 2026 General Election in Montgomery County, Pennsylvania: races, precincts reporting, turnout and a precinct map.">
+<!-- Link previews (Facebook, X, LinkedIn, Teams, text messages) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Montgomery County, PA">
+<meta property="og:title" content="General Election – November 3, 2026 | Live Unofficial Results">
+<meta property="og:description" content="Live unofficial results for Montgomery County, PA: races, precincts reporting, turnout and a precinct map.">
+<meta property="og:url" content="https://gis.montcopa.org/opendata/GE2026/">
+<meta property="og:image" content="https://gis.montcopa.org/opendata/GE2026/montco-seal-header.png">
+<meta property="og:image:width" content="300">
+<meta property="og:image:height" content="300">
+<meta property="og:image:alt" content="Montgomery County, Pennsylvania seal">
+<meta name="twitter:card" content="summary">
+<!-- Browser tab icon -->
+<link rel="icon" type="image/png" href="montco-seal-header.png">
+<link rel="apple-touch-icon" href="montco-seal-header.png">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="../lib/leaflet/leaflet.css">
+<style>
+:root{
+  --bg:#f0f4f6;--surface:#ffffff;--surface2:#e8f4f2;--border:#c8dfe8;
+  --primary:#03425c;--accent:#a9dcd6;--dem:#083A90;--rep:#E81B23;
+  --oth:#C0C0C0;--gold:#fab223;--text:#03425c;--dim:#2a6a80;--muted:#37626e;--white:#ffffff;
+  --ind-h:112px;   /* one height for both indicator rows */
+  --card-shadow:0 1px 2px rgba(3,66,92,.06),0 2px 8px rgba(3,66,92,.07);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'Montserrat',sans-serif;min-height:100vh;font-size:14px}
+#loading{position:fixed;inset:0;background:var(--accent);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;z-index:999}
+.ld-title{font-size:22px;font-weight:800;letter-spacing:2px;color:var(--white);text-align:center;line-height:1.3}
+.ld-sub{font-size:11px;font-weight:500;color:rgba(3,66,92,.6);letter-spacing:2px;text-transform:uppercase}
+.ld-bar{width:260px;height:3px;background:rgba(255,255,255,.2);border-radius:2px;overflow:hidden}
+.ld-fill{height:100%;background:var(--gold);width:0%;transition:width 0.4s ease}
+.ld-err{font-size:12px;color:#fff;max-width:340px;text-align:center;padding:0 20px}
+.hdr{background:var(--primary);border-bottom:none;padding:22px 24px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px}
+.hdr-logo{height:92px;width:auto;flex-shrink:0}
+.hdr-text{display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center}
+.hdr h1{font-size:28px;font-weight:800;letter-spacing:1.2px;color:#fff;line-height:1.2;text-transform:uppercase}
+.h1-date{white-space:nowrap}
+.hdr h2{font-size:14px;font-weight:600;color:#fff;letter-spacing:3px;text-transform:uppercase;opacity:0.8}
+.hdr-status{display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:flex-end;font-size:10px;color:#fff;}
+.hdr-status .refresh-btn{background:transparent;border:1px solid rgba(255,255,255,.6);color:#fff;padding:3px 10px;font-family:'Montserrat',sans-serif;font-size:9px;font-weight:600;letter-spacing:1px;text-transform:uppercase;border-radius:3px;cursor:pointer;}
+.hdr-status .refresh-btn:hover{background:#fff;color:var(--primary);}
+.refresh-btn[disabled]{opacity:.7;cursor:default}
+.refresh-btn .spin{display:inline-block;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.upd-block{display:flex;flex-direction:column;align-items:flex-end;line-height:1.25}
+.upd-time{font-size:16px;font-weight:600;color:#fff}
+.upd-time strong{font-weight:800}
+.upd-refresh{font-size:10px;font-weight:500;color:#fff;opacity:.8}
+.sep-bar{height:14px;background:var(--gold)}   /* matches ballot-dropbox.html accent strip */
+.ftr{background:var(--primary);color:#fff;padding:24px;display:flex;align-items:flex-end;justify-content:space-between;gap:20px 32px;flex-wrap:wrap;margin-top:10px}
+.ftr-title{font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px}
+.ftr-names{list-style:none;display:flex;flex-wrap:wrap;gap:4px 22px;font-size:13px;font-weight:400}
+.ftr-names strong{font-weight:700}
+.ftr-right{display:flex;flex-direction:column;align-items:flex-end;gap:6px;text-align:right}
+.ftr-credit{font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.ftr-right a{color:#fff;font-size:12px;font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.ftr-right a:hover{color:var(--gold)}
+.ftr-right a:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.ftr-note{font-size:10px;opacity:.75;letter-spacing:.5px}
+.kpi-pr-count{font-size:12px;font-weight:800;color:var(--dim);white-space:nowrap}
+.pr-note{margin-top:0}
+.kpi-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding:14px 24px 0;background:transparent;margin-bottom:14px}
+.kpi-strip .kpi{border:1px solid var(--border);border-radius:4px;box-shadow:var(--card-shadow)}
+.kpi{background:var(--surface);padding:14px 18px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;min-height:var(--ind-h)}
+.kpi-lbl{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--primary);margin-bottom:5px}
+.kpi-val{font-size:32px;font-weight:800;line-height:1;color:var(--primary)}
+.kpi-note{font-size:11px;font-weight:500;color:var(--dim);margin-top:5px}
+/* Top row: 4 equal columns. Ballot Processing spans 3 (one card per ballot type),
+   Precincts Reporting takes the 4th, so all four cards are the same width and height. */
+.top-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:14px;padding:16px 24px 0;background:transparent}
+.bp-band{grid-column:1/4;display:flex;flex-direction:column;min-width:0}
+.pr-card{grid-column:4;display:flex;flex-direction:column;min-width:0}
+.pr-box{flex:1;background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:14px 18px;display:flex;flex-direction:column;justify-content:space-between;min-height:var(--ind-h);box-sizing:border-box;box-shadow:var(--card-shadow)}
+.pr-line{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.pr-box .kpi-pr-count{font-size:13px}
+.bp-groups{flex:1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.bp-group{background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:14px 18px;display:flex;flex-direction:column;justify-content:space-between;min-height:var(--ind-h);box-sizing:border-box;box-shadow:var(--card-shadow)}
+.bp-gname{margin-bottom:8px}
+.bp-rows{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px 12px}
+.bp-item{min-width:0;display:flex;flex-direction:column;justify-content:space-between}
+.bp-k{font-size:10px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--dim);margin-bottom:3px}
+.bp-v{font-size:clamp(14px,1.2vw,20px);font-weight:800;color:var(--primary);line-height:1;white-space:nowrap}
+.bp-item.hl .bp-v{color:var(--dim)}
+.filters{background:var(--surface);border:1px solid var(--border);border-radius:4px;box-shadow:var(--card-shadow);margin:0 24px;padding:16px 18px;display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end}
+.fg{display:flex;flex-direction:column;gap:6px;flex:1;min-width:160px}
+.fg label{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+.fg select{background:var(--surface);border:1px solid var(--border);color:var(--text);padding:10px 32px 10px 12px;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:500;border-radius:4px;cursor:pointer;width:100%;appearance:none;background-repeat:no-repeat;background-position:right 12px center;transition:border-color .2s}
+.fg select:focus{border-color:var(--primary)}.fg select:hover{border-color:var(--primary)}
+*:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+.hdr-status .refresh-btn:focus-visible,#toggle-btn:focus-visible{outline:2px solid #fff;outline-offset:2px}
+th:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.btn-more-filters{display:none;background:var(--primary);color:#fff;border:none;padding:10px 18px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border-radius:4px;cursor:pointer}
+.btn-reset{background:transparent;border:1px solid var(--border);color:var(--muted);padding:10px 18px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;border-radius:4px;cursor:pointer;transition:all .2s;white-space:nowrap;align-self:flex-end}
+.btn-reset:hover{border-color:var(--rep);color:var(--rep)}
+#fg-contest{flex:1.7}
+.btn-reset.btn-share:hover{border-color:var(--primary);color:var(--primary)}
+.btn-dl{background:transparent;border:1px solid var(--border);color:var(--primary);padding:5px 12px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border-radius:4px;cursor:pointer;margin-left:12px}
+.btn-dl:hover{border-color:var(--primary);background:var(--surface)}
+.grid{padding:20px 24px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:6px;overflow:hidden;box-shadow:var(--card-shadow)}
+.panel.wide{grid-column:1/-1}
+.ph{padding:10px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;background:var(--surface2)}
+.panel.wide .ph{padding:12px 20px;background:var(--primary)}
+.panel.wide .ph-title{color:var(--white);font-size:12px;letter-spacing:2px}
+.panel.wide .ph-sub{color:var(--accent)}
+.ph-title{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--primary);margin:0}
+.ph-sub{font-size:11px;font-weight:500;color:var(--dim)}
+.bar-list{padding:12px 14px;display:flex;flex-direction:column;gap:7px;max-height:320px;overflow-y:auto}
+.bar-row{display:flex;flex-direction:column;gap:2px}
+.bar-meta{display:flex;justify-content:space-between;align-items:center}
+.bar-name{font-size:12px;font-weight:500;color:var(--dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:220px}
+.bar-num{font-size:11px;font-weight:600;color:var(--muted);white-space:nowrap}
+.bar-track{height:18px;background:var(--surface2);border-radius:2px;overflow:hidden}
+.bar-fill{height:100%;border-radius:2px;display:flex;align-items:center;padding-left:6px;transition:width .4s ease}
+.bar-fill.primary-bar{background:var(--primary)}
+.bar-fill-txt{font-size:9px;font-weight:600;color:rgba(255,255,255,.9);white-space:nowrap}
+.race-bar-row{display:flex;flex-direction:column;gap:5px;margin-bottom:12px}
+.race-bar-meta{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.race-bar-name{font-size:14px;font-weight:700;color:var(--primary)}
+.race-bar-votes{font-size:14px;font-weight:700;color:var(--primary);white-space:nowrap}
+.race-bar-pct{font-size:12px;font-weight:600;color:var(--muted);white-space:nowrap}
+.race-bar-track{height:48px;background:var(--surface2);border-radius:4px;overflow:hidden}
+.race-bar-total{height:100%;border-radius:4px;overflow:hidden;transition:width 0.6s ease;min-width:3px}
+.race-bar-total.dem{background:#aebfe0}.race-bar-total.rep{background:#f4b3b8}.race-bar-total.oth{background:#cbcbcb}
+.race-bar-fill{height:100%;transition:width 0.6s ease}
+.race-bar-fill.dem{background:#083A90}.race-bar-fill.rep{background:#E81B23}.race-bar-fill.oth{background:#888}
+.party-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.8px;padding:1px 6px;border-radius:3px;border:1px solid currentColor;margin-left:8px;vertical-align:2px;background:#fff}
+.party-tag.dem{color:#083A90}.party-tag.rep{color:#B5121B}.party-tag.oth{color:#4a4a4a}
+.race-lead{font-size:13px;font-weight:500;color:var(--primary);background:var(--surface2);border-left:4px solid var(--primary);padding:8px 12px;margin-bottom:14px;border-radius:2px}
+.race-lead strong{font-weight:800}
+.race-note{font-size:11px;color:var(--muted);margin-top:4px;font-style:italic}
+.tbl-wrap{overflow:auto;max-height:600px}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{background:var(--primary);padding:8px 12px;text-align:left;font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--accent);position:sticky;top:0;border-bottom:2px solid var(--accent);white-space:nowrap;cursor:pointer;user-select:none}
+th:hover{color:var(--white)}th.sorted{color:var(--gold)}
+td{padding:7px 12px;border-bottom:1px solid var(--border);color:var(--dim);white-space:nowrap;font-weight:400}
+tr:hover td{background:var(--surface2);color:var(--primary)}
+::-webkit-scrollbar{width:5px;height:5px}::-webkit-scrollbar-track{background:var(--surface2)}
+::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px}::-webkit-scrollbar-thumb:hover{background:var(--primary)}
+#map{height:650px;width:100%}
+.map-legend{padding:8px 16px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;border-top:1px solid var(--border);background:var(--surface)}
+.tbl-more{padding:14px;text-align:center}
+.load-more-btn{background:var(--primary);color:#fff;border:none;padding:9px 22px;border-radius:4px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer}
+.load-more-btn:hover{background:var(--dim)}
+.legend-item{display:flex;align-items:center;gap:5px;font-size:10px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--dim)}
+.legend-scale{gap:8px}
+.scale-col{display:flex;flex-direction:column;gap:2px}
+.scale-bar{display:block;width:90px;height:6px;border-radius:2px}
+.scale-lbls{display:flex;justify-content:space-between;width:90px;font-size:9px;font-weight:600;color:var(--muted);text-transform:none;letter-spacing:0}
+.legend-swatch{width:14px;height:14px;border-radius:2px;flex-shrink:0}
+.leaflet-tooltip{font-size:11px;border:1px solid var(--border);border-radius:4px;padding:6px 10px}
+/* Force Montserrat through every Leaflet surface - tooltips, popups, controls,
+   attribution and zoom buttons all default to the library's own font stack. */
+.leaflet-container,.leaflet-container input,.leaflet-container textarea,
+.leaflet-tooltip,.leaflet-popup-content,.leaflet-popup-content-wrapper,
+.leaflet-control,.leaflet-control-attribution,.leaflet-bar a,
+.leaflet-control-zoom-in,.leaflet-control-zoom-out{font-family:'Montserrat',sans-serif!important}
+#update-bar{display:none;position:fixed;top:0;left:0;right:0;z-index:9999;background:var(--gold);color:var(--primary);font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:10px 24px;align-items:center;justify-content:center;gap:12px}
+.close-race-row{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:1px solid var(--border);cursor:pointer;transition:background .15s}
+.close-race-row:last-child{border-bottom:none}
+.close-race-row:hover,.close-race-row:focus-visible{background:var(--surface2)}
+.close-race-contest{font-size:12px;font-weight:600;color:var(--primary);flex:1}
+.close-race-detail{font-size:11px;color:var(--muted);margin-top:2px}
+.close-race-margin{font-size:16px;font-weight:800;color:var(--primary);white-space:nowrap;margin-left:16px}
+@media print{
+  .filters,#update-bar,#toggle-btn,.btn-reset,.refresh-btn,#map-view,.map-legend{display:none!important}
+  body{background:#fff}
+  .panel{break-inside:avoid;border:1px solid #999}
+  .hdr{background:#fff!important;border-bottom:2px solid #03425c}
+  .hdr h1,.hdr h2,.hdr-status,.upd-time,.upd-refresh{color:#03425c!important}
+  .hdr-logo{display:none!important}
+  .sep-bar{display:none!important}
+  .ftr{display:none!important}
+  .kpi-strip{break-inside:avoid}
+  .tbl-wrap{max-height:none;overflow-x:auto}
+  th{position:static}
+}
+@media(min-width:701px) and (max-width:1200px){:root{--ind-h:150px}}  /* labels wrap to 2 lines here */
+@media(max-width:700px){
+  :root{--ind-h:0px}
+  .close-race-margin{font-size:14px}
+  .kpi-strip{grid-template-columns:1fr 1fr;gap:10px;padding:12px 14px 0;margin-bottom:12px}.kpi{padding:12px 16px}.kpi-val{font-size:26px}
+  .kpi-strip .kpi.tb{grid-column:1/-1}
+  .top-row{grid-template-columns:1fr;row-gap:12px;padding:12px 14px 0}
+  .bp-band,.pr-card{grid-column:auto}
+  .bp-groups{grid-template-columns:1fr;gap:10px}
+  .bp-rows{gap:14px}
+  .bp-v{font-size:17px}
+  .grid{grid-template-columns:1fr;padding:12px 14px;gap:10px}.panel.wide{grid-column:1}
+  .hdr{grid-template-columns:1fr;justify-items:center;text-align:center;padding:14px 16px;gap:10px}.hdr-logo{height:56px}
+  .hdr h1{font-size:18px}.hdr h2{font-size:10px}
+  .hdr-status{justify-content:center}
+  .filters{padding:12px;gap:8px;margin:0 14px}.fg{min-width:calc(50% - 4px);flex:none;max-width:100%}
+  .fg select{font-size:13px;padding:8px 28px 8px 10px;max-width:100%;box-sizing:border-box;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  #fg-contest{flex-shrink:1;min-width:0}
+  .btn-reset{width:100%;text-align:center}
+  #map{height:380px}
+  #toggle-btn{padding:10px 16px!important}
+}
+@media(max-width:600px){
+  .desk-only{display:none!important}
+  #toggle-btn,#map-view{display:none!important}
+  #fg-contest{order:-1;min-width:100%}
+  #fg-cand{display:none}
+  /* "MORE FILTERS" expander (per USDR audit mockup): only Contest shows until tapped */
+  .btn-more-filters{display:block;width:100%;order:0}
+  .filters:not(.filters-expanded) .fg-extra,
+  .filters:not(.filters-expanded) .btn-reset{display:none}
+  .filters.filters-expanded .fg-extra{order:1}
+  .filters.filters-expanded .btn-reset{order:2}
+  /* Race Results header stacks: title, contest, vote-type, count (per USDR mockup) */
+  #race-ph{flex-direction:column;align-items:flex-start;gap:2px!important}
+  #race-contest-label{flex:none;white-space:normal;line-height:1.3}
+  #race-bt-label{margin-top:6px}
+  #race-total-label{white-space:normal}
+  /* Race rows: name on its own line, share + votes wrap underneath */
+  .race-bar-meta{flex-wrap:wrap;gap:2px}
+  .race-bar-name{flex-basis:100%}
+  .race-bar-stats{flex-wrap:wrap;gap:2px 10px!important}
+  .race-bar-pct,.race-bar-votes{white-space:normal}
+  /* Compact header: logo + title side-by-side, status row below (per USDR audit mockup) */
+  .hdr{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-start;text-align:left;padding:10px 14px;gap:10px}
+  .hdr-logo{height:44px}
+  .hdr-text{flex:1;min-width:0;align-items:flex-start;text-align:left;gap:2px}
+  .hdr h1{font-size:16px;letter-spacing:1px}
+  .h1-sep{display:none}.h1-date{display:block}   /* date on its own line on phones */
+  .hdr h2{font-size:9px;letter-spacing:2px}
+  .hdr-status{width:100%;justify-content:flex-start;gap:8px}
+  .upd-block{align-items:flex-start}
+  .upd-time{font-size:13px}
+  .upd-refresh{font-size:9px}
+  .hdr-status .refresh-btn{margin-left:auto}
+  /* Bump KPI supporting text to 12px per mockup */
+  .ftr{flex-direction:column;align-items:flex-start;gap:16px;padding:18px 16px}
+  .ftr-right{align-items:flex-start;text-align:left}
+  .ftr-names{flex-direction:column;gap:3px}
+  .kpi-note{font-size:12px}
+  .kpi-pr-count{font-size:12px}
+}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}
+</style>
+</head>
+<body>
+<div id="update-bar" role="status" aria-live="polite">
+  <span aria-hidden="true">&#9654;</span> New results loaded
+</div>
+<div id="loading">
+  <div class="ld-title">Montgomery County<br>General Election – November 3, 2026</div>
+  <div class="ld-sub">Loading Live Results</div>
+  <div class="ld-bar"><div class="ld-fill" id="ld-fill"></div></div>
+  <div class="ld-sub" id="ld-msg">CONNECTING TO DATA...</div>
+  <div class="ld-err" id="ld-err"></div>
+</div>
+<div id="app" style="display:none">
+  <div class="hdr" role="banner">
+    <img class="hdr-logo" src="montco-seal-header.png" width="300" height="300" alt="Montgomery County Pennsylvania">
+    <div class="hdr-text"><h1>General Election <span class="h1-sep">&ndash;</span> <span class="h1-date">November 3, 2026</span></h1><h2>Live Unofficial Results</h2></div>
+    <div class="hdr-status">
+      <span id="conn-dot" style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#2ecc71;vertical-align:middle;"></span>
+      <div class="upd-block">
+        <div class="upd-time">Updated: <strong id="last-updated-time">&#8212;</strong></div>
+        <div class="upd-refresh">Auto refresh every 5 minutes</div>
+      </div>
+      <button class="refresh-btn" id="refresh-btn" onclick="refreshData()"><span aria-hidden="true">&#8635;</span> Refresh</button>
+    </div>
+  </div>
+  <div class="sep-bar"></div>
+  <main id="main">
+  <div class="top-row">
+    <div class="bp-band" id="bp-band" style="display:none">
+      <div class="bp-groups" id="bp-groups"></div>
+    </div>
+    <div class="pr-card">
+      <div class="pr-box">
+        <div class="kpi-lbl" role="heading" aria-level="3">Precincts Reporting</div>
+        <div class="pr-line"><div class="kpi-val" id="k-pct">&#8212;</div><div class="kpi-pr-count" id="k-pct-note">&#8212; of &#8212;</div></div>
+        <div class="kpi-note pr-note">Based on Election Day in-person votes only</div>
+      </div>
+    </div>
+  </div>
+  <div class="kpi-strip">
+    <div class="kpi tb"><div class="kpi-lbl" role="heading" aria-level="3">Total Ballots Cast</div><div class="kpi-val" id="k-tb">&#8212;</div><div class="kpi-note" id="k-tb-note">Includes in-person, mail-in and provisional ballots</div></div>
+    <div class="kpi rv"><div class="kpi-lbl" role="heading" aria-level="3">Registered Voters</div><div class="kpi-val" id="k-rv">&#8212;</div><div class="kpi-note" id="k-rv-note">County-wide electorate</div></div>
+    <div class="kpi to"><div class="kpi-lbl" role="heading" aria-level="3">Turnout</div><div class="kpi-val" id="k-to">&#8212;</div><div class="kpi-note" id="k-to-note">Across filtered precincts</div></div>
+  </div>
+  <div class="filters" id="filters-bar">
+    <div class="fg fg-extra"><label for="f-bt">Vote Type</label><select id="f-bt"><option value="">Total Votes</option><option value="ed">Election Day</option><option value="mi">Mail-In</option><option value="pr">Provisional</option></select></div>
+    <div class="fg fg-extra"><label for="f-muni">Municipality</label><select id="f-muni"><option value="">All Municipalities</option></select></div>
+    <div class="fg fg-extra"><label for="f-pct">Precinct</label><select id="f-pct"><option value="">All Precincts</option></select></div>
+    <div class="fg" id="fg-contest"><label for="f-contest">Contest</label><select id="f-contest"></select></div>
+    <div class="fg" id="fg-cand"><label for="f-cand">Candidate</label><select id="f-cand"><option value="">All Candidates</option></select></div>
+    <button class="btn-more-filters" id="more-filters-btn" onclick="toggleMoreFilters()" aria-expanded="false" aria-controls="filters-bar">More Filters <span aria-hidden="true">&#9662;</span></button>
+    <button class="btn-reset btn-share" id="share-btn" aria-live="polite" onclick="copyShareLink()" title="Copy a link to this view"><span aria-hidden="true">&#128279;</span> Copy Link</button>
+    <button class="btn-reset" onclick="resetFilters()"><span aria-hidden="true">&circlearrowleft;</span> Reset All</button>
+  </div>
+  <div class="grid">
+    <div class="panel wide">
+      <div class="ph" id="race-ph" style="gap:16px;flex-wrap:wrap;">
+        <h2 id="panel-title" class="ph-title">Race Results</h2>
+        <span id="race-contest-label" style="color:var(--accent);font-size:13px;font-weight:600;letter-spacing:.5px;flex:1;">&#8212;</span>
+        <span id="race-bt-label" style="color:var(--white);font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;">Total Votes</span>
+        <span id="race-total-label" style="color:var(--accent);font-size:11px;font-weight:600;white-space:nowrap;"></span>
+        <button id="toggle-btn" onclick="toggleView()" style="background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.4);color:var(--white);padding:5px 14px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border-radius:4px;cursor:pointer;white-space:nowrap;" aria-controls="race-view map-view"><span aria-hidden="true">►</span> Show Map</button>
+      </div>
+      <div id="race-view">
+        <div class="bar-list" id="race-chart" style="max-height:none;padding:16px 24px;">
+          <div style="text-align:center;padding:32px;color:var(--muted);font-size:12px;">Select a Contest Above</div>
+        </div>
+      </div>
+      <div id="map-view" style="display:none;" role="region" aria-label="Precinct map. The same results by precinct are in the Detailed Results table.">
+        <div id="map"></div>
+        <div class="map-legend">
+          <span class="legend-item"><span class="legend-swatch" style="background:#083A90"></span>Democratic</span>
+          <span class="legend-item"><span class="legend-swatch" style="background:#E81B23"></span>Republican</span>
+          <span class="legend-item"><span class="legend-swatch" style="background:#888"></span>Other</span>
+          <span class="legend-item"><span class="legend-swatch" style="background:#ccc;border:1px solid #aaa"></span>No Data</span>
+          <span class="legend-item legend-scale" title="Shading shows the winner's margin in each precinct">Margin
+            <span class="scale-col"><span class="scale-bar" style="background:linear-gradient(90deg,rgba(8,58,144,.3),rgba(8,58,144,.9))"></span><span class="scale-bar" style="background:linear-gradient(90deg,rgba(232,27,35,.3),rgba(232,27,35,.9))"></span><span class="scale-lbls"><span>0%</span><span>50%+</span></span></span></span>
+          <span style="flex:1"></span>
+          <span style="font-size:10px;color:var(--muted);">Click a precinct to filter &nbsp;|&nbsp; Scroll to zoom</span>
+        </div>
+      </div>
+    </div>
+    <div class="panel wide desk-only" id="closest-races-panel">
+      <div class="ph"><h2 class="ph-title">Closest Races County-Wide</h2><span class="ph-sub" id="closest-sub">Top margins</span></div>
+      <div class="bar-list" id="closest-chart" style="max-height:none;"></div>
+    </div>
+    <div class="panel wide desk-only">
+      <div class="ph"><h2 class="ph-title">Detailed Results</h2><span><span class="ph-sub" id="tbl-sub">&#8212;</span><button class="btn-dl" onclick="exportCSV()" title="Download the rows in this table as a CSV file"><span aria-hidden="true">&#11015;</span> Download CSV</button></span></div>
+      <div class="tbl-wrap"><table aria-label="Detailed results by precinct and candidate">
+        <thead><tr>
+          <th onclick="sortBy('p')">Precinct <span id="sa-p"></span></th>
+          <th onclick="sortBy('ct')">Contest <span id="sa-ct"></span></th>
+          <th onclick="sortBy('cn')">Candidate <span id="sa-cn"></span></th>
+          <th onclick="sortBy('rv')">Reg. Voters <span id="sa-rv"></span></th>
+          <th onclick="sortBy('to')">Turnout <span id="sa-to"></span></th>
+          <th onclick="sortBy('tb')">Ballots Cast <span id="sa-tb"></span></th>
+          <th onclick="sortBy('tv')">Total Votes <span id="sa-tv"></span></th>
+          <th onclick="sortBy('edv')">Election Day <span id="sa-edv"></span></th>
+          <th onclick="sortBy('miv')">Mail-In <span id="sa-miv"></span></th>
+          <th onclick="sortBy('prv')">Provisional <span id="sa-prv"></span></th>
+        </tr></thead>
+        <tbody id="tbl-body"></tbody>
+      </table></div>
+      <div id="tbl-more" class="tbl-more"></div>
+    </div>
+    <div class="panel desk-only">
+      <div class="ph"><h2 class="ph-title">Precinct Turnout (Highest)</h2><span id="pct-vt-label" style="color:var(--primary);font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;">Total Votes</span><span class="ph-sub" id="pct-sub">Top 15</span></div>
+      <div class="bar-list" id="pct-chart" tabindex="0" role="region" aria-label="Precinct turnout, highest 15"></div>
+    </div>
+    <div class="panel desk-only">
+      <div class="ph"><h2 class="ph-title">Municipality Turnout (Highest)</h2><span id="muni-vt-label" style="color:var(--primary);font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;">Total Votes</span><span class="ph-sub" id="muni-sub">Top 15</span></div>
+      <div class="bar-list" id="muni-chart" tabindex="0" role="region" aria-label="Municipality turnout, highest 15"></div>
+    </div>
+  </div>
+  </main>
+  <footer class="ftr">
+    <div class="ftr-board">
+      <div class="ftr-title">Montgomery County Board of Elections</div>
+      <ul class="ftr-names">
+        <li><strong>Neil K. Makhija</strong>, Chair</li>
+        <li><strong>Jamila H. Winder</strong>, Vice Chair</li>
+        <li><strong>Thomas DiBello</strong></li>
+        <li><strong>Lee Soltysiak</strong>, Chief Clerk</li>
+      </ul>
+    </div>
+    <div class="ftr-right">
+      <span class="ftr-credit">Produced by Data &amp; Mapping Services</span>
+      <span><a href="results.json" id="json-link">Raw data (JSON)</a> <span class="ftr-note">&middot; updates with this page &middot; unofficial</span></span>
+    </div>
+  </footer>
+</div>
+<script>
+// ── DATA SOURCES ─────────────────────────────────────────────────
+// Results:   ./data/Colorado Export by Portion.csv   (vendor export, on the share)
+// Ballots:   ./data/Ballot_Data.txt                  (Voter Services, on the share)
+// Map:       ./precincts.json                        (static boundaries, GE2026 web folder)
+// 'data' = IIS virtual directory -> \\gis-prd-file\GIS-FILESHARE\MapProjects\Voters\GE2026_Results
+
+// Ballot processing counts, maintained by Voter Services and dropped on the same
+// share (typically a few times on election night). Plain text, one metric per line:
+//     Absentee & Mail in Ballots Returned - 63,191
+//     Absentee & Mail in Ballots Counted - 62,583
+//     ...
+// Lines are matched on keywords, so wording may vary slightly. Unrecognised lines
+// are ignored. If the file is absent, the ballot-processing cards are hidden and
+// the rest of the page is unaffected.
+// Share-only on purpose: a copy left beside index.html would silently show stale numbers.
+const BALLOT_DATA_URLS=[
+  './data/Ballot_Data.txt',
+];
+
+// Results CSV: spaced name first, underscored as a fallback; the one that works is remembered.
+const CSV_URLS=[
+  './data/Colorado Export by Portion.csv',
+  './data/Colorado_Export_by_Portion.csv',
+  // No webroot fallbacks: if the share is unreachable the page keeps the last good
+  // data and turns the status dot red, rather than quietly serving an old local copy.
+];
+
+const GEOJSON_URL='./precincts.json';   // static precinct boundaries in the GE2026 folder (no ArcGIS query)
+const DEFAULT_CONTEST='Governor and Lieutenant Governor';
+const REFRESH_INTERVAL=5*60*1000; // 5 minutes
+// Row field indices (each CSV row becomes an array; rf = Reporting_flag, kept for reference)
+const F={p:0,muni:1,rv:2,to:3,ct:4,cn:5,pc:6,tb:7,tv:8,edv:9,miv:10,prv:11,edb:12,mib:13,prb:14,ov:15,uv:16,edov:17,eduv:18,miov:19,miuv:20,prov:21,pruv:22,rf:23,sp:24,so:25};
+const PS={rv:0,tb:1,edb:2,mib:3,prb:4,muni:5};
+
+let SPLIT_NAMES=new Set();   // split-portion names in the export (e.g. "Horsham 4-1 1st Congressional")
+let ALL=[], PCT_SUMMARY={}, FILTERED=[], geoMuniMap={};
+let sortCol='p', sortDir=1;
+let map=null, geojsonLayer=null, geojsonData=null, precinctWinners={}, labelLayer=null;
+let mapLoaded=false, showingMap=false, mapFitted=false, mapPrevSel='';
+let lastDataHash=null;
+let tableLimit=200;
+
+// ── DATA FETCHING ────────────────────────────────────────────────
+// ── CSV SOURCE ───────────────────────────────────────────────────
+let csvLastModified=null;
+
+// RFC-4180 parser: handles quoted fields, embedded commas/quotes, CRLF, BOM.
+function parseCSV(text){
+  if(text.charCodeAt(0)===0xFEFF) text=text.slice(1);
+  const rows=[]; let row=[], cur='', inQ=false;
+  for(let i=0;i<text.length;i++){
+    const c=text[i];
+    if(inQ){
+      if(c==='"'){ if(text[i+1]==='"'){cur+='"';i++;} else inQ=false; }
+      else cur+=c;
+    }else{
+      if(c==='"') inQ=true;
+      else if(c===','){ row.push(cur); cur=''; }
+      else if(c==='\n'){ row.push(cur); cur=''; rows.push(row); row=[]; }
+      else if(c!=='\r') cur+=c;
+    }
+  }
+  if(cur!==''||row.length){ row.push(cur); rows.push(row); }
+  return rows;
+}
+
+let ballotData=null;
+
+// Parses "Label - Number" lines from the Voter Services ballot-processing file.
+// Matching is keyword-based rather than exact-string so minor wording changes do
+// not break it. Any failure leaves ballotData null, which hides the band.
+function parseBallotData(text){
+  const out={};
+  const line=/^\s*(.+?)\s*[-\u2013]\s*([\d,]+)\s*$/;
+  text.split(/\r?\n/).forEach(raw=>{
+    const m=line.exec(raw);
+    if(!m) return;
+    const label=m[1].toLowerCase();
+    const val=int(m[2]);
+    // category
+    let cat=null;
+    if(/absentee|mail/.test(label))        cat='mail';
+    else if(/provisional/.test(label))     cat='prov';
+    else if(/military/.test(label))        cat='mil';
+    if(!cat) return;
+    // measure
+    let key=null;
+    if(/returned/.test(label))             key='returned';
+    else if(/counted/.test(label))         key='counted';
+    else if(/rejected/.test(label))        key='rejected';
+    else if(/pending/.test(label))         key='pending';
+    if(!key) return;
+    if(!out[cat]) out[cat]={};
+    out[cat][key]=val;
+  });
+  return Object.keys(out).length?out:null;
+}
+
+// Returns true when the band's numbers changed. Runs every cycle, independent of the CSV,
+// because Voter Services updates this file on its own schedule.
+async function loadBallotData(){
+  const prev=JSON.stringify(ballotData);
+  for(const u of BALLOT_DATA_URLS){
+    try{
+      const r=await fetch(encodeURI(u)+'?_='+Date.now(),{cache:'no-store'});
+      if(!r.ok) continue;
+      const parsed=parseBallotData(await r.text());
+      if(!parsed) continue;
+      ballotData=parsed;
+      return JSON.stringify(ballotData)!==prev;
+    }catch(e){ /* try next candidate */ }
+  }
+  ballotData=null;
+  console.log('[Ballot data] no file found - ballot processing band hidden.');
+  return prev!=='null';
+}
+
+let csvActiveUrl=null;   // remembered after first success so refreshes skip probing
+
+// Cheap change-check: a HEAD request returns headers only (a few hundred bytes)
+// instead of the full ~1.2 MB file. Results are exported on a 30-minute cadence,
+// so most refresh cycles find nothing new - this skips those downloads entirely
+// while keeping the short check interval (and therefore fast pickup of new files).
+// Returns true only when we are CONFIDENT nothing changed; any doubt -> full fetch.
+async function csvUnchanged(){
+  if(!csvActiveUrl || !csvLastModified) return false;   // nothing to compare against yet
+  try{
+    const resp=await fetch(encodeURI(csvActiveUrl)+'?_='+Date.now(),{method:'HEAD',cache:'no-store'});
+    if(!resp.ok) return false;
+    const lm=resp.headers.get('Last-Modified');
+    if(!lm) return false;                                // header missing -> can't tell, fetch it
+    const d=new Date(lm);
+    if(isNaN(d.getTime())) return false;
+    return d.getTime()===csvLastModified.getTime();
+  }catch(e){
+    return false;                                        // probe failed -> fall through to full fetch
+  }
+}
+async function fetchCsvRecords(onProgress){
+  let r=null, tried=[];
+  const candidates = csvActiveUrl ? [csvActiveUrl, ...CSV_URLS.filter(u=>u!==csvActiveUrl)] : CSV_URLS;
+  for(const u of candidates){
+    try{
+      const resp=await fetch(encodeURI(u)+'?_='+Date.now(),{cache:'no-store'});
+      if(resp.ok){ r=resp; csvActiveUrl=u; break; }
+      tried.push(u+' (HTTP '+resp.status+')');
+    }catch(e){ tried.push(u+' ('+e.message+')'); }
+  }
+  if(!r) throw new Error('CSV not found. Tried: '+tried.join(' ; ')+'. Check the filename in the GE2026 folder matches one of these, and that .csv is a registered MIME type in IIS.');
+  const lm=r.headers.get('Last-Modified');
+  csvLastModified = lm ? new Date(lm) : null;
+  const text=await r.text();
+  const rows=parseCSV(text);
+  if(rows.length<2) throw new Error('CSV contained no data rows');
+  const headers=rows[0].map(h=>(h||'').trim());
+  // A file caught mid-copy ends in a short row. Reject it; the next cycle picks up the full file.
+  while(rows.length>1){ const last=rows[rows.length-1]; if(last.length===1&&(last[0]||'').trim()==='') rows.pop(); else break; }
+  if(rows[rows.length-1].length<headers.length){
+    csvLastModified=null;   // force a full re-read next cycle
+    throw new Error('CSV appears incomplete (last row has '+rows[rows.length-1].length+' of '+headers.length+' columns) - file may still be copying.');
+  }
+  const feats=[];
+  for(let i=1;i<rows.length;i++){
+    const rw=rows[i];
+    if(rw.length===1 && (rw[0]||'').trim()==='') continue;   // blank line
+    const a={};
+    for(let j=0;j<headers.length;j++){
+      const h=headers[j]; if(!h) continue;
+      const v=rw[j]!==undefined?String(rw[j]).trim():'';
+      a[h]=v;
+      const us=h.replace(/[ \-]/g,'_');       // also expose underscore form
+      if(us!==h && a[us]===undefined) a[us]=v;
+    }
+    feats.push({attributes:a});
+  }
+  if(onProgress) onProgress(feats.length, feats.length);
+  return feats;
+}
+
+function buildMuniFromPrecinct(pct){
+  return pct.replace(/\s+\d[\d-]*$/,'').trim();
+}
+
+function processFeatures(features){
+  const rows=[];
+  SPLIT_NAMES=new Set();
+  features.forEach(f=>{
+    const a=f.attributes;
+    const p=a.Precinct_name||'';
+    const muni=geoMuniMap[p]||buildMuniFromPrecinct(p);
+    const rfRaw=getA(a,'Reporting_flag');
+    rows.push([
+      p, muni,
+      int(a.Reg_voters), round4(a.Turn_Out),
+      a.Contest_title||'', a.candidate_name||'', a.Party_Code||'',
+      int(a.total_ballots), int(a.total_votes),
+      int(getA(a,'Election Day_votes')), int(getA(a,'Mail-in_votes')), int(getA(a,'Provisional_votes')),
+      int(getA(a,'Election Day_ballots')), int(getA(a,'Mail-in_ballots')), int(getA(a,'Provisional_ballots')),
+      int(a.total_over_votes), int(a.total_under_votes),
+      int(getA(a,'Election Day_over_votes')), int(getA(a,'Election Day_under_votes')),
+      int(getA(a,'Mail-in_over_votes')), int(getA(a,'Mail-in_under_votes')),
+      int(getA(a,'Provisional_over_votes')), int(getA(a,'Provisional_under_votes')),
+      int(rfRaw),
+      String(getA(a,'Split_name')||'').trim(),
+      Math.max(1,int(getA(a,'Selectable_Options'))||1)   // seats: "Vote for N"
+    ]);
+    if(rows[rows.length-1][F.sp]) SPLIT_NAMES.add(rows[rows.length-1][F.sp]);
+  });
+
+  // Build PCT_SUMMARY with split-precinct handling.
+  // Each split portion (Split_name) has its own ballots, which are always added together.
+  // Registered voters: the 2022 export split them by portion (592 + 527); the 2026 zero
+  // file repeats the whole-precinct figure on each portion (393 / 393). So: add them
+  // when the portions differ, count once when every portion shows the same number.
+  const pctSplits={};
+  rows.forEach(r=>{
+    const key=r[F.p]+'|'+r[F.sp];
+    if(!pctSplits[key]) pctSplits[key]={p:r[F.p],muni:r[F.muni],rv:r[F.rv],tb:r[F.tb],edb:r[F.edb],mib:r[F.mib],prb:r[F.prb]};
+  });
+  const pctTotals={};
+  Object.values(pctSplits).forEach(s=>{
+    if(!pctTotals[s.p]) pctTotals[s.p]={rvs:[],tb:0,edb:0,mib:0,prb:0,muni:s.muni};
+    pctTotals[s.p].rvs.push(s.rv); pctTotals[s.p].tb+=s.tb;
+    pctTotals[s.p].edb+=s.edb; pctTotals[s.p].mib+=s.mib; pctTotals[s.p].prb+=s.prb;
+  });
+  Object.values(pctTotals).forEach(v=>{
+    v.rv = (v.rvs.length>1 && v.rvs.every(x=>x===v.rvs[0])) ? v.rvs[0] : v.rvs.reduce((a,b)=>a+b,0);
+  });
+  const pctSummary={};
+  Object.entries(pctTotals).forEach(([p,v])=>{
+    pctSummary[p]=[v.rv,v.tb,v.edb,v.mib,v.prb,v.muni];
+  });
+  return {rows, pctSummary};
+}
+
+function getA(a,name){
+  if(a[name]!==undefined&&a[name]!==null) return a[name];
+  const us=name.replace(/[ -]/g,'_');
+  if(a[us]!==undefined&&a[us]!==null) return a[us];
+  return a[name];
+}
+function int(v){if(typeof v==='string')v=v.replace(/,/g,'').trim();if(v===''||v===null||v===undefined||isNaN(v))return 0;return Math.round(Number(v));}
+function round4(v){if(typeof v==='string')v=v.replace(/[,%]/g,'').trim();if(v===''||v===null||v===undefined||isNaN(v))return 0;return Math.round(Number(v)*10000)/10000;}
+
+// "Updated" = the results file's Last-Modified time (when it was exported), not the browser clock.
+function showUpdatedTime(d){
+  const el=document.getElementById('last-updated-time');
+  if(!el) return;
+  el.textContent = d ? d.toLocaleString([], {month:'short', day:'numeric', hour:'2-digit', minute:'2-digit'}) : '\u2014';
+}
+async function loadPrecinctGeometry(){
+  try{
+    const r=await fetch(GEOJSON_URL);
+    if(!r.ok) throw new Error('HTTP '+r.status);
+    const d=await r.json();
+    if(!d||!Array.isArray(d.features)) throw new Error('No features in response');
+    geojsonData=d;
+    d.features.forEach(f=>{
+      const p=f.properties['Precinct_Name']||'';
+      const m=f.properties['Municipality']||'';
+      if(p&&m) geoMuniMap[p]=m;
+    });
+  }catch(e){ console.warn('Precinct geometry fetch failed:',e); }
+}
+
+async function loadData(isRefresh){
+  const fill=document.getElementById('ld-fill');
+  const msg=document.getElementById('ld-msg');
+  if(!isRefresh){
+    fill.style.width='10%';
+    msg.textContent='CONNECTING TO DATA...';
+  }
+
+  // Precinct geometry is fetched ONCE, in parallel with the results, and reused by the map.
+  const geoP = geojsonData ? Promise.resolve() : loadPrecinctGeometry();
+
+  if(!isRefresh){fill.style.width='20%'; msg.textContent='LOADING RESULTS DATA...';}
+
+  // On a refresh, ask for headers first. If the file's Last-Modified is unchanged,
+  // there is nothing new to show - skip the download entirely.
+  if(isRefresh && await csvUnchanged()){
+    console.log('[CSV] unchanged (Last-Modified '+csvLastModified.toLocaleString()+') - download skipped');
+    return false;
+  }
+
+  const onProg=(loaded,total)=>{
+    if(!isRefresh&&total>0){
+      const pct=20+Math.round((loaded/total)*70);
+      fill.style.width=pct+'%';
+      msg.textContent='LOADING... '+loaded.toLocaleString()+' of '+total.toLocaleString()+' records';
+    }
+  };
+  const [features] = await Promise.all([fetchCsvRecords(onProg), geoP]);
+
+  const {rows, pctSummary}=processFeatures(features);
+
+  // Guard against a partial/truncated file: on refresh, reject a payload that
+  // shrank dramatically and keep showing the last known-good data.
+  if(isRefresh && ALL.length>0 && rows.length < ALL.length*0.5){
+    console.warn('Refresh rejected: got '+rows.length+' rows vs '+ALL.length+' previously. Possible partial file \u2014 keeping existing data.');
+    return false;
+  }
+
+  // Check if data changed (simple hash by total ballots sum)
+  // Ballots + votes, so a vote-only correction is not mistaken for "no change".
+  const newHash=Object.values(pctSummary).reduce((s,v)=>s+v[1],0)+':'+rows.reduce((s,r)=>s+r[F.tv],0);
+  if(isRefresh && newHash===lastDataHash){
+    console.log('No data change detected');
+    return false; // no change
+  }
+  lastDataHash=newHash;
+
+  ALL=rows;
+  PCT_SUMMARY=pctSummary;
+
+  if(!isRefresh){fill.style.width='95%'; msg.textContent='BUILDING DASHBOARD...';}
+  return true; // data changed
+}
+
+// ── INIT ─────────────────────────────────────────────────────────
+async function init(){
+  try{
+    await Promise.all([
+      loadData(false),
+      loadBallotData().catch(e=>console.warn('Ballot data load failed:',e))
+    ]);
+    populateFilters();
+    setDefaultContest();
+    updateRaceLabels();
+    applyFilters();
+    reportUnmatchedPrecincts();
+    showUpdatedTime(csvLastModified);
+    applyFiltersFromURL();
+    document.getElementById('loading').style.display='none';
+    document.getElementById('app').style.display='block';
+    // Start 5-minute auto-refresh
+    setInterval(refreshData, REFRESH_INTERVAL);
+  }catch(e){
+    document.getElementById('ld-err').textContent='Error loading data: '+e.message;
+    document.getElementById('ld-msg').textContent='LOAD FAILED \u2014 RETRYING IN 30 SECONDS';
+    setTimeout(()=>location.reload(),30000);
+    setConnStatus(false);
+    console.error(e);
+  }
+}
+
+function setConnStatus(ok){
+  const dot=document.getElementById('conn-dot');
+  if(!dot) return;
+  dot.style.background=ok?'#2ecc71':'#E81B23';
+  dot.title=ok?'Live — connected':'Connection issue — showing last known data';
+}
+
+let refreshing=false;
+function flashRefreshBtn(msg){
+  const btn=document.getElementById('refresh-btn');
+  if(!btn) return;
+  btn.disabled=false;
+  btn.innerHTML=msg;
+  setTimeout(()=>{ const b=document.getElementById('refresh-btn'); if(b&&!refreshing) b.innerHTML='<span aria-hidden="true">&#8635;</span> Refresh'; }, 2200);
+}
+async function refreshData(){
+  if(refreshing) return;
+  refreshing=true;
+  const btn=document.getElementById('refresh-btn');
+  if(btn){ btn.disabled=true; btn.innerHTML='<span class="spin" aria-hidden="true">&#8635;</span> Checking\u2026'; }
+  try{
+    const [changed, ballotChanged]=await Promise.all([
+      loadData(true),
+      loadBallotData().catch(e=>{console.warn('Ballot data load failed:',e);return false;})
+    ]);
+    if(ballotChanged) renderBallotBand();
+    setConnStatus(true);
+    showUpdatedTime(csvLastModified);
+    if(changed){
+      filterRows();                                   // same filters, new data (table length kept)
+      render(document.getElementById('f-bt').value);  // includes KPIs, ballot band, charts, map
+      // Flash the update bar briefly
+      const bar=document.getElementById('update-bar');
+      bar.style.display='flex';
+      bar.innerHTML='<span aria-hidden="true">&#9654;</span> New results loaded';   // re-inserted so screen readers announce it
+      setTimeout(()=>bar.style.display='none', 3000);
+      refreshing=false;
+      flashRefreshBtn('<span aria-hidden="true">&#10003;</span> Updated');
+    } else {
+      refreshing=false;
+      flashRefreshBtn(ballotChanged?'<span aria-hidden="true">&#10003;</span> Updated':'<span aria-hidden="true">&#10003;</span> Up to date');
+    }
+  }catch(e){
+    setConnStatus(false);
+    console.warn('Refresh failed:',e);
+    refreshing=false;
+    flashRefreshBtn('&#9888; Failed');
+  }
+}
+
+// ── FILTER LOGIC ─────────────────────────────────────────────────
+function updateRaceLabels(){
+  const ct=document.getElementById('f-contest').value;
+  const bt=document.getElementById('f-bt').value;
+  document.getElementById('race-contest-label').textContent=ct||'\u2014';
+  document.getElementById('race-bt-label').textContent=bt==='ed'?'Election Day':bt==='mi'?'Mail-In':bt==='pr'?'Provisional':'Total Votes';
+}
+
+function populateFilters(){
+  const munis=[...new Set(ALL.map(r=>r[F.muni]))].filter(Boolean).sort(natCmp);
+  const pcts=[...new Set(ALL.map(r=>r[F.p]))].sort(natCmp);
+  const contests=[...new Set(ALL.map(r=>r[F.ct]))].sort(natCmp);
+  const cands=[...new Set(ALL.map(r=>r[F.cn]))].sort();
+  const fMuni=document.getElementById('f-muni');
+  const fPct=document.getElementById('f-pct');
+  const fContest=document.getElementById('f-contest');
+  const fCand=document.getElementById('f-cand');
+
+  fMuni.innerHTML='<option value="">All Municipalities</option>';
+  munis.forEach(m=>{const o=document.createElement('option');o.value=m;o.textContent=m;fMuni.appendChild(o);});
+  fPct.innerHTML='<option value="">All Precincts</option>';
+  pcts.forEach(p=>{const o=document.createElement('option');o.value=p;o.textContent=p;fPct.appendChild(o);});
+  fContest.innerHTML='';
+  contests.forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c;fContest.appendChild(o);});
+  fCand.innerHTML='<option value="">All Candidates</option>';
+  cands.forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c;fCand.appendChild(o);});
+
+  function refreshContests(){
+    const mv=document.getElementById('f-muni').value, pv=document.getElementById('f-pct').value;
+    const el=document.getElementById('f-contest'), prev=el.value;
+    const base=mv||pv?ALL.filter(r=>(!mv||r[F.muni]===mv)&&(!pv||r[F.p]===pv)):ALL;
+    const avail=[...new Set(base.map(r=>r[F.ct]))].sort(natCmp);
+    el.innerHTML='';
+    avail.forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c;el.appendChild(o);});
+    // Keep the current contest if this area has it; otherwise fall back to the default/first.
+    if(avail.includes(prev)) el.value=prev;
+    else el.value=avail.includes(DEFAULT_CONTEST)?DEFAULT_CONTEST:(avail[0]||'');
+    refreshCandidates();
+    updateRaceLabels();   // contest may have changed above
+  }
+  refreshCandidates=function(){
+    const cv=document.getElementById('f-contest').value, mv=document.getElementById('f-muni').value, pv=document.getElementById('f-pct').value;
+    const el=document.getElementById('f-cand'), prev=el.value;
+    const base=ALL.filter(r=>(!mv||r[F.muni]===mv)&&(!pv||r[F.p]===pv)&&(!cv||r[F.ct]===cv));
+    const avail=[...new Set(base.map(r=>r[F.cn]))].sort();
+    el.innerHTML='<option value="">All Candidates</option>';
+    avail.forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c;el.appendChild(o);});
+    if(avail.includes(prev)) el.value=prev; else el.value='';
+  };
+
+  fMuni.addEventListener('change',()=>{
+    const mv=fMuni.value;
+    fPct.innerHTML='<option value="">All Precincts</option>';
+    const fp=mv?[...new Set(ALL.filter(r=>r[F.muni]===mv).map(r=>r[F.p]))].sort(natCmp):pcts;
+    fp.forEach(p=>{const o=document.createElement('option');o.value=p;o.textContent=p;fPct.appendChild(o);});
+    refreshContests(); applyFilters();
+  });
+  fPct.addEventListener('change',()=>{refreshContests(); applyFilters();});
+  fCand.addEventListener('change',applyFilters);
+  document.getElementById('f-bt').addEventListener('change',()=>{updateRaceLabels(); applyFilters();});
+  fContest.addEventListener('change',()=>{refreshCandidates(); updateRaceLabels(); applyFilters();});
+}
+
+let refreshCandidates=function(){};
+// Select DEFAULT_CONTEST (if present in the data) and scope the candidate list to it.
+function setDefaultContest(){
+  const el=document.getElementById('f-contest');
+  if([...el.options].some(o=>o.value===DEFAULT_CONTEST)) el.value=DEFAULT_CONTEST;
+  else if(el.options.length) el.selectedIndex=0;   // default missing from this export: use the first contest
+  refreshCandidates();
+}
+
+// Rebuild FILTERED from the five filter dropdowns.
+function filterRows(){
+  const v=id=>document.getElementById(id).value;
+  const mv=v('f-muni'), pv=v('f-pct'), cv=v('f-contest'), cnv=v('f-cand');
+  FILTERED=ALL.filter(r=>(!mv||r[F.muni]===mv)&&(!pv||r[F.p]===pv)&&(!cv||r[F.ct]===cv)&&(!cnv||r[F.cn]===cnv));
+}
+function applyFilters(){
+  tableLimit=200;
+  filterRows();
+  render(document.getElementById('f-bt').value);
+  syncURL();
+}
+
+function toggleMoreFilters(){
+  const bar=document.getElementById('filters-bar');
+  const btn=document.getElementById('more-filters-btn');
+  const open=bar.classList.toggle('filters-expanded');
+  btn.setAttribute('aria-expanded', open?'true':'false');
+  btn.innerHTML = open ? 'Fewer Filters &#9652;' : 'More Filters &#9662;';
+}
+function resetFilters(){
+  ['f-bt','f-muni','f-pct','f-contest','f-cand'].forEach(id=>document.getElementById(id).value='');
+  updateRaceLabels();
+  const pcts=[...new Set(ALL.map(r=>r[F.p]))].sort(natCmp);
+  const fPct=document.getElementById('f-pct');
+  fPct.innerHTML='<option value="">All Precincts</option>';
+  pcts.forEach(p=>{const o=document.createElement('option');o.value=p;o.textContent=p;fPct.appendChild(o);});
+  const fContest=document.getElementById('f-contest');
+  fContest.innerHTML='';
+  [...new Set(ALL.map(r=>r[F.ct]))].sort(natCmp).forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c;fContest.appendChild(o);});
+  const fCand=document.getElementById('f-cand');
+  fCand.innerHTML='<option value="">All Candidates</option>';
+  [...new Set(ALL.map(r=>r[F.cn]))].sort().forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c;fCand.appendChild(o);});
+  // Return to the default contest (as on first load). Clearing the contest left the
+  // map with no race to color, so every precinct rendered gray.
+  setDefaultContest();
+  updateRaceLabels();
+  applyFilters();
+}
+
+// ── RENDER ───────────────────────────────────────────────────────
+function render(bt){
+  renderKPIs(bt); renderCharts(bt); renderTable();
+  renderRaceChart(document.getElementById('f-contest').value, bt);
+  renderClosestRaces();
+  drawMap();
+}
+
+function renderKPIs(bt){
+  // Scope: whole county, or the selected municipality / precinct.
+  const mvK=document.getElementById('f-muni').value, pvK=document.getElementById('f-pct').value;
+  const scopePcts=Object.keys(PCT_SUMMARY).filter(p=>pvK?p===pvK:mvK?PCT_SUMMARY[p][PS.muni]===mvK:true);
+  const totalPcts=scopePcts.length;
+  // Reported = finished Election Day count: precinct has Election Day VOTES posted.
+  // Votes (not ballots) are the authoritative signal - some exports pre-populate the
+  // ballots columns with placeholder/sequence values before any counting has happened.
+  const reportedSet = new Set(ALL.filter(r=>r[F.edv]>0).map(r=>r[F.p]));
+  const reportingPcts = scopePcts.filter(p=>reportedSet.has(p)).length;
+  if(reportedSet.size===0&&ALL.length>0&&!renderKPIs.warned){renderKPIs.warned=true;console.warn('[Precincts Reporting] No precinct has Election Day votes yet.');}
+  const pctReporting=totalPcts>0?(reportingPcts/totalPcts*100):0;
+  document.getElementById('k-pct').textContent=pctReporting.toFixed(1)+'%';
+  document.getElementById('k-pct-note').textContent = pvK
+    ? (reportingPcts? 'Reporting' : 'Not yet reporting')
+    : reportingPcts.toLocaleString()+' of '+totalPcts.toLocaleString()+(mvK?' '+mvK:'')+' precincts';
+
+  renderBallotBand();
+
+  {
+    // Count only the precinct PORTIONS that are in the current view. For a contest that
+    // covers just one half of a split precinct (e.g. Congress 1st = Horsham 4-1 1st Congressional
+    // only), the other half's ballots and voters are excluded - matching "Times Cast" on the
+    // vendor Election Summary Report.
+    const portions={};
+    FILTERED.forEach(r=>{ const k=r[F.p]+'|'+r[F.sp]; if(!portions[k]) portions[k]=r; });
+    const byPct={};
+    Object.values(portions).forEach(r=>{ (byPct[r[F.p]]=byPct[r[F.p]]||[]).push(r); });
+    let totalRv=0, bNum=0;
+    Object.values(byPct).forEach(rs=>{
+      const rvs=rs.map(r=>r[F.rv]);
+      totalRv += (rs.length>1 && rvs.every(x=>x===rvs[0])) ? rvs[0] : rvs.reduce((a,b)=>a+b,0);  // same split rule as PCT_SUMMARY
+      rs.forEach(r=>{ bNum += bt==='ed'?r[F.edb]:bt==='mi'?r[F.mib]:bt==='pr'?r[F.prb]:r[F.tb]; });
+    });
+    const avgTo=totalRv>0?bNum/totalRv:0;
+    document.getElementById('k-rv').textContent=totalRv.toLocaleString();
+    document.getElementById('k-to').textContent=(avgTo*100).toFixed(2)+'%';
+    document.getElementById('k-tb').textContent=bNum.toLocaleString();
+    document.getElementById('k-rv-note').textContent=pvK?'Selected precinct':mvK?'Selected municipality':'County-wide electorate';
+    document.getElementById('k-tb-note').textContent=bt==='ed'?'Election Day in-person ballots only':bt==='mi'?'Mail-in ballots only':bt==='pr'?'Provisional ballots only':'Includes in-person, mail-in and provisional ballots';
+  }
+}
+
+// Renders the Ballot Processing band from the Voter Services file. Only the
+// measures actually present in the file are shown, so a changed or partial file
+// degrades to fewer numbers rather than breaking.
+function renderBallotBand(){
+  const band=document.getElementById('bp-band');
+  if(!band) return;
+  if(!ballotData){ band.style.display='none'; return; }
+  const groups=[
+    {key:'mail', name:'Absentee &amp; Mail-In Ballot Processing'},
+    {key:'prov', name:'Provisional Ballot Processing'},
+    {key:'mil',  name:'Military Ballot Processing'}
+  ];
+  const order=[['returned','Returned'],['counted','Counted'],['pending','Pending Eval.'],['rejected','Rejected']];
+  let html='';
+  groups.forEach(g=>{
+    const d=ballotData[g.key];
+    if(!d) return;
+    let items='';
+    order.forEach(([k,lbl])=>{
+      if(typeof d[k]!=='number') return;
+      items+='<div class="bp-item"><div class="bp-k">'+lbl+'</div><div class="bp-v">'+d[k].toLocaleString()+'</div></div>';
+    });
+    // Derived "left to count". Rejected ballots are resolved, not waiting, so they
+    // must be subtracted too - otherwise a fully-processed category (returned =
+    // counted + rejected) would wrongly appear to still have ballots outstanding.
+    if(typeof d.returned==='number'&&typeof d.counted==='number'){
+      const rej=(typeof d.rejected==='number')?d.rejected:0;
+      const left=Math.max(d.returned-d.counted-rej,0);
+      items+='<div class="bp-item hl"><div class="bp-k">Left to Count</div><div class="bp-v">'+left.toLocaleString()+'</div></div>';
+    }
+    if(!items) return;
+    html+='<div class="bp-group"><div class="kpi-lbl bp-gname" role="heading" aria-level="3">'+g.name+'</div><div class="bp-rows">'+items+'</div></div>';
+  });
+  if(!html){ band.style.display='none'; return; }
+  document.getElementById('bp-groups').innerHTML=html;
+  band.style.display='';
+}
+
+function renderCharts(bt){
+  const mv=document.getElementById('f-muni').value;
+  const vtLabel=bt==='ed'?'Election Day':bt==='mi'?'Mail-In':bt==='pr'?'Provisional':'Total Votes';
+  const lbl=bt?(bt==='ed'?'Election Day':bt==='mi'?'Mail-In':'Provisional')+' turnout':'overall turnout';
+  document.getElementById('pct-vt-label').textContent=vtLabel;
+  document.getElementById('muni-vt-label').textContent=vtLabel;
+  let pArr=Object.entries(PCT_SUMMARY)
+    .filter(([p,s])=>(!mv||s[PS.muni]===mv))
+    .map(([p,s])=>{const b=bt==='ed'?s[PS.edb]:bt==='mi'?s[PS.mib]:bt==='pr'?s[PS.prb]:s[PS.tb];return[p,s[PS.rv]>0?b/s[PS.rv]:0];})
+    .sort((a,b)=>b[1]-a[1]).slice(0,15);
+  const mt=pArr[0]?.[1]||1;
+  document.getElementById('pct-sub').textContent='Top 15 by '+lbl;
+  document.getElementById('pct-chart').innerHTML=pArr.map(([p,to])=>{
+    const w=(to/mt*100).toFixed(1),ts=(to*100).toFixed(1)+'%',s=p.length>24?p.slice(0,24)+'...':p;
+    return'<div class="bar-row"><div class="bar-meta"><span class="bar-name" title="'+esc(p)+'">'+esc(s)+'</span><span class="bar-num">'+ts+'</span></div><div class="bar-track"><div class="bar-fill primary-bar" style="width:'+w+'%"><span class="bar-fill-txt" aria-hidden="true">'+ts+'</span></div></div></div>';
+  }).join('');
+  const ms={};
+  Object.values(PCT_SUMMARY).forEach(s=>{
+    const m=s[PS.muni]; if(!m) return;
+    if(!ms[m]) ms[m]={rv:0,tb:0,edb:0,mib:0,prb:0};
+    ms[m].rv+=s[PS.rv]; ms[m].tb+=s[PS.tb]; ms[m].edb+=s[PS.edb]; ms[m].mib+=s[PS.mib]; ms[m].prb+=s[PS.prb];
+  });
+  let mArr=Object.entries(ms).map(([m,v])=>{const b=bt==='ed'?v.edb:bt==='mi'?v.mib:bt==='pr'?v.prb:v.tb;return[m,v.rv>0?b/v.rv:0];}).sort((a,b)=>b[1]-a[1]).slice(0,15);
+  const mm=mArr[0]?.[1]||1;
+  document.getElementById('muni-sub').textContent='Top 15 by '+lbl;
+  document.getElementById('muni-chart').innerHTML=mArr.map(([m,to])=>{
+    const w=(to/mm*100).toFixed(1),ts=(to*100).toFixed(1)+'%',s=m.length>24?m.slice(0,24)+'...':m;
+    return'<div class="bar-row"><div class="bar-meta"><span class="bar-name" title="'+esc(m)+'">'+esc(s)+'</span><span class="bar-num">'+ts+'</span></div><div class="bar-track"><div class="bar-fill primary-bar" style="width:'+w+'%"><span class="bar-fill-txt" aria-hidden="true">'+ts+'</span></div></div></div>';
+  }).join('');
+}
+
+// Natural order: 'Abington 2-1' before 'Abington 10-1', '54th' before '151st'.
+function natCmp(a,b){return String(a).localeCompare(String(b),'en',{numeric:true,sensitivity:'base'});}
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+// Party shown as text, not only bar color (color-blind users, grayscale print).
+function partyTag(pc){
+  pc=(pc||'').trim().toUpperCase();
+  if(!pc||pc==='WRI') return '';
+  const cls=pc==='DEM'?'dem':pc==='REP'?'rep':'oth';
+  return ' <span class="party-tag '+cls+'">'+esc(pc)+'</span>';
+}
+
+// Seats in a contest ("Vote for N", from Selectable_Options). Defaults to 1.
+function contestSeats(ct){
+  for(const r of ALL){ if(r[F.ct]===ct) return r[F.so]||1; }
+  return 1;
+}
+
+function renderRaceChart(contestTitle,bt){
+  const el=document.getElementById('race-chart');
+  if(!contestTitle){
+    el.innerHTML='<div style="text-align:center;padding:32px;color:var(--muted);font-size:12px;">Select a Contest Above</div>';
+    document.getElementById('race-total-label').textContent='';
+    return;
+  }
+  const btF=bt==='ed'?F.edv:bt==='mi'?F.miv:bt==='pr'?F.prv:F.tv;
+  const btB=bt==='ed'?F.edb:bt==='mi'?F.mib:bt==='pr'?F.prb:F.tb;
+  const btOV=bt==='ed'?F.edov:bt==='mi'?F.miov:bt==='pr'?F.prov:F.ov;
+  const btUV=bt==='ed'?F.eduv:bt==='mi'?F.miuv:bt==='pr'?F.pruv:F.uv;
+  const byName={}, tP={}, vP={}; const isVT=(bt==='ed'||bt==='mi'||bt==='pr');
+  for(const r of FILTERED){
+    if(r[F.ct]!==contestTitle) continue;
+    if(!byName[r[F.cn]]) byName[r[F.cn]]={name:r[F.cn],party:r[F.pc],votes:0,total:0};
+    byName[r[F.cn]].votes+=r[btF];
+    byName[r[F.cn]].total+=r[F.tv];
+    const key=r[F.p]+'|'+r[F.sp];
+    if(!tP[key]) tP[key]={b:r[F.tb],ov:r[F.ov],uv:r[F.uv],v:0,n:r[F.so]};
+    tP[key].v+=r[F.tv];
+    if(!vP[key]) vP[key]={b:r[btB],ov:r[btOV],uv:r[btUV],v:0,n:r[F.so]};
+    vP[key].v+=r[btF];
+  }
+  // Write-ins are DERIVED (ballots minus listed votes, over- and under-votes), so the
+  // arithmetic is only valid across the contest's full candidate set. Skip it entirely
+  // when a single candidate is selected, and skip any precinct that has reported no
+  // activity for the contest - otherwise placeholder ballot values become phantom write-ins.
+  const candFilterOn = !!(document.getElementById('f-cand')||{}).value;
+  const seats=contestSeats(contestTitle);
+  let wiT=0,wiV=0;
+  if(!candFilterOn){
+    // Each ballot carries "Vote for N" possible votes, so available votes = ballots x N.
+    for(const key in tP){const d=tP[key];if(d.v+d.ov+d.uv<=0)continue;const diff=d.b*d.n-d.v-d.ov-d.uv;if(diff>0)wiT+=diff;}
+    for(const key in vP){const d=vP[key];if(d.v+d.ov+d.uv<=0)continue;const diff=d.b*d.n-d.v-d.ov-d.uv;if(diff>0)wiV+=diff;}
+  }
+  if(wiT>0) byName['WRITE-IN']={name:'WRITE-IN',party:'WRI',votes:wiV,total:wiT};
+  const sorted=Object.values(byName).sort((a,b)=>{if(a.party==='WRI') return 1;if(b.party==='WRI') return -1;return b.total-a.total;});
+  if(!sorted.length){el.innerHTML='<div style="text-align:center;padding:32px;color:var(--muted);">No results found.</div>';return;}
+  const sumTotal=sorted.reduce((s,c)=>s+c.total,0);
+  const sumVotes=sorted.reduce((s,c)=>s+c.votes,0);   // selected vote type only
+  const maxTotal=sorted[0].total||1;
+  const vtName=bt==='ed'?'Election Day':bt==='mi'?'Mail-In':bt==='pr'?'Provisional':'';
+  document.getElementById('race-total-label').textContent = isVT
+    ? (sumVotes.toLocaleString()+' '+vtName+' votes \u00b7 '+sumTotal.toLocaleString()+' total \u00b7 solid = '+vtName)
+    : (sumTotal.toLocaleString()+' votes');
+  if(seats>1) document.getElementById('race-total-label').textContent+=' \u00b7 Vote for '+seats;
+  // Leader and margin for the selected vote type (write-ins excluded from the lead).
+  let leadHtml='';
+  const ranked=sorted.filter(c=>c.party!=='WRI').map(c=>({name:c.name,party:c.party,v:isVT?c.votes:c.total})).sort((a,b)=>b.v-a.v);
+  const leadBase=isVT?sumVotes:sumTotal;
+  const scope=isVT?' in '+vtName+' votes':'';
+  if(seats===1 && ranked.length===1 && !candFilterOn && !/question|referendum/i.test(contestTitle)){
+    leadHtml='<div class="race-lead"><strong>'+esc(ranked[0].name)+'</strong> is unopposed</div>';
+  }
+  else if(seats>1 && !candFilterOn && ranked.length>0 && ranked.length<=seats){
+    leadHtml='<div class="race-lead">'+ranked.length+' candidate'+(ranked.length===1?'':'s')+' for '+seats+' seats \u2014 uncontested</div>';
+  }
+  else if(seats===1 && ranked.length>=2 && leadBase>0 && ranked[0].v>0){
+    const gap=ranked[0].v-ranked[1].v, pts=(gap/leadBase*100).toFixed(1);
+    leadHtml = gap===0
+      ? '<div class="race-lead">'+esc(ranked[0].name)+' and '+esc(ranked[1].name)+' are <strong>tied</strong>'+scope+'</div>'
+      : '<div class="race-lead"><strong>'+esc(ranked[0].name)+'</strong> leads by <strong>'+gap.toLocaleString()+'</strong> votes ('+pts+' pts)'+scope+'</div>';
+  }
+  else if(seats>1 && !candFilterOn && ranked.length>seats && leadBase>0 && ranked[0].v>0){
+    // Multi-seat: the race that matters is the last winning seat vs the first candidate out.
+    const inC=ranked[seats-1], outC=ranked[seats];
+    const gap=inC.v-outC.v, pts=(gap/leadBase*100).toFixed(1);
+    leadHtml = gap===0
+      ? '<div class="race-lead">Last seat ('+seats+' of '+seats+'): '+esc(inC.name)+' and '+esc(outC.name)+' are <strong>tied</strong>'+scope+'</div>'
+      : '<div class="race-lead">Last seat ('+seats+' of '+seats+'): <strong>'+esc(inC.name)+'</strong> leads '+esc(outC.name)+' by <strong>'+gap.toLocaleString()+'</strong> votes ('+pts+' pts)'+scope+'</div>';
+  }
+  el.innerHTML=leadHtml+sorted.map((item)=>{
+    const totalW=Math.max((item.total/maxTotal*100),0.5).toFixed(1);
+    const solidPct=item.total>0?Math.min(item.votes/item.total*100,100):0;
+    // Share of the SELECTED vote type (e.g. % of Election Day votes); overall share shown alongside.
+    const totalShare=sumTotal>0?((item.total/sumTotal)*100).toFixed(1)+'%':'0%';
+    const share=isVT?(sumVotes>0?((item.votes/sumVotes)*100).toFixed(1)+'%':'0%'):totalShare;
+    const shareHtml=isVT
+      ? share+' <span style="font-size:11px;font-weight:500;color:var(--muted);">of '+vtName+' \u00b7 '+totalShare+' overall</span>'
+      : share;
+    const bc=item.party==='DEM'?'dem':item.party==='REP'?'rep':'oth';
+    const votesText=isVT?(item.votes.toLocaleString()+' / '+item.total.toLocaleString()+' votes'):(item.total.toLocaleString()+' votes');
+    return'<div class="race-bar-row"><div class="race-bar-meta"><span class="race-bar-name">'+esc(item.name)+partyTag(item.party)+'</span><span class="race-bar-stats" style="display:flex;align-items:center;gap:12px;"><span class="race-bar-pct">'+shareHtml+'</span><span class="race-bar-votes">'+votesText+'</span></span></div><div class="race-bar-track"><div class="race-bar-total '+bc+'" style="width:'+totalW+'%"><div class="race-bar-fill '+bc+'" style="width:'+solidPct.toFixed(1)+'%"></div></div></div></div>';
+  }).join('')+(wiT>0?'<div class="race-note">Percentages include write-in votes.</div>':'');
+}
+
+function renderClosestRaces(){
+  const el=document.getElementById('closest-chart');
+  const bt=document.getElementById('f-bt').value;
+  const btF=bt==='ed'?F.edv:bt==='mi'?F.miv:bt==='pr'?F.prv:F.tv;
+  // Use county-wide ALL data (not FILTERED) so this is always county-wide context
+  const byContest={}, seatsBy={};
+  ALL.forEach(r=>{
+    const ct=r[F.ct];
+    if(!byContest[ct]) byContest[ct]={};
+    if(!(ct in seatsBy)) seatsBy[ct]=r[F.so];
+    if(!byContest[ct][r[F.cn]]) byContest[ct][r[F.cn]]={votes:0,party:r[F.pc]};
+    byContest[ct][r[F.cn]].votes+=r[btF];
+  });
+  const margins=[];
+  Object.entries(byContest).forEach(([ct,cands])=>{
+    const sorted=Object.entries(cands).sort((a,b)=>b[1].votes-a[1].votes);
+    const n=seatsBy[ct]||1;               // multi-seat: compare last winner (Nth) with first loser (N+1th)
+    if(sorted.length<=n) return;
+    const total=sorted.reduce((s,[,v])=>s+v.votes,0);
+    if(total===0) return;
+    const inC=sorted[n-1], outC=sorted[n];
+    const margin=inC[1].votes-outC[1].votes;
+    const marginPct=(margin/total*100);
+    margins.push({
+      contest:ct, seats:n, leader:inC[0], leaderVotes:inC[1].votes,
+      runnerUp:outC[0], runnerUpVotes:outC[1].votes,
+      margin, marginPct
+    });
+  });
+  margins.sort((a,b)=>a.marginPct-b.marginPct);
+  const top=margins.slice(0,5);
+  if(!top.length){el.innerHTML='<div style="padding:20px;text-align:center;color:var(--muted);font-size:12px;">No contests with reported results yet.</div>';return;}
+  el.innerHTML=top.map(m=>{
+    return '<div class="close-race-row" role="button" tabindex="0" data-contest="'+esc(m.contest)+'">'+
+      '<div><div class="close-race-contest">'+esc(m.contest)+'</div>'+
+      '<div class="close-race-detail">'+(m.seats>1?'Last seat: ':'')+esc(m.leader)+' ('+m.leaderVotes.toLocaleString()+') vs '+esc(m.runnerUp)+' ('+m.runnerUpVotes.toLocaleString()+')</div></div>'+
+      '<div class="close-race-margin">'+m.marginPct.toFixed(1)+'%<br><span style="font-size:10px;font-weight:600;color:var(--muted);">margin</span></div>'+
+    '</div>';
+  }).join('');
+}
+
+// Closest Races rows: click or Enter/Space opens that contest (one delegated listener).
+function initClosestRaceRows(){
+  const box=document.getElementById('closest-chart');
+  const go=e=>{ const row=e.target.closest('.close-race-row'); if(row) jumpToContest(row.dataset.contest); };
+  box.addEventListener('click',go);
+  box.addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); go(e); } });
+}
+function jumpToContest(contestTitle){
+  const fc=document.getElementById('f-contest');
+  if(![...fc.options].some(o=>o.value===contestTitle)){
+    // Contest isn't in the current municipality/precinct - widen to the whole county first.
+    const fm=document.getElementById('f-muni'); fm.value=''; fm.dispatchEvent(new Event('change'));
+  }
+  fc.value=contestTitle;
+  fc.dispatchEvent(new Event('change'));
+  document.getElementById('panel-title').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+// ── SHARE LINK ───────────────────────────────────────────────────
+function currentViewURL(){
+  const params=new URLSearchParams();
+  const v=id=>document.getElementById(id).value;
+  if(v('f-bt')) params.set('vt',v('f-bt'));
+  if(v('f-muni')) params.set('muni',v('f-muni'));
+  if(v('f-pct')) params.set('pct',v('f-pct'));
+  if(v('f-contest') && v('f-contest')!==DEFAULT_CONTEST) params.set('contest',v('f-contest'));
+  if(v('f-cand')) params.set('cand',v('f-cand'));
+  const q=params.toString();
+  return window.location.origin+window.location.pathname+(q?'?'+q:'');
+}
+function copyShareLink(){
+  const url=currentViewURL(), btn=document.getElementById('share-btn');
+  const done=ok=>{ btn.innerHTML=ok?'<span aria-hidden="true">&#10003;</span> Link Copied':'<span aria-hidden="true">&#9888;</span> Copy from address bar'; setTimeout(()=>btn.innerHTML='<span aria-hidden="true">&#128279;</span> Copy Link',2000); };
+  if(navigator.clipboard&&window.isSecureContext){ navigator.clipboard.writeText(url).then(()=>done(true)).catch(()=>done(fallbackCopy(url))); }
+  else done(fallbackCopy(url));
+}
+function fallbackCopy(text){
+  try{ const t=document.createElement('textarea'); t.value=text; t.setAttribute('readonly',''); t.style.position='fixed'; t.style.opacity='0';
+       document.body.appendChild(t); t.select(); const ok=document.execCommand('copy'); document.body.removeChild(t); return ok; }catch(e){ return false; }
+}
+
+// Keep the current view in the address bar, so a refresh, bookmark or shared link keeps the filters.
+let urlSyncReady=false;
+function syncURL(){
+  if(!urlSyncReady) return;
+  try{ const u=currentViewURL(); if(u!==window.location.href) history.replaceState(null,'',u); }catch(e){}
+}
+
+function applyFiltersFromURL(){
+  const params=new URLSearchParams(window.location.search);
+  const set=(id,val)=>{ const el=document.getElementById(id); if(val && el && [...el.options].some(o=>o.value===val)){ el.value=val; return true; } return false; };
+  const fire=id=>document.getElementById(id).dispatchEvent(new Event('change'));
+  let any=false;
+  if(set('f-bt',params.get('vt'))) any=true;
+  if(set('f-muni',params.get('muni'))){ fire('f-muni'); any=true; }       // rebuilds the precinct list
+  if(set('f-pct',params.get('pct'))){ fire('f-pct'); any=true; }          // rebuilds the contest list
+  if(set('f-contest',params.get('contest'))){ fire('f-contest'); any=true; } // rebuilds the candidate list
+  if(set('f-cand',params.get('cand'))){ any=true; }
+  if(any){ updateRaceLabels(); applyFilters(); }
+  urlSyncReady=true;
+}
+
+// ── EXPORT CSV ───────────────────────────────────────────────────
+function exportCSV(){
+  const headers=['Precinct','Contest','Candidate','Registered Voters','Turnout','Ballots Cast','Total Votes','Election Day Votes','Mail-In Votes','Provisional Votes'];
+  const rows=FILTERED.map(r=>[
+    r[F.sp]||r[F.p], r[F.ct], r[F.cn], r[F.rv], (r[F.to]*100).toFixed(1)+'%',
+    r[F.tb], r[F.tv], r[F.edv], r[F.miv], r[F.prv]
+  ]);
+  const csvContent=[headers, ...rows].map(row=>
+    row.map(cell=>{
+      const s=String(cell);
+      return s.includes(',')||s.includes('"')?'"'+s.replace(/"/g,'""')+'"':s;
+    }).join(',')
+  ).join('\n');
+  const blob=new Blob([csvContent],{type:'text/csv;charset=utf-8;'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;
+  const d=new Date(), z=n=>String(n).padStart(2,'0');   // local time, not UTC
+  a.download='montco_election_results_'+d.getFullYear()+'-'+z(d.getMonth()+1)+'-'+z(d.getDate())+'_'+z(d.getHours())+z(d.getMinutes())+'.csv';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+
+function enhanceTableHeaders(){
+  document.querySelectorAll('.tbl-wrap thead th[onclick]').forEach(th=>{
+    th.setAttribute('scope','col');
+    th.setAttribute('tabindex','0');
+    th.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); th.click(); } });
+  });
+}
+enhanceTableHeaders();
+function sortBy(col){
+  sortDir=(sortCol===col)?sortDir*-1:-1; sortCol=col;
+  document.querySelectorAll('th').forEach(th=>{th.classList.remove('sorted');th.removeAttribute('aria-sort');});
+  document.querySelectorAll('[id^="sa-"]').forEach(el=>el.textContent='');
+  const keys=['p','ct','cn','rv','to','tb','tv','edv','miv','prv'];
+  const idx=keys.indexOf(col);
+  if(idx>=0){const ath=document.querySelectorAll('th')[idx];ath.classList.add('sorted');ath.setAttribute('aria-sort',sortDir===-1?'descending':'ascending');}
+  const sa=document.getElementById('sa-'+col);
+  if(sa) sa.textContent=sortDir===-1?'▼':'▲';
+  renderTable();
+}
+
+function renderTable(){
+  const fi=F[sortCol]!=null?F[sortCol]:F.p;
+  const sorted=[...FILTERED].sort((a,b)=>{const av=a[fi],bv=b[fi];return typeof av==='string'?sortDir*natCmp(av,bv):sortDir*(av-bv);});
+  const disp=sorted.slice(0,tableLimit);
+  document.getElementById('tbl-sub').textContent='Showing '+disp.length.toLocaleString()+' of '+FILTERED.length.toLocaleString()+' rows';
+  const more=document.getElementById('tbl-more');
+  if(more) more.innerHTML = FILTERED.length>disp.length ? '<button class="load-more-btn" onclick="loadMoreRows()">Load '+Math.min(200,FILTERED.length-disp.length).toLocaleString()+' more <span aria-hidden="true">&#9660;</span></button>' : '';
+  document.getElementById('tbl-body').innerHTML=disp.map(r=>{
+    const ct=(r[F.ct]&&r[F.ct].length>35)?r[F.ct].slice(0,35)+'...':r[F.ct];
+    return'<tr><td>'+esc(r[F.sp]||r[F.p]||'\u2014')+'</td><td title="'+esc(r[F.ct])+'">'+esc(ct)+'</td><td>'+(esc(r[F.cn])||'&#8212;')+'</td><td>'+r[F.rv].toLocaleString()+'</td><td>'+(r[F.to]*100).toFixed(1)+'%</td><td>'+r[F.tb].toLocaleString()+'</td><td>'+r[F.tv].toLocaleString()+'</td><td>'+r[F.edv].toLocaleString()+'</td><td>'+r[F.miv].toLocaleString()+'</td><td>'+r[F.prv].toLocaleString()+'</td></tr>';
+  }).join('');
+}
+
+// ── MAP ───────────────────────────────────────────────────────────
+function loadMoreRows(){ tableLimit+=200; renderTable(); }
+function toggleView(){
+  showingMap=!showingMap;
+  const rv=document.getElementById('race-view'), mv=document.getElementById('map-view');
+  const btn=document.getElementById('toggle-btn'), title=document.getElementById('panel-title');
+  if(showingMap){
+    rv.style.display='none'; mv.style.display='block';
+    btn.innerHTML='<span aria-hidden="true">◄</span> Show Chart'; title.textContent='Precinct Map';
+    if(!mapLoaded){mapLoaded=true;loadMap();}
+    else{if(map) setTimeout(()=>{map.invalidateSize();drawMap();},50);}
+  } else {
+    rv.style.display='block'; mv.style.display='none';
+    btn.innerHTML='<span aria-hidden="true">►</span> Show Map'; title.textContent='Race Results';
+  }
+}
+
+function loadMap(){
+  const s=document.createElement('script');
+  s.src='../lib/leaflet/leaflet.js';
+  s.onload=()=>{
+    map=L.map('map').setView([40.18,-75.37],11);
+    // Esri Light Gray Canvas basemap (free, no API key required).
+    // NOTE: Esri tile URLs use {z}/{y}/{x} order - not the {z}/{x}/{y} used by most providers.
+    // Base tiles are published to zoom 16; maxNativeZoom lets Leaflet upscale beyond that
+    // so the existing zoom range still works at precinct level.
+    const esriAttr='Tiles &copy; Esri &mdash; Esri, HERE, Garmin, &copy; OpenStreetMap contributors';
+    L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}',
+      {attribution:esriAttr,maxNativeZoom:16,maxZoom:19}).addTo(map);
+    setTimeout(()=>map.invalidateSize(),60);
+
+    // Home button — resets view to full county and clears precinct/municipality filters' map effect
+    const homeControl=L.control({position:'topleft'});
+    homeControl.onAdd=function(){
+      const btn=L.DomUtil.create('button');
+      btn.innerHTML='&#8962;';
+      btn.title='Reset map to full county view';
+      btn.style.cssText='width:30px;height:30px;background:#fff;border:2px solid rgba(0,0,0,.2);border-radius:4px;cursor:pointer;font-size:16px;line-height:1;color:#03425c;display:flex;align-items:center;justify-content:center;';
+      L.DomEvent.disableClickPropagation(btn);
+      btn.onclick=function(){
+        const fm=document.getElementById('f-muni'), fp=document.getElementById('f-pct');
+        if(fm.value||fp.value){ fm.value=''; fm.dispatchEvent(new Event('change')); }  // clears precinct too; drawMap refits
+        else if(geojsonLayer) map.fitBounds(geojsonLayer.getBounds().pad(0.02));
+        else map.setView([40.18,-75.37],11);
+      };
+      return btn;
+    };
+    homeControl.addTo(map);
+    (geojsonData?Promise.resolve():loadPrecinctGeometry())
+      .then(()=>{
+        if(!geojsonData) throw new Error('precinct geometry unavailable');
+        drawMap();
+        setTimeout(()=>{map.invalidateSize();if(geojsonLayer) map.fitBounds(geojsonLayer.getBounds().pad(0.02));},100);
+      })
+      .catch(e=>{console.error('GeoJSON error:',e);var el=document.getElementById('map');if(el){var d=document.createElement('div');d.style.cssText='position:absolute;bottom:10px;left:10px;z-index:1000;background:rgba(232,27,35,.92);color:#fff;font:600 11px Montserrat,sans-serif;padding:6px 10px;border-radius:4px;max-width:80%;';d.textContent='Precinct boundaries unavailable from the GIS source \u2014 base map shown.';el.appendChild(d);}});
+  };
+  s.onerror=()=>{console.error('Could not load Leaflet');var el=document.getElementById('map');if(el)el.innerHTML='<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#03425c;font:600 13px Montserrat,sans-serif;text-align:center;padding:20px;">Map library could not be loaded.<br>Check the network connection and try again.</div>';};
+  document.head.appendChild(s);
+}
+
+// Map features for split precincts carry a suffix the results export does not
+// (e.g. "Horsham 4-1 1st Congressional" vs "Horsham 4-1"). Fall back to the base name.
+const SPLIT_SUFFIX=/\s+\d+(st|nd|rd|th)\s+(Congressional|State House|State Senate|Senatorial|Legislative)\b.*$/i;
+function getPctName(props){
+  const raw=props['Precinct_Name']||props['Precinct_name']||props['NAME']||'';
+  if(PCT_SUMMARY[raw]) return raw;
+  const base=raw.replace(SPLIT_SUFFIX,'').trim();
+  return PCT_SUMMARY[base]?base:raw;
+}
+function pctBelongsToMuni(pName,mv){const s=PCT_SUMMARY[pName];return s?s[PS.muni]===mv:false;}
+function reportUnmatchedPrecincts(){
+  if(!geojsonData) return;
+  const geo=new Set(geojsonData.features.map(f=>getPctName(f.properties)));
+  const mapOnly=[...geo].filter(p=>!PCT_SUMMARY[p]);
+  const dataOnly=Object.keys(PCT_SUMMARY).filter(p=>!geo.has(p));
+  if(mapOnly.length||dataOnly.length) console.warn('[Map] precinct names not matched - map only:',mapOnly,'results only:',dataOnly);
+}
+
+let splitWinners={}, splitsInContest=new Set();
+function buildWinners(ct,bt){
+  precinctWinners={}; splitWinners={}; splitsInContest=new Set();
+  if(!ct) return;
+  const btF=bt==='ed'?F.edv:bt==='mi'?F.miv:bt==='pr'?F.prv:F.tv;
+  const pctCand={}, splitCand={};
+  const add=(bag,k,r)=>{ if(!bag[k]) bag[k]={}; if(!bag[k][r[F.cn]]) bag[k][r[F.cn]]={votes:0,party:r[F.pc]}; bag[k][r[F.cn]].votes+=r[btF]; };
+  for(const r of ALL){
+    if(r[F.ct]!==ct) continue;
+    add(pctCand,r[F.p],r);
+    if(r[F.sp]){ add(splitCand,r[F.sp],r); splitsInContest.add(r[F.sp]); }
+  }
+  // Each half of a split precinct is colored with its own portion's votes.
+  Object.entries(splitCand).forEach(([sp,cands])=>{
+    const sorted=Object.entries(cands).sort((a,b)=>b[1].votes-a[1].votes);
+    const totalC=sorted.reduce((a,e)=>a+e[1].votes,0);
+    if(totalC<=0) return;
+    const runnerUp=sorted[1]?sorted[1][1].votes:0;
+    splitWinners[sp]={winner:sorted[0][0],party:sorted[0][1].party,votes:sorted[0][1].votes,margin:(sorted[0][1].votes-runnerUp)/totalC};
+  });
+  Object.entries(pctCand).forEach(([p,cands])=>{
+    const sorted=Object.entries(cands).sort((a,b)=>b[1].votes-a[1].votes);
+    const [wName,wData]=sorted[0];
+    const runnerUp=sorted[1]?sorted[1][1].votes:0;
+    const totalC=sorted.reduce((a,e)=>a+e[1].votes,0);
+    if(totalC<=0) return;   // no votes for this vote type yet -> leave as No Data (gray)
+    const margin=totalC>0?(wData.votes-runnerUp)/totalC:0;
+    const ps=PCT_SUMMARY[p];
+    const rv=ps?ps[PS.rv]:0;
+    const tb=ps?(bt==='ed'?ps[PS.edb]:bt==='mi'?ps[PS.mib]:bt==='pr'?ps[PS.prb]:ps[PS.tb]):0;
+    precinctWinners[p]={winner:wName,party:wData.party,votes:wData.votes,turnout:rv>0?tb/rv:0,margin:margin};
+  });
+}
+
+// Winner for one map shape. Split halves use their own portion; a half that is not
+// part of the selected contest (e.g. the 4th District half on a 1st District race)
+// returns {notInContest:true} so it renders gray instead of borrowing the other half's result.
+function featureWinner(props){
+  const raw=props['Precinct_Name']||props['Precinct_name']||props['NAME']||'';
+  if(SPLIT_NAMES.has(raw)){
+    if(!splitsInContest.has(raw)) return {notInContest:true};
+    const sw=splitWinners[raw]; if(!sw) return null;
+    const pw=precinctWinners[getPctName(props)];
+    return Object.assign({},sw,{turnout:pw?pw.turnout:0});
+  }
+  return precinctWinners[getPctName(props)]||null;
+}
+
+function drawMap(){
+  if(!geojsonData||!map||typeof L==='undefined'||!showingMap) return;
+  const ct=document.getElementById('f-contest').value;
+  const bt=document.getElementById('f-bt').value;
+  const mv=document.getElementById('f-muni').value;
+  const pv=document.getElementById('f-pct').value;
+  buildWinners(ct,bt);
+  if(geojsonLayer){geojsonLayer.remove();geojsonLayer=null;}
+  if(labelLayer){labelLayer.remove();labelLayer=null;}
+  labelLayer=L.layerGroup().addTo(map);
+  geojsonLayer=L.geoJSON(geojsonData,{
+    style(feature){
+      const pName=getPctName(feature.properties);
+      const fw=featureWinner(feature.properties), w=(fw&&!fw.notInContest)?fw:null;
+      const highlighted=pv?pName===pv:mv?pctBelongsToMuni(pName,mv):true;
+      const color=w?(w.party==='DEM'?'#083A90':w.party==='REP'?'#E81B23':'#888'):'#cccccc';
+      const m=w?(w.margin||0):0;
+      const op=!w?(highlighted?0.35:0.1):(highlighted?(0.3+Math.min(m,0.5)/0.5*0.6):0.12);
+      return{fillColor:color,fillOpacity:op,color:highlighted?'#03425c':'#aaa',weight:highlighted?1.5:0.5};
+    },
+    onEachFeature(feature,layer){
+      const pName=getPctName(feature.properties);
+      const fw=featureWinner(feature.properties), w=(fw&&!fw.notInContest)?fw:null;
+      const rawName=feature.properties['Precinct_Name']||pName;
+      const highlighted=pv?pName===pv:mv?pctBelongsToMuni(pName,mv):true;
+      if(highlighted){
+        const vtLabel=bt==='ed'?'Election Day':bt==='mi'?'Mail-In':bt==='pr'?'Provisional':'Total';
+        const tip=(fw&&fw.notInContest)?'This part of the precinct is not in this contest':w?'<b>'+esc(w.winner)+'</b>'+(w.party?' ('+esc(w.party)+')':'')+'<br>'+w.votes.toLocaleString()+' '+vtLabel+' votes &middot; '+(w.turnout*100).toFixed(1)+'% turnout<br>Margin: '+(w.margin*100).toFixed(1)+'%':'No '+vtLabel+' votes reported yet';
+        layer.bindTooltip('<div style="min-width:150px"><b style="font-size:12px">'+esc(rawName)+'</b><br><span style="color:#03425c;font-size:10px;font-weight:600;">'+esc(ct||'No contest selected')+'</span><br>'+tip+'</div>',{sticky:true});
+      }
+      layer.on('click',()=>{
+        const rows=ALL.filter(r=>r[F.p]===pName); if(!rows.length) return;
+        const muni=rows[0][F.muni];
+        const fMuni=document.getElementById('f-muni'), fPct=document.getElementById('f-pct');
+        if(fMuni.value!==muni){
+          fMuni.value=muni;
+          const fp=[...new Set(ALL.filter(r=>r[F.muni]===muni).map(r=>r[F.p]))].sort();
+          fPct.innerHTML='<option value="">All Precincts</option>';
+          fp.forEach(p=>{const o=document.createElement('option');o.value=p;o.textContent=p;fPct.appendChild(o);});
+        }
+        fPct.value=pName;
+        fPct.dispatchEvent(new Event('change'));
+      });
+    }
+  }).addTo(map);
+  if(mv||pv){
+    const matched=[];
+    geojsonLayer.eachLayer(l=>{
+      const pName=getPctName(l.feature.properties);
+      if(pv?pName===pv:pctBelongsToMuni(pName,mv)) matched.push(l);
+    });
+    if(matched.length){
+      map.fitBounds(L.featureGroup(matched).getBounds().pad(0.2));
+      // Labels
+      matched.forEach(l=>{
+        const pName=getPctName(l.feature.properties);
+        const shortName=pName.replace(/^[^0-9]+ /,'');
+        const label=L.divIcon({className:'',html:'<div style="font-family:Montserrat,sans-serif;font-size:10px;font-weight:700;color:#03425c;text-shadow:1px 1px 0 #fff,-1px -1px 0 #fff,1px -1px 0 #fff,-1px 1px 0 #fff;pointer-events:none;white-space:nowrap;">'+esc(shortName)+'</div>',iconAnchor:[0,0]});
+        L.marker(l.getBounds().getCenter(),{icon:label,interactive:false}).addTo(labelLayer);
+      });
+    }
+  } else if(geojsonLayer && (!mapFitted || mapPrevSel!=='')){
+    map.fitBounds(geojsonLayer.getBounds().pad(0.02));
+  }
+  mapFitted=true; mapPrevSel=(pv?('p:'+pv):(mv?('m:'+mv):''));
+}
+
+initClosestRaceRows();
+if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
+</script>
+</body>
+</html>

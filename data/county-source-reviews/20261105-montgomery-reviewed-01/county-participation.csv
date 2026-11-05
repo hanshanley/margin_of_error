@@ -1,0 +1,2 @@
+year,state_code,county_fips,county,ballots_cast,election_day_ballots,mail_in_ballots,provisional_ballots,registered_voters,native_printed_turnout_pct,result_status,reporting_basis,source_pdf_update_literal,source_pdf_timezone,source_json_exported_utc,source_json_generated_utc,final_certified_turnout
+2026,PA,42091,Montgomery,392630,285083,107547,0,628331,62.49,UNOFFICIAL RESULTS,Election Day in-person only,11/4/2026 2:07:10 PM,not independently established,2026-11-04T19:20:00Z,2026-11-04T19:21:36Z,False

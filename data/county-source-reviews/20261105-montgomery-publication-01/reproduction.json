@@ -1,0 +1,11 @@
+{
+  "status": "pass",
+  "all_package_files_byte_identical": true,
+  "package_file_count": 20,
+  "archive_byte_identical": true,
+  "archive": {
+    "bytes": 587034,
+    "sha256": "f40f5454fc6332e5828770f7d51eb313186d58f7ceb5c0dd2851de7eb24f32d3"
+  },
+  "outside_repository": true
+}
