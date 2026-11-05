@@ -683,8 +683,7 @@ Data/parser/tests commit `683cd3f50e38b7555ff656df5c39eb59b1c061f6` is
 pushed, authored and committed as Hans. Immutable release
 `voter-precinct-alaska-20261105` targets that exact commit. The entire
 uploaded ZIP was independently redownloaded: tag target, length, SHA-256,
-CRCs and every archived byte match. Website registration is now being
-verified; do not claim this download linked live yet.
+CRCs and every archived byte match. The exact live publication proof follows.
 
 Registration passes seven participation regression tests, Astro check
 (zero errors/warnings, five existing hints), the production build and four
@@ -694,8 +693,18 @@ checks pass on desktop/mobile with and without JavaScript: all **37**
 complete-download links, full AK ZIP length/hash, actual 1,632-cell ledger,
 honest AK whole-state red/blue fallback without fabricated precincts,
 latest 2026 default, zoom and failed-registry-fetch fallback. Idaho's final
-partial-live and SD count-only metadata remain correct. Exact live
-deployment verification is the remaining publication gate.
+partial-live and SD count-only metadata remain correct.
+
+The complete count download is now **live-verified** at exact registration
+commit `815a7a17a6921cb8e677ec6ad2a34c71f035c203`, successful Pages run
+**41963874076**. Production registry, all 1,632 ledger rows and the unchanged
+renderer match that commit byte-for-byte. The focused live checks pass
+desktop/mobile with and without JavaScript, all **37** complete-download
+links, the entire AK archive's exact length/hash, honest whole-state
+red/blue fallback without invented precincts, latest 2026 default, zoom and
+failed-registry-fetch fallback. This completes the count publication, not
+Alaska's precinct map or any precinct participation rate. Proof: session
+`files/ak-2026-count-live-validation/validation.json`.
 
 The **402 unique native shape IDs** exactly match the geographic result
 set, but this alone is not a validated map. The original map format has
@@ -716,6 +725,94 @@ before accepting any area-preserving extraction. The zero overlaps found
 among the 88 passing units are **not a statewide overlap audit** because
 the other 314 references were excluded. Do not publish that subset before
 checking overlaps against every full reference footprint.
+
+The alternative all-feature polygonal-footprint diagnostic now includes
+**all 402 units**. It finds **343** invalid-part repair records, **328**
+GeometryCollection results and **117 cross-unit overlap pairs** above the
+same `1e-10`-square-degree tolerance. **130 repairs across 127 units** change
+area by more than that tolerance; zero-area line removal cannot justify
+those substantive changes. One native outer path (`37-754`, part 2) has
+only two distinct vertices. There is also an outside-shell inner path in
+`08-085` and overlapping parts within `08-045`. Keep the simplified source
+withheld rather than blindly accepting `make_valid` polygonal extraction.
+The complete diagnostic is retained in the source cache as
+`complete-polygonal-footprint-diagnostic.json`.
+
+## Alaska complete full-precision locator reference
+
+The actual official polling page,
+`https://www.elections.alaska.gov/election-polls/`, advertises the public
+locator app **579890d66c7e40ae9f7cc227d76669b1**. Followed its original app
+configuration to webmap **6fac55e6f6914c0da0f90e7e444b3626**, then the
+actually advertised precinct layer:
+`https://services3.arcgis.com/AhVzMlCdMxpkPzPE/arcgis/rest/services/AK_Election_Geography/FeatureServer/7`.
+App, webmap and service item **02dec5e7ae604bff951a95bc8a08f9e8** are public
+and owned by **DOEALASKA**. Complete original item/service/layer/config
+metadata, including source license information, are retained. The official
+polling page explicitly says it was updated November 3, 2026 at 2:56pm,
+but that establishes current use, not the boundary vintage.
+
+Acquired **all 402 features** in three complete originals: native projected
+Esri JSON (**28,994,894 bytes**), geographic Esri JSON (**35,529,088 bytes**)
+and GeoJSON (**35,547,113 bytes**). All match the independent server count
+and exact attribute/OBJECTID sets, without transfer truncation. All 402
+literal precinct-number codes match the 2026 native geographic result set;
+House district fields match their source precinct-code prefixes, not an
+independently inferred spatial crosswalk. There are **nine label
+differences**, retained individually rather than silently resolved as aliases.
+
+Independent inverse-Web-Mercator calculations check **all 961,583
+vertices**, with maximum coordinate error below `1e-9` degrees. All 402
+native-ring footprints are valid after **two individually recorded
+area-preserving repairs**; none has an antimeridian path jump. The complete
+all-reference audit finds **20 cross-precinct overlap pairs** above the
+unchanged tolerance. Three service GeoJSON geometries are invalid; do not
+substitute their ring grouping for the native Esri roles.
+
+Every feature's creation timestamp is from 2022; sample-ballot URL fields
+are null. Neither that timestamp, a recent layer edit, exact matching IDs,
+nor the current locator advertisement independently proves the exact 2026
+boundary vintage. This is a more precise **acquired reference**, not an
+accepted replacement for the explicitly dated election-native shapes.
+No Alaska precinct map or rate is published from it.
+
+The reproducible immutable reference review is
+`data/precinct-boundary-reviews/20261105/AK/`, built with
+`scripts/review-alaska-precinct-boundaries.py`; **162 collector tests pass**,
+including 16 new reference-scope, projection, identity, truncation,
+label-conflict, overlap and invalid-GeoJSON cases. It includes all 11
+complete GIS/provenance JSON originals and a byte-identical copy of the
+complete six-original count review, not only metadata. Cached polling-page
+HTML is research-only and is not redistributed.
+
+Complete archive: `complete-alaska-2026-boundary-reference-review.zip`,
+**34,269,738 bytes**, SHA-256
+`f8d07fbd8d4e7a463f1b21f10434fdae308588fa22505b5ea81f6b8821264811`.
+Independent checks pass for every original receipt/uncompressed byte,
+every output checksum, full ZIP members/CRCs/bytes, the previous independent
+402-feature diagnostic, unchanged count-review files and byte-identical
+review **and ZIP** reproduction using only distributed inputs.
+Proof: session `files/ak-2026-boundary-independent-validation.json`.
+The complete archive is now published in immutable release
+`voter-precinct-alaska-reference-20261105`, targeting exact data/parser/tests
+commit `a1ee6ee8c17bc1e9cb462c9954a030604f306ea6`, authored and committed as
+Hans. An independent complete redownload verifies the exact remote tag,
+asset length/hash, all **25 members**, CRCs and every member byte. Proof:
+session `files/ak-2026-boundary-release-verification.json`. The separate
+reference download does not change the live count-only registry, ledger,
+renderer or their already verified publication status.
+
+Next: seek explicit official 2026 boundary confirmation and audit the
+reference against the actual 2026 native shape footprints. Resolve the
+nine source-label differences without inferred aliases and handle all 20
+overlaps conservatively against the complete reference, not only passing
+units. If using the election-native simplified geometry instead, preserve
+all remnants and withhold area-changing repairs; audit against all 402
+footprints. Retain all 121 nongeographic reporting units without allocation.
+Then build/test/reproduce a separate immutable mapped supplement before
+changing the registry or coverage ledger. Do not overwrite either completed
+review or repeat these original downloads. Continue other 2026 states/DC
+and the acquired 2022 batch while independent publication steps run.
 
 ## Resume procedure for every work session or scheduled prompt
 
