@@ -236,6 +236,40 @@ production browser proof, final verification and checksums. Historical secret
 alerts #1/#2 remain open with unknown validity; no owner rotation or authorized
 history cleanup is claimed.
 
+Lancaster's government-hosted application now supplies complete native election,
+all-contest and turnout JSON plus all five explicitly linked PDFs (559 pages).
+The new JSON/PDF reviewer reconciles all 43 ballot options in 14 contests,
+129 option/method observations, 41 contest/literal-party totals and 241 native
+unit participation records. All 13 explicit write-in zeroes retain blank native
+parties; the two referendum options never enter candidate-party totals.
+County ballots are 216,221, registrations 366,763 and printed turnout 58.95%;
+House candidate votes are 214,875 (DEM 100,607, REP 114,268, blank-party
+write-ins 0). PDF-only 947 undervotes and 36 overvotes leave 363 House ballots
+unclassified; missing API accounting remains null rather than overwritten.
+Native zero method-ballot fields conflict with positive method selections and
+are flagged, not treated as actual zero ballots. Provisional remains Not
+Reported; the source reports 0 fully/241 partially reported units. Five native
+party-statistic series print zero ballots/registrations and blank rates; retain
+all 15 fields without approving party-specific participation. Empty separate
+registration/statistics endpoints do not erase the actual registrations in
+turnout records. Native ballotItemCount metadata is 1 despite 14 acquired
+contests; preserve it without using it as the contest inventory. State Senate
+coverage is only 132 native units, not an asserted countywide partition.
+All 12 analytical originals pass service/telemetry screening, with zero text
+substitutions and original-hash receipts; the application bundle is not
+redistributed. All 559 decoded PDF pages also pass screening. The complete
+eight-table package is byte-identically reproducible offline and is under
+`data/county-source-reviews/20261105-lancaster-reviewed-01/`; independent proof
+is under `data/county-source-reviews/20261105-lancaster-publication-01/`.
+Its ZIP is 763,713 bytes with SHA-256
+`a9f2da2a21ba6d7ec9ae573872e3152c135c068217ab1a81692af78c7862e8a4`.
+Sixteen new regressions and 35 existing county-parser regressions pass.
+York's alternate government host timed out and its declared Clarity page
+returned HTTP403; retain those bounded failures without bypassing the denial.
+Lancaster release/website integration is pending; no new geometry, map,
+demographic turnout, certification or statewide completion is approved.
+Its separate county-parent linking page has not been independently acquired.
+
 The reusable 2026 county-results and separate UF/state participation pipelines
 are implemented and published. Both passed real acquisition and original-backed
 release verification. Fresh county snapshot `20261105T155645Z` updates three
