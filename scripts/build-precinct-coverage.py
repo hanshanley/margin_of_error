@@ -64,6 +64,12 @@ def build_rows(index=None, published=False):
     assert len(states) == 51 and len(set(code for code, _ in states)) == 51
     inventory_path = ROOT / "public/precinct-source-inventory.json"
     inventory = json.loads(inventory_path.read_text())["states"] if inventory_path.exists() else {}
+    pointer = ROOT / "public/precinct-results.json"
+    reviews = {}
+    if pointer.exists():
+        for path in json.loads(pointer.read_text()).get("source_reviews", []):
+            review = json.loads((ROOT / path).read_text())
+            reviews[(review["year"], review["state_code"])] = review
     rows = []
     for year in YEARS:
         for code, name in states:
@@ -110,6 +116,13 @@ def build_rows(index=None, published=False):
                     row["boundary_source"] = "https://s3.amazonaws.com/dl.ncsbe.gov/ShapeFiles/Precinct/SBE_PRECINCTS_20260824.zip"
                     row["notes"] += " Election-night residential precincts exclude separately reported early/mail units. Do not call these all-ballot residential results."
             coverage = (index or {}).get("coverage", {}).get(str(year), {}).get(code)
+            review = reviews.get((year, code))
+            if review:
+                row.update({field: review[field] for field in [
+                    "candidate_results", "boundaries", "join", "validation", "publication", "next_action"]})
+                row.update(results_source=review["source_url"],
+                           boundary_source=review["sources"]["boundary-service.json"],
+                           notes=review["notes"] + " Complete ZIP: " + review["complete_download_url"])
             if coverage:
                 row.update(candidate_results="acquired", boundaries="reference_acquired",
                            join="validated_partial" if coverage.get("partial") else "validated",
@@ -124,7 +137,7 @@ def write_ledger(index=None, published=False):
     rows = build_rows(index, published)
     target = ROOT / "public/precinct-coverage.csv"
     with target.open("w", newline="") as file:
-        writer = csv.DictWriter(file, FIELDS)
+        writer = csv.DictWriter(file, FIELDS, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
     lines = [

@@ -62,9 +62,12 @@ def test_precinct_worklist_requires_live_verification_and_never_marks_partial_co
         rows = precinct_coverage.build_rows(index, published=published)
         nc = next(row for row in rows if row["year"] == 2026 and row["state_code"] == "NC")
         nm = next(row for row in rows if row["year"] == 2026 and row["state_code"] == "NM")
+        de = next(row for row in rows if row["year"] == 2026 and row["state_code"] == "DE")
         assert nc["publication"] == expected
         assert nc["join"] == "validated_partial" and nc["complete"] == "no"
         assert nm["publication"] == "not_published"
+        assert de["candidate_results"] == "acquired_reconciled" and de["join"] == "withheld"
+        assert de["publication"] == "full_counts_download_only" and de["complete"] == "no"
 
 
 def test_precinct_join_withholds_whole_mismatched_or_unreconciled_counties():

@@ -9,6 +9,8 @@ const dataRoot = resolve('public/voter-participation');
 const precinctResultsPointerPath = resolve('public/precinct-results.json');
 const precinctResultsPointer = existsSync(precinctResultsPointerPath)
 	? JSON.parse(readFileSync(precinctResultsPointerPath, 'utf8')) : null;
+const precinctSourceReviews = (precinctResultsPointer?.source_reviews ?? []).map((path: string) =>
+	JSON.parse(readFileSync(resolve(path), 'utf8')));
 const national = JSON.parse(readFileSync(resolve(dataRoot, 'data/national.json'), 'utf8'));
 const manifest = JSON.parse(readFileSync(resolve(dataRoot, 'publication-manifest.json'), 'utf8'));
 const snapshot = national.filter((row: { year: number; denominator: string; age_group: string }) =>
@@ -490,10 +492,12 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 				<a href="/precinct-coverage.csv" download>Every state and election, newest first: full precinct worklist (CSV)</a>
 				{precinctResultsPointer && <>
 					<a href={precinctResultsPointer.complete_download_url} download>Complete precinct candidate results, geometry, audits, licenses and original sources (ZIP)</a>
-					<a href={`${precinctResultsPointer.base_url}results.csv.gz`} download>All acquired precinct / reporting-unit candidate results, including unmapped records (CSV · gzip)</a>
+					<a href={`${precinctResultsPointer.base_url}results.csv.gz`} download>All precinct / reporting-unit candidate results in the mapped snapshot, including unmapped records (CSV · gzip)</a>
 					<a href={`${precinctResultsPointer.base_url}audit.json`}>Precinct candidate-result join and reconciliation audit (JSON)</a>
 					<a href={`${precinctResultsPointer.base_url}checksums.json`}>Precinct candidate-result and original-source checksums (JSON)</a>
 				</>}
+				{precinctSourceReviews.map((review: { year: number; state_code: string; complete_download_url: string }) =>
+					<a href={review.complete_download_url} download>{review.year} {review.state_code} precinct returns: complete counts and original sources; geometry withheld (ZIP)</a>)}
 				<a href="/voter-participation/data/complete-analysis.zip" download>Complete analysis (ZIP)</a>
 				<a href="/voter-participation/data/national.csv" download>National series</a>
 				<a href="/voter-participation/data/states.csv" download>State series</a>

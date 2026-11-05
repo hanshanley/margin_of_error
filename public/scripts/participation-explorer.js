@@ -470,6 +470,7 @@ async function loadCurrentPrecincts() {
       html("p", "selection-note", "Candidate-vote margin, not turnout or demographic participation. Matching precinct identifiers does not establish unchanged boundaries across elections."));
     if (p.official_boundary === false) panel.append(html("p", "selection-note", "Approximate boundary reconstructed by The New York Times, not an official precinct shape."));
     panel.append(sourceLink(p));
+    panel.parentElement.prepend(panel);
   }
   async function drawPrecinctResults(map, selected, code, year, token) {
     const coverage = state.precinctResults.coverage[year][code], key = `${year}|${code}`;

@@ -33,6 +33,7 @@ results_pointer = json.loads((public / "participation-results/latest.json").read
 results_root = public / "participation-results" / results_pointer["snapshot_id"]
 result_rows = json.loads((results_root / "margins.json").read_text())
 precinct_results_pointer = json.loads((public / "precinct-results.json").read_text())
+expected_downloads = 18 + len(precinct_results_pointer.get("source_reviews", []))
 precinct_results_root = public.parent / precinct_results_pointer["data_directory"]
 precinct_results_index = json.loads((precinct_results_root / "index.json").read_text())
 margins = [row for row in margins if row["year"] != 2026] + result_rows
@@ -155,6 +156,7 @@ with sync_playwright() as p:
     page.locator('.substate-feature[data-color-level="precinct"]').first.dispatch_event("click")
     expect(page.locator("#substate-detail")).to_contain_text("Democratic")
     expect(page.locator("#substate-detail")).to_contain_text("not turnout")
+    assert page.locator("#substate-detail").bounding_box()["y"] < page.locator("#selection-panel h3").first.bounding_box()["y"]
     screenshot(page, "participation-2026-actual-precinct-results.png")
     page.locator("#year").select_option("2024")
     for code in sorted(precinct_results_index["coverage"]["2024"]):
@@ -575,7 +577,7 @@ with sync_playwright() as p:
     expect(page.locator("#model-summary")).to_contain_text("98")
     page.locator("#participation-cps summary").click()
     expect(page.locator("#cps-summary")).to_contain_text("34 of 34")
-    assert page.locator('#downloads a[download]').count() == 18
+    assert page.locator('#downloads a[download]').count() == expected_downloads
     for link in page.locator('#downloads a[download]').all():
         response = context.request.head(link.get_attribute("href") if link.get_attribute("href").startswith("http")
                                         else args.base_url + link.get_attribute("href"))
@@ -831,7 +833,7 @@ with sync_playwright() as p:
     expect(offline.locator("#downloads")).to_be_visible()
     assert offline.locator("#national-snapshot tbody tr").count() == 13
     assert offline.locator("#method-reference tbody tr").count() == 15
-    assert offline.locator('#downloads a[download]').count() == 18
+    assert offline.locator('#downloads a[download]').count() == expected_downloads
     broken_precinct_results = browser.new_page()
     broken_precinct_results.route("**/2026/NM.geojson.gz", lambda route: route.abort())
     broken_precinct_results.goto(url + "?state=New+Mexico&year=2026")

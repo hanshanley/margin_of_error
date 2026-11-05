@@ -31,7 +31,7 @@ Checkmarks are reserved for verified, complete live coverage.
 | [ ] | Colorado | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Connecticut | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | District of Columbia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Delaware | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Delaware | acquired_reconciled | older_reference_withheld | withheld | counts_passed_map_withheld | full_counts_download_only | not_acquired |
 | [ ] | Florida | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Georgia | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Hawaii | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |

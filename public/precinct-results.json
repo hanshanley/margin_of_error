@@ -3,5 +3,6 @@
   "data_directory": "data/precinct-results/20261105T015000Z",
   "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-results-20261105/complete-precinct-results.zip",
   "complete_download_bytes": 1367560488,
-  "complete_download_sha256": "2b5bc00871e3a4f8bb9aba193bafabde2e274a8345dfb684a4dff2af2bff8f17"
+  "complete_download_sha256": "2b5bc00871e3a4f8bb9aba193bafabde2e274a8345dfb684a4dff2af2bff8f17",
+  "source_reviews": ["data/precinct-source-reviews/20261105/DE/audit.json"]
 }

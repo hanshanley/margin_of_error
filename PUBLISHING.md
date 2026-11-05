@@ -259,6 +259,10 @@ Partial coverage is not completion. Do not mark a cell complete without validate
 After the full live browser check passes for the pinned snapshot, set its pointer's
 `publication` to `live_verified_partial` and regenerate the worklist. New snapshots must
 omit that flag until their own live checks pass; acquired data alone is `snapshot_ready`.
+The pointer's separate `source_reviews` preserve acquired, reconciled but unmappable data.
+Delaware's 2026 review includes all 530 House reporting districts and complete originals in its
+own full ZIP. Its official boundary-service metadata dates the shapes to November 2023,
+with reporting-only/boundary-only IDs, so no shapes are relabeled or mapped as 2026 precincts.
 `scripts/build-current-precincts.py` joins the RGIS July 2026 NM release to the
 saved election-night source using county + explicit `VTD_NUM` (Voting District Number).
 Eight updated Sandoval shapes retain older Census VTD/GEOCODE values; those older
