@@ -1,0 +1,2254 @@
+{
+  "year": 2026,
+  "state_code": "AR",
+  "complete": "no",
+  "maps_approved": false,
+  "rates_available": false,
+  "unofficial": true,
+  "all_native_contests": 1315,
+  "native_counties": 75,
+  "precinct_house_vectors": 2769,
+  "native_precinct_identities": 2768,
+  "observed_house_vectors": 2686,
+  "omitted_house_vector_totals": 83,
+  "turnout_observations": 2768,
+  "omitted_native_ballot_totals": 82,
+  "native_ballots": 893026,
+  "all_house_candidate_and_mode_scopes_reconcile": true,
+  "all_observed_ballot_scopes_reconcile": true,
+  "house": [
+    {
+      "contest_id": "10b097d0-dfb0-4446-bd86-075ffb53bf30",
+      "office": "U.S. Congress District 04",
+      "total_votes": 200464,
+      "candidates": {
+        "da885caa-3949-4a50-8a67-45e7534bd49c": {
+          "name": "DEM James \"Rus\" Russell, III",
+          "party_id": "f9d5fae6-a1fb-4278-a4d1-5784e643689e",
+          "votes": 69175,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 1075,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 47910,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 20190
+          }
+        },
+        "92f11f81-1a2d-4e9a-9457-715df41b818e": {
+          "name": "REP Bruce Westerman",
+          "party_id": "4c1a540e-cfe4-4ba0-8435-1dd7c3eeb1e6",
+          "votes": 131289,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 1119,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 80279,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 49891
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "1fb26d77-3a4c-4c93-ae14-2bb1b5d5031a",
+      "office": "U.S. Congress District 01",
+      "total_votes": 193969,
+      "candidates": {
+        "713afec7-d25e-4633-99a8-48353170c309": {
+          "name": "DEM Terri Yarbrough Green",
+          "party_id": "f9d5fae6-a1fb-4278-a4d1-5784e643689e",
+          "votes": 60074,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 1107,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 42254,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 16713
+          }
+        },
+        "5255c1ac-bdac-48cb-acef-d381fb98ee2a": {
+          "name": "REP Rick Crawford",
+          "party_id": "4c1a540e-cfe4-4ba0-8435-1dd7c3eeb1e6",
+          "votes": 126957,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 1033,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 82976,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 42948
+          }
+        },
+        "5ef0e9c7-d136-4d57-875b-10246bd2b646": {
+          "name": "LIB Steve G. Parsons",
+          "party_id": "365b24a1-09bb-42c0-8003-233296ece789",
+          "votes": 6938,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 33,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 4238,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 2667
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "5ad007d9-457d-431f-8374-3c7c91712eae",
+      "office": "U.S. Congress District 03",
+      "total_votes": 231905,
+      "candidates": {
+        "2a962baf-1bfe-4263-bb19-e7e126b605be": {
+          "name": "LIB Bobby Wilson",
+          "party_id": "365b24a1-09bb-42c0-8003-233296ece789",
+          "votes": 8413,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 39,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 3610,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 4764
+          }
+        },
+        "057afac2-5d64-4336-943f-38c0ca1a9e46": {
+          "name": "DEM Robb Ryerse",
+          "party_id": "f9d5fae6-a1fb-4278-a4d1-5784e643689e",
+          "votes": 96189,
+          "modes": {
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 25446,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 69716,
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 1027
+          }
+        },
+        "2b57164d-19bd-46ee-8c7e-13a32381d570": {
+          "name": "REP Steve Womack",
+          "party_id": "4c1a540e-cfe4-4ba0-8435-1dd7c3eeb1e6",
+          "votes": 127303,
+          "modes": {
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 82419,
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 890,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 43994
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "8c69fac1-a18e-4c3a-b296-2d2e7c79f1b6",
+      "office": "U.S. Congress District 02",
+      "total_votes": 250469,
+      "candidates": {
+        "be8e9a18-7874-4edd-ac9d-05620b406594": {
+          "name": "REP French Hill",
+          "party_id": "4c1a540e-cfe4-4ba0-8435-1dd7c3eeb1e6",
+          "votes": 127437,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 1012,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 85502,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 40923
+          }
+        },
+        "0d8e9aa9-576f-4645-ad3b-e264f78badc5": {
+          "name": "DEM Chris Jones",
+          "party_id": "f9d5fae6-a1fb-4278-a4d1-5784e643689e",
+          "votes": 123032,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 1410,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 92829,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 28793
+          }
+        }
+      }
+    }
+  ],
+  "county_house_scopes": [
+    {
+      "contest_id": "10b097d0-dfb0-4446-bd86-075ffb53bf30",
+      "county_code": "05003",
+      "precinct_vectors": 30,
+      "residuals": {
+        "da885caa-3949-4a50-8a67-45e7534bd49c": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "92f11f81-1a2d-4e9a-9457-715df41b818e": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "10b097d0-dfb0-4446-bd86-075ffb53bf30",
+      "county_code": "05011",
+      "precinct_vectors": 14,
+      "residuals": {
+        "da885caa-3949-4a50-8a67-45e7534bd49c": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "92f11f81-1a2d-4e9a-9457-715df41b818e": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "10b097d0-dfb0-4446-bd86-075ffb53bf30",
+      "county_code": "05013",
+      "precinct_vectors": 9,
+      "residuals": {
+        "da885caa-3949-4a50-8a67-45e7534bd49c": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "92f11f81-1a2d-4e9a-9457-715df41b818e": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "10b097d0-dfb0-4446-bd86-075ffb53bf30",
+      "county_code": "05019",
+      "precinct_vectors": 27,
+      "residuals": {
+        "da885caa-3949-4a50-8a67-45e7534bd49c": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "92f11f81-1a2d-4e9a-9457-715df41b818e": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "10b097d0-dfb0-4446-bd86-075ffb53bf30",
+      "county_code": "05025",
+      "precinct_vectors": 17,
+      "residuals": {
+        "da885caa-3949-4a50-8a67-45e7534bd49c": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "92f11f81-1a2d-4e9a-9457-715df41b818e": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "10b097d0-dfb0-4446-bd86-075ffb53bf30",
+      "county_code": "05027",
+      "precinct_vectors": 14,
+      "residuals": {
+        "da885caa-3949-4a50-8a67-45e7534bd49c": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "92f11f81-1a2d-4e9a-9457-715df41b818e": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "10b097d0-dfb0-4446-bd86-075ffb53bf30",
+      "county_code": "05039",
+      "precinct_vectors": 9,
+      "residuals": {
+        "da885caa-3949-4a50-8a67-45e7534bd49c": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "92f11f81-1a2d-4e9a-9457-715df41b818e": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "10b097d0-dfb0-4446-bd86-075ffb53bf30",
+      "county_code": "05043",
+      "precinct_vectors": 19,
+      "residuals": {
+        "da885caa-3949-4a50-8a67-45e7534bd49c": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "92f11f81-1a2d-4e9a-9457-715df41b818e": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "10b097d0-dfb0-4446-bd86-075ffb53bf30",
+      "county_code": "05047",
+      "precinct_vectors": 39,
+      "residuals": {
+        "da885caa-3949-4a50-8a67-45e7534bd49c": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "92f11f81-1a2d-4e9a-9457-715df41b818e": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "10b097d0-dfb0-4446-bd86-075ffb53bf30",
+      "county_code": "05051",
+      "precinct_vectors": 52,
+      "residuals": {
+        "da885caa-3949-4a50-8a67-45e7534bd49c": {
+          "total": 0,
+          "modes": {
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0
+          }
+        },
+        "92f11f81-1a2d-4e9a-9457-715df41b818e": {
+          "total": 0,
+          "modes": {
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "10b097d0-dfb0-4446-bd86-075ffb53bf30",
+      "county_code": "05053",
+      "precinct_vectors": 20,
+      "residuals": {
+        "da885caa-3949-4a50-8a67-45e7534bd49c": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "92f11f81-1a2d-4e9a-9457-715df41b818e": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "10b097d0-dfb0-4446-bd86-075ffb53bf30",
+      "county_code": "05057",
+      "precinct_vectors": 24,
+      "residuals": {
+        "da885caa-3949-4a50-8a67-45e7534bd49c": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "92f11f81-1a2d-4e9a-9457-715df41b818e": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "10b097d0-dfb0-4446-bd86-075ffb53bf30",
+      "county_code": "05059",
+      "precinct_vectors": 36,
+      "residuals": {
+        "da885caa-3949-4a50-8a67-45e7534bd49c": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "92f11f81-1a2d-4e9a-9457-715df41b818e": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "10b097d0-dfb0-4446-bd86-075ffb53bf30",
+      "county_code": "05061",
+      "precinct_vectors": 9,
+      "residuals": {
+        "da885caa-3949-4a50-8a67-45e7534bd49c": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "92f11f81-1a2d-4e9a-9457-715df41b818e": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "10b097d0-dfb0-4446-bd86-075ffb53bf30",
+      "county_code": "05069",
+      "precinct_vectors": 170,
+      "residuals": {
+        "da885caa-3949-4a50-8a67-45e7534bd49c": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "92f11f81-1a2d-4e9a-9457-715df41b818e": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "10b097d0-dfb0-4446-bd86-075ffb53bf30",
+      "county_code": "05071",
+      "precinct_vectors": 11,
+      "residuals": {
+        "da885caa-3949-4a50-8a67-45e7534bd49c": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0
+          }
+        },
+        "92f11f81-1a2d-4e9a-9457-715df41b818e": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "10b097d0-dfb0-4446-bd86-075ffb53bf30",
+      "county_code": "05073",
+      "precinct_vectors": 9,
+      "residuals": {
+        "da885caa-3949-4a50-8a67-45e7534bd49c": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "92f11f81-1a2d-4e9a-9457-715df41b818e": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "10b097d0-dfb0-4446-bd86-075ffb53bf30",
+      "county_code": "05081",
+      "precinct_vectors": 20,
+      "residuals": {
+        "da885caa-3949-4a50-8a67-45e7534bd49c": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "92f11f81-1a2d-4e9a-9457-715df41b818e": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "10b097d0-dfb0-4446-bd86-075ffb53bf30",
+      "county_code": "05083",
+      "precinct_vectors": 36,
+      "residuals": {
+        "da885caa-3949-4a50-8a67-45e7534bd49c": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "92f11f81-1a2d-4e9a-9457-715df41b818e": {
+          "total": 0,
+          "modes": {
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0,
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "10b097d0-dfb0-4446-bd86-075ffb53bf30",
+      "county_code": "05091",
+      "precinct_vectors": 19,
+      "residuals": {
+        "da885caa-3949-4a50-8a67-45e7534bd49c": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "92f11f81-1a2d-4e9a-9457-715df41b818e": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "10b097d0-dfb0-4446-bd86-075ffb53bf30",
+      "county_code": "05097",
+      "precinct_vectors": 16,
+      "residuals": {
+        "da885caa-3949-4a50-8a67-45e7534bd49c": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "92f11f81-1a2d-4e9a-9457-715df41b818e": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "10b097d0-dfb0-4446-bd86-075ffb53bf30",
+      "county_code": "05099",
+      "precinct_vectors": 18,
+      "residuals": {
+        "da885caa-3949-4a50-8a67-45e7534bd49c": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "92f11f81-1a2d-4e9a-9457-715df41b818e": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "10b097d0-dfb0-4446-bd86-075ffb53bf30",
+      "county_code": "05101",
+      "precinct_vectors": 20,
+      "residuals": {
+        "da885caa-3949-4a50-8a67-45e7534bd49c": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "92f11f81-1a2d-4e9a-9457-715df41b818e": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "10b097d0-dfb0-4446-bd86-075ffb53bf30",
+      "county_code": "05103",
+      "precinct_vectors": 18,
+      "residuals": {
+        "da885caa-3949-4a50-8a67-45e7534bd49c": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "92f11f81-1a2d-4e9a-9457-715df41b818e": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "10b097d0-dfb0-4446-bd86-075ffb53bf30",
+      "county_code": "05109",
+      "precinct_vectors": 11,
+      "residuals": {
+        "da885caa-3949-4a50-8a67-45e7534bd49c": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "92f11f81-1a2d-4e9a-9457-715df41b818e": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "10b097d0-dfb0-4446-bd86-075ffb53bf30",
+      "county_code": "05113",
+      "precinct_vectors": 17,
+      "residuals": {
+        "da885caa-3949-4a50-8a67-45e7534bd49c": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "92f11f81-1a2d-4e9a-9457-715df41b818e": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "10b097d0-dfb0-4446-bd86-075ffb53bf30",
+      "county_code": "05115",
+      "precinct_vectors": 22,
+      "residuals": {
+        "da885caa-3949-4a50-8a67-45e7534bd49c": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "92f11f81-1a2d-4e9a-9457-715df41b818e": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "10b097d0-dfb0-4446-bd86-075ffb53bf30",
+      "county_code": "05119",
+      "precinct_vectors": 10,
+      "residuals": {
+        "da885caa-3949-4a50-8a67-45e7534bd49c": {
+          "total": 0,
+          "modes": {
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0
+          }
+        },
+        "92f11f81-1a2d-4e9a-9457-715df41b818e": {
+          "total": 0,
+          "modes": {
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "10b097d0-dfb0-4446-bd86-075ffb53bf30",
+      "county_code": "05127",
+      "precinct_vectors": 26,
+      "residuals": {
+        "da885caa-3949-4a50-8a67-45e7534bd49c": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "92f11f81-1a2d-4e9a-9457-715df41b818e": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "10b097d0-dfb0-4446-bd86-075ffb53bf30",
+      "county_code": "05131",
+      "precinct_vectors": 13,
+      "residuals": {
+        "da885caa-3949-4a50-8a67-45e7534bd49c": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "92f11f81-1a2d-4e9a-9457-715df41b818e": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "10b097d0-dfb0-4446-bd86-075ffb53bf30",
+      "county_code": "05133",
+      "precinct_vectors": 9,
+      "residuals": {
+        "da885caa-3949-4a50-8a67-45e7534bd49c": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "92f11f81-1a2d-4e9a-9457-715df41b818e": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "10b097d0-dfb0-4446-bd86-075ffb53bf30",
+      "county_code": "05139",
+      "precinct_vectors": 28,
+      "residuals": {
+        "da885caa-3949-4a50-8a67-45e7534bd49c": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0
+          }
+        },
+        "92f11f81-1a2d-4e9a-9457-715df41b818e": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "10b097d0-dfb0-4446-bd86-075ffb53bf30",
+      "county_code": "05149",
+      "precinct_vectors": 28,
+      "residuals": {
+        "da885caa-3949-4a50-8a67-45e7534bd49c": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "92f11f81-1a2d-4e9a-9457-715df41b818e": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "1fb26d77-3a4c-4c93-ae14-2bb1b5d5031a",
+      "county_code": "05001",
+      "precinct_vectors": 30,
+      "residuals": {
+        "713afec7-d25e-4633-99a8-48353170c309": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5255c1ac-bdac-48cb-acef-d381fb98ee2a": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5ef0e9c7-d136-4d57-875b-10246bd2b646": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "1fb26d77-3a4c-4c93-ae14-2bb1b5d5031a",
+      "county_code": "05005",
+      "precinct_vectors": 11,
+      "residuals": {
+        "713afec7-d25e-4633-99a8-48353170c309": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5255c1ac-bdac-48cb-acef-d381fb98ee2a": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5ef0e9c7-d136-4d57-875b-10246bd2b646": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "1fb26d77-3a4c-4c93-ae14-2bb1b5d5031a",
+      "county_code": "05009",
+      "precinct_vectors": 12,
+      "residuals": {
+        "713afec7-d25e-4633-99a8-48353170c309": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5255c1ac-bdac-48cb-acef-d381fb98ee2a": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5ef0e9c7-d136-4d57-875b-10246bd2b646": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "1fb26d77-3a4c-4c93-ae14-2bb1b5d5031a",
+      "county_code": "05017",
+      "precinct_vectors": 15,
+      "residuals": {
+        "713afec7-d25e-4633-99a8-48353170c309": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5255c1ac-bdac-48cb-acef-d381fb98ee2a": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5ef0e9c7-d136-4d57-875b-10246bd2b646": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "1fb26d77-3a4c-4c93-ae14-2bb1b5d5031a",
+      "county_code": "05021",
+      "precinct_vectors": 17,
+      "residuals": {
+        "713afec7-d25e-4633-99a8-48353170c309": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5255c1ac-bdac-48cb-acef-d381fb98ee2a": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5ef0e9c7-d136-4d57-875b-10246bd2b646": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "1fb26d77-3a4c-4c93-ae14-2bb1b5d5031a",
+      "county_code": "05031",
+      "precinct_vectors": 53,
+      "residuals": {
+        "713afec7-d25e-4633-99a8-48353170c309": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5255c1ac-bdac-48cb-acef-d381fb98ee2a": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5ef0e9c7-d136-4d57-875b-10246bd2b646": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "1fb26d77-3a4c-4c93-ae14-2bb1b5d5031a",
+      "county_code": "05035",
+      "precinct_vectors": 16,
+      "residuals": {
+        "713afec7-d25e-4633-99a8-48353170c309": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5255c1ac-bdac-48cb-acef-d381fb98ee2a": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5ef0e9c7-d136-4d57-875b-10246bd2b646": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "1fb26d77-3a4c-4c93-ae14-2bb1b5d5031a",
+      "county_code": "05037",
+      "precinct_vectors": 14,
+      "residuals": {
+        "713afec7-d25e-4633-99a8-48353170c309": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5255c1ac-bdac-48cb-acef-d381fb98ee2a": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5ef0e9c7-d136-4d57-875b-10246bd2b646": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "1fb26d77-3a4c-4c93-ae14-2bb1b5d5031a",
+      "county_code": "05041",
+      "precinct_vectors": 21,
+      "residuals": {
+        "713afec7-d25e-4633-99a8-48353170c309": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5255c1ac-bdac-48cb-acef-d381fb98ee2a": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5ef0e9c7-d136-4d57-875b-10246bd2b646": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "1fb26d77-3a4c-4c93-ae14-2bb1b5d5031a",
+      "county_code": "05049",
+      "precinct_vectors": 10,
+      "residuals": {
+        "713afec7-d25e-4633-99a8-48353170c309": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5255c1ac-bdac-48cb-acef-d381fb98ee2a": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5ef0e9c7-d136-4d57-875b-10246bd2b646": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "1fb26d77-3a4c-4c93-ae14-2bb1b5d5031a",
+      "county_code": "05055",
+      "precinct_vectors": 11,
+      "residuals": {
+        "713afec7-d25e-4633-99a8-48353170c309": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5255c1ac-bdac-48cb-acef-d381fb98ee2a": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5ef0e9c7-d136-4d57-875b-10246bd2b646": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "1fb26d77-3a4c-4c93-ae14-2bb1b5d5031a",
+      "county_code": "05063",
+      "precinct_vectors": 11,
+      "residuals": {
+        "713afec7-d25e-4633-99a8-48353170c309": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5255c1ac-bdac-48cb-acef-d381fb98ee2a": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5ef0e9c7-d136-4d57-875b-10246bd2b646": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "1fb26d77-3a4c-4c93-ae14-2bb1b5d5031a",
+      "county_code": "05065",
+      "precinct_vectors": 44,
+      "residuals": {
+        "713afec7-d25e-4633-99a8-48353170c309": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5255c1ac-bdac-48cb-acef-d381fb98ee2a": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5ef0e9c7-d136-4d57-875b-10246bd2b646": {
+          "total": 0,
+          "modes": {
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0,
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "1fb26d77-3a4c-4c93-ae14-2bb1b5d5031a",
+      "county_code": "05067",
+      "precinct_vectors": 9,
+      "residuals": {
+        "713afec7-d25e-4633-99a8-48353170c309": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5255c1ac-bdac-48cb-acef-d381fb98ee2a": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5ef0e9c7-d136-4d57-875b-10246bd2b646": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "1fb26d77-3a4c-4c93-ae14-2bb1b5d5031a",
+      "county_code": "05075",
+      "precinct_vectors": 28,
+      "residuals": {
+        "713afec7-d25e-4633-99a8-48353170c309": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5255c1ac-bdac-48cb-acef-d381fb98ee2a": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5ef0e9c7-d136-4d57-875b-10246bd2b646": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "1fb26d77-3a4c-4c93-ae14-2bb1b5d5031a",
+      "county_code": "05077",
+      "precinct_vectors": 9,
+      "residuals": {
+        "713afec7-d25e-4633-99a8-48353170c309": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5255c1ac-bdac-48cb-acef-d381fb98ee2a": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5ef0e9c7-d136-4d57-875b-10246bd2b646": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "1fb26d77-3a4c-4c93-ae14-2bb1b5d5031a",
+      "county_code": "05079",
+      "precinct_vectors": 26,
+      "residuals": {
+        "713afec7-d25e-4633-99a8-48353170c309": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5255c1ac-bdac-48cb-acef-d381fb98ee2a": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5ef0e9c7-d136-4d57-875b-10246bd2b646": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "1fb26d77-3a4c-4c93-ae14-2bb1b5d5031a",
+      "county_code": "05085",
+      "precinct_vectors": 71,
+      "residuals": {
+        "713afec7-d25e-4633-99a8-48353170c309": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5255c1ac-bdac-48cb-acef-d381fb98ee2a": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5ef0e9c7-d136-4d57-875b-10246bd2b646": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "1fb26d77-3a4c-4c93-ae14-2bb1b5d5031a",
+      "county_code": "05089",
+      "precinct_vectors": 27,
+      "residuals": {
+        "713afec7-d25e-4633-99a8-48353170c309": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5255c1ac-bdac-48cb-acef-d381fb98ee2a": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5ef0e9c7-d136-4d57-875b-10246bd2b646": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "1fb26d77-3a4c-4c93-ae14-2bb1b5d5031a",
+      "county_code": "05093",
+      "precinct_vectors": 16,
+      "residuals": {
+        "713afec7-d25e-4633-99a8-48353170c309": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5255c1ac-bdac-48cb-acef-d381fb98ee2a": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5ef0e9c7-d136-4d57-875b-10246bd2b646": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "1fb26d77-3a4c-4c93-ae14-2bb1b5d5031a",
+      "county_code": "05095",
+      "precinct_vectors": 24,
+      "residuals": {
+        "713afec7-d25e-4633-99a8-48353170c309": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5255c1ac-bdac-48cb-acef-d381fb98ee2a": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5ef0e9c7-d136-4d57-875b-10246bd2b646": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "1fb26d77-3a4c-4c93-ae14-2bb1b5d5031a",
+      "county_code": "05107",
+      "precinct_vectors": 55,
+      "residuals": {
+        "713afec7-d25e-4633-99a8-48353170c309": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5255c1ac-bdac-48cb-acef-d381fb98ee2a": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5ef0e9c7-d136-4d57-875b-10246bd2b646": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "1fb26d77-3a4c-4c93-ae14-2bb1b5d5031a",
+      "county_code": "05111",
+      "precinct_vectors": 41,
+      "residuals": {
+        "713afec7-d25e-4633-99a8-48353170c309": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5255c1ac-bdac-48cb-acef-d381fb98ee2a": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5ef0e9c7-d136-4d57-875b-10246bd2b646": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "1fb26d77-3a4c-4c93-ae14-2bb1b5d5031a",
+      "county_code": "05117",
+      "precinct_vectors": 24,
+      "residuals": {
+        "713afec7-d25e-4633-99a8-48353170c309": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5255c1ac-bdac-48cb-acef-d381fb98ee2a": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5ef0e9c7-d136-4d57-875b-10246bd2b646": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "1fb26d77-3a4c-4c93-ae14-2bb1b5d5031a",
+      "county_code": "05119",
+      "precinct_vectors": 3,
+      "residuals": {
+        "713afec7-d25e-4633-99a8-48353170c309": {
+          "total": 0,
+          "modes": {
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0
+          }
+        },
+        "5255c1ac-bdac-48cb-acef-d381fb98ee2a": {
+          "total": 0,
+          "modes": {
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0
+          }
+        },
+        "5ef0e9c7-d136-4d57-875b-10246bd2b646": {
+          "total": 0,
+          "modes": {
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "1fb26d77-3a4c-4c93-ae14-2bb1b5d5031a",
+      "county_code": "05121",
+      "precinct_vectors": 29,
+      "residuals": {
+        "713afec7-d25e-4633-99a8-48353170c309": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5255c1ac-bdac-48cb-acef-d381fb98ee2a": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5ef0e9c7-d136-4d57-875b-10246bd2b646": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "1fb26d77-3a4c-4c93-ae14-2bb1b5d5031a",
+      "county_code": "05123",
+      "precinct_vectors": 15,
+      "residuals": {
+        "713afec7-d25e-4633-99a8-48353170c309": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5255c1ac-bdac-48cb-acef-d381fb98ee2a": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5ef0e9c7-d136-4d57-875b-10246bd2b646": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "1fb26d77-3a4c-4c93-ae14-2bb1b5d5031a",
+      "county_code": "05129",
+      "precinct_vectors": 7,
+      "residuals": {
+        "713afec7-d25e-4633-99a8-48353170c309": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5255c1ac-bdac-48cb-acef-d381fb98ee2a": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5ef0e9c7-d136-4d57-875b-10246bd2b646": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "1fb26d77-3a4c-4c93-ae14-2bb1b5d5031a",
+      "county_code": "05135",
+      "precinct_vectors": 25,
+      "residuals": {
+        "713afec7-d25e-4633-99a8-48353170c309": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5255c1ac-bdac-48cb-acef-d381fb98ee2a": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5ef0e9c7-d136-4d57-875b-10246bd2b646": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "1fb26d77-3a4c-4c93-ae14-2bb1b5d5031a",
+      "county_code": "05137",
+      "precinct_vectors": 19,
+      "residuals": {
+        "713afec7-d25e-4633-99a8-48353170c309": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5255c1ac-bdac-48cb-acef-d381fb98ee2a": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5ef0e9c7-d136-4d57-875b-10246bd2b646": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "1fb26d77-3a4c-4c93-ae14-2bb1b5d5031a",
+      "county_code": "05147",
+      "precinct_vectors": 19,
+      "residuals": {
+        "713afec7-d25e-4633-99a8-48353170c309": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5255c1ac-bdac-48cb-acef-d381fb98ee2a": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "5ef0e9c7-d136-4d57-875b-10246bd2b646": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "5ad007d9-457d-431f-8374-3c7c91712eae",
+      "county_code": "05007",
+      "precinct_vectors": 469,
+      "residuals": {
+        "2a962baf-1bfe-4263-bb19-e7e126b605be": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0
+          }
+        },
+        "057afac2-5d64-4336-943f-38c0ca1a9e46": {
+          "total": 0,
+          "modes": {
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0
+          }
+        },
+        "2b57164d-19bd-46ee-8c7e-13a32381d570": {
+          "total": 0,
+          "modes": {
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "5ad007d9-457d-431f-8374-3c7c91712eae",
+      "county_code": "05015",
+      "precinct_vectors": 11,
+      "residuals": {
+        "2a962baf-1bfe-4263-bb19-e7e126b605be": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "057afac2-5d64-4336-943f-38c0ca1a9e46": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "2b57164d-19bd-46ee-8c7e-13a32381d570": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "5ad007d9-457d-431f-8374-3c7c91712eae",
+      "county_code": "05033",
+      "precinct_vectors": 13,
+      "residuals": {
+        "2a962baf-1bfe-4263-bb19-e7e126b605be": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "057afac2-5d64-4336-943f-38c0ca1a9e46": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "2b57164d-19bd-46ee-8c7e-13a32381d570": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "5ad007d9-457d-431f-8374-3c7c91712eae",
+      "county_code": "05087",
+      "precinct_vectors": 10,
+      "residuals": {
+        "2a962baf-1bfe-4263-bb19-e7e126b605be": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "057afac2-5d64-4336-943f-38c0ca1a9e46": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "2b57164d-19bd-46ee-8c7e-13a32381d570": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "5ad007d9-457d-431f-8374-3c7c91712eae",
+      "county_code": "05131",
+      "precinct_vectors": 97,
+      "residuals": {
+        "2a962baf-1bfe-4263-bb19-e7e126b605be": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "057afac2-5d64-4336-943f-38c0ca1a9e46": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "2b57164d-19bd-46ee-8c7e-13a32381d570": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "5ad007d9-457d-431f-8374-3c7c91712eae",
+      "county_code": "05143",
+      "precinct_vectors": 233,
+      "residuals": {
+        "2a962baf-1bfe-4263-bb19-e7e126b605be": {
+          "total": 0,
+          "modes": {
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0,
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0
+          }
+        },
+        "057afac2-5d64-4336-943f-38c0ca1a9e46": {
+          "total": 0,
+          "modes": {
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0,
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0
+          }
+        },
+        "2b57164d-19bd-46ee-8c7e-13a32381d570": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "8c69fac1-a18e-4c3a-b296-2d2e7c79f1b6",
+      "county_code": "05023",
+      "precinct_vectors": 34,
+      "residuals": {
+        "be8e9a18-7874-4edd-ac9d-05620b406594": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "0d8e9aa9-576f-4645-ad3b-e264f78badc5": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "8c69fac1-a18e-4c3a-b296-2d2e7c79f1b6",
+      "county_code": "05029",
+      "precinct_vectors": 31,
+      "residuals": {
+        "be8e9a18-7874-4edd-ac9d-05620b406594": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "0d8e9aa9-576f-4645-ad3b-e264f78badc5": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "8c69fac1-a18e-4c3a-b296-2d2e7c79f1b6",
+      "county_code": "05045",
+      "precinct_vectors": 42,
+      "residuals": {
+        "be8e9a18-7874-4edd-ac9d-05620b406594": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "0d8e9aa9-576f-4645-ad3b-e264f78badc5": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "8c69fac1-a18e-4c3a-b296-2d2e7c79f1b6",
+      "county_code": "05105",
+      "precinct_vectors": 17,
+      "residuals": {
+        "be8e9a18-7874-4edd-ac9d-05620b406594": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "0d8e9aa9-576f-4645-ad3b-e264f78badc5": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "8c69fac1-a18e-4c3a-b296-2d2e7c79f1b6",
+      "county_code": "05119",
+      "precinct_vectors": 124,
+      "residuals": {
+        "be8e9a18-7874-4edd-ac9d-05620b406594": {
+          "total": 0,
+          "modes": {
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0
+          }
+        },
+        "0d8e9aa9-576f-4645-ad3b-e264f78badc5": {
+          "total": 0,
+          "modes": {
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "8c69fac1-a18e-4c3a-b296-2d2e7c79f1b6",
+      "county_code": "05125",
+      "precinct_vectors": 42,
+      "residuals": {
+        "be8e9a18-7874-4edd-ac9d-05620b406594": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "0d8e9aa9-576f-4645-ad3b-e264f78badc5": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "8c69fac1-a18e-4c3a-b296-2d2e7c79f1b6",
+      "county_code": "05141",
+      "precinct_vectors": 21,
+      "residuals": {
+        "be8e9a18-7874-4edd-ac9d-05620b406594": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        },
+        "0d8e9aa9-576f-4645-ad3b-e264f78badc5": {
+          "total": 0,
+          "modes": {
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0,
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0
+          }
+        }
+      }
+    },
+    {
+      "contest_id": "8c69fac1-a18e-4c3a-b296-2d2e7c79f1b6",
+      "county_code": "05145",
+      "precinct_vectors": 93,
+      "residuals": {
+        "be8e9a18-7874-4edd-ac9d-05620b406594": {
+          "total": 0,
+          "modes": {
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0,
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0
+          }
+        },
+        "0d8e9aa9-576f-4645-ad3b-e264f78badc5": {
+          "total": 0,
+          "modes": {
+            "5bc379df-1ba9-467b-b332-de83d2be5b41": 0,
+            "3998ba83-6287-4edd-a0ba-da27ce914447": 0,
+            "d58daa89-d7d6-4a9c-8b01-3fe57b2e14b7": 0
+          }
+        }
+      }
+    }
+  ],
+  "api_review": {
+    "version": "v173",
+    "county_ballot_scopes": 75,
+    "federal_contests": 5,
+    "federal_summary_candidate_cells": 431,
+    "full_file_api_counts_match": true
+  },
+  "csv_review": {
+    "candidate_cells": 106922,
+    "csv_json_match": true,
+    "json_omitted_candidate_totals": 5401,
+    "csv_zero_serialization_does_not_fill_json": true
+  }
+}

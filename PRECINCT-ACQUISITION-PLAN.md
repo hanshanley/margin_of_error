@@ -3381,6 +3381,11 @@ Proofs: `files/virginia-supported-precinct-ui-02-deployment-01.json`,
 `files/virginia-supported-precinct-live-browser-proof-02.json`.
 The registry now marks the mapped subset `live_verified_partial`; only VA2026
 changes to `published_partial` in the worklist, with all 1,632 cells incomplete.
+Hans metadata commit **`3e6052fe532775c780773d54e812458d37673164`** also passed
+its exact deployment **42021398854**. Unqueried live registry, worklist, both
+other source registries and unchanged renderer bytes match exactly; the already
+finished map matrix was not repeated for this metadata-only change. Proof:
+`files/virginia-live-flag-publication-proof-01.json`.
 Do not rerun this finished map or count-only production suite as a substitute
 for new acquisition.
 
@@ -3446,12 +3451,48 @@ its March 9, 2026 generation date alone does not certify election-day geometry.
 Complete captured originals and receipts are in
 `files/precinct-expansion-sources/AR-2026-native-01/`.
 
-**Next executable actions:** finish the full Arkansas CSV/JSON downloads through
-the actual public UI, inspect their native reporting-unit scope, reconcile
-precinct candidate vectors and separate turnout against official parents, and
-follow actual precinct geometry declarations. Finish Alabama's complete count
-review and original county summaries. No maps, rates, crosswalks, ledger
-completion or new live coverage are claimed by these acquisition observations.
+The actual full-election downloads are now acquired: **55,645,416-byte JSON**
+(SHA-256 `079518a65d5f66385ec1cb5cedcd93a02973d6ae24a0793427af8d08c9fe14bd`)
+and **25,033,991-byte CSV**
+(SHA-256 `782c094c5f4fbb928eb6819630f5a2eec504ee1e326401f21db195777b7aefab`),
+covering **1,315 contests**. All **106,922** original CSV candidate rows match
+their native JSON identities, labels, parties, totals and all three voting modes.
+The JSON omits **5,401** candidate totals that CSV serializes as zero; the complete
+originals retain both formats and the normalized counts preserve those omissions.
+Native precinct IDs are not globally unique: use county + precinct ID, never a
+statewide bare-ID join.
+
+The portable offline reviewer is
+`scripts/review-arkansas-2026-native-results.py`. The complete immutable count
+package is `data/precinct-source-reviews/20261105/AR-2026-native-counts/`.
+All four House districts' precinct/county/state candidate and voting-mode sums
+reconcile. **2,769 House reporting vectors** preserve **83 omitted totals**;
+**2,768 separate precinct participation observations** preserve **82 omitted
+ballot totals** and every native registration omission. Observed precinct ballots
+sum exactly to all 75 counties and **893,026** statewide ballots. The separately
+captured version-`v173` API matches all 75 county ballot/registration scopes and
+**431 federal summary candidate cells**. No source serialization default repairs
+the normalized data; native reported percentages are kept separate from withheld
+analysis rates. No maps, residential-mode allocation or electorate definition
+is approved.
+
+Sixteen focused Arkansas cases plus five coverage cases pass (**21** total).
+Independent archive verification checks every normalized House vector and native
+participation field, all **17 file checksums**, all **12 original response
+receipts**, exact members/CRC, and the portable source code. Rebuilding using
+only the extracted archive is **byte-identical**. The complete ZIP is
+**11,101,053 bytes**, SHA-256
+`2a48bbc62c55b074c877172c94da4b02de0546211322c576200818e5b16548a9`.
+Proof: `files/arkansas-native-count-package-proof-02.json`.
+No frontend/template application code is redistributed.
+
+**Next executable actions:** commit/push the validated Arkansas source package
+as Hans, publish an immutable release bound to that exact source commit,
+independently redownload/verify the whole archive, then integrate the complete
+counts and native participation downloads. Follow actual precinct geometry
+declarations separately; keep maps and rates withheld until their scope is
+established. Finish Alabama's complete count review and original county summaries.
+No new live Arkansas coverage or ledger completion is claimed before integration.
 
 ## Resume procedure for every work session or scheduled prompt
 

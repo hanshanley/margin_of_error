@@ -1,0 +1,134 @@
+{
+  "official-election-results-index": {
+    "url": "https://www.sos.arkansas.gov/elections/research/election-results",
+    "effective_url": "https://www.sos.arkansas.gov/elections/research/election-results",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 113534,
+    "sha256": "7e8ba6a14417d369614b3c265b6ca52fabc5a1d1028781e4fa626c7cd497aa44",
+    "fetched_at": "2026-11-05T11:41:10.222951+00:00"
+  },
+  "native-public-response-005": {
+    "url": "https://gis.tally-enr.com/gis/states/arkansas/manifest.json",
+    "effective_url": "https://gis.tally-enr.com/gis/states/arkansas/manifest.json",
+    "status": 200,
+    "content_type": "application/json",
+    "bytes": 381,
+    "sha256": "46cf3ad5e8e162ef65857a0f473703fc49b875507541a71ac9b4ce9d718c0d5f",
+    "fetched_at": "2026-11-05T11:41:39.283862+00:00",
+    "discovery": "Ordinary public browser network from agency-declared 2026 app",
+    "declared_entry_url": "https://arkansas.tally-enr.com/#bucket=results&filter=Federal&contest=eafd140a-9378-43a2-bd6d-f8661524139b"
+  },
+  "native-public-response-007": {
+    "url": "https://enr-results-api.totalresults.com/Election/GetElectionList?cid=arkansas",
+    "effective_url": "https://enr-results-api.totalresults.com/Election/GetElectionList?cid=arkansas",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "bytes": 3321,
+    "sha256": "09667165301028324dbaeba3fd8adaa7e92b389d767614ba76075bb441b237cf",
+    "fetched_at": "2026-11-05T11:41:39.314716+00:00",
+    "discovery": "Ordinary public browser network from agency-declared 2026 app",
+    "declared_entry_url": "https://arkansas.tally-enr.com/#bucket=results&filter=Federal&contest=eafd140a-9378-43a2-bd6d-f8661524139b"
+  },
+  "native-public-response-008": {
+    "url": "https://enr-results-api.totalresults.com/Election/GetElectionInfo?cId=arkansas",
+    "effective_url": "https://enr-results-api.totalresults.com/Election/GetElectionInfo?cId=arkansas",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "bytes": 598189,
+    "sha256": "526ee808f8e6825fa43621e03069c254c9065d702f97a2baeb288b43363678ae",
+    "fetched_at": "2026-11-05T11:41:39.359440+00:00",
+    "discovery": "Ordinary public browser network from agency-declared 2026 app",
+    "declared_entry_url": "https://arkansas.tally-enr.com/#bucket=results&filter=Federal&contest=eafd140a-9378-43a2-bd6d-f8661524139b"
+  },
+  "native-public-response-009": {
+    "url": "https://enr-results-api.totalresults.com/Turnout/GetTurnout?cId=arkansas&electionID=11b07106-031e-4d7c-911a-d01fb473d6dd",
+    "effective_url": "https://enr-results-api.totalresults.com/Turnout/GetTurnout?cId=arkansas&electionID=11b07106-031e-4d7c-911a-d01fb473d6dd",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "bytes": 27095,
+    "sha256": "065492c9eb34efb4e2e2506e033a3dc9240a680967af8c1c8a825e22eaf746c5",
+    "fetched_at": "2026-11-05T11:41:39.363297+00:00",
+    "discovery": "Ordinary public browser network from agency-declared 2026 app",
+    "declared_entry_url": "https://arkansas.tally-enr.com/#bucket=results&filter=Federal&contest=eafd140a-9378-43a2-bd6d-f8661524139b"
+  },
+  "native-public-response-010": {
+    "url": "https://enr-results-api.totalresults.com/Contest/GetContestResults?cId=arkansas&electionID=11b07106-031e-4d7c-911a-d01fb473d6dd&contestType=Federal",
+    "effective_url": "https://enr-results-api.totalresults.com/Contest/GetContestResults?cId=arkansas&electionID=11b07106-031e-4d7c-911a-d01fb473d6dd&contestType=Federal",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "bytes": 102302,
+    "sha256": "20c48bff1e9ded6294f7a807bd5a29402e801c95197dbff0ca663a067867452f",
+    "fetched_at": "2026-11-05T11:41:39.365023+00:00",
+    "discovery": "Ordinary public browser network from agency-declared 2026 app",
+    "declared_entry_url": "https://arkansas.tally-enr.com/#bucket=results&filter=Federal&contest=eafd140a-9378-43a2-bd6d-f8661524139b"
+  },
+  "native-public-response-011": {
+    "url": "https://enr-results-api.totalresults.com/Contest/GetContestSearchList?cid=arkansas&electionID=11b07106-031e-4d7c-911a-d01fb473d6dd",
+    "effective_url": "https://enr-results-api.totalresults.com/Contest/GetContestSearchList?cid=arkansas&electionID=11b07106-031e-4d7c-911a-d01fb473d6dd",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "bytes": 1299468,
+    "sha256": "a624061b56822f2647c485881d81fc22c7bd47f9b2ce8925bbeb8a7462317724",
+    "fetched_at": "2026-11-05T11:41:39.431548+00:00",
+    "discovery": "Ordinary public browser network from agency-declared 2026 app",
+    "declared_entry_url": "https://arkansas.tally-enr.com/#bucket=results&filter=Federal&contest=eafd140a-9378-43a2-bd6d-f8661524139b"
+  },
+  "native-public-response-012": {
+    "url": "https://gis.tally-enr.com/gis/states/arkansas/counties.json",
+    "effective_url": "https://gis.tally-enr.com/gis/states/arkansas/counties.json",
+    "status": 200,
+    "content_type": "application/json",
+    "bytes": 8871871,
+    "sha256": "fdd1912530b31f7a4523190d7ab4e5c4edbcaf3c421a12eaad7f5d16b0e634d3",
+    "fetched_at": "2026-11-05T11:41:40.251574+00:00",
+    "discovery": "Ordinary public browser network from agency-declared 2026 app",
+    "declared_entry_url": "https://arkansas.tally-enr.com/#bucket=results&filter=Federal&contest=eafd140a-9378-43a2-bd6d-f8661524139b"
+  },
+  "native-public-response-013": {
+    "url": "https://enr-results-api.totalresults.com/Election/GetElectionConfig?cId=arkansas&electionID=11b07106-031e-4d7c-911a-d01fb473d6dd",
+    "effective_url": "https://enr-results-api.totalresults.com/Election/GetElectionConfig?cId=arkansas&electionID=11b07106-031e-4d7c-911a-d01fb473d6dd",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "bytes": 313,
+    "sha256": "3e4555bc02af03970ae139245a09f8a98aba57567cbe24088aaf8f84fdcf7e50",
+    "fetched_at": "2026-11-05T11:41:40.256722+00:00",
+    "discovery": "Ordinary public browser network from agency-declared 2026 app",
+    "declared_entry_url": "https://arkansas.tally-enr.com/#bucket=results&filter=Federal&contest=eafd140a-9378-43a2-bd6d-f8661524139b"
+  },
+  "native-public-response-014": {
+    "url": "https://gis.tally-enr.com/gis/states/arkansas/state-mask.json",
+    "effective_url": "https://gis.tally-enr.com/gis/states/arkansas/state-mask.json",
+    "status": 200,
+    "content_type": "application/json",
+    "bytes": 665175,
+    "sha256": "f5f1062e78420d32022b2d6e683d4d98fe5df4f21d81d1019a125ef8b5f6c45f",
+    "fetched_at": "2026-11-05T11:41:40.300613+00:00",
+    "discovery": "Ordinary public browser network from agency-declared 2026 app",
+    "declared_entry_url": "https://arkansas.tally-enr.com/#bucket=results&filter=Federal&contest=eafd140a-9378-43a2-bd6d-f8661524139b"
+  },
+  "official-full-election-json": {
+    "url": "https://arkansas.tally-enr.com/assets/__verdict-download/6a1f15f8fcc7/mw3h9e64-0-7yxhd8qe/2026_General_Election_%26_Judical_Runoff.json",
+    "effective_url": "https://arkansas.tally-enr.com/assets/__verdict-download/6a1f15f8fcc7/mw3h9e64-0-7yxhd8qe/2026_General_Election_%26_Judical_Runoff.json",
+    "status": 200,
+    "bytes": 55645416,
+    "sha256": "079518a65d5f66385ec1cb5cedcd93a02973d6ae24a0793427af8d08c9fe14bd",
+    "fetched_at": "2026-11-05T11:43:56.646427+00:00",
+    "filename": "2026_General_Election_&_Judical_Runoff.json",
+    "method": "Ordinary public Full Election download button",
+    "declared_entry_url": "https://arkansas.tally-enr.com/#bucket=results&filter=Federal&contest=eafd140a-9378-43a2-bd6d-f8661524139b",
+    "format": "JSON"
+  },
+  "official-full-election-csv": {
+    "url": "https://arkansas.tally-enr.com/assets/__verdict-download/6a1f15f8fcc7/mw3hazr3-0-mzxp6nxq/2026_General_Election_%26_Judical_Runoff.csv",
+    "effective_url": "https://arkansas.tally-enr.com/assets/__verdict-download/6a1f15f8fcc7/mw3hazr3-0-mzxp6nxq/2026_General_Election_%26_Judical_Runoff.csv",
+    "status": 200,
+    "bytes": 25033991,
+    "sha256": "782c094c5f4fbb928eb6819630f5a2eec504ee1e326401f21db195777b7aefab",
+    "fetched_at": "2026-11-05T11:45:11.223351+00:00",
+    "filename": "2026_General_Election_&_Judical_Runoff.csv",
+    "method": "Ordinary public Full Election download button",
+    "declared_entry_url": "https://arkansas.tally-enr.com/#bucket=results&filter=Federal&contest=eafd140a-9378-43a2-bd6d-f8661524139b",
+    "format": "CSV"
+  }
+}

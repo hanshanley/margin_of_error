@@ -1,4 +1,5 @@
 import csv
+import copy
 import importlib.util
 import io
 import hashlib
@@ -59,6 +60,155 @@ va_2026 = module("review-virginia-2026-native-results")
 va_localities = module("review-virginia-2026-locality-results")
 va_geometry = module("review-virginia-2026-reference-geometry")
 va_maps = module("build-virginia-2026-precinct-results")
+ar_2026 = module("review-arkansas-2026-native-results")
+
+
+def arkansas_native_example():
+    modes = {"abs": dict(description="Absentee"), "early": dict(description="Early Voting"),
+             "day": dict(description="Election Day"), "all": dict(description="TV - Total Votes")}
+
+    def candidates(missing=False, multiplier=1):
+        return [dict(ChoiceID=party, Name=name, PartyID=party,
+                     **({} if missing else {"TotalVotes": votes * multiplier}),
+                     Votes=[dict(VoteTypeID=mode, Votes=0 if missing or mode != "day"
+                                 else votes * multiplier) for mode in ["abs", "early", "day"]])
+                for party, name, votes in [("d", "DEM Native D", 2), ("r", "REP Native R", 1)]]
+
+    locations, turnout, counties = {}, {}, {}
+    for code, name in [("05001", "Arkansas"), ("05003", "Ashley")]:
+        locations[code] = dict(locationID=code, locationName=name, locations={
+            key: dict(locationID=key, locationName=label, locations={})
+            for key, label in [("7", "Native A"), ("8", "Native B")]})
+        turnout[code] = dict(LocationID=code, TotalBallotsCast=4,
+            RegisteredVoters=10, TotalPrecincts=2, Locations={
+            "7": dict(LocationID="7", TotalBallotsCast=4, RegisteredVoters=10,
+                      BallotsCast=[dict(VoteTypeID="all", BallotsCast=4)]),
+            "8": dict(LocationID="8", BallotsCast=[dict(VoteTypeID="all", BallotsCast=0)])})
+        counties[code] = dict(LocationID=code, LocationName=name, TotalVotes=3,
+            Choices=candidates(), Locations={
+                "7": dict(LocationID="7", LocationName="Native A", TotalVotes=3,
+                          Choices=candidates()),
+                "8": dict(LocationID="8", LocationName="Native B", Choices=candidates(True))})
+    data = dict(ElectionData=dict(ElectionID=ar_2026.ELECTION, IsOfficial=False),
+        TurnoutData=dict(TotalBallotsCast=8, RegisteredVoters=20,
+                         TotalPrecincts=4, Locations=turnout),
+        ContestData=[dict(ContestID=str(district), ContestName=f"U.S. Congress District 0{district}",
+            TotalVotes=6, Choices=candidates(multiplier=2), Locations=copy.deepcopy(counties))
+            for district in range(1, 5)])
+    identity = dict(electionID=ar_2026.ELECTION, isOfficial=False, versionID="fixture",
+        turnout=dict(totalBallotsCast=8), response=dict(id=ar_2026.ELECTION,
+            date="2026-11-03T00:00:00", name="2026 General Election & Judical Runoff",
+            parties={"d": dict(partyName="Democratic"), "r": dict(partyName="Republican")},
+            voteTypes=modes, locations=locations))
+    return data, identity
+
+
+def test_arkansas_preserves_omissions_and_county_qualified_precinct_identity():
+    data, identity = arkansas_native_example()
+    rows, participation, audit, _ = ar_2026.review(data, identity)
+    assert len(rows) == 16 and len(participation) == 4
+    assert len({(row["county_code"], row["precinct_code"]) for row in participation}) == 4
+    missing = [row for row in rows if row["precinct_code"] == "8"]
+    assert all(row["total_votes"] is None and row["democratic_votes"] is None
+               and row["republican_votes"] is None and row["margin_pp"] is None for row in missing)
+    assert all(row["ballots"] is None for row in participation if row["precinct_code"] == "8")
+    assert all(row["turnout_rate"] is None for row in participation + rows)
+    assert audit["native_ballots"] == 8 and audit["omitted_native_ballot_totals"] == 2
+    assert audit["maps_approved"] is False
+    assert all(row["margin_pp"] == pytest.approx(100 / 3)
+               for row in rows if row["precinct_code"] == "7")
+
+
+@pytest.mark.parametrize("failure", [
+    "wrong_election", "wrong_party", "duplicate_candidate", "missing_mode",
+    "negative_count", "positive_mode_missing_total", "county_mode_residual", "ballot_residual",
+])
+def test_arkansas_rejects_identity_mode_and_ballot_conflicts(failure):
+    data, identity = arkansas_native_example()
+    precinct = data["ContestData"][0]["Locations"]["05001"]["Locations"]["7"]
+    if failure == "wrong_election":
+        data["ElectionData"]["ElectionID"] = "2024"
+    elif failure == "wrong_party":
+        precinct["Choices"][0]["PartyID"] = "unknown"
+    elif failure == "duplicate_candidate":
+        precinct["Choices"].append(copy.deepcopy(precinct["Choices"][0]))
+    elif failure == "missing_mode":
+        precinct["Choices"][0]["Votes"].pop()
+    elif failure == "negative_count":
+        precinct["Choices"][0]["TotalVotes"] = -1
+    elif failure == "positive_mode_missing_total":
+        precinct["Choices"][0].pop("TotalVotes")
+    elif failure == "county_mode_residual":
+        candidate = precinct["Choices"][0]
+        candidate["Votes"][0]["Votes"] = 1
+        candidate["Votes"][2]["Votes"] -= 1
+    elif failure == "ballot_residual":
+        data["TurnoutData"]["Locations"]["05001"]["TotalBallotsCast"] += 1
+    with pytest.raises(ValueError):
+        ar_2026.review(data, identity)
+
+
+@pytest.mark.parametrize("changed", [False, True])
+def test_arkansas_csv_zero_serialization_does_not_repair_json(changed):
+    data, identity = arkansas_native_example()
+    modes = {"abs": "Absentee", "early": "Early Voting", "day": "Election Day"}
+    columns = ["Contest ID", "Contest Name", "Location ID", "Location Name", "Candidate ID",
+               "Candidate Name", "Party ID", "Candidate Votes", "Total Votes", *modes.values()]
+    text = io.StringIO()
+    writer = csv.writer(text)
+    writer.writerow(columns)
+    for contest in data["ContestData"]:
+        for county in contest["Locations"].values():
+            for node in [county, *county["Locations"].values()]:
+                for candidate in node["Choices"]:
+                    signature = list(ar_2026.csv_signature(contest, county, node, candidate, modes))
+                    if changed and node["LocationID"] == "8":
+                        signature[7] = "1"
+                    writer.writerow(signature)
+    if changed:
+        with pytest.raises(ValueError, match="CSV/JSON"):
+            ar_2026.compare_csv(data, text.getvalue(), modes)
+    else:
+        result = ar_2026.compare_csv(data, text.getvalue(), modes)
+        assert result["json_omitted_candidate_totals"] == 16
+        assert "TotalVotes" not in data["ContestData"][0]["Locations"]["05001"]["Locations"]["8"]
+
+
+@pytest.mark.parametrize("failure", [None, "version", "ballots", "candidate", "county_scope"])
+def test_arkansas_independent_native_api_versions_and_counts(failure):
+    data, identity = arkansas_native_example()
+    extra = copy.deepcopy(data["ContestData"][0])
+    extra["ContestID"] = "senate"
+    data["ContestData"].append(extra)
+
+    def api_contest(node):
+        return dict(totalVotes=node["TotalVotes"],
+            choices=[dict(choiceID=choice["ChoiceID"], partyID=choice["PartyID"],
+                          totalVotes=choice.get("TotalVotes", 0)) for choice in node["Choices"]])
+
+    turnout = dict(electionID=ar_2026.ELECTION, versionID="fixture", isOfficial=False,
+        response=dict(totalBallotsCast=8, registeredVoters=20, totalPrecincts=4,
+            locations={code: dict(totalBallotsCast=4, registeredVoters=10, totalPrecincts=2)
+                       for code in ["05001", "05003"]}))
+    federal = dict(electionID=ar_2026.ELECTION, versionID="fixture", isOfficial=False,
+        response=dict(contests={node["ContestID"]: dict(api_contest(node),
+            contestID=node["ContestID"],
+            locations={code: api_contest(county) for code, county in node["Locations"].items()})
+            for node in data["ContestData"]}))
+    if failure == "version":
+        federal["versionID"] = "different"
+    elif failure == "ballots":
+        turnout["response"]["locations"]["05001"]["totalBallotsCast"] += 1
+    elif failure == "candidate":
+        federal["response"]["contests"]["1"]["choices"][0]["totalVotes"] += 1
+    elif failure == "county_scope":
+        federal["response"]["contests"]["1"]["locations"].pop("05001")
+    if failure:
+        with pytest.raises(ValueError):
+            ar_2026.compare_api(data, identity, turnout, federal)
+    else:
+        audit = ar_2026.compare_api(data, identity, turnout, federal)
+        assert audit["full_file_api_counts_match"] and audit["federal_summary_candidate_cells"] == 30
 
 
 @pytest.mark.parametrize("kind", [
