@@ -18,6 +18,17 @@ const countyResultsPointer = existsSync(countyResultsPointerPath)
 	? JSON.parse(readFileSync(countyResultsPointerPath, 'utf8')) : null;
 const countyResultsSnapshots = countyResultsPointer
 	? [countyResultsPointer, ...(countyResultsPointer.previous_snapshots ?? [])] : [];
+type ParticipationReview = { id: string; label: string; data_directory: string; base_url: string;
+	complete_download_url: string; city_file?: string; city_label?: string; scope_note: string;
+	tables: { file: string; label: string }[] };
+type CityParticipation = { year: number; voters: number; registered_voters: number | null;
+	registered_turnout_pct: number | null };
+const participationReviewsPath = resolve('public/participation-source-reviews.json');
+const participationReviews = existsSync(participationReviewsPath)
+	? JSON.parse(readFileSync(participationReviewsPath, 'utf8')).reviews.map((review: ParticipationReview) => ({
+		...review, cities: review.city_file
+			? JSON.parse(readFileSync(resolve(review.data_directory, review.city_file), 'utf8')) as CityParticipation[] : [],
+	})) : [];
 const national = JSON.parse(readFileSync(resolve(dataRoot, 'data/national.json'), 'utf8'));
 const manifest = JSON.parse(readFileSync(resolve(dataRoot, 'publication-manifest.json'), 'utf8'));
 const snapshot = national.filter((row: { year: number; denominator: string; age_group: string }) =>
@@ -501,8 +512,34 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 				By downloading these data, you agree to the <a href={`${precinctResultsPointer.base_url}originals/NYT-2024-LICENSE.txt`}>NYT C-UDA terms</a>,
 				including attribution and downstream redistribution requirements.
 				<a href={`${precinctResultsPointer.base_url}originals/NYT-2024-README.md`}>Complete state-specific source notes</a>.</p>}
+			{participationReviews.map((review: ParticipationReview & { cities: CityParticipation[] }) => <>
+				<p>{review.scope_note}</p>
+				{review.cities.length > 0 && <details>
+					<summary>{review.city_label}: voter participation history</summary>
+					<p>Rate is actual city voters divided by that election’s registered voters, not a Census/CPS estimate.
+						Native printed percentages are retained separately in the downloads. Ward and central counts
+						do not borrow city denominators; reporting units and registrations can change between elections.</p>
+					<div class="table-wrap" tabindex="0" role="region" aria-label={review.city_label}>
+						<table data-participation-review={review.id}>
+							<caption>{review.city_label}. Missing denominators stay missing.</caption>
+							<thead><tr><th scope="col">Year</th><th scope="col">Voters</th><th scope="col">Registered</th><th scope="col">Rate</th></tr></thead>
+							<tbody>{review.cities.map((row: CityParticipation) => <tr>
+								<th scope="row">{row.year}</th><td>{formatNumber(row.voters)}</td>
+								<td>{row.registered_voters === null ? 'Not reported' : formatNumber(row.registered_voters)}</td>
+								<td>{row.registered_turnout_pct === null ? 'Not reported' : `${row.registered_turnout_pct.toFixed(1)}%`}</td>
+							</tr>)}</tbody>
+						</table>
+					</div>
+				</details>}
+			</>)}
 			<div class="download-links">
 				<a href="/precinct-coverage.csv" download>Every state and election, newest first: full precinct worklist (CSV)</a>
+				{participationReviews.map((review: ParticipationReview) => <>
+					<a href={review.complete_download_url} download>{review.label}: complete reviewed counts, original reports, receipts, audits and portable tools (ZIP)</a>
+					{review.tables.map(table => <a href={`${review.base_url}${table.file}`} download>{table.label}</a>)}
+					<a href={`${review.base_url}audit.json`}>{review.label}: scope and reconciliation audit (JSON)</a>
+					<a href={`${review.base_url}checksums.json`}>{review.label}: complete data and original-source checksums (JSON)</a>
+				</>)}
 				{countyResultsSnapshots.map((snapshot: { label: string; base_url: string;
 					complete_download_url: string; normalized_counties: number }) => <>
 					<a href={snapshot.complete_download_url} download>{snapshot.label}: complete counts, 2026 geometry, all 435 district originals, reference sources and audits (ZIP)</a>

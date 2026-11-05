@@ -19,6 +19,8 @@ Status key: `not_reviewed` = still to investigate; `acquired` = source saved, no
 `reference_acquired` = reference geometry, not certified election-day boundaries;
 `validated_partial` = audited subset only; `snapshot_ready` = data built, not yet verified live;
 `published_partial` = the acquired layer passed live browser checks, not complete statewide coverage.
+`reviewed_city_only_voter_counts` = limited municipal participation, not statewide or demographic coverage;
+`reviewed_county_mail_returns_only` = administrative mail returns, not all-mode ballots or final turnout.
 Checkmarks are reserved for verified, complete live coverage.
 
 ## 2026
@@ -46,7 +48,7 @@ Checkmarks are reserved for verified, complete live coverage.
 | [ ] | Louisiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Massachusetts | acquired | reference_acquired | validated_partial | passed | published_partial | central_tabulation_ballot_counts_only_no_registration_or_rates |
 | [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | reviewed_city_only_voter_counts |
 | [ ] | Michigan | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Minnesota | acquired | reference_acquired | validated_partial | passed | published_partial | acquired_precinct_counts_and_registration |
 | [ ] | Missouri | acquired_reconciled | election_year_reference_pending | withheld | house_vectors_and_native_participation_independently_reconciled | full_counts_download_only | native_reporting_unit_counts_centralized_absentee_unallocated |
@@ -63,7 +65,7 @@ Checkmarks are reserved for verified, complete live coverage.
 | [ ] | Ohio | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Oklahoma | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Oregon | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Pennsylvania | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Pennsylvania | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | reviewed_county_mail_returns_only |
 | [ ] | Rhode Island | acquired | reference_acquired | validated_partial | passed | published_partial | acquired_locality_counts_rates_withheld |
 | [ ] | South Carolina | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | South Dakota | acquired_reconciled | correct_election_reference_pending | withheld | counts_passed_map_withheld | full_counts_download_only | acquired_precinct_counts_and_provisional_rates |
@@ -102,7 +104,7 @@ Checkmarks are reserved for verified, complete live coverage.
 | [ ] | Louisiana | acquired | reference_acquired | validated_partial | passed | published_partial | not_acquired |
 | [ ] | Massachusetts | acquired | reference_acquired | validated_partial | passed | published_partial | not_acquired |
 | [ ] | Maryland | acquired | reference_acquired | validated_partial | passed | published_partial | not_acquired |
-| [ ] | Maine | acquired | reference_acquired | validated_partial | passed | published_partial | not_acquired |
+| [ ] | Maine | acquired | reference_acquired | validated_partial | passed | published_partial | reviewed_city_only_voter_counts |
 | [ ] | Michigan | acquired | reference_acquired | validated_partial | passed | published_partial | not_acquired |
 | [ ] | Minnesota | acquired | reference_acquired | validated_partial | passed | published_partial | not_acquired |
 | [ ] | Missouri | acquired | reference_acquired | validated_partial | passed | published_partial | not_acquired |
@@ -158,7 +160,7 @@ Checkmarks are reserved for verified, complete live coverage.
 | [ ] | Louisiana | acquired_originals_review_pending | not_reviewed | pending | source_bytes_verified_scope_pending | full_originals_download_only | not_inferred_from_candidate_votes |
 | [ ] | Massachusetts | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | reviewed_city_only_voter_counts |
 | [ ] | Michigan | acquired_originals_review_pending | not_reviewed | pending | source_bytes_verified_scope_pending | full_originals_download_only | not_inferred_from_candidate_votes |
 | [ ] | Minnesota | acquired_originals_review_pending | not_reviewed | pending | source_bytes_verified_scope_pending | full_originals_download_only | not_inferred_from_candidate_votes |
 | [ ] | Missouri | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
@@ -214,7 +216,7 @@ Checkmarks are reserved for verified, complete live coverage.
 | [ ] | Louisiana | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Massachusetts | acquired | reference_acquired | validated_partial | passed | published_partial | not_acquired |
 | [ ] | Maryland | acquired | reference_acquired | validated_partial | passed | published_partial | not_acquired |
-| [ ] | Maine | acquired | reference_acquired | validated_partial | passed | published_partial | not_acquired |
+| [ ] | Maine | acquired | reference_acquired | validated_partial | passed | published_partial | reviewed_city_only_voter_counts |
 | [ ] | Michigan | acquired | reference_acquired | validated_partial | passed | published_partial | not_acquired |
 | [ ] | Minnesota | acquired | reference_acquired | validated_partial | passed | published_partial | not_acquired |
 | [ ] | Missouri | acquired | reference_acquired | validated_partial | passed | published_partial | not_acquired |
@@ -270,7 +272,7 @@ Checkmarks are reserved for verified, complete live coverage.
 | [ ] | Louisiana | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Massachusetts | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | reviewed_city_only_voter_counts |
 | [ ] | Michigan | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Minnesota | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Missouri | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
@@ -326,7 +328,7 @@ Checkmarks are reserved for verified, complete live coverage.
 | [ ] | Louisiana | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Massachusetts | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | source_identified | not_reviewed | pending | pending | not_published | reviewed_city_only_voter_counts |
 | [ ] | Michigan | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Minnesota | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Missouri | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
@@ -382,7 +384,7 @@ Checkmarks are reserved for verified, complete live coverage.
 | [ ] | Louisiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Massachusetts | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | reviewed_city_only_voter_counts |
 | [ ] | Michigan | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Minnesota | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Missouri | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
@@ -438,7 +440,7 @@ Checkmarks are reserved for verified, complete live coverage.
 | [ ] | Louisiana | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Massachusetts | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | reviewed_city_only_voter_counts |
 | [ ] | Michigan | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Minnesota | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Missouri | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
@@ -494,7 +496,7 @@ Checkmarks are reserved for verified, complete live coverage.
 | [ ] | Louisiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Massachusetts | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | reviewed_city_only_voter_counts |
 | [ ] | Michigan | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Minnesota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Missouri | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
@@ -550,7 +552,7 @@ Checkmarks are reserved for verified, complete live coverage.
 | [ ] | Louisiana | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Massachusetts | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | reviewed_city_only_voter_counts |
 | [ ] | Michigan | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Minnesota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Missouri | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
@@ -606,7 +608,7 @@ Checkmarks are reserved for verified, complete live coverage.
 | [ ] | Louisiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Massachusetts | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | reviewed_city_only_voter_counts |
 | [ ] | Michigan | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Minnesota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Missouri | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
@@ -662,7 +664,7 @@ Checkmarks are reserved for verified, complete live coverage.
 | [ ] | Louisiana | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Massachusetts | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | reviewed_city_only_voter_counts |
 | [ ] | Michigan | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Minnesota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Missouri | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
@@ -718,7 +720,7 @@ Checkmarks are reserved for verified, complete live coverage.
 | [ ] | Louisiana | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Massachusetts | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Maryland | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
-| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
+| [ ] | Maine | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | reviewed_city_only_voter_counts |
 | [ ] | Michigan | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Minnesota | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Missouri | source_identified | not_reviewed | pending | pending | not_published | not_acquired |

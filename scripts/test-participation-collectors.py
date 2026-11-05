@@ -2830,6 +2830,40 @@ def test_historical_source_acquisition_requires_exact_reviewed_bytes_without_inv
         historical_sources.inspect_csv(raw + b"\n", blob)
 
 
+def test_participation_reviews_change_only_the_scoped_counts_and_notes():
+    review = dict(complete_download_url="complete.zip", coverage=[
+        dict(state_code="ME", years=[2026, 2002], status="reviewed_city_only_voter_counts",
+             notes="City voters, not statewide or demographic turnout."),
+        dict(state_code="PA", years=[2026], status="reviewed_county_mail_returns_only",
+             notes="Mail returns, not final turnout.")])
+    before = precinct_coverage.build_rows(participation_reviews=[])
+    after = precinct_coverage.build_rows(participation_reviews=[review])
+    assert len(before) == len(after) == 1632
+    expected = {(2026, "ME"), (2002, "ME"), (2026, "PA")}
+    changed = set()
+    for old, new in zip(before, after):
+        if old != new:
+            changed.add((new["year"], new["state_code"]))
+            assert {k: v for k, v in old.items() if k not in {"participation", "notes"}} == {
+                k: v for k, v in new.items() if k not in {"participation", "notes"}}
+            assert "complete.zip" in new["notes"] and new["complete"] == "no"
+    assert changed == expected
+
+
+def test_city_participation_review_does_not_downgrade_existing_validated_counts():
+    coverage = dict(partial=True, source_url="reviewed-map", next_action="Review remaining units",
+                    notes="Approved subset.", participation="published_counts_and_reference_map")
+    review = dict(complete_download_url="complete.zip", coverage=[
+        dict(state_code="ME", years=[2026], status="reviewed_city_only_voter_counts",
+             notes="Additional limited city-only counts.")])
+    row = next(r for r in precinct_coverage.build_rows(
+        {"coverage": {"2026": {"ME": coverage}}}, published=True, participation_reviews=[review])
+        if r["year"] == 2026 and r["state_code"] == "ME")
+    assert row["participation"] == "published_counts_and_reference_map"
+    assert row["publication"] == "published_partial" and row["complete"] == "no"
+    assert "Additional limited city-only counts." in row["notes"]
+
+
 def test_original_source_downloads_do_not_claim_validated_maps_or_participation():
     batch = dict(year=2022, complete_download_url="full.zip", states={
         "AZ": dict(source_url="immutable.csv", rows=100, next_action="Reconcile and obtain boundaries")})

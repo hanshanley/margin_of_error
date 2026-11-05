@@ -57,7 +57,7 @@ def refresh_sources():
         states=states), indent=2) + "\n")
 
 
-def build_rows(index=None, published=False, source_batches=None):
+def build_rows(index=None, published=False, source_batches=None, participation_reviews=None):
     features = json.loads((ROOT / "public/voter-participation/data/states.geojson").read_text())["features"]
     states = sorted((f["properties"]["STUSAB"], f["properties"]["NAME"]) for f in features
                     if f["properties"]["STUSAB"] not in {"PR", "GU", "VI", "MP", "AS"})
@@ -67,6 +67,9 @@ def build_rows(index=None, published=False, source_batches=None):
     pointer = ROOT / "public/precinct-results.json"
     reviews = {}
     source_rows = {}
+    if participation_reviews is None:
+        path = ROOT / "public/participation-source-reviews.json"
+        participation_reviews = json.loads(path.read_text())["reviews"] if path.exists() else []
     if pointer.exists():
         registration = json.loads(pointer.read_text())
         for path in registration.get("source_reviews", []):
@@ -175,6 +178,13 @@ def build_rows(index=None, published=False, source_batches=None):
                 if review and review.get("municipality"):
                     row["notes"] += (" Additional city-only count review: " + review["notes"]
                                      + " Complete ZIP: " + review["complete_download_url"])
+            for participation_review in participation_reviews:
+                for scope in participation_review["coverage"]:
+                    if code == scope["state_code"] and year in scope["years"]:
+                        if row["participation"] == "not_acquired":
+                            row["participation"] = scope["status"]
+                        row["notes"] += (" Separate participation review: " + scope["notes"]
+                                         + " Complete ZIP: " + participation_review["complete_download_url"])
             rows.append(row)
     return rows
 
@@ -205,6 +215,8 @@ def write_ledger(index=None, published=False):
         "`reference_acquired` = reference geometry, not certified election-day boundaries;",
         "`validated_partial` = audited subset only; `snapshot_ready` = data built, not yet verified live;",
         "`published_partial` = the acquired layer passed live browser checks, not complete statewide coverage.",
+        "`reviewed_city_only_voter_counts` = limited municipal participation, not statewide or demographic coverage;",
+        "`reviewed_county_mail_returns_only` = administrative mail returns, not all-mode ballots or final turnout.",
         "Checkmarks are reserved for verified, complete live coverage.", "",
     ]
     for year in YEARS:

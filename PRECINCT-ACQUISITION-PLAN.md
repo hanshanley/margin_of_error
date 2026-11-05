@@ -2715,10 +2715,13 @@ Renderer syntax, seven Node tests, 41 focused collector cases, Astro check
 (zero errors), normal build and canonical Pages preparation pass. All 94
 relocated assets remain byte-identical; prepared output is **986,245,090 bytes**.
 
-**Next executable actions:** publish the UI pinned to that source commit/release
-and verify its exact Pages deployment and unqueried production.
-Only after its exact Pages deployment and unqueried production pass may the
-new pointer become `live_verified_partial`. Keep the old complete download.
+UI commit `bfaaf6be153f1d5f1fe37f18c33e2a015fac06b8` is now live after exact
+successful Pages deployment **42002127989**. The full source-matched, unqueried
+production suite passed all 48 states / 3,050 fills and all desktop/mobile,
+JavaScript/no-JavaScript, precinct-priority, zoom and failure-fallback checks:
+`files/national-2026-county-live-browser-proof-02.json`.
+The pointer is eligible for `live_verified_partial`; this does not complete
+any precinct state/year cell. Keep both full county snapshots and all 61 links.
 
 ### Maine / Pennsylvania participation normalized without manufacturing maps
 
@@ -2768,11 +2771,37 @@ Complete ZIP: `complete-maine-pennsylvania-participation-review-01.zip`,
 **4,648,075 bytes**, SHA-256
 `9e614c145f6676d1d89ab01550c4dcc8056f0383a6f415c1d8c788087ffefe3c`.
 
-**Next executable actions:** commit/push this reviewed source batch as Hans,
-publish and byte-verify a new immutable complete download, then expose its
-complete tables with explicit city/mail-return scope. Keep candidate geography,
-demographic coverage and final-turnout approval withheld. Preserve all prior
-complete downloads and all 1,632 incomplete precinct cells.
+Source commit `41fcfe00819fdf7593ae416e45ca93507bc419e4` is pushed as Hans.
+Immutable release `voter-participation-maine-pennsylvania-20261105` targets that
+exact commit. The entire public ZIP, byte count, SHA-256, CRC and exact tag binding
+passed: `files/me-pa-participation-remote-release-proof-01.json`.
+
+The separate `public/participation-source-reviews.json` registry adds four
+complete downloads without altering any map registry. A native Methods
+disclosure exposes all 13 city years, newest first, with each year's own voter
+and registered counts and calculated rate. All 61 old links remain among 65.
+The worklist carries 13 explicitly city-only Maine participation entries and
+one Pennsylvania mail-return-only entry; no candidate, boundary, join,
+validation, map-publication or completion field is promoted. Existing approved
+counts cannot be downgraded by a limited city review.
+
+Ten focused Python cases (including seven source-parser regressions and two
+new ledger-scope cases), seven Node tests, Astro check (zero errors), normal
+build and canonical Pages preparation pass. All 94 relocated assets remain
+byte-identical; prepared output is **986,260,852 bytes**. The new focused browser
+checker verifies every city count and displayed rate, three entire remote CSVs,
+all 65 exact download URLs, disclosure interaction and no overflow in all four
+desktop/mobile, JavaScript/no-JavaScript modes:
+`files/me-pa-participation-local-browser-proof-01.json`.
+
+**Next executable actions:** publish this ancillary UI and verify its exact
+Pages deployment, source-matched public registries/worklist and unqueried live
+table/download checks. The county renderer and immutable maps are unchanged
+from their completed full 48-state live suite; do not repeat it instead of
+acquiring new data. Continue remaining 2026 source gaps and actual-election
+historical acquisition. Keep candidate geography, demographic coverage and
+final-turnout approval withheld for this limited review, with all prior
+complete downloads and all 1,632 incomplete precinct cells preserved.
 
 ## Resume procedure for every work session or scheduled prompt
 

@@ -1,0 +1,37 @@
+{
+  "reviews": [
+    {
+      "id": "maine-pennsylvania-20261105-01",
+      "label": "Lewiston 2002–2026 city participation and Pennsylvania 2026 administrative mail returns",
+      "data_directory": "data/participation-source-reviews/20261105-maine-pennsylvania-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/41fcfe00819fdf7593ae416e45ca93507bc419e4/data/participation-source-reviews/20261105-maine-pennsylvania-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-maine-pennsylvania-20261105/complete-maine-pennsylvania-participation-review-01.zip",
+      "complete_download_bytes": 4648075,
+      "complete_download_sha256": "9e614c145f6676d1d89ab01550c4dcc8056f0383a6f415c1d8c788087ffefe3c",
+      "review_status": "complete_sources_and_counts_verified",
+      "maps_approved": false,
+      "city_file": "lewiston-city-participation.json",
+      "city_label": "Lewiston, Maine (city only), 2002–2026",
+      "scope_note": "Lewiston city voters are separate from Pennsylvania's 1,163,183 recorded mail returns across 67 counties. The paired Pennsylvania supplemental report was updated November 4, 2026, 4:08:50 PM; mail returns and reporting progress are not final turnout. No demographic breakdown or new precinct map is approved.",
+      "tables": [
+        {"file": "lewiston-city-participation.csv", "label": "Lewiston only: all 13 city voter totals, native registrations and separate printed/calculated rates, 2002–2026 (CSV)"},
+        {"file": "lewiston-native-voter-counts.csv", "label": "Lewiston only: all 105 native ward, precinct, unallocated Central Voting or city-mode counts (CSV)"},
+        {"file": "pennsylvania-county-mail-returns.csv", "label": "Pennsylvania: all 67 county administrative mail-return rows, not final turnout or candidate votes (CSV)"}
+      ],
+      "coverage": [
+        {
+          "state_code": "ME",
+          "years": [2026, 2024, 2022, 2020, 2018, 2016, 2014, 2012, 2010, 2008, 2006, 2004, 2002],
+          "status": "reviewed_city_only_voter_counts",
+          "notes": "Lewiston city only: actual voters for every even election, 2002–2026; 12 native city registered denominators, missing in 2002. Native ward/precinct counts keep Central Voting separately unallocated; 2020 instead has city Absentee/In Person counts. No ward denominators, demographic estimates, approved new precinct boundaries or statewide Maine participation are inferred."
+        },
+        {
+          "state_code": "PA",
+          "years": [2026],
+          "status": "reviewed_county_mail_returns_only",
+          "notes": "All 67 native county mail-return rows agree across two complete official PDFs and sum to 1,163,183. Supplemental update November 4, 2026, 4:08:50 PM; no separate timestamp is inferred for the standalone report. Mail returns and precinct-reporting progress are not final turnout or House candidate results. Do not splice these observations into an older provider snapshot."
+        }
+      ]
+    }
+  ]
+}

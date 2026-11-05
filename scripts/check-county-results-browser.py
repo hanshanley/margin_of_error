@@ -32,10 +32,13 @@ for snapshot in [precinct_pointer, *precinct_pointer.get("additional_snapshots",
             code: (location, item) for code, item in states.items()
         })
 baseline = set(json.loads(args.baseline_downloads.read_text())) if args.baseline_downloads else set()
+participation_reviews_path = root / "public/participation-source-reviews.json"
+participation_reviews = json.loads(participation_reviews_path.read_text())["reviews"] if participation_reviews_path.exists() else []
 download_count = (18 + len(precinct_pointer["source_reviews"]) + len(precinct_pointer["source_batches"])
                   + sum(3 if s.get("participation_available", True) else 2
                         for s in precinct_pointer["additional_snapshots"])
-                  + 3 * (1 + len(pointer.get("previous_snapshots", []))))
+                  + 3 * (1 + len(pointer.get("previous_snapshots", [])))
+                  + sum(1 + len(review["tables"]) for review in participation_reviews))
 for name in ["county-results.json", "precinct-results.json", "precinct-coverage.csv",
              "scripts/participation-explorer.js"]:
     response = requests.get(base + "/" + name, timeout=90)
