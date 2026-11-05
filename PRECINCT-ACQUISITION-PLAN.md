@@ -58,8 +58,12 @@ coverage cells. All 11 exporter tests, independent source/party reconciliation,
 unique archive-member checks and packaged offline reproduction pass. Native
 GA/KY party-fill provenance and FL/KY clean-rebuild residual limitations are
 retained; no original ballot-party certification is claimed. Review evidence is
-under `data/county-source-reviews/20261105-historical-house-04/`. Release and UI
-publication are next; the prerequisite Pennsylvania map proof is complete.
+under `data/county-source-reviews/20261105-historical-house-04/`. Data/tools
+commit `a5baf7cc829cedc6d379e83ae577ed61b2370731` and immutable release
+`voter-county-house-history-20261105-04` are published; all 15 assets were
+downloaded back and byte-verified, including the 1,346,170-byte complete ZIP.
+The UI build, Astro check, seven participation tests and four included caucus
+tests pass. Exact UI deployment and production table proof remain pending.
 
 The reusable 2026 county-results and separate UF/state participation pipelines
 are implemented and published. Both passed real acquisition and original-backed

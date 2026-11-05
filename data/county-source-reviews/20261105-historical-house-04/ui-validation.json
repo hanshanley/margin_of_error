@@ -1,0 +1,31 @@
+{
+  "status": "pass",
+  "astro_check": {
+    "command": "npm run check",
+    "errors": 0,
+    "warnings": 0,
+    "preexisting_hints": 5
+  },
+  "historical_export_tests": {
+    "command": "python -m pytest -q scripts/test-historical-house-export.py",
+    "passed": 11
+  },
+  "participation_tests": {
+    "command": "node --test scripts/voter-participation.test.mjs",
+    "passed": 7
+  },
+  "build": {
+    "command": "npm run build",
+    "passed": true,
+    "included_caucus_tests_passed": 4
+  },
+  "pages_preparation": {
+    "command": "node scripts/prepare-participation-pages.mjs",
+    "byte_identical_bulk_downloads": 94,
+    "site_bytes": 987291563
+  },
+  "previous_snapshots_preserved_exactly": true,
+  "baseline_complete_downloads": 212,
+  "maps_changed": false,
+  "prior_full_map_proof": "../20261105-official-pa-map-01/production-browser.json"
+}

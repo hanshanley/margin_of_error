@@ -606,11 +606,15 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 					official-source replacements, as are Indiana 2020 and Maine, Indiana, New York and Texas 2018;
 					these remain outside this MEDSL-only scope. The {51 * historicalHouseAudit.years.length}-cell download ledger
 					lists every jurisdiction separately, including excluded or missing source families.</p>
+				<p>For 2016, Missouri’s Clay, Jackson and Platte counties are withheld because unallocated
+					Kansas City votes leave them undercounted. Florida/Kentucky counts retain documented compiler
+					rebuild residuals; party-fill provenance and explicit zeros are preserved.</p>
 				{historicalHouseAudit.native_auxiliary_no_ballot_records !== undefined && <p>
 					The auxiliary downloads retain {historicalHouseAudit.native_auxiliary_gap_records} native source
 					coverage gaps and {historicalHouseAudit.native_auxiliary_no_ballot_records} no-ballot observations;
 					these are not invented zero-vote candidates or approved historical boundaries.
-					Maine’s 2020 federal/UOCAVA 23000 bucket was excluded by the compiler, not allocated into counties here.
+					Maine’s 2016 federal/UOCAVA 23099 and 2020 23000 buckets were excluded by the compiler,
+					not allocated into counties here.
 				</p>}
 			</>}
 			{precinctResultsPointer && <p>2024 precinct / municipal candidate data: <strong>The New York Times</strong>.
