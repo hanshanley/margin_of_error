@@ -2491,6 +2491,77 @@ King identities and Jefferson/Walla Walla accounting independently. Native
 participation denominators remain a separate review; no final or demographic
 turnout is inferred.
 
+### County package: 47 states reconciled, UI integration underway
+
+Canonical parser/builder: `scripts/review-house-county-results.py`.
+Every accepted native county or explicit overseas row carries exactly the
+district's full literal candidate/party inventory and explicit nonnegative
+integer counts; none are filled from missing values. County plus explicit
+unlocated vectors equal each district's own candidate vector. A state requires
+every declared district to pass and every correct-year Census county equivalent
+to be present before any county aggregation is promoted.
+
+The review passes **406 districts / 47 states / 2,958 county equivalents**.
+There are **2,953 nonzero colorable counties** and five explicit zero-vote rows.
+Direct native FIPS joins are preferred. Missing FIPS permits only unique
+Census short/long names after case folding and removing periods, not spelling
+aliases, geographic allocation or guessing padded codes. This narrowly handles
+Indiana's native `St Joseph` versus Census `St. Joseph`; `Saint Joseph` is not
+silently substituted, and normalized-name collisions are rejected.
+Connecticut uses all nine current planning regions, Virginia all 133 counties
+and independent cities, and Alaska all 30 current county equivalents.
+
+The **three withheld states** are:
+
+| State | Actual source defect | Next action |
+|---|---|---|
+| Illinois | Eleven district bodies label Chicago as a County with no FIPS, separately from Cook; direct county sums reconcile but Chicago is not a Census county identity. | Obtain a legitimate complete county aggregate or explicit reporting-authority crosswalk; do not casually merge Chicago into Cook or allocate city votes. |
+| Maine | ME-02 counties report zero write-ins while its district explicitly reports 165; the complete candidate vector does not roll up. | Obtain official county write-in returns or a source-declared unlocated component, not a derived invented county assignment. |
+| Pennsylvania | All 17 declared bodies explicitly have `test_data:true`. | Obtain production official county results; keep these original test bodies archived and withheld. |
+
+D.C. is outside the national source's 435 voting House districts; preserve its
+existing reviewed precinct layer and whole-state fallback, not an invented
+county total. Explicit source overseas regions remain separately unlocated:
+Alaska **128**, Rhode Island CD1 **447**, Rhode Island CD2 **308**.
+No county receives those votes.
+
+All **2,958** unsimplified native 2026 Census county shapes are valid after
+the explicit native NAD83-to-WGS84 transform. No invalid-geometry exclusions,
+repairs, coordinate simplification or cross-year substitution are needed.
+Independent per-state spatial checks find **zero overlapping polygon pairs
+above `1e-10` square degrees**. The complete original ZIP remains retained;
+these are county reference shapes, not election-precinct boundaries.
+
+Package: `data/county-results/20261105-house-01/`.
+Full immutable ZIP: `complete-2026-house-county-results-01.zip`,
+**138,508,764 bytes**, SHA-256
+`abd1c5d6abab56652e16f507af25be2481e76e61b8d80c2aae08baa137bcf9f7`.
+It includes every 435 original response/receipt (including withheld inputs),
+the national declaration, complete original 2026 Census archive/index/receipts,
+all normalized county rows and contributing district candidate vectors,
+full CSV, 47 unsimplified geometry shards, UI margins, audits/checksums and
+standalone tools. Largest geometry shard is only **3,922,482 bytes** compressed.
+All **428 collector tests** pass, including 30 focused county cases.
+
+Independent verification checks every original receipt and checksum, all
+normalized candidate counts and CSV cells, all valid nonoverlapping geometries,
+all 17 test-source exclusions and a **network-disabled, archive-only,
+byte-identical complete ZIP rebuild**.
+Every D/R/other county total in Washington also agrees exactly with the
+separately reviewed official APIs and both workbook summaries for all39 counties.
+Proof: `files/national-2026-county-package-proof-01.json`.
+
+**Next executable actions:** commit/push this verified source batch as Hans,
+publish its immutable complete release and independently download/hash/CRC/tag
+verify it. Then pin `public/county-results.json`, finish the already-started UI
+integration (sequential merge after latest-results refresh, 2026 geometry,
+explicit House labels, county fallback and county backdrop beneath verified
+precincts, complete JS/no-JS downloads), run source-matched interaction checks
+including failed-county-fetch preservation of precinct results, and publish
+only after local checks. Verify the exact deployed head and unqueried production
+browser behavior before a county live flag. The precinct worklist remains
+1,632 incomplete cells; county coverage is not precinct completion.
+
 ## Resume procedure for every work session or scheduled prompt
 
 1. Read `AGENTS.md`, `CLAUDE.md`, `PUBLISHING.md`, this plan, and the newest rows

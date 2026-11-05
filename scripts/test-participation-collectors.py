@@ -49,6 +49,154 @@ worcester_review = module("review-worcester-precinct-results")
 wa_review = module("review-washington-precinct-results")
 wa_maps = module("build-washington-precinct-results")
 house_county_sources = module("acquire-house-county-results")
+house_county_review = module("review-house-county-results")
+
+
+def house_county_review_fixture(code="WA", state_fips="53"):
+    def candidates(dem, rep, other):
+        return [dict(name=name, party=party, votes=votes) for name, party, votes in
+                [("D", "Democratic", dem), ("R", "Republican", rep), ("Write-in", "Nonpartisan", other)]]
+    reference = {state_fips + suffix: dict(GEOID=state_fips + suffix, STATEFP=state_fips,
+        NAME=name, NAMELSAD=name + " County") for suffix, name in [("001", "First"), ("003", "Second")]}
+    declared = dict(state_code=code, district=code + "-01", url="https://example.test/actual-id")
+    data = dict(test_data=False, country="US", province=code, district=declared["district"],
+                election_date="2026-11-03", election_type="House of Representatives",
+                election_scope="General", candidates=candidates(10, 20, 2), last_updated="native timestamp",
+                region_results={name: dict(name=name, type="County", fips=fips,
+                candidates=candidates(6, 10, 2) if name == "First" else candidates(4, 10, 0))
+                for fips, name in [(state_fips + "001", "First"), (state_fips + "003", "Second")]})
+    return data, declared, reference
+
+
+def test_house_county_review_preserves_each_native_vector_and_aggregates_only_complete_states():
+    data, declared, reference = house_county_review_fixture()
+    result = house_county_review.district_counties(data, declared, "53", reference)
+    rows = house_county_review.state_counties("WA", {"wa-01": declared},
+                                             {"wa-01": result}, reference, "53")
+    assert len(rows) == 2 and sum(row["total_votes"] for row in rows) == 32
+    assert rows[0]["margin_pp"] == 100 * (6 - 10) / 18
+    assert rows[1]["other_votes"] == 0 and rows[1]["level"] == "county"
+    assert rows[0]["district_fragments"][0]["candidates"] == data["region_results"]["First"]["candidates"]
+    assert not any(key in rows[0] for key in ["turnout_rate", "registration", "voters", "ballots"])
+    data["candidates"][0]["votes"], data["candidates"][1]["votes"] = 20, 10
+    for region in data["region_results"].values():
+        region["candidates"][0]["votes"], region["candidates"][1]["votes"] = (
+            region["candidates"][1]["votes"], region["candidates"][0]["votes"])
+    result = house_county_review.district_counties(data, declared, "53", reference)
+    rows = house_county_review.state_counties("WA", {"wa-01": declared}, {"wa-01": result}, reference, "53")
+    assert all(row["margin_pp"] > 0 for row in rows)
+
+
+@pytest.mark.parametrize("change", ["missing-vote", "missing-candidate", "duplicate-candidate", "party",
+                                   "negative", "float", "boolean", "district-sum", "test-data",
+                                   "wrong-state-fips", "unknown-fips", "duplicate-county", "unknown-level"])
+def test_house_county_review_rejects_bad_vectors_scope_and_geography_without_zero_filling(change):
+    data, declared, reference = house_county_review_fixture()
+    first = data["region_results"]["First"]
+    if change == "missing-vote":
+        first["candidates"][0].pop("votes")
+    elif change == "missing-candidate":
+        first["candidates"].pop()
+    elif change == "duplicate-candidate":
+        first["candidates"].append(dict(first["candidates"][0]))
+    elif change == "party":
+        first["candidates"][0]["party"] = "Different literal party"
+    elif change in {"negative", "float", "boolean", "district-sum"}:
+        first["candidates"][0]["votes"] = {"negative": -1, "float": 6.0,
+                                          "boolean": True, "district-sum": 7}[change]
+    elif change == "test-data":
+        data["test_data"] = True
+    elif change == "wrong-state-fips":
+        first["fips"] = "01001"
+    elif change == "unknown-fips":
+        first["fips"] = "53999"
+    elif change == "duplicate-county":
+        data["region_results"]["Second"]["fips"] = first["fips"]
+    else:
+        first["type"] = "Unreviewed Region"
+    with pytest.raises(ValueError):
+        house_county_review.district_counties(data, declared, "53", reference)
+
+
+def test_house_county_review_keeps_overseas_unlocated_and_never_adds_parallel_town_totals():
+    import copy
+    data, declared, reference = house_county_review_fixture()
+    data["region_results"]["parallel-town"] = dict(copy.deepcopy(data["region_results"]["First"]), type="Town")
+    overseas = copy.deepcopy(data["region_results"]["Second"])
+    overseas.update(type="Overseas", name="Explicit overseas", fips=None)
+    for candidate in overseas["candidates"]:
+        candidate["votes"] = 1 if candidate["party"] == "Republican" else 0
+    data["region_results"]["Second"]["candidates"][1]["votes"] -= 1
+    data["region_results"]["overseas"] = overseas
+    result = house_county_review.district_counties(data, declared, "53", reference)
+    assert len(result["counties"]) == 2 and len(result["unlocated_regions"]) == 1
+    assert result["ignored_nested_regions"] == [dict(source_key="parallel-town", native_type="Town")]
+    rows = house_county_review.state_counties("WA", {"wa-01": declared}, {"wa-01": result}, reference, "53")
+    assert sum(row["total_votes"] for row in rows) == 31
+    assert sum(c["votes"] for c in result["unlocated_regions"][0]["candidates"]) == 1
+
+
+def test_house_county_review_uses_current_connecticut_planning_regions_not_overlapping_old_counties():
+    import copy
+    data, declared, reference = house_county_review_fixture("CT", "09")
+    data["region_results"]["obsolete-county"] = copy.deepcopy(data["region_results"]["First"])
+    for name in ["First", "Second"]:
+        data["region_results"][name].update(type="Planning Region", fips=None)
+    result = house_county_review.district_counties(data, declared, "09", reference)
+    assert len(result["counties"]) == 2 and len(result["ignored_nested_regions"]) == 1
+    assert all(r["join_strategy"] == "unique_census_name_casefold_periods" for r in result["counties"])
+
+
+def test_house_county_review_accepts_only_unique_literal_names_not_aliases_or_padded_identifiers():
+    data, _, reference = house_county_review_fixture()
+    region = dict(data["region_results"]["First"], fips=None, name="FIRST COUNTY")
+    assert house_county_review.county_identity(region, "53", reference)[0] == "53001"
+    for changed in [dict(region, name="First Co."), dict(region, name="First County", fips="5301")]:
+        with pytest.raises(ValueError):
+            house_county_review.county_identity(changed, "53", reference)
+    reference["53005"] = dict(GEOID="53005", STATEFP="53", NAME="First", NAMELSAD="First city")
+    with pytest.raises(ValueError):
+        house_county_review.county_identity(dict(region, name="First"), "53", reference)
+    assert house_county_review.county_identity(dict(region, name="First city"), "53", reference)[0] == "53005"
+
+
+def test_house_county_review_matches_period_only_typography_but_never_expands_saint_or_ambiguous_names():
+    reference = {"18141": dict(GEOID="18141", STATEFP="18", NAME="St. Joseph",
+                               NAMELSAD="St. Joseph County")}
+    region = dict(name="St Joseph", fips=None)
+    assert house_county_review.county_identity(region, "18", reference)[0] == "18141"
+    with pytest.raises(ValueError):
+        house_county_review.county_identity(dict(region, name="Saint Joseph"), "18", reference)
+    reference["18999"] = dict(GEOID="18999", STATEFP="18", NAME="St Joseph", NAMELSAD="St Joseph city")
+    with pytest.raises(ValueError):
+        house_county_review.county_identity(region, "18", reference)
+
+
+def test_house_county_geometry_preserves_real_rings_and_rejects_invalid_polygons_without_repairs():
+    from shapely.geometry import Polygon, mapping, shape
+    valid = Polygon([(0, 0), (0, 3), (3, 3), (3, 0)],
+                    holes=[[(1, 1), (2, 1), (2, 2), (1, 2)]])
+    projected = house_county_review.projected_county(mapping(valid), lambda x, y: (x, y))
+    assert shape(projected).equals_exact(valid, 0)
+    assert len(projected["coordinates"]) == 2
+    with pytest.raises(ValueError):
+        house_county_review.projected_county(
+            mapping(Polygon([(0, 0), (1, 1), (0, 1), (1, 0)])), lambda x, y: (x, y))
+
+
+@pytest.mark.parametrize("failure", ["missing-district", "rejected-district", "missing-county"])
+def test_house_county_review_withholds_whole_state_when_declared_inputs_or_county_coverage_fail(failure):
+    data, declared, reference = house_county_review_fixture()
+    result = house_county_review.district_counties(data, declared, "53", reference)
+    inventory, reviewed = {"wa-01": declared}, {"wa-01": result}
+    if failure == "missing-district":
+        inventory["wa-02"] = dict(declared, district="WA-02")
+    elif failure == "rejected-district":
+        reviewed["wa-01"] = dict(error="Original explicitly marked test data")
+    else:
+        reference["53005"] = dict(GEOID="53005", STATEFP="53", NAME="Third", NAMELSAD="Third County")
+    with pytest.raises(ValueError):
+        house_county_review.state_counties("WA", inventory, reviewed, reference, "53")
 
 
 def house_county_source_fixture():
