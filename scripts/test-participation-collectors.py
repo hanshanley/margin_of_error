@@ -53,6 +53,64 @@ house_county_review = module("review-house-county-results")
 me_pa_participation = module("review-maine-pennsylvania-participation")
 wy_originals = module("archive-wyoming-election-sources")
 wy_native_text = module("recover-wyoming-native-pdf-text")
+wy_review = module("review-wyoming-precinct-results")
+
+
+@pytest.mark.parametrize("failure", [
+    None, "missing_value", "negative", "duplicate", "wrong_year", "wrong_categories", "missing_total",
+])
+def test_wyoming_native_precinct_parser_preserves_zero_counts_and_rejects_bad_rows(failure):
+    rows = ["Wyoming General Election - November 3, 2026", "United States Representative",
+            "Chuck Lisa Shawn Jeffrey", "Gray (R) Kinney (D) Johnson (L) Haggit (C)",
+            "Write-Ins Overvotes Undervotes", "Precinct", "01-01 1 2 3 4 0 0 0",
+            "Total 1 2 3 4 0 0 0", "Page 1 of 1"]
+    if failure == "missing_value":
+        rows[6] = "01-01 1 2 3 4 0 0"
+    elif failure == "negative":
+        rows[6] = "01-01 1 2 3 -4 0 0 0"
+    elif failure == "duplicate":
+        rows.insert(7, rows[6])
+    elif failure == "wrong_year":
+        rows[0] = rows[0].replace("2026", "2024")
+    elif failure == "wrong_categories":
+        rows[3] = "Gray (R) Kinney (D) Haggit (C) Johnson (L)"
+    elif failure == "missing_total":
+        rows.pop(7)
+    if failure:
+        with pytest.raises(ValueError):
+            wy_review.parse_precinct_pages([rows], "source.pdf", True)
+    else:
+        units, total, pages = wy_review.parse_precinct_pages([rows], "source.pdf", True)
+        assert units == {"01-01": dict(values=[1, 2, 3, 4, 0, 0, 0], page=1)}
+        assert total == [1, 2, 3, 4, 0, 0, 0] and pages == [1]
+
+
+def test_wyoming_separate_ballots_exclude_numeric_page_footers_and_keep_continuations():
+    header = ["Wyoming General Election - November 3, 2026", "Total Ballots Cast", "Precinct"]
+    pages = [header + ["01-01 10", "PrecinctsContinue", "onNextPage", "Page 1 of 2"],
+             header + ["02-01 0", "Total 10", "Page 2 of 2"]]
+    units, total, source_pages = wy_review.parse_precinct_pages(pages, "ballots.pdf", False)
+    assert units == {"01-01": dict(values=[10], page=1), "02-01": dict(values=[0], page=2)}
+    assert total == [10] and source_pages == [1, 2]
+
+
+@pytest.mark.parametrize("failure", [None, "missing", "duplicate", "wrong_total"])
+def test_wyoming_statewide_ballots_require_all_23_native_counties_and_printed_sum(failure):
+    rows = ["Wyoming General Election - November 3, 2026", "Total Ballots Cast",
+            "Counties Reporting: 23 of 23"] + [county + " 1" for county in wy_review.COUNTIES]
+    rows += ["Total", "23", "Page1of1"]
+    if failure == "missing":
+        rows.pop(3)
+    elif failure == "duplicate":
+        rows.insert(3, rows[3])
+    elif failure == "wrong_total":
+        rows[-2] = "24"
+    if failure:
+        with pytest.raises(ValueError):
+            wy_review.parse_statewide_pages([rows], "statewide.pdf", False)
+    else:
+        counties, total = wy_review.parse_statewide_pages([rows], "statewide.pdf", False)
+        assert len(counties) == 23 and total == [23]
 
 
 @pytest.mark.parametrize("failure", [

@@ -1,0 +1,23 @@
+{
+  "method": "direct_rendered_page_review",
+  "source": "2026-general-unofficial-results.pdf",
+  "source_sha256": "0c72271cb48afc96b12af3a76e5c9c8499757383388a1e41dff876b23f6b032c",
+  "page": 1,
+  "literal_election_date": "November 3, 2026",
+  "literal_county": "Washakie County, WY",
+  "literal_office": "UNITED STATES REPRESENTATIVE",
+  "literal_status": "UNOFFICIAL RESULTS",
+  "native_categories": [
+    "REP CHUCK GRAY",
+    "DEM LISA KINNEY",
+    "LIB SHAWN JOHNSON",
+    "CST JEFFREY HAGGIT",
+    "Write-In Totals",
+    "Overvotes",
+    "Undervotes"
+  ],
+  "category_vector": [1780, 567, 194, 130, 13, 13, 122],
+  "ballots_cast": 2819,
+  "scope": "County aggregate only. Confirms the statewide aggregate vector, not a basis for altering or swapping any precinct values.",
+  "native_party_labels_preserved": true
+}

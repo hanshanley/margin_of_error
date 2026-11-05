@@ -2910,13 +2910,65 @@ Complete archive `complete-wyoming-native-glyph-recovery-01.zip` is
 `efc289365c002a6c507d70de871c7931c9ca195390114966c21e6ff621f52bc7`.
 A network-disabled rebuild is byte-identical and ZIP CRC passes:
 `files/wyoming-native-text-package-proof-01.json`.
+Recovery source commit **`d5d275d6b83b65cce0b948e0213949f109d15ec4`**
+is pushed as Hans. Immutable release
+**`voter-precinct-wyoming-native-text-20261105`** targets that commit.
+The entire remotely downloaded archive, all 150 checked package members,
+all 108 original-body receipts and ZIP CRC match:
+`files/wyoming-native-text-remote-release-proof-01.json`.
 Recovery does **not** approve the numeric tables, turnout, geography or maps.
 The recovered statewide ballot summary prints **191,688**; reconcile it against
 every separate county/precinct table before using it as a reviewed ballot total.
 
-**Next executable actions:** reconcile all 23 counties' 2026 House category
-vectors and separate precinct ballot tables to county/state summaries using
-the recovered native coordinates and readable originals. Persist the 2022
+### Wyoming 2026 independently reconciled precinct ballot counts
+
+The reusable `scripts/review-wyoming-precinct-results.py` now reads the native
+physical table coordinates across all 23 counties, using source-hash-verified
+recovered words only for the Type3 originals. Native identifiers are retained
+exactly, including leading zeroes; every candidate header, election date,
+continuation and printed total is checked. Numeric page footers are never
+ballot records.
+
+All **432 separate precinct ballot counts** match their seven-category House
+accounting sums and reconcile to **191,688** at both county and statewide
+levels. All **3,024** House cells reconcile to their native county printed
+vectors. **22 of 23 counties / 427 precincts** also match the complete
+statewide candidate vectors. Five Washakie precincts retain an explicit
+candidate-category conflict: their state-hosted precinct PDF prints Johnson
+130 / Haggit 194, while the statewide summary prints Johnson 194 / Haggit 130.
+D/R, write-ins, overvotes, undervotes and total ballots agree. Do not silently
+swap the five precincts' third-party columns.
+
+Pursued the discrepancy with an independently acquired, complete **eight-page**
+county-issued general-election PDF advertised by the live county election
+index (DocumentCenter 632). Its directly reviewed first page explicitly says
+November 3, 2026, Unofficial, ballots **2,819**, Johnson **194** and Haggit **130**.
+It confirms the statewide county aggregate, not a basis for allocating or
+repairing precinct candidate counts. Its literal `LIB` / `CST` party labels,
+complete HTTP original, advertising index, receipts, source-bound visual
+transcription and original rendered first page are retained.
+
+The full immutable review is
+`data/precinct-source-reviews/20261105/WY-2026-native-counts/`.
+It includes every original from both preceding packages, the two additional
+county originals (**110 complete HTTP originals total**), all 432 normalized
+CSV rows, explicit native candidate categories, independent ballot counts,
+per-row source SHA-256/page references, complete conflict vectors, review
+code and every native glyph review. Registrations and rates are blank, not
+zero or borrowed denominators; neither geography nor maps are approved.
+
+Complete archive `complete-wyoming-2026-native-count-review-01.zip` is
+**20,025,208 bytes**, SHA-256
+`53b246106834a160662d9b66283a8298d0a64edcb9d2b56cf299628bbe42cae6`.
+All **29 Wyoming focused tests** pass. All 159 checked package files and the
+432-row CSV pass; a network-disabled rebuild is byte-identical and ZIP CRC
+passes: `files/wyoming-2026-native-count-package-proof-01.json`.
+
+**Next executable actions:** publish and fully redownload/verify the complete
+count review, expose its complete download and honest 2026 worklist status,
+then verify the exact ancillary UI deployment. Seek county-issued precinct
+detail for Washakie's third-party conflict and actual 2026 geometry for all
+432 native units; do not borrow 2022's 439-unit geometry. Persist the 2022
 native reconciliation as a reusable tested reviewer with complete normalized
 tables, 35 explicit format crosswalks and the Natrona conflict. Acquire
 actual-election geometry before mapping. Do not infer registrations or turnout rates.

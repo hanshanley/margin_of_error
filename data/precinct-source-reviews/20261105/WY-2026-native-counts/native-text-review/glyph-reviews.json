@@ -1,0 +1,2852 @@
+{
+  "70b20409cac65f24fee06bb16ff1647705494e56da361747f942f31b4f784449": {
+    "character": "P",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 0
+  },
+  "ba8ad6a7f3672ca0310fed1d2b52c0fdc6ed762f4b56b6bd0ad80f4569a282c9": {
+    "character": "a",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 1
+  },
+  "4ef3db092c44fee88ee627cb4174de44fc8774f6dfc1a5d112de604fbbcb5e5c": {
+    "character": "g",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 2
+  },
+  "b100af0250b27644eacd79cd0760359622bc3b21d59c678c9d597d9af52c3f95": {
+    "character": "e",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 3
+  },
+  "a81507a62b840e84b713a9f45b22dd62c3c4aefe377a38cec0b82d4370c743d0": {
+    "character": " ",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 4
+  },
+  "b7c0b5cc0ddf179f1b629d90bc483201bc84b18d76976449e518fe9a4388fbff": {
+    "character": "1",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 5
+  },
+  "9cac274278fe32a66ff52ff98b051065fa834894c278bb4bb713cd6e193b9b2f": {
+    "character": "o",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 6
+  },
+  "98812ca95bc0c6878788bcd8a80919f6bd6097bd42479dca497a8f6174638d68": {
+    "character": "f",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 7
+  },
+  "92fe49bec873affc7dea53d713d521a0f50c0bc1d17692a89eba3928edacb70e": {
+    "character": "7",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 8
+  },
+  "0ce3097f1a5a5fd4f8674d2cb923cafc2418d5893ddafe276e735d29d472dccd": {
+    "character": "S",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 9
+  },
+  "a9a346b2eaaa76c56587c37293201a8f0f992ad5c9cab79738eb0228eac19bb3": {
+    "character": "t",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 10
+  },
+  "140718beba1cf5974a9b0b447fdefe58b4b1014acce344b86a87919dcd5d0ebf": {
+    "character": "a",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 11
+  },
+  "0549bd0f7cdec9119648049971278c0e17073edc476c8e155dc70da268c97c13": {
+    "character": "e",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 12
+  },
+  "2b24b222faee645b8e52ece307df7e7dbbcb1635427e4922864a67e88b34c79e": {
+    "character": "w",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 13
+  },
+  "69b880c41096dfbdd534b8bc87e1b7fc90a83bd934290c323bd38eaa0c2a3c5c": {
+    "character": "i",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 14
+  },
+  "e45790fd0ae6e5aa91d06fd44d899587d6b8c5732e8b8b2c5c86a107eff26ab9": {
+    "character": "d",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 15
+  },
+  "5de5f8f3cf9fe964459657a2d59d57228a4ed44a6d7cb75f6841c20e54e346f2": {
+    "character": "C",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 16
+  },
+  "e3ba2a319e461af7922beac88232fcbbf69c21730e6f1191f31cdf8381647b41": {
+    "character": "n",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 17
+  },
+  "f12024ef80e72be5ae2af38580a7655698be2a58318240d5b527c4a4cfe9e1cc": {
+    "character": "s",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 18
+  },
+  "ada8306c051924f26b0ce3f048e357f44a85110517f66bc6506aad04f18c6f69": {
+    "character": "U",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 19
+  },
+  "16223d7383eb1838aca2a5a45f23cb222f799de87ff587b51a84bc388d6e891a": {
+    "character": "o",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 20
+  },
+  "1ada4886f9e95dbd7e4a149d01678f39260fcde5bbe369848b1b8d446a796653": {
+    "character": "f",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 21
+  },
+  "c6cf7bda3d3aa860e16a14f39100a05ace871bef245f7a65b838809cc0bede96": {
+    "character": "c",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 22
+  },
+  "fbca0ba13c9b49b54c3cc02c3a28442a0e6a93004e9528db2bd887526683ffb0": {
+    "character": "l",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 23
+  },
+  "b4411a7f978bae96808a2b72ca3518cc0b559f5b14cd9bddecf54f7f0302da16": {
+    "character": "u",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 24
+  },
+  "5cfd5a88a11e462083602b196b0631ef8a986ce04793b7ffe8d56663e766f518": {
+    "character": "m",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 25
+  },
+  "dc0a3ae54ac8eb8f415a6df311dddf1ffd32f66a68b92a0b57b1f9a29992997c": {
+    "character": "r",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 26
+  },
+  "ddc744f7b3cf584d125637aaa4fc99f46d258a9c211eeee866a1e5a275522927": {
+    "character": "y",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 27
+  },
+  "1ef91f2578ac0555c23a7ea2de5b5c7c2085b585d99761d5129bb35e222e916b": {
+    "character": "W",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 28
+  },
+  "be10731f29003b915e7669b0543b5cfa2eafb6910b8e7a2e573b723a90250fcf": {
+    "character": "g",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 29
+  },
+  "477d45af588108c57e94f55c99a9918c99133ebcf3de59d663638d62add3edf5": {
+    "character": "G",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 30
+  },
+  "87b003d7fa8b20d51e8528bfc9ec5d2304e1eac5207e0906a6512c59b5546c10": {
+    "character": "E",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 31
+  },
+  "ee6fd722fe4b8d82ec58057e381a5b495b0ad7798d42e62b9d21f3e96cdfc002": {
+    "character": "-",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 32
+  },
+  "060c6d029516ce7156b9456d3656f4008e3e4c44f730f74a41d19273c7c91cab": {
+    "character": "N",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 33
+  },
+  "91a18b06816a958d29d19a21fcca7f5427c3b39b2e3a063b7a3ae093beaa11c1": {
+    "character": "v",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 34
+  },
+  "e62e3a168f2e0c8c2ae42301d46a3931673a70d86065bf17946bdd007549c834": {
+    "character": "b",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 35
+  },
+  "e498ef9a22ea339625490c99f3bcd66d7a324c22b539d50f0beed43a8e86a375": {
+    "character": "3",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 36
+  },
+  "f073939646328ad391b222f1b189b93c38edd93e790c5f8607a101bbe148710f": {
+    "character": ",",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 37
+  },
+  "b4ea0022bf11298ffc87c0af57338a5c292d46005d24482f7575b1c4dbda4203": {
+    "character": "2",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 38
+  },
+  "4a7979b5828f73785d2cfaaf0ee8153fa41ab10ea09d53cdddc58d5991e689af": {
+    "character": "0",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 39
+  },
+  "a065c4ee6b503189d15937c1feded464c3c849a66728782de51270d02c2a1fc0": {
+    "character": "6",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 40
+  },
+  "0d77605367f91031f46ae8a7faff404589e7246fdcce4693eea8026cc215f794": {
+    "character": "O",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 41
+  },
+  "65a52f42dc4b216390c8fcbde0251eb75f999f2894305236303ee6537e0b873d": {
+    "character": "F",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 42
+  },
+  "d4e2224e3abfec2abfa4ff073b5260d9fc83a822ea594d6f97c0d719de8a5295": {
+    "character": "I",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 43
+  },
+  "1976b858fc9da64607f81d261840442d6ad9c3642e6b2fd9a58945fbab28cf79": {
+    "character": "A",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 44
+  },
+  "c6be8e422bca00a26a0c8e3a09e0364a58579433d95084283b158ef9c1519e4d": {
+    "character": "L",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 45
+  },
+  "f8636abfefca437f0390da71d5c394706c36520eaab839e50bec9dcee9666625": {
+    "character": "R",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 46
+  },
+  "42d7398cfc3ebc42c910cdf0b8fe26a43c81f60aab324c5cc7c091e82a5e20b0": {
+    "character": "T",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 47
+  },
+  "73f9042cf3fb5f436b22e2f7f665d5b19fbfdb50c721736e77334ad4c65210fe": {
+    "character": "p",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 48
+  },
+  "8f53a9744da1ad50a9eecb7a97d1f98b71676dacb1659b5e5e999b3fe69d6ce8": {
+    "character": ":",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 49
+  },
+  "0f3dfdabca735ed2c70b4f2597c94b56463c1ba05f8d22a54722f428b9e59966": {
+    "character": "1",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 50
+  },
+  "9ea98ca19cb4a63f5735330516821d8a84f9b18a97182382e27a83ecc1a322f0": {
+    "character": "/",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 51
+  },
+  "ff045e4aa9e01e014083f2c57a08c839daa34f75ad75548f56e7355605dd0e41": {
+    "character": "5",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 52
+  },
+  "820105f4841f26f67080627c470278aa2e20e1bf5b32b7cfb7012954546686df": {
+    "character": "4",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 53
+  },
+  "f8dca07e24dcf3eb1119fec6f08f6a3b395a81793377992b96831f1e62be268a": {
+    "character": "9",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 54
+  },
+  "854d5b90fb3e1aa6bdfa817b8d80079d9360405f9a6cd9ad8bda81b26cd0bdac": {
+    "character": "M",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 55
+  },
+  "390b82a7e1e7574ed8f814d08dc96b13dcef24a5874e07971aa0d5b891e46d4a": {
+    "character": "H",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 56
+  },
+  "854a3115281345d3fed4d222dcfe6846cf876b4d23bbb6d9c183443c8713d838": {
+    "character": "r",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 57
+  },
+  "2ddb21bd7d3229aefad22370ff98e60b3bc8524ad35a3433e68b90d98e6382c8": {
+    "character": "i",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 58
+  },
+  "0c4898e2e991c1d706bc2731b25ed1aaaf7faec38e3e6a5e3d604d499aa53ce6": {
+    "character": "t",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 59
+  },
+  "84d7d45606a05fb28d3c119e8cfd1335c6075b7ce0523398f7efe11b2c5436dd": {
+    "character": "m",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 60
+  },
+  "b1f7e64a2907e1f6c511db797913ee38857bdca32d070c7e326973aff55d3604": {
+    "character": "n",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 61
+  },
+  "2103039f355c170cd7b424e8a17720c5b48ff70b71c29b2df180451fb0808d40": {
+    "character": "(",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 62
+  },
+  "19c5fec4dc6a1548e48aaa520bd090d4e34c7322a0544f650170902f50a7ce95": {
+    "character": "R",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 63
+  },
+  "4479c762b00446a1a96c7cac613e123743eb9c171e17c8eeeab3f92b7ce8f206": {
+    "character": ")",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 64
+  },
+  "daa46dec4bcd698594a5b85ec225c407ad4cbde51b864cea0b058066b19216c2": {
+    "character": "J",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 65
+  },
+  "d3eb7a3bda65cd90c4cc6f050a75d4117afe1462fab33eaf0e466b5d9e26a105": {
+    "character": "s",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 66
+  },
+  "70af458c5353e646e943d50da1ff98f1daa7a0ac24f63a289195036d82426c6e": {
+    "character": "B",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 67
+  },
+  "dedcc99ab919c2b1edd41613aad684b240e6c54e115d966202a3e038773632c0": {
+    "character": "y",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 68
+  },
+  "0e50e569fa66ca145fc5c14a516291b65866b7e3b2f229cc7b90abe04d9eaf73": {
+    "character": "d",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 69
+  },
+  "24df959ed84fced255f48b2b07cb271239dd71c4be7d05aadec89645199aff31": {
+    "character": "D",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 70
+  },
+  "d4e6c1716ae8e272eb2d13aefee04d26b6758d4ce80ba2212b1577de89d51881": {
+    "character": "W",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 71
+  },
+  "a39cf82754a5140c58906a23feacceb2ba179babf187b2bfe8d945d606bf6a77": {
+    "character": "-",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 72
+  },
+  "f8dbd0c2aecd4638950518a328ce8c56d76568a4f946e4ac2d1503b57ac2c0a4": {
+    "character": "I",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 73
+  },
+  "329b37b0de735fb419b09198ab129ff9dc2be1799c715ffd0b418d4448638c6c": {
+    "character": "O",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 74
+  },
+  "1e88d89805a12d9650ba9ba97f39a55664578c1bc054ccccfc4dc1153df10360": {
+    "character": "v",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 75
+  },
+  "2822a31289bc7a8819040be6c1c6ddde15a8ffe1368eafcdb77a2424e26367cd": {
+    "character": "U",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 76
+  },
+  "72755549b2e4cd8be5b022d79b9b1b3123e969a0c280113a8a08d290916d7ff8": {
+    "character": "A",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 77
+  },
+  "4fdde9bbab01e27ef6e8ffcc7340f05ba7ff9d95bc6f525a3e70e20b86c0866d": {
+    "character": "l",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 78
+  },
+  "74fee6187f2ff8b86438a89c2109dbba2a008c11ccd0bb606d2664a19a3da4b5": {
+    "character": "b",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 79
+  },
+  "e3cc83a5d88b92d9dbfe15945bbd71836b6714c70cc8f1aaf93bcacaf8115487": {
+    "character": "5",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 80
+  },
+  "8bebbe1f364af0f78b0152dea22f41f13368651521c693b9e9115608acde9c0b": {
+    "character": ",",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 81
+  },
+  "a4c7c5db9824e74fc5ce0857e9d029f1f6215e2e495474311c998c86c3d3f084": {
+    "character": "4",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 82
+  },
+  "adf1ea159755de81124931bff3a80fa973380b96cccbb96ee54a596bf09dd138": {
+    "character": "8",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 83
+  },
+  "8da5ff358aa464bcc9d52f5a750c6be5bfccabbdeeb605e0a56ffa186e8b5c64": {
+    "character": "6",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 84
+  },
+  "51a5e9dfc9d2243530fd191d5438cb6cd916a0ae68661c9c4be5498214106735": {
+    "character": "9",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 85
+  },
+  "793440867f71a3c765ea2fd438533b498ba335e03560053edbb9e10f0f52ef85": {
+    "character": "2",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 86
+  },
+  "f49260597056684097041e6486be95f9b1c89e64f3eb72e7b791f3beb29d3ad1": {
+    "character": "3",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 87
+  },
+  "9584a2bb84cec58f95c56a8c6f1fdc41a452be5dd45b9d87b0ba23f03dd01e96": {
+    "character": "0",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 88
+  },
+  "8e24b9c20a1bf0747ef9c487e518193512af9fec6b040a1452c38e4273405fd1": {
+    "character": "C",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 89
+  },
+  "02c5d8d2bf64daa22ad0ca45940eaa9a114c668eb66099f47256b9505d750052": {
+    "character": "p",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 90
+  },
+  "60758b03b05484fec105ed8f2bd2893c6f4bbf6e5062e3c4836202d71e6d1023": {
+    "character": "k",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 91
+  },
+  "13193956fc51aa444aea52ae92757fe951aa6a8572d1f568c4801de92b4624cc": {
+    "character": "F",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 92
+  },
+  "1e04673a5c3b535039244a7ff2a55413d657765b936617acd4e3697b4cbde092": {
+    "character": "G",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 93
+  },
+  "c3ffbd60ff0c23ff57b19254e0549ac388a345204b1db89387cb70dbb67311f9": {
+    "character": "h",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 94
+  },
+  "2baa7bddd24fb66cd35c974e82fc7b540186bbe0129dda708c20abd57f6cf953": {
+    "character": "S",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 95
+  },
+  "977aa106492d6705781167df8d079338bbb6f3c51ed8919061d5c1246128331d": {
+    "character": "L",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 96
+  },
+  "3844590a1e4e194649996f60a7985efd0fa8b19d33aabf45e3340062b228b11e": {
+    "character": "c",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 97
+  },
+  "c830743063aa54ab7fa088277aa9d26af226801bfc2cca79cc03958a7083db92": {
+    "character": "N",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 98
+  },
+  "34cc56c475cc8e918b0d05d7522e0a7dedd3a15d083992fa312717ffc6c15578": {
+    "character": "u",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 99
+  },
+  "becf1d4e3d7d5d67d404f98afdd5c242478db58afc3238ac50a39ecf8153bad0": {
+    "character": "w",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 100
+  },
+  "30a386d2036058ebe0bbf8d21e4f95773e404b221fe695bf9dfa3ca1abd9979a": {
+    "character": "T",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 101
+  },
+  "dab36aba4847f799dec120b8f6b0aa70af5c86a0d7dc951d02e14457b416f825": {
+    "character": "2",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 102
+  },
+  "9d7037cd5155e76bb60e2d4b82a279f2fb2bdd2ec59e34ad4159309682d3a9a4": {
+    "character": "C",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 103
+  },
+  "9156191a2e6faa794ad38c28d05b4c094e654c33fdcde91b5845865da1f55055": {
+    "character": "o",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 104
+  },
+  "e3447af2d82a78a98b866498a7dce00ac2c2e8fe5160b2016182704fc9974921": {
+    "character": "u",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 105
+  },
+  "052fca9ab0d892792e77c6bd518347c096f2504b6c00b94dfd9ab8100d969eba": {
+    "character": "n",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 106
+  },
+  "f053c22ae3ecd1d9216d8b9a63b38be9485327cd45e6108263bfd35e4d1d973e": {
+    "character": "t",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 107
+  },
+  "c7ba7572baa3d602d1df07ff842fbee8b5da01c17e2e5ca93bc968c99b262ad0": {
+    "character": "i",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 108
+  },
+  "eb85f19e508b79e793556184e3d7f4f7ba39edc6666e635f2884789616aa865f": {
+    "character": "e",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 109
+  },
+  "1e106093bc012d4cb21b6678aa122cf55fb93b774f3d45b116b1755e18c413be": {
+    "character": "s",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 110
+  },
+  "9fd2a5b31135351442ddb78c3a1263055309b9c4195400b8c30ea1061652a497": {
+    "character": "R",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 111
+  },
+  "a0f71856cd634bc5e01089370340ba1bffd1fd3eb21ce00b482ab984c298f9a7": {
+    "character": "r",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 112
+  },
+  "c85ab50d80f7e3ade286d89332124cd3388055c932ea81a88566240b8f6ec576": {
+    "character": "g",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 113
+  },
+  "9a54dec4241e26058195357298d89ac078696d015679d36c4748492066c29ec7": {
+    "character": "2",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 114
+  },
+  "5aca20a5f5dec9d06a9efa36e452f500d836d174d57f7faa27ccda0b088c50b0": {
+    "character": "3",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 115
+  },
+  "cefcbf0eb2af4f2daedec8c2b2491030205633e10cd980a926cb5b0cde1d5016": {
+    "character": "f",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 116
+  },
+  "8caf198493a66c55be678471a92e0288839fcf0dae3878d62504c9fd7676abbb": {
+    "character": "a",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 117
+  },
+  "9c7ed6535029574a6d87607ec8680c92d9db6279d1b4d86889be376bae4e0d1b": {
+    "character": "l",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 118
+  },
+  "53287751633d976d113f6b1f2e2c0129bf58314651e9c00c6f4c8d781bfa8e8c": {
+    "character": "U",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 119
+  },
+  "a6b5d97e78637e98e2732c693e7047d5b7375152bc8a9a8ad570193ffd24058f": {
+    "character": "d",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 120
+  },
+  "f8308c3842aa871b672ba369693584070b920355ce15d18361f8df91ccba82e0": {
+    "character": "6",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 121
+  },
+  "178730f7b20a759218a6c5ec59885767ddc055bfc17eadc8621ff07c676ef001": {
+    "character": "S",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 122
+  },
+  "e310d4c29aebb14bd3cd044b08be4bc0266b933f762cf278593958be6768dece": {
+    "character": "K",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 123
+  },
+  "fdde1f0ebf402c9c3f1693840f7aa10c77fefbc143971fc13b185372c3253611": {
+    "character": "1",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 124
+  },
+  "96b5ae3d2271a1c5a9ae7d885b4dcc7ce3ee213cd967d1e3d59df3f95c721d5b": {
+    "character": "3",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 125
+  },
+  "632ffde4260daff7e963c6499911bf91002a7ba9b05bdd4da355b5fa37ba32fc": {
+    "character": "E",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 126
+  },
+  "5cbb01b49ba655cb0f07e98cfa44d89ef565227586d909bb47cf0322faf7cbba": {
+    "character": ".",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 127
+  },
+  "8314525c73f9f11c2fcc3ebab88d8eacc8c918009d39bfcef23db97b2a715893": {
+    "character": "x",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 128
+  },
+  "e7e9974158edcf0586b7e68073906ce51b513ee1e6ab378e61fec3a306a4ebae": {
+    "character": "M",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 129
+  },
+  "8214a0af25f1a170ced7a6013eacf1b7c772289b3f591922245e0ff2f70fd530": {
+    "character": "j",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 130
+  },
+  "b97c8d3ab0493ec82b3677b4bfcf0bc378ca7062f3ebdae1bdb98f707d138039": {
+    "character": "5",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 131
+  },
+  "6db36704c640bd7faff7a7cdea21a0d4be15f6bb41aad25dd36c595e199bfe5e": {
+    "character": "6",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 132
+  },
+  "072cc90999965e8f85527128f0715abd36d8bd2a0939abdf0875cf3df9e3b07d": {
+    "character": "P",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 133
+  },
+  "46aa975eab5fd00f8d089f350152b0f6c1570910c77c2e4c9a34fcb90bee0da9": {
+    "character": "o",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 134
+  },
+  "e19a810afcc74568b2939a0e8f3c85fee0d2566a3921dff928c8b506cffe7f84": {
+    "character": "n",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 135
+  },
+  "25f677052403e312879ed613f1da1c9ab6a7bcf73116e1cdab14541819d1a50d": {
+    "character": "v",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 136
+  },
+  "e6e74b901cae3b1d4bf67b5571ca4500c4c64f96b11c503be0c1c47036d1a6dc": {
+    "character": "e",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 137
+  },
+  "1a1dd02d579acc759ab4e0159823d5faba76780554f67a66a8f33c9b60df4ae4": {
+    "character": "r",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 138
+  },
+  "aff79cdc6ed14082816d64f382dfb0c0063f37e9c6902a89fbd40bb073923fd4": {
+    "character": "s",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 139
+  },
+  "92bdca35aa06599115ad21d96fc940059a68d4ee482ba92624ebe6cdfb0f9d82": {
+    "character": "u",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 140
+  },
+  "feb490c6de8b195adfb3e21d76bc5c3358abb14613d0ed1637ba074c64981017": {
+    "character": "t",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 141
+  },
+  "ae437e945d73fc2d2183f9888209abfe5146b283042b1bb35ed6bcda54b2886c": {
+    "character": "y",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 142
+  },
+  "1c4e503b8bf474bc6b28167ac043c33a4b84d127d43491743e27b81c7f1ad53f": {
+    "character": "U",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 143
+  },
+  "b83ab8ba269588c44df13ae53ac20f86ed6e198afc41c82bacda34e9cbc223e3": {
+    "character": "f",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 144
+  },
+  "7cc32acb290b9d13c68868675a327949b1175621c845ece1bc1a7717bd43da71": {
+    "character": "c",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 145
+  },
+  "359ef3a8b277bd8d94edc87d4f8b1b19369a37137439b75dd12fdf11fb8ea492": {
+    "character": "a",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 146
+  },
+  "49c303cf7304fe8bbdf1a9a92d0e24323f1c95d0fc1b187ef6b6c3396679595b": {
+    "character": "P",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 147
+  },
+  "d3511e7e25ef716ee7583584b05001c37c6f168b411f7a5acbb3c8bc1eac3d8b": {
+    "character": "b",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 148
+  },
+  "3daa915df56a91b0905fc04a74098ce1341461245696d1e6fa4363e3aad7c551": {
+    "character": "S",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 149
+  },
+  "e942d11107a8b234f3b25965b117d365cc47755845645a16704fdba0624e6f44": {
+    "character": "m",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 150
+  },
+  "2521f5976afd798d9d5ccfa07b4316a55b318a73488eaacad173fc02a2ad500d": {
+    "character": "g",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 151
+  },
+  "26cf50c5c3f6ff7617bc80d22573aaa1a7db10d9c4ed832b8b9f2afb84ec8218": {
+    "character": "G",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 152
+  },
+  "618126e2035d419341a917743f01a3e527061e99bd6ab488fc5cc68e56d811b8": {
+    "character": "E",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 153
+  },
+  "7d6b61c82f90e6adf417db7be0b835639ac80534f942eb941d0ad330c122b6be": {
+    "character": "3",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 154
+  },
+  "2adcb01c254f1c8ec5c79c086efe78215b1761c13f08934089312d02c893c810": {
+    "character": ",",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 155
+  },
+  "e300b97bfb7db64aa931c3cbe87849ae2212e96a0fac0b375c5888055ad49d12": {
+    "character": "2",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 156
+  },
+  "59975302f178e94b1d1da4d090faae0ef0b0e4441ba6af47a962e409ada3adb9": {
+    "character": "0",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 157
+  },
+  "46ca0de3e06c7dfa55fe80019c055ed2e759c41a3e990b7d9f7eb209cd21eda4": {
+    "character": "6",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 158
+  },
+  "0b951edc78f763c4f43324d2965d83cd07d2cba3e99774ec0ed21a9b3ab9bcf0": {
+    "character": "T",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 159
+  },
+  "7b1efc13e30b3bf43212aff04f95294dfa5d4160a626136e161920f6889e3424": {
+    "character": "O",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 160
+  },
+  "4b252ac6a2436f3c6cc0027c2ec25b4ec2849e2d0916fe09454be3471d69db3d": {
+    "character": "R",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 161
+  },
+  "10e09a93642ea6fdfb859c721cc20a5d0aaa48271a780d68c93785f117316b5d": {
+    "character": "d",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 162
+  },
+  "7c0e31d828d462bfb48c964ecc9ebb2376504fa82c30d1814505198da9983540": {
+    "character": "r",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 163
+  },
+  "88220bdee55a0b778d4b7517e28096ef9ec35dc82ca65b3d5edd313c1178d095": {
+    "character": "c",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 164
+  },
+  "41c25a39522d53af3bf553bc87171d64f7b573705f9b68606fb70df875822811": {
+    "character": "n",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 165
+  },
+  "433002108152bbb6b394c1625866222cb5e4f208f59872f5476591da85d5c25c": {
+    "character": "t",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 166
+  },
+  "fc6e4cd9d4fd8fd32a300c5d4e418c977c9faebfb86277d47eab13d272eeb095": {
+    "character": "m",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 167
+  },
+  "5cf0ee1d740004c20967e194d7b9a12cfd5820e22ebe1059b243885791b2fbc9": {
+    "character": "(",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 168
+  },
+  "2e63022408f1945a98a8fa479da6b2abda78ad6d5de2dabf228c2dacf6082253": {
+    "character": "R",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 169
+  },
+  "aa7e1054db14826ad21bd0df4a73d2bc985bd0c4404b96038e2ada70316d6075": {
+    "character": ")",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 170
+  },
+  "62651c1899bf377b61902f1aa941f0699ebd7c6354590d228b41b303f8bce3f5": {
+    "character": "J",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 171
+  },
+  "167cdb6f63106aeee348f90be6bde236ea653840a08d450712ddc46c5f8acb46": {
+    "character": "s",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 172
+  },
+  "40fcd21faa51aa0081bd3873cacdd3cca8bd9d515123fe99f15e6a9afbd9ffb4": {
+    "character": "B",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 173
+  },
+  "9777e05cce67f97deaf58035e58b1a69588004d6769bc21b4815cb7ab1ad33a4": {
+    "character": "y",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 174
+  },
+  "ac449d62ade6523f694c206e55d916aee145504fb427e44f936d5b9db8c09f60": {
+    "character": "d",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 175
+  },
+  "9c4de43b83572d3c6cad1ed62fc404c2215b384a86be628aabb461d4428ea7ea": {
+    "character": "D",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 176
+  },
+  "f73937c083f81a9e0533362d57b33a279a5ab8b86d5dea5e0099d5c7607292e4": {
+    "character": "W",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 177
+  },
+  "5197b0174b273596bbc811f6fc7191265db0b418ddc9b6a34de50fe7e58709be": {
+    "character": "-",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 178
+  },
+  "f531e6d0c6ff9cb271800e4c7eee2b2dd66efff0f1b59e0fa4213099fa691c02": {
+    "character": "I",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 179
+  },
+  "1230ae975c0ba34f985a247d7ff87f3936379264a77cf4052e3b1bd40d94f064": {
+    "character": "O",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 180
+  },
+  "5a5fdd0de3c12140feb5798ecac60c3df2fe8ce17fc38157152805c4b6164d6d": {
+    "character": "U",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 181
+  },
+  "7be9d91a2831a2c3e0e406f76efac385a0261ffdf10f498497761ce2c7a20db9": {
+    "character": "0",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 182
+  },
+  "e2084487bf21bd29929733ee7bc874594db4e5e16bb2772c498474249f996637": {
+    "character": "9",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 183
+  },
+  "36593cad123132122b6ea63c52ee8833ce292f299c81b5bf4ba628e414b062ce": {
+    "character": "8",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 184
+  },
+  "d24a3728f82bc6cc46ef827ee0f1ad94353790dde539565564bb22cf5a005cd4": {
+    "character": ",",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 185
+  },
+  "3fcf70092ee742ca0e012b10f4476d9e9fa31cfc0d93cfe1d771d6a7a9b22903": {
+    "character": "p",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 186
+  },
+  "9bc24834dfcd250be4e7930a5d46776209a56e276a33d91e20734cd6b523f986": {
+    "character": "C",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 187
+  },
+  "fa42fa3578f16ab0600edfb454aac83bd7b87b282f96f7807832dc3db4ae355b": {
+    "character": "h",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 188
+  },
+  "2d40247037cf0d79847d3ed737a269c2214cb13dc3fc3f62c5866917075c4971": {
+    "character": "u",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 189
+  },
+  "0e4bc161958ca881cb461b3dd3ac382e81c818c11cd85f270c714caf0322c372": {
+    "character": "G",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 190
+  },
+  "6b780953057a0086d72739d8886f7bead79074dea560fbb8c6897674d19e030a": {
+    "character": "L",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 191
+  },
+  "043e83ab4c000f091491d795fe31627a88f4c98556c5969663241c4a4c44cf6c": {
+    "character": "S",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 192
+  },
+  "13e62027b772052183543895bed31d51bff583202e049dd492ee3c67d6daae2a": {
+    "character": "w",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 193
+  },
+  "bb59726ed7252ff97a37cf6e6f1e27aa81e1d04fa4da3d3f3fc2f591bf237859": {
+    "character": "E",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 194
+  },
+  "d06a1e987950523faec7b06bc6617552505c7fbaa8e1dabed9bf9687033bb0ff": {
+    "character": "l",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 195
+  },
+  "9f144ed1d8fcd7b4831fda74495df4365c89fc4269bd947b14a4ecb36f699b4b": {
+    "character": ".",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 196
+  },
+  "4f2c093b2e1f5ca80bf9ec5ef190843d1b30ae49669dd1e80542bc88b8d65cf6": {
+    "character": "b",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 197
+  },
+  "0cbd8584e362c580d9f93065d94acdd1bf06fb7c7e4dedc7c63e24c9bb9dbfea": {
+    "character": "x",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 198
+  },
+  "d1864bdc5a5834971d2e3e90eb8b4c9df3d200174b87f0f5371354e495d672e2": {
+    "character": "M",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 199
+  },
+  "4528b458c5d94dd7cca5b59b5b4b436557dc7669687c4fde28f53c07bce65f10": {
+    "character": "j",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 200
+  },
+  "633cde23605bbd27b6d85aa518428cff610cfca05d37b4b37c206c38a9439e57": {
+    "character": "A",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 201
+  },
+  "c8964dfe018b4f696dbda9c259cd28b2439827e9822817401f1b8a95929eaf5f": {
+    "character": "H",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 202
+  },
+  "ab5a73fdc2a24867bc1589f1ba56c533b7272c794c9fa94240132bd9a17129be": {
+    "character": "D",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 203
+  },
+  "cd9f3c349de91bbc730369b404445f76737a23eda13bd0e7fbeb49da63f73d1a": {
+    "character": "p",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 204
+  },
+  "a658921621f206c3f80c57464979af613c491d49789085a016608247eedc8ef2": {
+    "character": "J",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 205
+  },
+  "c07a799de914ae5f32cc84d42a1a1af35505b13916a6ed06d9a9c30932af7ab2": {
+    "character": "B",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 206
+  },
+  "ad2955364a2e5c8a7c1577888abe62821eb203f2c1e6b6acb2a64b767a5d5199": {
+    "character": "Y",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 207
+  },
+  "312bcd19ba1cc1b2f60989beb05c23809aeba4bac281f8c7a4ba85cbdebbcc46": {
+    "character": "N",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 208
+  },
+  "3ac8e2fa6f9102b8d7e8caf34c7ab14fb9c79ac125fd717bab80cb9ceda36b7c": {
+    "character": ".",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 209
+  },
+  "0c628fe288ac114ce41b7081e7225f431c54e54dc396c4de4fe4b8e96f674f91": {
+    "character": "h",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 210
+  },
+  "09e2d9b15f92909888992eacfc232df975b326db84d1aedf48478442608b369f": {
+    "character": "k",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 211
+  },
+  "8eb4a0ed1e14483d2dbd571b5f57002ea5c7bcfbe9b9f15b7061846e110f2271": {
+    "character": "q",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 212
+  },
+  "3b53a9a93867c25731d2f0f431f1736232406c4984cf5beefc67bab78672181c": {
+    "character": "K",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 213
+  },
+  "edd6724ae8da7da8eb86a1e77cd62f52900c701152feb5f4fd5a8b8bc22518ea": {
+    "character": "w",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 214
+  },
+  "1a4e9a21aa6ffdb1228c37db564755cc409f084e29bf43c0d21ae4fa73fc34f9": {
+    "character": "F",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 215
+  },
+  "0ace16822f2b5256130f82537b8dd6aa69570f2362d47fb2525a8b8f0bf046e0": {
+    "character": "a",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 216
+  },
+  "70db958e484a4f852fc358f4a9d22423c626dca377f2ff0e98acf018fe2057b5": {
+    "character": "g",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 217
+  },
+  "d0a23a84f5710ae84ed11b286d97034224a5298c32e3294a16df0c15925fb133": {
+    "character": "e",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 218
+  },
+  "5ffe5520d5b49c5f6ba03652cf5039aa08b9627b7534de2866571bbe3360050a": {
+    "character": "1",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 219
+  },
+  "f7218bc9827166deb913027c29f65b057b45ec588ca7b677aed3fa04ecba0d97": {
+    "character": "o",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 220
+  },
+  "99924ed8eebd0f288f1d36d2e99bcbd374249bccc61a535144421b5344e14317": {
+    "character": "f",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 221
+  },
+  "c97e58a81b05d64c78cf0908fb2b878f9695a8976ec345c8d6ea9c6c88ab2411": {
+    "character": "C",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 222
+  },
+  "a3079ec8e27bf770dfaf8c949c3f4cb787a3a5f259ada77cd1b20e0643d0b5f9": {
+    "character": "o",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 223
+  },
+  "7cdb268cba5511d4d7f8b314e76f446df3abf61385df797bdd5e9f74e99308b3": {
+    "character": "n",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 224
+  },
+  "2b26c7b3b6a78b4e168fcf13573ce2a9482caa715be22c109297c559ec850df0": {
+    "character": "e",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 225
+  },
+  "d0ab407c598344bfdb29f04032432d2171c5cd60ef02a7bfb7a2b59e1d598153": {
+    "character": "r",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 226
+  },
+  "b081b3f29e1a6639c52be27ace7ba40d47d49bf8d342f2d3e113d640a4bde800": {
+    "character": "s",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 227
+  },
+  "fcfb35f3666ad4a6980710ea3e12b10e32ef53fee01c035e55b4bfcfec3fb582": {
+    "character": "t",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 228
+  },
+  "0f26b6927b86a62ac075caa42d83c9eaffad58dad71357d04274ed3aaeb527f9": {
+    "character": "y",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 229
+  },
+  "92e6df0219d8aa9c3cc7a4c374f5bfc43378d3417e1c23709a2bd136250013b4": {
+    "character": "U",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 230
+  },
+  "afc9dfd213ffd7ede0a97e3bc69125457c697c429a51cb35f86e0e58e378c971": {
+    "character": "f",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 231
+  },
+  "4d89b47e2fab92f64edba58804b5efb3a3c0040aac25c6d4a36f503b01d6cce5": {
+    "character": "c",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 232
+  },
+  "33901c21e9a78a57dcd38aa89c6bb5f5daf24684e74740b2d620584d0980f63d": {
+    "character": "a",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 233
+  },
+  "ff574d233cd0b5c26322b836643577d0366e7a4c25feb00b56cb34ddd96ce3a7": {
+    "character": "l",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 234
+  },
+  "540a03005c2123b5397b12b7d25263148ba567ede286a3c9dadfb375b1a779b2": {
+    "character": "P",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 235
+  },
+  "f5b1b13b7afae5a6caf829b46787dd43ccbed54910c5bce8f91f8d31ec8a5902": {
+    "character": "-",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 236
+  },
+  "93e2a7b90394238cf1101edf77555ba155d9c6c5ecc32016a7b29632cc40d5b6": {
+    "character": "b",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 237
+  },
+  "f006d5ac75e2511f232e6d4735d18ef14d24ec97f2a0e135fc3fe41f427dad01": {
+    "character": "B",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 238
+  },
+  "5f1dea12fa1028814fe54fdf03e81e28d50f3af3d0f2c90355c06fec5ea460ad": {
+    "character": "S",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 239
+  },
+  "e01c90a93a4c2025fba56726f448284d2492ce9fada6607e664890d73478d3b1": {
+    "character": "m",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 240
+  },
+  "f42cced7206f44e943bc4105bab7e0b154c238d0f134080aa9e3decaa2ffcad5": {
+    "character": "g",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 241
+  },
+  "6eb9780524351712397892f7108742a44aaffc40d010a2c21e06b3d505889ba9": {
+    "character": "G",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 242
+  },
+  "1caae4ad415976b985f65b426513858e93865360851f19589900d8b17f69623d": {
+    "character": "E",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 243
+  },
+  "6539a8ef22804b5bd8c11e855a88f53a3e9f422e9b66888ad9609f478e69481b": {
+    "character": "3",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 244
+  },
+  "b7b63386dbeab171a57bd66c06a2d66c013770abd0ef3dcdacc2acaaa6b16180": {
+    "character": ",",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 245
+  },
+  "7e973f562be9b4a2022f48a00bb101789225b5023be0a5fa9bd121071b7cffb5": {
+    "character": "2",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 246
+  },
+  "407785d40ac13e30f6602fbd2e2bb5fe1f0760db5c22b32b37ca4846ef4c0ae3": {
+    "character": "0",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 247
+  },
+  "9172b75375e6c9dbe67446491510db639a974bdcbaee26a7e407643e5e3d8339": {
+    "character": "6",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 248
+  },
+  "64e0e83421ee313b7fca617c40b6e88b223597071eeb06dac12637af157e6634": {
+    "character": "O",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 249
+  },
+  "1a4f294ff613a2777de7708bc977c09dc0b49e035ea38d58b56bc5bf86abfb83": {
+    "character": "I",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 250
+  },
+  "b1d26efd40a371b059f6c8ce7d87315c313099bdde998c280b974a87e83f3cee": {
+    "character": "R",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 251
+  },
+  "6c9d88a92f1e427da8dd87a2037fbbaacf64da961ae3a343e92dffb2123c9df4": {
+    "character": "r",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 252
+  },
+  "eb9e225216af52b9146cbc8cd40a2ac4aaacd7f0c376e4c7011617a4fe441288": {
+    "character": "c",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 253
+  },
+  "71ff1472601d4a4f963ff70ad4d88a6a10daa1c2a5079f8464876ec6c7d465bf": {
+    "character": "n",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 254
+  },
+  "382cea1c71b02041243b02a3fce6aade32f8a46107466f6e7d501e7ac46186ad": {
+    "character": "0",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 255
+  },
+  "d41c165a29fe4059d4e5df24bc0ff0097524f1ef6608a75732a051de4445bb6a": {
+    "character": "-",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 256
+  },
+  "6e515f1f2f011c544b97b051f5844e896c8939225e33af9235dc5b3907772912": {
+    "character": "8",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 257
+  },
+  "7b20edaf76937a20aa9d1b1522fd4e1fe8f6e7d43a3958318ce492c406276d75": {
+    "character": "2",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 258
+  },
+  "7cb4ac0962bf8cf36d0db88948d8d55d1b22ce7dd6cea383d0ef45018ee2da0d": {
+    "character": "3",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 259
+  },
+  "d7c22c5ac9e004bdea9c74daff94e2520a9a3406678d6d362e7dec5c154fcd44": {
+    "character": "5",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 260
+  },
+  "a2270cb0ec3b08ddc6a78e302df94b1678a7fd315fd9e83a7cbfe705604e99b5": {
+    "character": "9",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 261
+  },
+  "7287dc4d0f8bf4bbbd5ad89498f3ea5ad001ad012beab4140019d354255479c7": {
+    "character": "6",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 262
+  },
+  "15752544c500d5260df257da73ad6bc09b0a06277bb233cded6728764d3ce7b2": {
+    "character": "7",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 263
+  },
+  "e327be4ae72032506082dd516e71178bf319e9429871d62e898cad73a3353727": {
+    "character": ",",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 264
+  },
+  "7ea71730fd72be93da1452fcaa9ad84a32c079a11a004c906f05aca11a483321": {
+    "character": "S",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 265
+  },
+  "955a8e03de95bdf2357c4eece2e429adc9cfd30f350f94fba6a80ef0f05f8da9": {
+    "character": "t",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 266
+  },
+  "129abe4cfee533987ff7f6c082ec3dcfa43fa9de3a1bf4cff0c311201eea2cbf": {
+    "character": "a",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 267
+  },
+  "998433d3c603c949c2c9089e8182beb44c8cde63533cedd6cea347034176d4c7": {
+    "character": "e",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 268
+  },
+  "b91742398b431f1f9e769f92af45ec0e0478d6b1e4386b1abfeeb197d4e6c733": {
+    "character": "d",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 269
+  },
+  "2bfe069b8090345ac8a79a8360761db359e8a865f1c6467c171361a54eaedf1f": {
+    "character": "B",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 270
+  },
+  "dda5fd112004886bef34ec9f3454160aafc8b66838a29068d5665acbee9ad67b": {
+    "character": "o",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 271
+  },
+  "0b00e85d9a756034ef64046424c886ebbfb2a66f80bc74f82b4df281abefc00b": {
+    "character": "p",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 272
+  },
+  "b0a0bf8f56f7d301acae9406c180e1bc9edcd789d52232a7f1ecb54932b0995d": {
+    "character": "s",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 273
+  },
+  "920a614add8fbb09aebf05a5bb291110c02451318ee45bcc7ea9b40054c5c44c": {
+    "character": "n",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 274
+  },
+  "1276d9fe041f2826b67dffd78e1c958c8babf39bfe583323af93412e41fc7dfd": {
+    "character": "U",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 275
+  },
+  "999c953ef403c09c873299221d5c4c359fd8dfe8e5fdafc69e99a02cfca61a31": {
+    "character": "c",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 276
+  },
+  "0c3e6cffc851fb01ec15c04958c542fbd393209967fab87c1d0e7bc8fe5811f8": {
+    "character": "m",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 277
+  },
+  "d93211b4e8e2b703e8f271d251b82a68305ea6a434241f4606f25bb675ae6217": {
+    "character": "y",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 278
+  },
+  "33f1fe69871b4dd0e255515effc62fdafff6f94427558e3326a903d62a3f263e": {
+    "character": "W",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 279
+  },
+  "be4052ed673d59e0c1a6a906241dd616f9383e053b66eb8493cdcf27d84ce430": {
+    "character": "g",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 280
+  },
+  "6dfec2105bf212eb45e53ac3578264fa7b25e77fb6cc5bc7abb1e674374664ac": {
+    "character": "G",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 281
+  },
+  "52da947e9baf795739401bcb0f0c43e6470d8449a6d5fa5392a183187912c29c": {
+    "character": "E",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 282
+  },
+  "80a43e3301d900830f09714368693ea09f85065afa0f080fcdcaf9793d28f625": {
+    "character": "v",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 283
+  },
+  "caeedd8419fb0a473ef805c925fef2a83ae25c70fa16248a3d73d106175aebc2": {
+    "character": "b",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 284
+  },
+  "9712f7904067914e33b0126b9c742e772817d96456d2c70d88db2c5b6aba9956": {
+    "character": "3",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 285
+  },
+  "b10dbb0f8ea07cbd8a2f2f14535ce20e4bfc23d61a8ee73bab0c80c803d05b32": {
+    "character": "2",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 286
+  },
+  "579af145e2d7c8d91a4246d6fac6ea6499323d796663a73036cecafe6f19101d": {
+    "character": "0",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 287
+  },
+  "987e80795fbb618aae9fd9a5d57c879b5e96d4b6758b36ee3f83bba8f9fed829": {
+    "character": "6",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 288
+  },
+  "5edf2d6b4ed96790aa8ecdaca3af87c0ce4648b63942b664c4cf267e29fe610b": {
+    "character": "O",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 289
+  },
+  "f1b7888d08996734ec561d4011ddbb3c3031b139cc1d1859f4e7b743b139b0a4": {
+    "character": "C",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 290
+  },
+  "8fce0414f11d4914036ac45fed4fae41a678d321a29ad61ad9ac77a5e9734296": {
+    "character": "R",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 291
+  },
+  "f9ab7ef2f77e59a09d34eca88b4083a5275217f40c07bbba6b4b6d5ffdd6e1cd": {
+    "character": "1",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 292
+  },
+  "9a32ba912158d94219675374c1af84a556f918809b42725475e93aa2d2e604dd": {
+    "character": "/",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 293
+  },
+  "6d38cb5f78aaf32e85944356a0ef0e951d7e7e5265d72957966ba2b01fc7418e": {
+    "character": "5",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 294
+  },
+  "a340d1ee8186fa927d3494c7a54c382de2d1aa11c1ac4cabfe997d9572d7d163": {
+    "character": "7",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 295
+  },
+  "5f7125ee6b0b84560c0469e6951e38257eac08c5accd59693318f4561a0d74a8": {
+    "character": "M",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 296
+  },
+  "ace2826a7afa5707e47b44f5ef526477172b8f1fef077312bd4abb1cec3ea707": {
+    "character": "F",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 297
+  },
+  "a23e0b529e1cd33b60b1fd732cb79a6dde2d4428803feea637a06bed4f605006": {
+    "character": "r",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 298
+  },
+  "542913a4cf824c4ec61c6ba13132e6f8251fdce1e5c4e78f22081e20a90766cc": {
+    "character": "A",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 299
+  },
+  "e464129f7bac9e8229326d98c51863b17027d146ebcfe3d8ec0ea6028ceb14cd": {
+    "character": "i",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 300
+  },
+  "d97fa62dadaa2db56fa8a3cf5cd7fc8fe09e7bfdc84356df149250e96ea2c8e0": {
+    "character": "n",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 301
+  },
+  "419740d243f1c1dddb94f4bf288683e40a5fb66b06b3e5013c1072e1c1466ade": {
+    "character": "s",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 302
+  },
+  "b8b0d7b77805955c3edf3d5c9c584fcc4a72893312e510506e9b7170bd43afc9": {
+    "character": "t",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 303
+  },
+  "186b659ea1256265b7eedf67d4b6445a203a99baac62164ab895b1992e902043": {
+    "character": "O",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 304
+  },
+  "6c0256b675c08765dc7afa748a2ae0c09afa2785d343c218e37b3a5a6a61c805": {
+    "character": "v",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 305
+  },
+  "68d998b0a83c4550116d87212d34cba54f3f3618e7883d99f138b0b860b05c94": {
+    "character": "U",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 306
+  },
+  "c7330f7f7716d31a66152b6dbb3d8069ddb7276eeddfefaa372d144d0c95b9dd": {
+    "character": "d",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 307
+  },
+  "59a2fe40439fd94d965d526cfe35ea8bd47bfb41c1d5f0a7c5d1f55c6bf29b01": {
+    "character": "l",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 308
+  },
+  "6ebcc365d750779f293b0ec449cd4ff64c8fd9f2966b71d59b82b641e94330a5": {
+    "character": "b",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 309
+  },
+  "a933a781146e35d93fc72f6eb5683f80f8913b9ccd8965949c67c7fea409de85": {
+    "character": "y",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 310
+  },
+  "0009cd0e63394b4534dc92a797ed1cfebd8711a01c16c4265213beb49e62705c": {
+    "character": ",",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 311
+  },
+  "9eaae67632e9e75b3fac0559391c45b1391883e273df4513bb985094257f34bb": {
+    "character": "6",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 312
+  },
+  "e148a6496ffbf605790975f5e1cd79b518c42b7a1653cd1523ab8957b9e1aca3": {
+    "character": "3",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 313
+  },
+  "8e679eaa9aa2a16d46b1e3d250482a8b6837d8922568142f5f911721d848e720": {
+    "character": "0",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 314
+  },
+  "6053c8e98f0194662ccff5a359bb064a5aa9e88c38f164fd3c57424628c935b9": {
+    "character": "8",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 315
+  },
+  "0da77e2696da5e1d5c1d78d9b48ff57427abb459ce1b402a7edbeb88c5444418": {
+    "character": "2",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 316
+  },
+  "591ea4353aef362a4f2b13d6b2d4a8a057c13586d6dfac2835fd2bf2a2ff9bee": {
+    "character": "5",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 317
+  },
+  "3d7d5966eacecc7bd6aa940e6b797c367ebbe6f3045892d4166b0d9d4bd91b89": {
+    "character": "B",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 318
+  },
+  "6db4fe17e8a033f4616e139d40c6af7f33834e7c4a777f07588e5e9c71a4f12b": {
+    "character": "9",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 319
+  },
+  "81dca68dbbccc5d984e2d7df1e236c8249f522dabcccf29010d716c2a4e9dea5": {
+    "character": "C",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 320
+  },
+  "e12d242d4b56491fe54f9faa5af9029989bea170502213359a17ce8a866e4345": {
+    "character": "m",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 321
+  },
+  "96e58e9db6bba96bbd23587e5e2c22babad2051833106043f10e7acd64548bbd": {
+    "character": "p",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 322
+  },
+  "ab4dc5f9b3532865ded0b096a7df4949430de28c85eef4b5b5b2a7bf5932727c": {
+    "character": "k",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 323
+  },
+  "9c6ba6ac52ab744e1e099573d08693821a78f8f203c7bad77ab4c1b55b5366ff": {
+    "character": "G",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 324
+  },
+  "62a3f7a0f7dcbfa952f482ae5abc9f6942937a947839d08dc59da64d9f90cd02": {
+    "character": "h",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 325
+  },
+  "12d88ff4efe81133898cbe64a4c8ffefcf2e52aa23368aa2485f9c2d812becec": {
+    "character": "S",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 326
+  },
+  "d2a755152eda986e28f30a3f494e6ed243fa283c77ec836a506d4ebdf6b19132": {
+    "character": "J",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 327
+  },
+  "6d34b6eb3858fd98e2d920d97fb166b5f66b22ade8273dcccda2cdda66a911b4": {
+    "character": "c",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 328
+  },
+  "12f27320b568d22edeb34028e280fcc9cc8a9f573cfb234fe9032d2abe61f760": {
+    "character": "N",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 329
+  },
+  "5dd13dbb36bf6201c58a677a5297f5e157ffd722e1d5bdbeeda680f55466a81c": {
+    "character": "u",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 330
+  },
+  "30c3ce790bf6fe6541e8a40881807984dd73c53c465286c8466b7323ccf6a9b2": {
+    "character": "w",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 331
+  },
+  "63d09c70af17724d9294a9108532db6207aca1969bdf9aab2f1d7f19e93efa32": {
+    "character": "j",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 332
+  },
+  "6e1a51e248034060e9c2d1870ee0deafcc30059b1ed3dd2f3a529f2d43cf5d0c": {
+    "character": "t",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 333
+  },
+  "4f60a131c8e856473e0df2b00f76bf57833ad47355423cdef01681d641944cc7": {
+    "character": "o",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 334
+  },
+  "c226343e649c27760b78b9fa0f85a86ad102084457a3e9aa7a1b8e942fa37f75": {
+    "character": "a",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 335
+  },
+  "26d4ac8368828e88aae4f717163310dd120af3da27310bb3d2632143f2d2d564": {
+    "character": "l",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 336
+  },
+  "7840a160d5629b04d710a51b8947e50f6d7fe83d4ae35ff5debb59cf3030f5f0": {
+    "character": "b",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 337
+  },
+  "9d3d72beda50094fb48c07f49fc8dcddf190fcf90e456b4db8f384f18635ce56": {
+    "character": "s",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 338
+  },
+  "ee75baab2e64050645bfaec943e89627d6c5547739f5f63d226eba3050f5f369": {
+    "character": "c",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 339
+  },
+  "c24f60f23d4200931e21c2139b371e9c124dcb0066a54ec2842b349dceb35f17": {
+    "character": "H",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 340
+  },
+  "264f0d93abb7ada2a3c8410fc7e098aa5e6571a7a72acdf0f2309157117494bd": {
+    "character": "D",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 341
+  },
+  "35fad7e05ecf98bd891783de8fc7788baa67ecaf4a90fd91531ca90b1fa7805a": {
+    "character": "C",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 342
+  },
+  "7198b6ced070d3b3f668df7c9e403f29d39ee578e098049001dc1561ad5835f9": {
+    "character": "7",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 343
+  },
+  "5c9e8f3b34b35b774ab8721ef5f54717f88edbb0b39e740533888d9eaee5c1e8": {
+    "character": "7",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 344
+  },
+  "c8e31c35ec6814c35423d122ec5af477340f3f8d52e5e19f038ef914e773b3c9": {
+    "character": "8",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 345
+  },
+  "bac7f3173b25e119df2f404b9cc731429aa3a6db8db1262e98410022f6aeb2b2": {
+    "character": "9",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 346
+  },
+  "6963423ba7ec213f4de013517d98ac0cb2fbdba70a53eff9550ed67ba1dc0ec2": {
+    "character": "Y",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 347
+  },
+  "d5297b9f284904cb0c8a0a9f95afbd75102a5dd2dcf336dcf1d745aaf9441da3": {
+    "character": "z",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 348
+  },
+  "fa2e3dbaea6aaf5040820368fb7065992e1abc41afd15abea88bd2ba0b748961": {
+    "character": "Q",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 349
+  },
+  "b7a41fd9bf2218a27e77060d86308334e53a2e94e91757f18799b24e6119415f": {
+    "character": "I",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 350
+  },
+  "748ad26836319ae893d1b38419462b183763f5989f27ab27b4c240d7b830879d": {
+    "character": "V",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 351
+  },
+  "7b8f1dff30ef7db699f13e3bc95a01e258f0813f818215902d2dfeef6b7940cb": {
+    "character": "'",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 352
+  },
+  "3d2fb902083e2c6b52c2a13cf32cfd4aed1650d9f2b337bd380712b365d189f7": {
+    "character": "S",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 353
+  },
+  "ddbf3df6c7dc1b1d21e802c11b87ec0f66274cf497da94a0106dfc906c52bf27": {
+    "character": "a",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 354
+  },
+  "acea84e2d11689a83abba4965253b55d12589a002984c84ee19421f88e5a7151": {
+    "character": "e",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 355
+  },
+  "0df27a91dfcaaa5bb0ba393ee1861579b1dc8b1a7d5bb22234cb0fcfdc6eb0bb": {
+    "character": "d",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 356
+  },
+  "16667e826f58465977d1f5de5706fd1ebd1481f7e33676666f42b855fa3158bd": {
+    "character": "J",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 357
+  },
+  "7d094eecbcc6bbc3491294464d7d74850108b98da17fa0ba4d4890842a41bcea": {
+    "character": "u",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 358
+  },
+  "6af3d4f1a9105cf74c44ed3bbce8dc87ea500ff97ba4ba62251ce9eb7483ee10": {
+    "character": "c",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 359
+  },
+  "7003a6f6f06ade135696bf353b03fdba1a9c87b038a31c2d6265d9dc32c95b79": {
+    "character": "R",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 360
+  },
+  "c18c94f8d7f6bb0ceed333d731cf0393a5ca066e3f825750539ce0f83de5f5ac": {
+    "character": "n",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 361
+  },
+  "b4581b49517a8f8ce7d3227d21f9ee63467c2626333e2a4f39154ffd8dc5e6ed": {
+    "character": "o",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 362
+  },
+  "4b89c05919a1c1ee0859eb62190bbfbd5caaca2363c8595b82e0603d23e3570c": {
+    "character": "s",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 363
+  },
+  "08641bd8f28bbe55be8fda7b49a5f0063545934a73475d0e123c602016ddebc3": {
+    "character": "U",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 364
+  },
+  "f28339316d3a0a1c91cae870837c23d8051b69dd16d061f37d4c14e31a39d491": {
+    "character": "f",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 365
+  },
+  "931d594f20a315af5c92829b73ba266ecc06a3eee745db665e2ef19941740f45": {
+    "character": "m",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 366
+  },
+  "917e2af6541b739f65657ee89dabc93048921321fdd3033f2bffab0ffda0255d": {
+    "character": "r",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 367
+  },
+  "8a3822409994c94472561bbae20618e430fdf1bfad2b0b9bbe02460f14ed8a49": {
+    "character": "y",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 368
+  },
+  "bfdeec925a79379d3fc05cffd1c61158a3e70f3d9eb8dd888fcaac4228f791ba": {
+    "character": "g",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 369
+  },
+  "d9decf7ef259e55830c43bab7b02da02f5d7303db5fd46e5a9ae5ea583f419c0": {
+    "character": "G",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 370
+  },
+  "06dc704b402c78e84faacc4bd5af1f0b7752c3629f6d76928bd578f6e04505c8": {
+    "character": "-",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 371
+  },
+  "32297890df2263940f1d5580746b58eb80839259c88209ed36e498d1fdae9a62": {
+    "character": "b",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 372
+  },
+  "d6677bc2650314f68b2d41b2fe587ad26634d470c6b3c37524a8ddb3d33f110a": {
+    "character": "3",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 373
+  },
+  "fe38a3bbdee685dcd8f3eb53b175a19118bac97ee37d58906e2360266f5c1436": {
+    "character": ",",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 374
+  },
+  "4e9630678ed307ecd75bb7bcbe548d45e9536de6c713ad18c84d5c427c9eb328": {
+    "character": "2",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 375
+  },
+  "57e27976265839f0ff1595257399bddf8ca443eb37e5075395b011b4091f47f3": {
+    "character": "0",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 376
+  },
+  "4dbcef1ae81cd4e5a88f39ba34cf75c534b38c400a1450b5ca544524829b3303": {
+    "character": "6",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 377
+  },
+  "4b879c6b277596eaac35d66fb0fc4eba55539eeff479a6c84d12550edaa2ba85": {
+    "character": "B",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 378
+  },
+  "5ab25bd63dbc31326bbb140499dd634e5d0442fcedb871d50eb9360fd0c5efbb": {
+    "character": "H",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 379
+  },
+  "68a9fa4404d3c36271bcefc5d9212e2b72de43cdc9533761d5bf0eb2d66049ba": {
+    "character": "O",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 380
+  },
+  "e9b3c2362f8baa56d574bff218015e1d9f1439665254a82770569922ba612b59": {
+    "character": "I",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 381
+  },
+  "72a3c01a6ffbb08babd4b270481c997d0d84e67aaf015f4de2bbffeebf438937": {
+    "character": "1",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 382
+  },
+  "0f0cf37cf06e1c006999a1ad9beb7904873a094e8edb07a7e3944ee963e0289c": {
+    "character": "5",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 383
+  },
+  "391ce2dd47ee8d0ea0ec25430f381acd5030e2d0e5241f5a7d0cad6a7133b7fc": {
+    "character": "7",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 384
+  },
+  "b439248cf1e2342db692d562d7f2395b7ec7fb6a3a5e6ad35b0052375e8bc6f7": {
+    "character": "s",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 385
+  },
+  "ff0e34cd693d37d753fa286f9f903f9b3b39c54eecc382b2d49854d3ce73973c": {
+    "character": "O",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 386
+  },
+  "3b4fd1c4f36e874e3b37662f6c2ab210525acc0aa8419c8f7db9f1033e71ffeb": {
+    "character": "r",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 387
+  },
+  "dcd3342a6b19be34b7cf789744cb4d0d35cacf3996d47b1955991aa6d89824b5": {
+    "character": "t",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 388
+  },
+  "9db060afd595c76d2eb0e8e00ade87d55dae66806172a6e217a39df64555ca91": {
+    "character": "U",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 389
+  },
+  "850757b3870b91c43b14c421791429e178b68c987cfa219666abedb7b938222e": {
+    "character": "n",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 390
+  },
+  "d0ed716f3f635821fe9a7fdf1a6ef15fea627b80e132a5c6680e51415e77dc86": {
+    "character": "d",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 391
+  },
+  "9afab1a0ed6b56bbbefbdfef84a1fde466cf05ccdd8c701fb74dbd2159a1704a": {
+    "character": "b",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 392
+  },
+  "50da4ea621e5de50fbe40d66c5c448bf55ceec0809fee35c4e38d4f41a0a9ec2": {
+    "character": "y",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 393
+  },
+  "e9fa5112ed8d78c2174b5d778ff04093583ae9d3a5f19bdfff2c6d3956e00fab": {
+    "character": "7",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 394
+  },
+  "50e223d9beb6ca885aa716bbb9ce82fa707036978a9c94c9ed052c1927111659": {
+    "character": ",",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 395
+  },
+  "f275e2e943159d42a7f856c6db84608c635dbbee423b07fc9ddd6bb16216f8fd": {
+    "character": "9",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 396
+  },
+  "3ec9a252466ad3c0b797138028cb4c7fa783b06a81370e3c749108ce12dcb265": {
+    "character": "3",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 397
+  },
+  "09a647bc8b9dd60eea666e764e98e7550f6b878b629bce3a386ffe720dbd6931": {
+    "character": "0",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 398
+  },
+  "f8916e0cdeb3265e398fc94ec7c586d1eaa62a4fe7b1f32980fa61958768d9c9": {
+    "character": "B",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 399
+  },
+  "fb8b029813143560d76c04f5d5719eea012abf255aabe964af4a75223eb3a0cd": {
+    "character": "8",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 400
+  },
+  "6b141898f4f21aa887b2320b00d7c4e412d8000bcd819b3f9432edc1cab59ea5": {
+    "character": "5",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 401
+  },
+  "0860029ebf2e4c8c7b3117c53bd36c78e71eb1e689e955dea0cd6ffcaa489763": {
+    "character": "6",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 402
+  },
+  "24373cbd9141fc42f3b590c9c39c93fcd45ace1cd70d4a03562ed1ab92566ded": {
+    "character": "C",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 403
+  },
+  "9ab16982deecaaaa25b3e989f89d6e7a2833aebc8b4bd5bf292a5f0338159833": {
+    "character": "m",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 404
+  },
+  "92eaba18a953303fa380d06849bc478262505ece5eff56c088383f00046cfaec": {
+    "character": "p",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 405
+  },
+  "5c2abc3fc10ac873d461fff66245d69f0a6890bfaf120ed20f67033ff90a8623": {
+    "character": "G",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 406
+  },
+  "ea3f507155b3e347a9061f781fafb0e820cb48716876ab7a093c41924dac0eb5": {
+    "character": "h",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 407
+  },
+  "8673c1d39df7552e5cdf6bd7b83dec634b967b754beafc1c9a4f8823246ea06b": {
+    "character": "S",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 408
+  },
+  "1dc0d3b19029b1f2c298e4a3118937c46f07df891e73beaf82e81bbcf98baf35": {
+    "character": "J",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 409
+  },
+  "e1aa9bc0f78ddfba10a071637ada3f45a507a9c57a5eee6181344e2341010a64": {
+    "character": "c",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 410
+  },
+  "d51f35491d567469bdf0359c1a25dbd82245a6d5f18eb49c52e14bae573a420e": {
+    "character": "u",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 411
+  },
+  "cc0ec6b9e7898427d2c93c7102498d783c89984e14ca1872c1d22323efb3af36": {
+    "character": "C",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 412
+  },
+  "f7f0b1c43600b0a7795ee87604bc3b6c48a12bc2c8b9e8aa4280d62626ff3b88": {
+    "character": "o",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 413
+  },
+  "dfb9734d3a5aea8de1a0fbce02c2f6645918d90271c2ecb720a06588f28e6c53": {
+    "character": "u",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 414
+  },
+  "33e0cf59a57e7889ec36fe98a26dfbb25506f7ff4a23088ca133ed6ab9112376": {
+    "character": "n",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 415
+  },
+  "a891ed46fa5c0e297b04d15a06ccc7680ae4239445281bfc048c2f6bf85f9ab1": {
+    "character": "e",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 416
+  },
+  "b23b3f673c855a099f80b2a8c6abcba4759dc5a0d85772d0859f482faa3e83a4": {
+    "character": "s",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 417
+  },
+  "32f110d1671171ffafb4b12fd94a9bf2994c20600ea5e7bb98980be56eae5e35": {
+    "character": "R",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 418
+  },
+  "2301b4de80b97e422b8cf45a9db66de960d3db73f89a31bb717e4beb431be31f": {
+    "character": "p",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 419
+  },
+  "f152906f69e387b914d7d69f98e662500c79585f6da410d92c73a81501ff0298": {
+    "character": "g",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 420
+  },
+  "bbbf0d592eeae0353b736ddb5a533be2785a5b7331681594ed9088bfcb6d984a": {
+    "character": "2",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 421
+  },
+  "c9b3a57decc4bae4307fe8d3ac892f46e0d4f7fda0d0623aa7a57a34fb50683a": {
+    "character": "3",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 422
+  },
+  "b49df4e2ff684eecd58efca27314baaab4068f899684f30bbb5fcd99d8294951": {
+    "character": "a",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 423
+  },
+  "02e4797432574ffaa4b6aa2f649af8d9d48c36d71128b63a8661e92bc9681b38": {
+    "character": "U",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 424
+  },
+  "3449cb53710559101beb087a1803c417ee2740a961e7080a42eb939d836a42d2": {
+    "character": "d",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 425
+  },
+  "2d727a72d38fe028299f20aeb34c3191874d1ac55dc8d63eda352f62642dc3cf": {
+    "character": "6",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 426
+  },
+  "6395f3d489b18ea0caa2aae9dfa0eadbd3215711e11180b8e992f08248cdf6d6": {
+    "character": "S",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 427
+  },
+  "7651989e6a146ca984c8f63ed1d129b9b9ba891255e9b9f2ef2777db6eb2b31c": {
+    "character": ".",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 428
+  },
+  "531001a3b1427422078b5841c17fdd16632fe742f1d5b1e54321f06a97df0ece": {
+    "character": "D",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 429
+  },
+  "f219a6c9eaed261f9b2f818b8919d19adb10a41f717c6ccd7c6ebe69d3f7d21f": {
+    "character": "-",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 430
+  },
+  "3d18b71b4dfaaa08e5132b05ebf81f3d7a10146ac3f38e9b3f9285b5e55a639e": {
+    "character": "z",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 431
+  },
+  "af0b55c91292c23cb6556d320ac03d330804c8938e033b14fa137036308aad1e": {
+    "character": "O",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 432
+  },
+  "5a7929a062973fd3c670bdcc7fca1d89ac98a52b598218aa78aa28591708cf18": {
+    "character": "x",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 433
+  },
+  "b5b245f8c34e3a129272e845e7044e4a05b9f559a9f146f8cb1872beb1b2f695": {
+    "character": "K",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 434
+  },
+  "cf7d155d374b1cfd5d240a5ca4953c4c038e392ceb7f3f2507293ba87be11dd9": {
+    "character": "(",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 435
+  },
+  "edb5522a6166921ed17753ec0df12a62c55976f57ff026009bce0c86e7a52f0a": {
+    "character": ")",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 436
+  },
+  "4da029b46031f9e68dc364ccfe8f1f78707f44549b880bca5ba62f78f543824a": {
+    "character": "P",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 437
+  },
+  "159df729032247f5fd51291091154dd59b3504b4d8fbe87de3ff26ecaed44e2f": {
+    "character": "k",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 438
+  },
+  "3d553424ba6095825f784f48008ccefc59ff1bc2ad0967ab08824bbdc1ac6a17": {
+    "character": "q",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 439
+  },
+  "af4d07a20f0c7e5ef0642376c69925c005f550194a6da61d5378d90a8e8fcb44": {
+    "character": "t",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 440
+  },
+  "155d05653d1b3872450eb140443d7ec9139cf9791493680728c55064ee560c74": {
+    "character": "a",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 441
+  },
+  "13dbd2de2c057a289d043b8ef2fce15094e9230319f28ace0e2520b1123c669f": {
+    "character": "e",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 442
+  },
+  "82557e524ef6ed1e42f672758d3b866585416cb3f0aa44e1972cf0c0d465e5fc": {
+    "character": "d",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 443
+  },
+  "bbd9a158590259d4756fd8d08daa294a431346ce12a69ffe425e62f99a019629": {
+    "character": "o",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 444
+  },
+  "bdcb492eebd9478dd0cf710851875a0fad8f2c51f75cc325d9423af6851f3de7": {
+    "character": "l",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 445
+  },
+  "bda81516024c95fa5f784e1afd1f2d3dc28e5d1d74775820b564bc2a09a3482f": {
+    "character": "s",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 446
+  },
+  "d1f6c989829b77b9fe90633bd031490bdf7b82a90fd11c7fc71052e006c5abec": {
+    "character": "C",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 447
+  },
+  "10b314b87460ab8b047a1b51ff8e6a0bc69ebcdf1cd89873b4ba1867827e5efe": {
+    "character": "y",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 448
+  },
+  "819c4c2caaa2c515bcc3efce80939fb324d79c9389e51d661b7e6e3bc39ea96b": {
+    "character": "m",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 449
+  },
+  "b9a11fb8d119fd6db6cc1e7c541e6bc5d16d06f7e3349ebb9aa81ca45f69984d": {
+    "character": "n",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 450
+  },
+  "202dca9be42b94c2793dd2f84db46f42c74d3e80315afac66e2b51c2f13bcb31": {
+    "character": "g",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 451
+  },
+  "a8099db1dc2fe9124f2c7da7d5791cc5225c750d733db4950ce760893296e286": {
+    "character": "r",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 452
+  },
+  "0d645ae879affacb983c222c73f37590517a33da7d236fc1162794faef3fbd66": {
+    "character": "c",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 453
+  },
+  "8f83ed60ebcd00f6ebebe24eec61f65eb7285e72f09a5b81b70260bd001b3e8c": {
+    "character": "-",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 454
+  },
+  "39241078468d74ba412457d5f44af7b5a3e4a52d44e0cf3994fb67a0395781f6": {
+    "character": "v",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 455
+  },
+  "5bf7ed0af3ad0b4aee08fb7fd7f7bb6335d5fc44339469ddde7aeab1ca217012": {
+    "character": "b",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 456
+  },
+  "8a68b04537a3391d389bd1cbc993278ec2bb1a251d5204f02b7ac7ec009f1370": {
+    "character": "3",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 457
+  },
+  "e6337410f9ac7859aae69530d633f903a3ec3c3ac45bb16661ff7f35323be3e9": {
+    "character": ",",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 458
+  },
+  "61a723b5c76cc1a48979213e5cc64eac90aa454bf097e0d78b6428a013336f98": {
+    "character": "2",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 459
+  },
+  "b07f7753b8020c376dda5aea8e0aa767e003eda3f3c4184a6c57604a2b813f6f": {
+    "character": "0",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 460
+  },
+  "3dc5ce9767beeba17f704769f224ba0d6d018ca131f1c0ebfdfb2a791c75c7af": {
+    "character": "6",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 461
+  },
+  "c8fd0586505c0abdbf906ed3af5939a46aa21997a0e733335704977cc7a4a3f7": {
+    "character": "U",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 462
+  },
+  "df4b5903fa1600c4ed6495d50dd1a7ef537255a0b8f9761f3c72c84d3723cef2": {
+    "character": "p",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 463
+  },
+  "89ff67d3e03eddd8f90fad60216c72ba2a529fc0a7bee7045cd470dd3aa158cb": {
+    "character": ":",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 464
+  },
+  "14474de19d7fa7ecd787e8efeaf8c14453da57d62a8b6c758f8f6d8a8610ed0b": {
+    "character": "1",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 465
+  },
+  "a9ae1658700242d5e758c348985bff450fd49e4a6cfcb9249446cf3995d4375d": {
+    "character": "/",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 466
+  },
+  "6d9aa83ef7d07c832fa9c0c8c06dd878fcd3b34106d4d3a87dbd4cd500445c6e": {
+    "character": "5",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 467
+  },
+  "81700befbff528d3d68db51cebc87162fd31f5199ccbd0faf39ac46593bd1fec": {
+    "character": "9",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 468
+  },
+  "d7e033c735b5cd07b28febeaadb0dff9a7a075bc493838a8e1fe332197b131fc": {
+    "character": "l",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 469
+  },
+  "11d978c93df9b21aed50b0f7b8052e272b314a79c1ce90d0a401bd532346487c": {
+    "character": "b",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 470
+  },
+  "ab91cc63a91fd39826aba0c4249b49b61b9d58b68c6abe12644d0d3163b25884": {
+    "character": "y",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 471
+  },
+  "cc9ec1d0ba08c7a1a0671d342c93b23bc876e05da8c96ff263a6bfc104a028eb": {
+    "character": "B",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 472
+  },
+  "75f04710095dd7b0ddd652a188936919b5817e54456135e51a654b6a295bb096": {
+    "character": "C",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 473
+  },
+  "d183c146688cfb26d9240c82ade45f24de30e29b10c11147dc6ed056817c2489": {
+    "character": "m",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 474
+  },
+  "5e7afba5a69d01731fb4b3a29a9ae3c9ef5ffd81ffbeb4fc31d919a270a8a855": {
+    "character": "p",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 475
+  },
+  "55f575d09507bd188fc3d70e3eaabd079a9959c420f494796341680256f3ee68": {
+    "character": "v",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 476
+  },
+  "6ad41a66499ea2a932adaf583ebf2d2b3640a3cc974aaaedc565a976bc03e580": {
+    "character": "s",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 477
+  },
+  "3dd829aacaf765f676157219f3117532a73aab601fa08141cbc7441c103a06dc": {
+    "character": "k",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 478
+  },
+  "000fe44d01911651719d85427e027372be1d0e1a3bf4f2976714fa711a3cbb92": {
+    "character": "G",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 479
+  },
+  "137b751f21bfad798ab6232f008fcefe0eaaa8031069395adfb86a1771b0f6ab": {
+    "character": "h",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 480
+  },
+  "cc4e4c301b1a9e649a3ab5d8c0296aaf41e6b09d81c6b48e08a3123944320867": {
+    "character": "S",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 481
+  },
+  "2af3dd381ebe9100f6a08b2f9bce2dd0fd09e403e0b96816db684754941df8c5": {
+    "character": "d",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 482
+  },
+  "00f8611f30263816333ccbfd87dc81f0a9d5bf024d9afdcba3289032c7190e87": {
+    "character": "u",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 483
+  },
+  "83a825ba86af53315922e72e18f6c11823e3949a489e738c79b41fc09d5a6b6c": {
+    "character": "w",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 484
+  },
+  "21b71fe376b2ac1a2c6d42a416008ab697f3dc142472757d473e38229a84a0d6": {
+    "character": "U",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 485
+  },
+  "20be81ab0169896a0fc1b3ce6e466b8eb71aaf60160789bc0936385f3685c01b": {
+    "character": "W",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 486
+  },
+  "7e9ab948b2f4c8a74d6765e4b64659514ad5c17981127902153c33045485feec": {
+    "character": "L",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 487
+  },
+  "7e23e58a57a34beb04c9f5a2679e7fff3732be7107a9b070b21326927e1236df": {
+    "character": "a",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 488
+  },
+  "b4199360018d510f44b62dccaaeb44ce6ee28c17656067f190d08e7abc1681ae": {
+    "character": "r",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 489
+  },
+  "02a438814669fa9788be1d60ccb8c19c0b79186ab4014f7af381537ccf5d6411": {
+    "character": "m",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 490
+  },
+  "a8409edd6edd6c7c3f9af38e7747a7a7bfc704a4ea0397ea735ff204e75f7cd7": {
+    "character": "e",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 491
+  },
+  "fc9412687f99f3c652f52e410475768b4b5cdbc3543a06fb56d915ad74ab8bc9": {
+    "character": "C",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 492
+  },
+  "cb22fcdca29e444efa53355b10e3a1d1711531ae55cc0a0d29a80b09abfc25b6": {
+    "character": "u",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 493
+  },
+  "29905c601fb7884536daa86db58462a9e5769b41b70bcd80eda40f7b196e26fb": {
+    "character": "n",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 494
+  },
+  "3e39c650bb58d1357db01d7084a220a107c4642389106715cabda6b0fb56846d": {
+    "character": "t",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 495
+  },
+  "bfc46e1e21a130dcf2f8928d2585d19ae123d0f223d7967272b608560e27bab5": {
+    "character": "y",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 496
+  },
+  "9333c4efa7eeac95e108c791a6ac035be5307242e90ca8cbfbb9c8424676f797": {
+    "character": "U",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 497
+  },
+  "b023050f50884ecb9986ccf5e8be7ef340b0b1ecf1457e4553b7cca18d5856af": {
+    "character": "f",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 498
+  },
+  "140b3e1e7196300fe64cfd581bbce043be400651d9b7ecddc210012bf84a8d43": {
+    "character": "c",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 499
+  },
+  "0fae60077f2fc445bf12871d948ff447413f153255fc896e33a66dbdcfeaa931": {
+    "character": "P",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 500
+  },
+  "c1ba17d30d8f20c2951238c6255660b23924d04c3ea5eadc244c87fe43c02946": {
+    "character": "b",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 501
+  },
+  "34e791d1e139d5cc6adc6eb2846dca6957d1175946210fdf54baa0400ae092fc": {
+    "character": "S",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 502
+  },
+  "557f83511da2e654f65a997a0950a37f591b524db9659bd7996d476981770ae3": {
+    "character": "g",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 503
+  },
+  "954339f0fc0f3d51a3e01f6ffc0ad98d3ef4f7d26ba88e872841108205972df3": {
+    "character": "G",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 504
+  },
+  "53c8a95fd5649b0e470ee464ad1d12196513f77cc005d6f9975b5bd71016d956": {
+    "character": "v",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 505
+  },
+  "03848676d3150a60dd261576669f6042b9692156e1c62bec92d90518a6c63c0f": {
+    "character": "3",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 506
+  },
+  "24d743f91adf908d3d6ae075965a7b33b0e71deab5e0bd0f03d8033fb60697d4": {
+    "character": ",",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 507
+  },
+  "a7eefc9925ef0a0a63d9dbbd0dbee2f88d72c54341bec3cc2ae8654d7489a4ad": {
+    "character": "2",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 508
+  },
+  "d9dea340f39cc78f3d52ae4988496fba3792a61b600fb6a43df0f00b8c413a34": {
+    "character": "6",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 509
+  },
+  "43961bcfc4848bef2b27e2a77a20b643d4e3bb49df05ea0923e3c5cbdc11e0bc": {
+    "character": "O",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 510
+  },
+  "c4bd59db1e757c3991534122d83ea32fb521559adac150173d941a0afffc5068": {
+    "character": "R",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 511
+  },
+  "15137a4de7f4beb65914f476a42c0e2091ec59e7fe5435108831e50499fba138": {
+    "character": "d",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 512
+  },
+  "dbb09d7a13b12b65c9ee6d8b9b736cb08ddb0d2bef6c69b4bb0a7465374f7f4b": {
+    "character": "s",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 513
+  },
+  "321bcc1d8e339e64a9f5d2e7454dff0d7d5d6c4628c0022ce1b92167fb5e3087": {
+    "character": "r",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 514
+  },
+  "a0d1a2842ff5bfe6c62be7042edf1cd1150136a4fd03d519755e753014c4df4d": {
+    "character": "c",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 515
+  },
+  "20bac90cff99d013708fc3414ba7de3c82bcee6b1f043a3caf066bedb4b9423f": {
+    "character": "t",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 516
+  },
+  "dbeac6053f24bc1208acac8be66d12f5da1ecdf1ec70466e2b8cbd8bdfdb64c3": {
+    "character": "m",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 517
+  },
+  "709d9347b812929ca276149806ec83029673946713850c3a2b4910b526e97071": {
+    "character": "(",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 518
+  },
+  "3f8e96ed1e4ed248fda54491fa6b0e77788d0265617edb972d00a283536c1739": {
+    "character": "R",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 519
+  },
+  "f168208eb7b05b269fce1ba4b8985406ff4d0e163cf4c076be96f8515217835b": {
+    "character": ")",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 520
+  },
+  "01068dbed278146cf79609450cab37b9420ef2088134f2aa463091f7120ce4f0": {
+    "character": "s",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 521
+  },
+  "4e68f25d4c61da1c8407ffc876c23e009ee3466dfbca9d3b4354fbb8257f7c67": {
+    "character": "B",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 522
+  },
+  "924a92975485e577037a26df2043e5421d430dff5e54bea84ce6a5633ee130ab": {
+    "character": "y",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 523
+  },
+  "1ffe9cb00afdd93539e34b764661f66933f935ec93ca83de86d5918d10f5dd21": {
+    "character": "d",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 524
+  },
+  "a97f1a93313e095da3cc404ffd983c91e29c61b3cdd3c271790e5d87e8292b3a": {
+    "character": "D",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 525
+  },
+  "11369182435fa1d1cac8824015fe16f14fbff2a6bcb0b41b02f91bb65c55a2a0": {
+    "character": "-",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 526
+  },
+  "bb28098f0fd8785f2301904d57c49ea5d8d8e6ec3361c11c71c27848186f5f34": {
+    "character": "O",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 527
+  },
+  "b4666cf0abdf48e8f41354dd6e2e775ee88f7fa6a647d0c27cd20c6e5d758143": {
+    "character": "0",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 528
+  },
+  "7738ceeb4271dec06333aa9d1bf711eb1be09f3ee6807d8b72e5b87c5ce1da0c": {
+    "character": "8",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 529
+  },
+  "30da2b5f3382ac38fbeed960b29e6c1749dc131017ba6e45517a248d852a5261": {
+    "character": "3",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 530
+  },
+  "879f3f87f2371a7ce2f945880fe306dcb0348dbb4f0a8c530150b29b5efb56cc": {
+    "character": "5",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 531
+  },
+  "99771819e5ae7018c71de8627fa5328a461c7a2daa151883dd8dc0e42ba78ceb": {
+    "character": "9",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 532
+  },
+  "cf7c73def30897a11beeb049cbb23b7c1e7cd5c7b96011ebf3cf860e98fd289a": {
+    "character": ",",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 533
+  },
+  "9e62e1d606a4d7ee88095bbf63046331bee089ff4583e72086f2f7e0b802313d": {
+    "character": "C",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 534
+  },
+  "29bce0921234f8974ddac5a746285d86428d15ae11c2c80e68d49cd55a5cd21e": {
+    "character": "u",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 535
+  },
+  "014a5d0bf505cc6fc6b32ab9cb4fa04ddcec5980320027d530f61d3f416f1ea6": {
+    "character": "x",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 536
+  },
+  "a7ae2f4287b69b89c69b54c4a45c8e614142764405dca4c48f639f6721fbf5d7": {
+    "character": "s",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 537
+  },
+  "441aa24454a49846016143fad632955ae7bea9a91c2a4582358b5d80b37231c2": {
+    "character": "h",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 538
+  },
+  "61117d6aa1bfd1404c4fca7d30b4af44c42be8a656c04c641a20087565990d15": {
+    "character": "k",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 539
+  },
+  "60fa6d35b2de5f6142aea7e89144b823d9f0cc01abe909cc7917b99b81d1400f": {
+    "character": "G",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 540
+  },
+  "11d0bc1317fde3ad6b99caac498e641542982d3f31d96049827d95ff564cba75": {
+    "character": "K",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 541
+  },
+  "3ea10328715b366de47ecd7acd1fd0f1a32d6e4a2fbf9479e981fe0ba5f26054": {
+    "character": "S",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 542
+  },
+  "80415b53ad94123f0b0e300559a99b1432a3f5af3d192e29fac8f6096857e150": {
+    "character": "w",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 543
+  },
+  "a97b7610b54595cd7bdcca94cece1c19783a68abd375f22e496489d9a2d919ac": {
+    "character": "C",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 544
+  },
+  "afb39a8f176c444e16a017db2a90cd59bd254bba5d53e4ae6e370384ebd487e1": {
+    "character": "u",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 545
+  },
+  "0668b24e9b5b53e14f777855843f3accaaedfafcb76fa6aa6375a223350f96f1": {
+    "character": "E",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 546
+  },
+  "6bab2feacc262943227209ea1f52f672e65c44a02737c6eab1fa144ea4d5406c": {
+    "character": "b",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 547
+  },
+  "5e7ccfec3613e3507077542fb3b1c18018e99fa475f5511a7e81258049b1bb7c": {
+    "character": "x",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 548
+  },
+  "164a6afba182bc3244a5fa539e8dbecc84448b164cbd68cc34fcc0da0290bdb1": {
+    "character": "j",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 549
+  },
+  "dbedfcf7657cf704c3c9e3ea9d3b7a0219b4eefe864be9259e5047339660430d": {
+    "character": "A",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 550
+  },
+  "bc65559ec844d4ebadd92dff2de3d4dc1b8d145b195edc62fcc790a3968ce53e": {
+    "character": "D",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 551
+  },
+  "e2dda8636e823a1eb6b56b5b9f84cc0b1f82b09b128cc930bd6c4297b389c559": {
+    "character": "5",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 552
+  },
+  "8a224438646ee49f919d026674d2e16be1bd0ddbb64eaba371d5083f9542d62f": {
+    "character": "7",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 553
+  },
+  "efd2d595d2350669d657a52bf5f3dcc3991c95c30d159554812aafa106306629": {
+    "character": "8",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 554
+  },
+  "04291353546fe1df97b23f9040f598e95bbbd1d56a6e6940cca521ea9317307c": {
+    "character": "9",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 555
+  },
+  "2379c2f5ee84d902e14e6d6ee6c83258f282556c6dd1aabe9854a28a6d59f3bb": {
+    "character": "J",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 556
+  },
+  "d60b4caa669d1f434ba07b12e1153263ba4a7ce9338fe71e9a87ec44a0f69d73": {
+    "character": "h",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 557
+  },
+  "3e4a328a4e82ae4a17c7ab6fc95a4ce937f6a680f76ef400c21e595950cc944c": {
+    "character": "(",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 558
+  },
+  "a3df659b9d57df04fc5c628b5d6b0dddecdcef5a6cf5ae065b6daf10f8fbc0d5": {
+    "character": ")",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 559
+  },
+  "3c596d6971377219aa779b1025d914dd6256d75e07272bdc301ce48566415917": {
+    "character": "w",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 560
+  },
+  "fb9a12326aa24362f14b0aa10ad0f4016a0c1eb0215b4e28c9856eb426f5ff1d": {
+    "character": "L",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 561
+  },
+  "7d1eec6262c387d03c07861b18ee4f14cc6773036a5763e5b60c3219865f4858": {
+    "character": "s",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 562
+  },
+  "8e09f40d659f6297077da80523e59b1f9dcc2e40829000cd9d2ab047923294a3": {
+    "character": "1",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 563
+  },
+  "a4fc2ba266f47f9e30c3fa35468fbd4846cb7cee422e41039161001ec84243c1": {
+    "character": "z",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 564
+  },
+  "71fca863c35ad16b438d35dc06b1aa274e38e4c8137e3f344be51695b92f977e": {
+    "character": "k",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 565
+  },
+  "e21afabcdc0ff0c4fd3381aecc62ed3066a051d732b968a60ad1974bee3bf784": {
+    "character": "9",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 566
+  },
+  "203f87557fe665a6646bf6e01e26381e81d117a52ea71557d182d1fa9114acb6": {
+    "character": "Q",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 567
+  },
+  "024631fd20b887751d469fbba723eacc0f43a6c41bd0943eb2ecf7798ebd71bc": {
+    "character": "5",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 568
+  },
+  "e42291a6715df80e4ee6660b425ad02c06e1a9ca942838a082b2d01aed11d000": {
+    "character": "z",
+    "method": "direct_native_glyph_render_review",
+    "review_index": 569
+  }
+}

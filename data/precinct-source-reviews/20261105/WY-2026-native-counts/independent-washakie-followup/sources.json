@@ -1,0 +1,29 @@
+{
+  "elections-index.html": {
+    "url": "https://www.washakiecountywy.gov/196/Elections",
+    "resolved_url": "https://www.washakiecountywy.gov/196/Elections",
+    "status_code": 200,
+    "retrieved_at": "2026-11-05T10:17:44.539190+00:00",
+    "bytes": 110357,
+    "sha256": "aaa687ef1039315ad99067729c5200cbd3a608131c0a083aa92efa25021caf93",
+    "headers": {
+      "Date": "Thu, 05 Nov 2026 10:17:44 GMT",
+      "Content-Type": "text/html; charset=utf-8",
+      "last-modified": "Thu, 05 Nov 2026 10:17:44 GMT"
+    }
+  },
+  "2026-general-unofficial-results.pdf": {
+    "url": "https://www.washakiecountywy.gov/DocumentCenter/View/632/2026-GENERAL-UNOFFICIAL-RESULTSpdf",
+    "resolved_url": "https://www.washakiecountywy.gov/DocumentCenter/View/632/2026-GENERAL-UNOFFICIAL-RESULTSpdf",
+    "status_code": 200,
+    "retrieved_at": "2026-11-05T10:17:44.910917+00:00",
+    "bytes": 264814,
+    "sha256": "0c72271cb48afc96b12af3a76e5c9c8499757383388a1e41dff876b23f6b032c",
+    "headers": {
+      "Date": "Thu, 05 Nov 2026 10:17:44 GMT",
+      "Content-Type": "application/pdf",
+      "Content-Length": "264814",
+      "last-modified": "Thu, 05 Nov 2026 10:17:44 GMT"
+    }
+  }
+}

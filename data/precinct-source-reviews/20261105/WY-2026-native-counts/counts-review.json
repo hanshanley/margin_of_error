@@ -1,0 +1,839 @@
+{
+  "state_code": "WY",
+  "year": 2026,
+  "counties": [
+    {
+      "county": "Albany",
+      "precincts": 11,
+      "candidate_pages": [
+        2
+      ],
+      "ballot_pages": [
+        1
+      ],
+      "category_vector": [
+        4493,
+        7466,
+        784,
+        273,
+        55,
+        88,
+        244
+      ],
+      "precinct_ballots": 13403,
+      "printed_county_ballots": 13403,
+      "statewide_county_vector": [
+        4493,
+        7466,
+        784,
+        273,
+        55,
+        88,
+        244
+      ],
+      "candidate_vectors_match_state": true,
+      "all_precinct_category_vectors_equal_separate_ballots": true
+    },
+    {
+      "county": "Big Horn",
+      "precincts": 13,
+      "candidate_pages": [
+        2
+      ],
+      "ballot_pages": [
+        1
+      ],
+      "category_vector": [
+        2798,
+        712,
+        222,
+        246,
+        22,
+        37,
+        163
+      ],
+      "precinct_ballots": 4200,
+      "printed_county_ballots": 4200,
+      "statewide_county_vector": [
+        2798,
+        712,
+        222,
+        246,
+        22,
+        37,
+        163
+      ],
+      "candidate_vectors_match_state": true,
+      "all_precinct_category_vectors_equal_separate_ballots": true
+    },
+    {
+      "county": "Campbell",
+      "precincts": 37,
+      "candidate_pages": [
+        3,
+        4
+      ],
+      "ballot_pages": [
+        1
+      ],
+      "category_vector": [
+        7640,
+        1920,
+        695,
+        474,
+        49,
+        91,
+        558
+      ],
+      "precinct_ballots": 11427,
+      "printed_county_ballots": 11427,
+      "statewide_county_vector": [
+        7640,
+        1920,
+        695,
+        474,
+        49,
+        91,
+        558
+      ],
+      "candidate_vectors_match_state": true,
+      "all_precinct_category_vectors_equal_separate_ballots": true
+    },
+    {
+      "county": "Carbon",
+      "precincts": 19,
+      "candidate_pages": [
+        2
+      ],
+      "ballot_pages": [
+        1
+      ],
+      "category_vector": [
+        2565,
+        1110,
+        311,
+        198,
+        20,
+        31,
+        114
+      ],
+      "precinct_ballots": 4349,
+      "printed_county_ballots": 4349,
+      "statewide_county_vector": [
+        2565,
+        1110,
+        311,
+        198,
+        20,
+        31,
+        114
+      ],
+      "candidate_vectors_match_state": true,
+      "all_precinct_category_vectors_equal_separate_ballots": true
+    },
+    {
+      "county": "Converse",
+      "precincts": 19,
+      "candidate_pages": [
+        2
+      ],
+      "ballot_pages": [
+        1
+      ],
+      "category_vector": [
+        2825,
+        836,
+        322,
+        223,
+        24,
+        34,
+        227
+      ],
+      "precinct_ballots": 4491,
+      "printed_county_ballots": 4491,
+      "statewide_county_vector": [
+        2825,
+        836,
+        322,
+        223,
+        24,
+        34,
+        227
+      ],
+      "candidate_vectors_match_state": true,
+      "all_precinct_category_vectors_equal_separate_ballots": true
+    },
+    {
+      "county": "Crook",
+      "precincts": 17,
+      "candidate_pages": [
+        2
+      ],
+      "ballot_pages": [
+        1
+      ],
+      "category_vector": [
+        2205,
+        421,
+        231,
+        147,
+        13,
+        24,
+        121
+      ],
+      "precinct_ballots": 3162,
+      "printed_county_ballots": 3162,
+      "statewide_county_vector": [
+        2205,
+        421,
+        231,
+        147,
+        13,
+        24,
+        121
+      ],
+      "candidate_vectors_match_state": true,
+      "all_precinct_category_vectors_equal_separate_ballots": true
+    },
+    {
+      "county": "Fremont",
+      "precincts": 32,
+      "candidate_pages": [
+        2
+      ],
+      "ballot_pages": [
+        1
+      ],
+      "category_vector": [
+        6339,
+        4608,
+        1181,
+        541,
+        53,
+        92,
+        422
+      ],
+      "precinct_ballots": 13236,
+      "printed_county_ballots": 13236,
+      "statewide_county_vector": [
+        6339,
+        4608,
+        1181,
+        541,
+        53,
+        92,
+        422
+      ],
+      "candidate_vectors_match_state": true,
+      "all_precinct_category_vectors_equal_separate_ballots": true
+    },
+    {
+      "county": "Goshen",
+      "precincts": 14,
+      "candidate_pages": [
+        2
+      ],
+      "ballot_pages": [
+        1
+      ],
+      "category_vector": [
+        2927,
+        964,
+        272,
+        238,
+        19,
+        18,
+        143
+      ],
+      "precinct_ballots": 4581,
+      "printed_county_ballots": 4581,
+      "statewide_county_vector": [
+        2927,
+        964,
+        272,
+        238,
+        19,
+        18,
+        143
+      ],
+      "candidate_vectors_match_state": true,
+      "all_precinct_category_vectors_equal_separate_ballots": true
+    },
+    {
+      "county": "Hot Springs",
+      "precincts": 5,
+      "candidate_pages": [
+        2
+      ],
+      "ballot_pages": [
+        1
+      ],
+      "category_vector": [
+        1254,
+        463,
+        187,
+        132,
+        9,
+        17,
+        92
+      ],
+      "precinct_ballots": 2154,
+      "printed_county_ballots": 2154,
+      "statewide_county_vector": [
+        1254,
+        463,
+        187,
+        132,
+        9,
+        17,
+        92
+      ],
+      "candidate_vectors_match_state": true,
+      "all_precinct_category_vectors_equal_separate_ballots": true
+    },
+    {
+      "county": "Johnson",
+      "precincts": 16,
+      "candidate_pages": [
+        2
+      ],
+      "ballot_pages": [
+        1
+      ],
+      "category_vector": [
+        2163,
+        846,
+        286,
+        157,
+        22,
+        23,
+        161
+      ],
+      "precinct_ballots": 3658,
+      "printed_county_ballots": 3658,
+      "statewide_county_vector": [
+        2163,
+        846,
+        286,
+        157,
+        22,
+        23,
+        161
+      ],
+      "candidate_vectors_match_state": true,
+      "all_precinct_category_vectors_equal_separate_ballots": true
+    },
+    {
+      "county": "Laramie",
+      "precincts": 40,
+      "candidate_pages": [
+        3,
+        4
+      ],
+      "ballot_pages": [
+        1
+      ],
+      "category_vector": [
+        13706,
+        12537,
+        2226,
+        1316,
+        245,
+        44,
+        555
+      ],
+      "precinct_ballots": 30629,
+      "printed_county_ballots": 30629,
+      "statewide_county_vector": [
+        13706,
+        12537,
+        2226,
+        1316,
+        245,
+        44,
+        555
+      ],
+      "candidate_vectors_match_state": true,
+      "all_precinct_category_vectors_equal_separate_ballots": true
+    },
+    {
+      "county": "Lincoln",
+      "precincts": 15,
+      "candidate_pages": [
+        2
+      ],
+      "ballot_pages": [
+        1
+      ],
+      "category_vector": [
+        4810,
+        1495,
+        529,
+        307,
+        46,
+        50,
+        278
+      ],
+      "precinct_ballots": 7515,
+      "printed_county_ballots": 7515,
+      "statewide_county_vector": [
+        4810,
+        1495,
+        529,
+        307,
+        46,
+        50,
+        278
+      ],
+      "candidate_vectors_match_state": true,
+      "all_precinct_category_vectors_equal_separate_ballots": true
+    },
+    {
+      "county": "Natrona",
+      "precincts": 46,
+      "candidate_pages": [
+        3,
+        4
+      ],
+      "ballot_pages": [
+        1
+      ],
+      "category_vector": [
+        11210,
+        7017,
+        2242,
+        935,
+        146,
+        181,
+        749
+      ],
+      "precinct_ballots": 22480,
+      "printed_county_ballots": 22480,
+      "statewide_county_vector": [
+        11210,
+        7017,
+        2242,
+        935,
+        146,
+        181,
+        749
+      ],
+      "candidate_vectors_match_state": true,
+      "all_precinct_category_vectors_equal_separate_ballots": true
+    },
+    {
+      "county": "Niobrara",
+      "precincts": 6,
+      "candidate_pages": [
+        2
+      ],
+      "ballot_pages": [
+        1
+      ],
+      "category_vector": [
+        616,
+        136,
+        64,
+        53,
+        6,
+        5,
+        68
+      ],
+      "precinct_ballots": 948,
+      "printed_county_ballots": 948,
+      "statewide_county_vector": [
+        616,
+        136,
+        64,
+        53,
+        6,
+        5,
+        68
+      ],
+      "candidate_vectors_match_state": true,
+      "all_precinct_category_vectors_equal_separate_ballots": true
+    },
+    {
+      "county": "Park",
+      "precincts": 22,
+      "candidate_pages": [
+        2
+      ],
+      "ballot_pages": [
+        1
+      ],
+      "category_vector": [
+        7473,
+        2945,
+        790,
+        441,
+        72,
+        73,
+        399
+      ],
+      "precinct_ballots": 12193,
+      "printed_county_ballots": 12193,
+      "statewide_county_vector": [
+        7473,
+        2945,
+        790,
+        441,
+        72,
+        73,
+        399
+      ],
+      "candidate_vectors_match_state": true,
+      "all_precinct_category_vectors_equal_separate_ballots": true
+    },
+    {
+      "county": "Platte",
+      "precincts": 8,
+      "candidate_pages": [
+        2
+      ],
+      "ballot_pages": [
+        1
+      ],
+      "category_vector": [
+        2259,
+        721,
+        223,
+        197,
+        19,
+        46,
+        136
+      ],
+      "precinct_ballots": 3601,
+      "printed_county_ballots": 3601,
+      "statewide_county_vector": [
+        2259,
+        721,
+        223,
+        197,
+        19,
+        46,
+        136
+      ],
+      "candidate_vectors_match_state": true,
+      "all_precinct_category_vectors_equal_separate_ballots": true
+    },
+    {
+      "county": "Sheridan",
+      "precincts": 29,
+      "candidate_pages": [
+        2
+      ],
+      "ballot_pages": [
+        1
+      ],
+      "category_vector": [
+        6801,
+        3795,
+        737,
+        437,
+        72,
+        78,
+        433
+      ],
+      "precinct_ballots": 12353,
+      "printed_county_ballots": 12353,
+      "statewide_county_vector": [
+        6801,
+        3795,
+        737,
+        437,
+        72,
+        78,
+        433
+      ],
+      "candidate_vectors_match_state": true,
+      "all_precinct_category_vectors_equal_separate_ballots": true
+    },
+    {
+      "county": "Sublette",
+      "precincts": 8,
+      "candidate_pages": [
+        2
+      ],
+      "ballot_pages": [
+        1
+      ],
+      "category_vector": [
+        2211,
+        858,
+        323,
+        165,
+        32,
+        16,
+        170
+      ],
+      "precinct_ballots": 3775,
+      "printed_county_ballots": 3775,
+      "statewide_county_vector": [
+        2211,
+        858,
+        323,
+        165,
+        32,
+        16,
+        170
+      ],
+      "candidate_vectors_match_state": true,
+      "all_precinct_category_vectors_equal_separate_ballots": true
+    },
+    {
+      "county": "Sweetwater",
+      "precincts": 35,
+      "candidate_pages": [
+        3,
+        4
+      ],
+      "ballot_pages": [
+        1
+      ],
+      "category_vector": [
+        6013,
+        3424,
+        734,
+        596,
+        33,
+        97,
+        379
+      ],
+      "precinct_ballots": 11276,
+      "printed_county_ballots": 11276,
+      "statewide_county_vector": [
+        6013,
+        3424,
+        734,
+        596,
+        33,
+        97,
+        379
+      ],
+      "candidate_vectors_match_state": true,
+      "all_precinct_category_vectors_equal_separate_ballots": true
+    },
+    {
+      "county": "Teton",
+      "precincts": 17,
+      "candidate_pages": [
+        2
+      ],
+      "ballot_pages": [
+        1
+      ],
+      "category_vector": [
+        2372,
+        7098,
+        557,
+        148,
+        28,
+        87,
+        245
+      ],
+      "precinct_ballots": 10535,
+      "printed_county_ballots": 10535,
+      "statewide_county_vector": [
+        2372,
+        7098,
+        557,
+        148,
+        28,
+        87,
+        245
+      ],
+      "candidate_vectors_match_state": true,
+      "all_precinct_category_vectors_equal_separate_ballots": true
+    },
+    {
+      "county": "Uinta",
+      "precincts": 10,
+      "candidate_pages": [
+        2
+      ],
+      "ballot_pages": [
+        1
+      ],
+      "category_vector": [
+        3824,
+        1364,
+        329,
+        449,
+        22,
+        66,
+        295
+      ],
+      "precinct_ballots": 6349,
+      "printed_county_ballots": 6349,
+      "statewide_county_vector": [
+        3824,
+        1364,
+        329,
+        449,
+        22,
+        66,
+        295
+      ],
+      "candidate_vectors_match_state": true,
+      "all_precinct_category_vectors_equal_separate_ballots": true
+    },
+    {
+      "county": "Washakie",
+      "precincts": 5,
+      "candidate_pages": [
+        2
+      ],
+      "ballot_pages": [
+        1
+      ],
+      "category_vector": [
+        1780,
+        567,
+        130,
+        194,
+        13,
+        13,
+        122
+      ],
+      "precinct_ballots": 2819,
+      "printed_county_ballots": 2819,
+      "statewide_county_vector": [
+        1780,
+        567,
+        194,
+        130,
+        13,
+        13,
+        122
+      ],
+      "candidate_vectors_match_state": false,
+      "all_precinct_category_vectors_equal_separate_ballots": true
+    },
+    {
+      "county": "Weston",
+      "precincts": 8,
+      "candidate_pages": [
+        2
+      ],
+      "ballot_pages": [
+        1
+      ],
+      "category_vector": [
+        1607,
+        381,
+        226,
+        157,
+        11,
+        20,
+        152
+      ],
+      "precinct_ballots": 2554,
+      "printed_county_ballots": 2554,
+      "statewide_county_vector": [
+        1607,
+        381,
+        226,
+        157,
+        11,
+        20,
+        152
+      ],
+      "candidate_vectors_match_state": true,
+      "all_precinct_category_vectors_equal_separate_ballots": true
+    }
+  ],
+  "units": 432,
+  "statewide_category_vector": [
+    99891,
+    61684,
+    13665,
+    7960,
+    1031,
+    1231,
+    6226
+  ],
+  "category_labels": [
+    "Chuck Gray (R)",
+    "Lisa Kinney (D)",
+    "Shawn Johnson (L)",
+    "Jeffrey Haggit (C)",
+    "Write-Ins",
+    "Overvotes",
+    "Undervotes"
+  ],
+  "statewide_ballots": 191688,
+  "candidate_write_in_votes": 184231,
+  "printed_ballot_conflicts": [],
+  "candidate_county_state_conflicts": [
+    {
+      "county": "Washakie",
+      "precinct_and_printed_county_vector": [
+        1780,
+        567,
+        130,
+        194,
+        13,
+        13,
+        122
+      ],
+      "statewide_county_vector": [
+        1780,
+        567,
+        194,
+        130,
+        13,
+        13,
+        122
+      ],
+      "delta_precinct_minus_state": [
+        0,
+        0,
+        -64,
+        64,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "geometry_approved": false,
+  "maps_approved": false,
+  "turnout_rates_available": false,
+  "method": "Native physical PDF rows; source-bound glyph recovery where required; exact native precinct labels; seven House categories independently match separate ballot counts. County/state candidate conflicts are preserved, not repaired or geographically allocated.",
+  "washakie_independent_followup": {
+    "visual_review": {
+      "method": "direct_rendered_page_review",
+      "source": "2026-general-unofficial-results.pdf",
+      "source_sha256": "0c72271cb48afc96b12af3a76e5c9c8499757383388a1e41dff876b23f6b032c",
+      "page": 1,
+      "literal_election_date": "November 3, 2026",
+      "literal_county": "Washakie County, WY",
+      "literal_office": "UNITED STATES REPRESENTATIVE",
+      "literal_status": "UNOFFICIAL RESULTS",
+      "native_categories": [
+        "REP CHUCK GRAY",
+        "DEM LISA KINNEY",
+        "LIB SHAWN JOHNSON",
+        "CST JEFFREY HAGGIT",
+        "Write-In Totals",
+        "Overvotes",
+        "Undervotes"
+      ],
+      "category_vector": [
+        1780,
+        567,
+        194,
+        130,
+        13,
+        13,
+        122
+      ],
+      "ballots_cast": 2819,
+      "scope": "County aggregate only. Confirms the statewide aggregate vector, not a basis for altering or swapping any precinct values.",
+      "native_party_labels_preserved": true
+    },
+    "county_summary_confirms_statewide": true,
+    "precinct_category_conflict_still_unresolved": true
+  }
+}
