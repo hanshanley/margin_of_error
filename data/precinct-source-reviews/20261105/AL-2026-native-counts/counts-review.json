@@ -1,0 +1,36 @@
+{
+  "year": 2026,
+  "state_code": "AL",
+  "complete": "no",
+  "unofficial": true,
+  "maps_approved": false,
+  "rates_available": false,
+  "native_candidate_rows": 5613,
+  "native_counties": 67,
+  "county_house_vectors": 73,
+  "native_ballots": 1693621,
+  "native_registered_voters": 3852947,
+  "native_state_participation": {
+    "ballots": 1693621,
+    "registered_voters": 3852947,
+    "source_reported_turnout_percent": "43.96%",
+    "turnout_rate": null,
+    "last_updated_native": "11/04/2026 11:16:06 AM"
+  },
+  "reviewed_state_contests": 10,
+  "county_summary_candidate_cells": 822,
+  "all_reviewed_candidate_scopes_reconcile": true,
+  "all_county_state_participation_scopes_reconcile": true,
+  "worksheets": {
+    "AllResults": {
+      "observed_rows": 5613,
+      "empty_xml_rows": 0,
+      "native_dimension": "A1:J5614"
+    },
+    "Statistics": {
+      "observed_rows": 67,
+      "empty_xml_rows": 5547,
+      "native_dimension": "A1:G5615"
+    }
+  }
+}

@@ -6,6 +6,8 @@ import hashlib
 import json
 import math
 from pathlib import Path
+import xml.etree.ElementTree as ET
+import zipfile
 
 import openpyxl
 import pytest
@@ -61,6 +63,168 @@ va_localities = module("review-virginia-2026-locality-results")
 va_geometry = module("review-virginia-2026-reference-geometry")
 va_maps = module("build-virginia-2026-precinct-results")
 ar_2026 = module("review-arkansas-2026-native-results")
+al_2026 = module("review-alabama-2026-native-results")
+
+
+def alabama_native_example():
+    rows = []
+    for county, name, districts in [("01", "Jefferson", range(1, 8)), ("04", "Autauga", [1])]:
+        for title, district in al_2026.HOUSE.items():
+            if district not in districts:
+                continue
+            for number, candidate, votes, party in [
+                ("001", "Native D", "2", "DEM"), ("002", "Native R", "1", "REP"),
+                ("003", "Write-In", "1", "NON"),
+            ]:
+                rows.append(dict(zip(al_2026.HEADERS["AllResults"], [
+                    "1001305", "2026 GENERAL ELECTION", county, name, "H" + str(district),
+                    title, number, candidate, votes, party])))
+    statistics = [dict(zip(al_2026.HEADERS["Statistics"],
+        ["1001305", "2026 GENERAL ELECTION", code, str(ballots), "1", "1", "46330"]))
+        for code, ballots in [("01", 31), ("04", 7)]]
+
+    def native_page(records, ballots, registrations, percent, name=None):
+        labels = dict(lblElectionName="2026 GENERAL ELECTION", lblTotalBallotsCast=str(ballots),
+                      lblTotalRegisteredVoters=str(registrations), lblVoterTurnout=percent,
+                      lblLastUpdated="11/04/2026 12:00:00 AM")
+        labels.update(dict(lblCountyName=name + " County") if name else dict(lblCountiesReported="2"))
+        html = "".join(f'<span id="{key}">{value}</span>' for key, value in labels.items())
+        groups = {}
+        for record in records:
+            title = record["Contest Title"]
+            label = record["Candidate Name"] + (
+                "" if record["Party Code"] == "NON" else " (" + record["Party Code"] + ")")
+            group = groups.setdefault(title, {})
+            group[label] = group.get(label, 0) + int(record["Votes"])
+        for title, candidates in groups.items():
+            html += f'<table><tr><td class="enrContestHeader">{title}</td></tr>'
+            for label, votes in candidates.items():
+                html += ('<tr><td class="enrCandidateListItemCol enrCandNameCol">' + label
+                         + '</td><td class="enrCandidateListItemCol enrCandVoteNumCol"><div>'
+                         + str(votes) + '</div></td></tr>')
+            html += ('</table><div class="enrCandidatesFooter enrCandVoteNumCol"><span>'
+                     + str(sum(candidates.values())) + '</span></div>')
+        return al_2026.page(html.encode())
+
+    counties = {code: native_page([row for row in rows if row["County Code"] == code],
+                                 ballots, registrations, percent, name)
+                for code, name, ballots, registrations, percent in [
+                    ("01", "Jefferson", 31, 100, "31.00%"), ("04", "Autauga", 7, 20, "35.00%")]}
+    return (dict(AllResults=rows, Statistics=statistics),
+            native_page(rows, 38, 120, "31.67%"), counties, {"01": "Jefferson", "04": "Autauga"})
+
+
+def alabama_native_workbook(sheets):
+    strings = []
+    members = {}
+    relations = ET.Element("Relationships")
+    workbook = ET.Element(al_2026.XML + "workbook")
+    sheet_nodes = ET.SubElement(workbook, al_2026.XML + "sheets")
+    for index, (name, records) in enumerate(sheets.items(), 1):
+        relationship = "rId" + str(index)
+        ET.SubElement(sheet_nodes, al_2026.XML + "sheet", {
+            "name": name, "{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id": relationship})
+        ET.SubElement(relations, "Relationship", Id=relationship, Target=f"worksheets/sheet{index}.xml")
+        document = ET.Element(al_2026.XML + "worksheet")
+        ET.SubElement(document, al_2026.XML + "dimension", ref=f"A1:J{len(records) + 3}")
+        data = ET.SubElement(document, al_2026.XML + "sheetData")
+        header = list(al_2026.HEADERS[name])
+        values = [header] + [[record[field] for field in header] for record in records] + [[None], [None]]
+        for number, row in enumerate(values, 1):
+            node = ET.SubElement(data, al_2026.XML + "row", r=str(number))
+            for column, value in enumerate(row):
+                cell = ET.SubElement(node, al_2026.XML + "c", r=chr(65 + column) + str(number), s="0")
+                if value is not None:
+                    strings.append(value)
+                    cell.set("t", "s")
+                    ET.SubElement(cell, al_2026.XML + "v").text = str(len(strings) - 1)
+        members[f"xl/worksheets/sheet{index}.xml"] = ET.tostring(document)
+    shared = ET.Element(al_2026.XML + "sst")
+    for string in strings:
+        ET.SubElement(ET.SubElement(shared, al_2026.XML + "si"), al_2026.XML + "t").text = string
+    members.update({"xl/sharedStrings.xml": ET.tostring(shared),
+                    "xl/workbook.xml": ET.tostring(workbook),
+                    "xl/_rels/workbook.xml.rels": ET.tostring(relations)})
+    body = io.BytesIO()
+    with zipfile.ZipFile(body, "w") as archive:
+        for path, content in members.items():
+            archive.writestr(path, content)
+    return body.getvalue()
+
+
+def test_alabama_native_counties_are_not_fips_and_participation_is_separate():
+    counts, participants, audit = al_2026.review(*alabama_native_example())
+    assert len(counts) == 8 and len(participants) == 2
+    assert {row["county_code"]: row["county"] for row in counts} == {"01": "Jefferson", "04": "Autauga"}
+    assert all(row["total_votes"] == 4 and row["margin"] == 25 and not row["maps_approved"] for row in counts)
+    assert [row["ballots"] for row in participants] == [31, 7]
+    assert [row["registered_voters"] for row in participants] == [100, 20]
+    assert all(row["turnout_rate"] is None for row in participants)
+    assert audit["native_ballots"] == 38 and audit["native_registered_voters"] == 120
+    assert not audit["maps_approved"] and not audit["rates_available"]
+
+
+@pytest.mark.parametrize("failure", [
+    "election", "duplicate_candidate", "negative", "missing", "party", "county_name",
+    "candidate_identity", "state_candidate", "county_candidate", "timestamp",
+    "ballot", "registration", "duplicate_statistic", "omitted_statistic", "missing_house",
+])
+def test_alabama_rejects_native_identity_scope_and_parent_conflicts(failure):
+    sheets, statewide, counties, declarations = alabama_native_example()
+    first = sheets["AllResults"][0]
+    if failure == "election":
+        first["Election Code"] = "1001304"
+    elif failure == "duplicate_candidate":
+        sheets["AllResults"].append(copy.deepcopy(first))
+    elif failure in {"negative", "missing"}:
+        first["Votes"] = "-1" if failure == "negative" else None
+    elif failure == "party":
+        first["Party Code"] = "UNREVIEWED"
+    elif failure == "county_name":
+        first["County Name"] = "Another County"
+    elif failure == "candidate_identity":
+        sheets["AllResults"][-3]["Candidate Name"] = "Changed identity"
+    elif failure == "state_candidate":
+        statewide.contests[0]["candidates"][0]["votes"] += 1
+    elif failure == "county_candidate":
+        counties["01"].contests[0]["candidates"][0]["votes"] += 1
+    elif failure == "timestamp":
+        counties["01"].values["lblLastUpdated"] = "11/05/2026 12:00:00 AM"
+    elif failure == "ballot":
+        sheets["Statistics"][0]["Ballots Cast"] = "30"
+    elif failure == "registration":
+        statewide.values.update(lblTotalRegisteredVoters="121", lblVoterTurnout="31.40%")
+    elif failure == "duplicate_statistic":
+        sheets["Statistics"].append(copy.deepcopy(sheets["Statistics"][0]))
+    elif failure == "omitted_statistic":
+        sheets["Statistics"].pop()
+    elif failure == "missing_house":
+        counties["01"].contests.pop()
+    with pytest.raises(ValueError):
+        al_2026.review(sheets, statewide, counties, declarations)
+
+
+def test_alabama_formatted_blank_rows_do_not_create_zero_observations():
+    sheets, statewide, counties, declarations = alabama_native_example()
+    parsed, audit = al_2026.read_workbook(alabama_native_workbook(sheets))
+    assert parsed == sheets
+    assert audit["Statistics"]["observed_rows"] == 2
+    assert audit["Statistics"]["empty_xml_rows"] == 2
+    counts, participants, _ = al_2026.review(parsed, statewide, counties, declarations)
+    assert len(participants) == 2 and len(counts) == 8
+
+
+def test_alabama_explicit_zero_candidate_is_not_a_missing_count():
+    sheets, statewide, counties, declarations = alabama_native_example()
+    sheets["AllResults"][2]["Votes"] = "0"
+    statewide.contests[0]["candidates"][2]["votes"] -= 1
+    statewide.contests[0]["total"] -= 1
+    counties["01"].contests[0]["candidates"][2]["votes"] = 0
+    counties["01"].contests[0]["total"] -= 1
+    counts, _, _ = al_2026.review(sheets, statewide, counties, declarations)
+    row = next(row for row in counts if row["county_code"] == "01" and row["district"] == 1)
+    assert row["total_votes"] == 3 and json.loads(row["candidates"])["003"]["votes"] == 0
+    assert row["margin"] == pytest.approx(100 / 3)
 
 
 def arkansas_native_example():

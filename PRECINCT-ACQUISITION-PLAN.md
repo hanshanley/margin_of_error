@@ -3434,9 +3434,42 @@ The separate `Statistics` sheet has **67** nonempty county observations totaling
 **1,693,621 ballots**, followed by formatted blank rows; these blanks are not
 zero observations. It has no registered-voter column. All originals/receipts
 are in `files/precinct-expansion-sources/AL-2026-native-01/`.
-The actual county selector supplies all 67 county URLs. Validate the workbook,
-independent county/state summaries and native county identifiers before any
-portable review/publication; county rows are not precinct results or group rates.
+All **67 actual county-selector links** are now followed, retaining their complete
+native summaries and receipts. Their separately reported ballots, registrations,
+printed percentages and native update timestamps are independently reconciled
+with the workbook and statewide page: **1,693,621 ballots** and **3,852,947
+native registered voters**. The workbook itself has no registration column;
+registrations and source-reported percentages come only from the actual county
+HTML, not from candidate votes or another election. The statewide printed
+percentage is **43.96%**, retained explicitly as a source-reported administrative
+percentage; analysis rates remain withheld pending electorate definitions.
+Native county codes are **not FIPS**: `"01"` is Jefferson and `"04"` is Autauga.
+No padding or assumed crosswalk is allowed.
+
+The stdlib-only portable reviewer is
+`scripts/review-alabama-2026-native-results.py`; final complete package:
+`data/precinct-source-reviews/20261105/AL-2026-native-counts/`.
+It retains **all 5,613 native candidate rows**, **73 county-by-House vectors**
+and **67 separate participation observations**. All **822** candidate cells in
+the reviewed county summaries match the workbook, and all **10** first-page
+state contests (including all seven House districts) independently reconcile.
+All county ballots/registrations sum to statewide source totals; every native
+county timestamp matches its workbook observation. The **5,547** wholly blank
+formatted statistics rows are not observations and are never filled with zero.
+No precinct geography, FIPS joins or analysis rates are approved.
+
+Eighteen Alabama tests plus the existing Arkansas/coverage selector pass
+(**39 total**). Independent verification uses a separate XLSX reader to match
+every native candidate cell, checks all House margins against all candidates
+(including write-ins), independently extracts every county's native participation
+fields, verifies all **76 checksums** and **70 original receipts**, and reproduces
+the complete archive byte-identically using only the extracted package.
+ZIP: **1,726,378 bytes**, SHA-256
+`447081ce84d9755e323aaae2b21016f9e77281157f3a4d38057ef6b9d65883f2`.
+Proof: `files/alabama-native-count-package-proof-01.json`.
+Next: commit/push this validated source package as Hans, publish a new immutable
+release pinned to that source commit, verify its whole public download, then
+register the complete native tables and verify their actual UI deployment.
 
 Arkansas's official results index explicitly links the actual public application
 `https://arkansas.tally-enr.com/#bucket=results&filter=Federal&contest=eafd140a-9378-43a2-bd6d-f8661524139b`.
@@ -3510,15 +3543,33 @@ is **986,273,229 bytes**. The build validator's obsolete source-link count was
 updated to registered reviews/tables, actual optional participation files and
 county snapshots; all participation assertions pass. The full unrelated site
 validator subsequently stops at the existing UK homepage topic-card assertion
-(23 actual versus 16 expected, line 1089 before this integration); do not alter
+(23 actual versus 16 expected, unrelated to this integration); do not alter
 UK content or its assertion as part of this election-data work.
 
-**Next executable actions:** commit/push this tested count-download integration
-as Hans and verify its exact production deployment, unqueried public metadata
-and four-mode complete-download matrix. No new mapped Arkansas coverage is
-claimed. Follow actual precinct geometry declarations separately; keep maps
-and rates withheld until their scope is established. Finish Alabama's complete
-count review and original county summaries.
+Hans UI commit **`9ce96c69f241dcee0eda3a3c010ec0a56727a520`** is pushed.
+Its exact deployment **42023102253** succeeds; unqueried live registries,
+worklist and unchanged renderer bytes match this commit. All four actual
+desktop/mobile by JavaScript/no-JavaScript production modes pass **77 complete
+downloads**, preserving all 73 previous links, and **10 whole CSV endpoints**.
+Proofs: `files/arkansas-native-count-ui-publication-proof-03.json`,
+`files/arkansas-native-count-ui-live-browser-proof-03.json`.
+This count-only review does not acquire mapped Arkansas precinct coverage.
+
+The public "View County Results" control is a paragraph, not a button; following
+its actual visible text succeeds. Clicking the real "Arkansas - U.S. Senate
+Results" button then selects Arkansas County and captures its actual
+`GetContestResults?...&locationId=05001` response (**42,163 bytes**,
+`native-public-response-017`). The page now explicitly offers "View Precinct
+Results". County selection alone does not request precinct geometry. All new
+originals remain in the session cache, separate from the released count package;
+never mutate the immutable package's earlier original set.
+
+**Next executable actions:** follow the real precinct-results/list selection and
+map controls to capture actual precinct-geometry requests; review county-qualified
+identities, election applicability, split House scopes, topology and vote modes
+before maps. Keep analysis rates withheld. Persist Alabama's verified source
+package/release and complete-table integration next. Do not rerun Arkansas's
+finished count-only production matrix as a substitute for acquisition.
 
 ## Resume procedure for every work session or scheduled prompt
 
