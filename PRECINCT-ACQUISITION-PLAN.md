@@ -2838,9 +2838,12 @@ Thirteen 2026 PDFs use glyph-encoded Type3 fonts with unreadable extracted
 dates. Directly rendered and reviewed every affected original first-page header;
 all explicitly say **November 3, 2026**. Each review is bound to the exact PDF
 SHA-256 and cannot approve changed bytes or another election. This establishes
-document identity, **not recovered numeric tables**. Park's native headers say
-Official while their red banners and the source index say Unofficial; retain
-both statements instead of silently choosing one. Individually dated original
+document identity, **not recovered numeric tables**. **Correction from a fresh
+direct rendering and native glyph review:** both Park headers say Unofficial,
+matching their red banners and the source index. The earlier description of
+an Official header was a visual-review error, not a conflict in those documents.
+The immutable acquisition package is unchanged; the recovery review includes
+this explicit erratum. Individually dated original
 captures are not a simultaneous, reconciled statewide result snapshot.
 
 The independent 2022 workbook diagnostic now compares all **3,073 House
@@ -2867,7 +2870,13 @@ The pinned source batch adds one complete download while retaining every
 previous link. Its two ledger cells remain original-acquired / review-pending,
 not mapped, completed or approved turnout. The generic acquisition note now
 claims archived-file integrity, not readable native text that the Type3 PDFs
-do not provide. Ancillary UI/ledger integration awaits exact live verification.
+do not provide. Ancillary UI/ledger integration commit
+**`3c0bf71d387820ef7ec60ed3d6e534d5bc787842`** is live in exact successful
+Pages deployment **42006922857**. The unqueried production checker passes
+all four desktop/mobile, JavaScript/no-JavaScript modes, all **66** exact
+complete-download links, all 13 city rows/rates, three entire CSV endpoints,
+unchanged renderer bytes and no overflow:
+`files/wyoming-source-ui-live-browser-proof-01.json`.
 Thirteen focused collector/worklist cases, Astro check (zero errors/warnings),
 the normal build and Pages preparation pass; **94** relocated downloads remain
 byte-identical and the prepared site is **986,263,574 bytes**. Four-mode local
@@ -2875,12 +2884,42 @@ browser checks pass all **66** exact complete-download links, retain the
 13-year city table and verify unmodified renderer bytes:
 `files/wyoming-source-ui-local-browser-proof-01.json`.
 
-**Next executable actions:** verify the source-batch UI's exact deployment,
-unqueried registry/worklist and all 66 complete links. Persist the 2022 native
-reconciliation as a reusable tested reviewer with complete normalized tables
-and explicit Natrona conflict. Reconcile 2026 native numeric reports without
-using corrupted glyph text; acquire actual-election county or precinct
-geometry before mapping. Do not infer registrations or turnout rates.
+### Wyoming 2026 native glyph recovery
+
+The previously unreadable Type3 PDFs contain native vector glyph drawings.
+Directly rendered and reviewed all **570 distinct drawing-stream SHA-256s** in
+six labeled review sheets. An exact-source, exact-font-encoding, exact-drawing
+review now recovers **all 13 affected documents / 224 pages**, not 239 pages.
+The code adds only in-memory ToUnicode metadata and reopens that derived
+document before extracting text and coordinates. Every page renders
+**byte-identically** before and after recovery. Original PDF bytes are unchanged.
+No OCR, numeric interpolation, guessed vote values or altered font widths are used.
+
+The reproducible reviewer is `scripts/recover-wyoming-native-pdf-text.py`;
+the complete review is
+`data/precinct-source-reviews/20261105/WY-2026-native-text/`.
+It includes all **108** original source bodies and receipts, complete
+reviewed glyph inventory/catalog/transcriptions, six direct-review images,
+full recovered text and word coordinates, portable code, per-page render
+proofs, checksums and the explicit Park-header erratum. Eight new focused
+regressions reject changed source, encoding, drawing, missing review, guessed
+method, ambiguous character and missing font; all **17 Wyoming cases pass**.
+
+Complete archive `complete-wyoming-native-glyph-recovery-01.zip` is
+**19,481,350 bytes**, SHA-256
+`efc289365c002a6c507d70de871c7931c9ca195390114966c21e6ff621f52bc7`.
+A network-disabled rebuild is byte-identical and ZIP CRC passes:
+`files/wyoming-native-text-package-proof-01.json`.
+Recovery does **not** approve the numeric tables, turnout, geography or maps.
+The recovered statewide ballot summary prints **191,688**; reconcile it against
+every separate county/precinct table before using it as a reviewed ballot total.
+
+**Next executable actions:** reconcile all 23 counties' 2026 House category
+vectors and separate precinct ballot tables to county/state summaries using
+the recovered native coordinates and readable originals. Persist the 2022
+native reconciliation as a reusable tested reviewer with complete normalized
+tables, 35 explicit format crosswalks and the Natrona conflict. Acquire
+actual-election geometry before mapping. Do not infer registrations or turnout rates.
 
 ## Resume procedure for every work session or scheduled prompt
 

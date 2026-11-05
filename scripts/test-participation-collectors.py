@@ -52,6 +52,61 @@ house_county_sources = module("acquire-house-county-results")
 house_county_review = module("review-house-county-results")
 me_pa_participation = module("review-maine-pennsylvania-participation")
 wy_originals = module("archive-wyoming-election-sources")
+wy_native_text = module("recover-wyoming-native-pdf-text")
+
+
+@pytest.mark.parametrize("failure", [
+    None, "source", "encoding", "drawing", "unreviewed", "method", "character", "font",
+])
+def test_wyoming_native_text_requires_exact_reviewed_source_encoding_and_vector_glyph(failure):
+    with wy_native_text.fitz.open() as document:
+        page = document.new_page(width=200, height=200)
+
+        def obj(value, stream=None):
+            xref = document.get_new_xref()
+            document.update_object(xref, value)
+            if stream is not None:
+                document.update_stream(xref, stream)
+            return xref
+
+        drawing = b"1 0 0 0 1 1 d1 0 0 0.3 1 re f"
+        glyph = obj("<<>>", drawing)
+        procedures = obj(f"<< /first {glyph} 0 R >>")
+        encoding = obj("<< /Type /Encoding /Differences [0 /first] >>")
+        font = obj(f"<< /Type /Font /Subtype /Type3 /Name /T1 /FontBBox [0 0 1 1] "
+                   f"/FontMatrix [1 0 0 1 0 0] /FirstChar 0 /LastChar 0 /Widths [1] "
+                   f"/CharProcs {procedures} 0 R /Encoding {encoding} 0 R /Resources <<>> >>")
+        resources = obj(f"<< /Font << /T1 {font} 0 R >> >>")
+        contents = obj("<<>>", b"BT /T1 30 Tf 1 0 0 1 50 50 Tm <00> Tj ET")
+        document.xref_set_key(page.xref, "Resources", f"{resources} 0 R")
+        document.xref_set_key(page.xref, "Contents", f"{contents} 0 R")
+        raw = document.tobytes()
+    digest = hashlib.sha256(drawing).hexdigest()
+    record = dict(source_sha256=hashlib.sha256(raw).hexdigest(), fonts=[
+        dict(font_xref=font, glyphs=[dict(code=0, glyph_name="first", drawing_sha256=digest)])])
+    reviews = {digest: dict(character="1", method="direct_native_glyph_render_review")}
+    if failure == "source":
+        record["source_sha256"] = "0" * 64
+    elif failure == "encoding":
+        record["fonts"][0]["glyphs"][0]["code"] = 1
+    elif failure == "drawing":
+        record["fonts"][0]["glyphs"][0]["drawing_sha256"] = "0" * 64
+    elif failure == "unreviewed":
+        reviews.clear()
+    elif failure == "method":
+        reviews[digest]["method"] = "guessed"
+    elif failure == "character":
+        reviews[digest]["character"] = "12"
+    elif failure == "font":
+        record["fonts"] = []
+    if failure:
+        with pytest.raises(ValueError):
+            wy_native_text.recover_pdf(raw, record, reviews)
+    else:
+        recovered, renders = wy_native_text.recover_pdf(raw, record, reviews)
+        with recovered:
+            assert recovered[0].get_text().strip() == "1"
+            assert len(renders) == 1
 
 
 @pytest.mark.parametrize("failure", [None, "missing_county", "wrong_year"])
