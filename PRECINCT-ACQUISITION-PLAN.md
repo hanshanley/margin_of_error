@@ -1881,6 +1881,14 @@ The flag/ledger publication must also receive exact-SHA deployment and
 production-byte/browser verification before its bounded publication todo
 is closed. Never call these provisional fractions final turnout.
 
+The final DC flag/ledger commit is
+`7a99695511f44ab7b6254be8c2cb7f88fed09284`. Its exact Pages run
+**41983686641** also succeeded; unqueried production registry, ledger and
+renderer bytes and all four source-matched desktop/mobile JS/no-JS checks
+passed. Proofs: `files/dc-2026-final-exact-pages-run.json` and
+`files/dc-2026-final-live-browser-proof.json`. The bounded DC publication
+task is done. Do not rerun it in place of Massachusetts/new acquisition.
+
 ## Maryland 2026: native general reference link is an unexpanded template
 
 The actual official `https://elections.maryland.gov/elections/2026/index.html`
@@ -2008,6 +2016,87 @@ No Massachusetts map, rate, source-review completion or statewide completion
 is registered from these acquisitions. Next execute local OCR/count review,
 follow Boston's actual declared results archive for combined precinct exports,
 and seek independently established exact-election reference applicability.
+
+### Boston central-only mapped package: independently reconciled, publication pending
+
+The declared archive was followed in full. Its only 2026 PDF declaration is the
+September primary, not a combined general-election precinct export. The complete
+Worcester report has now been rasterized at 240 dpi and locally OCRed on **all
+60 pages**, using Apple Vision accurate English revision 3, correction disabled.
+Text alternatives, confidence, normalized bounds, native PDF/image/output/helper
+hashes and engine provenance are preserved. Structure: four three-page summary
+groups, followed by four twelve-page precinct SOV groups; overall, election day,
+early voting #1 and early voting #2. Counts remain **unverified**. Do not rerun
+unchanged OCR, discard alphabetic split precincts such as Ward 4 Precinct 2A,
+turn blank cells into zeros, or infer unique voters from ballot-style counters.
+The unexplained 144,608 / 120,952 ballot/registration anomaly remains unresolved.
+Only the actual first-page governor **ticket-party labels** have been visually
+checked and approved for Boston's identical statewide tickets, not any Worcester
+votes: Healey/Driscoll DEM, Minogue/Oliver REP, James/Kittredge IND.
+
+The actual official November 3 polling-locations page embeds Experience
+`30b1667d4997442795ae4096b825bc19`. Normal browser navigation acquired its
+actual selected webmap `58d8d0ed47c047dfa8bbe9c96390b848` and layer item
+`8ae9900f3a394baeb490642f62c5f85b`. Despite the legacy title
+`Boston_Precinct_Polling_Locations_-_Preliminary_Election_2026_Layer`,
+layer 0 is **esriGeometryPolygon**, not polling points. The selected popup
+explicitly states Tuesday, November 3, 2026. Preserve the contradictory older
+Fall 2025 webmap metadata: this is an **app-selected reference**, not newly
+surveyed/certified boundaries or proof of stability across elections.
+Full object-ID inventory and native GeoJSON agree exactly on all **275**
+objects; every redundant ward/precinct field agrees. All geometries are valid,
+with zero distinct-precinct overlaps above `1e-10` square degrees. No repairs,
+clipping or allocation are used. Genuine harbor/island extent remains intact.
+
+`scripts/build-boston-precinct-results.py` now strictly reads all 18 native
+governor slabs from the complete 288-page central-tabulation report, including
+the native label/count fonts' 0.36-point bbox difference. All **275 unique**
+precincts independently reconcile candidate/write-in/blank accounting and the
+exact city footer: **25,030 DEM; 3,534 REP; 811 IND; 53 write-ins; 378 blanks;
+29,806 contest-scoped central-tabulation ballots**. Of these, **252** precincts
+have candidate votes; **23** retain actual reported zeros with null margins,
+not manufactured colors. These are **central advanced-processing ONLY**, not
+combined Election Day results, all-mode margins, statewide results, unique
+voter counts or turnout. Never allocate the separate combined city HTML.
+No registration denominator, participation rate, demographic rate or winner
+claim is produced.
+
+New immutable source directory:
+`data/precinct-results/20261105-boston-central-01/`.
+Complete archive: `complete-boston-2026-central-tabulation-precinct-maps.zip`,
+**4,790,833 bytes**, SHA-256
+`2e7e59b1878508deeb85641323bdba1c31471854157921ab0cd9525addb9aa1a`.
+Includes **35 complete originals / 8,196,853 uncompressed bytes**, all exact
+source receipts, the failed state-policy response, original app metadata,
+complete native polygons, all candidate reporting rows, audit/checksums and
+the full unverified OCR derivative. Session image paths are normalized to
+basenames without altering OCR lines; original and normalized OCR hashes are
+retained. Only the three visually checked ticket-party labels are approved.
+All inputs needed for offline reproduction are inside the archive.
+
+Independent verifier `files/verify-boston-2026-package.py` reads source headers
+sequentially and counts through independent PDF column interiors, checks every
+count, source hash and exact native geometry, and rebuilds from **archive-only**
+rehydrated inputs. The entire resulting ZIP is byte-identical.
+Proof: `files/boston-2026-offline-reproduction-proof.json`.
+**352 collector tests pass**, including **23 new Boston regressions** for
+native fonts, election/office/mode, missing/fractional counts, complete inventory,
+footer, duplicates, unknown/inconsistent IDs, transfer truncation, invalid or
+overlapping geometry, zero counts, and explicit party evidence. Seven relevant
+Node tests pass. No whole-validator success is claimed.
+
+Publication remains pending: commit source as Hans, publish immutable release,
+redownload every byte and verify exact tag/source SHA, then append the snapshot.
+The UI must omit a participation link for this source rather than invent a
+zero-rate artifact or broken download; the pending optional
+`participation_available: false` is backward-compatible with existing sources.
+Retain all prior **50** complete downloads; the Boston ZIP and all-row CSV
+should bring the total to **52**. Regenerate all **1,632** cells, with only
+MA 2026 changing and remaining incomplete. Build/prepare and run a new Boston
+source-matched desktop/mobile JS/no-JS suite including all counts/colors, subset
+warnings, zero-row withholding, zoom/gestures, fallback and defaults, then verify
+its exact deployment before setting the live flag. Continue independent
+Worcester SOV reconciliation or another 2026 source while deployment runs.
 
 ## Resume procedure for every work session or scheduled prompt
 

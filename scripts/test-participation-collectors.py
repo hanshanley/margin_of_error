@@ -44,6 +44,164 @@ fl_monroe = module("review-florida-monroe-precinct-results")
 mo_christian = module("review-missouri-christian-precinct-results")
 clark_originals = module("archive-clark-historical-sources")
 dc_maps = module("build-dc-precinct-results")
+boston_maps = module("build-boston-precinct-results")
+
+
+def boston_page_fixture(columns=None):
+    from types import SimpleNamespace
+
+    columns = columns or [("01-01", [90, 17, 4, 0, 4, 115])]
+    words = []
+    for row, label in enumerate(boston_maps.LABELS):
+        x, y = 20, 409.39 + 14.52 * row
+        for word in label.split():
+            words.append((x, y, x + len(word) * 5, y + 10, word))
+            x += len(word) * 5 + 3
+    for column, (code, values) in enumerate(columns):
+        left = 185.6 + column * 49.2
+        if code == "TOTAL":
+            words.append((left + 5, 173, left + 35, 183, "TOTAL"))
+        else:
+            ward, precinct = map(int, code.split("-"))
+            for text, x, y in [("WARD", left + 5, 159), (f"{ward},", left + 34, 159),
+                               ("PRECINCT", left + 5, 173), (str(precinct), left + 40, 173)]:
+                words.append((x, y, x + 5, y + 10, text))
+        for row, value in enumerate(values):
+            right, y = left + 49.8, 409.75 + 14.52 * row
+            text = str(value)
+            words.append((right - len(text) * 5, y, right, y + 10, text))
+    text = ("UNOFFICIAL BOSTON STATE ELECTION NOVEMBER 2026 (CENTRAL TABULATION) "
+            "GOVERNOR & LIEUTENANT HEALEY AND DRISCOLL")
+    return SimpleNamespace(rect=SimpleNamespace(width=1008, height=612),
+        words=words, text=text,
+        get_text=lambda mode=None: words if mode == "words" else text)
+
+
+def test_boston_native_font_offset_and_candidate_blank_accounting_are_separate():
+    page = boston_page_fixture()
+    assert boston_maps.page_counts(page) == [
+        dict(precinct_code="01-01", values=[90, 17, 4, 0, 4, 115])]
+
+
+@pytest.mark.parametrize("change", ["none", "footer", "duplicate", "missing_page"])
+def test_boston_requires_complete_precinct_inventory_and_exact_native_city_footer(monkeypatch, change):
+    from types import SimpleNamespace
+
+    columns = [(f"{i // 12 + 1:02}-{i % 12 + 1:02}", [90, 17, 4, 0, 4, 115])
+               for i in range(275)]
+    if change == "duplicate":
+        columns[-1] = columns[0]
+    totals = [275 * n for n in [90, 17, 4, 0, 4, 115]]
+    if change == "footer":
+        totals[0] += 1
+        totals[-1] += 1
+    columns.append(("TOTAL", totals))
+    pages = [SimpleNamespace(get_text=lambda: "Another contest") for _ in range(288)]
+    for slab in range(18):
+        pages[slab * 16] = boston_page_fixture(columns[slab * 16:(slab + 1) * 16])
+    if change == "missing_page":
+        pages.pop()
+    monkeypatch.setattr(boston_maps.fitz, "open", lambda **kwargs: pages)
+    if change == "none":
+        records, audit = boston_maps.review_pdf(b"native PDF bytes")
+        assert len(records) == 275 and audit["central_tabulation_ballots"] == 275 * 115
+    else:
+        with pytest.raises(ValueError):
+            boston_maps.review_pdf(b"native PDF bytes")
+
+
+@pytest.mark.parametrize("change", ["wrong_year", "wrong_mode", "wrong_office",
+                                   "missing", "fractional", "unreconciled"])
+def test_boston_rejects_wrong_scope_and_missing_counts_without_filling_zero(change):
+    page = boston_page_fixture()
+    if change.startswith("wrong"):
+        old, new = {"wrong_year": ("2026", "2024"),
+                    "wrong_mode": ("CENTRAL TABULATION", "COMBINED RESULTS"),
+                    "wrong_office": ("GOVERNOR & LIEUTENANT", "ATTORNEY GENERAL")}[change]
+        page.get_text = lambda mode=None: page.words if mode == "words" else page.text.replace(old, new)
+    elif change == "missing":
+        page.words.pop()
+    else:
+        last = page.words[-1]
+        page.words[-1] = (*last[:4], "115.5" if change == "fractional" else "116")
+    with pytest.raises(ValueError):
+        boston_maps.page_counts(page)
+
+
+def boston_reference_fixture():
+    return dict(type="FeatureCollection", features=[dict(type="Feature",
+        properties=dict(ObjectId=1, DISTRICT="01-01", Ward_and_Precinct="01-01",
+            Ward="01", Precinct="01", WDPCT="0101", Ward_1787082447332=1,
+            Precinct_1787082447332="1"),
+        geometry=dict(type="Polygon", coordinates=[
+            [[-71.1, 42.3], [-71.09, 42.3], [-71.09, 42.31], [-71.1, 42.31], [-71.1, 42.3]]]))])
+
+
+def test_boston_preserves_mode_and_zero_counts_without_inventing_turnout_or_winners():
+    records = {"01-01": dict(values=[1, 2, 10, 0, 4, 17], source_page=1)}
+    parties = {name: dict(party=party) for name, party in zip(boston_maps.NAMES, ["DEM", "REP", "IND"])}
+    inventory = dict(objectIdFieldName="ObjectId", objectIds=[1])
+    rows, features = boston_maps.mapped_precincts(records, boston_reference_fixture(), inventory, parties)
+    assert rows[0]["contest_votes"] == 13 and rows[0]["ballots"] == 17
+    assert rows[0]["county"] == "Suffolk" and rows[0]["precinct"] == "Boston Ward 1, Precinct 1"
+    assert rows[0]["source_url"] == boston_maps.SOURCE
+    assert rows[0]["margin_pp"] == pytest.approx(-100 / 13)
+    assert "NOT combined" in rows[0]["ballot_scope"]
+    assert "winner" not in rows[0] and "participation" not in features[0]["properties"]
+    records["01-01"]["values"] = [0] * 6
+    rows, _ = boston_maps.mapped_precincts(records, boston_reference_fixture(), inventory, parties)
+    assert rows[0]["contest_votes"] == 0 and rows[0]["margin_pp"] is None
+
+
+@pytest.mark.parametrize("change", ["unknown", "conflict", "duplicate", "truncated", "invalid", "overlap"])
+def test_boston_rejects_ambiguous_or_incomplete_native_reference(change):
+    import copy
+
+    records = {"01-01": dict(values=[90, 17, 4, 0, 4, 115], source_page=1)}
+    parties = {name: dict(party=party) for name, party in zip(boston_maps.NAMES, ["DEM", "REP", "IND"])}
+    reference, inventory = boston_reference_fixture(), dict(objectIdFieldName="ObjectId", objectIds=[1])
+    p = reference["features"][0]["properties"]
+    if change == "unknown":
+        p["DISTRICT"] = "99-99"
+    elif change == "conflict":
+        p["WDPCT"] = "0102"
+    elif change == "truncated":
+        reference["exceededTransferLimit"] = True
+    elif change == "invalid":
+        reference["features"][0]["geometry"]["coordinates"] = [
+            [[-71.1, 42.3], [-71.09, 42.31], [-71.1, 42.31], [-71.09, 42.3], [-71.1, 42.3]]]
+    else:
+        second = copy.deepcopy(reference["features"][0])
+        second["properties"]["ObjectId"] = 2
+        inventory["objectIds"].append(2)
+        reference["features"].append(second)
+        if change == "overlap":
+            second["properties"].update(DISTRICT="01-02", Ward_and_Precinct="01-02",
+                Precinct="02", WDPCT="0102", Precinct_1787082447332="2")
+            records["01-02"] = records["01-01"]
+    with pytest.raises(ValueError):
+        boston_maps.mapped_precincts(records, reference, inventory, parties)
+
+
+@pytest.mark.parametrize("change", ["wrong_year", "wrong_office", "missing", "low_confidence", "duplicate"])
+def test_boston_requires_unambiguous_explicit_native_ticket_party_labels(change):
+    lines = [dict(bounds=[.032, .26, .2, .012], candidates=[dict(text=text, confidence=1)])
+             for text in ["11/03/2026 STATE ELECTION", "GOVERNOR AND LIEUTENANT GOVERNOR",
+                          *(f"{name} ({party})" for name, party in
+                            zip(boston_maps.NAMES, ["DEM", "REP", "IND"]))]]
+    assert len(boston_maps.party_evidence([dict(lines=lines)])) == 3
+    if change == "wrong_year":
+        lines[0]["candidates"][0]["text"] = "11/03/2024 STATE ELECTION"
+    elif change == "wrong_office":
+        lines[1]["candidates"][0]["text"] = "ATTORNEY GENERAL"
+    elif change == "missing":
+        lines.pop()
+    elif change == "low_confidence":
+        lines[-1]["candidates"][0]["confidence"] = .9
+    else:
+        lines.append(lines[-1])
+    with pytest.raises(ValueError):
+        boston_maps.party_evidence([dict(lines=lines)])
 
 
 def dc_count_fixture():
