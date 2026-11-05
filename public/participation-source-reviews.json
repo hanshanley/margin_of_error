@@ -1,6 +1,50 @@
 {
   "reviews": [
     {
+      "id": "pennsylvania-northampton-20261105-01",
+      "label": "Northampton County, Pennsylvania 2026: complete county returns and separate participation, counting partial",
+      "data_directory": "data/county-source-reviews/20261105-northampton-reviewed-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7f4d6dc4ed1a4e4637aa0f2f5772ef14fe81e990/data/county-source-reviews/20261105-northampton-reviewed-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-northampton-20261105-01/complete-northampton-2026-county-results-01.zip",
+      "complete_download_bytes": 322312,
+      "complete_download_sha256": "d5e29bb452d7a3b29801f70f1b7b6b1496ed9eeb3fdcd98193bdd66308029d9d",
+      "review_status": "complete_county_reports_and_counts_reviewed_counting_partial",
+      "maps_approved": false,
+      "scope_note": "Northampton County only, unofficial November 3, 2026 general election; native update November 4 at 3:29:55 PM, timezone unestablished. Mail-in and Election Day counting remain Partially Reported despite the native 155 of 155 fully reporting counter. House candidate votes total 127,555: DEM 72,478, REP 54,763 and 314 Write-in votes with no native party prefix, not inferred NON or independent affiliation. These are separate from 129,290 ballots and 234,834 registrations (printed 55.1%). Election Day ballots are 91,136, reported mail ballots 38,154 and provisional ballots an explicit zero. The Act88 notice's 38,593 received mail ballots is a separate processing observation. The 1,735-ballot House residual stays unclassified, not inferred under/overvotes. All 31 county candidate lines reconcile with 2,015 native unit observations across 10 contests and 155 native units; all 220 explicit candidate zeroes remain. Missing district ballots, unit participation, candidate voting modes and native under/overvotes stay absent. Complete screened HTML, receipts, portable code and all seven tables are included. No new map, demographic turnout, certification or statewide completion is approved; existing maps are unchanged.",
+      "tables": [
+        {"file": "county-participation.csv", "label": "Northampton County only: separate county ballots, registrations, printed turnout, counting qualifications and mail receipt notice (CSV)"},
+        {"file": "county-ballot-mode-counts.csv", "label": "Northampton County only: all three native Election Day, Mail-in and Provisional ballot counts, including the explicit provisional zero (CSV)"},
+        {"file": "county-candidate-results.csv", "label": "Northampton County only: all 31 candidate/write-in lines across 10 contests; visible and accessible labels and blank write-in parties retained (CSV)"},
+        {"file": "county-office-party-totals.csv", "label": "Northampton County only: all 13 office/literal-party totals; unlabeled write-ins remain separate (CSV)"},
+        {"file": "county-contest-totals.csv", "label": "Northampton County only: all 10 contest totals, coverage and unclassified countywide ballot residuals; missing district ballots and under/overvotes stay blank (CSV)"},
+        {"file": "native-unit-candidate-counts.csv", "label": "Northampton County only: all 2,015 native unit candidate observations and all 220 explicit zeroes; no new geometry approved (CSV)"},
+        {"file": "native-unit-contest-coverage.csv", "label": "Northampton County only: all 620 native unit/contest coverage observations, preserving four nonoverlapping office partitions (CSV)"}
+      ],
+      "coverage": []
+    },
+    {
+      "id": "pennsylvania-three-county-20261105-01",
+      "label": "Chester, Franklin and Lehigh counties, Pennsylvania 2026: complete returns and separate participation",
+      "data_directory": "data/county-source-reviews/20261105-pa-three-county-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/28cdb2c434e01ab2fe45696970e95b4454900a08/data/county-source-reviews/20261105-pa-three-county-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-source-redaction-20261105-01/complete-pa-three-county-2026-05.zip",
+      "complete_download_bytes": 512444,
+      "complete_download_sha256": "b1eaa050626fb402e7ea2850db579a53a6e8f3c3c2e27bdf9485cfd044a5faa9",
+      "review_status": "complete_county_reports_and_counts_reviewed_counting_partial",
+      "maps_approved": false,
+      "scope_note": "Chester, Franklin and Lehigh counties only, November 3, 2026 general election. Their 438,869 reported ballots remain separate from 437,079 House candidate votes and native registrations. All 104 county candidate/ballot-option rows across 38 contests reconcile with 327 candidate-mode observations, 461 native participation records and 6,362 native candidate observations, including 520 explicit unit zeroes. Offices, literal CSV parties, visible prefixes and accessible HTML labels remain separate; ballot options never become party totals. Chester supplies no native result-status literal; none is invented. Its 15 zero contest-ballot fields conflict with positive unit ballot sums and remain flagged, not treated as actual zero ballots. Franklin's House district number is absent and stays absent; its 195 under/6 overvotes explain the House ballot gap. Lehigh still reports partial mail and provisional counting; its 1,003 reported undervotes leave 46 unclassified ballots, not inferred overvotes. Complete source HTML is explicitly screened with original-hash receipts; all source counts and complete CSVs are retained. No new map, demographic turnout, certification or statewide completion is approved; existing maps are unchanged.",
+      "tables": [
+        {"file": "county-participation.csv", "label": "Chester, Franklin and Lehigh only: separate county ballots, registrations, printed rates, timestamps and native counting qualifications (CSV)"},
+        {"file": "county-candidate-results.csv", "label": "Chester, Franklin and Lehigh only: all 104 candidate/ballot-option lines across 38 separate contests, preserving literal party sources (CSV)"},
+        {"file": "county-candidate-mode-counts.csv", "label": "Chester, Franklin and Lehigh only: all 327 native candidate/option voting-mode counts, including explicit zeroes (CSV)"},
+        {"file": "county-office-party-totals.csv", "label": "Chester, Franklin and Lehigh only: all 36 office/literal-party totals, separate districts and ballot options excluded (CSV)"},
+        {"file": "county-contest-totals.csv", "label": "Chester, Franklin and Lehigh only: all 38 separate contest totals, native accounting fields and flagged ballot inconsistencies (CSV)"},
+        {"file": "native-unit-participation.csv", "label": "Chester, Franklin and Lehigh only: all 461 native unit ballot and registration observations; no new geometry approved (CSV)"},
+        {"file": "native-unit-candidate-counts.csv", "label": "Chester, Franklin and Lehigh only: all 6,362 native candidate observations, all 520 explicit zeroes and unallocated records retained (CSV)"}
+      ],
+      "coverage": []
+    },
+    {
       "id": "pennsylvania-montgomery-20261105-01",
       "label": "Montgomery County, Pennsylvania 2026: complete county returns, split portions and separate participation",
       "data_directory": "data/county-source-reviews/20261105-montgomery-reviewed-01",

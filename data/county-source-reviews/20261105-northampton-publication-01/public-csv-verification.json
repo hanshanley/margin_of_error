@@ -1,0 +1,89 @@
+{
+  "status": "passed",
+  "tables": [
+    {
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7f4d6dc4ed1a4e4637aa0f2f5772ef14fe81e990/data/county-source-reviews/20261105-northampton-reviewed-01/county-participation.csv",
+      "bytes": 606,
+      "sha256": "759c8ff0c0dc7ae31c2ed8af8f324a75bf7a9b4dbce656e7fe6bca3ed8b4dc34",
+      "byte_identical": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7f4d6dc4ed1a4e4637aa0f2f5772ef14fe81e990/data/county-source-reviews/20261105-northampton-reviewed-01/county-ballot-mode-counts.csv",
+      "bytes": 205,
+      "sha256": "7278a497e38684280ddb93a6418b455ea63d17f55c0a720698e563610cb7fcde",
+      "byte_identical": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7f4d6dc4ed1a4e4637aa0f2f5772ef14fe81e990/data/county-source-reviews/20261105-northampton-reviewed-01/county-candidate-results.csv",
+      "bytes": 4216,
+      "sha256": "b4d8134d63eec62dc3c46fc9a665886727d9f929fc2e663b9419f8e8c30e6bb5",
+      "byte_identical": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7f4d6dc4ed1a4e4637aa0f2f5772ef14fe81e990/data/county-source-reviews/20261105-northampton-reviewed-01/county-office-party-totals.csv",
+      "bytes": 753,
+      "sha256": "1dad6dc917a15f8375507645758b630d0b100ef24655c68f62789728f920e019",
+      "byte_identical": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7f4d6dc4ed1a4e4637aa0f2f5772ef14fe81e990/data/county-source-reviews/20261105-northampton-reviewed-01/county-contest-totals.csv",
+      "bytes": 1356,
+      "sha256": "991f029ac0ac1165dd17779b64381b589a983f9375368645a910c5be881c72af",
+      "byte_identical": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7f4d6dc4ed1a4e4637aa0f2f5772ef14fe81e990/data/county-source-reviews/20261105-northampton-reviewed-01/native-unit-candidate-counts.csv",
+      "bytes": 289995,
+      "sha256": "8c6e919810a46b925118ac7f082aa083f308aa8ccfbf18038e138b28a73d086d",
+      "byte_identical": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7f4d6dc4ed1a4e4637aa0f2f5772ef14fe81e990/data/county-source-reviews/20261105-northampton-reviewed-01/native-unit-contest-coverage.csv",
+      "bytes": 75657,
+      "sha256": "d6900366646ee0b66293cf433cc00dec449b1c80ba7d18b56dbc4dc7306346b5",
+      "byte_identical": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/28cdb2c434e01ab2fe45696970e95b4454900a08/data/county-source-reviews/20261105-pa-three-county-01/county-participation.csv",
+      "bytes": 704,
+      "sha256": "baa86b43141781ac7870114528f3a74c4e364688996560014314320fb99eaa8a",
+      "byte_identical": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/28cdb2c434e01ab2fe45696970e95b4454900a08/data/county-source-reviews/20261105-pa-three-county-01/county-candidate-results.csv",
+      "bytes": 15895,
+      "sha256": "f0c4240f8ac420347d924c8f2f6ff70874d874ae5fc865eba0274b163c0b1b7e",
+      "byte_identical": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/28cdb2c434e01ab2fe45696970e95b4454900a08/data/county-source-reviews/20261105-pa-three-county-01/county-candidate-mode-counts.csv",
+      "bytes": 57184,
+      "sha256": "e88abc0ceef4cda96034f46d5374b9d5bd0e62f456c9cae3dc3db3d269242aba",
+      "byte_identical": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/28cdb2c434e01ab2fe45696970e95b4454900a08/data/county-source-reviews/20261105-pa-three-county-01/county-office-party-totals.csv",
+      "bytes": 1840,
+      "sha256": "14316531e119917b90bb9ad7e8bc6e2046cca2da120a426ec6101aa238b3b5a2",
+      "byte_identical": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/28cdb2c434e01ab2fe45696970e95b4454900a08/data/county-source-reviews/20261105-pa-three-county-01/county-contest-totals.csv",
+      "bytes": 8605,
+      "sha256": "78a54dac66b84f42b4d5e8db4c5119b4f7bb62e0750849bd13d150e4b00e979d",
+      "byte_identical": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/28cdb2c434e01ab2fe45696970e95b4454900a08/data/county-source-reviews/20261105-pa-three-county-01/native-unit-participation.csv",
+      "bytes": 44195,
+      "sha256": "f331b76f7d10d9edd8bbc5e18085705674c653a95034ff9615a876ab97f49065",
+      "byte_identical": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/28cdb2c434e01ab2fe45696970e95b4454900a08/data/county-source-reviews/20261105-pa-three-county-01/native-unit-candidate-counts.csv",
+      "bytes": 1270787,
+      "sha256": "d86aa40cc0e8d3fddc21e3310c0c1ea4fdbc87388e76c753c7061b65efaeb550",
+      "byte_identical": true
+    }
+  ]
+}
