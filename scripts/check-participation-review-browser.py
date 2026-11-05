@@ -25,6 +25,8 @@ new_links.update(review["base_url"] + table["file"]
                  for review in registry["reviews"] for table in review["tables"])
 source_registry = json.loads((root / "public/precinct-results.json").read_text())
 source_links = {batch["complete_download_url"] for batch in source_registry["source_batches"]}
+source_reviews = [json.loads((root / path).read_text()) for path in source_registry["source_reviews"]]
+source_links.update(review["complete_download_url"] for review in source_reviews)
 expected_links = baseline | new_links | source_links
 assert len(baseline) == 61 and len(new_links) == 4 and not baseline & new_links
 proof = dict(base_url=base, source_matched=True, full_csv_endpoints=[], modes=[])
@@ -49,6 +51,17 @@ for review in registry["reviews"]:
         proof["full_csv_endpoints"].append(dict(
             file=table["file"], rows=len(rows), bytes=len(response.content),
             sha256=hashlib.sha256(response.content).hexdigest()))
+
+for review in source_reviews:
+    if not review.get("count_csv"):
+        continue
+    response = requests.get(review["base_url"] + review["count_csv"], timeout=90)
+    response.raise_for_status()
+    assert response.content == (root / review["data_directory"] / review["count_csv"]).read_bytes()
+    rows = list(csv.DictReader(io.StringIO(response.text)))
+    assert len(rows) == review["reporting_units"]
+    proof["full_csv_endpoints"].append(dict(file=review["count_csv"],
+        rows=len(rows), bytes=len(response.content), sha256=hashlib.sha256(response.content).hexdigest()))
 
 with sync_playwright() as playwright:
     browser = playwright.chromium.launch()

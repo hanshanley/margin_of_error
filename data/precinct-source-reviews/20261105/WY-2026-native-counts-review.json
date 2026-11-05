@@ -1,0 +1,22 @@
+{
+  "year": 2026,
+  "state_code": "WY",
+  "office": "US House and 432 separate precinct ballot counts; Washakie third-party conflict retained",
+  "candidate_results": "acquired_candidate_category_conflict",
+  "boundaries": "not_reviewed",
+  "join": "withheld",
+  "validation": "ballot_counts_passed_candidate_category_conflict_map_withheld",
+  "publication": "full_counts_download_only",
+  "participation": "acquired_precinct_ballot_counts_rates_withheld",
+  "source_url": "https://sos.wyo.gov/Elections/Docs/2026/2026GeneralResults.aspx",
+  "data_directory": "data/precinct-source-reviews/20261105/WY-2026-native-counts",
+  "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6ff31fc2cf9a4be6757db120b8ab2df3a08f7cb5/data/precinct-source-reviews/20261105/WY-2026-native-counts/",
+  "count_csv": "precinct-counts.csv",
+  "reporting_units": 432,
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-wyoming-counts-20261105/complete-wyoming-2026-native-count-review-01.zip",
+  "complete_download_bytes": 20025208,
+  "complete_download_sha256": "53b246106834a160662d9b66283a8298d0a64edcb9d2b56cf299628bbe42cae6",
+  "maps_approved": false,
+  "next_action": "Acquire actual 2026 geometry for the 432 native precinct identifiers. Obtain county-issued precinct detail to resolve Washakie's third-party columns without swapping or allocating aggregate votes. Preserve separately reconciled ballots; do not infer registrations or turnout rates.",
+  "notes": "All 432 native precinct ballot counts across all 23 counties reconcile to 191,688, separately from candidate votes. Every seven-category House accounting vector matches its precinct ballot count and native county totals. Complete county/state candidate vectors agree for 22 counties (427 precincts). Five Washakie precincts retain a Johnson/Haggit category conflict: state-hosted precinct PDF totals 130/194 versus statewide and independently acquired county-issued summary 194/130. D/R, write-ins, overvotes, undervotes and total ballots agree. All original counts and literal party labels are retained; no precinct columns repaired or swapped. The complete archive includes all 110 original HTTP files, all native glyph reviews, the complete 432-row CSV, independent county follow-up, receipts, hashes/pages, explicit conflict vectors and portable code. No approved geometry, final turnout, demographic coverage, registrations or rates."
+}

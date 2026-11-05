@@ -153,6 +153,7 @@
     "data/precinct-source-reviews/20261105/RI/audit.json",
     "data/precinct-source-reviews/20261105/FL-2026-MON/audit.json",
     "data/precinct-source-reviews/20261105/MO-2026-CHRISTIAN/audit.json",
-    "data/precinct-source-reviews/20261105/MA-WORCESTER/audit.json"
+    "data/precinct-source-reviews/20261105/MA-WORCESTER/audit.json",
+    "data/precinct-source-reviews/20261105/WY-2026-native-counts-review.json"
   ]
 }

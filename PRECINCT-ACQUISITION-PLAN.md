@@ -2963,10 +2963,31 @@ Complete archive `complete-wyoming-2026-native-count-review-01.zip` is
 All **29 Wyoming focused tests** pass. All 159 checked package files and the
 432-row CSV pass; a network-disabled rebuild is byte-identical and ZIP CRC
 passes: `files/wyoming-2026-native-count-package-proof-01.json`.
+Source commit **`6ff31fc2cf9a4be6757db120b8ab2df3a08f7cb5`** is pushed
+as Hans. Immutable release **`voter-precinct-wyoming-counts-20261105`** targets
+that commit. The entire remotely downloaded ZIP is byte-identical; its CRC,
+all 159 checked package members and all **110** original-body receipts pass:
+`files/wyoming-2026-native-count-remote-release-proof-01.json`.
 
-**Next executable actions:** publish and fully redownload/verify the complete
-count review, expose its complete download and honest 2026 worklist status,
-then verify the exact ancillary UI deployment. Seek county-issued precinct
+Ancillary UI integration adds the complete count review as one new download,
+preserving all 66 prior links. Its count-review metadata is separate from the
+immutable source package. Only the **2026 WY** worklist row changes; boundaries
+remain unreviewed and maps/joins withheld. All 1,632 precinct cells remain
+incomplete. The browser checker derives complete links from registered source
+reviews too, and verifies the entire pinned 432-row CSV alongside the three
+participation CSVs. Exact deployment and production checks are pending.
+All **34** focused collector/worklist tests pass, Astro check has zero
+errors/warnings (five existing hints), the normal build and canonical Pages
+preparation pass. All **94** relocated downloads remain byte-identical; prepared
+site size is **986,264,292 bytes**. Four-mode local browser checks pass all
+**67** exact complete-download links, every city row/rate and all four entire
+CSV endpoints, including the **432-row / 118,060-byte** native count table:
+`files/wyoming-native-count-ui-local-browser-proof-01.json`.
+The renderer and pinned research export are unchanged.
+
+**Next executable actions:** finish local and exact-live ancillary UI
+verification for all 67 complete links and the full 432-row count endpoint.
+Seek county-issued precinct
 detail for Washakie's third-party conflict and actual 2026 geometry for all
 432 native units; do not borrow 2022's 439-unit geometry. Persist the 2022
 native reconciliation as a reusable tested reviewer with complete normalized
