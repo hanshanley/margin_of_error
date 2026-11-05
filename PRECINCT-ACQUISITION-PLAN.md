@@ -12,8 +12,11 @@ work; label the geography explicitly. Never paint county totals as precinct
 results, allocate them into precincts, or call candidate margins participation.
 
 Work in this order: **2026, 2024 gaps, 2022, 2020, 2018, 2016, then every earlier
-even year through 1964**. Include midterms. Pursue each jurisdiction separately;
-do not add only one example state per year. While a newer source downloads or
+even year through 1964**. Include midterms. Use consolidated national and
+multi-state datasets first, validating each jurisdiction's scope independently;
+use state and county acquisition for genuine gaps rather than rebuilding an
+available compilation one county at a time. Do not add only one example state
+per year. While a newer source downloads or
 awaits publication, acquire independent historical batches rather than idling.
 Record unresolved newer-state work and return to it; do not silently abandon it.
 
@@ -4173,12 +4176,149 @@ new CSV/PDF endpoint and full ZIP. County-only scope, missing rates/registration
 no overflow, default 2026/precinct/red-blue map behavior and selection/zoom pass.
 Proof: `files/kentucky-ui-local-browser-proof-01.json`.
 
-**Current executable work:** commit/push the locally verified UI as Hans and
-finish one bounded exact-commit production browser/full-download verifier before
-claiming Kentucky UI live. During deployment, continue independent official
-county alternatives or the remaining 2026 state/DC queue; Iowa's official results
-archive is discovered but not acquired. Do not retry Kentucky's statewide
-bot-policy block or rerun completed Michigan suites.
+UI commit **c2efd41608321f4d9cfb9102a96b529148c1cbe9** is pushed as Hans.
+Its exact deployment **42040522420** succeeded. All five unqueried public files
+match committed bytes, and desktop/mobile with and without JavaScript pass
+**108** complete download links, preserving all **103** older URLs and verifying
+every entire new CSV/PDF/ZIP. Default 2026/precinct/red-blue behavior, selection,
+zoom and no overflow pass. Proofs: `files/kentucky-ui-publication-proof-01.json`
+and `files/kentucky-ui-live-browser-proof-01.json`. Kentucky is live-verified;
+do not repeat its finished suite. Do not retry its statewide bot-policy block.
+
+### Iowa 2026: complete county originals acquired and native counts reviewed
+
+All **13** actual source receipts are preserved in
+`files/precinct-expansion-sources/IA-2026-official-01/`. State results/live
+indexes, four declared general absentee PDFs, historical turnout PDF, and Linn
+and Lee indexes return **403**. Preserve these bodies as errors, not PDFs; do
+not bypass their challenges or guess unlinked statewide result filenames.
+
+Independent official county declarations succeed. Linn's complete summary is
+**36,494 bytes / 10 pages**, SHA-256
+`a2d194adfef5761933857f2b57e719297d793b41d54dfd53e2f68015b800572d`;
+its complete precinct report is **1,757,695 bytes / 511 pages**, SHA-256
+`f9c01726731a42b144006c635fc5e99a105fb7c6521c6d8626f7579dc8ca5504`.
+Both explicitly identify the November 3, 2026 general election and unofficial
+results, with native report times **10:12–10:13 PM**. URLs:
+`https://gis.linncountyiowa.gov/web-data/elections/year/2026/20261103GE/sum.pdf`
+and `https://gis.linncountyiowa.gov/web-data/elections/year/2026/20261103GE/pct.pdf`.
+All **94** actual precinct statistics/House tables independently reconcile to
+**160,717 registrations**, **107,457 ballots** (**66,530 Election Day /
+40,927 absentee**), **20 blank ballots** (**5 / 15**) and **105,838 House
+votes** (**65,501 / 40,337**). All five candidate/write-in vectors reconcile
+in every mode. Printed turnout uses native total registrations, not VEP or a
+demographic denominator; no substitute denominator or geometry is approved.
+
+Marion's official 2026 index declares the complete **481,505-byte / 9-page**
+scanned report, SHA-256
+`4627272fdf72d35b2c0d1a20b715efce5242d042ae5e00242cd7242f8d0ae002`.
+The original URL is
+`https://www.marioncountyiowa.gov/files/election_results/2026_general_election_2026_11_03_29798_.pdf`;
+its ordinary redirect succeeds. Direct inspection of all nine native page
+headers confirms the November 3 general election, unofficial status and
+**9:34:08 PM CST**, with **25,041 registrations**, **16,373 ballots**,
+**1 blank ballot** and printed **65.38%**. The first-page House contest has
+**15,923 votes + 445 undervotes + 5 overvotes = 16,373 ballots**.
+The PDF says **19 of 19 reporting**, while the index says **19/17**; preserve
+the discrepancy and infer no geographic precinct inventory. Native header
+contact sheet and full first-page evidence are retained under the cache's
+`review/`. No OCR guesses or ballot-mode allocations have been made.
+
+**Pending:** persist a portable, fail-closed reviewer and complete original/count
+package, tests, archive-only rebuild, immutable release and UI registration.
+These county checks are not a published map or statewide completion.
+
+### Consolidated-source-first investigation requested November 5, 2026
+
+The user requested correction of obsolete NC-focused page subtitles and a
+search for already collated data instead of defaulting to county-by-county
+reconstruction. The page metadata, introductory deck, coverage fallback and
+Interactive analysis card now describe nationwide, presidential/midterm scope
+without promising universal precinct coverage. Legitimate NC-only historical
+participation labels and all map defaults/behavior are retained.
+
+Useful current primary-provider declarations:
+
+- UF Election Lab lists **2026 General Election Turnout Rates v0.2**, updated
+  **November 4, 2026**, with a declared complete CSV and documentation:
+  `https://election.lab.ufl.edu/dataset/2026-general-election-turnout-rates-v0-2/`.
+  This is state-level participation, not precinct geometry or demographic
+  turnout. Check actual ballot availability and preserve separate VAP/VEP
+  definitions. The dataset documentation specifies CC BY 4.0, whereas the
+  generic archive page lists a different default license; retain both declarations.
+- `https://github.com/pushbuild/us-2026-election-results` has **40 state CSVs**
+  plus README/license at immutable commit
+  **feb85f414762b05c7c77f6450336405ef030fbfa**, committed November 4.
+  The provider identifies an **unofficial November 4, 12:11 PM ET** snapshot,
+  state/county candidate results and CC0. Some files contain candidate-list
+  placeholders and no actual counts; some "county" units are potentially towns
+  or districts. Acquire the entire pinned original and verify every Git blob,
+  then reconcile scope/counts before promoting anything. Never treat blank
+  votes as zeros, county labels as precincts, or candidate totals as turnout.
+- `https://openamerica.io/elections/api/` documents a free, public **22-state**
+  2026 results feed and a 2024 replay. These are race-level results and counts
+  of reporting units, not geographic precinct returns, registration or ballots.
+  It can cross-check complete race vectors but cannot supply precinct maps.
+- Historical bulk alternatives remain **MIT Election Lab**, **OpenElections**,
+  **Redistricting Data Hub**, and **UF/VEST**. MIT lists multi-state precinct
+  returns including 2024 and earlier midterms. RDH lists all-state joined
+  results/boundaries for 2016, 2018 and 2020 and separate later-year availability.
+  Check each package's actual year, ballot-mode coverage, license and allocation
+  methods: RDH explicitly describes some partners allocating centrally reported
+  votes, which is not an observed geographic count. UF's 2022/2024 precinct
+  maps/results require a paid subscription; do not bypass access restrictions.
+
+Actual full downloads succeed, not merely catalog discovery:
+
+- The pinned Pushbuild complete original archive is **2,404,302 bytes**, containing
+  **42 files / 40 state CSVs / 129,414 rows**, including **104,033 native
+  county-labelled rows**. Every original Git blob and byte length verifies.
+  Illinois, Massachusetts, New York and Wyoming files contain only missing-vote
+  candidate lists. Other files mix real counts and placeholders. Alaska's
+  county-labelled rows include House districts; Connecticut uses towns.
+  Preserve every original row, but promote none before scope reconciliation.
+- UF's **6,019-byte CSV / 52 rows** covers all states, D.C. and the U.S.;
+  **every SOURCE says `Initial Estimate`**. This is an explicitly estimated
+  participation series, not 52 administrative ballot-count observations or
+  demographic turnout. Keep it separate from Census CPS, official counts and
+  registrations. The complete **6,942-byte** documentation is retained.
+- Open America's actual **67,710-byte** 2026 House response contains **155 races
+  across 15 states**, fewer than its 22 supported adapters. All nine Indiana
+  races have candidate-sum versus reported-total conflicts, often exactly
+  double; retain but withhold these vectors rather than accepting the API
+  contract as validation.
+- RDH's actual declared `dataset.csv` (**1,878 bytes / 50 rows**) has **no
+  2026 general-election download links**. Louisiana alone is labelled
+  `Primary Available`; this does not supply November general-election data.
+  The map is a useful future availability check, not an acquired 2026 map set.
+
+All entire original responses, source receipts, pinned inventory and row-level
+acquisition audit remain in
+`files/consolidated-election-sources-20261105-01/`. The source acquisition helper
+is `files/acquire-consolidated-election-sources-01.py`. No new map, turnout
+denominator or completed state/year cell is claimed from these downloads.
+The complete CC0 Pushbuild archive (including all CSVs, README and license),
+its pinned tree/acquisition audit, UF's entire CSV and CC BY documentation,
+and RDH's entire availability CSV are also persisted in the repository at
+`data/precinct-source-reviews/20261105-consolidated-01/`, with HTTP receipts and
+SHA-256/byte-length inventory. Archive-only verification rechecks every one
+of the **42** Git blobs and the exact **129,414 / 104,033** row counts.
+
+The nationwide page deck, social description, default selection heading,
+no-JavaScript scope note and Interactive analysis subtitle have been updated.
+Astro check, seven participation regressions and the production build pass.
+The serial validator passes the participation assertions and reaches only
+the established unrelated UK card mismatch (**23 versus 16**, line 1097).
+The Pages preparer passes and preserves complete download relocation.
+Publication and four-mode browser verification must pass before calling this
+copy live; do not modify verified map data or rendering for this copy change.
+
+**Current executable priority:** persist the acquired consolidated originals,
+independently reconcile complete state/county vectors and election identities
+for bulk imports, starting with remaining 2026 gaps. Compare Iowa's county
+vectors against the acquired Linn/Marion originals. Use county acquisition for
+true gaps, not to rebuild available compilations. Do not repeat the already
+acquired 25-state 2022 batch or the completed Kentucky production suite.
 
 ## Resume procedure for every work session or scheduled prompt
 

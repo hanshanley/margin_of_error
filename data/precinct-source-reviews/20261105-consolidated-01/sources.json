@@ -1,0 +1,42 @@
+[
+  {
+    "file": "pushbuild-complete-original.tar.gz",
+    "url": "https://api.github.com/repos/pushbuild/us-2026-election-results/tarball/feb85f414762b05c7c77f6450336405ef030fbfa",
+    "final_url": "https://codeload.github.com/pushbuild/us-2026-election-results/legacy.tar.gz/feb85f414762b05c7c77f6450336405ef030fbfa",
+    "status": 200,
+    "bytes": 2404302,
+    "sha256": "316fb2f0f50defafef6f053db0356e77e4011c94f97cf37199726d28bc04e0f8",
+    "content_type": "application/x-gzip",
+    "acquired_at": "2026-11-05T14:06:34.907390+00:00"
+  },
+  {
+    "file": "uf-2026-turnout.csv",
+    "url": "https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.2.csv",
+    "final_url": "https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.2.csv",
+    "status": 200,
+    "bytes": 6019,
+    "sha256": "459258dd8ffcbf419aea14c9e0b4d3aee4a57410897099e0f06684e7d8e881d0",
+    "content_type": "text/csv",
+    "acquired_at": "2026-11-05T14:06:35.852074+00:00"
+  },
+  {
+    "file": "uf-2026-turnout-documentation.txt",
+    "url": "https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.1_doc.txt",
+    "final_url": "https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.1_doc.txt",
+    "status": 200,
+    "bytes": 6942,
+    "sha256": "403fee549826f57d620256fb33d42ffd67e19360bc611330a6ce9f01a79b8dcd",
+    "content_type": "text/plain; charset=UTF-8",
+    "acquired_at": "2026-11-05T14:06:36.055644+00:00"
+  },
+  {
+    "file": "rdh-2026-availability.csv",
+    "url": "https://datawrapper.dwcdn.net/zUYMM/1/dataset.csv",
+    "final_url": "https://datawrapper.dwcdn.net/zUYMM/1/dataset.csv",
+    "status": 200,
+    "bytes": 1878,
+    "sha256": "668aa462cb97904ca16fb39c106f1077c894b07368a263ad0cf177fa42d89499",
+    "content_type": "application/octet-stream",
+    "acquired_at": "2026-11-05T14:09:16.881625+00:00"
+  }
+]

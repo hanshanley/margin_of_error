@@ -1,0 +1,1862 @@
+{
+  "status": "originals_acquired_blob_verified_review_pending",
+  "repository": "pushbuild/us-2026-election-results",
+  "commit": "feb85f414762b05c7c77f6450336405ef030fbfa",
+  "original_files": 42,
+  "state_files": 40,
+  "rows": 129414,
+  "county_rows": 104033,
+  "all_original_git_blobs_verified": true,
+  "normalized": false,
+  "maps_approved": false,
+  "participation_available": false,
+  "note": "Candidate vote rows, not turnout or precinct geometry. Native county labels may actually denote towns, election districts or legislative districts. Candidate-list placeholders and missing counts must not become zeros or coverage. Independently reconcile each complete contest vector and source identity before publication.",
+  "coverage": [
+    {
+      "file": "data/ak.csv",
+      "state": "AK",
+      "rows": 5102,
+      "columns": [
+        "state",
+        "level",
+        "county",
+        "contest",
+        "candidate",
+        "party",
+        "votes",
+        "pct",
+        "contestTotalVotes",
+        "precinctsReporting",
+        "precinctsTotal",
+        "source",
+        "sourceUrl",
+        "sourceUpdatedAt",
+        "fetchedAt"
+      ],
+      "native_levels": [
+        "county",
+        "state"
+      ],
+      "county_rows": 4928,
+      "numeric_vote_rows": 5102,
+      "missing_vote_rows": 0,
+      "source_urls": [
+        "https://www.elections.alaska.gov/enr/26GENR/results/GA_ENR_Precinct_State_of_Alaska.csv"
+      ],
+      "source_labels": [
+        "Alaska Division of Elections"
+      ]
+    },
+    {
+      "file": "data/al.csv",
+      "state": "AL",
+      "rows": 293,
+      "columns": [
+        "state",
+        "level",
+        "county",
+        "contest",
+        "candidate",
+        "party",
+        "votes",
+        "pct",
+        "contestTotalVotes",
+        "precinctsReporting",
+        "precinctsTotal",
+        "source",
+        "sourceUrl",
+        "sourceUpdatedAt",
+        "fetchedAt"
+      ],
+      "native_levels": [
+        "state"
+      ],
+      "county_rows": 0,
+      "numeric_vote_rows": 293,
+      "missing_vote_rows": 0,
+      "source_urls": [
+        "https://www2.alabamavotes.gov/electionNight/statewideResultsByContest.aspx?ecode=1001305"
+      ],
+      "source_labels": [
+        "Alabama Secretary of State"
+      ]
+    },
+    {
+      "file": "data/ar.csv",
+      "state": "AR",
+      "rows": 6968,
+      "columns": [
+        "state",
+        "level",
+        "county",
+        "contest",
+        "candidate",
+        "party",
+        "votes",
+        "pct",
+        "contestTotalVotes",
+        "precinctsReporting",
+        "precinctsTotal",
+        "source",
+        "sourceUrl",
+        "sourceUpdatedAt",
+        "fetchedAt"
+      ],
+      "native_levels": [
+        "county",
+        "state"
+      ],
+      "county_rows": 4596,
+      "numeric_vote_rows": 6968,
+      "missing_vote_rows": 0,
+      "source_urls": [
+        "https://arkansas.tally-enr.com/"
+      ],
+      "source_labels": [
+        "Arkansas Secretary of State (Tally ENR)"
+      ]
+    },
+    {
+      "file": "data/az.csv",
+      "state": "AZ",
+      "rows": 2023,
+      "columns": [
+        "state",
+        "level",
+        "county",
+        "contest",
+        "candidate",
+        "party",
+        "votes",
+        "pct",
+        "contestTotalVotes",
+        "precinctsReporting",
+        "precinctsTotal",
+        "source",
+        "sourceUrl",
+        "sourceUpdatedAt",
+        "fetchedAt"
+      ],
+      "native_levels": [
+        "county",
+        "state"
+      ],
+      "county_rows": 1608,
+      "numeric_vote_rows": 2023,
+      "missing_vote_rows": 0,
+      "source_urls": [
+        "https://electionresults.utah.gov/results/public/Arizona/elections/110326GeneralElection"
+      ],
+      "source_labels": [
+        "Arizona Secretary of State"
+      ]
+    },
+    {
+      "file": "data/ca.csv",
+      "state": "CA",
+      "rows": 352,
+      "columns": [
+        "state",
+        "level",
+        "county",
+        "contest",
+        "candidate",
+        "party",
+        "votes",
+        "pct",
+        "contestTotalVotes",
+        "precinctsReporting",
+        "precinctsTotal",
+        "source",
+        "sourceUrl",
+        "sourceUpdatedAt",
+        "fetchedAt"
+      ],
+      "native_levels": [
+        "state"
+      ],
+      "county_rows": 0,
+      "numeric_vote_rows": 352,
+      "missing_vote_rows": 0,
+      "source_urls": [
+        "https://electionresults.sos.ca.gov/returns/attorney-general",
+        "https://electionresults.sos.ca.gov/returns/ballot-measures",
+        "https://electionresults.sos.ca.gov/returns/board-of-equalization/district/1",
+        "https://electionresults.sos.ca.gov/returns/board-of-equalization/district/2",
+        "https://electionresults.sos.ca.gov/returns/board-of-equalization/district/3",
+        "https://electionresults.sos.ca.gov/returns/board-of-equalization/district/4",
+        "https://electionresults.sos.ca.gov/returns/controller",
+        "https://electionresults.sos.ca.gov/returns/governor",
+        "https://electionresults.sos.ca.gov/returns/insurance-commissioner",
+        "https://electionresults.sos.ca.gov/returns/lieutenant-governor",
+        "https://electionresults.sos.ca.gov/returns/secretary-of-state",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/1",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/10",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/11",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/12",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/13",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/14",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/15",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/16",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/17",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/18",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/19",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/2",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/20",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/21",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/22",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/23",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/24",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/25",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/26",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/27",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/28",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/29",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/3",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/30",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/31",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/32",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/33",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/34",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/35",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/36",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/37",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/38",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/39",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/4",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/40",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/41",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/42",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/43",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/44",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/45",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/46",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/47",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/48",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/49",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/5",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/50",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/51",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/52",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/53",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/54",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/55",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/56",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/57",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/58",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/59",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/6",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/60",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/61",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/62",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/63",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/64",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/65",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/66",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/67",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/68",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/69",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/7",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/70",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/71",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/72",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/73",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/74",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/75",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/76",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/77",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/78",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/79",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/8",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/80",
+        "https://electionresults.sos.ca.gov/returns/state-assembly/district/9",
+        "https://electionresults.sos.ca.gov/returns/state-senate/district/10",
+        "https://electionresults.sos.ca.gov/returns/state-senate/district/12",
+        "https://electionresults.sos.ca.gov/returns/state-senate/district/14",
+        "https://electionresults.sos.ca.gov/returns/state-senate/district/16",
+        "https://electionresults.sos.ca.gov/returns/state-senate/district/18",
+        "https://electionresults.sos.ca.gov/returns/state-senate/district/2",
+        "https://electionresults.sos.ca.gov/returns/state-senate/district/20",
+        "https://electionresults.sos.ca.gov/returns/state-senate/district/22",
+        "https://electionresults.sos.ca.gov/returns/state-senate/district/24",
+        "https://electionresults.sos.ca.gov/returns/state-senate/district/26",
+        "https://electionresults.sos.ca.gov/returns/state-senate/district/28",
+        "https://electionresults.sos.ca.gov/returns/state-senate/district/30",
+        "https://electionresults.sos.ca.gov/returns/state-senate/district/32",
+        "https://electionresults.sos.ca.gov/returns/state-senate/district/34",
+        "https://electionresults.sos.ca.gov/returns/state-senate/district/36",
+        "https://electionresults.sos.ca.gov/returns/state-senate/district/38",
+        "https://electionresults.sos.ca.gov/returns/state-senate/district/4",
+        "https://electionresults.sos.ca.gov/returns/state-senate/district/40",
+        "https://electionresults.sos.ca.gov/returns/state-senate/district/6",
+        "https://electionresults.sos.ca.gov/returns/state-senate/district/8",
+        "https://electionresults.sos.ca.gov/returns/superintendent-of-public-instruction",
+        "https://electionresults.sos.ca.gov/returns/treasurer",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/1",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/10",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/11",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/12",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/13",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/14",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/15",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/16",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/17",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/18",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/19",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/2",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/20",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/21",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/22",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/23",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/24",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/25",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/26",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/27",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/28",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/29",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/3",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/30",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/31",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/32",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/33",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/34",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/35",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/36",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/37",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/38",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/39",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/4",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/40",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/41",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/42",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/43",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/44",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/45",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/46",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/47",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/48",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/49",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/5",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/50",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/51",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/52",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/6",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/7",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/8",
+        "https://electionresults.sos.ca.gov/returns/us-rep/district/9"
+      ],
+      "source_labels": [
+        "California Secretary of State"
+      ]
+    },
+    {
+      "file": "data/co.csv",
+      "state": "CO",
+      "rows": 6438,
+      "columns": [
+        "state",
+        "level",
+        "county",
+        "contest",
+        "candidate",
+        "party",
+        "votes",
+        "pct",
+        "contestTotalVotes",
+        "precinctsReporting",
+        "precinctsTotal",
+        "source",
+        "sourceUrl",
+        "sourceUpdatedAt",
+        "fetchedAt"
+      ],
+      "native_levels": [
+        "county",
+        "state"
+      ],
+      "county_rows": 5792,
+      "numeric_vote_rows": 6438,
+      "missing_vote_rows": 0,
+      "source_urls": [
+        "https://results.enr.clarityelections.com/CO/127407/"
+      ],
+      "source_labels": [
+        "Clarity ENR",
+        "Clarity ENR (county detail)"
+      ]
+    },
+    {
+      "file": "data/ct.csv",
+      "state": "CT",
+      "rows": 7400,
+      "columns": [
+        "state",
+        "level",
+        "county",
+        "contest",
+        "candidate",
+        "party",
+        "votes",
+        "pct",
+        "contestTotalVotes",
+        "precinctsReporting",
+        "precinctsTotal",
+        "source",
+        "sourceUrl",
+        "sourceUpdatedAt",
+        "fetchedAt"
+      ],
+      "native_levels": [
+        "county",
+        "state"
+      ],
+      "county_rows": 6526,
+      "numeric_vote_rows": 7400,
+      "missing_vote_rows": 0,
+      "source_urls": [
+        "https://ctemspublic.tgstg.net/#/home"
+      ],
+      "source_labels": [
+        "Connecticut Secretary of the State"
+      ]
+    },
+    {
+      "file": "data/de.csv",
+      "state": "DE",
+      "rows": 124,
+      "columns": [
+        "state",
+        "level",
+        "county",
+        "contest",
+        "candidate",
+        "party",
+        "votes",
+        "pct",
+        "contestTotalVotes",
+        "precinctsReporting",
+        "precinctsTotal",
+        "source",
+        "sourceUrl",
+        "sourceUpdatedAt",
+        "fetchedAt"
+      ],
+      "native_levels": [
+        "state"
+      ],
+      "county_rows": 0,
+      "numeric_vote_rows": 124,
+      "missing_vote_rows": 0,
+      "source_urls": [
+        "https://elections.delaware.gov/results/enr/Election_StatewideResults_ID_GE2026.json"
+      ],
+      "source_labels": [
+        "Delaware Department of Elections"
+      ]
+    },
+    {
+      "file": "data/fl.csv",
+      "state": "FL",
+      "rows": 3469,
+      "columns": [
+        "state",
+        "level",
+        "county",
+        "contest",
+        "candidate",
+        "party",
+        "votes",
+        "pct",
+        "contestTotalVotes",
+        "precinctsReporting",
+        "precinctsTotal",
+        "source",
+        "sourceUrl",
+        "sourceUpdatedAt",
+        "fetchedAt"
+      ],
+      "native_levels": [
+        "county",
+        "state"
+      ],
+      "county_rows": 3063,
+      "numeric_vote_rows": 3469,
+      "missing_vote_rows": 0,
+      "source_urls": [
+        "https://flelectionfiles.floridados.gov/enightfilespublic/20261103_ElecResultsFL.txt"
+      ],
+      "source_labels": [
+        "Florida Division of Elections"
+      ]
+    },
+    {
+      "file": "data/ga.csv",
+      "state": "GA",
+      "rows": 6274,
+      "columns": [
+        "state",
+        "level",
+        "county",
+        "contest",
+        "candidate",
+        "party",
+        "votes",
+        "pct",
+        "contestTotalVotes",
+        "precinctsReporting",
+        "precinctsTotal",
+        "source",
+        "sourceUrl",
+        "sourceUpdatedAt",
+        "fetchedAt"
+      ],
+      "native_levels": [
+        "county",
+        "state"
+      ],
+      "county_rows": 5817,
+      "numeric_vote_rows": 6274,
+      "missing_vote_rows": 0,
+      "source_urls": [
+        "https://results.sos.ga.gov/results/public/Georgia/elections/11032026GeneralAndSpecialElection"
+      ],
+      "source_labels": [
+        "Georgia Secretary of State"
+      ]
+    },
+    {
+      "file": "data/ia.csv",
+      "state": "IA",
+      "rows": 6010,
+      "columns": [
+        "state",
+        "level",
+        "county",
+        "contest",
+        "candidate",
+        "party",
+        "votes",
+        "pct",
+        "contestTotalVotes",
+        "precinctsReporting",
+        "precinctsTotal",
+        "source",
+        "sourceUrl",
+        "sourceUpdatedAt",
+        "fetchedAt"
+      ],
+      "native_levels": [
+        "county",
+        "state"
+      ],
+      "county_rows": 5355,
+      "numeric_vote_rows": 6010,
+      "missing_vote_rows": 0,
+      "source_urls": [
+        "https://results.enr.clarityelections.com/IA/127077/"
+      ],
+      "source_labels": [
+        "Clarity ENR",
+        "Clarity ENR (county)"
+      ]
+    },
+    {
+      "file": "data/id.csv",
+      "state": "ID",
+      "rows": 2536,
+      "columns": [
+        "state",
+        "level",
+        "county",
+        "contest",
+        "candidate",
+        "party",
+        "votes",
+        "pct",
+        "contestTotalVotes",
+        "precinctsReporting",
+        "precinctsTotal",
+        "source",
+        "sourceUrl",
+        "sourceUpdatedAt",
+        "fetchedAt"
+      ],
+      "native_levels": [
+        "county",
+        "state"
+      ],
+      "county_rows": 2245,
+      "numeric_vote_rows": 2536,
+      "missing_vote_rows": 0,
+      "source_urls": [
+        "https://results.voteidaho.gov/results/public/id/elections/nov2026"
+      ],
+      "source_labels": [
+        "Idaho Secretary of State"
+      ]
+    },
+    {
+      "file": "data/il.csv",
+      "state": "IL",
+      "rows": 4,
+      "columns": [
+        "state",
+        "level",
+        "county",
+        "contest",
+        "candidate",
+        "party",
+        "votes",
+        "pct",
+        "contestTotalVotes",
+        "precinctsReporting",
+        "precinctsTotal",
+        "source",
+        "sourceUrl",
+        "sourceUpdatedAt",
+        "fetchedAt"
+      ],
+      "native_levels": [
+        "state"
+      ],
+      "county_rows": 0,
+      "numeric_vote_rows": 0,
+      "missing_vote_rows": 4,
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/2026_Illinois_Comptroller_election",
+        "https://en.wikipedia.org/wiki/2026_Illinois_State_Treasurer_election"
+      ],
+      "source_labels": [
+        "Candidate list (Wikipedia race summary); official results not posted yet"
+      ]
+    },
+    {
+      "file": "data/in.csv",
+      "state": "IN",
+      "rows": 16525,
+      "columns": [
+        "state",
+        "level",
+        "county",
+        "contest",
+        "candidate",
+        "party",
+        "votes",
+        "pct",
+        "contestTotalVotes",
+        "precinctsReporting",
+        "precinctsTotal",
+        "source",
+        "sourceUrl",
+        "sourceUpdatedAt",
+        "fetchedAt"
+      ],
+      "native_levels": [
+        "county",
+        "state"
+      ],
+      "county_rows": 9116,
+      "numeric_vote_rows": 16525,
+      "missing_vote_rows": 0,
+      "source_urls": [
+        "https://enr.indianavoters.in.gov/"
+      ],
+      "source_labels": [
+        "Indiana Election Division"
+      ]
+    },
+    {
+      "file": "data/ks.csv",
+      "state": "KS",
+      "rows": 197,
+      "columns": [
+        "state",
+        "level",
+        "county",
+        "contest",
+        "candidate",
+        "party",
+        "votes",
+        "pct",
+        "contestTotalVotes",
+        "precinctsReporting",
+        "precinctsTotal",
+        "source",
+        "sourceUrl",
+        "sourceUpdatedAt",
+        "fetchedAt"
+      ],
+      "native_levels": [
+        "county",
+        "state"
+      ],
+      "county_rows": 194,
+      "numeric_vote_rows": 194,
+      "missing_vote_rows": 3,
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/2026_Kansas_State_Treasurer_election",
+        "https://results.enr.clarityelections.com/KS/Harvey/127360/",
+        "https://results.enr.clarityelections.com/KS/Miami/127491/"
+      ],
+      "source_labels": [
+        "Candidate list (Wikipedia race summary); official results not posted yet",
+        "Harvey County Clarity ENR",
+        "Miami County Clarity ENR"
+      ]
+    },
+    {
+      "file": "data/la.csv",
+      "state": "LA",
+      "rows": 5660,
+      "columns": [
+        "state",
+        "level",
+        "county",
+        "contest",
+        "candidate",
+        "party",
+        "votes",
+        "pct",
+        "contestTotalVotes",
+        "precinctsReporting",
+        "precinctsTotal",
+        "source",
+        "sourceUrl",
+        "sourceUpdatedAt",
+        "fetchedAt"
+      ],
+      "native_levels": [
+        "county",
+        "state"
+      ],
+      "county_rows": 3162,
+      "numeric_vote_rows": 5660,
+      "missing_vote_rows": 0,
+      "source_urls": [
+        "https://voterportal.sos.la.gov/graphical"
+      ],
+      "source_labels": [
+        "Louisiana Secretary of State"
+      ]
+    },
+    {
+      "file": "data/ma.csv",
+      "state": "MA",
+      "rows": 4,
+      "columns": [
+        "state",
+        "level",
+        "county",
+        "contest",
+        "candidate",
+        "party",
+        "votes",
+        "pct",
+        "contestTotalVotes",
+        "precinctsReporting",
+        "precinctsTotal",
+        "source",
+        "sourceUrl",
+        "sourceUpdatedAt",
+        "fetchedAt"
+      ],
+      "native_levels": [
+        "state"
+      ],
+      "county_rows": 0,
+      "numeric_vote_rows": 0,
+      "missing_vote_rows": 4,
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/2026_Massachusetts_State_Auditor_election",
+        "https://en.wikipedia.org/wiki/2026_Massachusetts_Treasurer_and_Receiver-General_election"
+      ],
+      "source_labels": [
+        "Candidate list (Wikipedia race summary); official results not posted yet"
+      ]
+    },
+    {
+      "file": "data/md.csv",
+      "state": "MD",
+      "rows": 2029,
+      "columns": [
+        "state",
+        "level",
+        "county",
+        "contest",
+        "candidate",
+        "party",
+        "votes",
+        "pct",
+        "contestTotalVotes",
+        "precinctsReporting",
+        "precinctsTotal",
+        "source",
+        "sourceUrl",
+        "sourceUpdatedAt",
+        "fetchedAt"
+      ],
+      "native_levels": [
+        "county",
+        "state"
+      ],
+      "county_rows": 1329,
+      "numeric_vote_rows": 2029,
+      "missing_vote_rows": 0,
+      "source_urls": [
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_1.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_2.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_3.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_4.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_4_1.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_4_2.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_4_3.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_4_4.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_4_5.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_4_6.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_4_7.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_4_8.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_1.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_10.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_11.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_12.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_13.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_14.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_15.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_16.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_17.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_18.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_19.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_2.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_20.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_21.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_22.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_23.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_24.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_25.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_26.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_27.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_28.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_29.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_3.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_30.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_31.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_32.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_33.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_34.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_35.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_36.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_37.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_38.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_39.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_4.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_40.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_41.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_42.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_43.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_44.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_45.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_46.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_47.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_5.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_6.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_7.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_8.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_5_9.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_1.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_10.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_11.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_12.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_13.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_14.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_15.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_16.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_17.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_18.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_19.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_2.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_20.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_21.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_22.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_23.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_24.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_25.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_26.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_27.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_28.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_29.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_3.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_30.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_31.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_32.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_33.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_34.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_35.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_36.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_37.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_38.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_39.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_4.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_40.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_41.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_42.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_43.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_44.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_45.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_46.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_47.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_48.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_49.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_5.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_50.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_51.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_52.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_53.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_54.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_55.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_56.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_57.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_58.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_59.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_6.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_60.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_61.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_62.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_63.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_64.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_65.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_66.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_67.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_68.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_69.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_7.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_70.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_71.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_8.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_6_9.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_7.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_7_1.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_7_2.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_7_3.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_7_4.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_7_5.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_7_6.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_7_7.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_by_county_1.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_by_county_10.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_by_county_11.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_by_county_12.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_by_county_13.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_by_county_14.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_by_county_15.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_by_county_16.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_by_county_17.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_by_county_18.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_by_county_19.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_by_county_2.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_by_county_20.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_by_county_21.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_by_county_22.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_by_county_23.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_by_county_24.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_by_county_3.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_by_county_4.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_by_county_5.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_by_county_6.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_by_county_7.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_by_county_8.html",
+        "https://elections.maryland.gov/elections/2026/general_results/gen_results_2026_by_county_9.html"
+      ],
+      "source_labels": [
+        "Maryland State Board of Elections"
+      ]
+    },
+    {
+      "file": "data/mi.csv",
+      "state": "MI",
+      "rows": 386,
+      "columns": [
+        "state",
+        "level",
+        "county",
+        "contest",
+        "candidate",
+        "party",
+        "votes",
+        "pct",
+        "contestTotalVotes",
+        "precinctsReporting",
+        "precinctsTotal",
+        "source",
+        "sourceUrl",
+        "sourceUpdatedAt",
+        "fetchedAt"
+      ],
+      "native_levels": [
+        "county"
+      ],
+      "county_rows": 386,
+      "numeric_vote_rows": 386,
+      "missing_vote_rows": 0,
+      "source_urls": [
+        "https://results.enr.clarityelections.com/MI/Ottawa/127391/",
+        "https://results.enr.clarityelections.com/MI/Roscommon/127296/"
+      ],
+      "source_labels": [
+        "Ottawa County Clarity ENR",
+        "Roscommon County Clarity ENR"
+      ]
+    },
+    {
+      "file": "data/mn.csv",
+      "state": "MN",
+      "rows": 8933,
+      "columns": [
+        "state",
+        "level",
+        "county",
+        "contest",
+        "candidate",
+        "party",
+        "votes",
+        "pct",
+        "contestTotalVotes",
+        "precinctsReporting",
+        "precinctsTotal",
+        "source",
+        "sourceUrl",
+        "sourceUpdatedAt",
+        "fetchedAt"
+      ],
+      "native_levels": [
+        "county",
+        "state"
+      ],
+      "county_rows": 8285,
+      "numeric_vote_rows": 8933,
+      "missing_vote_rows": 0,
+      "source_urls": [
+        "https://electionresultsfiles.sos.mn.gov/20261103/LegislativeByDistrict.txt",
+        "https://electionresultsfiles.sos.mn.gov/20261103/allracesbycounty.txt",
+        "https://electionresultsfiles.sos.mn.gov/20261103/attorneygen.txt",
+        "https://electionresultsfiles.sos.mn.gov/20261103/auditor.txt",
+        "https://electionresultsfiles.sos.mn.gov/20261103/governor.txt",
+        "https://electionresultsfiles.sos.mn.gov/20261103/judicial.txt",
+        "https://electionresultsfiles.sos.mn.gov/20261103/secofstate.txt",
+        "https://electionresultsfiles.sos.mn.gov/20261103/stsenate.txt",
+        "https://electionresultsfiles.sos.mn.gov/20261103/ushouse.txt",
+        "https://electionresultsfiles.sos.mn.gov/20261103/ussenate.txt"
+      ],
+      "source_labels": [
+        "Minnesota Secretary of State"
+      ]
+    },
+    {
+      "file": "data/mo.csv",
+      "state": "MO",
+      "rows": 2099,
+      "columns": [
+        "state",
+        "level",
+        "county",
+        "contest",
+        "candidate",
+        "party",
+        "votes",
+        "pct",
+        "contestTotalVotes",
+        "precinctsReporting",
+        "precinctsTotal",
+        "source",
+        "sourceUrl",
+        "sourceUpdatedAt",
+        "fetchedAt"
+      ],
+      "native_levels": [
+        "county",
+        "state"
+      ],
+      "county_rows": 2064,
+      "numeric_vote_rows": 2099,
+      "missing_vote_rows": 0,
+      "source_urls": [
+        "https://enr.sos.mo.gov/"
+      ],
+      "source_labels": [
+        "Missouri Secretary of State"
+      ]
+    },
+    {
+      "file": "data/nc.csv",
+      "state": "NC",
+      "rows": 6258,
+      "columns": [
+        "state",
+        "level",
+        "county",
+        "contest",
+        "candidate",
+        "party",
+        "votes",
+        "pct",
+        "contestTotalVotes",
+        "precinctsReporting",
+        "precinctsTotal",
+        "source",
+        "sourceUrl",
+        "sourceUpdatedAt",
+        "fetchedAt"
+      ],
+      "native_levels": [
+        "county",
+        "state"
+      ],
+      "county_rows": 5598,
+      "numeric_vote_rows": 6258,
+      "missing_vote_rows": 0,
+      "source_urls": [
+        "https://er.ncsbe.gov/?election_dt=11/03/2026",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=1",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=10",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=100",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=11",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=12",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=13",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=14",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=15",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=16",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=17",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=18",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=19",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=2",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=20",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=21",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=22",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=23",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=24",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=25",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=26",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=27",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=28",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=29",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=3",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=30",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=31",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=32",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=33",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=34",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=35",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=36",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=37",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=38",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=39",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=4",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=40",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=41",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=42",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=43",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=44",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=45",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=46",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=47",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=48",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=49",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=5",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=50",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=51",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=52",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=53",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=54",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=55",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=56",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=57",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=58",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=59",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=6",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=60",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=61",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=62",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=63",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=64",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=65",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=66",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=67",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=68",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=69",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=7",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=70",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=71",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=72",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=73",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=74",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=75",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=76",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=77",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=78",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=79",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=8",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=80",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=81",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=82",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=83",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=84",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=85",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=86",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=87",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=88",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=89",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=9",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=90",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=91",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=92",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=93",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=94",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=95",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=96",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=97",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=98",
+        "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=99"
+      ],
+      "source_labels": [
+        "NC State Board of Elections"
+      ]
+    },
+    {
+      "file": "data/ne.csv",
+      "state": "NE",
+      "rows": 625,
+      "columns": [
+        "state",
+        "level",
+        "county",
+        "contest",
+        "candidate",
+        "party",
+        "votes",
+        "pct",
+        "contestTotalVotes",
+        "precinctsReporting",
+        "precinctsTotal",
+        "source",
+        "sourceUrl",
+        "sourceUpdatedAt",
+        "fetchedAt"
+      ],
+      "native_levels": [
+        "state"
+      ],
+      "county_rows": 0,
+      "numeric_vote_rows": 625,
+      "missing_vote_rows": 0,
+      "source_urls": [
+        "https://electionresults.nebraska.gov/"
+      ],
+      "source_labels": [
+        "Nebraska Secretary of State"
+      ]
+    },
+    {
+      "file": "data/nj.csv",
+      "state": "NJ",
+      "rows": 940,
+      "columns": [
+        "state",
+        "level",
+        "county",
+        "contest",
+        "candidate",
+        "party",
+        "votes",
+        "pct",
+        "contestTotalVotes",
+        "precinctsReporting",
+        "precinctsTotal",
+        "source",
+        "sourceUrl",
+        "sourceUpdatedAt",
+        "fetchedAt"
+      ],
+      "native_levels": [
+        "county"
+      ],
+      "county_rows": 940,
+      "numeric_vote_rows": 940,
+      "missing_vote_rows": 0,
+      "source_urls": [
+        "https://results.enr.clarityelections.com/NJ/Cumberland/127562/",
+        "https://results.enr.clarityelections.com/NJ/Essex/127486/",
+        "https://results.enr.clarityelections.com/NJ/Passaic/127401/",
+        "https://results.enr.clarityelections.com/NJ/Somerset/127569/"
+      ],
+      "source_labels": [
+        "Cumberland County Clarity ENR",
+        "Essex County Clarity ENR",
+        "Passaic County Clarity ENR",
+        "Somerset County Clarity ENR"
+      ]
+    },
+    {
+      "file": "data/nm.csv",
+      "state": "NM",
+      "rows": 362,
+      "columns": [
+        "state",
+        "level",
+        "county",
+        "contest",
+        "candidate",
+        "party",
+        "votes",
+        "pct",
+        "contestTotalVotes",
+        "precinctsReporting",
+        "precinctsTotal",
+        "source",
+        "sourceUrl",
+        "sourceUpdatedAt",
+        "fetchedAt"
+      ],
+      "native_levels": [
+        "state"
+      ],
+      "county_rows": 0,
+      "numeric_vote_rows": 362,
+      "missing_vote_rows": 0,
+      "source_urls": [
+        "https://electionresults.sos.nm.gov/"
+      ],
+      "source_labels": [
+        "New Mexico Secretary of State"
+      ]
+    },
+    {
+      "file": "data/nv.csv",
+      "state": "NV",
+      "rows": 1920,
+      "columns": [
+        "state",
+        "level",
+        "county",
+        "contest",
+        "candidate",
+        "party",
+        "votes",
+        "pct",
+        "contestTotalVotes",
+        "precinctsReporting",
+        "precinctsTotal",
+        "source",
+        "sourceUrl",
+        "sourceUpdatedAt",
+        "fetchedAt"
+      ],
+      "native_levels": [
+        "county",
+        "state"
+      ],
+      "county_rows": 1263,
+      "numeric_vote_rows": 1917,
+      "missing_vote_rows": 3,
+      "source_urls": [
+        "https://silverstateelection.nv.gov/"
+      ],
+      "source_labels": [
+        "Nevada Secretary of State"
+      ]
+    },
+    {
+      "file": "data/ny.csv",
+      "state": "NY",
+      "rows": 2,
+      "columns": [
+        "state",
+        "level",
+        "county",
+        "contest",
+        "candidate",
+        "party",
+        "votes",
+        "pct",
+        "contestTotalVotes",
+        "precinctsReporting",
+        "precinctsTotal",
+        "source",
+        "sourceUrl",
+        "sourceUpdatedAt",
+        "fetchedAt"
+      ],
+      "native_levels": [
+        "state"
+      ],
+      "county_rows": 0,
+      "numeric_vote_rows": 0,
+      "missing_vote_rows": 2,
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/2026_New_York_State_Comptroller_election"
+      ],
+      "source_labels": [
+        "Candidate list (Wikipedia race summary); official results not posted yet"
+      ]
+    },
+    {
+      "file": "data/oh.csv",
+      "state": "OH",
+      "rows": 3700,
+      "columns": [
+        "state",
+        "level",
+        "county",
+        "contest",
+        "candidate",
+        "party",
+        "votes",
+        "pct",
+        "contestTotalVotes",
+        "precinctsReporting",
+        "precinctsTotal",
+        "source",
+        "sourceUrl",
+        "sourceUpdatedAt",
+        "fetchedAt"
+      ],
+      "native_levels": [
+        "county",
+        "state"
+      ],
+      "county_rows": 3360,
+      "numeric_vote_rows": 3700,
+      "missing_vote_rows": 0,
+      "source_urls": [
+        "https://liveresults.ohiosos.gov/"
+      ],
+      "source_labels": [
+        "Ohio Secretary of State"
+      ]
+    },
+    {
+      "file": "data/ok.csv",
+      "state": "OK",
+      "rows": 229,
+      "columns": [
+        "state",
+        "level",
+        "county",
+        "contest",
+        "candidate",
+        "party",
+        "votes",
+        "pct",
+        "contestTotalVotes",
+        "precinctsReporting",
+        "precinctsTotal",
+        "source",
+        "sourceUrl",
+        "sourceUpdatedAt",
+        "fetchedAt"
+      ],
+      "native_levels": [
+        "state"
+      ],
+      "county_rows": 0,
+      "numeric_vote_rows": 228,
+      "missing_vote_rows": 1,
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/2026_Oklahoma_State_Auditor_election",
+        "https://results.okelections.gov/OKER/"
+      ],
+      "source_labels": [
+        "Candidate list (Wikipedia race summary); official results not posted yet",
+        "Oklahoma State Election Board"
+      ]
+    },
+    {
+      "file": "data/pa.csv",
+      "state": "PA",
+      "rows": 406,
+      "columns": [
+        "state",
+        "level",
+        "county",
+        "contest",
+        "candidate",
+        "party",
+        "votes",
+        "pct",
+        "contestTotalVotes",
+        "precinctsReporting",
+        "precinctsTotal",
+        "source",
+        "sourceUrl",
+        "sourceUpdatedAt",
+        "fetchedAt"
+      ],
+      "native_levels": [
+        "county",
+        "state"
+      ],
+      "county_rows": 369,
+      "numeric_vote_rows": 406,
+      "missing_vote_rows": 0,
+      "source_urls": [
+        "https://www.electionreturns.pa.gov/"
+      ],
+      "source_labels": [
+        "Pennsylvania Department of State"
+      ]
+    },
+    {
+      "file": "data/ri.csv",
+      "state": "RI",
+      "rows": 4073,
+      "columns": [
+        "state",
+        "level",
+        "county",
+        "contest",
+        "candidate",
+        "party",
+        "votes",
+        "pct",
+        "contestTotalVotes",
+        "precinctsReporting",
+        "precinctsTotal",
+        "source",
+        "sourceUrl",
+        "sourceUpdatedAt",
+        "fetchedAt"
+      ],
+      "native_levels": [
+        "county",
+        "state"
+      ],
+      "county_rows": 2796,
+      "numeric_vote_rows": 4073,
+      "missing_vote_rows": 0,
+      "source_urls": [
+        "https://electionresults.utah.gov/results/public/RhodeIsland/elections/2026StatewideGeneralElection"
+      ],
+      "source_labels": [
+        "Rhode Island Secretary of State"
+      ]
+    },
+    {
+      "file": "data/sc.csv",
+      "state": "SC",
+      "rows": 3190,
+      "columns": [
+        "state",
+        "level",
+        "county",
+        "contest",
+        "candidate",
+        "party",
+        "votes",
+        "pct",
+        "contestTotalVotes",
+        "precinctsReporting",
+        "precinctsTotal",
+        "source",
+        "sourceUrl",
+        "sourceUpdatedAt",
+        "fetchedAt"
+      ],
+      "native_levels": [
+        "county",
+        "state"
+      ],
+      "county_rows": 2659,
+      "numeric_vote_rows": 3190,
+      "missing_vote_rows": 0,
+      "source_urls": [
+        "https://www.enr-scvotes.org/SC/127300/"
+      ],
+      "source_labels": [
+        "Clarity ENR",
+        "Clarity ENR (county detail)"
+      ]
+    },
+    {
+      "file": "data/sd.csv",
+      "state": "SD",
+      "rows": 232,
+      "columns": [
+        "state",
+        "level",
+        "county",
+        "contest",
+        "candidate",
+        "party",
+        "votes",
+        "pct",
+        "contestTotalVotes",
+        "precinctsReporting",
+        "precinctsTotal",
+        "source",
+        "sourceUrl",
+        "sourceUpdatedAt",
+        "fetchedAt"
+      ],
+      "native_levels": [
+        "state"
+      ],
+      "county_rows": 0,
+      "numeric_vote_rows": 232,
+      "missing_vote_rows": 0,
+      "source_urls": [
+        "https://electionresults.sd.gov/"
+      ],
+      "source_labels": [
+        "South Dakota Secretary of State"
+      ]
+    },
+    {
+      "file": "data/tx.csv",
+      "state": "TX",
+      "rows": 18485,
+      "columns": [
+        "state",
+        "level",
+        "county",
+        "contest",
+        "candidate",
+        "party",
+        "votes",
+        "pct",
+        "contestTotalVotes",
+        "precinctsReporting",
+        "precinctsTotal",
+        "source",
+        "sourceUrl",
+        "sourceUpdatedAt",
+        "fetchedAt"
+      ],
+      "native_levels": [
+        "county",
+        "state"
+      ],
+      "county_rows": 17568,
+      "numeric_vote_rows": 18485,
+      "missing_vote_rows": 0,
+      "source_urls": [
+        "https://goelect.txelections.civixapps.com/ivis-enr-ui/races"
+      ],
+      "source_labels": [
+        "Texas Secretary of State"
+      ]
+    },
+    {
+      "file": "data/ut.csv",
+      "state": "UT",
+      "rows": 1477,
+      "columns": [
+        "state",
+        "level",
+        "county",
+        "contest",
+        "candidate",
+        "party",
+        "votes",
+        "pct",
+        "contestTotalVotes",
+        "precinctsReporting",
+        "precinctsTotal",
+        "source",
+        "sourceUrl",
+        "sourceUpdatedAt",
+        "fetchedAt"
+      ],
+      "native_levels": [
+        "county",
+        "state"
+      ],
+      "county_rows": 1187,
+      "numeric_vote_rows": 1477,
+      "missing_vote_rows": 0,
+      "source_urls": [
+        "https://electionresults.utah.gov/results/public/Utah/elections/General11032026"
+      ],
+      "source_labels": [
+        "Utah Secretary of State"
+      ]
+    },
+    {
+      "file": "data/va.csv",
+      "state": "VA",
+      "rows": 1988,
+      "columns": [
+        "state",
+        "level",
+        "county",
+        "contest",
+        "candidate",
+        "party",
+        "votes",
+        "pct",
+        "contestTotalVotes",
+        "precinctsReporting",
+        "precinctsTotal",
+        "source",
+        "sourceUrl",
+        "sourceUpdatedAt",
+        "fetchedAt"
+      ],
+      "native_levels": [
+        "county",
+        "state"
+      ],
+      "county_rows": 1875,
+      "numeric_vote_rows": 1988,
+      "missing_vote_rows": 0,
+      "source_urls": [
+        "https://electionresults.utah.gov/results/public/Virginia/elections/2026-November-General"
+      ],
+      "source_labels": [
+        "Virginia  Secretary of State"
+      ]
+    },
+    {
+      "file": "data/vt.csv",
+      "state": "VT",
+      "rows": 277,
+      "columns": [
+        "state",
+        "level",
+        "county",
+        "contest",
+        "candidate",
+        "party",
+        "votes",
+        "pct",
+        "contestTotalVotes",
+        "precinctsReporting",
+        "precinctsTotal",
+        "source",
+        "sourceUrl",
+        "sourceUpdatedAt",
+        "fetchedAt"
+      ],
+      "native_levels": [
+        "state"
+      ],
+      "county_rows": 0,
+      "numeric_vote_rows": 277,
+      "missing_vote_rows": 0,
+      "source_urls": [
+        "https://electionresults.vermont.gov/"
+      ],
+      "source_labels": [
+        "Vermont Secretary of State"
+      ]
+    },
+    {
+      "file": "data/wa.csv",
+      "state": "WA",
+      "rows": 2278,
+      "columns": [
+        "state",
+        "level",
+        "county",
+        "contest",
+        "candidate",
+        "party",
+        "votes",
+        "pct",
+        "contestTotalVotes",
+        "precinctsReporting",
+        "precinctsTotal",
+        "source",
+        "sourceUrl",
+        "sourceUpdatedAt",
+        "fetchedAt"
+      ],
+      "native_levels": [
+        "county",
+        "state"
+      ],
+      "county_rows": 1810,
+      "numeric_vote_rows": 2278,
+      "missing_vote_rows": 0,
+      "source_urls": [
+        "https://electionresults.utah.gov/results/public/Washington/elections/20261103"
+      ],
+      "source_labels": [
+        "Washington Secretary of State"
+      ]
+    },
+    {
+      "file": "data/wi.csv",
+      "state": "WI",
+      "rows": 144,
+      "columns": [
+        "state",
+        "level",
+        "county",
+        "contest",
+        "candidate",
+        "party",
+        "votes",
+        "pct",
+        "contestTotalVotes",
+        "precinctsReporting",
+        "precinctsTotal",
+        "source",
+        "sourceUrl",
+        "sourceUpdatedAt",
+        "fetchedAt"
+      ],
+      "native_levels": [
+        "county",
+        "state"
+      ],
+      "county_rows": 142,
+      "numeric_vote_rows": 142,
+      "missing_vote_rows": 2,
+      "source_urls": [
+        "https://county.milwaukee.gov/EN/County-Clerk/Off-Nav/Election-Results/11-3-26-General-Election--Unofficial-Results-Election-Night-Website",
+        "https://elections.countyofdane.com/Election-Result",
+        "https://en.wikipedia.org/wiki/2026_Wisconsin_State_Treasurer_election"
+      ],
+      "source_labels": [
+        "Candidate list (Wikipedia race summary); official results not posted yet",
+        "Dane County Clerk (unofficial)",
+        "Milwaukee County Election Commission (unofficial)"
+      ]
+    },
+    {
+      "file": "data/wy.csv",
+      "state": "WY",
+      "rows": 2,
+      "columns": [
+        "state",
+        "level",
+        "county",
+        "contest",
+        "candidate",
+        "party",
+        "votes",
+        "pct",
+        "contestTotalVotes",
+        "precinctsReporting",
+        "precinctsTotal",
+        "source",
+        "sourceUrl",
+        "sourceUpdatedAt",
+        "fetchedAt"
+      ],
+      "native_levels": [
+        "state"
+      ],
+      "county_rows": 0,
+      "numeric_vote_rows": 0,
+      "missing_vote_rows": 2,
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/2026_Wyoming_State_Auditor_election",
+        "https://en.wikipedia.org/wiki/2026_Wyoming_State_Treasurer_election"
+      ],
+      "source_labels": [
+        "Candidate list (Wikipedia race summary); official results not posted yet"
+      ]
+    }
+  ]
+}

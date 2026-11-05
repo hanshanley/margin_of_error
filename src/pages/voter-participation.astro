@@ -99,13 +99,13 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 ---
 
 <BaseLayout title="Who participates? Voter turnout across time"
-	description="Explore voter participation across elections, demographic groups, all 50 states, historical local reporting units, and verified North Carolina precincts."
+	description="Explore U.S. voter turnout across presidential and midterm elections, demographic groups and states, with provisional 2026 ballot counts and verified county and precinct result maps."
 	image="/artifacts/voter-participation/voter-participation-editorial.png">
 	<div class="participation-page" data-active-view="states">
 		<header class="participation-heading">
 			<p class="kicker">An atlas of voter participation</p>
 			<h1>Who participates?</h1>
-			<p class="participation-deck">Not who people vote for. Whether they vote at all.</p>
+			<p class="participation-deck">Voter turnout across elections, places and demographic groups.</p>
 		</header>
 
 		<nav class="participation-nav" aria-label="Explore participation" role="tablist">
@@ -155,16 +155,17 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 					<p id="geography-note" class="geography-note" role="status" hidden></p>
 				</div>
 				<aside id="selection-panel" class="selection-panel" aria-live="polite">
-					<p class="eyebrow">Explore a state</p><h3>North Carolina</h3>
+					<p class="eyebrow">Explore a state</p><h3>Across the United States</h3>
 					<p>Select a state on the map to see its turnout history.</p>
 				</aside>
 			</div>
 			<p id="caption" class="caption"></p>
 			<details id="notice-panel" class="explorer-notes" hidden><summary>Data notes for this view</summary>
 				<p id="notice" role="status"></p></details>
-			<p class="participation-scope" id="coverage-note">State charts use Census survey estimates.
-				Historical precinct maps cover North Carolina; verified 2026 precinct count tables cover
-				New Mexico and reported locations in Nebraska and South Dakota. This is not a nationwide precinct map.</p>
+			<p class="participation-scope" id="coverage-note">Explore national and state turnout histories,
+				provisional 2026 ballot counts, and verified county and precinct election-result maps.
+				Coverage varies by state and election: not a nationwide precinct map for every year.
+				Candidate votes are not turnout.</p>
 			<section id="voting-methods" class="voting-methods" aria-labelledby="voting-methods-title" hidden>
 				<div class="voting-methods-heading"><div><p class="eyebrow">How ballots were cast</p>
 					<h2 id="voting-methods-title">Voting methods</h2></div>

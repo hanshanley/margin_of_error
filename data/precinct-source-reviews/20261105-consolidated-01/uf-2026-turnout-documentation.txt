@@ -1,0 +1,123 @@
+=======================================================================================================================
+DOCUMENTATION FOR 2026 GENERAL ELECTION TURNOUT RATES
+Version: 0.1
+Date: 11/1/2026
+Author: Michael McDonald, Professor of Political Science, University of Florida
+These data are released under an Creative Commons 4.0 Attribution License. See: https://creativecommons.org/licenses/by/4.0/
+=======================================================================================================================
+
+============
+VARIABLES
+============
+
+STATE
+=======
+Long state name.
+
+STATE_ABV
+=======
+State two-letter postal abbreviation.
+
+TOTAL_BALLOTS_COUNTED
+=======
+TBD
+
+SOURCE
+=======
+Source for total ballots counted. Note that links may not persist.
+TBD
+
+VAP
+=======
+Voting-age population. Residential population age 18 and older.
+Source: Census Bureau's National and State Population Estimates, Vintage 2025 (nc-est2025-syasexn.xlsx national; sc-est2025-alldata6.csv state), extrapolated to Nov. 1, 2026.
+
+NONCITIZEN_PCT
+=======
+Percent non-citizen.
+Source: Non-citizen VAP estimates from the 2025 1-Year American Community Survey (table B05003).
+
+INELIGIBLE_PRISON
+=======
+Ineligible felons in prison.
+A '0' or Null denotes a state either does not disenfranchise felony prisoners or has no felony prisoners (this is true for DC).
+Starting in 2010, the Bureau of Justice Statistics began reporting noncitizen prison populations and voting-age populations.
+I subtract these populations from the prison statistics. California, Oregon, and Rhode Island suppress their noncitizen
+prisoner counts; for these three states I substitute the state's own ACS noncitizen-VAP percentage as a proxy.
+Source for prison statistics: Year-end 2023 DOJ prison report, available at: https://bjs.ojp.gov/library/publications/prisoners-2023-statistical-tables
+Source for state felon disenfranchisement laws: National Conference of State Legislatures. See: https://www.ncsl.org/elections-and-campaigns/felon-voting-rights
+
+INELIGIBLE_PROBATION
+=======
+Ineligible felons who are on probation.
+A '0' denotes a state does not disenfranchise felons on probation.
+Source for probation statistics: Year-end 2024 DOJ probation and parole report, available at: https://bjs.ojp.gov/library/publications/probation-and-parole-united-states-2024
+
+METHODOLOGY CHANGE from the 2024 file: this version uses BJS's actual state-level felony-probation counts
+(Appendix Table 7, "Adults on felony probation, by jurisdiction, 2024") directly, rather than applying a flat
+national adjustment (e.g., a 2022-based DOJ estimate used through the
+2024 v0.4 file). State-level felony probation figures are now reported directly by BJS, so a national
+adjustment is no longer needed.
+
+Source for state felon disenfranchisement laws: National Conference of State Legislatures. See: https://www.ncsl.org/elections-and-campaigns/felon-voting-rights
+
+MISSOURI LAW CHANGE (2026): Missouri's HB 1871 (signed July 13, 2026; effective Aug. 28, 2026) restores voting
+rights to most people on probation or parole, excluding only those serving probation/parole for murder, sex
+offenses, child endangerment, assault, incest, or election-related crimes. Per Michael's instruction
+(2026-10-31), Since I cannot differentiate the number of qualifying felons, Missouri's INELIGIBLE_PROBATION and INELIGIBLE_PAROLE are both coded as 0 for this file (same
+convention as every other non-disenfranchising state), rather than using a modeled remaining ~20% exclusion.
+
+INELIGIBLE_PAROLE
+=======
+Ineligible felons who are on parole.
+A '0' denotes a state does not disenfranchise felons on parole. Maine has no parole system (abolished); coded as 0.
+Source for parole statistics: Year-end 2024 DOJ probation and parole report, available at: https://bjs.ojp.gov/library/publications/probation-and-parole-united-states-2024
+Source for state felon disenfranchisement laws: National Conference of State Legislatures. See: https://www.ncsl.org/elections-and-campaigns/felon-voting-rights
+
+INELIGIBLE_FELONS_TOTAL
+=======
+Total number of ineligible felons, the sum of INELIGIBLE_PRISON + INELIGIBLE_PROBATION + INELIGIBLE_PAROLE
+Notes:
+- I do not have a reliable method of estimating the number of felons who are subjected to some form of post-correctional disenfranchisement, so I
+choose not to make this adjustment.
+- For the national (United States) row only, I add the number of prisoners, felony probationers, and parolees in federal
+custody/supervision (not attributable to any one state) to the respective national totals, net of federal noncitizen
+prisoners for INELIGIBLE_PRISON. This is an expansion of the 2024 methodology, which added federal prisoners only; federal
+probation and parole counts are now added to the national total the same way (per Michael, 2026-10-31).
+
+ELIGIBLE_OVERSEAS
+=======
+Eligible overseas citizens, including overseas citizen civilians and military stationed abroad. 2,435,187 total:
+
+1) Non-military civilians: 2,242,429, from Federal Voting Assistance Program's 2024 Overseas Citizen Population Analysis (OCPA) Technical
+Report - FVAP's actual 2024 estimate used for 2026, available at:
+https://www.fvap.gov/uploads/FVAP/Reports/2024_OCPA-Technical-Report.pdf
+This supersedes the figure used in the 2024 file ("2.8 million as of 2022, extrapolated to 3.1 million for 2024"):
+the 2024 OCPA's own historical table shows the 2022 OCVAP at 2,210,950, not 2.8 million, so FVAP appears to have
+revised its entire 2010-2024 series under this report's model - the older citation is superseded, not just stale.
+
+2) Military: 192,758 active-duty and Guard/Reserve personnel stationed abroad as of December 2025 (Defense
+Manpower Data Center data, via USAFacts), replacing the 2024 file's 225,175 figure (a June 2024 DoD report).
+Excludes the 28,841 DoD civilians in that same December 2025 release - those should already be captured by the
+FVAP civilian model above, consistent with the 2024 file's own reasoning for adding military separately (host-
+country citizen counts tend to undercount on-base military personnel, not DoD civilian employees).
+
+Notes:
+ - I do not have a reliable method of apportioning eligible overseas voters to the states, so I choose not to estimate state-level overseas eligible populations.
+
+VEP
+=======
+Voting-eligible population. For state VEP estimates use the following calculation: VAP*(1-NONCITIZEN_PCT) - INELIGIBLE_FELONS_TOTAL.
+For national VEP estimates use the following calculation: VAP*(1-NONCITIZEN_PCT) - INELIGIBLE_FELONS_TOTAL + OVERSEAS_ELIGIBLE
+
+VEP_TURNOUT_RATE
+=======
+Turnout rate for those eligible to vote. Calculated as TOTAL_BALLOTS_COUNTED/VEP
+TBD
+
+VAP_TURNOUT_RATE
+=======
+Turnout rate for those of voting-age. Calculated as TOTAL_BALLOTS_COUNTED/VAP
+Note:
+- The VEP turnout rate is the preferred turnout rate. I provide VAP turnout rates for some stakeholders, such as pollsters, who use VAP turnout rates.
+TBD

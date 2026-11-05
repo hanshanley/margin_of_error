@@ -1,0 +1,30 @@
+{
+  "pushbuild-acquisition.json": {
+    "bytes": 69069,
+    "sha256": "e044fbf29db06a62bb2b8fa322a9221625e7dfc2def4c82376bb5b56df9a7ae4"
+  },
+  "pushbuild-complete-original.tar.gz": {
+    "bytes": 2404302,
+    "sha256": "316fb2f0f50defafef6f053db0356e77e4011c94f97cf37199726d28bc04e0f8"
+  },
+  "pushbuild-original-tree.json": {
+    "bytes": 10437,
+    "sha256": "2bfc68e85012de30b4dc597fe7b80da1ac45ce01f363ac1ecd3b0d9d26313b01"
+  },
+  "rdh-2026-availability.csv": {
+    "bytes": 1878,
+    "sha256": "668aa462cb97904ca16fb39c106f1077c894b07368a263ad0cf177fa42d89499"
+  },
+  "sources.json": {
+    "bytes": 1875,
+    "sha256": "ae8aae2fc6abbbed834e248a1a926be29697f70d29d1ae45eeca743dd6c337b9"
+  },
+  "uf-2026-turnout-documentation.txt": {
+    "bytes": 6942,
+    "sha256": "403fee549826f57d620256fb33d42ffd67e19360bc611330a6ce9f01a79b8dcd"
+  },
+  "uf-2026-turnout.csv": {
+    "bytes": 6019,
+    "sha256": "459258dd8ffcbf419aea14c9e0b4d3aee4a57410897099e0f06684e7d8e881d0"
+  }
+}
