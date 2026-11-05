@@ -4435,11 +4435,49 @@ of the **108 older links** unchanged, all seven new table/PDF endpoints and
 the entire ZIP byte-for-byte, clear county scope, responsive layout and
 unchanged latest-election/precinct/red-blue defaults and working zoom.
 Proof: `files/iowa-linn-native-local-browser-proof-01.json`.
-Verify this UI batch's exact successful deployment and unqueried public
-files/live browser result before marking its publication finished. Then
+UI commit `8c2c4c0188300d04f8a5b91a650ec1f31f5cc497` build succeeded
+in run `42048268675`, but Pages remained `updating_pages` until its
+600,000-ms timeout. A deploy-only retry reused the successful artifact but
+immediately returned `Deployment cancelled` for the same Pages build version.
+No data/build failure was reported. Publish the meaningful plan/CT findings
+as a new commit to obtain a fresh Pages build version, without changing
+these already-validated UI inputs or replacing the release.
+Verify that fresh exact deployment and unqueried public files/live browser
+result before marking publication finished. Then
 continue consolidated 2026 reviews, establishing correct-election geography
 independently before any new map join. Do not reacquire or re-review these
 finished 94 counts.
+
+### Next consolidated review: Connecticut House scope and fusion lines
+
+During Linn deployment, the already-acquired complete Connecticut CSV was
+verified against original Git blob
+`10c89b0f4052de9aff61c980b0b1f84379eb8b92` at pinned Pushbuild commit
+`feb85f414762b05c7c77f6450336405ef030fbfa`. No new download was needed.
+Its **7,400 original rows** include **698 House candidate/party-line rows**,
+**169 native local names**, **174 local House groups** and **five district
+groups**. Every local option vector and native total reconciles to its
+statewide district vector: **1,152,033 candidate votes**, not participation.
+The two CT intake conflicts instead group generic statewide `Board of
+Education` and `Registrar of Voters` records; they do not invalidate these
+five House contests.
+
+Do not apply Iowa's contest/party/county assumptions. Exact federal labels
+are `Representative in Congress 1` through `5`; major-party codes are
+`D`/`R`. District 2's Republican candidate George Patrick Austin also has
+**5,310 `IND` votes**, and District 5's Democratic candidate Jahana Hayes
+also has **6,631 `WF` votes**. Candidate identity must aggregate these native
+fusion lines for margins while preserving every original party-line row;
+`IND`/`WF` must not all be classified as other. The source's `county`
+field contains town names, not county geography. Do not infer completion
+from the native 703/775 counters or manufacture precinct/ballot counts.
+
+Evidence: `files/connecticut-bulk-house-arithmetic-01.json`.
+**Next executable batch:** persist a portable, fail-closed CT-specific bulk
+review and complete-original package with focused fusion/scope tests;
+independently establish primary report identity and native town geography
+before map approval. This arithmetic-only preflight makes no public map,
+participation or completion-status change.
 
 ## Resume procedure for every work session or scheduled prompt
 
