@@ -78,8 +78,11 @@ def build_rows(index=None, published=False, source_batches=None):
                      complete_download_url=batch["complete_download_url"])
                 for batch in registration.get("source_batches", [])]
     for batch in source_batches or []:
-        for code, source in batch["states"].items():
+        for code, source in batch.get("states", {}).items():
             source_rows[(batch["year"], code)] = dict(source, complete_download_url=batch["complete_download_url"])
+        for source in batch.get("elections", {}).values():
+            source_rows[(source["year"], source["state_code"])] = dict(
+                source, complete_download_url=batch["complete_download_url"])
     rows = []
     for year in YEARS:
         for code, name in states:
@@ -129,12 +132,21 @@ def build_rows(index=None, published=False, source_batches=None):
             source = source_rows.get((year, code))
             if source:
                 row.update(candidate_results="acquired_originals_review_pending",
-                           results_source=source["source_url"], validation="source_bytes_verified_scope_pending",
+                           results_source=source["source_url"],
+                           validation=source.get("validation", "source_bytes_verified_scope_pending"),
                            publication="full_originals_download_only", next_action=source["next_action"])
-                row["notes"] += (f' Complete original archive acquired: {source["rows"]:,} CSV rows. '
-                                 "Exact source Git blob verified; not independently reconciled candidate totals, "
-                                 "validated precinct geography, or inferred participation. Complete ZIP: "
-                                 + source["complete_download_url"])
+                if "original_files" in source:
+                    row["notes"] += (
+                        f' Complete original archive acquired: {source["original_files"]} files, '
+                        f'{source["original_bytes"]:,} uncompressed bytes. '
+                        "Original receipt SHA-256 values and native text record structure verified; "
+                        "not independently reconciled candidate totals, validated precinct geography, "
+                        "or inferred participation. Complete ZIP: " + source["complete_download_url"])
+                else:
+                    row["notes"] += (f' Complete original archive acquired: {source["rows"]:,} CSV rows. '
+                                     "Exact source Git blob verified; not independently reconciled candidate totals, "
+                                     "validated precinct geography, or inferred participation. Complete ZIP: "
+                                     + source["complete_download_url"])
             review = reviews.get((year, code))
             if review:
                 row.update({field: review[field] for field in [

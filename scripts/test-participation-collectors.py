@@ -36,6 +36,29 @@ sd_review = module("review-south-dakota-precinct-results")
 ak_review = module("review-alaska-precinct-results")
 ak_boundaries = module("review-alaska-precinct-boundaries")
 hi_review = module("review-hawaii-precinct-results")
+hi_historical = module("archive-hawaii-historical-sources")
+
+
+@pytest.mark.parametrize("encoding", ["utf-16", "utf-16-le"])
+def test_hawaii_historical_sources_preserve_utf16_and_missing_trailing_header_fields(encoding):
+    text = 'Format#1\r\nCandidate_name,Votes\r\n"Quoted\r\ncandidate",12,\r\nOther,0,\r\n'
+    audit = hi_historical.text_inventory(text.encode(encoding))
+    assert audit["encoding"] == encoding and audit["source_format_metadata"] == "Format#1"
+    assert audit["native_data_records"] == 2 and audit["native_record_widths"] == {3: 2}
+    assert audit["data_trailing_empty_field_absent_from_header"]
+
+
+def test_hawaii_historical_sources_do_not_relabel_absentee_early_and_election_columns():
+    audit = hi_historical.text_inventory(
+        b"Candidate_name,Absentee_votes,Early_votes,Election_Votes\r\nCandidate,10,2,3\r\n")
+    assert audit["encoding"] == "utf-8-sig"
+    assert audit["native_header"][1:] == ["Absentee_votes", "Early_votes", "Election_Votes"]
+    assert not audit["data_trailing_empty_field_absent_from_header"]
+
+
+def test_hawaii_historical_sources_reject_ragged_rows_instead_of_truncating_data():
+    with pytest.raises(ValueError, match="fields"):
+        hi_historical.text_inventory(b"Candidate,Votes\nPerson,12,\nAnother,3,unexpected\n")
 
 
 def hawaii_fixture():
@@ -1127,6 +1150,28 @@ def test_original_source_downloads_do_not_claim_validated_maps_or_participation(
     assert row["join"] == "pending" and row["complete"] == "no"
     assert row["publication"] == "full_originals_download_only"
     assert row["participation"] == "not_acquired"
+
+
+def test_multiyear_original_downloads_preserve_years_and_do_not_override_validated_map_scope():
+    batch = dict(complete_download_url="full.zip", elections={str(year): dict(
+        year=year, state_code="HI", original_files=9, original_bytes=1000,
+        source_url="official", next_action="Reconcile and obtain boundaries",
+        validation="complete_source_bytes_and_native_record_structure_verified")
+        for year in (2024, 2022, 2020, 2018)})
+    coverage = dict(partial=True, source_url="reviewed-map", next_action="Verify remaining precincts",
+                    notes="Reviewed partial map")
+    rows = precinct_coverage.build_rows({"coverage": {"2024": {"HI": coverage}}},
+                                       published=True, source_batches=[batch])
+    hi = {r["year"]: r for r in rows if r["state_code"] == "HI"}
+    for year in (2022, 2020, 2018):
+        assert hi[year]["candidate_results"] == "acquired_originals_review_pending"
+        assert hi[year]["publication"] == "full_originals_download_only"
+        assert hi[year]["validation"] == "complete_source_bytes_and_native_record_structure_verified"
+        assert hi[year]["participation"] == "not_acquired" and hi[year]["complete"] == "no"
+        assert "9 files, 1,000 uncompressed bytes" in hi[year]["notes"]
+    assert hi[2024]["publication"] == "published_partial" and hi[2024]["results_source"] == "reviewed-map"
+    assert hi[2024]["complete"] == "no"
+    assert hi[2016]["publication"] == "not_published"
 
 
 def test_historical_acquisition_never_produces_a_metadata_only_archive(tmp_path, monkeypatch):

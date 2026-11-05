@@ -949,9 +949,8 @@ and three recount documents. Per-file receipts and the combined
 URLs, bytes and SHA-256 values. Complete totals: **2024: 10 files,
 23,490,452 bytes; 2022: 11 files, 21,400,912 bytes; 2020: nine files,
 4,725,894 bytes; 2018: nine files, 5,083,966 bytes**. These acquired
-historical originals have **not** been normalized, independently
-reconciled, released or registered as new coverage; do not mark them
-reviewed or complete.
+historical originals have **not** been normalized or independently
+reconciled; do not mark them reviewed or complete.
 
 Do not reuse the 2026 text parser: **2024 uses BOM-marked UTF-16 CSV**,
 **2022 uses BOM-less UTF-16LE CSV**, and **2020/2018 use UTF-8 CSV**.
@@ -967,9 +966,28 @@ without redownloading and recorded the actual historical formats and
 all 39 originals. Exact URL case differs by year; extract actual links
 rather than guessing paths.
 
-Next: reproduce/package the full historical originals with their exact
-format/vintage notes, publish a complete immutable download, then review
-each year independently and acquire its correct-year references. Continue
+The full originals are now preserved reproducibly under
+`data/precinct-source-acquisitions/20261105/HI-historical/`.
+`scripts/archive-hawaii-historical-sources.py` verifies all original receipts
+and native CSV record widths while preserving encodings, metadata,
+multiline quoting and historical ballot-mode headers. The complete ZIP is
+**38,713,054 bytes**, SHA-256
+`9a0ce9f92d742d7bf8da230ca061bb6c86d603afff80ba746709110ccbc1ede1`,
+containing all **39 originals / 54,701,224 uncompressed source bytes**
+plus three provenance/checksum files. Independent proof verifies all
+42 members/CRCs/bytes, every original receipt, immutable-overwrite refusal
+and byte-identical archive/output reproduction **only from distributed
+originals**, session `files/hi-historical-independent-validation.json`.
+The historical collector tests cover both UTF-16 variants, quoted multiline
+records, omitted trailing header fields, historical voting-mode columns
+and rejection of truncated/ragged records.
+
+Release and site registration of this historical batch are pending.
+The multiyear source-batch ledger path preserves each actual election,
+does not claim reconciled votes/turnout and does not override an existing
+independently validated partial map with unreviewed official originals.
+Next: finish the immutable release and full-download registration, then
+review each year independently and acquire its correct-year references. Continue
 newest-first acquisition and distinguish acquired originals from reviewed
 candidate totals, validated geometry and live maps. Hawaii is **not
 complete**, and the other 2026 states/DC and all historical ledger cells
