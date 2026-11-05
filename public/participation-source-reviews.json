@@ -1,6 +1,29 @@
 {
   "reviews": [
     {
+      "id": "pennsylvania-lancaster-20261105-01",
+      "label": "Lancaster County, Pennsylvania 2026: complete county returns and separate participation, provisional not reported",
+      "data_directory": "data/county-source-reviews/20261105-lancaster-reviewed-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/3aabcede13986955f094d706015486ad7a7c3362/data/county-source-reviews/20261105-lancaster-reviewed-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-lancaster-20261105-01/complete-lancaster-2026-county-results-01.zip",
+      "complete_download_bytes": 763713,
+      "complete_download_sha256": "a9f2da2a21ba6d7ec9ae573872e3152c135c068217ab1a81692af78c7862e8a4",
+      "review_status": "complete_county_reports_and_counts_reviewed_counting_partial",
+      "maps_approved": false,
+      "scope_note": "Lancaster County only, unofficial November 3, 2026 general election; native as-of November 4 at 16:39:46.2888598 UTC, published at 16:40:39.001983 UTC. County ballots are 216,221, registrations 366,763 and printed registered-voter turnout 58.95%. House candidate votes are separate: 214,875 total, DEM 100,607, REP 114,268 and blank-party Write-In 0. PDF-only 947 undervotes and 36 overvotes leave 363 House ballots unclassified; missing API accounting remains blank. All 43 county candidate/ballot-option lines in 14 contests, 129 option/method observations, 41 contest/literal-party totals and 241 native participation records reconcile across complete JSON and summary PDFs. All 13 explicit write-in zeroes retain blank native parties; referendum options never enter candidate-party totals. Native zero method-ballot fields conflict with positive selections and are not usable as actual mode ballots. Provisional is Not Reported; the native unit counter is 0 fully/241 partially reported. State Senate coverage is only 132 units, not an asserted whole-county partition. All 15 native zero/blank party-statistic fields remain unvalidated, not party-specific turnout; empty separate registration/statistics endpoints do not erase registrations in turnout. Native ballotItemCount metadata 1 is retained separately from 14 acquired contests. All 12 screened analytical originals, five complete PDFs (559 pages), receipts, portable code and eight tables are included; detailed native unit candidate counts remain in the PDFs, not allocated from county totals. No new map, demographic turnout, certification or statewide completion is approved; existing maps are unchanged.",
+      "tables": [
+        {"file": "county-participation.csv", "label": "Lancaster County only: separate county ballots, registrations, printed registered-voter rate, UTC timestamps and native counting qualifications (CSV)"},
+        {"file": "county-option-results.csv", "label": "Lancaster County only: all 43 candidate/write-in/ballot-option lines across 14 contests; literal parties and all 13 write-in zeroes retained (CSV)"},
+        {"file": "county-option-mode-results.csv", "label": "Lancaster County only: all 129 native option/method counts, with explicit zeroes and provisional Not Reported status retained (CSV)"},
+        {"file": "county-literal-party-totals.csv", "label": "Lancaster County only: all 41 separate contest/literal-party totals; blank-party write-ins remain separate and referendum options excluded (CSV)"},
+        {"file": "county-contest-accounting.csv", "label": "Lancaster County only: all 14 contest totals, PDF-only under/overvotes and ballots, missing API accounting, coverage and unclassified residuals (CSV)"},
+        {"file": "county-contest-accounting-modes.csv", "label": "Lancaster County only: all 56 native total/method accounting vectors; contradictory zero method-ballot fields flagged as unusable, not actual zero ballots (CSV)"},
+        {"file": "native-unit-participation.csv", "label": "Lancaster County only: all 241 native unit ballots, registration and native turnout-count records, without inferred geometry or unique-voter claims (CSV)"},
+        {"file": "native-party-statistics.csv", "label": "Lancaster County only: all 15 native party ballot/registration/rate fields, preserving zero/blank literals as unvalidated rather than party participation (CSV)"}
+      ],
+      "coverage": []
+    },
+    {
       "id": "pennsylvania-northampton-20261105-01",
       "label": "Northampton County, Pennsylvania 2026: complete county returns and separate participation, counting partial",
       "data_directory": "data/county-source-reviews/20261105-northampton-reviewed-01",

@@ -1,0 +1,60 @@
+{
+  "assets": [
+    {
+      "bytes": 763713,
+      "download_byte_identical": true,
+      "file": "complete-lancaster-2026-county-results-01.zip",
+      "sha256": "a9f2da2a21ba6d7ec9ae573872e3152c135c068217ab1a81692af78c7862e8a4"
+    },
+    {
+      "bytes": 13251,
+      "download_byte_identical": true,
+      "file": "county-contest-accounting-modes.csv",
+      "sha256": "dd216c9e81f41268171f452fef6610889b54970748c2a4c3ba07854a2414ac32"
+    },
+    {
+      "bytes": 9772,
+      "download_byte_identical": true,
+      "file": "county-contest-accounting.csv",
+      "sha256": "f6043a468b76ed578747254d7225ad1701d6a53ed59a3dc11beb29247dd9b2e8"
+    },
+    {
+      "bytes": 6836,
+      "download_byte_identical": true,
+      "file": "county-literal-party-totals.csv",
+      "sha256": "67e00761ee9f3eaf8e6c6c397a4268953f072fe98754797e199919519c1176c2"
+    },
+    {
+      "bytes": 25131,
+      "download_byte_identical": true,
+      "file": "county-option-mode-results.csv",
+      "sha256": "f9bb1c2fd2a7642f363f1739453c76285f808ae221e2e96ef6b72d0ae48b86fd"
+    },
+    {
+      "bytes": 10094,
+      "download_byte_identical": true,
+      "file": "county-option-results.csv",
+      "sha256": "a5b04a379b0e3ed1644e44fe1a104d63fa374dce9076e56f99d7710c8f672220"
+    },
+    {
+      "bytes": 1540,
+      "download_byte_identical": true,
+      "file": "county-participation.csv",
+      "sha256": "d201732d1d12f4820d447389a84c30022c151bb4a107f61c1cef795837ff64f6"
+    },
+    {
+      "bytes": 2268,
+      "download_byte_identical": true,
+      "file": "native-party-statistics.csv",
+      "sha256": "d76d94ac60961630cef1b06dc6b567d73f3b0e96e8f53d347f1802ea737b3888"
+    },
+    {
+      "bytes": 22263,
+      "download_byte_identical": true,
+      "file": "native-unit-participation.csv",
+      "sha256": "b0c6947a31f8a91467767cd93e0885116dcc5b1fdb47791ae2bf8770d24334b4"
+    }
+  ],
+  "tag": "voter-county-pennsylvania-lancaster-20261105-01",
+  "target_commit": "3aabcede13986955f094d706015486ad7a7c3362"
+}
