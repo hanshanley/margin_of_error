@@ -1,0 +1,63 @@
+{
+  "status": "all_assets_downloaded_and_byte_verified",
+  "tag": "voter-county-pennsylvania-northampton-20261105-01",
+  "target_commit": "7f4d6dc4ed1a4e4637aa0f2f5772ef14fe81e990",
+  "assets": [
+    {
+      "file": "complete-northampton-2026-county-results-01.zip",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-northampton-20261105-01/complete-northampton-2026-county-results-01.zip",
+      "bytes": 322312,
+      "sha256": "d5e29bb452d7a3b29801f70f1b7b6b1496ed9eeb3fdcd98193bdd66308029d9d",
+      "download_byte_identical": true
+    },
+    {
+      "file": "county-ballot-mode-counts.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-northampton-20261105-01/county-ballot-mode-counts.csv",
+      "bytes": 205,
+      "sha256": "7278a497e38684280ddb93a6418b455ea63d17f55c0a720698e563610cb7fcde",
+      "download_byte_identical": true
+    },
+    {
+      "file": "county-candidate-results.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-northampton-20261105-01/county-candidate-results.csv",
+      "bytes": 4216,
+      "sha256": "b4d8134d63eec62dc3c46fc9a665886727d9f929fc2e663b9419f8e8c30e6bb5",
+      "download_byte_identical": true
+    },
+    {
+      "file": "county-contest-totals.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-northampton-20261105-01/county-contest-totals.csv",
+      "bytes": 1356,
+      "sha256": "991f029ac0ac1165dd17779b64381b589a983f9375368645a910c5be881c72af",
+      "download_byte_identical": true
+    },
+    {
+      "file": "county-office-party-totals.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-northampton-20261105-01/county-office-party-totals.csv",
+      "bytes": 753,
+      "sha256": "1dad6dc917a15f8375507645758b630d0b100ef24655c68f62789728f920e019",
+      "download_byte_identical": true
+    },
+    {
+      "file": "county-participation.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-northampton-20261105-01/county-participation.csv",
+      "bytes": 606,
+      "sha256": "759c8ff0c0dc7ae31c2ed8af8f324a75bf7a9b4dbce656e7fe6bca3ed8b4dc34",
+      "download_byte_identical": true
+    },
+    {
+      "file": "native-unit-candidate-counts.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-northampton-20261105-01/native-unit-candidate-counts.csv",
+      "bytes": 289995,
+      "sha256": "8c6e919810a46b925118ac7f082aa083f308aa8ccfbf18038e138b28a73d086d",
+      "download_byte_identical": true
+    },
+    {
+      "file": "native-unit-contest-coverage.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-northampton-20261105-01/native-unit-contest-coverage.csv",
+      "bytes": 75657,
+      "sha256": "d6900366646ee0b66293cf433cc00dec449b1c80ba7d18b56dbc4dc7306346b5",
+      "download_byte_identical": true
+    }
+  ]
+}

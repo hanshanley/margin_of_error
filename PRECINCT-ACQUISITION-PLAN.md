@@ -182,7 +182,8 @@ release `voter-county-pennsylvania-three-county-20261105-01` were published,
 but that release's complete ZIP has since been withdrawn for source-key
 remediation; its seven count-only CSV assets are unaffected. The sanitized
 replacement is now byte-verified in `voter-county-source-redaction-20261105-01`;
-its three-county UI integration remains pending. No new map, demographic turnout, certification, or statewide
+its three-county UI integration now passes local four-mode browser validation
+alongside Northampton, with production verification pending. No new map, demographic turnout, certification, or statewide
 completeness is approved.
 After the security deployment, the exact Northampton government-to-vendor
 link was reverified and both complete primary pages were freshly acquired.
@@ -209,7 +210,18 @@ Complete screened originals, seven CSVs, portable code and checksums are under
 proof is under `data/county-source-reviews/20261105-northampton-publication-01/`.
 The 322,312-byte complete ZIP has SHA-256
 `d5e29bb452d7a3b29801f70f1b7b6b1496ed9eeb3fdcd98193bdd66308029d9d`.
-Its release and UI integration are next; no new map, demographic turnout,
+Release `voter-county-pennsylvania-northampton-20261105-01` is pinned to clean
+data/tools commit `7f4d6dc4ed1a4e4637aa0f2f5772ef14fe81e990`. All eight
+released assets were downloaded back and byte-verified. Both reviewers pass
+35 combined tests. All 14 immutable Northampton/three-county CSV URLs are
+also byte-verified; their combined website update must preserve the previous
+225 complete download URLs and add exactly 16, for 241. The local browser proof
+passes exact 241-URL set equality on desktop/mobile with and without JavaScript.
+Astro check, participation tests, build and Pages preparation pass; 94 relocated
+bulk files are byte-identical and the prepared site is 987,308,169 bytes.
+The broad validator still reaches the unrelated UK topic-card assertion
+(23 actual versus 16 expected); it is not reported as passing.
+Production deployment and verification are next; no new map, demographic turnout,
 certification or statewide completeness is approved.
 
 The reusable 2026 county-results and separate UF/state participation pipelines

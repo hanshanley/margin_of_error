@@ -1,0 +1,23 @@
+{
+  "astro_check": "passed",
+  "participation_tests": "passed",
+  "site_build": "passed",
+  "county_reviewer_tests_passed": 35,
+  "full_build_validator": {
+    "status": "blocked_by_existing_unrelated_assertion",
+    "file": "scripts/validate-build.mjs",
+    "line": 1125,
+    "section": "UK topic cards",
+    "actual": 23,
+    "expected": 16,
+    "participation_assertions_reached_and_passed": true
+  },
+  "pages_preparation": "passed",
+  "byte_identical_relocated_files": 94,
+  "prepared_site_bytes": 987308169,
+  "local_browser_modes_passed": 4,
+  "exact_complete_download_urls": 241,
+  "previous_complete_download_urls_preserved": 225,
+  "new_complete_download_urls": 16,
+  "map_data_changed": false
+}

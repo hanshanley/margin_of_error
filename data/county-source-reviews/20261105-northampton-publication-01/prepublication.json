@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "tracked_html_files_screened": 37,
+  "all_service_and_telemetry_guards_passed": true,
+  "build_checkout_frontend_matches_safe_publication_commit": true,
+  "working_registry_byte_identical_between_checkouts": true,
+  "reviewer_tests": 35,
+  "map_data_changed": false
+}
