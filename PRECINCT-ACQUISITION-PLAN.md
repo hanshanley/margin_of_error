@@ -1415,7 +1415,12 @@ all 1,632 ledger cells with exactly one changed FL cell, three immutable
 provenance files, unchanged renderer, no overflow, 2026 precinct/margin
 defaults and exact FL state-result fallback without invented precincts:
 `files/florida-monroe-2026-local-browser-proof.json`.
-Exact deployment and production proof are next.
+Hans registration commit `6acb600633b342a82c6f60d0321b0d6e6bccb87f`
+completed exact Pages run **41975524305** successfully. Its verified run SHA
+and subsequent four-configuration production checker both pass:
+`files/florida-monroe-2026-exact-pages-run.json` and
+`files/florida-monroe-2026-live-browser-proof.json`.
+No newer UI deployment superseded that proof.
 This is **one county, not statewide Florida**, with
 **zero new maps or precinct participation rates**.
 
@@ -1441,7 +1446,12 @@ The source projection is NAD83(2011) Florida East, US survey feet
 (EPSG:6438); do not treat native coordinates as longitude/latitude.
 These are acquired **2025 current-reference** originals, not established
 2026 boundaries. Do not copy candidate counts onto every repeated island
-record or infer applicability from matching 33 IDs. Seek explicit election
+record or infer applicability from matching 33 IDs. Offline inspection also
+finds **three invalid original rings** (native records 12, 18 and 116,
+precincts 12, 13 and 33); no automatic repair, dissolve, vote allocation or
+2026 publication was performed. Full diagnostic:
+`files/florida-monroe-2025-current-reference-offline-geometry-audit.json`.
+Seek explicit election
 validity before a separately audited grouped-geometry supplement.
 The text-only fetch initially omitted the main map content, so inspect
 original HTML before concluding absence.
@@ -1468,6 +1478,78 @@ All successful and failed original bodies/receipts are retained. Continue
 official browser/download/GIS alternatives and additional Florida counties;
 never allocate Palm Beach county totals into precincts or call the Monroe
 subset statewide complete.
+
+## Missouri 2026: Christian County complete originals and native-group review
+
+The official Christian County election-information page declares a
+**November 3, 2026** unofficial election section with three complete PDFs:
+`https://www.christiancountymo.gov/offices/county-clerk/election-information/`.
+Actual linked originals, all independently confirmed by every PDF page's
+literal county/election/date identity, are:
+
+- `https://www.christiancountymo.gov/wp-content/uploads/RUN6Election_Summary.pdf`
+  (**83,071 bytes / three pages**).
+- `https://www.christiancountymo.gov/wp-content/uploads/UNOFFICALP00100_to_P10000A_Election_Summary.pdf`
+  (**221,106 bytes / 54 pages**, retaining the source's filename spelling).
+- `https://www.christiancountymo.gov/wp-content/uploads/UNOFFICIALSOVC_Nov_3_2026_21_14_26.pdf`
+  (**158,194 bytes / 59 pages**).
+
+All three full PDFs and the **94,179-byte** official HTML index were
+acquired with successful exact URL/status/size/SHA-256 receipts.
+Original cache: `files/precinct-expansion-sources/MO-2026-CHRISTIAN/`.
+The offline, network-free
+`scripts/review-missouri-christian-precinct-results.py` validates source
+receipts, declared links, every page's native election identity, the
+complete two-page unit pairs and independently exported candidate matrices.
+The complete archive preserves **all four originals / 556,550 bytes /
+116 PDF pages**, all extracted page text, 27 normalized House vectors,
+separate native participation records, audit and checksums.
+
+The source reports **26 geographic/combined reporting groups plus one
+countywide `ABSENTEE` bucket**, not 27 independent residential precincts.
+Combined names stay literal, including
+`1. E. BENTON/3. BRUNER` and
+`4. CHADWICK 11. GARR 12. LH 16. SL 18. OF 25.SEN`.
+No combined total is split among component precinct numbers.
+Every House District 7 vector independently matches its `Normal` and
+`Absentee` statement rows and the separate county summary:
+**REP 23,419 / DEM 10,307 / LIB 883 / total 34,609**.
+All units independently sum to **35,258 ballots / 70,148 registered**;
+county source-displayed **50.26%** remains a separate native observation.
+Registration repeated across statement modes is counted **once per
+native group**, never summed across `Normal`, `Absentee` and `Total`.
+
+The countywide absentee bucket has **5,635 ballots**, **5,577 House votes**
+and **zero native registered voters / `N/A`**. Geographic groups exclude
+that bucket. Their displayed source percentages are retained as native
+fields, **not full precinct turnout rates**, and absent residential
+absentee allocation is not reconstructed. All **27 rates are withheld**;
+no geometry, demographic turnout, statewide completion or new map is claimed.
+The normalized candidate audit is explicitly **House District 7 only**;
+all other offices remain present in the complete original reports.
+
+Snapshot: `data/precinct-source-reviews/20261105/MO-2026-CHRISTIAN/`.
+Archive: `files/complete-missouri-christian-2026.zip`,
+**450,107 bytes / 10 members**, SHA-256
+`3dc52eb82d035c2c0cf0f7724476530cf62cf7c52124ab72cf16402f426828db`.
+Independent verification checks every member, checksum, original receipt,
+all 116 extracted pages, independently parsed per-unit/per-mode House
+vectors, native participation and totals. Original-only reconstruction
+reproduces **every snapshot file and the entire ZIP byte-for-byte**;
+immutable overwrite refusal passes:
+`files/missouri-christian-2026-independent-archive-proof.json`.
+The collectors suite passes **275 tests**, including **44 new Missouri
+regressions** covering combined/absentee identities, missing/duplicate
+units and pages, wrong county/year/party/election, repeated registration,
+source percentages, independent mismatches and changed/failed originals.
+
+Next: commit/push this source snapshot as Hans; publish immutable tag
+`voter-precinct-missouri-christian-20261105` and full
+`complete-missouri-christian-2026.zip`; redownload and prove exact remote
+bytes before registering a **Christian County only** complete-data link.
+Keep MO 2026 `complete=no`; this is one county, not statewide Missouri.
+Then seek explicitly election-applicable boundaries and residential
+absentee definitions while continuing the remaining 2026 state/DC queue.
 
 ## Resume procedure for every work session or scheduled prompt
 

@@ -41,6 +41,274 @@ ct_originals = module("archive-connecticut-election-sources")
 ri_review = module("review-rhode-island-precinct-results")
 ri_maps = module("build-rhode-island-precinct-results")
 fl_monroe = module("review-florida-monroe-precinct-results")
+mo_christian = module("review-missouri-christian-precinct-results")
+
+
+def missouri_christian_fixture():
+    units, statement = {}, {}
+    for label, registered, ballots, votes in [
+        ("1. SHARED/2. COMBINED", 100, 40, [20, 10, 5]),
+        ("3. SHARED", 200, 80, [35, 30, 5]),
+        ("ABSENTEE", 0, 30, [20, 5, 0]),
+    ]:
+        candidates = dict(zip(mo_christian.CANDIDATES, votes))
+        units[label] = dict(registered=registered, ballots=ballots, candidate_votes=candidates,
+            source_reported_percent="40.00%" if registered else "N/A", source_pages=[1, 2])
+        statement[label] = {mode: dict(registered=registered,
+            candidate_votes=candidates.copy() if (mode == "Absentee") == (label == "ABSENTEE")
+            else dict.fromkeys(candidates, 0)) for mode in ("Normal", "Absentee")}
+    totals = {name: sum(unit["candidate_votes"][name] for unit in units.values())
+              for name in mo_christian.CANDIDATES}
+    summary = dict(registered=300, ballots=150, source_reported_percent="50.00%", candidate_votes=totals)
+    statement["Total"] = {mode: dict(registered=300, candidate_votes={
+        name: sum(values[mode]["candidate_votes"][name] for values in statement.values())
+        for name in mo_christian.CANDIDATES}) for mode in ("Normal", "Absentee")}
+    statement["Total"]["Total"] = dict(registered=300, candidate_votes=totals.copy())
+    return units, summary, statement
+
+
+def missouri_house_lines(votes, summary=False):
+    lines = [mo_christian.CONTEST]
+    if summary:
+        lines += ["Number of Precincts", "27", "Precincts Reporting", "27"]
+    lines += ["Vote For 1"]
+    for name, value in votes.items():
+        lines += [name + "  (" + mo_christian.CANDIDATES[name] + ")", str(value),
+                  f"{100 * value / sum(votes.values()):.2f}%"]
+    return lines + [str(sum(votes.values())), "Total Votes"]
+
+
+def missouri_statement_pages(statement):
+    pages = []
+    for i, unit in enumerate(list(statement)[:-1], 1):
+        body = [f"Page {i}/3", mo_christian.CONTEST, *mo_christian.STATEMENT_HEADER]
+        if i == 1:
+            body += ["Jurisdiction Wide"]
+        for label in ([unit, "Total"] if i == 3 else [unit]):
+            body += label.rsplit(" ", 1) if "/" in label else [label]
+            for mode, values in statement[label].items():
+                votes = values["candidate_votes"]
+                total = sum(votes.values())
+                body += [mode, str(values["registered"]), str(total)]
+                for value in votes.values():
+                    body += [str(value), f"{100 * value / total:.2f}%" if total else "-"]
+        pages.append(body)
+    return pages
+
+
+def test_missouri_christian_preserves_combined_units_absentee_and_unique_registration():
+    units, summary, statement = missouri_christian_fixture()
+    results, participation = mo_christian.review(units, summary, statement, expected_units=3)
+    assert len({row["key"] for row in results}) == 3
+    assert results[0]["source_unit_id"] == "1. SHARED/2. COMBINED"
+    assert results[-1]["source_unit_kind"] == "countywide_absentee"
+    assert sum(row["contest_votes"] for row in results) == 130
+    assert sum(row["registered"] for row in participation) == 300
+    assert sum(row["ballots"] for row in participation) == 150
+    assert participation[-1]["registered"] == 0 and participation[-1]["ballots"] == 30
+    assert all(row["turnout_rate"] is None for row in participation)
+    assert participation[0]["source_reported_percent"] == "40.00%"
+    assert participation[-1]["source_reported_percent"] == "N/A"
+    assert all("registered" not in row for row in results)
+
+
+@pytest.mark.parametrize("change,message", [
+    ("missing-unit", "unit sets"),
+    ("extra-unit", "unit sets"),
+    ("scope", "unit sets"),
+    ("absentee-denominator", "absentee scope"),
+    ("allocated-absentee", "mode scope"),
+    ("unit-vector", "House vector"),
+    ("unit-registration", "registration differs"),
+    ("county-ballots", "county totals"),
+    ("county-registration", "county totals"),
+    ("county-candidate", "county totals"),
+    ("statement-mode-total", "mode totals"),
+    ("repeated-county-registration", "county totals"),
+    ("votes-exceed-ballots", "relationship"),
+])
+def test_missouri_christian_rejects_allocation_scope_and_independent_mismatches(change, message):
+    units, summary, statement = missouri_christian_fixture()
+    expected_units = 3
+    if change == "missing-unit":
+        statement.pop("3. SHARED")
+    elif change == "extra-unit":
+        statement["4. EXTRA"] = statement["3. SHARED"]
+    elif change == "scope":
+        expected_units = 4
+    elif change == "absentee-denominator":
+        units["ABSENTEE"]["registered"] = 300
+    elif change == "allocated-absentee":
+        statement["3. SHARED"]["Normal"]["candidate_votes"]["ERIC W. BURLISON"] -= 1
+        statement["3. SHARED"]["Absentee"]["candidate_votes"]["ERIC W. BURLISON"] = 1
+    elif change == "unit-vector":
+        units["3. SHARED"]["candidate_votes"]["MISSI HESKETH"] += 1
+    elif change == "unit-registration":
+        statement["3. SHARED"]["Normal"]["registered"] += 1
+    elif change == "county-ballots":
+        summary["ballots"] += 1
+    elif change == "county-registration":
+        summary["registered"] += 300
+    elif change == "county-candidate":
+        summary["candidate_votes"]["MISSI HESKETH"] += 1
+    elif change == "statement-mode-total":
+        statement["Total"]["Normal"]["candidate_votes"]["MISSI HESKETH"] += 1
+    elif change == "repeated-county-registration":
+        statement["Total"]["Total"]["registered"] *= 3
+    elif change == "votes-exceed-ballots":
+        units["3. SHARED"]["ballots"] = 1
+    with pytest.raises(ValueError, match=message):
+        mo_christian.review(units, summary, statement, expected_units=expected_units)
+
+
+def test_missouri_christian_parses_independent_statement_modes_without_summing_denominators():
+    _, _, statement = missouri_christian_fixture()
+    pages = missouri_statement_pages(statement)
+    parsed = mo_christian.statement_units(pages)
+    assert parsed == statement
+
+
+@pytest.mark.parametrize("change,message", [
+    ("missing-page", "page sequence"),
+    ("party", "candidate columns"),
+    ("repeated-registration", "registration"),
+    ("missing-count", "native count"),
+    ("sum", "sum differs"),
+    ("percentage", "percentage"),
+    ("duplicate-unit", "duplicate"),
+])
+def test_missouri_christian_rejects_malformed_independent_statement(change, message):
+    _, _, statement = missouri_christian_fixture()
+    pages = missouri_statement_pages(statement)
+    if change == "missing-page":
+        pages.pop(1)
+    elif change == "party":
+        pages[0][pages[0].index("(DEM)")] = "(REP)"
+    elif change == "duplicate-unit":
+        pages[1][pages[1].index("3. SHARED")] = "ABSENTEE"
+    else:
+        offset = pages[0].index("Normal")
+        if change == "repeated-registration":
+            pages[0][pages[0].index("Absentee") + 1] = "200"
+        elif change == "missing-count":
+            pages[0][offset + 3] = "-"
+        elif change == "sum":
+            pages[0][offset + 2] = "36"
+        elif change == "percentage":
+            pages[0][offset + 4] = "100.00%"
+    with pytest.raises(ValueError, match=message):
+        mo_christian.statement_units(pages)
+
+
+@pytest.mark.parametrize("change", ["duplicate", "party", "missing", "sum", "percentage"])
+def test_missouri_christian_rejects_incomplete_or_conflicting_house_vectors(change):
+    votes = next(iter(missouri_christian_fixture()[0].values()))["candidate_votes"]
+    lines = missouri_house_lines(votes)
+    if change == "duplicate":
+        lines[5] = lines[2]
+    elif change == "party":
+        lines[2] = lines[2].replace("(REP)", "(DEM)")
+    elif change == "missing":
+        lines[3] = "-"
+    elif change == "sum":
+        lines[-2] = "36"
+    elif change == "percentage":
+        lines[4] = "100.00%"
+    with pytest.raises(ValueError):
+        mo_christian.house_vector(lines)
+
+
+@pytest.mark.parametrize("change", ["county", "year", "election", "official"])
+def test_missouri_christian_requires_exact_pdf_election_identity(change):
+    lines = ["Precinct Summary Report", "GENERAL ELECTION", "CHRISTIAN COUNTY, MISSOURI",
+             "TUESDAY, NOVEMBER 3, 2026", "ELECTION RESULTS", "UNOFFICIAL", "Date: 11/3/2026"]
+    if change == "county":
+        lines[2] = "OTHER COUNTY, MISSOURI"
+    elif change == "year":
+        lines[3] = "TUESDAY, NOVEMBER 5, 2024"
+    elif change == "election":
+        lines[1] = "PRIMARY ELECTION"
+    else:
+        lines[5] = "OFFICIAL"
+    with mo_christian.fitz.open() as pdf:
+        pdf.new_page().insert_text((30, 30), "\n".join(lines))
+        with pytest.raises(ValueError, match="identity"):
+            mo_christian.pdf_pages(pdf.tobytes(), "Precinct Summary Report")
+
+
+def missouri_precinct_pages(units):
+    pages = []
+    for label, values in units.items():
+        counts = (f"Registered Voters {values['registered']} - Total Ballots {values['ballots']}"
+                  f" : {values['source_reported_percent']}")
+        for number in (1, 2):
+            page = ["Precinct Summary Report", "GENERAL ELECTION", "CHRISTIAN COUNTY, MISSOURI",
+                    "TUESDAY, NOVEMBER 3, 2026", "ELECTION RESULTS", label, "UNOFFICIAL",
+                    "Date: 11/3/2026", f"Page {number}/2", counts]
+            if number == 1:
+                page += missouri_house_lines(values["candidate_votes"])
+            pages.append(page)
+    return pages
+
+
+def test_missouri_christian_parses_complete_native_pairs_and_retains_source_pages():
+    units, _, _ = missouri_christian_fixture()
+    parsed = mo_christian.precinct_units(missouri_precinct_pages(units), expected_units=3)
+    assert list(parsed) == list(units)
+    assert parsed["ABSENTEE"]["registered"] == 0
+    assert parsed["ABSENTEE"]["source_pages"] == [5, 6]
+    assert parsed["1. SHARED/2. COMBINED"]["candidate_votes"] == units["1. SHARED/2. COMBINED"]["candidate_votes"]
+
+
+@pytest.mark.parametrize("change,message", [
+    ("missing-page", "Incomplete"),
+    ("page-order", "page identity"),
+    ("unit-name", "unit or page identity"),
+    ("duplicate-unit", "Duplicate"),
+    ("repeated-count", "Conflicting"),
+    ("double-house", "Conflicting"),
+    ("missing-house", "House contest"),
+])
+def test_missouri_christian_rejects_bad_native_pairs_and_repeated_fields(change, message):
+    units, _, _ = missouri_christian_fixture()
+    pages = missouri_precinct_pages(units)
+    if change == "missing-page":
+        pages.pop()
+    elif change == "page-order":
+        pages[0], pages[1] = pages[1], pages[0]
+    elif change == "unit-name":
+        pages[1][5] = "9. OTHER"
+    elif change == "duplicate-unit":
+        pages[2][5] = pages[3][5] = pages[0][5]
+    elif change == "repeated-count":
+        pages[1][-1] = pages[1][-1].replace("Ballots 40 : 40.00%", "Ballots 50 : 50.00%")
+    elif change == "double-house":
+        pages[1].append(mo_christian.CONTEST)
+    elif change == "missing-house":
+        pages[0].remove(mo_christian.CONTEST)
+    with pytest.raises(ValueError, match=message):
+        mo_christian.precinct_units(pages, expected_units=3)
+
+
+@pytest.mark.parametrize("field,bad_value", [
+    ("url", "https://example.invalid/other-election"),
+    ("resolved_url", "https://example.invalid/challenge"),
+    ("status", 403),
+    ("bytes", 100),
+    ("sha256", "0" * 64),
+])
+def test_missouri_christian_rejects_changed_original_receipts(tmp_path, monkeypatch, field, bad_value):
+    name = "official-election-index.html"
+    raw = b"original"
+    (tmp_path / name).write_bytes(raw)
+    receipt = dict(url=mo_christian.SOURCE, resolved_url=mo_christian.SOURCE, status=200,
+                   bytes=len(raw), sha256=hashlib.sha256(raw).hexdigest())
+    receipt[field] = bad_value
+    (tmp_path / (name + ".receipt.json")).write_text(json.dumps(receipt))
+    monkeypatch.setattr("sys.argv", ["review", "--cache-directory", str(tmp_path),
+        "--output", str(tmp_path / "output"), "--archive", str(tmp_path / "archive.zip")])
+    with pytest.raises(ValueError, match="receipt"):
+        mo_christian.main()
 
 
 def florida_monroe_fixture():
