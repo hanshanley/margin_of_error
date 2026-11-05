@@ -1,0 +1,49 @@
+{
+  "year": 2026,
+  "state_code": "AZ",
+  "office": "U.S. House; separate native participation; all-contest originals",
+  "candidate_results": "acquired_reconciled_native_precinct_counts",
+  "boundaries": "not_acquired_for_native_snapshot",
+  "join": "withheld_no_verified_geometry_or_precinct_id_crosswalk",
+  "validation": "native_media_and_actual_county_api_scopes_passed",
+  "publication": "full_counts_download_only",
+  "participation": "native_precinct_ballots_and_registrations_acquired_rates_withheld",
+  "source_url": "https://app.enhancedvoting.com/results/public/Arizona/110326GeneralElection",
+  "data_directory": "data/precinct-source-reviews/20261105/AZ-2026-native-counts",
+  "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7b764000e2feef1054d37d2468b447f43d9e9b71/data/precinct-source-reviews/20261105/AZ-2026-native-counts/",
+  "count_csv": "precinct-counts.csv",
+  "reporting_units": 1762,
+  "tables": [
+    {
+      "file": "precinct-counts.csv",
+      "rows": 1762,
+      "label": "2026 Arizona: all 1,762 native House precinct vectors with every candidate and voting mode; not turnout; maps withheld (CSV)"
+    },
+    {
+      "file": "precinct-participation.csv",
+      "rows": 1763,
+      "label": "2026 Arizona: all 1,763 native precinct inventory rows, 1,762 ballot/registration observations and one missing virtual record; rates withheld (CSV)"
+    },
+    {
+      "file": "county-participation.csv",
+      "rows": 15,
+      "label": "2026 Arizona: all 15 native county ballot and registration observations; source component discrepancies retained; rates withheld (CSV)"
+    },
+    {
+      "file": "all-native-option-counts.csv.gz",
+      "rows": 145556,
+      "label": "2026 Arizona: all 145,556 statewide, county and precinct candidate/ballot-option rows; all source modes and party descriptions retained; not turnout (CSV · gzip)"
+    },
+    {
+      "file": "api-option-correspondence.csv",
+      "rows": 2023,
+      "label": "2026 Arizona: all 2,023 independent API option comparisons; distinct county/media ID namespaces retained (CSV)"
+    }
+  ],
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-arizona-native-counts-20261105/complete-arizona-2026-native-count-review-01.zip",
+  "complete_download_bytes": 15695907,
+  "complete_download_sha256": "8c8626b93899f8f9b935d1d7076a47b1bb75fd850c344f992066faa162ae0cc3",
+  "maps_approved": false,
+  "next_action": "Acquire source-declared 2026 precinct geometry and an explicit county-qualified media/API/reference correspondence before map joins. Review native electorate definitions before rates. Preserve the Mohave virtual precinct's missing participation and statewide ballot-field discrepancy; do not zero-fill, repair source counts or substitute candidate votes for ballots.",
+  "notes": "Unofficial November 3, 2026 general election; complete media export created November 5, 2026 03:50:47Z and explicitly declared by the actual native application API. All 99 statewide and 415 county state/federal contest scopes reconcile by candidate and all five voting modes; not all local county races. The export has 143,533 precinct option rows and 1,762 county-qualified native precinct identities, each with one House vector. All 145,556 normalized option rows, 1,762 House vectors and 2,023 API option comparisons independently checked. Preserve 282 literal party-description differences and candidate-name spacing. County API candidate IDs differ from media IDs: comparisons use unique literal county/contest/option names and equal count/modes, retaining both namespaces without certifying shared IDs. Separate API precinct UUIDs are not joined to media precinct IDs. All 1,762 observed precinct ballot/registration scopes reconcile to 15 counties: 2,248,900 ballots and 4,374,827 registrations. The 1,763rd API precinct is Mohave's virtual 225_Non-Resident Property Owners and has no turnout observation, not zero. Root statewide ballotsCast=0 contradicts county totals; source registration components also fail to explain totals. Both discrepancies remain explicit; rates and geometry joins withheld. Complete archive has 75 checksums and all 66 factual media/API originals and receipts, independently checked byte-identical archive-only rebuild and whole anonymous remote-release verification."
+}

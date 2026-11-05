@@ -3753,12 +3753,33 @@ Complete ZIP: **15,695,907 bytes**, SHA-256
 The generated source package is preserved at
 `data/precinct-source-reviews/20261105/AZ-2026-native-counts/`.
 
-**Current executable work:** commit/push the verified source batch as Hans, publish
-an immutable complete source release pinned to that commit, verify the entire
-anonymous remote archive, then register downloads/worklist with honest no-map
-status and verify that exact UI deployment. No Arizona new map coverage is
-published. Do not reacquire the complete cached snapshot or repeat passed Arkansas
-live matrices.
+Hans source commit **`7b764000e2feef1054d37d2468b447f43d9e9b71`** is pushed.
+Immutable release **`voter-precinct-arizona-native-counts-20261105`** pins that
+exact commit. The whole anonymous remote ZIP matches all local bytes, **75**
+checksums, **66** receipts and **76** exact members, with valid CRC.
+Proof: `files/arizona-2026-native-remote-release-proof-01.json`.
+No released package bytes may be replaced or normalized.
+
+The complete ZIP and all five complete CSVs are now registered alongside all
+**82** earlier downloads. Only AZ2026 changes in the **1,632-cell** worklist;
+all cells remain incomplete. The map renderer, county fallback, source map
+snapshots, colors, zoom and 2026 default remain unchanged. All **28** focused
+Arizona/coverage tests pass. Astro check: zero errors/warnings and five existing
+hints; production build passes. All participation build assertions pass before
+the unchanged unrelated UK topic-card mismatch (**23** actual versus **16**
+expected); do not change unrelated UK content/assertions. Pages verifies all
+**94** byte-identical relocated downloads and prepares **986,280,448 bytes**.
+Actual source-matched desktop/mobile by JavaScript/no-JavaScript checks pass
+**88 complete links** and **18 entire CSV endpoints**, including all five new
+Arizona tables. No overflow; 2026 remains default.
+Proof: `files/arizona-native-counts-ui-local-browser-proof-01.json`.
+
+**Current executable work:** commit/push this verified download registration
+as Hans and verify its exact live deployment. No Arizona new map coverage is
+published. Next acquire actual source-declared 2026 precinct geography and
+explicit identifier correspondence; do not treat distinct API UUIDs, media
+precinct codes or county codes as interchangeable. Do not reacquire the complete
+cached snapshot or repeat passed Arkansas live matrices.
 
 ## Resume procedure for every work session or scheduled prompt
 
