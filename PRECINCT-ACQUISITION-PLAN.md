@@ -1625,8 +1625,45 @@ ASP.NET form submissions, preserving native hidden state, successfully
 selected `24G`, `22G` and `20G` with category `3`. Complete index responses
 are saved in `files/precinct-expansion-sources/NV-CLARK-HISTORICAL/`.
 They declare **200**, **200** and **264** PDF/Data report links respectively.
-Acquisition of all **664** declared report bodies is in progress, not yet
-a published or reconciled historical package. The archive reaches elections
+All **664** declared report bodies are now acquired: **48,901,936 report
+bytes**, with HTTP 200, native PDF/text format checks and exact source
+receipts. Seven complete native selector/form/index originals are also
+retained. The new offline `scripts/archive-clark-historical-sources.py`
+checks exact native selected election/category, the complete PDF/Data
+pair inventory and every original receipt; it preserves suppressed votes,
+repeated registration and malformed native nickname quoting without
+normalizing candidate identities or inferring turnout.
+Actual full-source validation found that PDF election/date/county
+headers occur on the first page, not every continuation page. Validation
+now requires the exact first-page identity and rejection of conflicting
+repeated identities, recording headerless continuations rather than
+pretending they repeat election headers. Native blank final pages are
+retained only after checking no images/drawings and an entirely white
+full-resolution rendering; blank first/interior pages and textless marked
+pages fail validation.
+Full-source validation and independent offline reconstruction now pass.
+The immutable snapshot is
+`data/precinct-source-acquisitions/20261105/NV-CLARK-2020-2024/`:
+**671 originals / 49,214,821 original bytes / 675 ZIP members**.
+The complete archive is **29,238,218 bytes**, SHA-256
+`aade65d7ae37f3d9c9cde568ac15779d06cb4c5315b3ba8ac8c9a997b406b562`.
+Native 2024/2022/2020 PDF pages are **3,691 / 4,368 / 8,108**; Data
+records are **100,496 / 119,636 / 333,352**. There are **7 / 14 / 3**
+verified blank endings, **14 / 18 / 20** strict CSV quoting failures,
+**13,397 / 22,131 / 30,123** privacy-suppressed candidate fields and
+**189 / 238 / 579** Totals records whose turnout exceeds registration.
+These are record/field counts across contests, not distinct precincts,
+rates or reconstructed suppressed values.
+The independent checker re-parses native declarations with BeautifulSoup,
+checks every original and receipt, verifies CSV counts without counting
+the heterogeneous footer, and reconstructs every snapshot file and the
+entire ZIP byte-for-byte using only distributed originals.
+Proof: `files/nevada-clark-historical-offline-reproduction-proof.json`.
+**33 focused regressions pass** for the new archive and county-only ledger
+scope; the final full-suite/source-release verification follows before
+public registration. No candidate reconciliation, new map or new
+participation rate is claimed.
+The native election selector reaches elections
 before 1964, providing a concrete later historical route without replacing
 the remaining 2026 work.
 
@@ -1646,14 +1683,42 @@ downloads are deliberately excluded; they are not aggregate participation
 substitutes. Raw originals and the separately labeled derived browser
 observation are in `files/precinct-expansion-sources/NV-2026-WASHOE/`.
 
+The dashboard's actual declared full county-summary PDF is now acquired:
+**553,410 bytes / 23 pages**, SHA-256
+`ac8d43ad5b41e41ccb1ac6ddac54cb37630f00b979c44ba2067e4330ad35c63b`.
+Its source generation timestamp is **11/4/2026 6:13:35 PM**, separately
+from the app's later 6:20 PM update. Native county participation is
+**191,830 / 329,777**, displayed **58.17%**; House CD2 candidate votes
+are **189,752**, not ballots. Early Vote **54,762**, Election Day
+**35,133**, Mail **101,935** are native county modes, not residential
+precinct assignments. No precinct turnout or map is inferred.
+
+The actual acquired Clark GIS index declares
+`https://mapsrv.clarkcountynv.gov/pub/crgeodb/Election_Archive.zip`.
+The previously inferred `/pub/crel/crelgeodb/` path is wrong; do not retry
+it. The exact declared archive is fully acquired: **8,604,501 bytes /
+209 ZIP members**, passing CRC, SHA-256
+`97cd8af08bd142263a5c956c1b818be42f5703d51e71fa87ed32fe24ae06bd2e`.
+A proper OpenFileGDB reader inspected its **31 actual layers**. Precinct
+layers are named `prec0506_p`, `prec1990_p`, `prec2000_p`, `prec2002_p`,
+`prec2004_p`, `prec2006_p`, `prec2008_p`, `prec2010_p`, `prec2012_p`,
+`prec2013_p`, and `precinct2010_p`, with native `PREC` and district fields,
+EPSG:3421, and **897–1,311** features per layer. The reader reports no
+layer/dataset metadata. These native names are historical leads, not
+proof of exact general-election applicability, and none establishes a
+2020/2022/2024/2026 reference. The archive's November 2, 2026 modification
+date must not become a modern boundary vintage. Derived catalog:
+`files/precinct-expansion-sources/NV-2026-CLARK/derived-election-archive-layer-inventory.json`.
+
 The Silver State endpoint reached from `https://results.nv.gov/` redirects
 to `silverstateelection.nv.gov` and the ordinary web tool encounters a
 real additional-security challenge. Pursue the legitimate official
 county aggregate/result/export alternatives; do not describe the state
 as permanently unavailable or download personal voter lists as a substitute.
-Next: finish the complete declared historical report acquisition and
-original-backed package; fetch Washoe's actual county PDF and review the
-GIS index's declared Election Archive geodatabase. Continue official
+Next: finish full-source validation, independently reconstruct and
+publish the complete Clark historical originals; preserve the acquired
+Washoe PDF and native GIS catalog without treating county summaries or
+1990–2013 reference names as modern precinct coverage. Continue official
 2026 precinct-statement alternatives in parallel. Independently reconcile
 native units and election-applicable boundaries before mapping; package
 all originals before registry/publication.
@@ -1681,6 +1746,24 @@ statement. Inspect the declared map's layer definitions and vintage before
 any join. All original bodies and exact receipts, including failed HTML,
 are retained in `files/precinct-expansion-sources/CO-2026-DOUGLAS/`.
 No new Colorado map, precinct counts or turnout is claimed.
+
+The actual web-map layer has now been followed to
+`https://services.arcgis.com/seTexOicoRXDvRsJ/arcgis/rest/services/PRECINCTS_View/FeatureServer/0`,
+and its item `3de6839224584b1fae43ed814bec6a2e`. Full original metadata
+is acquired with receipts (**16,991** and **1,902 bytes**). The service
+declares `Query`, maximum **1,000** features, native `PRECINCT`,
+`STATE_PREC`, congressional/state districts and archival date fields.
+Item title is `Voter Precincts`, description `Douglas County Voter
+Precinct Boundaries`; neither gives explicit 2026-general applicability.
+Complete native object-ID and geometry acquisition now passes:
+**216 features / 216 distinct nonnull PRECINCT IDs**, exactly matching
+the separately acquired official object-ID set without transfer-limit
+truncation. Full GeoJSON is **2,526,078 bytes**, SHA-256
+`114e58a73665ebdcf521a43aea46fd0269b4e1dba61e9883ee04fec8cdfce053`;
+the official ID response is **802 bytes**. Every native field and original
+geometry is retained. The item gives no explicit election applicability.
+Seek actual general-election precinct returns and independent applicability
+evidence; do not map or infer turnout from this reference alone.
 
 ## Maryland 2026: native general reference link is an unexpanded template
 

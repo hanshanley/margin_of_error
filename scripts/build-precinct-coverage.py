@@ -149,6 +149,8 @@ def build_rows(index=None, published=False, source_batches=None):
                                      "Exact source Git blob verified; not independently reconciled candidate totals, "
                                      "validated precinct geography, or inferred participation. Complete ZIP: "
                                      + source["complete_download_url"])
+                if source.get("notes"):
+                    row["notes"] += " " + source["notes"]
             review = reviews.get((year, code))
             if review:
                 row.update({field: review[field] for field in [

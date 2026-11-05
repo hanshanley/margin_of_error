@@ -42,6 +42,150 @@ ri_review = module("review-rhode-island-precinct-results")
 ri_maps = module("build-rhode-island-precinct-results")
 fl_monroe = module("review-florida-monroe-precinct-results")
 mo_christian = module("review-missouri-christian-precinct-results")
+clark_originals = module("archive-clark-historical-sources")
+
+
+def clark_index_fixture():
+    links = "".join(
+        f'<a href="https://elections.clarkcountynv.gov/electionresultsTV/SOV/24G/'
+        f'CONTEST%20{i:03d}.{extension}">{extension}</a>'
+        for i in range(100) for extension in ("pdf", "txt"))
+    return ('<select name="ddlElection"><option selected value="24G">'
+            '2024 GENERAL ELECTION (11/05/2024)</option></select>'
+            '<select name="ddlCategory"><option selected value="3">'
+            'STATEMENT OF VOTE (RESULTS BY PRECINCT)</option></select>' + links).encode()
+
+
+def clark_data_fixture():
+    stream = io.StringIO(newline="")
+    writer = csv.writer(stream)
+    writer.writerow(["Precinct", "Tally Type", "Registration", "Turnout", "Total Votes",
+                     "Candidate A", "Candidate B"])
+    for mode, turnout, total, votes in [
+        ("Totals", 3, 3, ["*", "*"]), ("Election Day", 0, 0, ["0", "0"]),
+        ("Early Vote", 3, 3, ["*", "*"]), ("Mail", 0, 0, ["0", "0"]),
+    ]:
+        writer.writerow(["1000", mode, 1, turnout, total, *votes])
+    writer.writerow(["Totals", "Tally Type", "# Voters", "Voters/Turnout"])
+    for mode in clark_originals.MODES[1:]:
+        writer.writerow([mode, "3" if mode == "Early Vote" else "0", "0.0%"])
+    return stream.getvalue().encode()
+
+
+def test_clark_declared_full_queries_preserve_both_report_formats():
+    urls = clark_originals.report_links(clark_index_fixture(), 2024)
+    assert len(urls) == 200
+    assert sum(url.endswith(".pdf") for url in urls) == 100
+    assert sum(url.endswith(".txt") for url in urls) == 100
+
+
+@pytest.mark.parametrize("old,new", [
+    (b'value="24G"', b'value="26PE"'),
+    (b'2024 GENERAL ELECTION (11/05/2024)', b'2024 PRIMARY ELECTION (06/11/2024)'),
+    (b'value="3"', b'value="4"'),
+    (b'/SOV/24G/CONTEST%20000.pdf', b'/SOV/22G/CONTEST%20000.pdf'),
+    (b'/SOV/24G/CONTEST%20000.pdf', b'/SOV/24G/CONTEST%20001.pdf'),
+    (b'/SOV/24G/CONTEST%20000.txt', b'/SOV/24G/OTHER%20000.txt'),
+    (b'/SOV/24G/CONTEST%20000.pdf', b'/SOV/24G/CONTEST%20000.pdf?alternate=1'),
+    (b'/SOV/24G/CONTEST%20000.pdf', b'/SOV/24G/other%2FCONTEST%20000.pdf'),
+])
+def test_clark_rejects_wrong_election_scope_missing_pairs_and_changed_declarations(old, new):
+    with pytest.raises(ValueError):
+        clark_originals.report_links(clark_index_fixture().replace(old, new), 2024)
+
+
+def test_clark_data_inventory_flags_suppression_and_bad_denominator_without_repairs():
+    result = clark_originals.text_inventory(clark_data_fixture())
+    assert result["native_data_records"] == 4
+    assert result["privacy_suppressed_candidate_fields"] == 4
+    assert result["totals_records_turnout_exceeds_registration"] == 1
+    assert result["rows_by_tally_type"] == dict.fromkeys(clark_originals.MODES, 1)
+    assert result["strict_csv_error"] is None
+
+
+def test_clark_native_quoting_error_is_reported_not_canonicalized_as_candidate_identity():
+    raw = clark_data_fixture().replace(b"Candidate A", b'"Candidate "Nickname" Name"')
+    result = clark_originals.text_inventory(raw)
+    assert result["strict_csv_error"]["physical_line"] == 1
+    assert result["native_data_records"] == 4
+    assert result["privacy_suppressed_candidate_fields"] == 4
+
+
+@pytest.mark.parametrize("old,new", [
+    (b"Precinct,Tally Type", b"County,Tally Type"),
+    (b"1000,Mail", b"1001,Mail"),
+    (b"1000,Early Vote", b"1000,Unknown"),
+    (b"1000,Mail,1,0,0,0,0\r\n", b""),
+    (b"Totals,Tally Type,# Voters,Voters/Turnout", b""),
+    (b"Mail,0,0.0%\r\n", b"Mail,0,0.0%,extra\r\n"),
+])
+def test_clark_truncated_or_changed_native_records_fail_closed(old, new):
+    raw = clark_data_fixture()
+    assert old in raw
+    with pytest.raises(ValueError):
+        clark_originals.text_inventory(raw.replace(old, new))
+
+
+@pytest.mark.parametrize("field,value", [
+    ("url", "https://example.org/results.aspx"),
+    ("resolved_url", "https://example.org/results.aspx"),
+    ("status", 403), ("method", "POST"), ("bytes", 1), ("sha256", "0" * 64),
+])
+def test_clark_failed_or_changed_original_receipt_is_rejected(tmp_path, field, value):
+    raw = clark_index_fixture()
+    receipt = dict(url=clark_originals.SOURCE, resolved_url=clark_originals.SOURCE,
+                   status=200, bytes=len(raw), sha256=hashlib.sha256(raw).hexdigest())
+    (tmp_path / "source.html").write_bytes(raw)
+    receipt[field] = value
+    (tmp_path / "source.html.receipt.json").write_text(json.dumps(receipt))
+    with pytest.raises(ValueError):
+        clark_originals.original(tmp_path, "source.html", clark_originals.SOURCE)
+
+
+@pytest.mark.parametrize("wrong", ["year", "date", "county", None])
+def test_clark_pdf_checks_actual_election_date_and_county(wrong):
+    lines = ["2024 General Election", "November 05, 2024", "Statement of Vote", "Clark County"]
+    if wrong == "year":
+        lines[0] = "2026 General Election"
+    elif wrong == "date":
+        lines[1] = "November 08, 2022"
+    elif wrong == "county":
+        lines[3] = "Washoe County"
+    with clark_originals.fitz.open() as doc:
+        doc.new_page().insert_text((72, 72), "\n".join(lines))
+        raw = doc.tobytes()
+    if wrong is None:
+        assert clark_originals.pdf_inventory(raw, 2024)["pages"] == 1
+    else:
+        with pytest.raises(ValueError):
+            clark_originals.pdf_inventory(raw, 2024)
+
+
+@pytest.mark.parametrize("continuation", [
+    "native", "wrong_election", "blank_terminal", "blank_middle", "textless_marks"])
+def test_clark_pdf_preserves_native_continuations_and_blank_endings_but_rejects_conflicts(continuation):
+    with clark_originals.fitz.open() as doc:
+        doc.new_page().insert_text((72, 72),
+            "2024 General Election\nNovember 05, 2024\nStatement of Vote\nClark County")
+        page = doc.new_page()
+        if continuation == "native":
+            page.insert_text((72, 72), "Registered\nTurnout\nPercent\nEarly Vote\n100\nMail\n200")
+        elif continuation == "wrong_election":
+            page.insert_text((72, 72),
+                "2022 General Election\nNovember 08, 2022\nStatement of Vote\nClark County")
+        elif continuation == "blank_middle":
+            doc.new_page().insert_text((72, 72), "Registered\nTurnout\nPercent\nMail")
+        elif continuation == "textless_marks":
+            page.draw_rect(clark_originals.fitz.Rect(72, 72, 100, 100), fill=(0, 0, 0))
+        raw = doc.tobytes()
+    if continuation in {"native", "blank_terminal"}:
+        result = clark_originals.pdf_inventory(raw, 2024)
+        assert result["pages"] == 2 and result["pages_with_election_identity"] == 1
+        assert result["continuation_pages_without_repeated_identity"] == (continuation == "native")
+        assert result["blank_terminal_pages"] == ([2] if continuation == "blank_terminal" else [])
+    else:
+        with pytest.raises(ValueError):
+            clark_originals.pdf_inventory(raw, 2024)
 
 
 def missouri_christian_fixture():
@@ -1765,6 +1909,25 @@ def test_multiyear_original_downloads_preserve_years_and_do_not_override_validat
     assert hi[2024]["publication"] == "published_partial" and hi[2024]["results_source"] == "reviewed-map"
     assert hi[2024]["complete"] == "no"
     assert hi[2016]["publication"] == "not_published"
+
+
+def test_county_original_acquisitions_retain_scope_without_downgrading_existing_maps():
+    batch = dict(complete_download_url="full.zip", elections={str(year): dict(
+        year=year, state_code="NV", original_files=202, original_bytes=1000,
+        source_url="official", next_action="Reconcile Clark and continue other counties",
+        notes="Clark County only, not statewide Nevada.", participation="not_reconciled")
+        for year in (2024, 2022)})
+    coverage = dict(partial=True, source_url="existing-map", next_action="Continue other counties",
+                    notes="Previously validated map scope")
+    rows = precinct_coverage.build_rows({"coverage": {"2024": {"NV": coverage}}},
+                                       published=True, source_batches=[batch])
+    nevada = {r["year"]: r for r in rows if r["state_code"] == "NV"}
+    assert "Clark County only, not statewide Nevada." in nevada[2022]["notes"]
+    assert nevada[2022]["complete"] == "no" and nevada[2022]["join"] == "pending"
+    assert nevada[2022]["participation"] == "not_reconciled"
+    assert nevada[2024]["notes"] == "Previously validated map scope"
+    assert nevada[2024]["publication"] == "published_partial"
+    assert nevada[2024]["results_source"] == "existing-map"
 
 
 def test_historical_acquisition_never_produces_a_metadata_only_archive(tmp_path, monkeypatch):
