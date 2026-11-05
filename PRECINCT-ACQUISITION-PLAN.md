@@ -88,7 +88,7 @@ change was made. See
 Butler's actual index returned HTTP404; the response and receipt are
 retained rather than treating a cached search page as a successful acquisition.
 
-**Berks primary data published; UI verification next.** The actual county Election
+**Berks primary data and downloads are live verified.** The actual county Election
 Results page links the reviewed 2026 General Election master dashboard despite
 stale primary-election prose on the parent. Fifty-nine screened source responses
 retain complete metadata, child dashboards, query inputs, native terms and
@@ -124,8 +124,13 @@ All four local modes now pass that exact set, retaining all 258 earlier links,
 all 52 UF rows, five historical years and 255 historical scope cells.
 Seven participation tests, Astro check (zero errors/warnings, five hints),
 build and 94 byte-verified bulk downloads pass. Prepared Pages size is
-987,335,410 bytes, below 1 GB. Exact deployed-revision and production browser
-proof remain required; no unchanged map suite was repeated.
+987,335,410 bytes, below 1 GB. UI revision
+`e106ccaa9f0866bcb331e50d34cfd32a051c2660` passed Pages run `42132560409`
+and full-history credential run `42132560564`. Production registry and download
+manifest bytes match the prepared artifact. All four production modes pass
+the exact 267-link set, retaining all prior 258 links and unchanged coverage.
+No unchanged map suite was repeated. See
+`data/county-source-reviews/20261105-berks-publication-01/`.
 
 **Earlier current-source cleanup (historical record).** On November 5,
 GitHub reported Google API keys copied from public county linking HTML. The
