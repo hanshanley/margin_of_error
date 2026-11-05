@@ -2,6 +2,7 @@
 
 import argparse
 import csv
+import gzip
 import hashlib
 import io
 import json
@@ -31,6 +32,8 @@ for snapshot in source_registry["additional_snapshots"]:
         source_links.add(snapshot["base_url"] + "participation.json.gz")
 source_reviews = [json.loads((root / path).read_text()) for path in source_registry["source_reviews"]]
 source_links.update(review["complete_download_url"] for review in source_reviews)
+source_links.update(review["base_url"] + table["file"]
+                    for review in source_reviews for table in review.get("tables", []))
 expected_links = baseline | new_links | source_links
 assert len(baseline) == 61 and len(new_links) == 4 and not baseline & new_links
 proof = dict(base_url=base, source_matched=True, full_csv_endpoints=[], modes=[])
@@ -57,15 +60,18 @@ for review in registry["reviews"]:
             sha256=hashlib.sha256(response.content).hexdigest()))
 
 for review in source_reviews:
-    if not review.get("count_csv"):
-        continue
-    response = requests.get(review["base_url"] + review["count_csv"], timeout=90)
-    response.raise_for_status()
-    assert response.content == (root / review["data_directory"] / review["count_csv"]).read_bytes()
-    rows = list(csv.DictReader(io.StringIO(response.text)))
-    assert len(rows) == review["reporting_units"]
-    proof["full_csv_endpoints"].append(dict(file=review["count_csv"],
-        rows=len(rows), bytes=len(response.content), sha256=hashlib.sha256(response.content).hexdigest()))
+    tables = {table["file"]: table for table in review.get("tables", [])}
+    if review.get("count_csv"):
+        tables[review["count_csv"]] = dict(file=review["count_csv"], rows=review["reporting_units"])
+    for filename, table in tables.items():
+        response = requests.get(review["base_url"] + filename, timeout=90)
+        response.raise_for_status()
+        assert response.content == (root / review["data_directory"] / filename).read_bytes()
+        body = gzip.decompress(response.content) if filename.endswith(".gz") else response.content
+        rows = list(csv.DictReader(io.StringIO(body.decode("utf-8-sig"))))
+        assert len(rows) == table["rows"]
+        proof["full_csv_endpoints"].append(dict(file=filename, rows=len(rows),
+            bytes=len(response.content), sha256=hashlib.sha256(response.content).hexdigest()))
 
 with sync_playwright() as playwright:
     browser = playwright.chromium.launch()

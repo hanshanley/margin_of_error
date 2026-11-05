@@ -1,0 +1,39 @@
+{
+  "year": 2026,
+  "state_code": "AR",
+  "office": "U.S. House; separate native participation; all-contest originals",
+  "candidate_results": "acquired_reconciled_native_precinct_counts",
+  "boundaries": "official_portal_reference_acquired_review_pending",
+  "join": "withheld_pending_county_qualified_geometry_review",
+  "validation": "native_json_csv_and_independent_api_counts_passed",
+  "publication": "full_counts_download_only",
+  "participation": "native_precinct_ballot_counts_acquired_rates_withheld",
+  "source_url": "https://arkansas.tally-enr.com/#bucket=results&filter=Federal&contest=eafd140a-9378-43a2-bd6d-f8661524139b",
+  "data_directory": "data/precinct-source-reviews/20261105/AR-2026-native-counts",
+  "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/36fb8b109d0044a1d3cc7527a2810cdf70f3dc2d/data/precinct-source-reviews/20261105/AR-2026-native-counts/",
+  "count_csv": "precinct-counts.csv",
+  "reporting_units": 2769,
+  "tables": [
+    {
+      "file": "precinct-counts.csv",
+      "rows": 2769,
+      "label": "2026 Arkansas: all 2,769 native House reporting vectors; missing totals retained; maps withheld (CSV)"
+    },
+    {
+      "file": "precinct-participation.csv",
+      "rows": 2768,
+      "label": "2026 Arkansas: all 2,768 separate native precinct participation observations; missing ballots and registrations retained; rates withheld (CSV)"
+    },
+    {
+      "file": "native-source/originals/official-full-election-csv.gz",
+      "rows": 106922,
+      "label": "2026 Arkansas: complete original results for all 1,315 contests and reporting scopes; not turnout; native CSV zero serialization retained (CSV · gzip)"
+    }
+  ],
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-arkansas-native-counts-20261105/complete-arkansas-2026-native-count-review-02.zip",
+  "complete_download_bytes": 11101053,
+  "complete_download_sha256": "2a48bbc62c55b074c877172c94da4b02de0546211322c576200818e5b16548a9",
+  "maps_approved": false,
+  "next_action": "Follow actual public precinct-geometry requests; validate county-qualified native identities, election applicability, split House scopes, topology and residential vote modes before any mapping. Review native electorate definitions before rates.",
+  "notes": "Unofficial November 3, 2026 election, native API v173. Full JSON and CSV originals cover 1,315 contests; all 106,922 CSV candidate rows match JSON. JSON omits 5,401 candidate totals that CSV serializes as zero; normalized JSON-derived omissions remain missing. All House candidate and three-mode precinct/county/state scopes reconcile; 431 federal API summary candidate cells independently match. The 2,769 House vectors include 83 omitted totals; 2,768 separate native precinct observations include 82 omitted ballot totals. All observed ballot scopes reconcile to 75 counties and 893,026 statewide ballots. Never use candidate votes as ballots or merge reused precinct IDs across counties. Native percentages remain separate from withheld analysis rates. Maps unapproved. Complete archive has 17 checksums and 12 original receipts, independently checked byte-identical archive-only rebuild and whole anonymous remote-release verification."
+}

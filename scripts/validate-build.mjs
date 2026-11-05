@@ -235,16 +235,28 @@ assert.equal(participation('#national-snapshot tbody tr').length, 13);
 assert.match(participation('#definitions').text(), /unverified, not declared unavailable/);
 assert.match(participation('.participation-scope').first().text(), /not a nationwide precinct map/);
 const precinctResultsPointer = JSON.parse(await text('precinct-results.json'));
+const sourceReviews = await Promise.all((precinctResultsPointer.source_reviews ?? []).map(async path =>
+	JSON.parse(await readFile(new URL(`../${path}`, import.meta.url), 'utf8'))));
+const participationReviews = JSON.parse(await text('participation-source-reviews.json')).reviews;
+const countyResultsPointer = JSON.parse(await text('county-results.json'));
 assert.equal(participation('#downloads a[download]').length,
-	18 + (precinctResultsPointer.source_reviews ?? []).length
+	18 + sourceReviews.reduce((count, review) => count + 1 + (review.tables ?? []).length, 0)
 	+ (precinctResultsPointer.source_batches ?? []).length
-	+ 3 * (precinctResultsPointer.additional_snapshots ?? []).length);
-for (const path of precinctResultsPointer.source_reviews ?? []) {
-	const review = JSON.parse(await readFile(new URL(`../${path}`, import.meta.url), 'utf8'));
+	+ (precinctResultsPointer.additional_snapshots ?? []).reduce((count, snapshot) =>
+		count + 2 + (snapshot.participation_available !== false ? 1 : 0), 0)
+	+ 3 * (1 + (countyResultsPointer.previous_snapshots ?? []).length)
+	+ participationReviews.reduce((count, review) => count + 1 + review.tables.length, 0));
+for (const review of sourceReviews) {
 	const link = participation('#downloads a[download]').filter((_, element) =>
 		participation(element).attr('href') === review.complete_download_url);
-	assert.equal(link.length, 1, `Missing complete source-review download: ${path}`);
+	assert.equal(link.length, 1, `Missing complete source-review download: ${review.complete_download_url}`);
 	assert.match(link.text(), new RegExp(`${review.year} ${review.state_code} source review`));
+	for (const table of review.tables ?? []) {
+		const tableLink = participation('#downloads a[download]').filter((_, element) =>
+			participation(element).attr('href') === review.base_url + table.file);
+		assert.equal(tableLink.length, 1, `Missing complete source-review table: ${table.file}`);
+		assert.equal(tableLink.text(), table.label);
+	}
 }
 for (const batch of precinctResultsPointer.source_batches ?? []) {
 	const link = participation('#downloads a[download]').filter((_, element) =>

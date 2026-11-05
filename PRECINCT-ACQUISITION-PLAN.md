@@ -3486,13 +3486,39 @@ only the extracted archive is **byte-identical**. The complete ZIP is
 Proof: `files/arkansas-native-count-package-proof-02.json`.
 No frontend/template application code is redistributed.
 
-**Next executable actions:** commit/push the validated Arkansas source package
-as Hans, publish an immutable release bound to that exact source commit,
-independently redownload/verify the whole archive, then integrate the complete
-counts and native participation downloads. Follow actual precinct geometry
-declarations separately; keep maps and rates withheld until their scope is
-established. Finish Alabama's complete count review and original county summaries.
-No new live Arkansas coverage or ledger completion is claimed before integration.
+Hans source commit **`36fb8b109d0044a1d3cc7527a2810cdf70f3dc2d`** is pushed.
+Immutable release **`voter-precinct-arkansas-native-counts-20261105`** is bound to
+that exact commit; its entire public archive was anonymously redownloaded with
+byte equality, member/CRC, all 17 checksum and all 12 original-receipt checks.
+Remote proof: `files/arkansas-native-count-remote-release-proof-02.json`.
+
+The registered count review pins this exact source and release. It adds the full
+ZIP, every House reporting vector, separate native participation observations,
+and the complete original 1,315-contest CSV-gzip as four real data downloads.
+Only AR2026 changes in the 1,632-cell worklist; all cells remain incomplete.
+The map renderer, every older source entry, colors, zoom and 2026 default are
+unchanged. Optional per-review table links also work without JavaScript.
+
+Local source-matched production checks pass all **77** complete downloads
+(retaining all **73** older links), all **10** complete CSV endpoints including
+the 106,922-row native original, and desktop/mobile with/without JavaScript.
+Proof: `files/arkansas-native-count-ui-local-browser-proof-03.json`.
+Astro check: **0 errors, 0 warnings**; production build succeeds; 21 focused
+Arkansas/coverage tests and seven existing publication unit tests pass.
+Pages verifies all **94** relocated bulk downloads byte-for-byte; prepared site
+is **986,273,229 bytes**. The build validator's obsolete source-link count was
+updated to registered reviews/tables, actual optional participation files and
+county snapshots; all participation assertions pass. The full unrelated site
+validator subsequently stops at the existing UK homepage topic-card assertion
+(23 actual versus 16 expected, line 1089 before this integration); do not alter
+UK content or its assertion as part of this election-data work.
+
+**Next executable actions:** commit/push this tested count-download integration
+as Hans and verify its exact production deployment, unqueried public metadata
+and four-mode complete-download matrix. No new mapped Arkansas coverage is
+claimed. Follow actual precinct geometry declarations separately; keep maps
+and rates withheld until their scope is established. Finish Alabama's complete
+count review and original county summaries.
 
 ## Resume procedure for every work session or scheduled prompt
 
