@@ -112,7 +112,7 @@
   "party_votes": {
     "data_directory": "data/county-results/20261105-official-pa-01/party-votes",
     "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/cbff6e4a4bcd8b4569f447b0d994a34ca79ca10f/data/county-results/20261105-official-pa-01/party-votes/",
-    "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-official-pa-20261105-01/complete-county-results-pa-01.zip",
+    "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-source-redaction-20261105-01/complete-county-results-pa-sanitized-01.zip",
     "tables": [
       {
         "file": "county-party-totals.csv.gz",

@@ -5,7 +5,7 @@
     {
       "mobile": false,
       "javascript": true,
-      "complete_downloads": 226,
+      "complete_downloads": 225,
       "uf_rows_source_matched": 52,
       "county_candidate_ledger_rows": 4896,
       "historical_house_years_source_matched": [
@@ -22,7 +22,7 @@
     {
       "mobile": false,
       "javascript": false,
-      "complete_downloads": 226,
+      "complete_downloads": 225,
       "uf_rows_source_matched": 52,
       "county_candidate_ledger_rows": 4896,
       "historical_house_years_source_matched": [
@@ -38,7 +38,7 @@
     {
       "mobile": true,
       "javascript": true,
-      "complete_downloads": 226,
+      "complete_downloads": 225,
       "uf_rows_source_matched": 52,
       "county_candidate_ledger_rows": 4896,
       "historical_house_years_source_matched": [
@@ -55,7 +55,7 @@
     {
       "mobile": true,
       "javascript": false,
-      "complete_downloads": 226,
+      "complete_downloads": 225,
       "uf_rows_source_matched": 52,
       "county_candidate_ledger_rows": 4896,
       "historical_house_years_source_matched": [
@@ -130,7 +130,6 @@
     "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-house-history-20261105-04/state-coverage.csv.gz",
     "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-house-history-20261105-04/withheld-candidate-party-lines.csv.gz",
     "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-house-history-20261105-04/year-coverage.csv.gz",
-    "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-official-pa-20261105-01/complete-county-results-pa-01.zip",
     "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-party-votes-20261105-02/complete-2026-house-party-votes-02.zip",
     "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-monroe-20261105-01/complete-monroe-2026-county-results-01.zip",
     "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-montgomery-20261105-01/complete-montgomery-2026-county-results-01.zip",

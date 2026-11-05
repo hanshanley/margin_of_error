@@ -8,7 +8,7 @@
   "full_site_validation_passed": false,
   "unrelated_full_site_failure": "validate-build.mjs UK topic-card count expects16 but unchanged staged UK export contains23; not modified",
   "pages_preparation_passed": true,
-  "pages_artifact_bytes": 987291589,
+  "pages_artifact_bytes": 987291619,
   "legacy_download_urls_preserved": 216,
   "unsafe_zip_urls_replaced": {
     "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-official-pa-20261105-01/complete-county-results-pa-01.zip": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-source-redaction-20261105-01/complete-county-results-pa-sanitized-01.zip",
@@ -26,5 +26,8 @@
     "https://raw.githubusercontent.com/hanshanley/margin_of_error/3d2be9ada0d1022511815fd8edb9d96fc7666b54/data/county-source-reviews/20261105-bucks-reviewed-02/county-participation.csv": "https://raw.githubusercontent.com/hanshanley/margin_of_error/28cdb2c434e01ab2fe45696970e95b4454900a08/data/county-source-reviews/20261105-bucks-reviewed-02/county-participation.csv",
     "https://raw.githubusercontent.com/hanshanley/margin_of_error/3d2be9ada0d1022511815fd8edb9d96fc7666b54/data/county-source-reviews/20261105-bucks-reviewed-02/native-unit-participation.csv": "https://raw.githubusercontent.com/hanshanley/margin_of_error/28cdb2c434e01ab2fe45696970e95b4454900a08/data/county-source-reviews/20261105-bucks-reviewed-02/native-unit-participation.csv",
     "https://raw.githubusercontent.com/hanshanley/margin_of_error/3d2be9ada0d1022511815fd8edb9d96fc7666b54/data/county-source-reviews/20261105-bucks-reviewed-02/native-unit-candidate-counts.csv": "https://raw.githubusercontent.com/hanshanley/margin_of_error/28cdb2c434e01ab2fe45696970e95b4454900a08/data/county-source-reviews/20261105-bucks-reviewed-02/native-unit-candidate-counts.csv"
-  }
+  },
+  "all_display_modes_exactly_match_expected_complete_download_urls": true,
+  "retired_nested_party_zip_link_reproduced_and_removed": true,
+  "retired_archive_build_guard_passed": true
 }

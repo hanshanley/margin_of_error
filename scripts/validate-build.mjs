@@ -244,6 +244,15 @@ const historicalHousePointer = JSON.parse(await text('historical-house-counties.
 const historicalHouseSnapshots = [historicalHousePointer, ...(historicalHousePointer.previous_snapshots ?? [])];
 const ufPointer = JSON.parse(await text('uf-turnout.json'));
 const ufSnapshots = [ufPointer, ...(ufPointer.previous_snapshots ?? [])];
+for (const retiredArchive of [
+	'voter-county-official-pa-20261105-01/complete-county-results-pa-01.zip',
+	'voter-county-pennsylvania-bucks-20261105-01/complete-bucks-2026-county-results-02.zip',
+	'voter-county-pennsylvania-three-county-20261105-01/complete-pa-three-county-2026-04.zip',
+]) {
+	assert.ok(!participation('#downloads a[download]').toArray().some(element =>
+		participation(element).attr('href').endsWith(retiredArchive)),
+		`Withdrawn source archive is still linked: ${retiredArchive}`);
+}
 assert.equal(participation('#downloads a[download]').length,
 	21 + sourceReviews.reduce((count, review) =>
 		count + 1 + (review.tables ?? []).length + (review.geometry_review ? 1 : 0), 0)
