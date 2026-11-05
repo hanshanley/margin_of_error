@@ -1659,10 +1659,30 @@ checks every original and receipt, verifies CSV counts without counting
 the heterogeneous footer, and reconstructs every snapshot file and the
 entire ZIP byte-for-byte using only distributed originals.
 Proof: `files/nevada-clark-historical-offline-reproduction-proof.json`.
-**33 focused regressions pass** for the new archive and county-only ledger
-scope; the final full-suite/source-release verification follows before
-public registration. No candidate reconciliation, new map or new
-participation rate is claimed.
+**308 collector/coverage tests pass**. Source commit
+`96b735f02828b24cdb845851132c1450ab45eb55` is pushed as Hans, author and
+committer, without attribution trailers. New immutable release
+`voter-precinct-nevada-clark-historical-20261105` targets that exact commit.
+The entire published archive was redownloaded and matched every local byte,
+size and SHA; four pinned source metadata files also matched.
+Remote proof: `files/nevada-clark-historical-remote-release-proof.json`.
+Public registration passes local validation, not yet live verified:
+exactly one new complete-download link (**47 total**) and one changed
+ledger cell (**NV 2022**) among 1,632. NV 2020/2024 map rows, NV 2026,
+all other cells and the renderer remain identical. County-only source
+participation metadata must not overwrite independently mapped status.
+No candidate reconciliation, new map or new participation rate is claimed.
+The final production build passes all **308** collector/coverage tests,
+the **7** participation unit tests and normal build checks; the release-aware
+Pages preparer verifies **94** existing byte-identical relocated downloads.
+Prepared site size is **986,218,808 bytes**. Bounded desktop/mobile with
+and without JavaScript passes all **47** complete-download links, explicit
+Clark-only scope, prior statewide 2022 originals retained, no overflow,
+2026 precinct/margin default and exact NV state fallback without invented
+precincts. Local proof:
+`files/nevada-clark-historical-local-browser-proof.json`.
+Temporary preview helper is stopped. Next: Hans UI commit/push and exact
+run/SHA production verification before marking this publication done.
 The native election selector reaches elections
 before 1964, providing a concrete later historical route without replacing
 the remaining 2026 work.
@@ -1782,6 +1802,28 @@ election code, and do not claim a general-election reference was acquired.
 Original cache: `files/precinct-expansion-sources/MD-2026/`.
 Continue actual county aggregate/precinct reports and later state updates;
 neither primary returns nor source-index labels become 2026 general data.
+
+Following actual declared links, the **2026 general governor and all-eight-
+district House reports** are now fully acquired, followed by **all nine**
+declared governor/House county breakdowns: **11 full general result HTML
+originals / 215,876 bytes**. Exact receipt URLs, native HTML and every
+county breakdown are retained, not metadata-only downloads. Their native
+refresh timestamp is **11/04/2026 11:25:23 PM**.
+The governor report shows **1,969 / 1,979 election-day precincts reported**
+and **1,862,847 candidate votes**, not ballots cast. Native provisional
+counts are **NR**, not zero. These reports are state/district/county
+aggregates; none supplies precinct candidate rows for a map.
+The actual declared `using_election_data_instructions.html` is acquired
+in full (**35,079 bytes**). Its explicit statement about all-mode precinct
+reporting concerns the **2020 general election**; do not extend that to
+2026 or older elections without source-specific checks.
+The actual county-board directory is acquired. Legitimate next routes
+declared there include Anne Arundel's board, `https://www.777vote.org/`
+for Montgomery, and Frederick's elections page. Acquisition of these
+three actual county homepages is bounded and underway.
+The state election index's Box folders are explicitly **Polling Place
+Plans and Canvass Schedules**, not result exports or verified precinct
+boundaries; do not relabel them.
 
 ## Resume procedure for every work session or scheduled prompt
 

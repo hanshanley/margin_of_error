@@ -1893,6 +1893,7 @@ def test_multiyear_original_downloads_preserve_years_and_do_not_override_validat
     batch = dict(complete_download_url="full.zip", elections={str(year): dict(
         year=year, state_code="HI", original_files=9, original_bytes=1000,
         source_url="official", next_action="Reconcile and obtain boundaries",
+        participation="not_reconciled",
         validation="complete_source_bytes_and_native_record_structure_verified")
         for year in (2024, 2022, 2020, 2018)})
     coverage = dict(partial=True, source_url="reviewed-map", next_action="Verify remaining precincts",
@@ -1904,16 +1905,18 @@ def test_multiyear_original_downloads_preserve_years_and_do_not_override_validat
         assert hi[year]["candidate_results"] == "acquired_originals_review_pending"
         assert hi[year]["publication"] == "full_originals_download_only"
         assert hi[year]["validation"] == "complete_source_bytes_and_native_record_structure_verified"
-        assert hi[year]["participation"] == "not_acquired" and hi[year]["complete"] == "no"
+        assert hi[year]["participation"] == "not_reconciled" and hi[year]["complete"] == "no"
         assert "9 files, 1,000 uncompressed bytes" in hi[year]["notes"]
     assert hi[2024]["publication"] == "published_partial" and hi[2024]["results_source"] == "reviewed-map"
+    assert hi[2024]["participation"] == "not_reconciled"
     assert hi[2024]["complete"] == "no"
     assert hi[2016]["publication"] == "not_published"
 
 
 def test_county_original_acquisitions_retain_scope_without_downgrading_existing_maps():
     batch = dict(complete_download_url="full.zip", elections={str(year): dict(
-        year=year, state_code="NV", original_files=202, original_bytes=1000,
+        year=year, state_code="NV", county_name="Clark", county_fips="32003",
+        original_files=202, original_bytes=1000,
         source_url="official", next_action="Reconcile Clark and continue other counties",
         notes="Clark County only, not statewide Nevada.", participation="not_reconciled")
         for year in (2024, 2022)})
@@ -1928,6 +1931,7 @@ def test_county_original_acquisitions_retain_scope_without_downgrading_existing_
     assert nevada[2024]["notes"] == "Previously validated map scope"
     assert nevada[2024]["publication"] == "published_partial"
     assert nevada[2024]["results_source"] == "existing-map"
+    assert nevada[2024]["participation"] == "not_acquired"
 
 
 def test_historical_acquisition_never_produces_a_metadata_only_archive(tmp_path, monkeypatch):

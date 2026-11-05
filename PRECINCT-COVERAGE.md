@@ -170,7 +170,7 @@ Checkmarks are reserved for verified, complete live coverage.
 | [ ] | New Hampshire | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | New Jersey | source_identified | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | New Mexico | acquired_originals_review_pending | not_reviewed | pending | source_bytes_verified_scope_pending | full_originals_download_only | not_inferred_from_candidate_votes |
-| [ ] | Nevada | acquired_originals_review_pending | not_reviewed | pending | source_bytes_verified_scope_pending | full_originals_download_only | not_inferred_from_candidate_votes |
+| [ ] | Nevada | acquired_originals_review_pending | not_reviewed | pending | county_only_source_bytes_election_identity_and_native_structure_verified | full_originals_download_only | not_reconciled |
 | [ ] | New York | acquired_originals_review_pending | not_reviewed | pending | source_bytes_verified_scope_pending | full_originals_download_only | not_inferred_from_candidate_votes |
 | [ ] | Ohio | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
 | [ ] | Oklahoma | reviewed_archive_no_match | not_reviewed | pending | pending | not_published | not_acquired |
