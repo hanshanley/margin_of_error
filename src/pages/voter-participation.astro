@@ -126,7 +126,7 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 					<label id="precinct-search-label" hidden>Find a precinct<input id="precinct-search" type="search" list="precinct-options" placeholder="ID or precinct name" autocomplete="off" /><datalist id="precinct-options"></datalist></label>
 					<label>Year<select id="year"></select></label>
 					<label id="map-color-label">Map color<select id="map-color"><option value="margin" selected>Election results · red / blue</option><option value="turnout">Participation</option></select></label>
-					<label id="map-level-label">Detail<select id="map-level"><option value="precinct">Precincts · verified coverage</option><option value="auto">As you zoom</option><option value="county">Counties / municipalities</option><option value="district">Congressional districts</option></select></label>
+					<label id="map-level-label">Detail<select id="map-level"><option value="county">Counties / equivalents</option><option value="precinct">Precincts · existing coverage</option><option value="auto">As you zoom</option><option value="district">Congressional districts</option></select></label>
 					<label id="current-state-label" hidden>State<select id="current-state-select"></select></label>
 					<label id="mode-label" hidden>Reported ballots<select id="mode"></select></label>
 					<label id="dimension-label" hidden>Compare<select id="dimension"></select></label>
@@ -503,11 +503,16 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 				election from 1964 through 2026 has an explicit entry in the coverage worklist, newest first.
 				Partial coverage is not completion; state colors remain beneath unmatched precinct areas.</p>
 			{countyResultsPointer && <p>2026 county / equivalent House results cover {countyResultsPointer.states} states on 2026 Census county
-				reference boundaries. Verified precinct colors take priority, with county results beneath
-				unmatched areas. Maine and Pennsylvania county joins are withheld; D.C. is outside this
+				reference boundaries. Counties are the default, with their own red/blue results visible at
+				national scale; existing precinct layers remain optional. Maine and Pennsylvania county joins are withheld; D.C. is outside this
 				435-district source. Explicit overseas returns and zero-only unresolved Chicago reporting
 				placeholders remain separately unallocated, not merged into Cook County. County results are
 				not precinct results, unique voter counts or participation rates.</p>}
+			{countyResultsPointer?.party_votes && <p>Separate full-party exports retain every reported party label,
+				independent, candidate and fusion line, rather than combining third parties into “other.”
+				County party tables cover 48 states; full-district state party totals cover 49.
+				Pennsylvania responses explicitly marked as test data are withheld. These are House candidate
+				votes, not Senate results, ballots, party registration or demographic turnout.</p>}
 			{precinctResultsPointer && <p>2024 precinct / municipal candidate data: <strong>The New York Times</strong>.
 				Some boundaries are approximate; some New England reporting areas are townships.
 				By downloading these data, you agree to the <a href={`${precinctResultsPointer.base_url}originals/NYT-2024-LICENSE.txt`}>NYT C-UDA terms</a>,
@@ -535,6 +540,12 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 			</>)}
 			<div class="download-links">
 				<a href="/precinct-coverage.csv" download>Every state and election, newest first: full precinct worklist (CSV)</a>
+				{countyResultsPointer?.party_votes && <>
+					<a href={countyResultsPointer.party_votes.complete_download_url} download>2026 House: complete all-party and candidate totals, all original district responses, receipts, audit and portable tools (ZIP)</a>
+					{countyResultsPointer.party_votes.tables.map((table: { file: string; label: string }) =>
+						<a href={`${countyResultsPointer.party_votes.base_url}${table.file}`} download>{table.label} (CSV · gzip)</a>)}
+					<a href={`${countyResultsPointer.party_votes.base_url}audit.json`}>All-party counts: coverage, excluded test data and exact file checksums (JSON)</a>
+				</>}
 				{participationReviews.map((review: ParticipationReview) => <>
 					{!precinctSourceReviews.some((source: { complete_download_url: string }) => source.complete_download_url === review.complete_download_url) &&
 						<a href={review.complete_download_url} download>{review.label}: complete reviewed counts, original reports, receipts, audits and portable tools (ZIP)</a>}

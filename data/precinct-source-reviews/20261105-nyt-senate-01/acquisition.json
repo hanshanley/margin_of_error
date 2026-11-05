@@ -1,0 +1,33 @@
+{
+  "year": 2026,
+  "office": "U.S. Senate",
+  "source_url": "https://www.nytimes.com/interactive/2026/11/03/us/elections/results-senate-precinct-maps.html",
+  "evidence_kind": "User-supplied complete page text and screenshot; not acquired machine-readable counts",
+  "source_data_as_of": "2026-11-05T10:11:00-05:00",
+  "publication": "source_lead_only",
+  "candidate_data_acquired": false,
+  "geometry_acquired": false,
+  "published_source_coverage": {
+    "GA": {"available_precincts": 2496, "declared_precincts": 2580},
+    "SC": {"available_precincts": 2312, "declared_precincts": 2316},
+    "NE": {"available_precincts": 1321, "declared_precincts": 1321},
+    "NC": {"available_precincts": 2624, "declared_precincts": 2625},
+    "MI": {"available_precincts": 2419, "declared_precincts": 3898},
+    "TX": {"available_precincts": 5371, "declared_precincts": 9352},
+    "FL": {"available_precincts": 4057, "declared_precincts": 5655},
+    "VA": {"available_precincts": 2529, "declared_precincts": 2531},
+    "OH": {"available_precincts": 4199, "declared_precincts": 8833},
+    "IA": {"available_precincts": 1328, "declared_precincts": 1655},
+    "AK": {"available_precincts": 399, "declared_precincts": 402}
+  },
+  "notes": [
+    "This confirms reported substate Senate coverage in these eleven states; it is not evidence that every precinct or every state is covered.",
+    "The source calls boundaries approximate; do not relabel them official.",
+    "The page generally includes each state's reported ballot modes, subject to stated exceptions. Preserve any race- or state-specific exclusions.",
+    "The displayed density is reported candidate votes per area, not population density, unique voters or a turnout rate.",
+    "Preserve actual independent and fusion-party labels. Nebraska's independent candidate must not silently become Democratic.",
+    "Direct public page retrieval returned HTTP 403. No login, paywall or access restriction was bypassed.",
+    "A public GitHub repository search found the already acquired NYT 2024 presidential dataset, not a 2026 Senate repository. This search does not establish that no public 2026 release exists.",
+    "Use the declared state sources and public datasets to acquire actual candidate/count and geometry files. Do not copy narrative annotations, estimate votes from colors, or use House counts as Senate results."
+  ]
+}

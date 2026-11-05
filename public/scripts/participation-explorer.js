@@ -41,6 +41,7 @@ const state = {
   context: null, contextPath: "", margins: [], contextError: "", subshapes: new Map(),
   results: null, resultsError: "",
   countyResults: null, countyResultsPath: "", countyResultsError: "",
+  countyOverview: null,
   precinctResults: null, precinctResultsPath: "", precinctResultShapes: new Map(),
   precinctResultSelection: "", precinctResultsError: "",
   drillKey: "", drillToken: 0, drillTimer: null, subSelection: null,
@@ -470,11 +471,17 @@ async function loadCurrentPrecincts() {
       state.precinctResultsError = `Precinct candidate returns could not be loaded: ${error.message}.`;
     }
   }
+  async function countyJSON(response) {
+    const raw = new Uint8Array(await response.arrayBuffer());
+    if (raw[0] !== 31 || raw[1] !== 139) return JSON.parse(new TextDecoder().decode(raw));
+    if (!globalThis.DecompressionStream) throw new Error("Compressed county shapes are unsupported");
+    return new Response(new Blob([raw]).stream().pipeThrough(new DecompressionStream("gzip"))).json();
+  }
   async function loadCountyResults() {
     try {
       const pointer = await fetch("/county-results.json");
       if (!pointer.ok) throw new Error(`County result pointer: HTTP ${pointer.status}`);
-      const { base_url } = await pointer.json();
+      const { base_url, overview_url } = await pointer.json();
       const response = await fetch(base_url + "index.json");
       if (!response.ok) throw new Error(`County result coverage: HTTP ${response.status}`);
       const index = await response.json();
@@ -488,19 +495,74 @@ async function loadCurrentPrecincts() {
         && index.coverage[row.state_code])), ...rows];
       state.countyResults = index;
       state.countyResultsPath = base_url;
+      if (overview_url) {
+        const response = await fetch(overview_url);
+        if (!response.ok) throw new Error(`County overview: HTTP ${response.status}`);
+        const data = await countyJSON(response);
+        if (data.year !== index.year || data.features.length !== index.mapped_counties
+          || new Set(data.features.map(feature => feature.properties.key)).size !== index.mapped_counties)
+          throw new Error("National county overview scope disagrees with reviewed counts");
+        state.countyOverview = data;
+      }
     } catch (error) {
       state.countyResultsError = `County candidate returns unavailable; state results remain. ${error.message}.`;
     }
   }
+  function drawNationalCountyResults(map, year) {
+      if (!map.countyOverview) {
+        const group = svgNode("g", { class: "county-overview" });
+        const returns = new Map(state.margins.filter(row => row.year === year && row.level === "county")
+          .map(row => [row.geography, row]));
+        for (const feature of state.countyOverview.features) {
+          const p = feature.properties, election = returns.get(p.key);
+          const selected = map.stateItems.get(p.state_code);
+          if (!selected || !election) continue;
+          const item = projectInside(feature, selected.point);
+          group.append(featurePath(item, null,
+            `${p.name} · ${year}\n${marginLabel(election)} · ${fmt(election.contest_votes)} candidate votes\nCounty results, not turnout`,
+            () => {
+              state.selectedState = selected.feature.properties.NAME;
+              $("state-select").value = state.selectedState;
+              state.countySelection = { year, code: p.state_code, key: p.key };
+              stateDetail(); countyResultDetail(p, election); syncURL(); fit(item.bounds);
+            }, { class: "map-feature county-overview-feature", "data-geography": p.key, "data-level": "county",
+              "data-color-level": election.margin_pp == null ? "none" : "county",
+              "data-margin": election.margin_pp ?? "", "data-total-votes": election.contest_votes,
+              "data-year": year, fill: election.margin_pp == null ? "#d6d3cb" : marginFill(election.margin_pp),
+              tabindex: "-1" }));
+        }
+        map.svg.insertBefore(group, map.detail);
+        map.countyOverview = group;
+      }
+      map.countyOverview.style.display = "";
+      $("coverage-note").textContent = `${year} county / equivalent results: ${Object.keys(state.countyResults.coverage).length} states; `
+        + `${fmt(state.countyResults.colored_counties)} counties colored by their own candidate votes. `
+        + "State colors are fallback only in uncovered states. Candidate votes are not turnout.";
+      $("geography-note").hidden = false;
+      $("geography-note").textContent = "County colors are visible at national scale. Select a county to zoom; "
+        + "full 2026 Census county shapes load as you zoom. The national overview uses display-simplified copies.";
+  }
+  function countyResultDetail(p, election) {
+    const panel = $("substate-detail");
+    panel.replaceChildren(html("h4", "", p.name), html("p", "selection-rate", marginLabel(election)),
+      html("p", "selection-note", `${election.office} · ${fmt(election.contest_votes)} candidate votes. `
+        + `${fmt(election.democratic_votes)} Democratic; ${fmt(election.republican_votes)} Republican; `
+        + `${fmt(election.other_votes)} other. ${election.district_count} House district fragments reconciled.`),
+      html("p", "selection-note", "County / equivalent candidate results on 2026 Census reference boundaries, "
+        + "not precinct results, unique voters or turnout. Explicit overseas returns and zero-only unresolved "
+        + "Chicago reporting placeholders remain unallocated in the complete audit; no city votes are merged into Cook."),
+      sourceLink(election));
+    panel.parentElement.prepend(panel);
+  }
   async function drawCountyResults(map, selected, code, year, token, background = false) {
     const coverage = state.countyResults.coverage[code];
-    const url = state.countyResultsPath + coverage.file;
+    const url = new URL(coverage.file, state.countyResultsPath).href;
     if (!state.subshapes.has(url)) {
       const promise = (async () => {
         const response = await fetch(url);
         if (!response.ok) throw new Error(`County geometry: HTTP ${response.status}`);
         if (!globalThis.DecompressionStream) throw new Error("Compressed county shapes are unsupported; complete downloads remain available");
-        return new Response(response.body.pipeThrough(new DecompressionStream("gzip"))).json();
+        return countyJSON(response);
       })().catch(error => { state.subshapes.delete(url); throw error; });
       state.subshapes.set(url, promise);
     }
@@ -514,16 +576,8 @@ async function loadCurrentPrecincts() {
       const item = projectInside(feature, selected.point);
       const description = `${election.office} · ${marginLabel(election)} · ${fmt(election.contest_votes)} candidate votes`;
       const path = featurePath(item, null, `${p.name} · ${year}\n${description}\nCounty result, not precinct results or turnout`, () => {
-        const panel = $("substate-detail");
-        panel.replaceChildren(html("h4", "", p.name), html("p", "selection-rate", marginLabel(election)),
-          html("p", "selection-note", `${description}. ${fmt(election.democratic_votes)} Democratic; `
-            + `${fmt(election.republican_votes)} Republican; ${fmt(election.other_votes)} other. `
-            + `${election.district_count} House district fragment${election.district_count === 1 ? "" : "s"} reconciled.`),
-          html("p", "selection-note", "County / equivalent candidate results on 2026 Census reference boundaries, "
-            + "not precinct results, unique voters or turnout. Explicit overseas returns and zero-only unresolved "
-            + "Chicago reporting placeholders remain unallocated in the complete audit; no city votes are merged into Cook."),
-          sourceLink(election));
-        panel.parentElement.prepend(panel);
+        state.countySelection = { year, code, key: p.key };
+        countyResultDetail(p, election);
         for (const other of map.detail.querySelectorAll(".selected")) other.classList.remove("selected");
         path.classList.add("selected"); fit(item.bounds);
       }, { class: "map-feature substate-feature", "data-geography": p.key, "data-level": "county",
@@ -538,7 +592,7 @@ async function loadCurrentPrecincts() {
       "Red / blue uses each county's own House candidate votes, not participation.",
       "House district fragments are summed only within their actual county. 2026 Census county reference boundaries, not precincts.");
     $("coverage-note").textContent = `${year} county / equivalent results: ${Object.keys(state.countyResults.coverage).length} states; `
-      + `${fmt(state.countyResults.colored_counties)} colored counties. Precinct layers take priority where verified. `
+      + `${fmt(state.countyResults.colored_counties)} colored counties. Counties are the default detail. `
       + "Maine and Pennsylvania county joins remain withheld; D.C. is outside this 435-district source. "
       + "Whole-state colors remain where county results are missing. Candidate votes are not turnout.";
     $("geography-note").textContent = `${selected.feature.properties.NAME} · ${fmt(coverage.counties)} 2026 Census counties / equivalents; `
@@ -546,6 +600,11 @@ async function loadCurrentPrecincts() {
       + "County fallback, not precinct coloring. Explicit overseas returns stay unallocated; zero-vote rows have no margin. "
       + "Select a county for its counts.";
     marginLegend("U.S. House aggregate");
+    const selection = state.countySelection;
+    if (selection?.year === year && selection.code === code) {
+      const feature = data.features.find(feature => feature.properties.key === selection.key);
+      if (feature && returns.has(selection.key)) countyResultDetail(feature.properties, returns.get(selection.key));
+    }
   }
   function precinctResultDetail(p) {
     const panel = $("substate-detail");
@@ -1711,6 +1770,10 @@ function projectInside(feature, point) {
     const map = state.map;
     if (state.view !== "states" || !map?.stateItems || (!state.context && !state.local && !state.precinctResults)) return;
     const zoomLevel = map.full[0] / state.viewport[2], year = Number($("year").value);
+    const nationalCounties = $("map-color").value === "margin" && $("map-level").value === "county"
+      && state.countyResults?.year === year && state.countyOverview;
+    if (map.countyOverview) map.countyOverview.style.display = nationalCounties ? "" : "none";
+    if (nationalCounties) drawNationalCountyResults(map, year);
     const center = new DOMPoint(state.viewport[0] + state.viewport[2] / 2, state.viewport[1] + state.viewport[3] / 2);
     const currentBounds = map.stateItems.get(stateCode())?.bounds;
     const [vx, vy, vw, vh] = state.viewport;
@@ -1754,9 +1817,17 @@ function projectInside(feature, point) {
       stateDetail();
     }
     map.detail.replaceChildren(); $("substate-detail")?.replaceChildren();
-    $("geography-note").hidden = zoomLevel < 2.3 && level !== "precinct";
+    $("geography-note").hidden = !nationalCounties && zoomLevel < 2.3 && level !== "precinct";
     for (const label of map.svg.querySelectorAll(".map-label, .map-callout-line")) label.style.display = zoomLevel >= 2.3 ? "none" : "";
     if (zoomLevel < 2.3 && level !== "precinct") {
+      if (nationalCounties) {
+        header(`${year} midterm election · county candidate returns`,
+          "County election results across the United States",
+          "Red / blue uses each county's own House candidate votes, not participation.",
+          "County colors are visible without zooming. State fallback only where county results are missing; zero-vote counties have no margin.");
+        marginLegend("U.S. House aggregate");
+        return;
+      }
       if ($("map-color").value === "margin") marginLegend(year % 4 === 0 ? "President" : "U.S. House aggregate");
       else if (isProvisional()) legend([["Count reported", "#718ba5"], ["Not yet available", "#edf0f3"]]);
       else ramp();
@@ -2093,7 +2164,8 @@ async function main() {
   $("map-color").addEventListener("change", render);
   $("map-level").addEventListener("change", () => {
     const item = state.map?.stateItems?.get(stateCode());
-    const needsFit = item && state.map.full[0] / state.viewport[2] < 2.3 && $("map-level").value !== "precinct";
+    const needsFit = item && state.map.full[0] / state.viewport[2] < 2.3
+      && !["precinct", "county"].includes($("map-level").value);
     render();
     if (needsFit) fit(item.bounds);
   });

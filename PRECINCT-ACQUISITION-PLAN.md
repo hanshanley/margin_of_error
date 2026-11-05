@@ -1,15 +1,56 @@
-# Nationwide precinct acquisition and publication plan
+# Nationwide county-first acquisition and publication plan
 
 ## Objective and priority
 
-Expand actual precinct coverage across all 50 states and D.C. and across election
-years. Two partial 2026 states and one broadly mapped presidential election are
-not an acceptable stopping point.
+**November 5, 2026: the latest user instruction is counties instead of further
+precinct expansion.** Make counties the default map detail and primary acquisition
+unit across all 50 states and D.C., newest elections first. Preserve existing
+precinct datasets, but do not let additional precinct geometry block county work.
+Never paint county totals as precinct results, allocate them into precincts, or
+call candidate margins participation.
 
-The user also explicitly accepts **county results instead of precincts, or both**.
-Acquire and publish verified county coverage in parallel with finer precinct
-work; label the geography explicitly. Never paint county totals as precinct
-results, allocate them into precincts, or call candidate margins participation.
+Immediate publication fix: all available county red/blue candidate colors must
+be visible at national scale, without selecting a state or zooming. The existing
+2026 release has 48 states, 3,060 county equivalents and 3,050 nonzero candidate
+margins. Maine/Pennsylvania county joins and D.C. remain gaps, not completed cells.
+State colors are fallback only in uncovered states; explicit zero-vote counties
+have no candidate margin. The new lightweight overview uses the reviewed 2026
+Census shapes; four counties retain unsimplified native geometry because display
+simplification would produce invalid polygons. Full native shapes and complete
+candidate/source downloads remain unchanged.
+
+Next: verify and deploy that fix, then finish the reusable 2026 county-results
+and separately labeled UF/state participation pipelines. UF's currently published
+2026 CSV labels all 52 rows as Initial Estimate, not final administrative ballots.
+Do not silently replace measured participation or infer demographic turnout from
+these state-level estimates. Recurring schedule #4 replaces obsolete precinct-first
+schedule #3 and follows this county-first priority.
+
+The user supplied NYT's 2026 Senate precinct-map page and full coverage notes.
+The source-lead audit is
+`data/precinct-source-reviews/20261105-nyt-senate-01/acquisition.json`: eleven
+states, 29,055 reported precincts out of 41,168 declared in those states.
+These are real finer-resolution source leads, not acquired files or nationwide
+completion. Prioritize public/native GA, SC and NE Senate data alongside county
+coverage. Keep Senate separate from the current House county map, preserve
+approximate-boundary caveats and all reported party labels, and never infer
+votes from map colors or allocate county totals into precincts. Direct NYT
+retrieval returned 403; public GitHub search found the known 2024 repository,
+which is not proof that no 2026 release exists.
+
+The latest additional request is complete party vote totals for later analysis.
+`scripts/export-county-party-votes.py` now validates original district response
+receipts, literal candidate vectors and county reconciliation before exporting
+four complete party/candidate tables. The current reviewed source yields
+9,608 county-party rows, 12,075 county/district candidate rows, 220 state-party
+rows and 1,318 district-candidate rows, preserving 34 native party labels.
+County coverage is 48 states / 3,060 equivalents. State-party coverage is 49
+states / 418 valid House district sources; Pennsylvania's 17 district originals
+explicitly say `test_data: true` and are excluded rather than promoted. Maine
+has scoped district candidate totals but fails county-vector reconciliation.
+The full party ZIP includes all original provider responses/receipts, including
+excluded originals documented in the audit. New county-review archives regenerate
+these exports automatically. Exports remain candidate votes, not participation.
 
 Work in this order: **2026, 2024 gaps, 2022, 2020, 2018, 2016, then every earlier
 even year through 1964**. Include midterms. Use consolidated national and
@@ -20,10 +61,11 @@ per year. While a newer source downloads or
 awaits publication, acquire independent historical batches rather than idling.
 Record unresolved newer-state work and return to it; do not silently abandon it.
 
-The canonical state/year checklist is `public/precinct-coverage.csv`, with
+The existing precinct-only state/year checklist is `public/precinct-coverage.csv`, with
 `PRECINCT-COVERAGE.md` as its readable counterpart. Both track all 1,632
 state/election cells. This plan specifies the work, not a second completion ledger.
-Generate the ledger with `scripts/build-precinct-coverage.py`; do not hand-edit
+Track county coverage separately; county publication does not complete precinct
+cells. Generate the precinct ledger with `scripts/build-precinct-coverage.py`; do not hand-edit
 generated statuses or treat source leads as acquired data.
 
 ## Starting point, not completion

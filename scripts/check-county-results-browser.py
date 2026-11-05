@@ -107,32 +107,51 @@ with sync_playwright() as p:
                 viewport={"width": 390, "height": 844} if mobile else {"width": 1360, "height": 1000},
                 is_mobile=mobile, has_touch=mobile, java_script_enabled=javascript)
             page = context.new_page()
+            if mobile and javascript:
+                context.route("**/county-results-overview.geojson.gz", lambda route: route.fulfill(
+                    status=200, content_type="application/gzip",
+                    body=(root / "public/county-results-overview.geojson.gz").read_bytes()))
             page.on("pageerror", lambda error: errors.append(str(error)))
             page.goto(url)
             links = page.locator("#downloads a[download]")
-            expect(links).to_have_count(download_count)
+            assert links.count() >= download_count, "A complete source download is missing"
             downloads = set(links.evaluate_all("links => links.map(a => a.getAttribute('href'))"))
             assert baseline <= downloads, f"Lost complete downloads: {baseline - downloads}"
             assert pointer["complete_download_url"] in downloads
+            if pointer.get("party_votes"):
+                parties = pointer["party_votes"]
+                assert parties["complete_download_url"] in downloads
+                assert {parties["base_url"] + table["file"] for table in parties["tables"]} <= downloads
+                expect(page.locator("#downloads")).to_contain_text("test data are withheld")
             expect(page.locator("#downloads")).to_contain_text(f"{len(index['coverage'])} states")
             expect(page.locator("#downloads")).to_contain_text("not precinct results")
             assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
             mode = {"mobile": mobile, "javascript": javascript, "complete_downloads": len(downloads)}
+            if javascript:
+                mode["overview_transport"] = "raw gzip" if mobile else "server response"
             if not javascript:
                 context.close()
                 proof["modes"].append(mode)
                 continue
             expect(page.locator("#year")).to_have_value("2026")
-            expect(page.locator("#map-level")).to_have_value("precinct")
+            expect(page.locator("#map-level")).to_have_value("county")
             expect(page.locator("#map-color")).to_have_value("margin")
-            precinct(page, 2026, "NC")
+            overview = page.locator('.county-overview-feature[data-color-level="county"]')
+            expect(overview).to_have_count(index["colored_counties"], timeout=90000)
+            expected_overview = {row["geography"]: [row["margin_pp"], row["contest_votes"], color(row["margin_pp"]), 2026]
+                                 for row in rows if row["margin_pp"] is not None}
+            actual_overview = overview.evaluate_all(
+                "paths => Object.fromEntries(paths.map(p => [p.dataset.geography,"
+                "[+p.dataset.margin,+p.dataset.totalVotes,p.getAttribute('fill'),+p.dataset.year]]))")
+            assert actual_overview == expected_overview
+            assert math.isclose(width(page), 1000), "Default county map must stay at national scale"
             names = dict(page.locator("#state-select option").evaluate_all(
                 "options => options.map(o => [o.textContent, o.value])"))
             state_pointer = json.loads((root / "public/participation-current/latest.json").read_text())
             national = json.loads((root / "public/participation-current" /
                                    state_pointer["snapshot_id"] / "snapshot.json").read_text())
             names = {r["state_code"]: names[r["state"]] for r in national["coverage"]}
-            # The default precinct control must fall back to actual county results.
+            # County colors must already be visible before a state is selected.
             county(page, "NV", names["NV"])
             page.locator("#map-level").select_option("county")
             mapped = {code: county(page, code, names[code]) for code in sorted(index["coverage"])}
@@ -202,6 +221,7 @@ with sync_playwright() as p:
         page.on("pageerror", lambda error: errors.append(str(error)))
         page.route(pattern, lambda route: route.abort())
         page.goto(url)
+        page.locator("#map-level").select_option("precinct")
         expect(page.locator("#state-select")).to_be_enabled()
         page.locator("#state-select").select_option("Washington")
         precinct(page, 2026, "WA")

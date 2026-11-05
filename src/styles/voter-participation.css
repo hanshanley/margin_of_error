@@ -37,6 +37,7 @@
 .map-tools button:disabled { opacity: .35; cursor: default; }
 .map-help { text-align: center; color: var(--muted); font-size: .65rem; margin: .7rem 0 0; }
 .participation-explorer .map-feature { stroke: #f3efe6; stroke-width: .65; vector-effect: non-scaling-stroke; cursor: pointer; }
+.participation-explorer .county-overview-feature { stroke-width: .2; }
 .participation-page[data-active-view="precincts"] .map-feature { stroke-width: .25; }
 .participation-explorer .map-feature:hover { stroke: var(--ink); stroke-width: 1.5; }
 .participation-explorer .map-feature.selected { stroke: #172e48; stroke-width: 2; }
