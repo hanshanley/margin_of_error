@@ -2,6 +2,21 @@
 
 ## Objective and priority
 
+**Source-key remediation takes priority over new publication.** On November 5,
+GitHub reported Google API keys copied from public county linking HTML. The
+affected current Bucks, Chester and Franklin pages are now explicitly sanitized,
+with byte-original hashes retained privately. All 40 county parser/source tests
+and 10 official-merge guards pass; election counts and geometry are unchanged.
+The three affected complete ZIPs (Bucks, national county map, and unpublished
+three-county batch) were withdrawn. Sanitized replacement release and current
+download-link deployment are pending. Do not republish their old ZIPs or copy
+unsanitized snapshots. Both county reviewers now reject Google/Mapbox and
+telemetry key patterns in every HTML file, even with matching acquisition hashes.
+GitHub alerts #1/#2 remain open with unknown key validity: the keys appear
+county/vendor-owned, cannot be rotated from this repository, and historical
+copies remain. No published-history rewrite was authorized. See
+`data/county-source-reviews/20261105-source-key-remediation-01/`.
+
 **November 5, 2026: the latest user instruction is counties instead of further
 precinct expansion.** Make counties the default map detail and primary acquisition
 unit across all 50 states and D.C., newest elections first. Preserve existing
@@ -63,7 +78,93 @@ commit `a5baf7cc829cedc6d379e83ae577ed61b2370731` and immutable release
 `voter-county-house-history-20261105-04` are published; all 15 assets were
 downloaded back and byte-verified, including the 1,346,170-byte complete ZIP.
 The UI build, Astro check, seven participation tests and four included caucus
-tests pass. Exact UI deployment and production table proof remain pending.
+tests pass. Exact UI commit `a1b9e4f343af11c1a7352ea33637e5aa20c18351`
+passed Pages run `42102383243`. The four-mode production table suite passed
+all five years, 255 state/year scope cells, 225 complete-download links retaining
+all previous 212, all 52 source-matched UF rows and the separate 4,896-cell
+county candidate ledger. Public pointer/registry/renderer bytes match the
+reviewed sources. The unchanged map suite was deliberately not repeated.
+Deployment, production browser proof and final evidence checksums are saved
+alongside the source/reproduction/release/local UI proofs. The five-year
+download batch is live verified, not nationwide historical completion.
+
+A fresh Maine alternative-source probe retained both complete Bangor Daily News
+2026 House API responses, explicitly without demo parameters and with native
+`test_data: false`. All 17 county/district fragments match the saved official
+2026 Census identities, and their 34 named-candidate rows reconcile to all
+municipal candidate rows. District 1 also reconciles to its topline; District 2
+does not: county sums are short by 84 Republican and 46 Democratic votes.
+Its separate 6,021 blanks and 125 write-ins cannot be allocated by county, and
+municipal combined `other` is three below their district sum. Keep these gaps,
+literal parties and noncandidate observations separate. Kennebec occurs in both
+districts; never discard either fragment. Probe evidence is under
+`data/county-source-reviews/20261105-maine-bdn-source-probe-01/`; complete originals
+and all native county candidate lines remain in the persistent session artifacts.
+No new public download or map is approved: publisher redistribution terms,
+counting/round scope and the five District-1-only county vectors need separate
+review. Do not weaken the all-district validation guard or claim Maine complete.
+An independent official follow-up retained both complete accessible Secretary
+of State pages and all 16 native federal/governor UOCAVA observations from the
+November 4 announcement. Its District 2 named-candidate counts are 1,731 and
+211, not the publisher's 46/84 gap; no county allocation or proof of inclusion
+in the publisher totals is supplied. Do not add them to those totals.
+District 1's missing write-in row remains missing, not zero. The advertised
+PDF returned HTTP 403, with the complete denial body preserved; it is not an
+acquired PDF. The accessible election-results index still declares June primary
+and special-election results, not November general county returns.
+
+The active 15-minute continuation prompt is now schedule **#5**, replacing
+stale schedule #4. It follows current plan statuses, skips already-verified
+coloring and unchanged map suites, and prioritizes these genuine 2026 gaps
+before older historical expansion.
+
+A consolidated Pennsylvania source directory now supplies exact result links
+for all 67 counties, each independently matched to its official 2026 Census
+identity. The county-owned Allegheny and Delaware pages independently declare
+their directory links; both result landings return HTTP 403, with full bodies
+retained rather than bypassed. The complete embedded factual snapshot is also
+retained privately: 240 separate races, including 17 House districts with
+417 compiler candidate slots in 73 fragments across 57 counties. All its
+internal county sums reconcile, but independent anchors expose a material
+limitation: Bucks and Monroe match, while all 711 Montgomery House write-ins
+are omitted despite exact agreement on both major-party counts. Compiler party
+labels also differ from the native literals. Do not replace the approved
+Montgomery vector, infer explicit native zeroes from compiler zeroes, promote
+the Philadelphia test source, or treat 66 governor counties as 66 House counties.
+The full 67-county discovery queue and fail-closed review are under
+`data/county-source-reviews/20261105-pa-county-source-directory-01/`; originals
+and the complete factual snapshot remain in persistent session artifacts.
+Next, follow these actual links for complete primary report exports, retaining
+write-ins separately where vendor CSV/JSON omits printed PDF lines. The live
+Pennsylvania map remains three counties, not all 67.
+
+Following that directory, complete county-owned linking pages and vendor
+snapshots now independently reconcile Chester, Franklin and Lehigh. The new
+shared reviewer preserves all 104 county candidate/ballot-option rows across
+38 contests, 327 candidate-mode observations, 36 office/literal-party totals,
+461 native unit participation records and 6,362 native candidate observations,
+including all 520 explicit unit zeroes. Their 438,869 actual reported ballots
+remain separate from 437,079 House candidate votes and native registrations.
+All 19 focused parser tests pass; independent native CSV/mode/party/Census
+checks and byte-identical complete ZIP reproduction pass. Data and originals
+are under `data/county-source-reviews/20261105-pa-three-county-01/`; publication
+evidence is under `data/county-source-reviews/20261105-pa-three-county-publication-01/`.
+Chester supplies no native result-status literal; do not invent one. Its 15
+CSV contest-ballot zeroes conflict with positive unit ballot sums and remain
+flagged and unused as real ballot counts. Franklin's House contest supplies
+no district number; none is inferred. Lehigh still explicitly reports partial
+mail and provisional counting. Native prefixes, CSV parties, accessible HTML
+labels and accounting fields remain separate; ballot options never become
+party totals. Franklin's 195 under/6 overvotes fully explain its House ballot
+gap; Lehigh's 1,003 reported undervotes leave 46 unclassified ballots, not
+inferred overvotes. Missing native accounting fields remain blank, not zero.
+Data/tools commit `8293db8a8bda6ab561e139708495425fcea0c206` and immutable
+release `voter-county-pennsylvania-three-county-20261105-01` were published,
+but that release's complete ZIP has since been withdrawn for source-key
+remediation; its seven count-only CSV assets are unaffected. The sanitized
+replacement and UI deployment remain pending. No new map, demographic turnout, certification, or statewide
+completeness is approved. Northampton's complete county-declared native HTML
+is also retained privately; its separate count/party review remains pending.
 
 The reusable 2026 county-results and separate UF/state participation pipelines
 are implemented and published. Both passed real acquisition and original-backed

@@ -1,0 +1,50 @@
+[
+  {
+    "url": "https://www.livevoterturnout.com/ENR/chesterpaenr/4/en/Index_4.html",
+    "status": 200,
+    "fetched_at": "2026-11-05T20:37:32.645504+00:00",
+    "file": "native-results.redacted.html",
+    "final_url": "https://www.livevoterturnout.com/ENR/chesterpaenr/4/en/Index_4.html",
+    "bytes": 2984922,
+    "sha256": "a60ff0e12893644ac8218e06dff9b8217a828be04e52c95f6dc5ddd34a7f2539",
+    "redaction": {
+      "kind": "public_map_service_and_instrumentation_keys",
+      "replacements": 1,
+      "original_bytes": 2984979,
+      "original_sha256": "86f3631743b6aaf5bbcc7bc4e73785bd9ac504342b1ee702d30193e43199e609"
+    }
+  },
+  {
+    "url": "https://www.livevoterturnout.com/ENR/chesterpaenr/4/summary_4.csv",
+    "status": 200,
+    "fetched_at": "2026-11-05T20:38:43.830658+00:00",
+    "file": "summary.csv",
+    "final_url": "https://www.livevoterturnout.com/ENR/chesterpaenr/4/summary_4.csv",
+    "bytes": 4708,
+    "sha256": "1712c2fb3d61b10f0af22258bb7dbdbc358ee3f99e4f5c6a5d7759f4d9962efb"
+  },
+  {
+    "url": "https://www.chesco.org/156/Voter-Services",
+    "status": 200,
+    "fetched_at": "2026-11-05T20:38:45.430126+00:00",
+    "file": "official-results-index.html",
+    "final_url": "https://www.chesco.org/156/Voter-Services",
+    "bytes": 127062,
+    "sha256": "a7d42218c590e57e972e54910bb7825ff99c90cdf9b8b2cd1c2af673a115a859",
+    "redaction": {
+      "original_sha256": "b94136e4a0052d7df38a4762f726031cbe9921375db2c4bda0ad0115db7cd73b",
+      "original_bytes": 127079,
+      "replacements": 2,
+      "reason": "Explicitly removes public-page Google/Mapbox and instrumentation keys. Complete original privately retained."
+    }
+  },
+  {
+    "url": "https://www.livevoterturnout.com/ENR/chesterpaenr/4/contests_4.csv",
+    "final_url": "https://www.livevoterturnout.com/ENR/chesterpaenr/4/contests_4.csv",
+    "status": 200,
+    "bytes": 1090,
+    "sha256": "1e21bd18303b99db6c9146c2073c8e23726dc55d9f9ee35ee7fb3c58e44a1a2d",
+    "fetched_at": "2026-11-05T20:38:43.925868+00:00",
+    "file": "contests.csv"
+  }
+]

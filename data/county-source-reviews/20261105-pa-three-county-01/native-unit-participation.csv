@@ -1,0 +1,462 @@
+year,state_code,county_fips,county,native_unit_name,native_unit_code,native_json_key,native_geo_key,native_votes_cast,registered_voters,native_printed_turnout_pct,native_status
+2026,PA,42029,Chester,005 Atglen,0001,005 Atglen,,546,947,57.66,Reported
+2026,PA,42029,Chester,010 Avondale,0002,010 Avondale,,244,469,52.03,Reported
+2026,PA,42029,Chester,014 Birmingham 1,0003,014 Birmingham 1,,862,1289,66.87,Reported
+2026,PA,42029,Chester,015 Birmingham 2,0004,015 Birmingham 2,,1442,2199,65.58,Reported
+2026,PA,42029,Chester,020 E Bradford N-1,0005,020 E Bradford N-1,,765,1159,66.01,Reported
+2026,PA,42029,Chester,021 E Bradford N-2,0006,021 E Bradford N-2,,1497,2243,66.74,Reported
+2026,PA,42029,Chester,023 E Bradford S-1,0007,023 E Bradford S-1,,1784,2736,65.20,Reported
+2026,PA,42029,Chester,024 E Bradford S-2,0008,024 E Bradford S-2,,1093,1699,64.33,Reported
+2026,PA,42029,Chester,025 W Bradford 1,0009,025 W Bradford 1,,1020,1538,66.32,Reported
+2026,PA,42029,Chester,030 W Bradford 2,0010,030 W Bradford 2,,1663,2557,65.04,Reported
+2026,PA,42029,Chester,031 W Bradford 3,0011,031 W Bradford 3,,1237,1820,67.97,Reported
+2026,PA,42029,Chester,032 W Bradford 4,0012,032 W Bradford 4,,1795,2807,63.95,Reported
+2026,PA,42029,Chester,033 W Bradford 5,0013,033 W Bradford 5,,1151,1898,60.64,Reported
+2026,PA,42029,Chester,035 E Brandywine N-1,0014,035 E Brandywine N-1,,914,1286,71.07,Reported
+2026,PA,42029,Chester,036 E Brandywine N-2,0015,036 E Brandywine N-2,,1602,2507,63.90,Reported
+2026,PA,42029,Chester,038 E Brandywine S,0016,038 E Brandywine S,,2325,3660,63.52,Reported
+2026,PA,42029,Chester,040 W Brandywine E-1,0017,040 W Brandywine E-1,,1483,2112,70.22,Reported
+2026,PA,42029,Chester,041 W Brandywine E-2,0018,041 W Brandywine E-2,,1649,2510,65.70,Reported
+2026,PA,42029,Chester,043 W Brandywine W,0019,043 W Brandywine W,,1045,1659,62.99,Reported
+2026,PA,42029,Chester,045 Caln 1,0020,045 Caln 1,,852,1236,68.93,Reported
+2026,PA,42029,Chester,050 Caln 2,0021,050 Caln 2,,971,1744,55.68,Reported
+2026,PA,42029,Chester,053 Caln 3,0022,053 Caln 3,,2566,4429,57.94,Reported
+2026,PA,42029,Chester,054 Caln 4,0023,054 Caln 4,,1775,3096,57.33,Reported
+2026,PA,42029,Chester,055 East Caln 1,0024,055 East Caln 1,,1322,2144,61.66,Reported
+2026,PA,42029,Chester,056 East Caln 2,0025,056 East Caln 2,,884,1501,58.89,Reported
+2026,PA,42029,Chester,060 West Caln 1,0026,060 West Caln 1,,1698,2774,61.21,Reported
+2026,PA,42029,Chester,061 West Caln 2,0027,061 West Caln 2,,1847,3384,54.58,Reported
+2026,PA,42029,Chester,065 Charlestown,0028,065 Charlestown,,3046,4804,63.41,Reported
+2026,PA,42029,Chester,070 Coatesville 1,0029,070 Coatesville 1,,866,2038,42.49,Reported
+2026,PA,42029,Chester,080 Coatesville 2,0030,080 Coatesville 2,,570,1473,38.70,Reported
+2026,PA,42029,Chester,090 Coatesville 3,0031,090 Coatesville 3,,426,1021,41.72,Reported
+2026,PA,42029,Chester,100 Coatesville 4-1,0032,100 Coatesville 4-1,,288,670,42.99,Reported
+2026,PA,42029,Chester,110 Coatesville 4-2,0033,110 Coatesville 4-2,,375,704,53.27,Reported
+2026,PA,42029,Chester,120 Coatesville 5,0034,120 Coatesville 5,,423,1032,40.99,Reported
+2026,PA,42029,Chester,140 S Coatesville,0035,140 S Coatesville,,562,1067,52.67,Reported
+2026,PA,42029,Chester,145 N Coventry E,0036,145 N Coventry E,,890,1444,61.63,Reported
+2026,PA,42029,Chester,150 N Coventry M,0037,150 N Coventry M,,887,1584,56.00,Reported
+2026,PA,42029,Chester,155 N Coventry W-1,0038,155 N Coventry W-1,,834,1413,59.02,Reported
+2026,PA,42029,Chester,156 N Coventry W-2,0039,156 N Coventry W-2,,1047,1532,68.34,Reported
+2026,PA,42029,Chester,160 E Coventry 1,0040,160 E Coventry 1,,2080,3520,59.09,Reported
+2026,PA,42029,Chester,165 E Coventry 2,0041,165 E Coventry 2,,1011,1734,58.30,Reported
+2026,PA,42029,Chester,170 S Coventry,0042,170 S Coventry,,1337,2027,65.96,Reported
+2026,PA,42029,Chester,175 E Downingtown E,0043,175 E Downingtown E,,1168,2076,56.26,Reported
+2026,PA,42029,Chester,180 E Downingtown W,0044,180 E Downingtown W,,777,1354,57.39,Reported
+2026,PA,42029,Chester,185 W Downingtown N,0045,185 W Downingtown N,,899,1489,60.38,Reported
+2026,PA,42029,Chester,190 W Downingtown S,0046,190 W Downingtown S,,431,738,58.40,Reported
+2026,PA,42029,Chester,195 Easttown 1,0047,195 Easttown 1,,1276,2104,60.65,Reported
+2026,PA,42029,Chester,198 Easttown 2,0048,198 Easttown 2,,1073,1624,66.07,Reported
+2026,PA,42029,Chester,201 Easttown 3,0049,201 Easttown 3,,777,1221,63.64,Reported
+2026,PA,42029,Chester,204 Easttown 4,0050,204 Easttown 4,,587,944,62.18,Reported
+2026,PA,42029,Chester,207 Easttown 5,0051,207 Easttown 5,,637,931,68.42,Reported
+2026,PA,42029,Chester,210 Easttown 6,0052,210 Easttown 6,,511,766,66.71,Reported
+2026,PA,42029,Chester,213 Easttown 7,0053,213 Easttown 7,,742,1182,62.77,Reported
+2026,PA,42029,Chester,215 Elk,0054,215 Elk,,753,1257,59.90,Reported
+2026,PA,42029,Chester,220 Elverson,0055,220 Elverson,,753,1111,67.78,Reported
+2026,PA,42029,Chester,225 E Fallowfield E,0056,225 E Fallowfield E,,1726,2749,62.79,Reported
+2026,PA,42029,Chester,230 E Fallowfield W,0057,230 E Fallowfield W,,1943,3056,63.58,Reported
+2026,PA,42029,Chester,235 W Fallowfield,0058,235 W Fallowfield,,865,1452,59.57,Reported
+2026,PA,42029,Chester,240 Franklin,0059,240 Franklin,,2243,3534,63.47,Reported
+2026,PA,42029,Chester,243 E Goshen 1,0060,243 E Goshen 1,,1136,1691,67.18,Reported
+2026,PA,42029,Chester,244 E Goshen 2,0061,244 E Goshen 2,,921,1488,61.90,Reported
+2026,PA,42029,Chester,245 E Goshen 3,0062,245 E Goshen 3,,924,1438,64.26,Reported
+2026,PA,42029,Chester,246 E Goshen 4,0063,246 E Goshen 4,,1249,2206,56.62,Reported
+2026,PA,42029,Chester,247 E Goshen 5,0064,247 E Goshen 5,,1569,1948,80.54,Reported
+2026,PA,42029,Chester,248 E Goshen 6,0065,248 E Goshen 6,,1236,1911,64.68,Reported
+2026,PA,42029,Chester,249 E Goshen 7,0066,249 E Goshen 7,,1311,1952,67.16,Reported
+2026,PA,42029,Chester,250 E Goshen 8,0067,250 E Goshen 8,,743,918,80.94,Reported
+2026,PA,42029,Chester,251 E Goshen 9,0068,251 E Goshen 9,,647,1111,58.24,Reported
+2026,PA,42029,Chester,255 W Goshen N-1,0069,255 W Goshen N-1,,1115,1672,66.69,Reported
+2026,PA,42029,Chester,260 W Goshen N-2,0070,260 W Goshen N-2,,877,1267,69.22,Reported
+2026,PA,42029,Chester,261 W Goshen N-3,0071,261 W Goshen N-3,,1477,2300,64.22,Reported
+2026,PA,42029,Chester,262 W Goshen N-4,0072,262 W Goshen N-4,,2073,3110,66.66,Reported
+2026,PA,42029,Chester,265 W Goshen M-1,0073,265 W Goshen M-1,,812,1427,56.90,Reported
+2026,PA,42029,Chester,270 W Goshen M-2,0074,270 W Goshen M-2,,1075,1752,61.36,Reported
+2026,PA,42029,Chester,275 W Goshen S-1,0075,275 W Goshen S-1,,1024,1707,59.99,Reported
+2026,PA,42029,Chester,280 W Goshen S-2,0076,280 W Goshen S-2,,860,1468,58.58,Reported
+2026,PA,42029,Chester,285 W Goshen S-3,0077,285 W Goshen S-3,,770,1235,62.35,Reported
+2026,PA,42029,Chester,286 W Goshen S-4,0078,286 W Goshen S-4,,1137,1745,65.16,Reported
+2026,PA,42029,Chester,290 Highland,0079,290 Highland,,543,829,65.50,Reported
+2026,PA,42029,Chester,295 Honey Brook Borough,0080,295 Honey Brook Borough,,615,1188,51.77,Reported
+2026,PA,42029,Chester,300 Honey Brook Township 1,0081,300 Honey Brook Township 1,,1134,2030,55.86,Reported
+2026,PA,42029,Chester,301 Honey Brook Township 2,0082,301 Honey Brook Township 2,,1840,3207,57.37,Reported
+2026,PA,42029,Chester,305 Kennett Square N,0083,305 Kennett Square N,,701,1141,61.44,Reported
+2026,PA,42029,Chester,310 Kennett Square S-1,0084,310 Kennett Square S-1,,487,844,57.70,Reported
+2026,PA,42029,Chester,315 Kennett Square S-2,0085,315 Kennett Square S-2,,771,1363,56.57,Reported
+2026,PA,42029,Chester,320 Kennett Township 1,0086,320 Kennett Township 1,,971,1449,67.01,Reported
+2026,PA,42029,Chester,325 Kennett Township 2,0087,325 Kennett Township 2,,1657,2703,61.30,Reported
+2026,PA,42029,Chester,328 Kennett Township 3,0088,328 Kennett Township 3,,702,931,75.40,Reported
+2026,PA,42029,Chester,329 Kennett Township 4,0089,329 Kennett Township 4,,1204,1858,64.80,Reported
+2026,PA,42029,Chester,330 London Britain,0090,330 London Britain,,1719,2572,66.84,Reported
+2026,PA,42029,Chester,335 Londonderry,0091,335 Londonderry,,1352,1982,68.21,Reported
+2026,PA,42029,Chester,340 London Grove Ch,0092,340 London Grove Ch,,723,1157,62.49,Reported
+2026,PA,42029,Chester,345 London Grove S,0093,345 London Grove S,,2971,4713,63.04,Reported
+2026,PA,42029,Chester,350 Malvern,0094,350 Malvern,,1744,2661,65.54,Reported
+2026,PA,42029,Chester,355 E Marlborough E,0095,355 E Marlborough E,,1354,1929,70.19,Reported
+2026,PA,42029,Chester,356 E Marlborough S,0096,356 E Marlborough S,,1372,2151,63.78,Reported
+2026,PA,42029,Chester,360 E Marlborough W,0097,360 E Marlborough W,,1542,2411,63.96,Reported
+2026,PA,42029,Chester,365 W Marlborough,0098,365 W Marlborough,,365,616,59.25,Reported
+2026,PA,42029,Chester,370 Modena,0099,370 Modena,,104,252,41.27,Reported
+2026,PA,42029,Chester,375 E Nantmeal,0100,375 E Nantmeal,,1001,1456,68.75,Reported
+2026,PA,42029,Chester,380 W Nantmeal,0101,380 W Nantmeal,,974,1621,60.09,Reported
+2026,PA,42029,Chester,385 New Garden N,0102,385 New Garden N,,1562,2651,58.92,Reported
+2026,PA,42029,Chester,390 New Garden S-1,0103,390 New Garden S-1,,1506,2506,60.10,Reported
+2026,PA,42029,Chester,391 New Garden S-2,0104,391 New Garden S-2,,1475,2261,65.24,Reported
+2026,PA,42029,Chester,395 New London,0105,395 New London,,2825,4480,63.06,Reported
+2026,PA,42029,Chester,400 Newlin,0106,400 Newlin,,725,1129,64.22,Reported
+2026,PA,42029,Chester,405 E Nottingham E,0107,405 E Nottingham E,,1886,3203,58.88,Reported
+2026,PA,42029,Chester,406 E Nottingham W,0108,406 E Nottingham W,,1642,2926,56.12,Reported
+2026,PA,42029,Chester,410 W Nottingham,0109,410 W Nottingham,,953,1809,52.68,Reported
+2026,PA,42029,Chester,415 Oxford E,0110,415 Oxford E,,394,797,49.44,Reported
+2026,PA,42029,Chester,420 Oxford W,0111,420 Oxford W,,1278,2257,56.62,Reported
+2026,PA,42029,Chester,425 Lower Oxford E,0112,425 Lower Oxford E,,996,3271,30.45,Reported
+2026,PA,42029,Chester,430 Lower Oxford W,0113,430 Lower Oxford W,,923,1629,56.66,Reported
+2026,PA,42029,Chester,435 Upper Oxford,0114,435 Upper Oxford,,1034,1596,64.79,Reported
+2026,PA,42029,Chester,440 Parkesburg N,0115,440 Parkesburg N,,374,817,45.78,Reported
+2026,PA,42029,Chester,445 Parkesburg S,0116,445 Parkesburg S,,893,1646,54.25,Reported
+2026,PA,42029,Chester,450 Penn,0117,450 Penn,,3018,4471,67.50,Reported
+2026,PA,42029,Chester,453 Pennsbury N-1,0118,453 Pennsbury N-1,,633,748,84.63,Reported
+2026,PA,42029,Chester,454 Pennsbury N-2,0119,454 Pennsbury N-2,,572,876,65.30,Reported
+2026,PA,42029,Chester,456 Pennsbury S-1,0120,456 Pennsbury S-1,,623,927,67.21,Reported
+2026,PA,42029,Chester,457 Pennsbury S-2,0121,457 Pennsbury S-2,,460,704,65.34,Reported
+2026,PA,42029,Chester,461 Phoenixville N-1,0122,461 Phoenixville N-1,,789,1206,65.42,Reported
+2026,PA,42029,Chester,462 Phoenixville N-2,0123,462 Phoenixville N-2,,494,986,50.10,Reported
+2026,PA,42029,Chester,463 Phoenixville N-3,0124,463 Phoenixville N-3,,715,1125,63.56,Reported
+2026,PA,42029,Chester,467 Phoenixville M-1,0125,467 Phoenixville M-1,,573,1061,54.01,Reported
+2026,PA,42029,Chester,468 Phoenixville M-2,0126,468 Phoenixville M-2,,692,1092,63.37,Reported
+2026,PA,42029,Chester,469 Phoenixville M-3,0127,469 Phoenixville M-3,,700,986,70.99,Reported
+2026,PA,42029,Chester,472 Phoenixville E-1,0128,472 Phoenixville E-1,,633,920,68.80,Reported
+2026,PA,42029,Chester,473 Phoenixville E-2,0129,473 Phoenixville E-2,,656,997,65.80,Reported
+2026,PA,42029,Chester,474 Phoenixville E-3,0130,474 Phoenixville E-3,,757,1261,60.03,Reported
+2026,PA,42029,Chester,477 Phoenixville W-1,0131,477 Phoenixville W-1,,570,886,64.33,Reported
+2026,PA,42029,Chester,478 Phoenixville W-2,0132,478 Phoenixville W-2,,1059,1783,59.39,Reported
+2026,PA,42029,Chester,479 Phoenixville W-3,0133,479 Phoenixville W-3,,737,1309,56.30,Reported
+2026,PA,42029,Chester,515 E Pikeland 1,0134,515 E Pikeland 1,,1543,2211,69.79,Reported
+2026,PA,42029,Chester,520 E Pikeland 2,0135,520 E Pikeland 2,,1592,2301,69.19,Reported
+2026,PA,42029,Chester,521 E Pikeland 3,0136,521 E Pikeland 3,,1496,2178,68.69,Reported
+2026,PA,42029,Chester,525 W Pikeland,0137,525 W Pikeland,,2246,3400,66.06,Reported
+2026,PA,42029,Chester,530 Pocopson,0138,530 Pocopson,,1874,2946,63.61,Reported
+2026,PA,42029,Chester,535 Sadsbury N,0139,535 Sadsbury N,,1289,2318,55.61,Reported
+2026,PA,42029,Chester,540 Sadsbury S,0140,540 Sadsbury S,,534,971,54.99,Reported
+2026,PA,42029,Chester,545 W Sadsbury,0141,545 W Sadsbury,,763,1423,53.62,Reported
+2026,PA,42029,Chester,550 Schuylkill 1,0142,550 Schuylkill 1,,726,1101,65.94,Reported
+2026,PA,42029,Chester,555 Schuylkill 2,0143,555 Schuylkill 2,,729,1012,72.04,Reported
+2026,PA,42029,Chester,556 Schuylkill 3,0144,556 Schuylkill 3,,1900,2946,64.49,Reported
+2026,PA,42029,Chester,558 Schuylkill 4,0145,558 Schuylkill 4,,1260,1792,70.31,Reported
+2026,PA,42029,Chester,560 Spring City 1,0146,560 Spring City 1,,452,818,55.26,Reported
+2026,PA,42029,Chester,565 Spring City 2,0147,565 Spring City 2,,184,331,55.59,Reported
+2026,PA,42029,Chester,570 Spring City 3,0148,570 Spring City 3,,327,638,51.25,Reported
+2026,PA,42029,Chester,575 Spring City 4,0149,575 Spring City 4,,357,644,55.43,Reported
+2026,PA,42029,Chester,580 Thornbury 1,0150,580 Thornbury 1,,752,1165,64.55,Reported
+2026,PA,42029,Chester,581 Thornbury 2,0151,581 Thornbury 2,,897,1399,64.12,Reported
+2026,PA,42029,Chester,585 Tredyffrin E-1,0152,585 Tredyffrin E-1,,897,1576,56.92,Reported
+2026,PA,42029,Chester,590 Tredyffrin E-2,0153,590 Tredyffrin E-2,,697,1027,67.87,Reported
+2026,PA,42029,Chester,595 Tredyffrin E-3,0154,595 Tredyffrin E-3,,564,848,66.51,Reported
+2026,PA,42029,Chester,600 Tredyffrin E-4,0155,600 Tredyffrin E-4,,687,1014,67.75,Reported
+2026,PA,42029,Chester,605 Tredyffrin E-5,0156,605 Tredyffrin E-5,,1339,2029,65.99,Reported
+2026,PA,42029,Chester,614 Tredyffrin M-1,0157,614 Tredyffrin M-1,,413,593,69.65,Reported
+2026,PA,42029,Chester,615 Tredyffrin M-2,0158,615 Tredyffrin M-2,,942,1426,66.06,Reported
+2026,PA,42029,Chester,616 Tredyffrin M-3,0159,616 Tredyffrin M-3,,712,1082,65.80,Reported
+2026,PA,42029,Chester,617 Tredyffrin M-4,0160,617 Tredyffrin M-4,,1079,1636,65.95,Reported
+2026,PA,42029,Chester,618 Tredyffrin M-5,0161,618 Tredyffrin M-5,,642,995,64.52,Reported
+2026,PA,42029,Chester,619 Tredyffrin M-6,0162,619 Tredyffrin M-6,,991,1516,65.37,Reported
+2026,PA,42029,Chester,620 Tredyffrin M-7,0163,620 Tredyffrin M-7,,278,483,57.56,Reported
+2026,PA,42029,Chester,630 Tredyffrin W-1,0164,630 Tredyffrin W-1,,1214,1935,62.74,Reported
+2026,PA,42029,Chester,635 Tredyffrin W-2,0165,635 Tredyffrin W-2,,1721,2690,63.98,Reported
+2026,PA,42029,Chester,640 Tredyffrin W-3,0166,640 Tredyffrin W-3,,648,951,68.14,Reported
+2026,PA,42029,Chester,645 Tredyffrin W-4,0167,645 Tredyffrin W-4,,684,964,70.95,Reported
+2026,PA,42029,Chester,647 Tredyffrin W-5,0168,647 Tredyffrin W-5,,1812,2980,60.81,Reported
+2026,PA,42029,Chester,653 Uwchlan 1,0169,653 Uwchlan 1,,778,1115,69.78,Reported
+2026,PA,42029,Chester,654 Uwchlan 2,0170,654 Uwchlan 2,,1175,1820,64.56,Reported
+2026,PA,42029,Chester,655 Uwchlan 3,0171,655 Uwchlan 3,,612,930,65.81,Reported
+2026,PA,42029,Chester,656 Uwchlan 4,0172,656 Uwchlan 4,,495,847,58.44,Reported
+2026,PA,42029,Chester,657 Uwchlan 5,0173,657 Uwchlan 5,,963,1454,66.23,Reported
+2026,PA,42029,Chester,658 Uwchlan 6,0174,658 Uwchlan 6,,2395,3477,68.88,Reported
+2026,PA,42029,Chester,659 Uwchlan 7,0175,659 Uwchlan 7,,1587,2330,68.11,Reported
+2026,PA,42029,Chester,660 Uwchlan 8,0176,660 Uwchlan 8,,672,999,67.27,Reported
+2026,PA,42029,Chester,661 Uwchlan 9,0177,661 Uwchlan 9,,924,1477,62.56,Reported
+2026,PA,42029,Chester,665 Upper Uwchlan 1,0178,665 Upper Uwchlan 1,,1100,1681,65.44,Reported
+2026,PA,42029,Chester,666 Upper Uwchlan 2,0179,666 Upper Uwchlan 2,,1766,2640,66.89,Reported
+2026,PA,42029,Chester,667 Upper Uwchlan 3,0180,667 Upper Uwchlan 3,,3245,5160,62.89,Reported
+2026,PA,42029,Chester,670 Valley N-1,0181,670 Valley N-1,,884,1501,58.89,Reported
+2026,PA,42029,Chester,671 Valley N-2,0182,671 Valley N-2,,883,1579,55.92,Reported
+2026,PA,42029,Chester,672 Valley N-3,0183,672 Valley N-3,,946,1305,72.49,Reported
+2026,PA,42029,Chester,675 Valley S,0184,675 Valley S,,732,1355,54.02,Reported
+2026,PA,42029,Chester,680 E Vincent 1,0185,680 E Vincent 1,,747,1213,61.58,Reported
+2026,PA,42029,Chester,681 E Vincent 2,0186,681 E Vincent 2,,840,1483,56.64,Reported
+2026,PA,42029,Chester,682 E Vincent 3,0187,682 E Vincent 3,,1010,1516,66.62,Reported
+2026,PA,42029,Chester,683 E Vincent 4,0188,683 E Vincent 4,,779,1177,66.19,Reported
+2026,PA,42029,Chester,690 W Vincent 1,0189,690 W Vincent 1,,1677,2701,62.09,Reported
+2026,PA,42029,Chester,693 W Vincent 2,0190,693 W Vincent 2,,1516,2356,64.35,Reported
+2026,PA,42029,Chester,695 Wallace,0191,695 Wallace,,1907,2941,64.84,Reported
+2026,PA,42029,Chester,700 Warwick E,0192,700 Warwick E,,845,1258,67.17,Reported
+2026,PA,42029,Chester,705 Warwick W,0193,705 Warwick W,,569,828,68.72,Reported
+2026,PA,42029,Chester,710 West Grove 1,0194,710 West Grove 1,,480,785,61.15,Reported
+2026,PA,42029,Chester,715 West Grove 2,0195,715 West Grove 2,,369,616,59.90,Reported
+2026,PA,42029,Chester,720 Westtown 1,0196,720 Westtown 1,,1246,1901,65.54,Reported
+2026,PA,42029,Chester,725 Westtown 2,0197,725 Westtown 2,,1138,1843,61.75,Reported
+2026,PA,42029,Chester,730 Westtown 3,0198,730 Westtown 3,,1560,2341,66.64,Reported
+2026,PA,42029,Chester,733 Westtown 4,0199,733 Westtown 4,,955,1411,67.68,Reported
+2026,PA,42029,Chester,734 Westtown 5,0200,734 Westtown 5,,707,1021,69.25,Reported
+2026,PA,42029,Chester,735 E Whiteland 1,0201,735 E Whiteland 1,,543,953,56.98,Reported
+2026,PA,42029,Chester,740 E Whiteland 2,0202,740 E Whiteland 2,,1385,2416,57.33,Reported
+2026,PA,42029,Chester,745 E Whiteland 3,0203,745 E Whiteland 3,,852,1239,68.77,Reported
+2026,PA,42029,Chester,750 E Whiteland 4,0204,750 E Whiteland 4,,1027,1565,65.62,Reported
+2026,PA,42029,Chester,752 E Whiteland 5,0205,752 E Whiteland 5,,385,585,65.81,Reported
+2026,PA,42029,Chester,754 E Whiteland 6,0206,754 E Whiteland 6,,1380,2591,53.26,Reported
+2026,PA,42029,Chester,759 W Whiteland 1,0207,759 W Whiteland 1,,1178,1800,65.44,Reported
+2026,PA,42029,Chester,760 W Whiteland 2,0208,760 W Whiteland 2,,1151,1888,60.96,Reported
+2026,PA,42029,Chester,761 W Whiteland 3,0209,761 W Whiteland 3,,533,849,62.78,Reported
+2026,PA,42029,Chester,762 W Whiteland 4,0210,762 W Whiteland 4,,2049,3508,58.41,Reported
+2026,PA,42029,Chester,763 W Whiteland 5,0211,763 W Whiteland 5,,1298,1825,71.12,Reported
+2026,PA,42029,Chester,764 W Whiteland 6,0212,764 W Whiteland 6,,2264,3819,59.28,Reported
+2026,PA,42029,Chester,765 W Whiteland 7,0213,765 W Whiteland 7,,1070,1852,57.78,Reported
+2026,PA,42029,Chester,770 Willistown N-1,0214,770 Willistown N-1,,842,1212,69.47,Reported
+2026,PA,42029,Chester,775 Willistown N-2,0215,775 Willistown N-2,,467,738,63.28,Reported
+2026,PA,42029,Chester,780 Willistown N-3,0216,780 Willistown N-3,,874,1387,63.01,Reported
+2026,PA,42029,Chester,785 Willistown N-4,0217,785 Willistown N-4,,615,962,63.93,Reported
+2026,PA,42029,Chester,790 Willistown N-5,0218,790 Willistown N-5,,630,914,68.93,Reported
+2026,PA,42029,Chester,795 Willistown N-6,0219,795 Willistown N-6,,350,570,61.40,Reported
+2026,PA,42029,Chester,800 Willistown S-1,0220,800 Willistown S-1,,866,1266,68.40,Reported
+2026,PA,42029,Chester,805 Willistown S-2,0221,805 Willistown S-2,,452,704,64.20,Reported
+2026,PA,42029,Chester,806 Willistown S-3,0222,806 Willistown S-3,,1117,1646,67.86,Reported
+2026,PA,42029,Chester,810 West Chester 1,0223,810 West Chester 1,,1365,2269,60.16,Reported
+2026,PA,42029,Chester,820 West Chester 2-E,0224,820 West Chester 2-E,,333,694,47.98,Reported
+2026,PA,42029,Chester,825 West Chester 2-W,0225,825 West Chester 2-W,,409,997,41.02,Reported
+2026,PA,42029,Chester,835 West Chester 3,0226,835 West Chester 3,,947,1709,55.41,Reported
+2026,PA,42029,Chester,842 West Chester 4,0227,842 West Chester 4,,318,761,41.79,Reported
+2026,PA,42029,Chester,846 West Chester 5,0228,846 West Chester 5,,600,1273,47.13,Reported
+2026,PA,42029,Chester,850 West Chester 6,0229,850 West Chester 6,,839,1537,54.59,Reported
+2026,PA,42029,Chester,860 West Chester 7,0230,860 West Chester 7,,1014,1595,63.57,Reported
+2026,PA,42055,Franklin,ANTRIM 1,0001,0001,0001,1223,2131,57.39,Reported
+2026,PA,42055,Franklin,ANTRIM 2,0002,0002,0002,811,1275,63.61,Reported
+2026,PA,42055,Franklin,ANTRIM 3,0003,0003,0003,929,1517,61.24,Reported
+2026,PA,42055,Franklin,ANTRIM 4,0004,0004,0004,1187,2440,48.65,Reported
+2026,PA,42055,Franklin,ANTRIM 5,0005,0005,0005,2070,3893,53.17,Reported
+2026,PA,42055,Franklin,CHAMBERSBURG WD 1 DIST 1,0006,0006,0006,927,1860,49.84,Reported
+2026,PA,42055,Franklin,CHAMBERSBURG WD 1 DIST 2,0007,0007,0007,474,824,57.52,Reported
+2026,PA,42055,Franklin,CHAMBERSBURG WD 2 DIST 1,0008,0008,0008,390,954,40.88,Reported
+2026,PA,42055,Franklin,CHAMBERSBURG WD 2 DIST 2,0009,0009,0009,941,1486,63.32,Reported
+2026,PA,42055,Franklin,CHAMBERSBURG WD 3 DIST 1,0010,0010,0010,1107,2670,41.46,Reported
+2026,PA,42055,Franklin,CHAMBERSBURG WD 4 DIST 1,0011,0011,0011,412,1307,31.52,Reported
+2026,PA,42055,Franklin,CHAMBERSBURG WD 4 DIST 2,0012,0012,0012,407,885,45.99,Reported
+2026,PA,42055,Franklin,CHAMBERSBURG WD 5 DIST 1,0013,0013,0013,675,1186,56.91,Reported
+2026,PA,42055,Franklin,CHAMBERSBURG WD 5 DIST 2,0014,0014,0014,827,1660,49.82,Reported
+2026,PA,42055,Franklin,FANNETT CONCORD,0015,0015,0015,205,333,61.56,Reported
+2026,PA,42055,Franklin,FANNETT DRY RUN,0016,0016,0016,351,704,49.86,Reported
+2026,PA,42055,Franklin,FANNETT SULPHUR SPRINGS,0017,0017,0017,195,317,61.51,Reported
+2026,PA,42055,Franklin,GREENCASTLE 1,0018,0018,0018,868,1540,56.36,Reported
+2026,PA,42055,Franklin,GREENCASTLE 2,0019,0019,0019,770,1546,49.81,Reported
+2026,PA,42055,Franklin,GREENE 1,0020,0020,0020,1114,2248,49.56,Reported
+2026,PA,42055,Franklin,GREENE 2,0021,0021,0021,1242,1984,62.60,Reported
+2026,PA,42055,Franklin,GREENE 3,0022,0022,0022,1067,1926,55.40,Reported
+2026,PA,42055,Franklin,GREENE 4,0023,0023,0023,1389,2565,54.15,Reported
+2026,PA,42055,Franklin,GREENE 5,0024,0024,0024,1780,2902,61.34,Reported
+2026,PA,42055,Franklin,GREENE 6,0025,0025,0025,980,1693,57.89,Reported
+2026,PA,42055,Franklin,GUILFORD 1,0026,0026,0026,1946,3462,56.21,Reported
+2026,PA,42055,Franklin,GUILFORD 2,0027,0027,0027,2411,3501,68.87,Reported
+2026,PA,42055,Franklin,GUILFORD 3,0028,0028,0028,677,1131,59.86,Reported
+2026,PA,42055,Franklin,GUILFORD 4,0029,0029,0029,530,909,58.31,Reported
+2026,PA,42055,Franklin,GUILFORD 5,0030,0030,0030,182,319,57.05,Reported
+2026,PA,42055,Franklin,GUILFORD 6,0031,0031,0031,807,1667,48.41,Reported
+2026,PA,42055,Franklin,HAMILTON 1,0032,0032,0032,1410,2657,53.07,Reported
+2026,PA,42055,Franklin,HAMILTON 2,0033,0033,0033,1971,3523,55.95,Reported
+2026,PA,42055,Franklin,HAMILTON 3,0034,0034,0034,887,1581,56.10,Reported
+2026,PA,42055,Franklin,LETTERKENNY 1,0035,0035,0035,774,1312,58.99,Reported
+2026,PA,42055,Franklin,LETTERKENNY 2,0036,0036,0036,271,440,61.59,Reported
+2026,PA,42055,Franklin,LURGAN,0037,0037,0037,656,1118,58.68,Reported
+2026,PA,42055,Franklin,MERCERSBURG,0038,0038,0038,529,1063,49.76,Reported
+2026,PA,42055,Franklin,METAL 1,0039,0039,0039,261,444,58.78,Reported
+2026,PA,42055,Franklin,METAL 2,0040,0040,0040,243,445,54.61,Reported
+2026,PA,42055,Franklin,METAL 3,0041,0041,0041,160,281,56.94,Reported
+2026,PA,42055,Franklin,MONT ALTO,0042,0042,0042,546,1131,48.28,Reported
+2026,PA,42055,Franklin,MONTGOMERY 1,0043,0043,0043,743,1351,55.00,Reported
+2026,PA,42055,Franklin,MONTGOMERY 2,0044,0044,0044,772,1431,53.95,Reported
+2026,PA,42055,Franklin,MONTGOMERY 3,0045,0045,0045,688,1330,51.73,Reported
+2026,PA,42055,Franklin,ORRSTOWN,0046,0046,0046,70,116,60.34,Reported
+2026,PA,42055,Franklin,PETERS 1,0047,0047,0047,529,952,55.57,Reported
+2026,PA,42055,Franklin,PETERS 2,0048,0048,0048,495,947,52.27,Reported
+2026,PA,42055,Franklin,PETERS 3,0049,0049,0049,643,1099,58.51,Reported
+2026,PA,42055,Franklin,QUINCY 1,0050,0050,0050,1035,1796,57.63,Reported
+2026,PA,42055,Franklin,QUINCY 2,0051,0051,0051,217,405,53.58,Reported
+2026,PA,42055,Franklin,QUINCY 3,0052,0052,0052,453,724,62.57,Reported
+2026,PA,42055,Franklin,QUINCY 4,0053,0053,0053,162,374,43.32,Reported
+2026,PA,42055,Franklin,SOUTHAMPTON EAST,0054,0054,0054,1077,1950,55.23,Reported
+2026,PA,42055,Franklin,SOUTHAMPTON MT ROCK,0055,0055,0055,1182,2072,57.05,Reported
+2026,PA,42055,Franklin,SOUTHAMPTON WEST,0056,0056,0056,765,1266,60.43,Reported
+2026,PA,42055,Franklin,ST THOMAS 1,0057,0057,0057,539,902,59.76,Reported
+2026,PA,42055,Franklin,ST THOMAS 2,0058,0058,0058,847,1702,49.76,Reported
+2026,PA,42055,Franklin,ST THOMAS 3,0059,0059,0059,596,1133,52.60,Reported
+2026,PA,42055,Franklin,WARREN,0060,0060,0060,165,250,66.00,Reported
+2026,PA,42055,Franklin,WASHINGTON 1,0061,0061,0061,753,1425,52.84,Reported
+2026,PA,42055,Franklin,WASHINGTON 2,0062,0062,0062,1418,2568,55.22,Reported
+2026,PA,42055,Franklin,WASHINGTON 3,0063,0063,0063,872,1533,56.88,Reported
+2026,PA,42055,Franklin,WASHINGTON 4,0064,0064,0064,893,1672,53.41,Reported
+2026,PA,42055,Franklin,WASHINGTON 5,0065,0065,0065,2074,3769,55.03,Reported
+2026,PA,42055,Franklin,WAYNESBORO WD 1 DIST 1,0066,0066,0066,471,1054,44.69,Reported
+2026,PA,42055,Franklin,WAYNESBORO WD 1 DIST 2,0067,0067,0067,583,1196,48.75,Reported
+2026,PA,42055,Franklin,WAYNESBORO WD 2 DIST 1,0068,0068,0068,301,743,40.51,Reported
+2026,PA,42055,Franklin,WAYNESBORO WD 2 DIST 2,0069,0069,0069,574,1261,45.52,Reported
+2026,PA,42055,Franklin,WAYNESBORO WD 3 DIST 1,0070,0070,0070,480,1102,43.56,Reported
+2026,PA,42055,Franklin,WAYNESBORO WD 3 DIST 2,0071,0071,0071,520,1135,45.81,Reported
+2026,PA,42055,Franklin,WAYNESBORO WD 3 DIST 3,0072,0072,0072,523,950,55.05,Reported
+2026,PA,42055,Franklin,WEST END SHIPPENSBURG,0073,0073,0073,491,899,54.62,Reported
+2026,PA,42077,Lehigh,Allentown 1st Ward- 0001,0001,Allentown 1st Ward- 0001,,391,1652,23.67,Reported
+2026,PA,42077,Lehigh,Allentown 2nd Ward- 0002,0002,Allentown 2nd Ward- 0002,,272,1095,24.84,Reported
+2026,PA,42077,Lehigh,Allentown 3rd Ward- 0003,0003,Allentown 3rd Ward- 0003,,622,2138,29.09,Reported
+2026,PA,42077,Lehigh,Allentown 4th Ward- 0004,0004,Allentown 4th Ward- 0004,,259,1073,24.14,Reported
+2026,PA,42077,Lehigh,Allentown 5th Ward- 0005,0005,Allentown 5th Ward- 0005,,335,1471,22.77,Reported
+2026,PA,42077,Lehigh,Allentown 6th Ward 1st Dist- 0006,0006,Allentown 6th Ward 1st Dist- 0006,,162,710,22.82,Reported
+2026,PA,42077,Lehigh,Allentown 6th Ward 2nd Dist- 0007,0007,Allentown 6th Ward 2nd Dist- 0007,,327,1183,27.64,Reported
+2026,PA,42077,Lehigh,Allentown 7th Ward- 0008,0008,Allentown 7th Ward- 0008,,418,1734,24.11,Reported
+2026,PA,42077,Lehigh,Allentown 8th Ward 1st Dist- 0009,0009,Allentown 8th Ward 1st Dist- 0009,,200,675,29.63,Reported
+2026,PA,42077,Lehigh,Allentown 8th Ward 2nd Dist- 0010,0010,Allentown 8th Ward 2nd Dist- 0010,,215,843,25.50,Reported
+2026,PA,42077,Lehigh,Allentown 8th Ward 3rd Dist- 0011,0011,Allentown 8th Ward 3rd Dist- 0011,,322,1275,25.25,Reported
+2026,PA,42077,Lehigh,Allentown 8th Ward 4th Dist- 0012,0012,Allentown 8th Ward 4th Dist- 0012,,587,1547,37.94,Reported
+2026,PA,42077,Lehigh,Allentown 8th Ward 5th Dist- 0013,0013,Allentown 8th Ward 5th Dist- 0013,,236,676,34.91,Reported
+2026,PA,42077,Lehigh,Allentown 8th Ward 6th Dist- 0014,0014,Allentown 8th Ward 6th Dist- 0014,,298,1000,29.80,Reported
+2026,PA,42077,Lehigh,Allentown 8th Ward 7th Dist- 0015,0015,Allentown 8th Ward 7th Dist- 0015,,497,1047,47.47,Reported
+2026,PA,42077,Lehigh,Allentown 9th Ward- 0016,0016,Allentown 9th Ward- 0016,,391,1698,23.03,Reported
+2026,PA,42077,Lehigh,Allentown 10th Ward 1st Dist- 0017,0017,Allentown 10th Ward 1st Dist- 0017,,371,1926,19.26,Reported
+2026,PA,42077,Lehigh,Allentown 10th Ward 3rd Dist- 0018,0018,Allentown 10th Ward 3rd Dist- 0018,,301,1107,27.19,Reported
+2026,PA,42077,Lehigh,Allentown 10th Ward 4th Dist- 0019,0019,Allentown 10th Ward 4th Dist- 0019,,296,1176,25.17,Reported
+2026,PA,42077,Lehigh,Allentown 11th Ward 1st Dist- 0020,0020,Allentown 11th Ward 1st Dist- 0020,,234,940,24.89,Reported
+2026,PA,42077,Lehigh,Allentown 11th Ward 2nd Dist- 0021,0021,Allentown 11th Ward 2nd Dist- 0021,,330,1099,30.03,Reported
+2026,PA,42077,Lehigh,Allentown 11th Ward 3rd Dist- 0022,0022,Allentown 11th Ward 3rd Dist- 0022,,361,1002,36.03,Reported
+2026,PA,42077,Lehigh,Allentown 11th Ward 4th Dist- 0023,0023,Allentown 11th Ward 4th Dist- 0023,,745,2541,29.32,Reported
+2026,PA,42077,Lehigh,Allentown 11th Ward 5th Dist- 0024,0024,Allentown 11th Ward 5th Dist- 0024,,406,887,45.77,Reported
+2026,PA,42077,Lehigh,Allentown 11th Ward 6th Dist- 0025,0025,Allentown 11th Ward 6th Dist- 0025,,742,1401,52.96,Reported
+2026,PA,42077,Lehigh,Allentown 11th Ward 7th Dist- 0026,0026,Allentown 11th Ward 7th Dist- 0026,,494,935,52.83,Reported
+2026,PA,42077,Lehigh,Allentown 12th Ward 1st Dist- 0027,0027,Allentown 12th Ward 1st Dist- 0027,,428,1248,34.29,Reported
+2026,PA,42077,Lehigh,Allentown 12th Ward 2nd Dist- 0028,0028,Allentown 12th Ward 2nd Dist- 0028,,542,1518,35.70,Reported
+2026,PA,42077,Lehigh,Allentown 12th Ward 3rd Dist- 0029,0029,Allentown 12th Ward 3rd Dist- 0029,,503,1123,44.79,Reported
+2026,PA,42077,Lehigh,Allentown 12th Ward 4th Dist- 0030,0030,Allentown 12th Ward 4th Dist- 0030,,581,1013,57.35,Reported
+2026,PA,42077,Lehigh,Allentown 12th Ward 5th Dist- 0031,0031,Allentown 12th Ward 5th Dist- 0031,,485,1239,39.14,Reported
+2026,PA,42077,Lehigh,Allentown 13th Ward 1st Dist- 0032,0032,Allentown 13th Ward 1st Dist- 0032,,417,1255,33.23,Reported
+2026,PA,42077,Lehigh,Allentown 13th Ward 2nd Dist- 0033,0033,Allentown 13th Ward 2nd Dist- 0033,,344,1007,34.16,Reported
+2026,PA,42077,Lehigh,Allentown 13th Ward 3rd Dist- 0034,0034,Allentown 13th Ward 3rd Dist- 0034,,433,1052,41.16,Reported
+2026,PA,42077,Lehigh,Allentown 13th Ward 4th Dist- 0035,0035,Allentown 13th Ward 4th Dist- 0035,,321,752,42.69,Reported
+2026,PA,42077,Lehigh,Allentown 14th Ward 1st Dist- 0036,0036,Allentown 14th Ward 1st Dist- 0036,,657,1829,35.92,Reported
+2026,PA,42077,Lehigh,Allentown 14th Ward 2nd Dist- 0037,0037,Allentown 14th Ward 2nd Dist- 0037,,713,2077,34.33,Reported
+2026,PA,42077,Lehigh,Allentown 15th Ward 1st Dist- 0038,0038,Allentown 15th Ward 1st Dist- 0038,,538,1231,43.70,Reported
+2026,PA,42077,Lehigh,Allentown 15th Ward 2nd Dist- 0039,0039,Allentown 15th Ward 2nd Dist- 0039,,692,1712,40.42,Reported
+2026,PA,42077,Lehigh,Allentown 15th Ward 3rd Dist- 0040,0040,Allentown 15th Ward 3rd Dist- 0040,,738,1567,47.10,Reported
+2026,PA,42077,Lehigh,Allentown 15th Ward 4th Dist- 0041,0041,Allentown 15th Ward 4th Dist- 0041,,512,1338,38.27,Reported
+2026,PA,42077,Lehigh,Allentown 16th Ward 1st Dist- 0042,0042,Allentown 16th Ward 1st Dist- 0042,,559,1459,38.31,Reported
+2026,PA,42077,Lehigh,Allentown 16th Ward 2nd Dist- 0043,0043,Allentown 16th Ward 2nd Dist- 0043,,931,2254,41.30,Reported
+2026,PA,42077,Lehigh,Allentown 17th Ward 1st Dist- 0044,0044,Allentown 17th Ward 1st Dist- 0044,,526,947,55.54,Reported
+2026,PA,42077,Lehigh,Allentown 17th Ward 2nd Dist- 0045,0045,Allentown 17th Ward 2nd Dist- 0045,,612,963,63.55,Reported
+2026,PA,42077,Lehigh,Allentown 17th Ward 3rd Dist- 0046,0046,Allentown 17th Ward 3rd Dist- 0046,,672,945,71.11,Reported
+2026,PA,42077,Lehigh,Allentown 17th Ward 4th Dist- 0047,0047,Allentown 17th Ward 4th Dist- 0047,,1726,2853,60.50,Reported
+2026,PA,42077,Lehigh,Allentown 18th Ward 1st Dist- 0048,0048,Allentown 18th Ward 1st Dist- 0048,,597,996,59.94,Reported
+2026,PA,42077,Lehigh,Allentown 18th Ward 2nd Dist- 0049,0049,Allentown 18th Ward 2nd Dist- 0049,,737,1306,56.43,Reported
+2026,PA,42077,Lehigh,Allentown 19th Ward 1st Dist- 0050,0050,Allentown 19th Ward 1st Dist- 0050,,403,874,46.11,Reported
+2026,PA,42077,Lehigh,Allentown 19th Ward 2nd Dist- 0051,0051,Allentown 19th Ward 2nd Dist- 0051,,627,1606,39.04,Reported
+2026,PA,42077,Lehigh,Allentown 19th Ward 3rd Dist- 0052,0052,Allentown 19th Ward 3rd Dist- 0052,,416,815,51.04,Reported
+2026,PA,42077,Lehigh,Allentown 19th Ward 4th Dist- 0053,0053,Allentown 19th Ward 4th Dist- 0053,,447,1311,34.10,Reported
+2026,PA,42077,Lehigh,Allentown 19th Ward 5th Dist- 0054,0054,Allentown 19th Ward 5th Dist- 0054,,625,1373,45.52,Reported
+2026,PA,42077,Lehigh,Allentown 19th Ward 6th Dist- 0055,0055,Allentown 19th Ward 6th Dist- 0055,,852,2331,36.55,Reported
+2026,PA,42077,Lehigh,Bethlehem 10th Ward- 0056,0056,Bethlehem 10th Ward- 0056,,604,1200,50.33,Reported
+2026,PA,42077,Lehigh,Bethlehem 11th Ward- 0057,0057,Bethlehem 11th Ward- 0057,,455,909,50.06,Reported
+2026,PA,42077,Lehigh,Bethlehem 12th Ward 1st Dist- 0058,0058,Bethlehem 12th Ward 1st Dist- 0058,,433,883,49.04,Reported
+2026,PA,42077,Lehigh,Bethlehem 12th Ward 2nd Dist- 0059,0059,Bethlehem 12th Ward 2nd Dist- 0059,,548,838,65.39,Reported
+2026,PA,42077,Lehigh,Bethlehem 13th Ward 1st Dist- 0060,0060,Bethlehem 13th Ward 1st Dist- 0060,,837,1774,47.18,Reported
+2026,PA,42077,Lehigh,Bethlehem 13th Ward 2nd Dist- 0061,0061,Bethlehem 13th Ward 2nd Dist- 0061,,617,1086,56.81,Reported
+2026,PA,42077,Lehigh,Bethlehem 13th Ward 3rd Dist- 0062,0062,Bethlehem 13th Ward 3rd Dist- 0062,,686,1343,51.08,Reported
+2026,PA,42077,Lehigh,Bethlehem 13th Ward 4th Dist- 0063,0063,Bethlehem 13th Ward 4th Dist- 0063,,871,1339,65.05,Reported
+2026,PA,42077,Lehigh,Bethlehem 13th Ward 5th Dist- 0064,0064,Bethlehem 13th Ward 5th Dist- 0064,,654,1072,61.01,Reported
+2026,PA,42077,Lehigh,Bethlehem 13th Ward 6th Dist- 0065,0065,Bethlehem 13th Ward 6th Dist- 0065,,545,910,59.89,Reported
+2026,PA,42077,Lehigh,Bethlehem 13th Ward 7th Dist- 0066,0066,Bethlehem 13th Ward 7th Dist- 0066,,655,1362,48.09,Reported
+2026,PA,42077,Lehigh,Bethlehem 13th Ward 8th Dist- 0067,0067,Bethlehem 13th Ward 8th Dist- 0067,,750,1344,55.80,Reported
+2026,PA,42077,Lehigh,Alburtis- 0068,0068,Alburtis- 0068,,1003,1767,56.76,Reported
+2026,PA,42077,Lehigh,Catasauqua 1st District- 0069,0069,Catasauqua 1st District- 0069,,677,1502,45.07,Reported
+2026,PA,42077,Lehigh,Catasauqua 2nd District- 0070,0070,Catasauqua 2nd District- 0070,,653,1323,49.36,Reported
+2026,PA,42077,Lehigh,Catasauqua 3rd District- 0071,0071,Catasauqua 3rd District- 0071,,730,1359,53.72,Reported
+2026,PA,42077,Lehigh,Coopersburg- 0072,0072,Coopersburg- 0072,,1203,1906,63.12,Reported
+2026,PA,42077,Lehigh,Coplay 1st District- 0073,0073,Coplay 1st District- 0073,,537,1000,53.70,Reported
+2026,PA,42077,Lehigh,Coplay 2nd District- 0074,0074,Coplay 2nd District- 0074,,789,1324,59.59,Reported
+2026,PA,42077,Lehigh,Emmaus 1st District- 0075,0075,Emmaus 1st District- 0075,,808,1485,54.41,Reported
+2026,PA,42077,Lehigh,Emmaus 2nd District- 0076,0076,Emmaus 2nd District- 0076,,818,1348,60.68,Reported
+2026,PA,42077,Lehigh,Emmaus 3rd District- 0077,0077,Emmaus 3rd District- 0077,,1166,2090,55.79,Reported
+2026,PA,42077,Lehigh,Emmaus 4th District- 0078,0078,Emmaus 4th District- 0078,,902,1707,52.84,Reported
+2026,PA,42077,Lehigh,Emmaus 5th District- 0079,0079,Emmaus 5th District- 0079,,533,787,67.73,Reported
+2026,PA,42077,Lehigh,Emmaus 6th District- 0080,0080,Emmaus 6th District- 0080,,976,1387,70.37,Reported
+2026,PA,42077,Lehigh,Fountain Hill 1st District- 0081,0081,Fountain Hill 1st District- 0081,,600,1356,44.25,Reported
+2026,PA,42077,Lehigh,Fountain Hill 2nd District- 0082,0082,Fountain Hill 2nd District- 0082,,508,966,52.59,Reported
+2026,PA,42077,Lehigh,Fountain Hill 3rd District- 0083,0083,Fountain Hill 3rd District- 0083,,499,831,60.05,Reported
+2026,PA,42077,Lehigh,Macungie- 0084,0084,Macungie- 0084,,1497,2498,59.93,Reported
+2026,PA,42077,Lehigh,Slatington 1st District- 0085,0085,Slatington 1st District- 0085,,360,854,42.15,Reported
+2026,PA,42077,Lehigh,Slatington 2nd District- 0086,0086,Slatington 2nd District- 0086,,293,638,45.92,Reported
+2026,PA,42077,Lehigh,Slatington 3rd District- 0087,0087,Slatington 3rd District- 0087,,599,1159,51.68,Reported
+2026,PA,42077,Lehigh,Hanover- 0088,0088,Hanover- 0088,,514,1059,48.54,Reported
+2026,PA,42077,Lehigh,Heidelberg- 0089,0089,Heidelberg- 0089,,1494,2502,59.71,Reported
+2026,PA,42077,Lehigh,Lower Macungie 1st District- 0090,0090,Lower Macungie 1st District- 0090,,1653,2760,59.89,Reported
+2026,PA,42077,Lehigh,Lower Macungie 2nd District- 0091,0091,Lower Macungie 2nd District- 0091,,2833,4471,63.36,Reported
+2026,PA,42077,Lehigh,Lower Macungie 3rd District- 0092,0092,Lower Macungie 3rd District- 0092,,1449,2224,65.15,Reported
+2026,PA,42077,Lehigh,Lower Macungie 4th District- 0093,0093,Lower Macungie 4th District- 0093,,1333,2159,61.74,Reported
+2026,PA,42077,Lehigh,Lower Macungie 5th District- 0094,0094,Lower Macungie 5th District- 0094,,1150,1626,70.73,Reported
+2026,PA,42077,Lehigh,Lower Macungie 6th District- 0095,0095,Lower Macungie 6th District- 0095,,2475,4185,59.14,Reported
+2026,PA,42077,Lehigh,Lower Macungie 7th District- 0096,0096,Lower Macungie 7th District- 0096,,1301,2020,64.41,Reported
+2026,PA,42077,Lehigh,Lower Macungie 8th District- 0097,0097,Lower Macungie 8th District- 0097,,1274,1867,68.24,Reported
+2026,PA,42077,Lehigh,Lower Macungie 9th District- 0098,0098,Lower Macungie 9th District- 0098,,870,1329,65.46,Reported
+2026,PA,42077,Lehigh,Lower Macungie 10th District- 0099,0099,Lower Macungie 10th District- 0099,,1542,2324,66.35,Reported
+2026,PA,42077,Lehigh,Lower Milford- 0100,0100,Lower Milford- 0100,,2053,3097,66.29,Reported
+2026,PA,42077,Lehigh,Lowhill- 0101,0101,Lowhill- 0101,,1149,1815,63.31,Reported
+2026,PA,42077,Lehigh,Lynn New Tripoli- 0102,0102,Lynn New Tripoli- 0102,,1126,1831,61.50,Reported
+2026,PA,42077,Lehigh,Lynn Lynnville- 0103,0103,Lynn Lynnville- 0103,,361,551,65.52,Reported
+2026,PA,42077,Lehigh,Lynn Jacksonville- 0104,0104,Lynn Jacksonville- 0104,,495,755,65.56,Reported
+2026,PA,42077,Lehigh,North Whitehall 1st District- 0105,0105,North Whitehall 1st District- 0105,,1787,2725,65.58,Reported
+2026,PA,42077,Lehigh,North Whitehall 2nd District- 0106,0106,North Whitehall 2nd District- 0106,,1513,2763,54.76,Reported
+2026,PA,42077,Lehigh,North Whitehall 3rd District- 0107,0107,North Whitehall 3rd District- 0107,,868,1372,63.27,Reported
+2026,PA,42077,Lehigh,North Whitehall 4th District- 0108,0108,North Whitehall 4th District- 0108,,1251,2008,62.30,Reported
+2026,PA,42077,Lehigh,North Whitehall 5th District- 0109,0109,North Whitehall 5th District- 0109,,1124,1632,68.87,Reported
+2026,PA,42077,Lehigh,North Whitehall 6th District- 0110,0110,North Whitehall 6th District- 0110,,844,1494,56.49,Reported
+2026,PA,42077,Lehigh,Salisbury 1st Ward- 0111,0111,Salisbury 1st Ward- 0111,,998,1767,56.48,Reported
+2026,PA,42077,Lehigh,Salisbury 2nd Ward- 0112,0112,Salisbury 2nd Ward- 0112,,1185,2037,58.17,Reported
+2026,PA,42077,Lehigh,Salisbury 3rd Ward 1st Dist- 0113,0113,Salisbury 3rd Ward 1st Dist- 0113,,546,816,66.91,Reported
+2026,PA,42077,Lehigh,Salisbury 3rd Ward 2nd Dist- 0114,0114,Salisbury 3rd Ward 2nd Dist- 0114,,606,1011,59.94,Reported
+2026,PA,42077,Lehigh,Salisbury 4th Ward 1st Dist- 0115,0115,Salisbury 4th Ward 1st Dist- 0115,,839,1270,66.06,Reported
+2026,PA,42077,Lehigh,Salisbury 4th Ward 2nd Dist- 0116,0116,Salisbury 4th Ward 2nd Dist- 0116,,523,777,67.31,Reported
+2026,PA,42077,Lehigh,Salisbury 5th Ward 1st Dist- 0117,0117,Salisbury 5th Ward 1st Dist- 0117,,639,909,70.30,Reported
+2026,PA,42077,Lehigh,Salisbury 5th Ward 2nd Dist- 0118,0118,Salisbury 5th Ward 2nd Dist- 0118,,833,1278,65.18,Reported
+2026,PA,42077,Lehigh,South Whitehall 1st District- 0119,0119,South Whitehall 1st District- 0119,,1415,2270,62.33,Reported
+2026,PA,42077,Lehigh,South Whitehall 2nd District- 0120,0120,South Whitehall 2nd District- 0120,,626,1200,52.17,Reported
+2026,PA,42077,Lehigh,South Whitehall 3rd District- 0121,0121,South Whitehall 3rd District- 0121,,1600,2699,59.28,Reported
+2026,PA,42077,Lehigh,South Whitehall 4th District- 0122,0122,South Whitehall 4th District- 0122,,818,1313,62.30,Reported
+2026,PA,42077,Lehigh,South Whitehall 5th District- 0123,0123,South Whitehall 5th District- 0123,,1515,2307,65.67,Reported
+2026,PA,42077,Lehigh,South Whitehall 6th District- 0124,0124,South Whitehall 6th District- 0124,,1386,2076,66.76,Reported
+2026,PA,42077,Lehigh,South Whitehall 7th District- 0125,0125,South Whitehall 7th District- 0125,,725,1111,65.26,Reported
+2026,PA,42077,Lehigh,South Whitehall 8th District- 0126,0126,South Whitehall 8th District- 0126,,2040,3267,62.44,Reported
+2026,PA,42077,Lehigh,Upper Macungie 1st District- 0127,0127,Upper Macungie 1st District- 0127,,1494,2362,63.25,Reported
+2026,PA,42077,Lehigh,Upper Macungie 2nd District- 0128,0128,Upper Macungie 2nd District- 0128,,2031,3013,67.41,Reported
+2026,PA,42077,Lehigh,Upper Macungie 3rd District- 0129,0129,Upper Macungie 3rd District- 0129,,1520,2642,57.53,Reported
+2026,PA,42077,Lehigh,Upper Macungie 4th District- 0130,0130,Upper Macungie 4th District- 0130,,1160,1880,61.70,Reported
+2026,PA,42077,Lehigh,Upper Macungie 5th District- 0131,0131,Upper Macungie 5th District- 0131,,2656,4625,57.43,Reported
+2026,PA,42077,Lehigh,Upper Macungie 6th District- 0132,0132,Upper Macungie 6th District- 0132,,954,1805,52.85,Reported
+2026,PA,42077,Lehigh,Upper Macungie 7th District- 0133,0133,Upper Macungie 7th District- 0133,,918,1925,47.69,Reported
+2026,PA,42077,Lehigh,Upper Macungie 8th District- 0134,0134,Upper Macungie 8th District- 0134,,1042,1767,58.97,Reported
+2026,PA,42077,Lehigh,Upper Milford East- 0135,0135,Upper Milford East- 0135,,2472,3766,65.64,Reported
+2026,PA,42077,Lehigh,Upper Milford West- 0136,0136,Upper Milford West- 0136,,1880,2785,67.50,Reported
+2026,PA,42077,Lehigh,Upper Saucon 1st District- 0137,0137,Upper Saucon 1st District- 0137,,1674,2332,71.78,Reported
+2026,PA,42077,Lehigh,Upper Saucon 2nd District- 0138,0138,Upper Saucon 2nd District- 0138,,1257,1990,63.17,Reported
+2026,PA,42077,Lehigh,Upper Saucon 3rd District- 0139,0139,Upper Saucon 3rd District- 0139,,1227,1765,69.52,Reported
+2026,PA,42077,Lehigh,Upper Saucon 4th District- 0140,0140,Upper Saucon 4th District- 0140,,2676,4294,62.32,Reported
+2026,PA,42077,Lehigh,Upper Saucon 5th District- 0141,0141,Upper Saucon 5th District- 0141,,1066,1677,63.57,Reported
+2026,PA,42077,Lehigh,Upper Saucon 6th District- 0142,0142,Upper Saucon 6th District- 0142,,993,1401,70.88,Reported
+2026,PA,42077,Lehigh,Washington East- 0143,0143,Washington East- 0143,,552,937,58.91,Reported
+2026,PA,42077,Lehigh,Washington South- 0144,0144,Washington South- 0144,,1781,3086,57.71,Reported
+2026,PA,42077,Lehigh,Washington West- 0145,0145,Washington West- 0145,,476,837,56.87,Reported
+2026,PA,42077,Lehigh,Weisenberg- 0146,0146,Weisenberg- 0146,,2597,3883,66.88,Reported
+2026,PA,42077,Lehigh,Whitehall 1st District- 0147,0147,Whitehall 1st District- 0147,,949,2136,44.43,Reported
+2026,PA,42077,Lehigh,Whitehall 2nd District- 0148,0148,Whitehall 2nd District- 0148,,417,781,53.39,Reported
+2026,PA,42077,Lehigh,Whitehall 3rd District- 0149,0149,Whitehall 3rd District- 0149,,545,1453,37.51,Reported
+2026,PA,42077,Lehigh,Whitehall 4th District- 0150,0150,Whitehall 4th District- 0150,,677,1354,50.00,Reported
+2026,PA,42077,Lehigh,Whitehall 5th District- 0151,0151,Whitehall 5th District- 0151,,435,812,53.57,Reported
+2026,PA,42077,Lehigh,Whitehall 6th District- 0152,0152,Whitehall 6th District- 0152,,741,1596,46.43,Reported
+2026,PA,42077,Lehigh,Whitehall 7th District- 0153,0153,Whitehall 7th District- 0153,,1379,2192,62.91,Reported
+2026,PA,42077,Lehigh,Whitehall 8th District- 0154,0154,Whitehall 8th District- 0154,,1073,1743,61.56,Reported
+2026,PA,42077,Lehigh,Whitehall 9th District- 0155,0155,Whitehall 9th District- 0155,,838,1479,56.66,Reported
+2026,PA,42077,Lehigh,Whitehall 10th District- 0156,0156,Whitehall 10th District- 0156,,1318,2049,64.32,Reported
+2026,PA,42077,Lehigh,Whitehall 11th District- 0157,0157,Whitehall 11th District- 0157,,941,1656,56.82,Reported
+2026,PA,42077,Lehigh,Whitehall 12th District- 0158,0158,Whitehall 12th District- 0158,,912,1856,49.14,Reported

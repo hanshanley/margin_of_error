@@ -1,0 +1,120 @@
+{
+  "status": "source_probe_completed_not_published_or_map_approved",
+  "source_context": "https://www.bangordailynews.com/maine-election-results/",
+  "source_kind": "publisher_collected_unofficial_returns_not_state_certification",
+  "districts": [
+    {
+      "district": 1,
+      "race_id": 294889,
+      "source_receipt": {
+        "url": "https://bdn-election-results-main.vercel.app/api/race/us-house-district-1-general",
+        "status": 200,
+        "bytes": 70775,
+        "sha256": "cff987f4a2ea3c82833ed27137faea7855e9d4f17bcc9c7c15541fdeeb9db517",
+        "fetched_at": "2026-11-05T20:22:00.881185+00:00"
+      },
+      "native_test_data": false,
+      "native_year": 2026,
+      "native_election_date": "2026-11-03",
+      "source_updated_at": "2026-11-05T00:24:33.402Z",
+      "native_rcv_flag": false,
+      "final_round_independently_verified": false,
+      "county_fragments": 6,
+      "county_candidate_sums": {
+        "1323": 247947,
+        "24312": 127098
+      },
+      "native_topline_candidate_votes": {
+        "1323": 247947,
+        "24312": 127098
+      },
+      "unallocated_topline_minus_counties": {
+        "24312": 0,
+        "1323": 0
+      },
+      "all_municipal_candidate_vectors_match_county_vectors": true,
+      "native_other_votes": null,
+      "explicit_municipal_other_count": 0,
+      "missing_municipal_other_count": 116,
+      "sum_explicit_municipal_other": null,
+      "county_other_fields_present": 0,
+      "native_estimates_are_not_actual_turnout": true
+    },
+    {
+      "district": 2,
+      "race_id": 294890,
+      "source_receipt": {
+        "url": "https://bdn-election-results-main.vercel.app/api/race/us-house-district-2-general",
+        "status": 200,
+        "bytes": 254465,
+        "sha256": "de56d80d8616905cced2e75eedeb746c61539c895edb4619ad3c1d0e41b79811",
+        "fetched_at": "2026-11-05T20:22:00.987278+00:00"
+      },
+      "native_test_data": false,
+      "native_year": 2026,
+      "native_election_date": "2026-11-03",
+      "source_updated_at": "2026-11-05T19:22:35.959Z",
+      "native_rcv_flag": false,
+      "final_round_independently_verified": false,
+      "county_fragments": 11,
+      "county_candidate_sums": {
+        "23973": 170181,
+        "291185": 164799
+      },
+      "native_topline_candidate_votes": {
+        "23973": 170265,
+        "291185": 164845
+      },
+      "unallocated_topline_minus_counties": {
+        "23973": 84,
+        "291185": 46
+      },
+      "all_municipal_candidate_vectors_match_county_vectors": true,
+      "native_other_votes": {
+        "blank": 6021,
+        "write_in": 125,
+        "source": "ddhq",
+        "declared": [
+          {
+            "name": "Gregory A. Ward",
+            "party": "Independent",
+            "residence": "Limestone"
+          }
+        ]
+      },
+      "explicit_municipal_other_count": 380,
+      "missing_municipal_other_count": 0,
+      "sum_explicit_municipal_other": 6143,
+      "native_district_blank_plus_write_in": 6146,
+      "unallocated_district_other_minus_municipal_other": 3,
+      "county_other_fields_present": 0,
+      "native_estimates_are_not_actual_turnout": true
+    }
+  ],
+  "native_county_district_fragments": 17,
+  "distinct_native_2026_census_counties": 16,
+  "native_county_candidate_rows": 34,
+  "district1_only_counties_for_next_review": [
+    "23005",
+    "23013",
+    "23015",
+    "23023",
+    "23031"
+  ],
+  "shared_county": "23011",
+  "maps_approved": false,
+  "fully_complete": false,
+  "new_public_download_approved": false,
+  "raw_originals_retained_in_session": "files/maine-bdn-2026-source-probe-01/",
+  "original_redistribution_terms_not_yet_reviewed": true,
+  "decisions": [
+    "Retain both complete original API responses, not just metadata.",
+    "Never put blank counts into candidate votes, or assign district write-ins to a named candidate/party/county.",
+    "The 130-vote District 2 county/topline gap remains unallocated; do not zero-fill it.",
+    "Municipal other combines noncandidate blanks and write-ins; no county write-in allocation is established.",
+    "District 2 native blanks plus write-ins exceed municipal other by three; preserve this separate accounting gap.",
+    "Native estimated turnout fields and precinct counters are not actual voters or demographic turnout.",
+    "District 1 reconciles; separately review the five nonshared counties without relaxing the provider all-district guard.",
+    "No live pointers, complete-download URLs, county maps or completeness ledgers change in this probe."
+  ]
+}

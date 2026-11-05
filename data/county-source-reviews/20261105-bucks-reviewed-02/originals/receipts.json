@@ -5,9 +5,16 @@
     "final_url": "https://buckscounty.gov/1206/Election-Results",
     "status": 200,
     "content_type": "text/html; charset=utf-8",
-    "bytes": 106857,
-    "sha256": "0da4d4c343e250fb3d12a2f4b2fcb3409089a091350aa9725e6e2dbd93e340df",
-    "retrieved_at_utc": "2026-11-05T18:46:26.915438+00:00"
+    "bytes": 106840,
+    "sha256": "13abe0ef9f62f68347e6a25c9104905bbf55c082ad8ab4e3e8063bf1625ce3a5",
+    "retrieved_at_utc": "2026-11-05T18:46:26.915438+00:00",
+    "redaction": {
+      "kind": "public_service_and_telemetry_keys",
+      "original_sha256": "0da4d4c343e250fb3d12a2f4b2fcb3409089a091350aa9725e6e2dbd93e340df",
+      "original_bytes": 106857,
+      "replacements": 2,
+      "complete_original_retained_privately": true
+    }
   },
   {
     "file": "native-results.redacted.html",

@@ -1,0 +1,60 @@
+{
+  "status": "superseded_by_source_key_remediation",
+  "replacement_verification": "../20261105-source-key-remediation-01/verification.json",
+  "counties": [
+    {
+      "county": "Chester",
+      "county_fips": "42029",
+      "candidate_rows": 41,
+      "mode_rows": 123,
+      "all_native_candidate_and_mode_literals_match": true,
+      "all_office_party_totals_match": true,
+      "census_identity_matches": true
+    },
+    {
+      "county": "Franklin",
+      "county_fips": "42055",
+      "candidate_rows": 15,
+      "mode_rows": 60,
+      "all_native_candidate_and_mode_literals_match": true,
+      "all_office_party_totals_match": true,
+      "census_identity_matches": true
+    },
+    {
+      "county": "Lehigh",
+      "county_fips": "42077",
+      "candidate_rows": 48,
+      "mode_rows": 144,
+      "all_native_candidate_and_mode_literals_match": true,
+      "all_office_party_totals_match": true,
+      "census_identity_matches": true
+    }
+  ],
+  "all_package_members_and_checksums_match": true,
+  "portable_reproduction_zip_byte_identical": true,
+  "complete_download_bytes": 512144,
+  "complete_download_sha256": "17bc71dac1aab8796d513e08cd92dd6b0579c3f37c685068c54c874d0ef524c5",
+  "focused_parser_tests_passed": 13,
+  "house_accounting": [
+    {
+      "county": "Chester",
+      "native_under_votes": "",
+      "native_over_votes": "",
+      "ballots_minus_votes_unclassified": "540"
+    },
+    {
+      "county": "Franklin",
+      "native_under_votes": "195",
+      "native_over_votes": "6",
+      "ballots_minus_votes_unclassified": "0"
+    },
+    {
+      "county": "Lehigh",
+      "native_under_votes": "1003",
+      "native_over_votes": "",
+      "ballots_minus_votes_unclassified": "46"
+    }
+  ],
+  "maps_changed": false,
+  "fully_complete": false
+}

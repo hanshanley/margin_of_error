@@ -1,0 +1,50 @@
+[
+  {
+    "url": "https://www.livevoterturnout.com/ENR/franklinpaenr/15/en/Index_15.html",
+    "status": 200,
+    "fetched_at": "2026-11-05T20:37:32.536140+00:00",
+    "file": "native-results.redacted.html",
+    "final_url": "https://www.livevoterturnout.com/ENR/franklinpaenr/15/en/Index_15.html",
+    "bytes": 851125,
+    "sha256": "68c0dfcc617daaed03bcd3a25206ecc515bcac20a63258ce5cb621ba1b266ac5",
+    "redaction": {
+      "kind": "public_map_service_and_instrumentation_keys",
+      "replacements": 2,
+      "original_bytes": 851239,
+      "original_sha256": "d619e9a9833c58fa4750369d36ae6b100277ef61fa00d9802130e040a8ffe945"
+    }
+  },
+  {
+    "url": "https://www.livevoterturnout.com/ENR/franklinpaenr/15/summary_15.csv",
+    "status": 200,
+    "fetched_at": "2026-11-05T20:38:44.133011+00:00",
+    "file": "summary.csv",
+    "final_url": "https://www.livevoterturnout.com/ENR/franklinpaenr/15/summary_15.csv",
+    "bytes": 2120,
+    "sha256": "e6945912588264357c679b2b7707114183249d3f279cd5f398fcdb5c10da3729"
+  },
+  {
+    "url": "https://www.franklincountypa.gov/departments/elections-voter-registration/",
+    "status": 200,
+    "fetched_at": "2026-11-05T20:38:45.480999+00:00",
+    "file": "official-results-index.html",
+    "final_url": "https://www.franklincountypa.gov/departments/elections-voter-registration/",
+    "bytes": 379429,
+    "sha256": "6584a4b795456e687e9c928ab75d89d7b8493626f0717a19d9b1be2164e03424",
+    "redaction": {
+      "original_sha256": "345eabf303027ddfdc2c7776519b2755e1d6fdfd73682fa58ed5cc85b01779ad",
+      "original_bytes": 379429,
+      "replacements": 3,
+      "reason": "Explicitly removes public-page Google/Mapbox and instrumentation keys. Complete original privately retained."
+    }
+  },
+  {
+    "url": "https://www.livevoterturnout.com/ENR/franklinpaenr/15/contests_15.csv",
+    "final_url": "https://www.livevoterturnout.com/ENR/franklinpaenr/15/contests_15.csv",
+    "status": 200,
+    "bytes": 469,
+    "sha256": "6c8eb57a267603bc6e82f909fda926d88640cdbcdb30af1a5062859db9acbb63",
+    "fetched_at": "2026-11-05T20:38:44.252008+00:00",
+    "file": "contests.csv"
+  }
+]

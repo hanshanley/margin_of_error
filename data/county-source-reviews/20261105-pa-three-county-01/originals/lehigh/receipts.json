@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://www.livevoterturnout.com/ENR/lehighpaenr/13/en/Index_13.html",
+    "status": 200,
+    "fetched_at": "2026-11-05T20:37:32.717378+00:00",
+    "file": "native-results.redacted.html",
+    "final_url": "https://www.livevoterturnout.com/ENR/lehighpaenr/13/en/Index_13.html",
+    "bytes": 3469402,
+    "sha256": "4c40c2bcf209c8e27fddd2d721fde98222622d305962309a1d44ca5468716314",
+    "redaction": {
+      "kind": "public_map_service_and_instrumentation_keys",
+      "replacements": 1,
+      "original_bytes": 3469459,
+      "original_sha256": "a15b888a3d403b81513c721978cde768dd5c93e914558c26368567119dcbfefd"
+    }
+  },
+  {
+    "url": "https://www.livevoterturnout.com/ENR/lehighpaenr/13/summary_13.csv",
+    "status": 200,
+    "fetched_at": "2026-11-05T20:38:44.426851+00:00",
+    "file": "summary.csv",
+    "final_url": "https://www.livevoterturnout.com/ENR/lehighpaenr/13/summary_13.csv",
+    "bytes": 6228,
+    "sha256": "3d320102ad47c3632635859a37f5bdefa24574380fcecef24e87113ad6c4ad13"
+  },
+  {
+    "url": "https://www.lehighcounty.org/Departments/Voter-Registration/Election-Results",
+    "status": 200,
+    "fetched_at": "2026-11-05T20:39:17.018114+00:00",
+    "file": "official-results-index.html",
+    "final_url": "https://www.lehighcounty.org/Departments/Voter-Registration/Election-Results",
+    "bytes": 89420,
+    "sha256": "1c1bc6d8aaf423b649860f88c72be47dab61be71b9ece6a6a208dddc6e08e17d"
+  }
+]

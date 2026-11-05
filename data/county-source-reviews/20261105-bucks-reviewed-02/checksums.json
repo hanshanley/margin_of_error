@@ -1,7 +1,7 @@
 {
   "audit.json": {
-    "bytes": 3060,
-    "sha256": "2add11e1f9880f4d9f706423c7b64c1f035956c46a3640806bdc4bf63b910c20"
+    "bytes": 3077,
+    "sha256": "6f2921aee962ce297faf2e84dbd3672d3346dd7c92d27b88d90b9067ccc8c728"
   },
   "county-candidate-mode-counts.csv": {
     "bytes": 17230,
@@ -44,12 +44,12 @@
     "sha256": "aebea46c1ab91894acec8cdb3b1dddb2db7fb3c8794157fc36af52c804bf52ae"
   },
   "originals/official-results-index.html": {
-    "bytes": 106857,
-    "sha256": "0da4d4c343e250fb3d12a2f4b2fcb3409089a091350aa9725e6e2dbd93e340df"
+    "bytes": 106840,
+    "sha256": "13abe0ef9f62f68347e6a25c9104905bbf55c082ad8ab4e3e8063bf1625ce3a5"
   },
   "originals/receipts.json": {
-    "bytes": 2854,
-    "sha256": "b861ef4ed0b4979c1a2595cc605cb8ec0fa7a4c94abbd4725c4ac855ae6aa18c"
+    "bytes": 3132,
+    "sha256": "5f022625012fbde9fd14196ddeb3773aa8fe47b1b491d371904b3cd381f73b08"
   },
   "originals/summary.csv": {
     "bytes": 4899,
@@ -60,7 +60,7 @@
     "sha256": "d887a33219f4cb30c8c724219dadd5ff24653c7b78a2f25a6cb634ac1d8f1c07"
   },
   "review-bucks-2026-county-results.py": {
-    "bytes": 21003,
-    "sha256": "f4ad38ae82a7bb28d7c8affe1c031f151e1caae1b34ec444814332d91bf587d4"
+    "bytes": 21679,
+    "sha256": "03ee828c80244c1b54c745dd38bbde83e45a6116ea7fc4eca58632825aa8b5c0"
   }
 }

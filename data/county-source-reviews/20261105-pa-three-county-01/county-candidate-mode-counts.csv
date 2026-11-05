@@ -1,0 +1,328 @@
+year,state_code,county_fips,county,office,contest,candidate_literal,party_csv_literal,candidate_html_literal,accessible_html_literal,votes,voting_mode_literal,mode_votes
+2026,PA,42029,Chester,governor_lieutenant_governor,Governor and Lieutenant Governor,DEM Josh Shapiro and Austin Davis,DEM,DEM Josh Shapiro and Austin Davis (DEM),"DEM Josh Shapiro and Austin Davis, DEMOCRATIC PARTY",164083,Absentee and Mail-In Votes,51514
+2026,PA,42029,Chester,governor_lieutenant_governor,Governor and Lieutenant Governor,DEM Josh Shapiro and Austin Davis,DEM,DEM Josh Shapiro and Austin Davis (DEM),"DEM Josh Shapiro and Austin Davis, DEMOCRATIC PARTY",164083,Election Day Votes,112569
+2026,PA,42029,Chester,governor_lieutenant_governor,Governor and Lieutenant Governor,DEM Josh Shapiro and Austin Davis,DEM,DEM Josh Shapiro and Austin Davis (DEM),"DEM Josh Shapiro and Austin Davis, DEMOCRATIC PARTY",164083,Provisional Votes,0
+2026,PA,42029,Chester,governor_lieutenant_governor,Governor and Lieutenant Governor,REP Stacy Garrity and Jason Richey,REP,REP Stacy Garrity and Jason Richey (REP),"REP Stacy Garrity and Jason Richey, REPUBLICAN PARTY",75744,Absentee and Mail-In Votes,9700
+2026,PA,42029,Chester,governor_lieutenant_governor,Governor and Lieutenant Governor,REP Stacy Garrity and Jason Richey,REP,REP Stacy Garrity and Jason Richey (REP),"REP Stacy Garrity and Jason Richey, REPUBLICAN PARTY",75744,Election Day Votes,66044
+2026,PA,42029,Chester,governor_lieutenant_governor,Governor and Lieutenant Governor,REP Stacy Garrity and Jason Richey,REP,REP Stacy Garrity and Jason Richey (REP),"REP Stacy Garrity and Jason Richey, REPUBLICAN PARTY",75744,Provisional Votes,0
+2026,PA,42029,Chester,governor_lieutenant_governor,Governor and Lieutenant Governor,LIB Ken Krawchuk and John Thomas,LIB,LIB Ken Krawchuk and John Thomas (LIB),"LIB Ken Krawchuk and John Thomas, LIB",2527,Absentee and Mail-In Votes,410
+2026,PA,42029,Chester,governor_lieutenant_governor,Governor and Lieutenant Governor,LIB Ken Krawchuk and John Thomas,LIB,LIB Ken Krawchuk and John Thomas (LIB),"LIB Ken Krawchuk and John Thomas, LIB",2527,Election Day Votes,2117
+2026,PA,42029,Chester,governor_lieutenant_governor,Governor and Lieutenant Governor,LIB Ken Krawchuk and John Thomas,LIB,LIB Ken Krawchuk and John Thomas (LIB),"LIB Ken Krawchuk and John Thomas, LIB",2527,Provisional Votes,0
+2026,PA,42029,Chester,governor_lieutenant_governor,Governor and Lieutenant Governor,Write-in,NON,Write-in (NON),"Write-in, NON",395,Absentee and Mail-In Votes,84
+2026,PA,42029,Chester,governor_lieutenant_governor,Governor and Lieutenant Governor,Write-in,NON,Write-in (NON),"Write-in, NON",395,Election Day Votes,311
+2026,PA,42029,Chester,governor_lieutenant_governor,Governor and Lieutenant Governor,Write-in,NON,Write-in (NON),"Write-in, NON",395,Provisional Votes,0
+2026,PA,42029,Chester,us_house,Representative in Congress 6th District,DEM Chrissy Houlahan,DEM,DEM Chrissy Houlahan (DEM),"DEM Chrissy Houlahan, DEMOCRATIC PARTY",158099,Absentee and Mail-In Votes,50558
+2026,PA,42029,Chester,us_house,Representative in Congress 6th District,DEM Chrissy Houlahan,DEM,DEM Chrissy Houlahan (DEM),"DEM Chrissy Houlahan, DEMOCRATIC PARTY",158099,Election Day Votes,107541
+2026,PA,42029,Chester,us_house,Representative in Congress 6th District,DEM Chrissy Houlahan,DEM,DEM Chrissy Houlahan (DEM),"DEM Chrissy Houlahan, DEMOCRATIC PARTY",158099,Provisional Votes,0
+2026,PA,42029,Chester,us_house,Representative in Congress 6th District,REP Marty Young,REP,REP Marty Young (REP),"REP Marty Young, REPUBLICAN PARTY",84746,Absentee and Mail-In Votes,11397
+2026,PA,42029,Chester,us_house,Representative in Congress 6th District,REP Marty Young,REP,REP Marty Young (REP),"REP Marty Young, REPUBLICAN PARTY",84746,Election Day Votes,73349
+2026,PA,42029,Chester,us_house,Representative in Congress 6th District,REP Marty Young,REP,REP Marty Young (REP),"REP Marty Young, REPUBLICAN PARTY",84746,Provisional Votes,0
+2026,PA,42029,Chester,us_house,Representative in Congress 6th District,Write-in,NON,Write-in (NON),"Write-in, NON",295,Absentee and Mail-In Votes,65
+2026,PA,42029,Chester,us_house,Representative in Congress 6th District,Write-in,NON,Write-in (NON),"Write-in, NON",295,Election Day Votes,230
+2026,PA,42029,Chester,us_house,Representative in Congress 6th District,Write-in,NON,Write-in (NON),"Write-in, NON",295,Provisional Votes,0
+2026,PA,42029,Chester,state_senate,Senator in the General Assembly 44th District,DEM Katie Muth,DEM,DEM Katie Muth (DEM),"DEM Katie Muth, DEMOCRATIC PARTY",59309,Absentee and Mail-In Votes,19245
+2026,PA,42029,Chester,state_senate,Senator in the General Assembly 44th District,DEM Katie Muth,DEM,DEM Katie Muth (DEM),"DEM Katie Muth, DEMOCRATIC PARTY",59309,Election Day Votes,40064
+2026,PA,42029,Chester,state_senate,Senator in the General Assembly 44th District,DEM Katie Muth,DEM,DEM Katie Muth (DEM),"DEM Katie Muth, DEMOCRATIC PARTY",59309,Provisional Votes,0
+2026,PA,42029,Chester,state_senate,Senator in the General Assembly 44th District,REP Melissa Dicranian,REP,REP Melissa Dicranian (REP),"REP Melissa Dicranian, REPUBLICAN PARTY",33209,Absentee and Mail-In Votes,4429
+2026,PA,42029,Chester,state_senate,Senator in the General Assembly 44th District,REP Melissa Dicranian,REP,REP Melissa Dicranian (REP),"REP Melissa Dicranian, REPUBLICAN PARTY",33209,Election Day Votes,28780
+2026,PA,42029,Chester,state_senate,Senator in the General Assembly 44th District,REP Melissa Dicranian,REP,REP Melissa Dicranian (REP),"REP Melissa Dicranian, REPUBLICAN PARTY",33209,Provisional Votes,0
+2026,PA,42029,Chester,state_senate,Senator in the General Assembly 44th District,Write-in,NON,Write-in (NON),"Write-in, NON",90,Absentee and Mail-In Votes,22
+2026,PA,42029,Chester,state_senate,Senator in the General Assembly 44th District,Write-in,NON,Write-in (NON),"Write-in, NON",90,Election Day Votes,68
+2026,PA,42029,Chester,state_senate,Senator in the General Assembly 44th District,Write-in,NON,Write-in (NON),"Write-in, NON",90,Provisional Votes,0
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 13th District,DEM Madelyn Alvarino,DEM,DEM Madelyn Alvarino (DEM),"DEM Madelyn Alvarino, DEMOCRATIC PARTY",13737,Absentee and Mail-In Votes,4110
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 13th District,DEM Madelyn Alvarino,DEM,DEM Madelyn Alvarino (DEM),"DEM Madelyn Alvarino, DEMOCRATIC PARTY",13737,Election Day Votes,9627
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 13th District,DEM Madelyn Alvarino,DEM,DEM Madelyn Alvarino (DEM),"DEM Madelyn Alvarino, DEMOCRATIC PARTY",13737,Provisional Votes,0
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 13th District,REP John Lawrence,REP,REP John Lawrence (REP),"REP John Lawrence, REPUBLICAN PARTY",13127,Absentee and Mail-In Votes,1754
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 13th District,REP John Lawrence,REP,REP John Lawrence (REP),"REP John Lawrence, REPUBLICAN PARTY",13127,Election Day Votes,11373
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 13th District,REP John Lawrence,REP,REP John Lawrence (REP),"REP John Lawrence, REPUBLICAN PARTY",13127,Provisional Votes,0
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 13th District,Write-in,NON,Write-in (NON),"Write-in, NON",27,Absentee and Mail-In Votes,5
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 13th District,Write-in,NON,Write-in (NON),"Write-in, NON",27,Election Day Votes,22
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 13th District,Write-in,NON,Write-in (NON),"Write-in, NON",27,Provisional Votes,0
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 26th District,DEM Paul Friel,DEM,DEM Paul Friel (DEM),"DEM Paul Friel, DEMOCRATIC PARTY",19331,Absentee and Mail-In Votes,5439
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 26th District,DEM Paul Friel,DEM,DEM Paul Friel (DEM),"DEM Paul Friel, DEMOCRATIC PARTY",19331,Election Day Votes,13892
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 26th District,DEM Paul Friel,DEM,DEM Paul Friel (DEM),"DEM Paul Friel, DEMOCRATIC PARTY",19331,Provisional Votes,0
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 26th District,REP Samantha Horosky,REP,REP Samantha Horosky (REP),"REP Samantha Horosky, REPUBLICAN PARTY",10405,Absentee and Mail-In Votes,1079
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 26th District,REP Samantha Horosky,REP,REP Samantha Horosky (REP),"REP Samantha Horosky, REPUBLICAN PARTY",10405,Election Day Votes,9326
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 26th District,REP Samantha Horosky,REP,REP Samantha Horosky (REP),"REP Samantha Horosky, REPUBLICAN PARTY",10405,Provisional Votes,0
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 26th District,Write-in,NON,Write-in (NON),"Write-in, NON",44,Absentee and Mail-In Votes,9
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 26th District,Write-in,NON,Write-in (NON),"Write-in, NON",44,Election Day Votes,35
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 26th District,Write-in,NON,Write-in (NON),"Write-in, NON",44,Provisional Votes,0
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 74th District,DEM Dan Williams,DEM,DEM Dan Williams (DEM),"DEM Dan Williams, DEMOCRATIC PARTY",14666,Absentee and Mail-In Votes,4520
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 74th District,DEM Dan Williams,DEM,DEM Dan Williams (DEM),"DEM Dan Williams, DEMOCRATIC PARTY",14666,Election Day Votes,10146
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 74th District,DEM Dan Williams,DEM,DEM Dan Williams (DEM),"DEM Dan Williams, DEMOCRATIC PARTY",14666,Provisional Votes,0
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 74th District,REP Lorenzo Kelley,REP,REP Lorenzo Kelley (REP),"REP Lorenzo Kelley, REPUBLICAN PARTY",8172,Absentee and Mail-In Votes,1035
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 74th District,REP Lorenzo Kelley,REP,REP Lorenzo Kelley (REP),"REP Lorenzo Kelley, REPUBLICAN PARTY",8172,Election Day Votes,7137
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 74th District,REP Lorenzo Kelley,REP,REP Lorenzo Kelley (REP),"REP Lorenzo Kelley, REPUBLICAN PARTY",8172,Provisional Votes,0
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 74th District,Write-in,NON,Write-in (NON),"Write-in, NON",31,Absentee and Mail-In Votes,4
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 74th District,Write-in,NON,Write-in (NON),"Write-in, NON",31,Election Day Votes,27
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 74th District,Write-in,NON,Write-in (NON),"Write-in, NON",31,Provisional Votes,0
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 155th District,DEM Danielle Friel Otten,DEM,DEM Danielle Friel Otten (DEM),"DEM Danielle Friel Otten, DEMOCRATIC PARTY",22651,Absentee and Mail-In Votes,7304
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 155th District,DEM Danielle Friel Otten,DEM,DEM Danielle Friel Otten (DEM),"DEM Danielle Friel Otten, DEMOCRATIC PARTY",22651,Election Day Votes,15347
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 155th District,DEM Danielle Friel Otten,DEM,DEM Danielle Friel Otten (DEM),"DEM Danielle Friel Otten, DEMOCRATIC PARTY",22651,Provisional Votes,0
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 155th District,Write-in,NON,Write-in (NON),"Write-in, NON",3930,Absentee and Mail-In Votes,360
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 155th District,Write-in,NON,Write-in (NON),"Write-in, NON",3930,Election Day Votes,3570
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 155th District,Write-in,NON,Write-in (NON),"Write-in, NON",3930,Provisional Votes,0
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 156th District,DEM Chris Pielli,DEM,DEM Chris Pielli (DEM),"DEM Chris Pielli, DEMOCRATIC PARTY",19625,Absentee and Mail-In Votes,5941
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 156th District,DEM Chris Pielli,DEM,DEM Chris Pielli (DEM),"DEM Chris Pielli, DEMOCRATIC PARTY",19625,Election Day Votes,13684
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 156th District,DEM Chris Pielli,DEM,DEM Chris Pielli (DEM),"DEM Chris Pielli, DEMOCRATIC PARTY",19625,Provisional Votes,0
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 156th District,REP Kris R. Vollrath,REP,REP Kris R. Vollrath (REP),"REP Kris R. Vollrath, REPUBLICAN PARTY",9370,Absentee and Mail-In Votes,1427
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 156th District,REP Kris R. Vollrath,REP,REP Kris R. Vollrath (REP),"REP Kris R. Vollrath, REPUBLICAN PARTY",9370,Election Day Votes,7943
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 156th District,REP Kris R. Vollrath,REP,REP Kris R. Vollrath (REP),"REP Kris R. Vollrath, REPUBLICAN PARTY",9370,Provisional Votes,0
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 156th District,Write-in,NON,Write-in (NON),"Write-in, NON",28,Absentee and Mail-In Votes,4
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 156th District,Write-in,NON,Write-in (NON),"Write-in, NON",28,Election Day Votes,24
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 156th District,Write-in,NON,Write-in (NON),"Write-in, NON",28,Provisional Votes,0
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 157th District,DEM Melissa Shusterman,DEM,DEM Melissa Shusterman (DEM),"DEM Melissa Shusterman, DEMOCRATIC PARTY",21589,Absentee and Mail-In Votes,7156
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 157th District,DEM Melissa Shusterman,DEM,DEM Melissa Shusterman (DEM),"DEM Melissa Shusterman, DEMOCRATIC PARTY",21589,Election Day Votes,14433
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 157th District,DEM Melissa Shusterman,DEM,DEM Melissa Shusterman (DEM),"DEM Melissa Shusterman, DEMOCRATIC PARTY",21589,Provisional Votes,0
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 157th District,REP Justin J. Pak,REP,REP Justin J. Pak (REP),"REP Justin J. Pak, REPUBLICAN PARTY",10021,Absentee and Mail-In Votes,1503
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 157th District,REP Justin J. Pak,REP,REP Justin J. Pak (REP),"REP Justin J. Pak, REPUBLICAN PARTY",10021,Election Day Votes,8518
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 157th District,REP Justin J. Pak,REP,REP Justin J. Pak (REP),"REP Justin J. Pak, REPUBLICAN PARTY",10021,Provisional Votes,0
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 157th District,Write-in,NON,Write-in (NON),"Write-in, NON",30,Absentee and Mail-In Votes,5
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 157th District,Write-in,NON,Write-in (NON),"Write-in, NON",30,Election Day Votes,25
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 157th District,Write-in,NON,Write-in (NON),"Write-in, NON",30,Provisional Votes,0
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 158th District,DEM Christina D. Sappey,DEM,DEM Christina D. Sappey (DEM),"DEM Christina D. Sappey, DEMOCRATIC PARTY",20892,Absentee and Mail-In Votes,6469
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 158th District,DEM Christina D. Sappey,DEM,DEM Christina D. Sappey (DEM),"DEM Christina D. Sappey, DEMOCRATIC PARTY",20892,Election Day Votes,14423
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 158th District,DEM Christina D. Sappey,DEM,DEM Christina D. Sappey (DEM),"DEM Christina D. Sappey, DEMOCRATIC PARTY",20892,Provisional Votes,0
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 158th District,Write-in,NON,Write-in (NON),"Write-in, NON",4404,Absentee and Mail-In Votes,330
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 158th District,Write-in,NON,Write-in (NON),"Write-in, NON",4404,Election Day Votes,4074
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 158th District,Write-in,NON,Write-in (NON),"Write-in, NON",4404,Provisional Votes,0
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 160th District,DEM Elizabeth Moro,DEM,DEM Elizabeth Moro (DEM),"DEM Elizabeth Moro, DEMOCRATIC PARTY",7032,Absentee and Mail-In Votes,2412
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 160th District,DEM Elizabeth Moro,DEM,DEM Elizabeth Moro (DEM),"DEM Elizabeth Moro, DEMOCRATIC PARTY",7032,Election Day Votes,4620
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 160th District,DEM Elizabeth Moro,DEM,DEM Elizabeth Moro (DEM),"DEM Elizabeth Moro, DEMOCRATIC PARTY",7032,Provisional Votes,0
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 160th District,REP Craig Williams,REP,REP Craig Williams (REP),"REP Craig Williams, REPUBLICAN PARTY",4762,Absentee and Mail-In Votes,745
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 160th District,REP Craig Williams,REP,REP Craig Williams (REP),"REP Craig Williams, REPUBLICAN PARTY",4762,Election Day Votes,4017
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 160th District,REP Craig Williams,REP,REP Craig Williams (REP),"REP Craig Williams, REPUBLICAN PARTY",4762,Provisional Votes,0
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 160th District,Write-in,NON,Write-in (NON),"Write-in, NON",13,Absentee and Mail-In Votes,4
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 160th District,Write-in,NON,Write-in (NON),"Write-in, NON",13,Election Day Votes,9
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 160th District,Write-in,NON,Write-in (NON),"Write-in, NON",13,Provisional Votes,0
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 167th District,DEM Kristine Howard,DEM,DEM Kristine Howard (DEM),"DEM Kristine Howard, DEMOCRATIC PARTY",20347,Absentee and Mail-In Votes,7079
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 167th District,DEM Kristine Howard,DEM,DEM Kristine Howard (DEM),"DEM Kristine Howard, DEMOCRATIC PARTY",20347,Election Day Votes,13268
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 167th District,DEM Kristine Howard,DEM,DEM Kristine Howard (DEM),"DEM Kristine Howard, DEMOCRATIC PARTY",20347,Provisional Votes,0
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 167th District,REP Joe Lewis,REP,REP Joe Lewis (REP),"REP Joe Lewis, REPUBLICAN PARTY",9825,Absentee and Mail-In Votes,1605
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 167th District,REP Joe Lewis,REP,REP Joe Lewis (REP),"REP Joe Lewis, REPUBLICAN PARTY",9825,Election Day Votes,8220
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 167th District,REP Joe Lewis,REP,REP Joe Lewis (REP),"REP Joe Lewis, REPUBLICAN PARTY",9825,Provisional Votes,0
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 167th District,Write-in,NON,Write-in (NON),"Write-in, NON",25,Absentee and Mail-In Votes,5
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 167th District,Write-in,NON,Write-in (NON),"Write-in, NON",25,Election Day Votes,20
+2026,PA,42029,Chester,state_house,Representative in the General Assembly 167th District,Write-in,NON,Write-in (NON),"Write-in, NON",25,Provisional Votes,0
+2026,PA,42029,Chester,ballot_question,Tredyffrin Township: Home Rule Charter Referendum,YES,NON,YES (NON),"YES, NON",10032,Absentee and Mail-In Votes,3240
+2026,PA,42029,Chester,ballot_question,Tredyffrin Township: Home Rule Charter Referendum,YES,NON,YES (NON),"YES, NON",10032,Election Day Votes,6792
+2026,PA,42029,Chester,ballot_question,Tredyffrin Township: Home Rule Charter Referendum,YES,NON,YES (NON),"YES, NON",10032,Provisional Votes,0
+2026,PA,42029,Chester,ballot_question,Tredyffrin Township: Home Rule Charter Referendum,NO,NON,NO (NON),"NO, NON",4262,Absentee and Mail-In Votes,788
+2026,PA,42029,Chester,ballot_question,Tredyffrin Township: Home Rule Charter Referendum,NO,NON,NO (NON),"NO, NON",4262,Election Day Votes,3474
+2026,PA,42029,Chester,ballot_question,Tredyffrin Township: Home Rule Charter Referendum,NO,NON,NO (NON),"NO, NON",4262,Provisional Votes,0
+2026,PA,42029,Chester,ballot_question,East Whiteland Township: Board of Supervisors Referendum,YES,NON,YES (NON),"YES, NON",3542,Absentee and Mail-In Votes,1079
+2026,PA,42029,Chester,ballot_question,East Whiteland Township: Board of Supervisors Referendum,YES,NON,YES (NON),"YES, NON",3542,Election Day Votes,2463
+2026,PA,42029,Chester,ballot_question,East Whiteland Township: Board of Supervisors Referendum,YES,NON,YES (NON),"YES, NON",3542,Provisional Votes,0
+2026,PA,42029,Chester,ballot_question,East Whiteland Township: Board of Supervisors Referendum,NO,NON,NO (NON),"NO, NON",1959,Absentee and Mail-In Votes,478
+2026,PA,42029,Chester,ballot_question,East Whiteland Township: Board of Supervisors Referendum,NO,NON,NO (NON),"NO, NON",1959,Election Day Votes,1481
+2026,PA,42029,Chester,ballot_question,East Whiteland Township: Board of Supervisors Referendum,NO,NON,NO (NON),"NO, NON",1959,Provisional Votes,0
+2026,PA,42029,Chester,ballot_question,Malvern Borough: Home Rule Charter Referendum,YES,NON,YES (NON),"YES, NON",1014,Absentee and Mail-In Votes,266
+2026,PA,42029,Chester,ballot_question,Malvern Borough: Home Rule Charter Referendum,YES,NON,YES (NON),"YES, NON",1014,Election Day Votes,748
+2026,PA,42029,Chester,ballot_question,Malvern Borough: Home Rule Charter Referendum,YES,NON,YES (NON),"YES, NON",1014,Provisional Votes,0
+2026,PA,42029,Chester,ballot_question,Malvern Borough: Home Rule Charter Referendum,NO,NON,NO (NON),"NO, NON",686,Absentee and Mail-In Votes,142
+2026,PA,42029,Chester,ballot_question,Malvern Borough: Home Rule Charter Referendum,NO,NON,NO (NON),"NO, NON",686,Election Day Votes,544
+2026,PA,42029,Chester,ballot_question,Malvern Borough: Home Rule Charter Referendum,NO,NON,NO (NON),"NO, NON",686,Provisional Votes,0
+2026,PA,42055,Franklin,governor_lieutenant_governor,GOVERNOR and LIEUTENANT GOVERNOR,DEM Shapiro / Davis,DEM,DEM Shapiro / Davis,DEM Shapiro / Davis,21601,Early Voting Votes,0
+2026,PA,42055,Franklin,governor_lieutenant_governor,GOVERNOR and LIEUTENANT GOVERNOR,DEM Shapiro / Davis,DEM,DEM Shapiro / Davis,DEM Shapiro / Davis,21601,Mail Ballots Votes,6553
+2026,PA,42055,Franklin,governor_lieutenant_governor,GOVERNOR and LIEUTENANT GOVERNOR,DEM Shapiro / Davis,DEM,DEM Shapiro / Davis,DEM Shapiro / Davis,21601,Election Day Votes,15048
+2026,PA,42055,Franklin,governor_lieutenant_governor,GOVERNOR and LIEUTENANT GOVERNOR,DEM Shapiro / Davis,DEM,DEM Shapiro / Davis,DEM Shapiro / Davis,21601,Provisional Votes,0
+2026,PA,42055,Franklin,governor_lieutenant_governor,GOVERNOR and LIEUTENANT GOVERNOR,REP Garrity / Richey,REP,REP Garrity / Richey,REP Garrity / Richey,34768,Early Voting Votes,0
+2026,PA,42055,Franklin,governor_lieutenant_governor,GOVERNOR and LIEUTENANT GOVERNOR,REP Garrity / Richey,REP,REP Garrity / Richey,REP Garrity / Richey,34768,Mail Ballots Votes,2915
+2026,PA,42055,Franklin,governor_lieutenant_governor,GOVERNOR and LIEUTENANT GOVERNOR,REP Garrity / Richey,REP,REP Garrity / Richey,REP Garrity / Richey,34768,Election Day Votes,31853
+2026,PA,42055,Franklin,governor_lieutenant_governor,GOVERNOR and LIEUTENANT GOVERNOR,REP Garrity / Richey,REP,REP Garrity / Richey,REP Garrity / Richey,34768,Provisional Votes,0
+2026,PA,42055,Franklin,governor_lieutenant_governor,GOVERNOR and LIEUTENANT GOVERNOR,LIB Krawchuk / Thomas,LIB,LIB Krawchuk / Thomas,LIB Krawchuk / Thomas,907,Early Voting Votes,0
+2026,PA,42055,Franklin,governor_lieutenant_governor,GOVERNOR and LIEUTENANT GOVERNOR,LIB Krawchuk / Thomas,LIB,LIB Krawchuk / Thomas,LIB Krawchuk / Thomas,907,Mail Ballots Votes,111
+2026,PA,42055,Franklin,governor_lieutenant_governor,GOVERNOR and LIEUTENANT GOVERNOR,LIB Krawchuk / Thomas,LIB,LIB Krawchuk / Thomas,LIB Krawchuk / Thomas,907,Election Day Votes,796
+2026,PA,42055,Franklin,governor_lieutenant_governor,GOVERNOR and LIEUTENANT GOVERNOR,LIB Krawchuk / Thomas,LIB,LIB Krawchuk / Thomas,LIB Krawchuk / Thomas,907,Provisional Votes,0
+2026,PA,42055,Franklin,governor_lieutenant_governor,GOVERNOR and LIEUTENANT GOVERNOR,Write-in,NON,Write-in,Write-in,57,Early Voting Votes,0
+2026,PA,42055,Franklin,governor_lieutenant_governor,GOVERNOR and LIEUTENANT GOVERNOR,Write-in,NON,Write-in,Write-in,57,Mail Ballots Votes,14
+2026,PA,42055,Franklin,governor_lieutenant_governor,GOVERNOR and LIEUTENANT GOVERNOR,Write-in,NON,Write-in,Write-in,57,Election Day Votes,43
+2026,PA,42055,Franklin,governor_lieutenant_governor,GOVERNOR and LIEUTENANT GOVERNOR,Write-in,NON,Write-in,Write-in,57,Provisional Votes,0
+2026,PA,42055,Franklin,us_house,REPRESENTATIVE IN CONGRESS,DEM Beth Farnham,DEM,DEM Beth Farnham,DEM Beth Farnham,19005,Early Voting Votes,0
+2026,PA,42055,Franklin,us_house,REPRESENTATIVE IN CONGRESS,DEM Beth Farnham,DEM,DEM Beth Farnham,DEM Beth Farnham,19005,Mail Ballots Votes,6005
+2026,PA,42055,Franklin,us_house,REPRESENTATIVE IN CONGRESS,DEM Beth Farnham,DEM,DEM Beth Farnham,DEM Beth Farnham,19005,Election Day Votes,13000
+2026,PA,42055,Franklin,us_house,REPRESENTATIVE IN CONGRESS,DEM Beth Farnham,DEM,DEM Beth Farnham,DEM Beth Farnham,19005,Provisional Votes,0
+2026,PA,42055,Franklin,us_house,REPRESENTATIVE IN CONGRESS,REP John Joyce,REP,REP John Joyce,REP John Joyce,38255,Early Voting Votes,0
+2026,PA,42055,Franklin,us_house,REPRESENTATIVE IN CONGRESS,REP John Joyce,REP,REP John Joyce,REP John Joyce,38255,Mail Ballots Votes,3575
+2026,PA,42055,Franklin,us_house,REPRESENTATIVE IN CONGRESS,REP John Joyce,REP,REP John Joyce,REP John Joyce,38255,Election Day Votes,34680
+2026,PA,42055,Franklin,us_house,REPRESENTATIVE IN CONGRESS,REP John Joyce,REP,REP John Joyce,REP John Joyce,38255,Provisional Votes,0
+2026,PA,42055,Franklin,us_house,REPRESENTATIVE IN CONGRESS,Write-in,NON,Write-in,Write-in,72,Early Voting Votes,0
+2026,PA,42055,Franklin,us_house,REPRESENTATIVE IN CONGRESS,Write-in,NON,Write-in,Write-in,72,Mail Ballots Votes,9
+2026,PA,42055,Franklin,us_house,REPRESENTATIVE IN CONGRESS,Write-in,NON,Write-in,Write-in,72,Election Day Votes,63
+2026,PA,42055,Franklin,us_house,REPRESENTATIVE IN CONGRESS,Write-in,NON,Write-in,Write-in,72,Provisional Votes,0
+2026,PA,42055,Franklin,state_house,REPRESENTATIVE IN THE GENERAL ASSEMBLY 81st Legislative,DEM Caleb J. Donahue,DEM,DEM Caleb J. Donahue,DEM Caleb J. Donahue,2140,Early Voting Votes,0
+2026,PA,42055,Franklin,state_house,REPRESENTATIVE IN THE GENERAL ASSEMBLY 81st Legislative,DEM Caleb J. Donahue,DEM,DEM Caleb J. Donahue,DEM Caleb J. Donahue,2140,Mail Ballots Votes,623
+2026,PA,42055,Franklin,state_house,REPRESENTATIVE IN THE GENERAL ASSEMBLY 81st Legislative,DEM Caleb J. Donahue,DEM,DEM Caleb J. Donahue,DEM Caleb J. Donahue,2140,Election Day Votes,1517
+2026,PA,42055,Franklin,state_house,REPRESENTATIVE IN THE GENERAL ASSEMBLY 81st Legislative,DEM Caleb J. Donahue,DEM,DEM Caleb J. Donahue,DEM Caleb J. Donahue,2140,Provisional Votes,0
+2026,PA,42055,Franklin,state_house,REPRESENTATIVE IN THE GENERAL ASSEMBLY 81st Legislative,REP Rich Irvin,REP,REP Rich Irvin,REP Rich Irvin,6462,Early Voting Votes,0
+2026,PA,42055,Franklin,state_house,REPRESENTATIVE IN THE GENERAL ASSEMBLY 81st Legislative,REP Rich Irvin,REP,REP Rich Irvin,REP Rich Irvin,6462,Mail Ballots Votes,430
+2026,PA,42055,Franklin,state_house,REPRESENTATIVE IN THE GENERAL ASSEMBLY 81st Legislative,REP Rich Irvin,REP,REP Rich Irvin,REP Rich Irvin,6462,Election Day Votes,6032
+2026,PA,42055,Franklin,state_house,REPRESENTATIVE IN THE GENERAL ASSEMBLY 81st Legislative,REP Rich Irvin,REP,REP Rich Irvin,REP Rich Irvin,6462,Provisional Votes,0
+2026,PA,42055,Franklin,state_house,REPRESENTATIVE IN THE GENERAL ASSEMBLY 81st Legislative,Write-in,NON,Write-in,Write-in,11,Early Voting Votes,0
+2026,PA,42055,Franklin,state_house,REPRESENTATIVE IN THE GENERAL ASSEMBLY 81st Legislative,Write-in,NON,Write-in,Write-in,11,Mail Ballots Votes,0
+2026,PA,42055,Franklin,state_house,REPRESENTATIVE IN THE GENERAL ASSEMBLY 81st Legislative,Write-in,NON,Write-in,Write-in,11,Election Day Votes,11
+2026,PA,42055,Franklin,state_house,REPRESENTATIVE IN THE GENERAL ASSEMBLY 81st Legislative,Write-in,NON,Write-in,Write-in,11,Provisional Votes,0
+2026,PA,42055,Franklin,state_house,REPRESENTATIVE IN THE GENERAL ASSEMBLY 89th Legislative,DEM Shannon Michael Jackson,DEM,DEM Shannon Michael Jackson,DEM Shannon Michael Jackson,8815,Early Voting Votes,0
+2026,PA,42055,Franklin,state_house,REPRESENTATIVE IN THE GENERAL ASSEMBLY 89th Legislative,DEM Shannon Michael Jackson,DEM,DEM Shannon Michael Jackson,DEM Shannon Michael Jackson,8815,Mail Ballots Votes,3055
+2026,PA,42055,Franklin,state_house,REPRESENTATIVE IN THE GENERAL ASSEMBLY 89th Legislative,DEM Shannon Michael Jackson,DEM,DEM Shannon Michael Jackson,DEM Shannon Michael Jackson,8815,Election Day Votes,5760
+2026,PA,42055,Franklin,state_house,REPRESENTATIVE IN THE GENERAL ASSEMBLY 89th Legislative,DEM Shannon Michael Jackson,DEM,DEM Shannon Michael Jackson,DEM Shannon Michael Jackson,8815,Provisional Votes,0
+2026,PA,42055,Franklin,state_house,REPRESENTATIVE IN THE GENERAL ASSEMBLY 89th Legislative,REP Rob Kauffman,REP,REP Rob Kauffman,REP Rob Kauffman,15594,Early Voting Votes,0
+2026,PA,42055,Franklin,state_house,REPRESENTATIVE IN THE GENERAL ASSEMBLY 89th Legislative,REP Rob Kauffman,REP,REP Rob Kauffman,REP Rob Kauffman,15594,Mail Ballots Votes,2073
+2026,PA,42055,Franklin,state_house,REPRESENTATIVE IN THE GENERAL ASSEMBLY 89th Legislative,REP Rob Kauffman,REP,REP Rob Kauffman,REP Rob Kauffman,15594,Election Day Votes,13521
+2026,PA,42055,Franklin,state_house,REPRESENTATIVE IN THE GENERAL ASSEMBLY 89th Legislative,REP Rob Kauffman,REP,REP Rob Kauffman,REP Rob Kauffman,15594,Provisional Votes,0
+2026,PA,42055,Franklin,state_house,REPRESENTATIVE IN THE GENERAL ASSEMBLY 89th Legislative,Write-in,NON,Write-in,Write-in,28,Early Voting Votes,0
+2026,PA,42055,Franklin,state_house,REPRESENTATIVE IN THE GENERAL ASSEMBLY 89th Legislative,Write-in,NON,Write-in,Write-in,28,Mail Ballots Votes,9
+2026,PA,42055,Franklin,state_house,REPRESENTATIVE IN THE GENERAL ASSEMBLY 89th Legislative,Write-in,NON,Write-in,Write-in,28,Election Day Votes,19
+2026,PA,42055,Franklin,state_house,REPRESENTATIVE IN THE GENERAL ASSEMBLY 89th Legislative,Write-in,NON,Write-in,Write-in,28,Provisional Votes,0
+2026,PA,42055,Franklin,state_house,REPRESENTATIVE IN THE GENERAL ASSEMBLY 90th Legislative,REP Chad G. Reichard,REP,REP Chad G. Reichard,REP Chad G. Reichard,19428,Early Voting Votes,0
+2026,PA,42055,Franklin,state_house,REPRESENTATIVE IN THE GENERAL ASSEMBLY 90th Legislative,REP Chad G. Reichard,REP,REP Chad G. Reichard,REP Chad G. Reichard,19428,Mail Ballots Votes,1919
+2026,PA,42055,Franklin,state_house,REPRESENTATIVE IN THE GENERAL ASSEMBLY 90th Legislative,REP Chad G. Reichard,REP,REP Chad G. Reichard,REP Chad G. Reichard,19428,Election Day Votes,17509
+2026,PA,42055,Franklin,state_house,REPRESENTATIVE IN THE GENERAL ASSEMBLY 90th Legislative,REP Chad G. Reichard,REP,REP Chad G. Reichard,REP Chad G. Reichard,19428,Provisional Votes,0
+2026,PA,42055,Franklin,state_house,REPRESENTATIVE IN THE GENERAL ASSEMBLY 90th Legislative,Write-in,NON,Write-in,Write-in,1544,Early Voting Votes,0
+2026,PA,42055,Franklin,state_house,REPRESENTATIVE IN THE GENERAL ASSEMBLY 90th Legislative,Write-in,NON,Write-in,Write-in,1544,Mail Ballots Votes,390
+2026,PA,42055,Franklin,state_house,REPRESENTATIVE IN THE GENERAL ASSEMBLY 90th Legislative,Write-in,NON,Write-in,Write-in,1544,Election Day Votes,1154
+2026,PA,42055,Franklin,state_house,REPRESENTATIVE IN THE GENERAL ASSEMBLY 90th Legislative,Write-in,NON,Write-in,Write-in,1544,Provisional Votes,0
+2026,PA,42077,Lehigh,governor_lieutenant_governor,Governor and Lieutenant Governor,DEM Shapiro / Davis,DEM,DEM Shapiro / Davis (DEM),"DEM Shapiro / Davis, DEMOCRAT",87417,Mail Ballots Votes,29120
+2026,PA,42077,Lehigh,governor_lieutenant_governor,Governor and Lieutenant Governor,DEM Shapiro / Davis,DEM,DEM Shapiro / Davis (DEM),"DEM Shapiro / Davis, DEMOCRAT",87417,Election Day Votes,58297
+2026,PA,42077,Lehigh,governor_lieutenant_governor,Governor and Lieutenant Governor,DEM Shapiro / Davis,DEM,DEM Shapiro / Davis (DEM),"DEM Shapiro / Davis, DEMOCRAT",87417,Provisional Votes,0
+2026,PA,42077,Lehigh,governor_lieutenant_governor,Governor and Lieutenant Governor,REP Garrity / Richey,REP,REP Garrity / Richey (REP),"REP Garrity / Richey, REPUBLICAN",47482,Mail Ballots Votes,6923
+2026,PA,42077,Lehigh,governor_lieutenant_governor,Governor and Lieutenant Governor,REP Garrity / Richey,REP,REP Garrity / Richey (REP),"REP Garrity / Richey, REPUBLICAN",47482,Election Day Votes,40559
+2026,PA,42077,Lehigh,governor_lieutenant_governor,Governor and Lieutenant Governor,REP Garrity / Richey,REP,REP Garrity / Richey (REP),"REP Garrity / Richey, REPUBLICAN",47482,Provisional Votes,0
+2026,PA,42077,Lehigh,governor_lieutenant_governor,Governor and Lieutenant Governor,LIB Krawchuk / Thomas,LIB,LIB Krawchuk / Thomas (LIB),"LIB Krawchuk / Thomas, LIBERTARIAN",1885,Mail Ballots Votes,339
+2026,PA,42077,Lehigh,governor_lieutenant_governor,Governor and Lieutenant Governor,LIB Krawchuk / Thomas,LIB,LIB Krawchuk / Thomas (LIB),"LIB Krawchuk / Thomas, LIBERTARIAN",1885,Election Day Votes,1546
+2026,PA,42077,Lehigh,governor_lieutenant_governor,Governor and Lieutenant Governor,LIB Krawchuk / Thomas,LIB,LIB Krawchuk / Thomas (LIB),"LIB Krawchuk / Thomas, LIBERTARIAN",1885,Provisional Votes,0
+2026,PA,42077,Lehigh,governor_lieutenant_governor,Governor and Lieutenant Governor,Write-in,NON,Write-in (NON),"Write-in, NON",162,Mail Ballots Votes,31
+2026,PA,42077,Lehigh,governor_lieutenant_governor,Governor and Lieutenant Governor,Write-in,NON,Write-in (NON),"Write-in, NON",162,Election Day Votes,131
+2026,PA,42077,Lehigh,governor_lieutenant_governor,Governor and Lieutenant Governor,Write-in,NON,Write-in (NON),"Write-in, NON",162,Provisional Votes,0
+2026,PA,42077,Lehigh,us_house,Representative in Congress in the 7th Congressional Dist,DEM Bob Brooks,DEM,DEM Bob Brooks (DEM),"DEM Bob Brooks, DEMOCRAT",80201,Mail Ballots Votes,26929
+2026,PA,42077,Lehigh,us_house,Representative in Congress in the 7th Congressional Dist,DEM Bob Brooks,DEM,DEM Bob Brooks (DEM),"DEM Bob Brooks, DEMOCRAT",80201,Election Day Votes,53272
+2026,PA,42077,Lehigh,us_house,Representative in Congress in the 7th Congressional Dist,DEM Bob Brooks,DEM,DEM Bob Brooks (DEM),"DEM Bob Brooks, DEMOCRAT",80201,Provisional Votes,0
+2026,PA,42077,Lehigh,us_house,Representative in Congress in the 7th Congressional Dist,REP Ryan Mackenzie,REP,REP Ryan Mackenzie (REP),"REP Ryan Mackenzie, REPUBLICAN",56078,Mail Ballots Votes,9253
+2026,PA,42077,Lehigh,us_house,Representative in Congress in the 7th Congressional Dist,REP Ryan Mackenzie,REP,REP Ryan Mackenzie (REP),"REP Ryan Mackenzie, REPUBLICAN",56078,Election Day Votes,46825
+2026,PA,42077,Lehigh,us_house,Representative in Congress in the 7th Congressional Dist,REP Ryan Mackenzie,REP,REP Ryan Mackenzie (REP),"REP Ryan Mackenzie, REPUBLICAN",56078,Provisional Votes,0
+2026,PA,42077,Lehigh,us_house,Representative in Congress in the 7th Congressional Dist,Write-in,NON,Write-in (NON),"Write-in, NON",328,Mail Ballots Votes,96
+2026,PA,42077,Lehigh,us_house,Representative in Congress in the 7th Congressional Dist,Write-in,NON,Write-in (NON),"Write-in, NON",328,Election Day Votes,232
+2026,PA,42077,Lehigh,us_house,Representative in Congress in the 7th Congressional Dist,Write-in,NON,Write-in (NON),"Write-in, NON",328,Provisional Votes,0
+2026,PA,42077,Lehigh,state_senate,Senator In the General Assembly in the 14th Senatorial D,DEM Nick Miller,DEM,DEM Nick Miller (DEM),"DEM Nick Miller, DEMOCRAT",38309,Mail Ballots Votes,11451
+2026,PA,42077,Lehigh,state_senate,Senator In the General Assembly in the 14th Senatorial D,DEM Nick Miller,DEM,DEM Nick Miller (DEM),"DEM Nick Miller, DEMOCRAT",38309,Election Day Votes,26858
+2026,PA,42077,Lehigh,state_senate,Senator In the General Assembly in the 14th Senatorial D,DEM Nick Miller,DEM,DEM Nick Miller (DEM),"DEM Nick Miller, DEMOCRAT",38309,Provisional Votes,0
+2026,PA,42077,Lehigh,state_senate,Senator In the General Assembly in the 14th Senatorial D,REP Omy Maldonado,REP,REP Omy Maldonado (REP),"REP Omy Maldonado, REPUBLICAN",17715,Mail Ballots Votes,2599
+2026,PA,42077,Lehigh,state_senate,Senator In the General Assembly in the 14th Senatorial D,REP Omy Maldonado,REP,REP Omy Maldonado (REP),"REP Omy Maldonado, REPUBLICAN",17715,Election Day Votes,15116
+2026,PA,42077,Lehigh,state_senate,Senator In the General Assembly in the 14th Senatorial D,REP Omy Maldonado,REP,REP Omy Maldonado (REP),"REP Omy Maldonado, REPUBLICAN",17715,Provisional Votes,0
+2026,PA,42077,Lehigh,state_senate,Senator In the General Assembly in the 14th Senatorial D,Write-in,NON,Write-in (NON),"Write-in, NON",84,Mail Ballots Votes,15
+2026,PA,42077,Lehigh,state_senate,Senator In the General Assembly in the 14th Senatorial D,Write-in,NON,Write-in (NON),"Write-in, NON",84,Election Day Votes,69
+2026,PA,42077,Lehigh,state_senate,Senator In the General Assembly in the 14th Senatorial D,Write-in,NON,Write-in (NON),"Write-in, NON",84,Provisional Votes,0
+2026,PA,42077,Lehigh,state_senate,Senator in the General Assembly in the 16th Senatorial D,DEM Mark Pinsley,DEM,DEM Mark Pinsley (DEM),"DEM Mark Pinsley, DEMOCRAT",38173,Mail Ballots Votes,14295
+2026,PA,42077,Lehigh,state_senate,Senator in the General Assembly in the 16th Senatorial D,DEM Mark Pinsley,DEM,DEM Mark Pinsley (DEM),"DEM Mark Pinsley, DEMOCRAT",38173,Election Day Votes,23878
+2026,PA,42077,Lehigh,state_senate,Senator in the General Assembly in the 16th Senatorial D,DEM Mark Pinsley,DEM,DEM Mark Pinsley (DEM),"DEM Mark Pinsley, DEMOCRAT",38173,Provisional Votes,0
+2026,PA,42077,Lehigh,state_senate,Senator in the General Assembly in the 16th Senatorial D,REP Jarrett Coleman,REP,REP Jarrett Coleman (REP),"REP Jarrett Coleman, REPUBLICAN",34264,Mail Ballots Votes,5756
+2026,PA,42077,Lehigh,state_senate,Senator in the General Assembly in the 16th Senatorial D,REP Jarrett Coleman,REP,REP Jarrett Coleman (REP),"REP Jarrett Coleman, REPUBLICAN",34264,Election Day Votes,28508
+2026,PA,42077,Lehigh,state_senate,Senator in the General Assembly in the 16th Senatorial D,REP Jarrett Coleman,REP,REP Jarrett Coleman (REP),"REP Jarrett Coleman, REPUBLICAN",34264,Provisional Votes,0
+2026,PA,42077,Lehigh,state_senate,Senator in the General Assembly in the 16th Senatorial D,Write-in,NON,Write-in (NON),"Write-in, NON",112,Mail Ballots Votes,24
+2026,PA,42077,Lehigh,state_senate,Senator in the General Assembly in the 16th Senatorial D,Write-in,NON,Write-in (NON),"Write-in, NON",112,Election Day Votes,88
+2026,PA,42077,Lehigh,state_senate,Senator in the General Assembly in the 16th Senatorial D,Write-in,NON,Write-in (NON),"Write-in, NON",112,Provisional Votes,0
+2026,PA,42077,Lehigh,state_senate,Senator in the General Assembly in the 18th Senatorial D,DEM Lisa Boscola,DEM,DEM Lisa Boscola (DEM),"DEM Lisa Boscola, DEMOCRAT",5599,Mail Ballots Votes,1595
+2026,PA,42077,Lehigh,state_senate,Senator in the General Assembly in the 18th Senatorial D,DEM Lisa Boscola,DEM,DEM Lisa Boscola (DEM),"DEM Lisa Boscola, DEMOCRAT",5599,Election Day Votes,4004
+2026,PA,42077,Lehigh,state_senate,Senator in the General Assembly in the 18th Senatorial D,DEM Lisa Boscola,DEM,DEM Lisa Boscola (DEM),"DEM Lisa Boscola, DEMOCRAT",5599,Provisional Votes,0
+2026,PA,42077,Lehigh,state_senate,Senator in the General Assembly in the 18th Senatorial D,REP Scott Janney,REP,REP Scott Janney (REP),"REP Scott Janney, REPUBLICAN",1956,Mail Ballots Votes,304
+2026,PA,42077,Lehigh,state_senate,Senator in the General Assembly in the 18th Senatorial D,REP Scott Janney,REP,REP Scott Janney (REP),"REP Scott Janney, REPUBLICAN",1956,Election Day Votes,1652
+2026,PA,42077,Lehigh,state_senate,Senator in the General Assembly in the 18th Senatorial D,REP Scott Janney,REP,REP Scott Janney (REP),"REP Scott Janney, REPUBLICAN",1956,Provisional Votes,0
+2026,PA,42077,Lehigh,state_senate,Senator in the General Assembly in the 18th Senatorial D,Write-in,NON,Write-in (NON),"Write-in, NON",24,Mail Ballots Votes,8
+2026,PA,42077,Lehigh,state_senate,Senator in the General Assembly in the 18th Senatorial D,Write-in,NON,Write-in (NON),"Write-in, NON",24,Election Day Votes,16
+2026,PA,42077,Lehigh,state_senate,Senator in the General Assembly in the 18th Senatorial D,Write-in,NON,Write-in (NON),"Write-in, NON",24,Provisional Votes,0
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 22nd Legis,DEM Ce Ce Gerlach,DEM,DEM Ce Ce Gerlach (DEM),"DEM Ce Ce Gerlach, DEMOCRAT",7969,Mail Ballots Votes,1879
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 22nd Legis,DEM Ce Ce Gerlach,DEM,DEM Ce Ce Gerlach (DEM),"DEM Ce Ce Gerlach, DEMOCRAT",7969,Election Day Votes,6090
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 22nd Legis,DEM Ce Ce Gerlach,DEM,DEM Ce Ce Gerlach (DEM),"DEM Ce Ce Gerlach, DEMOCRAT",7969,Provisional Votes,0
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 22nd Legis,REP Robert E Smith Jr,REP,REP Robert E Smith Jr (REP),"REP Robert E Smith Jr, REPUBLICAN",3283,Mail Ballots Votes,476
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 22nd Legis,REP Robert E Smith Jr,REP,REP Robert E Smith Jr (REP),"REP Robert E Smith Jr, REPUBLICAN",3283,Election Day Votes,2807
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 22nd Legis,REP Robert E Smith Jr,REP,REP Robert E Smith Jr (REP),"REP Robert E Smith Jr, REPUBLICAN",3283,Provisional Votes,0
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 22nd Legis,Write-in,NON,Write-in (NON),"Write-in, NON",38,Mail Ballots Votes,6
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 22nd Legis,Write-in,NON,Write-in (NON),"Write-in, NON",38,Election Day Votes,32
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 22nd Legis,Write-in,NON,Write-in (NON),"Write-in, NON",38,Provisional Votes,0
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 131st Legi,DEM Meriam Sabih,DEM,DEM Meriam Sabih (DEM),"DEM Meriam Sabih, DEMOCRAT",8847,Mail Ballots Votes,3677
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 131st Legi,DEM Meriam Sabih,DEM,DEM Meriam Sabih (DEM),"DEM Meriam Sabih, DEMOCRAT",8847,Election Day Votes,5170
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 131st Legi,DEM Meriam Sabih,DEM,DEM Meriam Sabih (DEM),"DEM Meriam Sabih, DEMOCRAT",8847,Provisional Votes,0
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 131st Legi,REP Milou Mackenzie,REP,REP Milou Mackenzie (REP),"REP Milou Mackenzie, REPUBLICAN",8077,Mail Ballots Votes,1467
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 131st Legi,REP Milou Mackenzie,REP,REP Milou Mackenzie (REP),"REP Milou Mackenzie, REPUBLICAN",8077,Election Day Votes,6610
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 131st Legi,REP Milou Mackenzie,REP,REP Milou Mackenzie (REP),"REP Milou Mackenzie, REPUBLICAN",8077,Provisional Votes,0
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 131st Legi,Write-in,NON,Write-in (NON),"Write-in, NON",18,Mail Ballots Votes,2
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 131st Legi,Write-in,NON,Write-in (NON),"Write-in, NON",18,Election Day Votes,16
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 131st Legi,Write-in,NON,Write-in (NON),"Write-in, NON",18,Provisional Votes,0
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 132nd Legi,DEM Mike Schlossberg,DEM,DEM Mike Schlossberg (DEM),"DEM Mike Schlossberg, DEMOCRAT",17926,Mail Ballots Votes,6642
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 132nd Legi,DEM Mike Schlossberg,DEM,DEM Mike Schlossberg (DEM),"DEM Mike Schlossberg, DEMOCRAT",17926,Election Day Votes,11284
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 132nd Legi,DEM Mike Schlossberg,DEM,DEM Mike Schlossberg (DEM),"DEM Mike Schlossberg, DEMOCRAT",17926,Provisional Votes,0
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 132nd Legi,REP Caren Lowrey,REP,REP Caren Lowrey (REP),"REP Caren Lowrey, REPUBLICAN",8884,Mail Ballots Votes,1632
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 132nd Legi,REP Caren Lowrey,REP,REP Caren Lowrey (REP),"REP Caren Lowrey, REPUBLICAN",8884,Election Day Votes,7252
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 132nd Legi,REP Caren Lowrey,REP,REP Caren Lowrey (REP),"REP Caren Lowrey, REPUBLICAN",8884,Provisional Votes,0
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 132nd Legi,Write-in,NON,Write-in (NON),"Write-in, NON",50,Mail Ballots Votes,13
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 132nd Legi,Write-in,NON,Write-in (NON),"Write-in, NON",50,Election Day Votes,37
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 132nd Legi,Write-in,NON,Write-in (NON),"Write-in, NON",50,Provisional Votes,0
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 133rd Legi,DEM Jeanne McNeill,DEM,DEM Jeanne McNeill (DEM),"DEM Jeanne McNeill, DEMOCRAT",17876,Mail Ballots Votes,5051
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 133rd Legi,DEM Jeanne McNeill,DEM,DEM Jeanne McNeill (DEM),"DEM Jeanne McNeill, DEMOCRAT",17876,Election Day Votes,12825
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 133rd Legi,DEM Jeanne McNeill,DEM,DEM Jeanne McNeill (DEM),"DEM Jeanne McNeill, DEMOCRAT",17876,Provisional Votes,0
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 133rd Legi,Write-in,NON,Write-in (NON),"Write-in, NON",958,Mail Ballots Votes,84
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 133rd Legi,Write-in,NON,Write-in (NON),"Write-in, NON",958,Election Day Votes,874
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 133rd Legi,Write-in,NON,Write-in (NON),"Write-in, NON",958,Provisional Votes,0
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 134th Legi,DEM Peter Schweyer,DEM,DEM Peter Schweyer (DEM),"DEM Peter Schweyer, DEMOCRAT",12341,Mail Ballots Votes,3646
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 134th Legi,DEM Peter Schweyer,DEM,DEM Peter Schweyer (DEM),"DEM Peter Schweyer, DEMOCRAT",12341,Election Day Votes,8695
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 134th Legi,DEM Peter Schweyer,DEM,DEM Peter Schweyer (DEM),"DEM Peter Schweyer, DEMOCRAT",12341,Provisional Votes,0
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 134th Legi,REP Miriam Maldonado,REP,REP Miriam Maldonado (REP),"REP Miriam Maldonado, REPUBLICAN",5555,Mail Ballots Votes,797
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 134th Legi,REP Miriam Maldonado,REP,REP Miriam Maldonado (REP),"REP Miriam Maldonado, REPUBLICAN",5555,Election Day Votes,4758
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 134th Legi,REP Miriam Maldonado,REP,REP Miriam Maldonado (REP),"REP Miriam Maldonado, REPUBLICAN",5555,Provisional Votes,0
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 134th Legi,Write-in,NON,Write-in (NON),"Write-in, NON",33,Mail Ballots Votes,5
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 134th Legi,Write-in,NON,Write-in (NON),"Write-in, NON",33,Election Day Votes,28
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 134th Legi,Write-in,NON,Write-in (NON),"Write-in, NON",33,Provisional Votes,0
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 183rd Legi,DEM Deirdre Kamber Todd,DEM,DEM Deirdre Kamber Todd (DEM),"DEM Deirdre Kamber Todd, DEMOCRAT",4283,Mail Ballots Votes,1519
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 183rd Legi,DEM Deirdre Kamber Todd,DEM,DEM Deirdre Kamber Todd (DEM),"DEM Deirdre Kamber Todd, DEMOCRAT",4283,Election Day Votes,2764
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 183rd Legi,DEM Deirdre Kamber Todd,DEM,DEM Deirdre Kamber Todd (DEM),"DEM Deirdre Kamber Todd, DEMOCRAT",4283,Provisional Votes,0
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 183rd Legi,REP Zach Mako,REP,REP Zach Mako (REP),"REP Zach Mako, REPUBLICAN",5414,Mail Ballots Votes,727
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 183rd Legi,REP Zach Mako,REP,REP Zach Mako (REP),"REP Zach Mako, REPUBLICAN",5414,Election Day Votes,4687
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 183rd Legi,REP Zach Mako,REP,REP Zach Mako (REP),"REP Zach Mako, REPUBLICAN",5414,Provisional Votes,0
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 183rd Legi,Write-in,NON,Write-in (NON),"Write-in, NON",15,Mail Ballots Votes,1
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 183rd Legi,Write-in,NON,Write-in (NON),"Write-in, NON",15,Election Day Votes,14
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 183rd Legi,Write-in,NON,Write-in (NON),"Write-in, NON",15,Provisional Votes,0
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 187th Legi,DEM Rachel Cuevas,DEM,DEM Rachel Cuevas (DEM),"DEM Rachel Cuevas, DEMOCRAT",15581,Mail Ballots Votes,5715
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 187th Legi,DEM Rachel Cuevas,DEM,DEM Rachel Cuevas (DEM),"DEM Rachel Cuevas, DEMOCRAT",15581,Election Day Votes,9866
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 187th Legi,DEM Rachel Cuevas,DEM,DEM Rachel Cuevas (DEM),"DEM Rachel Cuevas, DEMOCRAT",15581,Provisional Votes,0
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 187th Legi,REP Gary Day,REP,REP Gary Day (REP),"REP Gary Day, REPUBLICAN",14904,Mail Ballots Votes,2329
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 187th Legi,REP Gary Day,REP,REP Gary Day (REP),"REP Gary Day, REPUBLICAN",14904,Election Day Votes,12575
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 187th Legi,REP Gary Day,REP,REP Gary Day (REP),"REP Gary Day, REPUBLICAN",14904,Provisional Votes,0
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 187th Legi,Write-in,NON,Write-in (NON),"Write-in, NON",39,Mail Ballots Votes,7
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 187th Legi,Write-in,NON,Write-in (NON),"Write-in, NON",39,Election Day Votes,32
+2026,PA,42077,Lehigh,state_house,Representative in the General Assembly in the 187th Legi,Write-in,NON,Write-in (NON),"Write-in, NON",39,Provisional Votes,0
+2026,PA,42077,Lehigh,ballot_question,City of Allentown Referendum,Yes,NON,Yes (NON),"Yes, NON",22900,Mail Ballots Votes,5422
+2026,PA,42077,Lehigh,ballot_question,City of Allentown Referendum,Yes,NON,Yes (NON),"Yes, NON",22900,Election Day Votes,17478
+2026,PA,42077,Lehigh,ballot_question,City of Allentown Referendum,Yes,NON,Yes (NON),"Yes, NON",22900,Provisional Votes,0
+2026,PA,42077,Lehigh,ballot_question,City of Allentown Referendum,No,NON,No (NON),"No, NON",3545,Mail Ballots Votes,1019
+2026,PA,42077,Lehigh,ballot_question,City of Allentown Referendum,No,NON,No (NON),"No, NON",3545,Election Day Votes,2526
+2026,PA,42077,Lehigh,ballot_question,City of Allentown Referendum,No,NON,No (NON),"No, NON",3545,Provisional Votes,0
+2026,PA,42077,Lehigh,ballot_question,Whitehall Township Referendum,Yes,NON,Yes (NON),"Yes, NON",4066,Mail Ballots Votes,1002
+2026,PA,42077,Lehigh,ballot_question,Whitehall Township Referendum,Yes,NON,Yes (NON),"Yes, NON",4066,Election Day Votes,3064
+2026,PA,42077,Lehigh,ballot_question,Whitehall Township Referendum,Yes,NON,Yes (NON),"Yes, NON",4066,Provisional Votes,0
+2026,PA,42077,Lehigh,ballot_question,Whitehall Township Referendum,No,NON,No (NON),"No, NON",5633,Mail Ballots Votes,1504
+2026,PA,42077,Lehigh,ballot_question,Whitehall Township Referendum,No,NON,No (NON),"No, NON",5633,Election Day Votes,4129
+2026,PA,42077,Lehigh,ballot_question,Whitehall Township Referendum,No,NON,No (NON),"No, NON",5633,Provisional Votes,0
+2026,PA,42077,Lehigh,ballot_question,North Whitehall Township Referendum,Yes,NON,Yes (NON),"Yes, NON",3636,Mail Ballots Votes,985
+2026,PA,42077,Lehigh,ballot_question,North Whitehall Township Referendum,Yes,NON,Yes (NON),"Yes, NON",3636,Election Day Votes,2651
+2026,PA,42077,Lehigh,ballot_question,North Whitehall Township Referendum,Yes,NON,Yes (NON),"Yes, NON",3636,Provisional Votes,0
+2026,PA,42077,Lehigh,ballot_question,North Whitehall Township Referendum,No,NON,No (NON),"No, NON",3597,Mail Ballots Votes,775
+2026,PA,42077,Lehigh,ballot_question,North Whitehall Township Referendum,No,NON,No (NON),"No, NON",3597,Election Day Votes,2822
+2026,PA,42077,Lehigh,ballot_question,North Whitehall Township Referendum,No,NON,No (NON),"No, NON",3597,Provisional Votes,0
+2026,PA,42077,Lehigh,ballot_question,Lehigh County Referendum 1,Yes,NON,Yes (NON),"Yes, NON",99375,Mail Ballots Votes,27903
+2026,PA,42077,Lehigh,ballot_question,Lehigh County Referendum 1,Yes,NON,Yes (NON),"Yes, NON",99375,Election Day Votes,71472
+2026,PA,42077,Lehigh,ballot_question,Lehigh County Referendum 1,Yes,NON,Yes (NON),"Yes, NON",99375,Provisional Votes,0
+2026,PA,42077,Lehigh,ballot_question,Lehigh County Referendum 1,No,NON,No (NON),"No, NON",28429,Mail Ballots Votes,6617
+2026,PA,42077,Lehigh,ballot_question,Lehigh County Referendum 1,No,NON,No (NON),"No, NON",28429,Election Day Votes,21812
+2026,PA,42077,Lehigh,ballot_question,Lehigh County Referendum 1,No,NON,No (NON),"No, NON",28429,Provisional Votes,0
+2026,PA,42077,Lehigh,ballot_question,Lehigh County Referendum 2,Yes,NON,Yes (NON),"Yes, NON",65687,Mail Ballots Votes,17340
+2026,PA,42077,Lehigh,ballot_question,Lehigh County Referendum 2,Yes,NON,Yes (NON),"Yes, NON",65687,Election Day Votes,48347
+2026,PA,42077,Lehigh,ballot_question,Lehigh County Referendum 2,Yes,NON,Yes (NON),"Yes, NON",65687,Provisional Votes,0
+2026,PA,42077,Lehigh,ballot_question,Lehigh County Referendum 2,No,NON,No (NON),"No, NON",62366,Mail Ballots Votes,17134
+2026,PA,42077,Lehigh,ballot_question,Lehigh County Referendum 2,No,NON,No (NON),"No, NON",62366,Election Day Votes,45232
+2026,PA,42077,Lehigh,ballot_question,Lehigh County Referendum 2,No,NON,No (NON),"No, NON",62366,Provisional Votes,0
+2026,PA,42077,Lehigh,ballot_question,Lehigh County Referendum 3,Yes,NON,Yes (NON),"Yes, NON",78538,Mail Ballots Votes,21967
+2026,PA,42077,Lehigh,ballot_question,Lehigh County Referendum 3,Yes,NON,Yes (NON),"Yes, NON",78538,Election Day Votes,56571
+2026,PA,42077,Lehigh,ballot_question,Lehigh County Referendum 3,Yes,NON,Yes (NON),"Yes, NON",78538,Provisional Votes,0
+2026,PA,42077,Lehigh,ballot_question,Lehigh County Referendum 3,No,NON,No (NON),"No, NON",46054,Mail Ballots Votes,11515
+2026,PA,42077,Lehigh,ballot_question,Lehigh County Referendum 3,No,NON,No (NON),"No, NON",46054,Election Day Votes,34539
+2026,PA,42077,Lehigh,ballot_question,Lehigh County Referendum 3,No,NON,No (NON),"No, NON",46054,Provisional Votes,0

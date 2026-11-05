@@ -1,0 +1,230 @@
+{
+  "status": "official_original_follow_up_reviewed_not_added_to_county_vectors",
+  "source_receipts": [
+    {
+      "file": "maine-official-uocava.html",
+      "url": "https://www3.maine.gov/sos/news/uniformed-service-and-overseas-voters-uocava-results-november-3-2026-federal-and-governor",
+      "final_url": "https://www3.maine.gov/sos/news/uniformed-service-and-overseas-voters-uocava-results-november-3-2026-federal-and-governor",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 95441,
+      "sha256": "fc58371ce529050f702f4f24d5c14c34316ea52cc08daf9046bb13d6cae9cd02",
+      "fetched_at": "2026-11-05T20:30:12.965302+00:00"
+    },
+    {
+      "file": "maine-official-results-index.html",
+      "url": "https://www3.maine.gov/sos/elections-voting/election-results-data",
+      "final_url": "https://www3.maine.gov/sos/elections-voting/election-results-data",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 116526,
+      "sha256": "f298a41be191689474a9fd6ffb7baf352171c287a5c40882a03547aea9afd715",
+      "fetched_at": "2026-11-05T20:30:13.145556+00:00"
+    },
+    {
+      "file": "maine-official-uocava.pdf",
+      "url": "https://www.maine.gov/sos/sites/maine.gov.sos/files/inline-files/UOCAVA_Unofficial_110326.pdf",
+      "final_url": "https://www.maine.gov/sos/sites/maine.gov.sos/files/inline-files/UOCAVA_Unofficial_110326.pdf",
+      "status": 403,
+      "content_type": "text/html",
+      "bytes": 919,
+      "sha256": "73ee29b83158ff6096eb03e289febcdc60c84f0ca10cf9036967b62b023c89cd",
+      "fetched_at": "2026-11-05T20:30:13.229382+00:00"
+    }
+  ],
+  "all_native_federal_and_governor_rows": [
+    {
+      "year": 2026,
+      "election_date": "2026-11-03",
+      "source_published_date": "2026-11-04",
+      "office_district_literal": "Governor",
+      "geography_scope": "unallocated_UOCAVA_not_county",
+      "label_literal": "Bennett, Rick (I)",
+      "party_literal": "I",
+      "row_kind": "named_candidate",
+      "count": 208
+    },
+    {
+      "year": 2026,
+      "election_date": "2026-11-03",
+      "source_published_date": "2026-11-04",
+      "office_district_literal": "Governor",
+      "geography_scope": "unallocated_UOCAVA_not_county",
+      "label_literal": "Charles, Robert (R)",
+      "party_literal": "R",
+      "row_kind": "named_candidate",
+      "count": 373
+    },
+    {
+      "year": 2026,
+      "election_date": "2026-11-03",
+      "source_published_date": "2026-11-04",
+      "office_district_literal": "Governor",
+      "geography_scope": "unallocated_UOCAVA_not_county",
+      "label_literal": "Pingree, Hannah (D)",
+      "party_literal": "D",
+      "row_kind": "named_candidate",
+      "count": 4237
+    },
+    {
+      "year": 2026,
+      "election_date": "2026-11-03",
+      "source_published_date": "2026-11-04",
+      "office_district_literal": "Governor",
+      "geography_scope": "unallocated_UOCAVA_not_county",
+      "label_literal": "Declared write-ins",
+      "party_literal": "",
+      "row_kind": "unresolved_write_in",
+      "count": 0
+    },
+    {
+      "year": 2026,
+      "election_date": "2026-11-03",
+      "source_published_date": "2026-11-04",
+      "office_district_literal": "Governor",
+      "geography_scope": "unallocated_UOCAVA_not_county",
+      "label_literal": "Blank",
+      "party_literal": "",
+      "row_kind": "blank",
+      "count": 55
+    },
+    {
+      "year": 2026,
+      "election_date": "2026-11-03",
+      "source_published_date": "2026-11-04",
+      "office_district_literal": "U.S. Senate",
+      "geography_scope": "unallocated_UOCAVA_not_county",
+      "label_literal": "Collins, Susan (R)",
+      "party_literal": "R",
+      "row_kind": "named_candidate",
+      "count": 473
+    },
+    {
+      "year": 2026,
+      "election_date": "2026-11-03",
+      "source_published_date": "2026-11-04",
+      "office_district_literal": "U.S. Senate",
+      "geography_scope": "unallocated_UOCAVA_not_county",
+      "label_literal": "Jackson, Troy (D)",
+      "party_literal": "D",
+      "row_kind": "named_candidate",
+      "count": 4350
+    },
+    {
+      "year": 2026,
+      "election_date": "2026-11-03",
+      "source_published_date": "2026-11-04",
+      "office_district_literal": "U.S. Senate",
+      "geography_scope": "unallocated_UOCAVA_not_county",
+      "label_literal": "Declared write-ins",
+      "party_literal": "",
+      "row_kind": "unresolved_write_in",
+      "count": 0
+    },
+    {
+      "year": 2026,
+      "election_date": "2026-11-03",
+      "source_published_date": "2026-11-04",
+      "office_district_literal": "U.S. Senate",
+      "geography_scope": "unallocated_UOCAVA_not_county",
+      "label_literal": "Blank",
+      "party_literal": "",
+      "row_kind": "blank",
+      "count": 53
+    },
+    {
+      "year": 2026,
+      "election_date": "2026-11-03",
+      "source_published_date": "2026-11-04",
+      "office_district_literal": "Congressional District 1",
+      "geography_scope": "unallocated_UOCAVA_not_county",
+      "label_literal": "Pingree, Chellie (D)",
+      "party_literal": "D",
+      "row_kind": "named_candidate",
+      "count": 2721
+    },
+    {
+      "year": 2026,
+      "election_date": "2026-11-03",
+      "source_published_date": "2026-11-04",
+      "office_district_literal": "Congressional District 1",
+      "geography_scope": "unallocated_UOCAVA_not_county",
+      "label_literal": "Russell, Ronald (R)",
+      "party_literal": "R",
+      "row_kind": "named_candidate",
+      "count": 176
+    },
+    {
+      "year": 2026,
+      "election_date": "2026-11-03",
+      "source_published_date": "2026-11-04",
+      "office_district_literal": "Congressional District 1",
+      "geography_scope": "unallocated_UOCAVA_not_county",
+      "label_literal": "Blank",
+      "party_literal": "",
+      "row_kind": "blank",
+      "count": 31
+    },
+    {
+      "year": 2026,
+      "election_date": "2026-11-03",
+      "source_published_date": "2026-11-04",
+      "office_district_literal": "Congressional District 2",
+      "geography_scope": "unallocated_UOCAVA_not_county",
+      "label_literal": "Dunlap, Matthew (D)",
+      "party_literal": "D",
+      "row_kind": "named_candidate",
+      "count": 1731
+    },
+    {
+      "year": 2026,
+      "election_date": "2026-11-03",
+      "source_published_date": "2026-11-04",
+      "office_district_literal": "Congressional District 2",
+      "geography_scope": "unallocated_UOCAVA_not_county",
+      "label_literal": "LePage, Paul (R)",
+      "party_literal": "R",
+      "row_kind": "named_candidate",
+      "count": 211
+    },
+    {
+      "year": 2026,
+      "election_date": "2026-11-03",
+      "source_published_date": "2026-11-04",
+      "office_district_literal": "Congressional District 2",
+      "geography_scope": "unallocated_UOCAVA_not_county",
+      "label_literal": "Declared write-ins",
+      "party_literal": "",
+      "row_kind": "unresolved_write_in",
+      "count": 0
+    },
+    {
+      "year": 2026,
+      "election_date": "2026-11-03",
+      "source_published_date": "2026-11-04",
+      "office_district_literal": "Congressional District 2",
+      "geography_scope": "unallocated_UOCAVA_not_county",
+      "label_literal": "Blank",
+      "party_literal": "",
+      "row_kind": "blank",
+      "count": 8
+    }
+  ],
+  "unallocated_uocava_major_candidate_counts": {
+    "district_1": 2897,
+    "district_2": 1942
+  },
+  "provider_district_2_unallocated_candidate_counts": {
+    "Republican": 84,
+    "Democratic": 46
+  },
+  "uocava_matches_provider_gap": false,
+  "official_county_allocation_present": false,
+  "do_not_add_to_publisher_totals_without_inclusion_proof": true,
+  "cd1_write_in_row_missing_not_zero": true,
+  "actual_voters_or_ballots_established": false,
+  "maps_approved": false,
+  "source_index_declares_2026_primary_not_general_results": true,
+  "advertised_pdf_original_acquired": false,
+  "advertised_pdf_denial_body_retained": true
+}

@@ -15,6 +15,13 @@ from bs4 import BeautifulSoup
 import fitz
 
 
+PUBLIC_SERVICE_KEY = re.compile(rb"\b(?:AIza[0-9A-Za-z_-]{35}|[ps]k\.[A-Za-z0-9._-]+)")
+PUBLIC_TELEMETRY_KEY = re.compile(
+    rb"""((?:['"]?(?:[A-Za-z_$]*instrumentationKey|licenseKey)['"]?)\s*[:=]\s*['"])(?!\[REDACTED_PUBLIC_SERVICE_KEY\])([^'"\r\n]+)(['"])""",
+    re.I,
+)
+
+
 INDEX = "https://buckscounty.gov/1206/Election-Results"
 SOURCE = "https://www.livevoterturnout.com/ENR/buckspaenr/24/"
 URLS = {
@@ -44,7 +51,7 @@ LIMITATIONS = [
     "Ballots minus candidate votes is unclassified, not inferred undervotes or overvotes.",
     "Explicit provisional candidate zeroes do not establish zero provisional ballots.",
     "Printed report timestamp has no independently established timezone.",
-    "Native HTML omits map-service access tokens; the complete original is retained privately and hashed.",
+    "Native and linking HTML omit public service and telemetry keys; complete originals are retained privately and hashed.",
     "No new map, precinct completeness, final certification or blanket upstream license is asserted.",
 ]
 
@@ -67,17 +74,22 @@ def load_originals(source):
                 or r["status"] != 200 or r["bytes"] != len(data)
                 or r["sha256"] != hashlib.sha256(data).hexdigest()):
             raise ValueError("Original differs from county-declared acquisition receipt")
-        if r["file"] == "native-results.redacted.html":
-            redaction = r.get("redaction", {})
-            if (redaction.get("kind") != "map_service_access_tokens"
+        if r["file"].endswith(".html") and (
+                PUBLIC_SERVICE_KEY.search(data) or PUBLIC_TELEMETRY_KEY.search(data)):
+            raise ValueError("Unredacted public service key in source HTML")
+        redaction = r.get("redaction")
+        if r["file"].endswith(".html") and redaction:
+            if (redaction.get("kind") not in {"map_service_access_tokens", "public_service_and_telemetry_keys"}
                     or redaction.get("replacements", 0) < 1
-                    or redaction["replacements"] != data.count(b"[REDACTED_MAP_SERVICE_TOKEN]")
+                    or redaction["replacements"] != (
+                        data.count(b"[REDACTED_MAP_SERVICE_TOKEN]") + data.count(b"[REDACTED_PUBLIC_SERVICE_KEY]"))
                     or not re.fullmatch(r"[a-f0-9]{64}", redaction.get("original_sha256", ""))
-                    or redaction.get("original_bytes", 0) <= 0
-                    or re.search(rb"\b[ps]k\.[A-Za-z0-9._-]+", data)):
+                    or redaction.get("original_bytes", 0) <= 0):
                 raise ValueError("Missing or invalid explicit HTML token-redaction receipt")
+        elif r["file"] == "native-results.redacted.html":
+            raise ValueError("Missing or invalid explicit HTML token-redaction receipt")
         elif "redaction" in r:
-            raise ValueError("Original CSV/PDF/linking-page bytes must not be redacted")
+            raise ValueError("Original CSV/PDF bytes must not be redacted")
         raw[r["file"]] = data
     return raw
 

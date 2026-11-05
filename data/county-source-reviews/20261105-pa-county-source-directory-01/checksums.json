@@ -1,0 +1,14 @@
+{
+  "bulk-snapshot-review.json": {
+    "bytes": 3734,
+    "sha256": "2b0d692f0acfabf895376244a4100c1eef39170e079aa6e2df152c47b6bfb3ac"
+  },
+  "county-source-discovery-queue.csv": {
+    "bytes": 7040,
+    "sha256": "9e30294d001f344ba9801d6283eef4155baa4ac1ab636cd7f05a56cf874b89c8"
+  },
+  "source-directory-review.json": {
+    "bytes": 3909,
+    "sha256": "69e256fd2d571aa6577ce4ea75a31fab44be528a76de8f1d80ad22ce01afb0e3"
+  }
+}

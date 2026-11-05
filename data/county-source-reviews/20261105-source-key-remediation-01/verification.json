@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "archives": [
+    {
+      "file": "complete-pa-three-county-2026-05.zip",
+      "bytes": 512444,
+      "sha256": "b1eaa050626fb402e7ea2850db579a53a6e8f3c3c2e27bdf9485cfd044a5faa9",
+      "all_html_service_and_telemetry_patterns_absent": true
+    },
+    {
+      "file": "complete-bucks-2026-county-results-03.zip",
+      "bytes": 369141,
+      "sha256": "1d9e592d44acd2ae294e6ed11153110d802b4f3131021b0d0b2af599a7f2b175",
+      "all_html_service_and_telemetry_patterns_absent": true
+    },
+    {
+      "file": "complete-county-results-pa-sanitized-01.zip",
+      "bytes": 136064334,
+      "sha256": "d44c95ca7c2216990c262e979608aed561653f4d120504c475cf998ab4255dd7",
+      "all_html_service_and_telemetry_patterns_absent": true
+    }
+  ],
+  "all_election_counts_and_geometry_unchanged": true,
+  "source_integrity_tests_passed": 40,
+  "withdrawn_exposed_archives": 3,
+  "history_rewrite_authorized": false,
+  "github_alerts_closed": false,
+  "third_party_keys_revoked": false,
+  "portable_reproductions": [
+    {
+      "package": "complete-pa-three-county-2026-05.zip",
+      "portable_reproduction_byte_identical": true
+    },
+    {
+      "package": "complete-bucks-2026-county-results-03.zip",
+      "portable_reproduction_byte_identical": true
+    }
+  ],
+  "official_merge_tests_passed": 10,
+  "all_bucks_count_csvs_byte_identical": true
+}
