@@ -172,6 +172,9 @@ def build_rows(index=None, published=False, source_batches=None):
                     row["participation"] = "acquired_precinct_counts_and_registration"
                 if coverage.get("participation"):
                     row["participation"] = coverage["participation"]
+                if review and review.get("municipality"):
+                    row["notes"] += (" Additional city-only count review: " + review["notes"]
+                                     + " Complete ZIP: " + review["complete_download_url"])
             rows.append(row)
     return rows
 

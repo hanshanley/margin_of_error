@@ -2281,6 +2281,33 @@ def test_source_review_accepts_manifest_provenance_without_claiming_mapped_parti
     assert row["boundary_source"] == "" and row["publication"] == "full_counts_download_only"
 
 
+def test_city_count_review_keeps_the_existing_mapped_subset_and_separate_participation(tmp_path, monkeypatch):
+    states = tmp_path / "public/voter-participation/data"
+    states.mkdir(parents=True)
+    (states / "states.geojson").write_bytes(
+        (precinct_coverage.ROOT / "public/voter-participation/data/states.geojson").read_bytes())
+    review = dict(year=2026, state_code="MA", municipality="Worcester",
+                  candidate_results="acquired_reconciled_city_subset", boundaries="reference_pending",
+                  join="withheld", validation="counts_passed_map_withheld",
+                  publication="full_counts_download_only", participation="not_inferred_from_contest_counts",
+                  source_url="worcester-source", next_action="Review exact reference",
+                  notes="Worcester governor counts only; no map or turnout", complete_download_url="worcester.zip")
+    (tmp_path / "review.json").write_text(json.dumps(review))
+    (tmp_path / "public/precinct-results.json").write_text(json.dumps({"source_reviews": ["review.json"]}))
+    monkeypatch.setattr(precinct_coverage, "ROOT", tmp_path)
+    coverage = dict(partial=True, live_verified=True, source_url="boston-source",
+                    boundary_source="boston-reference", next_action="Acquire more cities",
+                    notes="Boston central-only mapped subset",
+                    participation="central_only_counts_no_registration_or_rates")
+    rows = precinct_coverage.build_rows({"coverage": {"2026": {"MA": coverage}}})
+    row = next(row for row in rows if row["year"] == 2026 and row["state_code"] == "MA")
+    assert len(rows) == 1632 and all(row["complete"] == "no" for row in rows)
+    assert row["publication"] == "published_partial" and row["join"] == "validated_partial"
+    assert row["participation"] == coverage["participation"] and row["results_source"] == "boston-source"
+    assert row["boundary_source"] == "boston-reference"
+    assert all(text in row["notes"] for text in [coverage["notes"], review["notes"], "worcester.zip"])
+
+
 def test_historical_source_acquisition_requires_exact_reviewed_bytes_without_inventing_turnout():
     raw = b"county,precinct,office,candidate,votes\nExample,1,House,A,10\nExample,2,House,B,*\n"
     blob = hashlib.sha1(b"blob " + str(len(raw)).encode() + b"\0" + raw).hexdigest()

@@ -2142,7 +2142,7 @@ footer **31,811 DEM; 13,750 REP; 2,038 IND; 69 write-ins; 662 blanks**.
 Full-page OCR merged vertical numeric runs and missed cells, particularly in
 sparse early modes; those incomplete matrices were rejected, not repaired.
 
-### Worcester governor count review: complete package verified; publication pending
+### Worcester governor count review: source/release and local UI verified
 
 The bounded second reading is now complete. Independently detected actual source
 grid borders yielded **1,260** candidate/write-in/blank cells. Every original
@@ -2227,12 +2227,47 @@ completed count archive. Next acquire that actual layer/item/full native ID
 inventory and geometry, audit split identities and November 2026 applicability.
 No Worcester geometry or participation file is published from count accounting.
 
-Next publication: commit/push this verified source batch as Hans, publish and
-redownload its immutable full release, then add a city-and-contest-scoped count
-download without replacing Boston's MA map shard. Verify the exact deployment
-and preserve every prior complete download. The MA 2026 ledger must retain the
-live Boston subset and stay incomplete; the Worcester count review is additional,
-not replacement or statewide map completion.
+Source is now committed/pushed as Hans at
+`509f4ba98a3fb8802d0c313f1a1d2c8f35863a42`.
+Immutable release `voter-precinct-worcester-counts-20261105` targets that exact
+source commit. Its full remote ZIP was redownloaded; size/SHA-256 and exact
+tag-to-source checks pass:
+`files/worcester-2026-remote-release-proof.json`.
+No original or immutable asset is replaced.
+
+The pending UI adds only the city/office-scoped count-review download; all
+**52** existing complete downloads remain, for **53** total. The registry's
+mapped snapshots, Boston's live flag/MA shard, and renderer are unchanged.
+Ledger regeneration still has **1,632 incomplete cells**; only the **MA 2026
+notes** change to retain both Boston's mapped subset and Worcester's separate
+count review. A regression prevents the count-only review from replacing the
+existing map or its separately scoped participation metadata.
+All **367** collector tests and seven relevant Node tests pass. Astro check
+has zero errors/warnings and the same five existing hints. The normal build
+and Pages preparer pass; all **94** relocated bulk assets remain byte-verified,
+and the prepared site is **986,228,851 bytes**.
+`files/check-worcester-2026-publication.py` passes on the prepared local site
+for desktop/mobile x JS/no-JS, verifying all 53 downloads, exact retention of
+the prior 52, city-and-governor-only wording, no false county/participation
+label, unchanged registry/map renderer, preserved Boston map and 2026 defaults,
+unqueried static bytes, no overflow/errors and the notes-only ledger change.
+Proof: `files/worcester-2026-local-browser-proof.json`.
+Next finish the exact UI deployment and production proof; no live claim yet.
+
+The separate Atlas follow-up now contains the complete actual layer/item,
+native object-ID query and GeoJSON, each with full receipt. The **371,500-byte**
+geometry contains **66 unique IDs / 66 unique precinct labels**, exactly
+matching the independent native ID inventory, with no transfer truncation,
+invalid geometries or overlaps above `1e-10` square degrees.
+It is **not** an approved join: native result-only **7-5A** is missing from this
+reference, while reference-only **2-6A, 3-3A, 3-5A, 4-2B and 10-4A** have no
+separate count rows. All native properties and exact mismatch/geometry
+diagnostics are retained in
+`files/worcester-2026-native-atlas-reference-audit.json`.
+Do not treat the service's November 2026 edit timestamp as proof of election
+applicability, merge split areas into a broader result row, infer five zero
+returns, or manufacture a 7-5A shape. This bounded reference/scope follow-up
+remains open; it does not block the complete, explicitly unmapped count download.
 
 ## Resume procedure for every work session or scheduled prompt
 
