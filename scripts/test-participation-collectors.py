@@ -37,8 +37,77 @@ ak_review = module("review-alaska-precinct-results")
 ak_boundaries = module("review-alaska-precinct-boundaries")
 hi_review = module("review-hawaii-precinct-results")
 hi_historical = module("archive-hawaii-historical-sources")
+ct_originals = module("archive-connecticut-election-sources")
 ri_review = module("review-rhode-island-precinct-results")
 ri_maps = module("build-rhode-island-precinct-results")
+
+
+def connecticut_report_fixture():
+    rows = [
+        ["STATE OF CONNECTICUT OFFICE OF THE SECRETARY OF THE STATE"],
+        ["Election Results by Voting District "], ct_originals.CANDIDATES,
+        ["November 2026 State Election", "Town", "State Election", "November 03' 2026",
+         "Clerk", "Representative in Congress 1", "Candidate\nOne", "Democratic Party",
+         "DISTRICT 1-Town Hall", "5", "2", "3", "0", "0", "10", ""],
+        [], ct_originals.REGISTRY,
+        ["Town", "DISTRICT 1-Town Hall", "100", "5", ""],
+        ["Town", "DISTRICT 1-Town Hall", "100", "5", ""],
+        [], ct_originals.MODES,
+        ["Town", "DISTRICT 1-Town Hall", "5", "2", "0", "0", "3", "0", "0", "0", ""],
+        [], ct_originals.QUESTIONS,
+        ["Election 2026", "State Election", "Town", "1", "Question\nwith quoted text", "-", "2", "-", "-", ""],
+    ]
+    output = io.StringIO(newline="")
+    csv.writer(output).writerows(rows)
+    return output.getvalue().encode()
+
+
+def test_ct_original_report_keeps_multiline_records_sections_and_repeated_denominators_separate():
+    inventory = ct_originals.report_inventory(connecticut_report_fixture(), 2026, {"Town"})
+    candidate, registry, modes = inventory["sections"]
+    assert candidate["native_records"] == 1 and candidate["house_candidate_party_records"] == 1
+    assert candidate["house_native_mode_sum_discrepancies"] == 0
+    assert registry["native_records"] == 2 and modes["native_records"] == 1
+    assert registry["duplicate_literal_town_polling_labels"] == [
+        dict(town="Town", polling_label="DISTRICT 1-Town Hall", records=2)]
+    assert "precinct_rates" not in inventory and inventory["full_report_strict_csv_error"] is None
+
+
+@pytest.mark.parametrize("old,new,message", [
+    (b"November 03' 2026", b"November 03' 2024", "election year"),
+    (b",5,2,3,0,0,10,", b",-,2,3,0,0,10,", "invalid native count"),
+    (b"No. Checked as Having Voted", b"Missing section", "report section"),
+])
+def test_ct_original_report_rejects_mixed_years_missing_counts_and_incomplete_sections(old, new, message):
+    raw = connecticut_report_fixture()
+    assert old in raw
+    with pytest.raises(ValueError, match=message):
+        ct_originals.report_inventory(raw.replace(old, new), 2026, {"Town"})
+
+
+def test_ct_original_receipts_reject_changed_bytes_and_metadata_only_batches(tmp_path):
+    with pytest.raises(ValueError, match="metadata-only"):
+        ct_originals.election_originals(tmp_path, 2026, "108")
+    (tmp_path / "Version.json").write_bytes(b"changed")
+    (tmp_path / "Version.json.source.json").write_text(json.dumps(dict(
+        status_code=200, bytes=7, sha256="wrong")))
+    with pytest.raises(ValueError, match="Changed or failed"):
+        ct_originals.election_originals(tmp_path, 2026, "108")
+
+
+def test_ct_original_negative_adjustments_are_preserved_and_flagged_not_clamped():
+    raw = connecticut_report_fixture().replace(b",5,2,3,0,0,10,", b",5,2,3,0,-12,10,")
+    candidate = ct_originals.report_inventory(raw, 2026, {"Town"})["sections"][0]
+    assert candidate["negative_native_fields"] == [
+        dict(section_record=1, field="Unknown", source_value="-12")]
+    assert candidate["house_native_mode_sum_discrepancies"] == 1
+
+
+def test_ct_original_nonstandard_candidate_quoting_is_recorded_without_rewriting_source():
+    raw = connecticut_report_fixture().replace(b'"Candidate\nOne"', b'"Candidate "One""')
+    inventory = ct_originals.report_inventory(raw, 2026, {"Town"})
+    assert inventory["sections"][0]["native_records"] == 1
+    assert inventory["full_report_strict_csv_error"]["error"] == "',' expected after '\"'"
 
 
 def rhode_island_fixture():
@@ -1291,6 +1360,13 @@ def test_original_source_downloads_do_not_claim_validated_maps_or_participation(
     assert row["join"] == "pending" and row["complete"] == "no"
     assert row["publication"] == "full_originals_download_only"
     assert row["participation"] == "not_acquired"
+    batch["states"]["AZ"]["participation"] = "not_reconciled"
+    batch["states"]["NC"] = batch["states"]["AZ"]
+    rows = precinct_coverage.build_rows(source_batches=[batch])
+    assert next(r for r in rows if r["year"] == 2022 and r["state_code"] == "AZ")[
+        "participation"] == "not_reconciled"
+    assert next(r for r in rows if r["year"] == 2022 and r["state_code"] == "NC")[
+        "participation"] == "published_counts_and_reference_map"
 
 
 def test_multiyear_original_downloads_preserve_years_and_do_not_override_validated_map_scope():

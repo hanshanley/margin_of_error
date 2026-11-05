@@ -1257,10 +1257,57 @@ including `source-structure-and-discrepancies.json`. The public native
 voting-district report is acquired through the application's own
 `GetVotingDistrictValues` / `Default.aspx?action=VotingDistrict` export,
 not scraped county vote allocation. Separate 2024/2022/2020/2018/2016
-official originals are being acquired while RI publication completes.
-Next CT action: validate all report sections/receipt identities, preserve
-the summary discrepancy, resolve the native ID collisions with supported
-source-scoped exports, and archive complete originals before registration.
+official originals have now been acquired: **14 full HTTP originals each**,
+with actual election IDs **91/80/54/31/1** respectively.
+The complete reports include both candidate and separate registry/mode sections.
+Native CSV quoting is nonstandard even in candidate names (for example
+unescaped quoted nicknames), not just multiline ballot-question text;
+strict CSV errors are recorded and all original bytes are preserved.
+The 2022 report has **16 negative candidate Unknown-mode adjustments**;
+2016 has **40** and one **-2 absentee-total** observation. They remain
+negative, flagged source values, never clamped, silently treated as missing,
+or approved for participation rates. Native `CO` values such as 0/1 are
+not established fusion-parent IDs; do not infer candidate grouping from them.
+Next CT action: finish the complete-original archive and independent
+receipt/byte/reproduction checks; then resolve the summary discrepancy,
+native ID collisions, original name quoting and fusion scope with supported
+source-scoped exports before any result/rate/map normalization.
+
+## Connecticut six-election complete-original batch
+
+Offline builder: `scripts/archive-connecticut-election-sources.py`.
+Snapshot: `data/precinct-source-acquisitions/20261105/CT-2016-2026-02/`.
+It retains **115 full HTTP originals / 46,014,001 uncompressed bytes**:
+2026 has 45 originals including both API versions and application/export
+provenance; 2024/2022/2020/2018/2016 each have 14. Separate versions are
+never overwritten. All-office candidate/party/mode reports contain
+**177,082 rows** and separate registry/voted sections contain **4,482
+observations** across the six elections. These are native observations,
+not deduplicated precinct identities or demographic participation estimates.
+
+The complete archive `complete-connecticut-2016-2026-originals.zip` is
+**3,434,133 bytes**, SHA-256
+`bf1756dd874eda8809339b7daccc41a8bbb70955475a8535d868e24854d2f439`.
+Independent proof checks all **118** archive members/CRCs/local bytes,
+all 115 original receipts and unmodified cache bodies, every exact
+election identity and candidate/registry/mode section count, and all
+**57 negative native values**. It reproduces every file and ZIP byte
+**solely from distributed originals**, and verifies overwrite refusal:
+`files/ct-2016-2026-independent-archive-verification.json`.
+The 26-byte broken XML response is retained as a failed original attempt,
+never mistaken for a full result dataset. Nonstandard name/question
+quoting and every unreconciled count/identity issue above remain explicit.
+All **213 collector tests** pass, including multiline sections, missing
+counts, mixed election years, negative adjustments, native malformed quotes,
+changed receipts and metadata-only archive refusal.
+
+The coverage builder now carries an explicit source batch's pending
+participation status instead of calling acquired-but-unreconciled originals
+not acquired. Stronger existing published participation (including NC) is
+preserved. These six captures remain **originals-review-pending**, not
+reconciled counts, validated maps or rates. Release upload/full remote-byte
+verification and download registration are next; do not mark the archive
+live before those checks.
 
 ## Resume procedure for every work session or scheduled prompt
 

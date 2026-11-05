@@ -135,6 +135,8 @@ def build_rows(index=None, published=False, source_batches=None):
                            results_source=source["source_url"],
                            validation=source.get("validation", "source_bytes_verified_scope_pending"),
                            publication="full_originals_download_only", next_action=source["next_action"])
+                if row["participation"] == "not_acquired" and source.get("participation"):
+                    row["participation"] = source["participation"]
                 if "original_files" in source:
                     row["notes"] += (
                         f' Complete original archive acquired: {source["original_files"]} files, '
