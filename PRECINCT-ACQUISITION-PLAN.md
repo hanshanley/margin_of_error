@@ -197,8 +197,9 @@ Continue 2016 source-specific quality review: its unresolved
 party labels, Missouri noncounty buckets and Texas source undercoverage need
 separate handling rather than a blanket extrapolation from the two newest years.
 Historical maps still require election-year county crosswalks.
-Acquire genuine 2026 Maine/Pennsylvania alternatives in parallel; D.C.'s
-official originals are now acquired separately, as detailed below.
+Acquire genuine 2026 Maine/Pennsylvania alternatives; D.C.'s separate
+nonvoting-delegate counts and city participation are now published and
+production-verified, as detailed below. Do not repeat their completed review.
 Do not repeat the completed
 county map or pipeline suites unless their counts/renderer actually change.
 UF's currently published
@@ -268,12 +269,12 @@ Republican candidate votes. The delegate candidate sum plus 602 overvotes and
 3,181 undervotes is 324 below the separate ballot summary; retain the unresolved
 difference. Native RCV flags do not independently establish a final round.
 EarlyVotes is zero while ShowEarlyVotes is false, not evidence that no early
-ballots were cast. These are acquired originals with reviewed arithmetic,
-not a registered public normalized export or approved 2026 map geometry.
-Use these saved originals for the next scoped review instead of repeating
+ballots were cast. These acquisition originals are not approved 2026 map
+geometry. The scoped publication below supersedes their original
+acquisition-only status; use the saved originals rather than repeating
 app/API discovery.
 
-The scoped D.C. count package is now prepared separately in
+The scoped D.C. count package is now published separately in
 `data/county-source-reviews/20261105-dc-reviewed-01/`; it does not overwrite
 those acquisition originals. All 10,011 native CSV rows reconcile with all
 1,478 XML summary records across 363 contests. All 722 party-label differences
@@ -304,8 +305,19 @@ the previous 178; all four historical House years, 204 scope cells and 52 UF
 rows remain source-matched. Astro check, seven participation tests, build/four
 caucus tests and Pages preparation pass (987,259,532 bytes after verifying
 94 relocated downloads). County pointers and renderer are unchanged, so their
-completed map suites were not repeated. Exact live verification remains
-pending. Do not mark the D.C. map gap or precinct ledger complete.
+completed map suites were not repeated.
+
+UI commit `9d8e6e3afc898634699f79af8fb68a1cbb504bc4` is live: exact Pages
+run `42083410340` succeeded. The saved `production-browser.json` verifies
+all four display modes, all 186 complete URLs (retaining every previous 178),
+all four historical House years/204 scope cells, all 52 UF rows and exact
+pointer/registry/renderer bytes. Exact deployment and production evidence is
+in the separate D.C. publication directory; its complete manifest and the
+18-file immutable data manifest both verify. The temporary preview is stopped.
+Do not mark the D.C. map gap or precinct ledger complete, and do not repeat
+this completed publication or reinterpret the unresolved 324-ballot difference.
+Next actionable work remains genuine 2026 Maine/Pennsylvania county sources,
+followed by the scoped 2016 historical House export.
 
 Pennsylvania official county alternative, November 5 follow-up:
 `data/county-source-reviews/20261105-monroe-official-01/` retains Monroe's
