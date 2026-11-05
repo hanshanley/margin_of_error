@@ -22,6 +22,75 @@ current_local = module("collect-current-participation")
 current_precincts = module("build-current-precincts")
 precinct_results = module("build-precinct-results")
 precinct_coverage = module("build-precinct-coverage")
+additional_precincts = module("build-additional-precinct-results")
+
+
+def mn_fixture():
+    precincts, counties, statewide, table = [], [], [], {}
+    for district in range(1, 9):
+        precinct = str(district).zfill(4)
+        table[("01", precinct)] = ["01", precinct, "Precinct " + precinct, str(district)]
+        for candidate, party, votes in [("0401", "DFL", 70), ("0302", "R", 30)]:
+            row = dict(county="", precinct="", district=str(district), candidate=candidate,
+                       name=party, party=party, reported=1, units=1, votes=votes, total=100)
+            statewide.append(row)
+            counties.append(dict(row, county="01"))
+            precincts.append(dict(row, county="01", precinct=precinct))
+    return precincts, counties, statewide, {"01": "Example"}, table
+
+
+def test_mn_precinct_candidates_require_all_three_reporting_levels_to_reconcile():
+    args = mn_fixture()
+    rows = additional_precincts.mn_results(*args)
+    assert len(rows) == 8 and all(r["margin_pp"] == 40 for r in rows)
+    assert rows[0]["key"] == "MN|01|0001"
+    args[1][0]["votes"] -= 1
+    with pytest.raises(ValueError, match="do not reconcile"):
+        additional_precincts.mn_results(*args)
+
+
+def test_mn_candidates_reject_missing_candidates_and_incorrect_geographies():
+    args = mn_fixture()
+    args[0][0]["party"] = "UNKNOWN"
+    with pytest.raises(ValueError, match="candidate/party"):
+        additional_precincts.mn_results(*args)
+    row = "MN;01;0001;0104;U.S. Representative District 1;1;0401;Example;;;DFL;1;1;70;70;100"
+    with pytest.raises(ValueError, match="Duplicate"):
+        additional_precincts.mn_candidate_rows(row + "\n" + row, "precinct")
+    with pytest.raises(ValueError, match="geography"):
+        additional_precincts.mn_candidate_rows(row, "county")
+    with pytest.raises(ValueError, match="House contest"):
+        additional_precincts.mn_candidate_rows(row.replace("0104", "0105"), "precinct")
+
+
+def test_mn_participation_is_not_candidate_votes_and_checks_ballot_modes():
+    *_, names, table = mn_fixture()
+    row = "MN;01;0001;Precinct 0001;1;100;10;50;20;0;0;70"
+    parsed = additional_precincts.mn_participation(row, names, table)[0]
+    assert parsed["denominator"] == 110 and parsed["ballots"] == 70
+    assert parsed["reported_pct"] == pytest.approx(100 * 70 / 110)
+    assert additional_precincts.mn_participation(row.replace(";1;100;10;", ";0;100;10;"), names, table)[0]["reported_pct"] is None
+    inconsistent = additional_precincts.mn_participation(row[:-2] + "71", names, table)[0]
+    assert inconsistent["ballots"] == 71 and inconsistent["reported_pct"] is None
+    assert not inconsistent["ballot_modes_reconciled"]
+    missing = additional_precincts.mn_participation(row.replace(";100;", ";*;"), names, table)[0]
+    assert missing["registered_at_open"] is None and missing["reported_pct"] is None
+    with pytest.raises(ValueError, match="duplicate"):
+        additional_precincts.mn_participation(row + "\n" + row, names, table)
+
+
+def test_original_2020_results_keep_actual_year_and_boundary_uncertainty():
+    feature = {"properties": {"GEOID": "06001-1", "votes_dem": 30, "votes_rep": 10, "votes_total": 50}}
+    row = additional_precincts.nyt_result(feature, {"06": "CA"})
+    assert row["year"] == 2020 and row["other_votes"] == 10 and row["margin_pp"] == 40
+    assert "no per-shape official flag" in row["boundary_provenance"]
+    feature["properties"]["votes_total"] = 39
+    with pytest.raises(ValueError, match="candidate totals"):
+        additional_precincts.nyt_result(feature, {"06": "CA"})
+    feature["properties"].update(votes_total=None, votes_dem=None, votes_rep=None)
+    missing = additional_precincts.nyt_result(feature, {"06": "CA"})
+    assert missing["contest_votes"] is None and missing["margin_pp"] is None
+    assert missing["democratic_votes"] is None and missing["other_votes"] is None
 
 
 def test_precinct_worklist_covers_every_state_and_year_newest_first():
@@ -68,6 +137,11 @@ def test_precinct_worklist_requires_live_verification_and_never_marks_partial_co
         assert nm["publication"] == "not_published"
         assert de["candidate_results"] == "acquired_reconciled" and de["join"] == "withheld"
         assert de["publication"] == "full_counts_download_only" and de["complete"] == "no"
+    index["coverage"]["2026"]["MN"] = dict(coverage, live_verified=False)
+    rows = precinct_coverage.build_rows(index, published=True)
+    mn = next(row for row in rows if row["year"] == 2026 and row["state_code"] == "MN")
+    assert mn["publication"] == "snapshot_ready"
+    assert mn["participation"] == "acquired_precinct_counts_and_registration"
 
 
 def test_precinct_join_withholds_whole_mismatched_or_unreconciled_counties():

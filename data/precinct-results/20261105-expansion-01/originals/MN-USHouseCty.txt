@@ -1,0 +1,300 @@
+MN;01;;0111;U.S. Representative District 8;8;0301;Pete Stauber;;;R;51;51;5663;63.40;8932
+MN;01;;0111;U.S. Representative District 8;8;0402;Trina Swanson;;;DFL;51;51;3253;36.42;8932
+MN;01;;0111;U.S. Representative District 8;8;9901;WRITE-IN;;;WI;51;51;16;0.18;8932
+MN;02;;0106;U.S. Representative District 3;3;0301;Tyler Bass;;;R;31;31;15756;41.47;37990
+MN;02;;0106;U.S. Representative District 3;3;0402;Kelly Morrison;;;DFL;31;31;22193;58.42;37990
+MN;02;;0106;U.S. Representative District 3;3;9901;WRITE-IN;;;WI;31;31;41;0.11;37990
+MN;02;;0108;U.S. Representative District 5;5;0401;Ilhan Omar;;;DFL;21;21;15478;62.77;24658
+MN;02;;0108;U.S. Representative District 5;5;0302;John Nagel;;;R;21;21;6980;28.31;24658
+MN;02;;0108;U.S. Representative District 5;5;1003;DeVelle L. Jackson;;;IND;21;21;2158;8.75;24658
+MN;02;;0108;U.S. Representative District 5;5;9901;WRITE-IN;;;WI;21;21;42;0.17;24658
+MN;02;;0109;U.S. Representative District 6;6;0301;Tom Emmer;;;R;76;76;62751;53.16;118032
+MN;02;;0109;U.S. Representative District 6;6;0402;Doug Chapin;;;DFL;76;76;55141;46.72;118032
+MN;02;;0109;U.S. Representative District 6;6;9901;WRITE-IN;;;WI;76;76;140;0.12;118032
+MN;03;;0110;U.S. Representative District 7;7;0301;Michelle Fischbach;;;R;33;33;9757;64.24;15188
+MN;03;;0110;U.S. Representative District 7;7;0402;Erik Osberg;;;DFL;33;33;5411;35.63;15188
+MN;03;;0110;U.S. Representative District 7;7;9901;WRITE-IN;;;WI;33;33;20;0.13;15188
+MN;03;;0111;U.S. Representative District 8;8;0301;Pete Stauber;;;R;14;14;862;55.97;1540
+MN;03;;0111;U.S. Representative District 8;8;0402;Trina Swanson;;;DFL;14;14;678;44.03;1540
+MN;03;;0111;U.S. Representative District 8;8;9901;WRITE-IN;;;WI;14;14;0;0.00;1540
+MN;04;;0111;U.S. Representative District 8;8;0301;Pete Stauber;;;R;61;61;9948;49.54;20081
+MN;04;;0111;U.S. Representative District 8;8;0402;Trina Swanson;;;DFL;61;61;10120;50.40;20081
+MN;04;;0111;U.S. Representative District 8;8;9901;WRITE-IN;;;WI;61;61;13;0.06;20081
+MN;05;;0109;U.S. Representative District 6;6;0301;Tom Emmer;;;R;27;27;11894;64.02;18578
+MN;05;;0109;U.S. Representative District 6;6;0402;Doug Chapin;;;DFL;27;27;6664;35.87;18578
+MN;05;;0109;U.S. Representative District 6;6;9901;WRITE-IN;;;WI;27;27;20;0.11;18578
+MN;06;;0110;U.S. Representative District 7;7;0301;Michelle Fischbach;;;R;24;24;1510;62.76;2406
+MN;06;;0110;U.S. Representative District 7;7;0402;Erik Osberg;;;DFL;24;24;896;37.24;2406
+MN;06;;0110;U.S. Representative District 7;7;9901;WRITE-IN;;;WI;24;24;0;0.00;2406
+MN;07;;0104;U.S. Representative District 1;1;0401;Jake Johnson;;;DFL;56;56;16682;56.23;29666
+MN;07;;0104;U.S. Representative District 1;1;0302;Brad Finstad;;;R;56;56;12943;43.63;29666
+MN;07;;0104;U.S. Representative District 1;1;9901;WRITE-IN;;;WI;56;56;41;0.14;29666
+MN;08;;0104;U.S. Representative District 1;1;0401;Jake Johnson;;;DFL;22;22;3924;39.11;10034
+MN;08;;0104;U.S. Representative District 1;1;0302;Brad Finstad;;;R;22;22;6096;60.75;10034
+MN;08;;0104;U.S. Representative District 1;1;9901;WRITE-IN;;;WI;22;22;14;0.14;10034
+MN;08;;0110;U.S. Representative District 7;7;0301;Michelle Fischbach;;;R;10;10;1322;76.46;1729
+MN;08;;0110;U.S. Representative District 7;7;0402;Erik Osberg;;;DFL;10;10;407;23.54;1729
+MN;08;;0110;U.S. Representative District 7;7;9901;WRITE-IN;;;WI;10;10;0;0.00;1729
+MN;09;;0111;U.S. Representative District 8;8;0301;Pete Stauber;;;R;39;39;7951;45.51;17469
+MN;09;;0111;U.S. Representative District 8;8;0402;Trina Swanson;;;DFL;39;39;9488;54.31;17469
+MN;09;;0111;U.S. Representative District 8;8;9901;WRITE-IN;;;WI;39;39;30;0.17;17469
+MN;10;;0109;U.S. Representative District 6;6;0301;Tom Emmer;;;R;39;39;31415;51.19;61374
+MN;10;;0109;U.S. Representative District 6;6;0402;Doug Chapin;;;DFL;39;39;29888;48.70;61374
+MN;10;;0109;U.S. Representative District 6;6;9901;WRITE-IN;;;WI;39;39;71;0.12;61374
+MN;11;;0111;U.S. Representative District 8;8;0301;Pete Stauber;;;R;71;71;10885;65.72;16563
+MN;11;;0111;U.S. Representative District 8;8;0402;Trina Swanson;;;DFL;71;71;5664;34.20;16563
+MN;11;;0111;U.S. Representative District 8;8;9901;WRITE-IN;;;WI;71;71;14;0.08;16563
+MN;12;;0110;U.S. Representative District 7;7;0301;Michelle Fischbach;;;R;25;25;3171;62.56;5069
+MN;12;;0110;U.S. Representative District 7;7;0402;Erik Osberg;;;DFL;25;25;1893;37.34;5069
+MN;12;;0110;U.S. Representative District 7;7;9901;WRITE-IN;;;WI;25;25;5;0.10;5069
+MN;13;;0111;U.S. Representative District 8;8;0301;Pete Stauber;;;R;25;25;18098;62.02;29179
+MN;13;;0111;U.S. Representative District 8;8;0402;Trina Swanson;;;DFL;25;25;11046;37.86;29179
+MN;13;;0111;U.S. Representative District 8;8;9901;WRITE-IN;;;WI;25;25;35;0.12;29179
+MN;14;;0110;U.S. Representative District 7;7;0301;Michelle Fischbach;;;R;56;56;11477;43.01;26683
+MN;14;;0110;U.S. Representative District 7;7;0402;Erik Osberg;;;DFL;56;56;15165;56.83;26683
+MN;14;;0110;U.S. Representative District 7;7;9901;WRITE-IN;;;WI;56;56;41;0.15;26683
+MN;15;;0111;U.S. Representative District 8;8;0301;Pete Stauber;;;R;29;29;2842;71.77;3960
+MN;15;;0111;U.S. Representative District 8;8;0402;Trina Swanson;;;DFL;29;29;1116;28.18;3960
+MN;15;;0111;U.S. Representative District 8;8;9901;WRITE-IN;;;WI;29;29;2;0.05;3960
+MN;16;;0111;U.S. Representative District 8;8;0301;Pete Stauber;;;R;14;14;947;28.06;3375
+MN;16;;0111;U.S. Representative District 8;8;0402;Trina Swanson;;;DFL;14;14;2426;71.88;3375
+MN;16;;0111;U.S. Representative District 8;8;9901;WRITE-IN;;;WI;14;14;2;0.06;3375
+MN;17;;0110;U.S. Representative District 7;7;0301;Michelle Fischbach;;;R;28;28;3271;68.03;4808
+MN;17;;0110;U.S. Representative District 7;7;0402;Erik Osberg;;;DFL;28;28;1533;31.88;4808
+MN;17;;0110;U.S. Representative District 7;7;9901;WRITE-IN;;;WI;28;28;4;0.08;4808
+MN;18;;0111;U.S. Representative District 8;8;0301;Pete Stauber;;;R;62;62;22468;63.31;35487
+MN;18;;0111;U.S. Representative District 8;8;0402;Trina Swanson;;;DFL;62;62;12998;36.63;35487
+MN;18;;0111;U.S. Representative District 8;8;9901;WRITE-IN;;;WI;62;62;21;0.06;35487
+MN;19;;0105;U.S. Representative District 2;2;0401;Matt Little;;;DFL;144;144;140340;61.03;229943
+MN;19;;0105;U.S. Representative District 2;2;0302;Eric Pratt;;;R;144;144;89405;38.88;229943
+MN;19;;0105;U.S. Representative District 2;2;9901;WRITE-IN;;;WI;144;144;198;0.09;229943
+MN;20;;0104;U.S. Representative District 1;1;0401;Jake Johnson;;;DFL;22;22;3977;38.50;10331
+MN;20;;0104;U.S. Representative District 1;1;0302;Brad Finstad;;;R;22;22;6342;61.39;10331
+MN;20;;0104;U.S. Representative District 1;1;9901;WRITE-IN;;;WI;22;22;12;0.12;10331
+MN;21;;0110;U.S. Representative District 7;7;0301;Michelle Fischbach;;;R;36;36;13867;64.93;21357
+MN;21;;0110;U.S. Representative District 7;7;0402;Erik Osberg;;;DFL;36;36;7471;34.98;21357
+MN;21;;0110;U.S. Representative District 7;7;9901;WRITE-IN;;;WI;36;36;19;0.09;21357
+MN;22;;0104;U.S. Representative District 1;1;0401;Jake Johnson;;;DFL;33;33;2322;36.33;6392
+MN;22;;0104;U.S. Representative District 1;1;0302;Brad Finstad;;;R;33;33;4059;63.50;6392
+MN;22;;0104;U.S. Representative District 1;1;9901;WRITE-IN;;;WI;33;33;11;0.17;6392
+MN;23;;0104;U.S. Representative District 1;1;0401;Jake Johnson;;;DFL;37;37;4300;42.30;10165
+MN;23;;0104;U.S. Representative District 1;1;0302;Brad Finstad;;;R;37;37;5841;57.46;10165
+MN;23;;0104;U.S. Representative District 1;1;9901;WRITE-IN;;;WI;37;37;24;0.24;10165
+MN;24;;0104;U.S. Representative District 1;1;0401;Jake Johnson;;;DFL;43;43;5995;44.75;13397
+MN;24;;0104;U.S. Representative District 1;1;0302;Brad Finstad;;;R;43;43;7384;55.12;13397
+MN;24;;0104;U.S. Representative District 1;1;9901;WRITE-IN;;;WI;43;43;18;0.13;13397
+MN;25;;0104;U.S. Representative District 1;1;0401;Jake Johnson;;;DFL;40;40;11275;46.18;24416
+MN;25;;0104;U.S. Representative District 1;1;0302;Brad Finstad;;;R;40;40;13113;53.71;24416
+MN;25;;0104;U.S. Representative District 1;1;9901;WRITE-IN;;;WI;40;40;28;0.11;24416
+MN;26;;0110;U.S. Representative District 7;7;0301;Michelle Fischbach;;;R;23;23;1859;60.85;3055
+MN;26;;0110;U.S. Representative District 7;7;0402;Erik Osberg;;;DFL;23;23;1192;39.02;3055
+MN;26;;0110;U.S. Representative District 7;7;9901;WRITE-IN;;;WI;23;23;4;0.13;3055
+MN;27;;0106;U.S. Representative District 3;3;0301;Tyler Bass;;;R;198;198;119749;35.22;340007
+MN;27;;0106;U.S. Representative District 3;3;0402;Kelly Morrison;;;DFL;198;198;219886;64.67;340007
+MN;27;;0106;U.S. Representative District 3;3;9901;WRITE-IN;;;WI;198;198;372;0.11;340007
+MN;27;;0108;U.S. Representative District 5;5;0401;Ilhan Omar;;;DFL;195;195;246017;77.57;317152
+MN;27;;0108;U.S. Representative District 5;5;0302;John Nagel;;;R;195;195;48429;15.27;317152
+MN;27;;0108;U.S. Representative District 5;5;1003;DeVelle L. Jackson;;;IND;195;195;21821;6.88;317152
+MN;27;;0108;U.S. Representative District 5;5;9901;WRITE-IN;;;WI;195;195;885;0.28;317152
+MN;27;;0109;U.S. Representative District 6;6;0301;Tom Emmer;;;R;2;2;325;59.74;544
+MN;27;;0109;U.S. Representative District 6;6;0402;Doug Chapin;;;DFL;2;2;219;40.26;544
+MN;27;;0109;U.S. Representative District 6;6;9901;WRITE-IN;;;WI;2;2;0;0.00;544
+MN;28;;0104;U.S. Representative District 1;1;0401;Jake Johnson;;;DFL;27;27;4315;46.51;9277
+MN;28;;0104;U.S. Representative District 1;1;0302;Brad Finstad;;;R;27;27;4956;53.42;9277
+MN;28;;0104;U.S. Representative District 1;1;9901;WRITE-IN;;;WI;27;27;6;0.06;9277
+MN;29;;0110;U.S. Representative District 7;7;0301;Michelle Fischbach;;;R;15;15;4016;62.56;6419
+MN;29;;0110;U.S. Representative District 7;7;0402;Erik Osberg;;;DFL;15;15;2401;37.40;6419
+MN;29;;0110;U.S. Representative District 7;7;9901;WRITE-IN;;;WI;15;15;2;0.03;6419
+MN;29;;0111;U.S. Representative District 8;8;0301;Pete Stauber;;;R;22;22;3390;63.53;5336
+MN;29;;0111;U.S. Representative District 8;8;0402;Trina Swanson;;;DFL;22;22;1941;36.38;5336
+MN;29;;0111;U.S. Representative District 8;8;9901;WRITE-IN;;;WI;22;22;5;0.09;5336
+MN;30;;0111;U.S. Representative District 8;8;0301;Pete Stauber;;;R;19;19;13746;66.26;20745
+MN;30;;0111;U.S. Representative District 8;8;0402;Trina Swanson;;;DFL;19;19;6978;33.64;20745
+MN;30;;0111;U.S. Representative District 8;8;9901;WRITE-IN;;;WI;19;19;21;0.10;20745
+MN;31;;0111;U.S. Representative District 8;8;0301;Pete Stauber;;;R;75;75;12385;56.54;21906
+MN;31;;0111;U.S. Representative District 8;8;0402;Trina Swanson;;;DFL;75;75;9496;43.35;21906
+MN;31;;0111;U.S. Representative District 8;8;9901;WRITE-IN;;;WI;75;75;25;0.11;21906
+MN;32;;0104;U.S. Representative District 1;1;0401;Jake Johnson;;;DFL;28;28;1566;32.17;4868
+MN;32;;0104;U.S. Representative District 1;1;0302;Brad Finstad;;;R;28;28;3297;67.73;4868
+MN;32;;0104;U.S. Representative District 1;1;9901;WRITE-IN;;;WI;28;28;5;0.10;4868
+MN;33;;0111;U.S. Representative District 8;8;0301;Pete Stauber;;;R;20;20;5090;67.13;7582
+MN;33;;0111;U.S. Representative District 8;8;0402;Trina Swanson;;;DFL;20;20;2485;32.77;7582
+MN;33;;0111;U.S. Representative District 8;8;9901;WRITE-IN;;;WI;20;20;7;0.09;7582
+MN;34;;0110;U.S. Representative District 7;7;0301;Michelle Fischbach;;;R;48;48;11860;60.86;19486
+MN;34;;0110;U.S. Representative District 7;7;0402;Erik Osberg;;;DFL;48;48;7615;39.08;19486
+MN;34;;0110;U.S. Representative District 7;7;9901;WRITE-IN;;;WI;48;48;11;0.06;19486
+MN;35;;0110;U.S. Representative District 7;7;0301;Michelle Fischbach;;;R;39;39;1166;57.07;2043
+MN;35;;0110;U.S. Representative District 7;7;0402;Erik Osberg;;;DFL;39;39;874;42.78;2043
+MN;35;;0110;U.S. Representative District 7;7;9901;WRITE-IN;;;WI;39;39;3;0.15;2043
+MN;36;;0111;U.S. Representative District 8;8;0301;Pete Stauber;;;R;23;23;3304;60.66;5447
+MN;36;;0111;U.S. Representative District 8;8;0402;Trina Swanson;;;DFL;23;23;2133;39.16;5447
+MN;36;;0111;U.S. Representative District 8;8;9901;WRITE-IN;;;WI;23;23;10;0.18;5447
+MN;37;;0110;U.S. Representative District 7;7;0301;Michelle Fischbach;;;R;29;29;2127;62.89;3382
+MN;37;;0110;U.S. Representative District 7;7;0402;Erik Osberg;;;DFL;29;29;1252;37.02;3382
+MN;37;;0110;U.S. Representative District 7;7;9901;WRITE-IN;;;WI;29;29;3;0.09;3382
+MN;38;;0111;U.S. Representative District 8;8;0301;Pete Stauber;;;R;19;19;2706;45.30;5974
+MN;38;;0111;U.S. Representative District 8;8;0402;Trina Swanson;;;DFL;19;19;3264;54.64;5974
+MN;38;;0111;U.S. Representative District 8;8;9901;WRITE-IN;;;WI;19;19;4;0.07;5974
+MN;39;;0111;U.S. Representative District 8;8;0301;Pete Stauber;;;R;17;17;1329;71.53;1858
+MN;39;;0111;U.S. Representative District 8;8;0402;Trina Swanson;;;DFL;17;17;528;28.42;1858
+MN;39;;0111;U.S. Representative District 8;8;9901;WRITE-IN;;;WI;17;17;1;0.05;1858
+MN;40;;0105;U.S. Representative District 2;2;0401;Matt Little;;;DFL;26;26;5111;35.80;14275
+MN;40;;0105;U.S. Representative District 2;2;0302;Eric Pratt;;;R;26;26;9153;64.12;14275
+MN;40;;0105;U.S. Representative District 2;2;9901;WRITE-IN;;;WI;26;26;11;0.08;14275
+MN;41;;0110;U.S. Representative District 7;7;0301;Michelle Fischbach;;;R;20;20;1664;65.56;2538
+MN;41;;0110;U.S. Representative District 7;7;0402;Erik Osberg;;;DFL;20;20;873;34.40;2538
+MN;41;;0110;U.S. Representative District 7;7;9901;WRITE-IN;;;WI;20;20;1;0.04;2538
+MN;42;;0110;U.S. Representative District 7;7;0301;Michelle Fischbach;;;R;33;33;6461;62.02;10417
+MN;42;;0110;U.S. Representative District 7;7;0402;Erik Osberg;;;DFL;33;33;3939;37.81;10417
+MN;42;;0110;U.S. Representative District 7;7;9901;WRITE-IN;;;WI;33;33;17;0.16;10417
+MN;43;;0110;U.S. Representative District 7;7;0301;Michelle Fischbach;;;R;29;29;11278;65.46;17228
+MN;43;;0110;U.S. Representative District 7;7;0402;Erik Osberg;;;DFL;29;29;5933;34.44;17228
+MN;43;;0110;U.S. Representative District 7;7;9901;WRITE-IN;;;WI;29;29;17;0.10;17228
+MN;44;;0111;U.S. Representative District 8;8;0301;Pete Stauber;;;R;19;19;1006;51.67;1947
+MN;44;;0111;U.S. Representative District 8;8;0402;Trina Swanson;;;DFL;19;19;939;48.23;1947
+MN;44;;0111;U.S. Representative District 8;8;9901;WRITE-IN;;;WI;19;19;2;0.10;1947
+MN;45;;0110;U.S. Representative District 7;7;0301;Michelle Fischbach;;;R;60;60;3172;73.36;4324
+MN;45;;0110;U.S. Representative District 7;7;0402;Erik Osberg;;;DFL;60;60;1147;26.53;4324
+MN;45;;0110;U.S. Representative District 7;7;9901;WRITE-IN;;;WI;60;60;5;0.12;4324
+MN;46;;0104;U.S. Representative District 1;1;0401;Jake Johnson;;;DFL;37;37;2863;33.11;8648
+MN;46;;0104;U.S. Representative District 1;1;0302;Brad Finstad;;;R;37;37;5770;66.72;8648
+MN;46;;0104;U.S. Representative District 1;1;9901;WRITE-IN;;;WI;37;37;15;0.17;8648
+MN;47;;0110;U.S. Representative District 7;7;0301;Michelle Fischbach;;;R;30;30;7867;69.49;11321
+MN;47;;0110;U.S. Representative District 7;7;0402;Erik Osberg;;;DFL;30;30;3440;30.39;11321
+MN;47;;0110;U.S. Representative District 7;7;9901;WRITE-IN;;;WI;30;30;14;0.12;11321
+MN;48;;0111;U.S. Representative District 8;8;0301;Pete Stauber;;;R;25;25;8051;67.10;11999
+MN;48;;0111;U.S. Representative District 8;8;0402;Trina Swanson;;;DFL;25;25;3933;32.78;11999
+MN;48;;0111;U.S. Representative District 8;8;9901;WRITE-IN;;;WI;25;25;15;0.13;11999
+MN;49;;0110;U.S. Representative District 7;7;0301;Michelle Fischbach;;;R;48;48;12249;75.62;16199
+MN;49;;0110;U.S. Representative District 7;7;0402;Erik Osberg;;;DFL;48;48;3937;24.30;16199
+MN;49;;0110;U.S. Representative District 7;7;9901;WRITE-IN;;;WI;48;48;13;0.08;16199
+MN;50;;0104;U.S. Representative District 1;1;0401;Jake Johnson;;;DFL;39;39;8098;51.64;15683
+MN;50;;0104;U.S. Representative District 1;1;0302;Brad Finstad;;;R;39;39;7571;48.28;15683
+MN;50;;0104;U.S. Representative District 1;1;9901;WRITE-IN;;;WI;39;39;14;0.09;15683
+MN;51;;0110;U.S. Representative District 7;7;0301;Michelle Fischbach;;;R;29;29;2748;69.27;3967
+MN;51;;0110;U.S. Representative District 7;7;0402;Erik Osberg;;;DFL;29;29;1217;30.68;3967
+MN;51;;0110;U.S. Representative District 7;7;9901;WRITE-IN;;;WI;29;29;2;0.05;3967
+MN;52;;0104;U.S. Representative District 1;1;0401;Jake Johnson;;;DFL;26;26;8929;53.87;16576
+MN;52;;0104;U.S. Representative District 1;1;0302;Brad Finstad;;;R;26;26;7626;46.01;16576
+MN;52;;0104;U.S. Representative District 1;1;9901;WRITE-IN;;;WI;26;26;21;0.13;16576
+MN;53;;0104;U.S. Representative District 1;1;0401;Jake Johnson;;;DFL;40;40;2728;41.38;6593
+MN;53;;0104;U.S. Representative District 1;1;0302;Brad Finstad;;;R;40;40;3859;58.53;6593
+MN;53;;0104;U.S. Representative District 1;1;9901;WRITE-IN;;;WI;40;40;6;0.09;6593
+MN;54;;0110;U.S. Representative District 7;7;0301;Michelle Fischbach;;;R;33;33;1464;55.43;2641
+MN;54;;0110;U.S. Representative District 7;7;0402;Erik Osberg;;;DFL;33;33;1171;44.34;2641
+MN;54;;0110;U.S. Representative District 7;7;9901;WRITE-IN;;;WI;33;33;6;0.23;2641
+MN;55;;0104;U.S. Representative District 1;1;0401;Jake Johnson;;;DFL;111;111;49058;62.15;78929
+MN;55;;0104;U.S. Representative District 1;1;0302;Brad Finstad;;;R;111;111;29778;37.73;78929
+MN;55;;0104;U.S. Representative District 1;1;9901;WRITE-IN;;;WI;111;111;93;0.12;78929
+MN;56;;0110;U.S. Representative District 7;7;0301;Michelle Fischbach;;;R;91;91;19748;63.72;30993
+MN;56;;0110;U.S. Representative District 7;7;0402;Erik Osberg;;;DFL;91;91;11215;36.19;30993
+MN;56;;0110;U.S. Representative District 7;7;9901;WRITE-IN;;;WI;91;91;30;0.10;30993
+MN;57;;0110;U.S. Representative District 7;7;0301;Michelle Fischbach;;;R;31;31;3325;60.94;5456
+MN;57;;0110;U.S. Representative District 7;7;0402;Erik Osberg;;;DFL;31;31;2126;38.97;5456
+MN;57;;0110;U.S. Representative District 7;7;9901;WRITE-IN;;;WI;31;31;5;0.09;5456
+MN;58;;0111;U.S. Representative District 8;8;0301;Pete Stauber;;;R;47;47;8850;63.27;13987
+MN;58;;0111;U.S. Representative District 8;8;0402;Trina Swanson;;;DFL;47;47;5122;36.62;13987
+MN;58;;0111;U.S. Representative District 8;8;9901;WRITE-IN;;;WI;47;47;15;0.11;13987
+MN;59;;0110;U.S. Representative District 7;7;0301;Michelle Fischbach;;;R;22;22;2926;71.93;4068
+MN;59;;0110;U.S. Representative District 7;7;0402;Erik Osberg;;;DFL;22;22;1140;28.02;4068
+MN;59;;0110;U.S. Representative District 7;7;9901;WRITE-IN;;;WI;22;22;2;0.05;4068
+MN;60;;0110;U.S. Representative District 7;7;0301;Michelle Fischbach;;;R;82;82;7479;62.76;11917
+MN;60;;0110;U.S. Representative District 7;7;0402;Erik Osberg;;;DFL;82;82;4433;37.20;11917
+MN;60;;0110;U.S. Representative District 7;7;9901;WRITE-IN;;;WI;82;82;5;0.04;11917
+MN;61;;0110;U.S. Representative District 7;7;0301;Michelle Fischbach;;;R;31;31;3825;62.98;6073
+MN;61;;0110;U.S. Representative District 7;7;0402;Erik Osberg;;;DFL;31;31;2242;36.92;6073
+MN;61;;0110;U.S. Representative District 7;7;9901;WRITE-IN;;;WI;31;31;6;0.10;6073
+MN;62;;0107;U.S. Representative District 4;4;0401;Betty McCollum;;;DFL;161;161;190651;77.38;246391
+MN;62;;0107;U.S. Representative District 4;4;0302;Paul Wikstrom;;;R;161;161;55349;22.46;246391
+MN;62;;0107;U.S. Representative District 4;4;9901;WRITE-IN;;;WI;161;161;391;0.16;246391
+MN;62;;0108;U.S. Representative District 5;5;0401;Ilhan Omar;;;DFL;1;1;1207;71.08;1698
+MN;62;;0108;U.S. Representative District 5;5;0302;John Nagel;;;R;1;1;356;20.97;1698
+MN;62;;0108;U.S. Representative District 5;5;1003;DeVelle L. Jackson;;;IND;1;1;131;7.71;1698
+MN;62;;0108;U.S. Representative District 5;5;9901;WRITE-IN;;;WI;1;1;4;0.24;1698
+MN;63;;0110;U.S. Representative District 7;7;0301;Michelle Fischbach;;;R;21;21;1240;65.40;1896
+MN;63;;0110;U.S. Representative District 7;7;0402;Erik Osberg;;;DFL;21;21;649;34.23;1896
+MN;63;;0110;U.S. Representative District 7;7;9901;WRITE-IN;;;WI;21;21;7;0.37;1896
+MN;64;;0110;U.S. Representative District 7;7;0301;Michelle Fischbach;;;R;42;42;4476;68.65;6520
+MN;64;;0110;U.S. Representative District 7;7;0402;Erik Osberg;;;DFL;42;42;2036;31.23;6520
+MN;64;;0110;U.S. Representative District 7;7;9901;WRITE-IN;;;WI;42;42;8;0.12;6520
+MN;65;;0110;U.S. Representative District 7;7;0301;Michelle Fischbach;;;R;37;37;4347;67.87;6405
+MN;65;;0110;U.S. Representative District 7;7;0402;Erik Osberg;;;DFL;37;37;2052;32.04;6405
+MN;65;;0110;U.S. Representative District 7;7;9901;WRITE-IN;;;WI;37;37;6;0.09;6405
+MN;66;;0104;U.S. Representative District 1;1;0401;Jake Johnson;;;DFL;13;13;5836;47.78;12215
+MN;66;;0104;U.S. Representative District 1;1;0302;Brad Finstad;;;R;13;13;6365;52.11;12215
+MN;66;;0104;U.S. Representative District 1;1;9901;WRITE-IN;;;WI;13;13;14;0.11;12215
+MN;66;;0105;U.S. Representative District 2;2;0401;Matt Little;;;DFL;18;18;10906;57.81;18866
+MN;66;;0105;U.S. Representative District 2;2;0302;Eric Pratt;;;R;18;18;7952;42.15;18866
+MN;66;;0105;U.S. Representative District 2;2;9901;WRITE-IN;;;WI;18;18;8;0.04;18866
+MN;67;;0104;U.S. Representative District 1;1;0401;Jake Johnson;;;DFL;24;24;1519;34.13;4451
+MN;67;;0104;U.S. Representative District 1;1;0302;Brad Finstad;;;R;24;24;2928;65.78;4451
+MN;67;;0104;U.S. Representative District 1;1;9901;WRITE-IN;;;WI;24;24;4;0.09;4451
+MN;68;;0110;U.S. Representative District 7;7;0301;Michelle Fischbach;;;R;44;44;4802;72.78;6598
+MN;68;;0110;U.S. Representative District 7;7;0402;Erik Osberg;;;DFL;44;44;1790;27.13;6598
+MN;68;;0110;U.S. Representative District 7;7;9901;WRITE-IN;;;WI;44;44;6;0.09;6598
+MN;69;;0111;U.S. Representative District 8;8;0301;Pete Stauber;;;R;167;167;37444;37.42;100063
+MN;69;;0111;U.S. Representative District 8;8;0402;Trina Swanson;;;DFL;167;167;62512;62.47;100063
+MN;69;;0111;U.S. Representative District 8;8;9901;WRITE-IN;;;WI;167;167;107;0.11;100063
+MN;70;;0105;U.S. Representative District 2;2;0401;Matt Little;;;DFL;54;54;38605;48.63;79379
+MN;70;;0105;U.S. Representative District 2;2;0302;Eric Pratt;;;R;54;54;40689;51.26;79379
+MN;70;;0105;U.S. Representative District 2;2;9901;WRITE-IN;;;WI;54;54;85;0.11;79379
+MN;71;;0109;U.S. Representative District 6;6;0301;Tom Emmer;;;R;35;35;29855;63.47;47041
+MN;71;;0109;U.S. Representative District 6;6;0402;Doug Chapin;;;DFL;35;35;17121;36.40;47041
+MN;71;;0109;U.S. Representative District 6;6;9901;WRITE-IN;;;WI;35;35;65;0.14;47041
+MN;72;;0110;U.S. Representative District 7;7;0301;Michelle Fischbach;;;R;25;25;5001;69.51;7195
+MN;72;;0110;U.S. Representative District 7;7;0402;Erik Osberg;;;DFL;25;25;2188;30.41;7195
+MN;72;;0110;U.S. Representative District 7;7;9901;WRITE-IN;;;WI;25;25;6;0.08;7195
+MN;73;;0109;U.S. Representative District 6;6;0301;Tom Emmer;;;R;46;46;22522;48.53;46410
+MN;73;;0109;U.S. Representative District 6;6;0402;Doug Chapin;;;DFL;46;46;23851;51.39;46410
+MN;73;;0109;U.S. Representative District 6;6;9901;WRITE-IN;;;WI;46;46;37;0.08;46410
+MN;73;;0110;U.S. Representative District 7;7;0301;Michelle Fischbach;;;R;53;53;21038;75.00;28050
+MN;73;;0110;U.S. Representative District 7;7;0402;Erik Osberg;;;DFL;53;53;6989;24.92;28050
+MN;73;;0110;U.S. Representative District 7;7;9901;WRITE-IN;;;WI;53;53;23;0.08;28050
+MN;74;;0104;U.S. Representative District 1;1;0401;Jake Johnson;;;DFL;26;26;7808;43.41;17987
+MN;74;;0104;U.S. Representative District 1;1;0302;Brad Finstad;;;R;26;26;10153;56.45;17987
+MN;74;;0104;U.S. Representative District 1;1;9901;WRITE-IN;;;WI;26;26;26;0.14;17987
+MN;75;;0110;U.S. Representative District 7;7;0301;Michelle Fischbach;;;R;24;24;2705;61.58;4393
+MN;75;;0110;U.S. Representative District 7;7;0402;Erik Osberg;;;DFL;24;24;1683;38.31;4393
+MN;75;;0110;U.S. Representative District 7;7;9901;WRITE-IN;;;WI;24;24;5;0.11;4393
+MN;76;;0110;U.S. Representative District 7;7;0301;Michelle Fischbach;;;R;30;30;2852;63.50;4491
+MN;76;;0110;U.S. Representative District 7;7;0402;Erik Osberg;;;DFL;30;30;1633;36.36;4491
+MN;76;;0110;U.S. Representative District 7;7;9901;WRITE-IN;;;WI;30;30;6;0.13;4491
+MN;77;;0110;U.S. Representative District 7;7;0301;Michelle Fischbach;;;R;40;40;8107;72.39;11199
+MN;77;;0110;U.S. Representative District 7;7;0402;Erik Osberg;;;DFL;40;40;3084;27.54;11199
+MN;77;;0110;U.S. Representative District 7;7;9901;WRITE-IN;;;WI;40;40;8;0.07;11199
+MN;78;;0110;U.S. Representative District 7;7;0301;Michelle Fischbach;;;R;20;20;983;64.33;1528
+MN;78;;0110;U.S. Representative District 7;7;0402;Erik Osberg;;;DFL;20;20;545;35.67;1528
+MN;78;;0110;U.S. Representative District 7;7;9901;WRITE-IN;;;WI;20;20;0;0.00;1528
+MN;79;;0104;U.S. Representative District 1;1;0401;Jake Johnson;;;DFL;33;33;4576;40.86;11198
+MN;79;;0104;U.S. Representative District 1;1;0302;Brad Finstad;;;R;33;33;6609;59.02;11198
+MN;79;;0104;U.S. Representative District 1;1;9901;WRITE-IN;;;WI;33;33;13;0.12;11198
+MN;80;;0110;U.S. Representative District 7;7;0301;Michelle Fischbach;;;R;24;24;4614;71.41;6461
+MN;80;;0110;U.S. Representative District 7;7;0402;Erik Osberg;;;DFL;24;24;1845;28.56;6461
+MN;80;;0110;U.S. Representative District 7;7;9901;WRITE-IN;;;WI;24;24;2;0.03;6461
+MN;81;;0104;U.S. Representative District 1;1;0401;Jake Johnson;;;DFL;23;23;3240;38.63;8387
+MN;81;;0104;U.S. Representative District 1;1;0302;Brad Finstad;;;R;23;23;5136;61.24;8387
+MN;81;;0104;U.S. Representative District 1;1;9901;WRITE-IN;;;WI;23;23;11;0.13;8387
+MN;82;;0105;U.S. Representative District 2;2;0401;Matt Little;;;DFL;18;18;19293;58.89;32763
+MN;82;;0105;U.S. Representative District 2;2;0302;Eric Pratt;;;R;18;18;13437;41.01;32763
+MN;82;;0105;U.S. Representative District 2;2;9901;WRITE-IN;;;WI;18;18;33;0.10;32763
+MN;82;;0107;U.S. Representative District 4;4;0401;Betty McCollum;;;DFL;51;51;55048;61.26;89853
+MN;82;;0107;U.S. Representative District 4;4;0302;Paul Wikstrom;;;R;51;51;34719;38.64;89853
+MN;82;;0107;U.S. Representative District 4;4;9901;WRITE-IN;;;WI;51;51;86;0.10;89853
+MN;82;;0111;U.S. Representative District 8;8;0301;Pete Stauber;;;R;15;15;13779;52.95;26023
+MN;82;;0111;U.S. Representative District 8;8;0402;Trina Swanson;;;DFL;15;15;12230;47.00;26023
+MN;82;;0111;U.S. Representative District 8;8;9901;WRITE-IN;;;WI;15;15;14;0.05;26023
+MN;83;;0104;U.S. Representative District 1;1;0401;Jake Johnson;;;DFL;21;21;1699;41.91;4054
+MN;83;;0104;U.S. Representative District 1;1;0302;Brad Finstad;;;R;21;21;2349;57.94;4054
+MN;83;;0104;U.S. Representative District 1;1;9901;WRITE-IN;;;WI;21;21;6;0.15;4054
+MN;84;;0110;U.S. Representative District 7;7;0301;Michelle Fischbach;;;R;32;32;1686;65.89;2559
+MN;84;;0110;U.S. Representative District 7;7;0402;Erik Osberg;;;DFL;32;32;869;33.96;2559
+MN;84;;0110;U.S. Representative District 7;7;9901;WRITE-IN;;;WI;32;32;4;0.16;2559
+MN;85;;0104;U.S. Representative District 1;1;0401;Jake Johnson;;;DFL;49;49;12346;53.88;22913
+MN;85;;0104;U.S. Representative District 1;1;0302;Brad Finstad;;;R;49;49;10558;46.08;22913
+MN;85;;0104;U.S. Representative District 1;1;9901;WRITE-IN;;;WI;49;49;9;0.04;22913
+MN;86;;0109;U.S. Representative District 6;6;0301;Tom Emmer;;;R;51;51;45942;60.96;75365
+MN;86;;0109;U.S. Representative District 6;6;0402;Doug Chapin;;;DFL;51;51;29329;38.92;75365
+MN;86;;0109;U.S. Representative District 6;6;9901;WRITE-IN;;;WI;51;51;94;0.12;75365
+MN;87;;0110;U.S. Representative District 7;7;0301;Michelle Fischbach;;;R;30;30;3042;66.67;4563
+MN;87;;0110;U.S. Representative District 7;7;0402;Erik Osberg;;;DFL;30;30;1517;33.25;4563
+MN;87;;0110;U.S. Representative District 7;7;9901;WRITE-IN;;;WI;30;30;4;0.09;4563

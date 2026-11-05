@@ -1,0 +1,4 @@
+requests
+pyshp
+pyproj
+ijson>=3.3,<4
