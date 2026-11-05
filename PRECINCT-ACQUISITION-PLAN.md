@@ -319,7 +319,7 @@ this completed publication or reinterpret the unresolved 324-ballot difference.
 Next actionable work remains genuine 2026 Maine/Pennsylvania county sources,
 followed by the scoped 2016 historical House export.
 
-Bucks County official 2026 alternative, released; page publication in progress:
+Bucks County official 2026 alternative, released and production-verified:
 `data/county-source-reviews/20261105-bucks-reviewed-02/` retains the county's
 declared native 2026 report with map-service tokens explicitly redacted, the
 unmodified official linking page, three complete original CSV reports,
@@ -375,8 +375,26 @@ verifying all 94 relocated downloads. Four local display modes retain every
 previous 186 complete URL among 194, all four historical House years/204 scope
 cells and all 52 UF rows, with every registered review caveat source-matched.
 The map renderer and pointers remain unchanged, so their completed suites were
-not repeated. Next, deploy and verify the exact Pages revision in all four
-production display modes before marking this county package live.
+not repeated.
+
+UI commit `c7134b3dbd0bd921f8c6d38fc32c88336ff28c16` is live: exact Pages
+run `42089332833` succeeded. Production verification passed on its first
+attempt in all four display modes: 194 complete downloads retain every prior
+186, all four historical House years/204 scope cells and all 52 UF rows remain
+source-matched, and every review's full URLs/caveats and exact public
+pointer/registry/renderer bytes match. Exact deployment and production proofs
+are saved in the separate publication directory; both complete manifests
+verify. The temporary preview is stopped.
+
+The active local publication branch is
+`voter-participation-bucks-publication-20261105`, tracking the safely
+fast-forwarded remote `voter-participation-analysis`; the blocked unpublished
+commit is not its ancestor and was never pushed or bypassed. Carry the final
+production-proof commit to main with the next useful UI update, not a redundant
+proof-only deployment. Do not repeat this completed Bucks, Monroe, D.C. or
+2018 publication. Continue other genuine 2026 Maine/Pennsylvania county sources,
+then the separate 2016 historical source review. Keep schedule #4 active;
+national coverage and historical/map gaps remain unfinished.
 
 Pennsylvania official county alternative, November 5 follow-up:
 `data/county-source-reviews/20261105-monroe-official-01/` retains Monroe's

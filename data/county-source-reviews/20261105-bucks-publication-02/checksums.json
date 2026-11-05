@@ -1,4 +1,8 @@
 {
+  "deployment.json": {
+    "bytes": 5052,
+    "sha256": "4348e005a6e075d412aee76961dd770ee1725e645fd8c42cc2cfdde4e6082675"
+  },
   "focused-tests.json": {
     "bytes": 252,
     "sha256": "125b803b56024a0987176cdd0f22ac758a5e9453b3c64dc4ab57b95bc7da7f1e"
@@ -10,6 +14,10 @@
   "local-browser.json": {
     "bytes": 34087,
     "sha256": "68081787e0e6e96c1862728b2159e9c63545883df876a09dce56f962d8fc0ce9"
+  },
+  "production-browser.json": {
+    "bytes": 34098,
+    "sha256": "980abdf5de28a3bf0bc94945e5fc8cd01a57156d118ab75cff087c8a7b94cb62"
   },
   "redaction-and-data-preservation.json": {
     "bytes": 806,
