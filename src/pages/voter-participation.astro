@@ -18,6 +18,22 @@ const countyResultsPointer = existsSync(countyResultsPointerPath)
 	? JSON.parse(readFileSync(countyResultsPointerPath, 'utf8')) : null;
 const countyResultsSnapshots = countyResultsPointer
 	? [countyResultsPointer, ...(countyResultsPointer.previous_snapshots ?? [])] : [];
+const countyIndex = countyResultsPointer
+	? JSON.parse(readFileSync(resolve(countyResultsPointer.data_directory, 'index.json'), 'utf8')) : null;
+type PartyVotes = { base_url: string; complete_download_url: string; tables: { file: string; label: string }[] };
+const countyPartySnapshots: { label: string; party_votes: PartyVotes }[] = countyResultsSnapshots
+	.filter((snapshot: { party_votes?: PartyVotes }) => snapshot.party_votes);
+const countyPartyAudit = countyResultsPointer?.party_votes
+	? JSON.parse(readFileSync(resolve(countyResultsPointer.party_votes.data_directory, 'audit.json'), 'utf8')) : null;
+const ufPointerPath = resolve('public/uf-turnout.json');
+const ufPointer = existsSync(ufPointerPath) ? JSON.parse(readFileSync(ufPointerPath, 'utf8')) : null;
+const ufSnapshots = ufPointer ? [ufPointer, ...(ufPointer.previous_snapshots ?? [])] : [];
+type UfRow = { STATE: string; STATE_ABV: string; TOTAL_BALLOTS_COUNTED: number | null;
+	SOURCE: string; VEP: number | null; VAP: number | null; VEP_TURNOUT_RATE: number | null;
+	VAP_TURNOUT_RATE: number | null; ballots_status: string };
+const ufRows: UfRow[] = ufPointer
+	? JSON.parse(readFileSync(resolve(ufPointer.data_directory, 'turnout.json'), 'utf8')) : [];
+const ufAudit = ufPointer ? JSON.parse(readFileSync(resolve(ufPointer.data_directory, 'audit.json'), 'utf8')) : null;
 type ParticipationReview = { id: string; label: string; data_directory: string; base_url: string;
 	complete_download_url: string; city_file?: string; city_label?: string; scope_note: string;
 	tables: { file: string; label: string }[] };
@@ -299,6 +315,34 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 		<summary>2026 source coverage, reporting audits & complete downloads</summary>
 		<p>Explore 2026 through the regular year selector. These saved source tables preserve the reporting details;
 			demographic ballot counts are not group turnout rates.</p>
+		{ufPointer && <section id="uf-turnout-2026" class="participation-current" aria-labelledby="uf-turnout-title">
+			<p class="kicker">Separate state-level source · 2026</p>
+			<h2 id="uf-turnout-title">UF Election Lab participation estimates</h2>
+			<p>Michael McDonald’s source table, version {ufAudit.version}, covers all 50 states, D.C.
+				and a separate national aggregate. {ufAudit.estimate_rows} of {ufRows.length} rows are
+				source-labeled estimates. They are not final official ballot counts, county candidate results
+				or demographic turnout. No values are spliced into the measured historical series.</p>
+			<p>VEP means voting-eligible population; VAP means all voting-age residents.
+				Each published rate uses that row’s own denominator. The United States aggregate is
+				not added to the state counts. Missing fields are not zero.</p>
+			<div class="table-wrap" tabindex="0" role="region" aria-label="All UF 2026 turnout estimates">
+				<table data-uf-turnout="2026"><caption>UF state / national turnout. Original source labels retained.</caption>
+					<thead><tr><th scope="col">Jurisdiction</th><th scope="col">Ballots</th><th scope="col">Source status</th>
+						<th scope="col">VEP</th><th scope="col">VEP turnout</th><th scope="col">VAP turnout</th></tr></thead>
+					<tbody>{ufRows.map(row => <tr data-state-code={row.STATE_ABV}>
+						<th scope="row">{row.STATE}</th>
+						<td>{row.TOTAL_BALLOTS_COUNTED === null ? 'Not reported' : formatNumber(row.TOTAL_BALLOTS_COUNTED)}</td>
+						<td>{row.SOURCE}</td><td>{row.VEP === null ? 'Not reported' : formatNumber(row.VEP)}</td>
+						<td>{row.VEP_TURNOUT_RATE === null ? 'Not reported' : `${row.VEP_TURNOUT_RATE.toFixed(2)}%`}</td>
+						<td>{row.VAP_TURNOUT_RATE === null ? 'Not reported' : `${row.VAP_TURNOUT_RATE.toFixed(2)}%`}</td>
+					</tr>)}</tbody>
+				</table>
+			</div>
+			<p><a href={ufAudit.dataset_url}>UF dataset and attribution</a> ·{' '}
+				<a href={`${ufPointer.base_url}originals/documentation.txt`}>Preserved source methodology and license</a>.
+				Census population estimates and noncitizen estimates, BJS ineligibility inputs and overseas
+				adjustments inform the published denominator. They do not measure party preference.</p>
+		</section>}
 		<section class="participation-current" id="nationwide-participation"
 			data-data-root={nationwideRoot} data-snapshot-directory={nationwideDirectory} aria-labelledby="nationwide-title">
 			<p class="kicker">November 3, 2026 · nationwide · preliminary</p>
@@ -504,14 +548,17 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 				Partial coverage is not completion; state colors remain beneath unmatched precinct areas.</p>
 			{countyResultsPointer && <p>2026 county / equivalent House results cover {countyResultsPointer.states} states on 2026 Census county
 				reference boundaries. Counties are the default, with their own red/blue results visible at
-				national scale; existing precinct layers remain optional. Maine and Pennsylvania county joins are withheld; D.C. is outside this
+				national scale; existing precinct layers remain optional.
+				{Object.keys(countyIndex.withheld_states).length > 0 && <> County joins are withheld in {Object.keys(countyIndex.withheld_states).join(', ')}.</>}
+				D.C. is outside this
 				435-district source. Explicit overseas returns and zero-only unresolved Chicago reporting
 				placeholders remain separately unallocated, not merged into Cook County. County results are
 				not precinct results, unique voter counts or participation rates.</p>}
 			{countyResultsPointer?.party_votes && <p>Separate full-party exports retain every reported party label,
 				independent, candidate and fusion line, rather than combining third parties into “other.”
-				County party tables cover 48 states; full-district state party totals cover 49.
-				Pennsylvania responses explicitly marked as test data are withheld. These are House candidate
+				County party tables cover {countyPartyAudit.county_party_coverage} states; full-district state
+				party totals cover {countyPartyAudit.state_party_coverage}. Invalid counts and test data are withheld.
+				Withheld state-party sources: {countyPartyAudit.withheld_states.join(', ') || 'none'}. These are House candidate
 				votes, not Senate results, ballots, party registration or demographic turnout.</p>}
 			{precinctResultsPointer && <p>2024 precinct / municipal candidate data: <strong>The New York Times</strong>.
 				Some boundaries are approximate; some New England reporting areas are townships.
@@ -540,12 +587,19 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 			</>)}
 			<div class="download-links">
 				<a href="/precinct-coverage.csv" download>Every state and election, newest first: full precinct worklist (CSV)</a>
-				{countyResultsPointer?.party_votes && <>
-					<a href={countyResultsPointer.party_votes.complete_download_url} download>2026 House: complete all-party and candidate totals, all original district responses, receipts, audit and portable tools (ZIP)</a>
-					{countyResultsPointer.party_votes.tables.map((table: { file: string; label: string }) =>
-						<a href={`${countyResultsPointer.party_votes.base_url}${table.file}`} download>{table.label} (CSV · gzip)</a>)}
-					<a href={`${countyResultsPointer.party_votes.base_url}audit.json`}>All-party counts: coverage, excluded test data and exact file checksums (JSON)</a>
-				</>}
+				{countyPartySnapshots.map(snapshot => <>
+					<a href={snapshot.party_votes.complete_download_url} download>{snapshot.label}: complete all-party and candidate totals, all original district responses, receipts, audit and portable tools (ZIP)</a>
+					{snapshot.party_votes.tables.map(table =>
+						<a href={`${snapshot.party_votes.base_url}${table.file}`} download>{table.label} (CSV · gzip)</a>)}
+					<a href={`${snapshot.party_votes.base_url}audit.json`}>All-party counts: coverage, excluded test data and exact file checksums (JSON)</a>
+				</>)}
+				{ufSnapshots.map((snapshot: { label: string; base_url: string; complete_download_url: string }) => <>
+					<a href={snapshot.complete_download_url} download>{snapshot.label}: complete 52-row table, original CSV, source catalog, methodology, receipts and parser (ZIP)</a>
+					<a href={`${snapshot.base_url}turnout.csv`} download>{snapshot.label}: all state/national rows and estimate flags (CSV)</a>
+					<a href={`${snapshot.base_url}originals/turnout.csv`} download>{snapshot.label}: byte-original UF CSV</a>
+					<a href={`${snapshot.base_url}originals/documentation.txt`} download>{snapshot.label}: original methodology and license</a>
+					<a href={`${snapshot.base_url}audit.json`}>{snapshot.label}: coverage, source labels and original-byte receipts (JSON)</a>
+				</>)}
 				{participationReviews.map((review: ParticipationReview) => <>
 					{!precinctSourceReviews.some((source: { complete_download_url: string }) => source.complete_download_url === review.complete_download_url) &&
 						<a href={review.complete_download_url} download>{review.label}: complete reviewed counts, original reports, receipts, audits and portable tools (ZIP)</a>}

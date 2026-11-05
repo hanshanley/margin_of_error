@@ -1,0 +1,67 @@
+name: Refresh 2026 county results and UF turnout
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+    inputs:
+      source:
+        description: Independent source to refresh
+        type: choice
+        options: [both, county, uf]
+        default: both
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: 2026-county-uf-writer
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: scripts/requirements-precinct-results.txt
+
+      - name: Install existing parser and reconciliation requirements
+        run: python -m pip install -r scripts/requirements-precinct-results.txt pytest
+
+      - name: Test full party reproduction and fail-closed refresh contracts
+        run: python -m pytest -q scripts/test-county-party-votes.py scripts/test-2026-refresh.py
+
+      - name: Configure the requested publishing identity
+        run: |
+          git config user.name "Hans Hanley"
+          git config user.email "$(git log --author='^Hans Hanley <' -1 --format='%ae')"
+
+      - name: Capture, reconcile and publish only valid new snapshots
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REFRESH_SOURCE: ${{ inputs.source || 'both' }}
+        run: |
+          python scripts/refresh-2026-data.py --source "$REFRESH_SOURCE" \
+            --work-dir "$RUNNER_TEMP/turnout-2026-refresh" --publish
+
+      - name: Retain attempt status and original source-failure evidence
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: turnout-2026-refresh-evidence
+          retention-days: 30
+          path: |
+            ${{ runner.temp }}/turnout-2026-refresh/status.json
+            ${{ runner.temp }}/turnout-2026-refresh/county/provider/*
+            ${{ runner.temp }}/turnout-2026-refresh/county/county-review.log
+            ${{ runner.temp }}/turnout-2026-refresh/uf/reviewed/originals/*
