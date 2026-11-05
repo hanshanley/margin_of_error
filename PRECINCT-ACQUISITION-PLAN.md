@@ -193,7 +193,7 @@ pointers/renderer bytes in four display modes. Deployment and aggregate proofs
 are saved beside it. Keep the two-year immutable download links.
 
 Next:
-Continue 2018/2016 source-specific quality review: their unresolved
+Continue 2016 source-specific quality review: its unresolved
 party labels, Missouri noncounty buckets and Texas source undercoverage need
 separate handling rather than a blanket extrapolation from the two newest years.
 Historical maps still require election-year county crosswalks.
@@ -207,7 +207,7 @@ Do not silently replace measured participation or infer demographic turnout from
 these state-level estimates. Recurring schedule #4 replaces obsolete precinct-first
 schedule #3 and follows this county-first priority.
 
-2018 consolidated House extension, prepared while Monroe deploys:
+2018 consolidated House extension, release-verified and locally verified:
 `data/historical-house-counties/20261105-medsl-03/` adds 8,851 reviewed
 candidate/party rows in 2,443 counties across 42 states. All 25 rows from
 five flagged county vectors are retained separately: 01107, 12057, 12095,
@@ -228,9 +228,21 @@ handles macOS's symlinked temporary directory paths. All 51 focused tests
 passed before that path-only fix; all eight exporter tests and actual
 portable reproduction passed afterward. Proof is
 `data/county-source-reviews/20261105-historical-house-03/`.
-No public historical pointer has changed yet. Finish its immutable release,
-retained-download integration and exact live verification after the known
-Monroe deployment watcher completes; do not supersede pending publication.
+Data/tools commit `3a0bdb1e1603dc9de4d4934558ac4c53c4957adc` is pushed.
+All 15 assets of release `voter-county-house-history-20261105-03` were
+independently downloaded and matched byte/SHA256. The complete ZIP is
+1,110,589 bytes, SHA256
+`1dfb17d8dabdc818a9b2e0403fc8a9323cb169233f5806e3282edfe1ad121aee`.
+The new public pointer retains both prior snapshots unchanged; the complete
+tables include 30,778 county-party totals and 758 reviewed-county state-party
+sums. Astro check, seven participation tests, build/four caucus tests and
+Pages preparation pass; the prepared artifact is 987,252,117 bytes after
+verification of all 94 relocated downloads. All 51 focused data tests pass.
+The four local display modes source-match all four historical years, 204 scope
+cells and 52 UF rows, with 178 complete download links retaining every previous
+165. Proof is `local-browser.json` in the review directory. Renderer/maps
+remain unchanged and were not redundantly retested. Exact production-page
+verification is still required before calling this extension live.
 
 D.C. official follow-up:
 `data/county-source-reviews/20261105-dc-official-01/` retains all seven native
@@ -294,8 +306,13 @@ tests, build/four caucus tests and Pages preparation (987,245,344 bytes).
 All four local browser modes retain the previous 158 complete links among
 165, verify every review's full URLs and caveats, all three historical House
 years and all 52 UF rows. Existing county pointers and renderer are unchanged;
-do not rerun their completed map suite. Exact production deployment/page
-verification is the remaining publication gate.
+do not rerun their completed map suite. Exact Pages run `42077485666` for
+`eaca35d1ba38596ab39ad7508394a01cc17adc5d` succeeded, and production checks
+passed all four display modes with all 165 complete download links, retaining
+the previous 158; all three historical House years, 153 scope cells and 52 UF
+rows remain source-matched. Deployment and production browser proofs are saved
+in the separate publication directory. Monroe's scoped counts are live; this
+does not close the Pennsylvania statewide map gap.
 
 The user supplied NYT's 2026 Senate precinct-map page and full coverage notes.
 The source-lead audit is

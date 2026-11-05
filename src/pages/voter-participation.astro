@@ -601,9 +601,10 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 				</div>
 				<p>All {historicalHouseAudit.withheld_candidate_rows} withheld raw rows remain downloadable but do not enter
 					reviewed sums. State-party sums include reviewed counties only, not certified statewide totals.
-					Native surname/initial flags and compiler party-override provenance remain attached;
+					Native surname/initial flags and compiler-filled or overridden party provenance remain attached;
 					party and candidate identities are not independently reverified. New Jersey 2024 and 2022 are
-					official-source replacements, outside this MEDSL-only scope. The {51 * historicalHouseAudit.years.length}-cell download ledger
+					official-source replacements, as are Indiana 2020 and Maine, Indiana, New York and Texas 2018;
+					these remain outside this MEDSL-only scope. The {51 * historicalHouseAudit.years.length}-cell download ledger
 					lists every jurisdiction separately, including excluded or missing source families.</p>
 				{historicalHouseAudit.native_auxiliary_no_ballot_records !== undefined && <p>
 					The auxiliary downloads retain {historicalHouseAudit.native_auxiliary_gap_records} native source
