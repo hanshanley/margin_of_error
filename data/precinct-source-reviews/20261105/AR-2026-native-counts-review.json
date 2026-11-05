@@ -11,7 +11,7 @@
   "participation": "native_precinct_ballot_counts_acquired_rates_withheld",
   "source_url": "https://arkansas.tally-enr.com/#bucket=results&filter=Federal&contest=eafd140a-9378-43a2-bd6d-f8661524139b",
   "data_directory": "data/precinct-source-reviews/20261105/AR-2026-native-counts",
-  "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/36fb8b109d0044a1d3cc7527a2810cdf70f3dc2d/data/precinct-source-reviews/20261105/AR-2026-native-counts/",
+  "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/3f8b40139516aa3c362c43a4ab4bfc3c2c9b4dcd/data/precinct-source-reviews/20261105/AR-2026-native-counts/",
   "count_csv": "precinct-counts.csv",
   "reporting_units": 2769,
   "tables": [

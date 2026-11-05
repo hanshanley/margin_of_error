@@ -10,7 +10,7 @@
   "participation": "native_precinct_counts_and_registration_rates_withheld",
   "source_url": "https://www.elections.virginia.gov/results/",
   "data_directory": "data/precinct-source-reviews/20261105/VA-2026-native-locality-counts",
-  "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/b2e53eb9e4a510bb19a8cf2e1cc5243c6eeff9ce/data/precinct-source-reviews/20261105/VA-2026-native-locality-counts/",
+  "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/e385639467f2bbe8c8e3368fb1534287cfa71134/data/precinct-source-reviews/20261105/VA-2026-native-locality-counts/",
   "count_csv": "precinct-counts.csv",
   "reporting_units": 2537,
   "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-virginia-locality-counts-20261105/complete-virginia-2026-native-locality-count-review-01.zip",

@@ -2,7 +2,51 @@
 
 ## Objective and priority
 
-**Current-source key cleanup is live; historical exposures remain unresolved.** On November 5,
+**November 5 security escalation: rewritten history is being published.** The
+user explicitly requested fixing security and continuing acquisition. An isolated
+`git-filter-repo --sensitive-data-removal` rewrite removed Google API key patterns
+throughout all 297 commits, including older common history. All 4,777 rewritten
+blobs (2,746,430,005 bytes) were scanned with zero matches; the current main tree
+was byte-identical before download-link migration. All 69 original branch/tag
+refs require new commit IDs. The 68 non-main refs have been updated atomically
+with exact old-SHA leases; main is held until the migrated UI passes validation.
+The first full transfer exceeded GitHub's push-size limit; four verified ancestor
+batches transferred clean history without dropping election data. No release
+asset was replaced or deleted during this history rewrite.
+
+All 133 migrated raw dataset downloads are publicly downloaded and byte-verified.
+The complete 250-link set passes exact equality in desktop/mobile and
+JavaScript/no-JavaScript local checks. A pre-existing Vermont participation
+filename was corrected to the actual `municipal-participation.json.gz`; the full
+native dataset, not metadata or a substitute summary, remains downloadable.
+Six new source-secret tests cover plain/binary content, compressed/nested ZIPs
+and keys removed from the current tree but retained in history. New push/PR CI
+checks all reachable history; Pages also checks tracked source files before
+building. Existing GitHub secret scanning and push protection are enabled.
+Type-check, build, seven participation tests and 94-download Pages preparation
+pass; the unrelated UK topic-card validator still fails 23 versus 16.
+Local prepared size is 987,318,238 bytes. Main deployment and production proof
+remain pending; see `data/county-source-reviews/20261105-history-key-remediation-01/`.
+
+**Do not push any old local branch or tag.** Only use rewritten publication
+history, currently in the `security-remediated-worktree-01` session worktree.
+GitHub alerts #1/#2 remain open with unknown validity. Revocation still requires
+the Google project owner; repository access cannot rotate these copied
+county/vendor keys. Historical cached commit views require GitHub Support
+follow-up; do not claim that a ref rewrite revoked credentials or erased caches.
+
+**Next acquired county: Dauphin.** Nineteen full government HTML responses are
+retained privately with successful receipts: the index, eight contest summaries,
+the native precinct-progress list, eight precinct/municipality reports and the
+declared method-report parent. The House snapshot contains 114,641 candidate
+votes (DEM 68,655; REP 45,507; native NONPARTISAN write-in 479), not ballots or
+turnout. Precinct and municipality tables are parallel geographic summaries,
+not two voting modes. Reconcile all eight contests and preserve literal parties,
+native zeros, snapshot qualifications and missing participation before any public
+package. Butler's actual index returned HTTP404; the response and receipt are
+retained rather than treating a cached search page as a successful acquisition.
+
+**Earlier current-source cleanup (historical record).** On November 5,
 GitHub reported Google API keys copied from public county linking HTML. The
 affected current Bucks, Chester and Franklin pages are now explicitly sanitized,
 with byte-original hashes retained privately. All 40 county parser/source tests
@@ -29,12 +73,11 @@ unsanitized snapshots. Both county reviewers now reject Google/Mapbox and
 telemetry key patterns in every HTML file, even with matching acquisition hashes.
 GitHub alerts #1/#2 remain open with unknown key validity: the keys appear
 county/vendor-owned, cannot be rotated from this repository, and historical
-copies remain. No published-history rewrite was authorized. See
+copies remained at that stage. No published-history rewrite had yet been authorized. See
 `data/county-source-reviews/20261105-source-key-remediation-01/`.
-Continue safe acquisition while owner revocation/history authorization is
-blocked. Publish only from the clean
-`voter-participation-source-key-cleanup-20261105` lineage; do not merge the
-original acquisition branch's exposed ancestry into main.
+The later explicit security escalation and rewrite above supersede that
+authorization blocker. Do not merge any pre-rewrite local acquisition ancestry
+back into the rewritten publication history.
 
 **November 5, 2026: the latest user instruction is counties instead of further
 precinct expansion.** Make counties the default map detail and primary acquisition

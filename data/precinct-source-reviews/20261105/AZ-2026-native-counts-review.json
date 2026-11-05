@@ -10,7 +10,7 @@
   "participation": "native_precinct_ballots_and_registrations_acquired_rates_withheld",
   "source_url": "https://app.enhancedvoting.com/results/public/Arizona/110326GeneralElection",
   "data_directory": "data/precinct-source-reviews/20261105/AZ-2026-native-counts",
-  "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7b764000e2feef1054d37d2468b447f43d9e9b71/data/precinct-source-reviews/20261105/AZ-2026-native-counts/",
+  "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/30b5985970349201c877b4236830a7c85065a68a/data/precinct-source-reviews/20261105/AZ-2026-native-counts/",
   "count_csv": "precinct-counts.csv",
   "reporting_units": 1762,
   "tables": [

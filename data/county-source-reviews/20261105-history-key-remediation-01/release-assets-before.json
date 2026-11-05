@@ -1,0 +1,1510 @@
+[
+  {
+    "tag": "voter-uf-2026-20261105t155617z",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-uf-turnout.zip",
+        "size": 38013,
+        "digest": "sha256:595fff64da2b34dad37e75e92a3ee8a15bbdea64125e80781039939f47483fa1"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-wyoming-originals-20261105",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-wyoming-2026-2022-official-originals-01.zip",
+        "size": 14727543,
+        "digest": "sha256:39f78671041966c0939ce4bce439916aa04368ba413d58615e086f9e314e0d2c"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-wyoming-native-text-20261105",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-wyoming-native-glyph-recovery-01.zip",
+        "size": 19481350,
+        "digest": "sha256:efc289365c002a6c507d70de871c7931c9ca195390114966c21e6ff621f52bc7"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-wyoming-counts-20261105",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-wyoming-2026-native-count-review-01.zip",
+        "size": 20025208,
+        "digest": "sha256:53b246106834a160662d9b66283a8298d0a64edcb9d2b56cf299628bbe42cae6"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-wyoming-2022-counts-20261105",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-wyoming-2022-native-count-review-01.zip",
+        "size": 4885475,
+        "digest": "sha256:5c160354623564d7584279a448e8662188058ffdcb47b75ecd31b0a2d24d1e7b"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-worcester-counts-20261105",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-worcester-2026-governor-count-review.zip",
+        "size": 81047687,
+        "digest": "sha256:b801bba010f18826af0043a723d819d4a9ce88fb76e930f190fd2dc4ac5ad009"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-washington-maps-20261105",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-washington-2026-precinct-maps-03.zip",
+        "size": 116917377,
+        "digest": "sha256:46f7a1a8e251bb740e51da255fcb31ee92a7b29fb1bfed79fcf4cff7d5ce4c9c"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-washington-counts-20261105-02",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-washington-2026-count-review-02.zip",
+        "size": 109998400,
+        "digest": "sha256:9dfe1086140b217a23842f0b5bad5601e05f74ebac07962916ed7315c9d11a84"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-washington-counts-20261105",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-washington-2026-count-review.zip",
+        "size": 109998129,
+        "digest": "sha256:dd51f894522ba53cd7ad392babb4c234c768a1d2bf0d2eb19365423fcd46bd82"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-virginia-native-counts-20261105",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-virginia-2026-native-count-review-01.zip",
+        "size": 8604105,
+        "digest": "sha256:3c57c2878d77b2dcda0cfccd5fa7abe8f396dd361229a2ae3dd80162cec609cb"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-virginia-maps-20261105-02",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-virginia-2026-supported-precinct-maps-02.zip",
+        "size": 83374714,
+        "digest": "sha256:f829118617e54ff12f4680b4d2758cd03d2a08fd8162bb90597d902ab81fb788"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-virginia-locality-counts-20261105",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-virginia-2026-native-locality-count-review-01.zip",
+        "size": 73948518,
+        "digest": "sha256:c4c28d7f426cd878b3b50672f4e5858b415c44c0cdcf7347f0ac339bc9521f43"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-vermont-maps-20261105",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-vermont-2026-reporting-split-maps.zip",
+        "size": 4857690,
+        "digest": "sha256:0c3777c6a5691d8fe97709c12ed56ed06c7757ad56a5efe74cea392f011e274c"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-vermont-20261105",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-vermont-2026-source-review.zip",
+        "size": 412981,
+        "digest": "sha256:7002f19e5002205cf3dcde93dd2870b1704d27a634c86b91b968b77e036a1df9"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-south-dakota-20261105",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-south-dakota-2026-source-review.zip",
+        "size": 1751516,
+        "digest": "sha256:e925f182618c1b9c6195ce1f204479df38270ad7145a37868a6f5fb6876439a8"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-sources-2022-20261105",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-2022-precinct-source-batch.zip",
+        "size": 22214839,
+        "digest": "sha256:3525bd75010236853748ed04edc0545c1a24834a0a0c9deb411d8c11885494d1"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-rhode-island-maps-20261105-02",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-rhode-island-2026-precinct-maps.zip",
+        "size": 6098657,
+        "digest": "sha256:a348107161caf1f50d0952e61d05d94d1edef9d91dbb13e2e85cc4e50f559c95"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-rhode-island-maps-20261105",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-rhode-island-2026-precinct-maps.zip",
+        "size": 6092731,
+        "digest": "sha256:ec40b9fc967cdeb90356e0353184d79aa3ab07e4fd49f0fd9bf9b52b5a58ded9"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-rhode-island-20261105",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-rhode-island-2026-source-review.zip",
+        "size": 1005920,
+        "digest": "sha256:06dc93e688e524e45184dc6bccf83abbfdf849f5d8c487dcad912e857ee3ffa1"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-results-20261105",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-delaware-precinct-source-review.zip",
+        "size": 2573443,
+        "digest": "sha256:3ce8d5eac5388b08441ae7b113a910b5098478869d0ac2b689500a07fc3eed5d"
+      },
+      {
+        "name": "complete-precinct-results.zip",
+        "size": 1367560488,
+        "digest": "sha256:2b5bc00871e3a4f8bb9aba193bafabde2e274a8345dfb684a4dff2af2bff8f17"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-north-dakota-maps-20261105",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-north-dakota-2026-precinct-maps.zip",
+        "size": 12179890,
+        "digest": "sha256:355f116484e104eac422a6a24057600af70ec6ada83e3eb34c3c57bbebdb54d0"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-north-dakota-20261105",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-north-dakota-precinct-source-review.zip",
+        "size": 2426904,
+        "digest": "sha256:2d33d487e1eca9cab798b8ed192ef43495025598206ba39e79816f9fae2fc6c6"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-nevada-clark-historical-20261105",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-nevada-clark-2020-2024-originals.zip",
+        "size": 29238218,
+        "digest": "sha256:aade65d7ae37f3d9c9cde568ac15779d06cb4c5315b3ba8ac8c9a997b406b562"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-missouri-christian-20261105",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-missouri-christian-2026.zip",
+        "size": 450107,
+        "digest": "sha256:3dc52eb82d035c2c0cf0f7724476530cf62cf7c52124ab72cf16402f426828db"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-michigan-native-counts-20261105-01",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-michigan-2026-native-county-counts-01.zip",
+        "size": 4952650,
+        "digest": "sha256:504aafb5bbba26a0982504388faa76469b70975e9c7783eb55d79492367dcd09"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-kentucky-native-counts-20261105-01",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-kentucky-2026-native-county-counts-01.zip",
+        "size": 306401,
+        "digest": "sha256:43ded14f7e7978d471f5554556ad024cb5353a7e9dcdca9a557f64d9eba45974"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-iowa-linn-native-counts-20261105-01",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-iowa-linn-2026-native-counts-01.zip",
+        "size": 2061367,
+        "digest": "sha256:9fdf74ae6d8f48c5d89188e340d10e857fea56fc6ab49bd155320d91c0104362"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-idaho-maps-20261105",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-idaho-2026-precinct-maps.zip",
+        "size": 34504158,
+        "digest": "sha256:e8057feb5f6ceddeb2c88a39be934bb2ebf8957eb71387477df8c0c6b9ac2d57"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-idaho-20261105",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-idaho-2026-source-review.zip",
+        "size": 4016510,
+        "digest": "sha256:0b7eb5da2d55c80c9bb005741d2e95774d45db209d21f9cd753dc99b764bd8be"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-hawaii-historical-20261105",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-hawaii-historical-originals.zip",
+        "size": 38713054,
+        "digest": "sha256:9a0ce9f92d742d7bf8da230ca061bb6c86d603afff80ba746709110ccbc1ede1"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-hawaii-20261105",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-hawaii-2026-source-review.zip",
+        "size": 4331576,
+        "digest": "sha256:e2d932615412d2d77436bda6566fa2c32692fff8b5ee622c47294afcead49d3f"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-florida-monroe-20261105",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-florida-monroe-2026.zip",
+        "size": 282651,
+        "digest": "sha256:992684207ebbd291a19f071a22c9b1a0afe2e3e7adaa46432a9d92d85d2617d0"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-dc-maps-20261105",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-dc-2026-precinct-maps.zip",
+        "size": 1461521,
+        "digest": "sha256:7c181a8b03255bd26aded22b2ea91e60211386d3e766c91173920c56d96b6d2d"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-connecticut-originals-20261105",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-connecticut-2016-2026-originals.zip",
+        "size": 3434133,
+        "digest": "sha256:bf1756dd874eda8809339b7daccc41a8bbb70955475a8535d868e24854d2f439"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-boston-central-maps-20261105",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-boston-2026-central-tabulation-precinct-maps.zip",
+        "size": 4790833,
+        "digest": "sha256:2e7e59b1878508deeb85641323bdba1c31471854157921ab0cd9525addb9aa1a"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-arkansas-reference-geometry-20261105",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-arkansas-2026-reference-geometry-review-01.zip",
+        "size": 27742134,
+        "digest": "sha256:fcac6aa268e557ab8264e0bf167b5a9e1947821fc8e2525b4e7acca81e1e8e3f"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-arkansas-native-counts-20261105",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-arkansas-2026-native-count-review-02.zip",
+        "size": 11101053,
+        "digest": "sha256:2a48bbc62c55b074c877172c94da4b02de0546211322c576200818e5b16548a9"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-arizona-pima-native-reference-20261105-01",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-arizona-pima-2026-native-and-reference-01.zip",
+        "size": 20538473,
+        "digest": "sha256:e04858bd262a48276dfcbee83b14dbc5965978799181005b2319bb24efdff3d8"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-arizona-native-counts-20261105",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-arizona-2026-native-count-review-01.zip",
+        "size": 15695907,
+        "digest": "sha256:8c8626b93899f8f9b935d1d7076a47b1bb75fd850c344f992066faa162ae0cc3"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-arizona-maricopa-maps-20261105-02",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-arizona-maricopa-2026-precinct-maps-02.zip",
+        "size": 18768461,
+        "digest": "sha256:f50a20f1daa0a1f418dacff60b1657694b7f544da6e771cf2dcde846f25f0c01"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-alaska-reference-20261105",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-alaska-2026-boundary-reference-review.zip",
+        "size": 34269738,
+        "digest": "sha256:f8d07fbd8d4e7a463f1b21f10434fdae308588fa22505b5ea81f6b8821264811"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-alaska-20261105",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-alaska-2026-source-review.zip",
+        "size": 1213200,
+        "digest": "sha256:a38164a74cb3d433587891fdf243484f273a88f27f8439ceeeeb9da9c6772b3a"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-alabama-native-counts-20261105",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-alabama-2026-native-count-review-01.zip",
+        "size": 1726378,
+        "digest": "sha256:447081ce84d9755e323aaae2b21016f9e77281157f3a4d38057ef6b9d65883f2"
+      }
+    ]
+  },
+  {
+    "tag": "voter-participation-maine-pennsylvania-20261105",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-maine-pennsylvania-participation-review-01.zip",
+        "size": 4648075,
+        "digest": "sha256:9e614c145f6676d1d89ab01550c4dcc8056f0383a6f415c1d8c788087ffefe3c"
+      }
+    ]
+  },
+  {
+    "tag": "voter-county-source-redaction-20261105-01",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-bucks-2026-county-results-03.zip",
+        "size": 369141,
+        "digest": "sha256:1d9e592d44acd2ae294e6ed11153110d802b4f3131021b0d0b2af599a7f2b175"
+      },
+      {
+        "name": "complete-county-results-pa-sanitized-01.zip",
+        "size": 136064334,
+        "digest": "sha256:d44c95ca7c2216990c262e979608aed561653f4d120504c475cf998ab4255dd7"
+      },
+      {
+        "name": "complete-pa-three-county-2026-05.zip",
+        "size": 512444,
+        "digest": "sha256:b1eaa050626fb402e7ea2850db579a53a6e8f3c3c2e27bdf9485cfd044a5faa9"
+      }
+    ]
+  },
+  {
+    "tag": "voter-county-pennsylvania-three-county-20261105-01",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "county-candidate-mode-counts.csv",
+        "size": 57184,
+        "digest": "sha256:e88abc0ceef4cda96034f46d5374b9d5bd0e62f456c9cae3dc3db3d269242aba"
+      },
+      {
+        "name": "county-candidate-results.csv",
+        "size": 15895,
+        "digest": "sha256:f0c4240f8ac420347d924c8f2f6ff70874d874ae5fc865eba0274b163c0b1b7e"
+      },
+      {
+        "name": "county-contest-totals.csv",
+        "size": 8605,
+        "digest": "sha256:78a54dac66b84f42b4d5e8db4c5119b4f7bb62e0750849bd13d150e4b00e979d"
+      },
+      {
+        "name": "county-office-party-totals.csv",
+        "size": 1840,
+        "digest": "sha256:14316531e119917b90bb9ad7e8bc6e2046cca2da120a426ec6101aa238b3b5a2"
+      },
+      {
+        "name": "county-participation.csv",
+        "size": 704,
+        "digest": "sha256:baa86b43141781ac7870114528f3a74c4e364688996560014314320fb99eaa8a"
+      },
+      {
+        "name": "native-unit-candidate-counts.csv",
+        "size": 1270787,
+        "digest": "sha256:d86aa40cc0e8d3fddc21e3310c0c1ea4fdbc87388e76c753c7061b65efaeb550"
+      },
+      {
+        "name": "native-unit-participation.csv",
+        "size": 44195,
+        "digest": "sha256:f331b76f7d10d9edd8bbc5e18085705674c653a95034ff9615a876ab97f49065"
+      }
+    ]
+  },
+  {
+    "tag": "voter-county-pennsylvania-northampton-20261105-01",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-northampton-2026-county-results-01.zip",
+        "size": 322312,
+        "digest": "sha256:d5e29bb452d7a3b29801f70f1b7b6b1496ed9eeb3fdcd98193bdd66308029d9d"
+      },
+      {
+        "name": "county-ballot-mode-counts.csv",
+        "size": 205,
+        "digest": "sha256:7278a497e38684280ddb93a6418b455ea63d17f55c0a720698e563610cb7fcde"
+      },
+      {
+        "name": "county-candidate-results.csv",
+        "size": 4216,
+        "digest": "sha256:b4d8134d63eec62dc3c46fc9a665886727d9f929fc2e663b9419f8e8c30e6bb5"
+      },
+      {
+        "name": "county-contest-totals.csv",
+        "size": 1356,
+        "digest": "sha256:991f029ac0ac1165dd17779b64381b589a983f9375368645a910c5be881c72af"
+      },
+      {
+        "name": "county-office-party-totals.csv",
+        "size": 753,
+        "digest": "sha256:1dad6dc917a15f8375507645758b630d0b100ef24655c68f62789728f920e019"
+      },
+      {
+        "name": "county-participation.csv",
+        "size": 606,
+        "digest": "sha256:759c8ff0c0dc7ae31c2ed8af8f324a75bf7a9b4dbce656e7fe6bca3ed8b4dc34"
+      },
+      {
+        "name": "native-unit-candidate-counts.csv",
+        "size": 289995,
+        "digest": "sha256:8c6e919810a46b925118ac7f082aa083f308aa8ccfbf18038e138b28a73d086d"
+      },
+      {
+        "name": "native-unit-contest-coverage.csv",
+        "size": 75657,
+        "digest": "sha256:d6900366646ee0b66293cf433cc00dec449b1c80ba7d18b56dbc4dc7306346b5"
+      }
+    ]
+  },
+  {
+    "tag": "voter-county-pennsylvania-montgomery-20261105-01",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-montgomery-2026-county-results-01.zip",
+        "size": 587034,
+        "digest": "sha256:f40f5454fc6332e5828770f7d51eb313186d58f7ceb5c0dd2851de7eb24f32d3"
+      }
+    ]
+  },
+  {
+    "tag": "voter-county-pennsylvania-monroe-20261105-01",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-monroe-2026-county-results-01.zip",
+        "size": 273559,
+        "digest": "sha256:0cd09dde828b4d51949d96723ee9ca84627d6125c2db3e25ee2bcfd1b192def5"
+      }
+    ]
+  },
+  {
+    "tag": "voter-county-pennsylvania-lancaster-20261105-01",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-lancaster-2026-county-results-01.zip",
+        "size": 763713,
+        "digest": "sha256:a9f2da2a21ba6d7ec9ae573872e3152c135c068217ab1a81692af78c7862e8a4"
+      },
+      {
+        "name": "county-contest-accounting-modes.csv",
+        "size": 13251,
+        "digest": "sha256:dd216c9e81f41268171f452fef6610889b54970748c2a4c3ba07854a2414ac32"
+      },
+      {
+        "name": "county-contest-accounting.csv",
+        "size": 9772,
+        "digest": "sha256:f6043a468b76ed578747254d7225ad1701d6a53ed59a3dc11beb29247dd9b2e8"
+      },
+      {
+        "name": "county-literal-party-totals.csv",
+        "size": 6836,
+        "digest": "sha256:67e00761ee9f3eaf8e6c6c397a4268953f072fe98754797e199919519c1176c2"
+      },
+      {
+        "name": "county-option-mode-results.csv",
+        "size": 25131,
+        "digest": "sha256:f9bb1c2fd2a7642f363f1739453c76285f808ae221e2e96ef6b72d0ae48b86fd"
+      },
+      {
+        "name": "county-option-results.csv",
+        "size": 10094,
+        "digest": "sha256:a5b04a379b0e3ed1644e44fe1a104d63fa374dce9076e56f99d7710c8f672220"
+      },
+      {
+        "name": "county-participation.csv",
+        "size": 1540,
+        "digest": "sha256:d201732d1d12f4820d447389a84c30022c151bb4a107f61c1cef795837ff64f6"
+      },
+      {
+        "name": "native-party-statistics.csv",
+        "size": 2268,
+        "digest": "sha256:d76d94ac60961630cef1b06dc6b567d73f3b0e96e8f53d347f1802ea737b3888"
+      },
+      {
+        "name": "native-unit-participation.csv",
+        "size": 22263,
+        "digest": "sha256:b0c6947a31f8a91467767cd93e0885116dcc5b1fdb47791ae2bf8770d24334b4"
+      }
+    ]
+  },
+  {
+    "tag": "voter-county-pennsylvania-bucks-20261105-01",
+    "immutable": false,
+    "assets": []
+  },
+  {
+    "tag": "voter-county-party-votes-20261105-02",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-2026-house-party-votes-02.zip",
+        "size": 1116124,
+        "digest": "sha256:6437650836b2bdca56dea542190fafd66b9796850f8631566805148d77e4a6c2"
+      }
+    ]
+  },
+  {
+    "tag": "voter-county-party-votes-20261105-01",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-2026-house-party-votes-01.zip",
+        "size": 643023,
+        "digest": "sha256:6a1821436f2a4285fe6c01770ab633395b9e55302be7f4b69f71b4c02d6a851a"
+      }
+    ]
+  },
+  {
+    "tag": "voter-county-official-pa-20261105-01",
+    "immutable": false,
+    "assets": []
+  },
+  {
+    "tag": "voter-county-house-history-20261105-04",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "audit.json",
+        "size": 13747,
+        "digest": "sha256:28a604d157c89c523cbcf7ca1e3378c2ad401c7202c1f7c77c06792d7a25bf8c"
+      },
+      {
+        "name": "checksums.json",
+        "size": 1826,
+        "digest": "sha256:c2576ec50ab421971bdfe1b5ff26122b429d96c1983aa97a6ad4ae1bbfa69d68"
+      },
+      {
+        "name": "complete-historical-house.zip",
+        "size": 1346170,
+        "digest": "sha256:659dedebba745ffdf8a0412bb0cb466daddffc09081a8f54546af77f6c3e1ce1"
+      },
+      {
+        "name": "county-review.csv.gz",
+        "size": 39190,
+        "digest": "sha256:e6894e61909a322328ea0da8a7bd95c7815655f3597663438ddc80b62f0cfa89"
+      },
+      {
+        "name": "reviewed-candidate-party-lines.csv.gz",
+        "size": 485043,
+        "digest": "sha256:cfc41c6c679a48b27ccbf23a858752c0bd6bf90837b7b9054aa436361fcbc757"
+      },
+      {
+        "name": "reviewed-county-party-totals.csv.gz",
+        "size": 197073,
+        "digest": "sha256:ab83c7159bcf016c8b09469f88db32470865e5c15fffda3d62b3bc9487e5bcf4"
+      },
+      {
+        "name": "reviewed-state-party-sums.csv.gz",
+        "size": 8938,
+        "digest": "sha256:f57931a6ff93e1c76c65acce52644697738039ae6fc2b92822ebdc680ac2d741"
+      },
+      {
+        "name": "scoped-sources.csv.gz",
+        "size": 4515,
+        "digest": "sha256:6621fe88372a38e88ae9626be26f7e77631366f873ab6eae68e1da7824a2e5b6"
+      },
+      {
+        "name": "source-candidate-party-lines.csv.gz",
+        "size": 486058,
+        "digest": "sha256:b2fcc774face710b1787febe4e09cffd8efd5701194ab012802fc510578f0427"
+      },
+      {
+        "name": "source-coverage-gaps.csv.gz",
+        "size": 244,
+        "digest": "sha256:a119c8727a83f7e24f620061f5b3c2a87d87dc20ce15ad381254364ceead6c8e"
+      },
+      {
+        "name": "source-no-ballot.csv.gz",
+        "size": 1237,
+        "digest": "sha256:309dbdf4067fa153e3842290af6481d4b7e9af52d375e1da61c0957db5a65e34"
+      },
+      {
+        "name": "source-reference-review.csv.gz",
+        "size": 2416,
+        "digest": "sha256:f09230e5dea3dc77c77c7f3fa1ad453002e97c97dbfe4604341c5110552cc4d2"
+      },
+      {
+        "name": "state-coverage.csv.gz",
+        "size": 2218,
+        "digest": "sha256:d8f39ce61f4e2f8adf71b43f6098dc26a7a64df3a1254c2fea0fd9beca98430c"
+      },
+      {
+        "name": "withheld-candidate-party-lines.csv.gz",
+        "size": 2550,
+        "digest": "sha256:dc5514ef23081d67dfca01dc32aaf1507f7479286868a9893ed856477c43e4bd"
+      },
+      {
+        "name": "year-coverage.csv.gz",
+        "size": 268,
+        "digest": "sha256:6ee49e1511d7fb509cb2ea97d8f13738b861351fb90ddb91f0663ef1166a1b1f"
+      }
+    ]
+  },
+  {
+    "tag": "voter-county-house-history-20261105-03",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "audit.json",
+        "size": 11233,
+        "digest": "sha256:7004df152da7b70bfac3db36d97dec82798cd5c751e33c3f799373ea5d564059"
+      },
+      {
+        "name": "checksums.json",
+        "size": 1826,
+        "digest": "sha256:0aa63db391564fe4e279a404c36629b6d68bbc913bac761181d2f8cc652bce85"
+      },
+      {
+        "name": "complete-historical-house.zip",
+        "size": 1110589,
+        "digest": "sha256:1dfb17d8dabdc818a9b2e0403fc8a9323cb169233f5806e3282edfe1ad121aee"
+      },
+      {
+        "name": "county-review.csv.gz",
+        "size": 32295,
+        "digest": "sha256:8640c066c95638499185114be9965ff8cbf9153a5d1d99fe9baab7b6195b7daf"
+      },
+      {
+        "name": "reviewed-candidate-party-lines.csv.gz",
+        "size": 389417,
+        "digest": "sha256:14c7599c062a8c9ebd45d082ca232f49e852ee13b2c8663edfb119e30b0b8894"
+      },
+      {
+        "name": "reviewed-county-party-totals.csv.gz",
+        "size": 161929,
+        "digest": "sha256:dbf8c9337291ff82f1040283506c02c431ac0698ecef2555f1a7bcd912ed3c08"
+      },
+      {
+        "name": "reviewed-state-party-sums.csv.gz",
+        "size": 7086,
+        "digest": "sha256:765ef7f7d8f04ad3c8a6c6f7850d3316855553a517faaf35b98e22ea55f731e3"
+      },
+      {
+        "name": "scoped-sources.csv.gz",
+        "size": 3849,
+        "digest": "sha256:0bda589d17049c5d986cc11a8fb8fd60ac80e249f0e961f644c24b609ec5b184"
+      },
+      {
+        "name": "source-candidate-party-lines.csv.gz",
+        "size": 390786,
+        "digest": "sha256:0e237e93567696fad7206c81b25afd0670a351d5f1d70c3c2f4cfecd0079487b"
+      },
+      {
+        "name": "source-coverage-gaps.csv.gz",
+        "size": 216,
+        "digest": "sha256:80145200dd5d54a234f7c7087101a09a5211ebc73bb41a3267b68835a4d2a0ea"
+      },
+      {
+        "name": "source-no-ballot.csv.gz",
+        "size": 1140,
+        "digest": "sha256:72f9a200019b503dfb322fbbbe7e63b55ef85081e0851ffa84ab058657930043"
+      },
+      {
+        "name": "source-reference-review.csv.gz",
+        "size": 2033,
+        "digest": "sha256:1a99382470e824456a5a0399e490cca5795d1289211c336d5a5ebe1be4e9ef7b"
+      },
+      {
+        "name": "state-coverage.csv.gz",
+        "size": 1852,
+        "digest": "sha256:ca93aaca433f070c2ecd1363e6ecc963b2587af51750c7d20b94817952093c04"
+      },
+      {
+        "name": "withheld-candidate-party-lines.csv.gz",
+        "size": 2016,
+        "digest": "sha256:da140aadb4322fd965f30966c97ad64bce43d3bbd20e610c81d983d8080f308f"
+      },
+      {
+        "name": "year-coverage.csv.gz",
+        "size": 243,
+        "digest": "sha256:ab840402361b079369f09a0a868f447cfc82e4a468652ddb622e35f3d470457e"
+      }
+    ]
+  },
+  {
+    "tag": "voter-county-house-history-20261105-02",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "audit.json",
+        "size": 9494,
+        "digest": "sha256:1c763e49e0d4d9fbb44d58d9805a8ec2996283b051910d6854ba31336206209e"
+      },
+      {
+        "name": "checksums.json",
+        "size": 1825,
+        "digest": "sha256:d4e4ecb116fbfe87445289bf7fb33f1e66218ea9ec9dee9f131a997480c2a29e"
+      },
+      {
+        "name": "complete-historical-house.zip",
+        "size": 888202,
+        "digest": "sha256:e10f905459c3550f799b17af58a4a7ed707f591b7995772f6c9f08c90085e17c"
+      },
+      {
+        "name": "county-review.csv.gz",
+        "size": 25022,
+        "digest": "sha256:d04a7431d5e52770ccb3211c6d45802c2e9c9544c7e9140661f084de23a2856a"
+      },
+      {
+        "name": "reviewed-candidate-party-lines.csv.gz",
+        "size": 302693,
+        "digest": "sha256:58aaf088ac03ea498289f98ebd21590348f8129c02a77061213400bc84913237"
+      },
+      {
+        "name": "reviewed-county-party-totals.csv.gz",
+        "size": 123994,
+        "digest": "sha256:3322b0597fcfb8040d2a37eb27f6d9fd988d40dcae8a28492e19d5f94c72e665"
+      },
+      {
+        "name": "reviewed-state-party-sums.csv.gz",
+        "size": 5427,
+        "digest": "sha256:8edf0e307039f2edbf0de2c5cfe14179abee32ea01af248188f11093b8eb6b9a"
+      },
+      {
+        "name": "scoped-sources.csv.gz",
+        "size": 3213,
+        "digest": "sha256:dd920d002764badeb92927d0eaab0c770fdf40191e3f2538cced10406f842bba"
+      },
+      {
+        "name": "source-candidate-party-lines.csv.gz",
+        "size": 303231,
+        "digest": "sha256:7f6cb4342be09765442b58604ace1dae62637ee4a0cbd01461a08c0fd95cc23b"
+      },
+      {
+        "name": "source-coverage-gaps.csv.gz",
+        "size": 216,
+        "digest": "sha256:80145200dd5d54a234f7c7087101a09a5211ebc73bb41a3267b68835a4d2a0ea"
+      },
+      {
+        "name": "source-no-ballot.csv.gz",
+        "size": 1039,
+        "digest": "sha256:9c1c3b1110b7bfaa478a9aa1bd33263361ef47014b8ca71d2df46d92d134ea29"
+      },
+      {
+        "name": "source-reference-review.csv.gz",
+        "size": 1619,
+        "digest": "sha256:ad7adacb5967d8c188a9975e945f2e9e0fa56f866111d9b9914f61edfaf1bf31"
+      },
+      {
+        "name": "state-coverage.csv.gz",
+        "size": 1433,
+        "digest": "sha256:91b50277f58a10b62652132b6c84b0de7889fe2a230bbbecbcb16bd547b5a363"
+      },
+      {
+        "name": "withheld-candidate-party-lines.csv.gz",
+        "size": 1559,
+        "digest": "sha256:6efce8c81a182c8eceba95a11a3c5fd9941cf9299a48098a44b3d32993912b9e"
+      },
+      {
+        "name": "year-coverage.csv.gz",
+        "size": 218,
+        "digest": "sha256:bafe918b7228a218ce05774350acded54cd7a9e203d71eb4b8c8597051c674ff"
+      }
+    ]
+  },
+  {
+    "tag": "voter-county-house-history-20261105-01",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "audit.json",
+        "size": 7548,
+        "digest": "sha256:89fbfc1a95206a453286911626cf60bd6137fb3c5c884ad10cccfe830d9f79d8"
+      },
+      {
+        "name": "checksums.json",
+        "size": 1549,
+        "digest": "sha256:f2f72ec26e145a3e0ffa1f4819fab5bed7c6f88c37804edeb96710c761ca2abc"
+      },
+      {
+        "name": "complete-historical-house.zip",
+        "size": 619935,
+        "digest": "sha256:a797670e41bcb11ab6f2c0668810e5782dad9b25e8069c116aa29118585565bf"
+      },
+      {
+        "name": "county-review.csv.gz",
+        "size": 16684,
+        "digest": "sha256:ab462248030d76f7c93b2a3aa76b45d43074e6b58d80979e909f78440c5ce043"
+      },
+      {
+        "name": "reviewed-candidate-party-lines.csv.gz",
+        "size": 196781,
+        "digest": "sha256:40a3540609d3c8516804d8c9bc54edc4bb4561d08c8a355949cc56b02b3d3496"
+      },
+      {
+        "name": "reviewed-county-party-totals.csv.gz",
+        "size": 79917,
+        "digest": "sha256:d85c14717c5c270b22c2e235808cbbd00446dde1b167070ae958a8cfdd3ed0e8"
+      },
+      {
+        "name": "reviewed-state-party-sums.csv.gz",
+        "size": 3648,
+        "digest": "sha256:1c74da8dfadd6bb652b5bccb516730e1ce07cb22062e5ac18da9caee39bfa5b5"
+      },
+      {
+        "name": "scoped-sources.csv.gz",
+        "size": 2493,
+        "digest": "sha256:2cc3874b001a457d5d285619c83612b95b06b242b331f5ec070b2b330f7ef302"
+      },
+      {
+        "name": "source-candidate-party-lines.csv.gz",
+        "size": 197138,
+        "digest": "sha256:970e0537159c98eed75bca2df5c4546ab7539392c44027643acfc692f959785b"
+      },
+      {
+        "name": "source-reference-review.csv.gz",
+        "size": 1181,
+        "digest": "sha256:0e1b5ba4fe7230bb23b061ce5bb4ea5f7d5e6fe2d57923a861d3878452057145"
+      },
+      {
+        "name": "state-coverage.csv.gz",
+        "size": 1068,
+        "digest": "sha256:f6f9552380c2a7708fa63f617dee6faa0d4aad71d4803978f4200714eeeff84e"
+      },
+      {
+        "name": "withheld-candidate-party-lines.csv.gz",
+        "size": 1158,
+        "digest": "sha256:c55138702b0a4b7877804a4a359927ccb3f63e125d82b53c25db3b522aece914"
+      },
+      {
+        "name": "year-coverage.csv.gz",
+        "size": 192,
+        "digest": "sha256:f319894fac04b6a2914868695b7dfaf11065d57725fe9378cb25fed378b6a4f3"
+      }
+    ]
+  },
+  {
+    "tag": "voter-county-house-20261105-02",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-2026-house-county-results-02.zip",
+        "size": 139681390,
+        "digest": "sha256:eacd3f041bbd888f055bd8403b057b60d7605a6bc59e0b3c627a9ee8209bcae7"
+      }
+    ]
+  },
+  {
+    "tag": "voter-county-house-20261105",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-2026-house-county-results-01.zip",
+        "size": 138508764,
+        "digest": "sha256:abd1c5d6abab56652e16f507af25be2481e76e61b8d80c2aae08baa137bcf9f7"
+      }
+    ]
+  },
+  {
+    "tag": "voter-county-dc-delegate-20261105-01",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-dc-2026-county-results-01.zip",
+        "size": 216186,
+        "digest": "sha256:f63a0430c67f7f6baab1f60f37263618940e63cbed332899dde3a139d3338269"
+      }
+    ]
+  },
+  {
+    "tag": "voter-county-2026-20261105t155645z",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-county-results.zip",
+        "size": 139939933,
+        "digest": "sha256:e2ed05fc4684c34d8b3712a5068ae691f8dc696ac85834d39238ce276e71fffd"
+      }
+    ]
+  },
+  {
+    "tag": "voter-precinct-expansion-20261105",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "complete-additional-precinct-results.zip",
+        "size": 398235632,
+        "digest": "sha256:f0d46aa827cda1f0c47a3f5089a859c44c61e497b9386a89598878eef9d4c094"
+      }
+    ]
+  },
+  {
+    "tag": "voter-participation-data-20261104",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "participation-context__20261104T183601Z__complete-context.zip",
+        "size": 37324933,
+        "digest": "sha256:1b6d5f2378941973381c2a7c3a213da8ee5e0e8bf52019503e3a2cf6f07c2c00"
+      },
+      {
+        "name": "participation-context__20261104T183601Z__margins.csv",
+        "size": 282082,
+        "digest": "sha256:2136e072145866a982b86c4bb4b2318400732e14eb492bf9b0d14860a9623f27"
+      },
+      {
+        "name": "participation-context__20261104T183601Z__nationwide__complete-snapshot.zip",
+        "size": 572424,
+        "digest": "sha256:c4974a5961bab1cf7926141681f9539d75e0d62ee4b1c2b4d4107b860224ccf2"
+      },
+      {
+        "name": "participation-context__20261104T183601Z__nationwide__coverage.csv",
+        "size": 6999,
+        "digest": "sha256:dc8a2fc6b67395e749415ce64777a3d5998bc866fba0e9df942e73c746ba1a21"
+      },
+      {
+        "name": "participation-context__20261104T183601Z__nationwide__demographics.csv",
+        "size": 32170,
+        "digest": "sha256:c95f6fe5db408361ef4256a976c10438f28be78dafc45c658cb935af9d2bd25b"
+      },
+      {
+        "name": "participation-context__20261104T183601Z__nationwide__early_voting.csv",
+        "size": 1156517,
+        "digest": "sha256:7dafa968a0451c42935b82843d95ca6cb6614d9eaa7dd5bb17feae7dc1546594"
+      },
+      {
+        "name": "participation-context__20261104T183601Z__nationwide__reporting.csv",
+        "size": 1902,
+        "digest": "sha256:d59e706ac4d14d9e11e52d761e6e6164756b157b09364b99137a3c5ed4b7b71b"
+      },
+      {
+        "name": "participation-methods__20261104T183000Z__complete-methods.zip",
+        "size": 44477301,
+        "digest": "sha256:bfdc5e37b76f059579176b6a0e6ccd9cd55a76432e08aea6c9ecc4675581e78d"
+      },
+      {
+        "name": "participation-methods__20261104T183000Z__jurisdictions-2008.json",
+        "size": 3171507,
+        "digest": "sha256:ffc5602aa31d281e24c552d07f4dce32743979e4b8e1bd7479708101dd6ce53e"
+      },
+      {
+        "name": "participation-methods__20261104T183000Z__jurisdictions-2010.json",
+        "size": 3289128,
+        "digest": "sha256:c7ace97c40de9e8ceef6e38a6c6e43ba075863b3a9838b04061fbe01b490ffec"
+      },
+      {
+        "name": "participation-methods__20261104T183000Z__jurisdictions-2012.json",
+        "size": 5673461,
+        "digest": "sha256:80ae57829f3ba03885ed46865e052354901a49bda4a6ac777cada2432d389154"
+      },
+      {
+        "name": "participation-methods__20261104T183000Z__jurisdictions-2014.json",
+        "size": 5168320,
+        "digest": "sha256:5f4caa83481fd52ab0f0d182e01437874fb0506112b5c0945d52c8c48137d93f"
+      },
+      {
+        "name": "participation-methods__20261104T183000Z__jurisdictions-2016.json",
+        "size": 5300957,
+        "digest": "sha256:015bacfa609e3b9c22a8e40cbdf1faf114b0d6a1c8f19cd334d4ad5d20c9c9f0"
+      },
+      {
+        "name": "participation-methods__20261104T183000Z__jurisdictions-2018.json",
+        "size": 6527119,
+        "digest": "sha256:63aeb2012eac3a4f8f1096092211e9e1419e1cd241530d0a446a1c0be4e85907"
+      },
+      {
+        "name": "participation-methods__20261104T183000Z__jurisdictions-2020.json",
+        "size": 7934214,
+        "digest": "sha256:56534d101d9fc9254cf6ee6fc53c0c86b44645b145ec105f39662368eaf7ea2d"
+      },
+      {
+        "name": "participation-methods__20261104T183000Z__jurisdictions-2022.json",
+        "size": 6705427,
+        "digest": "sha256:ad44af256d24ae20d9036d39cf39f93f8512ef410c6934570978cfcfcd7718fc"
+      },
+      {
+        "name": "participation-methods__20261104T183000Z__jurisdictions-2024.json",
+        "size": 7718667,
+        "digest": "sha256:2b04bafb7e92c069646722f9e6a50dc86fe6c682c9fd12b3554ee423e2e0d8dd"
+      },
+      {
+        "name": "participation-methods__20261104T183000Z__jurisdictions.csv",
+        "size": 44899748,
+        "digest": "sha256:f9f8f2b474b6e293aca2b1c6ba44c357af727f88e8e251755a287c3136c7a497"
+      },
+      {
+        "name": "participation-methods__20261104T183000Z__national.csv",
+        "size": 38872,
+        "digest": "sha256:8fac7d04f1e769c9008fb82fce170e0bc9497d553473e40910dab51112ea505b"
+      },
+      {
+        "name": "participation-methods__20261104T183000Z__states.csv",
+        "size": 549192,
+        "digest": "sha256:46294b26381a41830d3cd3b5f55ef3b3bfcaefd0cc7f621654dc56001f1e0f7b"
+      },
+      {
+        "name": "voter-participation__data__complete-analysis.zip",
+        "size": 48017387,
+        "digest": "sha256:aa0f43c55dcf15064043aec7b371a351f09f510b29e2686c2367f1f90d6ae951"
+      },
+      {
+        "name": "voter-participation__data__coverage.csv",
+        "size": 90772,
+        "digest": "sha256:d5eda10402fee1ad145e68301a3d408c8fad18ca43880052583b956d48a9d2c5"
+      },
+      {
+        "name": "voter-participation__data__cps__complete-inputs.zip",
+        "size": 25059471,
+        "digest": "sha256:f5e71514d031583fab971ed213b573b57be1d01fb9bd7463a1536909fc78fc83"
+      },
+      {
+        "name": "voter-participation__data__cps__joint-cells.csv",
+        "size": 2766067,
+        "digest": "sha256:cbb626ea10ce350f09d4a186838750bb77c7e4ac6b9893f8d069b1f3671f774c"
+      },
+      {
+        "name": "voter-participation__data__cps__marginals.csv",
+        "size": 38235,
+        "digest": "sha256:d30f5016bad5f6aae4202775d641fe10a83d2801d456d75eb076d65fbf87e88c"
+      },
+      {
+        "name": "voter-participation__data__cps__published-comparisons.csv",
+        "size": 3896,
+        "digest": "sha256:aaeea02ce833afbf1e809e40e4e3019a3e396bf99a5677471f65b0801065c5ba"
+      },
+      {
+        "name": "voter-participation__data__current__20261104T020104Z__complete-snapshot.zip",
+        "size": 1159254,
+        "digest": "sha256:95f3741ddd617cdf8beedc12abed4f7090dc009bd968846f8351db1608f17220"
+      },
+      {
+        "name": "voter-participation__data__current__20261104T020104Z__demographics.csv",
+        "size": 405420,
+        "digest": "sha256:ff9941e27a321063911977bc5187497d5fc68d322b4de21989a65c332ed276d2"
+      },
+      {
+        "name": "voter-participation__data__current__20261104T020104Z__reporting.csv",
+        "size": 10624,
+        "digest": "sha256:0e91a93257591324a9386a6bd5691de1a6ab545284fae703d15f0609f3410146"
+      },
+      {
+        "name": "voter-participation__data__current__20261104T021038Z__complete-snapshot.zip",
+        "size": 1159346,
+        "digest": "sha256:c9040a7c96b8016f9a328ad87484611b3c28566af6f49d54d35fa63f1e2d94a7"
+      },
+      {
+        "name": "voter-participation__data__current__20261104T021038Z__demographics.csv",
+        "size": 405420,
+        "digest": "sha256:ff9941e27a321063911977bc5187497d5fc68d322b4de21989a65c332ed276d2"
+      },
+      {
+        "name": "voter-participation__data__current__20261104T021038Z__reporting.csv",
+        "size": 10321,
+        "digest": "sha256:1518daabad65006ec88cdc3765a1c8468552742b852c1a2d548a63be7e0680e2"
+      },
+      {
+        "name": "voter-participation__data__current__20261104T021346Z__complete-snapshot.zip",
+        "size": 1159363,
+        "digest": "sha256:702af9c67d0dfa079883340f650b76e0dfbee4b4eb555e2fe366cbaef338f33c"
+      },
+      {
+        "name": "voter-participation__data__current__20261104T021346Z__demographics.csv",
+        "size": 405420,
+        "digest": "sha256:ff9941e27a321063911977bc5187497d5fc68d322b4de21989a65c332ed276d2"
+      },
+      {
+        "name": "voter-participation__data__current__20261104T021346Z__reporting.csv",
+        "size": 10218,
+        "digest": "sha256:ecb0b18d4a221ec9c6cab8831608f085635b881eb0f31757872b000d35af5f9b"
+      },
+      {
+        "name": "voter-participation__data__current__20261104T093041Z__complete-snapshot.zip",
+        "size": 1159236,
+        "digest": "sha256:a460004b9e707a4757da925ed40162f1bc1662acb122d38f62aa0d1b3d4db8fb"
+      },
+      {
+        "name": "voter-participation__data__current__20261104T093041Z__demographics.csv",
+        "size": 405420,
+        "digest": "sha256:ff9941e27a321063911977bc5187497d5fc68d322b4de21989a65c332ed276d2"
+      },
+      {
+        "name": "voter-participation__data__current__20261104T093041Z__reporting.csv",
+        "size": 7510,
+        "digest": "sha256:bc2f359fe8c1cc05bbc0a8a0a28d66f934dc6308b84dfcac7df7aa8f87c405ac"
+      },
+      {
+        "name": "voter-participation__data__current__20261104T144313Z__complete-snapshot.zip",
+        "size": 1161069,
+        "digest": "sha256:2e11871e83ba96b79825d5b5cacd261001c18fa25a709ea57af7871ef871daee"
+      },
+      {
+        "name": "voter-participation__data__current__20261104T144313Z__demographics.csv",
+        "size": 405540,
+        "digest": "sha256:57b86e6bb5c1be520fa58294a51ff1dba200ea61308ea57e5d469cde8c7c7011"
+      },
+      {
+        "name": "voter-participation__data__current__20261104T144313Z__reporting.csv",
+        "size": 7511,
+        "digest": "sha256:0b018aab88ee45a7348e820c9482de8fd1f312d36ecb3092a82a1905301f41c6"
+      },
+      {
+        "name": "voter-participation__data__current__20261104T144357Z__complete-snapshot.zip",
+        "size": 1161067,
+        "digest": "sha256:9f8710f9105e018f3d57b59d24150027fb7fbbbe2958d5ad01e8a398c4b2b8c2"
+      },
+      {
+        "name": "voter-participation__data__current__20261104T144357Z__demographics.csv",
+        "size": 405540,
+        "digest": "sha256:57b86e6bb5c1be520fa58294a51ff1dba200ea61308ea57e5d469cde8c7c7011"
+      },
+      {
+        "name": "voter-participation__data__current__20261104T144357Z__reporting.csv",
+        "size": 7511,
+        "digest": "sha256:0b018aab88ee45a7348e820c9482de8fd1f312d36ecb3092a82a1905301f41c6"
+      },
+      {
+        "name": "voter-participation__data__current__20261104T152627Z__complete-snapshot.zip",
+        "size": 1160764,
+        "digest": "sha256:35c4efe4fca43edcc308df5ad7a672016f46c9341439dfd44a74a108a1e516fe"
+      },
+      {
+        "name": "voter-participation__data__current__20261104T152627Z__demographics.csv",
+        "size": 405540,
+        "digest": "sha256:57b86e6bb5c1be520fa58294a51ff1dba200ea61308ea57e5d469cde8c7c7011"
+      },
+      {
+        "name": "voter-participation__data__current__20261104T152627Z__reporting.csv",
+        "size": 7511,
+        "digest": "sha256:0b018aab88ee45a7348e820c9482de8fd1f312d36ecb3092a82a1905301f41c6"
+      },
+      {
+        "name": "voter-participation__data__model__backtests.csv",
+        "size": 66598,
+        "digest": "sha256:1ba526db62ff49207dd76efde9da9f8cccb1f08d17cf14375d6f589ae3bf013a"
+      },
+      {
+        "name": "voter-participation__data__model__complete-validation.zip",
+        "size": 47007,
+        "digest": "sha256:018269259d89ecbdbac4d44b8ab6e816542ee5f13c8f4b736abdb4b6e9c6b634"
+      },
+      {
+        "name": "voter-participation__data__national.csv",
+        "size": 210678,
+        "digest": "sha256:70c933b5cb221197b0fa7fac365035851651e6d168a915c3fb7dff5caed0b5ac"
+      },
+      {
+        "name": "voter-participation__data__nationwide__20261104T143957Z__complete-snapshot.zip",
+        "size": 420055,
+        "digest": "sha256:5667fa2c4d1a2c74352e3db43b27d3558e489aeeab5040057d5811a98e35a814"
+      },
+      {
+        "name": "voter-participation__data__nationwide__20261104T143957Z__coverage.csv",
+        "size": 7043,
+        "digest": "sha256:217b51a5e7578aa7300f60c56aab1d60a7d9cebd948bf76b00c4d975dd7ad3a2"
+      },
+      {
+        "name": "voter-participation__data__nationwide__20261104T143957Z__demographics.csv",
+        "size": 32170,
+        "digest": "sha256:0718f7bbb0a6ba17b256e3327c9722cd9a790335624d1f14fdd7cd78ddd77d8e"
+      },
+      {
+        "name": "voter-participation__data__nationwide__20261104T143957Z__early_voting.csv",
+        "size": 1155480,
+        "digest": "sha256:9a5e61b35af2233d6e6a8c98c4e8d4e274c5450f603cdf953d943f694a7694fe"
+      },
+      {
+        "name": "voter-participation__data__nationwide__20261104T143957Z__reporting.csv",
+        "size": 976,
+        "digest": "sha256:0339f252084a5f9079a6f2c9a92834cd435dd049dc615e5f48c37c4a24411771"
+      },
+      {
+        "name": "voter-participation__data__nationwide__20261104T144145Z__complete-snapshot.zip",
+        "size": 420394,
+        "digest": "sha256:0b203d2436e1db4360dc72b59ca9d2bbcc72f6043bb086a66d16982f9841617c"
+      },
+      {
+        "name": "voter-participation__data__nationwide__20261104T144145Z__coverage.csv",
+        "size": 6999,
+        "digest": "sha256:8644d77a949ba72d383045da18133ae7b631ce793c48af139c0b43e51dd3114f"
+      },
+      {
+        "name": "voter-participation__data__nationwide__20261104T144145Z__demographics.csv",
+        "size": 32170,
+        "digest": "sha256:13f2146f3bfa3866723069f2b2b7612cedf1d17b1950c757cdaa8a61983bd38c"
+      },
+      {
+        "name": "voter-participation__data__nationwide__20261104T144145Z__early_voting.csv",
+        "size": 1156516,
+        "digest": "sha256:4efffd7d49ab4600bc3421f142cb48209581b47617b946982ca1c898baa64284"
+      },
+      {
+        "name": "voter-participation__data__nationwide__20261104T144145Z__reporting.csv",
+        "size": 1169,
+        "digest": "sha256:f9f1efaf977d4e8aacdea5103f4eea3b840fe432927bdc2fe6f7fc3390aa6f8b"
+      },
+      {
+        "name": "voter-participation__data__nationwide__20261104T144402Z__complete-snapshot.zip",
+        "size": 420615,
+        "digest": "sha256:6647f8cb8ea71b46fbe83937128e0c5fd3d8e80c1b0f8edd6d2ee4fefa8627d8"
+      },
+      {
+        "name": "voter-participation__data__nationwide__20261104T144402Z__coverage.csv",
+        "size": 6999,
+        "digest": "sha256:8644d77a949ba72d383045da18133ae7b631ce793c48af139c0b43e51dd3114f"
+      },
+      {
+        "name": "voter-participation__data__nationwide__20261104T144402Z__demographics.csv",
+        "size": 32170,
+        "digest": "sha256:00a7e04b2a9ef2a7ce150c75bcc28b3355f7eb68c5833ef85384bed225b165bc"
+      },
+      {
+        "name": "voter-participation__data__nationwide__20261104T144402Z__early_voting.csv",
+        "size": 1156516,
+        "digest": "sha256:81c543e7dfb1757dafe51400344f684c97ec42429e74e7e8ed54b084466e3fed"
+      },
+      {
+        "name": "voter-participation__data__nationwide__20261104T144402Z__reporting.csv",
+        "size": 1169,
+        "digest": "sha256:709b90880260fc28a9c0fb97e3cebe4270e631f9050e4ed43ffeb3c2da3d1494"
+      },
+      {
+        "name": "voter-participation__data__nationwide__20261104T152630Z__complete-snapshot.zip",
+        "size": 420231,
+        "digest": "sha256:4f20abdc2ee4ce46cf6f01d99cbfb74a9c2cc898fbad2c6f1bd548e00a4d2070"
+      },
+      {
+        "name": "voter-participation__data__nationwide__20261104T152630Z__coverage.csv",
+        "size": 6999,
+        "digest": "sha256:8644d77a949ba72d383045da18133ae7b631ce793c48af139c0b43e51dd3114f"
+      },
+      {
+        "name": "voter-participation__data__nationwide__20261104T152630Z__demographics.csv",
+        "size": 32170,
+        "digest": "sha256:c95f6fe5db408361ef4256a976c10438f28be78dafc45c658cb935af9d2bd25b"
+      },
+      {
+        "name": "voter-participation__data__nationwide__20261104T152630Z__early_voting.csv",
+        "size": 1156517,
+        "digest": "sha256:7dafa968a0451c42935b82843d95ca6cb6614d9eaa7dd5bb17feae7dc1546594"
+      },
+      {
+        "name": "voter-participation__data__nationwide__20261104T152630Z__reporting.csv",
+        "size": 1169,
+        "digest": "sha256:6b957056bcee82ba6fb07f024adadb0017ac948dc4d7314ece706b6ff87a3111"
+      },
+      {
+        "name": "voter-participation__data__nc__2002.csv",
+        "size": 2349975,
+        "digest": "sha256:1518477944685011cdf20a1488e52cf2eb18351f8d5a563e4ebebcc776f437ed"
+      },
+      {
+        "name": "voter-participation__data__nc__2004.csv",
+        "size": 3398128,
+        "digest": "sha256:3e77703981a0172d0d1c81a843e990e81a407cf09d6217fb5877ca08aefeb3d1"
+      },
+      {
+        "name": "voter-participation__data__nc__2006.csv",
+        "size": 2779495,
+        "digest": "sha256:4e9d28bebd9862f3475507c80034b7ffe9c5be66b0ad849228b254587440cdf0"
+      },
+      {
+        "name": "voter-participation__data__nc__2008.csv",
+        "size": 3059227,
+        "digest": "sha256:192fe91d5e86c8817b008ff1f64c794dd308bc33e62fd5f136d16bbed599f825"
+      },
+      {
+        "name": "voter-participation__data__nc__2010.csv",
+        "size": 2655897,
+        "digest": "sha256:b9a6775fa575e8f888c1419b8aebdc49c53c8825e97bef3cc88911af5874cea1"
+      },
+      {
+        "name": "voter-participation__data__nc__2012.csv",
+        "size": 2687790,
+        "digest": "sha256:14b6f481679fab61c33824c1a21e2825ccced9785b96a028504779f1505f4692"
+      },
+      {
+        "name": "voter-participation__data__nc__2014.csv",
+        "size": 2642820,
+        "digest": "sha256:8ded22b5b9456de2b018896dbd7e5b39d54fca480a235de3cafc0be7afe22ce0"
+      },
+      {
+        "name": "voter-participation__data__nc__2016.csv",
+        "size": 2661049,
+        "digest": "sha256:f661e9557f91499ded8f2710792ba1a720cacd29544a28e06c8024aecc71829c"
+      },
+      {
+        "name": "voter-participation__data__nc__2018.csv",
+        "size": 2654625,
+        "digest": "sha256:a45f7f82a55a7cd03222f47663c747a985c415ebad69b186f6a290177663f010"
+      },
+      {
+        "name": "voter-participation__data__nc__2020.csv",
+        "size": 2645544,
+        "digest": "sha256:974a65f616ed841691211baddbb30f813a160771ef18f94904b5f0c8ca6cd430"
+      },
+      {
+        "name": "voter-participation__data__nc__2022.csv",
+        "size": 2629711,
+        "digest": "sha256:755a37783e835232b682bca8bdaa0e8236c40e3262fdef4cfcfebbc2f2268927"
+      },
+      {
+        "name": "voter-participation__data__nc__2024.csv",
+        "size": 2670841,
+        "digest": "sha256:aa5c1ac72fd606e5d9d20b160455cb2efe8486484905fbdc9759839ef98dea59"
+      },
+      {
+        "name": "voter-participation__data__nc__official-reconciliation.csv",
+        "size": 4356,
+        "digest": "sha256:c38f147f8a4ea3f5d346ebf2cba9aaa8e7b1c1fe72f17dced5d3d3f488ce1774"
+      },
+      {
+        "name": "voter-participation__data__states.csv",
+        "size": 149304,
+        "digest": "sha256:2aea7fdfb022c1e10d341688496c0024a5d76025552e9e86a70bb47d6fe13e86"
+      }
+    ]
+  },
+  {
+    "tag": "participation-sources-20261104-late",
+    "immutable": false,
+    "assets": [
+      {
+        "name": "EAC-jurisdiction-timeseries.xlsx",
+        "size": 135971213,
+        "digest": "sha256:3fec2bbcb03fd32148d7213e04a6bdfc3ff38b0b83236824d4a5c7945451b169"
+      }
+    ]
+  }
+]

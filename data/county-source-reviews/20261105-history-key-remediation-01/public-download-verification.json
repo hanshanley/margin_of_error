@@ -1,0 +1,1199 @@
+[
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6bb00f50481089e37d6c2a364a1a65e61934b3ee/data/precinct-source-reviews/20261105/AL-2026-native-counts/all-native-candidate-counts.csv",
+    "file": "001-original.bin",
+    "status": 200,
+    "bytes": 613031,
+    "sha256": "dc2a136781e5fdba6c150b85e62ea981284e952f7adce9da167e3ae96a0d65aa",
+    "expected_sha256": "dc2a136781e5fdba6c150b85e62ea981284e952f7adce9da167e3ae96a0d65aa",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6bb00f50481089e37d6c2a364a1a65e61934b3ee/data/precinct-source-reviews/20261105/AL-2026-native-counts/county-house-counts.csv",
+    "file": "002-original.bin",
+    "status": 200,
+    "bytes": 20571,
+    "sha256": "114865ccdeae6c4a28394dd283426ea4162cc0b2d27f995aa2f4168a8ba6184b",
+    "expected_sha256": "114865ccdeae6c4a28394dd283426ea4162cc0b2d27f995aa2f4168a8ba6184b",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6bb00f50481089e37d6c2a364a1a65e61934b3ee/data/precinct-source-reviews/20261105/AL-2026-native-counts/county-participation.csv",
+    "file": "003-original.bin",
+    "status": 200,
+    "bytes": 5897,
+    "sha256": "1f973bfd6ccb7e1c70a7ed2862391d7034078b1d4adc1a10bd4723c2a3bca512",
+    "expected_sha256": "1f973bfd6ccb7e1c70a7ed2862391d7034078b1d4adc1a10bd4723c2a3bca512",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0a51655ec2a95937fb4588ceb265fd5bbb8e4b99/data/county-source-reviews/20261105-monroe-official-01/county-candidate-mode-counts.csv",
+    "file": "004-original.bin",
+    "status": 200,
+    "bytes": 10732,
+    "sha256": "b64da7a3ef639976ec83ceeb76fde23cbf07cb58e9ca6d585de8eabeb054f243",
+    "expected_sha256": "b64da7a3ef639976ec83ceeb76fde23cbf07cb58e9ca6d585de8eabeb054f243",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0a51655ec2a95937fb4588ceb265fd5bbb8e4b99/data/county-source-reviews/20261105-monroe-official-01/county-candidate-results.csv",
+    "file": "005-original.bin",
+    "status": 200,
+    "bytes": 3376,
+    "sha256": "9bdb3466aba3bbe656e47e339aa3db7f353537c9acc660fc800715407f14f065",
+    "expected_sha256": "9bdb3466aba3bbe656e47e339aa3db7f353537c9acc660fc800715407f14f065",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0a51655ec2a95937fb4588ceb265fd5bbb8e4b99/data/county-source-reviews/20261105-monroe-official-01/county-contest-totals.csv",
+    "file": "006-original.bin",
+    "status": 200,
+    "bytes": 890,
+    "sha256": "c976f99db6456ee765082a7e2ad6f9c762126d080224713abea3c35f4b2b1f16",
+    "expected_sha256": "c976f99db6456ee765082a7e2ad6f9c762126d080224713abea3c35f4b2b1f16",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0a51655ec2a95937fb4588ceb265fd5bbb8e4b99/data/county-source-reviews/20261105-monroe-official-01/county-office-party-totals.csv",
+    "file": "007-original.bin",
+    "status": 200,
+    "bytes": 614,
+    "sha256": "6cb9d966df7b7a74a93c457276b9ea9c06f3e53d3097ee089c0638e38944eef8",
+    "expected_sha256": "6cb9d966df7b7a74a93c457276b9ea9c06f3e53d3097ee089c0638e38944eef8",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0a51655ec2a95937fb4588ceb265fd5bbb8e4b99/data/county-source-reviews/20261105-monroe-official-01/county-participation.csv",
+    "file": "008-original.bin",
+    "status": 200,
+    "bytes": 330,
+    "sha256": "6de156b9454168aa19918f3af58172a5da32fe26a3e4c9dae96331f6f36181fe",
+    "expected_sha256": "6de156b9454168aa19918f3af58172a5da32fe26a3e4c9dae96331f6f36181fe",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0a51655ec2a95937fb4588ceb265fd5bbb8e4b99/data/county-source-reviews/20261105-monroe-official-01/native-unit-candidate-counts.csv",
+    "file": "009-original.bin",
+    "status": 200,
+    "bytes": 114903,
+    "sha256": "0d97e31ccebc212ae88485265448bafa1255308c3f980b68862c53695233e442",
+    "expected_sha256": "0d97e31ccebc212ae88485265448bafa1255308c3f980b68862c53695233e442",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5d2c4971aceb0962633aa53a77378a1e552d2bec/data/county-source-reviews/20261105-bucks-reviewed-02/county-candidate-mode-counts.csv",
+    "file": "010-original.bin",
+    "status": 200,
+    "bytes": 17230,
+    "sha256": "07b92a5cf85bd180f663e78293f423dd7e8dca2785afa724c3cd1f19c94efc56",
+    "expected_sha256": "07b92a5cf85bd180f663e78293f423dd7e8dca2785afa724c3cd1f19c94efc56",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5d2c4971aceb0962633aa53a77378a1e552d2bec/data/county-source-reviews/20261105-bucks-reviewed-02/county-candidate-results.csv",
+    "file": "011-original.bin",
+    "status": 200,
+    "bytes": 4651,
+    "sha256": "4d56b262e84210079f218ba79aef1204e28bb69bd06b07cc951b9f9db0ab952c",
+    "expected_sha256": "4d56b262e84210079f218ba79aef1204e28bb69bd06b07cc951b9f9db0ab952c",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5d2c4971aceb0962633aa53a77378a1e552d2bec/data/county-source-reviews/20261105-bucks-reviewed-02/county-contest-totals.csv",
+    "file": "012-original.bin",
+    "status": 200,
+    "bytes": 1311,
+    "sha256": "3026f18852ca014cbfacf8cf101f68548e255d40b803eac08d814c90e3cf7052",
+    "expected_sha256": "3026f18852ca014cbfacf8cf101f68548e255d40b803eac08d814c90e3cf7052",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5d2c4971aceb0962633aa53a77378a1e552d2bec/data/county-source-reviews/20261105-bucks-reviewed-02/county-office-party-totals.csv",
+    "file": "013-original.bin",
+    "status": 200,
+    "bytes": 688,
+    "sha256": "41bc55b7fefabfd66bcc8e3e97008eae550e1eb39934dbe168d090a28c613138",
+    "expected_sha256": "41bc55b7fefabfd66bcc8e3e97008eae550e1eb39934dbe168d090a28c613138",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5d2c4971aceb0962633aa53a77378a1e552d2bec/data/county-source-reviews/20261105-bucks-reviewed-02/county-participation.csv",
+    "file": "014-original.bin",
+    "status": 200,
+    "bytes": 440,
+    "sha256": "8fe900355d008dcc02576e891539e3fdd66aaa4301165949f9acd18c73dff133",
+    "expected_sha256": "8fe900355d008dcc02576e891539e3fdd66aaa4301165949f9acd18c73dff133",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5d2c4971aceb0962633aa53a77378a1e552d2bec/data/county-source-reviews/20261105-bucks-reviewed-02/native-unit-candidate-counts.csv",
+    "file": "015-original.bin",
+    "status": 200,
+    "bytes": 370189,
+    "sha256": "d9596a7b832838e235716eb9bd849ebcf1ee09ec7ce993d8c784da0f8319d1d4",
+    "expected_sha256": "d9596a7b832838e235716eb9bd849ebcf1ee09ec7ce993d8c784da0f8319d1d4",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5d2c4971aceb0962633aa53a77378a1e552d2bec/data/county-source-reviews/20261105-bucks-reviewed-02/native-unit-participation.csv",
+    "file": "016-original.bin",
+    "status": 200,
+    "bytes": 22124,
+    "sha256": "0ac97bb6fffe2e99b628fced717c999250334b860f902d84c83bdd01cba6e097",
+    "expected_sha256": "0ac97bb6fffe2e99b628fced717c999250334b860f902d84c83bdd01cba6e097",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5d2c4971aceb0962633aa53a77378a1e552d2bec/data/county-source-reviews/20261105-pa-three-county-01/county-candidate-mode-counts.csv",
+    "file": "017-original.bin",
+    "status": 200,
+    "bytes": 57184,
+    "sha256": "e88abc0ceef4cda96034f46d5374b9d5bd0e62f456c9cae3dc3db3d269242aba",
+    "expected_sha256": "e88abc0ceef4cda96034f46d5374b9d5bd0e62f456c9cae3dc3db3d269242aba",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5d2c4971aceb0962633aa53a77378a1e552d2bec/data/county-source-reviews/20261105-pa-three-county-01/county-candidate-results.csv",
+    "file": "018-original.bin",
+    "status": 200,
+    "bytes": 15895,
+    "sha256": "f0c4240f8ac420347d924c8f2f6ff70874d874ae5fc865eba0274b163c0b1b7e",
+    "expected_sha256": "f0c4240f8ac420347d924c8f2f6ff70874d874ae5fc865eba0274b163c0b1b7e",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5d2c4971aceb0962633aa53a77378a1e552d2bec/data/county-source-reviews/20261105-pa-three-county-01/county-contest-totals.csv",
+    "file": "019-original.bin",
+    "status": 200,
+    "bytes": 8605,
+    "sha256": "78a54dac66b84f42b4d5e8db4c5119b4f7bb62e0750849bd13d150e4b00e979d",
+    "expected_sha256": "78a54dac66b84f42b4d5e8db4c5119b4f7bb62e0750849bd13d150e4b00e979d",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5d2c4971aceb0962633aa53a77378a1e552d2bec/data/county-source-reviews/20261105-pa-three-county-01/county-office-party-totals.csv",
+    "file": "020-original.bin",
+    "status": 200,
+    "bytes": 1840,
+    "sha256": "14316531e119917b90bb9ad7e8bc6e2046cca2da120a426ec6101aa238b3b5a2",
+    "expected_sha256": "14316531e119917b90bb9ad7e8bc6e2046cca2da120a426ec6101aa238b3b5a2",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5d2c4971aceb0962633aa53a77378a1e552d2bec/data/county-source-reviews/20261105-pa-three-county-01/county-participation.csv",
+    "file": "021-original.bin",
+    "status": 200,
+    "bytes": 704,
+    "sha256": "baa86b43141781ac7870114528f3a74c4e364688996560014314320fb99eaa8a",
+    "expected_sha256": "baa86b43141781ac7870114528f3a74c4e364688996560014314320fb99eaa8a",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5d2c4971aceb0962633aa53a77378a1e552d2bec/data/county-source-reviews/20261105-pa-three-county-01/native-unit-candidate-counts.csv",
+    "file": "022-original.bin",
+    "status": 200,
+    "bytes": 1270787,
+    "sha256": "d86aa40cc0e8d3fddc21e3310c0c1ea4fdbc87388e76c753c7061b65efaeb550",
+    "expected_sha256": "d86aa40cc0e8d3fddc21e3310c0c1ea4fdbc87388e76c753c7061b65efaeb550",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5d2c4971aceb0962633aa53a77378a1e552d2bec/data/county-source-reviews/20261105-pa-three-county-01/native-unit-participation.csv",
+    "file": "023-original.bin",
+    "status": 200,
+    "bytes": 44195,
+    "sha256": "f331b76f7d10d9edd8bbc5e18085705674c653a95034ff9615a876ab97f49065",
+    "expected_sha256": "f331b76f7d10d9edd8bbc5e18085705674c653a95034ff9615a876ab97f49065",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/a0893d68dc5a1ace36456c302ef8134af8c5dce2/data/precinct-source-reviews/20261105/IA-LINN-2026-native-counts-01/all-house-candidate-mode-counts.csv",
+    "file": "024-original.bin",
+    "status": 200,
+    "bytes": 191754,
+    "sha256": "3c2855740cae1c247f282d4fb6e05b1e77fad66382a723dd9f2a77b328a26511",
+    "expected_sha256": "3c2855740cae1c247f282d4fb6e05b1e77fad66382a723dd9f2a77b328a26511",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/a0893d68dc5a1ace36456c302ef8134af8c5dce2/data/precinct-source-reviews/20261105/IA-LINN-2026-native-counts-01/county-participation.csv",
+    "file": "025-original.bin",
+    "status": 200,
+    "bytes": 467,
+    "sha256": "f4c4f271ff7a08b57169328ff3a2794a30b4e10d36f0083d12c1b082d2876db9",
+    "expected_sha256": "f4c4f271ff7a08b57169328ff3a2794a30b4e10d36f0083d12c1b082d2876db9",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/a0893d68dc5a1ace36456c302ef8134af8c5dce2/data/precinct-source-reviews/20261105/IA-LINN-2026-native-counts-01/county-results.csv",
+    "file": "026-original.bin",
+    "status": 200,
+    "bytes": 562,
+    "sha256": "3ad1cc6636faae6252ebf9683f06016af6b08680e8154bf1dba4fc5e7b4fd440",
+    "expected_sha256": "3ad1cc6636faae6252ebf9683f06016af6b08680e8154bf1dba4fc5e7b4fd440",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/a0893d68dc5a1ace36456c302ef8134af8c5dce2/data/precinct-source-reviews/20261105/IA-LINN-2026-native-counts-01/precinct-participation.csv",
+    "file": "027-original.bin",
+    "status": 200,
+    "bytes": 16385,
+    "sha256": "7a880c32174b1dd5830fada0c0b4d559ad7bb61239065966fdfa963f7be46fe7",
+    "expected_sha256": "7a880c32174b1dd5830fada0c0b4d559ad7bb61239065966fdfa963f7be46fe7",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/a0893d68dc5a1ace36456c302ef8134af8c5dce2/data/precinct-source-reviews/20261105/IA-LINN-2026-native-counts-01/precinct-results.csv",
+    "file": "028-original.bin",
+    "status": 200,
+    "bytes": 38178,
+    "sha256": "4656091aff6ab1a20bca99a7acb9c648f8f4e7d27cd189814fb0fdbff82bff5d",
+    "expected_sha256": "4656091aff6ab1a20bca99a7acb9c648f8f4e7d27cd189814fb0fdbff82bff5d",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/a0893d68dc5a1ace36456c302ef8134af8c5dce2/data/precinct-source-reviews/20261105/IA-LINN-2026-native-counts-01/source/linn-2026-general-precinct.pdf",
+    "file": "029-original.bin",
+    "status": 200,
+    "bytes": 1757695,
+    "sha256": "f9c01726731a42b144006c635fc5e99a105fb7c6521c6d8626f7579dc8ca5504",
+    "expected_sha256": "f9c01726731a42b144006c635fc5e99a105fb7c6521c6d8626f7579dc8ca5504",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/a0893d68dc5a1ace36456c302ef8134af8c5dce2/data/precinct-source-reviews/20261105/IA-LINN-2026-native-counts-01/source/linn-2026-general-summary.pdf",
+    "file": "030-original.bin",
+    "status": 200,
+    "bytes": 36494,
+    "sha256": "a2d194adfef5761933857f2b57e719297d793b41d54dfd53e2f68015b800572d",
+    "expected_sha256": "a2d194adfef5761933857f2b57e719297d793b41d54dfd53e2f68015b800572d",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f799e286188a7b6b2a38cdb8cfc6874467b822c3/data/precinct-results/20261105-boston-central-01/results.csv.gz",
+    "file": "031-original.bin",
+    "status": 200,
+    "bytes": 10837,
+    "sha256": "8cb55558de1e872a4e98c164a429a72d94b1457738d7ee1ba059bc723bd0668e",
+    "expected_sha256": "8cb55558de1e872a4e98c164a429a72d94b1457738d7ee1ba059bc723bd0668e",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2b234651a8500f428bbd275119c766baf0f61a17/data/precinct-results/20261105-arizona-maricopa-02/results.csv.gz",
+    "file": "032-original.bin",
+    "status": 200,
+    "bytes": 190632,
+    "sha256": "4468ebbae66cce71b34017a6bf1987c82a5c46c7141d894c4d06b366868b6ace",
+    "expected_sha256": "4468ebbae66cce71b34017a6bf1987c82a5c46c7141d894c4d06b366868b6ace",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/3f8b40139516aa3c362c43a4ab4bfc3c2c9b4dcd/data/precinct-source-reviews/20261105/AR-2026-native-counts/native-source/originals/official-full-election-csv.gz",
+    "file": "033-original.bin",
+    "status": 200,
+    "bytes": 2068393,
+    "sha256": "97fd76fb3c5c6b1ee2182654ec0d16ee85f2a9066b1ebb05ec78baabb47cc32d",
+    "expected_sha256": "97fd76fb3c5c6b1ee2182654ec0d16ee85f2a9066b1ebb05ec78baabb47cc32d",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/3f8b40139516aa3c362c43a4ab4bfc3c2c9b4dcd/data/precinct-source-reviews/20261105/AR-2026-native-counts/precinct-counts.csv",
+    "file": "034-original.bin",
+    "status": 200,
+    "bytes": 2632151,
+    "sha256": "6aa855e89d163d172d75ad3e587b8c914103d8bb5ff30b5b13c4f43c0a5da905",
+    "expected_sha256": "6aa855e89d163d172d75ad3e587b8c914103d8bb5ff30b5b13c4f43c0a5da905",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/3f8b40139516aa3c362c43a4ab4bfc3c2c9b4dcd/data/precinct-source-reviews/20261105/AR-2026-native-counts/precinct-participation.csv",
+    "file": "035-original.bin",
+    "status": 200,
+    "bytes": 369249,
+    "sha256": "c7d9dc75ac9f412ff051dea27e24f68ecb1c7ee5c07a0b31b5cae7b957583ff4",
+    "expected_sha256": "c7d9dc75ac9f412ff051dea27e24f68ecb1c7ee5c07a0b31b5cae7b957583ff4",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/a81e721f4a013d5bd00e4e65825b101f501c9503/data/precinct-results/20261105-expansion-01/participation.json.gz",
+    "file": "036-original.bin",
+    "status": 200,
+    "bytes": 143074,
+    "sha256": "42b63d54484c036911e17f2567ca01cf23417a5658834f5ff796dccef28f8104",
+    "expected_sha256": "42b63d54484c036911e17f2567ca01cf23417a5658834f5ff796dccef28f8104",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/a81e721f4a013d5bd00e4e65825b101f501c9503/data/precinct-results/20261105-expansion-01/results.csv.gz",
+    "file": "037-original.bin",
+    "status": 200,
+    "bytes": 4138183,
+    "sha256": "23bd37d68e0eff30e2d59050e3955dc33f31faea66c1a9cbf728da69170ad348",
+    "expected_sha256": "23bd37d68e0eff30e2d59050e3955dc33f31faea66c1a9cbf728da69170ad348",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/3bc8a6e967e42b4edf6deee7d064f30baa9d959e/data/county-source-reviews/20261105-lancaster-reviewed-01/county-contest-accounting-modes.csv",
+    "file": "038-original.bin",
+    "status": 200,
+    "bytes": 13251,
+    "sha256": "dd216c9e81f41268171f452fef6610889b54970748c2a4c3ba07854a2414ac32",
+    "expected_sha256": "dd216c9e81f41268171f452fef6610889b54970748c2a4c3ba07854a2414ac32",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/3bc8a6e967e42b4edf6deee7d064f30baa9d959e/data/county-source-reviews/20261105-lancaster-reviewed-01/county-contest-accounting.csv",
+    "file": "039-original.bin",
+    "status": 200,
+    "bytes": 9772,
+    "sha256": "f6043a468b76ed578747254d7225ad1701d6a53ed59a3dc11beb29247dd9b2e8",
+    "expected_sha256": "f6043a468b76ed578747254d7225ad1701d6a53ed59a3dc11beb29247dd9b2e8",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/3bc8a6e967e42b4edf6deee7d064f30baa9d959e/data/county-source-reviews/20261105-lancaster-reviewed-01/county-literal-party-totals.csv",
+    "file": "040-original.bin",
+    "status": 200,
+    "bytes": 6836,
+    "sha256": "67e00761ee9f3eaf8e6c6c397a4268953f072fe98754797e199919519c1176c2",
+    "expected_sha256": "67e00761ee9f3eaf8e6c6c397a4268953f072fe98754797e199919519c1176c2",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/3bc8a6e967e42b4edf6deee7d064f30baa9d959e/data/county-source-reviews/20261105-lancaster-reviewed-01/county-option-mode-results.csv",
+    "file": "041-original.bin",
+    "status": 200,
+    "bytes": 25131,
+    "sha256": "f9bb1c2fd2a7642f363f1739453c76285f808ae221e2e96ef6b72d0ae48b86fd",
+    "expected_sha256": "f9bb1c2fd2a7642f363f1739453c76285f808ae221e2e96ef6b72d0ae48b86fd",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/3bc8a6e967e42b4edf6deee7d064f30baa9d959e/data/county-source-reviews/20261105-lancaster-reviewed-01/county-option-results.csv",
+    "file": "042-original.bin",
+    "status": 200,
+    "bytes": 10094,
+    "sha256": "a5b04a379b0e3ed1644e44fe1a104d63fa374dce9076e56f99d7710c8f672220",
+    "expected_sha256": "a5b04a379b0e3ed1644e44fe1a104d63fa374dce9076e56f99d7710c8f672220",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/3bc8a6e967e42b4edf6deee7d064f30baa9d959e/data/county-source-reviews/20261105-lancaster-reviewed-01/county-participation.csv",
+    "file": "043-original.bin",
+    "status": 200,
+    "bytes": 1540,
+    "sha256": "d201732d1d12f4820d447389a84c30022c151bb4a107f61c1cef795837ff64f6",
+    "expected_sha256": "d201732d1d12f4820d447389a84c30022c151bb4a107f61c1cef795837ff64f6",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/3bc8a6e967e42b4edf6deee7d064f30baa9d959e/data/county-source-reviews/20261105-lancaster-reviewed-01/native-party-statistics.csv",
+    "file": "044-original.bin",
+    "status": 200,
+    "bytes": 2268,
+    "sha256": "d76d94ac60961630cef1b06dc6b567d73f3b0e96e8f53d347f1802ea737b3888",
+    "expected_sha256": "d76d94ac60961630cef1b06dc6b567d73f3b0e96e8f53d347f1802ea737b3888",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/3bc8a6e967e42b4edf6deee7d064f30baa9d959e/data/county-source-reviews/20261105-lancaster-reviewed-01/native-unit-participation.csv",
+    "file": "045-original.bin",
+    "status": 200,
+    "bytes": 22263,
+    "sha256": "b0c6947a31f8a91467767cd93e0885116dcc5b1fdb47791ae2bf8770d24334b4",
+    "expected_sha256": "b0c6947a31f8a91467767cd93e0885116dcc5b1fdb47791ae2bf8770d24334b4",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/89e901023fe156051b9a11975c52f38109cf8141/data/precinct-results/20261105-dc-01/participation.json.gz",
+    "file": "046-original.bin",
+    "status": 200,
+    "bytes": 4167,
+    "sha256": "f3ee74915114b5abe0d6dc086741cee6a6431dfc8d09bdc20bf58ab4d5fef330",
+    "expected_sha256": "f3ee74915114b5abe0d6dc086741cee6a6431dfc8d09bdc20bf58ab4d5fef330",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/89e901023fe156051b9a11975c52f38109cf8141/data/precinct-results/20261105-dc-01/results.csv.gz",
+    "file": "047-original.bin",
+    "status": 200,
+    "bytes": 6328,
+    "sha256": "d5eb9cc5974197438b7b05a53918d1ab2fceb48d634d7d5ce885084618e354f3",
+    "expected_sha256": "d5eb9cc5974197438b7b05a53918d1ab2fceb48d634d7d5ce885084618e354f3",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9ac3b0965694f8cf7a118deb6700d64c8eb08e40/data/participation-source-reviews/20261105-maine-pennsylvania-01/lewiston-city-participation.csv",
+    "file": "048-original.bin",
+    "status": 200,
+    "bytes": 3619,
+    "sha256": "fec939e088bd56a2a65453d25ecef768c31af6a39d4c31b5eaa4f4df70e2d813",
+    "expected_sha256": "fec939e088bd56a2a65453d25ecef768c31af6a39d4c31b5eaa4f4df70e2d813",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9ac3b0965694f8cf7a118deb6700d64c8eb08e40/data/participation-source-reviews/20261105-maine-pennsylvania-01/lewiston-native-voter-counts.csv",
+    "file": "049-original.bin",
+    "status": 200,
+    "bytes": 19164,
+    "sha256": "43a36160ee01aadaad235da1dedcbd55523b250f3ba513a02c5eb6d8411c0158",
+    "expected_sha256": "43a36160ee01aadaad235da1dedcbd55523b250f3ba513a02c5eb6d8411c0158",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9ac3b0965694f8cf7a118deb6700d64c8eb08e40/data/participation-source-reviews/20261105-maine-pennsylvania-01/pennsylvania-county-mail-returns.csv",
+    "file": "050-original.bin",
+    "status": 200,
+    "bytes": 30882,
+    "sha256": "99b4aa1e7714b8bdca05a0f4759faa09c054d875dc801f500c1c11024804d8c0",
+    "expected_sha256": "99b4aa1e7714b8bdca05a0f4759faa09c054d875dc801f500c1c11024804d8c0",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/3392e0086c3ab60b4aef4c5c522ca369e813cae6/data/precinct-results/20261105-washington-03/results.csv.gz",
+    "file": "051-original.bin",
+    "status": 200,
+    "bytes": 170562,
+    "sha256": "7f140848affec10eb89d5e3e25c287562df0625e8ee87cffbea25b5735efba46",
+    "expected_sha256": "7f140848affec10eb89d5e3e25c287562df0625e8ee87cffbea25b5735efba46",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2e7b240d3cece70001ef573dd487538d46ebd5cd/data/precinct-results/20261105-north-dakota-02/participation.json.gz",
+    "file": "052-original.bin",
+    "status": 200,
+    "bytes": 5339,
+    "sha256": "b0ef27a3112a5ad80850fe611dfcb16d3c433dba9aa9345b20c44c7b906c7dc2",
+    "expected_sha256": "b0ef27a3112a5ad80850fe611dfcb16d3c433dba9aa9345b20c44c7b906c7dc2",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2e7b240d3cece70001ef573dd487538d46ebd5cd/data/precinct-results/20261105-north-dakota-02/results.csv.gz",
+    "file": "053-original.bin",
+    "status": 200,
+    "bytes": 9157,
+    "sha256": "2993df00c1b835032db5cb9c1983480e4da4f11b477c9cbdb3a270dcef759a2d",
+    "expected_sha256": "2993df00c1b835032db5cb9c1983480e4da4f11b477c9cbdb3a270dcef759a2d",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/87402220be76ca71e4407132e81cc24a2df71fd9/data/participation-local/20261104T220000Z-identity-audit/observations.csv.gz",
+    "file": "054-original.bin",
+    "status": 200,
+    "bytes": 3927068,
+    "sha256": "26ee9196b51790aef190fc866d07e598477c4c2579ebb566a43f11c75240ad66",
+    "expected_sha256": "26ee9196b51790aef190fc866d07e598477c4c2579ebb566a43f11c75240ad66",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/248bd0a333b604530ffe553d1780a0fbd6fbdf6d/data/precinct-results/20261105-virginia-02/participation.json.gz",
+    "file": "055-original.bin",
+    "status": 200,
+    "bytes": 72425,
+    "sha256": "7b8a2ad3327d23575cc5b4eb94043c837f08cb5661b27d4a6a9e812ae124297c",
+    "expected_sha256": "7b8a2ad3327d23575cc5b4eb94043c837f08cb5661b27d4a6a9e812ae124297c",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/248bd0a333b604530ffe553d1780a0fbd6fbdf6d/data/precinct-results/20261105-virginia-02/results.csv.gz",
+    "file": "056-original.bin",
+    "status": 200,
+    "bytes": 118803,
+    "sha256": "3d33ee0e64fb2545e30bf824438ee1e4b6b4c1fe3e26806bb549176b302adbb3",
+    "expected_sha256": "3d33ee0e64fb2545e30bf824438ee1e4b6b4c1fe3e26806bb549176b302adbb3",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/69b8aefa3004255b49c5fc731d4491fc2c1b13c4/data/precinct-results/20261105-idaho-01/participation.json.gz",
+    "file": "057-original.bin",
+    "status": 200,
+    "bytes": 36414,
+    "sha256": "45a0720c1770af7647124e13d62263d5f3f2161b06f5c35ee21426478fc689f8",
+    "expected_sha256": "45a0720c1770af7647124e13d62263d5f3f2161b06f5c35ee21426478fc689f8",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/69b8aefa3004255b49c5fc731d4491fc2c1b13c4/data/precinct-results/20261105-idaho-01/results.csv.gz",
+    "file": "058-original.bin",
+    "status": 200,
+    "bytes": 35125,
+    "sha256": "0afab29a679bd0a8f247a857691832085fa476be842960eeb65bea569da08ccd",
+    "expected_sha256": "0afab29a679bd0a8f247a857691832085fa476be842960eeb65bea569da08ccd",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ac356d8a2b0f13925194cb4b84fbfc18bf171300/data/county-results/20261105-house-02/county-results.csv",
+    "file": "059-original.bin",
+    "status": 200,
+    "bytes": 391295,
+    "sha256": "32ecd9698ab3e4e50c1e1928b5776cb15ceaab5bf365f256d500b676e6305c75",
+    "expected_sha256": "32ecd9698ab3e4e50c1e1928b5776cb15ceaab5bf365f256d500b676e6305c75",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ac356d8a2b0f13925194cb4b84fbfc18bf171300/data/county-results/20261105-house-02/county-results.json.gz",
+    "file": "060-original.bin",
+    "status": 200,
+    "bytes": 258163,
+    "sha256": "ee626817259cb56b27d2c972988e18708ad3c49ef90d9e24f455a3e0acb951d5",
+    "expected_sha256": "ee626817259cb56b27d2c972988e18708ad3c49ef90d9e24f455a3e0acb951d5",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/37037fedce182428cfbda2ef23971e911b342fda/data/county-party-votes/20261105-house-party-02/county-district-candidate-totals.csv.gz",
+    "file": "061-original.bin",
+    "status": 200,
+    "bytes": 139067,
+    "sha256": "e5d81083af5752de40cd622143c556afa7afcc9e849a7d268b5b409136cd4829",
+    "expected_sha256": "e5d81083af5752de40cd622143c556afa7afcc9e849a7d268b5b409136cd4829",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/37037fedce182428cfbda2ef23971e911b342fda/data/county-party-votes/20261105-house-party-02/county-party-totals.csv.gz",
+    "file": "062-original.bin",
+    "status": 200,
+    "bytes": 74960,
+    "sha256": "dbd2b6174ece264a24bbf972fa7a9bfc8d7d232f3c745ee817d30039b34898a6",
+    "expected_sha256": "dbd2b6174ece264a24bbf972fa7a9bfc8d7d232f3c745ee817d30039b34898a6",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/37037fedce182428cfbda2ef23971e911b342fda/data/county-party-votes/20261105-house-party-02/district-candidate-totals.csv.gz",
+    "file": "063-original.bin",
+    "status": 200,
+    "bytes": 24530,
+    "sha256": "d926f6dc85a0532b98b252c5f6c5d1b2e6a21e31a77f4ea7758e0da237002ec6",
+    "expected_sha256": "d926f6dc85a0532b98b252c5f6c5d1b2e6a21e31a77f4ea7758e0da237002ec6",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/37037fedce182428cfbda2ef23971e911b342fda/data/county-party-votes/20261105-house-party-02/state-party-totals.csv.gz",
+    "file": "064-original.bin",
+    "status": 200,
+    "bytes": 2372,
+    "sha256": "66aa47b5af7617abc979356dc9a99371320d67d455ea683094e3efecfe04da21",
+    "expected_sha256": "66aa47b5af7617abc979356dc9a99371320d67d455ea683094e3efecfe04da21",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/30b5985970349201c877b4236830a7c85065a68a/data/precinct-source-reviews/20261105/AZ-2026-native-counts/all-native-option-counts.csv.gz",
+    "file": "065-original.bin",
+    "status": 200,
+    "bytes": 2457809,
+    "sha256": "830a323fefc2ab3c03259dcb31ed36712677e111e61c7add593b646af8906d7b",
+    "expected_sha256": "830a323fefc2ab3c03259dcb31ed36712677e111e61c7add593b646af8906d7b",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/30b5985970349201c877b4236830a7c85065a68a/data/precinct-source-reviews/20261105/AZ-2026-native-counts/api-option-correspondence.csv",
+    "file": "066-original.bin",
+    "status": 200,
+    "bytes": 311086,
+    "sha256": "b8e01507b8742b2c60a3a088578d9c7101197769fe3a472e43b20caf310a3721",
+    "expected_sha256": "b8e01507b8742b2c60a3a088578d9c7101197769fe3a472e43b20caf310a3721",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/30b5985970349201c877b4236830a7c85065a68a/data/precinct-source-reviews/20261105/AZ-2026-native-counts/county-participation.csv",
+    "file": "067-original.bin",
+    "status": 200,
+    "bytes": 1533,
+    "sha256": "f39a4badd9cb63a468cd47e8b4baf65c7c41222221bdb84cd08c2045927d12c9",
+    "expected_sha256": "f39a4badd9cb63a468cd47e8b4baf65c7c41222221bdb84cd08c2045927d12c9",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/30b5985970349201c877b4236830a7c85065a68a/data/precinct-source-reviews/20261105/AZ-2026-native-counts/precinct-counts.csv",
+    "file": "068-original.bin",
+    "status": 200,
+    "bytes": 8389640,
+    "sha256": "e5accbdca0a116911e735716076709b6cf9dac850d9d0071d3c7e91a85e0c865",
+    "expected_sha256": "e5accbdca0a116911e735716076709b6cf9dac850d9d0071d3c7e91a85e0c865",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/30b5985970349201c877b4236830a7c85065a68a/data/precinct-source-reviews/20261105/AZ-2026-native-counts/precinct-participation.csv",
+    "file": "069-original.bin",
+    "status": 200,
+    "bytes": 401307,
+    "sha256": "32078a79ca64e5b68c376090e02dbc9c60f22740031f1a4e44c334afb00cc8f1",
+    "expected_sha256": "32078a79ca64e5b68c376090e02dbc9c60f22740031f1a4e44c334afb00cc8f1",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f784b75c3233f1a1b00d7cfa0aa0815e56d18303/data/precinct-results/20261105-vermont-03/municipal-participation.json.gz",
+    "file": "070-original.bin",
+    "status": 200,
+    "bytes": 9411,
+    "sha256": "53295965463fa9d4f56d4caa5691b7a10ecbb9750e6df1ddc1c4e1a82dbb8672",
+    "expected_sha256": "53295965463fa9d4f56d4caa5691b7a10ecbb9750e6df1ddc1c4e1a82dbb8672",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f784b75c3233f1a1b00d7cfa0aa0815e56d18303/data/precinct-results/20261105-vermont-03/results.csv.gz",
+    "file": "071-original.bin",
+    "status": 200,
+    "bytes": 14526,
+    "sha256": "dbcedc6b0bc03fd1c529d3c95641261050d41acbb68b0e3701f624a7d934b913",
+    "expected_sha256": "dbcedc6b0bc03fd1c529d3c95641261050d41acbb68b0e3701f624a7d934b913",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ae1673add884650dd2a0537863e6d29f01c958db/data/county-source-reviews/20261105-dc-reviewed-01/all-contest-native-summary.csv",
+    "file": "072-original.bin",
+    "status": 200,
+    "bytes": 92512,
+    "sha256": "89381d59bd8e7155e6a09cd18fd639bb5cfd1cb934a379f1cd4f9bf4572e786b",
+    "expected_sha256": "89381d59bd8e7155e6a09cd18fd639bb5cfd1cb934a379f1cd4f9bf4572e786b",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ae1673add884650dd2a0537863e6d29f01c958db/data/county-source-reviews/20261105-dc-reviewed-01/county-delegate-ballot-accounting.csv",
+    "file": "073-original.bin",
+    "status": 200,
+    "bytes": 628,
+    "sha256": "cfc64ff5feb49da2b8a76252550d6c8fc003a3eab806c1d7c40ca9d7321097e4",
+    "expected_sha256": "cfc64ff5feb49da2b8a76252550d6c8fc003a3eab806c1d7c40ca9d7321097e4",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ae1673add884650dd2a0537863e6d29f01c958db/data/county-source-reviews/20261105-dc-reviewed-01/county-delegate-candidate-results.csv",
+    "file": "074-original.bin",
+    "status": 200,
+    "bytes": 1077,
+    "sha256": "60696db99efc81c423646595e92a9fcd2f07cc26d557f0dc89dc21db59903374",
+    "expected_sha256": "60696db99efc81c423646595e92a9fcd2f07cc26d557f0dc89dc21db59903374",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ae1673add884650dd2a0537863e6d29f01c958db/data/county-source-reviews/20261105-dc-reviewed-01/county-delegate-party-totals.csv",
+    "file": "075-original.bin",
+    "status": 200,
+    "bytes": 268,
+    "sha256": "0cd4eab17cddf55a8120e1fd88d6229a4d338423130a7798bd0beac9ae7095e2",
+    "expected_sha256": "0cd4eab17cddf55a8120e1fd88d6229a4d338423130a7798bd0beac9ae7095e2",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ae1673add884650dd2a0537863e6d29f01c958db/data/county-source-reviews/20261105-dc-reviewed-01/county-participation.csv",
+    "file": "076-original.bin",
+    "status": 200,
+    "bytes": 599,
+    "sha256": "3043f850c2afc35f03fcd7462fc049b85d502f6f5fa376d6c34b9ec104c5bb67",
+    "expected_sha256": "3043f850c2afc35f03fcd7462fc049b85d502f6f5fa376d6c34b9ec104c5bb67",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ae1673add884650dd2a0537863e6d29f01c958db/data/county-source-reviews/20261105-dc-reviewed-01/native-unit-delegate-counts.csv",
+    "file": "077-original.bin",
+    "status": 200,
+    "bytes": 119879,
+    "sha256": "d2bed741070fc842066dc3b25d8885f102e73dce6ed12884830679e80a39a8ce",
+    "expected_sha256": "d2bed741070fc842066dc3b25d8885f102e73dce6ed12884830679e80a39a8ce",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ae1673add884650dd2a0537863e6d29f01c958db/data/county-source-reviews/20261105-dc-reviewed-01/native-unit-participation.csv",
+    "file": "078-original.bin",
+    "status": 200,
+    "bytes": 2347,
+    "sha256": "0b5bb294096a9b469edb13cdbfa2107c234541e2d66da0c19fd3172e016276dc",
+    "expected_sha256": "0b5bb294096a9b469edb13cdbfa2107c234541e2d66da0c19fd3172e016276dc",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/11916873d24e22bbabe52425f5351e308f9bcdc3/data/county-source-reviews/20261105-northampton-reviewed-01/county-ballot-mode-counts.csv",
+    "file": "079-original.bin",
+    "status": 200,
+    "bytes": 205,
+    "sha256": "7278a497e38684280ddb93a6418b455ea63d17f55c0a720698e563610cb7fcde",
+    "expected_sha256": "7278a497e38684280ddb93a6418b455ea63d17f55c0a720698e563610cb7fcde",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/11916873d24e22bbabe52425f5351e308f9bcdc3/data/county-source-reviews/20261105-northampton-reviewed-01/county-candidate-results.csv",
+    "file": "080-original.bin",
+    "status": 200,
+    "bytes": 4216,
+    "sha256": "b4d8134d63eec62dc3c46fc9a665886727d9f929fc2e663b9419f8e8c30e6bb5",
+    "expected_sha256": "b4d8134d63eec62dc3c46fc9a665886727d9f929fc2e663b9419f8e8c30e6bb5",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/11916873d24e22bbabe52425f5351e308f9bcdc3/data/county-source-reviews/20261105-northampton-reviewed-01/county-contest-totals.csv",
+    "file": "081-original.bin",
+    "status": 200,
+    "bytes": 1356,
+    "sha256": "991f029ac0ac1165dd17779b64381b589a983f9375368645a910c5be881c72af",
+    "expected_sha256": "991f029ac0ac1165dd17779b64381b589a983f9375368645a910c5be881c72af",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/11916873d24e22bbabe52425f5351e308f9bcdc3/data/county-source-reviews/20261105-northampton-reviewed-01/county-office-party-totals.csv",
+    "file": "082-original.bin",
+    "status": 200,
+    "bytes": 753,
+    "sha256": "1dad6dc917a15f8375507645758b630d0b100ef24655c68f62789728f920e019",
+    "expected_sha256": "1dad6dc917a15f8375507645758b630d0b100ef24655c68f62789728f920e019",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/11916873d24e22bbabe52425f5351e308f9bcdc3/data/county-source-reviews/20261105-northampton-reviewed-01/county-participation.csv",
+    "file": "083-original.bin",
+    "status": 200,
+    "bytes": 606,
+    "sha256": "759c8ff0c0dc7ae31c2ed8af8f324a75bf7a9b4dbce656e7fe6bca3ed8b4dc34",
+    "expected_sha256": "759c8ff0c0dc7ae31c2ed8af8f324a75bf7a9b4dbce656e7fe6bca3ed8b4dc34",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/11916873d24e22bbabe52425f5351e308f9bcdc3/data/county-source-reviews/20261105-northampton-reviewed-01/native-unit-candidate-counts.csv",
+    "file": "084-original.bin",
+    "status": 200,
+    "bytes": 289995,
+    "sha256": "8c6e919810a46b925118ac7f082aa083f308aa8ccfbf18038e138b28a73d086d",
+    "expected_sha256": "8c6e919810a46b925118ac7f082aa083f308aa8ccfbf18038e138b28a73d086d",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/11916873d24e22bbabe52425f5351e308f9bcdc3/data/county-source-reviews/20261105-northampton-reviewed-01/native-unit-contest-coverage.csv",
+    "file": "085-original.bin",
+    "status": 200,
+    "bytes": 75657,
+    "sha256": "d6900366646ee0b66293cf433cc00dec449b1c80ba7d18b56dbc4dc7306346b5",
+    "expected_sha256": "d6900366646ee0b66293cf433cc00dec449b1c80ba7d18b56dbc4dc7306346b5",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/c40d3f5a4e2ccd48d216c246aefa1bf3a558552b/data/uf-turnout/20261105T155617Z/originals/documentation.txt",
+    "file": "086-original.bin",
+    "status": 200,
+    "bytes": 6942,
+    "sha256": "403fee549826f57d620256fb33d42ffd67e19360bc611330a6ce9f01a79b8dcd",
+    "expected_sha256": "403fee549826f57d620256fb33d42ffd67e19360bc611330a6ce9f01a79b8dcd",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/c40d3f5a4e2ccd48d216c246aefa1bf3a558552b/data/uf-turnout/20261105T155617Z/originals/turnout.csv",
+    "file": "087-original.bin",
+    "status": 200,
+    "bytes": 6019,
+    "sha256": "459258dd8ffcbf419aea14c9e0b4d3aee4a57410897099e0f06684e7d8e881d0",
+    "expected_sha256": "459258dd8ffcbf419aea14c9e0b4d3aee4a57410897099e0f06684e7d8e881d0",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/c40d3f5a4e2ccd48d216c246aefa1bf3a558552b/data/uf-turnout/20261105T155617Z/turnout.csv",
+    "file": "088-original.bin",
+    "status": 200,
+    "bytes": 5910,
+    "sha256": "42c6071311a74a795a648ba75f918e3cfedbce75ff5905063ff607485ff13cb5",
+    "expected_sha256": "42c6071311a74a795a648ba75f918e3cfedbce75ff5905063ff607485ff13cb5",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/03b204adb7bd092e07e192706de2961119960d01/data/precinct-source-reviews/20261105/MI-2026-native-county-counts-01/isabella-precinct-results-by-group.csv",
+    "file": "089-original.bin",
+    "status": 200,
+    "bytes": 1924062,
+    "sha256": "ff1f84d77590950d56ed6c7c86f7986721fb5b09f9a39ba43acfc02cacda43b4",
+    "expected_sha256": "ff1f84d77590950d56ed6c7c86f7986721fb5b09f9a39ba43acfc02cacda43b4",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/03b204adb7bd092e07e192706de2961119960d01/data/precinct-source-reviews/20261105/MI-2026-native-county-counts-01/isabella-precinct-results.csv",
+    "file": "090-original.bin",
+    "status": 200,
+    "bytes": 561213,
+    "sha256": "daa9c754b0b1dab7e827ef9d8375e5d1e74f28c0e1967dfd1315c0176c5705cf",
+    "expected_sha256": "daa9c754b0b1dab7e827ef9d8375e5d1e74f28c0e1967dfd1315c0176c5705cf",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/03b204adb7bd092e07e192706de2961119960d01/data/precinct-source-reviews/20261105/MI-2026-native-county-counts-01/isabella-summary-results-by-group.csv",
+    "file": "091-original.bin",
+    "status": 200,
+    "bytes": 117964,
+    "sha256": "f635d8207a4a3b0444b1fd566f50f3ac40af57e502de57f69d793cd9cc4f6eea",
+    "expected_sha256": "f635d8207a4a3b0444b1fd566f50f3ac40af57e502de57f69d793cd9cc4f6eea",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/03b204adb7bd092e07e192706de2961119960d01/data/precinct-source-reviews/20261105/MI-2026-native-county-counts-01/isabella-summary-results.csv",
+    "file": "092-original.bin",
+    "status": 200,
+    "bytes": 32868,
+    "sha256": "cbb024618ee8a70b9e9459cd6fc335b14165b1847a585002b4e9ef6cec2d2d2f",
+    "expected_sha256": "cbb024618ee8a70b9e9459cd6fc335b14165b1847a585002b4e9ef6cec2d2d2f",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/03b204adb7bd092e07e192706de2961119960d01/data/precinct-source-reviews/20261105/MI-2026-native-county-counts-01/original-isabella-results.xlsx.gz",
+    "file": "093-original.bin",
+    "status": 200,
+    "bytes": 627781,
+    "sha256": "52abdf1fadb286d3cc776285a88166603e9e136b5cb4323ab1591daeec2960b1",
+    "expected_sha256": "52abdf1fadb286d3cc776285a88166603e9e136b5cb4323ab1591daeec2960b1",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/03b204adb7bd092e07e192706de2961119960d01/data/precinct-source-reviews/20261105/MI-2026-native-county-counts-01/precinct-participation.csv",
+    "file": "094-original.bin",
+    "status": 200,
+    "bytes": 15130,
+    "sha256": "c171ee2a21e976ebb41826ecc95854201e74f8335f664d526d64e3f1e2dbf917",
+    "expected_sha256": "c171ee2a21e976ebb41826ecc95854201e74f8335f664d526d64e3f1e2dbf917",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/03b204adb7bd092e07e192706de2961119960d01/data/precinct-source-reviews/20261105/MI-2026-native-county-counts-01/precinct-results.csv",
+    "file": "095-original.bin",
+    "status": 200,
+    "bytes": 22243,
+    "sha256": "d9d93a4dd78dd601ae8aabaca73c262a3fe559c669d6a0af9dd6d260100e95b0",
+    "expected_sha256": "d9d93a4dd78dd601ae8aabaca73c262a3fe559c669d6a0af9dd6d260100e95b0",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/03b204adb7bd092e07e192706de2961119960d01/data/precinct-source-reviews/20261105/MI-2026-native-county-counts-01/unmatched-precincts.csv",
+    "file": "096-original.bin",
+    "status": 200,
+    "bytes": 863,
+    "sha256": "696f12e8387d9a285715ae446d5aa7dde4f2e6a903be789d1806803e079ea2c0",
+    "expected_sha256": "696f12e8387d9a285715ae446d5aa7dde4f2e6a903be789d1806803e079ea2c0",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/1f6acef3c57fa29b63cdf4e94182a9e3b0d25a36/data/precinct-source-reviews/20261105/KY-2026-native-county-counts-01/all-contest-results.csv",
+    "file": "097-original.bin",
+    "status": 200,
+    "bytes": 27938,
+    "sha256": "42b8dbc5e50bc149cdec53be56538bbaf50e83a3c292473713660071b3152388",
+    "expected_sha256": "42b8dbc5e50bc149cdec53be56538bbaf50e83a3c292473713660071b3152388",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/1f6acef3c57fa29b63cdf4e94182a9e3b0d25a36/data/precinct-source-reviews/20261105/KY-2026-native-county-counts-01/county-house-results.csv",
+    "file": "098-original.bin",
+    "status": 200,
+    "bytes": 633,
+    "sha256": "56acfef2003cda1d8d8ab22eead75d20c468b02af4115656cc2cbfa9ac36efcf",
+    "expected_sha256": "56acfef2003cda1d8d8ab22eead75d20c468b02af4115656cc2cbfa9ac36efcf",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/1f6acef3c57fa29b63cdf4e94182a9e3b0d25a36/data/precinct-source-reviews/20261105/KY-2026-native-county-counts-01/county-participation.csv",
+    "file": "099-original.bin",
+    "status": 200,
+    "bytes": 314,
+    "sha256": "ad7b700798acc077148b82e81a46130ec54052ea9bbef0eaa10ec50a8f5d60db",
+    "expected_sha256": "ad7b700798acc077148b82e81a46130ec54052ea9bbef0eaa10ec50a8f5d60db",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/1f6acef3c57fa29b63cdf4e94182a9e3b0d25a36/data/precinct-source-reviews/20261105/KY-2026-native-county-counts-01/source/daviess-2026-general-cumulative.pdf",
+    "file": "100-original.bin",
+    "status": 200,
+    "bytes": 258815,
+    "sha256": "a93197d2b4b3e92191d5612da2cce67f4c43a40ffb84ab7728576db1a4169433",
+    "expected_sha256": "a93197d2b4b3e92191d5612da2cce67f4c43a40ffb84ab7728576db1a4169433",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/dc81c095cec959910c6dfb82da8c9184d7a993f9/public/participation-current/20261104T220424Z/complete-snapshot.zip",
+    "file": "101-original.bin",
+    "status": 200,
+    "bytes": 1288070,
+    "sha256": "3734886ed3c5cbbc406f6adacd60dff2b1b543c42546fc39e89e46da1220dc08",
+    "expected_sha256": "3734886ed3c5cbbc406f6adacd60dff2b1b543c42546fc39e89e46da1220dc08",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/dc81c095cec959910c6dfb82da8c9184d7a993f9/public/participation-current/20261104T220424Z/counties.csv",
+    "file": "102-original.bin",
+    "status": 200,
+    "bytes": 122092,
+    "sha256": "965fbf7d9748e792376e29aa6824a649575ee87ca485f64735b731b8c051fb00",
+    "expected_sha256": "965fbf7d9748e792376e29aa6824a649575ee87ca485f64735b731b8c051fb00",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/dc81c095cec959910c6dfb82da8c9184d7a993f9/public/participation-current/20261104T220424Z/precincts.csv",
+    "file": "103-original.bin",
+    "status": 200,
+    "bytes": 2003380,
+    "sha256": "a46b43b0276ee46eca45217da9e13872194316c5b9fdd9cbf1de2fad0124786c",
+    "expected_sha256": "a46b43b0276ee46eca45217da9e13872194316c5b9fdd9cbf1de2fad0124786c",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/4dd4f76825e664f5f785c297a115718f0d184910/data/county-results/20261105-house-01/county-results.csv",
+    "file": "104-original.bin",
+    "status": 200,
+    "bytes": 378482,
+    "sha256": "66fe0a8a9b243625b559b7c251440a31874d19d5ddb613d92eb98e8ca2681a8f",
+    "expected_sha256": "66fe0a8a9b243625b559b7c251440a31874d19d5ddb613d92eb98e8ca2681a8f",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/4dd4f76825e664f5f785c297a115718f0d184910/data/county-results/20261105-house-01/county-results.json.gz",
+    "file": "105-original.bin",
+    "status": 200,
+    "bytes": 249739,
+    "sha256": "95cff58abb8746f0d51a51375fbd9f3eb690795f9f2b93ddb04a9b78f386b56d",
+    "expected_sha256": "95cff58abb8746f0d51a51375fbd9f3eb690795f9f2b93ddb04a9b78f386b56d",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2b2af4fdf6f0a9dda6de3e2d3d238a0654123d90/data/county-results/20261105-official-pa-01/county-results.csv",
+    "file": "106-original.bin",
+    "status": 200,
+    "bytes": 391695,
+    "sha256": "74c112427438a1ce1415f8878e33354d00d41ab8305a09937bc5c42dcfaeb20d",
+    "expected_sha256": "74c112427438a1ce1415f8878e33354d00d41ab8305a09937bc5c42dcfaeb20d",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2b2af4fdf6f0a9dda6de3e2d3d238a0654123d90/data/county-results/20261105-official-pa-01/county-results.json.gz",
+    "file": "107-original.bin",
+    "status": 200,
+    "bytes": 259016,
+    "sha256": "186dbdd2d1f5a5d139aa4004f526a33b22f163bfa3d9c188c1f34413428321ad",
+    "expected_sha256": "186dbdd2d1f5a5d139aa4004f526a33b22f163bfa3d9c188c1f34413428321ad",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2b2af4fdf6f0a9dda6de3e2d3d238a0654123d90/data/county-results/20261105-official-pa-01/party-votes/county-district-candidate-totals.csv.gz",
+    "file": "108-original.bin",
+    "status": 200,
+    "bytes": 139593,
+    "sha256": "5befe2a934158daffa1ebe63dc2755b4f9099b4b18ad2aa9d5638ff200fadfef",
+    "expected_sha256": "5befe2a934158daffa1ebe63dc2755b4f9099b4b18ad2aa9d5638ff200fadfef",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2b2af4fdf6f0a9dda6de3e2d3d238a0654123d90/data/county-results/20261105-official-pa-01/party-votes/county-party-totals.csv.gz",
+    "file": "109-original.bin",
+    "status": 200,
+    "bytes": 75097,
+    "sha256": "7989de794f4dccbd8bcce4a2759d370c30c3c4ebc25247ca23efcc7d21fdab0b",
+    "expected_sha256": "7989de794f4dccbd8bcce4a2759d370c30c3c4ebc25247ca23efcc7d21fdab0b",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2b2af4fdf6f0a9dda6de3e2d3d238a0654123d90/data/county-results/20261105-official-pa-01/party-votes/district-candidate-totals.csv.gz",
+    "file": "110-original.bin",
+    "status": 200,
+    "bytes": 24556,
+    "sha256": "9bb89476e0200eb8b008cb3b422854501ec5211bb1912a6f3edfa611e95d821e",
+    "expected_sha256": "9bb89476e0200eb8b008cb3b422854501ec5211bb1912a6f3edfa611e95d821e",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2b2af4fdf6f0a9dda6de3e2d3d238a0654123d90/data/county-results/20261105-official-pa-01/party-votes/state-party-totals.csv.gz",
+    "file": "111-original.bin",
+    "status": 200,
+    "bytes": 2375,
+    "sha256": "b51d4f7708c836a7c6a9ca11e9173976e5bbf2c9b8698698ce0fec0ce3d6893d",
+    "expected_sha256": "b51d4f7708c836a7c6a9ca11e9173976e5bbf2c9b8698698ce0fec0ce3d6893d",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6377914188f535e826677f989338742c8fd49921/data/county-results/20261105T155645Z/county-results.csv",
+    "file": "112-original.bin",
+    "status": 200,
+    "bytes": 391296,
+    "sha256": "7aea9fb608e24c046e2dc517da485ac54a4ef7b7fee129cd8e130c32d1e7bb9c",
+    "expected_sha256": "7aea9fb608e24c046e2dc517da485ac54a4ef7b7fee129cd8e130c32d1e7bb9c",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6377914188f535e826677f989338742c8fd49921/data/county-results/20261105T155645Z/county-results.json.gz",
+    "file": "113-original.bin",
+    "status": 200,
+    "bytes": 258112,
+    "sha256": "2f1f9b285f008c0fdfcaaf1bcef9a3c6100f3608adade228e2a4fb829a0b1f9c",
+    "expected_sha256": "2f1f9b285f008c0fdfcaaf1bcef9a3c6100f3608adade228e2a4fb829a0b1f9c",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6377914188f535e826677f989338742c8fd49921/data/county-results/20261105T155645Z/party-votes/county-district-candidate-totals.csv.gz",
+    "file": "114-original.bin",
+    "status": 200,
+    "bytes": 139021,
+    "sha256": "cfec0cefd648368c9a93be22d21d6ee5634176d2c4cc48a69cfdf76093416c5f",
+    "expected_sha256": "cfec0cefd648368c9a93be22d21d6ee5634176d2c4cc48a69cfdf76093416c5f",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6377914188f535e826677f989338742c8fd49921/data/county-results/20261105T155645Z/party-votes/county-party-totals.csv.gz",
+    "file": "115-original.bin",
+    "status": 200,
+    "bytes": 74967,
+    "sha256": "33c01a4eb0087551929a396e03007020f97373afc01366fba493c1207a330781",
+    "expected_sha256": "33c01a4eb0087551929a396e03007020f97373afc01366fba493c1207a330781",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6377914188f535e826677f989338742c8fd49921/data/county-results/20261105T155645Z/party-votes/district-candidate-totals.csv.gz",
+    "file": "116-original.bin",
+    "status": 200,
+    "bytes": 24556,
+    "sha256": "9bb89476e0200eb8b008cb3b422854501ec5211bb1912a6f3edfa611e95d821e",
+    "expected_sha256": "9bb89476e0200eb8b008cb3b422854501ec5211bb1912a6f3edfa611e95d821e",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6377914188f535e826677f989338742c8fd49921/data/county-results/20261105T155645Z/party-votes/state-party-totals.csv.gz",
+    "file": "117-original.bin",
+    "status": 200,
+    "bytes": 2375,
+    "sha256": "b51d4f7708c836a7c6a9ca11e9173976e5bbf2c9b8698698ce0fec0ce3d6893d",
+    "expected_sha256": "b51d4f7708c836a7c6a9ca11e9173976e5bbf2c9b8698698ce0fec0ce3d6893d",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/e602e676253a9a26a2b0f93f0005c4203419d93a/data/precinct-source-reviews/20261105/AZ-PIMA-2026-native-reference-01/original-county-results.csv.gz",
+    "file": "118-original.bin",
+    "status": 200,
+    "bytes": 140910,
+    "sha256": "55b08ba3298d490bf4d0da93a5cd4974e26b29685200897e5d874b39ae7231f2",
+    "expected_sha256": "55b08ba3298d490bf4d0da93a5cd4974e26b29685200897e5d874b39ae7231f2",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/e602e676253a9a26a2b0f93f0005c4203419d93a/data/precinct-source-reviews/20261105/AZ-PIMA-2026-native-reference-01/precinct-participation.csv",
+    "file": "119-original.bin",
+    "status": 200,
+    "bytes": 58316,
+    "sha256": "481f4b4fb6ceaa869006cf0134c27bc30aa6f83c2fa0a80c9d4bfe37c5118ee9",
+    "expected_sha256": "481f4b4fb6ceaa869006cf0134c27bc30aa6f83c2fa0a80c9d4bfe37c5118ee9",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/e602e676253a9a26a2b0f93f0005c4203419d93a/data/precinct-source-reviews/20261105/AZ-PIMA-2026-native-reference-01/precinct-results.csv",
+    "file": "120-original.bin",
+    "status": 200,
+    "bytes": 59908,
+    "sha256": "6cabcea822b8c99791a4cab511e638abbb1faf06538a2b4e13cd6d91d5b55016",
+    "expected_sha256": "6cabcea822b8c99791a4cab511e638abbb1faf06538a2b4e13cd6d91d5b55016",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/1b38950c424d2b60ce3ef90c73edb34e85bd5b5c/data/county-source-reviews/20261105-montgomery-reviewed-01/county-ballot-processing.csv",
+    "file": "121-original.bin",
+    "status": 200,
+    "bytes": 339,
+    "sha256": "beed9c75e5118234e67406b710a6db3221c8117c0685fb401ed8f6b9e0238976",
+    "expected_sha256": "beed9c75e5118234e67406b710a6db3221c8117c0685fb401ed8f6b9e0238976",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/1b38950c424d2b60ce3ef90c73edb34e85bd5b5c/data/county-source-reviews/20261105-montgomery-reviewed-01/county-candidate-mode-counts.csv",
+    "file": "122-original.bin",
+    "status": 200,
+    "bytes": 27956,
+    "sha256": "f33a7584457ea4fef143704642ad2ab7f350129947804f4352f6a50d95714079",
+    "expected_sha256": "f33a7584457ea4fef143704642ad2ab7f350129947804f4352f6a50d95714079",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/1b38950c424d2b60ce3ef90c73edb34e85bd5b5c/data/county-source-reviews/20261105-montgomery-reviewed-01/county-candidate-results.csv",
+    "file": "123-original.bin",
+    "status": 200,
+    "bytes": 8690,
+    "sha256": "7f56ca535d7ba583077bff4cb9f8895c7e08d9ee64306f903e02cb7978096267",
+    "expected_sha256": "7f56ca535d7ba583077bff4cb9f8895c7e08d9ee64306f903e02cb7978096267",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/1b38950c424d2b60ce3ef90c73edb34e85bd5b5c/data/county-source-reviews/20261105-montgomery-reviewed-01/county-contest-totals.csv",
+    "file": "124-original.bin",
+    "status": 200,
+    "bytes": 2848,
+    "sha256": "2007ae636453d640899d564f1971c7ce22f3721214fe6561a595b2a61abab2f8",
+    "expected_sha256": "2007ae636453d640899d564f1971c7ce22f3721214fe6561a595b2a61abab2f8",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/1b38950c424d2b60ce3ef90c73edb34e85bd5b5c/data/county-source-reviews/20261105-montgomery-reviewed-01/county-office-party-totals.csv",
+    "file": "125-original.bin",
+    "status": 200,
+    "bytes": 993,
+    "sha256": "7fc4d69da340c7535dd64fa36354f8ddc7f467107c8979d9018180f6cbf6fdc9",
+    "expected_sha256": "7fc4d69da340c7535dd64fa36354f8ddc7f467107c8979d9018180f6cbf6fdc9",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/1b38950c424d2b60ce3ef90c73edb34e85bd5b5c/data/county-source-reviews/20261105-montgomery-reviewed-01/county-participation.csv",
+    "file": "126-original.bin",
+    "status": 200,
+    "bytes": 510,
+    "sha256": "bcf5eb3a05eb32e13bd9bc09db81c03059d43339b8145ed7881da9968227b41b",
+    "expected_sha256": "bcf5eb3a05eb32e13bd9bc09db81c03059d43339b8145ed7881da9968227b41b",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/1b38950c424d2b60ce3ef90c73edb34e85bd5b5c/data/county-source-reviews/20261105-montgomery-reviewed-01/native-json-candidate-counts.csv",
+    "file": "127-original.bin",
+    "status": 200,
+    "bytes": 393939,
+    "sha256": "4cd91dcc73d481591468831da7280b7d667a9e30f1e1cce4659160e48bb5feb8",
+    "expected_sha256": "4cd91dcc73d481591468831da7280b7d667a9e30f1e1cce4659160e48bb5feb8",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/1b38950c424d2b60ce3ef90c73edb34e85bd5b5c/data/county-source-reviews/20261105-montgomery-reviewed-01/native-portion-candidate-counts.csv",
+    "file": "128-original.bin",
+    "status": 200,
+    "bytes": 611054,
+    "sha256": "912b31fa9d0af07dee6eb5b8bc8a62faa6d4a700259a3247f4975b55438a6e5a",
+    "expected_sha256": "912b31fa9d0af07dee6eb5b8bc8a62faa6d4a700259a3247f4975b55438a6e5a",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/1b38950c424d2b60ce3ef90c73edb34e85bd5b5c/data/county-source-reviews/20261105-montgomery-reviewed-01/native-portion-contest-accounting.csv",
+    "file": "129-original.bin",
+    "status": 200,
+    "bytes": 194135,
+    "sha256": "19773cdd57e9faddc24ad8ed9417121b5558a34da9bc5e0ba7edacb5ca03cdf3",
+    "expected_sha256": "19773cdd57e9faddc24ad8ed9417121b5558a34da9bc5e0ba7edacb5ca03cdf3",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/1b38950c424d2b60ce3ef90c73edb34e85bd5b5c/data/county-source-reviews/20261105-montgomery-reviewed-01/native-portion-participation.csv",
+    "file": "130-original.bin",
+    "status": 200,
+    "bytes": 16049,
+    "sha256": "7ebf3bde4e61383393b19802fdefd1f5e0e87fdb91849dfdf50efe714743374b",
+    "expected_sha256": "7ebf3bde4e61383393b19802fdefd1f5e0e87fdb91849dfdf50efe714743374b",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/408d154e41b1b4a258856a2a9ee532a43efaf455/data/precinct-results/20261105T015000Z/results.csv.gz",
+    "file": "131-original.bin",
+    "status": 200,
+    "bytes": 4553619,
+    "sha256": "7a53bb233a471fae3a14391978010e98768f931e4caadcc3213e8d1608cfa869",
+    "expected_sha256": "7a53bb233a471fae3a14391978010e98768f931e4caadcc3213e8d1608cfa869",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/14114bc6f9026532252ab17e6176dfaa6a8a975f/data/precinct-results/20261105-rhode-island-02/participation.json.gz",
+    "file": "132-original.bin",
+    "status": 200,
+    "bytes": 1403,
+    "sha256": "7f6b6bdeea7f94abbe36db26c75ba4dc7f2a51c1596c7f5c608dfaca6de599db",
+    "expected_sha256": "7f6b6bdeea7f94abbe36db26c75ba4dc7f2a51c1596c7f5c608dfaca6de599db",
+    "verified": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/14114bc6f9026532252ab17e6176dfaa6a8a975f/data/precinct-results/20261105-rhode-island-02/results.csv.gz",
+    "file": "133-original.bin",
+    "status": 200,
+    "bytes": 45324,
+    "sha256": "4cd36d6d71aedb7e3247a7783d68f9606f179b4fc7982f8ca03594fce4fd00e0",
+    "expected_sha256": "4cd36d6d71aedb7e3247a7783d68f9606f179b4fc7982f8ca03594fce4fd00e0",
+    "verified": true
+  }
+]

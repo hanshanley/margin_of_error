@@ -1,5 +1,5 @@
 {
-  "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/e3711018c84b6d93afbbf44b4489b63f1ab81699/data/precinct-results/20261105T015000Z/",
+  "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/408d154e41b1b4a258856a2a9ee532a43efaf455/data/precinct-results/20261105T015000Z/",
   "data_directory": "data/precinct-results/20261105T015000Z",
   "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-results-20261105/complete-precinct-results.zip",
   "complete_download_bytes": 1367560488,
@@ -7,7 +7,7 @@
   "publication": "live_verified_partial",
   "additional_snapshots": [{
     "label": "Minnesota 2026 and original nationwide 2020 precinct results",
-    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/391c681d58f04b57676d1824d5e1c1e4c5bed464/data/precinct-results/20261105-expansion-01/",
+    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/a81e721f4a013d5bd00e4e65825b101f501c9503/data/precinct-results/20261105-expansion-01/",
     "data_directory": "data/precinct-results/20261105-expansion-01",
     "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-expansion-20261105/complete-additional-precinct-results.zip",
     "complete_download_bytes": 398235632,
@@ -19,7 +19,7 @@
     ]
   }, {
     "label": "North Dakota 2026 precinct results and separate ballot counts",
-    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/4c9682b0d34a0a1e47762b037a13bbc718de9187/data/precinct-results/20261105-north-dakota-02/",
+    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2e7b240d3cece70001ef573dd487538d46ebd5cd/data/precinct-results/20261105-north-dakota-02/",
     "data_directory": "data/precinct-results/20261105-north-dakota-02",
     "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-north-dakota-maps-20261105/complete-north-dakota-2026-precinct-maps.zip",
     "complete_download_bytes": 12179890,
@@ -31,7 +31,8 @@
     ]
   }, {
     "label": "Vermont 2026 reporting-split results and separate municipal participation",
-    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7deca2dad49cdf72515fd83abb065f5bcd628ac6/data/precinct-results/20261105-vermont-03/",
+    "participation_file": "municipal-participation.json.gz",
+    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f784b75c3233f1a1b00d7cfa0aa0815e56d18303/data/precinct-results/20261105-vermont-03/",
     "data_directory": "data/precinct-results/20261105-vermont-03",
     "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-vermont-maps-20261105/complete-vermont-2026-reporting-split-maps.zip",
     "complete_download_bytes": 4857690,
@@ -43,7 +44,7 @@
     ]
   }, {
     "label": "Idaho 2026 precinct results and separate provisional participation",
-    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/664ef298d33a26fb52deb399596aad76a11098ed/data/precinct-results/20261105-idaho-01/",
+    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/69b8aefa3004255b49c5fc731d4491fc2c1b13c4/data/precinct-results/20261105-idaho-01/",
     "data_directory": "data/precinct-results/20261105-idaho-01",
     "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-idaho-maps-20261105/complete-idaho-2026-precinct-maps.zip",
     "complete_download_bytes": 34504158,
@@ -55,7 +56,7 @@
     ]
   }, {
     "label": "Rhode Island 2026 precinct results with 2022-2032 RIGIS reference and separate locality counts",
-    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f1ba1e85307ab3a4b730f473327c6b47d61944a4/data/precinct-results/20261105-rhode-island-02/",
+    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/14114bc6f9026532252ab17e6176dfaa6a8a975f/data/precinct-results/20261105-rhode-island-02/",
     "data_directory": "data/precinct-results/20261105-rhode-island-02",
     "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-rhode-island-maps-20261105-02/complete-rhode-island-2026-precinct-maps.zip",
     "complete_download_bytes": 6098657,
@@ -67,7 +68,7 @@
     ]
   }, {
     "label": "DC 2026 Council-chair plurality precinct results and separate provisional participation",
-    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/3f76e06af13cc1344f34da09be159eae042745f0/data/precinct-results/20261105-dc-01/",
+    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/89e901023fe156051b9a11975c52f38109cf8141/data/precinct-results/20261105-dc-01/",
     "data_directory": "data/precinct-results/20261105-dc-01",
     "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-dc-maps-20261105/complete-dc-2026-precinct-maps.zip",
     "complete_download_bytes": 1461521,
@@ -79,7 +80,7 @@
     ]
   }, {
     "label": "Boston only, Massachusetts 2026 central-tabulation subset (NOT combined results or turnout)",
-    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2b7785f38184428d3e27ea07c4ba1af417976656/data/precinct-results/20261105-boston-central-01/",
+    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f799e286188a7b6b2a38cdb8cfc6874467b822c3/data/precinct-results/20261105-boston-central-01/",
     "data_directory": "data/precinct-results/20261105-boston-central-01",
     "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-boston-central-maps-20261105/complete-boston-2026-central-tabulation-precinct-maps.zip",
     "complete_download_bytes": 4790833,
@@ -93,7 +94,7 @@
     ]
   }, {
     "label": "Washington 2026 partial House precinct results (14 counties; not statewide turnout)",
-    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/4aaa45e0a40ee16c66922637f795fe6fa9fa4ff7/data/precinct-results/20261105-washington-03/",
+    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/3392e0086c3ab60b4aef4c5c522ca369e813cae6/data/precinct-results/20261105-washington-03/",
     "data_directory": "data/precinct-results/20261105-washington-03",
     "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-washington-maps-20261105/complete-washington-2026-precinct-maps-03.zip",
     "complete_download_bytes": 116917377,
@@ -107,7 +108,7 @@
     ]
   }, {
     "label": "Virginia 2026 partial House precinct results (710 precincts; official current-reference shapes)",
-    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5b1665d31deb80c7c4d5a57b7f8c8d8bf93daedc/data/precinct-results/20261105-virginia-02/",
+    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/248bd0a333b604530ffe553d1780a0fbd6fbdf6d/data/precinct-results/20261105-virginia-02/",
     "data_directory": "data/precinct-results/20261105-virginia-02",
     "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-virginia-maps-20261105-02/complete-virginia-2026-supported-precinct-maps-02.zip",
     "complete_download_bytes": 83374714,
@@ -121,7 +122,7 @@
     ]
   }, {
     "label": "Arizona 2026 Maricopa County only: 949 verified precinct shapes, 936 candidate-result colors",
-    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2f4deb6cbb4ea04cb74098f11d5208b08a675565/data/precinct-results/20261105-arizona-maricopa-02/",
+    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2b234651a8500f428bbd275119c766baf0f61a17/data/precinct-results/20261105-arizona-maricopa-02/",
     "data_directory": "data/precinct-results/20261105-arizona-maricopa-02",
     "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-arizona-maricopa-maps-20261105-02/complete-arizona-maricopa-2026-precinct-maps-02.zip",
     "complete_download_bytes": 18768461,
@@ -135,35 +136,35 @@
   }],
   "source_batches": [{
     "label": "2022 precinct sources from 25 states",
-    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/b6453452206c4902f73d2434ea88906e1d02d5b9/data/precinct-source-reviews/20261105/2022/",
+    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/8809af9fc8de60977f0a7fabe8ca759cf0ce7487/data/precinct-source-reviews/20261105/2022/",
     "data_directory": "data/precinct-source-reviews/20261105/2022",
     "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-sources-2022-20261105/complete-2022-precinct-source-batch.zip",
     "complete_download_bytes": 22214839,
     "complete_download_sha256": "3525bd75010236853748ed04edc0545c1a24834a0a0c9deb411d8c11885494d1"
   }, {
     "label": "Hawaii 2024, 2022, 2020 and 2018 official election originals",
-    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/e9607606c1b52ec93ae266ff69f563bb3c57fad5/data/precinct-source-acquisitions/20261105/HI-historical/",
+    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/1f420fe7de7fcc79ea05235a03fe608e0a22866d/data/precinct-source-acquisitions/20261105/HI-historical/",
     "data_directory": "data/precinct-source-acquisitions/20261105/HI-historical",
     "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-hawaii-historical-20261105/complete-hawaii-historical-originals.zip",
     "complete_download_bytes": 38713054,
     "complete_download_sha256": "9a0ce9f92d742d7bf8da230ca061bb6c86d603afff80ba746709110ccbc1ede1"
   }, {
     "label": "Connecticut 2026, 2024, 2022, 2020, 2018 and 2016 official election originals",
-    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9ca28444bf05924da3aa4d10234280da48de46df/data/precinct-source-acquisitions/20261105/CT-2016-2026-02/",
+    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0baf30570cfbc09db862f8296ef6ef4d44e16479/data/precinct-source-acquisitions/20261105/CT-2016-2026-02/",
     "data_directory": "data/precinct-source-acquisitions/20261105/CT-2016-2026-02",
     "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-connecticut-originals-20261105/complete-connecticut-2016-2026-originals.zip",
     "complete_download_bytes": 3434133,
     "complete_download_sha256": "bf1756dd874eda8809339b7daccc41a8bbb70955475a8535d868e24854d2f439"
   }, {
     "label": "Clark County only, Nevada: 2024, 2022 and 2020 complete precinct-statement originals (not reconciled maps or turnout)",
-    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/96b735f02828b24cdb845851132c1450ab45eb55/data/precinct-source-acquisitions/20261105/NV-CLARK-2020-2024/",
+    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/096f1adc45c2d632e82e49de0959b53f6bc8c589/data/precinct-source-acquisitions/20261105/NV-CLARK-2020-2024/",
     "data_directory": "data/precinct-source-acquisitions/20261105/NV-CLARK-2020-2024",
     "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-nevada-clark-historical-20261105/complete-nevada-clark-2020-2024-originals.zip",
     "complete_download_bytes": 29238218,
     "complete_download_sha256": "aade65d7ae37f3d9c9cde568ac15779d06cb4c5315b3ba8ac8c9a997b406b562"
   }, {
     "label": "Wyoming 2026 and 2022 statewide and all 23 counties: complete source originals, not approved maps or turnout",
-    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/b46db3d20c8b16c002a3ebd6f78cb60b5177e110/data/precinct-source-acquisitions/20261105/WY-2026-2022/",
+    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ef4ca4d49df3603f2988630c1760f24cb58a40ce/data/precinct-source-acquisitions/20261105/WY-2026-2022/",
     "data_directory": "data/precinct-source-acquisitions/20261105/WY-2026-2022",
     "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-wyoming-originals-20261105/complete-wyoming-2026-2022-official-originals-01.zip",
     "complete_download_bytes": 14727543,

@@ -32,7 +32,7 @@ test('bulk download routing preserves full snapshots and leaves interactive JSON
 		'/participation-methods/20261104T183000Z/states.json');
 	assert.equal(participationDownload('/party-platforms/complete-analysis.zip'), '/party-platforms/complete-analysis.zip');
 	const current = participationDownload('/participation-current/20261104T220424Z/local.json');
-	assert.ok(current.startsWith('https://raw.githubusercontent.com/hanshanley/margin_of_error/c65c8b262cb421fc094578885c0c20f6d120d776/'));
+	assert.ok(current.startsWith('https://raw.githubusercontent.com/hanshanley/margin_of_error/dc81c095cec959910c6dfb82da8c9184d7a993f9/'));
 	assert.ok(current.endsWith('/20261104T220424Z/local.json'));
 	assert.equal(participationDownload('/participation-current/latest.json'), '/participation-current/latest.json');
 	assert.equal(rewriteDownloadHtml(`<a href="${path}" download>Full data</a><script>fetch("${path}")</script>`,

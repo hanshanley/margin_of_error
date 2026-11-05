@@ -1,0 +1,38 @@
+{
+  "download-pin-migration.json": {
+    "bytes": 58929,
+    "sha256": "288cc874f7263424c117fb2764489c6874e297a63375c90de4e2fa79bcf539fa"
+  },
+  "history-rewrite.json": {
+    "bytes": 26992,
+    "sha256": "1fbe7845e0e035c098e27275af5dc3a1ba8762345313d92ec0ef8c064d85b91f"
+  },
+  "live-review-pin-migration.json": {
+    "bytes": 602,
+    "sha256": "9c692a1d98086b191d90961bb8ebbdaac62bc0bf3a623511f5038327cd5d6b94"
+  },
+  "local-browser.json": {
+    "bytes": 44223,
+    "sha256": "c7ffe4f0ca50ffc28574358069d30d80654880444b6237fb9375d6aeba9ec611"
+  },
+  "nonmain-refs.json": {
+    "bytes": 4164,
+    "sha256": "091206d0e5d9835cf2ab4a3bd484d0c0af23cd5652bc6cd32732ee1f76018606"
+  },
+  "public-download-verification.json": {
+    "bytes": 62813,
+    "sha256": "e6b15396b6d43feaf84ca00858121532dd895c646c79f182e787bbd2fc8ba822"
+  },
+  "release-assets-before.json": {
+    "bytes": 51257,
+    "sha256": "e66e2396bec961807d67f7c2ce968a6ab7ceef858175e4102da6a9f0431e684f"
+  },
+  "security-status.json": {
+    "bytes": 1739,
+    "sha256": "f094b993e233ab503f5f79027fa4cc06fc659c1d82cf434cc5b4555e0b6416fc"
+  },
+  "transfer-batches.json": {
+    "bytes": 946,
+    "sha256": "6cf720082203ddb6f39fb235b2e83b62033fa1fc7bcb2594c7a1fb6814149fb5"
+  }
+}

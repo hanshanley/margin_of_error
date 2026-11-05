@@ -1,0 +1,428 @@
+{
+  "refs_before": {
+    "refs/heads/main": "68119df41532cb24d19964df703fac6b2a67a619",
+    "refs/heads/participation-local-data": "9114dccf0f57afaaaf0b4baf80f6f69984af1c16",
+    "refs/heads/voter-participation-analysis": "ba84a93da019aa25835281768df68702af18952b",
+    "refs/heads/voter-participation-source-key-cleanup-20261105": "68119df41532cb24d19964df703fac6b2a67a619",
+    "refs/tags/participation-sources-20261104-late": "20e196b89404665221b8e8e427482553435ac8a4",
+    "refs/tags/voter-county-2026-20261105t155645z": "0752cc08362f34f87df3dcfcdd2f8c6568f25b7f",
+    "refs/tags/voter-county-dc-delegate-20261105-01": "7e4262e73e021c3362ae510360513b0187cd95ee",
+    "refs/tags/voter-county-house-20261105": "c9a4d78227693f5d0562aa9a280ceef36afc1d0e",
+    "refs/tags/voter-county-house-20261105-02": "6b6b96caed4fa4f7c66fd206a64bd709310a69f2",
+    "refs/tags/voter-county-house-history-20261105-01": "9c1590362994ee87c510ebe34a253cea6ba90217",
+    "refs/tags/voter-county-house-history-20261105-02": "d14199b6510e32a9543014933747887c28bf0ca6",
+    "refs/tags/voter-county-house-history-20261105-03": "3a0bdb1e1603dc9de4d4934558ac4c53c4957adc",
+    "refs/tags/voter-county-house-history-20261105-04": "a5baf7cc829cedc6d379e83ae577ed61b2370731",
+    "refs/tags/voter-county-official-pa-20261105-01": "cbff6e4a4bcd8b4569f447b0d994a34ca79ca10f",
+    "refs/tags/voter-county-party-votes-20261105-01": "17da5cc555c543ff9231282f74661a90ea2a6e28",
+    "refs/tags/voter-county-party-votes-20261105-02": "17da5cc555c543ff9231282f74661a90ea2a6e28",
+    "refs/tags/voter-county-pennsylvania-bucks-20261105-01": "3d2be9ada0d1022511815fd8edb9d96fc7666b54",
+    "refs/tags/voter-county-pennsylvania-lancaster-20261105-01": "3aabcede13986955f094d706015486ad7a7c3362",
+    "refs/tags/voter-county-pennsylvania-monroe-20261105-01": "17c116bea04a42a364daee08bc028f3beca3737f",
+    "refs/tags/voter-county-pennsylvania-montgomery-20261105-01": "ddb9e8c86c772b41431cd5c7e0d1fd4eeb615563",
+    "refs/tags/voter-county-pennsylvania-northampton-20261105-01": "7f4d6dc4ed1a4e4637aa0f2f5772ef14fe81e990",
+    "refs/tags/voter-county-pennsylvania-three-county-20261105-01": "8293db8a8bda6ab561e139708495425fcea0c206",
+    "refs/tags/voter-county-source-redaction-20261105-01": "28cdb2c434e01ab2fe45696970e95b4454900a08",
+    "refs/tags/voter-participation-data-20261104": "36e54d1abd31d5dca330d3b140dc3cd80c0dc769",
+    "refs/tags/voter-participation-maine-pennsylvania-20261105": "41fcfe00819fdf7593ae416e45ca93507bc419e4",
+    "refs/tags/voter-precinct-alabama-native-counts-20261105": "11401d43852bf1808babc38136ce5cd71452d2a0",
+    "refs/tags/voter-precinct-alaska-20261105": "683cd3f50e38b7555ff656df5c39eb59b1c061f6",
+    "refs/tags/voter-precinct-alaska-reference-20261105": "a1ee6ee8c17bc1e9cb462c9954a030604f306ea6",
+    "refs/tags/voter-precinct-arizona-maricopa-maps-20261105-02": "2f4deb6cbb4ea04cb74098f11d5208b08a675565",
+    "refs/tags/voter-precinct-arizona-native-counts-20261105": "7b764000e2feef1054d37d2468b447f43d9e9b71",
+    "refs/tags/voter-precinct-arizona-pima-native-reference-20261105-01": "d39d1a1b35f571936a90bb08f8757822851811eb",
+    "refs/tags/voter-precinct-arkansas-native-counts-20261105": "36fb8b109d0044a1d3cc7527a2810cdf70f3dc2d",
+    "refs/tags/voter-precinct-arkansas-reference-geometry-20261105": "2913de35ea2cfb028579d559342ecaacd33f8c9d",
+    "refs/tags/voter-precinct-boston-central-maps-20261105": "2b7785f38184428d3e27ea07c4ba1af417976656",
+    "refs/tags/voter-precinct-connecticut-originals-20261105": "9ca28444bf05924da3aa4d10234280da48de46df",
+    "refs/tags/voter-precinct-dc-maps-20261105": "3f76e06af13cc1344f34da09be159eae042745f0",
+    "refs/tags/voter-precinct-expansion-20261105": "d8ee75a9c128058abd975186537dafbcdfb8d236",
+    "refs/tags/voter-precinct-florida-monroe-20261105": "2f26a01abe473bec14b5a601b7795c18a35af92a",
+    "refs/tags/voter-precinct-hawaii-20261105": "b01c32e84cb6346e6478f80c404eb82ec3e6bc7b",
+    "refs/tags/voter-precinct-hawaii-historical-20261105": "e9607606c1b52ec93ae266ff69f563bb3c57fad5",
+    "refs/tags/voter-precinct-idaho-20261105": "5c71828190a324b92650091de7b9184ae8ba64f8",
+    "refs/tags/voter-precinct-idaho-maps-20261105": "664ef298d33a26fb52deb399596aad76a11098ed",
+    "refs/tags/voter-precinct-iowa-linn-native-counts-20261105-01": "28e6592ebd1fbf449bd78cdb1b28dc83101ea746",
+    "refs/tags/voter-precinct-kentucky-native-counts-20261105-01": "c3d3fb539eb392091b48e0c327d2be574d46f1f1",
+    "refs/tags/voter-precinct-michigan-native-counts-20261105-01": "93b8152e27a68c837ab03197b4fa401f10bc33b0",
+    "refs/tags/voter-precinct-missouri-christian-20261105": "b30aa24882968e614cb9a89e4812a154f0de18ab",
+    "refs/tags/voter-precinct-nevada-clark-historical-20261105": "96b735f02828b24cdb845851132c1450ab45eb55",
+    "refs/tags/voter-precinct-north-dakota-20261105": "dc3dce10f628be118814940ffc3ffc8ebdbe0f23",
+    "refs/tags/voter-precinct-north-dakota-maps-20261105": "4c9682b0d34a0a1e47762b037a13bbc718de9187",
+    "refs/tags/voter-precinct-results-20261105": "e3711018c84b6d93afbbf44b4489b63f1ab81699",
+    "refs/tags/voter-precinct-rhode-island-20261105": "1b0227cf65efd04686620e2495cd858266b64f40",
+    "refs/tags/voter-precinct-rhode-island-maps-20261105": "46733eeeb532449ba54ed222fed92af7d2c5c554",
+    "refs/tags/voter-precinct-rhode-island-maps-20261105-02": "f1ba1e85307ab3a4b730f473327c6b47d61944a4",
+    "refs/tags/voter-precinct-sources-2022-20261105": "b6453452206c4902f73d2434ea88906e1d02d5b9",
+    "refs/tags/voter-precinct-south-dakota-20261105": "77916b2106cb331ebe4fb6a5d3501b14b9c536bd",
+    "refs/tags/voter-precinct-vermont-20261105": "1ed9421a357a382c8b2b88474e7d104605d3fa31",
+    "refs/tags/voter-precinct-vermont-maps-20261105": "7deca2dad49cdf72515fd83abb065f5bcd628ac6",
+    "refs/tags/voter-precinct-virginia-locality-counts-20261105": "b2e53eb9e4a510bb19a8cf2e1cc5243c6eeff9ce",
+    "refs/tags/voter-precinct-virginia-maps-20261105-02": "5b1665d31deb80c7c4d5a57b7f8c8d8bf93daedc",
+    "refs/tags/voter-precinct-virginia-native-counts-20261105": "a20a9063b56589c21a5c37e83f4547e4d6a56fbe",
+    "refs/tags/voter-precinct-washington-counts-20261105": "f219c127274d75a0d0532be52844a8f09467652d",
+    "refs/tags/voter-precinct-washington-counts-20261105-02": "4aaa45e0a40ee16c66922637f795fe6fa9fa4ff7",
+    "refs/tags/voter-precinct-washington-maps-20261105": "4aaa45e0a40ee16c66922637f795fe6fa9fa4ff7",
+    "refs/tags/voter-precinct-worcester-counts-20261105": "509f4ba98a3fb8802d0c313f1a1d2c8f35863a42",
+    "refs/tags/voter-precinct-wyoming-2022-counts-20261105": "c29d5fe5f72096a4d0c7366c3611ddf3b8a040a8",
+    "refs/tags/voter-precinct-wyoming-counts-20261105": "6ff31fc2cf9a4be6757db120b8ab2df3a08f7cb5",
+    "refs/tags/voter-precinct-wyoming-native-text-20261105": "d5d275d6b83b65cce0b948e0213949f109d15ec4",
+    "refs/tags/voter-precinct-wyoming-originals-20261105": "b46db3d20c8b16c002a3ebd6f78cb60b5177e110",
+    "refs/tags/voter-uf-2026-20261105t155617z": "ceafc7140ccaca83fb5357c36609e82d110d8bae"
+  },
+  "refs_after": {
+    "refs/heads/main": "14f0bf1c67ad0d4f3924b9a964bc7fc6d8be1d15",
+    "refs/heads/participation-local-data": "be7481f1dd398a506ce7f786596586c4d2ffbe8a",
+    "refs/heads/voter-participation-analysis": "a4725e00ae4162dc8710a2fb775409d4e71b9ada",
+    "refs/heads/voter-participation-source-key-cleanup-20261105": "14f0bf1c67ad0d4f3924b9a964bc7fc6d8be1d15",
+    "refs/tags/participation-sources-20261104-late": "eb68c5730e607ba9da375ef4bef3cb2637d4eb95",
+    "refs/tags/voter-county-2026-20261105t155645z": "9ef0111793956caf16703f7136594fcf27b11644",
+    "refs/tags/voter-county-dc-delegate-20261105-01": "ae1673add884650dd2a0537863e6d29f01c958db",
+    "refs/tags/voter-county-house-20261105": "4dd4f76825e664f5f785c297a115718f0d184910",
+    "refs/tags/voter-county-house-20261105-02": "ac356d8a2b0f13925194cb4b84fbfc18bf171300",
+    "refs/tags/voter-county-house-history-20261105-01": "770fd9f45ffff0f3510f4ef85836e453bad165aa",
+    "refs/tags/voter-county-house-history-20261105-02": "ce61574e6d0cf8245e6e7bf18325025d737cab13",
+    "refs/tags/voter-county-house-history-20261105-03": "74959361ed90c712f8e56de34befcb500ed59bf4",
+    "refs/tags/voter-county-house-history-20261105-04": "c6fba7a057b33ac5ff514efbd772b48da708a474",
+    "refs/tags/voter-county-official-pa-20261105-01": "2b2af4fdf6f0a9dda6de3e2d3d238a0654123d90",
+    "refs/tags/voter-county-party-votes-20261105-01": "6914e1e0f2019181dd8ea1334427751edb56dae9",
+    "refs/tags/voter-county-party-votes-20261105-02": "6914e1e0f2019181dd8ea1334427751edb56dae9",
+    "refs/tags/voter-county-pennsylvania-bucks-20261105-01": "982742131f1826211eed4a296458dab71a2aceb1",
+    "refs/tags/voter-county-pennsylvania-lancaster-20261105-01": "3bc8a6e967e42b4edf6deee7d064f30baa9d959e",
+    "refs/tags/voter-county-pennsylvania-monroe-20261105-01": "0a51655ec2a95937fb4588ceb265fd5bbb8e4b99",
+    "refs/tags/voter-county-pennsylvania-montgomery-20261105-01": "1b38950c424d2b60ce3ef90c73edb34e85bd5b5c",
+    "refs/tags/voter-county-pennsylvania-northampton-20261105-01": "11916873d24e22bbabe52425f5351e308f9bcdc3",
+    "refs/tags/voter-county-pennsylvania-three-county-20261105-01": "d16399efd9ffda90d2ad989018d338d4b6cf8556",
+    "refs/tags/voter-county-source-redaction-20261105-01": "5d2c4971aceb0962633aa53a77378a1e552d2bec",
+    "refs/tags/voter-participation-data-20261104": "779c169cbb10439a7a9554f7ead4bcc283a2b4e9",
+    "refs/tags/voter-participation-maine-pennsylvania-20261105": "9ac3b0965694f8cf7a118deb6700d64c8eb08e40",
+    "refs/tags/voter-precinct-alabama-native-counts-20261105": "6bb00f50481089e37d6c2a364a1a65e61934b3ee",
+    "refs/tags/voter-precinct-alaska-20261105": "ecca2cf35ffe2d5ed0851b14c07b94f91d989e2e",
+    "refs/tags/voter-precinct-alaska-reference-20261105": "afef40a50fe69ba25f5cd30a81ae1140ad008b91",
+    "refs/tags/voter-precinct-arizona-maricopa-maps-20261105-02": "2b234651a8500f428bbd275119c766baf0f61a17",
+    "refs/tags/voter-precinct-arizona-native-counts-20261105": "30b5985970349201c877b4236830a7c85065a68a",
+    "refs/tags/voter-precinct-arizona-pima-native-reference-20261105-01": "e602e676253a9a26a2b0f93f0005c4203419d93a",
+    "refs/tags/voter-precinct-arkansas-native-counts-20261105": "3f8b40139516aa3c362c43a4ab4bfc3c2c9b4dcd",
+    "refs/tags/voter-precinct-arkansas-reference-geometry-20261105": "620ded947bd4d72bcc469a21c9805d66a9d4ed35",
+    "refs/tags/voter-precinct-boston-central-maps-20261105": "f799e286188a7b6b2a38cdb8cfc6874467b822c3",
+    "refs/tags/voter-precinct-connecticut-originals-20261105": "0baf30570cfbc09db862f8296ef6ef4d44e16479",
+    "refs/tags/voter-precinct-dc-maps-20261105": "89e901023fe156051b9a11975c52f38109cf8141",
+    "refs/tags/voter-precinct-expansion-20261105": "1d7f972539130994c312f3b82d64e55eefe7ff4b",
+    "refs/tags/voter-precinct-florida-monroe-20261105": "d36753726cccfa696fc776328c22d9c5120ffa3d",
+    "refs/tags/voter-precinct-hawaii-20261105": "c90368abf75de6bfa6350d9e91650c35bb84a9f7",
+    "refs/tags/voter-precinct-hawaii-historical-20261105": "1f420fe7de7fcc79ea05235a03fe608e0a22866d",
+    "refs/tags/voter-precinct-idaho-20261105": "8df0e7dac6dd47eebb91af4a7db6dfc759d93811",
+    "refs/tags/voter-precinct-idaho-maps-20261105": "69b8aefa3004255b49c5fc731d4491fc2c1b13c4",
+    "refs/tags/voter-precinct-iowa-linn-native-counts-20261105-01": "a0893d68dc5a1ace36456c302ef8134af8c5dce2",
+    "refs/tags/voter-precinct-kentucky-native-counts-20261105-01": "1f6acef3c57fa29b63cdf4e94182a9e3b0d25a36",
+    "refs/tags/voter-precinct-michigan-native-counts-20261105-01": "03b204adb7bd092e07e192706de2961119960d01",
+    "refs/tags/voter-precinct-missouri-christian-20261105": "fe2e67af2c3e3181d46589fb18ede50e6a5716b8",
+    "refs/tags/voter-precinct-nevada-clark-historical-20261105": "096f1adc45c2d632e82e49de0959b53f6bc8c589",
+    "refs/tags/voter-precinct-north-dakota-20261105": "4d86ece141d98564cd9160ab7b4a02d0682b241a",
+    "refs/tags/voter-precinct-north-dakota-maps-20261105": "2e7b240d3cece70001ef573dd487538d46ebd5cd",
+    "refs/tags/voter-precinct-results-20261105": "408d154e41b1b4a258856a2a9ee532a43efaf455",
+    "refs/tags/voter-precinct-rhode-island-20261105": "3cbb013cf65accfa263bcc562555e8e5c04d53f2",
+    "refs/tags/voter-precinct-rhode-island-maps-20261105": "41f60a00a3c582e29dee673d0236f3ffdf036898",
+    "refs/tags/voter-precinct-rhode-island-maps-20261105-02": "14114bc6f9026532252ab17e6176dfaa6a8a975f",
+    "refs/tags/voter-precinct-sources-2022-20261105": "8809af9fc8de60977f0a7fabe8ca759cf0ce7487",
+    "refs/tags/voter-precinct-south-dakota-20261105": "2a422b1de3098e0d9a2d0a1616c078b20b237cb8",
+    "refs/tags/voter-precinct-vermont-20261105": "cdbe1515fbef7b17c1d2cf2c8556d8e90806d2a3",
+    "refs/tags/voter-precinct-vermont-maps-20261105": "f784b75c3233f1a1b00d7cfa0aa0815e56d18303",
+    "refs/tags/voter-precinct-virginia-locality-counts-20261105": "e385639467f2bbe8c8e3368fb1534287cfa71134",
+    "refs/tags/voter-precinct-virginia-maps-20261105-02": "248bd0a333b604530ffe553d1780a0fbd6fbdf6d",
+    "refs/tags/voter-precinct-virginia-native-counts-20261105": "7b1033484523a70e353d64da9a0a26ceac06b163",
+    "refs/tags/voter-precinct-washington-counts-20261105": "c3d8701991284ae695f9bc33cf95bf2d94640011",
+    "refs/tags/voter-precinct-washington-counts-20261105-02": "3392e0086c3ab60b4aef4c5c522ca369e813cae6",
+    "refs/tags/voter-precinct-washington-maps-20261105": "3392e0086c3ab60b4aef4c5c522ca369e813cae6",
+    "refs/tags/voter-precinct-worcester-counts-20261105": "0e6a6745bc2392177fbe86205dab8147dc36ad0e",
+    "refs/tags/voter-precinct-wyoming-2022-counts-20261105": "95039499cc761817ceb7974e7a8975ee94ecec2c",
+    "refs/tags/voter-precinct-wyoming-counts-20261105": "3f4d474d512886964fab477e34dcd172fecd3db7",
+    "refs/tags/voter-precinct-wyoming-native-text-20261105": "a4a24cae2906b7e70eb0e1725e899db23bd5a445",
+    "refs/tags/voter-precinct-wyoming-originals-20261105": "ef4ca4d49df3603f2988630c1760f24cb58a40ce",
+    "refs/tags/voter-uf-2026-20261105t155617z": "117970c9c4c54df808e3d01b766f895183a8e9e3"
+  },
+  "changed_refs": {
+    "refs/heads/main": {
+      "before": "68119df41532cb24d19964df703fac6b2a67a619",
+      "after": "14f0bf1c67ad0d4f3924b9a964bc7fc6d8be1d15"
+    },
+    "refs/heads/participation-local-data": {
+      "before": "9114dccf0f57afaaaf0b4baf80f6f69984af1c16",
+      "after": "be7481f1dd398a506ce7f786596586c4d2ffbe8a"
+    },
+    "refs/heads/voter-participation-analysis": {
+      "before": "ba84a93da019aa25835281768df68702af18952b",
+      "after": "a4725e00ae4162dc8710a2fb775409d4e71b9ada"
+    },
+    "refs/heads/voter-participation-source-key-cleanup-20261105": {
+      "before": "68119df41532cb24d19964df703fac6b2a67a619",
+      "after": "14f0bf1c67ad0d4f3924b9a964bc7fc6d8be1d15"
+    },
+    "refs/tags/participation-sources-20261104-late": {
+      "before": "20e196b89404665221b8e8e427482553435ac8a4",
+      "after": "eb68c5730e607ba9da375ef4bef3cb2637d4eb95"
+    },
+    "refs/tags/voter-county-2026-20261105t155645z": {
+      "before": "0752cc08362f34f87df3dcfcdd2f8c6568f25b7f",
+      "after": "9ef0111793956caf16703f7136594fcf27b11644"
+    },
+    "refs/tags/voter-county-dc-delegate-20261105-01": {
+      "before": "7e4262e73e021c3362ae510360513b0187cd95ee",
+      "after": "ae1673add884650dd2a0537863e6d29f01c958db"
+    },
+    "refs/tags/voter-county-house-20261105": {
+      "before": "c9a4d78227693f5d0562aa9a280ceef36afc1d0e",
+      "after": "4dd4f76825e664f5f785c297a115718f0d184910"
+    },
+    "refs/tags/voter-county-house-20261105-02": {
+      "before": "6b6b96caed4fa4f7c66fd206a64bd709310a69f2",
+      "after": "ac356d8a2b0f13925194cb4b84fbfc18bf171300"
+    },
+    "refs/tags/voter-county-house-history-20261105-01": {
+      "before": "9c1590362994ee87c510ebe34a253cea6ba90217",
+      "after": "770fd9f45ffff0f3510f4ef85836e453bad165aa"
+    },
+    "refs/tags/voter-county-house-history-20261105-02": {
+      "before": "d14199b6510e32a9543014933747887c28bf0ca6",
+      "after": "ce61574e6d0cf8245e6e7bf18325025d737cab13"
+    },
+    "refs/tags/voter-county-house-history-20261105-03": {
+      "before": "3a0bdb1e1603dc9de4d4934558ac4c53c4957adc",
+      "after": "74959361ed90c712f8e56de34befcb500ed59bf4"
+    },
+    "refs/tags/voter-county-house-history-20261105-04": {
+      "before": "a5baf7cc829cedc6d379e83ae577ed61b2370731",
+      "after": "c6fba7a057b33ac5ff514efbd772b48da708a474"
+    },
+    "refs/tags/voter-county-official-pa-20261105-01": {
+      "before": "cbff6e4a4bcd8b4569f447b0d994a34ca79ca10f",
+      "after": "2b2af4fdf6f0a9dda6de3e2d3d238a0654123d90"
+    },
+    "refs/tags/voter-county-party-votes-20261105-01": {
+      "before": "17da5cc555c543ff9231282f74661a90ea2a6e28",
+      "after": "6914e1e0f2019181dd8ea1334427751edb56dae9"
+    },
+    "refs/tags/voter-county-party-votes-20261105-02": {
+      "before": "17da5cc555c543ff9231282f74661a90ea2a6e28",
+      "after": "6914e1e0f2019181dd8ea1334427751edb56dae9"
+    },
+    "refs/tags/voter-county-pennsylvania-bucks-20261105-01": {
+      "before": "3d2be9ada0d1022511815fd8edb9d96fc7666b54",
+      "after": "982742131f1826211eed4a296458dab71a2aceb1"
+    },
+    "refs/tags/voter-county-pennsylvania-lancaster-20261105-01": {
+      "before": "3aabcede13986955f094d706015486ad7a7c3362",
+      "after": "3bc8a6e967e42b4edf6deee7d064f30baa9d959e"
+    },
+    "refs/tags/voter-county-pennsylvania-monroe-20261105-01": {
+      "before": "17c116bea04a42a364daee08bc028f3beca3737f",
+      "after": "0a51655ec2a95937fb4588ceb265fd5bbb8e4b99"
+    },
+    "refs/tags/voter-county-pennsylvania-montgomery-20261105-01": {
+      "before": "ddb9e8c86c772b41431cd5c7e0d1fd4eeb615563",
+      "after": "1b38950c424d2b60ce3ef90c73edb34e85bd5b5c"
+    },
+    "refs/tags/voter-county-pennsylvania-northampton-20261105-01": {
+      "before": "7f4d6dc4ed1a4e4637aa0f2f5772ef14fe81e990",
+      "after": "11916873d24e22bbabe52425f5351e308f9bcdc3"
+    },
+    "refs/tags/voter-county-pennsylvania-three-county-20261105-01": {
+      "before": "8293db8a8bda6ab561e139708495425fcea0c206",
+      "after": "d16399efd9ffda90d2ad989018d338d4b6cf8556"
+    },
+    "refs/tags/voter-county-source-redaction-20261105-01": {
+      "before": "28cdb2c434e01ab2fe45696970e95b4454900a08",
+      "after": "5d2c4971aceb0962633aa53a77378a1e552d2bec"
+    },
+    "refs/tags/voter-participation-data-20261104": {
+      "before": "36e54d1abd31d5dca330d3b140dc3cd80c0dc769",
+      "after": "779c169cbb10439a7a9554f7ead4bcc283a2b4e9"
+    },
+    "refs/tags/voter-participation-maine-pennsylvania-20261105": {
+      "before": "41fcfe00819fdf7593ae416e45ca93507bc419e4",
+      "after": "9ac3b0965694f8cf7a118deb6700d64c8eb08e40"
+    },
+    "refs/tags/voter-precinct-alabama-native-counts-20261105": {
+      "before": "11401d43852bf1808babc38136ce5cd71452d2a0",
+      "after": "6bb00f50481089e37d6c2a364a1a65e61934b3ee"
+    },
+    "refs/tags/voter-precinct-alaska-20261105": {
+      "before": "683cd3f50e38b7555ff656df5c39eb59b1c061f6",
+      "after": "ecca2cf35ffe2d5ed0851b14c07b94f91d989e2e"
+    },
+    "refs/tags/voter-precinct-alaska-reference-20261105": {
+      "before": "a1ee6ee8c17bc1e9cb462c9954a030604f306ea6",
+      "after": "afef40a50fe69ba25f5cd30a81ae1140ad008b91"
+    },
+    "refs/tags/voter-precinct-arizona-maricopa-maps-20261105-02": {
+      "before": "2f4deb6cbb4ea04cb74098f11d5208b08a675565",
+      "after": "2b234651a8500f428bbd275119c766baf0f61a17"
+    },
+    "refs/tags/voter-precinct-arizona-native-counts-20261105": {
+      "before": "7b764000e2feef1054d37d2468b447f43d9e9b71",
+      "after": "30b5985970349201c877b4236830a7c85065a68a"
+    },
+    "refs/tags/voter-precinct-arizona-pima-native-reference-20261105-01": {
+      "before": "d39d1a1b35f571936a90bb08f8757822851811eb",
+      "after": "e602e676253a9a26a2b0f93f0005c4203419d93a"
+    },
+    "refs/tags/voter-precinct-arkansas-native-counts-20261105": {
+      "before": "36fb8b109d0044a1d3cc7527a2810cdf70f3dc2d",
+      "after": "3f8b40139516aa3c362c43a4ab4bfc3c2c9b4dcd"
+    },
+    "refs/tags/voter-precinct-arkansas-reference-geometry-20261105": {
+      "before": "2913de35ea2cfb028579d559342ecaacd33f8c9d",
+      "after": "620ded947bd4d72bcc469a21c9805d66a9d4ed35"
+    },
+    "refs/tags/voter-precinct-boston-central-maps-20261105": {
+      "before": "2b7785f38184428d3e27ea07c4ba1af417976656",
+      "after": "f799e286188a7b6b2a38cdb8cfc6874467b822c3"
+    },
+    "refs/tags/voter-precinct-connecticut-originals-20261105": {
+      "before": "9ca28444bf05924da3aa4d10234280da48de46df",
+      "after": "0baf30570cfbc09db862f8296ef6ef4d44e16479"
+    },
+    "refs/tags/voter-precinct-dc-maps-20261105": {
+      "before": "3f76e06af13cc1344f34da09be159eae042745f0",
+      "after": "89e901023fe156051b9a11975c52f38109cf8141"
+    },
+    "refs/tags/voter-precinct-expansion-20261105": {
+      "before": "d8ee75a9c128058abd975186537dafbcdfb8d236",
+      "after": "1d7f972539130994c312f3b82d64e55eefe7ff4b"
+    },
+    "refs/tags/voter-precinct-florida-monroe-20261105": {
+      "before": "2f26a01abe473bec14b5a601b7795c18a35af92a",
+      "after": "d36753726cccfa696fc776328c22d9c5120ffa3d"
+    },
+    "refs/tags/voter-precinct-hawaii-20261105": {
+      "before": "b01c32e84cb6346e6478f80c404eb82ec3e6bc7b",
+      "after": "c90368abf75de6bfa6350d9e91650c35bb84a9f7"
+    },
+    "refs/tags/voter-precinct-hawaii-historical-20261105": {
+      "before": "e9607606c1b52ec93ae266ff69f563bb3c57fad5",
+      "after": "1f420fe7de7fcc79ea05235a03fe608e0a22866d"
+    },
+    "refs/tags/voter-precinct-idaho-20261105": {
+      "before": "5c71828190a324b92650091de7b9184ae8ba64f8",
+      "after": "8df0e7dac6dd47eebb91af4a7db6dfc759d93811"
+    },
+    "refs/tags/voter-precinct-idaho-maps-20261105": {
+      "before": "664ef298d33a26fb52deb399596aad76a11098ed",
+      "after": "69b8aefa3004255b49c5fc731d4491fc2c1b13c4"
+    },
+    "refs/tags/voter-precinct-iowa-linn-native-counts-20261105-01": {
+      "before": "28e6592ebd1fbf449bd78cdb1b28dc83101ea746",
+      "after": "a0893d68dc5a1ace36456c302ef8134af8c5dce2"
+    },
+    "refs/tags/voter-precinct-kentucky-native-counts-20261105-01": {
+      "before": "c3d3fb539eb392091b48e0c327d2be574d46f1f1",
+      "after": "1f6acef3c57fa29b63cdf4e94182a9e3b0d25a36"
+    },
+    "refs/tags/voter-precinct-michigan-native-counts-20261105-01": {
+      "before": "93b8152e27a68c837ab03197b4fa401f10bc33b0",
+      "after": "03b204adb7bd092e07e192706de2961119960d01"
+    },
+    "refs/tags/voter-precinct-missouri-christian-20261105": {
+      "before": "b30aa24882968e614cb9a89e4812a154f0de18ab",
+      "after": "fe2e67af2c3e3181d46589fb18ede50e6a5716b8"
+    },
+    "refs/tags/voter-precinct-nevada-clark-historical-20261105": {
+      "before": "96b735f02828b24cdb845851132c1450ab45eb55",
+      "after": "096f1adc45c2d632e82e49de0959b53f6bc8c589"
+    },
+    "refs/tags/voter-precinct-north-dakota-20261105": {
+      "before": "dc3dce10f628be118814940ffc3ffc8ebdbe0f23",
+      "after": "4d86ece141d98564cd9160ab7b4a02d0682b241a"
+    },
+    "refs/tags/voter-precinct-north-dakota-maps-20261105": {
+      "before": "4c9682b0d34a0a1e47762b037a13bbc718de9187",
+      "after": "2e7b240d3cece70001ef573dd487538d46ebd5cd"
+    },
+    "refs/tags/voter-precinct-results-20261105": {
+      "before": "e3711018c84b6d93afbbf44b4489b63f1ab81699",
+      "after": "408d154e41b1b4a258856a2a9ee532a43efaf455"
+    },
+    "refs/tags/voter-precinct-rhode-island-20261105": {
+      "before": "1b0227cf65efd04686620e2495cd858266b64f40",
+      "after": "3cbb013cf65accfa263bcc562555e8e5c04d53f2"
+    },
+    "refs/tags/voter-precinct-rhode-island-maps-20261105": {
+      "before": "46733eeeb532449ba54ed222fed92af7d2c5c554",
+      "after": "41f60a00a3c582e29dee673d0236f3ffdf036898"
+    },
+    "refs/tags/voter-precinct-rhode-island-maps-20261105-02": {
+      "before": "f1ba1e85307ab3a4b730f473327c6b47d61944a4",
+      "after": "14114bc6f9026532252ab17e6176dfaa6a8a975f"
+    },
+    "refs/tags/voter-precinct-sources-2022-20261105": {
+      "before": "b6453452206c4902f73d2434ea88906e1d02d5b9",
+      "after": "8809af9fc8de60977f0a7fabe8ca759cf0ce7487"
+    },
+    "refs/tags/voter-precinct-south-dakota-20261105": {
+      "before": "77916b2106cb331ebe4fb6a5d3501b14b9c536bd",
+      "after": "2a422b1de3098e0d9a2d0a1616c078b20b237cb8"
+    },
+    "refs/tags/voter-precinct-vermont-20261105": {
+      "before": "1ed9421a357a382c8b2b88474e7d104605d3fa31",
+      "after": "cdbe1515fbef7b17c1d2cf2c8556d8e90806d2a3"
+    },
+    "refs/tags/voter-precinct-vermont-maps-20261105": {
+      "before": "7deca2dad49cdf72515fd83abb065f5bcd628ac6",
+      "after": "f784b75c3233f1a1b00d7cfa0aa0815e56d18303"
+    },
+    "refs/tags/voter-precinct-virginia-locality-counts-20261105": {
+      "before": "b2e53eb9e4a510bb19a8cf2e1cc5243c6eeff9ce",
+      "after": "e385639467f2bbe8c8e3368fb1534287cfa71134"
+    },
+    "refs/tags/voter-precinct-virginia-maps-20261105-02": {
+      "before": "5b1665d31deb80c7c4d5a57b7f8c8d8bf93daedc",
+      "after": "248bd0a333b604530ffe553d1780a0fbd6fbdf6d"
+    },
+    "refs/tags/voter-precinct-virginia-native-counts-20261105": {
+      "before": "a20a9063b56589c21a5c37e83f4547e4d6a56fbe",
+      "after": "7b1033484523a70e353d64da9a0a26ceac06b163"
+    },
+    "refs/tags/voter-precinct-washington-counts-20261105": {
+      "before": "f219c127274d75a0d0532be52844a8f09467652d",
+      "after": "c3d8701991284ae695f9bc33cf95bf2d94640011"
+    },
+    "refs/tags/voter-precinct-washington-counts-20261105-02": {
+      "before": "4aaa45e0a40ee16c66922637f795fe6fa9fa4ff7",
+      "after": "3392e0086c3ab60b4aef4c5c522ca369e813cae6"
+    },
+    "refs/tags/voter-precinct-washington-maps-20261105": {
+      "before": "4aaa45e0a40ee16c66922637f795fe6fa9fa4ff7",
+      "after": "3392e0086c3ab60b4aef4c5c522ca369e813cae6"
+    },
+    "refs/tags/voter-precinct-worcester-counts-20261105": {
+      "before": "509f4ba98a3fb8802d0c313f1a1d2c8f35863a42",
+      "after": "0e6a6745bc2392177fbe86205dab8147dc36ad0e"
+    },
+    "refs/tags/voter-precinct-wyoming-2022-counts-20261105": {
+      "before": "c29d5fe5f72096a4d0c7366c3611ddf3b8a040a8",
+      "after": "95039499cc761817ceb7974e7a8975ee94ecec2c"
+    },
+    "refs/tags/voter-precinct-wyoming-counts-20261105": {
+      "before": "6ff31fc2cf9a4be6757db120b8ab2df3a08f7cb5",
+      "after": "3f4d474d512886964fab477e34dcd172fecd3db7"
+    },
+    "refs/tags/voter-precinct-wyoming-native-text-20261105": {
+      "before": "d5d275d6b83b65cce0b948e0213949f109d15ec4",
+      "after": "a4a24cae2906b7e70eb0e1725e899db23bd5a445"
+    },
+    "refs/tags/voter-precinct-wyoming-originals-20261105": {
+      "before": "b46db3d20c8b16c002a3ebd6f78cb60b5177e110",
+      "after": "ef4ca4d49df3603f2988630c1760f24cb58a40ce"
+    },
+    "refs/tags/voter-uf-2026-20261105t155617z": {
+      "before": "ceafc7140ccaca83fb5357c36609e82d110d8bae",
+      "after": "117970c9c4c54df808e3d01b766f895183a8e9e3"
+    }
+  },
+  "current_main_tree_unchanged": true,
+  "current_main_tree": "c7b2f4ed053e465af7056945794fe73e5938cf8d",
+  "scanned_objects": 6752,
+  "scanned_blobs": 4777,
+  "scanned_blob_bytes": 2746430005,
+  "matching_blobs": 0
+}

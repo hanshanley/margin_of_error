@@ -10,7 +10,7 @@
   "participation": "native_county_ballots_registration_and_reported_percentages_analysis_rates_withheld",
   "source_url": "https://www2.alabamavotes.gov/electionNight/statewideResultsByContest.aspx?ecode=1001305",
   "data_directory": "data/precinct-source-reviews/20261105/AL-2026-native-counts",
-  "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/11401d43852bf1808babc38136ce5cd71452d2a0/data/precinct-source-reviews/20261105/AL-2026-native-counts/",
+  "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6bb00f50481089e37d6c2a364a1a65e61934b3ee/data/precinct-source-reviews/20261105/AL-2026-native-counts/",
   "count_csv": "county-house-counts.csv",
   "reporting_units": 73,
   "tables": [

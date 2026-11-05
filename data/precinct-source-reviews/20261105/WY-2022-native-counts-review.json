@@ -10,7 +10,7 @@
   "participation": "acquired_precinct_ballot_counts_printed_total_conflict",
   "source_url": "https://sos.wyo.gov/Elections/Docs/2022/2022GeneralResults.aspx",
   "data_directory": "data/precinct-source-reviews/20261105/WY-2022-native-counts",
-  "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/c29d5fe5f72096a4d0c7366c3611ddf3b8a040a8/data/precinct-source-reviews/20261105/WY-2022-native-counts/",
+  "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/95039499cc761817ceb7974e7a8975ee94ecec2c/data/precinct-source-reviews/20261105/WY-2022-native-counts/",
   "count_csv": "precinct-counts.csv",
   "reporting_units": 439,
   "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-wyoming-2022-counts-20261105/complete-wyoming-2022-native-count-review-01.zip",

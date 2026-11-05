@@ -24,6 +24,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v7
 
+      - name: Reject copied source credentials
+        run: python3 scripts/check-public-source-secrets.py
+
       - name: Checkout congressional dashboard
         uses: actions/checkout@v7
         with:

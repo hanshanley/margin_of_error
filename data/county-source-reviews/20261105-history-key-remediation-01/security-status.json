@@ -1,0 +1,45 @@
+{
+  "review_date": "2026-11-05",
+  "current_google_key_matches": 0,
+  "reachable_history_google_key_matches": 0,
+  "rewritten_commits": 297,
+  "original_refs_requiring_rewrite": 69,
+  "nonmain_refs_publicly_rewritten_and_verified": 68,
+  "main_publication": "pending_exact_deployment_and_production_verification",
+  "public_raw_downloads_byte_verified": 133,
+  "exact_complete_downloads_in_each_of_four_local_modes": 250,
+  "vermont_filename_correction": {
+    "previous": "participation.json.gz",
+    "actual": "municipal-participation.json.gz",
+    "dataset_changed": false
+  },
+  "secret_scanning": "enabled",
+  "push_protection": "enabled",
+  "new_scanner_regressions_passed": 6,
+  "participation_tests_passed": 7,
+  "type_check_errors": 0,
+  "type_check_warnings": 0,
+  "build": "passed",
+  "pages_bulk_downloads_verified": 94,
+  "local_pages_bytes": 987318238,
+  "unrelated_full_validator_failure": "UK topic-card count at scripts/validate-build.mjs:1125: 23 actual, 16 expected",
+  "release_assets_changed_by_rewrite": false,
+  "alerts": [
+    {
+      "number": 1,
+      "state": "open",
+      "validity": "unknown",
+      "revocation_confirmed": false
+    },
+    {
+      "number": 2,
+      "state": "open",
+      "validity": "unknown",
+      "revocation_confirmed": false
+    }
+  ],
+  "remaining_provider_action": "Google project owner must revoke/rotate or verify adequate restrictions; repository credentials cannot do this.",
+  "remaining_github_action": "Request cached historical commit-view cleanup through GitHub Support; do not claim a ref rewrite deletes cached objects.",
+  "first_changed_original_commit": "1b11ba7f4f377c19145a87522749cd2de789d9b1",
+  "private_old_clones": "Do not push pre-rewrite branches or tags."
+}

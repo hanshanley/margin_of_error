@@ -700,10 +700,10 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 					<a href={`${batch.base_url}checksums.json`}>{batch.label}: source checksums (JSON)</a>
 				</>)}
 				{additionalPrecinctSnapshots.map((snapshot: { label: string; base_url: string; complete_download_url: string;
-					participation_available?: boolean; source_documents?: { file: string; label: string }[] }) => <>
+					participation_available?: boolean; participation_file?: string; source_documents?: { file: string; label: string }[] }) => <>
 					<a href={snapshot.complete_download_url} download>{snapshot.label}: complete precinct results, geometry, {snapshot.participation_available !== false ? 'participation statistics, ' : ''}source documentation and originals (ZIP)</a>
 					<a href={`${snapshot.base_url}results.csv.gz`} download>{snapshot.label}: all candidate-result reporting rows (CSV · gzip)</a>
-					{snapshot.participation_available !== false && <a href={`${snapshot.base_url}participation.json.gz`} download>{snapshot.label}: separate participation statistics (JSON · gzip)</a>}
+					{snapshot.participation_available !== false && <a href={`${snapshot.base_url}${snapshot.participation_file ?? 'participation.json.gz'}`} download>{snapshot.label}: separate participation statistics (JSON · gzip)</a>}
 					<a href={`${snapshot.base_url}audit.json`}>{snapshot.label}: join and count audit (JSON)</a>
 					<a href={`${snapshot.base_url}checksums.json`}>{snapshot.label}: checksums (JSON)</a>
 					{snapshot.source_documents?.map(document =>

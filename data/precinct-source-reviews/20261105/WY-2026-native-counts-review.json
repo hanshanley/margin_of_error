@@ -10,7 +10,7 @@
   "participation": "acquired_precinct_ballot_counts_rates_withheld",
   "source_url": "https://sos.wyo.gov/Elections/Docs/2026/2026GeneralResults.aspx",
   "data_directory": "data/precinct-source-reviews/20261105/WY-2026-native-counts",
-  "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6ff31fc2cf9a4be6757db120b8ab2df3a08f7cb5/data/precinct-source-reviews/20261105/WY-2026-native-counts/",
+  "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/3f4d474d512886964fab477e34dcd172fecd3db7/data/precinct-source-reviews/20261105/WY-2026-native-counts/",
   "count_csv": "precinct-counts.csv",
   "reporting_units": 432,
   "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-precinct-wyoming-counts-20261105/complete-wyoming-2026-native-count-review-01.zip",
