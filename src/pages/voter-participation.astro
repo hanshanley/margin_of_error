@@ -13,6 +13,9 @@ const precinctSourceReviews = (precinctResultsPointer?.source_reviews ?? []).map
 	JSON.parse(readFileSync(resolve(path), 'utf8')));
 const additionalPrecinctSnapshots = precinctResultsPointer?.additional_snapshots ?? [];
 const precinctSourceBatches = precinctResultsPointer?.source_batches ?? [];
+const countyResultsPointerPath = resolve('public/county-results.json');
+const countyResultsPointer = existsSync(countyResultsPointerPath)
+	? JSON.parse(readFileSync(countyResultsPointerPath, 'utf8')) : null;
 const national = JSON.parse(readFileSync(resolve(dataRoot, 'data/national.json'), 'utf8'));
 const manifest = JSON.parse(readFileSync(resolve(dataRoot, 'publication-manifest.json'), 'utf8'));
 const snapshot = national.filter((row: { year: number; denominator: string; age_group: string }) =>
@@ -485,6 +488,11 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 			<p>Precinct candidate results are separate from participation. Every state and every even-year
 				election from 1964 through 2026 has an explicit entry in the coverage worklist, newest first.
 				Partial coverage is not completion; state colors remain beneath unmatched precinct areas.</p>
+			{countyResultsPointer && <p>2026 county / equivalent House results cover 47 states on 2026 Census county
+				reference boundaries. Verified precinct colors take priority, with county results beneath
+				unmatched areas. Illinois, Maine and Pennsylvania county joins are withheld; D.C. is outside this
+				435-district source. Explicit overseas returns remain separately unallocated. County results are
+				not precinct results, unique voter counts or participation rates.</p>}
 			{precinctResultsPointer && <p>2024 precinct / municipal candidate data: <strong>The New York Times</strong>.
 				Some boundaries are approximate; some New England reporting areas are townships.
 				By downloading these data, you agree to the <a href={`${precinctResultsPointer.base_url}originals/NYT-2024-LICENSE.txt`}>NYT C-UDA terms</a>,
@@ -492,6 +500,13 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 				<a href={`${precinctResultsPointer.base_url}originals/NYT-2024-README.md`}>Complete state-specific source notes</a>.</p>}
 			<div class="download-links">
 				<a href="/precinct-coverage.csv" download>Every state and election, newest first: full precinct worklist (CSV)</a>
+				{countyResultsPointer && <>
+					<a href={countyResultsPointer.complete_download_url} download>2026 House county / equivalent results: complete counts, 2026 geometry, all 435 district originals, reference sources and audits (ZIP)</a>
+					<a href={`${countyResultsPointer.base_url}county-results.csv`} download>All 2,958 reviewed 2026 county / equivalent candidate-result rows (CSV)</a>
+					<a href={`${countyResultsPointer.base_url}county-results.json.gz`} download>Complete 2026 county counts with every contributing district candidate vector (JSON · gzip)</a>
+					<a href={`${countyResultsPointer.base_url}audit.json`}>2026 county candidate-vector reconciliation, unallocated overseas returns and withheld-state audit (JSON)</a>
+					<a href={`${countyResultsPointer.base_url}checksums.json`}>2026 county results and complete original-source checksums (JSON)</a>
+				</>}
 				{precinctResultsPointer && <>
 					<a href={precinctResultsPointer.complete_download_url} download>Complete precinct candidate results, geometry, audits, licenses and original sources (ZIP)</a>
 					<a href={`${precinctResultsPointer.base_url}results.csv.gz`} download>All precinct / reporting-unit candidate results in the mapped snapshot, including unmapped records (CSV · gzip)</a>

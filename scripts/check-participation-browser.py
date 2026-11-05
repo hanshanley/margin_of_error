@@ -35,7 +35,9 @@ result_rows = json.loads((results_root / "margins.json").read_text())
 precinct_results_pointer = json.loads((public / "precinct-results.json").read_text())
 expected_downloads = (18 + len(precinct_results_pointer.get("source_reviews", []))
                       + len(precinct_results_pointer.get("source_batches", []))
-                      + 3 * len(precinct_results_pointer.get("additional_snapshots", [])))
+                      + sum(3 if row.get("participation_available", True) else 2
+                            for row in precinct_results_pointer.get("additional_snapshots", []))
+                      + (3 if (public / "county-results.json").exists() else 0))
 precinct_results_root = public.parent / precinct_results_pointer["data_directory"]
 precinct_results_index = json.loads((precinct_results_root / "index.json").read_text())
 for snapshot in precinct_results_pointer.get("additional_snapshots", []):
@@ -153,8 +155,22 @@ with sync_playwright() as p:
     for detail in ["county", "district"]:
         page.locator("#map-level").select_option(detail)
         expect(page.locator("#map-color")).to_have_value("margin")
-        expect(page.locator(".substate-feature")).to_have_count(0)
-        assert result_colors(page) == expected_colors, f"Unavailable {detail} returns must retain whole-state result colors"
+        if detail == "county" and (public / "county-results.json").exists():
+            pointer = json.loads((public / "county-results.json").read_text())
+            root = public.parent / pointer["data_directory"]
+            county_rows = [row for row in json.loads((root / "margins.json").read_text())
+                           if row["state_code"] == "NM" and row["margin_pp"] is not None]
+            paths = page.locator('.substate-feature[data-color-level="county"]')
+            expect(paths).to_have_count(len(county_rows))
+            actual = paths.evaluate_all(
+                "paths => Object.fromEntries(paths.map(p => [p.dataset.geography,"
+                "[+p.dataset.margin,+p.dataset.totalVotes,p.getAttribute('fill')]]))")
+            assert actual == {r["geography"]: [r["margin_pp"], r["contest_votes"], result_color(r["margin_pp"])]
+                              for r in county_rows}
+            expect(page.locator("#key")).to_contain_text("U.S. House aggregate")
+        else:
+            expect(page.locator(".substate-feature")).to_have_count(0)
+        assert result_colors(page) == expected_colors, f"{detail} detail must preserve actual whole-state background colors"
         expect(page.locator("#key")).to_contain_text("D+35")
     for detail in ["auto", "precinct"]:
         page.locator("#map-level").select_option(detail)

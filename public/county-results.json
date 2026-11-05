@@ -1,0 +1,11 @@
+{
+  "label": "2026 U.S. House county / equivalent results",
+  "year": 2026,
+  "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/c9a4d78227693f5d0562aa9a280ceef36afc1d0e/data/county-results/20261105-house-01/",
+  "data_directory": "data/county-results/20261105-house-01",
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-house-20261105/complete-2026-house-county-results-01.zip",
+  "complete_download_bytes": 138508764,
+  "complete_download_sha256": "abd1c5d6abab56652e16f507af25be2481e76e61b8d80c2aae08baa137bcf9f7",
+  "publication": "snapshot_ready",
+  "participation_available": false
+}

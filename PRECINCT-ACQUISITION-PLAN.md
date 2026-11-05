@@ -2491,7 +2491,7 @@ King identities and Jefferson/Walla Walla accounting independently. Native
 participation denominators remain a separate review; no final or demographic
 turnout is inferred.
 
-### County package: 47 states reconciled, UI integration underway
+### County package: 47 states reconciled, local UI verification passed
 
 Canonical parser/builder: `scripts/review-house-county-results.py`.
 Every accepted native county or explicit overseas row carries exactly the
@@ -2551,16 +2551,48 @@ Every D/R/other county total in Washington also agrees exactly with the
 separately reviewed official APIs and both workbook summaries for all39 counties.
 Proof: `files/national-2026-county-package-proof-01.json`.
 
-**Next executable actions:** commit/push this verified source batch as Hans,
-publish its immutable complete release and independently download/hash/CRC/tag
-verify it. Then pin `public/county-results.json`, finish the already-started UI
-integration (sequential merge after latest-results refresh, 2026 geometry,
-explicit House labels, county fallback and county backdrop beneath verified
-precincts, complete JS/no-JS downloads), run source-matched interaction checks
-including failed-county-fetch preservation of precinct results, and publish
-only after local checks. Verify the exact deployed head and unqueried production
-browser behavior before a county live flag. The precinct worklist remains
-1,632 incomplete cells; county coverage is not precinct completion.
+The source batch is committed/pushed as Hans at
+`c9a4d78227693f5d0562aa9a280ceef36afc1d0e`. Immutable release
+`voter-county-house-20261105` targets that exact commit. Independent complete
+remote download, SHA-256, CRC and tag verification passed:
+`files/national-2026-county-remote-release-proof-01.json`.
+
+The UI now pins that source and release in `public/county-results.json`.
+County rows merge after the latest-result refresh so the refresh cannot
+silently remove them. Verified precincts retain priority; selecting a state
+without a precinct layer falls back to its own county results. County colors
+also sit beneath unmatched precinct areas when zoomed into a state.
+The UI identifies House aggregates, 2026 Census county reference boundaries,
+zero-vote rows, unallocated overseas returns and withheld states explicitly.
+A failed optional county fetch does not block verified precinct results.
+
+Local source-matched browser verification passed for **all 47 states / 2,953
+actual county fills**, independently recalculated margins and candidate totals,
+desktop and mobile, plus JavaScript/no-JavaScript downloads. The 58 complete
+download links retain all 55 prior production links. Tests also cover all
+39 Washington county backdrops below its 1,499 mapped precincts, fallback
+states, county selection/zoom buttons/wheel/real touch pinch, 2024/2020
+precinct isolation, unavailable historical geography, failed registry fetches
+and failed optional county geometry. Proof:
+`files/national-2026-county-local-browser-proof.json`.
+Canonical check: `scripts/check-county-results-browser.py --output /path/to/proof.json`;
+use `--base-url` for production and `--baseline-downloads` for the saved
+pre-publication complete-link baseline.
+
+Renderer syntax, seven focused Node tests, Astro check (zero errors),
+normal build and Pages preparation pass. All 94 relocated assets remain
+byte-identical; prepared Pages output is **986,242,205 bytes**.
+The full county source package is not duplicated into the Pages artifact.
+The general participation checker now accounts for count-only supplements
+and verified 2026 county results instead of expecting absent county layers.
+
+**Next executable actions:** publish this locally verified UI batch as Hans,
+verify the deployment for its exact head and run the county checker against
+unqueried production. Only then change the county registry's
+`snapshot_ready` flag. Continue Illinois/Maine/Pennsylvania source alternatives,
+remaining 2026 precinct scopes, then the historical queue. The precinct
+worklist remains **1,632 incomplete cells**; county coverage is not precinct
+completion, and this UI is not live-verified yet.
 
 ## Resume procedure for every work session or scheduled prompt
 
