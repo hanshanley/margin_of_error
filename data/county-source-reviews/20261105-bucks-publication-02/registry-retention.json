@@ -1,0 +1,9 @@
+{
+  "status": "all_prior_review_objects_unchanged",
+  "previous_reviews": 7,
+  "new_reviews": 8,
+  "baseline_complete_downloads": 186,
+  "new_coverage_promotions": 0,
+  "historical_pointer_sha256": "6520c2ce8402af595d2c365a4dd0b929ddaa173e5be293a9332de308b49e3153",
+  "renderer_sha256": "b5a66058036488d3a9e3be80f68efc6cec5f2b0c5b1fc7c76d25084f625aa7ef"
+}

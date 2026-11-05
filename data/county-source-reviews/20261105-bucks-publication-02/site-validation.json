@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "astro_errors": 0,
+  "astro_warnings": 0,
+  "preexisting_astro_hints": 5,
+  "participation_tests_passed": 7,
+  "caucus_tests_passed": 4,
+  "build_passed": true,
+  "pages_preparation_passed": true,
+  "verified_relocated_downloads": 94,
+  "prepared_site_bytes": 987267961,
+  "new_county_map_tests_required": false,
+  "reason": "Registry/download-only change; renderer, geometry and map pointers unchanged"
+}

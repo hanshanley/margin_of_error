@@ -7,13 +7,29 @@
     "bytes": 1733,
     "sha256": "39dbed3dd7b5b4a19f09f2b8a8944db42e7356d918b7d87ad249c2331e54e574"
   },
+  "local-browser.json": {
+    "bytes": 34087,
+    "sha256": "68081787e0e6e96c1862728b2159e9c63545883df876a09dce56f962d8fc0ce9"
+  },
   "redaction-and-data-preservation.json": {
     "bytes": 806,
     "sha256": "699b557d0e02cc373d7c63690b89dda377b5146085af4738af20d0c4cbc8005f"
   },
+  "registry-retention.json": {
+    "bytes": 356,
+    "sha256": "ae228cc623e8eb4307362a2fa5554929f28cedfb2cae06fbb7e94e759aea62e3"
+  },
+  "release-verification.json": {
+    "bytes": 2879,
+    "sha256": "67b25b69441f51fc9eddd39a5164bbf5339c9cb992d09e7da540961d867ed493"
+  },
   "reproduction.json": {
     "bytes": 3410,
     "sha256": "fdb025003279d618a5f180f7a527facaa6c63842e193707366b7dd0697e0f3a3"
+  },
+  "site-validation.json": {
+    "bytes": 432,
+    "sha256": "4ab7e6b3e4da07663e42b68e749ff4b2aa0f854174f150ce003f2f1ea9073b63"
   },
   "source-discovery.json": {
     "bytes": 1092,

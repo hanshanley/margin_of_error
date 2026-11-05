@@ -1,6 +1,28 @@
 {
   "reviews": [
     {
+      "id": "pennsylvania-bucks-20261105-01",
+      "label": "Bucks County, Pennsylvania 2026: complete county returns and separate participation, counting partial",
+      "data_directory": "data/county-source-reviews/20261105-bucks-reviewed-02",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/3d2be9ada0d1022511815fd8edb9d96fc7666b54/data/county-source-reviews/20261105-bucks-reviewed-02/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-bucks-20261105-01/complete-bucks-2026-county-results-02.zip",
+      "complete_download_bytes": 368884,
+      "complete_download_sha256": "7f567f6acdd274df3ea444d1cfb60a21927c2a677e3f65c3cd1eb40209e356bb",
+      "review_status": "complete_county_reports_and_counts_reviewed_counting_partial",
+      "maps_approved": false,
+      "scope_note": "Bucks County only, unofficial November 3, 2026 general election; printed report update November 4 at 4:15 PM, timezone unverified. Mail and in-person counting both remain Partially Reported despite the native 304 of 304 reporting counter. House candidate votes total 302,786: Dem 158,908, Rep 142,796 and Nonpart write-ins 1,082. These are separate from 305,485 county Ballots Counted and 487,385 Registered Voters; the 2,699-ballot difference stays unclassified, not inferred undervotes or overvotes. All 46 candidate lines, 138 candidate-mode observations and 3,949 native unit candidate rows reconcile across all 15 contests; all 343 explicit unit zeroes remain. CSV and accessible-HTML party labels, including Fwi, Ind and Lib in other contests, are retained separately. Provisional candidate zeroes do not establish zero provisional ballots. Native RegularCheckIns is labeled VOTES CAST and sums to county ballots; all 61 differences between unit names and map keys remain unnormalized. The native HTML snapshot explicitly omits its map-service token, with original/redacted hashes recorded and the complete original retained privately; original CSV/PDF reports and every data table are unchanged. This is not statewide Pennsylvania completeness, a new map, demographic turnout or final certification; existing maps are unchanged.",
+      "tables": [
+        {"file": "county-candidate-results.csv", "label": "Bucks County only: all 46 native candidate/write-in lines across 15 contests, CSV and accessible-HTML parties kept separate (CSV)"},
+        {"file": "county-candidate-mode-counts.csv", "label": "Bucks County only: all 138 candidate Absentee and Mail-In, Election Day and Provisional counts, including every explicit zero (CSV)"},
+        {"file": "county-office-party-totals.csv", "label": "Bucks County only: all 15 office/literal-party totals, separate offices and checked nonoverlapping district partitions (CSV)"},
+        {"file": "county-contest-totals.csv", "label": "Bucks County only: all 15 contest candidate totals, separate native ballots, unclassified differences and reporting counters (CSV)"},
+        {"file": "county-participation.csv", "label": "Bucks County only: separate county ballots, registrations, printed/calculated registered-voter ratio and partial-counting qualifications (CSV)"},
+        {"file": "native-unit-participation.csv", "label": "Bucks County only: all 304 native VOTES CAST and registration records, literal names, codes and distinct map keys; no geometry approved (CSV)"},
+        {"file": "native-unit-candidate-counts.csv", "label": "Bucks County only: all 3,949 native unit/candidate observations, literal summary parties and 343 explicit zeroes; no geometry approved (CSV)"}
+      ],
+      "coverage": []
+    },
+    {
       "id": "dc-delegate-county-20261105-01",
       "label": "District of Columbia 2026: separate nonvoting-delegate counts and city participation",
       "data_directory": "data/county-source-reviews/20261105-dc-reviewed-01",

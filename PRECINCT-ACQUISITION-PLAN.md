@@ -319,7 +319,7 @@ this completed publication or reinterpret the unresolved 324-ballot difference.
 Next actionable work remains genuine 2026 Maine/Pennsylvania county sources,
 followed by the scoped 2016 historical House export.
 
-Bucks County official 2026 alternative, reviewed; publication in progress:
+Bucks County official 2026 alternative, released; page publication in progress:
 `data/county-source-reviews/20261105-bucks-reviewed-02/` retains the county's
 declared native 2026 report with map-service tokens explicitly redacted, the
 unmodified official linking page, three complete original CSV reports,
@@ -363,9 +363,20 @@ county-declared Clarity report returned 403; preserve that receipt, use no
 apparent counts and do not retry the blocked endpoint. This Bucks acquisition
 is county counts only, not statewide Pennsylvania completion, a new map,
 new precinct coverage or demographic turnout. Existing map coverage remains
-48 states / 3,060 county equivalents. Next, release and byte-verify the complete
-package and seven pinned CSV endpoints, retain all 186 current page downloads,
-then verify the exact Pages revision in all four display modes.
+48 states / 3,060 county equivalents. Safe source/tools commit
+`3d2be9ada0d1022511815fd8edb9d96fc7666b54` is pushed, without the blocked
+unpublished commit. Release `voter-county-pennsylvania-bucks-20261105-01`
+and all seven pinned complete CSV endpoints were independently downloaded and
+byte-verified; `release-verification.json` records all eight receipts.
+The new registry entry preserves every prior review object unchanged and uses
+`coverage: []`. Astro check, seven participation tests, build/four caucus tests
+and Pages preparation pass; the prepared site is 987,267,961 bytes after
+verifying all 94 relocated downloads. Four local display modes retain every
+previous 186 complete URL among 194, all four historical House years/204 scope
+cells and all 52 UF rows, with every registered review caveat source-matched.
+The map renderer and pointers remain unchanged, so their completed suites were
+not repeated. Next, deploy and verify the exact Pages revision in all four
+production display modes before marking this county package live.
 
 Pennsylvania official county alternative, November 5 follow-up:
 `data/county-source-reviews/20261105-monroe-official-01/` retains Monroe's
