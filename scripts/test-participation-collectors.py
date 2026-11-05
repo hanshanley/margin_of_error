@@ -136,6 +136,59 @@ def test_house_county_review_keeps_overseas_unlocated_and_never_adds_parallel_to
     assert sum(c["votes"] for c in result["unlocated_regions"][0]["candidates"]) == 1
 
 
+@pytest.mark.parametrize("change", [None, "nonzero", "missing-vote", "missing-candidate",
+                                   "party", "wrong-fips", "reporting", "other-name",
+                                   "other-state", "missing-cook", "wrong-cook"])
+def test_house_county_review_keeps_only_explicit_zero_chicago_placeholders_unlocated(change):
+    import copy
+    data, declared, reference = house_county_review_fixture("IL", "17")
+    cook = data["region_results"].pop("First")
+    cook.update(name="Cook", fips="17031")
+    data["region_results"]["cook"] = cook
+    reference.pop("17001")
+    reference["17031"] = dict(GEOID="17031", STATEFP="17", NAME="Cook", NAMELSAD="Cook County")
+    chicago = copy.deepcopy(cook)
+    chicago.update(name="Chicago", fips=None, percent_reporting=0)
+    for candidate in chicago["candidates"]:
+        candidate["votes"] = 0
+    data["region_results"]["chicago"] = chicago
+    if change == "nonzero":
+        chicago["candidates"][0]["votes"] = 1
+        data["candidates"][0]["votes"] += 1
+    elif change == "missing-vote":
+        chicago["candidates"][0].pop("votes")
+    elif change == "missing-candidate":
+        chicago["candidates"].pop()
+    elif change == "party":
+        chicago["candidates"][0]["party"] = "Different literal party"
+    elif change == "wrong-fips":
+        chicago["fips"] = "1703"
+    elif change == "reporting":
+        chicago["percent_reporting"] = 1
+    elif change == "other-name":
+        chicago["name"] = "Other City"
+    elif change == "other-state":
+        data["province"] = declared["state_code"] = "WA"
+        data["district"] = declared["district"] = "WA-01"
+    elif change == "missing-cook":
+        data["region_results"].pop("cook")
+    elif change == "wrong-cook":
+        cook["fips"] = "17003"
+    if change is not None:
+        with pytest.raises(ValueError):
+            house_county_review.district_counties(data, declared, "17", reference)
+        return
+    result = house_county_review.district_counties(data, declared, "17", reference)
+    assert len(result["counties"]) == 2 and len(result["unlocated_regions"]) == 1
+    retained = result["unlocated_regions"][0]
+    assert retained["source_key"] == "chicago" and retained["candidates"] == chicago["candidates"]
+    assert retained["geographic_status"] == "explicit_zero_unlocated_chicago_reporting_row"
+    rows = house_county_review.state_counties("IL", {"il-01": declared},
+                                             {"il-01": result}, reference, "17")
+    assert sum(row["total_votes"] for row in rows) == 32
+    assert next(row for row in rows if row["geography"] == "17031")["total_votes"] == 18
+
+
 def test_house_county_review_uses_current_connecticut_planning_regions_not_overlapping_old_counties():
     import copy
     data, declared, reference = house_county_review_fixture("CT", "09")

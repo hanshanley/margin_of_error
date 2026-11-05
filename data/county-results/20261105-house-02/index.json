@@ -1,0 +1,265 @@
+{
+  "year": 2026,
+  "coverage": {
+    "AK": {
+      "file": "geometry/AK.geojson.gz",
+      "counties": 30,
+      "colored_counties": 30
+    },
+    "AL": {
+      "file": "geometry/AL.geojson.gz",
+      "counties": 67,
+      "colored_counties": 67
+    },
+    "AR": {
+      "file": "geometry/AR.geojson.gz",
+      "counties": 75,
+      "colored_counties": 75
+    },
+    "AZ": {
+      "file": "geometry/AZ.geojson.gz",
+      "counties": 15,
+      "colored_counties": 15
+    },
+    "CA": {
+      "file": "geometry/CA.geojson.gz",
+      "counties": 58,
+      "colored_counties": 58
+    },
+    "CO": {
+      "file": "geometry/CO.geojson.gz",
+      "counties": 64,
+      "colored_counties": 64
+    },
+    "CT": {
+      "file": "geometry/CT.geojson.gz",
+      "counties": 9,
+      "colored_counties": 9
+    },
+    "DE": {
+      "file": "geometry/DE.geojson.gz",
+      "counties": 3,
+      "colored_counties": 3
+    },
+    "FL": {
+      "file": "geometry/FL.geojson.gz",
+      "counties": 67,
+      "colored_counties": 67
+    },
+    "GA": {
+      "file": "geometry/GA.geojson.gz",
+      "counties": 159,
+      "colored_counties": 159
+    },
+    "HI": {
+      "file": "geometry/HI.geojson.gz",
+      "counties": 5,
+      "colored_counties": 4
+    },
+    "IA": {
+      "file": "geometry/IA.geojson.gz",
+      "counties": 99,
+      "colored_counties": 99
+    },
+    "ID": {
+      "file": "geometry/ID.geojson.gz",
+      "counties": 44,
+      "colored_counties": 44
+    },
+    "IL": {
+      "file": "geometry/IL.geojson.gz",
+      "counties": 102,
+      "colored_counties": 97
+    },
+    "IN": {
+      "file": "geometry/IN.geojson.gz",
+      "counties": 92,
+      "colored_counties": 90
+    },
+    "KS": {
+      "file": "geometry/KS.geojson.gz",
+      "counties": 105,
+      "colored_counties": 105
+    },
+    "KY": {
+      "file": "geometry/KY.geojson.gz",
+      "counties": 120,
+      "colored_counties": 120
+    },
+    "LA": {
+      "file": "geometry/LA.geojson.gz",
+      "counties": 64,
+      "colored_counties": 64
+    },
+    "MA": {
+      "file": "geometry/MA.geojson.gz",
+      "counties": 14,
+      "colored_counties": 14
+    },
+    "MD": {
+      "file": "geometry/MD.geojson.gz",
+      "counties": 24,
+      "colored_counties": 24
+    },
+    "MI": {
+      "file": "geometry/MI.geojson.gz",
+      "counties": 83,
+      "colored_counties": 83
+    },
+    "MN": {
+      "file": "geometry/MN.geojson.gz",
+      "counties": 87,
+      "colored_counties": 87
+    },
+    "MO": {
+      "file": "geometry/MO.geojson.gz",
+      "counties": 115,
+      "colored_counties": 115
+    },
+    "MS": {
+      "file": "geometry/MS.geojson.gz",
+      "counties": 82,
+      "colored_counties": 82
+    },
+    "MT": {
+      "file": "geometry/MT.geojson.gz",
+      "counties": 56,
+      "colored_counties": 56
+    },
+    "NC": {
+      "file": "geometry/NC.geojson.gz",
+      "counties": 100,
+      "colored_counties": 100
+    },
+    "ND": {
+      "file": "geometry/ND.geojson.gz",
+      "counties": 53,
+      "colored_counties": 53
+    },
+    "NE": {
+      "file": "geometry/NE.geojson.gz",
+      "counties": 93,
+      "colored_counties": 93
+    },
+    "NH": {
+      "file": "geometry/NH.geojson.gz",
+      "counties": 10,
+      "colored_counties": 10
+    },
+    "NJ": {
+      "file": "geometry/NJ.geojson.gz",
+      "counties": 21,
+      "colored_counties": 21
+    },
+    "NM": {
+      "file": "geometry/NM.geojson.gz",
+      "counties": 33,
+      "colored_counties": 33
+    },
+    "NV": {
+      "file": "geometry/NV.geojson.gz",
+      "counties": 17,
+      "colored_counties": 17
+    },
+    "NY": {
+      "file": "geometry/NY.geojson.gz",
+      "counties": 62,
+      "colored_counties": 62
+    },
+    "OH": {
+      "file": "geometry/OH.geojson.gz",
+      "counties": 88,
+      "colored_counties": 88
+    },
+    "OK": {
+      "file": "geometry/OK.geojson.gz",
+      "counties": 77,
+      "colored_counties": 77
+    },
+    "OR": {
+      "file": "geometry/OR.geojson.gz",
+      "counties": 36,
+      "colored_counties": 36
+    },
+    "RI": {
+      "file": "geometry/RI.geojson.gz",
+      "counties": 5,
+      "colored_counties": 5
+    },
+    "SC": {
+      "file": "geometry/SC.geojson.gz",
+      "counties": 46,
+      "colored_counties": 46
+    },
+    "SD": {
+      "file": "geometry/SD.geojson.gz",
+      "counties": 66,
+      "colored_counties": 66
+    },
+    "TN": {
+      "file": "geometry/TN.geojson.gz",
+      "counties": 95,
+      "colored_counties": 95
+    },
+    "TX": {
+      "file": "geometry/TX.geojson.gz",
+      "counties": 254,
+      "colored_counties": 253
+    },
+    "UT": {
+      "file": "geometry/UT.geojson.gz",
+      "counties": 29,
+      "colored_counties": 29
+    },
+    "VA": {
+      "file": "geometry/VA.geojson.gz",
+      "counties": 133,
+      "colored_counties": 133
+    },
+    "VT": {
+      "file": "geometry/VT.geojson.gz",
+      "counties": 14,
+      "colored_counties": 14
+    },
+    "WA": {
+      "file": "geometry/WA.geojson.gz",
+      "counties": 39,
+      "colored_counties": 39
+    },
+    "WI": {
+      "file": "geometry/WI.geojson.gz",
+      "counties": 72,
+      "colored_counties": 71
+    },
+    "WV": {
+      "file": "geometry/WV.geojson.gz",
+      "counties": 55,
+      "colored_counties": 55
+    },
+    "WY": {
+      "file": "geometry/WY.geojson.gz",
+      "counties": 23,
+      "colored_counties": 23
+    }
+  },
+  "margins_file": "margins.json",
+  "geographic_level": "county_equivalent",
+  "office": "U.S. House aggregate",
+  "normalized_counties": 3060,
+  "mapped_counties": 3060,
+  "colored_counties": 3050,
+  "boundary_reference_year": 2026,
+  "participation_available": false,
+  "scope": "County candidate votes aggregated across each county's actual House district fragments. Unofficial counts, not precinct results or turnout. Complete state district and candidate-vector reconciliation required. Explicit overseas regions and zero-only unresolved Chicago reporting placeholders remain separately unlocated in audit.json; no votes are allocated or merged. Unsimplified 2026 Census county reference shapes transformed from NAD83 to WGS84; invalid native polygons withheld, not repaired. Not certified election-precinct boundaries.",
+  "withheld_states": {
+    "ME": {
+      "status": "withheld",
+      "error": "Not every declared state district passed source and vector reconciliation"
+    },
+    "PA": {
+      "status": "withheld",
+      "error": "Not every declared state district passed source and vector reconciliation"
+    }
+  },
+  "excluded_geometry": {}
+}

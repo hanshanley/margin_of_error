@@ -1,0 +1,242 @@
+{
+  "acquire-house-county-results.py": {
+    "bytes": 7402,
+    "sha256": "0a877358797fedb3968c4bbd25eaf5fc71efae68bdacdd9e9e8509788e904af7"
+  },
+  "audit.json": {
+    "bytes": 3246753,
+    "sha256": "55226a243bc51e08f9413838c3589f618cf725218e332d9406f3e17133543e8e"
+  },
+  "county-reference.json.gz": {
+    "bytes": 55435,
+    "sha256": "0ba9c83b510180d12173c2d612b6d9398483773589de49682ee023245200d1b2"
+  },
+  "county-results.csv": {
+    "bytes": 391295,
+    "sha256": "32ecd9698ab3e4e50c1e1928b5776cb15ceaab5bf365f256d500b676e6305c75"
+  },
+  "county-results.json.gz": {
+    "bytes": 258163,
+    "sha256": "ee626817259cb56b27d2c972988e18708ad3c49ef90d9e24f455a3e0acb951d5"
+  },
+  "geometry/AK.geojson.gz": {
+    "bytes": 535848,
+    "sha256": "4b1d18c1e56674d616f6d302cb4b6456dfb7a41141313ad86e620f76d12e444e"
+  },
+  "geometry/AL.geojson.gz": {
+    "bytes": 957563,
+    "sha256": "4ef6f03ec7f8f65ecae37a418d25e5c803775458048806a9e28110a1e9ecc6b0"
+  },
+  "geometry/AR.geojson.gz": {
+    "bytes": 1816885,
+    "sha256": "9ed51d2d19200444c49a9e2fde9edd5ab9797ea81842c470b27fcfa65e65cb55"
+  },
+  "geometry/AZ.geojson.gz": {
+    "bytes": 610376,
+    "sha256": "4dfb2870e0934e6f60c0f11cc0bd0d91f178a4b91b9a47fabfd9e689d3a42bed"
+  },
+  "geometry/CA.geojson.gz": {
+    "bytes": 1744498,
+    "sha256": "1ad1c97f14e5ce3cfcdc977bd3d5142f364f26552c691b68dd170d927e82cfca"
+  },
+  "geometry/CO.geojson.gz": {
+    "bytes": 907484,
+    "sha256": "69c2b7e8caa4bfe29deb77e6565286376791b9e345fb6c5bfdb2db6077838475"
+  },
+  "geometry/CT.geojson.gz": {
+    "bytes": 134272,
+    "sha256": "91db697ba37f5d0ffce3f547672068e27354e2693fa2e757142ecdac9457abdb"
+  },
+  "geometry/DE.geojson.gz": {
+    "bytes": 62441,
+    "sha256": "1166cbe39d9ff0dda0cb3122ba784913cb2a1648d7c0ead49d26c13ca1980aed"
+  },
+  "geometry/FL.geojson.gz": {
+    "bytes": 1315336,
+    "sha256": "6e9c973fe0ae14c9f7e93dff072bfde3e3259b9a9c43f1cf647d0f3723830dea"
+  },
+  "geometry/GA.geojson.gz": {
+    "bytes": 2855620,
+    "sha256": "219c1cd18773865615eebeb9eeccc92e3095dcab0b1af4b4150226d4af105249"
+  },
+  "geometry/HI.geojson.gz": {
+    "bytes": 64296,
+    "sha256": "a0c2e40ad8ee9d44734b50dac15c5f3774ce21d2f1b3d5171ae794497dc26cc0"
+  },
+  "geometry/IA.geojson.gz": {
+    "bytes": 745357,
+    "sha256": "0589f3b0dafa88ff8936a0b2e1613cb57de5eda405313ac88667b47517a0032a"
+  },
+  "geometry/ID.geojson.gz": {
+    "bytes": 1212218,
+    "sha256": "73b19435d5cc579acb37d6ac03b080e0121270c960f6792f1eb631db71f18574"
+  },
+  "geometry/IL.geojson.gz": {
+    "bytes": 1046857,
+    "sha256": "ddc8ec595021ed04413207a23410d297a8c538d4c5ebbbe135f37c5d8bde5039"
+  },
+  "geometry/IN.geojson.gz": {
+    "bytes": 863475,
+    "sha256": "ddcaae3590bc8040717b611fd4aaf7000b9a359d2530b99b5a7776ed926a579c"
+  },
+  "geometry/KS.geojson.gz": {
+    "bytes": 831504,
+    "sha256": "cdaa1428516a3a75a94a022e0a57009e42a28e17348cda5861a144bb23182082"
+  },
+  "geometry/KY.geojson.gz": {
+    "bytes": 1813356,
+    "sha256": "7b53087b5e6fd66d226553f233cc3569cb693622a11f109d5897cc993e331fa6"
+  },
+  "geometry/LA.geojson.gz": {
+    "bytes": 1288586,
+    "sha256": "7eeec4d3ebb2ca1fd2897e5f914e925a3b1fb88748bc25c51bd7977bfd930eac"
+  },
+  "geometry/MA.geojson.gz": {
+    "bytes": 242307,
+    "sha256": "3cfb10d32d0af6a84c7abc6ff62538ab62607bd6e243be5f283b0e45aee68f40"
+  },
+  "geometry/MD.geojson.gz": {
+    "bytes": 566838,
+    "sha256": "d393ff433013bdcb4b496cc4228620d90a6156f7e8d056320bc9c3610bdad924"
+  },
+  "geometry/MI.geojson.gz": {
+    "bytes": 463584,
+    "sha256": "cbe4a45667430678549ea8c28e5b0a43652b914373ef41f9d75e6adb0fc2fa87"
+  },
+  "geometry/MN.geojson.gz": {
+    "bytes": 1190931,
+    "sha256": "ef2672107b15e32332b185baa3e878ec64133dd0ee272b288ead7af51516c13a"
+  },
+  "geometry/MO.geojson.gz": {
+    "bytes": 1311381,
+    "sha256": "adf0fe9ec17e9643a3c370b63a85a90661c6d68b0f0e6f5f932a6b59fb42d6d7"
+  },
+  "geometry/MS.geojson.gz": {
+    "bytes": 1163119,
+    "sha256": "f92866ca5d6384cc3db5caaa52a66a442753296f8cf8de06ec62a355b32066ea"
+  },
+  "geometry/MT.geojson.gz": {
+    "bytes": 1435712,
+    "sha256": "2e429197f0b18238cb850019d7ebd19e87adc773438352ea1b317e9487a82ecc"
+  },
+  "geometry/NC.geojson.gz": {
+    "bytes": 2819217,
+    "sha256": "c8e748cd82e869d9da4507ebc2f6996dd8eec8099ca96603bbfda76eb609b1a9"
+  },
+  "geometry/ND.geojson.gz": {
+    "bytes": 731852,
+    "sha256": "2725f586b52b9f7949086f03b0acb2ea0959dfd01a14bb56268d2025b1ec1951"
+  },
+  "geometry/NE.geojson.gz": {
+    "bytes": 730650,
+    "sha256": "d9f70281006d90a95fb77c21314de01a906b48c25875ce9d3db6f74f34e2ca7d"
+  },
+  "geometry/NH.geojson.gz": {
+    "bytes": 223600,
+    "sha256": "689b0b057e5625f5a30da528b4417b405e81c4ba7ae39ac6d5d449dad8626efd"
+  },
+  "geometry/NJ.geojson.gz": {
+    "bytes": 843580,
+    "sha256": "1aa41dc4965b02375bdeb52a4f10285d0e680ba21ab793ef663ff18961b6c19d"
+  },
+  "geometry/NM.geojson.gz": {
+    "bytes": 379021,
+    "sha256": "97abeb2b992f05db92aae2385558e2584cd685493525f3e45bc7ecdfd2d2dfe6"
+  },
+  "geometry/NV.geojson.gz": {
+    "bytes": 257169,
+    "sha256": "d77d017973187fd7a42204c58301daf804594c39394b85a888633d304f46d511"
+  },
+  "geometry/NY.geojson.gz": {
+    "bytes": 747887,
+    "sha256": "d47b51ec1da084ee36aaefafc21bebe506a4e5e245a529139968223884d5595a"
+  },
+  "geometry/OH.geojson.gz": {
+    "bytes": 769693,
+    "sha256": "a9cb5f455b746d94a0ccf9c18c36d804ef0e728d9f63e119da69b40ce5e764e8"
+  },
+  "geometry/OK.geojson.gz": {
+    "bytes": 972752,
+    "sha256": "c0707afad36682624a155b051f66cb2ec5a864c03d6dc82d763abd579e98edb9"
+  },
+  "geometry/OR.geojson.gz": {
+    "bytes": 1051316,
+    "sha256": "c4b28b42e815e0870ee309ba21edc690479b7efce1fb68f5930dbbd05fcfcdf2"
+  },
+  "geometry/RI.geojson.gz": {
+    "bytes": 45262,
+    "sha256": "81c95c061de31db0e589f8bf3028d36b911d63b078d70d3f3f1928c7a47f4dab"
+  },
+  "geometry/SC.geojson.gz": {
+    "bytes": 1328516,
+    "sha256": "48fec02fa5c997e7ef0d0a64c050d3773c4404410998c0b605b12a0ce1e6bc71"
+  },
+  "geometry/SD.geojson.gz": {
+    "bytes": 1101667,
+    "sha256": "09b8eacb1af342542991c29531990e23344d00863ec81fadf73fa7e3bed74376"
+  },
+  "geometry/TN.geojson.gz": {
+    "bytes": 1698324,
+    "sha256": "458587d28a6301475c907be4e2a0385e05b5acaad2cf622baafcae0578e8b67d"
+  },
+  "geometry/TX.geojson.gz": {
+    "bytes": 3922482,
+    "sha256": "6dec632a2eeb7ec21f9da35873e154636aa42be3681d6890e1ba23023061cad5"
+  },
+  "geometry/UT.geojson.gz": {
+    "bytes": 1047201,
+    "sha256": "4e93c0aca53e7a701361351263b66d15ade19a44d97db01e63e444091974eb48"
+  },
+  "geometry/VA.geojson.gz": {
+    "bytes": 3273623,
+    "sha256": "502e9646e382b0e4ce74846648f0f4614eb19922516dd44ccdc4f95d1140ecf5"
+  },
+  "geometry/VT.geojson.gz": {
+    "bytes": 162684,
+    "sha256": "b487d60a9b921b9e5db11359ca659c35fd7e5dfdff6c2ecc54b5bd7a3794a863"
+  },
+  "geometry/WA.geojson.gz": {
+    "bytes": 850996,
+    "sha256": "9f86f0ff1a12b3fd6a0033aa93902cac7311fefec3f90049a074e806f109abad"
+  },
+  "geometry/WI.geojson.gz": {
+    "bytes": 664030,
+    "sha256": "4f53e9b43faa1cf6dd9e1f9b893993fe6f4aa42a78cfbb1afbeb39d3f6db5f74"
+  },
+  "geometry/WV.geojson.gz": {
+    "bytes": 988736,
+    "sha256": "9114e1c6309189a97408bed9571c9f3e2403629129c373dc2cebe032954796a7"
+  },
+  "geometry/WY.geojson.gz": {
+    "bytes": 381434,
+    "sha256": "384538df298546097d10fd3f7b6bc959aa7f054e8de7e635e029e13057aff6d3"
+  },
+  "index.json": {
+    "bytes": 6483,
+    "sha256": "119267de8b371ed15081282d4514bafb0bd50f6fe55a85e755ed647a911535b2"
+  },
+  "inputs.json.gz": {
+    "bytes": 40096,
+    "sha256": "849ee636f5f4d584d99c2645ebd9377ad4c13e867575418aa41a4d4406c946e5"
+  },
+  "margins.json": {
+    "bytes": 2000675,
+    "sha256": "61fb48187fd9a2bb2b648016b03f57a8dca5df90c948dd9b583b072a1f713da3"
+  },
+  "originals/census-reference.tar.gz": {
+    "bytes": 83077296,
+    "sha256": "aa8021ec2f46ba51ce185bfae75623928390201b6b839664c5c7d0955736997c"
+  },
+  "originals/provider.tar.gz": {
+    "bytes": 388636,
+    "sha256": "b12d04d08e101135a1a1e7b73a4f24d5e468570d8e38b2bdd0293f350ba123bf"
+  },
+  "review-house-county-results.py": {
+    "bytes": 21400,
+    "sha256": "5a4ba2fdfb2b4dc5787eb740eae65aeee1cd399281c4c9c575ea1847862eb347"
+  },
+  "state-codes.json": {
+    "bytes": 717,
+    "sha256": "07e4919b7d6ca93929dade31248806afd886ac4fa47215640d976b33bba75f24"
+  }
+}

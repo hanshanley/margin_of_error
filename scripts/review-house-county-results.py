@@ -122,6 +122,15 @@ def district_counties(data, declared, state_fips, reference):
         if kind == "Overseas":
             unlocated.append(row)
             continue
+        cook = data["region_results"].get("cook", {})
+        if (declared["state_code"] == "IL" and key == "chicago"
+                and kind == "County" and region.get("name") == "Chicago"
+                and region.get("fips") is None and region.get("percent_reporting") == 0
+                and not any(vector.values()) and cook.get("name") == "Cook"
+                and cook.get("type") == "County" and cook.get("fips") == "17031"):
+            unlocated.append(dict(row, geographic_status="explicit_zero_unlocated_chicago_reporting_row",
+                                  native_percent_reporting=region["percent_reporting"]))
+            continue
         fips, strategy = county_identity(region, state_fips, reference)
         if fips in seen:
             raise ValueError("Duplicate county equivalent within one district")
@@ -279,7 +288,10 @@ def main():
                  accepted_states=sum(r["status"] != "withheld" for r in states.values()),
                  normalized_counties=len(rows), states=states, districts=reviewed,
                  notes="Every county/unlocated vector has the full literal district candidate inventory. "
-                 "Counties plus separately retained explicit overseas regions must sum to each district. "
+                 "Counties plus separately retained explicit unlocated regions must sum to each district. "
+                 "Illinois Chicago rows without FIPS remain unlocated only when every explicit candidate "
+                 "count and reported percentage is zero and a native Cook County FIPS 17031 row exists. "
+                 "These placeholders are not mapped, merged into Cook, or interpreted as zero participation. "
                  "Overlapping town/district/state views are retained in originals, not added. "
                  "A state is withheld if any declared district fails or any 2026 county equivalent is absent. "
                  "FIPS joins are direct; missing FIPS permits only unique Census short/long names "
@@ -317,7 +329,8 @@ def main():
             boundary_reference_year=2026, participation_available=False,
             scope="County candidate votes aggregated across each county's actual House district fragments. "
             "Unofficial counts, not precinct results or turnout. Complete state district and candidate-vector "
-            "reconciliation required. Explicit overseas regions remain separately unlocated in audit.json. "
+            "reconciliation required. Explicit overseas regions and zero-only unresolved Chicago reporting "
+            "placeholders remain separately unlocated in audit.json; no votes are allocated or merged. "
             "Unsimplified 2026 Census county reference shapes transformed from NAD83 to WGS84; invalid native "
             "polygons withheld, not repaired. Not certified election-precinct boundaries.",
             withheld_states={code: result for code, result in states.items() if result["status"] == "withheld"},

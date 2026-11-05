@@ -2491,7 +2491,7 @@ King identities and Jefferson/Walla Walla accounting independently. Native
 participation denominators remain a separate review; no final or demographic
 turnout is inferred.
 
-### County package: 47 states reconciled and live-verified
+### Original county package: 47 states reconciled and live-verified
 
 Canonical parser/builder: `scripts/review-house-county-results.py`.
 Every accepted native county or explicit overseas row carries exactly the
@@ -2511,7 +2511,8 @@ silently substituted, and normalized-name collisions are rejected.
 Connecticut uses all nine current planning regions, Virginia all 133 counties
 and independent cities, and Alaska all 30 current county equivalents.
 
-The **three withheld states** are:
+The **three withheld states in this original `house-01` snapshot** are
+(Illinois is resolved in the separate `house-02` review below):
 
 | State | Actual source defect | Next action |
 |---|---|---|
@@ -2595,13 +2596,17 @@ isolation, all 58 complete download links with all 55 prior links retained,
 desktop/mobile, JavaScript/no-JavaScript and failed-county-fetch fallbacks.
 Proofs: `files/national-2026-county-ui-deployment.json` and
 `files/national-2026-county-live-browser-proof.json`.
-The county registry can now be marked **`live_verified_partial`**.
+The county registry was marked **`live_verified_partial`** in status/source-only
+commit **`afb769d841dd9ad114956200401a49c04e0c0963`**. Its exact Pages run
+**`41999766700`** succeeded. Unqueried registry, renderer and worklist bytes
+matched the checkout, all 58 complete download links retained all 55 prior
+links, and the complete Maine/Pennsylvania original-source archive downloaded
+from that immutable commit matched local bytes. Proof:
+`files/county-status-publication-proof.json`.
 
-**Next executable actions:** persist the live flag and independently acquired
-official follow-up originals as Hans; verify the exact status/source-only
-deployment and unqueried registry/renderer/download bytes without repeating
-the unchanged 47-state browser matrix. Continue Illinois/Maine/Pennsylvania
-source alternatives, remaining 2026 precinct scopes, then the historical queue.
+**Next executable actions:** publish the separately verified Illinois-inclusive
+`house-02` source/release and UI below. Continue Maine/Pennsylvania source
+alternatives, remaining 2026 precinct scopes, then the historical queue.
 The precinct worklist remains **1,632 incomplete cells**; county coverage is
 not precinct completion.
 
@@ -2638,6 +2643,65 @@ They do not repair the 17 test-flagged candidate APIs or justify a red/blue
 county layer. Next: reconcile actual county rows and report timestamps,
 preserve incomplete/administrative reporting scope, and normalize source-defined
 participation independently of the still-withheld candidate results.
+
+### Illinois resolved without merging votes: new 48-state county source package
+
+The actual eleven unmatched native `chicago` rows are **explicitly all zero**:
+every literal candidate is present with integer zero votes, no county FIPS,
+`name="Chicago"`, `type="County"` and zero reported percentage. Each affected
+district independently supplies native `cook` / `Cook` / `County` / **17031**
+and its own nonzero candidate vector. The previous failure was refusing to
+map that separate unresolved zero row, not a missing or unassigned set of votes.
+
+The canonical parser now narrowly retains only that exact Illinois placeholder
+in **`unlocated_regions`**, including its literal candidates and native reporting
+percentage. It is not discarded, mapped as a fake county/precinct, merged into
+Cook, reclassified as overseas, or interpreted as zero participation.
+Any nonzero Chicago count, missing candidate/count, wrong party, reporting
+progress, mismatched name/FIPS/state or absent/invalid native Cook row remains
+rejected. **41 focused county tests pass**, including eleven new scope/edge cases.
+County candidates plus all explicit unlocated vectors still equal each district.
+
+New immutable package: `data/county-results/20261105-house-02/`.
+It passes **417 district reviews / 48 states / 3,060 county equivalents**,
+including all **17 Illinois districts / 102 actual counties**.
+All **3,055** nonzero county margins are colorable; the same five explicit
+zero-vote counties remain uncolored. Maine's 165 write-in mismatch and all
+17 Pennsylvania test-flagged sources remain withheld. D.C. remains outside
+the 435-voting-district source. No precinct cell is marked complete.
+
+Full ZIP: `complete-2026-house-county-results-02.zip`,
+**139,681,390 bytes**, SHA-256
+`eacd3f041bbd888f055bd8403b057b60d7605a6bc59e0b3c627a9ee8209bcae7`.
+It contains all 435 original responses/receipts, complete original Census
+archive, exact normalized counts and full CSV, candidate-vector audits,
+48 unsimplified correct-year county geometry shards and portable tools.
+Independent verification checks every original receipt/checksum and candidate
+vector, every CSV value, all valid nonoverlapping geometries, the eleven retained
+zero placeholders and a **network-disabled, archive-only byte-identical complete
+ZIP rebuild**. Every pre-existing 47-state normalized row and geometry shard is
+**unchanged**. All 39 Washington official county comparisons still agree.
+Proof: `files/national-2026-county-package-proof-02.json`.
+
+Independent ordinary-browser acquisition also preserves native Illinois authority
+index and its All Election Authorities selection, the current Cook election page,
+official county scope and the full election-night response in
+`files/remaining-county-authorities-20261105/`, with original receipts.
+The official page explicitly covers suburban Cook; never add those native
+suburban totals to an already FIPS-identified provider Cook County aggregate.
+The stale Cook `/elections/election-results` URL returns 404; the declared current
+route is `/elections/results-and-election-data/election-results`.
+The Pennsylvania root returns a blocked Incapsula document despite HTTP 200,
+and Maine's state index returns 403 in both direct and ordinary browser access.
+Those are access evidence, not result data; no challenge was solved or bypassed.
+
+**Next executable actions:** commit/push the new source package and parser/tests
+as Hans; create and independently byte-verify a **new immutable release**, without
+replacing `house-01`. Pin the UI to that exact source commit/release, update the
+48-state scope/3,060-row downloads and actual withheld list, and test Illinois's
+102 source-matched colors alongside the existing precinct/zoom/download behavior.
+Only after its exact Pages deployment and unqueried production pass may the
+new pointer become `live_verified_partial`. Keep the old complete download.
 
 ## Resume procedure for every work session or scheduled prompt
 
