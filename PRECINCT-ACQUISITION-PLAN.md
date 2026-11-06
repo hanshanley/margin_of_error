@@ -210,6 +210,36 @@ No candidate vote substitution, rate/map/completion approval or live explorer
 promotion is made from this partial-day snapshot. Immutable numerical publication
 and any separately qualified current-source usability review remain distinct gates.
 
+**November 6: Delaware's stronger statewide/district turnout query reproduced.**
+The actual first-party `GE2026` declaring page and its hash-bound `results.js`
+declare three exact native JSON feeds, retained in full: **8,250 turnout bytes /
+65,250 state-candidate bytes / 45,414 county/city-candidate bytes**.
+Python, Node and network-blocked Chromium independently decode every record
+and all **4,510 native fields** identically. Separate Python Decimal and Node
+numerical checks reconcile all **41 representative districts** to the separate
+**384,862 Ballots Cast / 810,407 Reg Voters** statewide `ALL` row, printed
+**47.49%**. All **42 printed registration fractions** reconcile. The denominator
+exists in the native feed and equals all district denominators; the site's
+hardcoded display value is not used as evidence. The turnout feed supplies
+**no report clock or timezone**; the separate candidate clock
+**`2026-11-04T03:03:18.364-05:00`** is not substituted.
+All **124 state candidate mode vectors / 124 county/city candidate vectors /
+124 literal party-label rows** remain separate. Senate selections **378,111**
+are not the participation count. Wilmington plus rest-of-New-Castle equals
+New Castle; New Castle plus Kent plus Sussex equals each state candidate
+total. Reporting denominators are preserved per contest, including both
+530 and 527 for statewide races, not falsely generalized to every contest.
+The complete query at
+`data/county-source-reviews/20261106-delaware-statewide-native-01/`
+passes **eight focused tests**; all **15 entire files / 14 ZIP members**
+reproduce byte-for-byte offline. ZIP **36,548 bytes / SHA-256
+`521c0849acedf949e7e31bd75ab5053d91630b2ec55118e03cd42275e82c9cd0`**.
+This stronger source remains distinct from the immutable afternoon county
+snapshot. No district turnout is apportioned to counties. Native map, analysis,
+all-mode-completion and certification flags remain false; no population or
+demographic rate is inferred. Native publication and separately qualified
+statewide explorer usability are the next gates, not yet a LIVE claim.
+
 **November 6: South Carolina and Louisiana consolidated scope checked, not promoted.**
 South Carolina's actual participation/results parents and their three declared
 responses are retained privately with verified full digests. The entire

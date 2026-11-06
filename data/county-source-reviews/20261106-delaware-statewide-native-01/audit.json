@@ -1,0 +1,31 @@
+{
+  "row_counts": {
+    "district-participation.csv": 41,
+    "statewide-participation.csv": 1,
+    "state-candidate-results.csv": 124,
+    "county-candidate-vectors.csv": 124,
+    "literal-party-labels.csv": 124
+  },
+  "native_records": {
+    "native-turnout.json": 42,
+    "native-state-candidate-results.json": 124,
+    "native-county-candidate-results.json": 124
+  },
+  "native_ballots_cast": 384862,
+  "native_registered_voters": 810407,
+  "native_printed_percent": "47.49",
+  "all_41_district_ballot_and_registration_sums_equal_separate_statewide_totals": true,
+  "all_42_native_printed_registered_fractions_reconcile": true,
+  "all_124_state_candidate_mode_vectors_reconcile": true,
+  "all_124_county_city_and_state_candidate_vectors_reconcile": true,
+  "separate_senate_candidate_selections": 378111,
+  "native_turnout_update_clock_missing": true,
+  "native_turnout_timezone_missing": true,
+  "candidate_clock_not_substituted_for_turnout": true,
+  "no_turnout_apportioned_to_counties": true,
+  "no_statewide_total_added_to_districts": true,
+  "analysis_rate_approvals": 0,
+  "map_approvals": 0,
+  "all_mode_completion_approvals": 0,
+  "scope": "Complete native state/district participation and separate state/county candidate/party query. The turnout feed has no native update clock or timezone; the offset-bearing candidate clock remains separate. Reported Ballots Cast and same-report Reg Voters are not proof of finished all-mode counting, certification, final unique voters, population or demographic turnout. District participation is not apportioned to counties. No live explorer update."
+}

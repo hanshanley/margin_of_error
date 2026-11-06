@@ -1,0 +1,67 @@
+{
+  "declaring_page_url": "https://elections.delaware.gov/results/enr/GE2026.html?group=state",
+  "election_id": "GE2026",
+  "election_date": "2026-11-03",
+  "native_inputs": {
+    "native-turnout.json": {
+      "requested_url": "https://elections.delaware.gov/results/enr/Election_VoterTurnout_ID_GE2026.json?t=1793998066823",
+      "response_url": "https://elections.delaware.gov/results/enr/Election_VoterTurnout_ID_GE2026.json?t=1793998066823",
+      "status": 200,
+      "bytes": 8250,
+      "sha256": "97e93fa638ec4dac3f784d6bd8975cfcac230e7788ad37e86fcbe79443010433",
+      "retrieved_at_utc": "2026-11-06T20:47:46.988753+00:00",
+      "verified_tls": true,
+      "source_script_sha256": "ee821c831ae08bdfb53294692807dc67efd8896ab04eb02deb889f3e0598be58",
+      "source_template": "/results/enr/Election_VoterTurnout_ID_${electionId}.json?t=${tstamp}",
+      "exact_declared_election_id": "GE2026",
+      "cache_key_is_client_generated_not_source_report_time": true
+    },
+    "native-state-candidate-results.json": {
+      "requested_url": "https://elections.delaware.gov/results/enr/Election_StatewideResults_ID_GE2026.json?t=1793998066988",
+      "response_url": "https://elections.delaware.gov/results/enr/Election_StatewideResults_ID_GE2026.json?t=1793998066988",
+      "status": 200,
+      "bytes": 65250,
+      "sha256": "a7a8282f4a70eafcfb05fc932e2becc0df8371ed69ffef28f05391684ba3ca1c",
+      "retrieved_at_utc": "2026-11-06T20:47:47.091986+00:00",
+      "verified_tls": true,
+      "source_script_sha256": "ee821c831ae08bdfb53294692807dc67efd8896ab04eb02deb889f3e0598be58",
+      "source_template": "/results/enr/Election_StatewideResults_ID_${electionId}.json?t=${tstamp}",
+      "exact_declared_election_id": "GE2026",
+      "cache_key_is_client_generated_not_source_report_time": true
+    },
+    "native-county-candidate-results.json": {
+      "requested_url": "https://elections.delaware.gov/results/enr/Election_ByCountyWithWilmington_ID_GE2026.json?t=1793998067092",
+      "response_url": "https://elections.delaware.gov/results/enr/Election_ByCountyWithWilmington_ID_GE2026.json?t=1793998067092",
+      "status": 200,
+      "bytes": 45414,
+      "sha256": "595050d1ea97fab154d3d61f328138c53e63688c16dc51b06b8679387f086cff",
+      "retrieved_at_utc": "2026-11-06T20:47:47.268086+00:00",
+      "verified_tls": true,
+      "source_script_sha256": "ee821c831ae08bdfb53294692807dc67efd8896ab04eb02deb889f3e0598be58",
+      "source_template": "/results/enr/Election_ByCountyWithWilmington_ID_${electionId}.json?t=${tstamp}",
+      "exact_declared_election_id": "GE2026",
+      "cache_key_is_client_generated_not_source_report_time": true
+    }
+  },
+  "native_turnout_update_clock": null,
+  "native_turnout_timezone": null,
+  "native_fips": null,
+  "analysis_rate_approved": false,
+  "maps_approved": false,
+  "all_mode_complete": false,
+  "certified": false,
+  "separate_candidate_clock": "2026-11-04T03:03:18.364-05:00",
+  "hardcoded_display_registration_not_used_as_evidence": true,
+  "complete_independent_json_decoders": [
+    "Python standard-library json",
+    "Node JSON.parse",
+    "Chromium JSON.parse"
+  ],
+  "complete_independent_numerical_reviewers": [
+    "Python Decimal",
+    "Node numeric/vector assertions"
+  ],
+  "entire_native_records": 290,
+  "entire_native_fields": 4510,
+  "no_district_turnout_apportioned_to_counties": true
+}

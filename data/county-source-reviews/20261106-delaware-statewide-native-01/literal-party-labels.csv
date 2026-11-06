@@ -1,0 +1,125 @@
+election_id,contest,candidate,native_candidate_id,native_party_id,literal_party_name_json,source_row_ordinal
+GE2026,U.S. Senator,CHRIS COONS,13804,9,"""Democratic Party""",0
+GE2026,U.S. Senator,"MICHAEL ""DR. MIKE"" KATZ",27597,10,"""Republican Party""",1
+GE2026,Representative In Congress,SARAH MCBRIDE,88611,9,"""Democratic Party""",2
+GE2026,Representative In Congress,"JOSEPH ""DR. JOE"" ARMINIO",102404,10,"""Republican Party""",3
+GE2026,Attorney General,KATHY JENNINGS,163418,9,"""Democratic Party""",4
+GE2026,Attorney General,"DAVID C. ""DAVE"" GRAHAM",177133,10,"""Republican Party""",5
+GE2026,Auditor of Accounts,LYDIA YORK,237802,9,"""Democratic Party""",6
+GE2026,Auditor of Accounts,APRIL CALLAWAY,251517,10,"""Republican Party""",7
+GE2026,Auditor of Accounts,AUSTIN CASSIDY,265232,12,"""Independent Party of Delaware""",8
+GE2026,State Treasurer,TED LAUZEN,325901,9,"""Democratic Party""",9
+GE2026,State Treasurer,MICHAEL RAMONE,339616,10,"""Republican Party""",10
+GE2026,State Senator District 1,DAN CRUCE,400285,9,"""Democratic Party""",11
+GE2026,State Senator District 1,HILDI BACHTLE,401260,10,"""Republican Party""",12
+GE2026,State Senator District 1,STEVEN WASHINGTON,402235,12,"""Independent Party of Delaware""",13
+GE2026,State Senator District 5,SHAY FRISBY,406554,9,"""Democratic Party""",14
+GE2026,State Senator District 5,BRENT BURDGE,407217,10,"""Republican Party""",15
+GE2026,State Senator District 5,CAROLYN FRANK,407880,12,"""Independent Party of Delaware""",16
+GE2026,State Senator District 7,SPIROS MANTZAVINOS,410819,9,"""Democratic Party""",17
+GE2026,State Senator District 7,CHRIS ROWE,411482,10,"""Republican Party""",18
+GE2026,State Senator District 8,MARA GORMAN,414421,9,"""Democratic Party""",19
+GE2026,State Senator District 8,SHANE CAVANAUGH,415006,10,"""Republican Party""",20
+GE2026,State Senator District 9,JACK WALSH,417600,9,"""Democratic Party""",21
+GE2026,State Senator District 12,NICOLE POORE,419964,9,"""Democratic Party""",22
+GE2026,State Senator District 12,MARK ESPOSITO,420601,10,"""Republican Party""",23
+GE2026,State Senator District 13,MARIE PINKNEY,423425,9,"""Democratic Party""",24
+GE2026,State Senator District 14,KYRA L. HOFFNER,426134,9,"""Democratic Party""",25
+GE2026,State Senator District 14,MARK PUGH,426745,10,"""Republican Party""",26
+GE2026,State Senator District 15,NISHA LODHAVIA,429454,9,"""Democratic Party""",27
+GE2026,State Senator District 15,EMILY A. THOMPSON,430273,10,"""Republican Party""",28
+GE2026,State Senator District 19,BRIAN G. PETTYJOHN,433902,10,"""Republican Party""",29
+GE2026,State Senator District 20,HARRY S. GOLD,436726,9,"""Democratic Party""",30
+GE2026,State Senator District 20,GERALD W. HOCKER,437467,10,"""Republican Party""",31
+GE2026,State Representative District 1,NNAMDI O. CHUKWUOCHA,440751,9,"""Democratic Party""",32
+GE2026,State Representative District 1,LISA MCINNIS,441180,10,"""Republican Party""",33
+GE2026,State Representative District 2,MICHELLE H. BOOKER,443084,9,"""Democratic Party""",34
+GE2026,State Representative District 3,BRANDEN FLETCHER-DOMINGUEZ,445563,9,"""Democratic Party""",35
+GE2026,State Representative District 3,SHAWN L. DOTTERY,445940,10,"""Republican Party""",36
+GE2026,State Representative District 3,"DEXTER ""DIZZY"" BLAND",446317,12,"""Independent Party of Delaware""",37
+GE2026,State Representative District 4,GREGG LINDNER,447991,9,"""Democratic Party""",38
+GE2026,State Representative District 4,DAN ZITOFSKY,448316,10,"""Republican Party""",39
+GE2026,State Representative District 5,KENDRA JOHNSON,449760,9,"""Democratic Party""",40
+GE2026,State Representative District 6,"RACHEL ""RAE"" KRANTZ",451089,9,"""Democratic Party""",41
+GE2026,State Representative District 6,TANYA HETTLER,451492,10,"""Republican Party""",42
+GE2026,State Representative District 7,LARRY LAMBERT,453281,9,"""Democratic Party""",43
+GE2026,State Representative District 7,SHANE STONEMAN,453658,10,"""Republican Party""",44
+GE2026,State Representative District 8,"SHERAE'A ""RAE"" MOORE",455332,9,"""Democratic Party""",45
+GE2026,State Representative District 8,GARY TAYLOR,455631,10,"""Republican Party""",46
+GE2026,State Representative District 9,AYANNA KHAN-FLOWERS,456960,9,"""Democratic Party""",47
+GE2026,State Representative District 9,JAMAR MONEY,457311,10,"""Republican Party""",48
+GE2026,State Representative District 10,MELANIE ROSS LEVIN,458870,9,"""Democratic Party""",49
+GE2026,State Representative District 10,DOLORES DUNLEAVY,459195,10,"""Republican Party""",50
+GE2026,State Representative District 11,TORI PARKER,460639,9,"""Democratic Party""",51
+GE2026,State Representative District 11,JEFFREY N. SPIEGELMAN,461016,10,"""Republican Party""",52
+GE2026,State Representative District 12,KRISTA GRIFFITH,462690,9,"""Democratic Party""",53
+GE2026,State Representative District 12,STEVE PICKERING,463145,10,"""Republican Party""",54
+GE2026,State Representative District 13,DESHANNA U. NEAL,465164,9,"""Democratic Party""",55
+GE2026,State Representative District 14,CLAIRE SNYDER-HALL,466953,9,"""Democratic Party""",56
+GE2026,State Representative District 14,MIKE SIMPLER,467252,10,"""Republican Party""",57
+GE2026,State Representative District 15,KAMELA T. SMITH,468581,9,"""Democratic Party""",58
+GE2026,State Representative District 16,PAMELA SALAAM,469910,9,"""Democratic Party""",59
+GE2026,State Representative District 16,ENALA A. MWASHITETE,470261,10,"""Republican Party""",60
+GE2026,State Representative District 17,MELISSA MINOR BROWN,471820,9,"""Democratic Party""",61
+GE2026,State Representative District 18,SOPHIE PHILLIPS,473494,9,"""Democratic Party""",62
+GE2026,State Representative District 19,KIM WILLIAMS,474593,9,"""Democratic Party""",63
+GE2026,State Representative District 19,JANYCE COLMERY,474944,10,"""Republican Party""",64
+GE2026,State Representative District 20,ALONNA BERRY,476503,9,"""Democratic Party""",65
+GE2026,State Representative District 20,GENE DVORNICK,476854,10,"""Republican Party""",66
+GE2026,State Representative District 21,FRANK BURNS,478413,9,"""Democratic Party""",67
+GE2026,State Representative District 22,ALEX GREEN,480202,9,"""Democratic Party""",68
+GE2026,State Representative District 22,MIKE SMITH,480553,10,"""Republican Party""",69
+GE2026,State Representative District 23,DAVE REDLAWSK,482112,9,"""Democratic Party""",70
+GE2026,State Representative District 24,ED OSIENSKI,483556,9,"""Democratic Party""",71
+GE2026,State Representative District 24,STEPHEN P. ONDICH,483881,10,"""Republican Party""",72
+GE2026,State Representative District 25,CYNDIE ROMER,485325,9,"""Democratic Party""",73
+GE2026,State Representative District 26,MADINAH WILSON-ANTON,486654,9,"""Democratic Party""",74
+GE2026,State Representative District 27,ERIC MORRISON,487753,9,"""Democratic Party""",75
+GE2026,State Representative District 27,"MARY ""PENNY"" KUBIN",488182,10,"""Republican Party""",76
+GE2026,State Representative District 28,"TYEISHA ""TYE"" GRIER",490086,9,"""Democratic Party""",77
+GE2026,State Representative District 29,WILLIAM BUSH,491760,9,"""Democratic Party""",78
+GE2026,State Representative District 30,WM SHANNON MORRIS,493204,10,"""Republican Party""",79
+GE2026,State Representative District 31,SEAN M. LYNN,495223,9,"""Democratic Party""",80
+GE2026,State Representative District 31,ANTON BROGDEN,495496,10,"""Republican Party""",81
+GE2026,State Representative District 32,KERRI EVELYN HARRIS,496710,9,"""Democratic Party""",82
+GE2026,State Representative District 33,JOSHUA PENNINGTON,498154,9,"""Democratic Party""",83
+GE2026,State Representative District 33,MORGAN HUDSON,498479,10,"""Republican Party""",84
+GE2026,State Representative District 34,ANNIE NORMAN,499923,9,"""Democratic Party""",85
+GE2026,State Representative District 34,LYNDON D. YEARICK,500222,10,"""Republican Party""",86
+GE2026,State Representative District 35,JESSE R. VANDERWENDE,501551,10,"""Republican Party""",87
+GE2026,State Representative District 36,"ANDREW ""ANDY"" GORLICH",503110,9,"""Democratic Party""",88
+GE2026,State Representative District 36,BRYAN WILLIAM SHUPE,503409,10,"""Republican Party""",89
+GE2026,State Representative District 37,VALERIE JONES GILTNER,504738,10,"""Republican Party""",90
+GE2026,State Representative District 38,MAUREEN MADDEN,506182,9,"""Democratic Party""",91
+GE2026,State Representative District 38,CARLIE CAREY,506559,10,"""Republican Party""",92
+GE2026,State Representative District 39,DANIEL B. SHORT,508233,10,"""Republican Party""",93
+GE2026,State Representative District 40,TIMOTHY DALE DUKES,509332,10,"""Republican Party""",94
+GE2026,State Representative District 41,RYAN STUCKEY,510431,9,"""Democratic Party""",95
+GE2026,State Representative District 41,JOHN ATKINS,510808,10,"""Republican Party""",96
+GE2026,New Castle County Recorder of Deeds,DAVID TACKETT,512482,9,"""Democratic Party""",97
+GE2026,New Castle County Register of Wills,CIRO POPPITI,548426,9,"""Democratic Party""",98
+GE2026,New Castle County Sheriff,SCOTT PHILLIPS,584370,9,"""Democratic Party""",99
+GE2026,New Castle County Council District 1,BRANDON TOOLE,620314,9,"""Democratic Party""",100
+GE2026,New Castle County Council District 2,DEE DURHAM,623368,9,"""Democratic Party""",101
+GE2026,New Castle County Council District 2,JAMIE COLLINS,624135,10,"""Republican Party""",102
+GE2026,New Castle County Council District 3,KIRA ALEJANDRO,627534,9,"""Democratic Party""",103
+GE2026,New Castle County Council District 3,MELISSA S. BRAYMAN,628249,10,"""Republican Party""",104
+GE2026,New Castle County Council District 4,JASON HOOVER,631418,9,"""Democratic Party""",105
+GE2026,New Castle County Council District 5,VALERIE GEORGE,635737,9,"""Democratic Party""",106
+GE2026,New Castle County Council District 6,DAVID CARTER,638561,9,"""Democratic Party""",107
+GE2026,New Castle County Council District 6,ALISON T. GIBBS,639172,10,"""Republican Party""",108
+GE2026,Kent County Recorder of Deeds,RAMONA BRACY,641881,9,"""Democratic Party""",109
+GE2026,Kent County Recorder of Deeds,EUGENIA THORNTON,644416,10,"""Republican Party""",110
+GE2026,Kent County Sheriff,NORMAN R. BARLOW,655635,10,"""Republican Party""",111
+GE2026,Kent County Levy Court At-Large,TERRY L. PEPPER,666854,9,"""Democratic Party""",112
+GE2026,Kent County Levy Court At-Large,FRANK E. COLEMAN,669389,10,"""Republican Party""",113
+GE2026,Kent County Levy Court District 2,JEFF HALL,680608,9,"""Democratic Party""",114
+GE2026,Kent County Levy Court District 4,"ROBERT ""BOBBY"" SCOTT",682627,10,"""Republican Party""",115
+GE2026,Kent County Levy Court District 6,PAUL HERTZ,684416,10,"""Republican Party""",116
+GE2026,Sussex County Recorder of Deeds,ALEXANDRA REED BAKER,686665,10,"""Republican Party""",117
+GE2026,Sussex County Register of Wills,GREG FULLER,700299,10,"""Republican Party""",118
+GE2026,Sussex County Sheriff,ROBERT T. LEE,713933,10,"""Republican Party""",119
+GE2026,Sussex County Council District 4,JUSTINE CUCCIA,727567,9,"""Democratic Party""",120
+GE2026,Sussex County Council District 4,DOUGLAS B. HUDSON,728308,10,"""Republican Party""",121
+GE2026,Sussex County Council District 5,JILL HICKS,731592,9,"""Democratic Party""",122
+GE2026,Sussex County Council District 5,JOHN L. RIELEY,732229,10,"""Republican Party""",123

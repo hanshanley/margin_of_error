@@ -1,0 +1,14 @@
+{
+  "query": "Complete Delaware 2026 native statewide/district turnout and separate candidate/party results",
+  "declaration": "The actual GE2026.html page declares results.js. That script derives electionId=GE2026 from the page filename and explicitly constructs all three acquired JSON URLs. Client timestamp query parameters are cache keys, not source update times.",
+  "participation": "Every native Ballots Cast, Reg Voters and Percentage field is retained for all 41 representative districts and the separate ALL statewide aggregate. All sums and printed percentages independently reconcile.",
+  "geography": "Representative districts are not counties. No district turnout is apportioned to counties or joined to a fabricated native Census FIPS.",
+  "clock": "The turnout JSON has no ReportTime or timezone. The separate candidate feed has 2026-11-04T03:03:18.364-05:00; the native page borrows that clock for its display, but this query does not use it as a turnout clock.",
+  "registered_voters": "The website hardcodes 810,407 in its display. This query instead validates the independently supplied native Reg Voters value and its equality to all 41 district denominators.",
+  "candidate_scope": "All 124 state candidate/option records and 124 county vectors are preserved separately. Machine/absentee/early choices, county/state vectors and Wilmington plus rest-of-New-Castle subtotals reconcile. Neither candidate selections nor city/county components substitute for participation.",
+  "party_labels": "All native party IDs/names are retained without collapsing labels. JSON encoding distinguishes null from empty literal party names.",
+  "limitations": "Candidate reporting denominators vary by contest, including 530 and 527 for statewide races; every native pair is retained. Complete reported pairs and UNOFFICIAL RESULTS do not establish turnout-feed update time, completed all-mode counting, certification, final unique voters, population or demographic participation.",
+  "reproduce": "python3 -B -I review-state.py --output /new/nonexistent/output",
+  "tests": "python3 -B -I -m unittest discover -s . -p test_review_state.py",
+  "publication": "Complete numerical inputs and portable executable query, not an HTML mirror or a live explorer integration."
+}
