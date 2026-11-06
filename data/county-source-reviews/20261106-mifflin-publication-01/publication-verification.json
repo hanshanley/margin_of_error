@@ -1,0 +1,571 @@
+{
+  "verified_at": "2026-11-06T08:31:48.642426+00:00",
+  "repository": "hanshanley/margin_of_error",
+  "facts_commit": "0d125f99185c1097ceb3cab4f3458eb9242d51de",
+  "tag": "voter-county-pennsylvania-mifflin-20261106-01",
+  "actual_tag_commit": "0d125f99185c1097ceb3cab4f3458eb9242d51de",
+  "release_id": 436262436,
+  "target_commitish": "0d125f99185c1097ceb3cab4f3458eb9242d51de",
+  "host_enforced_immutable": false,
+  "policy": "Fixed checksum/never overwrite; not described as host-enforced locking.",
+  "entire_assets_and_pinned_files": [
+    {
+      "file": "audit.json",
+      "bytes": 2018,
+      "sha256": "002cca74c5cb18d58c566bd591acc8b81f6fae463f28989e06a63565ac714436",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mifflin-20261106-01/audit.json",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/974803e0-3d16-4ee0-8d15-24fa3d61a221",
+          "bytes": 2018,
+          "sha256": "002cca74c5cb18d58c566bd591acc8b81f6fae463f28989e06a63565ac714436"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/audit.json",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/audit.json",
+          "bytes": 2018,
+          "sha256": "002cca74c5cb18d58c566bd591acc8b81f6fae463f28989e06a63565ac714436"
+        }
+      ]
+    },
+    {
+      "file": "checksums.json",
+      "bytes": 3129,
+      "sha256": "c95c6c0f93b61bd46d9b005ad9bddd7b08bd09da3a4ac978ea0d502e58351ec5",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mifflin-20261106-01/checksums.json",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/aef03ea3-e693-45e6-bceb-0fdc8c2954c6",
+          "bytes": 3129,
+          "sha256": "c95c6c0f93b61bd46d9b005ad9bddd7b08bd09da3a4ac978ea0d502e58351ec5"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/checksums.json",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/checksums.json",
+          "bytes": 3129,
+          "sha256": "c95c6c0f93b61bd46d9b005ad9bddd7b08bd09da3a4ac978ea0d502e58351ec5"
+        }
+      ]
+    },
+    {
+      "file": "complete-mifflin-county-native-query-01.zip",
+      "bytes": 89556,
+      "sha256": "61e24e6042ef4d94052550ca96de970ba504997491b296b0149eda092bdebfcd",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mifflin-20261106-01/complete-mifflin-county-native-query-01.zip",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/9a4ba378-1e5b-4623-8e0e-6483f23f7009",
+          "bytes": 89556,
+          "sha256": "61e24e6042ef4d94052550ca96de970ba504997491b296b0149eda092bdebfcd"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/complete-mifflin-county-native-query-01.zip",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/complete-mifflin-county-native-query-01.zip",
+          "bytes": 89556,
+          "sha256": "61e24e6042ef4d94052550ca96de970ba504997491b296b0149eda092bdebfcd"
+        }
+      ]
+    },
+    {
+      "file": "county-candidate-results.csv",
+      "bytes": 10644,
+      "sha256": "f0c6e0f72909d05b5866811c877cd2b4721b3a8acff5a1b341336db36fc49266",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mifflin-20261106-01/county-candidate-results.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/242176b6-58b0-4b86-9c33-8e6acb70bb7b",
+          "bytes": 10644,
+          "sha256": "f0c6e0f72909d05b5866811c877cd2b4721b3a8acff5a1b341336db36fc49266"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/county-candidate-results.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/county-candidate-results.csv",
+          "bytes": 10644,
+          "sha256": "f0c6e0f72909d05b5866811c877cd2b4721b3a8acff5a1b341336db36fc49266"
+        }
+      ]
+    },
+    {
+      "file": "county-contest-accounting.csv",
+      "bytes": 4821,
+      "sha256": "6f37fa8cbaecec28bf595107be713ab5e6a6db0c492fda0bafcaa6c0a92fc479",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mifflin-20261106-01/county-contest-accounting.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/ff1a44ae-30e4-45b5-8666-c68e6e26981c",
+          "bytes": 4821,
+          "sha256": "6f37fa8cbaecec28bf595107be713ab5e6a6db0c492fda0bafcaa6c0a92fc479"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/county-contest-accounting.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/county-contest-accounting.csv",
+          "bytes": 4821,
+          "sha256": "6f37fa8cbaecec28bf595107be713ab5e6a6db0c492fda0bafcaa6c0a92fc479"
+        }
+      ]
+    },
+    {
+      "file": "county-literal-party-totals.csv",
+      "bytes": 6113,
+      "sha256": "1b47ff30e638de75ddb8aee1e9cbbeeeb52d7cf178a48eddbd89a7819675b4fa",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mifflin-20261106-01/county-literal-party-totals.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/47f4437e-b8f5-4c2d-ac01-dbbb738cadbb",
+          "bytes": 6113,
+          "sha256": "1b47ff30e638de75ddb8aee1e9cbbeeeb52d7cf178a48eddbd89a7819675b4fa"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/county-literal-party-totals.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/county-literal-party-totals.csv",
+          "bytes": 6113,
+          "sha256": "1b47ff30e638de75ddb8aee1e9cbbeeeb52d7cf178a48eddbd89a7819675b4fa"
+        }
+      ]
+    },
+    {
+      "file": "county-participation.csv",
+      "bytes": 614,
+      "sha256": "fc44988e299256ae5fccb9e33a9f0eb049a37f184c2e7f9c3fb64d8b61f95eec",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mifflin-20261106-01/county-participation.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/692fe00b-7e65-4b22-88e1-f3334dd8a81c",
+          "bytes": 614,
+          "sha256": "fc44988e299256ae5fccb9e33a9f0eb049a37f184c2e7f9c3fb64d8b61f95eec"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/county-participation.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/county-participation.csv",
+          "bytes": 614,
+          "sha256": "fc44988e299256ae5fccb9e33a9f0eb049a37f184c2e7f9c3fb64d8b61f95eec"
+        }
+      ]
+    },
+    {
+      "file": "native-derived-contest-sums.csv",
+      "bytes": 527,
+      "sha256": "8d2c537ddebbbe77b427dc11b0c4625a31bba4aae77212bfd2f9631fa2ef6d81",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mifflin-20261106-01/native-derived-contest-sums.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/53160eca-f1c0-4ec1-b234-a5171a46f980",
+          "bytes": 527,
+          "sha256": "8d2c537ddebbbe77b427dc11b0c4625a31bba4aae77212bfd2f9631fa2ef6d81"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/native-derived-contest-sums.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/native-derived-contest-sums.csv",
+          "bytes": 527,
+          "sha256": "8d2c537ddebbbe77b427dc11b0c4625a31bba4aae77212bfd2f9631fa2ef6d81"
+        }
+      ]
+    },
+    {
+      "file": "native-derived-rate-checks.csv",
+      "bytes": 4444,
+      "sha256": "904fc312aa90128b9186362b5143de350027506a9cca39f6128c19bd57199178",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mifflin-20261106-01/native-derived-rate-checks.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/82dac7a5-662c-4d14-af1f-70c9c9ae2ef2",
+          "bytes": 4444,
+          "sha256": "904fc312aa90128b9186362b5143de350027506a9cca39f6128c19bd57199178"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/native-derived-rate-checks.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/native-derived-rate-checks.csv",
+          "bytes": 4444,
+          "sha256": "904fc312aa90128b9186362b5143de350027506a9cca39f6128c19bd57199178"
+        }
+      ]
+    },
+    {
+      "file": "native-mail-receipts.csv",
+      "bytes": 473,
+      "sha256": "8e1c424cbdc45e994b7c36f175139b83b7a851c0b1a223d5e7ada3941cc909e4",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mifflin-20261106-01/native-mail-receipts.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/4e151f96-0106-4198-b663-691847414faa",
+          "bytes": 473,
+          "sha256": "8e1c424cbdc45e994b7c36f175139b83b7a851c0b1a223d5e7ada3941cc909e4"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/native-mail-receipts.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/native-mail-receipts.csv",
+          "bytes": 473,
+          "sha256": "8e1c424cbdc45e994b7c36f175139b83b7a851c0b1a223d5e7ada3941cc909e4"
+        }
+      ]
+    },
+    {
+      "file": "native-participation-modes.csv",
+      "bytes": 604,
+      "sha256": "266758dc53fd98a45a2373fac919c2838edad88566a2064212ad60af326bfc39",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mifflin-20261106-01/native-participation-modes.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/7e51019b-de2c-4763-8dea-2ad7f9d2fb63",
+          "bytes": 604,
+          "sha256": "266758dc53fd98a45a2373fac919c2838edad88566a2064212ad60af326bfc39"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/native-participation-modes.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/native-participation-modes.csv",
+          "bytes": 604,
+          "sha256": "266758dc53fd98a45a2373fac919c2838edad88566a2064212ad60af326bfc39"
+        }
+      ]
+    },
+    {
+      "file": "native-reporting-statistics.csv",
+      "bytes": 657,
+      "sha256": "fa6ef545faa945c51197d1b774b7b26fc4b44d731afafe69f75ea5579023133d",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mifflin-20261106-01/native-reporting-statistics.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/bf0dfc7e-c13d-4173-aba6-1b0809e7057d",
+          "bytes": 657,
+          "sha256": "fa6ef545faa945c51197d1b774b7b26fc4b44d731afafe69f75ea5579023133d"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/native-reporting-statistics.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/native-reporting-statistics.csv",
+          "bytes": 657,
+          "sha256": "fa6ef545faa945c51197d1b774b7b26fc4b44d731afafe69f75ea5579023133d"
+        }
+      ]
+    },
+    {
+      "file": "native-source-declarations.csv",
+      "bytes": 391,
+      "sha256": "491a333af77ae8e32c24f09f387b6e45fb7508b586d3fc0ce9cb0ac10adff0c4",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mifflin-20261106-01/native-source-declarations.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/f5820b6d-d7dc-457d-a0e5-a9d34be1324a",
+          "bytes": 391,
+          "sha256": "491a333af77ae8e32c24f09f387b6e45fb7508b586d3fc0ce9cb0ac10adff0c4"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/native-source-declarations.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/native-source-declarations.csv",
+          "bytes": 391,
+          "sha256": "491a333af77ae8e32c24f09f387b6e45fb7508b586d3fc0ce9cb0ac10adff0c4"
+        }
+      ]
+    },
+    {
+      "file": "native-source-pages.csv",
+      "bytes": 9293,
+      "sha256": "a07daeade5b5a5537ee2fbe6d859e5f8b8d9c15e3d0415888d8ba85cd47ef834",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mifflin-20261106-01/native-source-pages.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/ee777583-4b2c-4ff1-8b40-b87fa042e562",
+          "bytes": 9293,
+          "sha256": "a07daeade5b5a5537ee2fbe6d859e5f8b8d9c15e3d0415888d8ba85cd47ef834"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/native-source-pages.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/native-source-pages.csv",
+          "bytes": 9293,
+          "sha256": "a07daeade5b5a5537ee2fbe6d859e5f8b8d9c15e3d0415888d8ba85cd47ef834"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-candidate-results.csv",
+      "bytes": 234175,
+      "sha256": "efed3105b46be1a25ef0b688c6168ec6e3d0f18e642357b655e40211abf5e4ca",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mifflin-20261106-01/native-unit-candidate-results.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/8c65a694-1d33-455e-8f78-dc12dacb9c4e",
+          "bytes": 234175,
+          "sha256": "efed3105b46be1a25ef0b688c6168ec6e3d0f18e642357b655e40211abf5e4ca"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/native-unit-candidate-results.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/native-unit-candidate-results.csv",
+          "bytes": 234175,
+          "sha256": "efed3105b46be1a25ef0b688c6168ec6e3d0f18e642357b655e40211abf5e4ca"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-contest-accounting.csv",
+      "bytes": 94041,
+      "sha256": "f74bb6f17fee0ad41357fa268fb4ba82bab2691c23355a2f4c9543a1a6dfc739",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mifflin-20261106-01/native-unit-contest-accounting.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/dd108f9d-0aa8-439d-ad58-3d2b849d3359",
+          "bytes": 94041,
+          "sha256": "f74bb6f17fee0ad41357fa268fb4ba82bab2691c23355a2f4c9543a1a6dfc739"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/native-unit-contest-accounting.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/native-unit-contest-accounting.csv",
+          "bytes": 94041,
+          "sha256": "f74bb6f17fee0ad41357fa268fb4ba82bab2691c23355a2f4c9543a1a6dfc739"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-literal-party-totals.csv",
+      "bytes": 137201,
+      "sha256": "df9df74e333eb023e6e07b0eba6a614ddfdb87fac80ddd56b3b02023b133cbd4",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mifflin-20261106-01/native-unit-literal-party-totals.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/3743e88c-90be-4556-836e-15e683c06ce2",
+          "bytes": 137201,
+          "sha256": "df9df74e333eb023e6e07b0eba6a614ddfdb87fac80ddd56b3b02023b133cbd4"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/native-unit-literal-party-totals.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/native-unit-literal-party-totals.csv",
+          "bytes": 137201,
+          "sha256": "df9df74e333eb023e6e07b0eba6a614ddfdb87fac80ddd56b3b02023b133cbd4"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-participation-modes.csv",
+      "bytes": 10874,
+      "sha256": "d51c74c04e86adac72ca52d9b75e5e955c589de2d53d60656d5de5851795df55",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mifflin-20261106-01/native-unit-participation-modes.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/151ba797-7ea8-4793-8a25-a001d310ccf6",
+          "bytes": 10874,
+          "sha256": "d51c74c04e86adac72ca52d9b75e5e955c589de2d53d60656d5de5851795df55"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/native-unit-participation-modes.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/native-unit-participation-modes.csv",
+          "bytes": 10874,
+          "sha256": "d51c74c04e86adac72ca52d9b75e5e955c589de2d53d60656d5de5851795df55"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-participation.csv",
+      "bytes": 4180,
+      "sha256": "f727ed14fcfe586423a5650460b5a6f89672aa4cac6c92c0fe79815fce66cce6",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mifflin-20261106-01/native-unit-participation.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/1cface8f-9baf-49be-8459-ca06ccb4fbb8",
+          "bytes": 4180,
+          "sha256": "f727ed14fcfe586423a5650460b5a6f89672aa4cac6c92c0fe79815fce66cce6"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/native-unit-participation.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/native-unit-participation.csv",
+          "bytes": 4180,
+          "sha256": "f727ed14fcfe586423a5650460b5a6f89672aa4cac6c92c0fe79815fce66cce6"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-write-in-availability.csv",
+      "bytes": 23684,
+      "sha256": "ed6524adafa644540ba9abd46387c50041f2e67db485015773468a26195c461d",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mifflin-20261106-01/native-unit-write-in-availability.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/ea5e3f10-2447-4c53-b0f3-2a7dd7a875d2",
+          "bytes": 23684,
+          "sha256": "ed6524adafa644540ba9abd46387c50041f2e67db485015773468a26195c461d"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/native-unit-write-in-availability.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/native-unit-write-in-availability.csv",
+          "bytes": 23684,
+          "sha256": "ed6524adafa644540ba9abd46387c50041f2e67db485015773468a26195c461d"
+        }
+      ]
+    },
+    {
+      "file": "native-write-in-breakdowns.csv",
+      "bytes": 101063,
+      "sha256": "48635f09d7d867687aaa9c452107c98cf9298adb47ee9a558974535efabe1ab1",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mifflin-20261106-01/native-write-in-breakdowns.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/0e7b22b5-6374-407b-8aba-42072a865619",
+          "bytes": 101063,
+          "sha256": "48635f09d7d867687aaa9c452107c98cf9298adb47ee9a558974535efabe1ab1"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/native-write-in-breakdowns.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/native-write-in-breakdowns.csv",
+          "bytes": 101063,
+          "sha256": "48635f09d7d867687aaa9c452107c98cf9298adb47ee9a558974535efabe1ab1"
+        }
+      ]
+    },
+    {
+      "file": "review-mifflin-county-native-query.py",
+      "bytes": 19824,
+      "sha256": "41c1f80d7e59398e85661364afc556bd9df85fce103ee945461d4ee4e69b2a22",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mifflin-20261106-01/review-mifflin-county-native-query.py",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/90eda6aa-01a3-4ecb-b79e-51165f16baef",
+          "bytes": 19824,
+          "sha256": "41c1f80d7e59398e85661364afc556bd9df85fce103ee945461d4ee4e69b2a22"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/review-mifflin-county-native-query.py",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/review-mifflin-county-native-query.py",
+          "bytes": 19824,
+          "sha256": "41c1f80d7e59398e85661364afc556bd9df85fce103ee945461d4ee4e69b2a22"
+        }
+      ]
+    },
+    {
+      "file": "source-receipts.json",
+      "bytes": 1749,
+      "sha256": "8cad47af9bb5667c509e46c50e768c050cc091cb91aa445bfa232dfa347f727d",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mifflin-20261106-01/source-receipts.json",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/69c3676e-c79e-42cd-b732-243c70d15988",
+          "bytes": 1749,
+          "sha256": "8cad47af9bb5667c509e46c50e768c050cc091cb91aa445bfa232dfa347f727d"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/source-receipts.json",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/source-receipts.json",
+          "bytes": 1749,
+          "sha256": "8cad47af9bb5667c509e46c50e768c050cc091cb91aa445bfa232dfa347f727d"
+        }
+      ]
+    },
+    {
+      "file": "source-records.json.gz",
+      "bytes": 49156,
+      "sha256": "01bcd87c049bbdbd22de745a18f85da4f010d334ef3306a8d7432473b8203b73",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mifflin-20261106-01/source-records.json.gz",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/1a2a2dfe-88c9-4252-bd09-8517b74c24a2",
+          "bytes": 49156,
+          "sha256": "01bcd87c049bbdbd22de745a18f85da4f010d334ef3306a8d7432473b8203b73"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/source-records.json.gz",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/source-records.json.gz",
+          "bytes": 49156,
+          "sha256": "01bcd87c049bbdbd22de745a18f85da4f010d334ef3306a8d7432473b8203b73"
+        }
+      ]
+    }
+  ],
+  "entire_assets": 24,
+  "entire_pinned_files": 24,
+  "entire_zip_members": 23,
+  "extracted_offline_verifier_stdout": "{\n  \"rejected_cases\": [\n    \"candidate votes substituted\",\n    \"zero registrations converted to rate\",\n    \"blank ballots double counted\",\n    \"receipts substituted as mail\",\n    \"explicit zero provisional erased\",\n    \"native zero registrations invented\",\n    \"partial reporting declared complete\",\n    \"clock given invented timezone\",\n    \"literal party normalized\",\n    \"unit choice changed\",\n    \"split electorate replaced by county\",\n    \"native page identity changed\",\n    \"unassigned count turned into name\",\n    \"contradictory parent stage silently repaired\",\n    \"source clock repaired\",\n    \"unusable rate filled\",\n    \"native parent stage changed\",\n    \"actual declared source URL replaced\"\n  ],\n  \"deterministic_full_query_reproduction\": true\n}\n",
+  "exact_entire_file_and_archive_reproduction": true,
+  "explorer_integration_and_live_verification_pending": true
+}

@@ -38,10 +38,31 @@ rejection cases** pass, including source-identity and contradictory-stage
 substitution. ZIP **89,556 bytes**, SHA-256
 `61e24e6042ef4d94052550ca96de970ba504997491b296b0149eda092bdebfcd`.
 See `20261106-mifflin-facts-01` and `20261106-mifflin-primary-review-01`.
-Fixed release and independent contextual identity are next.
+**Mifflin source release VERIFIED:** facts commit
+`0d125f99185c1097ceb3cab4f3458eb9242d51de`; fixed release **436262436**,
+tag `voter-county-pennsylvania-mifflin-20261106-01`. All **24 entire anonymous
+assets / 24 pinned files / 23 ZIP members** match, and the extracted isolated
+Python renderer reproduces every entire file and archive offline. Exact credential
+runs **42188313829 (tag) / 42188284416 (review)** pass.
+See `20261106-mifflin-publication-01`. Independent contextual identity and
+tested UI integration remain pending; this source release is not a live UI claim.
 Perry's 24 entire pages are image scans: both text engines are empty, not
 proof of zero returns or a successful transcription. Full visual/OCR numerical
-review remains pending. Neither new county has source-map or UI approval.
+review remains pending. First on-device PDFKit OCR clipped native 270-degree
+rotations; its attempted transform correction also failed and aborted on an empty
+page. Neither attempt is accepted. PyMuPDF independently renders all **24 complete
+pages at 1,836 x 2,376 pixels**, and local Vision OCR now covers every complete
+image. Whole-page OCR still misreads/omits some small numeric cells; a separate
+native-column crop pass now covers all 24 pages, without language correction or
+third-party uploads, but still misses some single-digit cells. Both passes use
+the same OCR engine, not independent transcriptions. Tesseract/Homebrew are absent;
+the chosen independent RapidOCR import also failed as missing. Its required
+offline engine is being installed in an isolated private environment, leaving
+existing research dependencies untouched; source data will remain on-device.
+Preserve full original scans, full-page images, coordinates, candidates and actual
+failure observations privately; do not infer missing cells, native parties or
+participation modes from candidate columns. Neither new county has source-map
+or UI approval.
 Retain Maine's separate 130 unallocated major votes, 6,021 blanks, 125 write-ins,
 three municipal-other gap and shared Kennebec fragments; retain separate D.C.
 accounting. McKean needs a declared reachable alternative, not another unchanged
