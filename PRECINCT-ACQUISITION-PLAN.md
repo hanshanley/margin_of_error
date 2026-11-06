@@ -2,6 +2,39 @@
 
 ## Current verified production and next acquisition
 
+**November 6, 17:27 UTC: Susquehanna/context20 LIVE; exact deploy-only recovery verified.**
+Exact UI **`6fdb6bde43fc6b961a1f1d4a3e5f7f7a47614716`**, Pages
+**42254442195 attempt 2**, deployed successfully using the original successful
+attempt-1 build and artifact **13522221605 / 505,968,741 bytes**, SHA-256
+`3722e7f8067b1e3f6df8cd8064aed371ce776c732d454a18e1da6dc5231ca1df`.
+The complete archive matches its API byte count and digest. Actual hosted
+preparation is **967,139,394 bytes**, leaving **32,860,606 bytes** below 1 GB.
+Both exact credential jobs **42254442168 / 42254442176**, all **444 selected
+entire hosted/public files** including all **431 previous paths**, **316 full
+relocations**, and **seven production browser scenarios** pass.
+
+The page preserves all **1,227 previous complete records / 362 native rows /
+781 prior download anchors / 18 complete prior imports / historical years /
+52 UF rows**. Current totals are **1,228 records / 363 native rows / 744 county
+joins / 357 usable rates / 387 missing rates / 802 anchors / 798 distinct URLs**.
+Pennsylvania has **39 observations / 36 usable rates**, not statewide or precinct
+completeness. Susquehanna adds **15,317 ballots / 27,504 registered voters /
+55.69%** with all five native EST clocks, unofficial status, reporting
+qualifications, missing ballot-mode/accounting values and unclassified residuals
+preserved. Native FIPS and native approval flags stay unchanged; the separately
+reviewed contextual 2024 shape is not certified 2026 election geography.
+
+All deployment verifiers are finished. Do not retry the successful deployment,
+repeat its completed suites, rebuild its prepared output, or republish either
+immutable numerical query. Full evidence is in
+`20261106-susquehanna-explorer-01/production-verification.json` and
+`production-browser.json`. Persist these proofs on the review branch only;
+an audit-only push to main must not start another deployment.
+**Next:** resume source-declared alternatives for genuine remaining county
+participation gaps, preserving blocked-source decisions and separate mail-process
+counts. Nationwide completion and external Google-owner/GitHub-Support
+remediation remain incomplete; schedule #5 stays active.
+
 **November 6, 16:21 UTC: Somerset/context19 LIVE; lossless deployment recovery verified.**
 Exact UI **`1fe2555fedfa9fc0d5882ad392ba47ca4f7d2d57`**, Pages
 **42249181869 attempt 1**, deployed successfully. Its actual hosted preparation
@@ -44,12 +77,13 @@ remains available. Actual hosted preparation was **967,139,394 bytes**, below
 check after the failure still returned context19. The reported failure stage
 does not establish an underlying service or payload cause.
 
-One bounded **failed-deploy-job-only retry, attempt 2**, reuses that original
-build/artifact; no new workflow, build or local map suite is started. Reuse
-credential jobs **42254442168 / 42254442176**. Failure evidence is in
-`deployment-attempt1-failure.json`; the same exact proof is running as
-**`susquehanna-pages-attempt2-proof-01`**. Do not retry an unchanged failure
-again or dispatch a duplicate deployment.
+One bounded **failed-deploy-job-only retry, attempt 2**, reused that original
+build/artifact and subsequently passed all production checks at 17:27 UTC,
+as recorded above. No new workflow, build or local map suite was started.
+Exact credential jobs **42254442168 / 42254442176** pass. Failure evidence
+remains in `deployment-attempt1-failure.json`; the same exact verifier
+**`susquehanna-pages-attempt2-proof-01`** is now finished. Do not retry this
+successful deployment or dispatch a duplicate.
 The local compatibility export still embedded context19 routing. The original
 verifier was stopped before correcting only generated `app.js` and its manifest
 entry through the existing adapter and exact pinned research original.
@@ -62,7 +96,8 @@ them alongside the known attempt-2 verifier. Require its original hosted
 artifact/digest/size, actual hosted size, **444 entire selected public files**,
 all **431 previous paths / 316 relocations / seven production browsers**
 before a LIVE claim. Do not rebuild its prepared `dist/` while it runs.
-Context19 above remains the last independently verified production baseline.
+These requirements subsequently passed; context20 above is now the independently
+verified production baseline. The context19 baseline remains historical evidence.
 
 **November 6, 15:53 UTC: Somerset/context19 deployment failed; lossless payload recovery in progress.**
 Both deployment attempts of exact Pages run **42243044220**, UI revision
