@@ -122,13 +122,26 @@ overvote/undervote account agrees. ZIP **124,233 bytes**, SHA-256
 See `20261106-perry-facts-01` and `20261106-perry-primary-review-01`.
 All 31 unit participation rows are included. Unreviewed unit candidate cells are
 explicitly outside this complete scoped query, not imputed or called absent.
-Next: verify its fixed release and exact credential checks, then independently
-check county identity before any context08 or UI change. Native parties and
+**Perry source release VERIFIED:** facts commit
+`9625ccffc7852cb9ae766c33ab693879c138fa9c`; fixed release **436287135**,
+tag `voter-county-pennsylvania-perry-20261106-01`. All **20 entire anonymous
+assets / 20 pinned files / 19 ZIP members** match and reproduce offline.
+Exact credential runs **42191768366 (tag) / 42191745794 (review)** pass.
+See `20261106-perry-publication-01`. Both complete Census inventories and original
+national Gazetteers independently identify **PA / 42099 / Perry County**;
+their different native delimiters (2024 tab, 2026 pipe) are retained.
+The exact current `b2b8b54` live baseline is captured: all **910 records /
+45 native rows / 513 download anchors / 509 URLs / eighteen full imports**
+are preserved for comparison. See `20261106-perry-explorer-01`.
+Next: strict native loader and complete downloads, a fresh context08 preserving
+all context07 records/joins/geometry/flags, targeted tests and all required
+local/exact-production checks before claiming Perry live. Native parties and
 ballot-participation mode splits remain absent, not inferred from candidate modes.
 Preserve full original scans, full-page images, coordinates, candidates and actual
 failure observations privately; do not infer missing cells, native parties or
 participation modes from candidate columns. Neither source has native source-map
-approval; Perry has no released query, contextual join or UI approval.
+approval; Perry has a verified fixed factual query and independent contextual
+identity, but no contextual join or UI approval.
 Retain Maine's separate 130 unallocated major votes, 6,021 blanks, 125 write-ins,
 three municipal-other gap and shared Kennebec fragments; retain separate D.C.
 accounting. McKean needs a declared reachable alternative, not another unchanged

@@ -1,0 +1,93 @@
+{
+  "verified_at_utc": "2026-11-06T09:02:18.576393+00:00",
+  "complete_context07_originals_and_inventories_byte_verified": true,
+  "both_independent_census_identities_agree": true,
+  "contextual_county_fips": "42099",
+  "native_election_source_fips": "",
+  "native_maps_approved": false,
+  "no_new_geometry_or_election_year_boundary_claim": true,
+  "records": [
+    {
+      "year": 2024,
+      "whole_inventory_records": 3222,
+      "complete_file_receipts": [
+        {
+          "path": "public/participation-county-context/20261106-07/complete-2024-county-identities.json.gz",
+          "bytes": 144580,
+          "sha256": "f55f8c9959d056d26e9bfa6b344e9ea564cfc5688b7f7f8b8a2ce8b34f9439ac"
+        },
+        {
+          "path": "public/participation-county-context/20261106-07/gazetteer-2024-national-counties.zip",
+          "bytes": 141679,
+          "sha256": "3c337402b5c6e8d5aa26b4278ccf4edc8989f2683765b3ffbf22296cdb2df3a0"
+        }
+      ],
+      "unique_native_original_identity": {
+        "USPS": "PA",
+        "GEOID": "42099",
+        "ANSICODE": "01213682",
+        "NAME": "Perry County",
+        "ALAND": "1428247559",
+        "AWATER": "10591172",
+        "ALAND_SQMI": "551.449",
+        "AWATER_SQMI": "4.089",
+        "INTPTLAT": "40.39778",
+        "INTPTLONG                                                                                                               ": "-77.266328                                                                                                                    "
+      },
+      "unique_parsed_identity": {
+        "USPS": "PA",
+        "GEOID": "42099",
+        "ANSICODE": "01213682",
+        "NAME": "Perry County",
+        "ALAND": "1428247559",
+        "AWATER": "10591172",
+        "ALAND_SQMI": "551.449",
+        "AWATER_SQMI": "4.089",
+        "INTPTLAT": "40.39778",
+        "INTPTLONG": "-77.266328"
+      }
+    },
+    {
+      "year": 2026,
+      "whole_inventory_records": 3222,
+      "complete_file_receipts": [
+        {
+          "path": "public/participation-county-context/20261106-07/complete-2026-county-identities.json.gz",
+          "bytes": 155774,
+          "sha256": "cd12a54467a4ad54e9213d541b5a0563655ef41f3f193ed5804c75df51bf3150"
+        },
+        {
+          "path": "public/participation-county-context/20261106-07/gazetteer-2026-national-counties.zip",
+          "bytes": 139190,
+          "sha256": "6a99ca00efbc0be5112e225d4102704c51d5ce3b16e3afd6e4159460595fd12a"
+        }
+      ],
+      "unique_native_original_identity": {
+        "USPS": "PA",
+        "GEOID": "42099",
+        "GEOIDFQ": "0500000US42099",
+        "ANSICODE": "01213682",
+        "NAME": "Perry County",
+        "ALAND": "1428247604",
+        "AWATER": "10591133",
+        "ALAND_SQMI": "551.45",
+        "AWATER_SQMI": "4.089",
+        "INTPTLAT": "40.39778",
+        "INTPTLONG": "-77.266328"
+      },
+      "unique_parsed_identity": {
+        "USPS": "PA",
+        "GEOID": "42099",
+        "GEOIDFQ": "0500000US42099",
+        "ANSICODE": "01213682",
+        "NAME": "Perry County",
+        "ALAND": "1428247604",
+        "AWATER": "10591133",
+        "ALAND_SQMI": "551.45",
+        "AWATER_SQMI": "4.089",
+        "INTPTLAT": "40.39778",
+        "INTPTLONG": "-77.266328"
+      }
+    }
+  ]
+}

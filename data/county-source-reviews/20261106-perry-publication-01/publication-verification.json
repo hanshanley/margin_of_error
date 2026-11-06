@@ -1,0 +1,479 @@
+{
+  "verified_at": "2026-11-06T09:00:41.567663+00:00",
+  "repository": "hanshanley/margin_of_error",
+  "facts_commit": "9625ccffc7852cb9ae766c33ab693879c138fa9c",
+  "tag": "voter-county-pennsylvania-perry-20261106-01",
+  "actual_tag_commit": "9625ccffc7852cb9ae766c33ab693879c138fa9c",
+  "release_id": 436287135,
+  "target_commitish": "9625ccffc7852cb9ae766c33ab693879c138fa9c",
+  "host_enforced_immutable": false,
+  "policy": "Fixed checksum/never overwrite; not described as host-enforced locking.",
+  "entire_assets_and_pinned_files": [
+    {
+      "file": "audit.json",
+      "bytes": 2953,
+      "sha256": "dd9cf208f356d4bab5b69971eab10feb020960331b89d38b5edf33bfe6f8f1bb",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-perry-20261106-01/audit.json",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/3cf5e17a-be02-45e1-a8c8-76494d9796f5",
+          "bytes": 2953,
+          "sha256": "dd9cf208f356d4bab5b69971eab10feb020960331b89d38b5edf33bfe6f8f1bb"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/audit.json",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/audit.json",
+          "bytes": 2953,
+          "sha256": "dd9cf208f356d4bab5b69971eab10feb020960331b89d38b5edf33bfe6f8f1bb"
+        }
+      ]
+    },
+    {
+      "file": "checksums.json",
+      "bytes": 2545,
+      "sha256": "79b665b45d485bfba394797960c3c34ad705fd7168d901afe87bd0419c63d436",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-perry-20261106-01/checksums.json",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/e24f657f-379b-46ce-b039-503e95ae5576",
+          "bytes": 2545,
+          "sha256": "79b665b45d485bfba394797960c3c34ad705fd7168d901afe87bd0419c63d436"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/checksums.json",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/checksums.json",
+          "bytes": 2545,
+          "sha256": "79b665b45d485bfba394797960c3c34ad705fd7168d901afe87bd0419c63d436"
+        }
+      ]
+    },
+    {
+      "file": "complete-perry-county-native-query-01.zip",
+      "bytes": 124233,
+      "sha256": "5913818dbacdeb23a71819fd491d2cc800323c55b313023ec1c3fcaac890a078",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-perry-20261106-01/complete-perry-county-native-query-01.zip",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/acd0c294-4fd9-40d6-92fa-55456dd1cb82",
+          "bytes": 124233,
+          "sha256": "5913818dbacdeb23a71819fd491d2cc800323c55b313023ec1c3fcaac890a078"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/complete-perry-county-native-query-01.zip",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/complete-perry-county-native-query-01.zip",
+          "bytes": 124233,
+          "sha256": "5913818dbacdeb23a71819fd491d2cc800323c55b313023ec1c3fcaac890a078"
+        }
+      ]
+    },
+    {
+      "file": "county-candidate-results.csv",
+      "bytes": 31780,
+      "sha256": "5a76025c9a162c917a2b3f5965e154d149646009bbf33a51d4b68646d56a55a7",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-perry-20261106-01/county-candidate-results.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/0d82a2f6-583f-4329-b405-ca6a815d4dc1",
+          "bytes": 31780,
+          "sha256": "5a76025c9a162c917a2b3f5965e154d149646009bbf33a51d4b68646d56a55a7"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/county-candidate-results.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/county-candidate-results.csv",
+          "bytes": 31780,
+          "sha256": "5a76025c9a162c917a2b3f5965e154d149646009bbf33a51d4b68646d56a55a7"
+        }
+      ]
+    },
+    {
+      "file": "county-contest-accounting.csv",
+      "bytes": 2346,
+      "sha256": "3a6a89ed69a57d1a9a63543a24c978105f122397a8ab3a0f5a6019fca00cbc88",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-perry-20261106-01/county-contest-accounting.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/73a36962-a148-4f19-a682-ca459c807ff0",
+          "bytes": 2346,
+          "sha256": "3a6a89ed69a57d1a9a63543a24c978105f122397a8ab3a0f5a6019fca00cbc88"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/county-contest-accounting.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/county-contest-accounting.csv",
+          "bytes": 2346,
+          "sha256": "3a6a89ed69a57d1a9a63543a24c978105f122397a8ab3a0f5a6019fca00cbc88"
+        }
+      ]
+    },
+    {
+      "file": "county-participation.csv",
+      "bytes": 748,
+      "sha256": "710a64c3da639a698014f2e0766c5a40c7a9cdf7e7ee4832ad3b4442d8bb5499",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-perry-20261106-01/county-participation.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/fa681791-499e-4253-9392-a6f0284d7f1b",
+          "bytes": 748,
+          "sha256": "710a64c3da639a698014f2e0766c5a40c7a9cdf7e7ee4832ad3b4442d8bb5499"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/county-participation.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/county-participation.csv",
+          "bytes": 748,
+          "sha256": "710a64c3da639a698014f2e0766c5a40c7a9cdf7e7ee4832ad3b4442d8bb5499"
+        }
+      ]
+    },
+    {
+      "file": "native-candidate-mode-totals.csv",
+      "bytes": 7698,
+      "sha256": "c7e207abf8982309df176ab2499ffd1720894310cd5557efbfe8b340f52483e2",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-perry-20261106-01/native-candidate-mode-totals.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/8eb7c18c-e340-4865-8889-5aad47e7691a",
+          "bytes": 7698,
+          "sha256": "c7e207abf8982309df176ab2499ffd1720894310cd5557efbfe8b340f52483e2"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/native-candidate-mode-totals.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/native-candidate-mode-totals.csv",
+          "bytes": 7698,
+          "sha256": "c7e207abf8982309df176ab2499ffd1720894310cd5557efbfe8b340f52483e2"
+        }
+      ]
+    },
+    {
+      "file": "native-derived-contest-sums.csv",
+      "bytes": 498,
+      "sha256": "5399194af78bc21d232010aa5595e7dc12930666bcb62d3b8e25f0b46722c101",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-perry-20261106-01/native-derived-contest-sums.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/3e22ae82-9dc6-4cb6-b7aa-c1a1e5889eda",
+          "bytes": 498,
+          "sha256": "5399194af78bc21d232010aa5595e7dc12930666bcb62d3b8e25f0b46722c101"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/native-derived-contest-sums.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/native-derived-contest-sums.csv",
+          "bytes": 498,
+          "sha256": "5399194af78bc21d232010aa5595e7dc12930666bcb62d3b8e25f0b46722c101"
+        }
+      ]
+    },
+    {
+      "file": "native-derived-rate-checks.csv",
+      "bytes": 3762,
+      "sha256": "aea778a573c1bc3b0937cf8b5618436dcfcc40541d7454cafeb377c338f02ec4",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-perry-20261106-01/native-derived-rate-checks.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/8a9cbf30-be16-4765-a3ac-8d9226823706",
+          "bytes": 3762,
+          "sha256": "aea778a573c1bc3b0937cf8b5618436dcfcc40541d7454cafeb377c338f02ec4"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/native-derived-rate-checks.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/native-derived-rate-checks.csv",
+          "bytes": 3762,
+          "sha256": "aea778a573c1bc3b0937cf8b5618436dcfcc40541d7454cafeb377c338f02ec4"
+        }
+      ]
+    },
+    {
+      "file": "native-participation-mode-availability.csv",
+      "bytes": 1406,
+      "sha256": "ea646767c9cc419628c34a0ebb8cc510088a0da40a7b1921e378ac8dc13161d5",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-perry-20261106-01/native-participation-mode-availability.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/bf414820-b806-424a-a09f-575872a754a7",
+          "bytes": 1406,
+          "sha256": "ea646767c9cc419628c34a0ebb8cc510088a0da40a7b1921e378ac8dc13161d5"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/native-participation-mode-availability.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/native-participation-mode-availability.csv",
+          "bytes": 1406,
+          "sha256": "ea646767c9cc419628c34a0ebb8cc510088a0da40a7b1921e378ac8dc13161d5"
+        }
+      ]
+    },
+    {
+      "file": "native-party-availability.csv",
+      "bytes": 4197,
+      "sha256": "efcb382de401c7a7dcf59a751245b5ce7caf949496b7b7f193cdc7405a4bc6a2",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-perry-20261106-01/native-party-availability.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/d4de7cda-d866-48c8-ae9c-4743b94cd5f2",
+          "bytes": 4197,
+          "sha256": "efcb382de401c7a7dcf59a751245b5ce7caf949496b7b7f193cdc7405a4bc6a2"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/native-party-availability.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/native-party-availability.csv",
+          "bytes": 4197,
+          "sha256": "efcb382de401c7a7dcf59a751245b5ce7caf949496b7b7f193cdc7405a4bc6a2"
+        }
+      ]
+    },
+    {
+      "file": "native-reporting-statistics.csv",
+      "bytes": 7884,
+      "sha256": "89c1ae528d6c12d4b813c51bf18de837e3292b84c305c61092c93fa60e4ea58d",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-perry-20261106-01/native-reporting-statistics.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/23cac961-dfb8-4602-b16a-e751ffa76d44",
+          "bytes": 7884,
+          "sha256": "89c1ae528d6c12d4b813c51bf18de837e3292b84c305c61092c93fa60e4ea58d"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/native-reporting-statistics.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/native-reporting-statistics.csv",
+          "bytes": 7884,
+          "sha256": "89c1ae528d6c12d4b813c51bf18de837e3292b84c305c61092c93fa60e4ea58d"
+        }
+      ]
+    },
+    {
+      "file": "native-source-declarations.csv",
+      "bytes": 468,
+      "sha256": "27910c4c075057dcad3950ea8fc474c4d03902310cdb4e26d211e3a483902448",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-perry-20261106-01/native-source-declarations.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/c8f72ddc-f505-4dc0-9490-f50df6d78daa",
+          "bytes": 468,
+          "sha256": "27910c4c075057dcad3950ea8fc474c4d03902310cdb4e26d211e3a483902448"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/native-source-declarations.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/native-source-declarations.csv",
+          "bytes": 468,
+          "sha256": "27910c4c075057dcad3950ea8fc474c4d03902310cdb4e26d211e3a483902448"
+        }
+      ]
+    },
+    {
+      "file": "native-source-pages.csv",
+      "bytes": 7900,
+      "sha256": "74624adcd3146bb4527e883f4ac178b3c68cec1a89478b56a978d40be09103d3",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-perry-20261106-01/native-source-pages.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/22abc08d-9243-4050-9db7-b5426c6716d6",
+          "bytes": 7900,
+          "sha256": "74624adcd3146bb4527e883f4ac178b3c68cec1a89478b56a978d40be09103d3"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/native-source-pages.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/native-source-pages.csv",
+          "bytes": 7900,
+          "sha256": "74624adcd3146bb4527e883f4ac178b3c68cec1a89478b56a978d40be09103d3"
+        }
+      ]
+    },
+    {
+      "file": "native-source-receipts.csv",
+      "bytes": 994,
+      "sha256": "3f282cdc16051f4751460ee7ac80cd206a0a478483e6ba32ae03f87cbbc63e40",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-perry-20261106-01/native-source-receipts.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/f7532624-ff2a-4ae0-bd68-789768f96a6f",
+          "bytes": 994,
+          "sha256": "3f282cdc16051f4751460ee7ac80cd206a0a478483e6ba32ae03f87cbbc63e40"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/native-source-receipts.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/native-source-receipts.csv",
+          "bytes": 994,
+          "sha256": "3f282cdc16051f4751460ee7ac80cd206a0a478483e6ba32ae03f87cbbc63e40"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-candidate-availability.csv",
+      "bytes": 9991,
+      "sha256": "6d13d2bac2c103151a8b87e74f8a97564468f86387fdb510daa0d2d016820920",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-perry-20261106-01/native-unit-candidate-availability.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/ceeac0f3-0e96-411e-9b2e-ce74ce5cbf0d",
+          "bytes": 9991,
+          "sha256": "6d13d2bac2c103151a8b87e74f8a97564468f86387fdb510daa0d2d016820920"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/native-unit-candidate-availability.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/native-unit-candidate-availability.csv",
+          "bytes": 9991,
+          "sha256": "6d13d2bac2c103151a8b87e74f8a97564468f86387fdb510daa0d2d016820920"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-participation.csv",
+      "bytes": 7620,
+      "sha256": "4eaf849c48c87eb3569e1d637077d01d82925f24c54b0dc43bb9bc71757525e3",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-perry-20261106-01/native-unit-participation.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/235dc128-de52-43d7-807c-66e909debf5c",
+          "bytes": 7620,
+          "sha256": "4eaf849c48c87eb3569e1d637077d01d82925f24c54b0dc43bb9bc71757525e3"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/native-unit-participation.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/native-unit-participation.csv",
+          "bytes": 7620,
+          "sha256": "4eaf849c48c87eb3569e1d637077d01d82925f24c54b0dc43bb9bc71757525e3"
+        }
+      ]
+    },
+    {
+      "file": "review-perry-county-native-query.py",
+      "bytes": 14833,
+      "sha256": "b765e545d531f9491bef727dfd1be603cc6dc401e0be39216b914799dddd8f16",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-perry-20261106-01/review-perry-county-native-query.py",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/f3c22196-04de-4bdd-bbd1-fc1273e3b0ba",
+          "bytes": 14833,
+          "sha256": "b765e545d531f9491bef727dfd1be603cc6dc401e0be39216b914799dddd8f16"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/review-perry-county-native-query.py",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/review-perry-county-native-query.py",
+          "bytes": 14833,
+          "sha256": "b765e545d531f9491bef727dfd1be603cc6dc401e0be39216b914799dddd8f16"
+        }
+      ]
+    },
+    {
+      "file": "source-receipts.json",
+      "bytes": 2698,
+      "sha256": "e7da3cde47babfc0992fb36a285414ff8b4a4a7734e97f527152646ca9a821ba",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-perry-20261106-01/source-receipts.json",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/87a03bc9-d985-4003-981b-befc99992e4f",
+          "bytes": 2698,
+          "sha256": "e7da3cde47babfc0992fb36a285414ff8b4a4a7734e97f527152646ca9a821ba"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/source-receipts.json",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/source-receipts.json",
+          "bytes": 2698,
+          "sha256": "e7da3cde47babfc0992fb36a285414ff8b4a4a7734e97f527152646ca9a821ba"
+        }
+      ]
+    },
+    {
+      "file": "source-records.json.gz",
+      "bytes": 11400,
+      "sha256": "ca225c6e546db0452efefa68d47f7c75ec6b819689734ae19a8064a83cd8093b",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-perry-20261106-01/source-records.json.gz",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/b65d2434-3591-4652-b0d0-88937e1bd98d",
+          "bytes": 11400,
+          "sha256": "ca225c6e546db0452efefa68d47f7c75ec6b819689734ae19a8064a83cd8093b"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/source-records.json.gz",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/source-records.json.gz",
+          "bytes": 11400,
+          "sha256": "ca225c6e546db0452efefa68d47f7c75ec6b819689734ae19a8064a83cd8093b"
+        }
+      ]
+    }
+  ],
+  "entire_assets": 20,
+  "entire_pinned_files": 20,
+  "entire_zip_members": 19,
+  "extracted_offline_verifier_stdout": "All 20 files, 14 complete CSV tables, 19 complete ZIP members and 19 rejection cases reproduce offline.\n",
+  "exact_entire_file_and_archive_reproduction": true,
+  "explorer_integration_and_live_verification_pending": true
+}
