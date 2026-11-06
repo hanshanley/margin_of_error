@@ -1,0 +1,62 @@
+{
+  "audit.json": {
+    "bytes": 5408,
+    "sha256": "9eedaeba9c068df9e3258ca6bb3e5b2f553f3b956c531f2aa51eaf045d66d375"
+  },
+  "county-candidate-results.csv": {
+    "bytes": 4190,
+    "sha256": "301f30868cec50a2ccb3ade4a358142dbdc1c331fef5591c183693cda5e0e978"
+  },
+  "county-contest-accounting.csv": {
+    "bytes": 4649,
+    "sha256": "eff119508026b3e35dfa0e69c008a32a1bb6c0452d4081c7b6af097baee9cd15"
+  },
+  "county-literal-party-totals.csv": {
+    "bytes": 4157,
+    "sha256": "b4237181beeba65113782d298f813b36a04d3dde27acc0be0bdec8c8359f2639"
+  },
+  "county-participation.csv": {
+    "bytes": 2585,
+    "sha256": "d9674bfaa0beaf1e2e0b1174a444e6f408dc4e95eb9e1544119f825f8b7cbb2e"
+  },
+  "native-contest-subtotals.csv": {
+    "bytes": 1399,
+    "sha256": "f58c9aabe43b48f5f7a09dbf1356b3de553167068f26411069f4a2b4abe83c37"
+  },
+  "native-county-candidate-footers.csv": {
+    "bytes": 21460,
+    "sha256": "3c89f6f8b1d1fbde9e6d62c43a6c768982b0024ccf04f356280a1cb7817c155a"
+  },
+  "native-mail-ballot-receipts.csv": {
+    "bytes": 343,
+    "sha256": "16484afcd80ed8f018236f6a63d9a58ec0199a20ad78d835c159c928e7cc6321"
+  },
+  "native-participation-rollups.csv": {
+    "bytes": 1410,
+    "sha256": "217a13b8f8641244a20bad8c6b86cfa451000282dafd8ebe72f9299d7fe3b284"
+  },
+  "native-source-pages.csv": {
+    "bytes": 10957,
+    "sha256": "d010adc9bcf8508d761dbda77d99ce89431f07714e9d9d02032756a4a2dfe44f"
+  },
+  "native-summary-participation.csv": {
+    "bytes": 959,
+    "sha256": "4a80696e3ebdef166f0fca364f16b846f5b4a54bfd800fe926fcf52e154db3c5"
+  },
+  "native-unit-participation.csv": {
+    "bytes": 35645,
+    "sha256": "29599b3e5373e90423fef6bdcee582c76ea6351d5b3e47d99bacf144133d55ad"
+  },
+  "review-jefferson-county-results.py": {
+    "bytes": 31105,
+    "sha256": "cd4808c342858deda7ab8f1acd342fbcf53a2a87407e61cde77198b8e21daa77"
+  },
+  "source-receipts.json": {
+    "bytes": 1809,
+    "sha256": "3e27c822b119a730027f5151a7b34f8be52119a613541fc12fd052fccf132b8f"
+  },
+  "source-records.json.gz": {
+    "bytes": 5316,
+    "sha256": "8fbb3d9aaf525ddecbd8f7635f733e82f43e538c231171353b9dda42f4fd229a"
+  }
+}

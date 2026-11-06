@@ -1,0 +1,38 @@
+{
+  "ElectionSummaryReportRPTPro.pdf": {
+    "bytes": 182183,
+    "content_type": "application/pdf",
+    "fetched_at_utc": "2026-11-06T06:26:52.603688+00:00",
+    "final_url": "https://www.jeffersoncountypa.gov/wp-content/uploads/2026/11/ElectionSummaryReportRPTPro.pdf",
+    "sha256": "986feb9bbcbade1cba3b2c910bb16982a5e18c8a90b88793a941aaf2fb323b38",
+    "status": 200,
+    "url": "https://www.jeffersoncountypa.gov/wp-content/uploads/2026/11/ElectionSummaryReportRPTPro.pdf"
+  },
+  "StatementOfVotesCastRPTpro.pdf": {
+    "bytes": 646763,
+    "content_type": "application/pdf",
+    "fetched_at_utc": "2026-11-06T06:26:52.844064+00:00",
+    "final_url": "https://www.jeffersoncountypa.gov/wp-content/uploads/2026/11/StatementOfVotesCastRPTpro.pdf",
+    "sha256": "2b217a420f1918668bd4753f18dcc75b611fe6ee799c91a608ec324710bcee27",
+    "status": 200,
+    "url": "https://www.jeffersoncountypa.gov/wp-content/uploads/2026/11/StatementOfVotesCastRPTpro.pdf"
+  },
+  "official-privacy-policy.html": {
+    "bytes": 92678,
+    "content_type": "text/html; charset=UTF-8",
+    "fetched_at_utc": "2026-11-06T06:29:25.516648+00:00",
+    "final_url": "https://www.jeffersoncountypa.gov/privacy-policy/",
+    "sha256": "4feeb35a0688c7d5771f40e9c4f067c22a261480b7b964fbdea02903cd304cd0",
+    "status": 200,
+    "url": "https://www.jeffersoncountypa.gov/privacy-policy/"
+  },
+  "official-results-index.html": {
+    "bytes": 91771,
+    "content_type": "text/html; charset=UTF-8",
+    "fetched_at_utc": "2026-11-06T06:26:32.412579+00:00",
+    "final_url": "https://www.jeffersoncountypa.gov/departments/commissioners/election-info/election-results/",
+    "sha256": "19b97441588723640509c7a1ae6040a00d868f03b606352343079940601f1dd7",
+    "status": 200,
+    "url": "https://www.jeffersoncountypa.gov/election-results/"
+  }
+}

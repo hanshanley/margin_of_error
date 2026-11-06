@@ -1,0 +1,5 @@
+county,declared_timezone,mode_literal,native_status_literal,printed_turnout_literal,registered_voters_literal,source_page,source_report,source_update_literal,source_url,state_code,voters_cast_literal,year
+Jefferson,,Election Day,Unofficial Results,46.24%,,1,summary,11/4/2026 3:47:13 PM,https://www.jeffersoncountypa.gov/wp-content/uploads/2026/11/ElectionSummaryReportRPTPro.pdf,PA,"13,052",2026
+Jefferson,,Mail-In,Unofficial Results,7.49%,,1,summary,11/4/2026 3:47:13 PM,https://www.jeffersoncountypa.gov/wp-content/uploads/2026/11/ElectionSummaryReportRPTPro.pdf,PA,"2,114",2026
+Jefferson,,Provisional,Unofficial Results,0.14%,,1,summary,11/4/2026 3:47:13 PM,https://www.jeffersoncountypa.gov/wp-content/uploads/2026/11/ElectionSummaryReportRPTPro.pdf,PA,39,2026
+Jefferson,,Total,Unofficial Results,53.87%,"28,226",1,summary,11/4/2026 3:47:13 PM,https://www.jeffersoncountypa.gov/wp-content/uploads/2026/11/ElectionSummaryReportRPTPro.pdf,PA,"15,205",2026

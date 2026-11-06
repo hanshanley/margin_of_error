@@ -996,6 +996,59 @@ the validated UI, source facts, prepared local payload or published releases.
 This does not complete nationwide acquisition or establish measured demographic
 turnout, certification or statewide completion.
 
+**Jefferson primary county participation review, November 6:**
+The saved Pennsylvania directory's county-owned URL redirects to the current
+general-election page. Its two explicitly declared reports are acquired in
+full: the two-page summary and 51-page statement, with separate timestamps
+`11/4/2026 3:47:13 PM` and `11/4/2026 3:47:52 PM`; neither declares a timezone.
+The former cached primary-election response is not the current source.
+
+Native **Voters Cast** is **15,205 = 13,052 Election Day + 2,114 Mail-In +
+39 Provisional**, with **28,226 registrations** and **53.87%** printed turnout.
+All 38 actual unit electorates reconcile exactly to the county. The separate
+`Cumulative` container retains four explicit zero/N/A participation rows.
+Summary mode registrations remain absent; the statement's repeated electorate
+is not added across modes. The separate Act 88 receipt count of 2,114 is not
+added to counted participation.
+
+The complete reviewed county/aggregate query retains all four contests,
+thirteen candidate/write-in rows, 36 office/literal-party/mode observations,
+four separate candidate subtotals, sixteen scoped accounting rows, all 156
+native unit/container participation rows, six native participation rollups,
+53 page identities and 75 native county/container footer values. Both
+independent PDF engines agree on the full reviewed scope, including repeated
+county footers and explicit Cumulative zeroes. State-House electorates remain
+separate: 66th district 15,192/28,187 and 75th district 13/39. Their mode counts
+and registrations partition the county without assigning candidate choices.
+The governor, Congress, 66th and 75th participation-minus-selection residuals
+are 115, 73, 80 and zero, respectively, and remain unclassified.
+
+Unit-candidate pages 8-51 are explicitly outside this transcription; their
+privacy-suppressed cells are not recovered by subtraction or treated as zero.
+The county's linked disclaimers reserve reproduction rights and restrict
+commercial use of materials. Original HTML/PDFs and presentation templates
+remain private; the package contains reviewed numerical facts, provenance
+hashes and the standalone standard-library reproducer, not original documents
+or a permission claim.
+
+Five focused tests pass. All seventeen files and every one of sixteen complete
+ZIP members reproduce byte-identically offline under Python `-S`; a fresh
+two-engine run against the original PDFs also reproduces every file. Complete
+ZIP: **27,739 bytes**, SHA-256
+`45708f01d3dad55f48b073e1c9108323ee42aec0ff5ac3300e5d9ce14551f029`.
+The new facts are under
+`data/county-source-reviews/20261106-jefferson-facts-01/`.
+Release publication and anonymous full-byte verification are pending.
+
+This is a source-review/download batch, not a new live UI or map approval.
+The verified 902-record/430-join map snapshot remains untouched. Next integrate
+the new county participation with an explicit new immutable context-review
+version (or separately reviewed scoped loader), preserving every old source
+record and approval. Do not silently add an observation to the frozen review
+or weaken its current complete-inventory checks. Maine's unresolved 130 votes,
+blanks/write-ins and municipal-other gap, and D.C.'s separate accounting gap,
+remain unresolved; schedule 5 continues remaining primary county acquisition.
+
 **November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated
 `git-filter-repo --sensitive-data-removal` rewrite removed Google API key patterns
