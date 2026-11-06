@@ -21,5 +21,6 @@
   "existing_frozen_county_context_changed": false,
   "existing_verified_live_revision": "5d9c46f672061784af8fc83633cb3c14bebd71c2",
   "unchanged_map_suites_repeated": false,
-  "release_verification": "pending"
+  "tracked_source_credential_screen_files": 6648,
+  "release_verification": "release-verification.json"
 }

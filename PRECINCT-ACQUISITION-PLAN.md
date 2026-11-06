@@ -1038,7 +1038,16 @@ ZIP: **27,739 bytes**, SHA-256
 `45708f01d3dad55f48b073e1c9108323ee42aec0ff5ac3300e5d9ce14551f029`.
 The new facts are under
 `data/county-source-reviews/20261106-jefferson-facts-01/`.
-Release publication and anonymous full-byte verification are pending.
+Facts revision `66fc1694bfc8966a9febe5d14c482ff3bd4b366d` and fixed release
+`voter-county-pennsylvania-jefferson-20261106-01` / `436179300` are published.
+All thirteen full release assets, seventeen complete commit-pinned files and
+every one of sixteen ZIP members pass anonymous byte equality, verified at
+`2026-11-06T06:35:33.830878+00:00`. GitHub reports `immutable:false`;
+this is a fixed-checksum/never-overwrite policy, not host-enforced locking.
+Tracked-source credential screening passes all 6,648 files, and exact facts
+revision credential runs `42175320175` / `42175368898` both pass.
+Local/source, credential and release proofs are under
+`20261106-jefferson-publication-01`.
 
 This is a source-review/download batch, not a new live UI or map approval.
 The verified 902-record/430-join map snapshot remains untouched. Next integrate

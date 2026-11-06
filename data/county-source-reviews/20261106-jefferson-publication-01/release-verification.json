@@ -1,0 +1,258 @@
+{
+  "verified_at_utc": "2026-11-06T06:35:33.830878+00:00",
+  "revision": "66fc1694bfc8966a9febe5d14c482ff3bd4b366d",
+  "release_tag": "voter-county-pennsylvania-jefferson-20261106-01",
+  "release_id": 436179300,
+  "github_immutable": false,
+  "never_overwrite_policy": true,
+  "anonymous_requests": true,
+  "release_assets_verified": 13,
+  "commit_pinned_files_verified": 17,
+  "downloads": [
+    {
+      "kind": "complete_release_asset",
+      "file": "complete-jefferson-2026-county-query-01.zip",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-jefferson-20261106-01/complete-jefferson-2026-county-query-01.zip",
+      "status": 200,
+      "bytes": 27739,
+      "sha256": "45708f01d3dad55f48b073e1c9108323ee42aec0ff5ac3300e5d9ce14551f029",
+      "complete_byte_identical_zip_members": 16
+    },
+    {
+      "kind": "complete_release_asset",
+      "file": "county-candidate-results.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-jefferson-20261106-01/county-candidate-results.csv",
+      "status": 200,
+      "bytes": 4190,
+      "sha256": "301f30868cec50a2ccb3ade4a358142dbdc1c331fef5591c183693cda5e0e978"
+    },
+    {
+      "kind": "complete_release_asset",
+      "file": "county-contest-accounting.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-jefferson-20261106-01/county-contest-accounting.csv",
+      "status": 200,
+      "bytes": 4649,
+      "sha256": "eff119508026b3e35dfa0e69c008a32a1bb6c0452d4081c7b6af097baee9cd15"
+    },
+    {
+      "kind": "complete_release_asset",
+      "file": "county-literal-party-totals.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-jefferson-20261106-01/county-literal-party-totals.csv",
+      "status": 200,
+      "bytes": 4157,
+      "sha256": "b4237181beeba65113782d298f813b36a04d3dde27acc0be0bdec8c8359f2639"
+    },
+    {
+      "kind": "complete_release_asset",
+      "file": "county-participation.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-jefferson-20261106-01/county-participation.csv",
+      "status": 200,
+      "bytes": 2585,
+      "sha256": "d9674bfaa0beaf1e2e0b1174a444e6f408dc4e95eb9e1544119f825f8b7cbb2e"
+    },
+    {
+      "kind": "complete_release_asset",
+      "file": "native-contest-subtotals.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-jefferson-20261106-01/native-contest-subtotals.csv",
+      "status": 200,
+      "bytes": 1399,
+      "sha256": "f58c9aabe43b48f5f7a09dbf1356b3de553167068f26411069f4a2b4abe83c37"
+    },
+    {
+      "kind": "complete_release_asset",
+      "file": "native-county-candidate-footers.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-jefferson-20261106-01/native-county-candidate-footers.csv",
+      "status": 200,
+      "bytes": 21460,
+      "sha256": "3c89f6f8b1d1fbde9e6d62c43a6c768982b0024ccf04f356280a1cb7817c155a"
+    },
+    {
+      "kind": "complete_release_asset",
+      "file": "native-mail-ballot-receipts.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-jefferson-20261106-01/native-mail-ballot-receipts.csv",
+      "status": 200,
+      "bytes": 343,
+      "sha256": "16484afcd80ed8f018236f6a63d9a58ec0199a20ad78d835c159c928e7cc6321"
+    },
+    {
+      "kind": "complete_release_asset",
+      "file": "native-participation-rollups.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-jefferson-20261106-01/native-participation-rollups.csv",
+      "status": 200,
+      "bytes": 1410,
+      "sha256": "217a13b8f8641244a20bad8c6b86cfa451000282dafd8ebe72f9299d7fe3b284"
+    },
+    {
+      "kind": "complete_release_asset",
+      "file": "native-source-pages.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-jefferson-20261106-01/native-source-pages.csv",
+      "status": 200,
+      "bytes": 10957,
+      "sha256": "d010adc9bcf8508d761dbda77d99ce89431f07714e9d9d02032756a4a2dfe44f"
+    },
+    {
+      "kind": "complete_release_asset",
+      "file": "native-summary-participation.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-jefferson-20261106-01/native-summary-participation.csv",
+      "status": 200,
+      "bytes": 959,
+      "sha256": "4a80696e3ebdef166f0fca364f16b846f5b4a54bfd800fe926fcf52e154db3c5"
+    },
+    {
+      "kind": "complete_release_asset",
+      "file": "native-unit-participation.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-jefferson-20261106-01/native-unit-participation.csv",
+      "status": 200,
+      "bytes": 35645,
+      "sha256": "29599b3e5373e90423fef6bdcee582c76ea6351d5b3e47d99bacf144133d55ad"
+    },
+    {
+      "kind": "complete_release_asset",
+      "file": "source-records.json.gz",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-jefferson-20261106-01/source-records.json.gz",
+      "status": 200,
+      "bytes": 5316,
+      "sha256": "8fbb3d9aaf525ddecbd8f7635f733e82f43e538c231171353b9dda42f4fd229a"
+    },
+    {
+      "kind": "complete_commit_pinned_file",
+      "file": "audit.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/66fc1694bfc8966a9febe5d14c482ff3bd4b366d/data/county-source-reviews/20261106-jefferson-facts-01/audit.json",
+      "status": 200,
+      "bytes": 5408,
+      "sha256": "9eedaeba9c068df9e3258ca6bb3e5b2f553f3b956c531f2aa51eaf045d66d375"
+    },
+    {
+      "kind": "complete_commit_pinned_file",
+      "file": "checksums.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/66fc1694bfc8966a9febe5d14c482ff3bd4b366d/data/county-source-reviews/20261106-jefferson-facts-01/checksums.json",
+      "status": 200,
+      "bytes": 2108,
+      "sha256": "df07364d59750981d6bc92bb9b57f6adb920324a78cefcf074ab0ba1d7359e68"
+    },
+    {
+      "kind": "complete_commit_pinned_file",
+      "file": "complete-jefferson-2026-county-query-01.zip",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/66fc1694bfc8966a9febe5d14c482ff3bd4b366d/data/county-source-reviews/20261106-jefferson-facts-01/complete-jefferson-2026-county-query-01.zip",
+      "status": 200,
+      "bytes": 27739,
+      "sha256": "45708f01d3dad55f48b073e1c9108323ee42aec0ff5ac3300e5d9ce14551f029",
+      "complete_byte_identical_zip_members": 16
+    },
+    {
+      "kind": "complete_commit_pinned_file",
+      "file": "county-candidate-results.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/66fc1694bfc8966a9febe5d14c482ff3bd4b366d/data/county-source-reviews/20261106-jefferson-facts-01/county-candidate-results.csv",
+      "status": 200,
+      "bytes": 4190,
+      "sha256": "301f30868cec50a2ccb3ade4a358142dbdc1c331fef5591c183693cda5e0e978"
+    },
+    {
+      "kind": "complete_commit_pinned_file",
+      "file": "county-contest-accounting.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/66fc1694bfc8966a9febe5d14c482ff3bd4b366d/data/county-source-reviews/20261106-jefferson-facts-01/county-contest-accounting.csv",
+      "status": 200,
+      "bytes": 4649,
+      "sha256": "eff119508026b3e35dfa0e69c008a32a1bb6c0452d4081c7b6af097baee9cd15"
+    },
+    {
+      "kind": "complete_commit_pinned_file",
+      "file": "county-literal-party-totals.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/66fc1694bfc8966a9febe5d14c482ff3bd4b366d/data/county-source-reviews/20261106-jefferson-facts-01/county-literal-party-totals.csv",
+      "status": 200,
+      "bytes": 4157,
+      "sha256": "b4237181beeba65113782d298f813b36a04d3dde27acc0be0bdec8c8359f2639"
+    },
+    {
+      "kind": "complete_commit_pinned_file",
+      "file": "county-participation.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/66fc1694bfc8966a9febe5d14c482ff3bd4b366d/data/county-source-reviews/20261106-jefferson-facts-01/county-participation.csv",
+      "status": 200,
+      "bytes": 2585,
+      "sha256": "d9674bfaa0beaf1e2e0b1174a444e6f408dc4e95eb9e1544119f825f8b7cbb2e"
+    },
+    {
+      "kind": "complete_commit_pinned_file",
+      "file": "native-contest-subtotals.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/66fc1694bfc8966a9febe5d14c482ff3bd4b366d/data/county-source-reviews/20261106-jefferson-facts-01/native-contest-subtotals.csv",
+      "status": 200,
+      "bytes": 1399,
+      "sha256": "f58c9aabe43b48f5f7a09dbf1356b3de553167068f26411069f4a2b4abe83c37"
+    },
+    {
+      "kind": "complete_commit_pinned_file",
+      "file": "native-county-candidate-footers.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/66fc1694bfc8966a9febe5d14c482ff3bd4b366d/data/county-source-reviews/20261106-jefferson-facts-01/native-county-candidate-footers.csv",
+      "status": 200,
+      "bytes": 21460,
+      "sha256": "3c89f6f8b1d1fbde9e6d62c43a6c768982b0024ccf04f356280a1cb7817c155a"
+    },
+    {
+      "kind": "complete_commit_pinned_file",
+      "file": "native-mail-ballot-receipts.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/66fc1694bfc8966a9febe5d14c482ff3bd4b366d/data/county-source-reviews/20261106-jefferson-facts-01/native-mail-ballot-receipts.csv",
+      "status": 200,
+      "bytes": 343,
+      "sha256": "16484afcd80ed8f018236f6a63d9a58ec0199a20ad78d835c159c928e7cc6321"
+    },
+    {
+      "kind": "complete_commit_pinned_file",
+      "file": "native-participation-rollups.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/66fc1694bfc8966a9febe5d14c482ff3bd4b366d/data/county-source-reviews/20261106-jefferson-facts-01/native-participation-rollups.csv",
+      "status": 200,
+      "bytes": 1410,
+      "sha256": "217a13b8f8641244a20bad8c6b86cfa451000282dafd8ebe72f9299d7fe3b284"
+    },
+    {
+      "kind": "complete_commit_pinned_file",
+      "file": "native-source-pages.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/66fc1694bfc8966a9febe5d14c482ff3bd4b366d/data/county-source-reviews/20261106-jefferson-facts-01/native-source-pages.csv",
+      "status": 200,
+      "bytes": 10957,
+      "sha256": "d010adc9bcf8508d761dbda77d99ce89431f07714e9d9d02032756a4a2dfe44f"
+    },
+    {
+      "kind": "complete_commit_pinned_file",
+      "file": "native-summary-participation.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/66fc1694bfc8966a9febe5d14c482ff3bd4b366d/data/county-source-reviews/20261106-jefferson-facts-01/native-summary-participation.csv",
+      "status": 200,
+      "bytes": 959,
+      "sha256": "4a80696e3ebdef166f0fca364f16b846f5b4a54bfd800fe926fcf52e154db3c5"
+    },
+    {
+      "kind": "complete_commit_pinned_file",
+      "file": "native-unit-participation.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/66fc1694bfc8966a9febe5d14c482ff3bd4b366d/data/county-source-reviews/20261106-jefferson-facts-01/native-unit-participation.csv",
+      "status": 200,
+      "bytes": 35645,
+      "sha256": "29599b3e5373e90423fef6bdcee582c76ea6351d5b3e47d99bacf144133d55ad"
+    },
+    {
+      "kind": "complete_commit_pinned_file",
+      "file": "review-jefferson-county-results.py",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/66fc1694bfc8966a9febe5d14c482ff3bd4b366d/data/county-source-reviews/20261106-jefferson-facts-01/review-jefferson-county-results.py",
+      "status": 200,
+      "bytes": 31105,
+      "sha256": "cd4808c342858deda7ab8f1acd342fbcf53a2a87407e61cde77198b8e21daa77"
+    },
+    {
+      "kind": "complete_commit_pinned_file",
+      "file": "source-receipts.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/66fc1694bfc8966a9febe5d14c482ff3bd4b366d/data/county-source-reviews/20261106-jefferson-facts-01/source-receipts.json",
+      "status": 200,
+      "bytes": 1809,
+      "sha256": "3e27c822b119a730027f5151a7b34f8be52119a613541fc12fd052fccf132b8f"
+    },
+    {
+      "kind": "complete_commit_pinned_file",
+      "file": "source-records.json.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/66fc1694bfc8966a9febe5d14c482ff3bd4b366d/data/county-source-reviews/20261106-jefferson-facts-01/source-records.json.gz",
+      "status": 200,
+      "bytes": 5316,
+      "sha256": "8fbb3d9aaf525ddecbd8f7635f733e82f43e538c231171353b9dda42f4fd229a"
+    }
+  ],
+  "ui_changed": false,
+  "new_map_approval": false,
+  "existing_verified_ui_revision": "5d9c46f672061784af8fc83633cb3c14bebd71c2"
+}
