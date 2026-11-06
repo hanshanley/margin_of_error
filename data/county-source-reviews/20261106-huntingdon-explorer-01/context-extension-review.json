@@ -1,0 +1,109 @@
+{
+  "previous_complete_records_preserved": 1222,
+  "previous_contextual_joins_preserved": 738,
+  "previous_exclusions_and_missingness_preserved": true,
+  "unchanged_geometry_inventory": 18,
+  "existing_source_map_approval_flags_unchanged": true,
+  "native_fips_invented": false,
+  "new_source_records": [
+    {
+      "year": 2026,
+      "state_code": "PA",
+      "county_id": "reviewed:PA:Huntingdon",
+      "county": "Huntingdon",
+      "geography_level": "county",
+      "ballots": 16024,
+      "denominator": 27917,
+      "denominator_basis": "native_registered_voters",
+      "participation_measure_literal": "Ballots Cast - Total",
+      "reported_pct": 57.39871762725221,
+      "native_printed_pct": "57.40%",
+      "source_status_literal": "UNOFFICIAL RESULTS",
+      "reported_units": 58,
+      "total_units": 58,
+      "source_rows": 1,
+      "maps_approved": false,
+      "review_id": "pennsylvania-huntingdon-20261106-01",
+      "native_record": {
+        "state": "Pennsylvania",
+        "county": "Huntingdon",
+        "election_date": "2026-11-03",
+        "source_fips": "",
+        "source_url": "https://www.huntingdoncountypa.gov/getmedia/de181940-3a03-4f1c-8654-0fc4f445da7d/2026-Primary-Election-Summary.pdf",
+        "source_update_literal": "11/03/2026 9:56 PM",
+        "declared_timezone": "",
+        "native_status_literal": "UNOFFICIAL RESULTS",
+        "native_participation_measure_literal": "Ballots Cast - Total",
+        "ballots_cast": "16024",
+        "election_day_ballots": "13855",
+        "mail_ballots": "2169",
+        "provisional_ballots": "0",
+        "registered_voters": "27917",
+        "blank_ballots": "0",
+        "native_printed_turnout": "57.40%",
+        "registered_turnout_percent": "57.39871762725221",
+        "native_count_literals_json": "{\"ballot_count_literals\": [\"16,024\", \"13,855\", \"2,169\", \"0\"], \"blank_count_literals\": [\"0\", \"0\", \"0\", \"0\"], \"printed_turnout_literal\": \"57.40%\", \"registered_voters_literal\": \"27,917\"}",
+        "qualifications_json": "[\"The complete two-page general-election summary supplies 16,024 ballots and 27,917 registrations; candidate selections are separate.\", \"Ballots are 13,855 Election Day + 2,169 Mail Votes + explicit provisional zero. Actual blank ballots are explicitly zero, not an inferred residual.\", \"57.40% is the native printed registered-voter fraction, not CVAP, VAP, VEP or demographic turnout.\", \"Both pages retain 11/03/2026 9:56 PM, with no supplied timezone. HTTP retrieval and Last-Modified timestamps are not election update clocks.\", \"The report is UNOFFICIAL RESULTS. Its 58/58 complete and 0/58 partially reported statements do not establish certification or finished counting.\", \"The county declares a URL containing Primary but the response disposition and every PDF page identify the November 3 general election; preserve the literal URL.\", \"Each candidate keeps its literal party and all four mode counts; write-ins have no supplied party. Overvotes and undervotes remain native accounting, not candidate votes.\", \"The first three contest accounting vectors each match county ballots. The two state-House accounting vectors sum to county ballots, but this is not a verified geographic partition.\", \"District ballot scopes are derived from supplied selections plus overvotes and undervotes; district electorates and mode registration denominators are absent, not the whole-county registrations.\", \"No native FIPS, new geometry, demographic turnout, statewide completion or redistribution permission for original HTML/PDF templates is approved.\"]"
+      },
+      "native_source_updates": [
+        {
+          "source": "county",
+          "native_update_literal": "11/03/2026 9:56 PM",
+          "declared_timezone": ""
+        }
+      ],
+      "source_update_label": "11/03/2026 9:56 PM (timezone not declared)",
+      "source_reporting_label": "The complete two-page general-election summary supplies 16,024 ballots and 27,917 registrations; candidate selections are separate.; Ballots are 13,855 Election Day + 2,169 Mail Votes + explicit provisional zero. Actual blank ballots are explicitly zero, not an inferred residual.; 57.40% is the native printed registered-voter fraction, not CVAP, VAP, VEP or demographic turnout.; Both pages retain 11/03/2026 9:56 PM, with no supplied timezone. HTTP retrieval and Last-Modified timestamps are not election update clocks.; The report is UNOFFICIAL RESULTS. Its 58/58 complete and 0/58 partially reported statements do not establish certification or finished counting.; The county declares a URL containing Primary but the response disposition and every PDF page identify the November 3 general election; preserve the literal URL.; Each candidate keeps its literal party and all four mode counts; write-ins have no supplied party. Overvotes and undervotes remain native accounting, not candidate votes.; The first three contest accounting vectors each match county ballots. The two state-House accounting vectors sum to county ballots, but this is not a verified geographic partition.; District ballot scopes are derived from supplied selections plus overvotes and undervotes; district electorates and mode registration denominators are absent, not the whole-county registrations.; No native FIPS, new geometry, demographic turnout, statewide completion or redistribution permission for original HTML/PDF templates is approved.",
+      "quality": [
+        "The complete two-page general-election summary supplies 16,024 ballots and 27,917 registrations; candidate selections are separate.",
+        "Ballots are 13,855 Election Day + 2,169 Mail Votes + explicit provisional zero. Actual blank ballots are explicitly zero, not an inferred residual.",
+        "57.40% is the native printed registered-voter fraction, not CVAP, VAP, VEP or demographic turnout.",
+        "Both pages retain 11/03/2026 9:56 PM, with no supplied timezone. HTTP retrieval and Last-Modified timestamps are not election update clocks.",
+        "The report is UNOFFICIAL RESULTS. Its 58/58 complete and 0/58 partially reported statements do not establish certification or finished counting.",
+        "The county declares a URL containing Primary but the response disposition and every PDF page identify the November 3 general election; preserve the literal URL.",
+        "Each candidate keeps its literal party and all four mode counts; write-ins have no supplied party. Overvotes and undervotes remain native accounting, not candidate votes.",
+        "The first three contest accounting vectors each match county ballots. The two state-House accounting vectors sum to county ballots, but this is not a verified geographic partition.",
+        "District ballot scopes are derived from supplied selections plus overvotes and undervotes; district electorates and mode registration denominators are absent, not the whole-county registrations.",
+        "No native FIPS, new geometry, demographic turnout, statewide completion or redistribution permission for original HTML/PDF templates is approved."
+      ],
+      "source_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d5c37ef669bb868618764548dd26cc9355822cca/data/county-source-reviews/20261106-huntingdon-facts-01/county-participation.csv",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-huntingdon-20261106-01/complete-huntingdon-2026-numerical-facts-01.zip"
+    }
+  ],
+  "new_contextual_identity_joins": [
+    {
+      "state_code": "PA",
+      "county_id": "reviewed:PA:Huntingdon",
+      "county": "Huntingdon",
+      "geography_level": "county",
+      "review_id": "pennsylvania-huntingdon-20261106-01",
+      "contextual_geoid": "42061",
+      "contextual_name": "Huntingdon County",
+      "boundary_year": 2024,
+      "ballots": 16024,
+      "denominator": 27917,
+      "reported_pct": 57.39871762725221,
+      "participation_measure_kind": "source_defined_participation_count",
+      "participation_measure_label": "Ballots Cast - Total",
+      "source_record_sha256": "b4260fe7aa3434204ae45533de7cf4909b797da01bd423ee272e4a3ca2b9df9a",
+      "source_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d5c37ef669bb868618764548dd26cc9355822cca/data/county-source-reviews/20261106-huntingdon-facts-01/county-participation.csv",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-huntingdon-20261106-01/complete-huntingdon-2026-numerical-facts-01.zip",
+      "contextual_map_approved": true,
+      "source_map_approval_unchanged": false
+    }
+  ],
+  "counts": {
+    "complete_source_records": 1223,
+    "contextual_joins": 739,
+    "jurisdictions": 18,
+    "reviewed_rates": 352,
+    "missing_rates": 387,
+    "excluded_municipalities": 286,
+    "excluded_missing_county_totals": 198
+  },
+  "frozen_review_bytes": 1140533,
+  "frozen_review_sha256": "e9a3336fd29285b1c1e986ee4c278364912921d75607ffc9628ea539ff4e77e4",
+  "complete_zip_bytes": 2907404,
+  "complete_zip_sha256": "afa791ae79125248ad1fedff6a9eb3d3d00dcb0f1118107f17f58770339c70a2",
+  "complete_package_files": 32
+}

@@ -1,0 +1,131 @@
+{
+  "verified_at_utc": "2026-11-06T13:41:20.184468+00:00",
+  "revision": "d5c37ef669bb868618764548dd26cc9355822cca",
+  "release_id": 436548427,
+  "tag": "voter-county-huntingdon-20261106-01",
+  "files": [
+    {
+      "file": "audit.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-huntingdon-20261106-01/audit.json",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d5c37ef669bb868618764548dd26cc9355822cca/data/county-source-reviews/20261106-huntingdon-facts-01/audit.json",
+      "bytes": 4711,
+      "sha256": "bcc126c0182b210e7b6b16d234001dae781bcda8b77c15bb9c5660764b0ecfec",
+      "anonymous_entire_bytes_match": true,
+      "pinned_entire_bytes_match": true
+    },
+    {
+      "file": "checksums.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-huntingdon-20261106-01/checksums.json",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d5c37ef669bb868618764548dd26cc9355822cca/data/county-source-reviews/20261106-huntingdon-facts-01/checksums.json",
+      "bytes": 1529,
+      "sha256": "77d78b40a95dd21c96d7d2704162be65750806c53b3521555e9969ed2e7fb7b8",
+      "anonymous_entire_bytes_match": true,
+      "pinned_entire_bytes_match": true
+    },
+    {
+      "file": "complete-huntingdon-2026-numerical-facts-01.zip",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-huntingdon-20261106-01/complete-huntingdon-2026-numerical-facts-01.zip",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d5c37ef669bb868618764548dd26cc9355822cca/data/county-source-reviews/20261106-huntingdon-facts-01/complete-huntingdon-2026-numerical-facts-01.zip",
+      "bytes": 16031,
+      "sha256": "138adf107c0d628e14d78d2e11d0426abfd7fb61c330c066e25bd5127eccf8b7",
+      "anonymous_entire_bytes_match": true,
+      "pinned_entire_bytes_match": true
+    },
+    {
+      "file": "county-contest-accounting.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-huntingdon-20261106-01/county-contest-accounting.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d5c37ef669bb868618764548dd26cc9355822cca/data/county-source-reviews/20261106-huntingdon-facts-01/county-contest-accounting.csv",
+      "bytes": 5445,
+      "sha256": "cedeb305ca4d305d65eb14dba5c3597d9bb03c1015d87530b7883a2cffb2a292",
+      "anonymous_entire_bytes_match": true,
+      "pinned_entire_bytes_match": true
+    },
+    {
+      "file": "county-literal-party-totals.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-huntingdon-20261106-01/county-literal-party-totals.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d5c37ef669bb868618764548dd26cc9355822cca/data/county-source-reviews/20261106-huntingdon-facts-01/county-literal-party-totals.csv",
+      "bytes": 10664,
+      "sha256": "aa0927b7c517256e5a11008530cad22b61011660ce5c872cdf8a48686026f70c",
+      "anonymous_entire_bytes_match": true,
+      "pinned_entire_bytes_match": true
+    },
+    {
+      "file": "county-participation.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-huntingdon-20261106-01/county-participation.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d5c37ef669bb868618764548dd26cc9355822cca/data/county-source-reviews/20261106-huntingdon-facts-01/county-participation.csv",
+      "bytes": 2394,
+      "sha256": "08f15f3fbde5886c9a74c4ce5a7c06e38531449fe7e4fad42f2825c824ee00d0",
+      "anonymous_entire_bytes_match": true,
+      "pinned_entire_bytes_match": true
+    },
+    {
+      "file": "native-candidate-results.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-huntingdon-20261106-01/native-candidate-results.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d5c37ef669bb868618764548dd26cc9355822cca/data/county-source-reviews/20261106-huntingdon-facts-01/native-candidate-results.csv",
+      "bytes": 5262,
+      "sha256": "8071e9032589a8f88f5c0f197a39a148918d748a662b87e77426531161e58aed",
+      "anonymous_entire_bytes_match": true,
+      "pinned_entire_bytes_match": true
+    },
+    {
+      "file": "native-contest-accounting.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-huntingdon-20261106-01/native-contest-accounting.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d5c37ef669bb868618764548dd26cc9355822cca/data/county-source-reviews/20261106-huntingdon-facts-01/native-contest-accounting.csv",
+      "bytes": 3189,
+      "sha256": "4f6cb6ed04ab1ac701468a881aaf6925ef855e5cbb9b6a7c740fdc9d0124d9b1",
+      "anonymous_entire_bytes_match": true,
+      "pinned_entire_bytes_match": true
+    },
+    {
+      "file": "native-reporting-statements.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-huntingdon-20261106-01/native-reporting-statements.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d5c37ef669bb868618764548dd26cc9355822cca/data/county-source-reviews/20261106-huntingdon-facts-01/native-reporting-statements.csv",
+      "bytes": 1152,
+      "sha256": "31c5449c825652438725e538bd3bddca0a4a43649350463dbc5a6b15388f6f42",
+      "anonymous_entire_bytes_match": true,
+      "pinned_entire_bytes_match": true
+    },
+    {
+      "file": "native-source-pages.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-huntingdon-20261106-01/native-source-pages.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d5c37ef669bb868618764548dd26cc9355822cca/data/county-source-reviews/20261106-huntingdon-facts-01/native-source-pages.csv",
+      "bytes": 567,
+      "sha256": "82df1da987de8a3316208d9ce0d68c2a1b37ec1667f3bcd188e2ca7053c583e4",
+      "anonymous_entire_bytes_match": true,
+      "pinned_entire_bytes_match": true
+    },
+    {
+      "file": "review-huntingdon-county-results.py",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-huntingdon-20261106-01/review-huntingdon-county-results.py",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d5c37ef669bb868618764548dd26cc9355822cca/data/county-source-reviews/20261106-huntingdon-facts-01/review-huntingdon-county-results.py",
+      "bytes": 17118,
+      "sha256": "aaaa32769d418078c6eb0af64182f58bf3a79f555e52d9fe810ccc4e1b4e5985",
+      "anonymous_entire_bytes_match": true,
+      "pinned_entire_bytes_match": true
+    },
+    {
+      "file": "source-receipts.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-huntingdon-20261106-01/source-receipts.json",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d5c37ef669bb868618764548dd26cc9355822cca/data/county-source-reviews/20261106-huntingdon-facts-01/source-receipts.json",
+      "bytes": 1117,
+      "sha256": "21cdb9add3f2ccebb3d71f790188b0a3c251eb2c8ba2114ce9e2f2c4463f20bf",
+      "anonymous_entire_bytes_match": true,
+      "pinned_entire_bytes_match": true
+    },
+    {
+      "file": "source-records.json.gz",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-huntingdon-20261106-01/source-records.json.gz",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d5c37ef669bb868618764548dd26cc9355822cca/data/county-source-reviews/20261106-huntingdon-facts-01/source-records.json.gz",
+      "bytes": 1586,
+      "sha256": "e8b3c050951d6252dc184010cc61e401b5d01a5d57518f0adcd977dd732d9a4d",
+      "anonymous_entire_bytes_match": true,
+      "pinned_entire_bytes_match": true
+    }
+  ],
+  "complete_assets": 13,
+  "complete_pinned_files": 13,
+  "complete_archive_members": 12,
+  "extracted_standard_library_offline_reproduction": true,
+  "original_html_or_pdf_redistributed": false,
+  "explorer_integration_approved": false
+}

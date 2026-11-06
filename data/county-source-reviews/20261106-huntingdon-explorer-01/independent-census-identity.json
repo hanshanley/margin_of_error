@@ -1,0 +1,75 @@
+{
+  "verified_at_utc": "2026-11-06T13:43:45.888553+00:00",
+  "both_entire_3222_record_original_archives_equal_parsed_inventories": true,
+  "independently_checked_census_identities": [
+    {
+      "year": 2024,
+      "entire_inventory_records": 3222,
+      "receipts": [
+        {
+          "path": "public/participation-county-context/20261106-16/complete-2024-county-identities.json.gz",
+          "bytes": 144580,
+          "sha256": "f55f8c9959d056d26e9bfa6b344e9ea564cfc5688b7f7f8b8a2ce8b34f9439ac"
+        },
+        {
+          "path": "public/participation-county-context/20261106-16/gazetteer-2024-national-counties.zip",
+          "bytes": 141679,
+          "sha256": "3c337402b5c6e8d5aa26b4278ccf4edc8989f2683765b3ffbf22296cdb2df3a0"
+        }
+      ],
+      "independently_reviewed_identity": {
+        "USPS": "PA",
+        "GEOID": "42061",
+        "ANSICODE": "01213672",
+        "NAME": "Huntingdon County",
+        "ALAND": "2265182334",
+        "AWATER": "37851956",
+        "ALAND_SQMI": "874.592",
+        "AWATER_SQMI": "14.615",
+        "INTPTLAT": "40.422311",
+        "INTPTLONG": "-77.968595"
+      }
+    },
+    {
+      "year": 2026,
+      "entire_inventory_records": 3222,
+      "receipts": [
+        {
+          "path": "public/participation-county-context/20261106-16/complete-2026-county-identities.json.gz",
+          "bytes": 155774,
+          "sha256": "cd12a54467a4ad54e9213d541b5a0563655ef41f3f193ed5804c75df51bf3150"
+        },
+        {
+          "path": "public/participation-county-context/20261106-16/gazetteer-2026-national-counties.zip",
+          "bytes": 139190,
+          "sha256": "6a99ca00efbc0be5112e225d4102704c51d5ce3b16e3afd6e4159460595fd12a"
+        }
+      ],
+      "independently_reviewed_identity": {
+        "USPS": "PA",
+        "GEOID": "42061",
+        "GEOIDFQ": "0500000US42061",
+        "ANSICODE": "01213672",
+        "NAME": "Huntingdon County",
+        "ALAND": "2265182315",
+        "AWATER": "37851957",
+        "ALAND_SQMI": "874.592",
+        "AWATER_SQMI": "14.615",
+        "INTPTLAT": "40.422311",
+        "INTPTLONG": "-77.968595"
+      }
+    }
+  ],
+  "contextual_county_fips": "42061",
+  "native_source_fips": "",
+  "native_maps_approved": false,
+  "no_exact_2026_election_boundary_claim": true,
+  "contextual_boundary_year": 2024,
+  "entire_live_geometry_receipt": {
+    "url": "https://www.themarginoferror.com/participation-context/20261104T183601Z/geometry/county-PA.geojson",
+    "path": "geometry/county-PA.geojson",
+    "bytes": 298398,
+    "sha256": "02c17862c97cddf64a70ade6596e11c7bd8fe5707ba83bca3910172354b9b58a"
+  },
+  "unchanged_geometry_inventory_features": 67
+}
