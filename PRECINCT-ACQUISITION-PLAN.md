@@ -183,9 +183,27 @@ including semantic corruptions beyond the hash/independent-copy guards.
 ZIP **17,047 bytes**, SHA-256
 `5745cf2c2e9132d4ca449bb0740f9b8450e4b271b06c23c48716eb0e024e99aa`.
 See `20261106-lycoming-primary-review-01/primary-review.json` and
-`20261106-lycoming-facts-01/`. Original HTML/PDFs stay private. Immutable release,
-independent contextual county identity, source registration and explorer
-integration remain pending; no new native county row, rate or map is yet live.
+`20261106-lycoming-facts-01/`. Source facts are frozen in
+`e50241f5f2de734b7e8107ac6518eae19480c926`; original HTML/PDFs stay private.
+Both entire 3,222-record Census originals independently identify **PA / Lycoming
+County / 42081**, and the entire unchanged live 2024 PA contextual geometry
+matches. Native source FIPS remains missing; no certified 2026 geography is
+inferred. The exact Georgia baseline preserves all **268 native records /
+663 anchors / 659 URLs**. See `20261106-lycoming-explorer-01`.
+Immutable source release **436462656**, tag
+`voter-county-lycoming-20261106-01`, passes all **17 entire anonymous assets /
+17 pinned files / sixteen archive members**, extracted offline reproduction
+and both exact credential jobs **42216095844 / 42216176276**.
+The source publisher completed; do not recreate or overwrite these assets.
+See `20261106-lycoming-publication-01`.
+**Next:** register this fixed source, extend context13 without changing any of
+its 1,133 records or seventeen geometries, and separately release context14.
+The intended addition is one county count and one valid administrative
+registration fraction, not candidate-mode or demographic participation.
+Then run the required changed-UI tests/build/Pages preparation and exact
+production proof, checking the actual hosted size against the current
+996,218,736-byte baseline. Source registration, context14 and explorer
+integration remain pending; no Lycoming native row, rate or map is yet live.
 The bounded other-parent attempts preserve Butler's **404** parent and summary
 response, and Snyder's **406** response, without bypass or approval of cached
 search text. Dauphin's already-published candidate package is not reacquired;
