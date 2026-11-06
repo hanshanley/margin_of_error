@@ -1,0 +1,61 @@
+{
+  "verified_at_utc": "2026-11-06T01:28:22.291547+00:00",
+  "deployed_commit": "25bc7155431ef522e1baa44bb344831a63862360",
+  "pages_run": 42143347328,
+  "credential_checks": [
+    {
+      "conclusion": "success",
+      "databaseId": 42143347314,
+      "headSha": "25bc7155431ef522e1baa44bb344831a63862360",
+      "status": "completed",
+      "url": "https://github.com/hanshanley/margin_of_error/actions/runs/42143347314"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 42143347670,
+      "headSha": "25bc7155431ef522e1baa44bb344831a63862360",
+      "status": "completed",
+      "url": "https://github.com/hanshanley/margin_of_error/actions/runs/42143347670"
+    }
+  ],
+  "production_assets": [
+    {
+      "path": "/scripts/participation-explorer.js",
+      "bytes": 153622,
+      "sha256": "800c3c477aa409c7b3914d228fb9eb30935034117fe1c6f152eb5f8e5e2fc758",
+      "identical_to_prepared_build": true
+    },
+    {
+      "path": "/participation-source-reviews.json",
+      "bytes": 54819,
+      "sha256": "c20a6654598b85ada6ea93c02ff43bfd67a607582e699256f82700ad8f9a1c4c",
+      "identical_to_prepared_build": true
+    },
+    {
+      "path": "/participation-downloads.json",
+      "bytes": 42128,
+      "sha256": "1b0df17b55d5e9738ff278e346e248dfc26932b8684f1551730eb57e12e19c64",
+      "identical_to_prepared_build": true
+    }
+  ],
+  "proof_sha256": {
+    "production-browser.json": "0e70f070fb472ed545779a2488f4b2bd23fd4d179febd84fff2c20bed1ea5ad5",
+    "production-downloads.json": "b915dde2ecb77ce7057c40fa6a93fb7e576059fd31d3b41425a87eb6396b5beb",
+    "promoted-download-verification.json": "853813517e18c8fc9a3766a2cc64cfc5936060c078ff6b885f2cb6f53a8653eb"
+  },
+  "participation_scope": {
+    "uf_state_dc_estimates": 51,
+    "north_carolina_county_rates": 100,
+    "additional_pennsylvania_county_observations": 3,
+    "pennsylvania_county_mapping_approved": false,
+    "national_aggregate_separate": true,
+    "demographic_2026_turnout_claimed": false,
+    "full_native_source_records_verified": true
+  },
+  "limitations": [
+    "County counts remain unofficial and can be partially counted.",
+    "Pennsylvania observations are not statewide county coverage.",
+    "Three source reviews do not approve new county or precinct mapping.",
+    "UF population estimates, native registration fractions and historical CPS series remain separate."
+  ]
+}

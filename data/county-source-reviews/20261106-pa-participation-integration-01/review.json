@@ -19,5 +19,5 @@
   "demographic_turnout_approved": false,
   "statewide_completion": false,
   "certification_or_final_counting": false,
-  "production_status": "Requires exact revision deployment and production verification"
+  "production_status": "Live verified at 25bc7155431ef522e1baa44bb344831a63862360; Pages 42143347328; see verification.json"
 }

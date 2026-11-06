@@ -39,8 +39,13 @@ three source reviews still do not approve mapping; no county or precinct colors
 are added. Existing official local feeds are not overwritten. Reviewed county
 counts survive a failed statewide or local-file request without being assigned
 to another state. All 288 unique downloads / 291 anchors are unchanged.
-Local browser checks pass desktop/mobile and JavaScript/no-JavaScript; exact
-production verification is required before marking this integration live.
+Local and production checks pass desktop/mobile and JavaScript/no-JavaScript.
+Revision `25bc7155431ef522e1baa44bb344831a63862360` passed Pages `42143347328`,
+credential runs `42143347314` / `42143347670`, and exact production checks at
+`2026-11-06T01:28:22.291547+00:00`. Renderer, registry and download manifest bytes
+match the prepared build. All three promoted participation CSVs and complete
+county ZIPs are publicly byte-verified, including their complete native tables.
+Production proof is persisted on the review branch without another UI deployment.
 See `20261106-pa-participation-integration-01`.
 
 Next acquisition/integration priority is actual participation: surface existing
