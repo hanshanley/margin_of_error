@@ -18,21 +18,22 @@ parser.add_argument("--proof", type=Path, required=True)
 batch_args = parser.add_mutually_exclusive_group()
 batch_args.add_argument("--lebanon", action="store_true")
 batch_args.add_argument("--blair", action="store_true")
+batch_args.add_argument("--armstrong", action="store_true")
 args = parser.parse_args()
 assert not args.proof.exists()
 root = Path(__file__).resolve().parents[1]
 base = args.base_url.rstrip("/")
 reviews = json.loads((root / "public/participation-source-reviews.json").read_text())["reviews"]
-county = "Blair" if args.blair else "Lebanon" if args.lebanon else "Adams"
+county = "Armstrong" if args.armstrong else "Blair" if args.blair else "Lebanon" if args.lebanon else "Adams"
 batch = county.lower()
 review = next(row for row in reviews if row["id"] == f"pennsylvania-{batch}-20261106-01")
 baseline = json.loads((root / f"data/county-source-reviews/20261106-{batch}-publication-01/baseline.json").read_text())
-record_count = {"Adams": 14, "Lebanon": 15, "Blair": 16}[county]
+record_count = {"Adams": 14, "Lebanon": 15, "Blair": 16, "Armstrong": 17}[county]
 added = [review["complete_download_url"]] + [review["base_url"] + table["file"] for table in review["tables"]]
-assert len(set(added)) == 9 and not set(added) & set(baseline["expected_download_urls"])
+assert len(set(added)) == (8 if args.armstrong else 9) and not set(added) & set(baseline["expected_download_urls"])
 expected_links = Counter(baseline["expected_download_urls"]) + Counter(added)
-assert len(expected_links) == {"Adams": 315, "Lebanon": 334, "Blair": 343}[county]
-assert sum(expected_links.values()) == {"Adams": 318, "Lebanon": 337, "Blair": 346}[county]
+assert len(expected_links) == {"Adams": 315, "Lebanon": 334, "Blair": 343, "Armstrong": 351}[county]
+assert sum(expected_links.values()) == {"Adams": 318, "Lebanon": 337, "Blair": 346, "Armstrong": 354}[county]
 with (root / review["data_directory"] / "county-participation.csv").open() as source:
     native = next(csv.DictReader(source))
 proof = {"base_url": base, "modes": [], "checks": []}
@@ -45,8 +46,17 @@ def verify_detail(page):
     select.select_option("42001" if county == "Adams" else f"reviewed:PA:{county}")
     detail = page.locator("#current-county-detail")
     expect(detail.locator(".selection-rate")).to_have_text(
-        {"Adams": "42,660", "Lebanon": "51,268", "Blair": "43,898"}[county])
-    texts = ("Native printed fraction: 0.00%", "Analysis fraction withheld / not supplied",
+        {"Adams": "42,660", "Lebanon": "51,268", "Blair": "43,898", "Armstrong": "24,039"}[county])
+    if args.armstrong:
+        expect(detail.locator(".selection-basis")).to_have_text("2026 Voters Cast · not final/certified")
+        overview = page.locator("#reviewed-county-overview button").filter(has_text="Armstrong:")
+        expect(overview).to_contain_text("24,039 Voters Cast")
+    texts = ("43,750 native registered voters", "54.95%", "w/o PROV",
+             "county_report: 11/3/2026 10:26:30 PM (timezone not declared)",
+             "Native participation is Voters Cast", "Provisional participation is absent, not zero",
+             "not measured party turnout or zero participation",
+             "County mapping is not approved") if args.armstrong else (
+             "Native printed fraction: 0.00%", "Analysis fraction withheld / not supplied",
              "UNOFFICIAL RESULTS", "county: 11/05/2026 12:16 PM (timezone not declared)",
              "unit: 11/05/2026 1:02 PM (timezone not declared)",
              "268 provisionals still to process", "0/60 complete and 60/60 partially reported",
@@ -90,12 +100,18 @@ with sync_playwright() as playwright:
             if args.lebanon:
                 assert selected["denominator"] is None and selected["reported_pct"] is None
                 assert selected["native_record"]["native_registered_voters"] == "0"
+            if args.armstrong:
+                assert selected["participation_measure_literal"] == "Voters Cast"
+                assert selected["ballots"] == 24039 and selected["denominator"] == 43750
+                assert selected["native_record"]["provisional_voters_cast"] == ""
             expect(table.locator("tbody tr")).to_have_count(record_count)
             cells = table.locator("tbody tr").filter(has_text=f"{county}, Pennsylvania").locator("td").all_text_contents()
             expected_cells = {
                 "Adams": ["42,660", "77,163", "55.29%", "55.29%", "UNOFFICIAL RESULTS"],
                 "Lebanon": ["51,268", "Withheld (native zero)", "Withheld", "0.00%", "UNOFFICIAL RESULTS"],
                 "Blair": ["43,898", "81,846", "53.63%", "53.63%", "UNOFFICIAL RESULTS"],
+                "Armstrong": ["24,039 · Voters Cast", "43,750", "54.95%", "54.95%",
+                              "2026 General Election Unofficial Results w/o PROV"],
             }[county]
             assert [text.strip() for text in cells[:5]] == expected_cells
             links = Counter(page.locator("#downloads a[download]").evaluate_all(

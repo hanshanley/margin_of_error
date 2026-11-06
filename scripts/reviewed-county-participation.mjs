@@ -16,6 +16,7 @@ const profiles = [
   ['pennsylvania-adams-20261106-01', 'ballots_cast', 'registered_voters', 'native_printed_turnout', 'PA', ['Adams']],
   ['pennsylvania-lebanon-20261106-01', 'ballots_cast', 'registered_voters', 'native_printed_turnout', 'PA', ['Lebanon']],
   ['pennsylvania-blair-20261106-01', 'ballots_cast', 'registered_voters', 'native_printed_turnout', 'PA', ['Blair']],
+  ['pennsylvania-armstrong-20261106-01', 'reported_voters_cast', 'registered_voters', 'native_printed_turnout', 'PA', ['Armstrong']],
   ['dc-delegate-county-20261105-01', 'ballots_cast', 'registered_voters', null, 'DC', ['District of Columbia']],
 ];
 const csv = path => parse(readFileSync(path, 'utf8'), { columns: true, bom: true, skip_empty_lines: true });
@@ -32,6 +33,7 @@ export function loadReviewedCountyParticipation(reviews) {
     for (const native of rows) {
       const county = native.county ?? native.geography, identity = `${code}|${county}`;
       const unusableNativeZero = id === 'pennsylvania-lebanon-20261106-01';
+      const nativeVotersCast = id === 'pennsylvania-armstrong-20261106-01';
       const ballots = Number(native[ballotField]);
       const denominator = unusableNativeZero ? null : Number(native[denominatorField]);
       const invalidDenominator = unusableNativeZero
@@ -41,7 +43,10 @@ export function loadReviewedCountyParticipation(reviews) {
           || denominator <= 0 || ballots > denominator;
       if (native.year !== '2026' || native.state_code !== code || !names.includes(county) || seen.has(identity)
         || !/^\d+$/.test(native[ballotField]) || !Number.isSafeInteger(ballots)
-        || (unusableNativeZero && ballots <= 0) || invalidDenominator)
+        || (unusableNativeZero && ballots <= 0) || invalidDenominator
+        || (nativeVotersCast && (native.native_participation_measure_literal !== 'Voters Cast'
+          || native.provisional_voters_cast !== ''
+          || native.native_status_literal !== '2026 General Election Unofficial Results w/o PROV')))
         throw new Error(`Invalid reviewed county participation: ${id} / ${county}`);
       seen.add(identity);
       const sourceAudit = audit.counties?.find(row => row.county === county) ?? audit;
@@ -68,9 +73,10 @@ export function loadReviewedCountyParticipation(reviews) {
       if (id === 'pennsylvania-centre-20261106-01') {
         nativeSourceUpdates = csv(resolve(directory, 'native-source-updates.csv'));
       } else if (['pennsylvania-cumberland-20261106-01', 'pennsylvania-adams-20261106-01',
-        'pennsylvania-lebanon-20261106-01', 'pennsylvania-blair-20261106-01'].includes(id)) {
+        'pennsylvania-lebanon-20261106-01', 'pennsylvania-blair-20261106-01',
+        'pennsylvania-armstrong-20261106-01'].includes(id)) {
         nativeSourceUpdates = [...new Map(csv(resolve(directory, 'native-source-pages.csv')).map(row =>
-          [row.source_report, { source: row.source_report, native_update_literal: row.source_update_literal,
+          [row.source_report ?? 'county_report', { source: row.source_report ?? 'county_report', native_update_literal: row.source_update_literal,
             declared_timezone: row.declared_timezone }])).values()];
       }
       updates.push(...nativeSourceUpdates.map(row =>
@@ -94,6 +100,7 @@ export function loadReviewedCountyParticipation(reviews) {
       observations.push({
         year: 2026, state_code: code, county_id: native.county_fips || `reviewed:${code}:${county}`,
         county, geography_level: native.geography_level || 'county', ballots, denominator,
+        ...(nativeVotersCast ? { participation_measure_literal: native.native_participation_measure_literal } : {}),
         denominator_basis: 'native_registered_voters', reported_pct: denominator === null ? null : 100 * ballots / denominator,
         native_printed_pct: printedPct, source_status_literal: native.native_status_literal ?? native.result_status ?? null,
         reported_units: null, total_units: null, source_rows: 0, maps_approved: false,

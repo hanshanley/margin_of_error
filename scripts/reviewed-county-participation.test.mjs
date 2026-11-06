@@ -10,8 +10,8 @@ const reviews = JSON.parse(readFileSync('public/participation-source-reviews.jso
 
 test('loads all reviewed county participation without promoting map coverage', () => {
   const rows = loadReviewedCountyParticipation(reviews);
-  assert.equal(rows.length, 16);
-  assert.equal(rows.filter(row => row.state_code === 'PA').length, 15);
+  assert.equal(rows.length, 17);
+  assert.equal(rows.filter(row => row.state_code === 'PA').length, 16);
   assert.equal(rows.filter(row => row.state_code === 'DC').length, 1);
   assert.ok(rows.every(row => row.maps_approved === false && row.reported_units === null));
   const monroe = rows.find(row => row.county === 'Monroe');
@@ -150,6 +150,47 @@ test('requires Lebanon native zero flags and withheld fields instead of acceptin
     const altered = reviews.map(row => row.id === original.id ? { ...row, data_directory: directory } : row);
     for (const change of [{ registered_voters: '100000' }, { native_registered_voters: '' },
       { registered_turnout_percent: '0' }, { native_printed_turnout: '' }, { ballots_cast: '0' }]) {
+      const row = { ...native, ...change }, fields = Object.keys(row);
+      writeFileSync(join(directory, 'county-participation.csv'), fields.join(',') + '\n'
+        + fields.map(field => `"${row[field].replaceAll('"', '""')}"`).join(',') + '\n');
+      assert.throws(() => loadReviewedCountyParticipation(altered), /Invalid reviewed county participation/);
+    }
+  } finally {
+    rmSync(directory, { recursive: true, force: true });
+  }
+});
+
+test('preserves Armstrong native Voters Cast without substituting party zeroes, selections or provisional participation', () => {
+  const row = loadReviewedCountyParticipation(reviews).find(row => row.county === 'Armstrong');
+  const review = reviews.find(review => review.id === row.review_id);
+  const native = parse(readFileSync(join(review.data_directory, 'county-participation.csv'), 'utf8'),
+    { columns: true })[0];
+  assert.deepEqual(row.native_record, native);
+  assert.equal(row.ballots, 24039);
+  assert.notEqual(row.ballots, 23935);
+  assert.equal(row.participation_measure_literal, 'Voters Cast');
+  assert.equal(row.denominator, 43750);
+  assert.equal(row.reported_pct, 100 * 24039 / 43750);
+  assert.equal(row.native_printed_pct, '54.95%');
+  assert.equal(row.native_record.provisional_voters_cast, '');
+  assert.equal(row.source_status_literal, '2026 General Election Unofficial Results w/o PROV');
+  assert.match(row.source_update_label, /county_report: 11\/3\/2026 10:26:30 PM \(timezone not declared\)/);
+  assert.equal(row.native_source_updates.length, 1);
+  assert.match(row.source_reporting_label, /Provisional participation is absent, not zero/);
+  assert.match(row.source_reporting_label, /not measured party turnout or zero participation/);
+  assert.equal(row.maps_approved, false);
+});
+
+test('rejects Armstrong relabeling or an invented provisional participation zero', () => {
+  const original = reviews.find(row => row.id === 'pennsylvania-armstrong-20261106-01');
+  const directory = mkdtempSync(join(tmpdir(), 'armstrong-participation-'));
+  try {
+    copyFileSync(join(original.data_directory, 'audit.json'), join(directory, 'audit.json'));
+    const native = parse(readFileSync(join(original.data_directory, 'county-participation.csv'), 'utf8'),
+      { columns: true })[0];
+    const altered = reviews.map(row => row.id === original.id ? { ...row, data_directory: directory } : row);
+    for (const change of [{ native_participation_measure_literal: 'Ballots Cast' },
+      { provisional_voters_cast: '0' }, { native_status_literal: 'Official Results' }]) {
       const row = { ...native, ...change }, fields = Object.keys(row);
       writeFileSync(join(directory, 'county-participation.csv'), fields.join(',') + '\n'
         + fields.map(field => `"${row[field].replaceAll('"', '""')}"`).join(',') + '\n');

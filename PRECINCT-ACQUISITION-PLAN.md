@@ -719,8 +719,27 @@ ZIP: **17,226 bytes**, SHA-256
 `fcde2a35801dcb62c03bc2673476c92e39c92451262bb0061edda9f77b74257e`.
 GitHub reports `immutable: false`; preserve the fixed checksum/never-overwrite
 policy, not a host-locking claim. See `20261106-armstrong-facts-01` and
-`20261106-armstrong-publication-01`. Explorer integration is next, not live yet;
-no map, demographic turnout, certification or statewide completion is approved.
+`20261106-armstrong-publication-01`.
+Explorer integration preserves native `Voters Cast` in the primary selector,
+detail panel, selected results table and no-JavaScript table. Its usable
+registered-voter fraction remains distinct from the native printed fraction;
+the provisional exclusion and native party-group zero/N/A qualifications remain
+visible. The loader rejects relabeling as ballots, inventing provisional
+participation zero or silently changing the native counting scope.
+All 28 focused Node tests, the four build-included tests and Astro checking pass
+(zero errors/warnings, five existing hints). Before rebuilding, actual verified
+Blair live HTML was required to equal the prepared reference; its full sixteen
+records, eighteen full import fingerprints, five historical years and 346
+download anchors form the preservation baseline. All six local browser
+modes/checks pass desktop/mobile, JavaScript/no-JavaScript and failed-feed
+fallbacks with no horizontal overflow. All previous records, imports, historical
+years, 52 UF rows and download anchors remain unchanged.
+There are now seventeen reviewed records (sixteen PA plus D.C.), 354 anchors /
+351 unique full URLs, including eight added full Armstrong downloads.
+All 106 complete relocations pass byte checks; the prepared Pages site is
+898,750,912 bytes. The local preview helper was stopped.
+Exact production deployment/live verification remains pending; no map,
+demographic turnout, certification or statewide completion is approved.
 
 **November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated

@@ -340,8 +340,9 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 		<section class="participation-current" aria-labelledby="reviewed-county-participation-title">
 			<h2 id="reviewed-county-participation-title">Additional reviewed county participation · 2026</h2>
 			<p>{reviewedCounties.filter(row => row.state_code === 'PA').length} Pennsylvania county observations and a separately scoped D.C. county-equivalent observation,
-				not statewide county coverage. Reported ballots retain each county's native
+				not statewide county coverage. Reported participation retains each county's native
 				registrations when usable; missing or unusable denominators withhold the calculated fraction.
+				Source-labeled Voters Cast remains distinct from ballot counts and retains its counting scope.
 				These are not UF VEP/VAP estimates or demographic turnout.
 				Final counting and certification are not independently established by these reviews;
 				native result status and printed percentages remain separate.
@@ -350,13 +351,13 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 				<table data-reviewed-county-participation={JSON.stringify(reviewedCounties)}>
 					<caption>Complete county observations; missing rates are not zero. A printed 0.00% alongside positive ballots
 						and zero native registrations does not establish zero turnout.</caption>
-					<thead><tr><th scope="col">County</th><th scope="col">Ballots reported</th>
+					<thead><tr><th scope="col">County</th><th scope="col">Participation reported</th>
 						<th scope="col">Native registrations</th><th scope="col">Calculated fraction</th>
 						<th scope="col">Native printed fraction</th><th scope="col">Native status</th>
 						<th scope="col">Complete data</th></tr></thead>
 					<tbody>{reviewedCounties.map(row => <tr>
 						<th scope="row">{row.county}{row.state_code === 'PA' ? ', Pennsylvania' : ' · county equivalent'}</th>
-						<td>{formatNumber(row.ballots)}</td><td>{row.denominator === null ? 'Withheld (native zero)' : formatNumber(row.denominator)}</td>
+						<td>{formatNumber(row.ballots)}{row.participation_measure_literal && ` · ${row.participation_measure_literal}`}</td><td>{row.denominator === null ? 'Withheld (native zero)' : formatNumber(row.denominator)}</td>
 						<td>{row.reported_pct === null ? 'Withheld' : `${row.reported_pct.toFixed(2)}%`}</td><td>{row.native_printed_pct ?? 'Not supplied'}</td>
 						<td>{row.source_status_literal || 'Not supplied in participation table'}</td>
 						<td><a href={row.source_url}>Full participation CSV</a>{' · '}

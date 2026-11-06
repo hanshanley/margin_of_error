@@ -381,9 +381,9 @@ function stateParticipationRows() {
       host.replaceChildren(html("h4", "", county ? row.county : row.unit),
         html("p", "selection-rate", fmt(row.ballots)),
         html("p", "selection-basis", row.ballots === null ? "County total not supplied · select a source reporting unit"
-          : row.review_id ? "2026 ballots reported · not final/certified" : "2026 ballots reported · unofficial"),
+          : row.review_id ? `2026 ${row.participation_measure_literal || "ballots reported"} · not final/certified` : "2026 ballots reported · unofficial"),
         html("p", "selection-note", `${fmt(row.denominator)} ${electorateLabel(row)}; `
-          + `${pct(row.reported_pct)} reported-ballot fraction. Not final turnout or a CPS estimate.`),
+          + `${pct(row.reported_pct)} ${row.participation_measure_literal || "reported-ballot"} fraction. Not final turnout or a CPS estimate.`),
         html("p", "selection-note", `Source update: ${row.source_update_label || "not supplied"}. `
           + row.quality.join(" ")), sourceLink(row));
       if (row.review_id) {
@@ -441,7 +441,7 @@ function stateParticipationRows() {
           for (const row of previews) {
             const button = html("button", "selection-link",
               row.ballots === null ? `${row.county}: ${fmt(row.source_rows)} source reporting-unit observations; county total not supplied`
-                : `${row.county}: ${fmt(row.ballots)} ballots / ${fmt(row.denominator)} registered (${pct(row.reported_pct)})`);
+                : `${row.county}: ${fmt(row.ballots)} ${row.participation_measure_literal || "ballots"} / ${fmt(row.denominator)} registered (${pct(row.reported_pct)})`);
             button.type = "button"; button.dataset.countyId = row.county_id;
             button.addEventListener("click", () => { select.value = row.county_id; select.dispatchEvent(new Event("change")); });
             overview.append(button);
@@ -462,8 +462,8 @@ function stateParticipationRows() {
             ? [["county", "County"], ["unit", "Source precinct / reporting location"], ["unit_kind", "Unit type"],
               ["ballots", "Ballots reported"], ["denominator", "Source electorate"],
               ["reported_pct", "Reported-ballot fraction"], ["quality", "Notes"]]
-            : [["county", "County"], ["ballots", "Ballots reported"], ["denominator", "Source electorate"],
-              ["reported_pct", "Reported-ballot fraction"],
+            : [["county", "County"], ["ballots", county.participation_measure_literal || "Ballots reported"], ["denominator", "Source electorate"],
+              ["reported_pct", county.participation_measure_literal ? `${county.participation_measure_literal} fraction` : "Reported-ballot fraction"],
               ...(county.review_id ? [["native_printed_pct", "Native printed fraction"],
                 ["source_status_literal", "Native result-status literal"],
                 ["source_update_label", "Source update"], ["source_reporting_label", "Native reporting status"]] : []),

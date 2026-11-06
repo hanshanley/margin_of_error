@@ -1,0 +1,37 @@
+{
+  "verified_at_utc": "2026-11-06T05:10:25.956121+00:00",
+  "source_fact_tests": 7,
+  "participation_node_tests": 28,
+  "astro_check": {
+    "errors": 0,
+    "warnings": 0,
+    "existing_hints": 5
+  },
+  "build_included_tests": 4,
+  "complete_download_relocations": 106,
+  "prepared_pages_bytes": 898750912,
+  "browser_modes": 4,
+  "failed_feed_checks": 2,
+  "previous_entire_records_preserved": 16,
+  "previous_complete_imports_preserved": 18,
+  "previous_download_anchors_preserved": 346,
+  "reviewed_records": 17,
+  "pennsylvania_records": 16,
+  "dc_records": 1,
+  "download_anchors": 354,
+  "unique_complete_urls": 351,
+  "uf_rows": 52,
+  "historical_years": [
+    "2024",
+    "2022",
+    "2020",
+    "2018",
+    "2016"
+  ],
+  "native_participation_measure": "Voters Cast",
+  "provisional_participation": "absent, not zero",
+  "all_previous_native_records_unchanged": true,
+  "local_preview_stopped": true,
+  "maps_approved": false,
+  "demographic_turnout_approved": false
+}

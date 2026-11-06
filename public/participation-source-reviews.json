@@ -1,6 +1,28 @@
 {
   "reviews": [
     {
+      "id": "pennsylvania-armstrong-20261106-01",
+      "label": "Armstrong County, Pennsylvania 2026: native Voters Cast, explicitly excluding provisional participation",
+      "data_directory": "data/county-source-reviews/20261106-armstrong-facts-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/af1417a7cc7059243e676252be87e2f3713ace72/data/county-source-reviews/20261106-armstrong-facts-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-armstrong-20261106-01/complete-armstrong-2026-numerical-facts-01.zip",
+      "complete_download_bytes": 17226,
+      "complete_download_sha256": "fcde2a35801dcb62c03bc2673476c92e39c92451262bb0061edda9f77b74257e",
+      "review_status": "complete_county_numerical_facts_reviewed_unofficial_excluding_provisionals",
+      "maps_approved": false,
+      "scope_note": "Complete numerical facts from the government-declared two-page November 3, 2026 county report. Native Voters Cast is 24,039: 20,853 Election Day plus 3,186 Mail, with 43,750 registrations and printed 54.95%. The source explicitly excludes provisionals; provisional participation remains missing, not zero. Candidate provisional zeroes do not supply a participation denominator. Administrative DEMOCRATIC/REPUBLICAN elector-group zeroes and N/A turnout stay separate from the positive county total and literal candidate parties REP, DEM and LIB; they are not measured party turnout. All nine native group/mode rows, nine named-candidate rows, four unresolved-write-in rows, four separate candidate subtotals and 36 literal-party/mode totals remain available. Native Total Votes excludes Unresolved Write-In; do not double-count the subtotal. Governor and congressional participation-minus-selection residuals are 61 and 104, unclassified rather than invented undervotes. State-House district and provisional participation denominators are absent. Native 11/3/2026 10:26:30 PM has no declared timezone. Both PDF engines and complete standard-library offline reproduction agree on all facts and ZIP members. Source templates stay private. All full assets are anonymously byte-verified at fixed commit/checksums under the never-overwrite policy; no host locking, map, demographic turnout, certification or statewide completion is claimed.",
+      "tables": [
+        {"file": "county-participation.csv", "label": "Armstrong: complete native Voters Cast, counting modes, registrations, printed fraction and explicit provisional exclusion (CSV)"},
+        {"file": "native-elector-group-participation.csv", "label": "Armstrong: all nine native elector-group/mode rows, explicit zeroes, missing mode registrations and N/A fractions, not measured party turnout (CSV)"},
+        {"file": "county-candidate-results.csv", "label": "Armstrong: all thirteen separate candidate/write-in vectors and literal parties, not participation (CSV)"},
+        {"file": "county-literal-party-totals.csv", "label": "Armstrong: all 36 contest/literal-party/mode candidate totals, not party turnout (CSV)"},
+        {"file": "native-contest-subtotals.csv", "label": "Armstrong: all four native Total Votes subtotals, excluding separately preserved unresolved write-ins (CSV)"},
+        {"file": "native-source-pages.csv", "label": "Armstrong: both native page identities, counting scope, status and literal report timestamps (CSV)"},
+        {"file": "county-contest-accounting.csv", "label": "Armstrong: all sixteen scoped accounting rows, unclassified residuals and missing district/provisional denominators (CSV)"}
+      ],
+      "coverage": []
+    },
+    {
       "id": "pennsylvania-blair-20261106-01",
       "label": "Blair County, Pennsylvania 2026: counted ballots and a separately preserved pre-election zero report",
       "data_directory": "data/county-source-reviews/20261106-blair-facts-01",
