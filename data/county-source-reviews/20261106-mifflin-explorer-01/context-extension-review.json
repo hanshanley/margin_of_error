@@ -1,0 +1,140 @@
+{
+  "previous_complete_records_preserved": 909,
+  "previous_contextual_joins_preserved": 437,
+  "previous_exclusions_and_missingness_preserved": true,
+  "unchanged_geometry_inventory": 15,
+  "existing_source_map_approval_flags_unchanged": true,
+  "native_fips_invented": false,
+  "new_source_records": [
+    {
+      "year": 2026,
+      "state_code": "PA",
+      "county_id": "reviewed:PA:Mifflin",
+      "county": "Mifflin",
+      "geography_level": "county",
+      "ballots": 14439,
+      "denominator": null,
+      "participation_measure_literal": "Ballots Cast - Total",
+      "denominator_basis": "native_registered_voters",
+      "reported_pct": null,
+      "native_printed_pct": "0.00%",
+      "source_status_literal": "UNOFFICIAL RESULTS",
+      "reported_units": null,
+      "total_units": null,
+      "source_rows": 0,
+      "maps_approved": false,
+      "review_id": "pennsylvania-mifflin-20261106-01",
+      "native_record": {
+        "year": "2026",
+        "state_code": "PA",
+        "county": "Mifflin",
+        "native_participation_measure_literal": "Ballots Cast - Total",
+        "ballots_cast": "14439",
+        "registered_voters": "0",
+        "native_printed_turnout": "0.00%",
+        "election_day_ballots": "12017",
+        "mail_ballots": "2422",
+        "provisional_ballots": "0",
+        "blank_ballots": "6",
+        "registered_turnout_pct": "",
+        "rate_unavailable_reason": "Native registrations are zero; not zero participation.",
+        "reported_precincts": "26",
+        "total_precincts": "26",
+        "complete_precincts": "0",
+        "partially_reported_precincts": "26",
+        "source_report": "summary",
+        "source_page": "1",
+        "native_printed_page": "Page 1 of 2",
+        "source_status_literal": "UNOFFICIAL RESULTS",
+        "source_update_literal": "11/03/2026 09:28PM",
+        "declared_timezone": ""
+      },
+      "native_source_updates": [
+        {
+          "source": "summary",
+          "native_update_literal": "11/03/2026 09:28PM",
+          "declared_timezone": ""
+        },
+        {
+          "source": "statement",
+          "native_update_literal": "11/03/2026 09:26PM",
+          "declared_timezone": ""
+        }
+      ],
+      "source_update_label": "source_update_literal: 11/03/2026 09:28PM; summary: 11/03/2026 09:28PM (timezone not declared); statement: 11/03/2026 09:26PM (timezone not declared)",
+      "source_reporting_label": "Native Ballots Cast - Total 14,439 = 12,017 Election Day + 2,422 Mail + explicit zero Provisional; six blank ballots are already included.; Native registrations zero and printed 0.00% do not establish zero participation; the calculated registration-based rate is unavailable.; All 26 units are partially reported and zero complete; all 104 unit contests and five county contests reconcile without establishing completed ballot counting.; The 85th and 171st Assembly electorates are separate 4,409/10,030-ballot subsets, not the whole county assigned to either contest.; The parent receipt notice literally says Primary Election Day, November 3, 2026 despite the General section; 2,435 receipts are not counted mail 2,422, and the difference 13 remains unexplained.; Not Assigned is nested within Write-In Totals, not additional votes; summary and statement clocks remain distinct without an inferred timezone.",
+      "source_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/county-participation.csv",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mifflin-20261106-01/complete-mifflin-county-native-query-01.zip",
+      "quality": [
+        "Reviewed local snapshot, not final certification, statewide coverage, eligible-population or demographic turnout.",
+        "Source timestamps retain their native labels; unprovided timezones are not inferred. County mapping is not approved."
+      ]
+    }
+  ],
+  "new_contextual_identity_joins": [
+    {
+      "state_code": "PA",
+      "county_id": "reviewed:PA:Mifflin",
+      "county": "Mifflin",
+      "geography_level": "county",
+      "review_id": "pennsylvania-mifflin-20261106-01",
+      "contextual_geoid": "42087",
+      "contextual_name": "Mifflin County",
+      "boundary_year": 2024,
+      "ballots": 14439,
+      "denominator": null,
+      "reported_pct": null,
+      "participation_measure_kind": "source_defined_participation_count",
+      "participation_measure_label": "Ballots Cast - Total",
+      "source_record_sha256": "1ba44791a18cb287a43e4b8e638a6d9dbba50673423f0d12dbf8cdd683c2bb79",
+      "source_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/county-participation.csv",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mifflin-20261106-01/complete-mifflin-county-native-query-01.zip",
+      "contextual_map_approved": true,
+      "source_map_approval_unchanged": false
+    }
+  ],
+  "independently_checked_census_identities": {
+    "2024": {
+      "42087": {
+        "USPS": "PA",
+        "GEOID": "42087",
+        "ANSICODE": "01213679",
+        "NAME": "Mifflin County",
+        "ALAND": "1064581429",
+        "AWATER": "9507558",
+        "ALAND_SQMI": "411.037",
+        "AWATER_SQMI": "3.671",
+        "INTPTLAT": "40.601615",
+        "INTPTLONG": "-77.651832"
+      }
+    },
+    "2026": {
+      "42087": {
+        "USPS": "PA",
+        "GEOID": "42087",
+        "GEOIDFQ": "0500000US42087",
+        "ANSICODE": "01213679",
+        "NAME": "Mifflin County",
+        "ALAND": "1064581424",
+        "AWATER": "9507557",
+        "ALAND_SQMI": "411.037",
+        "AWATER_SQMI": "3.671",
+        "INTPTLAT": "40.601615",
+        "INTPTLONG": "-77.651832"
+      }
+    }
+  },
+  "counts": {
+    "complete_source_records": 910,
+    "contextual_joins": 438,
+    "jurisdictions": 15,
+    "reviewed_rates": 65,
+    "missing_rates": 373,
+    "excluded_municipalities": 286,
+    "excluded_missing_county_totals": 186
+  },
+  "frozen_review_bytes": 756669,
+  "frozen_review_sha256": "66d5e403224ed08bede073f7ac68733326a396b1a206134cf112af1489fc5855",
+  "complete_zip_bytes": 2215873,
+  "complete_zip_sha256": "ce4d18490e8c87cb1d4f380ec6b8ce202114d00eaa1d12121eb9a12b4c445427"
+}
