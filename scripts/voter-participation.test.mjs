@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
+import { runInNewContext } from 'node:vm';
 import { createHash } from 'node:crypto';
 import { previewSvg, publicationScript, sourceRevision } from './stage-voter-participation.mjs';
 import { participationDownload, participationHistoricalRoot } from '../public/scripts/participation-downloads.js';
@@ -125,6 +126,18 @@ test('publication renderer uses the nested data route and responsive chart witho
 	assert.ok(published.includes('window.addEventListener("resize"'));
 	assert.ok(renderer.includes('fetch("data/" + path)'));
 	assert.ok(published.startsWith('(() => {'));
+});
+
+test('standalone compatibility renderer includes every dependency of the shared download router', () => {
+	const window = { addEventListener() {} };
+	runInNewContext(publicationScript(`/*${renderer}*/\nwindow.download = participationDownload;`), { window });
+	for (const path of [
+		'/participation-county-context/20261106-13/geometry/county-GA.geojson',
+		'/participation-county-context/20261106-13/complete-county-participation-context-13.zip',
+		'/voter-participation/data/nc/2024.json',
+		'/participation-methods/20261104T183000Z/complete-methods.zip',
+		'/participation-current/20261104T220424Z/local.json',
+	]) assert.equal(window.download(path), participationDownload(path));
 });
 
 test('changed upstream renderer cannot silently bypass the publication adaptation', () => {

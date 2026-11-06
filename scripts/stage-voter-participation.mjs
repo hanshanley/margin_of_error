@@ -4,7 +4,7 @@ import { copyFile, mkdir, readdir, readFile, writeFile } from 'node:fs/promises'
 import { dirname, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
-import { participationCurrentRoot, participationHistoricalRoot, participationReleaseRoot,
+import { participationCurrentRoot, participationHistoricalRoot, participationReleaseRoot, participationCountyContextRoot,
 	participationDownload } from '../public/scripts/participation-downloads.js';
 
 export const sourceRevision = '792e3d91609f7ee929c35b5ec15c13710db94be8';
@@ -33,6 +33,7 @@ export function publicationScript(source) {
 	return `(() => {\n"use strict";\nconst participationCurrentRoot = ${JSON.stringify(participationCurrentRoot)};\n`
 		+ `const participationHistoricalRoot = ${JSON.stringify(participationHistoricalRoot)};\n`
 		+ `const participationReleaseRoot = ${JSON.stringify(participationReleaseRoot)};\n`
+		+ `const participationCountyContextRoot = ${JSON.stringify(participationCountyContextRoot)};\n`
 		+ `${participationDownload.toString()}\n${script}\nlet resizeTimer;\n`
 		+ 'window.addEventListener("resize", () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(render, 150); });\n})();\n';
 }

@@ -62,13 +62,15 @@ pass all four entire release assets, 31 pinned files, 30 ZIP members, extracted
 offline reproduction and both exact credential jobs **42213254097 / 42213223966**.
 The ZIP is **2,789,632 bytes**, SHA-256
 `f7a16895a8d97856f391053bb006252495a698c38b3ab6dde1c51b0148d02100`.
-Georgia integration passes **76 focused Node tests**, Astro check/build,
+Georgia integration passes **77 focused Node tests**, Astro check/build,
 136 entire relocated download checks and seven local browser scenarios.
 All previous 974 records, 109 native county rows, 645 download anchors and
 historical years survive; the page has **268 native county rows / 663 anchors /
 659 URLs**. The separately displayed Georgia statewide count remains distinct
 from UF estimates and retains the conflicting native API zero.
-Prepared local size is **986,079,869 bytes**. Only the now-verified context12/13
+Prepared local size is **986,080,316 bytes**. The executable compatibility-renderer
+regression also verifies every dependency of the shared download router.
+Only the now-verified context12/13
 ZIP copies and context13's 17 redundant geometry copies are newly relocated;
 all historical geometries, the current review and interactive originals stay
 local. The original source files and complete downloads remain intact.

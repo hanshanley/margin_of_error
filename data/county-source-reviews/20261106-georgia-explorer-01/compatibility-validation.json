@@ -1,0 +1,13 @@
+{
+  "verified_at_utc": "2026-11-06T11:59:18.324039+00:00",
+  "participation_node_tests_passed": 77,
+  "build_caucus_tests_passed": 4,
+  "astro_build_passed": true,
+  "complete_relocated_downloads_verified": 136,
+  "prepared_local_site_bytes": 986080316,
+  "download_manifest_sha256": "b260696df5d5c56ec3afb38865776502a600febe71d05d6c5cb0e056e63e9f7c",
+  "production_selected_file_count": 400,
+  "compatibility_renderer_bytes": 23932,
+  "compatibility_renderer_sha256": "dad815c50c7ecc7a716cc3c33d3a8c40348ba6725a0edcbd72be5e4f29c6903a",
+  "scope": "Executable isolated-JavaScript regression verifies shared routing for context13 geometry and ZIPs, historical data, methods and current data. Regenerated only the compatibility renderer and its manifest from the exact pinned research original. Native map code, county observations and prior seven local browser results are unchanged. Rebuilt and verified all entire relocated downloads; no production claim before exact artifact and browser verification."
+}
