@@ -2,6 +2,20 @@
 
 ## Current verified production and next acquisition
 
+**Greene context12 is locally reproduced, not yet deployed.**
+Both complete Census originals independently identify Greene 42059, against
+unchanged contextual geometry. The new complete package preserves every one of
+context11's 973 records, 501 joins, sixteen geometry inventories and exclusions.
+It adds the native 11,105-ballot observation, five separate included blank ballots,
+and no invented registration denominator, turnout rate, native FIPS or report clock.
+Context12 contains 974 complete records / 502 joins / 128 usable rates / 374
+missing rates. Its 30-file / 29-member package reproduces offline; the complete
+2,468,069-byte ZIP SHA-256 is
+`ded6b1c826875838846c3d170d6adb724ed0b434dda8321bb851e5bee5ac8808`.
+Source registration, native missing-denominator handling and explorer validation
+are in progress. The production baseline below remains authoritative until the
+new exact revision and artifact pass public-byte and browser verification.
+
 **November 6, 11:09 UTC: Columbia participation is LIVE verified.**
 Exact UI `2622a0d0dd0d5549392ddab6b5c6abc6ed6f9245`, Pages **42207340056
 attempt 1**, passed its new original hosted artifact **13497880867 /
