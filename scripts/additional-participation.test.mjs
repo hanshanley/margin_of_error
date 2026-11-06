@@ -132,6 +132,21 @@ test('preserves every Washington county record and King ballots without using na
   assert.equal(data.precincts.filter(row => row.state_code === 'WA').length, 0);
 });
 
+test('connects Washoe native ballots without replacing them with House votes or counting groups', () => {
+  const native = csv('data/county-source-reviews/20261106-washoe-participation-01/county-participation.csv');
+  const rows = data.counties.filter(row => row.state_code === 'NV');
+  assert.deepEqual(rows.map(row => row.native_record), native);
+  assert.equal(rows[0].ballots, 191830);
+  assert.equal(rows[0].denominator, 329777);
+  assert.equal(rows[0].native_printed_pct, '58.17%');
+  assert.equal(rows[0].reported_pct, null);
+  assert.equal(rows[0].source_status_literal, 'REPORT 6 - UNOFFICIAL RESULTS');
+  assert.match(rows[0].source_update_label, /11\/4\/2026 6:13:35 PM/);
+  assert.match(rows[0].source_reporting_label, /must not be summed/);
+  assert.equal(rows[0].maps_approved, false);
+  assert.equal(data.precincts.filter(row => row.state_code === 'NV').length, 0);
+});
+
 test('keeps withheld municipal rates and nongeographic federal ballots out of geographic totals', () => {
   const vt = data.counties.filter(row => row.state_code === 'VT');
   assert.equal(vt.filter(row => row.reported_pct === null).length, 6);

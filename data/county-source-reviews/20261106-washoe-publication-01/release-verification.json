@@ -1,0 +1,58 @@
+{
+  "verified_at_utc": "2026-11-06T04:30:00.539078+00:00",
+  "release_id": 436100298,
+  "release_tag": "voter-county-nevada-washoe-participation-20261106-01",
+  "tag_revision": "73618b564932063730886aa820c1796b7b220daf",
+  "host_immutable": false,
+  "never_overwrite_checksum_policy": true,
+  "complete_files": [
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-nevada-washoe-participation-20261106-01/complete-washoe-county-participation-01.zip",
+      "bytes": 14694,
+      "sha256": "30265c066099a71d8f1e647af6fdd577e1ebf88c8192266081b4563b720f4365",
+      "anonymous_bytes_match": true
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-nevada-washoe-participation-20261106-01/counting-group-participation.csv",
+      "bytes": 599,
+      "sha256": "e5958c1e43cc1decad08464104408e7d03cb2e2d813481ae7a639d09d750ee45",
+      "anonymous_bytes_match": true
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-nevada-washoe-participation-20261106-01/county-participation.csv",
+      "bytes": 625,
+      "sha256": "8bbf968543dde6d4178b18b5a0016741205a0dde1c6ed5271323fe8efbd073d9",
+      "anonymous_bytes_match": true
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-nevada-washoe-participation-20261106-01/house-candidate-votes.csv",
+      "bytes": 610,
+      "sha256": "e242f1b0dcc5856ca00b5a57d9b2df0e6d1aa2c7c8510e22d7a0bb7cbd0b77b4",
+      "anonymous_bytes_match": true
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-nevada-washoe-participation-20261106-01/source-records.json.gz",
+      "bytes": 7798,
+      "sha256": "b955b2c4262e03e302fea40fb86469575f6ecae9c6b49ac57cd8c58be55d8d6f",
+      "anonymous_bytes_match": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/73618b564932063730886aa820c1796b7b220daf/data/county-source-reviews/20261106-washoe-participation-01/county-participation.csv",
+      "bytes": 625,
+      "sha256": "8bbf968543dde6d4178b18b5a0016741205a0dde1c6ed5271323fe8efbd073d9",
+      "anonymous_bytes_match": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/73618b564932063730886aa820c1796b7b220daf/data/county-source-reviews/20261106-washoe-participation-01/counting-group-participation.csv",
+      "bytes": 599,
+      "sha256": "e5958c1e43cc1decad08464104408e7d03cb2e2d813481ae7a639d09d750ee45",
+      "anonymous_bytes_match": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/73618b564932063730886aa820c1796b7b220daf/data/county-source-reviews/20261106-washoe-participation-01/house-candidate-votes.csv",
+      "bytes": 610,
+      "sha256": "e242f1b0dcc5856ca00b5a57d9b2df0e6d1aa2c7c8510e22d7a0bb7cbd0b77b4",
+      "anonymous_bytes_match": true
+    }
+  ]
+}

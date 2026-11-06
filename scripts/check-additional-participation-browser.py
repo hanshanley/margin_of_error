@@ -30,6 +30,7 @@ expected = {
     "RI": ("Rhode Island", 39, 0), "MI": ("Michigan", 2, 63),
     "FL": ("Florida", 1, 0), "MO": ("Missouri", 1, 0), "WY": ("Wyoming", 23, 0),
     "WA": ("Washington", 39, 0),
+    "NV": ("Nevada", 1, 0),
 }
 all_states = expected.copy()
 if args.states:
@@ -52,14 +53,16 @@ source_files = {
     "MO": "data/precinct-source-reviews/20261105/MO-2026-CHRISTIAN/audit.json",
     "WY": "data/precinct-source-reviews/20261105/WY-2026-native-counts/counts-review.json",
     "WA": "data/county-source-reviews/20261106-washington-participation-01/county-participation.csv",
+    "NV": "data/county-source-reviews/20261106-washoe-participation-01/county-participation.csv",
 }
 native_counties = {
     "FL": json.loads(gzip.decompress((root / source_files["FL"]).read_bytes())),
     "MO": [json.loads((root / source_files["MO"]).read_text())],
     "WY": json.loads((root / source_files["WY"]).read_text())["counties"],
 }
-with (root / source_files["WA"]).open() as source:
-    native_counties["WA"] = list(csv.DictReader(source))
+for code in ("WA", "NV"):
+    with (root / source_files[code]).open() as source:
+        native_counties[code] = list(csv.DictReader(source))
 
 
 def verify_preservation(page):
@@ -110,10 +113,11 @@ with sync_playwright() as playwright:
                 assert [row["native_record"] for row in data["counties"]] == native_counties[code]
                 for row in data["counties"]:
                     native = row["native_record"]
-                    if code == "WA":
+                    if code in ("WA", "NV"):
                         assert row["ballots"] == int(native["ballots_cast"])
                         assert row["denominator"] == int(native["registered_voters"])
-                        assert row["reported_pct"] == float(native["registered_turnout_percent"])
+                        assert row["reported_pct"] == (float(native["registered_turnout_percent"])
+                                                       if code == "WA" else None)
                         continue
                     assert row["ballots"] == native[
                         "ballots" if code == "FL" else "county_ballots" if code == "MO" else "printed_county_ballots"]
@@ -145,6 +149,12 @@ with sync_playwright() as playwright:
                     expect(detail).to_contain_text(f'Native printed fraction: {row["native_printed_pct"]}')
                 if code == "MO":
                     expect(detail).to_contain_text("centralized absentee")
+                if code == "NV":
+                    expect(detail).to_contain_text(f'{row["denominator"]:,} native registered voters')
+                    expect(detail).to_contain_text("Native printed fraction: 58.17%")
+                    expect(detail).to_contain_text("REPORT 6 - UNOFFICIAL RESULTS")
+                    expect(detail).to_contain_text("11/4/2026 6:13:35 PM")
+                    expect(detail).to_contain_text("must not be summed")
                 if code == "WY":
                     expect(detail).to_contain_text("electorate not supplied")
                     expect(detail).to_contain_text("Washakie candidate-category conflict")
@@ -190,10 +200,11 @@ with sync_playwright() as playwright:
             cells = details.locator("tbody tr").evaluate_all(
                 "rows => rows.map(row => [...row.cells].map(cell => cell.textContent.trim()))")
             for row, native in zip(cells, native_counties[code]):
-                if code == "WA":
+                if code in ("WA", "NV"):
                     assert row[2] == f'{int(native["ballots_cast"]):,}'
                     assert row[3] == f'{int(native["registered_voters"]):,}'
-                    assert row[4] == f'{float(native["registered_turnout_percent"]):.2f}%'
+                    assert row[4] == (f'{float(native["registered_turnout_percent"]):.2f}%'
+                                      if code == "WA" else "Withheld / not supplied")
                 else:
                     ballots = native["ballots" if code == "FL" else "county_ballots" if code == "MO" else "printed_county_ballots"]
                     assert row[2] == f"{ballots:,}" and row[4] == "Withheld / not supplied"

@@ -1,6 +1,24 @@
 {
   "reviews": [
     {
+      "id": "nevada-washoe-participation-20261106-01",
+      "label": "Washoe County, Nevada 2026: complete unofficial county participation, counting groups and separate House candidates",
+      "data_directory": "data/county-source-reviews/20261106-washoe-participation-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/73618b564932063730886aa820c1796b7b220daf/data/county-source-reviews/20261106-washoe-participation-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-nevada-washoe-participation-20261106-01/complete-washoe-county-participation-01.zip",
+      "complete_download_bytes": 14694,
+      "complete_download_sha256": "30265c066099a71d8f1e647af6fdd577e1ebf88c8192266081b4563b720f4365",
+      "review_status": "complete_county_participation_facts_reviewed_unofficial",
+      "maps_approved": false,
+      "scope_note": "Washoe County only, November 3, 2026 general election. The native county header, independent six-mode summary and first/last-page Times Cast agree on 191,830 ballots and 329,777 registrations, printed 58.17%. Early Vote is 54,762, Election Day 35,133, Mail 101,935; Prov-Election Day, Prov-Early Vote and ICX are explicit native zeroes. These are counting groups, not residential precincts; repeated whole-county registrations are not separate mode electorates. House CD2 candidate votes are independently 189,752: literal DEM 111,162, IAP 8,325 and REP 70,265, with 1,954 native undervotes and 124 native overvotes. Candidates and party votes are not ballots or party turnout. Preserve REPORT 6 - UNOFFICIAL RESULTS and the PDF's 11/4/2026 6:13:35 PM generation time without an inferred timezone; the dashboard's later 6:20 PM update is separate. All 23 native page identities and timestamps are checked. Complete numerical page facts, all three full CSVs, source receipt digests and a portable standard-library reviewer reproduce byte-identically, without redistributing the original PDF presentation template. Other contests' facts are preserved, not newly reconciled. Registration cutoff, analysis fractions, demographic rates, map joins, final counting, certification and statewide completeness are not approved. Fixed commit/checksum snapshot under the never-overwrite policy; no host-enforced lock is asserted.",
+      "tables": [
+        {"file": "county-participation.csv", "label": "Washoe County only: complete county ballots, native registrations, printed fraction, original status and report timestamp (CSV)"},
+        {"file": "counting-group-participation.csv", "label": "Washoe County only: all six native counting groups and explicit zeroes; repeated county registration is not a mode electorate (CSV)"},
+        {"file": "house-candidate-votes.csv", "label": "Washoe County only: all three House CD2 candidates, literal parties and every counting-group vector, not participation (CSV)"}
+      ],
+      "coverage": []
+    },
+    {
       "id": "washington-counties-20261106-01",
       "label": "Washington 2026: all 39 county participation observations and complete native-unit accounting",
       "data_directory": "data/county-source-reviews/20261106-washington-participation-01",

@@ -415,7 +415,7 @@ were anonymously byte-verified again. Private receipts are
 `files/south-dakota-existing-live-feed-proof-01.json` and
 `files/south-dakota-existing-feed-source-verification-01.json`.
 
-**Washoe County participation, numerical review prepared, not yet live:**
+**Washoe County participation, released and locally integrated, not yet live:**
 the genuine missing Nevada county feed is reproduced in the live explorer.
 The full retained 553,410-byte, 23-page native report has SHA-256
 `ac8d43ad5b41e41ccb1ac6ddac54cb37630f00b979c44ba2067e4330ad35c63b`.
@@ -440,8 +440,39 @@ established. County map joins, demographic rates and statewide completeness
 remain unapproved. The public package contains all three complete CSVs,
 all 23 pages' numerical facts, original receipt digests and a portable
 standard-library offline reviewer, not the original PDF presentation template.
-The full acquired PDF remains privately retained at its recorded primary URL.
-Publish and anonymously byte-verify a fixed release before wiring this source.
+The full acquired PDF remains in the earlier private acquisition path; its
+complete primary URL and original checksum remain in the distributed receipt.
+Seven focused tests pass, including wrong election/scope, missing pages,
+independent mode and Times Cast discrepancies, candidate/accounting changes,
+source corruption, no-overwrite guards and byte-identical complete offline
+reproduction using only the standard library.
+
+Facts revision `73618b564932063730886aa820c1796b7b220daf` is published on
+the review branch. Release
+`voter-county-nevada-washoe-participation-20261106-01` targets that exact commit.
+All five complete release assets and all three pinned CSVs were anonymously
+downloaded and byte-verified, including every complete ZIP member. The full
+numerical ZIP is 14,694 bytes, SHA-256
+`30265c066099a71d8f1e647af6fdd577e1ebf88c8192266081b4563b720f4365`.
+GitHub reports `immutable: false`; do not describe the checksum/never-overwrite
+policy as a host-enforced lock.
+
+The existing loader/source registry now connect the one whole-county record
+without adding mode rows to precinct selectors, inventing geometry, replacing
+UF estimates or calculating an approved analysis rate. Native printed 58.17%,
+literal status, registrations and PDF timestamp remain distinct. Additional
+imports now contain 829 county/locality containers across seventeen states;
+5,512 separate selector-unit observations remain unchanged. Twenty-two focused
+Node tests, Astro check (zero errors/warnings, five existing hints), the build
+and its four tests pass. Pages preparation verifies 106 relocations at
+898,684,821 bytes. Seven local browser checks pass for desktop/mobile,
+JavaScript/no-JavaScript and explicit import failure. All fourteen previous
+reviewed native records, sixteen complete import fingerprints, 52 UF rows,
+five historical years and 321 prior download anchors are preserved. Four new
+complete links give 322 unique URLs / 325 anchors. Proofs are under
+`data/county-source-reviews/20261106-washoe-publication-01/`.
+Publish the reviewed UI and verify its exact deployed revision before calling
+this county live; no nationwide completion is claimed.
 
 **November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated

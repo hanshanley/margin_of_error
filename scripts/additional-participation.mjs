@@ -131,6 +131,20 @@ export function loadAdditionalParticipation() {
     }));
   }
   const localReviews = json('public/participation-source-reviews.json').reviews;
+  const washoe = localReviews.find(row => row.id === 'nevada-washoe-participation-20261106-01');
+  if (!washoe) throw new Error('Missing Washoe county participation review');
+  const nvRows = csv(resolve(washoe.data_directory, 'county-participation.csv'));
+  if (nvRows.length !== 1 || nvRows[0].county !== 'Washoe')
+    throw new Error('Invalid Washoe county participation scope');
+  for (const native of nvRows) counties.push(observation(washoe, 'county-participation.csv',
+    'NV', native.county, native.county, native, {
+      ballots: native.ballots_cast, denominator: native.registered_voters,
+      native_printed_pct: native.native_reported_percent,
+      source_status_literal: native.source_status_literal,
+      source_update_label: native.source_generated_at + ' (native PDF generation; timezone not supplied)',
+      source_reporting_label: native.qualification + ' The complete download retains all six counting groups, '
+        + 'separate House candidate counts and native under/overvote accounting. Analysis fraction remains withheld.',
+    }));
   const washington = localReviews.find(row => row.id === 'washington-counties-20261106-01');
   if (!washington) throw new Error('Missing Washington county participation review');
   const waRows = csv(resolve(washington.data_directory, 'county-participation.csv'));

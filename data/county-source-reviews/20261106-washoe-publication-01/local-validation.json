@@ -1,0 +1,104 @@
+{
+  "verified_at_utc": "2026-11-06T04:32:05.701206+00:00",
+  "focused_node_tests": 22,
+  "source_fact_tests": 7,
+  "astro_errors": 0,
+  "astro_warnings": 0,
+  "existing_astro_hints": 5,
+  "build_tests": 4,
+  "verified_relocations": 106,
+  "prepared_bytes": 898684821,
+  "browser_checks": 7,
+  "additional_localities": 829,
+  "additional_state_sources": 17,
+  "unchanged_selector_units": 5512,
+  "complete_download_anchors": 325,
+  "unique_complete_download_urls": 322,
+  "complete_imports": [
+    {
+      "state_code": "AL",
+      "json_bytes": 100788,
+      "json_sha256": "72de9dd3217671b05f55fb9426ed5c1af2d1d834bdbb4c9b9329f6e6021e5b36"
+    },
+    {
+      "state_code": "AR",
+      "json_bytes": 116743,
+      "json_sha256": "f9775a0be7cd64face771a7e83410a711e246265f9518e141ca996d5e231edc6"
+    },
+    {
+      "state_code": "AZ",
+      "json_bytes": 23038,
+      "json_sha256": "44fe7ff8a38805346d205fce4a1391a8c26ea60b3511d66c00af2ae9fb2ba5ad"
+    },
+    {
+      "state_code": "FL",
+      "json_bytes": 1925,
+      "json_sha256": "90ce99ebd094bac1234912c2a93c525892faf60a9310a71b3e4ae1cab93edf36"
+    },
+    {
+      "state_code": "IA",
+      "json_bytes": 1871,
+      "json_sha256": "fb2fb4beacd9ae01e3acaa6f31da2c7e88706f2407b99fd2675d9ac10c38d1e0"
+    },
+    {
+      "state_code": "ID",
+      "json_bytes": 1876142,
+      "json_sha256": "120138e724c74b5526545d2d934c6d9611d96b640518ccb62c7900110f306f69"
+    },
+    {
+      "state_code": "KY",
+      "json_bytes": 1643,
+      "json_sha256": "a1970ac24668b4e318363b90112961550aeddb9e4b28a5d2b3239e72fa3f15e7"
+    },
+    {
+      "state_code": "MI",
+      "json_bytes": 134902,
+      "json_sha256": "ad56bf13608fbcb4d34a873b8f52bba6676928a4e7a62c624d91b48a9e731d7a"
+    },
+    {
+      "state_code": "MN",
+      "json_bytes": 7932263,
+      "json_sha256": "fd6eec4b3d7e1d489f75e3214afa89c2dfc4b791d815658b17e161be701b44df"
+    },
+    {
+      "state_code": "MO",
+      "json_bytes": 4020,
+      "json_sha256": "131908adb1198044fccd5237288bab4c306c2cc9daa52cbbfb790c8a8229b7a4"
+    },
+    {
+      "state_code": "ND",
+      "json_bytes": 632926,
+      "json_sha256": "f18ed48285abb9a0e2889749584d38e3853bc00cdce89c18b6cb87dd1a881a73"
+    },
+    {
+      "state_code": "NV",
+      "json_bytes": 2295,
+      "json_sha256": "e65f6683ed28883bbd2ab79c5ac31b294ca8ca4ec976fdb558d2d1f856ce01bd"
+    },
+    {
+      "state_code": "RI",
+      "json_bytes": 59297,
+      "json_sha256": "dfbd8f0e51180c2f9bc3f94e46ccb56af96a6638d65f742bb46322912138d205"
+    },
+    {
+      "state_code": "VA",
+      "json_bytes": 194341,
+      "json_sha256": "f62ec208bf935f534da6f6d20999e9bd8255a2e274154719dbf741fe7bbfff72"
+    },
+    {
+      "state_code": "VT",
+      "json_bytes": 421340,
+      "json_sha256": "8f864bd3453bd4bd10154196d6613e5b20f224dfcd57a0ee76def9c05796809a"
+    },
+    {
+      "state_code": "WA",
+      "json_bytes": 118209,
+      "json_sha256": "1cd8ce9df1a1fb98506d65e79dd0bcbc216d9a6b5780b3d820894851f2c15171"
+    },
+    {
+      "state_code": "WY",
+      "json_bytes": 38996,
+      "json_sha256": "a250ae0fa631a0818a0b426d0d806e011065b18c8a841d1a06ed513f3d1724c6"
+    }
+  ]
+}
