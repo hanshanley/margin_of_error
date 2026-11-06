@@ -1,0 +1,4 @@
+role,requested_url,file,final_url,status,bytes,sha256,retrieved_at_utc,content_type
+parent,https://www.columbiapa.org/voter/index.php,columbia-official-parent.html,https://www.columbiapa.org/voter/index.php,200,10754,85e0483632f4dc57a056f16ed4ef963ab9c1a9dfdf8d7f98f59cb55ac7323c48,2026-11-06T10:07:29.914343+00:00,
+results,https://www.columbiapa.org/voter/2026/1132026.pdf,columbia-results.pdf,https://www.columbiapa.org/voter/2026/1132026.pdf,200,77278,e7d73daff66f282eebe5359bc6bba25e2b176cb2be5d33c06c4c0a11b7756b12,2026-11-06T10:08:17.288545+00:00,application/pdf
+mail-summary,https://www.columbiapa.org/voter/2026/2026GenAbsenteeMailInBallotSummary.pdf,columbia-mail-summary.pdf,https://www.columbiapa.org/voter/2026/2026GenAbsenteeMailInBallotSummary.pdf,200,76841,0ffb6331dd58779c3af0ba5bc3f067f1c6306b16129fbe5cf57a260042d18a5f,2026-11-06T10:08:45.463236+00:00,application/pdf

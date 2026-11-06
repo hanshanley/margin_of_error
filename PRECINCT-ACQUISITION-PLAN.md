@@ -2,6 +2,38 @@
 
 ## Current verified production and next acquisition
 
+**November 6, 10:17 UTC: Columbia, Pennsylvania's complete numerical query is
+reviewed and frozen locally; publication and UI integration remain pending.**
+The actual county parent declares both complete November 3 reports. Both entire
+PDF originals and the parent match their saved receipts. Two independent PDF
+engines consume every results-report line and produce identical complete vectors:
+**22,583 Total Ballots / 40,797 Registered Voters / printed 55.35%**, with
+42/42 reported precincts, not completed counting. All **three contests / ten
+candidate-or-write-in choices** reconcile independently. The separate scanned SURE
+mail report retains **all 105 numeric cells**, eight application categories, one
+blank-labeled ballot-style row, nine literal registration-party categories and
+three parallel printed totals. Two complete local OCR observations, direct image
+inspection and whole-table arithmetic support the review; neither OCR engine
+alone correctly reads every cell. Filter/electorate, missing mail-report time,
+printed EST results clock and PDF metadata clocks remain separate. Returned mail
+3,785 and votes recorded 3,772 are not substituted for county participation or
+subtracted to invent Election Day ballots.
+
+The **21-file / 15-complete-CSV / 20-member** factual query reproduces every file
+and entire archive offline using its extracted standard-library reviewer.
+Five portable test groups include eighteen semantic corruption cases beyond the
+complete-input hash guard and a paired-source candidate-renaming rejection.
+ZIP **33,839 bytes**, SHA-256
+`efa05a2efc389325b3e4febfe58e449c93bd25dc5cdd9c62d6a0d63027ac5306`.
+See `20261106-columbia-facts-01` and
+`20261106-columbia-primary-review-01/primary-review.json`. No original HTML/PDFs,
+source FIPS, contextual mapping, demographic estimates, certification or live
+Columbia UI are claimed. California below remains the verified production.
+The next bulk Ohio parent and three declared portal routes returned HTTP403;
+the directory-declared Clearfield parent returned404 and Clinton returned403.
+All entire responses/receipts are retained privately, without bypasses or an
+inference that no independent official alternative exists.
+
 **November 6, 10:11 UTC: California participation is LIVE verified.**
 Exact UI `527f50fe769b47a67b959f8a7e9e5cf4055bd5e2`, Pages **42199960899
 attempt 1**, passed its original hosted artifact **13494191702 /

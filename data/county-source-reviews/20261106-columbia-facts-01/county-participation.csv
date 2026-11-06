@@ -1,0 +1,2 @@
+year,state_code,county,native_participation_measure_literal,ballots_cast,registered_voters,native_printed_turnout,registered_turnout_pct,source_status_literal,source_update_literal,declared_timezone,reported_precincts,total_precincts,native_reporting_percent,counting_complete,source_fips,maps_approved
+2026,PA,Columbia,Total Ballots,22583,40797,55.35,55.35456038434199,UNOFFICIAL ELECTION RESULTS,11/3/2026 10:37:16 PM EST,EST,42,42,100.00,False,,False

@@ -1,0 +1,190 @@
+{
+  "verified_at_utc": "2026-11-06T10:17:36.008829+00:00",
+  "county": "Columbia",
+  "original_receipts": [
+    {
+      "role": "parent",
+      "requested_url": "https://www.columbiapa.org/voter/index.php",
+      "file": "columbia-official-parent.html",
+      "final_url": "https://www.columbiapa.org/voter/index.php",
+      "status": 200,
+      "bytes": 10754,
+      "sha256": "85e0483632f4dc57a056f16ed4ef963ab9c1a9dfdf8d7f98f59cb55ac7323c48",
+      "retrieved_at_utc": "2026-11-06T10:07:29.914343+00:00"
+    },
+    {
+      "role": "results",
+      "file": "columbia-results.pdf",
+      "requested_url": "https://www.columbiapa.org/voter/2026/1132026.pdf",
+      "final_url": "https://www.columbiapa.org/voter/2026/1132026.pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 77278,
+      "sha256": "e7d73daff66f282eebe5359bc6bba25e2b176cb2be5d33c06c4c0a11b7756b12",
+      "retrieved_at_utc": "2026-11-06T10:08:17.288545+00:00"
+    },
+    {
+      "role": "mail-summary",
+      "file": "columbia-mail-summary.pdf",
+      "requested_url": "https://www.columbiapa.org/voter/2026/2026GenAbsenteeMailInBallotSummary.pdf",
+      "final_url": "https://www.columbiapa.org/voter/2026/2026GenAbsenteeMailInBallotSummary.pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 76841,
+      "sha256": "0ffb6331dd58779c3af0ba5bc3f067f1c6306b16129fbe5cf57a260042d18a5f",
+      "retrieved_at_utc": "2026-11-06T10:08:45.463236+00:00"
+    }
+  ],
+  "all_original_bytes_rechecked": true,
+  "actual_parent_declarations_checked": true,
+  "two_complete_native_pages_directly_visually_inspected": true,
+  "entire_summary_reextracted_and_reconciled_both_pdf_engines": true,
+  "all_105_mail_cells_reviewed_and_both_ocr_observations_retained": true,
+  "csv_tables": 15,
+  "complete_rows": {
+    "county-participation.csv": 1,
+    "county-candidate-results.csv": 10,
+    "county-literal-party-totals.csv": 10,
+    "county-contest-accounting.csv": 3,
+    "native-reporting-statistics.csv": 3,
+    "native-mail-section-totals.csv": 3,
+    "native-mail-cell-review.csv": 105,
+    "native-mail-application-types.csv": 8,
+    "native-mail-ballot-styles.csv": 1,
+    "native-mail-registration-parties.csv": 9,
+    "native-source-pages.csv": 2,
+    "native-mail-report-metadata.csv": 11,
+    "source-receipts.csv": 3,
+    "native-source-declarations.csv": 2,
+    "native-pdf-metadata.csv": 22
+  },
+  "rejected_changes": [
+    "missing native mail category",
+    "mail category arithmetic",
+    "paired mail total without source support",
+    "split literal registration party",
+    "missing explicit mail cell",
+    "changed original byte hash",
+    "unapproved maps",
+    "candidate sums substituted for ballots",
+    "changed candidate count in both engines",
+    "printed timezone removed in both engines",
+    "write-in made a false zero in both engines"
+  ],
+  "source_input_sha256": "fae1c6884bda71fff342c05ef65549f13f50f321ee63973d203f0f53aaf1b94b",
+  "scope": "Complete native numerical query frozen locally and independently reproduced offline. No source HTML/PDFs mirrored. No release, live UI, county-map identity join, certification, demographic rates or completed-counting approval. All original byte receipts and full source-derived vectors/OCR observations remain in the complete factual query.",
+  "entire_files": 21,
+  "entire_zip_members": 20,
+  "all_files_and_complete_archive_reproduced_offline": true,
+  "portable_test_groups": 5,
+  "additional_semantic_corruption_cases_beyond_frozen_input_pin": 18,
+  "paired_source_candidate_rename_rejected_by_complete_input_pin": true,
+  "native_mail_filter_date_missing_clock_and_pdf_metadata_explicitly_exported": true,
+  "files": [
+    {
+      "file": "audit.json",
+      "bytes": 1457,
+      "sha256": "387a0af6b6f815da19a03bfc70019130a25b6280b0807b74fcb395adb0830077"
+    },
+    {
+      "file": "checksums.json",
+      "bytes": 3097,
+      "sha256": "9af2cb80346ab7978e7ff1883ba28625a34a045ed862dee27b4402ae5aba2745"
+    },
+    {
+      "file": "complete-columbia-county-native-query-01.zip",
+      "bytes": 33839,
+      "sha256": "efa05a2efc389325b3e4febfe58e449c93bd25dc5cdd9c62d6a0d63027ac5306"
+    },
+    {
+      "file": "county-candidate-results.csv",
+      "bytes": 1530,
+      "sha256": "65b5ca9e14313e57aec458c074a6085735bec4fbbb67abb032e4742ea10cc2ee"
+    },
+    {
+      "file": "county-contest-accounting.csv",
+      "bytes": 472,
+      "sha256": "657f19f0cae36468bf023d366971427545e8ce0d210d61654ba82f776d197d79"
+    },
+    {
+      "file": "county-literal-party-totals.csv",
+      "bytes": 590,
+      "sha256": "cf035151f4365a51d2ce54351a33a56ec2a98c7035e7beb38081c8678e36e4c0"
+    },
+    {
+      "file": "county-participation.csv",
+      "bytes": 454,
+      "sha256": "ee3c13fa8a5d9bbc3a545bedcec34af63eab597420f683ea53a249f7afeb9207"
+    },
+    {
+      "file": "native-mail-application-types.csv",
+      "bytes": 351,
+      "sha256": "2191d0ebeffda8424428328e196a45c235391341d84e8196a4984d426ccdce76"
+    },
+    {
+      "file": "native-mail-ballot-styles.csv",
+      "bytes": 107,
+      "sha256": "5e0559a04ef2b0d494ccb3da8776004fc84387a430dd391cc1df7d7a9fa9639a"
+    },
+    {
+      "file": "native-mail-cell-review.csv",
+      "bytes": 8380,
+      "sha256": "fa3a5172f8346c98c4e37bdd8885378c907ee39e54641eafe22239458bcd7ddc"
+    },
+    {
+      "file": "native-mail-registration-parties.csv",
+      "bytes": 335,
+      "sha256": "0cd1f84e391f01627afa80e76c5a24db02979f160a1bc40c8e6f79c666aa3d62"
+    },
+    {
+      "file": "native-mail-report-metadata.csv",
+      "bytes": 502,
+      "sha256": "af702edaa0e1782ed121ac5beeceffbeae73d0137f896add4bb20862f7c0cc1c"
+    },
+    {
+      "file": "native-mail-section-totals.csv",
+      "bytes": 204,
+      "sha256": "8c3d100bd6a59ffae82d324eb5291a7084ace813398ab6e9958c27ae27b57617"
+    },
+    {
+      "file": "native-pdf-metadata.csv",
+      "bytes": 866,
+      "sha256": "b6f8a07e9af6e21f714a5e48dabaecdd63d16a25de1fd8af80d06adeacc57185"
+    },
+    {
+      "file": "native-reporting-statistics.csv",
+      "bytes": 294,
+      "sha256": "bc4fd81ee37b894a1c70f94595b84c1441880470f5a00f09557701278220917b"
+    },
+    {
+      "file": "native-source-declarations.csv",
+      "bytes": 356,
+      "sha256": "2ba58b90e4cb79279b18676dc828d0412cf55a364500ae36c2328c9223249f10"
+    },
+    {
+      "file": "native-source-pages.csv",
+      "bytes": 270,
+      "sha256": "72cbed8c69094c833356d00fafd86f35e58b81a5c91e7663500f937c28e0dd81"
+    },
+    {
+      "file": "review-columbia-county-native-query.py",
+      "bytes": 18219,
+      "sha256": "a45c22692c4f1cb0120a9a785f1cc8051451ea197c204b1bff3c03434a7a5e2c"
+    },
+    {
+      "file": "source-receipts.csv",
+      "bytes": 886,
+      "sha256": "bd8c68d928398c285e87719459da1a647f0d0fcb3ef252766893c980ae4c0e1d"
+    },
+    {
+      "file": "source-records.json.gz",
+      "bytes": 16906,
+      "sha256": "a8c2557374f8150b3466c42e943a32d95977e0f7f1dc285cf109e59751f6bb41"
+    },
+    {
+      "file": "test-columbia-native-query.py",
+      "bytes": 5373,
+      "sha256": "3fe8a5f2c62e700ab38cd36d4ad3af6464684197f5a00bb6e996c0bf45a2e383"
+    }
+  ]
+}

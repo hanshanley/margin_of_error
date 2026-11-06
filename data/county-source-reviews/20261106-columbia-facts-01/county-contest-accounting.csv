@@ -1,0 +1,4 @@
+contest_literal,vote_for,total_votes,reporting_precincts,total_precincts,native_printed_reporting_percent,native_total_ballots,candidate_vote_sum,unclassified_ballot_minus_contest_votes,blank_over_under_votes_supplied
+GOVERNOR / LIEUTENANT GOVERNOR,1,22483,42,42,100.00,22583,22483,100,False
+REPRESENTATIVE IN CONGRESS 9TH DISTRICT,1,22422,42,42,100.00,22583,22422,161,False
+REPRESENTATIVE IN THE GENERAL ASSEMBLY 109TH DISTRICT,1,22448,42,42,100.00,22583,22448,135,False

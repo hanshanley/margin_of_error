@@ -1,0 +1,106 @@
+section,native_label,native_column,reviewed_value,rapidocr_literals,apple_vision_literals,differing_or_missing_ocr_retained
+application_types,CIVILIAN OVERSEAS,app_issued,14,"[""14""]",[],True
+application_types,CIVILIAN OVERSEAS,app_returned,14,"[""14""]","[""14""]",True
+application_types,CIVILIAN OVERSEAS,ballots_sent,14,"[""14""]","[""14""]",True
+application_types,CIVILIAN OVERSEAS,ballot_returned,9,"[""6""]","[""9""]",True
+application_types,CIVILIAN OVERSEAS,votes_recorded,9,"[""6""]","[""9""]",True
+application_types,EMERGENCY,app_issued,22,"[""22""]",[],True
+application_types,EMERGENCY,app_returned,22,"[""22""]","[""22""]",True
+application_types,EMERGENCY,ballots_sent,22,"[""22""]","[""22""]",True
+application_types,EMERGENCY,ballot_returned,21,"[""21""]","[""21""]",True
+application_types,EMERGENCY,votes_recorded,21,"[""21""]","[""21""]",True
+application_types,MAIL-IN,app_issued,2562,"[""2562""]","[""2562""]",True
+application_types,MAIL-IN,app_returned,2562,"[""2562""]","[""2562""]",True
+application_types,MAIL-IN,ballots_sent,2561,"[""2561""]","[""2561""]",True
+application_types,MAIL-IN,ballot_returned,2354,"[""2354""]","[""2354""]",True
+application_types,MAIL-IN,votes_recorded,2343,"[""2343""]","[""2343""]",True
+application_types,MILITARY,app_issued,7,"[""7""]","[""7""]",True
+application_types,MILITARY,app_returned,7,"[""7""]","[""7""]",True
+application_types,MILITARY,ballots_sent,7,"[""7""]","[""7""]",True
+application_types,MILITARY,ballot_returned,5,"[""5""]","[""5""]",True
+application_types,MILITARY,votes_recorded,5,"[""5""]","[""5""]",True
+application_types,ONLINE MAIL-IN NOT VERIFIED,app_issued,944,"[""944""]","[""944""]",True
+application_types,ONLINE MAIL-IN NOT VERIFIED,app_returned,944,"[""944""]","[""944""]",True
+application_types,ONLINE MAIL-IN NOT VERIFIED,ballots_sent,942,"[""942""]","[""942""]",True
+application_types,ONLINE MAIL-IN NOT VERIFIED,ballot_returned,874,"[""874""]","[""874""]",True
+application_types,ONLINE MAIL-IN NOT VERIFIED,votes_recorded,874,"[""874""]","[""874""]",True
+application_types,ONLINE MAIL-IN VERIFIED,app_issued,630,"[""630""]","[""630""]",True
+application_types,ONLINE MAIL-IN VERIFIED,app_returned,630,"[""630""]","[""630""]",True
+application_types,ONLINE MAIL-IN VERIFIED,ballots_sent,630,"[""630""]","[""630""]",True
+application_types,ONLINE MAIL-IN VERIFIED,ballot_returned,511,"[""511""]","[""511""]",True
+application_types,ONLINE MAIL-IN VERIFIED,votes_recorded,509,"[""509""]","[""509""]",True
+application_types,ONLINE REGULAR ABSENTEE VERIFIED,app_issued,9,"[""9.""]","[""9.""]",True
+application_types,ONLINE REGULAR ABSENTEE VERIFIED,app_returned,9,"[""6""]","[""9""]",True
+application_types,ONLINE REGULAR ABSENTEE VERIFIED,ballots_sent,9,"[""6""]","[""9""]",True
+application_types,ONLINE REGULAR ABSENTEE VERIFIED,ballot_returned,8,"[""8""]","[""8""]",True
+application_types,ONLINE REGULAR ABSENTEE VERIFIED,votes_recorded,8,"[""8""]","[""8""]",True
+application_types,Regular Absentee,app_issued,3,"[""3""]","[""3""]",True
+application_types,Regular Absentee,app_returned,3,"[""3""]","[""3""]",True
+application_types,Regular Absentee,ballots_sent,3,"[""3""]","[""3""]",True
+application_types,Regular Absentee,ballot_returned,3,"[""3""]","[""3""]",True
+application_types,Regular Absentee,votes_recorded,3,"[""3""]","[""3""]",True
+application_types,Election Totals:,app_issued,4191,"[""4191""]","[""4191""]",True
+application_types,Election Totals:,app_returned,4191,"[""4191""]","[""4191""]",True
+application_types,Election Totals:,ballots_sent,4188,"[""4188""]","[""4188""]",True
+application_types,Election Totals:,ballot_returned,3785,"[""3785""]","[""3785""]",True
+application_types,Election Totals:,votes_recorded,3772,"[""3772""]","[""3772""]",True
+ballot_styles,,app_issued,4191,"[""4191""]","[""4191""]",True
+ballot_styles,,app_returned,4191,"[""4191""]","[""4191""]",True
+ballot_styles,,ballots_sent,4188,"[""4188""]","[""4188""]",True
+ballot_styles,,ballot_returned,3785,"[""3785""]","[""3785""]",True
+ballot_styles,,votes_recorded,3772,"[""3772""]","[""3772""]",True
+ballot_styles,Election Totals:,app_issued,4191,"[""4191""]","[""4191""]",True
+ballot_styles,Election Totals:,app_returned,4191,"[""4191""]","[""4191""]",True
+ballot_styles,Election Totals:,ballots_sent,4188,"[""4188""]","[""4188""]",True
+ballot_styles,Election Totals:,ballot_returned,3785,"[""3785""]","[""3785""]",True
+ballot_styles,Election Totals:,votes_recorded,3772,"[""3772""]","[""3772""]",True
+registration_parties,REPUBLICAN,app_issued,1344,"[""1344""]","[""1344""]",True
+registration_parties,REPUBLICAN,app_returned,1344,"[""1344""]","[""1344""]",True
+registration_parties,REPUBLICAN,ballots_sent,1343,"[""1343""]","[""1343""]",True
+registration_parties,REPUBLICAN,ballot_returned,1236,"[""1236""]","[""1236""]",True
+registration_parties,REPUBLICAN,votes_recorded,1234,"[""1234""]","[""1234""]",True
+registration_parties,NO AFFILIATION,app_issued,307,"[""307""]","[""307""]",True
+registration_parties,NO AFFILIATION,app_returned,307,"[""307""]","[""307""]",True
+registration_parties,NO AFFILIATION,ballots_sent,307,"[""307""]","[""307""]",True
+registration_parties,NO AFFILIATION,ballot_returned,246,"[""246""]","[""246""]",True
+registration_parties,NO AFFILIATION,votes_recorded,244,"[""244""]","[""244""]",True
+registration_parties,DEMOCRATIC,app_issued,2451,"[""2451""]","[""2451""]",True
+registration_parties,DEMOCRATIC,app_returned,2451,"[""2451""]","[""2451""]",True
+registration_parties,DEMOCRATIC,ballots_sent,2449,"[""2449""]","[""2449""]",True
+registration_parties,DEMOCRATIC,ballot_returned,2220,"[""2220""]","[""2220""]",True
+registration_parties,DEMOCRATIC,votes_recorded,2211,"[""2211""]","[""2211""]",True
+registration_parties,INDEPENDENT,app_issued,33,"[""33""]","[""33""]",True
+registration_parties,INDEPENDENT,app_returned,33,"[""33""]","[""33""]",True
+registration_parties,INDEPENDENT,ballots_sent,33,"[""33""]","[""33""]",True
+registration_parties,INDEPENDENT,ballot_returned,31,"[""31""]","[""31""]",True
+registration_parties,INDEPENDENT,votes_recorded,31,"[""31""]","[""31""]",True
+registration_parties,LIBERTARIAN,app_issued,11,"[""11""]","[""11""]",True
+registration_parties,LIBERTARIAN,app_returned,11,"[""11""]","[""11""]",True
+registration_parties,LIBERTARIAN,ballots_sent,11,"[""11""]","[""11""]",True
+registration_parties,LIBERTARIAN,ballot_returned,10,"[""10""]",[],True
+registration_parties,LIBERTARIAN,votes_recorded,10,"[""10""]","[""10""]",True
+registration_parties,LIBERTARIAN REPUBLICAN,app_issued,1,"[""1""]","[""1""]",True
+registration_parties,LIBERTARIAN REPUBLICAN,app_returned,1,"[""1""]","[""1""]",True
+registration_parties,LIBERTARIAN REPUBLICAN,ballots_sent,1,"[""1""]","[""1""]",True
+registration_parties,LIBERTARIAN REPUBLICAN,ballot_returned,1,"[""1""]","[""1""]",True
+registration_parties,LIBERTARIAN REPUBLICAN,votes_recorded,1,"[""1""]","[""1""]",True
+registration_parties,NON-PARTISAN,app_issued,36,"[""36""]","[""36""]",True
+registration_parties,NON-PARTISAN,app_returned,36,"[""36""]","[""36""]",True
+registration_parties,NON-PARTISAN,ballots_sent,36,"[""36""]","[""36""]",True
+registration_parties,NON-PARTISAN,ballot_returned,34,"[""34""]","[""34""]",True
+registration_parties,NON-PARTISAN,votes_recorded,34,"[""34""]","[""34""]",True
+registration_parties,OTHER,app_issued,4,"["".4""]","[""4""]",True
+registration_parties,OTHER,app_returned,4,"[""4""]","[""4""]",True
+registration_parties,OTHER,ballots_sent,4,"[""4""]","[""4""]",True
+registration_parties,OTHER,ballot_returned,4,"[""4""]","[""4""]",True
+registration_parties,OTHER,votes_recorded,4,"[""4""]","[""4""]",True
+registration_parties,GREEN,app_issued,4,"[""4""]","[""4""]",True
+registration_parties,GREEN,app_returned,4,"[""4""]","[""4""]",True
+registration_parties,GREEN,ballots_sent,4,"[""4""]","[""4""]",True
+registration_parties,GREEN,ballot_returned,3,"[""3""]","[""3""]",True
+registration_parties,GREEN,votes_recorded,3,"[""3""]","[""3""]",True
+registration_parties,Election Totals:,app_issued,4191,"[""4191""]","[""4191""]",True
+registration_parties,Election Totals:,app_returned,4191,"[""4191""]","[""4191""]",True
+registration_parties,Election Totals:,ballots_sent,4188,"[""4188""]","[""4188""]",True
+registration_parties,Election Totals:,ballot_returned,3785,"[""3785""]","[""3785""]",True
+registration_parties,Election Totals:,votes_recorded,3772,"[""3772""]","[""3772""]",True

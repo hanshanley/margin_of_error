@@ -1,0 +1,12 @@
+native_field,native_value
+report_code,00000-ABS-004-C
+county,Columbia County
+date,"Tuesday, November 3, 2026"
+title,Absentee/Mail-In Ballots Summary
+election,ELECTION:2026 GENERAL ELECTION
+native_columns,"[""App Issued"", ""App Returned"", ""Ballots Sent"", ""Ballot Returned"", ""Votes Recorded""]"
+source_filter,Election ID (N) IS 2026 GENERAL ELECTION AND Federal Voter (Y) IS 0 AND Valid Voter (Y) IS 1
+native_status_literal,
+native_update_time_literal,
+declared_printed_timezone,
+page,Page 1 of 1

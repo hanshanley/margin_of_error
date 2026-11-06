@@ -1,0 +1,28 @@
+{
+  "county": "Columbia",
+  "year": 2026,
+  "maps_approved": false,
+  "csv_tables": 15,
+  "complete_rows": {
+    "county-participation.csv": 1,
+    "county-candidate-results.csv": 10,
+    "county-literal-party-totals.csv": 10,
+    "county-contest-accounting.csv": 3,
+    "native-reporting-statistics.csv": 3,
+    "native-mail-section-totals.csv": 3,
+    "native-mail-cell-review.csv": 105,
+    "native-mail-application-types.csv": 8,
+    "native-mail-ballot-styles.csv": 1,
+    "native-mail-registration-parties.csv": 9,
+    "native-source-pages.csv": 2,
+    "native-mail-report-metadata.csv": 11,
+    "source-receipts.csv": 3,
+    "native-source-declarations.csv": 2,
+    "native-pdf-metadata.csv": 22
+  },
+  "summary_all_layout_lines_consumed_both_engines": true,
+  "entire_summary_vectors_equal": true,
+  "all_105_mail_cells_reviewed": true,
+  "ocr_errors_and_missing_observations_retained": true,
+  "scope": "Complete factual query of both declared reports, not the parent archive. Mail application, returned-ballot and votes-recorded columns are distinct; registration-party categories are not candidate party votes. Mail PDF filter/electorate and PDF metadata clocks remain separate from the unofficial county report's printed EST clock. No source establishes which mail subtotal is included in county ballots. No Election Day remainder, blank/over/undervotes, voting completion, certification, source FIPS, geometry or demographic rates inferred."
+}

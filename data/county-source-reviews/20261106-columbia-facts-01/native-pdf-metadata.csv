@@ -1,0 +1,23 @@
+source_report,metadata_key,native_value,native_null
+results,format,PDF 1.4,False
+results,title,,False
+results,author,,False
+results,subject,,False
+results,keywords,,False
+results,creator,JasperReports (REPORT_SUMMARY),False
+results,producer,iText1.3.1 by lowagie.com (based on itext-paulo-154),False
+results,creationDate,D:20261103223727-05'00',False
+results,modDate,D:20261103223727-05'00',False
+results,trapped,,False
+results,encryption,,True
+mail-summary,format,PDF 1.4,False
+mail-summary,title,SKM_C360i26110322230,False
+mail-summary,author,,False
+mail-summary,subject,,False
+mail-summary,keywords,,False
+mail-summary,creator,KM_C360i,False
+mail-summary,producer,KONICA MINOLTA bizhub C360i,False
+mail-summary,creationDate,D:20261103222341-05'00',False
+mail-summary,modDate,D:20261103222341-05'00',False
+mail-summary,trapped,,False
+mail-summary,encryption,,True
