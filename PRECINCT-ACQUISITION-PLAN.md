@@ -52,9 +52,19 @@ reconciles. All **2,579 complete contest reports / 5,138 choices / 1,867
 literal-party totals** independently match the native V records and P reporting
 areas. Candidate totals remain separate; native parties include `Dem`, `Rep`,
 `Grn`, `Lib`, `P&F`, `Non` and `NPP`, without relabeling missing judicial parties.
-The strict standard-library parser has passed its complete private trial;
-next add focused corruption tests, then freeze/reproduce the entire factual
-query before source release and integration. Nothing California is live or
+The strict standard-library parser passes **ten focused tests**, including
+candidate substitution, paired-source arithmetic changes, missing counties and
+contests, conflicting literal parties, original-byte mutation and contest totals
+exceeding participation. The complete factual query has **sixteen files /
+eleven complete CSV tables / fifteen ZIP members** and reproduces byte-for-byte
+both offline and independently from all thirteen entire original sources.
+ZIP **417,046 bytes**, SHA-256
+`d985417e7fdc8d4af08447a09e7c0bfaf9a65dd92ff493dce1cb3ae431958a3c`.
+See `20261106-california-facts-01` and
+`20261106-california-primary-review-01/primary-review.json`; no original HTML,
+workbook or source templates are published. Next freeze/publish the immutable
+source release, independently establish county identities and integrate the
+native counts without substituting candidate totals. Nothing California is live or
 map-approved yet. Native county codes are not FIPS, clocks have no declared
 timezone, `U/F/SF` retain their literal status, and 100% precinct reporting
 does not imply completed counting or certification. No mode or demographic

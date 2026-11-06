@@ -1,0 +1,94 @@
+{
+  "election": {
+    "source_parent": "https://media.sos.ca.gov/",
+    "native_election_identity": "California General Election Tuesday, November 3, 2026",
+    "year": 2026,
+    "election_date": "2026-11-03",
+    "election_stage": "General"
+  },
+  "county_records": 58,
+  "separate_statewide_records": 1,
+  "reported_participation": 8928966,
+  "registered_voters": 23273590,
+  "native_printed_turnout": "38.4",
+  "complete_native_text_record_counts": {
+    "C26GG.txt": {
+      "B": 1,
+      "C": 402,
+      "E": 1
+    },
+    "J26GG.txt": {
+      "B": 1,
+      "J": 182,
+      "E": 1
+    },
+    "P26GG.txt": {
+      "B": 1,
+      "P": 2579,
+      "E": 1
+    },
+    "R26GG.txt": {
+      "B": 1,
+      "R": 242,
+      "E": 1
+    },
+    "S26GG.txt": {
+      "B": 1,
+      "S": 59,
+      "E": 1
+    },
+    "V26GG.txt": {
+      "B": 2,
+      "A": 59,
+      "E": 2,
+      "V": 2579
+    }
+  },
+  "entire_native_json_contest_reports": 2579,
+  "contest_choice_records": 5138,
+  "party_total_records": 1867,
+  "native_literal_party_associations": {
+    "01": [
+      "Dem"
+    ],
+    "02": [
+      "Rep"
+    ],
+    "04": [
+      "Grn"
+    ],
+    "05": [
+      "Lib"
+    ],
+    "08": [
+      "P&F"
+    ],
+    "13": [
+      "Non"
+    ],
+    "14": [
+      "NPP"
+    ]
+  },
+  "all_58_counties_and_statewide_match_independent_native_A_records": true,
+  "all_county_participation_registration_and_reporting_sums_match_statewide": true,
+  "all_contest_choices_match_entire_native_V_records": true,
+  "all_native_contest_precinct_totals_match_independent_P_records": true,
+  "all_json_contest_clocks_match_native_county_status": true,
+  "all_nonzero_choice_percentages_reconciled": true,
+  "native_source_fips_supplied": false,
+  "maps_approved": false,
+  "counting_complete": false,
+  "qualifications": [
+    "Native voterTurnout is participation, not a sum of candidate or party votes.",
+    "Statewide/districtwide aggregate contests are separate from county records.",
+    "Precinct reporting completeness does not establish completed counting or certification.",
+    "U, F and SF are preserved literally; certification and report-status expansions are not inferred.",
+    "No voting-mode, demographic, blank, overvote, undervote or provisional totals are supplied.",
+    "Differences between participation and a contest are unclassified, not inferred undervotes.",
+    "Native county codes are not FIPS. No election-year geometry or county mapping is approved.",
+    "Native clocks have no declared timezone; no timezone is inferred.",
+    "Candidate auxiliary percentage fields are retained literally without an inferred definition.",
+    "Original HTML, workbook, archives and text feeds stay private; all factual queries are complete."
+  ]
+}

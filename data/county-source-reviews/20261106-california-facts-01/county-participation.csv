@@ -1,0 +1,59 @@
+year,election_date,state_code,geography_level,native_county_code,county,native_county_name_in_code_file,county_fips,reported_participation,registered_voters,native_participation_measure_literal,native_denominator_measure_literal,native_printed_turnout,native_report_type,native_report_type_code,native_report_number,native_correction_report_number,precincts_reporting,precincts_total,native_reporting_percent,native_first_report_timestamp,native_last_report_timestamp,native_timestamp_literal,declared_timezone,counting_complete,maps_approved
+2026,2026-11-03,CA,county,1,Alameda,Alameda,,314951,983846,voterTurnout,totalRegisteredVoters,32.0,U,U,0,0,627,627,100.0,202611032051,202611040219,"November 4, 2026, 2:19 a.m.",,false,false
+2026,2026-11-03,CA,county,2,Alpine,Alpine,,566,917,voterTurnout,totalRegisteredVoters,61.7,SF,F,0,0,5,5,100.0,202611032133,202611032133,"November 3, 2026, 9:33 p.m.",,false,false
+2026,2026-11-03,CA,county,3,Amador,Amador,,15530,26992,voterTurnout,totalRegisteredVoters,57.5,SF,F,0,0,47,47,100.0,202611032005,202611032137,"November 3, 2026, 9:37 p.m.",,false,false
+2026,2026-11-03,CA,county,4,Butte,Butte,,59591,127517,voterTurnout,totalRegisteredVoters,46.7,U,U,0,0,137,137,100.0,202611032022,202611051503,"November 5, 2026, 3:03 p.m.",,false,false
+2026,2026-11-03,CA,county,5,Calaveras,Calaveras,,16576,32726,voterTurnout,totalRegisteredVoters,50.7,U,U,0,0,25,25,100.0,202611032055,202611032247,"November 3, 2026, 10:47 p.m.",,false,false
+2026,2026-11-03,CA,county,6,Colusa,Colusa,,4394,10940,voterTurnout,totalRegisteredVoters,40.2,U,U,0,0,19,19,100.0,202611032021,202611051509,"November 5, 2026, 3:09 p.m.",,false,false
+2026,2026-11-03,CA,county,7,Contra Costa,Contra Costa,,280686,733037,voterTurnout,totalRegisteredVoters,38.3,SF,F,0,0,951,951,100.0,202611032211,202611040005,"November 4, 2026, 12:05 a.m.",,false,false
+2026,2026-11-03,CA,county,8,Del Norte,Del Norte,,5536,15155,voterTurnout,totalRegisteredVoters,36.5,U,U,0,0,19,19,100.0,202611032019,202611032239,"November 3, 2026, 10:39 p.m.",,false,false
+2026,2026-11-03,CA,county,9,El Dorado,El Dorado,,69706,137930,voterTurnout,totalRegisteredVoters,50.5,U,U,0,0,179,179,100.0,202611032017,202611051322,"November 5, 2026, 1:22 p.m.",,false,false
+2026,2026-11-03,CA,county,10,Fresno,Fresno,,166720,530280,voterTurnout,totalRegisteredVoters,31.4,U,U,0,0,396,396,100.0,202611032005,202611051501,"November 5, 2026, 3:01 p.m.",,false,false
+2026,2026-11-03,CA,county,11,Glenn,Glenn,,5606,14226,voterTurnout,totalRegisteredVoters,39.4,U,U,0,0,114,114,100.0,202611032007,202611051611,"November 5, 2026, 4:11 p.m.",,false,false
+2026,2026-11-03,CA,county,12,Humboldt,Humboldt,,25409,86401,voterTurnout,totalRegisteredVoters,29.4,U,U,0,0,120,120,100.0,202611032027,202611051441,"November 5, 2026, 2:41 p.m.",,false,false
+2026,2026-11-03,CA,county,13,Imperial,Imperial,,24583,93770,voterTurnout,totalRegisteredVoters,26.2,U,U,0,0,279,279,100.0,202611032039,202611051625,"November 5, 2026, 4:25 p.m.",,false,false
+2026,2026-11-03,CA,county,14,Inyo,Inyo,,7430,10926,voterTurnout,totalRegisteredVoters,68.0,U,U,0,0,16,16,100.0,202611032026,202611051604,"November 5, 2026, 4:04 p.m.",,false,false
+2026,2026-11-03,CA,county,15,Kern,Kern,,143316,465832,voterTurnout,totalRegisteredVoters,30.8,U,U,0,0,898,898,100.0,202611032040,202611051627,"November 5, 2026, 4:27 p.m.",,false,false
+2026,2026-11-03,CA,county,16,Kings,Kings,,33007,61136,voterTurnout,totalRegisteredVoters,54.0,U,U,0,0,70,70,100.0,202611032043,202611051705,"November 5, 2026, 5:05 p.m.",,false,false
+2026,2026-11-03,CA,county,17,Lake,Lake,,7757,38010,voterTurnout,totalRegisteredVoters,20.4,SF,F,0,0,37,37,100.0,202611032131,202611040411,"November 4, 2026, 4:11 a.m.",,false,false
+2026,2026-11-03,CA,county,18,Lassen,Lassen,,7689,15333,voterTurnout,totalRegisteredVoters,50.1,U,U,0,0,52,52,100.0,202611032005,202611051823,"November 5, 2026, 6:23 p.m.",,false,false
+2026,2026-11-03,CA,county,19,Los Angeles,Los Angeles,,2529637,5914190,voterTurnout,totalRegisteredVoters,42.8,U,U,0,0,2853,2853,100.0,202611032021,202611051635,"November 5, 2026, 4:35 p.m.",,false,false
+2026,2026-11-03,CA,county,20,Madera,Madera,,29624,83662,voterTurnout,totalRegisteredVoters,35.4,U,U,0,0,90,90,100.0,202611032003,202611032333,"November 3, 2026, 11:33 p.m.",,false,false
+2026,2026-11-03,CA,county,21,Marin,Marin,,69573,173844,voterTurnout,totalRegisteredVoters,40.0,U,U,0,0,128,128,100.0,202611032021,202611051741,"November 5, 2026, 5:41 p.m.",,false,false
+2026,2026-11-03,CA,county,22,Mariposa,Mariposa,,7737,11799,voterTurnout,totalRegisteredVoters,65.6,U,U,0,0,27,27,100.0,202611032017,202611051605,"November 5, 2026, 4:05 p.m.",,false,false
+2026,2026-11-03,CA,county,23,Mendocino,Mendocino,,17607,53969,voterTurnout,totalRegisteredVoters,32.6,SF,F,0,0,258,258,100.0,202611032039,202611032347,"November 3, 2026, 11:47 p.m.",,false,false
+2026,2026-11-03,CA,county,24,Merced,Merced,,42026,137293,voterTurnout,totalRegisteredVoters,30.6,U,U,0,0,770,770,100.0,202611032001,202611040203,"November 4, 2026, 2:03 a.m.",,false,false
+2026,2026-11-03,CA,county,25,Modoc,Modoc,,2452,5172,voterTurnout,totalRegisteredVoters,47.4,U,U,0,0,21,21,100.0,202611032030,202611032220,"November 3, 2026, 10:20 p.m.",,false,false
+2026,2026-11-03,CA,county,26,Mono,Mono,,4945,7960,voterTurnout,totalRegisteredVoters,62.1,U,U,0,0,12,12,100.0,202611032026,202611041651,"November 4, 2026, 4:51 p.m.",,false,false
+2026,2026-11-03,CA,county,27,Monterey,Monterey,,89976,220213,voterTurnout,totalRegisteredVoters,40.9,U,U,0,0,208,208,100.0,202611032027,202611051348,"November 5, 2026, 1:48 p.m.",,false,false
+2026,2026-11-03,CA,county,28,Napa,Napa,,20884,86473,voterTurnout,totalRegisteredVoters,24.2,U,U,0,0,147,147,100.0,202611032001,202611051641,"November 5, 2026, 4:41 p.m.",,false,false
+2026,2026-11-03,CA,county,29,Nevada,Nevada,,29155,76693,voterTurnout,totalRegisteredVoters,38.0,U,U,0,0,105,105,100.0,202611032017,202611040029,"November 4, 2026, 12:29 a.m.",,false,false
+2026,2026-11-03,CA,county,30,Orange,Orange,,891871,1916806,voterTurnout,totalRegisteredVoters,46.5,U,U,0,0,2377,2377,100.0,202611032019,202611051709,"November 5, 2026, 5:09 p.m.",,false,false
+2026,2026-11-03,CA,county,31,Placer,Placer,,130825,300368,voterTurnout,totalRegisteredVoters,43.6,U,U,0,0,325,325,100.0,202611032003,202611040021,"November 4, 2026, 12:21 a.m.",,false,false
+2026,2026-11-03,CA,county,32,Plumas,Plumas,,8223,12889,voterTurnout,totalRegisteredVoters,63.8,U,U,0,0,29,29,100.0,202611032029,202611051623,"November 5, 2026, 4:23 p.m.",,false,false
+2026,2026-11-03,CA,county,33,Riverside,Riverside,,400921,1454472,voterTurnout,totalRegisteredVoters,27.6,U,U,0,0,1206,1206,100.0,202611032011,202611051713,"November 5, 2026, 5:13 p.m.",,false,false
+2026,2026-11-03,CA,county,34,Sacramento,Sacramento,,271406,921313,voterTurnout,totalRegisteredVoters,29.5,U,U,0,0,719,719,100.0,202611032011,202611040133,"November 4, 2026, 1:33 a.m.",,false,false
+2026,2026-11-03,CA,county,35,San Benito,San Benito,,10506,40035,voterTurnout,totalRegisteredVoters,26.2,U,U,0,0,67,67,100.0,202611032029,202611051858,"November 5, 2026, 6:58 p.m.",,false,false
+2026,2026-11-03,CA,county,36,San Bernardino,San Bernardino,,424651,1248960,voterTurnout,totalRegisteredVoters,34.0,U,U,0,0,2066,2066,100.0,202611032001,202611051741,"November 5, 2026, 5:41 p.m.",,false,false
+2026,2026-11-03,CA,county,37,San Diego,San Diego,,814768,2030182,voterTurnout,totalRegisteredVoters,40.1,U,U,0,0,2994,2994,100.0,202611032015,202611051747,"November 5, 2026, 5:47 p.m.",,false,false
+2026,2026-11-03,CA,county,38,San Francisco,San Francisco,,256382,536037,voterTurnout,totalRegisteredVoters,47.8,U,U,0,0,514,514,100.0,202611032107,202611051603,"November 5, 2026, 4:03 p.m.",,false,false
+2026,2026-11-03,CA,county,39,San Joaquin,San Joaquin,,121252,415611,voterTurnout,totalRegisteredVoters,29.2,U,U,0,0,335,335,100.0,202611032045,202611040109,"November 4, 2026, 1:09 a.m.",,false,false
+2026,2026-11-03,CA,county,40,San Luis Obispo,San Luis Obispo,,72127,183732,voterTurnout,totalRegisteredVoters,39.3,U,U,0,0,153,153,100.0,202611032007,202611051705,"November 5, 2026, 5:05 p.m.",,false,false
+2026,2026-11-03,CA,county,41,San Mateo,San Mateo,,167250,449447,voterTurnout,totalRegisteredVoters,37.2,U,U,0,0,333,333,100.0,202611032017,202611051451,"November 5, 2026, 2:51 p.m.",,false,false
+2026,2026-11-03,CA,county,42,Santa Barbara,Santa Barbara,,100523,249802,voterTurnout,totalRegisteredVoters,40.2,U,U,0,0,235,235,100.0,202611032031,202611051449,"November 5, 2026, 2:49 p.m.",,false,false
+2026,2026-11-03,CA,county,43,Santa Clara,Santa Clara,,360012,1080711,voterTurnout,totalRegisteredVoters,33.3,U,U,0,0,708,708,100.0,202611032123,202611051755,"November 5, 2026, 5:55 p.m.",,false,false
+2026,2026-11-03,CA,county,44,Santa Cruz,Santa Cruz,,83391,173193,voterTurnout,totalRegisteredVoters,48.1,U,U,0,0,201,201,100.0,202611032030,202611051824,"November 5, 2026, 6:24 p.m.",,false,false
+2026,2026-11-03,CA,county,45,Shasta,Shasta,,34830,115780,voterTurnout,totalRegisteredVoters,30.1,U,U,0,0,68,68,100.0,202611032321,202611051523,"November 5, 2026, 3:23 p.m.",,false,false
+2026,2026-11-03,CA,county,46,Sierra,Sierra,,1478,2164,voterTurnout,totalRegisteredVoters,68.3,U,U,0,0,19,19,100.0,202611032030,202611051341,"November 5, 2026, 1:41 p.m.",,false,false
+2026,2026-11-03,CA,county,47,Siskiyou,Siskiyou,,13856,27669,voterTurnout,totalRegisteredVoters,50.1,U,U,0,0,62,62,100.0,202611032029,202611051422,"November 5, 2026, 2:22 p.m.",,false,false
+2026,2026-11-03,CA,county,48,Solano,Solano,,135204,276155,voterTurnout,totalRegisteredVoters,49.0,U,U,0,0,196,196,100.0,202611032013,202611051651,"November 5, 2026, 4:51 p.m.",,false,false
+2026,2026-11-03,CA,county,49,Sonoma,Sonoma,,107979,321074,voterTurnout,totalRegisteredVoters,33.6,U,U,0,0,403,403,100.0,202611032007,202611051445,"November 5, 2026, 2:45 p.m.",,false,false
+2026,2026-11-03,CA,county,50,Stanislaus,Stanislaus,,100488,301333,voterTurnout,totalRegisteredVoters,33.3,U,U,0,0,206,206,100.0,202611032023,202611051852,"November 5, 2026, 6:52 p.m.",,false,false
+2026,2026-11-03,CA,county,51,Sutter,Sutter,,13717,55200,voterTurnout,totalRegisteredVoters,24.8,SF,F,0,0,25,25,100.0,202611032029,202611032259,"November 3, 2026, 10:59 p.m.",,false,false
+2026,2026-11-03,CA,county,52,Tehama,Tehama,,17163,37275,voterTurnout,totalRegisteredVoters,46.0,U,U,0,0,38,38,100.0,202611032040,202611051431,"November 5, 2026, 2:31 p.m.",,false,false
+2026,2026-11-03,CA,county,53,Trinity,Trinity,,2768,7600,voterTurnout,totalRegisteredVoters,36.4,SF,F,0,0,16,16,100.0,202611032031,202611032243,"November 3, 2026, 10:43 p.m.",,false,false
+2026,2026-11-03,CA,county,54,Tulare,Tulare,,72281,228685,voterTurnout,totalRegisteredVoters,31.6,U,U,0,0,388,388,100.0,202611032005,202611051757,"November 5, 2026, 5:57 p.m.",,false,false
+2026,2026-11-03,CA,county,55,Tuolumne,Tuolumne,,18678,35784,voterTurnout,totalRegisteredVoters,52.2,U,U,0,0,47,47,100.0,202611032032,202611041622,"November 4, 2026, 4:22 p.m.",,false,false
+2026,2026-11-03,CA,county,56,Ventura,Ventura,,208228,525136,voterTurnout,totalRegisteredVoters,39.7,U,U,0,0,1433,1433,100.0,202611032106,202611051456,"November 5, 2026, 2:56 p.m.",,false,false
+2026,2026-11-03,CA,county,57,Yolo,Yolo,,46517,123012,voterTurnout,totalRegisteredVoters,37.8,U,U,0,0,64,64,100.0,202611032019,202611040141,"November 4, 2026, 1:41 a.m.",,false,false
+2026,2026-11-03,CA,county,58,Yuba,Yuba,,9002,46923,voterTurnout,totalRegisteredVoters,19.2,U,U,0,0,23,23,100.0,202611032055,202611040006,"November 4, 2026, 12:06 a.m.",,false,false

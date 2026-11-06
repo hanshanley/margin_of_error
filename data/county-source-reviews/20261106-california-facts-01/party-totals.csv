@@ -1,0 +1,1868 @@
+year,state_code,native_county_code,county,geography_level,native_contest_code,native_election_stage,native_contest_label,party_literal,candidate_votes
+2026,CA,1,Alameda,county,020000000000,GG,Governor,Dem,245342
+2026,CA,1,Alameda,county,020000000000,GG,Governor,Rep,64373
+2026,CA,2,Alpine,county,020000000000,GG,Governor,Dem,371
+2026,CA,2,Alpine,county,020000000000,GG,Governor,Rep,189
+2026,CA,3,Amador,county,020000000000,GG,Governor,Dem,5802
+2026,CA,3,Amador,county,020000000000,GG,Governor,Rep,9571
+2026,CA,4,Butte,county,020000000000,GG,Governor,Dem,29406
+2026,CA,4,Butte,county,020000000000,GG,Governor,Rep,29701
+2026,CA,5,Calaveras,county,020000000000,GG,Governor,Dem,6241
+2026,CA,5,Calaveras,county,020000000000,GG,Governor,Rep,10155
+2026,CA,6,Colusa,county,020000000000,GG,Governor,Dem,1936
+2026,CA,6,Colusa,county,020000000000,GG,Governor,Rep,2413
+2026,CA,7,Contra Costa,county,020000000000,GG,Governor,Dem,189548
+2026,CA,7,Contra Costa,county,020000000000,GG,Governor,Rep,78264
+2026,CA,8,Del Norte,county,020000000000,GG,Governor,Dem,2587
+2026,CA,8,Del Norte,county,020000000000,GG,Governor,Rep,2897
+2026,CA,9,El Dorado,county,020000000000,GG,Governor,Dem,31001
+2026,CA,9,El Dorado,county,020000000000,GG,Governor,Rep,38109
+2026,CA,10,Fresno,county,020000000000,GG,Governor,Dem,89095
+2026,CA,10,Fresno,county,020000000000,GG,Governor,Rep,76157
+2026,CA,11,Glenn,county,020000000000,GG,Governor,Dem,1924
+2026,CA,11,Glenn,county,020000000000,GG,Governor,Rep,3647
+2026,CA,12,Humboldt,county,020000000000,GG,Governor,Dem,16552
+2026,CA,12,Humboldt,county,020000000000,GG,Governor,Rep,8551
+2026,CA,13,Imperial,county,020000000000,GG,Governor,Dem,15948
+2026,CA,13,Imperial,county,020000000000,GG,Governor,Rep,8396
+2026,CA,14,Inyo,county,020000000000,GG,Governor,Dem,3836
+2026,CA,14,Inyo,county,020000000000,GG,Governor,Rep,3485
+2026,CA,15,Kern,county,020000000000,GG,Governor,Dem,70740
+2026,CA,15,Kern,county,020000000000,GG,Governor,Rep,71735
+2026,CA,16,Kings,county,020000000000,GG,Governor,Dem,15379
+2026,CA,16,Kings,county,020000000000,GG,Governor,Rep,17338
+2026,CA,17,Lake,county,020000000000,GG,Governor,Dem,4325
+2026,CA,17,Lake,county,020000000000,GG,Governor,Rep,3382
+2026,CA,18,Lassen,county,020000000000,GG,Governor,Dem,1824
+2026,CA,18,Lassen,county,020000000000,GG,Governor,Rep,5791
+2026,CA,19,Los Angeles,county,020000000000,GG,Governor,Dem,1784693
+2026,CA,19,Los Angeles,county,020000000000,GG,Governor,Rep,691030
+2026,CA,20,Madera,county,020000000000,GG,Governor,Dem,14203
+2026,CA,20,Madera,county,020000000000,GG,Governor,Rep,15191
+2026,CA,21,Marin,county,020000000000,GG,Governor,Dem,54621
+2026,CA,21,Marin,county,020000000000,GG,Governor,Rep,14019
+2026,CA,22,Mariposa,county,020000000000,GG,Governor,Dem,3137
+2026,CA,22,Mariposa,county,020000000000,GG,Governor,Rep,4526
+2026,CA,23,Mendocino,county,020000000000,GG,Governor,Dem,11901
+2026,CA,23,Mendocino,county,020000000000,GG,Governor,Rep,5296
+2026,CA,24,Merced,county,020000000000,GG,Governor,Dem,24106
+2026,CA,24,Merced,county,020000000000,GG,Governor,Rep,17420
+2026,CA,25,Modoc,county,020000000000,GG,Governor,Dem,653
+2026,CA,25,Modoc,county,020000000000,GG,Governor,Rep,1779
+2026,CA,26,Mono,county,020000000000,GG,Governor,Dem,2974
+2026,CA,26,Mono,county,020000000000,GG,Governor,Rep,1890
+2026,CA,27,Monterey,county,020000000000,GG,Governor,Dem,62494
+2026,CA,27,Monterey,county,020000000000,GG,Governor,Rep,26628
+2026,CA,28,Napa,county,020000000000,GG,Governor,Dem,14286
+2026,CA,28,Napa,county,020000000000,GG,Governor,Rep,6407
+2026,CA,29,Nevada,county,020000000000,GG,Governor,Dem,16830
+2026,CA,29,Nevada,county,020000000000,GG,Governor,Rep,12047
+2026,CA,30,Orange,county,020000000000,GG,Governor,Dem,474794
+2026,CA,30,Orange,county,020000000000,GG,Governor,Rep,406860
+2026,CA,31,Placer,county,020000000000,GG,Governor,Dem,61321
+2026,CA,31,Placer,county,020000000000,GG,Governor,Rep,68507
+2026,CA,32,Plumas,county,020000000000,GG,Governor,Dem,3497
+2026,CA,32,Plumas,county,020000000000,GG,Governor,Rep,4652
+2026,CA,33,Riverside,county,020000000000,GG,Governor,Dem,229082
+2026,CA,33,Riverside,county,020000000000,GG,Governor,Rep,169053
+2026,CA,34,Sacramento,county,020000000000,GG,Governor,Dem,170865
+2026,CA,34,Sacramento,county,020000000000,GG,Governor,Rep,97424
+2026,CA,35,San Benito,county,020000000000,GG,Governor,Dem,6343
+2026,CA,35,San Benito,county,020000000000,GG,Governor,Rep,4074
+2026,CA,36,San Bernardino,county,020000000000,GG,Governor,Dem,245935
+2026,CA,36,San Bernardino,county,020000000000,GG,Governor,Rep,175286
+2026,CA,37,San Diego,county,020000000000,GG,Governor,Dem,490292
+2026,CA,37,San Diego,county,020000000000,GG,Governor,Rep,317213
+2026,CA,38,San Francisco,county,020000000000,GG,Governor,Dem,208648
+2026,CA,38,San Francisco,county,020000000000,GG,Governor,Rep,39525
+2026,CA,39,San Joaquin,county,020000000000,GG,Governor,Dem,68181
+2026,CA,39,San Joaquin,county,020000000000,GG,Governor,Rep,51743
+2026,CA,40,San Luis Obispo,county,020000000000,GG,Governor,Dem,41237
+2026,CA,40,San Luis Obispo,county,020000000000,GG,Governor,Rep,30244
+2026,CA,41,San Mateo,county,020000000000,GG,Governor,Dem,122164
+2026,CA,41,San Mateo,county,020000000000,GG,Governor,Rep,42784
+2026,CA,42,Santa Barbara,county,020000000000,GG,Governor,Dem,65699
+2026,CA,42,Santa Barbara,county,020000000000,GG,Governor,Rep,33903
+2026,CA,43,Santa Clara,county,020000000000,GG,Governor,Dem,248859
+2026,CA,43,Santa Clara,county,020000000000,GG,Governor,Rep,105901
+2026,CA,44,Santa Cruz,county,020000000000,GG,Governor,Dem,65158
+2026,CA,44,Santa Cruz,county,020000000000,GG,Governor,Rep,17147
+2026,CA,45,Shasta,county,020000000000,GG,Governor,Dem,12492
+2026,CA,45,Shasta,county,020000000000,GG,Governor,Rep,21983
+2026,CA,46,Sierra,county,020000000000,GG,Governor,Dem,550
+2026,CA,46,Sierra,county,020000000000,GG,Governor,Rep,919
+2026,CA,47,Siskiyou,county,020000000000,GG,Governor,Dem,5747
+2026,CA,47,Siskiyou,county,020000000000,GG,Governor,Rep,7979
+2026,CA,48,Solano,county,020000000000,GG,Governor,Dem,87015
+2026,CA,48,Solano,county,020000000000,GG,Governor,Rep,46786
+2026,CA,49,Sonoma,county,020000000000,GG,Governor,Dem,81217
+2026,CA,49,Sonoma,county,020000000000,GG,Governor,Rep,25698
+2026,CA,50,Stanislaus,county,020000000000,GG,Governor,Dem,52630
+2026,CA,50,Stanislaus,county,020000000000,GG,Governor,Rep,46790
+2026,CA,51,Sutter,county,020000000000,GG,Governor,Dem,5774
+2026,CA,51,Sutter,county,020000000000,GG,Governor,Rep,7824
+2026,CA,52,Tehama,county,020000000000,GG,Governor,Dem,5652
+2026,CA,52,Tehama,county,020000000000,GG,Governor,Rep,11375
+2026,CA,53,Trinity,county,020000000000,GG,Governor,Dem,1308
+2026,CA,53,Trinity,county,020000000000,GG,Governor,Rep,1424
+2026,CA,54,Tulare,county,020000000000,GG,Governor,Dem,34503
+2026,CA,54,Tulare,county,020000000000,GG,Governor,Rep,37266
+2026,CA,55,Tuolumne,county,020000000000,GG,Governor,Dem,7830
+2026,CA,55,Tuolumne,county,020000000000,GG,Governor,Rep,10679
+2026,CA,56,Ventura,county,020000000000,GG,Governor,Dem,125281
+2026,CA,56,Ventura,county,020000000000,GG,Governor,Rep,81241
+2026,CA,57,Yolo,county,020000000000,GG,Governor,Dem,33664
+2026,CA,57,Yolo,county,020000000000,GG,Governor,Rep,12284
+2026,CA,58,Yuba,county,020000000000,GG,Governor,Dem,3771
+2026,CA,58,Yuba,county,020000000000,GG,Governor,Rep,5141
+2026,CA,59,Statewide,statewide_or_districtwide,020000000000,GG,Governor,Dem,5681264
+2026,CA,59,Statewide,statewide_or_districtwide,020000000000,GG,Governor,Rep,3112092
+2026,CA,1,Alameda,county,030000000000,GG,Lieutenant Governor,Dem,244604
+2026,CA,1,Alameda,county,030000000000,GG,Lieutenant Governor,Rep,62781
+2026,CA,2,Alpine,county,030000000000,GG,Lieutenant Governor,Dem,357
+2026,CA,2,Alpine,county,030000000000,GG,Lieutenant Governor,Rep,193
+2026,CA,3,Amador,county,030000000000,GG,Lieutenant Governor,Dem,5708
+2026,CA,3,Amador,county,030000000000,GG,Lieutenant Governor,Rep,9465
+2026,CA,4,Butte,county,030000000000,GG,Lieutenant Governor,Dem,29289
+2026,CA,4,Butte,county,030000000000,GG,Lieutenant Governor,Rep,29414
+2026,CA,5,Calaveras,county,030000000000,GG,Lieutenant Governor,Dem,6184
+2026,CA,5,Calaveras,county,030000000000,GG,Lieutenant Governor,Rep,10091
+2026,CA,6,Colusa,county,030000000000,GG,Lieutenant Governor,Dem,1884
+2026,CA,6,Colusa,county,030000000000,GG,Lieutenant Governor,Rep,2406
+2026,CA,7,Contra Costa,county,030000000000,GG,Lieutenant Governor,Dem,187872
+2026,CA,7,Contra Costa,county,030000000000,GG,Lieutenant Governor,Rep,76899
+2026,CA,8,Del Norte,county,030000000000,GG,Lieutenant Governor,Dem,2611
+2026,CA,8,Del Norte,county,030000000000,GG,Lieutenant Governor,Rep,2868
+2026,CA,9,El Dorado,county,030000000000,GG,Lieutenant Governor,Dem,30535
+2026,CA,9,El Dorado,county,030000000000,GG,Lieutenant Governor,Rep,37854
+2026,CA,10,Fresno,county,030000000000,GG,Lieutenant Governor,Dem,87973
+2026,CA,10,Fresno,county,030000000000,GG,Lieutenant Governor,Rep,75861
+2026,CA,11,Glenn,county,030000000000,GG,Lieutenant Governor,Dem,1956
+2026,CA,11,Glenn,county,030000000000,GG,Lieutenant Governor,Rep,3568
+2026,CA,12,Humboldt,county,030000000000,GG,Lieutenant Governor,Dem,16594
+2026,CA,12,Humboldt,county,030000000000,GG,Lieutenant Governor,Rep,8405
+2026,CA,13,Imperial,county,030000000000,GG,Lieutenant Governor,Dem,15368
+2026,CA,13,Imperial,county,030000000000,GG,Lieutenant Governor,Rep,8748
+2026,CA,14,Inyo,county,030000000000,GG,Lieutenant Governor,Dem,3807
+2026,CA,14,Inyo,county,030000000000,GG,Lieutenant Governor,Rep,3444
+2026,CA,15,Kern,county,030000000000,GG,Lieutenant Governor,Dem,70087
+2026,CA,15,Kern,county,030000000000,GG,Lieutenant Governor,Rep,71683
+2026,CA,16,Kings,county,030000000000,GG,Lieutenant Governor,Dem,15283
+2026,CA,16,Kings,county,030000000000,GG,Lieutenant Governor,Rep,17126
+2026,CA,17,Lake,county,030000000000,GG,Lieutenant Governor,Dem,4282
+2026,CA,17,Lake,county,030000000000,GG,Lieutenant Governor,Rep,3358
+2026,CA,18,Lassen,county,030000000000,GG,Lieutenant Governor,Dem,1881
+2026,CA,18,Lassen,county,030000000000,GG,Lieutenant Governor,Rep,5677
+2026,CA,19,Los Angeles,county,030000000000,GG,Lieutenant Governor,Dem,1747577
+2026,CA,19,Los Angeles,county,030000000000,GG,Lieutenant Governor,Rep,687284
+2026,CA,20,Madera,county,030000000000,GG,Lieutenant Governor,Dem,14067
+2026,CA,20,Madera,county,030000000000,GG,Lieutenant Governor,Rep,15124
+2026,CA,21,Marin,county,030000000000,GG,Lieutenant Governor,Dem,54323
+2026,CA,21,Marin,county,030000000000,GG,Lieutenant Governor,Rep,13602
+2026,CA,22,Mariposa,county,030000000000,GG,Lieutenant Governor,Dem,3149
+2026,CA,22,Mariposa,county,030000000000,GG,Lieutenant Governor,Rep,4465
+2026,CA,23,Mendocino,county,030000000000,GG,Lieutenant Governor,Dem,11923
+2026,CA,23,Mendocino,county,030000000000,GG,Lieutenant Governor,Rep,5160
+2026,CA,24,Merced,county,030000000000,GG,Lieutenant Governor,Dem,23497
+2026,CA,24,Merced,county,030000000000,GG,Lieutenant Governor,Rep,17178
+2026,CA,25,Modoc,county,030000000000,GG,Lieutenant Governor,Dem,686
+2026,CA,25,Modoc,county,030000000000,GG,Lieutenant Governor,Rep,1660
+2026,CA,26,Mono,county,030000000000,GG,Lieutenant Governor,Dem,2967
+2026,CA,26,Mono,county,030000000000,GG,Lieutenant Governor,Rep,1864
+2026,CA,27,Monterey,county,030000000000,GG,Lieutenant Governor,Dem,62233
+2026,CA,27,Monterey,county,030000000000,GG,Lieutenant Governor,Rep,26167
+2026,CA,28,Napa,county,030000000000,GG,Lieutenant Governor,Dem,14190
+2026,CA,28,Napa,county,030000000000,GG,Lieutenant Governor,Rep,6333
+2026,CA,29,Nevada,county,030000000000,GG,Lieutenant Governor,Dem,16648
+2026,CA,29,Nevada,county,030000000000,GG,Lieutenant Governor,Rep,12094
+2026,CA,30,Orange,county,030000000000,GG,Lieutenant Governor,Dem,467316
+2026,CA,30,Orange,county,030000000000,GG,Lieutenant Governor,Rep,403200
+2026,CA,31,Placer,county,030000000000,GG,Lieutenant Governor,Dem,60268
+2026,CA,31,Placer,county,030000000000,GG,Lieutenant Governor,Rep,68545
+2026,CA,32,Plumas,county,030000000000,GG,Lieutenant Governor,Dem,3467
+2026,CA,32,Plumas,county,030000000000,GG,Lieutenant Governor,Rep,4615
+2026,CA,33,Riverside,county,030000000000,GG,Lieutenant Governor,Dem,223633
+2026,CA,33,Riverside,county,030000000000,GG,Lieutenant Governor,Rep,168605
+2026,CA,34,Sacramento,county,030000000000,GG,Lieutenant Governor,Dem,166791
+2026,CA,34,Sacramento,county,030000000000,GG,Lieutenant Governor,Rep,97105
+2026,CA,35,San Benito,county,030000000000,GG,Lieutenant Governor,Dem,6263
+2026,CA,35,San Benito,county,030000000000,GG,Lieutenant Governor,Rep,4046
+2026,CA,36,San Bernardino,county,030000000000,GG,Lieutenant Governor,Dem,240813
+2026,CA,36,San Bernardino,county,030000000000,GG,Lieutenant Governor,Rep,176695
+2026,CA,37,San Diego,county,030000000000,GG,Lieutenant Governor,Dem,484981
+2026,CA,37,San Diego,county,030000000000,GG,Lieutenant Governor,Rep,315421
+2026,CA,38,San Francisco,county,030000000000,GG,Lieutenant Governor,Dem,204871
+2026,CA,38,San Francisco,county,030000000000,GG,Lieutenant Governor,Rep,34363
+2026,CA,39,San Joaquin,county,030000000000,GG,Lieutenant Governor,Dem,66754
+2026,CA,39,San Joaquin,county,030000000000,GG,Lieutenant Governor,Rep,51991
+2026,CA,40,San Luis Obispo,county,030000000000,GG,Lieutenant Governor,Dem,41283
+2026,CA,40,San Luis Obispo,county,030000000000,GG,Lieutenant Governor,Rep,29858
+2026,CA,41,San Mateo,county,030000000000,GG,Lieutenant Governor,Dem,121388
+2026,CA,41,San Mateo,county,030000000000,GG,Lieutenant Governor,Rep,41046
+2026,CA,42,Santa Barbara,county,030000000000,GG,Lieutenant Governor,Dem,65003
+2026,CA,42,Santa Barbara,county,030000000000,GG,Lieutenant Governor,Rep,33516
+2026,CA,43,Santa Clara,county,030000000000,GG,Lieutenant Governor,Dem,248530
+2026,CA,43,Santa Clara,county,030000000000,GG,Lieutenant Governor,Rep,103003
+2026,CA,44,Santa Cruz,county,030000000000,GG,Lieutenant Governor,Dem,65081
+2026,CA,44,Santa Cruz,county,030000000000,GG,Lieutenant Governor,Rep,16713
+2026,CA,45,Shasta,county,030000000000,GG,Lieutenant Governor,Dem,12368
+2026,CA,45,Shasta,county,030000000000,GG,Lieutenant Governor,Rep,21872
+2026,CA,46,Sierra,county,030000000000,GG,Lieutenant Governor,Dem,552
+2026,CA,46,Sierra,county,030000000000,GG,Lieutenant Governor,Rep,898
+2026,CA,47,Siskiyou,county,030000000000,GG,Lieutenant Governor,Dem,5804
+2026,CA,47,Siskiyou,county,030000000000,GG,Lieutenant Governor,Rep,7849
+2026,CA,48,Solano,county,030000000000,GG,Lieutenant Governor,Dem,86169
+2026,CA,48,Solano,county,030000000000,GG,Lieutenant Governor,Rep,46636
+2026,CA,49,Sonoma,county,030000000000,GG,Lieutenant Governor,Dem,80786
+2026,CA,49,Sonoma,county,030000000000,GG,Lieutenant Governor,Rep,25362
+2026,CA,50,Stanislaus,county,030000000000,GG,Lieutenant Governor,Dem,51551
+2026,CA,50,Stanislaus,county,030000000000,GG,Lieutenant Governor,Rep,46725
+2026,CA,51,Sutter,county,030000000000,GG,Lieutenant Governor,Dem,5652
+2026,CA,51,Sutter,county,030000000000,GG,Lieutenant Governor,Rep,7800
+2026,CA,52,Tehama,county,030000000000,GG,Lieutenant Governor,Dem,5674
+2026,CA,52,Tehama,county,030000000000,GG,Lieutenant Governor,Rep,11236
+2026,CA,53,Trinity,county,030000000000,GG,Lieutenant Governor,Dem,1321
+2026,CA,53,Trinity,county,030000000000,GG,Lieutenant Governor,Rep,1396
+2026,CA,54,Tulare,county,030000000000,GG,Lieutenant Governor,Dem,34004
+2026,CA,54,Tulare,county,030000000000,GG,Lieutenant Governor,Rep,37091
+2026,CA,55,Tuolumne,county,030000000000,GG,Lieutenant Governor,Dem,7750
+2026,CA,55,Tuolumne,county,030000000000,GG,Lieutenant Governor,Rep,10600
+2026,CA,56,Ventura,county,030000000000,GG,Lieutenant Governor,Dem,122994
+2026,CA,56,Ventura,county,030000000000,GG,Lieutenant Governor,Rep,80808
+2026,CA,57,Yolo,county,030000000000,GG,Lieutenant Governor,Dem,33038
+2026,CA,57,Yolo,county,030000000000,GG,Lieutenant Governor,Rep,12498
+2026,CA,58,Yuba,county,030000000000,GG,Lieutenant Governor,Dem,3693
+2026,CA,58,Yuba,county,030000000000,GG,Lieutenant Governor,Rep,5155
+2026,CA,59,Statewide,statewide_or_districtwide,030000000000,GG,Lieutenant Governor,Dem,5595333
+2026,CA,59,Statewide,statewide_or_districtwide,030000000000,GG,Lieutenant Governor,Rep,3085420
+2026,CA,1,Alameda,county,040000000000,GG,Secretary of State,Dem,244737
+2026,CA,1,Alameda,county,040000000000,GG,Secretary of State,Rep,61778
+2026,CA,2,Alpine,county,040000000000,GG,Secretary of State,Dem,373
+2026,CA,2,Alpine,county,040000000000,GG,Secretary of State,Rep,176
+2026,CA,3,Amador,county,040000000000,GG,Secretary of State,Dem,5874
+2026,CA,3,Amador,county,040000000000,GG,Secretary of State,Rep,9323
+2026,CA,4,Butte,county,040000000000,GG,Secretary of State,Dem,29627
+2026,CA,4,Butte,county,040000000000,GG,Secretary of State,Rep,29032
+2026,CA,5,Calaveras,county,040000000000,GG,Secretary of State,Dem,6367
+2026,CA,5,Calaveras,county,040000000000,GG,Secretary of State,Rep,9870
+2026,CA,6,Colusa,county,040000000000,GG,Secretary of State,Dem,1979
+2026,CA,6,Colusa,county,040000000000,GG,Secretary of State,Rep,2282
+2026,CA,7,Contra Costa,county,040000000000,GG,Secretary of State,Dem,189302
+2026,CA,7,Contra Costa,county,040000000000,GG,Secretary of State,Rep,75378
+2026,CA,8,Del Norte,county,040000000000,GG,Secretary of State,Dem,2652
+2026,CA,8,Del Norte,county,040000000000,GG,Secretary of State,Rep,2812
+2026,CA,9,El Dorado,county,040000000000,GG,Secretary of State,Dem,31470
+2026,CA,9,El Dorado,county,040000000000,GG,Secretary of State,Rep,36979
+2026,CA,10,Fresno,county,040000000000,GG,Secretary of State,Dem,89869
+2026,CA,10,Fresno,county,040000000000,GG,Secretary of State,Rep,73314
+2026,CA,11,Glenn,county,040000000000,GG,Secretary of State,Dem,1953
+2026,CA,11,Glenn,county,040000000000,GG,Secretary of State,Rep,3576
+2026,CA,12,Humboldt,county,040000000000,GG,Secretary of State,Dem,16709
+2026,CA,12,Humboldt,county,040000000000,GG,Secretary of State,Rep,8198
+2026,CA,13,Imperial,county,040000000000,GG,Secretary of State,Dem,15856
+2026,CA,13,Imperial,county,040000000000,GG,Secretary of State,Rep,8107
+2026,CA,14,Inyo,county,040000000000,GG,Secretary of State,Dem,3834
+2026,CA,14,Inyo,county,040000000000,GG,Secretary of State,Rep,3390
+2026,CA,15,Kern,county,040000000000,GG,Secretary of State,Dem,71970
+2026,CA,15,Kern,county,040000000000,GG,Secretary of State,Rep,69672
+2026,CA,16,Kings,county,040000000000,GG,Secretary of State,Dem,15700
+2026,CA,16,Kings,county,040000000000,GG,Secretary of State,Rep,16836
+2026,CA,17,Lake,county,040000000000,GG,Secretary of State,Dem,4358
+2026,CA,17,Lake,county,040000000000,GG,Secretary of State,Rep,3311
+2026,CA,18,Lassen,county,040000000000,GG,Secretary of State,Dem,1912
+2026,CA,18,Lassen,county,040000000000,GG,Secretary of State,Rep,5642
+2026,CA,19,Los Angeles,county,040000000000,GG,Secretary of State,Dem,1775622
+2026,CA,19,Los Angeles,county,040000000000,GG,Secretary of State,Rep,653728
+2026,CA,20,Madera,county,040000000000,GG,Secretary of State,Dem,14350
+2026,CA,20,Madera,county,040000000000,GG,Secretary of State,Rep,14786
+2026,CA,21,Marin,county,040000000000,GG,Secretary of State,Dem,54481
+2026,CA,21,Marin,county,040000000000,GG,Secretary of State,Rep,13215
+2026,CA,22,Mariposa,county,040000000000,GG,Secretary of State,Dem,3156
+2026,CA,22,Mariposa,county,040000000000,GG,Secretary of State,Rep,4442
+2026,CA,23,Mendocino,county,040000000000,GG,Secretary of State,Dem,12171
+2026,CA,23,Mendocino,county,040000000000,GG,Secretary of State,Rep,5122
+2026,CA,24,Merced,county,040000000000,GG,Secretary of State,Dem,24199
+2026,CA,24,Merced,county,040000000000,GG,Secretary of State,Rep,16764
+2026,CA,25,Modoc,county,040000000000,GG,Secretary of State,Dem,707
+2026,CA,25,Modoc,county,040000000000,GG,Secretary of State,Rep,1699
+2026,CA,26,Mono,county,040000000000,GG,Secretary of State,Dem,3023
+2026,CA,26,Mono,county,040000000000,GG,Secretary of State,Rep,1806
+2026,CA,27,Monterey,county,040000000000,GG,Secretary of State,Dem,63056
+2026,CA,27,Monterey,county,040000000000,GG,Secretary of State,Rep,25395
+2026,CA,28,Napa,county,040000000000,GG,Secretary of State,Dem,14259
+2026,CA,28,Napa,county,040000000000,GG,Secretary of State,Rep,6220
+2026,CA,29,Nevada,county,040000000000,GG,Secretary of State,Dem,16881
+2026,CA,29,Nevada,county,040000000000,GG,Secretary of State,Rep,11844
+2026,CA,30,Orange,county,040000000000,GG,Secretary of State,Dem,467894
+2026,CA,30,Orange,county,040000000000,GG,Secretary of State,Rep,402473
+2026,CA,31,Placer,county,040000000000,GG,Secretary of State,Dem,61604
+2026,CA,31,Placer,county,040000000000,GG,Secretary of State,Rep,67022
+2026,CA,32,Plumas,county,040000000000,GG,Secretary of State,Dem,3525
+2026,CA,32,Plumas,county,040000000000,GG,Secretary of State,Rep,4564
+2026,CA,33,Riverside,county,040000000000,GG,Secretary of State,Dem,228643
+2026,CA,33,Riverside,county,040000000000,GG,Secretary of State,Rep,165684
+2026,CA,34,Sacramento,county,040000000000,GG,Secretary of State,Dem,170342
+2026,CA,34,Sacramento,county,040000000000,GG,Secretary of State,Rep,94201
+2026,CA,35,San Benito,county,040000000000,GG,Secretary of State,Dem,6439
+2026,CA,35,San Benito,county,040000000000,GG,Secretary of State,Rep,3893
+2026,CA,36,San Bernardino,county,040000000000,GG,Secretary of State,Dem,245689
+2026,CA,36,San Bernardino,county,040000000000,GG,Secretary of State,Rep,170608
+2026,CA,37,San Diego,county,040000000000,GG,Secretary of State,Dem,491998
+2026,CA,37,San Diego,county,040000000000,GG,Secretary of State,Rep,307746
+2026,CA,38,San Francisco,county,040000000000,GG,Secretary of State,Dem,207239
+2026,CA,38,San Francisco,county,040000000000,GG,Secretary of State,Rep,32920
+2026,CA,39,San Joaquin,county,040000000000,GG,Secretary of State,Dem,69053
+2026,CA,39,San Joaquin,county,040000000000,GG,Secretary of State,Rep,49644
+2026,CA,40,San Luis Obispo,county,040000000000,GG,Secretary of State,Dem,41330
+2026,CA,40,San Luis Obispo,county,040000000000,GG,Secretary of State,Rep,29369
+2026,CA,41,San Mateo,county,040000000000,GG,Secretary of State,Dem,122298
+2026,CA,41,San Mateo,county,040000000000,GG,Secretary of State,Rep,40379
+2026,CA,42,Santa Barbara,county,040000000000,GG,Secretary of State,Dem,65858
+2026,CA,42,Santa Barbara,county,040000000000,GG,Secretary of State,Rep,32523
+2026,CA,43,Santa Clara,county,040000000000,GG,Secretary of State,Dem,247886
+2026,CA,43,Santa Clara,county,040000000000,GG,Secretary of State,Rep,102209
+2026,CA,44,Santa Cruz,county,040000000000,GG,Secretary of State,Dem,65477
+2026,CA,44,Santa Cruz,county,040000000000,GG,Secretary of State,Rep,16262
+2026,CA,45,Shasta,county,040000000000,GG,Secretary of State,Dem,12627
+2026,CA,45,Shasta,county,040000000000,GG,Secretary of State,Rep,21573
+2026,CA,46,Sierra,county,040000000000,GG,Secretary of State,Dem,565
+2026,CA,46,Sierra,county,040000000000,GG,Secretary of State,Rep,881
+2026,CA,47,Siskiyou,county,040000000000,GG,Secretary of State,Dem,5871
+2026,CA,47,Siskiyou,county,040000000000,GG,Secretary of State,Rep,7711
+2026,CA,48,Solano,county,040000000000,GG,Secretary of State,Dem,87925
+2026,CA,48,Solano,county,040000000000,GG,Secretary of State,Rep,44616
+2026,CA,49,Sonoma,county,040000000000,GG,Secretary of State,Dem,81047
+2026,CA,49,Sonoma,county,040000000000,GG,Secretary of State,Rep,24866
+2026,CA,50,Stanislaus,county,040000000000,GG,Secretary of State,Dem,53047
+2026,CA,50,Stanislaus,county,040000000000,GG,Secretary of State,Rep,45563
+2026,CA,51,Sutter,county,040000000000,GG,Secretary of State,Dem,5894
+2026,CA,51,Sutter,county,040000000000,GG,Secretary of State,Rep,7563
+2026,CA,52,Tehama,county,040000000000,GG,Secretary of State,Dem,5808
+2026,CA,52,Tehama,county,040000000000,GG,Secretary of State,Rep,11086
+2026,CA,53,Trinity,county,040000000000,GG,Secretary of State,Dem,1335
+2026,CA,53,Trinity,county,040000000000,GG,Secretary of State,Rep,1376
+2026,CA,54,Tulare,county,040000000000,GG,Secretary of State,Dem,34716
+2026,CA,54,Tulare,county,040000000000,GG,Secretary of State,Rep,36295
+2026,CA,55,Tuolumne,county,040000000000,GG,Secretary of State,Dem,7917
+2026,CA,55,Tuolumne,county,040000000000,GG,Secretary of State,Rep,10355
+2026,CA,56,Ventura,county,040000000000,GG,Secretary of State,Dem,124776
+2026,CA,56,Ventura,county,040000000000,GG,Secretary of State,Rep,78906
+2026,CA,57,Yolo,county,040000000000,GG,Secretary of State,Dem,33703
+2026,CA,57,Yolo,county,040000000000,GG,Secretary of State,Rep,11891
+2026,CA,58,Yuba,county,040000000000,GG,Secretary of State,Dem,3829
+2026,CA,58,Yuba,county,040000000000,GG,Secretary of State,Rep,5015
+2026,CA,59,Statewide,statewide_or_districtwide,040000000000,GG,Secretary of State,Dem,5670782
+2026,CA,59,Statewide,statewide_or_districtwide,040000000000,GG,Secretary of State,Rep,3001891
+2026,CA,1,Alameda,county,050000000000,GG,Controller,Dem,239832
+2026,CA,1,Alameda,county,050000000000,GG,Controller,Rep,65686
+2026,CA,2,Alpine,county,050000000000,GG,Controller,Dem,361
+2026,CA,2,Alpine,county,050000000000,GG,Controller,Rep,189
+2026,CA,3,Amador,county,050000000000,GG,Controller,Dem,5860
+2026,CA,3,Amador,county,050000000000,GG,Controller,Rep,9275
+2026,CA,4,Butte,county,050000000000,GG,Controller,Dem,29106
+2026,CA,4,Butte,county,050000000000,GG,Controller,Rep,28613
+2026,CA,5,Calaveras,county,050000000000,GG,Controller,Dem,6271
+2026,CA,5,Calaveras,county,050000000000,GG,Controller,Rep,9971
+2026,CA,6,Colusa,county,050000000000,GG,Controller,Dem,1923
+2026,CA,6,Colusa,county,050000000000,GG,Controller,Rep,2323
+2026,CA,7,Contra Costa,county,050000000000,GG,Controller,Dem,184976
+2026,CA,7,Contra Costa,county,050000000000,GG,Controller,Rep,78359
+2026,CA,8,Del Norte,county,050000000000,GG,Controller,Dem,2591
+2026,CA,8,Del Norte,county,050000000000,GG,Controller,Rep,2814
+2026,CA,9,El Dorado,county,050000000000,GG,Controller,Dem,30558
+2026,CA,9,El Dorado,county,050000000000,GG,Controller,Rep,37617
+2026,CA,10,Fresno,county,050000000000,GG,Controller,Dem,88547
+2026,CA,10,Fresno,county,050000000000,GG,Controller,Rep,74261
+2026,CA,11,Glenn,county,050000000000,GG,Controller,Dem,1936
+2026,CA,11,Glenn,county,050000000000,GG,Controller,Rep,3591
+2026,CA,12,Humboldt,county,050000000000,GG,Controller,Dem,16645
+2026,CA,12,Humboldt,county,050000000000,GG,Controller,Rep,8230
+2026,CA,13,Imperial,county,050000000000,GG,Controller,Dem,15706
+2026,CA,13,Imperial,county,050000000000,GG,Controller,Rep,8334
+2026,CA,14,Inyo,county,050000000000,GG,Controller,Dem,3750
+2026,CA,14,Inyo,county,050000000000,GG,Controller,Rep,3346
+2026,CA,15,Kern,county,050000000000,GG,Controller,Dem,70689
+2026,CA,15,Kern,county,050000000000,GG,Controller,Rep,70413
+2026,CA,16,Kings,county,050000000000,GG,Controller,Dem,15607
+2026,CA,16,Kings,county,050000000000,GG,Controller,Rep,16861
+2026,CA,17,Lake,county,050000000000,GG,Controller,Dem,4317
+2026,CA,17,Lake,county,050000000000,GG,Controller,Rep,3323
+2026,CA,18,Lassen,county,050000000000,GG,Controller,Dem,1931
+2026,CA,18,Lassen,county,050000000000,GG,Controller,Rep,5599
+2026,CA,19,Los Angeles,county,050000000000,GG,Controller,Dem,1741050
+2026,CA,19,Los Angeles,county,050000000000,GG,Controller,Rep,674668
+2026,CA,20,Madera,county,050000000000,GG,Controller,Dem,14170
+2026,CA,20,Madera,county,050000000000,GG,Controller,Rep,14928
+2026,CA,21,Marin,county,050000000000,GG,Controller,Dem,52580
+2026,CA,21,Marin,county,050000000000,GG,Controller,Rep,14301
+2026,CA,22,Mariposa,county,050000000000,GG,Controller,Dem,3123
+2026,CA,22,Mariposa,county,050000000000,GG,Controller,Rep,4421
+2026,CA,23,Mendocino,county,050000000000,GG,Controller,Dem,12018
+2026,CA,23,Mendocino,county,050000000000,GG,Controller,Rep,5195
+2026,CA,24,Merced,county,050000000000,GG,Controller,Dem,23940
+2026,CA,24,Merced,county,050000000000,GG,Controller,Rep,16853
+2026,CA,25,Modoc,county,050000000000,GG,Controller,Dem,705
+2026,CA,25,Modoc,county,050000000000,GG,Controller,Rep,1694
+2026,CA,26,Mono,county,050000000000,GG,Controller,Dem,2966
+2026,CA,26,Mono,county,050000000000,GG,Controller,Rep,1817
+2026,CA,27,Monterey,county,050000000000,GG,Controller,Dem,61941
+2026,CA,27,Monterey,county,050000000000,GG,Controller,Rep,25967
+2026,CA,28,Napa,county,050000000000,GG,Controller,Dem,13968
+2026,CA,28,Napa,county,050000000000,GG,Controller,Rep,6452
+2026,CA,29,Nevada,county,050000000000,GG,Controller,Dem,16646
+2026,CA,29,Nevada,county,050000000000,GG,Controller,Rep,11949
+2026,CA,30,Orange,county,050000000000,GG,Controller,Dem,461820
+2026,CA,30,Orange,county,050000000000,GG,Controller,Rep,403653
+2026,CA,31,Placer,county,050000000000,GG,Controller,Dem,60304
+2026,CA,31,Placer,county,050000000000,GG,Controller,Rep,67773
+2026,CA,32,Plumas,county,050000000000,GG,Controller,Dem,3482
+2026,CA,32,Plumas,county,050000000000,GG,Controller,Rep,4489
+2026,CA,33,Riverside,county,050000000000,GG,Controller,Dem,226193
+2026,CA,33,Riverside,county,050000000000,GG,Controller,Rep,166848
+2026,CA,34,Sacramento,county,050000000000,GG,Controller,Dem,166554
+2026,CA,34,Sacramento,county,050000000000,GG,Controller,Rep,97021
+2026,CA,35,San Benito,county,050000000000,GG,Controller,Dem,6311
+2026,CA,35,San Benito,county,050000000000,GG,Controller,Rep,3969
+2026,CA,36,San Bernardino,county,050000000000,GG,Controller,Dem,242654
+2026,CA,36,San Bernardino,county,050000000000,GG,Controller,Rep,172314
+2026,CA,37,San Diego,county,050000000000,GG,Controller,Dem,478670
+2026,CA,37,San Diego,county,050000000000,GG,Controller,Rep,317164
+2026,CA,38,San Francisco,county,050000000000,GG,Controller,Dem,201273
+2026,CA,38,San Francisco,county,050000000000,GG,Controller,Rep,36435
+2026,CA,39,San Joaquin,county,050000000000,GG,Controller,Dem,67801
+2026,CA,39,San Joaquin,county,050000000000,GG,Controller,Rep,50372
+2026,CA,40,San Luis Obispo,county,050000000000,GG,Controller,Dem,40548
+2026,CA,40,San Luis Obispo,county,050000000000,GG,Controller,Rep,30068
+2026,CA,41,San Mateo,county,050000000000,GG,Controller,Dem,119154
+2026,CA,41,San Mateo,county,050000000000,GG,Controller,Rep,42456
+2026,CA,42,Santa Barbara,county,050000000000,GG,Controller,Dem,64579
+2026,CA,42,Santa Barbara,county,050000000000,GG,Controller,Rep,33143
+2026,CA,43,Santa Clara,county,050000000000,GG,Controller,Dem,243486
+2026,CA,43,Santa Clara,county,050000000000,GG,Controller,Rep,106044
+2026,CA,44,Santa Cruz,county,050000000000,GG,Controller,Dem,63725
+2026,CA,44,Santa Cruz,county,050000000000,GG,Controller,Rep,16929
+2026,CA,45,Shasta,county,050000000000,GG,Controller,Dem,12558
+2026,CA,45,Shasta,county,050000000000,GG,Controller,Rep,21557
+2026,CA,46,Sierra,county,050000000000,GG,Controller,Dem,574
+2026,CA,46,Sierra,county,050000000000,GG,Controller,Rep,866
+2026,CA,47,Siskiyou,county,050000000000,GG,Controller,Dem,5861
+2026,CA,47,Siskiyou,county,050000000000,GG,Controller,Rep,7963
+2026,CA,48,Solano,county,050000000000,GG,Controller,Dem,86959
+2026,CA,48,Solano,county,050000000000,GG,Controller,Rep,45193
+2026,CA,49,Sonoma,county,050000000000,GG,Controller,Dem,79818
+2026,CA,49,Sonoma,county,050000000000,GG,Controller,Rep,25894
+2026,CA,50,Stanislaus,county,050000000000,GG,Controller,Dem,51769
+2026,CA,50,Stanislaus,county,050000000000,GG,Controller,Rep,46166
+2026,CA,51,Sutter,county,050000000000,GG,Controller,Dem,5809
+2026,CA,51,Sutter,county,050000000000,GG,Controller,Rep,7555
+2026,CA,52,Tehama,county,050000000000,GG,Controller,Dem,5781
+2026,CA,52,Tehama,county,050000000000,GG,Controller,Rep,10990
+2026,CA,53,Trinity,county,050000000000,GG,Controller,Dem,1324
+2026,CA,53,Trinity,county,050000000000,GG,Controller,Rep,1388
+2026,CA,54,Tulare,county,050000000000,GG,Controller,Dem,34662
+2026,CA,54,Tulare,county,050000000000,GG,Controller,Rep,36607
+2026,CA,55,Tuolumne,county,050000000000,GG,Controller,Dem,7784
+2026,CA,55,Tuolumne,county,050000000000,GG,Controller,Rep,10422
+2026,CA,56,Ventura,county,050000000000,GG,Controller,Dem,123324
+2026,CA,56,Ventura,county,050000000000,GG,Controller,Rep,80684
+2026,CA,57,Yolo,county,050000000000,GG,Controller,Dem,32776
+2026,CA,57,Yolo,county,050000000000,GG,Controller,Rep,12554
+2026,CA,58,Yuba,county,050000000000,GG,Controller,Dem,3761
+2026,CA,58,Yuba,county,050000000000,GG,Controller,Rep,5049
+2026,CA,59,Statewide,statewide_or_districtwide,050000000000,GG,Controller,Dem,5563027
+2026,CA,59,Statewide,statewide_or_districtwide,050000000000,GG,Controller,Rep,3068616
+2026,CA,1,Alameda,county,060000000000,GG,Treasurer,Dem,240401
+2026,CA,1,Alameda,county,060000000000,GG,Treasurer,Rep,63689
+2026,CA,2,Alpine,county,060000000000,GG,Treasurer,Dem,354
+2026,CA,2,Alpine,county,060000000000,GG,Treasurer,Rep,191
+2026,CA,3,Amador,county,060000000000,GG,Treasurer,Dem,5680
+2026,CA,3,Amador,county,060000000000,GG,Treasurer,Rep,9419
+2026,CA,4,Butte,county,060000000000,GG,Treasurer,Dem,28726
+2026,CA,4,Butte,county,060000000000,GG,Treasurer,Rep,29420
+2026,CA,5,Calaveras,county,060000000000,GG,Treasurer,Dem,6192
+2026,CA,5,Calaveras,county,060000000000,GG,Treasurer,Rep,10077
+2026,CA,6,Colusa,county,060000000000,GG,Treasurer,Dem,1892
+2026,CA,6,Colusa,county,060000000000,GG,Treasurer,Rep,2351
+2026,CA,7,Contra Costa,county,060000000000,GG,Treasurer,Dem,186996
+2026,CA,7,Contra Costa,county,060000000000,GG,Treasurer,Rep,77197
+2026,CA,8,Del Norte,county,060000000000,GG,Treasurer,Dem,2581
+2026,CA,8,Del Norte,county,060000000000,GG,Treasurer,Rep,2857
+2026,CA,9,El Dorado,county,060000000000,GG,Treasurer,Dem,30540
+2026,CA,9,El Dorado,county,060000000000,GG,Treasurer,Rep,37621
+2026,CA,10,Fresno,county,060000000000,GG,Treasurer,Dem,88117
+2026,CA,10,Fresno,county,060000000000,GG,Treasurer,Rep,74835
+2026,CA,11,Glenn,county,060000000000,GG,Treasurer,Dem,1886
+2026,CA,11,Glenn,county,060000000000,GG,Treasurer,Rep,3637
+2026,CA,12,Humboldt,county,060000000000,GG,Treasurer,Dem,16437
+2026,CA,12,Humboldt,county,060000000000,GG,Treasurer,Rep,8420
+2026,CA,13,Imperial,county,060000000000,GG,Treasurer,Dem,15451
+2026,CA,13,Imperial,county,060000000000,GG,Treasurer,Rep,8649
+2026,CA,14,Inyo,county,060000000000,GG,Treasurer,Dem,3709
+2026,CA,14,Inyo,county,060000000000,GG,Treasurer,Rep,3425
+2026,CA,15,Kern,county,060000000000,GG,Treasurer,Dem,70342
+2026,CA,15,Kern,county,060000000000,GG,Treasurer,Rep,70785
+2026,CA,16,Kings,county,060000000000,GG,Treasurer,Dem,15308
+2026,CA,16,Kings,county,060000000000,GG,Treasurer,Rep,17165
+2026,CA,17,Lake,county,060000000000,GG,Treasurer,Dem,4246
+2026,CA,17,Lake,county,060000000000,GG,Treasurer,Rep,3372
+2026,CA,18,Lassen,county,060000000000,GG,Treasurer,Dem,1839
+2026,CA,18,Lassen,county,060000000000,GG,Treasurer,Rep,5703
+2026,CA,19,Los Angeles,county,060000000000,GG,Treasurer,Dem,1747036
+2026,CA,19,Los Angeles,county,060000000000,GG,Treasurer,Rep,667102
+2026,CA,20,Madera,county,060000000000,GG,Treasurer,Dem,14052
+2026,CA,20,Madera,county,060000000000,GG,Treasurer,Rep,15054
+2026,CA,21,Marin,county,060000000000,GG,Treasurer,Dem,53919
+2026,CA,21,Marin,county,060000000000,GG,Treasurer,Rep,13372
+2026,CA,22,Mariposa,county,060000000000,GG,Treasurer,Dem,3087
+2026,CA,22,Mariposa,county,060000000000,GG,Treasurer,Rep,4456
+2026,CA,23,Mendocino,county,060000000000,GG,Treasurer,Dem,11934
+2026,CA,23,Mendocino,county,060000000000,GG,Treasurer,Rep,5256
+2026,CA,24,Merced,county,060000000000,GG,Treasurer,Dem,23781
+2026,CA,24,Merced,county,060000000000,GG,Treasurer,Rep,17284
+2026,CA,25,Modoc,county,060000000000,GG,Treasurer,Dem,656
+2026,CA,25,Modoc,county,060000000000,GG,Treasurer,Rep,1728
+2026,CA,26,Mono,county,060000000000,GG,Treasurer,Dem,2922
+2026,CA,26,Mono,county,060000000000,GG,Treasurer,Rep,1824
+2026,CA,27,Monterey,county,060000000000,GG,Treasurer,Dem,62198
+2026,CA,27,Monterey,county,060000000000,GG,Treasurer,Rep,25973
+2026,CA,28,Napa,county,060000000000,GG,Treasurer,Dem,14069
+2026,CA,28,Napa,county,060000000000,GG,Treasurer,Rep,6325
+2026,CA,29,Nevada,county,060000000000,GG,Treasurer,Dem,16587
+2026,CA,29,Nevada,county,060000000000,GG,Treasurer,Rep,12007
+2026,CA,30,Orange,county,060000000000,GG,Treasurer,Dem,465417
+2026,CA,30,Orange,county,060000000000,GG,Treasurer,Rep,399737
+2026,CA,31,Placer,county,060000000000,GG,Treasurer,Dem,59316
+2026,CA,31,Placer,county,060000000000,GG,Treasurer,Rep,66620
+2026,CA,32,Plumas,county,060000000000,GG,Treasurer,Dem,3383
+2026,CA,32,Plumas,county,060000000000,GG,Treasurer,Rep,4636
+2026,CA,33,Riverside,county,060000000000,GG,Treasurer,Dem,225436
+2026,CA,33,Riverside,county,060000000000,GG,Treasurer,Rep,167692
+2026,CA,34,Sacramento,county,060000000000,GG,Treasurer,Dem,166402
+2026,CA,34,Sacramento,county,060000000000,GG,Treasurer,Rep,96551
+2026,CA,35,San Benito,county,060000000000,GG,Treasurer,Dem,6286
+2026,CA,35,San Benito,county,060000000000,GG,Treasurer,Rep,4018
+2026,CA,36,San Bernardino,county,060000000000,GG,Treasurer,Dem,241904
+2026,CA,36,San Bernardino,county,060000000000,GG,Treasurer,Rep,173139
+2026,CA,37,San Diego,county,060000000000,GG,Treasurer,Dem,483518
+2026,CA,37,San Diego,county,060000000000,GG,Treasurer,Rep,314198
+2026,CA,38,San Francisco,county,060000000000,GG,Treasurer,Dem,202042
+2026,CA,38,San Francisco,county,060000000000,GG,Treasurer,Rep,34920
+2026,CA,39,San Joaquin,county,060000000000,GG,Treasurer,Dem,67787
+2026,CA,39,San Joaquin,county,060000000000,GG,Treasurer,Rep,50818
+2026,CA,40,San Luis Obispo,county,060000000000,GG,Treasurer,Dem,40889
+2026,CA,40,San Luis Obispo,county,060000000000,GG,Treasurer,Rep,29821
+2026,CA,41,San Mateo,county,060000000000,GG,Treasurer,Dem,120538
+2026,CA,41,San Mateo,county,060000000000,GG,Treasurer,Rep,41538
+2026,CA,42,Santa Barbara,county,060000000000,GG,Treasurer,Dem,64961
+2026,CA,42,Santa Barbara,county,060000000000,GG,Treasurer,Rep,33221
+2026,CA,43,Santa Clara,county,060000000000,GG,Treasurer,Dem,244487
+2026,CA,43,Santa Clara,county,060000000000,GG,Treasurer,Rep,104920
+2026,CA,44,Santa Cruz,county,060000000000,GG,Treasurer,Dem,64427
+2026,CA,44,Santa Cruz,county,060000000000,GG,Treasurer,Rep,16730
+2026,CA,45,Shasta,county,060000000000,GG,Treasurer,Dem,12196
+2026,CA,45,Shasta,county,060000000000,GG,Treasurer,Rep,21894
+2026,CA,46,Sierra,county,060000000000,GG,Treasurer,Dem,552
+2026,CA,46,Sierra,county,060000000000,GG,Treasurer,Rep,896
+2026,CA,47,Siskiyou,county,060000000000,GG,Treasurer,Dem,5686
+2026,CA,47,Siskiyou,county,060000000000,GG,Treasurer,Rep,7913
+2026,CA,48,Solano,county,060000000000,GG,Treasurer,Dem,86279
+2026,CA,48,Solano,county,060000000000,GG,Treasurer,Rep,45719
+2026,CA,49,Sonoma,county,060000000000,GG,Treasurer,Dem,79958
+2026,CA,49,Sonoma,county,060000000000,GG,Treasurer,Rep,25485
+2026,CA,50,Stanislaus,county,060000000000,GG,Treasurer,Dem,51791
+2026,CA,50,Stanislaus,county,060000000000,GG,Treasurer,Rep,46153
+2026,CA,51,Sutter,county,060000000000,GG,Treasurer,Dem,5689
+2026,CA,51,Sutter,county,060000000000,GG,Treasurer,Rep,7643
+2026,CA,52,Tehama,county,060000000000,GG,Treasurer,Dem,5552
+2026,CA,52,Tehama,county,060000000000,GG,Treasurer,Rep,11177
+2026,CA,53,Trinity,county,060000000000,GG,Treasurer,Dem,1292
+2026,CA,53,Trinity,county,060000000000,GG,Treasurer,Rep,1408
+2026,CA,54,Tulare,county,060000000000,GG,Treasurer,Dem,34057
+2026,CA,54,Tulare,county,060000000000,GG,Treasurer,Rep,37010
+2026,CA,55,Tuolumne,county,060000000000,GG,Treasurer,Dem,7700
+2026,CA,55,Tuolumne,county,060000000000,GG,Treasurer,Rep,10514
+2026,CA,56,Ventura,county,060000000000,GG,Treasurer,Dem,122926
+2026,CA,56,Ventura,county,060000000000,GG,Treasurer,Rep,80892
+2026,CA,57,Yolo,county,060000000000,GG,Treasurer,Dem,33033
+2026,CA,57,Yolo,county,060000000000,GG,Treasurer,Rep,12246
+2026,CA,58,Yuba,county,060000000000,GG,Treasurer,Dem,3697
+2026,CA,58,Yuba,county,060000000000,GG,Treasurer,Rep,5101
+2026,CA,59,Statewide,statewide_or_districtwide,060000000000,GG,Treasurer,Dem,5578139
+2026,CA,59,Statewide,statewide_or_districtwide,060000000000,GG,Treasurer,Rep,3051804
+2026,CA,1,Alameda,county,070000000000,GG,Attorney General,Dem,241248
+2026,CA,1,Alameda,county,070000000000,GG,Attorney General,Rep,64896
+2026,CA,2,Alpine,county,070000000000,GG,Attorney General,Dem,355
+2026,CA,2,Alpine,county,070000000000,GG,Attorney General,Rep,195
+2026,CA,3,Amador,county,070000000000,GG,Attorney General,Dem,5704
+2026,CA,3,Amador,county,070000000000,GG,Attorney General,Rep,9488
+2026,CA,4,Butte,county,070000000000,GG,Attorney General,Dem,28689
+2026,CA,4,Butte,county,070000000000,GG,Attorney General,Rep,29578
+2026,CA,5,Calaveras,county,070000000000,GG,Attorney General,Dem,6160
+2026,CA,5,Calaveras,county,070000000000,GG,Attorney General,Rep,10138
+2026,CA,6,Colusa,county,070000000000,GG,Attorney General,Dem,1902
+2026,CA,6,Colusa,county,070000000000,GG,Attorney General,Rep,2374
+2026,CA,7,Contra Costa,county,070000000000,GG,Attorney General,Dem,186271
+2026,CA,7,Contra Costa,county,070000000000,GG,Attorney General,Rep,78360
+2026,CA,8,Del Norte,county,070000000000,GG,Attorney General,Dem,2560
+2026,CA,8,Del Norte,county,070000000000,GG,Attorney General,Rep,2879
+2026,CA,9,El Dorado,county,070000000000,GG,Attorney General,Dem,30542
+2026,CA,9,El Dorado,county,070000000000,GG,Attorney General,Rep,37943
+2026,CA,10,Fresno,county,070000000000,GG,Attorney General,Dem,87892
+2026,CA,10,Fresno,county,070000000000,GG,Attorney General,Rep,75507
+2026,CA,11,Glenn,county,070000000000,GG,Attorney General,Dem,1872
+2026,CA,11,Glenn,county,070000000000,GG,Attorney General,Rep,3664
+2026,CA,12,Humboldt,county,070000000000,GG,Attorney General,Dem,16448
+2026,CA,12,Humboldt,county,070000000000,GG,Attorney General,Rep,8433
+2026,CA,13,Imperial,county,070000000000,GG,Attorney General,Dem,15406
+2026,CA,13,Imperial,county,070000000000,GG,Attorney General,Rep,8705
+2026,CA,14,Inyo,county,070000000000,GG,Attorney General,Dem,3738
+2026,CA,14,Inyo,county,070000000000,GG,Attorney General,Rep,3442
+2026,CA,15,Kern,county,070000000000,GG,Attorney General,Dem,69924
+2026,CA,15,Kern,county,070000000000,GG,Attorney General,Rep,71509
+2026,CA,16,Kings,county,070000000000,GG,Attorney General,Dem,15252
+2026,CA,16,Kings,county,070000000000,GG,Attorney General,Rep,17257
+2026,CA,17,Lake,county,070000000000,GG,Attorney General,Dem,4258
+2026,CA,17,Lake,county,070000000000,GG,Attorney General,Rep,3385
+2026,CA,18,Lassen,county,070000000000,GG,Attorney General,Dem,1805
+2026,CA,18,Lassen,county,070000000000,GG,Attorney General,Rep,5742
+2026,CA,19,Los Angeles,county,070000000000,GG,Attorney General,Dem,1751821
+2026,CA,19,Los Angeles,county,070000000000,GG,Attorney General,Rep,673695
+2026,CA,20,Madera,county,070000000000,GG,Attorney General,Dem,13945
+2026,CA,20,Madera,county,070000000000,GG,Attorney General,Rep,15205
+2026,CA,21,Marin,county,070000000000,GG,Attorney General,Dem,53834
+2026,CA,21,Marin,county,070000000000,GG,Attorney General,Rep,13687
+2026,CA,22,Mariposa,county,070000000000,GG,Attorney General,Dem,3067
+2026,CA,22,Mariposa,county,070000000000,GG,Attorney General,Rep,4492
+2026,CA,23,Mendocino,county,070000000000,GG,Attorney General,Dem,11988
+2026,CA,23,Mendocino,county,070000000000,GG,Attorney General,Rep,5282
+2026,CA,24,Merced,county,070000000000,GG,Attorney General,Dem,23611
+2026,CA,24,Merced,county,070000000000,GG,Attorney General,Rep,17305
+2026,CA,25,Modoc,county,070000000000,GG,Attorney General,Dem,659
+2026,CA,25,Modoc,county,070000000000,GG,Attorney General,Rep,1739
+2026,CA,26,Mono,county,070000000000,GG,Attorney General,Dem,2922
+2026,CA,26,Mono,county,070000000000,GG,Attorney General,Rep,1850
+2026,CA,27,Monterey,county,070000000000,GG,Attorney General,Dem,61754
+2026,CA,27,Monterey,county,070000000000,GG,Attorney General,Rep,26578
+2026,CA,28,Napa,county,070000000000,GG,Attorney General,Dem,13926
+2026,CA,28,Napa,county,070000000000,GG,Attorney General,Rep,6449
+2026,CA,29,Nevada,county,070000000000,GG,Attorney General,Dem,16702
+2026,CA,29,Nevada,county,070000000000,GG,Attorney General,Rep,12081
+2026,CA,30,Orange,county,070000000000,GG,Attorney General,Dem,465710
+2026,CA,30,Orange,county,070000000000,GG,Attorney General,Rep,403193
+2026,CA,31,Placer,county,070000000000,GG,Attorney General,Dem,59832
+2026,CA,31,Placer,county,070000000000,GG,Attorney General,Rep,67600
+2026,CA,32,Plumas,county,070000000000,GG,Attorney General,Dem,3406
+2026,CA,32,Plumas,county,070000000000,GG,Attorney General,Rep,4623
+2026,CA,33,Riverside,county,070000000000,GG,Attorney General,Dem,225128
+2026,CA,33,Riverside,county,070000000000,GG,Attorney General,Rep,168958
+2026,CA,34,Sacramento,county,070000000000,GG,Attorney General,Dem,168107
+2026,CA,34,Sacramento,county,070000000000,GG,Attorney General,Rep,97550
+2026,CA,35,San Benito,county,070000000000,GG,Attorney General,Dem,6238
+2026,CA,35,San Benito,county,070000000000,GG,Attorney General,Rep,4068
+2026,CA,36,San Bernardino,county,070000000000,GG,Attorney General,Dem,241396
+2026,CA,36,San Bernardino,county,070000000000,GG,Attorney General,Rep,174977
+2026,CA,37,San Diego,county,070000000000,GG,Attorney General,Dem,481562
+2026,CA,37,San Diego,county,070000000000,GG,Attorney General,Rep,316897
+2026,CA,38,San Francisco,county,070000000000,GG,Attorney General,Dem,206205
+2026,CA,38,San Francisco,county,070000000000,GG,Attorney General,Rep,36441
+2026,CA,39,San Joaquin,county,070000000000,GG,Attorney General,Dem,67468
+2026,CA,39,San Joaquin,county,070000000000,GG,Attorney General,Rep,51313
+2026,CA,40,San Luis Obispo,county,070000000000,GG,Attorney General,Dem,40629
+2026,CA,40,San Luis Obispo,county,070000000000,GG,Attorney General,Rep,30163
+2026,CA,41,San Mateo,county,070000000000,GG,Attorney General,Dem,121000
+2026,CA,41,San Mateo,county,070000000000,GG,Attorney General,Rep,41733
+2026,CA,42,Santa Barbara,county,070000000000,GG,Attorney General,Dem,64906
+2026,CA,42,Santa Barbara,county,070000000000,GG,Attorney General,Rep,33358
+2026,CA,43,Santa Clara,county,070000000000,GG,Attorney General,Dem,245283
+2026,CA,43,Santa Clara,county,070000000000,GG,Attorney General,Rep,105701
+2026,CA,44,Santa Cruz,county,070000000000,GG,Attorney General,Dem,64259
+2026,CA,44,Santa Cruz,county,070000000000,GG,Attorney General,Rep,17027
+2026,CA,45,Shasta,county,070000000000,GG,Attorney General,Dem,12461
+2026,CA,45,Shasta,county,070000000000,GG,Attorney General,Rep,21966
+2026,CA,46,Sierra,county,070000000000,GG,Attorney General,Dem,555
+2026,CA,46,Sierra,county,070000000000,GG,Attorney General,Rep,904
+2026,CA,47,Siskiyou,county,070000000000,GG,Attorney General,Dem,5664
+2026,CA,47,Siskiyou,county,070000000000,GG,Attorney General,Rep,7941
+2026,CA,48,Solano,county,070000000000,GG,Attorney General,Dem,86545
+2026,CA,48,Solano,county,070000000000,GG,Attorney General,Rep,46090
+2026,CA,49,Sonoma,county,070000000000,GG,Attorney General,Dem,79961
+2026,CA,49,Sonoma,county,070000000000,GG,Attorney General,Rep,26014
+2026,CA,50,Stanislaus,county,070000000000,GG,Attorney General,Dem,51608
+2026,CA,50,Stanislaus,county,070000000000,GG,Attorney General,Rep,46772
+2026,CA,51,Sutter,county,070000000000,GG,Attorney General,Dem,5709
+2026,CA,51,Sutter,county,070000000000,GG,Attorney General,Rep,7704
+2026,CA,52,Tehama,county,070000000000,GG,Attorney General,Dem,5575
+2026,CA,52,Tehama,county,070000000000,GG,Attorney General,Rep,11201
+2026,CA,53,Trinity,county,070000000000,GG,Attorney General,Dem,1310
+2026,CA,53,Trinity,county,070000000000,GG,Attorney General,Rep,1405
+2026,CA,54,Tulare,county,070000000000,GG,Attorney General,Dem,34025
+2026,CA,54,Tulare,county,070000000000,GG,Attorney General,Rep,37225
+2026,CA,55,Tuolumne,county,070000000000,GG,Attorney General,Dem,7687
+2026,CA,55,Tuolumne,county,070000000000,GG,Attorney General,Rep,10595
+2026,CA,56,Ventura,county,070000000000,GG,Attorney General,Dem,122710
+2026,CA,56,Ventura,county,070000000000,GG,Attorney General,Rep,81455
+2026,CA,57,Yolo,county,070000000000,GG,Attorney General,Dem,33078
+2026,CA,57,Yolo,county,070000000000,GG,Attorney General,Rep,12429
+2026,CA,58,Yuba,county,070000000000,GG,Attorney General,Dem,3715
+2026,CA,58,Yuba,county,070000000000,GG,Attorney General,Rep,5085
+2026,CA,59,Statewide,statewide_or_districtwide,070000000000,GG,Attorney General,Dem,5585987
+2026,CA,59,Statewide,statewide_or_districtwide,070000000000,GG,Attorney General,Rep,3082246
+2026,CA,1,Alameda,county,080000000000,GG,Insurance Commissioner,Dem,280355
+2026,CA,2,Alpine,county,080000000000,GG,Insurance Commissioner,Dem,453
+2026,CA,3,Amador,county,080000000000,GG,Insurance Commissioner,Dem,11030
+2026,CA,4,Butte,county,080000000000,GG,Insurance Commissioner,Dem,47044
+2026,CA,5,Calaveras,county,080000000000,GG,Insurance Commissioner,Dem,12176
+2026,CA,6,Colusa,county,080000000000,GG,Insurance Commissioner,Dem,3292
+2026,CA,7,Contra Costa,county,080000000000,GG,Insurance Commissioner,Dem,237533
+2026,CA,8,Del Norte,county,080000000000,GG,Insurance Commissioner,Dem,4159
+2026,CA,9,El Dorado,county,080000000000,GG,Insurance Commissioner,Dem,51003
+2026,CA,10,Fresno,county,080000000000,GG,Insurance Commissioner,Dem,136463
+2026,CA,11,Glenn,county,080000000000,GG,Insurance Commissioner,Dem,4350
+2026,CA,12,Humboldt,county,080000000000,GG,Insurance Commissioner,Dem,21459
+2026,CA,13,Imperial,county,080000000000,GG,Insurance Commissioner,Dem,21306
+2026,CA,14,Inyo,county,080000000000,GG,Insurance Commissioner,Dem,5338
+2026,CA,15,Kern,county,080000000000,GG,Insurance Commissioner,Dem,116489
+2026,CA,16,Kings,county,080000000000,GG,Insurance Commissioner,Dem,26951
+2026,CA,17,Lake,county,080000000000,GG,Insurance Commissioner,Dem,6176
+2026,CA,18,Lassen,county,080000000000,GG,Insurance Commissioner,Dem,5233
+2026,CA,19,Los Angeles,county,080000000000,GG,Insurance Commissioner,Dem,2188971
+2026,CA,20,Madera,county,080000000000,GG,Insurance Commissioner,Dem,23281
+2026,CA,21,Marin,county,080000000000,GG,Insurance Commissioner,Dem,59788
+2026,CA,22,Mariposa,county,080000000000,GG,Insurance Commissioner,Dem,5712
+2026,CA,23,Mendocino,county,080000000000,GG,Insurance Commissioner,Dem,14786
+2026,CA,24,Merced,county,080000000000,GG,Insurance Commissioner,Dem,35000
+2026,CA,25,Modoc,county,080000000000,GG,Insurance Commissioner,Dem,1673
+2026,CA,26,Mono,county,080000000000,GG,Insurance Commissioner,Dem,3840
+2026,CA,27,Monterey,county,080000000000,GG,Insurance Commissioner,Dem,79012
+2026,CA,28,Napa,county,080000000000,GG,Insurance Commissioner,Dem,17568
+2026,CA,29,Nevada,county,080000000000,GG,Insurance Commissioner,Dem,25478
+2026,CA,30,Orange,county,080000000000,GG,Insurance Commissioner,Dem,727163
+2026,CA,31,Placer,county,080000000000,GG,Insurance Commissioner,Dem,99850
+2026,CA,32,Plumas,county,080000000000,GG,Insurance Commissioner,Dem,6100
+2026,CA,33,Riverside,county,080000000000,GG,Insurance Commissioner,Dem,333656
+2026,CA,34,Sacramento,county,080000000000,GG,Insurance Commissioner,Dem,220878
+2026,CA,35,San Benito,county,080000000000,GG,Insurance Commissioner,Dem,9041
+2026,CA,36,San Bernardino,county,080000000000,GG,Insurance Commissioner,Dem,360598
+2026,CA,37,San Diego,county,080000000000,GG,Insurance Commissioner,Dem,665560
+2026,CA,38,San Francisco,county,080000000000,GG,Insurance Commissioner,Dem,229530
+2026,CA,39,San Joaquin,county,080000000000,GG,Insurance Commissioner,Dem,101814
+2026,CA,40,San Luis Obispo,county,080000000000,GG,Insurance Commissioner,Dem,57000
+2026,CA,41,San Mateo,county,080000000000,GG,Insurance Commissioner,Dem,146531
+2026,CA,42,Santa Barbara,county,080000000000,GG,Insurance Commissioner,Dem,84207
+2026,CA,43,Santa Clara,county,080000000000,GG,Insurance Commissioner,Dem,314313
+2026,CA,44,Santa Cruz,county,080000000000,GG,Insurance Commissioner,Dem,73415
+2026,CA,45,Shasta,county,080000000000,GG,Insurance Commissioner,Dem,25564
+2026,CA,46,Sierra,county,080000000000,GG,Insurance Commissioner,Dem,1075
+2026,CA,47,Siskiyou,county,080000000000,GG,Insurance Commissioner,Dem,10345
+2026,CA,48,Solano,county,080000000000,GG,Insurance Commissioner,Dem,118398
+2026,CA,49,Sonoma,county,080000000000,GG,Insurance Commissioner,Dem,94575
+2026,CA,50,Stanislaus,county,080000000000,GG,Insurance Commissioner,Dem,79952
+2026,CA,51,Sutter,county,080000000000,GG,Insurance Commissioner,Dem,10623
+2026,CA,52,Tehama,county,080000000000,GG,Insurance Commissioner,Dem,12893
+2026,CA,53,Trinity,county,080000000000,GG,Insurance Commissioner,Dem,2194
+2026,CA,54,Tulare,county,080000000000,GG,Insurance Commissioner,Dem,58794
+2026,CA,55,Tuolumne,county,080000000000,GG,Insurance Commissioner,Dem,14854
+2026,CA,56,Ventura,county,080000000000,GG,Insurance Commissioner,Dem,173415
+2026,CA,57,Yolo,county,080000000000,GG,Insurance Commissioner,Dem,40293
+2026,CA,58,Yuba,county,080000000000,GG,Insurance Commissioner,Dem,6790
+2026,CA,59,Statewide,statewide_or_districtwide,080000000000,GG,Insurance Commissioner,Dem,7525340
+2026,CA,2,Alpine,county,090000010000,GG,Board of Equalization Member District 1,Dem,352
+2026,CA,2,Alpine,county,090000010000,GG,Board of Equalization Member District 1,Rep,179
+2026,CA,3,Amador,county,090000010000,GG,Board of Equalization Member District 1,Dem,5644
+2026,CA,3,Amador,county,090000010000,GG,Board of Equalization Member District 1,Rep,9328
+2026,CA,4,Butte,county,090000010000,GG,Board of Equalization Member District 1,Dem,28370
+2026,CA,4,Butte,county,090000010000,GG,Board of Equalization Member District 1,Rep,29270
+2026,CA,5,Calaveras,county,090000010000,GG,Board of Equalization Member District 1,Dem,6124
+2026,CA,5,Calaveras,county,090000010000,GG,Board of Equalization Member District 1,Rep,9965
+2026,CA,6,Colusa,county,090000010000,GG,Board of Equalization Member District 1,Dem,1895
+2026,CA,6,Colusa,county,090000010000,GG,Board of Equalization Member District 1,Rep,2331
+2026,CA,9,El Dorado,county,090000010000,GG,Board of Equalization Member District 1,Dem,29621
+2026,CA,9,El Dorado,county,090000010000,GG,Board of Equalization Member District 1,Rep,37299
+2026,CA,10,Fresno,county,090000010000,GG,Board of Equalization Member District 1,Dem,86560
+2026,CA,10,Fresno,county,090000010000,GG,Board of Equalization Member District 1,Rep,75121
+2026,CA,11,Glenn,county,090000010000,GG,Board of Equalization Member District 1,Dem,1892
+2026,CA,11,Glenn,county,090000010000,GG,Board of Equalization Member District 1,Rep,3595
+2026,CA,14,Inyo,county,090000010000,GG,Board of Equalization Member District 1,Dem,3640
+2026,CA,14,Inyo,county,090000010000,GG,Board of Equalization Member District 1,Rep,3418
+2026,CA,15,Kern,county,090000010000,GG,Board of Equalization Member District 1,Dem,67956
+2026,CA,15,Kern,county,090000010000,GG,Board of Equalization Member District 1,Rep,73325
+2026,CA,16,Kings,county,090000010000,GG,Board of Equalization Member District 1,Dem,15408
+2026,CA,16,Kings,county,090000010000,GG,Board of Equalization Member District 1,Rep,16897
+2026,CA,18,Lassen,county,090000010000,GG,Board of Equalization Member District 1,Dem,1837
+2026,CA,18,Lassen,county,090000010000,GG,Board of Equalization Member District 1,Rep,5647
+2026,CA,20,Madera,county,090000010000,GG,Board of Equalization Member District 1,Dem,13965
+2026,CA,20,Madera,county,090000010000,GG,Board of Equalization Member District 1,Rep,14986
+2026,CA,22,Mariposa,county,090000010000,GG,Board of Equalization Member District 1,Dem,3068
+2026,CA,22,Mariposa,county,090000010000,GG,Board of Equalization Member District 1,Rep,4420
+2026,CA,24,Merced,county,090000010000,GG,Board of Equalization Member District 1,Dem,23673
+2026,CA,24,Merced,county,090000010000,GG,Board of Equalization Member District 1,Rep,17031
+2026,CA,25,Modoc,county,090000010000,GG,Board of Equalization Member District 1,Dem,633
+2026,CA,25,Modoc,county,090000010000,GG,Board of Equalization Member District 1,Rep,1740
+2026,CA,26,Mono,county,090000010000,GG,Board of Equalization Member District 1,Dem,2852
+2026,CA,26,Mono,county,090000010000,GG,Board of Equalization Member District 1,Rep,1825
+2026,CA,29,Nevada,county,090000010000,GG,Board of Equalization Member District 1,Dem,16261
+2026,CA,29,Nevada,county,090000010000,GG,Board of Equalization Member District 1,Rep,12049
+2026,CA,31,Placer,county,090000010000,GG,Board of Equalization Member District 1,Dem,58127
+2026,CA,31,Placer,county,090000010000,GG,Board of Equalization Member District 1,Rep,67236
+2026,CA,32,Plumas,county,090000010000,GG,Board of Equalization Member District 1,Dem,3366
+2026,CA,32,Plumas,county,090000010000,GG,Board of Equalization Member District 1,Rep,4586
+2026,CA,34,Sacramento,county,090000010000,GG,Board of Equalization Member District 1,Dem,161277
+2026,CA,34,Sacramento,county,090000010000,GG,Board of Equalization Member District 1,Rep,97556
+2026,CA,36,San Bernardino,county,090000010000,GG,Board of Equalization Member District 1,Dem,163718
+2026,CA,36,San Bernardino,county,090000010000,GG,Board of Equalization Member District 1,Rep,113803
+2026,CA,39,San Joaquin,county,090000010000,GG,Board of Equalization Member District 1,Dem,66679
+2026,CA,39,San Joaquin,county,090000010000,GG,Board of Equalization Member District 1,Rep,50383
+2026,CA,45,Shasta,county,090000010000,GG,Board of Equalization Member District 1,Dem,12210
+2026,CA,45,Shasta,county,090000010000,GG,Board of Equalization Member District 1,Rep,21698
+2026,CA,46,Sierra,county,090000010000,GG,Board of Equalization Member District 1,Dem,543
+2026,CA,46,Sierra,county,090000010000,GG,Board of Equalization Member District 1,Rep,880
+2026,CA,47,Siskiyou,county,090000010000,GG,Board of Equalization Member District 1,Dem,5627
+2026,CA,47,Siskiyou,county,090000010000,GG,Board of Equalization Member District 1,Rep,7844
+2026,CA,48,Solano,county,090000010000,GG,Board of Equalization Member District 1,Dem,85522
+2026,CA,48,Solano,county,090000010000,GG,Board of Equalization Member District 1,Rep,45551
+2026,CA,50,Stanislaus,county,090000010000,GG,Board of Equalization Member District 1,Dem,51438
+2026,CA,50,Stanislaus,county,090000010000,GG,Board of Equalization Member District 1,Rep,46039
+2026,CA,51,Sutter,county,090000010000,GG,Board of Equalization Member District 1,Dem,5658
+2026,CA,51,Sutter,county,090000010000,GG,Board of Equalization Member District 1,Rep,7601
+2026,CA,52,Tehama,county,090000010000,GG,Board of Equalization Member District 1,Dem,5581
+2026,CA,52,Tehama,county,090000010000,GG,Board of Equalization Member District 1,Rep,11061
+2026,CA,54,Tulare,county,090000010000,GG,Board of Equalization Member District 1,Dem,33960
+2026,CA,54,Tulare,county,090000010000,GG,Board of Equalization Member District 1,Rep,37082
+2026,CA,55,Tuolumne,county,090000010000,GG,Board of Equalization Member District 1,Dem,7585
+2026,CA,55,Tuolumne,county,090000010000,GG,Board of Equalization Member District 1,Rep,10384
+2026,CA,57,Yolo,county,090000010000,GG,Board of Equalization Member District 1,Dem,32339
+2026,CA,57,Yolo,county,090000010000,GG,Board of Equalization Member District 1,Rep,12415
+2026,CA,58,Yuba,county,090000010000,GG,Board of Equalization Member District 1,Dem,3695
+2026,CA,58,Yuba,county,090000010000,GG,Board of Equalization Member District 1,Rep,5024
+2026,CA,59,Statewide,statewide_or_districtwide,090000010000,GG,Board of Equalization Member District 1,Dem,1007076
+2026,CA,59,Statewide,statewide_or_districtwide,090000010000,GG,Board of Equalization Member District 1,Rep,857569
+2026,CA,1,Alameda,county,090000020000,GG,Board of Equalization Member District 2,Dem,267372
+2026,CA,7,Contra Costa,county,090000020000,GG,Board of Equalization Member District 2,Dem,227409
+2026,CA,8,Del Norte,county,090000020000,GG,Board of Equalization Member District 2,Dem,4046
+2026,CA,12,Humboldt,county,090000020000,GG,Board of Equalization Member District 2,Dem,20919
+2026,CA,17,Lake,county,090000020000,GG,Board of Equalization Member District 2,Dem,6061
+2026,CA,21,Marin,county,090000020000,GG,Board of Equalization Member District 2,Dem,56205
+2026,CA,23,Mendocino,county,090000020000,GG,Board of Equalization Member District 2,Dem,14279
+2026,CA,27,Monterey,county,090000020000,GG,Board of Equalization Member District 2,Dem,77133
+2026,CA,28,Napa,county,090000020000,GG,Board of Equalization Member District 2,Dem,17082
+2026,CA,35,San Benito,county,090000020000,GG,Board of Equalization Member District 2,Dem,8855
+2026,CA,38,San Francisco,county,090000020000,GG,Board of Equalization Member District 2,Dem,211951
+2026,CA,40,San Luis Obispo,county,090000020000,GG,Board of Equalization Member District 2,Dem,53770
+2026,CA,41,San Mateo,county,090000020000,GG,Board of Equalization Member District 2,Dem,139660
+2026,CA,42,Santa Barbara,county,090000020000,GG,Board of Equalization Member District 2,Dem,79446
+2026,CA,43,Santa Clara,county,090000020000,GG,Board of Equalization Member District 2,Dem,305410
+2026,CA,44,Santa Cruz,county,090000020000,GG,Board of Equalization Member District 2,Dem,69708
+2026,CA,49,Sonoma,county,090000020000,GG,Board of Equalization Member District 2,Dem,91244
+2026,CA,53,Trinity,county,090000020000,GG,Board of Equalization Member District 2,Dem,2138
+2026,CA,56,Ventura,county,090000020000,GG,Board of Equalization Member District 2,Dem,170605
+2026,CA,59,Statewide,statewide_or_districtwide,090000020000,GG,Board of Equalization Member District 2,Dem,1823293
+2026,CA,19,Los Angeles,county,090000030000,GG,Board of Equalization Member District 3,Dem,2055706
+2026,CA,59,Statewide,statewide_or_districtwide,090000030000,GG,Board of Equalization Member District 3,Dem,2055706
+2026,CA,13,Imperial,county,090000040000,GG,Board of Equalization Member District 4,Dem,14528
+2026,CA,13,Imperial,county,090000040000,GG,Board of Equalization Member District 4,Rep,7861
+2026,CA,30,Orange,county,090000040000,GG,Board of Equalization Member District 4,Dem,456385
+2026,CA,30,Orange,county,090000040000,GG,Board of Equalization Member District 4,Rep,396823
+2026,CA,33,Riverside,county,090000040000,GG,Board of Equalization Member District 4,Dem,223038
+2026,CA,33,Riverside,county,090000040000,GG,Board of Equalization Member District 4,Rep,165809
+2026,CA,36,San Bernardino,county,090000040000,GG,Board of Equalization Member District 4,Dem,76447
+2026,CA,36,San Bernardino,county,090000040000,GG,Board of Equalization Member District 4,Rep,57370
+2026,CA,37,San Diego,county,090000040000,GG,Board of Equalization Member District 4,Dem,471771
+2026,CA,37,San Diego,county,090000040000,GG,Board of Equalization Member District 4,Rep,315740
+2026,CA,59,Statewide,statewide_or_districtwide,090000040000,GG,Board of Equalization Member District 4,Dem,1242169
+2026,CA,59,Statewide,statewide_or_districtwide,090000040000,GG,Board of Equalization Member District 4,Rep,943603
+2026,CA,4,Butte,county,110000010000,GG,United States Representative District 1,Dem,28293
+2026,CA,4,Butte,county,110000010000,GG,United States Representative District 1,Rep,30575
+2026,CA,11,Glenn,county,110000010000,GG,United States Representative District 1,Dem,1789
+2026,CA,11,Glenn,county,110000010000,GG,United States Representative District 1,Rep,3770
+2026,CA,17,Lake,county,110000010000,GG,United States Representative District 1,Dem,3977
+2026,CA,17,Lake,county,110000010000,GG,United States Representative District 1,Rep,3066
+2026,CA,18,Lassen,county,110000010000,GG,United States Representative District 1,Dem,1811
+2026,CA,18,Lassen,county,110000010000,GG,United States Representative District 1,Rep,5761
+2026,CA,23,Mendocino,county,110000010000,GG,United States Representative District 1,Dem,6505
+2026,CA,23,Mendocino,county,110000010000,GG,United States Representative District 1,Rep,3886
+2026,CA,32,Plumas,county,110000010000,GG,United States Representative District 1,Dem,3438
+2026,CA,32,Plumas,county,110000010000,GG,United States Representative District 1,Rep,4623
+2026,CA,46,Sierra,county,110000010000,GG,United States Representative District 1,Dem,553
+2026,CA,46,Sierra,county,110000010000,GG,United States Representative District 1,Rep,897
+2026,CA,49,Sonoma,county,110000010000,GG,United States Representative District 1,Dem,45372
+2026,CA,49,Sonoma,county,110000010000,GG,United States Representative District 1,Rep,13827
+2026,CA,52,Tehama,county,110000010000,GG,United States Representative District 1,Dem,5324
+2026,CA,52,Tehama,county,110000010000,GG,United States Representative District 1,Rep,11565
+2026,CA,59,Statewide,statewide_or_districtwide,110000010000,GG,United States Representative District 1,Dem,97062
+2026,CA,59,Statewide,statewide_or_districtwide,110000010000,GG,United States Representative District 1,Rep,77970
+2026,CA,8,Del Norte,county,110000020000,GG,United States Representative District 2,Dem,2690
+2026,CA,8,Del Norte,county,110000020000,GG,United States Representative District 2,Rep,2742
+2026,CA,12,Humboldt,county,110000020000,GG,United States Representative District 2,Dem,17053
+2026,CA,12,Humboldt,county,110000020000,GG,United States Representative District 2,Rep,7920
+2026,CA,21,Marin,county,110000020000,GG,United States Representative District 2,Dem,55975
+2026,CA,21,Marin,county,110000020000,GG,United States Representative District 2,Rep,11917
+2026,CA,23,Mendocino,county,110000020000,GG,United States Representative District 2,Dem,5555
+2026,CA,23,Mendocino,county,110000020000,GG,United States Representative District 2,Rep,1346
+2026,CA,25,Modoc,county,110000020000,GG,United States Representative District 2,Dem,731
+2026,CA,25,Modoc,county,110000020000,GG,United States Representative District 2,Rep,1657
+2026,CA,45,Shasta,county,110000020000,GG,United States Representative District 2,Dem,12762
+2026,CA,45,Shasta,county,110000020000,GG,United States Representative District 2,Rep,21472
+2026,CA,47,Siskiyou,county,110000020000,GG,United States Representative District 2,Dem,5879
+2026,CA,47,Siskiyou,county,110000020000,GG,United States Representative District 2,Rep,7591
+2026,CA,49,Sonoma,county,110000020000,GG,United States Representative District 2,Dem,12638
+2026,CA,49,Sonoma,county,110000020000,GG,United States Representative District 2,Rep,2847
+2026,CA,53,Trinity,county,110000020000,GG,United States Representative District 2,Dem,1374
+2026,CA,53,Trinity,county,110000020000,GG,United States Representative District 2,Rep,1347
+2026,CA,59,Statewide,statewide_or_districtwide,110000020000,GG,United States Representative District 2,Dem,114657
+2026,CA,59,Statewide,statewide_or_districtwide,110000020000,GG,United States Representative District 2,Rep,58839
+2026,CA,9,El Dorado,county,110000030000,GG,United States Representative District 3,Dem,7887
+2026,CA,9,El Dorado,county,110000030000,GG,United States Representative District 3,Rep,6041
+2026,CA,29,Nevada,county,110000030000,GG,United States Representative District 3,Dem,16857
+2026,CA,29,Nevada,county,110000030000,GG,United States Representative District 3,Rep,11881
+2026,CA,31,Placer,county,110000030000,GG,United States Representative District 3,Dem,17177
+2026,CA,31,Placer,county,110000030000,GG,United States Representative District 3,Rep,21928
+2026,CA,34,Sacramento,county,110000030000,GG,United States Representative District 3,Dem,53781
+2026,CA,34,Sacramento,county,110000030000,GG,United States Representative District 3,Rep,32402
+2026,CA,59,Statewide,statewide_or_districtwide,110000030000,GG,United States Representative District 3,Dem,95702
+2026,CA,59,Statewide,statewide_or_districtwide,110000030000,GG,United States Representative District 3,Rep,72252
+2026,CA,6,Colusa,county,110000040000,GG,United States Representative District 4,Dem,3612
+2026,CA,17,Lake,county,110000040000,GG,United States Representative District 4,Dem,548
+2026,CA,28,Napa,county,110000040000,GG,United States Representative District 4,Dem,19359
+2026,CA,31,Placer,county,110000040000,GG,United States Representative District 4,Dem,18617
+2026,CA,34,Sacramento,county,110000040000,GG,United States Representative District 4,Dem,5463
+2026,CA,49,Sonoma,county,110000040000,GG,United States Representative District 4,Dem,28933
+2026,CA,51,Sutter,county,110000040000,GG,United States Representative District 4,Dem,11460
+2026,CA,57,Yolo,county,110000040000,GG,United States Representative District 4,Dem,29228
+2026,CA,58,Yuba,county,110000040000,GG,United States Representative District 4,Dem,7139
+2026,CA,59,Statewide,statewide_or_districtwide,110000040000,GG,United States Representative District 4,Dem,124359
+2026,CA,2,Alpine,county,110000050000,GG,United States Representative District 5,Dem,382
+2026,CA,2,Alpine,county,110000050000,GG,United States Representative District 5,Rep,172
+2026,CA,3,Amador,county,110000050000,GG,United States Representative District 5,Dem,6328
+2026,CA,3,Amador,county,110000050000,GG,United States Representative District 5,Rep,8925
+2026,CA,5,Calaveras,county,110000050000,GG,United States Representative District 5,Dem,6469
+2026,CA,5,Calaveras,county,110000050000,GG,United States Representative District 5,Rep,9852
+2026,CA,9,El Dorado,county,110000050000,GG,United States Representative District 5,Dem,353
+2026,CA,9,El Dorado,county,110000050000,GG,United States Representative District 5,Rep,438
+2026,CA,10,Fresno,county,110000050000,GG,United States Representative District 5,Dem,18027
+2026,CA,10,Fresno,county,110000050000,GG,United States Representative District 5,Rep,26332
+2026,CA,14,Inyo,county,110000050000,GG,United States Representative District 5,Dem,3843
+2026,CA,14,Inyo,county,110000050000,GG,United States Representative District 5,Rep,3375
+2026,CA,20,Madera,county,110000050000,GG,United States Representative District 5,Dem,9823
+2026,CA,20,Madera,county,110000050000,GG,United States Representative District 5,Rep,12853
+2026,CA,22,Mariposa,county,110000050000,GG,United States Representative District 5,Dem,3217
+2026,CA,22,Mariposa,county,110000050000,GG,United States Representative District 5,Rep,4357
+2026,CA,26,Mono,county,110000050000,GG,United States Representative District 5,Dem,3051
+2026,CA,26,Mono,county,110000050000,GG,United States Representative District 5,Rep,1733
+2026,CA,39,San Joaquin,county,110000050000,GG,United States Representative District 5,Dem,1008
+2026,CA,39,San Joaquin,county,110000050000,GG,United States Representative District 5,Rep,2395
+2026,CA,50,Stanislaus,county,110000050000,GG,United States Representative District 5,Dem,29370
+2026,CA,50,Stanislaus,county,110000050000,GG,United States Representative District 5,Rep,32411
+2026,CA,55,Tuolumne,county,110000050000,GG,United States Representative District 5,Dem,8090
+2026,CA,55,Tuolumne,county,110000050000,GG,United States Representative District 5,Rep,10325
+2026,CA,59,Statewide,statewide_or_districtwide,110000050000,GG,United States Representative District 5,Dem,89961
+2026,CA,59,Statewide,statewide_or_districtwide,110000050000,GG,United States Representative District 5,Rep,113168
+2026,CA,31,Placer,county,110000060000,GG,United States Representative District 6,Dem,32202
+2026,CA,31,Placer,county,110000060000,GG,United States Representative District 6,NPP,32723
+2026,CA,34,Sacramento,county,110000060000,GG,United States Representative District 6,Dem,47512
+2026,CA,34,Sacramento,county,110000060000,GG,United States Representative District 6,NPP,28158
+2026,CA,57,Yolo,county,110000060000,GG,United States Representative District 6,Dem,7018
+2026,CA,57,Yolo,county,110000060000,GG,United States Representative District 6,NPP,3262
+2026,CA,59,Statewide,statewide_or_districtwide,110000060000,GG,United States Representative District 6,Dem,86732
+2026,CA,59,Statewide,statewide_or_districtwide,110000060000,GG,United States Representative District 6,NPP,64143
+2026,CA,9,El Dorado,county,110000070000,GG,United States Representative District 7,Dem,40569
+2026,CA,34,Sacramento,county,110000070000,GG,United States Representative District 7,Dem,85239
+2026,CA,39,San Joaquin,county,110000070000,GG,United States Representative District 7,Dem,9038
+2026,CA,59,Statewide,statewide_or_districtwide,110000070000,GG,United States Representative District 7,Dem,134846
+2026,CA,7,Contra Costa,county,110000080000,GG,United States Representative District 8,Dem,45061
+2026,CA,7,Contra Costa,county,110000080000,GG,United States Representative District 8,Rep,7759
+2026,CA,34,Sacramento,county,110000080000,GG,United States Representative District 8,Dem,281
+2026,CA,34,Sacramento,county,110000080000,GG,United States Representative District 8,Rep,236
+2026,CA,39,San Joaquin,county,110000080000,GG,United States Representative District 8,Dem,2396
+2026,CA,39,San Joaquin,county,110000080000,GG,United States Representative District 8,Rep,2857
+2026,CA,48,Solano,county,110000080000,GG,United States Representative District 8,Dem,88735
+2026,CA,48,Solano,county,110000080000,GG,United States Representative District 8,Rep,43515
+2026,CA,57,Yolo,county,110000080000,GG,United States Representative District 8,Dem,2896
+2026,CA,57,Yolo,county,110000080000,GG,United States Representative District 8,Rep,767
+2026,CA,59,Statewide,statewide_or_districtwide,110000080000,GG,United States Representative District 8,Dem,139369
+2026,CA,59,Statewide,statewide_or_districtwide,110000080000,GG,United States Representative District 8,Rep,55134
+2026,CA,7,Contra Costa,county,110000090000,GG,United States Representative District 9,Dem,26007
+2026,CA,7,Contra Costa,county,110000090000,GG,United States Representative District 9,Rep,9470
+2026,CA,39,San Joaquin,county,110000090000,GG,United States Representative District 9,Dem,52219
+2026,CA,39,San Joaquin,county,110000090000,GG,United States Representative District 9,Rep,31195
+2026,CA,59,Statewide,statewide_or_districtwide,110000090000,GG,United States Representative District 9,Dem,78226
+2026,CA,59,Statewide,statewide_or_districtwide,110000090000,GG,United States Representative District 9,Rep,40665
+2026,CA,1,Alameda,county,110000100000,GG,United States Representative District 10,Dem,10822
+2026,CA,1,Alameda,county,110000100000,GG,United States Representative District 10,Rep,4208
+2026,CA,7,Contra Costa,county,110000100000,GG,United States Representative District 10,Dem,121079
+2026,CA,7,Contra Costa,county,110000100000,GG,United States Representative District 10,Rep,54874
+2026,CA,59,Statewide,statewide_or_districtwide,110000100000,GG,United States Representative District 10,Dem,131901
+2026,CA,59,Statewide,statewide_or_districtwide,110000100000,GG,United States Representative District 10,Rep,59082
+2026,CA,38,San Francisco,county,110000110000,GG,United States Representative District 11,Dem,218935
+2026,CA,59,Statewide,statewide_or_districtwide,110000110000,GG,United States Representative District 11,Dem,218935
+2026,CA,1,Alameda,county,110000120000,GG,United States Representative District 12,Dem,135621
+2026,CA,59,Statewide,statewide_or_districtwide,110000120000,GG,United States Representative District 12,Dem,135621
+2026,CA,10,Fresno,county,110000130000,GG,United States Representative District 13,Dem,1523
+2026,CA,10,Fresno,county,110000130000,GG,United States Representative District 13,Rep,527
+2026,CA,20,Madera,county,110000130000,GG,United States Representative District 13,Dem,4099
+2026,CA,20,Madera,county,110000130000,GG,United States Representative District 13,Rep,2082
+2026,CA,24,Merced,county,110000130000,GG,United States Representative District 13,Dem,23568
+2026,CA,24,Merced,county,110000130000,GG,United States Representative District 13,Rep,17457
+2026,CA,39,San Joaquin,county,110000130000,GG,United States Representative District 13,Dem,10427
+2026,CA,39,San Joaquin,county,110000130000,GG,United States Representative District 13,Rep,4545
+2026,CA,50,Stanislaus,county,110000130000,GG,United States Representative District 13,Dem,21886
+2026,CA,50,Stanislaus,county,110000130000,GG,United States Representative District 13,Rep,14219
+2026,CA,59,Statewide,statewide_or_districtwide,110000130000,GG,United States Representative District 13,Dem,61503
+2026,CA,59,Statewide,statewide_or_districtwide,110000130000,GG,United States Representative District 13,Rep,38830
+2026,CA,1,Alameda,county,110000140000,GG,United States Representative District 14,Dem,121367
+2026,CA,59,Statewide,statewide_or_districtwide,110000140000,GG,United States Representative District 14,Dem,121367
+2026,CA,38,San Francisco,county,110000150000,GG,United States Representative District 15,Dem,18684
+2026,CA,38,San Francisco,county,110000150000,GG,United States Representative District 15,Rep,4573
+2026,CA,41,San Mateo,county,110000150000,GG,United States Representative District 15,Dem,98578
+2026,CA,41,San Mateo,county,110000150000,GG,United States Representative District 15,Rep,28174
+2026,CA,59,Statewide,statewide_or_districtwide,110000150000,GG,United States Representative District 15,Dem,117262
+2026,CA,59,Statewide,statewide_or_districtwide,110000150000,GG,United States Representative District 15,Rep,32747
+2026,CA,41,San Mateo,county,110000160000,GG,United States Representative District 16,Dem,27888
+2026,CA,41,San Mateo,county,110000160000,GG,United States Representative District 16,Rep,7774
+2026,CA,43,Santa Clara,county,110000160000,GG,United States Representative District 16,Dem,100339
+2026,CA,43,Santa Clara,county,110000160000,GG,United States Representative District 16,Rep,31649
+2026,CA,59,Statewide,statewide_or_districtwide,110000160000,GG,United States Representative District 16,Dem,128227
+2026,CA,59,Statewide,statewide_or_districtwide,110000160000,GG,United States Representative District 16,Rep,39423
+2026,CA,1,Alameda,county,110000170000,GG,United States Representative District 17,Dem,10260
+2026,CA,1,Alameda,county,110000170000,GG,United States Representative District 17,Rep,4479
+2026,CA,43,Santa Clara,county,110000170000,GG,United States Representative District 17,Dem,74658
+2026,CA,43,Santa Clara,county,110000170000,GG,United States Representative District 17,Rep,30625
+2026,CA,59,Statewide,statewide_or_districtwide,110000170000,GG,United States Representative District 17,Dem,84918
+2026,CA,59,Statewide,statewide_or_districtwide,110000170000,GG,United States Representative District 17,Rep,35104
+2026,CA,10,Fresno,county,110000180000,GG,United States Representative District 18,Dem,1029
+2026,CA,10,Fresno,county,110000180000,GG,United States Representative District 18,Rep,1012
+2026,CA,16,Kings,county,110000180000,GG,United States Representative District 18,Dem,731
+2026,CA,16,Kings,county,110000180000,GG,United States Representative District 18,Rep,310
+2026,CA,27,Monterey,county,110000180000,GG,United States Representative District 18,Dem,26697
+2026,CA,27,Monterey,county,110000180000,GG,United States Representative District 18,Rep,9843
+2026,CA,35,San Benito,county,110000180000,GG,United States Representative District 18,Dem,6388
+2026,CA,35,San Benito,county,110000180000,GG,United States Representative District 18,Rep,3907
+2026,CA,43,Santa Clara,county,110000180000,GG,United States Representative District 18,Dem,39378
+2026,CA,43,Santa Clara,county,110000180000,GG,United States Representative District 18,Rep,15464
+2026,CA,44,Santa Cruz,county,110000180000,GG,United States Representative District 18,Dem,8310
+2026,CA,44,Santa Cruz,county,110000180000,GG,United States Representative District 18,Rep,1985
+2026,CA,59,Statewide,statewide_or_districtwide,110000180000,GG,United States Representative District 18,Dem,82533
+2026,CA,59,Statewide,statewide_or_districtwide,110000180000,GG,United States Representative District 18,Rep,32521
+2026,CA,27,Monterey,county,110000190000,GG,United States Representative District 19,Dem,38449
+2026,CA,27,Monterey,county,110000190000,GG,United States Representative District 19,Rep,13440
+2026,CA,40,San Luis Obispo,county,110000190000,GG,United States Representative District 19,Dem,13032
+2026,CA,40,San Luis Obispo,county,110000190000,GG,United States Representative District 19,Rep,11681
+2026,CA,43,Santa Clara,county,110000190000,GG,United States Representative District 19,Dem,40092
+2026,CA,43,Santa Clara,county,110000190000,GG,United States Representative District 19,Rep,18414
+2026,CA,44,Santa Cruz,county,110000190000,GG,United States Representative District 19,Dem,57651
+2026,CA,44,Santa Cruz,county,110000190000,GG,United States Representative District 19,Rep,12904
+2026,CA,59,Statewide,statewide_or_districtwide,110000190000,GG,United States Representative District 19,Dem,149224
+2026,CA,59,Statewide,statewide_or_districtwide,110000190000,GG,United States Representative District 19,Rep,56439
+2026,CA,10,Fresno,county,110000200000,GG,United States Representative District 20,Dem,5621
+2026,CA,10,Fresno,county,110000200000,GG,United States Representative District 20,Rep,9393
+2026,CA,15,Kern,county,110000200000,GG,United States Representative District 20,Dem,30458
+2026,CA,15,Kern,county,110000200000,GG,United States Representative District 20,Rep,52925
+2026,CA,16,Kings,county,110000200000,GG,United States Representative District 20,Dem,9510
+2026,CA,16,Kings,county,110000200000,GG,United States Representative District 20,Rep,14021
+2026,CA,54,Tulare,county,110000200000,GG,United States Representative District 20,Dem,17050
+2026,CA,54,Tulare,county,110000200000,GG,United States Representative District 20,Rep,25898
+2026,CA,59,Statewide,statewide_or_districtwide,110000200000,GG,United States Representative District 20,Dem,62639
+2026,CA,59,Statewide,statewide_or_districtwide,110000200000,GG,United States Representative District 20,Rep,102237
+2026,CA,10,Fresno,county,110000210000,GG,United States Representative District 21,Dem,53129
+2026,CA,10,Fresno,county,110000210000,GG,United States Representative District 21,Rep,30328
+2026,CA,54,Tulare,county,110000210000,GG,United States Representative District 21,Dem,8868
+2026,CA,54,Tulare,county,110000210000,GG,United States Representative District 21,Rep,6510
+2026,CA,59,Statewide,statewide_or_districtwide,110000210000,GG,United States Representative District 21,Dem,61997
+2026,CA,59,Statewide,statewide_or_districtwide,110000210000,GG,United States Representative District 21,Rep,36838
+2026,CA,10,Fresno,county,110000220000,GG,United States Representative District 22,Dem,9973
+2026,CA,10,Fresno,county,110000220000,GG,United States Representative District 22,Rep,6520
+2026,CA,15,Kern,county,110000220000,GG,United States Representative District 22,Dem,38100
+2026,CA,15,Kern,county,110000220000,GG,United States Representative District 22,Rep,16947
+2026,CA,16,Kings,county,110000220000,GG,United States Representative District 22,Dem,5002
+2026,CA,16,Kings,county,110000220000,GG,United States Representative District 22,Rep,2756
+2026,CA,20,Madera,county,110000220000,GG,United States Representative District 22,Dem,75
+2026,CA,20,Madera,county,110000220000,GG,United States Representative District 22,Rep,110
+2026,CA,54,Tulare,county,110000220000,GG,United States Representative District 22,Dem,8342
+2026,CA,54,Tulare,county,110000220000,GG,United States Representative District 22,Rep,4538
+2026,CA,59,Statewide,statewide_or_districtwide,110000220000,GG,United States Representative District 22,Dem,61492
+2026,CA,59,Statewide,statewide_or_districtwide,110000220000,GG,United States Representative District 22,Rep,30871
+2026,CA,15,Kern,county,110000230000,GG,United States Representative District 23,Dem,1369
+2026,CA,15,Kern,county,110000230000,GG,United States Representative District 23,Rep,1629
+2026,CA,19,Los Angeles,county,110000230000,GG,United States Representative District 23,Dem,1851
+2026,CA,19,Los Angeles,county,110000230000,GG,United States Representative District 23,Rep,1296
+2026,CA,33,Riverside,county,110000230000,GG,United States Representative District 23,Dem,2911
+2026,CA,33,Riverside,county,110000230000,GG,United States Representative District 23,Rep,4162
+2026,CA,36,San Bernardino,county,110000230000,GG,United States Representative District 23,Dem,68057
+2026,CA,36,San Bernardino,county,110000230000,GG,United States Representative District 23,Rep,70997
+2026,CA,59,Statewide,statewide_or_districtwide,110000230000,GG,United States Representative District 23,Dem,74188
+2026,CA,59,Statewide,statewide_or_districtwide,110000230000,GG,United States Representative District 23,Rep,78084
+2026,CA,40,San Luis Obispo,county,110000240000,GG,United States Representative District 24,Dem,29295
+2026,CA,40,San Luis Obispo,county,110000240000,GG,United States Representative District 24,Rep,16644
+2026,CA,42,Santa Barbara,county,110000240000,GG,United States Representative District 24,Dem,66007
+2026,CA,42,Santa Barbara,county,110000240000,GG,United States Representative District 24,Rep,32678
+2026,CA,56,Ventura,county,110000240000,GG,United States Representative District 24,Dem,24229
+2026,CA,56,Ventura,county,110000240000,GG,United States Representative District 24,Rep,11952
+2026,CA,59,Statewide,statewide_or_districtwide,110000240000,GG,United States Representative District 24,Dem,119531
+2026,CA,59,Statewide,statewide_or_districtwide,110000240000,GG,United States Representative District 24,Rep,61274
+2026,CA,13,Imperial,county,110000250000,GG,United States Representative District 25,Dem,16429
+2026,CA,13,Imperial,county,110000250000,GG,United States Representative District 25,Rep,7744
+2026,CA,33,Riverside,county,110000250000,GG,United States Representative District 25,Dem,65331
+2026,CA,33,Riverside,county,110000250000,GG,United States Representative District 25,Rep,36390
+2026,CA,36,San Bernardino,county,110000250000,GG,United States Representative District 25,Dem,1701
+2026,CA,36,San Bernardino,county,110000250000,GG,United States Representative District 25,Rep,1274
+2026,CA,59,Statewide,statewide_or_districtwide,110000250000,GG,United States Representative District 25,Dem,83461
+2026,CA,59,Statewide,statewide_or_districtwide,110000250000,GG,United States Representative District 25,Rep,45408
+2026,CA,19,Los Angeles,county,110000260000,GG,United States Representative District 26,Dem,35344
+2026,CA,19,Los Angeles,county,110000260000,GG,United States Representative District 26,Rep,25504
+2026,CA,56,Ventura,county,110000260000,GG,United States Representative District 26,Dem,85072
+2026,CA,56,Ventura,county,110000260000,GG,United States Representative District 26,Rep,48707
+2026,CA,59,Statewide,statewide_or_districtwide,110000260000,GG,United States Representative District 26,Dem,120416
+2026,CA,59,Statewide,statewide_or_districtwide,110000260000,GG,United States Representative District 26,Rep,74211
+2026,CA,19,Los Angeles,county,110000270000,GG,United States Representative District 27,Dem,118634
+2026,CA,19,Los Angeles,county,110000270000,GG,United States Representative District 27,Rep,70403
+2026,CA,59,Statewide,statewide_or_districtwide,110000270000,GG,United States Representative District 27,Dem,118634
+2026,CA,59,Statewide,statewide_or_districtwide,110000270000,GG,United States Representative District 27,Rep,70403
+2026,CA,19,Los Angeles,county,110000280000,GG,United States Representative District 28,Dem,126613
+2026,CA,19,Los Angeles,county,110000280000,GG,United States Representative District 28,Rep,45736
+2026,CA,36,San Bernardino,county,110000280000,GG,United States Representative District 28,Dem,17606
+2026,CA,36,San Bernardino,county,110000280000,GG,United States Representative District 28,Rep,17041
+2026,CA,59,Statewide,statewide_or_districtwide,110000280000,GG,United States Representative District 28,Dem,144219
+2026,CA,59,Statewide,statewide_or_districtwide,110000280000,GG,United States Representative District 28,Rep,62777
+2026,CA,19,Los Angeles,county,110000290000,GG,United States Representative District 29,Dem,135216
+2026,CA,59,Statewide,statewide_or_districtwide,110000290000,GG,United States Representative District 29,Dem,135216
+2026,CA,19,Los Angeles,county,110000300000,GG,United States Representative District 30,Dem,159698
+2026,CA,19,Los Angeles,county,110000300000,GG,United States Representative District 30,Rep,48944
+2026,CA,59,Statewide,statewide_or_districtwide,110000300000,GG,United States Representative District 30,Dem,159698
+2026,CA,59,Statewide,statewide_or_districtwide,110000300000,GG,United States Representative District 30,Rep,48944
+2026,CA,19,Los Angeles,county,110000310000,GG,United States Representative District 31,Dem,107387
+2026,CA,19,Los Angeles,county,110000310000,GG,United States Representative District 31,Rep,56835
+2026,CA,36,San Bernardino,county,110000310000,GG,United States Representative District 31,Dem,14080
+2026,CA,36,San Bernardino,county,110000310000,GG,United States Representative District 31,Rep,9136
+2026,CA,59,Statewide,statewide_or_districtwide,110000310000,GG,United States Representative District 31,Dem,121467
+2026,CA,59,Statewide,statewide_or_districtwide,110000310000,GG,United States Representative District 31,Rep,65971
+2026,CA,19,Los Angeles,county,110000320000,GG,United States Representative District 32,Dem,127449
+2026,CA,19,Los Angeles,county,110000320000,GG,United States Representative District 32,Rep,54974
+2026,CA,56,Ventura,county,110000320000,GG,United States Representative District 32,Dem,17303
+2026,CA,56,Ventura,county,110000320000,GG,United States Representative District 32,Rep,16496
+2026,CA,59,Statewide,statewide_or_districtwide,110000320000,GG,United States Representative District 32,Dem,144752
+2026,CA,59,Statewide,statewide_or_districtwide,110000320000,GG,United States Representative District 32,Rep,71470
+2026,CA,33,Riverside,county,110000330000,GG,United States Representative District 33,Dem,1137
+2026,CA,33,Riverside,county,110000330000,GG,United States Representative District 33,Rep,670
+2026,CA,36,San Bernardino,county,110000330000,GG,United States Representative District 33,Dem,91590
+2026,CA,36,San Bernardino,county,110000330000,GG,United States Representative District 33,Rep,43031
+2026,CA,59,Statewide,statewide_or_districtwide,110000330000,GG,United States Representative District 33,Dem,92727
+2026,CA,59,Statewide,statewide_or_districtwide,110000330000,GG,United States Representative District 33,Rep,43701
+2026,CA,19,Los Angeles,county,110000340000,GG,United States Representative District 34,Dem,135363
+2026,CA,59,Statewide,statewide_or_districtwide,110000340000,GG,United States Representative District 34,Dem,135363
+2026,CA,19,Los Angeles,county,110000350000,GG,United States Representative District 35,Dem,20501
+2026,CA,19,Los Angeles,county,110000350000,GG,United States Representative District 35,Rep,7259
+2026,CA,33,Riverside,county,110000350000,GG,United States Representative District 35,Dem,11084
+2026,CA,33,Riverside,county,110000350000,GG,United States Representative District 35,Rep,9531
+2026,CA,36,San Bernardino,county,110000350000,GG,United States Representative District 35,Dem,52637
+2026,CA,36,San Bernardino,county,110000350000,GG,United States Representative District 35,Rep,26980
+2026,CA,59,Statewide,statewide_or_districtwide,110000350000,GG,United States Representative District 35,Dem,84222
+2026,CA,59,Statewide,statewide_or_districtwide,110000350000,GG,United States Representative District 35,Rep,43770
+2026,CA,19,Los Angeles,county,110000360000,GG,United States Representative District 36,Dem,176955
+2026,CA,19,Los Angeles,county,110000360000,GG,United States Representative District 36,Rep,69139
+2026,CA,59,Statewide,statewide_or_districtwide,110000360000,GG,United States Representative District 36,Dem,176955
+2026,CA,59,Statewide,statewide_or_districtwide,110000360000,GG,United States Representative District 36,Rep,69139
+2026,CA,19,Los Angeles,county,110000370000,GG,United States Representative District 37,Dem,142632
+2026,CA,59,Statewide,statewide_or_districtwide,110000370000,GG,United States Representative District 37,Dem,142632
+2026,CA,19,Los Angeles,county,110000380000,GG,United States Representative District 38,Dem,95421
+2026,CA,19,Los Angeles,county,110000380000,GG,United States Representative District 38,Rep,34746
+2026,CA,30,Orange,county,110000380000,GG,United States Representative District 38,Dem,19291
+2026,CA,30,Orange,county,110000380000,GG,United States Representative District 38,Rep,23836
+2026,CA,59,Statewide,statewide_or_districtwide,110000380000,GG,United States Representative District 38,Dem,114712
+2026,CA,59,Statewide,statewide_or_districtwide,110000380000,GG,United States Representative District 38,Rep,58582
+2026,CA,33,Riverside,county,110000390000,GG,United States Representative District 39,Dem,60770
+2026,CA,33,Riverside,county,110000390000,GG,United States Representative District 39,Rep,31188
+2026,CA,59,Statewide,statewide_or_districtwide,110000390000,GG,United States Representative District 39,Dem,60770
+2026,CA,59,Statewide,statewide_or_districtwide,110000390000,GG,United States Representative District 39,Rep,31188
+2026,CA,30,Orange,county,110000400000,GG,United States Representative District 40,Rep,72550
+2026,CA,33,Riverside,county,110000400000,GG,United States Representative District 40,Rep,77784
+2026,CA,59,Statewide,statewide_or_districtwide,110000400000,GG,United States Representative District 40,Rep,150334
+2026,CA,19,Los Angeles,county,110000410000,GG,United States Representative District 41,Dem,111674
+2026,CA,19,Los Angeles,county,110000410000,GG,United States Representative District 41,Rep,49956
+2026,CA,30,Orange,county,110000410000,GG,United States Representative District 41,Dem,21521
+2026,CA,30,Orange,county,110000410000,GG,United States Representative District 41,Rep,17541
+2026,CA,59,Statewide,statewide_or_districtwide,110000410000,GG,United States Representative District 41,Dem,133195
+2026,CA,59,Statewide,statewide_or_districtwide,110000410000,GG,United States Representative District 41,Rep,67497
+2026,CA,19,Los Angeles,county,110000420000,GG,United States Representative District 42,Dem,64637
+2026,CA,19,Los Angeles,county,110000420000,GG,United States Representative District 42,Rep,19484
+2026,CA,30,Orange,county,110000420000,GG,United States Representative District 42,Dem,66586
+2026,CA,30,Orange,county,110000420000,GG,United States Representative District 42,Rep,65727
+2026,CA,59,Statewide,statewide_or_districtwide,110000420000,GG,United States Representative District 42,Dem,131223
+2026,CA,59,Statewide,statewide_or_districtwide,110000420000,GG,United States Representative District 42,Rep,85211
+2026,CA,19,Los Angeles,county,110000430000,GG,United States Representative District 43,Dem,120332
+2026,CA,19,Los Angeles,county,110000430000,GG,United States Representative District 43,Rep,26295
+2026,CA,59,Statewide,statewide_or_districtwide,110000430000,GG,United States Representative District 43,Dem,120332
+2026,CA,59,Statewide,statewide_or_districtwide,110000430000,GG,United States Representative District 43,Rep,26295
+2026,CA,19,Los Angeles,county,110000440000,GG,United States Representative District 44,Dem,114528
+2026,CA,19,Los Angeles,county,110000440000,GG,United States Representative District 44,Rep,27338
+2026,CA,59,Statewide,statewide_or_districtwide,110000440000,GG,United States Representative District 44,Dem,114528
+2026,CA,59,Statewide,statewide_or_districtwide,110000440000,GG,United States Representative District 44,Rep,27338
+2026,CA,19,Los Angeles,county,110000450000,GG,United States Representative District 45,Dem,29531
+2026,CA,19,Los Angeles,county,110000450000,GG,United States Representative District 45,Rep,12924
+2026,CA,30,Orange,county,110000450000,GG,United States Representative District 45,Dem,86406
+2026,CA,30,Orange,county,110000450000,GG,United States Representative District 45,Rep,65682
+2026,CA,59,Statewide,statewide_or_districtwide,110000450000,GG,United States Representative District 45,Dem,115937
+2026,CA,59,Statewide,statewide_or_districtwide,110000450000,GG,United States Representative District 45,Rep,78606
+2026,CA,30,Orange,county,110000460000,GG,United States Representative District 46,Dem,96702
+2026,CA,30,Orange,county,110000460000,GG,United States Representative District 46,Rep,42956
+2026,CA,59,Statewide,statewide_or_districtwide,110000460000,GG,United States Representative District 46,Dem,96702
+2026,CA,59,Statewide,statewide_or_districtwide,110000460000,GG,United States Representative District 46,Rep,42956
+2026,CA,30,Orange,county,110000470000,GG,United States Representative District 47,Dem,128743
+2026,CA,30,Orange,county,110000470000,GG,United States Representative District 47,Rep,95500
+2026,CA,59,Statewide,statewide_or_districtwide,110000470000,GG,United States Representative District 47,Dem,128743
+2026,CA,59,Statewide,statewide_or_districtwide,110000470000,GG,United States Representative District 47,Rep,95500
+2026,CA,33,Riverside,county,110000480000,GG,United States Representative District 48,Dem,46773
+2026,CA,33,Riverside,county,110000480000,GG,United States Representative District 48,Rep,31900
+2026,CA,37,San Diego,county,110000480000,GG,United States Representative District 48,Dem,55359
+2026,CA,37,San Diego,county,110000480000,GG,United States Representative District 48,Rep,37786
+2026,CA,59,Statewide,statewide_or_districtwide,110000480000,GG,United States Representative District 48,Dem,102132
+2026,CA,59,Statewide,statewide_or_districtwide,110000480000,GG,United States Representative District 48,Rep,69686
+2026,CA,30,Orange,county,110000490000,GG,United States Representative District 49,Dem,22333
+2026,CA,30,Orange,county,110000490000,GG,United States Representative District 49,Rep,24428
+2026,CA,37,San Diego,county,110000490000,GG,United States Representative District 49,Dem,106979
+2026,CA,37,San Diego,county,110000490000,GG,United States Representative District 49,Rep,70310
+2026,CA,59,Statewide,statewide_or_districtwide,110000490000,GG,United States Representative District 49,Dem,129312
+2026,CA,59,Statewide,statewide_or_districtwide,110000490000,GG,United States Representative District 49,Rep,94738
+2026,CA,37,San Diego,county,110000500000,GG,United States Representative District 50,Dem,125988
+2026,CA,37,San Diego,county,110000500000,GG,United States Representative District 50,Rep,79053
+2026,CA,59,Statewide,statewide_or_districtwide,110000500000,GG,United States Representative District 50,Dem,125988
+2026,CA,59,Statewide,statewide_or_districtwide,110000500000,GG,United States Representative District 50,Rep,79053
+2026,CA,37,San Diego,county,110000510000,GG,United States Representative District 51,Dem,116892
+2026,CA,37,San Diego,county,110000510000,GG,United States Representative District 51,Rep,67348
+2026,CA,59,Statewide,statewide_or_districtwide,110000510000,GG,United States Representative District 51,Dem,116892
+2026,CA,59,Statewide,statewide_or_districtwide,110000510000,GG,United States Representative District 51,Rep,67348
+2026,CA,37,San Diego,county,110000520000,GG,United States Representative District 52,Dem,96581
+2026,CA,37,San Diego,county,110000520000,GG,United States Representative District 52,Rep,42963
+2026,CA,59,Statewide,statewide_or_districtwide,110000520000,GG,United States Representative District 52,Dem,96581
+2026,CA,59,Statewide,statewide_or_districtwide,110000520000,GG,United States Representative District 52,Rep,42963
+2026,CA,8,Del Norte,county,120000020000,GG,State Senate District 2,Dem,2610
+2026,CA,8,Del Norte,county,120000020000,GG,State Senate District 2,Rep,2813
+2026,CA,12,Humboldt,county,120000020000,GG,State Senate District 2,Dem,16622
+2026,CA,12,Humboldt,county,120000020000,GG,State Senate District 2,Rep,8242
+2026,CA,17,Lake,county,120000020000,GG,State Senate District 2,Dem,4301
+2026,CA,17,Lake,county,120000020000,GG,State Senate District 2,Rep,3289
+2026,CA,21,Marin,county,120000020000,GG,State Senate District 2,Dem,55003
+2026,CA,21,Marin,county,120000020000,GG,State Senate District 2,Rep,12462
+2026,CA,23,Mendocino,county,120000020000,GG,State Senate District 2,Dem,12013
+2026,CA,23,Mendocino,county,120000020000,GG,State Senate District 2,Rep,5153
+2026,CA,38,San Francisco,county,120000020000,GG,State Senate District 2,Dem,0
+2026,CA,38,San Francisco,county,120000020000,GG,State Senate District 2,Rep,0
+2026,CA,49,Sonoma,county,120000020000,GG,State Senate District 2,Dem,65961
+2026,CA,49,Sonoma,county,120000020000,GG,State Senate District 2,Rep,19598
+2026,CA,53,Trinity,county,120000020000,GG,State Senate District 2,Dem,1327
+2026,CA,53,Trinity,county,120000020000,GG,State Senate District 2,Rep,1395
+2026,CA,59,Statewide,statewide_or_districtwide,120000020000,GG,State Senate District 2,Dem,157837
+2026,CA,59,Statewide,statewide_or_districtwide,120000020000,GG,State Senate District 2,Rep,52952
+2026,CA,2,Alpine,county,120000040000,GG,State Senate District 4,Dem,356
+2026,CA,2,Alpine,county,120000040000,GG,State Senate District 4,Rep,189
+2026,CA,3,Amador,county,120000040000,GG,State Senate District 4,Dem,5814
+2026,CA,3,Amador,county,120000040000,GG,State Senate District 4,Rep,9291
+2026,CA,5,Calaveras,county,120000040000,GG,State Senate District 4,Dem,6243
+2026,CA,5,Calaveras,county,120000040000,GG,State Senate District 4,Rep,9970
+2026,CA,9,El Dorado,county,120000040000,GG,State Senate District 4,Dem,30712
+2026,CA,9,El Dorado,county,120000040000,GG,State Senate District 4,Rep,36989
+2026,CA,14,Inyo,county,120000040000,GG,State Senate District 4,Dem,3789
+2026,CA,14,Inyo,county,120000040000,GG,State Senate District 4,Rep,3398
+2026,CA,20,Madera,county,120000040000,GG,State Senate District 4,Dem,5621
+2026,CA,20,Madera,county,120000040000,GG,State Senate District 4,Rep,9139
+2026,CA,22,Mariposa,county,120000040000,GG,State Senate District 4,Dem,3082
+2026,CA,22,Mariposa,county,120000040000,GG,State Senate District 4,Rep,4443
+2026,CA,24,Merced,county,120000040000,GG,State Senate District 4,Dem,1693
+2026,CA,24,Merced,county,120000040000,GG,State Senate District 4,Rep,2189
+2026,CA,26,Mono,county,120000040000,GG,State Senate District 4,Dem,2950
+2026,CA,26,Mono,county,120000040000,GG,State Senate District 4,Rep,1806
+2026,CA,29,Nevada,county,120000040000,GG,State Senate District 4,Dem,3416
+2026,CA,29,Nevada,county,120000040000,GG,State Senate District 4,Rep,1072
+2026,CA,31,Placer,county,120000040000,GG,State Senate District 4,Dem,2545
+2026,CA,31,Placer,county,120000040000,GG,State Senate District 4,Rep,927
+2026,CA,50,Stanislaus,county,120000040000,GG,State Senate District 4,Dem,51099
+2026,CA,50,Stanislaus,county,120000040000,GG,State Senate District 4,Rep,46607
+2026,CA,55,Tuolumne,county,120000040000,GG,State Senate District 4,Dem,8108
+2026,CA,55,Tuolumne,county,120000040000,GG,State Senate District 4,Rep,10204
+2026,CA,59,Statewide,statewide_or_districtwide,120000040000,GG,State Senate District 4,Dem,125428
+2026,CA,59,Statewide,statewide_or_districtwide,120000040000,GG,State Senate District 4,Rep,136224
+2026,CA,31,Placer,county,120000060000,GG,State Senate District 6,Dem,47133
+2026,CA,31,Placer,county,120000060000,GG,State Senate District 6,Rep,58924
+2026,CA,34,Sacramento,county,120000060000,GG,State Senate District 6,Dem,62184
+2026,CA,34,Sacramento,county,120000060000,GG,State Senate District 6,Rep,58751
+2026,CA,59,Statewide,statewide_or_districtwide,120000060000,GG,State Senate District 6,Dem,109317
+2026,CA,59,Statewide,statewide_or_districtwide,120000060000,GG,State Senate District 6,Rep,117675
+2026,CA,34,Sacramento,county,120000080000,GG,State Senate District 8,Dem,102052
+2026,CA,34,Sacramento,county,120000080000,GG,State Senate District 8,Rep,38917
+2026,CA,59,Statewide,statewide_or_districtwide,120000080000,GG,State Senate District 8,Dem,102052
+2026,CA,59,Statewide,statewide_or_districtwide,120000080000,GG,State Senate District 8,Rep,38917
+2026,CA,1,Alameda,county,120000100000,GG,State Senate District 10,Dem,60170
+2026,CA,1,Alameda,county,120000100000,GG,State Senate District 10,Rep,21664
+2026,CA,43,Santa Clara,county,120000100000,GG,State Senate District 10,Dem,55048
+2026,CA,43,Santa Clara,county,120000100000,GG,State Senate District 10,Rep,22013
+2026,CA,59,Statewide,statewide_or_districtwide,120000100000,GG,State Senate District 10,Dem,115218
+2026,CA,59,Statewide,statewide_or_districtwide,120000100000,GG,State Senate District 10,Rep,43677
+2026,CA,10,Fresno,county,120000120000,GG,State Senate District 12,Lib,30560
+2026,CA,10,Fresno,county,120000120000,GG,State Senate District 12,Rep,49829
+2026,CA,15,Kern,county,120000120000,GG,State Senate District 12,Lib,29886
+2026,CA,15,Kern,county,120000120000,GG,State Senate District 12,Rep,53550
+2026,CA,54,Tulare,county,120000120000,GG,State Senate District 12,Lib,12366
+2026,CA,54,Tulare,county,120000120000,GG,State Senate District 12,Rep,21445
+2026,CA,59,Statewide,statewide_or_districtwide,120000120000,GG,State Senate District 12,Lib,72812
+2026,CA,59,Statewide,statewide_or_districtwide,120000120000,GG,State Senate District 12,Rep,124824
+2026,CA,10,Fresno,county,120000140000,GG,State Senate District 14,Dem,51059
+2026,CA,10,Fresno,county,120000140000,GG,State Senate District 14,Rep,25166
+2026,CA,20,Madera,county,120000140000,GG,State Senate District 14,Dem,8842
+2026,CA,20,Madera,county,120000140000,GG,State Senate District 14,Rep,5531
+2026,CA,24,Merced,county,120000140000,GG,State Senate District 14,Dem,22655
+2026,CA,24,Merced,county,120000140000,GG,State Senate District 14,Rep,14665
+2026,CA,54,Tulare,county,120000140000,GG,State Senate District 14,Dem,2
+2026,CA,54,Tulare,county,120000140000,GG,State Senate District 14,Rep,0
+2026,CA,59,Statewide,statewide_or_districtwide,120000140000,GG,State Senate District 14,Dem,82558
+2026,CA,59,Statewide,statewide_or_districtwide,120000140000,GG,State Senate District 14,Rep,45362
+2026,CA,10,Fresno,county,120000160000,GG,State Senate District 16,Dem,1150
+2026,CA,10,Fresno,county,120000160000,GG,State Senate District 16,Rep,2079
+2026,CA,15,Kern,county,120000160000,GG,State Senate District 16,Dem,37743
+2026,CA,15,Kern,county,120000160000,GG,State Senate District 16,Rep,16827
+2026,CA,16,Kings,county,120000160000,GG,State Senate District 16,Dem,16189
+2026,CA,16,Kings,county,120000160000,GG,State Senate District 16,Rep,16081
+2026,CA,54,Tulare,county,120000160000,GG,State Senate District 16,Dem,21010
+2026,CA,54,Tulare,county,120000160000,GG,State Senate District 16,Rep,14941
+2026,CA,59,Statewide,statewide_or_districtwide,120000160000,GG,State Senate District 16,Dem,76092
+2026,CA,59,Statewide,statewide_or_districtwide,120000160000,GG,State Senate District 16,Rep,49928
+2026,CA,13,Imperial,county,120000180000,GG,State Senate District 18,Dem,16105
+2026,CA,13,Imperial,county,120000180000,GG,State Senate District 18,Rep,7987
+2026,CA,33,Riverside,county,120000180000,GG,State Senate District 18,Dem,16138
+2026,CA,33,Riverside,county,120000180000,GG,State Senate District 18,Rep,8819
+2026,CA,36,San Bernardino,county,120000180000,GG,State Senate District 18,Dem,437
+2026,CA,36,San Bernardino,county,120000180000,GG,State Senate District 18,Rep,576
+2026,CA,37,San Diego,county,120000180000,GG,State Senate District 18,Dem,78193
+2026,CA,37,San Diego,county,120000180000,GG,State Senate District 18,Rep,36570
+2026,CA,59,Statewide,statewide_or_districtwide,120000180000,GG,State Senate District 18,Dem,110873
+2026,CA,59,Statewide,statewide_or_districtwide,120000180000,GG,State Senate District 18,Rep,53952
+2026,CA,19,Los Angeles,county,120000200000,GG,State Senate District 20,Dem,141889
+2026,CA,19,Los Angeles,county,120000200000,GG,State Senate District 20,Rep,47135
+2026,CA,59,Statewide,statewide_or_districtwide,120000200000,GG,State Senate District 20,Dem,141889
+2026,CA,59,Statewide,statewide_or_districtwide,120000200000,GG,State Senate District 20,Rep,47135
+2026,CA,19,Los Angeles,county,120000220000,GG,State Senate District 22,Dem,104230
+2026,CA,19,Los Angeles,county,120000220000,GG,State Senate District 22,Rep,46688
+2026,CA,36,San Bernardino,county,120000220000,GG,State Senate District 22,Dem,35827
+2026,CA,36,San Bernardino,county,120000220000,GG,State Senate District 22,Rep,19432
+2026,CA,59,Statewide,statewide_or_districtwide,120000220000,GG,State Senate District 22,Dem,140057
+2026,CA,59,Statewide,statewide_or_districtwide,120000220000,GG,State Senate District 22,Rep,66120
+2026,CA,19,Los Angeles,county,120000240000,GG,State Senate District 24,Dem,288469
+2026,CA,59,Statewide,statewide_or_districtwide,120000240000,GG,State Senate District 24,Dem,288469
+2026,CA,19,Los Angeles,county,120000260000,GG,State Senate District 26,Dem,189147
+2026,CA,59,Statewide,statewide_or_districtwide,120000260000,GG,State Senate District 26,Dem,189147
+2026,CA,19,Los Angeles,county,120000280000,GG,State Senate District 28,Dem,180589
+2026,CA,19,Los Angeles,county,120000280000,GG,State Senate District 28,Rep,32879
+2026,CA,59,Statewide,statewide_or_districtwide,120000280000,GG,State Senate District 28,Dem,180589
+2026,CA,59,Statewide,statewide_or_districtwide,120000280000,GG,State Senate District 28,Rep,32879
+2026,CA,19,Los Angeles,county,120000300000,GG,State Senate District 30,Dem,160185
+2026,CA,19,Los Angeles,county,120000300000,GG,State Senate District 30,Rep,71079
+2026,CA,30,Orange,county,120000300000,GG,State Senate District 30,Dem,7990
+2026,CA,30,Orange,county,120000300000,GG,State Senate District 30,Rep,7072
+2026,CA,59,Statewide,statewide_or_districtwide,120000300000,GG,State Senate District 30,Dem,168175
+2026,CA,59,Statewide,statewide_or_districtwide,120000300000,GG,State Senate District 30,Rep,78151
+2026,CA,30,Orange,county,120000320000,GG,State Senate District 32,Dem,9442
+2026,CA,30,Orange,county,120000320000,GG,State Senate District 32,Rep,15686
+2026,CA,33,Riverside,county,120000320000,GG,State Senate District 32,Dem,71397
+2026,CA,33,Riverside,county,120000320000,GG,State Senate District 32,Rep,76844
+2026,CA,36,San Bernardino,county,120000320000,GG,State Senate District 32,Dem,10000
+2026,CA,36,San Bernardino,county,120000320000,GG,State Senate District 32,Rep,10061
+2026,CA,37,San Diego,county,120000320000,GG,State Senate District 32,Dem,1739
+2026,CA,37,San Diego,county,120000320000,GG,State Senate District 32,Rep,1661
+2026,CA,59,Statewide,statewide_or_districtwide,120000320000,GG,State Senate District 32,Dem,92578
+2026,CA,59,Statewide,statewide_or_districtwide,120000320000,GG,State Senate District 32,Rep,104252
+2026,CA,19,Los Angeles,county,120000340000,GG,State Senate District 34,Dem,10910
+2026,CA,19,Los Angeles,county,120000340000,GG,State Senate District 34,Rep,5121
+2026,CA,30,Orange,county,120000340000,GG,State Senate District 34,Dem,107315
+2026,CA,30,Orange,county,120000340000,GG,State Senate District 34,Rep,49990
+2026,CA,59,Statewide,statewide_or_districtwide,120000340000,GG,State Senate District 34,Dem,118225
+2026,CA,59,Statewide,statewide_or_districtwide,120000340000,GG,State Senate District 34,Rep,55111
+2026,CA,19,Los Angeles,county,120000360000,GG,State Senate District 36,Dem,15651
+2026,CA,19,Los Angeles,county,120000360000,GG,State Senate District 36,Rep,8157
+2026,CA,30,Orange,county,120000360000,GG,State Senate District 36,Dem,138894
+2026,CA,30,Orange,county,120000360000,GG,State Senate District 36,Rep,142649
+2026,CA,59,Statewide,statewide_or_districtwide,120000360000,GG,State Senate District 36,Dem,154545
+2026,CA,59,Statewide,statewide_or_districtwide,120000360000,GG,State Senate District 36,Rep,150806
+2026,CA,30,Orange,county,120000380000,GG,State Senate District 38,Dem,44697
+2026,CA,30,Orange,county,120000380000,GG,State Senate District 38,Rep,48319
+2026,CA,37,San Diego,county,120000380000,GG,State Senate District 38,Dem,116724
+2026,CA,37,San Diego,county,120000380000,GG,State Senate District 38,Rep,78226
+2026,CA,59,Statewide,statewide_or_districtwide,120000380000,GG,State Senate District 38,Dem,161421
+2026,CA,59,Statewide,statewide_or_districtwide,120000380000,GG,State Senate District 38,Rep,126545
+2026,CA,37,San Diego,county,120000400000,GG,State Senate District 40,Dem,134798
+2026,CA,37,San Diego,county,120000400000,GG,State Senate District 40,Rep,119320
+2026,CA,59,Statewide,statewide_or_districtwide,120000400000,GG,State Senate District 40,Dem,134798
+2026,CA,59,Statewide,statewide_or_districtwide,120000400000,GG,State Senate District 40,Rep,119320
+2026,CA,2,Alpine,county,130000010000,GG,State Assembly Member District 1,Dem,345
+2026,CA,2,Alpine,county,130000010000,GG,State Assembly Member District 1,Rep,204
+2026,CA,3,Amador,county,130000010000,GG,State Assembly Member District 1,Dem,4459
+2026,CA,3,Amador,county,130000010000,GG,State Assembly Member District 1,Rep,7150
+2026,CA,9,El Dorado,county,130000010000,GG,State Assembly Member District 1,Dem,8880
+2026,CA,9,El Dorado,county,130000010000,GG,State Assembly Member District 1,Rep,8815
+2026,CA,18,Lassen,county,130000010000,GG,State Assembly Member District 1,Dem,1679
+2026,CA,18,Lassen,county,130000010000,GG,State Assembly Member District 1,Rep,5785
+2026,CA,25,Modoc,county,130000010000,GG,State Assembly Member District 1,Dem,538
+2026,CA,25,Modoc,county,130000010000,GG,State Assembly Member District 1,Rep,1847
+2026,CA,29,Nevada,county,130000010000,GG,State Assembly Member District 1,Dem,15928
+2026,CA,29,Nevada,county,130000010000,GG,State Assembly Member District 1,Rep,12458
+2026,CA,31,Placer,county,130000010000,GG,State Assembly Member District 1,Dem,4409
+2026,CA,31,Placer,county,130000010000,GG,State Assembly Member District 1,Rep,4753
+2026,CA,32,Plumas,county,130000010000,GG,State Assembly Member District 1,Dem,3188
+2026,CA,32,Plumas,county,130000010000,GG,State Assembly Member District 1,Rep,4829
+2026,CA,45,Shasta,county,130000010000,GG,State Assembly Member District 1,Dem,11470
+2026,CA,45,Shasta,county,130000010000,GG,State Assembly Member District 1,Rep,22657
+2026,CA,46,Sierra,county,130000010000,GG,State Assembly Member District 1,Dem,490
+2026,CA,46,Sierra,county,130000010000,GG,State Assembly Member District 1,Rep,949
+2026,CA,47,Siskiyou,county,130000010000,GG,State Assembly Member District 1,Dem,5430
+2026,CA,47,Siskiyou,county,130000010000,GG,State Assembly Member District 1,Rep,8116
+2026,CA,59,Statewide,statewide_or_districtwide,130000010000,GG,State Assembly Member District 1,Dem,56816
+2026,CA,59,Statewide,statewide_or_districtwide,130000010000,GG,State Assembly Member District 1,Rep,77563
+2026,CA,8,Del Norte,county,130000020000,GG,State Assembly Member District 2,Dem,2578
+2026,CA,8,Del Norte,county,130000020000,GG,State Assembly Member District 2,Rep,2806
+2026,CA,12,Humboldt,county,130000020000,GG,State Assembly Member District 2,Dem,16619
+2026,CA,12,Humboldt,county,130000020000,GG,State Assembly Member District 2,Rep,8247
+2026,CA,23,Mendocino,county,130000020000,GG,State Assembly Member District 2,Dem,11991
+2026,CA,23,Mendocino,county,130000020000,GG,State Assembly Member District 2,Rep,5170
+2026,CA,49,Sonoma,county,130000020000,GG,State Assembly Member District 2,Dem,40664
+2026,CA,49,Sonoma,county,130000020000,GG,State Assembly Member District 2,Rep,12344
+2026,CA,53,Trinity,county,130000020000,GG,State Assembly Member District 2,Dem,1317
+2026,CA,53,Trinity,county,130000020000,GG,State Assembly Member District 2,Rep,1400
+2026,CA,59,Statewide,statewide_or_districtwide,130000020000,GG,State Assembly Member District 2,Dem,73169
+2026,CA,59,Statewide,statewide_or_districtwide,130000020000,GG,State Assembly Member District 2,Rep,29967
+2026,CA,4,Butte,county,130000030000,GG,State Assembly Member District 3,Rep,48058
+2026,CA,11,Glenn,county,130000030000,GG,State Assembly Member District 3,Rep,5019
+2026,CA,31,Placer,county,130000030000,GG,State Assembly Member District 3,Rep,2779
+2026,CA,51,Sutter,county,130000030000,GG,State Assembly Member District 3,Rep,11973
+2026,CA,52,Tehama,county,130000030000,GG,State Assembly Member District 3,Rep,14944
+2026,CA,58,Yuba,county,130000030000,GG,State Assembly Member District 3,Rep,7654
+2026,CA,59,Statewide,statewide_or_districtwide,130000030000,GG,State Assembly Member District 3,Rep,90427
+2026,CA,6,Colusa,county,130000040000,GG,State Assembly Member District 4,Dem,2673
+2026,CA,17,Lake,county,130000040000,GG,State Assembly Member District 4,Dem,5356
+2026,CA,28,Napa,county,130000040000,GG,State Assembly Member District 4,Dem,15848
+2026,CA,49,Sonoma,county,130000040000,GG,State Assembly Member District 4,Dem,5866
+2026,CA,57,Yolo,county,130000040000,GG,State Assembly Member District 4,Dem,36401
+2026,CA,59,Statewide,statewide_or_districtwide,130000040000,GG,State Assembly Member District 4,Dem,66144
+2026,CA,9,El Dorado,county,130000050000,GG,State Assembly Member District 5,Dem,19978
+2026,CA,9,El Dorado,county,130000050000,GG,State Assembly Member District 5,Rep,30032
+2026,CA,31,Placer,county,130000050000,GG,State Assembly Member District 5,Dem,51542
+2026,CA,31,Placer,county,130000050000,GG,State Assembly Member District 5,Rep,62963
+2026,CA,59,Statewide,statewide_or_districtwide,130000050000,GG,State Assembly Member District 5,Dem,71520
+2026,CA,59,Statewide,statewide_or_districtwide,130000050000,GG,State Assembly Member District 5,Rep,92995
+2026,CA,34,Sacramento,county,130000060000,GG,State Assembly Member District 6,Dem,69426
+2026,CA,59,Statewide,statewide_or_districtwide,130000060000,GG,State Assembly Member District 6,Dem,69426
+2026,CA,34,Sacramento,county,130000070000,GG,State Assembly Member District 7,Dem,49852
+2026,CA,34,Sacramento,county,130000070000,GG,State Assembly Member District 7,Rep,45112
+2026,CA,59,Statewide,statewide_or_districtwide,130000070000,GG,State Assembly Member District 7,Dem,49852
+2026,CA,59,Statewide,statewide_or_districtwide,130000070000,GG,State Assembly Member District 7,Rep,45112
+2026,CA,5,Calaveras,county,130000080000,GG,State Assembly Member District 8,Rep,7261
+2026,CA,10,Fresno,county,130000080000,GG,State Assembly Member District 8,Rep,54040
+2026,CA,14,Inyo,county,130000080000,GG,State Assembly Member District 8,Rep,3631
+2026,CA,20,Madera,county,130000080000,GG,State Assembly Member District 8,Rep,10819
+2026,CA,22,Mariposa,county,130000080000,GG,State Assembly Member District 8,Rep,4727
+2026,CA,26,Mono,county,130000080000,GG,State Assembly Member District 8,Rep,2302
+2026,CA,55,Tuolumne,county,130000080000,GG,State Assembly Member District 8,Rep,11753
+2026,CA,59,Statewide,statewide_or_districtwide,130000080000,GG,State Assembly Member District 8,Rep,94533
+2026,CA,3,Amador,county,130000090000,GG,State Assembly Member District 9,Dem,985
+2026,CA,3,Amador,county,130000090000,GG,State Assembly Member District 9,Rep,2375
+2026,CA,5,Calaveras,county,130000090000,GG,State Assembly Member District 9,Dem,1459
+2026,CA,5,Calaveras,county,130000090000,GG,State Assembly Member District 9,Rep,3449
+2026,CA,34,Sacramento,county,130000090000,GG,State Assembly Member District 9,Dem,4404
+2026,CA,34,Sacramento,county,130000090000,GG,State Assembly Member District 9,Rep,6579
+2026,CA,39,San Joaquin,county,130000090000,GG,State Assembly Member District 9,Dem,25216
+2026,CA,39,San Joaquin,county,130000090000,GG,State Assembly Member District 9,Rep,29833
+2026,CA,50,Stanislaus,county,130000090000,GG,State Assembly Member District 9,Dem,8681
+2026,CA,50,Stanislaus,county,130000090000,GG,State Assembly Member District 9,Rep,12722
+2026,CA,59,Statewide,statewide_or_districtwide,130000090000,GG,State Assembly Member District 9,Dem,40745
+2026,CA,59,Statewide,statewide_or_districtwide,130000090000,GG,State Assembly Member District 9,Rep,54958
+2026,CA,34,Sacramento,county,130000100000,GG,State Assembly Member District 10,Dem,54867
+2026,CA,34,Sacramento,county,130000100000,GG,State Assembly Member District 10,Rep,20997
+2026,CA,59,Statewide,statewide_or_districtwide,130000100000,GG,State Assembly Member District 10,Dem,54867
+2026,CA,59,Statewide,statewide_or_districtwide,130000100000,GG,State Assembly Member District 10,Rep,20997
+2026,CA,7,Contra Costa,county,130000110000,GG,State Assembly Member District 11,Dem,7696
+2026,CA,7,Contra Costa,county,130000110000,GG,State Assembly Member District 11,NPP,5378
+2026,CA,34,Sacramento,county,130000110000,GG,State Assembly Member District 11,Dem,93
+2026,CA,34,Sacramento,county,130000110000,GG,State Assembly Member District 11,NPP,66
+2026,CA,48,Solano,county,130000110000,GG,State Assembly Member District 11,Dem,83583
+2026,CA,48,Solano,county,130000110000,GG,State Assembly Member District 11,NPP,43718
+2026,CA,59,Statewide,statewide_or_districtwide,130000110000,GG,State Assembly Member District 11,Dem,91372
+2026,CA,59,Statewide,statewide_or_districtwide,130000110000,GG,State Assembly Member District 11,NPP,49162
+2026,CA,21,Marin,county,130000120000,GG,State Assembly Member District 12,Dem,61051
+2026,CA,38,San Francisco,county,130000120000,GG,State Assembly Member District 12,Dem,0
+2026,CA,49,Sonoma,county,130000120000,GG,State Assembly Member District 12,Dem,40535
+2026,CA,59,Statewide,statewide_or_districtwide,130000120000,GG,State Assembly Member District 12,Dem,101586
+2026,CA,39,San Joaquin,county,130000130000,GG,State Assembly Member District 13,Dem,41282
+2026,CA,39,San Joaquin,county,130000130000,GG,State Assembly Member District 13,Rep,21872
+2026,CA,59,Statewide,statewide_or_districtwide,130000130000,GG,State Assembly Member District 13,Dem,41282
+2026,CA,59,Statewide,statewide_or_districtwide,130000130000,GG,State Assembly Member District 13,Rep,21872
+2026,CA,1,Alameda,county,130000140000,GG,State Assembly Member District 14,Dem,39266
+2026,CA,1,Alameda,county,130000140000,GG,State Assembly Member District 14,Grn,10208
+2026,CA,7,Contra Costa,county,130000140000,GG,State Assembly Member District 14,Dem,40318
+2026,CA,7,Contra Costa,county,130000140000,GG,State Assembly Member District 14,Grn,9992
+2026,CA,59,Statewide,statewide_or_districtwide,130000140000,GG,State Assembly Member District 14,Dem,79584
+2026,CA,59,Statewide,statewide_or_districtwide,130000140000,GG,State Assembly Member District 14,Grn,20200
+2026,CA,7,Contra Costa,county,130000150000,GG,State Assembly Member District 15,Dem,69525
+2026,CA,7,Contra Costa,county,130000150000,GG,State Assembly Member District 15,NPP,30893
+2026,CA,59,Statewide,statewide_or_districtwide,130000150000,GG,State Assembly Member District 15,Dem,69525
+2026,CA,59,Statewide,statewide_or_districtwide,130000150000,GG,State Assembly Member District 15,NPP,30893
+2026,CA,1,Alameda,county,130000160000,GG,State Assembly Member District 16,Dem,27460
+2026,CA,1,Alameda,county,130000160000,GG,State Assembly Member District 16,Rep,13477
+2026,CA,7,Contra Costa,county,130000160000,GG,State Assembly Member District 16,Dem,63492
+2026,CA,7,Contra Costa,county,130000160000,GG,State Assembly Member District 16,Rep,28692
+2026,CA,59,Statewide,statewide_or_districtwide,130000160000,GG,State Assembly Member District 16,Dem,90952
+2026,CA,59,Statewide,statewide_or_districtwide,130000160000,GG,State Assembly Member District 16,Rep,42169
+2026,CA,38,San Francisco,county,130000170000,GG,State Assembly Member District 17,Dem,117473
+2026,CA,38,San Francisco,county,130000170000,GG,State Assembly Member District 17,Rep,13313
+2026,CA,59,Statewide,statewide_or_districtwide,130000170000,GG,State Assembly Member District 17,Dem,117473
+2026,CA,59,Statewide,statewide_or_districtwide,130000170000,GG,State Assembly Member District 17,Rep,13313
+2026,CA,1,Alameda,county,130000180000,GG,State Assembly Member District 18,Dem,76532
+2026,CA,38,San Francisco,county,130000180000,GG,State Assembly Member District 18,Dem,0
+2026,CA,59,Statewide,statewide_or_districtwide,130000180000,GG,State Assembly Member District 18,Dem,76532
+2026,CA,38,San Francisco,county,130000190000,GG,State Assembly Member District 19,Dem,89082
+2026,CA,38,San Francisco,county,130000190000,GG,State Assembly Member District 19,Rep,16593
+2026,CA,41,San Mateo,county,130000190000,GG,State Assembly Member District 19,Dem,18026
+2026,CA,41,San Mateo,county,130000190000,GG,State Assembly Member District 19,Rep,5690
+2026,CA,59,Statewide,statewide_or_districtwide,130000190000,GG,State Assembly Member District 19,Dem,107108
+2026,CA,59,Statewide,statewide_or_districtwide,130000190000,GG,State Assembly Member District 19,Rep,22283
+2026,CA,1,Alameda,county,130000200000,GG,State Assembly Member District 20,Dem,64486
+2026,CA,1,Alameda,county,130000200000,GG,State Assembly Member District 20,Rep,21321
+2026,CA,59,Statewide,statewide_or_districtwide,130000200000,GG,State Assembly Member District 20,Dem,64486
+2026,CA,59,Statewide,statewide_or_districtwide,130000200000,GG,State Assembly Member District 20,Rep,21321
+2026,CA,41,San Mateo,county,130000210000,GG,State Assembly Member District 21,Dem,78596
+2026,CA,41,San Mateo,county,130000210000,GG,State Assembly Member District 21,Rep,22186
+2026,CA,59,Statewide,statewide_or_districtwide,130000210000,GG,State Assembly Member District 21,Dem,78596
+2026,CA,59,Statewide,statewide_or_districtwide,130000210000,GG,State Assembly Member District 21,Rep,22186
+2026,CA,24,Merced,county,130000220000,GG,State Assembly Member District 22,Rep,2692
+2026,CA,50,Stanislaus,county,130000220000,GG,State Assembly Member District 22,Rep,48784
+2026,CA,59,Statewide,statewide_or_districtwide,130000220000,GG,State Assembly Member District 22,Rep,51476
+2026,CA,41,San Mateo,county,130000230000,GG,State Assembly Member District 23,Dem,27729
+2026,CA,41,San Mateo,county,130000230000,GG,State Assembly Member District 23,Rep,8664
+2026,CA,43,Santa Clara,county,130000230000,GG,State Assembly Member District 23,Dem,56701
+2026,CA,43,Santa Clara,county,130000230000,GG,State Assembly Member District 23,Rep,18553
+2026,CA,59,Statewide,statewide_or_districtwide,130000230000,GG,State Assembly Member District 23,Dem,84430
+2026,CA,59,Statewide,statewide_or_districtwide,130000230000,GG,State Assembly Member District 23,Rep,27217
+2026,CA,1,Alameda,county,130000240000,GG,State Assembly Member District 24,Dem,31757
+2026,CA,1,Alameda,county,130000240000,GG,State Assembly Member District 24,Rep,12533
+2026,CA,43,Santa Clara,county,130000240000,GG,State Assembly Member District 24,Dem,20708
+2026,CA,43,Santa Clara,county,130000240000,GG,State Assembly Member District 24,Rep,9801
+2026,CA,59,Statewide,statewide_or_districtwide,130000240000,GG,State Assembly Member District 24,Dem,52465
+2026,CA,59,Statewide,statewide_or_districtwide,130000240000,GG,State Assembly Member District 24,Rep,22334
+2026,CA,43,Santa Clara,county,130000250000,GG,State Assembly Member District 25,Dem,54478
+2026,CA,43,Santa Clara,county,130000250000,GG,State Assembly Member District 25,Rep,20714
+2026,CA,59,Statewide,statewide_or_districtwide,130000250000,GG,State Assembly Member District 25,Dem,54478
+2026,CA,59,Statewide,statewide_or_districtwide,130000250000,GG,State Assembly Member District 25,Rep,20714
+2026,CA,43,Santa Clara,county,130000260000,GG,State Assembly Member District 26,Dem,53900
+2026,CA,43,Santa Clara,county,130000260000,GG,State Assembly Member District 26,Rep,18150
+2026,CA,59,Statewide,statewide_or_districtwide,130000260000,GG,State Assembly Member District 26,Dem,53900
+2026,CA,59,Statewide,statewide_or_districtwide,130000260000,GG,State Assembly Member District 26,Rep,18150
+2026,CA,10,Fresno,county,130000270000,GG,State Assembly Member District 27,Dem,14075
+2026,CA,10,Fresno,county,130000270000,GG,State Assembly Member District 27,Rep,6470
+2026,CA,20,Madera,county,130000270000,GG,State Assembly Member District 27,Dem,8609
+2026,CA,20,Madera,county,130000270000,GG,State Assembly Member District 27,Rep,5268
+2026,CA,24,Merced,county,130000270000,GG,State Assembly Member District 27,Dem,23076
+2026,CA,24,Merced,county,130000270000,GG,State Assembly Member District 27,Rep,14563
+2026,CA,59,Statewide,statewide_or_districtwide,130000270000,GG,State Assembly Member District 27,Dem,45760
+2026,CA,59,Statewide,statewide_or_districtwide,130000270000,GG,State Assembly Member District 27,Rep,26301
+2026,CA,43,Santa Clara,county,130000280000,GG,State Assembly Member District 28,Dem,54915
+2026,CA,43,Santa Clara,county,130000280000,GG,State Assembly Member District 28,Rep,26649
+2026,CA,44,Santa Cruz,county,130000280000,GG,State Assembly Member District 28,Dem,33270
+2026,CA,44,Santa Cruz,county,130000280000,GG,State Assembly Member District 28,Rep,7756
+2026,CA,59,Statewide,statewide_or_districtwide,130000280000,GG,State Assembly Member District 28,Dem,88185
+2026,CA,59,Statewide,statewide_or_districtwide,130000280000,GG,State Assembly Member District 28,Rep,34405
+2026,CA,27,Monterey,county,130000290000,GG,State Assembly Member District 29,Dem,30782
+2026,CA,27,Monterey,county,130000290000,GG,State Assembly Member District 29,Rep,11966
+2026,CA,35,San Benito,county,130000290000,GG,State Assembly Member District 29,Dem,6511
+2026,CA,35,San Benito,county,130000290000,GG,State Assembly Member District 29,Rep,3787
+2026,CA,43,Santa Clara,county,130000290000,GG,State Assembly Member District 29,Dem,8698
+2026,CA,43,Santa Clara,county,130000290000,GG,State Assembly Member District 29,Rep,4334
+2026,CA,44,Santa Cruz,county,130000290000,GG,State Assembly Member District 29,Dem,9926
+2026,CA,44,Santa Cruz,county,130000290000,GG,State Assembly Member District 29,Rep,2662
+2026,CA,59,Statewide,statewide_or_districtwide,130000290000,GG,State Assembly Member District 29,Dem,55917
+2026,CA,59,Statewide,statewide_or_districtwide,130000290000,GG,State Assembly Member District 29,Rep,22749
+2026,CA,27,Monterey,county,130000300000,GG,State Assembly Member District 30,Dem,32289
+2026,CA,27,Monterey,county,130000300000,GG,State Assembly Member District 30,Rep,13094
+2026,CA,40,San Luis Obispo,county,130000300000,GG,State Assembly Member District 30,Dem,36880
+2026,CA,40,San Luis Obispo,county,130000300000,GG,State Assembly Member District 30,Rep,26052
+2026,CA,44,Santa Cruz,county,130000300000,GG,State Assembly Member District 30,Dem,21694
+2026,CA,44,Santa Cruz,county,130000300000,GG,State Assembly Member District 30,Rep,5765
+2026,CA,59,Statewide,statewide_or_districtwide,130000300000,GG,State Assembly Member District 30,Dem,90863
+2026,CA,59,Statewide,statewide_or_districtwide,130000300000,GG,State Assembly Member District 30,Rep,44911
+2026,CA,10,Fresno,county,130000310000,GG,State Assembly Member District 31,Dem,39243
+2026,CA,10,Fresno,county,130000310000,GG,State Assembly Member District 31,Rep,18622
+2026,CA,59,Statewide,statewide_or_districtwide,130000310000,GG,State Assembly Member District 31,Dem,39243
+2026,CA,59,Statewide,statewide_or_districtwide,130000310000,GG,State Assembly Member District 31,Rep,18622
+2026,CA,15,Kern,county,130000320000,GG,State Assembly Member District 32,Rep,59731
+2026,CA,54,Tulare,county,130000320000,GG,State Assembly Member District 32,Rep,22405
+2026,CA,59,Statewide,statewide_or_districtwide,130000320000,GG,State Assembly Member District 32,Rep,82136
+2026,CA,10,Fresno,county,130000330000,GG,State Assembly Member District 33,Dem,2912
+2026,CA,10,Fresno,county,130000330000,GG,State Assembly Member District 33,Rep,3891
+2026,CA,16,Kings,county,130000330000,GG,State Assembly Member District 33,Dem,14540
+2026,CA,16,Kings,county,130000330000,GG,State Assembly Member District 33,Rep,17607
+2026,CA,54,Tulare,county,130000330000,GG,State Assembly Member District 33,Dem,20464
+2026,CA,54,Tulare,county,130000330000,GG,State Assembly Member District 33,Rep,18691
+2026,CA,59,Statewide,statewide_or_districtwide,130000330000,GG,State Assembly Member District 33,Dem,37916
+2026,CA,59,Statewide,statewide_or_districtwide,130000330000,GG,State Assembly Member District 33,Rep,40189
+2026,CA,15,Kern,county,130000340000,GG,State Assembly Member District 34,Dem,3151
+2026,CA,15,Kern,county,130000340000,GG,State Assembly Member District 34,Rep,3474
+2026,CA,19,Los Angeles,county,130000340000,GG,State Assembly Member District 34,Dem,20662
+2026,CA,19,Los Angeles,county,130000340000,GG,State Assembly Member District 34,Rep,20813
+2026,CA,36,San Bernardino,county,130000340000,GG,State Assembly Member District 34,Dem,30941
+2026,CA,36,San Bernardino,county,130000340000,GG,State Assembly Member District 34,Rep,36310
+2026,CA,59,Statewide,statewide_or_districtwide,130000340000,GG,State Assembly Member District 34,Dem,54754
+2026,CA,59,Statewide,statewide_or_districtwide,130000340000,GG,State Assembly Member District 34,Rep,60597
+2026,CA,15,Kern,county,130000350000,GG,State Assembly Member District 35,Dem,38364
+2026,CA,15,Kern,county,130000350000,GG,State Assembly Member District 35,Rep,17502
+2026,CA,59,Statewide,statewide_or_districtwide,130000350000,GG,State Assembly Member District 35,Dem,38364
+2026,CA,59,Statewide,statewide_or_districtwide,130000350000,GG,State Assembly Member District 35,Rep,17502
+2026,CA,13,Imperial,county,130000360000,GG,State Assembly Member District 36,Dem,15052
+2026,CA,13,Imperial,county,130000360000,GG,State Assembly Member District 36,Rep,9058
+2026,CA,33,Riverside,county,130000360000,GG,State Assembly Member District 36,Dem,26529
+2026,CA,33,Riverside,county,130000360000,GG,State Assembly Member District 36,Rep,19576
+2026,CA,36,San Bernardino,county,130000360000,GG,State Assembly Member District 36,Dem,414
+2026,CA,36,San Bernardino,county,130000360000,GG,State Assembly Member District 36,Rep,592
+2026,CA,59,Statewide,statewide_or_districtwide,130000360000,GG,State Assembly Member District 36,Dem,41995
+2026,CA,59,Statewide,statewide_or_districtwide,130000360000,GG,State Assembly Member District 36,Rep,29226
+2026,CA,40,San Luis Obispo,county,130000370000,GG,State Assembly Member District 37,Dem,4005
+2026,CA,40,San Luis Obispo,county,130000370000,GG,State Assembly Member District 37,Rep,3286
+2026,CA,42,Santa Barbara,county,130000370000,GG,State Assembly Member District 37,Dem,66081
+2026,CA,42,Santa Barbara,county,130000370000,GG,State Assembly Member District 37,Rep,31715
+2026,CA,59,Statewide,statewide_or_districtwide,130000370000,GG,State Assembly Member District 37,Dem,70086
+2026,CA,59,Statewide,statewide_or_districtwide,130000370000,GG,State Assembly Member District 37,Rep,35001
+2026,CA,56,Ventura,county,130000380000,GG,State Assembly Member District 38,Dem,83527
+2026,CA,59,Statewide,statewide_or_districtwide,130000380000,GG,State Assembly Member District 38,Dem,83527
+2026,CA,19,Los Angeles,county,130000390000,GG,State Assembly Member District 39,Dem,34645
+2026,CA,19,Los Angeles,county,130000390000,GG,State Assembly Member District 39,Rep,13196
+2026,CA,36,San Bernardino,county,130000390000,GG,State Assembly Member District 39,Dem,19834
+2026,CA,36,San Bernardino,county,130000390000,GG,State Assembly Member District 39,Rep,9940
+2026,CA,59,Statewide,statewide_or_districtwide,130000390000,GG,State Assembly Member District 39,Dem,54479
+2026,CA,59,Statewide,statewide_or_districtwide,130000390000,GG,State Assembly Member District 39,Rep,23136
+2026,CA,19,Los Angeles,county,130000400000,GG,State Assembly Member District 40,Dem,91920
+2026,CA,19,Los Angeles,county,130000400000,GG,State Assembly Member District 40,Rep,62240
+2026,CA,59,Statewide,statewide_or_districtwide,130000400000,GG,State Assembly Member District 40,Dem,91920
+2026,CA,59,Statewide,statewide_or_districtwide,130000400000,GG,State Assembly Member District 40,Rep,62240
+2026,CA,19,Los Angeles,county,130000410000,GG,State Assembly Member District 41,Dem,86844
+2026,CA,19,Los Angeles,county,130000410000,GG,State Assembly Member District 41,Rep,34448
+2026,CA,36,San Bernardino,county,130000410000,GG,State Assembly Member District 41,Dem,15735
+2026,CA,36,San Bernardino,county,130000410000,GG,State Assembly Member District 41,Rep,18213
+2026,CA,59,Statewide,statewide_or_districtwide,130000410000,GG,State Assembly Member District 41,Dem,102579
+2026,CA,59,Statewide,statewide_or_districtwide,130000410000,GG,State Assembly Member District 41,Rep,52661
+2026,CA,19,Los Angeles,county,130000420000,GG,State Assembly Member District 42,Dem,32222
+2026,CA,19,Los Angeles,county,130000420000,GG,State Assembly Member District 42,Rep,22311
+2026,CA,56,Ventura,county,130000420000,GG,State Assembly Member District 42,Dem,57689
+2026,CA,56,Ventura,county,130000420000,GG,State Assembly Member District 42,Rep,47682
+2026,CA,59,Statewide,statewide_or_districtwide,130000420000,GG,State Assembly Member District 42,Dem,89911
+2026,CA,59,Statewide,statewide_or_districtwide,130000420000,GG,State Assembly Member District 42,Rep,69993
+2026,CA,19,Los Angeles,county,130000430000,GG,State Assembly Member District 43,Dem,73632
+2026,CA,19,Los Angeles,county,130000430000,GG,State Assembly Member District 43,Rep,18976
+2026,CA,59,Statewide,statewide_or_districtwide,130000430000,GG,State Assembly Member District 43,Dem,73632
+2026,CA,59,Statewide,statewide_or_districtwide,130000430000,GG,State Assembly Member District 43,Rep,18976
+2026,CA,19,Los Angeles,county,130000440000,GG,State Assembly Member District 44,Dem,108819
+2026,CA,19,Los Angeles,county,130000440000,GG,State Assembly Member District 44,Rep,41367
+2026,CA,59,Statewide,statewide_or_districtwide,130000440000,GG,State Assembly Member District 44,Dem,108819
+2026,CA,59,Statewide,statewide_or_districtwide,130000440000,GG,State Assembly Member District 44,Rep,41367
+2026,CA,36,San Bernardino,county,130000450000,GG,State Assembly Member District 45,Dem,57284
+2026,CA,36,San Bernardino,county,130000450000,GG,State Assembly Member District 45,Rep,23175
+2026,CA,59,Statewide,statewide_or_districtwide,130000450000,GG,State Assembly Member District 45,Dem,57284
+2026,CA,59,Statewide,statewide_or_districtwide,130000450000,GG,State Assembly Member District 45,Rep,23175
+2026,CA,19,Los Angeles,county,130000460000,GG,State Assembly Member District 46,Dem,83895
+2026,CA,19,Los Angeles,county,130000460000,GG,State Assembly Member District 46,Rep,36036
+2026,CA,56,Ventura,county,130000460000,GG,State Assembly Member District 46,Dem,351
+2026,CA,56,Ventura,county,130000460000,GG,State Assembly Member District 46,Rep,335
+2026,CA,59,Statewide,statewide_or_districtwide,130000460000,GG,State Assembly Member District 46,Dem,84246
+2026,CA,59,Statewide,statewide_or_districtwide,130000460000,GG,State Assembly Member District 46,Rep,36371
+2026,CA,33,Riverside,county,130000470000,GG,State Assembly Member District 47,Dem,56883
+2026,CA,33,Riverside,county,130000470000,GG,State Assembly Member District 47,Rep,37598
+2026,CA,36,San Bernardino,county,130000470000,GG,State Assembly Member District 47,Dem,14266
+2026,CA,36,San Bernardino,county,130000470000,GG,State Assembly Member District 47,Rep,19608
+2026,CA,59,Statewide,statewide_or_districtwide,130000470000,GG,State Assembly Member District 47,Dem,71149
+2026,CA,59,Statewide,statewide_or_districtwide,130000470000,GG,State Assembly Member District 47,Rep,57206
+2026,CA,19,Los Angeles,county,130000480000,GG,State Assembly Member District 48,Dem,79685
+2026,CA,19,Los Angeles,county,130000480000,GG,State Assembly Member District 48,Rep,36754
+2026,CA,59,Statewide,statewide_or_districtwide,130000480000,GG,State Assembly Member District 48,Dem,79685
+2026,CA,59,Statewide,statewide_or_districtwide,130000480000,GG,State Assembly Member District 48,Rep,36754
+2026,CA,19,Los Angeles,county,130000490000,GG,State Assembly Member District 49,Dem,72534
+2026,CA,19,Los Angeles,county,130000490000,GG,State Assembly Member District 49,Rep,33095
+2026,CA,59,Statewide,statewide_or_districtwide,130000490000,GG,State Assembly Member District 49,Dem,72534
+2026,CA,59,Statewide,statewide_or_districtwide,130000490000,GG,State Assembly Member District 49,Rep,33095
+2026,CA,36,San Bernardino,county,130000500000,GG,State Assembly Member District 50,Dem,57168
+2026,CA,36,San Bernardino,county,130000500000,GG,State Assembly Member District 50,Rep,29057
+2026,CA,59,Statewide,statewide_or_districtwide,130000500000,GG,State Assembly Member District 50,Dem,57168
+2026,CA,59,Statewide,statewide_or_districtwide,130000500000,GG,State Assembly Member District 50,Rep,29057
+2026,CA,19,Los Angeles,county,130000510000,GG,State Assembly Member District 51,Dem,123635
+2026,CA,59,Statewide,statewide_or_districtwide,130000510000,GG,State Assembly Member District 51,Dem,123635
+2026,CA,19,Los Angeles,county,130000520000,GG,State Assembly Member District 52,Dem,110049
+2026,CA,19,Los Angeles,county,130000520000,GG,State Assembly Member District 52,Rep,16735
+2026,CA,59,Statewide,statewide_or_districtwide,130000520000,GG,State Assembly Member District 52,Dem,110049
+2026,CA,59,Statewide,statewide_or_districtwide,130000520000,GG,State Assembly Member District 52,Rep,16735
+2026,CA,19,Los Angeles,county,130000530000,GG,State Assembly Member District 53,Dem,20357
+2026,CA,19,Los Angeles,county,130000530000,GG,State Assembly Member District 53,Rep,6974
+2026,CA,36,San Bernardino,county,130000530000,GG,State Assembly Member District 53,Dem,35526
+2026,CA,36,San Bernardino,county,130000530000,GG,State Assembly Member District 53,Rep,20198
+2026,CA,59,Statewide,statewide_or_districtwide,130000530000,GG,State Assembly Member District 53,Dem,55883
+2026,CA,59,Statewide,statewide_or_districtwide,130000530000,GG,State Assembly Member District 53,Rep,27172
+2026,CA,19,Los Angeles,county,130000540000,GG,State Assembly Member District 54,Dem,65756
+2026,CA,19,Los Angeles,county,130000540000,GG,State Assembly Member District 54,Rep,13936
+2026,CA,59,Statewide,statewide_or_districtwide,130000540000,GG,State Assembly Member District 54,Dem,65756
+2026,CA,59,Statewide,statewide_or_districtwide,130000540000,GG,State Assembly Member District 54,Rep,13936
+2026,CA,19,Los Angeles,county,130000550000,GG,State Assembly Member District 55,Dem,120296
+2026,CA,59,Statewide,statewide_or_districtwide,130000550000,GG,State Assembly Member District 55,Dem,120296
+2026,CA,19,Los Angeles,county,130000560000,GG,State Assembly Member District 56,Dem,81237
+2026,CA,19,Los Angeles,county,130000560000,GG,State Assembly Member District 56,Rep,40063
+2026,CA,59,Statewide,statewide_or_districtwide,130000560000,GG,State Assembly Member District 56,Dem,81237
+2026,CA,59,Statewide,statewide_or_districtwide,130000560000,GG,State Assembly Member District 56,Rep,40063
+2026,CA,19,Los Angeles,county,130000570000,GG,State Assembly Member District 57,Dem,57811
+2026,CA,19,Los Angeles,county,130000570000,GG,State Assembly Member District 57,Rep,7102
+2026,CA,59,Statewide,statewide_or_districtwide,130000570000,GG,State Assembly Member District 57,Dem,57811
+2026,CA,59,Statewide,statewide_or_districtwide,130000570000,GG,State Assembly Member District 57,Rep,7102
+2026,CA,33,Riverside,county,130000580000,GG,State Assembly Member District 58,Dem,35493
+2026,CA,33,Riverside,county,130000580000,GG,State Assembly Member District 58,Rep,22457
+2026,CA,36,San Bernardino,county,130000580000,GG,State Assembly Member District 58,Dem,1699
+2026,CA,36,San Bernardino,county,130000580000,GG,State Assembly Member District 58,Rep,1467
+2026,CA,59,Statewide,statewide_or_districtwide,130000580000,GG,State Assembly Member District 58,Dem,37192
+2026,CA,59,Statewide,statewide_or_districtwide,130000580000,GG,State Assembly Member District 58,Rep,23924
+2026,CA,30,Orange,county,130000590000,GG,State Assembly Member District 59,Grn,46379
+2026,CA,30,Orange,county,130000590000,GG,State Assembly Member District 59,Rep,73736
+2026,CA,36,San Bernardino,county,130000590000,GG,State Assembly Member District 59,Grn,9029
+2026,CA,36,San Bernardino,county,130000590000,GG,State Assembly Member District 59,Rep,12393
+2026,CA,59,Statewide,statewide_or_districtwide,130000590000,GG,State Assembly Member District 59,Grn,55408
+2026,CA,59,Statewide,statewide_or_districtwide,130000590000,GG,State Assembly Member District 59,Rep,86129
+2026,CA,33,Riverside,county,130000600000,GG,State Assembly Member District 60,Dem,34891
+2026,CA,33,Riverside,county,130000600000,GG,State Assembly Member District 60,Rep,17836
+2026,CA,59,Statewide,statewide_or_districtwide,130000600000,GG,State Assembly Member District 60,Dem,34891
+2026,CA,59,Statewide,statewide_or_districtwide,130000600000,GG,State Assembly Member District 60,Rep,17836
+2026,CA,19,Los Angeles,county,130000610000,GG,State Assembly Member District 61,Dem,93882
+2026,CA,19,Los Angeles,county,130000610000,GG,State Assembly Member District 61,Rep,18133
+2026,CA,59,Statewide,statewide_or_districtwide,130000610000,GG,State Assembly Member District 61,Dem,93882
+2026,CA,59,Statewide,statewide_or_districtwide,130000610000,GG,State Assembly Member District 61,Rep,18133
+2026,CA,19,Los Angeles,county,130000620000,GG,State Assembly Member District 62,Dem,71500
+2026,CA,19,Los Angeles,county,130000620000,GG,State Assembly Member District 62,Rep,21834
+2026,CA,59,Statewide,statewide_or_districtwide,130000620000,GG,State Assembly Member District 62,Dem,71500
+2026,CA,59,Statewide,statewide_or_districtwide,130000620000,GG,State Assembly Member District 62,Rep,21834
+2026,CA,33,Riverside,county,130000630000,GG,State Assembly Member District 63,P&F,34795
+2026,CA,33,Riverside,county,130000630000,GG,State Assembly Member District 63,Rep,46768
+2026,CA,59,Statewide,statewide_or_districtwide,130000630000,GG,State Assembly Member District 63,P&F,34795
+2026,CA,59,Statewide,statewide_or_districtwide,130000630000,GG,State Assembly Member District 63,Rep,46768
+2026,CA,19,Los Angeles,county,130000640000,GG,State Assembly Member District 64,Dem,73020
+2026,CA,19,Los Angeles,county,130000640000,GG,State Assembly Member District 64,Rep,27720
+2026,CA,30,Orange,county,130000640000,GG,State Assembly Member District 64,Dem,8623
+2026,CA,30,Orange,county,130000640000,GG,State Assembly Member District 64,Rep,5788
+2026,CA,59,Statewide,statewide_or_districtwide,130000640000,GG,State Assembly Member District 64,Dem,81643
+2026,CA,59,Statewide,statewide_or_districtwide,130000640000,GG,State Assembly Member District 64,Rep,33508
+2026,CA,19,Los Angeles,county,130000650000,GG,State Assembly Member District 65,Dem,72980
+2026,CA,19,Los Angeles,county,130000650000,GG,State Assembly Member District 65,Rep,16911
+2026,CA,59,Statewide,statewide_or_districtwide,130000650000,GG,State Assembly Member District 65,Dem,72980
+2026,CA,59,Statewide,statewide_or_districtwide,130000650000,GG,State Assembly Member District 65,Rep,16911
+2026,CA,19,Los Angeles,county,130000660000,GG,State Assembly Member District 66,Dem,133174
+2026,CA,59,Statewide,statewide_or_districtwide,130000660000,GG,State Assembly Member District 66,Dem,133174
+2026,CA,19,Los Angeles,county,130000670000,GG,State Assembly Member District 67,Dem,16000
+2026,CA,19,Los Angeles,county,130000670000,GG,State Assembly Member District 67,Rep,7816
+2026,CA,30,Orange,county,130000670000,GG,State Assembly Member District 67,Dem,52236
+2026,CA,30,Orange,county,130000670000,GG,State Assembly Member District 67,Rep,32663
+2026,CA,59,Statewide,statewide_or_districtwide,130000670000,GG,State Assembly Member District 67,Dem,68236
+2026,CA,59,Statewide,statewide_or_districtwide,130000670000,GG,State Assembly Member District 67,Rep,40479
+2026,CA,30,Orange,county,130000680000,GG,State Assembly Member District 68,Dem,77643
+2026,CA,59,Statewide,statewide_or_districtwide,130000680000,GG,State Assembly Member District 68,Dem,77643
+2026,CA,19,Los Angeles,county,130000690000,GG,State Assembly Member District 69,Dem,105009
+2026,CA,59,Statewide,statewide_or_districtwide,130000690000,GG,State Assembly Member District 69,Dem,105009
+2026,CA,30,Orange,county,130000700000,GG,State Assembly Member District 70,Dem,57215
+2026,CA,30,Orange,county,130000700000,GG,State Assembly Member District 70,Rep,57831
+2026,CA,59,Statewide,statewide_or_districtwide,130000700000,GG,State Assembly Member District 70,Dem,57215
+2026,CA,59,Statewide,statewide_or_districtwide,130000700000,GG,State Assembly Member District 70,Rep,57831
+2026,CA,30,Orange,county,130000710000,GG,State Assembly Member District 71,Dem,33018
+2026,CA,30,Orange,county,130000710000,GG,State Assembly Member District 71,Rep,38834
+2026,CA,33,Riverside,county,130000710000,GG,State Assembly Member District 71,Dem,25284
+2026,CA,33,Riverside,county,130000710000,GG,State Assembly Member District 71,Rep,29677
+2026,CA,59,Statewide,statewide_or_districtwide,130000710000,GG,State Assembly Member District 71,Dem,58302
+2026,CA,59,Statewide,statewide_or_districtwide,130000710000,GG,State Assembly Member District 71,Rep,68511
+2026,CA,30,Orange,county,130000720000,GG,State Assembly Member District 72,Dem,86522
+2026,CA,30,Orange,county,130000720000,GG,State Assembly Member District 72,Rep,88163
+2026,CA,59,Statewide,statewide_or_districtwide,130000720000,GG,State Assembly Member District 72,Dem,86522
+2026,CA,59,Statewide,statewide_or_districtwide,130000720000,GG,State Assembly Member District 72,Rep,88163
+2026,CA,30,Orange,county,130000730000,GG,State Assembly Member District 73,Dem,73175
+2026,CA,30,Orange,county,130000730000,GG,State Assembly Member District 73,Rep,43518
+2026,CA,59,Statewide,statewide_or_districtwide,130000730000,GG,State Assembly Member District 73,Dem,73175
+2026,CA,59,Statewide,statewide_or_districtwide,130000730000,GG,State Assembly Member District 73,Rep,43518
+2026,CA,30,Orange,county,130000740000,GG,State Assembly Member District 74,Dem,31511
+2026,CA,30,Orange,county,130000740000,GG,State Assembly Member District 74,Rep,41490
+2026,CA,37,San Diego,county,130000740000,GG,State Assembly Member District 74,Dem,39498
+2026,CA,37,San Diego,county,130000740000,GG,State Assembly Member District 74,Rep,30210
+2026,CA,59,Statewide,statewide_or_districtwide,130000740000,GG,State Assembly Member District 74,Dem,71009
+2026,CA,59,Statewide,statewide_or_districtwide,130000740000,GG,State Assembly Member District 74,Rep,71700
+2026,CA,37,San Diego,county,130000750000,GG,State Assembly Member District 75,Dem,60292
+2026,CA,37,San Diego,county,130000750000,GG,State Assembly Member District 75,Rep,75735
+2026,CA,59,Statewide,statewide_or_districtwide,130000750000,GG,State Assembly Member District 75,Dem,60292
+2026,CA,59,Statewide,statewide_or_districtwide,130000750000,GG,State Assembly Member District 75,Rep,75735
+2026,CA,37,San Diego,county,130000760000,GG,State Assembly Member District 76,Dem,73569
+2026,CA,37,San Diego,county,130000760000,GG,State Assembly Member District 76,Rep,51149
+2026,CA,59,Statewide,statewide_or_districtwide,130000760000,GG,State Assembly Member District 76,Dem,73569
+2026,CA,59,Statewide,statewide_or_districtwide,130000760000,GG,State Assembly Member District 76,Rep,51149
+2026,CA,37,San Diego,county,130000770000,GG,State Assembly Member District 77,Dem,92877
+2026,CA,37,San Diego,county,130000770000,GG,State Assembly Member District 77,Rep,53600
+2026,CA,59,Statewide,statewide_or_districtwide,130000770000,GG,State Assembly Member District 77,Dem,92877
+2026,CA,59,Statewide,statewide_or_districtwide,130000770000,GG,State Assembly Member District 77,Rep,53600
+2026,CA,37,San Diego,county,130000780000,GG,State Assembly Member District 78,Dem,91169
+2026,CA,37,San Diego,county,130000780000,GG,State Assembly Member District 78,Rep,37840
+2026,CA,59,Statewide,statewide_or_districtwide,130000780000,GG,State Assembly Member District 78,Dem,91169
+2026,CA,59,Statewide,statewide_or_districtwide,130000780000,GG,State Assembly Member District 78,Rep,37840
+2026,CA,37,San Diego,county,130000790000,GG,State Assembly Member District 79,Dem,59366
+2026,CA,37,San Diego,county,130000790000,GG,State Assembly Member District 79,Rep,29271
+2026,CA,59,Statewide,statewide_or_districtwide,130000790000,GG,State Assembly Member District 79,Dem,59366
+2026,CA,59,Statewide,statewide_or_districtwide,130000790000,GG,State Assembly Member District 79,Rep,29271
+2026,CA,37,San Diego,county,130000800000,GG,State Assembly Member District 80,Dem,67968
+2026,CA,37,San Diego,county,130000800000,GG,State Assembly Member District 80,Rep,31677
+2026,CA,59,Statewide,statewide_or_districtwide,130000800000,GG,State Assembly Member District 80,Dem,67968
+2026,CA,59,Statewide,statewide_or_districtwide,130000800000,GG,State Assembly Member District 80,Rep,31677
+2026,CA,1,Alameda,county,160000000000,GG,Superintendent of Public Instruction,Non,264148
+2026,CA,2,Alpine,county,160000000000,GG,Superintendent of Public Instruction,Non,435
+2026,CA,3,Amador,county,160000000000,GG,Superintendent of Public Instruction,Non,12293
+2026,CA,4,Butte,county,160000000000,GG,Superintendent of Public Instruction,Non,49803
+2026,CA,5,Calaveras,county,160000000000,GG,Superintendent of Public Instruction,Non,12896
+2026,CA,6,Colusa,county,160000000000,GG,Superintendent of Public Instruction,Non,3632
+2026,CA,7,Contra Costa,county,160000000000,GG,Superintendent of Public Instruction,Non,240637
+2026,CA,8,Del Norte,county,160000000000,GG,Superintendent of Public Instruction,Non,4612
+2026,CA,9,El Dorado,county,160000000000,GG,Superintendent of Public Instruction,Non,55209
+2026,CA,10,Fresno,county,160000000000,GG,Superintendent of Public Instruction,Non,143257
+2026,CA,11,Glenn,county,160000000000,GG,Superintendent of Public Instruction,Non,4747
+2026,CA,12,Humboldt,county,160000000000,GG,Superintendent of Public Instruction,Non,20828
+2026,CA,13,Imperial,county,160000000000,GG,Superintendent of Public Instruction,Non,22312
+2026,CA,14,Inyo,county,160000000000,GG,Superintendent of Public Instruction,Non,5805
+2026,CA,15,Kern,county,160000000000,GG,Superintendent of Public Instruction,Non,126646
+2026,CA,16,Kings,county,160000000000,GG,Superintendent of Public Instruction,Non,28884
+2026,CA,17,Lake,county,160000000000,GG,Superintendent of Public Instruction,Non,6168
+2026,CA,18,Lassen,county,160000000000,GG,Superintendent of Public Instruction,Non,6369
+2026,CA,19,Los Angeles,county,160000000000,GG,Superintendent of Public Instruction,Non,2146722
+2026,CA,20,Madera,county,160000000000,GG,Superintendent of Public Instruction,Non,25384
+2026,CA,21,Marin,county,160000000000,GG,Superintendent of Public Instruction,Non,56119
+2026,CA,22,Mariposa,county,160000000000,GG,Superintendent of Public Instruction,Non,6415
+2026,CA,23,Mendocino,county,160000000000,GG,Superintendent of Public Instruction,Non,13963
+2026,CA,24,Merced,county,160000000000,GG,Superintendent of Public Instruction,Non,36628
+2026,CA,25,Modoc,county,160000000000,GG,Superintendent of Public Instruction,Non,1976
+2026,CA,26,Mono,county,160000000000,GG,Superintendent of Public Instruction,Non,3883
+2026,CA,27,Monterey,county,160000000000,GG,Superintendent of Public Instruction,Non,75893
+2026,CA,28,Napa,county,160000000000,GG,Superintendent of Public Instruction,Non,17106
+2026,CA,29,Nevada,county,160000000000,GG,Superintendent of Public Instruction,Non,24638
+2026,CA,30,Orange,county,160000000000,GG,Superintendent of Public Instruction,Non,718728
+2026,CA,31,Placer,county,160000000000,GG,Superintendent of Public Instruction,Non,108591
+2026,CA,32,Plumas,county,160000000000,GG,Superintendent of Public Instruction,Non,6704
+2026,CA,33,Riverside,county,160000000000,GG,Superintendent of Public Instruction,Non,339318
+2026,CA,34,Sacramento,county,160000000000,GG,Superintendent of Public Instruction,Non,218203
+2026,CA,35,San Benito,county,160000000000,GG,Superintendent of Public Instruction,Non,9293
+2026,CA,36,San Bernardino,county,160000000000,GG,Superintendent of Public Instruction,Non,367478
+2026,CA,37,San Diego,county,160000000000,GG,Superintendent of Public Instruction,Non,695585
+2026,CA,38,San Francisco,county,160000000000,GG,Superintendent of Public Instruction,Non,203926
+2026,CA,39,San Joaquin,county,160000000000,GG,Superintendent of Public Instruction,Non,103393
+2026,CA,40,San Luis Obispo,county,160000000000,GG,Superintendent of Public Instruction,Non,58209
+2026,CA,41,San Mateo,county,160000000000,GG,Superintendent of Public Instruction,Non,133392
+2026,CA,42,Santa Barbara,county,160000000000,GG,Superintendent of Public Instruction,Non,82506
+2026,CA,43,Santa Clara,county,160000000000,GG,Superintendent of Public Instruction,Non,295524
+2026,CA,44,Santa Cruz,county,160000000000,GG,Superintendent of Public Instruction,Non,68806
+2026,CA,45,Shasta,county,160000000000,GG,Superintendent of Public Instruction,Non,29586
+2026,CA,46,Sierra,county,160000000000,GG,Superintendent of Public Instruction,Non,1196
+2026,CA,47,Siskiyou,county,160000000000,GG,Superintendent of Public Instruction,Non,11371
+2026,CA,48,Solano,county,160000000000,GG,Superintendent of Public Instruction,Non,116595
+2026,CA,49,Sonoma,county,160000000000,GG,Superintendent of Public Instruction,Non,86268
+2026,CA,50,Stanislaus,county,160000000000,GG,Superintendent of Public Instruction,Non,81171
+2026,CA,51,Sutter,county,160000000000,GG,Superintendent of Public Instruction,Non,11814
+2026,CA,52,Tehama,county,160000000000,GG,Superintendent of Public Instruction,Non,14143
+2026,CA,53,Trinity,county,160000000000,GG,Superintendent of Public Instruction,Non,2239
+2026,CA,54,Tulare,county,160000000000,GG,Superintendent of Public Instruction,Non,63049
+2026,CA,55,Tuolumne,county,160000000000,GG,Superintendent of Public Instruction,Non,15371
+2026,CA,56,Ventura,county,160000000000,GG,Superintendent of Public Instruction,Non,181953
+2026,CA,57,Yolo,county,160000000000,GG,Superintendent of Public Instruction,Non,38639
+2026,CA,58,Yuba,county,160000000000,GG,Superintendent of Public Instruction,Non,7399
+2026,CA,59,Statewide,statewide_or_districtwide,160000000000,GG,Superintendent of Public Instruction,Non,7487858
