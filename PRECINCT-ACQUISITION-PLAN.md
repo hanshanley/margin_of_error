@@ -133,6 +133,30 @@ official backend's multiple representations are not independent institutions.
 No immutable release, completed counting, certification, source map or explorer
 approval is claimed before its separate checks.
 
+**Next consolidated acquisition: Minnesota statistics captured, not yet approved.**
+`scripts/acquire-minnesota-bulk-participation.py --output <private-directory>`
+requires the actual election-specific media declarations and saves complete
+aggregate originals plus full-byte receipts outside the publication checkout.
+Four focused tests and checks against the captured native index/statistics pass.
+All eight declared originals are receipt-verified: **4,105 statistic rows /
+87 county identities / 4,105 precinct references / 8,285 county candidate-or-choice
+rows / 332,337 precinct candidate-or-choice rows**, plus literal parties and layout.
+The native `Has Reported Statistics` flag separates **3,671 reported / 434
+unreported rows**; the reported `Total Number Voted` subtotal is **2,354,606**.
+All native statistical rows are reported in **75 counties**; **12 counties**
+still have missing statistics. Neither missing native zeros nor the portal's
+governor-race-derived estimates are approved as county ballots.
+Preserve **129 native component arithmetic residuals**, **seven reported rows
+exceeding 7AM-plus-Election-Day registrations**, and **87 constitutional-amendment
+`ESTIMATED BLANKS` county/precinct residuals**. These are not inferred modes,
+actual blank ballots or candidate totals. Native county IDs are not Census FIPS.
+An optional methodology request encountered an access challenge; its response
+and receipt stay private without bypass or publication of redirect/session data.
+See `20261106-minnesota-acquisition-01/validation.json` for acquisition evidence,
+not a downloadable participation query. Complete offline reconciliation,
+portable query publication and independent county identity review remain pending;
+no Minnesota rate, county/precinct map or certification is approved.
+
 **November 6, 11:09 UTC: Columbia participation is LIVE verified.**
 Exact UI `2622a0d0dd0d5549392ddab6b5c6abc6ed6f9245`, Pages **42207340056
 attempt 1**, passed its new original hosted artifact **13497880867 /

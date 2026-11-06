@@ -1,0 +1,4863 @@
+{
+  "verified_at_utc": "2026-11-06T12:05:36.590612+00:00",
+  "sources": [
+    {
+      "source_file": "media-index.html",
+      "url": "https://electionresults.sos.mn.gov/Select/MediaFiles/Index?ersElectionId=201",
+      "final_url": "https://electionresults.sos.mn.gov/Select/MediaFiles/Index?ersElectionId=201",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 46350,
+      "sha256": "6046d938afa526cd1888c4ebd56fe870caa085d766833510355a1443dbf96969",
+      "fetched_at_utc": "2026-11-06T12:01:25.958324+00:00"
+    },
+    {
+      "source_file": "layout.txt",
+      "url": "https://electionresults.sos.mn.gov/Results/MediaFileLayout/Index?erselectionId=201",
+      "final_url": "https://electionresults.sos.mn.gov/Results/MediaFileLayout/Index?erselectionId=201",
+      "status": 200,
+      "content_type": "text/plain",
+      "bytes": 6463,
+      "sha256": "d8f387d6f4aa48ebbc379d4f9d613adc1061500f92cffd976f9d64dfa406bee2",
+      "fetched_at_utc": "2026-11-06T12:01:26.043918+00:00"
+    },
+    {
+      "source_file": "pctstats.txt",
+      "url": "https://electionresultsfiles.sos.mn.gov/20261103/pctstats.txt",
+      "final_url": "https://electionresultsfiles.sos.mn.gov/20261103/pctstats.txt",
+      "status": 200,
+      "content_type": "text/plain",
+      "bytes": 202916,
+      "sha256": "edc651936b50958fb8a62a29031104076f06ff97c64dfc269d92fcfededac485",
+      "fetched_at_utc": "2026-11-06T12:01:26.414442+00:00"
+    },
+    {
+      "source_file": "counties.txt",
+      "url": "https://electionresultsfiles.sos.mn.gov/20261103/Cntytbl.txt",
+      "final_url": "https://electionresultsfiles.sos.mn.gov/20261103/Cntytbl.txt",
+      "status": 200,
+      "content_type": "text/plain",
+      "bytes": 1319,
+      "sha256": "1830c4b1993606049c397c7f318cf36db33219d660b1528ba4df074ab8e5a570",
+      "fetched_at_utc": "2026-11-06T12:01:26.451534+00:00"
+    },
+    {
+      "source_file": "precincts.txt",
+      "url": "https://electionresultsfiles.sos.mn.gov/20261103/PrctTbl.txt",
+      "final_url": "https://electionresultsfiles.sos.mn.gov/20261103/PrctTbl.txt",
+      "status": 200,
+      "content_type": "text/plain",
+      "bytes": 190874,
+      "sha256": "8a396f732ebe92ff9b05a26facb2c20a2b4142480784d5443a854abce9ce991c",
+      "fetched_at_utc": "2026-11-06T12:01:26.533239+00:00"
+    },
+    {
+      "source_file": "parties.txt",
+      "url": "https://electionresultsfiles.sos.mn.gov/20261103/PartyTbl.txt",
+      "final_url": "https://electionresultsfiles.sos.mn.gov/20261103/PartyTbl.txt",
+      "status": 200,
+      "content_type": "text/plain",
+      "bytes": 197,
+      "sha256": "e3014f80dece31ebcbe1995f604d61814851a2d82dcf11c87d5ae838bd8fb35d",
+      "fetched_at_utc": "2026-11-06T12:01:26.568914+00:00"
+    },
+    {
+      "source_file": "county-results.txt",
+      "url": "https://electionresultsfiles.sos.mn.gov/20261103/allracesbycounty.txt",
+      "final_url": "https://electionresultsfiles.sos.mn.gov/20261103/allracesbycounty.txt",
+      "status": 200,
+      "content_type": "text/plain",
+      "bytes": 714951,
+      "sha256": "e4292fda2a46e2983da2e648dbc93b1eb6bfd26a6f63fd1e44f327bf66c6e325",
+      "fetched_at_utc": "2026-11-06T12:01:26.643331+00:00"
+    },
+    {
+      "source_file": "precinct-results.txt",
+      "url": "https://electionresultsfiles.sos.mn.gov/20261103/allracesbyprecinct.txt",
+      "final_url": "https://electionresultsfiles.sos.mn.gov/20261103/allracesbyprecinct.txt",
+      "status": 200,
+      "content_type": "text/plain",
+      "bytes": 28131330,
+      "sha256": "3fe4b2289e9ff9c40120ce7b2aa1435674372e033a9b646d16fc71a6dd501d71",
+      "fetched_at_utc": "2026-11-06T12:01:27.384426+00:00"
+    }
+  ],
+  "statistics_inventory": {
+    "native_rows": 4105,
+    "reported_statistic_rows": 3671,
+    "unreported_statistic_rows": 434,
+    "reported_total_number_voted_subtotal": 2354606,
+    "unreported_native_nonzero_totals": [],
+    "scope": "Inventory only. Flag-zero totals are not actual ballots, even if nonzero. No county aggregate, turnout rate, precinct map or certification is approved."
+  },
+  "native_counties": 87,
+  "native_precinct_reference_rows": 4105,
+  "county_candidate_or_choice_rows": 8285,
+  "precinct_candidate_or_choice_rows": 332337,
+  "county_statistic_inventories": [
+    {
+      "native_county_id": "01",
+      "county": "Aitkin",
+      "native_reference_precincts": 51,
+      "reported_statistics": 51,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 9019,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "02",
+      "county": "Anoka",
+      "native_reference_precincts": 128,
+      "reported_statistics": 0,
+      "missing_statistics": 128,
+      "reported_total_number_voted_subtotal": 0,
+      "all_native_statistics_reported": false
+    },
+    {
+      "native_county_id": "03",
+      "county": "Becker",
+      "native_reference_precincts": 47,
+      "reported_statistics": 47,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 16910,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "04",
+      "county": "Beltrami",
+      "native_reference_precincts": 61,
+      "reported_statistics": 61,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 20273,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "05",
+      "county": "Benton",
+      "native_reference_precincts": 27,
+      "reported_statistics": 27,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 18773,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "06",
+      "county": "Big Stone",
+      "native_reference_precincts": 24,
+      "reported_statistics": 24,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 2435,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "07",
+      "county": "Blue Earth",
+      "native_reference_precincts": 56,
+      "reported_statistics": 56,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 29937,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "08",
+      "county": "Brown",
+      "native_reference_precincts": 32,
+      "reported_statistics": 32,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 11838,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "09",
+      "county": "Carlton",
+      "native_reference_precincts": 39,
+      "reported_statistics": 39,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 17604,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "10",
+      "county": "Carver",
+      "native_reference_precincts": 39,
+      "reported_statistics": 1,
+      "missing_statistics": 38,
+      "reported_total_number_voted_subtotal": 0,
+      "all_native_statistics_reported": false
+    },
+    {
+      "native_county_id": "11",
+      "county": "Cass",
+      "native_reference_precincts": 71,
+      "reported_statistics": 71,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 16703,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "12",
+      "county": "Chippewa",
+      "native_reference_precincts": 25,
+      "reported_statistics": 25,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 5111,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "13",
+      "county": "Chisago",
+      "native_reference_precincts": 25,
+      "reported_statistics": 25,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 29443,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "14",
+      "county": "Clay",
+      "native_reference_precincts": 56,
+      "reported_statistics": 56,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 27047,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "15",
+      "county": "Clearwater",
+      "native_reference_precincts": 29,
+      "reported_statistics": 29,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 4025,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "16",
+      "county": "Cook",
+      "native_reference_precincts": 14,
+      "reported_statistics": 14,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 3406,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "17",
+      "county": "Cottonwood",
+      "native_reference_precincts": 28,
+      "reported_statistics": 28,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 4859,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "18",
+      "county": "Crow Wing",
+      "native_reference_precincts": 62,
+      "reported_statistics": 62,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 35824,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "19",
+      "county": "Dakota",
+      "native_reference_precincts": 144,
+      "reported_statistics": 144,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 232208,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "20",
+      "county": "Dodge",
+      "native_reference_precincts": 22,
+      "reported_statistics": 22,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 10424,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "21",
+      "county": "Douglas",
+      "native_reference_precincts": 36,
+      "reported_statistics": 36,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 21615,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "22",
+      "county": "Faribault",
+      "native_reference_precincts": 33,
+      "reported_statistics": 33,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 6478,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "23",
+      "county": "Fillmore",
+      "native_reference_precincts": 37,
+      "reported_statistics": 0,
+      "missing_statistics": 37,
+      "reported_total_number_voted_subtotal": 0,
+      "all_native_statistics_reported": false
+    },
+    {
+      "native_county_id": "24",
+      "county": "Freeborn",
+      "native_reference_precincts": 43,
+      "reported_statistics": 43,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 13491,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "25",
+      "county": "Goodhue",
+      "native_reference_precincts": 40,
+      "reported_statistics": 40,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 24602,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "26",
+      "county": "Grant",
+      "native_reference_precincts": 23,
+      "reported_statistics": 23,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 3108,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "27",
+      "county": "Hennepin",
+      "native_reference_precincts": 395,
+      "reported_statistics": 395,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 669613,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "28",
+      "county": "Houston",
+      "native_reference_precincts": 27,
+      "reported_statistics": 27,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 9356,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "29",
+      "county": "Hubbard",
+      "native_reference_precincts": 37,
+      "reported_statistics": 0,
+      "missing_statistics": 37,
+      "reported_total_number_voted_subtotal": 0,
+      "all_native_statistics_reported": false
+    },
+    {
+      "native_county_id": "30",
+      "county": "Isanti",
+      "native_reference_precincts": 19,
+      "reported_statistics": 19,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 20948,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "31",
+      "county": "Itasca",
+      "native_reference_precincts": 75,
+      "reported_statistics": 75,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 22060,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "32",
+      "county": "Jackson",
+      "native_reference_precincts": 28,
+      "reported_statistics": 28,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 4928,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "33",
+      "county": "Kanabec",
+      "native_reference_precincts": 20,
+      "reported_statistics": 20,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 7640,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "34",
+      "county": "Kandiyohi",
+      "native_reference_precincts": 48,
+      "reported_statistics": 48,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 19651,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "35",
+      "county": "Kittson",
+      "native_reference_precincts": 39,
+      "reported_statistics": 21,
+      "missing_statistics": 18,
+      "reported_total_number_voted_subtotal": 1377,
+      "all_native_statistics_reported": false
+    },
+    {
+      "native_county_id": "36",
+      "county": "Koochiching",
+      "native_reference_precincts": 23,
+      "reported_statistics": 23,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 5494,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "37",
+      "county": "Lac Qui Parle",
+      "native_reference_precincts": 29,
+      "reported_statistics": 7,
+      "missing_statistics": 22,
+      "reported_total_number_voted_subtotal": 1874,
+      "all_native_statistics_reported": false
+    },
+    {
+      "native_county_id": "38",
+      "county": "Lake",
+      "native_reference_precincts": 19,
+      "reported_statistics": 19,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 6008,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "39",
+      "county": "Lake Of The Woods",
+      "native_reference_precincts": 17,
+      "reported_statistics": 17,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 1874,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "40",
+      "county": "Le Sueur",
+      "native_reference_precincts": 26,
+      "reported_statistics": 26,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 14473,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "41",
+      "county": "Lincoln",
+      "native_reference_precincts": 20,
+      "reported_statistics": 20,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 2557,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "42",
+      "county": "Lyon",
+      "native_reference_precincts": 33,
+      "reported_statistics": 33,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 10499,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "43",
+      "county": "Mcleod",
+      "native_reference_precincts": 29,
+      "reported_statistics": 29,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 17367,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "44",
+      "county": "Mahnomen",
+      "native_reference_precincts": 19,
+      "reported_statistics": 19,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 1994,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "45",
+      "county": "Marshall",
+      "native_reference_precincts": 60,
+      "reported_statistics": 60,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 4409,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "46",
+      "county": "Martin",
+      "native_reference_precincts": 37,
+      "reported_statistics": 37,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 8718,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "47",
+      "county": "Meeker",
+      "native_reference_precincts": 30,
+      "reported_statistics": 30,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 11484,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "48",
+      "county": "Mille Lacs",
+      "native_reference_precincts": 25,
+      "reported_statistics": 25,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 12117,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "49",
+      "county": "Morrison",
+      "native_reference_precincts": 48,
+      "reported_statistics": 48,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 16409,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "50",
+      "county": "Mower",
+      "native_reference_precincts": 39,
+      "reported_statistics": 39,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 15895,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "51",
+      "county": "Murray",
+      "native_reference_precincts": 29,
+      "reported_statistics": 29,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 4020,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "52",
+      "county": "Nicollet",
+      "native_reference_precincts": 26,
+      "reported_statistics": 26,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 16703,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "53",
+      "county": "Nobles",
+      "native_reference_precincts": 40,
+      "reported_statistics": 40,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 6693,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "54",
+      "county": "Norman",
+      "native_reference_precincts": 33,
+      "reported_statistics": 33,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 2698,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "55",
+      "county": "Olmsted",
+      "native_reference_precincts": 111,
+      "reported_statistics": 111,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 79405,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "56",
+      "county": "Otter Tail",
+      "native_reference_precincts": 91,
+      "reported_statistics": 90,
+      "missing_statistics": 1,
+      "reported_total_number_voted_subtotal": 31128,
+      "all_native_statistics_reported": false
+    },
+    {
+      "native_county_id": "57",
+      "county": "Pennington",
+      "native_reference_precincts": 31,
+      "reported_statistics": 31,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 5503,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "58",
+      "county": "Pine",
+      "native_reference_precincts": 47,
+      "reported_statistics": 47,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 14153,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "59",
+      "county": "Pipestone",
+      "native_reference_precincts": 22,
+      "reported_statistics": 22,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 4135,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "60",
+      "county": "Polk",
+      "native_reference_precincts": 82,
+      "reported_statistics": 82,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 12040,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "61",
+      "county": "Pope",
+      "native_reference_precincts": 31,
+      "reported_statistics": 31,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 6121,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "62",
+      "county": "Ramsey",
+      "native_reference_precincts": 162,
+      "reported_statistics": 162,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 251221,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "63",
+      "county": "Red Lake",
+      "native_reference_precincts": 21,
+      "reported_statistics": 21,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 1942,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "64",
+      "county": "Redwood",
+      "native_reference_precincts": 42,
+      "reported_statistics": 42,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 6777,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "65",
+      "county": "Renville",
+      "native_reference_precincts": 37,
+      "reported_statistics": 37,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 6468,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "66",
+      "county": "Rice",
+      "native_reference_precincts": 31,
+      "reported_statistics": 31,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 31371,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "67",
+      "county": "Rock",
+      "native_reference_precincts": 24,
+      "reported_statistics": 24,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 4508,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "68",
+      "county": "Roseau",
+      "native_reference_precincts": 44,
+      "reported_statistics": 44,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 6688,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "69",
+      "county": "St. Louis",
+      "native_reference_precincts": 167,
+      "reported_statistics": 166,
+      "missing_statistics": 1,
+      "reported_total_number_voted_subtotal": 100546,
+      "all_native_statistics_reported": false
+    },
+    {
+      "native_county_id": "70",
+      "county": "Scott",
+      "native_reference_precincts": 54,
+      "reported_statistics": 54,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 80311,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "71",
+      "county": "Sherburne",
+      "native_reference_precincts": 35,
+      "reported_statistics": 25,
+      "missing_statistics": 10,
+      "reported_total_number_voted_subtotal": 37497,
+      "all_native_statistics_reported": false
+    },
+    {
+      "native_county_id": "72",
+      "county": "Sibley",
+      "native_reference_precincts": 25,
+      "reported_statistics": 25,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 7321,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "73",
+      "county": "Stearns",
+      "native_reference_precincts": 99,
+      "reported_statistics": 99,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 75147,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "74",
+      "county": "Steele",
+      "native_reference_precincts": 26,
+      "reported_statistics": 26,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 18192,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "75",
+      "county": "Stevens",
+      "native_reference_precincts": 24,
+      "reported_statistics": 24,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 4515,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "76",
+      "county": "Swift",
+      "native_reference_precincts": 30,
+      "reported_statistics": 30,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 4574,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "77",
+      "county": "Todd",
+      "native_reference_precincts": 40,
+      "reported_statistics": 40,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 11294,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "78",
+      "county": "Traverse",
+      "native_reference_precincts": 20,
+      "reported_statistics": 20,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 1562,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "79",
+      "county": "Wabasha",
+      "native_reference_precincts": 33,
+      "reported_statistics": 33,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 11374,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "80",
+      "county": "Wadena",
+      "native_reference_precincts": 24,
+      "reported_statistics": 4,
+      "missing_statistics": 20,
+      "reported_total_number_voted_subtotal": 526,
+      "all_native_statistics_reported": false
+    },
+    {
+      "native_county_id": "81",
+      "county": "Waseca",
+      "native_reference_precincts": 23,
+      "reported_statistics": 23,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 8471,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "82",
+      "county": "Washington",
+      "native_reference_precincts": 84,
+      "reported_statistics": 1,
+      "missing_statistics": 83,
+      "reported_total_number_voted_subtotal": 201,
+      "all_native_statistics_reported": false
+    },
+    {
+      "native_county_id": "83",
+      "county": "Watonwan",
+      "native_reference_precincts": 21,
+      "reported_statistics": 21,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 4094,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "84",
+      "county": "Wilkin",
+      "native_reference_precincts": 32,
+      "reported_statistics": 32,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 2595,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "85",
+      "county": "Winona",
+      "native_reference_precincts": 49,
+      "reported_statistics": 49,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 23893,
+      "all_native_statistics_reported": true
+    },
+    {
+      "native_county_id": "86",
+      "county": "Wright",
+      "native_reference_precincts": 51,
+      "reported_statistics": 12,
+      "missing_statistics": 39,
+      "reported_total_number_voted_subtotal": 14444,
+      "all_native_statistics_reported": false
+    },
+    {
+      "native_county_id": "87",
+      "county": "Yellow Medicine",
+      "native_reference_precincts": 30,
+      "reported_statistics": 30,
+      "missing_statistics": 0,
+      "reported_total_number_voted_subtotal": 4597,
+      "all_native_statistics_reported": true
+    }
+  ],
+  "counties_with_all_native_statistics_reported": 75,
+  "counties_with_missing_statistics": 12,
+  "mode_arithmetic_residuals": [
+    {
+      "county_id": "05",
+      "precinct_id": "0100",
+      "native_fields": [
+        "MN",
+        "05",
+        "0100",
+        "SAUK RAPIDS P-1",
+        "1",
+        "1503",
+        "44",
+        "859",
+        "127",
+        "2",
+        "0",
+        "987"
+      ],
+      "total_minus_four_native_components": -1
+    },
+    {
+      "county_id": "25",
+      "precinct_id": "0190",
+      "native_fields": [
+        "MN",
+        "25",
+        "0190",
+        "WANAMINGO",
+        "1",
+        "853",
+        "18",
+        "542",
+        "44",
+        "0",
+        "0",
+        "584"
+      ],
+      "total_minus_four_native_components": -2
+    },
+    {
+      "county_id": "25",
+      "precinct_id": "0195",
+      "native_fields": [
+        "MN",
+        "25",
+        "0195",
+        "WANAMINGO TWP.",
+        "1",
+        "317",
+        "3",
+        "221",
+        "23",
+        "1",
+        "0",
+        "247"
+      ],
+      "total_minus_four_native_components": 2
+    },
+    {
+      "county_id": "34",
+      "precinct_id": "0175",
+      "native_fields": [
+        "MN",
+        "34",
+        "0175",
+        "WILLMAR W-1 P-1",
+        "1",
+        "1015",
+        "37",
+        "509",
+        "184",
+        "1",
+        "0",
+        "693"
+      ],
+      "total_minus_four_native_components": -1
+    },
+    {
+      "county_id": "34",
+      "precinct_id": "0195",
+      "native_fields": [
+        "MN",
+        "34",
+        "0195",
+        "WILLMAR W-2 P-2",
+        "1",
+        "1103",
+        "37",
+        "556",
+        "205",
+        "0",
+        "0",
+        "760"
+      ],
+      "total_minus_four_native_components": -1
+    },
+    {
+      "county_id": "40",
+      "precinct_id": "0105",
+      "native_fields": [
+        "MN",
+        "40",
+        "0105",
+        "NEW PRAGUE",
+        "1",
+        "2509",
+        "80",
+        "1538",
+        "257",
+        "0",
+        "0",
+        "1794"
+      ],
+      "total_minus_four_native_components": -1
+    },
+    {
+      "county_id": "47",
+      "precinct_id": "0105",
+      "native_fields": [
+        "MN",
+        "47",
+        "0105",
+        "LITCHFIELD W-1",
+        "1",
+        "953",
+        "26",
+        "483",
+        "208",
+        "0",
+        "0",
+        "690"
+      ],
+      "total_minus_four_native_components": -1
+    },
+    {
+      "county_id": "47",
+      "precinct_id": "0115",
+      "native_fields": [
+        "MN",
+        "47",
+        "0115",
+        "LITCHFIELD W-3",
+        "1",
+        "796",
+        "29",
+        "401",
+        "154",
+        "0",
+        "0",
+        "553"
+      ],
+      "total_minus_four_native_components": -2
+    },
+    {
+      "county_id": "47",
+      "precinct_id": "0120",
+      "native_fields": [
+        "MN",
+        "47",
+        "0120",
+        "LITCHFIELD W-4",
+        "1",
+        "806",
+        "29",
+        "366",
+        "176",
+        "0",
+        "0",
+        "541"
+      ],
+      "total_minus_four_native_components": -1
+    },
+    {
+      "county_id": "52",
+      "precinct_id": "0020",
+      "native_fields": [
+        "MN",
+        "52",
+        "0020",
+        "CITY OF COURTLAND",
+        "1",
+        "530",
+        "9",
+        "393",
+        "44",
+        "0",
+        "0",
+        "436"
+      ],
+      "total_minus_four_native_components": -1
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0005",
+      "native_fields": [
+        "MN",
+        "55",
+        "0005",
+        "BYRON",
+        "1",
+        "4685",
+        "116",
+        "2605",
+        "0",
+        "0",
+        "0",
+        "3213"
+      ],
+      "total_minus_four_native_components": 608
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0010",
+      "native_fields": [
+        "MN",
+        "55",
+        "0010",
+        "CASCADE TWP. P-1",
+        "1",
+        "1908",
+        "25",
+        "1010",
+        "0",
+        "0",
+        "0",
+        "1457"
+      ],
+      "total_minus_four_native_components": 447
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0011",
+      "native_fields": [
+        "MN",
+        "55",
+        "0011",
+        "CASCADE TWP. P-2",
+        "1",
+        "48",
+        "0",
+        "27",
+        "0",
+        "0",
+        "0",
+        "36"
+      ],
+      "total_minus_four_native_components": 9
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0012",
+      "native_fields": [
+        "MN",
+        "55",
+        "0012",
+        "CASCADE TWP. P-3",
+        "1",
+        "238",
+        "3",
+        "97",
+        "0",
+        "0",
+        "0",
+        "194"
+      ],
+      "total_minus_four_native_components": 97
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0015",
+      "native_fields": [
+        "MN",
+        "55",
+        "0015",
+        "CHATFIELD",
+        "1",
+        "813",
+        "20",
+        "496",
+        "0",
+        "0",
+        "0",
+        "551"
+      ],
+      "total_minus_four_native_components": 55
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0020",
+      "native_fields": [
+        "MN",
+        "55",
+        "0020",
+        "DOVER",
+        "1",
+        "551",
+        "11",
+        "348",
+        "0",
+        "0",
+        "0",
+        "386"
+      ],
+      "total_minus_four_native_components": 38
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0025",
+      "native_fields": [
+        "MN",
+        "55",
+        "0025",
+        "DOVER TWP.",
+        "1",
+        "276",
+        "4",
+        "183",
+        "0",
+        "0",
+        "0",
+        "193"
+      ],
+      "total_minus_four_native_components": 10
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0030",
+      "native_fields": [
+        "MN",
+        "55",
+        "0030",
+        "ELMIRA TWP.",
+        "1",
+        "288",
+        "4",
+        "204",
+        "0",
+        "0",
+        "0",
+        "225"
+      ],
+      "total_minus_four_native_components": 21
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0035",
+      "native_fields": [
+        "MN",
+        "55",
+        "0035",
+        "EYOTA",
+        "1",
+        "1459",
+        "27",
+        "862",
+        "0",
+        "0",
+        "0",
+        "991"
+      ],
+      "total_minus_four_native_components": 129
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0040",
+      "native_fields": [
+        "MN",
+        "55",
+        "0040",
+        "EYOTA TWP.",
+        "1",
+        "362",
+        "3",
+        "218",
+        "0",
+        "0",
+        "0",
+        "260"
+      ],
+      "total_minus_four_native_components": 42
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0045",
+      "native_fields": [
+        "MN",
+        "55",
+        "0045",
+        "FARMINGTON TWP.",
+        "1",
+        "297",
+        "4",
+        "190",
+        "0",
+        "0",
+        "0",
+        "217"
+      ],
+      "total_minus_four_native_components": 27
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0050",
+      "native_fields": [
+        "MN",
+        "55",
+        "0050",
+        "HAVERHILL TWP",
+        "1",
+        "1099",
+        "15",
+        "571",
+        "0",
+        "0",
+        "0",
+        "861"
+      ],
+      "total_minus_four_native_components": 290
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0055",
+      "native_fields": [
+        "MN",
+        "55",
+        "0055",
+        "HIGH FOREST TWP.",
+        "1",
+        "757",
+        "4",
+        "472",
+        "0",
+        "0",
+        "0",
+        "549"
+      ],
+      "total_minus_four_native_components": 77
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0060",
+      "native_fields": [
+        "MN",
+        "55",
+        "0060",
+        "KALMAR TWP.",
+        "1",
+        "900",
+        "4",
+        "550",
+        "0",
+        "0",
+        "0",
+        "672"
+      ],
+      "total_minus_four_native_components": 122
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0065",
+      "native_fields": [
+        "MN",
+        "55",
+        "0065",
+        "MARION TWP. P-1",
+        "1",
+        "2991",
+        "39",
+        "1641",
+        "0",
+        "0",
+        "0",
+        "2223"
+      ],
+      "total_minus_four_native_components": 582
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0070",
+      "native_fields": [
+        "MN",
+        "55",
+        "0070",
+        "NEW HAVEN TWP.",
+        "1",
+        "1045",
+        "16",
+        "727",
+        "0",
+        "0",
+        "0",
+        "836"
+      ],
+      "total_minus_four_native_components": 109
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0075",
+      "native_fields": [
+        "MN",
+        "55",
+        "0075",
+        "ORION TWP.",
+        "1",
+        "412",
+        "5",
+        "274",
+        "0",
+        "0",
+        "0",
+        "312"
+      ],
+      "total_minus_four_native_components": 38
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0080",
+      "native_fields": [
+        "MN",
+        "55",
+        "0080",
+        "ORONOCO",
+        "1",
+        "1287",
+        "13",
+        "769",
+        "0",
+        "0",
+        "0",
+        "939"
+      ],
+      "total_minus_four_native_components": 170
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0085",
+      "native_fields": [
+        "MN",
+        "55",
+        "0085",
+        "ORONOCO TWP.",
+        "1",
+        "1754",
+        "41",
+        "965",
+        "0",
+        "0",
+        "0",
+        "1336"
+      ],
+      "total_minus_four_native_components": 371
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0088",
+      "native_fields": [
+        "MN",
+        "55",
+        "0088",
+        "PINE ISLAND",
+        "1",
+        "755",
+        "8",
+        "450",
+        "0",
+        "0",
+        "0",
+        "506"
+      ],
+      "total_minus_four_native_components": 56
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0090",
+      "native_fields": [
+        "MN",
+        "55",
+        "0090",
+        "PLEASANT GROVE TWP.",
+        "1",
+        "552",
+        "1",
+        "340",
+        "0",
+        "0",
+        "0",
+        "391"
+      ],
+      "total_minus_four_native_components": 51
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0095",
+      "native_fields": [
+        "MN",
+        "55",
+        "0095",
+        "QUINCY TWP.",
+        "1",
+        "249",
+        "4",
+        "167",
+        "0",
+        "0",
+        "0",
+        "188"
+      ],
+      "total_minus_four_native_components": 21
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0100",
+      "native_fields": [
+        "MN",
+        "55",
+        "0100",
+        "ROCHESTER W1 P1",
+        "1",
+        "1248",
+        "21",
+        "565",
+        "0",
+        "0",
+        "0",
+        "1017"
+      ],
+      "total_minus_four_native_components": 452
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0105",
+      "native_fields": [
+        "MN",
+        "55",
+        "0105",
+        "ROCHESTER W1 P2",
+        "1",
+        "973",
+        "6",
+        "345",
+        "0",
+        "0",
+        "0",
+        "777"
+      ],
+      "total_minus_four_native_components": 432
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0110",
+      "native_fields": [
+        "MN",
+        "55",
+        "0110",
+        "ROCHESTER W1 P3",
+        "1",
+        "488",
+        "35",
+        "217",
+        "0",
+        "0",
+        "0",
+        "340"
+      ],
+      "total_minus_four_native_components": 123
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0115",
+      "native_fields": [
+        "MN",
+        "55",
+        "0115",
+        "ROCHESTER W1 P4",
+        "1",
+        "1277",
+        "26",
+        "585",
+        "0",
+        "0",
+        "0",
+        "931"
+      ],
+      "total_minus_four_native_components": 346
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0120",
+      "native_fields": [
+        "MN",
+        "55",
+        "0120",
+        "ROCHESTER W1 P5",
+        "1",
+        "725",
+        "21",
+        "262",
+        "0",
+        "0",
+        "0",
+        "481"
+      ],
+      "total_minus_four_native_components": 219
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0125",
+      "native_fields": [
+        "MN",
+        "55",
+        "0125",
+        "ROCHESTER W1 P6",
+        "1",
+        "1261",
+        "9",
+        "600",
+        "0",
+        "0",
+        "0",
+        "981"
+      ],
+      "total_minus_four_native_components": 381
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0130",
+      "native_fields": [
+        "MN",
+        "55",
+        "0130",
+        "ROCHESTER W1 P7",
+        "1",
+        "1302",
+        "12",
+        "469",
+        "0",
+        "0",
+        "0",
+        "934"
+      ],
+      "total_minus_four_native_components": 465
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0135",
+      "native_fields": [
+        "MN",
+        "55",
+        "0135",
+        "ROCHESTER W1 P8",
+        "1",
+        "1364",
+        "28",
+        "708",
+        "0",
+        "0",
+        "0",
+        "1010"
+      ],
+      "total_minus_four_native_components": 302
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0140",
+      "native_fields": [
+        "MN",
+        "55",
+        "0140",
+        "ROCHESTER W1 P9",
+        "1",
+        "496",
+        "10",
+        "249",
+        "0",
+        "0",
+        "0",
+        "366"
+      ],
+      "total_minus_four_native_components": 117
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0145",
+      "native_fields": [
+        "MN",
+        "55",
+        "0145",
+        "ROCHESTER W1 P10",
+        "1",
+        "1396",
+        "78",
+        "569",
+        "0",
+        "0",
+        "0",
+        "884"
+      ],
+      "total_minus_four_native_components": 315
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0150",
+      "native_fields": [
+        "MN",
+        "55",
+        "0150",
+        "ROCHESTER W1 P11",
+        "1",
+        "1333",
+        "22",
+        "654",
+        "0",
+        "0",
+        "0",
+        "1050"
+      ],
+      "total_minus_four_native_components": 396
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0155",
+      "native_fields": [
+        "MN",
+        "55",
+        "0155",
+        "ROCHESTER W1 P12",
+        "1",
+        "1340",
+        "28",
+        "644",
+        "0",
+        "0",
+        "0",
+        "983"
+      ],
+      "total_minus_four_native_components": 339
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0160",
+      "native_fields": [
+        "MN",
+        "55",
+        "0160",
+        "ROCHESTER W1 P13",
+        "1",
+        "1395",
+        "17",
+        "649",
+        "0",
+        "0",
+        "0",
+        "1094"
+      ],
+      "total_minus_four_native_components": 445
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0165",
+      "native_fields": [
+        "MN",
+        "55",
+        "0165",
+        "ROCHESTER W1 P14",
+        "1",
+        "376",
+        "9",
+        "186",
+        "0",
+        "0",
+        "0",
+        "257"
+      ],
+      "total_minus_four_native_components": 71
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0170",
+      "native_fields": [
+        "MN",
+        "55",
+        "0170",
+        "ROCHESTER W2 P1",
+        "1",
+        "1352",
+        "44",
+        "572",
+        "0",
+        "0",
+        "0",
+        "941"
+      ],
+      "total_minus_four_native_components": 369
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0175",
+      "native_fields": [
+        "MN",
+        "55",
+        "0175",
+        "ROCHESTER W2 P2",
+        "1",
+        "880",
+        "25",
+        "450",
+        "0",
+        "0",
+        "0",
+        "612"
+      ],
+      "total_minus_four_native_components": 162
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0180",
+      "native_fields": [
+        "MN",
+        "55",
+        "0180",
+        "ROCHESTER W2 P3",
+        "1",
+        "854",
+        "18",
+        "383",
+        "0",
+        "0",
+        "0",
+        "643"
+      ],
+      "total_minus_four_native_components": 260
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0185",
+      "native_fields": [
+        "MN",
+        "55",
+        "0185",
+        "ROCHESTER W2 P4",
+        "1",
+        "1096",
+        "22",
+        "538",
+        "0",
+        "0",
+        "0",
+        "807"
+      ],
+      "total_minus_four_native_components": 269
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0190",
+      "native_fields": [
+        "MN",
+        "55",
+        "0190",
+        "ROCHESTER W2 P5",
+        "1",
+        "778",
+        "27",
+        "309",
+        "0",
+        "0",
+        "0",
+        "566"
+      ],
+      "total_minus_four_native_components": 257
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0195",
+      "native_fields": [
+        "MN",
+        "55",
+        "0195",
+        "ROCHESTER W2 P6",
+        "1",
+        "1097",
+        "61",
+        "338",
+        "0",
+        "0",
+        "0",
+        "731"
+      ],
+      "total_minus_four_native_components": 393
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0200",
+      "native_fields": [
+        "MN",
+        "55",
+        "0200",
+        "ROCHESTER W2 P7",
+        "1",
+        "709",
+        "22",
+        "237",
+        "0",
+        "0",
+        "0",
+        "435"
+      ],
+      "total_minus_four_native_components": 198
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0205",
+      "native_fields": [
+        "MN",
+        "55",
+        "0205",
+        "ROCHESTER W2 P8",
+        "1",
+        "684",
+        "53",
+        "239",
+        "0",
+        "0",
+        "0",
+        "449"
+      ],
+      "total_minus_four_native_components": 210
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0210",
+      "native_fields": [
+        "MN",
+        "55",
+        "0210",
+        "ROCHESTER W2 P9",
+        "1",
+        "943",
+        "23",
+        "505",
+        "0",
+        "0",
+        "0",
+        "751"
+      ],
+      "total_minus_four_native_components": 246
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0215",
+      "native_fields": [
+        "MN",
+        "55",
+        "0215",
+        "ROCHESTER W2 P10",
+        "1",
+        "1294",
+        "30",
+        "395",
+        "0",
+        "0",
+        "0",
+        "1032"
+      ],
+      "total_minus_four_native_components": 637
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0220",
+      "native_fields": [
+        "MN",
+        "55",
+        "0220",
+        "ROCHESTER W2 P11",
+        "1",
+        "1326",
+        "27",
+        "488",
+        "0",
+        "0",
+        "0",
+        "1022"
+      ],
+      "total_minus_four_native_components": 534
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0225",
+      "native_fields": [
+        "MN",
+        "55",
+        "0225",
+        "ROCHESTER W2 P12",
+        "1",
+        "1126",
+        "160",
+        "523",
+        "0",
+        "0",
+        "0",
+        "858"
+      ],
+      "total_minus_four_native_components": 335
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0230",
+      "native_fields": [
+        "MN",
+        "55",
+        "0230",
+        "ROCHESTER W2 P13",
+        "1",
+        "1235",
+        "39",
+        "543",
+        "0",
+        "0",
+        "0",
+        "1013"
+      ],
+      "total_minus_four_native_components": 470
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0235",
+      "native_fields": [
+        "MN",
+        "55",
+        "0235",
+        "ROCHESTER W3 P1",
+        "1",
+        "1163",
+        "30",
+        "535",
+        "0",
+        "0",
+        "0",
+        "811"
+      ],
+      "total_minus_four_native_components": 276
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0240",
+      "native_fields": [
+        "MN",
+        "55",
+        "0240",
+        "ROCHESTER W3 P2",
+        "1",
+        "963",
+        "13",
+        "507",
+        "0",
+        "0",
+        "0",
+        "690"
+      ],
+      "total_minus_four_native_components": 183
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0245",
+      "native_fields": [
+        "MN",
+        "55",
+        "0245",
+        "ROCHESTER W3 P3",
+        "1",
+        "1350",
+        "36",
+        "680",
+        "0",
+        "0",
+        "0",
+        "937"
+      ],
+      "total_minus_four_native_components": 257
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0250",
+      "native_fields": [
+        "MN",
+        "55",
+        "0250",
+        "ROCHESTER W3 P4",
+        "1",
+        "878",
+        "20",
+        "386",
+        "0",
+        "0",
+        "0",
+        "585"
+      ],
+      "total_minus_four_native_components": 199
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0255",
+      "native_fields": [
+        "MN",
+        "55",
+        "0255",
+        "ROCHESTER W3 P5",
+        "1",
+        "1293",
+        "56",
+        "612",
+        "0",
+        "0",
+        "0",
+        "915"
+      ],
+      "total_minus_four_native_components": 303
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0260",
+      "native_fields": [
+        "MN",
+        "55",
+        "0260",
+        "ROCHESTER W3 P6",
+        "1",
+        "788",
+        "26",
+        "356",
+        "0",
+        "0",
+        "0",
+        "565"
+      ],
+      "total_minus_four_native_components": 209
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0265",
+      "native_fields": [
+        "MN",
+        "55",
+        "0265",
+        "ROCHESTER W3 P7",
+        "1",
+        "1139",
+        "16",
+        "564",
+        "0",
+        "0",
+        "0",
+        "814"
+      ],
+      "total_minus_four_native_components": 250
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0270",
+      "native_fields": [
+        "MN",
+        "55",
+        "0270",
+        "ROCHESTER W3 P8",
+        "1",
+        "1026",
+        "14",
+        "372",
+        "0",
+        "0",
+        "0",
+        "772"
+      ],
+      "total_minus_four_native_components": 400
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0275",
+      "native_fields": [
+        "MN",
+        "55",
+        "0275",
+        "ROCHESTER W3 P9",
+        "1",
+        "1320",
+        "29",
+        "637",
+        "0",
+        "0",
+        "0",
+        "885"
+      ],
+      "total_minus_four_native_components": 248
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0280",
+      "native_fields": [
+        "MN",
+        "55",
+        "0280",
+        "ROCHESTER W3 P10",
+        "1",
+        "1805",
+        "94",
+        "807",
+        "0",
+        "0",
+        "0",
+        "1222"
+      ],
+      "total_minus_four_native_components": 415
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0285",
+      "native_fields": [
+        "MN",
+        "55",
+        "0285",
+        "ROCHESTER W3 P11",
+        "1",
+        "1392",
+        "35",
+        "617",
+        "0",
+        "0",
+        "0",
+        "1061"
+      ],
+      "total_minus_four_native_components": 444
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0290",
+      "native_fields": [
+        "MN",
+        "55",
+        "0290",
+        "ROCHESTER W3 P12",
+        "1",
+        "1101",
+        "27",
+        "544",
+        "0",
+        "0",
+        "0",
+        "748"
+      ],
+      "total_minus_four_native_components": 204
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0295",
+      "native_fields": [
+        "MN",
+        "55",
+        "0295",
+        "ROCHESTER W3 P13",
+        "1",
+        "464",
+        "27",
+        "189",
+        "0",
+        "0",
+        "0",
+        "278"
+      ],
+      "total_minus_four_native_components": 89
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0300",
+      "native_fields": [
+        "MN",
+        "55",
+        "0300",
+        "ROCHESTER W4 P1",
+        "1",
+        "896",
+        "143",
+        "335",
+        "0",
+        "0",
+        "0",
+        "696"
+      ],
+      "total_minus_four_native_components": 361
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0305",
+      "native_fields": [
+        "MN",
+        "55",
+        "0305",
+        "ROCHESTER W4 P2",
+        "1",
+        "998",
+        "56",
+        "380",
+        "0",
+        "0",
+        "0",
+        "656"
+      ],
+      "total_minus_four_native_components": 276
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0310",
+      "native_fields": [
+        "MN",
+        "55",
+        "0310",
+        "ROCHESTER W4 P3",
+        "1",
+        "724",
+        "26",
+        "290",
+        "0",
+        "0",
+        "0",
+        "455"
+      ],
+      "total_minus_four_native_components": 165
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0315",
+      "native_fields": [
+        "MN",
+        "55",
+        "0315",
+        "ROCHESTER W4 P4",
+        "1",
+        "767",
+        "38",
+        "359",
+        "0",
+        "0",
+        "0",
+        "493"
+      ],
+      "total_minus_four_native_components": 134
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0320",
+      "native_fields": [
+        "MN",
+        "55",
+        "0320",
+        "ROCHESTER W4 P5",
+        "1",
+        "1025",
+        "32",
+        "498",
+        "0",
+        "0",
+        "0",
+        "682"
+      ],
+      "total_minus_four_native_components": 184
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0325",
+      "native_fields": [
+        "MN",
+        "55",
+        "0325",
+        "ROCHESTER W4 P6",
+        "1",
+        "828",
+        "24",
+        "325",
+        "0",
+        "0",
+        "0",
+        "545"
+      ],
+      "total_minus_four_native_components": 220
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0330",
+      "native_fields": [
+        "MN",
+        "55",
+        "0330",
+        "ROCHESTER W4 P7",
+        "1",
+        "713",
+        "37",
+        "189",
+        "0",
+        "0",
+        "0",
+        "339"
+      ],
+      "total_minus_four_native_components": 150
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0335",
+      "native_fields": [
+        "MN",
+        "55",
+        "0335",
+        "ROCHESTER W4 P8",
+        "1",
+        "1026",
+        "41",
+        "423",
+        "0",
+        "0",
+        "0",
+        "619"
+      ],
+      "total_minus_four_native_components": 196
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0340",
+      "native_fields": [
+        "MN",
+        "55",
+        "0340",
+        "ROCHESTER W4 P9",
+        "1",
+        "555",
+        "23",
+        "173",
+        "0",
+        "0",
+        "0",
+        "346"
+      ],
+      "total_minus_four_native_components": 173
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0345",
+      "native_fields": [
+        "MN",
+        "55",
+        "0345",
+        "ROCHESTER W4 P10",
+        "1",
+        "1047",
+        "66",
+        "408",
+        "0",
+        "0",
+        "0",
+        "719"
+      ],
+      "total_minus_four_native_components": 311
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0350",
+      "native_fields": [
+        "MN",
+        "55",
+        "0350",
+        "ROCHESTER W4 P11",
+        "1",
+        "916",
+        "51",
+        "385",
+        "0",
+        "0",
+        "0",
+        "594"
+      ],
+      "total_minus_four_native_components": 209
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0355",
+      "native_fields": [
+        "MN",
+        "55",
+        "0355",
+        "ROCHESTER W4 P12",
+        "1",
+        "1032",
+        "37",
+        "433",
+        "0",
+        "0",
+        "0",
+        "655"
+      ],
+      "total_minus_four_native_components": 222
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0360",
+      "native_fields": [
+        "MN",
+        "55",
+        "0360",
+        "ROCHESTER W4 P13",
+        "1",
+        "669",
+        "8",
+        "330",
+        "0",
+        "0",
+        "0",
+        "471"
+      ],
+      "total_minus_four_native_components": 141
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0365",
+      "native_fields": [
+        "MN",
+        "55",
+        "0365",
+        "ROCHESTER W5 P1",
+        "1",
+        "824",
+        "16",
+        "375",
+        "0",
+        "0",
+        "0",
+        "674"
+      ],
+      "total_minus_four_native_components": 299
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0370",
+      "native_fields": [
+        "MN",
+        "55",
+        "0370",
+        "ROCHESTER W5 P2",
+        "1",
+        "1803",
+        "17",
+        "826",
+        "0",
+        "0",
+        "0",
+        "1475"
+      ],
+      "total_minus_four_native_components": 649
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0375",
+      "native_fields": [
+        "MN",
+        "55",
+        "0375",
+        "ROCHESTER W5 P3",
+        "1",
+        "1161",
+        "51",
+        "496",
+        "0",
+        "0",
+        "0",
+        "750"
+      ],
+      "total_minus_four_native_components": 254
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0380",
+      "native_fields": [
+        "MN",
+        "55",
+        "0380",
+        "ROCHESTER W5 P4",
+        "1",
+        "1195",
+        "22",
+        "566",
+        "0",
+        "0",
+        "0",
+        "858"
+      ],
+      "total_minus_four_native_components": 292
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0385",
+      "native_fields": [
+        "MN",
+        "55",
+        "0385",
+        "ROCHESTER W5 P5",
+        "1",
+        "1162",
+        "5",
+        "480",
+        "0",
+        "0",
+        "0",
+        "900"
+      ],
+      "total_minus_four_native_components": 420
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0390",
+      "native_fields": [
+        "MN",
+        "55",
+        "0390",
+        "ROCHESTER W5 P6",
+        "1",
+        "1295",
+        "19",
+        "593",
+        "0",
+        "0",
+        "0",
+        "1021"
+      ],
+      "total_minus_four_native_components": 428
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0395",
+      "native_fields": [
+        "MN",
+        "55",
+        "0395",
+        "ROCHESTER W5 P7",
+        "1",
+        "690",
+        "18",
+        "215",
+        "0",
+        "0",
+        "0",
+        "485"
+      ],
+      "total_minus_four_native_components": 270
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0400",
+      "native_fields": [
+        "MN",
+        "55",
+        "0400",
+        "ROCHESTER W5 P8",
+        "1",
+        "1163",
+        "28",
+        "517",
+        "0",
+        "0",
+        "0",
+        "858"
+      ],
+      "total_minus_four_native_components": 341
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0405",
+      "native_fields": [
+        "MN",
+        "55",
+        "0405",
+        "ROCHESTER W5 P9",
+        "1",
+        "746",
+        "9",
+        "328",
+        "0",
+        "0",
+        "0",
+        "593"
+      ],
+      "total_minus_four_native_components": 265
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0410",
+      "native_fields": [
+        "MN",
+        "55",
+        "0410",
+        "ROCHESTER W5 P10",
+        "1",
+        "1224",
+        "65",
+        "488",
+        "0",
+        "0",
+        "0",
+        "805"
+      ],
+      "total_minus_four_native_components": 317
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0415",
+      "native_fields": [
+        "MN",
+        "55",
+        "0415",
+        "ROCHESTER W5 P11",
+        "1",
+        "988",
+        "30",
+        "329",
+        "0",
+        "0",
+        "0",
+        "623"
+      ],
+      "total_minus_four_native_components": 294
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0420",
+      "native_fields": [
+        "MN",
+        "55",
+        "0420",
+        "ROCHESTER W5 P12",
+        "1",
+        "1110",
+        "23",
+        "463",
+        "0",
+        "0",
+        "0",
+        "798"
+      ],
+      "total_minus_four_native_components": 335
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0425",
+      "native_fields": [
+        "MN",
+        "55",
+        "0425",
+        "ROCHESTER W5 P13",
+        "1",
+        "597",
+        "10",
+        "195",
+        "0",
+        "0",
+        "0",
+        "468"
+      ],
+      "total_minus_four_native_components": 273
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0430",
+      "native_fields": [
+        "MN",
+        "55",
+        "0430",
+        "ROCHESTER W5 P14",
+        "1",
+        "531",
+        "9",
+        "194",
+        "0",
+        "0",
+        "0",
+        "376"
+      ],
+      "total_minus_four_native_components": 182
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0435",
+      "native_fields": [
+        "MN",
+        "55",
+        "0435",
+        "ROCHESTER W6 P1",
+        "1",
+        "739",
+        "31",
+        "293",
+        "0",
+        "0",
+        "0",
+        "446"
+      ],
+      "total_minus_four_native_components": 153
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0440",
+      "native_fields": [
+        "MN",
+        "55",
+        "0440",
+        "ROCHESTER W6 P2",
+        "1",
+        "1017",
+        "24",
+        "479",
+        "0",
+        "0",
+        "0",
+        "734"
+      ],
+      "total_minus_four_native_components": 255
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0445",
+      "native_fields": [
+        "MN",
+        "55",
+        "0445",
+        "ROCHESTER W6 P3",
+        "1",
+        "938",
+        "22",
+        "359",
+        "0",
+        "0",
+        "0",
+        "559"
+      ],
+      "total_minus_four_native_components": 200
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0450",
+      "native_fields": [
+        "MN",
+        "55",
+        "0450",
+        "ROCHESTER W6 P4",
+        "1",
+        "811",
+        "40",
+        "310",
+        "0",
+        "0",
+        "0",
+        "441"
+      ],
+      "total_minus_four_native_components": 131
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0455",
+      "native_fields": [
+        "MN",
+        "55",
+        "0455",
+        "ROCHESTER W6 P5",
+        "1",
+        "812",
+        "34",
+        "242",
+        "0",
+        "0",
+        "0",
+        "442"
+      ],
+      "total_minus_four_native_components": 200
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0460",
+      "native_fields": [
+        "MN",
+        "55",
+        "0460",
+        "ROCHESTER W6 P6",
+        "1",
+        "894",
+        "32",
+        "382",
+        "0",
+        "0",
+        "0",
+        "538"
+      ],
+      "total_minus_four_native_components": 156
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0465",
+      "native_fields": [
+        "MN",
+        "55",
+        "0465",
+        "ROCHESTER W6 P7",
+        "1",
+        "1307",
+        "51",
+        "635",
+        "0",
+        "0",
+        "0",
+        "931"
+      ],
+      "total_minus_four_native_components": 296
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0470",
+      "native_fields": [
+        "MN",
+        "55",
+        "0470",
+        "ROCHESTER W6 P8",
+        "1",
+        "865",
+        "14",
+        "393",
+        "0",
+        "0",
+        "0",
+        "683"
+      ],
+      "total_minus_four_native_components": 290
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0475",
+      "native_fields": [
+        "MN",
+        "55",
+        "0475",
+        "ROCHESTER W6 P9",
+        "1",
+        "846",
+        "20",
+        "406",
+        "0",
+        "0",
+        "0",
+        "616"
+      ],
+      "total_minus_four_native_components": 210
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0480",
+      "native_fields": [
+        "MN",
+        "55",
+        "0480",
+        "ROCHESTER W6 P10",
+        "1",
+        "770",
+        "24",
+        "322",
+        "0",
+        "0",
+        "0",
+        "489"
+      ],
+      "total_minus_four_native_components": 167
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0485",
+      "native_fields": [
+        "MN",
+        "55",
+        "0485",
+        "ROCHESTER W6 P11",
+        "1",
+        "758",
+        "34",
+        "326",
+        "0",
+        "0",
+        "0",
+        "423"
+      ],
+      "total_minus_four_native_components": 97
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0490",
+      "native_fields": [
+        "MN",
+        "55",
+        "0490",
+        "ROCHESTER W6 P12",
+        "1",
+        "1281",
+        "38",
+        "661",
+        "0",
+        "0",
+        "0",
+        "965"
+      ],
+      "total_minus_four_native_components": 304
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0495",
+      "native_fields": [
+        "MN",
+        "55",
+        "0495",
+        "ROCHESTER W6 P13",
+        "1",
+        "980",
+        "15",
+        "481",
+        "0",
+        "0",
+        "0",
+        "723"
+      ],
+      "total_minus_four_native_components": 242
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0500",
+      "native_fields": [
+        "MN",
+        "55",
+        "0500",
+        "ROCHESTER TWP P-1",
+        "1",
+        "1420",
+        "15",
+        "535",
+        "0",
+        "0",
+        "0",
+        "1082"
+      ],
+      "total_minus_four_native_components": 547
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0505",
+      "native_fields": [
+        "MN",
+        "55",
+        "0505",
+        "ROCHESTER TWP P-2",
+        "1",
+        "283",
+        "4",
+        "153",
+        "0",
+        "0",
+        "0",
+        "224"
+      ],
+      "total_minus_four_native_components": 71
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0510",
+      "native_fields": [
+        "MN",
+        "55",
+        "0510",
+        "ROCHESTER TWP P-3",
+        "1",
+        "51",
+        "1",
+        "33",
+        "0",
+        "0",
+        "0",
+        "38"
+      ],
+      "total_minus_four_native_components": 5
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0515",
+      "native_fields": [
+        "MN",
+        "55",
+        "0515",
+        "ROCK DELL TWP.",
+        "1",
+        "540",
+        "5",
+        "367",
+        "0",
+        "0",
+        "0",
+        "412"
+      ],
+      "total_minus_four_native_components": 45
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0520",
+      "native_fields": [
+        "MN",
+        "55",
+        "0520",
+        "SALEM TWP.",
+        "1",
+        "809",
+        "7",
+        "527",
+        "0",
+        "0",
+        "0",
+        "603"
+      ],
+      "total_minus_four_native_components": 76
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0525",
+      "native_fields": [
+        "MN",
+        "55",
+        "0525",
+        "STEWARTVILLE P-1",
+        "1",
+        "1891",
+        "34",
+        "1111",
+        "0",
+        "0",
+        "0",
+        "1282"
+      ],
+      "total_minus_four_native_components": 171
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0526",
+      "native_fields": [
+        "MN",
+        "55",
+        "0526",
+        "STEWARTVILLE P-2",
+        "1",
+        "2652",
+        "66",
+        "1474",
+        "0",
+        "0",
+        "0",
+        "1714"
+      ],
+      "total_minus_four_native_components": 240
+    },
+    {
+      "county_id": "55",
+      "precinct_id": "0530",
+      "native_fields": [
+        "MN",
+        "55",
+        "0530",
+        "VIOLA TWP.",
+        "1",
+        "419",
+        "7",
+        "285",
+        "0",
+        "0",
+        "0",
+        "322"
+      ],
+      "total_minus_four_native_components": 37
+    },
+    {
+      "county_id": "66",
+      "precinct_id": "0030",
+      "native_fields": [
+        "MN",
+        "66",
+        "0030",
+        "FARIBAULT P-2",
+        "1",
+        "2649",
+        "102",
+        "1113",
+        "636",
+        "0",
+        "0",
+        "1748"
+      ],
+      "total_minus_four_native_components": -1
+    },
+    {
+      "county_id": "66",
+      "precinct_id": "0065",
+      "native_fields": [
+        "MN",
+        "66",
+        "0065",
+        "MORRISTOWN",
+        "1",
+        "639",
+        "27",
+        "421",
+        "47",
+        "1",
+        "0",
+        "468"
+      ],
+      "total_minus_four_native_components": -1
+    },
+    {
+      "county_id": "66",
+      "precinct_id": "0140",
+      "native_fields": [
+        "MN",
+        "66",
+        "0140",
+        "WEBSTER TWP.",
+        "1",
+        "1449",
+        "37",
+        "897",
+        "218",
+        "0",
+        "0",
+        "1114"
+      ],
+      "total_minus_four_native_components": -1
+    },
+    {
+      "county_id": "69",
+      "precinct_id": "0200",
+      "native_fields": [
+        "MN",
+        "69",
+        "0200",
+        "DULUTH P-12",
+        "1",
+        "1452",
+        "206",
+        "899",
+        "268",
+        "3",
+        "0",
+        "1173"
+      ],
+      "total_minus_four_native_components": 3
+    },
+    {
+      "county_id": "69",
+      "precinct_id": "1040",
+      "native_fields": [
+        "MN",
+        "69",
+        "1040",
+        "VIRGINIA P-1",
+        "1",
+        "1167",
+        "41",
+        "586",
+        "180",
+        "1",
+        "0",
+        "1331"
+      ],
+      "total_minus_four_native_components": 564
+    },
+    {
+      "county_id": "71",
+      "precinct_id": "0010",
+      "native_fields": [
+        "MN",
+        "71",
+        "0010",
+        "BECKER CITY",
+        "1",
+        "3455",
+        "112",
+        "1846",
+        "307",
+        "2",
+        "0",
+        "2154"
+      ],
+      "total_minus_four_native_components": -1
+    },
+    {
+      "county_id": "73",
+      "precinct_id": "0215",
+      "native_fields": [
+        "MN",
+        "73",
+        "0215",
+        "PAYNESVILLE TWP",
+        "1",
+        "1148",
+        "17",
+        "757",
+        "159",
+        "0",
+        "0",
+        "915"
+      ],
+      "total_minus_four_native_components": -1
+    },
+    {
+      "county_id": "73",
+      "precinct_id": "0350",
+      "native_fields": [
+        "MN",
+        "73",
+        "0350",
+        "ST CLOUD W4 P5",
+        "1",
+        "2628",
+        "194",
+        "994",
+        "831",
+        "3",
+        "0",
+        "1827"
+      ],
+      "total_minus_four_native_components": -1
+    },
+    {
+      "county_id": "73",
+      "precinct_id": "0414",
+      "native_fields": [
+        "MN",
+        "73",
+        "0414",
+        "SARTELL P7",
+        "1",
+        "2152",
+        "62",
+        "1022",
+        "530",
+        "0",
+        "0",
+        "1550"
+      ],
+      "total_minus_four_native_components": -2
+    }
+  ],
+  "reported_voted_exceeds_7am_plus_election_day_registrations": [
+    {
+      "county_id": "69",
+      "precinct_id": "1040",
+      "native_fields": [
+        "MN",
+        "69",
+        "1040",
+        "VIRGINIA P-1",
+        "1",
+        "1167",
+        "41",
+        "586",
+        "180",
+        "1",
+        "0",
+        "1331"
+      ]
+    },
+    {
+      "county_id": "75",
+      "precinct_id": "0095",
+      "native_fields": [
+        "MN",
+        "75",
+        "0095",
+        "RENDSVILLE TWP.",
+        "1",
+        "94",
+        "1",
+        "77",
+        "79",
+        "0",
+        "0",
+        "156"
+      ]
+    },
+    {
+      "county_id": "85",
+      "precinct_id": "0058",
+      "native_fields": [
+        "MN",
+        "85",
+        "0058",
+        "LA CRESCENT",
+        "1",
+        "103",
+        "0",
+        "69",
+        "69",
+        "0",
+        "0",
+        "138"
+      ]
+    },
+    {
+      "county_id": "85",
+      "precinct_id": "0065",
+      "native_fields": [
+        "MN",
+        "85",
+        "0065",
+        "MINNEISKA",
+        "1",
+        "39",
+        "0",
+        "268",
+        "26",
+        "0",
+        "0",
+        "294"
+      ]
+    },
+    {
+      "county_id": "85",
+      "precinct_id": "0070",
+      "native_fields": [
+        "MN",
+        "85",
+        "0070",
+        "MINNESOTA CITY",
+        "1",
+        "139",
+        "0",
+        "95",
+        "95",
+        "0",
+        "0",
+        "190"
+      ]
+    },
+    {
+      "county_id": "85",
+      "precinct_id": "0075",
+      "native_fields": [
+        "MN",
+        "85",
+        "0075",
+        "MOUNT VERNON TWP",
+        "1",
+        "185",
+        "0",
+        "128",
+        "128",
+        "0",
+        "0",
+        "256"
+      ]
+    },
+    {
+      "county_id": "85",
+      "precinct_id": "0120",
+      "native_fields": [
+        "MN",
+        "85",
+        "0120",
+        "SARATOGA TWP",
+        "1",
+        "304",
+        "0",
+        "214",
+        "214",
+        "0",
+        "0",
+        "428"
+      ]
+    }
+  ],
+  "county_minus_precinct_choice_residuals": [
+    {
+      "native_scope": [
+        "01",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 325,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 325
+    },
+    {
+      "native_scope": [
+        "02",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 8073,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 8073
+    },
+    {
+      "native_scope": [
+        "03",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 496,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 496
+    },
+    {
+      "native_scope": [
+        "04",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 671,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 671
+    },
+    {
+      "native_scope": [
+        "05",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 828,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 828
+    },
+    {
+      "native_scope": [
+        "06",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 64,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 64
+    },
+    {
+      "native_scope": [
+        "07",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 983,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 983
+    },
+    {
+      "native_scope": [
+        "08",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 392,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 392
+    },
+    {
+      "native_scope": [
+        "09",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 594,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 594
+    },
+    {
+      "native_scope": [
+        "10",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 2149,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 2149
+    },
+    {
+      "native_scope": [
+        "11",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 577,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 577
+    },
+    {
+      "native_scope": [
+        "12",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 148,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 148
+    },
+    {
+      "native_scope": [
+        "13",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 1200,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 1200
+    },
+    {
+      "native_scope": [
+        "14",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 899,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 899
+    },
+    {
+      "native_scope": [
+        "15",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 215,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 215
+    },
+    {
+      "native_scope": [
+        "16",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 108,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 108
+    },
+    {
+      "native_scope": [
+        "17",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 120,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 120
+    },
+    {
+      "native_scope": [
+        "18",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 1062,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 1062
+    },
+    {
+      "native_scope": [
+        "19",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 9494,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 9494
+    },
+    {
+      "native_scope": [
+        "20",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 371,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 371
+    },
+    {
+      "native_scope": [
+        "21",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 548,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 548
+    },
+    {
+      "native_scope": [
+        "22",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 172,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 172
+    },
+    {
+      "native_scope": [
+        "23",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 236,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 236
+    },
+    {
+      "native_scope": [
+        "24",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 433,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 433
+    },
+    {
+      "native_scope": [
+        "25",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 799,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 799
+    },
+    {
+      "native_scope": [
+        "26",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 98,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 98
+    },
+    {
+      "native_scope": [
+        "27",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 33016,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 33016
+    },
+    {
+      "native_scope": [
+        "28",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 371,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 371
+    },
+    {
+      "native_scope": [
+        "29",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 261,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 261
+    },
+    {
+      "native_scope": [
+        "30",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 942,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 942
+    },
+    {
+      "native_scope": [
+        "31",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 700,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 700
+    },
+    {
+      "native_scope": [
+        "32",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 131,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 131
+    },
+    {
+      "native_scope": [
+        "33",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 314,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 314
+    },
+    {
+      "native_scope": [
+        "34",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 619,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 619
+    },
+    {
+      "native_scope": [
+        "35",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 69,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 69
+    },
+    {
+      "native_scope": [
+        "36",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 195,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 195
+    },
+    {
+      "native_scope": [
+        "37",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 69,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 69
+    },
+    {
+      "native_scope": [
+        "38",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 156,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 156
+    },
+    {
+      "native_scope": [
+        "39",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 81,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 81
+    },
+    {
+      "native_scope": [
+        "40",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 561,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 561
+    },
+    {
+      "native_scope": [
+        "41",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 68,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 68
+    },
+    {
+      "native_scope": [
+        "42",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 310,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 310
+    },
+    {
+      "native_scope": [
+        "43",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 474,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 474
+    },
+    {
+      "native_scope": [
+        "44",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 74,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 74
+    },
+    {
+      "native_scope": [
+        "45",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 197,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 197
+    },
+    {
+      "native_scope": [
+        "46",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 281,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 281
+    },
+    {
+      "native_scope": [
+        "47",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 355,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 355
+    },
+    {
+      "native_scope": [
+        "48",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 547,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 547
+    },
+    {
+      "native_scope": [
+        "49",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 818,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 818
+    },
+    {
+      "native_scope": [
+        "50",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 614,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 614
+    },
+    {
+      "native_scope": [
+        "51",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 126,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 126
+    },
+    {
+      "native_scope": [
+        "52",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 526,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 526
+    },
+    {
+      "native_scope": [
+        "53",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 299,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 299
+    },
+    {
+      "native_scope": [
+        "54",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 96,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 96
+    },
+    {
+      "native_scope": [
+        "55",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 2634,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 2634
+    },
+    {
+      "native_scope": [
+        "56",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 1027,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 1027
+    },
+    {
+      "native_scope": [
+        "57",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 171,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 171
+    },
+    {
+      "native_scope": [
+        "58",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 626,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 626
+    },
+    {
+      "native_scope": [
+        "59",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 100,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 100
+    },
+    {
+      "native_scope": [
+        "60",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 398,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 398
+    },
+    {
+      "native_scope": [
+        "61",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 189,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 189
+    },
+    {
+      "native_scope": [
+        "62",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 11367,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 11367
+    },
+    {
+      "native_scope": [
+        "63",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 88,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 88
+    },
+    {
+      "native_scope": [
+        "64",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 293,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 293
+    },
+    {
+      "native_scope": [
+        "65",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 207,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 207
+    },
+    {
+      "native_scope": [
+        "66",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 1113,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 1113
+    },
+    {
+      "native_scope": [
+        "67",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 152,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 152
+    },
+    {
+      "native_scope": [
+        "68",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 234,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 234
+    },
+    {
+      "native_scope": [
+        "69",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 2878,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 2878
+    },
+    {
+      "native_scope": [
+        "70",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 3576,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 3576
+    },
+    {
+      "native_scope": [
+        "71",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 1633,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 1633
+    },
+    {
+      "native_scope": [
+        "72",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 178,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 178
+    },
+    {
+      "native_scope": [
+        "73",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 3316,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 3316
+    },
+    {
+      "native_scope": [
+        "74",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 556,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 556
+    },
+    {
+      "native_scope": [
+        "75",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 245,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 245
+    },
+    {
+      "native_scope": [
+        "76",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 128,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 128
+    },
+    {
+      "native_scope": [
+        "77",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 475,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 475
+    },
+    {
+      "native_scope": [
+        "78",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 67,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 67
+    },
+    {
+      "native_scope": [
+        "79",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 444,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 444
+    },
+    {
+      "native_scope": [
+        "80",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 169,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 169
+    },
+    {
+      "native_scope": [
+        "81",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 237,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 237
+    },
+    {
+      "native_scope": [
+        "82",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 4269,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 4269
+    },
+    {
+      "native_scope": [
+        "83",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 145,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 145
+    },
+    {
+      "native_scope": [
+        "84",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 97,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 97
+    },
+    {
+      "native_scope": [
+        "85",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 1430,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 1430
+    },
+    {
+      "native_scope": [
+        "86",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 3319,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 3319
+    },
+    {
+      "native_scope": [
+        "87",
+        "0351",
+        "CONSTITUTIONAL AMENDMENT 1",
+        "",
+        "9003",
+        "ESTIMATED BLANKS",
+        "",
+        "",
+        "NP"
+      ],
+      "county": 140,
+      "precinct_sum": 0,
+      "county_minus_precinct_sum": 140
+    }
+  ],
+  "pipeline_unit_tests_passed": 4,
+  "maps_approved": false,
+  "rates_approved": false,
+  "scope": "Acquisition validation, not a published participation query or mapping approval. All eight declared originals are complete and receipt-verified privately. Literal native parties and offices remain separate; 87 constitutional-amendment ESTIMATED BLANKS residuals are not candidate votes, actual blanks or missing participation. Missing statistics and 129 mode residuals are not imputed. Seven electorate excess records remain for review. An optional methodology request encountered an access challenge; no challenge was bypassed and its redirect/session parameters are excluded here. No public pointer changed."
+}
