@@ -1,0 +1,14 @@
+year,state_code,county,county_fips,source_report,source_url,run_date_literal,run_time_literal,declared_timezone,native_status_literal,native_reported_participants,registered_voters,native_printed_turnout,reported_units,total_units
+2026,PA,Fulton,42057,Ayr Township,https://www.co.fulton.pa.us/files/elections/live-results/2026/General Election/Ayr Township.pdf,11/03/2026,9:04 PM,,Official Results,722,1432,50.42%,0,1
+2026,PA,Fulton,42057,Belfast Township,https://www.co.fulton.pa.us/files/elections/live-results/2026/General Election/Belfast Township.pdf,11/03/2026,9:07 PM,,Official Results,483,987,48.94%,0,1
+2026,PA,Fulton,42057,Bethel Township,https://www.co.fulton.pa.us/files/elections/live-results/2026/General Election/Bethel Township.pdf,11/03/2026,10:00 PM,,Official Results,550,1087,50.60%,0,1
+2026,PA,Fulton,42057,Brush Creek Township,https://www.co.fulton.pa.us/files/elections/live-results/2026/General Election/Brush Creek Township.pdf,11/03/2026,9:46 PM,,Official Results,304,542,56.09%,0,1
+2026,PA,Fulton,42057,Dublin Township,https://www.co.fulton.pa.us/files/elections/live-results/2026/General Election/Dublin Township.pdf,11/03/2026,8:44 PM,,Official Results,398,761,52.30%,0,1
+2026,PA,Fulton,42057,Licking Creek Township,https://www.co.fulton.pa.us/files/elections/live-results/2026/General Election/Licking Creek Township.pdf,11/03/2026,9:34 PM,,Official Results,564,1096,51.46%,0,1
+2026,PA,Fulton,42057,McConnellsburg Borough,https://www.co.fulton.pa.us/files/elections/live-results/2026/General Election/McConnellsburg Borough.pdf,11/03/2026,8:57 PM,,Official Results,266,696,38.22%,0,1
+2026,PA,Fulton,42057,Taylor Township,https://www.co.fulton.pa.us/files/elections/live-results/2026/General Election/Taylor Township.pdf,11/03/2026,9:13 PM,,Official Results,381,756,50.40%,0,1
+2026,PA,Fulton,42057,Thompson Township,https://www.co.fulton.pa.us/files/elections/live-results/2026/General Election/Thompson Township.pdf,11/03/2026,9:28 PM,,Official Results,420,805,52.17%,0,1
+2026,PA,Fulton,42057,Todd Township,https://www.co.fulton.pa.us/files/elections/live-results/2026/General Election/Todd Township.pdf,11/03/2026,8:53 PM,,Official Results,519,1084,47.88%,0,1
+2026,PA,Fulton,42057,Union Township,https://www.co.fulton.pa.us/files/elections/live-results/2026/General Election/Union Township.pdf,11/03/2026,9:37 PM,,Official Results,291,576,50.52%,0,1
+2026,PA,Fulton,42057,Valley Hi Borough,https://www.co.fulton.pa.us/files/elections/live-results/2026/General Election/Valley Hi Borough.pdf,11/03/2026,9:45 PM,,Official Results,7,9,77.78%,0,1
+2026,PA,Fulton,42057,Wells Township,https://www.co.fulton.pa.us/files/elections/live-results/2026/General Election/Wells Township.pdf,11/03/2026,9:25 PM,,Official Results,180,324,55.56%,0,1

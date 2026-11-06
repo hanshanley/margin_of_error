@@ -1,0 +1,36 @@
+{
+  "scope": "Fulton County only, 2026 general election; complete numerical facts from all fourteen county-declared PDFs",
+  "maps_approved": false,
+  "demographic_turnout_approved": false,
+  "county_participation": {
+    "year": 2026,
+    "state_code": "PA",
+    "county": "Fulton",
+    "county_fips": "42057",
+    "accounted_ballots": 5085,
+    "native_reported_participants": 5085,
+    "registered_voters": 10155,
+    "native_printed_turnout": "50.07%",
+    "native_status_literal": "Official Results",
+    "source_update_literal": "11/03/2026 11:30 PM; native run time, timezone not declared",
+    "county_fips_basis": "Reviewed 2026 Census county identity, not a native PDF field",
+    "counting_qualifications_json": "[\"Accounted ballots independently match the native registered-participation numerator in all four vote-for-one/ticket contests; candidate votes alone are not ballots.\", \"County reporting is 13 of 13; all thirteen municipal reports separately print 0 of 1 despite positive counts. These counters do not establish finished counting.\", \"Official Results is the native literal, not independently established certification. Separate write-in rows are absent, not inferred zeroes.\", \"Each report retains its own November 3 run time; no source timezone is declared. No county or precinct mapping is approved.\"]"
+  },
+  "table_rows": {
+    "county-participation.csv": 1,
+    "native-unit-participation.csv": 13,
+    "county-candidate-results.csv": 8,
+    "native-unit-candidate-results.csv": 104,
+    "county-contest-accounting.csv": 4,
+    "native-unit-contest-accounting.csv": 52,
+    "native-source-statements.csv": 41,
+    "county-literal-party-totals.csv": 8
+  },
+  "qualifications": [
+    "Accounted ballots independently match the native registered-participation numerator in all four vote-for-one/ticket contests; candidate votes alone are not ballots.",
+    "County reporting is 13 of 13; all thirteen municipal reports separately print 0 of 1 despite positive counts. These counters do not establish finished counting.",
+    "Official Results is the native literal, not independently established certification. Separate write-in rows are absent, not inferred zeroes.",
+    "Each report retains its own November 3 run time; no source timezone is declared. No county or precinct mapping is approved."
+  ],
+  "source_representation": "Complete numerical facts, native identities/status/timestamps and receipt digests. Original PDF/HTML presentation bytes remain private; no template redistribution license is claimed."
+}

@@ -78,6 +78,22 @@ Renderer, registry and download-manifest bytes match the prepared build.
 Production evidence is persisted on the review branch without another UI
 deployment; see `20261106-participation-expanded-01`.
 
+**Fulton participation, complete facts reviewed; publication pending:** all
+fourteen county-declared November 3, 2026 reports were captured privately with
+sixteen HTTP receipts including the index and terms. All thirteen municipal
+participation observations sum to 5,085 participants and 10,155 registrations;
+all four vote-for-one/ticket contests independently account for the same ballots:
+558 mail, 4,527 Election Day and an explicit provisional zero. House candidate
+votes are separately 5,050 (DEM 880, REP 4,170), not participation. Both independent
+PDF engines agree on all 112 candidate vectors, 56 contest-accounting vectors,
+41 native statements and fourteen report timestamps. Eight focused tests pass.
+The complete eight-table numerical-facts package reproduces byte-identically
+offline without private presentation templates. The native `Official Results`
+literal is not independent certification. Preserve county reporting 13/13 versus
+0/1 in every municipal report, absent separate write-in rows, unknown timezones
+and distinct native run times. No new mapping or demographic turnout is approved.
+See `20261106-fulton-facts-01` and `20261106-fulton-publication-01`.
+
 **November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated
 `git-filter-repo --sensitive-data-removal` rewrite removed Google API key patterns

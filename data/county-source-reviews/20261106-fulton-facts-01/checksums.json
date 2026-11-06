@@ -1,0 +1,46 @@
+{
+  "audit.json": {
+    "bytes": 2552,
+    "sha256": "073155c725636ef31d7916c3272629751c2b33a50f105701cc8b82969de768b0"
+  },
+  "county-candidate-results.csv": {
+    "bytes": 3027,
+    "sha256": "3c9e145c725153b6dd32d06e5ff0844d60646afe9d9181bc804391c614be9926"
+  },
+  "county-contest-accounting.csv": {
+    "bytes": 2431,
+    "sha256": "baa71aa8eb1da93fd702e0a9cf58d7006cc42157df7bd0243fecd7058bf9202b"
+  },
+  "county-literal-party-totals.csv": {
+    "bytes": 642,
+    "sha256": "f864d3e5d53cb5fbbf6b263afacdec27f45cbf5176887f2c2529f66a9591a770"
+  },
+  "county-participation.csv": {
+    "bytes": 1014,
+    "sha256": "cbfb10cec50badfe6932911f0280a4af73aef5d6671f6e81cf23f3cec321b947"
+  },
+  "native-source-statements.csv": {
+    "bytes": 9042,
+    "sha256": "6ba38bcd0d32a010e1ca4d9e5a2acbc705696760f88252b7e181ae9a045ac083"
+  },
+  "native-unit-candidate-results.csv": {
+    "bytes": 32611,
+    "sha256": "6e43e81b971822d2caee93c905f003bfb85f7e3ae87d5ec6a9550257cd1eb88d"
+  },
+  "native-unit-contest-accounting.csv": {
+    "bytes": 18603,
+    "sha256": "361c3efca7343c09f34dec0de2e5140b240de07046a8692df6b18eb116326c9b"
+  },
+  "native-unit-participation.csv": {
+    "bytes": 2762,
+    "sha256": "d8e11ea409deb88dc6866a38ce4d4bf9cc9ae5843f70099ce5cfa82d2db22657"
+  },
+  "review-fulton-county-results.py": {
+    "bytes": 18954,
+    "sha256": "45d3595187793fae8bc12f0ec80e2d236425df3642cb9b139378b1d74b7c6a5b"
+  },
+  "source-records.json": {
+    "bytes": 106566,
+    "sha256": "e72e958b0b1c04bb155962d8535f83e55ad4bd62667f0708d16b19effbad10b6"
+  }
+}

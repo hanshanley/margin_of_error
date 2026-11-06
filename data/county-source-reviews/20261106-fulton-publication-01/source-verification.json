@@ -1,0 +1,33 @@
+{
+  "verified_at_utc": "2026-11-06T02:10:59.282609+00:00",
+  "status": "complete_facts_reviewed_publication_pending",
+  "data_directory": "data/county-source-reviews/20261106-fulton-facts-01",
+  "archive": "complete-fulton-2026-numerical-facts-01.zip",
+  "bytes": 24421,
+  "sha256": "ba9c8d4fc639f93a2f350d4f9154f4fff03b2dc088a496e3509dd252fc6f7ce7",
+  "complete_csv_tables": 8,
+  "unique_archive_members": 12,
+  "source_responses_verified": 16,
+  "primary_reports_verified": 14,
+  "independent_pdf_engines": [
+    "PyMuPDF",
+    "pypdf"
+  ],
+  "all_native_facts_match_between_pdf_engines": true,
+  "candidate_vectors": 112,
+  "contest_accounting_vectors": 56,
+  "native_source_statements": 41,
+  "focused_tests_passed": 8,
+  "packaged_offline_reproduction_byte_identical": true,
+  "all_payload_checksums_verified": true,
+  "source_presentation_members": 0,
+  "unredacted_service_or_telemetry_patterns": 0,
+  "maps_approved": false,
+  "demographic_turnout_approved": false,
+  "limitations": [
+    "Accounted ballots independently match the native registered-participation numerator in all four vote-for-one/ticket contests; candidate votes alone are not ballots.",
+    "County reporting is 13 of 13; all thirteen municipal reports separately print 0 of 1 despite positive counts. These counters do not establish finished counting.",
+    "Official Results is the native literal, not independently established certification. Separate write-in rows are absent, not inferred zeroes.",
+    "Each report retains its own November 3 run time; no source timezone is declared. No county or precinct mapping is approved."
+  ]
+}

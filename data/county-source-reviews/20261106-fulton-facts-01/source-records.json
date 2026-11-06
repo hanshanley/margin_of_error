@@ -1,0 +1,4306 @@
+{
+  "schema": "fulton-2026-complete-numerical-facts-v1",
+  "reports": [
+    {
+      "label": "Cumulative Results",
+      "source_url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General Election/Cumulative Results.pdf",
+      "native_status_literal": "Official Results",
+      "run_date_literal": "11/03/2026",
+      "run_time_literal": "11:30 PM",
+      "declared_timezone": null,
+      "statements": [
+        [
+          "5085",
+          "10155",
+          "50.07%"
+        ],
+        [
+          "13",
+          "13",
+          "100.00%"
+        ]
+      ],
+      "contests": [
+        {
+          "office_literal": "GOVERNOR AND LIEUTENANT GOVERNOR",
+          "vote_for_literal": "Vote for the candidates of ONE Party",
+          "candidates": [
+            {
+              "name": "JOSH SHAPIRO AUSTIN DAVIS",
+              "party_literal": "DEM",
+              "count_literals": [
+                "245",
+                "757",
+                "0",
+                "1,002"
+              ],
+              "percent_literals": [
+                "45.04%",
+                "16.94%",
+                "0.00%",
+                "19.99%"
+              ]
+            },
+            {
+              "name": "STACY GARRITY JASON RITCHEY",
+              "party_literal": "REP",
+              "count_literals": [
+                "290",
+                "3,649",
+                "0",
+                "3,939"
+              ],
+              "percent_literals": [
+                "53.31%",
+                "81.65%",
+                "0.00%",
+                "78.58%"
+              ]
+            },
+            {
+              "name": "KEN KRAWCHUK JOHN THOMAS",
+              "party_literal": "LBR",
+              "count_literals": [
+                "9",
+                "63",
+                "0",
+                "72"
+              ],
+              "percent_literals": [
+                "1.65%",
+                "1.41%",
+                "0.00%",
+                "1.44%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "544",
+                "4,469",
+                "0",
+                "5,013"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "5",
+              "23",
+              "0",
+              "28"
+            ],
+            "overvotes": [
+              "9",
+              "35",
+              "0",
+              "44"
+            ]
+          }
+        },
+        {
+          "office_literal": "REPRESENTATIVE IN CONGRESS 13TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "BETH FARNHAM",
+              "party_literal": "DEM",
+              "count_literals": [
+                "227",
+                "653",
+                "0",
+                "880"
+              ],
+              "percent_literals": [
+                "40.97%",
+                "14.52%",
+                "0.00%",
+                "17.43%"
+              ]
+            },
+            {
+              "name": "JOHN JOYCE",
+              "party_literal": "REP",
+              "count_literals": [
+                "327",
+                "3,843",
+                "0",
+                "4,170"
+              ],
+              "percent_literals": [
+                "59.03%",
+                "85.48%",
+                "0.00%",
+                "82.57%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "554",
+                "4,496",
+                "0",
+                "5,050"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "4",
+              "29",
+              "0",
+              "33"
+            ],
+            "overvotes": [
+              "0",
+              "2",
+              "0",
+              "2"
+            ]
+          }
+        },
+        {
+          "office_literal": "SENATOR IN THE GENERAL ASSEMBLY 30TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "SEAN STEEG",
+              "party_literal": "DEM",
+              "count_literals": [
+                "226",
+                "610",
+                "0",
+                "836"
+              ],
+              "percent_literals": [
+                "40.79%",
+                "13.56%",
+                "0.00%",
+                "16.55%"
+              ]
+            },
+            {
+              "name": "JUDY WARD",
+              "party_literal": "REP",
+              "count_literals": [
+                "328",
+                "3,887",
+                "0",
+                "4,215"
+              ],
+              "percent_literals": [
+                "59.21%",
+                "86.44%",
+                "0.00%",
+                "83.45%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "554",
+                "4,497",
+                "0",
+                "5,051"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "4",
+              "28",
+              "0",
+              "32"
+            ],
+            "overvotes": [
+              "0",
+              "2",
+              "0",
+              "2"
+            ]
+          }
+        },
+        {
+          "office_literal": "REPRESENTATIVE IN THE GENERAL ASSEMBLY 78TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "JESSE TOPPER",
+              "party_literal": "REP",
+              "count_literals": [
+                "400",
+                "4,122",
+                "0",
+                "4,522"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "400",
+                "4,122",
+                "0",
+                "4,522"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "158",
+              "405",
+              "0",
+              "563"
+            ],
+            "overvotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          }
+        }
+      ],
+      "accounted_ballots_by_mode": [
+        558,
+        4527,
+        0,
+        5085
+      ]
+    },
+    {
+      "label": "Ayr Township",
+      "source_url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General Election/Ayr Township.pdf",
+      "native_status_literal": "Official Results",
+      "run_date_literal": "11/03/2026",
+      "run_time_literal": "9:04 PM",
+      "declared_timezone": null,
+      "statements": [
+        [
+          "722",
+          "1432",
+          "50.42%"
+        ],
+        [
+          "0",
+          "1",
+          "0.00%"
+        ],
+        [
+          "722",
+          "1,432",
+          "50.42%"
+        ]
+      ],
+      "contests": [
+        {
+          "office_literal": "GOVERNOR AND LIEUTENANT GOVERNOR",
+          "vote_for_literal": "Vote for the candidates of ONE Party",
+          "candidates": [
+            {
+              "name": "JOSH SHAPIRO AUSTIN DAVIS",
+              "party_literal": "DEM",
+              "count_literals": [
+                "36",
+                "102",
+                "0",
+                "138"
+              ],
+              "percent_literals": [
+                "43.37%",
+                "16.32%",
+                "0.00%",
+                "19.49%"
+              ]
+            },
+            {
+              "name": "STACY GARRITY JASON RITCHEY",
+              "party_literal": "REP",
+              "count_literals": [
+                "47",
+                "518",
+                "0",
+                "565"
+              ],
+              "percent_literals": [
+                "56.63%",
+                "82.88%",
+                "0.00%",
+                "79.80%"
+              ]
+            },
+            {
+              "name": "KEN KRAWCHUK JOHN THOMAS",
+              "party_literal": "LBR",
+              "count_literals": [
+                "0",
+                "5",
+                "0",
+                "5"
+              ],
+              "percent_literals": [
+                "0.00%",
+                "0.80%",
+                "0.00%",
+                "0.71%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "83",
+                "625",
+                "0",
+                "708"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "0",
+              "4",
+              "0",
+              "4"
+            ],
+            "overvotes": [
+              "1",
+              "9",
+              "0",
+              "10"
+            ]
+          }
+        },
+        {
+          "office_literal": "REPRESENTATIVE IN CONGRESS 13TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "BETH FARNHAM",
+              "party_literal": "DEM",
+              "count_literals": [
+                "35",
+                "88",
+                "0",
+                "123"
+              ],
+              "percent_literals": [
+                "41.67%",
+                "13.90%",
+                "0.00%",
+                "17.15%"
+              ]
+            },
+            {
+              "name": "JOHN JOYCE",
+              "party_literal": "REP",
+              "count_literals": [
+                "49",
+                "545",
+                "0",
+                "594"
+              ],
+              "percent_literals": [
+                "58.33%",
+                "86.10%",
+                "0.00%",
+                "82.85%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "84",
+                "633",
+                "0",
+                "717"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "0",
+              "5",
+              "0",
+              "5"
+            ],
+            "overvotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          }
+        },
+        {
+          "office_literal": "SENATOR IN THE GENERAL ASSEMBLY 30TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "SEAN STEEG",
+              "party_literal": "DEM",
+              "count_literals": [
+                "33",
+                "82",
+                "0",
+                "115"
+              ],
+              "percent_literals": [
+                "39.76%",
+                "12.97%",
+                "0.00%",
+                "16.08%"
+              ]
+            },
+            {
+              "name": "JUDY WARD",
+              "party_literal": "REP",
+              "count_literals": [
+                "50",
+                "550",
+                "0",
+                "600"
+              ],
+              "percent_literals": [
+                "60.24%",
+                "87.03%",
+                "0.00%",
+                "83.92%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "83",
+                "632",
+                "0",
+                "715"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "1",
+              "6",
+              "0",
+              "7"
+            ],
+            "overvotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          }
+        },
+        {
+          "office_literal": "REPRESENTATIVE IN THE GENERAL ASSEMBLY 78TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "JESSE TOPPER",
+              "party_literal": "REP",
+              "count_literals": [
+                "63",
+                "583",
+                "0",
+                "646"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "63",
+                "583",
+                "0",
+                "646"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "21",
+              "55",
+              "0",
+              "76"
+            ],
+            "overvotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          }
+        }
+      ],
+      "accounted_ballots_by_mode": [
+        84,
+        638,
+        0,
+        722
+      ]
+    },
+    {
+      "label": "Belfast Township",
+      "source_url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General Election/Belfast Township.pdf",
+      "native_status_literal": "Official Results",
+      "run_date_literal": "11/03/2026",
+      "run_time_literal": "9:07 PM",
+      "declared_timezone": null,
+      "statements": [
+        [
+          "483",
+          "987",
+          "48.94%"
+        ],
+        [
+          "0",
+          "1",
+          "0.00%"
+        ],
+        [
+          "483",
+          "987",
+          "48.94%"
+        ]
+      ],
+      "contests": [
+        {
+          "office_literal": "GOVERNOR AND LIEUTENANT GOVERNOR",
+          "vote_for_literal": "Vote for the candidates of ONE Party",
+          "candidates": [
+            {
+              "name": "JOSH SHAPIRO AUSTIN DAVIS",
+              "party_literal": "DEM",
+              "count_literals": [
+                "23",
+                "56",
+                "0",
+                "79"
+              ],
+              "percent_literals": [
+                "47.92%",
+                "12.90%",
+                "0.00%",
+                "16.39%"
+              ]
+            },
+            {
+              "name": "STACY GARRITY JASON RITCHEY",
+              "party_literal": "REP",
+              "count_literals": [
+                "25",
+                "376",
+                "0",
+                "401"
+              ],
+              "percent_literals": [
+                "52.08%",
+                "86.64%",
+                "0.00%",
+                "83.20%"
+              ]
+            },
+            {
+              "name": "KEN KRAWCHUK JOHN THOMAS",
+              "party_literal": "LBR",
+              "count_literals": [
+                "0",
+                "2",
+                "0",
+                "2"
+              ],
+              "percent_literals": [
+                "0.00%",
+                "0.46%",
+                "0.00%",
+                "0.41%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "48",
+                "434",
+                "0",
+                "482"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "0",
+              "1",
+              "0",
+              "1"
+            ],
+            "overvotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          }
+        },
+        {
+          "office_literal": "REPRESENTATIVE IN CONGRESS 13TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "BETH FARNHAM",
+              "party_literal": "DEM",
+              "count_literals": [
+                "21",
+                "37",
+                "0",
+                "58"
+              ],
+              "percent_literals": [
+                "43.75%",
+                "8.51%",
+                "0.00%",
+                "12.01%"
+              ]
+            },
+            {
+              "name": "JOHN JOYCE",
+              "party_literal": "REP",
+              "count_literals": [
+                "27",
+                "398",
+                "0",
+                "425"
+              ],
+              "percent_literals": [
+                "56.25%",
+                "91.49%",
+                "0.00%",
+                "87.99%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "48",
+                "435",
+                "0",
+                "483"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "overvotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          }
+        },
+        {
+          "office_literal": "SENATOR IN THE GENERAL ASSEMBLY 30TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "SEAN STEEG",
+              "party_literal": "DEM",
+              "count_literals": [
+                "23",
+                "32",
+                "0",
+                "55"
+              ],
+              "percent_literals": [
+                "47.92%",
+                "7.39%",
+                "0.00%",
+                "11.43%"
+              ]
+            },
+            {
+              "name": "JUDY WARD",
+              "party_literal": "REP",
+              "count_literals": [
+                "25",
+                "401",
+                "0",
+                "426"
+              ],
+              "percent_literals": [
+                "52.08%",
+                "92.61%",
+                "0.00%",
+                "88.57%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "48",
+                "433",
+                "0",
+                "481"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "0",
+              "2",
+              "0",
+              "2"
+            ],
+            "overvotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          }
+        },
+        {
+          "office_literal": "REPRESENTATIVE IN THE GENERAL ASSEMBLY 78TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "JESSE TOPPER",
+              "party_literal": "REP",
+              "count_literals": [
+                "32",
+                "407",
+                "0",
+                "439"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "32",
+                "407",
+                "0",
+                "439"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "16",
+              "28",
+              "0",
+              "44"
+            ],
+            "overvotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          }
+        }
+      ],
+      "accounted_ballots_by_mode": [
+        48,
+        435,
+        0,
+        483
+      ]
+    },
+    {
+      "label": "Bethel Township",
+      "source_url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General Election/Bethel Township.pdf",
+      "native_status_literal": "Official Results",
+      "run_date_literal": "11/03/2026",
+      "run_time_literal": "10:00 PM",
+      "declared_timezone": null,
+      "statements": [
+        [
+          "550",
+          "1087",
+          "50.60%"
+        ],
+        [
+          "0",
+          "1",
+          "0.00%"
+        ],
+        [
+          "550",
+          "1,087",
+          "50.60%"
+        ]
+      ],
+      "contests": [
+        {
+          "office_literal": "GOVERNOR AND LIEUTENANT GOVERNOR",
+          "vote_for_literal": "Vote for the candidates of ONE Party",
+          "candidates": [
+            {
+              "name": "JOSH SHAPIRO AUSTIN DAVIS",
+              "party_literal": "DEM",
+              "count_literals": [
+                "38",
+                "80",
+                "0",
+                "118"
+              ],
+              "percent_literals": [
+                "61.29%",
+                "16.67%",
+                "0.00%",
+                "21.77%"
+              ]
+            },
+            {
+              "name": "STACY GARRITY JASON RITCHEY",
+              "party_literal": "REP",
+              "count_literals": [
+                "24",
+                "393",
+                "0",
+                "417"
+              ],
+              "percent_literals": [
+                "38.71%",
+                "81.88%",
+                "0.00%",
+                "76.94%"
+              ]
+            },
+            {
+              "name": "KEN KRAWCHUK JOHN THOMAS",
+              "party_literal": "LBR",
+              "count_literals": [
+                "0",
+                "7",
+                "0",
+                "7"
+              ],
+              "percent_literals": [
+                "0.00%",
+                "1.46%",
+                "0.00%",
+                "1.29%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "62",
+                "480",
+                "0",
+                "542"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "0",
+              "1",
+              "0",
+              "1"
+            ],
+            "overvotes": [
+              "1",
+              "6",
+              "0",
+              "7"
+            ]
+          }
+        },
+        {
+          "office_literal": "REPRESENTATIVE IN CONGRESS 13TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "BETH FARNHAM",
+              "party_literal": "DEM",
+              "count_literals": [
+                "37",
+                "69",
+                "0",
+                "106"
+              ],
+              "percent_literals": [
+                "58.73%",
+                "14.32%",
+                "0.00%",
+                "19.45%"
+              ]
+            },
+            {
+              "name": "JOHN JOYCE",
+              "party_literal": "REP",
+              "count_literals": [
+                "26",
+                "413",
+                "0",
+                "439"
+              ],
+              "percent_literals": [
+                "41.27%",
+                "85.68%",
+                "0.00%",
+                "80.55%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "63",
+                "482",
+                "0",
+                "545"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "0",
+              "5",
+              "0",
+              "5"
+            ],
+            "overvotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          }
+        },
+        {
+          "office_literal": "SENATOR IN THE GENERAL ASSEMBLY 30TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "SEAN STEEG",
+              "party_literal": "DEM",
+              "count_literals": [
+                "35",
+                "72",
+                "0",
+                "107"
+              ],
+              "percent_literals": [
+                "56.45%",
+                "14.88%",
+                "0.00%",
+                "19.60%"
+              ]
+            },
+            {
+              "name": "JUDY WARD",
+              "party_literal": "REP",
+              "count_literals": [
+                "27",
+                "412",
+                "0",
+                "439"
+              ],
+              "percent_literals": [
+                "43.55%",
+                "85.12%",
+                "0.00%",
+                "80.40%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "62",
+                "484",
+                "0",
+                "546"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "1",
+              "3",
+              "0",
+              "4"
+            ],
+            "overvotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          }
+        },
+        {
+          "office_literal": "REPRESENTATIVE IN THE GENERAL ASSEMBLY 78TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "JESSE TOPPER",
+              "party_literal": "REP",
+              "count_literals": [
+                "37",
+                "438",
+                "0",
+                "475"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "37",
+                "438",
+                "0",
+                "475"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "26",
+              "49",
+              "0",
+              "75"
+            ],
+            "overvotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          }
+        }
+      ],
+      "accounted_ballots_by_mode": [
+        63,
+        487,
+        0,
+        550
+      ]
+    },
+    {
+      "label": "Brush Creek Township",
+      "source_url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General Election/Brush Creek Township.pdf",
+      "native_status_literal": "Official Results",
+      "run_date_literal": "11/03/2026",
+      "run_time_literal": "9:46 PM",
+      "declared_timezone": null,
+      "statements": [
+        [
+          "304",
+          "542",
+          "56.09%"
+        ],
+        [
+          "0",
+          "1",
+          "0.00%"
+        ],
+        [
+          "304",
+          "542",
+          "56.09%"
+        ]
+      ],
+      "contests": [
+        {
+          "office_literal": "GOVERNOR AND LIEUTENANT GOVERNOR",
+          "vote_for_literal": "Vote for the candidates of ONE Party",
+          "candidates": [
+            {
+              "name": "JOSH SHAPIRO AUSTIN DAVIS",
+              "party_literal": "DEM",
+              "count_literals": [
+                "12",
+                "33",
+                "0",
+                "45"
+              ],
+              "percent_literals": [
+                "34.29%",
+                "12.89%",
+                "0.00%",
+                "15.46%"
+              ]
+            },
+            {
+              "name": "STACY GARRITY JASON RITCHEY",
+              "party_literal": "REP",
+              "count_literals": [
+                "20",
+                "218",
+                "0",
+                "238"
+              ],
+              "percent_literals": [
+                "57.14%",
+                "85.16%",
+                "0.00%",
+                "81.79%"
+              ]
+            },
+            {
+              "name": "KEN KRAWCHUK JOHN THOMAS",
+              "party_literal": "LBR",
+              "count_literals": [
+                "3",
+                "5",
+                "0",
+                "8"
+              ],
+              "percent_literals": [
+                "8.57%",
+                "1.95%",
+                "0.00%",
+                "2.75%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "35",
+                "256",
+                "0",
+                "291"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "0",
+              "3",
+              "0",
+              "3"
+            ],
+            "overvotes": [
+              "0",
+              "10",
+              "0",
+              "10"
+            ]
+          }
+        },
+        {
+          "office_literal": "REPRESENTATIVE IN CONGRESS 13TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "BETH FARNHAM",
+              "party_literal": "DEM",
+              "count_literals": [
+                "13",
+                "33",
+                "0",
+                "46"
+              ],
+              "percent_literals": [
+                "37.14%",
+                "12.36%",
+                "0.00%",
+                "15.23%"
+              ]
+            },
+            {
+              "name": "JOHN JOYCE",
+              "party_literal": "REP",
+              "count_literals": [
+                "22",
+                "234",
+                "0",
+                "256"
+              ],
+              "percent_literals": [
+                "62.86%",
+                "87.64%",
+                "0.00%",
+                "84.77%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "35",
+                "267",
+                "0",
+                "302"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "0",
+              "2",
+              "0",
+              "2"
+            ],
+            "overvotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          }
+        },
+        {
+          "office_literal": "SENATOR IN THE GENERAL ASSEMBLY 30TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "SEAN STEEG",
+              "party_literal": "DEM",
+              "count_literals": [
+                "14",
+                "28",
+                "0",
+                "42"
+              ],
+              "percent_literals": [
+                "40.00%",
+                "10.53%",
+                "0.00%",
+                "13.95%"
+              ]
+            },
+            {
+              "name": "JUDY WARD",
+              "party_literal": "REP",
+              "count_literals": [
+                "21",
+                "238",
+                "0",
+                "259"
+              ],
+              "percent_literals": [
+                "60.00%",
+                "89.47%",
+                "0.00%",
+                "86.05%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "35",
+                "266",
+                "0",
+                "301"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "0",
+              "3",
+              "0",
+              "3"
+            ],
+            "overvotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          }
+        },
+        {
+          "office_literal": "REPRESENTATIVE IN THE GENERAL ASSEMBLY 78TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "JESSE TOPPER",
+              "party_literal": "REP",
+              "count_literals": [
+                "27",
+                "255",
+                "0",
+                "282"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "27",
+                "255",
+                "0",
+                "282"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "8",
+              "14",
+              "0",
+              "22"
+            ],
+            "overvotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          }
+        }
+      ],
+      "accounted_ballots_by_mode": [
+        35,
+        269,
+        0,
+        304
+      ]
+    },
+    {
+      "label": "Dublin Township",
+      "source_url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General Election/Dublin Township.pdf",
+      "native_status_literal": "Official Results",
+      "run_date_literal": "11/03/2026",
+      "run_time_literal": "8:44 PM",
+      "declared_timezone": null,
+      "statements": [
+        [
+          "398",
+          "761",
+          "52.30%"
+        ],
+        [
+          "0",
+          "1",
+          "0.00%"
+        ],
+        [
+          "398",
+          "761",
+          "52.30%"
+        ]
+      ],
+      "contests": [
+        {
+          "office_literal": "GOVERNOR AND LIEUTENANT GOVERNOR",
+          "vote_for_literal": "Vote for the candidates of ONE Party",
+          "candidates": [
+            {
+              "name": "JOSH SHAPIRO AUSTIN DAVIS",
+              "party_literal": "DEM",
+              "count_literals": [
+                "14",
+                "41",
+                "0",
+                "55"
+              ],
+              "percent_literals": [
+                "42.42%",
+                "11.42%",
+                "0.00%",
+                "14.03%"
+              ]
+            },
+            {
+              "name": "STACY GARRITY JASON RITCHEY",
+              "party_literal": "REP",
+              "count_literals": [
+                "19",
+                "313",
+                "0",
+                "332"
+              ],
+              "percent_literals": [
+                "57.58%",
+                "87.19%",
+                "0.00%",
+                "84.69%"
+              ]
+            },
+            {
+              "name": "KEN KRAWCHUK JOHN THOMAS",
+              "party_literal": "LBR",
+              "count_literals": [
+                "0",
+                "5",
+                "0",
+                "5"
+              ],
+              "percent_literals": [
+                "0.00%",
+                "1.39%",
+                "0.00%",
+                "1.28%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "33",
+                "359",
+                "0",
+                "392"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "3",
+              "0",
+              "0",
+              "3"
+            ],
+            "overvotes": [
+              "0",
+              "3",
+              "0",
+              "3"
+            ]
+          }
+        },
+        {
+          "office_literal": "REPRESENTATIVE IN CONGRESS 13TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "BETH FARNHAM",
+              "party_literal": "DEM",
+              "count_literals": [
+                "13",
+                "34",
+                "0",
+                "47"
+              ],
+              "percent_literals": [
+                "37.14%",
+                "9.47%",
+                "0.00%",
+                "11.93%"
+              ]
+            },
+            {
+              "name": "JOHN JOYCE",
+              "party_literal": "REP",
+              "count_literals": [
+                "22",
+                "325",
+                "0",
+                "347"
+              ],
+              "percent_literals": [
+                "62.86%",
+                "90.53%",
+                "0.00%",
+                "88.07%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "35",
+                "359",
+                "0",
+                "394"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "1",
+              "3",
+              "0",
+              "4"
+            ],
+            "overvotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          }
+        },
+        {
+          "office_literal": "SENATOR IN THE GENERAL ASSEMBLY 30TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "SEAN STEEG",
+              "party_literal": "DEM",
+              "count_literals": [
+                "13",
+                "34",
+                "0",
+                "47"
+              ],
+              "percent_literals": [
+                "37.14%",
+                "9.47%",
+                "0.00%",
+                "11.93%"
+              ]
+            },
+            {
+              "name": "JUDY WARD",
+              "party_literal": "REP",
+              "count_literals": [
+                "22",
+                "325",
+                "0",
+                "347"
+              ],
+              "percent_literals": [
+                "62.86%",
+                "90.53%",
+                "0.00%",
+                "88.07%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "35",
+                "359",
+                "0",
+                "394"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "1",
+              "3",
+              "0",
+              "4"
+            ],
+            "overvotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          }
+        },
+        {
+          "office_literal": "REPRESENTATIVE IN THE GENERAL ASSEMBLY 78TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "JESSE TOPPER",
+              "party_literal": "REP",
+              "count_literals": [
+                "28",
+                "336",
+                "0",
+                "364"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "28",
+                "336",
+                "0",
+                "364"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "8",
+              "26",
+              "0",
+              "34"
+            ],
+            "overvotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          }
+        }
+      ],
+      "accounted_ballots_by_mode": [
+        36,
+        362,
+        0,
+        398
+      ]
+    },
+    {
+      "label": "Licking Creek Township",
+      "source_url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General Election/Licking Creek Township.pdf",
+      "native_status_literal": "Official Results",
+      "run_date_literal": "11/03/2026",
+      "run_time_literal": "9:34 PM",
+      "declared_timezone": null,
+      "statements": [
+        [
+          "564",
+          "1096",
+          "51.46%"
+        ],
+        [
+          "0",
+          "1",
+          "0.00%"
+        ],
+        [
+          "564",
+          "1,096",
+          "51.46%"
+        ]
+      ],
+      "contests": [
+        {
+          "office_literal": "GOVERNOR AND LIEUTENANT GOVERNOR",
+          "vote_for_literal": "Vote for the candidates of ONE Party",
+          "candidates": [
+            {
+              "name": "JOSH SHAPIRO AUSTIN DAVIS",
+              "party_literal": "DEM",
+              "count_literals": [
+                "22",
+                "68",
+                "0",
+                "90"
+              ],
+              "percent_literals": [
+                "45.83%",
+                "13.28%",
+                "0.00%",
+                "16.07%"
+              ]
+            },
+            {
+              "name": "STACY GARRITY JASON RITCHEY",
+              "party_literal": "REP",
+              "count_literals": [
+                "25",
+                "434",
+                "0",
+                "459"
+              ],
+              "percent_literals": [
+                "52.08%",
+                "84.77%",
+                "0.00%",
+                "81.96%"
+              ]
+            },
+            {
+              "name": "KEN KRAWCHUK JOHN THOMAS",
+              "party_literal": "LBR",
+              "count_literals": [
+                "1",
+                "10",
+                "0",
+                "11"
+              ],
+              "percent_literals": [
+                "2.08%",
+                "1.95%",
+                "0.00%",
+                "1.96%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "48",
+                "512",
+                "0",
+                "560"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "0",
+              "2",
+              "0",
+              "2"
+            ],
+            "overvotes": [
+              "1",
+              "1",
+              "0",
+              "2"
+            ]
+          }
+        },
+        {
+          "office_literal": "REPRESENTATIVE IN CONGRESS 13TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "BETH FARNHAM",
+              "party_literal": "DEM",
+              "count_literals": [
+                "22",
+                "63",
+                "0",
+                "85"
+              ],
+              "percent_literals": [
+                "44.90%",
+                "12.28%",
+                "0.00%",
+                "15.12%"
+              ]
+            },
+            {
+              "name": "JOHN JOYCE",
+              "party_literal": "REP",
+              "count_literals": [
+                "27",
+                "450",
+                "0",
+                "477"
+              ],
+              "percent_literals": [
+                "55.10%",
+                "87.72%",
+                "0.00%",
+                "84.88%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "49",
+                "513",
+                "0",
+                "562"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "0",
+              "1",
+              "0",
+              "1"
+            ],
+            "overvotes": [
+              "0",
+              "1",
+              "0",
+              "1"
+            ]
+          }
+        },
+        {
+          "office_literal": "SENATOR IN THE GENERAL ASSEMBLY 30TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "SEAN STEEG",
+              "party_literal": "DEM",
+              "count_literals": [
+                "21",
+                "59",
+                "0",
+                "80"
+              ],
+              "percent_literals": [
+                "42.86%",
+                "11.46%",
+                "0.00%",
+                "14.18%"
+              ]
+            },
+            {
+              "name": "JUDY WARD",
+              "party_literal": "REP",
+              "count_literals": [
+                "28",
+                "456",
+                "0",
+                "484"
+              ],
+              "percent_literals": [
+                "57.14%",
+                "88.54%",
+                "0.00%",
+                "85.82%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "49",
+                "515",
+                "0",
+                "564"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "overvotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          }
+        },
+        {
+          "office_literal": "REPRESENTATIVE IN THE GENERAL ASSEMBLY 78TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "JESSE TOPPER",
+              "party_literal": "REP",
+              "count_literals": [
+                "36",
+                "479",
+                "0",
+                "515"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "36",
+                "479",
+                "0",
+                "515"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "13",
+              "36",
+              "0",
+              "49"
+            ],
+            "overvotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          }
+        }
+      ],
+      "accounted_ballots_by_mode": [
+        49,
+        515,
+        0,
+        564
+      ]
+    },
+    {
+      "label": "McConnellsburg Borough",
+      "source_url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General Election/McConnellsburg Borough.pdf",
+      "native_status_literal": "Official Results",
+      "run_date_literal": "11/03/2026",
+      "run_time_literal": "8:57 PM",
+      "declared_timezone": null,
+      "statements": [
+        [
+          "266",
+          "696",
+          "38.22%"
+        ],
+        [
+          "0",
+          "1",
+          "0.00%"
+        ],
+        [
+          "266",
+          "696",
+          "38.22%"
+        ]
+      ],
+      "contests": [
+        {
+          "office_literal": "GOVERNOR AND LIEUTENANT GOVERNOR",
+          "vote_for_literal": "Vote for the candidates of ONE Party",
+          "candidates": [
+            {
+              "name": "JOSH SHAPIRO AUSTIN DAVIS",
+              "party_literal": "DEM",
+              "count_literals": [
+                "22",
+                "79",
+                "0",
+                "101"
+              ],
+              "percent_literals": [
+                "57.89%",
+                "35.27%",
+                "0.00%",
+                "38.55%"
+              ]
+            },
+            {
+              "name": "STACY GARRITY JASON RITCHEY",
+              "party_literal": "REP",
+              "count_literals": [
+                "16",
+                "139",
+                "0",
+                "155"
+              ],
+              "percent_literals": [
+                "42.11%",
+                "62.05%",
+                "0.00%",
+                "59.16%"
+              ]
+            },
+            {
+              "name": "KEN KRAWCHUK JOHN THOMAS",
+              "party_literal": "LBR",
+              "count_literals": [
+                "0",
+                "6",
+                "0",
+                "6"
+              ],
+              "percent_literals": [
+                "0.00%",
+                "2.68%",
+                "0.00%",
+                "2.29%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "38",
+                "224",
+                "0",
+                "262"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "overvotes": [
+              "3",
+              "1",
+              "0",
+              "4"
+            ]
+          }
+        },
+        {
+          "office_literal": "REPRESENTATIVE IN CONGRESS 13TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "BETH FARNHAM",
+              "party_literal": "DEM",
+              "count_literals": [
+                "21",
+                "71",
+                "0",
+                "92"
+              ],
+              "percent_literals": [
+                "51.22%",
+                "31.98%",
+                "0.00%",
+                "34.98%"
+              ]
+            },
+            {
+              "name": "JOHN JOYCE",
+              "party_literal": "REP",
+              "count_literals": [
+                "20",
+                "151",
+                "0",
+                "171"
+              ],
+              "percent_literals": [
+                "48.78%",
+                "68.02%",
+                "0.00%",
+                "65.02%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "41",
+                "222",
+                "0",
+                "263"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "0",
+              "3",
+              "0",
+              "3"
+            ],
+            "overvotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          }
+        },
+        {
+          "office_literal": "SENATOR IN THE GENERAL ASSEMBLY 30TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "SEAN STEEG",
+              "party_literal": "DEM",
+              "count_literals": [
+                "21",
+                "67",
+                "0",
+                "88"
+              ],
+              "percent_literals": [
+                "51.22%",
+                "30.04%",
+                "0.00%",
+                "33.33%"
+              ]
+            },
+            {
+              "name": "JUDY WARD",
+              "party_literal": "REP",
+              "count_literals": [
+                "20",
+                "156",
+                "0",
+                "176"
+              ],
+              "percent_literals": [
+                "48.78%",
+                "69.96%",
+                "0.00%",
+                "66.67%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "41",
+                "223",
+                "0",
+                "264"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "0",
+              "2",
+              "0",
+              "2"
+            ],
+            "overvotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          }
+        },
+        {
+          "office_literal": "REPRESENTATIVE IN THE GENERAL ASSEMBLY 78TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "JESSE TOPPER",
+              "party_literal": "REP",
+              "count_literals": [
+                "25",
+                "179",
+                "0",
+                "204"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "25",
+                "179",
+                "0",
+                "204"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "16",
+              "46",
+              "0",
+              "62"
+            ],
+            "overvotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          }
+        }
+      ],
+      "accounted_ballots_by_mode": [
+        41,
+        225,
+        0,
+        266
+      ]
+    },
+    {
+      "label": "Taylor Township",
+      "source_url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General Election/Taylor Township.pdf",
+      "native_status_literal": "Official Results",
+      "run_date_literal": "11/03/2026",
+      "run_time_literal": "9:13 PM",
+      "declared_timezone": null,
+      "statements": [
+        [
+          "381",
+          "756",
+          "50.40%"
+        ],
+        [
+          "0",
+          "1",
+          "0.00%"
+        ],
+        [
+          "381",
+          "756",
+          "50.40%"
+        ]
+      ],
+      "contests": [
+        {
+          "office_literal": "GOVERNOR AND LIEUTENANT GOVERNOR",
+          "vote_for_literal": "Vote for the candidates of ONE Party",
+          "candidates": [
+            {
+              "name": "JOSH SHAPIRO AUSTIN DAVIS",
+              "party_literal": "DEM",
+              "count_literals": [
+                "22",
+                "48",
+                "0",
+                "70"
+              ],
+              "percent_literals": [
+                "45.83%",
+                "14.59%",
+                "0.00%",
+                "18.57%"
+              ]
+            },
+            {
+              "name": "STACY GARRITY JASON RITCHEY",
+              "party_literal": "REP",
+              "count_literals": [
+                "26",
+                "275",
+                "0",
+                "301"
+              ],
+              "percent_literals": [
+                "54.17%",
+                "83.59%",
+                "0.00%",
+                "79.84%"
+              ]
+            },
+            {
+              "name": "KEN KRAWCHUK JOHN THOMAS",
+              "party_literal": "LBR",
+              "count_literals": [
+                "0",
+                "6",
+                "0",
+                "6"
+              ],
+              "percent_literals": [
+                "0.00%",
+                "1.82%",
+                "0.00%",
+                "1.59%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "48",
+                "329",
+                "0",
+                "377"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "1",
+              "2",
+              "0",
+              "3"
+            ],
+            "overvotes": [
+              "1",
+              "0",
+              "0",
+              "1"
+            ]
+          }
+        },
+        {
+          "office_literal": "REPRESENTATIVE IN CONGRESS 13TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "BETH FARNHAM",
+              "party_literal": "DEM",
+              "count_literals": [
+                "18",
+                "42",
+                "0",
+                "60"
+              ],
+              "percent_literals": [
+                "36.00%",
+                "12.77%",
+                "0.00%",
+                "15.83%"
+              ]
+            },
+            {
+              "name": "JOHN JOYCE",
+              "party_literal": "REP",
+              "count_literals": [
+                "32",
+                "287",
+                "0",
+                "319"
+              ],
+              "percent_literals": [
+                "64.00%",
+                "87.23%",
+                "0.00%",
+                "84.17%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "50",
+                "329",
+                "0",
+                "379"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "0",
+              "2",
+              "0",
+              "2"
+            ],
+            "overvotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          }
+        },
+        {
+          "office_literal": "SENATOR IN THE GENERAL ASSEMBLY 30TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "SEAN STEEG",
+              "party_literal": "DEM",
+              "count_literals": [
+                "19",
+                "31",
+                "0",
+                "50"
+              ],
+              "percent_literals": [
+                "38.00%",
+                "9.39%",
+                "0.00%",
+                "13.16%"
+              ]
+            },
+            {
+              "name": "JUDY WARD",
+              "party_literal": "REP",
+              "count_literals": [
+                "31",
+                "299",
+                "0",
+                "330"
+              ],
+              "percent_literals": [
+                "62.00%",
+                "90.61%",
+                "0.00%",
+                "86.84%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "50",
+                "330",
+                "0",
+                "380"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "0",
+              "1",
+              "0",
+              "1"
+            ],
+            "overvotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          }
+        },
+        {
+          "office_literal": "REPRESENTATIVE IN THE GENERAL ASSEMBLY 78TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "JESSE TOPPER",
+              "party_literal": "REP",
+              "count_literals": [
+                "34",
+                "314",
+                "0",
+                "348"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "34",
+                "314",
+                "0",
+                "348"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "16",
+              "17",
+              "0",
+              "33"
+            ],
+            "overvotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          }
+        }
+      ],
+      "accounted_ballots_by_mode": [
+        50,
+        331,
+        0,
+        381
+      ]
+    },
+    {
+      "label": "Thompson Township",
+      "source_url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General Election/Thompson Township.pdf",
+      "native_status_literal": "Official Results",
+      "run_date_literal": "11/03/2026",
+      "run_time_literal": "9:28 PM",
+      "declared_timezone": null,
+      "statements": [
+        [
+          "420",
+          "805",
+          "52.17%"
+        ],
+        [
+          "0",
+          "1",
+          "0.00%"
+        ],
+        [
+          "420",
+          "805",
+          "52.17%"
+        ]
+      ],
+      "contests": [
+        {
+          "office_literal": "GOVERNOR AND LIEUTENANT GOVERNOR",
+          "vote_for_literal": "Vote for the candidates of ONE Party",
+          "candidates": [
+            {
+              "name": "JOSH SHAPIRO AUSTIN DAVIS",
+              "party_literal": "DEM",
+              "count_literals": [
+                "16",
+                "68",
+                "0",
+                "84"
+              ],
+              "percent_literals": [
+                "38.10%",
+                "18.43%",
+                "0.00%",
+                "20.44%"
+              ]
+            },
+            {
+              "name": "STACY GARRITY JASON RITCHEY",
+              "party_literal": "REP",
+              "count_literals": [
+                "26",
+                "297",
+                "0",
+                "323"
+              ],
+              "percent_literals": [
+                "61.90%",
+                "80.49%",
+                "0.00%",
+                "78.59%"
+              ]
+            },
+            {
+              "name": "KEN KRAWCHUK JOHN THOMAS",
+              "party_literal": "LBR",
+              "count_literals": [
+                "0",
+                "4",
+                "0",
+                "4"
+              ],
+              "percent_literals": [
+                "0.00%",
+                "1.08%",
+                "0.00%",
+                "0.97%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "42",
+                "369",
+                "0",
+                "411"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "0",
+              "7",
+              "0",
+              "7"
+            ],
+            "overvotes": [
+              "0",
+              "2",
+              "0",
+              "2"
+            ]
+          }
+        },
+        {
+          "office_literal": "REPRESENTATIVE IN CONGRESS 13TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "BETH FARNHAM",
+              "party_literal": "DEM",
+              "count_literals": [
+                "13",
+                "54",
+                "0",
+                "67"
+              ],
+              "percent_literals": [
+                "32.50%",
+                "14.32%",
+                "0.00%",
+                "16.07%"
+              ]
+            },
+            {
+              "name": "JOHN JOYCE",
+              "party_literal": "REP",
+              "count_literals": [
+                "27",
+                "323",
+                "0",
+                "350"
+              ],
+              "percent_literals": [
+                "67.50%",
+                "85.68%",
+                "0.00%",
+                "83.93%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "40",
+                "377",
+                "0",
+                "417"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "2",
+              "1",
+              "0",
+              "3"
+            ],
+            "overvotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          }
+        },
+        {
+          "office_literal": "SENATOR IN THE GENERAL ASSEMBLY 30TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "SEAN STEEG",
+              "party_literal": "DEM",
+              "count_literals": [
+                "14",
+                "51",
+                "0",
+                "65"
+              ],
+              "percent_literals": [
+                "33.33%",
+                "13.53%",
+                "0.00%",
+                "15.51%"
+              ]
+            },
+            {
+              "name": "JUDY WARD",
+              "party_literal": "REP",
+              "count_literals": [
+                "28",
+                "326",
+                "0",
+                "354"
+              ],
+              "percent_literals": [
+                "66.67%",
+                "86.47%",
+                "0.00%",
+                "84.49%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "42",
+                "377",
+                "0",
+                "419"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "0",
+              "1",
+              "0",
+              "1"
+            ],
+            "overvotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          }
+        },
+        {
+          "office_literal": "REPRESENTATIVE IN THE GENERAL ASSEMBLY 78TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "JESSE TOPPER",
+              "party_literal": "REP",
+              "count_literals": [
+                "28",
+                "344",
+                "0",
+                "372"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "28",
+                "344",
+                "0",
+                "372"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "14",
+              "34",
+              "0",
+              "48"
+            ],
+            "overvotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          }
+        }
+      ],
+      "accounted_ballots_by_mode": [
+        42,
+        378,
+        0,
+        420
+      ]
+    },
+    {
+      "label": "Todd Township",
+      "source_url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General Election/Todd Township.pdf",
+      "native_status_literal": "Official Results",
+      "run_date_literal": "11/03/2026",
+      "run_time_literal": "8:53 PM",
+      "declared_timezone": null,
+      "statements": [
+        [
+          "519",
+          "1084",
+          "47.88%"
+        ],
+        [
+          "0",
+          "1",
+          "0.00%"
+        ],
+        [
+          "519",
+          "1,084",
+          "47.88%"
+        ]
+      ],
+      "contests": [
+        {
+          "office_literal": "GOVERNOR AND LIEUTENANT GOVERNOR",
+          "vote_for_literal": "Vote for the candidates of ONE Party",
+          "candidates": [
+            {
+              "name": "JOSH SHAPIRO AUSTIN DAVIS",
+              "party_literal": "DEM",
+              "count_literals": [
+                "25",
+                "121",
+                "0",
+                "146"
+              ],
+              "percent_literals": [
+                "36.76%",
+                "27.07%",
+                "0.00%",
+                "28.35%"
+              ]
+            },
+            {
+              "name": "STACY GARRITY JASON RITCHEY",
+              "party_literal": "REP",
+              "count_literals": [
+                "40",
+                "322",
+                "0",
+                "362"
+              ],
+              "percent_literals": [
+                "58.82%",
+                "72.04%",
+                "0.00%",
+                "70.29%"
+              ]
+            },
+            {
+              "name": "KEN KRAWCHUK JOHN THOMAS",
+              "party_literal": "LBR",
+              "count_literals": [
+                "3",
+                "4",
+                "0",
+                "7"
+              ],
+              "percent_literals": [
+                "4.41%",
+                "0.89%",
+                "0.00%",
+                "1.36%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "68",
+                "447",
+                "0",
+                "515"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "1",
+              "1",
+              "0",
+              "2"
+            ],
+            "overvotes": [
+              "1",
+              "1",
+              "0",
+              "2"
+            ]
+          }
+        },
+        {
+          "office_literal": "REPRESENTATIVE IN CONGRESS 13TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "BETH FARNHAM",
+              "party_literal": "DEM",
+              "count_literals": [
+                "19",
+                "103",
+                "0",
+                "122"
+              ],
+              "percent_literals": [
+                "27.54%",
+                "23.15%",
+                "0.00%",
+                "23.74%"
+              ]
+            },
+            {
+              "name": "JOHN JOYCE",
+              "party_literal": "REP",
+              "count_literals": [
+                "50",
+                "342",
+                "0",
+                "392"
+              ],
+              "percent_literals": [
+                "72.46%",
+                "76.85%",
+                "0.00%",
+                "76.26%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "69",
+                "445",
+                "0",
+                "514"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "1",
+              "4",
+              "0",
+              "5"
+            ],
+            "overvotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          }
+        },
+        {
+          "office_literal": "SENATOR IN THE GENERAL ASSEMBLY 30TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "SEAN STEEG",
+              "party_literal": "DEM",
+              "count_literals": [
+                "18",
+                "98",
+                "0",
+                "116"
+              ],
+              "percent_literals": [
+                "26.09%",
+                "22.02%",
+                "0.00%",
+                "22.57%"
+              ]
+            },
+            {
+              "name": "JUDY WARD",
+              "party_literal": "REP",
+              "count_literals": [
+                "51",
+                "347",
+                "0",
+                "398"
+              ],
+              "percent_literals": [
+                "73.91%",
+                "77.98%",
+                "0.00%",
+                "77.43%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "69",
+                "445",
+                "0",
+                "514"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "1",
+              "3",
+              "0",
+              "4"
+            ],
+            "overvotes": [
+              "0",
+              "1",
+              "0",
+              "1"
+            ]
+          }
+        },
+        {
+          "office_literal": "REPRESENTATIVE IN THE GENERAL ASSEMBLY 78TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "JESSE TOPPER",
+              "party_literal": "REP",
+              "count_literals": [
+                "62",
+                "388",
+                "0",
+                "450"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "62",
+                "388",
+                "0",
+                "450"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "8",
+              "61",
+              "0",
+              "69"
+            ],
+            "overvotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          }
+        }
+      ],
+      "accounted_ballots_by_mode": [
+        70,
+        449,
+        0,
+        519
+      ]
+    },
+    {
+      "label": "Union Township",
+      "source_url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General Election/Union Township.pdf",
+      "native_status_literal": "Official Results",
+      "run_date_literal": "11/03/2026",
+      "run_time_literal": "9:37 PM",
+      "declared_timezone": null,
+      "statements": [
+        [
+          "291",
+          "576",
+          "50.52%"
+        ],
+        [
+          "0",
+          "1",
+          "0.00%"
+        ],
+        [
+          "291",
+          "576",
+          "50.52%"
+        ]
+      ],
+      "contests": [
+        {
+          "office_literal": "GOVERNOR AND LIEUTENANT GOVERNOR",
+          "vote_for_literal": "Vote for the candidates of ONE Party",
+          "candidates": [
+            {
+              "name": "JOSH SHAPIRO AUSTIN DAVIS",
+              "party_literal": "DEM",
+              "count_literals": [
+                "7",
+                "31",
+                "0",
+                "38"
+              ],
+              "percent_literals": [
+                "31.82%",
+                "11.65%",
+                "0.00%",
+                "13.19%"
+              ]
+            },
+            {
+              "name": "STACY GARRITY JASON RITCHEY",
+              "party_literal": "REP",
+              "count_literals": [
+                "13",
+                "229",
+                "0",
+                "242"
+              ],
+              "percent_literals": [
+                "59.09%",
+                "86.09%",
+                "0.00%",
+                "84.03%"
+              ]
+            },
+            {
+              "name": "KEN KRAWCHUK JOHN THOMAS",
+              "party_literal": "LBR",
+              "count_literals": [
+                "2",
+                "6",
+                "0",
+                "8"
+              ],
+              "percent_literals": [
+                "9.09%",
+                "2.26%",
+                "0.00%",
+                "2.78%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "22",
+                "266",
+                "0",
+                "288"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "0",
+              "1",
+              "0",
+              "1"
+            ],
+            "overvotes": [
+              "0",
+              "2",
+              "0",
+              "2"
+            ]
+          }
+        },
+        {
+          "office_literal": "REPRESENTATIVE IN CONGRESS 13TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "BETH FARNHAM",
+              "party_literal": "DEM",
+              "count_literals": [
+                "7",
+                "35",
+                "0",
+                "42"
+              ],
+              "percent_literals": [
+                "31.82%",
+                "13.06%",
+                "0.00%",
+                "14.48%"
+              ]
+            },
+            {
+              "name": "JOHN JOYCE",
+              "party_literal": "REP",
+              "count_literals": [
+                "15",
+                "233",
+                "0",
+                "248"
+              ],
+              "percent_literals": [
+                "68.18%",
+                "86.94%",
+                "0.00%",
+                "85.52%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "22",
+                "268",
+                "0",
+                "290"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "overvotes": [
+              "0",
+              "1",
+              "0",
+              "1"
+            ]
+          }
+        },
+        {
+          "office_literal": "SENATOR IN THE GENERAL ASSEMBLY 30TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "SEAN STEEG",
+              "party_literal": "DEM",
+              "count_literals": [
+                "7",
+                "31",
+                "0",
+                "38"
+              ],
+              "percent_literals": [
+                "31.82%",
+                "11.61%",
+                "0.00%",
+                "13.15%"
+              ]
+            },
+            {
+              "name": "JUDY WARD",
+              "party_literal": "REP",
+              "count_literals": [
+                "15",
+                "236",
+                "0",
+                "251"
+              ],
+              "percent_literals": [
+                "68.18%",
+                "88.39%",
+                "0.00%",
+                "86.85%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "22",
+                "267",
+                "0",
+                "289"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "0",
+              "1",
+              "0",
+              "1"
+            ],
+            "overvotes": [
+              "0",
+              "1",
+              "0",
+              "1"
+            ]
+          }
+        },
+        {
+          "office_literal": "REPRESENTATIVE IN THE GENERAL ASSEMBLY 78TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "JESSE TOPPER",
+              "party_literal": "REP",
+              "count_literals": [
+                "15",
+                "245",
+                "0",
+                "260"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "15",
+                "245",
+                "0",
+                "260"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "7",
+              "24",
+              "0",
+              "31"
+            ],
+            "overvotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          }
+        }
+      ],
+      "accounted_ballots_by_mode": [
+        22,
+        269,
+        0,
+        291
+      ]
+    },
+    {
+      "label": "Valley Hi Borough",
+      "source_url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General Election/Valley Hi Borough.pdf",
+      "native_status_literal": "Official Results",
+      "run_date_literal": "11/03/2026",
+      "run_time_literal": "9:45 PM",
+      "declared_timezone": null,
+      "statements": [
+        [
+          "7",
+          "9",
+          "77.78%"
+        ],
+        [
+          "0",
+          "1",
+          "0.00%"
+        ],
+        [
+          "7",
+          "9",
+          "77.78%"
+        ]
+      ],
+      "contests": [
+        {
+          "office_literal": "GOVERNOR AND LIEUTENANT GOVERNOR",
+          "vote_for_literal": "Vote for the candidates of ONE Party",
+          "candidates": [
+            {
+              "name": "JOSH SHAPIRO AUSTIN DAVIS",
+              "party_literal": "DEM",
+              "count_literals": [
+                "0",
+                "4",
+                "0",
+                "4"
+              ],
+              "percent_literals": [
+                "0.00%",
+                "66.67%",
+                "0.00%",
+                "57.14%"
+              ]
+            },
+            {
+              "name": "STACY GARRITY JASON RITCHEY",
+              "party_literal": "REP",
+              "count_literals": [
+                "1",
+                "1",
+                "0",
+                "2"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "16.67%",
+                "0.00%",
+                "28.57%"
+              ]
+            },
+            {
+              "name": "KEN KRAWCHUK JOHN THOMAS",
+              "party_literal": "LBR",
+              "count_literals": [
+                "0",
+                "1",
+                "0",
+                "1"
+              ],
+              "percent_literals": [
+                "0.00%",
+                "16.67%",
+                "0.00%",
+                "14.29%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "1",
+                "6",
+                "0",
+                "7"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "overvotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          }
+        },
+        {
+          "office_literal": "REPRESENTATIVE IN CONGRESS 13TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "BETH FARNHAM",
+              "party_literal": "DEM",
+              "count_literals": [
+                "0",
+                "4",
+                "0",
+                "4"
+              ],
+              "percent_literals": [
+                "0.00%",
+                "66.67%",
+                "0.00%",
+                "57.14%"
+              ]
+            },
+            {
+              "name": "JOHN JOYCE",
+              "party_literal": "REP",
+              "count_literals": [
+                "1",
+                "2",
+                "0",
+                "3"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "33.33%",
+                "0.00%",
+                "42.86%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "1",
+                "6",
+                "0",
+                "7"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "overvotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          }
+        },
+        {
+          "office_literal": "SENATOR IN THE GENERAL ASSEMBLY 30TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "SEAN STEEG",
+              "party_literal": "DEM",
+              "count_literals": [
+                "0",
+                "4",
+                "0",
+                "4"
+              ],
+              "percent_literals": [
+                "0.00%",
+                "66.67%",
+                "0.00%",
+                "57.14%"
+              ]
+            },
+            {
+              "name": "JUDY WARD",
+              "party_literal": "REP",
+              "count_literals": [
+                "1",
+                "2",
+                "0",
+                "3"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "33.33%",
+                "0.00%",
+                "42.86%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "1",
+                "6",
+                "0",
+                "7"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "overvotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          }
+        },
+        {
+          "office_literal": "REPRESENTATIVE IN THE GENERAL ASSEMBLY 78TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "JESSE TOPPER",
+              "party_literal": "REP",
+              "count_literals": [
+                "1",
+                "5",
+                "0",
+                "6"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "1",
+                "5",
+                "0",
+                "6"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "0",
+              "1",
+              "0",
+              "1"
+            ],
+            "overvotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          }
+        }
+      ],
+      "accounted_ballots_by_mode": [
+        1,
+        6,
+        0,
+        7
+      ]
+    },
+    {
+      "label": "Wells Township",
+      "source_url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General Election/Wells Township.pdf",
+      "native_status_literal": "Official Results",
+      "run_date_literal": "11/03/2026",
+      "run_time_literal": "9:25 PM",
+      "declared_timezone": null,
+      "statements": [
+        [
+          "180",
+          "324",
+          "55.56%"
+        ],
+        [
+          "0",
+          "1",
+          "0.00%"
+        ],
+        [
+          "180",
+          "324",
+          "55.56%"
+        ]
+      ],
+      "contests": [
+        {
+          "office_literal": "GOVERNOR AND LIEUTENANT GOVERNOR",
+          "vote_for_literal": "Vote for the candidates of ONE Party",
+          "candidates": [
+            {
+              "name": "JOSH SHAPIRO AUSTIN DAVIS",
+              "party_literal": "DEM",
+              "count_literals": [
+                "8",
+                "26",
+                "0",
+                "34"
+              ],
+              "percent_literals": [
+                "50.00%",
+                "16.05%",
+                "0.00%",
+                "19.10%"
+              ]
+            },
+            {
+              "name": "STACY GARRITY JASON RITCHEY",
+              "party_literal": "REP",
+              "count_literals": [
+                "8",
+                "134",
+                "0",
+                "142"
+              ],
+              "percent_literals": [
+                "50.00%",
+                "82.72%",
+                "0.00%",
+                "79.78%"
+              ]
+            },
+            {
+              "name": "KEN KRAWCHUK JOHN THOMAS",
+              "party_literal": "LBR",
+              "count_literals": [
+                "0",
+                "2",
+                "0",
+                "2"
+              ],
+              "percent_literals": [
+                "0.00%",
+                "1.23%",
+                "0.00%",
+                "1.12%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "16",
+                "162",
+                "0",
+                "178"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "0",
+              "1",
+              "0",
+              "1"
+            ],
+            "overvotes": [
+              "1",
+              "0",
+              "0",
+              "1"
+            ]
+          }
+        },
+        {
+          "office_literal": "REPRESENTATIVE IN CONGRESS 13TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "BETH FARNHAM",
+              "party_literal": "DEM",
+              "count_literals": [
+                "8",
+                "20",
+                "0",
+                "28"
+              ],
+              "percent_literals": [
+                "47.06%",
+                "12.50%",
+                "0.00%",
+                "15.82%"
+              ]
+            },
+            {
+              "name": "JOHN JOYCE",
+              "party_literal": "REP",
+              "count_literals": [
+                "9",
+                "140",
+                "0",
+                "149"
+              ],
+              "percent_literals": [
+                "52.94%",
+                "87.50%",
+                "0.00%",
+                "84.18%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "17",
+                "160",
+                "0",
+                "177"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "0",
+              "3",
+              "0",
+              "3"
+            ],
+            "overvotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          }
+        },
+        {
+          "office_literal": "SENATOR IN THE GENERAL ASSEMBLY 30TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "SEAN STEEG",
+              "party_literal": "DEM",
+              "count_literals": [
+                "8",
+                "21",
+                "0",
+                "29"
+              ],
+              "percent_literals": [
+                "47.06%",
+                "13.13%",
+                "0.00%",
+                "16.38%"
+              ]
+            },
+            {
+              "name": "JUDY WARD",
+              "party_literal": "REP",
+              "count_literals": [
+                "9",
+                "139",
+                "0",
+                "148"
+              ],
+              "percent_literals": [
+                "52.94%",
+                "86.88%",
+                "0.00%",
+                "83.62%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "17",
+                "160",
+                "0",
+                "177"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "0",
+              "3",
+              "0",
+              "3"
+            ],
+            "overvotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          }
+        },
+        {
+          "office_literal": "REPRESENTATIVE IN THE GENERAL ASSEMBLY 78TH DISTRICT",
+          "vote_for_literal": "Vote for One",
+          "candidates": [
+            {
+              "name": "JESSE TOPPER",
+              "party_literal": "REP",
+              "count_literals": [
+                "12",
+                "149",
+                "0",
+                "161"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            }
+          ],
+          "accounting": {
+            "cast": {
+              "count_literals": [
+                "12",
+                "149",
+                "0",
+                "161"
+              ],
+              "percent_literals": [
+                "100.00%",
+                "100.00%",
+                "0.00%",
+                "100.00%"
+              ]
+            },
+            "undervotes": [
+              "5",
+              "14",
+              "0",
+              "19"
+            ],
+            "overvotes": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          }
+        }
+      ],
+      "accounted_ballots_by_mode": [
+        17,
+        163,
+        0,
+        180
+      ]
+    }
+  ],
+  "source_receipts": [
+    {
+      "url": "https://www.co.fulton.pa.us/elections-enr-2026b.php",
+      "final_url": "https://www.co.fulton.pa.us/elections-enr-2026b.php",
+      "status": 200,
+      "file": "county-index.html",
+      "bytes": 15341,
+      "sha256": "0af461d0dc40fc0ca63a2b24fb32100f63741a7022fe0258451949ba49ec114b",
+      "fetched_at_utc": "2026-11-06T02:05:39.053648+00:00"
+    },
+    {
+      "url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General Election/Cumulative Results.pdf",
+      "final_url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General%20Election/Cumulative%20Results.pdf",
+      "status": 200,
+      "file": "report-00.pdf",
+      "bytes": 192231,
+      "sha256": "3052e5179ad5b27e65ce7b570b826f818b8decb77231f64a0756e6ec9924862c",
+      "fetched_at_utc": "2026-11-06T02:05:49.455073+00:00"
+    },
+    {
+      "url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General Election/Ayr Township.pdf",
+      "final_url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General%20Election/Ayr%20Township.pdf",
+      "status": 200,
+      "file": "report-01.pdf",
+      "bytes": 192823,
+      "sha256": "666d0a1f57b84b26d4fc0d0d04b3c73d65cd8482e7230839165da74344dae679",
+      "fetched_at_utc": "2026-11-06T02:05:49.526042+00:00"
+    },
+    {
+      "url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General Election/Belfast Township.pdf",
+      "final_url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General%20Election/Belfast%20Township.pdf",
+      "status": 200,
+      "file": "report-02.pdf",
+      "bytes": 192852,
+      "sha256": "3f1549f6076312d74954f147c0172b75ab600fcba590fcfa32121dbc06b29658",
+      "fetched_at_utc": "2026-11-06T02:05:49.607385+00:00"
+    },
+    {
+      "url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General Election/Bethel Township.pdf",
+      "final_url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General%20Election/Bethel%20Township.pdf",
+      "status": 200,
+      "file": "report-03.pdf",
+      "bytes": 192857,
+      "sha256": "34b52ea92f08694ab7f542d117939a9e1fb804d4e91ec5fba454d6129d48619a",
+      "fetched_at_utc": "2026-11-06T02:05:49.677467+00:00"
+    },
+    {
+      "url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General Election/Brush Creek Township.pdf",
+      "final_url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General%20Election/Brush%20Creek%20Township.pdf",
+      "status": 200,
+      "file": "report-04.pdf",
+      "bytes": 193210,
+      "sha256": "0db6559853f3a00bb7c85aae061033d06c5f35581ff7ec1fcc7caadc31df1306",
+      "fetched_at_utc": "2026-11-06T02:05:49.753300+00:00"
+    },
+    {
+      "url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General Election/Dublin Township.pdf",
+      "final_url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General%20Election/Dublin%20Township.pdf",
+      "status": 200,
+      "file": "report-05.pdf",
+      "bytes": 192898,
+      "sha256": "b9ddb0bb1d8664d450c9a873cdb8b5f2b43339d49843fa77cf28b6734384b225",
+      "fetched_at_utc": "2026-11-06T02:05:49.828209+00:00"
+    },
+    {
+      "url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General Election/Licking Creek Township.pdf",
+      "final_url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General%20Election/Licking%20Creek%20Township.pdf",
+      "status": 200,
+      "file": "report-06.pdf",
+      "bytes": 193224,
+      "sha256": "6474a00df7b0c8e16740bb36667caa4155ccb9c8ad2679847f85a7bb29fc2e91",
+      "fetched_at_utc": "2026-11-06T02:05:49.893505+00:00"
+    },
+    {
+      "url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General Election/McConnellsburg Borough.pdf",
+      "final_url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General%20Election/McConnellsburg%20Borough.pdf",
+      "status": 200,
+      "file": "report-07.pdf",
+      "bytes": 192437,
+      "sha256": "16b35d11d4a25b272f1200ed39e52e240df1766c10b322f125ee75818be4fd65",
+      "fetched_at_utc": "2026-11-06T02:05:49.965139+00:00"
+    },
+    {
+      "url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General Election/Taylor Township.pdf",
+      "final_url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General%20Election/Taylor%20Township.pdf",
+      "status": 200,
+      "file": "report-08.pdf",
+      "bytes": 192840,
+      "sha256": "19da236004e96718a5ef069c24e90696c8a3feb1c6f658524326e0a1d9f5d7e9",
+      "fetched_at_utc": "2026-11-06T02:05:50.041236+00:00"
+    },
+    {
+      "url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General Election/Thompson Township.pdf",
+      "final_url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General%20Election/Thompson%20Township.pdf",
+      "status": 200,
+      "file": "report-09.pdf",
+      "bytes": 193029,
+      "sha256": "6d55f92a81b86454b99afe27932392e7dbeaf8ae5f3f199c6a8133e312157627",
+      "fetched_at_utc": "2026-11-06T02:05:50.108704+00:00"
+    },
+    {
+      "url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General Election/Todd Township.pdf",
+      "final_url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General%20Election/Todd%20Township.pdf",
+      "status": 200,
+      "file": "report-10.pdf",
+      "bytes": 192848,
+      "sha256": "66b7fbef1f94b1680d3d41677dcf8b594bdc9b32d4288b7159c4bc732e9fffd7",
+      "fetched_at_utc": "2026-11-06T02:05:50.176685+00:00"
+    },
+    {
+      "url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General Election/Union Township.pdf",
+      "final_url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General%20Election/Union%20Township.pdf",
+      "status": 200,
+      "file": "report-11.pdf",
+      "bytes": 192799,
+      "sha256": "388547c3502624c632515df5b4094e7c92097808fabae06e2c7da152c45a228f",
+      "fetched_at_utc": "2026-11-06T02:05:50.251504+00:00"
+    },
+    {
+      "url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General Election/Valley Hi Borough.pdf",
+      "final_url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General%20Election/Valley%20Hi%20Borough.pdf",
+      "status": 200,
+      "file": "report-12.pdf",
+      "bytes": 192150,
+      "sha256": "8baee64c0436133b589f7e0c9f130fdb0cd5f81875ea31d9a25a92e0f6ff838f",
+      "fetched_at_utc": "2026-11-06T02:05:50.320818+00:00"
+    },
+    {
+      "url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General Election/Wells Township.pdf",
+      "final_url": "https://www.co.fulton.pa.us/files/elections/live-results/2026/General%20Election/Wells%20Township.pdf",
+      "status": 200,
+      "file": "report-13.pdf",
+      "bytes": 192809,
+      "sha256": "bff07a6f8019fb701823eb30f3ac379eba0615094a1419c67de6abc9eed9c959",
+      "fetched_at_utc": "2026-11-06T02:05:50.397369+00:00"
+    },
+    {
+      "url": "https://www.co.fulton.pa.us/terms-of-use.php",
+      "final_url": "https://www.co.fulton.pa.us/terms-of-use.php",
+      "status": 200,
+      "file": "terms.html",
+      "bytes": 27480,
+      "sha256": "b68f99cb9305dc395d8d404ac74ed50a096b45904fdfa15c871699980bfcc8d1",
+      "fetched_at_utc": "2026-11-06T02:05:50.453395+00:00"
+    }
+  ],
+  "source_context_url": "https://www.co.fulton.pa.us/elections-enr-2026b.php",
+  "source_terms_url": "https://www.co.fulton.pa.us/terms-of-use.php"
+}
