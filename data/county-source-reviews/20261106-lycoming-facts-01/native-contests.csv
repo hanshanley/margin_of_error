@@ -1,0 +1,7 @@
+year,state_code,county,contest_ordinal,contest_literal,vote_for,registered_voters,native_turnout_pct,turnout_numerator
+2026,PA,Lycoming,1,Governor and Lieutenant Governor,1,73009,55.58,unspecified_not_inferred_from_candidate_votes
+2026,PA,Lycoming,2,Representative in Congress (9th District),1,45774,53.88,unspecified_not_inferred_from_candidate_votes
+2026,PA,Lycoming,3,Representative in Congress (15th District),1,27235,58.51,unspecified_not_inferred_from_candidate_votes
+2026,PA,Lycoming,4,Representative in the General Assembly (83rd District),1,33076,52.01,unspecified_not_inferred_from_candidate_votes
+2026,PA,Lycoming,5,Representative in the General Assembly (84th District),1,39933,58.54,unspecified_not_inferred_from_candidate_votes
+2026,PA,Lycoming,6,Wolf Ballot Question,1,2187,56.06,unspecified_not_inferred_from_candidate_votes

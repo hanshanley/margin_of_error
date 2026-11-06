@@ -1,0 +1,49 @@
+year,state_code,county,contest_ordinal,contest_literal,choice_literal,counter_group_literal,votes,measure
+2026,PA,Lycoming,1,Governor and Lieutenant Governor,Josh Shapiro,ED,11446,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,1,Governor and Lieutenant Governor,Josh Shapiro,MI,3878,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,1,Governor and Lieutenant Governor,Josh Shapiro,PR,0,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,1,Governor and Lieutenant Governor,Stacy Garrity,ED,22668,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,1,Governor and Lieutenant Governor,Stacy Garrity,MI,1789,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,1,Governor and Lieutenant Governor,Stacy Garrity,PR,0,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,1,Governor and Lieutenant Governor,Ken Krawchuk,ED,528,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,1,Governor and Lieutenant Governor,Ken Krawchuk,MI,56,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,1,Governor and Lieutenant Governor,Ken Krawchuk,PR,0,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,1,Governor and Lieutenant Governor,Write-in,ED,42,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,1,Governor and Lieutenant Governor,Write-in,MI,5,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,1,Governor and Lieutenant Governor,Write-in,PR,0,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,2,Representative in Congress (9th District),Rachel Wallace,ED,7218,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,2,Representative in Congress (9th District),Rachel Wallace,MI,2443,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,2,Representative in Congress (9th District),Rachel Wallace,PR,0,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,2,Representative in Congress (9th District),Dan Meuser,ED,13467,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,2,Representative in Congress (9th District),Dan Meuser,MI,1387,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,2,Representative in Congress (9th District),Dan Meuser,PR,0,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,2,Representative in Congress (9th District),Write-in,ED,28,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,2,Representative in Congress (9th District),Write-in,MI,6,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,2,Representative in Congress (9th District),Write-in,PR,0,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,3,Representative in Congress (15th District),Ray Bilger,ED,3170,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,3,Representative in Congress (15th District),Ray Bilger,MI,1103,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,3,Representative in Congress (15th District),Ray Bilger,PR,0,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,3,Representative in Congress (15th District),Glenn GT Thompson,ED,10770,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,3,Representative in Congress (15th District),Glenn GT Thompson,MI,807,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,3,Representative in Congress (15th District),Glenn GT Thompson,PR,0,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,3,Representative in Congress (15th District),Write-in,ED,9,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,3,Representative in Congress (15th District),Write-in,MI,5,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,3,Representative in Congress (15th District),Write-in,PR,0,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,4,Representative in the General Assembly (83rd District),Jamie L. Flick,ED,11336,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,4,Representative in the General Assembly (83rd District),Jamie L. Flick,MI,1672,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,4,Representative in the General Assembly (83rd District),Jamie L. Flick,PR,0,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,4,Representative in the General Assembly (83rd District),Write-in,ED,823,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,4,Representative in the General Assembly (83rd District),Write-in,MI,188,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,4,Representative in the General Assembly (83rd District),Write-in,PR,0,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,5,Representative in the General Assembly (84th District),Joe Hamm,ED,17933,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,5,Representative in the General Assembly (84th District),Joe Hamm,MI,1905,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,5,Representative in the General Assembly (84th District),Joe Hamm,PR,0,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,5,Representative in the General Assembly (84th District),Write-in,ED,566,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,5,Representative in the General Assembly (84th District),Write-in,MI,180,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,5,Representative in the General Assembly (84th District),Write-in,PR,0,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,6,Wolf Ballot Question,Yes,ED,553,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,6,Wolf Ballot Question,Yes,MI,104,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,6,Wolf Ballot Question,Yes,PR,0,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,6,Wolf Ballot Question,No,ED,454,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,6,Wolf Ballot Question,No,MI,87,candidate_or_choice_votes_not_ballot_participation
+2026,PA,Lycoming,6,Wolf Ballot Question,No,PR,0,candidate_or_choice_votes_not_ballot_participation

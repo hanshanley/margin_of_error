@@ -2,7 +2,31 @@
 
 ## Current verified production and next acquisition
 
-**November 6, 11:28 UTC: Greene participation and context12 are LIVE verified.**
+**November 6, 12:12 UTC: Georgia participation and context13 are LIVE verified.**
+Exact UI `350ea218cf97756d7c61d23aa50f542a10367d07`, Pages **42214264656
+attempt 1**, passed its original hosted artifact **13500538140 /
+512,936,145 bytes**, SHA-256
+`2b311d7dd6f016215a1f8b9e7bf5af610f346faba864f2e6db176ca6ec144b21`.
+All **400 selected entire hosted/public files**, **seven production browser
+scenarios** and credential runs **42214264550 / 42214264677** pass.
+The exact hosted preparation is **996,218,736 bytes**, below the 1 GB limit;
+the smaller local preparation is not substituted for this hosted measurement.
+The hosted preview matches its publication manifest, retaining the qualified
+local-platform preview difference. All other applicable entire bytes match.
+The completed verifier must not be rerun.
+Context13 exposes **1,133 source records / 661 joins / 285 usable county rates /
+376 missing gray rates**, across seventeen jurisdictions. All 159 Georgia
+county counts and 157 usable registered-voter fractions are present; Screven
+and Jeff Davis retain missing rates and their native zero denominators.
+The native table has **268 rows / 31 Pennsylvania rows**, with **663 download
+anchors / 659 URLs**. Every earlier observation, historical download and
+context package survives. The independent native statewide count is separate
+from UF estimates and the conflicting API zero; printed 56.01% is informational,
+not an approved analysis rate. Missing states and unreviewed sources remain
+missing. No completed counting, certification or nationwide completeness claim.
+See `20261106-georgia-explorer-01/production-verification.json`.
+
+**Retained November 6, 11:28 UTC baseline: Greene and context12 LIVE verified.**
 Exact UI `71ece1080c0ceca9fed062eb31e4d80cc83e7b4d`, Pages **42209566374
 attempt 1**, passed its original hosted artifact **13498791807 /
 514,448,166 bytes**, SHA-256
@@ -41,8 +65,8 @@ All previous observations and complete downloads survive. Missing rates remain
 gray; reporting completeness is not completed counting or certification.
 The Columbia production proof below remains a retained historical baseline.
 
-**Next bulk acquisition: all 159 Georgia counties have a published, fully
-verified portable factual package; explorer deployment remains pending.**
+**Georgia bulk acquisition: all 159 counties have published, fully verified
+portable factual queries and a LIVE-verified explorer integration above.**
 Factual freeze `2bc3119575435542dc89f775c1f28509b3524e63` and release
 `voter-county-georgia-native-query-20261106-01` (release **436437870**) pass
 all 16 entire anonymous assets and pinned source files, all 15 ZIP members,
@@ -76,7 +100,8 @@ all historical geometries, the current review and interactive originals stay
 local. The original source files and complete downloads remain intact.
 The full pre-relocation validator reaches only its established unrelated UK
 `23 !== 16` assertion at `validate-build.mjs:1126`.
-Explorer exact deployment and production proof remain pending; do not call it live.
+Explorer exact deployment and production proof now pass as recorded above.
+The following source-review chronology is retained rather than overwritten.
 Source-only freeze `cf04d9be2107c58ea7a9a398170aa07b028f5a99` preserves the
 complete factual native query: 159 county/declaration/registration records,
 273 contest vectors and 457 candidate-or-choice rows. All identities join
@@ -132,6 +157,39 @@ browser traffic and application configuration are not redistributed. The same
 official backend's multiple representations are not independent institutions.
 No immutable release, completed counting, certification, source map or explorer
 approval is claimed before its separate checks.
+
+**Next Pennsylvania participation source: Lycoming's complete query reconciles.**
+The actual saved county directory leads to the county-owned Voter Services page,
+which declares the results PDF and three separate counting notices. All five
+entire responses match their receipts. Both independent PDF paths consume every
+line of the one-page results report and agree on **40,596 Total Ballots Cast /
+73,009 Registered Voters / 55.60%**, **80/80** reporting and native clock
+**2026-11-05 10:37:43**, without a printed timezone.
+All **six contest scopes / sixteen choices / six totals / 48 candidate-mode
+cells** reconcile. The entire result and Act88 pages were visually inspected.
+All candidate parties remain missing. `ED`, `MI`, `PR` are native candidate
+counter labels, not observed county ballot-mode totals.
+Only the overall ballot/registration fraction is validated; printed per-contest
+turnout retains its unspecified numerator. Congressional, assembly and Wolf
+ballot-question electorates remain separately scoped.
+The separate **5,770** received mail ballots are not added to reported ballots.
+The native notice includes most, not all, counted mail in election-night results;
+later canvassing includes remaining mail, overseas and eligible provisionals.
+Its scheduled-canvass notice retains the native Wednesday/November10 conflict
+without silently repairing it. Full precinct reporting is not certification.
+The complete portable query has **17 entire files / eleven CSV tables /
+sixteen ZIP members**, reproduces offline and passes six focused tests,
+including semantic corruptions beyond the hash/independent-copy guards.
+ZIP **17,047 bytes**, SHA-256
+`5745cf2c2e9132d4ca449bb0740f9b8450e4b271b06c23c48716eb0e024e99aa`.
+See `20261106-lycoming-primary-review-01/primary-review.json` and
+`20261106-lycoming-facts-01/`. Original HTML/PDFs stay private. Immutable release,
+independent contextual county identity, source registration and explorer
+integration remain pending; no new native county row, rate or map is yet live.
+The bounded other-parent attempts preserve Butler's **404** parent and summary
+response, and Snyder's **406** response, without bypass or approval of cached
+search text. Dauphin's already-published candidate package is not reacquired;
+its missing ballot/registration measures remain missing.
 
 **Next consolidated acquisition: Minnesota statistics captured, not yet approved.**
 `scripts/acquire-minnesota-bulk-participation.py --output <private-directory>`

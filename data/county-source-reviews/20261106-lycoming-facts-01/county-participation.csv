@@ -1,0 +1,2 @@
+year,state_code,county,native_measure_literal,ballots_cast,registered_voters,native_printed_turnout_pct,calculated_registered_turnout_pct,blank_ballots,county_ballot_modes,native_status_literal,source_update_literal,declared_timezone,source_fips,reported_precincts,total_precincts,counting_complete,maps_approved
+2026,PA,Lycoming,Total Ballots Cast,40596,73009,55.60,55.60,,,Unofficial Results,2026-11-05 10:37:43,,,80,80,False,False

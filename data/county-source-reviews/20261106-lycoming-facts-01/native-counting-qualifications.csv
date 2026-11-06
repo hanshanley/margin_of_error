@@ -1,0 +1,4 @@
+source_file,kind,fact
+reporting-information.pdf,incomplete_unofficial_count,"Election-night scope includes in-person precinct votes and most mail votes; later canvass includes remaining mail, overseas and eligible provisional ballots."
+return-board.pdf,scheduled_canvass_not_completed,Native notice schedules official-return and provisional canvassing November 6 at 9:00 AM prevailing time; this does not establish completion.
+return-board.pdf,native_calendar_label_conflict,"Native notice prints Wednesday, November 10 at 9:00 AM prevailing time for remaining military/overseas absentee canvassing; retain the weekday/date conflict without silently repairing it."

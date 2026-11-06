@@ -1,0 +1,28 @@
+{
+  "year": 2026,
+  "county": "Lycoming",
+  "native_contests": 6,
+  "candidate_or_choice_rows": 16,
+  "candidate_mode_cells": 48,
+  "ballots_cast": 40596,
+  "registered_voters": 73009,
+  "native_turnout_pct": "55.60",
+  "mail_ballot_receipts_separate": 5770,
+  "native_parties_present": false,
+  "native_ballot_modes_present": false,
+  "native_blank_ballots_present": false,
+  "counting_complete": false,
+  "maps_approved": false,
+  "native_query_complete": true,
+  "original_html_or_pdfs_redistributed": false,
+  "qualifications": [
+    "All six native scopes, sixteen choices, six totals and 48 candidate-mode cells are preserved.",
+    "All candidate parties remain missing. Candidate votes and their counter groups are not ballot participation.",
+    "Only the overall administrative registered-voter fraction is validated, not demographic or eligible-population turnout.",
+    "Native per-contest turnout retains its unspecified numerator; no district ballot count is inferred.",
+    "All 5770 Act88 mail receipts remain separate, not added to ballots or equated to counted mail.",
+    "80/80 reporting is not completed counting or certification. Source timezone, FIPS and blank ballots are missing.",
+    "Scheduled canvass and the native weekday/date conflict survive without fabricated correction.",
+    "No new geometry, contextual identity or explorer approval is included."
+  ]
+}

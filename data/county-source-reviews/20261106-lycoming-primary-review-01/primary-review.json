@@ -1,0 +1,91 @@
+{
+  "verified_at_utc": "2026-11-06T12:11:49.044521+00:00",
+  "status": "complete_primary_query_reconciled_not_published_or_map_approved",
+  "source_receipts": [
+    {
+      "file": "county-parent.html",
+      "url": "https://lycomingcountypa.gov/government/departments/voter_services/index.php",
+      "final_url": "https://lycomingcountypa.gov/government/departments/voter_services/index.php",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 86806,
+      "sha256": "b3492112412b00db69417b5847a1cbdc7bfaf1a37983e6e29b9db26cc432a096",
+      "fetched_at_utc": "2026-11-06T12:10:04.704046+00:00"
+    },
+    {
+      "file": "results.pdf",
+      "url": "https://lycomingcountypa.gov/Documents/Government/Departments/Voter Services/ElectionResults.pdf?t=202611051110360",
+      "final_url": "https://lycomingcountypa.gov/Documents/Government/Departments/Voter%20Services/ElectionResults.pdf?t=202611051110360",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 8607,
+      "sha256": "0c302b5f01aa3b37fa1afd4229fdeae66f7df3b09d0c90d1653ac4bda0434145",
+      "fetched_at_utc": "2026-11-06T12:10:16.715169+00:00"
+    },
+    {
+      "file": "act88.pdf",
+      "url": "https://lycomingcountypa.gov/Documents/Government/Departments/Voter Services/2026GEAct88.pdf?t=202611032152120",
+      "final_url": "https://lycomingcountypa.gov/Documents/Government/Departments/Voter%20Services/2026GEAct88.pdf?t=202611032152120",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 177029,
+      "sha256": "2edf92f9c36d77bacb7488016dcb910ff9aea2a8456fd984196f22830db4290f",
+      "fetched_at_utc": "2026-11-06T12:10:17.026572+00:00"
+    },
+    {
+      "file": "reporting-information.pdf",
+      "url": "https://lycomingcountypa.gov/Documents/Government/Departments/Voter Services/2026GEENR.pdf?t=202611032155320",
+      "final_url": "https://lycomingcountypa.gov/Documents/Government/Departments/Voter%20Services/2026GEENR.pdf?t=202611032155320",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 267162,
+      "sha256": "5e68b2b9a0b77a700083d3e8e9f3de3b322b5a74eeea11b0326535029fbd7cd9",
+      "fetched_at_utc": "2026-11-06T12:10:17.188556+00:00"
+    },
+    {
+      "file": "return-board.pdf",
+      "url": "https://lycomingcountypa.gov/Documents/Government/Departments/Voter Services/2026GEReturnBoard.pdf?t=202610201416150",
+      "final_url": "https://lycomingcountypa.gov/Documents/Government/Departments/Voter%20Services/2026GEReturnBoard.pdf?t=202610201416150",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 264396,
+      "sha256": "495a355d97f55a5385884fc804bd58be8bc08ed4a22e59d9e6c438a59a5ef559",
+      "fetched_at_utc": "2026-11-06T12:10:17.305169+00:00"
+    }
+  ],
+  "original_pages": 4,
+  "fully_consumed_result_pages": 1,
+  "independent_pdf_engines": [
+    "pypdf_layout",
+    "pymupdf_sorted_words"
+  ],
+  "complete_independent_result_vectors_equal": true,
+  "visually_inspected_result_and_act88_pages": true,
+  "contests": 6,
+  "candidate_or_choice_rows": 16,
+  "candidate_mode_cells": 48,
+  "ballots_cast": 40596,
+  "registered_voters": 73009,
+  "native_printed_turnout_pct": "55.60",
+  "county_ballot_modes": null,
+  "blank_ballots": null,
+  "source_update_literal": "2026-11-05 10:37:43",
+  "declared_timezone": "",
+  "source_fips": "",
+  "mail_ballots_received_separate": 5770,
+  "counting_complete": false,
+  "maps_approved": false,
+  "new_public_download_approved": false,
+  "private_originals": "files/lycoming-declared-reports-01/",
+  "qualifications": [
+    "All six contest headers, sixteen choices and six total lines independently reconcile.",
+    "ED/MI/PR are native candidate-counter labels, not observed county ballot-mode totals.",
+    "No native candidate parties are printed; all sixteen remain missing rather than inferred.",
+    "Only the overall ballot/registration fraction is validated; native per-contest turnout has an unspecified numerator.",
+    "Congressional, assembly and Wolf ballot-question electorates remain separately scoped.",
+    "Act88 receipts are never added to reported ballots or equated to counted mail.",
+    "Report timezone is absent; the notices' prevailing-time label does not supply it.",
+    "The return notice's Wednesday/November10 mismatch is retained, not repaired.",
+    "80/80 reporting does not establish completed counting or certification."
+  ]
+}

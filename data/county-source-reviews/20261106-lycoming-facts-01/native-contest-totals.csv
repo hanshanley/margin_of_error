@@ -1,0 +1,7 @@
+year,state_code,county,contest_ordinal,contest_literal,choice_literal,votes,printed_pct,ED,MI,PR,party_literal,derived_choice_sum,county_ballots_comparable,unclassified_county_ballot_minus_choice_total,qualifications
+2026,PA,Lycoming,1,Governor and Lieutenant Governor,Total,40412,100.00,34684,5728,0,,40412,True,184,Native choice totals are not ballots; district/question counts have no approved county-ballot comparator.
+2026,PA,Lycoming,2,Representative in Congress (9th District),Total,24549,100.00,20713,3836,0,,24549,False,,Native choice totals are not ballots; district/question counts have no approved county-ballot comparator.
+2026,PA,Lycoming,3,Representative in Congress (15th District),Total,15864,100.00,13949,1915,0,,15864,False,,Native choice totals are not ballots; district/question counts have no approved county-ballot comparator.
+2026,PA,Lycoming,4,Representative in the General Assembly (83rd District),Total,14019,100.00,12159,1860,0,,14019,False,,Native choice totals are not ballots; district/question counts have no approved county-ballot comparator.
+2026,PA,Lycoming,5,Representative in the General Assembly (84th District),Total,20584,100.00,18499,2085,0,,20584,False,,Native choice totals are not ballots; district/question counts have no approved county-ballot comparator.
+2026,PA,Lycoming,6,Wolf Ballot Question,Total,1198,100.00,1007,191,0,,1198,False,,Native choice totals are not ballots; district/question counts have no approved county-ballot comparator.

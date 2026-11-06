@@ -1,0 +1,77 @@
+[
+  {
+    "file": "audit.json",
+    "bytes": 1391,
+    "sha256": "ad04c8ef11731442d5e88b8a2b566128cd68592b23853946e56f3fcd0b7d52b8"
+  },
+  {
+    "file": "county-participation.csv",
+    "bytes": 434,
+    "sha256": "03d3b078153e11ff5f3cf6369164f59ee82127c7b63e71c6ed05a4044d392392"
+  },
+  {
+    "file": "native-candidate-mode-results.csv",
+    "bytes": 6239,
+    "sha256": "f999f01e8434745a5c7d5b893a04e4d027e753e88e0bf92dc0b5112241866c57"
+  },
+  {
+    "file": "native-candidate-results.csv",
+    "bytes": 1856,
+    "sha256": "b30657402b2ce5a4e1fcaa44bafc3d850d0e176a6c767b7affb09023cbbe0091"
+  },
+  {
+    "file": "native-choice-rate-checks.csv",
+    "bytes": 2227,
+    "sha256": "f96c8bb744eb2891acb7ad29049c5cc3c5285d7a58579726c4e6c22377ea0ce0"
+  },
+  {
+    "file": "native-contest-totals.csv",
+    "bytes": 1490,
+    "sha256": "41e3acb9029520285b060b04a60e50ddcb29f3fe6c27e24ec9e80fe4acd01faa"
+  },
+  {
+    "file": "native-contests.csv",
+    "bytes": 841,
+    "sha256": "6f250aedc56db31382109f17998fbada602dbd061f91fab91949844c9b589965"
+  },
+  {
+    "file": "native-counting-qualifications.csv",
+    "bytes": 665,
+    "sha256": "5d1085ef113b55fbaac96a2aad57c552f66c3c5ed859c3a0facc323544160edb"
+  },
+  {
+    "file": "native-mail-ballot-receipts.csv",
+    "bytes": 187,
+    "sha256": "c72cc405bcf06de4b6b1be4bfce1d292e267bdf78112c7725be3b541e18c2773"
+  },
+  {
+    "file": "native-source-declarations.csv",
+    "bytes": 757,
+    "sha256": "36c3f715099103c53ac13cc394c65b6dbf476e8c16dbe3715914b938c0c02996"
+  },
+  {
+    "file": "native-source-pages.csv",
+    "bytes": 351,
+    "sha256": "88c9c684006799e315d76265ce688e0e5ec6dc7965c677acd116b8bfdd5f7e82"
+  },
+  {
+    "file": "review-lycoming-native-query.py",
+    "bytes": 14675,
+    "sha256": "209688ef9d5dc1e4c004d61d4da2aa92c9ed244d4989b5ccb98184b72b753eec"
+  },
+  {
+    "file": "source-receipts.csv",
+    "bytes": 1848,
+    "sha256": "753faec4494bd9031cbf156779de38173405bd86a61e28605120b7872f2ff7d0"
+  },
+  {
+    "file": "source-records.json.gz",
+    "bytes": 2561,
+    "sha256": "cd2bd3b3c6dfb866c7f229beaef92b260250700440380150a440e58dfc85200a"
+  },
+  {
+    "file": "test-lycoming-native-query.py",
+    "bytes": 5857,
+    "sha256": "3db22897020522e4d22df52fd039716bb6a48ed4bd82e461ac47e5f4932f6aca"
+  }
+]

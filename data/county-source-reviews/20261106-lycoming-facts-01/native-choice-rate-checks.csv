@@ -1,0 +1,17 @@
+year,state_code,county,contest_ordinal,contest_literal,choice_literal,native_printed_pct,calculated_choice_pct,denominator
+2026,PA,Lycoming,1,Governor and Lieutenant Governor,Josh Shapiro,37.92,37.92,native_contest_choice_total_not_registered_voters
+2026,PA,Lycoming,1,Governor and Lieutenant Governor,Stacy Garrity,60.52,60.52,native_contest_choice_total_not_registered_voters
+2026,PA,Lycoming,1,Governor and Lieutenant Governor,Ken Krawchuk,1.45,1.45,native_contest_choice_total_not_registered_voters
+2026,PA,Lycoming,1,Governor and Lieutenant Governor,Write-in,0.12,0.12,native_contest_choice_total_not_registered_voters
+2026,PA,Lycoming,2,Representative in Congress (9th District),Rachel Wallace,39.35,39.35,native_contest_choice_total_not_registered_voters
+2026,PA,Lycoming,2,Representative in Congress (9th District),Dan Meuser,60.51,60.51,native_contest_choice_total_not_registered_voters
+2026,PA,Lycoming,2,Representative in Congress (9th District),Write-in,0.14,0.14,native_contest_choice_total_not_registered_voters
+2026,PA,Lycoming,3,Representative in Congress (15th District),Ray Bilger,26.94,26.94,native_contest_choice_total_not_registered_voters
+2026,PA,Lycoming,3,Representative in Congress (15th District),Glenn GT Thompson,72.98,72.98,native_contest_choice_total_not_registered_voters
+2026,PA,Lycoming,3,Representative in Congress (15th District),Write-in,0.09,0.09,native_contest_choice_total_not_registered_voters
+2026,PA,Lycoming,4,Representative in the General Assembly (83rd District),Jamie L. Flick,92.79,92.79,native_contest_choice_total_not_registered_voters
+2026,PA,Lycoming,4,Representative in the General Assembly (83rd District),Write-in,7.21,7.21,native_contest_choice_total_not_registered_voters
+2026,PA,Lycoming,5,Representative in the General Assembly (84th District),Joe Hamm,96.38,96.38,native_contest_choice_total_not_registered_voters
+2026,PA,Lycoming,5,Representative in the General Assembly (84th District),Write-in,3.62,3.62,native_contest_choice_total_not_registered_voters
+2026,PA,Lycoming,6,Wolf Ballot Question,Yes,54.84,54.84,native_contest_choice_total_not_registered_voters
+2026,PA,Lycoming,6,Wolf Ballot Question,No,45.16,45.16,native_contest_choice_total_not_registered_voters
