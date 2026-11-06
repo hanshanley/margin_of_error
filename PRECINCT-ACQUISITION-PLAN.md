@@ -972,7 +972,17 @@ and all 106 complete download relocations pass. Prepared Pages payload:
 907,828,141 bytes. The local preview is stopped.
 Release, actual-live preservation baseline and browser evidence are under
 `data/county-source-reviews/20261106-county-context-publication-01/`.
-The UI is locally verified; exact production deployment verification is pending.
+The UI is now exact-production verified at `2026-11-06T06:25:46.730848+00:00`:
+revision `5d9c46f672061784af8fc83633cb3c14bebd71c2`, Pages run
+`42173648475`, attempt 1; credential runs `42173648388` / `42173649071`
+also pass. Artifact `13482079484`, 489,258,947 bytes, has SHA-256
+`a7980f79cde4cdc944ef5f6915ca0d07117819130b689541c01ddebb4f8b5c91`.
+All 74 entire selected hosted/public files match, including all 29 frozen
+query files, fifteen original contextual geometries and eighteen complete
+decompressed imports. All seven production browser scenarios pass with the
+same exact 430 counts, 58 rate colors, 372 missing-rate gray fills and preserved
+371 download anchors / 368 full URLs. Full deployment, credential and browser
+proofs are persisted beside local evidence without another UI redeployment.
 Initial UI `fd869724bc702a6a6799ae058e1838e3732743d3` built successfully
 in Pages run `42171838585`; both exact credential checks
 `42171838617` / `42171838701` passed. Attempt 1 timed out during
