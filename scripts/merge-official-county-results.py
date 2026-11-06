@@ -115,7 +115,41 @@ def official_row(folder, fips, name, reference):
                     "Only this county is covered, not all Pennsylvania. Candidate votes are not ballots or turnout.")
 
 
-def csv_append(path, additions):
+def review_provider_overlap(index, rows, additions, reference):
+    inventory = {key for key, value in reference.items() if value["STATEFP"] == "42"}
+    provider = [row for row in rows if row["state_code"] == "PA"]
+    if (len(provider) != len(inventory)
+            or {row["geography"] for row in provider} != inventory
+            or index["coverage"].get("PA", {}).get("counties") != len(inventory)
+            or index.get("official_supplement")):
+        raise ValueError("Partial provider Pennsylvania coverage requires explicit review")
+    by_county = {row["geography"]: row for row in provider}
+    aliases = {"Democratic": "D", "DEMOCRATIC": "D", "Dem": "D", "DEM": "D",
+               "Republican": "R", "REPUBLICAN": "R", "Rep": "R", "REP": "R"}
+
+    def major_vectors(row):
+        result = Counter()
+        for fragment in row["district_fragments"]:
+            for candidate in fragment["candidates"]:
+                if candidate["party"] in aliases:
+                    result[fragment["district"], aliases[candidate["party"]]] += candidate["votes"]
+        return dict(result)
+
+    reviewed = {}
+    for official in additions:
+        native = by_county[official["geography"]]
+        if (native.get("source_kind") == "official_county_supplement"
+                or native["other_votes"] != 0
+                or major_vectors(native) != major_vectors(official)
+                or any(native[key] != official[key]
+                       for key in ["democratic_votes", "republican_votes"])):
+            raise ValueError("Overlapping provider candidate vectors require explicit review")
+        reviewed[official["geography"]] = dict(
+            provider_row=native, official_other_votes_retained=official["other_votes"])
+    return reviewed
+
+
+def csv_append(path, additions, replaced=()):
     with gzip.open(path, "rt", newline="") as handle:
         reader = csv.DictReader(handle)
         fields, rows = reader.fieldnames, list(reader)
@@ -123,6 +157,7 @@ def csv_append(path, additions):
     out = io.StringIO(newline="")
     writer = csv.DictWriter(out, fieldnames=fields, lineterminator="\n")
     writer.writeheader()
+    rows = [row for row in rows if row["county_fips"] not in replaced]
     writer.writerows(rows + additions)
     path.write_bytes(gzip.compress(out.getvalue().encode(), mtime=0))
     return len(rows) + len(additions)
@@ -143,19 +178,29 @@ def merge(folder, reference_folder, packages_root=ROOT / "data/county-source-rev
             raise ValueError("Official package differs from the immutable approved review")
     additions = [official_row(packages_root / package, fips, name, reference)
                  for fips, name, package in PACKAGES]
-    if {r["geography"] for r in additions} & {r["geography"] for r in rows}:
-        raise ValueError("Official county overlaps provider results; review precedence before publication")
+    replaced = {r["geography"] for r in additions} & {r["geography"] for r in rows}
+    overlap = review_provider_overlap(index, rows, additions, reference) if replaced else {}
+    if "PA" in index["coverage"] and not overlap:
+        raise ValueError("Partial provider Pennsylvania coverage requires explicit review")
     geometries, excluded = county.county_geometries(reference_folder, additions)
     if excluded or len(geometries.get("PA", {}).get("features", [])) != len(additions):
         raise ValueError("Official county geometry is missing or invalid")
-    if "PA" in index["coverage"]:
-        raise ValueError("Partial provider Pennsylvania coverage requires explicit review")
-    write(folder / "geometry/PA.geojson.gz", geometries["PA"])
+    if not overlap:
+        write(folder / "geometry/PA.geojson.gz", geometries["PA"])
     inventory = {key for key, value in reference.items() if value["STATEFP"] == "42"}
-    index["coverage"]["PA"] = dict(file="geometry/PA.geojson.gz", counties=len(additions),
-        colored_counties=sum(r["margin_pp"] is not None for r in additions),
-        reference_counties=len(inventory), coverage_status="partial_official_counties",
-        scope_note="Only Monroe, Bucks and Montgomery counties; remaining Pennsylvania counties use state fallback.")
+    removed = [row for row in rows if row["geography"] in replaced]
+    rows = [row for row in rows if row["geography"] not in replaced]
+    margins = [row for row in margins if row["geography"] not in replaced]
+    pa_rows = [row for row in rows if row["state_code"] == "PA"] + additions
+    index["coverage"]["PA"] = dict(file="geometry/PA.geojson.gz", counties=len(pa_rows),
+        colored_counties=sum(r["margin_pp"] is not None for r in pa_rows),
+        reference_counties=len(inventory),
+        coverage_status="provider_with_official_county_overrides" if overlap else "partial_official_counties",
+        scope_note=("All 67 Pennsylvania county identities are covered. Monroe, Bucks and Montgomery use "
+                    "separate official reports, preserving write-ins omitted by the provider; their district "
+                    "major-party vectors match. Other counties retain provider counts. Not final counting."
+                    if overlap else
+                    "Only Monroe, Bucks and Montgomery counties; remaining Pennsylvania counties use state fallback."))
     for row in additions:
         margins.append(dict({k:v for k,v in row.items() if k != "district_fragments"},
             office="U.S. House aggregate", contest_votes=row["total_votes"], provisional=True,
@@ -164,20 +209,23 @@ def merge(folder, reference_folder, packages_root=ROOT / "data/county-source-rev
             district_count=len(row["district_fragments"]), boundary_reference_year=2026))
     rows.extend(additions)
     for key in ["normalized_counties", "mapped_counties"]:
-        index[key] += len(additions)
-    index["colored_counties"] += sum(r["margin_pp"] is not None for r in additions)
+        index[key] += len(additions) - len(removed)
+    index["colored_counties"] += (sum(r["margin_pp"] is not None for r in additions)
+                                 - sum(r["margin_pp"] is not None for r in removed))
     index["provider_withheld_states"] = index["withheld_states"]
     index["withheld_states"] = {k:v for k,v in index["withheld_states"].items() if k not in index["coverage"]}
     index["scope"] += " Official county supplements are independently joined to exact 2026 Census county identities; " \
-        "Pennsylvania remains partial (3 of 67). Provider test data remains excluded. D.C. delegate counts are not added."
+        f"Pennsylvania covers {len(pa_rows)} of 67 county identities, not final counting. " \
+        "Provider test data remains excluded. D.C. delegate counts are not added."
     index["official_supplement"] = dict(counties=[r["geography"] for r in additions],
-        new_precinct_coverage=0, state_completion_promoted=False)
+        provider_counties_replaced=sorted(replaced), new_precinct_coverage=0, state_completion_promoted=False)
     write(folder / "index.json", index)
     write(folder / "margins.json", margins)
     write(folder / "county-results.json.gz", rows)
-    with (folder / "county-results.csv").open("a", newline="") as handle:
+    with (folder / "county-results.csv").open("w", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=county.FIELDS, extrasaction="ignore", lineterminator="\n")
-        writer.writerows(additions)
+        writer.writeheader()
+        writer.writerows(rows)
     party_folder = folder / "party-votes"
     county_parties, candidates = [], []
     for row in additions:
@@ -195,10 +243,14 @@ def merge(folder, reference_folder, packages_root=ROOT / "data/county-source-rev
             for p,v in sorted(parties.items()))
     for name, additions_table in [("county-party-totals.csv.gz", county_parties),
                                    ("county-district-candidate-totals.csv.gz", candidates)]:
-        count = csv_append(party_folder / name, additions_table)
+        count = csv_append(party_folder / name, additions_table, replaced)
         party_audit = read(party_folder / "audit.json")
         party_audit["files"][name].update(checksum(party_folder / name), rows=count)
         party_audit["official_county_scope"] = "PA county fragments only; not full-state or full-district totals."
+        party_audit["source_precedence"] = (
+            "County tables use complete official vectors for Monroe, Bucks and Montgomery. "
+            "Provider-only state and district tables remain unchanged and omit those known write-ins; "
+            "they are separate source scopes, not recomputed composite totals.")
         write(party_folder / "audit.json", party_audit)
     write(party_folder / "checksums.json", {p.name:checksum(p) for p in sorted(party_folder.iterdir())
         if p.is_file() and p.name != "checksums.json"})
@@ -206,7 +258,12 @@ def merge(folder, reference_folder, packages_root=ROOT / "data/county-source-rev
         shutil.copytree(packages_root / package, folder / "originals/official-counties" / package)
     audit = read(folder / "audit.json")
     audit["official_county_supplement"] = dict(
-        counties=additions, new_county_reference_year=2026, provider_results_unchanged=True,
+        counties=additions, new_county_reference_year=2026, provider_results_unchanged=not bool(overlap),
+        provider_county_overrides=overlap,
+        source_precedence="Official whole-county vectors replace overlapping provider county vectors only "
+                          "when every major-party district vector agrees and the provider has zero other "
+                          "reported votes. Official write-ins are retained, never added to duplicated majors. "
+                          "Provider state/district tables and all provider originals remain unchanged.",
         mapped_counties=len(rows), mapped_state_scopes=len(index["coverage"]),
         state_completion_promoted=False, precinct_coverage_added=0,
         reproduction="First reproduce the provider-only package using its original instructions. "

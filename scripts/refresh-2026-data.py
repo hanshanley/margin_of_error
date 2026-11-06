@@ -1,6 +1,7 @@
 """Refresh county candidate results and UF turnout independently, retaining last good pointers."""
 
 import argparse
+import csv
 from datetime import datetime, timezone
 import hashlib
 import gzip
@@ -46,6 +47,13 @@ def command(*args, **kwargs):
     return subprocess.run(list(map(str, args)), cwd=ROOT, check=True, **kwargs)
 
 
+def reject_source_credentials(folder):
+    scanner = load("check-public-source-secrets")
+    for path in folder.rglob("*"):
+        if path.is_file() and scanner.findings(path.read_bytes(), path.name):
+            raise ValueError("Copied source credential pattern; retaining last good pointer")
+
+
 def unpack_originals(source, name, output):
     archive_path = source / "originals" / (name + ".tar.gz")
     if digest(archive_path) != read(source / "checksums.json")["originals/" + name + ".tar.gz"]["sha256"]:
@@ -82,6 +90,7 @@ def county_candidate(work, previous, replay_source=None):
         response.raise_for_status()
         command(sys.executable, SCRIPTS / "acquire-house-county-results.py",
                 "--national-source", national, "--output", provider)
+    reject_source_credentials(provider)
     output, archive = work / "reviewed", work / "complete-county-results.zip"
     official = previous.get("official_supplement", False)
     review_archive = work / "provider-county-results.zip" if official else archive
@@ -130,9 +139,30 @@ def unchanged(kind, output, previous):
                     == gzip.decompress((output / "party-votes" / name).read_bytes()) for name in files))
 
 
+def update_pa_coverage_ledger(index, path):
+    coverage = index["coverage"].get("PA")
+    if coverage is None:
+        return
+    with path.open(newline="") as stream:
+        reader = csv.DictReader(stream)
+        fields, rows = reader.fieldnames, list(reader)
+    matches = [row for row in rows if (row["year"], row["office"], row["state_code"]) == ("2026", "house", "PA")]
+    if len(matches) != 1:
+        raise ValueError("Missing or duplicated Pennsylvania coverage-ledger scope")
+    for field in ["source_counties", "arithmetic_matched_counties",
+                  "integer_accepted_counties", "county_candidate_maps"]:
+        matches[0][field] = str(coverage["counties"])
+    matches[0]["fully_complete"] = "False"
+    with path.open("w", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=fields, lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
+
+
 def publish(kind, output, archive, work, run_id, previous):
+    reject_source_credentials(output)
     tag = "voter-" + kind + "-2026-" + run_id.lower()
-    command("gh", "release", "create", tag, archive, "--repo", REPO, "--target", "main",
+    command("gh", "release", "create", tag, archive, "--draft", "--repo", REPO, "--target", "main",
             "--title", "2026 " + kind + " reviewed snapshot " + run_id,
             "--notes", "Complete original-backed snapshot. Candidate counts and UF turnout remain separate. "
             "All missingness, test exclusions, source receipts and literal party labels retained.")
@@ -140,7 +170,8 @@ def publish(kind, output, archive, work, run_id, previous):
     command("gh", "release", "download", tag, "--repo", REPO, "--pattern", archive.name,
             "--output", downloaded)
     if digest(downloaded) != digest(archive):
-        raise ValueError("Published complete source ZIP differs from reviewed bytes; pointer unchanged")
+        raise ValueError("Uploaded complete source ZIP differs from reviewed bytes; release remains draft and pointer unchanged")
+    command("gh", "release", "edit", tag, "--draft=false", "--latest=false", "--repo", REPO)
     destination = ROOT / "data" / ("uf-turnout" if kind == "uf" else "county-results") / run_id
     destination.mkdir(parents=True, exist_ok=False)
     if kind == "uf":
@@ -213,11 +244,13 @@ def publish(kind, output, archive, work, run_id, previous):
             tables=[dict(file=name, label=labels[name] + ": " + str(meta["rows"]) + " rows")
                     for name, meta in party_audit["files"].items()])
         shutil.copyfile(work / "county-overview.geojson.gz", ROOT / "public/county-results-overview.geojson.gz")
+        update_pa_coverage_ledger(index, ROOT / "public/county-candidate-coverage.csv")
         pointer_path = ROOT / "public/county-results.json"
     write(pointer_path, pointer)
     command("git", "add", pointer_path.relative_to(ROOT))
     if kind == "county":
         command("git", "add", "public/county-results-overview.geojson.gz")
+        command("git", "add", "public/county-candidate-coverage.csv")
     command("git", "commit", "-m", "Point to original-backed 2026 " + kind + " refresh " + run_id, env=env)
     command("git", "push", "origin", "HEAD:main")
     if os.environ.get("GITHUB_ACTIONS") == "true":

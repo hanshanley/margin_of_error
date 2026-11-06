@@ -1,4 +1,6 @@
 import csv
+import copy
+import gzip
 import importlib.util
 import json
 from pathlib import Path
@@ -71,3 +73,67 @@ def test_unreceipted_original_changes_and_wrong_census_identity_are_rejected(tmp
         merge.official_row(target, fips, name, REFERENCE)
     with pytest.raises(ValueError, match="identity"):
         merge.official_row(ROOT / "data/county-source-reviews" / package, "42017", name, REFERENCE)
+
+
+def overlap_snapshot():
+    official = [merge.official_row(ROOT / "data/county-source-reviews" / package, fips, name, REFERENCE)
+                for fips, name, package in merge.PACKAGES]
+    rows = {key: dict(state_code="PA", geography=key)
+            for key, row in REFERENCE.items() if row["STATEFP"] == "42"}
+    for row in copy.deepcopy(official):
+        row.pop("source_kind")
+        for fragment in row["district_fragments"]:
+            fragment["candidates"] = [c for c in fragment["candidates"]
+                                      if c["party"] in {"DEMOCRATIC", "REPUBLICAN", "Dem", "Rep", "DEM", "REP"}]
+        row["other_votes"] = 0
+        row["total_votes"] = row["democratic_votes"] + row["republican_votes"]
+        rows[row["geography"]] = row
+    return {"coverage": {"PA": {"counties": 67}}}, list(rows.values()), official
+
+
+def test_full_provider_coverage_retains_official_writeins_without_duplicate_majors():
+    index, rows, official = overlap_snapshot()
+    result = merge.review_provider_overlap(index, rows, official, REFERENCE)
+    assert set(result) == {"42089", "42017", "42091"}
+    assert sum(row["official_other_votes_retained"] for row in result.values()) == 1927
+    assert all(row["provider_row"]["other_votes"] == 0 for row in result.values())
+
+
+@pytest.mark.parametrize("change", ["partial", "duplicate_county", "district_mismatch", "county_mismatch",
+                                   "provider_other_votes", "already_merged"])
+def test_overlap_never_waives_incomplete_coverage_or_disagreeing_vectors(change):
+    index, rows, official = overlap_snapshot()
+    target = next(row for row in rows if row["geography"] == "42091")
+    if change == "partial":
+        rows.pop()
+    elif change == "duplicate_county":
+        rows.append(rows[0])
+    elif change == "district_mismatch":
+        candidates = target["district_fragments"][0]["candidates"]
+        candidates[0]["votes"] += 1
+        candidates[1]["votes"] -= 1
+    elif change == "county_mismatch":
+        target["democratic_votes"] += 1
+    elif change == "provider_other_votes":
+        target["other_votes"] = 1
+    else:
+        index["official_supplement"] = {"counties": ["42091"]}
+    with pytest.raises(ValueError, match="requires explicit review|require explicit review"):
+        merge.review_provider_overlap(index, rows, official, REFERENCE)
+
+
+def test_replacing_county_party_rows_never_appends_duplicate_provider_counts(tmp_path):
+    target = tmp_path / "county-party-totals.csv.gz"
+    with gzip.open(target, "wt", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=["county_fips", "party", "votes"])
+        writer.writeheader()
+        writer.writerows([dict(county_fips="42091", party="Democratic", votes=268823),
+                         dict(county_fips="42011", party="Write-in", votes=0)])
+    additions = [dict(county_fips="42091", party="DEM", votes=268823),
+                 dict(county_fips="42091", party="", votes=711)]
+    assert merge.csv_append(target, additions, {"42091"}) == 3
+    with gzip.open(target, "rt") as stream:
+        rows = list(csv.DictReader(stream))
+    assert [row for row in rows if row["county_fips"] == "42091"] == [
+        {k: str(v) for k, v in row.items()} for row in additions]
+    assert next(row for row in rows if row["county_fips"] == "42011")["votes"] == "0"

@@ -113,3 +113,46 @@ def test_unchanged_data_is_not_republished_for_platform_only_gzip_header_changes
     assert refresh.unchanged("county", new, previous)
     (new / "party-votes/county-party-totals.csv.gz").write_bytes(gzip.compress(b"changed votes\n", mtime=0))
     assert not refresh.unchanged("county", new, previous)
+
+
+def test_pa_ledger_tracks_expanded_map_without_changing_history_or_claiming_final_counts(tmp_path):
+    ledger = tmp_path / "coverage.csv"
+    ledger.write_text(
+        "year,office,state_code,source_counties,arithmetic_matched_counties,integer_accepted_counties,county_candidate_maps,fully_complete\n"
+        "2026,house,PA,3,3,3,3,False\n"
+        "2024,house,PA,67,67,67,67,False\n"
+        "2026,house,ME,0,0,0,0,False\n")
+    refresh.update_pa_coverage_ledger({"coverage": {"PA": {"counties": 67}}}, ledger)
+    with ledger.open() as stream:
+        rows = list(csv.DictReader(stream))
+    assert rows[0]["county_candidate_maps"] == rows[0]["integer_accepted_counties"] == "67"
+    assert rows[0]["fully_complete"] == "False"
+    assert rows[1]["county_candidate_maps"] == "67"
+    assert rows[2]["county_candidate_maps"] == "0"
+
+
+def test_changed_release_bytes_remain_draft_and_never_update_pointers(tmp_path, monkeypatch):
+    archive = tmp_path / "complete.zip"
+    archive.write_bytes(b"reviewed complete source bytes")
+    calls = []
+
+    def command(*args, **kwargs):
+        calls.append(args)
+        if args[:3] == ("gh", "release", "download"):
+            Path(args[args.index("--output") + 1]).write_bytes(b"changed download")
+
+    monkeypatch.setattr(refresh, "command", command)
+    with pytest.raises(ValueError, match="differs"):
+        refresh.publish("county", tmp_path, archive, tmp_path, "test-run", {})
+    assert "--draft" in calls[0]
+    assert not any(args[:3] == ("gh", "release", "edit") for args in calls)
+    assert not any(args[0] == "git" for args in calls)
+
+
+def test_source_credentials_stop_refresh_before_any_release_operation(tmp_path, monkeypatch):
+    (tmp_path / "source.json").write_bytes(b'{"copied_key":"' + b"AI" + b"za" + b"A" * 35 + b'"}')
+    calls = []
+    monkeypatch.setattr(refresh, "command", lambda *args, **kwargs: calls.append(args))
+    with pytest.raises(ValueError, match="credential pattern"):
+        refresh.publish("county", tmp_path, tmp_path / "complete.zip", tmp_path, "test-run", {})
+    assert calls == []

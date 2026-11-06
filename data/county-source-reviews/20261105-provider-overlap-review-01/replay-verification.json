@@ -1,0 +1,32 @@
+{
+  "failed_run_id": 42130717845,
+  "original_overlap_failure_reproduced": true,
+  "counties_after": 3127,
+  "colored_counties_after": 3124,
+  "pa_counties_after": 67,
+  "pa_counties_previously": 3,
+  "official_counties_retained": [
+    "42017",
+    "42089",
+    "42091"
+  ],
+  "official_writein_votes_retained": 1927,
+  "major_party_district_vectors_match": true,
+  "all_other_provider_rows_byte_semantically_unchanged": true,
+  "provider_state_and_district_party_tables_byte_unchanged": true,
+  "no_duplicate_county_party_or_candidate_votes": true,
+  "maine_all_district_guard_retained": true,
+  "all_package_checksums_match": true,
+  "source_scopes": "County tables retain official county vectors for three PA counties; provider state/district tables remain separate and omit those known write-ins. No synthetic composite state total.",
+  "local_replayed_provider_archive_sha256": "d914e6fd5e5823027a7d61810b9b888396aa7ec4ebcaaf7d7ff2b5a960c381f2",
+  "failed_run_logged_provider_archive_sha256": "6fe69472a91e509881fc11105c6faf1a9c727306370b4acb959e627c6e4a053f",
+  "archive_qualification": "The local archive is regenerated from the exact failed-run original responses. Cross-environment archive byte identity with the CI package is not claimed.",
+  "pipeline_regression_tests_passed": 34,
+  "full_controller_replay": "reviewed_not_published",
+  "full_controller_overview_counties": 3127,
+  "full_controller_overview_states": 49,
+  "full_controller_retained_previous_pointer": true,
+  "source_cache_and_reviewed_output_credential_scan": "passed",
+  "full_controller_archive_bytes": 150787009,
+  "full_controller_archive_sha256": "62c57cffebeae0b2bb048c37dc852e1f040306857e351a0cd2e0282f24fa8cdb"
+}

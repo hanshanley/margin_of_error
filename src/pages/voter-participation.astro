@@ -572,6 +572,7 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 				party totals cover {countyPartyAudit.state_party_coverage}. Invalid counts and test data are withheld.
 				Withheld state-party sources: {countyPartyAudit.withheld_states.join(', ') || 'none'}. These are House candidate
 				votes, not Senate results, ballots, party registration or demographic turnout.</p>}
+			{countyPartyAudit?.source_precedence && <p>{countyPartyAudit.source_precedence}</p>}
 			<p>Historical county candidate results: Paul Heideman’s 1990–2024 compilation covers the
 				48 contiguous states, with presidential, House and Senate records, including midterms.
 				All {formatNumber(historicalCountyReview.input_rows)} candidate/party rows were checked against

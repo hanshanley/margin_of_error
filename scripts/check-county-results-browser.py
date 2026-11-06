@@ -47,11 +47,11 @@ if historical_audit:
     assert len(county_ledger) == 4896
     assert len({(row["year"], row["office"], row["state_code"]) for row in county_ledger}) == 4896
     assert all(row["fully_complete"] == "False" for row in county_ledger)
-    if index["coverage"].get("PA", {}).get("coverage_status") == "partial_official_counties":
+    if index.get("official_supplement"):
         pa = next(row for row in county_ledger
                   if (row["year"], row["office"], row["state_code"]) == ("2026", "house", "PA"))
         assert pa["status"] == "reviewed_partial_county_map"
-        assert pa["county_candidate_maps"] == pa["integer_accepted_counties"] == "3"
+        assert pa["county_candidate_maps"] == pa["integer_accepted_counties"] == str(index["coverage"]["PA"]["counties"])
     if house_pointer:
         assert {(row["year"], row["state_code"]) for row in house_coverage} == {
             (year["year"], code) for year in house_audit["years"]

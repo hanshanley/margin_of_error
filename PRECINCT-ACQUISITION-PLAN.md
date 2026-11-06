@@ -132,6 +132,29 @@ the exact 267-link set, retaining all prior 258 links and unchanged coverage.
 No unchanged map suite was repeated. See
 `data/county-source-reviews/20261105-berks-publication-01/`.
 
+**Provider overlap repair under validation.** Scheduled refresh `42130717845`
+acquired all 435 district originals and reconciled all 67 Pennsylvania counties,
+but correctly stopped at the previous no-overlap guard. Exact failed-run inputs
+reproduce that failure. Provider major-party totals match Monroe, Bucks and
+Montgomery's reviewed official reports, while provider rows omit their 1,927
+known write-ins. Never simply skip official supplements or append duplicate
+county vectors. The repair preserves whole official vectors for those three
+counties only after all county and district major-party vectors match, requires
+the complete 67-county provider inventory, and rejects other mismatches.
+Other provider county rows and provider-only state/district tables remain
+unchanged; their scopes are explicitly distinguished from composite county
+tables. No synthetic composite state total is created. Exact source replay
+retains 3,127 unique county equivalents, 3,124 colorable, all 67 Pennsylvania
+county identities, and the unchanged Maine all-district guard. Thirty-four
+pipeline tests pass. The refresh also updates the Pennsylvania county ledger
+without claiming final counting and verifies uploaded ZIP bytes while the
+release is still draft. Raw provider caches and reviewed output are screened
+for copied credentials before any release operation. Full controller replay
+passes with the last-good pointer retained; Astro check and build pass, and
+the unchanged 267-download Pages artifact remains 987,335,410 bytes.
+Actual publication and changed-map local/production proof remain required. See
+`data/county-source-reviews/20261105-provider-overlap-review-01/`.
+
 **Earlier current-source cleanup (historical record).** On November 5,
 GitHub reported Google API keys copied from public county linking HTML. The
 affected current Bucks, Chester and Franklin pages are now explicitly sanitized,
