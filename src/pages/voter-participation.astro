@@ -3,6 +3,7 @@ import { existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { participationCurrentRoot } from '../../public/scripts/participation-downloads.js';
+import { loadReviewedCountyParticipation } from '../../scripts/reviewed-county-participation.mjs';
 import '../styles/voter-participation.css';
 
 const dataRoot = resolve('public/voter-participation');
@@ -56,47 +57,7 @@ const participationReviews = existsSync(participationReviewsPath)
 		...review, cities: review.city_file
 			? JSON.parse(readFileSync(resolve(review.data_directory, review.city_file), 'utf8')) as CityParticipation[] : [],
 	})) : [];
-const reviewedCountyIds = new Set([
-	'pennsylvania-centre-20261106-01', 'pennsylvania-berks-20261105-01',
-	'pennsylvania-northampton-20261105-01',
-]);
-type ReviewedCountyParticipation = { county: string; ballots: number; denominator: number; reported_pct: number;
-	native_printed_pct: string | null; source_url: string; complete_download_url: string };
-const reviewedCounties: ReviewedCountyParticipation[] = participationReviews
-	.filter((review: ParticipationReview) => reviewedCountyIds.has(review.id))
-	.map((review: ParticipationReview) => {
-		const audit = JSON.parse(readFileSync(resolve(review.data_directory, 'audit.json'), 'utf8'));
-		const native = audit.county_participation ?? audit.participation;
-		const ballots = native.ballots ?? native.ballots_cast;
-		const denominator = native.registered_voters;
-		if (native.year !== 2026 || native.state_code !== 'PA' || !/^42\d{3}$/.test(native.county_fips)
-			|| !Number.isSafeInteger(ballots) || ballots < 0
-			|| !Number.isSafeInteger(denominator) || denominator <= 0 || ballots > denominator)
-			throw new Error(`Invalid reviewed county participation: ${review.id}`);
-		const printed = native.registered_voter_rate_literal ?? native.native_printed_turnout ?? null;
-		const reporting = audit.native_reporting_qualifications
-			?? (native.counting_qualifications_json ? JSON.parse(native.counting_qualifications_json)
-				: [`${audit.native_unit_rows} native participation units; counting completion not established.`]);
-		return {
-			year: native.year, state_code: native.state_code, county_id: native.county_fips, county: native.county,
-			ballots, denominator, denominator_basis: 'native_registered_voters',
-			reported_pct: 100 * ballots / denominator, native_printed_pct: printed,
-			reported_units: null, total_units: null, source_rows: 0, maps_approved: false,
-			review_id: review.id, native_record: native,
-			source_update_label: audit.native_status_and_update ?? native.source_update_literal
-				?? 'Separate index, PDF and API update literals retained in the source tables',
-			source_reporting_label: reporting.join('; '),
-			source_url: `${review.base_url}county-participation.csv`,
-			complete_download_url: review.complete_download_url,
-			quality: ['County-only, unofficial; not final, statewide, eligible-population or demographic turnout.',
-				'Source update timezone is unestablished. County mapping is not approved by this source review.',
-				...(audit.qualifications?.slice(2, 4) ?? []),
-				...(native.ballot_receipt_notice_literal
-					? ['Received mail ballots are a separate processing count, not the reported ballot total.'] : [])],
-		};
-	});
-if (reviewedCounties.length !== reviewedCountyIds.size)
-	throw new Error('Missing reviewed county participation source');
+const reviewedCounties = loadReviewedCountyParticipation(participationReviews);
 const national = JSON.parse(readFileSync(resolve(dataRoot, 'data/national.json'), 'utf8'));
 const manifest = JSON.parse(readFileSync(resolve(dataRoot, 'publication-manifest.json'), 'utf8'));
 const snapshot = national.filter((row: { year: number; denominator: string; age_group: string }) =>
@@ -369,20 +330,23 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 			demographic ballot counts are not group turnout rates.</p>
 		<section class="participation-current" aria-labelledby="reviewed-county-participation-title">
 			<h2 id="reviewed-county-participation-title">Additional reviewed county participation · 2026</h2>
-			<p>Three Pennsylvania county observations, not statewide coverage. These are reported ballots divided by
+			<p>Ten Pennsylvania county observations and a separately scoped D.C. county-equivalent observation,
+				not statewide county coverage. These are reported ballots divided by
 				each county's native registrations, not UF VEP/VAP estimates or demographic turnout.
-				Counting is unofficial; source reporting status and printed percentages remain separate.
+				These snapshots are not final/certified; native result status and printed percentages remain separate.
 				These reviews do not approve county or precinct mapping.</p>
-			<div class="table-wrap" tabindex="0" role="region" aria-label="Reviewed Pennsylvania county participation">
+			<div class="table-wrap" tabindex="0" role="region" aria-label="Reviewed county participation">
 				<table data-reviewed-county-participation={JSON.stringify(reviewedCounties)}>
 					<caption>Complete county observations; missing native printed rates are not zero.</caption>
 					<thead><tr><th scope="col">County</th><th scope="col">Ballots reported</th>
 						<th scope="col">Native registrations</th><th scope="col">Calculated fraction</th>
-						<th scope="col">Native printed fraction</th><th scope="col">Complete data</th></tr></thead>
+						<th scope="col">Native printed fraction</th><th scope="col">Native status</th>
+						<th scope="col">Complete data</th></tr></thead>
 					<tbody>{reviewedCounties.map(row => <tr>
-						<th scope="row">{row.county}, Pennsylvania</th>
+						<th scope="row">{row.county}{row.state_code === 'PA' ? ', Pennsylvania' : ' · county equivalent'}</th>
 						<td>{formatNumber(row.ballots)}</td><td>{formatNumber(row.denominator)}</td>
 						<td>{row.reported_pct.toFixed(2)}%</td><td>{row.native_printed_pct ?? 'Not supplied'}</td>
+						<td>{row.source_status_literal || 'Not supplied in participation table'}</td>
 						<td><a href={row.source_url}>Full participation CSV</a>{' · '}
 							<a href={row.complete_download_url}>Complete county package</a></td>
 					</tr>)}</tbody>

@@ -11,7 +11,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "check": "astro check",
-    "test": "node --test scripts/build-website-charts.test.mjs scripts/platform-position-copy.test.mjs scripts/platform-density-comparison.test.mjs scripts/voter-participation.test.mjs && npm run build && node scripts/validate-build.mjs",
+    "test": "node --test scripts/build-website-charts.test.mjs scripts/platform-position-copy.test.mjs scripts/platform-density-comparison.test.mjs scripts/voter-participation.test.mjs scripts/reviewed-county-participation.test.mjs && npm run build && node scripts/validate-build.mjs",
     "generate:favicons": "node scripts/generate-favicons.mjs",
     "sync:external-thumbnails": "node scripts/download-external-thumbnails.mjs",
     "migrate:legacy": "node scripts/migrate-google-sites.mjs",
@@ -23,6 +23,7 @@
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.3",
     "astro": "^7.0.8",
+    "csv-parse": "^7.0.3",
     "react": "^19.2.7",
     "react-dom": "^19.2.7"
   },

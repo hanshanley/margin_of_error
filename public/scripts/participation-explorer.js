@@ -341,7 +341,8 @@ function stateParticipationRows() {
           return response.json();
         }).then(data => ({
           ...data, counties: [...data.counties, ...state.reviewedCounties.filter(row =>
-            !data.counties.some(other => other.state_code === row.state_code && other.county_id === row.county_id))],
+            !data.counties.some(other => other.state_code === row.state_code
+              && (other.county_id === row.county_id || countyName(other.county) === countyName(row.county))))],
         })).catch(error => {
           state.currentLocal = null;
           if (state.reviewedCounties.some(row => row.state_code === stateCode())) return supplement;
@@ -356,13 +357,14 @@ function stateParticipationRows() {
     function currentCountDetail(host, row, county = false) {
       host.replaceChildren(html("h4", "", county ? row.county : row.unit),
         html("p", "selection-rate", fmt(row.ballots)),
-        html("p", "selection-basis", "2026 ballots reported · unofficial"),
+        html("p", "selection-basis", row.review_id ? "2026 ballots reported · not final/certified" : "2026 ballots reported · unofficial"),
         html("p", "selection-note", `${fmt(row.denominator)} ${electorateLabel(row)}; `
           + `${pct(row.reported_pct)} reported-ballot fraction. Not final turnout or a CPS estimate.`),
         html("p", "selection-note", `Source update: ${row.source_update_label || "not supplied"}. `
           + row.quality.join(" ")), sourceLink(row));
       if (row.review_id) {
-        host.append(html("p", "selection-note", `Native printed fraction: ${row.native_printed_pct ?? "not supplied"}. `
+        host.append(html("p", "selection-note", `Native result-status literal: ${row.source_status_literal || "not supplied"}.`),
+          html("p", "selection-note", `Native printed fraction: ${row.native_printed_pct ?? "not supplied"}. `
           + `Calculated from these counts: ${row.reported_pct.toFixed(2)}%. `
           + "Printed and calculated values are separate; neither establishes finished counting."),
           html("p", "selection-note", row.source_reporting_label));
@@ -397,7 +399,7 @@ function stateParticipationRows() {
         if (additional.length) {
           const overview = html("div", "substate-detail"); overview.id = "reviewed-county-overview";
           overview.append(html("p", "selection-note",
-            `${additional.length} reviewed county observations, not statewide coverage. `
+            `${additional.length} reviewed ${code === "DC" ? "county-equivalent observation" : "county observations"}, not statewide county coverage. `
             + "Reported ballots / native registrations; not UF population-based turnout. County mapping is not approved."));
           for (const row of additional) {
             const button = html("button", "selection-link",
@@ -423,6 +425,7 @@ function stateParticipationRows() {
             : [["county", "County"], ["ballots", "Ballots reported"], ["denominator", "Source electorate"],
               ["reported_pct", "Reported-ballot fraction"],
               ...(county.review_id ? [["native_printed_pct", "Native printed fraction"],
+                ["source_status_literal", "Native result-status literal"],
                 ["source_update_label", "Source update"], ["source_reporting_label", "Native reporting status"]] : []),
               ["quality", "Notes"]]);
           if (!rows.length) {

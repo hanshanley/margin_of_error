@@ -53,6 +53,25 @@ verified county ballots and compatible denominators before expanding candidate
 download inventories. Retain the genuine Maine accounting gaps, separately
 scoped D.C., and Philadelphia source-representation restrictions below.
 
+**Expanded participation integration, locally verified:** ten Pennsylvania
+counties (the original three plus Lancaster, Chester, Franklin, Lehigh,
+Montgomery, Bucks and Monroe) and one separately scoped D.C. county-equivalent
+observation now use their complete native CSVs rather than heterogeneous audit
+record adapters. Every field is retained; invalid/missing counts or missing
+review registrations stop the build. Printed fractions, calculated
+ballots/native-registration ratios, absent native status, partial reporting and
+distinct source timestamps remain separate. Monroe's selector identity is
+explicitly not an invented native FIPS. D.C.'s 324-ballot delegate-accounting
+gap and native early-zero flags do not become allocated ballots or zero early
+voters. All source map approvals remain false; no candidate votes become
+participation. Dauphin remains excluded because ballots/registrations are absent.
+Eleven unit tests, Astro check/build, source-matched desktop/mobile and
+JavaScript/no-JavaScript checks pass. All 288 unique download URLs / 291 anchors,
+52 UF rows and 255 historical cells remain unchanged. Nine immutable ZIPs and
+all 73 registered tables are publicly byte-verified. Local Pages size is
+987,420,433 bytes. Exact new deployment and
+production checks are pending; see `20261106-participation-expanded-01`.
+
 **November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated
 `git-filter-repo --sensitive-data-removal` rewrite removed Google API key patterns

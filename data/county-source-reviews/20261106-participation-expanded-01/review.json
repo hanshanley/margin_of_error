@@ -1,0 +1,31 @@
+{
+  "scope": "Presentation of ten existing reviewed 2026 Pennsylvania county participation observations and one separately scoped D.C. county-equivalent observation",
+  "year": 2026,
+  "source_review_ids": [
+    "pennsylvania-centre-20261106-01",
+    "pennsylvania-berks-20261105-01",
+    "pennsylvania-northampton-20261105-01",
+    "pennsylvania-lancaster-20261105-01",
+    "pennsylvania-three-county-20261105-01",
+    "pennsylvania-montgomery-20261105-01",
+    "pennsylvania-bucks-20261105-01",
+    "pennsylvania-monroe-20261105-01",
+    "dc-delegate-county-20261105-01"
+  ],
+  "input_tables": "Every row and field of each registered source's complete county-participation.csv; source-specific audit qualifications and Centre's six distinct source updates retained",
+  "normalization": "Explicit native ballot and registration fields; no candidate votes, received-mail processing counts or repeated candidate joins used as ballots",
+  "native_records": "All original CSV fields retained as strings, including blanks, zeroes, false literals, accounting fields and separate timestamps",
+  "native_printed_fractions": "Separate from calculated fractions; missing native printed values remain null",
+  "native_result_status": "Chester's missing native literal remains empty; no universal native unofficial label is invented",
+  "counting_status": "Partial source reporting retained; Montgomery's 428/428 applies only to Election Day in-person, Lancaster provisional is Not Reported",
+  "timestamps": "Preserve native update labels, separate generation/publication observations and absent timezone declarations",
+  "monroe_identity": "reviewed:PA:Monroe is an internal selector identity, not an invented native county FIPS",
+  "dc_scope": "Citywide county-equivalent participation, separate from the 435 voting House districts; 324-ballot delegate-accounting difference unallocated; native early zero/false flags do not establish zero early voters",
+  "downloads": "Existing immutable complete participation CSVs and parent packages; all nine ZIPs and 73 registered tables publicly byte-verified; exact 288-URL / 291-anchor download multiset unchanged",
+  "maps_approved": false,
+  "new_precinct_observations": false,
+  "demographic_turnout_approved": false,
+  "statewide_pa_county_completion": false,
+  "certification_or_final_counting": false,
+  "production_status": "Pending exact deployment and source-matched production verification"
+}
