@@ -1,0 +1,46 @@
+[
+  {
+    "file": "elk-index.html",
+    "requested_url": "https://countyofelkpa.gov/elk-county-offices/elections-voter-registration/election-results/",
+    "final_url": "https://countyofelkpa.gov/elk-county-offices/elections-voter-registration/election-results/",
+    "observed_at_utc": "2026-11-06T07:35:41.878959+00:00",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 522371,
+    "sha256": "b78df567281764de7b075823909b9d1722fd869c90df0535897421dbe8bdff5c",
+    "redirects": []
+  },
+  {
+    "file": "elk-summary.pdf",
+    "requested_url": "https://countyofelkpa.gov/wp-content/uploads/2026M_Media.pdf",
+    "final_url": "https://countyofelkpa.gov/wp-content/uploads/2026M_Media.pdf",
+    "observed_at_utc": "2026-11-06T07:35:42.197128+00:00",
+    "status": 200,
+    "content_type": "application/pdf",
+    "bytes": 34768,
+    "sha256": "0379761dc4b8ffc4f15906e96b0ae75878828e12f42a2cab363e1b9f0cc86e54",
+    "redirects": []
+  },
+  {
+    "file": "elk-statement.pdf",
+    "requested_url": "https://countyofelkpa.gov/wp-content/uploads/2026M_Precinct.pdf",
+    "final_url": "https://countyofelkpa.gov/wp-content/uploads/2026M_Precinct.pdf",
+    "observed_at_utc": "2026-11-06T07:35:42.426667+00:00",
+    "status": 200,
+    "content_type": "application/pdf",
+    "bytes": 192296,
+    "sha256": "20169c238f78d8c012ce9fdb70ebdc6e649d4654b583d4542d6848d6fd6cf358",
+    "redirects": []
+  },
+  {
+    "file": "elk-act88.pdf",
+    "requested_url": "https://countyofelkpa.gov/wp-content/uploads/scan_20261103205910.pdf",
+    "final_url": "https://countyofelkpa.gov/wp-content/uploads/scan_20261103205910.pdf",
+    "observed_at_utc": "2026-11-06T07:35:44.345406+00:00",
+    "status": 200,
+    "content_type": "application/pdf",
+    "bytes": 621816,
+    "sha256": "943d5d3a220511e4582360d5e252b927048666e8c22722b90e7f7b99ad730c84",
+    "redirects": []
+  }
+]

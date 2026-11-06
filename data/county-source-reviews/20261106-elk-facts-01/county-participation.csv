@@ -1,0 +1,2 @@
+year,state_code,county,native_participation_measure_literal,ballots_cast,registered_voters,native_printed_turnout,election_day_ballots,mail_ballots,provisional_ballots,blank_ballots,reported_precincts,total_precincts,complete_precincts,partially_reported_precincts,source_status_literal,source_update_literal,declared_timezone,source_report,source_page,native_printed_page
+2026,PA,Elk,Ballots Cast - Total,11742,20533,57.19%,9725,2017,0,5,29,29,0,29,UNOFFICIAL RESULTS,11/03/2026 22:08 PM,,summary,1,Page 1 of 2

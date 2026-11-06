@@ -1,0 +1,75 @@
+{
+  "scope": "Complete two-page county summary, all29 unit participation headers and all87 unit contests across58 statement pages, every native counting mode/choice/accounting vector, and all23 separate Act88 rows. All60 text pages independently token/parsed-vector matched across PyMuPDF and pdfplumber. The separate Act88 scan is visually reviewed, not text-engine matched. Native BallotsCast11742/20533; 9725ElectionDay/2017Absentee-MailIn/explicit0Provisional. All29 partial/zero complete; report clock 11/03/2026 22:08 PM is contradictory and preserved uncorrected/no timezone. Index Official labels and Nov4 statement-link date are not report certification or a borrowed clock; actual reports say UNOFFICIAL RESULTS and Nov3. ST MARYS4TH native55.10% differs from319/579 rounded55.09%; both preserved distinctly. Act88 issued/returned/sent2181, ballotreturned2035, votesrecorded2018 remain separate from2017 counted mail; differences18/1 unexplained. FederalVoter0 AND ValidVoter1 filter and ten literal registration-affiliation labels/misspellings are preserved. Native summary over/undervotes are absent; derived sums of native statement cells are separate. No new geometry, source FIPS, demographic/party turnout, statewide completion or certification claim. Original PDFs/HTML and presentation templates remain private; this is a complete factual query, not source-use permission.",
+  "table_rows": {
+    "county-participation.csv": 1,
+    "county-candidate-results.csv": 40,
+    "county-literal-party-totals.csv": 28,
+    "county-contest-accounting.csv": 12,
+    "native-unit-participation.csv": 29,
+    "native-unit-participation-modes.csv": 116,
+    "native-unit-candidate-results.csv": 1160,
+    "native-unit-literal-party-totals.csv": 812,
+    "native-unit-contest-accounting.csv": 348,
+    "native-participation-modes.csv": 4,
+    "native-reporting-statistics.csv": 4,
+    "native-mail-receipts.csv": 23,
+    "native-source-pages.csv": 61,
+    "native-derived-contest-sums.csv": 12,
+    "native-derived-rate-checks.csv": 30,
+    "native-source-declarations.csv": 3
+  },
+  "native_ballots_cast": 11742,
+  "native_registrations": 20533,
+  "native_measure": "Ballots Cast - Total",
+  "source_status_literal": "UNOFFICIAL RESULTS",
+  "primary_text_pages_two_engines_agree": 60,
+  "scanned_pages_visually_reviewed": 1,
+  "empty_text_engines_not_claimed_as_transcription": true,
+  "complete_native_units": 29,
+  "complete_native_county_contests": 3,
+  "complete_native_unit_contests": 87,
+  "mode_participation_missing_not_zero": false,
+  "native_precincts_complete": 0,
+  "native_precincts_partial": 29,
+  "report_clocks_preserved_without_repair_or_timezone": true,
+  "distinct_physical_and_native_printed_page_identity": true,
+  "receipts_not_substituted_for_counted_ballots": true,
+  "missing_native_accounting_not_filled_by_derived_rows": true,
+  "literal_party_labels_not_normalized": true,
+  "no_candidate_vote_substitution": true,
+  "maps_approved": false,
+  "no_certification_or_complete_counting_claim": true,
+  "original_documents_and_presentation_templates": "Private; not redistributed or included in this factual query.",
+  "native_election_day_ballots": 9725,
+  "native_mail_ballots": 2017,
+  "native_provisional_ballots": 0,
+  "native_act88_ballots_returned": 2035,
+  "native_act88_votes_recorded": 2018,
+  "act88_minus_counted_mail_differences_not_reconciled": [
+    18,
+    1
+  ],
+  "native_printed_rate_disagreement": [
+    {
+      "report": "statement",
+      "page": 47,
+      "unit": "ST MARYS 4TH",
+      "registered_voters": 579,
+      "ballots": [
+        319,
+        260,
+        59,
+        0
+      ],
+      "blanks": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "printed_turnout": "55.10%",
+      "calculated_turnout_rounded": "55.09%",
+      "native_printed_rate_matches_calculated": false
+    }
+  ]
+}

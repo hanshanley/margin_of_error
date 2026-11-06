@@ -1,0 +1,2 @@
+native_ballots_received,receipt_scope_literal,deadline_literal,source_report,source_page,source_update_literal,declared_timezone,report_role
+311,mail-in absentee ballots,"8pm on the day of the November 3, 2026, General Election",index,,,,act88_received_by_deadline_not_counted_mail

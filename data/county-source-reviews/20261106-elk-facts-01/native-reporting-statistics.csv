@@ -1,0 +1,5 @@
+native_statistic_literal,total,electorate_total,election_day,mail,provisional,source_report,source_page,native_printed_page
+Election Day Precincts Reporting,29,29,29,0,0,summary,1,Page 1 of 2
+Precincts Complete,0,29,0,0,0,summary,1,Page 1 of 2
+Precincts Partially Reported,29,29,29,0,0,summary,1,Page 1 of 2
+Absentee/ Early Precincts Reporting,29,29,0,29,0,summary,1,Page 1 of 2

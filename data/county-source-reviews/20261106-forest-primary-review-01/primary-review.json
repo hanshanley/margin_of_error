@@ -1,0 +1,277 @@
+{
+  "reviewed_at": "2026-11-06T07:48:00.182893+00:00",
+  "county": "Forest",
+  "state": "Pennsylvania",
+  "election_date": "2026-11-03",
+  "primary_sources": [
+    {
+      "file": "forest-parent.html",
+      "requested_url": "https://www.co.forest.pa.us/departments/elections_and_voter_regisration.php",
+      "final_url": "https://www.co.forest.pa.us/departments/elections_and_voter_regisration.php",
+      "observed_at_utc": "2026-11-06T07:36:58.299321+00:00",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 45663,
+      "sha256": "8198bef4fb6079a76b4c8b28c70b5b87b7cb7958a475580e125615e169be057a",
+      "redirects": []
+    },
+    {
+      "file": "forest-summary.pdf",
+      "requested_url": "https://www.co.forest.pa.us/departments/docs/Summary Report.pdf?t=202611032146150",
+      "final_url": "https://cms6.revize.com/revize/forestcounty/departments/docs/Summary%20Report.pdf?t=202611032146150",
+      "observed_at_utc": "2026-11-06T07:36:58.465921+00:00",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 757792,
+      "sha256": "2db4f7eb590d2e718ab76f52ecd56a67bf77b3e920f482d66a5af435b2bd4a8f",
+      "redirects": [
+        {
+          "status": 302,
+          "url": "https://www.co.forest.pa.us/departments/docs/Summary%20Report.pdf?t=202611032146150",
+          "location": "https://cms6.revize.com/revize/forestcounty/departments/docs/Summary Report.pdf?t=202611032146150"
+        }
+      ]
+    },
+    {
+      "file": "forest-statement.pdf",
+      "requested_url": "https://www.co.forest.pa.us/departments/docs/Precinct Report.pdf?t=202611032147100",
+      "final_url": "https://cms6.revize.com/revize/forestcounty/departments/docs/Precinct%20Report.pdf?t=202611032147100",
+      "observed_at_utc": "2026-11-06T07:36:58.594271+00:00",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 4316132,
+      "sha256": "6c0194a63a197e086f8a983427a24b2c895298537716a40942262917244834ff",
+      "redirects": [
+        {
+          "status": 302,
+          "url": "https://www.co.forest.pa.us/departments/docs/Precinct%20Report.pdf?t=202611032147100",
+          "location": "https://cms6.revize.com/revize/forestcounty/departments/docs/Precinct Report.pdf?t=202611032147100"
+        }
+      ]
+    }
+  ],
+  "primary_declarations": [
+    {
+      "file": "forest-summary.pdf",
+      "label": "2026 November Election Summary report",
+      "url": "https://www.co.forest.pa.us/departments/docs/Summary Report.pdf?t=202611032146150"
+    },
+    {
+      "file": "forest-statement.pdf",
+      "label": "2026 November Election Precinct Summary",
+      "url": "https://www.co.forest.pa.us/departments/docs/Precinct Report.pdf?t=202611032147100"
+    }
+  ],
+  "complete_review": {
+    "scope": "Complete two-page scanned county summary and allnine scanned unit pages, allparticipation/statistics and allthree county/27unit contest choices. Entire scans and magnified choice panels visually reviewed; both complete PDF text engines are empty and no OCR/engine agreement is claimed. Native BallotsCast1877/3275 and57.31%; allnine partial/zero complete. No countedElectionDay/Mail/Provisional split is reported, notzero. Native clock11/03/2026 20:56 PM is preserved literally/unrepaired/no timezone. Physicalsummarypage1 prints Page2of2 andphysicalpage2 printsPage1of2; bothidentities retained, nofalsepage1participation claim. The parentAct88 311mail-in absentee receipts by8pm is separate from countedballots and not a missingmode estimate. Native county summary has over/undervotes but lacks TotalVotesCast/ContestTotals; unit pages lack allfour accounting rows, notzero. Derived unit participation-minus-choice residuals remain unclassified; do not borrow county undervotes into unit cells. Exact primary parent-declared URLs follow normal302toCMS6 and200PDF; older results index absence is not source absence. Literal parties preserved separately from turnout. No new geometry, source FIPS, demographic/party turnout, statewide completion or certification claim. Original PDFs/HTML and presentation templates remain private; this is a complete factual query, not source-use permission.",
+    "table_rows": {
+      "county-participation.csv": 1,
+      "county-candidate-results.csv": 10,
+      "county-literal-party-totals.csv": 7,
+      "county-contest-accounting.csv": 3,
+      "native-unit-participation.csv": 9,
+      "native-unit-participation-modes.csv": 9,
+      "native-unit-candidate-results.csv": 90,
+      "native-unit-literal-party-totals.csv": 63,
+      "native-unit-contest-accounting.csv": 27,
+      "native-participation-modes.csv": 1,
+      "native-reporting-statistics.csv": 4,
+      "native-mail-receipts.csv": 1,
+      "native-source-pages.csv": 11,
+      "native-derived-contest-sums.csv": 3,
+      "native-derived-rate-checks.csv": 10,
+      "native-source-declarations.csv": 2
+    },
+    "native_ballots_cast": 1877,
+    "native_registrations": 3275,
+    "native_measure": "Ballots Cast - Total",
+    "source_status_literal": "UNOFFICIAL RESULTS",
+    "primary_text_pages_two_engines_agree": 0,
+    "scanned_pages_visually_reviewed": 11,
+    "empty_text_engines_not_claimed_as_transcription": true,
+    "complete_native_units": 9,
+    "complete_native_county_contests": 3,
+    "complete_native_unit_contests": 27,
+    "mode_participation_missing_not_zero": true,
+    "native_precincts_complete": 0,
+    "native_precincts_partial": 9,
+    "report_clocks_preserved_without_repair_or_timezone": true,
+    "distinct_physical_and_native_printed_page_identity": true,
+    "receipts_not_substituted_for_counted_ballots": true,
+    "missing_native_accounting_not_filled_by_derived_rows": true,
+    "literal_party_labels_not_normalized": true,
+    "no_candidate_vote_substitution": true,
+    "maps_approved": false,
+    "no_certification_or_complete_counting_claim": true,
+    "original_documents_and_presentation_templates": "Private; not redistributed or included in this factual query.",
+    "native_act88_received_by_8pm": 311,
+    "native_counted_mail_ballots": "",
+    "summary_physical_page1_prints": "Page 2 of 2",
+    "summary_physical_page2_prints": "Page 1 of 2"
+  },
+  "complete_package": {
+    "county": "Forest",
+    "files": 22,
+    "complete_csv_tables": 16,
+    "table_rows": {
+      "county-participation.csv": 1,
+      "county-candidate-results.csv": 10,
+      "county-literal-party-totals.csv": 7,
+      "county-contest-accounting.csv": 3,
+      "native-unit-participation.csv": 9,
+      "native-unit-participation-modes.csv": 9,
+      "native-unit-candidate-results.csv": 90,
+      "native-unit-literal-party-totals.csv": 63,
+      "native-unit-contest-accounting.csv": 27,
+      "native-participation-modes.csv": 1,
+      "native-reporting-statistics.csv": 4,
+      "native-mail-receipts.csv": 1,
+      "native-source-pages.csv": 11,
+      "native-derived-contest-sums.csv": 3,
+      "native-derived-rate-checks.csv": 10,
+      "native-source-declarations.csv": 2
+    },
+    "offline_every_file_and_zip_reproduction": true,
+    "sources": [
+      {
+        "file": "forest-parent.html",
+        "bytes": 45663,
+        "sha256": "8198bef4fb6079a76b4c8b28c70b5b87b7cb7958a475580e125615e169be057a"
+      },
+      {
+        "file": "forest-summary.pdf",
+        "bytes": 757792,
+        "sha256": "2db4f7eb590d2e718ab76f52ecd56a67bf77b3e920f482d66a5af435b2bd4a8f"
+      },
+      {
+        "file": "forest-statement.pdf",
+        "bytes": 4316132,
+        "sha256": "6c0194a63a197e086f8a983427a24b2c895298537716a40942262917244834ff"
+      }
+    ],
+    "entire_files": [
+      {
+        "file": "audit.json",
+        "bytes": 3322,
+        "sha256": "fbcfe94d957be9ec41f35c459c0fb35c55629dcf89c8bc85bafff849bdc5b021"
+      },
+      {
+        "file": "checksums.json",
+        "bytes": 2817,
+        "sha256": "7092abf449019b6c1a4170f1bbe18ce3ce4d17406f832652b0054081d82071d5"
+      },
+      {
+        "file": "complete-forest-2026-county-query-01.zip",
+        "bytes": 82567,
+        "sha256": "40ea85e481eab438bc65004190df794c737f307da4f626b7f14d4e7ad7cc0810"
+      },
+      {
+        "file": "county-candidate-results.csv",
+        "bytes": 1566,
+        "sha256": "d80af6fb5c8891ab0ba65c386f6ababd4fd3530b68c08e32d95f4a5e5f353835"
+      },
+      {
+        "file": "county-contest-accounting.csv",
+        "bytes": 865,
+        "sha256": "d7e70597510aecdb9b5b60a6e1945be174d7e464ef877689dba0d4953afa4eec"
+      },
+      {
+        "file": "county-literal-party-totals.csv",
+        "bytes": 925,
+        "sha256": "3b8883a8e4994a18cba710beb1860eaf92886ea88440abd419ea9791cc8990bf"
+      },
+      {
+        "file": "county-participation.csv",
+        "bytes": 501,
+        "sha256": "db9870d10c5f72159ee759a3c725d98635a89a96f7854638556791cee182a8dd"
+      },
+      {
+        "file": "native-derived-contest-sums.csv",
+        "bytes": 647,
+        "sha256": "8158a708c7e6c6d1f56ac145febddd1094b82fb4bae85d72025e7476081d4b35"
+      },
+      {
+        "file": "native-derived-rate-checks.csv",
+        "bytes": 1787,
+        "sha256": "8fb05be027f66d3ddb86210dd446e426740bdbf728e9a975f0211bff5b96fada"
+      },
+      {
+        "file": "native-mail-receipts.csv",
+        "bytes": 282,
+        "sha256": "1de82556068a808bbbc6fdc301bc665f79c31b3d1ed33871aee6ea6843bcfded"
+      },
+      {
+        "file": "native-participation-modes.csv",
+        "bytes": 271,
+        "sha256": "1d39f4ea7845dbf0e0df9230757a967e102fa5bd411c60727721872183cb295f"
+      },
+      {
+        "file": "native-reporting-statistics.csv",
+        "bytes": 357,
+        "sha256": "6fe6b19661b8d1f4e6f82a6cbc9bd5d5b68351b09a8233d2d9ed880effbdfc52"
+      },
+      {
+        "file": "native-source-declarations.csv",
+        "bytes": 460,
+        "sha256": "61323632a7534ed9a8da561e36c576f3b56acd35c9e32999e050f5146f0cf5d0"
+      },
+      {
+        "file": "native-source-pages.csv",
+        "bytes": 3114,
+        "sha256": "cb36428e38f0ccac450b83f2b3b4622d79fa4193fa36937c99b4184278ce7604"
+      },
+      {
+        "file": "native-unit-candidate-results.csv",
+        "bytes": 12957,
+        "sha256": "50da5087297b0846d160d3cbcb748b5c341116b848ad0fef105403460599c407"
+      },
+      {
+        "file": "native-unit-contest-accounting.csv",
+        "bytes": 5670,
+        "sha256": "4aa9c87dffb70c4882e383dc62c6894e421be6f9ef7f1921b0aa35df4e80ad6c"
+      },
+      {
+        "file": "native-unit-literal-party-totals.csv",
+        "bytes": 7204,
+        "sha256": "1e1a07f3eb52cbb51b37dbae0cbe8f568f6096d9fd80024438ee467568d31745"
+      },
+      {
+        "file": "native-unit-participation-modes.csv",
+        "bytes": 948,
+        "sha256": "d195a3f2da7bd5ad4ebf83378997393c901b20e675f529a65ae2d1a8edc401a9"
+      },
+      {
+        "file": "native-unit-participation.csv",
+        "bytes": 872,
+        "sha256": "0a78d29597edd32846d6dd35c745ddeb1dafd8975cf12b80b97e8e3960c506b5"
+      },
+      {
+        "file": "review-pa-county-native-query.py",
+        "bytes": 26216,
+        "sha256": "fbca551c72a85277d35404fc95a846e9e803b518139ff8658dd29411fd1c5df3"
+      },
+      {
+        "file": "source-receipts.json",
+        "bytes": 2047,
+        "sha256": "91083093b363f92527c05dc27bcbf2267fec35ef109a0bcc054f9e44ad3745ad"
+      },
+      {
+        "file": "source-records.json.gz",
+        "bytes": 6969,
+        "sha256": "4f716accd42392b185039ea0553b433b0cc92bfb0a7934ab34d606a686561eb0"
+      }
+    ]
+  },
+  "checks": {
+    "captured_primary_bytes_and_receipt_hashes_match": true,
+    "actual_primary_parent_declares_exact_labels_and_urls": true,
+    "anchored_complete_native_observations_and_all_sixteen_tables_match": true,
+    "focused_rejection_cases_passed": 14,
+    "every_entire_file_and_deterministic_zip_reproduced_offline": true,
+    "every_zip_member_matches_complete_published_query_file": true,
+    "zip_members": 21,
+    "source_originals_and_templates_excluded": true,
+    "no_new_geometry_or_source_fips": true,
+    "explorer_integration_and_live_verification_pending": true
+  }
+}

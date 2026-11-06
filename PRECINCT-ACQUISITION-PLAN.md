@@ -1381,6 +1381,60 @@ Maine's unresolved 130 votes,
 blanks/write-ins and municipal-other gap, and D.C.'s separate accounting gap,
 remain unresolved; schedule 5 continues remaining primary county acquisition.
 
+**November 6 Elk and Forest: complete factual queries reviewed; publication pending.**
+The actual Elk parent declares a two-page county summary, 58-page unit
+statement and separate one-page Act 88 scan. All 60 text pages independently
+match across both PDF engines by complete token multisets and parsed vectors;
+all 29 unit headers and 87 contests reconcile to the full county vectors.
+Elk reports **11,742 ballots / 20,533 registrations**, including 9,725 Election
+Day, 2,017 Absentee/Mail-In and explicit zero provisional ballots. All 29
+units are reported partial, with zero complete. Preserve the contradictory
+native clock `11/03/2026 22:08 PM` without repair or invented timezone.
+The index calls the links Official, but the reports say UNOFFICIAL RESULTS.
+ST MARYS 4TH prints 55.10%; its 319/579 fraction rounds to 55.09%. Neither
+value is silently replaced. The separate visually reviewed Act 88 scan
+contains all 23 rows, all five numeric columns and ten literal registration
+affiliations, including INDEPENDENT and INDEPENDANT. Its 2,035 returned and
+2,018 recorded mail ballots remain distinct from 2,017 counted mail ballots;
+the differences of 18 and 1 are unexplained. Preserve Federal Voter 0 AND
+Valid Voter 1, blank ballot style and three repeated nonadditive sections.
+Missing native summary over/undervotes remain missing; derived sums of
+observed unit accounting are separate.
+
+Forest's actual department parent declares different report URLs than earlier
+web-reader observations. Ordinary declared 302 redirects lead to the county's
+CMS6 host and two complete PDFs: two summary pages and nine unit pages.
+Both full PDF text engines are empty. All eleven scans and magnified choice
+panels were directly visually reviewed; no OCR or engine-transcription
+agreement is claimed. All nine unit headers and 27 contests reconcile to the
+county. Forest reports **1,877 ballots / 3,275 registrations**, native 57.31%,
+nine partial units and zero complete. Election Day/mail/provisional splits
+are absent, not zero. The parent's separate 311 mail-in absentee receipts
+by 8 p.m. are not counted mail ballots. Preserve native clock
+`11/03/2026 20:56 PM` without repair/timezone. Summary physical page 1 prints
+Page 2 of 2; physical page 2 prints Page 1 of 2. County native over/undervotes
+are reported, but Total Votes Cast/Contest Totals are absent. Unit pages
+lack all four accounting rows; their derived residuals remain unclassified.
+
+Each complete factual query has **22 files, 16 full CSV tables and 21 ZIP
+members**, including every participation, candidate, literal-party, mode,
+receipt, native-accounting, page-identity and separate derived row.
+All entire files and deterministic archives reproduce byte-identically
+offline using only Python's standard library. Elk's 18 and Forest's 14
+focused rejection cases pass, including same-candidate unit swaps,
+missing/zero substitution, receipt substitution, altered source identities,
+native accounting, scan/text claims, clocks and literal parties.
+Elk ZIP: 438,060 bytes, SHA-256
+`22bb577a2f4c37592654dadcb351a70b945aee57fdcf9a43a43ea7967a13f7d2`.
+Forest ZIP: 82,567 bytes, SHA-256
+`40ea85e481eab438bc65004190df794c737f307da4f626b7f14d4e7ad7cc0810`.
+Full primary and package review proofs are under the respective
+`data/county-source-reviews/20261106-{elk,forest}-primary-review-01/`
+directories. Original HTML/PDFs and presentation templates remain private.
+No new geometry, source FIPS, demographic/party turnout, statewide completion
+or certification is claimed. Fixed release publication and explorer
+integration remain pending; neither county is called live.
+
 **November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated
 `git-filter-repo --sensitive-data-removal` rewrite removed Google API key patterns

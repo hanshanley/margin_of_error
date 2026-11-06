@@ -1,0 +1,47 @@
+[
+  {
+    "file": "forest-parent.html",
+    "requested_url": "https://www.co.forest.pa.us/departments/elections_and_voter_regisration.php",
+    "final_url": "https://www.co.forest.pa.us/departments/elections_and_voter_regisration.php",
+    "observed_at_utc": "2026-11-06T07:36:58.299321+00:00",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 45663,
+    "sha256": "8198bef4fb6079a76b4c8b28c70b5b87b7cb7958a475580e125615e169be057a",
+    "redirects": []
+  },
+  {
+    "file": "forest-summary.pdf",
+    "requested_url": "https://www.co.forest.pa.us/departments/docs/Summary Report.pdf?t=202611032146150",
+    "final_url": "https://cms6.revize.com/revize/forestcounty/departments/docs/Summary%20Report.pdf?t=202611032146150",
+    "observed_at_utc": "2026-11-06T07:36:58.465921+00:00",
+    "status": 200,
+    "content_type": "application/pdf",
+    "bytes": 757792,
+    "sha256": "2db4f7eb590d2e718ab76f52ecd56a67bf77b3e920f482d66a5af435b2bd4a8f",
+    "redirects": [
+      {
+        "status": 302,
+        "url": "https://www.co.forest.pa.us/departments/docs/Summary%20Report.pdf?t=202611032146150",
+        "location": "https://cms6.revize.com/revize/forestcounty/departments/docs/Summary Report.pdf?t=202611032146150"
+      }
+    ]
+  },
+  {
+    "file": "forest-statement.pdf",
+    "requested_url": "https://www.co.forest.pa.us/departments/docs/Precinct Report.pdf?t=202611032147100",
+    "final_url": "https://cms6.revize.com/revize/forestcounty/departments/docs/Precinct%20Report.pdf?t=202611032147100",
+    "observed_at_utc": "2026-11-06T07:36:58.594271+00:00",
+    "status": 200,
+    "content_type": "application/pdf",
+    "bytes": 4316132,
+    "sha256": "6c0194a63a197e086f8a983427a24b2c895298537716a40942262917244834ff",
+    "redirects": [
+      {
+        "status": 302,
+        "url": "https://www.co.forest.pa.us/departments/docs/Precinct%20Report.pdf?t=202611032147100",
+        "location": "https://cms6.revize.com/revize/forestcounty/departments/docs/Precinct Report.pdf?t=202611032147100"
+      }
+    ]
+  }
+]

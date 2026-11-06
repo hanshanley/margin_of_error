@@ -1,0 +1,2 @@
+year,state_code,county,native_participation_measure_literal,ballots_cast,registered_voters,native_printed_turnout,election_day_ballots,mail_ballots,provisional_ballots,blank_ballots,reported_precincts,total_precincts,complete_precincts,partially_reported_precincts,source_status_literal,source_update_literal,declared_timezone,source_report,source_page,native_printed_page
+2026,PA,Forest,Ballots Cast - Total,1877,3275,57.31%,,,,0,9,9,0,9,UNOFFICIAL RESULTS,11/03/2026 20:56 PM,,summary,2,Page 1 of 2

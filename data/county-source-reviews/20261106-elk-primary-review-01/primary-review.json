@@ -1,0 +1,314 @@
+{
+  "reviewed_at": "2026-11-06T07:48:00.175721+00:00",
+  "county": "Elk",
+  "state": "Pennsylvania",
+  "election_date": "2026-11-03",
+  "primary_sources": [
+    {
+      "file": "elk-index.html",
+      "requested_url": "https://countyofelkpa.gov/elk-county-offices/elections-voter-registration/election-results/",
+      "final_url": "https://countyofelkpa.gov/elk-county-offices/elections-voter-registration/election-results/",
+      "observed_at_utc": "2026-11-06T07:35:41.878959+00:00",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 522371,
+      "sha256": "b78df567281764de7b075823909b9d1722fd869c90df0535897421dbe8bdff5c",
+      "redirects": []
+    },
+    {
+      "file": "elk-summary.pdf",
+      "requested_url": "https://countyofelkpa.gov/wp-content/uploads/2026M_Media.pdf",
+      "final_url": "https://countyofelkpa.gov/wp-content/uploads/2026M_Media.pdf",
+      "observed_at_utc": "2026-11-06T07:35:42.197128+00:00",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 34768,
+      "sha256": "0379761dc4b8ffc4f15906e96b0ae75878828e12f42a2cab363e1b9f0cc86e54",
+      "redirects": []
+    },
+    {
+      "file": "elk-statement.pdf",
+      "requested_url": "https://countyofelkpa.gov/wp-content/uploads/2026M_Precinct.pdf",
+      "final_url": "https://countyofelkpa.gov/wp-content/uploads/2026M_Precinct.pdf",
+      "observed_at_utc": "2026-11-06T07:35:42.426667+00:00",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 192296,
+      "sha256": "20169c238f78d8c012ce9fdb70ebdc6e649d4654b583d4542d6848d6fd6cf358",
+      "redirects": []
+    },
+    {
+      "file": "elk-act88.pdf",
+      "requested_url": "https://countyofelkpa.gov/wp-content/uploads/scan_20261103205910.pdf",
+      "final_url": "https://countyofelkpa.gov/wp-content/uploads/scan_20261103205910.pdf",
+      "observed_at_utc": "2026-11-06T07:35:44.345406+00:00",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 621816,
+      "sha256": "943d5d3a220511e4582360d5e252b927048666e8c22722b90e7f7b99ad730c84",
+      "redirects": []
+    }
+  ],
+  "primary_declarations": [
+    {
+      "file": "elk-summary.pdf",
+      "label": "Official General Election Results (Media Report): November 3, 2026",
+      "url": "https://countyofelkpa.gov/wp-content/uploads/2026M_Media.pdf"
+    },
+    {
+      "file": "elk-statement.pdf",
+      "label": "Official General Election Results (Precinct Report): November 4, 2026",
+      "url": "https://countyofelkpa.gov/wp-content/uploads/2026M_Precinct.pdf"
+    },
+    {
+      "file": "elk-act88.pdf",
+      "label": "2026 General Act 88 Notice",
+      "url": "https://countyofelkpa.gov/wp-content/uploads/scan_20261103205910.pdf"
+    }
+  ],
+  "complete_review": {
+    "scope": "Complete two-page county summary, all29 unit participation headers and all87 unit contests across58 statement pages, every native counting mode/choice/accounting vector, and all23 separate Act88 rows. All60 text pages independently token/parsed-vector matched across PyMuPDF and pdfplumber. The separate Act88 scan is visually reviewed, not text-engine matched. Native BallotsCast11742/20533; 9725ElectionDay/2017Absentee-MailIn/explicit0Provisional. All29 partial/zero complete; report clock 11/03/2026 22:08 PM is contradictory and preserved uncorrected/no timezone. Index Official labels and Nov4 statement-link date are not report certification or a borrowed clock; actual reports say UNOFFICIAL RESULTS and Nov3. ST MARYS4TH native55.10% differs from319/579 rounded55.09%; both preserved distinctly. Act88 issued/returned/sent2181, ballotreturned2035, votesrecorded2018 remain separate from2017 counted mail; differences18/1 unexplained. FederalVoter0 AND ValidVoter1 filter and ten literal registration-affiliation labels/misspellings are preserved. Native summary over/undervotes are absent; derived sums of native statement cells are separate. No new geometry, source FIPS, demographic/party turnout, statewide completion or certification claim. Original PDFs/HTML and presentation templates remain private; this is a complete factual query, not source-use permission.",
+    "table_rows": {
+      "county-participation.csv": 1,
+      "county-candidate-results.csv": 40,
+      "county-literal-party-totals.csv": 28,
+      "county-contest-accounting.csv": 12,
+      "native-unit-participation.csv": 29,
+      "native-unit-participation-modes.csv": 116,
+      "native-unit-candidate-results.csv": 1160,
+      "native-unit-literal-party-totals.csv": 812,
+      "native-unit-contest-accounting.csv": 348,
+      "native-participation-modes.csv": 4,
+      "native-reporting-statistics.csv": 4,
+      "native-mail-receipts.csv": 23,
+      "native-source-pages.csv": 61,
+      "native-derived-contest-sums.csv": 12,
+      "native-derived-rate-checks.csv": 30,
+      "native-source-declarations.csv": 3
+    },
+    "native_ballots_cast": 11742,
+    "native_registrations": 20533,
+    "native_measure": "Ballots Cast - Total",
+    "source_status_literal": "UNOFFICIAL RESULTS",
+    "primary_text_pages_two_engines_agree": 60,
+    "scanned_pages_visually_reviewed": 1,
+    "empty_text_engines_not_claimed_as_transcription": true,
+    "complete_native_units": 29,
+    "complete_native_county_contests": 3,
+    "complete_native_unit_contests": 87,
+    "mode_participation_missing_not_zero": false,
+    "native_precincts_complete": 0,
+    "native_precincts_partial": 29,
+    "report_clocks_preserved_without_repair_or_timezone": true,
+    "distinct_physical_and_native_printed_page_identity": true,
+    "receipts_not_substituted_for_counted_ballots": true,
+    "missing_native_accounting_not_filled_by_derived_rows": true,
+    "literal_party_labels_not_normalized": true,
+    "no_candidate_vote_substitution": true,
+    "maps_approved": false,
+    "no_certification_or_complete_counting_claim": true,
+    "original_documents_and_presentation_templates": "Private; not redistributed or included in this factual query.",
+    "native_election_day_ballots": 9725,
+    "native_mail_ballots": 2017,
+    "native_provisional_ballots": 0,
+    "native_act88_ballots_returned": 2035,
+    "native_act88_votes_recorded": 2018,
+    "act88_minus_counted_mail_differences_not_reconciled": [
+      18,
+      1
+    ],
+    "native_printed_rate_disagreement": [
+      {
+        "report": "statement",
+        "page": 47,
+        "unit": "ST MARYS 4TH",
+        "registered_voters": 579,
+        "ballots": [
+          319,
+          260,
+          59,
+          0
+        ],
+        "blanks": [
+          1,
+          1,
+          0,
+          0
+        ],
+        "printed_turnout": "55.10%",
+        "calculated_turnout_rounded": "55.09%",
+        "native_printed_rate_matches_calculated": false
+      }
+    ]
+  },
+  "complete_package": {
+    "county": "Elk",
+    "files": 22,
+    "complete_csv_tables": 16,
+    "table_rows": {
+      "county-participation.csv": 1,
+      "county-candidate-results.csv": 40,
+      "county-literal-party-totals.csv": 28,
+      "county-contest-accounting.csv": 12,
+      "native-unit-participation.csv": 29,
+      "native-unit-participation-modes.csv": 116,
+      "native-unit-candidate-results.csv": 1160,
+      "native-unit-literal-party-totals.csv": 812,
+      "native-unit-contest-accounting.csv": 348,
+      "native-participation-modes.csv": 4,
+      "native-reporting-statistics.csv": 4,
+      "native-mail-receipts.csv": 23,
+      "native-source-pages.csv": 61,
+      "native-derived-contest-sums.csv": 12,
+      "native-derived-rate-checks.csv": 30,
+      "native-source-declarations.csv": 3
+    },
+    "offline_every_file_and_zip_reproduction": true,
+    "sources": [
+      {
+        "file": "elk-index.html",
+        "bytes": 522371,
+        "sha256": "b78df567281764de7b075823909b9d1722fd869c90df0535897421dbe8bdff5c"
+      },
+      {
+        "file": "elk-summary.pdf",
+        "bytes": 34768,
+        "sha256": "0379761dc4b8ffc4f15906e96b0ae75878828e12f42a2cab363e1b9f0cc86e54"
+      },
+      {
+        "file": "elk-statement.pdf",
+        "bytes": 192296,
+        "sha256": "20169c238f78d8c012ce9fdb70ebdc6e649d4654b583d4542d6848d6fd6cf358"
+      },
+      {
+        "file": "elk-act88.pdf",
+        "bytes": 621816,
+        "sha256": "943d5d3a220511e4582360d5e252b927048666e8c22722b90e7f7b99ad730c84"
+      }
+    ],
+    "entire_files": [
+      {
+        "file": "audit.json",
+        "bytes": 3856,
+        "sha256": "b3aa21eff714afb9084fb24974aa9b761b3d64ff5c5ebd4fc414001f3b9fd076"
+      },
+      {
+        "file": "checksums.json",
+        "bytes": 2828,
+        "sha256": "7001f7340deefeac19893959ca0525092f52c5341493863e03fd285cd007f400"
+      },
+      {
+        "file": "complete-elk-2026-county-query-01.zip",
+        "bytes": 438060,
+        "sha256": "22bb577a2f4c37592654dadcb351a70b945aee57fdcf9a43a43ea7967a13f7d2"
+      },
+      {
+        "file": "county-candidate-results.csv",
+        "bytes": 5670,
+        "sha256": "3adb3e87c3385b7206a26a2badd92316e6aa78ac253b252d9f9c9014ce1b6637"
+      },
+      {
+        "file": "county-contest-accounting.csv",
+        "bytes": 2704,
+        "sha256": "f59703d0a55e4e8bd5e200161197fa3228a07ae3995403daf92cc7c4fbac531f"
+      },
+      {
+        "file": "county-literal-party-totals.csv",
+        "bytes": 3099,
+        "sha256": "6da9755a8643b93898dc758302f2dabeb3102d4ed5b73c70578abd470f13f831"
+      },
+      {
+        "file": "county-participation.csv",
+        "bytes": 512,
+        "sha256": "9f3623d46f0df591b03a21fe759d9705228db9de0ab51e74230cd09a1fc34c65"
+      },
+      {
+        "file": "native-derived-contest-sums.csv",
+        "bytes": 1885,
+        "sha256": "e5771cddcd6e0765748ec43dd43b698494548113d168b7e2e633292e522dfd37"
+      },
+      {
+        "file": "native-derived-rate-checks.csv",
+        "bytes": 4831,
+        "sha256": "9e4d433b63b4b127f345872ecad7e0421a15d4632c982e93bbb3b55bbf4749bc"
+      },
+      {
+        "file": "native-mail-receipts.csv",
+        "bytes": 5437,
+        "sha256": "451b70c4a03b5bcf44e9d9e99c717ae57a2681d1734f894136b404bff2025ee9"
+      },
+      {
+        "file": "native-participation-modes.csv",
+        "bytes": 498,
+        "sha256": "38d9fe050441565e418dadcd67d81b3e84aaec36b0e36e01d4f520862e6cd403"
+      },
+      {
+        "file": "native-reporting-statistics.csv",
+        "bytes": 379,
+        "sha256": "0829f02e0c98f7fa9ed752edf5d5359074827c685130024890b6207a0f025bed"
+      },
+      {
+        "file": "native-source-declarations.csv",
+        "bytes": 648,
+        "sha256": "b4d6cb2c260df31c930e7aee28e719c8f5511d65cfc97685614fca444e2c9544"
+      },
+      {
+        "file": "native-source-pages.csv",
+        "bytes": 16082,
+        "sha256": "a0e7ac0ce6e5c364896d148ee9cf131315dfd4787f01cbc04ce435ace179176f"
+      },
+      {
+        "file": "native-unit-candidate-results.csv",
+        "bytes": 164990,
+        "sha256": "f47c9971f7f0a319405bf4adb117faa0d1521930a34dffa8f59a6ced2ec2102b"
+      },
+      {
+        "file": "native-unit-contest-accounting.csv",
+        "bytes": 52207,
+        "sha256": "8a0545e6cc79ff6ed21e24d4d2fe0e3e32287d66880dcd80c72b7758c28a2560"
+      },
+      {
+        "file": "native-unit-literal-party-totals.csv",
+        "bytes": 89045,
+        "sha256": "aad77b43a330b1bf41ea73dca5749e775251429c7dc9f33b3a2b0b74099a3ea3"
+      },
+      {
+        "file": "native-unit-participation-modes.csv",
+        "bytes": 9625,
+        "sha256": "7fc6322eba37b50d482f94b3d82c0676f0292dd2aec1b5037770cebdefa9b4d3"
+      },
+      {
+        "file": "native-unit-participation.csv",
+        "bytes": 2396,
+        "sha256": "b136a55f778c626581d103c507a165bbc7ef18fa4771ba031fe5a19213ad7506"
+      },
+      {
+        "file": "review-pa-county-native-query.py",
+        "bytes": 26216,
+        "sha256": "fbca551c72a85277d35404fc95a846e9e803b518139ff8658dd29411fd1c5df3"
+      },
+      {
+        "file": "source-receipts.json",
+        "bytes": 1878,
+        "sha256": "122d58c409e45a48df6f5a8ae33e32ffc2c2e8605aa0a6638f7bf7ff8bba8c5b"
+      },
+      {
+        "file": "source-records.json.gz",
+        "bytes": 40504,
+        "sha256": "5a3cf0554d87424191a8ca6129d8ce3f8a4f1e5d57672394eb3544f8b7cc4807"
+      }
+    ]
+  },
+  "checks": {
+    "captured_primary_bytes_and_receipt_hashes_match": true,
+    "actual_primary_parent_declares_exact_labels_and_urls": true,
+    "anchored_complete_native_observations_and_all_sixteen_tables_match": true,
+    "focused_rejection_cases_passed": 18,
+    "every_entire_file_and_deterministic_zip_reproduced_offline": true,
+    "every_zip_member_matches_complete_published_query_file": true,
+    "zip_members": 21,
+    "source_originals_and_templates_excluded": true,
+    "no_new_geometry_or_source_fips": true,
+    "explorer_integration_and_live_verification_pending": true
+  }
+}
