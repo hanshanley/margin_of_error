@@ -725,5 +725,5 @@ export function loadReviewedCountyParticipation(reviews) {
   }
   return [...observations, ...loadNewJerseyParticipation(reviews),
     ...loadCaliforniaParticipation(reviews).filter(row => row.geography_level === 'county'),
-    ...loadGeorgiaParticipation(reviews).counties];
+    ...loadGeorgiaParticipation(reviews).counties, ...loadReviewedMinnesotaParticipation(reviews)];
 }

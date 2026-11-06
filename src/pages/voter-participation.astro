@@ -50,6 +50,7 @@ const ufRows: UfRow[] = ufPointer
 const ufAudit = ufPointer ? JSON.parse(readFileSync(resolve(ufPointer.data_directory, 'audit.json'), 'utf8')) : null;
 type ParticipationReview = { id: string; label: string; data_directory: string; base_url: string;
 	complete_download_url: string; city_file?: string; city_label?: string; scope_note: string;
+	checksums_file?: string;
 	tables: { file: string; label: string }[] };
 type CityParticipation = { year: number; voters: number; registered_voters: number | null;
 	registered_turnout_pct: number | null };
@@ -355,6 +356,8 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 				registrations when usable; missing or unusable denominators withhold the calculated fraction.
 				Source-labeled Voters Cast remains distinct from ballot counts and retains its counting scope.
 				California retains native voterTurnout, not a proved all-mode ballot count or independently deduplicated unique voters.
+				Minnesota retains native Total Number Voted: 75 complete county counts and twelve partial inventories with missing totals.
+				Its electorate explicitly sums 7AM and Election Day registrations; native statistical conflicts withhold the calculated fraction.
 				New Jersey's derived early + Election Day + mail-tallied subtotals are explicitly labeled,
 				not native all-mode ballot totals; Essex and Hudson remain withheld in the full 21-county download.
 				These are not UF VEP/VAP estimates or demographic turnout.
@@ -375,15 +378,15 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 			</div>
 			<div class="table-wrap" tabindex="0" role="region" aria-label="Reviewed county participation">
 				<table data-reviewed-county-participation={JSON.stringify(reviewedCounties)}>
-					<caption>Complete county observations; missing rates are not zero. A printed 0.00% alongside positive ballots
+					<caption>Complete county source inventories; partial observations retain missing totals, not zero. A printed 0.00% alongside positive ballots
 						and zero native registrations does not establish zero turnout.</caption>
 					<thead><tr><th scope="col">County</th><th scope="col">Participation reported</th>
 						<th scope="col">Native registrations</th><th scope="col">Calculated fraction</th>
 						<th scope="col">Native printed fraction</th><th scope="col">Native status</th>
 						<th scope="col">Complete data</th></tr></thead>
 					<tbody>{reviewedCounties.map(row => <tr>
-						<th scope="row">{row.county}{row.state_code === 'CA' ? ', California' : row.state_code === 'PA' ? ', Pennsylvania' : row.state_code === 'NJ' ? ', New Jersey' : row.state_code === 'GA' ? ', Georgia' : ' · county equivalent'}</th>
-						<td>{formatNumber(row.ballots)}{reviewedMeasure(row) && ` · ${reviewedMeasure(row)}`}</td>
+						<th scope="row">{row.county}{row.state_code === 'CA' ? ', California' : row.state_code === 'PA' ? ', Pennsylvania' : row.state_code === 'NJ' ? ', New Jersey' : row.state_code === 'GA' ? ', Georgia' : row.state_code === 'MN' ? ', Minnesota' : ' · county equivalent'}</th>
+						<td>{row.ballots === null ? 'Not supplied (incomplete native statistics)' : formatNumber(row.ballots)}{reviewedMeasure(row) && ` · ${reviewedMeasure(row)}`}</td>
 						<td>{row.denominator === null ? row.native_record.native_registered_voters === '0'
 							|| row.state_code === 'GA' && Number(row.native_record.native_total_voters) === 0
 							? 'Withheld (native zero)' : 'Not supplied' : formatNumber(row.denominator)}</td>
@@ -799,10 +802,10 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 				</>)}
 				{participationReviews.map((review: ParticipationReview) => <>
 					{!precinctSourceReviews.some((source: { complete_download_url: string }) => source.complete_download_url === review.complete_download_url) &&
-						<a href={review.complete_download_url} download>{review.label}: complete reviewed counts, original reports, receipts, audits and portable tools (ZIP)</a>}
+						<a href={review.complete_download_url} download>{review.label}: complete reviewed counts, source records, receipts, audits and portable tools (ZIP)</a>}
 					{review.tables.map(table => <a href={`${review.base_url}${table.file}`} download>{table.label}</a>)}
 					<a href={`${review.base_url}audit.json`}>{review.label}: scope and reconciliation audit (JSON)</a>
-					<a href={`${review.base_url}checksums.json`}>{review.label}: complete data and original-source checksums (JSON)</a>
+					<a href={`${review.base_url}${review.checksums_file ?? 'checksums.json'}`}>{review.label}: complete data and original-source checksums ({review.checksums_file ? 'SHA-256' : 'JSON'})</a>
 				</>)}
 				{countyResultsSnapshots.map((snapshot: { label: string; base_url: string;
 					complete_download_url: string; normalized_counties: number }) => <>

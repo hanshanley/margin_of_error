@@ -31,6 +31,10 @@ test('Minnesota context15 preserves every old record and joins only complete nat
   const nextRecords = JSON.parse(gunzipSync(readFileSync(new URL('complete-source-records.json.gz', nextRoot))));
   const native = loadReviewedMinnesotaParticipation(JSON.parse(readFileSync('public/participation-source-reviews.json')).reviews);
   assert.deepEqual(nextRecords, [...records, ...native]);
+  const liveRecords = [...loadAdditionalParticipation().counties,
+    ...loadReviewedCountyParticipation(JSON.parse(readFileSync('public/participation-source-reviews.json')).reviews)];
+  assert.deepEqual(nextRecords, liveRecords);
+  assert.deepEqual(loadCountyContextReview(liveRecords).counts, next.counts);
   assert.deepEqual(next.observations.filter(row => row.state_code !== 'MN'), review.observations);
   assert.deepEqual(next.excluded.slice(0, review.excluded.length), review.excluded);
   assert.deepEqual(next.counts, { complete_source_records: 1221, contextual_joins: 737, jurisdictions: 18,
@@ -51,7 +55,7 @@ test('Minnesota context15 preserves every old record and joins only complete nat
 test('complete county review reproduces without changing any source observations or withheld rates', () => {
   const liveRecords = [...loadAdditionalParticipation().counties,
     ...loadReviewedCountyParticipation(JSON.parse(readFileSync('public/participation-source-reviews.json')).reviews)];
-  assert.deepEqual(records, liveRecords);
+  assert.deepEqual(records, liveRecords.filter(row => row.review_id !== 'minnesota-bulk-participation-20261106-01'));
   assert.deepEqual(createCountyContextReview(records, inventories, collections, investigation), review);
   assert.deepEqual(review.counts, { complete_source_records: 1134, contextual_joins: 662, jurisdictions: 17,
     reviewed_rates: 286, missing_rates: 376, excluded_municipalities: 286, excluded_missing_county_totals: 186 });
@@ -97,7 +101,7 @@ test('preserves the full previous immutable query while independently joining Je
   assert.equal(jefferson.denominator, 28226);
   assert.equal(jefferson.reported_pct, 100 * 15205 / 28226);
   assert.equal(jefferson.maps_approved, false);
-  assert.deepEqual(loadCountyContextReview(records).counts, review.counts);
+  assert.throws(() => loadCountyContextReview(records), /complete current source records/);
   assert.throws(() => loadCountyContextReview(oldRecords), /complete current source records/);
 });
 

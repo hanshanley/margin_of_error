@@ -35,10 +35,13 @@ ZIP and seventeen duplicate build-output geometries are additionally relocated
 after full-byte verification. Distinct pinned paths may share filenames;
 shared-release asset names must remain unique. Original interactive geometry,
 earlier snapshots and complete downloads remain intact.
-**Next:** review Minnesota's additive county participation extension; its complete
-query publication and all 87 independent Census identities now pass below.
-Allow for the actual **1,436,389-byte** hosted headroom without dropping any
-complete downloads, original interactive geometries or historical snapshots.
+**Next:** publish and finish exact production verification of Minnesota's
+additive county participation extension. Its factual query, all 87 independent
+Census identities and complete context15 publication now pass below. The new
+prepared local build is **985,711,020 bytes**, with **189 entire relocations**
+verified; actual hosted capacity still requires the new deployment measurement.
+No complete downloads, original interactive geometries or historical snapshots
+are removed.
 No new unverified source may inherit this deployment's LIVE flag.
 See `20261106-lycoming-explorer-01`.
 
@@ -327,15 +330,15 @@ ANSI identities. The join uses Minnesota-only literal county names with
 case-folding and the Census County suffix removed, never a FIPS formula.
 Native county IDs and missing native FIPS remain unchanged. This verifies
 identity, not exact 2026 election reporting boundaries or rates.
-**Next:** prepare a separately reviewed additive context extension, retaining
-all existing data and complete downloads and guarding actual hosted capacity.
-No Minnesota explorer pointer, map or rate is yet changed.
+**At the factual-only stage:** a separately reviewed additive context extension
+was required, retaining all existing data and complete downloads and guarding
+actual hosted capacity. Acquisition alone did not change the live explorer.
 See `20261106-minnesota-acquisition-01/validation.json` for acquisition evidence,
 not a downloadable participation query. The complete portable query, publication
 and independent identity proofs above supersede the earlier acquisition-only
 stage; no Minnesota explorer or certification claim follows from acquisition.
 
-**Minnesota contextual integration in preparation, not LIVE:** all 87 retained
+**Minnesota context15 published; explorer integration not yet LIVE:** all 87 retained
 2024 contextual shapes now independently match both previously verified entire
 Census inventories and the entire current public geometry bytes. All shapes are
 valid; documented generalized-boundary overlaps remain unchanged. The new native
@@ -344,7 +347,7 @@ counts**, **12 missing complete totals**, and **64 reviewable registration
 fractions**; the other eleven complete counties keep their supplied electorate
 but withhold rates because native statistics conflict. Missing counties are not
 replaced by their partial reported subtotals. All three adapter tests and forty
-pre-existing adapter tests pass. The draft complete context15 query reproduces
+pre-existing adapter tests pass. The complete context15 query reproduces
 offline and retains all **1,134 old records / 662 old joins / 17 old geometries**
 and every prior exclusion. Its independently reviewed result is **1,221 source
 records / 737 county joins / 350 usable rates / 387 missing gray rates**, across
@@ -353,10 +356,33 @@ All source-map approval flags and missing native FIPS/clocks remain unchanged.
 The complete **32-file / 31-member / 2,904,232-byte** context ZIP has SHA-256
 `4596858fb800195759a26616ad856d2500306ae431f9fe877b6fe20f40e1eda5`.
 See `20261106-minnesota-explorer-01`.
-**Next:** freeze and publish the fully verified contextual query before changing
-the public pointer; then connect native nullable records with explicit partial
-table labels, preserve all historical queries and measure hosted-size capacity.
-No new explorer LIVE flag before exact deployment and production proof.
+The fixed context revision is
+**`635697084ec43e996662eb5efe55d154fe187405`**, tag
+`voter-county-participation-context-20261106-15`, release **436488147**.
+All **four entire anonymous release assets / 32 pinned files / 31 ZIP members**,
+extracted offline verification and byte-identical archive reproduction pass.
+Credential jobs **42219582590 / 42219633083** pass. Checksummed, fixed snapshots
+are never overwritten; the release is not host-enforced immutable.
+The local integration retains **356 native county rows / 705 download anchors /
+701 URLs**, including all **269 previous rows / 684 previous anchors**. Partial
+native counts explicitly display missing, never zero or a complete subtotal.
+All **86 focused Node tests**, Astro check (**zero errors/warnings**), site build
+and **189 entire relocated download checks** pass. The compatible legacy app is
+regenerated from the unchanged, hash-verified pinned source and its manifest
+updated. Local prepared size is **985,711,020 bytes**. Context15's complete ZIP,
+18 duplicate context15 geometries and 16 duplicate context12 geometries use
+their entire fixed originals; interactive geometry and historical archives remain
+intact. This local measurement is not a substitute for the actual hosted size.
+All **seven local browser scenarios** now pass: desktop/mobile with and without
+JavaScript, failed review, changed review and failed current feed. All 87 native
+inventories, twelve partial totals, eleven held conflict rates, all earlier
+records/downloads and eighteen entire import JSONs are checked. The exact
+source-table selector includes collapsed inventories and distinguishes Lake
+from Red Lake. The temporary byte-preserving local server is stopped.
+**Next:** publish the reviewed UI and verify its exact original artifact,
+credentials, **411 entire selected hosted/public files**, actual hosted capacity
+and seven production browser scenarios. No explorer LIVE flag before this new
+production proof.
 
 **November 6, 11:09 UTC: Columbia participation is LIVE verified.**
 Exact UI `2622a0d0dd0d5549392ddab6b5c6abc6ed6f9245`, Pages **42207340056

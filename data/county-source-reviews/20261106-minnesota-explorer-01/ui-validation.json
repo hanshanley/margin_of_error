@@ -1,0 +1,55 @@
+{
+  "scope": "Minnesota additive county participation integration; local validation, not a production LIVE claim",
+  "factual_revision": "29844f67234c8384050d857e394ed64b512b5af0",
+  "context_revision": "635697084ec43e996662eb5efe55d154fe187405",
+  "context_release_id": 436488147,
+  "context_publication_proof": "release-verification.json",
+  "focused_node_tests": {
+    "command": "node --test scripts/reviewed-county-participation.test.mjs scripts/county-participation-context.test.mjs scripts/voter-participation.test.mjs scripts/additional-participation.test.mjs",
+    "passed": 86,
+    "failed": 0
+  },
+  "astro_check": {"command": "npm run check", "errors": 0, "warnings": 0},
+  "build": {"command": "npm run build", "passed": true},
+  "pages_preparation": {
+    "command": "node scripts/prepare-participation-pages.mjs",
+    "entire_relocated_downloads_verified": 189,
+    "local_site_bytes": 985711020,
+    "actual_hosted_size_still_requires_exact_new_deployment": true,
+    "complete_queries_and_original_interactive_geometries_preserved": true
+  },
+  "legacy_renderer": {
+    "generator": "publicationScript from scripts/stage-voter-participation.mjs",
+    "unchanged_hash_verified_source_revision": "792e3d91609f7ee929c35b5ec15c13710db94be8",
+    "adapted_app_bytes": 24780,
+    "adapted_app_sha256": "667f5ee0380d061349d7c88019b257f6dedc11ee51cbc3a213db22ba7c9bced1",
+    "publication_manifest_updated": true,
+    "original_research_data_unchanged": true
+  },
+  "browser_proof": "local-browser.json",
+  "browser_scenarios_passed": 7,
+  "native_inventories": 87,
+  "complete_minnesota_counts": 75,
+  "missing_minnesota_totals": 12,
+  "reviewed_minnesota_registration_fractions": 64,
+  "complete_counties_with_conflict_rates_withheld": 11,
+  "preserved_previous_source_records": 1134,
+  "source_records": 1221,
+  "county_joins": 737,
+  "usable_rates": 350,
+  "missing_rates": 387,
+  "jurisdictions": 18,
+  "native_county_rows": 356,
+  "preserved_previous_native_county_rows": 269,
+  "download_anchors": 705,
+  "distinct_download_urls": 701,
+  "preserved_previous_download_anchors": 684,
+  "qualifications": [
+    "Twelve partial native inventories do not establish complete county participation or registration totals.",
+    "Eleven complete native county counts retain supplied electorates but withhold conflicting calculated rates.",
+    "Minnesota registration sums are explicitly derived from native 7AM plus Election Day registrations.",
+    "Missing native FIPS, update clock and timezone remain missing; fetch receipts are not updates.",
+    "Contextual geometry is retained 2024 geography, not certified 2026 reporting boundaries.",
+    "No statewide subtotal, demographic turnout, completed counting, certification or nationwide completeness is inferred."
+  ]
+}

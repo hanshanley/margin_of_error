@@ -402,7 +402,8 @@ function stateParticipationRows() {
     function currentCountDetail(host, row, county = false) {
       host.replaceChildren(html("h4", "", county ? row.county : row.unit),
         html("p", "selection-rate", fmt(row.ballots)),
-        html("p", "selection-basis", row.ballots === null ? "County total not supplied · select a source reporting unit"
+        html("p", "selection-basis", row.ballots === null ? row.native_record?.all_statistics_reported === "false"
+          ? "County total not supplied · incomplete native statistics" : "County total not supplied · select a source reporting unit"
           : row.review_id ? `2026 ${participationLabel(row) || "ballots reported"} · not final/certified` : "2026 ballots reported · unofficial"),
         html("p", "selection-note", `${fmt(row.denominator)} ${electorateLabel(row)}; `
           + `${pct(row.reported_pct)} ${participationLabel(row) || "reported-ballot"} fraction. Not final turnout or a CPS estimate.`),

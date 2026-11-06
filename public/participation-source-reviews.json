@@ -2,12 +2,17 @@
   "reviews": [
     {
       "id": "minnesota-bulk-participation-20261106-01",
-      "title": "Minnesota: complete native participation statistics and separate candidate/party choices",
+      "label": "Minnesota: complete native participation statistics and separate candidate/party choices",
       "data_directory": "data/county-source-reviews/20261106-minnesota-facts-01",
       "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/29844f67234c8384050d857e394ed64b512b5af0/data/county-source-reviews/20261106-minnesota-facts-01/",
       "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-minnesota-native-query-20261106-01/complete-minnesota-native-query.zip",
-      "description": "All 4,105 native statistics records, 87 counties, 4,105 precinct references, nine literal parties, 8,285 county choices and 332,337 precinct choices. Seventy-five counties have complete statistics; twelve retain partial subtotals, not fabricated county totals. All 129 component conflicts, seven electorate excesses and 87 estimated question-blank residuals survive. Missing FIPS, update clocks, timezones and ballot-mode definitions are not inferred. Full standalone tables and the complete portable query remain available; separate contextual integration is required before mapping.",
-      "downloads": [
+      "complete_download_bytes": 2941529,
+      "complete_download_sha256": "77a4813221c8f5414d05786b3f0bf569e1036ed0936758227ae536db1fbd0a6e",
+      "maps_approved": false,
+      "review_status": "complete_bulk_native_statistics_and_separate_results_query_reviewed",
+      "checksums_file": "checksums.sha256",
+      "scope_note": "All 4,105 native statistics records, 87 counties, 4,105 precinct references, nine literal parties, 8,285 county choices and 332,337 precinct choices. Seventy-five counties have complete statistics; twelve retain partial subtotals, not fabricated county totals. All 129 component conflicts, seven electorate excesses and 87 estimated question-blank residuals survive. Missing FIPS, update clocks, timezones and ballot-mode definitions are not inferred. Full standalone tables and the complete portable query remain available; separate contextual integration is required before mapping.",
+      "tables": [
         {"file": "county-participation.csv", "label": "Minnesota: all 87 complete/partial county participation inventories (CSV)"},
         {"file": "pctstats.csv", "label": "Minnesota: all 4,105 native precinct-statistics rows and reporting flags (CSV)"},
         {"file": "counties.csv", "label": "Minnesota: all 87 literal native county identities (CSV)"},
