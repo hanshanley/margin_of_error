@@ -33,6 +33,37 @@ published Susquehanna native query through a separate county context review;
 continue remaining genuine county gaps. Keep schedule #5 active and external
 Google-owner/GitHub-Support remediation explicitly incomplete.
 
+**November 6, 16:55 UTC: Susquehanna/context20 deployment failed; bounded deploy-only retry.**
+Tested UI **`6fdb6bde43fc6b961a1f1d4a3e5f7f7a47614716`** is pushed to
+review/main. Exact Pages **42254442195 attempt 1** built successfully but
+timed out after **600000 ms during `updating_pages`**, not `syncing_files`.
+Original successful artifact **13522221605 / 505,968,741 bytes**, SHA-256
+`3722e7f8067b1e3f6df8cd8064aed371ce776c732d454a18e1da6dc5231ca1df`,
+remains available. Actual hosted preparation was **967,139,394 bytes**, below
+1 GB, with **316 complete byte-verified relocations**. A direct public-pointer
+check after the failure still returned context19. The reported failure stage
+does not establish an underlying service or payload cause.
+
+One bounded **failed-deploy-job-only retry, attempt 2**, reuses that original
+build/artifact; no new workflow, build or local map suite is started. Reuse
+credential jobs **42254442168 / 42254442176**. Failure evidence is in
+`deployment-attempt1-failure.json`; the same exact proof is running as
+**`susquehanna-pages-attempt2-proof-01`**. Do not retry an unchanged failure
+again or dispatch a duplicate deployment.
+The local compatibility export still embedded context19 routing. The original
+verifier was stopped before correcting only generated `app.js` and its manifest
+entry through the existing adapter and exact pinned research original.
+All **115 complete staged files** were checked before and after; the other
+**114 manifest entries** are unchanged. Refreshed compatibility SHA-256:
+`8133d06961f43f5eac03fd8e53b20cd3f826f77ba18d5366c48835f439424bf3`.
+No build or map suite was repeated, and no hosted-manifest exception was
+introduced. Both earlier verifier shells are stopped/failed; do not restart
+them alongside the known attempt-2 verifier. Require its original hosted
+artifact/digest/size, actual hosted size, **444 entire selected public files**,
+all **431 previous paths / 316 relocations / seven production browsers**
+before a LIVE claim. Do not rebuild its prepared `dist/` while it runs.
+Context19 above remains the last independently verified production baseline.
+
 **November 6, 15:53 UTC: Somerset/context19 deployment failed; lossless payload recovery in progress.**
 Both deployment attempts of exact Pages run **42243044220**, UI revision
 **`32b1f8e6f0e55b1fca0d429e10ec88cd29303dc6`**, timed out during
@@ -213,11 +244,12 @@ context21, and all fifteen targeted download tests pass. No production code was
 changed to accommodate those obsolete negative fixtures. Complete local evidence
 is in `validation.json` and `local-browser.json`.
 
-**Next:** commit/push the tested UI candidate once, then verify its own exact
-Pages revision, original hosted artifact, actual hosted size, **444 entire
-selected public files**, all **431 prior paths**, all **316 relocations** and
-seven production browser scenarios. The local preview helper is stopped.
-The current review changes are not yet deployed or verified LIVE.
+The tested UI candidate is committed/pushed as **`6fdb6bde`**. Its exact
+pending workflows and resumed verifier are recorded in the current-status
+section above. The local preview helper is stopped. **Next:** finish this
+same production proof, persist it on the review branch without another main
+deployment, then continue remaining genuine county gaps. No Susquehanna LIVE
+claim is made before the full proof succeeds.
 Do not repeat the completed native acquisition/publication/archive tests or
 county identity inventories. Source/context preparation does not change the
 current verified LIVE context19 coverage.

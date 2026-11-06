@@ -1,0 +1,21 @@
+{
+  "reviewed_at_utc": "2026-11-06T17:20:43.131901+00:00",
+  "pages_run_id": 42254442195,
+  "revision": "6fdb6bde43fc6b961a1f1d4a3e5f7f7a47614716",
+  "run_attempt": 1,
+  "conclusion": "failure",
+  "build_job_id": 128017774270,
+  "build_conclusion": "success",
+  "deploy_job_id": 128020672203,
+  "failure_stage": "updating_pages",
+  "timeout_ms": 600000,
+  "original_artifact_id": 13522221605,
+  "original_artifact_bytes": 505968741,
+  "original_artifact_sha256": "3722e7f8067b1e3f6df8cd8064aed371ce776c732d454a18e1da6dc5231ca1df",
+  "actual_hosted_prepared_bytes": 967139394,
+  "entire_byte_verified_relocations": 316,
+  "failure_log_bytes": 5634,
+  "failure_log_sha256": "b9b4fad9612474b1b078d0c78b8f91b4320e50cd8f9b6667edb621189dc3b435",
+  "live_pointer_observed_after_failure": "/participation-county-context/20261106-19/",
+  "bounded_recovery": "Retry only the failed deploy job once; reuse successful original build and artifact. No repeated build/map tests or new workflow. Failure cause beyond the reported Pages stage is not inferred."
+}

@@ -1,0 +1,18 @@
+{
+  "reviewed_at_utc": "2026-11-06T16:44:31.681Z",
+  "revision": "6fdb6bde43fc6b961a1f1d4a3e5f7f7a47614716",
+  "research_revision": "792e3d91609f7ee929c35b5ec15c13710db94be8",
+  "source_renderer_sha256": "b152036b660047b2f9beb7db8ebc51e98484bc34276989bbfb44e256df1f345f",
+  "pages_run_id": 42254442195,
+  "original_verifier_stopped_before_local_prepared_output_correction": true,
+  "same_deployment_unchanged": true,
+  "build_or_map_suite_repeated": false,
+  "complete_original_public_files_checked_before_and_after": 115,
+  "unchanged_manifest_entries": 114,
+  "old_generated_app_sha256": "8a2a6affea0827ec5e56c3b0bf63420e89b27d5d073f820ed0ff401851c3e299",
+  "refreshed_generated_app_bytes": 25969,
+  "refreshed_generated_app_sha256": "8133d06961f43f5eac03fd8e53b20cd3f826f77ba18d5366c48835f439424bf3",
+  "old_manifest_sha256": "b7ce53a4aab0797735b481c1c900a58b58aee5914ca2906e2dd1fe19005f3563",
+  "refreshed_manifest_sha256": "1eaef828f4b756b0f47814d26e1ac5038aa9c3c5623728a71ef959fdcf00afc7",
+  "scope": "Regenerated only local app.js and its manifest entry through the existing adapter and exact pinned original source after adding context20 routing. Every other complete staged source file and manifest entry is unchanged. Production verification must still compare the complete hosted manifest, except the separately checked platform-specific preview, and exact generated app bytes; no artifact exception or deployment retry."
+}
