@@ -1466,17 +1466,58 @@ and release target match independently. Exact credential runs **42183847483**
 never-overwrite publication, not host-enforced locking. Complete release and
 credential proofs are under
 `data/county-source-reviews/20261106-elk-forest-explorer-01/`.
-All **50** affected tests and Astro check pass for the prepared UI changes;
-build and seven browser checks remain pending until the earlier production
-comparison releases its frozen build. Neither new county is called live.
+All **50** affected tests, Astro check, build, Pages preparation and all
+**seven** local browser scenarios pass. The complete prepared site is
+**943,379,729 bytes**; all 106 relocated bulk downloads are byte-identical.
+Desktop/mobile checks verify all 436 county counts, 64 native-electorate
+fractions, 372 gray missing rates, both new county details and the prior
+Jefferson, Clarion, Cameron and Carbon selections. All 906 previous full
+records, 41 prepared native rows, eighteen complete imports, 52 UF rows,
+historical years and 429 prepared download anchors remain unchanged.
+There are 467 complete anchors / 463 unique URLs. No-JavaScript and all
+three fetch-failure/tamper fallbacks pass; the temporary server is stopped.
+The general validator passes participation checks and still fails only
+at the documented unrelated UK assertion, **23 versus 16**, line 1126;
+this is not represented as a passing full-site validator.
 
 The earlier Cameron/Carbon UI `e8cc10a` built successfully, but Pages
 **42181777067 attempt 1** timed out after ten minutes in `syncing_files`.
 Its failure proof is retained. Only the failed deployment job is retried as
 attempt 2, using the original artifact, frozen browser expectations and
-unchanged local prepared build. Exact production proof remains active under
-`cameron-carbon-exact-production-recovery-02`; no success or live claim is
-made from the successful build alone.
+unchanged local prepared build. Attempt 2 also timed out at ten minutes;
+its complete deployment failure proof is retained separately. The actual
+Pages deployment reports `deployment_cancelled`. No unchanged third retry
+is started. The combined next UI publication supersedes both failed
+deployments with a fresh build artifact and all four new counties.
+The actual 6579e73 public HTML, all 39 native rows / 405 complete anchors,
+the candidate/runtime files and eighteen entire import JSONs are independently
+reverified. Separately, all 41 native rows / 429 anchors of the tested but
+unpublished e8cc10a build are preserved. The new baseline proof explicitly
+distinguishes actual production from that prepared snapshot; it never
+calls e8cc10a live. Exact new deployment/artifact/public byte comparison
+and seven production browser checks remain pending.
+
+The next primary queue also progressed without modifying this tested UI.
+Potter's actual parent declares a three-page summary and 32-page unit report.
+All 35 entire page token multisets and independently parsed complete vectors
+match across both PDF engines, with their different header/line-wrap reading
+orders explicitly handled. All 32 unit participation headers and 96 contests
+reconcile to the county and all counting modes. Its native 6,244 ballots /
+11,041 registrations include 5,389 Election Day, 855 mail and explicit zero
+provisional; two blank ballots are already included. The parent separately
+reports 871 mail-in/absentee receipts; the difference of 16 from counted mail
+is unexplained, not added to ballots. All 32 units are partial / zero complete.
+Preserve separate native November 4 report clocks, unofficial status,
+undeclared timezone and named-write-in wrapping. Cross-unit named-write-in
+identity review, rejection cases, complete portable factual query and release
+remain pending; no source publication, map or UI approval is claimed.
+McKean's actual .org parent ordinarily redirects to .gov and declares a GIS
+results viewer. That ordinary viewer connection timed out with errno 60;
+there is no HTTP status or body. This is not a denial or evidence of absent
+data. No ArcGIS metadata request ran. Actual source bytes, complete receipts,
+declarations, engine outputs, reconciliation and the timeout observation
+remain private under `pa-mckean-potter-primary-20261106-01` and
+`potter-entire-native-review-20261106-01`.
 
 **November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated
