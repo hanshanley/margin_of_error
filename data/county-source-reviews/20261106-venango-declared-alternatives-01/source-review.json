@@ -1,0 +1,68 @@
+{
+  "reviewed_at_utc": "2026-11-06T15:00:37.591428+00:00",
+  "private_originals": "/Users/hanshanley/.copilot/session-state/fdbfdac0-2fcb-428c-8cec-616c510977b2/files/venango-declared-alternatives-20261106-01",
+  "receipts": [
+    {
+      "file": "voters-elections.html",
+      "url": "https://www.venangocountypa.gov/departments/voters_elections/index.php",
+      "attempted_at_utc": "2026-11-06T15:00:36.784568+00:00",
+      "transport": "ordinary verified-TLS GET; no insecure certificate option",
+      "source_scope": "official elections navigation/declared archive",
+      "final_url": "https://www.venangocountypa.gov/departments/voters_elections/index.php",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 166341,
+      "sha256": "ea154b29cd530c5602d8d240d34df06e25191608e6bc60734ee99f0b7414fec8"
+    },
+    {
+      "file": "results-archive.html",
+      "url": "https://www.venangocountypa.gov/departments/voters_elections/election_results_archive.php",
+      "attempted_at_utc": "2026-11-06T15:00:37.311965+00:00",
+      "transport": "ordinary verified-TLS GET; no insecure certificate option",
+      "source_scope": "official elections navigation/declared archive",
+      "final_url": "https://www.venangocountypa.gov/departments/voters_elections/election_results_archive.php",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 232524,
+      "sha256": "e599bf5381994305196103908b3333598408a1ae8f877ea5d18f06c3a6a955fd"
+    },
+    {
+      "file": "https-equivalent-electionday.pdf",
+      "url": "https://venangopa.us/vcresults/ElectionDay.pdf",
+      "attempted_at_utc": "2026-11-06T15:00:37.421623+00:00",
+      "transport": "ordinary verified-TLS GET; no insecure certificate option",
+      "source_scope": "HTTPS equivalent of the exact HTTP report URL declared by the saved official homepage; HTTPS is not claimed to be the literal original anchor",
+      "error_type": "ConnectionError",
+      "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+    }
+  ],
+  "declared_2026_result_links": [
+    {
+      "parent_url": "https://www.venangocountypa.gov/departments/voters_elections/election_results_archive.php",
+      "html_base_literal": "https://www.venangocountypa.gov/",
+      "anchor_href_literal": "Documents/Government/Voters and Elections/Election Results Archive/2026 General Primary Election Summary with Writeins OFFICIAL.pdf?t=202607300135130",
+      "url": "https://www.venangocountypa.gov/Documents/Government/Voters and Elections/Election Results Archive/2026 General Primary Election Summary with Writeins OFFICIAL.pdf?t=202607300135130",
+      "anchor_label_literal": "",
+      "document_label_literal": "2026 General Primary Election Summary with Writeins OFFICIAL",
+      "filename_literal": "2026 General Primary Election Summary with Writeins OFFICIAL.pdf",
+      "declared_primary_filename": true,
+      "document_body_acquired": false
+    },
+    {
+      "parent_url": "https://www.venangocountypa.gov/departments/voters_elections/election_results_archive.php",
+      "html_base_literal": "https://www.venangocountypa.gov/",
+      "anchor_href_literal": "Documents/Government/Voters and Elections/Election Results Archive/2026 General Primary Election Summary with Writeins OFFICIAL_1.pdf?t=202607300135130",
+      "url": "https://www.venangocountypa.gov/Documents/Government/Voters and Elections/Election Results Archive/2026 General Primary Election Summary with Writeins OFFICIAL_1.pdf?t=202607300135130",
+      "anchor_label_literal": "",
+      "document_label_literal": "2026 General Primary Election Summary with Writeins OFFICIAL 1",
+      "filename_literal": "2026 General Primary Election Summary with Writeins OFFICIAL_1.pdf",
+      "declared_primary_filename": true,
+      "document_body_acquired": false
+    }
+  ],
+  "whole_county_participation_approved": false,
+  "query_release_created": false,
+  "maps_approved": false,
+  "qualification": "Transport and declaring-page review only. Primary election documents do not establish November 3 general-election participation. Existing Act88 mail-process data are not an all-mode county total. No source absence, zero turnout, candidate-to-ballot conversion or statewide completeness is inferred. No access restriction or certificate verification was bypassed.",
+  "declaring_page_review": "Both entire saved pages were inspected, including empty-text PDF anchors and surrounding native text. The archive declares two 2026 General Primary PDFs, not a November 3 general-election report. These PDFs were not downloaded as November results; this is not a claim that no general report exists elsewhere."
+}

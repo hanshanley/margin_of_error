@@ -31,12 +31,27 @@ are not certified 2026 reporting boundaries.
 
 Proofs are in `20261106-three-pa-summary-explorer-01`. Do not repeat the completed
 facts/context publishers, map suites or production verifier. **Next:** continue
-genuine 2026 county gaps using source-declared alternatives, including Venango's
-unacquired whole-county report; its separate Act 88 mail-process observations are
-not ballots for the whole county. Retain the Maine/D.C. accounting gaps and the
+genuine 2026 county gaps using source-declared alternatives. Venango's unacquired
+whole-county report remains a gap; its separate Act 88 mail-process observations
+are not ballots for the whole county. Retain the Maine/D.C. accounting gaps and the
 separately frozen Michigan QVF scope, which approves no generic rates or tabulator
 totals. Nationwide coverage and external Google-owner/GitHub-Support remediation
 remain incomplete. Keep recurring schedule #5 active.
+
+**November 6, 15:00 UTC: distinct Venango alternatives reviewed; no invented county total.**
+Both complete official elections-navigation and results-archive responses were
+acquired with verified TLS and full response hashes. The archive's empty-text PDF
+anchors resolve using its actual HTML base; neighboring native labels declare two
+**2026 General Primary** documents, not November 3 general-election returns.
+Their bodies were not acquired as November results. The HTTPS equivalent of the
+previously declared HTTP `venangopa.us/vcresults/ElectionDay.pdf` also resets the
+ordinary connection. No access restriction or certificate check was bypassed.
+These specific reviewed pages and transport attempts do not prove global source
+absence. Complete private response receipts and the scoped public review are in
+`20261106-venango-declared-alternatives-01`; no numerical query release, UI change,
+map approval or metadata-only download was created. Do not retry these same
+unchanged endpoints. Continue different source-declared county/Maine alternatives;
+leave the verified context18 UI and Maine/D.C. residuals unchanged.
 
 **November 6, 14:41 UTC: context18 published and server-locked; UI validation in progress.**
 Release **436611038**, tag `voter-county-participation-context-20261106-18`,
