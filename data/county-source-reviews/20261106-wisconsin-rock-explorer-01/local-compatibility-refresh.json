@@ -1,0 +1,11 @@
+{
+  "reviewed_at_utc": "2026-11-06T20:27:54.434Z",
+  "research_revision": "792e3d91609f7ee929c35b5ec15c13710db94be8",
+  "source_renderer_sha256": "b152036b660047b2f9beb7db8ebc51e98484bc34276989bbfb44e256df1f345f",
+  "complete_original_public_files_checked_before_and_after": 115,
+  "unchanged_manifest_entries": 114,
+  "old_generated_app_sha256": "18adcd7ab9152b82598fe5d634c10d4361ab4815c9179de8a05c80d46274cb36",
+  "refreshed_generated_app_bytes": 27137,
+  "refreshed_generated_app_sha256": "2c0fc8f0b19749194dce7577fff3b0f964e0c124b8e257c72b5076d7b87f2aa3",
+  "scope": "Existing publication adapter regenerated for context25 routing; every other complete original and manifest entry remains unchanged."
+}

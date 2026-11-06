@@ -364,6 +364,9 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 				Florida reports native Voter Turnout divided by same-table Eligible Active Registered Voters.
 				Its provisional and overseas completion flags remain literal; 100% precinct reporting does not
 				establish finished counting. No report-update clock or timezone is supplied.
+				Wisconsin currently includes Rock County only: a reported Ballots Cast snapshot and
+				same-report Registered Voters fraction. Its source does not establish complete all-mode
+				counting, and its literal update has no declared timezone. Other Wisconsin counties remain missing.
 				New Jersey's derived early + Election Day + mail-tallied subtotals are explicitly labeled,
 				not native all-mode ballot totals; Essex and Hudson remain withheld in the full 21-county download.
 				These are not UF VEP/VAP estimates or demographic turnout.
@@ -391,7 +394,7 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 						<th scope="col">Native printed fraction</th><th scope="col">Native status</th>
 						<th scope="col">Complete data</th></tr></thead>
 					<tbody>{reviewedCounties.map(row => <tr>
-						<th scope="row">{row.county}{row.state_code === 'CA' ? ', California' : row.state_code === 'PA' ? ', Pennsylvania' : row.state_code === 'NJ' ? ', New Jersey' : row.state_code === 'GA' ? ', Georgia' : row.state_code === 'MN' ? ', Minnesota' : row.state_code === 'UT' ? ', Utah' : row.state_code === 'FL' ? ', Florida' : ' · county equivalent'}</th>
+						<th scope="row">{row.county}{row.state_code === 'CA' ? ', California' : row.state_code === 'PA' ? ', Pennsylvania' : row.state_code === 'NJ' ? ', New Jersey' : row.state_code === 'GA' ? ', Georgia' : row.state_code === 'MN' ? ', Minnesota' : row.state_code === 'UT' ? ', Utah' : row.state_code === 'FL' ? ', Florida' : row.state_code === 'WI' ? ', Wisconsin' : ' · county equivalent'}</th>
 						<td>{row.ballots === null
 							? row.native_record?.source_scope_review?.startsWith('withheld_')
 								? 'Withheld (native counting scope)'

@@ -88,7 +88,7 @@ reconciled selection. Durable exact production proofs are in
 This verifies the qualified county participation extension, not statewide
 certification, demographic rates or nationwide completeness.
 
-**November 6: Wisconsin Rock County native query published; context25 frozen, not integrated.**
+**November 6: Wisconsin Rock County and context25 published; explorer production verification pending.**
 The actual official November 3 general report returned **200 / 451,325 bytes**.
 All **53 native tables / 7,413 cells** independently agree between HTMLParser,
 BeautifulSoup and network-blocked, scripts-disabled Chromium. All **106 native
@@ -126,8 +126,30 @@ only Rock: **1,329 records / 834 joins / 447 fractions / 20 jurisdictions**.
 Its **34 complete files / 33 ZIP members** pass standalone offline verification;
 the complete ZIP is **3,083,230 bytes / SHA-256
 `0fc67ca8554e5bf98d3b56b304a0963987357f1d57211e805229aabffd2eeb44`**.
-Context25 publication and explorer activation remain pending. No new LIVE
-state coverage or native all-mode/map/analysis approval is claimed.
+Immutable context25 release **436971549**, source
+**`2de44d02aec9341853d1b6f513ca531b0ee3ef47`**, passes draft and public checks:
+all **four entire assets / 34 commit-pinned files / 33 ZIP members** and
+byte-identical full offline reproduction. Both exact credential jobs
+**42288043010 review / 42288042995 tag** passed.
+The active integration passes **120 focused importer/context/historical/download
+tests**, the complete site build and Astro checking (**zero errors / zero
+warnings**, five hints). All **902 previous download anchors /
+18 entire imported datasets / 463 native rows / 497 selected public paths**
+were independently recaptured from the exact live Florida baseline before
+activation. The compatibility renderer checks all 115 entire inputs and changes
+only the generated download router, preserving the other 114 entries.
+All **seven local browser scenarios** pass against the actual prepared Pages
+layout: desktop/mobile JavaScript and no-JavaScript, plus failed review,
+changed review and failed current-feed fallbacks. All **834 exact county
+counts / 447 registered fractions / 387 missing rates** match; all 71 other
+Wisconsin counties remain missing. All 902 previous download anchors and
+18 complete imports are preserved, now **920 anchors / 915 distinct URLs**.
+All **415 complete relocated downloads** pass byte identity checks; the
+measured local prepared site is **971,091,621 bytes**, below the unchanged
+one-billion-byte limit. The Rock static county label and source qualifications
+also work without JavaScript. Local browser and exact production checks are
+separate gates; no new LIVE state coverage or native all-mode/map/analysis
+approval is claimed before the exact production verifier passes.
 The official MyVote election-results explainer says Wisconsin has no centralized
 unofficial election-night reporting site and points to its 72 county clerks;
 that is a legitimate county-first pipeline case, not a reason to synthesize

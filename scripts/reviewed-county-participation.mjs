@@ -1326,5 +1326,5 @@ export function loadReviewedCountyParticipation(reviews) {
     ...loadReviewedAdditionalPennsylvaniaParticipation(reviews), ...loadReviewedSomersetParticipation(reviews),
     ...loadReviewedSusquehannaParticipation(reviews), ...loadReviewedSullivanWyomingParticipation(reviews),
     ...loadReviewedBedfordNorthumberlandParticipation(reviews), ...loadReviewedUtahParticipation(reviews),
-    ...loadReviewedFloridaParticipation(reviews)];
+    ...loadReviewedFloridaParticipation(reviews), ...loadReviewedRockParticipation(reviews)];
 }

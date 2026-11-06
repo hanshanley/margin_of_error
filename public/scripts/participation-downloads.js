@@ -18,13 +18,15 @@ export const participationCountyContextRoots = {
   "20261106-22": "https://raw.githubusercontent.com/hanshanley/margin_of_error/4f8c93d70a6d405519789ee4c5f7a631749e3829/public/participation-county-context/20261106-22/",
   "20261106-23": "https://raw.githubusercontent.com/hanshanley/margin_of_error/e32e64f6a5301d10df1bd72974975bc0f8cd3749/public/participation-county-context/20261106-23/",
   "20261106-24": "https://raw.githubusercontent.com/hanshanley/margin_of_error/87e11069b0a27d62f71e187cb37cbc36c421fea8/public/participation-county-context/20261106-24/",
+  "20261106-25": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2de44d02aec9341853d1b6f513ca531b0ee3ef47/public/participation-county-context/20261106-25/",
 };
 
 export function participationDownload(path) {
-  const contextArchive = /^\/participation-county-context\/(20261106-(0[1-9]|1[0-9]|2[01234]))\/complete-county-participation-context-\2\.zip$/.exec(path);
+  const contextArchive = /^\/participation-county-context\/(20261106-(0[1-9]|1[0-9]|2[012345]))\/complete-county-participation-context-\2\.zip$/.exec(path);
   if (contextArchive)
     return `https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-${contextArchive[1]}/complete-county-participation-context-${contextArchive[2]}.zip`;
-  const contextGeometry = /^\/participation-county-context\/(20261106-2[34])\/(geometry\/county-(?:AL|AR|AZ|CA|DC|FL|GA|IA|KY|MN|MO|NJ|NV|OR|PA|UT|VA|WA|WY)\.geojson)$/.exec(path)
+  const contextGeometry = /^\/participation-county-context\/(20261106-25)\/(geometry\/county-(?:AL|AR|AZ|CA|DC|FL|GA|IA|KY|MN|MO|NJ|NV|OR|PA|UT|VA|WA|WI|WY)\.geojson)$/.exec(path)
+    || /^\/participation-county-context\/(20261106-2[34])\/(geometry\/county-(?:AL|AR|AZ|CA|DC|FL|GA|IA|KY|MN|MO|NJ|NV|OR|PA|UT|VA|WA|WY)\.geojson)$/.exec(path)
     || /^\/participation-county-context\/(20261106-1[34])\/(geometry\/county-(?:AL|AR|AZ|CA|DC|FL|GA|IA|KY|MO|NJ|NV|OR|PA|VA|WA|WY)\.geojson)$/.exec(path)
     || /^\/participation-county-context\/(20261106-1[012])\/(geometry\/county-(?:AL|AR|AZ|CA|DC|FL|IA|KY|MO|NJ|NV|OR|PA|VA|WA|WY)\.geojson)$/.exec(path)
     || /^\/participation-county-context\/(20261106-(?:1[56789]|2[012]))\/(geometry\/county-(?:AL|AR|AZ|CA|DC|FL|GA|IA|KY|MN|MO|NJ|NV|OR|PA|VA|WA|WY)\.geojson)$/.exec(path);

@@ -15,8 +15,9 @@ import { loadReviewedCountyParticipation as loadCompleteReviewedCountyParticipat
 const reviews = JSON.parse(readFileSync('public/participation-source-reviews.json', 'utf8')).reviews;
 const utahId = 'utah-ballot-statistics-20261106-01';
 const floridaId = 'florida-consolidated-turnout-20261106-01';
+const rockId = 'wisconsin-rock-turnout-20261106-01';
 const loadCurrentReviewedCountyParticipation = sourceReviews =>
-  loadCompleteReviewedCountyParticipation(sourceReviews).filter(row => ![utahId, floridaId].includes(row.review_id));
+  loadCompleteReviewedCountyParticipation(sourceReviews).filter(row => ![utahId, floridaId, rockId].includes(row.review_id));
 const newCountyIds = ['pennsylvania-bedford-20261106-01', 'pennsylvania-northumberland-20261106-01'];
 const loadAllReviewedCountyParticipation = sourceReviews =>
   loadCurrentReviewedCountyParticipation(sourceReviews).filter(row => !newCountyIds.includes(row.review_id));
@@ -51,6 +52,7 @@ test('Rock preserves the qualified county snapshot, complete scope and native mi
   const qualification = JSON.parse(readFileSync(
     'data/county-source-reviews/20261106-wisconsin-rock-explorer-01/county-usability-review.json'));
   assert.deepEqual(rows, qualification.current_source_records);
+  assert.deepEqual(loadCompleteReviewedCountyParticipation(reviews).filter(row => row.review_id === rockId), rows);
   const [row] = rows;
   assert.equal(row.ballots, 67812);
   assert.equal(row.denominator, 97950);
@@ -143,7 +145,7 @@ test('Florida rejects altered or missing complete numerical inputs and duplicate
 });
 
 test('Utah preserves every prior native record and keeps missing county totals distinct from zero', () => {
-  const rows = loadCompleteReviewedCountyParticipation(reviews).filter(row => row.review_id !== floridaId);
+  const rows = loadCompleteReviewedCountyParticipation(reviews).filter(row => ![floridaId, rockId].includes(row.review_id));
   const previous = JSON.parse(gunzipSync(readFileSync(
     'public/participation-county-context/20261106-22/complete-source-records.json.gz')));
   const priorNative = previous.filter(row => rows.some(current =>
