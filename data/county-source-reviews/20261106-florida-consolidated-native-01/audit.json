@@ -1,0 +1,43 @@
+{
+  "row_counts": {
+    "county-participation.csv": 67,
+    "statewide-participation.csv": 1,
+    "native-county-catalog.csv": 67,
+    "source-native-cells.csv": 680
+  },
+  "reported_participants": 8335497,
+  "eligible_active_registered_voters": 13704495,
+  "county_sums_equal_separate_statewide_totals": true,
+  "all_68_printed_percentages_reconcile": true,
+  "native_completion_status_counts": {
+    "native_precincts_completed": {
+      "Y": 67,
+      "N": 0
+    },
+    "native_vote_by_mail_completed": {
+      "Y": 67,
+      "N": 0
+    },
+    "native_early_voting_completed": {
+      "Y": 67,
+      "N": 0
+    },
+    "native_provisional_completed": {
+      "Y": 7,
+      "N": 60
+    },
+    "native_10_day_overseas_completed": {
+      "Y": 3,
+      "N": 64
+    }
+  },
+  "source_as_of_missing": true,
+  "source_timezone_missing": true,
+  "native_codes_not_census_fips": true,
+  "unfinished_ballot_flags_preserved": true,
+  "no_statewide_aggregate_added_to_counties": true,
+  "no_candidate_vote_or_received_ballot_substitution": true,
+  "analysis_rate_approvals": 0,
+  "map_approvals": 0,
+  "scope": "Complete portable numerical query over the official 67-county reporting table and separate statewide aggregate, with every native table cell and completion flag. Not certified turnout, a raw HTML mirror, candidate/party results, demographic participation, a geographic join, CVAP/VAP/VEP rates or a live explorer update."
+}

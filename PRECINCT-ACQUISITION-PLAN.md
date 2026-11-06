@@ -2,6 +2,37 @@
 
 ## Current verified production and next acquisition
 
+**November 6: consolidated Florida participation acquired and numerically reproduced; not yet LIVE.**
+The official `floridaelectionwatch.gov/CountyReportingStatus` page supplies
+all **67 counties**, rather than requiring 67 independent county scrapes.
+The complete **169,716-byte** original, official FAQ, declared downloads page
+and stylesheet are retained privately. Independent standard-library parsing,
+BeautifulSoup and Chromium's DOM agree on **all 69 rows / 10 columns**,
+including the headers and distinct statewide total. Both county sums exactly
+match **8,335,497 reported participants / 13,704,495 eligible active registered
+voters**. All **68 printed percentages** independently reconcile.
+The complete portable numerical package at
+`data/county-source-reviews/20261106-florida-consolidated-native-01/`
+contains **67 county rows / one separate statewide row / 67 native county
+identities / all 680 native data cells**, the full reviewed numerical input,
+methods, audit, checksums and deterministic executable query/tests.
+All **eight focused tests** pass. Native completion flags remain literal:
+provisional completion is **Y in seven / N in 60 counties**; 10-day overseas
+completion is **Y in three / N in 64**. Thus 100% precinct reporting is not
+silently treated as final counting. No native update time or timezone is
+declared, so acquisition clocks do not replace them. The generic DOS turnout
+index returned 403; that response is retained without bypass.
+Both entire Census original inventories independently identify all 67 native
+county names and match the unchanged **494,363-byte** hosted Florida geometry
+exactly. All shapes are valid; **67 generalized-boundary overlap pairs** are
+documented, not certified election-boundary claims.
+Native three-letter identifiers are not Census FIPS, and geographic identity
+alone does not approve rates or maps. Before explorer promotion, explicitly
+reconcile the already published **32,506-participant Monroe** observation so
+the new statewide table neither erases its history nor double-counts it.
+Native publication, separate county usability, immutable context extension
+and exact deployed verification remain pending.
+
 **November 6: Utah numerical and context queries immutable; UI validated locally, not yet LIVE.**
 The actual official general-election portal's declared report menu supplies
 **26 current complete originals / 25 distinct counties**, without guessing
@@ -75,9 +106,12 @@ new refreshes, with all prior links preserved. All 29 Utah detail selections,
 literal clocks and the credited/count discrepancy are checked on desktop/mobile.
 Local source/archive/history scanning and all six scanner regression tests pass.
 The bounded static preview has been stopped.
-This UI is not deployed; the last fully verified production proof remains
+The genuine UI **`13259a3d9037a7cec67166c9c60cc04dce590b33`** is pushed to
+main and the review branch; its exact Pages run **42280168494** and main/review
+credential jobs **42280168478 / 42280168038** are being verified.
+The last fully verified production proof remains
 **context22 / `55465f323f4f63924fb999241c1f0676372a2ab6`**.
-Next: deploy the genuine UI, then measure/verify the exact original hosted
+Next: finish measuring/verifying the exact original hosted
 artifact, all prior public paths and seven production browsers before claiming LIVE.
 
 **November 6: Bedford/Northumberland context22 verified LIVE at 18:46UTC.**

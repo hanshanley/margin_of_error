@@ -1,0 +1,2482 @@
+{
+  "verified_at_utc": "2026-11-06T19:35:54.293332+00:00",
+  "both_entire_3222_record_original_archives_equal_parsed_inventories": true,
+  "independently_checked_census_identities": [
+    {
+      "year": 2024,
+      "entire_inventory_records": 3222,
+      "receipts": [
+        {
+          "path": "public/participation-county-context/20261106-23/complete-2024-county-identities.json.gz",
+          "bytes": 144580,
+          "sha256": "f55f8c9959d056d26e9bfa6b344e9ea564cfc5688b7f7f8b8a2ce8b34f9439ac"
+        },
+        {
+          "path": "public/participation-county-context/20261106-23/gazetteer-2024-national-counties.zip",
+          "bytes": 141679,
+          "sha256": "3c337402b5c6e8d5aa26b4278ccf4edc8989f2683765b3ffbf22296cdb2df3a0"
+        }
+      ],
+      "independently_reviewed_identities": [
+        {
+          "USPS": "FL",
+          "GEOID": "12001",
+          "ANSICODE": "00308548",
+          "NAME": "Alachua County",
+          "ALAND": "2267912994",
+          "AWATER": "241289851",
+          "ALAND_SQMI": "875.646",
+          "AWATER_SQMI": "93.163",
+          "INTPTLAT": "29.67574",
+          "INTPTLONG": "-82.357221"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12003",
+          "ANSICODE": "00306920",
+          "NAME": "Baker County",
+          "ALAND": "1515738965",
+          "AWATER": "9686120",
+          "ALAND_SQMI": "585.23",
+          "AWATER_SQMI": "3.74",
+          "INTPTLAT": "30.324442",
+          "INTPTLONG": "-82.302284"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12005",
+          "ANSICODE": "00295738",
+          "NAME": "Bay County",
+          "ALAND": "1964821464",
+          "AWATER": "1833967782",
+          "ALAND_SQMI": "758.622",
+          "AWATER_SQMI": "708.099",
+          "INTPTLAT": "30.15914",
+          "INTPTLONG": "-85.534395"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12007",
+          "ANSICODE": "00303634",
+          "NAME": "Bradford County",
+          "ALAND": "761368539",
+          "AWATER": "16898784",
+          "ALAND_SQMI": "293.966",
+          "AWATER_SQMI": "6.525",
+          "INTPTLAT": "29.952386",
+          "INTPTLONG": "-82.166698"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12009",
+          "ANSICODE": "00295749",
+          "NAME": "Brevard County",
+          "ALAND": "2628752387",
+          "AWATER": "1403951179",
+          "ALAND_SQMI": "1014.967",
+          "AWATER_SQMI": "542.069",
+          "INTPTLAT": "28.298311",
+          "INTPTLONG": "-80.700333"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12011",
+          "ANSICODE": "00295753",
+          "NAME": "Broward County",
+          "ALAND": "3115495915",
+          "AWATER": "273317277",
+          "ALAND_SQMI": "1202.9",
+          "AWATER_SQMI": "105.528",
+          "INTPTLAT": "26.193535",
+          "INTPTLONG": "-80.476683"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12013",
+          "ANSICODE": "00306919",
+          "NAME": "Calhoun County",
+          "ALAND": "1469394597",
+          "AWATER": "18070425",
+          "ALAND_SQMI": "567.336",
+          "AWATER_SQMI": "6.977",
+          "INTPTLAT": "30.388801",
+          "INTPTLONG": "-85.197915"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12015",
+          "ANSICODE": "00295742",
+          "NAME": "Charlotte County",
+          "ALAND": "1764084561",
+          "AWATER": "689244725",
+          "ALAND_SQMI": "681.117",
+          "AWATER_SQMI": "266.119",
+          "INTPTLAT": "26.906396",
+          "INTPTLONG": "-82.003657"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12017",
+          "ANSICODE": "00295752",
+          "NAME": "Citrus County",
+          "ALAND": "1507201245",
+          "AWATER": "981107661",
+          "ALAND_SQMI": "581.934",
+          "AWATER_SQMI": "378.808",
+          "INTPTLAT": "28.850292",
+          "INTPTLONG": "-82.595552"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12019",
+          "ANSICODE": "00295726",
+          "NAME": "Clay County",
+          "ALAND": "1565900894",
+          "AWATER": "100869769",
+          "ALAND_SQMI": "604.598",
+          "AWATER_SQMI": "38.946",
+          "INTPTLAT": "29.986584",
+          "INTPTLONG": "-81.865036"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12021",
+          "ANSICODE": "00295754",
+          "NAME": "Collier County",
+          "ALAND": "5172193058",
+          "AWATER": "1574828913",
+          "ALAND_SQMI": "1996.995",
+          "AWATER_SQMI": "608.045",
+          "INTPTLAT": "26.118786",
+          "INTPTLONG": "-81.400955"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12023",
+          "ANSICODE": "00306909",
+          "NAME": "Columbia County",
+          "ALAND": "2065197086",
+          "AWATER": "10207202",
+          "ALAND_SQMI": "797.377",
+          "AWATER_SQMI": "3.941",
+          "INTPTLAT": "30.221651",
+          "INTPTLONG": "-82.623371"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12027",
+          "ANSICODE": "00294452",
+          "NAME": "DeSoto County",
+          "ALAND": "1649031786",
+          "AWATER": "6243548",
+          "ALAND_SQMI": "636.695",
+          "AWATER_SQMI": "2.411",
+          "INTPTLAT": "27.190581",
+          "INTPTLONG": "-81.806253"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12029",
+          "ANSICODE": "00295725",
+          "NAME": "Dixie County",
+          "ALAND": "1826030990",
+          "AWATER": "876346098",
+          "ALAND_SQMI": "705.035",
+          "AWATER_SQMI": "338.359",
+          "INTPTLAT": "29.552675",
+          "INTPTLONG": "-83.236232"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12031",
+          "ANSICODE": "00293656",
+          "NAME": "Duval County",
+          "ALAND": "1975183356",
+          "AWATER": "403625849",
+          "ALAND_SQMI": "762.623",
+          "AWATER_SQMI": "155.841",
+          "INTPTLAT": "30.335245",
+          "INTPTLONG": "-81.648113"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12033",
+          "ANSICODE": "00295737",
+          "NAME": "Escambia County",
+          "ALAND": "1701615126",
+          "AWATER": "1213961378",
+          "ALAND_SQMI": "656.997",
+          "AWATER_SQMI": "468.713",
+          "INTPTLAT": "30.529998",
+          "INTPTLONG": "-87.320322"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12035",
+          "ANSICODE": "00308547",
+          "NAME": "Flagler County",
+          "ALAND": "1259229653",
+          "AWATER": "219207667",
+          "ALAND_SQMI": "486.191",
+          "AWATER_SQMI": "84.637",
+          "INTPTLAT": "29.474891",
+          "INTPTLONG": "-81.286253"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12037",
+          "ANSICODE": "00306911",
+          "NAME": "Franklin County",
+          "ALAND": "1411539848",
+          "AWATER": "2270399638",
+          "ALAND_SQMI": "544.999",
+          "AWATER_SQMI": "876.606",
+          "INTPTLAT": "29.677794",
+          "INTPTLONG": "-84.815213"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12039",
+          "ANSICODE": "00306918",
+          "NAME": "Gadsden County",
+          "ALAND": "1337405282",
+          "AWATER": "31475262",
+          "ALAND_SQMI": "516.375",
+          "AWATER_SQMI": "12.153",
+          "INTPTLAT": "30.578687",
+          "INTPTLONG": "-84.612607"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12041",
+          "ANSICODE": "00303633",
+          "NAME": "Gilchrist County",
+          "ALAND": "905705571",
+          "AWATER": "14362143",
+          "ALAND_SQMI": "349.695",
+          "AWATER_SQMI": "5.545",
+          "INTPTLAT": "29.723456",
+          "INTPTLONG": "-82.795801"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12043",
+          "ANSICODE": "00295743",
+          "NAME": "Glades County",
+          "ALAND": "2089658561",
+          "AWATER": "467294728",
+          "ALAND_SQMI": "806.822",
+          "AWATER_SQMI": "180.424",
+          "INTPTLAT": "26.95481",
+          "INTPTLONG": "-81.19082"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12045",
+          "ANSICODE": "00306917",
+          "NAME": "Gulf County",
+          "ALAND": "1433472643",
+          "AWATER": "624401027",
+          "ALAND_SQMI": "553.467",
+          "AWATER_SQMI": "241.083",
+          "INTPTLAT": "29.859238",
+          "INTPTLONG": "-85.272013"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12047",
+          "ANSICODE": "00295736",
+          "NAME": "Hamilton County",
+          "ALAND": "1332018549",
+          "AWATER": "12330813",
+          "ALAND_SQMI": "514.295",
+          "AWATER_SQMI": "4.761",
+          "INTPTLAT": "30.498438",
+          "INTPTLONG": "-82.951116"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12049",
+          "ANSICODE": "00295746",
+          "NAME": "Hardee County",
+          "ALAND": "1651297014",
+          "AWATER": "1472455",
+          "ALAND_SQMI": "637.569",
+          "AWATER_SQMI": "0.569",
+          "INTPTLAT": "27.492846",
+          "INTPTLONG": "-81.82158"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12051",
+          "ANSICODE": "00307626",
+          "NAME": "Hendry County",
+          "ALAND": "2993896405",
+          "AWATER": "86578552",
+          "ALAND_SQMI": "1155.95",
+          "AWATER_SQMI": "33.428",
+          "INTPTLAT": "26.539967",
+          "INTPTLONG": "-81.152114"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12053",
+          "ANSICODE": "00295751",
+          "NAME": "Hernando County",
+          "ALAND": "1224979323",
+          "AWATER": "627916623",
+          "ALAND_SQMI": "472.967",
+          "AWATER_SQMI": "242.44",
+          "INTPTLAT": "28.555995",
+          "INTPTLONG": "-82.525969"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12055",
+          "ANSICODE": "00295756",
+          "NAME": "Highlands County",
+          "ALAND": "2635737491",
+          "AWATER": "230656943",
+          "ALAND_SQMI": "1017.664",
+          "AWATER_SQMI": "89.057",
+          "INTPTLAT": "27.34108",
+          "INTPTLONG": "-81.342353"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12057",
+          "ANSICODE": "00295757",
+          "NAME": "Hillsborough County",
+          "ALAND": "2648359443",
+          "AWATER": "790682716",
+          "ALAND_SQMI": "1022.537",
+          "AWATER_SQMI": "305.284",
+          "INTPTLAT": "27.893154",
+          "INTPTLONG": "-82.379991"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12059",
+          "ANSICODE": "00295735",
+          "NAME": "Holmes County",
+          "ALAND": "1240237030",
+          "AWATER": "26389419",
+          "ALAND_SQMI": "478.858",
+          "AWATER_SQMI": "10.189",
+          "INTPTLAT": "30.862007",
+          "INTPTLONG": "-85.815939"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12061",
+          "ANSICODE": "00307624",
+          "NAME": "Indian River County",
+          "ALAND": "1301606834",
+          "AWATER": "295447715",
+          "ALAND_SQMI": "502.553",
+          "AWATER_SQMI": "114.073",
+          "INTPTLAT": "27.700528",
+          "INTPTLONG": "-80.574789"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12063",
+          "ANSICODE": "00295734",
+          "NAME": "Jackson County",
+          "ALAND": "2378224425",
+          "AWATER": "94084424",
+          "ALAND_SQMI": "918.238",
+          "AWATER_SQMI": "36.326",
+          "INTPTLAT": "30.789249",
+          "INTPTLONG": "-85.208814"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12065",
+          "ANSICODE": "00295733",
+          "NAME": "Jefferson County",
+          "ALAND": "1549018611",
+          "AWATER": "193063920",
+          "ALAND_SQMI": "598.079",
+          "AWATER_SQMI": "74.542",
+          "INTPTLAT": "30.396898",
+          "INTPTLONG": "-83.921761"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12067",
+          "ANSICODE": "00295732",
+          "NAME": "Lafayette County",
+          "ALAND": "1407256302",
+          "AWATER": "11817999",
+          "ALAND_SQMI": "543.345",
+          "AWATER_SQMI": "4.563",
+          "INTPTLAT": "29.990066",
+          "INTPTLONG": "-83.17851"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12069",
+          "ANSICODE": "00308551",
+          "NAME": "Lake County",
+          "ALAND": "2466027803",
+          "AWATER": "529970231",
+          "ALAND_SQMI": "952.139",
+          "AWATER_SQMI": "204.623",
+          "INTPTLAT": "28.764113",
+          "INTPTLONG": "-81.712282"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12071",
+          "ANSICODE": "00295758",
+          "NAME": "Lee County",
+          "ALAND": "2023178327",
+          "AWATER": "1900208297",
+          "ALAND_SQMI": "781.154",
+          "AWATER_SQMI": "733.675",
+          "INTPTLAT": "26.563273",
+          "INTPTLONG": "-81.984182"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12073",
+          "ANSICODE": "00306916",
+          "NAME": "Leon County",
+          "ALAND": "1731219899",
+          "AWATER": "86414547",
+          "ALAND_SQMI": "668.428",
+          "AWATER_SQMI": "33.365",
+          "INTPTLAT": "30.45931",
+          "INTPTLONG": "-84.2778"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12075",
+          "ANSICODE": "00295724",
+          "NAME": "Levy County",
+          "ALAND": "2896266627",
+          "AWATER": "1224288848",
+          "ALAND_SQMI": "1118.255",
+          "AWATER_SQMI": "472.701",
+          "INTPTLAT": "29.271854",
+          "INTPTLONG": "-82.831233"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12077",
+          "ANSICODE": "00308549",
+          "NAME": "Liberty County",
+          "ALAND": "2164099095",
+          "AWATER": "19582444",
+          "ALAND_SQMI": "835.563",
+          "AWATER_SQMI": "7.561",
+          "INTPTLAT": "30.259849",
+          "INTPTLONG": "-84.86858"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12079",
+          "ANSICODE": "00295731",
+          "NAME": "Madison County",
+          "ALAND": "1804001484",
+          "AWATER": "49634046",
+          "ALAND_SQMI": "696.529",
+          "AWATER_SQMI": "19.164",
+          "INTPTLAT": "30.447233",
+          "INTPTLONG": "-83.470416"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12081",
+          "ANSICODE": "00295744",
+          "NAME": "Manatee County",
+          "ALAND": "1923745730",
+          "AWATER": "573082727",
+          "ALAND_SQMI": "742.762",
+          "AWATER_SQMI": "221.268",
+          "INTPTLAT": "27.475556",
+          "INTPTLONG": "-82.393144"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12083",
+          "ANSICODE": "00306922",
+          "NAME": "Marion County",
+          "ALAND": "4114025502",
+          "AWATER": "192250275",
+          "ALAND_SQMI": "1588.434",
+          "AWATER_SQMI": "74.228",
+          "INTPTLAT": "29.202805",
+          "INTPTLONG": "-82.0431"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12085",
+          "ANSICODE": "00308550",
+          "NAME": "Martin County",
+          "ALAND": "1408495775",
+          "AWATER": "542087071",
+          "ALAND_SQMI": "543.823",
+          "AWATER_SQMI": "209.301",
+          "INTPTLAT": "27.083604",
+          "INTPTLONG": "-80.398201"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12086",
+          "ANSICODE": "00295755",
+          "NAME": "Miami-Dade County",
+          "ALAND": "4920856951",
+          "AWATER": "1267455935",
+          "ALAND_SQMI": "1899.954",
+          "AWATER_SQMI": "489.367",
+          "INTPTLAT": "25.616009",
+          "INTPTLONG": "-80.50375"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12087",
+          "ANSICODE": "00295759",
+          "NAME": "Monroe County",
+          "ALAND": "2546045483",
+          "AWATER": "11153864044",
+          "ALAND_SQMI": "983.034",
+          "AWATER_SQMI": "4306.531",
+          "INTPTLAT": "25.58612",
+          "INTPTLONG": "-81.022603"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12089",
+          "ANSICODE": "00295730",
+          "NAME": "Nassau County",
+          "ALAND": "1680075565",
+          "AWATER": "200050173",
+          "ALAND_SQMI": "648.681",
+          "AWATER_SQMI": "77.24",
+          "INTPTLAT": "30.605963",
+          "INTPTLONG": "-81.765087"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12091",
+          "ANSICODE": "00306915",
+          "NAME": "Okaloosa County",
+          "ALAND": "2408237041",
+          "AWATER": "820672838",
+          "ALAND_SQMI": "929.826",
+          "AWATER_SQMI": "316.864",
+          "INTPTLAT": "30.614325",
+          "INTPTLONG": "-86.59108"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12093",
+          "ANSICODE": "00295760",
+          "NAME": "Okeechobee County",
+          "ALAND": "1992442653",
+          "AWATER": "317924584",
+          "ALAND_SQMI": "769.286",
+          "AWATER_SQMI": "122.751",
+          "INTPTLAT": "27.385592",
+          "INTPTLONG": "-80.887388"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12095",
+          "ANSICODE": "00295750",
+          "NAME": "Orange County",
+          "ALAND": "2338842795",
+          "AWATER": "260043058",
+          "ALAND_SQMI": "903.032",
+          "AWATER_SQMI": "100.403",
+          "INTPTLAT": "28.514391",
+          "INTPTLONG": "-81.323284"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12097",
+          "ANSICODE": "00295748",
+          "NAME": "Osceola County",
+          "ALAND": "3438210340",
+          "AWATER": "462253707",
+          "ALAND_SQMI": "1327.5",
+          "AWATER_SQMI": "178.477",
+          "INTPTLAT": "28.059027",
+          "INTPTLONG": "-81.139312"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12099",
+          "ANSICODE": "00295761",
+          "NAME": "Palm Beach County",
+          "ALAND": "5087565680",
+          "AWATER": "1084895354",
+          "ALAND_SQMI": "1964.32",
+          "AWATER_SQMI": "418.88",
+          "INTPTLAT": "26.649126",
+          "INTPTLONG": "-80.448354"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12101",
+          "ANSICODE": "00295739",
+          "NAME": "Pasco County",
+          "ALAND": "1933701535",
+          "AWATER": "694075138",
+          "ALAND_SQMI": "746.606",
+          "AWATER_SQMI": "267.984",
+          "INTPTLAT": "28.309823",
+          "INTPTLONG": "-82.511006"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12103",
+          "ANSICODE": "00295745",
+          "NAME": "Pinellas County",
+          "ALAND": "709109289",
+          "AWATER": "1535964334",
+          "ALAND_SQMI": "273.789",
+          "AWATER_SQMI": "593.039",
+          "INTPTLAT": "27.905342",
+          "INTPTLONG": "-82.798066"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12105",
+          "ANSICODE": "00295747",
+          "NAME": "Polk County",
+          "ALAND": "4657407162",
+          "AWATER": "549536500",
+          "ALAND_SQMI": "1798.235",
+          "AWATER_SQMI": "212.177",
+          "INTPTLAT": "27.953686",
+          "INTPTLONG": "-81.693493"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12107",
+          "ANSICODE": "00306910",
+          "NAME": "Putnam County",
+          "ALAND": "1886526604",
+          "AWATER": "255188745",
+          "ALAND_SQMI": "728.392",
+          "AWATER_SQMI": "98.529",
+          "INTPTLAT": "29.593896",
+          "INTPTLONG": "-81.732039"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12109",
+          "ANSICODE": "00308371",
+          "NAME": "St. Johns County",
+          "ALAND": "1555662349",
+          "AWATER": "572103932",
+          "ALAND_SQMI": "600.645",
+          "AWATER_SQMI": "220.891",
+          "INTPTLAT": "29.890487",
+          "INTPTLONG": "-81.40004"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12111",
+          "ANSICODE": "00308372",
+          "NAME": "St. Lucie County",
+          "ALAND": "1481146385",
+          "AWATER": "300765585",
+          "ALAND_SQMI": "571.874",
+          "AWATER_SQMI": "116.126",
+          "INTPTLAT": "27.379814",
+          "INTPTLONG": "-80.443536"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12113",
+          "ANSICODE": "00306914",
+          "NAME": "Santa Rosa County",
+          "ALAND": "2622108165",
+          "AWATER": "543293168",
+          "ALAND_SQMI": "1012.402",
+          "AWATER_SQMI": "209.767",
+          "INTPTLAT": "30.675348",
+          "INTPTLONG": "-87.018919"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12115",
+          "ANSICODE": "00295741",
+          "NAME": "Sarasota County",
+          "ALAND": "1440100023",
+          "AWATER": "1086567957",
+          "ALAND_SQMI": "556.026",
+          "AWATER_SQMI": "419.526",
+          "INTPTLAT": "27.225329",
+          "INTPTLONG": "-82.423714"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12117",
+          "ANSICODE": "00303665",
+          "NAME": "Seminole County",
+          "ALAND": "801259626",
+          "AWATER": "93164442",
+          "ALAND_SQMI": "309.368",
+          "AWATER_SQMI": "35.971",
+          "INTPTLAT": "28.690065",
+          "INTPTLONG": "-81.131975"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12119",
+          "ANSICODE": "00295740",
+          "NAME": "Sumter County",
+          "ALAND": "1442996383",
+          "AWATER": "58752797",
+          "ALAND_SQMI": "557.144",
+          "AWATER_SQMI": "22.685",
+          "INTPTLAT": "28.713326",
+          "INTPTLONG": "-82.069522"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12121",
+          "ANSICODE": "00295729",
+          "NAME": "Suwannee County",
+          "ALAND": "1783430092",
+          "AWATER": "9505389",
+          "ALAND_SQMI": "688.586",
+          "AWATER_SQMI": "3.67",
+          "INTPTLAT": "30.189244",
+          "INTPTLONG": "-82.992754"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12123",
+          "ANSICODE": "00295728",
+          "NAME": "Taylor County",
+          "ALAND": "2702230205",
+          "AWATER": "1213570858",
+          "ALAND_SQMI": "1043.337",
+          "AWATER_SQMI": "468.562",
+          "INTPTLAT": "29.967146",
+          "INTPTLONG": "-83.639573"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12125",
+          "ANSICODE": "00306913",
+          "NAME": "Union County",
+          "ALAND": "630804542",
+          "AWATER": "16049423",
+          "ALAND_SQMI": "243.555",
+          "AWATER_SQMI": "6.197",
+          "INTPTLAT": "30.05428",
+          "INTPTLONG": "-82.366918"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12127",
+          "ANSICODE": "00306921",
+          "NAME": "Volusia County",
+          "ALAND": "2851878125",
+          "AWATER": "858117923",
+          "ALAND_SQMI": "1101.116",
+          "AWATER_SQMI": "331.321",
+          "INTPTLAT": "29.057769",
+          "INTPTLONG": "-81.161792"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12129",
+          "ANSICODE": "00306912",
+          "NAME": "Wakulla County",
+          "ALAND": "1570615734",
+          "AWATER": "804111188",
+          "ALAND_SQMI": "606.418",
+          "AWATER_SQMI": "310.469",
+          "INTPTLAT": "30.091335",
+          "INTPTLONG": "-84.359111"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12131",
+          "ANSICODE": "00295727",
+          "NAME": "Walton County",
+          "ALAND": "2689194489",
+          "AWATER": "961260714",
+          "ALAND_SQMI": "1038.304",
+          "AWATER_SQMI": "371.145",
+          "INTPTLAT": "30.571247",
+          "INTPTLONG": "-86.162798"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12133",
+          "ANSICODE": "00295762",
+          "NAME": "Washington County",
+          "ALAND": "1514305979",
+          "AWATER": "81008171",
+          "ALAND_SQMI": "584.677",
+          "AWATER_SQMI": "31.277",
+          "INTPTLAT": "30.602102",
+          "INTPTLONG": "-85.655805"
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "entire_inventory_records": 3222,
+      "receipts": [
+        {
+          "path": "public/participation-county-context/20261106-23/complete-2026-county-identities.json.gz",
+          "bytes": 155774,
+          "sha256": "cd12a54467a4ad54e9213d541b5a0563655ef41f3f193ed5804c75df51bf3150"
+        },
+        {
+          "path": "public/participation-county-context/20261106-23/gazetteer-2026-national-counties.zip",
+          "bytes": 139190,
+          "sha256": "6a99ca00efbc0be5112e225d4102704c51d5ce3b16e3afd6e4159460595fd12a"
+        }
+      ],
+      "independently_reviewed_identities": [
+        {
+          "USPS": "FL",
+          "GEOID": "12001",
+          "GEOIDFQ": "0500000US12001",
+          "ANSICODE": "00308548",
+          "NAME": "Alachua County",
+          "ALAND": "2267977893",
+          "AWATER": "241207824",
+          "ALAND_SQMI": "875.671",
+          "AWATER_SQMI": "93.131",
+          "INTPTLAT": "29.673705",
+          "INTPTLONG": "-82.356591"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12003",
+          "GEOIDFQ": "0500000US12003",
+          "ANSICODE": "00306920",
+          "NAME": "Baker County",
+          "ALAND": "1515738942",
+          "AWATER": "9686120",
+          "ALAND_SQMI": "585.23",
+          "AWATER_SQMI": "3.74",
+          "INTPTLAT": "30.324442",
+          "INTPTLONG": "-82.302284"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12005",
+          "GEOIDFQ": "0500000US12005",
+          "ANSICODE": "00295738",
+          "NAME": "Bay County",
+          "ALAND": "1964820623",
+          "AWATER": "1833968624",
+          "ALAND_SQMI": "758.622",
+          "AWATER_SQMI": "708.099",
+          "INTPTLAT": "30.166746",
+          "INTPTLONG": "-85.53678"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12007",
+          "GEOIDFQ": "0500000US12007",
+          "ANSICODE": "00303634",
+          "NAME": "Bradford County",
+          "ALAND": "761368534",
+          "AWATER": "16898785",
+          "ALAND_SQMI": "293.966",
+          "AWATER_SQMI": "6.525",
+          "INTPTLAT": "29.952386",
+          "INTPTLONG": "-82.166698"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12009",
+          "GEOIDFQ": "0500000US12009",
+          "ANSICODE": "00295749",
+          "NAME": "Brevard County",
+          "ALAND": "2628767922",
+          "AWATER": "1403935652",
+          "ALAND_SQMI": "1014.973",
+          "AWATER_SQMI": "542.063",
+          "INTPTLAT": "28.298311",
+          "INTPTLONG": "-80.700333"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12011",
+          "GEOIDFQ": "0500000US12011",
+          "ANSICODE": "00295753",
+          "NAME": "Broward County",
+          "ALAND": "3115709822",
+          "AWATER": "273103328",
+          "ALAND_SQMI": "1202.982",
+          "AWATER_SQMI": "105.446",
+          "INTPTLAT": "26.193292",
+          "INTPTLONG": "-80.476547"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12013",
+          "GEOIDFQ": "0500000US12013",
+          "ANSICODE": "00306919",
+          "NAME": "Calhoun County",
+          "ALAND": "1469394584",
+          "AWATER": "18070424",
+          "ALAND_SQMI": "567.336",
+          "AWATER_SQMI": "6.977",
+          "INTPTLAT": "30.388801",
+          "INTPTLONG": "-85.197915"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12015",
+          "GEOIDFQ": "0500000US12015",
+          "ANSICODE": "00295742",
+          "NAME": "Charlotte County",
+          "ALAND": "1764171383",
+          "AWATER": "689158023",
+          "ALAND_SQMI": "681.15",
+          "AWATER_SQMI": "266.085",
+          "INTPTLAT": "26.906358",
+          "INTPTLONG": "-82.00363"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12017",
+          "GEOIDFQ": "0500000US12017",
+          "ANSICODE": "00295752",
+          "NAME": "Citrus County",
+          "ALAND": "1507454380",
+          "AWATER": "980854520",
+          "ALAND_SQMI": "582.031",
+          "AWATER_SQMI": "378.71",
+          "INTPTLAT": "28.850293",
+          "INTPTLONG": "-82.595551"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12019",
+          "GEOIDFQ": "0500000US12019",
+          "ANSICODE": "00295726",
+          "NAME": "Clay County",
+          "ALAND": "1565901862",
+          "AWATER": "100868789",
+          "ALAND_SQMI": "604.598",
+          "AWATER_SQMI": "38.946",
+          "INTPTLAT": "29.985426",
+          "INTPTLONG": "-81.866005"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12021",
+          "GEOIDFQ": "0500000US12021",
+          "ANSICODE": "00295754",
+          "NAME": "Collier County",
+          "ALAND": "5172271811",
+          "AWATER": "1574750459",
+          "ALAND_SQMI": "1997.025",
+          "AWATER_SQMI": "608.015",
+          "INTPTLAT": "26.073872",
+          "INTPTLONG": "-81.394718"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12023",
+          "GEOIDFQ": "0500000US12023",
+          "ANSICODE": "00306909",
+          "NAME": "Columbia County",
+          "ALAND": "2065197079",
+          "AWATER": "10207203",
+          "ALAND_SQMI": "797.377",
+          "AWATER_SQMI": "3.941",
+          "INTPTLAT": "30.221657",
+          "INTPTLONG": "-82.623375"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12027",
+          "GEOIDFQ": "0500000US12027",
+          "ANSICODE": "00294452",
+          "NAME": "DeSoto County",
+          "ALAND": "1649031803",
+          "AWATER": "6243547",
+          "ALAND_SQMI": "636.695",
+          "AWATER_SQMI": "2.411",
+          "INTPTLAT": "27.190581",
+          "INTPTLONG": "-81.806253"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12029",
+          "GEOIDFQ": "0500000US12029",
+          "ANSICODE": "00295725",
+          "NAME": "Dixie County",
+          "ALAND": "1826030977",
+          "AWATER": "876346181",
+          "ALAND_SQMI": "705.035",
+          "AWATER_SQMI": "338.359",
+          "INTPTLAT": "29.552675",
+          "INTPTLONG": "-83.236232"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12031",
+          "GEOIDFQ": "0500000US12031",
+          "ANSICODE": "00293656",
+          "NAME": "Duval County",
+          "ALAND": "1975380731",
+          "AWATER": "403428451",
+          "ALAND_SQMI": "762.699",
+          "AWATER_SQMI": "155.765",
+          "INTPTLAT": "30.335245",
+          "INTPTLONG": "-81.648113"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12033",
+          "GEOIDFQ": "0500000US12033",
+          "ANSICODE": "00295737",
+          "NAME": "Escambia County",
+          "ALAND": "1701619321",
+          "AWATER": "1213957230",
+          "ALAND_SQMI": "656.999",
+          "AWATER_SQMI": "468.712",
+          "INTPTLAT": "30.529998",
+          "INTPTLONG": "-87.320322"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12035",
+          "GEOIDFQ": "0500000US12035",
+          "ANSICODE": "00308547",
+          "NAME": "Flagler County",
+          "ALAND": "1259156621",
+          "AWATER": "219207691",
+          "ALAND_SQMI": "486.163",
+          "AWATER_SQMI": "84.637",
+          "INTPTLAT": "29.477288",
+          "INTPTLONG": "-81.287039"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12037",
+          "GEOIDFQ": "0500000US12037",
+          "ANSICODE": "00306911",
+          "NAME": "Franklin County",
+          "ALAND": "1411549431",
+          "AWATER": "2270390072",
+          "ALAND_SQMI": "545.002",
+          "AWATER_SQMI": "876.603",
+          "INTPTLAT": "29.677794",
+          "INTPTLONG": "-84.815213"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12039",
+          "GEOIDFQ": "0500000US12039",
+          "ANSICODE": "00306918",
+          "NAME": "Gadsden County",
+          "ALAND": "1337405270",
+          "AWATER": "31475264",
+          "ALAND_SQMI": "516.375",
+          "AWATER_SQMI": "12.153",
+          "INTPTLAT": "30.578687",
+          "INTPTLONG": "-84.612607"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12041",
+          "GEOIDFQ": "0500000US12041",
+          "ANSICODE": "00303633",
+          "NAME": "Gilchrist County",
+          "ALAND": "905705561",
+          "AWATER": "14362143",
+          "ALAND_SQMI": "349.695",
+          "AWATER_SQMI": "5.545",
+          "INTPTLAT": "29.699718",
+          "INTPTLONG": "-82.784356"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12043",
+          "GEOIDFQ": "0500000US12043",
+          "ANSICODE": "00295743",
+          "NAME": "Glades County",
+          "ALAND": "2089658733",
+          "AWATER": "467294505",
+          "ALAND_SQMI": "806.822",
+          "AWATER_SQMI": "180.423",
+          "INTPTLAT": "26.95481",
+          "INTPTLONG": "-81.19082"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12045",
+          "GEOIDFQ": "0500000US12045",
+          "ANSICODE": "00306917",
+          "NAME": "Gulf County",
+          "ALAND": "1433472630",
+          "AWATER": "624401023",
+          "ALAND_SQMI": "553.467",
+          "AWATER_SQMI": "241.083",
+          "INTPTLAT": "29.859238",
+          "INTPTLONG": "-85.272041"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12047",
+          "GEOIDFQ": "0500000US12047",
+          "ANSICODE": "00295736",
+          "NAME": "Hamilton County",
+          "ALAND": "1332018567",
+          "AWATER": "12330814",
+          "ALAND_SQMI": "514.295",
+          "AWATER_SQMI": "4.761",
+          "INTPTLAT": "30.498438",
+          "INTPTLONG": "-82.951116"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12049",
+          "GEOIDFQ": "0500000US12049",
+          "ANSICODE": "00295746",
+          "NAME": "Hardee County",
+          "ALAND": "1651297000",
+          "AWATER": "1472455",
+          "ALAND_SQMI": "637.569",
+          "AWATER_SQMI": "0.569",
+          "INTPTLAT": "27.492846",
+          "INTPTLONG": "-81.82158"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12051",
+          "GEOIDFQ": "0500000US12051",
+          "ANSICODE": "00307626",
+          "NAME": "Hendry County",
+          "ALAND": "2993907700",
+          "AWATER": "86567285",
+          "ALAND_SQMI": "1155.954",
+          "AWATER_SQMI": "33.424",
+          "INTPTLAT": "26.539967",
+          "INTPTLONG": "-81.152114"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12053",
+          "GEOIDFQ": "0500000US12053",
+          "ANSICODE": "00295751",
+          "NAME": "Hernando County",
+          "ALAND": "1225059912",
+          "AWATER": "627836036",
+          "ALAND_SQMI": "472.998",
+          "AWATER_SQMI": "242.409",
+          "INTPTLAT": "28.556118",
+          "INTPTLONG": "-82.526352"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12055",
+          "GEOIDFQ": "0500000US12055",
+          "ANSICODE": "00295756",
+          "NAME": "Highlands County",
+          "ALAND": "2635753185",
+          "AWATER": "230641246",
+          "ALAND_SQMI": "1017.67",
+          "AWATER_SQMI": "89.051",
+          "INTPTLAT": "27.34108",
+          "INTPTLONG": "-81.342353"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12057",
+          "GEOIDFQ": "0500000US12057",
+          "ANSICODE": "00295757",
+          "NAME": "Hillsborough County",
+          "ALAND": "2647365504",
+          "AWATER": "795220965",
+          "ALAND_SQMI": "1022.154",
+          "AWATER_SQMI": "307.037",
+          "INTPTLAT": "27.893154",
+          "INTPTLONG": "-82.379991"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12059",
+          "GEOIDFQ": "0500000US12059",
+          "ANSICODE": "00295735",
+          "NAME": "Holmes County",
+          "ALAND": "1240237023",
+          "AWATER": "26389419",
+          "ALAND_SQMI": "478.858",
+          "AWATER_SQMI": "10.189",
+          "INTPTLAT": "30.862007",
+          "INTPTLONG": "-85.815939"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12061",
+          "GEOIDFQ": "0500000US12061",
+          "ANSICODE": "00307624",
+          "NAME": "Indian River County",
+          "ALAND": "1301610495",
+          "AWATER": "295444079",
+          "ALAND_SQMI": "502.555",
+          "AWATER_SQMI": "114.072",
+          "INTPTLAT": "27.687264",
+          "INTPTLONG": "-80.56078"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12063",
+          "GEOIDFQ": "0500000US12063",
+          "ANSICODE": "00295734",
+          "NAME": "Jackson County",
+          "ALAND": "2378456453",
+          "AWATER": "93852389",
+          "ALAND_SQMI": "918.327",
+          "AWATER_SQMI": "36.237",
+          "INTPTLAT": "30.789587",
+          "INTPTLONG": "-85.208782"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12065",
+          "GEOIDFQ": "0500000US12065",
+          "ANSICODE": "00295733",
+          "NAME": "Jefferson County",
+          "ALAND": "1549018600",
+          "AWATER": "193063919",
+          "ALAND_SQMI": "598.079",
+          "AWATER_SQMI": "74.542",
+          "INTPTLAT": "30.396898",
+          "INTPTLONG": "-83.921761"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12067",
+          "GEOIDFQ": "0500000US12067",
+          "ANSICODE": "00295732",
+          "NAME": "Lafayette County",
+          "ALAND": "1407256261",
+          "AWATER": "11817996",
+          "ALAND_SQMI": "543.345",
+          "AWATER_SQMI": "4.563",
+          "INTPTLAT": "29.991102",
+          "INTPTLONG": "-83.176696"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12069",
+          "GEOIDFQ": "0500000US12069",
+          "ANSICODE": "00308551",
+          "NAME": "Lake County",
+          "ALAND": "2470940238",
+          "AWATER": "525057820",
+          "ALAND_SQMI": "954.035",
+          "AWATER_SQMI": "202.726",
+          "INTPTLAT": "28.764113",
+          "INTPTLONG": "-81.712282"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12071",
+          "GEOIDFQ": "0500000US12071",
+          "ANSICODE": "00295758",
+          "NAME": "Lee County",
+          "ALAND": "2023299085",
+          "AWATER": "1900088925",
+          "ALAND_SQMI": "781.2",
+          "AWATER_SQMI": "733.628",
+          "INTPTLAT": "26.563273",
+          "INTPTLONG": "-81.984182"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12073",
+          "GEOIDFQ": "0500000US12073",
+          "ANSICODE": "00306916",
+          "NAME": "Leon County",
+          "ALAND": "1731219884",
+          "AWATER": "86414549",
+          "ALAND_SQMI": "668.428",
+          "AWATER_SQMI": "33.365",
+          "INTPTLAT": "30.45931",
+          "INTPTLONG": "-84.2778"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12075",
+          "GEOIDFQ": "0500000US12075",
+          "ANSICODE": "00295724",
+          "NAME": "Levy County",
+          "ALAND": "2896278500",
+          "AWATER": "1224276903",
+          "ALAND_SQMI": "1118.259",
+          "AWATER_SQMI": "472.696",
+          "INTPTLAT": "29.271949",
+          "INTPTLONG": "-82.831212"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12077",
+          "GEOIDFQ": "0500000US12077",
+          "ANSICODE": "00308549",
+          "NAME": "Liberty County",
+          "ALAND": "2164099102",
+          "AWATER": "19582446",
+          "ALAND_SQMI": "835.563",
+          "AWATER_SQMI": "7.561",
+          "INTPTLAT": "30.259849",
+          "INTPTLONG": "-84.86858"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12079",
+          "GEOIDFQ": "0500000US12079",
+          "ANSICODE": "00295731",
+          "NAME": "Madison County",
+          "ALAND": "1804001478",
+          "AWATER": "49634047",
+          "ALAND_SQMI": "696.529",
+          "AWATER_SQMI": "19.164",
+          "INTPTLAT": "30.447233",
+          "INTPTLONG": "-83.470416"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12081",
+          "GEOIDFQ": "0500000US12081",
+          "ANSICODE": "00295744",
+          "NAME": "Manatee County",
+          "ALAND": "1923758340",
+          "AWATER": "585648568",
+          "ALAND_SQMI": "742.767",
+          "AWATER_SQMI": "226.12",
+          "INTPTLAT": "27.477786",
+          "INTPTLONG": "-82.388844"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12083",
+          "GEOIDFQ": "0500000US12083",
+          "ANSICODE": "00306922",
+          "NAME": "Marion County",
+          "ALAND": "4114048431",
+          "AWATER": "192244417",
+          "ALAND_SQMI": "1588.443",
+          "AWATER_SQMI": "74.226",
+          "INTPTLAT": "29.20502",
+          "INTPTLONG": "-82.044204"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12085",
+          "GEOIDFQ": "0500000US12085",
+          "ANSICODE": "00308550",
+          "NAME": "Martin County",
+          "ALAND": "1408630867",
+          "AWATER": "541951989",
+          "ALAND_SQMI": "543.875",
+          "AWATER_SQMI": "209.249",
+          "INTPTLAT": "27.083604",
+          "INTPTLONG": "-80.398201"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12086",
+          "GEOIDFQ": "0500000US12086",
+          "ANSICODE": "00295755",
+          "NAME": "Miami-Dade County",
+          "ALAND": "4920961268",
+          "AWATER": "1267351713",
+          "ALAND_SQMI": "1899.994",
+          "AWATER_SQMI": "489.327",
+          "INTPTLAT": "25.61396",
+          "INTPTLONG": "-80.501902"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12087",
+          "GEOIDFQ": "0500000US12087",
+          "ANSICODE": "00295759",
+          "NAME": "Monroe County",
+          "ALAND": "2546069740",
+          "AWATER": "11153840985",
+          "ALAND_SQMI": "983.043",
+          "AWATER_SQMI": "4306.522",
+          "INTPTLAT": "25.58612",
+          "INTPTLONG": "-81.022603"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12089",
+          "GEOIDFQ": "0500000US12089",
+          "ANSICODE": "00295730",
+          "NAME": "Nassau County",
+          "ALAND": "1680196672",
+          "AWATER": "199929043",
+          "ALAND_SQMI": "648.728",
+          "AWATER_SQMI": "77.193",
+          "INTPTLAT": "30.605963",
+          "INTPTLONG": "-81.765087"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12091",
+          "GEOIDFQ": "0500000US12091",
+          "ANSICODE": "00306915",
+          "NAME": "Okaloosa County",
+          "ALAND": "2408112945",
+          "AWATER": "820796944",
+          "ALAND_SQMI": "929.778",
+          "AWATER_SQMI": "316.911",
+          "INTPTLAT": "30.614325",
+          "INTPTLONG": "-86.59108"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12093",
+          "GEOIDFQ": "0500000US12093",
+          "ANSICODE": "00295760",
+          "NAME": "Okeechobee County",
+          "ALAND": "1992482218",
+          "AWATER": "317885012",
+          "ALAND_SQMI": "769.302",
+          "AWATER_SQMI": "122.736",
+          "INTPTLAT": "27.385592",
+          "INTPTLONG": "-80.887388"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12095",
+          "GEOIDFQ": "0500000US12095",
+          "ANSICODE": "00295750",
+          "NAME": "Orange County",
+          "ALAND": "2338872527",
+          "AWATER": "260013244",
+          "ALAND_SQMI": "903.044",
+          "AWATER_SQMI": "100.392",
+          "INTPTLAT": "28.515155",
+          "INTPTLONG": "-81.323564"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12097",
+          "GEOIDFQ": "0500000US12097",
+          "ANSICODE": "00295748",
+          "NAME": "Osceola County",
+          "ALAND": "3437796772",
+          "AWATER": "462598731",
+          "ALAND_SQMI": "1327.341",
+          "AWATER_SQMI": "178.61",
+          "INTPTLAT": "28.059027",
+          "INTPTLONG": "-81.139312"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12099",
+          "GEOIDFQ": "0500000US12099",
+          "ANSICODE": "00295761",
+          "NAME": "Palm Beach County",
+          "ALAND": "5087565117",
+          "AWATER": "1084895790",
+          "ALAND_SQMI": "1964.32",
+          "AWATER_SQMI": "418.881",
+          "INTPTLAT": "26.649051",
+          "INTPTLONG": "-80.44835"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12101",
+          "GEOIDFQ": "0500000US12101",
+          "ANSICODE": "00295739",
+          "NAME": "Pasco County",
+          "ALAND": "1933956388",
+          "AWATER": "694061987",
+          "ALAND_SQMI": "746.705",
+          "AWATER_SQMI": "267.979",
+          "INTPTLAT": "28.30474",
+          "INTPTLONG": "-82.502367"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12103",
+          "GEOIDFQ": "0500000US12103",
+          "ANSICODE": "00295745",
+          "NAME": "Pinellas County",
+          "ALAND": "709225904",
+          "AWATER": "1518811236",
+          "ALAND_SQMI": "273.834",
+          "AWATER_SQMI": "586.416",
+          "INTPTLAT": "27.905209",
+          "INTPTLONG": "-82.79979"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12105",
+          "GEOIDFQ": "0500000US12105",
+          "ANSICODE": "00295747",
+          "NAME": "Polk County",
+          "ALAND": "4658821696",
+          "AWATER": "548862853",
+          "ALAND_SQMI": "1798.781",
+          "AWATER_SQMI": "211.917",
+          "INTPTLAT": "27.949469",
+          "INTPTLONG": "-81.698189"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12107",
+          "GEOIDFQ": "0500000US12107",
+          "ANSICODE": "00306910",
+          "NAME": "Putnam County",
+          "ALAND": "1886565313",
+          "AWATER": "255149987",
+          "ALAND_SQMI": "728.407",
+          "AWATER_SQMI": "98.514",
+          "INTPTLAT": "29.571487",
+          "INTPTLONG": "-81.761243"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12109",
+          "GEOIDFQ": "0500000US12109",
+          "ANSICODE": "00308371",
+          "NAME": "St. Johns County",
+          "ALAND": "1555701129",
+          "AWATER": "572055461",
+          "ALAND_SQMI": "600.66",
+          "AWATER_SQMI": "220.872",
+          "INTPTLAT": "29.881393",
+          "INTPTLONG": "-81.388281"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12111",
+          "GEOIDFQ": "0500000US12111",
+          "ANSICODE": "00308372",
+          "NAME": "St. Lucie County",
+          "ALAND": "1481099209",
+          "AWATER": "300812756",
+          "ALAND_SQMI": "571.856",
+          "AWATER_SQMI": "116.144",
+          "INTPTLAT": "27.379814",
+          "INTPTLONG": "-80.443536"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12113",
+          "GEOIDFQ": "0500000US12113",
+          "ANSICODE": "00306914",
+          "NAME": "Santa Rosa County",
+          "ALAND": "2622108130",
+          "AWATER": "543293107",
+          "ALAND_SQMI": "1012.402",
+          "AWATER_SQMI": "209.767",
+          "INTPTLAT": "30.675348",
+          "INTPTLONG": "-87.018919"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12115",
+          "GEOIDFQ": "0500000US12115",
+          "ANSICODE": "00295741",
+          "NAME": "Sarasota County",
+          "ALAND": "1440271311",
+          "AWATER": "1086396800",
+          "ALAND_SQMI": "556.092",
+          "AWATER_SQMI": "419.46",
+          "INTPTLAT": "27.223531",
+          "INTPTLONG": "-82.424749"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12117",
+          "GEOIDFQ": "0500000US12117",
+          "ANSICODE": "00303665",
+          "NAME": "Seminole County",
+          "ALAND": "801317561",
+          "AWATER": "93106501",
+          "ALAND_SQMI": "309.39",
+          "AWATER_SQMI": "35.949",
+          "INTPTLAT": "28.689944",
+          "INTPTLONG": "-81.132626"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12119",
+          "GEOIDFQ": "0500000US12119",
+          "ANSICODE": "00295740",
+          "NAME": "Sumter County",
+          "ALAND": "1442975459",
+          "AWATER": "58773797",
+          "ALAND_SQMI": "557.136",
+          "AWATER_SQMI": "22.693",
+          "INTPTLAT": "28.713093",
+          "INTPTLONG": "-82.069492"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12121",
+          "GEOIDFQ": "0500000US12121",
+          "ANSICODE": "00295729",
+          "NAME": "Suwannee County",
+          "ALAND": "1783430065",
+          "AWATER": "9505392",
+          "ALAND_SQMI": "688.586",
+          "AWATER_SQMI": "3.67",
+          "INTPTLAT": "30.189244",
+          "INTPTLONG": "-82.992754"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12123",
+          "GEOIDFQ": "0500000US12123",
+          "ANSICODE": "00295728",
+          "NAME": "Taylor County",
+          "ALAND": "2702230190",
+          "AWATER": "1213570942",
+          "ALAND_SQMI": "1043.337",
+          "AWATER_SQMI": "468.562",
+          "INTPTLAT": "29.967043",
+          "INTPTLONG": "-83.639404"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12125",
+          "GEOIDFQ": "0500000US12125",
+          "ANSICODE": "00306913",
+          "NAME": "Union County",
+          "ALAND": "631672854",
+          "AWATER": "15181110",
+          "ALAND_SQMI": "243.89",
+          "AWATER_SQMI": "5.861",
+          "INTPTLAT": "30.054247",
+          "INTPTLONG": "-82.366937"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12127",
+          "GEOIDFQ": "0500000US12127",
+          "ANSICODE": "00306921",
+          "NAME": "Volusia County",
+          "ALAND": "2852233408",
+          "AWATER": "857845308",
+          "ALAND_SQMI": "1101.254",
+          "AWATER_SQMI": "331.216",
+          "INTPTLAT": "29.058564",
+          "INTPTLONG": "-81.166982"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12129",
+          "GEOIDFQ": "0500000US12129",
+          "ANSICODE": "00306912",
+          "NAME": "Wakulla County",
+          "ALAND": "1570620428",
+          "AWATER": "804106505",
+          "ALAND_SQMI": "606.42",
+          "AWATER_SQMI": "310.467",
+          "INTPTLAT": "30.091335",
+          "INTPTLONG": "-84.359111"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12131",
+          "GEOIDFQ": "0500000US12131",
+          "ANSICODE": "00295727",
+          "NAME": "Walton County",
+          "ALAND": "2689380799",
+          "AWATER": "961074369",
+          "ALAND_SQMI": "1038.376",
+          "AWATER_SQMI": "371.073",
+          "INTPTLAT": "30.577",
+          "INTPTLONG": "-86.159505"
+        },
+        {
+          "USPS": "FL",
+          "GEOID": "12133",
+          "GEOIDFQ": "0500000US12133",
+          "ANSICODE": "00295762",
+          "NAME": "Washington County",
+          "ALAND": "1514306475",
+          "AWATER": "81007654",
+          "ALAND_SQMI": "584.677",
+          "AWATER_SQMI": "31.277",
+          "INTPTLAT": "30.597244",
+          "INTPTLONG": "-85.6514"
+        }
+      ]
+    }
+  ],
+  "all_67_native_names_uniquely_match_both_inventories_and_contextual_geometry": true,
+  "comparison_rule": "Remove a terminal County suffix, case-fold and ignore punctuation/spaces; no aliases or inferred codes.",
+  "joins": [
+    {
+      "native_county": "Bradford",
+      "census_name": "Bradford County",
+      "contextual_geoid": "12007",
+      "native_fips": null
+    },
+    {
+      "native_county": "Brevard",
+      "census_name": "Brevard County",
+      "contextual_geoid": "12009",
+      "native_fips": null
+    },
+    {
+      "native_county": "Walton",
+      "census_name": "Walton County",
+      "contextual_geoid": "12131",
+      "native_fips": null
+    },
+    {
+      "native_county": "Hernando",
+      "census_name": "Hernando County",
+      "contextual_geoid": "12053",
+      "native_fips": null
+    },
+    {
+      "native_county": "Hamilton",
+      "census_name": "Hamilton County",
+      "contextual_geoid": "12047",
+      "native_fips": null
+    },
+    {
+      "native_county": "Jefferson",
+      "census_name": "Jefferson County",
+      "contextual_geoid": "12065",
+      "native_fips": null
+    },
+    {
+      "native_county": "Duval",
+      "census_name": "Duval County",
+      "contextual_geoid": "12031",
+      "native_fips": null
+    },
+    {
+      "native_county": "Seminole",
+      "census_name": "Seminole County",
+      "contextual_geoid": "12117",
+      "native_fips": null
+    },
+    {
+      "native_county": "Gilchrist",
+      "census_name": "Gilchrist County",
+      "contextual_geoid": "12041",
+      "native_fips": null
+    },
+    {
+      "native_county": "Calhoun",
+      "census_name": "Calhoun County",
+      "contextual_geoid": "12013",
+      "native_fips": null
+    },
+    {
+      "native_county": "Pinellas",
+      "census_name": "Pinellas County",
+      "contextual_geoid": "12103",
+      "native_fips": null
+    },
+    {
+      "native_county": "Hillsborough",
+      "census_name": "Hillsborough County",
+      "contextual_geoid": "12057",
+      "native_fips": null
+    },
+    {
+      "native_county": "Levy",
+      "census_name": "Levy County",
+      "contextual_geoid": "12075",
+      "native_fips": null
+    },
+    {
+      "native_county": "Miami-Dade",
+      "census_name": "Miami-Dade County",
+      "contextual_geoid": "12086",
+      "native_fips": null
+    },
+    {
+      "native_county": "Lee",
+      "census_name": "Lee County",
+      "contextual_geoid": "12071",
+      "native_fips": null
+    },
+    {
+      "native_county": "Santa Rosa",
+      "census_name": "Santa Rosa County",
+      "contextual_geoid": "12113",
+      "native_fips": null
+    },
+    {
+      "native_county": "Franklin",
+      "census_name": "Franklin County",
+      "contextual_geoid": "12037",
+      "native_fips": null
+    },
+    {
+      "native_county": "Leon",
+      "census_name": "Leon County",
+      "contextual_geoid": "12073",
+      "native_fips": null
+    },
+    {
+      "native_county": "Lake",
+      "census_name": "Lake County",
+      "contextual_geoid": "12069",
+      "native_fips": null
+    },
+    {
+      "native_county": "Marion",
+      "census_name": "Marion County",
+      "contextual_geoid": "12083",
+      "native_fips": null
+    },
+    {
+      "native_county": "Columbia",
+      "census_name": "Columbia County",
+      "contextual_geoid": "12023",
+      "native_fips": null
+    },
+    {
+      "native_county": "Sumter",
+      "census_name": "Sumter County",
+      "contextual_geoid": "12119",
+      "native_fips": null
+    },
+    {
+      "native_county": "Osceola",
+      "census_name": "Osceola County",
+      "contextual_geoid": "12097",
+      "native_fips": null
+    },
+    {
+      "native_county": "Suwannee",
+      "census_name": "Suwannee County",
+      "contextual_geoid": "12121",
+      "native_fips": null
+    },
+    {
+      "native_county": "Union",
+      "census_name": "Union County",
+      "contextual_geoid": "12125",
+      "native_fips": null
+    },
+    {
+      "native_county": "Taylor",
+      "census_name": "Taylor County",
+      "contextual_geoid": "12123",
+      "native_fips": null
+    },
+    {
+      "native_county": "Pasco",
+      "census_name": "Pasco County",
+      "contextual_geoid": "12101",
+      "native_fips": null
+    },
+    {
+      "native_county": "Escambia",
+      "census_name": "Escambia County",
+      "contextual_geoid": "12033",
+      "native_fips": null
+    },
+    {
+      "native_county": "Nassau",
+      "census_name": "Nassau County",
+      "contextual_geoid": "12089",
+      "native_fips": null
+    },
+    {
+      "native_county": "Polk",
+      "census_name": "Polk County",
+      "contextual_geoid": "12105",
+      "native_fips": null
+    },
+    {
+      "native_county": "Gulf",
+      "census_name": "Gulf County",
+      "contextual_geoid": "12045",
+      "native_fips": null
+    },
+    {
+      "native_county": "Dixie",
+      "census_name": "Dixie County",
+      "contextual_geoid": "12029",
+      "native_fips": null
+    },
+    {
+      "native_county": "Wakulla",
+      "census_name": "Wakulla County",
+      "contextual_geoid": "12129",
+      "native_fips": null
+    },
+    {
+      "native_county": "Alachua",
+      "census_name": "Alachua County",
+      "contextual_geoid": "12001",
+      "native_fips": null
+    },
+    {
+      "native_county": "Orange",
+      "census_name": "Orange County",
+      "contextual_geoid": "12095",
+      "native_fips": null
+    },
+    {
+      "native_county": "Okeechobee",
+      "census_name": "Okeechobee County",
+      "contextual_geoid": "12093",
+      "native_fips": null
+    },
+    {
+      "native_county": "Putnam",
+      "census_name": "Putnam County",
+      "contextual_geoid": "12107",
+      "native_fips": null
+    },
+    {
+      "native_county": "Gadsden",
+      "census_name": "Gadsden County",
+      "contextual_geoid": "12039",
+      "native_fips": null
+    },
+    {
+      "native_county": "Highlands",
+      "census_name": "Highlands County",
+      "contextual_geoid": "12055",
+      "native_fips": null
+    },
+    {
+      "native_county": "Washington",
+      "census_name": "Washington County",
+      "contextual_geoid": "12133",
+      "native_fips": null
+    },
+    {
+      "native_county": "Citrus",
+      "census_name": "Citrus County",
+      "contextual_geoid": "12017",
+      "native_fips": null
+    },
+    {
+      "native_county": "Monroe",
+      "census_name": "Monroe County",
+      "contextual_geoid": "12087",
+      "native_fips": null
+    },
+    {
+      "native_county": "Collier",
+      "census_name": "Collier County",
+      "contextual_geoid": "12021",
+      "native_fips": null
+    },
+    {
+      "native_county": "Desoto",
+      "census_name": "DeSoto County",
+      "contextual_geoid": "12027",
+      "native_fips": null
+    },
+    {
+      "native_county": "Charlotte",
+      "census_name": "Charlotte County",
+      "contextual_geoid": "12015",
+      "native_fips": null
+    },
+    {
+      "native_county": "Holmes",
+      "census_name": "Holmes County",
+      "contextual_geoid": "12059",
+      "native_fips": null
+    },
+    {
+      "native_county": "Madison",
+      "census_name": "Madison County",
+      "contextual_geoid": "12079",
+      "native_fips": null
+    },
+    {
+      "native_county": "Baker",
+      "census_name": "Baker County",
+      "contextual_geoid": "12003",
+      "native_fips": null
+    },
+    {
+      "native_county": "Manatee",
+      "census_name": "Manatee County",
+      "contextual_geoid": "12081",
+      "native_fips": null
+    },
+    {
+      "native_county": "Sarasota",
+      "census_name": "Sarasota County",
+      "contextual_geoid": "12115",
+      "native_fips": null
+    },
+    {
+      "native_county": "St. Lucie",
+      "census_name": "St. Lucie County",
+      "contextual_geoid": "12111",
+      "native_fips": null
+    },
+    {
+      "native_county": "Palm Beach",
+      "census_name": "Palm Beach County",
+      "contextual_geoid": "12099",
+      "native_fips": null
+    },
+    {
+      "native_county": "Bay",
+      "census_name": "Bay County",
+      "contextual_geoid": "12005",
+      "native_fips": null
+    },
+    {
+      "native_county": "Clay",
+      "census_name": "Clay County",
+      "contextual_geoid": "12019",
+      "native_fips": null
+    },
+    {
+      "native_county": "Lafayette",
+      "census_name": "Lafayette County",
+      "contextual_geoid": "12067",
+      "native_fips": null
+    },
+    {
+      "native_county": "Hardee",
+      "census_name": "Hardee County",
+      "contextual_geoid": "12049",
+      "native_fips": null
+    },
+    {
+      "native_county": "Liberty",
+      "census_name": "Liberty County",
+      "contextual_geoid": "12077",
+      "native_fips": null
+    },
+    {
+      "native_county": "Broward",
+      "census_name": "Broward County",
+      "contextual_geoid": "12011",
+      "native_fips": null
+    },
+    {
+      "native_county": "Volusia",
+      "census_name": "Volusia County",
+      "contextual_geoid": "12127",
+      "native_fips": null
+    },
+    {
+      "native_county": "Indian River",
+      "census_name": "Indian River County",
+      "contextual_geoid": "12061",
+      "native_fips": null
+    },
+    {
+      "native_county": "Okaloosa",
+      "census_name": "Okaloosa County",
+      "contextual_geoid": "12091",
+      "native_fips": null
+    },
+    {
+      "native_county": "Hendry",
+      "census_name": "Hendry County",
+      "contextual_geoid": "12051",
+      "native_fips": null
+    },
+    {
+      "native_county": "Martin",
+      "census_name": "Martin County",
+      "contextual_geoid": "12085",
+      "native_fips": null
+    },
+    {
+      "native_county": "Jackson",
+      "census_name": "Jackson County",
+      "contextual_geoid": "12063",
+      "native_fips": null
+    },
+    {
+      "native_county": "St. Johns",
+      "census_name": "St. Johns County",
+      "contextual_geoid": "12109",
+      "native_fips": null
+    },
+    {
+      "native_county": "Flagler",
+      "census_name": "Flagler County",
+      "contextual_geoid": "12035",
+      "native_fips": null
+    },
+    {
+      "native_county": "Glades",
+      "census_name": "Glades County",
+      "contextual_geoid": "12043",
+      "native_fips": null
+    }
+  ],
+  "geometry_check": {
+    "state_code": "FL",
+    "features": 67,
+    "invalid": [],
+    "overlap_pairs": [
+      {
+        "left": "12007",
+        "right": "12125",
+        "overlap_square_degrees": 7.743513045383082e-07
+      },
+      {
+        "left": "12007",
+        "right": "12001",
+        "overlap_square_degrees": 3.5034068768211627e-07
+      },
+      {
+        "left": "12007",
+        "right": "12003",
+        "overlap_square_degrees": 1.0549296423007644e-05
+      },
+      {
+        "left": "12007",
+        "right": "12019",
+        "overlap_square_degrees": 1.0084254527879385e-05
+      },
+      {
+        "left": "12009",
+        "right": "12097",
+        "overlap_square_degrees": 2.707400668875763e-08
+      },
+      {
+        "left": "12009",
+        "right": "12095",
+        "overlap_square_degrees": 8.708507359678642e-08
+      },
+      {
+        "left": "12009",
+        "right": "12061",
+        "overlap_square_degrees": 1.0867104578366755e-05
+      },
+      {
+        "left": "12131",
+        "right": "12133",
+        "overlap_square_degrees": 3.1503808200221523e-06
+      },
+      {
+        "left": "12131",
+        "right": "12005",
+        "overlap_square_degrees": 5.0706196306475944e-06
+      },
+      {
+        "left": "12131",
+        "right": "12091",
+        "overlap_square_degrees": 4.741399999558108e-06
+      },
+      {
+        "left": "12053",
+        "right": "12119",
+        "overlap_square_degrees": 7.30449258576832e-07
+      },
+      {
+        "left": "12047",
+        "right": "12121",
+        "overlap_square_degrees": 2.983422028719142e-07
+      },
+      {
+        "left": "12065",
+        "right": "12129",
+        "overlap_square_degrees": 2.5529349999091916e-05
+      },
+      {
+        "left": "12031",
+        "right": "12003",
+        "overlap_square_degrees": 6.068328081698408e-06
+      },
+      {
+        "left": "12117",
+        "right": "12095",
+        "overlap_square_degrees": 2.3166134338568452e-05
+      },
+      {
+        "left": "12041",
+        "right": "12121",
+        "overlap_square_degrees": 3.5938985343070004e-07
+      },
+      {
+        "left": "12041",
+        "right": "12001",
+        "overlap_square_degrees": 4.519557656958715e-06
+      },
+      {
+        "left": "12041",
+        "right": "12067",
+        "overlap_square_degrees": 8.372296965269763e-07
+      },
+      {
+        "left": "12013",
+        "right": "12005",
+        "overlap_square_degrees": 8.13356695248482e-07
+      },
+      {
+        "left": "12013",
+        "right": "12077",
+        "overlap_square_degrees": 3.1340947997986937e-06
+      },
+      {
+        "left": "12057",
+        "right": "12101",
+        "overlap_square_degrees": 1.6208122431851778e-05
+      },
+      {
+        "left": "12057",
+        "right": "12105",
+        "overlap_square_degrees": 8.826386851146389e-06
+      },
+      {
+        "left": "12075",
+        "right": "12001",
+        "overlap_square_degrees": 1.1466923428056373e-06
+      },
+      {
+        "left": "12086",
+        "right": "12021",
+        "overlap_square_degrees": 5.111625022078102e-06
+      },
+      {
+        "left": "12071",
+        "right": "12021",
+        "overlap_square_degrees": 2.137698914075061e-05
+      },
+      {
+        "left": "12071",
+        "right": "12051",
+        "overlap_square_degrees": 1.995830447370164e-05
+      },
+      {
+        "left": "12113",
+        "right": "12091",
+        "overlap_square_degrees": 3.1941081869694277e-05
+      },
+      {
+        "left": "12037",
+        "right": "12077",
+        "overlap_square_degrees": 6.967221808211528e-06
+      },
+      {
+        "left": "12073",
+        "right": "12039",
+        "overlap_square_degrees": 9.334308565359681e-08
+      },
+      {
+        "left": "12073",
+        "right": "12077",
+        "overlap_square_degrees": 1.2146532907234965e-07
+      },
+      {
+        "left": "12069",
+        "right": "12119",
+        "overlap_square_degrees": 1.9402510444561417e-05
+      },
+      {
+        "left": "12069",
+        "right": "12095",
+        "overlap_square_degrees": 1.2859151561661232e-06
+      },
+      {
+        "left": "12069",
+        "right": "12127",
+        "overlap_square_degrees": 2.9844018522261127e-07
+      },
+      {
+        "left": "12083",
+        "right": "12119",
+        "overlap_square_degrees": 3.0143895146876334e-05
+      },
+      {
+        "left": "12083",
+        "right": "12001",
+        "overlap_square_degrees": 8.198446693213311e-07
+      },
+      {
+        "left": "12083",
+        "right": "12017",
+        "overlap_square_degrees": 6.126579977544788e-07
+      },
+      {
+        "left": "12083",
+        "right": "12127",
+        "overlap_square_degrees": 6.166556554183755e-07
+      },
+      {
+        "left": "12023",
+        "right": "12125",
+        "overlap_square_degrees": 3.443552746809621e-07
+      },
+      {
+        "left": "12119",
+        "right": "12105",
+        "overlap_square_degrees": 5.172689555500085e-06
+      },
+      {
+        "left": "12119",
+        "right": "12017",
+        "overlap_square_degrees": 1.921023076278984e-07
+      },
+      {
+        "left": "12097",
+        "right": "12061",
+        "overlap_square_degrees": 7.745749848121769e-07
+      },
+      {
+        "left": "12121",
+        "right": "12079",
+        "overlap_square_degrees": 1.412128712734059e-06
+      },
+      {
+        "left": "12125",
+        "right": "12001",
+        "overlap_square_degrees": 1.747866603673931e-07
+      },
+      {
+        "left": "12125",
+        "right": "12003",
+        "overlap_square_degrees": 3.846875056377374e-06
+      },
+      {
+        "left": "12123",
+        "right": "12067",
+        "overlap_square_degrees": 1.7923973464614905e-06
+      },
+      {
+        "left": "12105",
+        "right": "12055",
+        "overlap_square_degrees": 1.838416830072575e-05
+      },
+      {
+        "left": "12105",
+        "right": "12049",
+        "overlap_square_degrees": 4.468083694917366e-05
+      },
+      {
+        "left": "12045",
+        "right": "12005",
+        "overlap_square_degrees": 9.449433048355127e-07
+      },
+      {
+        "left": "12045",
+        "right": "12077",
+        "overlap_square_degrees": 4.073841733253858e-07
+      },
+      {
+        "left": "12029",
+        "right": "12067",
+        "overlap_square_degrees": 5.703355597498708e-06
+      },
+      {
+        "left": "12129",
+        "right": "12077",
+        "overlap_square_degrees": 3.7820737207104006e-07
+      },
+      {
+        "left": "12001",
+        "right": "12107",
+        "overlap_square_degrees": 2.941568898212951e-07
+      },
+      {
+        "left": "12093",
+        "right": "12061",
+        "overlap_square_degrees": 1.6774763935693515e-05
+      },
+      {
+        "left": "12107",
+        "right": "12109",
+        "overlap_square_degrees": 1.3687474143176882e-08
+      },
+      {
+        "left": "12107",
+        "right": "12035",
+        "overlap_square_degrees": 1.7813337927329414e-06
+      },
+      {
+        "left": "12055",
+        "right": "12049",
+        "overlap_square_degrees": 1.232231037981226e-05
+      },
+      {
+        "left": "12133",
+        "right": "12059",
+        "overlap_square_degrees": 5.445717048016565e-07
+      },
+      {
+        "left": "12133",
+        "right": "12005",
+        "overlap_square_degrees": 2.809908191611054e-06
+      },
+      {
+        "left": "12027",
+        "right": "12081",
+        "overlap_square_degrees": 1.8947451585814902e-06
+      },
+      {
+        "left": "12027",
+        "right": "12115",
+        "overlap_square_degrees": 3.140690554258963e-06
+      },
+      {
+        "left": "12015",
+        "right": "12043",
+        "overlap_square_degrees": 3.591929509782185e-05
+      },
+      {
+        "left": "12079",
+        "right": "12067",
+        "overlap_square_degrees": 5.066271287291423e-06
+      },
+      {
+        "left": "12003",
+        "right": "12019",
+        "overlap_square_degrees": 4.2723626489511716e-07
+      },
+      {
+        "left": "12081",
+        "right": "12049",
+        "overlap_square_degrees": 4.011353017598718e-05
+      },
+      {
+        "left": "12111",
+        "right": "12061",
+        "overlap_square_degrees": 1.6018986064076367e-05
+      },
+      {
+        "left": "12099",
+        "right": "12051",
+        "overlap_square_degrees": 4.6201281319192015e-05
+      },
+      {
+        "left": "12019",
+        "right": "12109",
+        "overlap_square_degrees": 4.025599999810166e-06
+      }
+    ],
+    "contextual_geometry_sha256": "d8d21d51dd475bc23c1b10fa0aa151b1591f1c681dfa9c31ce8d94f1b4713f47",
+    "current_and_2024_identity_inventory_equal": true,
+    "live_complete_bytes_equal": true
+  },
+  "live_geometry_url": "https://www.themarginoferror.com/participation-context/20261104T183601Z/geometry/county-FL.geojson",
+  "live_geometry_receipt": {
+    "status": 200,
+    "final_url": "https://www.themarginoferror.com/participation-context/20261104T183601Z/geometry/county-FL.geojson",
+    "bytes": 494363,
+    "sha256": "d8d21d51dd475bc23c1b10fa0aa151b1591f1c681dfa9c31ce8d94f1b4713f47",
+    "tls_verified": true
+  },
+  "native_feature_ids_not_used_as_census_fips": true,
+  "no_certified_2026_election_boundary_or_completed_counting_claim": true,
+  "contextual_boundary_year": 2024,
+  "native_map_approvals_unchanged": true,
+  "generic_rate_or_map_usability_review_not_implied_by_identity": true,
+  "context23_unchanged": true
+}

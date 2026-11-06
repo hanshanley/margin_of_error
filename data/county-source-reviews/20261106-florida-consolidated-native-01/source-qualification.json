@@ -1,0 +1,6555 @@
+{
+  "source_url": "https://floridaelectionwatch.gov/CountyReportingStatus",
+  "source_sha256": "f4a4ff86238aadf10336ba428aaef8a8c04374e0774642734968d7d14362ce72",
+  "source_bytes": 169716,
+  "election_title": "2026 General Election",
+  "election_date": "2026-11-03",
+  "source_status": "Unofficial Election Night Results",
+  "source_as_of": null,
+  "headers": [
+    "County SOE Website",
+    "Voter Turnout",
+    "Eligible Active Registered Voters",
+    "Turnout Percentage",
+    "Precincts Reporting",
+    "Precincts Completed",
+    "Vote-by-Mail Ballots Completed",
+    "Early Voting Ballots Completed",
+    "Provisional Ballots Completed",
+    "10-day Overseas Vote-by-Mail Completed"
+  ],
+  "county_rows": [
+    [
+      {
+        "text": "Alachua",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/ALA/4097/Summary/"
+        ]
+      },
+      {
+        "text": "105,976",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "167,143",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "63.4%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Baker",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/BAK/4124/Summary/"
+        ]
+      },
+      {
+        "text": "9,864",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "17,899",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "55.11%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Bay",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/BAY/4078/Summary/"
+        ]
+      },
+      {
+        "text": "70,630",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "128,668",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "54.89%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Bradford",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/BRA/4113/Summary/"
+        ]
+      },
+      {
+        "text": "9,768",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "16,909",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "57.77%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Brevard",
+        "span_classes": [],
+        "hrefs": [
+          "http://enr.electionsfl.org/BRE/4064/Summary/"
+        ]
+      },
+      {
+        "text": "271,885",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "447,257",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "60.79%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Broward",
+        "span_classes": [],
+        "hrefs": [
+          "https://results.browardvotes.gov/ENR/browardflenr/240/en/Index_240.html"
+        ]
+      },
+      {
+        "text": "666,186",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "1,103,545",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "60.37%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Calhoun",
+        "span_classes": [],
+        "hrefs": [
+          "http://enr.electionsfl.org/CAL/4054/Summary/"
+        ]
+      },
+      {
+        "text": "4,330",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "7,601",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "56.97%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Charlotte",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/CHA/4062/Summary/"
+        ]
+      },
+      {
+        "text": "101,185",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "155,843",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "64.93%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Citrus",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/CIT/4070/Summary/"
+        ]
+      },
+      {
+        "text": "75,533",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "121,391",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "62.22%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Clay",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/CLA/4086/Summary/"
+        ]
+      },
+      {
+        "text": "93,709",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "156,247",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "59.97%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Collier",
+        "span_classes": [],
+        "hrefs": [
+          "http://enr.electionsfl.org/CLL/4083/Summary/"
+        ]
+      },
+      {
+        "text": "172,998",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "265,678",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "65.12%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Columbia",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/CLM/4069/Summary/"
+        ]
+      },
+      {
+        "text": "22,710",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "41,610",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "54.58%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Desoto",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/DES/4094/Summary/"
+        ]
+      },
+      {
+        "text": "9,180",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "16,080",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "57.09%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Dixie",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/DIX/4125/Summary/"
+        ]
+      },
+      {
+        "text": "5,649",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "10,055",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "56.18%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Duval",
+        "span_classes": [],
+        "hrefs": [
+          "http://enr.electionsfl.org/DUV/4076/Summary/"
+        ]
+      },
+      {
+        "text": "360,840",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "655,212",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "55.07%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Escambia",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/ESC/3977/Summary/"
+        ]
+      },
+      {
+        "text": "116,510",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "207,445",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "56.16%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Flagler",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/FLA/4088/Summary/"
+        ]
+      },
+      {
+        "text": "64,378",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100,550",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "64.03%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Franklin",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/FRA/4130/Summary/"
+        ]
+      },
+      {
+        "text": "5,075",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "7,608",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "66.71%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Gadsden",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/GAD/4066/Summary/"
+        ]
+      },
+      {
+        "text": "17,890",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "26,870",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "66.58%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Gilchrist",
+        "span_classes": [],
+        "hrefs": [
+          "http://enr.electionsfl.org/GIL/4055/Summary/"
+        ]
+      },
+      {
+        "text": "7,857",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "12,999",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "60.44%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Glades",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/GLA/4065/Summary/"
+        ]
+      },
+      {
+        "text": "3,842",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "6,877",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "55.87%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Gulf",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/GUL/4084/Summary/"
+        ]
+      },
+      {
+        "text": "6,750",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "11,194",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "60.3%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Hamilton",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/HAM/4101/Summary/"
+        ]
+      },
+      {
+        "text": "4,174",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "7,168",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "58.23%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Hardee",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/HAR/4063/Summary/"
+        ]
+      },
+      {
+        "text": "6,058",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "11,530",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "52.54%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Hendry",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/HEN/4077/Summary/"
+        ]
+      },
+      {
+        "text": "10,175",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "19,438",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "52.35%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Hernando",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/HER/4106/Summary/"
+        ]
+      },
+      {
+        "text": "80,680",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "138,084",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "58.43%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Highlands",
+        "span_classes": [],
+        "hrefs": [
+          "https://www.votehighlands.gov"
+        ]
+      },
+      {
+        "text": "39,951",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "63,379",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "63.04%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Hillsborough",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/HIL/4074/Summary/"
+        ]
+      },
+      {
+        "text": "519,837",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "823,694",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "63.11%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Holmes",
+        "span_classes": [],
+        "hrefs": [
+          "http://enr.electionsfl.org/HOL/4108/Summary/"
+        ]
+      },
+      {
+        "text": "6,244",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "11,453",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "54.52%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Indian River",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/IND/4096/Summary/"
+        ]
+      },
+      {
+        "text": "77,961",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "119,740",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "65.11%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Jackson",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/JAC/4118/Summary/"
+        ]
+      },
+      {
+        "text": "15,766",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "27,516",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "57.3%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Jefferson",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/JEF/4115/Summary/"
+        ]
+      },
+      {
+        "text": "7,024",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "10,029",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "70.04%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Lafayette",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/LAF/4071/Summary/"
+        ]
+      },
+      {
+        "text": "2,639",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "4,271",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "61.79%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Lake",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/LAK/4079/Summary/"
+        ]
+      },
+      {
+        "text": "178,949",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "283,780",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "63.06%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Lee",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/LEE/4111/Summary/"
+        ]
+      },
+      {
+        "text": "306,050",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "504,633",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "60.65%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Leon",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/LEO/4072/Summary/"
+        ]
+      },
+      {
+        "text": "125,981",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "184,523",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "68.27%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Levy",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/LEV/4058/Summary/"
+        ]
+      },
+      {
+        "text": "18,224",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "30,448",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "59.85%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Liberty",
+        "span_classes": [],
+        "hrefs": [
+          "https://libertycountyflsoe.gov/"
+        ]
+      },
+      {
+        "text": "2,699",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "4,617",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "58.46%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Madison",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/MAD/4061/Summary/"
+        ]
+      },
+      {
+        "text": "7,038",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "10,547",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "66.73%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Manatee",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/MAN/4126/Summary/"
+        ]
+      },
+      {
+        "text": "183,179",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "287,882",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "63.63%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Marion",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/MRN/4099/Summary/"
+        ]
+      },
+      {
+        "text": "164,944",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "271,268",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "60.8%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Martin",
+        "span_classes": [],
+        "hrefs": [
+          "https://results.enr.clarityelections.com/FL/Martin/127353/"
+        ]
+      },
+      {
+        "text": "76,865",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "117,229",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "65.57%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Miami-Dade",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/DAD/4087/Summary/"
+        ]
+      },
+      {
+        "text": "794,583",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "1,313,264",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "60.5%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Monroe",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/MON/Summary/4109/"
+        ]
+      },
+      {
+        "text": "32,506",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "54,704",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "59.42%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Nassau",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/NAS/4080/Summary/"
+        ]
+      },
+      {
+        "text": "50,767",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "82,056",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "61.87%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Okaloosa",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/OKA/4092/Summary"
+        ]
+      },
+      {
+        "text": "77,922",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "148,349",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "52.53%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Okeechobee",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/OKE/4060/Summary/"
+        ]
+      },
+      {
+        "text": "11,202",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "20,874",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "53.66%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Orange",
+        "span_classes": [],
+        "hrefs": [
+          "https://results.voteorangefl.gov/FL/Orange/127356/"
+        ]
+      },
+      {
+        "text": "474,350",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "820,504",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "57.81%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Osceola",
+        "span_classes": [],
+        "hrefs": [
+          "https://results.enr.clarityelections.com/FL/Osceola/127292/"
+        ]
+      },
+      {
+        "text": "132,572",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "238,063",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "55.69%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Palm Beach",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/PAL/4131/Summary/"
+        ]
+      },
+      {
+        "text": "576,527",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "889,521",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "64.81%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Pasco",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/PAS/4085/Summary/"
+        ]
+      },
+      {
+        "text": "241,684",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "407,676",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "59.28%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Pinellas",
+        "span_classes": [],
+        "hrefs": [
+          "https://www.votepinellas.gov"
+        ]
+      },
+      {
+        "text": "406,622",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "613,797",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "66.25%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Polk",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/POL/4000/Summary/Scrolling/Banner/"
+        ]
+      },
+      {
+        "text": "259,553",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "459,892",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "56.44%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Putnam",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/PUT/4081/Summary/"
+        ]
+      },
+      {
+        "text": "26,633",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "45,370",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "58.7%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Santa Rosa",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/SAN/4093/Summary/"
+        ]
+      },
+      {
+        "text": "74,870",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "144,230",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "51.91%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Sarasota",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/SAR/4105/Summary/"
+        ]
+      },
+      {
+        "text": "225,126",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "334,228",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "67.36%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Seminole",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/SEM/4119/Summary/"
+        ]
+      },
+      {
+        "text": "196,745",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "343,307",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "57.31%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "St. Johns",
+        "span_classes": [],
+        "hrefs": [
+          "https://www.votesjc.gov"
+        ]
+      },
+      {
+        "text": "156,860",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "243,887",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "64.32%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "St. Lucie",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/STL/4089/Summary/"
+        ]
+      },
+      {
+        "text": "139,005",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "246,187",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "56.46%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Sumter",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/SUM/4056/Summary/Scrolling/Banner/"
+        ]
+      },
+      {
+        "text": "95,678",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "130,072",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "73.56%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Suwannee",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/SUW/4112/Summary/"
+        ]
+      },
+      {
+        "text": "15,929",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "26,996",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "59.01%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Taylor",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/TAY/4107/Summary"
+        ]
+      },
+      {
+        "text": "6,996",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "11,749",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "59.55%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Union",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/UNI/4121/summary"
+        ]
+      },
+      {
+        "text": "4,303",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "7,316",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "58.82%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Volusia",
+        "span_classes": [],
+        "hrefs": [
+          "https://app.enhancedvoting.com/results/public/volusia-county-fl/2026GeneralElection"
+        ]
+      },
+      {
+        "text": "238,164",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "401,708",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "59.29%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Wakulla",
+        "span_classes": [],
+        "hrefs": [
+          "https://www.wakullavotes.gov/"
+        ]
+      },
+      {
+        "text": "15,192",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "25,929",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "58.59%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Walton",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/WAL/4091/Summary/"
+        ]
+      },
+      {
+        "text": "35,445",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "63,946",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "55.43%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ],
+    [
+      {
+        "text": "Washington",
+        "span_classes": [],
+        "hrefs": [
+          "https://enr.electionsfl.org/WAS/4104/Summary/"
+        ]
+      },
+      {
+        "text": "9,080",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "14,960",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "60.7%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "100%",
+        "span_classes": [
+          []
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "Y"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      },
+      {
+        "text": "",
+        "span_classes": [
+          [
+            "N"
+          ]
+        ],
+        "hrefs": []
+      }
+    ]
+  ],
+  "statewide_row": [
+    {
+      "text": "TOTAL",
+      "span_classes": [],
+      "hrefs": []
+    },
+    {
+      "text": "8,335,497",
+      "span_classes": [
+        []
+      ],
+      "hrefs": []
+    },
+    {
+      "text": "13,704,495",
+      "span_classes": [
+        []
+      ],
+      "hrefs": []
+    },
+    {
+      "text": "60.82%",
+      "span_classes": [
+        []
+      ],
+      "hrefs": []
+    },
+    {
+      "text": "100%",
+      "span_classes": [
+        []
+      ],
+      "hrefs": []
+    },
+    {
+      "text": "",
+      "span_classes": [
+        []
+      ],
+      "hrefs": []
+    },
+    {
+      "text": "",
+      "span_classes": [
+        []
+      ],
+      "hrefs": []
+    },
+    {
+      "text": "",
+      "span_classes": [
+        []
+      ],
+      "hrefs": []
+    },
+    {
+      "text": "",
+      "span_classes": [
+        []
+      ],
+      "hrefs": []
+    },
+    {
+      "text": "",
+      "span_classes": [],
+      "hrefs": []
+    }
+  ],
+  "schema_version": 1,
+  "status": "complete_original_acquisition_and_native_scope_review_not_a_promoted_query_or_map",
+  "review_created_at_utc": "2026-11-06T19:35:14.739830+00:00",
+  "source_timezone": null,
+  "generic_turnout_approved": false,
+  "county_fips_join_approved": false,
+  "map_approved": false,
+  "certified": false,
+  "native_county_catalog": [
+    {
+      "county_literal": "Alachua",
+      "native_county_code": "ALA",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/ALA",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/ALA/4097/Summary/"
+    },
+    {
+      "county_literal": "Baker",
+      "native_county_code": "BAK",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/BAK",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/BAK/4124/Summary/"
+    },
+    {
+      "county_literal": "Bay",
+      "native_county_code": "BAY",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/BAY",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/BAY/4078/Summary/"
+    },
+    {
+      "county_literal": "Bradford",
+      "native_county_code": "BRA",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/BRA",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/BRA/4113/Summary/"
+    },
+    {
+      "county_literal": "Brevard",
+      "native_county_code": "BRE",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/BRE",
+      "native_fips": null,
+      "declared_county_soe_url": "http://enr.electionsfl.org/BRE/4064/Summary/"
+    },
+    {
+      "county_literal": "Broward",
+      "native_county_code": "BRO",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/BRO",
+      "native_fips": null,
+      "declared_county_soe_url": "https://results.browardvotes.gov/ENR/browardflenr/240/en/Index_240.html"
+    },
+    {
+      "county_literal": "Calhoun",
+      "native_county_code": "CAL",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/CAL",
+      "native_fips": null,
+      "declared_county_soe_url": "http://enr.electionsfl.org/CAL/4054/Summary/"
+    },
+    {
+      "county_literal": "Charlotte",
+      "native_county_code": "CHA",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/CHA",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/CHA/4062/Summary/"
+    },
+    {
+      "county_literal": "Citrus",
+      "native_county_code": "CIT",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/CIT",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/CIT/4070/Summary/"
+    },
+    {
+      "county_literal": "Clay",
+      "native_county_code": "CLA",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/CLA",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/CLA/4086/Summary/"
+    },
+    {
+      "county_literal": "Collier",
+      "native_county_code": "CLL",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/CLL",
+      "native_fips": null,
+      "declared_county_soe_url": "http://enr.electionsfl.org/CLL/4083/Summary/"
+    },
+    {
+      "county_literal": "Columbia",
+      "native_county_code": "CLM",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/CLM",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/CLM/4069/Summary/"
+    },
+    {
+      "county_literal": "Desoto",
+      "native_county_code": "DES",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/DES",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/DES/4094/Summary/"
+    },
+    {
+      "county_literal": "Dixie",
+      "native_county_code": "DIX",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/DIX",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/DIX/4125/Summary/"
+    },
+    {
+      "county_literal": "Duval",
+      "native_county_code": "DUV",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/DUV",
+      "native_fips": null,
+      "declared_county_soe_url": "http://enr.electionsfl.org/DUV/4076/Summary/"
+    },
+    {
+      "county_literal": "Escambia",
+      "native_county_code": "ESC",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/ESC",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/ESC/3977/Summary/"
+    },
+    {
+      "county_literal": "Flagler",
+      "native_county_code": "FLA",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/FLA",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/FLA/4088/Summary/"
+    },
+    {
+      "county_literal": "Franklin",
+      "native_county_code": "FRA",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/FRA",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/FRA/4130/Summary/"
+    },
+    {
+      "county_literal": "Gadsden",
+      "native_county_code": "GAD",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/GAD",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/GAD/4066/Summary/"
+    },
+    {
+      "county_literal": "Gilchrist",
+      "native_county_code": "GIL",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/GIL",
+      "native_fips": null,
+      "declared_county_soe_url": "http://enr.electionsfl.org/GIL/4055/Summary/"
+    },
+    {
+      "county_literal": "Glades",
+      "native_county_code": "GLA",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/GLA",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/GLA/4065/Summary/"
+    },
+    {
+      "county_literal": "Gulf",
+      "native_county_code": "GUL",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/GUL",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/GUL/4084/Summary/"
+    },
+    {
+      "county_literal": "Hamilton",
+      "native_county_code": "HAM",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/HAM",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/HAM/4101/Summary/"
+    },
+    {
+      "county_literal": "Hardee",
+      "native_county_code": "HAR",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/HAR",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/HAR/4063/Summary/"
+    },
+    {
+      "county_literal": "Hendry",
+      "native_county_code": "HEN",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/HEN",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/HEN/4077/Summary/"
+    },
+    {
+      "county_literal": "Hernando",
+      "native_county_code": "HER",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/HER",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/HER/4106/Summary/"
+    },
+    {
+      "county_literal": "Highlands",
+      "native_county_code": "HIG",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/HIG",
+      "native_fips": null,
+      "declared_county_soe_url": "https://www.votehighlands.gov"
+    },
+    {
+      "county_literal": "Hillsborough",
+      "native_county_code": "HIL",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/HIL",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/HIL/4074/Summary/"
+    },
+    {
+      "county_literal": "Holmes",
+      "native_county_code": "HOL",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/HOL",
+      "native_fips": null,
+      "declared_county_soe_url": "http://enr.electionsfl.org/HOL/4108/Summary/"
+    },
+    {
+      "county_literal": "Indian River",
+      "native_county_code": "IND",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/IND",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/IND/4096/Summary/"
+    },
+    {
+      "county_literal": "Jackson",
+      "native_county_code": "JAC",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/JAC",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/JAC/4118/Summary/"
+    },
+    {
+      "county_literal": "Jefferson",
+      "native_county_code": "JEF",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/JEF",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/JEF/4115/Summary/"
+    },
+    {
+      "county_literal": "Lafayette",
+      "native_county_code": "LAF",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/LAF",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/LAF/4071/Summary/"
+    },
+    {
+      "county_literal": "Lake",
+      "native_county_code": "LAK",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/LAK",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/LAK/4079/Summary/"
+    },
+    {
+      "county_literal": "Lee",
+      "native_county_code": "LEE",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/LEE",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/LEE/4111/Summary/"
+    },
+    {
+      "county_literal": "Leon",
+      "native_county_code": "LEO",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/LEO",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/LEO/4072/Summary/"
+    },
+    {
+      "county_literal": "Levy",
+      "native_county_code": "LEV",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/LEV",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/LEV/4058/Summary/"
+    },
+    {
+      "county_literal": "Liberty",
+      "native_county_code": "LIB",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/LIB",
+      "native_fips": null,
+      "declared_county_soe_url": "https://libertycountyflsoe.gov/"
+    },
+    {
+      "county_literal": "Madison",
+      "native_county_code": "MAD",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/MAD",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/MAD/4061/Summary/"
+    },
+    {
+      "county_literal": "Manatee",
+      "native_county_code": "MAN",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/MAN",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/MAN/4126/Summary/"
+    },
+    {
+      "county_literal": "Marion",
+      "native_county_code": "MRN",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/MRN",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/MRN/4099/Summary/"
+    },
+    {
+      "county_literal": "Martin",
+      "native_county_code": "MRT",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/MRT",
+      "native_fips": null,
+      "declared_county_soe_url": "https://results.enr.clarityelections.com/FL/Martin/127353/"
+    },
+    {
+      "county_literal": "Miami-Dade",
+      "native_county_code": "DAD",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/DAD",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/DAD/4087/Summary/"
+    },
+    {
+      "county_literal": "Monroe",
+      "native_county_code": "MON",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/MON",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/MON/Summary/4109/"
+    },
+    {
+      "county_literal": "Nassau",
+      "native_county_code": "NAS",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/NAS",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/NAS/4080/Summary/"
+    },
+    {
+      "county_literal": "Okaloosa",
+      "native_county_code": "OKA",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/OKA",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/OKA/4092/Summary"
+    },
+    {
+      "county_literal": "Okeechobee",
+      "native_county_code": "OKE",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/OKE",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/OKE/4060/Summary/"
+    },
+    {
+      "county_literal": "Orange",
+      "native_county_code": "ORA",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/ORA",
+      "native_fips": null,
+      "declared_county_soe_url": "https://results.voteorangefl.gov/FL/Orange/127356/"
+    },
+    {
+      "county_literal": "Osceola",
+      "native_county_code": "OSC",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/OSC",
+      "native_fips": null,
+      "declared_county_soe_url": "https://results.enr.clarityelections.com/FL/Osceola/127292/"
+    },
+    {
+      "county_literal": "Palm Beach",
+      "native_county_code": "PAL",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/PAL",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/PAL/4131/Summary/"
+    },
+    {
+      "county_literal": "Pasco",
+      "native_county_code": "PAS",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/PAS",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/PAS/4085/Summary/"
+    },
+    {
+      "county_literal": "Pinellas",
+      "native_county_code": "PIN",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/PIN",
+      "native_fips": null,
+      "declared_county_soe_url": "https://www.votepinellas.gov"
+    },
+    {
+      "county_literal": "Polk",
+      "native_county_code": "POL",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/POL",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/POL/4000/Summary/Scrolling/Banner/"
+    },
+    {
+      "county_literal": "Putnam",
+      "native_county_code": "PUT",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/PUT",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/PUT/4081/Summary/"
+    },
+    {
+      "county_literal": "Santa Rosa",
+      "native_county_code": "SAN",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/SAN",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/SAN/4093/Summary/"
+    },
+    {
+      "county_literal": "Sarasota",
+      "native_county_code": "SAR",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/SAR",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/SAR/4105/Summary/"
+    },
+    {
+      "county_literal": "Seminole",
+      "native_county_code": "SEM",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/SEM",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/SEM/4119/Summary/"
+    },
+    {
+      "county_literal": "St. Johns",
+      "native_county_code": "STJ",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/STJ",
+      "native_fips": null,
+      "declared_county_soe_url": "https://www.votesjc.gov"
+    },
+    {
+      "county_literal": "St. Lucie",
+      "native_county_code": "STL",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/STL",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/STL/4089/Summary/"
+    },
+    {
+      "county_literal": "Sumter",
+      "native_county_code": "SUM",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/SUM",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/SUM/4056/Summary/Scrolling/Banner/"
+    },
+    {
+      "county_literal": "Suwannee",
+      "native_county_code": "SUW",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/SUW",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/SUW/4112/Summary/"
+    },
+    {
+      "county_literal": "Taylor",
+      "native_county_code": "TAY",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/TAY",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/TAY/4107/Summary"
+    },
+    {
+      "county_literal": "Union",
+      "native_county_code": "UNI",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/UNI",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/UNI/4121/summary"
+    },
+    {
+      "county_literal": "Volusia",
+      "native_county_code": "VOL",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/VOL",
+      "native_fips": null,
+      "declared_county_soe_url": "https://app.enhancedvoting.com/results/public/volusia-county-fl/2026GeneralElection"
+    },
+    {
+      "county_literal": "Wakulla",
+      "native_county_code": "WAK",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/WAK",
+      "native_fips": null,
+      "declared_county_soe_url": "https://www.wakullavotes.gov/"
+    },
+    {
+      "county_literal": "Walton",
+      "native_county_code": "WAL",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/WAL",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/WAL/4091/Summary/"
+    },
+    {
+      "county_literal": "Washington",
+      "native_county_code": "WAS",
+      "declared_county_page_url": "https://floridaelectionwatch.gov/TrackCounty/WAS",
+      "native_fips": null,
+      "declared_county_soe_url": "https://enr.electionsfl.org/WAS/4104/Summary/"
+    }
+  ],
+  "source_receipts": [
+    {
+      "url": "https://floridaelectionwatch.gov/CountyReportingStatus",
+      "final_url": "https://floridaelectionwatch.gov/CountyReportingStatus",
+      "status": 200,
+      "retrieved_at_utc": "2026-11-06T19:31:33.898440+00:00",
+      "bytes": 169716,
+      "sha256": "f4a4ff86238aadf10336ba428aaef8a8c04374e0774642734968d7d14362ce72",
+      "content_type": "text/html; charset=utf-8",
+      "last_modified": null,
+      "etag": null
+    },
+    {
+      "url": "https://dos.fl.gov/elections/data-statistics/elections-data/voter-turnout/",
+      "final_url": "https://dos.fl.gov/elections/data-statistics/elections-data/voter-turnout/",
+      "status": 403,
+      "retrieved_at_utc": "2026-11-06T19:31:34.207254+00:00",
+      "bytes": 5661,
+      "sha256": "9a9741f3b3596b30a04307792df9820650e89aba36f99a0b5c8fa9bb84e54c55",
+      "content_type": "text/html; charset=UTF-8",
+      "last_modified": null,
+      "etag": null
+    },
+    {
+      "url": "https://floridaelectionwatch.gov/FAQs",
+      "final_url": "https://floridaelectionwatch.gov/FAQs",
+      "status": 200,
+      "retrieved_at_utc": "2026-11-06T19:33:18.244984+00:00",
+      "bytes": 25657,
+      "sha256": "cb4dce36ddfddc4e6bc2e4a099521bdc9f155d32630de03ffc0009e5a6ff19ce",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://floridaelectionwatch.gov/Downloads",
+      "final_url": "https://floridaelectionwatch.gov/Downloads",
+      "status": 200,
+      "retrieved_at_utc": "2026-11-06T19:33:18.304825+00:00",
+      "bytes": 24015,
+      "sha256": "6ed65504fbc83cdfb9827f89ee1a81c86836caea6ced293921779ef173b6e81c",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://floridaelectionwatch.gov/Content/site.css",
+      "final_url": "https://floridaelectionwatch.gov/Content/site.css",
+      "status": 200,
+      "retrieved_at_utc": "2026-11-06T19:33:18.361121+00:00",
+      "bytes": 3004,
+      "sha256": "2d906e0fc3877c9cdf0791b4cb59fc829c2cede5a4e772c119d34fe991d965d1",
+      "content_type": "text/css"
+    }
+  ],
+  "independent_table_verification": {
+    "stdlib_beautifulsoup_browser_full_table_equal": true,
+    "full_rows_including_headers": 69,
+    "counties": 67,
+    "columns": 10,
+    "turnout_sum": 8335497,
+    "eligible_active_registered_sum": 13704495,
+    "both_sums_equal_native_statewide_total": true,
+    "all_68_printed_percentages_match_half_up_2_decimals": true,
+    "rounded_percentages": [
+      {
+        "county": "Alachua",
+        "printed": "63.4",
+        "calculated": "63.40"
+      },
+      {
+        "county": "Baker",
+        "printed": "55.11",
+        "calculated": "55.11"
+      },
+      {
+        "county": "Bay",
+        "printed": "54.89",
+        "calculated": "54.89"
+      },
+      {
+        "county": "Bradford",
+        "printed": "57.77",
+        "calculated": "57.77"
+      },
+      {
+        "county": "Brevard",
+        "printed": "60.79",
+        "calculated": "60.79"
+      },
+      {
+        "county": "Broward",
+        "printed": "60.37",
+        "calculated": "60.37"
+      },
+      {
+        "county": "Calhoun",
+        "printed": "56.97",
+        "calculated": "56.97"
+      },
+      {
+        "county": "Charlotte",
+        "printed": "64.93",
+        "calculated": "64.93"
+      },
+      {
+        "county": "Citrus",
+        "printed": "62.22",
+        "calculated": "62.22"
+      },
+      {
+        "county": "Clay",
+        "printed": "59.97",
+        "calculated": "59.97"
+      },
+      {
+        "county": "Collier",
+        "printed": "65.12",
+        "calculated": "65.12"
+      },
+      {
+        "county": "Columbia",
+        "printed": "54.58",
+        "calculated": "54.58"
+      },
+      {
+        "county": "Desoto",
+        "printed": "57.09",
+        "calculated": "57.09"
+      },
+      {
+        "county": "Dixie",
+        "printed": "56.18",
+        "calculated": "56.18"
+      },
+      {
+        "county": "Duval",
+        "printed": "55.07",
+        "calculated": "55.07"
+      },
+      {
+        "county": "Escambia",
+        "printed": "56.16",
+        "calculated": "56.16"
+      },
+      {
+        "county": "Flagler",
+        "printed": "64.03",
+        "calculated": "64.03"
+      },
+      {
+        "county": "Franklin",
+        "printed": "66.71",
+        "calculated": "66.71"
+      },
+      {
+        "county": "Gadsden",
+        "printed": "66.58",
+        "calculated": "66.58"
+      },
+      {
+        "county": "Gilchrist",
+        "printed": "60.44",
+        "calculated": "60.44"
+      },
+      {
+        "county": "Glades",
+        "printed": "55.87",
+        "calculated": "55.87"
+      },
+      {
+        "county": "Gulf",
+        "printed": "60.3",
+        "calculated": "60.30"
+      },
+      {
+        "county": "Hamilton",
+        "printed": "58.23",
+        "calculated": "58.23"
+      },
+      {
+        "county": "Hardee",
+        "printed": "52.54",
+        "calculated": "52.54"
+      },
+      {
+        "county": "Hendry",
+        "printed": "52.35",
+        "calculated": "52.35"
+      },
+      {
+        "county": "Hernando",
+        "printed": "58.43",
+        "calculated": "58.43"
+      },
+      {
+        "county": "Highlands",
+        "printed": "63.04",
+        "calculated": "63.04"
+      },
+      {
+        "county": "Hillsborough",
+        "printed": "63.11",
+        "calculated": "63.11"
+      },
+      {
+        "county": "Holmes",
+        "printed": "54.52",
+        "calculated": "54.52"
+      },
+      {
+        "county": "Indian River",
+        "printed": "65.11",
+        "calculated": "65.11"
+      },
+      {
+        "county": "Jackson",
+        "printed": "57.3",
+        "calculated": "57.30"
+      },
+      {
+        "county": "Jefferson",
+        "printed": "70.04",
+        "calculated": "70.04"
+      },
+      {
+        "county": "Lafayette",
+        "printed": "61.79",
+        "calculated": "61.79"
+      },
+      {
+        "county": "Lake",
+        "printed": "63.06",
+        "calculated": "63.06"
+      },
+      {
+        "county": "Lee",
+        "printed": "60.65",
+        "calculated": "60.65"
+      },
+      {
+        "county": "Leon",
+        "printed": "68.27",
+        "calculated": "68.27"
+      },
+      {
+        "county": "Levy",
+        "printed": "59.85",
+        "calculated": "59.85"
+      },
+      {
+        "county": "Liberty",
+        "printed": "58.46",
+        "calculated": "58.46"
+      },
+      {
+        "county": "Madison",
+        "printed": "66.73",
+        "calculated": "66.73"
+      },
+      {
+        "county": "Manatee",
+        "printed": "63.63",
+        "calculated": "63.63"
+      },
+      {
+        "county": "Marion",
+        "printed": "60.8",
+        "calculated": "60.80"
+      },
+      {
+        "county": "Martin",
+        "printed": "65.57",
+        "calculated": "65.57"
+      },
+      {
+        "county": "Miami-Dade",
+        "printed": "60.5",
+        "calculated": "60.50"
+      },
+      {
+        "county": "Monroe",
+        "printed": "59.42",
+        "calculated": "59.42"
+      },
+      {
+        "county": "Nassau",
+        "printed": "61.87",
+        "calculated": "61.87"
+      },
+      {
+        "county": "Okaloosa",
+        "printed": "52.53",
+        "calculated": "52.53"
+      },
+      {
+        "county": "Okeechobee",
+        "printed": "53.66",
+        "calculated": "53.66"
+      },
+      {
+        "county": "Orange",
+        "printed": "57.81",
+        "calculated": "57.81"
+      },
+      {
+        "county": "Osceola",
+        "printed": "55.69",
+        "calculated": "55.69"
+      },
+      {
+        "county": "Palm Beach",
+        "printed": "64.81",
+        "calculated": "64.81"
+      },
+      {
+        "county": "Pasco",
+        "printed": "59.28",
+        "calculated": "59.28"
+      },
+      {
+        "county": "Pinellas",
+        "printed": "66.25",
+        "calculated": "66.25"
+      },
+      {
+        "county": "Polk",
+        "printed": "56.44",
+        "calculated": "56.44"
+      },
+      {
+        "county": "Putnam",
+        "printed": "58.7",
+        "calculated": "58.70"
+      },
+      {
+        "county": "Santa Rosa",
+        "printed": "51.91",
+        "calculated": "51.91"
+      },
+      {
+        "county": "Sarasota",
+        "printed": "67.36",
+        "calculated": "67.36"
+      },
+      {
+        "county": "Seminole",
+        "printed": "57.31",
+        "calculated": "57.31"
+      },
+      {
+        "county": "St. Johns",
+        "printed": "64.32",
+        "calculated": "64.32"
+      },
+      {
+        "county": "St. Lucie",
+        "printed": "56.46",
+        "calculated": "56.46"
+      },
+      {
+        "county": "Sumter",
+        "printed": "73.56",
+        "calculated": "73.56"
+      },
+      {
+        "county": "Suwannee",
+        "printed": "59.01",
+        "calculated": "59.01"
+      },
+      {
+        "county": "Taylor",
+        "printed": "59.55",
+        "calculated": "59.55"
+      },
+      {
+        "county": "Union",
+        "printed": "58.82",
+        "calculated": "58.82"
+      },
+      {
+        "county": "Volusia",
+        "printed": "59.29",
+        "calculated": "59.29"
+      },
+      {
+        "county": "Wakulla",
+        "printed": "58.59",
+        "calculated": "58.59"
+      },
+      {
+        "county": "Walton",
+        "printed": "55.43",
+        "calculated": "55.43"
+      },
+      {
+        "county": "Washington",
+        "printed": "60.7",
+        "calculated": "60.70"
+      },
+      {
+        "county": "TOTAL",
+        "printed": "60.82",
+        "calculated": "60.82"
+      }
+    ],
+    "status_class_combinations": [
+      [
+        [
+          "Y"
+        ],
+        [
+          "Y"
+        ],
+        [
+          "Y"
+        ],
+        [
+          "N"
+        ],
+        [
+          "N"
+        ]
+      ],
+      [
+        [
+          "Y"
+        ],
+        [
+          "Y"
+        ],
+        [
+          "Y"
+        ],
+        [
+          "N"
+        ],
+        [
+          "Y"
+        ]
+      ],
+      [
+        [
+          "Y"
+        ],
+        [
+          "Y"
+        ],
+        [
+          "Y"
+        ],
+        [
+          "Y"
+        ],
+        [
+          "N"
+        ]
+      ],
+      [
+        [
+          "Y"
+        ],
+        [
+          "Y"
+        ],
+        [
+          "Y"
+        ],
+        [
+          "Y"
+        ],
+        [
+          "Y"
+        ]
+      ]
+    ]
+  },
+  "source_definition": {
+    "official_faq_url": "https://floridaelectionwatch.gov/FAQs",
+    "turnout_definition": "Voter turnout refers to the percentage of eligible registered voters who cast a ballot in the election.",
+    "native_registration_deadline_date": "2026-10-05",
+    "registration_reference": "Active registration as of the source's registration deadline, at report generation.",
+    "no_cvap_vap_vep_or_demographic_denominator": true
+  },
+  "cautions": [
+    "Table status is Unofficial Election Night Results, not certification.",
+    "100% precinct reporting does not establish completion of every ballot category.",
+    "Preserve native incomplete provisional and overseas flags without treating them as zero ballots.",
+    "No declared source-update clock or timezone is present; receipt clocks are not replacements.",
+    "Native three-letter county identifiers are not Census FIPS.",
+    "The separate statewide aggregate must not be added to county participation.",
+    "The previously published Monroe observation requires explicit historical source reconciliation before map promotion.",
+    "Candidate/party election downloads are a separate declared dataset, not participation.",
+    "DOS generic turnout index returned 403; no bypass or guessed replacement was attempted."
+  ]
+}

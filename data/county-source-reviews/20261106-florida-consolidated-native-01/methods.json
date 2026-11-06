@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "scope": "Complete numerical review of Florida Election Watch's 2026 General Election County Reporting Status table.",
+  "input": "All 67 native county rows, the distinct statewide aggregate, all 10 native columns, literal completion-status classes, declared county identifiers and SOE links.",
+  "independent_extraction": "Every header and table cell agreed between a standard-library HTML parser, BeautifulSoup and Chromium's DOM over the complete retained original response.",
+  "arithmetic": "Independently sum county participation and eligible active registrations to the source statewide totals. Recompute all 68 registered fractions with Decimal and compare to source percentages using half-up rounding to two decimal places.",
+  "definition": "The official FAQ defines turnout in relation to eligible registered voters casting ballots. It ties active-registration reports to the October 5, 2026 registration deadline. Those are source definitions, not CVAP, VAP or VEP denominators.",
+  "completion": "Preserve the five native county completion columns as literal Y/N classes. Unfinished provisional or overseas reporting is not zero participation; 100% precinct reporting does not imply certified or final all-ballot completion. Missing statewide completion flags remain missing.",
+  "clocks": "The table has no declared source-update time or timezone. Preserve nulls. HTTP receipt and acquisition clocks are provenance only.",
+  "geography": "Native three-letter identifiers are not Census FIPS. Geographic identity and map/rate approval require a separate review.",
+  "history": "This package does not overwrite or add the previously published Monroe observation. Any current-map source selection must separately reconcile that observation while preserving historical inputs.",
+  "privacy": "Complete original HTML/CSS and HTTP bodies remain in the private acquisition workspace. Public files contain only reviewed numerical observations, safe declared source URLs, receipts, methods and executable query/tests.",
+  "exclusions": "No candidate/party votes, demographic participation, received-ballot or processing-counter substitution, registration-affiliation inference, certification claim or live explorer promotion.",
+  "reproduction": "Run python3 -B -I review-counties.py --output /new/output/directory and python3 -B -I test_review_counties.py. Output includes all numerical inputs, complete tables, audit, checksums and a deterministic full-query ZIP."
+}
