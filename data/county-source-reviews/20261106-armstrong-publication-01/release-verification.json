@@ -1,0 +1,140 @@
+{
+  "verified_at_utc": "2026-11-06T05:07:14.390431+00:00",
+  "revision": "af1417a7cc7059243e676252be87e2f3713ace72",
+  "release_tag": "voter-county-pennsylvania-armstrong-20261106-01",
+  "release_id": 436119744,
+  "github_immutable": false,
+  "never_overwrite_policy": true,
+  "anonymous_requests": true,
+  "downloads": [
+    {
+      "kind": "complete_release_asset",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-armstrong-20261106-01/county-candidate-results.csv",
+      "file": "county-candidate-results.csv",
+      "bytes": 5569,
+      "sha256": "bfc659ca81be8cf8b154f4896240b9661f555d06a831846b13667144aad8be65",
+      "status": 200
+    },
+    {
+      "kind": "complete_release_asset",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-armstrong-20261106-01/county-contest-accounting.csv",
+      "file": "county-contest-accounting.csv",
+      "bytes": 5871,
+      "sha256": "0b0f27e384359554c19eb606a554cfded1a418c7e599429c06afcb763ab47763",
+      "status": 200
+    },
+    {
+      "kind": "complete_release_asset",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-armstrong-20261106-01/county-literal-party-totals.csv",
+      "file": "county-literal-party-totals.csv",
+      "bytes": 10881,
+      "sha256": "da5ee723b03cc5d506ca92814a167998d0c52659b4b60ff1032890c826e155e3",
+      "status": 200
+    },
+    {
+      "kind": "complete_release_asset",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-armstrong-20261106-01/county-participation.csv",
+      "file": "county-participation.csv",
+      "bytes": 4075,
+      "sha256": "10ea1590501c1695e4f58fd156458aca2f9838ffe0c8f6a0aca338c5e35b17f7",
+      "status": 200
+    },
+    {
+      "kind": "complete_release_asset",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-armstrong-20261106-01/native-contest-subtotals.csv",
+      "file": "native-contest-subtotals.csv",
+      "bytes": 1845,
+      "sha256": "c01dbfd449c1c525a3300b0273ef7f5bee4b723b12b48ee9752510306ffa61c0",
+      "status": 200
+    },
+    {
+      "kind": "complete_release_asset",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-armstrong-20261106-01/native-elector-group-participation.csv",
+      "file": "native-elector-group-participation.csv",
+      "bytes": 2714,
+      "sha256": "17c3d8cb6e2f83d03365b094d9c278dd09e83247b614f2ce1b8497c3ce19c140",
+      "status": 200
+    },
+    {
+      "kind": "complete_release_asset",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-armstrong-20261106-01/native-source-pages.csv",
+      "file": "native-source-pages.csv",
+      "bytes": 627,
+      "sha256": "4fb67a05d0ddf4b6236f1e36cbba1180d936170beea27bcad428a79b7527711c",
+      "status": 200
+    },
+    {
+      "kind": "complete_release_asset",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-armstrong-20261106-01/source-records.json.gz",
+      "file": "source-records.json.gz",
+      "bytes": 1729,
+      "sha256": "2ac5cba1c13b4c3da2a2c0dba7201a12edf910490e8907dabca25804a1e4b374",
+      "status": 200
+    },
+    {
+      "kind": "complete_release_asset",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-armstrong-20261106-01/complete-armstrong-2026-numerical-facts-01.zip",
+      "file": "complete-armstrong-2026-numerical-facts-01.zip",
+      "bytes": 17226,
+      "sha256": "fcde2a35801dcb62c03bc2673476c92e39c92451262bb0061edda9f77b74257e",
+      "status": 200,
+      "complete_byte_identical_zip_members": 12
+    },
+    {
+      "kind": "commit_pinned_complete_csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/af1417a7cc7059243e676252be87e2f3713ace72/data/county-source-reviews/20261106-armstrong-facts-01/county-candidate-results.csv",
+      "file": "county-candidate-results.csv",
+      "bytes": 5569,
+      "sha256": "bfc659ca81be8cf8b154f4896240b9661f555d06a831846b13667144aad8be65",
+      "status": 200
+    },
+    {
+      "kind": "commit_pinned_complete_csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/af1417a7cc7059243e676252be87e2f3713ace72/data/county-source-reviews/20261106-armstrong-facts-01/county-contest-accounting.csv",
+      "file": "county-contest-accounting.csv",
+      "bytes": 5871,
+      "sha256": "0b0f27e384359554c19eb606a554cfded1a418c7e599429c06afcb763ab47763",
+      "status": 200
+    },
+    {
+      "kind": "commit_pinned_complete_csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/af1417a7cc7059243e676252be87e2f3713ace72/data/county-source-reviews/20261106-armstrong-facts-01/county-literal-party-totals.csv",
+      "file": "county-literal-party-totals.csv",
+      "bytes": 10881,
+      "sha256": "da5ee723b03cc5d506ca92814a167998d0c52659b4b60ff1032890c826e155e3",
+      "status": 200
+    },
+    {
+      "kind": "commit_pinned_complete_csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/af1417a7cc7059243e676252be87e2f3713ace72/data/county-source-reviews/20261106-armstrong-facts-01/county-participation.csv",
+      "file": "county-participation.csv",
+      "bytes": 4075,
+      "sha256": "10ea1590501c1695e4f58fd156458aca2f9838ffe0c8f6a0aca338c5e35b17f7",
+      "status": 200
+    },
+    {
+      "kind": "commit_pinned_complete_csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/af1417a7cc7059243e676252be87e2f3713ace72/data/county-source-reviews/20261106-armstrong-facts-01/native-contest-subtotals.csv",
+      "file": "native-contest-subtotals.csv",
+      "bytes": 1845,
+      "sha256": "c01dbfd449c1c525a3300b0273ef7f5bee4b723b12b48ee9752510306ffa61c0",
+      "status": 200
+    },
+    {
+      "kind": "commit_pinned_complete_csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/af1417a7cc7059243e676252be87e2f3713ace72/data/county-source-reviews/20261106-armstrong-facts-01/native-elector-group-participation.csv",
+      "file": "native-elector-group-participation.csv",
+      "bytes": 2714,
+      "sha256": "17c3d8cb6e2f83d03365b094d9c278dd09e83247b614f2ce1b8497c3ce19c140",
+      "status": 200
+    },
+    {
+      "kind": "commit_pinned_complete_csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/af1417a7cc7059243e676252be87e2f3713ace72/data/county-source-reviews/20261106-armstrong-facts-01/native-source-pages.csv",
+      "file": "native-source-pages.csv",
+      "bytes": 627,
+      "sha256": "4fb67a05d0ddf4b6236f1e36cbba1180d936170beea27bcad428a79b7527711c",
+      "status": 200
+    }
+  ]
+}

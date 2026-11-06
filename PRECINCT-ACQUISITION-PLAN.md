@@ -671,13 +671,56 @@ is unchanged. There are now sixteen reviewed records (fifteen PA plus D.C.),
 346 anchors / 343 unique full URLs, including nine complete Blair downloads.
 All 106 complete relocations pass byte checks; the prepared Pages site is
 898,732,602 bytes. The local helper was stopped.
-Exact deployment/live verification remains pending; no new county/precinct map,
-demographic turnout, certification or statewide completion is claimed.
-Published UI revision is `9358986578e7de97dc77cc928436a0700ddb6e38`;
-exact Pages run `42165881247` and credential checks
-`42165881252` / `42165881469` are being checked by the single bounded
-`blair-exact-production-verification-01` process. Preserve its prepared `dist`
-reference until it finishes; do not duplicate the watcher.
+Exact production verification passed at `2026-11-06T05:07:03.018052+00:00`:
+UI revision `9358986578e7de97dc77cc928436a0700ddb6e38`, Pages `42165881247`
+and credential checks `42165881252` / `42165881469`. All 28 selected hosted/live
+files match, including all eighteen complete decompressed import JSONs.
+Artifact `13479077189`, 484,835,995 bytes, has SHA-256
+`8108ffa99f2393385daa9c1f219187202c4293cc3dc0d6828265e15deb4df1bf`.
+All six source-matched production browser modes/checks pass; the JavaScript
+modes also compare every prior full import fingerprint. The sole verifier
+finished and removed its temporary artifact download. Proof is persisted under
+`20261106-blair-publication-01` without another UI deployment.
+No new county/precinct map, demographic turnout, certification or statewide
+completion is claimed.
+
+**Armstrong primary participation and complete numerical review, November 6:**
+the saved directory led to the actual government index, which declares its
+November 3, 2026 combined county report and source disclaimer. Both complete PDF
+pages and all three receipt-bound originals remain private. PyMuPDF and
+pdfplumber agree on every native fact: nine elector-group/mode rows, four
+contest scopes, nine named-candidate rows, four separate unresolved-write-in
+rows and all native candidate subtotals.
+Native **Voters Cast is 24,039 = 20,853 Election Day + 3,186 Mail**, with
+**43,750** registrations and printed **54.95%**. The report explicitly says
+`w/o PROV`; provisional participation is absent, not zero. Candidate provisional
+zeroes do not supply a participation denominator. The native measure remains
+`Voters Cast`, not renamed ballots or independently audited unique voters.
+The `DEMOCRATIC` and `REPUBLICAN` administrative elector groups retain literal
+zero counts, zero total registrations, missing mode registrations and `N/A`
+turnout. These are not measured party turnout and do not replace the positive
+county total. Candidate party literals `REP`, `DEM` and `LIB` are separate.
+Native `Total Votes` excludes `Unresolved Write-In`; both are preserved without
+double-counting. Whole-county participation-minus-selection residuals are
+**61** for governor and **104** for Congress, unclassified rather than invented
+under/overvotes. No district participation denominators or provisional residuals
+are invented. Native `11/3/2026 10:26:30 PM` has no supplied timezone.
+Seven complete CSVs preserve participation, all native group rows, all candidate
+and write-in vectors, 36 literal-party/mode totals, four candidate subtotals,
+two source-page records and sixteen scoped accounting rows. Full factual JSON,
+receipts, audit, portable reviewer, checksums and all twelve ZIP members
+reproduce byte-identically offline under Python `-S`. Seven focused tests pass.
+Tracked-source credential screening passes all 6,510 files.
+Facts revision `af1417a7cc7059243e676252be87e2f3713ace72` and fixed release
+`voter-county-pennsylvania-armstrong-20261106-01` are published on the review
+branch. All nine full release assets and seven full commit-pinned CSVs are
+anonymously byte-verified, including every complete ZIP member.
+ZIP: **17,226 bytes**, SHA-256
+`fcde2a35801dcb62c03bc2673476c92e39c92451262bb0061edda9f77b74257e`.
+GitHub reports `immutable: false`; preserve the fixed checksum/never-overwrite
+policy, not a host-locking claim. See `20261106-armstrong-facts-01` and
+`20261106-armstrong-publication-01`. Explorer integration is next, not live yet;
+no map, demographic turnout, certification or statewide completion is approved.
 
 **November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated
