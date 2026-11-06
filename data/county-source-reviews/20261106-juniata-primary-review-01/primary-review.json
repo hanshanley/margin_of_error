@@ -1,0 +1,150 @@
+{
+  "verified_at_utc": "2026-11-06T09:19:26.632643+00:00",
+  "county": "Juniata",
+  "source_receipts": [
+    {
+      "source_report": "parent",
+      "file": "juniata-parent.html",
+      "requested_url": "https://www.juniatacountypa.gov/238/Latest-Election-Results",
+      "final_url": "https://www.juniatacountypa.gov/238/Latest-Election-Results",
+      "status": 200,
+      "bytes": 92405,
+      "sha256": "a6eb82571496f8db68c2934f94e4008a3f54b960f1b1678def13be9501fe28dc",
+      "content_type": "text/html; charset=utf-8",
+      "fetched_at_utc": "2026-11-06T09:11:01.011009+00:00"
+    },
+    {
+      "source_report": "summary",
+      "file": "juniata-summary.pdf",
+      "requested_url": "https://www.juniatacountypa.gov/DocumentCenter/View/570/2026-General-Election-Unofficial-Summary-PDF",
+      "final_url": "https://www.juniatacountypa.gov/DocumentCenter/View/570/2026-General-Election-Unofficial-Summary-PDF",
+      "status": 200,
+      "bytes": 29145,
+      "sha256": "0892cac4b4926b21c37e031314cdf9052053e57f5fb0d6d8267d007b85debd00",
+      "content_type": "application/pdf",
+      "fetched_at_utc": "2026-11-06T09:11:44.763646+00:00"
+    },
+    {
+      "source_report": "statement",
+      "file": "juniata-statement.pdf",
+      "requested_url": "https://www.juniatacountypa.gov/DocumentCenter/View/571/2026-General-Election-Unofficial-Precinct-results-PDF",
+      "final_url": "https://www.juniatacountypa.gov/DocumentCenter/View/571/2026-General-Election-Unofficial-Precinct-results-PDF",
+      "status": 200,
+      "bytes": 135894,
+      "sha256": "dc53cac0e7d57f1a32c8fa63552501f19266fb8725f53a5507da0cc170ffc73d",
+      "content_type": "application/pdf",
+      "fetched_at_utc": "2026-11-06T09:11:44.900974+00:00"
+    }
+  ],
+  "actual_parent_declarations": [
+    {
+      "role": "summary",
+      "label": "2026 General Election Unofficial Summary (PDF)",
+      "url": "https://www.juniatacountypa.gov/DocumentCenter/View/570/2026-General-Election-Unofficial-Summary-PDF"
+    },
+    {
+      "role": "statement",
+      "label": "2026 General Election Unofficial Precinct results (PDF)",
+      "url": "https://www.juniatacountypa.gov/DocumentCenter/View/571/2026-General-Election-Unofficial-Precinct-results-PDF"
+    }
+  ],
+  "complete_reviewed_input_sha256": "426b96391f338e0d05a93917b3dbf847dd74f484fc8bb2c8b9ab410598291980",
+  "all_entire_pages_tokens_and_complete_parsed_structures_match_both_engines": true,
+  "all_native_layout_lines_consumed": true,
+  "summary_first_page_directly_visually_inspected": true,
+  "complete_native_pages": 40,
+  "complete_native_units": 18,
+  "complete_native_unit_contests": 72,
+  "complete_native_county_contests": 5,
+  "all_candidate_write_in_total_accounting_and_participation_vectors_reconcile": true,
+  "native_write_in_spellings_unharmonized": true,
+  "reconciliations": [
+    {
+      "contest": "GOVERNOR and LIEUTENANT GOVERNOR",
+      "selected_unit_count": 18,
+      "native_contest_electorate": [
+        8258,
+        7160,
+        1098,
+        0
+      ],
+      "native_choice_and_accounting_vectors_match": true
+    },
+    {
+      "contest": "REPRESENTATIVE IN CONGRESS",
+      "selected_unit_count": 18,
+      "native_contest_electorate": [
+        8258,
+        7160,
+        1098,
+        0
+      ],
+      "native_choice_and_accounting_vectors_match": true
+    },
+    {
+      "contest": "SENATOR IN THE GENERAL ASSEMBLY 30TH SENATORIAL DISTRICT",
+      "selected_unit_count": 18,
+      "native_contest_electorate": [
+        8258,
+        7160,
+        1098,
+        0
+      ],
+      "native_choice_and_accounting_vectors_match": true
+    },
+    {
+      "contest": "REPRESENTATIVE IN THE GENERAL ASSEMBLY 85TH LEGISLATIVE DISTRICT",
+      "selected_unit_count": 2,
+      "native_contest_electorate": [
+        1977,
+        1749,
+        228,
+        0
+      ],
+      "native_choice_and_accounting_vectors_match": true
+    },
+    {
+      "contest": "REPRESENTATIVE IN THE GENERAL ASSEMBLY 86TH LEGISLATIVE DISTRICT",
+      "selected_unit_count": 16,
+      "native_contest_electorate": [
+        6281,
+        5411,
+        870,
+        0
+      ],
+      "native_choice_and_accounting_vectors_match": true
+    }
+  ],
+  "rejected_changes": [
+    "candidate votes substituted as ballots",
+    "blank ballots double counted",
+    "registration denominator invented",
+    "provisional column erased",
+    "counting declared complete",
+    "partial reporting declared complete",
+    "timezone invented",
+    "native status certified",
+    "source map approval invented",
+    "source FIPS invented",
+    "native party normalized",
+    "native clock harmonized",
+    "printed rate replaced",
+    "mode label harmonized",
+    "restricted electorate replaced",
+    "unit registration replaced",
+    "reporting vector corrected",
+    "write-in literal harmonized",
+    "frozen native input changed"
+  ],
+  "every_entire_file_and_archive_reproduces_offline": true,
+  "complete_query_files": 23,
+  "complete_csv_tables": 17,
+  "complete_archive_members": 22,
+  "blank_ballots_already_included": true,
+  "native_missing_cells_not_inferred": true,
+  "native_reporting_counters_unrepaired": true,
+  "source_fips_present": false,
+  "archive_bytes": 71658,
+  "archive_sha256": "a62c90a29170da195244c70fdf4005c58d2e718404e83f004b7e7e2c3876a780",
+  "scope": "Complete native report facts prepared and offline-verified, not yet committed/released or integrated. Source map flags remain false. Independent contextual identity, release bytes and exact UI verification remain pending."
+}

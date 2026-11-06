@@ -1,0 +1,9 @@
+statistic_literal,native_total_numerator,native_total_denominator,native_election_day_column,native_mail_column,native_mail_heading,native_provisional_column,native_provisional_heading,source_report,source_page,native_printed_page,native_printed_total_pages,source_status_literal,source_update_literal,declared_timezone
+Election Day Precincts Reporting,90,90,90,0,Absentee,0,"Provision
+al",summary,1,1,3,UNOFFICIAL RESULTS,11/05/2026 11:05 AM,
+Precincts Complete,0,90,0,0,Absentee,0,"Provision
+al",summary,1,1,3,UNOFFICIAL RESULTS,11/05/2026 11:05 AM,
+Precincts Partially Reported,90,90,90,0,Absentee,0,"Provision
+al",summary,1,1,3,UNOFFICIAL RESULTS,11/05/2026 11:05 AM,
+Absentee/ Early Precincts Reporting,90,90,0,90,Absentee,0,"Provision
+al",summary,1,1,3,UNOFFICIAL RESULTS,11/05/2026 11:05 AM,

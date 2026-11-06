@@ -1,0 +1,35 @@
+[
+  {
+    "source_report": "parent",
+    "file": "juniata-parent.html",
+    "requested_url": "https://www.juniatacountypa.gov/238/Latest-Election-Results",
+    "final_url": "https://www.juniatacountypa.gov/238/Latest-Election-Results",
+    "status": 200,
+    "bytes": 92405,
+    "sha256": "a6eb82571496f8db68c2934f94e4008a3f54b960f1b1678def13be9501fe28dc",
+    "content_type": "text/html; charset=utf-8",
+    "fetched_at_utc": "2026-11-06T09:11:01.011009+00:00"
+  },
+  {
+    "source_report": "summary",
+    "file": "juniata-summary.pdf",
+    "requested_url": "https://www.juniatacountypa.gov/DocumentCenter/View/570/2026-General-Election-Unofficial-Summary-PDF",
+    "final_url": "https://www.juniatacountypa.gov/DocumentCenter/View/570/2026-General-Election-Unofficial-Summary-PDF",
+    "status": 200,
+    "bytes": 29145,
+    "sha256": "0892cac4b4926b21c37e031314cdf9052053e57f5fb0d6d8267d007b85debd00",
+    "content_type": "application/pdf",
+    "fetched_at_utc": "2026-11-06T09:11:44.763646+00:00"
+  },
+  {
+    "source_report": "statement",
+    "file": "juniata-statement.pdf",
+    "requested_url": "https://www.juniatacountypa.gov/DocumentCenter/View/571/2026-General-Election-Unofficial-Precinct-results-PDF",
+    "final_url": "https://www.juniatacountypa.gov/DocumentCenter/View/571/2026-General-Election-Unofficial-Precinct-results-PDF",
+    "status": 200,
+    "bytes": 135894,
+    "sha256": "dc53cac0e7d57f1a32c8fa63552501f19266fb8725f53a5507da0cc170ffc73d",
+    "content_type": "application/pdf",
+    "fetched_at_utc": "2026-11-06T09:11:44.900974+00:00"
+  }
+]

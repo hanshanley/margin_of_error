@@ -1,0 +1,173 @@
+{
+  "verified_at_utc": "2026-11-06T09:19:32.500382+00:00",
+  "county": "Mercer",
+  "source_receipts": [
+    {
+      "source_report": "parent",
+      "file": "mercer-parent.html",
+      "requested_url": "https://www.mercercountypa.gov/election/Election.Results/default.htm",
+      "final_url": "https://www.mercercountypa.gov/election/Election.Results/default.htm",
+      "status": 200,
+      "bytes": 122775,
+      "sha256": "39351d8f7753168e416093a9cc7acd46be8c70da324d2636dcb875139de1dcd8",
+      "content_type": "text/html",
+      "fetched_at_utc": "2026-11-06T09:11:00.821752+00:00"
+    },
+    {
+      "source_report": "summary",
+      "file": "mercer-summary.pdf",
+      "requested_url": "https://www.mercercountypa.gov/election/Election.Results/2026/GENERAL/Summary.pdf",
+      "final_url": "https://www.mercercountypa.gov/election/Election.Results/2026/GENERAL/Summary.pdf",
+      "status": 200,
+      "bytes": 23614,
+      "sha256": "62dd7982282aa5f47a499851064742e83aa59e7c2f8ef30ff3720b40932d9d22",
+      "content_type": "application/pdf",
+      "fetched_at_utc": "2026-11-06T09:11:44.625449+00:00"
+    },
+    {
+      "source_report": "statement",
+      "file": "mercer-statement.pdf",
+      "requested_url": "https://www.mercercountypa.gov/election/Election.Results/2026/GENERAL/PRECINCT.pdf",
+      "final_url": "https://www.mercercountypa.gov/election/Election.Results/2026/GENERAL/PRECINCT.pdf",
+      "status": 200,
+      "bytes": 247488,
+      "sha256": "c8dde57ee0a8d8f1bce56654a6bd9991dc238412efe6c150219d292b2520a43d",
+      "content_type": "application/pdf",
+      "fetched_at_utc": "2026-11-06T09:11:45.127043+00:00"
+    }
+  ],
+  "actual_parent_declarations": [
+    {
+      "role": "summary",
+      "label": "SUMMARY",
+      "url": "https://www.mercercountypa.gov/election/Election.Results/2026/GENERAL/Summary.pdf"
+    },
+    {
+      "role": "statement",
+      "label": "PRECINCT",
+      "url": "https://www.mercercountypa.gov/election/Election.Results/2026/GENERAL/PRECINCT.pdf"
+    }
+  ],
+  "complete_reviewed_input_sha256": "fe14f95c34ad887027fc9314aeeef9c399ccd0b88d8410f68f39d2c721ce06cb",
+  "all_entire_pages_tokens_and_complete_parsed_structures_match_both_engines": true,
+  "all_native_layout_lines_consumed": true,
+  "summary_first_page_directly_visually_inspected": true,
+  "complete_native_pages": 94,
+  "complete_native_units": 90,
+  "complete_native_unit_contests": 362,
+  "complete_native_county_contests": 7,
+  "all_candidate_write_in_total_accounting_and_participation_vectors_reconcile": true,
+  "native_write_in_spellings_unharmonized": true,
+  "reconciliations": [
+    {
+      "contest": "GOVERNOR AND LIEUTENANT GOVERNOR",
+      "selected_unit_count": 90,
+      "native_contest_electorate": [
+        39121,
+        31943,
+        7178,
+        0
+      ],
+      "native_choice_and_accounting_vectors_match": true
+    },
+    {
+      "contest": "REPRESENTATIVE IN CONGRESS DISTRICT 16",
+      "selected_unit_count": 90,
+      "native_contest_electorate": [
+        39121,
+        31943,
+        7178,
+        0
+      ],
+      "native_choice_and_accounting_vectors_match": true
+    },
+    {
+      "contest": "SENATOR IN THE GENERAL ASSEMBLY DISTRICT 50",
+      "selected_unit_count": 90,
+      "native_contest_electorate": [
+        39121,
+        31943,
+        7178,
+        0
+      ],
+      "native_choice_and_accounting_vectors_match": true
+    },
+    {
+      "contest": "REPRESENTATIVE IN THE GENERAL ASSEMBLY DISTRICT 17",
+      "selected_unit_count": 39,
+      "native_contest_electorate": [
+        16437,
+        13859,
+        2578,
+        0
+      ],
+      "native_choice_and_accounting_vectors_match": true
+    },
+    {
+      "contest": "REPRESENTATIVE IN THE GENERAL ASSEMBLY DISTRICT 7",
+      "selected_unit_count": 51,
+      "native_contest_electorate": [
+        22684,
+        18084,
+        4600,
+        0
+      ],
+      "native_choice_and_accounting_vectors_match": true
+    },
+    {
+      "contest": "ISSUANCE OF LIQUOR LICENSES Sandy Lake Borough",
+      "selected_unit_count": 1,
+      "native_contest_electorate": [
+        226,
+        200,
+        26,
+        0
+      ],
+      "native_choice_and_accounting_vectors_match": true
+    },
+    {
+      "contest": "ISSUANCE OF MALT AND BREWED BEVERAGE LICENSES Sandy Lake Borough",
+      "selected_unit_count": 1,
+      "native_contest_electorate": [
+        226,
+        200,
+        26,
+        0
+      ],
+      "native_choice_and_accounting_vectors_match": true
+    }
+  ],
+  "rejected_changes": [
+    "candidate votes substituted as ballots",
+    "blank ballots double counted",
+    "registration denominator invented",
+    "provisional column erased",
+    "counting declared complete",
+    "partial reporting declared complete",
+    "timezone invented",
+    "native status certified",
+    "source map approval invented",
+    "source FIPS invented",
+    "native party normalized",
+    "native clock harmonized",
+    "printed rate replaced",
+    "mode label harmonized",
+    "restricted electorate replaced",
+    "unit registration replaced",
+    "reporting vector corrected",
+    "missing overvotes inferred",
+    "missing undervotes inferred",
+    "frozen native input changed"
+  ],
+  "every_entire_file_and_archive_reproduces_offline": true,
+  "complete_query_files": 23,
+  "complete_csv_tables": 17,
+  "complete_archive_members": 22,
+  "blank_ballots_already_included": true,
+  "native_missing_cells_not_inferred": true,
+  "native_reporting_counters_unrepaired": true,
+  "source_fips_present": false,
+  "archive_bytes": 212780,
+  "archive_sha256": "33578df3dcdd8c4d8d0e8f4fa5f952ed78634db88c695a8cea779fd1e164b5d6",
+  "scope": "Complete native report facts prepared and offline-verified, not yet committed/released or integrated. Source map flags remain false. Independent contextual identity, release bytes and exact UI verification remain pending."
+}

@@ -1,0 +1,4 @@
+contest_literal,native_units,total,election_day,mail,native_mail_mode_literal,provisional,all_native_choice_and_accounting_vectors_match
+GOVERNOR and LIEUTENANT GOVERNOR,15,7008,5554,1429,Mail Votes,25,True
+REPRESENTATIVE IN CONGRESS,15,7008,5554,1429,Mail Votes,25,True
+REPRESENTATIVE IN THE GENERAL ASSEMBLY,15,7008,5554,1429,Mail Votes,25,True

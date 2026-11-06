@@ -1,0 +1,86 @@
+{
+  "audit.json": {
+    "bytes": 2607,
+    "sha256": "ce7feae7452169a58a5cf0e9c4a912bb547815ae89c363330c857b731e005445"
+  },
+  "county-candidate-results.csv": {
+    "bytes": 9889,
+    "sha256": "42db60bf40ec6bfab07a0a30321ed2b4367a1e07c054580394e58700e73f9cf8"
+  },
+  "county-contest-accounting.csv": {
+    "bytes": 5012,
+    "sha256": "97397923485a6a10742231016913c54fa38e58f89c744c5d1dd9c040a0d0f006"
+  },
+  "county-literal-party-totals.csv": {
+    "bytes": 5620,
+    "sha256": "6358c2e0f876d1ee80cda131b4d278a31902d124064db54ef9d6c2119aab00e1"
+  },
+  "county-participation.csv": {
+    "bytes": 718,
+    "sha256": "c01eb7c094fa96020be842202a546fd73977461dead7ad824c1738752773f3e9"
+  },
+  "native-derived-contest-sums.csv": {
+    "bytes": 561,
+    "sha256": "76ed72e76c746cb34131fa0f4124975d44ddad036b0d79e86b6340872ca1d229"
+  },
+  "native-derived-rate-checks.csv": {
+    "bytes": 2589,
+    "sha256": "d55d5c716ab33a619bd2ab2110c56482a1bc82732efdf566e26d2e266b27eade"
+  },
+  "native-participation-modes.csv": {
+    "bytes": 606,
+    "sha256": "d04ec0abad95334c29d65d5cd04eafad84fe75e9af2f116a176eae1a89ae4a9b"
+  },
+  "native-reporting-statistics.csv": {
+    "bytes": 819,
+    "sha256": "8ce776d0ff3f24851e5571db11965084d823372ee8872a91edfe2e0cabd382ad"
+  },
+  "native-source-declarations.csv": {
+    "bytes": 578,
+    "sha256": "26475e67224266322b36f6fd6f2bb38f92ed6cba5f6184c2ce637be4bed20cc0"
+  },
+  "native-source-pages.csv": {
+    "bytes": 6674,
+    "sha256": "5bf27310c278a1335be003fada48e96eba9b8a7653e31d26fbb67b110fe3b1b3"
+  },
+  "native-unit-candidate-results.csv": {
+    "bytes": 153727,
+    "sha256": "930ab8a5781d43d0dd1090f5b44a3ca34fe963f117f02892d9cec44191fe9369"
+  },
+  "native-unit-contest-accounting.csv": {
+    "bytes": 67631,
+    "sha256": "b93a6a054ed5eb40e1ba3092dba7744344de778deccfac37557ac627644fe322"
+  },
+  "native-unit-literal-party-totals.csv": {
+    "bytes": 89833,
+    "sha256": "eda2de94b8f876fb9a63f4c6e9d3c261bcb70a306cf9310f4b9406640733c092"
+  },
+  "native-unit-participation-modes.csv": {
+    "bytes": 7349,
+    "sha256": "a45336db8190269d21d795f67294e3c647e142c8df45c535836a3892304b678c"
+  },
+  "native-unit-participation.csv": {
+    "bytes": 2250,
+    "sha256": "a2d821c0a7e2e99ba46906028f9fed5fc09685be23132f1b6c951eb2058d341e"
+  },
+  "native-unit-write-in-availability.csv": {
+    "bytes": 15720,
+    "sha256": "db5726d17720fbf2afc4736dd3029ca9c374d968a7071648c475f5f3da9881be"
+  },
+  "native-write-in-breakdowns.csv": {
+    "bytes": 69376,
+    "sha256": "9fe44fe4639c1104a0cefc2ed2890833a52efa8c1ef50521e56dd20e6cb269d4"
+  },
+  "review-three-pa-counties-native-query.py": {
+    "bytes": 23583,
+    "sha256": "7656f7a01fe6b04d0669e00e3251277cf0e0f0d122215d5e0626a3ad180d46ae"
+  },
+  "source-receipts.json": {
+    "bytes": 1569,
+    "sha256": "9ce8f68bc2abc1db3e8bed54918fa3914141cfacae712393886c5cefbea068cb"
+  },
+  "source-records.json.gz": {
+    "bytes": 37831,
+    "sha256": "40806bbddf46b45c894cd6893047795523647f0040c52ba89f2126281206c69d"
+  }
+}

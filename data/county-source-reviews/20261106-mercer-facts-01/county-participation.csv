@@ -1,0 +1,3 @@
+year,state_code,county,native_participation_measure_literal,ballots_cast,registered_voters,native_printed_turnout,election_day_ballots,mail_ballots,native_mail_mode_literal,provisional_ballots,native_provisional_mode_literal,blank_ballots,registered_turnout_pct,reported_precincts,total_precincts,complete_precincts,partially_reported_precincts,complete_counting,source_fips,maps_approved,source_report,source_page,native_printed_page,native_printed_total_pages,source_status_literal,source_update_literal,declared_timezone
+2026,PA,Mercer,Ballots Cast - Total,39121,72238,54.16%,31943,7178,Absentee,0,"Provision
+al",6,54.15570752235666,90,90,0,90,False,,False,summary,1,1,3,UNOFFICIAL RESULTS,11/05/2026 11:05 AM,

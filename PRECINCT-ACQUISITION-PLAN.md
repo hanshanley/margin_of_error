@@ -23,6 +23,60 @@ Next: verify the exact deployed revision, original hosted artifact, all
 **278 selected entire public/hosted files**, credentials and seven production
 browser scenarios before claiming Perry live. Do not start a duplicate verifier.
 
+**Next participation batch: Juniata, Mercer and Montour, reviewed together.**
+A consolidated Pennsylvania index declares **67 unique county result-site links**.
+Against the fixed context08 baseline, **26 counties** already have reviewed
+participation and **41 links** need independent source work. This is a useful
+source-discovery index, not 67 reviewed ballot totals; its candidate totals and
+reporting counters are not participation. All original HTML remains private.
+The bounded five-parent follow-up preserves Clinton's actual **403**, without
+bypass or another unchanged request. McKean's actual homepage is reachable but
+still declares the same previously failed GIS viewer; the viewer was not retried.
+Juniata, Mercer and Montour each declare a summary/precinct PDF pair. All six
+entire originals were acquired, and every native page independently confirms
+the **November 3, 2026 General election**, including Montour's generic filenames.
+See `20261106-consolidated-pa-source-discovery-01/source-review.json`.
+
+All **183 entire pages / 123 actual unit participation headers / 479 unit
+contests / fifteen county contests** reconcile across two independent text
+engines, with every native layout line consumed. The three county summary
+statistics pages were also directly visually inspected. Native figures:
+**Juniata 8,258 ballots / 14,095 registrations / 58.59%**;
+**Mercer 39,121 / 72,238 / 54.16%**; **Montour 7,008 / 12,418 / 56.43%**.
+Printed rates and calculated fractions remain distinct; all three preserve
+zero completed precincts, partial reporting, unofficial status and distinct
+summary/statement clocks without an invented timezone.
+Juniata retains separate **1,977 / 6,281** legislative electorates.
+Mercer retains separate **16,437 / 22,684** legislative electorates and the
+two Sandy Lake Borough ballot questions' **226** electorate, not county ballots.
+Mercer's absent overvotes/undervotes remain absent; its unclassified accounting
+residual is separately derived, not relabeled as native undervotes.
+Its literal `Absentee` column is not silently renamed to a different voting mode.
+Montour's **25 provisional ballots** and contradictory printed reporting-mode
+counters are retained, not repaired. Blank ballots are already included.
+Native write-in names/spellings remain unharmonized; write-in totals reconcile
+without assigning identities across different native spellings.
+
+Each complete factual query has **23 files / seventeen entire CSV tables /
+22 ZIP members** and reproduces every file and ZIP offline in an isolated
+standard-library run. All **58 focused rejection cases** pass (19/20/19).
+Juniata ZIP **71,658 bytes**, SHA-256
+`a62c90a29170da195244c70fdf4005c58d2e718404e83f004b7e7e2c3876a780`;
+Mercer **212,780 bytes**,
+`33578df3dcdd8c4d8d0e8f4fa5f952ed78634db88c695a8cea779fd1e164b5d6`;
+Montour **81,491 bytes**,
+`d1840d2ca02a499485ba9fd7e5902f3f55cc8e6c0903a9c052c892da748a8b96`.
+See each `20261106-{juniata,mercer,montour}-facts-01` and separate primary review.
+These are prepared complete source facts, **not yet released or live**.
+Next: fixed source publication, independent Census identity, new immutable
+context09, tested integration and exact production verification. No source map,
+native FIPS, certification, completed-counting or demographic turnout is inferred.
+The fresh Maine results index differs in bytes from November 5, but its reviewed
+main headings list primary/special elections, not a new General heading.
+That is this index's scope, not proof that General returns are absent everywhere.
+All Maine unallocated-vote/blank/write-in/shared-Kennebec gaps, separate D.C.
+accounting and Philadelphia restrictions remain open; schedule **5** remains active.
+
 **November 6, 08:55 UTC: Mifflin is LIVE verified.** Revision
 `b2b8b54209fe738576ec098ee757db982f1d4a89`, Pages **42190311421 attempt 1**,
 artifact **13489417433 / 515,667,094 bytes**, SHA-256
@@ -80,7 +134,7 @@ old record, import and download. The exact approved revision, original hosted
 artifact, entire public bytes, credential jobs and production browsers passed
 at 08:55 UTC above; do not redeploy the unchanged UI for proof-only persistence.
 
-Next source work is **Perry**, not another Mifflin or Potter deployment.
+Historical Perry/Mifflin source-review trail (current integration status above):
 Both actual official parents and four declared complete original reports are
 saved privately in `pa-perry-mifflin-primary-20261106-01`. Mifflin's 54 entire
 pages independently agree in both PDF engines, with every line consumed,

@@ -1,0 +1,5 @@
+unit_literal,counting_mode_literal,ballots_cast,blank_ballots,registered_voters,native_printed_turnout,source_report,source_page,native_printed_page,native_printed_total_pages,source_status_literal,source_update_literal,declared_timezone
+Juniata County,TOTAL,8258,1,14095,58.59%,summary,1,1,4,UNOFFICIAL RESULTS,11/03/2026 10:31 PM,
+Juniata County,Election Day,7160,1,,,summary,1,1,4,UNOFFICIAL RESULTS,11/03/2026 10:31 PM,
+Juniata County,Mail Votes,1098,0,,,summary,1,1,4,UNOFFICIAL RESULTS,11/03/2026 10:31 PM,
+Juniata County,Provisional Votes,0,0,,,summary,1,1,4,UNOFFICIAL RESULTS,11/03/2026 10:31 PM,

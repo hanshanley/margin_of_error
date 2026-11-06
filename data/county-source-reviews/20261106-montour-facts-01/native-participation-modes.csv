@@ -1,0 +1,5 @@
+unit_literal,counting_mode_literal,ballots_cast,blank_ballots,registered_voters,native_printed_turnout,source_report,source_page,native_printed_page,native_printed_total_pages,source_status_literal,source_update_literal,declared_timezone
+Montour County,TOTAL,7008,0,12418,56.43%,summary,1,1,4,UNOFFICIAL RESULTS,11/05/2026 10:14AM,
+Montour County,Election Day,5554,0,,,summary,1,1,4,UNOFFICIAL RESULTS,11/05/2026 10:14AM,
+Montour County,Mail Votes,1429,0,,,summary,1,1,4,UNOFFICIAL RESULTS,11/05/2026 10:14AM,
+Montour County,Provisional Votes,25,0,,,summary,1,1,4,UNOFFICIAL RESULTS,11/05/2026 10:14AM,

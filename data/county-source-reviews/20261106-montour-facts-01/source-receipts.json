@@ -1,0 +1,35 @@
+[
+  {
+    "source_report": "parent",
+    "file": "montour-parent.html",
+    "requested_url": "https://montourcounty.gov/departments/elections/results",
+    "final_url": "https://montourcounty.gov/departments/elections/results",
+    "status": 200,
+    "bytes": 108836,
+    "sha256": "fb58a50a024f4f16defb56f32c72c925655cd70ffb73a9364f36982ec28705c2",
+    "content_type": "text/html; charset=utf-8",
+    "fetched_at_utc": "2026-11-06T09:11:01.110028+00:00"
+  },
+  {
+    "source_report": "summary",
+    "file": "montour-summary.pdf",
+    "requested_url": "https://montourcounty.gov/getmedia/8fab59c7-7dc9-4879-8e3c-adb2c26d07dd/Unofficial-Election-Summary.pdf",
+    "final_url": "https://montourcounty.gov/getmedia/8fab59c7-7dc9-4879-8e3c-adb2c26d07dd/Unofficial-Election-Summary.pdf",
+    "status": 200,
+    "bytes": 10604,
+    "sha256": "4959aac26b5c14906515bd17709b26dfd80eaa7dca96c7ddb17ce2a4faa23818",
+    "content_type": "application/pdf",
+    "fetched_at_utc": "2026-11-06T09:11:45.135734+00:00"
+  },
+  {
+    "source_report": "statement",
+    "file": "montour-statement.pdf",
+    "requested_url": "https://montourcounty.gov/getmedia/6d246221-b65e-4675-9ae6-c20bf9e70758/Unofficial-Precinct-Summary.pdf",
+    "final_url": "https://montourcounty.gov/getmedia/6d246221-b65e-4675-9ae6-c20bf9e70758/Unofficial-Precinct-Summary.pdf",
+    "status": 200,
+    "bytes": 125036,
+    "sha256": "45dd95b833d7601d4f306526260e89772d615d443790c3e07157178d331a8467",
+    "content_type": "application/pdf",
+    "fetched_at_utc": "2026-11-06T09:11:46.220412+00:00"
+  }
+]

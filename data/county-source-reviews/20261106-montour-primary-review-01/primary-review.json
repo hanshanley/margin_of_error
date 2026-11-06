@@ -1,0 +1,128 @@
+{
+  "verified_at_utc": "2026-11-06T09:19:33.974383+00:00",
+  "county": "Montour",
+  "source_receipts": [
+    {
+      "source_report": "parent",
+      "file": "montour-parent.html",
+      "requested_url": "https://montourcounty.gov/departments/elections/results",
+      "final_url": "https://montourcounty.gov/departments/elections/results",
+      "status": 200,
+      "bytes": 108836,
+      "sha256": "fb58a50a024f4f16defb56f32c72c925655cd70ffb73a9364f36982ec28705c2",
+      "content_type": "text/html; charset=utf-8",
+      "fetched_at_utc": "2026-11-06T09:11:01.110028+00:00"
+    },
+    {
+      "source_report": "summary",
+      "file": "montour-summary.pdf",
+      "requested_url": "https://montourcounty.gov/getmedia/8fab59c7-7dc9-4879-8e3c-adb2c26d07dd/Unofficial-Election-Summary.pdf",
+      "final_url": "https://montourcounty.gov/getmedia/8fab59c7-7dc9-4879-8e3c-adb2c26d07dd/Unofficial-Election-Summary.pdf",
+      "status": 200,
+      "bytes": 10604,
+      "sha256": "4959aac26b5c14906515bd17709b26dfd80eaa7dca96c7ddb17ce2a4faa23818",
+      "content_type": "application/pdf",
+      "fetched_at_utc": "2026-11-06T09:11:45.135734+00:00"
+    },
+    {
+      "source_report": "statement",
+      "file": "montour-statement.pdf",
+      "requested_url": "https://montourcounty.gov/getmedia/6d246221-b65e-4675-9ae6-c20bf9e70758/Unofficial-Precinct-Summary.pdf",
+      "final_url": "https://montourcounty.gov/getmedia/6d246221-b65e-4675-9ae6-c20bf9e70758/Unofficial-Precinct-Summary.pdf",
+      "status": 200,
+      "bytes": 125036,
+      "sha256": "45dd95b833d7601d4f306526260e89772d615d443790c3e07157178d331a8467",
+      "content_type": "application/pdf",
+      "fetched_at_utc": "2026-11-06T09:11:46.220412+00:00"
+    }
+  ],
+  "actual_parent_declarations": [
+    {
+      "role": "summary",
+      "label": "Unofficial Election Summary (opens in a new window)",
+      "url": "https://montourcounty.gov/getmedia/8fab59c7-7dc9-4879-8e3c-adb2c26d07dd/Unofficial-Election-Summary.pdf"
+    },
+    {
+      "role": "statement",
+      "label": "Unofficial Precinct Summary (opens in a new window)",
+      "url": "https://montourcounty.gov/getmedia/6d246221-b65e-4675-9ae6-c20bf9e70758/Unofficial-Precinct-Summary.pdf"
+    }
+  ],
+  "complete_reviewed_input_sha256": "7d02454eeac36a7709463f8c76d332376a7528f3af96176f632668afdfcf48dc",
+  "all_entire_pages_tokens_and_complete_parsed_structures_match_both_engines": true,
+  "all_native_layout_lines_consumed": true,
+  "summary_first_page_directly_visually_inspected": true,
+  "complete_native_pages": 49,
+  "complete_native_units": 15,
+  "complete_native_unit_contests": 45,
+  "complete_native_county_contests": 3,
+  "all_candidate_write_in_total_accounting_and_participation_vectors_reconcile": true,
+  "native_write_in_spellings_unharmonized": true,
+  "reconciliations": [
+    {
+      "contest": "GOVERNOR and LIEUTENANT GOVERNOR",
+      "selected_unit_count": 15,
+      "native_contest_electorate": [
+        7008,
+        5554,
+        1429,
+        25
+      ],
+      "native_choice_and_accounting_vectors_match": true
+    },
+    {
+      "contest": "REPRESENTATIVE IN CONGRESS",
+      "selected_unit_count": 15,
+      "native_contest_electorate": [
+        7008,
+        5554,
+        1429,
+        25
+      ],
+      "native_choice_and_accounting_vectors_match": true
+    },
+    {
+      "contest": "REPRESENTATIVE IN THE GENERAL ASSEMBLY",
+      "selected_unit_count": 15,
+      "native_contest_electorate": [
+        7008,
+        5554,
+        1429,
+        25
+      ],
+      "native_choice_and_accounting_vectors_match": true
+    }
+  ],
+  "rejected_changes": [
+    "candidate votes substituted as ballots",
+    "blank ballots double counted",
+    "registration denominator invented",
+    "provisional column erased",
+    "counting declared complete",
+    "partial reporting declared complete",
+    "timezone invented",
+    "native status certified",
+    "source map approval invented",
+    "source FIPS invented",
+    "native party normalized",
+    "native clock harmonized",
+    "printed rate replaced",
+    "mode label harmonized",
+    "restricted electorate replaced",
+    "unit registration replaced",
+    "reporting vector corrected",
+    "write-in literal harmonized",
+    "frozen native input changed"
+  ],
+  "every_entire_file_and_archive_reproduces_offline": true,
+  "complete_query_files": 23,
+  "complete_csv_tables": 17,
+  "complete_archive_members": 22,
+  "blank_ballots_already_included": true,
+  "native_missing_cells_not_inferred": true,
+  "native_reporting_counters_unrepaired": true,
+  "source_fips_present": false,
+  "archive_bytes": 81491,
+  "archive_sha256": "d1840d2ca02a499485ba9fd7e5902f3f55cc8e6c0903a9c052c892da748a8b96",
+  "scope": "Complete native report facts prepared and offline-verified, not yet committed/released or integrated. Source map flags remain false. Independent contextual identity, release bytes and exact UI verification remain pending."
+}

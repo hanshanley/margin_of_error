@@ -1,0 +1,116 @@
+{
+  "county": "Mercer",
+  "year": 2026,
+  "table_rows": {
+    "county-participation.csv": 1,
+    "county-candidate-results.csv": 76,
+    "county-literal-party-totals.csv": 40,
+    "county-contest-accounting.csv": 28,
+    "native-unit-participation.csv": 90,
+    "native-unit-participation-modes.csv": 360,
+    "native-unit-candidate-results.csv": 4540,
+    "native-unit-literal-party-totals.csv": 3084,
+    "native-unit-contest-accounting.csv": 1448,
+    "native-participation-modes.csv": 4,
+    "native-reporting-statistics.csv": 4,
+    "native-source-pages.csv": 94,
+    "native-derived-contest-sums.csv": 7,
+    "native-derived-rate-checks.csv": 91,
+    "native-source-declarations.csv": 2,
+    "native-write-in-breakdowns.csv": 0,
+    "native-unit-write-in-availability.csv": 360
+  },
+  "native_ballots_cast": 39121,
+  "native_registered_voters": 72238,
+  "usable_registered_voter_fraction": 0.5415570752235666,
+  "native_printed_turnout": "54.16%",
+  "native_election_day_ballots": 31943,
+  "native_mail_ballots": 7178,
+  "native_mail_mode_literal": "Absentee",
+  "native_provisional_ballots": 0,
+  "native_provisional_mode_literal": "Provision\nal",
+  "blank_ballots_already_included": 6,
+  "native_precincts_complete": 0,
+  "native_precincts_partial": 90,
+  "complete_reviewed_native_units": 90,
+  "complete_county_contests": 7,
+  "complete_unit_contests": 362,
+  "both_native_clocks_preserved": true,
+  "entire_pages_independently_reviewed_both_engines": 94,
+  "all_layout_lines_consumed": true,
+  "native_overvotes_and_undervotes_absent": true,
+  "montour_reporting_counter_contradictions_preserved": false,
+  "printed_rate_discrepancies": [
+    {
+      "unit": "Mill Creek Township",
+      "registered_voters": 526,
+      "ballots": [
+        307,
+        279,
+        28,
+        0
+      ],
+      "blank_ballots": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "printed_turnout": "58.36%",
+      "derived_registered_voter_fraction_percent": "58.37",
+      "printed_fraction_matches_two_decimal_derivation": false
+    }
+  ],
+  "restricted_electorates": [
+    {
+      "contest": "REPRESENTATIVE IN THE GENERAL ASSEMBLY DISTRICT 17",
+      "selected_unit_count": 39,
+      "native_contest_electorate": [
+        16437,
+        13859,
+        2578,
+        0
+      ],
+      "native_choice_and_accounting_vectors_match": true
+    },
+    {
+      "contest": "REPRESENTATIVE IN THE GENERAL ASSEMBLY DISTRICT 7",
+      "selected_unit_count": 51,
+      "native_contest_electorate": [
+        22684,
+        18084,
+        4600,
+        0
+      ],
+      "native_choice_and_accounting_vectors_match": true
+    },
+    {
+      "contest": "ISSUANCE OF LIQUOR LICENSES Sandy Lake Borough",
+      "selected_unit_count": 1,
+      "native_contest_electorate": [
+        226,
+        200,
+        26,
+        0
+      ],
+      "native_choice_and_accounting_vectors_match": true
+    },
+    {
+      "contest": "ISSUANCE OF MALT AND BREWED BEVERAGE LICENSES Sandy Lake Borough",
+      "selected_unit_count": 1,
+      "native_contest_electorate": [
+        226,
+        200,
+        26,
+        0
+      ],
+      "native_choice_and_accounting_vectors_match": true
+    }
+  ],
+  "literal_parties_and_unharmonized_native_write_in_names_preserved": true,
+  "complete_counting": false,
+  "maps_approved": false,
+  "native_source_fips": "",
+  "no_certification_complete_counting_geometry_or_demographic_turnout_claim": true,
+  "original_documents_and_presentation_templates": "Private; not redistributed in this factual query."
+}

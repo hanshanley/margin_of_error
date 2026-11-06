@@ -1,0 +1,35 @@
+[
+  {
+    "source_report": "parent",
+    "file": "mercer-parent.html",
+    "requested_url": "https://www.mercercountypa.gov/election/Election.Results/default.htm",
+    "final_url": "https://www.mercercountypa.gov/election/Election.Results/default.htm",
+    "status": 200,
+    "bytes": 122775,
+    "sha256": "39351d8f7753168e416093a9cc7acd46be8c70da324d2636dcb875139de1dcd8",
+    "content_type": "text/html",
+    "fetched_at_utc": "2026-11-06T09:11:00.821752+00:00"
+  },
+  {
+    "source_report": "summary",
+    "file": "mercer-summary.pdf",
+    "requested_url": "https://www.mercercountypa.gov/election/Election.Results/2026/GENERAL/Summary.pdf",
+    "final_url": "https://www.mercercountypa.gov/election/Election.Results/2026/GENERAL/Summary.pdf",
+    "status": 200,
+    "bytes": 23614,
+    "sha256": "62dd7982282aa5f47a499851064742e83aa59e7c2f8ef30ff3720b40932d9d22",
+    "content_type": "application/pdf",
+    "fetched_at_utc": "2026-11-06T09:11:44.625449+00:00"
+  },
+  {
+    "source_report": "statement",
+    "file": "mercer-statement.pdf",
+    "requested_url": "https://www.mercercountypa.gov/election/Election.Results/2026/GENERAL/PRECINCT.pdf",
+    "final_url": "https://www.mercercountypa.gov/election/Election.Results/2026/GENERAL/PRECINCT.pdf",
+    "status": 200,
+    "bytes": 247488,
+    "sha256": "c8dde57ee0a8d8f1bce56654a6bd9991dc238412efe6c150219d292b2520a43d",
+    "content_type": "application/pdf",
+    "fetched_at_utc": "2026-11-06T09:11:45.127043+00:00"
+  }
+]

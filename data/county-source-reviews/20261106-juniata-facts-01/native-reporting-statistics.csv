@@ -1,0 +1,5 @@
+statistic_literal,native_total_numerator,native_total_denominator,native_election_day_column,native_mail_column,native_mail_heading,native_provisional_column,native_provisional_heading,source_report,source_page,native_printed_page,native_printed_total_pages,source_status_literal,source_update_literal,declared_timezone
+Election Day Precincts Reporting,18,18,18,0,Mail Votes,0,Provisional Votes,summary,1,1,4,UNOFFICIAL RESULTS,11/03/2026 10:31 PM,
+Precincts Complete,0,18,0,0,Mail Votes,0,Provisional Votes,summary,1,1,4,UNOFFICIAL RESULTS,11/03/2026 10:31 PM,
+Precincts Partially Reported,18,18,18,0,Mail Votes,0,Provisional Votes,summary,1,1,4,UNOFFICIAL RESULTS,11/03/2026 10:31 PM,
+Absentee/ Early Precincts Reporting,18,18,0,18,Mail Votes,0,Provisional Votes,summary,1,1,4,UNOFFICIAL RESULTS,11/03/2026 10:31 PM,

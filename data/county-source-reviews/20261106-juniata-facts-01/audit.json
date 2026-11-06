@@ -1,0 +1,74 @@
+{
+  "county": "Juniata",
+  "year": 2026,
+  "table_rows": {
+    "county-participation.csv": 1,
+    "county-candidate-results.csv": 60,
+    "county-literal-party-totals.csv": 40,
+    "county-contest-accounting.csv": 20,
+    "native-unit-participation.csv": 18,
+    "native-unit-participation-modes.csv": 72,
+    "native-unit-candidate-results.csv": 928,
+    "native-unit-literal-party-totals.csv": 640,
+    "native-unit-contest-accounting.csv": 288,
+    "native-participation-modes.csv": 4,
+    "native-reporting-statistics.csv": 4,
+    "native-source-pages.csv": 40,
+    "native-derived-contest-sums.csv": 5,
+    "native-derived-rate-checks.csv": 19,
+    "native-source-declarations.csv": 2,
+    "native-write-in-breakdowns.csv": 308,
+    "native-unit-write-in-availability.csv": 72
+  },
+  "native_ballots_cast": 8258,
+  "native_registered_voters": 14095,
+  "usable_registered_voter_fraction": 0.5858815182688897,
+  "native_printed_turnout": "58.59%",
+  "native_election_day_ballots": 7160,
+  "native_mail_ballots": 1098,
+  "native_mail_mode_literal": "Mail Votes",
+  "native_provisional_ballots": 0,
+  "native_provisional_mode_literal": "Provisional Votes",
+  "blank_ballots_already_included": 1,
+  "native_precincts_complete": 0,
+  "native_precincts_partial": 18,
+  "complete_reviewed_native_units": 18,
+  "complete_county_contests": 5,
+  "complete_unit_contests": 72,
+  "both_native_clocks_preserved": true,
+  "entire_pages_independently_reviewed_both_engines": 40,
+  "all_layout_lines_consumed": true,
+  "native_overvotes_and_undervotes_absent": false,
+  "montour_reporting_counter_contradictions_preserved": false,
+  "printed_rate_discrepancies": [],
+  "restricted_electorates": [
+    {
+      "contest": "REPRESENTATIVE IN THE GENERAL ASSEMBLY 85TH LEGISLATIVE DISTRICT",
+      "selected_unit_count": 2,
+      "native_contest_electorate": [
+        1977,
+        1749,
+        228,
+        0
+      ],
+      "native_choice_and_accounting_vectors_match": true
+    },
+    {
+      "contest": "REPRESENTATIVE IN THE GENERAL ASSEMBLY 86TH LEGISLATIVE DISTRICT",
+      "selected_unit_count": 16,
+      "native_contest_electorate": [
+        6281,
+        5411,
+        870,
+        0
+      ],
+      "native_choice_and_accounting_vectors_match": true
+    }
+  ],
+  "literal_parties_and_unharmonized_native_write_in_names_preserved": true,
+  "complete_counting": false,
+  "maps_approved": false,
+  "native_source_fips": "",
+  "no_certification_complete_counting_geometry_or_demographic_turnout_claim": true,
+  "original_documents_and_presentation_templates": "Private; not redistributed in this factual query."
+}

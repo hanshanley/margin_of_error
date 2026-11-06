@@ -1,0 +1,735 @@
+{
+  "verified_at_utc": "2026-11-06T09:20:01.895282+00:00",
+  "status": "source_discovery_not_nationwide_participation_or_map_approval",
+  "source_receipts": {
+    "pa-consolidated-index.html": {
+      "url": "https://www.patriotpoliticalconsulting.com/elections/2026/pennsylvania",
+      "final_url": "https://www.patriotpoliticalconsulting.com/elections/2026/pennsylvania",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 331975,
+      "sha256": "a376c065f239ffa68cbdb9743d68579a42979dff65387b38c24237396891df95",
+      "fetched_at_utc": "2026-11-06T09:10:01.438183+00:00"
+    },
+    "maine-official-results-index.html": {
+      "url": "https://www3.maine.gov/sos/elections-voting/election-results-data",
+      "final_url": "https://www3.maine.gov/sos/elections-voting/election-results-data",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 116463,
+      "sha256": "9d2b06a05f1e5b54cb8dd0343d625db3d9c2f0b7e4ced4af6d68150a09ad81b4",
+      "fetched_at_utc": "2026-11-06T09:10:01.619962+00:00"
+    }
+  },
+  "pa_declared_county_source_links": [
+    {
+      "county": "Adams",
+      "source_url": "https://www.adamscountypa.gov/departments/electionsandvoterregistration/electionresults",
+      "native_anchor_label": "Official results for Adams County (opens in a new tab)",
+      "county_context_literal": "Adams Reporting County update 11/03/2026 10:23 PM Official results for Adams County (opens in a new tab)",
+      "already_reviewed_participation": true,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Allegheny",
+      "source_url": "https://results.enr.clarityelections.com/PA/Allegheny/127287/",
+      "native_anchor_label": "Official results for Allegheny County (opens in a new tab)",
+      "county_context_literal": "Allegheny 100% of precincts County update 11/3/2026 10:59:06 PM EST Official results for Allegheny County (opens in a new tab)",
+      "already_reviewed_participation": false,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Armstrong",
+      "source_url": "https://www.co.armstrong.pa.us/index.php/resourses-m/election-results-unofficial-m",
+      "native_anchor_label": "Official results for Armstrong County (opens in a new tab)",
+      "county_context_literal": "Armstrong Reporting County update 11/3/2026 10:26:30 PM Official results for Armstrong County (opens in a new tab)",
+      "already_reviewed_participation": true,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Beaver",
+      "source_url": "https://results.enr.clarityelections.com/PA/Beaver/127285/",
+      "native_anchor_label": "Official results for Beaver County (opens in a new tab)",
+      "county_context_literal": "Beaver 100% of precincts County update 11/3/2026 10:40:20 PM EST Official results for Beaver County (opens in a new tab)",
+      "already_reviewed_participation": false,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Bedford",
+      "source_url": "https://bedfordplanning.maps.arcgis.com/apps/dashboards/ee275d760e184bcf973bce78daad64fb",
+      "native_anchor_label": "Official results for Bedford County (opens in a new tab)",
+      "county_context_literal": "Bedford 100% of precincts County update 11/3/26, 10:02 PM Official results for Bedford County (opens in a new tab)",
+      "already_reviewed_participation": false,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Berks",
+      "source_url": "https://berks.maps.arcgis.com/apps/dashboards/cfa31c250b0f43b29519a948682a84dc",
+      "native_anchor_label": "Official results for Berks County (opens in a new tab)",
+      "county_context_literal": "Berks 100% of precincts County update 11/4/26, 8:29 AM Official results for Berks County (opens in a new tab)",
+      "already_reviewed_participation": true,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Blair",
+      "source_url": "https://www.blaircountypa.gov/departments/elections-voter-registration/election-results",
+      "native_anchor_label": "Official results for Blair County (opens in a new tab)",
+      "county_context_literal": "Blair 100% of precincts Checked 4:05 a.m. Official results for Blair County (opens in a new tab)",
+      "already_reviewed_participation": true,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Bradford",
+      "source_url": "https://www.bradfordcountypa.gov/302/Elections",
+      "native_anchor_label": "Official results for Bradford County (opens in a new tab)",
+      "county_context_literal": "Bradford 100% of precincts County update 11/3/2026 10:15:12 PM Official results for Bradford County (opens in a new tab)",
+      "already_reviewed_participation": false,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Bucks",
+      "source_url": "https://www.livevoterturnout.com/ENR/buckspaenr/24/en/Index_24.html",
+      "native_anchor_label": "Official results for Bucks County (opens in a new tab)",
+      "county_context_literal": "Bucks 100% of precincts County update 11/4/26, 4:15 PM Official results for Bucks County (opens in a new tab)",
+      "already_reviewed_participation": true,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Butler",
+      "source_url": "https://www.butlercountypa.gov/812/Current-Election-Returns",
+      "native_anchor_label": "Official results for Butler County (opens in a new tab)",
+      "county_context_literal": "Butler Reporting County update 11/03/2026 10:43 PM Official results for Butler County (opens in a new tab)",
+      "already_reviewed_participation": false,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Cambria",
+      "source_url": "https://results.enr.clarityelections.com/PA/Cambria/127572/",
+      "native_anchor_label": "Official results for Cambria County (opens in a new tab)",
+      "county_context_literal": "Cambria 100% of precincts County update 11/5/2026 1:42:49 PM EST Official results for Cambria County (opens in a new tab)",
+      "already_reviewed_participation": false,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Cameron",
+      "source_url": "https://www.cameroncountypa.com/resident/elections/unofficial__results.php",
+      "native_anchor_label": "Official results for Cameron County (opens in a new tab)",
+      "county_context_literal": "Cameron 100% of precincts County update 11/3/2026 9:13 PM (entered by hand) Official results for Cameron County (opens in a new tab)",
+      "already_reviewed_participation": true,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Carbon",
+      "source_url": "https://www.carboncountypa.gov/services/elections_voter_registration/results/",
+      "native_anchor_label": "Official results for Carbon County (opens in a new tab)",
+      "county_context_literal": "Carbon 100% of precincts County update 11/3/2026 10:36:36 PM Official results for Carbon County (opens in a new tab)",
+      "already_reviewed_participation": true,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Centre",
+      "source_url": "https://experience.arcgis.com/experience/637f95443bd04cb4a891b0f2de161129",
+      "native_anchor_label": "Official results for Centre County (opens in a new tab)",
+      "county_context_literal": "Centre 100% of precincts County update 11/4/26, 12:42 AM Official results for Centre County (opens in a new tab)",
+      "already_reviewed_participation": true,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Chester",
+      "source_url": "https://www.livevoterturnout.com/ENR/chesterpaenr/4/en/Index_4.html",
+      "native_anchor_label": "Official results for Chester County (opens in a new tab)",
+      "county_context_literal": "Chester 100% of precincts County update 11/4/26, 3:59 AM Official results for Chester County (opens in a new tab)",
+      "already_reviewed_participation": true,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Clarion",
+      "source_url": "https://www.co.clarion.pa.us/government/departments/elections__voter_registration/index.php",
+      "native_anchor_label": "Official results for Clarion County (opens in a new tab)",
+      "county_context_literal": "Clarion 100% of precincts County update 11/3/2026 9:49:20 PM Official results for Clarion County (opens in a new tab)",
+      "already_reviewed_participation": true,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Clearfield",
+      "source_url": "https://clearfieldcountypa.gov/199/Election-Results",
+      "native_anchor_label": "Official results for Clearfield County (opens in a new tab)",
+      "county_context_literal": "Clearfield 100% of precincts County update 11/04/2026 2:44 PM Official results for Clearfield County (opens in a new tab)",
+      "already_reviewed_participation": false,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Clinton",
+      "source_url": "https://www.clintoncountypa.gov/departments/voter-registration/county-map-election-results",
+      "native_anchor_label": "Official results for Clinton County (opens in a new tab)",
+      "county_context_literal": "Clinton 100% of precincts County update 11/3/2026 9:42 PM (entered by hand) Official results for Clinton County (opens in a new tab)",
+      "already_reviewed_participation": false,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Columbia",
+      "source_url": "https://www.columbiapa.org/voter/index.php",
+      "native_anchor_label": "Official results for Columbia County (opens in a new tab)",
+      "county_context_literal": "Columbia 100% of precincts County update 11/3/2026 10:37:16 PM Official results for Columbia County (opens in a new tab)",
+      "already_reviewed_participation": false,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Crawford",
+      "source_url": "https://results.enr.clarityelections.com/PA/Crawford/127288/",
+      "native_anchor_label": "Official results for Crawford County (opens in a new tab)",
+      "county_context_literal": "Crawford 100% of precincts County update 11/5/2026 1:28:13 PM EST Official results for Crawford County (opens in a new tab)",
+      "already_reviewed_participation": false,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Cumberland",
+      "source_url": "https://www.cumberlandcountypa.gov/3135/Election-Results",
+      "native_anchor_label": "Official results for Cumberland County (opens in a new tab)",
+      "county_context_literal": "Cumberland Reporting Checked 4:05 a.m. Official results for Cumberland County (opens in a new tab)",
+      "already_reviewed_participation": true,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Dauphin",
+      "source_url": "https://elections.dauphincounty.gov/?key=42",
+      "native_anchor_label": "Official results for Dauphin County (opens in a new tab)",
+      "county_context_literal": "Dauphin 100% of precincts County update 11/3/2026 10:41:50 PM Official results for Dauphin County (opens in a new tab)",
+      "already_reviewed_participation": false,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Delaware",
+      "source_url": "https://results.enr.clarityelections.com/PA/Delaware/127482/",
+      "native_anchor_label": "Official results for Delaware County (opens in a new tab)",
+      "county_context_literal": "Delaware 100% of precincts County update 11/4/2026 1:06:09 AM EST Official results for Delaware County (opens in a new tab)",
+      "already_reviewed_participation": false,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Elk",
+      "source_url": "https://countyofelkpa.gov/elk-county-offices/elections-voter-registration/election-results/",
+      "native_anchor_label": "Official results for Elk County (opens in a new tab)",
+      "county_context_literal": "Elk 100% of precincts County update 11/03/2026 22:08 PM Official results for Elk County (opens in a new tab)",
+      "already_reviewed_participation": true,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Erie",
+      "source_url": "https://results.enr.clarityelections.com/PA/Erie/127361/",
+      "native_anchor_label": "Official results for Erie County (opens in a new tab)",
+      "county_context_literal": "Erie 100% of precincts County update 11/3/2026 11:24:12 PM EST Official results for Erie County (opens in a new tab)",
+      "already_reviewed_participation": false,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Fayette",
+      "source_url": "https://results.enr.clarityelections.com/PA/Fayette/127583/",
+      "native_anchor_label": "Official results for Fayette County (opens in a new tab)",
+      "county_context_literal": "Fayette 98% of precincts County update 11/3/2026 11:09:33 PM EST Official results for Fayette County (opens in a new tab)",
+      "already_reviewed_participation": false,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Forest",
+      "source_url": "https://www.co.forest.pa.us/departments/election_results.php",
+      "native_anchor_label": "Official results for Forest County (opens in a new tab)",
+      "county_context_literal": "Forest 100% of precincts County update 11/3/2026 8:56 PM (entered by hand) Official results for Forest County (opens in a new tab)",
+      "already_reviewed_participation": true,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Franklin",
+      "source_url": "https://www.livevoterturnout.com/ENR/franklinpaenr/15/en/Index_15.html",
+      "native_anchor_label": "Official results for Franklin County (opens in a new tab)",
+      "county_context_literal": "Franklin 100% of precincts County update 11/4/26, 4:12 PM Official results for Franklin County (opens in a new tab)",
+      "already_reviewed_participation": true,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Fulton",
+      "source_url": "https://www.co.fulton.pa.us/elections-enr-2026b.php",
+      "native_anchor_label": "Official results for Fulton County (opens in a new tab)",
+      "county_context_literal": "Fulton 100% of precincts County update 11/03/2026 11:30 PM Official results for Fulton County (opens in a new tab)",
+      "already_reviewed_participation": true,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Greene",
+      "source_url": "https://greenecountypa.gov/elections/",
+      "native_anchor_label": "Official results for Greene County (opens in a new tab)",
+      "county_context_literal": "Greene 100% of precincts Checked 4:05 a.m. Official results for Greene County (opens in a new tab)",
+      "already_reviewed_participation": false,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Huntingdon",
+      "source_url": "https://www.huntingdoncountypa.gov/departments/elections",
+      "native_anchor_label": "Official results for Huntingdon County (opens in a new tab)",
+      "county_context_literal": "Huntingdon 100% of precincts County update 11/04/2026 1:33 PM Official results for Huntingdon County (opens in a new tab)",
+      "already_reviewed_participation": false,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Indiana",
+      "source_url": "https://www.indianacountypa.gov/",
+      "native_anchor_label": "Official results for Indiana County (opens in a new tab)",
+      "county_context_literal": "Indiana 100% of precincts County update 11/03/2026 10:03 PM Official results for Indiana County (opens in a new tab)",
+      "already_reviewed_participation": false,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Jefferson",
+      "source_url": "https://www.jeffersoncountypa.gov/election-results/",
+      "native_anchor_label": "Official results for Jefferson County (opens in a new tab)",
+      "county_context_literal": "Jefferson 100% of precincts County update 11/4/2026 3:47:13 PM Official results for Jefferson County (opens in a new tab)",
+      "already_reviewed_participation": true,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Juniata",
+      "source_url": "https://www.juniatacountypa.gov/238/Latest-Election-Results",
+      "native_anchor_label": "Official results for Juniata County (opens in a new tab)",
+      "county_context_literal": "Juniata Reporting County update 11/03/2026 10:31 PM Official results for Juniata County (opens in a new tab)",
+      "already_reviewed_participation": false,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Lackawanna",
+      "source_url": "https://www.lackawannacounty.org/government/departments/elections/index.php",
+      "native_anchor_label": "Official results for Lackawanna County (opens in a new tab)",
+      "county_context_literal": "Lackawanna 100% of precincts Checked 4:05 a.m. Official results for Lackawanna County (opens in a new tab)",
+      "already_reviewed_participation": false,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Lancaster",
+      "source_url": "https://electionresults.lancastercountypa.gov/results/public/lancaster-county-pa/elections/2026GeneralElection",
+      "native_anchor_label": "Official results for Lancaster County (opens in a new tab)",
+      "county_context_literal": "Lancaster 100% of precincts County update 11/4/26, 11:39 AM Official results for Lancaster County (opens in a new tab)",
+      "already_reviewed_participation": true,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Lawrence",
+      "source_url": "https://www.lawrencecountypa.gov/departments/voter-elections/election-results",
+      "native_anchor_label": "Official results for Lawrence County (opens in a new tab)",
+      "county_context_literal": "Lawrence 100% of precincts County update 11/03/2026 9:27 PM Official results for Lawrence County (opens in a new tab)",
+      "already_reviewed_participation": false,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Lebanon",
+      "source_url": "https://www.lebanoncountypa.gov/departments/voter-registration/election-results",
+      "native_anchor_label": "Official results for Lebanon County (opens in a new tab)",
+      "county_context_literal": "Lebanon No votes yet Election-night page not posted yet Official results for Lebanon County (opens in a new tab)",
+      "already_reviewed_participation": true,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Lehigh",
+      "source_url": "https://www.livevoterturnout.com/ENR/lehighpaenr/13/en/Index_13.html",
+      "native_anchor_label": "Official results for Lehigh County (opens in a new tab)",
+      "county_context_literal": "Lehigh 100% of precincts County update 11/4/26, 1:35 PM Official results for Lehigh County (opens in a new tab)",
+      "already_reviewed_participation": true,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Luzerne",
+      "source_url": "https://results.enr.clarityelections.com/PA/Luzerne/127566/",
+      "native_anchor_label": "Official results for Luzerne County (opens in a new tab)",
+      "county_context_literal": "Luzerne 100% of precincts County update 11/3/2026 11:39:38 PM EST Official results for Luzerne County (opens in a new tab)",
+      "already_reviewed_participation": false,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Lycoming",
+      "source_url": "https://lycomingcountypa.gov/government/departments/voter_services/index.php",
+      "native_anchor_label": "Official results for Lycoming County (opens in a new tab)",
+      "county_context_literal": "Lycoming 100% of precincts County update 11/5/26, 10:37 AM Official results for Lycoming County (opens in a new tab)",
+      "already_reviewed_participation": false,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "McKean",
+      "source_url": "https://www.mckeancountypa.gov/",
+      "native_anchor_label": "Official results for McKean County (opens in a new tab)",
+      "county_context_literal": "McKean 100% of precincts County update 11/3/2026 10:41 PM (entered by hand) Official results for McKean County (opens in a new tab)",
+      "already_reviewed_participation": false,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Mercer",
+      "source_url": "https://www.mercercountypa.gov/election/Election.Results/default.htm",
+      "native_anchor_label": "Official results for Mercer County (opens in a new tab)",
+      "county_context_literal": "Mercer 100% of precincts County update 11/05/2026 11:05 AM Official results for Mercer County (opens in a new tab)",
+      "already_reviewed_participation": false,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Mifflin",
+      "source_url": "https://www.mifflincountypa.gov/voter-registration-elections/election-central",
+      "native_anchor_label": "Official results for Mifflin County (opens in a new tab)",
+      "county_context_literal": "Mifflin 100% of precincts County update 11/03/2026 09:28 PM Official results for Mifflin County (opens in a new tab)",
+      "already_reviewed_participation": true,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Monroe",
+      "source_url": "https://agencies2.monroecountypa.gov/ElectionResults",
+      "native_anchor_label": "Official results for Monroe County (opens in a new tab)",
+      "county_context_literal": "Monroe 100% of precincts Checked 4:05 a.m. Official results for Monroe County (opens in a new tab)",
+      "already_reviewed_participation": true,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Montgomery",
+      "source_url": "https://gis.montcopa.org/opendata/GE2026/",
+      "native_anchor_label": "Official results for Montgomery County (opens in a new tab)",
+      "county_context_literal": "Montgomery 100% of precincts County update 11/4/26, 2:20 PM Official results for Montgomery County (opens in a new tab)",
+      "already_reviewed_participation": true,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Montour",
+      "source_url": "https://montourcounty.gov/departments/elections/results",
+      "native_anchor_label": "Official results for Montour County (opens in a new tab)",
+      "county_context_literal": "Montour 100% of precincts County update 11/05/2026 10:14 AM Official results for Montour County (opens in a new tab)",
+      "already_reviewed_participation": false,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Northampton",
+      "source_url": "https://www.livevoterturnout.com/ENR/northamptonpaenr/12/en/Index_12.html",
+      "native_anchor_label": "Official results for Northampton County (opens in a new tab)",
+      "county_context_literal": "Northampton 100% of precincts County update 11/4/26, 3:29 PM Official results for Northampton County (opens in a new tab)",
+      "already_reviewed_participation": true,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Northumberland",
+      "source_url": "https://northumberlandcountypa.gov/board-of-elections/",
+      "native_anchor_label": "Official results for Northumberland County (opens in a new tab)",
+      "county_context_literal": "Northumberland Reporting County update 11/03/2026 22:18 PM Official results for Northumberland County (opens in a new tab)",
+      "already_reviewed_participation": false,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Perry",
+      "source_url": "https://perryco.org/",
+      "native_anchor_label": "Official results for Perry County (opens in a new tab)",
+      "county_context_literal": "Perry Reporting County update 11/3/2026 10:49 PM (entered by hand) Official results for Perry County (opens in a new tab)",
+      "already_reviewed_participation": true,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Philadelphia",
+      "source_url": "https://vote-results.phila.gov/",
+      "native_anchor_label": "Official results for Philadelphia County (opens in a new tab)",
+      "county_context_literal": "Philadelphia 100% of precincts County update 11/5/2026 5:21:56 PM Official results for Philadelphia County (opens in a new tab)",
+      "already_reviewed_participation": false,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Pike",
+      "source_url": "https://results.enr.clarityelections.com/PA/Pike/127581/",
+      "native_anchor_label": "Official results for Pike County (opens in a new tab)",
+      "county_context_literal": "Pike 100% of precincts County update 11/3/2026 10:14:22 PM EST Official results for Pike County (opens in a new tab)",
+      "already_reviewed_participation": false,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Potter",
+      "source_url": "https://pottercountypa.gov/departments/voter_registration_and_elections.php",
+      "native_anchor_label": "Official results for Potter County (opens in a new tab)",
+      "county_context_literal": "Potter 100% of precincts County update 11/04/2026 2:44 PM Official results for Potter County (opens in a new tab)",
+      "already_reviewed_participation": true,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Schuylkill",
+      "source_url": "https://schuylkillcountypa.gov/departments/election_bureau/election_results.php",
+      "native_anchor_label": "Official results for Schuylkill County (opens in a new tab)",
+      "county_context_literal": "Schuylkill Reporting County update 11/04/2026 11:01 AM Official results for Schuylkill County (opens in a new tab)",
+      "already_reviewed_participation": false,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Snyder",
+      "source_url": "https://www.snydercounty.org/departments/elections/",
+      "native_anchor_label": "Official results for Snyder County (opens in a new tab)",
+      "county_context_literal": "Snyder 100% of precincts County update 11/05/2026 3:52 PM Official results for Snyder County (opens in a new tab)",
+      "already_reviewed_participation": false,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Somerset",
+      "source_url": "https://www.co.somerset.pa.us/pages/voters/electionresults.asp",
+      "native_anchor_label": "Official results for Somerset County (opens in a new tab)",
+      "county_context_literal": "Somerset Reporting Checked 4:05 a.m. Official results for Somerset County (opens in a new tab)",
+      "already_reviewed_participation": false,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Sullivan",
+      "source_url": "https://www.sullivancountypa.gov/offices/election-bureau",
+      "native_anchor_label": "Official results for Sullivan County (opens in a new tab)",
+      "county_context_literal": "Sullivan 100% of precincts County update 11/3/2026 9:22 PM (entered by hand) Official results for Sullivan County (opens in a new tab)",
+      "already_reviewed_participation": false,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Susquehanna",
+      "source_url": "https://results.enr.clarityelections.com/PA/Susquehanna/127393/",
+      "native_anchor_label": "Official results for Susquehanna County (opens in a new tab)",
+      "county_context_literal": "Susquehanna 100% of precincts County update 11/3/2026 10:28:10 PM EST Official results for Susquehanna County (opens in a new tab)",
+      "already_reviewed_participation": false,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Tioga",
+      "source_url": "https://www.tiogacountypa.us/departments/voter-registration/election-results",
+      "native_anchor_label": "Official results for Tioga County (opens in a new tab)",
+      "county_context_literal": "Tioga 100% of precincts Checked 4:05 a.m. Official results for Tioga County (opens in a new tab)",
+      "already_reviewed_participation": false,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Union",
+      "source_url": "https://www.unioncountypa.org/",
+      "native_anchor_label": "Official results for Union County (opens in a new tab)",
+      "county_context_literal": "Union 100% of precincts County update 11/4/2026 10:50:56 AM Official results for Union County (opens in a new tab)",
+      "already_reviewed_participation": false,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Venango",
+      "source_url": "https://www.venangocountypa.gov/departments/voters_elections/index.php",
+      "native_anchor_label": "Official results for Venango County (opens in a new tab)",
+      "county_context_literal": "Venango 100% of precincts County update 11/03/2026 10:29 PM Official results for Venango County (opens in a new tab)",
+      "already_reviewed_participation": false,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Warren",
+      "source_url": "https://warrencountypa.gov/1192/Elections-Voter-Registration",
+      "native_anchor_label": "Official results for Warren County (opens in a new tab)",
+      "county_context_literal": "Warren 100% of precincts County update 11/3/2026 11:25:26 PM Official results for Warren County (opens in a new tab)",
+      "already_reviewed_participation": false,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Washington",
+      "source_url": "https://results.enr.clarityelections.com/PA/Washington/127563/",
+      "native_anchor_label": "Official results for Washington County (opens in a new tab)",
+      "county_context_literal": "Washington 100% of precincts County update 11/5/2026 1:46:13 PM EST Official results for Washington County (opens in a new tab)",
+      "already_reviewed_participation": false,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Wayne",
+      "source_url": "https://www.waynecountypa.gov/1100/2026-General-Election-Unofficial-Results",
+      "native_anchor_label": "Official results for Wayne County (opens in a new tab)",
+      "county_context_literal": "Wayne 100% of precincts County update 11/5/26, 3:08 PM Official results for Wayne County (opens in a new tab)",
+      "already_reviewed_participation": true,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Westmoreland",
+      "source_url": "https://results.enr.clarityelections.com/PA/Westmoreland/127568/",
+      "native_anchor_label": "Official results for Westmoreland County (opens in a new tab)",
+      "county_context_literal": "Westmoreland 100% of precincts County update 11/4/2026 12:27:51 AM EST Official results for Westmoreland County (opens in a new tab)",
+      "already_reviewed_participation": false,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "Wyoming",
+      "source_url": "https://wyomingcountypa.gov/elections/results/",
+      "native_anchor_label": "Official results for Wyoming County (opens in a new tab)",
+      "county_context_literal": "Wyoming 100% of precincts County update 11/3/2026 10:06 PM (entered by hand) Official results for Wyoming County (opens in a new tab)",
+      "already_reviewed_participation": false,
+      "official_primary_source_identity_independently_verified": false
+    },
+    {
+      "county": "York",
+      "source_url": "https://results.enr.clarityelections.com/PA/York/127397/",
+      "native_anchor_label": "Official results for York County (opens in a new tab)",
+      "county_context_literal": "York 100% of precincts County update 11/3/2026 11:47:56 PM EST Official results for York County (opens in a new tab)",
+      "already_reviewed_participation": false,
+      "official_primary_source_identity_independently_verified": false
+    }
+  ],
+  "source_link_count": 67,
+  "current_reviewed_pa_participation_counties_at_context08": 26,
+  "remaining_source_links_at_context08": 41,
+  "bounded_actual_primary_parent_observations": [
+    {
+      "county": "Clinton",
+      "declared_source_url": "https://www.clintoncountypa.gov/departments/voter-registration/county-map-election-results",
+      "final_url": "https://www.clintoncountypa.gov/departments/voter-registration/county-map-election-results",
+      "status": 403,
+      "content_type": "text/html",
+      "bytes": 457,
+      "sha256": "422293521b9c31c9c2619939f0478bda670f1edb690410d898d5a028e56266c0",
+      "fetched_at_utc": "2026-11-06T09:11:00.751780+00:00",
+      "disposition": "Actual 403 original preserved privately; no bypass or unchanged retry."
+    },
+    {
+      "county": "Juniata",
+      "declared_source_url": "https://www.juniatacountypa.gov/238/Latest-Election-Results",
+      "final_url": "https://www.juniatacountypa.gov/238/Latest-Election-Results",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 92405,
+      "sha256": "a6eb82571496f8db68c2934f94e4008a3f54b960f1b1678def13be9501fe28dc",
+      "fetched_at_utc": "2026-11-06T09:11:01.011009+00:00",
+      "declared_report_pairs": [
+        {
+          "role": "summary",
+          "label": "2026 General Election Unofficial Summary (PDF)",
+          "requested_url": "https://www.juniatacountypa.gov/DocumentCenter/View/570/2026-General-Election-Unofficial-Summary-PDF",
+          "final_url": "https://www.juniatacountypa.gov/DocumentCenter/View/570/2026-General-Election-Unofficial-Summary-PDF",
+          "status": 200,
+          "bytes": 29145,
+          "sha256": "0892cac4b4926b21c37e031314cdf9052053e57f5fb0d6d8267d007b85debd00",
+          "fetched_at_utc": "2026-11-06T09:11:44.763646+00:00"
+        },
+        {
+          "role": "statement",
+          "label": "2026 General Election Unofficial Precinct results (PDF)",
+          "requested_url": "https://www.juniatacountypa.gov/DocumentCenter/View/571/2026-General-Election-Unofficial-Precinct-results-PDF",
+          "final_url": "https://www.juniatacountypa.gov/DocumentCenter/View/571/2026-General-Election-Unofficial-Precinct-results-PDF",
+          "status": 200,
+          "bytes": 135894,
+          "sha256": "dc53cac0e7d57f1a32c8fa63552501f19266fb8725f53a5507da0cc170ffc73d",
+          "fetched_at_utc": "2026-11-06T09:11:44.900974+00:00"
+        }
+      ],
+      "disposition": "Declared complete originals acquired privately; separate full numerical reviews prepared, not live."
+    },
+    {
+      "county": "McKean",
+      "declared_source_url": "https://www.mckeancountypa.gov/",
+      "final_url": "https://www.mckeancountypa.gov/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 63680,
+      "sha256": "bd2b4314abd35413c2b882e9929bdad00d7c94c1cd12ff5e088dbb0eb91ff1da",
+      "fetched_at_utc": "2026-11-06T09:11:00.688632+00:00",
+      "declared_viewer": "https://gismaps.mckeancountypa.org/portal/apps/webappviewer/index.html?id=13a73720a3874314bbd58c753094b7bc",
+      "disposition": "New index declares homepage; actual homepage still declares same failed viewer. Viewer not retried."
+    },
+    {
+      "county": "Mercer",
+      "declared_source_url": "https://www.mercercountypa.gov/election/Election.Results/default.htm",
+      "final_url": "https://www.mercercountypa.gov/election/Election.Results/default.htm",
+      "status": 200,
+      "content_type": "text/html",
+      "bytes": 122775,
+      "sha256": "39351d8f7753168e416093a9cc7acd46be8c70da324d2636dcb875139de1dcd8",
+      "fetched_at_utc": "2026-11-06T09:11:00.821752+00:00",
+      "declared_report_pairs": [
+        {
+          "role": "summary",
+          "label": "SUMMARY",
+          "requested_url": "https://www.mercercountypa.gov/election/Election.Results/2026/GENERAL/Summary.pdf",
+          "final_url": "https://www.mercercountypa.gov/election/Election.Results/2026/GENERAL/Summary.pdf",
+          "status": 200,
+          "bytes": 23614,
+          "sha256": "62dd7982282aa5f47a499851064742e83aa59e7c2f8ef30ff3720b40932d9d22",
+          "fetched_at_utc": "2026-11-06T09:11:44.625449+00:00"
+        },
+        {
+          "role": "statement",
+          "label": "PRECINCT",
+          "requested_url": "https://www.mercercountypa.gov/election/Election.Results/2026/GENERAL/PRECINCT.pdf",
+          "final_url": "https://www.mercercountypa.gov/election/Election.Results/2026/GENERAL/PRECINCT.pdf",
+          "status": 200,
+          "bytes": 247488,
+          "sha256": "c8dde57ee0a8d8f1bce56654a6bd9991dc238412efe6c150219d292b2520a43d",
+          "fetched_at_utc": "2026-11-06T09:11:45.127043+00:00"
+        }
+      ],
+      "disposition": "Declared complete originals acquired privately; separate full numerical reviews prepared, not live."
+    },
+    {
+      "county": "Montour",
+      "declared_source_url": "https://montourcounty.gov/departments/elections/results",
+      "final_url": "https://montourcounty.gov/departments/elections/results",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 108836,
+      "sha256": "fb58a50a024f4f16defb56f32c72c925655cd70ffb73a9364f36982ec28705c2",
+      "fetched_at_utc": "2026-11-06T09:11:01.110028+00:00",
+      "declared_report_pairs": [
+        {
+          "role": "summary",
+          "label": "Unofficial Election Summary (opens in a new window)",
+          "requested_url": "https://montourcounty.gov/getmedia/8fab59c7-7dc9-4879-8e3c-adb2c26d07dd/Unofficial-Election-Summary.pdf",
+          "final_url": "https://montourcounty.gov/getmedia/8fab59c7-7dc9-4879-8e3c-adb2c26d07dd/Unofficial-Election-Summary.pdf",
+          "status": 200,
+          "bytes": 10604,
+          "sha256": "4959aac26b5c14906515bd17709b26dfd80eaa7dca96c7ddb17ce2a4faa23818",
+          "fetched_at_utc": "2026-11-06T09:11:45.135734+00:00"
+        },
+        {
+          "role": "statement",
+          "label": "Unofficial Precinct Summary (opens in a new window)",
+          "requested_url": "https://montourcounty.gov/getmedia/6d246221-b65e-4675-9ae6-c20bf9e70758/Unofficial-Precinct-Summary.pdf",
+          "final_url": "https://montourcounty.gov/getmedia/6d246221-b65e-4675-9ae6-c20bf9e70758/Unofficial-Precinct-Summary.pdf",
+          "status": 200,
+          "bytes": 125036,
+          "sha256": "45dd95b833d7601d4f306526260e89772d615d443790c3e07157178d331a8467",
+          "fetched_at_utc": "2026-11-06T09:11:46.220412+00:00"
+        }
+      ],
+      "disposition": "Declared complete originals acquired privately; separate full numerical reviews prepared, not live."
+    }
+  ],
+  "maine_current_main_headings": [
+    "Election Results/Data",
+    "2026 Elections",
+    "June 9, 2026 - Primary Election - Ranked Choice Offices",
+    "Representative to Congress, District 2 - Democratic",
+    "Cast Vote Records",
+    "Governor - Democratic",
+    "Cast Vote Records",
+    "Governor - Republican",
+    "Cast Vote Records",
+    "Senate District 4 - Republican",
+    "Cast Vote Records",
+    "House District 58 - Republican",
+    "Cast Vote Records",
+    "June 9, 2026 - Primary Election - \u00a0Non-Ranked Choice Offices",
+    "U.S. Senate",
+    "Representative to Congress, District 1",
+    "Representative to Congress, District 2",
+    "State Senate",
+    "Representative to the Legislature",
+    "Judge of Probate",
+    "Register of Probate",
+    "County Treasurer",
+    "Register of Deeds",
+    "Sheriff",
+    "District Attorney",
+    "County Commissioner",
+    "June 9, 2026 - SR 29 Special Election",
+    "February 24, 2026 - SR 94 Special Election",
+    "Find earlier election results"
+  ],
+  "maine_entire_original_unchanged_from_november5": false,
+  "no_general_heading_in_reviewed_maine_main_container": true,
+  "maine_scope": "This actual index's headings only, not absence of General returns everywhere; no candidate or blank allocation approved.",
+  "decisions": [
+    "Use the consolidated Pennsylvania index for declared source discovery, not ballot participation or native-source certification.",
+    "Verify each county source independently, its complete report and source election/stage before loading native participation.",
+    "Candidate totals, registered-party voter counts, precinct reporting and early-mail receipts do not substitute for whole-election ballots.",
+    "Do not repeat McKean's unchanged failed viewer; compare this declared link with the saved county declaration.",
+    "No original HTML is republished, and no existing source, map, release, ledger or live pointer changes.",
+    "All Maine 130 major votes, 6021 blanks, 125 write-ins, three municipal-other gap and shared Kennebec fragments remain unchanged."
+  ],
+  "all_original_html_and_templates_private": true,
+  "publication_downloads_added": false,
+  "map_flags_or_live_pointers_changed": false,
+  "scope": "Consolidated67link source discovery is not67 reviewed participation counties. Candidate figures and reporting counters in the index are not ballots. Exact parent declarations and native identities require independent review. This internal review proof is not offered as a complete data-query download. Maine130 major votes/6021 blanks/125 write-ins/three municipal-other gap/shared Kennebec and separate DC324 accounting remain unresolved."
+}
