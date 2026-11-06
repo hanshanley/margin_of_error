@@ -40,7 +40,7 @@ including Maine, remaining Pennsylvania sources and separately scoped D.C.
 Keep schedule #5 active; do not repeat completed Minnesota publishers,
 unchanged suites or production verification.
 
-**November 6: Lawrence complete factual query validated; not yet in the explorer.**
+**November 6: Lawrence complete factual query published; explorer integration pending.**
 The three exact county-declared PDFs contain **214 pages**, not the earlier
 web extraction's differing page counts or numbers. Two independent PDF engines
 agree on every parsed numerical fact. The current native summary reports
@@ -60,8 +60,23 @@ output protection. The nine-table query preserves candidate/party choices,
 overlapping write-in details, native accounting, reporting and every page;
 original HTML/PDF templates remain private. See
 `20261106-lawrence-primary-review-01` and `20261106-lawrence-facts-01`.
-**Next:** publish and verify the fixed factual release, independently review
-county identity/context, then integrate only the approved county fraction.
+Fixed factual revision **f9f46f4fe5ec2f3093d35bbdb7c23bb808cb60f0**,
+release **436518385**, tag `voter-county-lawrence-20261106-01`, passes all
+**15 entire anonymous assets / 15 entire pinned files / 14 ZIP members** and
+extracted standard-library byte reproduction. Exact review/tag credential
+jobs **42223692820 / 42223706527** pass. Publication proofs are in
+`20261106-lawrence-publication-01`; the completed publisher must not be rerun.
+Both entire Census 2024/2026 identity inventories independently identify
+contextual county **42073**; the complete live Pennsylvania geometry matches
+the retained 2024 contextual geometry, not certified 2026 reporting boundaries.
+Local context16 preserves all **1,221 previous records / 737 previous joins /
+18 unchanged geometries**, exclusions, missingness and native map flags.
+Its **1,222 records / 738 joins / 351 usable rates / 387 missing rates** add
+only the reviewed Lawrence county fraction. The complete **32-file /
+31-member** context query passes offline verification. See
+`20261106-lawrence-explorer-01`.
+**Next:** publish and verify fixed context16, then complete runtime integration,
+focused tests, browser checks and the exact hosted deployment proof.
 Do not mark Lawrence LIVE or increment current Pennsylvania map coverage yet.
 
 The same acquisition retained Huntingdon's certificate-verification failure

@@ -1,0 +1,149 @@
+{
+  "verified_at_utc": "2026-11-06T13:13:06.879937+00:00",
+  "revision": "f9f46f4fe5ec2f3093d35bbdb7c23bb808cb60f0",
+  "release_id": 436518385,
+  "tag": "voter-county-lawrence-20261106-01",
+  "files": [
+    {
+      "file": "audit.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-lawrence-20261106-01/audit.json",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f9f46f4fe5ec2f3093d35bbdb7c23bb808cb60f0/data/county-source-reviews/20261106-lawrence-facts-01/audit.json",
+      "bytes": 5325,
+      "sha256": "13aa2d243300c869fcb09b2ab35c91c10796f03e16d3b4d6004c1a90afeb0016",
+      "anonymous_entire_bytes_match": true,
+      "pinned_entire_bytes_match": true
+    },
+    {
+      "file": "checksums.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-lawrence-20261106-01/checksums.json",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f9f46f4fe5ec2f3093d35bbdb7c23bb808cb60f0/data/county-source-reviews/20261106-lawrence-facts-01/checksums.json",
+      "bytes": 1814,
+      "sha256": "94c0cff43a26e52c4c80da94dd11e980972abfd3a57c9a9d94200f6eafa0593e",
+      "anonymous_entire_bytes_match": true,
+      "pinned_entire_bytes_match": true
+    },
+    {
+      "file": "complete-lawrence-2026-numerical-facts-01.zip",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-lawrence-20261106-01/complete-lawrence-2026-numerical-facts-01.zip",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f9f46f4fe5ec2f3093d35bbdb7c23bb808cb60f0/data/county-source-reviews/20261106-lawrence-facts-01/complete-lawrence-2026-numerical-facts-01.zip",
+      "bytes": 82186,
+      "sha256": "285fa95573dbb7e984091aac64cbf6ac4069446c44835c542f72757bdf8ccc43",
+      "anonymous_entire_bytes_match": true,
+      "pinned_entire_bytes_match": true
+    },
+    {
+      "file": "county-literal-party-totals.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-lawrence-20261106-01/county-literal-party-totals.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f9f46f4fe5ec2f3093d35bbdb7c23bb808cb60f0/data/county-source-reviews/20261106-lawrence-facts-01/county-literal-party-totals.csv",
+      "bytes": 3498,
+      "sha256": "65ef34552396a70635ba89d64d1ced4ed73b4b426c73396e822552a638178f30",
+      "anonymous_entire_bytes_match": true,
+      "pinned_entire_bytes_match": true
+    },
+    {
+      "file": "county-participation.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-lawrence-20261106-01/county-participation.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f9f46f4fe5ec2f3093d35bbdb7c23bb808cb60f0/data/county-source-reviews/20261106-lawrence-facts-01/county-participation.csv",
+      "bytes": 2642,
+      "sha256": "df9fea970547572e67e96351e77d256318346d310b7b4c92f8c9c0a148a562bd",
+      "anonymous_entire_bytes_match": true,
+      "pinned_entire_bytes_match": true
+    },
+    {
+      "file": "mail-only-participation.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-lawrence-20261106-01/mail-only-participation.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f9f46f4fe5ec2f3093d35bbdb7c23bb808cb60f0/data/county-source-reviews/20261106-lawrence-facts-01/mail-only-participation.csv",
+      "bytes": 2639,
+      "sha256": "03f13cd1e332292a56e6dc0048b19fd3be3e80eaf79c6aadf67cf5ed4c8a5976",
+      "anonymous_entire_bytes_match": true,
+      "pinned_entire_bytes_match": true
+    },
+    {
+      "file": "native-candidate-results.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-lawrence-20261106-01/native-candidate-results.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f9f46f4fe5ec2f3093d35bbdb7c23bb808cb60f0/data/county-source-reviews/20261106-lawrence-facts-01/native-candidate-results.csv",
+      "bytes": 423560,
+      "sha256": "5252da04d32fcb4e5f3ed6ec60d439d40a8a3319081acd04b382665b5308b42c",
+      "anonymous_entire_bytes_match": true,
+      "pinned_entire_bytes_match": true
+    },
+    {
+      "file": "native-contest-accounting.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-lawrence-20261106-01/native-contest-accounting.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f9f46f4fe5ec2f3093d35bbdb7c23bb808cb60f0/data/county-source-reviews/20261106-lawrence-facts-01/native-contest-accounting.csv",
+      "bytes": 377890,
+      "sha256": "f504e7bb62b8dcd875a31da97753723973575bddd3b239636d39b4b63a3406fb",
+      "anonymous_entire_bytes_match": true,
+      "pinned_entire_bytes_match": true
+    },
+    {
+      "file": "native-reporting-statements.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-lawrence-20261106-01/native-reporting-statements.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f9f46f4fe5ec2f3093d35bbdb7c23bb808cb60f0/data/county-source-reviews/20261106-lawrence-facts-01/native-reporting-statements.csv",
+      "bytes": 5030,
+      "sha256": "2c3f8cb21ef71dde845ec8c27a5b952cec656270193bc100253544e4d923198d",
+      "anonymous_entire_bytes_match": true,
+      "pinned_entire_bytes_match": true
+    },
+    {
+      "file": "native-source-pages.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-lawrence-20261106-01/native-source-pages.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f9f46f4fe5ec2f3093d35bbdb7c23bb808cb60f0/data/county-source-reviews/20261106-lawrence-facts-01/native-source-pages.csv",
+      "bytes": 45458,
+      "sha256": "a75f157fb0c1151be5d47807f070fb1c95845eb8941bc179ff162027731e2b86",
+      "anonymous_entire_bytes_match": true,
+      "pinned_entire_bytes_match": true
+    },
+    {
+      "file": "native-turnout-checks.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-lawrence-20261106-01/native-turnout-checks.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f9f46f4fe5ec2f3093d35bbdb7c23bb808cb60f0/data/county-source-reviews/20261106-lawrence-facts-01/native-turnout-checks.csv",
+      "bytes": 20326,
+      "sha256": "c0a395eb1757428b4a5720497e76e0b91261ec833cbb9bd08459caacf0467841",
+      "anonymous_entire_bytes_match": true,
+      "pinned_entire_bytes_match": true
+    },
+    {
+      "file": "native-unit-participation.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-lawrence-20261106-01/native-unit-participation.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f9f46f4fe5ec2f3093d35bbdb7c23bb808cb60f0/data/county-source-reviews/20261106-lawrence-facts-01/native-unit-participation.csv",
+      "bytes": 170782,
+      "sha256": "64b1122dc07d6827ed9e13ea69a1bf86666cd8d29fbf26e97ba5d72751c3666b",
+      "anonymous_entire_bytes_match": true,
+      "pinned_entire_bytes_match": true
+    },
+    {
+      "file": "review-lawrence-county-results.py",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-lawrence-20261106-01/review-lawrence-county-results.py",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f9f46f4fe5ec2f3093d35bbdb7c23bb808cb60f0/data/county-source-reviews/20261106-lawrence-facts-01/review-lawrence-county-results.py",
+      "bytes": 24148,
+      "sha256": "739a3e4f483b8abdc205dd2faec47b55889717feb66a44da7a00615042aba17e",
+      "anonymous_entire_bytes_match": true,
+      "pinned_entire_bytes_match": true
+    },
+    {
+      "file": "source-receipts.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-lawrence-20261106-01/source-receipts.json",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f9f46f4fe5ec2f3093d35bbdb7c23bb808cb60f0/data/county-source-reviews/20261106-lawrence-facts-01/source-receipts.json",
+      "bytes": 2821,
+      "sha256": "0e71dfb7e4bcaa20ae48f065a48ed8b17390c8e901c2aff7923aa80f675c796c",
+      "anonymous_entire_bytes_match": true,
+      "pinned_entire_bytes_match": true
+    },
+    {
+      "file": "source-records.json.gz",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-lawrence-20261106-01/source-records.json.gz",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f9f46f4fe5ec2f3093d35bbdb7c23bb808cb60f0/data/county-source-reviews/20261106-lawrence-facts-01/source-records.json.gz",
+      "bytes": 23750,
+      "sha256": "2920553073c12905d2f0cb46d20387675129997ad4d2ca931a8dbf00f89ed694",
+      "anonymous_entire_bytes_match": true,
+      "pinned_entire_bytes_match": true
+    }
+  ],
+  "complete_assets": 15,
+  "complete_pinned_files": 15,
+  "complete_archive_members": 14,
+  "extracted_standard_library_offline_reproduction": true,
+  "original_html_or_pdf_redistributed": false,
+  "explorer_integration_approved": false
+}

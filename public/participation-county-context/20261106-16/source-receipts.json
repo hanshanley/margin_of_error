@@ -1,0 +1,42 @@
+[
+  {
+    "url": "https://www.census.gov/geographies/reference-files/time-series/geo/gazetteer-files.2024.html",
+    "final_url": "https://www.census.gov/geographies/reference-files/time-series/geo/gazetteer-files.2024.html",
+    "status": 200,
+    "retrieved_at_utc": "2026-11-06T05:47:24.865514+00:00",
+    "bytes": 538404,
+    "sha256": "2a1330028d6182e57806b9eca78afa9cc4805e4465f480c229c8be8b0dcf2bd2",
+    "content_type": "text/html; charset=UTF-8",
+    "original_source_representation": "private"
+  },
+  {
+    "url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_counties_national.zip",
+    "final_url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_counties_national.zip",
+    "status": 200,
+    "retrieved_at_utc": "2026-11-06T05:47:24.955633+00:00",
+    "bytes": 141679,
+    "sha256": "3c337402b5c6e8d5aa26b4278ccf4edc8989f2683765b3ffbf22296cdb2df3a0",
+    "content_type": "application/zip",
+    "original_source_representation": "private"
+  },
+  {
+    "url": "https://www.census.gov/geographies/reference-files/time-series/geo/gazetteer-files.2026.html",
+    "final_url": "https://www.census.gov/geographies/reference-files/time-series/geo/gazetteer-files.2026.html",
+    "status": 200,
+    "retrieved_at_utc": "2026-11-06T05:47:19.908120+00:00",
+    "bytes": 533501,
+    "sha256": "5aa2d6cf45e1ba4c9fbf1433b9f1bc07710e7f067baaec40bdd53f44629ff803",
+    "content_type": "text/html; charset=UTF-8",
+    "original_source_representation": "private"
+  },
+  {
+    "url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2026_Gazetteer/2026_Gaz_counties_national.zip",
+    "final_url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2026_Gazetteer/2026_Gaz_counties_national.zip",
+    "status": 200,
+    "retrieved_at_utc": "2026-11-06T05:47:20.050121+00:00",
+    "bytes": 139190,
+    "sha256": "6a99ca00efbc0be5112e225d4102704c51d5ce3b16e3afd6e4159460595fd12a",
+    "content_type": "application/zip",
+    "original_source_representation": "private"
+  }
+]
