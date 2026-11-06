@@ -1,0 +1,641 @@
+year,state_code,scope,native_locality_name,native_locality_id,source_fips,native_group,native_status
+2026,GA,statewide,Georgia,09378a07-e6cf-4f66-be7c-ca4aa534f99a,,Election Day,Not Reported
+2026,GA,statewide,Georgia,09378a07-e6cf-4f66-be7c-ca4aa534f99a,,Advance Voting,Not Reported
+2026,GA,statewide,Georgia,09378a07-e6cf-4f66-be7c-ca4aa534f99a,,Absentee by Mail,Not Reported
+2026,GA,statewide,Georgia,09378a07-e6cf-4f66-be7c-ca4aa534f99a,,Provisional,Not Reported
+2026,GA,county,Echols County,050,,Election Day,Election Night Complete
+2026,GA,county,Echols County,050,,Advance Voting,Election Night Complete
+2026,GA,county,Echols County,050,,Absentee by Mail,Election Night Complete
+2026,GA,county,Echols County,050,,Provisional,Election Night Complete
+2026,GA,county,Brantley County,013,,Election Day,Election Night Complete
+2026,GA,county,Brantley County,013,,Advance Voting,Election Night Complete
+2026,GA,county,Brantley County,013,,Absentee by Mail,Election Night Complete
+2026,GA,county,Brantley County,013,,Provisional,Election Night Complete
+2026,GA,county,Pulaski County,116,,Election Day,Election Night Complete
+2026,GA,county,Pulaski County,116,,Advance Voting,Election Night Complete
+2026,GA,county,Pulaski County,116,,Absentee by Mail,Election Night Complete
+2026,GA,county,Pulaski County,116,,Provisional,Election Night Complete
+2026,GA,county,Ben Hill County,009,,Election Day,Election Night Complete
+2026,GA,county,Ben Hill County,009,,Advance Voting,Election Night Complete
+2026,GA,county,Ben Hill County,009,,Absentee by Mail,Election Night Complete
+2026,GA,county,Ben Hill County,009,,Provisional,Election Night Complete
+2026,GA,county,Schley County,123,,Election Day,Election Night Complete
+2026,GA,county,Schley County,123,,Advance Voting,Election Night Complete
+2026,GA,county,Schley County,123,,Absentee by Mail,Election Night Complete
+2026,GA,county,Schley County,123,,Provisional,Election Night Complete
+2026,GA,county,Webster County,152,,Election Day,Election Night Complete
+2026,GA,county,Webster County,152,,Advance Voting,Election Night Complete
+2026,GA,county,Webster County,152,,Absentee by Mail,Election Night Complete
+2026,GA,county,Webster County,152,,Provisional,Election Night Complete
+2026,GA,county,Turner County,142,,Election Day,Election Night Complete
+2026,GA,county,Turner County,142,,Advance Voting,Election Night Complete
+2026,GA,county,Turner County,142,,Absentee by Mail,Election Night Complete
+2026,GA,county,Turner County,142,,Provisional,Election Night Complete
+2026,GA,county,Banks County,006,,Election Day,Election Night Complete
+2026,GA,county,Banks County,006,,Advance Voting,Election Night Complete
+2026,GA,county,Banks County,006,,Absentee by Mail,Election Night Complete
+2026,GA,county,Banks County,006,,Provisional,Election Night Complete
+2026,GA,county,Warren County,149,,Election Day,Election Night Complete
+2026,GA,county,Warren County,149,,Advance Voting,Election Night Complete
+2026,GA,county,Warren County,149,,Absentee by Mail,Election Night Complete
+2026,GA,county,Warren County,149,,Provisional,Election Night Complete
+2026,GA,county,Chattooga County,027,,Election Day,Election Night Complete
+2026,GA,county,Chattooga County,027,,Advance Voting,Election Night Complete
+2026,GA,county,Chattooga County,027,,Absentee by Mail,Election Night Complete
+2026,GA,county,Chattooga County,027,,Provisional,Election Night Complete
+2026,GA,county,Greene County,066,,Election Day,Election Night Complete
+2026,GA,county,Greene County,066,,Advance Voting,Election Night Complete
+2026,GA,county,Greene County,066,,Absentee by Mail,Election Night Complete
+2026,GA,county,Greene County,066,,Provisional,Election Night Complete
+2026,GA,county,Lanier County,086,,Election Day,Election Night Complete
+2026,GA,county,Lanier County,086,,Advance Voting,Election Night Complete
+2026,GA,county,Lanier County,086,,Absentee by Mail,Election Night Complete
+2026,GA,county,Lanier County,086,,Provisional,Election Night Complete
+2026,GA,county,Bleckley County,012,,Election Day,Fully Reported
+2026,GA,county,Bleckley County,012,,Advance Voting,Fully Reported
+2026,GA,county,Bleckley County,012,,Absentee by Mail,Fully Reported
+2026,GA,county,Bleckley County,012,,Provisional,Fully Reported
+2026,GA,county,Jenkins County,082,,Election Day,Election Night Complete
+2026,GA,county,Jenkins County,082,,Advance Voting,Election Night Complete
+2026,GA,county,Jenkins County,082,,Absentee by Mail,Election Night Complete
+2026,GA,county,Jenkins County,082,,Provisional,Election Night Complete
+2026,GA,county,Randolph County,120,,Election Day,Election Night Complete
+2026,GA,county,Randolph County,120,,Advance Voting,Election Night Complete
+2026,GA,county,Randolph County,120,,Absentee by Mail,Election Night Complete
+2026,GA,county,Randolph County,120,,Provisional,Election Night Complete
+2026,GA,county,Pierce County,113,,Election Day,Election Night Complete
+2026,GA,county,Pierce County,113,,Advance Voting,Election Night Complete
+2026,GA,county,Pierce County,113,,Absentee by Mail,Election Night Complete
+2026,GA,county,Pierce County,113,,Provisional,Election Night Complete
+2026,GA,county,Irwin County,077,,Election Day,Election Night Complete
+2026,GA,county,Irwin County,077,,Advance Voting,Election Night Complete
+2026,GA,county,Irwin County,077,,Absentee by Mail,Election Night Complete
+2026,GA,county,Irwin County,077,,Provisional,Election Night Complete
+2026,GA,county,Treutlen County,140,,Election Day,Election Night Complete
+2026,GA,county,Treutlen County,140,,Advance Voting,Election Night Complete
+2026,GA,county,Treutlen County,140,,Absentee by Mail,Election Night Complete
+2026,GA,county,Treutlen County,140,,Provisional,Election Night Complete
+2026,GA,county,Liberty County,089,,Election Day,Election Night Complete
+2026,GA,county,Liberty County,089,,Advance Voting,Election Night Complete
+2026,GA,county,Liberty County,089,,Absentee by Mail,Election Night Complete
+2026,GA,county,Liberty County,089,,Provisional,Not Reported
+2026,GA,county,Stephens County,127,,Election Day,Election Night Complete
+2026,GA,county,Stephens County,127,,Advance Voting,Election Night Complete
+2026,GA,county,Stephens County,127,,Absentee by Mail,Election Night Complete
+2026,GA,county,Stephens County,127,,Provisional,Election Night Complete
+2026,GA,county,Evans County,054,,Election Day,Election Night Complete
+2026,GA,county,Evans County,054,,Advance Voting,Election Night Complete
+2026,GA,county,Evans County,054,,Absentee by Mail,Election Night Complete
+2026,GA,county,Evans County,054,,Provisional,Election Night Complete
+2026,GA,county,Clay County,030,,Election Day,Election Night Complete
+2026,GA,county,Clay County,030,,Advance Voting,Election Night Complete
+2026,GA,county,Clay County,030,,Absentee by Mail,Election Night Complete
+2026,GA,county,Clay County,030,,Provisional,Election Night Complete
+2026,GA,county,Polk County,115,,Election Day,Election Night Complete
+2026,GA,county,Polk County,115,,Advance Voting,Election Night Complete
+2026,GA,county,Polk County,115,,Absentee by Mail,Election Night Complete
+2026,GA,county,Polk County,115,,Provisional,Election Night Complete
+2026,GA,county,Wilkes County,157,,Election Day,Election Night Complete
+2026,GA,county,Wilkes County,157,,Advance Voting,Election Night Complete
+2026,GA,county,Wilkes County,157,,Absentee by Mail,Election Night Complete
+2026,GA,county,Wilkes County,157,,Provisional,Election Night Complete
+2026,GA,county,Thomas County,136,,Election Day,Election Night Complete
+2026,GA,county,Thomas County,136,,Advance Voting,Election Night Complete
+2026,GA,county,Thomas County,136,,Absentee by Mail,Election Night Complete
+2026,GA,county,Thomas County,136,,Provisional,Election Night Complete
+2026,GA,county,Candler County,021,,Election Day,Election Night Complete
+2026,GA,county,Candler County,021,,Advance Voting,Election Night Complete
+2026,GA,county,Candler County,021,,Absentee by Mail,Election Night Complete
+2026,GA,county,Candler County,021,,Provisional,Election Night Complete
+2026,GA,county,Lowndes County,092,,Election Day,Election Night Complete
+2026,GA,county,Lowndes County,092,,Advance Voting,Election Night Complete
+2026,GA,county,Lowndes County,092,,Absentee by Mail,Election Night Complete
+2026,GA,county,Lowndes County,092,,Provisional,Election Night Complete
+2026,GA,county,Chattahoochee County,026,,Election Day,Election Night Complete
+2026,GA,county,Chattahoochee County,026,,Advance Voting,Election Night Complete
+2026,GA,county,Chattahoochee County,026,,Absentee by Mail,Election Night Complete
+2026,GA,county,Chattahoochee County,026,,Provisional,Election Night Complete
+2026,GA,county,Rabun County,119,,Election Day,Election Night Complete
+2026,GA,county,Rabun County,119,,Advance Voting,Election Night Complete
+2026,GA,county,Rabun County,119,,Absentee by Mail,Election Night Complete
+2026,GA,county,Rabun County,119,,Provisional,Election Night Complete
+2026,GA,county,Johnson County,083,,Election Day,Election Night Complete
+2026,GA,county,Johnson County,083,,Advance Voting,Election Night Complete
+2026,GA,county,Johnson County,083,,Absentee by Mail,Election Night Complete
+2026,GA,county,Johnson County,083,,Provisional,Election Night Complete
+2026,GA,county,Towns County,139,,Election Day,Election Night Complete
+2026,GA,county,Towns County,139,,Advance Voting,Election Night Complete
+2026,GA,county,Towns County,139,,Absentee by Mail,Election Night Complete
+2026,GA,county,Towns County,139,,Provisional,Not Reported
+2026,GA,county,Miller County,100,,Election Day,Election Night Complete
+2026,GA,county,Miller County,100,,Advance Voting,Election Night Complete
+2026,GA,county,Miller County,100,,Absentee by Mail,Election Night Complete
+2026,GA,county,Miller County,100,,Provisional,Election Night Complete
+2026,GA,county,Cook County,037,,Election Day,Election Night Complete
+2026,GA,county,Cook County,037,,Advance Voting,Election Night Complete
+2026,GA,county,Cook County,037,,Absentee by Mail,Election Night Complete
+2026,GA,county,Cook County,037,,Provisional,Election Night Complete
+2026,GA,county,Twiggs County,143,,Election Day,Election Night Complete
+2026,GA,county,Twiggs County,143,,Advance Voting,Election Night Complete
+2026,GA,county,Twiggs County,143,,Absentee by Mail,Election Night Complete
+2026,GA,county,Twiggs County,143,,Provisional,Election Night Complete
+2026,GA,county,Wilcox County,156,,Election Day,Election Night Complete
+2026,GA,county,Wilcox County,156,,Advance Voting,Election Night Complete
+2026,GA,county,Wilcox County,156,,Absentee by Mail,Election Night Complete
+2026,GA,county,Wilcox County,156,,Provisional,Election Night Complete
+2026,GA,county,Grady County,065,,Election Day,Election Night Complete
+2026,GA,county,Grady County,065,,Advance Voting,Election Night Complete
+2026,GA,county,Grady County,065,,Absentee by Mail,Election Night Complete
+2026,GA,county,Grady County,065,,Provisional,Election Night Complete
+2026,GA,county,Taliaferro County,131,,Election Day,Fully Reported
+2026,GA,county,Taliaferro County,131,,Advance Voting,Fully Reported
+2026,GA,county,Taliaferro County,131,,Absentee by Mail,Fully Reported
+2026,GA,county,Taliaferro County,131,,Provisional,Fully Reported
+2026,GA,county,Tift County,137,,Election Day,Election Night Complete
+2026,GA,county,Tift County,137,,Advance Voting,Election Night Complete
+2026,GA,county,Tift County,137,,Absentee by Mail,Election Night Complete
+2026,GA,county,Tift County,137,,Provisional,Election Night Complete
+2026,GA,county,Appling County,001,,Election Day,Election Night Complete
+2026,GA,county,Appling County,001,,Advance Voting,Election Night Complete
+2026,GA,county,Appling County,001,,Absentee by Mail,Election Night Complete
+2026,GA,county,Appling County,001,,Provisional,Election Night Complete
+2026,GA,county,Oglethorpe County,109,,Election Day,Election Night Complete
+2026,GA,county,Oglethorpe County,109,,Advance Voting,Election Night Complete
+2026,GA,county,Oglethorpe County,109,,Absentee by Mail,Election Night Complete
+2026,GA,county,Oglethorpe County,109,,Provisional,Election Night Complete
+2026,GA,county,Taylor County,133,,Election Day,Election Night Complete
+2026,GA,county,Taylor County,133,,Advance Voting,Election Night Complete
+2026,GA,county,Taylor County,133,,Absentee by Mail,Election Night Complete
+2026,GA,county,Taylor County,133,,Provisional,Election Night Complete
+2026,GA,county,Baldwin County,005,,Election Day,Election Night Complete
+2026,GA,county,Baldwin County,005,,Advance Voting,Election Night Complete
+2026,GA,county,Baldwin County,005,,Absentee by Mail,Election Night Complete
+2026,GA,county,Baldwin County,005,,Provisional,Not Reported
+2026,GA,county,Clinch County,032,,Election Day,Election Night Complete
+2026,GA,county,Clinch County,032,,Advance Voting,Election Night Complete
+2026,GA,county,Clinch County,032,,Absentee by Mail,Election Night Complete
+2026,GA,county,Clinch County,032,,Provisional,Election Night Complete
+2026,GA,county,Oconee County,108,,Election Day,Election Night Complete
+2026,GA,county,Oconee County,108,,Advance Voting,Election Night Complete
+2026,GA,county,Oconee County,108,,Absentee by Mail,Election Night Complete
+2026,GA,county,Oconee County,108,,Provisional,Election Night Complete
+2026,GA,county,Terrell County,135,,Election Day,Election Night Complete
+2026,GA,county,Terrell County,135,,Advance Voting,Election Night Complete
+2026,GA,county,Terrell County,135,,Absentee by Mail,Election Night Complete
+2026,GA,county,Terrell County,135,,Provisional,Election Night Complete
+2026,GA,county,Screven County,124,,Election Day,Election Night Complete
+2026,GA,county,Screven County,124,,Advance Voting,Election Night Complete
+2026,GA,county,Screven County,124,,Absentee by Mail,Election Night Complete
+2026,GA,county,Screven County,124,,Provisional,Election Night Complete
+2026,GA,county,Elbert County,052,,Election Day,Election Night Complete
+2026,GA,county,Elbert County,052,,Advance Voting,Election Night Complete
+2026,GA,county,Elbert County,052,,Absentee by Mail,Election Night Complete
+2026,GA,county,Elbert County,052,,Provisional,Election Night Complete
+2026,GA,county,Franklin County,059,,Election Day,Election Night Complete
+2026,GA,county,Franklin County,059,,Advance Voting,Election Night Complete
+2026,GA,county,Franklin County,059,,Absentee by Mail,Election Night Complete
+2026,GA,county,Franklin County,059,,Provisional,Election Night Complete
+2026,GA,county,Stewart County,128,,Election Day,Election Night Complete
+2026,GA,county,Stewart County,128,,Advance Voting,Election Night Complete
+2026,GA,county,Stewart County,128,,Absentee by Mail,Election Night Complete
+2026,GA,county,Stewart County,128,,Provisional,Election Night Complete
+2026,GA,county,Berrien County,010,,Election Day,Election Night Complete
+2026,GA,county,Berrien County,010,,Advance Voting,Election Night Complete
+2026,GA,county,Berrien County,010,,Absentee by Mail,Election Night Complete
+2026,GA,county,Berrien County,010,,Provisional,Election Night Complete
+2026,GA,county,Jeff Davis County,080,,Election Day,Election Night Complete
+2026,GA,county,Jeff Davis County,080,,Advance Voting,Election Night Complete
+2026,GA,county,Jeff Davis County,080,,Absentee by Mail,Election Night Complete
+2026,GA,county,Jeff Davis County,080,,Provisional,Election Night Complete
+2026,GA,county,Monroe County,102,,Election Day,Election Night Complete
+2026,GA,county,Monroe County,102,,Advance Voting,Election Night Complete
+2026,GA,county,Monroe County,102,,Absentee by Mail,Election Night Complete
+2026,GA,county,Monroe County,102,,Provisional,Election Night Complete
+2026,GA,county,Marion County,096,,Election Day,Election Night Complete
+2026,GA,county,Marion County,096,,Advance Voting,Election Night Complete
+2026,GA,county,Marion County,096,,Absentee by Mail,Election Night Complete
+2026,GA,county,Marion County,096,,Provisional,Election Night Complete
+2026,GA,county,Morgan County,104,,Election Day,Election Night Complete
+2026,GA,county,Morgan County,104,,Advance Voting,Election Night Complete
+2026,GA,county,Morgan County,104,,Absentee by Mail,Election Night Complete
+2026,GA,county,Morgan County,104,,Provisional,Election Night Complete
+2026,GA,county,Union County,144,,Election Day,Election Night Complete
+2026,GA,county,Union County,144,,Advance Voting,Election Night Complete
+2026,GA,county,Union County,144,,Absentee by Mail,Election Night Complete
+2026,GA,county,Union County,144,,Provisional,Not Reported
+2026,GA,county,Lee County,088,,Election Day,Election Night Complete
+2026,GA,county,Lee County,088,,Advance Voting,Election Night Complete
+2026,GA,county,Lee County,088,,Absentee by Mail,Election Night Complete
+2026,GA,county,Lee County,088,,Provisional,Election Night Complete
+2026,GA,county,Wayne County,151,,Election Day,Election Night Complete
+2026,GA,county,Wayne County,151,,Advance Voting,Election Night Complete
+2026,GA,county,Wayne County,151,,Absentee by Mail,Election Night Complete
+2026,GA,county,Wayne County,151,,Provisional,Election Night Complete
+2026,GA,county,Catoosa County,023,,Election Day,Election Night Complete
+2026,GA,county,Catoosa County,023,,Advance Voting,Election Night Complete
+2026,GA,county,Catoosa County,023,,Absentee by Mail,Election Night Complete
+2026,GA,county,Catoosa County,023,,Provisional,Election Night Complete
+2026,GA,county,Dodge County,045,,Election Day,Election Night Complete
+2026,GA,county,Dodge County,045,,Advance Voting,Election Night Complete
+2026,GA,county,Dodge County,045,,Absentee by Mail,Election Night Complete
+2026,GA,county,Dodge County,045,,Provisional,Election Night Complete
+2026,GA,county,Crisp County,040,,Election Day,Election Night Complete
+2026,GA,county,Crisp County,040,,Advance Voting,Election Night Complete
+2026,GA,county,Crisp County,040,,Absentee by Mail,Election Night Complete
+2026,GA,county,Crisp County,040,,Provisional,Election Night Complete
+2026,GA,county,Dooly County,046,,Election Day,Election Night Complete
+2026,GA,county,Dooly County,046,,Advance Voting,Election Night Complete
+2026,GA,county,Dooly County,046,,Absentee by Mail,Election Night Complete
+2026,GA,county,Dooly County,046,,Provisional,Election Night Complete
+2026,GA,county,Bryan County,015,,Election Day,Election Night Complete
+2026,GA,county,Bryan County,015,,Advance Voting,Election Night Complete
+2026,GA,county,Bryan County,015,,Absentee by Mail,Election Night Complete
+2026,GA,county,Bryan County,015,,Provisional,Election Night Complete
+2026,GA,county,Wilkinson County,158,,Election Day,Fully Reported
+2026,GA,county,Wilkinson County,158,,Advance Voting,Fully Reported
+2026,GA,county,Wilkinson County,158,,Absentee by Mail,Fully Reported
+2026,GA,county,Wilkinson County,158,,Provisional,Fully Reported
+2026,GA,county,Ware County,148,,Election Day,Election Night Complete
+2026,GA,county,Ware County,148,,Advance Voting,Election Night Complete
+2026,GA,county,Ware County,148,,Absentee by Mail,Election Night Complete
+2026,GA,county,Ware County,148,,Provisional,Election Night Complete
+2026,GA,county,Emanuel County,053,,Election Day,Election Night Complete
+2026,GA,county,Emanuel County,053,,Advance Voting,Election Night Complete
+2026,GA,county,Emanuel County,053,,Absentee by Mail,Election Night Complete
+2026,GA,county,Emanuel County,053,,Provisional,Election Night Complete
+2026,GA,county,Walker County,146,,Election Day,Election Night Complete
+2026,GA,county,Walker County,146,,Advance Voting,Election Night Complete
+2026,GA,county,Walker County,146,,Absentee by Mail,Election Night Complete
+2026,GA,county,Walker County,146,,Provisional,Election Night Complete
+2026,GA,county,Rockdale County,122,,Election Day,Election Night Complete
+2026,GA,county,Rockdale County,122,,Advance Voting,Election Night Complete
+2026,GA,county,Rockdale County,122,,Absentee by Mail,Election Night Complete
+2026,GA,county,Rockdale County,122,,Provisional,Election Night Complete
+2026,GA,county,Habersham County,068,,Election Day,Election Night Complete
+2026,GA,county,Habersham County,068,,Advance Voting,Election Night Complete
+2026,GA,county,Habersham County,068,,Absentee by Mail,Election Night Complete
+2026,GA,county,Habersham County,068,,Provisional,Election Night Complete
+2026,GA,county,Long County,091,,Election Day,Election Night Complete
+2026,GA,county,Long County,091,,Advance Voting,Election Night Complete
+2026,GA,county,Long County,091,,Absentee by Mail,Election Night Complete
+2026,GA,county,Long County,091,,Provisional,Election Night Complete
+2026,GA,county,Lincoln County,090,,Election Day,Election Night Complete
+2026,GA,county,Lincoln County,090,,Advance Voting,Election Night Complete
+2026,GA,county,Lincoln County,090,,Absentee by Mail,Election Night Complete
+2026,GA,county,Lincoln County,090,,Provisional,Election Night Complete
+2026,GA,county,Murray County,105,,Election Day,Election Night Complete
+2026,GA,county,Murray County,105,,Advance Voting,Election Night Complete
+2026,GA,county,Murray County,105,,Absentee by Mail,Election Night Complete
+2026,GA,county,Murray County,105,,Provisional,Election Night Complete
+2026,GA,county,Telfair County,134,,Election Day,Election Night Complete
+2026,GA,county,Telfair County,134,,Advance Voting,Election Night Complete
+2026,GA,county,Telfair County,134,,Absentee by Mail,Election Night Complete
+2026,GA,county,Telfair County,134,,Provisional,Election Night Complete
+2026,GA,county,Lamar County,085,,Election Day,Election Night Complete
+2026,GA,county,Lamar County,085,,Advance Voting,Election Night Complete
+2026,GA,county,Lamar County,085,,Absentee by Mail,Election Night Complete
+2026,GA,county,Lamar County,085,,Provisional,Election Night Complete
+2026,GA,county,Gilmer County,061,,Election Day,Election Night Complete
+2026,GA,county,Gilmer County,061,,Advance Voting,Election Night Complete
+2026,GA,county,Gilmer County,061,,Absentee by Mail,Election Night Complete
+2026,GA,county,Gilmer County,061,,Provisional,Not Reported
+2026,GA,county,Brooks County,014,,Election Day,Election Night Complete
+2026,GA,county,Brooks County,014,,Advance Voting,Election Night Complete
+2026,GA,county,Brooks County,014,,Absentee by Mail,Election Night Complete
+2026,GA,county,Brooks County,014,,Provisional,Election Night Complete
+2026,GA,county,Wheeler County,153,,Election Day,Election Night Complete
+2026,GA,county,Wheeler County,153,,Advance Voting,Election Night Complete
+2026,GA,county,Wheeler County,153,,Absentee by Mail,Election Night Complete
+2026,GA,county,Wheeler County,153,,Provisional,Election Night Complete
+2026,GA,county,White County,154,,Election Day,Election Night Complete
+2026,GA,county,White County,154,,Advance Voting,Election Night Complete
+2026,GA,county,White County,154,,Absentee by Mail,Election Night Complete
+2026,GA,county,White County,154,,Provisional,Election Night Complete
+2026,GA,county,Camden County,020,,Election Day,Election Night Complete
+2026,GA,county,Camden County,020,,Advance Voting,Election Night Complete
+2026,GA,county,Camden County,020,,Absentee by Mail,Election Night Complete
+2026,GA,county,Camden County,020,,Provisional,Election Night Complete
+2026,GA,county,Floyd County,057,,Election Day,Election Night Complete
+2026,GA,county,Floyd County,057,,Advance Voting,Election Night Complete
+2026,GA,county,Floyd County,057,,Absentee by Mail,Election Night Complete
+2026,GA,county,Floyd County,057,,Provisional,Election Night Complete
+2026,GA,county,Dawson County,042,,Election Day,Election Night Complete
+2026,GA,county,Dawson County,042,,Advance Voting,Election Night Complete
+2026,GA,county,Dawson County,042,,Absentee by Mail,Election Night Complete
+2026,GA,county,Dawson County,042,,Provisional,Election Night Complete
+2026,GA,county,Butts County,018,,Election Day,Election Night Complete
+2026,GA,county,Butts County,018,,Advance Voting,Election Night Complete
+2026,GA,county,Butts County,018,,Absentee by Mail,Election Night Complete
+2026,GA,county,Butts County,018,,Provisional,Election Night Complete
+2026,GA,county,Barrow County,007,,Election Day,Election Night Complete
+2026,GA,county,Barrow County,007,,Advance Voting,Election Night Complete
+2026,GA,county,Barrow County,007,,Absentee by Mail,Election Night Complete
+2026,GA,county,Barrow County,007,,Provisional,Election Night Complete
+2026,GA,county,Gordon County,064,,Election Day,Election Night Complete
+2026,GA,county,Gordon County,064,,Advance Voting,Election Night Complete
+2026,GA,county,Gordon County,064,,Absentee by Mail,Election Night Complete
+2026,GA,county,Gordon County,064,,Provisional,Not Reported
+2026,GA,county,Montgomery County,103,,Election Day,Election Night Complete
+2026,GA,county,Montgomery County,103,,Advance Voting,Election Night Complete
+2026,GA,county,Montgomery County,103,,Absentee by Mail,Election Night Complete
+2026,GA,county,Montgomery County,103,,Provisional,Election Night Complete
+2026,GA,county,Colquitt County,035,,Election Day,Election Night Complete
+2026,GA,county,Colquitt County,035,,Advance Voting,Election Night Complete
+2026,GA,county,Colquitt County,035,,Absentee by Mail,Election Night Complete
+2026,GA,county,Colquitt County,035,,Provisional,Election Night Complete
+2026,GA,county,Peach County,111,,Election Day,Election Night Complete
+2026,GA,county,Peach County,111,,Advance Voting,Election Night Complete
+2026,GA,county,Peach County,111,,Absentee by Mail,Election Night Complete
+2026,GA,county,Peach County,111,,Provisional,Election Night Complete
+2026,GA,county,Tattnall County,132,,Election Day,Election Night Complete
+2026,GA,county,Tattnall County,132,,Advance Voting,Election Night Complete
+2026,GA,county,Tattnall County,132,,Absentee by Mail,Election Night Complete
+2026,GA,county,Tattnall County,132,,Provisional,Election Night Complete
+2026,GA,county,Upson County,145,,Election Day,Election Night Complete
+2026,GA,county,Upson County,145,,Advance Voting,Election Night Complete
+2026,GA,county,Upson County,145,,Absentee by Mail,Election Night Complete
+2026,GA,county,Upson County,145,,Provisional,Election Night Complete
+2026,GA,county,Jasper County,079,,Election Day,Election Night Complete
+2026,GA,county,Jasper County,079,,Advance Voting,Election Night Complete
+2026,GA,county,Jasper County,079,,Absentee by Mail,Election Night Complete
+2026,GA,county,Jasper County,079,,Provisional,Election Night Complete
+2026,GA,county,Spalding County,126,,Election Day,Election Night Complete
+2026,GA,county,Spalding County,126,,Advance Voting,Election Night Complete
+2026,GA,county,Spalding County,126,,Absentee by Mail,Election Night Complete
+2026,GA,county,Spalding County,126,,Provisional,Election Night Complete
+2026,GA,county,Decatur County,043,,Election Day,Election Night Complete
+2026,GA,county,Decatur County,043,,Advance Voting,Election Night Complete
+2026,GA,county,Decatur County,043,,Absentee by Mail,Election Night Complete
+2026,GA,county,Decatur County,043,,Provisional,Not Reported
+2026,GA,county,Mitchell County,101,,Election Day,Election Night Complete
+2026,GA,county,Mitchell County,101,,Advance Voting,Election Night Complete
+2026,GA,county,Mitchell County,101,,Absentee by Mail,Election Night Complete
+2026,GA,county,Mitchell County,101,,Provisional,Election Night Complete
+2026,GA,county,Jefferson County,081,,Election Day,Election Night Complete
+2026,GA,county,Jefferson County,081,,Advance Voting,Election Night Complete
+2026,GA,county,Jefferson County,081,,Absentee by Mail,Election Night Complete
+2026,GA,county,Jefferson County,081,,Provisional,Election Night Complete
+2026,GA,county,Seminole County,125,,Election Day,Election Night Complete
+2026,GA,county,Seminole County,125,,Advance Voting,Election Night Complete
+2026,GA,county,Seminole County,125,,Absentee by Mail,Election Night Complete
+2026,GA,county,Seminole County,125,,Provisional,Election Night Complete
+2026,GA,county,Dade County,041,,Election Day,Election Night Complete
+2026,GA,county,Dade County,041,,Advance Voting,Election Night Complete
+2026,GA,county,Dade County,041,,Absentee by Mail,Election Night Complete
+2026,GA,county,Dade County,041,,Provisional,Election Night Complete
+2026,GA,county,Washington County,150,,Election Day,Election Night Complete
+2026,GA,county,Washington County,150,,Advance Voting,Election Night Complete
+2026,GA,county,Washington County,150,,Absentee by Mail,Election Night Complete
+2026,GA,county,Washington County,150,,Provisional,Election Night Complete
+2026,GA,county,Early County,049,,Election Day,Election Night Complete
+2026,GA,county,Early County,049,,Advance Voting,Election Night Complete
+2026,GA,county,Early County,049,,Absentee by Mail,Election Night Complete
+2026,GA,county,Early County,049,,Provisional,Election Night Complete
+2026,GA,county,Atkinson County,002,,Election Day,Election Night Complete
+2026,GA,county,Atkinson County,002,,Advance Voting,Election Night Complete
+2026,GA,county,Atkinson County,002,,Absentee by Mail,Election Night Complete
+2026,GA,county,Atkinson County,002,,Provisional,Election Night Complete
+2026,GA,county,Putnam County,117,,Election Day,Election Night Complete
+2026,GA,county,Putnam County,117,,Advance Voting,Election Night Complete
+2026,GA,county,Putnam County,117,,Absentee by Mail,Election Night Complete
+2026,GA,county,Putnam County,117,,Provisional,Election Night Complete
+2026,GA,county,Bulloch County,016,,Election Day,Election Night Complete
+2026,GA,county,Bulloch County,016,,Advance Voting,Election Night Complete
+2026,GA,county,Bulloch County,016,,Absentee by Mail,Election Night Complete
+2026,GA,county,Bulloch County,016,,Provisional,Election Night Complete
+2026,GA,county,Calhoun County,019,,Election Day,Election Night Complete
+2026,GA,county,Calhoun County,019,,Advance Voting,Election Night Complete
+2026,GA,county,Calhoun County,019,,Absentee by Mail,Election Night Complete
+2026,GA,county,Calhoun County,019,,Provisional,Election Night Complete
+2026,GA,county,Glynn County,063,,Election Day,Election Night Complete
+2026,GA,county,Glynn County,063,,Advance Voting,Election Night Complete
+2026,GA,county,Glynn County,063,,Absentee by Mail,Election Night Complete
+2026,GA,county,Glynn County,063,,Provisional,Election Night Complete
+2026,GA,county,Richmond County,121,,Election Day,Election Night Complete
+2026,GA,county,Richmond County,121,,Advance Voting,Election Night Complete
+2026,GA,county,Richmond County,121,,Absentee by Mail,Election Night Complete
+2026,GA,county,Richmond County,121,,Provisional,Election Night Complete
+2026,GA,county,Troup County,141,,Election Day,Election Night Complete
+2026,GA,county,Troup County,141,,Advance Voting,Election Night Complete
+2026,GA,county,Troup County,141,,Absentee by Mail,Election Night Complete
+2026,GA,county,Troup County,141,,Provisional,Election Night Complete
+2026,GA,county,Laurens County,087,,Election Day,Election Night Complete
+2026,GA,county,Laurens County,087,,Advance Voting,Election Night Complete
+2026,GA,county,Laurens County,087,,Absentee by Mail,Election Night Complete
+2026,GA,county,Laurens County,087,,Provisional,Election Night Complete
+2026,GA,county,Whitfield County,155,,Election Day,Election Night Complete
+2026,GA,county,Whitfield County,155,,Advance Voting,Election Night Complete
+2026,GA,county,Whitfield County,155,,Absentee by Mail,Election Night Complete
+2026,GA,county,Whitfield County,155,,Provisional,Election Night Complete
+2026,GA,county,Hart County,073,,Election Day,Election Night Complete
+2026,GA,county,Hart County,073,,Advance Voting,Election Night Complete
+2026,GA,county,Hart County,073,,Absentee by Mail,Election Night Complete
+2026,GA,county,Hart County,073,,Provisional,Election Night Complete
+2026,GA,county,Haralson County,071,,Election Day,Election Night Complete
+2026,GA,county,Haralson County,071,,Advance Voting,Election Night Complete
+2026,GA,county,Haralson County,071,,Absentee by Mail,Election Night Complete
+2026,GA,county,Haralson County,071,,Provisional,Election Night Complete
+2026,GA,county,Macon County,094,,Election Day,Election Night Complete
+2026,GA,county,Macon County,094,,Advance Voting,Election Night Complete
+2026,GA,county,Macon County,094,,Absentee by Mail,Election Night Complete
+2026,GA,county,Macon County,094,,Provisional,Election Night Complete
+2026,GA,county,Fayette County,056,,Election Day,Election Night Complete
+2026,GA,county,Fayette County,056,,Advance Voting,Election Night Complete
+2026,GA,county,Fayette County,056,,Absentee by Mail,Election Night Complete
+2026,GA,county,Fayette County,056,,Provisional,Election Night Complete
+2026,GA,county,Jackson County,078,,Election Day,Election Night Complete
+2026,GA,county,Jackson County,078,,Advance Voting,Election Night Complete
+2026,GA,county,Jackson County,078,,Absentee by Mail,Election Night Complete
+2026,GA,county,Jackson County,078,,Provisional,Election Night Complete
+2026,GA,county,Columbia County,036,,Election Day,Election Night Complete
+2026,GA,county,Columbia County,036,,Advance Voting,Election Night Complete
+2026,GA,county,Columbia County,036,,Absentee by Mail,Election Night Complete
+2026,GA,county,Columbia County,036,,Provisional,Not Reported
+2026,GA,county,Paulding County,110,,Election Day,Election Night Complete
+2026,GA,county,Paulding County,110,,Advance Voting,Election Night Complete
+2026,GA,county,Paulding County,110,,Absentee by Mail,Election Night Complete
+2026,GA,county,Paulding County,110,,Provisional,Election Night Complete
+2026,GA,county,Bacon County,003,,Election Day,Election Night Complete
+2026,GA,county,Bacon County,003,,Advance Voting,Election Night Complete
+2026,GA,county,Bacon County,003,,Absentee by Mail,Election Night Complete
+2026,GA,county,Bacon County,003,,Provisional,Election Night Complete
+2026,GA,county,McIntosh County,098,,Election Day,Election Night Complete
+2026,GA,county,McIntosh County,098,,Advance Voting,Election Night Complete
+2026,GA,county,McIntosh County,098,,Absentee by Mail,Election Night Complete
+2026,GA,county,McIntosh County,098,,Provisional,Election Night Complete
+2026,GA,county,Bartow County,008,,Election Day,Election Night Complete
+2026,GA,county,Bartow County,008,,Advance Voting,Election Night Complete
+2026,GA,county,Bartow County,008,,Absentee by Mail,Election Night Complete
+2026,GA,county,Bartow County,008,,Provisional,Election Night Complete
+2026,GA,county,Talbot County,130,,Election Day,Election Night Complete
+2026,GA,county,Talbot County,130,,Advance Voting,Election Night Complete
+2026,GA,county,Talbot County,130,,Absentee by Mail,Election Night Complete
+2026,GA,county,Talbot County,130,,Provisional,Election Night Complete
+2026,GA,county,Hall County,069,,Election Day,Election Night Complete
+2026,GA,county,Hall County,069,,Advance Voting,Election Night Complete
+2026,GA,county,Hall County,069,,Absentee by Mail,Election Night Complete
+2026,GA,county,Hall County,069,,Provisional,Election Night Complete
+2026,GA,county,Carroll County,022,,Election Day,Election Night Complete
+2026,GA,county,Carroll County,022,,Advance Voting,Election Night Complete
+2026,GA,county,Carroll County,022,,Absentee by Mail,Election Night Complete
+2026,GA,county,Carroll County,022,,Provisional,Election Night Complete
+2026,GA,county,Pike County,114,,Election Day,Election Night Complete
+2026,GA,county,Pike County,114,,Advance Voting,Election Night Complete
+2026,GA,county,Pike County,114,,Absentee by Mail,Election Night Complete
+2026,GA,county,Pike County,114,,Provisional,Election Night Complete
+2026,GA,county,Houston County,076,,Election Day,Election Night Complete
+2026,GA,county,Houston County,076,,Advance Voting,Election Night Complete
+2026,GA,county,Houston County,076,,Absentee by Mail,Election Night Complete
+2026,GA,county,Houston County,076,,Provisional,Election Night Complete
+2026,GA,county,Cherokee County,028,,Election Day,Election Night Complete
+2026,GA,county,Cherokee County,028,,Advance Voting,Election Night Complete
+2026,GA,county,Cherokee County,028,,Absentee by Mail,Election Night Complete
+2026,GA,county,Cherokee County,028,,Provisional,Election Night Complete
+2026,GA,county,Clayton County,031,,Election Day,Election Night Complete
+2026,GA,county,Clayton County,031,,Advance Voting,Election Night Complete
+2026,GA,county,Clayton County,031,,Absentee by Mail,Election Night Complete
+2026,GA,county,Clayton County,031,,Provisional,Election Night Complete
+2026,GA,county,Crawford County,039,,Election Day,Election Night Complete
+2026,GA,county,Crawford County,039,,Advance Voting,Election Night Complete
+2026,GA,county,Crawford County,039,,Absentee by Mail,Election Night Complete
+2026,GA,county,Crawford County,039,,Provisional,Election Night Complete
+2026,GA,county,Toombs County,138,,Election Day,Election Night Complete
+2026,GA,county,Toombs County,138,,Advance Voting,Election Night Complete
+2026,GA,county,Toombs County,138,,Absentee by Mail,Election Night Complete
+2026,GA,county,Toombs County,138,,Provisional,Election Night Complete
+2026,GA,county,Fannin County,055,,Election Day,Election Night Complete
+2026,GA,county,Fannin County,055,,Advance Voting,Election Night Complete
+2026,GA,county,Fannin County,055,,Absentee by Mail,Election Night Complete
+2026,GA,county,Fannin County,055,,Provisional,Not Reported
+2026,GA,county,Henry County,075,,Election Day,Election Night Complete
+2026,GA,county,Henry County,075,,Advance Voting,Election Night Complete
+2026,GA,county,Henry County,075,,Absentee by Mail,Election Night Complete
+2026,GA,county,Henry County,075,,Provisional,Election Night Complete
+2026,GA,county,Lumpkin County,093,,Election Day,Election Night Complete
+2026,GA,county,Lumpkin County,093,,Advance Voting,Election Night Complete
+2026,GA,county,Lumpkin County,093,,Absentee by Mail,Election Night Complete
+2026,GA,county,Lumpkin County,093,,Provisional,Election Night Complete
+2026,GA,county,Jones County,084,,Election Day,Election Night Complete
+2026,GA,county,Jones County,084,,Advance Voting,Election Night Complete
+2026,GA,county,Jones County,084,,Absentee by Mail,Election Night Complete
+2026,GA,county,Jones County,084,,Provisional,Election Night Complete
+2026,GA,county,Charlton County,024,,Election Day,Election Night Complete
+2026,GA,county,Charlton County,024,,Advance Voting,Election Night Complete
+2026,GA,county,Charlton County,024,,Absentee by Mail,Election Night Complete
+2026,GA,county,Charlton County,024,,Provisional,Election Night Complete
+2026,GA,county,Meriwether County,099,,Election Day,Election Night Complete
+2026,GA,county,Meriwether County,099,,Advance Voting,Election Night Complete
+2026,GA,county,Meriwether County,099,,Absentee by Mail,Election Night Complete
+2026,GA,county,Meriwether County,099,,Provisional,Election Night Complete
+2026,GA,county,Clarke County,029,,Election Day,Election Night Complete
+2026,GA,county,Clarke County,029,,Advance Voting,Election Night Complete
+2026,GA,county,Clarke County,029,,Absentee by Mail,Election Night Complete
+2026,GA,county,Clarke County,029,,Provisional,Election Night Complete
+2026,GA,county,DeKalb County,044,,Election Day,Election Night Complete
+2026,GA,county,DeKalb County,044,,Advance Voting,Election Night Complete
+2026,GA,county,DeKalb County,044,,Absentee by Mail,Election Night Complete
+2026,GA,county,DeKalb County,044,,Provisional,Election Night Complete
+2026,GA,county,Coffee County,034,,Election Day,Election Night Complete
+2026,GA,county,Coffee County,034,,Advance Voting,Election Night Complete
+2026,GA,county,Coffee County,034,,Absentee by Mail,Election Night Complete
+2026,GA,county,Coffee County,034,,Provisional,Election Night Complete
+2026,GA,county,Cobb County,033,,Election Day,Election Night Complete
+2026,GA,county,Cobb County,033,,Advance Voting,Election Night Complete
+2026,GA,county,Cobb County,033,,Absentee by Mail,Election Night Complete
+2026,GA,county,Cobb County,033,,Provisional,Election Night Complete
+2026,GA,county,Newton County,107,,Election Day,Election Night Complete
+2026,GA,county,Newton County,107,,Advance Voting,Election Night Complete
+2026,GA,county,Newton County,107,,Absentee by Mail,Election Night Complete
+2026,GA,county,Newton County,107,,Provisional,Not Reported
+2026,GA,county,Walton County,147,,Election Day,Election Night Complete
+2026,GA,county,Walton County,147,,Advance Voting,Election Night Complete
+2026,GA,county,Walton County,147,,Absentee by Mail,Election Night Complete
+2026,GA,county,Walton County,147,,Provisional,Election Night Complete
+2026,GA,county,Forsyth County,058,,Election Day,Election Night Complete
+2026,GA,county,Forsyth County,058,,Advance Voting,Election Night Complete
+2026,GA,county,Forsyth County,058,,Absentee by Mail,Election Night Complete
+2026,GA,county,Forsyth County,058,,Provisional,Election Night Complete
+2026,GA,county,Sumter County,129,,Election Day,Election Night Complete
+2026,GA,county,Sumter County,129,,Advance Voting,Election Night Complete
+2026,GA,county,Sumter County,129,,Absentee by Mail,Election Night Complete
+2026,GA,county,Sumter County,129,,Provisional,Election Night Complete
+2026,GA,county,Coweta County,038,,Election Day,Election Night Complete
+2026,GA,county,Coweta County,038,,Advance Voting,Election Night Complete
+2026,GA,county,Coweta County,038,,Absentee by Mail,Election Night Complete
+2026,GA,county,Coweta County,038,,Provisional,Election Night Complete
+2026,GA,county,Bibb County,011,,Election Day,Election Night Complete
+2026,GA,county,Bibb County,011,,Advance Voting,Election Night Complete
+2026,GA,county,Bibb County,011,,Absentee by Mail,Election Night Complete
+2026,GA,county,Bibb County,011,,Provisional,Election Night Complete
+2026,GA,county,McDuffie County,097,,Election Day,Election Night Complete
+2026,GA,county,McDuffie County,097,,Advance Voting,Election Night Complete
+2026,GA,county,McDuffie County,097,,Absentee by Mail,Election Night Complete
+2026,GA,county,McDuffie County,097,,Provisional,Election Night Complete
+2026,GA,county,Gwinnett County,067,,Election Day,Election Night Complete
+2026,GA,county,Gwinnett County,067,,Advance Voting,Election Night Complete
+2026,GA,county,Gwinnett County,067,,Absentee by Mail,Election Night Complete
+2026,GA,county,Gwinnett County,067,,Provisional,Election Night Complete
+2026,GA,county,Heard County,074,,Election Day,Election Night Complete
+2026,GA,county,Heard County,074,,Advance Voting,Election Night Complete
+2026,GA,county,Heard County,074,,Absentee by Mail,Election Night Complete
+2026,GA,county,Heard County,074,,Provisional,Election Night Complete
+2026,GA,county,Muscogee County,106,,Election Day,Election Night Complete
+2026,GA,county,Muscogee County,106,,Advance Voting,Election Night Complete
+2026,GA,county,Muscogee County,106,,Absentee by Mail,Election Night Complete
+2026,GA,county,Muscogee County,106,,Provisional,Election Night Complete
+2026,GA,county,Fulton County,060,,Election Day,Election Night Complete
+2026,GA,county,Fulton County,060,,Advance Voting,Election Night Complete
+2026,GA,county,Fulton County,060,,Absentee by Mail,Election Night Complete
+2026,GA,county,Fulton County,060,,Provisional,Election Night Complete
+2026,GA,county,Hancock County,070,,Election Day,Election Night Complete
+2026,GA,county,Hancock County,070,,Advance Voting,Election Night Complete
+2026,GA,county,Hancock County,070,,Absentee by Mail,Election Night Complete
+2026,GA,county,Hancock County,070,,Provisional,Election Night Complete
+2026,GA,county,Effingham County,051,,Election Day,Election Night Complete
+2026,GA,county,Effingham County,051,,Advance Voting,Election Night Complete
+2026,GA,county,Effingham County,051,,Absentee by Mail,Election Night Complete
+2026,GA,county,Effingham County,051,,Provisional,Election Night Complete
+2026,GA,county,Harris County,072,,Election Day,Election Night Complete
+2026,GA,county,Harris County,072,,Advance Voting,Election Night Complete
+2026,GA,county,Harris County,072,,Absentee by Mail,Election Night Complete
+2026,GA,county,Harris County,072,,Provisional,Election Night Complete
+2026,GA,county,Chatham County,025,,Election Day,Election Night Complete
+2026,GA,county,Chatham County,025,,Advance Voting,Election Night Complete
+2026,GA,county,Chatham County,025,,Absentee by Mail,Election Night Complete
+2026,GA,county,Chatham County,025,,Provisional,Election Night Complete
+2026,GA,county,Douglas County,048,,Election Day,Election Night Complete
+2026,GA,county,Douglas County,048,,Advance Voting,Election Night Complete
+2026,GA,county,Douglas County,048,,Absentee by Mail,Election Night Complete
+2026,GA,county,Douglas County,048,,Provisional,Election Night Complete
+2026,GA,county,Dougherty County,047,,Election Day,Election Night Complete
+2026,GA,county,Dougherty County,047,,Advance Voting,Election Night Complete
+2026,GA,county,Dougherty County,047,,Absentee by Mail,Election Night Complete
+2026,GA,county,Dougherty County,047,,Provisional,Election Night Complete
+2026,GA,county,Glascock County,062,,Election Day,Election Night Complete
+2026,GA,county,Glascock County,062,,Advance Voting,Election Night Complete
+2026,GA,county,Glascock County,062,,Absentee by Mail,Election Night Complete
+2026,GA,county,Glascock County,062,,Provisional,Election Night Complete
+2026,GA,county,Madison County,095,,Election Day,Election Night Complete
+2026,GA,county,Madison County,095,,Advance Voting,Election Night Complete
+2026,GA,county,Madison County,095,,Absentee by Mail,Election Night Complete
+2026,GA,county,Madison County,095,,Provisional,Election Night Complete
+2026,GA,county,Pickens County,112,,Election Day,Election Night Complete
+2026,GA,county,Pickens County,112,,Advance Voting,Election Night Complete
+2026,GA,county,Pickens County,112,,Absentee by Mail,Election Night Complete
+2026,GA,county,Pickens County,112,,Provisional,Election Night Complete
+2026,GA,county,Burke County,017,,Election Day,Election Night Complete
+2026,GA,county,Burke County,017,,Advance Voting,Election Night Complete
+2026,GA,county,Burke County,017,,Absentee by Mail,Election Night Complete
+2026,GA,county,Burke County,017,,Provisional,Election Night Complete
+2026,GA,county,Worth County,159,,Election Day,Election Night Complete
+2026,GA,county,Worth County,159,,Advance Voting,Election Night Complete
+2026,GA,county,Worth County,159,,Absentee by Mail,Election Night Complete
+2026,GA,county,Worth County,159,,Provisional,Election Night Complete
+2026,GA,county,Baker County,004,,Election Day,Fully Reported
+2026,GA,county,Baker County,004,,Advance Voting,Fully Reported
+2026,GA,county,Baker County,004,,Absentee by Mail,Fully Reported
+2026,GA,county,Baker County,004,,Provisional,Fully Reported
+2026,GA,county,Quitman County,118,,Election Day,Election Night Complete
+2026,GA,county,Quitman County,118,,Advance Voting,Election Night Complete
+2026,GA,county,Quitman County,118,,Absentee by Mail,Election Night Complete
+2026,GA,county,Quitman County,118,,Provisional,Election Night Complete

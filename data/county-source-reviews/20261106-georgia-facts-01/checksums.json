@@ -1,0 +1,72 @@
+[
+  {
+    "file": "audit.json",
+    "bytes": 343978,
+    "sha256": "fa75a75d5751cf5f697df0da3f1e7c29446e69b9e7910e63e9ebb54220db91fa"
+  },
+  {
+    "file": "candidate-mode-results.csv",
+    "bytes": 3931478,
+    "sha256": "898e17853d5c33e8afeb763d1a9c28e1a0a5528eb501986c6b8929ea22dd1cb3"
+  },
+  {
+    "file": "candidate-results.csv",
+    "bytes": 863126,
+    "sha256": "bfdd08f3eb56556bba90de9803f8b8aef662dbdfebecee1dbab7b74a501dd277"
+  },
+  {
+    "file": "choice-accounting.csv",
+    "bytes": 984162,
+    "sha256": "59d606280503aa0c5298a8fdd8b7abde902b66e887ad207aed734b2ba8e06596"
+  },
+  {
+    "file": "county-participation.csv",
+    "bytes": 251202,
+    "sha256": "31176798e6ed604c1f84de6f00212e83539bf0643adc33f4843b77590e15dbb1"
+  },
+  {
+    "file": "literal-party-totals.csv",
+    "bytes": 1041687,
+    "sha256": "a28ac4c148e8e4bbfaac20daf0b71f242ff1bc3fa66c6d345e5ff02c862a148c"
+  },
+  {
+    "file": "native-contests.csv",
+    "bytes": 415146,
+    "sha256": "29a4063d622bb792127b4115f14db8836f9e65600cd482ceafafa7937ab528c7"
+  },
+  {
+    "file": "native-reporting-statuses.csv",
+    "bytes": 46495,
+    "sha256": "18e7796aa7847410118091ddc72a50e6a295e4771d6d64bf10a3d740bf3bd80f"
+  },
+  {
+    "file": "precinct-choice-results.csv.gz",
+    "bytes": 1986865,
+    "sha256": "d6b90deb963d75189bb98ab58f6ff5daa98893e2e23b9035c3cddc750d113b56"
+  },
+  {
+    "file": "review-georgia-native-query.py",
+    "bytes": 23503,
+    "sha256": "40cbe4b3109499def1b91aa9f623e1299ce6c9c7fc455e172d15271a0b13d165"
+  },
+  {
+    "file": "source-receipts.csv",
+    "bytes": 1647,
+    "sha256": "04667f480a6d3f36cdf9d858e156cc74a84edf4f4015d32fe7d91572821c0e3a"
+  },
+  {
+    "file": "source-records.json.gz",
+    "bytes": 2146956,
+    "sha256": "9d47632098e6683763e97ad297b28404bb0b1a4a4b7758d32ac419409178a325"
+  },
+  {
+    "file": "statewide-participation.csv",
+    "bytes": 310,
+    "sha256": "b882f7f97f0df02fc9b94cbbb18c60416cf3331fa9eb3f34c6b484514a368067"
+  },
+  {
+    "file": "test-georgia-native-query.py",
+    "bytes": 4674,
+    "sha256": "42e7eae755c8d9c55305991d424aefe4c03b06fe43addc19fe4ef27ea4042d72"
+  }
+]

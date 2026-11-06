@@ -41,15 +41,21 @@ All previous observations and complete downloads survive. Missing rates remain
 gray; reporting completeness is not completed counting or certification.
 The Columbia production proof below remains a retained historical baseline.
 
-**Next bulk acquisition: all 159 Georgia county containers are reviewed,
-not packaged, independently export-reconciled or integrated.**
+**Next bulk acquisition: all 159 Georgia counties have a complete portable
+factual package; immutable publication and explorer integration remain pending.**
 Source-only freeze `cf04d9be2107c58ea7a9a398170aa07b028f5a99` preserves the
 complete factual native query: 159 county/declaration/registration records,
 273 contest vectors and 457 candidate-or-choice rows. All identities join
 bijectively using case-insensitive UUID comparison, never array order.
-County ballot sum **4,210,155** is derived, not a native statewide header;
-native root `ballotsCast=0` is retained as a conflicting/default field and
-never treated as actual statewide zero participation. All 159 registration
+The preliminary API-only review correctly identified the county ballot sum
+**4,210,155** as derived. A subsequent clean, single-click native **Voters**
+navigation independently displays that total, **7,516,484 Voters / 56.01%**,
+and all **159 county cards**. Every county count and all 157 positive-denominator
+printed rates agree with the API. Screven and Jeff Davis print a blank turnout,
+not zero. The actual final path is the election's `/voters?fr=true` page.
+The original API root `ballotsCast=0` remains a conflicting/default field and
+is never overwritten or treated as actual statewide zero participation.
+All 159 registration
 totals match their native county `totalVoters`, totaling **7,516,484**.
 Screven **5,236/0** and Jeff Davis **4,180/0** retain missing rates.
 All 157 positive-denominator native fractions agree at two-decimal percent
@@ -59,13 +65,39 @@ and choice-mode sum reconciles. Literal parties, stages, mode groups and clocks
 remain separate; these root vectors alone do not prove complete county
 candidate breakdowns. Wilkinson alone has native `isOfficialResults=true`,
 while the statewide flag is false; neither is overwritten.
-The actual app's advertised Excel blob and media export path are recorded,
-but their download bases are not guessed. Homepage/turnout-hub 403 responses
-remain private without bypass. Browser network-idle timed out after capturing
-the complete 1,332,984-byte JSON, not a successful DOM-render proof.
-See `20261106-georgia-primary-review-01/primary-review.json` and its complete
-159-row CSV. No denominator-definition, Census identity, geometry, release,
-map, rate or explorer approval is granted by this preliminary review.
+The actual rendered **Media Export** anchor supplies a complete **48,134,280-byte**
+JSON, acquired twice with identical entire bytes, SHA-256
+`6b275364f40114867dde379c04cfaff3b78f81bd191dd9c95dbf50b24b06d697`.
+All **273 root contests / 457 choices**, literal parties and mode vectors agree
+with the API. The complete export preserves **3,894 county contests / 7,067
+county choices / 102,214 precinct-choice records**, including their nested
+native mode groups. **372 null mode cells in 93 choices** remain missing, not
+zero. All **116 missing/case-different party attributes**, **153 contest wording
+aliases**, **451 case/whitespace choice aliases**, **42 precinct residuals** and
+two unresolved contest scopes are explicit inventories. Bacon's Insurance
+party suffix and McIntosh's Special/Special Primary conflict remain quarantined;
+four resulting root-minus-approved-county residuals are unclassified.
+
+Both entire original Census archives independently reproduce all 3,222
+inventory records; all 159 exact Georgia labels and contextual IDs agree across
+2024/2026 and the unchanged complete 2024 geometry. Native FIPS remains missing.
+See `20261106-georgia-census-review-01/independent-census-identities.json`.
+This is a contextual identity crosswalk, not certified 2026 election geography.
+The portable `20261106-georgia-facts-01/` package contains all sixteen entire
+files, ten full CSV queries (the large precinct table is gzip-compressed),
+the complete factual input and a fifteen-member deterministic ZIP. The portable
+standard-library reviewer and focused tests preserve blank rates, UUID joins,
+missing modes/parties, the conflicting API zero, office stages and complete
+query downloads. The native Voters clock has no printed timezone; API ISO clocks
+remain separate. Root/statewide registration fractions are not CVAP or demographic
+turnout, and two county denominators are missing.
+The earlier network-idle and second-click failures remain historical attempts;
+the new single-click Voters observation succeeds. Excel remains unacquired.
+Homepage/turnout-hub 403s are retained privately without bypass. Source HTML,
+browser traffic and application configuration are not redistributed. The same
+official backend's multiple representations are not independent institutions.
+No immutable release, completed counting, certification, source map or explorer
+approval is claimed before its separate checks.
 
 **November 6, 11:09 UTC: Columbia participation is LIVE verified.**
 Exact UI `2622a0d0dd0d5549392ddab6b5c6abc6ed6f9245`, Pages **42207340056
@@ -156,8 +188,9 @@ approved.
 Assembly 68 and 110 are different within-county scopes, not whole-county
 participation; preserve their separate reporting universes. Native write-ins
 have no printed party. See `20261106-bradford-primary-review-01/primary-review.json`.
-Do not reuse unverified preliminary web-extraction values. Bradford's portable
-factual package and immutable release remain pending.
+Do not reuse unverified preliminary web-extraction values. Bradford's complete
+portable package and immutable release are verified above; all-mode participation
+remains unapproved.
 
 Greene's actual **All returns** summary reports **11,105 Ballots Cast - Total**
 and **5 Ballots Cast - Blank**, **42/42** reporting and
