@@ -571,6 +571,67 @@ export function loadReviewedSomersetParticipation(reviews) {
   }];
 }
 
+export function loadReviewedSusquehannaParticipation(reviews) {
+  const id = 'pennsylvania-susquehanna-20261106-01';
+  const matches = reviews.filter(review => review.id === id);
+  if (matches.length !== 1) throw new Error(`Missing or duplicated reviewed county source: ${id}`);
+  const review = matches[0], directory = resolve(review.data_directory);
+  const manifest = readFileSync(resolve(directory, 'checksums.json'));
+  if (createHash('sha256').update(manifest).digest('hex')
+    !== 'ad0619a516d2047a384091af1506ad7c0ee5168cfadf5fdaaa52484284dd5a4a')
+    throw new Error(`Invalid reviewed county participation: ${id} / checksums.json`);
+  const files = { ...JSON.parse(manifest), 'complete-query.zip': {
+    bytes: 92737, sha256: '278746dd8f1f6f8ab08d47ecd1486376319272976e7f824034783d752e03d069',
+  } };
+  for (const [file, expected] of Object.entries(files)) {
+    const body = readFileSync(resolve(directory, file));
+    if (body.length !== expected.bytes || createHash('sha256').update(body).digest('hex') !== expected.sha256)
+      throw new Error(`Invalid reviewed county participation: ${id} / ${file}`);
+  }
+  const rows = csv(resolve(directory, 'county-participation.csv')), native = rows[0];
+  const ballots = Number(native?.total_ballots), denominator = Number(native?.registered_voters);
+  if (rows.length !== 1 || native.state !== 'Pennsylvania' || native.county !== 'Susquehanna'
+    || native.election_date !== '2026-11-03' || native.scope !== 'county'
+    || native.native_ballot_label !== 'Total Ballots' || native.native_registration_label !== 'Registered Voters'
+    || native.native_status !== 'UNOFFICIAL RESULTS' || native.native_title !== 'Unofficial Election Day Results'
+    || native.native_date !== '11/3/2026' || native.native_clock !== '10:25:47 PM EST'
+    || native.native_printed_percentage !== '55.69%' || ballots !== 15317 || denominator !== 27504
+    || ['source_fips', 'native_mode', 'blank_ballots', 'overvotes', 'undervotes'].some(key => native[key] !== '')
+    || ['analysis_ballots_approved', 'analysis_rate_approved', 'map_approved'].some(key => native[key] !== 'False'))
+    throw new Error(`Invalid reviewed county participation: ${id}`);
+  const pages = csv(resolve(directory, 'source-pages.csv')), reporting = csv(resolve(directory, 'reporting.csv'));
+  const updates = [...new Map(pages.map(row => {
+    const literal = `${row.native_date} ${row.native_clock}`;
+    return [`${row.source_role}:${literal}`, {
+      source: row.source_role, native_update_literal: literal, declared_timezone: 'EST',
+    }];
+  })).values()];
+  const quality = [
+    'Separately reviewed native whole-county Total Ballots and Registered Voters; all 41 precinct ballot and registration totals reconcile. Candidate selections and mail-process counts are not added.',
+    'Native registered-voter fraction only, not CVAP, VAP, VEP, CPS, demographic turnout or a mode electorate. Original frozen analysis/rate/map flags remain unchanged; county usability and contextual identity are separate reviews.',
+    'UNOFFICIAL RESULTS, native title Unofficial Election Day Results and 41/41 reporting do not establish completed counting or certification. The canvass explicitly includes Normal and Absentee / Mail-In candidate vectors despite the title.',
+    'All 58 complete numerical pages, four contest matrices and 340 canvass mode vectors reconcile; candidate and literal-party results remain separate from participation.',
+    'Summary, all three precinct clocks and canvass clock retain native EST. Native precinct Page 1/1 is not substituted for physical page inventory.',
+    'Ballot-mode counts, blank ballots, overvotes and undervotes are absent, not zero; ballot-minus-contest differences are unclassified, not native undervotes.',
+    'Five exact printed half-even percentage ties are retained. Governor canvass labels lack native parties; separately matched full summary identities are not relabeled as native canvass affiliations.',
+    'Native FIPS is missing; a separately reviewed Census contextual county join is not a certified 2026 election reporting boundary.',
+  ];
+  return [{
+    year: 2026, state_code: 'PA', county_id: 'reviewed:PA:Susquehanna', county: 'Susquehanna',
+    geography_level: 'county', ballots, denominator, denominator_basis: 'native_registered_voters',
+    participation_measure_literal: native.native_ballot_label, reported_pct: 100 * ballots / denominator,
+    native_printed_pct: native.native_printed_percentage, source_status_literal: native.native_status,
+    reported_units: 41, total_units: 41, source_rows: 1, maps_approved: false, review_id: id,
+    native_record: native, native_source_updates: updates,
+    source_update_label: updates.map(row => `${row.source}: ${row.native_update_literal}`).join('; '),
+    source_reporting_label: reporting.map(row =>
+      `${row.native_contest || 'County reporting'}: ${row.reporting}/${row.number_of_precincts}`).join('; ')
+      + '; ' + quality.join(' '),
+    quality, source_url: `${review.base_url}county-participation.csv`,
+    complete_download_url: review.complete_download_url,
+  }];
+}
+
 export function loadReviewedCountyParticipation(reviews) {
   const observations = [], seen = new Set();
   for (const [id, ballotField, denominatorField, printedField, code, names] of profiles) {
@@ -942,5 +1003,6 @@ export function loadReviewedCountyParticipation(reviews) {
     ...loadCaliforniaParticipation(reviews).filter(row => row.geography_level === 'county'),
     ...loadGeorgiaParticipation(reviews).counties, ...loadReviewedMinnesotaParticipation(reviews),
     ...loadLawrenceParticipation(reviews), ...loadHuntingdonParticipation(reviews),
-    ...loadReviewedAdditionalPennsylvaniaParticipation(reviews), ...loadReviewedSomersetParticipation(reviews)];
+    ...loadReviewedAdditionalPennsylvaniaParticipation(reviews), ...loadReviewedSomersetParticipation(reviews),
+    ...loadReviewedSusquehannaParticipation(reviews)];
 }

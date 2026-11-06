@@ -1,6 +1,37 @@
 {
   "reviews": [
     {
+      "id": "pennsylvania-susquehanna-20261106-01",
+      "label": "Susquehanna County, Pennsylvania 2026: native ballots, registrations and complete three-report numerical query",
+      "data_directory": "data/county-source-reviews/20261106-susquehanna-native-turnout-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/a7fad838607bd5ded9cd543ff16a2f574396f180/data/county-source-reviews/20261106-susquehanna-native-turnout-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-susquehanna-native-turnout-20261106-01/complete-query.zip",
+      "complete_download_bytes": 92737,
+      "complete_download_sha256": "278746dd8f1f6f8ab08d47ecd1486376319272976e7f824034783d752e03d069",
+      "checksums_file": "checksums.json",
+      "review_status": "complete_three_report_numerical_query_reviewed_unofficial",
+      "maps_approved": false,
+      "scope_note": "Native 15,317 Total Ballots / 27,504 Registered Voters, printed 55.69%, not candidate selections, CVAP/VAP/VEP or demographic turnout. Both full independent extractions, all 58 numerical pages, 41 precinct participation rows, four contest matrices and 340 canvass mode vectors reconcile. Retain the native Unofficial Election Day Results title, UNOFFICIAL RESULTS status, all five EST clocks, 41/41 reporting and five half-even percentage ties; the canvass explicitly includes Normal and Absentee / Mail-In candidate vectors. Ballot-mode counts, blanks, overvotes and undervotes are missing; ballot-minus-contest differences are unclassified residuals. Native governor-canvass labels and missing parties remain separate from matched full summary identities. All seventeen anonymous release assets, pinned files, sixteen ZIP members and eleven isolated tests pass byte-identical offline reproduction. Release 436728256 is immutable. The frozen native approval flags and missing FIPS remain unchanged; separately reviewed county usability and Census context do not certify 2026 reporting boundaries or demographic participation. Original HTML/PDF templates stay private.",
+      "tables": [
+        {"file": "county-participation.csv", "label": "Susquehanna: complete native county ballots, registrations and printed fraction (CSV)"},
+        {"file": "precinct-participation.csv", "label": "Susquehanna: all 41 precinct ballot and registration observations (CSV)"},
+        {"file": "candidate-results.csv", "label": "Susquehanna: complete county and precinct candidate selections across four contests (CSV)"},
+        {"file": "literal-party-results.csv", "label": "Susquehanna: separately scoped complete native literal-party results, not participation (CSV)"},
+        {"file": "canvass-candidate-results.csv", "label": "Susquehanna: every candidate-mode vector, native governor parties missing and summary matches separate (CSV)"},
+        {"file": "contest-accounting.csv", "label": "Susquehanna: complete contest accounting and unclassified residuals (CSV)"},
+        {"file": "reporting.csv", "label": "Susquehanna: all five native county and contest reporting counters (CSV)"},
+        {"file": "source-pages.csv", "label": "Susquehanna: all 58 native pages, five EST clocks and literal canvass headers (CSV)"},
+        {"file": "source-inputs.json", "label": "Susquehanna: both complete independent numerical report extractions (JSON)"},
+        {"file": "summary-columns.json", "label": "Susquehanna: complete independently clipped numerical summary columns (JSON)"},
+        {"file": "source-provenance.json", "label": "Susquehanna: complete original-source acquisition and integrity receipts (JSON)"},
+        {"file": "audit.json", "label": "Susquehanna: complete ballot, registration, candidate and mode reconciliation (JSON)"},
+        {"file": "methods.json", "label": "Susquehanna: numerical scope, missingness and standalone reproduction methods (JSON)"},
+        {"file": "checksums.json", "label": "Susquehanna: complete numerical-query byte inventory (JSON)"},
+        {"file": "review-susquehanna.py", "label": "Susquehanna: complete standard-library offline query reproducer (Python)"},
+        {"file": "test_review_susquehanna.py", "label": "Susquehanna: eleven portable numerical scope and integrity tests (Python)"}
+      ]
+    },
+    {
       "id": "pennsylvania-somerset-20261106-01",
       "label": "Somerset County, Pennsylvania 2026: native ballots, registrations and complete three-report numerical query",
       "data_directory": "data/county-source-reviews/20261106-somerset-facts-01",

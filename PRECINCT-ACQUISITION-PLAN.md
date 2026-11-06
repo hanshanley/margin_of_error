@@ -174,12 +174,26 @@ native parties remain distinct from explicitly matched summary identities.
 `278746dd8f1f6f8ab08d47ecd1486376319272976e7f824034783d752e03d069`.
 Validation evidence is separate in `20261106-susquehanna-native-validation-01`.
 
-**Next:** separately review the native whole-county ballot/registration
-fraction and context20 integration, preserving all prior records, geometry,
-exclusions and complete downloads. The immutable source query and independent
-county identity are complete; do not repeat their acquisition, publication,
-archive tests or inventories. No analysis/rate/map approval or UI integration
-exists for Susquehanna yet; source publication does not change live coverage.
+**Context20 preparation:** a separate county usability review approves only the
+native whole-county **15,317 / 27,504** registered-voter fraction, not candidate
+selections, demographic participation or a ballot-mode denominator. The frozen
+native approval flags and missing FIPS remain unchanged. The strict importer
+checks all seventeen complete query files; **53 focused source tests pass**,
+including input mutation guards and preservation of all 362 previous native rows.
+Context20 reproduces with **1,228 records / 744 contextual joins / 357 usable
+rates / 387 missing rates / 18 jurisdictions**, preserving every prior 1,227
+record, 743 joins, all exclusions and the full bytes of all 18 geometries.
+The complete **32-file / 31-member** contextual query verifies locally; ZIP
+**2,911,486 bytes**, SHA-256
+`9a18f2950aaf29643adcbea602a3f016997b39a9e88ebdcd3febae5f392f2d3d`.
+Its separate extension proof is in `20261106-susquehanna-explorer-01`.
+
+**Next:** freeze and publish context20, verify all complete public artifacts,
+then switch the UI pointer and perform focused map tests, build/preparation and
+exact production verification. The current review changes are not deployed.
+Do not repeat the completed native acquisition/publication/archive tests or
+county identity inventories. Source/context preparation does not change the
+current verified LIVE context19 coverage.
 
 **November 6, 15:00 UTC: distinct Venango alternatives reviewed; no invented county total.**
 Both complete official elections-navigation and results-archive responses were

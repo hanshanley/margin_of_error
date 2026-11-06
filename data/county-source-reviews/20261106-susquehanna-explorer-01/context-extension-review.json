@@ -1,0 +1,136 @@
+{
+  "previous_complete_records_preserved": 1227,
+  "previous_contextual_joins_preserved": 743,
+  "previous_exclusions_and_missingness_preserved": true,
+  "unchanged_geometry_inventory": 18,
+  "existing_source_map_approval_flags_unchanged": true,
+  "native_fips_invented": false,
+  "separate_county_usability_approval": "Native whole-county Total Ballots / Registered Voters only; not candidate selections, a mode denominator, CVAP/VAP/VEP or demographic participation.",
+  "native_ballots_and_registrations_independently_reconciled_across_all_41_precincts": true,
+  "original_native_approval_flags_unchanged": true,
+  "no_certified_2026_geometry_claim": true,
+  "new_source_records": [
+    {
+      "year": 2026,
+      "state_code": "PA",
+      "county_id": "reviewed:PA:Susquehanna",
+      "county": "Susquehanna",
+      "geography_level": "county",
+      "ballots": 15317,
+      "denominator": 27504,
+      "denominator_basis": "native_registered_voters",
+      "participation_measure_literal": "Total Ballots",
+      "reported_pct": 55.690081442699245,
+      "native_printed_pct": "55.69%",
+      "source_status_literal": "UNOFFICIAL RESULTS",
+      "reported_units": 41,
+      "total_units": 41,
+      "source_rows": 1,
+      "maps_approved": false,
+      "review_id": "pennsylvania-susquehanna-20261106-01",
+      "native_record": {
+        "state": "Pennsylvania",
+        "county": "Susquehanna",
+        "election_date": "2026-11-03",
+        "native_unit": "SUSQUEHANNA COUNTY, PA",
+        "scope": "county",
+        "source_role": "summary",
+        "physical_page": "1",
+        "native_date": "11/3/2026",
+        "native_clock": "10:25:47 PM EST",
+        "native_status": "UNOFFICIAL RESULTS",
+        "native_title": "Unofficial Election Day Results",
+        "native_ballot_label": "Total Ballots",
+        "total_ballots": "15317",
+        "native_registration_label": "Registered Voters",
+        "registered_voters": "27504",
+        "native_printed_percentage": "55.69%",
+        "native_mode": "",
+        "blank_ballots": "",
+        "overvotes": "",
+        "undervotes": "",
+        "source_fips": "",
+        "analysis_ballots_approved": "False",
+        "analysis_rate_approved": "False",
+        "map_approved": "False"
+      },
+      "native_source_updates": [
+        {
+          "source": "summary",
+          "native_update_literal": "11/3/2026 10:25:47 PM EST",
+          "declared_timezone": "EST"
+        },
+        {
+          "source": "precinct",
+          "native_update_literal": "11/3/2026 10:25:23 PM EST",
+          "declared_timezone": "EST"
+        },
+        {
+          "source": "precinct",
+          "native_update_literal": "11/3/2026 10:25:24 PM EST",
+          "declared_timezone": "EST"
+        },
+        {
+          "source": "precinct",
+          "native_update_literal": "11/3/2026 10:25:25 PM EST",
+          "declared_timezone": "EST"
+        },
+        {
+          "source": "canvass",
+          "native_update_literal": "11/3/2026 10:26:02 PM EST",
+          "declared_timezone": "EST"
+        }
+      ],
+      "source_update_label": "summary: 11/3/2026 10:25:47 PM EST; precinct: 11/3/2026 10:25:23 PM EST; precinct: 11/3/2026 10:25:24 PM EST; precinct: 11/3/2026 10:25:25 PM EST; canvass: 11/3/2026 10:26:02 PM EST",
+      "source_reporting_label": "County reporting: 41/41; GOVERNOR AND LT. GOV: 41/41; REPRESENTATIVE IN CONGRESS 9TH DISTRICT: 41/41; SENATOR IN THE GENERAL ASSEMBLY 20TH DISTRICT: 41/41; REPRESENTATIVE IN THE GENERAL ASSEMBLY 111TH DISTRICT: 41/41; Separately reviewed native whole-county Total Ballots and Registered Voters; all 41 precinct ballot and registration totals reconcile. Candidate selections and mail-process counts are not added. Native registered-voter fraction only, not CVAP, VAP, VEP, CPS, demographic turnout or a mode electorate. Original frozen analysis/rate/map flags remain unchanged; county usability and contextual identity are separate reviews. UNOFFICIAL RESULTS, native title Unofficial Election Day Results and 41/41 reporting do not establish completed counting or certification. The canvass explicitly includes Normal and Absentee / Mail-In candidate vectors despite the title. All 58 complete numerical pages, four contest matrices and 340 canvass mode vectors reconcile; candidate and literal-party results remain separate from participation. Summary, all three precinct clocks and canvass clock retain native EST. Native precinct Page 1/1 is not substituted for physical page inventory. Ballot-mode counts, blank ballots, overvotes and undervotes are absent, not zero; ballot-minus-contest differences are unclassified, not native undervotes. Five exact printed half-even percentage ties are retained. Governor canvass labels lack native parties; separately matched full summary identities are not relabeled as native canvass affiliations. Native FIPS is missing; a separately reviewed Census contextual county join is not a certified 2026 election reporting boundary.",
+      "quality": [
+        "Separately reviewed native whole-county Total Ballots and Registered Voters; all 41 precinct ballot and registration totals reconcile. Candidate selections and mail-process counts are not added.",
+        "Native registered-voter fraction only, not CVAP, VAP, VEP, CPS, demographic turnout or a mode electorate. Original frozen analysis/rate/map flags remain unchanged; county usability and contextual identity are separate reviews.",
+        "UNOFFICIAL RESULTS, native title Unofficial Election Day Results and 41/41 reporting do not establish completed counting or certification. The canvass explicitly includes Normal and Absentee / Mail-In candidate vectors despite the title.",
+        "All 58 complete numerical pages, four contest matrices and 340 canvass mode vectors reconcile; candidate and literal-party results remain separate from participation.",
+        "Summary, all three precinct clocks and canvass clock retain native EST. Native precinct Page 1/1 is not substituted for physical page inventory.",
+        "Ballot-mode counts, blank ballots, overvotes and undervotes are absent, not zero; ballot-minus-contest differences are unclassified, not native undervotes.",
+        "Five exact printed half-even percentage ties are retained. Governor canvass labels lack native parties; separately matched full summary identities are not relabeled as native canvass affiliations.",
+        "Native FIPS is missing; a separately reviewed Census contextual county join is not a certified 2026 election reporting boundary."
+      ],
+      "source_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/a7fad838607bd5ded9cd543ff16a2f574396f180/data/county-source-reviews/20261106-susquehanna-native-turnout-01/county-participation.csv",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-susquehanna-native-turnout-20261106-01/complete-query.zip"
+    }
+  ],
+  "new_contextual_identity_joins": [
+    {
+      "state_code": "PA",
+      "county_id": "reviewed:PA:Susquehanna",
+      "county": "Susquehanna",
+      "geography_level": "county",
+      "review_id": "pennsylvania-susquehanna-20261106-01",
+      "contextual_geoid": "42115",
+      "contextual_name": "Susquehanna County",
+      "boundary_year": 2024,
+      "ballots": 15317,
+      "denominator": 27504,
+      "reported_pct": 55.690081442699245,
+      "participation_measure_kind": "source_defined_participation_count",
+      "participation_measure_label": "Total Ballots",
+      "source_record_sha256": "eee704c80fed82419dbb4fe141a7211b5115f8687842eb1ca54ee85a1e49f563",
+      "source_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/a7fad838607bd5ded9cd543ff16a2f574396f180/data/county-source-reviews/20261106-susquehanna-native-turnout-01/county-participation.csv",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-susquehanna-native-turnout-20261106-01/complete-query.zip",
+      "contextual_map_approved": true,
+      "source_map_approval_unchanged": false
+    }
+  ],
+  "counts": {
+    "complete_source_records": 1228,
+    "contextual_joins": 744,
+    "jurisdictions": 18,
+    "reviewed_rates": 357,
+    "missing_rates": 387,
+    "excluded_municipalities": 286,
+    "excluded_missing_county_totals": 198
+  },
+  "frozen_review_bytes": 1146050,
+  "frozen_review_sha256": "ffb2a4fa3b72dacc60a6bddb3bfd98d898022bf0cfbcf8f7018953e323811852",
+  "complete_zip_bytes": 2911486,
+  "complete_zip_sha256": "9a18f2950aaf29643adcbea602a3f016997b39a9e88ebdcd3febae5f392f2d3d",
+  "complete_package_files": 32
+}
