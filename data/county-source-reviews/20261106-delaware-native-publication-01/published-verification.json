@@ -1,0 +1,163 @@
+{
+  "checked_at_utc": "2026-11-06T20:43:08.895488+00:00",
+  "revision": "2df513398e0a27773955dc41483911a8927c944a",
+  "tag": "voter-county-delaware-native-participation-20261106-01",
+  "release_id": 437011394,
+  "phase": "published",
+  "immutable": true,
+  "assets": [
+    {
+      "file": "audit.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-delaware-native-participation-20261106-01/audit.json",
+      "bytes": 1097,
+      "sha256": "b9b409b7cc8bd298126bddd7731eebd86202b03d30af6c68382325519a73c7dc"
+    },
+    {
+      "file": "checksums.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-delaware-native-participation-20261106-01/checksums.json",
+      "bytes": 1554,
+      "sha256": "6a00d67b70bf13d9f68285a3ce2477592837769965fd38c1088eb24d29bebb11"
+    },
+    {
+      "file": "complete-query.zip",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-delaware-native-participation-20261106-01/complete-query.zip",
+      "bytes": 9312,
+      "sha256": "57220c2acb6b17936883c10bcdc013f5ba43e266aee19e76db0bed2096e0f2e7"
+    },
+    {
+      "file": "county-participation.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-delaware-native-participation-20261106-01/county-participation.csv",
+      "bytes": 778,
+      "sha256": "d3008c73d5ec76eeb94f34b3f6f580ca61eb869c5f81eb12ec7e626983345cc8"
+    },
+    {
+      "file": "methods.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-delaware-native-participation-20261106-01/methods.json",
+      "bytes": 1493,
+      "sha256": "daf7b6618db7c3efae14374ab5b9ee80393e92f8229066a2992bef0a7e4aaf48"
+    },
+    {
+      "file": "native-method-counts.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-delaware-native-participation-20261106-01/native-method-counts.csv",
+      "bytes": 980,
+      "sha256": "41d57ae28f78c2a30ef708644c8fca257870342300d5c7e7e31b2c875f84e941"
+    },
+    {
+      "file": "review-counties.py",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-delaware-native-participation-20261106-01/review-counties.py",
+      "bytes": 7403,
+      "sha256": "6e545adaf9f2c88071ef60ed94846ad3b0b4082578ccdbe99fc06ba8aa5076b4"
+    },
+    {
+      "file": "source-native-cells.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-delaware-native-participation-20261106-01/source-native-cells.csv",
+      "bytes": 762,
+      "sha256": "484f1a99e252d71981b7f2de6eb536ba272289fc0dfb50ff00f3fe804c371df9"
+    },
+    {
+      "file": "source-qualification.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-delaware-native-participation-20261106-01/source-qualification.json",
+      "bytes": 2066,
+      "sha256": "e264fd8910f18ee4831cfb9e2be49fc700b3990da47af8e1bb1e124e0ce9c354"
+    },
+    {
+      "file": "statewide-participation.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-delaware-native-participation-20261106-01/statewide-participation.csv",
+      "bytes": 451,
+      "sha256": "3739b18d0034c1768a99ca0484c45549056dbbd361b16cdfa91b7c933192442e"
+    },
+    {
+      "file": "test_review_counties.py",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-delaware-native-participation-20261106-01/test_review_counties.py",
+      "bytes": 4649,
+      "sha256": "6814da015ea6e25c3636a23908e791bc60049f4ffaba807acd3c25e5f5b02604"
+    }
+  ],
+  "row_counts": {
+    "county-participation.csv": 3,
+    "statewide-participation.csv": 1,
+    "native-method-counts.csv": 16,
+    "source-native-cells.csv": 25
+  },
+  "partial_election_day_clock": "Tuesday, November 3, 2026 4:01 PM",
+  "missing_timezone_registrations_and_native_fips_preserved": true,
+  "all_mode_completion_approvals": 0,
+  "analysis_rate_approvals": 0,
+  "map_approvals": 0,
+  "candidate_votes_not_substituted": true,
+  "separate_statewide_and_grand_total_aggregates_not_added_twice": true,
+  "original_bodies_remain_private": true,
+  "exact_author_committer_and_annotated_tag_verified": true,
+  "commit_pinned_files": [
+    {
+      "file": "audit.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2df513398e0a27773955dc41483911a8927c944a/data/county-source-reviews/20261106-delaware-consolidated-native-01/audit.json",
+      "bytes": 1097,
+      "sha256": "b9b409b7cc8bd298126bddd7731eebd86202b03d30af6c68382325519a73c7dc"
+    },
+    {
+      "file": "checksums.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2df513398e0a27773955dc41483911a8927c944a/data/county-source-reviews/20261106-delaware-consolidated-native-01/checksums.json",
+      "bytes": 1554,
+      "sha256": "6a00d67b70bf13d9f68285a3ce2477592837769965fd38c1088eb24d29bebb11"
+    },
+    {
+      "file": "complete-query.zip",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2df513398e0a27773955dc41483911a8927c944a/data/county-source-reviews/20261106-delaware-consolidated-native-01/complete-query.zip",
+      "bytes": 9312,
+      "sha256": "57220c2acb6b17936883c10bcdc013f5ba43e266aee19e76db0bed2096e0f2e7"
+    },
+    {
+      "file": "county-participation.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2df513398e0a27773955dc41483911a8927c944a/data/county-source-reviews/20261106-delaware-consolidated-native-01/county-participation.csv",
+      "bytes": 778,
+      "sha256": "d3008c73d5ec76eeb94f34b3f6f580ca61eb869c5f81eb12ec7e626983345cc8"
+    },
+    {
+      "file": "methods.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2df513398e0a27773955dc41483911a8927c944a/data/county-source-reviews/20261106-delaware-consolidated-native-01/methods.json",
+      "bytes": 1493,
+      "sha256": "daf7b6618db7c3efae14374ab5b9ee80393e92f8229066a2992bef0a7e4aaf48"
+    },
+    {
+      "file": "native-method-counts.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2df513398e0a27773955dc41483911a8927c944a/data/county-source-reviews/20261106-delaware-consolidated-native-01/native-method-counts.csv",
+      "bytes": 980,
+      "sha256": "41d57ae28f78c2a30ef708644c8fca257870342300d5c7e7e31b2c875f84e941"
+    },
+    {
+      "file": "review-counties.py",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2df513398e0a27773955dc41483911a8927c944a/data/county-source-reviews/20261106-delaware-consolidated-native-01/review-counties.py",
+      "bytes": 7403,
+      "sha256": "6e545adaf9f2c88071ef60ed94846ad3b0b4082578ccdbe99fc06ba8aa5076b4"
+    },
+    {
+      "file": "source-native-cells.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2df513398e0a27773955dc41483911a8927c944a/data/county-source-reviews/20261106-delaware-consolidated-native-01/source-native-cells.csv",
+      "bytes": 762,
+      "sha256": "484f1a99e252d71981b7f2de6eb536ba272289fc0dfb50ff00f3fe804c371df9"
+    },
+    {
+      "file": "source-qualification.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2df513398e0a27773955dc41483911a8927c944a/data/county-source-reviews/20261106-delaware-consolidated-native-01/source-qualification.json",
+      "bytes": 2066,
+      "sha256": "e264fd8910f18ee4831cfb9e2be49fc700b3990da47af8e1bb1e124e0ce9c354"
+    },
+    {
+      "file": "statewide-participation.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2df513398e0a27773955dc41483911a8927c944a/data/county-source-reviews/20261106-delaware-consolidated-native-01/statewide-participation.csv",
+      "bytes": 451,
+      "sha256": "3739b18d0034c1768a99ca0484c45549056dbbd361b16cdfa91b7c933192442e"
+    },
+    {
+      "file": "test_review_counties.py",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2df513398e0a27773955dc41483911a8927c944a/data/county-source-reviews/20261106-delaware-consolidated-native-01/test_review_counties.py",
+      "bytes": 4649,
+      "sha256": "6814da015ea6e25c3636a23908e791bc60049f4ffaba807acd3c25e5f5b02604"
+    }
+  ],
+  "zip_members": 10,
+  "all_11_files_reproduce_exactly": true,
+  "focused_tests": 7,
+  "archive_test_stderr": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.016s\n\nOK\n"
+}

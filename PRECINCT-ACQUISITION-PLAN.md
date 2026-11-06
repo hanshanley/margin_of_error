@@ -179,8 +179,14 @@ focused tests and checksums. All **seven tests** pass; all **11 complete files /
 10 ZIP members** reproduce byte-identically offline from the actual archive:
 **9,312 bytes / SHA-256
 `57220c2acb6b17936883c10bcdc013f5ba43e266aee19e76db0bed2096e0f2e7`**.
+Immutable native release **437011394**, source
+**`2df513398e0a27773955dc41483911a8927c944a`**, passes draft and anonymous public
+verification: all **11 entire assets / 11 commit-pinned files / 10 ZIP members**
+and complete byte-identical offline reproduction. Both exact credential jobs
+**42290540184 review / 42290539863 tag** pass. Publication proofs are in
+`data/county-source-reviews/20261106-delaware-native-publication-01/`.
 No candidate vote substitution, rate/map/completion approval or live explorer
-promotion is made from this partial-day snapshot. Native query publication
+promotion is made from this partial-day snapshot. Immutable numerical publication
 and any separately qualified current-source usability review remain distinct gates.
 
 **November 6: South Carolina and Louisiana consolidated scope checked, not promoted.**

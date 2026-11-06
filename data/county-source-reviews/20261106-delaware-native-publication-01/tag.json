@@ -1,0 +1,36 @@
+{
+  "ref": {
+    "ref": "refs/tags/voter-county-delaware-native-participation-20261106-01",
+    "node_id": "REF_kwDOTeY7QdoAQHJlZnMvdGFncy92b3Rlci1jb3VudHktZGVsYXdhcmUtbmF0aXZlLXBhcnRpY2lwYXRpb24tMjAyNjExMDYtMDE",
+    "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/refs/tags/voter-county-delaware-native-participation-20261106-01",
+    "object": {
+      "sha": "f7bc0f89631bdb10ac418dd363dea7b413ebe570",
+      "type": "tag",
+      "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/tags/f7bc0f89631bdb10ac418dd363dea7b413ebe570"
+    }
+  },
+  "tag": {
+    "node_id": "TA_kwDOTeY7QdoAKGY3YmMwZjg5NjMxYmRiMTBhYzQxOGRkMzYzZGVhN2I0MTNlYmU1NzA",
+    "sha": "f7bc0f89631bdb10ac418dd363dea7b413ebe570",
+    "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/tags/f7bc0f89631bdb10ac418dd363dea7b413ebe570",
+    "tagger": {
+      "name": "Hans Hanley",
+      "email": "hwahhanley@gmail.com",
+      "date": "2026-11-06T20:41:55Z"
+    },
+    "object": {
+      "sha": "2df513398e0a27773955dc41483911a8927c944a",
+      "type": "commit",
+      "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/commits/2df513398e0a27773955dc41483911a8927c944a"
+    },
+    "tag": "voter-county-delaware-native-participation-20261106-01",
+    "message": "Complete Delaware native participation query; afternoon Election Day snapshot, not final turnout\n",
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  }
+}
