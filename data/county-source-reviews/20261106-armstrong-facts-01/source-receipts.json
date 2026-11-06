@@ -1,0 +1,26 @@
+{
+  "county-totals.pdf": {
+    "bytes": 177200,
+    "fetched_at": "2026-11-06T05:02:41.964723+00:00",
+    "final_url": "https://www.co.armstrong.pa.us/images/resources/electionresults/unofficial/totals.pdf",
+    "sha256": "da30e7287c77f051b791afe4ae6d2370309aeb5981d5c87a1959725ed930c6e7",
+    "status": 200,
+    "url": "https://www.co.armstrong.pa.us/images/resources/electionresults/unofficial/totals.pdf"
+  },
+  "official-index.html": {
+    "bytes": 174271,
+    "fetched_at": "2026-11-06T05:02:10.370834+00:00",
+    "final_url": "https://www.co.armstrong.pa.us/index.php/resourses-m/election-results-unofficial-m",
+    "sha256": "ea645e1cce5a1402ef2c9189f607f2134742c66dd7ffc7e2a7c4f19a1e513a2f",
+    "status": 200,
+    "url": "https://www.co.armstrong.pa.us/index.php/resourses-m/election-results-unofficial-m"
+  },
+  "official-terms.html": {
+    "bytes": 150297,
+    "fetched_at": "2026-11-06T05:04:19.098918+00:00",
+    "final_url": "https://www.co.armstrong.pa.us/index.php/about-m/terms-of-use-m",
+    "sha256": "dea41faa51d47e786d09a1fb6f46afdfa79c4ff09b822e36fb27e8d58de58c92",
+    "status": 200,
+    "url": "https://www.co.armstrong.pa.us/index.php/about-m/terms-of-use-m"
+  }
+}

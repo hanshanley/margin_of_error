@@ -1,0 +1,49 @@
+{
+  "scope": "Armstrong county; native Voters Cast; Election Day and Mail, excluding provisionals",
+  "maps_approved": false,
+  "demographic_turnout_approved": false,
+  "statewide_completion_approved": false,
+  "county_participation": {
+    "year": 2026,
+    "state_code": "PA",
+    "county": "Armstrong",
+    "source_url": "https://www.co.armstrong.pa.us/images/resources/electionresults/unofficial/totals.pdf",
+    "native_summary_scope_literal": "All Contests, All Districts, All Tabulators, Election Day, Mail",
+    "native_status_literal": "2026 General Election Unofficial Results w/o PROV",
+    "source_page": 1,
+    "source_update_literal": "11/3/2026 10:26:30 PM",
+    "declared_timezone": "",
+    "native_participation_measure_literal": "Voters Cast",
+    "reported_voters_cast": 24039,
+    "election_day_voters_cast": 20853,
+    "mail_voters_cast": 3186,
+    "provisional_voters_cast": "",
+    "registered_voters": 43750,
+    "native_printed_turnout": "54.95%",
+    "registered_turnout_percent": 54.946285714285715,
+    "native_elector_group_records_json": "[{\"counting_group_literal\": \"Election Day\", \"elector_group_literal\": \"DEMOCRATIC\", \"printed_turnout_literal\": \"N/A\", \"registered_voters_literal\": null, \"voters_cast_literal\": \"0\"}, {\"counting_group_literal\": \"Mail\", \"elector_group_literal\": \"DEMOCRATIC\", \"printed_turnout_literal\": \"N/A\", \"registered_voters_literal\": null, \"voters_cast_literal\": \"0\"}, {\"counting_group_literal\": \"Total\", \"elector_group_literal\": \"DEMOCRATIC\", \"printed_turnout_literal\": \"N/A\", \"registered_voters_literal\": \"0\", \"voters_cast_literal\": \"0\"}, {\"counting_group_literal\": \"Election Day\", \"elector_group_literal\": \"REPUBLICAN\", \"printed_turnout_literal\": \"N/A\", \"registered_voters_literal\": null, \"voters_cast_literal\": \"0\"}, {\"counting_group_literal\": \"Mail\", \"elector_group_literal\": \"REPUBLICAN\", \"printed_turnout_literal\": \"N/A\", \"registered_voters_literal\": null, \"voters_cast_literal\": \"0\"}, {\"counting_group_literal\": \"Total\", \"elector_group_literal\": \"REPUBLICAN\", \"printed_turnout_literal\": \"N/A\", \"registered_voters_literal\": \"0\", \"voters_cast_literal\": \"0\"}, {\"counting_group_literal\": \"Election Day\", \"elector_group_literal\": \"Total\", \"printed_turnout_literal\": \"47.66%\", \"registered_voters_literal\": null, \"voters_cast_literal\": \"20,853\"}, {\"counting_group_literal\": \"Mail\", \"elector_group_literal\": \"Total\", \"printed_turnout_literal\": \"7.28%\", \"registered_voters_literal\": null, \"voters_cast_literal\": \"3,186\"}, {\"counting_group_literal\": \"Total\", \"elector_group_literal\": \"Total\", \"printed_turnout_literal\": \"54.95%\", \"registered_voters_literal\": \"43,750\", \"voters_cast_literal\": \"24,039\"}]",
+    "counting_qualifications_json": "[\"Native participation is Voters Cast, not candidate selections: 24,039 = 20,853 Election Day + 3,186 Mail.\", \"The declared counting scope explicitly excludes provisionals. Provisional participation is absent, not zero; separate candidate provisional zeroes do not supply a participation denominator.\", \"Native registrations are 43,750 and printed turnout is 54.95%; the calculated registered-voter fraction is separate, not CVAP/VEP or demographic turnout.\", \"DEMOCRATIC and REPUBLICAN elector-group rows contain explicit zeroes and N/A turnout while county participation is positive. Preserve these rows, not measured party turnout or zero participation.\", \"Candidate party literals DEM, REP and LIB are separate from administrative elector groups, registrations and participation.\", \"Total Votes excludes the separately printed Unresolved Write-In row. Preserve both, without double-counting the subtotal.\", \"Only the governor and congressional contests cover the whole county; state-House district participation denominators are absent.\", \"Ballot-minus-selection differences remain unclassified; blanks, under/overvotes, pending ballots and precinct reporting counts are not supplied, not zero.\", \"Native update 11/3/2026 10:26:30 PM has no declared timezone. Unofficial is not certification or independently finished counting.\", \"County terms describe a supplementary public service with changeable information, not guaranteed completeness, currency or accuracy.\", \"No county/precinct map, demographic turnout or statewide completion approval. Source presentation templates remain private.\"]"
+  },
+  "qualifications": [
+    "Native participation is Voters Cast, not candidate selections: 24,039 = 20,853 Election Day + 3,186 Mail.",
+    "The declared counting scope explicitly excludes provisionals. Provisional participation is absent, not zero; separate candidate provisional zeroes do not supply a participation denominator.",
+    "Native registrations are 43,750 and printed turnout is 54.95%; the calculated registered-voter fraction is separate, not CVAP/VEP or demographic turnout.",
+    "DEMOCRATIC and REPUBLICAN elector-group rows contain explicit zeroes and N/A turnout while county participation is positive. Preserve these rows, not measured party turnout or zero participation.",
+    "Candidate party literals DEM, REP and LIB are separate from administrative elector groups, registrations and participation.",
+    "Total Votes excludes the separately printed Unresolved Write-In row. Preserve both, without double-counting the subtotal.",
+    "Only the governor and congressional contests cover the whole county; state-House district participation denominators are absent.",
+    "Ballot-minus-selection differences remain unclassified; blanks, under/overvotes, pending ballots and precinct reporting counts are not supplied, not zero.",
+    "Native update 11/3/2026 10:26:30 PM has no declared timezone. Unofficial is not certification or independently finished counting.",
+    "County terms describe a supplementary public service with changeable information, not guaranteed completeness, currency or accuracy.",
+    "No county/precinct map, demographic turnout or statewide completion approval. Source presentation templates remain private."
+  ],
+  "table_rows": {
+    "county-participation.csv": 1,
+    "native-elector-group-participation.csv": 9,
+    "county-candidate-results.csv": 13,
+    "county-literal-party-totals.csv": 36,
+    "native-contest-subtotals.csv": 4,
+    "native-source-pages.csv": 2,
+    "county-contest-accounting.csv": 16
+  }
+}
