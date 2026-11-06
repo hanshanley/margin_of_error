@@ -1,22 +1,63 @@
 {
   "year": 2026,
-  "data_directory": "data/county-results/20261105-official-pa-01",
-  "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2b2af4fdf6f0a9dda6de3e2d3d238a0654123d90/data/county-results/20261105-official-pa-01/",
-  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-source-redaction-20261105-01/complete-county-results-pa-sanitized-01.zip",
-  "complete_download_bytes": 136064334,
-  "complete_download_sha256": "d44c95ca7c2216990c262e979608aed561653f4d120504c475cf998ab4255dd7",
+  "data_directory": "data/county-results/20261105-provider-overlap-01",
+  "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7437b4399e5a425c6ec2b3080ca268418a59e73b/data/county-results/20261105-provider-overlap-01/",
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-2026-20261105-provider-overlap-01/complete-county-results.zip",
+  "complete_download_bytes": 150787009,
+  "complete_download_sha256": "62c57cffebeae0b2bb048c37dc852e1f040306857e351a0cd2e0282f24fa8cdb",
   "label": "2026 U.S. House county / equivalent results",
   "overview_url": "/county-results-overview.geojson.gz",
   "states": 49,
-  "normalized_counties": 3063,
+  "normalized_counties": 3127,
   "participation_available": false,
-  "publication": "reviewed_partial",
-  "official_supplement": {
-    "counties": ["42089", "42017", "42091"],
-    "new_precinct_coverage": 0,
-    "state_completion_promoted": false
-  },
+  "publication": "reviewed_pending_live_verification",
   "previous_snapshots": [
+    {
+      "year": 2026,
+      "data_directory": "data/county-results/20261105-official-pa-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2b2af4fdf6f0a9dda6de3e2d3d238a0654123d90/data/county-results/20261105-official-pa-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-source-redaction-20261105-01/complete-county-results-pa-sanitized-01.zip",
+      "complete_download_bytes": 136064334,
+      "complete_download_sha256": "d44c95ca7c2216990c262e979608aed561653f4d120504c475cf998ab4255dd7",
+      "label": "2026 U.S. House county / equivalent results",
+      "overview_url": "/county-results-overview.geojson.gz",
+      "states": 49,
+      "normalized_counties": 3063,
+      "participation_available": false,
+      "publication": "reviewed_partial",
+      "official_supplement": {
+        "counties": [
+          "42089",
+          "42017",
+          "42091"
+        ],
+        "new_precinct_coverage": 0,
+        "state_completion_promoted": false
+      },
+      "party_votes": {
+        "data_directory": "data/county-results/20261105-official-pa-01/party-votes",
+        "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2b2af4fdf6f0a9dda6de3e2d3d238a0654123d90/data/county-results/20261105-official-pa-01/party-votes/",
+        "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-source-redaction-20261105-01/complete-county-results-pa-sanitized-01.zip",
+        "tables": [
+          {
+            "file": "county-party-totals.csv.gz",
+            "label": "Every county-party total: 9617 rows; Pennsylvania covers three counties only"
+          },
+          {
+            "file": "county-district-candidate-totals.csv.gz",
+            "label": "Every county/district candidate: 12093 rows; literal parties and write-ins retained"
+          },
+          {
+            "file": "state-party-totals.csv.gz",
+            "label": "Every full-state party total: 220 rows"
+          },
+          {
+            "file": "district-candidate-totals.csv.gz",
+            "label": "Every accepted House district candidate: 1318 rows"
+          }
+        ]
+      }
+    },
     {
       "year": 2026,
       "data_directory": "data/county-results/20261105T155645Z",
@@ -109,26 +150,40 @@
       "states": 47
     }
   ],
+  "official_supplement": {
+    "counties": [
+      "42089",
+      "42017",
+      "42091"
+    ],
+    "provider_counties_replaced": [
+      "42017",
+      "42089",
+      "42091"
+    ],
+    "new_precinct_coverage": 0,
+    "state_completion_promoted": false
+  },
   "party_votes": {
-    "data_directory": "data/county-results/20261105-official-pa-01/party-votes",
-    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2b2af4fdf6f0a9dda6de3e2d3d238a0654123d90/data/county-results/20261105-official-pa-01/party-votes/",
-    "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-source-redaction-20261105-01/complete-county-results-pa-sanitized-01.zip",
+    "data_directory": "data/county-results/20261105-provider-overlap-01/party-votes",
+    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7437b4399e5a425c6ec2b3080ca268418a59e73b/data/county-results/20261105-provider-overlap-01/party-votes/",
+    "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-2026-20261105-provider-overlap-01/complete-county-results.zip",
     "tables": [
       {
         "file": "county-party-totals.csv.gz",
-        "label": "Every county-party total: 9617 rows; Pennsylvania covers three counties only"
+        "label": "Every county-party total: 9746 rows"
       },
       {
         "file": "county-district-candidate-totals.csv.gz",
-        "label": "Every county/district candidate: 12093 rows; literal parties and write-ins retained"
+        "label": "Every county/district candidate: 12336 rows"
       },
       {
         "file": "state-party-totals.csv.gz",
-        "label": "Every full-state party total: 220 rows"
+        "label": "Every full-state party total: 223 rows"
       },
       {
         "file": "district-candidate-totals.csv.gz",
-        "label": "Every accepted House district candidate: 1318 rows"
+        "label": "Every accepted House district candidate: 1381 rows"
       }
     ]
   }
