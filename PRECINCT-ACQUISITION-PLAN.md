@@ -157,6 +157,32 @@ state totals. Fresh direct Wisconsin/Texas indexes, Milwaukee's exact county
 report and Coshocton's exact PDF returned 403; all complete private responses
 and safe receipt digests are retained without challenged retries or bypass.
 
+**November 6: Delaware consolidated native query reproduced; afternoon scope retained.**
+The official `GE2026_ElectionVoterCountsByVotingMethod.html` report is acquired
+in full (**39,140 bytes / HTTP 200 / SHA-256
+`c4694cb2e2e3590be595911887d30ed02b4cd7cda4683f3e5dfd2d0014f4dd83`**).
+All **25 header/data cells** agree independently under standard-library
+HTMLParser, BeautifulSoup and network-blocked, scripts-disabled Chromium.
+All four row sums and four column sums reconcile: **Kent 51,462 / New Castle
+159,774 / Sussex 103,559**, and a separate **314,795** statewide total.
+The three literal methods are **Absentee / Early Voting / Polling Place**;
+neither method grand totals nor statewide aggregates are added twice.
+The native update is **Tuesday, November 3, 2026 4:01 PM**, an afternoon
+Election Day snapshot, not completed turnout. No timezone, registration
+denominators or native Census FIPS are supplied. The separate complete
+**61,445-byte** registration index is retained privately, not used to invent
+a same-report denominator. The portable query in
+`data/county-source-reviews/20261106-delaware-consolidated-native-01/`
+preserves **three county rows / one separate statewide row / 16 literal
+method/count rows / all 25 native cells**, input, methods, executable query,
+focused tests and checksums. All **seven tests** pass; all **11 complete files /
+10 ZIP members** reproduce byte-identically offline from the actual archive:
+**9,312 bytes / SHA-256
+`57220c2acb6b17936883c10bcdc013f5ba43e266aee19e76db0bed2096e0f2e7`**.
+No candidate vote substitution, rate/map/completion approval or live explorer
+promotion is made from this partial-day snapshot. Native query publication
+and any separately qualified current-source usability review remain distinct gates.
+
 **November 6: South Carolina and Louisiana consolidated scope checked, not promoted.**
 South Carolina's actual participation/results parents and their three declared
 responses are retained privately with verified full digests. The entire

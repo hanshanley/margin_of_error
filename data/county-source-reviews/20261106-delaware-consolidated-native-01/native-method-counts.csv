@@ -1,0 +1,17 @@
+geography_level,native_geography_literal,native_method_literal,native_count_literal,reported_voter_count,is_aggregate
+county,Kent County,Absentee,"2,973",2973,False
+county,Kent County,Early Voting,"20,358",20358,False
+county,Kent County,Polling Place,"28,131",28131,False
+county,Kent County,Grand Totals,"51,462",51462,True
+county,New Castle County,Absentee,"10,424",10424,False
+county,New Castle County,Early Voting,"49,461",49461,False
+county,New Castle County,Polling Place,"99,889",99889,False
+county,New Castle County,Grand Totals,"159,774",159774,True
+county,Sussex County,Absentee,"6,996",6996,False
+county,Sussex County,Early Voting,"59,765",59765,False
+county,Sussex County,Polling Place,"36,798",36798,False
+county,Sussex County,Grand Totals,"103,559",103559,True
+statewide,Totals,Absentee,"20,393",20393,False
+statewide,Totals,Early Voting,"129,584",129584,False
+statewide,Totals,Polling Place,"164,818",164818,False
+statewide,Totals,Grand Totals,"314,795",314795,True

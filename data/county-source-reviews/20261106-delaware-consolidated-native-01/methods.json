@@ -1,0 +1,12 @@
+{
+  "query": "Complete consolidated Delaware 2026 native voter-count snapshot",
+  "source_url": "https://elections.delaware.gov/voter/registrationtotals/reports/GE2026_ElectionVoterCountsByVotingMethod.html",
+  "numerical_input": "Every native header and data cell from the official table, independently equal under standard-library HTMLParser, BeautifulSoup and network-blocked, scripts-disabled Chromium.",
+  "participation_measure": "Native Voter Counts by Voting Method, not candidate votes or received/issued-ballot counters.",
+  "aggregation": "Three counties remain distinct from the separate statewide total. Absentee, Early Voting and Polling Place rows reconcile to each literal Grand Totals cell. Neither statewide totals nor Grand Totals are added a second time.",
+  "time": "Tuesday, November 3, 2026 4:01 PM is an afternoon Election Day snapshot. No timezone is declared. Acquisition time never substitutes for the native clock.",
+  "limitations": "No registrations, rate denominator, native FIPS, certification or finished-counting definition is supplied. The presence of three named voting methods does not establish that counting is complete. No population or demographic participation claim is made.",
+  "reproduce": "python3 -B -I review-counties.py --output /new/nonexistent/output",
+  "tests": "python3 -B -I -m unittest discover -s . -p test_review_counties.py",
+  "publication": "A complete portable numerical query, not a raw HTML mirror or an explorer integration."
+}

@@ -1,0 +1,26 @@
+source_row_ordinal,column_ordinal,native_column_literal,native_cell_literal
+0,0,Voting Method,Voting Method
+0,1,Kent County,Kent County
+0,2,New Castle County,New Castle County
+0,3,Sussex County,Sussex County
+0,4,Totals,Totals
+1,0,Voting Method,Absentee
+1,1,Kent County,"2,973"
+1,2,New Castle County,"10,424"
+1,3,Sussex County,"6,996"
+1,4,Totals,"20,393"
+2,0,Voting Method,Early Voting
+2,1,Kent County,"20,358"
+2,2,New Castle County,"49,461"
+2,3,Sussex County,"59,765"
+2,4,Totals,"129,584"
+3,0,Voting Method,Polling Place
+3,1,Kent County,"28,131"
+3,2,New Castle County,"99,889"
+3,3,Sussex County,"36,798"
+3,4,Totals,"164,818"
+4,0,Voting Method,Grand Totals
+4,1,Kent County,"51,462"
+4,2,New Castle County,"159,774"
+4,3,Sussex County,"103,559"
+4,4,Totals,"314,795"

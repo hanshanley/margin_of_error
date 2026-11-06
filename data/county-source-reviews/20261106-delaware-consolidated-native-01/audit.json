@@ -1,0 +1,22 @@
+{
+  "row_counts": {
+    "county-participation.csv": 3,
+    "statewide-participation.csv": 1,
+    "native-method-counts.csv": 16,
+    "source-native-cells.csv": 25
+  },
+  "source_counties": 3,
+  "reported_voter_count": 314795,
+  "native_update_literal": "Tuesday, November 3, 2026 4:01 PM",
+  "source_timezone_missing": true,
+  "registration_denominators_missing": true,
+  "native_fips_missing": true,
+  "all_four_county_sums_equal_separate_statewide_totals": true,
+  "all_four_method_sums_equal_native_grand_totals": true,
+  "statewide_and_method_aggregates_not_added_twice": true,
+  "candidate_votes_not_used": true,
+  "analysis_rate_approvals": 0,
+  "map_approvals": 0,
+  "all_mode_completion_approvals": 0,
+  "scope": "Complete numerical query over the official three-county voter-count-by-method table, including its separate statewide total and all 25 native header/data cells. An afternoon Election Day snapshot, not finished counting, certified turnout, same-report registered fractions, population or demographic turnout, a map join, candidate/party results, or a live explorer update."
+}
