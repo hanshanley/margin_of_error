@@ -1,0 +1,2160 @@
+{
+  "verified_at_utc": "2026-11-06T09:54:23.686911+00:00",
+  "all_58_native_county_names_independently_match_both_entire_census_originals": true,
+  "both_entire_3222_record_original_archives_equal_parsed_inventories": true,
+  "native_source_fips_remain_missing": true,
+  "native_maps_approved": false,
+  "original_contextual_boundary_year": 2024,
+  "no_certified_2026_election_boundary_claim": true,
+  "entire_existing_live_geometry_receipt": {
+    "url": "https://www.themarginoferror.com/participation-context/20261104T183601Z/geometry/county-CA.geojson",
+    "path": "geometry/county-CA.geojson",
+    "bytes": 777815,
+    "sha256": "fc167d02493b97c385eba9625bce506b9b9f93c5e0a9a69af6b9cf052b556e7a"
+  },
+  "independent_county_identities": {
+    "2024": [
+      {
+        "native_county_code": "1",
+        "county": "Alameda",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06001",
+          "ANSICODE": "01675839",
+          "NAME": "Alameda County",
+          "ALAND": "1910010500",
+          "AWATER": "216909647",
+          "ALAND_SQMI": "737.459",
+          "AWATER_SQMI": "83.749",
+          "INTPTLAT": "37.647139",
+          "INTPTLONG": "-121.912488"
+        }
+      },
+      {
+        "native_county_code": "2",
+        "county": "Alpine",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06003",
+          "ANSICODE": "01675840",
+          "NAME": "Alpine County",
+          "ALAND": "1912292607",
+          "AWATER": "12557304",
+          "ALAND_SQMI": "738.34",
+          "AWATER_SQMI": "4.848",
+          "INTPTLAT": "38.621783",
+          "INTPTLONG": "-119.798352"
+        }
+      },
+      {
+        "native_county_code": "3",
+        "county": "Amador",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06005",
+          "ANSICODE": "01675841",
+          "NAME": "Amador County",
+          "ALAND": "1539967082",
+          "AWATER": "29437117",
+          "ALAND_SQMI": "594.585",
+          "AWATER_SQMI": "11.366",
+          "INTPTLAT": "38.443549",
+          "INTPTLONG": "-120.653858"
+        }
+      },
+      {
+        "native_county_code": "4",
+        "county": "Butte",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06007",
+          "ANSICODE": "01675842",
+          "NAME": "Butte County",
+          "ALAND": "4238545149",
+          "AWATER": "105204062",
+          "ALAND_SQMI": "1636.512",
+          "AWATER_SQMI": "40.62",
+          "INTPTLAT": "39.665336",
+          "INTPTLONG": "-121.603209"
+        }
+      },
+      {
+        "native_county_code": "5",
+        "county": "Calaveras",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06009",
+          "ANSICODE": "01675885",
+          "NAME": "Calaveras County",
+          "ALAND": "2641829625",
+          "AWATER": "43797225",
+          "ALAND_SQMI": "1020.016",
+          "AWATER_SQMI": "16.91",
+          "INTPTLAT": "38.191068",
+          "INTPTLONG": "-120.554107"
+        }
+      },
+      {
+        "native_county_code": "6",
+        "county": "Colusa",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06011",
+          "ANSICODE": "01675902",
+          "NAME": "Colusa County",
+          "ALAND": "2980245451",
+          "AWATER": "14696164",
+          "ALAND_SQMI": "1150.679",
+          "AWATER_SQMI": "5.674",
+          "INTPTLAT": "39.177739",
+          "INTPTLONG": "-122.237563"
+        }
+      },
+      {
+        "native_county_code": "7",
+        "county": "Contra Costa",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06013",
+          "ANSICODE": "01675903",
+          "NAME": "Contra Costa County",
+          "ALAND": "1856755871",
+          "AWATER": "225361409",
+          "ALAND_SQMI": "716.897",
+          "AWATER_SQMI": "87.013",
+          "INTPTLAT": "37.919479",
+          "INTPTLONG": "-121.951543"
+        }
+      },
+      {
+        "native_county_code": "8",
+        "county": "Del Norte",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06015",
+          "ANSICODE": "01682074",
+          "NAME": "Del Norte County",
+          "ALAND": "2606049835",
+          "AWATER": "578810831",
+          "ALAND_SQMI": "1006.202",
+          "AWATER_SQMI": "223.48",
+          "INTPTLAT": "41.749903",
+          "INTPTLONG": "-123.980998"
+        }
+      },
+      {
+        "native_county_code": "9",
+        "county": "El Dorado",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06017",
+          "ANSICODE": "00277273",
+          "NAME": "El Dorado County",
+          "ALAND": "4423288023",
+          "AWATER": "203364019",
+          "ALAND_SQMI": "1707.841",
+          "AWATER_SQMI": "78.519",
+          "INTPTLAT": "38.785612",
+          "INTPTLONG": "-120.534225"
+        }
+      },
+      {
+        "native_county_code": "10",
+        "county": "Fresno",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06019",
+          "ANSICODE": "00277274",
+          "NAME": "Fresno County",
+          "ALAND": "15432656110",
+          "AWATER": "136636505",
+          "ALAND_SQMI": "5958.582",
+          "AWATER_SQMI": "52.756",
+          "INTPTLAT": "36.761006",
+          "INTPTLONG": "-119.655019"
+        }
+      },
+      {
+        "native_county_code": "11",
+        "county": "Glenn",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06021",
+          "ANSICODE": "00277275",
+          "NAME": "Glenn County",
+          "ALAND": "3403182198",
+          "AWATER": "33671442",
+          "ALAND_SQMI": "1313.976",
+          "AWATER_SQMI": "13.001",
+          "INTPTLAT": "39.602546",
+          "INTPTLONG": "-122.4017"
+        }
+      },
+      {
+        "native_county_code": "12",
+        "county": "Humboldt",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06023",
+          "ANSICODE": "01681908",
+          "NAME": "Humboldt County",
+          "ALAND": "9241138639",
+          "AWATER": "1254152624",
+          "ALAND_SQMI": "3568.024",
+          "AWATER_SQMI": "484.231",
+          "INTPTLAT": "40.706655",
+          "INTPTLONG": "-123.926176"
+        }
+      },
+      {
+        "native_county_code": "13",
+        "county": "Imperial",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06025",
+          "ANSICODE": "00277277",
+          "NAME": "Imperial County",
+          "ALAND": "10814568237",
+          "AWATER": "790135127",
+          "ALAND_SQMI": "4175.528",
+          "AWATER_SQMI": "305.073",
+          "INTPTLAT": "33.040814",
+          "INTPTLONG": "-115.3554"
+        }
+      },
+      {
+        "native_county_code": "14",
+        "county": "Inyo",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06027",
+          "ANSICODE": "01804637",
+          "NAME": "Inyo County",
+          "ALAND": "26410783052",
+          "AWATER": "77280938",
+          "ALAND_SQMI": "10197.261",
+          "AWATER_SQMI": "29.838",
+          "INTPTLAT": "36.56216",
+          "INTPTLONG": "-117.404209"
+        }
+      },
+      {
+        "native_county_code": "15",
+        "county": "Kern",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06029",
+          "ANSICODE": "02054176",
+          "NAME": "Kern County",
+          "ALAND": "21068706348",
+          "AWATER": "78331375",
+          "ALAND_SQMI": "8134.673",
+          "AWATER_SQMI": "30.244",
+          "INTPTLAT": "35.346629",
+          "INTPTLONG": "-118.729506"
+        }
+      },
+      {
+        "native_county_code": "16",
+        "county": "Kings",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06031",
+          "ANSICODE": "00277280",
+          "NAME": "Kings County",
+          "ALAND": "3602601926",
+          "AWATER": "3164290",
+          "ALAND_SQMI": "1390.972",
+          "AWATER_SQMI": "1.222",
+          "INTPTLAT": "36.072478",
+          "INTPTLONG": "-119.81553"
+        }
+      },
+      {
+        "native_county_code": "17",
+        "county": "Lake",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06033",
+          "ANSICODE": "00277281",
+          "NAME": "Lake County",
+          "ALAND": "3250693464",
+          "AWATER": "189054363",
+          "ALAND_SQMI": "1255.1",
+          "AWATER_SQMI": "72.994",
+          "INTPTLAT": "39.108009",
+          "INTPTLONG": "-122.745217"
+        }
+      },
+      {
+        "native_county_code": "18",
+        "county": "Lassen",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06035",
+          "ANSICODE": "01693324",
+          "NAME": "Lassen County",
+          "ALAND": "11762090640",
+          "AWATER": "462950977",
+          "ALAND_SQMI": "4541.369",
+          "AWATER_SQMI": "178.746",
+          "INTPTLAT": "40.715287",
+          "INTPTLONG": "-120.621223"
+        }
+      },
+      {
+        "native_county_code": "19",
+        "county": "Los Angeles",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06037",
+          "ANSICODE": "00277283",
+          "NAME": "Los Angeles County",
+          "ALAND": "10516008433",
+          "AWATER": "1784982940",
+          "ALAND_SQMI": "4060.254",
+          "AWATER_SQMI": "689.186",
+          "INTPTLAT": "34.196398",
+          "INTPTLONG": "-118.261862"
+        }
+      },
+      {
+        "native_county_code": "20",
+        "county": "Madera",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06039",
+          "ANSICODE": "00277284",
+          "NAME": "Madera County",
+          "ALAND": "5534050367",
+          "AWATER": "42266781",
+          "ALAND_SQMI": "2136.709",
+          "AWATER_SQMI": "16.319",
+          "INTPTLAT": "37.209821",
+          "INTPTLONG": "-119.749802"
+        }
+      },
+      {
+        "native_county_code": "21",
+        "county": "Marin",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06041",
+          "ANSICODE": "00277285",
+          "NAME": "Marin County",
+          "ALAND": "1347158037",
+          "AWATER": "797809454",
+          "ALAND_SQMI": "520.141",
+          "AWATER_SQMI": "308.036",
+          "INTPTLAT": "38.051367",
+          "INTPTLONG": "-122.746396"
+        }
+      },
+      {
+        "native_county_code": "22",
+        "county": "Mariposa",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06043",
+          "ANSICODE": "00277286",
+          "NAME": "Mariposa County",
+          "ALAND": "3752476985",
+          "AWATER": "36220865",
+          "ALAND_SQMI": "1448.84",
+          "AWATER_SQMI": "13.985",
+          "INTPTLAT": "37.574343",
+          "INTPTLONG": "-119.911721"
+        }
+      },
+      {
+        "native_county_code": "23",
+        "county": "Mendocino",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06045",
+          "ANSICODE": "00277287",
+          "NAME": "Mendocino County",
+          "ALAND": "9082587618",
+          "AWATER": "961785254",
+          "ALAND_SQMI": "3506.807",
+          "AWATER_SQMI": "371.347",
+          "INTPTLAT": "39.432388",
+          "INTPTLONG": "-123.442881"
+        }
+      },
+      {
+        "native_county_code": "24",
+        "county": "Merced",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06047",
+          "ANSICODE": "00277288",
+          "NAME": "Merced County",
+          "ALAND": "5019407136",
+          "AWATER": "105277636",
+          "ALAND_SQMI": "1938.004",
+          "AWATER_SQMI": "40.648",
+          "INTPTLAT": "37.194806",
+          "INTPTLONG": "-120.722802"
+        }
+      },
+      {
+        "native_county_code": "25",
+        "county": "Modoc",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06049",
+          "ANSICODE": "00277289",
+          "NAME": "Modoc County",
+          "ALAND": "10225876984",
+          "AWATER": "660504011",
+          "ALAND_SQMI": "3948.233",
+          "AWATER_SQMI": "255.022",
+          "INTPTLAT": "41.592918",
+          "INTPTLONG": "-120.71837"
+        }
+      },
+      {
+        "native_county_code": "26",
+        "county": "Mono",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06051",
+          "ANSICODE": "00277290",
+          "NAME": "Mono County",
+          "ALAND": "7896625264",
+          "AWATER": "214695142",
+          "ALAND_SQMI": "3048.904",
+          "AWATER_SQMI": "82.894",
+          "INTPTLAT": "37.915836",
+          "INTPTLONG": "-118.875167"
+        }
+      },
+      {
+        "native_county_code": "27",
+        "county": "Monterey",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06053",
+          "ANSICODE": "00277291",
+          "NAME": "Monterey County",
+          "ALAND": "8499610241",
+          "AWATER": "1267806311",
+          "ALAND_SQMI": "3281.718",
+          "AWATER_SQMI": "489.503",
+          "INTPTLAT": "36.240104",
+          "INTPTLONG": "-121.315578"
+        }
+      },
+      {
+        "native_county_code": "28",
+        "county": "Napa",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06055",
+          "ANSICODE": "00277292",
+          "NAME": "Napa County",
+          "ALAND": "1947606941",
+          "AWATER": "104444154",
+          "ALAND_SQMI": "751.975",
+          "AWATER_SQMI": "40.326",
+          "INTPTLAT": "38.5071",
+          "INTPTLONG": "-122.325904"
+        }
+      },
+      {
+        "native_county_code": "29",
+        "county": "Nevada",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06057",
+          "ANSICODE": "01682927",
+          "NAME": "Nevada County",
+          "ALAND": "2480587300",
+          "AWATER": "41531993",
+          "ALAND_SQMI": "957.76",
+          "AWATER_SQMI": "16.036",
+          "INTPTLAT": "39.297508",
+          "INTPTLONG": "-120.771343"
+        }
+      },
+      {
+        "native_county_code": "30",
+        "county": "Orange",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06059",
+          "ANSICODE": "00277294",
+          "NAME": "Orange County",
+          "ALAND": "2053515921",
+          "AWATER": "406239359",
+          "ALAND_SQMI": "792.867",
+          "AWATER_SQMI": "156.85",
+          "INTPTLAT": "33.675687",
+          "INTPTLONG": "-117.777207"
+        }
+      },
+      {
+        "native_county_code": "31",
+        "county": "Placer",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06061",
+          "ANSICODE": "00277295",
+          "NAME": "Placer County",
+          "ALAND": "3644303250",
+          "AWATER": "246469597",
+          "ALAND_SQMI": "1407.073",
+          "AWATER_SQMI": "95.162",
+          "INTPTLAT": "39.062032",
+          "INTPTLONG": "-120.722718"
+        }
+      },
+      {
+        "native_county_code": "32",
+        "county": "Plumas",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06063",
+          "ANSICODE": "00277296",
+          "NAME": "Plumas County",
+          "ALAND": "6612400771",
+          "AWATER": "156387638",
+          "ALAND_SQMI": "2553.062",
+          "AWATER_SQMI": "60.382",
+          "INTPTLAT": "39.992295",
+          "INTPTLONG": "-120.824371"
+        }
+      },
+      {
+        "native_county_code": "33",
+        "county": "Riverside",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06065",
+          "ANSICODE": "00277297",
+          "NAME": "Riverside County",
+          "ALAND": "18671882474",
+          "AWATER": "242861394",
+          "ALAND_SQMI": "7209.254",
+          "AWATER_SQMI": "93.769",
+          "INTPTLAT": "33.729828",
+          "INTPTLONG": "-116.002239"
+        }
+      },
+      {
+        "native_county_code": "34",
+        "county": "Sacramento",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06067",
+          "ANSICODE": "00277298",
+          "NAME": "Sacramento County",
+          "ALAND": "2500063005",
+          "AWATER": "75323439",
+          "ALAND_SQMI": "965.28",
+          "AWATER_SQMI": "29.083",
+          "INTPTLAT": "38.450136",
+          "INTPTLONG": "-121.344329"
+        }
+      },
+      {
+        "native_county_code": "35",
+        "county": "San Benito",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06069",
+          "ANSICODE": "00277299",
+          "NAME": "San Benito County",
+          "ALAND": "3596591087",
+          "AWATER": "4719300",
+          "ALAND_SQMI": "1388.652",
+          "AWATER_SQMI": "1.822",
+          "INTPTLAT": "36.611651",
+          "INTPTLONG": "-121.085811"
+        }
+      },
+      {
+        "native_county_code": "36",
+        "county": "San Bernardino",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06071",
+          "ANSICODE": "00277300",
+          "NAME": "San Bernardino County",
+          "ALAND": "51976311347",
+          "AWATER": "96418184",
+          "ALAND_SQMI": "20068.167",
+          "AWATER_SQMI": "37.227",
+          "INTPTLAT": "34.856661",
+          "INTPTLONG": "-116.181571"
+        }
+      },
+      {
+        "native_county_code": "37",
+        "county": "San Diego",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06073",
+          "ANSICODE": "00277301",
+          "NAME": "San Diego County",
+          "ALAND": "10905046431",
+          "AWATER": "816535836",
+          "ALAND_SQMI": "4210.462",
+          "AWATER_SQMI": "315.266",
+          "INTPTLAT": "33.023604",
+          "INTPTLONG": "-116.776117"
+        }
+      },
+      {
+        "native_county_code": "38",
+        "county": "San Francisco",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06075",
+          "ANSICODE": "00277302",
+          "NAME": "San Francisco County",
+          "ALAND": "120913549",
+          "AWATER": "479701988",
+          "ALAND_SQMI": "46.685",
+          "AWATER_SQMI": "185.214",
+          "INTPTLAT": "37.727239",
+          "INTPTLONG": "-123.032229"
+        }
+      },
+      {
+        "native_county_code": "39",
+        "county": "San Joaquin",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06077",
+          "ANSICODE": "00277303",
+          "NAME": "San Joaquin County",
+          "ALAND": "3605878834",
+          "AWATER": "89000661",
+          "ALAND_SQMI": "1392.238",
+          "AWATER_SQMI": "34.363",
+          "INTPTLAT": "37.934982",
+          "INTPTLONG": "-121.272244"
+        }
+      },
+      {
+        "native_county_code": "40",
+        "county": "San Luis Obispo",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06079",
+          "ANSICODE": "00277304",
+          "NAME": "San Luis Obispo County",
+          "ALAND": "8549140866",
+          "AWATER": "815650229",
+          "ALAND_SQMI": "3300.842",
+          "AWATER_SQMI": "314.924",
+          "INTPTLAT": "35.388189",
+          "INTPTLONG": "-120.448897"
+        }
+      },
+      {
+        "native_county_code": "41",
+        "county": "San Mateo",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06081",
+          "ANSICODE": "00277305",
+          "NAME": "San Mateo County",
+          "ALAND": "1161921071",
+          "AWATER": "757163219",
+          "ALAND_SQMI": "448.62",
+          "AWATER_SQMI": "292.342",
+          "INTPTLAT": "37.414672",
+          "INTPTLONG": "-122.371546"
+        }
+      },
+      {
+        "native_county_code": "42",
+        "county": "Santa Barbara",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06083",
+          "ANSICODE": "00277306",
+          "NAME": "Santa Barbara County",
+          "ALAND": "7080874935",
+          "AWATER": "2729198796",
+          "ALAND_SQMI": "2733.941",
+          "AWATER_SQMI": "1053.75",
+          "INTPTLAT": "34.536677",
+          "INTPTLONG": "-120.038364"
+        }
+      },
+      {
+        "native_county_code": "43",
+        "county": "Santa Clara",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06085",
+          "ANSICODE": "00277307",
+          "NAME": "Santa Clara County",
+          "ALAND": "3343891499",
+          "AWATER": "33597067",
+          "ALAND_SQMI": "1291.084",
+          "AWATER_SQMI": "12.972",
+          "INTPTLAT": "37.221614",
+          "INTPTLONG": "-121.68954"
+        }
+      },
+      {
+        "native_county_code": "44",
+        "county": "Santa Cruz",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06087",
+          "ANSICODE": "00277308",
+          "NAME": "Santa Cruz County",
+          "ALAND": "1152818088",
+          "AWATER": "419720203",
+          "ALAND_SQMI": "445.106",
+          "AWATER_SQMI": "162.055",
+          "INTPTLAT": "37.012347",
+          "INTPTLONG": "-122.007789"
+        }
+      },
+      {
+        "native_county_code": "45",
+        "county": "Shasta",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06089",
+          "ANSICODE": "01682610",
+          "NAME": "Shasta County",
+          "ALAND": "9778891285",
+          "AWATER": "185818274",
+          "ALAND_SQMI": "3775.651",
+          "AWATER_SQMI": "71.745",
+          "INTPTLAT": "40.760514",
+          "INTPTLONG": "-122.043556"
+        }
+      },
+      {
+        "native_county_code": "46",
+        "county": "Sierra",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06091",
+          "ANSICODE": "00277310",
+          "NAME": "Sierra County",
+          "ALAND": "2468694578",
+          "AWATER": "23299110",
+          "ALAND_SQMI": "953.168",
+          "AWATER_SQMI": "8.996",
+          "INTPTLAT": "39.576925",
+          "INTPTLONG": "-120.521993"
+        }
+      },
+      {
+        "native_county_code": "47",
+        "county": "Siskiyou",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06093",
+          "ANSICODE": "00277311",
+          "NAME": "Siskiyou County",
+          "ALAND": "16261931188",
+          "AWATER": "179151859",
+          "ALAND_SQMI": "6278.767",
+          "AWATER_SQMI": "69.171",
+          "INTPTLAT": "41.587986",
+          "INTPTLONG": "-122.533287"
+        }
+      },
+      {
+        "native_county_code": "48",
+        "county": "Solano",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06095",
+          "ANSICODE": "00277312",
+          "NAME": "Solano County",
+          "ALAND": "2128287413",
+          "AWATER": "218614922",
+          "ALAND_SQMI": "821.736",
+          "AWATER_SQMI": "84.408",
+          "INTPTLAT": "38.267226",
+          "INTPTLONG": "-121.939594"
+        }
+      },
+      {
+        "native_county_code": "49",
+        "county": "Sonoma",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06097",
+          "ANSICODE": "01657246",
+          "NAME": "Sonoma County",
+          "ALAND": "4080103615",
+          "AWATER": "497291856",
+          "ALAND_SQMI": "1575.337",
+          "AWATER_SQMI": "192.005",
+          "INTPTLAT": "38.525182",
+          "INTPTLONG": "-122.92611"
+        }
+      },
+      {
+        "native_county_code": "50",
+        "county": "Stanislaus",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06099",
+          "ANSICODE": "00277314",
+          "NAME": "Stanislaus County",
+          "ALAND": "3875010967",
+          "AWATER": "46378776",
+          "ALAND_SQMI": "1496.15",
+          "AWATER_SQMI": "17.907",
+          "INTPTLAT": "37.562316",
+          "INTPTLONG": "-121.002831"
+        }
+      },
+      {
+        "native_county_code": "51",
+        "county": "Sutter",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06101",
+          "ANSICODE": "00277315",
+          "NAME": "Sutter County",
+          "ALAND": "1560975500",
+          "AWATER": "14811541",
+          "ALAND_SQMI": "602.696",
+          "AWATER_SQMI": "5.719",
+          "INTPTLAT": "39.03619",
+          "INTPTLONG": "-121.70394"
+        }
+      },
+      {
+        "native_county_code": "52",
+        "county": "Tehama",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06103",
+          "ANSICODE": "01692767",
+          "NAME": "Tehama County",
+          "ALAND": "7638229378",
+          "AWATER": "33767224",
+          "ALAND_SQMI": "2949.137",
+          "AWATER_SQMI": "13.038",
+          "INTPTLAT": "40.126157",
+          "INTPTLONG": "-122.232274"
+        }
+      },
+      {
+        "native_county_code": "53",
+        "county": "Trinity",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06105",
+          "ANSICODE": "00277317",
+          "NAME": "Trinity County",
+          "ALAND": "8234265080",
+          "AWATER": "73407950",
+          "ALAND_SQMI": "3179.268",
+          "AWATER_SQMI": "28.343",
+          "INTPTLAT": "40.647858",
+          "INTPTLONG": "-123.114666"
+        }
+      },
+      {
+        "native_county_code": "54",
+        "county": "Tulare",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06107",
+          "ANSICODE": "00277318",
+          "NAME": "Tulare County",
+          "ALAND": "12493843650",
+          "AWATER": "37260863",
+          "ALAND_SQMI": "4823.9",
+          "AWATER_SQMI": "14.387",
+          "INTPTLAT": "36.228834",
+          "INTPTLONG": "-118.781055"
+        }
+      },
+      {
+        "native_county_code": "55",
+        "county": "Tuolumne",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06109",
+          "ANSICODE": "00277319",
+          "NAME": "Tuolumne County",
+          "ALAND": "5752135140",
+          "AWATER": "138666931",
+          "ALAND_SQMI": "2220.912",
+          "AWATER_SQMI": "53.54",
+          "INTPTLAT": "38.021434",
+          "INTPTLONG": "-119.964733"
+        }
+      },
+      {
+        "native_county_code": "56",
+        "county": "Ventura",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06111",
+          "ANSICODE": "00277320",
+          "NAME": "Ventura County",
+          "ALAND": "4767597024",
+          "AWATER": "947364179",
+          "ALAND_SQMI": "1840.78",
+          "AWATER_SQMI": "365.779",
+          "INTPTLAT": "34.358748",
+          "INTPTLONG": "-119.133145"
+        }
+      },
+      {
+        "native_county_code": "57",
+        "county": "Yolo",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06113",
+          "ANSICODE": "00277321",
+          "NAME": "Yolo County",
+          "ALAND": "2623627933",
+          "AWATER": "22888380",
+          "ALAND_SQMI": "1012.988",
+          "AWATER_SQMI": "8.837",
+          "INTPTLAT": "38.679609",
+          "INTPTLONG": "-121.90275"
+        }
+      },
+      {
+        "native_county_code": "58",
+        "county": "Yuba",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06115",
+          "ANSICODE": "00277322",
+          "NAME": "Yuba County",
+          "ALAND": "1636887863",
+          "AWATER": "31084093",
+          "ALAND_SQMI": "632.006",
+          "AWATER_SQMI": "12.002",
+          "INTPTLAT": "39.27013",
+          "INTPTLONG": "-121.344259"
+        }
+      }
+    ],
+    "2026": [
+      {
+        "native_county_code": "1",
+        "county": "Alameda",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06001",
+          "GEOIDFQ": "0500000US06001",
+          "ANSICODE": "01675839",
+          "NAME": "Alameda County",
+          "ALAND": "1910039574",
+          "AWATER": "216909643",
+          "ALAND_SQMI": "737.47",
+          "AWATER_SQMI": "83.749",
+          "INTPTLAT": "37.640104",
+          "INTPTLONG": "-121.906806"
+        }
+      },
+      {
+        "native_county_code": "2",
+        "county": "Alpine",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06003",
+          "GEOIDFQ": "0500000US06003",
+          "ANSICODE": "01675840",
+          "NAME": "Alpine County",
+          "ALAND": "1912292633",
+          "AWATER": "12557304",
+          "ALAND_SQMI": "738.34",
+          "AWATER_SQMI": "4.848",
+          "INTPTLAT": "38.602409",
+          "INTPTLONG": "-119.844984"
+        }
+      },
+      {
+        "native_county_code": "3",
+        "county": "Amador",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06005",
+          "GEOIDFQ": "0500000US06005",
+          "ANSICODE": "01675841",
+          "NAME": "Amador County",
+          "ALAND": "1539967089",
+          "AWATER": "29437117",
+          "ALAND_SQMI": "594.585",
+          "AWATER_SQMI": "11.366",
+          "INTPTLAT": "38.443367",
+          "INTPTLONG": "-120.651702"
+        }
+      },
+      {
+        "native_county_code": "4",
+        "county": "Butte",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06007",
+          "GEOIDFQ": "0500000US06007",
+          "ANSICODE": "01675842",
+          "NAME": "Butte County",
+          "ALAND": "4238545130",
+          "AWATER": "105204064",
+          "ALAND_SQMI": "1636.511",
+          "AWATER_SQMI": "40.62",
+          "INTPTLAT": "39.665336",
+          "INTPTLONG": "-121.603209"
+        }
+      },
+      {
+        "native_county_code": "5",
+        "county": "Calaveras",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06009",
+          "GEOIDFQ": "0500000US06009",
+          "ANSICODE": "01675885",
+          "NAME": "Calaveras County",
+          "ALAND": "2641829596",
+          "AWATER": "43797226",
+          "ALAND_SQMI": "1020.016",
+          "AWATER_SQMI": "16.91",
+          "INTPTLAT": "38.191068",
+          "INTPTLONG": "-120.554107"
+        }
+      },
+      {
+        "native_county_code": "6",
+        "county": "Colusa",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06011",
+          "GEOIDFQ": "0500000US06011",
+          "ANSICODE": "01675902",
+          "NAME": "Colusa County",
+          "ALAND": "2980140628",
+          "AWATER": "14769734",
+          "ALAND_SQMI": "1150.639",
+          "AWATER_SQMI": "5.703",
+          "INTPTLAT": "39.177739",
+          "INTPTLONG": "-122.237563"
+        }
+      },
+      {
+        "native_county_code": "7",
+        "county": "Contra Costa",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06013",
+          "GEOIDFQ": "0500000US06013",
+          "ANSICODE": "01675903",
+          "NAME": "Contra Costa County",
+          "ALAND": "1856755094",
+          "AWATER": "225306664",
+          "ALAND_SQMI": "716.897",
+          "AWATER_SQMI": "86.991",
+          "INTPTLAT": "37.90799",
+          "INTPTLONG": "-121.958989"
+        }
+      },
+      {
+        "native_county_code": "8",
+        "county": "Del Norte",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06015",
+          "GEOIDFQ": "0500000US06015",
+          "ANSICODE": "01682074",
+          "NAME": "Del Norte County",
+          "ALAND": "2606049819",
+          "AWATER": "578810856",
+          "ALAND_SQMI": "1006.202",
+          "AWATER_SQMI": "223.48",
+          "INTPTLAT": "41.747068",
+          "INTPTLONG": "-123.953171"
+        }
+      },
+      {
+        "native_county_code": "9",
+        "county": "El Dorado",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06017",
+          "GEOIDFQ": "0500000US06017",
+          "ANSICODE": "00277273",
+          "NAME": "El Dorado County",
+          "ALAND": "4423289544",
+          "AWATER": "203362529",
+          "ALAND_SQMI": "1707.842",
+          "AWATER_SQMI": "78.519",
+          "INTPTLAT": "38.785612",
+          "INTPTLONG": "-120.534225"
+        }
+      },
+      {
+        "native_county_code": "10",
+        "county": "Fresno",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06019",
+          "GEOIDFQ": "0500000US06019",
+          "ANSICODE": "00277274",
+          "NAME": "Fresno County",
+          "ALAND": "15432655992",
+          "AWATER": "136655958",
+          "ALAND_SQMI": "5958.582",
+          "AWATER_SQMI": "52.763",
+          "INTPTLAT": "36.761153",
+          "INTPTLONG": "-119.655013"
+        }
+      },
+      {
+        "native_county_code": "11",
+        "county": "Glenn",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06021",
+          "GEOIDFQ": "0500000US06021",
+          "ANSICODE": "00277275",
+          "NAME": "Glenn County",
+          "ALAND": "3403088094",
+          "AWATER": "33796766",
+          "ALAND_SQMI": "1313.94",
+          "AWATER_SQMI": "13.049",
+          "INTPTLAT": "39.602546",
+          "INTPTLONG": "-122.4017"
+        }
+      },
+      {
+        "native_county_code": "12",
+        "county": "Humboldt",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06023",
+          "GEOIDFQ": "0500000US06023",
+          "ANSICODE": "01681908",
+          "NAME": "Humboldt County",
+          "ALAND": "9241141630",
+          "AWATER": "1254149679",
+          "ALAND_SQMI": "3568.025",
+          "AWATER_SQMI": "484.23",
+          "INTPTLAT": "40.706655",
+          "INTPTLONG": "-123.926176"
+        }
+      },
+      {
+        "native_county_code": "13",
+        "county": "Imperial",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06025",
+          "GEOIDFQ": "0500000US06025",
+          "ANSICODE": "00277277",
+          "NAME": "Imperial County",
+          "ALAND": "10814374203",
+          "AWATER": "790135139",
+          "ALAND_SQMI": "4175.453",
+          "AWATER_SQMI": "305.073",
+          "INTPTLAT": "33.040814",
+          "INTPTLONG": "-115.3554"
+        }
+      },
+      {
+        "native_county_code": "14",
+        "county": "Inyo",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06027",
+          "GEOIDFQ": "0500000US06027",
+          "ANSICODE": "01804637",
+          "NAME": "Inyo County",
+          "ALAND": "26410783214",
+          "AWATER": "77280931",
+          "ALAND_SQMI": "10197.261",
+          "AWATER_SQMI": "29.838",
+          "INTPTLAT": "36.610864",
+          "INTPTLONG": "-117.307009"
+        }
+      },
+      {
+        "native_county_code": "15",
+        "county": "Kern",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06029",
+          "GEOIDFQ": "0500000US06029",
+          "ANSICODE": "02054176",
+          "NAME": "Kern County",
+          "ALAND": "21068706230",
+          "AWATER": "78331381",
+          "ALAND_SQMI": "8134.673",
+          "AWATER_SQMI": "30.244",
+          "INTPTLAT": "35.355627",
+          "INTPTLONG": "-118.718644"
+        }
+      },
+      {
+        "native_county_code": "16",
+        "county": "Kings",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06031",
+          "GEOIDFQ": "0500000US06031",
+          "ANSICODE": "00277280",
+          "NAME": "Kings County",
+          "ALAND": "3602601909",
+          "AWATER": "3164290",
+          "ALAND_SQMI": "1390.972",
+          "AWATER_SQMI": "1.222",
+          "INTPTLAT": "36.072478",
+          "INTPTLONG": "-119.81553"
+        }
+      },
+      {
+        "native_county_code": "17",
+        "county": "Lake",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06033",
+          "GEOIDFQ": "0500000US06033",
+          "ANSICODE": "00277281",
+          "NAME": "Lake County",
+          "ALAND": "3250717464",
+          "AWATER": "189030353",
+          "ALAND_SQMI": "1255.109",
+          "AWATER_SQMI": "72.985",
+          "INTPTLAT": "39.108102",
+          "INTPTLONG": "-122.745477"
+        }
+      },
+      {
+        "native_county_code": "18",
+        "county": "Lassen",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06035",
+          "GEOIDFQ": "0500000US06035",
+          "ANSICODE": "01693324",
+          "NAME": "Lassen County",
+          "ALAND": "11762097226",
+          "AWATER": "462944401",
+          "ALAND_SQMI": "4541.371",
+          "AWATER_SQMI": "178.744",
+          "INTPTLAT": "40.707982",
+          "INTPTLONG": "-120.608589"
+        }
+      },
+      {
+        "native_county_code": "19",
+        "county": "Los Angeles",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06037",
+          "GEOIDFQ": "0500000US06037",
+          "ANSICODE": "00277283",
+          "NAME": "Los Angeles County",
+          "ALAND": "10516107376",
+          "AWATER": "1784884136",
+          "ALAND_SQMI": "4060.292",
+          "AWATER_SQMI": "689.148",
+          "INTPTLAT": "34.196398",
+          "INTPTLONG": "-118.261862"
+        }
+      },
+      {
+        "native_county_code": "20",
+        "county": "Madera",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06039",
+          "GEOIDFQ": "0500000US06039",
+          "ANSICODE": "00277284",
+          "NAME": "Madera County",
+          "ALAND": "5534030886",
+          "AWATER": "42266781",
+          "ALAND_SQMI": "2136.701",
+          "AWATER_SQMI": "16.319",
+          "INTPTLAT": "37.205756",
+          "INTPTLONG": "-119.749321"
+        }
+      },
+      {
+        "native_county_code": "21",
+        "county": "Marin",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06041",
+          "GEOIDFQ": "0500000US06041",
+          "ANSICODE": "00277285",
+          "NAME": "Marin County",
+          "ALAND": "1347160057",
+          "AWATER": "797807301",
+          "ALAND_SQMI": "520.141",
+          "AWATER_SQMI": "308.035",
+          "INTPTLAT": "38.051367",
+          "INTPTLONG": "-122.746396"
+        }
+      },
+      {
+        "native_county_code": "22",
+        "county": "Mariposa",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06043",
+          "GEOIDFQ": "0500000US06043",
+          "ANSICODE": "00277286",
+          "NAME": "Mariposa County",
+          "ALAND": "3752476980",
+          "AWATER": "36220869",
+          "ALAND_SQMI": "1448.84",
+          "AWATER_SQMI": "13.985",
+          "INTPTLAT": "37.574343",
+          "INTPTLONG": "-119.911721"
+        }
+      },
+      {
+        "native_county_code": "23",
+        "county": "Mendocino",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06045",
+          "GEOIDFQ": "0500000US06045",
+          "ANSICODE": "00277287",
+          "NAME": "Mendocino County",
+          "ALAND": "9082587620",
+          "AWATER": "961785139",
+          "ALAND_SQMI": "3506.807",
+          "AWATER_SQMI": "371.347",
+          "INTPTLAT": "39.432699",
+          "INTPTLONG": "-123.427521"
+        }
+      },
+      {
+        "native_county_code": "24",
+        "county": "Merced",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06047",
+          "GEOIDFQ": "0500000US06047",
+          "ANSICODE": "00277288",
+          "NAME": "Merced County",
+          "ALAND": "5019448494",
+          "AWATER": "105236252",
+          "ALAND_SQMI": "1938.02",
+          "AWATER_SQMI": "40.632",
+          "INTPTLAT": "37.193907",
+          "INTPTLONG": "-120.721466"
+        }
+      },
+      {
+        "native_county_code": "25",
+        "county": "Modoc",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06049",
+          "GEOIDFQ": "0500000US06049",
+          "ANSICODE": "00277289",
+          "NAME": "Modoc County",
+          "ALAND": "10225876984",
+          "AWATER": "660504010",
+          "ALAND_SQMI": "3948.233",
+          "AWATER_SQMI": "255.022",
+          "INTPTLAT": "41.592918",
+          "INTPTLONG": "-120.71837"
+        }
+      },
+      {
+        "native_county_code": "26",
+        "county": "Mono",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06051",
+          "GEOIDFQ": "0500000US06051",
+          "ANSICODE": "00277290",
+          "NAME": "Mono County",
+          "ALAND": "7896625291",
+          "AWATER": "214695143",
+          "ALAND_SQMI": "3048.904",
+          "AWATER_SQMI": "82.894",
+          "INTPTLAT": "37.909925",
+          "INTPTLONG": "-118.879072"
+        }
+      },
+      {
+        "native_county_code": "27",
+        "county": "Monterey",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06053",
+          "GEOIDFQ": "0500000US06053",
+          "ANSICODE": "00277291",
+          "NAME": "Monterey County",
+          "ALAND": "8499610214",
+          "AWATER": "1267806325",
+          "ALAND_SQMI": "3281.718",
+          "AWATER_SQMI": "489.503",
+          "INTPTLAT": "36.240104",
+          "INTPTLONG": "-121.315578"
+        }
+      },
+      {
+        "native_county_code": "28",
+        "county": "Napa",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06055",
+          "GEOIDFQ": "0500000US06055",
+          "ANSICODE": "00277292",
+          "NAME": "Napa County",
+          "ALAND": "1947608455",
+          "AWATER": "104442639",
+          "ALAND_SQMI": "751.976",
+          "AWATER_SQMI": "40.326",
+          "INTPTLAT": "38.50735",
+          "INTPTLONG": "-122.325996"
+        }
+      },
+      {
+        "native_county_code": "29",
+        "county": "Nevada",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06057",
+          "GEOIDFQ": "0500000US06057",
+          "ANSICODE": "01682927",
+          "NAME": "Nevada County",
+          "ALAND": "2480587288",
+          "AWATER": "41531991",
+          "ALAND_SQMI": "957.76",
+          "AWATER_SQMI": "16.036",
+          "INTPTLAT": "39.307812",
+          "INTPTLONG": "-120.743496"
+        }
+      },
+      {
+        "native_county_code": "30",
+        "county": "Orange",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06059",
+          "GEOIDFQ": "0500000US06059",
+          "ANSICODE": "00277294",
+          "NAME": "Orange County",
+          "ALAND": "2054502926",
+          "AWATER": "405284100",
+          "ALAND_SQMI": "793.248",
+          "AWATER_SQMI": "156.481",
+          "INTPTLAT": "33.675687",
+          "INTPTLONG": "-117.777207"
+        }
+      },
+      {
+        "native_county_code": "31",
+        "county": "Placer",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06061",
+          "GEOIDFQ": "0500000US06061",
+          "ANSICODE": "00277295",
+          "NAME": "Placer County",
+          "ALAND": "3645152542",
+          "AWATER": "245620302",
+          "ALAND_SQMI": "1407.401",
+          "AWATER_SQMI": "94.835",
+          "INTPTLAT": "39.067017",
+          "INTPTLONG": "-120.716237"
+        }
+      },
+      {
+        "native_county_code": "32",
+        "county": "Plumas",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06063",
+          "GEOIDFQ": "0500000US06063",
+          "ANSICODE": "00277296",
+          "NAME": "Plumas County",
+          "ALAND": "6612400682",
+          "AWATER": "156387653",
+          "ALAND_SQMI": "2553.062",
+          "AWATER_SQMI": "60.382",
+          "INTPTLAT": "39.992295",
+          "INTPTLONG": "-120.824371"
+        }
+      },
+      {
+        "native_county_code": "33",
+        "county": "Riverside",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06065",
+          "GEOIDFQ": "0500000US06065",
+          "ANSICODE": "00277297",
+          "NAME": "Riverside County",
+          "ALAND": "18671272005",
+          "AWATER": "242520122",
+          "ALAND_SQMI": "7209.019",
+          "AWATER_SQMI": "93.638",
+          "INTPTLAT": "33.800586",
+          "INTPTLONG": "-115.948412"
+        }
+      },
+      {
+        "native_county_code": "34",
+        "county": "Sacramento",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06067",
+          "GEOIDFQ": "0500000US06067",
+          "ANSICODE": "00277298",
+          "NAME": "Sacramento County",
+          "ALAND": "2500322877",
+          "AWATER": "75063499",
+          "ALAND_SQMI": "965.38",
+          "AWATER_SQMI": "28.982",
+          "INTPTLAT": "38.448503",
+          "INTPTLONG": "-121.342494"
+        }
+      },
+      {
+        "native_county_code": "35",
+        "county": "San Benito",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06069",
+          "GEOIDFQ": "0500000US06069",
+          "ANSICODE": "00277299",
+          "NAME": "San Benito County",
+          "ALAND": "3596591066",
+          "AWATER": "4719301",
+          "ALAND_SQMI": "1388.652",
+          "AWATER_SQMI": "1.822",
+          "INTPTLAT": "36.611651",
+          "INTPTLONG": "-121.085811"
+        }
+      },
+      {
+        "native_county_code": "36",
+        "county": "San Bernardino",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06071",
+          "GEOIDFQ": "0500000US06071",
+          "ANSICODE": "00277300",
+          "NAME": "San Bernardino County",
+          "ALAND": "51977010391",
+          "AWATER": "96402133",
+          "ALAND_SQMI": "20068.437",
+          "AWATER_SQMI": "37.221",
+          "INTPTLAT": "34.856661",
+          "INTPTLONG": "-116.181571"
+        }
+      },
+      {
+        "native_county_code": "37",
+        "county": "San Diego",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06073",
+          "GEOIDFQ": "0500000US06073",
+          "ANSICODE": "00277301",
+          "NAME": "San Diego County",
+          "ALAND": "10906080369",
+          "AWATER": "815935129",
+          "ALAND_SQMI": "4210.861",
+          "AWATER_SQMI": "315.034",
+          "INTPTLAT": "33.019342",
+          "INTPTLONG": "-116.769837"
+        }
+      },
+      {
+        "native_county_code": "38",
+        "county": "San Francisco",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06075",
+          "GEOIDFQ": "0500000US06075",
+          "ANSICODE": "00277302",
+          "NAME": "San Francisco County",
+          "ALAND": "120913761",
+          "AWATER": "479701779",
+          "ALAND_SQMI": "46.685",
+          "AWATER_SQMI": "185.214",
+          "INTPTLAT": "37.727239",
+          "INTPTLONG": "-123.032229"
+        }
+      },
+      {
+        "native_county_code": "39",
+        "county": "San Joaquin",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06077",
+          "GEOIDFQ": "0500000US06077",
+          "ANSICODE": "00277303",
+          "NAME": "San Joaquin County",
+          "ALAND": "3606041602",
+          "AWATER": "88864243",
+          "ALAND_SQMI": "1392.301",
+          "AWATER_SQMI": "34.311",
+          "INTPTLAT": "37.934938",
+          "INTPTLONG": "-121.272303"
+        }
+      },
+      {
+        "native_county_code": "40",
+        "county": "San Luis Obispo",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06079",
+          "GEOIDFQ": "0500000US06079",
+          "ANSICODE": "00277304",
+          "NAME": "San Luis Obispo County",
+          "ALAND": "8549140797",
+          "AWATER": "815650318",
+          "ALAND_SQMI": "3300.842",
+          "AWATER_SQMI": "314.924",
+          "INTPTLAT": "35.388189",
+          "INTPTLONG": "-120.448897"
+        }
+      },
+      {
+        "native_county_code": "41",
+        "county": "San Mateo",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06081",
+          "GEOIDFQ": "0500000US06081",
+          "ANSICODE": "00277305",
+          "NAME": "San Mateo County",
+          "ALAND": "1161875490",
+          "AWATER": "757208788",
+          "ALAND_SQMI": "448.603",
+          "AWATER_SQMI": "292.36",
+          "INTPTLAT": "37.414685",
+          "INTPTLONG": "-122.371495"
+        }
+      },
+      {
+        "native_county_code": "42",
+        "county": "Santa Barbara",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06083",
+          "GEOIDFQ": "0500000US06083",
+          "ANSICODE": "00277306",
+          "NAME": "Santa Barbara County",
+          "ALAND": "7080874916",
+          "AWATER": "2729198905",
+          "ALAND_SQMI": "2733.941",
+          "AWATER_SQMI": "1053.75",
+          "INTPTLAT": "34.536677",
+          "INTPTLONG": "-120.038364"
+        }
+      },
+      {
+        "native_county_code": "43",
+        "county": "Santa Clara",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06085",
+          "GEOIDFQ": "0500000US06085",
+          "ANSICODE": "00277307",
+          "NAME": "Santa Clara County",
+          "ALAND": "3343891446",
+          "AWATER": "33597064",
+          "ALAND_SQMI": "1291.084",
+          "AWATER_SQMI": "12.972",
+          "INTPTLAT": "37.221614",
+          "INTPTLONG": "-121.68954"
+        }
+      },
+      {
+        "native_county_code": "44",
+        "county": "Santa Cruz",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06087",
+          "GEOIDFQ": "0500000US06087",
+          "ANSICODE": "00277308",
+          "NAME": "Santa Cruz County",
+          "ALAND": "1152818024",
+          "AWATER": "419720239",
+          "ALAND_SQMI": "445.106",
+          "AWATER_SQMI": "162.055",
+          "INTPTLAT": "37.012188",
+          "INTPTLONG": "-122.007688"
+        }
+      },
+      {
+        "native_county_code": "45",
+        "county": "Shasta",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06089",
+          "GEOIDFQ": "0500000US06089",
+          "ANSICODE": "01682610",
+          "NAME": "Shasta County",
+          "ALAND": "9778849836",
+          "AWATER": "185859739",
+          "ALAND_SQMI": "3775.635",
+          "AWATER_SQMI": "71.761",
+          "INTPTLAT": "40.760252",
+          "INTPTLONG": "-122.04407"
+        }
+      },
+      {
+        "native_county_code": "46",
+        "county": "Sierra",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06091",
+          "GEOIDFQ": "0500000US06091",
+          "ANSICODE": "00277310",
+          "NAME": "Sierra County",
+          "ALAND": "2468694570",
+          "AWATER": "23299111",
+          "ALAND_SQMI": "953.168",
+          "AWATER_SQMI": "8.996",
+          "INTPTLAT": "39.576925",
+          "INTPTLONG": "-120.521993"
+        }
+      },
+      {
+        "native_county_code": "47",
+        "county": "Siskiyou",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06093",
+          "GEOIDFQ": "0500000US06093",
+          "ANSICODE": "00277311",
+          "NAME": "Siskiyou County",
+          "ALAND": "16261931226",
+          "AWATER": "179151856",
+          "ALAND_SQMI": "6278.767",
+          "AWATER_SQMI": "69.171",
+          "INTPTLAT": "41.586339",
+          "INTPTLONG": "-122.533686"
+        }
+      },
+      {
+        "native_county_code": "48",
+        "county": "Solano",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06095",
+          "GEOIDFQ": "0500000US06095",
+          "ANSICODE": "00277312",
+          "NAME": "Solano County",
+          "ALAND": "2128301077",
+          "AWATER": "218600179",
+          "ALAND_SQMI": "821.742",
+          "AWATER_SQMI": "84.402",
+          "INTPTLAT": "38.267226",
+          "INTPTLONG": "-121.939594"
+        }
+      },
+      {
+        "native_county_code": "49",
+        "county": "Sonoma",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06097",
+          "GEOIDFQ": "0500000US06097",
+          "ANSICODE": "01657246",
+          "NAME": "Sonoma County",
+          "ALAND": "4080103571",
+          "AWATER": "497291850",
+          "ALAND_SQMI": "1575.337",
+          "AWATER_SQMI": "192.005",
+          "INTPTLAT": "38.5217",
+          "INTPTLONG": "-122.916421"
+        }
+      },
+      {
+        "native_county_code": "50",
+        "county": "Stanislaus",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06099",
+          "GEOIDFQ": "0500000US06099",
+          "ANSICODE": "00277314",
+          "NAME": "Stanislaus County",
+          "ALAND": "3875011026",
+          "AWATER": "46378777",
+          "ALAND_SQMI": "1496.15",
+          "AWATER_SQMI": "17.907",
+          "INTPTLAT": "37.562252",
+          "INTPTLONG": "-121.002796"
+        }
+      },
+      {
+        "native_county_code": "51",
+        "county": "Sutter",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06101",
+          "GEOIDFQ": "0500000US06101",
+          "ANSICODE": "00277315",
+          "NAME": "Sutter County",
+          "ALAND": "1560975487",
+          "AWATER": "14811543",
+          "ALAND_SQMI": "602.696",
+          "AWATER_SQMI": "5.719",
+          "INTPTLAT": "39.03619",
+          "INTPTLONG": "-121.70394"
+        }
+      },
+      {
+        "native_county_code": "52",
+        "county": "Tehama",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06103",
+          "GEOIDFQ": "0500000US06103",
+          "ANSICODE": "01692767",
+          "NAME": "Tehama County",
+          "ALAND": "7638229388",
+          "AWATER": "33767225",
+          "ALAND_SQMI": "2949.137",
+          "AWATER_SQMI": "13.038",
+          "INTPTLAT": "40.126157",
+          "INTPTLONG": "-122.232274"
+        }
+      },
+      {
+        "native_county_code": "53",
+        "county": "Trinity",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06105",
+          "GEOIDFQ": "0500000US06105",
+          "ANSICODE": "00277317",
+          "NAME": "Trinity County",
+          "ALAND": "8234265130",
+          "AWATER": "73407991",
+          "ALAND_SQMI": "3179.268",
+          "AWATER_SQMI": "28.343",
+          "INTPTLAT": "40.647864",
+          "INTPTLONG": "-123.114629"
+        }
+      },
+      {
+        "native_county_code": "54",
+        "county": "Tulare",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06107",
+          "GEOIDFQ": "0500000US06107",
+          "ANSICODE": "00277318",
+          "NAME": "Tulare County",
+          "ALAND": "12493836377",
+          "AWATER": "37268226",
+          "ALAND_SQMI": "4823.897",
+          "AWATER_SQMI": "14.389",
+          "INTPTLAT": "36.228834",
+          "INTPTLONG": "-118.781055"
+        }
+      },
+      {
+        "native_county_code": "55",
+        "county": "Tuolumne",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06109",
+          "GEOIDFQ": "0500000US06109",
+          "ANSICODE": "00277319",
+          "NAME": "Tuolumne County",
+          "ALAND": "5752135122",
+          "AWATER": "138666925",
+          "ALAND_SQMI": "2220.912",
+          "AWATER_SQMI": "53.54",
+          "INTPTLAT": "38.021405",
+          "INTPTLONG": "-119.964805"
+        }
+      },
+      {
+        "native_county_code": "56",
+        "county": "Ventura",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06111",
+          "GEOIDFQ": "0500000US06111",
+          "ANSICODE": "00277320",
+          "NAME": "Ventura County",
+          "ALAND": "4767597083",
+          "AWATER": "947364152",
+          "ALAND_SQMI": "1840.78",
+          "AWATER_SQMI": "365.779",
+          "INTPTLAT": "34.359007",
+          "INTPTLONG": "-119.132901"
+        }
+      },
+      {
+        "native_county_code": "57",
+        "county": "Yolo",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06113",
+          "GEOIDFQ": "0500000US06113",
+          "ANSICODE": "00277321",
+          "NAME": "Yolo County",
+          "ALAND": "2623629000",
+          "AWATER": "22888387",
+          "ALAND_SQMI": "1012.989",
+          "AWATER_SQMI": "8.837",
+          "INTPTLAT": "38.679421",
+          "INTPTLONG": "-121.901427"
+        }
+      },
+      {
+        "native_county_code": "58",
+        "county": "Yuba",
+        "independent_census_identity": {
+          "USPS": "CA",
+          "GEOID": "06115",
+          "GEOIDFQ": "0500000US06115",
+          "ANSICODE": "00277322",
+          "NAME": "Yuba County",
+          "ALAND": "1636892035",
+          "AWATER": "31079898",
+          "ALAND_SQMI": "632.008",
+          "AWATER_SQMI": "12.",
+          "INTPTLAT": "39.27013",
+          "INTPTLONG": "-121.344259"
+        }
+      }
+    ]
+  },
+  "geometry_check": {
+    "state_code": "CA",
+    "features": 58,
+    "contextual_geometry_sha256": "fc167d02493b97c385eba9625bce506b9b9f93c5e0a9a69af6b9cf052b556e7a",
+    "current_and_2024_identity_inventory_equal": true,
+    "live_complete_bytes_equal": true,
+    "invalid": [],
+    "overlap_pairs": [
+      {
+        "left": "06079",
+        "right": "06053",
+        "overlap_square_degrees": 1.8034758605855694e-06
+      },
+      {
+        "left": "06079",
+        "right": "06083",
+        "overlap_square_degrees": 2.424849999979506e-06
+      },
+      {
+        "left": "06079",
+        "right": "06031",
+        "overlap_square_degrees": 2.135792581093358e-06
+      },
+      {
+        "left": "06081",
+        "right": "06085",
+        "overlap_square_degrees": 3.05497996188992e-07
+      },
+      {
+        "left": "06067",
+        "right": "06061",
+        "overlap_square_degrees": 2.4597981568260844e-06
+      },
+      {
+        "left": "06067",
+        "right": "06113",
+        "overlap_square_degrees": 2.1077861899062812e-07
+      },
+      {
+        "left": "06067",
+        "right": "06017",
+        "overlap_square_degrees": 4.820497904832076e-07
+      },
+      {
+        "left": "06067",
+        "right": "06095",
+        "overlap_square_degrees": 2.6310395441150297e-07
+      },
+      {
+        "left": "06067",
+        "right": "06005",
+        "overlap_square_degrees": 3.5020991356638754e-10
+      },
+      {
+        "left": "06107",
+        "right": "06019",
+        "overlap_square_degrees": 1.6684587323975532e-06
+      },
+      {
+        "left": "06107",
+        "right": "06029",
+        "overlap_square_degrees": 2.8338981608830635e-05
+      },
+      {
+        "left": "06047",
+        "right": "06019",
+        "overlap_square_degrees": 1.0054362580272752e-05
+      },
+      {
+        "left": "06047",
+        "right": "06039",
+        "overlap_square_degrees": 1.2346979535007773e-05
+      },
+      {
+        "left": "06047",
+        "right": "06043",
+        "overlap_square_degrees": 7.367541286954241e-07
+      },
+      {
+        "left": "06047",
+        "right": "06099",
+        "overlap_square_degrees": 3.0986094032153366e-05
+      },
+      {
+        "left": "06047",
+        "right": "06085",
+        "overlap_square_degrees": 2.8236778209615736e-07
+      },
+      {
+        "left": "06109",
+        "right": "06003",
+        "overlap_square_degrees": 2.5923740355154193e-05
+      },
+      {
+        "left": "06109",
+        "right": "06051",
+        "overlap_square_degrees": 1.0241438551570317e-06
+      },
+      {
+        "left": "06059",
+        "right": "06065",
+        "overlap_square_degrees": 1.2504246597326405e-08
+      },
+      {
+        "left": "06059",
+        "right": "06073",
+        "overlap_square_degrees": 2.2865004259255994e-09
+      },
+      {
+        "left": "06037",
+        "right": "06111",
+        "overlap_square_degrees": 1.2904843651991776e-06
+      },
+      {
+        "left": "06037",
+        "right": "06029",
+        "overlap_square_degrees": 2.2125626891293388e-07
+      },
+      {
+        "left": "06001",
+        "right": "06077",
+        "overlap_square_degrees": 5.5601999997952905e-06
+      },
+      {
+        "left": "06003",
+        "right": "06009",
+        "overlap_square_degrees": 3.610875109791383e-06
+      },
+      {
+        "left": "06003",
+        "right": "06005",
+        "overlap_square_degrees": 3.810984535815486e-06
+      },
+      {
+        "left": "06061",
+        "right": "06115",
+        "overlap_square_degrees": 1.2479643288452576e-08
+      },
+      {
+        "left": "06061",
+        "right": "06101",
+        "overlap_square_degrees": 5.161930813312721e-06
+      },
+      {
+        "left": "06057",
+        "right": "06115",
+        "overlap_square_degrees": 1.5673600000798808e-05
+      },
+      {
+        "left": "06113",
+        "right": "06095",
+        "overlap_square_degrees": 3.032787523093723e-07
+      },
+      {
+        "left": "06019",
+        "right": "06053",
+        "overlap_square_degrees": 4.3199658799651934e-07
+      },
+      {
+        "left": "06105",
+        "right": "06023",
+        "overlap_square_degrees": 4.347174226992836e-06
+      },
+      {
+        "left": "06105",
+        "right": "06045",
+        "overlap_square_degrees": 1.2803414391341775e-08
+      },
+      {
+        "left": "06089",
+        "right": "06093",
+        "overlap_square_degrees": 9.417897380539932e-05
+      },
+      {
+        "left": "06089",
+        "right": "06103",
+        "overlap_square_degrees": 1.0372672137643189e-06
+      },
+      {
+        "left": "06089",
+        "right": "06049",
+        "overlap_square_degrees": 1.1942282627719483e-05
+      },
+      {
+        "left": "06115",
+        "right": "06101",
+        "overlap_square_degrees": 1.496644366291193e-06
+      },
+      {
+        "left": "06011",
+        "right": "06101",
+        "overlap_square_degrees": 4.783919682493405e-07
+      },
+      {
+        "left": "06013",
+        "right": "06095",
+        "overlap_square_degrees": 5.128718462941783e-06
+      },
+      {
+        "left": "06073",
+        "right": "06025",
+        "overlap_square_degrees": 1.0769883625401584e-05
+      },
+      {
+        "left": "06099",
+        "right": "06085",
+        "overlap_square_degrees": 1.1064271449392589e-06
+      },
+      {
+        "left": "06009",
+        "right": "06077",
+        "overlap_square_degrees": 3.1574700676048126e-07
+      },
+      {
+        "left": "06055",
+        "right": "06095",
+        "overlap_square_degrees": 2.656916309744885e-05
+      },
+      {
+        "left": "06031",
+        "right": "06029",
+        "overlap_square_degrees": 1.593834593661203e-05
+      }
+    ]
+  }
+}

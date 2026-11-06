@@ -78,9 +78,22 @@ See `20261106-california-pipeline-01/pipeline-verification.json`.
 Acquisition refuses repository-local originals and never moves a public pointer.
 Review deliberately accepts only the currently reviewed November 3-6 clocks;
 later captures require fresh source review before promotion.
-Next independently establish county identities and integrate the
-native counts without substituting candidate totals. Nothing California is live or
-map-approved yet. Native county codes are not FIPS, clocks have no declared
+All 58 native county names now independently match both entire original Census
+Gazetteer inventories (2024 and 2026), each exactly reproducing its saved
+3,222-record inventory. California's entire existing 777,815-byte live contextual
+geometry matches its frozen receipt; all 58 features are valid and preserve
+43 documented simplification overlaps. These remain 2024 contextual boundaries,
+not certified 2026 election geography.
+New immutable context10 preserves every prior 914 record, 442 joins, 15 geometries,
+exclusion and missing rate. Totals are **972 records / 500 joins / 127 usable native
+fractions / 373 missing rates / sixteen jurisdictions**. All thirty package files,
+twenty-nine ZIP members and complete offline reproduction pass. ZIP **2,466,738
+bytes**, SHA-256
+`44621f3f361a4202106f01230b06ebcfd09bc7845937a25e30df08758ab1a8f6`.
+The separate native statewide observation is not inserted into county records.
+See `20261106-california-explorer-01`.
+UI integration and deployment are still pending; nothing California is LIVE.
+Native county codes are not FIPS, clocks have no declared
 timezone, `U/F/SF` retain their literal status, and 100% precinct reporting
 does not imply completed counting or certification. No mode or demographic
 turnout is invented. Existing Maine/D.C. gaps and source restrictions remain.
