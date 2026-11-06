@@ -16,7 +16,14 @@ The complete portable numerical package at
 contains **67 county rows / one separate statewide row / 67 native county
 identities / all 680 native data cells**, the full reviewed numerical input,
 methods, audit, checksums and deterministic executable query/tests.
-All **eight focused tests** pass. Native completion flags remain literal:
+All **eight focused tests** pass and all **11 complete files** reproduce
+byte-for-byte offline. Immutable native release **436915442**, source
+**`fee108411207a3c74880bf7da9e514de3fc8b4a2`**, passes draft and public verification:
+all **11 entire assets / 11 commit-pinned files / 10 ZIP members**, with complete
+offline reproduction and both exact credential jobs **42281304670 review /
+42281304561 tag** passing. The complete ZIP is **25,999 bytes / SHA-256
+`977ca600f23e4ec6d87a56272e68e55534380c855b0866c6d0cd0b55174ce474`**.
+Native completion flags remain literal:
 provisional completion is **Y in seven / N in 60 counties**; 10-day overseas
 completion is **Y in three / N in 64**. Thus 100% precinct reporting is not
 silently treated as final counting. No native update time or timezone is
@@ -26,12 +33,29 @@ Both entire Census original inventories independently identify all 67 native
 county names and match the unchanged **494,363-byte** hosted Florida geometry
 exactly. All shapes are valid; **67 generalized-boundary overlap pairs** are
 documented, not certified election-boundary claims.
-Native three-letter identifiers are not Census FIPS, and geographic identity
-alone does not approve rates or maps. Before explorer promotion, explicitly
-reconcile the already published **32,506-participant Monroe** observation so
-the new statewide table neither erases its history nor double-counts it.
-Native publication, separate county usability, immutable context extension
-and exact deployed verification remain pending.
+Native three-letter identifiers are not Census FIPS. Separate county usability
+permits **67 source-defined participation snapshots / 67 same-table active
+registration fractions**, not CVAP/VAP/VEP or demographic turnout.
+The already published Monroe observation exactly matches the new table's
+**32,506 participants / 54,704 registrations / 59.42% printed fraction**.
+The source-selection rule retains both complete observations, preserves the
+old withheld rate and selects the statewide source only once for the current
+map. It does not infer a newer snapshot from missing source clocks.
+Frozen context24 preserves **all 1,261 old complete records / 396 native rows /
+766 non-Florida map joins / 19 entire geometries / exclusions / missingness**.
+It adds **67 native rows / 66 distinct county joins / 67 fractions**; the old
+Monroe observation remains separately retained rather than added. Its
+**1,328 records / 833 joins / 446 fractions / 387 missing rates / 19 jurisdictions**
+reproduce from the complete query. All **116 focused importer/context/historical/
+download tests** pass, including full-input tampering and Monroe source-reconciliation
+failures. The dormant importer is not yet connected to the active registry.
+The **33-file / 32-member** context query passes standalone verification;
+review SHA-256 **`8c666bd06b4346c2823d22ed9a6295262a2a85e347b7937fcad5f7eb16941427`**,
+ZIP **3,026,036 bytes / SHA-256
+`2757f068d1facf74aca5bb9f0765037a4d57efbc6b194a4134901191f7452d35`**.
+Immutable context publication, genuine UI integration and exact production
+verification remain pending. The active pointer/registry/browser checker stay
+on Utah/context23 while its exact deployment verifier runs.
 
 **November 6: Utah numerical and context queries immutable; UI validated locally, not yet LIVE.**
 The actual official general-election portal's declared report menu supplies

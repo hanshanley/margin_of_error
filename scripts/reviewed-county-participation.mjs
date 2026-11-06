@@ -839,6 +839,62 @@ export function loadReviewedUtahParticipation(reviews) {
   });
 }
 
+export function loadReviewedFloridaParticipation(reviews) {
+  const id = 'florida-consolidated-turnout-20261106-01';
+  const matches = reviews.filter(review => review.id === id);
+  if (matches.length !== 1) throw new Error(`Missing or duplicated reviewed county source: ${id}`);
+  const review = matches[0], directory = resolve(review.data_directory);
+  const manifest = readFileSync(resolve(directory, 'checksums.json'));
+  if (createHash('sha256').update(manifest).digest('hex') !==
+    'f0e1d7685067483b4bb304557eb3244bcf4b4c4819ab8212718fcfc40d30b7ef')
+    throw new Error(`Invalid reviewed county participation: ${id} / checksums.json`);
+  const files = [...JSON.parse(manifest).files, { path: 'complete-query.zip', bytes: 25999,
+    sha256: '977ca600f23e4ec6d87a56272e68e55534380c855b0866c6d0cd0b55174ce474' }];
+  for (const expected of files) {
+    const body = readFileSync(resolve(directory, expected.path));
+    if (body.length !== expected.bytes || createHash('sha256').update(body).digest('hex') !== expected.sha256)
+      throw new Error(`Invalid reviewed county participation: ${id} / ${expected.path}`);
+  }
+  const rows = csv(resolve(directory, 'county-participation.csv'));
+  const source = JSON.parse(readFileSync(resolve(directory, 'source-qualification.json'), 'utf8'));
+  if (rows.length !== 67 || new Set(rows.map(row => row.native_county)).size !== 67
+    || source.source_as_of !== null || source.source_timezone !== null)
+    throw new Error(`Incomplete reviewed county source: ${id}`);
+  return rows.map(native => {
+    const ballots = Number(native.reported_participants);
+    const denominator = Number(native.eligible_active_registered_voters);
+    if (native.native_fips !== '' || native.analysis_rate_approved !== 'False'
+      || native.map_approved !== 'False' || native.source_as_of !== '' || native.source_timezone !== ''
+      || !Number.isSafeInteger(ballots) || ballots < 0
+      || !Number.isSafeInteger(denominator) || denominator <= 0 || ballots > denominator
+      || Object.entries(native).some(([key, value]) => key.endsWith('_completed') && !['Y', 'N'].includes(value)))
+      throw new Error(`Invalid reviewed county participation: ${id} / ${native.native_county}`);
+    const quality = [
+      'Source-defined reported participation snapshot from the official all-county general-election table, not candidate selections, receipts or processing counters.',
+      'Same-table reported participants divided by Eligible Active Registered Voters; not CVAP, VAP, VEP or demographic turnout.',
+      'Native provisional and ten-day overseas completion flags remain literal; 100% precinct reporting is not certification or proof of finished counting.',
+      'No declared source-update time or timezone; fetch, HTTP and navigation clocks are not replacements.',
+    ];
+    const flags = Object.entries(native).filter(([key]) => key.endsWith('_completed'))
+      .map(([key, value]) => `${key}=${value}`).join('; ');
+    return {
+      year: 2026, state_code: 'FL', county_id: `reviewed:FL:${native.native_county}`,
+      county: native.native_county, geography_level: 'county', ballots, denominator,
+      participation_measure_kind: 'source_defined_participation_count',
+      participation_measure_literal: 'Voter Turnout',
+      participation_measure_label: 'Native Voter Turnout (reported ballot-casting snapshot)',
+      denominator_basis: 'native_registered_voters', reported_pct: 100 * ballots / denominator,
+      native_printed_pct: native.native_turnout_percentage,
+      source_status_literal: source.source_status, reported_units: null, total_units: null,
+      source_rows: 1, maps_approved: false, review_id: id, native_record: native, native_source_updates: [],
+      source_update_label: 'Native turnout update clock/timezone not supplied; HTTP/fetch clocks are not replacements.',
+      source_reporting_label: `${flags}. ${quality.join(' ')}`, quality,
+      source_url: `${review.base_url}county-participation.csv`,
+      complete_download_url: review.complete_download_url,
+    };
+  });
+}
+
 export function loadReviewedCountyParticipation(reviews) {
   const observations = [], seen = new Set();
   for (const [id, ballotField, denominatorField, printedField, code, names] of profiles) {

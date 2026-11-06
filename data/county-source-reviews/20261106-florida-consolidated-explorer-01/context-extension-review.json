@@ -1,0 +1,43 @@
+{
+  "previous_complete_source_records_preserved": 1261,
+  "previous_native_source_records_preserved": 396,
+  "previous_non_florida_map_joins_preserved": 766,
+  "previous_entire_geometry_inventory_preserved": 19,
+  "previous_exclusions_and_missingness_preserved": true,
+  "native_approval_flags_and_missing_fips_unchanged": true,
+  "no_certified_2026_geometry_claim": true,
+  "no_native_update_clock_invented": true,
+  "new_source_records": 67,
+  "new_distinct_county_joins": 66,
+  "new_registered_fractions": 67,
+  "retained_monroe_observation_not_aggregated": true,
+  "source_selection": {
+    "state_code": "FL",
+    "contextual_geoid": "12087",
+    "retained_county_id": "additional:FL:12087",
+    "selected_county_id": "reviewed:FL:Monroe",
+    "retained_source_record_sha256": "bc20dda4f715d6d5e315f3c867e48255b7220c9d11accaee5f6c6ca0e408c449",
+    "selected_source_record_sha256": "3a41189095be7c00cced35e49419c74eb08aafa7811f514b8ed5246c2a49cf40",
+    "matched_fields": [
+      "ballots",
+      "denominator",
+      "native_printed_pct"
+    ],
+    "reason": "Same reported count, registrations and printed fraction. The statewide source explicitly defines eligible active registrations; no newer snapshot is inferred from missing source clocks. Both original observations remain complete and are not added."
+  },
+  "counts": {
+    "complete_source_records": 1328,
+    "contextual_joins": 833,
+    "jurisdictions": 19,
+    "reviewed_rates": 446,
+    "missing_rates": 387,
+    "excluded_municipalities": 286,
+    "excluded_missing_county_totals": 208,
+    "retained_duplicate_source_observations": 1
+  },
+  "frozen_review_bytes": 1254823,
+  "frozen_review_sha256": "8c666bd06b4346c2823d22ed9a6295262a2a85e347b7937fcad5f7eb16941427",
+  "complete_zip_bytes": 3026036,
+  "complete_zip_sha256": "2757f068d1facf74aca5bb9f0765037a4d57efbc6b194a4134901191f7452d35",
+  "complete_package_files": 33
+}

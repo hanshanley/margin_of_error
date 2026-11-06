@@ -9,7 +9,7 @@ import { loadReviewedCountyParticipation as loadCompleteReviewedCountyParticipat
   loadReviewedMinnesotaParticipation, loadReviewedAdditionalPennsylvaniaParticipation,
   loadReviewedSomersetParticipation, loadReviewedSusquehannaParticipation,
   loadReviewedSullivanWyomingParticipation, loadReviewedBedfordNorthumberlandParticipation,
-  loadReviewedUtahParticipation } from './reviewed-county-participation.mjs';
+  loadReviewedUtahParticipation, loadReviewedFloridaParticipation } from './reviewed-county-participation.mjs';
 
 const reviews = JSON.parse(readFileSync('public/participation-source-reviews.json', 'utf8')).reviews;
 const utahId = 'utah-ballot-statistics-20261106-01';
@@ -29,6 +29,58 @@ const loadReviewedCountyParticipation = sourceReviews =>
 const batchCounties = ['Juniata', 'Mercer', 'Montour', 'Columbia', 'Greene', 'Lycoming'];
 const isBatch = row => ['CA', 'GA', 'MN'].includes(row.state_code)
   || row.state_code === 'PA' && [...batchCounties, 'Lawrence', 'Huntingdon'].includes(row.county);
+
+const floridaReview = {
+  id: 'florida-consolidated-turnout-20261106-01',
+  data_directory: 'data/county-source-reviews/20261106-florida-consolidated-native-01',
+  base_url: 'https://raw.githubusercontent.com/hanshanley/margin_of_error/fee108411207a3c74880bf7da9e514de3fc8b4a2/data/county-source-reviews/20261106-florida-consolidated-native-01/',
+  complete_download_url: 'https://github.com/hanshanley/margin_of_error/releases/download/voter-county-florida-native-turnout-20261106-01/complete-query.zip',
+};
+
+test('Florida reproduces the complete qualified source while preserving unfinished flags and missing clocks', () => {
+  const rows = loadReviewedFloridaParticipation([floridaReview]);
+  const qualification = JSON.parse(readFileSync(
+    'data/county-source-reviews/20261106-florida-consolidated-explorer-01/county-usability-review.json'));
+  assert.deepEqual(rows, qualification.current_source_records);
+  assert.equal(rows.reduce((sum, row) => sum + row.ballots, 0), 8335497);
+  assert.equal(rows.reduce((sum, row) => sum + row.denominator, 0), 13704495);
+  const monroe = rows.find(row => row.county === 'Monroe');
+  for (const key of ['ballots', 'denominator', 'native_printed_pct'])
+    assert.equal(monroe[key], qualification.monroe_source_selection.retained_record[key]);
+  assert.equal(qualification.monroe_source_selection.retained_record.reported_pct, null);
+  assert.equal(monroe.reported_pct, 100 * monroe.ballots / monroe.denominator);
+  assert.equal(rows.filter(row => row.native_record.native_provisional_completed === 'N').length, 60);
+  for (const row of rows) {
+    assert.equal(row.maps_approved, false);
+    assert.equal(row.native_record.native_fips, '');
+    assert.equal(row.native_record.source_as_of, '');
+    assert.deepEqual(row.native_source_updates, []);
+    assert.match(row.source_reporting_label, /not certification or proof of finished counting/);
+  }
+});
+
+test('Florida rejects altered or missing complete numerical inputs and duplicated source registration', () => {
+  assert.throws(() => loadReviewedFloridaParticipation([]), /Missing or duplicated/);
+  assert.throws(() => loadReviewedFloridaParticipation([floridaReview, floridaReview]), /Missing or duplicated/);
+  const directory = mkdtempSync(join(tmpdir(), 'reviewed-florida-participation-'));
+  try {
+    const manifest = JSON.parse(readFileSync(join(floridaReview.data_directory, 'checksums.json')));
+    const names = [...manifest.files.map(row => row.path), 'checksums.json', 'complete-query.zip'];
+    for (const name of names)
+      copyFileSync(join(floridaReview.data_directory, name), join(directory, name));
+    const altered = [{ ...floridaReview, data_directory: directory }];
+    for (const name of names) {
+      const body = readFileSync(join(directory, name));
+      writeFileSync(join(directory, name), Buffer.concat([body, Buffer.from('\n')]));
+      assert.throws(() => loadReviewedFloridaParticipation(altered), /Invalid reviewed county participation/);
+      writeFileSync(join(directory, name), body);
+    }
+    rmSync(join(directory, 'source-qualification.json'));
+    assert.throws(() => loadReviewedFloridaParticipation(altered), /ENOENT/);
+  } finally {
+    rmSync(directory, { recursive: true, force: true });
+  }
+});
 
 test('Utah preserves every prior native record and keeps missing county totals distinct from zero', () => {
   const rows = loadCompleteReviewedCountyParticipation(reviews);

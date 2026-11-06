@@ -19,7 +19,33 @@ export function createCountyContextReview(records, inventories, collections, inv
     || current.size !== previous.size || [...current].some(([key, row]) =>
       previous.get(key)?.USPS !== row.USPS || previous.get(key)?.NAME !== row.NAME))
     throw new Error('Current and contextual-vintage county identities disagree');
-  const candidates = records.filter(fullCounty), observations = [], geometry = {};
+  const retainedSources = new Set(), sourceSelections = [];
+  const selectedMonroe = records.filter(row =>
+    row.review_id === 'florida-consolidated-turnout-20261106-01' && row.county === 'Monroe');
+  if (selectedMonroe.length) {
+    const retained = records.filter(row => row.review_id === 'additional:FL-2026-MON');
+    const selected = selectedMonroe[0], prior = retained[0];
+    if (selectedMonroe.length !== 1 || retained.length !== 1
+      || jsonDigest(prior) !== 'bc20dda4f715d6d5e315f3c867e48255b7220c9d11accaee5f6c6ca0e408c449'
+      || selected.state_code !== 'FL' || selected.county_id !== 'reviewed:FL:Monroe'
+      || !fullCounty(selected) || selected.ballots !== prior.ballots
+      || selected.denominator !== prior.denominator || selected.native_printed_pct !== prior.native_printed_pct
+      || selected.reported_pct !== 100 * selected.ballots / selected.denominator
+      || selected.maps_approved !== false || selected.native_record?.native_fips !== ''
+      || selected.native_record?.analysis_rate_approved !== 'False'
+      || selected.native_record?.map_approved !== 'False')
+      throw new Error('Unreconciled retained Monroe source or statewide source selection');
+    retainedSources.add(`${prior.state_code}|${prior.county_id}`);
+    sourceSelections.push({
+      state_code: 'FL', contextual_geoid: '12087',
+      retained_county_id: prior.county_id, selected_county_id: selected.county_id,
+      retained_source_record_sha256: jsonDigest(prior), selected_source_record_sha256: jsonDigest(selected),
+      matched_fields: ['ballots', 'denominator', 'native_printed_pct'],
+      reason: 'Same reported count, registrations and printed fraction. The statewide source explicitly defines eligible active registrations; no newer snapshot is inferred from missing source clocks. Both original observations remain complete and are not added.',
+    });
+  }
+  const selectedCounty = row => fullCounty(row) && !retainedSources.has(`${row.state_code}|${row.county_id}`);
+  const candidates = records.filter(selectedCounty), observations = [], geometry = {};
   const nativeKeys = new Set(), joinedKeys = new Set();
   for (const row of candidates) {
     if (row.year !== 2026 || !Number.isSafeInteger(row.ballots) || row.ballots < 0
@@ -72,6 +98,7 @@ export function createCountyContextReview(records, inventories, collections, inv
       '2026 and 2024 Census Gazetteer county identities are independently compared. Identity agreement does not establish unchanged election geography or completed counting.',
       'Existing generalized 2024 Census contextual shapes are retained exactly, including documented small simplification overlaps. They are not certified election boundaries or suitable for analytical area measurements.',
       'Native ballots, source-defined Voters Cast and derived mode subtotals retain their distinct labels. Missing rates remain gray; counts do not measure turnout propensity.',
+      ...(sourceSelections.length ? ['The original Monroe county observation is retained unchanged outside the current map. The independently reconciled statewide source is selected once; its count is not added to the earlier source.'] : []),
     ],
     counts: {
       complete_source_records: records.length, contextual_joins: observations.length,
@@ -80,12 +107,16 @@ export function createCountyContextReview(records, inventories, collections, inv
       missing_rates: observations.filter(row => row.reported_pct === null).length,
       excluded_municipalities: records.filter(row => row.geography_level === 'municipality').length,
       excluded_missing_county_totals: records.filter(row => row.ballots === null).length,
+      ...(sourceSelections.length ? { retained_duplicate_source_observations: retainedSources.size } : {}),
     },
     geometry, observations,
-    excluded: records.filter(row => !fullCounty(row)).map(row => ({
+    ...(sourceSelections.length ? { source_selections: sourceSelections } : {}),
+    excluded: records.filter(row => !selectedCounty(row)).map(row => ({
       state_code: row.state_code, county_id: row.county_id, county: row.county,
       geography_level: row.geography_level, source_record_sha256: jsonDigest(row),
-      reason: row.geography_level === 'municipality' ? 'Native municipality, not a county'
+      reason: retainedSources.has(`${row.state_code}|${row.county_id}`)
+        ? 'Retained duplicate source observation; statewide source selected after exact count, denominator and printed-percentage reconciliation. Not added to current county counts.'
+        : row.geography_level === 'municipality' ? 'Native municipality, not a county'
         : row.native_record?.source_scope_review === 'missing_declared_report'
           ? 'Native county counted total missing: no declared ballot-statistics report'
         : row.native_record?.source_scope_review?.startsWith('withheld_')

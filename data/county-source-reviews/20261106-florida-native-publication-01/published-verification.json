@@ -1,0 +1,160 @@
+{
+  "checked_at_utc": "2026-11-06T19:40:16.524013+00:00",
+  "revision": "fee108411207a3c74880bf7da9e514de3fc8b4a2",
+  "tag": "voter-county-florida-native-turnout-20261106-01",
+  "release_id": 436915442,
+  "phase": "published",
+  "immutable": true,
+  "assets": [
+    {
+      "file": "audit.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-florida-native-turnout-20261106-01/audit.json",
+      "bytes": 1426,
+      "sha256": "efc70255504ba8893d05a990ea2b5ce4392b191de54ecd71d005a4daf889d3d8"
+    },
+    {
+      "file": "checksums.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-florida-native-turnout-20261106-01/checksums.json",
+      "bytes": 1561,
+      "sha256": "f0e1d7685067483b4bb304557eb3244bcf4b4c4819ab8212718fcfc40d30b7ef"
+    },
+    {
+      "file": "complete-query.zip",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-florida-native-turnout-20261106-01/complete-query.zip",
+      "bytes": 25999,
+      "sha256": "977ca600f23e4ec6d87a56272e68e55534380c855b0866c6d0cd0b55174ce474"
+    },
+    {
+      "file": "county-participation.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-florida-native-turnout-20261106-01/county-participation.csv",
+      "bytes": 6543,
+      "sha256": "74b8ca2e4af8da9cdb38458479df23a5965ed8b88846f5cb5938b87544660c74"
+    },
+    {
+      "file": "methods.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-florida-native-turnout-20261106-01/methods.json",
+      "bytes": 2501,
+      "sha256": "329721bb441a99f38f423bca30e7b49b94aeda007694063317b000fe3a3cfa55"
+    },
+    {
+      "file": "native-county-catalog.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-florida-native-turnout-20261106-01/native-county-catalog.csv",
+      "bytes": 7366,
+      "sha256": "1bc10e85fe24ac5a500037a54447979f232c99f689888515e30158973c627a45"
+    },
+    {
+      "file": "review-counties.py",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-florida-native-turnout-20261106-01/review-counties.py",
+      "bytes": 9092,
+      "sha256": "b65fd5919f11803f9db8d8def9d85408ad659281c618f93117f0419bcb6eb496"
+    },
+    {
+      "file": "source-native-cells.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-florida-native-turnout-20261106-01/source-native-cells.csv",
+      "bytes": 40354,
+      "sha256": "e80301cc859a8bc8c8e9964f568cabdb6a9cd837cea2044a66eda2e2822e5f16"
+    },
+    {
+      "file": "source-qualification.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-florida-native-turnout-20261106-01/source-qualification.json",
+      "bytes": 118847,
+      "sha256": "a8cd2fbd0b862c14937fc39d1a2c4e2afe15aa7b39ca612d89acfdb972e10685"
+    },
+    {
+      "file": "statewide-participation.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-florida-native-turnout-20261106-01/statewide-participation.csv",
+      "bytes": 504,
+      "sha256": "4b14d7797525750b2425e8784e77ebe8ed7aa7e8bf7b909618bcb3c0ddb36fbf"
+    },
+    {
+      "file": "test_review_counties.py",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-florida-native-turnout-20261106-01/test_review_counties.py",
+      "bytes": 5106,
+      "sha256": "245d6b22bfad97d05e48e94f7d13ff33c4d691e09176f8d20ae5be6be737357e"
+    }
+  ],
+  "analysis_rate_approvals": 0,
+  "map_approvals": 0,
+  "row_counts": {
+    "county-participation.csv": 67,
+    "statewide-participation.csv": 1,
+    "native-county-catalog.csv": 67,
+    "source-native-cells.csv": 680
+  },
+  "no_candidate_vote_or_received_ballot_substitution": true,
+  "literal_unfinished_completion_flags_and_missing_clocks_preserved": true,
+  "original_bodies_remain_private": true,
+  "exact_author_committer_and_annotated_tag_verified": true,
+  "commit_pinned_files": [
+    {
+      "file": "audit.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/fee108411207a3c74880bf7da9e514de3fc8b4a2/data/county-source-reviews/20261106-florida-consolidated-native-01/audit.json",
+      "bytes": 1426,
+      "sha256": "efc70255504ba8893d05a990ea2b5ce4392b191de54ecd71d005a4daf889d3d8"
+    },
+    {
+      "file": "checksums.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/fee108411207a3c74880bf7da9e514de3fc8b4a2/data/county-source-reviews/20261106-florida-consolidated-native-01/checksums.json",
+      "bytes": 1561,
+      "sha256": "f0e1d7685067483b4bb304557eb3244bcf4b4c4819ab8212718fcfc40d30b7ef"
+    },
+    {
+      "file": "complete-query.zip",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/fee108411207a3c74880bf7da9e514de3fc8b4a2/data/county-source-reviews/20261106-florida-consolidated-native-01/complete-query.zip",
+      "bytes": 25999,
+      "sha256": "977ca600f23e4ec6d87a56272e68e55534380c855b0866c6d0cd0b55174ce474"
+    },
+    {
+      "file": "county-participation.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/fee108411207a3c74880bf7da9e514de3fc8b4a2/data/county-source-reviews/20261106-florida-consolidated-native-01/county-participation.csv",
+      "bytes": 6543,
+      "sha256": "74b8ca2e4af8da9cdb38458479df23a5965ed8b88846f5cb5938b87544660c74"
+    },
+    {
+      "file": "methods.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/fee108411207a3c74880bf7da9e514de3fc8b4a2/data/county-source-reviews/20261106-florida-consolidated-native-01/methods.json",
+      "bytes": 2501,
+      "sha256": "329721bb441a99f38f423bca30e7b49b94aeda007694063317b000fe3a3cfa55"
+    },
+    {
+      "file": "native-county-catalog.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/fee108411207a3c74880bf7da9e514de3fc8b4a2/data/county-source-reviews/20261106-florida-consolidated-native-01/native-county-catalog.csv",
+      "bytes": 7366,
+      "sha256": "1bc10e85fe24ac5a500037a54447979f232c99f689888515e30158973c627a45"
+    },
+    {
+      "file": "review-counties.py",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/fee108411207a3c74880bf7da9e514de3fc8b4a2/data/county-source-reviews/20261106-florida-consolidated-native-01/review-counties.py",
+      "bytes": 9092,
+      "sha256": "b65fd5919f11803f9db8d8def9d85408ad659281c618f93117f0419bcb6eb496"
+    },
+    {
+      "file": "source-native-cells.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/fee108411207a3c74880bf7da9e514de3fc8b4a2/data/county-source-reviews/20261106-florida-consolidated-native-01/source-native-cells.csv",
+      "bytes": 40354,
+      "sha256": "e80301cc859a8bc8c8e9964f568cabdb6a9cd837cea2044a66eda2e2822e5f16"
+    },
+    {
+      "file": "source-qualification.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/fee108411207a3c74880bf7da9e514de3fc8b4a2/data/county-source-reviews/20261106-florida-consolidated-native-01/source-qualification.json",
+      "bytes": 118847,
+      "sha256": "a8cd2fbd0b862c14937fc39d1a2c4e2afe15aa7b39ca612d89acfdb972e10685"
+    },
+    {
+      "file": "statewide-participation.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/fee108411207a3c74880bf7da9e514de3fc8b4a2/data/county-source-reviews/20261106-florida-consolidated-native-01/statewide-participation.csv",
+      "bytes": 504,
+      "sha256": "4b14d7797525750b2425e8784e77ebe8ed7aa7e8bf7b909618bcb3c0ddb36fbf"
+    },
+    {
+      "file": "test_review_counties.py",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/fee108411207a3c74880bf7da9e514de3fc8b4a2/data/county-source-reviews/20261106-florida-consolidated-native-01/test_review_counties.py",
+      "bytes": 5106,
+      "sha256": "245d6b22bfad97d05e48e94f7d13ff33c4d691e09176f8d20ae5be6be737357e"
+    }
+  ],
+  "zip_members": 10,
+  "all_11_files_reproduce_exactly": true,
+  "focused_tests": 8,
+  "archive_test_stderr": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.066s\n\nOK\n"
+}

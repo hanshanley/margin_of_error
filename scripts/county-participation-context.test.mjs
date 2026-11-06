@@ -39,6 +39,63 @@ const copy = value => structuredClone(value);
 const match = (rows, candidateReview = review, code = 'AL', collection = collections[code]) =>
   contextualCountyRows(rows, candidateReview, collection, code, review.context_base_url, review.geometry[code].file);
 
+function floridaSelectionFixture() {
+  const directory = new URL('../public/participation-county-context/20261106-23/', import.meta.url);
+  const prior = JSON.parse(readFileSync(new URL('review.json', directory)));
+  const previous = JSON.parse(gunzipSync(readFileSync(new URL('complete-source-records.json.gz', directory))));
+  const qualification = JSON.parse(readFileSync(
+    'data/county-source-reviews/20261106-florida-consolidated-explorer-01/county-usability-review.json'));
+  return {
+    prior, previous, records: [...previous, ...qualification.current_source_records],
+    collections: Object.fromEntries(Object.keys(prior.geometry).map(code =>
+      [code, JSON.parse(readFileSync(new URL(prior.geometry[code].file, directory)))])),
+    investigation: { geometry_checks: JSON.parse(readFileSync(new URL('geometry-verification.json', directory))) },
+  };
+}
+
+test('Florida selects one reconciled Monroe source without losing any complete historical record', async () => {
+  const fixture = floridaSelectionFixture();
+  const original = copy(fixture.records);
+  const next = createCountyContextReview(fixture.records, inventories, fixture.collections, fixture.investigation);
+  assert.deepEqual(fixture.records, original);
+  assert.deepEqual(fixture.records.slice(0, fixture.previous.length), fixture.previous);
+  assert.deepEqual(next.counts, { complete_source_records: 1328, contextual_joins: 833, jurisdictions: 19,
+    reviewed_rates: 446, missing_rates: 387, excluded_municipalities: 286, excluded_missing_county_totals: 208,
+    retained_duplicate_source_observations: 1 });
+  assert.deepEqual(next.geometry, fixture.prior.geometry);
+  assert.deepEqual(next.observations.filter(row => row.state_code !== 'FL'),
+    fixture.prior.observations.filter(row => row.state_code !== 'FL'));
+  assert.deepEqual(next.excluded.filter(row => row.state_code !== 'FL'), fixture.prior.excluded);
+  assert.equal(next.observations.filter(row => row.contextual_geoid === '12087').length, 1);
+  assert.equal(next.observations.filter(row => row.state_code === 'FL').length, 67);
+  assert.equal(next.source_selections.length, 1);
+  assert.equal(next.source_selections[0].retained_source_record_sha256,
+    fixture.prior.observations.find(row => row.state_code === 'FL').source_record_sha256);
+  const retained = next.excluded.find(row => row.county_id === 'additional:FL:12087');
+  assert.match(retained.reason, /Retained duplicate source observation/);
+  assert.equal(retained.source_record_sha256, next.source_selections[0].retained_source_record_sha256);
+  const mapped = await contextualCountyRows(fixture.records.filter(row => row.state_code === 'FL'),
+    next, fixture.collections.FL, 'FL', next.context_base_url, next.geometry.FL.file);
+  assert.equal(mapped.size, 67);
+  assert.equal(mapped.get('12087').county_id, 'reviewed:FL:Monroe');
+  assert.equal(mapped.get('12087').reported_pct, 100 * 32506 / 54704);
+});
+
+test('Florida rejects a changed retained source or an unreconciled statewide Monroe observation', () => {
+  for (const [id, field, value] of [
+    ['additional:FL-2026-MON', 'reported_pct', 59.42],
+    ['florida-consolidated-turnout-20261106-01', 'ballots', 32507],
+    ['florida-consolidated-turnout-20261106-01', 'denominator', 54705],
+    ['florida-consolidated-turnout-20261106-01', 'native_printed_pct', '59.43%'],
+    ['florida-consolidated-turnout-20261106-01', 'reported_pct', null],
+  ]) {
+    const fixture = floridaSelectionFixture();
+    fixture.records.find(row => row.review_id === id && row.county === 'Monroe')[field] = value;
+    assert.throws(() => createCountyContextReview(fixture.records, inventories,
+      fixture.collections, fixture.investigation), /Unreconciled retained Monroe source/);
+  }
+});
+
 test('context22 preserves every prior record, join, exclusion and geometry while adding only two county fractions', async () => {
   const nextRoot = new URL('../public/participation-county-context/20261106-22/', import.meta.url);
   const priorRoot = new URL('../public/participation-county-context/20261106-21/', import.meta.url);

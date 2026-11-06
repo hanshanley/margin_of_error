@@ -1,0 +1,36 @@
+{
+  "ref": {
+    "ref": "refs/tags/voter-county-florida-native-turnout-20261106-01",
+    "node_id": "REF_kwDOTeY7QdoAOXJlZnMvdGFncy92b3Rlci1jb3VudHktZmxvcmlkYS1uYXRpdmUtdHVybm91dC0yMDI2MTEwNi0wMQ",
+    "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/refs/tags/voter-county-florida-native-turnout-20261106-01",
+    "object": {
+      "sha": "576d973d72e861b3aae364058862d03bedfba12f",
+      "type": "tag",
+      "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/tags/576d973d72e861b3aae364058862d03bedfba12f"
+    }
+  },
+  "tag": {
+    "node_id": "TA_kwDOTeY7QdoAKDU3NmQ5NzNkNzJlODYxYjNhYWUzNjQwNTg4NjJkMDNiZWRmYmExMmY",
+    "sha": "576d973d72e861b3aae364058862d03bedfba12f",
+    "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/tags/576d973d72e861b3aae364058862d03bedfba12f",
+    "tagger": {
+      "name": "Hans Hanley",
+      "email": "hwahhanley@gmail.com",
+      "date": "2026-11-06T19:37:42Z"
+    },
+    "object": {
+      "sha": "fee108411207a3c74880bf7da9e514de3fc8b4a2",
+      "type": "commit",
+      "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/commits/fee108411207a3c74880bf7da9e514de3fc8b4a2"
+    },
+    "tag": "voter-county-florida-native-turnout-20261106-01",
+    "message": "Complete reviewed Florida native county turnout numerical query\n",
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  }
+}
