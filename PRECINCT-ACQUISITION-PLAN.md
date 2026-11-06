@@ -609,13 +609,17 @@ overflow. There are now fifteen reviewed PA/D.C. records (fourteen PA),
 337 anchors / 334 unique full URLs, including nine complete Lebanon downloads.
 All 106 existing complete relocations pass byte checks; the prepared Pages
 site is 898,717,918 bytes. The local helper was stopped.
-Exact deployment/live verification remains pending; no new map, demographic
-participation or statewide completion is claimed.
-Published UI revision is `ce68ef28de8aafc754bef87f9af2fe60900168da`;
-exact Pages run `42165015615` and credential checks
-`42165015458` / `42165015098` are being checked by the single bounded
-`lebanon-exact-production-verification-01` process. Preserve its prepared `dist`
-reference until it finishes; do not duplicate the watcher.
+UI revision `ce68ef28de8aafc754bef87f9af2fe60900168da` passed exact Pages run
+`42165015615` and credential checks `42165015458` / `42165015098`.
+At `2026-11-06T04:58:54.943277+00:00`, all 28 selected hosted/live files
+matched, all eighteen complete import JSONs equalled the local reference,
+and all six production browser modes/checks passed. Artifact `13478737456`,
+484,832,751 bytes, passed SHA-256
+`3825e3f17acf3563ee5da98c834602e91621f954edbe0b64e423afc35feb23f7`;
+the hosted preview matches its manifest and all remaining manifest entries
+match locally. The bounded verifier finished and removed its temporary ZIP.
+Lebanon is live verified; no new map, demographic participation or statewide
+completion is claimed. Production proof is persisted review-only.
 
 **Blair primary participation and complete numerical review, November 6:** the
 saved county directory led to the actual government index, which declares its
@@ -656,8 +660,10 @@ policy rather than asserting host locking. Release proof is under
 `20261106-blair-publication-01`.
 The UI loader, full native-current-record regression and focused browser mode
 are prepared. All 26 focused Node tests and Astro checking pass (zero
-errors/warnings, five existing hints). Do not build until Lebanon's exact
-live proof finishes and its actual live baseline is captured. No live Blair UI,
+errors/warnings, five existing hints). Lebanon's exact live proof finished;
+its actual live baseline now captures all fifteen full reviewed records,
+eighteen entire import fingerprints, five historical years and 337 old anchors
+before the Blair rebuild. No live Blair UI,
 county/precinct map, demographic turnout, certification or statewide completion
 is claimed.
 
