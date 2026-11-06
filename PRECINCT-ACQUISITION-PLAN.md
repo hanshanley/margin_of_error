@@ -673,6 +673,11 @@ All 106 complete relocations pass byte checks; the prepared Pages site is
 898,732,602 bytes. The local helper was stopped.
 Exact deployment/live verification remains pending; no new county/precinct map,
 demographic turnout, certification or statewide completion is claimed.
+Published UI revision is `9358986578e7de97dc77cc928436a0700ddb6e38`;
+exact Pages run `42165881247` and credential checks
+`42165881252` / `42165881469` are being checked by the single bounded
+`blair-exact-production-verification-01` process. Preserve its prepared `dist`
+reference until it finishes; do not duplicate the watcher.
 
 **November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated
