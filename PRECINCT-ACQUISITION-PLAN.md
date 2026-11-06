@@ -53,11 +53,27 @@ The **33-file / 32-member** context query passes standalone verification;
 review SHA-256 **`8c666bd06b4346c2823d22ed9a6295262a2a85e347b7937fcad5f7eb16941427`**,
 ZIP **3,026,036 bytes / SHA-256
 `2757f068d1facf74aca5bb9f0765037a4d57efbc6b194a4134901191f7452d35`**.
-Immutable context publication, genuine UI integration and exact production
-verification remain pending. The active pointer/registry/browser checker stay
-on Utah/context23 while its exact deployment verifier runs.
+Immutable context release **436922197**, source
+**`87e11069b0a27d62f71e187cb37cbc36c421fea8`**, passes draft and public verification:
+all four entire assets, all **33 commit-pinned files / 32 ZIP members** and
+byte-identical full offline reproduction. Exact tag/review credential jobs
+**42282334510 / 42282334713** pass. Florida UI integration is under validation
+in an isolated worktree; **117 focused tests** and Astro check
+(**zero errors / zero warnings**) pass. A fresh exact live Utah baseline retains
+all **1,261 complete source records / 396 native rows / 887 download anchors /
+18 entire imports / 484 prior public paths**. The complete build and **394
+whole-file verified relocations** pass; local prepared size is **968,335,502
+bytes**, below the unchanged one-billion-byte limit. All **seven local browser
+scenarios** pass, verifying **67 Florida county selectors / 67 exact fractions**,
+all literal unfinished flags/missing clocks, the reconciled Monroe selection,
+all **833 county counts / 446 fractions / 387 gray missing rates**, and the
+unchanged **887 previous anchors**, now **902 anchors / 897 distinct URLs**.
+Compatibility regeneration checks all **115 entire files** and retains
+all **114 unrelated manifest entries**. Source/history scanning and all six
+scanner regression tests pass. Genuine deployment and exact production
+verification remain pending; this is not yet a Florida LIVE claim.
 
-**November 6: Utah numerical and context queries immutable; UI validated locally, not yet LIVE.**
+**November 6: Utah context23 verified LIVE at 19:51 UTC.**
 The actual official general-election portal's declared report menu supplies
 **26 current complete originals / 25 distinct counties**, without guessing
 download paths. All **19 PDFs / 20 physical pages / seven workbooks** are retained
@@ -132,11 +148,16 @@ Local source/archive/history scanning and all six scanner regression tests pass.
 The bounded static preview has been stopped.
 The genuine UI **`13259a3d9037a7cec67166c9c60cc04dce590b33`** is pushed to
 main and the review branch; its exact Pages run **42280168494** and main/review
-credential jobs **42280168478 / 42280168038** are being verified.
-The last fully verified production proof remains
-**context22 / `55465f323f4f63924fb999241c1f0676372a2ab6`**.
-Next: finish measuring/verifying the exact original hosted
-artifact, all prior public paths and seven production browsers before claiming LIVE.
+credential jobs **42280168478 / 42280168038** all pass.
+The exact original hosted artifact **13536036724** is **508,788,051 bytes**,
+SHA-256 **`7216503649b0c8988c8e7a706983dc651ec4e1ea26aac17579f7b39332f5bda3`**.
+Actual hosted preparation measures **975,004,562 bytes**, below the unchanged
+one-billion-byte limit, with **374 whole-file relocations**. All **484 selected
+entire public bodies**, including every **470 prior path**, match the exact
+hosted artifact. All **seven production browser scenarios** pass with the
+qualified **19 Utah counted snapshots / 18 same-report fractions** and all
+29 source inventories. Full proofs are retained under
+`data/county-source-reviews/20261106-utah-explorer-01/`.
 
 **November 6: Bedford/Northumberland context22 verified LIVE at 18:46UTC.**
 Both complete native numerical packages are immutable and fully verified in

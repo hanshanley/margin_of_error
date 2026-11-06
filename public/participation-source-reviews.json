@@ -1,6 +1,31 @@
 {
   "reviews": [
     {
+      "id": "florida-consolidated-turnout-20261106-01",
+      "label": "Florida 2026: all 67 counties, native participation and complete numerical query",
+      "data_directory": "data/county-source-reviews/20261106-florida-consolidated-native-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/fee108411207a3c74880bf7da9e514de3fc8b4a2/data/county-source-reviews/20261106-florida-consolidated-native-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-florida-native-turnout-20261106-01/complete-query.zip",
+      "complete_download_bytes": 25999,
+      "complete_download_sha256": "977ca600f23e4ec6d87a56272e68e55534380c855b0866c6d0cd0b55174ce474",
+      "checksums_file": "checksums.json",
+      "review_status": "complete_numerical_query_reviewed_unofficial",
+      "maps_approved": false,
+      "scope_note": "All 67 counties and the statewide row from the official consolidated Voter Turnout table; 8,335,497 reported participants / 13,704,495 Eligible Active Registered Voters. Same-table registered-voter fractions, not candidate selections, receipts, CVAP/VAP/VEP or demographic turnout. Preserve every one of the 680 native cells and all 68 printed percentages; native provisional completion N60 and ten-day overseas completion N64 are unfinished-counting flags. No source-update clock or timezone is declared; HTTP/fetch/navigation clocks are not replacements. Original Monroe 32,506/54,704 remains unchanged in complete historical records; the reconciled consolidated observation is selected once, not added as another county or treated as newer. All eleven immutable numerical files and ten ZIP members reproduce exactly. Source county codes are not FIPS, native approval flags stay false, and independently reviewed contextual geography does not certify 2026 reporting boundaries. Original templates stay private.",
+      "tables": [
+        {"file": "county-participation.csv", "label": "Florida: all 67 county participants, active registrations and literal completion flags (CSV)"},
+        {"file": "statewide-participation.csv", "label": "Florida: complete native statewide row, not additional county participants (CSV)"},
+        {"file": "source-native-cells.csv", "label": "Florida: every native county and statewide table cell (CSV)"},
+        {"file": "native-county-catalog.csv", "label": "Florida: all 67 native county codes and names, not FIPS (CSV)"},
+        {"file": "source-qualification.json", "label": "Florida: complete independent numerical extractions, receipts and qualifications (JSON)"},
+        {"file": "audit.json", "label": "Florida: complete sums, printed-percentage and completion-flag audit (JSON)"},
+        {"file": "methods.json", "label": "Florida: numerical scope, missingness and standalone reproduction methods (JSON)"},
+        {"file": "checksums.json", "label": "Florida: complete numerical-query byte inventory (JSON)"},
+        {"file": "review-counties.py", "label": "Florida: standard-library offline query reproducer (Python)"},
+        {"file": "test_review_counties.py", "label": "Florida: eight portable numerical and archive tests (Python)"}
+      ]
+    },
+    {
       "id": "utah-ballot-statistics-20261106-01",
       "label": "Utah 2026: consolidated county counted-ballot statistics and complete numerical query",
       "data_directory": "data/county-source-reviews/20261106-utah-native-scope-01",

@@ -13,8 +13,9 @@ import { loadReviewedCountyParticipation as loadCompleteReviewedCountyParticipat
 
 const reviews = JSON.parse(readFileSync('public/participation-source-reviews.json', 'utf8')).reviews;
 const utahId = 'utah-ballot-statistics-20261106-01';
+const floridaId = 'florida-consolidated-turnout-20261106-01';
 const loadCurrentReviewedCountyParticipation = sourceReviews =>
-  loadCompleteReviewedCountyParticipation(sourceReviews).filter(row => row.review_id !== utahId);
+  loadCompleteReviewedCountyParticipation(sourceReviews).filter(row => ![utahId, floridaId].includes(row.review_id));
 const newCountyIds = ['pennsylvania-bedford-20261106-01', 'pennsylvania-northumberland-20261106-01'];
 const loadAllReviewedCountyParticipation = sourceReviews =>
   loadCurrentReviewedCountyParticipation(sourceReviews).filter(row => !newCountyIds.includes(row.review_id));
@@ -39,6 +40,13 @@ const floridaReview = {
 
 test('Florida reproduces the complete qualified source while preserving unfinished flags and missing clocks', () => {
   const rows = loadReviewedFloridaParticipation([floridaReview]);
+  assert.deepEqual(loadCompleteReviewedCountyParticipation(reviews).filter(row => row.review_id === floridaId), rows);
+  const registered = reviews.find(row => row.id === floridaId);
+  const publication = JSON.parse(readFileSync(
+    'data/county-source-reviews/20261106-florida-native-publication-01/published-verification.json'));
+  assert.equal(publication.immutable, true);
+  assert.deepEqual([...registered.tables.map(row => row.file), 'complete-query.zip'].sort(),
+    publication.assets.map(row => row.file).sort());
   const qualification = JSON.parse(readFileSync(
     'data/county-source-reviews/20261106-florida-consolidated-explorer-01/county-usability-review.json'));
   assert.deepEqual(rows, qualification.current_source_records);
@@ -83,7 +91,7 @@ test('Florida rejects altered or missing complete numerical inputs and duplicate
 });
 
 test('Utah preserves every prior native record and keeps missing county totals distinct from zero', () => {
-  const rows = loadCompleteReviewedCountyParticipation(reviews);
+  const rows = loadCompleteReviewedCountyParticipation(reviews).filter(row => row.review_id !== floridaId);
   const previous = JSON.parse(gunzipSync(readFileSync(
     'public/participation-county-context/20261106-22/complete-source-records.json.gz')));
   const priorNative = previous.filter(row => rows.some(current =>
