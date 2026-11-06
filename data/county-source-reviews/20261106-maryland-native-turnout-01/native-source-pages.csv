@@ -1,0 +1,4 @@
+url,final_url,status,bytes,sha256,content_type,acquired_at_utc
+https://elections.maryland.gov/press_room/index.html,https://elections.maryland.gov/press_room/index.html,200,123317,e1b31348e5c38874174fb96c9fffc3a114f726d51f9cd2de16ba96e1a3abb98c,text/html,2026-11-06T15:29:03.411272+00:00
+https://elections.maryland.gov/press_room/2026_stats/GG26/2026-general_election_night_unofficial_turnout.pdf,https://elections.maryland.gov/press_room/2026_stats/GG26/2026-general_election_night_unofficial_turnout.pdf,200,45412,1c46b17faca6e18ef5dd3dd7769d25dd960892e570c26cca6dce48784ffccbe7,application/pdf,2026-11-06T15:29:03.512829+00:00
+https://elections.maryland.gov/press_room/Navigating_Official_Turnout_Statistics.pdf,https://elections.maryland.gov/press_room/Navigating_Official_Turnout_Statistics.pdf,200,182255,9c161fa5b01eae28289b224557a0c497e9764fa68cfd0c7dca86299c77551ee6,application/pdf,2026-11-06T15:29:03.725347+00:00

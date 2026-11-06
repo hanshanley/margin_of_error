@@ -1,0 +1,31 @@
+Maryland 2026 native unofficial turnout query
+
+All 24 county equivalents and the separate statewide total come from the single
+complete report actually linked by the Maryland State Board of Elections press
+room. Two independently extracted complete numerical pages must agree on every
+field. County sums and all 25 native rounded percentages are checked exactly.
+The source update is a native literal with no supplied timezone.
+
+Cards Cast and Eligible Voters remain the source's literal measures. This query
+does not establish that cards are unique people or interchangeable with ballots,
+or that Eligible Voters is CVAP, VAP, VEP, CPS or a matched registration snapshot.
+The title names MIB 1, Early Voting and Election Day. Separate mode counts,
+provisionals, candidate votes and unique-voter counts are absent, not zero.
+Complete reporting-unit counters do not establish completed counting or
+certification. No FIPS, contextual join, geometry or demographic rate is invented.
+Generic ballot counts, analysis turnout rates and map approval remain withheld.
+
+The separately acquired official-statistics guide is context only: its declaring
+index explicitly limits its applicability to Official Turnout Statistics, not
+this unofficial report. Its definitions are not silently imposed here.
+Different source hosts and cached search extracts can represent other snapshots.
+No values, clocks or totals from those snapshots are spliced into this query.
+This is the acquired snapshot, not an assertion of the globally latest report.
+
+Reproduce without third-party packages or network access:
+python3 -I review-maryland.py --output /a/new/directory
+Run the focused portable tests:
+python3 -I test_review_maryland.py
+The output directory must not already exist. The deterministic archive contains
+all other complete query files, and checksums cover every file except themselves
+and the archive. Original source URLs, sizes and SHA-256s are in native-source-pages.csv.

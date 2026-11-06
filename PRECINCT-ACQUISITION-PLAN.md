@@ -53,6 +53,41 @@ map approval or metadata-only download was created. Do not retry these same
 unchanged endpoints. Continue different source-declared county/Maine alternatives;
 leave the verified context18 UI and Maine/D.C. residuals unchanged.
 
+**November 6, 15:29 UTC: consolidated Maryland native turnout query acquired and reproduced.**
+The actual State Board of Elections press-room declaration links a single
+November general-election report containing **all 24 county equivalents and a
+separate statewide total**. All three complete originals (declaring page,
+numerical PDF and separately scoped official-statistics guide) were acquired
+with verified TLS, HTTP 200, complete byte counts and SHA-256 receipts.
+Two independent complete numerical extractions agree on every field:
+**1,944,170 Cards Cast / 4,293,322 Eligible Voters / printed 45.28%**.
+All county sums, all 25 printed percentages and **1,979/1,979 reporting units**
+reconcile. The native source clock is **11/5/2026 7:36 pm**, without a supplied
+timezone; this is the acquired snapshot, not a globally latest-report claim.
+Different cached/search/host snapshots are not spliced into it.
+
+The complete native query in `20261106-maryland-native-turnout-01` contains
+**10 files / nine ZIP members**, including every actual numerical county row,
+the separate statewide row, both entire extracted numerical pages, provenance,
+standard-library parser/tests and offline reproduction. **Eight isolated tests
+and eight extracted-archive tests pass; all ten files reproduce byte-identically.**
+ZIP **11,538 bytes**, SHA-256
+`7d72eb23cfd56f5b4918ffa9a93791de9fcd20c2790c7165cb70cb2467edb895`.
+The original numerical PDF is **45,412 bytes**, SHA-256
+`1c46b17faca6e18ef5dd3dd7769d25dd960892e570c26cca6dce48784ffccbe7`.
+
+Preserve the literal **Unofficial MIB 1, Early Voting and Election Day Turnout**
+scope, Cards Cast numerator and Eligible Voters denominator. This report does
+not itself establish interchangeable unique people/ballots, a CVAP/VAP/VEP/CPS
+or matched-registration denominator, separate modes, provisionals, candidate
+votes, source FIPS, certification or completed counting. The separately declared
+guide explicitly applies only to official statistics, not this unofficial report.
+**Zero generic-ballot approvals / zero analysis-rate approvals / zero map
+approvals** remain in force. This native numerical package is not a new mapped
+participation layer or a deployed Maryland integration. Seek applicable primary
+definitions or a separately declared ballot/registration report before promotion.
+Do not rerun the completed acquisition or offline package builds unchanged.
+
 **November 6: Somerset facts and context19 server-locked; explorer locally verified.**
 The official November 3 declaring page and its three complete PDFs were acquired
 with verified TLS. Two independent extractors agree on **all 73 numerical pages**:

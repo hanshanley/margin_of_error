@@ -1,0 +1,17 @@
+{
+  "county_equivalents": 24,
+  "statewide_rows": 1,
+  "independent_complete_extractions": 2,
+  "all_county_fields_match": true,
+  "county_totals_match_statewide": true,
+  "native_percentages_checked": 25,
+  "reporting_units": 1979,
+  "total_reporting_units": 1979,
+  "native_clock": "11/5/2026 7:36 pm",
+  "declared_timezone": "",
+  "analysis_ballot_approvals": 0,
+  "analysis_rate_approvals": 0,
+  "map_approvals": 0,
+  "missing_modes_remain_missing": true,
+  "official_guidance_not_imposed": true
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "file": "METHODS.txt",
+    "bytes": 1962,
+    "sha256": "5686f3299019faa7eec4ca4aedbb6beea76449c6b8f77e0004db2ac4e4ce1b09"
+  },
+  {
+    "file": "audit.json",
+    "bytes": 502,
+    "sha256": "36811bc772271129e0550f73af5c163970e3acd4492097820a31d2a12dae0dde"
+  },
+  {
+    "file": "county-native-participation.csv",
+    "bytes": 7374,
+    "sha256": "5dfdbc03407aa3d6d5685af7ebd227aecc2df99ecf8f2df7d0de6f0e212d8898"
+  },
+  {
+    "file": "native-facts.json",
+    "bytes": 5734,
+    "sha256": "1e2b66c1e4eb7c87689e2c4e3b6c7aba8b00286df3e737847400699d285a2384"
+  },
+  {
+    "file": "native-source-pages.csv",
+    "bytes": 925,
+    "sha256": "d87cb218e32515dcd1996e865042d5162317d31bf40b5b1c1800b81ded5ff24e"
+  },
+  {
+    "file": "review-maryland.py",
+    "bytes": 10319,
+    "sha256": "cd37639ac8333dbec9c49f1bb694c22545b47ec72fc57054c0d509367e4f96e5"
+  },
+  {
+    "file": "statewide-native-participation.csv",
+    "bytes": 743,
+    "sha256": "b34a7c3ebc6d9b6de2c031d38e96526c919c127aa0b049db1d6bd49815dc0d3a"
+  },
+  {
+    "file": "test_review_maryland.py",
+    "bytes": 4037,
+    "sha256": "9306663df2460fb67b8a7130a60e8434e480352187c2377e5488f9d6852f34d5"
+  }
+]
