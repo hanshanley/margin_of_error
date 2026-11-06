@@ -177,6 +177,65 @@ primary county participation acquisition and the genuine Maine/D.C. scope gaps.
 Do not repeat this completed map suite for subsequent download-only batches. See
 `data/county-source-reviews/20261105-provider-overlap-review-01/`.
 
+**November 6: Philadelphia native review is verified privately, not published.**
+The complete county CSV was obtained with the site's declared ordinary export
+form. All 23,906 observations reconcile with 80 native candidate/ballot-option
+lines across **35**, not 34, contests. State-House HTML is paginated: preserve
+the fresh form and the declared Next Page response containing the last six
+districts; the first page alone is incomplete. All 1,703 separate division
+participation rows reconcile to 497,111 ballots and 1,104,061 registrations.
+Polling-place ballots are 390,506, mail 106,605 and provisional an explicit zero.
+The native printed registered-voter rate is 45.03%, not eligible-population or
+demographic turnout. House candidate votes are separate: 476,317 total,
+DEM 418,545, REP 39,055, IND 17,361 and NON write-in 1,356. The 20,794-ballot
+House residual stays unclassified. Preserve the 33 district-labelled zero rows;
+they are not three additional divisions or inferred provisional votes.
+Mahoney's visible candidate-name suffix is TIP, while both the CSV party code
+and HTML party CSS class are IND; the visible HTML party label is Independent.
+Retain all these native literals rather than silently recoding one representation.
+Both native browser modes establish that the Testing in Progress template is
+actually hidden (`display:none`), not an active warning. This does not approve
+the separately guarded provider test snapshots or authorize any map override.
+
+The official commissioners' result wrapper declares the acquired Azure-hosted
+app; its separate government-domain mirror has matching captured participation.
+Native update November 5 at 5:21:56 PM EST remains separate from the CSV's
+7:15:35/7:15:36 PM export-generation literals. Nine synthetic-fixture tests pass
+without committing the city's HTML as test fixtures. All eight complete private
+tables, 16 source responses, receipts, audit and portable reviewer form a
+28-member private ZIP; all checksums and byte-identical packaged offline replay
+pass. See `scripts/review-philadelphia-county-results.py`,
+`scripts/test-philadelphia-county-results.py` and
+`data/county-source-reviews/20261106-philadelphia-private-review-01/`.
+
+**Keep this Philadelphia source package private.** The city-linked website
+terms contain restrictive republication language; the separate catalog-declared
+data-license FAQ reserves rights and does not establish a grant to mirror the
+original HTML. Do not equate public access with an HTML redistribution license,
+claim CC0, publish the private ZIP, or add a metadata-only download to the UI.
+The declared OpenDataPhilly Election Results API is a genuine consolidated
+alternative, but its captured complete distinct election-date query has 31
+elections from 2013 through 2024 and no 2026 records. Its 2013-present label
+does not establish 2026 availability. Preserve that probe and exact terms
+evidence privately; direct terms acquisition returned HTTP403 and was not
+bypassed. Resolve source-specific redistribution or develop an explicitly
+qualified complete facts-only package without mirroring restricted webpage
+templates before any public release. The existing 274 download URLs and all
+map vectors remain unchanged.
+
+**Centre: ordinary-browser primary acquisition is now possible.** Earlier
+direct requests to the county index and both declared PDFs returned HTTP404
+with empty bodies; retain those failed receipts. A normal browser navigation
+on November 6 returned HTTP200 and the correct official 2026 General Election
+Unofficial Results title, without a challenge or bypass. Next save that actual
+response body and acquire its declared reports using the ordinary browser,
+then compare them with the complete acquired ArcGIS layer. Its 261 rows cover
+87 native precincts across InPerson/Mail/Provisional. Native provisional
+`BALLOTS_CAST_BLANK` sums to 240 despite zero provisional `BALLOTS_CAST_TOTAL`:
+preserve and flag the contradiction rather than treating it as valid accounting.
+Do not infer state-House scope membership from out-of-scope zero columns.
+No Centre release, map, final counting or new coverage claim is approved yet.
+
 **Earlier current-source cleanup (historical record).** On November 5,
 GitHub reported Google API keys copied from public county linking HTML. The
 affected current Bucks, Chester and Franklin pages are now explicitly sanitized,

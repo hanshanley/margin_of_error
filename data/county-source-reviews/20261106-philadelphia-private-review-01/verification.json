@@ -1,0 +1,136 @@
+{
+  "status": "private_native_review_verified_redistribution_unestablished",
+  "public_data_release": false,
+  "public_download_urls_added": 0,
+  "maps_changed": false,
+  "existing_complete_download_url_count": 274,
+  "source_review": {
+    "year": 2026,
+    "state_code": "PA",
+    "county_fips": "42101",
+    "county": "Philadelphia",
+    "county_participation": {
+      "ballots_cast": 497111,
+      "registered_voters": 1104061,
+      "election_day_ballots": 390506,
+      "mail_ballots": 106605,
+      "provisional_ballots": 0,
+      "printed_registered_voter_rate": "45.03%",
+      "reported_divisions": 1703,
+      "total_divisions": 1703,
+      "year": 2026,
+      "state_code": "PA",
+      "county_fips": "42101",
+      "county": "Philadelphia",
+      "source_update_literal": "11/5/2026 5:21:56 PM",
+      "source_update_timezone_literal": "EST on native county participation page",
+      "status": "Unofficial",
+      "fully_complete": false,
+      "map_approved": false,
+      "house_candidate_votes": 476317,
+      "house_ballot_residual_unclassified": 20794
+    },
+    "contests": 35,
+    "native_export_rows": 23906,
+    "native_participation_divisions": 1703,
+    "county_option_rows": 80,
+    "native_explicit_option_zeroes": 3223,
+    "special_zero_rows": 33,
+    "export_generation_timestamps": [
+      "11/5/2026 7:15:35 PM",
+      "11/5/2026 7:15:36 PM"
+    ],
+    "party_code_difference_rows": 1,
+    "hidden_template_test_banner": true,
+    "new_maps_approved": false,
+    "publication_approved": false,
+    "source_rights_status": "Private working review; permission to republish original city HTML is not established.",
+    "candidate_votes_are_not_ballots_or_turnout": true,
+    "limitations": [
+      "Unofficial counts; all divisions reporting does not establish final counting or certification.",
+      "Native source updates and export-generation timestamps are separate, not a single source timestamp.",
+      "The hidden Testing in Progress template is not a displayed test-status observation.",
+      "Literal HTML and CSV party codes are retained separately; neither is silently recoded.",
+      "Ballot-question options are not party votes and never enter candidate-party totals.",
+      "Special district-labelled zero rows are not extra divisions or inferred provisional votes.",
+      "The House ballot residual is unclassified, not inferred undervotes or overvotes.",
+      "Ballots/native registrations is registered-voter participation, not eligible-population or demographic turnout.",
+      "Missing candidates remain absent, not manufactured zero-party rows. No new geometry is approved.",
+      "These independently reviewed county originals do not approve the separately guarded provider test snapshots.",
+      "The original city webpages remain private pending source-specific redistribution review; this is not a public release."
+    ]
+  },
+  "private_reproduction": {
+    "publication_approved": false,
+    "private_source_only": true,
+    "tests_passed": 9,
+    "archive_bytes": 974965,
+    "archive_sha256": "0b9fcc4591ae318a3a41490bb77e7fb5256da0fe61bce2413524e58ad80f3e51",
+    "archive_unique_members": 28,
+    "all_checksums_verified": true,
+    "packaged_offline_reproduction_byte_identical": true,
+    "house_literal_party_votes": {
+      "IND": 17361,
+      "DEM": 418545,
+      "REP": 39055,
+      "NON": 1356
+    },
+    "table_row_counts": {
+      "county-contest-party-totals.csv": 76,
+      "county-participation.csv": 1,
+      "county-contest-option-results.csv": 80,
+      "county-contest-totals.csv": 35,
+      "native-division-participation.csv": 1703,
+      "county-ballot-methods.csv": 3,
+      "native-party-label-comparison.csv": 80,
+      "native-unit-option-counts.csv": 23906
+    }
+  },
+  "native_browser_visibility_verification": {
+    "checked_at_utc": "2026-11-06T00:25:53.966197+00:00",
+    "checks": [
+      {
+        "javascript": true,
+        "url": "https://vote-results.phila.gov/",
+        "http_status": 200,
+        "test_banner_count": 1,
+        "test_banner_visible": false,
+        "test_banner_display": "none",
+        "participation_header": "Total Ballots Cast\n497,111\n\nRegistered Voters\n1,104,061"
+      },
+      {
+        "javascript": false,
+        "url": "https://vote-results.phila.gov/",
+        "http_status": 200,
+        "test_banner_count": 1,
+        "test_banner_visible": false,
+        "test_banner_display": "none",
+        "participation_header": "Total Ballots Cast\n497,111\n\nRegistered Voters\n1,104,061"
+      }
+    ],
+    "metadata_license": {
+      "url": "https://metadata.phila.gov/#help/help-faqs/what-are-the-terms-of-use/",
+      "http_status": 200,
+      "text_length": 1479
+    }
+  },
+  "open_data_alternative": {
+    "catalog_url": "https://opendataphilly.org/datasets/election-results/",
+    "queried_distinct_elections": 31,
+    "earliest_election_date": "2013-05-21",
+    "latest_election_date": "2024-11-05",
+    "contains_2026": false,
+    "not_a_current_2026_substitute": true
+  },
+  "source_html_and_complete_data_retained_privately": true,
+  "credential_alerts": {
+    "numbers": [
+      1,
+      2
+    ],
+    "state": "open",
+    "validity": "unknown",
+    "revocation_confirmed": false,
+    "external_cached_object_cleanup_confirmed": false
+  }
+}
