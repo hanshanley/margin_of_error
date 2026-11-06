@@ -57,7 +57,10 @@ partial-year observations retain their actual periods; older series are not
 extended artificially. Definitions, source restrictions and full tables remain
 available, including without JavaScript. The website recolours
 previews, while links marked `data-original-chart` retain the original Substack
-and Margin of Error download backgrounds. Adding an analysis tool does not
+and Margin of Error download backgrounds. Generated `.website.png` copies use
+PNG deflate compression level 9 without quantization, resizing or changes to
+decoded pixels; original image files and download URLs remain unchanged.
+Adding an analysis tool does not
 create an article or require a personal-site writing-index entry.
 Prepend new Interactive analysis entries; only the first preview loads eagerly.
 

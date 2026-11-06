@@ -1,0 +1,9 @@
+{
+  "id": 42243044220,
+  "head_sha": "32b1f8e6f0e55b1fca0d429e10ec88cd29303dc6",
+  "run_attempt": 1,
+  "status": "completed",
+  "conclusion": "failure",
+  "html_url": "https://github.com/hanshanley/margin_of_error/actions/runs/42243044220",
+  "reviewed_failure": "Build succeeded. Pages deployment timed out after 600000 ms during syncing_files. Only the failed deployment job was retried; the original successful build and its artifact are reused."
+}

@@ -1,0 +1,59 @@
+{
+  "scope": "Build-only lossless chart compression to recover the pending Somerset/context19 deployment. No participation parser, source, numerical download, native approval, map, routing, public path or dependency changes.",
+  "targeted_tests": {
+    "command": "node --test scripts/build-website-charts.test.mjs scripts/voter-participation.test.mjs scripts/county-participation-context.test.mjs",
+    "passed": 45,
+    "failed": 0
+  },
+  "astro_check": {
+    "command": "npm run check",
+    "exit_code": 0,
+    "errors": 0,
+    "warnings": 0,
+    "existing_hints": 5
+  },
+  "build": {
+    "command": "npm run build",
+    "exit_code": 0,
+    "generated_website_chart_count": 565,
+    "embedded_caucus_tests_passed": 4
+  },
+  "complete_chart_comparison": {
+    "proof": "chart-pixels.json",
+    "every_decoded_rgba_pixel_and_dimension_unchanged": true,
+    "every_entire_original_image_file_unchanged": true,
+    "before_generated_chart_bytes": 153355837,
+    "after_generated_chart_bytes": 123651915,
+    "saved_bytes": 29703922
+  },
+  "pages_preparation": {
+    "command": "node scripts/prepare-participation-pages.mjs",
+    "exit_code": 0,
+    "entire_relocated_downloads_byte_verified": 297,
+    "local_prepared_bytes": 954904026,
+    "local_prepared_headroom_below_decimal_1gb": 45095974,
+    "no_prior_public_paths_removed": true,
+    "hosted_size_and_exact_artifact_still_require_independent_production_verification": true
+  },
+  "local_browser": {
+    "proof": "local-browser.json",
+    "exit_code": 0,
+    "scenarios": 7,
+    "county_count_matches": 743,
+    "usable_registered_voter_fractions": 356,
+    "missing_rates_preserved": 387,
+    "source_records": 1227,
+    "download_anchors": 781,
+    "distinct_download_urls": 777
+  },
+  "unrelated_existing_full_validator_failure": {
+    "command": "node scripts/validate-build.mjs",
+    "exit_code": 1,
+    "location": "scripts/validate-build.mjs:1126",
+    "assertion": "Staged UK topic-card count is 23, while the validator expects 16.",
+    "cause_is_outside_compression_change": "UK HTML is staged from the existing project export and is not changed by PNG compression. The single implementation change only sets PNG deflate compressionLevel to 9.",
+    "left_unchanged": true,
+    "full_validator_not_claimed_passing": true
+  },
+  "production_status": "Pending a new exact deployment. Original run42243044220 attempts1 and2 failed; neither is LIVE. The last independently verified production revision remains c49c32d96a9347accfdd9126fd758a6a091d3108."
+}

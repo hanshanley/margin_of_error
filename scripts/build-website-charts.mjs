@@ -26,7 +26,7 @@ export async function recolorChart(input, background, paper) {
 		changedPixels += 1;
 	}
 	return {
-		image: await sharp(data, { raw: { width: info.width, height: info.height, channels: 4 } }).png().toBuffer(),
+		image: await sharp(data, { raw: { width: info.width, height: info.height, channels: 4 } }).png({ compressionLevel: 9 }).toBuffer(),
 		changedPixels,
 	};
 }

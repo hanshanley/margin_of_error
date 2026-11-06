@@ -2,6 +2,30 @@
 
 ## Current verified production and next acquisition
 
+**November 6, 15:53 UTC: Somerset/context19 deployment failed; lossless payload recovery in progress.**
+Both deployment attempts of exact Pages run **42243044220**, UI revision
+**`32b1f8e6f0e55b1fca0d429e10ec88cd29303dc6`**, timed out during
+`syncing_files` at the enforced **600000 ms** limit. Attempt 2 reused the
+original successful build and artifact **13517032988**; neither attempt is
+LIVE. The actual original hosted preparation was **994,746,367 bytes**.
+Do not repeat either stopped verifier or another unchanged deployment retry.
+The current bounded recovery increases only the lossless PNG compression of
+generated website-chart copies. Verify all **565 entire decoded RGBA arrays**,
+dimensions and original image bytes, then prepare and verify a new exact build.
+No historical public geometry, original figure, source record, query download or
+URL is removed, and the ten-minute deployment limit is not increased.
+The previously verified context18 revision below remains the last good baseline
+until the replacement artifact, public files and production browser checks pass.
+The recovery's **45 focused tests**, **Astro check (zero errors/warnings)**,
+full build, **seven local browser scenarios** and **297 entire relocated
+download verifications** pass. Every generated chart's full decoded RGBA array,
+dimensions and original image bytes match; **29,703,922 bytes** are saved.
+The prepared local site is **954,904,026 bytes**, not a claim about hosted size.
+Audits are in `20261106-pages-lossless-recovery-01`. The broad build validator
+separately stops at its unchanged UK topic-card assertion (**23 vs 16**,
+`scripts/validate-build.mjs:1126`); that unrelated assertion is not changed or
+reported as passing.
+
 **November 6, 14:59 UTC: Indiana, Lackawanna, Schuylkill and context18 LIVE verified.**
 Exact UI **`c49c32d96a9347accfdd9126fd758a6a091d3108`**, Pages
 **42237338660 attempt 1**, passes its original hosted artifact
@@ -37,6 +61,35 @@ are not ballots for the whole county. Retain the Maine/D.C. accounting gaps and 
 separately frozen Michigan QVF scope, which approves no generic rates or tabulator
 totals. Nationwide coverage and external Google-owner/GitHub-Support remediation
 remain incomplete. Keep recurring schedule #5 active.
+
+**November 6, next acquired county: Susquehanna complete originals, numerical review pending.**
+The actual official election-results page declares three distinct November
+general-election reports. The full declaring page and all three PDFs have
+been acquired with verified TLS, HTTP 200, complete byte/hash/header receipts:
+**one county-summary page / 41 precinct pages / 16 canvass pages**.
+Both entire PDF extractions and all originals are retained privately in
+`susquehanna-native-acquisition-01`; the reproducible acquisition helper is
+`acquire-susquehanna-01.py`. Full receipt and declaration JSONs remain in that
+private acquisition directory. Do not repeat this completed acquisition.
+
+The summary natively prints **15,317 Total Ballots / 27,504 Registered Voters /
+55.69%**, **41/41 reporting**, **UNOFFICIAL RESULTS**, native title
+**Unofficial Election Day Results**, and clock **11/3/2026 10:25:47 PM EST**.
+The canvass independently prints **11/3/2026 10:26:02 PM EST** and explicitly
+separates **Normal** and **Absentee / Mail-In** candidate-vote rows. Preserve
+the title and mode evidence rather than assuming the title excludes mail.
+The parent's separate **3,000 mail ballots issued / 2,708 received** are
+mail-process counts, not tabulated county ballots or an amount to add to totals.
+
+**Next after Somerset deployment recovery and production verification:** review every numerical
+page and reconcile all 41 precincts, four contests, literal choices, mode vectors,
+reporting, percentages, clocks and unclassified residuals. The summary is
+two-column; both general full-page text engines interleave its first and fourth
+contests. Use independent geometrically clipped/cropped columns with complete
+page token inventories, not guessed line joins or selected web excerpts.
+No portable numerical query, immutable release, analysis/rate/map approval or
+UI integration exists for Susquehanna yet. This acquisition audit is not a
+numerical download and does not change any live coverage count.
 
 **November 6, 15:00 UTC: distinct Venango alternatives reviewed; no invented county total.**
 Both complete official elections-navigation and results-archive responses were
