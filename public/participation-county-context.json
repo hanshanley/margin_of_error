@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "base_url": "/participation-county-context/20261106-01/",
+  "review_bytes": 747914,
+  "review_sha256": "bc5cd74ffd233160386ad4766064e3f2068b9d095c5955e1a34a954699bcce19",
+  "complete_download_bytes": 2209950,
+  "complete_download_sha256": "4c8a94ccbcfd60837bbc92f70a0183311af2b1eec3aad317031e7a8e456f09cc",
+  "downloads": [
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-01/county-participation-joins.csv",
+      "label": "Complete audited county participation joins: all 430 observations (CSV)"
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-01/review.json",
+      "label": "Complete county identity review, exclusions and geometry qualifications (JSON)"
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-01/complete-source-records.json.gz",
+      "label": "Every unchanged county, municipal and reporting-unit container: all 902 records (JSON · gzip)"
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-01/complete-county-participation-context-01.zip",
+      "label": "Complete county participation context query, inventories, geometries and offline reproduction code (ZIP)"
+    }
+  ]
+}
