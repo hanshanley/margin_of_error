@@ -86,6 +86,10 @@ export function createCountyContextReview(records, inventories, collections, inv
       state_code: row.state_code, county_id: row.county_id, county: row.county,
       geography_level: row.geography_level, source_record_sha256: jsonDigest(row),
       reason: row.geography_level === 'municipality' ? 'Native municipality, not a county'
+        : row.native_record?.source_scope_review === 'missing_declared_report'
+          ? 'Native county counted total missing: no declared ballot-statistics report'
+        : row.native_record?.source_scope_review?.startsWith('withheld_')
+          ? 'Native county counted-total scope withheld; operational statistics are not relabeled participation'
         : row.geography_level === 'county' && row.native_record?.all_statistics_reported === 'false'
           ? 'Native whole-county participation total missing: native statistics are incomplete'
         : 'Native reporting-unit container; county total not supplied',

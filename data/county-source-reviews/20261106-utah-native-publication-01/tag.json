@@ -1,0 +1,36 @@
+{
+  "ref": {
+    "ref": "refs/tags/voter-county-utah-native-statistics-20261106-01",
+    "node_id": "REF_kwDOTeY7QdoAOXJlZnMvdGFncy92b3Rlci1jb3VudHktdXRhaC1uYXRpdmUtc3RhdGlzdGljcy0yMDI2MTEwNi0wMQ",
+    "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/refs/tags/voter-county-utah-native-statistics-20261106-01",
+    "object": {
+      "sha": "a2981e7074298eff68325f3c7109a191522f441d",
+      "type": "tag",
+      "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/tags/a2981e7074298eff68325f3c7109a191522f441d"
+    }
+  },
+  "tag": {
+    "node_id": "TA_kwDOTeY7QdoAKGEyOTgxZTcwNzQyOThlZmY2ODMyNWYzYzcxMDlhMTkxNTIyZjQ0MWQ",
+    "sha": "a2981e7074298eff68325f3c7109a191522f441d",
+    "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/tags/a2981e7074298eff68325f3c7109a191522f441d",
+    "tagger": {
+      "name": "Hans Hanley",
+      "email": "hwahhanley@gmail.com",
+      "date": "2026-11-06T19:08:32Z"
+    },
+    "object": {
+      "sha": "8b95ad4acc0f8967e82c04ffb543c6225801dd20",
+      "type": "commit",
+      "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/commits/8b95ad4acc0f8967e82c04ffb543c6225801dd20"
+    },
+    "tag": "voter-county-utah-native-statistics-20261106-01",
+    "message": "Complete reviewed Utah ballot-statistics numerical query; no map or generic turnout approval\n",
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  }
+}

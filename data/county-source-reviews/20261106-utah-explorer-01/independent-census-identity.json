@@ -1,0 +1,1048 @@
+{
+  "verified_at_utc": "2026-11-06T19:10:55.263191+00:00",
+  "both_entire_3222_record_original_archives_equal_parsed_inventories": true,
+  "independently_checked_census_identities": [
+    {
+      "year": 2024,
+      "entire_inventory_records": 3222,
+      "receipts": [
+        {
+          "path": "public/participation-county-context/20261106-22/complete-2024-county-identities.json.gz",
+          "bytes": 144580,
+          "sha256": "f55f8c9959d056d26e9bfa6b344e9ea564cfc5688b7f7f8b8a2ce8b34f9439ac"
+        },
+        {
+          "path": "public/participation-county-context/20261106-22/gazetteer-2024-national-counties.zip",
+          "bytes": 141679,
+          "sha256": "3c337402b5c6e8d5aa26b4278ccf4edc8989f2683765b3ffbf22296cdb2df3a0"
+        }
+      ],
+      "independently_reviewed_identities": [
+        {
+          "USPS": "UT",
+          "GEOID": "49001",
+          "ANSICODE": "01448015",
+          "NAME": "Beaver County",
+          "ALAND": "6689710369",
+          "AWATER": "5298466",
+          "ALAND_SQMI": "2582.912",
+          "AWATER_SQMI": "2.046",
+          "INTPTLAT": "38.357535",
+          "INTPTLONG": "-113.238948"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49003",
+          "ANSICODE": "01455966",
+          "NAME": "Box Elder County",
+          "ALAND": "14973507313",
+          "AWATER": "2455159793",
+          "ALAND_SQMI": "5781.304",
+          "AWATER_SQMI": "947.943",
+          "INTPTLAT": "41.622623",
+          "INTPTLONG": "-113.060252"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49005",
+          "ANSICODE": "01448017",
+          "NAME": "Cache County",
+          "ALAND": "3016525068",
+          "AWATER": "21115037",
+          "ALAND_SQMI": "1164.687",
+          "AWATER_SQMI": "8.153",
+          "INTPTLAT": "41.734118",
+          "INTPTLONG": "-111.745394"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49007",
+          "ANSICODE": "01448018",
+          "NAME": "Carbon County",
+          "ALAND": "3831481453",
+          "AWATER": "15484604",
+          "ALAND_SQMI": "1479.343",
+          "AWATER_SQMI": "5.979",
+          "INTPTLAT": "39.673284",
+          "INTPTLONG": "-110.588484"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49009",
+          "ANSICODE": "01448019",
+          "NAME": "Daggett County",
+          "ALAND": "1803965918",
+          "AWATER": "61230034",
+          "ALAND_SQMI": "696.515",
+          "AWATER_SQMI": "23.641",
+          "INTPTLAT": "40.890099",
+          "INTPTLONG": "-109.505785"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49011",
+          "ANSICODE": "01448020",
+          "NAME": "Davis County",
+          "ALAND": "841107033",
+          "AWATER": "804149067",
+          "ALAND_SQMI": "324.753",
+          "AWATER_SQMI": "310.484",
+          "INTPTLAT": "41.037559",
+          "INTPTLONG": "-112.201943"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49013",
+          "ANSICODE": "01448021",
+          "NAME": "Duchesne County",
+          "ALAND": "8379965573",
+          "AWATER": "38811228",
+          "ALAND_SQMI": "3235.523",
+          "AWATER_SQMI": "14.985",
+          "INTPTLAT": "40.289393",
+          "INTPTLONG": "-110.429584"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49015",
+          "ANSICODE": "01448022",
+          "NAME": "Emery County",
+          "ALAND": "11558171971",
+          "AWATER": "24695314",
+          "ALAND_SQMI": "4462.635",
+          "AWATER_SQMI": "9.535",
+          "INTPTLAT": "39.009025",
+          "INTPTLONG": "-110.7211"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49017",
+          "ANSICODE": "01448023",
+          "NAME": "Garfield County",
+          "ALAND": "13414986703",
+          "AWATER": "75978582",
+          "ALAND_SQMI": "5179.556",
+          "AWATER_SQMI": "29.335",
+          "INTPTLAT": "37.831663",
+          "INTPTLONG": "-111.450907"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49019",
+          "ANSICODE": "01448024",
+          "NAME": "Grand County",
+          "ALAND": "9512657345",
+          "AWATER": "30634870",
+          "ALAND_SQMI": "3672.858",
+          "AWATER_SQMI": "11.828",
+          "INTPTLAT": "38.974326",
+          "INTPTLONG": "-109.57345"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49021",
+          "ANSICODE": "01448025",
+          "NAME": "Iron County",
+          "ALAND": "8537032446",
+          "AWATER": "11390957",
+          "ALAND_SQMI": "3296.167",
+          "AWATER_SQMI": "4.398",
+          "INTPTLAT": "37.909304",
+          "INTPTLONG": "-113.30674"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49023",
+          "ANSICODE": "01455158",
+          "NAME": "Juab County",
+          "ALAND": "8784753342",
+          "AWATER": "36271581",
+          "ALAND_SQMI": "3391.812",
+          "AWATER_SQMI": "14.005",
+          "INTPTLAT": "39.71412",
+          "INTPTLONG": "-112.790471"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49025",
+          "ANSICODE": "01448026",
+          "NAME": "Kane County",
+          "ALAND": "10344775613",
+          "AWATER": "292843946",
+          "ALAND_SQMI": "3994.14",
+          "AWATER_SQMI": "113.068",
+          "INTPTLAT": "37.275089",
+          "INTPTLONG": "-111.815329"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49027",
+          "ANSICODE": "01448027",
+          "NAME": "Millard County",
+          "ALAND": "17574316027",
+          "AWATER": "133292861",
+          "ALAND_SQMI": "6785.482",
+          "AWATER_SQMI": "51.465",
+          "INTPTLAT": "38.956744",
+          "INTPTLONG": "-113.133092"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49029",
+          "ANSICODE": "01448028",
+          "NAME": "Morgan County",
+          "ALAND": "1577814088",
+          "AWATER": "4437369",
+          "ALAND_SQMI": "609.197",
+          "AWATER_SQMI": "1.713",
+          "INTPTLAT": "41.091027",
+          "INTPTLONG": "-111.577885"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49031",
+          "ANSICODE": "01448029",
+          "NAME": "Piute County",
+          "ALAND": "1963753824",
+          "AWATER": "20286511",
+          "ALAND_SQMI": "758.21",
+          "AWATER_SQMI": "7.833",
+          "INTPTLAT": "38.335881",
+          "INTPTLONG": "-112.129375"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49033",
+          "ANSICODE": "01448030",
+          "NAME": "Rich County",
+          "ALAND": "2664471792",
+          "AWATER": "149106409",
+          "ALAND_SQMI": "1028.758",
+          "AWATER_SQMI": "57.57",
+          "INTPTLAT": "41.627598",
+          "INTPTLONG": "-111.240227"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49035",
+          "ANSICODE": "01448031",
+          "NAME": "Salt Lake County",
+          "ALAND": "1949876460",
+          "AWATER": "136855044",
+          "ALAND_SQMI": "752.852",
+          "AWATER_SQMI": "52.84",
+          "INTPTLAT": "40.667883",
+          "INTPTLONG": "-111.92424"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49037",
+          "ANSICODE": "01448032",
+          "NAME": "San Juan County",
+          "ALAND": "20263457815",
+          "AWATER": "285011859",
+          "ALAND_SQMI": "7823.765",
+          "AWATER_SQMI": "110.044",
+          "INTPTLAT": "37.602633",
+          "INTPTLONG": "-109.791574"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49039",
+          "ANSICODE": "01448033",
+          "NAME": "Sanpete County",
+          "ALAND": "4117605578",
+          "AWATER": "32165095",
+          "ALAND_SQMI": "1589.816",
+          "AWATER_SQMI": "12.419",
+          "INTPTLAT": "39.373426",
+          "INTPTLONG": "-111.576933"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49041",
+          "ANSICODE": "01448034",
+          "NAME": "Sevier County",
+          "ALAND": "4948109947",
+          "AWATER": "20139931",
+          "ALAND_SQMI": "1910.476",
+          "AWATER_SQMI": "7.776",
+          "INTPTLAT": "38.746824",
+          "INTPTLONG": "-111.81193"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49043",
+          "ANSICODE": "01448035",
+          "NAME": "Summit County",
+          "ALAND": "4845023362",
+          "AWATER": "26030792",
+          "ALAND_SQMI": "1870.674",
+          "AWATER_SQMI": "10.051",
+          "INTPTLAT": "40.87206",
+          "INTPTLONG": "-110.968486"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49045",
+          "ANSICODE": "01448036",
+          "NAME": "Tooele County",
+          "ALAND": "18234216269",
+          "AWATER": "636477482",
+          "ALAND_SQMI": "7040.271",
+          "AWATER_SQMI": "245.745",
+          "INTPTLAT": "40.467753",
+          "INTPTLONG": "-113.123979"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49047",
+          "ANSICODE": "01448037",
+          "NAME": "Uintah County",
+          "ALAND": "11610607593",
+          "AWATER": "55966014",
+          "ALAND_SQMI": "4482.881",
+          "AWATER_SQMI": "21.609",
+          "INTPTLAT": "40.125887",
+          "INTPTLONG": "-109.517748"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49049",
+          "ANSICODE": "01448038",
+          "NAME": "Utah County",
+          "ALAND": "5191527719",
+          "AWATER": "362177780",
+          "ALAND_SQMI": "2004.46",
+          "AWATER_SQMI": "139.838",
+          "INTPTLAT": "40.120418",
+          "INTPTLONG": "-111.668563"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49051",
+          "ANSICODE": "01448039",
+          "NAME": "Wasatch County",
+          "ALAND": "3048291114",
+          "AWATER": "79107621",
+          "ALAND_SQMI": "1176.952",
+          "AWATER_SQMI": "30.544",
+          "INTPTLAT": "40.334884",
+          "INTPTLONG": "-111.161568"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49053",
+          "ANSICODE": "01448040",
+          "NAME": "Washington County",
+          "ALAND": "6287425958",
+          "AWATER": "7782767",
+          "ALAND_SQMI": "2427.589",
+          "AWATER_SQMI": "3.005",
+          "INTPTLAT": "37.262531",
+          "INTPTLONG": "-113.4878"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49055",
+          "ANSICODE": "01448041",
+          "NAME": "Wayne County",
+          "ALAND": "6374203167",
+          "AWATER": "14660837",
+          "ALAND_SQMI": "2461.094",
+          "AWATER_SQMI": "5.661",
+          "INTPTLAT": "38.259856",
+          "INTPTLONG": "-110.990872"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49057",
+          "ANSICODE": "01448042",
+          "NAME": "Weber County",
+          "ALAND": "1582541439",
+          "AWATER": "126602101",
+          "ALAND_SQMI": "611.023",
+          "AWATER_SQMI": "48.881",
+          "INTPTLAT": "41.270325",
+          "INTPTLONG": "-111.876883"
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "entire_inventory_records": 3222,
+      "receipts": [
+        {
+          "path": "public/participation-county-context/20261106-22/complete-2026-county-identities.json.gz",
+          "bytes": 155774,
+          "sha256": "cd12a54467a4ad54e9213d541b5a0563655ef41f3f193ed5804c75df51bf3150"
+        },
+        {
+          "path": "public/participation-county-context/20261106-22/gazetteer-2026-national-counties.zip",
+          "bytes": 139190,
+          "sha256": "6a99ca00efbc0be5112e225d4102704c51d5ce3b16e3afd6e4159460595fd12a"
+        }
+      ],
+      "independently_reviewed_identities": [
+        {
+          "USPS": "UT",
+          "GEOID": "49001",
+          "GEOIDFQ": "0500000US49001",
+          "ANSICODE": "01448015",
+          "NAME": "Beaver County",
+          "ALAND": "6689710378",
+          "AWATER": "5298466",
+          "ALAND_SQMI": "2582.912",
+          "AWATER_SQMI": "2.046",
+          "INTPTLAT": "38.357535",
+          "INTPTLONG": "-113.238948"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49003",
+          "GEOIDFQ": "0500000US49003",
+          "ANSICODE": "01455966",
+          "NAME": "Box Elder County",
+          "ALAND": "14973507318",
+          "AWATER": "2455159788",
+          "ALAND_SQMI": "5781.304",
+          "AWATER_SQMI": "947.943",
+          "INTPTLAT": "41.622623",
+          "INTPTLONG": "-113.060252"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49005",
+          "GEOIDFQ": "0500000US49005",
+          "ANSICODE": "01448017",
+          "NAME": "Cache County",
+          "ALAND": "3016525108",
+          "AWATER": "21115035",
+          "ALAND_SQMI": "1164.687",
+          "AWATER_SQMI": "8.153",
+          "INTPTLAT": "41.734122",
+          "INTPTLONG": "-111.745399"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49007",
+          "GEOIDFQ": "0500000US49007",
+          "ANSICODE": "01448018",
+          "NAME": "Carbon County",
+          "ALAND": "3831481444",
+          "AWATER": "15484607",
+          "ALAND_SQMI": "1479.343",
+          "AWATER_SQMI": "5.979",
+          "INTPTLAT": "39.673284",
+          "INTPTLONG": "-110.588484"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49009",
+          "GEOIDFQ": "0500000US49009",
+          "ANSICODE": "01448019",
+          "NAME": "Daggett County",
+          "ALAND": "1803962589",
+          "AWATER": "61233356",
+          "ALAND_SQMI": "696.514",
+          "AWATER_SQMI": "23.642",
+          "INTPTLAT": "40.890099",
+          "INTPTLONG": "-109.505785"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49011",
+          "GEOIDFQ": "0500000US49011",
+          "ANSICODE": "01448020",
+          "NAME": "Davis County",
+          "ALAND": "841485733",
+          "AWATER": "804221133",
+          "ALAND_SQMI": "324.899",
+          "AWATER_SQMI": "310.512",
+          "INTPTLAT": "41.037748",
+          "INTPTLONG": "-112.201943"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49013",
+          "GEOIDFQ": "0500000US49013",
+          "ANSICODE": "01448021",
+          "NAME": "Duchesne County",
+          "ALAND": "8379965580",
+          "AWATER": "38811228",
+          "ALAND_SQMI": "3235.523",
+          "AWATER_SQMI": "14.985",
+          "INTPTLAT": "40.289393",
+          "INTPTLONG": "-110.429584"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49015",
+          "GEOIDFQ": "0500000US49015",
+          "ANSICODE": "01448022",
+          "NAME": "Emery County",
+          "ALAND": "11558171940",
+          "AWATER": "24695312",
+          "ALAND_SQMI": "4462.635",
+          "AWATER_SQMI": "9.535",
+          "INTPTLAT": "39.009025",
+          "INTPTLONG": "-110.7211"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49017",
+          "GEOIDFQ": "0500000US49017",
+          "ANSICODE": "01448023",
+          "NAME": "Garfield County",
+          "ALAND": "13414986678",
+          "AWATER": "75978582",
+          "ALAND_SQMI": "5179.556",
+          "AWATER_SQMI": "29.335",
+          "INTPTLAT": "37.831663",
+          "INTPTLONG": "-111.450907"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49019",
+          "GEOIDFQ": "0500000US49019",
+          "ANSICODE": "01448024",
+          "NAME": "Grand County",
+          "ALAND": "9512657345",
+          "AWATER": "30634866",
+          "ALAND_SQMI": "3672.858",
+          "AWATER_SQMI": "11.828",
+          "INTPTLAT": "38.974326",
+          "INTPTLONG": "-109.57345"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49021",
+          "GEOIDFQ": "0500000US49021",
+          "ANSICODE": "01448025",
+          "NAME": "Iron County",
+          "ALAND": "8537039955",
+          "AWATER": "11383428",
+          "ALAND_SQMI": "3296.17",
+          "AWATER_SQMI": "4.395",
+          "INTPTLAT": "37.909304",
+          "INTPTLONG": "-113.30674"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49023",
+          "GEOIDFQ": "0500000US49023",
+          "ANSICODE": "01455158",
+          "NAME": "Juab County",
+          "ALAND": "8784753330",
+          "AWATER": "36271580",
+          "ALAND_SQMI": "3391.812",
+          "AWATER_SQMI": "14.005",
+          "INTPTLAT": "39.71412",
+          "INTPTLONG": "-112.790471"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49025",
+          "GEOIDFQ": "0500000US49025",
+          "ANSICODE": "01448026",
+          "NAME": "Kane County",
+          "ALAND": "10344775616",
+          "AWATER": "292844032",
+          "ALAND_SQMI": "3994.14",
+          "AWATER_SQMI": "113.068",
+          "INTPTLAT": "37.275089",
+          "INTPTLONG": "-111.815329"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49027",
+          "GEOIDFQ": "0500000US49027",
+          "ANSICODE": "01448027",
+          "NAME": "Millard County",
+          "ALAND": "17574316047",
+          "AWATER": "133292859",
+          "ALAND_SQMI": "6785.482",
+          "AWATER_SQMI": "51.465",
+          "INTPTLAT": "38.935611",
+          "INTPTLONG": "-113.155015"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49029",
+          "GEOIDFQ": "0500000US49029",
+          "ANSICODE": "01448028",
+          "NAME": "Morgan County",
+          "ALAND": "1577814097",
+          "AWATER": "4437370",
+          "ALAND_SQMI": "609.197",
+          "AWATER_SQMI": "1.713",
+          "INTPTLAT": "41.091027",
+          "INTPTLONG": "-111.577885"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49031",
+          "GEOIDFQ": "0500000US49031",
+          "ANSICODE": "01448029",
+          "NAME": "Piute County",
+          "ALAND": "1963753817",
+          "AWATER": "20286511",
+          "ALAND_SQMI": "758.21",
+          "AWATER_SQMI": "7.833",
+          "INTPTLAT": "38.335881",
+          "INTPTLONG": "-112.129375"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49033",
+          "GEOIDFQ": "0500000US49033",
+          "ANSICODE": "01448030",
+          "NAME": "Rich County",
+          "ALAND": "2664471762",
+          "AWATER": "149106410",
+          "ALAND_SQMI": "1028.758",
+          "AWATER_SQMI": "57.57",
+          "INTPTLAT": "41.627598",
+          "INTPTLONG": "-111.240227"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49035",
+          "GEOIDFQ": "0500000US49035",
+          "ANSICODE": "01448031",
+          "NAME": "Salt Lake County",
+          "ALAND": "1949519819",
+          "AWATER": "136760850",
+          "ALAND_SQMI": "752.714",
+          "AWATER_SQMI": "52.804",
+          "INTPTLAT": "40.667205",
+          "INTPTLONG": "-111.921602"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49037",
+          "GEOIDFQ": "0500000US49037",
+          "ANSICODE": "01448032",
+          "NAME": "San Juan County",
+          "ALAND": "20263255791",
+          "AWATER": "285213894",
+          "ALAND_SQMI": "7823.687",
+          "AWATER_SQMI": "110.122",
+          "INTPTLAT": "37.602633",
+          "INTPTLONG": "-109.791574"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49039",
+          "GEOIDFQ": "0500000US49039",
+          "ANSICODE": "01448033",
+          "NAME": "Sanpete County",
+          "ALAND": "4117605585",
+          "AWATER": "32165096",
+          "ALAND_SQMI": "1589.816",
+          "AWATER_SQMI": "12.419",
+          "INTPTLAT": "39.373426",
+          "INTPTLONG": "-111.576933"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49041",
+          "GEOIDFQ": "0500000US49041",
+          "ANSICODE": "01448034",
+          "NAME": "Sevier County",
+          "ALAND": "4948109927",
+          "AWATER": "20139931",
+          "ALAND_SQMI": "1910.476",
+          "AWATER_SQMI": "7.776",
+          "INTPTLAT": "38.746824",
+          "INTPTLONG": "-111.81193"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49043",
+          "GEOIDFQ": "0500000US49043",
+          "ANSICODE": "01448035",
+          "NAME": "Summit County",
+          "ALAND": "4845033184",
+          "AWATER": "26020940",
+          "ALAND_SQMI": "1870.678",
+          "AWATER_SQMI": "10.047",
+          "INTPTLAT": "40.87206",
+          "INTPTLONG": "-110.968486"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49045",
+          "GEOIDFQ": "0500000US49045",
+          "ANSICODE": "01448036",
+          "NAME": "Tooele County",
+          "ALAND": "18234216155",
+          "AWATER": "636477482",
+          "ALAND_SQMI": "7040.271",
+          "AWATER_SQMI": "245.745",
+          "INTPTLAT": "40.467753",
+          "INTPTLONG": "-113.123979"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49047",
+          "GEOIDFQ": "0500000US49047",
+          "ANSICODE": "01448037",
+          "NAME": "Uintah County",
+          "ALAND": "11610607648",
+          "AWATER": "55966010",
+          "ALAND_SQMI": "4482.881",
+          "AWATER_SQMI": "21.609",
+          "INTPTLAT": "40.125887",
+          "INTPTLONG": "-109.517748"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49049",
+          "GEOIDFQ": "0500000US49049",
+          "ANSICODE": "01448038",
+          "NAME": "Utah County",
+          "ALAND": "5191527690",
+          "AWATER": "362177791",
+          "ALAND_SQMI": "2004.46",
+          "AWATER_SQMI": "139.838",
+          "INTPTLAT": "40.120418",
+          "INTPTLONG": "-111.668563"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49051",
+          "GEOIDFQ": "0500000US49051",
+          "ANSICODE": "01448039",
+          "NAME": "Wasatch County",
+          "ALAND": "3048291105",
+          "AWATER": "79107622",
+          "ALAND_SQMI": "1176.952",
+          "AWATER_SQMI": "30.544",
+          "INTPTLAT": "40.334884",
+          "INTPTLONG": "-111.161568"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49053",
+          "GEOIDFQ": "0500000US49053",
+          "ANSICODE": "01448040",
+          "NAME": "Washington County",
+          "ALAND": "6287425935",
+          "AWATER": "7782768",
+          "ALAND_SQMI": "2427.589",
+          "AWATER_SQMI": "3.005",
+          "INTPTLAT": "37.262531",
+          "INTPTLONG": "-113.4878"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49055",
+          "GEOIDFQ": "0500000US49055",
+          "ANSICODE": "01448041",
+          "NAME": "Wayne County",
+          "ALAND": "6374203169",
+          "AWATER": "14660834",
+          "ALAND_SQMI": "2461.094",
+          "AWATER_SQMI": "5.661",
+          "INTPTLAT": "38.259856",
+          "INTPTLONG": "-110.990872"
+        },
+        {
+          "USPS": "UT",
+          "GEOID": "49057",
+          "GEOIDFQ": "0500000US49057",
+          "ANSICODE": "01448042",
+          "NAME": "Weber County",
+          "ALAND": "1582541446",
+          "AWATER": "126602103",
+          "ALAND_SQMI": "611.023",
+          "AWATER_SQMI": "48.881",
+          "INTPTLAT": "41.270325",
+          "INTPTLONG": "-111.876882"
+        }
+      ]
+    }
+  ],
+  "all_29_native_names_uniquely_match_both_inventories_and_contextual_geometry": true,
+  "joins": [
+    {
+      "native_county": "San Juan County",
+      "contextual_geoid": "49037",
+      "native_fips": null,
+      "native_map_approval_unchanged": false
+    },
+    {
+      "native_county": "Grand County",
+      "contextual_geoid": "49019",
+      "native_fips": null,
+      "native_map_approval_unchanged": false
+    },
+    {
+      "native_county": "Utah County",
+      "contextual_geoid": "49049",
+      "native_fips": null,
+      "native_map_approval_unchanged": false
+    },
+    {
+      "native_county": "Juab County",
+      "contextual_geoid": "49023",
+      "native_fips": null,
+      "native_map_approval_unchanged": false
+    },
+    {
+      "native_county": "Davis County",
+      "contextual_geoid": "49011",
+      "native_fips": null,
+      "native_map_approval_unchanged": false
+    },
+    {
+      "native_county": "Emery County",
+      "contextual_geoid": "49015",
+      "native_fips": null,
+      "native_map_approval_unchanged": false
+    },
+    {
+      "native_county": "Wasatch County",
+      "contextual_geoid": "49051",
+      "native_fips": null,
+      "native_map_approval_unchanged": false
+    },
+    {
+      "native_county": "Carbon County",
+      "contextual_geoid": "49007",
+      "native_fips": null,
+      "native_map_approval_unchanged": false
+    },
+    {
+      "native_county": "Duchesne County",
+      "contextual_geoid": "49013",
+      "native_fips": null,
+      "native_map_approval_unchanged": false
+    },
+    {
+      "native_county": "Wayne County",
+      "contextual_geoid": "49055",
+      "native_fips": null,
+      "native_map_approval_unchanged": false
+    },
+    {
+      "native_county": "Summit County",
+      "contextual_geoid": "49043",
+      "native_fips": null,
+      "native_map_approval_unchanged": false
+    },
+    {
+      "native_county": "Kane County",
+      "contextual_geoid": "49025",
+      "native_fips": null,
+      "native_map_approval_unchanged": false
+    },
+    {
+      "native_county": "Cache County",
+      "contextual_geoid": "49005",
+      "native_fips": null,
+      "native_map_approval_unchanged": false
+    },
+    {
+      "native_county": "Box Elder County",
+      "contextual_geoid": "49003",
+      "native_fips": null,
+      "native_map_approval_unchanged": false
+    },
+    {
+      "native_county": "Weber County",
+      "contextual_geoid": "49057",
+      "native_fips": null,
+      "native_map_approval_unchanged": false
+    },
+    {
+      "native_county": "Uintah County",
+      "contextual_geoid": "49047",
+      "native_fips": null,
+      "native_map_approval_unchanged": false
+    },
+    {
+      "native_county": "Morgan County",
+      "contextual_geoid": "49029",
+      "native_fips": null,
+      "native_map_approval_unchanged": false
+    },
+    {
+      "native_county": "Garfield County",
+      "contextual_geoid": "49017",
+      "native_fips": null,
+      "native_map_approval_unchanged": false
+    },
+    {
+      "native_county": "Rich County",
+      "contextual_geoid": "49033",
+      "native_fips": null,
+      "native_map_approval_unchanged": false
+    },
+    {
+      "native_county": "Tooele County",
+      "contextual_geoid": "49045",
+      "native_fips": null,
+      "native_map_approval_unchanged": false
+    },
+    {
+      "native_county": "Salt Lake County",
+      "contextual_geoid": "49035",
+      "native_fips": null,
+      "native_map_approval_unchanged": false
+    },
+    {
+      "native_county": "Sevier County",
+      "contextual_geoid": "49041",
+      "native_fips": null,
+      "native_map_approval_unchanged": false
+    },
+    {
+      "native_county": "Washington County",
+      "contextual_geoid": "49053",
+      "native_fips": null,
+      "native_map_approval_unchanged": false
+    },
+    {
+      "native_county": "Iron County",
+      "contextual_geoid": "49021",
+      "native_fips": null,
+      "native_map_approval_unchanged": false
+    },
+    {
+      "native_county": "Millard County",
+      "contextual_geoid": "49027",
+      "native_fips": null,
+      "native_map_approval_unchanged": false
+    },
+    {
+      "native_county": "Beaver County",
+      "contextual_geoid": "49001",
+      "native_fips": null,
+      "native_map_approval_unchanged": false
+    },
+    {
+      "native_county": "Daggett County",
+      "contextual_geoid": "49009",
+      "native_fips": null,
+      "native_map_approval_unchanged": false
+    },
+    {
+      "native_county": "Sanpete County",
+      "contextual_geoid": "49039",
+      "native_fips": null,
+      "native_map_approval_unchanged": false
+    },
+    {
+      "native_county": "Piute County",
+      "contextual_geoid": "49031",
+      "native_fips": null,
+      "native_map_approval_unchanged": false
+    }
+  ],
+  "geometry_check": {
+    "state_code": "UT",
+    "features": 29,
+    "invalid": [],
+    "overlap_pairs": [
+      {
+        "left": "49037",
+        "right": "49025",
+        "overlap_square_degrees": 2.806491169555127e-07
+      },
+      {
+        "left": "49049",
+        "right": "49051",
+        "overlap_square_degrees": 2.473072175989347e-05
+      },
+      {
+        "left": "49049",
+        "right": "49013",
+        "overlap_square_degrees": 1.9181489144196477e-06
+      },
+      {
+        "left": "49011",
+        "right": "49057",
+        "overlap_square_degrees": 1.2932400001044661e-05
+      },
+      {
+        "left": "49011",
+        "right": "49029",
+        "overlap_square_degrees": 1.0697483689759022e-06
+      },
+      {
+        "left": "49015",
+        "right": "49041",
+        "overlap_square_degrees": 2.7388682417769146e-07
+      },
+      {
+        "left": "49015",
+        "right": "49039",
+        "overlap_square_degrees": 4.956613176539178e-06
+      },
+      {
+        "left": "49007",
+        "right": "49013",
+        "overlap_square_degrees": 2.7829661286351294e-05
+      },
+      {
+        "left": "49007",
+        "right": "49047",
+        "overlap_square_degrees": 3.784663748904183e-06
+      },
+      {
+        "left": "49043",
+        "right": "49029",
+        "overlap_square_degrees": 1.8996518211666616e-06
+      },
+      {
+        "left": "49043",
+        "right": "49033",
+        "overlap_square_degrees": 5.933543993840947e-07
+      },
+      {
+        "left": "49043",
+        "right": "49035",
+        "overlap_square_degrees": 2.6854044335587513e-08
+      },
+      {
+        "left": "49003",
+        "right": "49057",
+        "overlap_square_degrees": 1.3610400949940272e-05
+      },
+      {
+        "left": "49047",
+        "right": "49009",
+        "overlap_square_degrees": 6.11630518116093e-07
+      },
+      {
+        "left": "49017",
+        "right": "49001",
+        "overlap_square_degrees": 1.3557289084068768e-07
+      },
+      {
+        "left": "49017",
+        "right": "49031",
+        "overlap_square_degrees": 2.1419271093868524e-06
+      }
+    ],
+    "contextual_geometry_sha256": "d2271f1ead3ef5193c2300bd22672ece3bbfcad4e7db70b0fd7cb7b99ae376c6",
+    "current_and_2024_identity_inventory_equal": true,
+    "live_complete_bytes_equal": true
+  },
+  "live_geometry_url": "https://www.themarginoferror.com/participation-context/20261104T183601Z/geometry/county-UT.geojson",
+  "live_geometry_receipt": {
+    "status": 200,
+    "final_url": "https://www.themarginoferror.com/participation-context/20261104T183601Z/geometry/county-UT.geojson",
+    "bytes": 297516,
+    "sha256": "d2271f1ead3ef5193c2300bd22672ece3bbfcad4e7db70b0fd7cb7b99ae376c6",
+    "tls_verified": true
+  },
+  "native_feature_ids_not_used_as_census_fips": true,
+  "no_certified_2026_election_boundary_or_completed_counting_claim": true,
+  "contextual_boundary_year": 2024,
+  "native_map_approvals_unchanged": true,
+  "generic_rate_or_map_usability_review_not_implied_by_identity": true,
+  "context22_unchanged": true
+}

@@ -1,0 +1,194 @@
+{
+  "checked_at_utc": "2026-11-06T19:10:59.233735+00:00",
+  "revision": "8b95ad4acc0f8967e82c04ffb543c6225801dd20",
+  "tag": "voter-county-utah-native-statistics-20261106-01",
+  "release_id": 436883902,
+  "phase": "published",
+  "immutable": true,
+  "assets": [
+    {
+      "file": "audit.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-utah-native-statistics-20261106-01/audit.json",
+      "bytes": 2078,
+      "sha256": "d8088755508aaff0a3b4a9dcdb3c18cbcb0a63efc4a2440f5891ccc74c669a7c"
+    },
+    {
+      "file": "checksums.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-utah-native-statistics-20261106-01/checksums.json",
+      "bytes": 1907,
+      "sha256": "c40a3b04df58c359e20724b9a5cea90cd9d6e0ed9c1df4cd25ee918a7586c1e4"
+    },
+    {
+      "file": "complete-query.zip",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-utah-native-statistics-20261106-01/complete-query.zip",
+      "bytes": 33004,
+      "sha256": "6ef44592932d54e75f6a668ffa7ae2e3a2720992e3a982804d927106ccc64761"
+    },
+    {
+      "file": "county-participation.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-utah-native-statistics-20261106-01/county-participation.csv",
+      "bytes": 3944,
+      "sha256": "4a7d98fb346266b36ffc3fd5bbf6565e340ef82fbc9b0009d4487a7e9087a663"
+    },
+    {
+      "file": "county-party-registrations.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-utah-native-statistics-20261106-01/county-party-registrations.csv",
+      "bytes": 5306,
+      "sha256": "82e7bbd81c0925249e268610298e3e79a2d69f49b570448365e3aa79d08b5c23"
+    },
+    {
+      "file": "methods.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-utah-native-statistics-20261106-01/methods.json",
+      "bytes": 2831,
+      "sha256": "0432e52faf129e12d2198aa316102e25de8d4c1bc9203b58b9d0b69bd7de473d"
+    },
+    {
+      "file": "native-county-catalog.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-utah-native-statistics-20261106-01/native-county-catalog.csv",
+      "bytes": 1296,
+      "sha256": "5ab2d4ca765c8c480cc0173f2974a1e3fa5b351f182fefb31e41542c00104e72"
+    },
+    {
+      "file": "review-counties.py",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-utah-native-statistics-20261106-01/review-counties.py",
+      "bytes": 10203,
+      "sha256": "3097f16a82c073849ce3255a5f8039b4e01618c4801da79816cdd31870052b84"
+    },
+    {
+      "file": "source-native-observations.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-utah-native-statistics-20261106-01/source-native-observations.csv",
+      "bytes": 16772,
+      "sha256": "12d781b4ce9fb0a5ea42368153b86fbbf9c6ea313852bfc61109f3039cba139d"
+    },
+    {
+      "file": "source-qualification.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-utah-native-statistics-20261106-01/source-qualification.json",
+      "bytes": 113546,
+      "sha256": "148897309a26489c35bc17bcf086e3dbb28cb23f2bfffa4a58237130d7909fb2"
+    },
+    {
+      "file": "source-reports.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-utah-native-statistics-20261106-01/source-reports.csv",
+      "bytes": 13144,
+      "sha256": "1d4a25ef1765e441db2b84ca6d4270abff5762f04cd033e82ab14c5d35a09e61"
+    },
+    {
+      "file": "state-party-registrations.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-utah-native-statistics-20261106-01/state-party-registrations.csv",
+      "bytes": 326,
+      "sha256": "713707e8e71b95be8a7e46fa4ef6eee55237db6286c270eac70359b5a6c85b6e"
+    },
+    {
+      "file": "test_review_counties.py",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-utah-native-statistics-20261106-01/test_review_counties.py",
+      "bytes": 7725,
+      "sha256": "b9b11b17e1f13408cfcf497fbea7fc4918851306fde0367df7e63552dde345ad"
+    }
+  ],
+  "analysis_rate_approvals": 0,
+  "map_approvals": 0,
+  "counts": {
+    "native_counties": 29,
+    "current_declared_reports": 26,
+    "distinct_report_counties": 25,
+    "complete_original_reports": 26,
+    "complete_pdf_originals": 19,
+    "physical_pdf_pages": 20,
+    "image_only_pdf_originals": 9,
+    "complete_workbook_originals": 7,
+    "independently_matching_native_workbook_cells": 753,
+    "latest_native_counted_total_candidates": 19,
+    "same_report_registered_denominator_candidates": 18,
+    "county_scope_withholds": 6,
+    "counties_missing_a_declared_report": 4,
+    "county_party_registration_rows": 228,
+    "active_registrations": 1784255
+  },
+  "no_candidate_vote_or_registration_affiliation_turnout_inference": true,
+  "original_bodies_and_operational_or_personal_sheets_remain_private": true,
+  "exact_author_committer_and_annotated_tag_verified": true,
+  "commit_pinned_files": [
+    {
+      "file": "audit.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/8b95ad4acc0f8967e82c04ffb543c6225801dd20/data/county-source-reviews/20261106-utah-native-scope-01/audit.json",
+      "bytes": 2078,
+      "sha256": "d8088755508aaff0a3b4a9dcdb3c18cbcb0a63efc4a2440f5891ccc74c669a7c"
+    },
+    {
+      "file": "checksums.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/8b95ad4acc0f8967e82c04ffb543c6225801dd20/data/county-source-reviews/20261106-utah-native-scope-01/checksums.json",
+      "bytes": 1907,
+      "sha256": "c40a3b04df58c359e20724b9a5cea90cd9d6e0ed9c1df4cd25ee918a7586c1e4"
+    },
+    {
+      "file": "complete-query.zip",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/8b95ad4acc0f8967e82c04ffb543c6225801dd20/data/county-source-reviews/20261106-utah-native-scope-01/complete-query.zip",
+      "bytes": 33004,
+      "sha256": "6ef44592932d54e75f6a668ffa7ae2e3a2720992e3a982804d927106ccc64761"
+    },
+    {
+      "file": "county-participation.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/8b95ad4acc0f8967e82c04ffb543c6225801dd20/data/county-source-reviews/20261106-utah-native-scope-01/county-participation.csv",
+      "bytes": 3944,
+      "sha256": "4a7d98fb346266b36ffc3fd5bbf6565e340ef82fbc9b0009d4487a7e9087a663"
+    },
+    {
+      "file": "county-party-registrations.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/8b95ad4acc0f8967e82c04ffb543c6225801dd20/data/county-source-reviews/20261106-utah-native-scope-01/county-party-registrations.csv",
+      "bytes": 5306,
+      "sha256": "82e7bbd81c0925249e268610298e3e79a2d69f49b570448365e3aa79d08b5c23"
+    },
+    {
+      "file": "methods.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/8b95ad4acc0f8967e82c04ffb543c6225801dd20/data/county-source-reviews/20261106-utah-native-scope-01/methods.json",
+      "bytes": 2831,
+      "sha256": "0432e52faf129e12d2198aa316102e25de8d4c1bc9203b58b9d0b69bd7de473d"
+    },
+    {
+      "file": "native-county-catalog.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/8b95ad4acc0f8967e82c04ffb543c6225801dd20/data/county-source-reviews/20261106-utah-native-scope-01/native-county-catalog.csv",
+      "bytes": 1296,
+      "sha256": "5ab2d4ca765c8c480cc0173f2974a1e3fa5b351f182fefb31e41542c00104e72"
+    },
+    {
+      "file": "review-counties.py",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/8b95ad4acc0f8967e82c04ffb543c6225801dd20/data/county-source-reviews/20261106-utah-native-scope-01/review-counties.py",
+      "bytes": 10203,
+      "sha256": "3097f16a82c073849ce3255a5f8039b4e01618c4801da79816cdd31870052b84"
+    },
+    {
+      "file": "source-native-observations.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/8b95ad4acc0f8967e82c04ffb543c6225801dd20/data/county-source-reviews/20261106-utah-native-scope-01/source-native-observations.csv",
+      "bytes": 16772,
+      "sha256": "12d781b4ce9fb0a5ea42368153b86fbbf9c6ea313852bfc61109f3039cba139d"
+    },
+    {
+      "file": "source-qualification.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/8b95ad4acc0f8967e82c04ffb543c6225801dd20/data/county-source-reviews/20261106-utah-native-scope-01/source-qualification.json",
+      "bytes": 113546,
+      "sha256": "148897309a26489c35bc17bcf086e3dbb28cb23f2bfffa4a58237130d7909fb2"
+    },
+    {
+      "file": "source-reports.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/8b95ad4acc0f8967e82c04ffb543c6225801dd20/data/county-source-reviews/20261106-utah-native-scope-01/source-reports.csv",
+      "bytes": 13144,
+      "sha256": "1d4a25ef1765e441db2b84ca6d4270abff5762f04cd033e82ab14c5d35a09e61"
+    },
+    {
+      "file": "state-party-registrations.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/8b95ad4acc0f8967e82c04ffb543c6225801dd20/data/county-source-reviews/20261106-utah-native-scope-01/state-party-registrations.csv",
+      "bytes": 326,
+      "sha256": "713707e8e71b95be8a7e46fa4ef6eee55237db6286c270eac70359b5a6c85b6e"
+    },
+    {
+      "file": "test_review_counties.py",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/8b95ad4acc0f8967e82c04ffb543c6225801dd20/data/county-source-reviews/20261106-utah-native-scope-01/test_review_counties.py",
+      "bytes": 7725,
+      "sha256": "b9b11b17e1f13408cfcf497fbea7fc4918851306fde0367df7e63552dde345ad"
+    }
+  ],
+  "zip_members": 12,
+  "all_13_files_reproduce_exactly": true,
+  "focused_tests": 9,
+  "archive_test_stderr": ".........\n----------------------------------------------------------------------\nRan 9 tests in 0.140s\n\nOK\n"
+}

@@ -1,0 +1,28 @@
+{
+  "previous_complete_records_preserved": 1232,
+  "previous_contextual_joins_preserved": 748,
+  "previous_entire_geometry_inventory_preserved": 18,
+  "new_entire_geometry_inventory": 19,
+  "previous_exclusions_and_missingness_preserved": true,
+  "native_approval_flags_and_missing_fips_unchanged": true,
+  "no_certified_2026_geometry_claim": true,
+  "new_source_records": 29,
+  "new_counted_snapshot_joins": 19,
+  "new_registered_fractions": 18,
+  "new_missing_rate": 1,
+  "new_excluded_missing_or_withheld_counties": 10,
+  "counts": {
+    "complete_source_records": 1261,
+    "contextual_joins": 767,
+    "jurisdictions": 19,
+    "reviewed_rates": 379,
+    "missing_rates": 388,
+    "excluded_municipalities": 286,
+    "excluded_missing_county_totals": 208
+  },
+  "frozen_review_bytes": 1177980,
+  "frozen_review_sha256": "5edcb84a43125b762d2bd2f6c0d185c999fcececfcaaf9d01c7f7d77c52f5545",
+  "complete_zip_bytes": 3006684,
+  "complete_zip_sha256": "b9bd11cdc5649d576632182353afd36ed081d6249f7ceaf6a9b26ca9c42a626c",
+  "complete_package_files": 33
+}

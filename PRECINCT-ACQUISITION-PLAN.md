@@ -26,11 +26,32 @@ but the latest is selected once. Wayne's **1,109 counted / 1,209 credited /
 100 difference**, native clocks, missing timezones and the registration parent's
 one-record arithmetic discrepancies are preserved, not repaired. The separate
 November 2 registration PDF never replaces report-specific denominators.
-The portable ZIP reproduces byte-for-byte offline. No generic rate/map approval,
-new context or deployment is claimed; current verified production remains
+The portable ZIP passes **nine tests** and reproduces byte-for-byte offline.
+Immutable native release **436883902**, source
+**`8b95ad4acc0f8967e82c04ffb543c6225801dd20`**, passes both draft and public
+verification: all **13 entire assets / 13 commit-pinned files / 12 ZIP members**
+and complete extracted offline reproduction. Both exact credential jobs pass.
+The ZIP is **33,004 bytes / SHA-256
+`6ef44592932d54e75f6a668ffa7ae2e3a2720992e3a982804d927106ccc64761`**.
+Both entire Census original archives/parsed inventories independently identify
+all **29 Utah counties**, matching the **297,516-byte** complete live contextual
+geometry exactly. All shapes are valid; **16 simplification overlap pairs**
+remain documented, not certified election-boundary claims.
+The separate county-usability review permits **19 source-defined counted
+snapshots / 18 same-report registration fractions**, preserving approximate
+denominator labels, incomplete counting and original false source approvals.
+Prepared **context23** preserves every **1,232 prior complete records / 748 joins /
+18 entire geometries / exclusions / missingness** and adds all 29 native
+inventories, including ten withheld/missing counties. Its **1,261 records /
+767 joins / 379 fractions / 388 missing rates / 19 jurisdictions** reproduce.
+The **33-file / 32-member** context query passes standalone verification;
+review SHA-256 **`5edcb84a43125b762d2bd2f6c0d185c999fcececfcaaf9d01c7f7d77c52f5545`**,
+ZIP **3,006,684 bytes / SHA-256
+`b9bd11cdc5649d576632182353afd36ed081d6249f7ceaf6a9b26ca9c42a626c`**.
+This is not deployed; current verified production remains
 **context22 / `55465f323f4f63924fb999241c1f0676372a2ab6`**.
-Next: verify immutable publication of the full numerical package, then separately
-review county usability and both full Census inventories/contextual geometry.
+Next: verify immutable context publication, complete integration/build/browser
+checks and measure the actual hosted artifact before claiming a live update.
 
 **November 6: Bedford/Northumberland context22 verified LIVE at 18:46UTC.**
 Both complete native numerical packages are immutable and fully verified in
