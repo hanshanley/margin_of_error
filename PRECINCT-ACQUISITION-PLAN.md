@@ -28,8 +28,8 @@ unchanged imports. A bounded resume of the same verifier/artifact reused all 431
 complete-success receipts; the unchanged browser suite then passed. Both verifier
 shells are finished; do not repeat them or this completed deployment. Full proofs
 are in `20261106-pages-lossless-recovery-01`. The unrelated pre-existing UK topic
-validator failure below remains explicitly unresolved. **Next:** publish the
-validated Susquehanna native query and review its county identity/context;
+validator failure below remains explicitly unresolved. **Next:** integrate the
+published Susquehanna native query through a separate county context review;
 continue remaining genuine county gaps. Keep schedule #5 active and external
 Google-owner/GitHub-Support remediation explicitly incomplete.
 
@@ -101,7 +101,27 @@ separately frozen Michigan QVF scope, which approves no generic rates or tabulat
 totals. Nationwide coverage and external Google-owner/GitHub-Support remediation
 remain incomplete. Keep recurring schedule #5 active.
 
-**November 6, next county: Susquehanna complete arithmetic review; query publication pending.**
+**November 6, 16:28 UTC: Susquehanna complete native query published and independently verified.**
+Immutable release **436728256**, tag
+`voter-county-susquehanna-native-turnout-20261106-01`, freezes native revision
+**`a7fad838607bd5ded9cd543ff16a2f574396f180`**. Both exact credential jobs
+**42251869339 (tag) / 42251869723 (review)** pass. All **17 entire anonymous
+release assets / 17 entire commit-pinned files / 16 actual ZIP members** match
+their frozen bytes and SHA-256 digests. Eleven isolated tests against the actual
+published archive pass; all **17 files reproduce byte-identically offline**.
+The existing draft was published once; no replacement release or asset was
+created. Full evidence is in `20261106-susquehanna-native-publication-01`.
+
+The separate county identity review reparses both entire original **3,222-row**
+2024/2026 Census archives and checks every parsed row before uniquely matching
+**Susquehanna County, PA / contextual GEOID 42115**. The unchanged entire
+2024 Pennsylvania geometry matches its original exact production byte receipt.
+Native source FIPS remains missing; this does not establish a certified 2026
+election boundary or grant map approval. The actual live baseline preserves
+**362 native rows / 781 download anchors / 777 distinct URLs**, all prior
+historical years and imports, and context19. Identity and baseline evidence is
+in `20261106-susquehanna-explorer-01`.
+
 The actual official election-results page declares three distinct November
 general-election reports. The full declaring page and all three PDFs have
 been acquired with verified TLS, HTTP 200, complete byte/hash/header receipts:
@@ -154,12 +174,12 @@ native parties remain distinct from explicitly matched summary identities.
 `278746dd8f1f6f8ab08d47ecd1486376319272976e7f824034783d752e03d069`.
 Validation evidence is separate in `20261106-susquehanna-native-validation-01`.
 
-**Next:** freeze and publish the complete native query, verify every full
-immutable release asset and its actual archive, then perform a separately
-reviewed county identity/context integration after the pending production proof.
-Do not repeat acquisition or substitute excerpts. No immutable release,
-analysis/rate/map approval or UI integration exists for Susquehanna yet; local
-query validation does not change any live coverage count.
+**Next:** separately review the native whole-county ballot/registration
+fraction and context20 integration, preserving all prior records, geometry,
+exclusions and complete downloads. The immutable source query and independent
+county identity are complete; do not repeat their acquisition, publication,
+archive tests or inventories. No analysis/rate/map approval or UI integration
+exists for Susquehanna yet; source publication does not change live coverage.
 
 **November 6, 15:00 UTC: distinct Venango alternatives reviewed; no invented county total.**
 Both complete official elections-navigation and results-archive responses were

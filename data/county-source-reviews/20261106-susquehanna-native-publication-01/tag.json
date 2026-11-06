@@ -1,0 +1,36 @@
+{
+  "ref": {
+    "ref": "refs/tags/voter-county-susquehanna-native-turnout-20261106-01",
+    "node_id": "REF_kwDOTeY7QdoAPXJlZnMvdGFncy92b3Rlci1jb3VudHktc3VzcXVlaGFubmEtbmF0aXZlLXR1cm5vdXQtMjAyNjExMDYtMDE",
+    "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/refs/tags/voter-county-susquehanna-native-turnout-20261106-01",
+    "object": {
+      "sha": "9332b85a52ab36077723436374380f34f77506b3",
+      "type": "tag",
+      "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/tags/9332b85a52ab36077723436374380f34f77506b3"
+    }
+  },
+  "tag": {
+    "node_id": "TA_kwDOTeY7QdoAKDkzMzJiODVhNTJhYjM2MDc3NzIzNDM2Mzc0MzgwZjM0Zjc3NTA2YjM",
+    "sha": "9332b85a52ab36077723436374380f34f77506b3",
+    "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/tags/9332b85a52ab36077723436374380f34f77506b3",
+    "tagger": {
+      "name": "Hans Hanley",
+      "email": "hwahhanley@gmail.com",
+      "date": "2026-11-06T16:23:04Z"
+    },
+    "object": {
+      "sha": "a7fad838607bd5ded9cd543ff16a2f574396f180",
+      "type": "commit",
+      "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/commits/a7fad838607bd5ded9cd543ff16a2f574396f180"
+    },
+    "tag": "voter-county-susquehanna-native-turnout-20261106-01",
+    "message": "Complete native Susquehanna query with isolated offline reproduction\n",
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  }
+}
