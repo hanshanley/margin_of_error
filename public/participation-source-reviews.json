@@ -1,6 +1,39 @@
 {
   "reviews": [
     {
+      "id": "pennsylvania-mifflin-20261106-01",
+      "label": "Mifflin County, Pennsylvania 2026: native ballots, full county/unit query and unavailable registration-based rate",
+      "data_directory": "data/county-source-reviews/20261106-mifflin-facts-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/0d125f99185c1097ceb3cab4f3458eb9242d51de/data/county-source-reviews/20261106-mifflin-facts-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mifflin-20261106-01/complete-mifflin-county-native-query-01.zip",
+      "complete_download_bytes": 89556,
+      "complete_download_sha256": "61e24e6042ef4d94052550ca96de970ba504997491b296b0149eda092bdebfcd",
+      "review_status": "complete_county_and_unit_query_reviewed_unofficial_partial_reporting_unusable_native_zero_registrations",
+      "maps_approved": false,
+      "scope_note": "All 54 entire pages, 26 unit participation headers, 104 unit contests and five county contests reconcile across both PDF engines. Native Ballots Cast - Total 14,439 = 12,017 Election Day + 2,422 Mail + explicit zero Provisional; six blank ballots are already included. Native registrations zero and printed 0.00% are preserved, but the calculated turnout rate is unavailable, not zero. All 26 units are partially reported, zero complete. Separate 85th/171st Assembly electorates are 4,409/10,030 ballots. Not Assigned breaks down Write-In Totals, not additional votes. Parent notice literally says Primary Election Day, November 3, 2026 under a General section: 2,435 receipts are not counted mail 2,422; difference 13 remains unexplained. UNOFFICIAL RESULTS and summary 11/03/2026 09:28PM / statement 09:26PM remain literal without an inferred timezone. All 24 entire anonymous assets, 24 pinned files and 23 ZIP members match, and the extracted isolated Python renderer reproduces every entire file and archive offline; eighteen corruption rejections pass. Fixed checksums/never overwrite, not host locking. Originals/templates remain private. No source FIPS, new geometry, completed counting, certification, statewide coverage or demographic/party turnout claim.",
+      "tables": [
+        {"file": "county-participation.csv", "label": "Mifflin: complete native ballots, unusable zero registrations and missing calculated rate (CSV)"},
+        {"file": "county-candidate-results.csv", "label": "Mifflin: all 60 county candidate/write-in/mode observations and literal parties, not turnout (CSV)"},
+        {"file": "county-literal-party-totals.csv", "label": "Mifflin: all 40 separate county office/literal-party/mode candidate totals, not turnout (CSV)"},
+        {"file": "county-contest-accounting.csv", "label": "Mifflin: all 20 county contest/mode observations and separate Assembly electorates (CSV)"},
+        {"file": "native-unit-participation.csv", "label": "Mifflin: all 26 native unit headers, printed fractions and blank ballots (CSV)"},
+        {"file": "native-unit-participation-modes.csv", "label": "Mifflin: all 104 native unit/mode participation observations (CSV)"},
+        {"file": "native-unit-candidate-results.csv", "label": "Mifflin: all 1,324 unit candidate/write-in/mode observations from all 104 contests (CSV)"},
+        {"file": "native-unit-literal-party-totals.csv", "label": "Mifflin: all 908 separate unit/office/literal-party/mode candidate totals, not turnout (CSV)"},
+        {"file": "native-unit-contest-accounting.csv", "label": "Mifflin: all 416 unit contest/mode accounting observations (CSV)"},
+        {"file": "native-participation-modes.csv", "label": "Mifflin: all four native counted county participation modes, distinct from receipts (CSV)"},
+        {"file": "native-reporting-statistics.csv", "label": "Mifflin: all four reporting rows, 26 partial and zero complete units (CSV)"},
+        {"file": "native-mail-receipts.csv", "label": "Mifflin: separate 2,435 receipts and contradictory Primary wording, not counted mail (CSV)"},
+        {"file": "native-source-pages.csv", "label": "Mifflin: all 54 physical/printed page identities, native clocks and precise review scopes (CSV)"},
+        {"file": "native-derived-contest-sums.csv", "label": "Mifflin: all five separately derived contest sums and distinct electorates (CSV)"},
+        {"file": "native-derived-rate-checks.csv", "label": "Mifflin: all 27 native printed fractions and unavailable calculated rates (CSV)"},
+        {"file": "native-source-declarations.csv", "label": "Mifflin: both actual parent-declared General report labels and URLs (CSV)"},
+        {"file": "native-write-in-breakdowns.csv", "label": "Mifflin: all 436 nested Not Assigned write-in mode cells, not additional votes (CSV)"},
+        {"file": "native-unit-write-in-availability.csv", "label": "Mifflin: all 104 unit-contest write-in availability observations (CSV)"}
+      ],
+      "coverage": []
+    },
+    {
       "id": "pennsylvania-potter-20261106-01",
       "label": "Potter County, Pennsylvania 2026: native ballots, full county/unit query and separate mail receipts",
       "data_directory": "data/county-source-reviews/20261106-potter-facts-01",

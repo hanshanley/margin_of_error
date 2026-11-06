@@ -19,6 +19,24 @@ Current **44 reviewed native county rows / 490 complete download anchors /
 results remain separate. This is not nationwide county, precinct, demographic,
 certification or complete-counting coverage.
 
+**Mifflin UI candidate is locally verified, not yet LIVE.** Source release
+436262436 and context release **436272496**, fixed context facts revision
+`641826e7ae96fab5d1ceb5a66fe4bbe809ef0a0a`, have complete anonymous/pinned/archive
+byte checks and offline reproduction. Context tag/review credentials
+**42189785260 / 42189753300** pass. Independently checked Mifflin's identity in
+both complete Census inventories. All **909 previous records / 437 joins** and
+every previous geometry, exclusion and source-map flag remain unchanged.
+New context: **910 records / 438 joins / 65 usable native fractions / 373 missing
+gray rates**. The strict loader preserves native zero registrations and printed
+0.00% while withholding the calculated rate; substitution/repaired-denominator
+rejections pass. All **56 affected tests**, Astro check, build, Pages preparation
+and **seven local browser scenarios** pass. Full-site validation reaches only
+the known unrelated UK assertion `23 !== 16`, not a new participation failure.
+Prepared site **961,225,435 bytes**, **106 byte-identical relocated downloads**;
+**45 native rows / 513 complete download anchors / 509 unique URLs** retain every
+old record, import and download. Exact approved revision, original hosted artifact,
+entire public bytes, credential jobs and production browsers remain required.
+
 Next source work is **Mifflin / Perry**, not a repeat Potter deployment.
 Both actual official parents and four declared complete original reports are
 saved privately in `pa-perry-mifflin-primary-20261106-01`. Mifflin's 54 entire
@@ -57,8 +75,13 @@ native-column crop pass now covers all 24 pages, without language correction or
 third-party uploads, but still misses some single-digit cells. Both passes use
 the same OCR engine, not independent transcriptions. Tesseract/Homebrew are absent;
 the chosen independent RapidOCR import also failed as missing. Its required
-offline engine is being installed in an isolated private environment, leaving
-existing research dependencies untouched; source data will remain on-device.
+offline engine is installed in an isolated private environment, leaving
+existing research dependencies untouched. Isolated local RapidOCR/ONNX has now
+processed all 24 full, SHA-verified page images; full coordinates, model hashes,
+literal candidates and confidence remain private. The independent pass correctly
+reads the entire county summary, but still misses some single-digit cells in the
+statement. It is not a completed native transcription, reconciliation or source
+approval; no missing cell is filled arithmetically and no source is uploaded.
 Preserve full original scans, full-page images, coordinates, candidates and actual
 failure observations privately; do not infer missing cells, native parties or
 participation modes from candidate columns. Neither new county has source-map

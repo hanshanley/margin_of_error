@@ -9,13 +9,65 @@ import { loadReviewedCountyParticipation } from './reviewed-county-participation
 
 const reviews = JSON.parse(readFileSync('public/participation-source-reviews.json', 'utf8')).reviews;
 
+test('preserves every context06 record and Mifflin ballots without interpreting native zero registrations as turnout', () => {
+  const rows = loadReviewedCountyParticipation(reviews);
+  const previous = JSON.parse(gunzipSync(readFileSync(
+    'public/participation-county-context/20261106-06/complete-source-records.json.gz')));
+  const oldReviewed = previous.filter(row => rows.some(current => current.county_id === row.county_id
+    && current.state_code === row.state_code));
+  assert.deepEqual(rows.filter(row => row.county !== 'Mifflin'), oldReviewed);
+  const row = rows.find(row => row.county === 'Mifflin');
+  assert.equal(row.ballots, 14439);
+  assert.equal(row.denominator, null);
+  assert.equal(row.reported_pct, null);
+  assert.equal(row.native_record.registered_voters, '0');
+  assert.equal(row.native_printed_pct, '0.00%');
+  assert.equal(row.participation_measure_literal, 'Ballots Cast - Total');
+  assert.equal(row.source_status_literal, 'UNOFFICIAL RESULTS');
+  assert.equal(row.native_record.election_day_ballots, '12017');
+  assert.equal(row.native_record.mail_ballots, '2422');
+  assert.equal(row.native_record.provisional_ballots, '0');
+  assert.equal(row.native_record.blank_ballots, '6');
+  assert.equal(row.native_record.complete_precincts, '0');
+  assert.equal(row.native_record.partially_reported_precincts, '26');
+  assert.equal(row.native_record.county_fips, undefined);
+  assert.equal(row.maps_approved, false);
+  assert.deepEqual(row.native_source_updates.map(update => update.source), ['summary', 'statement']);
+  assert.match(row.source_update_label, /summary: 11\/03\/2026 09:28PM \(timezone not declared\)/);
+  assert.match(row.source_update_label, /statement: 11\/03\/2026 09:26PM \(timezone not declared\)/);
+  assert.match(row.source_reporting_label, /rate is unavailable/);
+  assert.match(row.source_reporting_label, /4,409\/10,030-ballot subsets/);
+  assert.match(row.source_reporting_label, /Primary Election Day, November 3, 2026/);
+  assert.match(row.source_reporting_label, /2,435 receipts.*counted mail 2,422.*difference 13 remains unexplained/);
+});
+
+test('rejects Mifflin receipt substitution, doubled blanks, invented denominator and completion', () => {
+  const original = reviews.find(row => row.id === 'pennsylvania-mifflin-20261106-01');
+  const directory = mkdtempSync(join(tmpdir(), 'mifflin-participation-'));
+  try {
+    for (const file of ['audit.json', 'native-source-pages.csv'])
+      copyFileSync(join(original.data_directory, file), join(directory, file));
+    const body = readFileSync(join(original.data_directory, 'county-participation.csv'), 'utf8');
+    const altered = reviews.map(row => row === original ? { ...row, data_directory: directory } : row);
+    for (const input of [body.replace(',14439,', ',14445,'), body.replace(',14439,0,', ',14439,25000,'),
+      body.replace(',2422,0,', ',2435,0,'), body.replace(',2422,0,', ',2422,,'),
+      body.replace(',26,26,0,26,', ',26,26,26,0,'), body.replace('UNOFFICIAL RESULTS', 'Official Results')]) {
+      assert.notEqual(input, body);
+      writeFileSync(join(directory, 'county-participation.csv'), input);
+      assert.throws(() => loadReviewedCountyParticipation(altered), /Invalid reviewed county participation/);
+    }
+  } finally {
+    rmSync(directory, { recursive: true, force: true });
+  }
+});
+
 test('preserves every context05 native record and Potter ballot, receipt and accounting distinctions', () => {
   const rows = loadReviewedCountyParticipation(reviews);
   const previous = JSON.parse(gunzipSync(readFileSync(
     'public/participation-county-context/20261106-05/complete-source-records.json.gz')));
   const oldReviewed = previous.filter(row => rows.some(current => current.county_id === row.county_id
     && current.state_code === row.state_code));
-  assert.deepEqual(rows.filter(row => row.county !== 'Potter'), oldReviewed);
+  assert.deepEqual(rows.filter(row => !['Potter', 'Mifflin'].includes(row.county)), oldReviewed);
   const row = rows.find(row => row.county === 'Potter');
   assert.equal(row.ballots, 6244);
   assert.notEqual(row.ballots, 6221);
@@ -67,7 +119,7 @@ test('preserves every context04 native record and distinct Elk/Forest counts, mi
     'public/participation-county-context/20261106-04/complete-source-records.json.gz')));
   const oldReviewed = previous.filter(row => rows.some(current => current.county_id === row.county_id
     && current.state_code === row.state_code));
-  assert.deepEqual(rows.filter(row => !['Elk', 'Forest', 'Potter'].includes(row.county)), oldReviewed);
+  assert.deepEqual(rows.filter(row => !['Elk', 'Forest', 'Potter', 'Mifflin'].includes(row.county)), oldReviewed);
   const elk = rows.find(row => row.county === 'Elk');
   assert.equal(elk.ballots, 11742);
   assert.notEqual(elk.ballots, 11679);
@@ -140,7 +192,7 @@ test('preserves every context03 native record and distinct Cameron/Carbon partic
     'public/participation-county-context/20261106-03/complete-source-records.json.gz')));
   const oldReviewed = previous.filter(row => rows.some(current => current.county_id === row.county_id
     && current.state_code === row.state_code));
-  assert.deepEqual(rows.filter(row => !['Cameron', 'Carbon', 'Elk', 'Forest', 'Potter'].includes(row.county)), oldReviewed);
+  assert.deepEqual(rows.filter(row => !['Cameron', 'Carbon', 'Elk', 'Forest', 'Potter', 'Mifflin'].includes(row.county)), oldReviewed);
   const cameron = rows.find(row => row.county === 'Cameron');
   assert.equal(cameron.ballots, 1624);
   assert.notEqual(cameron.ballots, 1617);
@@ -211,7 +263,7 @@ test('preserves every previous entire record and Clarion native participation sc
     'public/participation-county-context/20261106-02/complete-source-records.json.gz')));
   const oldReviewed = previous.filter(row => rows.some(current => current.county_id === row.county_id
     && current.state_code === row.state_code));
-  assert.deepEqual(rows.filter(row => !['Clarion', 'Cameron', 'Carbon', 'Elk', 'Forest', 'Potter'].includes(row.county)), oldReviewed);
+  assert.deepEqual(rows.filter(row => !['Clarion', 'Cameron', 'Carbon', 'Elk', 'Forest', 'Potter', 'Mifflin'].includes(row.county)), oldReviewed);
   const row = rows.find(row => row.county === 'Clarion');
   assert.equal(row.ballots, 12975);
   assert.notEqual(row.ballots, 12893);
@@ -254,7 +306,7 @@ test('preserves every previous entire record while adding reviewed Jefferson Vot
     'public/participation-county-context/20261106-01/complete-source-records.json.gz')));
   const oldReviewed = previous.filter(row => rows.some(current => current.county_id === row.county_id
     && current.state_code === row.state_code));
-  assert.deepEqual(rows.filter(row => !['Jefferson', 'Clarion', 'Cameron', 'Carbon', 'Elk', 'Forest', 'Potter'].includes(row.county)), oldReviewed);
+  assert.deepEqual(rows.filter(row => !['Jefferson', 'Clarion', 'Cameron', 'Carbon', 'Elk', 'Forest', 'Potter', 'Mifflin'].includes(row.county)), oldReviewed);
   const row = rows.find(row => row.county === 'Jefferson');
   assert.equal(row.ballots, 15205);
   assert.equal(row.denominator, 28226);
@@ -293,8 +345,8 @@ test('rejects Jefferson vote substitution, changed privacy scope or repaired nat
 
 test('loads all reviewed county participation without promoting map coverage', () => {
   const rows = loadReviewedCountyParticipation(reviews);
-  assert.equal(rows.length, 44);
-  assert.equal(rows.filter(row => row.state_code === 'PA').length, 24);
+  assert.equal(rows.length, 45);
+  assert.equal(rows.filter(row => row.state_code === 'PA').length, 25);
   assert.equal(rows.filter(row => row.state_code === 'DC').length, 1);
   assert.equal(rows.filter(row => row.state_code === 'NJ').length, 19);
   assert.ok(rows.every(row => row.maps_approved === false && row.reported_units === null));
@@ -489,7 +541,7 @@ test('preserves Wayne header participation, missing modes and explicitly attribu
   const rows = loadReviewedCountyParticipation(reviews);
   const baseline = JSON.parse(readFileSync(
     'data/county-source-reviews/20261106-wayne-publication-01/baseline.json', 'utf8'));
-  assert.deepEqual(rows.filter(row => !['Wayne', 'Jefferson', 'Clarion', 'Cameron', 'Carbon', 'Elk', 'Forest', 'Potter'].includes(row.county) && row.state_code !== 'NJ'),
+  assert.deepEqual(rows.filter(row => !['Wayne', 'Jefferson', 'Clarion', 'Cameron', 'Carbon', 'Elk', 'Forest', 'Potter', 'Mifflin'].includes(row.county) && row.state_code !== 'NJ'),
     baseline.previous_reviewed_county_records);
   const row = rows.find(row => row.county === 'Wayne');
   const review = reviews.find(review => review.id === row.review_id);
@@ -547,7 +599,7 @@ test('preserves New Jersey partial modes, native Cape May denominator and all pr
   const rows = loadReviewedCountyParticipation(reviews);
   const baseline = JSON.parse(readFileSync(
     'data/county-source-reviews/20261106-nj-participation-publication-02/baseline.json', 'utf8'));
-  assert.deepEqual(rows.filter(row => row.state_code !== 'NJ' && !['Jefferson', 'Clarion', 'Cameron', 'Carbon', 'Elk', 'Forest', 'Potter'].includes(row.county)), baseline.previous_reviewed_county_records);
+  assert.deepEqual(rows.filter(row => row.state_code !== 'NJ' && !['Jefferson', 'Clarion', 'Cameron', 'Carbon', 'Elk', 'Forest', 'Potter', 'Mifflin'].includes(row.county)), baseline.previous_reviewed_county_records);
   const nj = rows.filter(row => row.state_code === 'NJ');
   assert.equal(nj.length, 19);
   assert.ok(nj.every(row => row.county_id === `reviewed:NJ:${row.county}` && !row.maps_approved));

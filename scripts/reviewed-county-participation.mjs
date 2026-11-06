@@ -26,6 +26,7 @@ const profiles = [
   ['pennsylvania-elk-20261106-01', 'ballots_cast', 'registered_voters', 'native_printed_turnout', 'PA', ['Elk']],
   ['pennsylvania-forest-20261106-01', 'ballots_cast', 'registered_voters', 'native_printed_turnout', 'PA', ['Forest']],
   ['pennsylvania-potter-20261106-01', 'ballots_cast', 'registered_voters', 'native_printed_turnout', 'PA', ['Potter']],
+  ['pennsylvania-mifflin-20261106-01', 'ballots_cast', 'registered_voters', 'native_printed_turnout', 'PA', ['Mifflin']],
   ['dc-delegate-county-20261105-01', 'ballots_cast', 'registered_voters', null, 'DC', ['District of Columbia']],
 ];
 /** @returns {Record<string, string>[]} */
@@ -147,6 +148,16 @@ export function loadReviewedCountyParticipation(reviews) {
       }
     }
     const audit = JSON.parse(readFileSync(resolve(directory, 'audit.json'), 'utf8'));
+    if (id === 'pennsylvania-mifflin-20261106-01') {
+      for (const [file, digest] of Object.entries({
+        'county-participation.csv': 'fc44988e299256ae5fccb9e33a9f0eb049a37f184c2e7f9c3fb64d8b61f95eec',
+        'native-source-pages.csv': 'a07daeade5b5a5537ee2fbe6d859e5f8b8d9c15e3d0415888d8ba85cd47ef834',
+        'audit.json': '002cca74c5cb18d58c566bd591acc8b81f6fae463f28989e06a63565ac714436',
+      })) {
+        if (createHash('sha256').update(readFileSync(resolve(directory, file))).digest('hex') !== digest)
+          throw new Error(`Invalid reviewed county participation: ${id} / ${file}`);
+      }
+    }
     if (id === 'pennsylvania-potter-20261106-01') {
       for (const [file, digest] of Object.entries({
         'county-participation.csv': '32e83977ce7b6679afbccaca04b775dad071abdb26a86497fbeebd66d132bac1',
@@ -176,7 +187,8 @@ export function loadReviewedCountyParticipation(reviews) {
     if (rows.length !== names.length) throw new Error(`Incomplete reviewed county source: ${id}`);
     for (const native of rows) {
       const county = native.county ?? native.geography, identity = `${code}|${county}`;
-      const unusableNativeZero = id === 'pennsylvania-lebanon-20261106-01';
+      const nativeMifflinSummary = id === 'pennsylvania-mifflin-20261106-01';
+      const unusableNativeZero = id === 'pennsylvania-lebanon-20261106-01' || nativeMifflinSummary;
       const excludesProvisionals = id === 'pennsylvania-armstrong-20261106-01';
       const nativeClarionSummary = id === 'pennsylvania-clarion-20261106-01';
       const nativeCameronSummary = id === 'pennsylvania-cameron-20261106-01';
@@ -190,8 +202,11 @@ export function loadReviewedCountyParticipation(reviews) {
       const ballots = Number(native[ballotField]);
       const denominator = unusableNativeZero ? null : Number(native[denominatorField]);
       const invalidDenominator = unusableNativeZero
-        ? native[denominatorField] !== '' || native.native_registered_voters !== '0'
-          || native.registered_turnout_percent !== '' || native.native_printed_turnout !== '0.00%'
+        ? nativeMifflinSummary
+          ? native[denominatorField] !== '0' || native.registered_turnout_pct !== ''
+            || native.native_printed_turnout !== '0.00%'
+          : native[denominatorField] !== '' || native.native_registered_voters !== '0'
+            || native.registered_turnout_percent !== '' || native.native_printed_turnout !== '0.00%'
         : !/^\d+$/.test(native[denominatorField]) || !Number.isSafeInteger(denominator)
           || denominator <= 0 || ballots > denominator;
       if (native.year !== '2026' || native.state_code !== code || !names.includes(county) || seen.has(identity)
@@ -255,6 +270,13 @@ export function loadReviewedCountyParticipation(reviews) {
         'Separate 871 mail-in/absentee receipts by 8 p.m. are not counted mail 855; the difference 16 remains unexplained and unallocated. The receipt notice supplies no report clock or timezone.',
         'County named write-ins are breakdowns within Write-In Totals, not additional votes; unit named breakdowns are absent, not zero or county names allocated to units.',
         'Native unit Total Votes Cast and Contest Totals rows are absent; derived totals remain separate. Summary and statement clocks remain distinct without an inferred timezone.');
+      if (nativeMifflinSummary) reporting.push(
+        'Native Ballots Cast - Total 14,439 = 12,017 Election Day + 2,422 Mail + explicit zero Provisional; six blank ballots are already included.',
+        'Native registrations zero and printed 0.00% do not establish zero participation; the calculated registration-based rate is unavailable.',
+        'All 26 units are partially reported and zero complete; all 104 unit contests and five county contests reconcile without establishing completed ballot counting.',
+        'The 85th and 171st Assembly electorates are separate 4,409/10,030-ballot subsets, not the whole county assigned to either contest.',
+        'The parent receipt notice literally says Primary Election Day, November 3, 2026 despite the General section; 2,435 receipts are not counted mail 2,422, and the difference 13 remains unexplained.',
+        'Not Assigned is nested within Write-In Totals, not additional votes; summary and statement clocks remain distinct without an inferred timezone.');
       for (const field of ['native_group_reporting_status_json', 'native_precinct_reporting_status_json']) {
         for (const row of JSON.parse(native[field] || '[]'))
           reporting.push(`${row.groupName.map(label => label.text).join(' / ')}: `
@@ -275,7 +297,7 @@ export function loadReviewedCountyParticipation(reviews) {
         'pennsylvania-jefferson-20261106-01', 'pennsylvania-clarion-20261106-01',
         'pennsylvania-cameron-20261106-01', 'pennsylvania-carbon-20261106-01',
         'pennsylvania-elk-20261106-01', 'pennsylvania-forest-20261106-01',
-        'pennsylvania-potter-20261106-01'].includes(id)) {
+        'pennsylvania-potter-20261106-01', 'pennsylvania-mifflin-20261106-01'].includes(id)) {
         nativeSourceUpdates = [...new Map(csv(resolve(directory, 'native-source-pages.csv')).map(row =>
           [row.source_report ?? 'county_report', { source: row.source_report ?? 'county_report', native_update_literal: row.source_update_literal,
             declared_timezone: row.declared_timezone }])).values()];
@@ -303,12 +325,12 @@ export function loadReviewedCountyParticipation(reviews) {
       observations.push({
         year: 2026, state_code: code, county_id: native.county_fips || `reviewed:${code}:${county}`,
         county, geography_level: native.geography_level || 'county', ballots, denominator,
-        ...(nativeVotersCast || nativeCameronSummary || nativeElkSummary || nativeForestSummary || nativePotterSummary
+        ...(nativeVotersCast || nativeCameronSummary || nativeElkSummary || nativeForestSummary || nativePotterSummary || nativeMifflinSummary
           ? { participation_measure_literal: native.native_participation_measure_literal } : {}),
         denominator_basis: 'native_registered_voters', reported_pct: denominator === null ? null : 100 * ballots / denominator,
         native_printed_pct: printedPct, source_status_literal: nativeCountyHeader
           ? native.native_parent_status_literal : nativeClarionSummary || nativeCameronSummary || nativeCarbonSummary
-            || nativeElkSummary || nativeForestSummary || nativePotterSummary
+            || nativeElkSummary || nativeForestSummary || nativePotterSummary || nativeMifflinSummary
             ? native.source_status_literal : native.native_status_literal ?? native.result_status ?? null,
         reported_units: null, total_units: null, source_rows: 0, maps_approved: false,
         review_id: id, native_record: native, native_source_updates: nativeSourceUpdates,
