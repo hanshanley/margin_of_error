@@ -1,0 +1,52 @@
+{
+  "verified_at_utc": "2026-11-06T04:38:56.764567+00:00",
+  "facts_revision": "95f54b7304b5d895c90cfb4f8389b2aaa307d202",
+  "release_tag": "voter-county-oregon-participation-20261106-01",
+  "host_immutable": false,
+  "fixed_commit_and_checksums_not_host_lock": true,
+  "complete_downloads": [
+    {
+      "kind": "complete_release_asset",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-oregon-participation-20261106-01/complete-oregon-county-participation-01.zip",
+      "bytes": 11717,
+      "sha256": "c5fe6d065cc45a7b1d62fda7882b8ca9ec560e305cf705836dcd7a257960b09f",
+      "anonymous": true
+    },
+    {
+      "kind": "complete_release_asset",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-oregon-participation-20261106-01/county-participation.csv",
+      "bytes": 32572,
+      "sha256": "eac6d7e6ebfeee4eac7d00f91c1e8dc47564347ec27c0fc34c82e60c5cf4bb92",
+      "anonymous": true
+    },
+    {
+      "kind": "complete_release_asset",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-oregon-participation-20261106-01/source-records.json.gz",
+      "bytes": 2614,
+      "sha256": "631f2a06669566b7da4a1b5580a9cc17da8a24f2b5af9152d6bcab694ce5196a",
+      "anonymous": true
+    },
+    {
+      "kind": "complete_release_asset",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-oregon-participation-20261106-01/statewide-observations.csv",
+      "bytes": 415,
+      "sha256": "9c1c0ed403af9fc954dc16d2ad0f7fd39ba1ea384b81e4e4384444652c7b4dc3",
+      "anonymous": true
+    },
+    {
+      "kind": "complete_commit_pinned_table",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/95f54b7304b5d895c90cfb4f8389b2aaa307d202/data/county-source-reviews/20261106-oregon-participation-01/county-participation.csv",
+      "bytes": 32572,
+      "sha256": "eac6d7e6ebfeee4eac7d00f91c1e8dc47564347ec27c0fc34c82e60c5cf4bb92",
+      "anonymous": true
+    },
+    {
+      "kind": "complete_commit_pinned_table",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/95f54b7304b5d895c90cfb4f8389b2aaa307d202/data/county-source-reviews/20261106-oregon-participation-01/statewide-observations.csv",
+      "bytes": 415,
+      "sha256": "9c1c0ed403af9fc954dc16d2ad0f7fd39ba1ea384b81e4e4384444652c7b4dc3",
+      "anonymous": true
+    }
+  ],
+  "complete_zip_members_byte_verified": true
+}

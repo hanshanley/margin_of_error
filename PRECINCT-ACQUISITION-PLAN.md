@@ -415,7 +415,7 @@ were anonymously byte-verified again. Private receipts are
 `files/south-dakota-existing-live-feed-proof-01.json` and
 `files/south-dakota-existing-feed-source-verification-01.json`.
 
-**Washoe County participation, released and locally integrated, not yet live:**
+**Washoe County participation, released and live verified:**
 the genuine missing Nevada county feed is reproduced in the live explorer.
 The full retained 553,410-byte, 23-page native report has SHA-256
 `ac8d43ad5b41e41ccb1ac6ddac54cb37630f00b979c44ba2067e4330ad35c63b`.
@@ -471,8 +471,18 @@ reviewed native records, sixteen complete import fingerprints, 52 UF rows,
 five historical years and 321 prior download anchors are preserved. Four new
 complete links give 322 unique URLs / 325 anchors. Proofs are under
 `data/county-source-reviews/20261106-washoe-publication-01/`.
-Publish the reviewed UI and verify its exact deployed revision before calling
-this county live; no nationwide completion is claimed.
+UI revision `27cfa8b076971935f4ed0db5a9bb460b3bd4db32` passed Pages run
+`42163083152` and both credential checks `42163083147` / `42163083076`.
+Production verification finished at `2026-11-06T04:39:07.403501+00:00`:
+all 27 selected hosted/live files match, all seventeen full import JSONs equal
+the local reference, and all seven focused browser checks pass. The complete
+484,816,319-byte hosted artifact was SHA-256 verified before inspecting it;
+its digest is `aa8b83b7d2c22930e0f3dd4c9e3c9b2230ee7c33b167a294c795435567f1c119`.
+The hosted preview matches its own manifest; all remaining manifest entries
+match locally. The temporary artifact was removed. All sixteen previous
+imports, fourteen reviewed records, 52 UF rows, history and prior complete
+downloads remain unchanged. Production evidence is persisted review-only;
+no nationwide completion is claimed.
 
 **Oregon bulk participation, complete numerical review prepared, not yet live:**
 the official current-election page declares the statewide results portal, whose
@@ -504,7 +514,13 @@ and portable reviewer are under `20261106-oregon-participation-01`; original HTM
 presentation and chart code remain private acquisition evidence. The complete
 ZIP is 11,717 bytes, SHA-256
 `c5fe6d065cc45a7b1d62fda7882b8ca9ec560e305cf705836dcd7a257960b09f`.
-Publish and anonymously verify fixed full downloads before wiring the new state.
+Facts revision `95f54b7304b5d895c90cfb4f8389b2aaa307d202` is published on
+the review branch. Fixed release `voter-county-oregon-participation-20261106-01`
+targets that exact commit. All four complete assets and both pinned complete
+tables are anonymously downloaded and byte-verified, including every complete
+ZIP member. GitHub reports `immutable: false`; retain the fixed-checksum and
+never-overwrite qualification. Proof is under `20261106-oregon-publication-01`.
+UI integration and exact production verification remain pending.
 
 **November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated
