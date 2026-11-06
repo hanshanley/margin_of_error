@@ -1,0 +1,225 @@
+{
+  "reviewed_at_utc": "2026-11-06T17:28:51.526689+00:00",
+  "complete_response_receipts": [
+    {
+      "source": "https://www.westmorelandcountypa.gov/electionresults",
+      "final_url": "https://www.westmorelandcountypa.gov/electionresults",
+      "acquired_at_utc": "2026-11-06T16:41:58.017958+00:00",
+      "status": 403,
+      "verified_tls": true,
+      "bytes": 5662,
+      "sha256": "623bcab8060a037c445c4e420050f81c1fcca8f505824dbe38724481f1eb689f",
+      "headers": {
+        "Content-Type": "text/html; charset=UTF-8",
+        "Date": "Fri, 06 Nov 2026 16:41:58 GMT",
+        "Last-Modified": null,
+        "ETag": null
+      }
+    },
+    {
+      "source": "https://www.washingtoncopa.gov/elections/2026-election-information",
+      "final_url": "https://www.washingtoncopa.gov/elections/2026-election-information",
+      "acquired_at_utc": "2026-11-06T17:28:51.310266+00:00",
+      "status": 200,
+      "verified_tls": true,
+      "bytes": 173150,
+      "sha256": "bfa62bf6492ad78afac8930a77f3057fccfb717d269a2d7676e19e05beaf8121",
+      "headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Date": "Fri, 06 Nov 2026 17:28:51 GMT",
+        "Last-Modified": null,
+        "ETag": null
+      }
+    },
+    {
+      "source": "https://www.washingtoncopa.gov/elections",
+      "final_url": "https://www.washingtoncopa.gov/elections",
+      "acquired_at_utc": "2026-11-06T17:28:51.510173+00:00",
+      "status": 200,
+      "verified_tls": true,
+      "bytes": 319232,
+      "sha256": "a4b2ebf6eb1ba7104e70ed19eba43fd8aecd7be3c65d6078e9f8163268b8c1de",
+      "headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Date": "Fri, 06 Nov 2026 17:28:51 GMT",
+        "Last-Modified": null,
+        "ETag": null
+      }
+    }
+  ],
+  "successful_parent_responses": 2,
+  "skipped_after_access_denial": [
+    {
+      "source": "https://www.westmorelandcountypa.gov/2101/Prior-Election-Results",
+      "reason": "Sibling parent not retried after hostname access denial"
+    }
+  ],
+  "successful_raw_parent_declarations": {
+    "washington-2026": [
+      {
+        "text": "View results",
+        "href": "https://results.enr.clarityelections.com/PA/Washington/127563/"
+      },
+      {
+        "text": "DEPARTMENTS",
+        "href": "https://www.washingtoncopa.gov/elections/2026-election-information"
+      },
+      {
+        "text": "RESOURCES",
+        "href": "https://www.washingtoncopa.gov/elections/2026-election-information"
+      },
+      {
+        "text": "DEPARTMENTS",
+        "href": "https://www.washingtoncopa.gov/elections/2026-election-information"
+      },
+      {
+        "text": "Elections",
+        "href": "https://www.washingtoncopa.gov/elections"
+      },
+      {
+        "text": "RESOURCES",
+        "href": "https://www.washingtoncopa.gov/elections/2026-election-information"
+      },
+      {
+        "text": "Back to Department",
+        "href": "https://www.washingtoncopa.gov/elections"
+      },
+      {
+        "text": "Click here for important dates for the 2026 election year.",
+        "href": "https://cms.washingtoncopa.gov/uploads/2026_Pennsylvania_Election_Important_Dates_4e3fce3bf2.pdf"
+      },
+      {
+        "text": "Democratic - Precinct Committee People",
+        "href": "https://cms.washingtoncopa.gov/uploads/2026_Precinct_Committee_People_Democratic_e502df3430.pdf"
+      },
+      {
+        "text": "Republican - Precinct Committee People",
+        "href": "https://cms.washingtoncopa.gov/uploads/2026_Precinct_Committee_People_Republican_5b50b16b59.pdf"
+      }
+    ],
+    "washington-department": [
+      {
+        "text": "View results",
+        "href": "https://results.enr.clarityelections.com/PA/Washington/127563/"
+      },
+      {
+        "text": "DEPARTMENTS",
+        "href": "https://www.washingtoncopa.gov/elections"
+      },
+      {
+        "text": "RESOURCES",
+        "href": "https://www.washingtoncopa.gov/elections"
+      },
+      {
+        "text": "DEPARTMENTS",
+        "href": "https://www.washingtoncopa.gov/elections"
+      },
+      {
+        "text": "Elections",
+        "href": "https://www.washingtoncopa.gov/elections"
+      },
+      {
+        "text": "RESOURCES",
+        "href": "https://www.washingtoncopa.gov/elections"
+      },
+      {
+        "text": "2026 General Election Specimen Ballots (ExpressVote)",
+        "href": "https://www.washingtoncopa.gov/elections/2026-election-specimen-ballots-expressvote"
+      },
+      {
+        "text": "2026 General Election Specimen Ballots (Mail)",
+        "href": "https://www.washingtoncopa.gov/elections/2026-election-specimen-ballots-mail"
+      },
+      {
+        "text": "2026 Election Information",
+        "href": "https://www.washingtoncopa.gov/elections/2026-election-information"
+      },
+      {
+        "text": "Military and Overseas Civilian Voters Information",
+        "href": "https://www.washingtoncopa.gov/elections/military-overseas-voters"
+      },
+      {
+        "text": "Polling Place Information",
+        "href": "https://www.washingtoncopa.gov/elections/precincts"
+      },
+      {
+        "text": "Poll Worker Information",
+        "href": "https://www.washingtoncopa.gov/elections/poll-workers"
+      },
+      {
+        "text": "Poll Worker Training Resources",
+        "href": "https://www.washingtoncopa.gov/elections/poll-workers-training"
+      },
+      {
+        "text": "Past Election Results",
+        "href": "https://www.washingtoncopa.gov/elections/past-election-results"
+      },
+      {
+        "text": "Obtain the form by clicking here.",
+        "href": "https://cms.washingtoncopa.gov/uploads/Wash_Co_Voter_List_Request_updated_1_19_23_92d4005f67.pdf"
+      }
+    ]
+  },
+  "browser_observed_declarations": [
+    {
+      "parent": "https://www.westmorelandcountypa.gov/electionresults",
+      "declared_link": "https://results.enr.clarityelections.com/PA/Westmoreland/127568/web.345435/"
+    },
+    {
+      "parent": "https://www.washingtoncopa.gov/elections/2026-election-information",
+      "declared_link": "https://results.enr.clarityelections.com/PA/Washington/127563/"
+    }
+  ],
+  "blocked_distinct_vendor_sources": [
+    {
+      "county": "Westmoreland",
+      "declared_url": "https://results.enr.clarityelections.com/PA/Westmoreland/127568/web.345435/",
+      "observed_via": "Web browser opening the literal declared link",
+      "visible_title": "JavaScript is disabled",
+      "visible_message": "In order to continue, we need to verify that you're not a robot. This requires JavaScript. Enable JavaScript and then reload the page.",
+      "exact_http_status_not_supplied_by_browser": true,
+      "raw_vendor_response_not_acquired": true,
+      "gate_not_bypassed": true,
+      "no_vendor_retry_no_alternate_vendor_host": true,
+      "native_results_not_acquired": true
+    },
+    {
+      "county": "Washington",
+      "declared_url": "https://results.enr.clarityelections.com/PA/Washington/127563/",
+      "observed_via": "Web browser opening the literal declared link",
+      "visible_title": "JavaScript is disabled",
+      "visible_message": "In order to continue, we need to verify that you're not a robot. This requires JavaScript. Enable JavaScript and then reload the page.",
+      "exact_http_status_not_supplied_by_browser": true,
+      "raw_vendor_response_not_acquired": true,
+      "gate_not_bypassed": true,
+      "no_vendor_retry_no_alternate_vendor_host": true,
+      "native_results_not_acquired": true
+    }
+  ],
+  "washington_separately_scoped_mail_process": {
+    "source": "https://www.washingtoncopa.gov/elections",
+    "evidence_kind": "Complete acquired official parent",
+    "native_literal_label": "mail-in and absentee ballots received by 8 PM",
+    "received_mail_process_count": 17493,
+    "county_ballots": null,
+    "registration_denominator": null,
+    "analysis_ballots_approved": false,
+    "analysis_rate_approved": false,
+    "maps_approved": false
+  },
+  "native_county_ballot_observations_added": 0,
+  "native_county_rate_observations_added": 0,
+  "maps_approved": 0,
+  "global_absence_not_inferred": true,
+  "raw_parents_and_complete_anchor_inventory_remain_private": true,
+  "completed_parent_inspection": {
+    "two_complete_washington_parents_reviewed": true,
+    "declared_county_hosted_pdfs": "Election dates and precinct committee people, not numerical general-election returns.",
+    "past_results_parent_browser_observation": {
+      "url": "https://www.washingtoncopa.gov/elections/past-election-results",
+      "observed_scope": "2026 Primary and older 2025-2018 navigation; no 2026 General declaration in the inspected navigation.",
+      "separate_complete_raw_response_not_acquired": true
+    }
+  },
+  "next_step": "Continue independently declared, reachable official alternatives only. The saved successful parents have been inspected; do not repeat them, denied parents or either gated vendor, guess endpoint IDs or promote the mail-process count into whole-county participation. This scoped inspection does not establish global source absence."
+}

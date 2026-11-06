@@ -1,0 +1,284 @@
+{
+  "transcription_basis": "All four physical PDF pages visually reviewed against full saved rasters, assisted by complete macOS Vision page and numeric-column OCR. OCR has missing or corrupted glyphs and is not an authoritative independent complete parse. Original PDF bytes and complete OCR remain private; this is the complete factual numerical transcription, not a facsimile.",
+  "election_date": "2026-11-03",
+  "native_scope": "All Precincts, All Districts, All Counter Groups, All ScanStations, All Contests, All Boxes",
+  "candidate_columns": ["native_choice", "Votes", "Vote %", "ED", "MI", "PR"],
+  "reports": [
+    {
+      "county": "Sullivan",
+      "native_title": "Statement of Votes Cast by Geography",
+      "native_election": "Sullivan County, PA, PA_Sullivan_2026_General, Nov 03, 2026",
+      "physical_pages": 3,
+      "native_page_on_summary": "1 of 1",
+      "native_date": "2026-11-06",
+      "native_clock": "10:36:27",
+      "native_timezone": null,
+      "native_status": "UNOFFICIAL Election Results",
+      "status_printed_on_physical_page": 2,
+      "total_ballots": 2712,
+      "registered_voters": 4501,
+      "printed_percentage": "60.25%",
+      "reported_precincts": null,
+      "total_precincts": null,
+      "contests": [
+        {
+          "id": "governor",
+          "native_contest": "GOVERNOR AND LIEUTENANT GOVERNOR",
+          "vote_for": 1,
+          "header_registered_voters": 4501,
+          "header_printed_percentage": "60.25%",
+          "header_ballots": null,
+          "overvoted_ballots": null,
+          "overvotes": null,
+          "undervotes": null,
+          "footer_overvotes": null,
+          "footer_undervotes": null,
+          "choices": [
+            ["Josh Shapiro", 993, null, 721, 269, 3],
+            ["Stacy Garrity", 1628, null, 1480, 148, 0],
+            ["Ken Krawchuk", 49, null, 42, 7, 0],
+            ["Write-in", 1, null, 1, 0, 0]
+          ],
+          "total": ["Total", 2671, null, 2244, 424, 3]
+        },
+        {
+          "id": "congress",
+          "native_contest": "REPRESENTATIVE IN CONGRESS",
+          "vote_for": 1,
+          "header_registered_voters": 4501,
+          "header_printed_percentage": "60.25%",
+          "header_ballots": null,
+          "overvoted_ballots": null,
+          "overvotes": null,
+          "undervotes": null,
+          "footer_overvotes": null,
+          "footer_undervotes": null,
+          "choices": [
+            ["Rachel Wallace", 890, null, 646, 241, 3],
+            ["Dan Meuser", 1785, null, 1604, 181, 0],
+            ["Write-in", 5, null, 4, 1, 0]
+          ],
+          "total": ["Total", 2680, null, 2254, 423, 3]
+        },
+        {
+          "id": "assembly",
+          "native_contest": "REPRESENTATIVE IN THE GENERAL ASSEMBLY",
+          "vote_for": 1,
+          "header_registered_voters": 4501,
+          "header_printed_percentage": "60.25%",
+          "header_ballots": null,
+          "overvoted_ballots": null,
+          "overvotes": null,
+          "undervotes": null,
+          "footer_overvotes": null,
+          "footer_undervotes": null,
+          "choices": [
+            ["Joe Hamm", 2243, null, 1958, 284, 1],
+            ["Write-in", 73, null, 50, 23, 0]
+          ],
+          "total": ["Total", 2316, null, 2008, 307, 1]
+        }
+      ]
+    },
+    {
+      "county": "Wyoming",
+      "native_title": "Statement of Votes Cast by Geography",
+      "native_election": "Wyoming County, 2026 GENERAL ELECTION, Nov 03, 2026",
+      "physical_pages": 1,
+      "native_page_on_summary": "1 of 1",
+      "native_date": "2026-11-06",
+      "native_clock": "09:15:07",
+      "native_timezone": null,
+      "native_status": null,
+      "status_printed_on_physical_page": null,
+      "source_file_status_literal": "Unofficial",
+      "total_ballots": 10542,
+      "registered_voters": 18565,
+      "printed_percentage": "56.78%",
+      "reported_precincts": 28,
+      "total_precincts": 28,
+      "contests": [
+        {
+          "id": "governor",
+          "native_contest": "GOVERNOR / LT. GOVERNOR",
+          "vote_for": 1,
+          "header_registered_voters": 18565,
+          "header_printed_percentage": "56.78%",
+          "header_ballots": 10542,
+          "overvoted_ballots": 17,
+          "overvotes": 17,
+          "undervotes": 75,
+          "footer_overvotes": 17,
+          "footer_undervotes": 75,
+          "choices": [
+            ["JOSH SHAPIRO", 4407, "42.17%", 3162, 1239, 6],
+            ["STACY GARRITY", 5829, "55.78%", 5339, 485, 5],
+            ["KEN KRAWCHUK", 204, "1.95%", 189, 15, 0],
+            ["Write-in", 10, "0.10%", 9, 1, 0]
+          ],
+          "total": ["Total", 10450, "100.00%", 8699, 1740, 11]
+        },
+        {
+          "id": "congress",
+          "native_contest": "REPRESENTATIVE IN CONGRESS",
+          "vote_for": 1,
+          "header_registered_voters": 18565,
+          "header_printed_percentage": "56.78%",
+          "header_ballots": 10542,
+          "overvoted_ballots": 4,
+          "overvotes": 4,
+          "undervotes": 65,
+          "footer_overvotes": 4,
+          "footer_undervotes": 65,
+          "choices": [
+            ["RACHEL WALLACE", 4002, "38.21%", 2864, 1132, 6],
+            ["DAN MEUSER", 6450, "61.59%", 5837, 608, 5],
+            ["Write-in", 21, "0.20%", 17, 4, 0]
+          ],
+          "total": ["Total", 10473, "100.00%", 8718, 1744, 11]
+        },
+        {
+          "id": "senate",
+          "native_contest": "SENATOR IN THE GENERAL ASSEMBLY",
+          "vote_for": 1,
+          "header_registered_voters": 18565,
+          "header_printed_percentage": "56.78%",
+          "header_ballots": 10542,
+          "overvoted_ballots": 2,
+          "overvotes": 2,
+          "undervotes": 74,
+          "footer_overvotes": 2,
+          "footer_undervotes": 74,
+          "choices": [
+            ["JACKIE BAKER", 3441, "32.88%", 2424, 1011, 6],
+            ["LISA BAKER", 7003, "66.91%", 6271, 727, 5],
+            ["Write-in", 22, "0.21%", 20, 2, 0]
+          ],
+          "total": ["Total", 10466, "100.00%", 8715, 1740, 11]
+        },
+        {
+          "id": "assembly",
+          "native_contest": "REPRESENTATIVE IN THE GENERAL ASSEMBLY",
+          "vote_for": 1,
+          "header_registered_voters": 18565,
+          "header_printed_percentage": "56.78%",
+          "header_ballots": 10542,
+          "overvoted_ballots": 1,
+          "overvotes": 1,
+          "undervotes": 59,
+          "footer_overvotes": 1,
+          "footer_undervotes": 59,
+          "choices": [
+            ["PAMELA J HEMANN", 3403, "32.47%", 2427, 970, 6],
+            ["TINA PICKETT", 7057, "67.32%", 6281, 771, 5],
+            ["Write-in", 22, "0.21%", 20, 2, 0]
+          ],
+          "total": ["Total", 10482, "100.00%", 8728, 1743, 11]
+        }
+      ]
+    }
+  ],
+  "sullivan_write_in_matrix": {
+    "native_election_label": "General Election November 3, 2026",
+    "native_status": "UNOFFICIAL Election Results",
+    "native_date": null,
+    "native_clock": null,
+    "native_timezone": null,
+    "columns": ["Cherry Township", "Bernice Precinct", "Colley Township", "Lopez Precinct", "Davidson Twp", "Dushore Boro", "Eagles Mere Bor", "Elkland Twp", "Forks Township", "Forksville Boro", "Fox Twp", "Hillsgrove Town", "Laporte Twp", "Laporte Boro", "Shrewsbury Twp"],
+    "row_columns": ["native_choice", "printed_locality_cells", "TOTALS"],
+    "unlisted_locality_cells": null,
+    "sections": [
+      {
+        "physical_page": 2,
+        "summary_contest_id": "governor",
+        "native_contest": "GOVERNOR/LT. GOVERNOR",
+        "continuation": false,
+        "rows": [
+          ["Jeff Randall", {"Laporte Boro": 1}, 1],
+          [null, {}, 0],
+          [null, {}, 0],
+          [null, {}, 0],
+          [null, {}, 0],
+          [null, {}, 0],
+          [null, {}, 0],
+          [null, {}, 0]
+        ]
+      },
+      {
+        "physical_page": 2,
+        "summary_contest_id": "congress",
+        "native_contest": "REP IN CONGRESS - 9TH DIST",
+        "continuation": false,
+        "rows": [
+          ["Daniel Miller", {"Laporte Boro": 1}, 1],
+          [null, {}, 0],
+          [null, {}, 0],
+          [null, {}, 0],
+          [null, {}, 0],
+          [null, {}, 0],
+          [null, {}, 0],
+          [null, {}, 0]
+        ]
+      },
+      {
+        "physical_page": 2,
+        "summary_contest_id": "assembly",
+        "native_contest": "REP IN THE GENERAL ASSEMBLY - 84TH DIST",
+        "continuation": false,
+        "rows": [
+          ["Joseph Carpenter", {"Cherry Township": 2}, 2],
+          ["Oakland Myers", {"Cherry Township": 1}, 1],
+          ["Kristy Mullen", {"Bernice Precinct": 1}, 1],
+          ["Trent Zwatty", {"Bernice Precinct": 1}, 1],
+          ["Kathy Gardner", {"Bernice Precinct": 1}, 1],
+          ["Jaiden James Moore", {"Bernice Precinct": 1}, 1],
+          ["Scot Myers", {"Colley Township": 1}, 1]
+        ]
+      },
+      {
+        "physical_page": 3,
+        "summary_contest_id": "assembly",
+        "native_contest": null,
+        "continuation": true,
+        "rows": [
+          ["Aurora Pavlick", {"Davidson Twp": 1}, 1],
+          ["Janet Scott", {"Davidson Twp": 1}, 1],
+          ["Elizabeth Warren", {"Davidson Twp": 1}, 1],
+          ["Robert M. Miller", {"Davidson Twp": 2}, 2],
+          ["Donna Iannone", {"Dushore Boro": 1}, 1],
+          ["Jared Nolan", {"Dushore Boro": 2}, 2],
+          ["Dawn Umstead", {"Dushore Boro": 1}, 1],
+          ["Dan Stors", {"Dushore Boro": 1}, 1],
+          ["Chris Hughes", {"Eagles Mere Bor": 1}, 1],
+          ["Suzanne Lee", {"Eagles Mere Bor": 1}, 1],
+          ["John Clough", {"Eagles Mere Bor": 1}, 1],
+          ["Sharon Smith", {"Eagles Mere Bor": 1}, 1],
+          ["Richard Leibert", {"Eagles Mere Bor": 1}, 1],
+          ["Joe Biden", {"Eagles Mere Bor": 1}, 1],
+          ["Michael Lutz", {"Eagles Mere Bor": 1}, 1],
+          ["Scott Meyers, Jr.", {"Eagles Mere Bor": 1}, 1],
+          ["Paige Cognetti", {"Eagles Mere Bor": 1}, 1],
+          ["Andy Winiarczyk", {"Elkland Twp": 1}, 1],
+          ["Murphy Clarence", {"Forksville Boro": 1}, 1],
+          ["Roy Parsons", {"Fox Twp": 1}, 1],
+          ["Rachel Wallace", {"Fox Twp": 2}, 2],
+          ["Robert Henderson", {"Fox Twp": 1}, 1],
+          ["John Chappelle", {"Hillsgrove Town": 1}, 1],
+          ["Christopher Bowes", {"Hillsgrove Town": 2}, 2],
+          ["Timothy Heidecker", {"Hillsgrove Town": 1}, 1],
+          ["Stephan Brady", {"Hillsgrove Town": 1}, 1],
+          ["Michael Hedgcock", {"Hillsgrove Town": 1, "Laporte Boro": 1}, 2],
+          ["Germaine Donahue", {"Hillsgrove Town": 1}, 1],
+          ["Mark Roinick", {"Laporte Boro": 2}, 2],
+          ["Alexis Randall", {"Laporte Boro": 1}, 1],
+          ["Christopher Browner", {"Shrewsbury Twp": 1}, 1],
+          ["James D. Speese", {"Shrewsbury Twp": 1}, 1],
+          ["William Bubb", {"Shrewsbury Twp": 1}, 1],
+          ["Ellen M. Schaefer", {"Shrewsbury Twp": 1}, 1],
+          [null, {}, 0],
+          [null, {}, 0]
+        ]
+      }
+    ]
+  }
+}

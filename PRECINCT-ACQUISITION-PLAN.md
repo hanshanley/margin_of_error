@@ -2,6 +2,33 @@
 
 ## Current verified production and next acquisition
 
+**November 6: Sullivan/Wyoming complete native numerical query prepared; not yet LIVE.**
+The two entire declared official PDFs were acquired at 17:31 UTC with verified
+TLS, complete redirect/size/hash receipts and all four physical pages reviewed.
+Sullivan reports **2,712 ballots / 4,501 registrations / 60.25%** at native
+**2026-11-06 10:36:27**; Wyoming reports **10,542 / 18,565 / 56.78%** at
+**2026-11-06 09:15:07**. Neither clock prints a timezone. The actual acquired
+Wyoming PDF supersedes the older web-extracted 10,531-ballot snapshot; never mix
+their counts or clocks.
+
+The complete portable query retains all **22 candidate vectors / seven contest
+totals / seven accounting rows / four physical pages / 59 write-in matrix rows**.
+All **944 locality/total matrix cells** remain represented: **841 blanks are
+missing and 16 printed zeros are zero**. Sullivan's named write-in listings
+**1/1/48** differ from summary write-ins **1/5/73**; preserve the separately scoped
+**0/4/25 unallocated differences**, not additional ballots or invented candidates.
+Its **41/32/396 ballot-minus-selection residuals** are unclassified, not native
+undervotes. Wyoming's native over-voted ballots plus undervotes reconcile each
+contest; overvotes are not counted twice. Native candidate affiliations, summary
+office districts, ballot-mode counts and blank ballots remain missing.
+
+Ten focused tests pass, including byte-identical complete offline archive replay,
+missing-versus-zero, continuation pages, stale snapshot rejection and native
+accounting guards. Original native approval flags and FIPS remain unchanged.
+**Next:** freeze and verify the full immutable numerical release, separately review
+both county identities/fractions, and extend context20 losslessly before any UI
+LIVE claim. The successful context20 deployment below needs no retry.
+
 **November 6, 17:27 UTC: Susquehanna/context20 LIVE; exact deploy-only recovery verified.**
 Exact UI **`6fdb6bde43fc6b961a1f1d4a3e5f7f7a47614716`**, Pages
 **42254442195 attempt 2**, deployed successfully using the original successful

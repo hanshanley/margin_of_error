@@ -1,0 +1,4 @@
+county,contest_id,native_summary_contest,summary_write_ins,listed_write_ins,summary_less_listing_unallocated,listing_completeness_approved,scope_note
+Sullivan,governor,GOVERNOR AND LIEUTENANT GOVERNOR,1,1,0,False,Summary district is unprinted; listing districts remain separately scoped. Do not repair either source or allocate missing write-ins.
+Sullivan,congress,REPRESENTATIVE IN CONGRESS,5,1,4,False,Summary district is unprinted; listing districts remain separately scoped. Do not repair either source or allocate missing write-ins.
+Sullivan,assembly,REPRESENTATIVE IN THE GENERAL ASSEMBLY,73,48,25,False,Summary district is unprinted; listing districts remain separately scoped. Do not repair either source or allocate missing write-ins.
