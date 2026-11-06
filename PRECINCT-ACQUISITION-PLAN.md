@@ -816,6 +816,12 @@ All 106 complete relocations pass byte checks; the prepared Pages site is
 898,767,354 bytes. The local preview helper was stopped.
 Exact production deployment/live verification remains pending; no new map,
 demographic turnout, certification or statewide completion is approved.
+Published UI revision is `77ef430db67d266613e37b6582c37b6df92c096e`;
+Pages `42168004599` and credential checks `42168004679` / `42168004897`
+are being checked by the single bounded
+`wayne-exact-production-verification-01` process. Its exact watcher started
+and build was confirmed in progress. Preserve its prepared `dist` reference
+until it finishes; do not duplicate the watcher.
 
 **November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated
