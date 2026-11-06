@@ -1,0 +1,3 @@
+year,state_code,county,source_file,source_update_literal,source_status_literal,voting_mode_literal,native_total_ballots,registered_voters,native_printed_turnout,native_percent_unit,reported_precincts,total_precincts,all_mode_participation_approved,counted_mail_ballots,source_fips,counting_complete,maps_approved
+2026,PA,Bradford,bradford-election-day-final.pdf,11/3/2026 10:15:12 PM EST,Unofficial Final Election Day Results,Election Day,20982,39048,53.73,percent,61,61,False,,,False,False
+2026,PA,Bradford,bradford-earlier-results.pdf,11/3/2026 8:45:38 PM EST,Unoffcial Results 5,Election Day,12488,39048,31.98,percent,46,61,False,,,False,False

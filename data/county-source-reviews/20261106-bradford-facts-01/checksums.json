@@ -1,0 +1,62 @@
+[
+  {
+    "file": "audit.json",
+    "bytes": 1419,
+    "sha256": "700f85c689e6548f90ed3daf239dcc11612dfe356e2891877e072d50ca2a5830"
+  },
+  {
+    "file": "county-candidate-results.csv",
+    "bytes": 7217,
+    "sha256": "9ad401dbdb1a07e467a233014f5bb38351a4a062368b35e3603068101c0fdaa5"
+  },
+  {
+    "file": "county-contest-accounting.csv",
+    "bytes": 2769,
+    "sha256": "0ffb97cdc4fa3781206fd1e420915c1568929d5bbcb2104978812c5539d51ed0"
+  },
+  {
+    "file": "county-literal-party-totals.csv",
+    "bytes": 6789,
+    "sha256": "b57e8fd0d50094eb8201544eeaa8b14632782cdef2bd97c31e9eb2651f220e72"
+  },
+  {
+    "file": "election-day-participation.csv",
+    "bytes": 647,
+    "sha256": "d0813653fd8dcf6a7577ddf17753f66e6048600263d48cf8c2dd3986d258b76f"
+  },
+  {
+    "file": "native-contest-query.csv",
+    "bytes": 2014,
+    "sha256": "5849c4c70369db221834c4e85d5de16e8b33ebb2de42e1ef98e5e54d9fa10ce5"
+  },
+  {
+    "file": "native-source-declarations.csv",
+    "bytes": 271,
+    "sha256": "a37e595d9d637786df4b96bdd6001a4dc0d3eb0e75569c6fdb7a0913f63df776"
+  },
+  {
+    "file": "parent-processing-observations.csv",
+    "bytes": 272,
+    "sha256": "15438f93ddfc7708417bb003e5ecc34278bbd3c44b0d63d3029f3085817212b0"
+  },
+  {
+    "file": "review-bradford-native-query.py",
+    "bytes": 12178,
+    "sha256": "dadd5d610f26dfe24adb7e55cc4ab5f365b1530a8716a413146ff98ca1dd06ce"
+  },
+  {
+    "file": "source-receipts.csv",
+    "bytes": 977,
+    "sha256": "8e400bb9c483cb99ad21196b26cb444895c568cde9c0b7a41eb765887e865f94"
+  },
+  {
+    "file": "source-records.json.gz",
+    "bytes": 1736,
+    "sha256": "e13901f090e2b24d2900d54b563151f8a2122b486341462ea66b514ab8e6f9ed"
+  },
+  {
+    "file": "test-bradford-native-query.py",
+    "bytes": 3224,
+    "sha256": "0e7b516f62d00b84faf4820e55e98ec4a69e197cac1558be9fb739f1a5897843"
+  }
+]

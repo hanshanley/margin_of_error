@@ -1,0 +1,4 @@
+file,url,final_url,status,content_type,bytes,sha256,fetched_at_utc
+bradford-parent.html,https://www.bradfordcountypa.gov/302/Elections,https://www.bradfordcountypa.gov/302/Elections,200,text/html; charset=utf-8,173964,34e870150c910f49a0697575639e6897d76dfd70b063436a4add9aff4fc7a055,2026-11-06T10:56:29.017470+00:00
+bradford-election-day-final.pdf,https://www.bradfordcountypa.gov/DocumentCenter/View/1735/UnofficialElectionDayFinalResults,https://www.bradfordcountypa.gov/DocumentCenter/View/1735/UnofficialElectionDayFinalResults,200,application/pdf,77728,028fb6df093fa5d0f3bd73e54273b58f5ba0f5df3c43e988b0d5aca28c22439d,2026-11-06T10:56:29.282053+00:00
+bradford-earlier-results.pdf,https://www.bradfordcountypa.gov/DocumentCenter/View/1734/BradfordUnofficialResults,https://www.bradfordcountypa.gov/DocumentCenter/View/1734/BradfordUnofficialResults,200,application/pdf,77744,49c2a45e493d2b21c26bd613799a159cbfc984a12a3990b0373cb4e7f8ca9cae,2026-11-06T10:56:29.541391+00:00
