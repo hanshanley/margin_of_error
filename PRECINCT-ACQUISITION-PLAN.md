@@ -1338,9 +1338,36 @@ Full review is 752,308 bytes, SHA-256
 `0c99fcf2de4811aa3f50c7a1aa3f85f303298f59554d17deec466d07cb41dd2d`.
 All 21 source-loader tests pass, including whole context 03 native-record
 preservation and rejection of candidate/zero substitution, invented modes
-or changed native statuses for both new counties. Context 04 facts/release,
-exact credential checks, source-matched browsers and exact production
-deployment must still be verified before any live integration claim.
+or changed native statuses for both new counties. Context 04 facts
+`8ab35a474fe82071899ff6658c7e0a9a5531707f` and fixed release
+`voter-county-participation-context-20261106-04` / **436217366** are
+published. All four entire release assets, 29 pinned files and 28 portable
+ZIP members pass anonymous byte equality and extracted offline verification
+and byte-identical archive reproduction at `2026-11-06T07:31:13.473576+00:00`.
+The actual tag commit and target independently match. Exact credential
+runs **42181355649** (tag) / **42181341394** (review) pass. This is
+fixed-checksum/never-overwrite publication, not host-enforced locking.
+
+The local UI integration passes all **47** affected tests, Astro check
+and build, and all **seven** source-matched browser scenarios. Desktop/mobile
+verify every one of 434 county counts, 62 fractions, 372 gray missing
+rates, both new native county measures/statuses/clocks/qualifications and
+the previous Jefferson/Clarion selections. All 904 previous full records,
+39 earlier native rows, eighteen whole import JSONs, 52 UF rows, historical
+years and 405 old download anchors survive. There are now 429 complete
+download anchors / 425 URLs. No-JavaScript, changed-review, failed-review
+and failed-current-feed fallbacks pass; the temporary server is stopped.
+Pages preparation independently verifies 106 entire relocated downloads;
+the complete prepared site is **934,445,271 bytes**, below 1 GB. The
+general validator passes participation checks and still fails only at the
+documented unrelated UK assertion, **23 versus 16**, line 1126; this is
+not represented as a passing full-site validator. All complete local,
+release and exact credential proofs are under
+`data/county-source-reviews/20261106-cameron-carbon-explorer-01/`.
+The source-specific registry/loader, new context 04 pointer and updated
+regressions are ready for a single UI publication. Exact deployed revision,
+hosted artifact/public bytes and all seven production browser scenarios
+remain pending; production is still the verified 6579e73 until these pass.
 Private acquisition and engine proofs are in
 `pa-cameron-carbon-primary-20261106-01`,
 `pa-carbon-declared-reports-20261106-01` and

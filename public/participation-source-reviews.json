@@ -1,6 +1,54 @@
 {
   "reviews": [
     {
+      "id": "pennsylvania-carbon-20261106-01",
+      "label": "Carbon County, Pennsylvania 2026: native Voters Cast and independently reconciled county units",
+      "data_directory": "data/county-source-reviews/20261106-carbon-facts-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/70b59f20e5ab346fca4444553e43eb7a39586944/data/county-source-reviews/20261106-carbon-facts-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-carbon-20261106-01/complete-carbon-2026-county-query-01.zip",
+      "complete_download_bytes": 74268,
+      "complete_download_sha256": "ae0b7c6bb55e2dfdcf35c9579cf8a8305f4abf0a98ba673ab3f6a5df086a394a",
+      "review_status": "complete_scoped_county_query_reviewed_unofficial_separate_zero_report_and_kidder_electorate",
+      "maps_approved": false,
+      "scope_note": "Complete county summary and separately retained earlier Official Zero Report: all four contests, 104 mode-specific choice rows and 56 literal-party/mode totals. Current Voters Cast is 24,840 = 20,375 Election Day + 4,465 Mail-In + explicit zero Provisional, with 45,896 registrations and printed 54.12%. All 51 statement participation units reconcile exactly; both county footers and both Cumulative zero/N/A containers remain separate, not additional turnout. All 55 entire label/value rows independently match sequential and coordinate-based PDF extraction, including wrapped labels. All 27 source pages independently token-match with documented rotated-header reading and zero value edits. Statement unit candidate tables on pages 4-23 are outside this numerical query scope, not claimed transcribed. Kidder's 807/1,457 referendum electorate remains distinct. Unresolved write-ins and unclassified residuals 350/381/288/30 are retained; missing mode registrations and native over/undervotes are not invented. Native clocks remain distinct: summary 11/3/2026 10:36:36 PM, statement 10:19:13 PM and zero report 7:05:24 PM, all without a declared timezone. The source index's Current link is a stale primary report and is not used. All 15 full assets, 15 pinned files and 14 ZIP members are anonymously byte-verified and reproduce offline with Python standard library; twelve semantic rejection cases pass. Fixed checksums/never overwrite, not host locking. Source terms reviewed; original PDFs/HTML/templates private, without a reproduction/use-permission claim. No source map approval, certification, completed counting, statewide or demographic turnout claim.",
+      "tables": [
+        {"file": "county-participation.csv", "label": "Carbon: complete current native Voters Cast, modes, registrations and reporting scope (CSV)"},
+        {"file": "county-candidate-results.csv", "label": "Carbon: all 104 current/zero-report choice/mode observations and literal parties (CSV)"},
+        {"file": "county-literal-party-totals.csv", "label": "Carbon: all 56 separate report/office/literal-party/mode candidate totals, not turnout (CSV)"},
+        {"file": "native-contest-accounting.csv", "label": "Carbon: all 32 scoped contest/mode observations, separate Kidder electorate and unclassified residuals (CSV)"},
+        {"file": "native-participation-modes.csv", "label": "Carbon: all eight current/zero-report mode observations with explicitly missing mode registrations (CSV)"},
+        {"file": "native-unit-participation.csv", "label": "Carbon: all 55 native statement unit/container/footer rows, retaining Cumulative N/A without double counting (CSV)"},
+        {"file": "native-source-pages.csv", "label": "Carbon: all 27 native page identities, timestamps and precise numerical review scopes (CSV)"},
+        {"file": "native-report-observations.csv", "label": "Carbon: all three separately dated native report observations and status literals (CSV)"},
+        {"file": "native-source-selection.csv", "label": "Carbon: all four source-selection declarations, including the unused stale primary link (CSV)"}
+      ],
+      "coverage": []
+    },
+    {
+      "id": "pennsylvania-cameron-20261106-01",
+      "label": "Cameron County, Pennsylvania 2026: native ballots and separately scoped Act88 receipts",
+      "data_directory": "data/county-source-reviews/20261106-cameron-facts-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/11bd5bd9db09e679dc970514b5d72f283a5bf788/data/county-source-reviews/20261106-cameron-facts-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-cameron-20261106-01/complete-cameron-2026-county-query-01.zip",
+      "complete_download_bytes": 35176,
+      "complete_download_sha256": "db524c09653ecdf29a809627d9bff724b70a0e35eb4d9a106f0c6ce6ba3ee607",
+      "review_status": "complete_county_summary_query_reviewed_unofficial_partial_reporting_separate_act88_receipts",
+      "maps_approved": false,
+      "scope_note": "Complete three-contest county summary across all Total/Election Day/Mail counting groups: 30 choice rows, 21 literal-party/mode totals, all accounting and nested Not Assigned write-in subsets. Native Ballots Cast - Total is 1,624 = 1,305 Election Day + 319 Mail, with 2,885 registrations and printed 56.29%; missing provisional participation is not zero. All ten precincts are partially reported and zero complete, despite ten of ten Election Day and Absentee/Early reporting. Not Assigned is already within Write-In Totals, not additional votes; one blank ballot is already within native Ballots Cast. The complete separate ten-unit Act88 receipt preserves all five columns, native municipality IDs, totals and its Federal Voter filter. Its 324 returned ballots and 320 votes recorded are not counted Mail 319; unexplained differences remain unallocated. Native UNOFFICIAL RESULTS and 11/03/2026 9:13 PM retain undeclared timezone. Act88 supplies an election date, not a native report clock; the 12:01 link label does not supply one. Both text engines independently agree on all three entire summary pages; the separate one-page image was fully visually inspected, without a false text-engine claim. All 15 full assets, 15 pinned files and 14 ZIP members are anonymously byte-verified and reproduce offline with Python standard library; ten semantic rejection cases pass. Fixed checksums/never overwrite, not host locking. Original PDF/HTML/templates remain private. No source map approval, certification, completed counting, statewide or demographic turnout claim.",
+      "tables": [
+        {"file": "county-participation.csv", "label": "Cameron: complete native Ballots Cast, registrations, blank ballots and partial-reporting scope (CSV)"},
+        {"file": "county-candidate-results.csv", "label": "Cameron: all 30 separate choice/mode rows and literal parties, not turnout (CSV)"},
+        {"file": "county-literal-party-totals.csv", "label": "Cameron: all 21 office/literal-party/mode candidate totals, not party turnout (CSV)"},
+        {"file": "native-contest-accounting.csv", "label": "Cameron: all nine contest/mode accounting rows with native overvotes and undervotes (CSV)"},
+        {"file": "native-write-in-children.csv", "label": "Cameron: all nine Not Assigned write-in subsets, never additional votes (CSV)"},
+        {"file": "native-participation-modes.csv", "label": "Cameron: all three counted participation modes and native blank ballots, not Act88 receipts (CSV)"},
+        {"file": "native-reporting-statistics.csv", "label": "Cameron: all four native reporting statistics, ten partial and zero complete precincts (CSV)"},
+        {"file": "native-mail-receipts.csv", "label": "Cameron: all ten native Act88 units plus totals and federal-voter filter, not counted mail participation (CSV)"},
+        {"file": "native-source-pages.csv", "label": "Cameron: all four native page identities, timestamps and distinct text/visual review methods (CSV)"}
+      ],
+      "coverage": []
+    },
+    {
       "id": "pennsylvania-clarion-20261106-01",
       "label": "Clarion County, Pennsylvania 2026: native Voters Cast and separate contest electorates",
       "data_directory": "data/county-source-reviews/20261106-clarion-facts-01",
