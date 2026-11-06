@@ -2,7 +2,7 @@
 
 ## Current verified production and next acquisition
 
-**November 6: Bedford/Northumberland context22 published; genuine UI validated, not LIVE.**
+**November 6: Bedford/Northumberland context22 verified LIVE at 18:46UTC.**
 Both complete native numerical packages are immutable and fully verified in
 draft and public phases. Both counties independently match both entire Census
 inventories and the unchanged previously hosted 2024 contextual geometry.
@@ -42,9 +42,41 @@ application, source or artifact exception was introduced. Temporary helpers
 are stopped. The unrelated existing UK topic-card-count validator failure is
 not represented as a passing full-site suite.
 The earlier frozen artifact was not rebuilt as a queue-failure workaround.
-No new Pages run has started. Exact original hosted artifact bytes/digest,
-actual hosted size, all **470 selected entire public files / 444 prior paths**
-and seven production browsers remain required before any LIVE claim.
+Exact UI **`55465f323f4f63924fb999241c1f0676372a2ab6`** is verified LIVE.
+Pages **42272154942 attempt1**, main credentials **42272154866** and review
+credentials **42272155312** all succeeded at that exact revision. The original
+hosted artifact **13532885325 / 507,825,183 bytes / SHA-256
+`f6bbf15d7f7dff7cb38e909609001a12454e1d4a859c86482d0534fe6ead9101`**
+was downloaded whole and matched its API byte count and digest. Actual hosted
+size is **972,262,448 bytes**, below the unchanged 1 GB limit, with **354 complete
+byte-identical relocations**. All **470 selected entire public files**, including
+all **444 previous paths**, match the exact original hosted artifact. All **seven
+production browser scenarios** pass, preserving the previous records, entire
+imports, historical years, UF rows and download anchors. Pennsylvania now has
+**43 observations / 40 registered-voter fractions**, adding Sullivan, Wyoming,
+Bedford and Northumberland relative to the last verified context20 baseline.
+The bounded verifier exited successfully; none is active. Persist these proofs
+on the review branch only; no audit-only main push or repeat deployment.
+
+**November 6: Union complete original reports reconciled; mode scope withheld.**
+The actual county-declared general-election PDF and all **26 literal lazy-embedded
+precinct downloads** were acquired with verified TLS, rather than guessed paths.
+All **27 complete original bodies / 54 independent complete extractions** agree:
+the precincts sum exactly to the county's **14,311 Total Ballots / 26,619 Registered
+Voters**, and all **14 county candidate/write-in vectors across five contests**
+equal their respective precinct sums. Native candidate and registration
+percentages independently recompute. Literal clocks, parties, reporting scopes,
+missing accounting fields and original hashes remain in
+`data/county-source-reviews/20261106-union-native-scope-01/source-qualification.json`.
+The original county file and its physical render confirm **November 3, 2026**;
+the earlier cached primary-election screenshot is not the acquired original.
+Every report still labels its group **Election Day** without defining all-mode
+coverage. The separate Act 88 notice's **2,877 mail/absentee ballots received**
+are not ballots counted and are not added to the native total. Therefore no
+generic turnout fraction, map join, context22 change or numerical-query download
+is approved. Raw HTML/PDFs remain private. Resume only with a source definition or
+distinct declared all-mode report; arithmetic reconciliation alone is not scope
+approval.
 
 **November 6: Sullivan/Wyoming context21 UI validated; exact deployment blocked, not LIVE.**
 Corrected native release **436805438 / `b0ae6c0`** and complete context21
@@ -86,9 +118,9 @@ actual hosted size, all **457 selected entire
 public files** including all **444 previous paths**, **335 relocations** and
 **seven production browsers** before a LIVE claim. Do not rebuild prepared
 `dist/` while that verifier runs. Persist production proofs on the review branch,
-not through an audit-only main push. Context20 below remains the verified LIVE
-baseline. **Next:** finish the genuine context22 integration above without
-repeating completed source acquisitions or retrying this failed revision. Schedule #5 and
+not through an audit-only main push. Context20 below was the verified LIVE
+baseline during that failed deployment; context22 above is now verified LIVE.
+Do not repeat completed source acquisitions or retry this failed revision. Schedule #5 and
 external security-remediation blockers remain unchanged.
 
 **November 6: Bedford complete native query published; UI integration pending.**

@@ -1,0 +1,961 @@
+{
+  "schema_version": 1,
+  "status": "withheld_all_ballot_modes_scope_unresolved",
+  "review_created_at_utc": "2026-11-06T18:45:07.000810+00:00",
+  "county_name_literal": "UNION COUNTY, PENNSYLVANIA",
+  "election_literal": "GENERAL ELECTION",
+  "election_date_literal": "NOVEMBER 3, 2026",
+  "report_group_literal": "Election Day",
+  "certification_literal": "Unofficial",
+  "source_date_literal": "11/4/2026",
+  "source_time_literal": "10:50:56 AM EST",
+  "source_timezone_literal": "EST",
+  "county_fips": null,
+  "county_native": {
+    "registered_voters": 26619,
+    "total_ballots": 14311,
+    "reported_percentage_literal": "53.76",
+    "precincts_reporting": 26,
+    "precincts_total": 26,
+    "reporting_percentage_literal": "100.00",
+    "native_blank_ballots": null,
+    "native_undervotes": null,
+    "native_overvotes": null,
+    "ballot_mode_counts": null
+  },
+  "county_source_receipt": {
+    "requested_url": "https://www.unionco.org/results-1.pdf",
+    "final_url": "https://www.unionco.org/results-1.pdf",
+    "captured_at_utc": "2026-11-06T18:38:16.263687+00:00",
+    "status": 200,
+    "bytes": 77532,
+    "sha256": "70ed6546f6f2eeb42220230568d2f5cd8c8bc61d20cf77c15365ef971e8d7237"
+  },
+  "independent_complete_county_extractions_agree": true,
+  "county_contests": [
+    {
+      "contest_literal": "GOVERNOR",
+      "vote_for": 1,
+      "total_votes": 14226,
+      "precincts_total": 26,
+      "precincts_reporting": 26,
+      "candidates": [
+        {
+          "name_literal": "JOSH SHAPIRO",
+          "party_literal": "DEM",
+          "votes": 6893,
+          "percentage_literal": "48.45"
+        },
+        {
+          "name_literal": "STACY GARRITY",
+          "party_literal": "REP",
+          "votes": 7152,
+          "percentage_literal": "50.27"
+        },
+        {
+          "name_literal": "KEN KRAWCHUK",
+          "party_literal": "LIB",
+          "votes": 167,
+          "percentage_literal": "1.17"
+        },
+        {
+          "name_literal": "Write-in",
+          "party_literal": "",
+          "votes": 14,
+          "percentage_literal": "0.10"
+        }
+      ],
+      "blank_ballots": null,
+      "undervotes": null,
+      "overvotes": null
+    },
+    {
+      "contest_literal": "REP IN CONGRESS 15TH",
+      "vote_for": 1,
+      "total_votes": 14215,
+      "precincts_total": 26,
+      "precincts_reporting": 26,
+      "candidates": [
+        {
+          "name_literal": "RAY BILGER",
+          "party_literal": "DEM",
+          "votes": 6336,
+          "percentage_literal": "44.57"
+        },
+        {
+          "name_literal": "GLENN GT THOMPSON",
+          "party_literal": "REP",
+          "votes": 7862,
+          "percentage_literal": "55.31"
+        },
+        {
+          "name_literal": "Write-in",
+          "party_literal": "",
+          "votes": 17,
+          "percentage_literal": "0.12"
+        }
+      ],
+      "blank_ballots": null,
+      "undervotes": null,
+      "overvotes": null
+    },
+    {
+      "contest_literal": "GENERAL ASSEMBLY 76",
+      "vote_for": 1,
+      "total_votes": 8363,
+      "precincts_total": 16,
+      "precincts_reporting": 16,
+      "candidates": [
+        {
+          "name_literal": "SARA EGGLER",
+          "party_literal": "DEM",
+          "votes": 3452,
+          "percentage_literal": "41.28"
+        },
+        {
+          "name_literal": "STEPHANIE BOROWICZ",
+          "party_literal": "REP",
+          "votes": 4903,
+          "percentage_literal": "58.63"
+        },
+        {
+          "name_literal": "Write-in",
+          "party_literal": "",
+          "votes": 8,
+          "percentage_literal": "0.10"
+        }
+      ],
+      "blank_ballots": null,
+      "undervotes": null,
+      "overvotes": null
+    },
+    {
+      "contest_literal": "GENERAL ASSEMBLY 83",
+      "vote_for": 1,
+      "total_votes": 1701,
+      "precincts_total": 5,
+      "precincts_reporting": 5,
+      "candidates": [
+        {
+          "name_literal": "JAMIE L. FLICK",
+          "party_literal": "REP",
+          "votes": 1655,
+          "percentage_literal": "97.30"
+        },
+        {
+          "name_literal": "Write-in",
+          "party_literal": "",
+          "votes": 46,
+          "percentage_literal": "2.70"
+        }
+      ],
+      "blank_ballots": null,
+      "undervotes": null,
+      "overvotes": null
+    },
+    {
+      "contest_literal": "GENERAL ASSEMBLY 85",
+      "vote_for": 1,
+      "total_votes": 2650,
+      "precincts_total": 5,
+      "precincts_reporting": 5,
+      "candidates": [
+        {
+          "name_literal": "DAVID H. ROWE",
+          "party_literal": "REP",
+          "votes": 2103,
+          "percentage_literal": "79.36"
+        },
+        {
+          "name_literal": "Write-in",
+          "party_literal": "",
+          "votes": 547,
+          "percentage_literal": "20.64"
+        }
+      ],
+      "blank_ballots": null,
+      "undervotes": null,
+      "overvotes": null
+    }
+  ],
+  "complete_declared_precinct_reconciliation": {
+    "created_at_utc": "2026-11-06T18:43:09.264355+00:00",
+    "complete_declared_reports": 26,
+    "distinct_names": 26,
+    "registered_voter_sum": 26619,
+    "ballot_sum": 14311,
+    "county_native_registered_voters": 26619,
+    "county_native_total_ballots": 14311,
+    "report_group_literals": [
+      "Election Day"
+    ],
+    "rows": [
+      {
+        "declaration": {
+          "label": "Drive, 419_P00010_to_P00270_Election_Summary_Part1.pdf",
+          "download_url": "https://drive.google.com/uc?id=1bY7JOsxbQjjQtwyxt2OEpgE3OwyGfxL_&export=download",
+          "preview_url": "https://drive.google.com/file/d/1bY7JOsxbQjjQtwyxt2OEpgE3OwyGfxL_/preview",
+          "open_url": "https://drive.google.com/open?id=1bY7JOsxbQjjQtwyxt2OEpgE3OwyGfxL_"
+        },
+        "receipt": {
+          "captured_at_utc": "2026-11-06T18:40:50.191222+00:00",
+          "requested_url": "https://drive.google.com/uc?id=1bY7JOsxbQjjQtwyxt2OEpgE3OwyGfxL_&export=download",
+          "final_url": "https://drive.usercontent.google.com/download?id=1bY7JOsxbQjjQtwyxt2OEpgE3OwyGfxL_&export=download",
+          "status": 200,
+          "bytes": 79939,
+          "sha256": "9061628e5e0afd5d17cba5fe5af4e0b5ad83c70d8528a2abab44837585fd7fc6",
+          "tls_verification": true
+        },
+        "precinct_name_literal": "BUFFALO 1",
+        "report_group_literal": "Election Day",
+        "registered_voters": 1534,
+        "total_ballots": 927,
+        "reported_percentage": "60.43",
+        "date_literal": "11/4/2026",
+        "time_literal": "10:50:44 AM EST",
+        "complete_pages": 1,
+        "independent_complete_extractions_agree": true,
+        "map_join_approved": false,
+        "all_ballot_modes_scope_approved": false
+      },
+      {
+        "declaration": {
+          "label": "Drive, 419_P00010_to_P00270_Election_Summary_Part2.pdf",
+          "download_url": "https://drive.google.com/uc?id=1LUHWyFLoSANFs-uJ0xLZ0EyMRlnihglk&export=download",
+          "preview_url": "https://drive.google.com/file/d/1LUHWyFLoSANFs-uJ0xLZ0EyMRlnihglk/preview",
+          "open_url": "https://drive.google.com/open?id=1LUHWyFLoSANFs-uJ0xLZ0EyMRlnihglk"
+        },
+        "receipt": {
+          "captured_at_utc": "2026-11-06T18:42:57.842370+00:00",
+          "requested_url": "https://drive.google.com/uc?id=1LUHWyFLoSANFs-uJ0xLZ0EyMRlnihglk&export=download",
+          "final_url": "https://drive.usercontent.google.com/download?id=1LUHWyFLoSANFs-uJ0xLZ0EyMRlnihglk&export=download",
+          "status": 200,
+          "bytes": 79932,
+          "sha256": "9d68ff5e8b61b9ad3b5c666b9ff2fc9baa1cd33193b29867934fd93b45b5eed6",
+          "tls_verification": true
+        },
+        "precinct_name_literal": "BUFFALO 2",
+        "report_group_literal": "Election Day",
+        "registered_voters": 546,
+        "total_ballots": 309,
+        "reported_percentage": "56.59",
+        "date_literal": "11/4/2026",
+        "time_literal": "10:50:44 AM EST",
+        "complete_pages": 1,
+        "independent_complete_extractions_agree": true,
+        "map_join_approved": false,
+        "all_ballot_modes_scope_approved": false
+      },
+      {
+        "declaration": {
+          "label": "Drive, 419_P00010_to_P00270_Election_Summary_Part3.pdf",
+          "download_url": "https://drive.google.com/uc?id=1YhkQrK-yg72RAKplj6RF6XUJd5IBD6Fk&export=download",
+          "preview_url": "https://drive.google.com/file/d/1YhkQrK-yg72RAKplj6RF6XUJd5IBD6Fk/preview",
+          "open_url": "https://drive.google.com/open?id=1YhkQrK-yg72RAKplj6RF6XUJd5IBD6Fk"
+        },
+        "receipt": {
+          "captured_at_utc": "2026-11-06T18:42:57.821112+00:00",
+          "requested_url": "https://drive.google.com/uc?id=1YhkQrK-yg72RAKplj6RF6XUJd5IBD6Fk&export=download",
+          "final_url": "https://drive.usercontent.google.com/download?id=1YhkQrK-yg72RAKplj6RF6XUJd5IBD6Fk&export=download",
+          "status": 200,
+          "bytes": 79919,
+          "sha256": "1701ad9135c1f5e38cbac26fc41fcca6e33bc8557a73a1bc5674487ea419c51f",
+          "tls_verification": true
+        },
+        "precinct_name_literal": "EAST BUFFALO 1",
+        "report_group_literal": "Election Day",
+        "registered_voters": 1567,
+        "total_ballots": 982,
+        "reported_percentage": "62.67",
+        "date_literal": "11/4/2026",
+        "time_literal": "10:50:44 AM EST",
+        "complete_pages": 1,
+        "independent_complete_extractions_agree": true,
+        "map_join_approved": false,
+        "all_ballot_modes_scope_approved": false
+      },
+      {
+        "declaration": {
+          "label": "Drive, 419_P00010_to_P00270_Election_Summary_Part4.pdf",
+          "download_url": "https://drive.google.com/uc?id=1fdN3tzaJOnC7mAVzZIzYo7uvZmcOvYL-&export=download",
+          "preview_url": "https://drive.google.com/file/d/1fdN3tzaJOnC7mAVzZIzYo7uvZmcOvYL-/preview",
+          "open_url": "https://drive.google.com/open?id=1fdN3tzaJOnC7mAVzZIzYo7uvZmcOvYL-"
+        },
+        "receipt": {
+          "captured_at_utc": "2026-11-06T18:42:57.863466+00:00",
+          "requested_url": "https://drive.google.com/uc?id=1fdN3tzaJOnC7mAVzZIzYo7uvZmcOvYL-&export=download",
+          "final_url": "https://drive.usercontent.google.com/download?id=1fdN3tzaJOnC7mAVzZIzYo7uvZmcOvYL-&export=download",
+          "status": 200,
+          "bytes": 79920,
+          "sha256": "7454d24a4f3d2a31ed36d93f9fedee08f3ff83dd0e2255dd2c349446a80d17f3",
+          "tls_verification": true
+        },
+        "precinct_name_literal": "EAST BUFFALO 2",
+        "report_group_literal": "Election Day",
+        "registered_voters": 1447,
+        "total_ballots": 1012,
+        "reported_percentage": "69.94",
+        "date_literal": "11/4/2026",
+        "time_literal": "10:50:44 AM EST",
+        "complete_pages": 1,
+        "independent_complete_extractions_agree": true,
+        "map_join_approved": false,
+        "all_ballot_modes_scope_approved": false
+      },
+      {
+        "declaration": {
+          "label": "Drive, 419_P00010_to_P00270_Election_Summary_Part5.pdf",
+          "download_url": "https://drive.google.com/uc?id=10rut4Wml-fEdnvFHLAn_L8npxSs533AI&export=download",
+          "preview_url": "https://drive.google.com/file/d/10rut4Wml-fEdnvFHLAn_L8npxSs533AI/preview",
+          "open_url": "https://drive.google.com/open?id=10rut4Wml-fEdnvFHLAn_L8npxSs533AI"
+        },
+        "receipt": {
+          "captured_at_utc": "2026-11-06T18:42:57.937580+00:00",
+          "requested_url": "https://drive.google.com/uc?id=10rut4Wml-fEdnvFHLAn_L8npxSs533AI&export=download",
+          "final_url": "https://drive.usercontent.google.com/download?id=10rut4Wml-fEdnvFHLAn_L8npxSs533AI&export=download",
+          "status": 200,
+          "bytes": 79932,
+          "sha256": "a3bb3d4253179bf690449b7b4dddfc1df1bad8d003474ac244527c706b532258",
+          "tls_verification": true
+        },
+        "precinct_name_literal": "EAST BUFFALO 3",
+        "report_group_literal": "Election Day",
+        "registered_voters": 1505,
+        "total_ballots": 826,
+        "reported_percentage": "54.88",
+        "date_literal": "11/4/2026",
+        "time_literal": "10:50:44 AM EST",
+        "complete_pages": 1,
+        "independent_complete_extractions_agree": true,
+        "map_join_approved": false,
+        "all_ballot_modes_scope_approved": false
+      },
+      {
+        "declaration": {
+          "label": "Drive, 419_P00010_to_P00270_Election_Summary_Part6.pdf",
+          "download_url": "https://drive.google.com/uc?id=1e8mv5aUIcmW4szjrYlYKZPTtNUi40ng-&export=download",
+          "preview_url": "https://drive.google.com/file/d/1e8mv5aUIcmW4szjrYlYKZPTtNUi40ng-/preview",
+          "open_url": "https://drive.google.com/open?id=1e8mv5aUIcmW4szjrYlYKZPTtNUi40ng-"
+        },
+        "receipt": {
+          "captured_at_utc": "2026-11-06T18:42:59.750759+00:00",
+          "requested_url": "https://drive.google.com/uc?id=1e8mv5aUIcmW4szjrYlYKZPTtNUi40ng-&export=download",
+          "final_url": "https://drive.usercontent.google.com/download?id=1e8mv5aUIcmW4szjrYlYKZPTtNUi40ng-&export=download",
+          "status": 200,
+          "bytes": 79922,
+          "sha256": "c24ea4b2869aaffce1279e931d7f6df501aa17eebfec5bfd5a69fdcbf660d84c",
+          "tls_verification": true
+        },
+        "precinct_name_literal": "EAST BUFFALO 4",
+        "report_group_literal": "Election Day",
+        "registered_voters": 1480,
+        "total_ballots": 369,
+        "reported_percentage": "24.93",
+        "date_literal": "11/4/2026",
+        "time_literal": "10:50:44 AM EST",
+        "complete_pages": 1,
+        "independent_complete_extractions_agree": true,
+        "map_join_approved": false,
+        "all_ballot_modes_scope_approved": false
+      },
+      {
+        "declaration": {
+          "label": "Drive, 419_P00010_to_P00270_Election_Summary_Part7.pdf",
+          "download_url": "https://drive.google.com/uc?id=1kEFTWDwnKSd7lpDLTbcvqGx_nQfMRttx&export=download",
+          "preview_url": "https://drive.google.com/file/d/1kEFTWDwnKSd7lpDLTbcvqGx_nQfMRttx/preview",
+          "open_url": "https://drive.google.com/open?id=1kEFTWDwnKSd7lpDLTbcvqGx_nQfMRttx"
+        },
+        "receipt": {
+          "captured_at_utc": "2026-11-06T18:42:59.706464+00:00",
+          "requested_url": "https://drive.google.com/uc?id=1kEFTWDwnKSd7lpDLTbcvqGx_nQfMRttx&export=download",
+          "final_url": "https://drive.usercontent.google.com/download?id=1kEFTWDwnKSd7lpDLTbcvqGx_nQfMRttx&export=download",
+          "status": 200,
+          "bytes": 79941,
+          "sha256": "eaf6027deb511a51e24e86ec5432c1480fa9d26d8316558ff87b60dbe9509956",
+          "tls_verification": true
+        },
+        "precinct_name_literal": "WEST BUFFALO",
+        "report_group_literal": "Election Day",
+        "registered_voters": 1730,
+        "total_ballots": 1008,
+        "reported_percentage": "58.27",
+        "date_literal": "11/4/2026",
+        "time_literal": "10:50:44 AM EST",
+        "complete_pages": 1,
+        "independent_complete_extractions_agree": true,
+        "map_join_approved": false,
+        "all_ballot_modes_scope_approved": false
+      },
+      {
+        "declaration": {
+          "label": "Drive, 419_P00010_to_P00270_Election_Summary_Part8.pdf",
+          "download_url": "https://drive.google.com/uc?id=1tmqvTQjEOrt74M9TzlZklNg7yaI8sexJ&export=download",
+          "preview_url": "https://drive.google.com/file/d/1tmqvTQjEOrt74M9TzlZklNg7yaI8sexJ/preview",
+          "open_url": "https://drive.google.com/open?id=1tmqvTQjEOrt74M9TzlZklNg7yaI8sexJ"
+        },
+        "receipt": {
+          "captured_at_utc": "2026-11-06T18:42:59.731370+00:00",
+          "requested_url": "https://drive.google.com/uc?id=1tmqvTQjEOrt74M9TzlZklNg7yaI8sexJ&export=download",
+          "final_url": "https://drive.usercontent.google.com/download?id=1tmqvTQjEOrt74M9TzlZklNg7yaI8sexJ&export=download",
+          "status": 200,
+          "bytes": 79906,
+          "sha256": "029099ff0b0f3de135c587ee404448ceaf4ff2414da2cfe4e4dd977ae8d1d797",
+          "tls_verification": true
+        },
+        "precinct_name_literal": "GREGG",
+        "report_group_literal": "Election Day",
+        "registered_voters": 543,
+        "total_ballots": 294,
+        "reported_percentage": "54.14",
+        "date_literal": "11/4/2026",
+        "time_literal": "10:50:44 AM EST",
+        "complete_pages": 1,
+        "independent_complete_extractions_agree": true,
+        "map_join_approved": false,
+        "all_ballot_modes_scope_approved": false
+      },
+      {
+        "declaration": {
+          "label": "Drive, 419_P00010_to_P00270_Election_Summary_Part10.pdf",
+          "download_url": "https://drive.google.com/uc?id=11WOK8beAbSimJRtQjtaHPnk2x2BfY241&export=download",
+          "preview_url": "https://drive.google.com/file/d/11WOK8beAbSimJRtQjtaHPnk2x2BfY241/preview",
+          "open_url": "https://drive.google.com/open?id=11WOK8beAbSimJRtQjtaHPnk2x2BfY241"
+        },
+        "receipt": {
+          "captured_at_utc": "2026-11-06T18:42:59.889735+00:00",
+          "requested_url": "https://drive.google.com/uc?id=11WOK8beAbSimJRtQjtaHPnk2x2BfY241&export=download",
+          "final_url": "https://drive.usercontent.google.com/download?id=11WOK8beAbSimJRtQjtaHPnk2x2BfY241&export=download",
+          "status": 200,
+          "bytes": 79938,
+          "sha256": "ead1e7ed9c3367b5782c4206b656ab1d0fe84b936edc8eee3846869a75c02cf9",
+          "tls_verification": true
+        },
+        "precinct_name_literal": "KELLY 1",
+        "report_group_literal": "Election Day",
+        "registered_voters": 1772,
+        "total_ballots": 1054,
+        "reported_percentage": "59.48",
+        "date_literal": "11/4/2026",
+        "time_literal": "10:50:44 AM EST",
+        "complete_pages": 1,
+        "independent_complete_extractions_agree": true,
+        "map_join_approved": false,
+        "all_ballot_modes_scope_approved": false
+      },
+      {
+        "declaration": {
+          "label": "Drive, 419_P00010_to_P00270_Election_Summary_Part11.pdf",
+          "download_url": "https://drive.google.com/uc?id=1Y4Dl3ff3UtFd1wpmSqvFkq_00UZweYHr&export=download",
+          "preview_url": "https://drive.google.com/file/d/1Y4Dl3ff3UtFd1wpmSqvFkq_00UZweYHr/preview",
+          "open_url": "https://drive.google.com/open?id=1Y4Dl3ff3UtFd1wpmSqvFkq_00UZweYHr"
+        },
+        "receipt": {
+          "captured_at_utc": "2026-11-06T18:43:01.592315+00:00",
+          "requested_url": "https://drive.google.com/uc?id=1Y4Dl3ff3UtFd1wpmSqvFkq_00UZweYHr&export=download",
+          "final_url": "https://drive.usercontent.google.com/download?id=1Y4Dl3ff3UtFd1wpmSqvFkq_00UZweYHr&export=download",
+          "status": 200,
+          "bytes": 79925,
+          "sha256": "e5a2b382716fb752eda56794638471d83a2c828db4de6e784eaaedd213a52a45",
+          "tls_verification": true
+        },
+        "precinct_name_literal": "KELLY 2",
+        "report_group_literal": "Election Day",
+        "registered_voters": 485,
+        "total_ballots": 251,
+        "reported_percentage": "51.75",
+        "date_literal": "11/4/2026",
+        "time_literal": "10:50:44 AM EST",
+        "complete_pages": 1,
+        "independent_complete_extractions_agree": true,
+        "map_join_approved": false,
+        "all_ballot_modes_scope_approved": false
+      },
+      {
+        "declaration": {
+          "label": "Drive, 419_P00010_to_P00270_Election_Summary_Part9.pdf",
+          "download_url": "https://drive.google.com/uc?id=1hw03fQ3S6tUVylrEoECqDA_3t08ZLpOh&export=download",
+          "preview_url": "https://drive.google.com/file/d/1hw03fQ3S6tUVylrEoECqDA_3t08ZLpOh/preview",
+          "open_url": "https://drive.google.com/open?id=1hw03fQ3S6tUVylrEoECqDA_3t08ZLpOh"
+        },
+        "receipt": {
+          "captured_at_utc": "2026-11-06T18:43:01.785957+00:00",
+          "requested_url": "https://drive.google.com/uc?id=1hw03fQ3S6tUVylrEoECqDA_3t08ZLpOh&export=download",
+          "final_url": "https://drive.usercontent.google.com/download?id=1hw03fQ3S6tUVylrEoECqDA_3t08ZLpOh&export=download",
+          "status": 200,
+          "bytes": 79944,
+          "sha256": "24edd95e6480c15549c6d3d2cd6536cf563dc50737c41078f0fd472e9e36421b",
+          "tls_verification": true
+        },
+        "precinct_name_literal": "HARTLEY",
+        "report_group_literal": "Election Day",
+        "registered_voters": 1084,
+        "total_ballots": 600,
+        "reported_percentage": "55.35",
+        "date_literal": "11/4/2026",
+        "time_literal": "10:50:44 AM EST",
+        "complete_pages": 1,
+        "independent_complete_extractions_agree": true,
+        "map_join_approved": false,
+        "all_ballot_modes_scope_approved": false
+      },
+      {
+        "declaration": {
+          "label": "Drive, 419_P00010_to_P00270_Election_Summary_Part12.pdf",
+          "download_url": "https://drive.google.com/uc?id=1pBBL6giy9DcaWk-jZMGwlS5wqdqbYNTH&export=download",
+          "preview_url": "https://drive.google.com/file/d/1pBBL6giy9DcaWk-jZMGwlS5wqdqbYNTH/preview",
+          "open_url": "https://drive.google.com/open?id=1pBBL6giy9DcaWk-jZMGwlS5wqdqbYNTH"
+        },
+        "receipt": {
+          "captured_at_utc": "2026-11-06T18:43:01.616189+00:00",
+          "requested_url": "https://drive.google.com/uc?id=1pBBL6giy9DcaWk-jZMGwlS5wqdqbYNTH&export=download",
+          "final_url": "https://drive.usercontent.google.com/download?id=1pBBL6giy9DcaWk-jZMGwlS5wqdqbYNTH&export=download",
+          "status": 200,
+          "bytes": 79943,
+          "sha256": "98a7d6f0b075e03b826b33bd4da49b7875b385f213f8adc8720f20aad65976a9",
+          "tls_verification": true
+        },
+        "precinct_name_literal": "LEWIS",
+        "report_group_literal": "Election Day",
+        "registered_voters": 752,
+        "total_ballots": 410,
+        "reported_percentage": "54.52",
+        "date_literal": "11/4/2026",
+        "time_literal": "10:50:44 AM EST",
+        "complete_pages": 1,
+        "independent_complete_extractions_agree": true,
+        "map_join_approved": false,
+        "all_ballot_modes_scope_approved": false
+      },
+      {
+        "declaration": {
+          "label": "Drive, 419_P00010_to_P00270_Election_Summary_Part13.pdf",
+          "download_url": "https://drive.google.com/uc?id=1jY3XK2FELVBbZBBTlK65AQmxkXC38QDX&export=download",
+          "preview_url": "https://drive.google.com/file/d/1jY3XK2FELVBbZBBTlK65AQmxkXC38QDX/preview",
+          "open_url": "https://drive.google.com/open?id=1jY3XK2FELVBbZBBTlK65AQmxkXC38QDX"
+        },
+        "receipt": {
+          "captured_at_utc": "2026-11-06T18:43:01.928907+00:00",
+          "requested_url": "https://drive.google.com/uc?id=1jY3XK2FELVBbZBBTlK65AQmxkXC38QDX&export=download",
+          "final_url": "https://drive.usercontent.google.com/download?id=1jY3XK2FELVBbZBBTlK65AQmxkXC38QDX&export=download",
+          "status": 200,
+          "bytes": 79937,
+          "sha256": "ef8cc2942122d3b4b60ac060c5b6d0cdd166afb977866e73c6d7bbac5f8b6ff5",
+          "tls_verification": true
+        },
+        "precinct_name_literal": "LIMESTONE",
+        "report_group_literal": "Election Day",
+        "registered_voters": 994,
+        "total_ballots": 572,
+        "reported_percentage": "57.55",
+        "date_literal": "11/4/2026",
+        "time_literal": "10:50:44 AM EST",
+        "complete_pages": 1,
+        "independent_complete_extractions_agree": true,
+        "map_join_approved": false,
+        "all_ballot_modes_scope_approved": false
+      },
+      {
+        "declaration": {
+          "label": "Drive, 419_P00010_to_P00270_Election_Summary_Part14.pdf",
+          "download_url": "https://drive.google.com/uc?id=1jMCWFnMP2Gd-GX119R1nlNs2UhFm1i2_&export=download",
+          "preview_url": "https://drive.google.com/file/d/1jMCWFnMP2Gd-GX119R1nlNs2UhFm1i2_/preview",
+          "open_url": "https://drive.google.com/open?id=1jMCWFnMP2Gd-GX119R1nlNs2UhFm1i2_"
+        },
+        "receipt": {
+          "captured_at_utc": "2026-11-06T18:43:03.614960+00:00",
+          "requested_url": "https://drive.google.com/uc?id=1jMCWFnMP2Gd-GX119R1nlNs2UhFm1i2_&export=download",
+          "final_url": "https://drive.usercontent.google.com/download?id=1jMCWFnMP2Gd-GX119R1nlNs2UhFm1i2_&export=download",
+          "status": 200,
+          "bytes": 79911,
+          "sha256": "f8c542c22b35979be78cb9f5496f6752aacc657c9d2a3b7bd0ccb3f64c5a9474",
+          "tls_verification": true
+        },
+        "precinct_name_literal": "UNION",
+        "report_group_literal": "Election Day",
+        "registered_voters": 1217,
+        "total_ballots": 749,
+        "reported_percentage": "61.54",
+        "date_literal": "11/4/2026",
+        "time_literal": "10:50:44 AM EST",
+        "complete_pages": 1,
+        "independent_complete_extractions_agree": true,
+        "map_join_approved": false,
+        "all_ballot_modes_scope_approved": false
+      },
+      {
+        "declaration": {
+          "label": "Drive, 419_P00010_to_P00270_Election_Summary_Part15.pdf",
+          "download_url": "https://drive.google.com/uc?id=1AuVqA0mHsF1UtgBRrQ7KXMcnPxpMEHk6&export=download",
+          "preview_url": "https://drive.google.com/file/d/1AuVqA0mHsF1UtgBRrQ7KXMcnPxpMEHk6/preview",
+          "open_url": "https://drive.google.com/open?id=1AuVqA0mHsF1UtgBRrQ7KXMcnPxpMEHk6"
+        },
+        "receipt": {
+          "captured_at_utc": "2026-11-06T18:43:03.568298+00:00",
+          "requested_url": "https://drive.google.com/uc?id=1AuVqA0mHsF1UtgBRrQ7KXMcnPxpMEHk6&export=download",
+          "final_url": "https://drive.usercontent.google.com/download?id=1AuVqA0mHsF1UtgBRrQ7KXMcnPxpMEHk6&export=download",
+          "status": 200,
+          "bytes": 79926,
+          "sha256": "bedf7378fc9592821b4527cb80a840747640dc4b09b331a5e64a8d1653ab6a3d",
+          "tls_verification": true
+        },
+        "precinct_name_literal": "WHITE DEER 1",
+        "report_group_literal": "Election Day",
+        "registered_voters": 895,
+        "total_ballots": 518,
+        "reported_percentage": "57.88",
+        "date_literal": "11/4/2026",
+        "time_literal": "10:50:44 AM EST",
+        "complete_pages": 1,
+        "independent_complete_extractions_agree": true,
+        "map_join_approved": false,
+        "all_ballot_modes_scope_approved": false
+      },
+      {
+        "declaration": {
+          "label": "Drive, 419_P00010_to_P00270_Election_Summary_Part16.pdf",
+          "download_url": "https://drive.google.com/uc?id=1kO9u5SdTYDslU-cfbExcvLYoIxvsc4Uc&export=download",
+          "preview_url": "https://drive.google.com/file/d/1kO9u5SdTYDslU-cfbExcvLYoIxvsc4Uc/preview",
+          "open_url": "https://drive.google.com/open?id=1kO9u5SdTYDslU-cfbExcvLYoIxvsc4Uc"
+        },
+        "receipt": {
+          "captured_at_utc": "2026-11-06T18:43:03.696002+00:00",
+          "requested_url": "https://drive.google.com/uc?id=1kO9u5SdTYDslU-cfbExcvLYoIxvsc4Uc&export=download",
+          "final_url": "https://drive.usercontent.google.com/download?id=1kO9u5SdTYDslU-cfbExcvLYoIxvsc4Uc&export=download",
+          "status": 200,
+          "bytes": 79922,
+          "sha256": "bcde1f4b774b8c9eec31d423b77346331139614d0a565b789e2f7ea015c297da",
+          "tls_verification": true
+        },
+        "precinct_name_literal": "WHITE DEER 2",
+        "report_group_literal": "Election Day",
+        "registered_voters": 891,
+        "total_ballots": 495,
+        "reported_percentage": "55.56",
+        "date_literal": "11/4/2026",
+        "time_literal": "10:50:44 AM EST",
+        "complete_pages": 1,
+        "independent_complete_extractions_agree": true,
+        "map_join_approved": false,
+        "all_ballot_modes_scope_approved": false
+      },
+      {
+        "declaration": {
+          "label": "Drive, 419_P00010_to_P00270_Election_Summary_Part17.pdf",
+          "download_url": "https://drive.google.com/uc?id=1wtdmfO3ga5A9G16rfGMb-VCGH5YmKLeb&export=download",
+          "preview_url": "https://drive.google.com/file/d/1wtdmfO3ga5A9G16rfGMb-VCGH5YmKLeb/preview",
+          "open_url": "https://drive.google.com/open?id=1wtdmfO3ga5A9G16rfGMb-VCGH5YmKLeb"
+        },
+        "receipt": {
+          "captured_at_utc": "2026-11-06T18:43:03.906074+00:00",
+          "requested_url": "https://drive.google.com/uc?id=1wtdmfO3ga5A9G16rfGMb-VCGH5YmKLeb&export=download",
+          "final_url": "https://drive.usercontent.google.com/download?id=1wtdmfO3ga5A9G16rfGMb-VCGH5YmKLeb&export=download",
+          "status": 200,
+          "bytes": 79921,
+          "sha256": "a437ed9dbf9187ce6e7518cb4e5194f98699b94dac8b4f6c4e00d0a3b1001497",
+          "tls_verification": true
+        },
+        "precinct_name_literal": "WHITE DEER 3",
+        "report_group_literal": "Election Day",
+        "registered_voters": 639,
+        "total_ballots": 340,
+        "reported_percentage": "53.21",
+        "date_literal": "11/4/2026",
+        "time_literal": "10:50:44 AM EST",
+        "complete_pages": 1,
+        "independent_complete_extractions_agree": true,
+        "map_join_approved": false,
+        "all_ballot_modes_scope_approved": false
+      },
+      {
+        "declaration": {
+          "label": "Drive, 419_P00010_to_P00270_Election_Summary_Part18.pdf",
+          "download_url": "https://drive.google.com/uc?id=1XLjYOQ6lOIuevzhf9Cxx8b4zks1iFfj4&export=download",
+          "preview_url": "https://drive.google.com/file/d/1XLjYOQ6lOIuevzhf9Cxx8b4zks1iFfj4/preview",
+          "open_url": "https://drive.google.com/open?id=1XLjYOQ6lOIuevzhf9Cxx8b4zks1iFfj4"
+        },
+        "receipt": {
+          "captured_at_utc": "2026-11-06T18:43:05.469561+00:00",
+          "requested_url": "https://drive.google.com/uc?id=1XLjYOQ6lOIuevzhf9Cxx8b4zks1iFfj4&export=download",
+          "final_url": "https://drive.usercontent.google.com/download?id=1XLjYOQ6lOIuevzhf9Cxx8b4zks1iFfj4&export=download",
+          "status": 200,
+          "bytes": 79920,
+          "sha256": "d588b77775ed734df0d752df73d5e0951258aec3cbdb74f199d8f620d7ee8164",
+          "tls_verification": true
+        },
+        "precinct_name_literal": "WHITE DEER 4",
+        "report_group_literal": "Election Day",
+        "registered_voters": 496,
+        "total_ballots": 309,
+        "reported_percentage": "62.30",
+        "date_literal": "11/4/2026",
+        "time_literal": "10:50:44 AM EST",
+        "complete_pages": 1,
+        "independent_complete_extractions_agree": true,
+        "map_join_approved": false,
+        "all_ballot_modes_scope_approved": false
+      },
+      {
+        "declaration": {
+          "label": "Drive, 419_P00010_to_P00270_Election_Summary_Part19.pdf",
+          "download_url": "https://drive.google.com/uc?id=1SU0N-ZxW0ipNhzAOUKuCQ50MmoMLRIan&export=download",
+          "preview_url": "https://drive.google.com/file/d/1SU0N-ZxW0ipNhzAOUKuCQ50MmoMLRIan/preview",
+          "open_url": "https://drive.google.com/open?id=1SU0N-ZxW0ipNhzAOUKuCQ50MmoMLRIan"
+        },
+        "receipt": {
+          "captured_at_utc": "2026-11-06T18:43:05.607960+00:00",
+          "requested_url": "https://drive.google.com/uc?id=1SU0N-ZxW0ipNhzAOUKuCQ50MmoMLRIan&export=download",
+          "final_url": "https://drive.usercontent.google.com/download?id=1SU0N-ZxW0ipNhzAOUKuCQ50MmoMLRIan&export=download",
+          "status": 200,
+          "bytes": 79910,
+          "sha256": "ca90e3ebcd8d4de2972af6f8afad73ca815d6608226d73e1d770bb44b3dfccef",
+          "tls_verification": true
+        },
+        "precinct_name_literal": "HARTLETON",
+        "report_group_literal": "Election Day",
+        "registered_voters": 135,
+        "total_ballots": 73,
+        "reported_percentage": "54.07",
+        "date_literal": "11/4/2026",
+        "time_literal": "10:50:44 AM EST",
+        "complete_pages": 1,
+        "independent_complete_extractions_agree": true,
+        "map_join_approved": false,
+        "all_ballot_modes_scope_approved": false
+      },
+      {
+        "declaration": {
+          "label": "Drive, 419_P00010_to_P00270_Election_Summary_Part20.pdf",
+          "download_url": "https://drive.google.com/uc?id=1v5ZuOYoUmbq72rvxX3Y6wSTcox0--7YE&export=download",
+          "preview_url": "https://drive.google.com/file/d/1v5ZuOYoUmbq72rvxX3Y6wSTcox0--7YE/preview",
+          "open_url": "https://drive.google.com/open?id=1v5ZuOYoUmbq72rvxX3Y6wSTcox0--7YE"
+        },
+        "receipt": {
+          "captured_at_utc": "2026-11-06T18:43:05.588692+00:00",
+          "requested_url": "https://drive.google.com/uc?id=1v5ZuOYoUmbq72rvxX3Y6wSTcox0--7YE&export=download",
+          "final_url": "https://drive.usercontent.google.com/download?id=1v5ZuOYoUmbq72rvxX3Y6wSTcox0--7YE&export=download",
+          "status": 200,
+          "bytes": 79949,
+          "sha256": "55fd55380590b15fc42d806a9cd12b4e4620186248c9079392665d6f7d75ca8f",
+          "tls_verification": true
+        },
+        "precinct_name_literal": "LEWISBURG 1",
+        "report_group_literal": "Election Day",
+        "registered_voters": 602,
+        "total_ballots": 344,
+        "reported_percentage": "57.14",
+        "date_literal": "11/4/2026",
+        "time_literal": "10:50:44 AM EST",
+        "complete_pages": 1,
+        "independent_complete_extractions_agree": true,
+        "map_join_approved": false,
+        "all_ballot_modes_scope_approved": false
+      },
+      {
+        "declaration": {
+          "label": "Drive, 419_P00010_to_P00270_Election_Summary_Part21.pdf",
+          "download_url": "https://drive.google.com/uc?id=1LSazipEkb7wKBtUaVLT9g3mL-BkhxkRV&export=download",
+          "preview_url": "https://drive.google.com/file/d/1LSazipEkb7wKBtUaVLT9g3mL-BkhxkRV/preview",
+          "open_url": "https://drive.google.com/open?id=1LSazipEkb7wKBtUaVLT9g3mL-BkhxkRV"
+        },
+        "receipt": {
+          "captured_at_utc": "2026-11-06T18:43:06.356387+00:00",
+          "requested_url": "https://drive.google.com/uc?id=1LSazipEkb7wKBtUaVLT9g3mL-BkhxkRV&export=download",
+          "final_url": "https://drive.usercontent.google.com/download?id=1LSazipEkb7wKBtUaVLT9g3mL-BkhxkRV&export=download",
+          "status": 200,
+          "bytes": 79936,
+          "sha256": "29a27dc73b8ee0497d4f72de3cad2f3f00f7b43b98c0668e95c4292a3ab4fc27",
+          "tls_verification": true
+        },
+        "precinct_name_literal": "LEWISBURG 2",
+        "report_group_literal": "Election Day",
+        "registered_voters": 743,
+        "total_ballots": 345,
+        "reported_percentage": "46.43",
+        "date_literal": "11/4/2026",
+        "time_literal": "10:50:44 AM EST",
+        "complete_pages": 1,
+        "independent_complete_extractions_agree": true,
+        "map_join_approved": false,
+        "all_ballot_modes_scope_approved": false
+      },
+      {
+        "declaration": {
+          "label": "Drive, 419_P00010_to_P00270_Election_Summary_Part22.pdf",
+          "download_url": "https://drive.google.com/uc?id=1FyTKE5vi-naeRDp7E5gs8L9AnlD7DhUz&export=download",
+          "preview_url": "https://drive.google.com/file/d/1FyTKE5vi-naeRDp7E5gs8L9AnlD7DhUz/preview",
+          "open_url": "https://drive.google.com/open?id=1FyTKE5vi-naeRDp7E5gs8L9AnlD7DhUz"
+        },
+        "receipt": {
+          "captured_at_utc": "2026-11-06T18:43:07.549619+00:00",
+          "requested_url": "https://drive.google.com/uc?id=1FyTKE5vi-naeRDp7E5gs8L9AnlD7DhUz&export=download",
+          "final_url": "https://drive.usercontent.google.com/download?id=1FyTKE5vi-naeRDp7E5gs8L9AnlD7DhUz&export=download",
+          "status": 200,
+          "bytes": 79928,
+          "sha256": "f6854dd0115953be7531e1e4c09c2a03d8c474086cdbfcfb8ecb07880fdcc863",
+          "tls_verification": true
+        },
+        "precinct_name_literal": "LEWISBURG 3",
+        "report_group_literal": "Election Day",
+        "registered_voters": 1872,
+        "total_ballots": 457,
+        "reported_percentage": "24.41",
+        "date_literal": "11/4/2026",
+        "time_literal": "10:50:44 AM EST",
+        "complete_pages": 1,
+        "independent_complete_extractions_agree": true,
+        "map_join_approved": false,
+        "all_ballot_modes_scope_approved": false
+      },
+      {
+        "declaration": {
+          "label": "Drive, 419_P00010_to_P00270_Election_Summary_Part23.pdf",
+          "download_url": "https://drive.google.com/uc?id=1bP4WQ-f5j14S4hClCrsv6xksxNKY7ns4&export=download",
+          "preview_url": "https://drive.google.com/file/d/1bP4WQ-f5j14S4hClCrsv6xksxNKY7ns4/preview",
+          "open_url": "https://drive.google.com/open?id=1bP4WQ-f5j14S4hClCrsv6xksxNKY7ns4"
+        },
+        "receipt": {
+          "captured_at_utc": "2026-11-06T18:43:07.305695+00:00",
+          "requested_url": "https://drive.google.com/uc?id=1bP4WQ-f5j14S4hClCrsv6xksxNKY7ns4&export=download",
+          "final_url": "https://drive.usercontent.google.com/download?id=1bP4WQ-f5j14S4hClCrsv6xksxNKY7ns4&export=download",
+          "status": 200,
+          "bytes": 79940,
+          "sha256": "3284f8076f0085f7603f8292e1b9f8635ca1980dd418ee946aac99967cb0317c",
+          "tls_verification": true
+        },
+        "precinct_name_literal": "LEWISBURG 4",
+        "report_group_literal": "Election Day",
+        "registered_voters": 846,
+        "total_ballots": 509,
+        "reported_percentage": "60.17",
+        "date_literal": "11/4/2026",
+        "time_literal": "10:50:44 AM EST",
+        "complete_pages": 1,
+        "independent_complete_extractions_agree": true,
+        "map_join_approved": false,
+        "all_ballot_modes_scope_approved": false
+      },
+      {
+        "declaration": {
+          "label": "Drive, 419_P00010_to_P00270_Election_Summary_Part24.pdf",
+          "download_url": "https://drive.google.com/uc?id=1vhsxQUpsFho_jONVchVuyzT1oTneSjU2&export=download",
+          "preview_url": "https://drive.google.com/file/d/1vhsxQUpsFho_jONVchVuyzT1oTneSjU2/preview",
+          "open_url": "https://drive.google.com/open?id=1vhsxQUpsFho_jONVchVuyzT1oTneSjU2"
+        },
+        "receipt": {
+          "captured_at_utc": "2026-11-06T18:43:07.529870+00:00",
+          "requested_url": "https://drive.google.com/uc?id=1vhsxQUpsFho_jONVchVuyzT1oTneSjU2&export=download",
+          "final_url": "https://drive.usercontent.google.com/download?id=1vhsxQUpsFho_jONVchVuyzT1oTneSjU2&export=download",
+          "status": 200,
+          "bytes": 79958,
+          "sha256": "6e4f23efb1b73a58dc968ae91f9b5423af29a12dfbf0348fe0d074a971724969",
+          "tls_verification": true
+        },
+        "precinct_name_literal": "MIFFLINBURG EAST",
+        "report_group_literal": "Election Day",
+        "registered_voters": 1281,
+        "total_ballots": 736,
+        "reported_percentage": "57.46",
+        "date_literal": "11/4/2026",
+        "time_literal": "10:50:44 AM EST",
+        "complete_pages": 1,
+        "independent_complete_extractions_agree": true,
+        "map_join_approved": false,
+        "all_ballot_modes_scope_approved": false
+      },
+      {
+        "declaration": {
+          "label": "Drive, 419_P00010_to_P00270_Election_Summary_Part25.pdf",
+          "download_url": "https://drive.google.com/uc?id=12VeqUMholkA0MMBFtKWFMWi5A3dWAZcc&export=download",
+          "preview_url": "https://drive.google.com/file/d/12VeqUMholkA0MMBFtKWFMWi5A3dWAZcc/preview",
+          "open_url": "https://drive.google.com/open?id=12VeqUMholkA0MMBFtKWFMWi5A3dWAZcc"
+        },
+        "receipt": {
+          "captured_at_utc": "2026-11-06T18:43:08.389807+00:00",
+          "requested_url": "https://drive.google.com/uc?id=12VeqUMholkA0MMBFtKWFMWi5A3dWAZcc&export=download",
+          "final_url": "https://drive.usercontent.google.com/download?id=12VeqUMholkA0MMBFtKWFMWi5A3dWAZcc&export=download",
+          "status": 200,
+          "bytes": 79949,
+          "sha256": "415c0b8e9814fff5f52eb4e6771353a1181b6bffe96fb969d055bc58e1113729",
+          "tls_verification": true
+        },
+        "precinct_name_literal": "MIFFLINBURG WEST",
+        "report_group_literal": "Election Day",
+        "registered_voters": 1032,
+        "total_ballots": 529,
+        "reported_percentage": "51.26",
+        "date_literal": "11/4/2026",
+        "time_literal": "10:50:44 AM EST",
+        "complete_pages": 1,
+        "independent_complete_extractions_agree": true,
+        "map_join_approved": false,
+        "all_ballot_modes_scope_approved": false
+      },
+      {
+        "declaration": {
+          "label": "Drive, 419_P00010_to_P00270_Election_Summary_Part26.pdf",
+          "download_url": "https://drive.google.com/uc?id=1PKOutq300uw0czz2IeoQbAswccaGrmCH&export=download",
+          "preview_url": "https://drive.google.com/file/d/1PKOutq300uw0czz2IeoQbAswccaGrmCH/preview",
+          "open_url": "https://drive.google.com/open?id=1PKOutq300uw0czz2IeoQbAswccaGrmCH"
+        },
+        "receipt": {
+          "captured_at_utc": "2026-11-06T18:43:09.244310+00:00",
+          "requested_url": "https://drive.google.com/uc?id=1PKOutq300uw0czz2IeoQbAswccaGrmCH&export=download",
+          "final_url": "https://drive.usercontent.google.com/download?id=1PKOutq300uw0czz2IeoQbAswccaGrmCH&export=download",
+          "status": 200,
+          "bytes": 79934,
+          "sha256": "26e8ec5cb063b991ee0f7345f755941cccf350008ffecf2f2dfc5d969b015c87",
+          "tls_verification": true
+        },
+        "precinct_name_literal": "NEW BERLIN",
+        "report_group_literal": "Election Day",
+        "registered_voters": 531,
+        "total_ballots": 293,
+        "reported_percentage": "55.18",
+        "date_literal": "11/4/2026",
+        "time_literal": "10:50:44 AM EST",
+        "complete_pages": 1,
+        "independent_complete_extractions_agree": true,
+        "map_join_approved": false,
+        "all_ballot_modes_scope_approved": false
+      }
+    ],
+    "all_ballot_modes_scope_approved": false,
+    "generic_county_turnout_approved": false,
+    "qualification": "Arithmetic reconciliation is not evidence that the Election Day group includes mail, absentee, or provisional ballots.",
+    "matches_county_registration": true,
+    "matches_county_ballots": true
+  },
+  "all_14_candidate_vectors_equal_independently_reconciled_precinct_sums": true,
+  "all_native_candidate_and_registration_percentages_recomputed": true,
+  "complete_original_body_count": 27,
+  "complete_independent_extraction_count": 54,
+  "mail_absentee_received_notice": {
+    "ballots_received": 2877,
+    "ballots_counted": null,
+    "received_by_literal": "8 pm on Election Day, November 3 2026",
+    "source_receipt": {
+      "requested_url": "https://unioncountypa.org/act-88-notice-3/",
+      "final_url": "https://unioncountypa.org/act-88-notice-3/",
+      "status": 200,
+      "bytes": 139376,
+      "sha256": "13c206abd2c3754beab1635437e0b3f080a5c2525acd2acd31fd5efbcf44397c",
+      "tls_verification": true,
+      "captured_at_utc": "2026-11-06T18:45:07.000396+00:00"
+    },
+    "added_to_native_ballots": false
+  },
+  "all_ballot_modes_scope_approved": false,
+  "map_join_approved": false,
+  "generic_registered_turnout_approved": false,
+  "added_to_context22": false,
+  "numerical_query_download_published": false,
+  "qualifications": [
+    "A complete 26-precinct arithmetic reconciliation does not define whether the literal Election Day report group includes mail, absentee, or provisional ballots.",
+    "The Act 88 notice reports ballots received, not counted; do not add 2877 to the native 14311.",
+    "Native contest Total Votes and candidate selections are not participation counts or unique voters.",
+    "County ballots minus Governor votes (85) and Congressional votes (96) are unclassified arithmetic residuals, not native undervotes, overvotes, or blanks.",
+    "Missing native mode counts, under/overvotes and blank ballots remain missing, never zero.",
+    "No native FIPS, generic fraction or map approval is inferred from precinct names or arithmetic.",
+    "Complete original PDFs and raw parent HTML remain private; this qualification audit is not a promoted numerical-query download."
+  ]
+}
