@@ -1,0 +1,47 @@
+{
+  "scope": "Cumberland County only; complete numerical facts from both declared 2026 general reports",
+  "maps_approved": false,
+  "demographic_turnout_approved": false,
+  "county_participation": {
+    "year": 2026,
+    "state_code": "PA",
+    "county": "Cumberland",
+    "county_fips": "42041",
+    "native_unit": "Cumberland",
+    "source_report": "summary",
+    "source_page": 1,
+    "source_url": "https://www.cumberlandcountypa.gov/DocumentCenter/View/52457/Unofficial-Summary-Report",
+    "source_update_literal": "11/04/2026 12:37PM",
+    "declared_timezone": "",
+    "native_status_literal": "UNOFFICIAL RESULTS",
+    "ballots_cast": 117334,
+    "election_day_ballots": 89435,
+    "mail_ballots": 27899,
+    "registered_voters": 185538,
+    "registered_voters_literal": "185,538",
+    "native_printed_turnout": "63.24%",
+    "ballot_count_literals_json": "[\"117,334\", \"89,435\", \"27,899\"]",
+    "county_fips_basis": "Reviewed 2026 Census identity, not a native PDF field",
+    "counting_qualifications_json": "[\"All 118 native reporting units sum to the county ballots, registrations and separate Election Day/mail counts; candidate selections are not ballots.\", \"Summary and precinct reports retain distinct native November 4 run times; no timezone is declared and equal totals do not establish simultaneous snapshots.\", \"Native reporting is 118 of 118 separately for Election Day and Absentee/ Early; this does not establish final counting or certification.\", \"Under/overvotes and a separate provisional count are absent, not zero. Governor ballots minus recorded selections remain unclassified, not labeled blanks or allocated to parties.\", \"Congressional district rows include a split reporting unit; unit-level district selections must not be assigned the whole unit electorate.\", \"UPPER ALLEN 6 prints 65.36% for 1,155 / 1,767; the calculated 65.36502546689304% rounds to 65.37%. The source fraction is retained, not silently corrected.\", \"Native UNOFFICIAL RESULTS is retained. No county/precinct mapping, statewide completeness or demographic turnout is approved.\"]"
+  },
+  "table_rows": {
+    "county-participation.csv": 1,
+    "native-unit-participation.csv": 118,
+    "county-candidate-option-results.csv": 30,
+    "native-unit-candidate-option-results.csv": 1461,
+    "county-literal-party-totals.csv": 19,
+    "native-reporting-statements.csv": 2,
+    "native-source-pages.csv": 218,
+    "governor-unclassified-ballot-residuals.csv": 119
+  },
+  "qualifications": [
+    "All 118 native reporting units sum to the county ballots, registrations and separate Election Day/mail counts; candidate selections are not ballots.",
+    "Summary and precinct reports retain distinct native November 4 run times; no timezone is declared and equal totals do not establish simultaneous snapshots.",
+    "Native reporting is 118 of 118 separately for Election Day and Absentee/ Early; this does not establish final counting or certification.",
+    "Under/overvotes and a separate provisional count are absent, not zero. Governor ballots minus recorded selections remain unclassified, not labeled blanks or allocated to parties.",
+    "Congressional district rows include a split reporting unit; unit-level district selections must not be assigned the whole unit electorate.",
+    "UPPER ALLEN 6 prints 65.36% for 1,155 / 1,767; the calculated 65.36502546689304% rounds to 65.37%. The source fraction is retained, not silently corrected.",
+    "Native UNOFFICIAL RESULTS is retained. No county/precinct mapping, statewide completeness or demographic turnout is approved."
+  ],
+  "source_representation": "Numerical facts only. Original HTML/PDF bytes and extracted presentation text remain private; no template redistribution license is claimed."
+}

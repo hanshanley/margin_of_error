@@ -1,0 +1,36 @@
+{
+  "verified_at_utc": "2026-11-06T03:00:45.367718+00:00",
+  "status": "complete_facts_reviewed_publication_pending",
+  "data_directory": "data/county-source-reviews/20261106-cumberland-facts-01",
+  "archive": "complete-cumberland-2026-numerical-facts-01.zip",
+  "bytes": 65990,
+  "sha256": "6fc5ba543cc1db5e57af4b405547e3103de6ee331737467720601827a1da18e9",
+  "complete_csv_tables": 8,
+  "unique_archive_members": 12,
+  "source_responses_verified": 4,
+  "primary_reports_verified": 2,
+  "native_pages_verified": 218,
+  "independent_pdf_engines": [
+    "PyMuPDF",
+    "pypdf"
+  ],
+  "all_native_facts_match_between_pdf_engines": true,
+  "candidate_option_vectors": 1491,
+  "native_contests": 461,
+  "native_unit_participation_observations": 118,
+  "focused_tests_passed": 7,
+  "packaged_offline_reproduction_byte_identical": true,
+  "all_payload_checksums_verified": true,
+  "source_presentation_members": 0,
+  "maps_approved": false,
+  "demographic_turnout_approved": false,
+  "qualifications": [
+    "All 118 native reporting units sum to the county ballots, registrations and separate Election Day/mail counts; candidate selections are not ballots.",
+    "Summary and precinct reports retain distinct native November 4 run times; no timezone is declared and equal totals do not establish simultaneous snapshots.",
+    "Native reporting is 118 of 118 separately for Election Day and Absentee/ Early; this does not establish final counting or certification.",
+    "Under/overvotes and a separate provisional count are absent, not zero. Governor ballots minus recorded selections remain unclassified, not labeled blanks or allocated to parties.",
+    "Congressional district rows include a split reporting unit; unit-level district selections must not be assigned the whole unit electorate.",
+    "UPPER ALLEN 6 prints 65.36% for 1,155 / 1,767; the calculated 65.36502546689304% rounds to 65.37%. The source fraction is retained, not silently corrected.",
+    "Native UNOFFICIAL RESULTS is retained. No county/precinct mapping, statewide completeness or demographic turnout is approved."
+  ]
+}

@@ -1,0 +1,120 @@
+year,state_code,county,county_fips,native_unit,source_report,office_literal,source_update_literal,residual_classification,Total_ballots_minus_recorded_selections,Election Day_ballots_minus_recorded_selections,Mail_ballots_minus_recorded_selections
+2026,PA,Cumberland,42041,Cumberland,summary,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:37PM,unclassified; native under/overvote accounting absent,2622,2352,270
+2026,PA,Cumberland,42041,CAMP HILL 1,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,17,13,4
+2026,PA,Cumberland,42041,CAMP HILL 2,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,23,18,5
+2026,PA,Cumberland,42041,CAMP HILL 3,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,27,24,3
+2026,PA,Cumberland,42041,CAMP HILL 4,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,10,9,1
+2026,PA,Cumberland,42041,CAMP HILL 5,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,24,23,1
+2026,PA,Cumberland,42041,CARLISLE 1-1,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,10,9,1
+2026,PA,Cumberland,42041,CARLISLE 1-2,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,13,11,2
+2026,PA,Cumberland,42041,CARLISLE 2,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,25,24,1
+2026,PA,Cumberland,42041,CARLISLE 3-1,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,50,43,7
+2026,PA,Cumberland,42041,CARLISLE 3-2,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,29,27,2
+2026,PA,Cumberland,42041,CARLISLE 3-3,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,30,26,4
+2026,PA,Cumberland,42041,CARLISLE 4-1,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,12,8,4
+2026,PA,Cumberland,42041,CARLISLE 4-2,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,34,28,6
+2026,PA,Cumberland,42041,CARLISLE 5,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,45,38,7
+2026,PA,Cumberland,42041,COOKE,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,1,1,0
+2026,PA,Cumberland,42041,DICKINSON NORTH,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,50,46,4
+2026,PA,Cumberland,42041,DICKINSON SOUTH,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,15,15,0
+2026,PA,Cumberland,42041,EAST PENNSBORO 1,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,26,18,8
+2026,PA,Cumberland,42041,EAST PENNSBORO 2,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,13,13,0
+2026,PA,Cumberland,42041,EAST PENNSBORO 3,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,36,33,3
+2026,PA,Cumberland,42041,EAST PENNSBORO 4,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,23,18,5
+2026,PA,Cumberland,42041,EAST PENNSBORO 5,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,26,25,1
+2026,PA,Cumberland,42041,EAST PENNSBORO 6,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,16,15,1
+2026,PA,Cumberland,42041,EAST PENNSBORO 7,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,15,14,1
+2026,PA,Cumberland,42041,EAST PENNSBORO 8,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,21,18,3
+2026,PA,Cumberland,42041,EAST PENNSBORO 9,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,27,26,1
+2026,PA,Cumberland,42041,EAST PENNSBORO 10,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,14,14,0
+2026,PA,Cumberland,42041,HAMPDEN 1,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,31,28,3
+2026,PA,Cumberland,42041,HAMPDEN 2,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,25,23,2
+2026,PA,Cumberland,42041,HAMPDEN 3,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,19,15,4
+2026,PA,Cumberland,42041,HAMPDEN 4,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,26,24,2
+2026,PA,Cumberland,42041,HAMPDEN 5,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,29,28,1
+2026,PA,Cumberland,42041,HAMPDEN 6,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,33,27,6
+2026,PA,Cumberland,42041,HAMPDEN 7,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,17,13,4
+2026,PA,Cumberland,42041,HAMPDEN 8,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,25,25,0
+2026,PA,Cumberland,42041,HAMPDEN 9,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,18,14,4
+2026,PA,Cumberland,42041,HAMPDEN 10,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,66,56,10
+2026,PA,Cumberland,42041,HAMPDEN 11,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,63,55,8
+2026,PA,Cumberland,42041,HAMPDEN 12,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,27,23,4
+2026,PA,Cumberland,42041,HOPEWELL,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,16,16,0
+2026,PA,Cumberland,42041,LEMOYNE 1,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,5,5,0
+2026,PA,Cumberland,42041,LEMOYNE 2,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,6,6,0
+2026,PA,Cumberland,42041,LEMOYNE 3,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,11,9,2
+2026,PA,Cumberland,42041,LEMOYNE 4,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,3,3,0
+2026,PA,Cumberland,42041,LOWER ALLEN 1 ANNEX,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,3,3,0
+2026,PA,Cumberland,42041,LOWER ALLEN 1,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,12,11,1
+2026,PA,Cumberland,42041,LOWER ALLEN 2,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,37,34,3
+2026,PA,Cumberland,42041,LOWER ALLEN 3,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,19,18,1
+2026,PA,Cumberland,42041,LOWER ALLEN 4,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,8,7,1
+2026,PA,Cumberland,42041,LOWER ALLEN 5,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,37,34,3
+2026,PA,Cumberland,42041,LOWER ALLEN 6,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,16,13,3
+2026,PA,Cumberland,42041,LOWER FRANKFORD,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,21,19,2
+2026,PA,Cumberland,42041,LOWER MIFFLIN,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,9,9,0
+2026,PA,Cumberland,42041,MECHANICSBURG 1,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,8,8,0
+2026,PA,Cumberland,42041,MECHANICSBURG 2-1,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,8,5,3
+2026,PA,Cumberland,42041,MECHANICSBURG 2-2,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,12,11,1
+2026,PA,Cumberland,42041,MECHANICSBURG 3,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,10,9,1
+2026,PA,Cumberland,42041,MECHANICSBURG 4,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,5,5,0
+2026,PA,Cumberland,42041,MECHANICSBURG 5,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,7,7,0
+2026,PA,Cumberland,42041,MIDDLESEX 1,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,55,50,5
+2026,PA,Cumberland,42041,MIDDLESEX 2,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,19,18,1
+2026,PA,Cumberland,42041,MONROE 1,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,43,35,8
+2026,PA,Cumberland,42041,MONROE 2,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,30,26,4
+2026,PA,Cumberland,42041,MT HOLLY SPRINGS,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,14,14,0
+2026,PA,Cumberland,42041,NEW CUMBERLAND 1-1,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,12,12,0
+2026,PA,Cumberland,42041,NEW CUMBERLAND 2-1,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,17,17,0
+2026,PA,Cumberland,42041,NEW CUMBERLAND 2-2,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,20,17,3
+2026,PA,Cumberland,42041,NEW CUMBERLAND 2-3,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,10,9,1
+2026,PA,Cumberland,42041,NEWBURG,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,1,0,1
+2026,PA,Cumberland,42041,NEWVILLE NORTH,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,6,6,0
+2026,PA,Cumberland,42041,NEWVILLE SOUTH,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,11,11,0
+2026,PA,Cumberland,42041,NORTH MIDDLETON 1,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,46,40,6
+2026,PA,Cumberland,42041,NORTH MIDDLETON 2,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,30,28,2
+2026,PA,Cumberland,42041,NORTH MIDDLETON 3,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,62,59,3
+2026,PA,Cumberland,42041,NORTH NEWTON,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,24,21,3
+2026,PA,Cumberland,42041,PENN,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,24,24,0
+2026,PA,Cumberland,42041,SHIPPENSBURG EAST,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,20,19,1
+2026,PA,Cumberland,42041,SHIPPENSBURG MIDDLE,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,24,20,4
+2026,PA,Cumberland,42041,SHIPPENSBURG TWP,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,22,22,0
+2026,PA,Cumberland,42041,SHIREMANSTOWN,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,10,8,2
+2026,PA,Cumberland,42041,SILVER SPRING 1,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,27,21,6
+2026,PA,Cumberland,42041,SILVER SPRING 2,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,24,22,2
+2026,PA,Cumberland,42041,SILVER SPRING 3,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,21,19,2
+2026,PA,Cumberland,42041,SILVER SPRING 4,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,37,35,2
+2026,PA,Cumberland,42041,SILVER SPRING 5,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,27,25,2
+2026,PA,Cumberland,42041,SILVER SPRING 6,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,27,26,1
+2026,PA,Cumberland,42041,SILVER SPRING 7,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,56,53,3
+2026,PA,Cumberland,42041,SILVER SPRING 8,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,21,21,0
+2026,PA,Cumberland,42041,SILVER SPRING 9,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,11,10,1
+2026,PA,Cumberland,42041,SOUTH MIDDLETON 1,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,36,35,1
+2026,PA,Cumberland,42041,SOUTH MIDDLETON 2,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,20,14,6
+2026,PA,Cumberland,42041,SOUTH MIDDLETON 3,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,25,24,1
+2026,PA,Cumberland,42041,SOUTH MIDDLETON 4,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,23,19,4
+2026,PA,Cumberland,42041,SOUTH MIDDLETON 5,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,37,34,3
+2026,PA,Cumberland,42041,SOUTH MIDDLETON 6,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,15,12,3
+2026,PA,Cumberland,42041,SOUTH MIDDLETON 7,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,17,17,0
+2026,PA,Cumberland,42041,SOUTH MIDDLETON 8,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,22,20,2
+2026,PA,Cumberland,42041,SOUTH MIDDLETON 9,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,20,16,4
+2026,PA,Cumberland,42041,SOUTH NEWTON,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,16,16,0
+2026,PA,Cumberland,42041,SOUTHAMPTON LOWER,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,9,9,0
+2026,PA,Cumberland,42041,SOUTHAMPTON UPPER 1,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,14,12,2
+2026,PA,Cumberland,42041,SOUTHAMPTON UPPER 2,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,53,52,1
+2026,PA,Cumberland,42041,UPPER ALLEN 1,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,13,10,3
+2026,PA,Cumberland,42041,UPPER ALLEN 2,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,6,4,2
+2026,PA,Cumberland,42041,UPPER ALLEN 3,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,9,8,1
+2026,PA,Cumberland,42041,UPPER ALLEN 4,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,21,15,6
+2026,PA,Cumberland,42041,UPPER ALLEN 5,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,16,16,0
+2026,PA,Cumberland,42041,UPPER ALLEN 6,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,24,23,1
+2026,PA,Cumberland,42041,UPPER ALLEN 7,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,11,10,1
+2026,PA,Cumberland,42041,UPPER ALLEN 8,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,37,27,10
+2026,PA,Cumberland,42041,UPPER ALLEN 9,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,23,20,3
+2026,PA,Cumberland,42041,UPPER ALLEN 10,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,19,18,1
+2026,PA,Cumberland,42041,UPPER FRANKFORD,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,12,12,0
+2026,PA,Cumberland,42041,UPPER MIFFLIN,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,10,9,1
+2026,PA,Cumberland,42041,WEST PENNSBORO LOWER,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,20,19,1
+2026,PA,Cumberland,42041,WEST PENNSBORO UPPER,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,33,30,3
+2026,PA,Cumberland,42041,WORMLEYSBURG 1,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,16,15,1
+2026,PA,Cumberland,42041,WORMLEYSBURG 2,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,11/04/2026 12:31PM,unclassified; native under/overvote accounting absent,30,28,2

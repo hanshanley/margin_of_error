@@ -155,6 +155,38 @@ publication goes to the review branch without another Pages deployment.
 Nationwide county acquisition remains in progress; this batch does not fill
 unreviewed maps or establish complete county coverage.
 
+**Cumberland complete participation facts, source review verified November 6:**
+ordinary direct HTTP returned four empty 404 bodies; those failed receipts remain
+private and unchanged. Normal Chromium navigation and same-origin requests to
+the exact county-declared URLs subsequently acquired both full reports and the
+parent/copyright pages with four successful receipts. All 218 pages independently
+agree between PyMuPDF and pypdf: 118 unit participation observations sum to
+117,334 ballots / 185,538 registrations, including Election Day 89,435 and mail
+27,899. Native county turnout is 63.24%, not eligible-population or demographic
+turnout. All 1,491 candidate/option vectors across 461 contests reconcile by
+literal identity and mode from units to county. Native parties, explicit zeroes,
+write-ins without assigned party and both ballot-question options are retained.
+
+The summary stamp is November 4 at 12:37PM; precinct pages print 12:31PM, with no
+declared timezone. Both native reporting modes say 118/118; this is not final
+certification. Under/overvotes and a separate provisional count are absent, not
+zero. Governor ballots minus selections leave an unclassified 2,622, not invented
+blanks or party votes. One unit spans congressional districts. UPPER ALLEN 6
+prints 65.36% for 1,155/1,767 although the calculated rate rounds to 65.37%; the
+native fraction is preserved explicitly rather than corrected. No new map is
+approved. Source copyright reserves rights; the complete public package contains
+numerical facts, identities, native status/update labels and receipt digests,
+not original PDF/HTML presentation templates.
+
+Seven focused tests and a portable, byte-identical offline ZIP reproduction
+pass. All eight complete CSVs and twelve archive members are verified; ZIP
+65,990 bytes, SHA-256
+`6fc5ba543cc1db5e57af4b405547e3103de6ee331737467720601827a1da18e9`.
+See `20261106-cumberland-facts-01` and
+`20261106-cumberland-publication-01/source-verification.json`. Source commit,
+immutable release verification and explorer integration are next; no Cumberland
+production display or download availability is claimed yet.
+
 **November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated
 `git-filter-repo --sensitive-data-removal` rewrite removed Google API key patterns

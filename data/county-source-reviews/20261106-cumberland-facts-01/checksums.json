@@ -1,0 +1,46 @@
+{
+  "audit.json": {
+    "bytes": 3774,
+    "sha256": "25263c03a4d54d808060d8e73d1ded192b4b9f8c3901d97129472d25c4af98d5"
+  },
+  "county-candidate-option-results.csv": {
+    "bytes": 9059,
+    "sha256": "99ce8acb0008f8d3c65967b417573b86b1862b28c825cf0740763ade63a413ac"
+  },
+  "county-literal-party-totals.csv": {
+    "bytes": 1629,
+    "sha256": "cc727ea7286f9be3c7519d57969fa1f44e92976c149796d18d8c5dd17f6dd9e9"
+  },
+  "county-participation.csv": {
+    "bytes": 1725,
+    "sha256": "88836d367e3682469107cf3ed4275011238964e6d4282c5dbbd459879945f0df"
+  },
+  "governor-unclassified-ballot-residuals.csv": {
+    "bytes": 19560,
+    "sha256": "f38d6fce65175628338720077b447d46454a6ec6a969c5801633a201be95149f"
+  },
+  "native-reporting-statements.csv": {
+    "bytes": 625,
+    "sha256": "feb6d4b31b3d16c50155cd3acb356ade6004a14f42e7f7d0a77a4d398b106bdf"
+  },
+  "native-source-pages.csv": {
+    "bytes": 39360,
+    "sha256": "f164d267c26698b584617f1089bda26d8677d4e4eebb026f640edb009989b9e0"
+  },
+  "native-unit-candidate-option-results.csv": {
+    "bytes": 411144,
+    "sha256": "314c5f3de03a7dbda37128b15d8d7bf211950a79eaddabe88a734416ab91741a"
+  },
+  "native-unit-participation.csv": {
+    "bytes": 163001,
+    "sha256": "43269d0e36a57fcd8e70d21e72e7b4b59f8997c3fcbffc42142bff18a443b54c"
+  },
+  "review-cumberland-county-results.py": {
+    "bytes": 23433,
+    "sha256": "c6901411a1b41011f8803c03d29880928c9d7103e160910b13244be92cbdd5d3"
+  },
+  "source-records.json": {
+    "bytes": 641020,
+    "sha256": "070960699588f9aa9881a6035f2b074bda324b284aad676108564c63a46dcda9"
+  }
+}
