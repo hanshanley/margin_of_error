@@ -5,6 +5,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { participationCurrentRoot } from '../../public/scripts/participation-downloads.js';
 import { loadReviewedCountyParticipation } from '../../scripts/reviewed-county-participation.mjs';
 import { loadAdditionalParticipation } from '../../scripts/additional-participation.mjs';
+import { loadCountyContextReview } from '../../scripts/build-county-participation-context.mjs';
 import '../styles/voter-participation.css';
 
 const dataRoot = resolve('public/voter-participation');
@@ -63,6 +64,7 @@ const reviewedMeasure = (row: typeof reviewedCounties[number]) =>
 	'participation_measure_label' in row ? row.participation_measure_label
 		: 'participation_measure_literal' in row ? row.participation_measure_literal : undefined;
 const additionalParticipation = loadAdditionalParticipation();
+const countyContextReview = loadCountyContextReview([...additionalParticipation.counties, ...reviewedCounties]);
 const additionalParticipationStates = [...new Set(additionalParticipation.counties.map(row => row.state_code))]
 	.map(code => ({
 		code, name: ufRows.find(row => row.STATE_ABV === code)?.STATE ?? code,
@@ -353,7 +355,8 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 				These are not UF VEP/VAP estimates or demographic turnout.
 				Final counting and certification are not independently established by these reviews;
 				native result status and printed percentages remain separate.
-				These reviews do not approve county or precinct mapping.</p>
+				Source reviews alone do not approve county or precinct mapping; separately audited county
+				identity joins are documented below.</p>
 			<div class="table-wrap" tabindex="0" role="region" aria-label="Reviewed county participation">
 				<table data-reviewed-county-participation={JSON.stringify(reviewedCounties)}>
 					<caption>Complete county observations; missing rates are not zero. A printed 0.00% alongside positive ballots
@@ -383,7 +386,8 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 				not candidate-vote totals or UF estimates. Counties, independent cities and municipalities retain
 				their native scope. Reporting-unit tables do not establish county totals:
 				those rows are available separately, not summed. Missing denominators and withheld rates are not zero.
-				These imports do not approve new county or precinct map joins.</p>
+				These imports alone do not approve new county or precinct map joins.
+				Independent county identity review is documented separately below.</p>
 			{additionalParticipationStates.map(group => <details>
 				<summary>{group.name}: {group.counties.length} counties / localities
 					{group.units ? ` · ${formatNumber(group.units)} source reporting-unit observations` : ''}</summary>
@@ -407,6 +411,24 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 					</table>
 				</div>
 			</details>)}
+		</section>
+		<section id="county-context-review" class="participation-current" aria-labelledby="county-context-title"
+			data-county-context-review={JSON.stringify(countyContextReview)}>
+			<h2 id="county-context-title">Audited county participation map joins · 2026</h2>
+			<p>{countyContextReview.counts.contextual_joins} whole-county participation observations across
+				{' '}{countyContextReview.counts.jurisdictions} states / D.C. have independently reviewed Census
+				county identity joins. Zoom into a state or use its county participation button.
+				Only {countyContextReview.counts.reviewed_rates} already-reviewed fractions receive rate colors;
+				the other {countyContextReview.counts.missing_rates} remain gray, with their actual counts available
+				on selection. Gray is not zero participation.</p>
+			<p>Original source records, native identifiers, source map-approval flags, counting qualifications and
+				missingness are unchanged. External Census identifiers are separate contextual joins, not invented
+				native FIPS. The complete review retains all {countyContextReview.counts.complete_source_records} records:
+				{' '}{countyContextReview.counts.excluded_municipalities} municipalities are not turned into counties,
+				and {countyContextReview.counts.excluded_missing_county_totals} reporting-unit containers are not
+				summed into county totals. Generalized 2024 Census shapes retain small documented simplification
+				overlaps; they are contextual, not certified 2026 election geography or analytical area measurements.
+				Complete records, identity inventories, geometry checks and reproduction code are downloadable below.</p>
 		</section>
 		{ufPointer && <section id="uf-turnout-2026" class="participation-current" aria-labelledby="uf-turnout-title">
 			<p class="kicker">Separate state-level source · 2026</p>
@@ -732,6 +754,8 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 				</details>}
 			</>)}
 			<div class="download-links">
+				{countyContextReview.downloads.map((file: { url: string; label: string }) =>
+					<a href={file.url} download>{file.label}</a>)}
 				<a href="/precinct-coverage.csv" download>Every state and election, newest first: full precinct worklist (CSV)</a>
 				<a href="/county-candidate-coverage.csv" download>Separate county candidate coverage: all states, years and offices, newest first (CSV)</a>
 				<a href={historicalCountyReview.complete_original_url} download>Paul Heideman: complete 1990–2024 county candidate/party compilation, summaries, source provenance, corrections and gaps (original ZIP)</a>

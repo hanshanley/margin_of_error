@@ -929,6 +929,53 @@ proofs. No previous snapshot or published asset was replaced.
 No native FIPS, map join, demographic rate, statewide completion or
 certification is invented.
 
+**Independent county participation map review, November 6:**
+The map gap was partly an identity-review gate, not absent source counts.
+The complete 902-record normalized query contains 430 whole-county observations
+across fifteen states / D.C., 286 municipalities and 186 reporting-unit
+containers without native county totals. Only 58 county observations already
+have reviewed fractions; the remaining 372 rates stay missing. No denominator,
+native FIPS, county total, demographic estimate or new rate is inferred.
+Original entire records and their source-level `maps_approved:false` flags
+remain unchanged; a separate contextual review approves exactly 430 joins.
+
+Both actual official Census Gazetteer declarations and their complete declared
+national county ZIPs were acquired privately with successful SHA-bound receipts.
+The 2024 and 2026 inventories each contain 3,222 identities, with no identity
+additions, removals or name changes. All participating contextual GeoJSONs
+were fetched in full anonymously and matched the pinned geometry. Every join
+requires exact whole-record and whole-geometry fingerprints and unique official
+county identity; Virginia independent cities remain distinct from counties.
+Generalized 2024 shapes retain documented cross-feature simplification overlaps
+up to about 8.28e-5 square degrees, not silently repaired or treated as certified
+2026 election boundaries or analytical area measurements.
+
+Facts commit `77b49f49fd343ad2bf32c6ceb67a24c65e478f8e`, release
+`voter-county-participation-context-20261106-01`: all four complete release
+assets and their commit-pinned full originals match anonymously. Every one of
+28 complete ZIP members equals its frozen source. The 2,209,950-byte archive
+has SHA-256
+`4c8a94ccbcfd60837bbc92f70a0183311af2b1eec3aad317031e7a8e456f09cc`.
+Extracted portable code reproduces the review, full CSV and complete archive
+byte-for-byte offline. No published snapshot or release asset is overwritten.
+
+Desktop/mobile JavaScript and no-JavaScript local browser checks pass, as do
+failed-review, altered-review and failed-current-feed checks. Every one of
+430 actual county counts, 58 rate colors, 372 missing-rate gray fills and all
+unmatched county shapes are checked. Municipalities are not mapped as counties.
+Cape May selection retains its native denominator and page-2 provenance.
+All 902 records, eighteen complete imports, 37 earlier reviewed records,
+52 UF rows, historical years and 367 previous download anchors are preserved.
+The resulting explorer has 371 anchors / 368 unique complete URLs, with no
+desktop/mobile overflow. Six county-review behavior tests, Astro check/build
+and all 106 complete download relocations pass. Prepared Pages payload:
+907,828,141 bytes. The local preview is stopped.
+Release, actual-live preservation baseline and browser evidence are under
+`data/county-source-reviews/20261106-county-context-publication-01/`.
+The UI is locally verified; exact production deployment verification is pending.
+This does not complete nationwide acquisition or establish measured demographic
+turnout, certification or statewide completion.
+
 **November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated
 `git-filter-repo --sensitive-data-removal` rewrite removed Google API key patterns

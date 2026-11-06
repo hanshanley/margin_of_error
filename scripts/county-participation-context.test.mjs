@@ -3,7 +3,7 @@ import test from 'node:test';
 import { readFileSync } from 'node:fs';
 import { gunzipSync } from 'node:zlib';
 import { contextualCountyRows } from '../public/scripts/participation-county-context.js';
-import { createCountyContextReview } from './build-county-participation-context.mjs';
+import { createCountyContextReview, loadCountyContextReview } from './build-county-participation-context.mjs';
 import { loadAdditionalParticipation } from './additional-participation.mjs';
 import { loadReviewedCountyParticipation } from './reviewed-county-participation.mjs';
 
@@ -48,6 +48,13 @@ test('independent joins use each entire unchanged record and exact contextual ge
   assert.equal(nj.size, 19);
   assert.equal([...nj.values()].filter(row => row.reported_pct === null && row.denominator === null).length, 18);
   assert.equal(nj.get('34009').county, 'Cape May');
+});
+
+test('publication refuses changed, missing or duplicated source records rather than reusing old approvals', () => {
+  const changed = copy(records); changed[0].ballots++;
+  assert.throws(() => loadCountyContextReview(changed), /complete current source records/);
+  assert.throws(() => loadCountyContextReview(records.slice(1)), /complete current source records/);
+  assert.throws(() => loadCountyContextReview([...records.slice(1), records[1]]), /complete current source records/);
 });
 
 test('changed native facts, source identity or counting metadata invalidate only that join', async () => {
