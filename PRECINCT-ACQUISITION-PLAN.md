@@ -2,7 +2,43 @@
 
 ## Current verified production and next acquisition
 
-**November 6, 13:37 UTC: Huntingdon complete native summary acquired and reviewed.**
+**November 6, 14:00 UTC: Huntingdon participation and context17 LIVE verified.**
+Exact UI **`9aa7c3ea2a227ee01ca3fbf70790c91079136ac2`**, Pages
+**42228740153 attempt 1**, passes its original hosted artifact
+**13506324368 / 511,693,752 bytes**, SHA-256
+`c018fe77e91cb4f180f5a77d375117ce37dfdb3ed41328acc7de896ef62ff7ce`.
+All **405 selected entire hosted/public files**, **259 entire relocations**,
+**seven production browser scenarios** and credential jobs **42228739747 /
+42228737429** pass. Actual hosted preparation is **989,657,191 bytes**,
+leaving **10,342,809 bytes** below the 1 GB limit. The smaller
+**979,518,771-byte** local preparation is not substituted for this hosted
+measurement. The hosted preview matches its publication manifest, retaining
+only the qualified local-platform preview difference.
+Exactly 32 redundant context10/11 geometry copies now use their full,
+independently byte-verified pinned originals; no source, original interactive
+geometry or historical complete query was removed.
+The completed exact verifier must not be rerun.
+
+Huntingdon retains **16,024 ballots / 27,917 native registrations / printed
+57.40%**, all native mode counts and explicit blank/provisional zeros,
+**UNOFFICIAL RESULTS**, undeclared timezone, complete-reporting qualifications
+and distinct district accounting. Native FIPS stays missing; contextual
+42061 uses unchanged 2024 Census geometry, not certified 2026 reporting boundaries.
+Context17 has **1,223 records / 739 joins / 352 usable native-registration
+fractions / 387 missing gray rates**, across eighteen jurisdictions.
+Every **1,222 previous record / 357 previous native row / 724 previous anchor /
+18 complete prior imports** survives unchanged. The native table now has
+**358 rows / 34 Pennsylvania rows**, with **741 anchors / 737 distinct URLs**.
+Proofs: `20261106-huntingdon-explorer-01/production-verification.json`,
+`deployment-size.json` and `production-browser.json`.
+No completed counting, certification, demographic turnout or nationwide
+completeness claim. **Next:** continue genuine county participation gaps and
+consolidated sources, including the separately scoped Michigan QVF dashboard,
+Maine, remaining Pennsylvania sources and D.C. Keep schedule #5 active.
+Do not substitute QVF voter-history records for tabulator results, infer
+suppressed small cells, or treat a labels-only report render as acquired counts.
+
+**Retained November 6, 13:37 UTC: Huntingdon complete native summary acquired and reviewed.**
 The county's actual declared URL contains `Primary`, but its HTTP disposition and
 both PDF pages identify the **November 3, 2026 general election**. Complete original
 bytes pass TLS-chain verification against the default OpenSSL trust store and
@@ -42,10 +78,10 @@ local bytes**. Exactly 32 redundant context10/11 geometry copies relocate to
 their full, byte-verified pinned originals, saving **11,271,562 build-only bytes**;
 current interactive geometry and historical complete queries remain unchanged.
 Local proof: `20261106-huntingdon-explorer-01/local-validation.json` and
-`local-browser.json`. Actual hosted capacity, exact deployment and production
-browser verification remain pending. Do not call Huntingdon live yet.
+`local-browser.json`. These were local results; the exact LIVE proof above
+now supersedes this earlier pending-production status.
 
-**November 6, 13:33 UTC: Lawrence participation and context16 LIVE verified.**
+**Retained November 6, 13:33 UTC: Lawrence participation and context16 LIVE verified.**
 Exact UI **`debbd15acc38562cdda7d12d9210186d1a64fd1c`**, Pages
 **42225008616 attempt 1**, passes its original hosted artifact
 **13505571586 / 514,042,361 bytes**, SHA-256
@@ -72,11 +108,9 @@ Original interactive geometry and every complete historical query remain intact.
 Proofs: `20261106-lawrence-explorer-01/production-verification.json`,
 `deployment-size.json` and `production-browser.json`.
 No completed counting, certification or nationwide completeness claim.
-**Next:** continue genuine county participation gaps and consolidated sources,
-including Maine, remaining Pennsylvania sources and separately scoped D.C.
-Keep schedule #5 active. Before another UI snapshot, address the actual hosted
-headroom with reviewed, full-byte-verified redundant-output relocation rather
-than removing original geometry or historical complete queries.
+Context17 above now supersedes this production baseline and verifies the
+reviewed headroom change. Do not repeat this completed Lawrence deployment
+verification or remove any original geometry or historical complete query.
 
 **Retained November 6, 13:01 UTC: Minnesota participation and context15 LIVE verified.**
 Exact UI **`176200e96a836f71c247b604daeac477c10673c3`**, Pages
