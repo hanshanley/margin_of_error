@@ -2,6 +2,26 @@
 
 ## Current verified production and next acquisition
 
+**November 6, 14:38 UTC: three new Pennsylvania complete query server-locked; context18 locally reproduced.**
+Facts revision `de6440c65eb0bc2925c9441c22d8bc8e9891739c`, release
+**436607554**, tag `voter-county-three-pa-summary-20261106-01`, reports
+**immutable: true**. All **15 entire anonymous assets / 15 pinned files /
+14 ZIP members / 15 byte-identically reproduced files / 13 tests** pass.
+Exact credential jobs **42235528614 / 42235532205** pass. Independently
+reparsed complete 2024 and 2026 Census archives identify Indiana **42063**,
+Lackawanna **42069** and Schuylkill **42107**; all complete production
+contextual PA geometry bytes match unchanged 2024 shapes.
+Context18 preserves all **1,223 prior records / 739 joins / 18 geometries**,
+adding only these three genuine county participation fractions:
+**1,226 records / 742 joins / 355 rates / 387 missing rates**.
+Its **32-file / 31-member** complete query reproduces locally; ZIP
+**2,909,312 bytes**, SHA-256
+`84c0d996ab898f076962a8ce5f9278a69fd48067262c2031844a30c4c59bb64a`.
+No native FIPS, certified 2026 boundary or counting completion is inferred.
+The actual live baseline remains Huntingdon/context17, **358 native rows /
+741 anchors / 737 distinct URLs / 18 prior imports**. Context18 publication
+and tested UI deployment remain next; do not call the three new counties live yet.
+
 **November 6: Indiana, Lackawanna and Schuylkill complete numerical review passed; publication and UI pending.**
 All six declared native PDFs were acquired with verified TLS. Two independent
 PDF extractors agree on all eight county-summary pages and all 357 native unit

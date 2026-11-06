@@ -1,0 +1,119 @@
+{
+  "checked_at": "2026-11-06T14:38:16.472319+00:00",
+  "revision": "de6440c65eb0bc2925c9441c22d8bc8e9891739c",
+  "release_id": 436607554,
+  "tag": "voter-county-three-pa-summary-20261106-01",
+  "phase": "draft",
+  "immutable": false,
+  "assets": [
+    {
+      "file": "METHODS.txt",
+      "asset_id": 717456135,
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-a017a383449bf1d7f459/METHODS.txt",
+      "bytes": 999,
+      "sha256": "159faaeb86411fa4d8ab2079ccb76a55ce0c892c2646b47772ce9f74e6c1608a"
+    },
+    {
+      "file": "audit.json",
+      "asset_id": 717456106,
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-a017a383449bf1d7f459/audit.json",
+      "bytes": 1324,
+      "sha256": "54d04cb36f4ef000c2eaa44c6d2fc9418f3b06652cc736e00d5d530116591737"
+    },
+    {
+      "file": "complete-query.zip",
+      "asset_id": 717456110,
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-a017a383449bf1d7f459/complete-query.zip",
+      "bytes": 52155,
+      "sha256": "f99c8690de84a0302319504fd1eb902e54b634487f29b6c0508c4a167f0683e6"
+    },
+    {
+      "file": "county-candidate-results.csv",
+      "asset_id": 717456104,
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-a017a383449bf1d7f459/county-candidate-results.csv",
+      "bytes": 58097,
+      "sha256": "b7f5795389dc87bdcff6f4ae46424ccb675064209c421c5304a2460a884a4aaa"
+    },
+    {
+      "file": "county-contest-accounting.csv",
+      "asset_id": 717456108,
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-a017a383449bf1d7f459/county-contest-accounting.csv",
+      "bytes": 24098,
+      "sha256": "5fbf0617aa8ee62bc54caeace9a8c344ad83efd18a75fb9a07066589b9fe3e21"
+    },
+    {
+      "file": "county-literal-party-totals.csv",
+      "asset_id": 717456105,
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-a017a383449bf1d7f459/county-literal-party-totals.csv",
+      "bytes": 35153,
+      "sha256": "fed55a3e73a6415127c723e1b45d90ca71c9bf62e559e57d0671f4243e0cef55"
+    },
+    {
+      "file": "county-participation.csv",
+      "asset_id": 717456134,
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-a017a383449bf1d7f459/county-participation.csv",
+      "bytes": 1019,
+      "sha256": "b7b5ce3c6243eab41f6363ebac7907581736fd5ca2c977552bb057b949d2cd6a"
+    },
+    {
+      "file": "manifest.json",
+      "asset_id": 717456136,
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-a017a383449bf1d7f459/manifest.json",
+      "bytes": 1980,
+      "sha256": "b2359e837f7322b93f4faf86fef021d4b36a25b44a14d65663fccf655f2143c6"
+    },
+    {
+      "file": "native-facts.json",
+      "asset_id": 717456143,
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-a017a383449bf1d7f459/native-facts.json",
+      "bytes": 276832,
+      "sha256": "8a7cf3e172f16390f2b0dea369eb246a3742cff171aaed8c234202418e5976d3"
+    },
+    {
+      "file": "native-participation-modes.csv",
+      "asset_id": 717456137,
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-a017a383449bf1d7f459/native-participation-modes.csv",
+      "bytes": 2022,
+      "sha256": "4e060f458aa953c0a88943a063cedaac2ed9ca9fdc135ceb9044b18edd86f384"
+    },
+    {
+      "file": "native-reporting-statistics.csv",
+      "asset_id": 717456169,
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-a017a383449bf1d7f459/native-reporting-statistics.csv",
+      "bytes": 2800,
+      "sha256": "cab999393e4a1e08292083ca988b02b7b40355cf59230412b6e9af0b77c57c15"
+    },
+    {
+      "file": "native-source-pages.csv",
+      "asset_id": 717456168,
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-a017a383449bf1d7f459/native-source-pages.csv",
+      "bytes": 1704,
+      "sha256": "52b2823dde88008f4436c6bc707b699b69603bcb11c8c072312c27821956d05f"
+    },
+    {
+      "file": "native-unit-participation.csv",
+      "asset_id": 717456179,
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-a017a383449bf1d7f459/native-unit-participation.csv",
+      "bytes": 98815,
+      "sha256": "0769816704f4bff4b0859f393c2300e8542c9875ef547737f73b5465dd020f9b"
+    },
+    {
+      "file": "review-three-additional-pa-summaries.py",
+      "asset_id": 717456176,
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-a017a383449bf1d7f459/review-three-additional-pa-summaries.py",
+      "bytes": 26423,
+      "sha256": "7f0ac6e446950877a791b8fbfc82be017c8bdc263b15604868390ac2ce1cc402"
+    },
+    {
+      "file": "test_review_three_additional_pa_summaries.py",
+      "asset_id": 717456182,
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-a017a383449bf1d7f459/test_review_three_additional_pa_summaries.py",
+      "bytes": 5862,
+      "sha256": "6ab35d72dfe3f604b98e059765d2c8d33d181d8748cf3fa711e4b0e74179ec18"
+    }
+  ],
+  "entire_asset_count": 15,
+  "review_credential_run": 42235528614,
+  "tag_credential_run": 42235532205,
+  "no_ui_deployment": true
+}

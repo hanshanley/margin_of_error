@@ -1,0 +1,36 @@
+{
+  "ref": {
+    "ref": "refs/tags/voter-county-three-pa-summary-20261106-01",
+    "node_id": "REF_kwDOTeY7QdoAM3JlZnMvdGFncy92b3Rlci1jb3VudHktdGhyZWUtcGEtc3VtbWFyeS0yMDI2MTEwNi0wMQ",
+    "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/refs/tags/voter-county-three-pa-summary-20261106-01",
+    "object": {
+      "sha": "65c958ecb8c76e637965b02ea0b1ca949d7cc1a1",
+      "type": "tag",
+      "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/tags/65c958ecb8c76e637965b02ea0b1ca949d7cc1a1"
+    }
+  },
+  "tag": {
+    "node_id": "TA_kwDOTeY7QdoAKDY1Yzk1OGVjYjhjNzZlNjM3OTY1YjAyZWEwYjFjYTk0OWQ3Y2MxYTE",
+    "sha": "65c958ecb8c76e637965b02ea0b1ca949d7cc1a1",
+    "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/tags/65c958ecb8c76e637965b02ea0b1ca949d7cc1a1",
+    "tagger": {
+      "name": "Hans Hanley",
+      "email": "hwahhanley@gmail.com",
+      "date": "2026-11-06T14:37:05Z"
+    },
+    "object": {
+      "sha": "de6440c65eb0bc2925c9441c22d8bc8e9891739c",
+      "type": "commit",
+      "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/commits/de6440c65eb0bc2925c9441c22d8bc8e9891739c"
+    },
+    "tag": "voter-county-three-pa-summary-20261106-01",
+    "message": "Complete reviewed Indiana Lackawanna and Schuylkill numerical query\n",
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  }
+}
