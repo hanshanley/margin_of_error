@@ -1,0 +1,122 @@
+{
+  "verified_at_utc": "2026-11-06T04:47:58.110235+00:00",
+  "revision": "ffc554aaf7eb30db8557e69243f5e52cc6e71858",
+  "release_id": 436109660,
+  "tag": "voter-county-pennsylvania-lebanon-20261106-01",
+  "tag_commit": "ffc554aaf7eb30db8557e69243f5e52cc6e71858",
+  "host_immutable": false,
+  "release_asset_count": 10,
+  "commit_pinned_complete_tables": 8,
+  "downloads": [
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-lebanon-20261106-01/complete-lebanon-2026-numerical-facts-01.zip",
+      "bytes": 63236,
+      "sha256": "933227c8e8eabc1ea6c831838133c33e97acafcb12ddd8fa4b30191e66f56f6f",
+      "anonymous_full_body_matches": true
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-lebanon-20261106-01/county-candidate-results.csv",
+      "bytes": 17140,
+      "sha256": "e001fb8a40c0e2a9563d5d0c9fae9d12a58de1ee9783b8db8c9a250e72ba8ceb",
+      "anonymous_full_body_matches": true
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-lebanon-20261106-01/county-contest-accounting.csv",
+      "bytes": 6882,
+      "sha256": "ea087f47473a727d75e111c58fba7380f87f862c43470bab617affec3f338ffe",
+      "anonymous_full_body_matches": true
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-lebanon-20261106-01/county-literal-party-totals.csv",
+      "bytes": 4125,
+      "sha256": "9dd1d99a696c7251f096908f9350c3140bb2c62ddb83a25606d3e6e6e87a6042",
+      "anonymous_full_body_matches": true
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-lebanon-20261106-01/county-participation.csv",
+      "bytes": 2334,
+      "sha256": "34ebac371e1a544fae473edbb59b2714a4ac37a999179a7de2c1974c56caf06f",
+      "anonymous_full_body_matches": true
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-lebanon-20261106-01/native-reporting-statements.csv",
+      "bytes": 1206,
+      "sha256": "9b2a70495873e7dd3c25d180d8b3b6dbdce2c34a5e763c62e99f850affa5eaac",
+      "anonymous_full_body_matches": true
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-lebanon-20261106-01/native-source-pages.csv",
+      "bytes": 27037,
+      "sha256": "e1e0cf4a045b8727c208c806fb2007aa727bfc52cd3d5ad0af33e195585becf4",
+      "anonymous_full_body_matches": true
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-lebanon-20261106-01/native-unit-candidate-results.csv",
+      "bytes": 794752,
+      "sha256": "a48c0c91c27ee55dc716bde6103a6b9db2db5125ad53e6051f56a03120281a9e",
+      "anonymous_full_body_matches": true
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-lebanon-20261106-01/native-unit-participation.csv",
+      "bytes": 113870,
+      "sha256": "bcd6d0c6bc78e3d79c57196c2ec3927f5c803238094259950acffc73bb788c47",
+      "anonymous_full_body_matches": true
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-lebanon-20261106-01/source-records.json.gz",
+      "bytes": 18110,
+      "sha256": "6bde4a44fb64bb43e64409085e600d7312debeba27ccbc2aec5f14347cefeeba",
+      "anonymous_full_body_matches": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ffc554aaf7eb30db8557e69243f5e52cc6e71858/data/county-source-reviews/20261106-lebanon-facts-01/county-candidate-results.csv",
+      "bytes": 17140,
+      "sha256": "e001fb8a40c0e2a9563d5d0c9fae9d12a58de1ee9783b8db8c9a250e72ba8ceb",
+      "anonymous_full_body_matches": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ffc554aaf7eb30db8557e69243f5e52cc6e71858/data/county-source-reviews/20261106-lebanon-facts-01/county-contest-accounting.csv",
+      "bytes": 6882,
+      "sha256": "ea087f47473a727d75e111c58fba7380f87f862c43470bab617affec3f338ffe",
+      "anonymous_full_body_matches": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ffc554aaf7eb30db8557e69243f5e52cc6e71858/data/county-source-reviews/20261106-lebanon-facts-01/county-literal-party-totals.csv",
+      "bytes": 4125,
+      "sha256": "9dd1d99a696c7251f096908f9350c3140bb2c62ddb83a25606d3e6e6e87a6042",
+      "anonymous_full_body_matches": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ffc554aaf7eb30db8557e69243f5e52cc6e71858/data/county-source-reviews/20261106-lebanon-facts-01/county-participation.csv",
+      "bytes": 2334,
+      "sha256": "34ebac371e1a544fae473edbb59b2714a4ac37a999179a7de2c1974c56caf06f",
+      "anonymous_full_body_matches": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ffc554aaf7eb30db8557e69243f5e52cc6e71858/data/county-source-reviews/20261106-lebanon-facts-01/native-reporting-statements.csv",
+      "bytes": 1206,
+      "sha256": "9b2a70495873e7dd3c25d180d8b3b6dbdce2c34a5e763c62e99f850affa5eaac",
+      "anonymous_full_body_matches": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ffc554aaf7eb30db8557e69243f5e52cc6e71858/data/county-source-reviews/20261106-lebanon-facts-01/native-source-pages.csv",
+      "bytes": 27037,
+      "sha256": "e1e0cf4a045b8727c208c806fb2007aa727bfc52cd3d5ad0af33e195585becf4",
+      "anonymous_full_body_matches": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ffc554aaf7eb30db8557e69243f5e52cc6e71858/data/county-source-reviews/20261106-lebanon-facts-01/native-unit-candidate-results.csv",
+      "bytes": 794752,
+      "sha256": "a48c0c91c27ee55dc716bde6103a6b9db2db5125ad53e6051f56a03120281a9e",
+      "anonymous_full_body_matches": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ffc554aaf7eb30db8557e69243f5e52cc6e71858/data/county-source-reviews/20261106-lebanon-facts-01/native-unit-participation.csv",
+      "bytes": 113870,
+      "sha256": "bcd6d0c6bc78e3d79c57196c2ec3927f5c803238094259950acffc73bb788c47",
+      "anonymous_full_body_matches": true
+    }
+  ],
+  "complete_zip_all_members_match": true,
+  "policy": "Fixed commit/checksums; never overwrite. No host-enforced lock claimed."
+}

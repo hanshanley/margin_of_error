@@ -1,0 +1,47 @@
+{
+  "base_url": "https://www.themarginoferror.com",
+  "checks": [
+    {
+      "mobile": false,
+      "all_previous_imports_entirely_unchanged": true,
+      "previous_complete_imports": 17
+    },
+    {
+      "mobile": false,
+      "state": "OR",
+      "localities": 36,
+      "reporting_units": 0,
+      "native_records_and_missingness": true
+    },
+    {
+      "mobile": false,
+      "javascript": false,
+      "native_localities": 865,
+      "complete_state_json_links": 18,
+      "all_previous_download_anchors_preserved": true
+    },
+    {
+      "mobile": true,
+      "all_previous_imports_entirely_unchanged": true,
+      "previous_complete_imports": 17
+    },
+    {
+      "mobile": true,
+      "state": "OR",
+      "localities": 36,
+      "reporting_units": 0,
+      "native_records_and_missingness": true
+    },
+    {
+      "mobile": true,
+      "javascript": false,
+      "native_localities": 865,
+      "complete_state_json_links": 18,
+      "all_previous_download_anchors_preserved": true
+    },
+    {
+      "failed_state_import_explicit": true
+    }
+  ],
+  "verified_at_utc": "2026-11-06T04:49:17.002136+00:00"
+}

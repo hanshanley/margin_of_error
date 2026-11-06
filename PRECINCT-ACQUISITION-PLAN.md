@@ -536,8 +536,18 @@ previous download anchors remain; three complete Oregon links yield 328 anchors
 / 325 unique URLs. There are now 865 additional locality containers across
 eighteen states; the 5,512 separately scoped selector-unit observations remain
 unchanged. The production-equivalent preview is stopped. Local evidence is
-under `20261106-oregon-publication-01`; exact deployment and production proof
-remain pending. No new map, demographic-rate or statewide completion approval.
+under `20261106-oregon-publication-01`. UI revision
+`087db21a50baf570c54e2cbe881b3e7dae244302` passed exact Pages run
+`42164127320` and credential checks `42164127242` / `42164127561`.
+At `2026-11-06T04:49:17.014963+00:00`, all 28 selected hosted/live files
+matched, all eighteen complete import JSONs equalled the local reference,
+and all seven production browser checks passed. Artifact `13477674902`,
+484,830,378 bytes, passed SHA-256
+`3d7b2f56ef1498c7c03ff1d0f0ed743b76dc78a05d27a99528a2e8037967008e`;
+the hosted preview matches its manifest and all remaining manifest entries
+match locally. The temporary ZIP was removed and the bounded verifier finished.
+Oregon is live verified. No new map, demographic-rate or statewide completion
+approval; production evidence is persisted review-only.
 
 **Lebanon primary acquisition and numerical review, November 6:** the saved
 67-county directory led to the actual government index and both declared general
@@ -576,9 +586,17 @@ The eight complete tables, full numerical facts, receipts, audit, portable code
 and checksums are under `20261106-lebanon-facts-01`; source presentation templates
 are not redistributed. The complete 63,236-byte ZIP has SHA-256
 `933227c8e8eabc1ea6c831838133c33e97acafcb12ddd8fa4b30191e66f56f6f`.
-Next publish/byte-verify fixed complete downloads, then integrate the county
-ballots without converting the native unusable zero denominator into turnout.
-No live UI, new map, demographic participation or statewide completion is claimed.
+Facts revision `ffc554aaf7eb30db8557e69243f5e52cc6e71858` is published on
+the review branch. Fixed release
+`voter-county-pennsylvania-lebanon-20261106-01` targets that exact commit;
+all ten complete assets and eight commit-pinned full CSVs are anonymously
+downloaded and byte-verified, including every complete ZIP member.
+GitHub reports `immutable: false`; preserve the fixed checksum/never-overwrite
+policy rather than asserting host-enforced locking. Release proof and the
+actual verified-live Oregon baseline are under `20261106-lebanon-publication-01`.
+The ballot-only UI is being prepared without converting unusable native
+registration zero into turnout. No live UI, new map, demographic participation
+or statewide completion is claimed.
 
 **November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated
