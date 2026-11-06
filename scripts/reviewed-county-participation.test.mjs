@@ -10,8 +10,8 @@ const reviews = JSON.parse(readFileSync('public/participation-source-reviews.jso
 
 test('loads all reviewed county participation without promoting map coverage', () => {
   const rows = loadReviewedCountyParticipation(reviews);
-  assert.equal(rows.length, 13);
-  assert.equal(rows.filter(row => row.state_code === 'PA').length, 12);
+  assert.equal(rows.length, 14);
+  assert.equal(rows.filter(row => row.state_code === 'PA').length, 13);
   assert.equal(rows.filter(row => row.state_code === 'DC').length, 1);
   assert.ok(rows.every(row => row.maps_approved === false && row.reported_units === null));
   const monroe = rows.find(row => row.county === 'Monroe');
@@ -71,6 +71,28 @@ test('preserves partial counting, absent status, separate timestamps and D.C. ac
   assert.match(fulton.source_reporting_label, /13 of 13.*0 of 1/);
   assert.match(fulton.source_reporting_label, /not independently established certification/);
   assert.match(fulton.source_update_label, /11:30 PM.*timezone not declared/);
+});
+
+test('preserves complete Adams ballots, native blank/provisional zeroes and partial-counting qualifications', () => {
+  const row = loadReviewedCountyParticipation(reviews).find(row => row.county === 'Adams');
+  const review = reviews.find(review => review.id === row.review_id);
+  const native = parse(readFileSync(join(review.data_directory, 'county-participation.csv'), 'utf8'),
+    { columns: true })[0];
+  assert.deepEqual(row.native_record, native);
+  assert.equal(row.ballots, 42660);
+  assert.notEqual(row.ballots, 42477);
+  assert.equal(row.denominator, 77163);
+  assert.equal(row.native_printed_pct, '55.29%');
+  assert.equal(row.reported_pct, 100 * 42660 / 77163);
+  assert.equal(row.source_status_literal, 'UNOFFICIAL RESULTS');
+  assert.equal(row.native_record.provisional_ballots, '0');
+  assert.equal(row.native_record.blank_ballots, '5');
+  assert.equal(row.native_record.mail_ballots, '10320');
+  assert.equal(row.native_source_updates.length, 2);
+  assert.ok(row.native_source_updates.every(update => update.native_update_literal === '11/03/2026 10:23PM'
+    && update.declared_timezone === ''));
+  assert.match(row.source_reporting_label, /0 of 53 complete and all 53 partially reported/);
+  assert.match(row.source_reporting_label, /10,320, not the index's separately scoped 10,348/);
 });
 
 test('rejects missing or duplicated reviewed sources instead of silently shrinking coverage', () => {

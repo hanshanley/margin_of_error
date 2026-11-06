@@ -1,0 +1,73 @@
+{
+  "base_url": "https://www.themarginoferror.com",
+  "checks": [
+    {
+      "mobile": false,
+      "all_twelve_previous_imports_entirely_unchanged": true
+    },
+    {
+      "mobile": false,
+      "state": "FL",
+      "localities": 1,
+      "reporting_units": 0,
+      "native_records_and_missingness": true
+    },
+    {
+      "mobile": false,
+      "state": "MO",
+      "localities": 1,
+      "reporting_units": 0,
+      "native_records_and_missingness": true
+    },
+    {
+      "mobile": false,
+      "state": "WY",
+      "localities": 23,
+      "reporting_units": 0,
+      "native_records_and_missingness": true
+    },
+    {
+      "mobile": false,
+      "javascript": false,
+      "native_localities": 789,
+      "complete_state_json_links": 15,
+      "all_previous_download_anchors_preserved": true
+    },
+    {
+      "mobile": true,
+      "all_twelve_previous_imports_entirely_unchanged": true
+    },
+    {
+      "mobile": true,
+      "state": "FL",
+      "localities": 1,
+      "reporting_units": 0,
+      "native_records_and_missingness": true
+    },
+    {
+      "mobile": true,
+      "state": "MO",
+      "localities": 1,
+      "reporting_units": 0,
+      "native_records_and_missingness": true
+    },
+    {
+      "mobile": true,
+      "state": "WY",
+      "localities": 23,
+      "reporting_units": 0,
+      "native_records_and_missingness": true
+    },
+    {
+      "mobile": true,
+      "javascript": false,
+      "native_localities": 789,
+      "complete_state_json_links": 15,
+      "all_previous_download_anchors_preserved": true
+    },
+    {
+      "failed_state_import_explicit": true
+    }
+  ],
+  "verified_at_utc": "2026-11-06T03:57:17.497775+00:00"
+}

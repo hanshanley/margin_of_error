@@ -1,0 +1,112 @@
+{
+  "verified_at_utc": "2026-11-06T03:56:25.261264+00:00",
+  "tag": "voter-county-pennsylvania-adams-20261106-01",
+  "revision": "67739491b7bcb890ed134771296dcdb2a2cde222",
+  "release_id": 436082143,
+  "release_html_url": "https://github.com/hanshanley/margin_of_error/releases/tag/voter-county-pennsylvania-adams-20261106-01",
+  "github_host_immutable": false,
+  "immutability_scope": "Frozen content-addressed commit and explicit checksum/never-overwrite policy; no GitHub host-level immutability lock is claimed. No repository settings changed.",
+  "complete_assets": [
+    {
+      "name": "complete-adams-2026-numerical-facts-01.zip",
+      "asset_id": 715825407,
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-adams-20261106-01/complete-adams-2026-numerical-facts-01.zip",
+      "bytes": 50180,
+      "sha256": "555f8af979c8407b23290dd7fabcbf46d2cf1a656729b7219e4884ca16200eaa",
+      "anonymous_full_download_byte_identical": true,
+      "github_asset_digest": "sha256:555f8af979c8407b23290dd7fabcbf46d2cf1a656729b7219e4884ca16200eaa"
+    },
+    {
+      "name": "county-candidate-results.csv",
+      "asset_id": 715825405,
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-adams-20261106-01/county-candidate-results.csv",
+      "bytes": 4413,
+      "sha256": "b5a3944abeff0caeaf9dca099829ba007da047e90960cb26dea97158475aeb1d",
+      "anonymous_full_download_byte_identical": true,
+      "github_asset_digest": "sha256:b5a3944abeff0caeaf9dca099829ba007da047e90960cb26dea97158475aeb1d",
+      "commit_pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/67739491b7bcb890ed134771296dcdb2a2cde222/data/county-source-reviews/20261106-adams-facts-01/county-candidate-results.csv",
+      "commit_pinned_full_table_byte_identical": true
+    },
+    {
+      "name": "county-literal-party-totals.csv",
+      "asset_id": 715825417,
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-adams-20261106-01/county-literal-party-totals.csv",
+      "bytes": 2862,
+      "sha256": "121e36d5762fca01bc1486ae38a2aa75eb31362a5119be4add1937f88523a41c",
+      "anonymous_full_download_byte_identical": true,
+      "github_asset_digest": "sha256:121e36d5762fca01bc1486ae38a2aa75eb31362a5119be4add1937f88523a41c",
+      "commit_pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/67739491b7bcb890ed134771296dcdb2a2cde222/data/county-source-reviews/20261106-adams-facts-01/county-literal-party-totals.csv",
+      "commit_pinned_full_table_byte_identical": true
+    },
+    {
+      "name": "county-participation.csv",
+      "asset_id": 715825403,
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-adams-20261106-01/county-participation.csv",
+      "bytes": 1886,
+      "sha256": "7580c18a2aa1ac0fc2bb2ff833f5757c75164246a14f802387a2b96a97a73bd9",
+      "anonymous_full_download_byte_identical": true,
+      "github_asset_digest": "sha256:7580c18a2aa1ac0fc2bb2ff833f5757c75164246a14f802387a2b96a97a73bd9",
+      "commit_pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/67739491b7bcb890ed134771296dcdb2a2cde222/data/county-source-reviews/20261106-adams-facts-01/county-participation.csv",
+      "commit_pinned_full_table_byte_identical": true
+    },
+    {
+      "name": "native-contest-accounting.csv",
+      "asset_id": 715825420,
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-adams-20261106-01/native-contest-accounting.csv",
+      "bytes": 192813,
+      "sha256": "ce0f3854b2944f5da3556bae1da68476dbcb59ad5e6406e5273944b9e558ea13",
+      "anonymous_full_download_byte_identical": true,
+      "github_asset_digest": "sha256:ce0f3854b2944f5da3556bae1da68476dbcb59ad5e6406e5273944b9e558ea13",
+      "commit_pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/67739491b7bcb890ed134771296dcdb2a2cde222/data/county-source-reviews/20261106-adams-facts-01/native-contest-accounting.csv",
+      "commit_pinned_full_table_byte_identical": true
+    },
+    {
+      "name": "native-reporting-statements.csv",
+      "asset_id": 715825418,
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-adams-20261106-01/native-reporting-statements.csv",
+      "bytes": 1154,
+      "sha256": "11b684223344dcb81154043fa801a71a0dd71ae1e60adcf2305f22bed3acac2f",
+      "anonymous_full_download_byte_identical": true,
+      "github_asset_digest": "sha256:11b684223344dcb81154043fa801a71a0dd71ae1e60adcf2305f22bed3acac2f",
+      "commit_pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/67739491b7bcb890ed134771296dcdb2a2cde222/data/county-source-reviews/20261106-adams-facts-01/native-reporting-statements.csv",
+      "commit_pinned_full_table_byte_identical": true
+    },
+    {
+      "name": "native-source-pages.csv",
+      "asset_id": 715825421,
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-adams-20261106-01/native-source-pages.csv",
+      "bytes": 20746,
+      "sha256": "156d058cd401096d2987d821fbde6719674c3ba2cd434e242b3dca226d604ebd",
+      "anonymous_full_download_byte_identical": true,
+      "github_asset_digest": "sha256:156d058cd401096d2987d821fbde6719674c3ba2cd434e242b3dca226d604ebd",
+      "commit_pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/67739491b7bcb890ed134771296dcdb2a2cde222/data/county-source-reviews/20261106-adams-facts-01/native-source-pages.csv",
+      "commit_pinned_full_table_byte_identical": true
+    },
+    {
+      "name": "native-unit-candidate-results.csv",
+      "asset_id": 715825404,
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-adams-20261106-01/native-unit-candidate-results.csv",
+      "bytes": 165096,
+      "sha256": "66e95164dc3e0b5419c43e0cc3af1b19fce55e2ab5d5ec47b7d351193ec68e2b",
+      "anonymous_full_download_byte_identical": true,
+      "github_asset_digest": "sha256:66e95164dc3e0b5419c43e0cc3af1b19fce55e2ab5d5ec47b7d351193ec68e2b",
+      "commit_pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/67739491b7bcb890ed134771296dcdb2a2cde222/data/county-source-reviews/20261106-adams-facts-01/native-unit-candidate-results.csv",
+      "commit_pinned_full_table_byte_identical": true
+    },
+    {
+      "name": "native-unit-participation.csv",
+      "asset_id": 715825406,
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-adams-20261106-01/native-unit-participation.csv",
+      "bytes": 76487,
+      "sha256": "7bb0bd128dfa7876cb455303345b575fb86453ccba77d34a1438c0ac0127eb4a",
+      "anonymous_full_download_byte_identical": true,
+      "github_asset_digest": "sha256:7bb0bd128dfa7876cb455303345b575fb86453ccba77d34a1438c0ac0127eb4a",
+      "commit_pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/67739491b7bcb890ed134771296dcdb2a2cde222/data/county-source-reviews/20261106-adams-facts-01/native-unit-participation.csv",
+      "commit_pinned_full_table_byte_identical": true
+    }
+  ],
+  "complete_csv_tables_verified": 8,
+  "original_templates_redistributed": false,
+  "ui_live_approved": false,
+  "maps_approved": false
+}

@@ -1,0 +1,27 @@
+{
+  "verified_at_utc": "2026-11-06T03:59:38.460739+00:00",
+  "status": "locally_verified_not_live",
+  "prepared_site_bytes": 898656577,
+  "relocated_files": 106,
+  "prepared_download_manifest_sha256": "54fe6ccfc6dcd04125af0ea16bb5218da2ad4b58ff9c96285c08dbf1fbf80c86",
+  "focused_node_tests": 20,
+  "focused_adams_fact_tests": 8,
+  "build_tests": 4,
+  "astro_check": {
+    "errors": 0,
+    "warnings": 0,
+    "existing_hints": 5
+  },
+  "browser_proof": "local-browser.json",
+  "browser_display_modes": 4,
+  "failed_current_feed_modes": 2,
+  "complete_reviewed_pa_dc_records": 14,
+  "all_thirteen_prior_native_records_unchanged": true,
+  "all_fifteen_additional_imports_entirely_unchanged": true,
+  "unique_complete_download_urls": 315,
+  "download_anchors": 318,
+  "all_309_previous_download_anchors_preserved": true,
+  "maps_approved": false,
+  "original_source_templates_redistributed": false,
+  "release_proof": "release-verification.json"
+}

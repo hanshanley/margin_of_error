@@ -239,7 +239,7 @@ all historical desktop/mobile reads and all six Cumberland display/failure
 modes, with all complete downloads intact. Cumberland is now live verified;
 the failed older artifact is superseded, not retried.
 
-**Three more participation states, locally verified November 6:** the native
+**Three more participation states, live verified November 6:** the native
 selector and static tables now connect 25 previously downloadable reviewed
 county observations: Monroe, Florida (32,506 ballots / 54,704 native registrations);
 Christian, Missouri (35,258 / 70,148); and all 23 Wyoming counties (191,688
@@ -261,9 +261,13 @@ failed-import checks pass, selecting every new county and independently matching
 its complete native source. Browser checks use production-equivalent gzip-file
 headers; Astro preview's automatic HTTP decompression differs from GitHub Pages.
 See `data/county-source-reviews/20261106-additional-participation-02/`.
-This batch is locally verified, not yet live verified. Publish one fresh exact
-revision and verify the hosted artifact, all fifteen full state imports and
-focused production browsers before promotion.
+Revision `a46ac309d6a2baaedc420d785b46cc6cd04f9391` passed Pages `42158971123`
+and credential runs `42158971130` / `42158971224`. At
+`2026-11-06T03:57:21.112357+00:00`, artifact `13475693866` passed its hosted
+ZIP digest and all 25 selected live files matched the hosted artifact, including
+every complete state JSON import. The eleven new-state production checks and
+all six Cumberland preservation modes pass. This batch is now live verified.
+Its temporary preview and bounded deployment verifier have finished.
 
 **Adams primary acquisition, November 6:** ordinary Chromium navigation acquired
 the actual official index and its declared complete general summary (three
@@ -299,11 +303,32 @@ templates. Eight focused tests pass, including corruption/missingness guards
 and byte-identical offline reproduction of every package file. See
 `data/county-source-reviews/20261106-adams-facts-01/` and the separate
 `numerical-review.json` beside the acquisition receipts. This is reconciled
-facts preparation, **not live participation integration**. Next publish and
-anonymously verify a new immutable complete-facts release, register the complete
-county participation CSV with all qualifications, and verify an exact new UI
-deployment before promoting coverage. No source maps, demographic turnout or
-statewide completeness are approved.
+facts preparation, **not live participation integration**. No source maps,
+demographic turnout or statewide completeness are approved.
+
+**Adams release and participation integration, locally verified:** the new
+`voter-county-pennsylvania-adams-20261106-01` release targets reviewed facts
+revision `67739491b7bcb890ed134771296dcdb2a2cde222`. All nine complete assets
+and all eight commit-pinned CSVs were anonymously downloaded and byte-verified.
+This is a fixed commit/checksum snapshot under the never-overwrite policy;
+GitHub reports `immutable: false`, as it also does for the earlier Cumberland
+release. Do not equate that policy with a host-enforced lock or change repository
+release settings implicitly.
+
+The complete native county CSV is registered in the existing source registry
+and reviewed participation loader. Both report timestamps, partial-counting
+statements, native fraction, explicit provisional zero and five native blanks
+remain intact. There are now thirteen PA observations plus separate D.C.
+Twenty focused Node tests, eight fact-review tests, Astro check (zero
+errors/warnings, five existing hints), the build and its four tests pass.
+Pages preparation verifies 106 relocations at 898,656,577 bytes. All four
+desktop/mobile and JavaScript/no-JavaScript modes, plus two failed-current-feed
+checks, pass. Every complete record of the thirteen prior reviewed observations,
+all fifteen additional-state full JSON fingerprints and every prior download
+anchor are unchanged. Nine new complete links give 315 unique URLs / 318 anchors.
+Proofs are under `data/county-source-reviews/20261106-adams-publication-01/`.
+The temporary preview is stopped. Publish a fresh exact UI revision and verify
+its hosted/live bytes and focused browsers before calling Adams live.
 
 **November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated
