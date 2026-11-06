@@ -1,0 +1,57 @@
+{
+  "scope": "Two plain HTTP empty 404s retained; ordinary Chromium reached the actual declared county sources without a challenge or access-control bypass.",
+  "observations": {
+    "browser-election-parent.html.receipt.json": {
+      "url": "https://www.waynecountypa.gov/197/Bureau-Of-Elections",
+      "final_url": "https://www.waynecountypa.gov/197/Bureau-Of-Elections",
+      "status": 200,
+      "bytes": 142680,
+      "sha256": "56f6b25556de51b667b910c4bc7d3c20f3cf3618901bc5498f09eaad9de21b68",
+      "fetched_at": "2026-11-06T05:13:02.400984+00:00",
+      "transport": "normal Chromium navigation"
+    },
+    "browser-results-index.html.receipt.json": {
+      "url": "https://www.waynecountypa.gov/1100/2026-General-Election-Unofficial-Results",
+      "final_url": "https://www.waynecountypa.gov/1100/2026-General-Election-Unofficial-Results",
+      "status": 200,
+      "bytes": 111132,
+      "sha256": "1cca2d068c934aac33bad4e999881330c193a35e2285f8d4a023a10c393c1c7e",
+      "fetched_at": "2026-11-06T05:13:14.176374+00:00",
+      "transport": "normal Chromium navigation"
+    },
+    "copyright-notices.html.receipt.json": {
+      "url": "https://www.waynecountypa.gov/site/copyright",
+      "final_url": "https://www.waynecountypa.gov/site/copyright",
+      "status": 200,
+      "bytes": 103075,
+      "sha256": "4e0c103c014154de2fdd5e5f36c3a734c6022826961b25650b24079fa0aa08b6",
+      "fetched_at": "2026-11-06T05:14:01.984372+00:00",
+      "transport": "normal Chromium context request"
+    },
+    "county-statement.pdf.receipt.json": {
+      "url": "https://www.waynecountypa.gov/DocumentCenter/View/8660/Statement-of-Votes-Cast--for-NOVEMBER_3_2026_GENERALELECTION_bdfx-34",
+      "final_url": "https://www.waynecountypa.gov/DocumentCenter/View/8660/Statement-of-Votes-Cast--for-NOVEMBER_3_2026_GENERALELECTION_bdfx-34",
+      "status": 200,
+      "bytes": 4659,
+      "sha256": "a69e920c3693be54abb882001665e493b1c5a07659272f969557437926e823b6",
+      "fetched_at": "2026-11-06T05:13:26.595144+00:00",
+      "transport": "normal Chromium context request"
+    },
+    "official-election-parent.html.receipt.json": {
+      "url": "https://www.waynecountypa.gov/197/Bureau-Of-Elections",
+      "final_url": "https://www.waynecountypa.gov/197/Bureau-Of-Elections",
+      "status": 404,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fetched_at": "2026-11-06T05:12:47.910470+00:00"
+    },
+    "official-index.html.receipt.json": {
+      "url": "https://www.waynecountypa.gov/1100/2026-General-Election-Unofficial-Results",
+      "final_url": "https://www.waynecountypa.gov/1100/2026-General-Election-Unofficial-Results",
+      "status": 404,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fetched_at": "2026-11-06T05:12:38.860530+00:00"
+    }
+  }
+}

@@ -738,13 +738,70 @@ There are now seventeen reviewed records (sixteen PA plus D.C.), 354 anchors /
 351 unique full URLs, including eight added full Armstrong downloads.
 All 106 complete relocations pass byte checks; the prepared Pages site is
 898,750,912 bytes. The local preview helper was stopped.
-Exact production deployment/live verification remains pending; no map,
-demographic turnout, certification or statewide completion is approved.
-Published UI revision is `de4fc20f1651f4cec2ce00cff335d1283756fd6f`;
-Pages `42166851928` and credential checks `42166851967` / `42166852661`
-are being checked by the single bounded
-`armstrong-exact-production-verification-01` process. Preserve its prepared
-`dist` reference until it finishes; do not duplicate the watcher.
+Exact production verification passed at `2026-11-06T05:18:58.614709+00:00`:
+UI revision `de4fc20f1651f4cec2ce00cff335d1283756fd6f`, Pages `42166851928`
+and credential checks `42166851967` / `42166852661`. All 28 selected hosted/live
+files match, including all eighteen complete decompressed import JSONs.
+Artifact `13479800854`, 484,837,904 bytes, has SHA-256
+`de07698b250bbeee1ee3600b920e300f6eb2df3beaa51930627bf37f20d9bb2d`.
+All six source-matched production browser modes/checks pass; the JavaScript
+modes also compare every prior full import fingerprint. The sole verifier
+finished and removed its temporary artifact download. Proof is persisted under
+`20261106-armstrong-publication-01` without another UI deployment.
+No new map, demographic turnout, certification or statewide completion is
+approved.
+
+**Wayne primary county participation and complete numerical review, November 6:**
+both saved government paths initially returned empty HTTP 404s through plain
+HTTP. Ordinary Chromium navigation, without a challenge or access-control
+bypass, reached the actual elections parent and its declared current result
+page. That page declares a complete one-page county statement and a separate
+unit report; the county statement supplies the needed aggregate without
+expanding precinct geometry. All failed and successful acquisition receipts
+are preserved in `20261106-wayne-publication-01/acquisition-observations.json`.
+Four SHA-bound originals remain private, including the county's declared
+copyright notices.
+The native header reports **21,707 Total Ballots Cast**, **36,885** registered
+voters and printed **58.85%**. The governor contest separately reports
+**21,689** ballots, **18 fewer** than the header. Each pair of state legislative
+district ballot counts also sums to 21,689; Congress reports 21,707. Preserve
+the unexplained scope difference instead of replacing county participation or
+inventing pending-ballot explanations. Each individual contest independently
+reconciles its own ballots with selections including write-ins, overvotes and
+undervotes. Native `over voted ballots` and `Overvotes` describe the same
+vote-for-one count here, not two additive residuals.
+All thirteen named choices and six write-in rows retain their native `ED`,
+`MI`, `PR` and total selection vectors, printed shares and explicit zeroes.
+These columns are not mode-level participation; their expansions and
+participation denominators are not supplied in this report. Party affiliations
+are absent, not inferred from names or filled with zero party totals.
+All six contest ballot/registration denominators remain in their actual
+county/district scopes. Native `35 precincts reported out of 35 total` is
+reporting coverage, not certification or independently finished counting.
+The declaring page labels results unofficial; the PDF has no separate status
+literal. Native `2026-11-05 15:08:51` has no supplied timezone.
+PyMuPDF and pdfplumber agree on every fact across the complete page. Seven full
+CSVs preserve county participation, all nineteen choice vectors, all six
+contest participation records, six native candidate subtotals, twenty-four
+scoped accounting rows, the source-page identity and three source statements.
+Full factual JSON, receipts, audit, portable reviewer, checksums and all twelve
+ZIP members reproduce byte-identically offline under Python `-S`.
+Seven focused tests pass; tracked-source credential screening passes all
+6,534 files.
+Facts revision `5ff1f5dde0e442fa2847472b57114b4c9fa758a7` and fixed release
+`voter-county-pennsylvania-wayne-20261106-01` are published on the review branch.
+All nine full release assets and seven full commit-pinned CSVs are anonymously
+byte-verified, including all twelve complete ZIP members.
+ZIP: **17,952 bytes**, SHA-256
+`4de3aee45c9a9ad0705185077074e8e9214fc9ac051adeb1de4582b200af0060`.
+GitHub reports `immutable: false`; preserve the fixed checksum/never-overwrite
+policy, not a host-locking claim. The actual verified Armstrong live HTML was
+required to equal its prepared reference before any new build; all seventeen
+entire previous records, eighteen full import fingerprints, five historical
+years and 354 old download anchors form the Wayne preservation baseline.
+Explorer integration and exact production verification remain pending.
+No new map, demographic turnout, certification or statewide completion is
+approved.
 
 **November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated

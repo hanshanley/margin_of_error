@@ -1,0 +1,140 @@
+{
+  "verified_at_utc": "2026-11-06T05:16:39.655741+00:00",
+  "revision": "5ff1f5dde0e442fa2847472b57114b4c9fa758a7",
+  "release_tag": "voter-county-pennsylvania-wayne-20261106-01",
+  "release_id": 436124831,
+  "github_immutable": false,
+  "never_overwrite_policy": true,
+  "anonymous_requests": true,
+  "downloads": [
+    {
+      "kind": "complete_release_asset",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-wayne-20261106-01/complete-wayne-2026-numerical-facts-01.zip",
+      "file": "complete-wayne-2026-numerical-facts-01.zip",
+      "bytes": 17952,
+      "sha256": "4de3aee45c9a9ad0705185077074e8e9214fc9ac051adeb1de4582b200af0060",
+      "status": 200,
+      "complete_byte_identical_zip_members": 12
+    },
+    {
+      "kind": "complete_release_asset",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-wayne-20261106-01/county-candidate-results.csv",
+      "file": "county-candidate-results.csv",
+      "bytes": 8621,
+      "sha256": "758df1d8cfaccea908c5dc774bb2b1daf7c16c82b0593f1ab5592bac6816893f",
+      "status": 200
+    },
+    {
+      "kind": "complete_release_asset",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-wayne-20261106-01/county-contest-accounting.csv",
+      "file": "county-contest-accounting.csv",
+      "bytes": 9376,
+      "sha256": "6d8bc86731fa57e766a39ed2f7e7f9378b752a509990305b6fe08620cdef127e",
+      "status": 200
+    },
+    {
+      "kind": "complete_release_asset",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-wayne-20261106-01/county-participation.csv",
+      "file": "county-participation.csv",
+      "bytes": 2720,
+      "sha256": "bdcdddfc04f8130e77014c3fa40f14ccf6f2a2e0be09eeaf3a88c796531e7f7f",
+      "status": 200
+    },
+    {
+      "kind": "complete_release_asset",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-wayne-20261106-01/native-contest-participation.csv",
+      "file": "native-contest-participation.csv",
+      "bytes": 2604,
+      "sha256": "67da6c49fe9cbafc83c4459dcee7eb5849398af35437942ee72c5c3c7696e637",
+      "status": 200
+    },
+    {
+      "kind": "complete_release_asset",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-wayne-20261106-01/native-contest-subtotals.csv",
+      "file": "native-contest-subtotals.csv",
+      "bytes": 2860,
+      "sha256": "aab3ec9a0f6ac3c4d6a3746968aee386974fcf063b9df360ccddfbf2b063067d",
+      "status": 200
+    },
+    {
+      "kind": "complete_release_asset",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-wayne-20261106-01/native-source-pages.csv",
+      "file": "native-source-pages.csv",
+      "bytes": 463,
+      "sha256": "5eeb87477e20ba52865055086d37bceb2cf4ac1ad042734b7be379524b3a9f74",
+      "status": 200
+    },
+    {
+      "kind": "complete_release_asset",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-wayne-20261106-01/native-source-statements.csv",
+      "file": "native-source-statements.csv",
+      "bytes": 1542,
+      "sha256": "54120bfa49f9ca750f6ae7c8f3c97be497ff2bc27f702cb4917a9e5c5e1c2d69",
+      "status": 200
+    },
+    {
+      "kind": "complete_release_asset",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-wayne-20261106-01/source-records.json.gz",
+      "file": "source-records.json.gz",
+      "bytes": 2111,
+      "sha256": "253a1668e1db3de894fbde0c5f2737bf21bd374706e3d1a579f7227473bb201c",
+      "status": 200
+    },
+    {
+      "kind": "commit_pinned_complete_csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5ff1f5dde0e442fa2847472b57114b4c9fa758a7/data/county-source-reviews/20261106-wayne-facts-01/county-candidate-results.csv",
+      "file": "county-candidate-results.csv",
+      "bytes": 8621,
+      "sha256": "758df1d8cfaccea908c5dc774bb2b1daf7c16c82b0593f1ab5592bac6816893f",
+      "status": 200
+    },
+    {
+      "kind": "commit_pinned_complete_csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5ff1f5dde0e442fa2847472b57114b4c9fa758a7/data/county-source-reviews/20261106-wayne-facts-01/county-contest-accounting.csv",
+      "file": "county-contest-accounting.csv",
+      "bytes": 9376,
+      "sha256": "6d8bc86731fa57e766a39ed2f7e7f9378b752a509990305b6fe08620cdef127e",
+      "status": 200
+    },
+    {
+      "kind": "commit_pinned_complete_csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5ff1f5dde0e442fa2847472b57114b4c9fa758a7/data/county-source-reviews/20261106-wayne-facts-01/county-participation.csv",
+      "file": "county-participation.csv",
+      "bytes": 2720,
+      "sha256": "bdcdddfc04f8130e77014c3fa40f14ccf6f2a2e0be09eeaf3a88c796531e7f7f",
+      "status": 200
+    },
+    {
+      "kind": "commit_pinned_complete_csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5ff1f5dde0e442fa2847472b57114b4c9fa758a7/data/county-source-reviews/20261106-wayne-facts-01/native-contest-participation.csv",
+      "file": "native-contest-participation.csv",
+      "bytes": 2604,
+      "sha256": "67da6c49fe9cbafc83c4459dcee7eb5849398af35437942ee72c5c3c7696e637",
+      "status": 200
+    },
+    {
+      "kind": "commit_pinned_complete_csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5ff1f5dde0e442fa2847472b57114b4c9fa758a7/data/county-source-reviews/20261106-wayne-facts-01/native-contest-subtotals.csv",
+      "file": "native-contest-subtotals.csv",
+      "bytes": 2860,
+      "sha256": "aab3ec9a0f6ac3c4d6a3746968aee386974fcf063b9df360ccddfbf2b063067d",
+      "status": 200
+    },
+    {
+      "kind": "commit_pinned_complete_csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5ff1f5dde0e442fa2847472b57114b4c9fa758a7/data/county-source-reviews/20261106-wayne-facts-01/native-source-pages.csv",
+      "file": "native-source-pages.csv",
+      "bytes": 463,
+      "sha256": "5eeb87477e20ba52865055086d37bceb2cf4ac1ad042734b7be379524b3a9f74",
+      "status": 200
+    },
+    {
+      "kind": "commit_pinned_complete_csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5ff1f5dde0e442fa2847472b57114b4c9fa758a7/data/county-source-reviews/20261106-wayne-facts-01/native-source-statements.csv",
+      "file": "native-source-statements.csv",
+      "bytes": 1542,
+      "sha256": "54120bfa49f9ca750f6ae7c8f3c97be497ff2bc27f702cb4917a9e5c5e1c2d69",
+      "status": 200
+    }
+  ]
+}
