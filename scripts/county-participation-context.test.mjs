@@ -7,8 +7,8 @@ import { createCountyContextReview, loadCountyContextReview } from './build-coun
 import { loadAdditionalParticipation } from './additional-participation.mjs';
 import { loadReviewedCountyParticipation } from './reviewed-county-participation.mjs';
 
-const root = new URL('../public/participation-county-context/20261106-10/', import.meta.url);
-const batchIds = ['california-bulk-participation-20261106-01', 'pennsylvania-juniata-20261106-01', 'pennsylvania-mercer-20261106-01',
+const root = new URL('../public/participation-county-context/20261106-11/', import.meta.url);
+const batchIds = ['pennsylvania-columbia-20261106-01', 'california-bulk-participation-20261106-01', 'pennsylvania-juniata-20261106-01', 'pennsylvania-mercer-20261106-01',
   'pennsylvania-montour-20261106-01'];
 const json = file => JSON.parse(readFileSync(new URL(file, root), 'utf8'));
 const compressed = file => JSON.parse(gunzipSync(readFileSync(new URL(file, root))));
@@ -29,8 +29,8 @@ test('complete county review reproduces without changing any source observations
     ...loadReviewedCountyParticipation(JSON.parse(readFileSync('public/participation-source-reviews.json')).reviews)];
   assert.deepEqual(records, liveRecords);
   assert.deepEqual(createCountyContextReview(records, inventories, collections, investigation), review);
-  assert.deepEqual(review.counts, { complete_source_records: 972, contextual_joins: 500, jurisdictions: 16,
-    reviewed_rates: 127, missing_rates: 373, excluded_municipalities: 286, excluded_missing_county_totals: 186 });
+  assert.deepEqual(review.counts, { complete_source_records: 973, contextual_joins: 501, jurisdictions: 16,
+    reviewed_rates: 128, missing_rates: 373, excluded_municipalities: 286, excluded_missing_county_totals: 186 });
   assert.ok(review.observations.every(row => row.source_map_approval_unchanged === false));
 });
 
@@ -45,7 +45,7 @@ test('independent joins use each entire unchanged record and exact contextual ge
       if (row.reported_pct !== null) rates++;
     }
   }
-  assert.equal(joined, 500); assert.equal(rates, 127);
+  assert.equal(joined, 501); assert.equal(rates, 128);
   assert.equal((await match(records.filter(row => ['VT', 'RI', 'MN', 'ND', 'ID', 'MI'].includes(row.state_code)))).size, 0);
   const nj = await match(records.filter(row => row.state_code === 'NJ'), review, 'NJ');
   assert.equal(nj.size, 19);
@@ -244,8 +244,9 @@ test('preserves context09 while joining all 58 California identities with native
   const previous = new URL('../public/participation-county-context/20261106-09/', import.meta.url);
   const oldRecords = JSON.parse(gunzipSync(readFileSync(new URL('complete-source-records.json.gz', previous))));
   const oldReview = JSON.parse(readFileSync(new URL('review.json', previous), 'utf8'));
-  assert.deepEqual(records.filter(row => row.state_code !== 'CA'), oldRecords);
-  assert.deepEqual(review.observations.filter(row => row.state_code !== 'CA'), oldReview.observations);
+  const isNew = row => row.state_code === 'CA' || row.review_id === 'pennsylvania-columbia-20261106-01';
+  assert.deepEqual(records.filter(row => !isNew(row)), oldRecords);
+  assert.deepEqual(review.observations.filter(row => !isNew(row)), oldReview.observations);
   assert.deepEqual(review.excluded, oldReview.excluded);
   assert.deepEqual(previousGeometry, oldReview.geometry);
   const joined = await match(records.filter(row => row.state_code === 'CA'), review, 'CA');
@@ -261,6 +262,26 @@ test('preserves context09 while joining all 58 California identities with native
   assert.equal(review.geometry.CA.boundary_year, 2024);
   assert.equal(review.geometry.CA.simplification_overlap_pairs.length, 43);
   assert.throws(() => loadCountyContextReview(oldRecords), /complete current source records/);
+});
+
+test('preserves all context10 facts and geometry while independently joining Columbia', async () => {
+  const previous = new URL('../public/participation-county-context/20261106-10/', import.meta.url);
+  const oldRecords = JSON.parse(gunzipSync(readFileSync(new URL('complete-source-records.json.gz', previous))));
+  const oldReview = JSON.parse(readFileSync(new URL('review.json', previous), 'utf8'));
+  const isNew = row => row.review_id === 'pennsylvania-columbia-20261106-01';
+  assert.deepEqual(records.filter(row => !isNew(row)), oldRecords);
+  assert.deepEqual(review.observations.filter(row => !isNew(row)), oldReview.observations);
+  assert.deepEqual(review.excluded, oldReview.excluded);
+  assert.deepEqual(review.geometry, oldReview.geometry);
+  const joined = await match(records.filter(row => row.state_code === 'PA'), review, 'PA');
+  const row = joined.get('42037');
+  assert.equal(row.county, 'Columbia');
+  assert.equal(row.ballots, 22583);
+  assert.equal(row.reported_pct, 100 * 22583 / 40797);
+  assert.equal(row.native_record.source_fips, '');
+  assert.equal(row.maps_approved, false);
+  assert.equal(row.native_source_updates[0].declared_timezone, 'EST');
+  assert.equal(row.native_source_updates[1].native_update_literal, '');
 });
 
 test('publication refuses changed, missing or duplicated source records rather than reusing old approvals', () => {

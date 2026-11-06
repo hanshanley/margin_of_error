@@ -31,6 +31,7 @@ const profiles = [
   ['pennsylvania-juniata-20261106-01', 'ballots_cast', 'registered_voters', 'native_printed_turnout', 'PA', ['Juniata']],
   ['pennsylvania-mercer-20261106-01', 'ballots_cast', 'registered_voters', 'native_printed_turnout', 'PA', ['Mercer']],
   ['pennsylvania-montour-20261106-01', 'ballots_cast', 'registered_voters', 'native_printed_turnout', 'PA', ['Montour']],
+  ['pennsylvania-columbia-20261106-01', 'ballots_cast', 'registered_voters', 'native_printed_turnout', 'PA', ['Columbia']],
   ['dc-delegate-county-20261105-01', 'ballots_cast', 'registered_voters', null, 'DC', ['District of Columbia']],
 ];
 /** @returns {Record<string, string>[]} */
@@ -216,6 +217,11 @@ export function loadReviewedCountyParticipation(reviews) {
         'native-source-pages.csv': 'd57995255325a864cde8927813b72252c8074d6612e088ee55cf0eee19866931',
         'audit.json': '5d831b548e66aa1c996f46765d993e126b7d6876ce3ba855e005860f7a2574bf',
       },
+      'pennsylvania-columbia-20261106-01': {
+        'county-participation.csv': 'ee3c13fa8a5d9bbc3a545bedcec34af63eab597420f683ea53a249f7afeb9207',
+        'native-source-pages.csv': '72cbed8c69094c833356d00fafd86f35e58b81a5c91e7663500f937c28e0dd81',
+        'audit.json': '387a0af6b6f815da19a03bfc70019130a25b6280b0807b74fcb395adb0830077',
+      },
     }[id];
     for (const [file, digest] of Object.entries(pinnedHashes ?? {})) {
       if (createHash('sha256').update(readFileSync(resolve(directory, file))).digest('hex') !== digest)
@@ -306,6 +312,7 @@ export function loadReviewedCountyParticipation(reviews) {
       const nativeForestSummary = id === 'pennsylvania-forest-20261106-01';
       const nativePotterSummary = id === 'pennsylvania-potter-20261106-01';
       const nativePerrySummary = id === 'pennsylvania-perry-20261106-01';
+      const nativeColumbiaSummary = id === 'pennsylvania-columbia-20261106-01';
       const nativeVotersCast = excludesProvisionals || id === 'pennsylvania-jefferson-20261106-01'
         || nativeClarionSummary || nativeCarbonSummary;
       const nativeCountyHeader = id === 'pennsylvania-wayne-20261106-01';
@@ -330,6 +337,11 @@ export function loadReviewedCountyParticipation(reviews) {
           || native.election_day_ballots !== '' || native.mail_ballots !== '' || native.provisional_ballots !== ''
           || native.native_fips !== '' || native.maps_approved !== 'False' || native.counting_complete !== 'False'
           || ballots !== audit.native_ballots_cast || denominator !== audit.native_registered_voters))
+        || (nativeColumbiaSummary && (native.native_participation_measure_literal !== 'Total Ballots'
+          || native.source_status_literal !== 'UNOFFICIAL ELECTION RESULTS'
+          || native.declared_timezone !== 'EST' || native.source_fips !== ''
+          || native.maps_approved !== 'False' || native.counting_complete !== 'False'
+          || native.reported_precincts !== '42' || native.total_precincts !== '42'))
         || (nativeCountyHeader && (native.native_participation_measure_literal !== 'Total Ballots Cast'
           || native.native_status_literal !== ''
           || native.native_parent_status_literal !== '2026 General Election Unofficial Results'
@@ -363,6 +375,12 @@ export function loadReviewedCountyParticipation(reviews) {
       if (id === 'pennsylvania-montour-20261106-01') reporting.push(
         'Counted modes are 5,554 Election Day + 1,429 Mail Votes + 25 Provisional Votes; provisional participation is not zero.',
         'Contradictory reporting-mode counters remain literal: zero complete and 15 partial overall, despite Election Day complete 15. No counter is repaired into completed counting.');
+      if (nativeColumbiaSummary) reporting.push(
+        'Native Total Ballots 22,583 / 40,797 registered voters, printed 55.35%; 42 of 42 reported precincts does not establish completed ballot counting or certification.',
+        'All three contests and ten candidate/write-in choices reconcile separately; ballot-minus-contest differences remain unclassified, not inferred blanks or over/undervotes.',
+        'Election Day, mail and provisional participation are absent, not zero. Separate filtered SURE mail returned 3,785 and votes recorded 3,772 are not established components of county ballots; no Election Day remainder is inferred.',
+        'All 105 mail cells, eight application categories, one blank-labeled ballot style and nine literal registration-party categories remain available; registration parties are not candidate parties.',
+        'Results retain their printed 11/3/2026 10:37:16 PM EST clock. The mail report prints Tuesday, November 3, 2026 without a time or timezone; PDF creation metadata supplies neither a report update nor certification.');
       if (nativeClarionSummary) reporting.push(
         '40 of 40 reported precincts does not establish completed ballot counting.',
         'Election Day, mail and provisional participation are not separately reported; missing mode counts are not zero.',
@@ -439,7 +457,8 @@ export function loadReviewedCountyParticipation(reviews) {
         'pennsylvania-elk-20261106-01', 'pennsylvania-forest-20261106-01',
         'pennsylvania-potter-20261106-01', 'pennsylvania-mifflin-20261106-01',
         'pennsylvania-perry-20261106-01', 'pennsylvania-juniata-20261106-01',
-        'pennsylvania-mercer-20261106-01', 'pennsylvania-montour-20261106-01'].includes(id)) {
+        'pennsylvania-mercer-20261106-01', 'pennsylvania-montour-20261106-01',
+        'pennsylvania-columbia-20261106-01'].includes(id)) {
         nativeSourceUpdates = [...new Map(csv(resolve(directory, 'native-source-pages.csv')).map(row =>
           [row.source_report ?? 'county_report', { source: row.source_report ?? 'county_report', native_update_literal: row.source_update_literal,
             declared_timezone: row.declared_timezone }])).values()];
@@ -467,15 +486,17 @@ export function loadReviewedCountyParticipation(reviews) {
       observations.push({
         year: 2026, state_code: code, county_id: native.county_fips || `reviewed:${code}:${county}`,
         county, geography_level: native.geography_level || 'county', ballots, denominator,
-        ...(nativeVotersCast || nativeCameronSummary || nativeElkSummary || nativeForestSummary || nativePotterSummary || nativeMifflinSummary || nativePerrySummary || newSummary
+        ...(nativeVotersCast || nativeCameronSummary || nativeElkSummary || nativeForestSummary || nativePotterSummary || nativeMifflinSummary || nativePerrySummary || nativeColumbiaSummary || newSummary
           ? { participation_measure_literal: native.native_participation_measure_literal } : {}),
         denominator_basis: 'native_registered_voters', reported_pct: denominator === null ? null : 100 * ballots / denominator,
         native_printed_pct: printedPct, source_status_literal: nativePerrySummary
           ? native.parent_status_literal : nativeCountyHeader
             ? native.native_parent_status_literal : nativeClarionSummary || nativeCameronSummary || nativeCarbonSummary
-            || nativeElkSummary || nativeForestSummary || nativePotterSummary || nativeMifflinSummary || newSummary
+            || nativeElkSummary || nativeForestSummary || nativePotterSummary || nativeMifflinSummary || nativeColumbiaSummary || newSummary
             ? native.source_status_literal : native.native_status_literal ?? native.result_status ?? null,
-        reported_units: null, total_units: null, source_rows: 0, maps_approved: false,
+        reported_units: nativeColumbiaSummary ? Number(native.reported_precincts) : null,
+        total_units: nativeColumbiaSummary ? Number(native.total_precincts) : null,
+        source_rows: nativeColumbiaSummary ? 1 : 0, maps_approved: false,
         review_id: id, native_record: native, native_source_updates: nativeSourceUpdates,
         source_update_label: updates.join('; ') || 'Not supplied',
         source_reporting_label: reporting.join('; ') || 'Counting completion not established by this participation table.',

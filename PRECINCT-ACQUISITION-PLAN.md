@@ -3,7 +3,8 @@
 ## Current verified production and next acquisition
 
 **November 6: Columbia, Pennsylvania's complete numerical query is published and
-verified; new context11 is locally reviewed, and UI integration remains pending.**
+verified; context11 is published and the UI passes local validation, with exact
+production publication still pending.**
 The actual county parent declares both complete November 3 reports. Both entire
 PDF originals and the parent match their saved receipts. Two independent PDF
 engines consume every results-report line and produce identical complete vectors:
@@ -47,6 +48,19 @@ review **831,514 bytes**, SHA-256
 `404370394975d3d64480eef48b75d96e53de1dd48cf88a0d5d67d1533d2b4b4a`.
 Source publication and independent identity/context proofs are retained under
 `20261106-columbia-publication-01` and `20261106-columbia-explorer-01`.
+Context facts `784d261600f349073d3cf74ba8d168595cf6a46e`, release **436359693**
+and tag `voter-county-participation-context-20261106-11` pass all four entire
+anonymous assets, thirty pinned files, twenty-nine ZIP members and extracted
+offline reproduction. Exact context credential runs **42202091373 / 42202043842**
+pass. All **68 focused tests**, Astro check, build and **seven local browser
+scenarios** pass, preserving every previous record, all 606 prior download
+anchors and all eighteen unchanged imports. The native table now has **108 rows /
+30 Pennsylvania rows**, and exposes **629 download anchors / 625 unique URLs**.
+All **106 relocated downloads** remain byte-identical. The prepared site is
+**999,552,081 bytes**, below the one-billion-byte limit by only **447,919 bytes**;
+the next context requires reducing build-only duplication without deleting any
+historical source or download. Full-site validation reaches only the existing
+unrelated UK `23 !== 16` assertion. These are local results, not a LIVE claim.
 California below remains the verified production until exact UI publication.
 The next bulk Ohio parent and three declared portal routes returned HTTP403;
 the directory-declared Clearfield parent returned404 and Clinton returned403.

@@ -1,6 +1,39 @@
 {
   "reviews": [
     {
+      "id": "pennsylvania-columbia-20261106-01",
+      "label": "Columbia County, Pennsylvania 2026: native participation and complete results/mail factual query",
+      "data_directory": "data/county-source-reviews/20261106-columbia-facts-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f83e17daae675e7be2b25c57bfb66f732ef14b8a/data/county-source-reviews/20261106-columbia-facts-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-columbia-20261106-01/complete-columbia-county-native-query-01.zip",
+      "complete_download_bytes": 33839,
+      "complete_download_sha256": "efa05a2efc389325b3e4febfe58e449c93bd25dc5cdd9c62d6a0d63027ac5306",
+      "review_status": "complete_results_and_scoped_mail_query_reviewed_unofficial",
+      "maps_approved": false,
+      "scope_note": "Native Total Ballots 22,583 / 40,797 registered voters, printed 55.35%, unofficial November 3 snapshot at 10:37:16 PM EST. All three contests and ten candidate/write-in choices independently reconcile across both complete PDF engines. Forty-two of 42 reported precincts does not establish completed counting. The separate scanned SURE mail report retains all 105 numeric cells, eight application categories, one empty-labeled ballot-style row, nine literal registration-party categories and all parallel totals. Both complete local OCR observations and their errors/omissions remain retained; neither engine alone reads every cell correctly. Mail returned 3,785 and votes recorded 3,772 remain separate processing measures under the literal election/federal/valid-voter filter, not known county-ballot components or an inferred Election Day remainder. Printed mail date has no report time or timezone; PDF metadata clocks remain separate. All 21 entire anonymous assets, 21 pinned files and 20 ZIP members match and reproduce offline. All 15 complete CSV tables, source-derived records, portable reviewer and tests are downloadable. Original source HTML/PDFs remain private. No source FIPS, new geometry, certification, completed counting, statewide or demographic participation claim.",
+      "tables": [
+        {"file": "county-participation.csv", "label": "Columbia: complete native Total Ballots, registrations, printed fraction and EST clock (CSV)"},
+        {"file": "county-candidate-results.csv", "label": "Columbia: all ten candidate/write-in choices across three contests, separate from participation (CSV)"},
+        {"file": "county-literal-party-totals.csv", "label": "Columbia: all separate contest/literal candidate-party totals, missing write-in parties retained (CSV)"},
+        {"file": "county-contest-accounting.csv", "label": "Columbia: all three native contest totals and unclassified ballot-minus-choice differences (CSV)"},
+        {"file": "native-reporting-statistics.csv", "label": "Columbia: all native contest/reporting counters, not completed counting (CSV)"},
+        {"file": "native-mail-application-types.csv", "label": "Columbia: all eight scoped mail-application categories and five distinct numeric columns (CSV)"},
+        {"file": "native-mail-ballot-styles.csv", "label": "Columbia: complete blank-labeled ballot-style row; no invented category (CSV)"},
+        {"file": "native-mail-registration-parties.csv", "label": "Columbia: all nine literal mail registration-party categories, not candidate voting behavior (CSV)"},
+        {"file": "native-mail-section-totals.csv", "label": "Columbia: all three parallel printed mail totals, not added together (CSV)"},
+        {"file": "native-mail-cell-review.csv", "label": "Columbia: all 105 reviewed mail cells and both retained OCR readings/errors (CSV)"},
+        {"file": "native-mail-report-metadata.csv", "label": "Columbia: complete native mail filter, electorate, date, headings and missing clock (CSV)"},
+        {"file": "native-source-pages.csv", "label": "Columbia: both complete native page identities and separate printed status/clocks (CSV)"},
+        {"file": "native-pdf-metadata.csv", "label": "Columbia: all native PDF metadata fields; creation clocks are not report updates (CSV)"},
+        {"file": "native-source-declarations.csv", "label": "Columbia: both actual parent-declared General report labels and URLs (CSV)"},
+        {"file": "source-receipts.csv", "label": "Columbia: all three entire original-source byte receipts and hashes (CSV)"},
+        {"file": "source-records.json.gz", "label": "Columbia: complete reviewed source-derived query, both PDF layouts and full independent OCR observations (JSON · gzip)"},
+        {"file": "review-columbia-county-native-query.py", "label": "Columbia: complete standard-library factual-query reproducer (Python)"},
+        {"file": "test-columbia-native-query.py", "label": "Columbia: complete portable query validation and corruption tests (Python)"}
+      ],
+      "coverage": []
+    },
+    {
       "id": "california-bulk-participation-20261106-01",
       "label": "California 2026: all 58 native county participation observations and separate statewide total",
       "data_directory": "data/county-source-reviews/20261106-california-facts-01",

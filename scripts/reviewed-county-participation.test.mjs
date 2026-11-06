@@ -8,8 +8,37 @@ import { gunzipSync } from 'node:zlib';
 import { loadReviewedCountyParticipation, loadReviewedStatewideParticipation } from './reviewed-county-participation.mjs';
 
 const reviews = JSON.parse(readFileSync('public/participation-source-reviews.json', 'utf8')).reviews;
-const batchCounties = ['Juniata', 'Mercer', 'Montour'];
+const batchCounties = ['Juniata', 'Mercer', 'Montour', 'Columbia'];
 const isBatch = row => row.state_code === 'CA' || row.state_code === 'PA' && batchCounties.includes(row.county);
+
+test('preserves all context10 observations and separates Columbia participation from filtered mail processing', () => {
+  const rows = loadReviewedCountyParticipation(reviews);
+  const previous = JSON.parse(gunzipSync(readFileSync(
+    'public/participation-county-context/20261106-10/complete-source-records.json.gz')));
+  const oldReviewed = previous.filter(row => rows.some(current => current.county_id === row.county_id
+    && current.state_code === row.state_code));
+  assert.deepEqual(rows.filter(row => row.review_id !== 'pennsylvania-columbia-20261106-01'), oldReviewed);
+  const row = rows.find(row => row.review_id === 'pennsylvania-columbia-20261106-01');
+  assert.equal(row.ballots, 22583);
+  assert.equal(row.denominator, 40797);
+  assert.equal(row.reported_pct, 100 * 22583 / 40797);
+  assert.equal(row.native_printed_pct, '55.35%');
+  assert.equal(row.participation_measure_literal, 'Total Ballots');
+  assert.equal(row.source_status_literal, 'UNOFFICIAL ELECTION RESULTS');
+  assert.equal(row.reported_units, 42);
+  assert.equal(row.total_units, 42);
+  assert.equal(row.maps_approved, false);
+  assert.equal(row.native_record.source_fips, '');
+  assert.equal(row.native_record.counting_complete, 'False');
+  assert.deepEqual(row.native_source_updates, [
+    { source: 'results', native_update_literal: '11/3/2026 10:37:16 PM EST', declared_timezone: 'EST' },
+    { source: 'mail-summary', native_update_literal: '', declared_timezone: '' },
+  ]);
+  assert.match(row.source_reporting_label, /mail returned 3,785 and votes recorded 3,772/);
+  assert.match(row.source_reporting_label, /no Election Day remainder is inferred/);
+  assert.match(row.source_reporting_label, /registration parties are not candidate parties/);
+  assert.match(row.source_reporting_label, /PDF creation metadata supplies neither a report update nor certification/);
+});
 
 test('adds all California native participation records while preserving every previous observation', () => {
   const rows = loadReviewedCountyParticipation(reviews);
@@ -17,7 +46,8 @@ test('adds all California native participation records while preserving every pr
     'public/participation-county-context/20261106-09/complete-source-records.json.gz')));
   const oldReviewed = previous.filter(row => rows.some(current => current.county_id === row.county_id
     && current.state_code === row.state_code));
-  assert.deepEqual(rows.filter(row => row.state_code !== 'CA'), oldReviewed);
+  assert.deepEqual(rows.filter(row => row.state_code !== 'CA'
+    && row.review_id !== 'pennsylvania-columbia-20261106-01'), oldReviewed);
   const source = reviews.find(row => row.id === 'california-bulk-participation-20261106-01');
   const native = parse(readFileSync(join(source.data_directory, 'county-participation.csv'), 'utf8'),
     { columns: true });
@@ -523,13 +553,14 @@ test('rejects Jefferson vote substitution, changed privacy scope or repaired nat
 
 test('loads all reviewed county participation without promoting map coverage', () => {
   const rows = loadReviewedCountyParticipation(reviews);
-  assert.equal(rows.length, 107);
-  assert.equal(rows.filter(row => row.state_code === 'PA').length, 29);
+  assert.equal(rows.length, 108);
+  assert.equal(rows.filter(row => row.state_code === 'PA').length, 30);
   assert.equal(rows.filter(row => row.state_code === 'DC').length, 1);
   assert.equal(rows.filter(row => row.state_code === 'NJ').length, 19);
   assert.equal(rows.filter(row => row.state_code === 'CA').length, 58);
   assert.ok(rows.every(row => row.maps_approved === false));
-  assert.ok(rows.filter(row => row.state_code !== 'CA').every(row => row.reported_units === null));
+  assert.ok(rows.filter(row => row.state_code !== 'CA'
+    && row.review_id !== 'pennsylvania-columbia-20261106-01').every(row => row.reported_units === null));
   const monroe = rows.find(row => row.county === 'Monroe');
   assert.equal(monroe.county_id, 'reviewed:PA:Monroe');
   assert.equal(monroe.native_record.county_fips, undefined);
