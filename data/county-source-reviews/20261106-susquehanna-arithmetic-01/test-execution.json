@@ -1,0 +1,38 @@
+{
+  "scope": "Complete cached-source arithmetic review, not a published numerical query package or map/rate approval. Portable query packaging, isolated archive reproduction, immutable publication and later identity/UI integration remain pending. No new download is advertised.",
+  "tests_passed": 8,
+  "tests_failed": 0,
+  "reviewed_native_precinct_pages": 41,
+  "reviewed_native_canvass_pages": 16,
+  "reviewed_native_summary_pages": 1,
+  "complete_page_inventory_checks": 58,
+  "complete_canvass_mode_vectors": 340,
+  "exact_half_ties_preserved": 5,
+  "private_persistent_artifacts": [
+    {
+      "name": "review-susquehanna-arithmetic-01.py",
+      "bytes": 14657,
+      "sha256": "3a86b834da8f2bc59ae0b1a49cc7c8c8afc82fb6f73be6cec800a9895b83d7a1"
+    },
+    {
+      "name": "test_susquehanna_arithmetic_01.py",
+      "bytes": 3130,
+      "sha256": "fa663407bc6031d7d50035ffebd3a5beee6d2af78c32e550662c8f2704f61ac7"
+    },
+    {
+      "name": "susquehanna-native-acquisition-01/complete-extractions.json",
+      "bytes": 210703,
+      "sha256": "2d4d1abb11743dd35cf94457579d07251937e850059e1bc1a4d0eec3bb3f79d9"
+    },
+    {
+      "name": "susquehanna-native-acquisition-01/summary-column-extractions.json",
+      "bytes": 2515,
+      "sha256": "f43fcc505071fe1e1283d4fff0a3cd2b35a5fff12a7c56f673937b33f628a63a"
+    },
+    {
+      "name": "susquehanna-native-acquisition-01/full-arithmetic-review.json",
+      "bytes": 439763,
+      "sha256": "b157589c5b81a6e49ef4a86282876ce8a345f1e56abac823860feeef1d33e168"
+    }
+  ]
+}

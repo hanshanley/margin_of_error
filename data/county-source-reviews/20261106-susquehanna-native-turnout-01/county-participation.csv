@@ -1,0 +1,2 @@
+state,county,election_date,native_unit,scope,source_role,physical_page,native_date,native_clock,native_status,native_title,native_ballot_label,total_ballots,native_registration_label,registered_voters,native_printed_percentage,native_mode,blank_ballots,overvotes,undervotes,source_fips,analysis_ballots_approved,analysis_rate_approved,map_approved
+Pennsylvania,Susquehanna,2026-11-03,"SUSQUEHANNA COUNTY, PA",county,summary,1,11/3/2026,10:25:47 PM EST,UNOFFICIAL RESULTS,Unofficial Election Day Results,Total Ballots,15317,Registered Voters,27504,55.69%,,,,,,False,False,False

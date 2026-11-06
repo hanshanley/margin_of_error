@@ -1,0 +1,6 @@
+state,county,election_date,native_unit,scope,source_role,physical_page,native_date,native_clock,native_status,native_title,native_contest,reporting,number_of_precincts,native_printed_percentage
+Pennsylvania,Susquehanna,2026-11-03,"SUSQUEHANNA COUNTY, PA",county,summary,1,11/3/2026,10:25:47 PM EST,UNOFFICIAL RESULTS,Unofficial Election Day Results,,41,41,100.00%
+Pennsylvania,Susquehanna,2026-11-03,"SUSQUEHANNA COUNTY, PA",county,summary,1,11/3/2026,10:25:47 PM EST,UNOFFICIAL RESULTS,Unofficial Election Day Results,GOVERNOR AND LT. GOV,41,41,100.00%
+Pennsylvania,Susquehanna,2026-11-03,"SUSQUEHANNA COUNTY, PA",county,summary,1,11/3/2026,10:25:47 PM EST,UNOFFICIAL RESULTS,Unofficial Election Day Results,REPRESENTATIVE IN CONGRESS 9TH DISTRICT,41,41,100.00%
+Pennsylvania,Susquehanna,2026-11-03,"SUSQUEHANNA COUNTY, PA",county,summary,1,11/3/2026,10:25:47 PM EST,UNOFFICIAL RESULTS,Unofficial Election Day Results,SENATOR IN THE GENERAL ASSEMBLY 20TH DISTRICT,41,41,100.00%
+Pennsylvania,Susquehanna,2026-11-03,"SUSQUEHANNA COUNTY, PA",county,summary,1,11/3/2026,10:25:47 PM EST,UNOFFICIAL RESULTS,Unofficial Election Day Results,REPRESENTATIVE IN THE GENERAL ASSEMBLY 111TH DISTRICT,41,41,100.00%

@@ -2,6 +2,37 @@
 
 ## Current verified production and next acquisition
 
+**November 6, 16:21 UTC: Somerset/context19 LIVE; lossless deployment recovery verified.**
+Exact UI **`1fe2555fedfa9fc0d5882ad392ba47ca4f7d2d57`**, Pages
+**42249181869 attempt 1**, deployed successfully. Its actual hosted preparation
+is **964,593,989 bytes**, leaving **35,406,011 bytes** below 1 GB.
+Original hosted artifact **13520245564 / 505,051,547 bytes**, SHA-256
+`533c38d18f1925fa296ef2074a1fad8fb3dbb7e6d1f2c6d7607b26a0b28dcdb6`,
+matches both its API byte count and digest. Exact credential jobs
+**42249181922 / 42249179432** pass. All **431 selected entire hosted/public
+files**, including all **418 previous paths**, **297 full relocations** and
+**seven production browser scenarios** pass.
+
+The page preserves all **1,226 prior complete records / 361 prior native rows /
+760 prior download anchors / 18 complete prior imports / historical years /
+52 UF rows**. Current totals are **1,227 records / 362 native rows / 743 joins /
+356 usable rates / 387 missing rates / 781 anchors / 777 distinct URLs**.
+Pennsylvania has **38 observations / 35 usable rates**, not statewide or precinct
+completeness. All three Somerset clocks, absent timezones, unofficial status,
+contradictory reporting counters and missing accounting survive; contextual 2024
+geometry is not certified 2026 geography. No pixels, original images, public URLs,
+historical files or numerical inputs were discarded.
+
+The first production browser attempt stopped on a non-OK HTTP response checking
+unchanged imports. A bounded resume of the same verifier/artifact reused all 431
+complete-success receipts; the unchanged browser suite then passed. Both verifier
+shells are finished; do not repeat them or this completed deployment. Full proofs
+are in `20261106-pages-lossless-recovery-01`. The unrelated pre-existing UK topic
+validator failure below remains explicitly unresolved. **Next:** publish the
+validated Susquehanna native query and review its county identity/context;
+continue remaining genuine county gaps. Keep schedule #5 active and external
+Google-owner/GitHub-Support remediation explicitly incomplete.
+
 **November 6, 15:53 UTC: Somerset/context19 deployment failed; lossless payload recovery in progress.**
 Both deployment attempts of exact Pages run **42243044220**, UI revision
 **`32b1f8e6f0e55b1fca0d429e10ec88cd29303dc6`**, timed out during
@@ -25,6 +56,14 @@ Audits are in `20261106-pages-lossless-recovery-01`. The broad build validator
 separately stops at its unchanged UK topic-card assertion (**23 vs 16**,
 `scripts/validate-build.mjs:1126`); that unrelated assertion is not changed or
 reported as passing.
+The tested recovery was committed as Hans Hanley and pushed to review/main at
+**`1fe2555fedfa9fc0d5882ad392ba47ca4f7d2d57`**. Its exact Pages run is
+**42249181869**; credential jobs are **42249181922 (main)** and
+**42249179432 (review)**. The existing parameterized verifier is running as
+**`pages-lossless-production-01`**, using the same full **431 selected
+hosted/public files / 297 complete relocations / seven production browser**
+checks. Reuse that known run and verifier; do not start a duplicate, rebuild
+the local prepared export underneath it, or mark this pending revision LIVE.
 
 **November 6, 14:59 UTC: Indiana, Lackawanna, Schuylkill and context18 LIVE verified.**
 Exact UI **`c49c32d96a9347accfdd9126fd758a6a091d3108`**, Pages
@@ -62,7 +101,7 @@ separately frozen Michigan QVF scope, which approves no generic rates or tabulat
 totals. Nationwide coverage and external Google-owner/GitHub-Support remediation
 remain incomplete. Keep recurring schedule #5 active.
 
-**November 6, next acquired county: Susquehanna complete originals, numerical review pending.**
+**November 6, next county: Susquehanna complete arithmetic review; query publication pending.**
 The actual official election-results page declares three distinct November
 general-election reports. The full declaring page and all three PDFs have
 been acquired with verified TLS, HTTP 200, complete byte/hash/header receipts:
@@ -81,15 +120,46 @@ the title and mode evidence rather than assuming the title excludes mail.
 The parent's separate **3,000 mail ballots issued / 2,708 received** are
 mail-process counts, not tabulated county ballots or an amount to add to totals.
 
-**Next after Somerset deployment recovery and production verification:** review every numerical
-page and reconcile all 41 precincts, four contests, literal choices, mode vectors,
-reporting, percentages, clocks and unclassified residuals. The summary is
-two-column; both general full-page text engines interleave its first and fourth
-contests. Use independent geometrically clipped/cropped columns with complete
-page token inventories, not guessed line joins or selected web excerpts.
-No portable numerical query, immutable release, analysis/rate/map approval or
-UI integration exists for Susquehanna yet. This acquisition audit is not a
-numerical download and does not change any live coverage count.
+Every complete **58-page** word/numeric token inventory agrees between the
+two independent extractors. Geometrically clipped/cropped summary columns avoid
+the full-page engines' interleaving. Both complete numerical parses agree:
+all **41 precinct registrations and ballot totals**, **four complete contest
+matrices**, **340 native canvass mode vectors**, every choice total and every
+county/precinct/mode sum reconcile. All printed percentages reconcile under
+**ROUND_HALF_EVEN**; retain the **five exact half-ties** differing from
+ROUND_HALF_UP rather than changing the printed values or calling them errors.
+The precinct report has **three distinct literal native clocks: 10:25:23,
+10:25:24 and 10:25:25 PM EST**. Retain each page's own clock and native
+**Page 1/1**, separately from physical pages 1-41.
+
+**Eight focused mutation tests pass**: changed choices/ballots, repeated
+registration denominators, missing pages, duplicate modes, zero/dash semantics
+and native half-even ties are covered. Complete parsed numerical evidence and
+test/artifact hashes are in `20261106-susquehanna-arithmetic-01`. The full
+originals, both full extractions, independent summary columns and reviewed
+parser/tests remain in private persistent session artifacts. Separate native
+overvotes, undervotes, blank ballots and ballot-mode counts remain missing;
+ballots minus contest votes are unclassified differences, not native undervotes.
+
+The portable, standard-library-only numerical query now exists in
+`20261106-susquehanna-native-turnout-01`: **17 complete files / 16 ZIP members**,
+with **one county participation row / 41 precinct participation rows /
+546 candidate rows / 546 literal-party rows / 1,105 canvass candidate-mode rows /
+168 accounting rows / five reporting rows / 58 source-page rows**. Both complete
+extractions, independently clipped summary columns, executable parser/tests,
+methods, audit and checksums are included. Governor canvass labels and missing
+native parties remain distinct from explicitly matched summary identities.
+**Eleven source tests and eleven isolated extracted-archive tests pass; all
+17 files reproduce byte-identically offline.** ZIP **92,737 bytes**, SHA-256
+`278746dd8f1f6f8ab08d47ecd1486376319272976e7f824034783d752e03d069`.
+Validation evidence is separate in `20261106-susquehanna-native-validation-01`.
+
+**Next:** freeze and publish the complete native query, verify every full
+immutable release asset and its actual archive, then perform a separately
+reviewed county identity/context integration after the pending production proof.
+Do not repeat acquisition or substitute excerpts. No immutable release,
+analysis/rate/map approval or UI integration exists for Susquehanna yet; local
+query validation does not change any live coverage count.
 
 **November 6, 15:00 UTC: distinct Venango alternatives reviewed; no invented county total.**
 Both complete official elections-navigation and results-archive responses were

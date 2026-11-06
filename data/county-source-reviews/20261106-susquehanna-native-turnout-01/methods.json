@@ -1,0 +1,89 @@
+{
+  "snapshot": "20261106-susquehanna-native-turnout-01",
+  "election_date": "2026-11-03",
+  "scope": "Complete native numerical query; no analysis, rate, geographic identity or map approval yet.",
+  "native_ballots": "Total Ballots, retained separately from candidate votes and mail-process observations.",
+  "denominator": "Native Registered Voters; not CVAP, VAP, VEP or CPS.",
+  "reporting": "41/41 reported is not certification or completed counting.",
+  "modes": "Normal / Absentee / Mail-In are candidate-vote modes, not ballot-mode counts. County Total repeats mode sums. Never sum county with precinct or Total with its components.",
+  "registrations": "Canvass registration denominators repeat in every mode/contest; they are checked, not added.",
+  "accounting": "Blank ballots, ballot modes, overvotes and undervotes are absent, not zero. Ballots minus contest votes are unclassified residuals.",
+  "parties": "Summary/precinct affiliations are literal. Governor canvass labels are truncated and lack parties; matched_summary fields are explicitly cross-report matched identities, not native canvass affiliations. Empty affiliation means missing.",
+  "percentages": "Native strings retained. Every numeric percentage reconciles under Decimal ROUND_HALF_EVEN; five exact ties differ from ROUND_HALF_UP. A dash is a missing percentage display on zero votes, not a numeric zero.",
+  "clocks": "All 58 page clocks, including three distinct precinct seconds, and native vs physical page numbers retained; no acquisition clock replaces a native clock.",
+  "parent_mail_process": {
+    "issued": 3000,
+    "received": 2708,
+    "added_to_ballots": false
+  },
+  "geography": "No FIPS or polygon identity inferred. Preserve existing precinct datasets; this packet creates no geographic coverage.",
+  "reproduction": "python3 -I review-susquehanna.py --output /new/empty/directory",
+  "tests": "python3 -I test_review_susquehanna.py",
+  "source_originals": "Complete original parent/PDF bytes retained privately with full size/hash receipts; both entire numerical text extractions and summary column extractions included.",
+  "source_receipts": [
+    {
+      "url": "https://www.susqco.com/departments/voter-registration/election-results",
+      "final_url": "https://www.susqco.com/departments/voter-registration/election-results",
+      "status": 200,
+      "bytes": 52349,
+      "sha256": "a3aab5d0903cb31676189c827f0f9f3aecac1f459f1533fa4efa99ae4bcaecd7",
+      "content_type": "text/html; charset=utf-8",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at_utc": "2026-11-06T15:52:23.134835+00:00"
+    },
+    {
+      "url": "https://www.susqco.com/getmedia/7103dc1d-950d-43b9-bd95-79a66e31e8d9/2026-General-Unofficial-Summary-Report.pdf",
+      "final_url": "https://www.susqco.com/getmedia/7103dc1d-950d-43b9-bd95-79a66e31e8d9/2026-General-Unofficial-Summary-Report.pdf",
+      "status": 200,
+      "bytes": 77850,
+      "sha256": "cf976df62914097ac67f5efdca8a474df0e7b9021d6c483be43fa449bb7c56c2",
+      "content_type": "application/pdf",
+      "etag": "\"639293849834768393\"",
+      "last_modified": "Wed, 04 Nov 2026 15:29:43 GMT",
+      "acquired_at_utc": "2026-11-06T15:52:23.227220+00:00"
+    },
+    {
+      "url": "https://www.susqco.com/getmedia/4bdb9086-aca1-4f3e-9534-bef454294e6b/2026-General-Unofficial-Precinct-Report.pdf",
+      "final_url": "https://www.susqco.com/getmedia/4bdb9086-aca1-4f3e-9534-bef454294e6b/2026-General-Unofficial-Precinct-Report.pdf",
+      "status": 200,
+      "bytes": 159583,
+      "sha256": "c8b862e2cd27ed59705c073dc15da2b4f48e230e529b655c2f03f906aef97dda",
+      "content_type": "application/pdf",
+      "etag": "\"639293849836487147\"",
+      "last_modified": "Wed, 04 Nov 2026 15:29:43 GMT",
+      "acquired_at_utc": "2026-11-06T15:52:23.342160+00:00"
+    },
+    {
+      "url": "https://www.susqco.com/getmedia/afa6d5e1-dac1-4001-8b2a-2e2067ee68a8/2026-General-Unofficial-Canvass-Report.pdf",
+      "final_url": "https://www.susqco.com/getmedia/afa6d5e1-dac1-4001-8b2a-2e2067ee68a8/2026-General-Unofficial-Canvass-Report.pdf",
+      "status": 200,
+      "bytes": 57410,
+      "sha256": "6d6bf2b65077cf8e3641b84efe3bb827a2383cc52521c329b14e8e768af4e427",
+      "content_type": "application/pdf",
+      "etag": "\"639293849837580885\"",
+      "last_modified": "Wed, 04 Nov 2026 15:29:43 GMT",
+      "acquired_at_utc": "2026-11-06T15:52:24.337538+00:00"
+    }
+  ],
+  "declarations": [
+    {
+      "role": "summary",
+      "parent_url": "https://www.susqco.com/departments/voter-registration/election-results",
+      "label": "2026 General Unofficial Summary Report (opens in a new window)",
+      "url": "https://www.susqco.com/getmedia/7103dc1d-950d-43b9-bd95-79a66e31e8d9/2026-General-Unofficial-Summary-Report.pdf"
+    },
+    {
+      "role": "precinct",
+      "parent_url": "https://www.susqco.com/departments/voter-registration/election-results",
+      "label": "2026 General Unofficial Precinct Report (opens in a new window)",
+      "url": "https://www.susqco.com/getmedia/4bdb9086-aca1-4f3e-9534-bef454294e6b/2026-General-Unofficial-Precinct-Report.pdf"
+    },
+    {
+      "role": "canvass",
+      "parent_url": "https://www.susqco.com/departments/voter-registration/election-results",
+      "label": "2026 General Unofficial Canvass Report (opens in a new window)",
+      "url": "https://www.susqco.com/getmedia/afa6d5e1-dac1-4001-8b2a-2e2067ee68a8/2026-General-Unofficial-Canvass-Report.pdf"
+    }
+  ]
+}

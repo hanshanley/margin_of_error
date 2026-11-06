@@ -1,0 +1,62 @@
+{
+  "audit.json": {
+    "bytes": 436305,
+    "sha256": "e0fbeb3abb8c7c354f6bc92715224cbbdbd06ac90eebe8778e7406ccd7e8708d"
+  },
+  "candidate-results.csv": {
+    "bytes": 119812,
+    "sha256": "d12e936f21e3a09ee93dfb6dfff8d2d412b5b855fba3ad798d0828a6507df194"
+  },
+  "canvass-candidate-results.csv": {
+    "bytes": 382843,
+    "sha256": "6f45249890a4a7288d3b7d35674712d81950abed0643d4e9d6911a233e032467"
+  },
+  "contest-accounting.csv": {
+    "bytes": 34238,
+    "sha256": "89e23bdad707f1aac45727dc2e11c3f8a0615f7c9debb805fad896e46001bd8e"
+  },
+  "county-participation.csv": {
+    "bytes": 577,
+    "sha256": "db411a26d2d91b1a7f062e4caeefe18d84572f9083795447659194eb4f350266"
+  },
+  "literal-party-results.csv": {
+    "bytes": 140964,
+    "sha256": "c56227f82ab7862558236edc90754f02c88983a3ce2ef2d0298432cd41748b8e"
+  },
+  "methods.json": {
+    "bytes": 5480,
+    "sha256": "38212a4dd8d744e8dd127f1e6384ae9f96dcac6dae00e882a4a7ca39bcb44a61"
+  },
+  "precinct-participation.csv": {
+    "bytes": 9278,
+    "sha256": "7f094d70479a0e55a99706ca1432f4823ca8d83a660ca44e6bda0c34072da5e5"
+  },
+  "reporting.csv": {
+    "bytes": 1201,
+    "sha256": "2baa3a5bd9044bfc528c74ea5ac2be89eb32a26e0ac347ce2f790116941f811a"
+  },
+  "review-susquehanna.py": {
+    "bytes": 25530,
+    "sha256": "8b9043b3b0f76cda220f51adf654730d5a14e89bb829dcbc793bf19d24ca5410"
+  },
+  "source-inputs.json": {
+    "bytes": 210703,
+    "sha256": "2d4d1abb11743dd35cf94457579d07251937e850059e1bc1a4d0eec3bb3f79d9"
+  },
+  "source-pages.csv": {
+    "bytes": 21091,
+    "sha256": "0549f113c59ebbbd64bcd9fd0eac2a22fd47b187aefa36e605dd44db6f1e58e7"
+  },
+  "source-provenance.json": {
+    "bytes": 3356,
+    "sha256": "8e510e839ffd832ed6e30f78a5a63cd3526c3ed50d93c8ee8a6e79cfd6ad7834"
+  },
+  "summary-columns.json": {
+    "bytes": 2515,
+    "sha256": "f43fcc505071fe1e1283d4fff0a3cd2b35a5fff12a7c56f673937b33f628a63a"
+  },
+  "test_review_susquehanna.py": {
+    "bytes": 4350,
+    "sha256": "dd76a399d064ef1f214371926e79427cc08b6804151300eca4b34d029f654889"
+  }
+}
