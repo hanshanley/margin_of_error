@@ -1,0 +1,62 @@
+{
+  "verified_at_utc": "2026-11-06T01:48:09.459866+00:00",
+  "deployed_revision": "3fbeab4cb1ca4577be0a0e4ea67c7d1d6dcc0521",
+  "pages_run": {
+    "conclusion": "success",
+    "databaseId": 42145217053,
+    "headSha": "3fbeab4cb1ca4577be0a0e4ea67c7d1d6dcc0521",
+    "status": "completed",
+    "url": "https://github.com/hanshanley/margin_of_error/actions/runs/42145217053"
+  },
+  "credential_runs": [
+    {
+      "conclusion": "success",
+      "databaseId": 42145216977,
+      "headSha": "3fbeab4cb1ca4577be0a0e4ea67c7d1d6dcc0521",
+      "status": "completed",
+      "url": "https://github.com/hanshanley/margin_of_error/actions/runs/42145216977"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 42145217187,
+      "headSha": "3fbeab4cb1ca4577be0a0e4ea67c7d1d6dcc0521",
+      "status": "completed",
+      "url": "https://github.com/hanshanley/margin_of_error/actions/runs/42145217187"
+    }
+  ],
+  "participation_observations": {
+    "pennsylvania_counties": 10,
+    "dc_county_equivalents": 1,
+    "complete_native_csv_fields_preserved": true,
+    "new_maps_approved": false,
+    "demographic_turnout_approved": false,
+    "statewide_pa_county_completion": false
+  },
+  "validation": {
+    "focused_unit_tests_passed": 11,
+    "astro_check_errors": 0,
+    "astro_build_passed": true,
+    "relocated_downloads_verified": 94,
+    "prepared_site_bytes": 987420433,
+    "production_asset_bytes_match": true,
+    "desktop_mobile_js_and_no_js": true,
+    "download_unique_urls": 288,
+    "download_anchors": 291,
+    "immutable_complete_packages_verified": 9,
+    "complete_registered_tables_in_packages": 73
+  },
+  "artifact_sha256": {
+    "local-browser.json": "7c13e442e10ef726b725be5c5a15b790b7fe0851184e13f8eeef65a8ba2fa1ef",
+    "local-downloads.json": "4ee4b7d8f801c551b71c5914d15b88d580f2f547cdc1be0bbd9be0b494abc16f",
+    "promoted-download-verification.json": "3dc79462da6628ec778fa80c66ee9fd674c06e819764f13169dda14e89e198f0",
+    "deployment.json": "bb435cfb302bf28afd111ef6d9e13c776964f3e31fddf2bac9037e4bbe177506",
+    "production-browser.json": "e0b2e1a4f5bc12e461d3b14349e35d637849b092c60521e5fa0e1fd87e63ace0",
+    "production-downloads.json": "5fe8d7d452b2b465d3e4c24fc9839f127e81e94bc160b9622b4d3a3f66cfa065"
+  },
+  "remaining_limits": [
+    "2026 demographic turnout is not established by these observations.",
+    "Maine accounting gaps and provider all-district guard are unchanged.",
+    "Philadelphia source restrictions and private originals are unchanged.",
+    "Owner-only key revocation and GitHub cached-object cleanup remain unconfirmed."
+  ]
+}

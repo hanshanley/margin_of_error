@@ -1,0 +1,30 @@
+{
+  "verified_at_utc": "2026-11-06T01:47:05.469653+00:00",
+  "run": {
+    "conclusion": "success",
+    "databaseId": 42145217053,
+    "headSha": "3fbeab4cb1ca4577be0a0e4ea67c7d1d6dcc0521",
+    "status": "completed",
+    "url": "https://github.com/hanshanley/margin_of_error/actions/runs/42145217053"
+  },
+  "assets": [
+    {
+      "path": "scripts/participation-explorer.js",
+      "bytes": 154015,
+      "sha256": "795c640d0f16b2c1bc8a13ed2b4c1ff1574a04af64a136aa759b67c1908dbefd",
+      "production_byte_matched": true
+    },
+    {
+      "path": "participation-source-reviews.json",
+      "bytes": 54819,
+      "sha256": "c20a6654598b85ada6ea93c02ff43bfd67a607582e699256f82700ad8f9a1c4c",
+      "production_byte_matched": true
+    },
+    {
+      "path": "participation-downloads.json",
+      "bytes": 42128,
+      "sha256": "1b0df17b55d5e9738ff278e346e248dfc26932b8684f1551730eb57e12e19c64",
+      "production_byte_matched": true
+    }
+  ]
+}

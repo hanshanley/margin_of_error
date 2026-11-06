@@ -53,7 +53,7 @@ verified county ballots and compatible denominators before expanding candidate
 download inventories. Retain the genuine Maine accounting gaps, separately
 scoped D.C., and Philadelphia source-representation restrictions below.
 
-**Expanded participation integration, locally verified:** ten Pennsylvania
+**Expanded participation integration, live verified:** ten Pennsylvania
 counties (the original three plus Lancaster, Chester, Franklin, Lehigh,
 Montgomery, Bucks and Monroe) and one separately scoped D.C. county-equivalent
 observation now use their complete native CSVs rather than heterogeneous audit
@@ -69,8 +69,14 @@ Eleven unit tests, Astro check/build, source-matched desktop/mobile and
 JavaScript/no-JavaScript checks pass. All 288 unique download URLs / 291 anchors,
 52 UF rows and 255 historical cells remain unchanged. Nine immutable ZIPs and
 all 73 registered tables are publicly byte-verified. Local Pages size is
-987,420,433 bytes. Exact new deployment and
-production checks are pending; see `20261106-participation-expanded-01`.
+987,420,433 bytes. Revision
+`3fbeab4cb1ca4577be0a0e4ea67c7d1d6dcc0521` passed Pages `42145217053`
+and credential runs `42145216977` / `42145217187`. Production checks passed at
+`2026-11-06T01:48:09.459866+00:00`: all eleven source records, state/NC regression
+values, separate D.C. accounting, failed-feed handling and four download modes.
+Renderer, registry and download-manifest bytes match the prepared build.
+Production evidence is persisted on the review branch without another UI
+deployment; see `20261106-participation-expanded-01`.
 
 **November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated

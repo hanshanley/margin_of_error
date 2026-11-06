@@ -1,0 +1,74 @@
+{
+  "base_url": "https://www.themarginoferror.com",
+  "checks": [
+    {
+      "viewport": "desktop",
+      "uf_state_rates": 51,
+      "nc_county_rates": 100,
+      "exact_url": true,
+      "vep_and_vap": true,
+      "default_participation": true
+    },
+    {
+      "viewport": "desktop",
+      "pa_source_matched_counties": 10,
+      "complete_native_records_and_downloads": true,
+      "printed_rates_and_counting_status_preserved": true,
+      "no_unapproved_county_or_precinct_maps": true
+    },
+    {
+      "viewport": "desktop",
+      "dc_county_equivalent_separate": true,
+      "dc_ballots": 185086,
+      "dc_accounting_and_early_missingness_preserved": true
+    },
+    {
+      "viewport": "desktop",
+      "javascript": false,
+      "complete_reviewed_county_observations": 11
+    },
+    {
+      "viewport": "mobile",
+      "uf_state_rates": 51,
+      "nc_county_rates": 100,
+      "exact_url": true,
+      "vep_and_vap": true,
+      "default_participation": true
+    },
+    {
+      "viewport": "mobile",
+      "pa_source_matched_counties": 10,
+      "complete_native_records_and_downloads": true,
+      "printed_rates_and_counting_status_preserved": true,
+      "no_unapproved_county_or_precinct_maps": true
+    },
+    {
+      "viewport": "mobile",
+      "dc_county_equivalent_separate": true,
+      "dc_ballots": 185086,
+      "dc_accounting_and_early_missingness_preserved": true
+    },
+    {
+      "viewport": "mobile",
+      "javascript": false,
+      "complete_reviewed_county_observations": 11
+    },
+    {
+      "nm_precincts": 2177,
+      "nm_colored_precincts": 1202,
+      "early_counts_separate": true,
+      "historical_cps_unchanged": true,
+      "explicit_candidate_layer": true
+    },
+    {
+      "uf_survives_official_feed_failure": true
+    },
+    {
+      "pa_and_dc_counties_survive_official_feed_failure": true
+    },
+    {
+      "pa_counties_survive_local_file_failure": true,
+      "no_cross_state_count_fallback": true
+    }
+  ]
+}

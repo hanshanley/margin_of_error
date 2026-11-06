@@ -27,5 +27,5 @@
   "demographic_turnout_approved": false,
   "statewide_pa_county_completion": false,
   "certification_or_final_counting": false,
-  "production_status": "Pending exact deployment and source-matched production verification"
+  "production_status": "Live verified at 3fbeab4cb1ca4577be0a0e4ea67c7d1d6dcc0521; Pages 42145217053; see verification.json"
 }
