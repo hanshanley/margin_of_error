@@ -1,4 +1,8 @@
-"""Verify exact county participation joins, source preservation and missingness."""
+"""Verify exact county participation joins, source preservation and missingness.
+
+Serve prepared dist with a byte-preserving static server, not Astro preview:
+explicit .gz downloads must reach the browser without Content-Encoding decoding.
+"""
 
 import argparse
 from collections import Counter
@@ -8,6 +12,7 @@ import hashlib
 import json
 import math
 from pathlib import Path
+import re
 
 from playwright.sync_api import expect, sync_playwright
 
@@ -25,9 +30,10 @@ records = json.loads(gzip.decompress((facts / "complete-source-records.json.gz")
 pointer = json.loads((root / "public/participation-county-context.json").read_text())
 previous = root / "data/county-source-reviews/20261106-wisconsin-rock-explorer-01"
 baseline = json.loads((previous / "baseline.json").read_text())
+delaware_baseline = json.loads((root / "data/county-source-reviews/20261106-delaware-statewide-explorer-01/baseline.json").read_text())
 sources = [row for row in json.loads((root / "public/participation-source-reviews.json").read_text())["reviews"]
-           if row["id"] == "wisconsin-rock-turnout-20261106-01"]
-assert len(sources) == 1
+           if row["id"] in ("wisconsin-rock-turnout-20261106-01", "delaware-statewide-participation-20261106-01")]
+assert len(sources) == 2
 source_ids = {row["id"] for row in sources}
 old_links = Counter(baseline["previous_download_urls"])
 links = old_links + Counter(row["url"] for row in pointer["downloads"] if row["url"] not in old_links)
@@ -71,8 +77,10 @@ def check_static(page):
     actual = Counter(page.locator("#downloads a[download]").evaluate_all(
         "links => links.map(link => link.getAttribute('href'))"))
     assert actual == links
+    assert not (Counter(delaware_baseline["previous_download_urls"]) - actual)
+    assert observed == delaware_baseline["previous_entire_reviewed_records"]
     statewide = json.loads(page.locator("[data-reviewed-state-participation]").get_attribute("data-reviewed-state-participation"))
-    assert len(statewide) == 2
+    assert len(statewide) == 3 and statewide[:2] == delaware_baseline["previous_entire_statewide_records"]
     assert statewide[0]["geography_level"] == "statewide"
     assert statewide[0]["ballots"] == 8928966 and statewide[0]["denominator"] == 23273590
     assert statewide[0]["native_record"]["native_county_code"] == "59"
@@ -81,6 +89,15 @@ def check_static(page):
     assert statewide[1]["native_record"]["original_conflicting_api_root_ballots"] == "0"
     expect(page.locator("[data-reviewed-state-participation]")).to_contain_text("4,210,155 Ballots Cast / 7,516,484 Voters")
     expect(page.locator("[data-reviewed-state-participation]")).to_contain_text("not used as an analysis rate")
+    de = statewide[2]
+    assert de["state_code"] == "DE" and de["ballots"] == 384862 and de["denominator"] == 810407
+    assert math.isclose(de["validated_pct"], 100 * 384862 / 810407, rel_tol=1e-14)
+    assert de["native_source_updates"] == [] and de["native_record"]["native_update_clock"] == ""
+    assert de["reported_units"] is None and de["total_units"] is None
+    for field in ("maps_approved", "analysis_rate_approved", "all_mode_complete", "certified"):
+        assert de["native_record"][field] == "False"
+    expect(page.locator("[data-reviewed-state-participation]")).to_contain_text("384,862 Ballots Cast / 810,407 Reg Voters")
+    expect(page.locator("[data-reviewed-state-participation]")).to_contain_text("No district turnout is apportioned to counties")
     for county in ("Screven County", "Jeff Davis County"):
         row = page.locator("table[data-reviewed-county-participation] tbody tr").filter(
             has=page.locator("th", has_text=county))
@@ -207,9 +224,54 @@ def check_georgia_statewide(page):
     page.locator("#mode").select_option("uf_vep")
 
 
+def check_delaware_statewide(page):
+    previous_mode = page.locator("#mode").input_value()
+    page.locator("#state-select").select_option(label="Delaware")
+    page.locator("#mode").select_option("available")
+    path = page.locator(".map-feature[data-state='Delaware']")
+    uf_rate = float(page.locator('table[data-uf-turnout="2026"] tr[data-state-code="DE"]').get_attribute("data-vep-rate"))
+    expect(path).to_have_attribute("data-rate-source", "uf_estimate")
+    assert math.isclose(float(path.get_attribute("data-rate")), uf_rate, rel_tol=1e-14)
+    expect(path).not_to_have_attribute("fill", "#edf0f3")
+    expect(page.locator("#selection-panel > .selection-rate")).to_have_text(f"{uf_rate:.2f}%")
+    expect(page.locator("#official-state-counts")).to_contain_text("384,862 Native Ballots Cast")
+    expect(page.locator("#official-state-counts")).to_contain_text("810,407")
+    expect(page.locator("#official-state-counts")).to_contain_text("47.5%")
+    page.locator("#mode").select_option("uf_vep")
+    observed = page.locator("#official-state-counts")
+    expect(observed).to_contain_text("384,862 Native Ballots Cast (reported statewide snapshot)")
+    expect(observed).to_contain_text("810,407")
+    expect(observed).to_contain_text("47.5%")
+    expect(observed).to_contain_text("Not the UF population denominator")
+    page.locator("#mode").select_option("official")
+    expect(path).to_have_attribute("data-rate", re.compile(r"^47\.48"))
+    expect(path).to_have_attribute("data-rate-source", "administrative")
+    assert math.isclose(float(path.get_attribute("data-rate")), 100 * 384862 / 810407, rel_tol=1e-14)
+    expect(path).not_to_have_attribute("fill", "#edf0f3")
+    panel = page.locator("#selection-panel")
+    expect(panel.locator(":scope > .selection-rate")).to_have_text("47.5%")
+    for text in ("384,862 Native Ballots Cast", "native registered voters (810,407)",
+                 "not CVAP, VAP, VEP, CPS or demographic turnout", "Native turnout update clock and timezone not supplied",
+                 "candidate ReportTime, retrieval time and client cache keys are not turnout clocks",
+                 "No representative-district turnout is apportioned to counties"):
+        expect(panel).to_contain_text(text)
+    assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
+    page.locator("#mode").select_option(previous_mode)
+
+
 def check_counties(page, code):
     expected = {row["contextual_geoid"]: row for row in review["observations"] if row["state_code"] == code}
-    expect(page.locator(".substate-feature[data-context-review='20261106-25']")).to_have_count(len(expected), timeout=30000)
+    try:
+        expect(page.locator(".substate-feature[data-context-review='20261106-25']")).to_have_count(len(expected), timeout=30000)
+    except AssertionError:
+        print(json.dumps(dict(
+            failed_state=code, url=page.url, mode=page.locator("#mode").input_value(),
+            selected_state=page.locator("#state-select").input_value(),
+            geography_note=page.locator("#geography-note").inner_text(),
+            caption=page.locator("#caption").inner_text(),
+            county_options=page.locator("#current-county-select option").count(),
+            page_errors=errors), indent=2), flush=True)
+        raise
     actual = page.locator(".substate-feature[data-level='county']").evaluate_all(
         "paths => paths.map(path => Object.fromEntries([...path.attributes].map(attr => [attr.name, attr.value])))")
     assert len(actual) == review["geometry"][code]["features"]
@@ -632,6 +694,7 @@ with sync_playwright() as playwright:
                 check_georgia_statewide(page)
             totals[0] += counts; totals[1] += rates
         assert totals == [834, 447]
+        check_delaware_statewide(page)
         page.locator("#state-select").select_option(label="Vermont")
         expect(page.locator("#current-county-select option")).to_have_count(248)
         expect(page.locator("#geography-note")).to_contain_text("no whole-county participation joins are approved", timeout=30000)
@@ -648,6 +711,12 @@ with sync_playwright() as playwright:
         modes.append(dict(mobile=mobile, javascript=True, complete_native_records_unchanged=1328,
                           complete_current_native_records=1329,
                           rock_snapshot_and_same_report_registered_fraction_verified=True,
+                          delaware_statewide_snapshot_and_same_report_registered_fraction_verified=True,
+                          delaware_available_mode_preserves_uf_estimate_and_separate_native_snapshot=True,
+                          delaware_official_mode_state_coloring_matches_exact_native_fraction=True,
+                          delaware_turnout_clock_missing_and_candidate_clock_separate=True,
+                          delaware_no_district_turnout_apportioned_to_counties=True,
+                          all_1329_prior_county_records_and_two_prior_statewide_records_preserved=True,
                           wisconsin_71_other_counties_remain_missing_not_zero=True,
                           all_67_florida_counties_and_registered_fractions_verified=True,
                           retained_monroe_observation_not_duplicated_or_redated=True,
@@ -671,7 +740,7 @@ with sync_playwright() as playwright:
                           previous_jefferson_clarion_cameron_carbon_elk_forest_selection_preserved=True,
                           exact_county_count_matches=834, exact_county_rate_fills=447, missing_rates_gray=387,
                           complete_imports_unchanged=18, excluded_municipalities=286,
-                          excluded_missing_county_totals=208, previous_download_anchors_preserved=sum(old_links.values()),
+                          excluded_missing_county_totals=208, previous_download_anchors_preserved=len(delaware_baseline["previous_download_urls"]),
                           download_anchors=sum(links.values()),
                           unique_download_urls=len(links), horizontal_overflow=False))
         context.close()
@@ -722,7 +791,9 @@ with sync_playwright() as playwright:
             expect(page.locator(".substate-feature[data-context-review]")).to_have_count(0)
             page.locator("#current-county-select").select_option("reviewed:PA:Clarion")
             expect(page.locator("#current-county-detail .selection-rate")).to_have_text("12,975")
+        check_delaware_statewide(page)
         failures.append(dict(scenario=scenario, source_counts_preserved=True,
+                             delaware_statewide_independent_of_failed_current_and_county_review=True,
                              invalid_review_never_approves_join=scenario != "failed-current"))
         context.close()
     browser.close()

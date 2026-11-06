@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { copyFileSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { copyFileSync, mkdtempSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import test from 'node:test';
@@ -10,9 +10,84 @@ import { loadReviewedCountyParticipation as loadCompleteReviewedCountyParticipat
   loadReviewedSomersetParticipation, loadReviewedSusquehannaParticipation,
   loadReviewedSullivanWyomingParticipation, loadReviewedBedfordNorthumberlandParticipation,
   loadReviewedUtahParticipation, loadReviewedFloridaParticipation,
-  loadReviewedRockParticipation } from './reviewed-county-participation.mjs';
+  loadReviewedRockParticipation, loadReviewedDelawareStatewideParticipation } from './reviewed-county-participation.mjs';
 
 const reviews = JSON.parse(readFileSync('public/participation-source-reviews.json', 'utf8')).reviews;
+const delawareId = 'delaware-statewide-participation-20261106-01';
+
+test('adds one separately qualified Delaware statewide observation without changing any county or prior statewide record', () => {
+  const baseline = JSON.parse(readFileSync(
+    'data/county-source-reviews/20261106-delaware-statewide-explorer-01/baseline.json', 'utf8'));
+  const states = loadReviewedStatewideParticipation(reviews);
+  assert.deepEqual(states.filter(row => row.state_code !== 'DE'), baseline.previous_entire_statewide_records);
+  assert.deepEqual(loadCompleteReviewedCountyParticipation(reviews), baseline.previous_entire_reviewed_records);
+  const state = loadReviewedDelawareStatewideParticipation(reviews);
+  assert.deepEqual(states.filter(row => row.state_code === 'DE'), [state]);
+  assert.equal(state.ballots, 384862);
+  assert.equal(state.denominator, 810407);
+  assert.equal(state.validated_pct, 100 * 384862 / 810407);
+  assert.equal(state.native_printed_pct, '47.49%');
+  assert.equal(state.geography_level, 'statewide');
+  assert.equal(state.native_record.native_representative_district, 'ALL');
+  assert.equal(state.native_record.native_fips, '');
+  assert.equal(state.native_record.native_update_clock, '');
+  assert.equal(state.native_record.declared_timezone, '');
+  assert.deepEqual(state.native_source_updates, []);
+  assert.equal(state.reported_units, null);
+  assert.equal(state.total_units, null);
+  assert.match(state.source_date, /not supplied; candidate clock is separate and not substituted/);
+  assert.match(state.quality.join(' '), /not CVAP, VAP, VEP, CPS or demographic turnout/);
+  assert.match(state.quality.join(' '), /No representative-district turnout is apportioned to counties/);
+  assert.match(state.quality.join(' '), /Senate selections 378111 are not the 384862 participation count/);
+  for (const field of ['maps_approved', 'analysis_rate_approved', 'all_mode_complete', 'certified'])
+    assert.equal(state.native_record[field], 'False');
+});
+
+test('Delaware rejects altered bytes in every complete input, a missing native feed and missing or duplicate registration', () => {
+  const original = reviews.find(row => row.id === delawareId);
+  const directory = mkdtempSync(join(tmpdir(), 'delaware-participation-'));
+  const files = readdirSync(original.data_directory);
+  const altered = reviews.map(row => row === original ? { ...row, data_directory: directory } : row);
+  try {
+    for (const changed of files) {
+      for (const file of files) copyFileSync(join(original.data_directory, file), join(directory, file));
+      writeFileSync(join(directory, changed), Buffer.concat([readFileSync(join(directory, changed)), Buffer.from('\n')]));
+      assert.throws(() => loadReviewedDelawareStatewideParticipation(altered), /Invalid reviewed statewide participation/);
+    }
+    for (const file of files) copyFileSync(join(original.data_directory, file), join(directory, file));
+    rmSync(join(directory, 'native-turnout.json'));
+    assert.throws(() => loadReviewedDelawareStatewideParticipation(altered), /ENOENT/);
+    for (const load of [loadReviewedDelawareStatewideParticipation, loadReviewedStatewideParticipation]) {
+      assert.throws(() => load(reviews.filter(row => row !== original)), /Missing or duplicated reviewed statewide source/);
+      assert.throws(() => load([...reviews, original]), /Missing or duplicated reviewed statewide source/);
+    }
+  } finally {
+    rmSync(directory, { recursive: true, force: true });
+  }
+});
+
+test('Delaware requires explicit snapshot and registration usability without changing native false approvals or inventing provenance', () => {
+  const original = reviews.find(row => row.id === delawareId);
+  const permission = JSON.parse(readFileSync(original.usability_review_path, 'utf8'));
+  const directory = mkdtempSync(join(tmpdir(), 'delaware-usability-'));
+  const path = join(directory, 'review.json');
+  const altered = reviews.map(row => row === original ? { ...row, usability_review_path: path } : row);
+  try {
+    for (const field of ['reported_statewide_participation_permission', 'same_report_registration_fraction_permission',
+      'candidate_clock_not_substituted_for_turnout', 'no_district_turnout_apportioned_to_counties',
+      'source_native_approval_flags_unchanged']) {
+      writeFileSync(path, JSON.stringify({ ...permission, [field]: false }));
+      assert.throws(() => loadReviewedDelawareStatewideParticipation(altered), /Invalid reviewed statewide usability/);
+    }
+    writeFileSync(path, JSON.stringify({ ...permission, ballots_cast: 378111 }));
+    assert.throws(() => loadReviewedDelawareStatewideParticipation(altered), /Invalid reviewed statewide participation/);
+    writeFileSync(path, JSON.stringify({ ...permission, native_fips_invented: true }));
+    assert.throws(() => loadReviewedDelawareStatewideParticipation(altered), /Invalid reviewed statewide usability/);
+  } finally {
+    rmSync(directory, { recursive: true, force: true });
+  }
+});
+
 const utahId = 'utah-ballot-statistics-20261106-01';
 const floridaId = 'florida-consolidated-turnout-20261106-01';
 const rockId = 'wisconsin-rock-turnout-20261106-01';

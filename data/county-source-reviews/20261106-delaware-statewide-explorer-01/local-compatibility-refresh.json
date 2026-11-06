@@ -1,0 +1,12 @@
+{
+  "reviewed_at_utc": "2026-11-06T21:05:16.869Z",
+  "research_revision": "792e3d91609f7ee929c35b5ec15c13710db94be8",
+  "source_renderer_sha256": "b152036b660047b2f9beb7db8ebc51e98484bc34276989bbfb44e256df1f345f",
+  "complete_original_public_files_checked_before_and_after": 115,
+  "unchanged_manifest_entries": 114,
+  "old_generated_app_sha256": "2c0fc8f0b19749194dce7577fff3b0f964e0c124b8e257c72b5076d7b87f2aa3",
+  "refreshed_generated_app_bytes": 27137,
+  "refreshed_generated_app_sha256": "2c0fc8f0b19749194dce7577fff3b0f964e0c124b8e257c72b5076d7b87f2aa3",
+  "renderer_and_all_115_original_assets_unchanged": true,
+  "scope": "State-only Delaware integration requires no download-router change. The existing publication adapter reproduces exactly; all 115 complete public files and all manifest entries remain byte-identical."
+}

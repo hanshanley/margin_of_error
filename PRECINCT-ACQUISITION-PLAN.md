@@ -234,11 +234,38 @@ The complete query at
 passes **eight focused tests**; all **15 entire files / 14 ZIP members**
 reproduce byte-for-byte offline. ZIP **36,548 bytes / SHA-256
 `521c0849acedf949e7e31bd75ab5053d91630b2ec55118e03cd42275e82c9cd0`**.
+Immutable native release **437029449**, source
+**`64d0fd238464211b9634b83a8b3f27490f1141ab`**, passes draft and anonymous public
+verification: all **15 entire assets / 15 commit-pinned files / 14 ZIP members**
+and complete offline reproduction. Exact credential jobs **42292738733 review /
+42292738207 tag** pass. Publication proofs are in
+`data/county-source-reviews/20261106-delaware-statewide-native-publication-01/`.
 This stronger source remains distinct from the immutable afternoon county
 snapshot. No district turnout is apportioned to counties. Native map, analysis,
 all-mode-completion and certification flags remain false; no population or
-demographic rate is inferred. Native publication and separately qualified
-statewide explorer usability are the next gates, not yet a LIVE claim.
+demographic rate is inferred. A separate statewide usability review permits one
+source-defined snapshot and its same-report registered-voter fraction only.
+The state-only importer pins the entire native manifest, all complete inputs
+and ZIP, and rejects missing/duplicate registration or altered qualifications.
+The exact preceding Rock LIVE baseline preserves **1,329 county records /
+464 native rows / two statewide observations / 920 download anchors /
+18 full imports / 511 selected public paths**. The active working integration
+passes **123 focused tests**, Astro checking (**zero errors / zero warnings**),
+the full site build and all six credential-scanner tests. All **115 original
+compatibility files / all manifest entries** are byte-identical; no download
+router change is needed. Actual prepared output is **971,107,587 bytes** after
+all **415 whole-file verified relocations**, below the unchanged billion-byte
+limit. All **seven local browser scenarios** pass against the prepared output,
+including desktop/mobile JavaScript and no-JavaScript plus three failed-input
+scenarios. All **920 old download anchors / both original statewide records /
+1,329 county records** remain unchanged, now **935 anchors / 930 distinct URLs**.
+Available mode retains UF's separate VEP estimate and the native administrative
+observation; official mode colors Delaware using its exact same-report
+registered-voter fraction. No denominators are mixed. Serve the prepared output
+with a byte-preserving static server: Astro preview transparently decodes explicit
+`.gz` URLs, unlike production, and is not a valid preview for these native
+compressed inputs. The local browser proof is retained in the statewide explorer
+review directory. Exact production gates remain pending, not a LIVE claim.
 
 **November 6: South Carolina and Louisiana consolidated scope checked, not promoted.**
 South Carolina's actual participation/results parents and their three declared

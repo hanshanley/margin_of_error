@@ -1,0 +1,36 @@
+{
+  "ref": {
+    "ref": "refs/tags/voter-state-delaware-native-participation-20261106-01",
+    "node_id": "REF_kwDOTeY7QdoAP3JlZnMvdGFncy92b3Rlci1zdGF0ZS1kZWxhd2FyZS1uYXRpdmUtcGFydGljaXBhdGlvbi0yMDI2MTEwNi0wMQ",
+    "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/refs/tags/voter-state-delaware-native-participation-20261106-01",
+    "object": {
+      "sha": "6afa56c1aa1217bca053bc698c34294ac34dc012",
+      "type": "tag",
+      "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/tags/6afa56c1aa1217bca053bc698c34294ac34dc012"
+    }
+  },
+  "tag": {
+    "node_id": "TA_kwDOTeY7QdoAKDZhZmE1NmMxYWExMjE3YmNhMDUzYmM2OThjMzQyOTRhYzM0ZGMwMTI",
+    "sha": "6afa56c1aa1217bca053bc698c34294ac34dc012",
+    "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/tags/6afa56c1aa1217bca053bc698c34294ac34dc012",
+    "tagger": {
+      "name": "Hans Hanley",
+      "email": "hwahhanley@gmail.com",
+      "date": "2026-11-06T20:57:50Z"
+    },
+    "object": {
+      "sha": "64d0fd238464211b9634b83a8b3f27490f1141ab",
+      "type": "commit",
+      "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/commits/64d0fd238464211b9634b83a8b3f27490f1141ab"
+    },
+    "tag": "voter-state-delaware-native-participation-20261106-01",
+    "message": "Complete native Delaware state and district participation, separate candidate and party query\n",
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  }
+}

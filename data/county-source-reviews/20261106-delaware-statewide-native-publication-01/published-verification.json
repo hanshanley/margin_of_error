@@ -1,0 +1,214 @@
+{
+  "checked_at_utc": "2026-11-06T20:59:35.587544+00:00",
+  "revision": "64d0fd238464211b9634b83a8b3f27490f1141ab",
+  "tag": "voter-state-delaware-native-participation-20261106-01",
+  "release_id": 437029449,
+  "phase": "published",
+  "immutable": true,
+  "assets": [
+    {
+      "file": "audit.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-state-delaware-native-participation-20261106-01/audit.json",
+      "bytes": 1605,
+      "sha256": "25f1a2e0f3407f99d1d9d3523677c8a385b7e078bcd8dcbe591d848013296141"
+    },
+    {
+      "file": "checksums.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-state-delaware-native-participation-20261106-01/checksums.json",
+      "bytes": 2212,
+      "sha256": "d8b3dbdba009a864a157a03d0cfd5864496712df638310fe3aa9bf4d56fec315"
+    },
+    {
+      "file": "complete-query.zip",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-state-delaware-native-participation-20261106-01/complete-query.zip",
+      "bytes": 36548,
+      "sha256": "521c0849acedf949e7e31bd75ab5053d91630b2ec55118e03cd42275e82c9cd0"
+    },
+    {
+      "file": "county-candidate-vectors.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-state-delaware-native-participation-20261106-01/county-candidate-vectors.csv",
+      "bytes": 18414,
+      "sha256": "2cc9f07c060c6b9d2a25e7c42e7ec27031dc3faa1f832bae5409499355ebb0dc"
+    },
+    {
+      "file": "district-participation.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-state-delaware-native-participation-20261106-01/district-participation.csv",
+      "bytes": 6123,
+      "sha256": "4754eec35ce565b9dcb8a84b98b836e57fde309db23e13a30f64da7129869a0f"
+    },
+    {
+      "file": "literal-party-labels.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-state-delaware-native-participation-20261106-01/literal-party-labels.csv",
+      "bytes": 11182,
+      "sha256": "c8ae7344e90e7216dea97bdf1d61a193bdf5ab26339026dade54839346ee76a8"
+    },
+    {
+      "file": "methods.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-state-delaware-native-participation-20261106-01/methods.json",
+      "bytes": 2276,
+      "sha256": "10decfa697ba222e25de3b80896630ee8ba6c20c55036c4cfc18dbed57a09cc0"
+    },
+    {
+      "file": "native-county-candidate-results.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-state-delaware-native-participation-20261106-01/native-county-candidate-results.json",
+      "bytes": 45414,
+      "sha256": "595050d1ea97fab154d3d61f328138c53e63688c16dc51b06b8679387f086cff"
+    },
+    {
+      "file": "native-state-candidate-results.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-state-delaware-native-participation-20261106-01/native-state-candidate-results.json",
+      "bytes": 65250,
+      "sha256": "a7a8282f4a70eafcfb05fc932e2becc0df8371ed69ffef28f05391684ba3ca1c"
+    },
+    {
+      "file": "native-turnout.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-state-delaware-native-participation-20261106-01/native-turnout.json",
+      "bytes": 8250,
+      "sha256": "97e93fa638ec4dac3f784d6bd8975cfcac230e7788ad37e86fcbe79443010433"
+    },
+    {
+      "file": "review-state.py",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-state-delaware-native-participation-20261106-01/review-state.py",
+      "bytes": 10661,
+      "sha256": "a069d8bc1c82d200211ce9eb427e22731346d90f8229c9f781733d504261999e"
+    },
+    {
+      "file": "source-qualification.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-state-delaware-native-participation-20261106-01/source-qualification.json",
+      "bytes": 3367,
+      "sha256": "a8663d9987ebc2ee1ce53f158a654a48f9167d1606d393fe0d0a1bd9d848ab43"
+    },
+    {
+      "file": "state-candidate-results.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-state-delaware-native-participation-20261106-01/state-candidate-results.csv",
+      "bytes": 26283,
+      "sha256": "3701ce39260bc022a568d113b3fe822ff2f81fbf8b89f1cd3488af61bad50f1e"
+    },
+    {
+      "file": "statewide-participation.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-state-delaware-native-participation-20261106-01/statewide-participation.csv",
+      "bytes": 472,
+      "sha256": "38eeaed4835291cd60b4a7068c184ab3c160ef257d2506c8c044d552259ce245"
+    },
+    {
+      "file": "test_review_state.py",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-state-delaware-native-participation-20261106-01/test_review_state.py",
+      "bytes": 5954,
+      "sha256": "d946a236e4f3a0b24cdff80a0cb660f110e23670cb8fd79c164224ae2af4716f"
+    }
+  ],
+  "row_counts": {
+    "district-participation.csv": 41,
+    "statewide-participation.csv": 1,
+    "state-candidate-results.csv": 124,
+    "county-candidate-vectors.csv": 124,
+    "literal-party-labels.csv": 124
+  },
+  "native_ballots_cast": 384862,
+  "native_registered_voters": 810407,
+  "native_turnout_clock_and_timezone_missing": true,
+  "separate_candidate_clock": "2026-11-04T03:03:18.364-05:00",
+  "candidate_clock_not_substituted_for_turnout": true,
+  "no_district_turnout_apportioned_to_counties": true,
+  "separate_senate_candidate_selections": 378111,
+  "all_mode_completion_approvals": 0,
+  "analysis_rate_approvals": 0,
+  "map_approvals": 0,
+  "exact_author_committer_and_annotated_tag_verified": true,
+  "commit_pinned_files": [
+    {
+      "file": "audit.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/64d0fd238464211b9634b83a8b3f27490f1141ab/data/county-source-reviews/20261106-delaware-statewide-native-01/audit.json",
+      "bytes": 1605,
+      "sha256": "25f1a2e0f3407f99d1d9d3523677c8a385b7e078bcd8dcbe591d848013296141"
+    },
+    {
+      "file": "checksums.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/64d0fd238464211b9634b83a8b3f27490f1141ab/data/county-source-reviews/20261106-delaware-statewide-native-01/checksums.json",
+      "bytes": 2212,
+      "sha256": "d8b3dbdba009a864a157a03d0cfd5864496712df638310fe3aa9bf4d56fec315"
+    },
+    {
+      "file": "complete-query.zip",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/64d0fd238464211b9634b83a8b3f27490f1141ab/data/county-source-reviews/20261106-delaware-statewide-native-01/complete-query.zip",
+      "bytes": 36548,
+      "sha256": "521c0849acedf949e7e31bd75ab5053d91630b2ec55118e03cd42275e82c9cd0"
+    },
+    {
+      "file": "county-candidate-vectors.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/64d0fd238464211b9634b83a8b3f27490f1141ab/data/county-source-reviews/20261106-delaware-statewide-native-01/county-candidate-vectors.csv",
+      "bytes": 18414,
+      "sha256": "2cc9f07c060c6b9d2a25e7c42e7ec27031dc3faa1f832bae5409499355ebb0dc"
+    },
+    {
+      "file": "district-participation.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/64d0fd238464211b9634b83a8b3f27490f1141ab/data/county-source-reviews/20261106-delaware-statewide-native-01/district-participation.csv",
+      "bytes": 6123,
+      "sha256": "4754eec35ce565b9dcb8a84b98b836e57fde309db23e13a30f64da7129869a0f"
+    },
+    {
+      "file": "literal-party-labels.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/64d0fd238464211b9634b83a8b3f27490f1141ab/data/county-source-reviews/20261106-delaware-statewide-native-01/literal-party-labels.csv",
+      "bytes": 11182,
+      "sha256": "c8ae7344e90e7216dea97bdf1d61a193bdf5ab26339026dade54839346ee76a8"
+    },
+    {
+      "file": "methods.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/64d0fd238464211b9634b83a8b3f27490f1141ab/data/county-source-reviews/20261106-delaware-statewide-native-01/methods.json",
+      "bytes": 2276,
+      "sha256": "10decfa697ba222e25de3b80896630ee8ba6c20c55036c4cfc18dbed57a09cc0"
+    },
+    {
+      "file": "native-county-candidate-results.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/64d0fd238464211b9634b83a8b3f27490f1141ab/data/county-source-reviews/20261106-delaware-statewide-native-01/native-county-candidate-results.json",
+      "bytes": 45414,
+      "sha256": "595050d1ea97fab154d3d61f328138c53e63688c16dc51b06b8679387f086cff"
+    },
+    {
+      "file": "native-state-candidate-results.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/64d0fd238464211b9634b83a8b3f27490f1141ab/data/county-source-reviews/20261106-delaware-statewide-native-01/native-state-candidate-results.json",
+      "bytes": 65250,
+      "sha256": "a7a8282f4a70eafcfb05fc932e2becc0df8371ed69ffef28f05391684ba3ca1c"
+    },
+    {
+      "file": "native-turnout.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/64d0fd238464211b9634b83a8b3f27490f1141ab/data/county-source-reviews/20261106-delaware-statewide-native-01/native-turnout.json",
+      "bytes": 8250,
+      "sha256": "97e93fa638ec4dac3f784d6bd8975cfcac230e7788ad37e86fcbe79443010433"
+    },
+    {
+      "file": "review-state.py",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/64d0fd238464211b9634b83a8b3f27490f1141ab/data/county-source-reviews/20261106-delaware-statewide-native-01/review-state.py",
+      "bytes": 10661,
+      "sha256": "a069d8bc1c82d200211ce9eb427e22731346d90f8229c9f781733d504261999e"
+    },
+    {
+      "file": "source-qualification.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/64d0fd238464211b9634b83a8b3f27490f1141ab/data/county-source-reviews/20261106-delaware-statewide-native-01/source-qualification.json",
+      "bytes": 3367,
+      "sha256": "a8663d9987ebc2ee1ce53f158a654a48f9167d1606d393fe0d0a1bd9d848ab43"
+    },
+    {
+      "file": "state-candidate-results.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/64d0fd238464211b9634b83a8b3f27490f1141ab/data/county-source-reviews/20261106-delaware-statewide-native-01/state-candidate-results.csv",
+      "bytes": 26283,
+      "sha256": "3701ce39260bc022a568d113b3fe822ff2f81fbf8b89f1cd3488af61bad50f1e"
+    },
+    {
+      "file": "statewide-participation.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/64d0fd238464211b9634b83a8b3f27490f1141ab/data/county-source-reviews/20261106-delaware-statewide-native-01/statewide-participation.csv",
+      "bytes": 472,
+      "sha256": "38eeaed4835291cd60b4a7068c184ab3c160ef257d2506c8c044d552259ce245"
+    },
+    {
+      "file": "test_review_state.py",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/64d0fd238464211b9634b83a8b3f27490f1141ab/data/county-source-reviews/20261106-delaware-statewide-native-01/test_review_state.py",
+      "bytes": 5954,
+      "sha256": "d946a236e4f3a0b24cdff80a0cb660f110e23670cb8fd79c164224ae2af4716f"
+    }
+  ],
+  "zip_members": 14,
+  "all_15_files_reproduce_exactly": true,
+  "focused_tests": 8,
+  "archive_test_stderr": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.069s\n\nOK\n"
+}

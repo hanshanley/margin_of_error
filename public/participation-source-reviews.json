@@ -1,6 +1,36 @@
 {
   "reviews": [
     {
+      "id": "delaware-statewide-participation-20261106-01",
+      "label": "Delaware 2026: statewide participation and complete district/candidate numerical query",
+      "data_directory": "data/county-source-reviews/20261106-delaware-statewide-native-01",
+      "usability_review_path": "data/county-source-reviews/20261106-delaware-statewide-explorer-01/state-usability-review.json",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/64d0fd238464211b9634b83a8b3f27490f1141ab/data/county-source-reviews/20261106-delaware-statewide-native-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-state-delaware-native-participation-20261106-01/complete-query.zip",
+      "complete_download_bytes": 36548,
+      "complete_download_sha256": "521c0849acedf949e7e31bd75ab5053d91630b2ec55118e03cd42275e82c9cd0",
+      "checksums_file": "checksums.json",
+      "review_status": "complete_numerical_query_reviewed_unofficial",
+      "maps_approved": false,
+      "scope_note": "One source-defined statewide ALL snapshot: 384,862 Ballots Cast / 810,407 same-report Reg Voters, printed 47.49%. All 41 representative districts sum exactly to the separate statewide row and all 42 native fractions reconcile. No turnout update clock or timezone is supplied; the separate candidate clock 2026-11-04T03:03:18.364-05:00 is not substituted, and the site's hardcoded registration display is not evidence. Preserve all 290 native records / 4510 fields, all 124 state candidate vectors / 124 county/city vectors / 124 literal party labels separately. Candidate reporting denominators vary by contest, including 530 and 527 statewide; Senate selections 378,111 are not participation. No district turnout is apportioned to counties and the immutable earlier afternoon county snapshot remains distinct. All fifteen immutable numerical files and fourteen ZIP members reproduce exactly; eight portable tests pass. Native FIPS and all approval flags stay missing/false; separate statewide usability permits the reported count and registered-voter fraction, not county joins, completed all-mode counting, certification, final unique voters, CVAP/VAP/VEP or demographic turnout. Original page/script templates remain private.",
+      "tables": [
+        {"file": "statewide-participation.csv", "label": "Delaware: separate native statewide ballots, registrations and fraction (CSV)"},
+        {"file": "district-participation.csv", "label": "Delaware: all 41 native representative-district participation records (CSV)"},
+        {"file": "state-candidate-results.csv", "label": "Delaware: all 124 native state candidate and literal-party mode vectors (CSV)"},
+        {"file": "county-candidate-vectors.csv", "label": "Delaware: all 124 native county/city/state candidate vectors, not turnout (CSV)"},
+        {"file": "literal-party-labels.csv", "label": "Delaware: all 124 literal party labels, preserving null versus empty (CSV)"},
+        {"file": "native-turnout.json", "label": "Delaware: entire original 42-record native participation feed (JSON)"},
+        {"file": "native-state-candidate-results.json", "label": "Delaware: entire original 124-record state candidate feed (JSON)"},
+        {"file": "native-county-candidate-results.json", "label": "Delaware: entire original 124-record county/city candidate feed (JSON)"},
+        {"file": "source-qualification.json", "label": "Delaware: complete source receipts, missing clocks and independent decoding (JSON)"},
+        {"file": "audit.json", "label": "Delaware: complete district sums, fractions and candidate-vector audit (JSON)"},
+        {"file": "methods.json", "label": "Delaware: full scope and offline reproduction methods (JSON)"},
+        {"file": "checksums.json", "label": "Delaware: complete fifteen-file numerical query byte inventory (JSON)"},
+        {"file": "review-state.py", "label": "Delaware: standard-library offline complete query reproducer (Python)"},
+        {"file": "test_review_state.py", "label": "Delaware: eight portable numerical and archive tests (Python)"}
+      ]
+    },
+    {
       "id": "wisconsin-rock-turnout-20261106-01",
       "label": "Rock County, Wisconsin 2026: native reported participation and complete numerical query",
       "data_directory": "data/county-source-reviews/20261106-wisconsin-rock-native-01",

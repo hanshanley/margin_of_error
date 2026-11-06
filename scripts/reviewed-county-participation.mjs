@@ -195,7 +195,88 @@ export function loadReviewedStatewideParticipation(reviews) {
     source_date: row.source_update_label, status: 'reviewed_unofficial_snapshot',
     observation_type: row.participation_measure_label,
   }));
-  return [...california, loadGeorgiaParticipation(reviews).statewide];
+  return [...california, loadGeorgiaParticipation(reviews).statewide, loadReviewedDelawareStatewideParticipation(reviews)];
+}
+
+export function loadReviewedDelawareStatewideParticipation(reviews) {
+  const id = 'delaware-statewide-participation-20261106-01';
+  const matches = reviews.filter(review => review.id === id);
+  if (matches.length !== 1) throw new Error(`Missing or duplicated reviewed statewide source: ${id}`);
+  const review = matches[0], directory = resolve(review.data_directory);
+  const manifest = readFileSync(resolve(directory, 'checksums.json'));
+  if (createHash('sha256').update(manifest).digest('hex') !==
+    'd8b3dbdba009a864a157a03d0cfd5864496712df638310fe3aa9bf4d56fec315')
+    throw new Error(`Invalid reviewed statewide participation: ${id} / checksums.json`);
+  const files = [...JSON.parse(manifest).files, { path: 'complete-query.zip', bytes: 36548,
+    sha256: '521c0849acedf949e7e31bd75ab5053d91630b2ec55118e03cd42275e82c9cd0' }];
+  for (const expected of files) {
+    const body = readFileSync(resolve(directory, expected.path));
+    if (body.length !== expected.bytes || createHash('sha256').update(body).digest('hex') !== expected.sha256)
+      throw new Error(`Invalid reviewed statewide participation: ${id} / ${expected.path}`);
+  }
+  const usability = JSON.parse(readFileSync(resolve(review.usability_review_path), 'utf8'));
+  if (usability.native_numerical_revision !== '64d0fd238464211b9634b83a8b3f27490f1141ab'
+    || usability.immutable_native_release !== 437029449 || usability.state_code !== 'DE'
+    || usability.geography_level !== 'statewide' || usability.native_geography_literal !== 'ALL'
+    || usability.native_manifest_sha256 !== createHash('sha256').update(manifest).digest('hex')
+    || usability.native_fips_invented !== false
+    || ['source_native_approval_flags_unchanged', 'reported_statewide_participation_permission',
+      'same_report_registration_fraction_permission', 'native_turnout_clock_missing', 'native_turnout_timezone_missing',
+      'candidate_clock_not_substituted_for_turnout', 'hardcoded_display_registration_not_used_as_evidence',
+      'all_mode_definition_approval_unchanged_false', 'counting_completion_not_inferred',
+      'no_certification_or_final_unique_voter_claim', 'no_district_turnout_apportioned_to_counties',
+      'immutable_afternoon_county_observation_not_replaced', 'previous_county_context25_unchanged']
+      .some(field => usability[field] !== true))
+    throw new Error(`Invalid reviewed statewide usability: ${id}`);
+  const rows = csv(resolve(directory, 'statewide-participation.csv'));
+  const source = JSON.parse(readFileSync(resolve(directory, 'source-qualification.json'), 'utf8'));
+  const audit = JSON.parse(readFileSync(resolve(directory, 'audit.json'), 'utf8'));
+  if (rows.length !== 1 || source.native_turnout_update_clock !== null || source.native_turnout_timezone !== null
+    || source.native_fips !== null || source.election_id !== 'GE2026'
+    || audit.row_counts['district-participation.csv'] !== 41 || audit.row_counts['literal-party-labels.csv'] !== 124
+    || audit.all_41_district_ballot_and_registration_sums_equal_separate_statewide_totals !== true
+    || audit.all_42_native_printed_registered_fractions_reconcile !== true
+    || audit.all_124_state_candidate_mode_vectors_reconcile !== true
+    || audit.all_124_county_city_and_state_candidate_vectors_reconcile !== true)
+    throw new Error(`Incomplete reviewed statewide source: ${id}`);
+  const native = rows[0], ballots = Number(native.ballots_cast), denominator = Number(native.registered_voters);
+  const fraction = 100 * ballots / denominator;
+  if (native.geography_level !== 'statewide' || native.native_representative_district !== 'ALL'
+    || native.native_measure_literal !== 'Ballots Cast' || native.native_denominator_literal !== 'Reg Voters'
+    || native.source_status_literal !== 'UNOFFICIAL RESULTS'
+    || native.native_update_clock !== '' || native.declared_timezone !== '' || native.native_fips !== ''
+    || ['maps_approved', 'analysis_rate_approved', 'all_mode_complete', 'certified'].some(field =>
+      native[field] !== 'False' || source[field] !== false)
+    || ballots !== usability.ballots_cast || denominator !== usability.registered_voters
+    || native.native_printed_percent !== usability.native_printed_percent
+    || !Number.isSafeInteger(ballots) || ballots < 0 || !Number.isSafeInteger(denominator) || denominator < ballots
+    || denominator <= 0 || fraction.toFixed(2) !== native.native_printed_percent
+    || Math.abs(Number(native.independently_derived_registered_fraction_percent) - fraction) > 1e-12)
+    throw new Error(`Invalid reviewed statewide participation: ${id}`);
+  const quality = [
+    'Native statewide ALL Ballots Cast snapshot; all 41 representative-district ballots and registrations reconcile to this separate aggregate.',
+    'Same-report Reg Voters fraction only, not CVAP, VAP, VEP, CPS or demographic turnout. The source does not supply a separate denominator reference date.',
+    'Native turnout update clock and timezone not supplied; candidate ReportTime, retrieval time and client cache keys are not turnout clocks.',
+    'UNOFFICIAL RESULTS does not establish completed all-mode counting, certification or final independently deduplicated unique voters.',
+    'All 124 state candidate vectors, 124 county/city vectors and literal party labels remain separate. Senate selections 378111 are not the 384862 participation count.',
+    'No representative-district turnout is apportioned to counties; the immutable afternoon county observation remains separately preserved.',
+  ];
+  const update = 'Native turnout update clock/timezone not supplied; candidate clock is separate and not substituted.';
+  return {
+    year: 2026, state_code: 'DE', state: 'Delaware', geography_level: 'statewide',
+    ballots, denominator, mode: 'official', status: 'reviewed_unofficial_snapshot',
+    participation_measure_kind: 'source_defined_participation_count',
+    participation_measure_literal: 'Ballots Cast',
+    participation_measure_label: 'Native Ballots Cast (reported statewide snapshot)',
+    denominator_basis: 'native_registered_voters', reported_pct: fraction, validated_pct: fraction,
+    native_printed_pct: `${native.native_printed_percent}%`, source_status_literal: native.source_status_literal,
+    reported_units: null, total_units: null, source_rows: 1, maps_approved: false, review_id: id,
+    native_record: native, native_source_updates: [], source_update_label: update, source_date: update,
+    source_reporting_label: quality.join(' '), quality,
+    observation_type: 'Native Ballots Cast (reported statewide snapshot)',
+    source_url: `${review.base_url}statewide-participation.csv`,
+    complete_download_url: review.complete_download_url,
+  };
 }
 
 function loadGeorgiaParticipation(reviews) {

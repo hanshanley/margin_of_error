@@ -377,9 +377,10 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 			<div data-reviewed-state-participation={JSON.stringify(reviewedStates)}>
 				{reviewedStates.map(row => <p>
 					<strong>{row.state}: separate native statewide observation.</strong>{' '}
-					{formatNumber(row.ballots)} {row.participation_measure_literal} / {formatNumber(row.denominator)} {row.state_code === 'GA' ? 'Voters' : 'totalRegisteredVoters'};
+					{formatNumber(row.ballots)} {row.participation_measure_literal} / {formatNumber(row.denominator)} {row.state_code === 'GA' ? 'Voters' : row.state_code === 'DE' ? 'Reg Voters' : 'totalRegisteredVoters'};
 					printed {row.native_printed_pct}. Registered-voter participation, not a population or demographic turnout rate.
 					{row.state_code === 'GA' && ' Two county registration denominators are missing; this printed statewide fraction is not used as an analysis rate. The conflicting API root zero is preserved separately, not treated as actual zero ballots.'}
+					{row.state_code === 'DE' && ' All 41 representative-district counts and registrations reconcile to this separate statewide row. No district turnout is apportioned to counties, and the candidate clock is not a turnout update.'}
 					{row.source_update_label}. Native {row.source_status_literal}; counting completion and certification are not established.
 					{' '}<a href={row.source_url}>Complete statewide participation CSV</a>{' · '}
 					<a href={row.complete_download_url}>Complete native query package</a>
