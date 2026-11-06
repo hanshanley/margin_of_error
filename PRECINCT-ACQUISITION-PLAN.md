@@ -484,7 +484,7 @@ imports, fourteen reviewed records, 52 UF rows, history and prior complete
 downloads remain unchanged. Production evidence is persisted review-only;
 no nationwide completion is claimed.
 
-**Oregon bulk participation, complete numerical review prepared, not yet live:**
+**Oregon bulk participation, complete numerical review and production UI verified:**
 the official current-election page declares the statewide results portal, whose
 turnout chart declares its complete `GetVoterTurnoutData` endpoint. All 36 native
 county records are acquired in one response, not inferred from candidate votes
@@ -611,6 +611,44 @@ All 106 existing complete relocations pass byte checks; the prepared Pages
 site is 898,717,918 bytes. The local helper was stopped.
 Exact deployment/live verification remains pending; no new map, demographic
 participation or statewide completion is claimed.
+Published UI revision is `ce68ef28de8aafc754bef87f9af2fe60900168da`;
+exact Pages run `42165015615` and credential checks
+`42165015458` / `42165015098` are being checked by the single bounded
+`lebanon-exact-production-verification-01` process. Preserve its prepared `dist`
+reference until it finishes; do not duplicate the watcher.
+
+**Blair primary participation and complete numerical review, November 6:** the
+saved county directory led to the actual government index, which declares its
+2026 General page and both complete two-page PDFs. All four originals and
+SHA-bound successful receipts remain private. PyMuPDF and pdfplumber agree on
+every native fact across all four pages, ten separately scoped contests and
+32 full candidate/write-in vectors.
+The current report has **43,898 ballots = 35,560 Election Day + 8,338 Mail Votes
++ explicit provisional zero**, **81,846** registrations and printed **53.63%**.
+Its `11/03/2026 10:45 PM` run time has no supplied timezone.
+The separate `Zero Report`, `11/03/2026 6:00 AM`, retains native zero counts
+but is not the current participation observation. Its complete participation
+and sixteen candidate lines are exported separately, never merged.
+Reporting `93 of 93` with native mode entries `93,0,0` does not mean zero mail
+ballots or independently establish finished counting. `UNOFFICIAL RESULTS`,
+missing blank/pending ballots and missing under/overvote classifications stay
+explicit. House selections including write-ins are **43,749**, not ballots;
+the **149** ballot-minus-selection residual is unclassified. Neither state-House
+district has a native ballot denominator; no whole-county residual is assigned
+to either district.
+Eight complete CSVs preserve current participation, pre-election participation,
+both candidate inventories, 44 literal-party/mode rows, two reporting statements,
+four page records and forty separately scoped accounting rows. Complete factual
+JSON, receipts, audit, portable reviewer, checksums and the complete 13-member
+ZIP reproduce byte-identically offline under Python `-S`; seven focused tests
+reject scope, reporting, timestamp, vector and provenance corruption, including
+arithmetically consistent changes to reviewed facts. The unpublished ordering
+defect found by offline reproduction was fixed before publication.
+Package: `20261106-blair-facts-01`, **17,481 bytes** ZIP, SHA-256
+`e70aa9ceb7c0d3de3e240e73988dd19be04890a38cfa4efb96677d0f4e762b78`.
+Next publish and anonymously byte-verify full downloads, then integrate only
+after Lebanon's exact live proof. No live UI, county/precinct map, demographic
+turnout, certification or statewide completion is claimed.
 
 **November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated

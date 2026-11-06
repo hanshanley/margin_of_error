@@ -1,0 +1,50 @@
+{
+  "audit.json": {
+    "bytes": 3808,
+    "sha256": "913dff748a43e8682982c380a635772826036b4c42cfcf53ea2c2d7cf49761e0"
+  },
+  "county-candidate-results.csv": {
+    "bytes": 5138,
+    "sha256": "41773a99014725b062fbf581b62659b528b312d2570b4e70173ecb3fef72a165"
+  },
+  "county-contest-accounting.csv": {
+    "bytes": 10564,
+    "sha256": "0a42c47717fe6db5d3360bdc10617776973509dfbd3db84ddbe9edfe8a4554b4"
+  },
+  "county-literal-party-totals.csv": {
+    "bytes": 3290,
+    "sha256": "c632a08817cf505fc04fcc1e848565107bc6ec42d92c7a46f6c37beaefde9b86"
+  },
+  "county-participation.csv": {
+    "bytes": 1856,
+    "sha256": "dfbdeea4beef1ae0befd22c1fb3c0b77839fea0da825f80fe97336554b2762ac"
+  },
+  "native-reporting-statements.csv": {
+    "bytes": 690,
+    "sha256": "404ec6893a99cab3940414a0a611ea351659d44fc62e7bbd930bc6fc00101384"
+  },
+  "native-source-pages.csv": {
+    "bytes": 852,
+    "sha256": "996c3a33178507c871a12150521ca018d6b1487ac8bfa01686efb399f41f206b"
+  },
+  "pre-election-zero-candidate-results.csv": {
+    "bytes": 5364,
+    "sha256": "c782ebfeb1d01ecaab3d5e1d6f32dcefe4aba498fcc6e37cebb623a0829b41ff"
+  },
+  "pre-election-zero-participation.csv": {
+    "bytes": 1846,
+    "sha256": "8a4e64092fcfeb186c6127f462a14847073bd593d76517d1f534b2cd4419c487"
+  },
+  "review-blair-county-results.py": {
+    "bytes": 18794,
+    "sha256": "9cde7d753fd6297b7d59b05c7255411bb468c8398cdba9326356ad696c5d2a98"
+  },
+  "source-receipts.json": {
+    "bytes": 1797,
+    "sha256": "1e8fb4de7f0d8e6d271a2dd46be53fb02c0be571f3f923708eceb39aaa30ea7b"
+  },
+  "source-records.json.gz": {
+    "bytes": 1797,
+    "sha256": "33df68695292293a7698a9d0f4c73351452f4630cae34db7c561410755c63241"
+  }
+}

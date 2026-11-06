@@ -1,0 +1,46 @@
+{
+  "scope": "Blair county only; current and pre-election zero reports remain separate",
+  "maps_approved": false,
+  "demographic_turnout_approved": false,
+  "statewide_completion_approved": false,
+  "county_participation": {
+    "year": 2026,
+    "state_code": "PA",
+    "county": "Blair",
+    "source_report": "current",
+    "source_page": 1,
+    "source_url": "https://www.blaircountypa.gov/getmedia/000da964-7b46-40e2-8389-1c3a466b16de/Summary-Results-Report.pdf",
+    "source_update_literal": "11/03/2026 10:45 PM",
+    "declared_timezone": "",
+    "native_status_literal": "UNOFFICIAL RESULTS",
+    "ballots_cast": 43898,
+    "election_day_ballots": 35560,
+    "mail_ballots": 8338,
+    "provisional_ballots": 0,
+    "registered_voters": 81846,
+    "native_printed_turnout": "53.63%",
+    "registered_turnout_percent": 53.63487525352491,
+    "native_count_literals_json": "{\"ballot_count_literals\": [\"43,898\", \"35,560\", \"8,338\", \"0\"], \"printed_turnout_literal\": \"53.63%\", \"registered_voters_literal\": \"81,846\"}",
+    "counting_qualifications_json": "[\"Current ballots are 43,898 = 35,560 Election Day + 8,338 Mail Votes + explicit provisional zero.\", \"Native registrations are 81,846; printed 53.63% and the calculated registered-voter fraction remain separate, not CVAP/VEP or demographic turnout.\", \"The separately declared Zero Report is a 6:00 AM pre-election snapshot, not current zero participation; current report time is 10:45 PM. Neither supplies a timezone.\", \"Election Day reporting is 93 of 93 with mode entries 93, 0, 0; these are reporting statements, not zero mail ballots or independent completion/certification.\", \"Candidate/party/write-in selections are separate from ballots; missing under/overvote classifications remain absent and residuals unclassified.\", \"State-House districts are separate electorates with no published district ballot denominators; do not subtract each district's votes from whole-county ballots.\", \"Native UNOFFICIAL RESULTS is not certification. Blank ballots and pending ballots are not supplied, not zero.\", \"No county/precinct map, demographic turnout, statewide completion or finished-counting approval. Source presentation templates remain private.\"]"
+  },
+  "qualifications": [
+    "Current ballots are 43,898 = 35,560 Election Day + 8,338 Mail Votes + explicit provisional zero.",
+    "Native registrations are 81,846; printed 53.63% and the calculated registered-voter fraction remain separate, not CVAP/VEP or demographic turnout.",
+    "The separately declared Zero Report is a 6:00 AM pre-election snapshot, not current zero participation; current report time is 10:45 PM. Neither supplies a timezone.",
+    "Election Day reporting is 93 of 93 with mode entries 93, 0, 0; these are reporting statements, not zero mail ballots or independent completion/certification.",
+    "Candidate/party/write-in selections are separate from ballots; missing under/overvote classifications remain absent and residuals unclassified.",
+    "State-House districts are separate electorates with no published district ballot denominators; do not subtract each district's votes from whole-county ballots.",
+    "Native UNOFFICIAL RESULTS is not certification. Blank ballots and pending ballots are not supplied, not zero.",
+    "No county/precinct map, demographic turnout, statewide completion or finished-counting approval. Source presentation templates remain private."
+  ],
+  "table_rows": {
+    "county-participation.csv": 1,
+    "pre-election-zero-participation.csv": 1,
+    "county-candidate-results.csv": 16,
+    "pre-election-zero-candidate-results.csv": 16,
+    "county-literal-party-totals.csv": 44,
+    "native-reporting-statements.csv": 2,
+    "native-source-pages.csv": 4,
+    "county-contest-accounting.csv": 40
+  }
+}

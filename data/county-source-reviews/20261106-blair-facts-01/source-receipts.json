@@ -1,0 +1,34 @@
+{
+  "county-summary.pdf": {
+    "bytes": 20791,
+    "fetched_at": "2026-11-06T04:53:15.166622+00:00",
+    "final_url": "https://www.blaircountypa.gov/getmedia/000da964-7b46-40e2-8389-1c3a466b16de/Summary-Results-Report.pdf",
+    "sha256": "01555c3d0b0fddea8fdc4cc16647030ba3892ace68a60f49cf3df3d6719cc597",
+    "status": 200,
+    "url": "https://www.blaircountypa.gov/getmedia/000da964-7b46-40e2-8389-1c3a466b16de/Summary-Results-Report.pdf"
+  },
+  "general-index.html": {
+    "bytes": 50747,
+    "fetched_at": "2026-11-06T04:53:07.796482+00:00",
+    "final_url": "https://www.blaircountypa.gov/departments/elections-voter-registration/election-results/2026-general",
+    "sha256": "22c5f9c7e7bf6f7df6f61c13c6e0537c9585be7cbb8563cad3b6eece3234e26e",
+    "status": 200,
+    "url": "https://www.blaircountypa.gov/departments/elections-voter-registration/election-results/2026-general"
+  },
+  "official-index.html": {
+    "bytes": 55846,
+    "fetched_at": "2026-11-06T04:53:00.128527+00:00",
+    "final_url": "https://www.blaircountypa.gov/departments/elections-voter-registration/election-results",
+    "sha256": "bf40557bafe1027191640854eef87ecb615e79f6ad9963d082b4fd5242858b70",
+    "status": 200,
+    "url": "https://www.blaircountypa.gov/departments/elections-voter-registration/election-results"
+  },
+  "pre-election-zero.pdf": {
+    "bytes": 20657,
+    "fetched_at": "2026-11-06T04:53:15.375531+00:00",
+    "final_url": "https://www.blaircountypa.gov/getmedia/3f761611-d507-4b5f-a5e5-a10625152334/2026-General-Election-11-03-2026-Zero-Report.pdf",
+    "sha256": "06b5a6f846696452b3e8894e82999551377fa339f92690baf43a1ca59e5be070",
+    "status": 200,
+    "url": "https://www.blaircountypa.gov/getmedia/3f761611-d507-4b5f-a5e5-a10625152334/2026-General-Election-11-03-2026-Zero-Report.pdf"
+  }
+}
