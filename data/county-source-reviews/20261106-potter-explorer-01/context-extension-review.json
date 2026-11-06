@@ -1,0 +1,138 @@
+{
+  "previous_complete_records_preserved": 908,
+  "previous_contextual_joins_preserved": 436,
+  "previous_exclusions_and_missingness_preserved": true,
+  "unchanged_geometry_inventory": 15,
+  "existing_source_map_approval_flags_unchanged": true,
+  "native_fips_invented": false,
+  "new_source_records": [
+    {
+      "year": 2026,
+      "state_code": "PA",
+      "county_id": "reviewed:PA:Potter",
+      "county": "Potter",
+      "geography_level": "county",
+      "ballots": 6244,
+      "denominator": 11041,
+      "participation_measure_literal": "Ballots Cast - Total",
+      "denominator_basis": "native_registered_voters",
+      "reported_pct": 56.55284847387012,
+      "native_printed_pct": "56.55%",
+      "source_status_literal": "UNOFFICIAL RESULTS",
+      "reported_units": null,
+      "total_units": null,
+      "source_rows": 0,
+      "maps_approved": false,
+      "review_id": "pennsylvania-potter-20261106-01",
+      "native_record": {
+        "year": "2026",
+        "state_code": "PA",
+        "county": "Potter",
+        "native_participation_measure_literal": "Ballots Cast - Total",
+        "ballots_cast": "6244",
+        "registered_voters": "11041",
+        "native_printed_turnout": "56.55%",
+        "election_day_ballots": "5389",
+        "mail_ballots": "855",
+        "provisional_ballots": "0",
+        "blank_ballots": "2",
+        "reported_precincts": "32",
+        "total_precincts": "32",
+        "complete_precincts": "0",
+        "partially_reported_precincts": "32",
+        "source_report": "summary",
+        "source_page": "1",
+        "native_printed_page": "1 of 3",
+        "source_status_literal": "UNOFFICIAL RESULTS",
+        "source_update_literal": "11/04/2026 2:44 PM",
+        "declared_timezone": ""
+      },
+      "native_source_updates": [
+        {
+          "source": "summary",
+          "native_update_literal": "11/04/2026 2:44 PM",
+          "declared_timezone": ""
+        },
+        {
+          "source": "statement",
+          "native_update_literal": "11/04/2026 2:45 PM",
+          "declared_timezone": ""
+        }
+      ],
+      "source_update_label": "source_update_literal: 11/04/2026 2:44 PM; summary: 11/04/2026 2:44 PM (timezone not declared); statement: 11/04/2026 2:45 PM (timezone not declared)",
+      "source_reporting_label": "Native Ballots Cast - Total 6,244 = 5,389 Election Day + 855 Mail + explicit zero Provisional; two blank ballots are already included.; All 32 units are partially reported and zero complete; the native Election Day complete column nevertheless says 32. This contradiction is preserved, not repaired or interpreted as completed ballot counting.; All 32 unit participation headers and 96 contests reconcile in every reported counting mode.; Separate 871 mail-in/absentee receipts by 8 p.m. are not counted mail 855; the difference 16 remains unexplained and unallocated. The receipt notice supplies no report clock or timezone.; County named write-ins are breakdowns within Write-In Totals, not additional votes; unit named breakdowns are absent, not zero or county names allocated to units.; Native unit Total Votes Cast and Contest Totals rows are absent; derived totals remain separate. Summary and statement clocks remain distinct without an inferred timezone.",
+      "source_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/county-participation.csv",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-potter-20261106-01/complete-potter-county-native-query-01.zip",
+      "quality": [
+        "Reviewed local snapshot, not final certification, statewide coverage, eligible-population or demographic turnout.",
+        "Source timestamps retain their native labels; unprovided timezones are not inferred. County mapping is not approved."
+      ]
+    }
+  ],
+  "new_contextual_identity_joins": [
+    {
+      "state_code": "PA",
+      "county_id": "reviewed:PA:Potter",
+      "county": "Potter",
+      "geography_level": "county",
+      "review_id": "pennsylvania-potter-20261106-01",
+      "contextual_geoid": "42105",
+      "contextual_name": "Potter County",
+      "boundary_year": 2024,
+      "ballots": 6244,
+      "denominator": 11041,
+      "reported_pct": 56.55284847387012,
+      "participation_measure_kind": "source_defined_participation_count",
+      "participation_measure_label": "Ballots Cast - Total",
+      "source_record_sha256": "75a1734d5413c9c4a78316634acda6a2e6073a4e2c85fc76edb99cf204861353",
+      "source_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/county-participation.csv",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-potter-20261106-01/complete-potter-county-native-query-01.zip",
+      "contextual_map_approved": true,
+      "source_map_approval_unchanged": false
+    }
+  ],
+  "independently_checked_census_identities": {
+    "2024": {
+      "42105": {
+        "USPS": "PA",
+        "GEOID": "42105",
+        "ANSICODE": "01213684",
+        "NAME": "Potter County",
+        "ALAND": "2800422692",
+        "AWATER": "558970",
+        "ALAND_SQMI": "1081.249",
+        "AWATER_SQMI": "0.216",
+        "INTPTLAT": "41.748587",
+        "INTPTLONG": "-77.894436"
+      }
+    },
+    "2026": {
+      "42105": {
+        "USPS": "PA",
+        "GEOID": "42105",
+        "GEOIDFQ": "0500000US42105",
+        "ANSICODE": "01213684",
+        "NAME": "Potter County",
+        "ALAND": "2800422662",
+        "AWATER": "558970",
+        "ALAND_SQMI": "1081.249",
+        "AWATER_SQMI": "0.216",
+        "INTPTLAT": "41.748587",
+        "INTPTLONG": "-77.894436"
+      }
+    }
+  },
+  "counts": {
+    "complete_source_records": 909,
+    "contextual_joins": 437,
+    "jurisdictions": 15,
+    "reviewed_rates": 65,
+    "missing_rates": 372,
+    "excluded_municipalities": 286,
+    "excluded_missing_county_totals": 186
+  },
+  "frozen_review_bytes": 755577,
+  "frozen_review_sha256": "976e305e2c0ff14cfb2bf8677335256ecb3d340b6887d3e0c1e407b8d64dcb5d",
+  "complete_zip_bytes": 2215183,
+  "complete_zip_sha256": "cadd631917cca1a5bcd8bb8c1fb5d4d767446e59440557b841a48a1e7ae54121"
+}

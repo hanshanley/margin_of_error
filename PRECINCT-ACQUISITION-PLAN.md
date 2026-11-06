@@ -1559,6 +1559,24 @@ pass. Complete publication proofs are in `20261106-potter-publication-01`.
 Fixed checksums/never overwrite is not host-enforced locking.
 Contextual county identity review and explorer integration remain pending;
 no Potter map or UI approval is claimed.
+
+Potter's identity is now independently verified in both complete saved Census
+inventories: Pennsylvania / Potter County / GEOID `42105`. Native source
+records still have no invented FIPS and retain `maps_approved:false`.
+Prepared immutable context **06** preserves all **908** earlier complete
+records, **436** joins, all exclusions, source flags and all fifteen
+geometries. It adds only Potter: **909 records / 437 county joins /
+65 native registered-voter fractions / 372 unchanged missing rates**.
+All 29 files / 28 ZIP members reproduce offline. Full ZIP: **2,215,183 bytes**,
+SHA-256 `cadd631917cca1a5bcd8bb8c1fb5d4d767446e59440557b841a48a1e7ae54121`;
+full review: **755,577 bytes**, SHA-256
+`976e305e2c0ff14cfb2bf8677335256ecb3d340b6887d3e0c1e407b8d64dcb5d`.
+All **53 affected tests and Astro check pass**. Tests preserve every old
+record and reject candidate/receipt substitution, double-counted blanks,
+invented status, completion and missing explicit zero provisional ballots.
+The frozen contexts 01–05 are untouched. Context 06 release verification,
+build, local browsers and exact production verification remain pending.
+Last fully verified production remains `f01f2b2`; Potter is not yet live.
 McKean's actual .org parent ordinarily redirects to .gov and declares a GIS
 results viewer. That ordinary viewer connection timed out with errno 60;
 there is no HTTP status or body. This is not a denial or evidence of absent
