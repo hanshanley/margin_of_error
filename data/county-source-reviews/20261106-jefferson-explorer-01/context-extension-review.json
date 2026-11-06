@@ -1,0 +1,130 @@
+{
+  "previous_complete_records_preserved": 902,
+  "previous_contextual_joins_preserved": 430,
+  "previous_exclusions_and_missingness_preserved": true,
+  "unchanged_geometry_inventory": 15,
+  "existing_source_map_approval_flags_unchanged": true,
+  "native_fips_invented": false,
+  "new_source_record": {
+    "year": 2026,
+    "state_code": "PA",
+    "county_id": "reviewed:PA:Jefferson",
+    "county": "Jefferson",
+    "geography_level": "county",
+    "ballots": 15205,
+    "denominator": 28226,
+    "participation_measure_literal": "Voters Cast",
+    "denominator_basis": "native_registered_voters",
+    "reported_pct": 53.86877347126762,
+    "native_printed_pct": "53.87%",
+    "source_status_literal": "Unofficial Results",
+    "reported_units": null,
+    "total_units": null,
+    "source_rows": 0,
+    "maps_approved": false,
+    "review_id": "pennsylvania-jefferson-20261106-01",
+    "native_record": {
+      "counting_qualifications_json": "[\"Native participation is Voters Cast: 15,205 = 13,052 Election Day + 2,114 Mail-In + 39 Provisional.\", \"Registered-voter participation uses the native 28,226 registrations; 53.87% is the printed fraction, not CVAP, VEP or demographic turnout.\", \"Summary mode registrations are absent, not zero. The statement separately repeats the whole electorate for each mode; do not sum repeated registrations.\", \"The 38 actual reporting units reconcile to county participation. The separate Cumulative zero/N/A container is retained, not an additional geographical unit.\", \"Each contest has its own native Times Cast and registration scope. The 66th and 75th district electorates partition the county; neither is whole-county participation.\", \"Total Votes excludes Unresolved Write-In. Preserve both, native literal parties and explicit zeroes; candidate votes are not turnout.\", \"Selection differences are unclassified accounting residuals, not supplied blanks, undervotes or overvotes.\", \"Act 88 received absentee/mail ballots are a separate receipt measure, not an addition to counted Mail-In voters.\", \"The full query covers both summary pages, all seven unit-participation pages, all 53 page identities and every native county candidate footer.\", \"Unit candidate pages 8-51 are not transcribed. Suppressed cells are not recovered by subtraction, reassigned or interpreted as zero.\", \"The two reports have different native update times and no declared timezone. Unofficial and 38 of 38 reporting do not establish certification or completed counting.\", \"County disclaimers restrict commercial use of source materials and reserve reproduction rights; no source HTML, PDF, templates or unit-candidate details are redistributed.\", \"No county/precinct geometry, demographic turnout, statewide completion or redistribution permission for original documents is approved.\"]",
+      "county": "Jefferson",
+      "declared_timezone": "",
+      "election_day_voters_cast": "13052",
+      "mail_voters_cast": "2114",
+      "native_participation_measure_literal": "Voters Cast",
+      "native_printed_turnout": "53.87%",
+      "native_status_literal": "Unofficial Results",
+      "native_summary_scope_literal": "All Contests, All Districts, All Tabulators, All Counting Groups",
+      "provisional_voters_cast": "39",
+      "registered_turnout_percent": "53.86877347126762",
+      "registered_voters": "28226",
+      "reported_units": "38",
+      "reported_voters_cast": "15205",
+      "source_page": "1",
+      "source_report": "summary",
+      "source_update_literal": "11/4/2026 3:47:13 PM",
+      "source_url": "https://www.jeffersoncountypa.gov/wp-content/uploads/2026/11/ElectionSummaryReportRPTPro.pdf",
+      "state_code": "PA",
+      "total_units": "38",
+      "year": "2026"
+    },
+    "native_source_updates": [
+      {
+        "source": "summary",
+        "native_update_literal": "11/4/2026 3:47:13 PM",
+        "declared_timezone": ""
+      },
+      {
+        "source": "statement",
+        "native_update_literal": "11/4/2026 3:47:52 PM",
+        "declared_timezone": ""
+      }
+    ],
+    "source_update_label": "source_update_literal: 11/4/2026 3:47:13 PM; summary: 11/4/2026 3:47:13 PM (timezone not declared); statement: 11/4/2026 3:47:52 PM (timezone not declared)",
+    "source_reporting_label": "Native participation is Voters Cast: 15,205 = 13,052 Election Day + 2,114 Mail-In + 39 Provisional.; Registered-voter participation uses the native 28,226 registrations; 53.87% is the printed fraction, not CVAP, VEP or demographic turnout.; Summary mode registrations are absent, not zero. The statement separately repeats the whole electorate for each mode; do not sum repeated registrations.; The 38 actual reporting units reconcile to county participation. The separate Cumulative zero/N/A container is retained, not an additional geographical unit.; Each contest has its own native Times Cast and registration scope. The 66th and 75th district electorates partition the county; neither is whole-county participation.; Total Votes excludes Unresolved Write-In. Preserve both, native literal parties and explicit zeroes; candidate votes are not turnout.; Selection differences are unclassified accounting residuals, not supplied blanks, undervotes or overvotes.; Act 88 received absentee/mail ballots are a separate receipt measure, not an addition to counted Mail-In voters.; The full query covers both summary pages, all seven unit-participation pages, all 53 page identities and every native county candidate footer.; Unit candidate pages 8-51 are not transcribed. Suppressed cells are not recovered by subtraction, reassigned or interpreted as zero.; The two reports have different native update times and no declared timezone. Unofficial and 38 of 38 reporting do not establish certification or completed counting.; County disclaimers restrict commercial use of source materials and reserve reproduction rights; no source HTML, PDF, templates or unit-candidate details are redistributed.; No county/precinct geometry, demographic turnout, statewide completion or redistribution permission for original documents is approved.",
+    "source_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/66fc1694bfc8966a9febe5d14c482ff3bd4b366d/data/county-source-reviews/20261106-jefferson-facts-01/county-participation.csv",
+    "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-jefferson-20261106-01/complete-jefferson-2026-county-query-01.zip",
+    "quality": [
+      "Reviewed local snapshot, not final certification, statewide coverage, eligible-population or demographic turnout.",
+      "Source timestamps retain their native labels; unprovided timezones are not inferred. County mapping is not approved."
+    ]
+  },
+  "new_contextual_identity_join": {
+    "state_code": "PA",
+    "county_id": "reviewed:PA:Jefferson",
+    "county": "Jefferson",
+    "geography_level": "county",
+    "review_id": "pennsylvania-jefferson-20261106-01",
+    "contextual_geoid": "42065",
+    "contextual_name": "Jefferson County",
+    "boundary_year": 2024,
+    "ballots": 15205,
+    "denominator": 28226,
+    "reported_pct": 53.86877347126762,
+    "participation_measure_kind": "source_defined_participation_count",
+    "participation_measure_label": "Voters Cast",
+    "source_record_sha256": "6f7142d3d4107a39166b0c9cd5755492edd031c5e1803fffe6895b357d44cd51",
+    "source_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/66fc1694bfc8966a9febe5d14c482ff3bd4b366d/data/county-source-reviews/20261106-jefferson-facts-01/county-participation.csv",
+    "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-jefferson-20261106-01/complete-jefferson-2026-county-query-01.zip",
+    "contextual_map_approved": true,
+    "source_map_approval_unchanged": false
+  },
+  "independently_checked_census_identities": {
+    "2024": {
+      "USPS": "PA",
+      "GEOID": "42065",
+      "ANSICODE": "01213674",
+      "NAME": "Jefferson County",
+      "ALAND": "1689811408",
+      "AWATER": "11294609",
+      "ALAND_SQMI": "652.44",
+      "AWATER_SQMI": "4.361",
+      "INTPTLAT": "41.138028",
+      "INTPTLONG": "-79.012419"
+    },
+    "2026": {
+      "USPS": "PA",
+      "GEOID": "42065",
+      "GEOIDFQ": "0500000US42065",
+      "ANSICODE": "01213674",
+      "NAME": "Jefferson County",
+      "ALAND": "1689893932",
+      "AWATER": "11294609",
+      "ALAND_SQMI": "652.472",
+      "AWATER_SQMI": "4.361",
+      "INTPTLAT": "41.138028",
+      "INTPTLONG": "-79.012419"
+    }
+  },
+  "counts": {
+    "complete_source_records": 903,
+    "contextual_joins": 431,
+    "jurisdictions": 15,
+    "reviewed_rates": 59,
+    "missing_rates": 372,
+    "excluded_municipalities": 286,
+    "excluded_missing_county_totals": 186
+  },
+  "frozen_review_bytes": 749023,
+  "frozen_review_sha256": "f39ac2f6771f8a9e442b590b3bd41fe458da43adf320863f4de7dbe7e1e6dbfa",
+  "complete_zip_bytes": 2211271,
+  "complete_zip_sha256": "2124cb7bd1bcf5118367fabef59ba394b9da57984a611208e1e8a410724592f3"
+}

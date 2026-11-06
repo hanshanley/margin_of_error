@@ -9,9 +9,11 @@ import zipfile
 
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("directory", type=Path)
+parser.add_argument("--version", default="01")
 args = parser.parse_args()
 directory = args.directory.resolve()
-archive = directory / "complete-county-participation-context-01.zip"
+assert len(args.version) == 2 and args.version.isascii() and args.version.isdigit()
+archive = directory / f"complete-county-participation-context-{args.version}.zip"
 assert not archive.exists() and not (directory / "checksums.json").exists()
 checksums = {
     str(path.relative_to(directory)): {
