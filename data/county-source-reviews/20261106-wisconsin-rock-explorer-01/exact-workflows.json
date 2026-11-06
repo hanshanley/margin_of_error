@@ -1,0 +1,29 @@
+{
+  "revision": "56ec96c2384532fd12f2f4a8a3028dae06e5a196",
+  "workflows": {
+    "pages": {
+      "id": 42290053253,
+      "head_sha": "56ec96c2384532fd12f2f4a8a3028dae06e5a196",
+      "head_branch": "main",
+      "status": "queued",
+      "conclusion": null,
+      "html_url": "https://github.com/hanshanley/margin_of_error/actions/runs/42290053253"
+    },
+    "main_credentials": {
+      "id": 42290053280,
+      "head_sha": "56ec96c2384532fd12f2f4a8a3028dae06e5a196",
+      "head_branch": "main",
+      "status": "queued",
+      "conclusion": null,
+      "html_url": "https://github.com/hanshanley/margin_of_error/actions/runs/42290053280"
+    },
+    "review_credentials": {
+      "id": 42290053457,
+      "head_sha": "56ec96c2384532fd12f2f4a8a3028dae06e5a196",
+      "head_branch": "voter-participation-reviewed-counties-20261105-02",
+      "status": "queued",
+      "conclusion": null,
+      "html_url": "https://github.com/hanshanley/margin_of_error/actions/runs/42290053457"
+    }
+  }
+}

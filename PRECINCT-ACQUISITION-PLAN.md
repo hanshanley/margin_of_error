@@ -2,6 +2,13 @@
 
 ## Current verified production and next acquisition
 
+**Current exact production: Rock context25, verified November 6 at 20:49 UTC.**
+UI **`56ec96c2384532fd12f2f4a8a3028dae06e5a196`** passes all **511 complete
+selected hosted/live files / all 497 prior paths / seven browser scenarios**.
+The county query retains **1,329 records / 834 joins / 447 registered fractions /
+387 missing rates / 20 jurisdictions** and all previous imports/downloads.
+The Florida context24 verification below is the preserved preceding baseline.
+
 **November 6: Florida context24 verified LIVE at 20:11 UTC.**
 The official `floridaelectionwatch.gov/CountyReportingStatus` page supplies
 all **67 counties**, rather than requiring 67 independent county scrapes.
@@ -88,7 +95,7 @@ reconciled selection. Durable exact production proofs are in
 This verifies the qualified county participation extension, not statewide
 certification, demographic rates or nationwide completeness.
 
-**November 6: Wisconsin Rock County and context25 published; explorer production verification pending.**
+**November 6: Wisconsin Rock County and context25 verified LIVE at 20:49 UTC.**
 The actual official November 3 general report returned **200 / 451,325 bytes**.
 All **53 native tables / 7,413 cells** independently agree between HTMLParser,
 BeautifulSoup and network-blocked, scripts-disabled Chromium. All **106 native
@@ -148,8 +155,22 @@ All **415 complete relocated downloads** pass byte identity checks; the
 measured local prepared site is **971,091,621 bytes**, below the unchanged
 one-billion-byte limit. The Rock static county label and source qualifications
 also work without JavaScript. Local browser and exact production checks are
-separate gates; no new LIVE state coverage or native all-mode/map/analysis
-approval is claimed before the exact production verifier passes.
+separate gates. Exact UI **`56ec96c2384532fd12f2f4a8a3028dae06e5a196`**, Pages
+**42290053253 / attempt1**, and both exact credential workflows
+**42290053280 main / 42290053457 review** pass.
+At **20:49:21 UTC**, the original artifact **13538804425 / 510,696,050 bytes /
+SHA-256 `b6c26c689147f8f6e97cf452df56da288b152346951434da6deb70a1f474b254`**
+was independently verified; actual hosted size is **980,781,584 bytes**, below
+the unchanged one-billion-byte limit. All **415 complete relocations /
+511 entire selected hosted/live bodies / all 497 previous paths / seven
+production-browser scenarios** pass, preserving **all 902 old anchors /
+18 complete imports**, now **920 anchors / 915 unique URLs**. All 67 Florida
+selectors/fractions and the original Monroe observation remain intact.
+Production proofs are in
+`data/county-source-reviews/20261106-wisconsin-rock-explorer-01/`.
+This is qualified Rock participation coverage, not all 72 Wisconsin counties,
+completed all-mode counting, certification, final unique voters, population/
+demographic rates or nationwide completeness. Native approval flags remain false.
 The official MyVote election-results explainer says Wisconsin has no centralized
 unofficial election-night reporting site and points to its 72 county clerks;
 that is a legitimate county-first pipeline case, not a reason to synthesize
