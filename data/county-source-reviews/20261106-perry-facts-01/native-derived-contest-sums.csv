@@ -1,0 +1,5 @@
+contest_literal,ballots_cast,candidate_votes,native_overvotes,native_undervotes,summary_and_separate_county_aggregate_vectors_match,candidate_votes_plus_overvotes_plus_undervotes
+Governor/Lieutenant Governor (Vote for 1),18064,17965,37,62,True,18064
+Representative In Congress `13 Dist (Vote for 1),18064,17956,2,106,True,18064
+Senator In The General Assembly 34 Dist (Vote for 1),18064,17958,5,101,True,18064
+Representative In The General Assembly 86 Dist (Vote for 1),18064,17968,4,92,True,18064

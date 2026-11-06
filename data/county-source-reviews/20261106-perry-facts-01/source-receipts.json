@@ -1,0 +1,41 @@
+[
+  {
+    "file": "perry-parent.html",
+    "requested_url": "https://perryco.org/november-3-2026-unofficial-general-election-results/",
+    "final_url": "https://perryco.org/november-3-2026-unofficial-general-election-results/",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "retrieved_at_utc": "2026-11-06T08:24:10.907383+00:00",
+    "transport": "curl_after_Python_TLS_negotiation_failure_no_HTTP_response",
+    "initial_python_tls_failure": "HTTPSConnectionPool(host='perryco.org', port=443): Max retries exceeded with url: /november-3-2026-unofficial-general-election-results/ (Caused by SSLError(SSLError(1, '[SSL: TLSV1_ALERT_PROTOCOL_VERSION] tlsv1 alert protocol version (_ssl.c:1129)')))",
+    "bytes": 39049,
+    "sha256": "9bde2092d508fed5ad28e60d43ac94c290fbdd4e5cebd860b402d594d3a98a95",
+    "redirects": []
+  },
+  {
+    "file": "perry-summary.pdf",
+    "requested_url": "https://perryco.org/wp-content/uploads/2026/11/Unofficial-11.03.26-General-Election-Results-Total.pdf",
+    "final_url": "https://perryco.org/wp-content/uploads/2026/11/Unofficial-11.03.26-General-Election-Results-Total.pdf",
+    "status": 200,
+    "content_type": "application/pdf",
+    "retrieved_at_utc": "2026-11-06T08:24:11.038383+00:00",
+    "transport": "curl_after_Python_TLS_negotiation_failure_no_HTTP_response",
+    "initial_python_tls_failure": "HTTPSConnectionPool(host='perryco.org', port=443): Max retries exceeded with url: /wp-content/uploads/2026/11/Unofficial-11.03.26-General-Election-Results-Total.pdf (Caused by SSLError(SSLError(1, '[SSL: TLSV1_ALERT_PROTOCOL_VERSION] tlsv1 alert protocol version (_ssl.c:1129)')))",
+    "bytes": 48695,
+    "sha256": "88ae157b2d96060d81033e38ecfb8c5d6cdbe52d54fd34e35928d5f0cb3834b8",
+    "redirects": []
+  },
+  {
+    "file": "perry-statement.pdf",
+    "requested_url": "https://perryco.org/wp-content/uploads/2026/11/Unoffical-11.03.26-General-Results-by-Precinct.pdf",
+    "final_url": "https://perryco.org/wp-content/uploads/2026/11/Unoffical-11.03.26-General-Results-by-Precinct.pdf",
+    "status": 200,
+    "content_type": "application/pdf",
+    "retrieved_at_utc": "2026-11-06T08:24:11.233196+00:00",
+    "transport": "curl_after_Python_TLS_negotiation_failure_no_HTTP_response",
+    "initial_python_tls_failure": "HTTPSConnectionPool(host='perryco.org', port=443): Max retries exceeded with url: /wp-content/uploads/2026/11/Unoffical-11.03.26-General-Results-by-Precinct.pdf (Caused by SSLError(SSLError(1, '[SSL: TLSV1_ALERT_PROTOCOL_VERSION] tlsv1 alert protocol version (_ssl.c:1129)')))",
+    "bytes": 1395469,
+    "sha256": "8a6963e354fc507ee273417d12c41c8438748dc7b1050298949373424b46fbd3",
+    "redirects": []
+  }
+]

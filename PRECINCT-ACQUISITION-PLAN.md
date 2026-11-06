@@ -112,9 +112,17 @@ All four headers per actual unit agree; the 31 units sum to **18,064 native ball
 headers and their native 1-of-1 reporting lines were directly visually reviewed
 from unchanged full-resolution pixels. Native overvote/undervote sums reconcile
 for all four contests. This is not completed counting or a reviewed transcription
-of all unit candidate cells. Next: persist the scoped primary participation proof,
-produce a complete reproducible participation query (explicitly excluding
-unreviewed unit candidate cells), verify its fixed release and independently
+of all unit candidate cells. The scoped primary proof and complete query are now
+prepared: **20 files / 14 full CSV tables / 19 ZIP members / 19 focused
+rejection cases**, with every entire file and archive reproduced in an isolated
+standard-library run. The whole county summary and separate page23 aggregate
+were directly visually reviewed; every county choice/mode vector and native
+overvote/undervote account agrees. ZIP **124,233 bytes**, SHA-256
+`5913818dbacdeb23a71819fd491d2cc800323c55b313023ec1c3fcaac890a078`.
+See `20261106-perry-facts-01` and `20261106-perry-primary-review-01`.
+All 31 unit participation rows are included. Unreviewed unit candidate cells are
+explicitly outside this complete scoped query, not imputed or called absent.
+Next: verify its fixed release and exact credential checks, then independently
 check county identity before any context08 or UI change. Native parties and
 ballot-participation mode splits remain absent, not inferred from candidate modes.
 Preserve full original scans, full-page images, coordinates, candidates and actual

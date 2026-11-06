@@ -1,0 +1,74 @@
+{
+  "audit.json": {
+    "bytes": 2953,
+    "sha256": "dd9cf208f356d4bab5b69971eab10feb020960331b89d38b5edf33bfe6f8f1bb"
+  },
+  "county-candidate-results.csv": {
+    "bytes": 31780,
+    "sha256": "5a76025c9a162c917a2b3f5965e154d149646009bbf33a51d4b68646d56a55a7"
+  },
+  "county-contest-accounting.csv": {
+    "bytes": 2346,
+    "sha256": "3a6a89ed69a57d1a9a63543a24c978105f122397a8ab3a0f5a6019fca00cbc88"
+  },
+  "county-participation.csv": {
+    "bytes": 748,
+    "sha256": "710a64c3da639a698014f2e0766c5a40c7a9cdf7e7ee4832ad3b4442d8bb5499"
+  },
+  "native-candidate-mode-totals.csv": {
+    "bytes": 7698,
+    "sha256": "c7e207abf8982309df176ab2499ffd1720894310cd5557efbfe8b340f52483e2"
+  },
+  "native-derived-contest-sums.csv": {
+    "bytes": 498,
+    "sha256": "5399194af78bc21d232010aa5595e7dc12930666bcb62d3b8e25f0b46722c101"
+  },
+  "native-derived-rate-checks.csv": {
+    "bytes": 3762,
+    "sha256": "aea778a573c1bc3b0937cf8b5618436dcfcc40541d7454cafeb377c338f02ec4"
+  },
+  "native-participation-mode-availability.csv": {
+    "bytes": 1406,
+    "sha256": "ea646767c9cc419628c34a0ebb8cc510088a0da40a7b1921e378ac8dc13161d5"
+  },
+  "native-party-availability.csv": {
+    "bytes": 4197,
+    "sha256": "efcb382de401c7a7dcf59a751245b5ce7caf949496b7b7f193cdc7405a4bc6a2"
+  },
+  "native-reporting-statistics.csv": {
+    "bytes": 7884,
+    "sha256": "89c1ae528d6c12d4b813c51bf18de837e3292b84c305c61092c93fa60e4ea58d"
+  },
+  "native-source-declarations.csv": {
+    "bytes": 468,
+    "sha256": "27910c4c075057dcad3950ea8fc474c4d03902310cdb4e26d211e3a483902448"
+  },
+  "native-source-pages.csv": {
+    "bytes": 7900,
+    "sha256": "74624adcd3146bb4527e883f4ac178b3c68cec1a89478b56a978d40be09103d3"
+  },
+  "native-source-receipts.csv": {
+    "bytes": 994,
+    "sha256": "3f282cdc16051f4751460ee7ac80cd206a0a478483e6ba32ae03f87cbbc63e40"
+  },
+  "native-unit-candidate-availability.csv": {
+    "bytes": 9991,
+    "sha256": "6d13d2bac2c103151a8b87e74f8a97564468f86387fdb510daa0d2d016820920"
+  },
+  "native-unit-participation.csv": {
+    "bytes": 7620,
+    "sha256": "4eaf849c48c87eb3569e1d637077d01d82925f24c54b0dc43bb9bc71757525e3"
+  },
+  "review-perry-county-native-query.py": {
+    "bytes": 14833,
+    "sha256": "b765e545d531f9491bef727dfd1be603cc6dc401e0be39216b914799dddd8f16"
+  },
+  "source-receipts.json": {
+    "bytes": 2698,
+    "sha256": "e7da3cde47babfc0992fb36a285414ff8b4a4a7734e97f527152646ca9a821ba"
+  },
+  "source-records.json.gz": {
+    "bytes": 11400,
+    "sha256": "ca225c6e546db0452efefa68d47f7c75ec6b819689734ae19a8064a83cd8093b"
+  }
+}
