@@ -9,8 +9,8 @@ const reviews = JSON.parse(readFileSync('public/participation-source-reviews.jso
 
 test('loads all reviewed county participation without promoting map coverage', () => {
   const rows = loadReviewedCountyParticipation(reviews);
-  assert.equal(rows.length, 11);
-  assert.equal(rows.filter(row => row.state_code === 'PA').length, 10);
+  assert.equal(rows.length, 12);
+  assert.equal(rows.filter(row => row.state_code === 'PA').length, 11);
   assert.equal(rows.filter(row => row.state_code === 'DC').length, 1);
   assert.ok(rows.every(row => row.maps_approved === false && row.reported_units === null));
   const monroe = rows.find(row => row.county === 'Monroe');
@@ -18,6 +18,11 @@ test('loads all reviewed county participation without promoting map coverage', (
   assert.equal(monroe.native_record.county_fips, undefined);
   assert.equal(monroe.ballots, 61025);
   assert.notEqual(monroe.ballots, 60481);
+  const fulton = rows.find(row => row.county === 'Fulton');
+  assert.equal(fulton.ballots, 5085);
+  assert.notEqual(fulton.ballots, 5050);
+  assert.equal(fulton.denominator, 10155);
+  assert.equal(fulton.native_printed_pct, '50.07%');
 });
 
 test('preserves partial counting, absent status, separate timestamps and D.C. accounting', () => {
@@ -42,6 +47,11 @@ test('preserves partial counting, absent status, separate timestamps and D.C. ac
   assert.match(dc.quality.join(' '), /324 ballots remain unresolved/);
   assert.match(dc.quality.join(' '), /does not establish zero early ballots/);
   assert.equal(rows.find(row => row.county === 'Centre').native_source_updates.length, 6);
+  const fulton = rows.find(row => row.county === 'Fulton');
+  assert.equal(fulton.source_status_literal, 'Official Results');
+  assert.match(fulton.source_reporting_label, /13 of 13.*0 of 1/);
+  assert.match(fulton.source_reporting_label, /not independently established certification/);
+  assert.match(fulton.source_update_label, /11:30 PM.*timezone not declared/);
 });
 
 test('rejects missing or duplicated reviewed sources instead of silently shrinking coverage', () => {

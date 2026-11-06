@@ -151,6 +151,7 @@ def check_current_participation(browser):
                             "pennsylvania-northampton-20261105-01", "pennsylvania-lancaster-20261105-01",
                             "pennsylvania-three-county-20261105-01", "pennsylvania-montgomery-20261105-01",
                             "pennsylvania-bucks-20261105-01", "pennsylvania-monroe-20261105-01",
+                            "pennsylvania-fulton-20261106-01",
                             "dc-delegate-county-20261105-01"}:
             with (public.parent / review["data_directory"] / "county-participation.csv").open(newline="") as source:
                 native_rows = list(csv.DictReader(source))
@@ -158,12 +159,12 @@ def check_current_participation(browser):
                 identity = native["state_code"] + "|" + native.get("county", native.get("geography"))
                 assert identity not in reviewed_sources
                 reviewed_sources[identity] = (native, review)
-    assert len(reviewed_sources) == 11
+    assert len(reviewed_sources) == 12
 
     def reviewed_counties(page):
         table = page.locator("table[data-reviewed-county-participation]")
         observations = json.loads(table.get_attribute("data-reviewed-county-participation"))
-        assert len(observations) == 11
+        assert len(observations) == 12
         for row in observations:
             native, review = reviewed_sources[row["state_code"] + "|" + row["county"]]
             assert set(row["native_record"]) == set(native)
@@ -171,7 +172,7 @@ def check_current_participation(browser):
                 actual = row["native_record"][key]
                 assert ("" if actual is None else str(actual)) == value, (key, actual, value)
             ballots = int(next(native[field] for field in
-                               ("ballots", "ballots_cast", "ballots_counted", "total_ballots_tabulated") if field in native))
+                               ("ballots", "ballots_cast", "ballots_counted", "total_ballots_tabulated", "accounted_ballots") if field in native))
             registrations = int(next(native[field] for field in
                                      ("registered_voters", "registrations", "eligible_registered_voters") if field in native))
             assert row["ballots"] == ballots and row["denominator"] == registrations
@@ -244,8 +245,8 @@ def check_current_participation(browser):
         proof["checks"].append({"viewport": name, "uf_state_rates": 51, "nc_county_rates": 100,
                                 "exact_url": True, "vep_and_vap": True, "default_participation": True})
         page.goto(url + "?year=2026&state=Pennsylvania&mode=available&map-level=county&map-color=turnout")
-        expect(page.locator("#current-county-select option")).to_have_count(11)
-        expect(page.locator("#reviewed-county-overview button")).to_have_count(10)
+        expect(page.locator("#current-county-select option")).to_have_count(12)
+        expect(page.locator("#reviewed-county-overview button")).to_have_count(11)
         expect(page.locator("#selection-panel > .selection-rate")).to_have_text(
             f'{uf_states["Pennsylvania"]["VEP_TURNOUT_RATE"]:.2f}%')
         observations = reviewed_counties(page)
@@ -269,7 +270,7 @@ def check_current_participation(browser):
         expect(page.locator("#show-current-counties")).to_have_count(0)
         no_overflow(page)
         screenshot(page, f"participation-2026-pa-counties-{name}.png")
-        proof["checks"].append({"viewport": name, "pa_source_matched_counties": 10,
+        proof["checks"].append({"viewport": name, "pa_source_matched_counties": 11,
                                 "complete_native_records_and_downloads": True,
                                 "printed_rates_and_counting_status_preserved": True,
                                 "no_unapproved_county_or_precinct_maps": True})
@@ -292,9 +293,9 @@ def check_current_participation(browser):
         static = context.new_page()
         static.goto(url + "?year=2026&state=Pennsylvania")
         reviewed_counties(static)
-        expect(static.locator("table[data-reviewed-county-participation] tbody tr")).to_have_count(11)
+        expect(static.locator("table[data-reviewed-county-participation] tbody tr")).to_have_count(12)
         no_overflow(static)
-        proof["checks"].append({"viewport": name, "javascript": False, "complete_reviewed_county_observations": 11})
+        proof["checks"].append({"viewport": name, "javascript": False, "complete_reviewed_county_observations": 12})
         context.close()
 
     page = browser.new_page()
@@ -339,8 +340,8 @@ def check_current_participation(browser):
     expect(broken.locator("#official-state-counts")).to_have_count(0)
     proof["checks"].append({"uf_survives_official_feed_failure": True})
     broken.goto(url + "?year=2026&state=Pennsylvania&mode=available&map-level=county")
-    expect(broken.locator("#current-county-select option")).to_have_count(11)
-    expect(broken.locator("#reviewed-county-overview button")).to_have_count(10)
+    expect(broken.locator("#current-county-select option")).to_have_count(12)
+    expect(broken.locator("#reviewed-county-overview button")).to_have_count(11)
     reviewed_counties(broken)
     broken.goto(url + "?year=2026&state=District+of+Columbia&mode=available&map-level=county")
     expect(broken.locator("#reviewed-county-overview button")).to_have_count(1)
@@ -350,7 +351,7 @@ def check_current_participation(browser):
     local_failure.on("pageerror", lambda error: errors.append(str(error)))
     local_failure.route("**/participation-current/**/local.json", lambda route: route.abort())
     local_failure.goto(url + "?year=2026&state=Pennsylvania&mode=available&map-level=county")
-    expect(local_failure.locator("#reviewed-county-overview button")).to_have_count(10)
+    expect(local_failure.locator("#reviewed-county-overview button")).to_have_count(11)
     reviewed_counties(local_failure)
     local_failure.goto(url + exact)
     rates(local_failure, "VEP")
@@ -364,7 +365,7 @@ def check_current_participation(browser):
         args.proof.parent.mkdir(parents=True, exist_ok=True)
         args.proof.write_text(json.dumps(proof, indent=2) + "\n")
     print("PASS: exact 2026 URL, 51 UF VEP/VAP rates, 100 NC county rates, mobile, "
-          "ten source-matched PA county observations and separate D.C., official/early separation, NM precinct coverage, "
+          "eleven source-matched PA county observations and separate D.C., official/early separation, NM precinct coverage, "
           "historical CPS and candidate layers.")
 
 

@@ -330,10 +330,11 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 			demographic ballot counts are not group turnout rates.</p>
 		<section class="participation-current" aria-labelledby="reviewed-county-participation-title">
 			<h2 id="reviewed-county-participation-title">Additional reviewed county participation · 2026</h2>
-			<p>Ten Pennsylvania county observations and a separately scoped D.C. county-equivalent observation,
+			<p>Eleven Pennsylvania county observations and a separately scoped D.C. county-equivalent observation,
 				not statewide county coverage. These are reported ballots divided by
 				each county's native registrations, not UF VEP/VAP estimates or demographic turnout.
-				These snapshots are not final/certified; native result status and printed percentages remain separate.
+				Final counting and certification are not independently established by these reviews;
+				native result status and printed percentages remain separate.
 				These reviews do not approve county or precinct mapping.</p>
 			<div class="table-wrap" tabindex="0" role="region" aria-label="Reviewed county participation">
 				<table data-reviewed-county-participation={JSON.stringify(reviewedCounties)}>

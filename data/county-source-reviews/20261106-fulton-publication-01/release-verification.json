@@ -1,0 +1,113 @@
+{
+  "verified_at_utc": "2026-11-06T02:11:57.276386+00:00",
+  "tag": "voter-county-pennsylvania-fulton-20261106-01",
+  "release_id": 436021520,
+  "target_commit": "f7f0f0f7a1c76d2c10f48791f6f498378d788923",
+  "draft_assets_byte_verified_before_publication": true,
+  "public_assets_byte_verified": 9,
+  "commit_pinned_csvs_byte_verified": 8,
+  "receipts": [
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-fulton-20261106-01/complete-fulton-2026-numerical-facts-01.zip",
+      "bytes": 24421,
+      "sha256": "ba9c8d4fc639f93a2f350d4f9154f4fff03b2dc088a496e3509dd252fc6f7ce7",
+      "status": 200
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-fulton-20261106-01/county-candidate-results.csv",
+      "bytes": 3027,
+      "sha256": "3c9e145c725153b6dd32d06e5ff0844d60646afe9d9181bc804391c614be9926",
+      "status": 200
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-fulton-20261106-01/county-contest-accounting.csv",
+      "bytes": 2431,
+      "sha256": "baa71aa8eb1da93fd702e0a9cf58d7006cc42157df7bd0243fecd7058bf9202b",
+      "status": 200
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-fulton-20261106-01/county-literal-party-totals.csv",
+      "bytes": 642,
+      "sha256": "f864d3e5d53cb5fbbf6b263afacdec27f45cbf5176887f2c2529f66a9591a770",
+      "status": 200
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-fulton-20261106-01/county-participation.csv",
+      "bytes": 1014,
+      "sha256": "cbfb10cec50badfe6932911f0280a4af73aef5d6671f6e81cf23f3cec321b947",
+      "status": 200
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-fulton-20261106-01/native-source-statements.csv",
+      "bytes": 9042,
+      "sha256": "6ba38bcd0d32a010e1ca4d9e5a2acbc705696760f88252b7e181ae9a045ac083",
+      "status": 200
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-fulton-20261106-01/native-unit-candidate-results.csv",
+      "bytes": 32611,
+      "sha256": "6e43e81b971822d2caee93c905f003bfb85f7e3ae87d5ec6a9550257cd1eb88d",
+      "status": 200
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-fulton-20261106-01/native-unit-contest-accounting.csv",
+      "bytes": 18603,
+      "sha256": "361c3efca7343c09f34dec0de2e5140b240de07046a8692df6b18eb116326c9b",
+      "status": 200
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-fulton-20261106-01/native-unit-participation.csv",
+      "bytes": 2762,
+      "sha256": "d8e11ea409deb88dc6866a38ce4d4bf9cc9ae5843f70099ce5cfa82d2db22657",
+      "status": 200
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f7f0f0f7a1c76d2c10f48791f6f498378d788923/data/county-source-reviews/20261106-fulton-facts-01/county-participation.csv",
+      "bytes": 1014,
+      "sha256": "cbfb10cec50badfe6932911f0280a4af73aef5d6671f6e81cf23f3cec321b947",
+      "status": 200
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f7f0f0f7a1c76d2c10f48791f6f498378d788923/data/county-source-reviews/20261106-fulton-facts-01/county-contest-accounting.csv",
+      "bytes": 2431,
+      "sha256": "baa71aa8eb1da93fd702e0a9cf58d7006cc42157df7bd0243fecd7058bf9202b",
+      "status": 200
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f7f0f0f7a1c76d2c10f48791f6f498378d788923/data/county-source-reviews/20261106-fulton-facts-01/native-source-statements.csv",
+      "bytes": 9042,
+      "sha256": "6ba38bcd0d32a010e1ca4d9e5a2acbc705696760f88252b7e181ae9a045ac083",
+      "status": 200
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f7f0f0f7a1c76d2c10f48791f6f498378d788923/data/county-source-reviews/20261106-fulton-facts-01/county-literal-party-totals.csv",
+      "bytes": 642,
+      "sha256": "f864d3e5d53cb5fbbf6b263afacdec27f45cbf5176887f2c2529f66a9591a770",
+      "status": 200
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f7f0f0f7a1c76d2c10f48791f6f498378d788923/data/county-source-reviews/20261106-fulton-facts-01/native-unit-candidate-results.csv",
+      "bytes": 32611,
+      "sha256": "6e43e81b971822d2caee93c905f003bfb85f7e3ae87d5ec6a9550257cd1eb88d",
+      "status": 200
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f7f0f0f7a1c76d2c10f48791f6f498378d788923/data/county-source-reviews/20261106-fulton-facts-01/county-candidate-results.csv",
+      "bytes": 3027,
+      "sha256": "3c9e145c725153b6dd32d06e5ff0844d60646afe9d9181bc804391c614be9926",
+      "status": 200
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f7f0f0f7a1c76d2c10f48791f6f498378d788923/data/county-source-reviews/20261106-fulton-facts-01/native-unit-participation.csv",
+      "bytes": 2762,
+      "sha256": "d8e11ea409deb88dc6866a38ce4d4bf9cc9ae5843f70099ce5cfa82d2db22657",
+      "status": 200
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f7f0f0f7a1c76d2c10f48791f6f498378d788923/data/county-source-reviews/20261106-fulton-facts-01/native-unit-contest-accounting.csv",
+      "bytes": 18603,
+      "sha256": "361c3efca7343c09f34dec0de2e5140b240de07046a8692df6b18eb116326c9b",
+      "status": 200
+    }
+  ]
+}

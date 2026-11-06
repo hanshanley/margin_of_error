@@ -78,7 +78,7 @@ Renderer, registry and download-manifest bytes match the prepared build.
 Production evidence is persisted on the review branch without another UI
 deployment; see `20261106-participation-expanded-01`.
 
-**Fulton participation, complete facts reviewed; publication pending:** all
+**Fulton participation, release verified and UI locally verified:** all
 fourteen county-declared November 3, 2026 reports were captured privately with
 sixteen HTTP receipts including the index and terms. All thirteen municipal
 participation observations sum to 5,085 participants and 10,155 registrations;
@@ -93,6 +93,15 @@ literal is not independent certification. Preserve county reporting 13/13 versus
 0/1 in every municipal report, absent separate write-in rows, unknown timezones
 and distinct native run times. No new mapping or demographic turnout is approved.
 See `20261106-fulton-facts-01` and `20261106-fulton-publication-01`.
+The new immutable release's nine complete assets and all eight commit-pinned
+CSVs are publicly byte-verified. The county selector and static participation
+table now include Fulton, for eleven PA observations plus separate D.C.; local
+source-matched desktop/mobile and JavaScript/no-JavaScript checks pass all twelve
+records, counting qualifications and failed-feed fallbacks. All 288 previous
+unique downloads remain; nine new links yield 297 unique URLs / 300 anchors.
+Eleven participation UI tests, Astro check/build and 94-download Pages
+preparation pass at 987,433,242 bytes. Production deployment remains pending
+until exact-revision proof is saved.
 
 **November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated

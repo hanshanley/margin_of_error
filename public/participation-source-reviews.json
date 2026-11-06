@@ -1,6 +1,29 @@
 {
   "reviews": [
     {
+      "id": "pennsylvania-fulton-20261106-01",
+      "label": "Fulton County, Pennsylvania 2026: complete participation and numerical candidate facts",
+      "data_directory": "data/county-source-reviews/20261106-fulton-facts-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f7f0f0f7a1c76d2c10f48791f6f498378d788923/data/county-source-reviews/20261106-fulton-facts-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-fulton-20261106-01/complete-fulton-2026-numerical-facts-01.zip",
+      "complete_download_bytes": 24421,
+      "complete_download_sha256": "ba9c8d4fc639f93a2f350d4f9154f4fff03b2dc088a496e3509dd252fc6f7ce7",
+      "review_status": "complete_numerical_participation_facts_reviewed_native_status_retained",
+      "maps_approved": false,
+      "scope_note": "Fulton County only, November 3, 2026 general election. All thirteen municipal reports sum to 5,085 native participants and 10,155 registrations, printed 50.07%, not eligible-population or demographic turnout. All four vote-for-one/ticket contests independently account for the same ballots: mail 558, Election Day 4,527 and explicit provisional zero. House candidate votes are separately 5,050: DEM 880 and REP 4,170. Native Official Results is not independently established certification. County reporting 13 of 13 conflicts with 0 of 1 printed by every municipal report despite positive counts; neither is rewritten. Each report retains its distinct native run time and unknown timezone. Absent separate write-in rows do not establish zero write-ins or invented absent-party rows. All eight complete CSVs, 112 candidate vectors, 56 contest-accounting vectors, 41 native statements, source receipt digests and portable offline reviewer are included. Independent PDF engines agree on every extracted fact. The public profile reproduces numerical facts, not omitted original web/PDF presentation templates; no template redistribution license is claimed. No new map, demographic turnout, final counting, certification or statewide completeness is approved.",
+      "tables": [
+        {"file": "county-participation.csv", "label": "Fulton County only: independently accounted ballots, native participation numerator, registrations, printed fraction and source qualifications (CSV)"},
+        {"file": "native-unit-participation.csv", "label": "Fulton County only: all thirteen municipal participation observations and contradictory native reporting counters, without geometry (CSV)"},
+        {"file": "county-candidate-results.csv", "label": "Fulton County only: all eight candidate/ticket lines across four contests, with every method count and native percentage (CSV)"},
+        {"file": "native-unit-candidate-results.csv", "label": "Fulton County only: all 104 municipal candidate/ticket lines, literal parties, native percentages and explicit zeroes (CSV)"},
+        {"file": "county-contest-accounting.csv", "label": "Fulton County only: all four native cast/under/overvote vectors and independently accounted ballots, separate from candidate totals (CSV)"},
+        {"file": "native-unit-contest-accounting.csv", "label": "Fulton County only: all 52 municipal contest-accounting vectors across mail, Election Day, provisional and total (CSV)"},
+        {"file": "native-source-statements.csv", "label": "Fulton County only: all 41 native participation/reporting statements and fourteen distinct report timestamps, without inferred timezones (CSV)"},
+        {"file": "county-literal-party-totals.csv", "label": "Fulton County only: all eight separate contest/literal-party candidate totals, not ballots or party turnout (CSV)"}
+      ],
+      "coverage": []
+    },
+    {
       "id": "pennsylvania-centre-20261106-01",
       "label": "Centre County, Pennsylvania 2026: complete numerical participation and candidate facts; unofficial and partial",
       "data_directory": "data/county-source-reviews/20261106-centre-facts-01",
