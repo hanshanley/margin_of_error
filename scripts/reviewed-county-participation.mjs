@@ -403,6 +403,50 @@ function loadLawrenceParticipation(reviews) {
   }];
 }
 
+function loadHuntingdonParticipation(reviews) {
+  const id = 'pennsylvania-huntingdon-20261106-01';
+  const matches = reviews.filter(review => review.id === id);
+  if (matches.length !== 1) throw new Error(`Missing or duplicated reviewed county source: ${id}`);
+  const review = matches[0], directory = resolve(review.data_directory);
+  for (const [file, digest] of Object.entries({
+    'county-participation.csv': '08f15f3fbde5886c9a74c4ce5a7c06e38531449fe7e4fad42f2825c824ee00d0',
+    'native-source-pages.csv': '82df1da987de8a3316208d9ce0d68c2a1b37ec1667f3bcd188e2ca7053c583e4',
+    'native-reporting-statements.csv': '31c5449c825652438725e538bd3bddca0a4a43649350463dbc5a6b15388f6f42',
+    'audit.json': 'bcc126c0182b210e7b6b16d234001dae781bcda8b77c15bb9c5660764b0ecfec',
+  })) {
+    if (createHash('sha256').update(readFileSync(resolve(directory, file))).digest('hex') !== digest)
+      throw new Error(`Invalid reviewed county participation: ${id} / ${file}`);
+  }
+  const rows = csv(resolve(directory, 'county-participation.csv'));
+  const pages = csv(resolve(directory, 'native-source-pages.csv'));
+  const audit = JSON.parse(readFileSync(resolve(directory, 'audit.json'), 'utf8'));
+  if (rows.length !== 1 || pages.length !== 2 || audit.maps_approved !== false
+    || audit.table_rows['native-candidate-results.csv'] !== 16)
+    throw new Error(`Incomplete reviewed county source: ${id}`);
+  const native = rows[0], ballots = Number(native.ballots_cast), denominator = Number(native.registered_voters);
+  if (native.election_date !== '2026-11-03' || native.state !== 'Pennsylvania' || native.county !== 'Huntingdon'
+    || native.source_fips !== '' || native.native_status_literal !== 'UNOFFICIAL RESULTS'
+    || native.source_update_literal !== '11/03/2026 9:56 PM' || native.declared_timezone !== ''
+    || ballots !== 16024 || denominator !== 27917 || native.blank_ballots !== '0'
+    || native.election_day_ballots !== '13855' || native.mail_ballots !== '2169'
+    || native.provisional_ballots !== '0' || native.native_printed_turnout !== '57.40%'
+    || Number(native.registered_turnout_percent) !== 100 * ballots / denominator)
+    throw new Error(`Invalid reviewed county participation: ${id}`);
+  return [{
+    year: 2026, state_code: 'PA', county_id: 'reviewed:PA:Huntingdon', county: 'Huntingdon',
+    geography_level: 'county', ballots, denominator, denominator_basis: 'native_registered_voters',
+    participation_measure_literal: native.native_participation_measure_literal,
+    reported_pct: 100 * ballots / denominator, native_printed_pct: native.native_printed_turnout,
+    source_status_literal: native.native_status_literal, reported_units: 58, total_units: 58,
+    source_rows: 1, maps_approved: false, review_id: id, native_record: native,
+    native_source_updates: [{ source: 'county', native_update_literal: native.source_update_literal,
+      declared_timezone: native.declared_timezone }],
+    source_update_label: `${native.source_update_literal} (timezone not declared)`,
+    source_reporting_label: audit.qualifications.join('; '), quality: audit.qualifications,
+    source_url: `${review.base_url}county-participation.csv`, complete_download_url: review.complete_download_url,
+  }];
+}
+
 export function loadReviewedCountyParticipation(reviews) {
   const observations = [], seen = new Set();
   for (const [id, ballotField, denominatorField, printedField, code, names] of profiles) {
@@ -773,5 +817,5 @@ export function loadReviewedCountyParticipation(reviews) {
   return [...observations, ...loadNewJerseyParticipation(reviews),
     ...loadCaliforniaParticipation(reviews).filter(row => row.geography_level === 'county'),
     ...loadGeorgiaParticipation(reviews).counties, ...loadReviewedMinnesotaParticipation(reviews),
-    ...loadLawrenceParticipation(reviews)];
+    ...loadLawrenceParticipation(reviews), ...loadHuntingdonParticipation(reviews)];
 }

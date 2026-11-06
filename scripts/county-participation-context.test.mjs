@@ -25,6 +25,41 @@ const copy = value => structuredClone(value);
 const match = (rows, candidateReview = review, code = 'AL', collection = collections[code]) =>
   contextualCountyRows(rows, candidateReview, collection, code, review.context_base_url, review.geometry[code].file);
 
+test('Huntingdon context17 preserves context16 and joins only the native registered-voter fraction', async () => {
+  const nextRoot = new URL('../public/participation-county-context/20261106-17/', import.meta.url);
+  const previousRoot = new URL('../public/participation-county-context/20261106-16/', import.meta.url);
+  const next = JSON.parse(readFileSync(new URL('review.json', nextRoot)));
+  const previous = JSON.parse(readFileSync(new URL('review.json', previousRoot)));
+  const nextRecords = JSON.parse(gunzipSync(readFileSync(new URL('complete-source-records.json.gz', nextRoot))));
+  const previousRecords = JSON.parse(gunzipSync(readFileSync(new URL('complete-source-records.json.gz', previousRoot))));
+  const id = 'pennsylvania-huntingdon-20261106-01';
+  const liveRecords = [...loadAdditionalParticipation().counties,
+    ...loadReviewedCountyParticipation(JSON.parse(readFileSync('public/participation-source-reviews.json')).reviews)];
+  assert.deepEqual(nextRecords, liveRecords);
+  assert.deepEqual(nextRecords.filter(row => row.review_id !== id), previousRecords);
+  assert.deepEqual(next.observations.filter(row => row.review_id !== id), previous.observations);
+  assert.deepEqual(next.excluded, previous.excluded);
+  assert.deepEqual(next.geometry, previous.geometry);
+  const loaded = loadCountyContextReview(liveRecords);
+  assert.deepEqual(loaded.counts, next.counts);
+  assert.equal(loaded.base_url, '/participation-county-context/20261106-17/');
+  assert.deepEqual(loaded.coverage.PA, { counties: 34, rates: 31 });
+  assert.deepEqual(next.counts, { complete_source_records: 1223, contextual_joins: 739, jurisdictions: 18,
+    reviewed_rates: 352, missing_rates: 387, excluded_municipalities: 286, excluded_missing_county_totals: 198 });
+  const collection = JSON.parse(readFileSync(new URL(next.geometry.PA.file, nextRoot)));
+  const rows = await contextualCountyRows(liveRecords.filter(row => row.state_code === 'PA'), next,
+    collection, 'PA', next.context_base_url, next.geometry.PA.file);
+  const huntingdon = rows.get('42061');
+  assert.equal(huntingdon.county, 'Huntingdon');
+  assert.equal(huntingdon.ballots, 16024);
+  assert.equal(huntingdon.denominator, 27917);
+  assert.equal(huntingdon.reported_pct, 100 * 16024 / 27917);
+  assert.equal(huntingdon.maps_approved, false);
+  assert.equal(huntingdon.native_record.source_fips, '');
+  assert.equal(next.observations.find(row => row.review_id === id).boundary_year, 2024);
+  assert.throws(() => loadCountyContextReview(previousRecords), /complete current source records/);
+});
+
 test('Lawrence context16 preserves context15 and joins only the reviewed county participation fraction', async () => {
   const nextRoot = new URL('../public/participation-county-context/20261106-16/', import.meta.url);
   const previousRoot = new URL('../public/participation-county-context/20261106-15/', import.meta.url);
@@ -35,15 +70,12 @@ test('Lawrence context16 preserves context15 and joins only the reviewed county 
   const id = 'pennsylvania-lawrence-20261106-01';
   const liveRecords = [...loadAdditionalParticipation().counties,
     ...loadReviewedCountyParticipation(JSON.parse(readFileSync('public/participation-source-reviews.json')).reviews)];
-  assert.deepEqual(nextRecords, liveRecords);
+  assert.deepEqual(nextRecords, liveRecords.filter(row => row.review_id !== 'pennsylvania-huntingdon-20261106-01'));
   assert.deepEqual(nextRecords.filter(row => row.review_id !== id), previousRecords);
   assert.deepEqual(next.observations.filter(row => row.review_id !== id), previous.observations);
   assert.deepEqual(next.excluded, previous.excluded);
   assert.deepEqual(next.geometry, previous.geometry);
-  const loaded = loadCountyContextReview(liveRecords);
-  assert.deepEqual(loaded.counts, next.counts);
-  assert.equal(loaded.base_url, '/participation-county-context/20261106-16/');
-  assert.deepEqual(loaded.coverage.PA, { counties: 33, rates: 30 });
+  assert.throws(() => loadCountyContextReview(nextRecords), /complete current source records/);
   assert.deepEqual(next.counts, { complete_source_records: 1222, contextual_joins: 738, jurisdictions: 18,
     reviewed_rates: 351, missing_rates: 387, excluded_municipalities: 286, excluded_missing_county_totals: 198 });
   const collection = JSON.parse(readFileSync(new URL(next.geometry.PA.file, nextRoot)));
@@ -68,7 +100,8 @@ test('Minnesota context15 preserves every old record and joins only complete nat
   assert.deepEqual(nextRecords, [...records, ...native]);
   const liveRecords = [...loadAdditionalParticipation().counties,
     ...loadReviewedCountyParticipation(JSON.parse(readFileSync('public/participation-source-reviews.json')).reviews)];
-  assert.deepEqual(nextRecords, liveRecords.filter(row => row.review_id !== 'pennsylvania-lawrence-20261106-01'));
+  assert.deepEqual(nextRecords, liveRecords.filter(row => ![
+    'pennsylvania-lawrence-20261106-01', 'pennsylvania-huntingdon-20261106-01'].includes(row.review_id)));
   assert.throws(() => loadCountyContextReview(nextRecords), /complete current source records/);
   assert.deepEqual(next.observations.filter(row => row.state_code !== 'MN'), review.observations);
   assert.deepEqual(next.excluded.slice(0, review.excluded.length), review.excluded);
@@ -91,7 +124,8 @@ test('complete county review reproduces without changing any source observations
   const liveRecords = [...loadAdditionalParticipation().counties,
     ...loadReviewedCountyParticipation(JSON.parse(readFileSync('public/participation-source-reviews.json')).reviews)];
   assert.deepEqual(records, liveRecords.filter(row =>
-    !['minnesota-bulk-participation-20261106-01', 'pennsylvania-lawrence-20261106-01'].includes(row.review_id)));
+    !['minnesota-bulk-participation-20261106-01', 'pennsylvania-lawrence-20261106-01',
+      'pennsylvania-huntingdon-20261106-01'].includes(row.review_id)));
   assert.deepEqual(createCountyContextReview(records, inventories, collections, investigation), review);
   assert.deepEqual(review.counts, { complete_source_records: 1134, contextual_joins: 662, jurisdictions: 17,
     reviewed_rates: 286, missing_rates: 376, excluded_municipalities: 286, excluded_missing_county_totals: 186 });

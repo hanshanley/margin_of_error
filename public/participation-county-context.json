@@ -1,11 +1,27 @@
 {
   "schema_version": 1,
-  "base_url": "/participation-county-context/20261106-16/",
-  "review_bytes": 1139418,
-  "review_sha256": "f3eb5a8543504f14664bcbd6d34172129c15c15171316641b8e65079e78db66c",
-  "complete_download_bytes": 2906180,
-  "complete_download_sha256": "56bed7373c4e63bd7ae0abfebdc18b1de76fe238ddb1ce9c0543f5e863c58c9c",
+  "base_url": "/participation-county-context/20261106-17/",
+  "review_bytes": 1140533,
+  "review_sha256": "e9a3336fd29285b1c1e986ee4c278364912921d75607ffc9628ea539ff4e77e4",
+  "complete_download_bytes": 2907404,
+  "complete_download_sha256": "afa791ae79125248ad1fedff6a9eb3d3d00dcb0f1118107f17f58770339c70a2",
   "downloads": [
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-17/county-participation-joins.csv",
+      "label": "Complete audited county participation joins: all 739 observations, including Huntingdon, Pennsylvania (CSV)"
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-17/review.json",
+      "label": "Complete county identity review, exclusions and native-counting qualifications (JSON)"
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-17/complete-source-records.json.gz",
+      "label": "Every county, municipal and reporting-unit inventory: all 1,223 records, preserving the previous 1,222 unchanged (JSON · gzip)"
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-17/complete-county-participation-context-17.zip",
+      "label": "Complete county participation context query, all original contextual geometries, full inventories and offline reproduction tools (ZIP)"
+    },
     {
       "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-16/county-participation-joins.csv",
       "label": "Complete audited county participation joins: all 738 observations, including Lawrence, Pennsylvania (CSV)"

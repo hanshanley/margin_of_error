@@ -1,6 +1,32 @@
 {
   "reviews": [
     {
+      "id": "pennsylvania-huntingdon-20261106-01",
+      "label": "Huntingdon County, Pennsylvania 2026: native ballots, registrations and complete numerical query",
+      "data_directory": "data/county-source-reviews/20261106-huntingdon-facts-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d5c37ef669bb868618764548dd26cc9355822cca/data/county-source-reviews/20261106-huntingdon-facts-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-huntingdon-20261106-01/complete-huntingdon-2026-numerical-facts-01.zip",
+      "complete_download_bytes": 16031,
+      "complete_download_sha256": "138adf107c0d628e14d78d2e11d0426abfd7fb61c330c066e25bd5127eccf8b7",
+      "review_status": "complete_numerical_query_reviewed_unofficial",
+      "maps_approved": false,
+      "scope_note": "Native 16,024 ballots / 27,917 registrations, printed 57.40%; not CVAP/VAP/VEP or demographic turnout. Preserve 13,855 Election Day, 2,169 Mail Votes, explicit provisional and blank zeros, literal candidate parties, native overvotes/undervotes and district accounting. The 11/03/2026 9:56 PM clock has no supplied timezone. Unofficial, 58/58 complete and 0/58 partially reported do not establish certification or finished counting. State-House accounting vectors sum to county ballots, not a verified geographic partition or supplied district electorate. The declared URL says Primary, while the actual response disposition and both PDF pages identify the general election. Certificate-chain and same-peer hostname checks pass without disabling verification. All thirteen entire assets and pinned files, twelve archive members and extracted standard-library reproduction pass. Native FIPS is missing; separately reviewed Census context does not certify 2026 election reporting boundaries. Original HTML/PDF templates stay private.",
+      "tables": [
+        {"file": "county-participation.csv", "label": "Huntingdon: complete county ballots, registrations, blank ballots and modes (CSV)"},
+        {"file": "native-candidate-results.csv", "label": "Huntingdon: all sixteen native candidate and write-in rows across five contests (CSV)"},
+        {"file": "native-contest-accounting.csv", "label": "Huntingdon: all ten native overvote and undervote rows, separate from selections (CSV)"},
+        {"file": "county-contest-accounting.csv", "label": "Huntingdon: all twenty derived contest-mode reconciliations, not district electorates (CSV)"},
+        {"file": "county-literal-party-totals.csv", "label": "Huntingdon: all forty-four separately scoped candidate-party mode totals (CSV)"},
+        {"file": "native-reporting-statements.csv", "label": "Huntingdon: all four native reporting and completeness statements (CSV)"},
+        {"file": "native-source-pages.csv", "label": "Huntingdon: complete two-page native inventory, status and clock (CSV)"},
+        {"file": "source-records.json.gz", "label": "Huntingdon: complete independently extracted numerical source records (JSON · gzip)"},
+        {"file": "source-receipts.json", "label": "Huntingdon: both entire original-response receipts and byte hashes (JSON)"},
+        {"file": "review-huntingdon-county-results.py", "label": "Huntingdon: complete standard-library offline query reproducer (Python)"},
+        {"file": "audit.json", "label": "Huntingdon: complete query reconciliation and scope qualifications (JSON)"},
+        {"file": "checksums.json", "label": "Huntingdon: complete factual-query byte inventory (JSON)"}
+      ]
+    },
+    {
       "id": "pennsylvania-lawrence-20261106-01",
       "label": "Lawrence County, Pennsylvania 2026: native ballots, registrations and complete numerical query",
       "data_directory": "data/county-source-reviews/20261106-lawrence-facts-01",

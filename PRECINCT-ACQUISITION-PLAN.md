@@ -23,8 +23,27 @@ registration denominator. Seven full tables, complete factual inputs, receipts,
 audit and portable reviewer form a **13-file / 12-member** query; six focused
 tests pass, including extracted standard-library byte-identical reproduction.
 Original source HTML/PDF templates stay private; native FIPS remains missing.
-Facts: `20261106-huntingdon-facts-01`; publication and explorer integration
-remain pending. Do not call Huntingdon live until exact production verification.
+Facts: `20261106-huntingdon-facts-01`, fixed revision
+`d5c37ef669bb868618764548dd26cc9355822cca`, release **436548427**.
+All **13 anonymous entire assets / 13 pinned files / 12 archive members**,
+extracted standard-library reproduction and credential jobs **42227499497 /
+42227506750** pass. Independently reviewed context17, fixed revision
+`62f1665b3cfec842e89682537ee288ee6cf1dce6`, release **436551842**, preserves
+all **1,222 previous records / 738 previous joins / 18 geometries**, adding
+only Huntingdon's reviewed identity and fraction: **1,223 records / 739 joins /
+352 rates / 387 missing rates**. All **four complete assets / 32 pinned files /
+31 members**, offline reproduction and exact credential jobs **42227926095 /
+42227929274** pass. Local integration passes **93 focused tests**, Astro check,
+build and **seven browser scenarios**, preserving every previous source record,
+all 724 previous anchors and all eighteen complete imports. The native table
+has **358 rows / 34 Pennsylvania rows**, with **741 anchors / 737 distinct URLs**.
+Preparation verifies **259 entire remote downloads** and measures **979,518,771
+local bytes**. Exactly 32 redundant context10/11 geometry copies relocate to
+their full, byte-verified pinned originals, saving **11,271,562 build-only bytes**;
+current interactive geometry and historical complete queries remain unchanged.
+Local proof: `20261106-huntingdon-explorer-01/local-validation.json` and
+`local-browser.json`. Actual hosted capacity, exact deployment and production
+browser verification remain pending. Do not call Huntingdon live yet.
 
 **November 6, 13:33 UTC: Lawrence participation and context16 LIVE verified.**
 Exact UI **`debbd15acc38562cdda7d12d9210186d1a64fd1c`**, Pages

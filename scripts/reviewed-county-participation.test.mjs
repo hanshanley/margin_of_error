@@ -11,7 +11,7 @@ import { loadReviewedCountyParticipation, loadReviewedStatewideParticipation,
 const reviews = JSON.parse(readFileSync('public/participation-source-reviews.json', 'utf8')).reviews;
 const batchCounties = ['Juniata', 'Mercer', 'Montour', 'Columbia', 'Greene', 'Lycoming'];
 const isBatch = row => ['CA', 'GA', 'MN'].includes(row.state_code)
-  || row.state_code === 'PA' && [...batchCounties, 'Lawrence'].includes(row.county);
+  || row.state_code === 'PA' && [...batchCounties, 'Lawrence', 'Huntingdon'].includes(row.county);
 
 test('Minnesota preserves all 87 native inventories without treating partial subtotals as county participation', () => {
   const rows = loadReviewedMinnesotaParticipation(reviews);
@@ -89,7 +89,7 @@ test('adds all 159 Georgia native county observations without changing the prior
   const oldReviewed = previous.filter(row => rows.some(current => current.county_id === row.county_id
     && current.state_code === row.state_code));
   assert.deepEqual(rows.filter(row => !['GA', 'MN'].includes(row.state_code)
-    && !['Lycoming', 'Lawrence'].includes(row.county)), oldReviewed);
+    && !['Lycoming', 'Lawrence', 'Huntingdon'].includes(row.county)), oldReviewed);
   const counties = rows.filter(row => row.state_code === 'GA');
   const source = reviews.find(row => row.id === 'georgia-bulk-participation-20261106-01');
   const native = parse(readFileSync(join(source.data_directory, 'county-participation.csv')), { columns: true });
@@ -167,7 +167,7 @@ test('preserves all context10 observations and separates Columbia participation 
   const oldReviewed = previous.filter(row => rows.some(current => current.county_id === row.county_id
     && current.state_code === row.state_code));
   assert.deepEqual(rows.filter(row => !['pennsylvania-columbia-20261106-01',
-    'pennsylvania-greene-20261106-01', 'pennsylvania-lycoming-20261106-01', 'pennsylvania-lawrence-20261106-01',
+    'pennsylvania-greene-20261106-01', 'pennsylvania-lycoming-20261106-01', 'pennsylvania-lawrence-20261106-01', 'pennsylvania-huntingdon-20261106-01',
     'georgia-bulk-participation-20261106-01', 'minnesota-bulk-participation-20261106-01'].includes(row.review_id)), oldReviewed);
   const row = rows.find(row => row.review_id === 'pennsylvania-columbia-20261106-01');
   assert.equal(row.ballots, 22583);
@@ -199,7 +199,7 @@ test('adds all California native participation records while preserving every pr
     && current.state_code === row.state_code));
   assert.deepEqual(rows.filter(row => !['CA', 'GA', 'MN'].includes(row.state_code)
     && !['pennsylvania-columbia-20261106-01', 'pennsylvania-greene-20261106-01',
-      'pennsylvania-lycoming-20261106-01', 'pennsylvania-lawrence-20261106-01'].includes(row.review_id)), oldReviewed);
+      'pennsylvania-lycoming-20261106-01', 'pennsylvania-lawrence-20261106-01', 'pennsylvania-huntingdon-20261106-01'].includes(row.review_id)), oldReviewed);
   const source = reviews.find(row => row.id === 'california-bulk-participation-20261106-01');
   const native = parse(readFileSync(join(source.data_directory, 'county-participation.csv'), 'utf8'),
     { columns: true });
@@ -711,7 +711,7 @@ test('preserves context11 and loads Greene ballots without inventing its missing
   const oldReviewed = previous.filter(row => rows.some(current => current.county_id === row.county_id
     && current.state_code === row.state_code));
   assert.deepEqual(rows.filter(row => !['pennsylvania-greene-20261106-01', 'pennsylvania-lycoming-20261106-01',
-    'pennsylvania-lawrence-20261106-01',
+    'pennsylvania-lawrence-20261106-01', 'pennsylvania-huntingdon-20261106-01',
     'georgia-bulk-participation-20261106-01', 'minnesota-bulk-participation-20261106-01'].includes(row.review_id)), oldReviewed);
   const row = rows.find(row => row.review_id === 'pennsylvania-greene-20261106-01');
   const source = reviews.find(source => source.id === row.review_id);
@@ -739,8 +739,8 @@ test('preserves context11 and loads Greene ballots without inventing its missing
 
 test('loads all reviewed county participation without promoting map coverage', () => {
   const rows = loadReviewedCountyParticipation(reviews);
-  assert.equal(rows.length, 357);
-  assert.equal(rows.filter(row => row.state_code === 'PA').length, 33);
+  assert.equal(rows.length, 358);
+  assert.equal(rows.filter(row => row.state_code === 'PA').length, 34);
   assert.equal(rows.filter(row => row.state_code === 'DC').length, 1);
   assert.equal(rows.filter(row => row.state_code === 'NJ').length, 19);
   assert.equal(rows.filter(row => row.state_code === 'CA').length, 58);
@@ -749,7 +749,7 @@ test('loads all reviewed county participation without promoting map coverage', (
   assert.ok(rows.every(row => row.maps_approved === false));
   assert.ok(rows.filter(row => !['CA', 'MN'].includes(row.state_code)
     && !['pennsylvania-columbia-20261106-01', 'pennsylvania-greene-20261106-01', 'pennsylvania-lycoming-20261106-01',
-      'pennsylvania-lawrence-20261106-01']
+      'pennsylvania-lawrence-20261106-01', 'pennsylvania-huntingdon-20261106-01']
       .includes(row.review_id)).every(row => row.reported_units === null));
   const monroe = rows.find(row => row.county === 'Monroe');
   assert.equal(monroe.county_id, 'reviewed:PA:Monroe');
@@ -770,7 +770,7 @@ test('preserves all context13 county records and keeps Lycoming ballots separate
   const oldReviewed = previous.filter(row => rows.some(current => current.county_id === row.county_id
     && current.state_code === row.state_code));
   assert.deepEqual(rows.filter(row => row.state_code !== 'MN'
-    && !['pennsylvania-lycoming-20261106-01', 'pennsylvania-lawrence-20261106-01'].includes(row.review_id)), oldReviewed);
+    && !['pennsylvania-lycoming-20261106-01', 'pennsylvania-lawrence-20261106-01', 'pennsylvania-huntingdon-20261106-01'].includes(row.review_id)), oldReviewed);
   const row = rows.find(row => row.review_id === 'pennsylvania-lycoming-20261106-01');
   const source = reviews.find(source => source.id === row.review_id);
   assert.deepEqual(row.native_record, parse(readFileSync(join(source.data_directory,
@@ -804,8 +804,10 @@ test('preserves all context15 records and separates Lawrence county participatio
     'public/participation-county-context/20261106-15/complete-source-records.json.gz')));
   const oldReviewed = previous.filter(row => rows.some(current => current.county_id === row.county_id
     && current.state_code === row.state_code));
-  assert.deepEqual(rows.filter(row => row.review_id !== 'pennsylvania-lawrence-20261106-01'), oldReviewed);
-  const row = rows.at(-1), source = reviews.find(source => source.id === row.review_id);
+  assert.deepEqual(rows.filter(row => !['pennsylvania-lawrence-20261106-01',
+    'pennsylvania-huntingdon-20261106-01'].includes(row.review_id)), oldReviewed);
+  const row = rows.find(row => row.review_id === 'pennsylvania-lawrence-20261106-01');
+  const source = reviews.find(source => source.id === row.review_id);
   assert.deepEqual(row.native_record, parse(readFileSync(join(source.data_directory,
     'county-participation.csv')), { columns: true })[0]);
   assert.equal(row.ballots, 31401);
@@ -834,6 +836,54 @@ test('preserves all context15 records and separates Lawrence county participatio
 test('Lawrence rejects changed complete inputs and missing or duplicate source registrations', () => {
   const original = reviews.find(row => row.id === 'pennsylvania-lawrence-20261106-01');
   const directory = mkdtempSync(join(tmpdir(), 'lawrence-participation-'));
+  try {
+    const files = ['county-participation.csv', 'native-source-pages.csv', 'native-reporting-statements.csv', 'audit.json'];
+    const altered = reviews.map(row => row === original ? { ...row, data_directory: directory } : row);
+    for (const changed of files) {
+      for (const file of files) copyFileSync(join(original.data_directory, file), join(directory, file));
+      writeFileSync(join(directory, changed), readFileSync(join(directory, changed), 'utf8') + '\n');
+      assert.throws(() => loadReviewedCountyParticipation(altered), /Invalid reviewed county participation/);
+    }
+    for (const registrations of [reviews.filter(row => row !== original), [...reviews, original]])
+      assert.throws(() => loadReviewedCountyParticipation(registrations), /Missing or duplicated reviewed county source/);
+  } finally {
+    rmSync(directory, { recursive: true, force: true });
+  }
+});
+
+test('Huntingdon preserves every context16 record and its complete native participation query', () => {
+  const rows = loadReviewedCountyParticipation(reviews);
+  const previous = JSON.parse(gunzipSync(readFileSync(
+    'public/participation-county-context/20261106-16/complete-source-records.json.gz')));
+  const oldReviewed = previous.filter(row => rows.some(current => current.county_id === row.county_id
+    && current.state_code === row.state_code));
+  const row = rows.at(-1), source = reviews.find(source => source.id === row.review_id);
+  assert.deepEqual(rows.slice(0, -1), oldReviewed);
+  assert.equal(row.county, 'Huntingdon');
+  assert.deepEqual(row.native_record, parse(readFileSync(join(source.data_directory,
+    'county-participation.csv')), { columns: true })[0]);
+  assert.equal(row.ballots, 16024);
+  assert.equal(row.denominator, 27917);
+  assert.equal(row.reported_pct, 100 * 16024 / 27917);
+  assert.equal(row.native_printed_pct, '57.40%');
+  assert.equal(row.native_record.source_fips, '');
+  assert.equal(row.native_record.provisional_ballots, '0');
+  assert.equal(row.native_record.blank_ballots, '0');
+  assert.equal(row.maps_approved, false);
+  assert.deepEqual(row.native_source_updates, [
+    { source: 'county', native_update_literal: '11/03/2026 9:56 PM', declared_timezone: '' },
+  ]);
+  assert.match(row.source_reporting_label, /58\/58 complete.*do not establish certification/);
+  assert.match(row.source_reporting_label, /not a verified geographic partition/);
+  const publication = JSON.parse(readFileSync(
+    'data/county-source-reviews/20261106-huntingdon-publication-01/release-verification.json'));
+  assert.deepEqual(new Set([...source.tables.map(row => row.file), source.complete_download_url.split('/').at(-1)]),
+    new Set(publication.files.map(row => row.file)));
+});
+
+test('Huntingdon rejects changed complete inputs and missing or duplicate source registrations', () => {
+  const original = reviews.find(row => row.id === 'pennsylvania-huntingdon-20261106-01');
+  const directory = mkdtempSync(join(tmpdir(), 'huntingdon-participation-'));
   try {
     const files = ['county-participation.csv', 'native-source-pages.csv', 'native-reporting-statements.csv', 'audit.json'];
     const altered = reviews.map(row => row === original ? { ...row, data_directory: directory } : row);

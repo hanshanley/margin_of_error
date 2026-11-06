@@ -1,0 +1,260 @@
+{
+  "verified_at_utc": "2026-11-06T13:49:06.294659+00:00",
+  "focused_tests": 93,
+  "astro_errors": 0,
+  "astro_warnings": 0,
+  "astro_hints": 5,
+  "build_passed": true,
+  "entire_remote_downloads_verified": 259,
+  "local_prepared_site_bytes": 979518771,
+  "local_headroom_bytes": 20481229,
+  "production_selected_entire_file_count": 405,
+  "redundant_context10_11_geometry_copies": 32,
+  "redundant_build_only_bytes_removed": 11271562,
+  "original_query_files_unchanged": true,
+  "relocated_files": [
+    {
+      "path": "/participation-county-context/20261106-10/geometry/county-AL.geojson",
+      "name": "county-AL.geojson",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/47a0efe3e75e9498d89340a7c50e3b311f55c5dc/public/participation-county-context/20261106-10/geometry/county-AL.geojson",
+      "bytes": 370354,
+      "sha256": "67b03de3aa281430aeae575360c932074111be88289c081ec80d978067e095ec"
+    },
+    {
+      "path": "/participation-county-context/20261106-10/geometry/county-AR.geojson",
+      "name": "county-AR.geojson",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/47a0efe3e75e9498d89340a7c50e3b311f55c5dc/public/participation-county-context/20261106-10/geometry/county-AR.geojson",
+      "bytes": 422329,
+      "sha256": "addb5be81e6694681a8edb96575c29cf014158e50ae189facbd96f76892a8e2a"
+    },
+    {
+      "path": "/participation-county-context/20261106-10/geometry/county-AZ.geojson",
+      "name": "county-AZ.geojson",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/47a0efe3e75e9498d89340a7c50e3b311f55c5dc/public/participation-county-context/20261106-10/geometry/county-AZ.geojson",
+      "bytes": 195541,
+      "sha256": "0837a91e1b1ae37535b1256afe90ab70955b50872c98f9133a4e56b843252eec"
+    },
+    {
+      "path": "/participation-county-context/20261106-10/geometry/county-CA.geojson",
+      "name": "county-CA.geojson",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/47a0efe3e75e9498d89340a7c50e3b311f55c5dc/public/participation-county-context/20261106-10/geometry/county-CA.geojson",
+      "bytes": 777815,
+      "sha256": "fc167d02493b97c385eba9625bce506b9b9f93c5e0a9a69af6b9cf052b556e7a"
+    },
+    {
+      "path": "/participation-county-context/20261106-10/geometry/county-DC.geojson",
+      "name": "county-DC.geojson",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/47a0efe3e75e9498d89340a7c50e3b311f55c5dc/public/participation-county-context/20261106-10/geometry/county-DC.geojson",
+      "bytes": 1724,
+      "sha256": "e111ef8f1b7ab1873b096c6075e63ddc5aa1ae370def71ee8523a2a7b2f3b002"
+    },
+    {
+      "path": "/participation-county-context/20261106-10/geometry/county-FL.geojson",
+      "name": "county-FL.geojson",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/47a0efe3e75e9498d89340a7c50e3b311f55c5dc/public/participation-county-context/20261106-10/geometry/county-FL.geojson",
+      "bytes": 494363,
+      "sha256": "d8d21d51dd475bc23c1b10fa0aa151b1591f1c681dfa9c31ce8d94f1b4713f47"
+    },
+    {
+      "path": "/participation-county-context/20261106-10/geometry/county-IA.geojson",
+      "name": "county-IA.geojson",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/47a0efe3e75e9498d89340a7c50e3b311f55c5dc/public/participation-county-context/20261106-10/geometry/county-IA.geojson",
+      "bytes": 102952,
+      "sha256": "c4ae2cd4fbac01725cfcf4d9e20815d41c149044a9b73665903135d34561e8ee"
+    },
+    {
+      "path": "/participation-county-context/20261106-10/geometry/county-KY.geojson",
+      "name": "county-KY.geojson",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/47a0efe3e75e9498d89340a7c50e3b311f55c5dc/public/participation-county-context/20261106-10/geometry/county-KY.geojson",
+      "bytes": 844982,
+      "sha256": "f9d2e0f8bd3e72f22d7ff6a530450d6e5e5bbad83f5dd02c32648a3207ef5eac"
+    },
+    {
+      "path": "/participation-county-context/20261106-10/geometry/county-MO.geojson",
+      "name": "county-MO.geojson",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/47a0efe3e75e9498d89340a7c50e3b311f55c5dc/public/participation-county-context/20261106-10/geometry/county-MO.geojson",
+      "bytes": 285841,
+      "sha256": "b9b8a05f01088fdcabb2c0aaf52f1dbd325282481a76454a2bd428a33b11795c"
+    },
+    {
+      "path": "/participation-county-context/20261106-10/geometry/county-NJ.geojson",
+      "name": "county-NJ.geojson",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/47a0efe3e75e9498d89340a7c50e3b311f55c5dc/public/participation-county-context/20261106-10/geometry/county-NJ.geojson",
+      "bytes": 139257,
+      "sha256": "489eabbafe98495645d95ddb65581f5204b3bd7871b001d02d3aaa3ffa11733b"
+    },
+    {
+      "path": "/participation-county-context/20261106-10/geometry/county-NV.geojson",
+      "name": "county-NV.geojson",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/47a0efe3e75e9498d89340a7c50e3b311f55c5dc/public/participation-county-context/20261106-10/geometry/county-NV.geojson",
+      "bytes": 72248,
+      "sha256": "f67a18f6d0ca4799ba9579f3628054282411310987f64378ec41cbc5fefe28c4"
+    },
+    {
+      "path": "/participation-county-context/20261106-10/geometry/county-OR.geojson",
+      "name": "county-OR.geojson",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/47a0efe3e75e9498d89340a7c50e3b311f55c5dc/public/participation-county-context/20261106-10/geometry/county-OR.geojson",
+      "bytes": 297700,
+      "sha256": "86f79f21252fdeef6d5c06525f909e2578f6119c158bfe10b51fecb72609e6eb"
+    },
+    {
+      "path": "/participation-county-context/20261106-10/geometry/county-PA.geojson",
+      "name": "county-PA.geojson",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/47a0efe3e75e9498d89340a7c50e3b311f55c5dc/public/participation-county-context/20261106-10/geometry/county-PA.geojson",
+      "bytes": 298398,
+      "sha256": "02c17862c97cddf64a70ade6596e11c7bd8fe5707ba83bca3910172354b9b58a"
+    },
+    {
+      "path": "/participation-county-context/20261106-10/geometry/county-VA.geojson",
+      "name": "county-VA.geojson",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/47a0efe3e75e9498d89340a7c50e3b311f55c5dc/public/participation-county-context/20261106-10/geometry/county-VA.geojson",
+      "bytes": 840683,
+      "sha256": "825295417afcfafdd28dd7856edda31cdc0dc8a0d7c9b00abafdac90c38176da"
+    },
+    {
+      "path": "/participation-county-context/20261106-10/geometry/county-WA.geojson",
+      "name": "county-WA.geojson",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/47a0efe3e75e9498d89340a7c50e3b311f55c5dc/public/participation-county-context/20261106-10/geometry/county-WA.geojson",
+      "bytes": 395414,
+      "sha256": "b7170c2d2ea13d6ddc1541ea184b5cae1135412be35c041149e5aa8a09eb55f8"
+    },
+    {
+      "path": "/participation-county-context/20261106-10/geometry/county-WY.geojson",
+      "name": "county-WY.geojson",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/47a0efe3e75e9498d89340a7c50e3b311f55c5dc/public/participation-county-context/20261106-10/geometry/county-WY.geojson",
+      "bytes": 96180,
+      "sha256": "19eca7f10211ad57da4589ef2969d8817a241d90381a2ff4d1b513851d8ca777"
+    },
+    {
+      "path": "/participation-county-context/20261106-11/geometry/county-AL.geojson",
+      "name": "county-AL.geojson",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/784d261600f349073d3cf74ba8d168595cf6a46e/public/participation-county-context/20261106-11/geometry/county-AL.geojson",
+      "bytes": 370354,
+      "sha256": "67b03de3aa281430aeae575360c932074111be88289c081ec80d978067e095ec"
+    },
+    {
+      "path": "/participation-county-context/20261106-11/geometry/county-AR.geojson",
+      "name": "county-AR.geojson",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/784d261600f349073d3cf74ba8d168595cf6a46e/public/participation-county-context/20261106-11/geometry/county-AR.geojson",
+      "bytes": 422329,
+      "sha256": "addb5be81e6694681a8edb96575c29cf014158e50ae189facbd96f76892a8e2a"
+    },
+    {
+      "path": "/participation-county-context/20261106-11/geometry/county-AZ.geojson",
+      "name": "county-AZ.geojson",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/784d261600f349073d3cf74ba8d168595cf6a46e/public/participation-county-context/20261106-11/geometry/county-AZ.geojson",
+      "bytes": 195541,
+      "sha256": "0837a91e1b1ae37535b1256afe90ab70955b50872c98f9133a4e56b843252eec"
+    },
+    {
+      "path": "/participation-county-context/20261106-11/geometry/county-CA.geojson",
+      "name": "county-CA.geojson",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/784d261600f349073d3cf74ba8d168595cf6a46e/public/participation-county-context/20261106-11/geometry/county-CA.geojson",
+      "bytes": 777815,
+      "sha256": "fc167d02493b97c385eba9625bce506b9b9f93c5e0a9a69af6b9cf052b556e7a"
+    },
+    {
+      "path": "/participation-county-context/20261106-11/geometry/county-DC.geojson",
+      "name": "county-DC.geojson",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/784d261600f349073d3cf74ba8d168595cf6a46e/public/participation-county-context/20261106-11/geometry/county-DC.geojson",
+      "bytes": 1724,
+      "sha256": "e111ef8f1b7ab1873b096c6075e63ddc5aa1ae370def71ee8523a2a7b2f3b002"
+    },
+    {
+      "path": "/participation-county-context/20261106-11/geometry/county-FL.geojson",
+      "name": "county-FL.geojson",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/784d261600f349073d3cf74ba8d168595cf6a46e/public/participation-county-context/20261106-11/geometry/county-FL.geojson",
+      "bytes": 494363,
+      "sha256": "d8d21d51dd475bc23c1b10fa0aa151b1591f1c681dfa9c31ce8d94f1b4713f47"
+    },
+    {
+      "path": "/participation-county-context/20261106-11/geometry/county-IA.geojson",
+      "name": "county-IA.geojson",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/784d261600f349073d3cf74ba8d168595cf6a46e/public/participation-county-context/20261106-11/geometry/county-IA.geojson",
+      "bytes": 102952,
+      "sha256": "c4ae2cd4fbac01725cfcf4d9e20815d41c149044a9b73665903135d34561e8ee"
+    },
+    {
+      "path": "/participation-county-context/20261106-11/geometry/county-KY.geojson",
+      "name": "county-KY.geojson",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/784d261600f349073d3cf74ba8d168595cf6a46e/public/participation-county-context/20261106-11/geometry/county-KY.geojson",
+      "bytes": 844982,
+      "sha256": "f9d2e0f8bd3e72f22d7ff6a530450d6e5e5bbad83f5dd02c32648a3207ef5eac"
+    },
+    {
+      "path": "/participation-county-context/20261106-11/geometry/county-MO.geojson",
+      "name": "county-MO.geojson",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/784d261600f349073d3cf74ba8d168595cf6a46e/public/participation-county-context/20261106-11/geometry/county-MO.geojson",
+      "bytes": 285841,
+      "sha256": "b9b8a05f01088fdcabb2c0aaf52f1dbd325282481a76454a2bd428a33b11795c"
+    },
+    {
+      "path": "/participation-county-context/20261106-11/geometry/county-NJ.geojson",
+      "name": "county-NJ.geojson",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/784d261600f349073d3cf74ba8d168595cf6a46e/public/participation-county-context/20261106-11/geometry/county-NJ.geojson",
+      "bytes": 139257,
+      "sha256": "489eabbafe98495645d95ddb65581f5204b3bd7871b001d02d3aaa3ffa11733b"
+    },
+    {
+      "path": "/participation-county-context/20261106-11/geometry/county-NV.geojson",
+      "name": "county-NV.geojson",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/784d261600f349073d3cf74ba8d168595cf6a46e/public/participation-county-context/20261106-11/geometry/county-NV.geojson",
+      "bytes": 72248,
+      "sha256": "f67a18f6d0ca4799ba9579f3628054282411310987f64378ec41cbc5fefe28c4"
+    },
+    {
+      "path": "/participation-county-context/20261106-11/geometry/county-OR.geojson",
+      "name": "county-OR.geojson",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/784d261600f349073d3cf74ba8d168595cf6a46e/public/participation-county-context/20261106-11/geometry/county-OR.geojson",
+      "bytes": 297700,
+      "sha256": "86f79f21252fdeef6d5c06525f909e2578f6119c158bfe10b51fecb72609e6eb"
+    },
+    {
+      "path": "/participation-county-context/20261106-11/geometry/county-PA.geojson",
+      "name": "county-PA.geojson",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/784d261600f349073d3cf74ba8d168595cf6a46e/public/participation-county-context/20261106-11/geometry/county-PA.geojson",
+      "bytes": 298398,
+      "sha256": "02c17862c97cddf64a70ade6596e11c7bd8fe5707ba83bca3910172354b9b58a"
+    },
+    {
+      "path": "/participation-county-context/20261106-11/geometry/county-VA.geojson",
+      "name": "county-VA.geojson",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/784d261600f349073d3cf74ba8d168595cf6a46e/public/participation-county-context/20261106-11/geometry/county-VA.geojson",
+      "bytes": 840683,
+      "sha256": "825295417afcfafdd28dd7856edda31cdc0dc8a0d7c9b00abafdac90c38176da"
+    },
+    {
+      "path": "/participation-county-context/20261106-11/geometry/county-WA.geojson",
+      "name": "county-WA.geojson",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/784d261600f349073d3cf74ba8d168595cf6a46e/public/participation-county-context/20261106-11/geometry/county-WA.geojson",
+      "bytes": 395414,
+      "sha256": "b7170c2d2ea13d6ddc1541ea184b5cae1135412be35c041149e5aa8a09eb55f8"
+    },
+    {
+      "path": "/participation-county-context/20261106-11/geometry/county-WY.geojson",
+      "name": "county-WY.geojson",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/784d261600f349073d3cf74ba8d168595cf6a46e/public/participation-county-context/20261106-11/geometry/county-WY.geojson",
+      "bytes": 96180,
+      "sha256": "19eca7f10211ad57da4589ef2969d8817a241d90381a2ff4d1b513851d8ca777"
+    }
+  ],
+  "logs": {
+    "focused_tests": {
+      "bytes": 23927,
+      "sha256": "4d1d96e18c6c7679411f16e0148ff026427c173c27f3bb8f6cfee70f22d30acf"
+    },
+    "astro_check": {
+      "bytes": 1915,
+      "sha256": "617294c9f9d3d5d95842f6c56fd9f7e8c45a79bb37a3b97af34981df885a32a7"
+    },
+    "build": {
+      "bytes": 5782,
+      "sha256": "d9298cc049cf30f8bf8e9d8024c850cf495dc6f65a785e396847d19216a380a4"
+    },
+    "preparation": {
+      "bytes": 74,
+      "sha256": "dfe8c4201718161fc8dfccfc869cdb4f24008a02de9ae7d11ead3d0daa250dac"
+    }
+  },
+  "scope": "Local validation only. Actual hosted size, exact deployed revision and production browser verification remain pending."
+}
