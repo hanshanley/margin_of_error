@@ -1,0 +1,68 @@
+{
+  "status": "complete_primary_acquisition_not_published_participation",
+  "county": "Adams",
+  "state_code": "PA",
+  "report_election_date": "2026-11-03",
+  "source_status_literal": "UNOFFICIAL RESULTS",
+  "receipts": {
+    "official-index.html": {
+      "url": "https://www.adamscountypa.gov/departments/electionsandvoterregistration/electionresults",
+      "resolved_url": "https://www.adamscountypa.gov/departments/electionsandvoterregistration/electionresults",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 76233,
+      "sha256": "8665000f520cac5c6287547bf1d9a3d0e8bdff9c242e589a20b380744af89d10",
+      "retrieved_at_utc": "2026-11-06T03:31:55.087049+00:00"
+    },
+    "summary.pdf": {
+      "url": "https://www.adamscountypa.gov/getmedia/369dc41b-5483-43fc-82c1-8bbb7b187ad0/ElectionSummary2026General.pdf",
+      "resolved_url": "https://www.adamscountypa.gov/getmedia/369dc41b-5483-43fc-82c1-8bbb7b187ad0/ElectionSummary2026General.pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 7852,
+      "sha256": "45676e7dee476e9f43c03994e484b6906fc199b23dcd20fadf174a8988435654",
+      "retrieved_at_utc": "2026-11-06T03:32:17.238407+00:00"
+    },
+    "precinct.pdf": {
+      "url": "https://www.adamscountypa.gov/getmedia/0999a217-97b2-477c-ad02-1383ab2d17a5/PrecinctSummary2026General.pdf",
+      "resolved_url": "https://www.adamscountypa.gov/getmedia/0999a217-97b2-477c-ad02-1383ab2d17a5/PrecinctSummary2026General.pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 268605,
+      "sha256": "e116dcae3bc87b3d5d4332bfc443de464ca0e38698f87f2635ea53da0a4116de",
+      "retrieved_at_utc": "2026-11-06T03:32:17.428391+00:00"
+    },
+    "terms.pdf": {
+      "url": "https://www.adamscountypa.gov/getmedia/f8d658bb-5b6b-45f5-8a58-5151938c9443/AdamsCountyTermsOfUse.pdf",
+      "resolved_url": "https://www.adamscountypa.gov/getmedia/f8d658bb-5b6b-45f5-8a58-5151938c9443/AdamsCountyTermsOfUse.pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 91838,
+      "sha256": "829e61ea10cd04f1835f5610ec9214e8a093e0b267b900d91499f3e85cdf15f1",
+      "retrieved_at_utc": "2026-11-06T03:45:42.031798+00:00"
+    },
+    "privacy.pdf": {
+      "url": "https://www.adamscountypa.gov/getmedia/6f55f761-8ee8-4c32-9760-7e20b65a40af/AdamsCountyWebsitePrivacyStatement.pdf",
+      "resolved_url": "https://www.adamscountypa.gov/getmedia/6f55f761-8ee8-4c32-9760-7e20b65a40af/AdamsCountyWebsitePrivacyStatement.pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 210707,
+      "sha256": "85e031c5aa7c13e8f77853cedef5317dc5fa555eb3356bd70d171eb475213ae8",
+      "retrieved_at_utc": "2026-11-06T03:45:42.475857+00:00"
+    }
+  },
+  "independent_pdf_extraction_engines": [
+    "PyMuPDF",
+    "pypdf"
+  ],
+  "election_report_pages": 109,
+  "public_source_templates_redistributed": false,
+  "participation_registration_approved": false,
+  "maps_approved": false,
+  "remaining_review": [
+    "Independent reconciliation of all county/unit participation, contest and method counts",
+    "Keep received-mail and counted-mail observations distinct",
+    "Keep 53 partially reported precincts distinct from reporting counter",
+    "Complete reproducible numerical-facts packaging without claiming a source-template license"
+  ]
+}

@@ -1,5 +1,5 @@
 import { readFileSync } from 'node:fs';
-import { basename, resolve } from 'node:path';
+import { basename, dirname, resolve } from 'node:path';
 import { gunzipSync } from 'node:zlib';
 import { parse } from 'csv-parse/sync';
 
@@ -41,7 +41,10 @@ function observation(review, file, code, name, identity, native, values = {}) {
 export function loadAdditionalParticipation() {
   const counties = [], precincts = [], nongeographic = [];
   const pointer = json('public/precinct-results.json');
-  const reviews = pointer.source_reviews.map(path => json(path));
+  const reviews = pointer.source_reviews.map(path => {
+    const review = json(path);
+    return { ...review, data_directory: review.data_directory || dirname(path) };
+  });
   const source = (code, suffix) => {
     const matches = reviews.filter(row => row.year === 2026 && row.state_code === code
       && row.data_directory.endsWith(suffix));
@@ -61,6 +64,39 @@ export function loadAdditionalParticipation() {
         source_reporting_label: 'Native registrations are retained; electorate definitions and analysis rates remain unreviewed.',
       }));
   }
+  const florida = { ...source('FL', 'FL-2026-MON'),
+    base_url: 'https://raw.githubusercontent.com/hanshanley/margin_of_error/d36753726cccfa696fc776328c22d9c5120ffa3d/data/precinct-source-reviews/20261105/FL-2026-MON/' };
+  const flRows = compressed(resolve(florida.data_directory, 'participation.json.gz'));
+  if (flRows.length !== 1 || flRows[0].source_unit_kind !== 'county')
+    throw new Error('Invalid Monroe county participation scope');
+  for (const native of flRows) counties.push(observation(florida, 'participation.json.gz',
+    'FL', native.county_name, native.county_fips, native, {
+      ballots: native.ballots, denominator: native.registered,
+      native_printed_pct: native.source_reported_percent,
+      source_reporting_label: native.basis + ' ' + native.denominator_scope
+        + '. County counts only; no precinct denominators or analysis fraction are approved.',
+    }));
+  const missouri = { ...source('MO', 'MO-2026-CHRISTIAN'),
+    base_url: 'https://raw.githubusercontent.com/hanshanley/margin_of_error/fe2e67af2c3e3181d46589fb18ede50e6a5716b8/data/precinct-source-reviews/20261105/MO-2026-CHRISTIAN/' };
+  counties.push(observation(missouri, 'audit.json', 'MO', missouri.county_name,
+    missouri.county_fips, json(resolve(missouri.data_directory, 'audit.json')), {
+      ballots: missouri.county_ballots, denominator: missouri.county_registered,
+      native_printed_pct: missouri.county_source_reported_percent,
+      source_reporting_label: missouri.notes,
+    }));
+  const wyoming = source('WY', 'WY-2026-native-counts');
+  const wyAudit = json(resolve(wyoming.data_directory, 'counts-review.json'));
+  if (wyAudit.counties.length !== 23 || wyAudit.counties.some(row =>
+    row.printed_county_ballots !== row.precinct_ballots))
+    throw new Error('Unreconciled Wyoming county ballot counts');
+  for (const native of wyAudit.counties) counties.push(observation(wyoming, 'counts-review.json',
+    'WY', native.county, native.county, native, {
+      ballots: native.printed_county_ballots, denominator: null,
+      denominator_basis: 'electorate_not_supplied',
+      source_reporting_label: 'Native county ballots independently reconcile to the separate precinct ballot counts. '
+        + 'Registrations and rates are not supplied. The retained Washakie candidate-category conflict '
+        + 'does not change reconciled ballot totals; no candidate categories are repaired or allocated.',
+    }));
   const arkansas = source('AR', 'AR-2026-native-counts');
   const arRoot = resolve(arkansas.data_directory);
   const arNative = compressed(resolve(arRoot, 'native-source/originals/official-full-election-json.gz'));

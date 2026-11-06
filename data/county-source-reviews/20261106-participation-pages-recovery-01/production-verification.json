@@ -1,0 +1,93 @@
+{
+  "verified_at_utc": "2026-11-06T03:48:26.594904+00:00",
+  "revision": "0ee0790a63102e54f8a894052a962df67e346dd7",
+  "pages_run_id": 42158028615,
+  "run_attempt": 1,
+  "artifact_id": 13475612710,
+  "artifact_zip_bytes": 484802340,
+  "artifact_zip_sha256": "92717544a0e7131147e627a190076ea710f3b54e4e5090fcf464ef4fdbf4bc2f",
+  "deployment_conclusion": "success",
+  "credential_run_ids": [
+    42158028636,
+    42158028252
+  ],
+  "files": [
+    {
+      "path": "voter-participation/",
+      "bytes": 412102,
+      "sha256": "3f315c89175ed6055f24d563575d8df769950928588b25acd7d1526bba06f337",
+      "hosted_equals_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "scripts/participation-explorer.js",
+      "bytes": 157380,
+      "sha256": "4b0868aa2d7de308d8479f79ecf36775041dc007318a1ea3808ff5934c7be92d",
+      "hosted_equals_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "scripts/participation-downloads.js",
+      "bytes": 1635,
+      "sha256": "effc1f197e60bf95dfe943d00d8a3fa4076e4028ae449e2818c1bc1de683ac2d",
+      "hosted_equals_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "voter-participation/app.js",
+      "bytes": 23120,
+      "sha256": "851805ba4c754ab58342f2ab316b080616a842a5a136d5f72ab0e34b1cb9a41e",
+      "hosted_equals_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "voter-participation/publication-manifest.json",
+      "bytes": 22634,
+      "sha256": "c1fddcc1378e79b8ae710fa60a191423866bfffe1f5632a72a9e03575b020dcf",
+      "hosted_equals_local": false,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "voter-participation/preview.png",
+      "bytes": 65934,
+      "sha256": "8a5e5562f596d7ca10ca04ac179c82d5e69d531462aac9388cdd9ac129cc97f9",
+      "hosted_equals_local": false,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-source-reviews.json",
+      "bytes": 62501,
+      "sha256": "9b42d26ecbb5dbdb7ce7eab4a6b549b4e7d24d5dbda8e22a48d7fe21f7445439",
+      "hosted_equals_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-downloads.json",
+      "bytes": 46328,
+      "sha256": "54fe6ccfc6dcd04125af0ea16bb5218da2ad4b58ff9c96285c08dbf1fbf80c86",
+      "hosted_equals_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "county-results.json",
+      "bytes": 9452,
+      "sha256": "52c612532e24a7f33295f0624407a31a4b28386ada53e670e30c835452360ca8",
+      "hosted_equals_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "precinct-results.json",
+      "bytes": 16908,
+      "sha256": "1284181fbf2ae8493ec3949cde08bf4b12ac7639f0a0d2d72fe1c179aab1c419",
+      "hosted_equals_local": true,
+      "live_equals_hosted": true
+    }
+  ],
+  "publication_manifest_matches_except_platform_preview": true,
+  "hosted_preview_matches_hosted_manifest": true,
+  "browser_proofs": [
+    "production-routing-browser.json",
+    "production-cumberland-browser.json"
+  ],
+  "scope": "Historical routing and Cumberland integration; unchanged map suites and platform-dependent images are not claimed byte-identical."
+}

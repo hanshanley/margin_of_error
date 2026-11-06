@@ -1,0 +1,256 @@
+{
+  "base_url": "https://www.themarginoferror.com",
+  "checks": [
+    {
+      "mobile": false,
+      "year": 2024,
+      "source_matched_counts_and_rate": true,
+      "full_response_byte_match": true
+    },
+    {
+      "mobile": false,
+      "year": 2022,
+      "source_matched_counts_and_rate": true,
+      "full_response_byte_match": true
+    },
+    {
+      "mobile": false,
+      "year": 2020,
+      "source_matched_counts_and_rate": true,
+      "full_response_byte_match": true
+    },
+    {
+      "mobile": false,
+      "year": 2018,
+      "source_matched_counts_and_rate": true,
+      "full_response_byte_match": true
+    },
+    {
+      "mobile": false,
+      "year": 2016,
+      "source_matched_counts_and_rate": true,
+      "full_response_byte_match": true
+    },
+    {
+      "mobile": false,
+      "year": 2014,
+      "source_matched_counts_and_rate": true,
+      "full_response_byte_match": true
+    },
+    {
+      "mobile": false,
+      "year": 2012,
+      "source_matched_counts_and_rate": true,
+      "full_response_byte_match": true
+    },
+    {
+      "mobile": false,
+      "year": 2010,
+      "source_matched_counts_and_rate": true,
+      "full_response_byte_match": true
+    },
+    {
+      "mobile": false,
+      "year": 2008,
+      "source_matched_counts_and_rate": true,
+      "full_response_byte_match": true
+    },
+    {
+      "mobile": false,
+      "year": 2006,
+      "source_matched_counts_and_rate": true,
+      "full_response_byte_match": true
+    },
+    {
+      "mobile": false,
+      "year": 2004,
+      "source_matched_counts_and_rate": true,
+      "full_response_byte_match": true
+    },
+    {
+      "mobile": false,
+      "year": 2002,
+      "source_matched_counts_and_rate": true,
+      "full_response_byte_match": true
+    },
+    {
+      "mobile": false,
+      "adapted_legacy_reader_complete_2004_equality": true,
+      "return_to_2024_selection_preserved": true
+    },
+    {
+      "mobile": false,
+      "failed_historical_read_is_explicit": true,
+      "reviewed_counties_and_all_downloads_preserved": true
+    },
+    {
+      "mobile": true,
+      "year": 2024,
+      "source_matched_counts_and_rate": true,
+      "full_response_byte_match": true
+    },
+    {
+      "mobile": true,
+      "year": 2022,
+      "source_matched_counts_and_rate": true,
+      "full_response_byte_match": true
+    },
+    {
+      "mobile": true,
+      "year": 2020,
+      "source_matched_counts_and_rate": true,
+      "full_response_byte_match": true
+    },
+    {
+      "mobile": true,
+      "year": 2018,
+      "source_matched_counts_and_rate": true,
+      "full_response_byte_match": true
+    },
+    {
+      "mobile": true,
+      "year": 2016,
+      "source_matched_counts_and_rate": true,
+      "full_response_byte_match": true
+    },
+    {
+      "mobile": true,
+      "year": 2014,
+      "source_matched_counts_and_rate": true,
+      "full_response_byte_match": true
+    },
+    {
+      "mobile": true,
+      "year": 2012,
+      "source_matched_counts_and_rate": true,
+      "full_response_byte_match": true
+    },
+    {
+      "mobile": true,
+      "year": 2010,
+      "source_matched_counts_and_rate": true,
+      "full_response_byte_match": true
+    },
+    {
+      "mobile": true,
+      "year": 2008,
+      "source_matched_counts_and_rate": true,
+      "full_response_byte_match": true
+    },
+    {
+      "mobile": true,
+      "year": 2006,
+      "source_matched_counts_and_rate": true,
+      "full_response_byte_match": true
+    },
+    {
+      "mobile": true,
+      "year": 2004,
+      "source_matched_counts_and_rate": true,
+      "full_response_byte_match": true
+    },
+    {
+      "mobile": true,
+      "year": 2002,
+      "source_matched_counts_and_rate": true,
+      "full_response_byte_match": true
+    },
+    {
+      "mobile": true,
+      "adapted_legacy_reader_complete_2004_equality": true,
+      "return_to_2024_selection_preserved": true
+    },
+    {
+      "mobile": true,
+      "failed_historical_read_is_explicit": true,
+      "reviewed_counties_and_all_downloads_preserved": true
+    }
+  ],
+  "relocated_tables": [
+    {
+      "path": "/voter-participation/data/nc/2002.json",
+      "name": "2002.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/voter-participation/792e3d91609f7ee929c35b5ec15c13710db94be8/public/data/nc/2002.json",
+      "bytes": 6517687,
+      "sha256": "a69b7e85bc309fdf03dbf70e0295fa9fb8e4091dada5ac91ff969c5b9f637920"
+    },
+    {
+      "path": "/voter-participation/data/nc/2004.json",
+      "name": "2004.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/voter-participation/792e3d91609f7ee929c35b5ec15c13710db94be8/public/data/nc/2004.json",
+      "bytes": 8497466,
+      "sha256": "761e06cc5c4d309a8deb6a83118f810689b2afac89a7130945f2974f73da7058"
+    },
+    {
+      "path": "/voter-participation/data/nc/2006.json",
+      "name": "2006.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/voter-participation/792e3d91609f7ee929c35b5ec15c13710db94be8/public/data/nc/2006.json",
+      "bytes": 7577467,
+      "sha256": "242fe01eeee32d194fd4d23ac300d3ec4901e7c0c5860a36ee1c669329423345"
+    },
+    {
+      "path": "/voter-participation/data/nc/2008.json",
+      "name": "2008.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/voter-participation/792e3d91609f7ee929c35b5ec15c13710db94be8/public/data/nc/2008.json",
+      "bytes": 8065756,
+      "sha256": "b908d55b4188621bf2da3b9527e69fdadac06d7dcb27b15369cdf0533d968f9a"
+    },
+    {
+      "path": "/voter-participation/data/nc/2010.json",
+      "name": "2010.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/voter-participation/792e3d91609f7ee929c35b5ec15c13710db94be8/public/data/nc/2010.json",
+      "bytes": 7397685,
+      "sha256": "40eed0e08edaf8e59a3444e2e47e44e9aa8a462ab4cdeb56975e81efef28f454"
+    },
+    {
+      "path": "/voter-participation/data/nc/2012.json",
+      "name": "2012.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/voter-participation/792e3d91609f7ee929c35b5ec15c13710db94be8/public/data/nc/2012.json",
+      "bytes": 7443047,
+      "sha256": "73f0b1e150922b58271ba11815543ce0483a9827b256c6c731930eeab14d5bdf"
+    },
+    {
+      "path": "/voter-participation/data/nc/2014.json",
+      "name": "2014.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/voter-participation/792e3d91609f7ee929c35b5ec15c13710db94be8/public/data/nc/2014.json",
+      "bytes": 7336143,
+      "sha256": "50f87392510af4356711394f70c38f012546b2ea19cd5ceefec15b695ac27ac7"
+    },
+    {
+      "path": "/voter-participation/data/nc/2016.json",
+      "name": "2016.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/voter-participation/792e3d91609f7ee929c35b5ec15c13710db94be8/public/data/nc/2016.json",
+      "bytes": 7332385,
+      "sha256": "080975f5834a302b606c8b3ffc0e7e12ccf7768184f03dc5ba4503d7f5584202"
+    },
+    {
+      "path": "/voter-participation/data/nc/2018.json",
+      "name": "2018.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/voter-participation/792e3d91609f7ee929c35b5ec15c13710db94be8/public/data/nc/2018.json",
+      "bytes": 7329593,
+      "sha256": "6ac16d9e3a9c849e7020aef7ac46d363586d6bc6760af62171db08870e82095f"
+    },
+    {
+      "path": "/voter-participation/data/nc/2020.json",
+      "name": "2020.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/voter-participation/792e3d91609f7ee929c35b5ec15c13710db94be8/public/data/nc/2020.json",
+      "bytes": 7263439,
+      "sha256": "50e11b7217846504e1e22ac81391382f93985c49f701e22e2becb9c3e6980d30"
+    },
+    {
+      "path": "/voter-participation/data/nc/2022.json",
+      "name": "2022.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/voter-participation/792e3d91609f7ee929c35b5ec15c13710db94be8/public/data/nc/2022.json",
+      "bytes": 7249837,
+      "sha256": "e50de8ec07a547c9bf3ccb10b5cda681f36ded8f288037a528461c09ef0373bb"
+    },
+    {
+      "path": "/voter-participation/data/nc/2024.json",
+      "name": "2024.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/voter-participation/792e3d91609f7ee929c35b5ec15c13710db94be8/public/data/nc/2024.json",
+      "bytes": 7331766,
+      "sha256": "7d8e89de9fe32f1c772070fb833875228ad5ceebae4341045921431f1682f859"
+    }
+  ],
+  "verified_at_utc": "2026-11-06T03:48:23.156324+00:00"
+}

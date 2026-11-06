@@ -55,6 +55,40 @@ test('preserves actual county totals separately from missing or incomplete preci
   assert.equal(daviess.reported_pct, null);
 });
 
+test('connects reviewed Florida, Missouri and Wyoming ballots without substituting candidate totals or rates', () => {
+  for (const [code, suffix, ballots, registered] of [
+    ['FL', 'FL-2026-MON', 32506, 54704],
+    ['MO', 'MO-2026-CHRISTIAN', 35258, 70148],
+  ]) {
+    const audit = JSON.parse(readFileSync(`data/precinct-source-reviews/20261105/${suffix}/audit.json`));
+    const rows = data.counties.filter(row => row.state_code === code);
+    assert.equal(rows.length, 1);
+    assert.equal(rows[0].ballots, ballots);
+    assert.equal(rows[0].ballots, audit.county_ballots);
+    assert.equal(rows[0].denominator, registered);
+    assert.equal(rows[0].denominator, audit.county_registered);
+    assert.notEqual(rows[0].ballots, audit.candidate_totals.contest_votes);
+    assert.equal(rows[0].reported_pct, null);
+    assert.equal(rows[0].maps_approved, false);
+  }
+  const florida = data.counties.find(row => row.state_code === 'FL');
+  const flNative = JSON.parse(gunzipSync(readFileSync(
+    'data/precinct-source-reviews/20261105/FL-2026-MON/participation.json.gz')))[0];
+  assert.deepEqual(florida.native_record, flNative);
+  assert.equal(florida.native_printed_pct, flNative.source_reported_percent);
+  const missouri = data.counties.find(row => row.state_code === 'MO');
+  assert.equal(missouri.native_printed_pct, '50.26%');
+  assert.match(missouri.source_reporting_label, /centralized absentee/i);
+  const native = JSON.parse(readFileSync(
+    'data/precinct-source-reviews/20261105/WY-2026-native-counts/counts-review.json'));
+  const wyoming = data.counties.filter(row => row.state_code === 'WY');
+  assert.deepEqual(wyoming.map(row => row.native_record), native.counties);
+  assert.equal(wyoming.reduce((sum, row) => sum + row.ballots, 0), native.statewide_ballots);
+  assert.equal(native.statewide_ballots, 191688);
+  assert.ok(wyoming.every(row => row.denominator === null && row.reported_pct === null
+    && row.denominator_basis === 'electorate_not_supplied' && row.maps_approved === false));
+});
+
 test('retains individual source rows without inventing county totals or merging special units', () => {
   for (const [code, countyCount, unitCount] of [['MN', 87, 4105], ['ND', 53, 358], ['ID', 44, 986], ['MI', 2, 63]]) {
     const rows = data.counties.filter(row => row.state_code === code);

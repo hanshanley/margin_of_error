@@ -228,9 +228,42 @@ counts, the actual legacy reader, preserved selection, explicit failed-fetch
 handling and no overflow. All six Cumberland display/failure modes pass,
 retaining 306 unique complete-download URLs / 309 anchors and all prior URLs.
 Proofs are under `data/county-source-reviews/20261106-participation-pages-recovery-01/`.
-The local preview is stopped. This is a proposed deployment recovery, not yet
-evidence that remote Pages synchronization succeeds; publish one fresh exact
-revision and verify its hosted artifact and live browsers before promotion.
+The local preview is stopped. Recovery revision
+`0ee0790a63102e54f8a894052a962df67e346dd7` passed Pages run `42158028615`,
+credential runs `42158028636` / `42158028252`, and exact production checks at
+`2026-11-06T03:48:26.594904+00:00`. Artifact `13475612710` was downloaded and
+verified against its hosted ZIP digest. Ten important live files match the
+hosted artifact; the platform-dependent preview matches its own hosted manifest,
+whose other entries equal the local build. Both production browser suites pass
+all historical desktop/mobile reads and all six Cumberland display/failure
+modes, with all complete downloads intact. Cumberland is now live verified;
+the failed older artifact is superseded, not retried.
+
+**Three more participation states, locally verified November 6:** the native
+selector and static tables now connect 25 previously downloadable reviewed
+county observations: Monroe, Florida (32,506 ballots / 54,704 native registrations);
+Christian, Missouri (35,258 / 70,148); and all 23 Wyoming counties (191,688
+native ballots). Preserve Monroe's native printed fraction and Christian's
+centralized-absentee qualification. Wyoming's native county totals independently
+reconcile to its separate precinct-ballot totals; absent registrations stay
+missing and the Washakie candidate-category conflict stays explicit. No
+candidate totals replace ballots. Analysis rates remain withheld/not supplied
+and no new maps are approved.
+
+The additional-state import now has 789 locality containers across fifteen
+states, with 5,512 separately scoped reporting-unit observations unchanged.
+Every complete record of the twelve earlier state imports matches its saved
+full-JSON fingerprint, and all 309 existing download anchors are retained.
+Nineteen focused tests, Astro check (zero errors/warnings, five existing hints),
+the separate build and four build tests pass. Pages preparation verifies 106
+relocations at 898,641,810 bytes. Eleven desktop/mobile, no-JavaScript and
+failed-import checks pass, selecting every new county and independently matching
+its complete native source. Browser checks use production-equivalent gzip-file
+headers; Astro preview's automatic HTTP decompression differs from GitHub Pages.
+See `data/county-source-reviews/20261106-additional-participation-02/`.
+This batch is locally verified, not yet live verified. Publish one fresh exact
+revision and verify the hosted artifact, all fifteen full state imports and
+focused production browsers before promotion.
 
 **Adams primary acquisition, November 6:** ordinary Chromium navigation acquired
 the actual official index and its declared complete general summary (three
@@ -240,9 +273,15 @@ independent text extractions saved privately in
 unofficial results. Do not equate the index's 10,348 mail/absentee receipts
 with the summary's 10,320 counted mail ballots, or treat 53 reporting precincts
 as complete: the report separately identifies all 53 as partially reported.
-Terms/privacy acquisition, independent all-count reconciliation and public
-facts packaging remain pending. No new public download, participation
-registration, rate or map is approved by this acquisition alone.
+The declared terms and privacy PDFs were also acquired through ordinary
+same-origin requests, with complete receipts, hashes and both independent
+extractions retained privately. Five primary-source acquisition receipts,
+without redistributing source templates, are preserved in
+`data/county-source-reviews/20261106-adams-acquisition-01/acquisition.json`.
+Independent all-count reconciliation and public numerical-facts packaging
+remain pending. No source-template redistribution grant is asserted. No new
+public participation download, registration, rate or map is approved by this
+acquisition alone.
 
 **November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated

@@ -1,0 +1,35 @@
+{
+  "verified_at_utc": "2026-11-06T03:49:44.360915+00:00",
+  "status": "local_verified_not_live",
+  "prepared_site_bytes": 898641810,
+  "relocated_files": 106,
+  "prepared_download_manifest_sha256": "54fe6ccfc6dcd04125af0ea16bb5218da2ad4b58ff9c96285c08dbf1fbf80c86",
+  "additional_state_sources": 15,
+  "locality_containers": 789,
+  "separately_scoped_reporting_unit_observations": 5512,
+  "new_county_observations": 25,
+  "new_sources": {
+    "FL": {
+      "county": "Monroe",
+      "ballots": 32506,
+      "native_registrations": 54704
+    },
+    "MO": {
+      "county": "Christian",
+      "ballots": 35258,
+      "native_registrations": 70148
+    },
+    "WY": {
+      "counties": 23,
+      "ballots": 191688,
+      "registration_denominators": null
+    }
+  },
+  "analysis_rates_for_new_rows": "withheld_or_not_supplied",
+  "new_maps_approved": false,
+  "previous_imports_entirely_unchanged": 12,
+  "previous_download_anchors_preserved": 309,
+  "browser_proof": "local-browser.json",
+  "browser_checks": 11,
+  "transport_note": "Astro preview adds Content-Encoding:gzip to .json.gz files, unlike GitHub Pages. Checks use an attached Python static server with production-equivalent application/gzip file responses, not double-decompressed preview responses."
+}
