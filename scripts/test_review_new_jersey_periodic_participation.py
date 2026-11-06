@@ -12,7 +12,7 @@ import zipfile
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PACKAGE = ROOT / "data/county-source-reviews/20261106-nj-participation-facts-01"
+PACKAGE = ROOT / "data/county-source-reviews/20261106-nj-participation-facts-02"
 SPEC = importlib.util.spec_from_file_location(
     "nj", ROOT / "scripts/review-new-jersey-periodic-participation.py")
 REVIEW = importlib.util.module_from_spec(SPEC)
@@ -62,6 +62,9 @@ class NewJerseyParticipationTests(unittest.TestCase):
         self.assertEqual(row["registered_voters"], "76899")
         self.assertEqual(row["native_printed_turnout"], "53.68%")
         self.assertEqual(row["native_participation_measure_literal"], "Ballots Cast - Total")
+        self.assertEqual(row["source_page"], "2")
+        self.assertEqual(row["registration_source_page"], "2")
+        self.assertEqual(row["periodic_source_page"], "1")
         self.assertEqual(row["provisional_ballots_counted"], "0")
         native = json.loads(row["native_county_count_literals_json"])
         self.assertEqual(native[-1], "347")
@@ -134,7 +137,7 @@ class NewJerseyParticipationTests(unittest.TestCase):
             self.assertEqual({p.name for p in output.iterdir()}, {p.name for p in PACKAGE.iterdir()})
             for path in PACKAGE.iterdir():
                 self.assertEqual((output / path.name).read_bytes(), path.read_bytes(), path.name)
-            with zipfile.ZipFile(output / "complete-new-jersey-2026-participation-query-01.zip") as archive:
+            with zipfile.ZipFile(output / "complete-new-jersey-2026-participation-query-02.zip") as archive:
                 self.assertIsNone(archive.testzip())
                 for name in archive.namelist():
                     self.assertEqual(archive.read(name), (output / name).read_bytes())

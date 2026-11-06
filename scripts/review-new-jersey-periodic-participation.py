@@ -237,7 +237,9 @@ def build(facts, output):
         reason = {"Essex": "Conflicting ED congressional/municipality totals: 133271 versus 137294; county header blank.",
                   "Hudson": "Early Voting observation missing; county header blank and zero native subtotal is not a measured zero."}.get(report["county"], "")
         tables["county-participation.csv"].append(dict(**common,
-            source_page=selected["source_page"] if selected else county["source_page"],
+            source_page=summary["source_page"] if summary else selected["source_page"] if selected else county["source_page"],
+            periodic_source_page=selected["source_page"] if selected else county["source_page"],
+            registration_source_page=summary["source_page"] if summary else "",
             reported_participation_subtotal=sum(modes) if selected else "",
             native_participation_measure_literal="Ballots Cast - Total" if summary else "",
             participation_measure_label="Ballots Cast - Total" if summary else
@@ -255,8 +257,14 @@ def build(facts, output):
             tables["native-aggregate-participation.csv"].append(native)
         for row in report["page_updates"]:
             tables["native-source-pages.csv"].append(dict(**common, source_page=row["source_page"],
+                source_role="periodic_report",
                 source_update_literal=row["table_update_literal"],
                 other_update_literals_json=json.dumps(row["other_update_literals"])))
+        if summary:
+            tables["native-source-pages.csv"].append(dict(
+                **{**common, "native_status_literal": summary["native_status_literal"]},
+                source_page=summary["source_page"], source_role="attached_participation_summary",
+                source_update_literal="", other_update_literals_json="[]"))
         for row in report["notes"]:
             tables["native-counting-qualifications.csv"].append(dict(**common,
                 source_page=row["source_page"], literal=row["literal"]))
@@ -278,7 +286,7 @@ def build(facts, output):
     (output / Path(__file__).name).write_bytes(Path(__file__).read_bytes())
     (output / "checksums.json").write_text(json.dumps({path.name: dict(bytes=path.stat().st_size,
         sha256=hashlib.sha256(path.read_bytes()).hexdigest()) for path in sorted(output.iterdir())}, indent=2) + "\n")
-    target = output / "complete-new-jersey-2026-participation-query-01.zip"
+    target = output / "complete-new-jersey-2026-participation-query-02.zip"
     with zipfile.ZipFile(target, "w", zipfile.ZIP_DEFLATED) as archive:
         for path in sorted(output.iterdir()):
             if path != target:
