@@ -1108,8 +1108,22 @@ The previously passing full map/import/failure suite is retained rather than
 repeated for this candidate/download-only merge. Combined receipts are
 `combined-build-validation.json`, `local-validation.json` and
 `local-browser.json`.
-Deployment is pending exact-revision, hosted-artifact, complete public-byte
-and production-browser verification; the new UI is not yet claimed live.
+Jefferson UI **`e6cc50830be3adbbc458f2aecbbff4c366ae8d9f` is live verified**:
+exact Pages run `42177216111`, attempt 1, and both exact credential runs
+`42177216152` / `42177213859` succeed. Hosted artifact `13484445160`,
+**493,557,820 bytes**, SHA-256
+`448c9e066f6b9c11abb8527fa24e5b441fd3a6813ee2ecad011faf5d18a4d5eb`,
+matches the prepared participation inputs. All **104 entire selected
+hosted/public files** match, including both complete 29-file immutable
+snapshots, all fifteen contextual geometries and eighteen full decompressed
+imports. The platform-specific preview matches its own hosted manifest.
+All seven production browser scenarios pass with **431 exact county counts,
+59 exact rate colors and 372 missing-rate gray fills**, every previous
+record/native row and all 379 older anchors retained among **395 anchors /
+391 complete URLs**. Exact verification time:
+`2026-11-06T06:59:09.682653+00:00`. Full deployment, credential, hosted/public
+and browser proofs are persisted beside local evidence without an additional
+unchanged UI deployment. This does not complete nationwide acquisition.
 
 **Clarion primary county participation review, November 6:**
 The existing 67-county source queue leads to the county-owned elections index,
@@ -1140,8 +1154,17 @@ byte-identically using Python's standard library offline. CSVs use the
 repository's LF format. ZIP **19,108 bytes**,
 SHA-256 `0b54376406262fd7298e990e5ae65848f3d85ffa17d41bfdafdf700e8e5d03d0`.
 Facts are under `data/county-source-reviews/20261106-clarion-facts-01/`;
-original documents and presentation templates remain private. Fixed release,
-anonymous full-byte verification and later explorer integration are pending.
+original documents and presentation templates remain private. Facts revision
+`7985530b021aa51865107eed52b76722bc39c80e` and fixed release
+`voter-county-pennsylvania-clarion-20261106-01` / `436195071` are published.
+All eleven complete release assets, eleven complete pinned files and ten
+ZIP members pass anonymous byte equality and extracted offline reproduction
+at `2026-11-06T06:59:31.703596+00:00`. GitHub reports `immutable:false`;
+this is a fixed-checksum/never-overwrite policy, not host-enforced locking.
+Both exact facts credential runs `42177891612` / `42177895500` pass.
+Full publication evidence is under
+`data/county-source-reviews/20261106-clarion-publication-01/`.
+Explorer integration is separate and pending.
 No new map or turnout denominator is approved by this source-only review.
 The other newly followed queue entry, Clearfield, returns an actual empty
 HTTP 404 through the ordinary source acquisition; the browser-backed web
