@@ -100,8 +100,45 @@ source-matched desktop/mobile and JavaScript/no-JavaScript checks pass all twelv
 records, counting qualifications and failed-feed fallbacks. All 288 previous
 unique downloads remain; nine new links yield 297 unique URLs / 300 anchors.
 Eleven participation UI tests, Astro check/build and 94-download Pages
-preparation pass at 987,433,242 bytes. Production deployment remains pending
-until exact-revision proof is saved.
+preparation pass at 987,433,242 bytes. Pages run `42149085447` for revision
+`7df9f41163477c3296599baf947ad187af35185e` built successfully but failed after
+the deployment action's ten-minute `syncing_files` timeout. The old watcher has
+finished; it is not a pending deployment or production verification. The bulk
+integration below includes Fulton and increases the deployment timeout to thirty
+minutes. Production verification still requires that combined revision to deploy.
+
+**Bulk participation integration, locally verified November 6:** the user's
+empty-state report exposed an integration gap: existing reviewed participation
+tables were downloadable but absent from the main explorer. A reproducible
+loader now connects **764 county/locality records**, **5,512 separate native
+reporting-unit rows**, and one nongeographic record across **twelve more states**.
+Whole-locality observations cover Alabama (67 counties), Arizona (15),
+Arkansas (75), Virginia (133 counties/independent cities), Vermont (247
+municipalities), Rhode Island (39 municipalities), Linn County, Iowa and
+Daviess County, Kentucky. Minnesota (87 county containers / 4,105 rows), North
+Dakota (53 / 358), Idaho (44 / 986) and Michigan (2 / 63) retain separately
+scoped source rows; their containers have **no inferred county totals**.
+
+Virginia uses its 3,593,781 native whole-locality ballots, not the incomplete
+2,798,626 precinct voter-turnout sum. Rhode Island's 756 Federal ballots stay
+nongeographic. Eight pooled Idaho absentee/early units retain their explicit
+unit kind and quality flags. Six Vermont municipal rates remain withheld.
+Native county codes in Alabama and Arizona are not invented FIPS. Missing
+denominators remain null, printed percentages/fractions remain separate from
+reviewed rates, and every new map approval remains false. These records do not
+establish statewide completion or 2026 demographic turnout.
+
+The browser lazily loads twelve complete compressed state endpoints. Static
+tables retain all 764 locality rows and complete JSON/source-package links
+without JavaScript. Source qualifiers wrap without expanding desktop/mobile
+layouts. Sixteen focused participation tests, Astro check (zero errors/warnings,
+five existing hints), build, all 27 new browser checks, existing source-matched
+participation regressions and four download-display modes pass. All 297 unique
+download URLs / 300 anchors remain, alongside all 52 UF rows, five historical
+years and 255 historical scope cells. Pages preparation verifies 94 byte-identical
+relocated downloads; the compressed site is **987,952,007 bytes**.
+Local proofs: `data/county-source-reviews/20261106-bulk-participation-01/`.
+Exact-revision deployment and production checks remain required.
 
 **November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated

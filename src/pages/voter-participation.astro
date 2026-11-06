@@ -4,6 +4,7 @@ import { resolve } from 'node:path';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { participationCurrentRoot } from '../../public/scripts/participation-downloads.js';
 import { loadReviewedCountyParticipation } from '../../scripts/reviewed-county-participation.mjs';
+import { loadAdditionalParticipation } from '../../scripts/additional-participation.mjs';
 import '../styles/voter-participation.css';
 
 const dataRoot = resolve('public/voter-participation');
@@ -58,6 +59,14 @@ const participationReviews = existsSync(participationReviewsPath)
 			? JSON.parse(readFileSync(resolve(review.data_directory, review.city_file), 'utf8')) as CityParticipation[] : [],
 	})) : [];
 const reviewedCounties = loadReviewedCountyParticipation(participationReviews);
+const additionalParticipation = loadAdditionalParticipation();
+const additionalParticipationStates = [...new Set(additionalParticipation.counties.map(row => row.state_code))]
+	.map(code => ({
+		code, name: ufRows.find(row => row.STATE_ABV === code)?.STATE ?? code,
+		counties: additionalParticipation.counties.filter(row => row.state_code === code),
+		units: additionalParticipation.precincts.filter(row => row.state_code === code).length,
+		nongeographic: additionalParticipation.nongeographic.filter(row => row.state_code === code),
+	}));
 const national = JSON.parse(readFileSync(resolve(dataRoot, 'data/national.json'), 'utf8'));
 const manifest = JSON.parse(readFileSync(resolve(dataRoot, 'publication-manifest.json'), 'utf8'));
 const snapshot = national.filter((row: { year: number; denominator: string; age_group: string }) =>
@@ -353,6 +362,40 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 					</tr>)}</tbody>
 				</table>
 			</div>
+		</section>
+		<section class="participation-current" aria-labelledby="additional-participation-title"
+			data-additional-participation={JSON.stringify(additionalParticipationStates.map(row => ({
+				state_code: row.code, localities: row.counties.length, reporting_units: row.units,
+			})))}>
+			<h2 id="additional-participation-title">More native participation observations · 2026</h2>
+			<p>Actual participation observations from {additionalParticipationStates.length} additional state sources,
+				not candidate-vote totals or UF estimates. Counties, independent cities and municipalities retain
+				their native scope. Reporting-unit tables do not establish county totals:
+				those rows are available separately, not summed. Missing denominators and withheld rates are not zero.
+				These imports do not approve new county or precinct map joins.</p>
+			{additionalParticipationStates.map(group => <details>
+				<summary>{group.name}: {group.counties.length} counties / localities
+					{group.units ? ` · ${formatNumber(group.units)} source reporting-unit observations` : ''}</summary>
+				<p><a href={`/participation-local/${group.code}.json.gz`}>All imported participation observations (JSON · gzip)</a>
+					{' · '}<a href={group.counties[0].complete_download_url}>Complete original source package</a></p>
+				{group.nongeographic.map(row => <p>{row.county}: {row.ballots === null ? 'Not supplied' : formatNumber(row.ballots)}
+					{' '}ballots in a separate nongeographic reporting unit, not assigned to a county or municipality.</p>)}
+				<div class="table-wrap" tabindex="0" role="region" aria-label={`${group.name} native participation`}>
+					<table>
+						<caption>Native locality observations; reporting-unit counts remain separately available in the complete JSON.</caption>
+						<thead><tr><th scope="col">Locality</th><th scope="col">Scope</th>
+							<th scope="col">Ballots reported</th><th scope="col">Native registrations</th>
+							<th scope="col">Reviewed fraction</th><th scope="col">Source reporting units</th></tr></thead>
+						<tbody>{group.counties.map(row => <tr>
+							<th scope="row">{row.county}</th><td>{row.geography_level.replaceAll('_', ' ')}</td>
+							<td>{row.ballots === null ? 'County total not supplied; see reporting units' : formatNumber(row.ballots)}</td>
+							<td>{row.denominator === null ? 'Not supplied' : formatNumber(row.denominator)}</td>
+							<td>{row.reported_pct === null ? 'Withheld / not supplied' : `${row.reported_pct.toFixed(2)}%`}</td>
+							<td>{row.source_rows || 'No unit table connected here'}</td>
+						</tr>)}</tbody>
+					</table>
+				</div>
+			</details>)}
 		</section>
 		{ufPointer && <section id="uf-turnout-2026" class="participation-current" aria-labelledby="uf-turnout-title">
 			<p class="kicker">Separate state-level source · 2026</p>

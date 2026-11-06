@@ -320,6 +320,8 @@ function loadUfTurnout() {
 function loadReviewedCounties() {
   const table = document.querySelector("table[data-reviewed-county-participation]");
   if (table) state.reviewedCounties = JSON.parse(table.dataset.reviewedCountyParticipation);
+  const additional = document.querySelector("[data-additional-participation]");
+  state.additionalCoverage = additional ? JSON.parse(additional.dataset.additionalParticipation) : [];
 }
 function stateParticipationRows() {
   if (!ufMode()) return currentStateRows().map(row => ({
@@ -332,10 +334,11 @@ function stateParticipationRows() {
     observation_type: `UF ${basis.toUpperCase()} turnout · ${row.source_status}`,
   }));
 }
+    const additionalLocal = new Map();
     async function currentLocal() {
+      const code = stateCode();
       const supplement = { counties: state.reviewedCounties, precincts: [] };
-      if (!state.current?.local_file) return supplement;
-      if (!state.currentLocal) state.currentLocal = fetch(state.currentPath + state.current.local_file)
+      if (state.current?.local_file && !state.currentLocal) state.currentLocal = fetch(state.currentPath + state.current.local_file)
         .then(response => {
           if (!response.ok) throw new Error(`Local 2026 counts: HTTP ${response.status}`);
           return response.json();
@@ -345,10 +348,30 @@ function stateParticipationRows() {
               && (other.county_id === row.county_id || countyName(other.county) === countyName(row.county))))],
         })).catch(error => {
           state.currentLocal = null;
-          if (state.reviewedCounties.some(row => row.state_code === stateCode())) return supplement;
+          if (state.reviewedCounties.some(row => row.state_code === code)
+            || state.additionalCoverage.some(row => row.state_code === code)) return supplement;
           throw error;
         });
-      return state.currentLocal;
+      const data = state.current?.local_file ? await Promise.resolve(state.currentLocal) : supplement;
+      if (!state.additionalCoverage.some(row => row.state_code === code)) return data;
+      if (!additionalLocal.has(code)) additionalLocal.set(code, fetch(`/participation-local/${code}.json.gz`)
+        .then(response => {
+          if (!response.ok) throw new Error(`Additional ${code} participation: HTTP ${response.status}`);
+          if (!globalThis.DecompressionStream)
+            throw new Error("Compressed participation is unsupported by this browser");
+          return new Response(response.body.pipeThrough(new DecompressionStream("gzip"))).json();
+        }).catch(error => {
+          additionalLocal.delete(code);
+          return { counties: [], precincts: [], additional_error: error.message };
+        }));
+      const additional = await additionalLocal.get(code);
+      return { ...data,
+        counties: [...data.counties, ...additional.counties.filter(row =>
+          !data.counties.some(other => other.state_code === row.state_code
+            && countyName(other.county) === countyName(row.county)))],
+        precincts: [...data.precincts, ...additional.precincts],
+        nongeographic: additional.nongeographic || [], additional_error: additional.additional_error,
+      };
     }
     const countyName = value => value.normalize("NFKD").replace(/[\u0300-\u036f]/g, "")
       .toUpperCase().replace(/\s*\(VOTE CENTER\)/g, "").replace(/\b(COUNTY|PARISH)\b/g, "")
@@ -357,7 +380,8 @@ function stateParticipationRows() {
     function currentCountDetail(host, row, county = false) {
       host.replaceChildren(html("h4", "", county ? row.county : row.unit),
         html("p", "selection-rate", fmt(row.ballots)),
-        html("p", "selection-basis", row.review_id ? "2026 ballots reported · not final/certified" : "2026 ballots reported · unofficial"),
+        html("p", "selection-basis", row.ballots === null ? "County total not supplied · select a source reporting unit"
+          : row.review_id ? "2026 ballots reported · not final/certified" : "2026 ballots reported · unofficial"),
         html("p", "selection-note", `${fmt(row.denominator)} ${electorateLabel(row)}; `
           + `${pct(row.reported_pct)} reported-ballot fraction. Not final turnout or a CPS estimate.`),
         html("p", "selection-note", `Source update: ${row.source_update_label || "not supplied"}. `
@@ -365,11 +389,14 @@ function stateParticipationRows() {
       if (row.review_id) {
         host.append(html("p", "selection-note", `Native result-status literal: ${row.source_status_literal || "not supplied"}.`),
           html("p", "selection-note", `Native printed fraction: ${row.native_printed_pct ?? "not supplied"}. `
-          + `Calculated from these counts: ${row.reported_pct.toFixed(2)}%. `
+          + (row.reported_pct === null ? "Analysis fraction withheld / not supplied. "
+            : `Reviewed fraction from these counts: ${row.reported_pct.toFixed(2)}%. `)
           + "Printed and calculated values are separate; neither establishes finished counting."),
           html("p", "selection-note", row.source_reporting_label));
         const complete = html("a", "source-link", "Complete county tables and source package");
         complete.href = row.complete_download_url; host.append(complete);
+        if (!county) host.append(html("p", "selection-note",
+          `Native reporting-unit type: ${row.unit_kind.replaceAll("_", " ")}. This source row is not approved as precinct geography.`));
       } else if (county) host.append(html("p", "selection-note",
         `${fmt(row.reported_units)} / ${fmt(row.total_units)} source precincts reporting. `
         + `${fmt(row.source_rows)} source rows available below; special units and vote centers are identified separately.`));
@@ -385,29 +412,42 @@ function stateParticipationRows() {
         const counties = data?.counties.filter(row => row.state_code === code) ?? [];
         if (!counties.length) {
           container.replaceChildren(html("h4", "", "2026 local reporting"),
-            html("p", "selection-note", "No verified full-election county/precinct counts ingested for this state yet. Statewide early/mail observations above are separate, not final turnout."));
+            html("p", "selection-note", data.additional_error
+              ? `${data.additional_error}. Imported source tables and complete downloads remain in Methods & data; no missing observations are replaced with zero.`
+              : "No verified full-election county/precinct counts ingested for this state yet. Statewide early/mail observations above are separate, not final turnout."));
           return;
         }
-        const label = html("label", "selection-note", "2026 county");
+        const label = html("label", "selection-note", "2026 county / native locality");
         const select = html("select"); select.id = "current-county-select"; label.htmlFor = select.id;
-        options(select, [["", "Choose a county…"], ...counties.map(row => [row.county_id, row.county])],
+        options(select, [["", "Choose a county / locality…"], ...counties.map(row => [row.county_id,
+          row.county + (row.geography_level === "municipality" ? " · municipality" : "")])],
           state.currentCounty.startsWith(code + "|") ? state.currentCounty.slice(code.length + 1) : "");
         const detail = html("div", "substate-detail"); detail.id = "current-county-detail";
         const units = html("div", "substate-detail"); units.id = "current-unit-navigation";
         container.replaceChildren(html("h4", "", "2026 local reporting"), label, select, detail, units);
+        if (data.additional_error) container.append(html("p", "selection-note",
+          `${data.additional_error}. Imported source tables and complete downloads remain in Methods & data.`));
+        for (const row of data.nongeographic || []) container.append(html("p", "selection-note",
+          `${row.county}: ${fmt(row.ballots)} ballots in a separate nongeographic reporting unit; not assigned to county or municipal geography.`));
         const additional = counties.filter(row => row.review_id);
         if (additional.length) {
           const overview = html("div", "substate-detail"); overview.id = "reviewed-county-overview";
           overview.append(html("p", "selection-note",
-            `${additional.length} reviewed ${code === "DC" ? "county-equivalent observation" : "county observations"}, not statewide county coverage. `
-            + "Reported ballots / native registrations; not UF population-based turnout. County mapping is not approved."));
-          for (const row of additional) {
+            `${additional.length} reviewed ${code === "DC" ? "county-equivalent observation" : "county / locality observations"}. `
+            + "Native counts and source reporting units, not UF population-based turnout. Missing county totals and withheld rates are not zero. "
+            + "County mapping is not approved; source coverage does not establish finished counting."));
+          const previews = additional.every(row => row.review_id.startsWith("additional:"))
+            ? additional.slice(0, 4) : additional;
+          for (const row of previews) {
             const button = html("button", "selection-link",
-              `${row.county}: ${fmt(row.ballots)} ballots / ${fmt(row.denominator)} registered (${pct(row.reported_pct)})`);
+              row.ballots === null ? `${row.county}: ${fmt(row.source_rows)} source reporting-unit observations; county total not supplied`
+                : `${row.county}: ${fmt(row.ballots)} ballots / ${fmt(row.denominator)} registered (${pct(row.reported_pct)})`);
             button.type = "button"; button.dataset.countyId = row.county_id;
             button.addEventListener("click", () => { select.value = row.county_id; select.dispatchEvent(new Event("change")); });
             overview.append(button);
           }
+          if (previews.length < additional.length) overview.append(html("p", "selection-note",
+            `Choose any of the ${additional.length} counties / localities from the selector below.`));
           container.insertBefore(overview, label);
         }
         const choose = () => {
@@ -429,7 +469,7 @@ function stateParticipationRows() {
                 ["source_update_label", "Source update"], ["source_reporting_label", "Native reporting status"]] : []),
               ["quality", "Notes"]]);
           if (!rows.length) {
-            units.append(html("p", "selection-note", "County counts only; no verified 2026 precinct count table ingested here."));
+            units.append(html("p", "selection-note", "Native locality counts only; no reporting-unit table connected here. Complete source packages remain available."));
             return;
           }
           const unitLabel = html("label", "selection-note", "Precinct / source reporting row");
