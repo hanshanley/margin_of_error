@@ -25,7 +25,16 @@ Pages **42203974822 attempt 1** uploaded original artifact **13496136224 /
 `76dfc7fe33ea63e004d50927dc1384aecfa82c74c93a41b49b01310931f9d61a`,
 then timed out while syncing, not during build or source validation.
 Only the failed deployment job was retried against this same artifact.
-Exact production verification remains active; do not duplicate or claim LIVE
+**Attempt 2 also timed out at 11:02 UTC**, returning blank deployment statuses
+throughout; both failed receipts are retained. The verifier stopped at its
+deployment guard, before claiming any production-byte or browser success.
+Do not repeat unchanged retries against this cancelled deployment ID.
+A fresh evidence-only publication revision will create a distinct Pages
+deployment ID and newly built artifact; this tests the cancelled-ID reuse
+hypothesis, not a proven size diagnosis. The validated application is unchanged.
+California's successful hosted site was larger than this failed prepared site.
+The new artifact must be identified and independently digest/byte/browser
+verified; never relabel it as original artifact 13496136224. Do not claim LIVE
 until all entire hosted/public bytes and seven production browser cases pass.
 
 **Next acquisition: Bradford and Greene primary sources are acquired and
