@@ -17,6 +17,16 @@ checks** and **seven local browser scenarios** pass after this fix.
 The corrected local prepared site is **974,696,824 bytes**.
 The original failed deployment receipt and both local validation rounds remain
 retained; the corrected revision still requires exact production verification.
+Corrected UI `77e02efa331832357f3171963feb6097ea79a9ba` passes the hosted
+build: **117 entire relocated downloads / 984,835,244-byte prepared site**.
+Both exact credential runs **42203974854 / 42203974924** pass.
+Pages **42203974822 attempt 1** uploaded original artifact **13496136224 /
+509,529,533 bytes**, SHA-256
+`76dfc7fe33ea63e004d50927dc1384aecfa82c74c93a41b49b01310931f9d61a`,
+then timed out while syncing, not during build or source validation.
+Only the failed deployment job was retried against this same artifact.
+Exact production verification remains active; do not duplicate or claim LIVE
+until all entire hosted/public bytes and seven production browser cases pass.
 
 The actual county parent declares both complete November 3 reports. Both entire
 PDF originals and the parent match their saved receipts. Two independent PDF

@@ -1,0 +1,86 @@
+{
+  "relocated_archives": [
+    {
+      "path": "/participation-county-context/20261106-01/complete-county-participation-context-01.zip",
+      "name": "complete-county-participation-context-01.zip",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-01/complete-county-participation-context-01.zip",
+      "bytes": 2209950,
+      "sha256": "4c8a94ccbcfd60837bbc92f70a0183311af2b1eec3aad317031e7a8e456f09cc"
+    },
+    {
+      "path": "/participation-county-context/20261106-02/complete-county-participation-context-02.zip",
+      "name": "complete-county-participation-context-02.zip",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-02/complete-county-participation-context-02.zip",
+      "bytes": 2211271,
+      "sha256": "2124cb7bd1bcf5118367fabef59ba394b9da57984a611208e1e8a410724592f3"
+    },
+    {
+      "path": "/participation-county-context/20261106-03/complete-county-participation-context-03.zip",
+      "name": "complete-county-participation-context-03.zip",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-03/complete-county-participation-context-03.zip",
+      "bytes": 2211800,
+      "sha256": "209d71ebc9ce3b832e2fa36998e808f283bb611f9f6ab65089a89cad0e9b533f"
+    },
+    {
+      "path": "/participation-county-context/20261106-04/complete-county-participation-context-04.zip",
+      "name": "complete-county-participation-context-04.zip",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-04/complete-county-participation-context-04.zip",
+      "bytes": 2212721,
+      "sha256": "edf5d8b8a7cd0b49282edc3b4ed9955c07910e1a38361fd77bd23d2e897a3f37"
+    },
+    {
+      "path": "/participation-county-context/20261106-05/complete-county-participation-context-05.zip",
+      "name": "complete-county-participation-context-05.zip",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-05/complete-county-participation-context-05.zip",
+      "bytes": 2214466,
+      "sha256": "116c145e5459bf1fa67bb36ab4709d269729c5398487f2e9c416e9e96c6fa79a"
+    },
+    {
+      "path": "/participation-county-context/20261106-06/complete-county-participation-context-06.zip",
+      "name": "complete-county-participation-context-06.zip",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-06/complete-county-participation-context-06.zip",
+      "bytes": 2215183,
+      "sha256": "cadd631917cca1a5bcd8bb8c1fb5d4d767446e59440557b841a48a1e7ae54121"
+    },
+    {
+      "path": "/participation-county-context/20261106-07/complete-county-participation-context-07.zip",
+      "name": "complete-county-participation-context-07.zip",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-07/complete-county-participation-context-07.zip",
+      "bytes": 2215873,
+      "sha256": "ce4d18490e8c87cb1d4f380ec6b8ce202114d00eaa1d12121eb9a12b4c445427"
+    },
+    {
+      "path": "/participation-county-context/20261106-08/complete-county-participation-context-08.zip",
+      "name": "complete-county-participation-context-08.zip",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-08/complete-county-participation-context-08.zip",
+      "bytes": 2216859,
+      "sha256": "9259de53c8608354973916ac7093fcaf5bd5e3241ff7d10444768c973e400444"
+    },
+    {
+      "path": "/participation-county-context/20261106-09/complete-county-participation-context-09.zip",
+      "name": "complete-county-participation-context-09.zip",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-09/complete-county-participation-context-09.zip",
+      "bytes": 2218610,
+      "sha256": "ec4fa3c615ec69d49fe38c043a979a55a48dd4e8a51317b2f24ba7917262357d"
+    },
+    {
+      "path": "/participation-county-context/20261106-10/complete-county-participation-context-10.zip",
+      "name": "complete-county-participation-context-10.zip",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-10/complete-county-participation-context-10.zip",
+      "bytes": 2466738,
+      "sha256": "44621f3f361a4202106f01230b06ebcfd09bc7845937a25e30df08758ab1a8f6"
+    },
+    {
+      "path": "/participation-county-context/20261106-11/complete-county-participation-context-11.zip",
+      "name": "complete-county-participation-context-11.zip",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-11/complete-county-participation-context-11.zip",
+      "bytes": 2467554,
+      "sha256": "d27146d469364ba5fd78aa8c97cf943f9250ebf8bb5f6328fcda665780fb3039"
+    }
+  ],
+  "entire_original_staged_archives_retained": true,
+  "every_local_review_and_complete_source_records_unchanged": true,
+  "complete_archives_removed_only_from_build_output": true,
+  "archive_bytes_removed": 24861025,
+  "qualification": "The build preparer verified every entire anonymous remote archive before removal. The complete download manifest retains every URL, byte count and SHA-256, with no removal of a historical download."
+}
