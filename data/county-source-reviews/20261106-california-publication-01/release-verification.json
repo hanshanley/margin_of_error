@@ -1,0 +1,142 @@
+{
+  "verified_at_utc": "2026-11-06T09:47:39.118009+00:00",
+  "facts_revision": "e32e27dde3a56ee13c515ef54fa1e140fa4268b1",
+  "tag": "voter-county-california-20261106-01",
+  "release_id": 436328601,
+  "assets": [
+    {
+      "name": "audit.json",
+      "anonymous_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-california-20261106-01/audit.json",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/e32e27dde3a56ee13c515ef54fa1e140fa4268b1/data/county-source-reviews/20261106-california-facts-01/audit.json",
+      "bytes": 2733,
+      "sha256": "e1f005b3a3e0871ce8eced5e9f3c0ef1f4ea8b7e79a1042cef3565b7a25de9ec",
+      "entire_anonymous_and_pinned_bytes_equal_local": true
+    },
+    {
+      "name": "checksums.json",
+      "anonymous_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-california-20261106-01/checksums.json",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/e32e27dde3a56ee13c515ef54fa1e140fa4268b1/data/county-source-reviews/20261106-california-facts-01/checksums.json",
+      "bytes": 1897,
+      "sha256": "3f8d1d66814a286df178c013c9947dadabe0140977de66cb7e19edd59b358cac",
+      "entire_anonymous_and_pinned_bytes_equal_local": true
+    },
+    {
+      "name": "complete-query.zip",
+      "anonymous_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-california-20261106-01/complete-query.zip",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/e32e27dde3a56ee13c515ef54fa1e140fa4268b1/data/county-source-reviews/20261106-california-facts-01/complete-query.zip",
+      "bytes": 417046,
+      "sha256": "d985417e7fdc8d4af08447a09e7c0bfaf9a65dd92ff493dce1cb3ae431958a3c",
+      "entire_anonymous_and_pinned_bytes_equal_local": true
+    },
+    {
+      "name": "contest-choices.csv",
+      "anonymous_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-california-20261106-01/contest-choices.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/e32e27dde3a56ee13c515ef54fa1e140fa4268b1/data/county-source-reviews/20261106-california-facts-01/contest-choices.csv",
+      "bytes": 1593432,
+      "sha256": "7e56b812af9762741ee80ea5dde07d1eaa8d155ab899cb33da504f1bc145d5b9",
+      "entire_anonymous_and_pinned_bytes_equal_local": true
+    },
+    {
+      "name": "contest-totals.csv",
+      "anonymous_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-california-20261106-01/contest-totals.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/e32e27dde3a56ee13c515ef54fa1e140fa4268b1/data/county-source-reviews/20261106-california-facts-01/contest-totals.csv",
+      "bytes": 758971,
+      "sha256": "107e67d902f2f186d8ede376d39ce8e40289682cfc5ae540282d016bd1a1c966",
+      "entire_anonymous_and_pinned_bytes_equal_local": true
+    },
+    {
+      "name": "county-participation.csv",
+      "anonymous_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-california-20261106-01/county-participation.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/e32e27dde3a56ee13c515ef54fa1e140fa4268b1/data/county-source-reviews/20261106-california-facts-01/county-participation.csv",
+      "bytes": 11566,
+      "sha256": "0ddaf2f0c122096d0f9eb369aee7fff653c2b32f8019d5048974ad1d6a80c0e1",
+      "entire_anonymous_and_pinned_bytes_equal_local": true
+    },
+    {
+      "name": "election-identity.json",
+      "anonymous_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-california-20261106-01/election-identity.json",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/e32e27dde3a56ee13c515ef54fa1e140fa4268b1/data/county-source-reviews/20261106-california-facts-01/election-identity.json",
+      "bytes": 218,
+      "sha256": "96885995cea7192d29d57c59efabcc2b7eb7ecc21da7cdb829981ca145b221b2",
+      "entire_anonymous_and_pinned_bytes_equal_local": true
+    },
+    {
+      "name": "native-contest-reports.csv",
+      "anonymous_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-california-20261106-01/native-contest-reports.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/e32e27dde3a56ee13c515ef54fa1e140fa4268b1/data/county-source-reviews/20261106-california-facts-01/native-contest-reports.csv",
+      "bytes": 1076496,
+      "sha256": "4f2dca9c3bfdeb3aebb26dfdeac324f890020c64e6929e738b2890e30e4a452d",
+      "entire_anonymous_and_pinned_bytes_equal_local": true
+    },
+    {
+      "name": "native-reporting-status.csv",
+      "anonymous_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-california-20261106-01/native-reporting-status.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/e32e27dde3a56ee13c515ef54fa1e140fa4268b1/data/county-source-reviews/20261106-california-facts-01/native-reporting-status.csv",
+      "bytes": 28160,
+      "sha256": "81e03f5a78c88680675fdd9bbe49e2ad0bc65b2f363c575eafed4e1b2dd86194",
+      "entire_anonymous_and_pinned_bytes_equal_local": true
+    },
+    {
+      "name": "native-text-records.csv",
+      "anonymous_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-california-20261106-01/native-text-records.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/e32e27dde3a56ee13c515ef54fa1e140fa4268b1/data/county-source-reviews/20261106-california-facts-01/native-text-records.csv",
+      "bytes": 811758,
+      "sha256": "e4d4b9e1db4900c745150cbdec989d6c02ceae4f1c41598deb5ae904304db2c1",
+      "entire_anonymous_and_pinned_bytes_equal_local": true
+    },
+    {
+      "name": "party-totals.csv",
+      "anonymous_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-california-20261106-01/party-totals.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/e32e27dde3a56ee13c515ef54fa1e140fa4268b1/data/county-source-reviews/20261106-california-facts-01/party-totals.csv",
+      "bytes": 154972,
+      "sha256": "d18c9698a5b2118cbb08927f5d167d50ca8bb782ce898ffa20afff810dce66bc",
+      "entire_anonymous_and_pinned_bytes_equal_local": true
+    },
+    {
+      "name": "review-california-bulk-participation.py",
+      "anonymous_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-california-20261106-01/review-california-bulk-participation.py",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/e32e27dde3a56ee13c515ef54fa1e140fa4268b1/data/county-source-reviews/20261106-california-facts-01/review-california-bulk-participation.py",
+      "bytes": 27348,
+      "sha256": "40f2a51c90643373d779f5102c4a3e9554d3c2858a2dcb7cfebe97240389a3c4",
+      "entire_anonymous_and_pinned_bytes_equal_local": true
+    },
+    {
+      "name": "source-catalogs.csv",
+      "anonymous_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-california-20261106-01/source-catalogs.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/e32e27dde3a56ee13c515ef54fa1e140fa4268b1/data/county-source-reviews/20261106-california-facts-01/source-catalogs.csv",
+      "bytes": 375513,
+      "sha256": "04a230bdf81ef588512c320636efccf2cf1eb2c97fa38f6ea14a0be65db12375",
+      "entire_anonymous_and_pinned_bytes_equal_local": true
+    },
+    {
+      "name": "source-links.csv",
+      "anonymous_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-california-20261106-01/source-links.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/e32e27dde3a56ee13c515ef54fa1e140fa4268b1/data/county-source-reviews/20261106-california-facts-01/source-links.csv",
+      "bytes": 2878,
+      "sha256": "d58d14976d85fe62e0dcdc2d01e839e0f3fad732c5b5c8211f4cebdda5eb4619",
+      "entire_anonymous_and_pinned_bytes_equal_local": true
+    },
+    {
+      "name": "sources.csv",
+      "anonymous_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-california-20261106-01/sources.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/e32e27dde3a56ee13c515ef54fa1e140fa4268b1/data/county-source-reviews/20261106-california-facts-01/sources.csv",
+      "bytes": 2983,
+      "sha256": "653f479b2544638be7ed0134a6b2b03b6d0a587dc3f663805dd1fecba5315879",
+      "entire_anonymous_and_pinned_bytes_equal_local": true
+    },
+    {
+      "name": "statewide-participation.csv",
+      "anonymous_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-california-20261106-01/statewide-participation.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/e32e27dde3a56ee13c515ef54fa1e140fa4268b1/data/county-source-reviews/20261106-california-facts-01/statewide-participation.csv",
+      "bytes": 759,
+      "sha256": "82301cbd7e6ef4e3670403539c728f57a62c2b3173776b4007c024ed4d3edd97",
+      "entire_anonymous_and_pinned_bytes_equal_local": true
+    }
+  ],
+  "entire_anonymous_assets_verified": 16,
+  "entire_commit_pinned_files_verified": 16,
+  "entire_zip_members_verified": 15,
+  "all_files_and_entire_archive_reproduced_offline_from_anonymous_assets": true,
+  "live_california_ui": false,
+  "native_maps_approved": false
+}

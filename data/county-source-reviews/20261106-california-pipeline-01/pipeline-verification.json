@@ -1,0 +1,178 @@
+{
+  "verified_at_utc": "2026-11-06T09:50:47.126051+00:00",
+  "standalone_acquisition_script": "scripts/acquire-california-bulk-participation.py",
+  "acquisition_script_sha256": "cc727fb216a5c65deff2e81a9c352c42f5118a06c5bdfaf4212afcb1f769b963",
+  "standard_library_only": true,
+  "all_thirteen_actually_declared_sources_fetched_successfully": true,
+  "source_receipts": [
+    {
+      "source_file": "C26GG.txt",
+      "url": "https://media.sos.ca.gov/media/C26GG.txt",
+      "final_url": "https://media.sos.ca.gov/media/C26GG.txt",
+      "status": 200,
+      "content_type": "text/plain",
+      "bytes": 29713,
+      "sha256": "62fe9851e4b8bc19eaaa9dd9b33ee39a786b222e13eb28d9d4d3096c14574610",
+      "fetched_at_utc": "2026-11-06T09:50:21.458252+00:00"
+    },
+    {
+      "source_file": "J26GG.txt",
+      "url": "https://media.sos.ca.gov/media/J26GG.txt",
+      "final_url": "https://media.sos.ca.gov/media/J26GG.txt",
+      "status": 200,
+      "content_type": "text/plain",
+      "bytes": 7595,
+      "sha256": "3a8f5dcddd0b7fea675c69c18b8c3fc87ca3e882025d01f927aa9120ab2afbe6",
+      "fetched_at_utc": "2026-11-06T09:50:21.711500+00:00"
+    },
+    {
+      "source_file": "P26GG.txt",
+      "url": "https://media.sos.ca.gov/media/P26GG.txt",
+      "final_url": "https://media.sos.ca.gov/media/P26GG.txt",
+      "status": 200,
+      "content_type": "text/plain",
+      "bytes": 86011,
+      "sha256": "a6e035650e39f24a66b433c1addcb47bc005d8da6ea8dd7cd3fb5904a419da83",
+      "fetched_at_utc": "2026-11-06T09:50:22.084983+00:00"
+    },
+    {
+      "source_file": "R26GG.txt",
+      "url": "https://media.sos.ca.gov/media/R26GG.txt",
+      "final_url": "https://media.sos.ca.gov/media/R26GG.txt",
+      "status": 200,
+      "content_type": "text/plain",
+      "bytes": 16344,
+      "sha256": "d438d947655f0295edfd1b0eb80883f0e9955934d31fe4bfc6c99b1241c0acbe",
+      "fetched_at_utc": "2026-11-06T09:50:22.234012+00:00"
+    },
+    {
+      "source_file": "S26GG.txt",
+      "url": "https://media.sos.ca.gov/media/S26GG.txt",
+      "final_url": "https://media.sos.ca.gov/media/S26GG.txt",
+      "status": 200,
+      "content_type": "text/plain",
+      "bytes": 1445,
+      "sha256": "fc457afe741d236a372ae3974a824434c178d9c276580db870fd8b4a7327fb87",
+      "fetched_at_utc": "2026-11-06T09:50:22.426448+00:00"
+    },
+    {
+      "source_file": "V26GG.txt",
+      "url": "https://media.sos.ca.gov/media/V26GG.txt",
+      "final_url": "https://media.sos.ca.gov/media/V26GG.txt",
+      "status": 200,
+      "content_type": "text/plain",
+      "bytes": 197359,
+      "sha256": "426a7ff7bb5f28a6cafb726b7e91b37c2777de1284a3fa78f825bf72463e3830",
+      "fetched_at_utc": "2026-11-06T09:50:22.674388+00:00"
+    },
+    {
+      "source_file": "all_GG.zip",
+      "url": "https://media.sos.ca.gov/media/all_GG.zip",
+      "final_url": "https://media.sos.ca.gov/media/all_GG.zip",
+      "status": 200,
+      "content_type": "application/zip",
+      "bytes": 90085,
+      "sha256": "4aae718c48f18ae27180e6e03a44a8bfcc087612212a313a23b8f96fc013d9b7",
+      "fetched_at_utc": "2026-11-06T09:50:21.190906+00:00"
+    },
+    {
+      "source_file": "api-endpoints.csv",
+      "url": "https://media.sos.ca.gov/media/api-endpoints.csv",
+      "final_url": "https://media.sos.ca.gov/media/api-endpoints.csv",
+      "status": 200,
+      "content_type": "text/csv",
+      "bytes": 240861,
+      "sha256": "cf69d9ad8e88955a95d3b6b53e26fb435860682919417222cadcdee9db5783e8",
+      "fetched_at_utc": "2026-11-06T09:50:20.124516+00:00"
+    },
+    {
+      "source_file": "bulk-file-locations.xlsx",
+      "url": "https://media.sos.ca.gov/media/bulk-file-locations.xlsx",
+      "final_url": "https://media.sos.ca.gov/media/bulk-file-locations.xlsx",
+      "status": 200,
+      "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 10125,
+      "sha256": "1e5194efca2cf52b260650efed7fb1dec21262284097b3d1a7a55b565c1c2c10",
+      "fetched_at_utc": "2026-11-06T09:50:20.370715+00:00"
+    },
+    {
+      "source_file": "json-endpoints.csv",
+      "url": "https://media.sos.ca.gov/media/json-endpoints.csv",
+      "final_url": "https://media.sos.ca.gov/media/json-endpoints.csv",
+      "status": 200,
+      "content_type": "text/csv",
+      "bytes": 2118,
+      "sha256": "0ee593e797cb8e2cc76bed50f5a8de2928c2742d1a8caf89e59efb3a59c35c34",
+      "fetched_at_utc": "2026-11-06T09:50:19.875707+00:00"
+    },
+    {
+      "source_file": "media-index.html",
+      "url": "https://media.sos.ca.gov/",
+      "final_url": "https://media.sos.ca.gov/",
+      "status": 200,
+      "content_type": "text/html",
+      "bytes": 8138,
+      "sha256": "ce8e51880d58f845a47bc1ac9a5267dd23fac2ec73f79971febcb17a3aa006e0",
+      "fetched_at_utc": "2026-11-06T09:50:19.643426+00:00"
+    },
+    {
+      "source_file": "status_GG.json",
+      "url": "https://media.sos.ca.gov/media/status_GG.json",
+      "final_url": "https://media.sos.ca.gov/media/status_GG.json",
+      "status": 200,
+      "content_type": "application/json",
+      "bytes": 33855,
+      "sha256": "31bcdfc73ff50e303b917179dc5a4125ef4f5d3996795d2449ea689f7cedfbd4",
+      "fetched_at_utc": "2026-11-06T09:50:20.764756+00:00"
+    },
+    {
+      "source_file": "status_GG.zip",
+      "url": "https://media.sos.ca.gov/media/status_GG.zip",
+      "final_url": "https://media.sos.ca.gov/media/status_GG.zip",
+      "status": 200,
+      "content_type": "application/zip",
+      "bytes": 2824,
+      "sha256": "1620c8df265249c72362900b92ffee071215973823dfb4ffb88f247a1564a2b9",
+      "fetched_at_utc": "2026-11-06T09:50:20.905779+00:00"
+    }
+  ],
+  "entire_new_private_acquisition_passed_strict_original_backed_query_review": true,
+  "complete_derived_table_comparisons": [
+    {
+      "file": "county-participation.csv",
+      "bytes": 11566,
+      "sha256": "0ddaf2f0c122096d0f9eb369aee7fff653c2b32f8019d5048974ad1d6a80c0e1",
+      "complete_fresh_query_equals_frozen_source_facts": true
+    },
+    {
+      "file": "statewide-participation.csv",
+      "bytes": 759,
+      "sha256": "82301cbd7e6ef4e3670403539c728f57a62c2b3173776b4007c024ed4d3edd97",
+      "complete_fresh_query_equals_frozen_source_facts": true
+    },
+    {
+      "file": "contest-totals.csv",
+      "bytes": 758971,
+      "sha256": "107e67d902f2f186d8ede376d39ce8e40289682cfc5ae540282d016bd1a1c966",
+      "complete_fresh_query_equals_frozen_source_facts": true
+    },
+    {
+      "file": "contest-choices.csv",
+      "bytes": 1593432,
+      "sha256": "7e56b812af9762741ee80ea5dde07d1eaa8d155ab899cb33da504f1bc145d5b9",
+      "complete_fresh_query_equals_frozen_source_facts": true
+    },
+    {
+      "file": "party-totals.csv",
+      "bytes": 154972,
+      "sha256": "d18c9698a5b2118cbb08927f5d167d50ca8bb782ce898ffa20afff810dce66bc",
+      "complete_fresh_query_equals_frozen_source_facts": true
+    }
+  ],
+  "all_twelve_focused_parser_and_acquisition_tests_passed": true,
+  "tested_command": "python3 -I scripts/test-review-california-bulk-participation.py",
+  "original_sources_and_new_verification_query_remain_private": true,
+  "previous_frozen_fact_files_unchanged": true,
+  "public_pointer_changed": false,
+  "qualification": "Fresh acquisition intentionally keeps its independent receipts, source-page nonce and native feed framing clocks; none overwrite the frozen source package. No future source, failed request or unreviewed change is automatically published."
+}

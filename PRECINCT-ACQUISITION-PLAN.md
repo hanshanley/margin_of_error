@@ -40,7 +40,8 @@ Production and credential proofs are saved beside the local validation in
 After this batch, 29 of the consolidated index's 67 Pennsylvania counties have
 reviewed sources; 38 need primary-source work, alongside missing jurisdictions.
 
-**Next acquisition: California's declared statewide native participation.**
+**California's statewide native participation source is released and verified;
+UI integration is next, not live.**
 The actual official November 3 General Election media parent declares both
 catalogs, the bulk workbook and six native text feeds. All thirteen complete
 originals and acquisition receipts are private. The 59-row status JSON is
@@ -60,10 +61,24 @@ eleven complete CSV tables / fifteen ZIP members** and reproduces byte-for-byte
 both offline and independently from all thirteen entire original sources.
 ZIP **417,046 bytes**, SHA-256
 `d985417e7fdc8d4af08447a09e7c0bfaf9a65dd92ff493dce1cb3ae431958a3c`.
+Fixed facts **`e32e27dde3a56ee13c515ef54fa1e140fa4268b1`**, immutable release
+**436328601**, tag `voter-county-california-20261106-01`, pass all **sixteen
+anonymous assets / sixteen commit-pinned files / fifteen entire archive
+members** and anonymous-download offline reproduction. Exact source credential
+runs **42197697074 / 42197581360** pass.
 See `20261106-california-facts-01` and
 `20261106-california-primary-review-01/primary-review.json`; no original HTML,
-workbook or source templates are published. Next freeze/publish the immutable
-source release, independently establish county identities and integrate the
+workbook or source templates are published. The permanent standard-library
+pipeline, `scripts/acquire-california-bulk-participation.py --output <private-directory>`,
+has separately fetched all thirteen actual declarations and passed strict
+original-backed review. Its five entire derived participation/contest/party
+tables are byte-identical to frozen facts; fresh receipts and framing clocks
+remain separate, and all **twelve parser/acquisition tests** pass.
+See `20261106-california-pipeline-01/pipeline-verification.json`.
+Acquisition refuses repository-local originals and never moves a public pointer.
+Review deliberately accepts only the currently reviewed November 3-6 clocks;
+later captures require fresh source review before promotion.
+Next independently establish county identities and integrate the
 native counts without substituting candidate totals. Nothing California is live or
 map-approved yet. Native county codes are not FIPS, clocks have no declared
 timezone, `U/F/SF` retain their literal status, and 100% precinct reporting

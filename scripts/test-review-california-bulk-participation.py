@@ -1,5 +1,6 @@
 import collections
 import importlib.util
+from html import escape
 import json
 from pathlib import Path
 import unittest
@@ -10,6 +11,10 @@ SCRIPT = ROOT / "scripts/review-california-bulk-participation.py"
 SPEC = importlib.util.spec_from_file_location("california_review", SCRIPT)
 REVIEW = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(REVIEW)
+ACQUIRE_SPEC = importlib.util.spec_from_file_location(
+    "california_acquire", ROOT / "scripts/acquire-california-bulk-participation.py")
+ACQUIRE = importlib.util.module_from_spec(ACQUIRE_SPEC)
+ACQUIRE_SPEC.loader.exec_module(ACQUIRE)
 FACTS = ROOT / "data/county-source-reviews/20261106-california-facts-01"
 
 
@@ -150,6 +155,22 @@ class CaliforniaReviewTests(unittest.TestCase):
         self.inputs["native-text-records.csv"] = REVIEW.table(rows)
         with self.assertRaisesRegex(ValueError, "Entire native text source reconstruction"):
             REVIEW.reconcile(self.inputs)
+
+    def test_acquisition_requires_actual_parent_election_and_export_declarations(self):
+        links = REVIEW.records(self.inputs["source-links.csv"])
+        parent = "<h1>" + ACQUIRE.IDENTITY + "</h1>" + "".join(
+            '<a href="' + escape(row["resolved_url"], quote=True) + '">Export</a>'
+            for row in links)
+        declared = ACQUIRE.declared_parent(parent.encode())
+        self.assertIn("json-endpoints.csv", declared)
+        with self.assertRaisesRegex(ValueError, "Missing actual parent declaration"):
+            ACQUIRE.declared_parent(parent.replace("media/json-endpoints.csv", "not-a-declaration").encode())
+        with self.assertRaisesRegex(ValueError, "Wrong election identity"):
+            ACQUIRE.declared_parent(parent.replace(ACQUIRE.IDENTITY, "2024 General Election").encode())
+
+    def test_acquisition_refuses_to_save_source_originals_inside_checkout(self):
+        with self.assertRaisesRegex(ValueError, "outside the published repository"):
+            ACQUIRE.acquire(ROOT / ".private-california-originals-refusal-test")
 
 
 if __name__ == "__main__":
