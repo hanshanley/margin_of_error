@@ -2,7 +2,28 @@
 
 ## Current verified production and next acquisition
 
-**November 6, 08:27 UTC: Potter is LIVE verified.** Revision
+**November 6, 08:55 UTC: Mifflin is LIVE verified.** Revision
+`b2b8b54209fe738576ec098ee757db982f1d4a89`, Pages **42190311421 attempt 1**,
+artifact **13489417433 / 515,667,094 bytes**, SHA-256
+`21cc10941f29fc4c9c7c27494acb1d53c8bb478fa692b21e6cf9a0345c28ce6a`.
+Both exact credentials **42190311426 / 42190308555** pass.
+All **249 selected entire hosted/public files** and **seven production browser
+scenarios** pass. Prepared and hosted preview manifests are platform-qualified;
+all eighteen full import JSONs match after decompression. No comparison lock
+remains active. Current genuine participation context: **910 complete records /
+438 independent county joins / 65 usable native registered-voter fractions /
+373 missing gray rates**, across fifteen jurisdictions. All 909 earlier records,
+44 earlier native rows and 490 earlier download anchors remain unchanged.
+Current **45 reviewed native county rows / 513 complete download anchors /
+509 unique URLs**. Mifflin retains 14,439 ballots, native zero registrations and
+printed 0.00%; its calculated turnout is missing, not zero. Its separate receipts,
+contradictory parent stage wording, legislative electorates and partial reporting
+remain explicit. UF state estimates, historical participation and candidate
+results remain separate. This is not nationwide county, precinct, demographic,
+certification or complete-counting coverage. See the five exact production and
+credential proofs in `20261106-mifflin-explorer-01`.
+
+**Previous November 6, 08:27 UTC verification: Potter.** Revision
 `754787c2a9f39c3a7bfb15a14b29ab1f8fb4c797`, Pages **42187050846 attempt 1**,
 artifact **13488615563 / 511,247,254 bytes**, SHA-256
 `98c08c4623a2bb959339343f65cfbd027c35c5e91c5f79e3dc47ba157f5ff202`.
@@ -19,7 +40,7 @@ Current **44 reviewed native county rows / 490 complete download anchors /
 results remain separate. This is not nationwide county, precinct, demographic,
 certification or complete-counting coverage.
 
-**Mifflin UI candidate is locally verified, not yet LIVE.** Source release
+**Mifflin integration and fixed source releases are verified.** Source release
 436262436 and context release **436272496**, fixed context facts revision
 `641826e7ae96fab5d1ceb5a66fe4bbe809ef0a0a`, have complete anonymous/pinned/archive
 byte checks and offline reproduction. Context tag/review credentials
@@ -34,10 +55,11 @@ and **seven local browser scenarios** pass. Full-site validation reaches only
 the known unrelated UK assertion `23 !== 16`, not a new participation failure.
 Prepared site **961,225,435 bytes**, **106 byte-identical relocated downloads**;
 **45 native rows / 513 complete download anchors / 509 unique URLs** retain every
-old record, import and download. Exact approved revision, original hosted artifact,
-entire public bytes, credential jobs and production browsers remain required.
+old record, import and download. The exact approved revision, original hosted
+artifact, entire public bytes, credential jobs and production browsers passed
+at 08:55 UTC above; do not redeploy the unchanged UI for proof-only persistence.
 
-Next source work is **Mifflin / Perry**, not a repeat Potter deployment.
+Next source work is **Perry**, not another Mifflin or Potter deployment.
 Both actual official parents and four declared complete original reports are
 saved privately in `pa-perry-mifflin-primary-20261106-01`. Mifflin's 54 entire
 pages independently agree in both PDF engines, with every line consumed,
@@ -63,7 +85,8 @@ assets / 24 pinned files / 23 ZIP members** match, and the extracted isolated
 Python renderer reproduces every entire file and archive offline. Exact credential
 runs **42188313829 (tag) / 42188284416 (review)** pass.
 See `20261106-mifflin-publication-01`. Independent contextual identity and
-tested UI integration remain pending; this source release is not a live UI claim.
+tested UI integration subsequently passed with the exact production proof above;
+the source release itself is not a live UI claim.
 Perry's 24 entire pages are image scans: both text engines are empty, not
 proof of zero returns or a successful transcription. Full visual/OCR numerical
 review remains pending. First on-device PDFKit OCR clipped native 270-degree
@@ -82,10 +105,22 @@ literal candidates and confidence remain private. The independent pass correctly
 reads the entire county summary, but still misses some single-digit cells in the
 statement. It is not a completed native transcription, reconciliation or source
 approval; no missing cell is filled arithmetically and no source is uploaded.
+Subsequent participation-only reconciliation separates all **31 actual units /
+124 native unit-contest headers** from **four All Precincts aggregate headers**.
+All four headers per actual unit agree; the 31 units sum to **18,064 native ballots /
+31,391 native registrations**, with printed **57.55%**. All 31 first participation
+headers and their native 1-of-1 reporting lines were directly visually reviewed
+from unchanged full-resolution pixels. Native overvote/undervote sums reconcile
+for all four contests. This is not completed counting or a reviewed transcription
+of all unit candidate cells. Next: persist the scoped primary participation proof,
+produce a complete reproducible participation query (explicitly excluding
+unreviewed unit candidate cells), verify its fixed release and independently
+check county identity before any context08 or UI change. Native parties and
+ballot-participation mode splits remain absent, not inferred from candidate modes.
 Preserve full original scans, full-page images, coordinates, candidates and actual
 failure observations privately; do not infer missing cells, native parties or
-participation modes from candidate columns. Neither new county has source-map
-or UI approval.
+participation modes from candidate columns. Neither source has native source-map
+approval; Perry has no released query, contextual join or UI approval.
 Retain Maine's separate 130 unallocated major votes, 6,021 blanks, 125 write-ins,
 three municipal-other gap and shared Kennebec fragments; retain separate D.C.
 accounting. McKean needs a declared reachable alternative, not another unchanged
