@@ -41,8 +41,22 @@ All previous observations and complete downloads survive. Missing rates remain
 gray; reporting completeness is not completed counting or certification.
 The Columbia production proof below remains a retained historical baseline.
 
-**Next bulk acquisition: all 159 Georgia counties have a complete portable
-factual package; immutable publication and explorer integration remain pending.**
+**Next bulk acquisition: all 159 Georgia counties have a published, fully
+verified portable factual package; explorer deployment remains pending.**
+Factual freeze `2bc3119575435542dc89f775c1f28509b3524e63` and release
+`voter-county-georgia-native-query-20261106-01` (release **436437870**) pass
+all 16 entire anonymous assets and pinned source files, all 15 ZIP members,
+extracted offline reproduction, seven focused tests and both exact credential
+jobs **42212800995 / 42212729935**. The complete ZIP is **4,739,339 bytes**,
+SHA-256 `f8900610f3731dd10cb191637b35ec572013961ff4d2a29aa24c3fe0809b8932`.
+Context13 independently adds 159 valid contextual county geometries and joins,
+retaining all 974 previous records, 502 joins, 16 geometries and exclusions.
+Its complete query has **1,133 records / 661 joins / 285 usable county rates /
+376 missing rates across 17 jurisdictions**; two Georgia rates remain blank.
+The separately printed statewide 56.01% is retained but not approved as an
+analysis rate while two county registration denominators are missing.
+The geometry is contextual 2024 geography, not certified 2026 election reporting
+boundaries. Context13 release verification and explorer deployment remain pending.
 Source-only freeze `cf04d9be2107c58ea7a9a398170aa07b028f5a99` preserves the
 complete factual native query: 159 county/declaration/registration records,
 273 contest vectors and 457 candidate-or-choice rows. All identities join

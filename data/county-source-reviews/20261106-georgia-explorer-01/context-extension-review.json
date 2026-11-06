@@ -1,0 +1,24 @@
+{
+  "previous_complete_records_preserved": 974,
+  "previous_contextual_joins_preserved": 502,
+  "previous_exclusions_and_missingness_preserved": true,
+  "unchanged_geometry_inventory": 16,
+  "existing_source_map_approval_flags_unchanged": true,
+  "native_fips_invented": false,
+  "new_source_records": 159,
+  "new_contextual_identity_joins": 159,
+  "counts": {
+    "complete_source_records": 1133,
+    "contextual_joins": 661,
+    "jurisdictions": 17,
+    "reviewed_rates": 285,
+    "missing_rates": 376,
+    "excluded_municipalities": 286,
+    "excluded_missing_county_totals": 186
+  },
+  "frozen_review_bytes": 1031846,
+  "frozen_review_sha256": "5a57c97a69b1510bbc85e719e6ccbeeda262d52a5f5d9cdbe5173d0080fc6766",
+  "complete_zip_bytes": 2789632,
+  "complete_zip_sha256": "f7a16895a8d97856f391053bb006252495a698c38b3ab6dde1c51b0148d02100",
+  "complete_package_files": 31
+}

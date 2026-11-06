@@ -1,0 +1,161 @@
+{
+  "status": "all_entire_source_assets_and_offline_query_verified_not_explorer_integrated",
+  "verified_at_utc": "2026-11-06T11:48:35.394438+00:00",
+  "revision": "2bc3119575435542dc89f775c1f28509b3524e63",
+  "tag": "voter-county-georgia-native-query-20261106-01",
+  "release_id": 436437870,
+  "complete_assets": [
+    {
+      "file": "audit.json",
+      "bytes": 343978,
+      "sha256": "fa75a75d5751cf5f697df0da3f1e7c29446e69b9e7910e63e9ebb54220db91fa",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2bc3119575435542dc89f775c1f28509b3524e63/data/county-source-reviews/20261106-georgia-facts-01/audit.json",
+      "asset_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-georgia-native-query-20261106-01/audit.json",
+      "both_entire_bytes_match": true
+    },
+    {
+      "file": "candidate-mode-results.csv",
+      "bytes": 3931478,
+      "sha256": "898e17853d5c33e8afeb763d1a9c28e1a0a5528eb501986c6b8929ea22dd1cb3",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2bc3119575435542dc89f775c1f28509b3524e63/data/county-source-reviews/20261106-georgia-facts-01/candidate-mode-results.csv",
+      "asset_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-georgia-native-query-20261106-01/candidate-mode-results.csv",
+      "both_entire_bytes_match": true
+    },
+    {
+      "file": "candidate-results.csv",
+      "bytes": 863126,
+      "sha256": "bfdd08f3eb56556bba90de9803f8b8aef662dbdfebecee1dbab7b74a501dd277",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2bc3119575435542dc89f775c1f28509b3524e63/data/county-source-reviews/20261106-georgia-facts-01/candidate-results.csv",
+      "asset_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-georgia-native-query-20261106-01/candidate-results.csv",
+      "both_entire_bytes_match": true
+    },
+    {
+      "file": "checksums.json",
+      "bytes": 2106,
+      "sha256": "ea80e8dee1d9133742f83d7c2300ba93c0fe302efd7d8425f758013e2b8a307f",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2bc3119575435542dc89f775c1f28509b3524e63/data/county-source-reviews/20261106-georgia-facts-01/checksums.json",
+      "asset_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-georgia-native-query-20261106-01/checksums.json",
+      "both_entire_bytes_match": true
+    },
+    {
+      "file": "choice-accounting.csv",
+      "bytes": 984162,
+      "sha256": "59d606280503aa0c5298a8fdd8b7abde902b66e887ad207aed734b2ba8e06596",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2bc3119575435542dc89f775c1f28509b3524e63/data/county-source-reviews/20261106-georgia-facts-01/choice-accounting.csv",
+      "asset_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-georgia-native-query-20261106-01/choice-accounting.csv",
+      "both_entire_bytes_match": true
+    },
+    {
+      "file": "complete-georgia-native-query-01.zip",
+      "bytes": 4739339,
+      "sha256": "f8900610f3731dd10cb191637b35ec572013961ff4d2a29aa24c3fe0809b8932",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2bc3119575435542dc89f775c1f28509b3524e63/data/county-source-reviews/20261106-georgia-facts-01/complete-georgia-native-query-01.zip",
+      "asset_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-georgia-native-query-20261106-01/complete-georgia-native-query-01.zip",
+      "both_entire_bytes_match": true
+    },
+    {
+      "file": "county-participation.csv",
+      "bytes": 251202,
+      "sha256": "31176798e6ed604c1f84de6f00212e83539bf0643adc33f4843b77590e15dbb1",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2bc3119575435542dc89f775c1f28509b3524e63/data/county-source-reviews/20261106-georgia-facts-01/county-participation.csv",
+      "asset_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-georgia-native-query-20261106-01/county-participation.csv",
+      "both_entire_bytes_match": true
+    },
+    {
+      "file": "literal-party-totals.csv",
+      "bytes": 1041687,
+      "sha256": "a28ac4c148e8e4bbfaac20daf0b71f242ff1bc3fa66c6d345e5ff02c862a148c",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2bc3119575435542dc89f775c1f28509b3524e63/data/county-source-reviews/20261106-georgia-facts-01/literal-party-totals.csv",
+      "asset_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-georgia-native-query-20261106-01/literal-party-totals.csv",
+      "both_entire_bytes_match": true
+    },
+    {
+      "file": "native-contests.csv",
+      "bytes": 415146,
+      "sha256": "29a4063d622bb792127b4115f14db8836f9e65600cd482ceafafa7937ab528c7",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2bc3119575435542dc89f775c1f28509b3524e63/data/county-source-reviews/20261106-georgia-facts-01/native-contests.csv",
+      "asset_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-georgia-native-query-20261106-01/native-contests.csv",
+      "both_entire_bytes_match": true
+    },
+    {
+      "file": "native-reporting-statuses.csv",
+      "bytes": 46495,
+      "sha256": "18e7796aa7847410118091ddc72a50e6a295e4771d6d64bf10a3d740bf3bd80f",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2bc3119575435542dc89f775c1f28509b3524e63/data/county-source-reviews/20261106-georgia-facts-01/native-reporting-statuses.csv",
+      "asset_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-georgia-native-query-20261106-01/native-reporting-statuses.csv",
+      "both_entire_bytes_match": true
+    },
+    {
+      "file": "precinct-choice-results.csv.gz",
+      "bytes": 1986865,
+      "sha256": "d6b90deb963d75189bb98ab58f6ff5daa98893e2e23b9035c3cddc750d113b56",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2bc3119575435542dc89f775c1f28509b3524e63/data/county-source-reviews/20261106-georgia-facts-01/precinct-choice-results.csv.gz",
+      "asset_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-georgia-native-query-20261106-01/precinct-choice-results.csv.gz",
+      "both_entire_bytes_match": true
+    },
+    {
+      "file": "review-georgia-native-query.py",
+      "bytes": 23503,
+      "sha256": "40cbe4b3109499def1b91aa9f623e1299ce6c9c7fc455e172d15271a0b13d165",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2bc3119575435542dc89f775c1f28509b3524e63/data/county-source-reviews/20261106-georgia-facts-01/review-georgia-native-query.py",
+      "asset_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-georgia-native-query-20261106-01/review-georgia-native-query.py",
+      "both_entire_bytes_match": true
+    },
+    {
+      "file": "source-receipts.csv",
+      "bytes": 1647,
+      "sha256": "04667f480a6d3f36cdf9d858e156cc74a84edf4f4015d32fe7d91572821c0e3a",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2bc3119575435542dc89f775c1f28509b3524e63/data/county-source-reviews/20261106-georgia-facts-01/source-receipts.csv",
+      "asset_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-georgia-native-query-20261106-01/source-receipts.csv",
+      "both_entire_bytes_match": true
+    },
+    {
+      "file": "source-records.json.gz",
+      "bytes": 2146956,
+      "sha256": "9d47632098e6683763e97ad297b28404bb0b1a4a4b7758d32ac419409178a325",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2bc3119575435542dc89f775c1f28509b3524e63/data/county-source-reviews/20261106-georgia-facts-01/source-records.json.gz",
+      "asset_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-georgia-native-query-20261106-01/source-records.json.gz",
+      "both_entire_bytes_match": true
+    },
+    {
+      "file": "statewide-participation.csv",
+      "bytes": 310,
+      "sha256": "b882f7f97f0df02fc9b94cbbb18c60416cf3331fa9eb3f34c6b484514a368067",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2bc3119575435542dc89f775c1f28509b3524e63/data/county-source-reviews/20261106-georgia-facts-01/statewide-participation.csv",
+      "asset_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-georgia-native-query-20261106-01/statewide-participation.csv",
+      "both_entire_bytes_match": true
+    },
+    {
+      "file": "test-georgia-native-query.py",
+      "bytes": 4674,
+      "sha256": "42e7eae755c8d9c55305991d424aefe4c03b06fe43addc19fe4ef27ea4042d72",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2bc3119575435542dc89f775c1f28509b3524e63/data/county-source-reviews/20261106-georgia-facts-01/test-georgia-native-query.py",
+      "asset_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-georgia-native-query-20261106-01/test-georgia-native-query.py",
+      "both_entire_bytes_match": true
+    }
+  ],
+  "entire_pinned_files": 16,
+  "entire_release_assets": 16,
+  "entire_archive_members": 15,
+  "extracted_offline_reproduction": true,
+  "focused_tests": 7,
+  "credentials": [
+    {
+      "id": 42212800995,
+      "head_sha": "2bc3119575435542dc89f775c1f28509b3524e63",
+      "head_branch": "voter-county-georgia-native-query-20261106-01",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/hanshanley/margin_of_error/actions/runs/42212800995"
+    },
+    {
+      "id": 42212729935,
+      "head_sha": "2bc3119575435542dc89f775c1f28509b3524e63",
+      "head_branch": "voter-participation-reviewed-counties-20261105-02",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/hanshanley/margin_of_error/actions/runs/42212729935"
+    }
+  ],
+  "qualifications": "Source publication only; no explorer/LIVE claim. Missing county rates and mode cells remain missing."
+}
