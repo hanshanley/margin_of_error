@@ -1,10 +1,10 @@
 {
   "year": 2026,
-  "data_directory": "data/county-results/20261105-provider-overlap-01",
-  "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7437b4399e5a425c6ec2b3080ca268418a59e73b/data/county-results/20261105-provider-overlap-01/",
-  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-2026-20261105-provider-overlap-01/complete-county-results.zip",
-  "complete_download_bytes": 150787009,
-  "complete_download_sha256": "62c57cffebeae0b2bb048c37dc852e1f040306857e351a0cd2e0282f24fa8cdb",
+  "data_directory": "data/county-results/20261106T063536Z",
+  "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/737ed4b4e7fd4cc58c9bf70c413b4f15d94b4576/data/county-results/20261106T063536Z/",
+  "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-2026-20261106t063536z/complete-county-results.zip",
+  "complete_download_bytes": 150787182,
+  "complete_download_sha256": "f244754c9b03b22ac047357711dc176319291f9260460260c7f925d465d000b1",
   "label": "2026 U.S. House county / equivalent results",
   "overview_url": "/county-results-overview.geojson.gz",
   "states": 49,
@@ -12,6 +12,57 @@
   "participation_available": false,
   "publication": "reviewed_pending_live_verification",
   "previous_snapshots": [
+    {
+      "year": 2026,
+      "data_directory": "data/county-results/20261105-provider-overlap-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7437b4399e5a425c6ec2b3080ca268418a59e73b/data/county-results/20261105-provider-overlap-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-2026-20261105-provider-overlap-01/complete-county-results.zip",
+      "complete_download_bytes": 150787009,
+      "complete_download_sha256": "62c57cffebeae0b2bb048c37dc852e1f040306857e351a0cd2e0282f24fa8cdb",
+      "label": "2026 U.S. House county / equivalent results",
+      "overview_url": "/county-results-overview.geojson.gz",
+      "states": 49,
+      "normalized_counties": 3127,
+      "participation_available": false,
+      "publication": "reviewed_pending_live_verification",
+      "official_supplement": {
+        "counties": [
+          "42089",
+          "42017",
+          "42091"
+        ],
+        "provider_counties_replaced": [
+          "42017",
+          "42089",
+          "42091"
+        ],
+        "new_precinct_coverage": 0,
+        "state_completion_promoted": false
+      },
+      "party_votes": {
+        "data_directory": "data/county-results/20261105-provider-overlap-01/party-votes",
+        "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7437b4399e5a425c6ec2b3080ca268418a59e73b/data/county-results/20261105-provider-overlap-01/party-votes/",
+        "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-2026-20261105-provider-overlap-01/complete-county-results.zip",
+        "tables": [
+          {
+            "file": "county-party-totals.csv.gz",
+            "label": "Every county-party total: 9746 rows"
+          },
+          {
+            "file": "county-district-candidate-totals.csv.gz",
+            "label": "Every county/district candidate: 12336 rows"
+          },
+          {
+            "file": "state-party-totals.csv.gz",
+            "label": "Every full-state party total: 223 rows"
+          },
+          {
+            "file": "district-candidate-totals.csv.gz",
+            "label": "Every accepted House district candidate: 1381 rows"
+          }
+        ]
+      }
+    },
     {
       "year": 2026,
       "data_directory": "data/county-results/20261105-official-pa-01",
@@ -165,9 +216,9 @@
     "state_completion_promoted": false
   },
   "party_votes": {
-    "data_directory": "data/county-results/20261105-provider-overlap-01/party-votes",
-    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7437b4399e5a425c6ec2b3080ca268418a59e73b/data/county-results/20261105-provider-overlap-01/party-votes/",
-    "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-2026-20261105-provider-overlap-01/complete-county-results.zip",
+    "data_directory": "data/county-results/20261106T063536Z/party-votes",
+    "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/737ed4b4e7fd4cc58c9bf70c413b4f15d94b4576/data/county-results/20261106T063536Z/party-votes/",
+    "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-2026-20261106t063536z/complete-county-results.zip",
     "tables": [
       {
         "file": "county-party-totals.csv.gz",
