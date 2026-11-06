@@ -1,0 +1,16 @@
+{
+  "verified_at_utc": "2026-11-06T06:51:31.487607+00:00",
+  "combined_source_merge": "c7f5d7bc31a47b50801de460c51d05100826eb85",
+  "concurrent_main_revision": "9fbd48b36f1f2b0c413d774149db65c291de0b28",
+  "general_validator_command": "node scripts/validate-build.mjs",
+  "general_validator_exit_status": 1,
+  "general_validator_stdout": "",
+  "general_validator_stderr": "node:internal/modules/run_main:123\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n23 !== 16\n\n    at file:///Users/hanshanley/Documents/personal_projects/margin_of_error/scripts/validate-build.mjs:1126:9 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: 23,\n  expected: 16,\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n\nNode.js v22.23.2\n",
+  "all_participation_assertions_pass_before_existing_uk_failure": true,
+  "prepared_command": "node scripts/prepare-participation-pages.mjs",
+  "prepared_exit_status": 0,
+  "prepared_stdout": "Verified 106 byte-identical bulk downloads; Pages site is 916622802 bytes\n",
+  "byte_identical_relocated_downloads": 106,
+  "complete_prepared_site_bytes": 916622802,
+  "below_one_gigabyte": true
+}

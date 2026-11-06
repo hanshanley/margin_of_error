@@ -1,6 +1,32 @@
 {
   "reviews": [
     {
+      "id": "pennsylvania-jefferson-20261106-01",
+      "label": "Jefferson County, Pennsylvania 2026: native Voters Cast including provisional participation",
+      "data_directory": "data/county-source-reviews/20261106-jefferson-facts-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/66fc1694bfc8966a9febe5d14c482ff3bd4b366d/data/county-source-reviews/20261106-jefferson-facts-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-jefferson-20261106-01/complete-jefferson-2026-county-query-01.zip",
+      "complete_download_bytes": 27739,
+      "complete_download_sha256": "45708f01d3dad55f48b073e1c9108323ee42aec0ff5ac3300e5d9ce14551f029",
+      "review_status": "complete_county_aggregate_query_reviewed_unofficial_including_provisionals",
+      "maps_approved": false,
+      "scope_note": "Complete county/aggregate query from both government-declared reports: both summary pages, all seven unit-participation pages, all 53 page identities and 75 native county/container footer values, including repeated county footers. Native Voters Cast is 15,205 = 13,052 Election Day + 2,114 Mail-In + 39 Provisional, with 28,226 registrations and printed 53.87%. All 38 actual unit electorates reconcile exactly. Preserve the separate Cumulative zero/N/A container, missing summary mode registrations and repeated statement electorates without adding them. All four contests, thirteen candidate/write-in vectors, 36 office/literal-party/mode totals and four separate Total Votes subtotals remain available. Native Total Votes excludes Unresolved Write-In. The 66th and 75th district electorates are separately 15,192/28,187 and 13/39, not whole-county turnout. Residuals 115/73/80/0 stay unclassified. Act 88 received absentee/mail ballots are separate from counted participation. Unit-candidate pages 8-51 are not transcribed; privacy-suppressed cells are never recovered by subtraction or treated as zero. Summary and statement updates are 11/4/2026 3:47:13 PM and 11/4/2026 3:47:52 PM, with no declared timezone. Both PDF engines and complete standard-library offline reproduction agree on every reviewed fact. County source-material restrictions are retained; original templates remain private. All thirteen complete release assets, seventeen commit-pinned files and sixteen ZIP members are anonymously byte-verified. Fixed checksums/never-overwrite policy, not host locking. No demographic turnout, certification, statewide completion or source-level map approval.",
+      "tables": [
+        {"file": "county-participation.csv", "label": "Jefferson: complete native Voters Cast, registrations, modes, printed fraction and reporting scope (CSV)"},
+        {"file": "native-summary-participation.csv", "label": "Jefferson: all four native summary participation rows and explicitly missing mode registrations (CSV)"},
+        {"file": "native-unit-participation.csv", "label": "Jefferson: all 156 native unit/container participation rows, explicit zeroes and N/A fractions (CSV)"},
+        {"file": "native-participation-rollups.csv", "label": "Jefferson: all six native county/container participation rollups (CSV)"},
+        {"file": "county-candidate-results.csv", "label": "Jefferson: all thirteen separate candidate/write-in vectors and literal parties (CSV)"},
+        {"file": "county-literal-party-totals.csv", "label": "Jefferson: all 36 office/literal-party/mode candidate totals, not turnout (CSV)"},
+        {"file": "native-contest-subtotals.csv", "label": "Jefferson: all four separate native Total Votes subtotals, excluding write-ins (CSV)"},
+        {"file": "county-contest-accounting.csv", "label": "Jefferson: all sixteen scoped participation/selection accounting rows and unclassified residuals (CSV)"},
+        {"file": "native-source-pages.csv", "label": "Jefferson: all 53 native page identities, timestamps and reviewed scopes (CSV)"},
+        {"file": "native-county-candidate-footers.csv", "label": "Jefferson: all 75 native county/container footer values, retaining repeated totals (CSV)"},
+        {"file": "native-mail-ballot-receipts.csv", "label": "Jefferson: separate Act 88 absentee/mail receipt count and deadline, not counted participation (CSV)"}
+      ],
+      "coverage": []
+    },
+    {
       "id": "new-jersey-periodic-participation-20261106-02",
       "label": "New Jersey 2026: complete 21-county participation query, 19 usable reported-mode subtotals",
       "data_directory": "data/county-source-reviews/20261106-nj-participation-facts-02",

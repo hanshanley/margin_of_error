@@ -19,6 +19,7 @@ const profiles = [
   ['pennsylvania-blair-20261106-01', 'ballots_cast', 'registered_voters', 'native_printed_turnout', 'PA', ['Blair']],
   ['pennsylvania-armstrong-20261106-01', 'reported_voters_cast', 'registered_voters', 'native_printed_turnout', 'PA', ['Armstrong']],
   ['pennsylvania-wayne-20261106-01', 'ballots_cast', 'registered_voters', 'native_printed_turnout', 'PA', ['Wayne']],
+  ['pennsylvania-jefferson-20261106-01', 'reported_voters_cast', 'registered_voters', 'native_printed_turnout', 'PA', ['Jefferson']],
   ['dc-delegate-county-20261105-01', 'ballots_cast', 'registered_voters', null, 'DC', ['District of Columbia']],
 ];
 /** @returns {Record<string, string>[]} */
@@ -104,13 +105,24 @@ export function loadReviewedCountyParticipation(reviews) {
     const matches = reviews.filter(review => review.id === id);
     if (matches.length !== 1) throw new Error(`Missing or duplicated reviewed county source: ${id}`);
     const review = matches[0], directory = resolve(review.data_directory);
+    if (id === 'pennsylvania-jefferson-20261106-01') {
+      for (const [file, digest] of Object.entries({
+        'county-participation.csv': 'd9674bfaa0beaf1e2e0b1174a444e6f408dc4e95eb9e1544119f825f8b7cbb2e',
+        'native-source-pages.csv': 'd010adc9bcf8508d761dbda77d99ce89431f07714e9d9d02032756a4a2dfe44f',
+        'audit.json': '9eedaeba9c068df9e3258ca6bb3e5b2f553f3b956c531f2aa51eaf045d66d375',
+      })) {
+        if (createHash('sha256').update(readFileSync(resolve(directory, file))).digest('hex') !== digest)
+          throw new Error(`Invalid reviewed county participation: ${id} / ${file}`);
+      }
+    }
     const audit = JSON.parse(readFileSync(resolve(directory, 'audit.json'), 'utf8'));
     const rows = csv(resolve(directory, 'county-participation.csv'));
     if (rows.length !== names.length) throw new Error(`Incomplete reviewed county source: ${id}`);
     for (const native of rows) {
       const county = native.county ?? native.geography, identity = `${code}|${county}`;
       const unusableNativeZero = id === 'pennsylvania-lebanon-20261106-01';
-      const nativeVotersCast = id === 'pennsylvania-armstrong-20261106-01';
+      const excludesProvisionals = id === 'pennsylvania-armstrong-20261106-01';
+      const nativeVotersCast = excludesProvisionals || id === 'pennsylvania-jefferson-20261106-01';
       const nativeCountyHeader = id === 'pennsylvania-wayne-20261106-01';
       const ballots = Number(native[ballotField]);
       const denominator = unusableNativeZero ? null : Number(native[denominatorField]);
@@ -122,7 +134,7 @@ export function loadReviewedCountyParticipation(reviews) {
       if (native.year !== '2026' || native.state_code !== code || !names.includes(county) || seen.has(identity)
         || !/^\d+$/.test(native[ballotField]) || !Number.isSafeInteger(ballots)
         || (unusableNativeZero && ballots <= 0) || invalidDenominator
-        || (nativeVotersCast && (native.native_participation_measure_literal !== 'Voters Cast'
+        || (excludesProvisionals && (native.native_participation_measure_literal !== 'Voters Cast'
           || native.provisional_voters_cast !== ''
           || native.native_status_literal !== '2026 General Election Unofficial Results w/o PROV'))
         || (nativeCountyHeader && (native.native_participation_measure_literal !== 'Total Ballots Cast'
@@ -158,7 +170,8 @@ export function loadReviewedCountyParticipation(reviews) {
         nativeSourceUpdates = csv(resolve(directory, 'native-source-updates.csv'));
       } else if (['pennsylvania-cumberland-20261106-01', 'pennsylvania-adams-20261106-01',
         'pennsylvania-lebanon-20261106-01', 'pennsylvania-blair-20261106-01',
-        'pennsylvania-armstrong-20261106-01', 'pennsylvania-wayne-20261106-01'].includes(id)) {
+        'pennsylvania-armstrong-20261106-01', 'pennsylvania-wayne-20261106-01',
+        'pennsylvania-jefferson-20261106-01'].includes(id)) {
         nativeSourceUpdates = [...new Map(csv(resolve(directory, 'native-source-pages.csv')).map(row =>
           [row.source_report ?? 'county_report', { source: row.source_report ?? 'county_report', native_update_literal: row.source_update_literal,
             declared_timezone: row.declared_timezone }])).values()];

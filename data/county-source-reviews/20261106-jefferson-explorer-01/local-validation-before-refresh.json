@@ -1,0 +1,36 @@
+{
+  "facts_revision": "d2cb5422440e3ca5fce610b455eda82119d1e887",
+  "affected_node_tests": 24,
+  "explorer_and_additional_participation_regression_tests": 17,
+  "existing_build_tests": 4,
+  "astro_check": {"errors": 0, "warnings": 0, "existing_hints": 5},
+  "astro_build": "success",
+  "pages_preparation": {
+    "result": "success",
+    "byte_identical_relocated_downloads": 106,
+    "complete_site_bytes": 916733491,
+    "below_one_gigabyte": true
+  },
+  "standalone_offline_query_reproduction": "success; nested Node tools, all 28 portable ZIP members",
+  "general_build_validator": {
+    "participation_checks": "passed after counting all retained contextual snapshots dynamically",
+    "overall": "blocked_by_existing_unrelated_uk_topic_card_assertion",
+    "file": "scripts/validate-build.mjs",
+    "line": 1126,
+    "actual_topic_cards": 23,
+    "expected_topic_cards": 16,
+    "unrelated_uk_code_changed": false
+  },
+  "local_browser_proof": "local-browser.json",
+  "all_seven_browser_scenarios_pass": true,
+  "source_credential_screen": {"tracked_files": 6680, "google_key_matches": 0},
+  "exact_facts_credential_runs": [42176068540, 42176114741],
+  "exact_facts_credential_results": ["success", "success"],
+  "previous_entire_records_preserved": 902,
+  "previous_contextual_joins_preserved": 430,
+  "previous_complete_download_anchors_preserved": 371,
+  "current_complete_download_anchors": 387,
+  "current_unique_complete_download_urls": 384,
+  "live_verified": false,
+  "scope": "Local validation and complete source publication only. Production verification is recorded separately after exact deployment, artifact and complete public-byte checks."
+}

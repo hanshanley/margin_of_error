@@ -1049,12 +1049,69 @@ revision credential runs `42175320175` / `42175368898` both pass.
 Local/source, credential and release proofs are under
 `20261106-jefferson-publication-01`.
 
-This is a source-review/download batch, not a new live UI or map approval.
-The verified 902-record/430-join map snapshot remains untouched. Next integrate
-the new county participation with an explicit new immutable context-review
-version (or separately reviewed scoped loader), preserving every old source
-record and approval. Do not silently add an observation to the frozen review
-or weaken its current complete-inventory checks. Maine's unresolved 130 votes,
+The source-review batch above is separate from the following explorer extension.
+The verified 902-record/430-join map snapshot `20261106-01` remains untouched.
+Explicit immutable context version `20261106-02` preserves every entire old
+record, join, exclusion, source approval flag, missing rate and contextual
+geometry, adding only Jefferson's independently checked county identity.
+The exact 2024 and 2026 Census identities agree on `42065`, PA,
+`Jefferson County`; this is a separate contextual join, not an invented
+native FIPS or certified 2026 election boundary. Current inventory checks
+remain strict: **903 complete records, 431 joins, 59 rates, 372 missing rates**.
+
+Context facts revision `d2cb5422440e3ca5fce610b455eda82119d1e887`,
+release `voter-county-participation-context-20261106-02` / `436183643`:
+all four complete release assets, four pinned originals and 28 ZIP members
+are anonymously byte-verified at `2026-11-06T06:42:12.581044+00:00`.
+ZIP **2,211,271 bytes**, SHA-256
+`2124cb7bd1bcf5118367fabef59ba394b9da57984a611208e1e8a410724592f3`;
+review **749,023 bytes**, SHA-256
+`f39ac2f6771f8a9e442b590b3bd41fe458da43adf320863f4de7dbe7e1e6dbfa`.
+GitHub still reports `immutable:false`: fixed checksums/never overwrite,
+not host-enforced locking. Both exact facts credential runs
+`42176068540` / `42176114741` pass. The full portable query also reproduces
+from its own nested standard-library Node tools without project dependencies.
+
+Before the concurrent candidate refresh, the explorer extension passes
+**41 focused/regression tests**, four existing
+build tests, Astro check (zero errors/warnings, five existing hints), build,
+and Pages preparation (**916,733,491 bytes**, 106 byte-identical relocated
+downloads). The general validator now counts all retained contextual snapshot
+download links dynamically, passes participation checks and then reaches the
+existing unrelated UK **23-versus-16 topic-card** assertion; it is not claimed
+fully passing and no unrelated UK changes were made. All seven local browser
+scenarios pass: desktop/mobile check all 431 county counts and 59 exact rate
+fills, 372 missing rates stay gray, all 18 complete imports and 902 old records
+survive, and all 371 previous download anchors remain among **387 anchors /
+384 unique complete URLs**. Jefferson selection shows 15,205 native Voters
+Cast, 28,226 registrations, printed 53.87%, provisional inclusion and both
+native timestamps; no-JS and failed/tampered-review/current-feed fallbacks pass.
+The runtime review marker derives from the verified pointer, not a hardcoded
+old snapshot. These initial receipts are retained with `-before-refresh`
+filenames. Local/source/release proofs are under
+`data/county-source-reviews/20261106-jefferson-explorer-01/`.
+
+Publication's ancestor guard correctly stopped when the automated candidate
+refresh advanced main to `9fbd48b36f1f2b0c413d774149db65c291de0b28`.
+Merge `c7f5d7bc31a47b50801de460c51d05100826eb85` preserves that complete
+original-backed candidate/party snapshot, its overview and older downloads;
+candidate totals remain separate from participation. Its exact successful
+Pages run `42175558314`, current public source bytes, 37 entire native rows
+and **379 anchors / 375 URLs** are independently captured in `baseline.json`.
+All 45 tests and the build pass against the combined inputs. The general
+validator again passes participation and stops only at the same UK assertion.
+Combined Pages preparation verifies 106 complete relocated downloads and a
+**916,622,802-byte** site. Four focused desktop/mobile JS/no-JS checks preserve
+all 379 current anchors and all previous entire native rows, verify Jefferson
+selection and show **395 anchors / 391 complete URLs** without overflow.
+The previously passing full map/import/failure suite is retained rather than
+repeated for this candidate/download-only merge. Combined receipts are
+`combined-build-validation.json`, `local-validation.json` and
+`local-browser.json`.
+Deployment is pending exact-revision, hosted-artifact, complete public-byte
+and production-browser verification; the new UI is not yet claimed live.
+
+Maine's unresolved 130 votes,
 blanks/write-ins and municipal-other gap, and D.C.'s separate accounting gap,
 remain unresolved; schedule 5 continues remaining primary county acquisition.
 

@@ -579,7 +579,7 @@ function stateParticipationRows() {
             path.classList.add("selected"); fit(item.bounds);
           }, { class: "map-feature substate-feature", "data-geography": feature.properties.key,
             "data-level": "county", "data-rate": rate ?? "", "data-count": row?.ballots ?? "",
-            "data-source-county-id": row?.county_id ?? "", "data-context-review": contextual ? "20261106-01" : "",
+            "data-source-county-id": row?.county_id ?? "", "data-context-review": contextual ? state.countyContext.base_url.split("/").filter(Boolean).at(-1) : "",
             tabindex: "-1" });
         map.detail.append(path);
       }

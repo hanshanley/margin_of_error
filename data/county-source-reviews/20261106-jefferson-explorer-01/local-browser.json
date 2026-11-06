@@ -1,0 +1,56 @@
+{
+  "verified_at_utc": "2026-11-06T06:51:44.918475+00:00",
+  "scope": "Focused combined-UI preservation after candidate-source merge, not a duplicate unchanged map suite.",
+  "retained_full_map_and_import_proof": "local-browser-before-refresh.json",
+  "retained_full_map_counts": 431,
+  "retained_full_map_rate_fills": 59,
+  "retained_missing_rates_gray": 372,
+  "retained_full_imports": 18,
+  "retained_failure_scenarios": 3,
+  "modes": [
+    {
+      "mobile": false,
+      "javascript": true,
+      "previous_entire_native_rows_preserved": 37,
+      "current_native_rows": 38,
+      "previous_download_anchors_preserved": 379,
+      "current_download_anchors": 395,
+      "current_unique_urls": 391,
+      "jefferson_selection_verified": true,
+      "horizontal_overflow": false
+    },
+    {
+      "mobile": false,
+      "javascript": false,
+      "previous_entire_native_rows_preserved": 37,
+      "current_native_rows": 38,
+      "previous_download_anchors_preserved": 379,
+      "current_download_anchors": 395,
+      "current_unique_urls": 391,
+      "jefferson_selection_verified": false,
+      "horizontal_overflow": false
+    },
+    {
+      "mobile": true,
+      "javascript": true,
+      "previous_entire_native_rows_preserved": 37,
+      "current_native_rows": 38,
+      "previous_download_anchors_preserved": 379,
+      "current_download_anchors": 395,
+      "current_unique_urls": 391,
+      "jefferson_selection_verified": true,
+      "horizontal_overflow": false
+    },
+    {
+      "mobile": true,
+      "javascript": false,
+      "previous_entire_native_rows_preserved": 37,
+      "current_native_rows": 38,
+      "previous_download_anchors_preserved": 379,
+      "current_download_anchors": 395,
+      "current_unique_urls": 391,
+      "jefferson_selection_verified": false,
+      "horizontal_overflow": false
+    }
+  ]
+}

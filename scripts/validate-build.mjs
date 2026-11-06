@@ -238,6 +238,7 @@ const precinctResultsPointer = JSON.parse(await text('precinct-results.json'));
 const sourceReviews = await Promise.all((precinctResultsPointer.source_reviews ?? []).map(async path =>
 	JSON.parse(await readFile(new URL(`../${path}`, import.meta.url), 'utf8'))));
 const participationReviews = JSON.parse(await text('participation-source-reviews.json')).reviews;
+const countyContextPointer = JSON.parse(await text('participation-county-context.json'));
 const countyResultsPointer = JSON.parse(await text('county-results.json'));
 const countySnapshots = [countyResultsPointer, ...(countyResultsPointer.previous_snapshots ?? [])];
 const historicalHousePointer = JSON.parse(await text('historical-house-counties.json'));
@@ -254,7 +255,7 @@ for (const retiredArchive of [
 		`Withdrawn source archive is still linked: ${retiredArchive}`);
 }
 assert.equal(participation('#downloads a[download]').length,
-	21 + sourceReviews.reduce((count, review) =>
+	21 + countyContextPointer.downloads.length + sourceReviews.reduce((count, review) =>
 		count + 1 + (review.tables ?? []).length + (review.geometry_review ? 1 : 0), 0)
 	+ (precinctResultsPointer.source_batches ?? []).length
 	+ (precinctResultsPointer.additional_snapshots ?? []).reduce((count, snapshot) =>
