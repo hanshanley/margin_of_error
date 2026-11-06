@@ -7,7 +7,7 @@ import { createCountyContextReview, loadCountyContextReview } from './build-coun
 import { loadAdditionalParticipation } from './additional-participation.mjs';
 import { loadReviewedCountyParticipation } from './reviewed-county-participation.mjs';
 
-const root = new URL('../public/participation-county-context/20261106-02/', import.meta.url);
+const root = new URL('../public/participation-county-context/20261106-03/', import.meta.url);
 const json = file => JSON.parse(readFileSync(new URL(file, root), 'utf8'));
 const compressed = file => JSON.parse(gunzipSync(readFileSync(new URL(file, root))));
 const review = json('review.json');
@@ -26,8 +26,8 @@ test('complete county review reproduces without changing any source observations
     ...loadReviewedCountyParticipation(JSON.parse(readFileSync('public/participation-source-reviews.json')).reviews)];
   assert.deepEqual(records, liveRecords);
   assert.deepEqual(createCountyContextReview(records, inventories, collections, investigation), review);
-  assert.deepEqual(review.counts, { complete_source_records: 903, contextual_joins: 431, jurisdictions: 15,
-    reviewed_rates: 59, missing_rates: 372, excluded_municipalities: 286, excluded_missing_county_totals: 186 });
+  assert.deepEqual(review.counts, { complete_source_records: 904, contextual_joins: 432, jurisdictions: 15,
+    reviewed_rates: 60, missing_rates: 372, excluded_municipalities: 286, excluded_missing_county_totals: 186 });
   assert.ok(review.observations.every(row => row.source_map_approval_unchanged === false));
 });
 
@@ -42,7 +42,7 @@ test('independent joins use each entire unchanged record and exact contextual ge
       if (row.reported_pct !== null) rates++;
     }
   }
-  assert.equal(joined, 431); assert.equal(rates, 59);
+  assert.equal(joined, 432); assert.equal(rates, 60);
   assert.equal((await match(records.filter(row => ['VT', 'RI', 'MN', 'ND', 'ID', 'MI'].includes(row.state_code)))).size, 0);
   const nj = await match(records.filter(row => row.state_code === 'NJ'), review, 'NJ');
   assert.equal(nj.size, 19);
@@ -54,7 +54,7 @@ test('preserves the full previous immutable query while independently joining Je
   const previous = new URL('../public/participation-county-context/20261106-01/', import.meta.url);
   const oldRecords = JSON.parse(gunzipSync(readFileSync(new URL('complete-source-records.json.gz', previous))));
   const oldReview = JSON.parse(readFileSync(new URL('review.json', previous), 'utf8'));
-  const isNew = row => row.review_id === 'pennsylvania-jefferson-20261106-01';
+  const isNew = row => ['pennsylvania-jefferson-20261106-01', 'pennsylvania-clarion-20261106-01'].includes(row.review_id);
   assert.deepEqual(records.filter(row => !isNew(row)), oldRecords);
   assert.deepEqual(review.observations.filter(row => !isNew(row)), oldReview.observations);
   assert.deepEqual(review.excluded, oldReview.excluded);
@@ -67,6 +67,26 @@ test('preserves the full previous immutable query while independently joining Je
   assert.equal(jefferson.reported_pct, 100 * 15205 / 28226);
   assert.equal(jefferson.maps_approved, false);
   assert.deepEqual(loadCountyContextReview(records).counts, review.counts);
+  assert.throws(() => loadCountyContextReview(oldRecords), /complete current source records/);
+});
+
+test('preserves every full context02 record and approval while independently joining Clarion', async () => {
+  const previous = new URL('../public/participation-county-context/20261106-02/', import.meta.url);
+  const oldRecords = JSON.parse(gunzipSync(readFileSync(new URL('complete-source-records.json.gz', previous))));
+  const oldReview = JSON.parse(readFileSync(new URL('review.json', previous), 'utf8'));
+  const isNew = row => row.review_id === 'pennsylvania-clarion-20261106-01';
+  assert.deepEqual(records.filter(row => !isNew(row)), oldRecords);
+  assert.deepEqual(review.observations.filter(row => !isNew(row)), oldReview.observations);
+  assert.deepEqual(review.excluded, oldReview.excluded);
+  assert.deepEqual(review.geometry, oldReview.geometry);
+  const joined = await match(records.filter(row => row.state_code === 'PA'), review, 'PA');
+  const clarion = joined.get('42031');
+  assert.equal(clarion.county, 'Clarion');
+  assert.equal(clarion.ballots, 12975);
+  assert.equal(clarion.denominator, 23306);
+  assert.equal(clarion.reported_pct, 100 * 12975 / 23306);
+  assert.equal(clarion.maps_approved, false);
+  assert.equal(clarion.native_record.county_fips, undefined);
   assert.throws(() => loadCountyContextReview(oldRecords), /complete current source records/);
 });
 

@@ -1,0 +1,53 @@
+{
+  "verified_at_utc": "2026-11-06T07:06:20.467450+00:00",
+  "facts_revision": "25db0eb69c1e0c584f6e4493457c55b99ec1ba85",
+  "focused_tests": {
+    "passed": 44,
+    "command": "node --test scripts/voter-participation.test.mjs scripts/reviewed-county-participation.test.mjs scripts/additional-participation.test.mjs scripts/county-participation-context.test.mjs",
+    "scope": "Executed successfully immediately before facts publication; no parser/test changes since."
+  },
+  "commands": [
+    {
+      "command": [
+        "npm",
+        "run",
+        "check"
+      ],
+      "exit_status": 0,
+      "stdout": "\n> margin-of-error@0.1.0 check\n> astro check\n\n02:05:01 [content] Syncing content\n02:05:01 [content] Synced content\n02:05:01 [types] Generated 232ms\n02:05:01 [check] Getting diagnostics for Astro files in /Users/hanshanley/Documents/personal_projects/margin_of_error...\n\u001b[96mdata/precinct-source-reviews/20261105/DE/originals/results-page.js\u001b[0m:\u001b[93m430\u001b[0m:\u001b[93m13\u001b[0m - \u001b[93mwarning\u001b[0m\u001b[90m ts(6133): \u001b[0m'flt' is declared but its value is never read.\n\n\u001b[7m430\u001b[0m         let flt = url.searchParams.get(\"filter\")\n\u001b[7m   \u001b[0m \u001b[93m            ~~~\u001b[0m\n\u001b[96mdata/precinct-source-reviews/20261105/DE/originals/results-page.js\u001b[0m:\u001b[93m420\u001b[0m:\u001b[93m11\u001b[0m - \u001b[93mwarning\u001b[0m\u001b[90m ts(6133): \u001b[0m'reloader' is declared but its value is never read.\n\n\u001b[7m420\u001b[0m     const reloader = setTimeout(reloadPage,300000)\n\u001b[7m   \u001b[0m \u001b[93m          ~~~~~~~~\u001b[0m\n\u001b[96mdata/precinct-source-reviews/20261105/DE/originals/results-page.js\u001b[0m:\u001b[93m344\u001b[0m:\u001b[93m9\u001b[0m - \u001b[93mwarning\u001b[0m\u001b[90m ts(6133): \u001b[0m'electionName' is declared but its value is never read.\n\n\u001b[7m344\u001b[0m     var electionName = results[0][\"Election Name\"];\n\u001b[7m   \u001b[0m \u001b[93m        ~~~~~~~~~~~~\u001b[0m\n\u001b[96mdata/precinct-source-reviews/20261105/DE/originals/results-page.js\u001b[0m:\u001b[93m7\u001b[0m:\u001b[93m52\u001b[0m - \u001b[93mwarning\u001b[0m\u001b[90m ts(6133): \u001b[0m'selection' is declared but its value is never read.\n\n\u001b[7m7\u001b[0m async function getResults(resultType = \"Statewide\",selection=\"\") {\n\u001b[7m \u001b[0m \u001b[93m                                                   ~~~~~~~~~\u001b[0m\n\n\u001b[96mpublic/china-us-relations/assets/weibo-explorer.js\u001b[0m:\u001b[93m156\u001b[0m:\u001b[93m14\u001b[0m - \u001b[93mwarning\u001b[0m\u001b[90m ts(2568): \u001b[0mProperty 'value' may not exist on type 'string | Element'. Did you mean 'valueOf'?\n  Property 'value' does not exist on type 'string'.\n\n\u001b[7m156\u001b[0m       select.value = parameters.get(parameter);\n\u001b[7m   \u001b[0m \u001b[93m             ~~~~~\u001b[0m\n\nResult (78 files): \n- 0 errors\n- 0 warnings\n- 5 hints\n\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "exit_status": 0,
+      "stdout": "\n> margin-of-error@0.1.0 build\n> node scripts/build-precinct-histories.mjs && astro build && node scripts/build-website-charts.mjs && node --test scripts/caucus-issues.test.mjs\n\nBuilt 100 county precinct-history indexes (15914220 bytes) from verified original observations\n02:05:06 [content] Syncing content\n02:05:06 [content] Synced content\n02:05:06 [types] Generated 222ms\n02:05:06 [build] output: \"static\"\n02:05:06 [build] mode: \"static\"\n02:05:06 [build] directory: /Users/hanshanley/Documents/personal_projects/margin_of_error/dist/\n02:05:06 [build] Collecting build info...\n02:05:06 [build] \u2713 Completed in 243ms.\n02:05:06 [build] Building static entrypoints...\n02:05:06 [vite] \u2713 built in 196ms\n02:05:09 [vite] \u2713 built in 2.29s\n02:05:09 [build] Rearranging server assets...\n\n generating static routes \n02:05:09   \u251c\u2500 /404.html (+8ms) \n02:05:09   \u251c\u2500 /about/index.html (+1ms) \n02:05:09   \u251c\u2500 /archive/index.html (+3ms) \n02:05:09   \u251c\u2500 /are-you-an-ai/index.html (+2ms) \n02:05:09   \u251c\u2500 /fieldwork/new-covid-19-conspiracy-theories-gain-traction-as-old-ones-re-emerge/index.html (+1ms) \n02:05:09   \u251c\u2500 /fieldwork/misinformation-regarding-frances-covid-19-health-passes-spread-on-twitter/index.html (+1ms) \n02:05:09   \u251c\u2500 /fieldwork/iranian-social-media-exploit-us-based-conspiracies-regarding-uss-liberty-incident/index.html (+1ms) \n02:05:09   \u251c\u2500 /fieldwork/china-weaponizes-discovery-of-graves-at-canadian-residential-schools/index.html (+1ms) \n02:05:09   \u251c\u2500 /fieldwork/pro-kremlin-media-echo-chinese-outlets-covid-lab-leak/index.html (+1ms) \n02:05:09   \u251c\u2500 /fieldwork/iranian-accounts-promote-anti-israel-hashtags/index.html (+1ms) \n02:05:09   \u251c\u2500 /fieldwork/nigerian-twitter-users-flock-to-vpns/index.html (+0ms) \n02:05:09   \u251c\u2500 /home/index.html (+1ms) \n02:05:09   \u251c\u2500 /interactive-analysis/index.html (+17ms) \n02:05:09   \u251c\u2500 /participation-local/AL.json.gz (+1ms) \n02:05:09   \u251c\u2500 /participation-local/AZ.json.gz (+1ms) \n02:05:09   \u251c\u2500 /participation-local/FL.json.gz (+0ms) \n02:05:09   \u251c\u2500 /participation-local/MO.json.gz (+0ms) \n02:05:09   \u251c\u2500 /participation-local/WY.json.gz (+0ms) \n02:05:09   \u251c\u2500 /participation-local/AR.json.gz (+1ms) \n02:05:09   \u251c\u2500 /participation-local/VA.json.gz (+1ms) \n02:05:09   \u251c\u2500 /participation-local/OR.json.gz (+1ms) \n02:05:09   \u251c\u2500 /participation-local/NV.json.gz (+0ms) \n02:05:09   \u251c\u2500 /participation-local/WA.json.gz (+1ms) \n02:05:09   \u251c\u2500 /participation-local/IA.json.gz (+0ms) \n02:05:09   \u251c\u2500 /participation-local/KY.json.gz (+0ms) \n02:05:09   \u251c\u2500 /participation-local/MN.json.gz (+23ms) \n02:05:09   \u251c\u2500 /participation-local/ND.json.gz (+2ms) \n02:05:09   \u251c\u2500 /participation-local/ID.json.gz (+6ms) \n02:05:09   \u251c\u2500 /participation-local/VT.json.gz (+2ms) \n02:05:09   \u251c\u2500 /participation-local/RI.json.gz (+0ms) \n02:05:09   \u251c\u2500 /participation-local/MI.json.gz (+1ms) \n02:05:09   \u251c\u2500 /party-platforms/sources/index.html (+6ms) \n02:05:09   \u251c\u2500 /party-platforms/index.html (+17ms) \n02:05:09   \u251c\u2500 /rss.xml (+29ms) \n02:05:09   \u251c\u2500 /voter-participation/index.html (+329ms) \n02:05:09   \u251c\u2500 /index.html (+2ms) \n02:05:09   \u251c\u2500 /a-continent-at-a-crossroads-natos/index.html (+3ms) \n02:05:09   \u251c\u2500 /broken-britain-the-headwinds-battering-the-island-nation/index.html (+2ms) \n02:05:09   \u251c\u2500 /china-is-trending-understanding-china/index.html (+1ms) \n02:05:09   \u251c\u2500 /echo-chambers-embedded-in-the-structure-of-news-media-websites/index.html (+1ms) \n02:05:09   \u251c\u2500 /floor-letter-words-the-rise-of-congressional-profanity/index.html (+1ms) \n02:05:09   \u251c\u2500 /media-coverage-of-kamala-harris-and/index.html (+2ms) \n02:05:09   \u251c\u2500 /my-first-blog-post/index.html (+1ms) \n02:05:09   \u251c\u2500 /oh-q-what-art-thou/index.html (+1ms) \n02:05:09   \u251c\u2500 /oh-q-where-art-thou/index.html (+1ms) \n02:05:09   \u251c\u2500 /the-influx-of-russian-misinfo-on-the-rrussia-subreddit/index.html (+2ms) \n02:05:09   \u251c\u2500 /the-republican-party-after-trump/index.html (+2ms) \n02:05:09   \u251c\u2500 /the-shrinking-swing-state-map/index.html (+1ms) \n02:05:09   \u251c\u2500 /timeline-of-events-in-the-build-up-to-the-russo-ukrainian-war/index.html (+2ms) \n02:05:09   \u251c\u2500 /us-summit-for-democracy/index.html (+1ms) \n02:05:09   \u251c\u2500 /what-matters-most-to-americas-democratic-socialists/index.html (+1ms) \n02:05:09   \u251c\u2500 /who-are-the-real-americans-heritage/index.html (+1ms) \n02:05:09 \u2713 Completed in 818ms.\n\n02:05:09 [build] \u2713 Completed in 3.33s.\n02:05:09 [@astrojs/sitemap] `sitemap-index.xml` created at `dist`\n02:05:09 [build] 33 page(s) built in 3.87s\n02:05:09 [build] Complete!\nWebsite chart exports: 565 lossless copies, 459 backgrounds updated to #f2efe7. Originals unchanged.\nTAP version 13\n# Subtest: share links have unique real targets and the DSA title remains on the existing route\nok 1 - share links have unique real targets and the DSA title remains on the existing route\n  ---\n  duration_ms: 130.228833\n  type: 'test'\n  ...\n# Subtest: caucus comparisons follow the existing national analysis and work without scripts\nok 2 - caucus comparisons follow the existing national analysis and work without scripts\n  ---\n  duration_ms: 10.0735\n  type: 'test'\n  ...\n# Subtest: every theme contains all thirteen caucuses, exact shares and unsmoothed ratios\nok 3 - every theme contains all thirteen caucuses, exact shares and unsmoothed ratios\n  ---\n  duration_ms: 24.833125\n  type: 'test'\n  ...\n# Subtest: displayed claims retain their actual source excerpts; zero shares do not invent positions\nok 4 - displayed claims retain their actual source excerpts; zero shares do not invent positions\n  ---\n  duration_ms: 158.954708\n  type: 'test'\n  ...\n1..4\n# tests 4\n# suites 0\n# pass 4\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 469.588667\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "scripts/validate-build.mjs"
+      ],
+      "exit_status": 1,
+      "stdout": "",
+      "stderr": "node:internal/modules/run_main:123\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n23 !== 16\n\n    at file:///Users/hanshanley/Documents/personal_projects/margin_of_error/scripts/validate-build.mjs:1126:9 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: 23,\n  expected: 16,\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n\nNode.js v22.23.2\n"
+    },
+    {
+      "command": [
+        "node",
+        "scripts/prepare-participation-pages.mjs"
+      ],
+      "exit_status": 0,
+      "stdout": "Verified 106 byte-identical bulk downloads; Pages site is 925523173 bytes\n",
+      "stderr": ""
+    }
+  ],
+  "all_participation_assertions_pass_before_existing_uk_failure": true,
+  "byte_identical_relocated_downloads": 106,
+  "complete_prepared_site_bytes": 925523173,
+  "below_one_gigabyte": true
+}

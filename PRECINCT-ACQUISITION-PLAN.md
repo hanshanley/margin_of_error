@@ -1164,8 +1164,49 @@ this is a fixed-checksum/never-overwrite policy, not host-enforced locking.
 Both exact facts credential runs `42177891612` / `42177895500` pass.
 Full publication evidence is under
 `data/county-source-reviews/20261106-clarion-publication-01/`.
-Explorer integration is separate and pending.
-No new map or turnout denominator is approved by this source-only review.
+Explorer integration is separate from the source-only review. Explicit immutable
+context `20261106-03` preserves all 903 previous entire source records, all
+431 joins, exclusions, missingness, source approval flags and contextual
+geometries. Both complete Census inventories independently identify `42031`,
+PA, `Clarion County`; the new contextual join does not invent a native FIPS.
+The inventory is now **904 records, 432 joins, 60 native-electorate fractions
+and 372 missing rates**, across the same fifteen contextual jurisdictions.
+The strict loader preserves Clarion's actual unofficial status, native
+timestamp, undeclared timezone, missing modes, Foxburg electorate and counting
+qualifications. Candidate-substitution and invented-mode tests fail closed;
+all 44 participation/context tests pass, including whole-record preservation.
+
+Context facts `25db0eb69c1e0c584f6e4493457c55b99ec1ba85` and fixed release
+`voter-county-participation-context-20261106-03` / `436198453` are published.
+All four entire release assets, **all 29 complete pinned files** and every
+one of 28 ZIP members are anonymously byte-verified at
+`2026-11-06T07:04:34.067694+00:00`. Extracted standalone Node verification
+and byte-identical Python standard-library repackaging pass offline.
+ZIP **2,211,800 bytes**, SHA-256
+`209d71ebc9ce3b832e2fa36998e808f283bb611f9f6ab65089a89cad0e9b533f`;
+review **750,118 bytes**, SHA-256
+`fb28ee4666ff5aa0a7546f3b2394ad7679b99e69e1130251e284911cd9926c08`.
+GitHub still reports `immutable:false`: fixed checksums/never overwrite,
+not host locking. Exact facts credential runs `42178392996` / `42178421456`
+both pass. All frozen versions 01 and 02 remain untouched.
+The actual e6cc508 public baseline independently retains 38 entire reviewed
+native rows, 395 download anchors /391 URLs, every historical year and all
+eighteen complete public imports. Source/release/baseline proofs are under
+`data/county-source-reviews/20261106-clarion-explorer-01/`.
+Astro check, the build and its four existing tests pass. The general validator
+passes participation and reaches only the documented unrelated UK 23-versus-16
+topic-card assertion; it is not claimed fully passing. Pages preparation
+verifies **106 complete byte-identical relocated downloads** and a
+**925,523,173-byte** local site. All seven local browser scenarios pass:
+desktop/mobile verify all **432 exact county counts and 60 rate fills**,
+372 missing rates stay gray, all 903 previous records and eighteen full imports
+are unchanged, and all 395 previous anchors remain among **405 anchors /
+401 complete URLs**. Clarion selection preserves native unofficial status,
+timestamp/undeclared timezone, missing modes, Foxburg's separate electorate
+and 40/40-counting qualifications; Jefferson selection also remains exact.
+No-JS and failed/tampered-review/current-feed fallbacks pass without overflow.
+Publication and exact production proof remain pending.
+No new source-level map approval or certified turnout denominator is implied.
 The other newly followed queue entry, Clearfield, returns an actual empty
 HTTP 404 through the ordinary source acquisition; the browser-backed web
 reader reaches its index but reports a redirect loop at the declared summary.

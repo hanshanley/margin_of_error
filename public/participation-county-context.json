@@ -1,11 +1,27 @@
 {
   "schema_version": 1,
-  "base_url": "/participation-county-context/20261106-02/",
-  "review_bytes": 749023,
-  "review_sha256": "f39ac2f6771f8a9e442b590b3bd41fe458da43adf320863f4de7dbe7e1e6dbfa",
-  "complete_download_bytes": 2211271,
-  "complete_download_sha256": "2124cb7bd1bcf5118367fabef59ba394b9da57984a611208e1e8a410724592f3",
+  "base_url": "/participation-county-context/20261106-03/",
+  "review_bytes": 750118,
+  "review_sha256": "fb28ee4666ff5aa0a7546f3b2394ad7679b99e69e1130251e284911cd9926c08",
+  "complete_download_bytes": 2211800,
+  "complete_download_sha256": "209d71ebc9ce3b832e2fa36998e808f283bb611f9f6ab65089a89cad0e9b533f",
   "downloads": [
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-03/county-participation-joins.csv",
+      "label": "Complete audited county participation joins: all 432 observations, including Clarion, Pennsylvania (CSV)"
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-03/review.json",
+      "label": "Complete updated county identity review, exclusions and geometry qualifications (JSON)"
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-03/complete-source-records.json.gz",
+      "label": "Every county, municipal and reporting-unit container: all 904 records, preserving the previous 903 unchanged (JSON · gzip)"
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-03/complete-county-participation-context-03.zip",
+      "label": "Complete updated county participation context query, inventories, geometries and offline reproduction code (ZIP)"
+    },
     {
       "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-02/county-participation-joins.csv",
       "label": "Complete audited county participation joins: all 431 observations, including Jefferson, Pennsylvania (CSV)"

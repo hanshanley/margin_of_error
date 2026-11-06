@@ -1,6 +1,26 @@
 {
   "reviews": [
     {
+      "id": "pennsylvania-clarion-20261106-01",
+      "label": "Clarion County, Pennsylvania 2026: native Voters Cast and separate contest electorates",
+      "data_directory": "data/county-source-reviews/20261106-clarion-facts-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7985530b021aa51865107eed52b76722bc39c80e/data/county-source-reviews/20261106-clarion-facts-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-clarion-20261106-01/complete-clarion-2026-county-query-01.zip",
+      "complete_download_bytes": 19108,
+      "complete_download_sha256": "0b54376406262fd7298e990e5ae65848f3d85ffa17d41bfdafdf700e8e5d03d0",
+      "review_status": "complete_county_summary_query_reviewed_unofficial_separate_contest_electorates",
+      "maps_approved": false,
+      "scope_note": "Complete numerical query from both pages of the county-declared November 3 general-election summary. Native Voters Cast is 12,975 of 23,306 with printed 55.67%, not the smaller candidate-vote subtotal. All four contests, thirteen candidate/write-in/ballot-option rows and seven literal-party totals remain available. Native Total Votes excludes separately printed Unresolved Write-In; retain all 11/14/40/0 write-ins and unclassified participation-minus-choice residuals 108/68/95/3. Foxburg referendum Times Cast 82/116 is a separate electorate and is not added to the county. Separate Election Day, mail and provisional participation, undervotes and overvotes are not reported and remain absent, not zero. All 40 precincts are reported, without a certification or completed-ballot-counting claim. Native UNOFFICIAL ELECTION RESULTS and 11/3/2026 9:49:20 PM retain their labels without an inferred timezone. Both PDF engines agree on every entire page and contest; the full eleven-file query and every ten-member ZIP entry reproduce byte-identically offline. Original documents and presentation templates remain private. All eleven complete release assets, eleven complete pinned files and ten ZIP members are anonymously byte-verified. Fixed checksums/never-overwrite policy, not host locking. No demographic turnout, statewide completion or source-level map approval.",
+      "tables": [
+        {"file": "county-participation.csv", "label": "Clarion: complete native Voters Cast, registrations, printed fraction and missing mode counts (CSV)"},
+        {"file": "county-candidate-results.csv", "label": "Clarion: all thirteen separate candidate/write-in/ballot-option rows and literal parties (CSV)"},
+        {"file": "county-literal-party-totals.csv", "label": "Clarion: all seven office/literal-party candidate totals, not turnout (CSV)"},
+        {"file": "native-contest-accounting.csv", "label": "Clarion: all four native contest electorates, separate write-ins and unclassified residuals (CSV)"},
+        {"file": "native-source-pages.csv", "label": "Clarion: both native page identities, timestamps and undeclared timezones (CSV)"}
+      ],
+      "coverage": []
+    },
+    {
       "id": "pennsylvania-jefferson-20261106-01",
       "label": "Jefferson County, Pennsylvania 2026: native Voters Cast including provisional participation",
       "data_directory": "data/county-source-reviews/20261106-jefferson-facts-01",
