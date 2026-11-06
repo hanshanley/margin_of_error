@@ -1,15 +1,17 @@
-"""Reconcile Centre's complete native PDFs and ArcGIS records in a private package."""
+"""Reconcile Centre's native sources and export complete numerical facts without presentation templates."""
 
 import argparse
 from collections import Counter
 import csv
 from decimal import Decimal, ROUND_HALF_UP
 import hashlib
+import html
 import io
 import json
 from pathlib import Path
 import re
 import shutil
+import tempfile
 from urllib.parse import urlsplit
 import zipfile
 
@@ -78,6 +80,9 @@ CONFLICT_FIELDS = ["native_api_object_id", "native_api_precinct_code", "native_p
                    "api_ballots", "usable_as_ballot_accounting"]
 RATE_DIFFERENCE_FIELDS = ["native_scope_literal", "native_rate_literal", "calculated_rate",
                           "difference_percentage_points"]
+FACT_PROFILE = "centre-complete-numerical-facts-v1"
+FACT_FILE = "native-source-facts.json"
+FACT_NATIVE_FILES = {name for name in FILES if name.startswith("precinct-stats-")}
 
 
 def require(condition, message):
@@ -107,6 +112,8 @@ def rate(ballots, registered):
 
 def load_originals(folder):
     receipts = json.loads((folder / "receipts.json").read_bytes())
+    if isinstance(receipts, dict):
+        return load_fact_sources(folder, receipts)
     names = [r["path"] for r in receipts]
     require(len(names) == len(set(names)) and set(names) == FILES
             and {p.name for p in folder.iterdir()} == FILES | {"receipts.json"},
@@ -167,6 +174,144 @@ def load_originals(folder):
     require(json.loads(raw["item-55b9957d0d6a4052adcaaecae1907fa5.json"]).get("error", {}).get("code") == 400,
             "Changed inaccessible child-item evidence")
     return raw
+
+
+def load_fact_sources(folder, manifest):
+    require(manifest.get("profile") == FACT_PROFILE, "Unreviewed source-facts profile")
+    receipts = manifest["files"]
+    names = [r["path"] for r in receipts]
+    require(len(names) == len(set(names)) and set(names) == FACT_NATIVE_FILES | {FACT_FILE}
+            and {p.name for p in folder.iterdir()} == set(names) | {"receipts.json"},
+            "Incomplete numerical-facts source inventory")
+    raw = {}
+    for receipt in receipts:
+        body = (folder / receipt["path"]).read_bytes()
+        require(receipt["bytes"] == len(body)
+                and receipt["sha256"] == hashlib.sha256(body).hexdigest(),
+                "Numerical-facts payload receipt mismatch")
+        require(not SERVICE_KEY.search(body) and not TELEMETRY_KEY.search(body),
+                "Unredacted public service key in source facts")
+        if receipt["path"] != FACT_FILE:
+            expected = LAYER + ("" if receipt["path"] in {
+                "precinct-stats-layer.json", "precinct-stats-layer-after.json"} else "/query")
+            require(receipt["status"] == 200 and receipt["requested_url"].split("?")[0] == expected
+                    and receipt["final_url"].split("?")[0] == expected,
+                    "Unreviewed native factual-data source")
+        else:
+            require(receipt.get("kind") == "derived_complete_numerical_facts",
+                    "Derived facts must not be represented as an HTTP response")
+        raw[receipt["path"]] = body
+    facts = json.loads(raw[FACT_FILE])
+    require(facts.get("profile") == FACT_PROFILE and facts.get("presentation_templates_included") is False,
+            "Unreviewed numerical-facts representation")
+    captured = facts["source_capture_receipts"]
+    require(len(captured) == len(FILES) and {r["path"] for r in captured} == FILES,
+            "Incomplete private source-capture provenance")
+    captured_by_name = {r["path"]: r for r in captured}
+    for name in FACT_NATIVE_FILES:
+        require(captured_by_name[name]["sha256"] == hashlib.sha256(raw[name]).hexdigest()
+                and captured_by_name[name]["bytes"] == len(raw[name]),
+                "Native facts differ from reviewed source capture")
+    require(facts["native_pdf_page_counts"] == {"county": 2, "precinct": 87},
+            "Unreviewed primary factual-report scope")
+    return raw
+
+
+def numerical_fact_sources(raw, captured_receipts):
+    soup = BeautifulSoup(raw["official-results-browser.html"], "html.parser")
+    anchors = [dict(href=a["href"], label=a.get_text(" ", strip=True))
+               for a in soup.select("a[href]")]
+    links = [a for a in anchors if
+             re.fullmatch(r"\d+ - .+", a["label"])
+             or "637f95443bd04cb4a891b0f2de161129" in a["href"]
+             or a["href"] in {"/DocumentCenter/View/44859/precinctsummary",
+                              "/DocumentCenter/View/44860/electionsummary"}]
+    updated = re.search(r"Updated:\s*(\d+/\d+/\d{4} at \d+:\d+ [ap]m)",
+                        soup.get_text(" ", strip=True))
+    require(updated is not None, "Missing source index factual update")
+    precinct_reader = PdfReader(io.BytesIO(raw["official-precinct-summary-browser.pdf"]))
+    county_reader = PdfReader(io.BytesIO(raw["official-election-summary-browser.pdf"]))
+    units, detail, _, _, precinct_update = parse_pages(
+        [p.extract_text() for p in precinct_reader.pages], True)
+    _, county_contests, _, county, county_update = parse_pages(
+        [p.extract_text() for p in county_reader.pages], False)
+    return dict(profile=FACT_PROFILE, presentation_templates_included=False,
+        source_capture_receipts=captured_receipts,
+        source_presentation_rights=dict(copyright_notice_url="https://centrecountypa.gov/copyright",
+                                       source_template_license_claimed=False),
+        nondata_source_responses=[dict(
+            path="item-55b9957d0d6a4052adcaaecae1907fa5.json", http_status=200,
+            api_error_code=400, used_as_election_data=False)],
+        native_pdf_page_counts=dict(county=len(county_reader.pages), precinct=len(precinct_reader.pages)),
+        index=dict(url=INDEX, updated_literal=updated[1], declared_factual_links=links),
+        county=dict(participation=county, update_literal=county_update,
+                    contests=[dict(office=office, **contest)
+                              for (_, office), contest in county_contests.items()]),
+        precinct=dict(update_literal=precinct_update, units=[
+            dict(participation=unit, contests=[dict(office=office, **contest)
+                 for (scope, office), contest in detail.items() if scope == label])
+            for label, unit in units.items()]))
+
+
+def render_fact_pages(facts):
+    # This owned validation layout is not a copy of the source PDF presentation.
+    header = ("Centre County\nUNOFFICIAL RESULTS\n2026 General Gubernatorial Election\n"
+              "November 3, 2026\n")
+    def statistics(data):
+        def line(label, values):
+            require(len(values) == 4, "Missing factual method vector")
+            return f"{integer(values[0])}{label} " + " ".join(str(integer(v)) for v in values[1:])
+        return (f"Registered Voters - Total {integer(data['registered_voters'])}\n"
+                + line("Ballots Cast - Total", data["ballots"]) + "\n"
+                + line("Ballots Cast - Blank", data["blanks"]) + "\n"
+                + f"Voter Turnout - Total {data['registered_voter_rate_literal']}\n")
+    def contest_text(contest, county):
+        require(HEADINGS.get(contest["contest_literal"]) == contest["office"],
+                "Unreviewed factual contest heading")
+        lines = ["Vote For 1", contest["contest_literal"]]
+        for label, values in contest["rows"].items():
+            require(len(values) == 4, "Missing factual option methods")
+            lines.append(label + " " + " ".join(str(integer(v)) for v in values))
+        if county:
+            n = integer(contest["precincts_reporting"])
+            lines.append(f"Precincts Reporting {n} of {n}")
+        return "\n".join(lines)
+    county = facts["county"]
+    county_page = (header + "\n".join(county["participation"]["reporting_lines"]) + "\n"
+                   + statistics(county["participation"])
+                   + "\n".join(contest_text(c, True) for c in county["contests"])
+                   + f"\nElection Summary - {county['update_literal']}  1Page 1 of")
+    precinct = facts["precinct"]
+    pages = []
+    for i, unit in enumerate(precinct["units"], 1):
+        data = unit["participation"]
+        require(data["native_precinct_label"].startswith(str(integer(data["native_report_precinct_id"])) + " "),
+                "Factual precinct identity differs")
+        pages.append(data["native_precinct_label"] + "\n" + header + statistics(data)
+            + "\n".join(contest_text(c, False) for c in unit["contests"])
+            + f"\nPrecinct Summary - {precinct['update_literal']}  {len(precinct['units'])}Page {i} of")
+    return pages, [county_page]
+
+
+def export_fact_sources(originals, output):
+    raw = load_originals(originals)
+    require(FACT_FILE not in raw, "Facts derivation requires the verified private originals")
+    original_tables, original_audit = review(raw)
+    facts = numerical_fact_sources(raw, json.loads((originals / "receipts.json").read_bytes()))
+    output.mkdir(parents=True, exist_ok=False)
+    captured = {r["path"]: r for r in facts["source_capture_receipts"]}
+    receipts = []
+    for name in sorted(FACT_NATIVE_FILES | {FACT_FILE}):
+        body = (json.dumps(facts, indent=2) + "\n").encode() if name == FACT_FILE else raw[name]
+        (output / name).write_bytes(body)
+        receipts.append(dict(path=name, bytes=len(body), sha256=hashlib.sha256(body).hexdigest(),
+            kind="derived_complete_numerical_facts") if name == FACT_FILE else captured[name])
+    (output / "receipts.json").write_text(json.dumps(dict(profile=FACT_PROFILE, files=receipts), indent=2) + "\n")
+    exported_tables, exported_audit = review(load_originals(output))
+    require(original_tables == exported_tables, "Facts-only tables differ from the private primary review")
+    for key in original_audit.keys() - {"publication_approved", "source_profile", "limitations"}:
+        require(original_audit[key] == exported_audit[key], "Facts-only audit differs from the private primary review")
+    return exported_audit
 
 
 def parse_pages(pages, precinct):
@@ -255,7 +400,19 @@ def parse_pages(pages, precinct):
 
 
 def review(raw):
-    soup = BeautifulSoup(raw["official-results-browser.html"], "html.parser")
+    facts = json.loads(raw[FACT_FILE]) if FACT_FILE in raw else None
+    if facts:
+        require(facts["index"]["url"] == INDEX, "Unexpected factual source index")
+        index = facts["index"]
+        index_html = ("<p>Updated: " + html.escape(index["updated_literal"]) + "</p>"
+            + "".join('<a href="' + html.escape(a["href"], quote=True) + '">'
+                      + html.escape(a["label"]) + "</a>" for a in index["declared_factual_links"]))
+        precinct_pages, county_pages = render_fact_pages(facts)
+    else:
+        index_html = raw["official-results-browser.html"]
+        precinct_pages = [p.extract_text() for p in PdfReader(io.BytesIO(raw["official-precinct-summary-browser.pdf"])).pages]
+        county_pages = [p.extract_text() for p in PdfReader(io.BytesIO(raw["official-election-summary-browser.pdf"])).pages]
+    soup = BeautifulSoup(index_html, "html.parser")
     links = {a.get("href") for a in soup.select("a[href]")}
     require(any("637f95443bd04cb4a891b0f2de161129" in h for h in links)
             and {"/DocumentCenter/View/44859/precinctsummary",
@@ -266,10 +423,8 @@ def review(raw):
     index_update = re.search(r"Updated:\s*(\d+/\d+/\d{4} at \d+:\d+ [ap]m)",
                              soup.get_text(" ", strip=True))
     require(index_update is not None, "Missing native index update")
-    units, detail, annotations, _, precinct_update = parse_pages(
-        [p.extract_text() for p in PdfReader(io.BytesIO(raw["official-precinct-summary-browser.pdf"])).pages], True)
-    _, county_contests, county_annotations, county, county_update = parse_pages(
-        [p.extract_text() for p in PdfReader(io.BytesIO(raw["official-election-summary-browser.pdf"])).pages], False)
+    units, detail, annotations, _, precinct_update = parse_pages(precinct_pages, True)
+    _, county_contests, county_annotations, county, county_update = parse_pages(county_pages, False)
     require(len(units) == 87 and len(index_ids) == len(set(index_ids)) == 87
             and set(index_ids) == {u["native_report_precinct_id"] for u in units.values()},
             "Primary precinct inventories differ")
@@ -399,7 +554,8 @@ def review(raw):
         conflicting_api_blank_total=sum(c["api_value"] for c in conflicts),
         native_printed_rate_difference_rows=len(rate_differences),
         table_rows={name: len(rows) for name, rows in tables.items()},
-        publication_approved=False, new_maps_approved=False,
+        publication_approved=facts is not None, new_maps_approved=False,
+        source_profile=FACT_PROFILE if facts else "private_complete_primary_responses",
         limitations=[
             "Unofficial and partially reported; reporting precincts are not completed counting or certification.",
             "Registered-voter participation is not eligible-population or demographic-group turnout.",
@@ -415,11 +571,19 @@ def review(raw):
             "One linking-page service key and one telemetry key were redacted; the private original is not packaged.",
             "This private complete review is not a public release or a change to the live map.",
         ])
+    if facts:
+        audit["limitations"][-2:] = [
+            "Complete numerical facts, original API query data and source receipt digests are included; website, app and PDF presentation templates are not mirrored.",
+            "Primary PDF extraction was privately verified before facts export; offline replay verifies the complete captured numerical facts, not omitted original PDF bytes.",
+            "No new map coverage, final counting, source-template license or demographic turnout is claimed.",
+        ]
     return tables, audit
 
 
-def reproduce(originals, output):
-    tables, audit = review(load_originals(originals))
+def reproduce(originals, output, public_facts=False):
+    raw = load_originals(originals)
+    require((FACT_FILE in raw) == public_facts, "Output profile does not match the reviewed input sources")
+    tables, audit = review(raw)
     output.mkdir(parents=True, exist_ok=False)
     for name, rows in tables.items():
         with (output / name).open("w", newline="") as stream:
@@ -429,13 +593,14 @@ def reproduce(originals, output):
             writer.writeheader()
             writer.writerows(rows)
     (output / "audit.json").write_text(json.dumps(audit, indent=2) + "\n")
-    shutil.copytree(originals, output / "originals")
+    shutil.copytree(originals, output / ("source-data" if public_facts else "originals"))
     shutil.copyfile(__file__, output / "review-centre-county-results.py")
     members = {str(p.relative_to(output)): p.read_bytes() for p in sorted(output.rglob("*")) if p.is_file()}
     checksums = {name: dict(bytes=len(body), sha256=hashlib.sha256(body).hexdigest()) for name, body in members.items()}
     members["checksums.json"] = (json.dumps(checksums, indent=2) + "\n").encode()
     (output / "checksums.json").write_bytes(members["checksums.json"])
-    with zipfile.ZipFile(output / "private-centre-2026-native-review-01.zip", "w", zipfile.ZIP_DEFLATED) as archive:
+    archive_name = "complete-centre-2026-native-facts-01.zip" if public_facts else "private-centre-2026-native-review-01.zip"
+    with zipfile.ZipFile(output / archive_name, "w", zipfile.ZIP_DEFLATED) as archive:
         for name, body in sorted(members.items()):
             item = zipfile.ZipInfo(name, (2026, 11, 6, 0, 0, 0))
             item.compress_type = zipfile.ZIP_DEFLATED
@@ -447,6 +612,20 @@ def reproduce(originals, output):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--originals", type=Path, required=True)
-    parser.add_argument("--private-output", type=Path, required=True)
+    destination = parser.add_mutually_exclusive_group(required=True)
+    destination.add_argument("--private-output", type=Path)
+    destination.add_argument("--facts-output", type=Path,
+                             help="Complete numerical facts without website or PDF presentation templates.")
     args = parser.parse_args()
-    print(json.dumps(reproduce(args.originals, args.private_output), indent=2))
+    if args.facts_output:
+        manifest = json.loads((args.originals / "receipts.json").read_bytes())
+        if isinstance(manifest, dict):
+            result = reproduce(args.originals, args.facts_output, public_facts=True)
+        else:
+            with tempfile.TemporaryDirectory() as temporary:
+                factual_sources = Path(temporary) / "source-data"
+                export_fact_sources(args.originals, factual_sources)
+                result = reproduce(factual_sources, args.facts_output, public_facts=True)
+    else:
+        result = reproduce(args.originals, args.private_output)
+    print(json.dumps(result, indent=2))

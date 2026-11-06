@@ -1,0 +1,90 @@
+{
+  "audit.json": {
+    "bytes": 4296,
+    "sha256": "c671e20f313724ed2c6bd56821996fecbeba1385d00c0e9cb9b4c4cbcb515040"
+  },
+  "county-ballot-methods.csv": {
+    "bytes": 269,
+    "sha256": "2703b135fc0385de85172d83dd36ef69ab6491a68f4f4276dcbf8b9c28ea0142"
+  },
+  "county-contest-option-results.csv": {
+    "bytes": 2650,
+    "sha256": "274ef8ee3088321d01fecfcd3469591bfbe28a35d372d7451d9d6cf4f87341dc"
+  },
+  "county-contest-party-totals.csv": {
+    "bytes": 613,
+    "sha256": "8caeb96b1714047dbbd4b48d3d0a8af24016df9ec8157041f6fcc2b09b9d001a"
+  },
+  "county-contest-totals.csv": {
+    "bytes": 412,
+    "sha256": "5ab06eb2413cd5683d37f1134417ce5c2d83b4d25b82ab33e6cfd0d3f87e6c33"
+  },
+  "county-participation.csv": {
+    "bytes": 322,
+    "sha256": "e8f82ac6d1e6c82c9a365df044e741aef7de86e359b484de1b742bae772e6c6a"
+  },
+  "native-api-observations.csv": {
+    "bytes": 52804,
+    "sha256": "05fd39901e8d392a8a15adff11b86941adde3f4a5ed056ec337f07f341d68b55"
+  },
+  "native-pdf-write-in-breakdown.csv": {
+    "bytes": 22158,
+    "sha256": "004e8a65a740c75dca66f765863c8ba01f319237b84437929c12f8694c2a368c"
+  },
+  "native-precinct-identity-crosswalk.csv": {
+    "bytes": 3734,
+    "sha256": "1a9f5ddb5d1eac6bae2b8b3159e3043692a13f09e493b3dbbb531e63c1b5441c"
+  },
+  "native-precinct-option-results.csv": {
+    "bytes": 135289,
+    "sha256": "cbbf09d25175ef736f6a5d9cfa64018e9734497848381f53ad8a9e9e26cef967"
+  },
+  "native-precinct-participation.csv": {
+    "bytes": 9224,
+    "sha256": "42c9106358f862b1c4f93df6dd48309267b85ceb7aef51099697b3a55cc60b84"
+  },
+  "native-printed-rate-differences.csv": {
+    "bytes": 175,
+    "sha256": "299f10a6b93de89e480b86e971afbe047bc51acfd59cc092c403347dca83c5c0"
+  },
+  "native-source-conflicts.csv": {
+    "bytes": 233,
+    "sha256": "5533017577dc58ff1927bb9faf504d1c147646693bb32080007bf40e51fbe04c"
+  },
+  "native-source-updates.csv": {
+    "bytes": 319,
+    "sha256": "1a1e9935503845a2338ca212922f61e378abbb199b8f27ce4445da7fbe4241a8"
+  },
+  "review-centre-county-results.py": {
+    "bytes": 39268,
+    "sha256": "1859b18313cc538bf95cc78e7c30d5502ae4992a53b9559c9463ae1446a56d0a"
+  },
+  "source-data/native-source-facts.json": {
+    "bytes": 373296,
+    "sha256": "6f6af2306fb29d24d3bfd07b680ee896543aea62f0d5198e2ea340c815717a10"
+  },
+  "source-data/precinct-stats-all.json": {
+    "bytes": 202911,
+    "sha256": "fbf89de0bf02172680c9cb0a5b1e17186be4e4e737978f5887a17b2859507205"
+  },
+  "source-data/precinct-stats-count.json": {
+    "bytes": 13,
+    "sha256": "3261adc576199e0020677e214771cac82b97f2672034b2073afce480fab9bfc5"
+  },
+  "source-data/precinct-stats-ids.json": {
+    "bytes": 984,
+    "sha256": "b936f93fe972e6d4e3663132d3e9292559705a9f56f66b963075f7a2e5eac236"
+  },
+  "source-data/precinct-stats-layer-after.json": {
+    "bytes": 19316,
+    "sha256": "ca3ff17d5843b1627acf981a463fcd436b95d3ad0cc3d059417f13813fdbf9e9"
+  },
+  "source-data/precinct-stats-layer.json": {
+    "bytes": 19316,
+    "sha256": "ca3ff17d5843b1627acf981a463fcd436b95d3ad0cc3d059417f13813fdbf9e9"
+  },
+  "source-data/receipts.json": {
+    "bytes": 4688,
+    "sha256": "f1353e16a7864bf06e876137ebedc7e56aab62a601fbe70a01220403efb0a79e"
+  }
+}

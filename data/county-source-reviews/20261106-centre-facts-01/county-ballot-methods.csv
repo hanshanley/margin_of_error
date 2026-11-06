@@ -1,0 +1,4 @@
+year,state_code,county_fips,county,method_literal,ballots,blank_ballots_from_pdf,blank_ballots_from_api,api_blank_accounting_usable
+2026,PA,42027,Centre,InPerson,43125,5,5,True
+2026,PA,42027,Centre,Mail,14000,1,1,True
+2026,PA,42027,Centre,Provisional,0,0,240,False

@@ -1,0 +1,2 @@
+year,state_code,county_fips,county,registered_voters,ballots,blank_ballots_from_pdf,registered_voter_rate_literal,registered_voter_rate_calculated,registered_voter_rate_difference_percentage_points,house_candidate_votes,house_ballot_residual_unclassified
+2026,PA,42027,Centre,103270,57125,6,55.32%,55.32%,0.00,56804,321

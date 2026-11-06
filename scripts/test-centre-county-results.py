@@ -278,6 +278,67 @@ class CentreTests(unittest.TestCase):
                 self.assertIn("native-api-observations.csv", checksums)
                 self.assertIn("originals/official-precinct-summary-browser.pdf", checksums)
 
+    def test_complete_public_facts_equal_private_tables_without_templates(self):
+        private_tables, private_audit = self.run_review()
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            originals, factual = root / "private", root / "facts"
+            write_originals(originals, self.raw)
+            with patch.object(M, "PdfReader", side_effect=reader(self.precinct, self.county)):
+                M.export_fact_sources(originals, factual)
+            public_tables, public_audit = M.review(M.load_originals(factual))
+            self.assertEqual(private_tables, public_tables)
+            self.assertEqual(private_audit["native_reporting_qualifications"],
+                             public_audit["native_reporting_qualifications"])
+            self.assertTrue(public_audit["publication_approved"])
+            self.assertFalse(public_audit["new_maps_approved"])
+            facts = json.loads((factual / M.FACT_FILE).read_bytes())
+            self.assertEqual(len(facts["source_capture_receipts"]), 16)
+            self.assertFalse(facts["presentation_templates_included"])
+            manifest = json.loads((factual / "receipts.json").read_bytes())
+            derived = next(r for r in manifest["files"] if r["path"] == M.FACT_FILE)
+            self.assertNotIn("status", derived)
+            for name in ["first", "second"]:
+                M.reproduce(factual, root / name, public_facts=True)
+            archive = "complete-centre-2026-native-facts-01.zip"
+            self.assertEqual((root / "first" / archive).read_bytes(), (root / "second" / archive).read_bytes())
+            with zipfile.ZipFile(root / "first" / archive) as package:
+                self.assertFalse(any(n.endswith((".html", ".pdf")) for n in package.namelist()))
+                self.assertIn("source-data/precinct-stats-all.json", package.namelist())
+                self.assertEqual(sum(n.endswith(".csv") for n in package.namelist()), 13)
+
+    def test_public_facts_still_enforce_native_zero_option_inventory(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            originals, factual = root / "private", root / "facts"
+            write_originals(originals, self.raw)
+            with patch.object(M, "PdfReader", side_effect=reader(self.precinct, self.county)):
+                M.export_fact_sources(originals, factual)
+            raw = M.load_originals(factual)
+            facts = json.loads(raw[M.FACT_FILE])
+            del facts["precinct"]["units"][0]["contests"][0]["rows"]["LIB KEN KRAWCHUK / JOHN"]
+            raw[M.FACT_FILE] = json.dumps(facts).encode()
+            with self.assertRaisesRegex(ValueError, "option or annotation inventory"):
+                M.review(raw)
+
+    def test_public_profile_cannot_package_private_presentation_sources(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            originals = Path(tmp) / "private"
+            write_originals(originals, self.raw)
+            with self.assertRaisesRegex(ValueError, "Output profile"):
+                M.reproduce(originals, Path(tmp) / "public", public_facts=True)
+
+    def test_fact_sources_reject_an_added_presentation_file(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            originals, factual = root / "private", root / "facts"
+            write_originals(originals, self.raw)
+            with patch.object(M, "PdfReader", side_effect=reader(self.precinct, self.county)):
+                M.export_fact_sources(originals, factual)
+            (factual / "unexpected.html").write_text("<p>unexpected template</p>")
+            with self.assertRaisesRegex(ValueError, "source inventory"):
+                M.load_originals(factual)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,0 +1,2 @@
+native_api_object_id,native_api_precinct_code,native_precinct_label,method_literal,field_literal,api_value,primary_pdf_value,api_ballots,usable_as_ballot_accounting
+78,79,83 WALKER EAST,Provisional,BALLOTS_CAST_BLANK,240,0,0,False

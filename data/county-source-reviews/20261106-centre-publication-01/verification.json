@@ -1,0 +1,40 @@
+{
+  "status": "complete_facts_verified_release_and_ui_pending",
+  "verified_at_utc": "2026-11-06T00:46:39.292797+00:00",
+  "profile": "centre-complete-numerical-facts-v1",
+  "data_directory": "data/county-source-reviews/20261106-centre-facts-01",
+  "archive": "complete-centre-2026-native-facts-01.zip",
+  "bytes": 91415,
+  "sha256": "7c32bc66a43932b95d2bc6f43cfd49419ceb7cba70df0b1c46930e6f31e9d39a",
+  "unique_members": 23,
+  "complete_csv_tables": 13,
+  "all_tables_byte_identical_to_verified_private_review": true,
+  "all_payload_checksums_verified": true,
+  "packaged_offline_reproduction_byte_identical": true,
+  "presentation_template_members": 0,
+  "unredacted_service_or_telemetry_patterns": 0,
+  "publication_approved": true,
+  "new_maps_approved": false,
+  "source_representation": {
+    "native_api_query_observations": 261,
+    "unchanged_native_api_data_responses": 5,
+    "derived_complete_primary_numerical_facts": true,
+    "original_private_capture_receipts_retained_as_digests": 16,
+    "derived_facts_are_not_misrepresented_as_http_response_bytes": true,
+    "private_website_and_pdf_bodies_mirrored": false,
+    "source_template_redistribution_license_claimed": false,
+    "inaccessible_child_metadata_http_status": 200,
+    "inaccessible_child_metadata_api_error": 400,
+    "inaccessible_child_metadata_used_as_election_data": false
+  },
+  "tests_passed": 16,
+  "release_verified": false,
+  "ui_live_verified": false,
+  "limitations": [
+    "The public profile reproduces all complete numerical facts, not omitted original web or PDF presentation bytes.",
+    "The original source PDF extraction and complete source responses remain independently verified in the private review.",
+    "Provisional API blank240 versus ballot0, two printed-rate discrepancies, null method registrations and all native counting qualifications remain intact.",
+    "No new map coverage, demographic turnout, final counting or source-template license is claimed.",
+    "GitHub alerts1/2 remain open with unknown validity; external key revocation and cached-object cleanup are unconfirmed."
+  ]
+}

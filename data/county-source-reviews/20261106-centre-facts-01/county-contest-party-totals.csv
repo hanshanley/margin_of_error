@@ -1,0 +1,12 @@
+year,state_code,county_fips,county,office,native_party_literal,votes
+2026,PA,42027,Centre,governor_lieutenant_governor,DEM,34292
+2026,PA,42027,Centre,governor_lieutenant_governor,REP,21614
+2026,PA,42027,Centre,governor_lieutenant_governor,LIB,798
+2026,PA,42027,Centre,us_house,DEM,32234
+2026,PA,42027,Centre,us_house,REP,24503
+2026,PA,42027,Centre,state_house_77,DEM,14735
+2026,PA,42027,Centre,state_house_77,REP,7085
+2026,PA,42027,Centre,state_house_82,DEM,13106
+2026,PA,42027,Centre,state_house_82,REP,8057
+2026,PA,42027,Centre,state_house_171,DEM,5406
+2026,PA,42027,Centre,state_house_171,REP,8319

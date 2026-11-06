@@ -1,0 +1,104 @@
+{
+  "profile": "centre-complete-numerical-facts-v1",
+  "files": [
+    {
+      "path": "native-source-facts.json",
+      "bytes": 373296,
+      "sha256": "6f6af2306fb29d24d3bfd07b680ee896543aea62f0d5198e2ea340c815717a10",
+      "kind": "derived_complete_numerical_facts"
+    },
+    {
+      "requested_url": "https://services3.arcgis.com/HDjl48g0Y109Q9wX/arcgis/rest/services/PrecinctStats/FeatureServer/0/query?f=json&where=1%3D1&outFields=%2A&returnGeometry=false&orderByFields=OBJECTID",
+      "final_url": "https://services3.arcgis.com/HDjl48g0Y109Q9wX/arcgis/rest/services/PrecinctStats/FeatureServer/0/query?f=json&where=1%3D1&outFields=%2A&returnGeometry=false&orderByFields=OBJECTID",
+      "status": 200,
+      "bytes": 202911,
+      "sha256": "fbf89de0bf02172680c9cb0a5b1e17186be4e4e737978f5887a17b2859507205",
+      "retrieved_at_utc": "2026-11-06T00:16:39.434043+00:00",
+      "path": "precinct-stats-all.json",
+      "screening": {
+        "original_bytes": 202911,
+        "original_sha256": "fbf89de0bf02172680c9cb0a5b1e17186be4e4e737978f5887a17b2859507205",
+        "replacements": 0,
+        "service_key_replacements": 0,
+        "telemetry_key_replacements": 0,
+        "removed_value_bytes": 0
+      }
+    },
+    {
+      "path": "precinct-stats-count.json",
+      "requested_url": "https://services3.arcgis.com/HDjl48g0Y109Q9wX/arcgis/rest/services/PrecinctStats/FeatureServer/0/query",
+      "parameters": {
+        "f": "json",
+        "where": "1=1",
+        "returnCountOnly": "true"
+      },
+      "final_url": "https://services3.arcgis.com/HDjl48g0Y109Q9wX/arcgis/rest/services/PrecinctStats/FeatureServer/0/query?f=json&where=1%3D1&returnCountOnly=true",
+      "status": 200,
+      "bytes": 13,
+      "sha256": "3261adc576199e0020677e214771cac82b97f2672034b2073afce480fab9bfc5",
+      "retrieved_at_utc": "2026-11-06T00:32:17.735350+00:00",
+      "screening": {
+        "original_bytes": 13,
+        "original_sha256": "3261adc576199e0020677e214771cac82b97f2672034b2073afce480fab9bfc5",
+        "replacements": 0,
+        "service_key_replacements": 0,
+        "telemetry_key_replacements": 0,
+        "removed_value_bytes": 0
+      }
+    },
+    {
+      "requested_url": "https://services3.arcgis.com/HDjl48g0Y109Q9wX/arcgis/rest/services/PrecinctStats/FeatureServer/0/query?f=json&where=1%3D1&returnIdsOnly=true",
+      "final_url": "https://services3.arcgis.com/HDjl48g0Y109Q9wX/arcgis/rest/services/PrecinctStats/FeatureServer/0/query?f=json&where=1%3D1&returnIdsOnly=true",
+      "status": 200,
+      "bytes": 984,
+      "sha256": "b936f93fe972e6d4e3663132d3e9292559705a9f56f66b963075f7a2e5eac236",
+      "retrieved_at_utc": "2026-11-06T00:16:39.115739+00:00",
+      "path": "precinct-stats-ids.json",
+      "screening": {
+        "original_bytes": 984,
+        "original_sha256": "b936f93fe972e6d4e3663132d3e9292559705a9f56f66b963075f7a2e5eac236",
+        "replacements": 0,
+        "service_key_replacements": 0,
+        "telemetry_key_replacements": 0,
+        "removed_value_bytes": 0
+      }
+    },
+    {
+      "path": "precinct-stats-layer-after.json",
+      "requested_url": "https://services3.arcgis.com/HDjl48g0Y109Q9wX/arcgis/rest/services/PrecinctStats/FeatureServer/0",
+      "parameters": {
+        "f": "pjson"
+      },
+      "final_url": "https://services3.arcgis.com/HDjl48g0Y109Q9wX/arcgis/rest/services/PrecinctStats/FeatureServer/0?f=pjson",
+      "status": 200,
+      "bytes": 19316,
+      "sha256": "ca3ff17d5843b1627acf981a463fcd436b95d3ad0cc3d059417f13813fdbf9e9",
+      "retrieved_at_utc": "2026-11-06T00:32:17.382092+00:00",
+      "screening": {
+        "original_bytes": 19316,
+        "original_sha256": "ca3ff17d5843b1627acf981a463fcd436b95d3ad0cc3d059417f13813fdbf9e9",
+        "replacements": 0,
+        "service_key_replacements": 0,
+        "telemetry_key_replacements": 0,
+        "removed_value_bytes": 0
+      }
+    },
+    {
+      "requested_url": "https://services3.arcgis.com/HDjl48g0Y109Q9wX/arcgis/rest/services/PrecinctStats/FeatureServer/0?f=pjson",
+      "final_url": "https://services3.arcgis.com/HDjl48g0Y109Q9wX/arcgis/rest/services/PrecinctStats/FeatureServer/0?f=pjson",
+      "status": 200,
+      "bytes": 19316,
+      "sha256": "ca3ff17d5843b1627acf981a463fcd436b95d3ad0cc3d059417f13813fdbf9e9",
+      "retrieved_at_utc": "2026-11-06T00:16:38.806467+00:00",
+      "path": "precinct-stats-layer.json",
+      "screening": {
+        "original_bytes": 19316,
+        "original_sha256": "ca3ff17d5843b1627acf981a463fcd436b95d3ad0cc3d059417f13813fdbf9e9",
+        "replacements": 0,
+        "service_key_replacements": 0,
+        "telemetry_key_replacements": 0,
+        "removed_value_bytes": 0
+      }
+    }
+  ]
+}

@@ -274,6 +274,38 @@ Native status is still **0 complete**, **87 partially reported** and **86 of
 or final-counting claim is approved by this private review. Alerts 1/2 remain
 open/unknown; external revocation and cached-object cleanup are unconfirmed.
 
+**Centre facts-only publication is built and verified; release/UI are next.**
+The county's linked copyright notice reserves the county and CivicPlus
+presentation rights. Keep the existing private web/PDF source package private;
+do not infer a source-template redistribution license or attach that ZIP.
+The portable reviewer now has a distinct `--facts-output` profile. It exports
+all complete primary numerical observations, five unchanged native API data
+responses, original capture receipt digests and complete source identities,
+without copying website, app or PDF presentation templates. Derived facts are
+explicitly identified as derived records, never as original HTTP body bytes.
+The inaccessible child item's HTTP200/API400 remains nondata, not a bypassed
+source. All 13 CSVs are byte-identical to the independently verified private
+review, retaining all original accounting, identity, party and missingness
+qualifications. The public profile replays those complete captured facts, not
+the omitted PDF extraction bytes.
+
+Sixteen synthetic tests pass, including exact private/public fact equality,
+continued zero-option validation, rejection of added template files and an
+output-profile guard against packaging the private sources as a public ZIP.
+All 23 archive members and checksums pass, with byte-identical packaged offline
+replay and no unredacted service/telemetry patterns. Candidate archive
+`complete-centre-2026-native-facts-01.zip` is 91,415 bytes, SHA256
+`7c32bc66a43932b95d2bc6f43cfd49419ceb7cba70df0b1c46930e6f31e9d39a`.
+Complete data are staged under
+`data/county-source-reviews/20261106-centre-facts-01/`; publication status is in
+`data/county-source-reviews/20261106-centre-publication-01/verification.json`.
+Next commit the complete facts, create a new immutable release and byte-verify
+the ZIP plus all 13 CSVs, then add all 14 download links while preserving the
+existing 274. Require check/build/Pages preparation and the exact 288-link set
+in four local and production display modes before marking UI live. This is a
+download-only batch: do not repeat completed unchanged map suites or alter
+county/precinct coverage, map overrides or the Maine all-district guard.
+
 **Earlier current-source cleanup (historical record).** On November 5,
 GitHub reported Google API keys copied from public county linking HTML. The
 affected current Bucks, Chester and Franklin pages are now explicitly sanitized,

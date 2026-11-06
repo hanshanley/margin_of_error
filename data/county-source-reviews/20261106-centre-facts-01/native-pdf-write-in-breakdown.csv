@@ -1,0 +1,355 @@
+scope,office,annotation_literal,votes,election_day_votes,absentee_mail_votes,provisional_votes
+1 BELLEFONTE NORTH,governor_lieutenant_governor,Not Assigned,0,0,0,0
+1 BELLEFONTE NORTH,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+1 BELLEFONTE NORTH,us_house,Not Assigned,0,0,0,0
+1 BELLEFONTE NORTH,state_house_171,Not Assigned,0,0,0,0
+2 BELLEFONTE NORTHEAST,governor_lieutenant_governor,Not Assigned,0,0,0,0
+2 BELLEFONTE NORTHEAST,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+2 BELLEFONTE NORTHEAST,us_house,Not Assigned,0,0,0,0
+2 BELLEFONTE NORTHEAST,state_house_171,Not Assigned,2,2,0,0
+3 BELLEFONTE SOUTH,governor_lieutenant_governor,Not Assigned,1,1,0,0
+3 BELLEFONTE SOUTH,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+3 BELLEFONTE SOUTH,us_house,Not Assigned,1,1,0,0
+3 BELLEFONTE SOUTH,state_house_171,Not Assigned,1,1,0,0
+4 BELLEFONTE SOUTHEAST,governor_lieutenant_governor,Not Assigned,0,0,0,0
+4 BELLEFONTE SOUTHEAST,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+4 BELLEFONTE SOUTHEAST,us_house,Not Assigned,0,0,0,0
+4 BELLEFONTE SOUTHEAST,state_house_171,Not Assigned,0,0,0,0
+5 BELLEFONTE WEST,governor_lieutenant_governor,Not Assigned,0,0,0,0
+5 BELLEFONTE WEST,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+5 BELLEFONTE WEST,us_house,Not Assigned,2,2,0,0
+5 BELLEFONTE WEST,state_house_171,Not Assigned,1,1,0,0
+6 CENTRE HALL BOROUGH,governor_lieutenant_governor,Not Assigned,0,0,0,0
+6 CENTRE HALL BOROUGH,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+6 CENTRE HALL BOROUGH,us_house,Not Assigned,1,1,0,0
+6 CENTRE HALL BOROUGH,state_house_171,Not Assigned,0,0,0,0
+7 HOWARD BOROUGH,governor_lieutenant_governor,Not Assigned,1,1,0,0
+7 HOWARD BOROUGH,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+7 HOWARD BOROUGH,us_house,Not Assigned,0,0,0,0
+7 HOWARD BOROUGH,state_house_82,Not Assigned,0,0,0,0
+8 MILESBURG BOROUGH,governor_lieutenant_governor,Not Assigned,0,0,0,0
+8 MILESBURG BOROUGH,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+8 MILESBURG BOROUGH,us_house,Not Assigned,0,0,0,0
+8 MILESBURG BOROUGH,state_house_82,Not Assigned,1,1,0,0
+9 MILLHEIM BOROUGH,governor_lieutenant_governor,Not Assigned,0,0,0,0
+9 MILLHEIM BOROUGH,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+9 MILLHEIM BOROUGH,us_house,Not Assigned,0,0,0,0
+9 MILLHEIM BOROUGH,state_house_171,Not Assigned,0,0,0,0
+10 PHILIPSBURG 1,governor_lieutenant_governor,Not Assigned,0,0,0,0
+10 PHILIPSBURG 1,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+10 PHILIPSBURG 1,us_house,Not Assigned,1,0,1,0
+10 PHILIPSBURG 1,state_house_77,Not Assigned,0,0,0,0
+11 PHILIPSBURG 2,governor_lieutenant_governor,Not Assigned,1,1,0,0
+11 PHILIPSBURG 2,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+11 PHILIPSBURG 2,us_house,Not Assigned,1,1,0,0
+11 PHILIPSBURG 2,state_house_77,Not Assigned,0,0,0,0
+12 PHILIPSBURG 3,governor_lieutenant_governor,Not Assigned,0,0,0,0
+12 PHILIPSBURG 3,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+12 PHILIPSBURG 3,us_house,Not Assigned,0,0,0,0
+12 PHILIPSBURG 3,state_house_77,Not Assigned,1,1,0,0
+13 PORT MATILDA BOROUGH,governor_lieutenant_governor,Not Assigned,0,0,0,0
+13 PORT MATILDA BOROUGH,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+13 PORT MATILDA BOROUGH,us_house,Not Assigned,2,1,1,0
+13 PORT MATILDA BOROUGH,state_house_77,Not Assigned,1,1,0,0
+14 SNOW SHOE BOROUGH,governor_lieutenant_governor,Not Assigned,0,0,0,0
+14 SNOW SHOE BOROUGH,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+14 SNOW SHOE BOROUGH,us_house,Not Assigned,0,0,0,0
+14 SNOW SHOE BOROUGH,state_house_82,Not Assigned,0,0,0,0
+15 RUSH NORTH CENTRAL,governor_lieutenant_governor,Not Assigned,1,1,0,0
+15 RUSH NORTH CENTRAL,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+15 RUSH NORTH CENTRAL,us_house,Not Assigned,1,1,0,0
+15 RUSH NORTH CENTRAL,state_house_77,Not Assigned,0,0,0,0
+16 STATE COLLEGE NORTH,governor_lieutenant_governor,Not Assigned,0,0,0,0
+16 STATE COLLEGE NORTH,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+16 STATE COLLEGE NORTH,us_house,Not Assigned,3,2,1,0
+16 STATE COLLEGE NORTH,state_house_82,Not Assigned,0,0,0,0
+17 STATE COLLEGE NORTHEAST,governor_lieutenant_governor,Not Assigned,3,2,1,0
+17 STATE COLLEGE NORTHEAST,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+17 STATE COLLEGE NORTHEAST,us_house,Not Assigned,0,0,0,0
+17 STATE COLLEGE NORTHEAST,state_house_82,Not Assigned,0,0,0,0
+18 STATE COLLEGE NORTHWEST,governor_lieutenant_governor,Not Assigned,2,2,0,0
+18 STATE COLLEGE NORTHWEST,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+18 STATE COLLEGE NORTHWEST,us_house,Not Assigned,0,0,0,0
+18 STATE COLLEGE NORTHWEST,state_house_77,Not Assigned,1,1,0,0
+19 STATE COLLEGE SOUTH 1,governor_lieutenant_governor,Not Assigned,0,0,0,0
+19 STATE COLLEGE SOUTH 1,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+19 STATE COLLEGE SOUTH 1,us_house,Not Assigned,0,0,0,0
+19 STATE COLLEGE SOUTH 1,state_house_77,Not Assigned,0,0,0,0
+20 STATE COLLEGE SOUTH 2,governor_lieutenant_governor,Not Assigned,1,1,0,0
+20 STATE COLLEGE SOUTH 2,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+20 STATE COLLEGE SOUTH 2,us_house,Not Assigned,2,2,0,0
+20 STATE COLLEGE SOUTH 2,state_house_82,Not Assigned,2,2,0,0
+21 STATE COLLEGE SOUTHEAST,governor_lieutenant_governor,Not Assigned,0,0,0,0
+21 STATE COLLEGE SOUTHEAST,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+21 STATE COLLEGE SOUTHEAST,us_house,Not Assigned,1,1,0,0
+21 STATE COLLEGE SOUTHEAST,state_house_82,Not Assigned,3,3,0,0
+22 STATE COLLEGE SOUTH CENTRAL 1,governor_lieutenant_governor,Not Assigned,1,1,0,0
+22 STATE COLLEGE SOUTH CENTRAL 1,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+22 STATE COLLEGE SOUTH CENTRAL 1,us_house,Not Assigned,0,0,0,0
+22 STATE COLLEGE SOUTH CENTRAL 1,state_house_82,Not Assigned,0,0,0,0
+23 STATE COLLEGE SOUTH CENTRAL 2,governor_lieutenant_governor,Not Assigned,1,1,0,0
+23 STATE COLLEGE SOUTH CENTRAL 2,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+23 STATE COLLEGE SOUTH CENTRAL 2,us_house,Not Assigned,0,0,0,0
+23 STATE COLLEGE SOUTH CENTRAL 2,state_house_82,Not Assigned,0,0,0,0
+24 STATE COLLEGE EAST 1,governor_lieutenant_governor,Not Assigned,2,2,0,0
+24 STATE COLLEGE EAST 1,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+24 STATE COLLEGE EAST 1,us_house,Not Assigned,2,1,1,0
+24 STATE COLLEGE EAST 1,state_house_82,Not Assigned,1,1,0,0
+26 STATE COLLEGE EAST 3,governor_lieutenant_governor,Not Assigned,0,0,0,0
+26 STATE COLLEGE EAST 3,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+26 STATE COLLEGE EAST 3,us_house,Not Assigned,1,0,1,0
+26 STATE COLLEGE EAST 3,state_house_82,Not Assigned,0,0,0,0
+29 STATE COLLEGE EAST CENTRAL 2,governor_lieutenant_governor,Not Assigned,0,0,0,0
+29 STATE COLLEGE EAST CENTRAL 2,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+29 STATE COLLEGE EAST CENTRAL 2,us_house,Not Assigned,0,0,0,0
+29 STATE COLLEGE EAST CENTRAL 2,state_house_77,Not Assigned,0,0,0,0
+30 STATE COLLEGE EAST CENTRAL 3,governor_lieutenant_governor,Not Assigned,0,0,0,0
+30 STATE COLLEGE EAST CENTRAL 3,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+30 STATE COLLEGE EAST CENTRAL 3,us_house,Not Assigned,0,0,0,0
+30 STATE COLLEGE EAST CENTRAL 3,state_house_82,Not Assigned,0,0,0,0
+31 STATE COLLEGE WEST 1,governor_lieutenant_governor,Not Assigned,1,1,0,0
+31 STATE COLLEGE WEST 1,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+31 STATE COLLEGE WEST 1,us_house,Not Assigned,1,1,0,0
+31 STATE COLLEGE WEST 1,state_house_77,Not Assigned,1,0,1,0
+32 STATE COLLEGE WEST 2,governor_lieutenant_governor,Not Assigned,1,1,0,0
+32 STATE COLLEGE WEST 2,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+32 STATE COLLEGE WEST 2,us_house,Not Assigned,0,0,0,0
+32 STATE COLLEGE WEST 2,state_house_77,Not Assigned,1,1,0,0
+34 STATE COLLEGE WEST CENTRAL 2,governor_lieutenant_governor,Not Assigned,0,0,0,0
+34 STATE COLLEGE WEST CENTRAL 2,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+34 STATE COLLEGE WEST CENTRAL 2,us_house,Not Assigned,0,0,0,0
+34 STATE COLLEGE WEST CENTRAL 2,state_house_77,Not Assigned,0,0,0,0
+35 UNIONVILLE BOROUGH,governor_lieutenant_governor,Not Assigned,0,0,0,0
+35 UNIONVILLE BOROUGH,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+35 UNIONVILLE BOROUGH,us_house,Not Assigned,0,0,0,0
+35 UNIONVILLE BOROUGH,state_house_82,Not Assigned,0,0,0,0
+36 BENNER NORTH,governor_lieutenant_governor,Not Assigned,0,0,0,0
+36 BENNER NORTH,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+36 BENNER NORTH,us_house,Not Assigned,2,2,0,0
+36 BENNER NORTH,state_house_82,Not Assigned,0,0,0,0
+37 BENNER SOUTH,governor_lieutenant_governor,Not Assigned,4,3,1,0
+37 BENNER SOUTH,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+37 BENNER SOUTH,us_house,Not Assigned,4,4,0,0
+37 BENNER SOUTH,state_house_82,Not Assigned,5,4,1,0
+38 BOGGS EAST,governor_lieutenant_governor,Not Assigned,0,0,0,0
+38 BOGGS EAST,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+38 BOGGS EAST,us_house,Not Assigned,0,0,0,0
+38 BOGGS EAST,state_house_82,Not Assigned,0,0,0,0
+39 BOGGS WEST,governor_lieutenant_governor,Not Assigned,1,1,0,0
+39 BOGGS WEST,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+39 BOGGS WEST,us_house,Not Assigned,1,1,0,0
+39 BOGGS WEST,state_house_82,Not Assigned,0,0,0,0
+40 BURNSIDE TOWNSHIP,governor_lieutenant_governor,Not Assigned,0,0,0,0
+40 BURNSIDE TOWNSHIP,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+40 BURNSIDE TOWNSHIP,us_house,Not Assigned,0,0,0,0
+40 BURNSIDE TOWNSHIP,state_house_82,Not Assigned,0,0,0,0
+41 COLLEGE NORTH,governor_lieutenant_governor,Not Assigned,5,5,0,0
+41 COLLEGE NORTH,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+41 COLLEGE NORTH,us_house,Not Assigned,4,3,1,0
+41 COLLEGE NORTH,state_house_82,Not Assigned,3,2,1,0
+42 COLLEGE SOUTH,governor_lieutenant_governor,Not Assigned,1,0,1,0
+42 COLLEGE SOUTH,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+42 COLLEGE SOUTH,us_house,Not Assigned,0,0,0,0
+42 COLLEGE SOUTH,state_house_82,Not Assigned,0,0,0,0
+43 COLLEGE EAST,governor_lieutenant_governor,Not Assigned,4,1,3,0
+43 COLLEGE EAST,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+43 COLLEGE EAST,us_house,Not Assigned,3,2,1,0
+43 COLLEGE EAST,state_house_82,Not Assigned,2,2,0,0
+44 COLLEGE WEST,governor_lieutenant_governor,Not Assigned,0,0,0,0
+44 COLLEGE WEST,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+44 COLLEGE WEST,us_house,Not Assigned,1,0,1,0
+44 COLLEGE WEST,state_house_82,Not Assigned,1,0,1,0
+45 CURTIN NORTH,governor_lieutenant_governor,Not Assigned,0,0,0,0
+45 CURTIN NORTH,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+45 CURTIN NORTH,us_house,Not Assigned,0,0,0,0
+45 CURTIN NORTH,state_house_82,Not Assigned,0,0,0,0
+46 CURTIN SOUTH,governor_lieutenant_governor,Not Assigned,0,0,0,0
+46 CURTIN SOUTH,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+46 CURTIN SOUTH,us_house,Not Assigned,0,0,0,0
+46 CURTIN SOUTH,state_house_82,Not Assigned,0,0,0,0
+47 FERGUSON NORTH 1,governor_lieutenant_governor,Not Assigned,1,0,1,0
+47 FERGUSON NORTH 1,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+47 FERGUSON NORTH 1,us_house,Not Assigned,2,1,1,0
+47 FERGUSON NORTH 1,state_house_77,Not Assigned,3,2,1,0
+48 FERGUSON NORTH 2,governor_lieutenant_governor,Not Assigned,1,1,0,0
+48 FERGUSON NORTH 2,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+48 FERGUSON NORTH 2,us_house,Not Assigned,1,1,0,0
+48 FERGUSON NORTH 2,state_house_77,Not Assigned,5,4,1,0
+49 FERGUSON NORTHEAST 1,governor_lieutenant_governor,Not Assigned,1,0,1,0
+49 FERGUSON NORTHEAST 1,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+49 FERGUSON NORTHEAST 1,us_house,Not Assigned,3,2,1,0
+49 FERGUSON NORTHEAST 1,state_house_77,Not Assigned,1,1,0,0
+50 FERGUSON NORTHEAST 2,governor_lieutenant_governor,Not Assigned,0,0,0,0
+50 FERGUSON NORTHEAST 2,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+50 FERGUSON NORTHEAST 2,us_house,Not Assigned,0,0,0,0
+50 FERGUSON NORTHEAST 2,state_house_77,Not Assigned,1,1,0,0
+51 FERGUSON EAST,governor_lieutenant_governor,Not Assigned,1,1,0,0
+51 FERGUSON EAST,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+51 FERGUSON EAST,us_house,Not Assigned,0,0,0,0
+51 FERGUSON EAST,state_house_77,Not Assigned,4,4,0,0
+52 FERGUSON WEST,governor_lieutenant_governor,Not Assigned,0,0,0,0
+52 FERGUSON WEST,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+52 FERGUSON WEST,us_house,Not Assigned,0,0,0,0
+52 FERGUSON WEST,state_house_77,Not Assigned,0,0,0,0
+53 GREGG TOWNSHIP,governor_lieutenant_governor,Not Assigned,2,1,1,0
+53 GREGG TOWNSHIP,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+53 GREGG TOWNSHIP,us_house,Not Assigned,2,2,0,0
+53 GREGG TOWNSHIP,state_house_171,Not Assigned,0,0,0,0
+54 HAINES TOWNSHIP,governor_lieutenant_governor,Not Assigned,1,1,0,0
+54 HAINES TOWNSHIP,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+54 HAINES TOWNSHIP,us_house,Not Assigned,0,0,0,0
+54 HAINES TOWNSHIP,state_house_171,Not Assigned,0,0,0,0
+55 HALFMOON PROPER,governor_lieutenant_governor,Not Assigned,1,1,0,0
+55 HALFMOON PROPER,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+55 HALFMOON PROPER,us_house,Not Assigned,0,0,0,0
+55 HALFMOON PROPER,state_house_77,Not Assigned,0,0,0,0
+56 HARRIS EAST,governor_lieutenant_governor,Not Assigned,0,0,0,0
+56 HARRIS EAST,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+56 HARRIS EAST,us_house,Not Assigned,2,0,2,0
+56 HARRIS EAST,state_house_82,Not Assigned,2,0,2,0
+57 HARRIS WEST,governor_lieutenant_governor,Not Assigned,1,1,0,0
+57 HARRIS WEST,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+57 HARRIS WEST,us_house,Not Assigned,1,1,0,0
+57 HARRIS WEST,state_house_82,Not Assigned,1,0,1,0
+58 HOWARD TOWNSHIP,governor_lieutenant_governor,Not Assigned,1,0,1,0
+58 HOWARD TOWNSHIP,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+58 HOWARD TOWNSHIP,us_house,Not Assigned,0,0,0,0
+58 HOWARD TOWNSHIP,state_house_82,Not Assigned,0,0,0,0
+59 HUSTON TOWNSHIP,governor_lieutenant_governor,Not Assigned,1,1,0,0
+59 HUSTON TOWNSHIP,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+59 HUSTON TOWNSHIP,us_house,Not Assigned,2,2,0,0
+59 HUSTON TOWNSHIP,state_house_77,Not Assigned,1,1,0,0
+60 LIBERTY TOWNSHIP,governor_lieutenant_governor,Not Assigned,1,1,0,0
+60 LIBERTY TOWNSHIP,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+60 LIBERTY TOWNSHIP,us_house,Not Assigned,1,1,0,0
+60 LIBERTY TOWNSHIP,state_house_82,Not Assigned,0,0,0,0
+61 MARION TOWNSHIP,governor_lieutenant_governor,Not Assigned,0,0,0,0
+61 MARION TOWNSHIP,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+61 MARION TOWNSHIP,us_house,Not Assigned,1,1,0,0
+61 MARION TOWNSHIP,state_house_82,Not Assigned,0,0,0,0
+62 MILES EAST,governor_lieutenant_governor,Not Assigned,0,0,0,0
+62 MILES EAST,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+62 MILES EAST,us_house,Not Assigned,1,0,1,0
+62 MILES EAST,state_house_171,Not Assigned,0,0,0,0
+63 MILES WEST,governor_lieutenant_governor,Not Assigned,0,0,0,0
+63 MILES WEST,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+63 MILES WEST,us_house,Not Assigned,0,0,0,0
+63 MILES WEST,state_house_171,Not Assigned,0,0,0,0
+64 PATTON NORTH 1,governor_lieutenant_governor,Not Assigned,2,0,2,0
+64 PATTON NORTH 1,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+64 PATTON NORTH 1,us_house,Not Assigned,0,0,0,0
+64 PATTON NORTH 1,state_house_77,Not Assigned,0,0,0,0
+65 PATTON NORTH 2,governor_lieutenant_governor,Not Assigned,1,0,1,0
+65 PATTON NORTH 2,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+65 PATTON NORTH 2,us_house,Not Assigned,1,1,0,0
+65 PATTON NORTH 2,state_house_77,Not Assigned,0,0,0,0
+66 PATTON SOUTH 1,governor_lieutenant_governor,Not Assigned,1,1,0,0
+66 PATTON SOUTH 1,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+66 PATTON SOUTH 1,us_house,Not Assigned,1,1,0,0
+66 PATTON SOUTH 1,state_house_77,Not Assigned,1,1,0,0
+67 PATTON SOUTH 2,governor_lieutenant_governor,Not Assigned,1,1,0,0
+67 PATTON SOUTH 2,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+67 PATTON SOUTH 2,us_house,Not Assigned,1,1,0,0
+67 PATTON SOUTH 2,state_house_77,Not Assigned,0,0,0,0
+68 PATTON SOUTH 3,governor_lieutenant_governor,Not Assigned,3,3,0,0
+68 PATTON SOUTH 3,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+68 PATTON SOUTH 3,us_house,Not Assigned,1,0,1,0
+68 PATTON SOUTH 3,state_house_77,Not Assigned,3,2,1,0
+69 PENN TOWNSHIP,governor_lieutenant_governor,Not Assigned,0,0,0,0
+69 PENN TOWNSHIP,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+69 PENN TOWNSHIP,us_house,Not Assigned,0,0,0,0
+69 PENN TOWNSHIP,state_house_171,Not Assigned,1,1,0,0
+70 POTTER NORTH,governor_lieutenant_governor,Not Assigned,0,0,0,0
+70 POTTER NORTH,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+70 POTTER NORTH,us_house,Not Assigned,0,0,0,0
+70 POTTER NORTH,state_house_171,Not Assigned,1,1,0,0
+71 POTTER SOUTH,governor_lieutenant_governor,Not Assigned,0,0,0,0
+71 POTTER SOUTH,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+71 POTTER SOUTH,us_house,Not Assigned,1,1,0,0
+71 POTTER SOUTH,state_house_171,Not Assigned,1,1,0,0
+72 RUSH NORTH,governor_lieutenant_governor,Not Assigned,0,0,0,0
+72 RUSH NORTH,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+72 RUSH NORTH,us_house,Not Assigned,2,2,0,0
+72 RUSH NORTH,state_house_77,Not Assigned,1,1,0,0
+73 RUSH SOUTH,governor_lieutenant_governor,Not Assigned,0,0,0,0
+73 RUSH SOUTH,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+73 RUSH SOUTH,us_house,Not Assigned,0,0,0,0
+73 RUSH SOUTH,state_house_77,Not Assigned,0,0,0,0
+74 RUSH EAST,governor_lieutenant_governor,Not Assigned,0,0,0,0
+74 RUSH EAST,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+74 RUSH EAST,us_house,Not Assigned,0,0,0,0
+74 RUSH EAST,state_house_77,Not Assigned,0,0,0,0
+75 RUSH WEST,governor_lieutenant_governor,Not Assigned,0,0,0,0
+75 RUSH WEST,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+75 RUSH WEST,us_house,Not Assigned,0,0,0,0
+75 RUSH WEST,state_house_77,Not Assigned,0,0,0,0
+76 SNOW SHOE EAST,governor_lieutenant_governor,Not Assigned,0,0,0,0
+76 SNOW SHOE EAST,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+76 SNOW SHOE EAST,us_house,Not Assigned,0,0,0,0
+76 SNOW SHOE EAST,state_house_82,Not Assigned,0,0,0,0
+77 SNOW SHOE WEST,governor_lieutenant_governor,Not Assigned,0,0,0,0
+77 SNOW SHOE WEST,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+77 SNOW SHOE WEST,us_house,Not Assigned,1,1,0,0
+77 SNOW SHOE WEST,state_house_82,Not Assigned,0,0,0,0
+78 SPRING NORTH,governor_lieutenant_governor,Not Assigned,3,1,2,0
+78 SPRING NORTH,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+78 SPRING NORTH,us_house,Not Assigned,0,0,0,0
+78 SPRING NORTH,state_house_171,Not Assigned,0,0,0,0
+79 SPRING SOUTH,governor_lieutenant_governor,Not Assigned,6,6,0,0
+79 SPRING SOUTH,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+79 SPRING SOUTH,us_house,Not Assigned,3,1,2,0
+79 SPRING SOUTH,state_house_171,Not Assigned,3,0,3,0
+80 SPRING WEST,governor_lieutenant_governor,Not Assigned,0,0,0,0
+80 SPRING WEST,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+80 SPRING WEST,us_house,Not Assigned,0,0,0,0
+80 SPRING WEST,state_house_171,Not Assigned,0,0,0,0
+81 TAYLOR TOWNSHIP,governor_lieutenant_governor,Not Assigned,0,0,0,0
+81 TAYLOR TOWNSHIP,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+81 TAYLOR TOWNSHIP,us_house,Not Assigned,0,0,0,0
+81 TAYLOR TOWNSHIP,state_house_77,Not Assigned,0,0,0,0
+82 UNION TOWNSHIP,governor_lieutenant_governor,Not Assigned,2,2,0,0
+82 UNION TOWNSHIP,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+82 UNION TOWNSHIP,us_house,Not Assigned,1,0,1,0
+82 UNION TOWNSHIP,state_house_82,Not Assigned,0,0,0,0
+83 WALKER EAST,governor_lieutenant_governor,Not Assigned,0,0,0,0
+83 WALKER EAST,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+83 WALKER EAST,us_house,Not Assigned,0,0,0,0
+83 WALKER EAST,state_house_171,Not Assigned,2,2,0,0
+84 WALKER WEST,governor_lieutenant_governor,Not Assigned,0,0,0,0
+84 WALKER WEST,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+84 WALKER WEST,us_house,Not Assigned,0,0,0,0
+84 WALKER WEST,state_house_171,Not Assigned,0,0,0,0
+85 WORTH TOWNSHIP,governor_lieutenant_governor,Not Assigned,0,0,0,0
+85 WORTH TOWNSHIP,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+85 WORTH TOWNSHIP,us_house,Not Assigned,0,0,0,0
+85 WORTH TOWNSHIP,state_house_77,Not Assigned,0,0,0,0
+86 SPRING EAST,governor_lieutenant_governor,Not Assigned,0,0,0,0
+86 SPRING EAST,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+86 SPRING EAST,us_house,Not Assigned,1,1,0,0
+86 SPRING EAST,state_house_171,Not Assigned,2,2,0,0
+87 SPRING SOUTHWEST,governor_lieutenant_governor,Not Assigned,2,2,0,0
+87 SPRING SOUTHWEST,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+87 SPRING SOUTHWEST,us_house,Not Assigned,3,3,0,0
+87 SPRING SOUTHWEST,state_house_171,Not Assigned,4,4,0,0
+88 FERGUSON NORTH 3,governor_lieutenant_governor,Not Assigned,1,1,0,0
+88 FERGUSON NORTH 3,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+88 FERGUSON NORTH 3,us_house,Not Assigned,0,0,0,0
+88 FERGUSON NORTH 3,state_house_77,Not Assigned,1,1,0,0
+89 FERGUSON WEST CENTRAL,governor_lieutenant_governor,Not Assigned,2,1,1,0
+89 FERGUSON WEST CENTRAL,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+89 FERGUSON WEST CENTRAL,us_house,Not Assigned,1,0,1,0
+89 FERGUSON WEST CENTRAL,state_house_77,Not Assigned,1,0,1,0
+90 HALFMOON EAST CENTRAL,governor_lieutenant_governor,Not Assigned,0,0,0,0
+90 HALFMOON EAST CENTRAL,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+90 HALFMOON EAST CENTRAL,us_house,Not Assigned,0,0,0,0
+90 HALFMOON EAST CENTRAL,state_house_77,Not Assigned,0,0,0,0
+91 FERGUSON NORTH CENTRAL,governor_lieutenant_governor,Not Assigned,0,0,0,0
+91 FERGUSON NORTH CENTRAL,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+91 FERGUSON NORTH CENTRAL,us_house,Not Assigned,0,0,0,0
+91 FERGUSON NORTH CENTRAL,state_house_77,Not Assigned,0,0,0,0
+County,governor_lieutenant_governor,Not Assigned,67,51,16,0
+County,governor_lieutenant_governor,Write-In: ASD,0,0,0,0
+County,us_house,Not Assigned,67,49,18,0
+County,state_house_77,Not Assigned,27,22,5,0
+County,state_house_82,Not Assigned,21,15,6,0
+County,state_house_171,Not Assigned,18,15,3,0

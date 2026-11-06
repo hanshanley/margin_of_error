@@ -1,0 +1,106 @@
+{
+  "year": 2026,
+  "state_code": "PA",
+  "county_fips": "42027",
+  "county": "Centre",
+  "county_participation": {
+    "year": 2026,
+    "state_code": "PA",
+    "county_fips": "42027",
+    "county": "Centre",
+    "registered_voters": 103270,
+    "ballots": 57125,
+    "blank_ballots_from_pdf": 6,
+    "registered_voter_rate_literal": "55.32%",
+    "registered_voter_rate_calculated": "55.32%",
+    "registered_voter_rate_difference_percentage_points": "0.00",
+    "house_candidate_votes": 56804,
+    "house_ballot_residual_unclassified": 321
+  },
+  "county_ballot_methods": [
+    {
+      "year": 2026,
+      "state_code": "PA",
+      "county_fips": "42027",
+      "county": "Centre",
+      "method_literal": "InPerson",
+      "ballots": 43125,
+      "blank_ballots_from_pdf": 5,
+      "blank_ballots_from_api": 5,
+      "api_blank_accounting_usable": true
+    },
+    {
+      "year": 2026,
+      "state_code": "PA",
+      "county_fips": "42027",
+      "county": "Centre",
+      "method_literal": "Mail",
+      "ballots": 14000,
+      "blank_ballots_from_pdf": 1,
+      "blank_ballots_from_api": 1,
+      "api_blank_accounting_usable": true
+    },
+    {
+      "year": 2026,
+      "state_code": "PA",
+      "county_fips": "42027",
+      "county": "Centre",
+      "method_literal": "Provisional",
+      "ballots": 0,
+      "blank_ballots_from_pdf": 0,
+      "blank_ballots_from_api": 240,
+      "api_blank_accounting_usable": false
+    }
+  ],
+  "native_precincts": 87,
+  "native_api_records": 261,
+  "state_house_precinct_scopes": {
+    "state_house_171": 21,
+    "state_house_82": 32,
+    "state_house_77": 34
+  },
+  "api_precinct_codes_differ_from_report_ids": 63,
+  "native_reporting_qualifications": [
+    "Election Day Precincts Reporting 87 of 87 87 0 0",
+    "Precincts Complete 0 of 87 0 0 0",
+    "Precincts Partially Reported 87 of 87 87 0 0",
+    "Absentee/ Early Precincts Reporting 86 of 87 0 86 0"
+  ],
+  "native_conflict_rows": 1,
+  "conflicting_api_blank_total": 240,
+  "native_printed_rate_difference_rows": 2,
+  "table_rows": {
+    "county-participation.csv": 1,
+    "county-ballot-methods.csv": 3,
+    "county-contest-option-results.csv": 16,
+    "county-contest-party-totals.csv": 11,
+    "county-contest-totals.csv": 5,
+    "native-precinct-participation.csv": 87,
+    "native-precinct-option-results.csv": 870,
+    "native-pdf-write-in-breakdown.csv": 354,
+    "native-precinct-identity-crosswalk.csv": 87,
+    "native-api-observations.csv": 261,
+    "native-source-conflicts.csv": 1,
+    "native-source-updates.csv": 6,
+    "native-printed-rate-differences.csv": 2
+  },
+  "publication_approved": true,
+  "new_maps_approved": false,
+  "source_profile": "centre-complete-numerical-facts-v1",
+  "limitations": [
+    "Unofficial and partially reported; reporting precincts are not completed counting or certification.",
+    "Registered-voter participation is not eligible-population or demographic-group turnout.",
+    "Native printed percentages and ratios calculated from printed counts are separate; differences are retained.",
+    "API PRECINCT_CODE is not the printed report precinct ID; join by the full native precinct label.",
+    "State-House membership comes from explicit PDF headings, not zero candidate columns.",
+    "Provisional API blank counts conflict with primary PDFs and exceed API ballots; unusable as accounting.",
+    "Primary PDF blank counts are retained independently, without altering conflicting API observations.",
+    "Absent API method registrations remain null, not zero or duplicated county registrations.",
+    "Write-in breakdowns are annotations, not additional candidate votes or inferred party votes.",
+    "Candidate totals and unclassified ballot residuals are not participation or inferred undervotes.",
+    "Source update literals retain their separate meanings and undeclared PDF/index timezones.",
+    "Complete numerical facts, original API query data and source receipt digests are included; website, app and PDF presentation templates are not mirrored.",
+    "Primary PDF extraction was privately verified before facts export; offline replay verifies the complete captured numerical facts, not omitted original PDF bytes.",
+    "No new map coverage, final counting, source-template license or demographic turnout is claimed."
+  ]
+}

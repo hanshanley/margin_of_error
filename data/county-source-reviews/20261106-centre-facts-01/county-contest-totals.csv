@@ -1,0 +1,6 @@
+year,state_code,county_fips,county,office,candidate_votes,contest_ballots,ballot_residual_unclassified,precincts_reporting
+2026,PA,42027,Centre,governor_lieutenant_governor,56771,57125,354,87
+2026,PA,42027,Centre,us_house,56804,57125,321,87
+2026,PA,42027,Centre,state_house_77,21847,21982,135,34
+2026,PA,42027,Centre,state_house_82,21184,21325,141,32
+2026,PA,42027,Centre,state_house_171,13743,13818,75,21
