@@ -2,7 +2,17 @@
 
 ## Current verified production and next acquisition
 
-**Juniata / Mercer / Montour integration is locally verified, not yet live.**
+**November 6, 09:42 UTC: Juniata / Mercer / Montour are LIVE verified.**
+Exact UI `9d7339d78c5ad8bf756c0cafff082432e449b1e4`, Pages **42196054498
+attempt 1**, passed its original hosted artifact **13492073594 /
+524,527,356 bytes**, SHA-256
+`e5968877e2d159a8a7677fa577dd4563a0185c6c08c280a0ee6830ce4dc055f4`.
+All **307 selected entire hosted/public files**, **seven production browser
+scenarios** and credential runs **42196054570 / 42196051900** pass.
+The platform-generated preview is qualified against the hosted publication
+manifest; all other applicable entire bytes are exact. No verifier remains
+active, and the previous Perry failure/retry proofs remain intact.
+
 Context09 at fixed facts revision
 `b0484f6454ed202a0b8288140fd39aa31a460b50`, release **436312991**, passes all
 four anonymous assets, 29 commit-pinned files, 28 archive members and offline
@@ -25,11 +35,30 @@ assertion `23 !== 16` at line1126. A browser-only stale aggregate expectation wa
 corrected after the successful build; final proof separately confirms all runtime
 and build bytes are unchanged and all seven corrected scenarios pass. See
 `20261106-juniata-mercer-montour-explorer-01`.
-Next: publish this exact tested UI, then verify its original hosted artifact,
-**307 selected entire files**, exact credentials and seven production scenarios.
-Do not claim live or start a duplicate verifier before those checks complete.
+Production and credential proofs are saved beside the local validation in
+`20261106-juniata-mercer-montour-explorer-01`.
 After this batch, 29 of the consolidated index's 67 Pennsylvania counties have
 reviewed sources; 38 need primary-source work, alongside missing jurisdictions.
+
+**Next acquisition: California's declared statewide native participation.**
+The actual official November 3 General Election media parent declares both
+catalogs, the bulk workbook and six native text feeds. All thirteen complete
+originals and acquisition receipts are private. The 59-row status JSON is
+byte-identical inside both declared original ZIPs. All **58 counties plus a
+separate statewide row** match the native A records: **8,928,966 reported
+`voterTurnout` / 23,273,590 `totalRegisteredVoters` / printed 38.4%** statewide.
+Every county participation/registration/reporting sum and printed fraction
+reconciles. All **2,579 complete contest reports / 5,138 choices / 1,867
+literal-party totals** independently match the native V records and P reporting
+areas. Candidate totals remain separate; native parties include `Dem`, `Rep`,
+`Grn`, `Lib`, `P&F`, `Non` and `NPP`, without relabeling missing judicial parties.
+The strict standard-library parser has passed its complete private trial;
+next add focused corruption tests, then freeze/reproduce the entire factual
+query before source release and integration. Nothing California is live or
+map-approved yet. Native county codes are not FIPS, clocks have no declared
+timezone, `U/F/SF` retain their literal status, and 100% precinct reporting
+does not imply completed counting or certification. No mode or demographic
+turnout is invented. Existing Maine/D.C. gaps and source restrictions remain.
 
 **November 6, 09:27 UTC: Perry is LIVE verified.**
 Pages **42192736194 attempt 2** succeeded for exact UI
