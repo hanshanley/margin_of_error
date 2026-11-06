@@ -7,12 +7,13 @@ import { createCountyContextReview, loadCountyContextReview } from './build-coun
 import { loadAdditionalParticipation } from './additional-participation.mjs';
 import { loadReviewedCountyParticipation } from './reviewed-county-participation.mjs';
 
-const root = new URL('../public/participation-county-context/20261106-09/', import.meta.url);
-const batchIds = ['pennsylvania-juniata-20261106-01', 'pennsylvania-mercer-20261106-01',
+const root = new URL('../public/participation-county-context/20261106-10/', import.meta.url);
+const batchIds = ['california-bulk-participation-20261106-01', 'pennsylvania-juniata-20261106-01', 'pennsylvania-mercer-20261106-01',
   'pennsylvania-montour-20261106-01'];
 const json = file => JSON.parse(readFileSync(new URL(file, root), 'utf8'));
 const compressed = file => JSON.parse(gunzipSync(readFileSync(new URL(file, root))));
 const review = json('review.json');
+const previousGeometry = Object.fromEntries(Object.entries(review.geometry).filter(([code]) => code !== 'CA'));
 const records = compressed('complete-source-records.json.gz');
 const inventories = Object.fromEntries(['2024', '2026'].map(year =>
   [year, compressed(`complete-${year}-county-identities.json.gz`)]));
@@ -28,8 +29,8 @@ test('complete county review reproduces without changing any source observations
     ...loadReviewedCountyParticipation(JSON.parse(readFileSync('public/participation-source-reviews.json')).reviews)];
   assert.deepEqual(records, liveRecords);
   assert.deepEqual(createCountyContextReview(records, inventories, collections, investigation), review);
-  assert.deepEqual(review.counts, { complete_source_records: 914, contextual_joins: 442, jurisdictions: 15,
-    reviewed_rates: 69, missing_rates: 373, excluded_municipalities: 286, excluded_missing_county_totals: 186 });
+  assert.deepEqual(review.counts, { complete_source_records: 972, contextual_joins: 500, jurisdictions: 16,
+    reviewed_rates: 127, missing_rates: 373, excluded_municipalities: 286, excluded_missing_county_totals: 186 });
   assert.ok(review.observations.every(row => row.source_map_approval_unchanged === false));
 });
 
@@ -44,7 +45,7 @@ test('independent joins use each entire unchanged record and exact contextual ge
       if (row.reported_pct !== null) rates++;
     }
   }
-  assert.equal(joined, 442); assert.equal(rates, 69);
+  assert.equal(joined, 500); assert.equal(rates, 127);
   assert.equal((await match(records.filter(row => ['VT', 'RI', 'MN', 'ND', 'ID', 'MI'].includes(row.state_code)))).size, 0);
   const nj = await match(records.filter(row => row.state_code === 'NJ'), review, 'NJ');
   assert.equal(nj.size, 19);
@@ -64,7 +65,7 @@ test('preserves the full previous immutable query while independently joining Je
   assert.deepEqual(records.filter(row => !isNew(row)), oldRecords);
   assert.deepEqual(review.observations.filter(row => !isNew(row)), oldReview.observations);
   assert.deepEqual(review.excluded, oldReview.excluded);
-  assert.deepEqual(review.geometry, oldReview.geometry);
+  assert.deepEqual(previousGeometry, oldReview.geometry);
   const joined = await match(records.filter(row => row.state_code === 'PA'), review, 'PA');
   const jefferson = joined.get('42065');
   assert.equal(jefferson.county, 'Jefferson');
@@ -87,7 +88,7 @@ test('preserves every full context02 record and approval while independently joi
   assert.deepEqual(records.filter(row => !isNew(row)), oldRecords);
   assert.deepEqual(review.observations.filter(row => !isNew(row)), oldReview.observations);
   assert.deepEqual(review.excluded, oldReview.excluded);
-  assert.deepEqual(review.geometry, oldReview.geometry);
+  assert.deepEqual(previousGeometry, oldReview.geometry);
   const joined = await match(records.filter(row => row.state_code === 'PA'), review, 'PA');
   const clarion = joined.get('42031');
   assert.equal(clarion.county, 'Clarion');
@@ -110,7 +111,7 @@ test('preserves every full context03 record while independently joining Cameron 
   assert.deepEqual(records.filter(row => !isNew(row)), oldRecords);
   assert.deepEqual(review.observations.filter(row => !isNew(row)), oldReview.observations);
   assert.deepEqual(review.excluded, oldReview.excluded);
-  assert.deepEqual(review.geometry, oldReview.geometry);
+  assert.deepEqual(previousGeometry, oldReview.geometry);
   const joined = await match(records.filter(row => row.state_code === 'PA'), review, 'PA');
   for (const [geoid, county, ballots, denominator] of [
     ['42023', 'Cameron', 1624, 2885], ['42025', 'Carbon', 24840, 45896],
@@ -136,7 +137,7 @@ test('preserves every full context04 record while independently joining Elk and 
   assert.deepEqual(records.filter(row => !isNew(row)), oldRecords);
   assert.deepEqual(review.observations.filter(row => !isNew(row)), oldReview.observations);
   assert.deepEqual(review.excluded, oldReview.excluded);
-  assert.deepEqual(review.geometry, oldReview.geometry);
+  assert.deepEqual(previousGeometry, oldReview.geometry);
   const joined = await match(records.filter(row => row.state_code === 'PA'), review, 'PA');
   for (const [geoid, county, ballots, denominator] of [
     ['42047', 'Elk', 11742, 20533], ['42053', 'Forest', 1877, 3275],
@@ -161,7 +162,7 @@ test('preserves every full context05 record while independently joining Potter',
   assert.deepEqual(records.filter(row => !isNew(row)), oldRecords);
   assert.deepEqual(review.observations.filter(row => !isNew(row)), oldReview.observations);
   assert.deepEqual(review.excluded, oldReview.excluded);
-  assert.deepEqual(review.geometry, oldReview.geometry);
+  assert.deepEqual(previousGeometry, oldReview.geometry);
   const row = (await match(records.filter(item => item.state_code === 'PA'), review, 'PA')).get('42105');
   assert.equal(row.county, 'Potter');
   assert.equal(row.ballots, 6244);
@@ -180,7 +181,7 @@ test('preserves every full context06 record and joins Mifflin without creating a
   assert.deepEqual(records.filter(row => !isNew(row)), oldRecords);
   assert.deepEqual(review.observations.filter(row => !isNew(row)), oldReview.observations);
   assert.deepEqual(review.excluded, oldReview.excluded);
-  assert.deepEqual(review.geometry, oldReview.geometry);
+  assert.deepEqual(previousGeometry, oldReview.geometry);
   const row = (await match(records.filter(item => item.state_code === 'PA'), review, 'PA')).get('42087');
   assert.equal(row.county, 'Mifflin');
   assert.equal(row.ballots, 14439);
@@ -201,7 +202,7 @@ test('preserves every full context07 record while independently joining Perry wi
   assert.deepEqual(records.filter(row => !isNew(row)), oldRecords);
   assert.deepEqual(review.observations.filter(row => !isNew(row)), oldReview.observations);
   assert.deepEqual(review.excluded, oldReview.excluded);
-  assert.deepEqual(review.geometry, oldReview.geometry);
+  assert.deepEqual(previousGeometry, oldReview.geometry);
   const row = (await match(records.filter(item => item.state_code === 'PA'), review, 'PA')).get('42099');
   assert.equal(row.county, 'Perry');
   assert.equal(row.ballots, 18064);
@@ -224,7 +225,7 @@ test('preserves context08 and independently joins all three county identities wi
   assert.deepEqual(records.filter(row => !isNew(row)), oldRecords);
   assert.deepEqual(review.observations.filter(row => !isNew(row)), oldReview.observations);
   assert.deepEqual(review.excluded, oldReview.excluded);
-  assert.deepEqual(review.geometry, oldReview.geometry);
+  assert.deepEqual(previousGeometry, oldReview.geometry);
   const joined = await match(records.filter(row => row.state_code === 'PA'), review, 'PA');
   for (const [geoid, county, ballots, registrations] of [
     ['42067', 'Juniata', 8258, 14095], ['42085', 'Mercer', 39121, 72238], ['42093', 'Montour', 7008, 12418],
@@ -236,6 +237,29 @@ test('preserves context08 and independently joins all three county identities wi
     assert.equal(row.native_record.source_fips, '');
     assert.equal(row.maps_approved, false);
   }
+  assert.throws(() => loadCountyContextReview(oldRecords), /complete current source records/);
+});
+
+test('preserves context09 while joining all 58 California identities with native participation fractions', async () => {
+  const previous = new URL('../public/participation-county-context/20261106-09/', import.meta.url);
+  const oldRecords = JSON.parse(gunzipSync(readFileSync(new URL('complete-source-records.json.gz', previous))));
+  const oldReview = JSON.parse(readFileSync(new URL('review.json', previous), 'utf8'));
+  assert.deepEqual(records.filter(row => row.state_code !== 'CA'), oldRecords);
+  assert.deepEqual(review.observations.filter(row => row.state_code !== 'CA'), oldReview.observations);
+  assert.deepEqual(review.excluded, oldReview.excluded);
+  assert.deepEqual(previousGeometry, oldReview.geometry);
+  const joined = await match(records.filter(row => row.state_code === 'CA'), review, 'CA');
+  assert.equal(joined.size, 58);
+  assert.equal([...joined.values()].filter(row => row.reported_pct !== null).length, 58);
+  const alameda = joined.get('06001');
+  assert.equal(alameda.county, 'Alameda');
+  assert.equal(alameda.ballots, 314951);
+  assert.equal(alameda.denominator, 983846);
+  assert.equal(alameda.participation_measure_literal, 'voterTurnout');
+  assert.equal(alameda.native_record.county_fips, '');
+  assert.equal(alameda.maps_approved, false);
+  assert.equal(review.geometry.CA.boundary_year, 2024);
+  assert.equal(review.geometry.CA.simplification_overlap_pairs.length, 43);
   assert.throws(() => loadCountyContextReview(oldRecords), /complete current source records/);
 });
 

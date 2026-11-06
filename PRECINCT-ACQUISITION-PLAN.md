@@ -40,8 +40,8 @@ Production and credential proofs are saved beside the local validation in
 After this batch, 29 of the consolidated index's 67 Pennsylvania counties have
 reviewed sources; 38 need primary-source work, alongside missing jurisdictions.
 
-**California's statewide native participation source is released and verified;
-UI integration is next, not live.**
+**California's statewide native participation source and county UI integration
+are reviewed and locally verified; deployment is next, not live.**
 The actual official November 3 General Election media parent declares both
 catalogs, the bulk workbook and six native text feeds. All thirteen complete
 originals and acquisition receipts are private. The 59-row status JSON is
@@ -92,7 +92,28 @@ bytes**, SHA-256
 `44621f3f361a4202106f01230b06ebcfd09bc7845937a25e30df08758ab1a8f6`.
 The separate native statewide observation is not inserted into county records.
 See `20261106-california-explorer-01`.
-UI integration and deployment are still pending; nothing California is LIVE.
+Context10 is pinned to facts `47a0efe3e75e9498d89340a7c50e3b311f55c5dc`,
+release **436337303**. All four entire anonymous assets, thirty commit-pinned
+files and twenty-nine archive members pass; exact context credential runs
+**42198890270 / 42198840431** pass.
+The integrated county loader preserves all 58 native observations, independently
+reviewed identities and literal source qualifications. The separate native
+statewide observation appears in the official administrative view and beside,
+not in place of, UF's estimated state rate. All eleven complete California CSVs
+and the complete query ZIP are available, with candidate/party totals separate.
+All **66 affected tests**, Astro checks, build and **seven local browser
+scenarios** pass. Browser checks cover **500 exact county counts / 127 native
+fractions / 373 missing gray rates**, all 58 California rows and the separate
+statewide fraction, desktop/mobile, no JavaScript and failed-fetch fallbacks.
+Every previous 914 context record, 49 native county row and 590 complete-download
+anchor survives; the page now has **606 anchors / 602 unique URLs**.
+The prepared site is **989,468,797 bytes** after 106 byte-identical download
+relocations. Full-site validation, run in the correct pre-relocation order,
+reaches only the existing unrelated UK `23 !== 16` assertion at line1126.
+An independent entire-file comparison confirms the final prepared build is
+byte-identical to the build that passed all seven browser scenarios.
+Deployment and original-artifact/public-byte/production-browser verification
+are pending; nothing California is LIVE.
 Native county codes are not FIPS, clocks have no declared
 timezone, `U/F/SF` retain their literal status, and 100% precinct reporting
 does not imply completed counting or certification. No mode or demographic

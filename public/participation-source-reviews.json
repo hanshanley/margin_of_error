@@ -1,6 +1,32 @@
 {
   "reviews": [
     {
+      "id": "california-bulk-participation-20261106-01",
+      "label": "California 2026: all 58 native county participation observations and separate statewide total",
+      "data_directory": "data/county-source-reviews/20261106-california-facts-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/e32e27dde3a56ee13c515ef54fa1e140fa4268b1/data/county-source-reviews/20261106-california-facts-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-california-20261106-01/complete-query.zip",
+      "complete_download_bytes": 417046,
+      "complete_download_sha256": "d985417e7fdc8d4af08447a09e7c0bfaf9a65dd92ff493dce1cb3ae431958a3c",
+      "review_status": "complete_bulk_native_participation_and_contest_query_reviewed",
+      "maps_approved": false,
+      "scope_note": "All 58 county voterTurnout / totalRegisteredVoters observations and the separate native statewide 8,928,966 / 23,273,590 observation reconcile independently across status JSON, both entire archives and native A records. Printed statewide fraction 38.4% is registered-voter participation, not CVAP/VAP/VEP or demographic turnout. All 2,579 contest reports, 5,138 choices, 1,867 literal-party totals and reporting-area records reconcile across complete JSON and text records; candidate votes remain separate from participation. Every native text record reconstructs to its original complete bytes. Native U, F and SF literals and raw/formatted timestamps retain missing timezones; reporting completeness does not establish completed counting or certification. Native county codes are not FIPS; code 59 contains separate statewide/districtwide contest scopes. Voting modes, demographic denominators and blank/over/undervotes are absent, not zero. All 16 anonymous/pinned assets and 15 complete ZIP members reproduce offline. Source originals/templates remain private. No source-native county or precinct map approval.",
+      "tables": [
+        {"file": "county-participation.csv", "label": "California: all 58 native county participation counts, registrations and printed fractions (CSV)"},
+        {"file": "statewide-participation.csv", "label": "California: separate native statewide participation observation, not a substituted county sum (CSV)"},
+        {"file": "contest-totals.csv", "label": "California: all 2,579 separately scoped contest totals and unclassified participation differences (CSV)"},
+        {"file": "contest-choices.csv", "label": "California: all 5,138 candidate and YES/NO choices, not participation (CSV)"},
+        {"file": "party-totals.csv", "label": "California: all 1,867 separate contest/geography/literal-party totals (CSV)"},
+        {"file": "native-text-records.csv", "label": "California: every record from all six complete native text feeds (CSV)"},
+        {"file": "native-reporting-status.csv", "label": "California: all 59 complete native status records and unexpanded literals (CSV)"},
+        {"file": "native-contest-reports.csv", "label": "California: all complete native JSON contest records (CSV)"},
+        {"file": "source-catalogs.csv", "label": "California: complete declared JSON/API catalogs and bulk workbook tables (CSV)"},
+        {"file": "source-links.csv", "label": "California: complete actual parent link declarations (CSV)"},
+        {"file": "sources.csv", "label": "California: all 13 entire original-source receipts and byte checksums (CSV)"}
+      ],
+      "coverage": []
+    },
+    {
       "id": "pennsylvania-juniata-20261106-01",
       "label": "Juniata County, Pennsylvania 2026: native ballots and complete county/unit query",
       "data_directory": "data/county-source-reviews/20261106-juniata-facts-01",

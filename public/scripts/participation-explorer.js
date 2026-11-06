@@ -35,7 +35,7 @@ const state = {
   table: [], columns: [], generation: 0, viewport: null, map: null, mapPaths: [],
   precinctRows: new Map(), precinctItems: new Map(), searchItems: new Map(), projected: [],
   loadedPrecinctYear: null, loadedCounty: "",
-  current: null, currentError: "", ufTurnout: [], reviewedCounties: [], countState: params.get("countState") || "GA",
+  current: null, currentError: "", ufTurnout: [], reviewedCounties: [], reviewedStates: [], countState: params.get("countState") || "GA",
   currentPath: "", currentLocal: null, currentCounty: "", currentUnit: "",
   countyContext: null, countyContextReview: null,
   currentPrecincts: null, currentPrecinctPath: "", currentPrecinctShapes: new Map(), currentPrecinctError: "",
@@ -322,6 +322,8 @@ function loadUfTurnout() {
 function loadReviewedCounties() {
   const table = document.querySelector("table[data-reviewed-county-participation]");
   if (table) state.reviewedCounties = JSON.parse(table.dataset.reviewedCountyParticipation);
+  const statewide = document.querySelector("[data-reviewed-state-participation]");
+  state.reviewedStates = statewide ? JSON.parse(statewide.dataset.reviewedStateParticipation) : [];
   const additional = document.querySelector("[data-additional-participation]");
   state.additionalCoverage = additional ? JSON.parse(additional.dataset.additionalParticipation) : [];
   const context = document.querySelector("[data-county-context-review]");
@@ -1330,7 +1332,7 @@ function marginRow(level, key) {
   return state.margins.find(row => row.year === year && row.level === level && row.geography === key && row.office === office);
 }
 function modeFor(row) {
-  return modeLabels[row?.mode] || modeLabels.official;
+  return participationLabel(row || {}) || modeLabels[row?.mode] || modeLabels.official;
 }
 function header(subtitle, title, measure, caption) {
   $("subtitle").textContent = subtitle; $("title").textContent = title;
@@ -1511,16 +1513,23 @@ function nationalView() {
   setTable(rows.sort((a, b) => b.year - a.year), [["year", "Year"], ["election_type", "Election"],
     ["series", "Group"], ["turnout_pct", "Turnout"], ["denominator", "Population"], ["warnings", "Notes"]]);
 }
+function currentOfficialRows() {
+  return [...(state.current?.reporting ?? []).filter(row =>
+    !state.reviewedStates.some(reviewed => reviewed.state_code === row.state_code)), ...state.reviewedStates];
+}
 function currentStateRows() {
+  const officialRows = currentOfficialRows();
   if ($("mode").value === "available") {
-    return (state.current?.coverage ?? []).flatMap(jurisdiction => {
-      const official = state.current.reporting.find(row => row.state_code === jurisdiction.state_code);
-      const early = state.current.early_voting.filter(row => row.state_code === jurisdiction.state_code && row.geography_level === "state");
+    const jurisdictions = unique([...(state.current?.coverage ?? []).map(row => row.state_code),
+      ...state.reviewedStates.map(row => row.state_code)]);
+    return jurisdictions.flatMap(code => {
+      const official = officialRows.find(row => row.state_code === code);
+      const early = (state.current?.early_voting ?? []).filter(row => row.state_code === code && row.geography_level === "state");
       const row = official || early.find(row => row.mode === "in_person_early") || early.find(row => row.mode === "mail_returned");
       return row ? [{ ...row, observation_type: modeFor(row) }] : [];
     });
   }
-  return $("mode").value === "official" ? state.current?.reporting ?? []
+  return $("mode").value === "official" ? officialRows
     : (state.current?.early_voting ?? []).filter(row => row.mode === $("mode").value && row.geography_level === "state");
 }
 function currentGroups() {
@@ -1598,13 +1607,13 @@ function stateDetail() {
     if (selected) {
       panel.append(sourceLink(selected));
       if (!selected.uf_source && selected.validated_pct != null) panel.append(html("p", "selection-note",
-        `${fmt(selected.ballots)} reported ballots / ${selected.denominator_basis.replaceAll("_", " ")} (${fmt(selected.denominator)}). Not a CPS survey rate.`));
+        `${fmt(selected.ballots)} ${participationLabel(selected) || "reported ballots"} / ${selected.denominator_basis.replaceAll("_", " ")} (${fmt(selected.denominator)}). Not a CPS survey rate.`));
     }
-    const official = state.current?.reporting.find(row => row.state === state.selectedState);
+    const official = currentOfficialRows().find(row => row.state === state.selectedState);
     if (selected?.uf_source && official) {
       const observed = html("div", "substate-detail"); observed.id = "official-state-counts";
       observed.append(html("h4", "", "Separate official administrative observation"),
-        html("p", "selection-basis", `${fmt(official.ballots)} reported ballots`),
+        html("p", "selection-basis", `${fmt(official.ballots)} ${participationLabel(official) || "reported ballots"}`),
         html("p", "selection-note", official.validated_pct == null ? sourceNote(official)
           : `${pct(official.validated_pct)} / ${official.denominator_basis.replaceAll("_", " ")} `
             + `(${fmt(official.denominator)}). ${sourceNote(official)} Not the UF population denominator.`),
@@ -1696,10 +1705,10 @@ function statesView() {
   }
   $("coverage-note").textContent = provisional && state.current
     ? `${state.current.coverage.filter(row => row.status !== "no_data").length} jurisdictions have a saved observation; `
-      + `${state.current.reporting.length} state-office full-election feeds. Available observations show one feed per state, preferring official ballots, then in-person early, then returned mail; modes are never added.`
+      + `${currentOfficialRows().length} state-office full-election feeds. Available observations show one feed per state, preferring official administrative participation, then in-person early, then returned mail; modes are never added.`
     : "State histories use CPS survey estimates. Zoom for available local administrative participation; reporting units are not uniformly precincts. Precinct-specific coverage remains explicitly identified.";
   if (provisional && state.current) {
-    const withData = new Set([...state.current.reporting, ...state.current.early_voting].map(row => row.state_code)).size;
+    const withData = new Set([...currentOfficialRows(), ...state.current.early_voting].map(row => row.state_code)).size;
     $("coverage-note").textContent = $("coverage-note").textContent.replace(/^\d+ jurisdictions/, `${withData} jurisdictions`);
   }
   if (ufMode()) $("coverage-note").textContent =
@@ -1725,7 +1734,7 @@ function statesView() {
   stateDetail();
   setTable(rows.sort((a, b) => a.state.localeCompare(b.state)), provisional
     ? [["state", "State"], ["turnout_pct", "Turnout / source denominator"], ["denominator_basis", "Denominator definition"],
-      ["denominator", "Denominator"], ["observation_type", "Observation type"], ["ballots", ufMode() ? "Source-estimated ballots" : "Ballots reported"], ["source_date", "Source date"],
+      ["denominator", "Denominator"], ["observation_type", "Observation type"], ["ballots", ufMode() ? "Source-estimated ballots" : "Participation reported"], ["source_date", "Source date"],
       ["source_update_label", "Source update"], ["status", "Status"], ["quality", "Notes"]]
     : [["state", "State"], ["year", "Year"], ["turnout_pct", "Turnout"], ["denominator", "Population"], ["warnings", "Notes"]]);
 }

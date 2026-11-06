@@ -36,6 +36,83 @@ const profiles = [
 /** @returns {Record<string, string>[]} */
 const csv = path => parse(readFileSync(path, 'utf8'), { columns: true, bom: true, skip_empty_lines: true });
 
+function loadCaliforniaParticipation(reviews) {
+  const id = 'california-bulk-participation-20261106-01';
+  const matches = reviews.filter(review => review.id === id);
+  if (matches.length !== 1) throw new Error(`Missing or duplicated reviewed county source: ${id}`);
+  const review = matches[0], directory = resolve(review.data_directory);
+  const required = {
+    'county-participation.csv': '0ddaf2f0c122096d0f9eb369aee7fff653c2b32f8019d5048974ad1d6a80c0e1',
+    'statewide-participation.csv': '82301cbd7e6ef4e3670403539c728f57a62c2b3173776b4007c024ed4d3edd97',
+    'audit.json': 'e1f005b3a3e0871ce8eced5e9f3c0ef1f4ea8b7e79a1042cef3565b7a25de9ec',
+  };
+  for (const [file, digest] of Object.entries(required)) {
+    if (createHash('sha256').update(readFileSync(resolve(directory, file))).digest('hex') !== digest)
+      throw new Error(`Invalid reviewed county participation: ${id} / ${file}`);
+  }
+  const counties = csv(resolve(directory, 'county-participation.csv'));
+  const statewide = csv(resolve(directory, 'statewide-participation.csv'));
+  const audit = JSON.parse(readFileSync(resolve(directory, 'audit.json'), 'utf8'));
+  if (counties.length !== 58 || statewide.length !== 1 || audit.county_records !== 58
+    || audit.separate_statewide_records !== 1 || new Set(counties.map(row => row.county)).size !== 58
+    || new Set(counties.map(row => row.native_county_code)).size !== 58
+    || counties.some(row => !Array.from({ length: 58 }, (_, index) => String(index + 1)).includes(row.native_county_code))
+    || statewide[0].native_county_code !== '59' || statewide[0].geography_level !== 'statewide'
+    || ['reported_participation', 'registered_voters', 'precincts_reporting', 'precincts_total'].some(field =>
+      counties.reduce((total, row) => total + Number(row[field]), 0) !== Number(statewide[0][field])))
+    throw new Error(`Incomplete reviewed county source: ${id}`);
+  return [...counties, ...statewide].map(native => {
+    const ballots = Number(native.reported_participation), denominator = Number(native.registered_voters);
+    if (native.year !== '2026' || native.election_date !== '2026-11-03' || native.state_code !== 'CA'
+      || !Number.isSafeInteger(ballots) || ballots <= 0
+      || !Number.isSafeInteger(denominator) || denominator < ballots
+      || native.native_participation_measure_literal !== 'voterTurnout'
+      || native.native_denominator_measure_literal !== 'totalRegisteredVoters'
+      || native.county_fips !== '' || native.maps_approved !== 'false' || native.counting_complete !== 'false'
+      || native.declared_timezone !== ''
+      || Math.abs(100 * ballots / denominator - Number(native.native_printed_turnout)) > 0.050000000001
+      || !['U|U', 'SF|F'].includes(`${native.native_report_type}|${native.native_report_type_code}`))
+      throw new Error(`Invalid reviewed county participation: ${id} / ${native.county}`);
+    return {
+      year: 2026, state_code: 'CA', county_id: `reviewed:CA:${native.native_county_code}`,
+      county: native.county, geography_level: native.geography_level, ballots, denominator,
+      participation_measure_kind: 'native_voter_turnout',
+      participation_measure_literal: native.native_participation_measure_literal,
+      participation_measure_label: 'Native voterTurnout (reported participation)',
+      denominator_basis: 'native_registered_voters', reported_pct: 100 * ballots / denominator,
+      native_printed_pct: `${native.native_printed_turnout}%`,
+      source_status_literal: `reportType: ${native.native_report_type}; reportTypeCode: ${native.native_report_type_code}`,
+      reported_units: Number(native.precincts_reporting), total_units: Number(native.precincts_total),
+      source_rows: 1, maps_approved: false, review_id: id, native_record: native,
+      native_source_updates: [
+        { source: 'firstReportTimestamp', native_update_literal: native.native_first_report_timestamp, declared_timezone: '' },
+        { source: 'lastReportTimestamp', native_update_literal: native.native_last_report_timestamp, declared_timezone: '' },
+        { source: 'timestamp', native_update_literal: native.native_timestamp_literal, declared_timezone: '' },
+      ],
+      source_update_label: `${native.native_timestamp_literal}; firstReportTimestamp: ${native.native_first_report_timestamp}; `
+        + `lastReportTimestamp: ${native.native_last_report_timestamp} (timezone not declared)`,
+      source_reporting_label: `${native.precincts_reporting}/${native.precincts_total} precincts reporting; `
+        + `${native.native_reporting_percent}% native reporting. This does not establish completed counting or certification. `
+        + 'Voting-mode, demographic, blank, overvote, undervote and provisional totals are not supplied.',
+      source_url: `${review.base_url}${native.geography_level === 'statewide' ? 'statewide' : 'county'}-participation.csv`,
+      complete_download_url: review.complete_download_url,
+      quality: [
+        'Native voterTurnout / totalRegisteredVoters, not candidate sums, a proved all-mode ballot count or independently deduplicated unique voters.',
+        'Registered-voter fraction, not CVAP, VAP, VEP, CPS or demographic turnout. No counting completion or certification inferred from U, F, SF or reporting completeness.',
+        'Native county codes are not FIPS; source mapping remains unapproved. Native clocks retain their missing timezone.',
+      ],
+    };
+  });
+}
+
+export function loadReviewedStatewideParticipation(reviews) {
+  return loadCaliforniaParticipation(reviews).filter(row => row.geography_level === 'statewide').map(row => ({
+    ...row, state: 'California', mode: 'official', validated_pct: row.reported_pct,
+    source_date: row.source_update_label, status: 'reviewed_unofficial_snapshot',
+    observation_type: row.participation_measure_label,
+  }));
+}
+
 function loadNewJerseyParticipation(reviews) {
   const id = 'new-jersey-periodic-participation-20261106-02';
   const matches = reviews.filter(review => review.id === id);
@@ -406,5 +483,6 @@ export function loadReviewedCountyParticipation(reviews) {
       });
     }
   }
-  return [...observations, ...loadNewJerseyParticipation(reviews)];
+  return [...observations, ...loadNewJerseyParticipation(reviews),
+    ...loadCaliforniaParticipation(reviews).filter(row => row.geography_level === 'county')];
 }

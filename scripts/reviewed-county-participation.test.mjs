@@ -5,11 +5,79 @@ import { join } from 'node:path';
 import test from 'node:test';
 import { parse } from 'csv-parse/sync';
 import { gunzipSync } from 'node:zlib';
-import { loadReviewedCountyParticipation } from './reviewed-county-participation.mjs';
+import { loadReviewedCountyParticipation, loadReviewedStatewideParticipation } from './reviewed-county-participation.mjs';
 
 const reviews = JSON.parse(readFileSync('public/participation-source-reviews.json', 'utf8')).reviews;
 const batchCounties = ['Juniata', 'Mercer', 'Montour'];
-const isBatch = row => row.state_code === 'PA' && batchCounties.includes(row.county);
+const isBatch = row => row.state_code === 'CA' || row.state_code === 'PA' && batchCounties.includes(row.county);
+
+test('adds all California native participation records while preserving every previous observation', () => {
+  const rows = loadReviewedCountyParticipation(reviews);
+  const previous = JSON.parse(gunzipSync(readFileSync(
+    'public/participation-county-context/20261106-09/complete-source-records.json.gz')));
+  const oldReviewed = previous.filter(row => rows.some(current => current.county_id === row.county_id
+    && current.state_code === row.state_code));
+  assert.deepEqual(rows.filter(row => row.state_code !== 'CA'), oldReviewed);
+  const source = reviews.find(row => row.id === 'california-bulk-participation-20261106-01');
+  const native = parse(readFileSync(join(source.data_directory, 'county-participation.csv'), 'utf8'),
+    { columns: true });
+  const counties = rows.filter(row => row.state_code === 'CA');
+  assert.equal(counties.length, 58);
+  assert.deepEqual(counties.map(row => row.native_record), native);
+  for (const row of counties) {
+    assert.equal(row.ballots, Number(row.native_record.reported_participation));
+    assert.equal(row.denominator, Number(row.native_record.registered_voters));
+    assert.equal(row.reported_pct, 100 * row.ballots / row.denominator);
+    assert.equal(row.participation_measure_literal, 'voterTurnout');
+    assert.equal(row.denominator_basis, 'native_registered_voters');
+    assert.equal(row.native_record.county_fips, '');
+    assert.equal(row.maps_approved, false);
+    assert.equal(row.native_record.counting_complete, 'false');
+    assert.equal(row.native_record.declared_timezone, '');
+    assert.match(row.source_reporting_label, /does not establish completed counting or certification/);
+    assert.match(row.quality.join(' '), /not CVAP, VAP, VEP, CPS or demographic turnout/);
+    assert.equal(row.native_source_updates.length, 3);
+  }
+});
+
+test('loads the separate native California statewide observation without treating it as a county', () => {
+  const counties = loadReviewedCountyParticipation(reviews).filter(row => row.state_code === 'CA');
+  const [state] = loadReviewedStatewideParticipation(reviews);
+  assert.equal(state.state, 'California');
+  assert.equal(state.geography_level, 'statewide');
+  assert.equal(state.native_record.native_county_code, '59');
+  assert.equal(state.ballots, 8928966);
+  assert.equal(state.denominator, 23273590);
+  assert.equal(state.validated_pct, 100 * 8928966 / 23273590);
+  assert.equal(state.native_printed_pct, '38.4%');
+  assert.equal(counties.reduce((total, row) => total + row.ballots, 0), state.ballots);
+  assert.equal(counties.reduce((total, row) => total + row.denominator, 0), state.denominator);
+  assert.ok(counties.every(row => row.county_id !== state.county_id));
+  assert.equal(state.source_status_literal, 'reportType: SF; reportTypeCode: F');
+  assert.match(state.source_update_label, /202611051858 \(timezone not declared\)/);
+  assert.ok(state.source_url.endsWith('/statewide-participation.csv'));
+});
+
+test('both California loaders reject altered county, statewide and audit bytes or duplicated registration', () => {
+  const original = reviews.find(row => row.id === 'california-bulk-participation-20261106-01');
+  const directory = mkdtempSync(join(tmpdir(), 'california-participation-'));
+  try {
+    const files = ['county-participation.csv', 'statewide-participation.csv', 'audit.json'];
+    const altered = reviews.map(row => row === original ? { ...row, data_directory: directory } : row);
+    for (const changed of files) {
+      for (const file of files) copyFileSync(join(original.data_directory, file), join(directory, file));
+      writeFileSync(join(directory, changed), readFileSync(join(directory, changed), 'utf8') + '\n');
+      for (const load of [loadReviewedCountyParticipation, loadReviewedStatewideParticipation])
+        assert.throws(() => load(altered), /Invalid reviewed county participation/);
+    }
+    for (const load of [loadReviewedCountyParticipation, loadReviewedStatewideParticipation]) {
+      assert.throws(() => load(reviews.filter(row => row !== original)), /Missing or duplicated reviewed county source/);
+      assert.throws(() => load([...reviews, original]), /Missing or duplicated reviewed county source/);
+    }
+  } finally {
+    rmSync(directory, { recursive: true, force: true });
+  }
+});
 
 test('preserves every context08 record and literal three-county participation qualifications', () => {
   const rows = loadReviewedCountyParticipation(reviews);
@@ -455,11 +523,13 @@ test('rejects Jefferson vote substitution, changed privacy scope or repaired nat
 
 test('loads all reviewed county participation without promoting map coverage', () => {
   const rows = loadReviewedCountyParticipation(reviews);
-  assert.equal(rows.length, 49);
+  assert.equal(rows.length, 107);
   assert.equal(rows.filter(row => row.state_code === 'PA').length, 29);
   assert.equal(rows.filter(row => row.state_code === 'DC').length, 1);
   assert.equal(rows.filter(row => row.state_code === 'NJ').length, 19);
-  assert.ok(rows.every(row => row.maps_approved === false && row.reported_units === null));
+  assert.equal(rows.filter(row => row.state_code === 'CA').length, 58);
+  assert.ok(rows.every(row => row.maps_approved === false));
+  assert.ok(rows.filter(row => row.state_code !== 'CA').every(row => row.reported_units === null));
   const monroe = rows.find(row => row.county === 'Monroe');
   assert.equal(monroe.county_id, 'reviewed:PA:Monroe');
   assert.equal(monroe.native_record.county_fips, undefined);

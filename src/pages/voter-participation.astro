@@ -3,7 +3,7 @@ import { existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { participationCurrentRoot } from '../../public/scripts/participation-downloads.js';
-import { loadReviewedCountyParticipation } from '../../scripts/reviewed-county-participation.mjs';
+import { loadReviewedCountyParticipation, loadReviewedStatewideParticipation } from '../../scripts/reviewed-county-participation.mjs';
 import { loadAdditionalParticipation } from '../../scripts/additional-participation.mjs';
 import { loadCountyContextReview } from '../../scripts/build-county-participation-context.mjs';
 import '../styles/voter-participation.css';
@@ -60,6 +60,7 @@ const participationReviews = existsSync(participationReviewsPath)
 			? JSON.parse(readFileSync(resolve(review.data_directory, review.city_file), 'utf8')) as CityParticipation[] : [],
 	})) : [];
 const reviewedCounties = loadReviewedCountyParticipation(participationReviews);
+const reviewedStates = loadReviewedStatewideParticipation(participationReviews);
 const reviewedMeasure = (row: typeof reviewedCounties[number]) =>
 	'participation_measure_label' in row ? row.participation_measure_label
 		: 'participation_measure_literal' in row ? row.participation_measure_literal : undefined;
@@ -344,12 +345,15 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 			demographic ballot counts are not group turnout rates.</p>
 		<section class="participation-current" aria-labelledby="reviewed-county-participation-title">
 			<h2 id="reviewed-county-participation-title">Additional reviewed county participation · 2026</h2>
-			<p>{reviewedCounties.filter(row => row.state_code === 'PA').length} Pennsylvania county observations,
+			<p>{reviewedCounties.filter(row => row.state_code === 'CA').length} California county observations,
+				{reviewedCounties.filter(row => row.state_code === 'PA').length} Pennsylvania county observations,
 				{reviewedCounties.filter(row => row.state_code === 'NJ').length} usable New Jersey county observations
-				and a separately scoped D.C. county-equivalent observation,
-				not statewide county coverage. Reported participation retains each county's native
+				and a separately scoped D.C. county-equivalent observation.
+				California includes all 58 counties; the other reviews do not establish statewide county coverage.
+				Reported participation retains each county's native
 				registrations when usable; missing or unusable denominators withhold the calculated fraction.
 				Source-labeled Voters Cast remains distinct from ballot counts and retains its counting scope.
+				California retains native voterTurnout, not a proved all-mode ballot count or independently deduplicated unique voters.
 				New Jersey's derived early + Election Day + mail-tallied subtotals are explicitly labeled,
 				not native all-mode ballot totals; Essex and Hudson remain withheld in the full 21-county download.
 				These are not UF VEP/VAP estimates or demographic turnout.
@@ -357,6 +361,16 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 				native result status and printed percentages remain separate.
 				Source reviews alone do not approve county or precinct mapping; separately audited county
 				identity joins are documented below.</p>
+			<div data-reviewed-state-participation={JSON.stringify(reviewedStates)}>
+				{reviewedStates.map(row => <p>
+					<strong>{row.state}: separate native statewide observation.</strong>{' '}
+					{formatNumber(row.ballots)} voterTurnout / {formatNumber(row.denominator)} totalRegisteredVoters;
+					printed {row.native_printed_pct}. Registered-voter participation, not a population or demographic turnout rate.
+					{row.source_update_label}. Native {row.source_status_literal}; counting completion and certification are not established.
+					{' '}<a href={row.source_url}>Complete statewide participation CSV</a>{' · '}
+					<a href={row.complete_download_url}>Complete native query package</a>
+				</p>)}
+			</div>
 			<div class="table-wrap" tabindex="0" role="region" aria-label="Reviewed county participation">
 				<table data-reviewed-county-participation={JSON.stringify(reviewedCounties)}>
 					<caption>Complete county observations; missing rates are not zero. A printed 0.00% alongside positive ballots
@@ -366,7 +380,7 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 						<th scope="col">Native printed fraction</th><th scope="col">Native status</th>
 						<th scope="col">Complete data</th></tr></thead>
 					<tbody>{reviewedCounties.map(row => <tr>
-						<th scope="row">{row.county}{row.state_code === 'PA' ? ', Pennsylvania' : row.state_code === 'NJ' ? ', New Jersey' : ' · county equivalent'}</th>
+						<th scope="row">{row.county}{row.state_code === 'CA' ? ', California' : row.state_code === 'PA' ? ', Pennsylvania' : row.state_code === 'NJ' ? ', New Jersey' : ' · county equivalent'}</th>
 						<td>{formatNumber(row.ballots)}{reviewedMeasure(row) && ` · ${reviewedMeasure(row)}`}</td>
 						<td>{row.denominator === null ? row.native_record.native_registered_voters === '0' ? 'Withheld (native zero)' : 'Not supplied' : formatNumber(row.denominator)}</td>
 						<td>{row.reported_pct === null ? 'Withheld' : `${row.reported_pct.toFixed(2)}%`}</td><td>{row.native_printed_pct ?? 'Not supplied'}</td>
