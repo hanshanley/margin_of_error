@@ -1,0 +1,104 @@
+{
+  "previous_complete_records_preserved": 972,
+  "previous_contextual_joins_preserved": 500,
+  "previous_exclusions_and_missingness_preserved": true,
+  "unchanged_geometry_inventory": 16,
+  "existing_source_map_approval_flags_unchanged": true,
+  "native_fips_invented": false,
+  "new_source_records": [
+    {
+      "year": 2026,
+      "state_code": "PA",
+      "county_id": "reviewed:PA:Columbia",
+      "county": "Columbia",
+      "geography_level": "county",
+      "ballots": 22583,
+      "denominator": 40797,
+      "participation_measure_literal": "Total Ballots",
+      "denominator_basis": "native_registered_voters",
+      "reported_pct": 55.35456038434199,
+      "native_printed_pct": "55.35%",
+      "source_status_literal": "UNOFFICIAL ELECTION RESULTS",
+      "reported_units": 42,
+      "total_units": 42,
+      "source_rows": 1,
+      "maps_approved": false,
+      "review_id": "pennsylvania-columbia-20261106-01",
+      "native_record": {
+        "year": "2026",
+        "state_code": "PA",
+        "county": "Columbia",
+        "native_participation_measure_literal": "Total Ballots",
+        "ballots_cast": "22583",
+        "registered_voters": "40797",
+        "native_printed_turnout": "55.35",
+        "registered_turnout_pct": "55.35456038434199",
+        "source_status_literal": "UNOFFICIAL ELECTION RESULTS",
+        "source_update_literal": "11/3/2026 10:37:16 PM EST",
+        "declared_timezone": "EST",
+        "reported_precincts": "42",
+        "total_precincts": "42",
+        "native_reporting_percent": "100.00",
+        "counting_complete": "False",
+        "source_fips": "",
+        "maps_approved": "False"
+      },
+      "native_source_updates": [
+        {
+          "source": "results",
+          "native_update_literal": "11/3/2026 10:37:16 PM EST",
+          "declared_timezone": "EST"
+        },
+        {
+          "source": "mail-summary",
+          "native_update_literal": "",
+          "declared_timezone": ""
+        }
+      ],
+      "source_update_label": "source_update_literal: 11/3/2026 10:37:16 PM EST; results: 11/3/2026 10:37:16 PM EST (EST); mail-summary:  (timezone not declared)",
+      "source_reporting_label": "Native Total Ballots 22,583 / 40,797 registered voters, printed 55.35%; 42 of 42 reported precincts does not establish completed ballot counting or certification.; All three contests and ten candidate/write-in choices reconcile separately; ballot-minus-contest differences remain unclassified, not inferred blanks or over/undervotes.; Election Day, mail and provisional participation are absent, not zero. Separate filtered SURE mail returned 3,785 and votes recorded 3,772 are not established components of county ballots; no Election Day remainder is inferred.; All 105 mail cells, eight application categories, one blank-labeled ballot style and nine literal registration-party categories remain available; registration parties are not candidate parties.; Results retain their printed 11/3/2026 10:37:16 PM EST clock. The mail report prints Tuesday, November 3, 2026 without a time or timezone; PDF creation metadata supplies neither a report update nor certification.",
+      "source_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f83e17daae675e7be2b25c57bfb66f732ef14b8a/data/county-source-reviews/20261106-columbia-facts-01/county-participation.csv",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-columbia-20261106-01/complete-columbia-county-native-query-01.zip",
+      "quality": [
+        "Reviewed local snapshot, not final certification, statewide coverage, eligible-population or demographic turnout.",
+        "Source timestamps retain their native labels; unprovided timezones are not inferred. County mapping is not approved."
+      ]
+    }
+  ],
+  "new_contextual_identity_joins": [
+    {
+      "state_code": "PA",
+      "county_id": "reviewed:PA:Columbia",
+      "county": "Columbia",
+      "geography_level": "county",
+      "review_id": "pennsylvania-columbia-20261106-01",
+      "contextual_geoid": "42037",
+      "contextual_name": "Columbia County",
+      "boundary_year": 2024,
+      "ballots": 22583,
+      "denominator": 40797,
+      "reported_pct": 55.35456038434199,
+      "participation_measure_kind": "source_defined_participation_count",
+      "participation_measure_label": "Total Ballots",
+      "source_record_sha256": "b6533fb4c916d4cec536417e397d55ee80e313c3f781f35437230d4ec80c59c6",
+      "source_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f83e17daae675e7be2b25c57bfb66f732ef14b8a/data/county-source-reviews/20261106-columbia-facts-01/county-participation.csv",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-columbia-20261106-01/complete-columbia-county-native-query-01.zip",
+      "contextual_map_approved": true,
+      "source_map_approval_unchanged": false
+    }
+  ],
+  "counts": {
+    "complete_source_records": 973,
+    "contextual_joins": 501,
+    "jurisdictions": 16,
+    "reviewed_rates": 128,
+    "missing_rates": 373,
+    "excluded_municipalities": 286,
+    "excluded_missing_county_totals": 186
+  },
+  "frozen_review_bytes": 831514,
+  "frozen_review_sha256": "404370394975d3d64480eef48b75d96e53de1dd48cf88a0d5d67d1533d2b4b4a",
+  "complete_zip_bytes": 2467554,
+  "complete_zip_sha256": "d27146d469364ba5fd78aa8c97cf943f9250ebf8bb5f6328fcda665780fb3039",
+  "complete_package_files": 30
+}

@@ -1,0 +1,182 @@
+{
+  "verified_at_utc": "2026-11-06T10:18:50.017685+00:00",
+  "facts_revision": "f83e17daae675e7be2b25c57bfb66f732ef14b8a",
+  "tag": "voter-county-columbia-20261106-01",
+  "release_id": 436356740,
+  "assets": [
+    {
+      "name": "audit.json",
+      "anonymous_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-columbia-20261106-01/audit.json",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f83e17daae675e7be2b25c57bfb66f732ef14b8a/data/county-source-reviews/20261106-columbia-facts-01/audit.json",
+      "bytes": 1457,
+      "sha256": "387a0af6b6f815da19a03bfc70019130a25b6280b0807b74fcb395adb0830077",
+      "entire_anonymous_and_pinned_bytes_equal_local": true
+    },
+    {
+      "name": "checksums.json",
+      "anonymous_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-columbia-20261106-01/checksums.json",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f83e17daae675e7be2b25c57bfb66f732ef14b8a/data/county-source-reviews/20261106-columbia-facts-01/checksums.json",
+      "bytes": 3097,
+      "sha256": "9af2cb80346ab7978e7ff1883ba28625a34a045ed862dee27b4402ae5aba2745",
+      "entire_anonymous_and_pinned_bytes_equal_local": true
+    },
+    {
+      "name": "complete-columbia-county-native-query-01.zip",
+      "anonymous_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-columbia-20261106-01/complete-columbia-county-native-query-01.zip",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f83e17daae675e7be2b25c57bfb66f732ef14b8a/data/county-source-reviews/20261106-columbia-facts-01/complete-columbia-county-native-query-01.zip",
+      "bytes": 33839,
+      "sha256": "efa05a2efc389325b3e4febfe58e449c93bd25dc5cdd9c62d6a0d63027ac5306",
+      "entire_anonymous_and_pinned_bytes_equal_local": true
+    },
+    {
+      "name": "county-candidate-results.csv",
+      "anonymous_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-columbia-20261106-01/county-candidate-results.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f83e17daae675e7be2b25c57bfb66f732ef14b8a/data/county-source-reviews/20261106-columbia-facts-01/county-candidate-results.csv",
+      "bytes": 1530,
+      "sha256": "65b5ca9e14313e57aec458c074a6085735bec4fbbb67abb032e4742ea10cc2ee",
+      "entire_anonymous_and_pinned_bytes_equal_local": true
+    },
+    {
+      "name": "county-contest-accounting.csv",
+      "anonymous_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-columbia-20261106-01/county-contest-accounting.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f83e17daae675e7be2b25c57bfb66f732ef14b8a/data/county-source-reviews/20261106-columbia-facts-01/county-contest-accounting.csv",
+      "bytes": 472,
+      "sha256": "657f19f0cae36468bf023d366971427545e8ce0d210d61654ba82f776d197d79",
+      "entire_anonymous_and_pinned_bytes_equal_local": true
+    },
+    {
+      "name": "county-literal-party-totals.csv",
+      "anonymous_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-columbia-20261106-01/county-literal-party-totals.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f83e17daae675e7be2b25c57bfb66f732ef14b8a/data/county-source-reviews/20261106-columbia-facts-01/county-literal-party-totals.csv",
+      "bytes": 590,
+      "sha256": "cf035151f4365a51d2ce54351a33a56ec2a98c7035e7beb38081c8678e36e4c0",
+      "entire_anonymous_and_pinned_bytes_equal_local": true
+    },
+    {
+      "name": "county-participation.csv",
+      "anonymous_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-columbia-20261106-01/county-participation.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f83e17daae675e7be2b25c57bfb66f732ef14b8a/data/county-source-reviews/20261106-columbia-facts-01/county-participation.csv",
+      "bytes": 454,
+      "sha256": "ee3c13fa8a5d9bbc3a545bedcec34af63eab597420f683ea53a249f7afeb9207",
+      "entire_anonymous_and_pinned_bytes_equal_local": true
+    },
+    {
+      "name": "native-mail-application-types.csv",
+      "anonymous_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-columbia-20261106-01/native-mail-application-types.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f83e17daae675e7be2b25c57bfb66f732ef14b8a/data/county-source-reviews/20261106-columbia-facts-01/native-mail-application-types.csv",
+      "bytes": 351,
+      "sha256": "2191d0ebeffda8424428328e196a45c235391341d84e8196a4984d426ccdce76",
+      "entire_anonymous_and_pinned_bytes_equal_local": true
+    },
+    {
+      "name": "native-mail-ballot-styles.csv",
+      "anonymous_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-columbia-20261106-01/native-mail-ballot-styles.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f83e17daae675e7be2b25c57bfb66f732ef14b8a/data/county-source-reviews/20261106-columbia-facts-01/native-mail-ballot-styles.csv",
+      "bytes": 107,
+      "sha256": "5e0559a04ef2b0d494ccb3da8776004fc84387a430dd391cc1df7d7a9fa9639a",
+      "entire_anonymous_and_pinned_bytes_equal_local": true
+    },
+    {
+      "name": "native-mail-cell-review.csv",
+      "anonymous_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-columbia-20261106-01/native-mail-cell-review.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f83e17daae675e7be2b25c57bfb66f732ef14b8a/data/county-source-reviews/20261106-columbia-facts-01/native-mail-cell-review.csv",
+      "bytes": 8380,
+      "sha256": "fa3a5172f8346c98c4e37bdd8885378c907ee39e54641eafe22239458bcd7ddc",
+      "entire_anonymous_and_pinned_bytes_equal_local": true
+    },
+    {
+      "name": "native-mail-registration-parties.csv",
+      "anonymous_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-columbia-20261106-01/native-mail-registration-parties.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f83e17daae675e7be2b25c57bfb66f732ef14b8a/data/county-source-reviews/20261106-columbia-facts-01/native-mail-registration-parties.csv",
+      "bytes": 335,
+      "sha256": "0cd1f84e391f01627afa80e76c5a24db02979f160a1bc40c8e6f79c666aa3d62",
+      "entire_anonymous_and_pinned_bytes_equal_local": true
+    },
+    {
+      "name": "native-mail-report-metadata.csv",
+      "anonymous_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-columbia-20261106-01/native-mail-report-metadata.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f83e17daae675e7be2b25c57bfb66f732ef14b8a/data/county-source-reviews/20261106-columbia-facts-01/native-mail-report-metadata.csv",
+      "bytes": 502,
+      "sha256": "af702edaa0e1782ed121ac5beeceffbeae73d0137f896add4bb20862f7c0cc1c",
+      "entire_anonymous_and_pinned_bytes_equal_local": true
+    },
+    {
+      "name": "native-mail-section-totals.csv",
+      "anonymous_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-columbia-20261106-01/native-mail-section-totals.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f83e17daae675e7be2b25c57bfb66f732ef14b8a/data/county-source-reviews/20261106-columbia-facts-01/native-mail-section-totals.csv",
+      "bytes": 204,
+      "sha256": "8c3d100bd6a59ffae82d324eb5291a7084ace813398ab6e9958c27ae27b57617",
+      "entire_anonymous_and_pinned_bytes_equal_local": true
+    },
+    {
+      "name": "native-pdf-metadata.csv",
+      "anonymous_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-columbia-20261106-01/native-pdf-metadata.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f83e17daae675e7be2b25c57bfb66f732ef14b8a/data/county-source-reviews/20261106-columbia-facts-01/native-pdf-metadata.csv",
+      "bytes": 866,
+      "sha256": "b6f8a07e9af6e21f714a5e48dabaecdd63d16a25de1fd8af80d06adeacc57185",
+      "entire_anonymous_and_pinned_bytes_equal_local": true
+    },
+    {
+      "name": "native-reporting-statistics.csv",
+      "anonymous_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-columbia-20261106-01/native-reporting-statistics.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f83e17daae675e7be2b25c57bfb66f732ef14b8a/data/county-source-reviews/20261106-columbia-facts-01/native-reporting-statistics.csv",
+      "bytes": 294,
+      "sha256": "bc4fd81ee37b894a1c70f94595b84c1441880470f5a00f09557701278220917b",
+      "entire_anonymous_and_pinned_bytes_equal_local": true
+    },
+    {
+      "name": "native-source-declarations.csv",
+      "anonymous_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-columbia-20261106-01/native-source-declarations.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f83e17daae675e7be2b25c57bfb66f732ef14b8a/data/county-source-reviews/20261106-columbia-facts-01/native-source-declarations.csv",
+      "bytes": 356,
+      "sha256": "2ba58b90e4cb79279b18676dc828d0412cf55a364500ae36c2328c9223249f10",
+      "entire_anonymous_and_pinned_bytes_equal_local": true
+    },
+    {
+      "name": "native-source-pages.csv",
+      "anonymous_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-columbia-20261106-01/native-source-pages.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f83e17daae675e7be2b25c57bfb66f732ef14b8a/data/county-source-reviews/20261106-columbia-facts-01/native-source-pages.csv",
+      "bytes": 270,
+      "sha256": "72cbed8c69094c833356d00fafd86f35e58b81a5c91e7663500f937c28e0dd81",
+      "entire_anonymous_and_pinned_bytes_equal_local": true
+    },
+    {
+      "name": "review-columbia-county-native-query.py",
+      "anonymous_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-columbia-20261106-01/review-columbia-county-native-query.py",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f83e17daae675e7be2b25c57bfb66f732ef14b8a/data/county-source-reviews/20261106-columbia-facts-01/review-columbia-county-native-query.py",
+      "bytes": 18219,
+      "sha256": "a45c22692c4f1cb0120a9a785f1cc8051451ea197c204b1bff3c03434a7a5e2c",
+      "entire_anonymous_and_pinned_bytes_equal_local": true
+    },
+    {
+      "name": "source-receipts.csv",
+      "anonymous_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-columbia-20261106-01/source-receipts.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f83e17daae675e7be2b25c57bfb66f732ef14b8a/data/county-source-reviews/20261106-columbia-facts-01/source-receipts.csv",
+      "bytes": 886,
+      "sha256": "bd8c68d928398c285e87719459da1a647f0d0fcb3ef252766893c980ae4c0e1d",
+      "entire_anonymous_and_pinned_bytes_equal_local": true
+    },
+    {
+      "name": "source-records.json.gz",
+      "anonymous_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-columbia-20261106-01/source-records.json.gz",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f83e17daae675e7be2b25c57bfb66f732ef14b8a/data/county-source-reviews/20261106-columbia-facts-01/source-records.json.gz",
+      "bytes": 16906,
+      "sha256": "a8c2557374f8150b3466c42e943a32d95977e0f7f1dc285cf109e59751f6bb41",
+      "entire_anonymous_and_pinned_bytes_equal_local": true
+    },
+    {
+      "name": "test-columbia-native-query.py",
+      "anonymous_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-columbia-20261106-01/test-columbia-native-query.py",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f83e17daae675e7be2b25c57bfb66f732ef14b8a/data/county-source-reviews/20261106-columbia-facts-01/test-columbia-native-query.py",
+      "bytes": 5373,
+      "sha256": "3fe8a5f2c62e700ab38cd36d4ad3af6464684197f5a00bb6e996c0bf45a2e383",
+      "entire_anonymous_and_pinned_bytes_equal_local": true
+    }
+  ],
+  "entire_anonymous_assets_verified": 21,
+  "entire_commit_pinned_files_verified": 21,
+  "entire_zip_members_verified": 20,
+  "all_files_and_entire_archive_reproduced_offline_from_anonymous_assets": true,
+  "live_columbia_ui": false,
+  "native_maps_approved": false
+}

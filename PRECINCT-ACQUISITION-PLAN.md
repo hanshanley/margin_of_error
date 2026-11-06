@@ -2,8 +2,8 @@
 
 ## Current verified production and next acquisition
 
-**November 6, 10:17 UTC: Columbia, Pennsylvania's complete numerical query is
-reviewed and frozen locally; publication and UI integration remain pending.**
+**November 6: Columbia, Pennsylvania's complete numerical query is published and
+verified; new context11 is locally reviewed, and UI integration remains pending.**
 The actual county parent declares both complete November 3 reports. Both entire
 PDF originals and the parent match their saved receipts. Two independent PDF
 engines consume every results-report line and produce identical complete vectors:
@@ -28,7 +28,26 @@ ZIP **33,839 bytes**, SHA-256
 See `20261106-columbia-facts-01` and
 `20261106-columbia-primary-review-01/primary-review.json`. No original HTML/PDFs,
 source FIPS, contextual mapping, demographic estimates, certification or live
-Columbia UI are claimed. California below remains the verified production.
+Columbia UI are claimed. Fixed source facts
+`f83e17daae675e7be2b25c57bfb66f732ef14b8a`, release **436356740**, tag
+`voter-county-columbia-20261106-01`, pass all **21 entire anonymous assets /
+21 pinned files / 20 ZIP members**, extracted offline reproduction and exact
+source credential runs **42201686538 / 42201621156**.
+Both entire 3,222-record 2024/2026 Census inventories independently match their
+original complete Gazetteers and uniquely identify Columbia County as contextual
+42037; native source FIPS remains missing. All current live contextual geometry
+bytes match, with no new exact-2026 election boundary claim.
+New context11 preserves every **972 complete records / 500 joins / 16 geometries**,
+all exclusions and existing approval flags, and adds only Columbia:
+**973 records / 501 joins / 128 usable native fractions / 373 missing rates**.
+Its **30-file / 29-member** complete archive reproduces offline:
+**2,467,554 bytes**, SHA-256
+`d27146d469364ba5fd78aa8c97cf943f9250ebf8bb5f6328fcda665780fb3039`;
+review **831,514 bytes**, SHA-256
+`404370394975d3d64480eef48b75d96e53de1dd48cf88a0d5d67d1533d2b4b4a`.
+Source publication and independent identity/context proofs are retained under
+`20261106-columbia-publication-01` and `20261106-columbia-explorer-01`.
+California below remains the verified production until exact UI publication.
 The next bulk Ohio parent and three declared portal routes returned HTTP403;
 the directory-declared Clearfield parent returned404 and Clinton returned403.
 All entire responses/receipts are retained privately, without bypasses or an
