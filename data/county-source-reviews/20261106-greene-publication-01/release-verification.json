@@ -1,0 +1,112 @@
+{
+  "verified_at_utc": "2026-11-06T11:06:15.186307+00:00",
+  "revision": "5fea4e4c88dd1a8e343513dbcec872cd3ebb379f",
+  "release_id": 436400837,
+  "tag": "voter-county-greene-20261106-01",
+  "files": [
+    {
+      "file": "audit.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-greene-20261106-01/audit.json",
+      "bytes": 1179,
+      "sha256": "0660c64fa605450a2d6154b5e7138ec7abcd51fe5b9d6be7271bea9827f462f7",
+      "anonymous_entire_bytes_match": true
+    },
+    {
+      "file": "checksums.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-greene-20261106-01/checksums.json",
+      "bytes": 1810,
+      "sha256": "20a471c91abefc72a9b5d8a4954d670459aa8174f145f5531d5b5dd07861c712",
+      "anonymous_entire_bytes_match": true
+    },
+    {
+      "file": "complete-greene-county-native-query-01.zip",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-greene-20261106-01/complete-greene-county-native-query-01.zip",
+      "bytes": 11776,
+      "sha256": "400682808f1ea7b1ba68e7cefa66f31f9e487a4e06c78e12384b5a52860d4774",
+      "anonymous_entire_bytes_match": true
+    },
+    {
+      "file": "county-candidate-results.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-greene-20261106-01/county-candidate-results.csv",
+      "bytes": 1590,
+      "sha256": "5ce3b1e19e3b347b1ad7b8e7d1818ba24dfc043619780cdb1d22e202cc56ac03",
+      "anonymous_entire_bytes_match": true
+    },
+    {
+      "file": "county-contest-accounting.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-greene-20261106-01/county-contest-accounting.csv",
+      "bytes": 837,
+      "sha256": "25bb167905edfd6ed50bab81aeb04a5fd651675e67dd1c8c708f0d02b36e78cb",
+      "anonymous_entire_bytes_match": true
+    },
+    {
+      "file": "county-literal-party-totals.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-greene-20261106-01/county-literal-party-totals.csv",
+      "bytes": 1735,
+      "sha256": "edb998f54a04409d55f72bb287cb6cb118b5a8201a318b41c5a527186d6bed3f",
+      "anonymous_entire_bytes_match": true
+    },
+    {
+      "file": "county-participation.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-greene-20261106-01/county-participation.csv",
+      "bytes": 426,
+      "sha256": "81f1b0f00db8dc60a32c641455df55e4ec682096ac7f6ae3a6043966520820e8",
+      "anonymous_entire_bytes_match": true
+    },
+    {
+      "file": "native-reporting-statistics.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-greene-20261106-01/native-reporting-statistics.csv",
+      "bytes": 172,
+      "sha256": "8cd492f4a6e8fed3fb8e762e419891d3023f89df0bb6fe0d15e37b11fc29ddd7",
+      "anonymous_entire_bytes_match": true
+    },
+    {
+      "file": "native-source-declarations.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-greene-20261106-01/native-source-declarations.csv",
+      "bytes": 120,
+      "sha256": "9fb9e044d9a07ae19d4a607fd4d9578b494b85bbc9b56c8638e70f4c8c1a3297",
+      "anonymous_entire_bytes_match": true
+    },
+    {
+      "file": "native-summary-query.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-greene-20261106-01/native-summary-query.csv",
+      "bytes": 1357,
+      "sha256": "0d6b73692f7ff2efccec1fee2f67005f882be0952516d15b3d1aedada8603cad",
+      "anonymous_entire_bytes_match": true
+    },
+    {
+      "file": "review-greene-county-native-query.py",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-greene-20261106-01/review-greene-county-native-query.py",
+      "bytes": 10765,
+      "sha256": "c4568259f7224d7c0cbadbc59f39970f8c47be97b487e4d74fab1c1d2af5d2d9",
+      "anonymous_entire_bytes_match": true
+    },
+    {
+      "file": "source-receipts.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-greene-20261106-01/source-receipts.csv",
+      "bytes": 619,
+      "sha256": "63299cff1ee1874f4f25eba750a53867bb4ca64fe56fced7689a111a620421b2",
+      "anonymous_entire_bytes_match": true
+    },
+    {
+      "file": "source-records.json.gz",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-greene-20261106-01/source-records.json.gz",
+      "bytes": 1169,
+      "sha256": "df7d99aa3e1750d5915d4dfb61186d1047fd5a1dd5a47e73c00b91daea83aaf3",
+      "anonymous_entire_bytes_match": true
+    },
+    {
+      "file": "test-greene-native-query.py",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-greene-20261106-01/test-greene-native-query.py",
+      "bytes": 3997,
+      "sha256": "67b0fe62e9c78633b0563aaafb8a29d1aba057223ac161ab4c3a5659c3e9d18c",
+      "anonymous_entire_bytes_match": true
+    }
+  ],
+  "complete_assets": 14,
+  "complete_archive_members": 13,
+  "extracted_offline_reproduction": true,
+  "extracted_tests_pass": true,
+  "original_html_redistributed": false,
+  "explorer_integration_approved": false
+}

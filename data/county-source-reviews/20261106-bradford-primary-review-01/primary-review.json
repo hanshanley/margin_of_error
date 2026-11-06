@@ -1,0 +1,559 @@
+{
+  "status": "both_complete_report_bodies_independently_reviewed_not_packaged_or_integrated",
+  "snapshots": [
+    {
+      "snapshot": {
+        "file": "bradford-election-day-final.pdf",
+        "registered_voters": 39048,
+        "native_total_ballots": 20982,
+        "printed_pct": "53.73",
+        "reported_precincts": 61,
+        "total_precincts": 61,
+        "source_update_literal": "11/3/2026 10:15:12 PM EST",
+        "source_status_literal": "Unofficial Final Election Day Results",
+        "voting_mode_literal": "Election Day"
+      },
+      "contests": [
+        {
+          "contest_literal": "GOVERNOR AND LT GOVERNOR",
+          "total_votes": 20900,
+          "reporting_precincts": 61,
+          "total_precincts": 61,
+          "native_printed_reporting_percent": "100.00",
+          "vote_for": 1,
+          "choices": [
+            {
+              "native_choice": "JOSH SHAPIRO / AUSTIN DAVIS",
+              "native_party": "DEM",
+              "native_label_lines": [
+                "JOSH SHAPIRO / AUSTIN DAVIS",
+                "(DEM)"
+              ],
+              "votes": 6980,
+              "native_printed_percent": "33.40"
+            },
+            {
+              "native_choice": "STACY GARRITY / JASON RICHEY",
+              "native_party": "REP",
+              "native_label_lines": [
+                "STACY GARRITY / JASON",
+                "RICHEY (REP)"
+              ],
+              "votes": 13619,
+              "native_printed_percent": "65.16"
+            },
+            {
+              "native_choice": "KEN KRAWCHUK / JOHN THOMAS",
+              "native_party": "LIB",
+              "native_label_lines": [
+                "KEN KRAWCHUK / JOHN",
+                "THOMAS (LIB)"
+              ],
+              "votes": 289,
+              "native_printed_percent": "1.38"
+            },
+            {
+              "native_choice": "Write-in",
+              "native_party": "",
+              "native_label_lines": [
+                "Write-in"
+              ],
+              "votes": 12,
+              "native_printed_percent": "0.06"
+            }
+          ]
+        },
+        {
+          "contest_literal": "REPRESENTATIVE IN CONGRESS 9TH CONGRESSIONAL DISTRICT",
+          "total_votes": 20801,
+          "reporting_precincts": 61,
+          "total_precincts": 61,
+          "native_printed_reporting_percent": "100.00",
+          "vote_for": 1,
+          "choices": [
+            {
+              "native_choice": "RACHEL WALLACE",
+              "native_party": "DEM",
+              "native_label_lines": [
+                "RACHEL WALLACE (DEM)"
+              ],
+              "votes": 6628,
+              "native_printed_percent": "31.86"
+            },
+            {
+              "native_choice": "DAN MEUSER",
+              "native_party": "REP",
+              "native_label_lines": [
+                "DAN MEUSER (REP)"
+              ],
+              "votes": 14135,
+              "native_printed_percent": "67.95"
+            },
+            {
+              "native_choice": "Write-in",
+              "native_party": "",
+              "native_label_lines": [
+                "Write-in"
+              ],
+              "votes": 38,
+              "native_printed_percent": "0.18"
+            }
+          ]
+        },
+        {
+          "contest_literal": "REPRESENTATIVE IN THE GENERAL ASSEMBLY 68TH LEGISLATIVE DISTRICT",
+          "total_votes": 7863,
+          "reporting_precincts": 24,
+          "total_precincts": 24,
+          "native_printed_reporting_percent": "100.00",
+          "vote_for": 1,
+          "choices": [
+            {
+              "native_choice": "QUENTIN GEE",
+              "native_party": "DEM",
+              "native_label_lines": [
+                "QUENTIN GEE (DEM)"
+              ],
+              "votes": 1578,
+              "native_printed_percent": "20.07"
+            },
+            {
+              "native_choice": "CLINT OWLETT",
+              "native_party": "REP",
+              "native_label_lines": [
+                "CLINT OWLETT (REP)"
+              ],
+              "votes": 6275,
+              "native_printed_percent": "79.80"
+            },
+            {
+              "native_choice": "Write-in",
+              "native_party": "",
+              "native_label_lines": [
+                "Write-in"
+              ],
+              "votes": 10,
+              "native_printed_percent": "0.13"
+            }
+          ]
+        },
+        {
+          "contest_literal": "REPRESENTATIVE IN THE GENERAL ASSEMBLY 110TH LEGISLATIVE DISTRICT",
+          "total_votes": 12976,
+          "reporting_precincts": 37,
+          "total_precincts": 37,
+          "native_printed_reporting_percent": "100.00",
+          "vote_for": 1,
+          "choices": [
+            {
+              "native_choice": "PAMELA J HEMANN",
+              "native_party": "DEM",
+              "native_label_lines": [
+                "PAMELA J HEMANN (DEM)"
+              ],
+              "votes": 3366,
+              "native_printed_percent": "25.94"
+            },
+            {
+              "native_choice": "TINA PICKETT",
+              "native_party": "REP",
+              "native_label_lines": [
+                "TINA PICKETT (REP)"
+              ],
+              "votes": 9519,
+              "native_printed_percent": "73.36"
+            },
+            {
+              "native_choice": "Write-in",
+              "native_party": "",
+              "native_label_lines": [
+                "Write-in"
+              ],
+              "votes": 91,
+              "native_printed_percent": "0.70"
+            }
+          ]
+        }
+      ],
+      "independent_body_line_vectors": {
+        "pypdf": [
+          [
+            "GOVERNOR AND LT GOVERNOR",
+            "Number of Precincts 61",
+            "Precincts Reporting 61 100.00%",
+            "Vote For 1",
+            "Total Votes 20,900",
+            "JOSH SHAPIRO / AUSTIN DAVIS 6,980 33.40%",
+            "(DEM)",
+            "STACY GARRITY / JASON 13,619 65.16%",
+            "RICHEY (REP)",
+            "KEN KRAWCHUK / JOHN 289 1.38%",
+            "THOMAS (LIB)",
+            "Write-in 12 0.06%",
+            "REPRESENTATIVE IN CONGRESS 9TH CONGRESSIONAL",
+            "DISTRICT",
+            "Number of Precincts 61",
+            "Precincts Reporting 61 100.00%",
+            "Vote For 1",
+            "Total Votes 20,801",
+            "RACHEL WALLACE (DEM) 6,628 31.86%",
+            "DAN MEUSER (REP) 14,135 67.95%",
+            "Write-in 38 0.18%",
+            "REPRESENTATIVE IN THE GENERAL ASSEMBLY 68TH",
+            "LEGISLATIVE DISTRICT",
+            "Number of Precincts 24",
+            "Precincts Reporting 24 100.00%",
+            "Vote For 1",
+            "Total Votes 7,863",
+            "QUENTIN GEE (DEM) 1,578 20.07%",
+            "CLINT OWLETT (REP) 6,275 79.80%",
+            "Write-in 10 0.13%"
+          ],
+          [
+            "REPRESENTATIVE IN THE GENERAL ASSEMBLY 110TH",
+            "LEGISLATIVE DISTRICT",
+            "Number of Precincts 37",
+            "Precincts Reporting 37 100.00%",
+            "Vote For 1",
+            "Total Votes 12,976",
+            "PAMELA J HEMANN (DEM) 3,366 25.94%",
+            "TINA PICKETT (REP) 9,519 73.36%",
+            "Write-in 91 0.70%"
+          ]
+        ],
+        "pymupdf": [
+          [
+            "GOVERNOR AND LT GOVERNOR",
+            "Number of Precincts 61",
+            "Precincts Reporting 61 100.00%",
+            "Vote For 1",
+            "Total Votes 20,900",
+            "JOSH SHAPIRO / AUSTIN DAVIS 6,980 33.40%",
+            "(DEM)",
+            "STACY GARRITY / JASON 13,619 65.16%",
+            "RICHEY (REP)",
+            "KEN KRAWCHUK / JOHN 289 1.38%",
+            "THOMAS (LIB)",
+            "Write-in 12 0.06%",
+            "REPRESENTATIVE IN CONGRESS 9TH CONGRESSIONAL",
+            "DISTRICT",
+            "Number of Precincts 61",
+            "Precincts Reporting 61 100.00%",
+            "Vote For 1",
+            "Total Votes 20,801",
+            "RACHEL WALLACE (DEM) 6,628 31.86%",
+            "DAN MEUSER (REP) 14,135 67.95%",
+            "Write-in 38 0.18%",
+            "REPRESENTATIVE IN THE GENERAL ASSEMBLY 68TH",
+            "LEGISLATIVE DISTRICT",
+            "Number of Precincts 24",
+            "Precincts Reporting 24 100.00%",
+            "Vote For 1",
+            "Total Votes 7,863",
+            "QUENTIN GEE (DEM) 1,578 20.07%",
+            "CLINT OWLETT (REP) 6,275 79.80%",
+            "Write-in 10 0.13%"
+          ],
+          [
+            "REPRESENTATIVE IN THE GENERAL ASSEMBLY 110TH",
+            "LEGISLATIVE DISTRICT",
+            "Number of Precincts 37",
+            "Precincts Reporting 37 100.00%",
+            "Vote For 1",
+            "Total Votes 12,976",
+            "PAMELA J HEMANN (DEM) 3,366 25.94%",
+            "TINA PICKETT (REP) 9,519 73.36%",
+            "Write-in 91 0.70%"
+          ]
+        ]
+      },
+      "all_candidate_and_reporting_lines_consumed": true,
+      "independent_engines_identical": true,
+      "whole_county_all_mode_participation_approved": false
+    },
+    {
+      "snapshot": {
+        "file": "bradford-earlier-results.pdf",
+        "registered_voters": 39048,
+        "native_total_ballots": 12488,
+        "printed_pct": "31.98",
+        "reported_precincts": 46,
+        "total_precincts": 61,
+        "source_update_literal": "11/3/2026 8:45:38 PM EST",
+        "source_status_literal": "Unoffcial Results 5",
+        "voting_mode_literal": "Election Day"
+      },
+      "contests": [
+        {
+          "contest_literal": "GOVERNOR AND LT GOVERNOR",
+          "total_votes": 12453,
+          "reporting_precincts": 46,
+          "total_precincts": 61,
+          "native_printed_reporting_percent": "75.41",
+          "vote_for": 1,
+          "choices": [
+            {
+              "native_choice": "JOSH SHAPIRO / AUSTIN DAVIS",
+              "native_party": "DEM",
+              "native_label_lines": [
+                "JOSH SHAPIRO / AUSTIN DAVIS",
+                "(DEM)"
+              ],
+              "votes": 3481,
+              "native_printed_percent": "27.95"
+            },
+            {
+              "native_choice": "STACY GARRITY / JASON RICHEY",
+              "native_party": "REP",
+              "native_label_lines": [
+                "STACY GARRITY / JASON",
+                "RICHEY (REP)"
+              ],
+              "votes": 8778,
+              "native_printed_percent": "70.49"
+            },
+            {
+              "native_choice": "KEN KRAWCHUK / JOHN THOMAS",
+              "native_party": "LIB",
+              "native_label_lines": [
+                "KEN KRAWCHUK / JOHN",
+                "THOMAS (LIB)"
+              ],
+              "votes": 184,
+              "native_printed_percent": "1.48"
+            },
+            {
+              "native_choice": "Write-in",
+              "native_party": "",
+              "native_label_lines": [
+                "Write-in"
+              ],
+              "votes": 10,
+              "native_printed_percent": "0.08"
+            }
+          ]
+        },
+        {
+          "contest_literal": "REPRESENTATIVE IN CONGRESS 9TH CONGRESSIONAL DISTRICT",
+          "total_votes": 12382,
+          "reporting_precincts": 46,
+          "total_precincts": 61,
+          "native_printed_reporting_percent": "75.41",
+          "vote_for": 1,
+          "choices": [
+            {
+              "native_choice": "RACHEL WALLACE",
+              "native_party": "DEM",
+              "native_label_lines": [
+                "RACHEL WALLACE (DEM)"
+              ],
+              "votes": 3284,
+              "native_printed_percent": "26.52"
+            },
+            {
+              "native_choice": "DAN MEUSER",
+              "native_party": "REP",
+              "native_label_lines": [
+                "DAN MEUSER (REP)"
+              ],
+              "votes": 9076,
+              "native_printed_percent": "73.30"
+            },
+            {
+              "native_choice": "Write-in",
+              "native_party": "",
+              "native_label_lines": [
+                "Write-in"
+              ],
+              "votes": 22,
+              "native_printed_percent": "0.18"
+            }
+          ]
+        },
+        {
+          "contest_literal": "REPRESENTATIVE IN THE GENERAL ASSEMBLY 68TH LEGISLATIVE DISTRICT",
+          "total_votes": 4265,
+          "reporting_precincts": 16,
+          "total_precincts": 24,
+          "native_printed_reporting_percent": "66.67",
+          "vote_for": 1,
+          "choices": [
+            {
+              "native_choice": "QUENTIN GEE",
+              "native_party": "DEM",
+              "native_label_lines": [
+                "QUENTIN GEE (DEM)"
+              ],
+              "votes": 693,
+              "native_printed_percent": "16.25"
+            },
+            {
+              "native_choice": "CLINT OWLETT",
+              "native_party": "REP",
+              "native_label_lines": [
+                "CLINT OWLETT (REP)"
+              ],
+              "votes": 3569,
+              "native_printed_percent": "83.68"
+            },
+            {
+              "native_choice": "Write-in",
+              "native_party": "",
+              "native_label_lines": [
+                "Write-in"
+              ],
+              "votes": 3,
+              "native_printed_percent": "0.07"
+            }
+          ]
+        },
+        {
+          "contest_literal": "REPRESENTATIVE IN THE GENERAL ASSEMBLY 110TH LEGISLATIVE DISTRICT",
+          "total_votes": 8128,
+          "reporting_precincts": 30,
+          "total_precincts": 37,
+          "native_printed_reporting_percent": "81.08",
+          "vote_for": 1,
+          "choices": [
+            {
+              "native_choice": "PAMELA J HEMANN",
+              "native_party": "DEM",
+              "native_label_lines": [
+                "PAMELA J HEMANN (DEM)"
+              ],
+              "votes": 1719,
+              "native_printed_percent": "21.15"
+            },
+            {
+              "native_choice": "TINA PICKETT",
+              "native_party": "REP",
+              "native_label_lines": [
+                "TINA PICKETT (REP)"
+              ],
+              "votes": 6341,
+              "native_printed_percent": "78.01"
+            },
+            {
+              "native_choice": "Write-in",
+              "native_party": "",
+              "native_label_lines": [
+                "Write-in"
+              ],
+              "votes": 68,
+              "native_printed_percent": "0.84"
+            }
+          ]
+        }
+      ],
+      "independent_body_line_vectors": {
+        "pypdf": [
+          [
+            "GOVERNOR AND LT GOVERNOR",
+            "Number of Precincts 61",
+            "Precincts Reporting 46 75.41%",
+            "Vote For 1",
+            "Total Votes 12,453",
+            "JOSH SHAPIRO / AUSTIN DAVIS 3,481 27.95%",
+            "(DEM)",
+            "STACY GARRITY / JASON 8,778 70.49%",
+            "RICHEY (REP)",
+            "KEN KRAWCHUK / JOHN 184 1.48%",
+            "THOMAS (LIB)",
+            "Write-in 10 0.08%",
+            "REPRESENTATIVE IN CONGRESS 9TH CONGRESSIONAL",
+            "DISTRICT",
+            "Number of Precincts 61",
+            "Precincts Reporting 46 75.41%",
+            "Vote For 1",
+            "Total Votes 12,382",
+            "RACHEL WALLACE (DEM) 3,284 26.52%",
+            "DAN MEUSER (REP) 9,076 73.30%",
+            "Write-in 22 0.18%",
+            "REPRESENTATIVE IN THE GENERAL ASSEMBLY 68TH",
+            "LEGISLATIVE DISTRICT",
+            "Number of Precincts 24",
+            "Precincts Reporting 16 66.67%",
+            "Vote For 1",
+            "Total Votes 4,265",
+            "QUENTIN GEE (DEM) 693 16.25%",
+            "CLINT OWLETT (REP) 3,569 83.68%",
+            "Write-in 3 0.07%"
+          ],
+          [
+            "REPRESENTATIVE IN THE GENERAL ASSEMBLY 110TH",
+            "LEGISLATIVE DISTRICT",
+            "Number of Precincts 37",
+            "Precincts Reporting 30 81.08%",
+            "Vote For 1",
+            "Total Votes 8,128",
+            "PAMELA J HEMANN (DEM) 1,719 21.15%",
+            "TINA PICKETT (REP) 6,341 78.01%",
+            "Write-in 68 0.84%"
+          ]
+        ],
+        "pymupdf": [
+          [
+            "GOVERNOR AND LT GOVERNOR",
+            "Number of Precincts 61",
+            "Precincts Reporting 46 75.41%",
+            "Vote For 1",
+            "Total Votes 12,453",
+            "JOSH SHAPIRO / AUSTIN DAVIS 3,481 27.95%",
+            "(DEM)",
+            "STACY GARRITY / JASON 8,778 70.49%",
+            "RICHEY (REP)",
+            "KEN KRAWCHUK / JOHN 184 1.48%",
+            "THOMAS (LIB)",
+            "Write-in 10 0.08%",
+            "REPRESENTATIVE IN CONGRESS 9TH CONGRESSIONAL",
+            "DISTRICT",
+            "Number of Precincts 61",
+            "Precincts Reporting 46 75.41%",
+            "Vote For 1",
+            "Total Votes 12,382",
+            "RACHEL WALLACE (DEM) 3,284 26.52%",
+            "DAN MEUSER (REP) 9,076 73.30%",
+            "Write-in 22 0.18%",
+            "REPRESENTATIVE IN THE GENERAL ASSEMBLY 68TH",
+            "LEGISLATIVE DISTRICT",
+            "Number of Precincts 24",
+            "Precincts Reporting 16 66.67%",
+            "Vote For 1",
+            "Total Votes 4,265",
+            "QUENTIN GEE (DEM) 693 16.25%",
+            "CLINT OWLETT (REP) 3,569 83.68%",
+            "Write-in 3 0.07%"
+          ],
+          [
+            "REPRESENTATIVE IN THE GENERAL ASSEMBLY 110TH",
+            "LEGISLATIVE DISTRICT",
+            "Number of Precincts 37",
+            "Precincts Reporting 30 81.08%",
+            "Vote For 1",
+            "Total Votes 8,128",
+            "PAMELA J HEMANN (DEM) 1,719 21.15%",
+            "TINA PICKETT (REP) 6,341 78.01%",
+            "Write-in 68 0.84%"
+          ]
+        ]
+      },
+      "all_candidate_and_reporting_lines_consumed": true,
+      "independent_engines_identical": true,
+      "whole_county_all_mode_participation_approved": false
+    }
+  ],
+  "source_pages": 2,
+  "candidate_rows": 26,
+  "contest_snapshots": 8,
+  "qualifications": [
+    "Both native snapshots explicitly say Election Day, not all voting modes.",
+    "Assembly 68 and 110 are different within-county legislative scopes; their candidate sums are not countywide participation.",
+    "All thirteen choices and all four printed contest totals in each snapshot independently reconcile.",
+    "Write-in has no printed party; keep missing rather than relabeling as an affiliation.",
+    "The earlier snapshot and its native typo, clock and partial reporting remain separate.",
+    "Received mail is not counted participation and is not added to these ballot totals.",
+    "No turnout denominators for individual legislative scopes or mode-specific demographics are inferred."
+  ],
+  "reviewed_at_utc": "2026-11-06T11:08:22.014080+00:00",
+  "review_helper_sha256": "81d91faee1a9f88ba0c89b0b420750d3dc352a1427e573956e45969a4b13e4a4"
+}

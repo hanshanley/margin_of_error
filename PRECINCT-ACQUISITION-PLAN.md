@@ -2,9 +2,23 @@
 
 ## Current verified production and next acquisition
 
-**November 6: Columbia, Pennsylvania's complete numerical query is published and
-verified; context11 is published and the UI passes local validation, with exact
-production publication still pending.**
+**November 6, 11:09 UTC: Columbia participation is LIVE verified.**
+Exact UI `2622a0d0dd0d5549392ddab6b5c6abc6ed6f9245`, Pages **42207340056
+attempt 1**, passed its new original hosted artifact **13497880867 /
+509,529,581 bytes**, SHA-256
+`2d77b767ee0ca9650ae70f6f197884548d5ba3c6aa301a464692355819dfb60d`.
+All **357 selected entire hosted/public files**, **seven production browser
+scenarios** and credential runs **42207339907 / 42207340201** pass.
+The platform-generated preview is qualified against the hosted publication
+manifest; all other applicable entire bytes are exact. The verifier completed.
+Context11 now exposes **973 complete records / 501 joins / 128 usable native
+fractions / 373 missing gray rates**, across sixteen jurisdictions; **108 native
+county rows / 30 Pennsylvania rows**, and **629 download anchors / 625 URLs**.
+All previous 972 records, 107 native county rows and 606 download anchors survive.
+All California observations and separately qualified Columbia mail-processing
+measures remain unchanged. No nationwide or completed-counting claim is made.
+
+**Retained capacity correction and failed-deployment history.**
 The first UI revision `cc00bce4dd585c34b8ca98c42a0afab56247d880`,
 Pages **42202834406**, did not deploy: freshly staged CI projects made its
 prepared output **1,009,690,501 bytes**, despite the smaller local build.
@@ -31,19 +45,19 @@ deployment guard, before claiming any production-byte or browser success.
 Do not repeat unchanged retries against this cancelled deployment ID.
 A fresh evidence-only publication revision
 `2622a0d0dd0d5549392ddab6b5c6abc6ed6f9245`, Pages **42207340056**,
-is building a distinct deployment ID and new artifact; this tests the
-cancelled-ID reuse hypothesis, not a proven size diagnosis. Exact credential
-runs are **42207339907 / 42207340201**. The known active verifier is
-`columbia-fresh-exact-production-01`; do not duplicate it.
+successfully used a distinct deployment ID and new artifact. The cancelled-ID
+reuse hypothesis was tested, not established as the sole failure cause.
+Exact credential runs are **42207339907 / 42207340201**.
+`columbia-fresh-exact-production-01` completed; do not rerun it.
 The validated application is unchanged.
 California's successful hosted site was larger than this failed prepared site.
-The new artifact must be identified and independently digest/byte/browser
-verified; never relabel it as original artifact 13496136224. Do not claim LIVE
-until all entire hosted/public bytes and seven production browser cases pass.
+The new artifact is identified and independently digest/byte/browser verified
+as recorded above; it is not original artifact 13496136224.
+Both failure receipts and the successful exact production proofs remain intact.
 
 **Next acquisition: Bradford and Greene primary sources are acquired and
-reviewed; Greene's complete factual query reproduces locally, but neither
-county is released or integrated yet.**
+reviewed; Greene's complete factual query is published and byte-verified,
+but neither county is integrated into the explorer yet.**
 All five entire responses match their saved receipts and actual county-parent
 declarations. Both Bradford snapshots independently agree across pypdf and
 PyMuPDF: the later report prints **20,982 Total Ballots / 39,048 Registered
@@ -53,8 +67,15 @@ The earlier snapshot remains separate: **12,488 / 39,048 / 31.98%**, **46/61**,
 Both explicitly say **Election Day**. The parent separately reports **3,346
 received mail-in/absentee ballots**; do not add receipts to reported ballots,
 infer counted mail or promote either report to all-mode county participation.
-Bradford's complete four-contest candidate parsing remains pending; do not reuse
-unverified preliminary web-extraction values.
+Both entire two-column Bradford report bodies now independently reconcile across
+pypdf text coordinates and PyMuPDF word positions: **eight contest snapshots /
+26 candidate-or-write-in rows**, with no unconsumed reporting/candidate lines.
+Every printed contest total and candidate/reporting fraction agrees.
+Assembly 68 and 110 are different within-county scopes, not whole-county
+participation; preserve their separate reporting universes. Native write-ins
+have no printed party. See `20261106-bradford-primary-review-01/primary-review.json`.
+Do not reuse unverified preliminary web-extraction values. Bradford's portable
+factual package and immutable release remain pending.
 
 Greene's actual **All returns** summary reports **11,105 Ballots Cast - Total**
 and **5 Ballots Cast - Blank**, **42/42** reporting and
@@ -78,8 +99,15 @@ query rows independently equal the reconciled original-source vectors.
 ZIP **11,776 bytes**, SHA-256
 `400682808f1ea7b1ba68e7cefa66f31f9e487a4e06c78e12384b5a52860d4774`.
 The original HTML templates are not redistributed. See `20261106-greene-facts-01`.
-Immutable release publication and explorer registration remain separate pending
-steps; no new native county row, rate or map join is claimed.
+Fixed Greene source facts `5fea4e4c88dd1a8e343513dbcec872cd3ebb379f`,
+release **436400837**, tag `voter-county-greene-20261106-01`, pass all
+**14 entire anonymous assets / 14 commit-pinned files / 13 ZIP members** and
+extracted offline reproduction/tests. Exact review-branch credential run
+**42207624790** passes. Source publication proof is retained under
+`20261106-greene-publication-01`; this review-only source revision has not been
+published to main, so no same-revision main credential result is claimed.
+Independent county identity/context review and explorer registration remain
+separate pending steps; no new native county row, rate or map join is claimed.
 
 The actual county parent declares both complete November 3 reports. Both entire
 PDF originals and the parent match their saved receipts. Two independent PDF
@@ -137,7 +165,8 @@ All **106 relocated downloads** remain byte-identical. The prepared site is
 the next context requires reducing build-only duplication without deleting any
 historical source or download. Full-site validation reaches only the existing
 unrelated UK `23 !== 16` assertion. These are local results, not a LIVE claim.
-California below remains the verified production until exact UI publication.
+California below was the previous production baseline; Columbia's exact
+production proof above now supersedes it.
 The next bulk Ohio parent and three declared portal routes returned HTTP403;
 the directory-declared Clearfield parent returned404 and Clinton returned403.
 All entire responses/receipts are retained privately, without bypasses or an
