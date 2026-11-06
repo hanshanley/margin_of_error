@@ -1,11 +1,27 @@
 {
   "schema_version": 1,
-  "base_url": "/participation-county-context/20261106-11/",
-  "review_bytes": 831514,
-  "review_sha256": "404370394975d3d64480eef48b75d96e53de1dd48cf88a0d5d67d1533d2b4b4a",
-  "complete_download_bytes": 2467554,
-  "complete_download_sha256": "d27146d469364ba5fd78aa8c97cf943f9250ebf8bb5f6328fcda665780fb3039",
+  "base_url": "/participation-county-context/20261106-12/",
+  "review_bytes": 832586,
+  "review_sha256": "7ec3a3d4799f16fde437c61267c3e7a6283838379c66183a9e578ce71f526bb2",
+  "complete_download_bytes": 2468069,
+  "complete_download_sha256": "ded6b1c826875838846c3d170d6adb724ed0b434dda8321bb851e5bee5ac8808",
   "downloads": [
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-12/county-participation-joins.csv",
+      "label": "Complete audited county participation joins: all 502 observations, including Greene, Pennsylvania (CSV)"
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-12/review.json",
+      "label": "Complete updated county identity review, exclusions and contextual geometry qualifications (JSON)"
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-12/complete-source-records.json.gz",
+      "label": "Every county, municipal and reporting-unit container: all 974 records, preserving the previous 973 unchanged (JSON · gzip)"
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-12/complete-county-participation-context-12.zip",
+      "label": "Complete updated county participation context query, inventories, geometries and offline reproduction code (ZIP)"
+    },
     {
       "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-11/county-participation-joins.csv",
       "label": "Complete audited county participation joins: all 501 observations, including Columbia, Pennsylvania (CSV)"

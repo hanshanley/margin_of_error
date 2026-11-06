@@ -8,7 +8,7 @@ import { gunzipSync } from 'node:zlib';
 import { loadReviewedCountyParticipation, loadReviewedStatewideParticipation } from './reviewed-county-participation.mjs';
 
 const reviews = JSON.parse(readFileSync('public/participation-source-reviews.json', 'utf8')).reviews;
-const batchCounties = ['Juniata', 'Mercer', 'Montour', 'Columbia'];
+const batchCounties = ['Juniata', 'Mercer', 'Montour', 'Columbia', 'Greene'];
 const isBatch = row => row.state_code === 'CA' || row.state_code === 'PA' && batchCounties.includes(row.county);
 
 test('preserves all context10 observations and separates Columbia participation from filtered mail processing', () => {
@@ -17,7 +17,8 @@ test('preserves all context10 observations and separates Columbia participation 
     'public/participation-county-context/20261106-10/complete-source-records.json.gz')));
   const oldReviewed = previous.filter(row => rows.some(current => current.county_id === row.county_id
     && current.state_code === row.state_code));
-  assert.deepEqual(rows.filter(row => row.review_id !== 'pennsylvania-columbia-20261106-01'), oldReviewed);
+  assert.deepEqual(rows.filter(row => !['pennsylvania-columbia-20261106-01',
+    'pennsylvania-greene-20261106-01'].includes(row.review_id)), oldReviewed);
   const row = rows.find(row => row.review_id === 'pennsylvania-columbia-20261106-01');
   assert.equal(row.ballots, 22583);
   assert.equal(row.denominator, 40797);
@@ -47,7 +48,7 @@ test('adds all California native participation records while preserving every pr
   const oldReviewed = previous.filter(row => rows.some(current => current.county_id === row.county_id
     && current.state_code === row.state_code));
   assert.deepEqual(rows.filter(row => row.state_code !== 'CA'
-    && row.review_id !== 'pennsylvania-columbia-20261106-01'), oldReviewed);
+    && !['pennsylvania-columbia-20261106-01', 'pennsylvania-greene-20261106-01'].includes(row.review_id)), oldReviewed);
   const source = reviews.find(row => row.id === 'california-bulk-participation-20261106-01');
   const native = parse(readFileSync(join(source.data_directory, 'county-participation.csv'), 'utf8'),
     { columns: true });
@@ -150,7 +151,8 @@ test('rejects altered participation, source clocks or audit metadata in each new
     const original = reviews.find(row => row.id === `pennsylvania-${county.toLowerCase()}-20261106-01`);
     const directory = mkdtempSync(join(tmpdir(), 'pinned-county-participation-'));
     try {
-      const files = ['county-participation.csv', 'native-source-pages.csv', 'audit.json'];
+      const files = ['county-participation.csv',
+        county === 'Greene' ? 'native-reporting-statistics.csv' : 'native-source-pages.csv', 'audit.json'];
       const altered = reviews.map(row => row === original ? { ...row, data_directory: directory } : row);
       for (const changed of files) {
         for (const file of files) copyFileSync(join(original.data_directory, file), join(directory, file));
@@ -551,16 +553,48 @@ test('rejects Jefferson vote substitution, changed privacy scope or repaired nat
   }
 });
 
+test('preserves context11 and loads Greene ballots without inventing its missing denominator or clock', () => {
+  const rows = loadReviewedCountyParticipation(reviews);
+  const previous = JSON.parse(gunzipSync(readFileSync(
+    'public/participation-county-context/20261106-11/complete-source-records.json.gz')));
+  const oldReviewed = previous.filter(row => rows.some(current => current.county_id === row.county_id
+    && current.state_code === row.state_code));
+  assert.deepEqual(rows.filter(row => row.review_id !== 'pennsylvania-greene-20261106-01'), oldReviewed);
+  const row = rows.find(row => row.review_id === 'pennsylvania-greene-20261106-01');
+  const source = reviews.find(source => source.id === row.review_id);
+  assert.deepEqual(row.native_record, parse(readFileSync(join(source.data_directory,
+    'county-participation.csv')), { columns: true })[0]);
+  assert.equal(row.ballots, 11105);
+  assert.equal(row.denominator, null);
+  assert.equal(row.reported_pct, null);
+  assert.equal(row.native_printed_pct, null);
+  assert.equal(row.native_record.blank_ballots, '5');
+  assert.equal(row.native_record.registered_voters, '');
+  assert.equal(row.native_record.source_fips, '');
+  assert.equal(row.native_record.counting_complete, 'False');
+  assert.equal(row.participation_measure_literal, 'Ballots Cast - Total');
+  assert.equal(row.source_status_literal, 'Unofficial Results with MI and Absentee');
+  assert.deepEqual(row.native_source_updates, []);
+  assert.equal(row.source_update_label, 'Not supplied');
+  assert.equal(row.reported_units, 42);
+  assert.equal(row.total_units, 42);
+  assert.equal(row.maps_approved, false);
+  assert.match(row.source_reporting_label, /blank ballots.*not added/);
+  assert.match(row.source_reporting_label, /Registrations and the turnout rate are not supplied, not zero/);
+  assert.match(row.source_reporting_label, /42 of 42.*does not establish completed counting/);
+});
+
 test('loads all reviewed county participation without promoting map coverage', () => {
   const rows = loadReviewedCountyParticipation(reviews);
-  assert.equal(rows.length, 108);
-  assert.equal(rows.filter(row => row.state_code === 'PA').length, 30);
+  assert.equal(rows.length, 109);
+  assert.equal(rows.filter(row => row.state_code === 'PA').length, 31);
   assert.equal(rows.filter(row => row.state_code === 'DC').length, 1);
   assert.equal(rows.filter(row => row.state_code === 'NJ').length, 19);
   assert.equal(rows.filter(row => row.state_code === 'CA').length, 58);
   assert.ok(rows.every(row => row.maps_approved === false));
   assert.ok(rows.filter(row => row.state_code !== 'CA'
-    && row.review_id !== 'pennsylvania-columbia-20261106-01').every(row => row.reported_units === null));
+    && !['pennsylvania-columbia-20261106-01', 'pennsylvania-greene-20261106-01']
+      .includes(row.review_id)).every(row => row.reported_units === null));
   const monroe = rows.find(row => row.county === 'Monroe');
   assert.equal(monroe.county_id, 'reviewed:PA:Monroe');
   assert.equal(monroe.native_record.county_fips, undefined);

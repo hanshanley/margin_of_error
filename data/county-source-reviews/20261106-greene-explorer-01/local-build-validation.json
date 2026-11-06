@@ -1,0 +1,21 @@
+{
+  "verified_at_utc": "2026-11-06T11:16:35.989582+00:00",
+  "focused_participation_tests": "passed",
+  "astro_check": "passed",
+  "production_build": "passed",
+  "full_validator_returncode": 1,
+  "known_unrelated_uk_assertion": true,
+  "full_validator_output": "node:internal/modules/run_main:123\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n23 !== 16\n\n    at file:///Users/hanshanley/Documents/personal_projects/margin_of_error/scripts/validate-build.mjs:1126:9 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: 23,\n  expected: 16,\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n\nNode.js v22.23.2\n",
+  "focused_tests_passed": 62,
+  "build_tests_passed": 4,
+  "astro_errors": 0,
+  "astro_warnings": 0,
+  "astro_hints": 5,
+  "prepared_site_bytes": 984778141,
+  "entire_relocated_downloads_verified": 117,
+  "context12_zip_retained_in_prepared_site": true,
+  "browser_scenarios_passed": 7,
+  "browser_proof": "local-browser.json",
+  "static_preview_full_page_and_gzip_bytes_match_artifact": true,
+  "astro_preview_gzip_transcoding": "Existing import loaders require raw gzip transport; local browser verification uses byte-preserving http.server as on Pages. Production runtime unchanged."
+}

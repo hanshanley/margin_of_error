@@ -2,7 +2,7 @@
 
 ## Current verified production and next acquisition
 
-**Greene context12 is locally reproduced, not yet deployed.**
+**Greene context12 is published and locally verified; exact UI deployment pending.**
 Both complete Census originals independently identify Greene 42059, against
 unchanged contextual geometry. The new complete package preserves every one of
 context11's 973 records, 501 joins, sixteen geometry inventories and exclusions.
@@ -12,9 +12,24 @@ Context12 contains 974 complete records / 502 joins / 128 usable rates / 374
 missing rates. Its 30-file / 29-member package reproduces offline; the complete
 2,468,069-byte ZIP SHA-256 is
 `ded6b1c826875838846c3d170d6adb724ed0b434dda8321bb851e5bee5ac8808`.
-Source registration, native missing-denominator handling and explorer validation
-are in progress. The production baseline below remains authoritative until the
-new exact revision and artifact pass public-byte and browser verification.
+All four entire release assets, thirty pinned files and twenty-nine ZIP members
+match, including extracted offline reproduction. Fixed facts are
+`efd750acd9aa1b021b7de9c24b42b8aeecc32e1a`, release **436408429**,
+tag `voter-county-participation-context-20261106-12`; both credential jobs
+**42208624288 / 42208654127** pass.
+Source registration, missing-denominator handling, **62 focused tests**, Astro
+check (zero errors/warnings), build and all **seven local browser scenarios**
+pass. All 973 previous source records, 108 native county rows and 629 download
+anchors survive; the new UI has 109 native rows / 31 Pennsylvania rows and
+645 anchors / 641 URLs. No new rate is inferred. All 117 entire relocated
+downloads match; the prepared local site is **984,778,141 bytes**, with the
+complete context12 ZIP retained locally rather than expanding relocation rules.
+The full validator retains its known unrelated UK assertion `23 !== 16` at
+`validate-build.mjs:1126`. Local browser validation uses byte-preserving static
+transport: Astro preview transcodes gzip responses expected raw by the existing
+import loaders. No production runtime workaround was added.
+The production baseline below remains authoritative until the new exact
+revision and artifact pass public-byte and browser verification.
 
 **November 6, 11:09 UTC: Columbia participation is LIVE verified.**
 Exact UI `2622a0d0dd0d5549392ddab6b5c6abc6ed6f9245`, Pages **42207340056

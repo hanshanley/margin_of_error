@@ -1,6 +1,32 @@
 {
   "reviews": [
     {
+      "id": "pennsylvania-greene-20261106-01",
+      "label": "Greene County, Pennsylvania 2026: native ballot total and complete county factual query",
+      "data_directory": "data/county-source-reviews/20261106-greene-facts-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5fea4e4c88dd1a8e343513dbcec872cd3ebb379f/data/county-source-reviews/20261106-greene-facts-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-greene-20261106-01/complete-greene-county-native-query-01.zip",
+      "complete_download_bytes": 11776,
+      "complete_download_sha256": "400682808f1ea7b1ba68e7cefa66f31f9e487a4e06c78e12384b5a52860d4774",
+      "review_status": "complete_county_summary_query_reviewed_unofficial",
+      "maps_approved": false,
+      "scope_note": "Native Ballots Cast - Total 11,105 and five separate blank ballots; blanks are not added to the total. Registration denominator, turnout rate, report-update clock and timezone are absent, not zero or inferred. Native status is Unofficial Results with MI and Absentee; 42 of 42 reporting does not establish completed counting or certification. All fifteen rows across six native sections independently reconcile, including thirteen candidate/write-in choices across four contests. Candidate sums and literal parties remain separate from participation; administrative pseudo-party labels do not enter candidate-party tables. Residuals 115/208/557/187 remain unclassified. All fourteen entire anonymous assets, fourteen pinned files and thirteen ZIP members match and reproduce offline. The complete eight-table factual query, receipts, source-derived records, portable reviewer and tests are downloadable. Original HTML remains private. No native FIPS, new geometry, statewide or demographic participation claim.",
+      "tables": [
+        {"file": "county-participation.csv", "label": "Greene: complete native ballot total, separate blank ballots and missing registration denominator (CSV)"},
+        {"file": "native-summary-query.csv", "label": "Greene: all fifteen native summary rows across six administrative/candidate sections (CSV)"},
+        {"file": "county-candidate-results.csv", "label": "Greene: all thirteen candidate/write-in choices, literal prefixes and parties across four contests (CSV)"},
+        {"file": "county-literal-party-totals.csv", "label": "Greene: all separate contest/literal candidate-party totals, not voter participation by party (CSV)"},
+        {"file": "county-contest-accounting.csv", "label": "Greene: all four derived candidate sums and unclassified ballot-minus-choice differences (CSV)"},
+        {"file": "native-reporting-statistics.csv", "label": "Greene: complete election, reporting and unofficial status headers; no invented update clock (CSV)"},
+        {"file": "native-source-declarations.csv", "label": "Greene: actual county-parent All returns declaration and full URL (CSV)"},
+        {"file": "source-receipts.csv", "label": "Greene: both entire original-source byte receipts, hashes and separate retrieval clocks (CSV)"},
+        {"file": "source-records.json.gz", "label": "Greene: complete reviewed source-derived factual query (JSON · gzip)"},
+        {"file": "review-greene-county-native-query.py", "label": "Greene: complete standard-library factual-query reproducer (Python)"},
+        {"file": "test-greene-native-query.py", "label": "Greene: complete portable query validation and semantic corruption tests (Python)"}
+      ],
+      "coverage": []
+    },
+    {
       "id": "pennsylvania-columbia-20261106-01",
       "label": "Columbia County, Pennsylvania 2026: native participation and complete results/mail factual query",
       "data_directory": "data/county-source-reviews/20261106-columbia-facts-01",
