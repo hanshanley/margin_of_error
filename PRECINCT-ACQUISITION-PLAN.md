@@ -178,6 +178,28 @@ state totals. Fresh direct Wisconsin/Texas indexes, Milwaukee's exact county
 report and Coshocton's exact PDF returned 403; all complete private responses
 and safe receipt digests are retained without challenged retries or bypass.
 
+**November 6: Florida's distinct statewide TOTAL independently qualified, not activated.**
+The existing immutable native query **436915442 / fee108411207a3c74880bf7da9e514de3fc8b4a2**
+was reverified as **11 entire anonymous release assets / 11 commit-pinned files /
+10 actual ZIP members**, with **eight portable tests** and byte-identical
+reproduction of all 11 files from the actual archive. Independent Python Decimal
+and Node extraction over all 67 native county rows reconcile the separate native
+TOTAL: **8,335,497 Voter Turnout / 13,704,495 Eligible Active Registered Voters /
+60.82% printed**, independently **60.82308760738721127630022120%**. The statewide
+row is not added as another county. Its five completion flags remain blank;
+the literal 100% precinct percentage is not converted into unit counts.
+Provisional completion remains N in 60 counties and overseas completion N in 64;
+neither county flags nor missing HTTP/source clocks imply finished counting.
+A separate statewide usability review permits only this snapshot and same-table
+active-registration fraction, not CVAP/VAP/VEP/CPS or demographic turnout.
+The dormant importer validates every complete input and rejects changed
+qualifications, missing files and duplicate source registration. All **70
+importer tests** pass, preserving the existing county records. Evidence is in
+`data/county-source-reviews/20261106-florida-statewide-explorer-01/`.
+No active statewide registration, explorer rebuild or main deployment has been
+made for this addition. Activation must preserve the independently verified
+Delaware production baseline first; no additional LIVE claim is made here.
+
 **November 6: Delaware consolidated native query reproduced; afternoon scope retained.**
 The official `GE2026_ElectionVoterCountsByVotingMethod.html` report is acquired
 in full (**39,140 bytes / HTTP 200 / SHA-256

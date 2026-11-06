@@ -9,7 +9,7 @@ import { loadReviewedCountyParticipation as loadCompleteReviewedCountyParticipat
   loadReviewedMinnesotaParticipation, loadReviewedAdditionalPennsylvaniaParticipation,
   loadReviewedSomersetParticipation, loadReviewedSusquehannaParticipation,
   loadReviewedSullivanWyomingParticipation, loadReviewedBedfordNorthumberlandParticipation,
-  loadReviewedUtahParticipation, loadReviewedFloridaParticipation,
+  loadReviewedUtahParticipation, loadReviewedFloridaParticipation, loadReviewedFloridaStatewideParticipation,
   loadReviewedRockParticipation, loadReviewedDelawareStatewideParticipation } from './reviewed-county-participation.mjs';
 
 const reviews = JSON.parse(readFileSync('public/participation-source-reviews.json', 'utf8')).reviews;
@@ -114,6 +114,79 @@ const floridaReview = {
   base_url: 'https://raw.githubusercontent.com/hanshanley/margin_of_error/fee108411207a3c74880bf7da9e514de3fc8b4a2/data/county-source-reviews/20261106-florida-consolidated-native-01/',
   complete_download_url: 'https://github.com/hanshanley/margin_of_error/releases/download/voter-county-florida-native-turnout-20261106-01/complete-query.zip',
 };
+
+const floridaStatewideReview = {
+  ...floridaReview,
+  statewide_usability_review_path: 'data/county-source-reviews/20261106-florida-statewide-explorer-01/state-usability-review.json',
+};
+
+test('Florida statewide uses the distinct native TOTAL without changing counties, clocks or completion missingness', () => {
+  const state = loadReviewedFloridaStatewideParticipation([floridaStatewideReview]);
+  assert.equal(state.ballots, 8335497);
+  assert.equal(state.denominator, 13704495);
+  assert.equal(state.validated_pct, 100 * 8335497 / 13704495);
+  assert.equal(state.native_printed_pct, '60.82%');
+  assert.equal(state.geography_level, 'statewide');
+  assert.equal(state.native_record.native_county, 'TOTAL');
+  assert.equal(state.native_record.native_fips, '');
+  assert.equal(state.native_record.source_as_of, '');
+  assert.equal(state.native_record.source_timezone, '');
+  assert.deepEqual(state.native_source_updates, []);
+  assert.equal(state.reported_units, null);
+  assert.equal(state.total_units, null);
+  assert.equal(state.native_record.native_precincts_reporting, '100%');
+  assert.deepEqual(Object.entries(state.native_record).filter(([key]) => key.endsWith('_completed'))
+    .map(([, value]) => value), ['', '', '', '', '']);
+  assert.match(state.quality.join(' '), /not CVAP, VAP, VEP, CPS or demographic turnout/);
+  assert.match(state.quality.join(' '), /Statewide completion flags are blank, not inherited from county flags/);
+  assert.match(state.quality.join(' '), /unfinished in 60 counties.*overseas reporting in 64/);
+  assert.equal('county_id' in state, false);
+  const baseline = JSON.parse(readFileSync(
+    'data/county-source-reviews/20261106-delaware-statewide-explorer-01/baseline.json', 'utf8'));
+  assert.deepEqual(loadCompleteReviewedCountyParticipation(reviews), baseline.previous_entire_reviewed_records);
+});
+
+test('Florida statewide validates every complete source file and rejects absent or duplicate source registration', () => {
+  const directory = mkdtempSync(join(tmpdir(), 'florida-statewide-'));
+  const files = readdirSync(floridaStatewideReview.data_directory);
+  const altered = { ...floridaStatewideReview, data_directory: directory };
+  try {
+    for (const changed of files) {
+      for (const file of files) copyFileSync(join(floridaStatewideReview.data_directory, file), join(directory, file));
+      writeFileSync(join(directory, changed), Buffer.concat([readFileSync(join(directory, changed)), Buffer.from('\n')]));
+      assert.throws(() => loadReviewedFloridaStatewideParticipation([altered]), /Invalid reviewed county participation/);
+    }
+    for (const file of files) copyFileSync(join(floridaStatewideReview.data_directory, file), join(directory, file));
+    rmSync(join(directory, 'statewide-participation.csv'));
+    assert.throws(() => loadReviewedFloridaStatewideParticipation([altered]), /ENOENT/);
+    assert.throws(() => loadReviewedFloridaStatewideParticipation([]), /Missing or duplicated reviewed statewide source/);
+    assert.throws(() => loadReviewedFloridaStatewideParticipation(
+      [floridaStatewideReview, floridaStatewideReview]), /Missing or duplicated reviewed statewide source/);
+  } finally {
+    rmSync(directory, { recursive: true, force: true });
+  }
+});
+
+test('Florida statewide requires explicit snapshot permissions without promoting native completion or approval flags', () => {
+  const permission = JSON.parse(readFileSync(floridaStatewideReview.statewide_usability_review_path, 'utf8'));
+  const directory = mkdtempSync(join(tmpdir(), 'florida-statewide-usability-'));
+  const path = join(directory, 'review.json');
+  const altered = { ...floridaStatewideReview, statewide_usability_review_path: path };
+  try {
+    for (const field of ['reported_statewide_participation_permission', 'same_report_active_registration_fraction_permission',
+      'native_statewide_completion_flags_remain_blank', 'source_native_approval_flags_unchanged',
+      'county_completion_flags_not_promoted_to_statewide_completion']) {
+      writeFileSync(path, JSON.stringify({ ...permission, [field]: false }));
+      assert.throws(() => loadReviewedFloridaStatewideParticipation([altered]), /Invalid reviewed statewide usability/);
+    }
+    writeFileSync(path, JSON.stringify({ ...permission, reported_participants: 5545457 }));
+    assert.throws(() => loadReviewedFloridaStatewideParticipation([altered]), /Invalid reviewed statewide participation/);
+    writeFileSync(path, JSON.stringify({ ...permission, native_fips_invented: true }));
+    assert.throws(() => loadReviewedFloridaStatewideParticipation([altered]), /Invalid reviewed statewide usability/);
+  } finally {
+    rmSync(directory, { recursive: true, force: true });
+  }
+});
 
 const rockReview = {
   id: 'wisconsin-rock-turnout-20261106-01',

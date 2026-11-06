@@ -976,6 +976,78 @@ export function loadReviewedFloridaParticipation(reviews) {
   });
 }
 
+export function loadReviewedFloridaStatewideParticipation(reviews) {
+  const id = 'florida-consolidated-turnout-20261106-01';
+  const matches = reviews.filter(review => review.id === id);
+  if (matches.length !== 1) throw new Error(`Missing or duplicated reviewed statewide source: ${id}`);
+  const counties = loadReviewedFloridaParticipation(reviews);
+  const review = matches[0], directory = resolve(review.data_directory);
+  const usability = JSON.parse(readFileSync(resolve(review.statewide_usability_review_path), 'utf8'));
+  if (usability.native_numerical_revision !== 'fee108411207a3c74880bf7da9e514de3fc8b4a2'
+    || usability.immutable_native_release !== 436915442 || usability.state_code !== 'FL'
+    || usability.geography_level !== 'statewide' || usability.native_geography_literal !== 'TOTAL'
+    || usability.native_manifest_sha256 !== 'f0e1d7685067483b4bb304557eb3244bcf4b4c4819ab8212718fcfc40d30b7ef'
+    || usability.native_fips_invented !== false
+    || ['reported_statewide_participation_permission', 'same_report_active_registration_fraction_permission',
+      'source_native_approval_flags_unchanged', 'all_67_county_observations_preserved',
+      'statewide_total_not_added_as_an_extra_county', 'native_statewide_completion_flags_remain_blank',
+      'precinct_percentage_not_converted_to_unit_counts', 'native_turnout_clock_missing',
+      'native_turnout_timezone_missing', 'county_completion_flags_not_promoted_to_statewide_completion',
+      'no_certification_or_finished_counting_inferred', 'no_population_or_demographic_rate_permission',
+      'previous_county_context25_unchanged'].some(field => usability[field] !== true))
+    throw new Error(`Invalid reviewed statewide usability: ${id}`);
+  const rows = csv(resolve(directory, 'statewide-participation.csv'));
+  const source = JSON.parse(readFileSync(resolve(directory, 'source-qualification.json'), 'utf8'));
+  const audit = JSON.parse(readFileSync(resolve(directory, 'audit.json'), 'utf8'));
+  if (rows.length !== 1 || counties.length !== 67 || source.source_as_of !== null || source.source_timezone !== null
+    || ['generic_turnout_approved', 'county_fips_join_approved', 'map_approved', 'certified']
+      .some(field => source[field] !== false)
+    || audit.county_sums_equal_separate_statewide_totals !== true
+    || audit.all_68_printed_percentages_reconcile !== true)
+    throw new Error(`Incomplete reviewed statewide source: ${id}`);
+  const native = rows[0], ballots = Number(native.reported_participants);
+  const denominator = Number(native.eligible_active_registered_voters), fraction = 100 * ballots / denominator;
+  const completion = Object.entries(native).filter(([key]) => key.endsWith('_completed'));
+  if (native.native_county !== 'TOTAL' || native.native_county_code !== '' || native.native_fips !== ''
+    || native.source_as_of !== '' || native.source_timezone !== ''
+    || native.analysis_rate_approved !== 'False' || native.map_approved !== 'False'
+    || completion.length !== 5 || completion.some(([, value]) => value !== '')
+    || !Number.isSafeInteger(ballots) || ballots < 0 || !Number.isSafeInteger(denominator) || denominator <= 0
+    || ballots > denominator || ballots !== usability.reported_participants
+    || denominator !== usability.eligible_active_registered_voters
+    || ballots !== counties.reduce((sum, row) => sum + row.ballots, 0)
+    || denominator !== counties.reduce((sum, row) => sum + row.denominator, 0)
+    || native.native_turnout_percentage !== usability.native_printed_percentage
+    || `${fraction.toFixed(2)}%` !== native.native_turnout_percentage
+    || Math.abs(Number(native.independently_derived_registered_fraction_percent) - fraction) > 1e-12)
+    throw new Error(`Invalid reviewed statewide participation: ${id}`);
+  const quality = [
+    'Native statewide TOTAL Voter Turnout snapshot; all 67 county participants and active registrations reconcile to this distinct aggregate, not an extra county.',
+    'Same-table Eligible Active Registered Voters fraction only, not CVAP, VAP, VEP, CPS or demographic turnout.',
+    `Native printed statewide fraction ${native.native_turnout_percentage} is separate from the independently calculated registered fraction.`,
+    'Statewide completion flags are blank, not inherited from county flags. County provisional reporting remains unfinished in 60 counties and ten-day overseas reporting in 64.',
+    'Native 100% precinct reporting is a literal percentage, not fabricated unit counts, certification or proof of finished counting.',
+    'Native turnout update clock and timezone not supplied; HTTP/fetch/navigation clocks are not replacements.',
+    'No candidate selections, received-ballot or processing-counter substitution; all county observations and the retained Monroe history remain unchanged.',
+  ];
+  const update = 'Native turnout update clock/timezone not supplied; HTTP/fetch clocks are not replacements.';
+  return {
+    year: 2026, state_code: 'FL', state: 'Florida', geography_level: 'statewide',
+    ballots, denominator, mode: 'official', status: 'reviewed_unofficial_snapshot',
+    participation_measure_kind: 'source_defined_participation_count',
+    participation_measure_literal: 'Voter Turnout',
+    participation_measure_label: 'Native Voter Turnout (reported statewide snapshot)',
+    denominator_basis: 'native_registered_voters', reported_pct: fraction, validated_pct: fraction,
+    native_printed_pct: native.native_turnout_percentage, source_status_literal: source.source_status,
+    reported_units: null, total_units: null, source_rows: 1, maps_approved: false, review_id: id,
+    native_record: native, native_source_updates: [], source_update_label: update, source_date: update,
+    source_reporting_label: quality.join(' '), quality,
+    observation_type: 'Native Voter Turnout (reported statewide snapshot)',
+    source_url: `${review.base_url}statewide-participation.csv`,
+    complete_download_url: review.complete_download_url,
+  };
+}
+
 export function loadReviewedRockParticipation(reviews) {
   const id = 'wisconsin-rock-turnout-20261106-01';
   const matches = reviews.filter(review => review.id === id);
