@@ -973,6 +973,16 @@ and all 106 complete download relocations pass. Prepared Pages payload:
 Release, actual-live preservation baseline and browser evidence are under
 `data/county-source-reviews/20261106-county-context-publication-01/`.
 The UI is locally verified; exact production deployment verification is pending.
+Initial UI `fd869724bc702a6a6799ae058e1838e3732743d3` built successfully
+in Pages run `42171838585`; both exact credential checks
+`42171838617` / `42171838701` passed. Attempt 1 timed out during
+`syncing_files`, then cancelled its deployment. A deployment-only retry reused
+artifact `13481916682` (489,259,064 bytes, SHA-256
+`6565e32be7bc44c25a4cbdda1ba55449dbcee28f2bb93b88c335813c4f297e8e`)
+but attempt 2 was immediately cancelled under the same deployment ID.
+Both failure receipts are retained; neither attempt is marked live.
+A fresh evidence revision requests a new deployment identity without changing
+the validated UI, source facts, prepared local payload or published releases.
 This does not complete nationwide acquisition or establish measured demographic
 turnout, certification or statewide completion.
 
