@@ -1,0 +1,41 @@
+[
+  {
+    "file": "mifflin-parent.html",
+    "requested_url": "https://mifflincountypa.gov/voter-registration-elections/election-central",
+    "final_url": "https://mifflincountypa.gov/voter-registration-elections/election-central",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at_utc": "2026-11-06T08:24:11.514585+00:00",
+    "transport": "requests",
+    "initial_python_tls_failure": null,
+    "bytes": 54890,
+    "sha256": "866a571d9042a8f081056a526064f26757834de565f5c1c616e693cc108ef806",
+    "redirects": []
+  },
+  {
+    "file": "mifflin-summary.pdf",
+    "requested_url": "https://mifflincountypa.gov/getmedia/bfebf5a8-dde3-45f7-8014-3d4449fdd28f/Election-Results",
+    "final_url": "https://mifflincountypa.gov/getmedia/bfebf5a8-dde3-45f7-8014-3d4449fdd28f/Election-Results",
+    "status": 200,
+    "content_type": "application/pdf",
+    "retrieved_at_utc": "2026-11-06T08:24:11.566462+00:00",
+    "transport": "requests",
+    "initial_python_tls_failure": null,
+    "bytes": 7678,
+    "sha256": "682d68966949e5386cf45cf0c25697de28e7de1b67c30d2dacb2e8b2d4a733e5",
+    "redirects": []
+  },
+  {
+    "file": "mifflin-statement.pdf",
+    "requested_url": "https://mifflincountypa.gov/getmedia/f5ec47b1-c763-4194-a9d3-665a6f73ccf0/All-Precincts-Unofficial-Results",
+    "final_url": "https://mifflincountypa.gov/getmedia/f5ec47b1-c763-4194-a9d3-665a6f73ccf0/All-Precincts-Unofficial-Results",
+    "status": 200,
+    "content_type": "application/pdf",
+    "retrieved_at_utc": "2026-11-06T08:24:11.750985+00:00",
+    "transport": "requests",
+    "initial_python_tls_failure": null,
+    "bytes": 146771,
+    "sha256": "64a47dcd6f3d119a3d481000039126774037a000474deeb3df5f95fab184699c",
+    "redirects": []
+  }
+]

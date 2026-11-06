@@ -1,0 +1,151 @@
+{
+  "verified_at_utc": "2026-11-06T08:30:07.874119+00:00",
+  "source_receipts": [
+    {
+      "file": "mifflin-parent.html",
+      "requested_url": "https://mifflincountypa.gov/voter-registration-elections/election-central",
+      "final_url": "https://mifflincountypa.gov/voter-registration-elections/election-central",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieved_at_utc": "2026-11-06T08:24:11.514585+00:00",
+      "transport": "requests",
+      "initial_python_tls_failure": null,
+      "bytes": 54890,
+      "sha256": "866a571d9042a8f081056a526064f26757834de565f5c1c616e693cc108ef806",
+      "redirects": []
+    },
+    {
+      "file": "mifflin-summary.pdf",
+      "requested_url": "https://mifflincountypa.gov/getmedia/bfebf5a8-dde3-45f7-8014-3d4449fdd28f/Election-Results",
+      "final_url": "https://mifflincountypa.gov/getmedia/bfebf5a8-dde3-45f7-8014-3d4449fdd28f/Election-Results",
+      "status": 200,
+      "content_type": "application/pdf",
+      "retrieved_at_utc": "2026-11-06T08:24:11.566462+00:00",
+      "transport": "requests",
+      "initial_python_tls_failure": null,
+      "bytes": 7678,
+      "sha256": "682d68966949e5386cf45cf0c25697de28e7de1b67c30d2dacb2e8b2d4a733e5",
+      "redirects": []
+    },
+    {
+      "file": "mifflin-statement.pdf",
+      "requested_url": "https://mifflincountypa.gov/getmedia/f5ec47b1-c763-4194-a9d3-665a6f73ccf0/All-Precincts-Unofficial-Results",
+      "final_url": "https://mifflincountypa.gov/getmedia/f5ec47b1-c763-4194-a9d3-665a6f73ccf0/All-Precincts-Unofficial-Results",
+      "status": 200,
+      "content_type": "application/pdf",
+      "retrieved_at_utc": "2026-11-06T08:24:11.750985+00:00",
+      "transport": "requests",
+      "initial_python_tls_failure": null,
+      "bytes": 146771,
+      "sha256": "64a47dcd6f3d119a3d481000039126774037a000474deeb3df5f95fab184699c",
+      "redirects": []
+    }
+  ],
+  "actual_parent_declarations": [
+    {
+      "role": "summary",
+      "label": "Unofficial Summary Results",
+      "url": "https://mifflincountypa.gov/getmedia/bfebf5a8-dde3-45f7-8014-3d4449fdd28f/Election-Results",
+      "previous_heading": "2026 General Election"
+    },
+    {
+      "role": "statement",
+      "label": "Unofficial Precinct Results",
+      "url": "https://mifflincountypa.gov/getmedia/f5ec47b1-c763-4194-a9d3-665a6f73ccf0/All-Precincts-Unofficial-Results",
+      "previous_heading": "2026 General Election"
+    }
+  ],
+  "complete_reviewed_input_sha256": "20d4f560e7e3e07fad789bf69c07b0474d1a26249b28030584594f71729d7f17",
+  "all54_entire_page_tokens_and_complete_parsed_structures_match_both_engines": true,
+  "all54_page_layout_lines_consumed": true,
+  "complete_native_units": 26,
+  "complete_native_unit_contests": 104,
+  "complete_native_county_contests": 5,
+  "all_choice_write_in_accounting_and_participation_vectors_reconcile": true,
+  "reconciliations": [
+    {
+      "contest": "GOVERNOR AND LIEUTENANT GOVERNOR",
+      "units": 26,
+      "all_native_choice_write_in_and_accounting_vectors_match": true,
+      "native_contest_electorate": [
+        14439,
+        12017,
+        2422,
+        0
+      ]
+    },
+    {
+      "contest": "REPRESENTATIVE IN CONGRESS 13TH CONGRESSIONAL DISTRICT",
+      "units": 26,
+      "all_native_choice_write_in_and_accounting_vectors_match": true,
+      "native_contest_electorate": [
+        14439,
+        12017,
+        2422,
+        0
+      ]
+    },
+    {
+      "contest": "SENATOR IN THE GENERAL ASSEMBLY 30TH SENATORIAL DISTRICT",
+      "units": 26,
+      "all_native_choice_write_in_and_accounting_vectors_match": true,
+      "native_contest_electorate": [
+        14439,
+        12017,
+        2422,
+        0
+      ]
+    },
+    {
+      "contest": "REPRESENTATIVE IN THE GENERAL ASSEMBLY 85TH LEGISLATIVE DISTRICT",
+      "units": 7,
+      "all_native_choice_write_in_and_accounting_vectors_match": true,
+      "native_contest_electorate": [
+        4409,
+        3615,
+        794,
+        0
+      ]
+    },
+    {
+      "contest": "REPRESENTATIVE IN THE GENERAL ASSEMBLY 171ST LEGISLATIVE DISTRICT",
+      "units": 19,
+      "all_native_choice_write_in_and_accounting_vectors_match": true,
+      "native_contest_electorate": [
+        10030,
+        8402,
+        1628,
+        0
+      ]
+    }
+  ],
+  "rejected_changes": [
+    "candidate votes substituted",
+    "zero registrations converted to rate",
+    "blank ballots double counted",
+    "receipts substituted as mail",
+    "explicit zero provisional erased",
+    "native zero registrations invented",
+    "partial reporting declared complete",
+    "clock given invented timezone",
+    "literal party normalized",
+    "unit choice changed",
+    "split electorate replaced by county",
+    "native page identity changed",
+    "unassigned count turned into name",
+    "contradictory parent stage silently repaired",
+    "source clock repaired",
+    "unusable rate filled",
+    "native parent stage changed",
+    "actual declared source URL replaced"
+  ],
+  "every_entire_file_and_archive_reproduces_offline": true,
+  "complete_query_files": 24,
+  "complete_csv_tables": 18,
+  "complete_archive_members": 23,
+  "native_zero_registrations_withhold_calculated_rate": true,
+  "native_primary_receipt_wording_not_silently_repaired": true,
+  "archive_bytes": 89556,
+  "archive_sha256": "61e24e6042ef4d94052550ca96de970ba504997491b296b0149eda092bdebfcd",
+  "scope": "Complete source facts prepared and offline-verified, not yet committed/released or integrated. Native maps_approved remains false; contextual identity, release bytes and exact UI verification remain pending."
+}

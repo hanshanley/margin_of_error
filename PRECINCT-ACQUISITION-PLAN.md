@@ -1,5 +1,52 @@
 # Nationwide county-first acquisition and publication plan
 
+## Current verified production and next acquisition
+
+**November 6, 08:27 UTC: Potter is LIVE verified.** Revision
+`754787c2a9f39c3a7bfb15a14b29ab1f8fb4c797`, Pages **42187050846 attempt 1**,
+artifact **13488615563 / 511,247,254 bytes**, SHA-256
+`98c08c4623a2bb959339343f65cfbd027c35c5e91c5f79e3dc47ba157f5ff202`.
+Both exact credentials **42187050945 / 42187049232** pass.
+All **220 selected entire hosted/public files** and **seven production browser
+scenarios** pass. Prepared and hosted preview manifests are platform-qualified;
+all eighteen full import JSONs match after decompression. No comparison lock
+remains active. Current genuine participation context: **909 complete records /
+437 independent county joins / 65 usable native registered-voter fractions /
+372 missing gray rates**, across fifteen jurisdictions. All 908 earlier records,
+43 earlier native rows and 467 earlier download anchors remain unchanged.
+Current **44 reviewed native county rows / 490 complete download anchors /
+486 unique URLs**. UF state estimates, historical participation and candidate
+results remain separate. This is not nationwide county, precinct, demographic,
+certification or complete-counting coverage.
+
+Next source work is **Mifflin / Perry**, not a repeat Potter deployment.
+Both actual official parents and four declared complete original reports are
+saved privately in `pa-perry-mifflin-primary-20261106-01`. Mifflin's 54 entire
+pages independently agree in both PDF engines, with every line consumed,
+26 participation headers, 104 unit contests, all five county contests and all
+choice/write-in/accounting vectors reconciled. Native **14,439 ballots /
+12,017 Election Day / 2,422 mail / explicit zero provisional / six blank
+ballots already included**. Native registrations zero and printed `0.00%`
+are preserved, but the calculated turnout rate is unavailable, not zero.
+Its separate 85th/171st legislative electorates are 4,409/10,030, not the
+whole county assigned to either contest. The parent separately declares
+2,435 receipts with contradictory "Primary" wording on November 3; retain
+the literal wording and unexplained 13 difference from counted mail.
+The complete Mifflin factual query is now prepared and independently reproduced
+offline: **24 files / 18 full CSV tables / 23 ZIP members**; all **18 focused
+rejection cases** pass, including source-identity and contradictory-stage
+substitution. ZIP **89,556 bytes**, SHA-256
+`61e24e6042ef4d94052550ca96de970ba504997491b296b0149eda092bdebfcd`.
+See `20261106-mifflin-facts-01` and `20261106-mifflin-primary-review-01`.
+Fixed release and independent contextual identity are next.
+Perry's 24 entire pages are image scans: both text engines are empty, not
+proof of zero returns or a successful transcription. Full visual/OCR numerical
+review remains pending. Neither new county has source-map or UI approval.
+Retain Maine's separate 130 unallocated major votes, 6,021 blanks, 125 write-ins,
+three municipal-other gap and shared Kennebec fragments; retain separate D.C.
+accounting. McKean needs a declared reachable alternative, not another unchanged
+viewer timeout. Schedule **5** remains active; do not duplicate it.
+
 ## Objective and priority
 
 **November 6 priority: participation must be the primary display.** The user's
@@ -1599,6 +1646,17 @@ passes participation assertions and still fails only the unrelated UK
 Main ancestry is fetched and verified before the approved UI publication.
 Exact new deployment, original artifact, **220** selected entire hosted/public
 file comparisons and seven production browser scenarios remain pending.
+
+The exact Potter production checks are now complete at
+`2026-11-06T08:27:51.967686+00:00`: **754787c**, Pages **42187050846 attempt 1**,
+artifact **13488615563 / 511,247,254 bytes**, SHA-256
+`98c08c4623a2bb959339343f65cfbd027c35c5e91c5f79e3dc47ba157f5ff202`.
+All 220 selected entire public/hosted comparisons, full decompressed imports,
+qualified preview/manifest comparisons and seven production browser scenarios
+pass. Both exact credential jobs **42187050945 / 42187049232** pass. Potter
+is LIVE verified, not pending. Full proofs are in `20261106-potter-explorer-01`.
+Do not rebuild or redeploy unchanged UI merely to persist these proofs.
+
 McKean's actual .org parent ordinarily redirects to .gov and declares a GIS
 results viewer. That ordinary viewer connection timed out with errno 60;
 there is no HTTP status or body. This is not a denial or evidence of absent
