@@ -658,14 +658,21 @@ downloaded and byte-verified, including every complete ZIP member.
 GitHub reports `immutable: false`; preserve the fixed checksum/never-overwrite
 policy rather than asserting host locking. Release proof is under
 `20261106-blair-publication-01`.
-The UI loader, full native-current-record regression and focused browser mode
-are prepared. All 26 focused Node tests and Astro checking pass (zero
-errors/warnings, five existing hints). Lebanon's exact live proof finished;
-its actual live baseline now captures all fifteen full reviewed records,
-eighteen entire import fingerprints, five historical years and 337 old anchors
-before the Blair rebuild. No live Blair UI,
-county/precinct map, demographic turnout, certification or statewide completion
-is claimed.
+The UI loader connects only the current participation record, preserving
+every native field and both separately named report timestamps.
+All 26 focused Node tests, the four build-included tests and Astro checking
+pass (zero errors/warnings, five existing hints). Lebanon's exact live proof
+finished; its actual live baseline captures all fifteen full reviewed records,
+eighteen entire import fingerprints, five historical years and 337 old anchors.
+All six local browser modes/checks pass desktop/mobile, JavaScript/no-JavaScript
+and failed-current-feed fallbacks with no horizontal overflow. Every prior
+record, full import JSON, historical year, 52 UF rows and old download anchor
+is unchanged. There are now sixteen reviewed records (fifteen PA plus D.C.),
+346 anchors / 343 unique full URLs, including nine complete Blair downloads.
+All 106 complete relocations pass byte checks; the prepared Pages site is
+898,732,602 bytes. The local helper was stopped.
+Exact deployment/live verification remains pending; no new county/precinct map,
+demographic turnout, certification or statewide completion is claimed.
 
 **November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated

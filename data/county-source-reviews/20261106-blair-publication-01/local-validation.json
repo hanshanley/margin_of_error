@@ -1,0 +1,31 @@
+{
+  "verified_at_utc": "2026-11-06T05:00:50.550780+00:00",
+  "reference_live_revision": "ce68ef28de8aafc754bef87f9af2fe60900168da",
+  "focused_node_tests_passed": 26,
+  "source_facts_tests_passed": 7,
+  "build_included_tests_passed": 4,
+  "astro_check": {
+    "errors": 0,
+    "warnings": 0,
+    "existing_hints": 5
+  },
+  "prepared_pages_bytes": 898732602,
+  "verified_complete_download_relocations": 106,
+  "browser_modes_passed": 4,
+  "failed_feed_checks_passed": 2,
+  "reviewed_county_records": 16,
+  "previous_reviewed_records_entirely_unchanged": 15,
+  "previous_complete_imports_entirely_unchanged": 18,
+  "blair_current_ballots": 43898,
+  "blair_native_registrations": 81846,
+  "blair_native_printed_fraction": "53.63%",
+  "blair_pre_election_zero_snapshot_separate": true,
+  "blair_house_candidate_selections_not_used_as_ballots": 43749,
+  "download_anchors": 346,
+  "unique_complete_download_urls": 343,
+  "previous_download_anchors_preserved": 337,
+  "historical_years_preserved": [2024, 2022, 2020, 2018, 2016],
+  "uf_rows_preserved": 52,
+  "new_map_or_demographic_approval": false,
+  "live_verified": false
+}

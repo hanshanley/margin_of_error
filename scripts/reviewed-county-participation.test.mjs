@@ -10,8 +10,8 @@ const reviews = JSON.parse(readFileSync('public/participation-source-reviews.jso
 
 test('loads all reviewed county participation without promoting map coverage', () => {
   const rows = loadReviewedCountyParticipation(reviews);
-  assert.equal(rows.length, 15);
-  assert.equal(rows.filter(row => row.state_code === 'PA').length, 14);
+  assert.equal(rows.length, 16);
+  assert.equal(rows.filter(row => row.state_code === 'PA').length, 15);
   assert.equal(rows.filter(row => row.state_code === 'DC').length, 1);
   assert.ok(rows.every(row => row.maps_approved === false && row.reported_units === null));
   const monroe = rows.find(row => row.county === 'Monroe');
@@ -115,6 +115,28 @@ test('preserves Lebanon ballots while withholding its unusable native denominato
   assert.match(row.source_update_label, /unit: 11\/05\/2026 1:02 PM \(timezone not declared\)/);
   assert.match(row.source_reporting_label, /268 provisionals still to process/);
   assert.match(row.source_reporting_label, /0\/60 complete and 60\/60 partially reported/);
+  assert.equal(row.maps_approved, false);
+});
+
+test('preserves Blair current ballots without substituting its pre-election zero report or House selections', () => {
+  const row = loadReviewedCountyParticipation(reviews).find(row => row.county === 'Blair');
+  const review = reviews.find(review => review.id === row.review_id);
+  const native = parse(readFileSync(join(review.data_directory, 'county-participation.csv'), 'utf8'),
+    { columns: true })[0];
+  assert.deepEqual(row.native_record, native);
+  assert.equal(row.ballots, 43898);
+  assert.notEqual(row.ballots, 43749);
+  assert.equal(row.denominator, 81846);
+  assert.equal(row.reported_pct, 100 * 43898 / 81846);
+  assert.equal(row.native_printed_pct, '53.63%');
+  assert.equal(row.native_record.source_report, 'current');
+  assert.equal(row.native_record.provisional_ballots, '0');
+  assert.equal(row.source_status_literal, 'UNOFFICIAL RESULTS');
+  assert.equal(row.native_source_updates.length, 2);
+  assert.match(row.source_update_label, /current: 11\/03\/2026 10:45 PM \(timezone not declared\)/);
+  assert.match(row.source_update_label, /pre_election_zero: 11\/03\/2026 6:00 AM \(timezone not declared\)/);
+  assert.match(row.source_reporting_label, /Zero Report is a 6:00 AM pre-election snapshot, not current zero participation/);
+  assert.match(row.source_reporting_label, /Blank ballots and pending ballots are not supplied, not zero/);
   assert.equal(row.maps_approved, false);
 });
 

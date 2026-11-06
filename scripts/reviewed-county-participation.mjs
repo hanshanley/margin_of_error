@@ -15,6 +15,7 @@ const profiles = [
   ['pennsylvania-cumberland-20261106-01', 'ballots_cast', 'registered_voters', 'native_printed_turnout', 'PA', ['Cumberland']],
   ['pennsylvania-adams-20261106-01', 'ballots_cast', 'registered_voters', 'native_printed_turnout', 'PA', ['Adams']],
   ['pennsylvania-lebanon-20261106-01', 'ballots_cast', 'registered_voters', 'native_printed_turnout', 'PA', ['Lebanon']],
+  ['pennsylvania-blair-20261106-01', 'ballots_cast', 'registered_voters', 'native_printed_turnout', 'PA', ['Blair']],
   ['dc-delegate-county-20261105-01', 'ballots_cast', 'registered_voters', null, 'DC', ['District of Columbia']],
 ];
 const csv = path => parse(readFileSync(path, 'utf8'), { columns: true, bom: true, skip_empty_lines: true });
@@ -67,7 +68,7 @@ export function loadReviewedCountyParticipation(reviews) {
       if (id === 'pennsylvania-centre-20261106-01') {
         nativeSourceUpdates = csv(resolve(directory, 'native-source-updates.csv'));
       } else if (['pennsylvania-cumberland-20261106-01', 'pennsylvania-adams-20261106-01',
-        'pennsylvania-lebanon-20261106-01'].includes(id)) {
+        'pennsylvania-lebanon-20261106-01', 'pennsylvania-blair-20261106-01'].includes(id)) {
         nativeSourceUpdates = [...new Map(csv(resolve(directory, 'native-source-pages.csv')).map(row =>
           [row.source_report, { source: row.source_report, native_update_literal: row.source_update_literal,
             declared_timezone: row.declared_timezone }])).values()];

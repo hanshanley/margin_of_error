@@ -1,6 +1,29 @@
 {
   "reviews": [
     {
+      "id": "pennsylvania-blair-20261106-01",
+      "label": "Blair County, Pennsylvania 2026: counted ballots and a separately preserved pre-election zero report",
+      "data_directory": "data/county-source-reviews/20261106-blair-facts-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ea0f149cacf38068bb21c1b82c63c6e57b799384/data/county-source-reviews/20261106-blair-facts-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-blair-20261106-01/complete-blair-2026-numerical-facts-01.zip",
+      "complete_download_bytes": 17481,
+      "complete_download_sha256": "e70aa9ceb7c0d3de3e240e73988dd19be04890a38cfa4efb96677d0f4e762b78",
+      "review_status": "complete_county_numerical_facts_reviewed_unofficial_separate_zero_snapshot",
+      "maps_approved": false,
+      "scope_note": "Complete numerical facts from both government-declared Blair general-election reports. The current report has 43,898 ballots: 35,560 Election Day, 8,338 Mail Votes and explicit provisional zero, with 81,846 native registrations and printed 53.63%. The separately declared 6:00 AM pre-election Zero Report retains native zero counts in separate full tables and never replaces the 10:45 PM current observation. Both times are November 3 with no supplied timezone. Reporting 93 of 93 with mode entries 93,0,0 does not establish zero mail ballots or finished counting. UNOFFICIAL RESULTS is not certification; blank/pending ballots and under/overvote classifications are absent, not zero. All sixteen current and sixteen pre-election candidate/write-in vectors, literal parties, modes and explicit zeroes remain available. House selections including write-ins are 43,749, not participation; the 149-ballot residual remains unclassified. Neither state-House district has a native ballot denominator, so no whole-county residual is assigned to it. Both independent PDF engines and complete standard-library offline reproduction agree on every fact and ZIP member. Original presentation templates stay private. All full assets are anonymously byte-verified at fixed commit/checksums under the never-overwrite policy; no host-enforced lock, maps, demographic turnout, certification or statewide completion is claimed.",
+      "tables": [
+        {"file": "county-participation.csv", "label": "Blair: complete current county ballots, modes, registrations, printed fraction and source qualifications (CSV)"},
+        {"file": "pre-election-zero-participation.csv", "label": "Blair: separately scoped complete pre-election zero participation snapshot, not current turnout (CSV)"},
+        {"file": "county-candidate-results.csv", "label": "Blair: all sixteen current candidate/write-in vectors, literal parties and vote modes, not ballots (CSV)"},
+        {"file": "pre-election-zero-candidate-results.csv", "label": "Blair: all sixteen separate pre-election zero candidate/write-in vectors (CSV)"},
+        {"file": "county-literal-party-totals.csv", "label": "Blair: all 44 current contest/literal-party/mode candidate totals, not party turnout (CSV)"},
+        {"file": "native-reporting-statements.csv", "label": "Blair: both separately scoped reporting statements and native mode literals (CSV)"},
+        {"file": "native-source-pages.csv", "label": "Blair: all four native page identities and separate current/pre-election report timestamps (CSV)"},
+        {"file": "county-contest-accounting.csv", "label": "Blair: all forty separate contest/mode accounting rows; district denominators and missing under/overvote classifications remain absent (CSV)"}
+      ],
+      "coverage": []
+    },
+    {
       "id": "pennsylvania-lebanon-20261106-01",
       "label": "Lebanon County, Pennsylvania 2026: counted ballots with native registration zero withheld",
       "data_directory": "data/county-source-reviews/20261106-lebanon-facts-01",

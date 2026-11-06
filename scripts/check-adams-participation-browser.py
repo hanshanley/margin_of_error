@@ -1,4 +1,4 @@
-"""Verify reviewed Adams or Lebanon participation and preserve previous records and downloads."""
+"""Verify reviewed county participation and preserve previous records and downloads."""
 
 import argparse
 from collections import Counter
@@ -15,22 +15,24 @@ from playwright.sync_api import expect, sync_playwright
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("--base-url", default="http://127.0.0.1:4321")
 parser.add_argument("--proof", type=Path, required=True)
-parser.add_argument("--lebanon", action="store_true")
+batch_args = parser.add_mutually_exclusive_group()
+batch_args.add_argument("--lebanon", action="store_true")
+batch_args.add_argument("--blair", action="store_true")
 args = parser.parse_args()
 assert not args.proof.exists()
 root = Path(__file__).resolve().parents[1]
 base = args.base_url.rstrip("/")
 reviews = json.loads((root / "public/participation-source-reviews.json").read_text())["reviews"]
-county = "Lebanon" if args.lebanon else "Adams"
+county = "Blair" if args.blair else "Lebanon" if args.lebanon else "Adams"
 batch = county.lower()
 review = next(row for row in reviews if row["id"] == f"pennsylvania-{batch}-20261106-01")
 baseline = json.loads((root / f"data/county-source-reviews/20261106-{batch}-publication-01/baseline.json").read_text())
-record_count = 15 if args.lebanon else 14
+record_count = {"Adams": 14, "Lebanon": 15, "Blair": 16}[county]
 added = [review["complete_download_url"]] + [review["base_url"] + table["file"] for table in review["tables"]]
 assert len(set(added)) == 9 and not set(added) & set(baseline["expected_download_urls"])
 expected_links = Counter(baseline["expected_download_urls"]) + Counter(added)
-assert len(expected_links) == (334 if args.lebanon else 315)
-assert sum(expected_links.values()) == (337 if args.lebanon else 318)
+assert len(expected_links) == {"Adams": 315, "Lebanon": 334, "Blair": 343}[county]
+assert sum(expected_links.values()) == {"Adams": 318, "Lebanon": 337, "Blair": 346}[county]
 with (root / review["data_directory"] / "county-participation.csv").open() as source:
     native = next(csv.DictReader(source))
 proof = {"base_url": base, "modes": [], "checks": []}
@@ -40,15 +42,22 @@ errors = []
 def verify_detail(page):
     select = page.locator("#current-county-select")
     expect(select.locator("option")).to_have_count(record_count)
-    select.select_option("reviewed:PA:Lebanon" if args.lebanon else "42001")
+    select.select_option("42001" if county == "Adams" else f"reviewed:PA:{county}")
     detail = page.locator("#current-county-detail")
-    expect(detail.locator(".selection-rate")).to_have_text("51,268" if args.lebanon else "42,660")
+    expect(detail.locator(".selection-rate")).to_have_text(
+        {"Adams": "42,660", "Lebanon": "51,268", "Blair": "43,898"}[county])
     texts = ("Native printed fraction: 0.00%", "Analysis fraction withheld / not supplied",
              "UNOFFICIAL RESULTS", "county: 11/05/2026 12:16 PM (timezone not declared)",
              "unit: 11/05/2026 1:02 PM (timezone not declared)",
              "268 provisionals still to process", "0/60 complete and 60/60 partially reported",
              "registrations are explicitly zero alongside positive ballots",
              "County mapping is not approved") if args.lebanon else (
+                 "81,846 native registered voters", "53.63%", "UNOFFICIAL RESULTS",
+                 "current: 11/03/2026 10:45 PM (timezone not declared)",
+                 "pre_election_zero: 11/03/2026 6:00 AM (timezone not declared)",
+                 "Zero Report is a 6:00 AM pre-election snapshot, not current zero participation",
+                 "Blank ballots and pending ballots are not supplied, not zero",
+                 "County mapping is not approved") if args.blair else (
                  "77,163 native registered voters", "55.29%", "UNOFFICIAL RESULTS",
                  "summary: 11/03/2026 10:23PM (timezone not declared)",
                  "precinct: 11/03/2026 10:23PM (timezone not declared)",
@@ -83,8 +92,11 @@ with sync_playwright() as playwright:
                 assert selected["native_record"]["native_registered_voters"] == "0"
             expect(table.locator("tbody tr")).to_have_count(record_count)
             cells = table.locator("tbody tr").filter(has_text=f"{county}, Pennsylvania").locator("td").all_text_contents()
-            expected_cells = ["51,268", "Withheld (native zero)", "Withheld", "0.00%", "UNOFFICIAL RESULTS"] if args.lebanon else [
-                "42,660", "77,163", "55.29%", "55.29%", "UNOFFICIAL RESULTS"]
+            expected_cells = {
+                "Adams": ["42,660", "77,163", "55.29%", "55.29%", "UNOFFICIAL RESULTS"],
+                "Lebanon": ["51,268", "Withheld (native zero)", "Withheld", "0.00%", "UNOFFICIAL RESULTS"],
+                "Blair": ["43,898", "81,846", "53.63%", "53.63%", "UNOFFICIAL RESULTS"],
+            }[county]
             assert [text.strip() for text in cells[:5]] == expected_cells
             links = Counter(page.locator("#downloads a[download]").evaluate_all(
                 "links => links.map(link => link.getAttribute('href'))"))
