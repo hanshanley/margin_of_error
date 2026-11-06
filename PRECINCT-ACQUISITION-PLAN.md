@@ -2,6 +2,33 @@
 
 ## Current verified production and next acquisition
 
+**November 6, 10:11 UTC: California participation is LIVE verified.**
+Exact UI `527f50fe769b47a67b959f8a7e9e5cf4055bd5e2`, Pages **42199960899
+attempt 1**, passed its original hosted artifact **13494191702 /
+529,456,647 bytes**, SHA-256
+`c40f1e21e91766a10aaa9e4660657dab15e4b5637e8217987613ac8aa5d5189f`.
+All **338 selected entire hosted/public files**, **seven production browser
+scenarios** and credential runs **42199960894 / 42199961149** pass.
+The platform-generated preview is qualified against the hosted publication
+manifest; all other applicable entire bytes are exact. No verifier remains active.
+
+All **58 California county observations** and the **separate native statewide
+8,928,966 voterTurnout / 23,273,590 totalRegisteredVoters observation** are
+available. Its printed 38.4% is a registered-voter fraction, not UF's estimated
+population turnout; candidate votes and mail-only measures remain separate.
+Context10 totals **972 complete records / 500 joins / 127 usable native
+fractions / 373 missing gray rates**, across sixteen jurisdictions. The native
+county table has **107 rows**; all 49 previous rows, 914 previous complete
+context records and 590 previous complete-download anchors remain unchanged.
+There are now **606 complete-download anchors / 602 unique URLs**.
+All **66 affected tests**, Astro checks, build and seven local browser scenarios
+pass; 106 entire download relocations produce a **989,468,797-byte** site.
+The unrelated UK `23 !== 16` assertion remains documented, not fixed or hidden.
+Local/source/credential/deployment/production proofs are saved together under
+`20261106-california-explorer-01`.
+Nationwide acquisition remains unfinished, including 38 unreviewed Pennsylvania
+participation counties and the retained Maine/D.C. accounting gaps.
+
 **November 6, 09:42 UTC: Juniata / Mercer / Montour are LIVE verified.**
 Exact UI `9d7339d78c5ad8bf756c0cafff082432e449b1e4`, Pages **42196054498
 attempt 1**, passed its original hosted artifact **13492073594 /
@@ -41,7 +68,7 @@ After this batch, 29 of the consolidated index's 67 Pennsylvania counties have
 reviewed sources; 38 need primary-source work, alongside missing jurisdictions.
 
 **California's statewide native participation source and county UI integration
-are reviewed and locally verified; deployment is next, not live.**
+are reviewed and production-verified; see the exact current proof above.**
 The actual official November 3 General Election media parent declares both
 catalogs, the bulk workbook and six native text feeds. All thirteen complete
 originals and acquisition receipts are private. The 59-row status JSON is
@@ -113,7 +140,7 @@ reaches only the existing unrelated UK `23 !== 16` assertion at line1126.
 An independent entire-file comparison confirms the final prepared build is
 byte-identical to the build that passed all seven browser scenarios.
 Deployment and original-artifact/public-byte/production-browser verification
-are pending; nothing California is LIVE.
+now pass at the exact revision recorded above.
 Native county codes are not FIPS, clocks have no declared
 timezone, `U/F/SF` retain their literal status, and 100% precinct reporting
 does not imply completed counting or certification. No mode or demographic
