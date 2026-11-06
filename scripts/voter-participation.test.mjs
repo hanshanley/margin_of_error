@@ -69,7 +69,7 @@ test('only reviewed county context archives move to their complete release asset
 		'/participation-county-context/20261106-11/review.json',
 		'/participation-county-context/20261106-11/complete-source-records.json.gz',
 		'/participation-county-context/20261106-11/complete-county-participation-context-10.zip',
-		'/participation-county-context/20261106-14/complete-county-participation-context-14.zip',
+		'/participation-county-context/20261106-15/complete-county-participation-context-15.zip',
 		'/participation-county-context/20261107-01/complete-county-participation-context-01.zip',
 		'/participation-county-context/20261106-11/counties-PA.geojson.gz',
 	]) assert.equal(participationDownload(path), path);
@@ -84,11 +84,35 @@ test('only redundant context13 geometry copies move to fixed complete originals,
 	}
 	for (const path of [
 		'/participation-county-context/20261106-12/geometry/county-GA.geojson',
-		'/participation-county-context/20261106-14/geometry/county-GA.geojson',
+		'/participation-county-context/20261106-15/geometry/county-GA.geojson',
 		'/participation-county-context/20261106-13/geometry/county-TX.geojson',
 		'/participation-county-context/20261106-13/review.json',
 		'/participation-context/20261104T183601Z/geometry/county-GA.geojson',
 	]) assert.equal(participationDownload(path), path);
+});
+
+test('context14 relocates only its verified complete archive and redundant geometry, preserving older URLs', () => {
+	const root = 'https://raw.githubusercontent.com/hanshanley/margin_of_error/5d2e25f80be9f9361cc37a4131eb274323c42e75/public';
+	for (const code of ['AL', 'AR', 'AZ', 'CA', 'DC', 'FL', 'GA', 'IA', 'KY', 'MO', 'NJ', 'NV', 'OR', 'PA', 'VA', 'WA', 'WY']) {
+		const path = `/participation-county-context/20261106-14/geometry/county-${code}.geojson`;
+		assert.equal(participationDownload(path), root + path);
+	}
+	assert.equal(participationDownload('/participation-county-context/20261106-14/complete-county-participation-context-14.zip'),
+		'https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-14/complete-county-participation-context-14.zip');
+	for (const path of ['/participation-county-context/20261106-14/review.json',
+		'/participation-county-context/20261106-14/complete-source-records.json.gz',
+		'/participation-county-context/20261106-14/geometry/county-TX.geojson'])
+		assert.equal(participationDownload(path), path);
+});
+
+test('different pinned paths may share filenames but every entire original must still match', async () => {
+	const files = ['13', '14'].map(version => {
+		const bytes = Buffer.from(`complete-context-${version}`);
+		return { name: 'county-PA.geojson', path: `/context${version}/county-PA.geojson`,
+			url: `source${version}`, bytes: bytes.length, sha256: createHash('sha256').update(bytes).digest('hex') };
+	});
+	await verifyRemoteFiles(files, async url => new Response(`complete-context-${url.slice(-2)}`));
+	await assert.rejects(verifyRemoteFiles(files, async () => new Response('complete-context-13')), /checksum changed/);
 });
 
 test('pinned current data must be complete and byte-identical before removing site copies', async () => {
@@ -104,6 +128,7 @@ test('missing, truncated or changed release downloads stop Pages publication', (
 	const file = { name: 'full.zip', bytes: 42, sha256: 'abc', url: 'https://example.org/full.zip' };
 	const asset = { name: file.name, size: file.bytes, digest: 'sha256:abc', browser_download_url: file.url };
 	verifyReleaseAssets([file], [asset]);
+	assert.throws(() => verifyReleaseAssets([file, file], [asset]), /Release asset names must be unique/);
 	assert.throws(() => verifyReleaseAssets([file], []), /Missing complete download/);
 	assert.throws(() => verifyReleaseAssets([file], [{ ...asset, size: 2 }]), /size changed/);
 	assert.throws(() => verifyReleaseAssets([file], [{ ...asset, digest: 'sha256:changed' }]), /checksum changed/);

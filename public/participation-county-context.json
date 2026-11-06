@@ -1,11 +1,27 @@
 {
   "schema_version": 1,
-  "base_url": "/participation-county-context/20261106-13/",
-  "review_bytes": 1031846,
-  "review_sha256": "5a57c97a69b1510bbc85e719e6ccbeeda262d52a5f5d9cdbe5173d0080fc6766",
-  "complete_download_bytes": 2789632,
-  "complete_download_sha256": "f7a16895a8d97856f391053bb006252495a698c38b3ab6dde1c51b0148d02100",
+  "base_url": "/participation-county-context/20261106-14/",
+  "review_bytes": 1032943,
+  "review_sha256": "7b19f2818ae7a51c991b0f05bafeddc009f616b2a584c5d95890c20c4f09270f",
+  "complete_download_bytes": 2790328,
+  "complete_download_sha256": "deb56b6694bf19e28794f6f236aa30917851b32d8f7704fcc2895cce724dd163",
   "downloads": [
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-14/county-participation-joins.csv",
+      "label": "Complete audited county participation joins: all 662 observations, including Lycoming, Pennsylvania (CSV)"
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-14/review.json",
+      "label": "Complete updated county identity review, exclusions and contextual geometry qualifications (JSON)"
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-14/complete-source-records.json.gz",
+      "label": "Every county, municipal and reporting-unit container: all 1,134 records, preserving the previous 1,133 unchanged (JSON · gzip)"
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-14/complete-county-participation-context-14.zip",
+      "label": "Complete updated county participation context query, inventories, geometries and offline reproduction code (ZIP)"
+    },
     {
       "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-13/county-participation-joins.csv",
       "label": "Complete audited county participation joins: all 661 observations, including all 159 Georgia counties (CSV)"

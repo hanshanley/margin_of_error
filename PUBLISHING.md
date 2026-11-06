@@ -108,16 +108,18 @@ Pages artifact; `--upload` adds missing assets to the pre-created release withou
 overwriting existing files. Publication fails on any missing or changed release asset,
 or if the resulting site exceeds 1 GB.
 
-The thirteen reviewed November 6 county-context ZIPs likewise use their complete,
+The fourteen reviewed November 6 county-context ZIPs likewise use their complete,
 version-specific published release assets. Preparation downloads and verifies every
 entire archive against its original staged bytes before removing only the redundant
 build-output ZIPs. Context review JSON, source records and interactive geometry stay
 local; all historical downloads remain available. Unreviewed context versions are
 not relocated automatically.
-Context13's 17 redundant geometry copies also use their complete originals at the
-fixed context-source revision. Preparation verifies every full file before removing
-only those build-output copies; the original interactive geometry, current review
-JSON and every historical geometry copy stay local and unchanged.
+Context13 and context14 each have 17 redundant geometry copies that use their complete
+originals at the respective fixed context-source revisions. Preparation verifies every
+full file before removing only those build-output copies; the original interactive
+geometry, current review JSON and all earlier historical geometry copies stay local
+and unchanged. Identically named files at distinct commit-pinned paths are verified
+separately; assets within the shared bulk release must still have unique names.
 
 Historical NC year-table JSON uses the complete originals in the same pinned
 research commit instead of duplicating them in Pages. Both the native and adapted

@@ -2,6 +2,32 @@
 
 ## Current verified production and next acquisition
 
+**Lycoming/context14 integration is locally verified, not yet LIVE.**
+Factual source `e50241f5f2de734b7e8107ac6518eae19480c926` and context
+`5d2e25f80be9f9361cc37a4131eb274323c42e75` are fixed and fully published.
+Context14 release **436466921** passes all four entire anonymous assets,
+31 pinned files, thirty archive members, extracted offline reproduction and
+credential jobs **42216745013 / 42216780981**. It preserves all 1,133 previous
+records, 661 joins and seventeen unchanged geometries.
+The updated source registration, county adapter, pointer and fixed download
+routing pass **81 focused tests**, Astro check (**zero errors/warnings**),
+build, **154 entire relocated download checks** and **seven local browser
+scenarios**. The compatible legacy renderer is regenerated from the unchanged
+pinned research source, with its manifest updated; original data is untouched.
+Prepared local size is **988,425,191 bytes**, not a substitute for the actual
+hosted measurement. Context14 has **1,134 source records / 662 joins /
+286 usable county rates / 376 missing gray rates**, across seventeen
+jurisdictions. Native rows are **269 / 32 Pennsylvania**, with **684 download
+anchors / 680 URLs**; all 663 old anchors survive. Only the complete context14
+ZIP and seventeen duplicate build-output geometries are additionally relocated
+after full-byte verification. Distinct pinned paths may share filenames;
+shared-release asset names must remain unique. Original interactive geometry,
+earlier snapshots and complete downloads remain intact.
+**Next:** publish this UI, verify its exact credential jobs, original Pages
+artifact, actual hosted size, all selected entire public bytes and seven
+production browser scenarios before setting any new LIVE flag.
+See `20261106-lycoming-explorer-01`.
+
 **November 6, 12:12 UTC: Georgia participation and context13 are LIVE verified.**
 Exact UI `350ea218cf97756d7c61d23aa50f542a10367d07`, Pages **42214264656
 attempt 1**, passed its original hosted artifact **13500538140 /
@@ -196,14 +222,12 @@ Immutable source release **436462656**, tag
 and both exact credential jobs **42216095844 / 42216176276**.
 The source publisher completed; do not recreate or overwrite these assets.
 See `20261106-lycoming-publication-01`.
-**Next:** register this fixed source, extend context13 without changing any of
-its 1,133 records or seventeen geometries, and separately release context14.
-The intended addition is one county count and one valid administrative
-registration fraction, not candidate-mode or demographic participation.
-Then run the required changed-UI tests/build/Pages preparation and exact
-production proof, checking the actual hosted size against the current
-996,218,736-byte baseline. Source registration, context14 and explorer
-integration remain pending; no Lycoming native row, rate or map is yet live.
+The source is now registered, context13 is extended without changing any of
+its 1,133 records or seventeen geometries, and context14 is separately released.
+The addition is one county count and one valid administrative registration
+fraction, not candidate-mode or demographic participation. Changed-UI checks,
+build, Pages preparation and local browsers pass above. Exact production
+proof and actual hosted size remain pending; no Lycoming row is yet LIVE.
 
 The local context14 extension now passes the complete offline verifier:
 **1,134 source records / 662 contextual joins / 286 usable registration
@@ -216,9 +240,10 @@ The complete **31-file / thirty-member** context package is **2,790,328 bytes**,
 SHA-256 `deb56b6694bf19e28794f6f236aa30917851b32d8f7704fcc2895cce724dd163`.
 The fixed context14 review is **1,032,943 bytes**, SHA-256
 `7b19f2818ae7a51c991b0f05bafeddc009f616b2a584c5d95890c20c4f09270f`.
-Do not modify this frozen package for UI convenience. Immutable context14
-release verification remains required before changing the current pointer;
-full changed-UI validation and actual deployment proof remain pending.
+Do not modify this frozen package for UI convenience. Context14 release
+**436466921** is fully byte-verified, including offline reproduction and both
+credential jobs; the local pointer changes only after that proof. Changed-UI
+validation passes above; actual deployment proof remains pending.
 The bounded other-parent attempts preserve Butler's **404** parent and summary
 response, and Snyder's **406** response, without bypass or approval of cached
 search text. Dauphin's already-published candidate package is not reacquired;
