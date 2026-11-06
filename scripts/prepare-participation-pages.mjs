@@ -5,7 +5,7 @@ import { copyFile, mkdtemp, readdir, readFile, rmdir, stat, unlink, writeFile } 
 import { tmpdir } from 'node:os';
 import { join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { participationCurrentRoot, participationHistoricalRoot, participationDownload, participationRelease } from '../public/scripts/participation-downloads.js';
+import { participationCurrentRoot, participationHistoricalRoot, participationCountyContextRoot, participationDownload, participationRelease } from '../public/scripts/participation-downloads.js';
 
 const repository = 'hanshanley/margin_of_error';
 const sha256 = bytes => createHash('sha256').update(bytes).digest('hex');
@@ -61,7 +61,7 @@ export async function preparePages(output, upload = false) {
 	}
 	assert.ok(files.length, 'Prepare a fresh, complete build before publishing');
 	assert.equal(new Set(files.map(file => file.name)).size, files.length, 'Release asset names must be unique');
-	const pinnedFiles = files.filter(file => [participationCurrentRoot, participationHistoricalRoot,
+	const pinnedFiles = files.filter(file => [participationCurrentRoot, participationHistoricalRoot, participationCountyContextRoot,
 		'https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-']
 		.some(root => file.url.startsWith(root)));
 	const releaseFiles = files.filter(file => !pinnedFiles.includes(file));

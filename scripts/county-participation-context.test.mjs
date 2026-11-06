@@ -7,13 +7,14 @@ import { createCountyContextReview, loadCountyContextReview } from './build-coun
 import { loadAdditionalParticipation } from './additional-participation.mjs';
 import { loadReviewedCountyParticipation } from './reviewed-county-participation.mjs';
 
-const root = new URL('../public/participation-county-context/20261106-12/', import.meta.url);
-const batchIds = ['pennsylvania-greene-20261106-01', 'pennsylvania-columbia-20261106-01', 'california-bulk-participation-20261106-01', 'pennsylvania-juniata-20261106-01', 'pennsylvania-mercer-20261106-01',
+const root = new URL('../public/participation-county-context/20261106-13/', import.meta.url);
+const batchIds = ['georgia-bulk-participation-20261106-01', 'pennsylvania-greene-20261106-01', 'pennsylvania-columbia-20261106-01', 'california-bulk-participation-20261106-01', 'pennsylvania-juniata-20261106-01', 'pennsylvania-mercer-20261106-01',
   'pennsylvania-montour-20261106-01'];
 const json = file => JSON.parse(readFileSync(new URL(file, root), 'utf8'));
 const compressed = file => JSON.parse(gunzipSync(readFileSync(new URL(file, root))));
 const review = json('review.json');
-const previousGeometry = Object.fromEntries(Object.entries(review.geometry).filter(([code]) => code !== 'CA'));
+const geometryBeforeGeorgia = Object.fromEntries(Object.entries(review.geometry).filter(([code]) => code !== 'GA'));
+const previousGeometry = Object.fromEntries(Object.entries(geometryBeforeGeorgia).filter(([code]) => code !== 'CA'));
 const records = compressed('complete-source-records.json.gz');
 const inventories = Object.fromEntries(['2024', '2026'].map(year =>
   [year, compressed(`complete-${year}-county-identities.json.gz`)]));
@@ -29,8 +30,8 @@ test('complete county review reproduces without changing any source observations
     ...loadReviewedCountyParticipation(JSON.parse(readFileSync('public/participation-source-reviews.json')).reviews)];
   assert.deepEqual(records, liveRecords);
   assert.deepEqual(createCountyContextReview(records, inventories, collections, investigation), review);
-  assert.deepEqual(review.counts, { complete_source_records: 974, contextual_joins: 502, jurisdictions: 16,
-    reviewed_rates: 128, missing_rates: 374, excluded_municipalities: 286, excluded_missing_county_totals: 186 });
+  assert.deepEqual(review.counts, { complete_source_records: 1133, contextual_joins: 661, jurisdictions: 17,
+    reviewed_rates: 285, missing_rates: 376, excluded_municipalities: 286, excluded_missing_county_totals: 186 });
   assert.ok(review.observations.every(row => row.source_map_approval_unchanged === false));
 });
 
@@ -45,7 +46,7 @@ test('independent joins use each entire unchanged record and exact contextual ge
       if (row.reported_pct !== null) rates++;
     }
   }
-  assert.equal(joined, 502); assert.equal(rates, 128);
+  assert.equal(joined, 661); assert.equal(rates, 285);
   assert.equal((await match(records.filter(row => ['VT', 'RI', 'MN', 'ND', 'ID', 'MI'].includes(row.state_code)))).size, 0);
   const nj = await match(records.filter(row => row.state_code === 'NJ'), review, 'NJ');
   assert.equal(nj.size, 19);
@@ -244,7 +245,7 @@ test('preserves context09 while joining all 58 California identities with native
   const previous = new URL('../public/participation-county-context/20261106-09/', import.meta.url);
   const oldRecords = JSON.parse(gunzipSync(readFileSync(new URL('complete-source-records.json.gz', previous))));
   const oldReview = JSON.parse(readFileSync(new URL('review.json', previous), 'utf8'));
-  const isNew = row => row.state_code === 'CA'
+  const isNew = row => ['CA', 'GA'].includes(row.state_code)
     || ['pennsylvania-columbia-20261106-01', 'pennsylvania-greene-20261106-01'].includes(row.review_id);
   assert.deepEqual(records.filter(row => !isNew(row)), oldRecords);
   assert.deepEqual(review.observations.filter(row => !isNew(row)), oldReview.observations);
@@ -269,11 +270,12 @@ test('preserves all context10 facts and geometry while independently joining Col
   const previous = new URL('../public/participation-county-context/20261106-10/', import.meta.url);
   const oldRecords = JSON.parse(gunzipSync(readFileSync(new URL('complete-source-records.json.gz', previous))));
   const oldReview = JSON.parse(readFileSync(new URL('review.json', previous), 'utf8'));
-  const isNew = row => ['pennsylvania-columbia-20261106-01', 'pennsylvania-greene-20261106-01'].includes(row.review_id);
+  const isNew = row => ['pennsylvania-columbia-20261106-01', 'pennsylvania-greene-20261106-01',
+    'georgia-bulk-participation-20261106-01'].includes(row.review_id);
   assert.deepEqual(records.filter(row => !isNew(row)), oldRecords);
   assert.deepEqual(review.observations.filter(row => !isNew(row)), oldReview.observations);
   assert.deepEqual(review.excluded, oldReview.excluded);
-  assert.deepEqual(review.geometry, oldReview.geometry);
+  assert.deepEqual(geometryBeforeGeorgia, oldReview.geometry);
   const joined = await match(records.filter(row => row.state_code === 'PA'), review, 'PA');
   const row = joined.get('42037');
   assert.equal(row.county, 'Columbia');
@@ -289,11 +291,11 @@ test('preserves context11 and joins Greene without promoting missing turnout or 
   const previous = new URL('../public/participation-county-context/20261106-11/', import.meta.url);
   const oldRecords = JSON.parse(gunzipSync(readFileSync(new URL('complete-source-records.json.gz', previous))));
   const oldReview = JSON.parse(readFileSync(new URL('review.json', previous), 'utf8'));
-  const isNew = row => row.review_id === 'pennsylvania-greene-20261106-01';
+  const isNew = row => ['pennsylvania-greene-20261106-01', 'georgia-bulk-participation-20261106-01'].includes(row.review_id);
   assert.deepEqual(records.filter(row => !isNew(row)), oldRecords);
   assert.deepEqual(review.observations.filter(row => !isNew(row)), oldReview.observations);
   assert.deepEqual(review.excluded, oldReview.excluded);
-  assert.deepEqual(review.geometry, oldReview.geometry);
+  assert.deepEqual(geometryBeforeGeorgia, oldReview.geometry);
   const joined = await match(records.filter(row => row.state_code === 'PA'), review, 'PA');
   const row = joined.get('42059');
   assert.equal(row.county, 'Greene');
@@ -306,6 +308,32 @@ test('preserves context11 and joins Greene without promoting missing turnout or 
   const changed = copy(records);
   changed.find(isNew).denominator = 0;
   assert.throws(() => loadCountyContextReview(changed), /complete current source records/);
+});
+
+test('preserves all context12 facts and joins 159 Georgia counties without turning two missing rates into zero', async () => {
+  const previous = new URL('../public/participation-county-context/20261106-12/', import.meta.url);
+  const oldRecords = JSON.parse(gunzipSync(readFileSync(new URL('complete-source-records.json.gz', previous))));
+  const oldReview = JSON.parse(readFileSync(new URL('review.json', previous), 'utf8'));
+  assert.deepEqual(records.filter(row => row.state_code !== 'GA'), oldRecords);
+  assert.deepEqual(review.observations.filter(row => row.state_code !== 'GA'), oldReview.observations);
+  assert.deepEqual(review.excluded, oldReview.excluded);
+  assert.deepEqual(geometryBeforeGeorgia, oldReview.geometry);
+  const joined = await match(records.filter(row => row.state_code === 'GA'), review, 'GA');
+  assert.equal(joined.size, 159);
+  assert.equal([...joined.values()].filter(row => row.reported_pct !== null).length, 157);
+  assert.equal([...joined.values()].reduce((sum, row) => sum + row.ballots, 0), 4210155);
+  for (const [geoid, county, ballots] of [['13251', 'Screven County', 5236], ['13161', 'Jeff Davis County', 4180]]) {
+    const row = joined.get(geoid);
+    assert.equal(row.county, county);
+    assert.equal(row.ballots, ballots);
+    assert.equal(row.reported_pct, null);
+    assert.equal(row.denominator, null);
+    assert.equal(Number(row.native_record.native_total_voters), 0);
+    assert.equal(row.native_record.source_fips, '');
+    assert.equal(row.maps_approved, false);
+  }
+  assert.equal(review.geometry.GA.boundary_year, 2024);
+  assert.throws(() => loadCountyContextReview(oldRecords), /complete current source records/);
 });
 
 test('publication refuses changed, missing or duplicated source records rather than reusing old approvals', () => {

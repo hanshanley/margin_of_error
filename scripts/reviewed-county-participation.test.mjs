@@ -9,7 +9,84 @@ import { loadReviewedCountyParticipation, loadReviewedStatewideParticipation } f
 
 const reviews = JSON.parse(readFileSync('public/participation-source-reviews.json', 'utf8')).reviews;
 const batchCounties = ['Juniata', 'Mercer', 'Montour', 'Columbia', 'Greene'];
-const isBatch = row => row.state_code === 'CA' || row.state_code === 'PA' && batchCounties.includes(row.county);
+const isBatch = row => ['CA', 'GA'].includes(row.state_code) || row.state_code === 'PA' && batchCounties.includes(row.county);
+
+test('adds all 159 Georgia native county observations without changing the prior 974-record query', () => {
+  const rows = loadReviewedCountyParticipation(reviews);
+  const previous = JSON.parse(gunzipSync(readFileSync(
+    'public/participation-county-context/20261106-12/complete-source-records.json.gz')));
+  const oldReviewed = previous.filter(row => rows.some(current => current.county_id === row.county_id
+    && current.state_code === row.state_code));
+  assert.deepEqual(rows.filter(row => row.state_code !== 'GA'), oldReviewed);
+  const counties = rows.filter(row => row.state_code === 'GA');
+  const source = reviews.find(row => row.id === 'georgia-bulk-participation-20261106-01');
+  const native = parse(readFileSync(join(source.data_directory, 'county-participation.csv')), { columns: true });
+  assert.equal(counties.length, 159);
+  assert.deepEqual(counties.map(row => row.native_record), native);
+  assert.equal(counties.reduce((sum, row) => sum + row.ballots, 0), 4210155);
+  assert.equal(counties.reduce((sum, row) => sum + (row.denominator ?? 0), 0), 7516484);
+  assert.equal(counties.filter(row => row.reported_pct !== null).length, 157);
+  for (const row of counties) {
+    assert.equal(row.ballots, Number(row.native_record.native_ballots_cast));
+    assert.equal(row.native_record.source_fips, '');
+    assert.equal(row.maps_approved, false);
+    assert.equal(row.native_record.counting_complete, 'False');
+    assert.equal(row.participation_measure_literal, 'ballotsCast');
+    assert.match(row.source_reporting_label, /not completed counting or certification/);
+    assert.equal(row.native_source_updates.length, 3);
+    for (const update of row.native_source_updates)
+      assert.equal(update.declared_timezone, update.native_update_literal.endsWith('Z') ? 'UTC' : '');
+    if (row.denominator !== null) assert.equal(row.reported_pct, 100 * row.ballots / row.denominator);
+  }
+  for (const [county, ballots] of [['Screven County', 5236], ['Jeff Davis County', 4180]]) {
+    const row = counties.find(row => row.county === county);
+    assert.equal(row.ballots, ballots);
+    assert.equal(Number(row.native_record.native_total_voters), 0);
+    assert.equal(row.denominator, null);
+    assert.equal(row.reported_pct, null);
+    assert.equal(row.native_printed_pct, null);
+  }
+  assert.deepEqual(counties.filter(row => row.native_record.native_is_official_results === 'True')
+    .map(row => row.county), ['Wilkinson County']);
+});
+
+test('retains the independent Georgia statewide Voters header and conflicting API root zero without approving its rate', () => {
+  const state = loadReviewedStatewideParticipation(reviews).find(row => row.state_code === 'GA');
+  assert.equal(state.state, 'Georgia');
+  assert.equal(state.ballots, 4210155);
+  assert.equal(state.denominator, 7516484);
+  assert.equal(state.native_printed_pct, '56.01%');
+  assert.equal(state.native_record.original_conflicting_api_root_ballots, '0');
+  assert.equal(state.native_record.missing_county_registration_denominators, '2');
+  assert.equal(state.validated_pct, null);
+  assert.equal(state.reported_pct, null);
+  assert.equal(state.native_record.printed_timezone, '');
+  assert.match(state.source_update_label, /Thursday, November 5, 2026 at 12:29:04 PM.*timezone not declared/);
+  assert.equal(state.source_status_literal, 'Native isOfficialResults=false (unofficial)');
+  assert.match(state.quality.join(' '), /372 missing candidate-mode cells are not zero/);
+  assert.match(state.quality.join(' '), /not an approved analysis rate/);
+});
+
+test('both Georgia loaders reject changed complete inputs and missing or duplicate source registrations', () => {
+  const original = reviews.find(row => row.id === 'georgia-bulk-participation-20261106-01');
+  const directory = mkdtempSync(join(tmpdir(), 'georgia-participation-'));
+  try {
+    const files = ['county-participation.csv', 'statewide-participation.csv', 'audit.json'];
+    const altered = reviews.map(row => row === original ? { ...row, data_directory: directory } : row);
+    for (const changed of files) {
+      for (const file of files) copyFileSync(join(original.data_directory, file), join(directory, file));
+      writeFileSync(join(directory, changed), readFileSync(join(directory, changed), 'utf8') + '\n');
+      for (const load of [loadReviewedCountyParticipation, loadReviewedStatewideParticipation])
+        assert.throws(() => load(altered), /Invalid reviewed county participation/);
+    }
+    for (const load of [loadReviewedCountyParticipation, loadReviewedStatewideParticipation]) {
+      assert.throws(() => load(reviews.filter(row => row !== original)), /Missing or duplicated reviewed county source/);
+      assert.throws(() => load([...reviews, original]), /Missing or duplicated reviewed county source/);
+    }
+  } finally {
+    rmSync(directory, { recursive: true, force: true });
+  }
+});
 
 test('preserves all context10 observations and separates Columbia participation from filtered mail processing', () => {
   const rows = loadReviewedCountyParticipation(reviews);
@@ -18,7 +95,7 @@ test('preserves all context10 observations and separates Columbia participation 
   const oldReviewed = previous.filter(row => rows.some(current => current.county_id === row.county_id
     && current.state_code === row.state_code));
   assert.deepEqual(rows.filter(row => !['pennsylvania-columbia-20261106-01',
-    'pennsylvania-greene-20261106-01'].includes(row.review_id)), oldReviewed);
+    'pennsylvania-greene-20261106-01', 'georgia-bulk-participation-20261106-01'].includes(row.review_id)), oldReviewed);
   const row = rows.find(row => row.review_id === 'pennsylvania-columbia-20261106-01');
   assert.equal(row.ballots, 22583);
   assert.equal(row.denominator, 40797);
@@ -47,7 +124,7 @@ test('adds all California native participation records while preserving every pr
     'public/participation-county-context/20261106-09/complete-source-records.json.gz')));
   const oldReviewed = previous.filter(row => rows.some(current => current.county_id === row.county_id
     && current.state_code === row.state_code));
-  assert.deepEqual(rows.filter(row => row.state_code !== 'CA'
+  assert.deepEqual(rows.filter(row => !['CA', 'GA'].includes(row.state_code)
     && !['pennsylvania-columbia-20261106-01', 'pennsylvania-greene-20261106-01'].includes(row.review_id)), oldReviewed);
   const source = reviews.find(row => row.id === 'california-bulk-participation-20261106-01');
   const native = parse(readFileSync(join(source.data_directory, 'county-participation.csv'), 'utf8'),
@@ -559,7 +636,8 @@ test('preserves context11 and loads Greene ballots without inventing its missing
     'public/participation-county-context/20261106-11/complete-source-records.json.gz')));
   const oldReviewed = previous.filter(row => rows.some(current => current.county_id === row.county_id
     && current.state_code === row.state_code));
-  assert.deepEqual(rows.filter(row => row.review_id !== 'pennsylvania-greene-20261106-01'), oldReviewed);
+  assert.deepEqual(rows.filter(row => !['pennsylvania-greene-20261106-01',
+    'georgia-bulk-participation-20261106-01'].includes(row.review_id)), oldReviewed);
   const row = rows.find(row => row.review_id === 'pennsylvania-greene-20261106-01');
   const source = reviews.find(source => source.id === row.review_id);
   assert.deepEqual(row.native_record, parse(readFileSync(join(source.data_directory,
@@ -586,11 +664,12 @@ test('preserves context11 and loads Greene ballots without inventing its missing
 
 test('loads all reviewed county participation without promoting map coverage', () => {
   const rows = loadReviewedCountyParticipation(reviews);
-  assert.equal(rows.length, 109);
+  assert.equal(rows.length, 268);
   assert.equal(rows.filter(row => row.state_code === 'PA').length, 31);
   assert.equal(rows.filter(row => row.state_code === 'DC').length, 1);
   assert.equal(rows.filter(row => row.state_code === 'NJ').length, 19);
   assert.equal(rows.filter(row => row.state_code === 'CA').length, 58);
+  assert.equal(rows.filter(row => row.state_code === 'GA').length, 159);
   assert.ok(rows.every(row => row.maps_approved === false));
   assert.ok(rows.filter(row => row.state_code !== 'CA'
     && !['pennsylvania-columbia-20261106-01', 'pennsylvania-greene-20261106-01']

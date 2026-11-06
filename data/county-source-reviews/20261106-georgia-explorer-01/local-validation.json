@@ -1,0 +1,19 @@
+{
+  "verified_at_utc": "2026-11-06T11:55:55.962880+00:00",
+  "participation_node_tests_passed": 76,
+  "build_caucus_tests_passed": 4,
+  "astro_check_errors": 0,
+  "astro_check_warnings": 0,
+  "astro_build_passed": true,
+  "complete_relocated_downloads_verified": 136,
+  "prepared_local_site_bytes": 986079869,
+  "download_manifest_sha256": "b260696df5d5c56ec3afb38865776502a600febe71d05d6c5cb0e056e63e9f7c",
+  "local_browser_proof": "local-browser.json",
+  "known_unrelated_full_validator_failure": {
+    "file": "scripts/validate-build.mjs",
+    "line": 1126,
+    "actual": 23,
+    "expected": 16
+  },
+  "scope": "Full validator was run against unprepared bytes; all participation checks pass before the established unrelated UK baseline. Preparation verifies entire download bytes before removing only redundant build-output copies; historical originals and interactive geometry stay unchanged."
+}

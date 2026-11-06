@@ -108,11 +108,96 @@ function loadCaliforniaParticipation(reviews) {
 }
 
 export function loadReviewedStatewideParticipation(reviews) {
-  return loadCaliforniaParticipation(reviews).filter(row => row.geography_level === 'statewide').map(row => ({
+  const california = loadCaliforniaParticipation(reviews).filter(row => row.geography_level === 'statewide').map(row => ({
     ...row, state: 'California', mode: 'official', validated_pct: row.reported_pct,
     source_date: row.source_update_label, status: 'reviewed_unofficial_snapshot',
     observation_type: row.participation_measure_label,
   }));
+  return [...california, loadGeorgiaParticipation(reviews).statewide];
+}
+
+function loadGeorgiaParticipation(reviews) {
+  const id = 'georgia-bulk-participation-20261106-01';
+  const matches = reviews.filter(review => review.id === id);
+  if (matches.length !== 1) throw new Error(`Missing or duplicated reviewed county source: ${id}`);
+  const review = matches[0], directory = resolve(review.data_directory);
+  for (const [file, digest] of Object.entries({
+    'county-participation.csv': '31176798e6ed604c1f84de6f00212e83539bf0643adc33f4843b77590e15dbb1',
+    'statewide-participation.csv': 'b882f7f97f0df02fc9b94cbbb18c60416cf3331fa9eb3f34c6b484514a368067',
+    'audit.json': 'fa75a75d5751cf5f697df0da3f1e7c29446e69b9e7910e63e9ebb54220db91fa',
+  })) {
+    if (createHash('sha256').update(readFileSync(resolve(directory, file))).digest('hex') !== digest)
+      throw new Error(`Invalid reviewed county participation: ${id} / ${file}`);
+  }
+  const nativeRows = csv(resolve(directory, 'county-participation.csv'));
+  const states = csv(resolve(directory, 'statewide-participation.csv'));
+  const audit = JSON.parse(readFileSync(resolve(directory, 'audit.json'), 'utf8'));
+  if (nativeRows.length !== 159 || states.length !== 1 || audit.native_counties !== 159
+    || audit.usable_native_county_fractions !== 157 || audit.missing_county_fractions !== 2
+    || new Set(nativeRows.map(row => row.county)).size !== 159
+    || new Set(nativeRows.map(row => row.native_uuid.toLowerCase())).size !== 159
+    || new Set(nativeRows.map(row => row.native_media_county_id)).size !== 159
+    || nativeRows.reduce((total, row) => total + Number(row.native_ballots_cast), 0) !== Number(states[0].ballots)
+    || nativeRows.reduce((total, row) => total + Number(row.native_total_voters), 0) !== Number(states[0].voters)
+    || states[0].ballots !== '4210155' || states[0].voters !== '7516484'
+    || states[0].original_conflicting_api_root_ballots !== '0'
+    || states[0].missing_county_registration_denominators !== '2'
+    || states[0].rate_comparable_to_cvap !== 'False')
+    throw new Error(`Incomplete reviewed county source: ${id}`);
+  const quality = [
+    'Native ballotsCast separately agrees with the rendered Voters page, not a candidate sum or mail receipt count.',
+    'Native Voters/totalVoters is a registration denominator of unspecified active/inactive scope, not CVAP, VAP, VEP, CPS or demographic turnout.',
+    'Screven and Jeff Davis have native zero denominators and blank rates, not zero turnout. No active/inactive decomposition is inferred.',
+    'Native media county IDs are not FIPS. Reporting statuses and official flags do not independently establish completed counting or certification.',
+    'Candidate, party and voting-mode queries remain separate; 372 missing candidate-mode cells are not zero or inferred participation modes.',
+  ];
+  const counties = nativeRows.map(native => {
+    const ballots = Number(native.native_ballots_cast), voters = Number(native.native_total_voters);
+    const denominator = voters > 0 ? voters : null;
+    if (native.year !== '2026' || native.state_code !== 'GA' || !Number.isSafeInteger(ballots) || ballots <= 0
+      || !Number.isSafeInteger(voters) || voters < 0 || Number(native.native_registration_total) !== voters
+      || native.source_fips !== '' || native.maps_approved !== 'False' || native.counting_complete !== 'False'
+      || !['True', 'False'].includes(native.native_is_official_results)
+      || (denominator === null ? native.native_fraction !== '' || native.native_printed_turnout !== ''
+        || native.usable_native_fraction !== 'False'
+        : ballots > denominator || native.usable_native_fraction !== 'True'
+          || native.native_printed_turnout !== `${(100 * ballots / denominator).toFixed(2)}%`
+          || Math.abs(100 * Number(native.native_fraction) - 100 * ballots / denominator) > 0.005000001))
+      throw new Error(`Invalid reviewed county participation: ${id} / ${native.county}`);
+    const updates = ['native_as_of', 'native_last_updated', 'native_publish_date'].map(field => ({
+      source: field, native_update_literal: native[field], declared_timezone: native[field].endsWith('Z') ? 'UTC' : '',
+    }));
+    return {
+      year: 2026, state_code: 'GA', county_id: `reviewed:GA:${native.native_uuid.toLowerCase()}`,
+      county: native.county, geography_level: 'county', ballots, denominator,
+      participation_measure_kind: 'native_ballot_total', participation_measure_literal: 'ballotsCast',
+      participation_measure_label: 'Native ballotsCast (reported ballots)',
+      denominator_basis: 'native_registered_voters', reported_pct: denominator === null ? null : 100 * ballots / denominator,
+      native_printed_pct: native.native_printed_turnout || null,
+      source_status_literal: `Native isOfficialResults=${native.native_is_official_results === 'True'}`,
+      reported_units: null, total_units: null, source_rows: 1, maps_approved: false,
+      review_id: id, native_record: native, native_source_updates: updates,
+      source_update_label: updates.map(row => `${row.source}: ${row.native_update_literal || 'not supplied'}`).join('; '),
+      source_reporting_label: `Native county reporting statuses: ${native.native_reporting_json}. `
+        + 'Reporting completeness is not completed counting or certification. Native ballots include reported returns, '
+        + 'not inferred future ballot modes or a unique-voter estimate. Candidate votes and missing mode cells remain separate.',
+      source_url: `${review.base_url}county-participation.csv`, complete_download_url: review.complete_download_url, quality,
+    };
+  });
+  const native = states[0];
+  return { counties, statewide: {
+    year: 2026, state_code: 'GA', state: 'Georgia', geography_level: 'statewide', mode: 'official', review_id: id,
+    ballots: Number(native.ballots), denominator: Number(native.voters), denominator_basis: 'native_registered_voters',
+    reported_pct: null, validated_pct: null, native_printed_pct: `${native.printed_turnout}%`,
+    participation_measure_kind: 'native_ballot_total', participation_measure_literal: 'Ballots Cast',
+    participation_measure_label: 'Native Ballots Cast (reported ballots)', observation_type: 'Native Ballots Cast',
+    source_status_literal: 'Native isOfficialResults=false (unofficial)',
+    source_date: native.source_update_literal, source_update_label: `${native.source_update_literal} (timezone not declared)`,
+    status: 'reviewed_unofficial_snapshot', native_record: native,
+    source_url: `${review.base_url}statewide-participation.csv`, complete_download_url: review.complete_download_url,
+    quality: [...quality, 'Printed statewide 56.01% is retained, not an approved analysis rate: two county registration denominators are missing.',
+      'Original API root ballotsCast=0 remains a conflicting field; the rendered Voters header separately reports 4,210,155.'],
+  } };
 }
 
 function loadNewJerseyParticipation(reviews) {
@@ -530,5 +615,6 @@ export function loadReviewedCountyParticipation(reviews) {
     }
   }
   return [...observations, ...loadNewJerseyParticipation(reviews),
-    ...loadCaliforniaParticipation(reviews).filter(row => row.geography_level === 'county')];
+    ...loadCaliforniaParticipation(reviews).filter(row => row.geography_level === 'county'),
+    ...loadGeorgiaParticipation(reviews).counties];
 }

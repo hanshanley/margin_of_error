@@ -1,6 +1,34 @@
 {
   "reviews": [
     {
+      "id": "georgia-bulk-participation-20261106-01",
+      "label": "Georgia 2026: all 159 county participation observations and complete native results query",
+      "data_directory": "data/county-source-reviews/20261106-georgia-facts-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/2bc3119575435542dc89f775c1f28509b3524e63/data/county-source-reviews/20261106-georgia-facts-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-georgia-native-query-20261106-01/complete-georgia-native-query-01.zip",
+      "complete_download_bytes": 4739339,
+      "complete_download_sha256": "f8900610f3731dd10cb191637b35ec572013961ff4d2a29aa24c3fe0809b8932",
+      "review_status": "complete_bulk_native_participation_and_results_query_reviewed",
+      "maps_approved": false,
+      "scope_note": "All 159 native county ballotsCast and registration totals agree with the rendered Voters page; 157 usable county fractions and two missing rates remain separate. The native Voters header independently prints 4,210,155 Ballots Cast / 7,516,484 Voters / 56.01%; the original conflicting API root zero survives, never as actual zero participation. The statewide printed fraction remains informational, not an approved analysis rate while two county denominators are missing. Wilkinson alone retains its true native official flag; the root remains unofficial. All 273 root contests/457 choices and their literal parties/modes reconcile between API and media export. The complete export includes 3,894 county contests, 7,067 county choices and 102,214 precinct-choice records with nested modes. All 372 missing mode cells, 116 party-attribute differences, wording aliases, precinct residuals and unresolved party/stage scopes survive without filling, pooling or inferred undervotes. Candidate-party votes are not voter participation by party. Native county media IDs are not FIPS. Contextual identities are independently reviewed separately; no certified 2026 election geometry, demographic turnout, completed counting or certification is inferred. Complete factual data, ten CSV queries, offline code/tests and the full archive are provided, not metadata-only downloads. Original HTML, browser traffic and application configuration remain private.",
+      "tables": [
+        {"file": "county-participation.csv", "label": "Georgia: all 159 native county participation counts, registration fields, fractions and clocks (CSV)"},
+        {"file": "statewide-participation.csv", "label": "Georgia: separate native statewide Voters totals and retained conflicting API root zero (CSV)"},
+        {"file": "candidate-results.csv", "label": "Georgia: all 7,524 statewide/county candidate-choice rows and literal parties (CSV)"},
+        {"file": "native-contests.csv", "label": "Georgia: all 4,167 statewide/county contest scopes, titles and native reporting fields (CSV)"},
+        {"file": "candidate-mode-results.csv", "label": "Georgia: all native candidate-mode rows, retaining 372 missing cells (CSV)"},
+        {"file": "precinct-choice-results.csv.gz", "label": "Georgia: all 102,214 native precinct-choice records and complete nested mode data (CSV · gzip)"},
+        {"file": "literal-party-totals.csv", "label": "Georgia: separate native contest/literal-party choice totals, not party participation (CSV)"},
+        {"file": "choice-accounting.csv", "label": "Georgia: all known/missing mode cells and unclassified precinct residuals by choice (CSV)"},
+        {"file": "native-reporting-statuses.csv", "label": "Georgia: complete statewide/county native mode reporting statuses (CSV)"},
+        {"file": "source-receipts.csv", "label": "Georgia: complete API, media export and clean rendered Voters observation receipts (CSV)"},
+        {"file": "source-records.json.gz", "label": "Georgia: complete factual native queries, every nested precinct mode and rendered Voters evidence (JSON · gzip)"},
+        {"file": "review-georgia-native-query.py", "label": "Georgia: portable standard-library complete query reproducer (Python)"},
+        {"file": "test-georgia-native-query.py", "label": "Georgia: seven focused native-query and missingness regression tests (Python)"}
+      ],
+      "coverage": []
+    },
+    {
       "id": "pennsylvania-greene-20261106-01",
       "label": "Greene County, Pennsylvania 2026: native ballot total and complete county factual query",
       "data_directory": "data/county-source-reviews/20261106-greene-facts-01",

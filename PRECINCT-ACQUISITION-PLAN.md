@@ -56,7 +56,25 @@ Its complete query has **1,133 records / 661 joins / 285 usable county rates /
 The separately printed statewide 56.01% is retained but not approved as an
 analysis rate while two county registration denominators are missing.
 The geometry is contextual 2024 geography, not certified 2026 election reporting
-boundaries. Context13 release verification and explorer deployment remain pending.
+boundaries. Context13 freeze `70c141f45dae29980f2871a300934688035a2177`
+and release `voter-county-participation-context-20261106-13` (**436441352**)
+pass all four entire release assets, 31 pinned files, 30 ZIP members, extracted
+offline reproduction and both exact credential jobs **42213254097 / 42213223966**.
+The ZIP is **2,789,632 bytes**, SHA-256
+`f7a16895a8d97856f391053bb006252495a698c38b3ab6dde1c51b0148d02100`.
+Georgia integration passes **76 focused Node tests**, Astro check/build,
+136 entire relocated download checks and seven local browser scenarios.
+All previous 974 records, 109 native county rows, 645 download anchors and
+historical years survive; the page has **268 native county rows / 663 anchors /
+659 URLs**. The separately displayed Georgia statewide count remains distinct
+from UF estimates and retains the conflicting native API zero.
+Prepared local size is **986,079,869 bytes**. Only the now-verified context12/13
+ZIP copies and context13's 17 redundant geometry copies are newly relocated;
+all historical geometries, the current review and interactive originals stay
+local. The original source files and complete downloads remain intact.
+The full pre-relocation validator reaches only its established unrelated UK
+`23 !== 16` assertion at `validate-build.mjs:1126`.
+Explorer exact deployment and production proof remain pending; do not call it live.
 Source-only freeze `cf04d9be2107c58ea7a9a398170aa07b028f5a99` preserves the
 complete factual native query: 159 county/declaration/registration records,
 273 contest vectors and 457 candidate-or-choice rows. All identities join

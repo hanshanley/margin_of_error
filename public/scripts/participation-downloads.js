@@ -2,11 +2,14 @@ export const participationRelease = "voter-participation-data-20261104";
 export const participationReleaseRoot = `https://github.com/hanshanley/margin_of_error/releases/download/${participationRelease}/`;
 export const participationCurrentRoot = "https://raw.githubusercontent.com/hanshanley/margin_of_error/dc81c095cec959910c6dfb82da8c9184d7a993f9/public/participation-current/";
 export const participationHistoricalRoot = "https://raw.githubusercontent.com/hanshanley/voter-participation/792e3d91609f7ee929c35b5ec15c13710db94be8/public/data/nc/";
+export const participationCountyContextRoot = "https://raw.githubusercontent.com/hanshanley/margin_of_error/70c141f45dae29980f2871a300934688035a2177/public/participation-county-context/20261106-13/";
 
 export function participationDownload(path) {
-  const contextArchive = /^\/participation-county-context\/(20261106-(0[1-9]|1[01]))\/complete-county-participation-context-\2\.zip$/.exec(path);
+  const contextArchive = /^\/participation-county-context\/(20261106-(0[1-9]|1[0-3]))\/complete-county-participation-context-\2\.zip$/.exec(path);
   if (contextArchive)
     return `https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-${contextArchive[1]}/complete-county-participation-context-${contextArchive[2]}.zip`;
+  const contextGeometry = /^\/participation-county-context\/20261106-13\/(geometry\/county-(?:AL|AR|AZ|CA|DC|FL|GA|IA|KY|MO|NJ|NV|OR|PA|VA|WA|WY)\.geojson)$/.exec(path);
+  if (contextGeometry) return participationCountyContextRoot + contextGeometry[1];
   if (/^\/voter-participation\/data\/nc\/\d{4}\.json$/.test(path))
     return participationHistoricalRoot + path.split("/").at(-1);
   if (path.startsWith("/participation-current/20261104T220424Z/") && /\.(csv|zip|json)$/.test(path))
