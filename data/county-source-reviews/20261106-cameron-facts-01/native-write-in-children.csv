@@ -1,0 +1,10 @@
+contest_literal,parent_literal,child_literal,counting_mode_literal,votes,source_page,additional_to_parent
+GOVERNOR AND LIEUTENANT GOVERNOR,Write-In Totals,Not Assigned,Total,0,2,False
+GOVERNOR AND LIEUTENANT GOVERNOR,Write-In Totals,Not Assigned,Election Day,0,2,False
+GOVERNOR AND LIEUTENANT GOVERNOR,Write-In Totals,Not Assigned,Mail,0,2,False
+REPRESENTATIVE IN CONGRESS,Write-In Totals,Not Assigned,Total,1,2,False
+REPRESENTATIVE IN CONGRESS,Write-In Totals,Not Assigned,Election Day,1,2,False
+REPRESENTATIVE IN CONGRESS,Write-In Totals,Not Assigned,Mail,0,2,False
+REPRESENTATIVE IN THE GENERAL ASSEMBLY,Write-In Totals,Not Assigned,Total,2,3,False
+REPRESENTATIVE IN THE GENERAL ASSEMBLY,Write-In Totals,Not Assigned,Election Day,1,3,False
+REPRESENTATIVE IN THE GENERAL ASSEMBLY,Write-In Totals,Not Assigned,Mail,1,3,False

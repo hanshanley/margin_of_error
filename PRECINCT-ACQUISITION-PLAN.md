@@ -1254,9 +1254,24 @@ Both PDF engines agree on every entire one of the **30 text-report pages**.
 The first default-orientation comparison correctly fails Carbon statement
 rotated headers; documented bottom-to-top rotated-text extraction resolves
 that reading-direction issue with **zero token/value substitutions**.
-The failed receipt remains preserved privately. County-query transcription,
-focused rejection tests, portable complete packages and publication remain
-pending; neither new county is released or integrated into the live UI.
+The failed receipt remains preserved privately. Cameron's complete factual query
+is now independently transcribed and verified under
+`data/county-source-reviews/20261106-cameron-facts-01/`: nine complete CSV
+tables retain all three contests, thirty mode-specific choice rows, twenty-one
+literal-party/mode totals, all contest accounting, nested Not Assigned write-in
+children, native reporting statistics and the separate ten-unit Act 88 receipt
+with its Federal Voter filter. Ten focused rejection cases pass, covering
+candidate substitution, invented provisional zero, Act 88 substitutions,
+write-in double counting, partial reporting, literal party normalization,
+filter loss, mode reallocation and false image-engine agreement.
+All **fifteen entire files and fourteen ZIP members** reproduce byte-identically
+offline using only Python's standard library. The fixed LF-format complete ZIP
+is **35,176 bytes**, SHA-256
+`db524c09653ecdf29a809627d9bff724b70a0e35eb4d9a106f0c6ce6ba3ee607`.
+Full primary, private-original hash, all-file and ZIP proofs are under
+`data/county-source-reviews/20261106-cameron-primary-review-01/`.
+Cameron publication/anonymous byte checks and Carbon's full factual query
+remain pending; neither new county is released or integrated into the live UI.
 Private acquisition and engine proofs are in
 `pa-cameron-carbon-primary-20261106-01`,
 `pa-carbon-declared-reports-20261106-01` and

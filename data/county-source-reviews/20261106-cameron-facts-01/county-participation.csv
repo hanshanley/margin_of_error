@@ -1,0 +1,2 @@
+year,state_code,county,native_participation_measure_literal,ballots_cast,registered_voters,native_printed_turnout,election_day_ballots,mail_ballots,provisional_ballots,blank_ballots,reported_precincts,total_precincts,complete_precincts,partially_reported_precincts,source_status_literal,source_update_literal,declared_timezone,source_report,source_page
+2026,PA,Cameron,Ballots Cast - Total,1624,2885,56.29%,1305,319,,1,10,10,0,10,UNOFFICIAL RESULTS,11/03/2026 9:13 PM,,summary,1

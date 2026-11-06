@@ -1,0 +1,52 @@
+[
+  {
+    "file": "cameron-index-0.response",
+    "url": "https://www.cameroncountypa.com/resident/elections/unofficial__results.php",
+    "status": 200,
+    "location": null,
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 138772,
+    "sha256": "43a83cae0cfb2c034491eb216f1715a96669b6c4e0fc6aaa9207de67ff5e641c",
+    "fetched_at_utc": "2026-11-06T07:11:04.610514+00:00"
+  },
+  {
+    "file": "cameron-act88-0.response",
+    "url": "https://www.cameroncountypa.com/Cameron_Act 88 of 2022 12.01 Report.pdf?t=202611032033320",
+    "status": 302,
+    "location": "https://cms8.revize.com/revize/cameronpa/Cameron_Act 88 of 2022 12.01 Report.pdf?t=202611032033320",
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 221,
+    "sha256": "caa74eb89612fe4204692a72be00dd87ce1f354bda95ef36dddd570254760138",
+    "fetched_at_utc": "2026-11-06T07:11:04.729934+00:00"
+  },
+  {
+    "file": "cameron-act88-1.response",
+    "url": "https://cms8.revize.com/revize/cameronpa/Cameron_Act 88 of 2022 12.01 Report.pdf?t=202611032033320",
+    "status": 200,
+    "location": null,
+    "content_type": "application/pdf",
+    "bytes": 49864,
+    "sha256": "970e8e8a01177943206ae8b808dc59ae5b545adfb5ef39f70ae9390c908d5840",
+    "fetched_at_utc": "2026-11-06T07:11:04.809721+00:00"
+  },
+  {
+    "file": "cameron-summary-0.response",
+    "url": "https://www.cameroncountypa.com/CAMERON_ENR REPORT.pdf?t=202611032234420",
+    "status": 302,
+    "location": "https://cms8.revize.com/revize/cameronpa/CAMERON_ENR REPORT.pdf?t=202611032234420",
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 204,
+    "sha256": "8755b92f8d697e5547eae2ac19af8c1bbb279d17bf3da3f01f85b1fc288dda2d",
+    "fetched_at_utc": "2026-11-06T07:11:04.879647+00:00"
+  },
+  {
+    "file": "cameron-summary-1.response",
+    "url": "https://cms8.revize.com/revize/cameronpa/CAMERON_ENR REPORT.pdf?t=202611032234420",
+    "status": 200,
+    "location": null,
+    "content_type": "application/pdf",
+    "bytes": 25301,
+    "sha256": "0e5c96ca5341fdcb2baf946ff8b1ab6a08e8bffee75ca3a7515e848055c7425b",
+    "fetched_at_utc": "2026-11-06T07:11:04.911733+00:00"
+  }
+]

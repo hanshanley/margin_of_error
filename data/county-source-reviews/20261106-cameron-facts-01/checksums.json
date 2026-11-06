@@ -1,0 +1,54 @@
+{
+  "audit.json": {
+    "bytes": 2109,
+    "sha256": "4900f852c745f0f514fc0879fd55d781344b634178ea001f4b1512cc9bd471a0"
+  },
+  "county-candidate-results.csv": {
+    "bytes": 2525,
+    "sha256": "5361d7134585db2b327dacffaeb1b2efaa095a5d54d23b8e8d033c4887187c51"
+  },
+  "county-literal-party-totals.csv": {
+    "bytes": 1152,
+    "sha256": "e14164c53f6eb3c0afa8d42fad757de0611bd08811556d4c35d7a7f8da3801cd"
+  },
+  "county-participation.csv": {
+    "bytes": 479,
+    "sha256": "b2cb38ef8cd0738ac69b53911c0f59ff2bd09f6c82b8c5163455bdfd3059d06e"
+  },
+  "native-contest-accounting.csv": {
+    "bytes": 1025,
+    "sha256": "43960e8470944f820c916d1f78582ab296a5a84f9612e4eef498a8e985fe0cc2"
+  },
+  "native-mail-receipts.csv": {
+    "bytes": 2536,
+    "sha256": "8aeb07931e2b314062d7064b5ca1362d9c1082985bdff4e1079291a139372bb1"
+  },
+  "native-participation-modes.csv": {
+    "bytes": 168,
+    "sha256": "7c1e9ef334b692cf651d0a988ae9d2a68c798ed57337be035d272689c2d40a26"
+  },
+  "native-reporting-statistics.csv": {
+    "bytes": 245,
+    "sha256": "447aedd59ab567dc30847cbcc2987a2f9d4b01ca6c5b341c4ce0676a0f5d49ef"
+  },
+  "native-source-pages.csv": {
+    "bytes": 811,
+    "sha256": "04c094ab73e1bf1b13a51de3971e2ffb957aa26c240b5df1afe4a4996a6cb425"
+  },
+  "native-write-in-children.csv": {
+    "bytes": 826,
+    "sha256": "082f65cfb44a9677f8aeb11b40da7ea1d8b2da634b9c97a9ad0a4ebcd6c63974"
+  },
+  "review-cameron-county-results.py": {
+    "bytes": 14149,
+    "sha256": "2423860ecfed70a6538ea7e94947c5a9a9302c37788a654f8049900d80f96c79"
+  },
+  "source-receipts.json": {
+    "bytes": 2135,
+    "sha256": "922ed825dfdfc3155e12618b39d089a48b0f1e12c6c0b509dfd6fcacbccea6fb"
+  },
+  "source-records.json.gz": {
+    "bytes": 3438,
+    "sha256": "b3f6aa00e00810ae351efa64a16b6ad5e45174331056f8d60f03abada3ac6cdb"
+  }
+}

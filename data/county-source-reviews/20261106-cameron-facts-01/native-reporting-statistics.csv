@@ -1,0 +1,5 @@
+native_statistic_literal,total,electorate_total,election_day,mail,source_page
+Election Day Precincts Reporting,10,10,10,0,1
+Precincts Complete,0,10,0,0,1
+Precincts Partially Reported,10,10,10,0,1
+Absentee/ Early Precincts Reporting,10,10,0,10,1

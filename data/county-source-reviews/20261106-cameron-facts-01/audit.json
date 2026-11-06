@@ -1,0 +1,41 @@
+{
+  "scope": "Complete three-contest county summary, all Total/Election Day/Mail choices, accounting, statistics and separate ten-unit Act88 receipt query. Not assigned is a write-in subset, not an additional choice. Missing provisional participation is not zero. All ten precincts partial/zero complete; no certification or completed-counting claim. Separate Act88 324 returned/320 recorded and its Federal Voter filter are not substituted for 319 counted Mail ballots or silently reconciled. Original PDFs/HTML and presentation templates remain private; no geographic, statewide, demographic or source-use-permission approval.",
+  "table_rows": {
+    "county-participation.csv": 1,
+    "county-candidate-results.csv": 30,
+    "county-literal-party-totals.csv": 21,
+    "native-contest-accounting.csv": 9,
+    "native-write-in-children.csv": 9,
+    "native-participation-modes.csv": 3,
+    "native-reporting-statistics.csv": 4,
+    "native-mail-receipts.csv": 11,
+    "native-source-pages.csv": 4
+  },
+  "primary_summary_entire_pages_two_engines_agree": 3,
+  "act88_scanned_pages_visually_reviewed": 1,
+  "act88_text_engine_agreement_claimed": false,
+  "native_ballots_cast": 1624,
+  "native_registrations": 2885,
+  "native_printed_turnout": "56.29%",
+  "native_measure": "Ballots Cast - Total",
+  "native_status": "UNOFFICIAL RESULTS",
+  "native_election_day_ballots": 1305,
+  "native_mail_ballots": 319,
+  "provisional_participation_not_reported": true,
+  "native_precincts_complete": 0,
+  "native_precincts_partial": 10,
+  "native_blank_ballots": 1,
+  "native_act88_ballots_returned": 324,
+  "native_act88_votes_recorded": 320,
+  "act88_minus_counted_mail_differences_not_reconciled": [
+    5,
+    1
+  ],
+  "native_act88_federal_voter_filter_preserved": true,
+  "nested_not_assigned_not_additional_to_write_in_totals": true,
+  "native_timezone_not_declared": true,
+  "no_candidate_vote_substitution": true,
+  "maps_approved": false,
+  "no_certification_or_complete_counting_claim": true,
+  "original_documents_and_presentation_templates": "Private; not redistributed or included in this factual query."
+}

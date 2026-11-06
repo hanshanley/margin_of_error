@@ -1,0 +1,12 @@
+municipality_id_literal,municipality_literal,apps_issued,apps_returned,ballots_sent,ballots_returned,votes_recorded,report_role,native_report_filter_literal,source_page,source_update_literal,declared_timezone,review_method
+01,DRIFTWOOD BOROUGH,7,7,7,7,7,act88_receipt_not_counted_mail,Election ID (N) IS 2026 GENERAL ELECTION AND Federal Voter (Y) IS 0,1,,,Full original scanned page visually inspected; no text-engine claim
+10,EAST SHIPPEN TOWNSHIP,65,65,65,61,59,act88_receipt_not_counted_mail,Election ID (N) IS 2026 GENERAL ELECTION AND Federal Voter (Y) IS 0,1,,,Full original scanned page visually inspected; no text-engine claim
+02,EAST WARD - BOROUGH OF EMPORIUM,26,26,26,24,24,act88_receipt_not_counted_mail,Election ID (N) IS 2026 GENERAL ELECTION AND Federal Voter (Y) IS 0,1,,,Full original scanned page visually inspected; no text-engine claim
+05,GIBSON TOWNSHIP,13,13,13,13,13,act88_receipt_not_counted_mail,Election ID (N) IS 2026 GENERAL ELECTION AND Federal Voter (Y) IS 0,1,,,Full original scanned page visually inspected; no text-engine claim
+07,GROVE TOWNSHIP,11,11,11,11,11,act88_receipt_not_counted_mail,Election ID (N) IS 2026 GENERAL ELECTION AND Federal Voter (Y) IS 0,1,,,Full original scanned page visually inspected; no text-engine claim
+08,LUMBER TOWNSHIP,26,26,26,25,25,act88_receipt_not_counted_mail,Election ID (N) IS 2026 GENERAL ELECTION AND Federal Voter (Y) IS 0,1,,,Full original scanned page visually inspected; no text-engine claim
+03,MIDDLE WARD - BOROUGH OF EMPORIUM,36,36,36,34,33,act88_receipt_not_counted_mail,Election ID (N) IS 2026 GENERAL ELECTION AND Federal Voter (Y) IS 0,1,,,Full original scanned page visually inspected; no text-engine claim
+09,PORTAGE TOWNSHIP,5,5,5,5,5,act88_receipt_not_counted_mail,Election ID (N) IS 2026 GENERAL ELECTION AND Federal Voter (Y) IS 0,1,,,Full original scanned page visually inspected; no text-engine claim
+11,WEST SHIPPEN TOWNSHIP,89,89,88,88,87,act88_receipt_not_counted_mail,Election ID (N) IS 2026 GENERAL ELECTION AND Federal Voter (Y) IS 0,1,,,Full original scanned page visually inspected; no text-engine claim
+04,WEST WARD - BOROUGH OF EMPORIUM,60,60,60,56,56,act88_receipt_not_counted_mail,Election ID (N) IS 2026 GENERAL ELECTION AND Federal Voter (Y) IS 0,1,,,Full original scanned page visually inspected; no text-engine claim
+,Election Totals:,338,338,337,324,320,act88_receipt_not_counted_mail,Election ID (N) IS 2026 GENERAL ELECTION AND Federal Voter (Y) IS 0,1,,,Full original scanned page visually inspected; no text-engine claim
