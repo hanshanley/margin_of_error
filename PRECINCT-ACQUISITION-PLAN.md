@@ -223,18 +223,56 @@ qualified complete facts-only package without mirroring restricted webpage
 templates before any public release. The existing 274 download URLs and all
 map vectors remain unchanged.
 
-**Centre: ordinary-browser primary acquisition is now possible.** Earlier
-direct requests to the county index and both declared PDFs returned HTTP404
-with empty bodies; retain those failed receipts. A normal browser navigation
-on November 6 returned HTTP200 and the correct official 2026 General Election
-Unofficial Results title, without a challenge or bypass. Next save that actual
-response body and acquire its declared reports using the ordinary browser,
-then compare them with the complete acquired ArcGIS layer. Its 261 rows cover
-87 native precincts across InPerson/Mail/Provisional. Native provisional
-`BALLOTS_CAST_BLANK` sums to 240 despite zero provisional `BALLOTS_CAST_TOTAL`:
-preserve and flag the contradiction rather than treating it as valid accounting.
-Do not infer state-House scope membership from out-of-scope zero columns.
-No Centre release, map, final counting or new coverage claim is approved yet.
+**November 6: Centre's complete primary review is verified privately.**
+Normal browser navigation and same-origin acquisition of the two declared
+PDFs returned HTTP200 without a challenge or bypass. Preserve the earlier
+empty HTTP404 receipts; the successful HTML and actual two-page county and
+87-page precinct reports are now captured. All 87 native precincts and 261
+ArcGIS records reconcile: 57,125 ballots, 103,270 native registrations and
+55.32% registered-voter participation. Election Day ballots are 43,125, mail
+14,000 and provisional an explicit zero. House candidate votes are 56,804:
+DEM 32,234, REP 24,503 and 67 write-ins with no inferred party. The 321-ballot
+House residual stays unclassified, not inferred undervotes or overvotes.
+
+The full primary PDFs establish state-House membership: 34 precincts in
+district 77, 32 in 82 and 21 in 171. Do not infer membership from zero candidate
+columns. ArcGIS `PRECINCT_CODE` differs from the printed report ID for **63**
+precincts; join by the full native precinct label and retain both IDs. All
+candidate/method observations, including explicit zeroes, match the PDFs.
+Preserve null Mail/Provisional registrations rather than copying the
+InPerson-only registration counts into every method.
+
+The API has one retained provisional blank-ballot conflict: 240 blanks despite
+zero provisional ballots; both PDFs independently report zero provisional
+blanks. Keep the original API observation and mark it unusable as accounting,
+separate from the primary PDF's valid six blanks (five Election Day, one mail).
+Two native printed precinct percentages differ from the ratios of printed
+counts by 0.01 percentage point. Preserve printed and calculated percentages,
+without inferring the cause. The official index update (11/4 at 12:44 am),
+PDF report stamps (11/4 at 12:40AM), API last edit and older schema/data-edit
+timestamps remain separate; no PDF/index timezone is declared.
+
+Pre-publication screening found one Google service key and one telemetry key
+in the successful county linking HTML. Neither was published. Their values
+are removed only from the screened working copy; retain the unscreened
+response privately and preserve its original hash, size and explicit
+redaction receipts. Every other response is byte-unchanged. The private
+complete ZIP contains 13 full CSV tables, all 16 screened/source responses,
+receipts, audit, portable reviewer and checksums, with 33 unique members.
+All payload hashes and byte-identical packaged offline replay pass; all ZIP
+members are clear of the service/telemetry patterns. Twelve synthetic tests
+and six existing credential-scanner regressions pass.
+
+See `scripts/review-centre-county-results.py`,
+`scripts/test-centre-county-results.py` and
+`data/county-source-reviews/20261106-centre-private-review-01/verification.json`.
+Do not repeat acquisition or treat this private ZIP as a public download.
+The next publication step is a complete qualified source/data release and
+registry integration, not metadata-only links or an unreviewed map override.
+Native status is still **0 complete**, **87 partially reported** and **86 of
+87 absentee/early precincts reporting**. No Centre release, new map coverage
+or final-counting claim is approved by this private review. Alerts 1/2 remain
+open/unknown; external revocation and cached-object cleanup are unconfirmed.
 
 **Earlier current-source cleanup (historical record).** On November 5,
 GitHub reported Google API keys copied from public county linking HTML. The

@@ -1,0 +1,120 @@
+{
+  "status": "complete_private_native_review_not_a_public_release",
+  "verified_at_utc": "2026-11-06T00:38:02.447989+00:00",
+  "year": 2026,
+  "state_code": "PA",
+  "county_fips": "42027",
+  "county": "Centre",
+  "publication_approved": false,
+  "new_maps_approved": false,
+  "reviewer": "scripts/review-centre-county-results.py",
+  "tests": "scripts/test-centre-county-results.py",
+  "primary_acquisition": {
+    "method": "ordinary_browser_navigation_and_same_origin_fetch_of_declared_reports",
+    "index_status": 200,
+    "county_report_status": 200,
+    "county_report_pages": 2,
+    "precinct_report_status": 200,
+    "precinct_report_pages": 87,
+    "previous_empty_404_responses_preserved": true,
+    "access_challenge_or_bypass": false,
+    "captured_source_responses": 16,
+    "screened_linking_page_service_keys": 1,
+    "screened_linking_page_telemetry_keys": 1,
+    "unscreened_private_linking_page_packaged": false,
+    "all_other_source_responses_byte_unchanged": true,
+    "inaccessible_child_metadata": {
+      "http_status": 200,
+      "api_error_code": 400,
+      "retained_as_error_not_data": true
+    }
+  },
+  "county_participation": {
+    "registered_voters": 103270,
+    "ballots": 57125,
+    "printed_registered_voter_rate": "55.32%",
+    "calculated_registered_voter_rate": "55.32%",
+    "election_day_ballots": 43125,
+    "absentee_mail_ballots": 14000,
+    "provisional_ballots": 0,
+    "primary_pdf_blank_ballots": 6,
+    "primary_pdf_blank_methods": [5, 1, 0],
+    "house_candidate_votes": 56804,
+    "house_dem_votes": 32234,
+    "house_rep_votes": 24503,
+    "house_write_in_votes_unassigned_party": 67,
+    "house_ballot_residual_unclassified": 321
+  },
+  "native_reporting": {
+    "election_day_precincts_reporting": 87,
+    "precincts_complete": 0,
+    "precincts_partially_reported": 87,
+    "absentee_early_precincts_reporting": 86,
+    "precincts_expected": 87,
+    "certified_or_final": false
+  },
+  "complete_native_reconciliation": {
+    "primary_precincts": 87,
+    "api_records": 261,
+    "independent_count_and_unique_object_ids_match": true,
+    "three_unique_methods_per_native_precinct": true,
+    "layer_schema_and_edit_metadata_stable_during_acquisition": true,
+    "all_primary_county_and_precinct_contest_methods_match": true,
+    "all_api_nonblank_counts_match_primary_precinct_methods": true,
+    "primary_state_house_precinct_scopes": {
+      "77": 34,
+      "82": 32,
+      "171": 21
+    },
+    "api_codes_differ_from_printed_precinct_ids": 63,
+    "join_key": "full_native_precinct_label_not_PRECINCT_CODE",
+    "out_of_scope_zero_columns_retained_but_not_invented_as_candidates": true,
+    "native_null_method_registrations_preserved": true,
+    "write_in_breakdowns_are_separate_annotations_not_extra_votes": true,
+    "county_contests": 5,
+    "county_option_rows": 16,
+    "county_native_party_totals_excluding_unassigned_write_ins": 11,
+    "precinct_option_rows": 870,
+    "native_write_in_annotation_rows": 354
+  },
+  "retained_discrepancies": {
+    "api_provisional_blank_conflict_rows": 1,
+    "api_provisional_blanks": 240,
+    "api_provisional_ballots": 0,
+    "primary_pdf_provisional_blanks": 0,
+    "api_provisional_blank_accounting_usable": false,
+    "printed_rate_difference_rows": 2,
+    "absolute_printed_rate_differences_percentage_points": [0.01, 0.01],
+    "cause_of_printed_rate_differences_inferred": false
+  },
+  "native_source_updates": {
+    "official_index_literal": "11/4/2026 at 12:44 am",
+    "county_pdf_literal": "11/04/2026 12:40AM",
+    "precinct_pdf_literal": "11/04/2026 12:40AM",
+    "index_and_pdf_timezone_declared": false,
+    "api_last_edit_utc_milliseconds": 1793770978424,
+    "api_schema_last_edit_utc_milliseconds": 1792006443679,
+    "api_data_last_edit_utc_milliseconds": 1792006443679
+  },
+  "private_package": {
+    "archive": "private-centre-2026-native-review-01.zip",
+    "bytes": 352459,
+    "sha256": "35089d2e923d8f6bafa28b94ef3e2deb9c16580697b4253f04f5b4e4e6defd17",
+    "unique_members": 33,
+    "complete_csv_tables": 13,
+    "originals_include_full_pdfs_api_records_metadata_ids_count_and_failed_receipts": true,
+    "all_payload_checksums_verified": true,
+    "packaged_offline_reproduction_byte_identical": true,
+    "current_reviewer_matches_packaged_reviewer": true,
+    "unredacted_service_or_telemetry_patterns": 0
+  },
+  "limitations": [
+    "This is a private complete review, not a released download or production coverage change.",
+    "Ballots and registrations measure registered-voter participation, not demographic or eligible-population turnout.",
+    "Source-native reporting and partially reported qualifications do not establish final counting.",
+    "API provisional blank counts remain unusable; the primary PDFs independently report zero provisional blanks.",
+    "Native printed percentages and ratios calculated from printed counts are both preserved, without inferring the discrepancy's cause.",
+    "Candidate-party votes and unclassified ballot residuals remain separate from ballots.",
+    "GitHub alerts 1 and 2 remain open with unknown validity; external key revocation and cached-object cleanup are unconfirmed."
+  ]
+}
