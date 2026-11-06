@@ -1,0 +1,30 @@
+county_literal,short_name_literal,map_feature_id_literal,turnout_percent_native,native_map_feature_id_not_approved_as_census_fips
+Beaver County,beaver-county-ut,01,,True
+Box Elder County,box-elder-county-ut,02,,True
+Cache County,cache-county-ut,03,,True
+Carbon County,carbon-county-ut,04,,True
+Daggett County,daggett-county-ut,05,,True
+Davis County,davis-county-ut,06,,True
+Duchesne County,duchesne-county-ut,07,,True
+Emery County,emery-county-ut,08,,True
+Garfield County,garfield-county-ut,09,,True
+Grand County,grand-county-ut,10,,True
+Iron County,iron-county-ut,11,,True
+Juab County,juab-county-ut,12,,True
+Kane County,kane-county-ut,13,,True
+Millard County,millard-county-ut,14,,True
+Morgan County,morgan-county-ut,15,,True
+Piute County,piute-county-ut,16,,True
+Rich County,rich-county-ut,17,,True
+Salt Lake County,salt-lake-county-ut,18,,True
+San Juan County,san-juan-county-ut,19,,True
+Sanpete County,sanpete-county-ut,20,,True
+Sevier County,sevier-county-ut,21,,True
+Summit County,summit-county-ut,22,,True
+Tooele County,tooele-county-ut,23,,True
+Uintah County,uintah-county-ut,24,,True
+Utah County,utah-county-ut,25,,True
+Wasatch County,wasatch-county-ut,26,,True
+Washington County,washington-county-ut,27,,True
+Wayne County,wayne-county-ut,28,,True
+Weber County,weber-county-ut,29,,True

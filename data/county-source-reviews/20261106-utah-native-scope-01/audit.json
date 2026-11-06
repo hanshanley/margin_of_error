@@ -1,0 +1,51 @@
+{
+  "row_counts": {
+    "county-participation.csv": 29,
+    "source-native-observations.csv": 261,
+    "source-reports.csv": 26,
+    "county-party-registrations.csv": 228,
+    "state-party-registrations.csv": 10,
+    "native-county-catalog.csv": 29
+  },
+  "source_counts": {
+    "native_counties": 29,
+    "current_declared_reports": 26,
+    "distinct_report_counties": 25,
+    "complete_original_reports": 26,
+    "complete_pdf_originals": 19,
+    "physical_pdf_pages": 20,
+    "image_only_pdf_originals": 9,
+    "complete_workbook_originals": 7,
+    "independently_matching_native_workbook_cells": 753,
+    "latest_native_counted_total_candidates": 19,
+    "same_report_registered_denominator_candidates": 18,
+    "county_scope_withholds": 6,
+    "counties_missing_a_declared_report": 4,
+    "county_party_registration_rows": 228,
+    "active_registrations": 1784255
+  },
+  "native_counted_total_candidates": 19,
+  "same_report_registration_candidates": 18,
+  "native_parent_arithmetic_discrepancies": [
+    {
+      "party_literal": "Republican",
+      "active_plus_inactive_minus_native_total": 1
+    },
+    {
+      "party_literal": "Total",
+      "active_plus_inactive_minus_native_total": 1
+    }
+  ],
+  "discrepancies_not_corrected": true,
+  "county_party_absences_not_filled": true,
+  "backend_zero_placeholders_not_participation": true,
+  "latest_davis_selected_without_adding_earlier_report": true,
+  "six_scope_withholds_and_four_missing_reports_preserved": true,
+  "no_registration_pdf_denominator_substitution": true,
+  "no_mode_or_provisional_double_counting": true,
+  "native_timezone_missing": true,
+  "native_fips_missing": true,
+  "analysis_rate_approvals": 0,
+  "map_approvals": 0,
+  "scope": "Complete portable query over all reviewed numerical facts in the qualification input, including all 26 report observations, 29 county records, native historical fields and 228 registration-affiliation records. Not a complete raw-source or operational-workbook mirror, candidate-results dataset, certified turnout dataset, geographic join or live explorer update."
+}

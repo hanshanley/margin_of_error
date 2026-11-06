@@ -2,6 +2,36 @@
 
 ## Current verified production and next acquisition
 
+**November 6: Utah consolidated numerical query reviewed; not yet LIVE.**
+The actual official general-election portal's declared report menu supplies
+**26 current complete originals / 25 distinct counties**, without guessing
+download paths. All **19 PDFs / 20 physical pages / seven workbooks** are retained
+privately. Complete independent PDF extractions, physical numeric review and
+local OCR preserve scanned-table evidence; independent OOXML parsing matches
+all **753 nonempty cached workbook cells**. Operational/personnel sheets remain
+private. Both complete six-page registration extractions independently match
+**228 county/party rows / 29 counties / 1,784,255 active registrations**.
+
+The complete portable numerical query in
+`data/county-source-reviews/20261106-utah-native-scope-01/` includes the full
+reviewed numerical input, **29 county records / 261 native observations /
+26 report receipts / 228 county-party rows / 10 statewide party/total rows /
+29 native county identities**, methods, checksums and executable offline tests.
+There are **19 latest native counted-total candidates / 18 same-report
+registration-denominator candidates**, not approved turnout rates or map joins.
+Cache, Garfield, Iron, Kane, Millard and San Juan remain scope-withheld;
+Daggett, Morgan, Piute and Wasatch lack declared ballot-statistics reports.
+Backend unpublished zeros are not participation. Both Davis snapshots remain,
+but the latest is selected once. Wayne's **1,109 counted / 1,209 credited /
+100 difference**, native clocks, missing timezones and the registration parent's
+one-record arithmetic discrepancies are preserved, not repaired. The separate
+November 2 registration PDF never replaces report-specific denominators.
+The portable ZIP reproduces byte-for-byte offline. No generic rate/map approval,
+new context or deployment is claimed; current verified production remains
+**context22 / `55465f323f4f63924fb999241c1f0676372a2ab6`**.
+Next: verify immutable publication of the full numerical package, then separately
+review county usability and both full Census inventories/contextual geometry.
+
 **November 6: Bedford/Northumberland context22 verified LIVE at 18:46UTC.**
 Both complete native numerical packages are immutable and fully verified in
 draft and public phases. Both counties independently match both entire Census

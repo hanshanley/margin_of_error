@@ -1,0 +1,15 @@
+{
+  "scope": "A complete portable numerical query over the reviewed aggregate facts, not metadata-only output and not a mirror of every raw operational worksheet.",
+  "reproduce": "python3 -B -I review-counties.py --output /a/new/nonexistent/output/path",
+  "test": "python3 -B -I test_review_counties.py",
+  "dependencies": "Python standard library only. Reproduction makes no network requests and executes no spreadsheet formulas.",
+  "inputs": "The complete qualification input retains all 26 current report receipts, 25 distinct report counties, 29 native county identities, reviewed native statistics and historical fields, and all 228 observed registration-affiliation rows from the independent six-page PDF review.",
+  "source_review": "All original bodies were retained privately with verified byte counts, SHA-256 and TLS. Both complete PDF text-engine outputs and all 20 physical-page renders/local OCR outputs were retained; two empty text outputs are not numerical validation. All seven workbooks independently match a separate OOXML parser across all 753 nonempty cached cells. Scanned/embedded-table numerical fields were reviewed from physical page images.",
+  "latest": "Keep both Davis reports in the observation and receipt tables. Select its explicit November 5 report once for the county table; do not sum it with November 4.",
+  "scope_withholds": "Cache fully processed, Garfield scanned/credited, Iron received, Kane processed, Millard daily-counted scope and San Juan returned/pending-adjudication values remain distinct observations, not generic counted totals. Daggett, Morgan, Piute and Wasatch lack declared ballot-statistics reports in the acquired menu.",
+  "registrations": "Registration affiliations are not party votes or group-specific participation. Native same-report registration snapshots are not replaced with the separate November 2 PDF. Preserve all absent party cells and the parent's one-record Republican/Total arithmetic discrepancies.",
+  "missingness": "CSV empty values and value_state=missing preserve native blanks/dashes. They are never invented zeros. Backend zero fields without published turnout statistics are not zero participation.",
+  "geography": "Native map feature IDs and county names are not approved Census FIPS. All geographic joins, generic turnout approvals and map approvals remain false. Context22 and its verified deployment are unchanged.",
+  "omissions": "Raw HTML/PDF/XLSX originals, personal/operational worksheets and source API scripts remain private. All reviewed numerical query inputs, tables, receipt facts, methods, tests and reproducible code are in complete-query.zip.",
+  "archive": "All fixed and derived files are hashed in checksums.json. The ZIP contains the manifest, never itself; reproducible timestamps avoid nondeterministic wrappers."
+}

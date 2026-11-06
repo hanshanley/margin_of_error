@@ -1,0 +1,3054 @@
+{
+  "schema_version": 1,
+  "status": "complete_original_acquisition_and_native_scope_review_not_a_promoted_query_or_map",
+  "review_created_at_utc": "2026-11-06T19:04:55.574675+00:00",
+  "election_literal": "2026 General Election",
+  "election_date_literal": "2026-11-03",
+  "is_official_results": false,
+  "election_as_of_literal": "2026-11-06T18:08:38.9891836Z",
+  "source_url": "https://electionresults.utah.gov/results/public/Utah/General11032026",
+  "declaring_response_receipt": {
+    "url": "https://electionresults.utah.gov/results/public/api/elections/Utah/General11032026/data",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "resource_type": "xhr",
+    "captured_at_utc": "2026-11-06T18:55:55.965957+00:00",
+    "file": "native-response-021.bin",
+    "bytes": 320776,
+    "sha256": "6fc51fe6fe0c24b7da6e1dd8079752c312c564b9253dce5db561017505727d81"
+  },
+  "counts": {
+    "native_counties": 29,
+    "current_declared_reports": 26,
+    "distinct_report_counties": 25,
+    "complete_original_reports": 26,
+    "complete_pdf_originals": 19,
+    "physical_pdf_pages": 20,
+    "image_only_pdf_originals": 9,
+    "complete_workbook_originals": 7,
+    "independently_matching_native_workbook_cells": 753,
+    "latest_native_counted_total_candidates": 19,
+    "same_report_registered_denominator_candidates": 18,
+    "county_scope_withholds": 6,
+    "counties_missing_a_declared_report": 4,
+    "county_party_registration_rows": 228,
+    "active_registrations": 1784255
+  },
+  "unqualified_backend_fields": {
+    "statistics": [],
+    "voterRegistration": [],
+    "voterTurnout": [],
+    "statewide_totalVoters": 0.0,
+    "statewide_ballotsCast": 0.0,
+    "county_totalVoters_and_ballotsCast_all_zero": true,
+    "zero_fields_are_not_qualified_zero_participation": true,
+    "generic_tally_or_rate_approval": false
+  },
+  "native_county_catalog": [
+    {
+      "county_literal": "Beaver County",
+      "short_name_literal": "beaver-county-ut",
+      "map_feature_id_literal": "01",
+      "turnout_percent_native": null,
+      "native_map_feature_id_not_approved_as_census_fips": true
+    },
+    {
+      "county_literal": "Box Elder County",
+      "short_name_literal": "box-elder-county-ut",
+      "map_feature_id_literal": "02",
+      "turnout_percent_native": null,
+      "native_map_feature_id_not_approved_as_census_fips": true
+    },
+    {
+      "county_literal": "Cache County",
+      "short_name_literal": "cache-county-ut",
+      "map_feature_id_literal": "03",
+      "turnout_percent_native": null,
+      "native_map_feature_id_not_approved_as_census_fips": true
+    },
+    {
+      "county_literal": "Carbon County",
+      "short_name_literal": "carbon-county-ut",
+      "map_feature_id_literal": "04",
+      "turnout_percent_native": null,
+      "native_map_feature_id_not_approved_as_census_fips": true
+    },
+    {
+      "county_literal": "Daggett County",
+      "short_name_literal": "daggett-county-ut",
+      "map_feature_id_literal": "05",
+      "turnout_percent_native": null,
+      "native_map_feature_id_not_approved_as_census_fips": true
+    },
+    {
+      "county_literal": "Davis County",
+      "short_name_literal": "davis-county-ut",
+      "map_feature_id_literal": "06",
+      "turnout_percent_native": null,
+      "native_map_feature_id_not_approved_as_census_fips": true
+    },
+    {
+      "county_literal": "Duchesne County",
+      "short_name_literal": "duchesne-county-ut",
+      "map_feature_id_literal": "07",
+      "turnout_percent_native": null,
+      "native_map_feature_id_not_approved_as_census_fips": true
+    },
+    {
+      "county_literal": "Emery County",
+      "short_name_literal": "emery-county-ut",
+      "map_feature_id_literal": "08",
+      "turnout_percent_native": null,
+      "native_map_feature_id_not_approved_as_census_fips": true
+    },
+    {
+      "county_literal": "Garfield County",
+      "short_name_literal": "garfield-county-ut",
+      "map_feature_id_literal": "09",
+      "turnout_percent_native": null,
+      "native_map_feature_id_not_approved_as_census_fips": true
+    },
+    {
+      "county_literal": "Grand County",
+      "short_name_literal": "grand-county-ut",
+      "map_feature_id_literal": "10",
+      "turnout_percent_native": null,
+      "native_map_feature_id_not_approved_as_census_fips": true
+    },
+    {
+      "county_literal": "Iron County",
+      "short_name_literal": "iron-county-ut",
+      "map_feature_id_literal": "11",
+      "turnout_percent_native": null,
+      "native_map_feature_id_not_approved_as_census_fips": true
+    },
+    {
+      "county_literal": "Juab County",
+      "short_name_literal": "juab-county-ut",
+      "map_feature_id_literal": "12",
+      "turnout_percent_native": null,
+      "native_map_feature_id_not_approved_as_census_fips": true
+    },
+    {
+      "county_literal": "Kane County",
+      "short_name_literal": "kane-county-ut",
+      "map_feature_id_literal": "13",
+      "turnout_percent_native": null,
+      "native_map_feature_id_not_approved_as_census_fips": true
+    },
+    {
+      "county_literal": "Millard County",
+      "short_name_literal": "millard-county-ut",
+      "map_feature_id_literal": "14",
+      "turnout_percent_native": null,
+      "native_map_feature_id_not_approved_as_census_fips": true
+    },
+    {
+      "county_literal": "Morgan County",
+      "short_name_literal": "morgan-county-ut",
+      "map_feature_id_literal": "15",
+      "turnout_percent_native": null,
+      "native_map_feature_id_not_approved_as_census_fips": true
+    },
+    {
+      "county_literal": "Piute County",
+      "short_name_literal": "piute-county-ut",
+      "map_feature_id_literal": "16",
+      "turnout_percent_native": null,
+      "native_map_feature_id_not_approved_as_census_fips": true
+    },
+    {
+      "county_literal": "Rich County",
+      "short_name_literal": "rich-county-ut",
+      "map_feature_id_literal": "17",
+      "turnout_percent_native": null,
+      "native_map_feature_id_not_approved_as_census_fips": true
+    },
+    {
+      "county_literal": "Salt Lake County",
+      "short_name_literal": "salt-lake-county-ut",
+      "map_feature_id_literal": "18",
+      "turnout_percent_native": null,
+      "native_map_feature_id_not_approved_as_census_fips": true
+    },
+    {
+      "county_literal": "San Juan County",
+      "short_name_literal": "san-juan-county-ut",
+      "map_feature_id_literal": "19",
+      "turnout_percent_native": null,
+      "native_map_feature_id_not_approved_as_census_fips": true
+    },
+    {
+      "county_literal": "Sanpete County",
+      "short_name_literal": "sanpete-county-ut",
+      "map_feature_id_literal": "20",
+      "turnout_percent_native": null,
+      "native_map_feature_id_not_approved_as_census_fips": true
+    },
+    {
+      "county_literal": "Sevier County",
+      "short_name_literal": "sevier-county-ut",
+      "map_feature_id_literal": "21",
+      "turnout_percent_native": null,
+      "native_map_feature_id_not_approved_as_census_fips": true
+    },
+    {
+      "county_literal": "Summit County",
+      "short_name_literal": "summit-county-ut",
+      "map_feature_id_literal": "22",
+      "turnout_percent_native": null,
+      "native_map_feature_id_not_approved_as_census_fips": true
+    },
+    {
+      "county_literal": "Tooele County",
+      "short_name_literal": "tooele-county-ut",
+      "map_feature_id_literal": "23",
+      "turnout_percent_native": null,
+      "native_map_feature_id_not_approved_as_census_fips": true
+    },
+    {
+      "county_literal": "Uintah County",
+      "short_name_literal": "uintah-county-ut",
+      "map_feature_id_literal": "24",
+      "turnout_percent_native": null,
+      "native_map_feature_id_not_approved_as_census_fips": true
+    },
+    {
+      "county_literal": "Utah County",
+      "short_name_literal": "utah-county-ut",
+      "map_feature_id_literal": "25",
+      "turnout_percent_native": null,
+      "native_map_feature_id_not_approved_as_census_fips": true
+    },
+    {
+      "county_literal": "Wasatch County",
+      "short_name_literal": "wasatch-county-ut",
+      "map_feature_id_literal": "26",
+      "turnout_percent_native": null,
+      "native_map_feature_id_not_approved_as_census_fips": true
+    },
+    {
+      "county_literal": "Washington County",
+      "short_name_literal": "washington-county-ut",
+      "map_feature_id_literal": "27",
+      "turnout_percent_native": null,
+      "native_map_feature_id_not_approved_as_census_fips": true
+    },
+    {
+      "county_literal": "Wayne County",
+      "short_name_literal": "wayne-county-ut",
+      "map_feature_id_literal": "28",
+      "turnout_percent_native": null,
+      "native_map_feature_id_not_approved_as_census_fips": true
+    },
+    {
+      "county_literal": "Weber County",
+      "short_name_literal": "weber-county-ut",
+      "map_feature_id_literal": "29",
+      "turnout_percent_native": null,
+      "native_map_feature_id_not_approved_as_census_fips": true
+    }
+  ],
+  "reports": [
+    {
+      "source_ordinal": 0,
+      "source_updated_literal": "11/04/2026",
+      "native_counted_label": "Total # of Ballots Counted",
+      "native_denominator_label": "Total # of Registered Voters",
+      "fields": {
+        "registered_voters": 5755,
+        "ballots_received": 2985,
+        "ballots_counted": 2963,
+        "uncounted_ballots": 0,
+        "curable_ballots": 9,
+        "incurable_ballots": 2,
+        "provisional_ballots_cast": 9
+      },
+      "counted_total_scope_review": "native_counted_total",
+      "source_location": "Sheet1 A8:A14",
+      "qualification": "Do not add provisional or rejected categories again; the source does not establish a universal additive partition.",
+      "county_literal": "Emery County",
+      "source_receipt": {
+        "county": "Emery County",
+        "report_name": "Emery County Ballot Statistics Nov 4",
+        "native_filename": "Statistics_1dd1466d-760b-42c0-8471-1244cb794bbb.xlsx",
+        "selection": "current",
+        "upload_date_literal": null,
+        "requested_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Statistics_1dd1466d-760b-42c0-8471-1244cb794bbb.xlsx",
+        "ordinal": 0,
+        "status": 200,
+        "final_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Statistics_1dd1466d-760b-42c0-8471-1244cb794bbb.xlsx",
+        "captured_at_utc": "2026-11-06T18:56:45.311931+00:00",
+        "content_type": "application/octet-stream",
+        "original_file": "source-000.xlsx",
+        "bytes": 10329,
+        "sha256": "5f463b787bed1ffc1373bc546a82be287c3bbc2fa171d33f8d1f2842129f9a90"
+      },
+      "source_timezone_literal": null,
+      "native_fips": null,
+      "analysis_rate_approved": false,
+      "map_approved": false,
+      "latest_selection": true,
+      "extraction_review": {
+        "county": "Emery County",
+        "original_file": "source-000.xlsx",
+        "sha256": "5f463b787bed1ffc1373bc546a82be287c3bbc2fa171d33f8d1f2842129f9a90",
+        "worksheets": 3,
+        "nonempty_cells": 12,
+        "all_native_cached_values_agree": true,
+        "blank_cells_not_zero": true,
+        "formulas_not_executed": true
+      }
+    },
+    {
+      "source_ordinal": 1,
+      "source_updated_literal": "11-4-2026, 5:04 pm",
+      "native_counted_label": "Number of Ballots Counted",
+      "native_denominator_label": "Total Active Registered Voters (as of the Friday before Election Day)",
+      "fields": {
+        "registered_voters": 29387,
+        "ballots_received": 19491,
+        "ballots_counted": 10831,
+        "uncounted_ballots": 8660,
+        "curable_ballots": 258,
+        "incurable_ballots": 12,
+        "provisional_ballots_cast": 226
+      },
+      "counted_total_scope_review": "native_counted_total",
+      "source_location": "physical page 1",
+      "qualification": "Counting is incomplete. Native registration snapshot differs from the November 2 party-registration PDF; retain both.",
+      "county_literal": "Summit County",
+      "source_receipt": {
+        "county": "Summit County",
+        "report_name": "Summit County Ballot Statistics Nov 4",
+        "native_filename": "Summit 11.4.26 Election Stats_398b6368-1ddc-48c1-8bdc-efe553070d7b.pdf",
+        "selection": "current",
+        "upload_date_literal": null,
+        "requested_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Summit%2011.4.26%20Election%20Stats_398b6368-1ddc-48c1-8bdc-efe553070d7b.pdf",
+        "ordinal": 1,
+        "status": 200,
+        "final_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Summit%2011.4.26%20Election%20Stats_398b6368-1ddc-48c1-8bdc-efe553070d7b.pdf",
+        "captured_at_utc": "2026-11-06T18:56:45.260083+00:00",
+        "content_type": "application/octet-stream",
+        "original_file": "source-001.pdf",
+        "bytes": 40463,
+        "sha256": "8585d93557362c3c291b26d40c182545a67c19c7b494ed107289ddafc19268dd",
+        "physical_pages": 1
+      },
+      "source_timezone_literal": null,
+      "native_fips": null,
+      "analysis_rate_approved": false,
+      "map_approved": false,
+      "latest_selection": true,
+      "extraction_review": {
+        "physical_pages": 1,
+        "both_complete_pdf_text_engine_outputs_retained": true,
+        "text_extractors_have_no_numerical_evidence": false,
+        "every_physical_page_render_and_local_vision_output_retained": true,
+        "scanned_or_embedded_table_requires_physical_numeric_review": false,
+        "no_claim_that_two_empty_extractions_validate_numbers": true
+      }
+    },
+    {
+      "source_ordinal": 2,
+      "source_updated_literal": "5-Nov",
+      "native_counted_label": "Total Ballots Counted",
+      "native_denominator_label": "Active Registered Voters (Friday Before Election)",
+      "fields": {
+        "registered_voters": 374971,
+        "ballots_received": 196500,
+        "ballots_counted": 135457,
+        "uncounted_ballots": 54367,
+        "curable_ballots": 3088,
+        "incurable_ballots": 280,
+        "provisional_ballots_cast": 3488,
+        "verified_but_not_counted": 54367,
+        "tabulated": 135457,
+        "verified_not_counted_plus_tabulated": 189824,
+        "vista_credit": 189854,
+        "reported_reconciliation_difference": 30
+      },
+      "counted_total_scope_review": "native_counted_total",
+      "source_location": "physical page 1, amended current file",
+      "qualification": "Literal body date has no year or timezone; election identity comes from the declaring 2026 general-election menu. Preserve the native 30-credit discrepancy; do not repair or allocate it.",
+      "county_literal": "Utah County",
+      "source_receipt": {
+        "county": "Utah County",
+        "report_name": "Utah County Ballot Statistics Nov 4",
+        "native_filename": "26 General Ballot Tracking (2)_f6894744-3f2a-4d0f-ac18-de446451f26d.pdf",
+        "selection": "current",
+        "upload_date_literal": null,
+        "requested_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/26%20General%20Ballot%20Tracking%20(2)_f6894744-3f2a-4d0f-ac18-de446451f26d.pdf",
+        "ordinal": 2,
+        "status": 200,
+        "final_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/26%20General%20Ballot%20Tracking%20(2)_f6894744-3f2a-4d0f-ac18-de446451f26d.pdf",
+        "captured_at_utc": "2026-11-06T18:56:45.698630+00:00",
+        "content_type": "application/octet-stream",
+        "original_file": "source-002.pdf",
+        "bytes": 197014,
+        "sha256": "2464ff6bd97525a9051b672ce6b3e264f6b2a7ce7023324475be99ee92021ddd",
+        "physical_pages": 1
+      },
+      "source_timezone_literal": null,
+      "native_fips": null,
+      "analysis_rate_approved": false,
+      "map_approved": false,
+      "latest_selection": true,
+      "extraction_review": {
+        "physical_pages": 1,
+        "both_complete_pdf_text_engine_outputs_retained": true,
+        "text_extractors_have_no_numerical_evidence": false,
+        "every_physical_page_render_and_local_vision_output_retained": true,
+        "scanned_or_embedded_table_requires_physical_numeric_review": false,
+        "no_claim_that_two_empty_extractions_validate_numbers": true
+      }
+    },
+    {
+      "source_ordinal": 4,
+      "source_updated_literal": "5:15 PM on November 4, 2026",
+      "native_counted_label": "Number of Ballots Counted",
+      "native_denominator_label": "Total Active Registered Voters",
+      "fields": {
+        "registered_voters": 604694,
+        "ballots_received": 394882,
+        "ballots_counted": 266720,
+        "uncounted_ballots": 127794,
+        "curable_ballots": 5013,
+        "incurable_ballots": 538,
+        "provisional_ballots_cast": 7628
+      },
+      "counted_total_scope_review": "native_counted_total",
+      "source_location": "Sheet1 A1:B8 and A10",
+      "qualification": "Received, uncounted, rejected and provisional categories are not demonstrated to form a mutually exclusive partition.",
+      "county_literal": "Salt Lake County",
+      "source_receipt": {
+        "county": "Salt Lake County",
+        "report_name": "Salt Lake County Ballot Statistics Nov 4",
+        "native_filename": "SLCO Ballot Count Statistics - November 4, 2026_1bfa2f96-d64b-433b-86b2-39cf0a33c69c.xlsx",
+        "selection": "current",
+        "upload_date_literal": null,
+        "requested_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/SLCO%20Ballot%20Count%20Statistics%20-%20November%204,%202026_1bfa2f96-d64b-433b-86b2-39cf0a33c69c.xlsx",
+        "ordinal": 4,
+        "status": 200,
+        "final_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/SLCO%20Ballot%20Count%20Statistics%20-%20November%204,%202026_1bfa2f96-d64b-433b-86b2-39cf0a33c69c.xlsx",
+        "captured_at_utc": "2026-11-06T18:56:45.311882+00:00",
+        "content_type": "application/octet-stream",
+        "original_file": "source-004.xlsx",
+        "bytes": 9250,
+        "sha256": "ce9d68b9f853783d510023e9064cfd710e12d646e730b9cf549f42ff8463ce7a"
+      },
+      "source_timezone_literal": null,
+      "native_fips": null,
+      "analysis_rate_approved": false,
+      "map_approved": false,
+      "latest_selection": true,
+      "extraction_review": {
+        "county": "Salt Lake County",
+        "original_file": "source-004.xlsx",
+        "sha256": "ce9d68b9f853783d510023e9064cfd710e12d646e730b9cf549f42ff8463ce7a",
+        "worksheets": 1,
+        "nonempty_cells": 17,
+        "all_native_cached_values_agree": true,
+        "blank_cells_not_zero": true,
+        "formulas_not_executed": true
+      }
+    },
+    {
+      "source_ordinal": 5,
+      "source_updated_literal": "11/04/26",
+      "native_counted_label": "Ballots Tabulated",
+      "native_denominator_label": null,
+      "fields": {
+        "registered_voters": null,
+        "ballots_received": null,
+        "ballots_in_process": null,
+        "ballots_counted": 19929,
+        "uncured_ballots": 103,
+        "provisional_ballots_not_processed": 205,
+        "ballots_to_be_adjudicated": null,
+        "ballots_to_be_replicated": 9,
+        "ballots_replicated": null
+      },
+      "counted_total_scope_review": "native_counted_total",
+      "source_location": "physical page 1, dated table",
+      "historical_tabulated": [
+        {
+          "date_literal": "10/29/26",
+          "ballots": 8262
+        },
+        {
+          "date_literal": "11/03/26",
+          "ballots": 14942
+        },
+        {
+          "date_literal": "11/04/26",
+          "ballots": 19929
+        }
+      ],
+      "qualification": "Latest received and processing cells are blank, not zero. Received entries in earlier rows must not be relabeled as the current cumulative received total.",
+      "county_literal": "Box Elder County",
+      "source_receipt": {
+        "county": "Box Elder County",
+        "report_name": "Box Elder County Ballot Statistics Nov 4",
+        "native_filename": "Ballot Stats County Web Page_3e5e1b2c-473d-4b55-9468-ae523b64db47.pdf",
+        "selection": "current",
+        "upload_date_literal": null,
+        "requested_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Ballot%20Stats%20County%20Web%20Page_3e5e1b2c-473d-4b55-9468-ae523b64db47.pdf",
+        "ordinal": 5,
+        "status": 200,
+        "final_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Ballot%20Stats%20County%20Web%20Page_3e5e1b2c-473d-4b55-9468-ae523b64db47.pdf",
+        "captured_at_utc": "2026-11-06T18:56:45.744309+00:00",
+        "content_type": "application/octet-stream",
+        "original_file": "source-005.pdf",
+        "bytes": 88382,
+        "sha256": "25eacc4a344149017c681a634e5626846e1f81bcbe976d333ccdb21a109eb310",
+        "physical_pages": 1
+      },
+      "source_timezone_literal": null,
+      "native_fips": null,
+      "analysis_rate_approved": false,
+      "map_approved": false,
+      "latest_selection": true,
+      "extraction_review": {
+        "physical_pages": 1,
+        "both_complete_pdf_text_engine_outputs_retained": true,
+        "text_extractors_have_no_numerical_evidence": true,
+        "every_physical_page_render_and_local_vision_output_retained": true,
+        "scanned_or_embedded_table_requires_physical_numeric_review": true,
+        "no_claim_that_two_empty_extractions_validate_numbers": true
+      }
+    },
+    {
+      "source_ordinal": 6,
+      "source_updated_literal": "Nov 4, 2026 at 5:50 PM",
+      "native_counted_label": "BALLOTS COUNTED",
+      "native_denominator_label": "ACTIVE VOTERS",
+      "fields": {
+        "registered_voters": 200115,
+        "ballots_received": 120109,
+        "ballots_counted": 96951,
+        "uncounted_ballots": 20449,
+        "curable_ballots": 3068,
+        "incurable_ballots": 10
+      },
+      "counted_total_scope_review": "native_counted_total",
+      "source_location": "physical page 1",
+      "superseded_for_latest_selection_by_ordinal": 26,
+      "qualification": "Retain this distinct dated report, but do not add it to or prefer it over the later November 5 report.",
+      "county_literal": "Davis County",
+      "source_receipt": {
+        "county": "Davis County",
+        "report_name": "Davis County Ballot Statistics Nov 4",
+        "native_filename": "stats_111fc3fd-a8b7-46f2-bc6c-4acd9000afae.pdf",
+        "selection": "current",
+        "upload_date_literal": null,
+        "requested_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/stats_111fc3fd-a8b7-46f2-bc6c-4acd9000afae.pdf",
+        "ordinal": 6,
+        "status": 200,
+        "final_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/stats_111fc3fd-a8b7-46f2-bc6c-4acd9000afae.pdf",
+        "captured_at_utc": "2026-11-06T18:56:46.030539+00:00",
+        "content_type": "application/octet-stream",
+        "original_file": "source-006.pdf",
+        "bytes": 184804,
+        "sha256": "3e87a7beb7dd73b88783f0c028be827aabd6801af0e7dc30ed52350198e6d590",
+        "physical_pages": 1
+      },
+      "source_timezone_literal": null,
+      "native_fips": null,
+      "analysis_rate_approved": false,
+      "map_approved": false,
+      "latest_selection": false,
+      "extraction_review": {
+        "physical_pages": 1,
+        "both_complete_pdf_text_engine_outputs_retained": true,
+        "text_extractors_have_no_numerical_evidence": true,
+        "every_physical_page_render_and_local_vision_output_retained": true,
+        "scanned_or_embedded_table_requires_physical_numeric_review": true,
+        "no_claim_that_two_empty_extractions_validate_numbers": true
+      }
+    },
+    {
+      "source_ordinal": 7,
+      "source_updated_literal": "11/05/2026",
+      "native_counted_label": "Total # of Ballots Counted",
+      "native_denominator_label": "Total # of Registered Voters",
+      "fields": {
+        "registered_voters": 10440,
+        "ballots_received": 5364,
+        "ballots_counted": 5249,
+        "uncounted_ballots": 0,
+        "curable_ballots": 111,
+        "incurable_ballots": 4,
+        "provisional_ballots_cast": 33
+      },
+      "counted_total_scope_review": "native_counted_total",
+      "source_location": "Sheet1 A8:A14",
+      "qualification": "Provisional counts are separate native observations, not an additional turnout numerator.",
+      "county_literal": "Duchesne County",
+      "source_receipt": {
+        "county": "Duchesne County",
+        "report_name": "Duchesne County Ballot Statistics Nov 4",
+        "native_filename": "Statistics Enhanced Voting_f78a8543-fe71-471e-84cf-b630e449c302.xlsx",
+        "selection": "current",
+        "upload_date_literal": null,
+        "requested_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Statistics%20Enhanced%20Voting_f78a8543-fe71-471e-84cf-b630e449c302.xlsx",
+        "ordinal": 7,
+        "status": 200,
+        "final_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Statistics%20Enhanced%20Voting_f78a8543-fe71-471e-84cf-b630e449c302.xlsx",
+        "captured_at_utc": "2026-11-06T18:56:45.773253+00:00",
+        "content_type": "application/octet-stream",
+        "original_file": "source-007.xlsx",
+        "bytes": 11695,
+        "sha256": "46f4c3ba489d908a715b7b2e12e49f5acc30b78a19ab676a223eb237f6825a88"
+      },
+      "source_timezone_literal": null,
+      "native_fips": null,
+      "analysis_rate_approved": false,
+      "map_approved": false,
+      "latest_selection": true,
+      "extraction_review": {
+        "county": "Duchesne County",
+        "original_file": "source-007.xlsx",
+        "sha256": "46f4c3ba489d908a715b7b2e12e49f5acc30b78a19ab676a223eb237f6825a88",
+        "worksheets": 3,
+        "nonempty_cells": 12,
+        "all_native_cached_values_agree": true,
+        "blank_cells_not_zero": true,
+        "formulas_not_executed": true
+      }
+    },
+    {
+      "source_ordinal": 8,
+      "source_updated_literal": null,
+      "native_counted_label": "Number of ballots counted",
+      "native_denominator_label": "Number of active registered voters",
+      "fields": {
+        "registered_voters": 1827,
+        "ballots_received": 1240,
+        "ballots_counted": 1109,
+        "early_voters": 3,
+        "election_day_voters": 28,
+        "provisional_ballots": 4,
+        "uncounted_ballots": 100,
+        "curable_ballots": 29,
+        "incurable_ballots": 2
+      },
+      "counted_total_scope_review": "native_counted_total",
+      "source_location": "Ballot Stats A1:A18",
+      "reconciliation": {
+        "sheet_literal": "Reconciliation Tabulation",
+        "date_literal": "2026-11-03",
+        "uncounted_verified_ballots": null,
+        "tabulated_ballots": 1109,
+        "voters_given_credit": 1209,
+        "native_difference": 100
+      },
+      "qualification": "The worksheet states that an election stick did not tabulate properly. Preserve 1109 counted versus 1209 credited and the 100 discrepancy. Do not repair counted ballots from a different worksheet's batch total. The Ballot Stats sheet itself has no source clock.",
+      "county_literal": "Wayne County",
+      "source_receipt": {
+        "county": "Wayne County",
+        "report_name": " Wayne County Ballot Statistics Nov 4",
+        "native_filename": "Wayne 2026 Election Forms_9b58cab3-ce70-4bc6-8dac-2ac378fc26c5.xlsx",
+        "selection": "current",
+        "upload_date_literal": null,
+        "requested_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Wayne%202026%20Election%20Forms_9b58cab3-ce70-4bc6-8dac-2ac378fc26c5.xlsx",
+        "ordinal": 8,
+        "status": 200,
+        "final_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Wayne%202026%20Election%20Forms_9b58cab3-ce70-4bc6-8dac-2ac378fc26c5.xlsx",
+        "captured_at_utc": "2026-11-06T18:56:46.595529+00:00",
+        "content_type": "application/octet-stream",
+        "original_file": "source-008.xlsx",
+        "bytes": 300969,
+        "sha256": "43e3156f012125202445185363397d00be2a17f489648a0d06a4e68343779e4c"
+      },
+      "source_timezone_literal": null,
+      "native_fips": null,
+      "analysis_rate_approved": false,
+      "map_approved": false,
+      "latest_selection": true,
+      "extraction_review": {
+        "county": "Wayne County",
+        "original_file": "source-008.xlsx",
+        "sha256": "43e3156f012125202445185363397d00be2a17f489648a0d06a4e68343779e4c",
+        "worksheets": 12,
+        "nonempty_cells": 524,
+        "all_native_cached_values_agree": true,
+        "blank_cells_not_zero": true,
+        "formulas_not_executed": true
+      }
+    },
+    {
+      "source_ordinal": 9,
+      "source_updated_literal": "4-Nov",
+      "native_counted_label": "Ballots Tabulated",
+      "native_denominator_label": "Approx # Active Registered Voters",
+      "fields": {
+        "registered_voters": 7677,
+        "ballots_received": 3824,
+        "ballots_in_processing": null,
+        "challenged_ballots": 57,
+        "cured_ballots": 0,
+        "incurable_ballots": null,
+        "provisional_ballots": 29,
+        "ballots_counted": 3738,
+        "reported_returned_pct": "48.69"
+      },
+      "counted_total_scope_review": "native_counted_total",
+      "source_location": "physical page 1, dated row and repeated sidebar",
+      "qualification": "Native processing and incurable cells are blank. The source labels 48.69% as returned although the repeated numerator is ballots tabulated; preserve the literal label.",
+      "county_literal": "Juab County",
+      "source_receipt": {
+        "county": "Juab County",
+        "report_name": "Juab County Ballot Statistics Nov 4",
+        "native_filename": "2026 General Post Election Stats_2e1fafee-4262-4309-b4e4-911587f89f3c.pdf",
+        "selection": "current",
+        "upload_date_literal": null,
+        "requested_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/2026%20General%20Post%20Election%20Stats_2e1fafee-4262-4309-b4e4-911587f89f3c.pdf",
+        "ordinal": 9,
+        "status": 200,
+        "final_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/2026%20General%20Post%20Election%20Stats_2e1fafee-4262-4309-b4e4-911587f89f3c.pdf",
+        "captured_at_utc": "2026-11-06T18:56:46.289563+00:00",
+        "content_type": "application/octet-stream",
+        "original_file": "source-009.pdf",
+        "bytes": 6952,
+        "sha256": "d0321427edafab5647d76f39aaf9abc597dcc373a96d62832208f65ecbe5df52",
+        "physical_pages": 1
+      },
+      "source_timezone_literal": null,
+      "native_fips": null,
+      "analysis_rate_approved": false,
+      "map_approved": false,
+      "latest_selection": true,
+      "extraction_review": {
+        "physical_pages": 1,
+        "both_complete_pdf_text_engine_outputs_retained": true,
+        "text_extractors_have_no_numerical_evidence": false,
+        "every_physical_page_render_and_local_vision_output_retained": true,
+        "scanned_or_embedded_table_requires_physical_numeric_review": false,
+        "no_claim_that_two_empty_extractions_validate_numbers": true
+      }
+    },
+    {
+      "source_ordinal": 10,
+      "source_updated_literal": "2026-11-04",
+      "native_counted_label": null,
+      "native_denominator_label": null,
+      "fields": {
+        "registered_voters": null,
+        "ballots_counted": null,
+        "latest_voters_given_credit": 2060,
+        "latest_uncounted_verified_ballots": 1,
+        "latest_total_ballots_scanned": null
+      },
+      "counted_total_scope_review": "withheld_scanned_or_credited_not_relabelled_counted",
+      "source_location": "Sheet1 A4:F16",
+      "historical_scanned_observation": {
+        "date_literal": "2026-11-03",
+        "total_ballots_scanned": 2059,
+        "voters_given_credit": 2059,
+        "uncounted_verified_ballots": 768
+      },
+      "qualification": "The November 4 scanned cell is blank, not zero. Preserve scanned ballots, verified ballots and voter-history credit as distinct measures; no generic counted total is approved.",
+      "county_literal": "Garfield County",
+      "source_receipt": {
+        "county": "Garfield County",
+        "report_name": "Garfield County Ballot Statistics Nov 4",
+        "native_filename": "Ballot Statistics - General Election 2026_1473f884-cd9a-42c1-acba-d0175e17c3b5.xlsx",
+        "selection": "current",
+        "upload_date_literal": null,
+        "requested_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Ballot%20Statistics%20-%20General%20Election%202026_1473f884-cd9a-42c1-acba-d0175e17c3b5.xlsx",
+        "ordinal": 10,
+        "status": 200,
+        "final_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Ballot%20Statistics%20-%20General%20Election%202026_1473f884-cd9a-42c1-acba-d0175e17c3b5.xlsx",
+        "captured_at_utc": "2026-11-06T18:56:46.066574+00:00",
+        "content_type": "application/octet-stream",
+        "original_file": "source-010.xlsx",
+        "bytes": 10229,
+        "sha256": "151e24d32c03186c99c249a029f0c87324ad2efb77c5a24e3bb6b9c5afca2802"
+      },
+      "source_timezone_literal": null,
+      "native_fips": null,
+      "analysis_rate_approved": false,
+      "map_approved": false,
+      "latest_selection": true,
+      "extraction_review": {
+        "county": "Garfield County",
+        "original_file": "source-010.xlsx",
+        "sha256": "151e24d32c03186c99c249a029f0c87324ad2efb77c5a24e3bb6b9c5afca2802",
+        "worksheets": 1,
+        "nonempty_cells": 44,
+        "all_native_cached_values_agree": true,
+        "blank_cells_not_zero": true,
+        "formulas_not_executed": true
+      }
+    },
+    {
+      "source_ordinal": 11,
+      "source_updated_literal": "11/4/2026",
+      "native_counted_label": "Ballots Processed and counted daily (includes cured ballots)",
+      "native_denominator_label": "Active Voters",
+      "fields": {
+        "registered_voters": 7264,
+        "ballots_received": 4213,
+        "observed_counted_daily_value": 4049,
+        "ballots_counted": null,
+        "uncounted_ballots": 0,
+        "curable_ballots": 61,
+        "incurable_ballots": 11,
+        "provisionals_received_not_processed": 20,
+        "provisionals_processed_countable": null,
+        "ballots_left_to_tabulate": 73
+      },
+      "counted_total_scope_review": "withheld_daily_versus_cumulative_scope",
+      "source_location": "physical page 1",
+      "qualification": "The native counted row says daily while the remaining-to-tabulate row says accumulative. Retain 4049 under its literal daily label pending a cumulative definition; do not invent a total or fill the blank countable-provisional cell.",
+      "county_literal": "Millard County",
+      "source_receipt": {
+        "county": "Millard County",
+        "report_name": "Millard County Ballot Statistics Nov 4",
+        "native_filename": "Millard County Statistical Results 11-4-26_a8f809f9-dd0d-4bd8-955b-ade6ddf26cbe.pdf",
+        "selection": "current",
+        "upload_date_literal": null,
+        "requested_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Millard%20County%20Statistical%20Results%2011-4-26_a8f809f9-dd0d-4bd8-955b-ade6ddf26cbe.pdf",
+        "ordinal": 11,
+        "status": 200,
+        "final_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Millard%20County%20Statistical%20Results%2011-4-26_a8f809f9-dd0d-4bd8-955b-ade6ddf26cbe.pdf",
+        "captured_at_utc": "2026-11-06T18:56:46.731514+00:00",
+        "content_type": "application/octet-stream",
+        "original_file": "source-011.pdf",
+        "bytes": 89742,
+        "sha256": "b6a54c9efa7c457322f04ecb504fd6e7b935f7f887dd370e9417e0a2fe52c94f",
+        "physical_pages": 1
+      },
+      "source_timezone_literal": null,
+      "native_fips": null,
+      "analysis_rate_approved": false,
+      "map_approved": false,
+      "latest_selection": true,
+      "extraction_review": {
+        "physical_pages": 1,
+        "both_complete_pdf_text_engine_outputs_retained": true,
+        "text_extractors_have_no_numerical_evidence": true,
+        "every_physical_page_render_and_local_vision_output_retained": true,
+        "scanned_or_embedded_table_requires_physical_numeric_review": true,
+        "no_claim_that_two_empty_extractions_validate_numbers": true
+      }
+    },
+    {
+      "source_ordinal": 13,
+      "source_updated_literal": "November 5 2026 at 11:30 AM",
+      "native_counted_label": "Ballots Successfully Counted",
+      "native_denominator_label": "Active Registered Voters",
+      "fields": {
+        "registered_voters": 15532,
+        "ballots_received": 8662,
+        "provisional_ballots_cast": 313,
+        "ballots_counted": 8580,
+        "processed_not_counted": 0,
+        "curable_ballots": 37,
+        "incurable_ballots": 45,
+        "native_reconciliation_audit_sum": 8662
+      },
+      "counted_total_scope_review": "native_counted_total",
+      "source_location": "physical page 1",
+      "qualification": "The source explicitly excludes provisional ballots from estimated received ballots and the audit sum; do not add them to counted turnout.",
+      "county_literal": "Sanpete County",
+      "source_receipt": {
+        "county": "Sanpete County",
+        "report_name": "Sanpete County Ballot Statistics Nov 4",
+        "native_filename": "Sanpete County Live Election Reconciliation (Official) - 11 5 2026_2a2570c8-c5c4-4ed3-9950-3c9168ff1841.pdf",
+        "selection": "current",
+        "upload_date_literal": null,
+        "requested_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Sanpete%20County%20Live%20Election%20Reconciliation%20(Official)%20-%2011%205%202026_2a2570c8-c5c4-4ed3-9950-3c9168ff1841.pdf",
+        "ordinal": 13,
+        "status": 200,
+        "final_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Sanpete%20County%20Live%20Election%20Reconciliation%20(Official)%20-%2011%205%202026_2a2570c8-c5c4-4ed3-9950-3c9168ff1841.pdf",
+        "captured_at_utc": "2026-11-06T18:56:46.665296+00:00",
+        "content_type": "application/octet-stream",
+        "original_file": "source-013.pdf",
+        "bytes": 50818,
+        "sha256": "c65b61d55b76bda8b4c1017f258ea1de314a7f2ff333892a1c9e1c4bbb2cccaa",
+        "physical_pages": 1
+      },
+      "source_timezone_literal": null,
+      "native_fips": null,
+      "analysis_rate_approved": false,
+      "map_approved": false,
+      "latest_selection": true,
+      "extraction_review": {
+        "physical_pages": 1,
+        "both_complete_pdf_text_engine_outputs_retained": true,
+        "text_extractors_have_no_numerical_evidence": false,
+        "every_physical_page_render_and_local_vision_output_retained": true,
+        "scanned_or_embedded_table_requires_physical_numeric_review": false,
+        "no_claim_that_two_empty_extractions_validate_numbers": true
+      }
+    },
+    {
+      "source_ordinal": 14,
+      "source_updated_literal": "2026-11-05",
+      "native_column_date_literal": "2026-11-04",
+      "native_counted_label": null,
+      "native_denominator_label": null,
+      "fields": {
+        "registered_voters": null,
+        "ballots_received": 3391,
+        "not_processed": 0,
+        "in_process": 0,
+        "processed": 3391,
+        "challenged": 68,
+        "challenged_curable": 31,
+        "rejected_incurable": 4,
+        "provisional_not_processed": 0,
+        "pending_adjudication": 0,
+        "pending_replication": 0,
+        "replicated": 0,
+        "ballots_counted": null
+      },
+      "counted_total_scope_review": "withheld_processed_not_defined_as_counted",
+      "source_location": "Sheet1 A1:B13",
+      "qualification": "Processed is not silently relabeled as tabulated ballots or unique counted voters.",
+      "county_literal": "Kane County",
+      "source_receipt": {
+        "county": "Kane County",
+        "report_name": "Kane County Ballot Statistics Nov 4",
+        "native_filename": "Ballot Statistics_70e99918-81dc-496e-8c35-d3e5f3e68347.xlsx",
+        "selection": "current",
+        "upload_date_literal": null,
+        "requested_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Ballot%20Statistics_70e99918-81dc-496e-8c35-d3e5f3e68347.xlsx",
+        "ordinal": 14,
+        "status": 200,
+        "final_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Ballot%20Statistics_70e99918-81dc-496e-8c35-d3e5f3e68347.xlsx",
+        "captured_at_utc": "2026-11-06T18:56:46.609414+00:00",
+        "content_type": "application/octet-stream",
+        "original_file": "source-014.xlsx",
+        "bytes": 10771,
+        "sha256": "cf6d13d95e191ebcb8395835ffa6867d158a9c562d6b16a2f51eeaee55627446"
+      },
+      "source_timezone_literal": null,
+      "native_fips": null,
+      "analysis_rate_approved": false,
+      "map_approved": false,
+      "latest_selection": true,
+      "extraction_review": {
+        "county": "Kane County",
+        "original_file": "source-014.xlsx",
+        "sha256": "cf6d13d95e191ebcb8395835ffa6867d158a9c562d6b16a2f51eeaee55627446",
+        "worksheets": 1,
+        "nonempty_cells": 26,
+        "all_native_cached_values_agree": true,
+        "blank_cells_not_zero": true,
+        "formulas_not_executed": true
+      }
+    },
+    {
+      "source_ordinal": 15,
+      "source_updated_literal": "11/5/2026",
+      "native_column_date_literal": "11/4/2026",
+      "native_counted_label": "Counted",
+      "native_denominator_label": "Active Voters as of 10/30/26",
+      "fields": {
+        "registered_voters": 10896,
+        "ballots_received": 6735,
+        "ballots_counted": 6694,
+        "uncounted_ballots": 0,
+        "curable_ballots": 41,
+        "incurable_ballots": 0,
+        "provisional_ballots": 124
+      },
+      "counted_total_scope_review": "native_counted_total",
+      "source_location": "physical page 1",
+      "qualification": "Keep the November 5 document update separate from the November 4 column date and October 30 registration snapshot.",
+      "county_literal": "Carbon County",
+      "source_receipt": {
+        "county": "Carbon County",
+        "report_name": "Carbon County Ballot Statistics Nov 4",
+        "native_filename": "Ballot Statistics 1_7eac1407-79d6-4e83-b70e-ad2f62e17952.pdf",
+        "selection": "current",
+        "upload_date_literal": null,
+        "requested_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Ballot%20Statistics%201_7eac1407-79d6-4e83-b70e-ad2f62e17952.pdf",
+        "ordinal": 15,
+        "status": 200,
+        "final_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Ballot%20Statistics%201_7eac1407-79d6-4e83-b70e-ad2f62e17952.pdf",
+        "captured_at_utc": "2026-11-06T18:56:47.153838+00:00",
+        "content_type": "application/octet-stream",
+        "original_file": "source-015.pdf",
+        "bytes": 397539,
+        "sha256": "2e0882d52755aa16beff6e5b74bf47274056b71fd4c39d1586b9a832b442fd57",
+        "physical_pages": 1
+      },
+      "source_timezone_literal": null,
+      "native_fips": null,
+      "analysis_rate_approved": false,
+      "map_approved": false,
+      "latest_selection": true,
+      "extraction_review": {
+        "physical_pages": 1,
+        "both_complete_pdf_text_engine_outputs_retained": true,
+        "text_extractors_have_no_numerical_evidence": false,
+        "every_physical_page_render_and_local_vision_output_retained": true,
+        "scanned_or_embedded_table_requires_physical_numeric_review": false,
+        "no_claim_that_two_empty_extractions_validate_numbers": true
+      }
+    },
+    {
+      "source_ordinal": 16,
+      "source_updated_literal": null,
+      "native_counted_label": null,
+      "native_denominator_label": "Registered voter #'s",
+      "fields": {
+        "registered_voters": 32827,
+        "estimated_ballots_received": 16483,
+        "ballots_received": 17611,
+        "ballots_not_yet_processed": null,
+        "provisional_unprocessed": 383,
+        "challenged_ballots": 207,
+        "ballots_counted": null
+      },
+      "counted_total_scope_review": "withheld_received_not_counted",
+      "source_location": "physical page 1",
+      "qualification": "Preserve the two different received/estimated-received figures. Neither is a counted-ballot or participant numerator.",
+      "county_literal": "Iron County",
+      "source_receipt": {
+        "county": "Iron County",
+        "report_name": "Iron County Ballot Statistics Nov 4",
+        "native_filename": "= Iron Co Ballot Statistics, General 2026_26f91182-4efd-4101-be6d-8cdc1c39c826.pdf",
+        "selection": "current",
+        "upload_date_literal": null,
+        "requested_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/=%20Iron%20Co%20Ballot%20Statistics,%20General%202026_26f91182-4efd-4101-be6d-8cdc1c39c826.pdf",
+        "ordinal": 16,
+        "status": 200,
+        "final_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/=%20Iron%20Co%20Ballot%20Statistics,%20General%202026_26f91182-4efd-4101-be6d-8cdc1c39c826.pdf",
+        "captured_at_utc": "2026-11-06T18:56:47.359995+00:00",
+        "content_type": "application/octet-stream",
+        "original_file": "source-016.pdf",
+        "bytes": 157409,
+        "sha256": "5b8c7fb4e472077ecc4af3f4451a4879925ea3da4e9250eb4b996b8f38346e7c",
+        "physical_pages": 1
+      },
+      "source_timezone_literal": null,
+      "native_fips": null,
+      "analysis_rate_approved": false,
+      "map_approved": false,
+      "latest_selection": true,
+      "extraction_review": {
+        "physical_pages": 1,
+        "both_complete_pdf_text_engine_outputs_retained": true,
+        "text_extractors_have_no_numerical_evidence": false,
+        "every_physical_page_render_and_local_vision_output_retained": true,
+        "scanned_or_embedded_table_requires_physical_numeric_review": false,
+        "no_claim_that_two_empty_extractions_validate_numbers": true
+      }
+    },
+    {
+      "source_ordinal": 17,
+      "source_updated_literal": "11/5 at 4:30pm",
+      "native_counted_label": "Ballots tabulated",
+      "native_denominator_label": "Approx # Active Registered Voters",
+      "fields": {
+        "registered_voters": 41911,
+        "ballots_received": null,
+        "unprocessed_ballots": 0,
+        "verified_unprocessed_ballots": 72,
+        "challenged_ballots": 129,
+        "incurable_ballots": 22,
+        "provisional_ballots": 283,
+        "ballots_counted": 21033,
+        "reported_returned_pct": "50.18"
+      },
+      "counted_total_scope_review": "native_counted_total",
+      "source_location": "physical page 1, November 5 row and repeated sidebar",
+      "historical_tabulated": [
+        {
+          "date_literal": "10-19-26",
+          "ballots": 662
+        },
+        {
+          "date_literal": "10-20-26",
+          "ballots": 2447
+        },
+        {
+          "date_literal": "10-23-26",
+          "ballots": 4412
+        },
+        {
+          "date_literal": "10-27-26",
+          "ballots": 6568
+        },
+        {
+          "date_literal": "10-30-26",
+          "ballots": 9189
+        },
+        {
+          "date_literal": "11-2-26",
+          "ballots": 11713
+        },
+        {
+          "date_literal": "11-3-26",
+          "ballots": 15019
+        },
+        {
+          "date_literal": "11-4-26",
+          "ballots": 20859
+        },
+        {
+          "date_literal": "11-5-26",
+          "ballots": 21033
+        }
+      ],
+      "qualification": "Unprocessed ballots in possession are not the cumulative received total. Earlier categories marked reported after election day are not numerical zeros.",
+      "county_literal": "Tooele County",
+      "source_receipt": {
+        "county": "Tooele County",
+        "report_name": "Tooele County Ballot Statistics Nov 5",
+        "native_filename": "Tooele Co Ballot Stats as of 11-5_86be919b-819e-473a-b4ca-4f1c9f632f02.pdf",
+        "selection": "current",
+        "upload_date_literal": null,
+        "requested_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Tooele%20Co%20Ballot%20Stats%20as%20of%2011-5_86be919b-819e-473a-b4ca-4f1c9f632f02.pdf",
+        "ordinal": 17,
+        "status": 200,
+        "final_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Tooele%20Co%20Ballot%20Stats%20as%20of%2011-5_86be919b-819e-473a-b4ca-4f1c9f632f02.pdf",
+        "captured_at_utc": "2026-11-06T18:56:47.094691+00:00",
+        "content_type": "application/octet-stream",
+        "original_file": "source-017.pdf",
+        "bytes": 54727,
+        "sha256": "7d6e8fd8f0ba96c41fe1edad0bf60a5f5abea3e766377645ae4badd893c2720c",
+        "physical_pages": 1
+      },
+      "source_timezone_literal": null,
+      "native_fips": null,
+      "analysis_rate_approved": false,
+      "map_approved": false,
+      "latest_selection": true,
+      "extraction_review": {
+        "physical_pages": 1,
+        "both_complete_pdf_text_engine_outputs_retained": true,
+        "text_extractors_have_no_numerical_evidence": false,
+        "every_physical_page_render_and_local_vision_output_retained": true,
+        "scanned_or_embedded_table_requires_physical_numeric_review": false,
+        "no_claim_that_two_empty_extractions_validate_numbers": true
+      }
+    },
+    {
+      "source_ordinal": 18,
+      "source_updated_literal": "11/5/26, 5:00pm",
+      "embedded_table_updated_literal": "11-05-2026, 4:55PM",
+      "results_updated_literal": "11/5/26, 10:00am",
+      "native_counted_label": null,
+      "native_denominator_label": null,
+      "fields": {
+        "registered_voters": null,
+        "ballots_counted": null,
+        "ballots_awaiting_processing": 0,
+        "provisional_ballots_not_processed": 850,
+        "signature_issue_ballots": 412,
+        "ballots_awaiting_replication": 0,
+        "ballots_replicated": 11,
+        "awaiting_adjudication": 0,
+        "fully_processed_ballots": 41680,
+        "ballots_in_possession": 42942
+      },
+      "counted_total_scope_review": "withheld_fully_processed_not_defined_as_tabulated",
+      "source_location": "physical page 1, embedded-image table plus native text",
+      "qualification": "The native note explicitly warns that provisional and rejected categories may overlap other totals. Fully processed is not relabeled as counted, and all rows are not added.",
+      "county_literal": "Cache County",
+      "source_receipt": {
+        "county": "Cache County",
+        "report_name": "Cache County Ballot Statistics Nov 5",
+        "native_filename": "Cache_County_Ballot_Statistics_2_2622d2d9-497b-4048-814a-6fadb3b15f3e.pdf",
+        "selection": "current",
+        "upload_date_literal": null,
+        "requested_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Cache_County_Ballot_Statistics_2_2622d2d9-497b-4048-814a-6fadb3b15f3e.pdf",
+        "ordinal": 18,
+        "status": 200,
+        "final_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Cache_County_Ballot_Statistics_2_2622d2d9-497b-4048-814a-6fadb3b15f3e.pdf",
+        "captured_at_utc": "2026-11-06T18:56:47.332168+00:00",
+        "content_type": "application/octet-stream",
+        "original_file": "source-018.pdf",
+        "bytes": 474448,
+        "sha256": "6f13545644bbddd0870065cf70ab414afb6663eac3fcb145d2552481130a7dc8",
+        "physical_pages": 1
+      },
+      "source_timezone_literal": null,
+      "native_fips": null,
+      "analysis_rate_approved": false,
+      "map_approved": false,
+      "latest_selection": true,
+      "extraction_review": {
+        "physical_pages": 1,
+        "both_complete_pdf_text_engine_outputs_retained": true,
+        "text_extractors_have_no_numerical_evidence": false,
+        "every_physical_page_render_and_local_vision_output_retained": true,
+        "scanned_or_embedded_table_requires_physical_numeric_review": true,
+        "no_claim_that_two_empty_extractions_validate_numbers": true
+      }
+    },
+    {
+      "source_ordinal": 19,
+      "source_updated_literal": "11/03/2026 11:18 a.m.",
+      "native_counted_label": "Ballots Counted",
+      "native_denominator_label": "Active Voters (as of 10/30/2026)",
+      "fields": {
+        "registered_voters": 18095,
+        "ballots_received": 9761,
+        "ballots_counted": 9449,
+        "challenged_not_cured": 160,
+        "incurable_ballots": 2
+      },
+      "counted_total_scope_review": "native_counted_total",
+      "source_location": "physical page 1",
+      "qualification": "This retained document literally reports a November 3 morning source clock despite the later menu label/upload. Do not promote the upload time to the numerical cutoff or claim post-election completeness.",
+      "county_literal": "Uintah County",
+      "source_receipt": {
+        "county": "Uintah County",
+        "report_name": "Uintah County Ballot Statistics Nov 5",
+        "native_filename": "2026 Uintah County Ballot Statistics _f0403077-694c-4b9f-9612-842a513fe342.pdf",
+        "selection": "current",
+        "upload_date_literal": null,
+        "requested_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/2026%20Uintah%20County%20Ballot%20Statistics%20_f0403077-694c-4b9f-9612-842a513fe342.pdf",
+        "ordinal": 19,
+        "status": 200,
+        "final_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/2026%20Uintah%20County%20Ballot%20Statistics%20_f0403077-694c-4b9f-9612-842a513fe342.pdf",
+        "captured_at_utc": "2026-11-06T18:56:47.637021+00:00",
+        "content_type": "application/octet-stream",
+        "original_file": "source-019.pdf",
+        "bytes": 116172,
+        "sha256": "ad7077ec2da8e8cc4cb8ecfbf4c68331dbf8d9924c94efd6148671ad788ee5d8",
+        "physical_pages": 1
+      },
+      "source_timezone_literal": null,
+      "native_fips": null,
+      "analysis_rate_approved": false,
+      "map_approved": false,
+      "latest_selection": true,
+      "extraction_review": {
+        "physical_pages": 1,
+        "both_complete_pdf_text_engine_outputs_retained": true,
+        "text_extractors_have_no_numerical_evidence": true,
+        "every_physical_page_render_and_local_vision_output_retained": true,
+        "scanned_or_embedded_table_requires_physical_numeric_review": true,
+        "no_claim_that_two_empty_extractions_validate_numbers": true
+      }
+    },
+    {
+      "source_ordinal": 20,
+      "source_updated_literal": "November 5, 2026",
+      "native_counted_label": "Number of Ballots Counted",
+      "native_denominator_label": "Total Number of Active Registered Voters as of October 30, 2026",
+      "fields": {
+        "registered_voters": 12498,
+        "ballots_received": 6548,
+        "ballots_counted": 6293,
+        "uncounted_ballots": 255,
+        "provisional_ballots": 32,
+        "curable_ballots": 64,
+        "incurable_ballots": 9
+      },
+      "counted_total_scope_review": "native_counted_total",
+      "source_location": "physical page 1",
+      "qualification": "Named uncounted subcategories do not exhaust the source total; the remaining arithmetic difference is not assigned a ballot category.",
+      "county_literal": "Sevier County",
+      "source_receipt": {
+        "county": "Sevier County",
+        "report_name": "Sevier County Ballot Statistics Nov 5",
+        "native_filename": "Ballot Statistics 11.5.2026_ebed54e5-5d5b-4dde-8432-87e1fb8de872.pdf",
+        "selection": "current",
+        "upload_date_literal": null,
+        "requested_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Ballot%20Statistics%2011.5.2026_ebed54e5-5d5b-4dde-8432-87e1fb8de872.pdf",
+        "ordinal": 20,
+        "status": 200,
+        "final_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Ballot%20Statistics%2011.5.2026_ebed54e5-5d5b-4dde-8432-87e1fb8de872.pdf",
+        "captured_at_utc": "2026-11-06T18:56:47.787703+00:00",
+        "content_type": "application/octet-stream",
+        "original_file": "source-020.pdf",
+        "bytes": 61158,
+        "sha256": "61baa3110434e1a7f258df58b728b9f48f493caab17645a02e84cb91b8ecf4c5",
+        "physical_pages": 1
+      },
+      "source_timezone_literal": null,
+      "native_fips": null,
+      "analysis_rate_approved": false,
+      "map_approved": false,
+      "latest_selection": true,
+      "extraction_review": {
+        "physical_pages": 1,
+        "both_complete_pdf_text_engine_outputs_retained": true,
+        "text_extractors_have_no_numerical_evidence": true,
+        "every_physical_page_render_and_local_vision_output_retained": true,
+        "scanned_or_embedded_table_requires_physical_numeric_review": true,
+        "no_claim_that_two_empty_extractions_validate_numbers": true
+      }
+    },
+    {
+      "source_ordinal": 21,
+      "source_updated_literal": "11/5/26 at 7 p.m.",
+      "native_counted_label": "Number of ballots counted",
+      "native_denominator_label": "Number of active registered voters",
+      "fields": {
+        "registered_voters": 133164,
+        "ballots_received": 79315,
+        "ballots_counted": 77617,
+        "uncounted_ballots": 1153,
+        "curable_ballots": 545,
+        "incurable_ballots": null,
+        "provisional_ballots": 1342
+      },
+      "counted_total_scope_review": "native_counted_total",
+      "source_location": "physical page 1",
+      "incurable_native_literal": "-",
+      "qualification": "The incurable row contains a dash, not an explicit zero. Preserve it as missing.",
+      "county_literal": "Weber County",
+      "source_receipt": {
+        "county": "Weber County",
+        "report_name": "Weber County Ballot Statistics Nov 5",
+        "native_filename": "Weber Ballot Stats 11-5-26_9abf30ee-87c9-40e5-8c0d-1851f88f3cb3.pdf",
+        "selection": "current",
+        "upload_date_literal": null,
+        "requested_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Weber%20Ballot%20Stats%2011-5-26_9abf30ee-87c9-40e5-8c0d-1851f88f3cb3.pdf",
+        "ordinal": 21,
+        "status": 200,
+        "final_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Weber%20Ballot%20Stats%2011-5-26_9abf30ee-87c9-40e5-8c0d-1851f88f3cb3.pdf",
+        "captured_at_utc": "2026-11-06T18:56:48.073593+00:00",
+        "content_type": "application/octet-stream",
+        "original_file": "source-021.pdf",
+        "bytes": 36787,
+        "sha256": "966422608b384fa0cec87e94aa1f076f0aa537298471009beb4db560b51881cc",
+        "physical_pages": 1
+      },
+      "source_timezone_literal": null,
+      "native_fips": null,
+      "analysis_rate_approved": false,
+      "map_approved": false,
+      "latest_selection": true,
+      "extraction_review": {
+        "physical_pages": 1,
+        "both_complete_pdf_text_engine_outputs_retained": true,
+        "text_extractors_have_no_numerical_evidence": true,
+        "every_physical_page_render_and_local_vision_output_retained": true,
+        "scanned_or_embedded_table_requires_physical_numeric_review": true,
+        "no_claim_that_two_empty_extractions_validate_numbers": true
+      }
+    },
+    {
+      "source_ordinal": 22,
+      "source_updated_literal": null,
+      "native_counted_label": null,
+      "native_denominator_label": null,
+      "fields": {
+        "registered_voters": null,
+        "ballots_counted": null,
+        "ballots_returned": 5596,
+        "usps_returned": 2210,
+        "expressvote_returned": 652,
+        "provisional_returned": 396,
+        "dropbox_returned": 1638,
+        "digital_returned": 700,
+        "remaining_to_adjudicate_usps": 1500,
+        "remaining_to_adjudicate_expressvote": 0,
+        "remaining_to_adjudicate_dropbox": 850,
+        "remaining_to_adjudicate_digital": 700,
+        "remaining_to_adjudicate_provisional": 0,
+        "remaining_to_adjudicate_total": 3050
+      },
+      "counted_total_scope_review": "withheld_returns_and_pending_adjudication_not_counted",
+      "source_location": "Ballot Totals by Return Method, complete native table",
+      "latest_dated_return_row_literal": "2026-11-03",
+      "qualification": "5596 is a return-method total; 3050 is explicitly remaining to adjudicate. Neither is turnout. Do not subtract to manufacture a counted numerator.",
+      "county_literal": "San Juan County",
+      "source_receipt": {
+        "county": "San Juan County",
+        "report_name": "San Juan County Ballot Statistics Nov 5",
+        "native_filename": "2026 General Election Reconciliation Form for Ballots Enhanced Results I_2eaf7f23-7dca-44e3-b7e1-943fd6042182.xlsx",
+        "selection": "current",
+        "upload_date_literal": null,
+        "requested_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/2026%20General%20Election%20Reconciliation%20Form%20for%20Ballots%20Enhanced%20Results%20I_2eaf7f23-7dca-44e3-b7e1-943fd6042182.xlsx",
+        "ordinal": 22,
+        "status": 200,
+        "final_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/2026%20General%20Election%20Reconciliation%20Form%20for%20Ballots%20Enhanced%20Results%20I_2eaf7f23-7dca-44e3-b7e1-943fd6042182.xlsx",
+        "captured_at_utc": "2026-11-06T18:56:47.715128+00:00",
+        "content_type": "application/octet-stream",
+        "original_file": "source-022.xlsx",
+        "bytes": 19013,
+        "sha256": "0b128383c8177b190210756ac90c39250d82a37c9ec4533d0f226a9607a3abe0"
+      },
+      "source_timezone_literal": null,
+      "native_fips": null,
+      "analysis_rate_approved": false,
+      "map_approved": false,
+      "latest_selection": true,
+      "extraction_review": {
+        "county": "San Juan County",
+        "original_file": "source-022.xlsx",
+        "sha256": "0b128383c8177b190210756ac90c39250d82a37c9ec4533d0f226a9607a3abe0",
+        "worksheets": 1,
+        "nonempty_cells": 118,
+        "all_native_cached_values_agree": true,
+        "blank_cells_not_zero": true,
+        "formulas_not_executed": true
+      }
+    },
+    {
+      "source_ordinal": 23,
+      "source_updated_literal": "11/05/2026 7:38 pm",
+      "native_counted_label": "Ballots Counted",
+      "native_denominator_label": "Total Number of Active Registered Voters",
+      "fields": {
+        "registered_voters": 113087,
+        "ballots_received": 66759,
+        "ballots_counted": 64042,
+        "uncounted_ballots": 35,
+        "curable_ballots": 1718,
+        "incurable_ballots": 178,
+        "provisional_ballots_cast_included_in_total": 0
+      },
+      "counted_total_scope_review": "native_counted_total",
+      "source_location": "physical page 1",
+      "qualification": "The provisional count is explicitly zero and included in total. Other categories are not forced to exhaust estimated received ballots.",
+      "county_literal": "Washington County",
+      "source_receipt": {
+        "county": "Washington County",
+        "report_name": "Washington Ballot Statistics Nov 5",
+        "native_filename": "Ballot Stats 11052026_231d6ce2-8cc9-41c8-bd1d-a1f34dd6b47b.pdf",
+        "selection": "current",
+        "upload_date_literal": null,
+        "requested_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Ballot%20Stats%2011052026_231d6ce2-8cc9-41c8-bd1d-a1f34dd6b47b.pdf",
+        "ordinal": 23,
+        "status": 200,
+        "final_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Ballot%20Stats%2011052026_231d6ce2-8cc9-41c8-bd1d-a1f34dd6b47b.pdf",
+        "captured_at_utc": "2026-11-06T18:56:48.102963+00:00",
+        "content_type": "application/octet-stream",
+        "original_file": "source-023.pdf",
+        "bytes": 52026,
+        "sha256": "c1238df1b6e6ecbe4e68d687c824572334860411605a0f1336908b65b31b1d2f",
+        "physical_pages": 1
+      },
+      "source_timezone_literal": null,
+      "native_fips": null,
+      "analysis_rate_approved": false,
+      "map_approved": false,
+      "latest_selection": true,
+      "extraction_review": {
+        "physical_pages": 1,
+        "both_complete_pdf_text_engine_outputs_retained": true,
+        "text_extractors_have_no_numerical_evidence": true,
+        "every_physical_page_render_and_local_vision_output_retained": true,
+        "scanned_or_embedded_table_requires_physical_numeric_review": true,
+        "no_claim_that_two_empty_extractions_validate_numbers": true
+      }
+    },
+    {
+      "source_ordinal": 24,
+      "source_updated_literal": "11/6/2026 9:00 AM",
+      "native_counted_label": "Counted",
+      "native_denominator_label": "ACTIVE VOTERS as of 10/30/26",
+      "fields": {
+        "registered_voters": 3847,
+        "ballots_received": 2137,
+        "ballots_counted": 2098,
+        "uncounted_ballots": 14,
+        "curable_ballots": 23,
+        "incurable_ballots": 2,
+        "provisional_ballots": 19
+      },
+      "counted_total_scope_review": "native_counted_total",
+      "source_location": "physical page 1, November 6 column",
+      "historical_column": {
+        "date_literal": "11/4/2026",
+        "ballots_counted": 2098,
+        "uncounted_ballots": 10,
+        "curable_ballots": 27,
+        "incurable_ballots": 0
+      },
+      "qualification": "Do not sum the two dated counted columns. Registration and provisional observations span the columns and are retained once.",
+      "county_literal": "Beaver County",
+      "source_receipt": {
+        "county": "Beaver County",
+        "report_name": "Beaver  County Ballot Statistics Nov 6",
+        "native_filename": "Beaver County Statistical Report 110626_1038537c-ab8e-40fc-9c16-27e5368b4f94.pdf",
+        "selection": "current",
+        "upload_date_literal": null,
+        "requested_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Beaver%20County%20Statistical%20Report%20110626_1038537c-ab8e-40fc-9c16-27e5368b4f94.pdf",
+        "ordinal": 24,
+        "status": 200,
+        "final_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Beaver%20County%20Statistical%20Report%20110626_1038537c-ab8e-40fc-9c16-27e5368b4f94.pdf",
+        "captured_at_utc": "2026-11-06T18:56:48.185460+00:00",
+        "content_type": "application/octet-stream",
+        "original_file": "source-024.pdf",
+        "bytes": 133030,
+        "sha256": "73940d635e01a2628f92f32b411e660d23458bbd082249e6e58176ec1a0477a2",
+        "physical_pages": 1
+      },
+      "source_timezone_literal": null,
+      "native_fips": null,
+      "analysis_rate_approved": false,
+      "map_approved": false,
+      "latest_selection": true,
+      "extraction_review": {
+        "physical_pages": 1,
+        "both_complete_pdf_text_engine_outputs_retained": true,
+        "text_extractors_have_no_numerical_evidence": true,
+        "every_physical_page_render_and_local_vision_output_retained": true,
+        "scanned_or_embedded_table_requires_physical_numeric_review": true,
+        "no_claim_that_two_empty_extractions_validate_numbers": true
+      }
+    },
+    {
+      "source_ordinal": 25,
+      "source_updated_literal": "11/6/26, 8:45am",
+      "results_updated_literal": "11/5/26 at 4:21pm",
+      "native_counted_label": "Ballots tabulated",
+      "native_denominator_label": "Total Active Registered Voters",
+      "fields": {
+        "registered_voters": 5873,
+        "ballots_received": 4677,
+        "by_mail_received": 4255,
+        "uocava_received": 21,
+        "in_person_received": 346,
+        "provisional_received": 55,
+        "by_mail_and_uocava_credited": 4229,
+        "in_person_credited": 346,
+        "provisional_credited": 50,
+        "vista_counted_total": 4625,
+        "ballots_counted": 4625,
+        "credited_remaining_to_tabulate": 0,
+        "uncredited_logged_not_scanned": 0,
+        "curable_ballots": 40,
+        "incurable_ballots": 8,
+        "provisional_needing_documentation": 4,
+        "uncredited_ballots_in_possession": 52,
+        "reconciliation_difference": 0,
+        "awaiting_replication": 0,
+        "returned_after_deadline": 8
+      },
+      "counted_total_scope_review": "native_counted_total",
+      "source_location": "physical page 1",
+      "qualification": "Credited modes reconcile to VISTA total and independently to tabulated ballots with zero credited ballots remaining. Rejected, late and provisional categories are not added twice.",
+      "county_literal": "Grand County",
+      "source_receipt": {
+        "county": "Grand County",
+        "report_name": "Grand  County Ballot Statistics Nov 6",
+        "native_filename": "11.6.26 Ballot Statistics_3264f534-3282-48d6-a0c2-52cef49d2358.pdf",
+        "selection": "current",
+        "upload_date_literal": null,
+        "requested_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/11.6.26%20Ballot%20Statistics_3264f534-3282-48d6-a0c2-52cef49d2358.pdf",
+        "ordinal": 25,
+        "status": 200,
+        "final_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/11.6.26%20Ballot%20Statistics_3264f534-3282-48d6-a0c2-52cef49d2358.pdf",
+        "captured_at_utc": "2026-11-06T18:56:48.708116+00:00",
+        "content_type": "application/octet-stream",
+        "original_file": "source-025.pdf",
+        "bytes": 676438,
+        "sha256": "64fc9f21dce25b3917641a0f689c8c54b2c2af02c640a654d3c8765c2eebb79d",
+        "physical_pages": 1
+      },
+      "source_timezone_literal": null,
+      "native_fips": null,
+      "analysis_rate_approved": false,
+      "map_approved": false,
+      "latest_selection": true,
+      "extraction_review": {
+        "physical_pages": 1,
+        "both_complete_pdf_text_engine_outputs_retained": true,
+        "text_extractors_have_no_numerical_evidence": false,
+        "every_physical_page_render_and_local_vision_output_retained": true,
+        "scanned_or_embedded_table_requires_physical_numeric_review": false,
+        "no_claim_that_two_empty_extractions_validate_numbers": true
+      }
+    },
+    {
+      "source_ordinal": 26,
+      "source_updated_literal": "Nov 5, 2026 at 6:06 PM",
+      "native_counted_label": "BALLOTS COUNTED",
+      "native_denominator_label": "ACTIVE VOTERS",
+      "fields": {
+        "registered_voters": 200115,
+        "ballots_received": 120267,
+        "ballots_counted": 115308,
+        "uncounted_ballots": 1430,
+        "curable_ballots": 3264,
+        "incurable_ballots": 9
+      },
+      "counted_total_scope_review": "native_counted_total",
+      "source_location": "physical page 1 of 2; second page is retained navigation/footer",
+      "qualification": "Latest selected Davis report supersedes but does not erase the earlier November 4 report. The later upload clock is not the literal source update.",
+      "county_literal": "Davis County",
+      "source_receipt": {
+        "county": "Davis County",
+        "report_name": "Davis County Ballot Statistics Nov 5",
+        "native_filename": "Stats 11-6_e9a72c5a-83fb-4c7b-ae26-4dd5b37f9307.pdf",
+        "selection": "current",
+        "upload_date_literal": null,
+        "requested_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Stats%2011-6_e9a72c5a-83fb-4c7b-ae26-4dd5b37f9307.pdf",
+        "ordinal": 26,
+        "status": 200,
+        "final_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Stats%2011-6_e9a72c5a-83fb-4c7b-ae26-4dd5b37f9307.pdf",
+        "captured_at_utc": "2026-11-06T18:56:48.735664+00:00",
+        "content_type": "application/octet-stream",
+        "original_file": "source-026.pdf",
+        "bytes": 801820,
+        "sha256": "249ba6c11c93fdadde8520f112a9590bfa4814314e5495351c85111ae1541322",
+        "physical_pages": 2
+      },
+      "source_timezone_literal": null,
+      "native_fips": null,
+      "analysis_rate_approved": false,
+      "map_approved": false,
+      "latest_selection": true,
+      "extraction_review": {
+        "physical_pages": 2,
+        "both_complete_pdf_text_engine_outputs_retained": true,
+        "text_extractors_have_no_numerical_evidence": true,
+        "every_physical_page_render_and_local_vision_output_retained": true,
+        "scanned_or_embedded_table_requires_physical_numeric_review": true,
+        "no_claim_that_two_empty_extractions_validate_numbers": true
+      }
+    },
+    {
+      "source_ordinal": 27,
+      "source_updated_literal": "6 Nov",
+      "native_counted_label": "Total Ballots Counted",
+      "native_denominator_label": "Active Registered Voters",
+      "fields": {
+        "registered_voters": 1590,
+        "ballots_received": 1278,
+        "ballots_counted": 1268,
+        "uncounted_ballots": 2,
+        "curable_ballots": 0,
+        "incurable_ballots": 8,
+        "provisional_ballots_cast": 10
+      },
+      "counted_total_scope_review": "native_counted_total",
+      "source_location": "physical page 1",
+      "qualification": "The body cutoff omits year and timezone. Election identity is declared by the 2026 general portal. Do not add provisional ballots again.",
+      "county_literal": "Rich County",
+      "source_receipt": {
+        "county": "Rich County",
+        "report_name": "Rich County Ballot Statistics Nov 6",
+        "native_filename": "Rich County Ballot Stats_529322a2-66ff-4401-bead-4a6d52f48164.pdf",
+        "selection": "current",
+        "upload_date_literal": null,
+        "requested_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Rich%20County%20Ballot%20Stats_529322a2-66ff-4401-bead-4a6d52f48164.pdf",
+        "ordinal": 27,
+        "status": 200,
+        "final_url": "https://electionresults.utah.gov/cdn/results/a7510980-7b10-4aca-a2d8-ff92951aca1c/Rich%20County%20Ballot%20Stats_529322a2-66ff-4401-bead-4a6d52f48164.pdf",
+        "captured_at_utc": "2026-11-06T18:56:48.503843+00:00",
+        "content_type": "application/octet-stream",
+        "original_file": "source-027.pdf",
+        "bytes": 46678,
+        "sha256": "101b2b899f19f8e0973959729fc3d938b511f037a6bc7c09f3a5cd0e1728d8b0",
+        "physical_pages": 1
+      },
+      "source_timezone_literal": null,
+      "native_fips": null,
+      "analysis_rate_approved": false,
+      "map_approved": false,
+      "latest_selection": true,
+      "extraction_review": {
+        "physical_pages": 1,
+        "both_complete_pdf_text_engine_outputs_retained": true,
+        "text_extractors_have_no_numerical_evidence": false,
+        "every_physical_page_render_and_local_vision_output_retained": true,
+        "scanned_or_embedded_table_requires_physical_numeric_review": false,
+        "no_claim_that_two_empty_extractions_validate_numbers": true
+      }
+    }
+  ],
+  "native_blob_versions_without_literal_anchor": [
+    {
+      "county": "Utah County",
+      "report_name": "Utah County Ballot Statistics Nov 4",
+      "native_filename": "26 General Ballot Tracking_b9610ccd-599e-479e-8ac4-452dc78c4656.pdf",
+      "selection": "historical_declared_version",
+      "status": "no_literal_download_anchor_do_not_construct_url"
+    },
+    {
+      "county": "Millard County",
+      "report_name": "Millard County Ballot Statistics Nov 4",
+      "native_filename": "Millard County Statistical Results 11-4-26_6e41f41d-7574-4d1b-b16e-8d7c0052e902.pdf",
+      "selection": "historical_declared_version",
+      "status": "no_literal_download_anchor_do_not_construct_url"
+    }
+  ],
+  "counties_without_declared_ballot_statistics": [
+    "Daggett County",
+    "Morgan County",
+    "Piute County",
+    "Wasatch County"
+  ],
+  "registration_review": {
+    "source_date_literal": "11/02/2026",
+    "source_timezone_literal": null,
+    "scope": "Active registration affiliation, not party votes, party turnout or ballots cast.",
+    "source_receipts": [
+      {
+        "requested_url": "https://vote.utah.gov/current-voter-registration-statistics/",
+        "final_url": "https://vote.utah.gov/current-voter-registration-statistics/",
+        "status": 200,
+        "bytes": 23072,
+        "sha256": "ae7adc5dc9b74abf827944f552f0cec0ae66ec46aa49ff0ca07f0d9f2806297b",
+        "captured_at_utc": "2026-11-06T18:51:28.873930+00:00",
+        "tls_verification": true
+      },
+      {
+        "requested_url": "https://vote.utah.gov/wp-content/uploads/2026/11/11.02.2026-Active-Voters-by-County-and-Party.pdf",
+        "final_url": "https://vote.utah.gov/wp-content/uploads/2026/11/11.02.2026-Active-Voters-by-County-and-Party.pdf",
+        "status": 200,
+        "bytes": 11022,
+        "sha256": "07163e31d8bd29a5c3028127ba205c51d2d333b7bb72ffca96ab610d950a8620",
+        "captured_at_utc": "2026-11-06T18:51:28.953556+00:00",
+        "tls_verification": true
+      }
+    ],
+    "complete_independent_extractions_match": true,
+    "physical_pages": 6,
+    "all_native_rows_parsed_without_unclassified_remainder": true,
+    "native_rows": [
+      {
+        "county_literal": "Beaver",
+        "party_literal": "Constitution",
+        "active_registered_voters": 18
+      },
+      {
+        "county_literal": "Beaver",
+        "party_literal": "Democratic",
+        "active_registered_voters": 178
+      },
+      {
+        "county_literal": "Beaver",
+        "party_literal": "Forward",
+        "active_registered_voters": 5
+      },
+      {
+        "county_literal": "Beaver",
+        "party_literal": "Green",
+        "active_registered_voters": 1
+      },
+      {
+        "county_literal": "Beaver",
+        "party_literal": "Independent American",
+        "active_registered_voters": 134
+      },
+      {
+        "county_literal": "Beaver",
+        "party_literal": "Libertarian",
+        "active_registered_voters": 20
+      },
+      {
+        "county_literal": "Beaver",
+        "party_literal": "Republican",
+        "active_registered_voters": 2917
+      },
+      {
+        "county_literal": "Beaver",
+        "party_literal": "Unaffiliated",
+        "active_registered_voters": 574
+      },
+      {
+        "county_literal": "Box Elder",
+        "party_literal": "Constitution",
+        "active_registered_voters": 176
+      },
+      {
+        "county_literal": "Box Elder",
+        "party_literal": "Democratic",
+        "active_registered_voters": 1707
+      },
+      {
+        "county_literal": "Box Elder",
+        "party_literal": "Forward",
+        "active_registered_voters": 24
+      },
+      {
+        "county_literal": "Box Elder",
+        "party_literal": "Green",
+        "active_registered_voters": 8
+      },
+      {
+        "county_literal": "Box Elder",
+        "party_literal": "Independent American",
+        "active_registered_voters": 1216
+      },
+      {
+        "county_literal": "Box Elder",
+        "party_literal": "Libertarian",
+        "active_registered_voters": 296
+      },
+      {
+        "county_literal": "Box Elder",
+        "party_literal": "Republican",
+        "active_registered_voters": 21842
+      },
+      {
+        "county_literal": "Box Elder",
+        "party_literal": "Unaffiliated",
+        "active_registered_voters": 8558
+      },
+      {
+        "county_literal": "Cache",
+        "party_literal": "Constitution",
+        "active_registered_voters": 318
+      },
+      {
+        "county_literal": "Cache",
+        "party_literal": "Democratic",
+        "active_registered_voters": 6852
+      },
+      {
+        "county_literal": "Cache",
+        "party_literal": "Forward",
+        "active_registered_voters": 73
+      },
+      {
+        "county_literal": "Cache",
+        "party_literal": "Green",
+        "active_registered_voters": 56
+      },
+      {
+        "county_literal": "Cache",
+        "party_literal": "Independent American",
+        "active_registered_voters": 1947
+      },
+      {
+        "county_literal": "Cache",
+        "party_literal": "Libertarian",
+        "active_registered_voters": 689
+      },
+      {
+        "county_literal": "Cache",
+        "party_literal": "Republican",
+        "active_registered_voters": 40254
+      },
+      {
+        "county_literal": "Cache",
+        "party_literal": "Unaffiliated",
+        "active_registered_voters": 20396
+      },
+      {
+        "county_literal": "Carbon",
+        "party_literal": "Constitution",
+        "active_registered_voters": 60
+      },
+      {
+        "county_literal": "Carbon",
+        "party_literal": "Democratic",
+        "active_registered_voters": 1460
+      },
+      {
+        "county_literal": "Carbon",
+        "party_literal": "Forward",
+        "active_registered_voters": 4
+      },
+      {
+        "county_literal": "Carbon",
+        "party_literal": "Green",
+        "active_registered_voters": 5
+      },
+      {
+        "county_literal": "Carbon",
+        "party_literal": "Independent American",
+        "active_registered_voters": 512
+      },
+      {
+        "county_literal": "Carbon",
+        "party_literal": "Libertarian",
+        "active_registered_voters": 83
+      },
+      {
+        "county_literal": "Carbon",
+        "party_literal": "Republican",
+        "active_registered_voters": 5884
+      },
+      {
+        "county_literal": "Carbon",
+        "party_literal": "Unaffiliated",
+        "active_registered_voters": 2903
+      },
+      {
+        "county_literal": "Daggett",
+        "party_literal": "Constitution",
+        "active_registered_voters": 2
+      },
+      {
+        "county_literal": "Daggett",
+        "party_literal": "Democratic",
+        "active_registered_voters": 51
+      },
+      {
+        "county_literal": "Daggett",
+        "party_literal": "Forward",
+        "active_registered_voters": 4
+      },
+      {
+        "county_literal": "Daggett",
+        "party_literal": "Green",
+        "active_registered_voters": 1
+      },
+      {
+        "county_literal": "Daggett",
+        "party_literal": "Independent American",
+        "active_registered_voters": 29
+      },
+      {
+        "county_literal": "Daggett",
+        "party_literal": "Libertarian",
+        "active_registered_voters": 4
+      },
+      {
+        "county_literal": "Daggett",
+        "party_literal": "Republican",
+        "active_registered_voters": 496
+      },
+      {
+        "county_literal": "Daggett",
+        "party_literal": "Unaffiliated",
+        "active_registered_voters": 101
+      },
+      {
+        "county_literal": "Davis",
+        "party_literal": "Constitution",
+        "active_registered_voters": 604
+      },
+      {
+        "county_literal": "Davis",
+        "party_literal": "Democratic",
+        "active_registered_voters": 21479
+      },
+      {
+        "county_literal": "Davis",
+        "party_literal": "Forward",
+        "active_registered_voters": 201
+      },
+      {
+        "county_literal": "Davis",
+        "party_literal": "Green",
+        "active_registered_voters": 133
+      },
+      {
+        "county_literal": "Davis",
+        "party_literal": "Independent American",
+        "active_registered_voters": 7775
+      },
+      {
+        "county_literal": "Davis",
+        "party_literal": "Libertarian",
+        "active_registered_voters": 1983
+      },
+      {
+        "county_literal": "Davis",
+        "party_literal": "Republican",
+        "active_registered_voters": 109062
+      },
+      {
+        "county_literal": "Davis",
+        "party_literal": "Unaffiliated",
+        "active_registered_voters": 58796
+      },
+      {
+        "county_literal": "Duchesne",
+        "party_literal": "Constitution",
+        "active_registered_voters": 87
+      },
+      {
+        "county_literal": "Duchesne",
+        "party_literal": "Democratic",
+        "active_registered_voters": 472
+      },
+      {
+        "county_literal": "Duchesne",
+        "party_literal": "Forward",
+        "active_registered_voters": 13
+      },
+      {
+        "county_literal": "Duchesne",
+        "party_literal": "Green",
+        "active_registered_voters": 2
+      },
+      {
+        "county_literal": "Duchesne",
+        "party_literal": "Independent American",
+        "active_registered_voters": 330
+      },
+      {
+        "county_literal": "Duchesne",
+        "party_literal": "Libertarian",
+        "active_registered_voters": 86
+      },
+      {
+        "county_literal": "Duchesne",
+        "party_literal": "Republican",
+        "active_registered_voters": 7810
+      },
+      {
+        "county_literal": "Duchesne",
+        "party_literal": "Unaffiliated",
+        "active_registered_voters": 1640
+      },
+      {
+        "county_literal": "Emery",
+        "party_literal": "Constitution",
+        "active_registered_voters": 14
+      },
+      {
+        "county_literal": "Emery",
+        "party_literal": "Democratic",
+        "active_registered_voters": 227
+      },
+      {
+        "county_literal": "Emery",
+        "party_literal": "Forward",
+        "active_registered_voters": 3
+      },
+      {
+        "county_literal": "Emery",
+        "party_literal": "Green",
+        "active_registered_voters": 2
+      },
+      {
+        "county_literal": "Emery",
+        "party_literal": "Independent American",
+        "active_registered_voters": 196
+      },
+      {
+        "county_literal": "Emery",
+        "party_literal": "Libertarian",
+        "active_registered_voters": 28
+      },
+      {
+        "county_literal": "Emery",
+        "party_literal": "Republican",
+        "active_registered_voters": 4042
+      },
+      {
+        "county_literal": "Emery",
+        "party_literal": "Unaffiliated",
+        "active_registered_voters": 1242
+      },
+      {
+        "county_literal": "Garfield",
+        "party_literal": "Constitution",
+        "active_registered_voters": 16
+      },
+      {
+        "county_literal": "Garfield",
+        "party_literal": "Democratic",
+        "active_registered_voters": 202
+      },
+      {
+        "county_literal": "Garfield",
+        "party_literal": "Forward",
+        "active_registered_voters": 1
+      },
+      {
+        "county_literal": "Garfield",
+        "party_literal": "Green",
+        "active_registered_voters": 1
+      },
+      {
+        "county_literal": "Garfield",
+        "party_literal": "Independent American",
+        "active_registered_voters": 103
+      },
+      {
+        "county_literal": "Garfield",
+        "party_literal": "Libertarian",
+        "active_registered_voters": 15
+      },
+      {
+        "county_literal": "Garfield",
+        "party_literal": "Republican",
+        "active_registered_voters": 2392
+      },
+      {
+        "county_literal": "Garfield",
+        "party_literal": "Unaffiliated",
+        "active_registered_voters": 520
+      },
+      {
+        "county_literal": "Grand",
+        "party_literal": "Constitution",
+        "active_registered_voters": 13
+      },
+      {
+        "county_literal": "Grand",
+        "party_literal": "Democratic",
+        "active_registered_voters": 1266
+      },
+      {
+        "county_literal": "Grand",
+        "party_literal": "Forward",
+        "active_registered_voters": 5
+      },
+      {
+        "county_literal": "Grand",
+        "party_literal": "Green",
+        "active_registered_voters": 8
+      },
+      {
+        "county_literal": "Grand",
+        "party_literal": "Independent American",
+        "active_registered_voters": 220
+      },
+      {
+        "county_literal": "Grand",
+        "party_literal": "Libertarian",
+        "active_registered_voters": 52
+      },
+      {
+        "county_literal": "Grand",
+        "party_literal": "Republican",
+        "active_registered_voters": 2095
+      },
+      {
+        "county_literal": "Grand",
+        "party_literal": "Unaffiliated",
+        "active_registered_voters": 2214
+      },
+      {
+        "county_literal": "Iron",
+        "party_literal": "Constitution",
+        "active_registered_voters": 228
+      },
+      {
+        "county_literal": "Iron",
+        "party_literal": "Democratic",
+        "active_registered_voters": 2305
+      },
+      {
+        "county_literal": "Iron",
+        "party_literal": "Forward",
+        "active_registered_voters": 37
+      },
+      {
+        "county_literal": "Iron",
+        "party_literal": "Green",
+        "active_registered_voters": 18
+      },
+      {
+        "county_literal": "Iron",
+        "party_literal": "Independent American",
+        "active_registered_voters": 1538
+      },
+      {
+        "county_literal": "Iron",
+        "party_literal": "Libertarian",
+        "active_registered_voters": 385
+      },
+      {
+        "county_literal": "Iron",
+        "party_literal": "Republican",
+        "active_registered_voters": 21247
+      },
+      {
+        "county_literal": "Iron",
+        "party_literal": "Unaffiliated",
+        "active_registered_voters": 7069
+      },
+      {
+        "county_literal": "Juab",
+        "party_literal": "Constitution",
+        "active_registered_voters": 33
+      },
+      {
+        "county_literal": "Juab",
+        "party_literal": "Democratic",
+        "active_registered_voters": 299
+      },
+      {
+        "county_literal": "Juab",
+        "party_literal": "Forward",
+        "active_registered_voters": 8
+      },
+      {
+        "county_literal": "Juab",
+        "party_literal": "Green",
+        "active_registered_voters": 1
+      },
+      {
+        "county_literal": "Juab",
+        "party_literal": "Independent American",
+        "active_registered_voters": 217
+      },
+      {
+        "county_literal": "Juab",
+        "party_literal": "Libertarian",
+        "active_registered_voters": 51
+      },
+      {
+        "county_literal": "Juab",
+        "party_literal": "Republican",
+        "active_registered_voters": 5454
+      },
+      {
+        "county_literal": "Juab",
+        "party_literal": "Unaffiliated",
+        "active_registered_voters": 1614
+      },
+      {
+        "county_literal": "Kane",
+        "party_literal": "Constitution",
+        "active_registered_voters": 19
+      },
+      {
+        "county_literal": "Kane",
+        "party_literal": "Democratic",
+        "active_registered_voters": 463
+      },
+      {
+        "county_literal": "Kane",
+        "party_literal": "Forward",
+        "active_registered_voters": 6
+      },
+      {
+        "county_literal": "Kane",
+        "party_literal": "Green",
+        "active_registered_voters": 2
+      },
+      {
+        "county_literal": "Kane",
+        "party_literal": "Independent American",
+        "active_registered_voters": 240
+      },
+      {
+        "county_literal": "Kane",
+        "party_literal": "Libertarian",
+        "active_registered_voters": 42
+      },
+      {
+        "county_literal": "Kane",
+        "party_literal": "Republican",
+        "active_registered_voters": 3438
+      },
+      {
+        "county_literal": "Kane",
+        "party_literal": "Unaffiliated",
+        "active_registered_voters": 903
+      },
+      {
+        "county_literal": "Millard",
+        "party_literal": "Constitution",
+        "active_registered_voters": 59
+      },
+      {
+        "county_literal": "Millard",
+        "party_literal": "Democratic",
+        "active_registered_voters": 273
+      },
+      {
+        "county_literal": "Millard",
+        "party_literal": "Forward",
+        "active_registered_voters": 8
+      },
+      {
+        "county_literal": "Millard",
+        "party_literal": "Green",
+        "active_registered_voters": 2
+      },
+      {
+        "county_literal": "Millard",
+        "party_literal": "Independent American",
+        "active_registered_voters": 151
+      },
+      {
+        "county_literal": "Millard",
+        "party_literal": "Libertarian",
+        "active_registered_voters": 37
+      },
+      {
+        "county_literal": "Millard",
+        "party_literal": "Republican",
+        "active_registered_voters": 5451
+      },
+      {
+        "county_literal": "Millard",
+        "party_literal": "Unaffiliated",
+        "active_registered_voters": 1283
+      },
+      {
+        "county_literal": "Morgan",
+        "party_literal": "Constitution",
+        "active_registered_voters": 28
+      },
+      {
+        "county_literal": "Morgan",
+        "party_literal": "Democratic",
+        "active_registered_voters": 381
+      },
+      {
+        "county_literal": "Morgan",
+        "party_literal": "Forward",
+        "active_registered_voters": 2
+      },
+      {
+        "county_literal": "Morgan",
+        "party_literal": "Green",
+        "active_registered_voters": 5
+      },
+      {
+        "county_literal": "Morgan",
+        "party_literal": "Independent American",
+        "active_registered_voters": 261
+      },
+      {
+        "county_literal": "Morgan",
+        "party_literal": "Libertarian",
+        "active_registered_voters": 69
+      },
+      {
+        "county_literal": "Morgan",
+        "party_literal": "Republican",
+        "active_registered_voters": 5673
+      },
+      {
+        "county_literal": "Morgan",
+        "party_literal": "Unaffiliated",
+        "active_registered_voters": 1894
+      },
+      {
+        "county_literal": "Piute",
+        "party_literal": "Constitution",
+        "active_registered_voters": 6
+      },
+      {
+        "county_literal": "Piute",
+        "party_literal": "Democratic",
+        "active_registered_voters": 33
+      },
+      {
+        "county_literal": "Piute",
+        "party_literal": "Independent American",
+        "active_registered_voters": 26
+      },
+      {
+        "county_literal": "Piute",
+        "party_literal": "Libertarian",
+        "active_registered_voters": 4
+      },
+      {
+        "county_literal": "Piute",
+        "party_literal": "Republican",
+        "active_registered_voters": 905
+      },
+      {
+        "county_literal": "Piute",
+        "party_literal": "Unaffiliated",
+        "active_registered_voters": 138
+      },
+      {
+        "county_literal": "Rich",
+        "party_literal": "Constitution",
+        "active_registered_voters": 3
+      },
+      {
+        "county_literal": "Rich",
+        "party_literal": "Democratic",
+        "active_registered_voters": 65
+      },
+      {
+        "county_literal": "Rich",
+        "party_literal": "Green",
+        "active_registered_voters": 1
+      },
+      {
+        "county_literal": "Rich",
+        "party_literal": "Independent American",
+        "active_registered_voters": 30
+      },
+      {
+        "county_literal": "Rich",
+        "party_literal": "Libertarian",
+        "active_registered_voters": 9
+      },
+      {
+        "county_literal": "Rich",
+        "party_literal": "Republican",
+        "active_registered_voters": 1245
+      },
+      {
+        "county_literal": "Rich",
+        "party_literal": "Unaffiliated",
+        "active_registered_voters": 238
+      },
+      {
+        "county_literal": "Salt Lake",
+        "party_literal": "Constitution",
+        "active_registered_voters": 1667
+      },
+      {
+        "county_literal": "Salt Lake",
+        "party_literal": "Democratic",
+        "active_registered_voters": 138905
+      },
+      {
+        "county_literal": "Salt Lake",
+        "party_literal": "Forward",
+        "active_registered_voters": 805
+      },
+      {
+        "county_literal": "Salt Lake",
+        "party_literal": "Green",
+        "active_registered_voters": 568
+      },
+      {
+        "county_literal": "Salt Lake",
+        "party_literal": "Independent American",
+        "active_registered_voters": 27072
+      },
+      {
+        "county_literal": "Salt Lake",
+        "party_literal": "Libertarian",
+        "active_registered_voters": 5936
+      },
+      {
+        "county_literal": "Salt Lake",
+        "party_literal": "Republican",
+        "active_registered_voters": 234929
+      },
+      {
+        "county_literal": "Salt Lake",
+        "party_literal": "Unaffiliated",
+        "active_registered_voters": 194801
+      },
+      {
+        "county_literal": "San Juan",
+        "party_literal": "Constitution",
+        "active_registered_voters": 25
+      },
+      {
+        "county_literal": "San Juan",
+        "party_literal": "Democratic",
+        "active_registered_voters": 2145
+      },
+      {
+        "county_literal": "San Juan",
+        "party_literal": "Forward",
+        "active_registered_voters": 18
+      },
+      {
+        "county_literal": "San Juan",
+        "party_literal": "Green",
+        "active_registered_voters": 9
+      },
+      {
+        "county_literal": "San Juan",
+        "party_literal": "Independent American",
+        "active_registered_voters": 223
+      },
+      {
+        "county_literal": "San Juan",
+        "party_literal": "Libertarian",
+        "active_registered_voters": 40
+      },
+      {
+        "county_literal": "San Juan",
+        "party_literal": "Republican",
+        "active_registered_voters": 3531
+      },
+      {
+        "county_literal": "San Juan",
+        "party_literal": "Unaffiliated",
+        "active_registered_voters": 2104
+      },
+      {
+        "county_literal": "Sanpete",
+        "party_literal": "Constitution",
+        "active_registered_voters": 161
+      },
+      {
+        "county_literal": "Sanpete",
+        "party_literal": "Democratic",
+        "active_registered_voters": 681
+      },
+      {
+        "county_literal": "Sanpete",
+        "party_literal": "Forward",
+        "active_registered_voters": 26
+      },
+      {
+        "county_literal": "Sanpete",
+        "party_literal": "Green",
+        "active_registered_voters": 6
+      },
+      {
+        "county_literal": "Sanpete",
+        "party_literal": "Independent American",
+        "active_registered_voters": 532
+      },
+      {
+        "county_literal": "Sanpete",
+        "party_literal": "Libertarian",
+        "active_registered_voters": 113
+      },
+      {
+        "county_literal": "Sanpete",
+        "party_literal": "Republican",
+        "active_registered_voters": 10696
+      },
+      {
+        "county_literal": "Sanpete",
+        "party_literal": "Unaffiliated",
+        "active_registered_voters": 3321
+      },
+      {
+        "county_literal": "Sevier",
+        "party_literal": "Constitution",
+        "active_registered_voters": 65
+      },
+      {
+        "county_literal": "Sevier",
+        "party_literal": "Democratic",
+        "active_registered_voters": 416
+      },
+      {
+        "county_literal": "Sevier",
+        "party_literal": "Forward",
+        "active_registered_voters": 14
+      },
+      {
+        "county_literal": "Sevier",
+        "party_literal": "Green",
+        "active_registered_voters": 3
+      },
+      {
+        "county_literal": "Sevier",
+        "party_literal": "Independent American",
+        "active_registered_voters": 363
+      },
+      {
+        "county_literal": "Sevier",
+        "party_literal": "Libertarian",
+        "active_registered_voters": 78
+      },
+      {
+        "county_literal": "Sevier",
+        "party_literal": "Republican",
+        "active_registered_voters": 9145
+      },
+      {
+        "county_literal": "Sevier",
+        "party_literal": "Unaffiliated",
+        "active_registered_voters": 2409
+      },
+      {
+        "county_literal": "Summit",
+        "party_literal": "Constitution",
+        "active_registered_voters": 46
+      },
+      {
+        "county_literal": "Summit",
+        "party_literal": "Democratic",
+        "active_registered_voters": 7222
+      },
+      {
+        "county_literal": "Summit",
+        "party_literal": "Forward",
+        "active_registered_voters": 15
+      },
+      {
+        "county_literal": "Summit",
+        "party_literal": "Green",
+        "active_registered_voters": 12
+      },
+      {
+        "county_literal": "Summit",
+        "party_literal": "Independent American",
+        "active_registered_voters": 1640
+      },
+      {
+        "county_literal": "Summit",
+        "party_literal": "Libertarian",
+        "active_registered_voters": 266
+      },
+      {
+        "county_literal": "Summit",
+        "party_literal": "Republican",
+        "active_registered_voters": 10864
+      },
+      {
+        "county_literal": "Summit",
+        "party_literal": "Unaffiliated",
+        "active_registered_voters": 9323
+      },
+      {
+        "county_literal": "Tooele",
+        "party_literal": "Constitution",
+        "active_registered_voters": 270
+      },
+      {
+        "county_literal": "Tooele",
+        "party_literal": "Democratic",
+        "active_registered_voters": 4170
+      },
+      {
+        "county_literal": "Tooele",
+        "party_literal": "Forward",
+        "active_registered_voters": 68
+      },
+      {
+        "county_literal": "Tooele",
+        "party_literal": "Green",
+        "active_registered_voters": 24
+      },
+      {
+        "county_literal": "Tooele",
+        "party_literal": "Independent American",
+        "active_registered_voters": 2058
+      },
+      {
+        "county_literal": "Tooele",
+        "party_literal": "Libertarian",
+        "active_registered_voters": 439
+      },
+      {
+        "county_literal": "Tooele",
+        "party_literal": "Republican",
+        "active_registered_voters": 20997
+      },
+      {
+        "county_literal": "Tooele",
+        "party_literal": "Unaffiliated",
+        "active_registered_voters": 13874
+      },
+      {
+        "county_literal": "Uintah",
+        "party_literal": "Constitution",
+        "active_registered_voters": 131
+      },
+      {
+        "county_literal": "Uintah",
+        "party_literal": "Democratic",
+        "active_registered_voters": 867
+      },
+      {
+        "county_literal": "Uintah",
+        "party_literal": "Forward",
+        "active_registered_voters": 21
+      },
+      {
+        "county_literal": "Uintah",
+        "party_literal": "Green",
+        "active_registered_voters": 4
+      },
+      {
+        "county_literal": "Uintah",
+        "party_literal": "Independent American",
+        "active_registered_voters": 638
+      },
+      {
+        "county_literal": "Uintah",
+        "party_literal": "Libertarian",
+        "active_registered_voters": 161
+      },
+      {
+        "county_literal": "Uintah",
+        "party_literal": "Republican",
+        "active_registered_voters": 13162
+      },
+      {
+        "county_literal": "Uintah",
+        "party_literal": "Unaffiliated",
+        "active_registered_voters": 3104
+      },
+      {
+        "county_literal": "Utah",
+        "party_literal": "Constitution",
+        "active_registered_voters": 1539
+      },
+      {
+        "county_literal": "Utah",
+        "party_literal": "Democratic",
+        "active_registered_voters": 31112
+      },
+      {
+        "county_literal": "Utah",
+        "party_literal": "Forward",
+        "active_registered_voters": 563
+      },
+      {
+        "county_literal": "Utah",
+        "party_literal": "Green",
+        "active_registered_voters": 266
+      },
+      {
+        "county_literal": "Utah",
+        "party_literal": "Independent American",
+        "active_registered_voters": 15540
+      },
+      {
+        "county_literal": "Utah",
+        "party_literal": "Libertarian",
+        "active_registered_voters": 4475
+      },
+      {
+        "county_literal": "Utah",
+        "party_literal": "Republican",
+        "active_registered_voters": 219383
+      },
+      {
+        "county_literal": "Utah",
+        "party_literal": "Unaffiliated",
+        "active_registered_voters": 101997
+      },
+      {
+        "county_literal": "Wasatch",
+        "party_literal": "Constitution",
+        "active_registered_voters": 54
+      },
+      {
+        "county_literal": "Wasatch",
+        "party_literal": "Democratic",
+        "active_registered_voters": 2827
+      },
+      {
+        "county_literal": "Wasatch",
+        "party_literal": "Forward",
+        "active_registered_voters": 23
+      },
+      {
+        "county_literal": "Wasatch",
+        "party_literal": "Green",
+        "active_registered_voters": 9
+      },
+      {
+        "county_literal": "Wasatch",
+        "party_literal": "Independent American",
+        "active_registered_voters": 1230
+      },
+      {
+        "county_literal": "Wasatch",
+        "party_literal": "Libertarian",
+        "active_registered_voters": 249
+      },
+      {
+        "county_literal": "Wasatch",
+        "party_literal": "Republican",
+        "active_registered_voters": 11747
+      },
+      {
+        "county_literal": "Wasatch",
+        "party_literal": "Unaffiliated",
+        "active_registered_voters": 5812
+      },
+      {
+        "county_literal": "Washington",
+        "party_literal": "Constitution",
+        "active_registered_voters": 547
+      },
+      {
+        "county_literal": "Washington",
+        "party_literal": "Democratic",
+        "active_registered_voters": 9694
+      },
+      {
+        "county_literal": "Washington",
+        "party_literal": "Forward",
+        "active_registered_voters": 74
+      },
+      {
+        "county_literal": "Washington",
+        "party_literal": "Green",
+        "active_registered_voters": 57
+      },
+      {
+        "county_literal": "Washington",
+        "party_literal": "Independent American",
+        "active_registered_voters": 6025
+      },
+      {
+        "county_literal": "Washington",
+        "party_literal": "Libertarian",
+        "active_registered_voters": 1242
+      },
+      {
+        "county_literal": "Washington",
+        "party_literal": "Republican",
+        "active_registered_voters": 71175
+      },
+      {
+        "county_literal": "Washington",
+        "party_literal": "Unaffiliated",
+        "active_registered_voters": 24265
+      },
+      {
+        "county_literal": "Wayne",
+        "party_literal": "Constitution",
+        "active_registered_voters": 7
+      },
+      {
+        "county_literal": "Wayne",
+        "party_literal": "Democratic",
+        "active_registered_voters": 132
+      },
+      {
+        "county_literal": "Wayne",
+        "party_literal": "Forward",
+        "active_registered_voters": 1
+      },
+      {
+        "county_literal": "Wayne",
+        "party_literal": "Independent American",
+        "active_registered_voters": 60
+      },
+      {
+        "county_literal": "Wayne",
+        "party_literal": "Libertarian",
+        "active_registered_voters": 7
+      },
+      {
+        "county_literal": "Wayne",
+        "party_literal": "Republican",
+        "active_registered_voters": 1312
+      },
+      {
+        "county_literal": "Wayne",
+        "party_literal": "Unaffiliated",
+        "active_registered_voters": 316
+      },
+      {
+        "county_literal": "Weber",
+        "party_literal": "Constitution",
+        "active_registered_voters": 486
+      },
+      {
+        "county_literal": "Weber",
+        "party_literal": "Democratic",
+        "active_registered_voters": 19360
+      },
+      {
+        "county_literal": "Weber",
+        "party_literal": "Forward",
+        "active_registered_voters": 171
+      },
+      {
+        "county_literal": "Weber",
+        "party_literal": "Green",
+        "active_registered_voters": 98
+      },
+      {
+        "county_literal": "Weber",
+        "party_literal": "Independent American",
+        "active_registered_voters": 6229
+      },
+      {
+        "county_literal": "Weber",
+        "party_literal": "Libertarian",
+        "active_registered_voters": 1384
+      },
+      {
+        "county_literal": "Weber",
+        "party_literal": "Republican",
+        "active_registered_voters": 64197
+      },
+      {
+        "county_literal": "Weber",
+        "party_literal": "Unaffiliated",
+        "active_registered_voters": 41302
+      }
+    ],
+    "derived_county_subtotals": [
+      {
+        "county_literal": "Beaver",
+        "sum_of_observed_active_party_rows": 3847
+      },
+      {
+        "county_literal": "Box Elder",
+        "sum_of_observed_active_party_rows": 33827
+      },
+      {
+        "county_literal": "Cache",
+        "sum_of_observed_active_party_rows": 70585
+      },
+      {
+        "county_literal": "Carbon",
+        "sum_of_observed_active_party_rows": 10911
+      },
+      {
+        "county_literal": "Daggett",
+        "sum_of_observed_active_party_rows": 688
+      },
+      {
+        "county_literal": "Davis",
+        "sum_of_observed_active_party_rows": 200033
+      },
+      {
+        "county_literal": "Duchesne",
+        "sum_of_observed_active_party_rows": 10440
+      },
+      {
+        "county_literal": "Emery",
+        "sum_of_observed_active_party_rows": 5754
+      },
+      {
+        "county_literal": "Garfield",
+        "sum_of_observed_active_party_rows": 3250
+      },
+      {
+        "county_literal": "Grand",
+        "sum_of_observed_active_party_rows": 5873
+      },
+      {
+        "county_literal": "Iron",
+        "sum_of_observed_active_party_rows": 32827
+      },
+      {
+        "county_literal": "Juab",
+        "sum_of_observed_active_party_rows": 7677
+      },
+      {
+        "county_literal": "Kane",
+        "sum_of_observed_active_party_rows": 5113
+      },
+      {
+        "county_literal": "Millard",
+        "sum_of_observed_active_party_rows": 7264
+      },
+      {
+        "county_literal": "Morgan",
+        "sum_of_observed_active_party_rows": 8313
+      },
+      {
+        "county_literal": "Piute",
+        "sum_of_observed_active_party_rows": 1112
+      },
+      {
+        "county_literal": "Rich",
+        "sum_of_observed_active_party_rows": 1591
+      },
+      {
+        "county_literal": "Salt Lake",
+        "sum_of_observed_active_party_rows": 604683
+      },
+      {
+        "county_literal": "San Juan",
+        "sum_of_observed_active_party_rows": 8095
+      },
+      {
+        "county_literal": "Sanpete",
+        "sum_of_observed_active_party_rows": 15536
+      },
+      {
+        "county_literal": "Sevier",
+        "sum_of_observed_active_party_rows": 12493
+      },
+      {
+        "county_literal": "Summit",
+        "sum_of_observed_active_party_rows": 29388
+      },
+      {
+        "county_literal": "Tooele",
+        "sum_of_observed_active_party_rows": 41900
+      },
+      {
+        "county_literal": "Uintah",
+        "sum_of_observed_active_party_rows": 18088
+      },
+      {
+        "county_literal": "Utah",
+        "sum_of_observed_active_party_rows": 374875
+      },
+      {
+        "county_literal": "Wasatch",
+        "sum_of_observed_active_party_rows": 21951
+      },
+      {
+        "county_literal": "Washington",
+        "sum_of_observed_active_party_rows": 113079
+      },
+      {
+        "county_literal": "Wayne",
+        "sum_of_observed_active_party_rows": 1835
+      },
+      {
+        "county_literal": "Weber",
+        "sum_of_observed_active_party_rows": 133227
+      }
+    ],
+    "native_state_party_rows": [
+      {
+        "party_literal": "Constitution",
+        "active": 6682,
+        "inactive": 1839,
+        "total": 8521
+      },
+      {
+        "party_literal": "Democratic",
+        "active": 255244,
+        "inactive": 47077,
+        "total": 302321
+      },
+      {
+        "party_literal": "Forward",
+        "active": 2193,
+        "inactive": 841,
+        "total": 3034
+      },
+      {
+        "party_literal": "Green",
+        "active": 1302,
+        "inactive": 115,
+        "total": 1417
+      },
+      {
+        "party_literal": "Independent American",
+        "active": 76535,
+        "inactive": 19061,
+        "total": 95596
+      },
+      {
+        "party_literal": "Libertarian",
+        "active": 18243,
+        "inactive": 6095,
+        "total": 24338
+      },
+      {
+        "party_literal": "Peoples\u2019 Freedom",
+        "active": 0,
+        "inactive": 0,
+        "total": 0
+      },
+      {
+        "party_literal": "Republican",
+        "active": 911345,
+        "inactive": 118364,
+        "total": 1029708
+      },
+      {
+        "party_literal": "Unaffiliated",
+        "active": 512711,
+        "inactive": 121579,
+        "total": 634290
+      },
+      {
+        "party_literal": "Total",
+        "active": 1784255,
+        "inactive": 314971,
+        "total": 2099225
+      }
+    ],
+    "every_state_party_active_count_reconciles_to_observed_county_rows": true,
+    "native_parent_arithmetic_discrepancies": [
+      {
+        "party_literal": "Republican",
+        "active_plus_inactive_minus_native_total": 1
+      },
+      {
+        "party_literal": "Total",
+        "active_plus_inactive_minus_native_total": 1
+      }
+    ],
+    "discrepancies_not_corrected_or_allocated": true,
+    "absent_county_party_rows_not_invented": true,
+    "denominator_substitution_for_separate_native_snapshots_approved": false
+  },
+  "historical_davis_report_retained_and_not_added_to_latest": true,
+  "candidate_votes_not_used_for_participation": true,
+  "ballot_receipts_or_pending_adjudication_not_used_as_counted": true,
+  "source_upload_times_not_substituted_for_native_cutoffs": true,
+  "absent_timezones_not_inferred": true,
+  "raw_html_pdf_xlsx_and_operational_or_personal_worksheets_kept_private": true,
+  "generic_turnout_approved": false,
+  "county_fips_join_approved": false,
+  "map_approved": false,
+  "context22_modified": false,
+  "complete_query_download_promoted": false,
+  "next_action": "Build and test a distinct complete portable numerical query from these reviewed facts; retain all 26 report observations, 29 registration counties, literal source clocks and missingness. Then separately review source definitions and county identities against both entire Census inventories and contextual geometry before any non-mutating context23 integration. Do not replace received, processed, scanned, daily or credited values with generic counted ballots."
+}

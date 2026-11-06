@@ -1,0 +1,262 @@
+source_ordinal,native_county,scope,scope_index,field,value,value_state,value_type
+0,Emery County,fields,0,registered_voters,5755,observed,int
+0,Emery County,fields,0,ballots_received,2985,observed,int
+0,Emery County,fields,0,ballots_counted,2963,observed,int
+0,Emery County,fields,0,uncounted_ballots,0,observed,int
+0,Emery County,fields,0,curable_ballots,9,observed,int
+0,Emery County,fields,0,incurable_ballots,2,observed,int
+0,Emery County,fields,0,provisional_ballots_cast,9,observed,int
+1,Summit County,fields,0,registered_voters,29387,observed,int
+1,Summit County,fields,0,ballots_received,19491,observed,int
+1,Summit County,fields,0,ballots_counted,10831,observed,int
+1,Summit County,fields,0,uncounted_ballots,8660,observed,int
+1,Summit County,fields,0,curable_ballots,258,observed,int
+1,Summit County,fields,0,incurable_ballots,12,observed,int
+1,Summit County,fields,0,provisional_ballots_cast,226,observed,int
+2,Utah County,fields,0,registered_voters,374971,observed,int
+2,Utah County,fields,0,ballots_received,196500,observed,int
+2,Utah County,fields,0,ballots_counted,135457,observed,int
+2,Utah County,fields,0,uncounted_ballots,54367,observed,int
+2,Utah County,fields,0,curable_ballots,3088,observed,int
+2,Utah County,fields,0,incurable_ballots,280,observed,int
+2,Utah County,fields,0,provisional_ballots_cast,3488,observed,int
+2,Utah County,fields,0,verified_but_not_counted,54367,observed,int
+2,Utah County,fields,0,tabulated,135457,observed,int
+2,Utah County,fields,0,verified_not_counted_plus_tabulated,189824,observed,int
+2,Utah County,fields,0,vista_credit,189854,observed,int
+2,Utah County,fields,0,reported_reconciliation_difference,30,observed,int
+4,Salt Lake County,fields,0,registered_voters,604694,observed,int
+4,Salt Lake County,fields,0,ballots_received,394882,observed,int
+4,Salt Lake County,fields,0,ballots_counted,266720,observed,int
+4,Salt Lake County,fields,0,uncounted_ballots,127794,observed,int
+4,Salt Lake County,fields,0,curable_ballots,5013,observed,int
+4,Salt Lake County,fields,0,incurable_ballots,538,observed,int
+4,Salt Lake County,fields,0,provisional_ballots_cast,7628,observed,int
+5,Box Elder County,fields,0,registered_voters,,missing,null
+5,Box Elder County,fields,0,ballots_received,,missing,null
+5,Box Elder County,fields,0,ballots_in_process,,missing,null
+5,Box Elder County,fields,0,ballots_counted,19929,observed,int
+5,Box Elder County,fields,0,uncured_ballots,103,observed,int
+5,Box Elder County,fields,0,provisional_ballots_not_processed,205,observed,int
+5,Box Elder County,fields,0,ballots_to_be_adjudicated,,missing,null
+5,Box Elder County,fields,0,ballots_to_be_replicated,9,observed,int
+5,Box Elder County,fields,0,ballots_replicated,,missing,null
+5,Box Elder County,historical_tabulated,0,date_literal,10/29/26,observed,str
+5,Box Elder County,historical_tabulated,0,ballots,8262,observed,int
+5,Box Elder County,historical_tabulated,1,date_literal,11/03/26,observed,str
+5,Box Elder County,historical_tabulated,1,ballots,14942,observed,int
+5,Box Elder County,historical_tabulated,2,date_literal,11/04/26,observed,str
+5,Box Elder County,historical_tabulated,2,ballots,19929,observed,int
+6,Davis County,fields,0,registered_voters,200115,observed,int
+6,Davis County,fields,0,ballots_received,120109,observed,int
+6,Davis County,fields,0,ballots_counted,96951,observed,int
+6,Davis County,fields,0,uncounted_ballots,20449,observed,int
+6,Davis County,fields,0,curable_ballots,3068,observed,int
+6,Davis County,fields,0,incurable_ballots,10,observed,int
+7,Duchesne County,fields,0,registered_voters,10440,observed,int
+7,Duchesne County,fields,0,ballots_received,5364,observed,int
+7,Duchesne County,fields,0,ballots_counted,5249,observed,int
+7,Duchesne County,fields,0,uncounted_ballots,0,observed,int
+7,Duchesne County,fields,0,curable_ballots,111,observed,int
+7,Duchesne County,fields,0,incurable_ballots,4,observed,int
+7,Duchesne County,fields,0,provisional_ballots_cast,33,observed,int
+8,Wayne County,fields,0,registered_voters,1827,observed,int
+8,Wayne County,fields,0,ballots_received,1240,observed,int
+8,Wayne County,fields,0,ballots_counted,1109,observed,int
+8,Wayne County,fields,0,early_voters,3,observed,int
+8,Wayne County,fields,0,election_day_voters,28,observed,int
+8,Wayne County,fields,0,provisional_ballots,4,observed,int
+8,Wayne County,fields,0,uncounted_ballots,100,observed,int
+8,Wayne County,fields,0,curable_ballots,29,observed,int
+8,Wayne County,fields,0,incurable_ballots,2,observed,int
+8,Wayne County,reconciliation,0,sheet_literal,Reconciliation Tabulation,observed,str
+8,Wayne County,reconciliation,0,date_literal,2026-11-03,observed,str
+8,Wayne County,reconciliation,0,uncounted_verified_ballots,,missing,null
+8,Wayne County,reconciliation,0,tabulated_ballots,1109,observed,int
+8,Wayne County,reconciliation,0,voters_given_credit,1209,observed,int
+8,Wayne County,reconciliation,0,native_difference,100,observed,int
+9,Juab County,fields,0,registered_voters,7677,observed,int
+9,Juab County,fields,0,ballots_received,3824,observed,int
+9,Juab County,fields,0,ballots_in_processing,,missing,null
+9,Juab County,fields,0,challenged_ballots,57,observed,int
+9,Juab County,fields,0,cured_ballots,0,observed,int
+9,Juab County,fields,0,incurable_ballots,,missing,null
+9,Juab County,fields,0,provisional_ballots,29,observed,int
+9,Juab County,fields,0,ballots_counted,3738,observed,int
+9,Juab County,fields,0,reported_returned_pct,48.69,observed,str
+10,Garfield County,fields,0,registered_voters,,missing,null
+10,Garfield County,fields,0,ballots_counted,,missing,null
+10,Garfield County,fields,0,latest_voters_given_credit,2060,observed,int
+10,Garfield County,fields,0,latest_uncounted_verified_ballots,1,observed,int
+10,Garfield County,fields,0,latest_total_ballots_scanned,,missing,null
+10,Garfield County,historical_scanned_observation,0,date_literal,2026-11-03,observed,str
+10,Garfield County,historical_scanned_observation,0,total_ballots_scanned,2059,observed,int
+10,Garfield County,historical_scanned_observation,0,voters_given_credit,2059,observed,int
+10,Garfield County,historical_scanned_observation,0,uncounted_verified_ballots,768,observed,int
+11,Millard County,fields,0,registered_voters,7264,observed,int
+11,Millard County,fields,0,ballots_received,4213,observed,int
+11,Millard County,fields,0,observed_counted_daily_value,4049,observed,int
+11,Millard County,fields,0,ballots_counted,,missing,null
+11,Millard County,fields,0,uncounted_ballots,0,observed,int
+11,Millard County,fields,0,curable_ballots,61,observed,int
+11,Millard County,fields,0,incurable_ballots,11,observed,int
+11,Millard County,fields,0,provisionals_received_not_processed,20,observed,int
+11,Millard County,fields,0,provisionals_processed_countable,,missing,null
+11,Millard County,fields,0,ballots_left_to_tabulate,73,observed,int
+13,Sanpete County,fields,0,registered_voters,15532,observed,int
+13,Sanpete County,fields,0,ballots_received,8662,observed,int
+13,Sanpete County,fields,0,provisional_ballots_cast,313,observed,int
+13,Sanpete County,fields,0,ballots_counted,8580,observed,int
+13,Sanpete County,fields,0,processed_not_counted,0,observed,int
+13,Sanpete County,fields,0,curable_ballots,37,observed,int
+13,Sanpete County,fields,0,incurable_ballots,45,observed,int
+13,Sanpete County,fields,0,native_reconciliation_audit_sum,8662,observed,int
+14,Kane County,fields,0,registered_voters,,missing,null
+14,Kane County,fields,0,ballots_received,3391,observed,int
+14,Kane County,fields,0,not_processed,0,observed,int
+14,Kane County,fields,0,in_process,0,observed,int
+14,Kane County,fields,0,processed,3391,observed,int
+14,Kane County,fields,0,challenged,68,observed,int
+14,Kane County,fields,0,challenged_curable,31,observed,int
+14,Kane County,fields,0,rejected_incurable,4,observed,int
+14,Kane County,fields,0,provisional_not_processed,0,observed,int
+14,Kane County,fields,0,pending_adjudication,0,observed,int
+14,Kane County,fields,0,pending_replication,0,observed,int
+14,Kane County,fields,0,replicated,0,observed,int
+14,Kane County,fields,0,ballots_counted,,missing,null
+15,Carbon County,fields,0,registered_voters,10896,observed,int
+15,Carbon County,fields,0,ballots_received,6735,observed,int
+15,Carbon County,fields,0,ballots_counted,6694,observed,int
+15,Carbon County,fields,0,uncounted_ballots,0,observed,int
+15,Carbon County,fields,0,curable_ballots,41,observed,int
+15,Carbon County,fields,0,incurable_ballots,0,observed,int
+15,Carbon County,fields,0,provisional_ballots,124,observed,int
+16,Iron County,fields,0,registered_voters,32827,observed,int
+16,Iron County,fields,0,estimated_ballots_received,16483,observed,int
+16,Iron County,fields,0,ballots_received,17611,observed,int
+16,Iron County,fields,0,ballots_not_yet_processed,,missing,null
+16,Iron County,fields,0,provisional_unprocessed,383,observed,int
+16,Iron County,fields,0,challenged_ballots,207,observed,int
+16,Iron County,fields,0,ballots_counted,,missing,null
+17,Tooele County,fields,0,registered_voters,41911,observed,int
+17,Tooele County,fields,0,ballots_received,,missing,null
+17,Tooele County,fields,0,unprocessed_ballots,0,observed,int
+17,Tooele County,fields,0,verified_unprocessed_ballots,72,observed,int
+17,Tooele County,fields,0,challenged_ballots,129,observed,int
+17,Tooele County,fields,0,incurable_ballots,22,observed,int
+17,Tooele County,fields,0,provisional_ballots,283,observed,int
+17,Tooele County,fields,0,ballots_counted,21033,observed,int
+17,Tooele County,fields,0,reported_returned_pct,50.18,observed,str
+17,Tooele County,historical_tabulated,0,date_literal,10-19-26,observed,str
+17,Tooele County,historical_tabulated,0,ballots,662,observed,int
+17,Tooele County,historical_tabulated,1,date_literal,10-20-26,observed,str
+17,Tooele County,historical_tabulated,1,ballots,2447,observed,int
+17,Tooele County,historical_tabulated,2,date_literal,10-23-26,observed,str
+17,Tooele County,historical_tabulated,2,ballots,4412,observed,int
+17,Tooele County,historical_tabulated,3,date_literal,10-27-26,observed,str
+17,Tooele County,historical_tabulated,3,ballots,6568,observed,int
+17,Tooele County,historical_tabulated,4,date_literal,10-30-26,observed,str
+17,Tooele County,historical_tabulated,4,ballots,9189,observed,int
+17,Tooele County,historical_tabulated,5,date_literal,11-2-26,observed,str
+17,Tooele County,historical_tabulated,5,ballots,11713,observed,int
+17,Tooele County,historical_tabulated,6,date_literal,11-3-26,observed,str
+17,Tooele County,historical_tabulated,6,ballots,15019,observed,int
+17,Tooele County,historical_tabulated,7,date_literal,11-4-26,observed,str
+17,Tooele County,historical_tabulated,7,ballots,20859,observed,int
+17,Tooele County,historical_tabulated,8,date_literal,11-5-26,observed,str
+17,Tooele County,historical_tabulated,8,ballots,21033,observed,int
+18,Cache County,fields,0,registered_voters,,missing,null
+18,Cache County,fields,0,ballots_counted,,missing,null
+18,Cache County,fields,0,ballots_awaiting_processing,0,observed,int
+18,Cache County,fields,0,provisional_ballots_not_processed,850,observed,int
+18,Cache County,fields,0,signature_issue_ballots,412,observed,int
+18,Cache County,fields,0,ballots_awaiting_replication,0,observed,int
+18,Cache County,fields,0,ballots_replicated,11,observed,int
+18,Cache County,fields,0,awaiting_adjudication,0,observed,int
+18,Cache County,fields,0,fully_processed_ballots,41680,observed,int
+18,Cache County,fields,0,ballots_in_possession,42942,observed,int
+19,Uintah County,fields,0,registered_voters,18095,observed,int
+19,Uintah County,fields,0,ballots_received,9761,observed,int
+19,Uintah County,fields,0,ballots_counted,9449,observed,int
+19,Uintah County,fields,0,challenged_not_cured,160,observed,int
+19,Uintah County,fields,0,incurable_ballots,2,observed,int
+20,Sevier County,fields,0,registered_voters,12498,observed,int
+20,Sevier County,fields,0,ballots_received,6548,observed,int
+20,Sevier County,fields,0,ballots_counted,6293,observed,int
+20,Sevier County,fields,0,uncounted_ballots,255,observed,int
+20,Sevier County,fields,0,provisional_ballots,32,observed,int
+20,Sevier County,fields,0,curable_ballots,64,observed,int
+20,Sevier County,fields,0,incurable_ballots,9,observed,int
+21,Weber County,fields,0,registered_voters,133164,observed,int
+21,Weber County,fields,0,ballots_received,79315,observed,int
+21,Weber County,fields,0,ballots_counted,77617,observed,int
+21,Weber County,fields,0,uncounted_ballots,1153,observed,int
+21,Weber County,fields,0,curable_ballots,545,observed,int
+21,Weber County,fields,0,incurable_ballots,,missing,null
+21,Weber County,fields,0,provisional_ballots,1342,observed,int
+22,San Juan County,fields,0,registered_voters,,missing,null
+22,San Juan County,fields,0,ballots_counted,,missing,null
+22,San Juan County,fields,0,ballots_returned,5596,observed,int
+22,San Juan County,fields,0,usps_returned,2210,observed,int
+22,San Juan County,fields,0,expressvote_returned,652,observed,int
+22,San Juan County,fields,0,provisional_returned,396,observed,int
+22,San Juan County,fields,0,dropbox_returned,1638,observed,int
+22,San Juan County,fields,0,digital_returned,700,observed,int
+22,San Juan County,fields,0,remaining_to_adjudicate_usps,1500,observed,int
+22,San Juan County,fields,0,remaining_to_adjudicate_expressvote,0,observed,int
+22,San Juan County,fields,0,remaining_to_adjudicate_dropbox,850,observed,int
+22,San Juan County,fields,0,remaining_to_adjudicate_digital,700,observed,int
+22,San Juan County,fields,0,remaining_to_adjudicate_provisional,0,observed,int
+22,San Juan County,fields,0,remaining_to_adjudicate_total,3050,observed,int
+23,Washington County,fields,0,registered_voters,113087,observed,int
+23,Washington County,fields,0,ballots_received,66759,observed,int
+23,Washington County,fields,0,ballots_counted,64042,observed,int
+23,Washington County,fields,0,uncounted_ballots,35,observed,int
+23,Washington County,fields,0,curable_ballots,1718,observed,int
+23,Washington County,fields,0,incurable_ballots,178,observed,int
+23,Washington County,fields,0,provisional_ballots_cast_included_in_total,0,observed,int
+24,Beaver County,fields,0,registered_voters,3847,observed,int
+24,Beaver County,fields,0,ballots_received,2137,observed,int
+24,Beaver County,fields,0,ballots_counted,2098,observed,int
+24,Beaver County,fields,0,uncounted_ballots,14,observed,int
+24,Beaver County,fields,0,curable_ballots,23,observed,int
+24,Beaver County,fields,0,incurable_ballots,2,observed,int
+24,Beaver County,fields,0,provisional_ballots,19,observed,int
+24,Beaver County,historical_column,0,date_literal,11/4/2026,observed,str
+24,Beaver County,historical_column,0,ballots_counted,2098,observed,int
+24,Beaver County,historical_column,0,uncounted_ballots,10,observed,int
+24,Beaver County,historical_column,0,curable_ballots,27,observed,int
+24,Beaver County,historical_column,0,incurable_ballots,0,observed,int
+25,Grand County,fields,0,registered_voters,5873,observed,int
+25,Grand County,fields,0,ballots_received,4677,observed,int
+25,Grand County,fields,0,by_mail_received,4255,observed,int
+25,Grand County,fields,0,uocava_received,21,observed,int
+25,Grand County,fields,0,in_person_received,346,observed,int
+25,Grand County,fields,0,provisional_received,55,observed,int
+25,Grand County,fields,0,by_mail_and_uocava_credited,4229,observed,int
+25,Grand County,fields,0,in_person_credited,346,observed,int
+25,Grand County,fields,0,provisional_credited,50,observed,int
+25,Grand County,fields,0,vista_counted_total,4625,observed,int
+25,Grand County,fields,0,ballots_counted,4625,observed,int
+25,Grand County,fields,0,credited_remaining_to_tabulate,0,observed,int
+25,Grand County,fields,0,uncredited_logged_not_scanned,0,observed,int
+25,Grand County,fields,0,curable_ballots,40,observed,int
+25,Grand County,fields,0,incurable_ballots,8,observed,int
+25,Grand County,fields,0,provisional_needing_documentation,4,observed,int
+25,Grand County,fields,0,uncredited_ballots_in_possession,52,observed,int
+25,Grand County,fields,0,reconciliation_difference,0,observed,int
+25,Grand County,fields,0,awaiting_replication,0,observed,int
+25,Grand County,fields,0,returned_after_deadline,8,observed,int
+26,Davis County,fields,0,registered_voters,200115,observed,int
+26,Davis County,fields,0,ballots_received,120267,observed,int
+26,Davis County,fields,0,ballots_counted,115308,observed,int
+26,Davis County,fields,0,uncounted_ballots,1430,observed,int
+26,Davis County,fields,0,curable_ballots,3264,observed,int
+26,Davis County,fields,0,incurable_ballots,9,observed,int
+27,Rich County,fields,0,registered_voters,1590,observed,int
+27,Rich County,fields,0,ballots_received,1278,observed,int
+27,Rich County,fields,0,ballots_counted,1268,observed,int
+27,Rich County,fields,0,uncounted_ballots,2,observed,int
+27,Rich County,fields,0,curable_ballots,0,observed,int
+27,Rich County,fields,0,incurable_ballots,8,observed,int
+27,Rich County,fields,0,provisional_ballots_cast,10,observed,int

@@ -1,0 +1,60 @@
+{
+  "files": [
+    {
+      "path": "audit.json",
+      "bytes": 2078,
+      "sha256": "d8088755508aaff0a3b4a9dcdb3c18cbcb0a63efc4a2440f5891ccc74c669a7c"
+    },
+    {
+      "path": "county-participation.csv",
+      "bytes": 3944,
+      "sha256": "4a7d98fb346266b36ffc3fd5bbf6565e340ef82fbc9b0009d4487a7e9087a663"
+    },
+    {
+      "path": "county-party-registrations.csv",
+      "bytes": 5306,
+      "sha256": "82e7bbd81c0925249e268610298e3e79a2d69f49b570448365e3aa79d08b5c23"
+    },
+    {
+      "path": "methods.json",
+      "bytes": 2831,
+      "sha256": "0432e52faf129e12d2198aa316102e25de8d4c1bc9203b58b9d0b69bd7de473d"
+    },
+    {
+      "path": "native-county-catalog.csv",
+      "bytes": 1296,
+      "sha256": "5ab2d4ca765c8c480cc0173f2974a1e3fa5b351f182fefb31e41542c00104e72"
+    },
+    {
+      "path": "review-counties.py",
+      "bytes": 10203,
+      "sha256": "3097f16a82c073849ce3255a5f8039b4e01618c4801da79816cdd31870052b84"
+    },
+    {
+      "path": "source-native-observations.csv",
+      "bytes": 16772,
+      "sha256": "12d781b4ce9fb0a5ea42368153b86fbbf9c6ea313852bfc61109f3039cba139d"
+    },
+    {
+      "path": "source-qualification.json",
+      "bytes": 113546,
+      "sha256": "148897309a26489c35bc17bcf086e3dbb28cb23f2bfffa4a58237130d7909fb2"
+    },
+    {
+      "path": "source-reports.csv",
+      "bytes": 13144,
+      "sha256": "1d4a25ef1765e441db2b84ca6d4270abff5762f04cd033e82ab14c5d35a09e61"
+    },
+    {
+      "path": "state-party-registrations.csv",
+      "bytes": 326,
+      "sha256": "713707e8e71b95be8a7e46fa4ef6eee55237db6286c270eac70359b5a6c85b6e"
+    },
+    {
+      "path": "test_review_counties.py",
+      "bytes": 7725,
+      "sha256": "b9b11b17e1f13408cfcf497fbea7fc4918851306fde0367df7e63552dde345ad"
+    }
+  ],
+  "scope": "All numerical inputs, complete tables, methods and executable query/tests. Manifest and ZIP excluded from hashes to prevent self-reference."
+}

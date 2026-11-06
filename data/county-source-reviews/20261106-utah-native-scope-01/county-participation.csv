@@ -1,0 +1,30 @@
+native_county,native_status,source_ordinal,ballots_counted,registered_voters,native_counted_label,native_denominator_label,source_updated_literal,source_timezone_literal,source_scope_review,native_fips,analysis_rate_approved,map_approved
+Beaver County,Unofficial,24,2098,3847,Counted,ACTIVE VOTERS as of 10/30/26,11/6/2026 9:00 AM,,native_counted_total,,False,False
+Box Elder County,Unofficial,5,19929,,Ballots Tabulated,,11/04/26,,native_counted_total,,False,False
+Cache County,Unofficial,18,,,,,"11/5/26, 5:00pm",,withheld_fully_processed_not_defined_as_tabulated,,False,False
+Carbon County,Unofficial,15,6694,10896,Counted,Active Voters as of 10/30/26,11/5/2026,,native_counted_total,,False,False
+Daggett County,Unofficial,,,,,,,,missing_declared_report,,False,False
+Davis County,Unofficial,26,115308,200115,BALLOTS COUNTED,ACTIVE VOTERS,"Nov 5, 2026 at 6:06 PM",,native_counted_total,,False,False
+Duchesne County,Unofficial,7,5249,10440,Total # of Ballots Counted,Total # of Registered Voters,11/05/2026,,native_counted_total,,False,False
+Emery County,Unofficial,0,2963,5755,Total # of Ballots Counted,Total # of Registered Voters,11/04/2026,,native_counted_total,,False,False
+Garfield County,Unofficial,10,,,,,2026-11-04,,withheld_scanned_or_credited_not_relabelled_counted,,False,False
+Grand County,Unofficial,25,4625,5873,Ballots tabulated,Total Active Registered Voters,"11/6/26, 8:45am",,native_counted_total,,False,False
+Iron County,Unofficial,16,,32827,,Registered voter #'s,,,withheld_received_not_counted,,False,False
+Juab County,Unofficial,9,3738,7677,Ballots Tabulated,Approx # Active Registered Voters,4-Nov,,native_counted_total,,False,False
+Kane County,Unofficial,14,,,,,2026-11-05,,withheld_processed_not_defined_as_counted,,False,False
+Millard County,Unofficial,11,,7264,Ballots Processed and counted daily (includes cured ballots),Active Voters,11/4/2026,,withheld_daily_versus_cumulative_scope,,False,False
+Morgan County,Unofficial,,,,,,,,missing_declared_report,,False,False
+Piute County,Unofficial,,,,,,,,missing_declared_report,,False,False
+Rich County,Unofficial,27,1268,1590,Total Ballots Counted,Active Registered Voters,6 Nov,,native_counted_total,,False,False
+Salt Lake County,Unofficial,4,266720,604694,Number of Ballots Counted,Total Active Registered Voters,"5:15 PM on November 4, 2026",,native_counted_total,,False,False
+San Juan County,Unofficial,22,,,,,,,withheld_returns_and_pending_adjudication_not_counted,,False,False
+Sanpete County,Unofficial,13,8580,15532,Ballots Successfully Counted,Active Registered Voters,November 5 2026 at 11:30 AM,,native_counted_total,,False,False
+Sevier County,Unofficial,20,6293,12498,Number of Ballots Counted,"Total Number of Active Registered Voters as of October 30, 2026","November 5, 2026",,native_counted_total,,False,False
+Summit County,Unofficial,1,10831,29387,Number of Ballots Counted,Total Active Registered Voters (as of the Friday before Election Day),"11-4-2026, 5:04 pm",,native_counted_total,,False,False
+Tooele County,Unofficial,17,21033,41911,Ballots tabulated,Approx # Active Registered Voters,11/5 at 4:30pm,,native_counted_total,,False,False
+Uintah County,Unofficial,19,9449,18095,Ballots Counted,Active Voters (as of 10/30/2026),11/03/2026 11:18 a.m.,,native_counted_total,,False,False
+Utah County,Unofficial,2,135457,374971,Total Ballots Counted,Active Registered Voters (Friday Before Election),5-Nov,,native_counted_total,,False,False
+Wasatch County,Unofficial,,,,,,,,missing_declared_report,,False,False
+Washington County,Unofficial,23,64042,113087,Ballots Counted,Total Number of Active Registered Voters,11/05/2026 7:38 pm,,native_counted_total,,False,False
+Wayne County,Unofficial,8,1109,1827,Number of ballots counted,Number of active registered voters,,,native_counted_total,,False,False
+Weber County,Unofficial,21,77617,133164,Number of ballots counted,Number of active registered voters,11/5/26 at 7 p.m.,,native_counted_total,,False,False
