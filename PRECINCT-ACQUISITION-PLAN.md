@@ -1205,8 +1205,62 @@ are unchanged, and all 395 previous anchors remain among **405 anchors /
 timestamp/undeclared timezone, missing modes, Foxburg's separate electorate
 and 40/40-counting qualifications; Jefferson selection also remains exact.
 No-JS and failed/tampered-review/current-feed fallbacks pass without overflow.
-Publication and exact production proof remain pending.
+Clarion UI **`6579e73cc6078f172b6e99b06a715dc01a56e85c` is live verified**:
+exact Pages `42178775829`, attempt 1, and both exact credential runs
+`42178775972` / `42178773567` succeed. Hosted artifact `13484398308`,
+**497,973,994 bytes**, SHA-256
+`41584d30adff90d1edfb29c469cd61c6cbf8c4a9b5a07deb05ef0cbd07092ff8`,
+matches the prepared participation inputs. All **133 entire selected
+hosted/public files** match, including all three complete immutable 29-file
+snapshots, fifteen contextual geometries and eighteen full decompressed imports.
+All seven production browser scenarios pass, including Clarion/Jefferson
+selection, all 432 exact county counts, 60 exact rate fills, 372 missing gray
+rates, unchanged previous records and all 395 previous anchors retained among
+405 anchors /401 URLs. The hosted platform-specific preview matches its own
+manifest. Exact verification time: `2026-11-06T07:15:02.732941+00:00`.
+Full deployment, credential, hosted/public and browser proofs are persisted
+beside local evidence without another unchanged UI deployment.
 No new source-level map approval or certified turnout denominator is implied.
+
+**Next primary batch, Cameron and Carbon: acquisition/independent review in progress.**
+The existing frozen Pennsylvania queue leads to both county-owned indexes.
+Ordinary requests acquire the actual declared reports and each native CMS
+redirect, even though the separate web reader cannot fetch those URLs.
+No denied source, guessed endpoint or alternate-access bypass is used.
+Cameron's three-page general-election summary and one-page scanned Act 88
+receipt are complete. Native Ballots Cast is **1,624 = 1,305 Election Day +
+319 Mail**, registrations **2,885**, printed **56.29%**. All ten precincts
+are partially reported and zero are complete. Provisional participation is
+absent, not zero. All three native contests separately reconcile their
+selections, overvotes and undervotes to counted ballots. The image-only
+Act 88 report is separately visually reviewed, not falsely claimed text-engine
+agreement: its 324 returned ballots and 320 votes recorded are not substituted
+for 319 counted Mail ballots, pooled, or silently reconciled.
+
+Carbon's index retains a stale primary report labelled Current; it is not
+used for the November general election. The actual separately declared
+general-election zero report (two pages), current summary (two pages),
+statement (23 pages) and terms are complete private originals. Native current
+Voters Cast is **24,840 = 20,375 Election Day + 4,465 Mail-In + explicit
+zero Provisional**, registrations **45,896**, printed **54.12%**.
+The earlier Official Zero Report remains a distinct pre-election observation,
+not the current result. The current summary is Unofficial Results; all
+51 precincts reported does not certify complete ballot counting. Kidder's
+referendum electorate **807/1,457** remains distinct from the county.
+Statement participation rows, native Cumulative zero/N/A containers and
+the two distinct current report timestamps remain separate.
+
+Both PDF engines agree on every entire one of the **30 text-report pages**.
+The first default-orientation comparison correctly fails Carbon statement
+rotated headers; documented bottom-to-top rotated-text extraction resolves
+that reading-direction issue with **zero token/value substitutions**.
+The failed receipt remains preserved privately. County-query transcription,
+focused rejection tests, portable complete packages and publication remain
+pending; neither new county is released or integrated into the live UI.
+Private acquisition and engine proofs are in
+`pa-cameron-carbon-primary-20261106-01`,
+`pa-carbon-declared-reports-20261106-01` and
+`cameron-carbon-two-engine-review-02`.
 The other newly followed queue entry, Clearfield, returns an actual empty
 HTTP 404 through the ordinary source acquisition; the browser-backed web
 reader reaches its index but reports a redirect loop at the declared summary.
