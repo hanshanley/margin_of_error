@@ -1,0 +1,54 @@
+{
+  "verified_at_utc": "2026-11-06T04:06:31.842034+00:00",
+  "revision": "200eea1c9f6e45c9937ddf90a1380b30d4c4fed7",
+  "release_id": 436087793,
+  "tag": "voter-county-washington-participation-20261106-01",
+  "host_immutable": false,
+  "snapshot_policy": "Frozen commit/checksum snapshot; never overwrite. Not a host-enforced lock.",
+  "assets": [
+    {
+      "name": "complete-washington-county-participation-01.zip",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-washington-participation-20261106-01/complete-washington-county-participation-01.zip",
+      "bytes": 274782,
+      "sha256": "2ec14a19014b561d3d1ac123e8bb93360ae661e2d4a0d919fc00e5d7ebd5eae1",
+      "anonymous_bytes_match": true
+    },
+    {
+      "name": "county-participation.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-washington-participation-20261106-01/county-participation.csv",
+      "bytes": 19304,
+      "sha256": "38902598f2a56d7994fe0eee23a8d847fcec33c14f3f0a1e33e12385e8a5d862",
+      "anonymous_bytes_match": true
+    },
+    {
+      "name": "native-unit-participation.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-washington-participation-20261106-01/native-unit-participation.csv",
+      "bytes": 1341640,
+      "sha256": "367ffecf764f38b66ddcba883f32e0308f13749e2503f03891289c52fd5c8f5f",
+      "anonymous_bytes_match": true
+    },
+    {
+      "name": "source-records.json.gz",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-washington-participation-20261106-01/source-records.json.gz",
+      "bytes": 146344,
+      "sha256": "6a728e3dc28f4732b43b6d68e2f9f7d91fea1ea94a20838937337899f64ec96b",
+      "anonymous_bytes_match": true
+    }
+  ],
+  "commit_pinned_complete_tables": [
+    {
+      "name": "county-participation.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/200eea1c9f6e45c9937ddf90a1380b30d4c4fed7/data/county-source-reviews/20261106-washington-participation-01/county-participation.csv",
+      "bytes": 19304,
+      "sha256": "38902598f2a56d7994fe0eee23a8d847fcec33c14f3f0a1e33e12385e8a5d862",
+      "anonymous_bytes_match": true
+    },
+    {
+      "name": "native-unit-participation.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/200eea1c9f6e45c9937ddf90a1380b30d4c4fed7/data/county-source-reviews/20261106-washington-participation-01/native-unit-participation.csv",
+      "bytes": 1341640,
+      "sha256": "367ffecf764f38b66ddcba883f32e0308f13749e2503f03891289c52fd5c8f5f",
+      "anonymous_bytes_match": true
+    }
+  ]
+}

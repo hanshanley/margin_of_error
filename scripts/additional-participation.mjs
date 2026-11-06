@@ -131,6 +131,22 @@ export function loadAdditionalParticipation() {
     }));
   }
   const localReviews = json('public/participation-source-reviews.json').reviews;
+  const washington = localReviews.find(row => row.id === 'washington-counties-20261106-01');
+  if (!washington) throw new Error('Missing Washington county participation review');
+  const waRows = csv(resolve(washington.data_directory, 'county-participation.csv'));
+  if (waRows.length !== 39) throw new Error('Incomplete Washington county participation');
+  for (const native of waRows) counties.push(observation(washington, 'county-participation.csv',
+    'WA', native.county, native.county_id, native, {
+      ballots: native.ballots_cast, denominator: native.registered_voters,
+      reported_pct: Number(native.registered_turnout_percent),
+      source_status_literal: 'Native isOfficialResults=false (unofficial)',
+      source_update_label: `County as-of: ${native.source_as_of}; last updated: ${native.source_last_updated}; `
+        + `published: ${native.source_publish_date}; separate state-locality as-of: ${native.state_locality_source_as_of}; `
+        + `state-locality last updated: ${native.state_locality_source_last_updated}`,
+      source_reporting_label: native.quality_flags + ' The separate native statewide ballot field is zero, '
+        + 'not this county total. Calculated ballots/native-registration fraction; counting completion is not established. '
+        + 'All 9,588 native unit rows remain in complete downloads, without assigning county ballots to units.',
+    }));
   for (const [id, code, ballotField] of [
     ['iowa-linn-20261105-01', 'IA', 'ballots_total'],
     ['kentucky-daviess-20261105-01', 'KY', 'ballots_cast_total'],

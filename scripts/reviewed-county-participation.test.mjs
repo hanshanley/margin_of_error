@@ -98,7 +98,8 @@ test('preserves complete Adams ballots, native blank/provisional zeroes and part
 test('rejects missing or duplicated reviewed sources instead of silently shrinking coverage', () => {
   assert.throws(() => loadReviewedCountyParticipation(reviews.filter(row => row.id !== 'pennsylvania-berks-20261105-01')),
     /Missing or duplicated reviewed county source/);
-  assert.throws(() => loadReviewedCountyParticipation([...reviews, reviews[0]]),
+  assert.throws(() => loadReviewedCountyParticipation([...reviews,
+    reviews.find(row => row.id === 'pennsylvania-berks-20261105-01')]),
     /Missing or duplicated reviewed county source/);
 });
 

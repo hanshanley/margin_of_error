@@ -109,6 +109,29 @@ test('retains individual source rows without inventing county totals or merging 
     && row.unit_kind === 'pooled_absentee_or_early_unit' && row.maps_approved === false));
 });
 
+test('preserves every Washington county record and King ballots without using native statewide or unit zeroes', () => {
+  const native = csv('data/county-source-reviews/20261106-washington-participation-01/county-participation.csv');
+  const rows = data.counties.filter(row => row.state_code === 'WA');
+  assert.deepEqual(rows.map(row => row.native_record), native);
+  assert.equal(rows.reduce((sum, row) => sum + row.ballots, 0), 2266746);
+  for (const row of rows) {
+    assert.equal(row.ballots, Number(row.native_record.ballots_cast));
+    assert.equal(row.denominator, Number(row.native_record.registered_voters));
+    assert.equal(row.reported_pct, 100 * row.ballots / row.denominator);
+    assert.equal(row.native_printed_pct, null);
+    assert.equal(row.maps_approved, false);
+    for (const field of ['source_as_of', 'source_last_updated', 'source_publish_date',
+      'state_locality_source_as_of', 'state_locality_source_last_updated'])
+      assert.ok(row.source_update_label.includes(row.native_record[field]));
+  }
+  const king = rows.find(row => row.native_record.source_short_name === 'king-county-wa');
+  assert.equal(king.ballots, 601199);
+  assert.equal(king.native_record.source_unit_ballots, '0');
+  assert.equal(king.native_record.unallocated_county_ballots, '601199');
+  assert.match(king.source_reporting_label, /not zero participation/);
+  assert.equal(data.precincts.filter(row => row.state_code === 'WA').length, 0);
+});
+
 test('keeps withheld municipal rates and nongeographic federal ballots out of geographic totals', () => {
   const vt = data.counties.filter(row => row.state_code === 'VT');
   assert.equal(vt.filter(row => row.reported_pct === null).length, 6);

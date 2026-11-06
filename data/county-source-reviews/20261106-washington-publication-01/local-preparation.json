@@ -1,0 +1,17 @@
+{
+  "verified_at_utc": "2026-11-06T04:09:43.275919+00:00",
+  "prepared_bytes": 898676185,
+  "verified_relocations": 106,
+  "focused_node_tests": 21,
+  "fact_review_tests": 8,
+  "build_tests": 4,
+  "astro_errors": 0,
+  "astro_warnings": 0,
+  "existing_hints": 5,
+  "focused_browser_checks": 7,
+  "prior_reviewed_records_preserved": 14,
+  "prior_complete_imports_preserved": 15,
+  "prior_download_anchors_preserved": 318,
+  "unique_complete_download_urls": 318,
+  "complete_download_anchors": 321
+}

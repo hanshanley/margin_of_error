@@ -29,6 +29,7 @@ expected = {
     "ID": ("Idaho", 44, 986), "VT": ("Vermont", 247, 0),
     "RI": ("Rhode Island", 39, 0), "MI": ("Michigan", 2, 63),
     "FL": ("Florida", 1, 0), "MO": ("Missouri", 1, 0), "WY": ("Wyoming", 23, 0),
+    "WA": ("Washington", 39, 0),
 }
 all_states = expected.copy()
 if args.states:
@@ -50,12 +51,26 @@ source_files = {
     "FL": "data/precinct-source-reviews/20261105/FL-2026-MON/participation.json.gz",
     "MO": "data/precinct-source-reviews/20261105/MO-2026-CHRISTIAN/audit.json",
     "WY": "data/precinct-source-reviews/20261105/WY-2026-native-counts/counts-review.json",
+    "WA": "data/county-source-reviews/20261106-washington-participation-01/county-participation.csv",
 }
 native_counties = {
     "FL": json.loads(gzip.decompress((root / source_files["FL"]).read_bytes())),
     "MO": [json.loads((root / source_files["MO"]).read_text())],
     "WY": json.loads((root / source_files["WY"]).read_text())["counties"],
 }
+with (root / source_files["WA"]).open() as source:
+    native_counties["WA"] = list(csv.DictReader(source))
+
+
+def verify_preservation(page):
+    if not baseline or "previous_reviewed_county_records" not in baseline:
+        return
+    table = page.locator("table[data-reviewed-county-participation]")
+    assert json.loads(table.get_attribute("data-reviewed-county-participation")) == baseline[
+        "previous_reviewed_county_records"]
+    expect(page.locator('table[data-uf-turnout="2026"] tbody tr')).to_have_count(52)
+    assert [text.strip() for text in page.locator(
+        "table[data-historical-house] tbody tr th").all_text_contents()] == baseline["historical_years"]
 
 proof = {"base_url": base, "checks": []}
 errors = []
@@ -72,7 +87,8 @@ with sync_playwright() as playwright:
                 body = gzip.decompress(response.body())
                 assert len(body) == previous["json_bytes"]
                 assert hashlib.sha256(body).hexdigest() == previous["json_sha256"]
-            proof["checks"].append({"mobile": mobile, "all_twelve_previous_imports_entirely_unchanged": True})
+            proof["checks"].append({"mobile": mobile, "all_previous_imports_entirely_unchanged": True,
+                                    "previous_complete_imports": len(baseline["unchanged_imports"])})
         for code, (name, locality_count, unit_count) in expected.items():
             response = context.request.get(base + f"/participation-local/{code}.json.gz")
             assert response.ok
@@ -94,6 +110,11 @@ with sync_playwright() as playwright:
                 assert [row["native_record"] for row in data["counties"]] == native_counties[code]
                 for row in data["counties"]:
                     native = row["native_record"]
+                    if code == "WA":
+                        assert row["ballots"] == int(native["ballots_cast"])
+                        assert row["denominator"] == int(native["registered_voters"])
+                        assert row["reported_pct"] == float(native["registered_turnout_percent"])
+                        continue
                     assert row["ballots"] == native[
                         "ballots" if code == "FL" else "county_ballots" if code == "MO" else "printed_county_ballots"]
                     assert row["denominator"] == (native["registered"] if code == "FL"
@@ -127,6 +148,16 @@ with sync_playwright() as playwright:
                 if code == "WY":
                     expect(detail).to_contain_text("electorate not supplied")
                     expect(detail).to_contain_text("Washakie candidate-category conflict")
+                if code == "WA":
+                    expect(detail).to_contain_text(f'{row["denominator"]:,} native registered voters')
+                    expect(detail).to_contain_text("separate native statewide ballot field is zero")
+                    for field in ("source_as_of", "source_last_updated", "source_publish_date",
+                                  "state_locality_source_as_of", "state_locality_source_last_updated"):
+                        expect(detail).to_contain_text(row["native_record"][field])
+                    if row["native_record"]["source_short_name"] == "king-county-wa":
+                        expect(detail).to_contain_text("not zero participation")
+                        expect(detail).to_contain_text("remain unallocated")
+            verify_preservation(page)
             assert page.evaluate("document.documentElement.scrollWidth <= innerWidth"), (
                 code, mobile, page.evaluate("[innerWidth, document.documentElement.scrollWidth]"))
             proof["checks"].append({"mobile": mobile, "state": code, "localities": locality_count,
@@ -150,7 +181,8 @@ with sync_playwright() as playwright:
         expect(section.locator("tbody tr")).to_have_count(sum(row[1] for row in all_states.values()))
         if baseline:
             assert Counter(static.locator("#downloads a[download]").evaluate_all(
-                "links => links.map(link => link.getAttribute('href'))")) == Counter(baseline["expected_download_urls"])
+                "links => links.map(link => link.getAttribute('href'))")) == Counter(
+                    baseline["expected_download_urls"] + baseline.get("added_download_urls", []))
         for code in set(expected) & set(native_counties):
             details = section.locator(":scope > details").filter(
                 has=static.locator("summary", has_text=all_states[code][0] + ":"))
@@ -158,8 +190,14 @@ with sync_playwright() as playwright:
             cells = details.locator("tbody tr").evaluate_all(
                 "rows => rows.map(row => [...row.cells].map(cell => cell.textContent.trim()))")
             for row, native in zip(cells, native_counties[code]):
-                ballots = native["ballots" if code == "FL" else "county_ballots" if code == "MO" else "printed_county_ballots"]
-                assert row[2] == f"{ballots:,}" and row[4] == "Withheld / not supplied"
+                if code == "WA":
+                    assert row[2] == f'{int(native["ballots_cast"]):,}'
+                    assert row[3] == f'{int(native["registered_voters"]):,}'
+                    assert row[4] == f'{float(native["registered_turnout_percent"]):.2f}%'
+                else:
+                    ballots = native["ballots" if code == "FL" else "county_ballots" if code == "MO" else "printed_county_ballots"]
+                    assert row[2] == f"{ballots:,}" and row[4] == "Withheld / not supplied"
+        verify_preservation(static)
         assert static.evaluate("document.documentElement.scrollWidth <= innerWidth")
         proof["checks"].append({"mobile": mobile, "javascript": False,
                                 "native_localities": sum(row[1] for row in all_states.values()),

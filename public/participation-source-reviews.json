@@ -1,6 +1,23 @@
 {
   "reviews": [
     {
+      "id": "washington-counties-20261106-01",
+      "label": "Washington 2026: all 39 county participation observations and complete native-unit accounting",
+      "data_directory": "data/county-source-reviews/20261106-washington-participation-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/200eea1c9f6e45c9937ddf90a1380b30d4c4fed7/data/county-source-reviews/20261106-washington-participation-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-washington-participation-20261106-01/complete-washington-county-participation-01.zip",
+      "complete_download_bytes": 274782,
+      "complete_download_sha256": "2ec14a19014b561d3d1ac123e8bb93360ae661e2d4a0d919fc00e5d7ebd5eae1",
+      "review_status": "complete_county_participation_facts_reviewed_unofficial",
+      "maps_approved": false,
+      "scope_note": "All 39 Washington counties, frozen unofficial November 3, 2026 general-election observations. Each county's ballots and native totalVoters independently agree with its separate state-locality header. All 9,588 native participation rows are retained in the complete download; their voterRegistration sums independently match every county's totalVoters. The county ballot sum is 2,266,746 and the native registered electorate sum is 5,170,951, not a native statewide result or final counting claim. The actual statewide ballotsCast field is zero and is preserved separately, not repaired or used as zero statewide turnout. King County's 601,199 ballots remain unallocated despite all-zero native unit ballot fields; those fields are not evidence of zero participation. All 38 other county ballot sums reconcile. Calculated ballots/native-registration fractions are not VEP, CVAP or demographic turnout. All source as-of, last-updated, publication and independent state-locality timestamps remain distinct. Complete numerical facts, both full CSVs, source receipt digests and the portable offline reviewer reproduce byte-identically. Frozen commit/checksum snapshot under a never-overwrite policy; no host-enforced lock is asserted. No new map, demographic rate, certification or statewide counting completion is approved.",
+      "tables": [
+        {"file": "county-participation.csv", "label": "Washington: all 39 county ballots, independently reconciled native registrations, calculated fractions, distinct timestamps and unallocated-ballot qualifications (CSV)"},
+        {"file": "native-unit-participation.csv", "label": "Washington: all 9,588 native unit participation rows, explicit zeroes and King County's unallocated-ballot caveat, without geometry (CSV)"}
+      ],
+      "coverage": []
+    },
+    {
       "id": "pennsylvania-adams-20261106-01",
       "label": "Adams County, Pennsylvania 2026: complete participation and numerical candidate/accounting facts",
       "data_directory": "data/county-source-reviews/20261106-adams-facts-01",

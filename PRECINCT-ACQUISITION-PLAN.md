@@ -306,7 +306,7 @@ and byte-identical offline reproduction of every package file. See
 facts preparation, **not live participation integration**. No source maps,
 demographic turnout or statewide completeness are approved.
 
-**Adams release and participation integration, locally verified:** the new
+**Adams release and participation integration, live verified:** the new
 `voter-county-pennsylvania-adams-20261106-01` release targets reviewed facts
 revision `67739491b7bcb890ed134771296dcdb2a2cde222`. All nine complete assets
 and all eight commit-pinned CSVs were anonymously downloaded and byte-verified.
@@ -328,11 +328,14 @@ all fifteen additional-state full JSON fingerprints and every prior download
 anchor are unchanged. Nine new complete links give 315 unique URLs / 318 anchors.
 Proofs are under `data/county-source-reviews/20261106-adams-publication-01/`.
 The temporary preview is stopped. UI revision
-`9aef49edea1897daf04917d9a98ee35229b2b16c` is pushed to main and the review
-branch. One bounded verifier watches exact Pages `42159885272`, with credential
-runs `42159885323` / `42159885499`; keep its prepared `dist/` unchanged until
-it finishes. Do not duplicate the watcher or claim the UI live before its
-hosted/live byte checks and all six production browser modes pass.
+`9aef49edea1897daf04917d9a98ee35229b2b16c` passed Pages `42159885272`,
+with credential runs `42159885323` / `42159885499`. Artifact `13477040454`
+passed its hosted ZIP SHA-256
+`1ec5c4d88cb436593616c85859e69ad1a2c1831822b66935694c31a2907a412f`.
+At `2026-11-06T04:05:59.654565+00:00`, all 25 selected hosted/live files
+matched, including all fifteen complete imports. All six production browser
+modes passed, retaining every prior native record and complete download.
+The bounded verifier finished successfully and was read; Adams is now live.
 
 **Washington county participation, complete numerical review:** the frozen
 WA-02 archive already contains a bulk source for all 39 counties. The new
@@ -360,9 +363,34 @@ full-data ZIP are under
 Eight focused tests pass, including native zero/missingness, independent
 identity/count matching, strict registration accounting, duplicate rejection,
 the King-only unallocated-ballot guard and byte-identical complete offline
-reproduction. This batch is **not yet released or connected to the UI**.
-Publish and anonymously verify its complete downloads, then connect the
-county observations after Adams' current production verifier finishes.
+reproduction. Source revision `200eea1c9f6e45c9937ddf90a1380b30d4c4fed7`
+is published on the review branch. Release
+`voter-county-washington-participation-20261106-01` targets that exact commit.
+All four complete assets and both commit-pinned full CSVs were anonymously
+downloaded and byte-verified at `2026-11-06T04:06:31.842034+00:00`.
+The 274,782-byte full-data ZIP has SHA-256
+`2ec14a19014b561d3d1ac123e8bb93360ae661e2d4a0d919fc00e5d7ebd5eae1`.
+GitHub reports `immutable: false`; preserve the fixed checksum/never-overwrite
+policy without asserting a host-enforced lock.
+
+The existing bulk loader and source registry now connect all 39 complete
+county observations, retaining their entire native CSV records and separately
+labelled calculated native-registration fractions. The additional imports have
+828 locality containers across sixteen states; 5,512 separately scoped
+selector-unit observations remain unchanged. Washington's 9,588 units stay in
+complete downloads rather than becoming an unreviewed new precinct selector.
+Twenty-one focused Node tests, the eight fact-review tests, Astro check
+(zero errors/warnings, five existing hints), the build and its four tests pass.
+Preparation verifies 106 relocations at 898,676,185 bytes. Seven focused
+desktop/mobile, JavaScript/no-JavaScript and failed-import checks pass, selecting
+every county and matching its complete native record, registrations, ratio and
+distinct timestamps. All fourteen previous reviewed records, fifteen entire
+state-import fingerprints, 52 UF rows, five historical years and 318 previous
+download anchors remain. Three new complete links give 318 unique URLs /
+321 anchors. The temporary production-equivalent preview is stopped.
+Proofs are under `20261106-washington-publication-01`.
+This UI is **locally verified, not yet deployed**; publish one fresh exact
+revision and verify its hosted/live bytes and focused browsers next.
 
 **November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated
