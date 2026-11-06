@@ -632,6 +632,71 @@ export function loadReviewedSusquehannaParticipation(reviews) {
   }];
 }
 
+export function loadReviewedSullivanWyomingParticipation(reviews) {
+  const id = 'pennsylvania-sullivan-wyoming-20261106-01';
+  const matches = reviews.filter(review => review.id === id);
+  if (matches.length !== 1) throw new Error(`Missing or duplicated reviewed county source: ${id}`);
+  const review = matches[0], directory = resolve(review.data_directory);
+  const manifest = readFileSync(resolve(directory, 'checksums.json'));
+  if (createHash('sha256').update(manifest).digest('hex')
+    !== 'd44ed20e278f8628e159701b709098f3c45389165a462742be67839dd00210c2')
+    throw new Error(`Invalid reviewed county participation: ${id} / checksums.json`);
+  const files = { ...JSON.parse(manifest), 'complete-query.zip': {
+    bytes: 19963, sha256: 'cba0b37aa4ecfd38ce02d0832a67a1f26a8240c15190fab78dca7c51e4519c47',
+  } };
+  for (const [file, expected] of Object.entries(files)) {
+    const body = readFileSync(resolve(directory, file));
+    if (body.length !== expected.bytes || createHash('sha256').update(body).digest('hex') !== expected.sha256)
+      throw new Error(`Invalid reviewed county participation: ${id} / ${file}`);
+  }
+  const rows = csv(resolve(directory, 'county-participation.csv'));
+  if (rows.length !== 2) throw new Error(`Invalid reviewed county participation: ${id}`);
+  return rows.map((native, index) => {
+    const [county, ballots, denominator, percentage, clock, units] = [
+      ['Sullivan', 2712, 4501, '60.25%', '10:36:27', null],
+      ['Wyoming', 10542, 18565, '56.78%', '09:15:07', 28],
+    ][index];
+    if (native.county !== county || native.state !== 'Pennsylvania' || native.scope !== 'county'
+      || native.election_date !== '2026-11-03' || native.native_date !== '2026-11-06'
+      || native.native_clock !== clock || native.native_printed_percentage !== percentage
+      || native.native_ballot_label !== 'Total Ballots Cast' || native.native_registration_label !== 'Registered Voters'
+      || Number(native.total_ballots) !== ballots || Number(native.registered_voters) !== denominator
+      || ['source_fips', 'native_timezone', 'native_mode', 'blank_ballots', 'overvotes', 'undervotes']
+        .some(key => native[key] !== '')
+      || ['analysis_ballots_approved', 'analysis_rate_approved', 'map_approved'].some(key => native[key] !== 'False'))
+      throw new Error(`Invalid reviewed county participation: ${id} / ${county}`);
+    const updates = [{
+      source: 'county summary', native_update_literal: `${native.native_date} ${clock}`,
+      declared_timezone: null,
+    }];
+    const quality = [
+      'Separately reviewed native whole-county Total Ballots Cast / Registered Voters only; not candidate selections, a mode denominator, CVAP/VAP/VEP or demographic participation.',
+      'All four physical pages, 22 candidate-mode vectors, seven contest totals and the entire 944-cell write-in matrix are retained in the complete numerical query.',
+      'Native candidate affiliations and summary office districts are missing, not inferred from familiar names; ED / MI / PR remain literal candidate columns, not ballot-mode counts.',
+      'Both November 6 summary clocks lack native timezones. The listing prints an election date, not an update clock; its physical pages 2/3 are not the summary native Page 1 of 1.',
+      'Sullivan summary status comes from physical page 2; Wyoming unofficial status comes from the declared file name, not a printed PDF status. Neither establishes certification or completed counting.',
+      'Sullivan ballot-minus-selection differences 41/32/396 are unclassified, not undervotes; listed write-ins 1/1/48 differ from summary 1/5/73, leaving separately scoped 0/4/25 unallocated.',
+      'Wyoming over-voted ballots plus undervotes reconcile each contest; overvotes are not added twice. Ballot-mode counts and blank ballots remain missing, not zero.',
+      'All 841 blank matrix cells remain missing; all 16 printed zeros remain zero. Named listings are not added to summary write-ins or participation.',
+      'Native FIPS and native approval flags remain unchanged; separate county usability and Census context do not certify 2026 election reporting boundaries or precinct coverage.',
+    ];
+    return {
+      year: 2026, state_code: 'PA', county_id: `reviewed:PA:${county}`, county,
+      geography_level: 'county', ballots, denominator, denominator_basis: 'native_registered_voters',
+      participation_measure_literal: native.native_ballot_label, reported_pct: 100 * ballots / denominator,
+      native_printed_pct: percentage,
+      source_status_literal: native.native_status || 'Unofficial (source file name; not printed PDF status)',
+      reported_units: units, total_units: units, source_rows: 1, maps_approved: false, review_id: id,
+      native_record: native, native_source_updates: updates,
+      source_update_label: updates.map(row => `${row.source}: ${row.native_update_literal}`).join('; '),
+      source_reporting_label: (units === null ? 'Precinct reporting not printed; '
+        : '28/28 precincts reported, not completed counting; ') + quality.join(' '),
+      quality, source_url: `${review.base_url}county-participation.csv`,
+      complete_download_url: review.complete_download_url,
+    };
+  });
+}
+
 export function loadReviewedCountyParticipation(reviews) {
   const observations = [], seen = new Set();
   for (const [id, ballotField, denominatorField, printedField, code, names] of profiles) {
@@ -1004,5 +1069,5 @@ export function loadReviewedCountyParticipation(reviews) {
     ...loadGeorgiaParticipation(reviews).counties, ...loadReviewedMinnesotaParticipation(reviews),
     ...loadLawrenceParticipation(reviews), ...loadHuntingdonParticipation(reviews),
     ...loadReviewedAdditionalPennsylvaniaParticipation(reviews), ...loadReviewedSomersetParticipation(reviews),
-    ...loadReviewedSusquehannaParticipation(reviews)];
+    ...loadReviewedSusquehannaParticipation(reviews), ...loadReviewedSullivanWyomingParticipation(reviews)];
 }

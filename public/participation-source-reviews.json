@@ -1,6 +1,36 @@
 {
   "reviews": [
     {
+      "id": "pennsylvania-sullivan-wyoming-20261106-01",
+      "label": "Sullivan and Wyoming counties, Pennsylvania 2026: native participation and complete numerical reports",
+      "data_directory": "data/county-source-reviews/20261106-sullivan-wyoming-native-turnout-02",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/b0ae6c03d85476085ab8a995db15bf8fe092c6b9/data/county-source-reviews/20261106-sullivan-wyoming-native-turnout-02/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-sullivan-wyoming-native-turnout-20261106-02/complete-query.zip",
+      "complete_download_bytes": 19963,
+      "complete_download_sha256": "cba0b37aa4ecfd38ce02d0832a67a1f26a8240c15190fab78dca7c51e4519c47",
+      "checksums_file": "checksums.json",
+      "review_status": "complete_two_report_numerical_query_reviewed_unofficial",
+      "maps_approved": false,
+      "scope_note": "Sullivan reports 2,712 Total Ballots Cast / 4,501 Registered Voters, printed 60.25%; Wyoming 10,542 / 18,565, printed 56.78%. Native registered-voter fractions, not candidate votes, CVAP/VAP/VEP or demographic turnout. All four physical pages, 22 candidate-mode vectors, seven contest totals/accounting rows and the entire 59-row, 944-cell write-in matrix are retained. The 841 blank cells remain missing and 16 printed zeros remain zero. Sullivan unclassified ballot residuals 41/32/396 are not undervotes; named write-in listings 1/1/48 versus summary 1/5/73 leave separately scoped 0/4/25 unallocated. Wyoming native over-voted ballots plus undervotes reconcile every contest without double-counting overvotes. Both November 6 clocks lack native timezones; candidate parties, summary office districts, ballot-mode counts and blank ballots remain missing. Sullivan status is printed on physical page 2; Wyoming unofficial status is declared by its file name. Reporting is not certification or completed counting. The corrected -02 release fixes the first archive's standalone test harness without changing either factual input. Original templates stay private; native FIPS and native approval flags remain unchanged. Separate county usability/Census context do not certify 2026 geography.",
+      "tables": [
+        {"file": "county-participation.csv", "label": "Sullivan/Wyoming: native county ballots, registrations and printed fractions (CSV)"},
+        {"file": "candidate-results.csv", "label": "Sullivan/Wyoming: every native candidate and literal mode vector, parties missing (CSV)"},
+        {"file": "contest-totals.csv", "label": "Sullivan/Wyoming: complete contest totals and repeated denominators, not additive (CSV)"},
+        {"file": "contest-accounting.csv", "label": "Sullivan/Wyoming: native accounting, missingness and unclassified residuals (CSV)"},
+        {"file": "reporting.csv", "label": "Sullivan/Wyoming: reported counters and absent Sullivan reporting (CSV)"},
+        {"file": "source-pages.csv", "label": "Sullivan/Wyoming: complete physical/native page and clock inventory (CSV)"},
+        {"file": "write-in-matrix.csv", "label": "Sullivan: all 59 native listing rows and 944 locality/total cells (CSV)"},
+        {"file": "write-in-reconciliation.csv", "label": "Sullivan: separately scoped named listing shortfalls, not extra voters (CSV)"},
+        {"file": "source-inputs.json", "label": "Sullivan/Wyoming: complete image-reviewed factual numerical inputs (JSON)"},
+        {"file": "source-provenance.json", "label": "Sullivan/Wyoming: original full-source declarations, redirects and integrity receipts (JSON)"},
+        {"file": "audit.json", "label": "Sullivan/Wyoming: full numerical reconciliation and missingness audit (JSON)"},
+        {"file": "methods.json", "label": "Sullivan/Wyoming: numerical scope, missingness and standalone reproduction methods (JSON)"},
+        {"file": "checksums.json", "label": "Sullivan/Wyoming: complete numerical-query byte inventory (JSON)"},
+        {"file": "review-counties.py", "label": "Sullivan/Wyoming: complete standard-library offline query reproducer (Python)"},
+        {"file": "test_review_counties.py", "label": "Sullivan/Wyoming: ten portable numerical and archive tests (Python)"}
+      ]
+    },
+    {
       "id": "pennsylvania-susquehanna-20261106-01",
       "label": "Susquehanna County, Pennsylvania 2026: native ballots, registrations and complete three-report numerical query",
       "data_directory": "data/county-source-reviews/20261106-susquehanna-native-turnout-01",

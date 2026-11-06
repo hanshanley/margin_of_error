@@ -1,0 +1,36 @@
+{
+  "ref": {
+    "ref": "refs/tags/voter-county-sullivan-wyoming-native-turnout-20261106-02",
+    "node_id": "REF_kwDOTeY7QdoAQnJlZnMvdGFncy92b3Rlci1jb3VudHktc3VsbGl2YW4td3lvbWluZy1uYXRpdmUtdHVybm91dC0yMDI2MTEwNi0wMg",
+    "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/refs/tags/voter-county-sullivan-wyoming-native-turnout-20261106-02",
+    "object": {
+      "sha": "f4a1efc19bb4fd4a49f650a3111bede8a3199b7a",
+      "type": "tag",
+      "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/tags/f4a1efc19bb4fd4a49f650a3111bede8a3199b7a"
+    }
+  },
+  "tag": {
+    "node_id": "TA_kwDOTeY7QdoAKGY0YTFlZmMxOWJiNGZkNGE0OWY2NTBhMzExMWJlZGU4YTMxOTliN2E",
+    "sha": "f4a1efc19bb4fd4a49f650a3111bede8a3199b7a",
+    "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/tags/f4a1efc19bb4fd4a49f650a3111bede8a3199b7a",
+    "tagger": {
+      "name": "Hans Hanley",
+      "email": "hwahhanley@gmail.com",
+      "date": "2026-11-06T17:41:30Z"
+    },
+    "object": {
+      "sha": "b0ae6c03d85476085ab8a995db15bf8fe092c6b9",
+      "type": "commit",
+      "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/commits/b0ae6c03d85476085ab8a995db15bf8fe092c6b9"
+    },
+    "tag": "voter-county-sullivan-wyoming-native-turnout-20261106-02",
+    "message": "Complete portable Sullivan and Wyoming numerical query, corrected archive replay\n",
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  }
+}

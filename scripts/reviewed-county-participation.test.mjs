@@ -7,21 +7,85 @@ import { parse } from 'csv-parse/sync';
 import { gunzipSync } from 'node:zlib';
 import { loadReviewedCountyParticipation as loadAllReviewedCountyParticipation, loadReviewedStatewideParticipation,
   loadReviewedMinnesotaParticipation, loadReviewedAdditionalPennsylvaniaParticipation,
-  loadReviewedSomersetParticipation, loadReviewedSusquehannaParticipation } from './reviewed-county-participation.mjs';
+  loadReviewedSomersetParticipation, loadReviewedSusquehannaParticipation,
+  loadReviewedSullivanWyomingParticipation } from './reviewed-county-participation.mjs';
 
 const reviews = JSON.parse(readFileSync('public/participation-source-reviews.json', 'utf8')).reviews;
 const additionalId = 'pennsylvania-three-additional-summaries-20261106-01';
 const somersetId = 'pennsylvania-somerset-20261106-01';
 const susquehannaId = 'pennsylvania-susquehanna-20261106-01';
+const sullivanWyomingId = 'pennsylvania-sullivan-wyoming-20261106-01';
 // Existing historical fixtures end at context17; test the complete extension separately.
 const loadReviewedCountyParticipation = sourceReviews =>
-  loadAllReviewedCountyParticipation(sourceReviews).filter(row => ![additionalId, somersetId, susquehannaId].includes(row.review_id));
+  loadAllReviewedCountyParticipation(sourceReviews).filter(row =>
+    ![additionalId, somersetId, susquehannaId, sullivanWyomingId].includes(row.review_id));
 const batchCounties = ['Juniata', 'Mercer', 'Montour', 'Columbia', 'Greene', 'Lycoming'];
 const isBatch = row => ['CA', 'GA', 'MN'].includes(row.state_code)
   || row.state_code === 'PA' && [...batchCounties, 'Lawrence', 'Huntingdon'].includes(row.county);
 
-test('Susquehanna preserves every prior native record and approves only the native registered-voter fraction', () => {
+test('Sullivan/Wyoming preserve all 363 prior native records and only add registered-voter fractions', () => {
   const rows = loadAllReviewedCountyParticipation(reviews);
+  const baseline = JSON.parse(readFileSync(
+    'data/county-source-reviews/20261106-sullivan-wyoming-explorer-01/baseline.json'));
+  assert.deepEqual(rows.filter(row => row.review_id !== sullivanWyomingId), baseline.previous_entire_reviewed_records);
+  assert.equal(rows.length, 365);
+  assert.equal(rows.filter(row => row.state_code === 'PA').length, 41);
+  const added = loadReviewedSullivanWyomingParticipation(reviews);
+  assert.deepEqual(added.map(row => [row.county, row.ballots, row.denominator, row.native_printed_pct,
+    row.reported_units, row.total_units]), [
+    ['Sullivan', 2712, 4501, '60.25%', null, null],
+    ['Wyoming', 10542, 18565, '56.78%', 28, 28],
+  ]);
+  for (const row of added) {
+    assert.equal(row.reported_pct, 100 * row.ballots / row.denominator);
+    assert.equal(row.maps_approved, false);
+    assert.equal(row.participation_measure_literal, 'Total Ballots Cast');
+    assert.equal(row.denominator_basis, 'native_registered_voters');
+    assert.deepEqual(row.native_source_updates.map(update => update.declared_timezone), [null]);
+    for (const key of ['source_fips', 'blank_ballots', 'overvotes', 'undervotes', 'native_mode', 'native_timezone'])
+      assert.equal(row.native_record[key], '');
+    for (const key of ['analysis_ballots_approved', 'analysis_rate_approved', 'map_approved'])
+      assert.equal(row.native_record[key], 'False');
+    for (const phrase of ['not candidate selections', 'lack native timezones', 'unclassified, not undervotes',
+      '0/4/25 unallocated', '841 blank matrix cells remain missing', '16 printed zeros remain zero'])
+      assert.ok(row.source_reporting_label.includes(phrase));
+  }
+  assert.equal(added[0].native_record.status_printed_on_physical_page, '2');
+  assert.equal(added[1].native_record.native_status, '');
+  assert.equal(added[1].native_record.source_file_status_literal, 'Unofficial');
+});
+
+test('Sullivan/Wyoming reject changed complete inputs and link every verified immutable asset', () => {
+  const original = reviews.find(row => row.id === sullivanWyomingId);
+  const directory = mkdtempSync(join(tmpdir(), 'sullivan-wyoming-participation-'));
+  try {
+    const manifest = JSON.parse(readFileSync(join(original.data_directory, 'checksums.json')));
+    const files = ['checksums.json', 'complete-query.zip', ...Object.keys(manifest)];
+    for (const file of files) copyFileSync(join(original.data_directory, file), join(directory, file));
+    const altered = reviews.map(row => row === original ? { ...row, data_directory: directory } : row);
+    for (const changed of ['county-participation.csv', 'source-inputs.json', 'write-in-matrix.csv',
+      'source-pages.csv', 'reporting.csv', 'checksums.json', 'complete-query.zip']) {
+      writeFileSync(join(directory, changed), Buffer.concat([readFileSync(join(directory, changed)), Buffer.from('\n')]));
+      assert.throws(() => loadReviewedSullivanWyomingParticipation(altered), /Invalid reviewed county participation/);
+      copyFileSync(join(original.data_directory, changed), join(directory, changed));
+    }
+    for (const registrations of [reviews.filter(row => row !== original), [...reviews, original]])
+      assert.throws(() => loadReviewedSullivanWyomingParticipation(registrations), /Missing or duplicated reviewed county source/);
+    const publication = JSON.parse(readFileSync(
+      'data/county-source-reviews/20261106-sullivan-wyoming-native-publication-02/published-verification.json'));
+    assert.equal(publication.immutable, true);
+    assert.equal(publication.all_16_files_reproduce_exactly, true);
+    assert.deepEqual([...original.tables.map(row => row.file), 'complete-query.zip'].sort(),
+      publication.assets.map(row => row.file).sort());
+    assert.equal(original.complete_download_sha256,
+      publication.assets.find(row => row.file === 'complete-query.zip').sha256);
+  } finally {
+    rmSync(directory, { recursive: true, force: true });
+  }
+});
+
+test('Susquehanna preserves every prior native record and approves only the native registered-voter fraction', () => {
+  const rows = loadAllReviewedCountyParticipation(reviews).filter(row => row.review_id !== sullivanWyomingId);
   const baseline = JSON.parse(readFileSync(
     'data/county-source-reviews/20261106-susquehanna-explorer-01/baseline.json'));
   assert.deepEqual(rows.filter(row => row.review_id !== susquehannaId), baseline.previous_entire_reviewed_records);
@@ -77,7 +141,8 @@ test('Susquehanna rejects complete-input mutations and exposes only the verified
 });
 
 test('Somerset adds only genuine county participation and preserves all 361 prior native records', () => {
-  const rows = loadAllReviewedCountyParticipation(reviews).filter(row => row.review_id !== susquehannaId);
+  const rows = loadAllReviewedCountyParticipation(reviews)
+    .filter(row => ![susquehannaId, sullivanWyomingId].includes(row.review_id));
   const previous = JSON.parse(gunzipSync(readFileSync(
     'public/participation-county-context/20261106-18/complete-source-records.json.gz')));
   const priorReviewed = previous.filter(row => rows.some(current =>
@@ -128,7 +193,8 @@ test('Somerset rejects changes to complete inputs and exposes every server-locke
 });
 
 test('three new Pennsylvania counties preserve the entire context17 query and use native ballots and registrations', () => {
-  const rows = loadAllReviewedCountyParticipation(reviews).filter(row => ![somersetId, susquehannaId].includes(row.review_id));
+  const rows = loadAllReviewedCountyParticipation(reviews)
+    .filter(row => ![somersetId, susquehannaId, sullivanWyomingId].includes(row.review_id));
   const previous = JSON.parse(gunzipSync(readFileSync(
     'public/participation-county-context/20261106-17/complete-source-records.json.gz')));
   const priorReviewed = previous.filter(row => rows.some(current =>

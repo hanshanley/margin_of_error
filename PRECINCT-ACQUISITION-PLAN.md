@@ -29,9 +29,18 @@ receipt; it is not approved or integrated. The corrected **-02** package retains
 the identical source inputs and original receipts, fixes archive self-reference,
 and must pass full isolated replay in both draft and public verification.
 Original native approval flags and FIPS remain unchanged.
-**Next:** freeze and verify the corrected full immutable numerical release, separately review
-both county identities/fractions, and extend context20 losslessly before any UI
-LIVE claim. The successful context20 deployment below needs no retry.
+The corrected numerical release **436805438 / `b0ae6c0`** is now immutable:
+all **16 anonymous assets / 16 commit-pinned files / 15 ZIP members / ten
+actual extracted tests** pass and all **16 files** reproduce byte-identically.
+The complete 2024 and 2026 Census inventories independently identify Sullivan
+**42113** and Wyoming **42131**; native FIPS and native approval flags stay missing/
+false. Context21 is prepared with all **1,228 previous records / 744 prior joins /
+18 entire geometries / exclusions / missingness** unchanged. Its **1,230 records /
+746 joins / 359 fractions / 387 missing rates / 18 jurisdictions** add only the two
+registered-voter fractions. All **55 focused native-loader tests** pass.
+**Next:** publish and verify the full immutable context21 package, update its pinned
+pointer/router, and complete UI/check/build/preparation/exact production proof
+before any new LIVE claim. The successful context20 deployment below needs no retry.
 
 **November 6, 17:27 UTC: Susquehanna/context20 LIVE; exact deploy-only recovery verified.**
 Exact UI **`6fdb6bde43fc6b961a1f1d4a3e5f7f7a47614716`**, Pages
