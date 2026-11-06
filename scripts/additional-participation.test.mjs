@@ -132,6 +132,31 @@ test('preserves every Washington county record and King ballots without using na
   assert.equal(data.precincts.filter(row => row.state_code === 'WA').length, 0);
 });
 
+test('preserves all Oregon counted ballots and active registrations despite separate false reporting flags', () => {
+  const native = csv('data/county-source-reviews/20261106-oregon-participation-01/county-participation.csv');
+  const rows = data.counties.filter(row => row.state_code === 'OR');
+  assert.deepEqual(rows.map(row => row.native_record), native);
+  assert.equal(rows.reduce((sum, row) => sum + row.ballots, 0), 1760007);
+  assert.equal(rows.reduce((sum, row) => sum + row.denominator, 0), 3109086);
+  for (const row of rows) {
+    const original = JSON.parse(row.native_record.native_record_json);
+    assert.equal(row.ballots, original.calcVoterTurnout);
+    assert.equal(row.denominator, original.Voters);
+    assert.equal(row.denominator_basis, 'native_active_registered_voters');
+    assert.equal(row.county_id, `additional:OR:${original.CountyID}`);
+    assert.equal(row.reported_pct, null);
+    assert.equal(row.native_printed_pct, row.native_record.native_reported_percent);
+    assert.equal(row.source_status_literal, 'Unofficial');
+    assert.ok(row.source_update_label.includes(original.CurrentDateTime));
+    assert.match(row.source_update_label, /11\/5\/2026 \| 8:30 PM PT/);
+    assert.match(row.source_reporting_label, /IsReported false/);
+    assert.equal(row.maps_approved, false);
+    assert.equal(original.IsReported, false);
+    assert.ok(row.ballots > 0);
+  }
+  assert.equal(data.precincts.filter(row => row.state_code === 'OR').length, 0);
+});
+
 test('connects Washoe native ballots without replacing them with House votes or counting groups', () => {
   const native = csv('data/county-source-reviews/20261106-washoe-participation-01/county-participation.csv');
   const rows = data.counties.filter(row => row.state_code === 'NV');

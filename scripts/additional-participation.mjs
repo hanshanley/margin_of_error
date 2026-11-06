@@ -131,6 +131,24 @@ export function loadAdditionalParticipation() {
     }));
   }
   const localReviews = json('public/participation-source-reviews.json').reviews;
+  const oregon = localReviews.find(row => row.id === 'oregon-counties-20261106-01');
+  if (!oregon) throw new Error('Missing Oregon county participation review');
+  const orRows = csv(resolve(oregon.data_directory, 'county-participation.csv'));
+  const orHeaders = csv(resolve(oregon.data_directory, 'statewide-observations.csv'));
+  if (orRows.length !== 36 || new Set(orRows.map(row => row.native_county_id)).size !== 36
+    || orHeaders.length !== 2)
+    throw new Error('Incomplete Oregon county participation');
+  for (const native of orRows) counties.push(observation(oregon, 'county-participation.csv',
+    'OR', native.county, native.native_county_id, native, {
+      ballots: native.ballots_counted, denominator: native.active_registered_voters,
+      denominator_basis: 'native_active_registered_voters',
+      native_printed_pct: native.native_reported_percent,
+      source_status_literal: native.source_status_literal,
+      source_update_label: native.source_updated_at + ' (native county timestamp; timezone not supplied). '
+        + 'Separate statewide headers: ' + orHeaders.map(row => `${row.source_file}: ${row.source_updated_at}`).join('; '),
+      source_reporting_label: native.qualification + ' The complete download retains every native record '
+        + 'and both independent statewide observations. Analysis fraction remains withheld.',
+    }));
   const washoe = localReviews.find(row => row.id === 'nevada-washoe-participation-20261106-01');
   if (!washoe) throw new Error('Missing Washoe county participation review');
   const nvRows = csv(resolve(washoe.data_directory, 'county-participation.csv'));

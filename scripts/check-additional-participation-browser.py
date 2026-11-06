@@ -31,6 +31,7 @@ expected = {
     "FL": ("Florida", 1, 0), "MO": ("Missouri", 1, 0), "WY": ("Wyoming", 23, 0),
     "WA": ("Washington", 39, 0),
     "NV": ("Nevada", 1, 0),
+    "OR": ("Oregon", 36, 0),
 }
 all_states = expected.copy()
 if args.states:
@@ -54,13 +55,14 @@ source_files = {
     "WY": "data/precinct-source-reviews/20261105/WY-2026-native-counts/counts-review.json",
     "WA": "data/county-source-reviews/20261106-washington-participation-01/county-participation.csv",
     "NV": "data/county-source-reviews/20261106-washoe-participation-01/county-participation.csv",
+    "OR": "data/county-source-reviews/20261106-oregon-participation-01/county-participation.csv",
 }
 native_counties = {
     "FL": json.loads(gzip.decompress((root / source_files["FL"]).read_bytes())),
     "MO": [json.loads((root / source_files["MO"]).read_text())],
     "WY": json.loads((root / source_files["WY"]).read_text())["counties"],
 }
-for code in ("WA", "NV"):
+for code in ("WA", "NV", "OR"):
     with (root / source_files[code]).open() as source:
         native_counties[code] = list(csv.DictReader(source))
 
@@ -113,9 +115,10 @@ with sync_playwright() as playwright:
                 assert [row["native_record"] for row in data["counties"]] == native_counties[code]
                 for row in data["counties"]:
                     native = row["native_record"]
-                    if code in ("WA", "NV"):
-                        assert row["ballots"] == int(native["ballots_cast"])
-                        assert row["denominator"] == int(native["registered_voters"])
+                    if code in ("WA", "NV", "OR"):
+                        assert row["ballots"] == int(native["ballots_counted" if code == "OR" else "ballots_cast"])
+                        assert row["denominator"] == int(native[
+                            "active_registered_voters" if code == "OR" else "registered_voters"])
                         assert row["reported_pct"] == (float(native["registered_turnout_percent"])
                                                        if code == "WA" else None)
                         continue
@@ -155,6 +158,13 @@ with sync_playwright() as playwright:
                     expect(detail).to_contain_text("REPORT 6 - UNOFFICIAL RESULTS")
                     expect(detail).to_contain_text("11/4/2026 6:13:35 PM")
                     expect(detail).to_contain_text("must not be summed")
+                if code == "OR":
+                    expect(detail).to_contain_text(f'{row["denominator"]:,} native active registered voters')
+                    expect(detail).to_contain_text(f'Native printed fraction: {row["native_printed_pct"]}')
+                    expect(detail).to_contain_text("Unofficial")
+                    expect(detail).to_contain_text(row["native_record"]["source_updated_at"])
+                    expect(detail).to_contain_text("11/5/2026 | 8:30 PM PT")
+                    expect(detail).to_contain_text("IsReported false")
                 if code == "WY":
                     expect(detail).to_contain_text("electorate not supplied")
                     expect(detail).to_contain_text("Washakie candidate-category conflict")
@@ -200,9 +210,9 @@ with sync_playwright() as playwright:
             cells = details.locator("tbody tr").evaluate_all(
                 "rows => rows.map(row => [...row.cells].map(cell => cell.textContent.trim()))")
             for row, native in zip(cells, native_counties[code]):
-                if code in ("WA", "NV"):
-                    assert row[2] == f'{int(native["ballots_cast"]):,}'
-                    assert row[3] == f'{int(native["registered_voters"]):,}'
+                if code in ("WA", "NV", "OR"):
+                    assert row[2] == f'{int(native["ballots_counted" if code == "OR" else "ballots_cast"]):,}'
+                    assert row[3] == f'{int(native["active_registered_voters" if code == "OR" else "registered_voters"]):,}'
                     assert row[4] == (f'{float(native["registered_turnout_percent"]):.2f}%'
                                       if code == "WA" else "Withheld / not supplied")
                 else:

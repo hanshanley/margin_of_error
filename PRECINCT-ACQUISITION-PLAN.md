@@ -520,7 +520,24 @@ targets that exact commit. All four complete assets and both pinned complete
 tables are anonymously downloaded and byte-verified, including every complete
 ZIP member. GitHub reports `immutable: false`; retain the fixed-checksum and
 never-overwrite qualification. Proof is under `20261106-oregon-publication-01`.
-UI integration and exact production verification remain pending.
+The existing loader and registry now connect all 36 complete county records,
+using the native active-registration basis and native vendor IDs, never invented
+FIPS. Analysis fractions remain null; printed fractions, unofficial status,
+county timestamps without a timezone and both separate statewide PT timestamps
+remain visible. False reporting flags do not erase positive ballots.
+
+Twenty-three focused Node tests, the seven unchanged source-fact tests, Astro
+check (zero errors/warnings, five existing hints), the build and its four tests
+pass. Pages preparation verifies 106 relocations at 898,701,838 bytes.
+All seven local browser checks pass, including every Oregon county on desktop
+and mobile, static/failure handling, all seventeen complete prior imports,
+fourteen reviewed records, 52 UF rows and five historical years. All 325
+previous download anchors remain; three complete Oregon links yield 328 anchors
+/ 325 unique URLs. There are now 865 additional locality containers across
+eighteen states; the 5,512 separately scoped selector-unit observations remain
+unchanged. The production-equivalent preview is stopped. Local evidence is
+under `20261106-oregon-publication-01`; exact deployment and production proof
+remain pending. No new map, demographic-rate or statewide completion approval.
 
 **November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated

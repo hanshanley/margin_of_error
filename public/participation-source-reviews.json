@@ -1,6 +1,23 @@
 {
   "reviews": [
     {
+      "id": "oregon-counties-20261106-01",
+      "label": "Oregon 2026: all 36 county ballots counted and native active registrations",
+      "data_directory": "data/county-source-reviews/20261106-oregon-participation-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/95f54b7304b5d895c90cfb4f8389b2aaa307d202/data/county-source-reviews/20261106-oregon-participation-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-oregon-participation-20261106-01/complete-oregon-county-participation-01.zip",
+      "complete_download_bytes": 11717,
+      "complete_download_sha256": "c5fe6d065cc45a7b1d62fda7882b8ca9ec560e305cf705836dcd7a257960b09f",
+      "review_status": "complete_county_participation_facts_reviewed_unofficial",
+      "maps_approved": false,
+      "scope_note": "All 36 Oregon counties, frozen unofficial November 3, 2026 general-election observations from the officially declared bulk turnout endpoint. Their 1,760,007 counted ballots and 3,109,086 active registrations match both independently server-rendered statewide headers; all county IDs, names and printed fractions match the official turnout cards. Ballots counted are not ballots received, candidate votes, final turnout or demographic participation. Every native JSON field remains available, including positive calcVoterTurnout alongside IsReported false, CountyPercent zero and separate ancillary zero fields. Those flags do not erase counted ballots or establish zero participation. Native CountyID is not FIPS. County timestamps have no supplied timezone; both separate statewide headers explicitly say 11/5/2026 | 8:30 PM PT. The hidden statewide chart remainder is not a registration denominator. Both complete CSVs, all 36 native records, five primary receipts, checksums and a portable standard-library reviewer reproduce byte-identically; original HTML presentation and chart code are not redistributed. Analysis fractions, population-based or demographic rates, geometry, certification and statewide completion remain unapproved. Fixed commit/checksums under the never-overwrite policy; no host-enforced lock is claimed.",
+      "tables": [
+        {"file": "county-participation.csv", "label": "Oregon: all 36 county ballots counted, active registrations, native printed fractions, literal timestamps and complete native JSON records (CSV)"},
+        {"file": "statewide-observations.csv", "label": "Oregon: both independently rendered statewide ballot/registration observations, separate chart remainders and literal update times (CSV)"}
+      ],
+      "coverage": []
+    },
+    {
       "id": "nevada-washoe-participation-20261106-01",
       "label": "Washoe County, Nevada 2026: complete unofficial county participation, counting groups and separate House candidates",
       "data_directory": "data/county-source-reviews/20261106-washoe-participation-01",
