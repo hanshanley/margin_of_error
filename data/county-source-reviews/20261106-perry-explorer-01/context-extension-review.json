@@ -1,0 +1,143 @@
+{
+  "previous_complete_records_preserved": 910,
+  "previous_contextual_joins_preserved": 438,
+  "previous_exclusions_and_missingness_preserved": true,
+  "unchanged_geometry_inventory": 15,
+  "existing_source_map_approval_flags_unchanged": true,
+  "native_fips_invented": false,
+  "new_source_records": [
+    {
+      "year": 2026,
+      "state_code": "PA",
+      "county_id": "reviewed:PA:Perry",
+      "county": "Perry",
+      "geography_level": "county",
+      "ballots": 18064,
+      "denominator": 31391,
+      "participation_measure_literal": "Total Ballots Cast",
+      "denominator_basis": "native_registered_voters",
+      "reported_pct": 57.54515625497754,
+      "native_printed_pct": "57.55%",
+      "source_status_literal": "Unofficial",
+      "reported_units": null,
+      "total_units": null,
+      "source_rows": 0,
+      "maps_approved": false,
+      "review_id": "pennsylvania-perry-20261106-01",
+      "native_record": {
+        "year": "2026",
+        "state_code": "PA",
+        "county": "Perry",
+        "native_participation_measure_literal": "Total Ballots Cast",
+        "ballots_cast": "18064",
+        "registered_voters": "31391",
+        "native_printed_turnout": "57.55%",
+        "registered_turnout_pct": "57.55",
+        "reported_precincts": "31",
+        "total_precincts": "31",
+        "election_day_ballots": "",
+        "mail_ballots": "",
+        "provisional_ballots": "",
+        "ballot_mode_availability": "Native ballot-participation splits are not reported.",
+        "native_fips": "",
+        "maps_approved": "False",
+        "counting_complete": "False",
+        "source_report": "statement",
+        "source_page": "23",
+        "source_update_literal": "2026-11-03 22:30:24",
+        "declared_timezone": "",
+        "source_status_literal": "",
+        "parent_status_literal": "Unofficial",
+        "source_sha256": "8a6963e354fc507ee273417d12c41c8438748dc7b1050298949373424b46fbd3",
+        "source_image_sha256": "e2590335d7c5957a5644b93c191ed17ee4f21757bc9d136d85b1fcbdac34337b"
+      },
+      "native_source_updates": [
+        {
+          "source": "summary",
+          "native_update_literal": "2026-11-03 22:49:06",
+          "declared_timezone": ""
+        },
+        {
+          "source": "statement",
+          "native_update_literal": "2026-11-03 22:30:24",
+          "declared_timezone": ""
+        }
+      ],
+      "source_update_label": "source_update_literal: 2026-11-03 22:30:24; summary: 2026-11-03 22:49:06 (timezone not declared); statement: 2026-11-03 22:30:24 (timezone not declared)",
+      "source_reporting_label": "Native Total Ballots Cast 18,064 / 31,391 registered voters, printed 57.55%; candidate votes are not ballots.; All 31 actual unit participation rows reconcile across 124 unit-contest headers; four All Precincts aggregate headers are separate, not additional units.; 31 of 31 reported precincts does not establish completed ballot counting.; Election Day, mail and provisional ballot participation are absent, not zero; ED/MI/PR are candidate-vote columns, and explicit zero PR votes do not establish zero provisional ballots.; The complete scoped query includes both county candidate summaries and all unit participation rows; unresolved unit candidate cells are explicitly outside this query, not imputed or called absent.; Native party labels are absent and not inferred from candidate names; county choice/overvote/undervote accounting reconciles separately.; All 24 entire scanned pages were independently OCRed locally; both PDF text engines are empty. All 31 first participation headers, reporting lines and both whole county summaries were directly visually reviewed.; Unofficial status comes from the declaring county page, not a separate PDF status literal; summary and statement clocks remain distinct without an inferred timezone.",
+      "source_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/county-participation.csv",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-perry-20261106-01/complete-perry-county-native-query-01.zip",
+      "quality": [
+        "Reviewed local snapshot, not final certification, statewide coverage, eligible-population or demographic turnout.",
+        "Source timestamps retain their native labels; unprovided timezones are not inferred. County mapping is not approved.",
+        "Result status comes from the declaring county page; the PDF supplies no separate status literal."
+      ]
+    }
+  ],
+  "new_contextual_identity_joins": [
+    {
+      "state_code": "PA",
+      "county_id": "reviewed:PA:Perry",
+      "county": "Perry",
+      "geography_level": "county",
+      "review_id": "pennsylvania-perry-20261106-01",
+      "contextual_geoid": "42099",
+      "contextual_name": "Perry County",
+      "boundary_year": 2024,
+      "ballots": 18064,
+      "denominator": 31391,
+      "reported_pct": 57.54515625497754,
+      "participation_measure_kind": "source_defined_participation_count",
+      "participation_measure_label": "Total Ballots Cast",
+      "source_record_sha256": "a4763693abf903d48e5b14015f5e2917ed8a034d8c1760f9819392f5c44120b5",
+      "source_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/county-participation.csv",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-perry-20261106-01/complete-perry-county-native-query-01.zip",
+      "contextual_map_approved": true,
+      "source_map_approval_unchanged": false
+    }
+  ],
+  "independently_checked_census_identities": {
+    "2024": {
+      "42099": {
+        "USPS": "PA",
+        "GEOID": "42099",
+        "ANSICODE": "01213682",
+        "NAME": "Perry County",
+        "ALAND": "1428247559",
+        "AWATER": "10591172",
+        "ALAND_SQMI": "551.449",
+        "AWATER_SQMI": "4.089",
+        "INTPTLAT": "40.39778",
+        "INTPTLONG": "-77.266328"
+      }
+    },
+    "2026": {
+      "42099": {
+        "USPS": "PA",
+        "GEOID": "42099",
+        "GEOIDFQ": "0500000US42099",
+        "ANSICODE": "01213682",
+        "NAME": "Perry County",
+        "ALAND": "1428247604",
+        "AWATER": "10591133",
+        "ALAND_SQMI": "551.45",
+        "AWATER_SQMI": "4.089",
+        "INTPTLAT": "40.39778",
+        "INTPTLONG": "-77.266328"
+      }
+    }
+  },
+  "counts": {
+    "complete_source_records": 911,
+    "contextual_joins": 439,
+    "jurisdictions": 15,
+    "reviewed_rates": 66,
+    "missing_rates": 373,
+    "excluded_municipalities": 286,
+    "excluded_missing_county_totals": 186
+  },
+  "frozen_review_bytes": 757759,
+  "frozen_review_sha256": "d4e07379a2a7b19935cf1c8357ce0331ed44a07061fcf65e59e4df0d5daa3342",
+  "complete_zip_bytes": 2216859,
+  "complete_zip_sha256": "9259de53c8608354973916ac7093fcaf5bd5e3241ff7d10444768c973e400444"
+}

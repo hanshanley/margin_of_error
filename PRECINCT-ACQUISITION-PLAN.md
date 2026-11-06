@@ -133,15 +133,22 @@ their different native delimiters (2024 tab, 2026 pipe) are retained.
 The exact current `b2b8b54` live baseline is captured: all **910 records /
 45 native rows / 513 download anchors / 509 URLs / eighteen full imports**
 are preserved for comparison. See `20261106-perry-explorer-01`.
-Next: strict native loader and complete downloads, a fresh context08 preserving
-all context07 records/joins/geometry/flags, targeted tests and all required
+Perry's strict native adapter passes **29 focused loader tests**, including
+candidate-count, invented-mode, denominator and completed-counting rejections.
+Fresh **context08** reproduces offline: **911 complete records / 439 joins /
+66 usable native fractions / 373 missing gray rates**, preserving all
+**910 previous entire records / 438 joins**, geometries, exclusions and flags.
+The complete **29-file / 28-member** context query ZIP is **2,216,859 bytes**,
+SHA-256 `9259de53c8608354973916ac7093fcaf5bd5e3241ff7d10444768c973e400444`.
+See `20261106-perry-explorer-01/context-extension-review.json`.
+Next: fixed context publication and complete downloads, then all required
 local/exact-production checks before claiming Perry live. Native parties and
 ballot-participation mode splits remain absent, not inferred from candidate modes.
 Preserve full original scans, full-page images, coordinates, candidates and actual
 failure observations privately; do not infer missing cells, native parties or
 participation modes from candidate columns. Neither source has native source-map
 approval; Perry has a verified fixed factual query and independent contextual
-identity, but no contextual join or UI approval.
+identity and a reproduced contextual join, but no live UI approval.
 Retain Maine's separate 130 unallocated major votes, 6,021 blanks, 125 write-ins,
 three municipal-other gap and shared Kennebec fragments; retain separate D.C.
 accounting. McKean needs a declared reachable alternative, not another unchanged
