@@ -1,0 +1,78 @@
+{
+  "election_date": "2026-11-03",
+  "election_stage": "general",
+  "native_status": "Unofficial Results",
+  "native_update_clock": null,
+  "native_timezone": null,
+  "complete_native_rows": {
+    "counties": 87,
+    "parties": 9,
+    "precincts": 4105,
+    "pctstats": 4105,
+    "county-results": 8285,
+    "precinct-results": 332337
+  },
+  "reported_statistics": 3671,
+  "unreported_statistics": 434,
+  "maps_approved": false,
+  "rates_approved": false,
+  "files": {
+    "acquire-minnesota-bulk-participation.py": {
+      "bytes": 6363,
+      "sha256": "30c5c7f8331c90bac02f161c2a189f73857aab938c5981cfc8d83396ef251662"
+    },
+    "counties.csv": {
+      "bytes": 1276,
+      "sha256": "ca43edea14e39d7b7f098500496921ac0ff43403b7a4ceff35daa919031acf04"
+    },
+    "county-choice-reconciliation.csv": {
+      "bytes": 586051,
+      "sha256": "286b9893b6da9cdc4fc5acc4e4b2880d24aaf055ed4d527a3c9025ee818612bc"
+    },
+    "county-participation.csv": {
+      "bytes": 10156,
+      "sha256": "0815bde66ec0127b48d7d6b299ca4c0a7ea55773782088269cb82d699e848426"
+    },
+    "county-results.csv": {
+      "bytes": 707323,
+      "sha256": "c82e791a9f4750d9ca837af37c3ee8102538ebf6818aacbb125d43378bb27900"
+    },
+    "parties.csv": {
+      "bytes": 227,
+      "sha256": "b98223ba395fdef978f5b20eddc85bd7b61ce919dfb16a6ec2d40b90135ea27c"
+    },
+    "pctstats.csv": {
+      "bytes": 199034,
+      "sha256": "196a176eac939fc0538994c7ef221547e857c7682d2699d5c31eb421a65051eb"
+    },
+    "precinct-results.csv": {
+      "bytes": 27816262,
+      "sha256": "0e8e5b0c7bd8f2ec84b31d1e1d8113c56a3c8f682cd9e875e6a18454ec6274da"
+    },
+    "precincts.csv": {
+      "bytes": 186954,
+      "sha256": "87389812eaa17cbe39fdef50f89175fa0c440d709a38cd36c107551603c9f2dc"
+    },
+    "review-minnesota-bulk-participation.py": {
+      "bytes": 13652,
+      "sha256": "495af32e1c9fab5b2511114b6d26f12f2160c4f232d3b66216b14ed2fb1ed756"
+    },
+    "sources.json": {
+      "bytes": 3451,
+      "sha256": "88280d24ab113f82c9de81622c26fdbf6ad6b209c2f1d1d6f51a75ddcc773308"
+    },
+    "statistic-component-residuals.csv": {
+      "bytes": 7207,
+      "sha256": "1dd7ab39681f404eb87aa51cd5ce376eb4e15fee5a086dd956dde981b792a9ea"
+    },
+    "statistic-electorate-excesses.csv": {
+      "bytes": 629,
+      "sha256": "009f6f26454db9eb5d8ccb904f86e099c021905a1452d04352482e2886d33604"
+    },
+    "test-review-minnesota-bulk-participation.py": {
+      "bytes": 6159,
+      "sha256": "3cae09e9258f5ff6b59906f364eb3404ab2692d8877c10e685b56c7551438dfc"
+    }
+  },
+  "scope": "Complete native-field tables, not metadata-only downloads. Reporting flag1 is required for actual participation, including true zero. Partial counties retain subtotals but no complete participation or electorate. Native Total Number Voted is not candidate votes or inferred ballot modes. Roster signatures and three native absentee fields are not relabeled as ballot types; component conflicts and electorate excesses remain explicit and disqualify rate-review eligibility. All candidate and question responses, literal parties, printed fractions, office totals, scopes and ESTIMATED BLANKS survive without pooling across offices or assigning residuals to actual blank ballots. Native county IDs are not FIPS. Result-table precinct fields match native reference IDs despite the layout's printed 'Precinct name' label. Fetch clocks are not update clocks. No Census identity, county geometry, demographic turnout or certification is inferred."
+}

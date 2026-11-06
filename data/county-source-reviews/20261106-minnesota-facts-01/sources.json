@@ -1,0 +1,82 @@
+[
+  {
+    "source_file": "media-index.html",
+    "url": "https://electionresults.sos.mn.gov/Select/MediaFiles/Index?ersElectionId=201",
+    "final_url": "https://electionresults.sos.mn.gov/Select/MediaFiles/Index?ersElectionId=201",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 46350,
+    "sha256": "6046d938afa526cd1888c4ebd56fe870caa085d766833510355a1443dbf96969",
+    "fetched_at_utc": "2026-11-06T12:01:25.958324+00:00"
+  },
+  {
+    "source_file": "layout.txt",
+    "url": "https://electionresults.sos.mn.gov/Results/MediaFileLayout/Index?erselectionId=201",
+    "final_url": "https://electionresults.sos.mn.gov/Results/MediaFileLayout/Index?erselectionId=201",
+    "status": 200,
+    "content_type": "text/plain",
+    "bytes": 6463,
+    "sha256": "d8f387d6f4aa48ebbc379d4f9d613adc1061500f92cffd976f9d64dfa406bee2",
+    "fetched_at_utc": "2026-11-06T12:01:26.043918+00:00"
+  },
+  {
+    "source_file": "pctstats.txt",
+    "url": "https://electionresultsfiles.sos.mn.gov/20261103/pctstats.txt",
+    "final_url": "https://electionresultsfiles.sos.mn.gov/20261103/pctstats.txt",
+    "status": 200,
+    "content_type": "text/plain",
+    "bytes": 202916,
+    "sha256": "edc651936b50958fb8a62a29031104076f06ff97c64dfc269d92fcfededac485",
+    "fetched_at_utc": "2026-11-06T12:01:26.414442+00:00"
+  },
+  {
+    "source_file": "counties.txt",
+    "url": "https://electionresultsfiles.sos.mn.gov/20261103/Cntytbl.txt",
+    "final_url": "https://electionresultsfiles.sos.mn.gov/20261103/Cntytbl.txt",
+    "status": 200,
+    "content_type": "text/plain",
+    "bytes": 1319,
+    "sha256": "1830c4b1993606049c397c7f318cf36db33219d660b1528ba4df074ab8e5a570",
+    "fetched_at_utc": "2026-11-06T12:01:26.451534+00:00"
+  },
+  {
+    "source_file": "precincts.txt",
+    "url": "https://electionresultsfiles.sos.mn.gov/20261103/PrctTbl.txt",
+    "final_url": "https://electionresultsfiles.sos.mn.gov/20261103/PrctTbl.txt",
+    "status": 200,
+    "content_type": "text/plain",
+    "bytes": 190874,
+    "sha256": "8a396f732ebe92ff9b05a26facb2c20a2b4142480784d5443a854abce9ce991c",
+    "fetched_at_utc": "2026-11-06T12:01:26.533239+00:00"
+  },
+  {
+    "source_file": "parties.txt",
+    "url": "https://electionresultsfiles.sos.mn.gov/20261103/PartyTbl.txt",
+    "final_url": "https://electionresultsfiles.sos.mn.gov/20261103/PartyTbl.txt",
+    "status": 200,
+    "content_type": "text/plain",
+    "bytes": 197,
+    "sha256": "e3014f80dece31ebcbe1995f604d61814851a2d82dcf11c87d5ae838bd8fb35d",
+    "fetched_at_utc": "2026-11-06T12:01:26.568914+00:00"
+  },
+  {
+    "source_file": "county-results.txt",
+    "url": "https://electionresultsfiles.sos.mn.gov/20261103/allracesbycounty.txt",
+    "final_url": "https://electionresultsfiles.sos.mn.gov/20261103/allracesbycounty.txt",
+    "status": 200,
+    "content_type": "text/plain",
+    "bytes": 714951,
+    "sha256": "e4292fda2a46e2983da2e648dbc93b1eb6bfd26a6f63fd1e44f327bf66c6e325",
+    "fetched_at_utc": "2026-11-06T12:01:26.643331+00:00"
+  },
+  {
+    "source_file": "precinct-results.txt",
+    "url": "https://electionresultsfiles.sos.mn.gov/20261103/allracesbyprecinct.txt",
+    "final_url": "https://electionresultsfiles.sos.mn.gov/20261103/allracesbyprecinct.txt",
+    "status": 200,
+    "content_type": "text/plain",
+    "bytes": 28131330,
+    "sha256": "3fe4b2289e9ff9c40120ce7b2aa1435674372e033a9b646d16fc71a6dd501d71",
+    "fetched_at_utc": "2026-11-06T12:01:27.384426+00:00"
+  }
+]

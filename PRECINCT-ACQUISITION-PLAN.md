@@ -249,7 +249,7 @@ response, and Snyder's **406** response, without bypass or approval of cached
 search text. Dauphin's already-published candidate package is not reacquired;
 its missing ballot/registration measures remain missing.
 
-**Next consolidated acquisition: Minnesota statistics captured, not yet approved.**
+**Next consolidated acquisition: Minnesota complete factual query verified, not yet mapped.**
 `scripts/acquire-minnesota-bulk-participation.py --output <private-directory>`
 requires the actual election-specific media declarations and saves complete
 aggregate originals plus full-byte receipts outside the publication checkout.
@@ -268,6 +268,36 @@ exceeding 7AM-plus-Election-Day registrations**, and **87 constitutional-amendme
 actual blank ballots or candidate totals. Native county IDs are not Census FIPS.
 An optional methodology request encountered an access challenge; its response
 and receipt stay private without bypass or publication of redirect/session data.
+
+The new standard-library `scripts/review-minnesota-bulk-participation.py`
+converts only the eight actual receipt-verified originals, without following
+live or guessed URLs. Its complete factual package retains every literal field
+in **4,105 statistics / 4,105 references / 87 counties / nine parties /
+8,285 county choices / 332,337 precinct choices**. Each of the **87 county
+inventories**, all **129 component conflicts**, **seven electorate excesses**
+and **87 constitutional-amendment estimated-blank residuals** match the previous
+independent acquisition review exactly. All 8,285 choice scopes are reconciled
+without pooling offices or treating estimates as actual blank ballots.
+The **seventeen-file / sixteen-member** package reproduces completely offline,
+including the byte-identical **2,941,529-byte ZIP**, SHA-256
+`77a4813221c8f5414d05786b3f0bf569e1036ed0936758227ae536db1fbd0a6e`.
+Six focused tests cover true reported zeros, misleading unreported zeros and
+nonzeros, county-scoped IDs, missing references, arithmetic conflicts, estimated
+question blanks and extracted-download reproduction without original HTML.
+All **75 complete-statistics counties** retain their actual native
+`Total Number Voted`; the **twelve partial counties** retain only clearly named
+reported subtotals and no complete electorate. Of the 75 complete counties,
+**64** have positive, internally consistent electorates and no component
+conflict, making them eligible for further registration-fraction review,
+**not approved rates**. Native FIPS, update clock and timezone stay blank.
+Roster signatures are not relabeled as Election Day ballots, and three
+native absentee statistics are not inferred all-ballot modes.
+The **2,354,606 reported-voter subtotal** is not a complete statewide count.
+See `20261106-minnesota-facts-01` and
+`20261106-minnesota-primary-review-01/portable-validation.json`.
+**Next:** freeze and publish the complete factual query, independently verify
+all Census county identities, then prepare a separately reviewed additive
+context extension. No Minnesota explorer pointer, map or rate is changed.
 See `20261106-minnesota-acquisition-01/validation.json` for acquisition evidence,
 not a downloadable participation query. Complete offline reconciliation,
 portable query publication and independent county identity review remain pending;

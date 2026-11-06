@@ -1,0 +1,10 @@
+party_abbreviation,party_name,party_id
+R,Republican,03
+DFL,Democratic-Farmer-Labor,04
+FI,Forward Independence,08
+GP,Green,09
+IND,Independent,10
+LIB,Libertarian,11
+UNI,United New Independence,12
+NP,Nonpartisan,90
+WI,WRITE-IN,99

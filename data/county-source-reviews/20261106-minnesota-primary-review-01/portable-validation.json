@@ -1,0 +1,132 @@
+{
+  "verified_at_utc": "2026-11-06T12:31:27.773248+00:00",
+  "all_native_fields": {
+    "counties": {
+      "rows": 87,
+      "every_native_field_preserved": true
+    },
+    "parties": {
+      "rows": 9,
+      "every_native_field_preserved": true
+    },
+    "precincts": {
+      "rows": 4105,
+      "every_native_field_preserved": true
+    },
+    "pctstats": {
+      "rows": 4105,
+      "every_native_field_preserved": true
+    },
+    "county-results": {
+      "rows": 8285,
+      "every_native_field_preserved": true
+    },
+    "precinct-results": {
+      "rows": 332337,
+      "every_native_field_preserved": true
+    }
+  },
+  "complete_query_files": 17,
+  "complete_zip_members": 16,
+  "extracted_offline_standard_library_reproduction": "All seventeen files, including ZIP, byte-identical.",
+  "extracted_pipeline_tests_passed": 6,
+  "all_87_county_inventories_match_previous_review": true,
+  "counties_with_complete_native_statistics": 75,
+  "counties_with_missing_native_statistics": 12,
+  "counties_eligible_for_further_registration_fraction_review": 64,
+  "component_conflicts_retained": 129,
+  "electorate_excesses_retained": 7,
+  "complete_candidate_scope_reconciliations": 8285,
+  "question_estimated_blank_residuals_retained": 87,
+  "reported_total_number_voted_subtotal": 2354606,
+  "package_files": [
+    {
+      "name": "acquire-minnesota-bulk-participation.py",
+      "bytes": 6363,
+      "sha256": "30c5c7f8331c90bac02f161c2a189f73857aab938c5981cfc8d83396ef251662"
+    },
+    {
+      "name": "audit.json",
+      "bytes": 3475,
+      "sha256": "969bb0d143856387675266608644d614aae036c6018d0ce75a81ba3e0d975f6c"
+    },
+    {
+      "name": "checksums.sha256",
+      "bytes": 1355,
+      "sha256": "e8d266847efa73e690d1b9168c41edbc93bf6c48fca0445cfe7b284d4b669bca"
+    },
+    {
+      "name": "complete-minnesota-native-query.zip",
+      "bytes": 2941529,
+      "sha256": "77a4813221c8f5414d05786b3f0bf569e1036ed0936758227ae536db1fbd0a6e"
+    },
+    {
+      "name": "counties.csv",
+      "bytes": 1276,
+      "sha256": "ca43edea14e39d7b7f098500496921ac0ff43403b7a4ceff35daa919031acf04"
+    },
+    {
+      "name": "county-choice-reconciliation.csv",
+      "bytes": 586051,
+      "sha256": "286b9893b6da9cdc4fc5acc4e4b2880d24aaf055ed4d527a3c9025ee818612bc"
+    },
+    {
+      "name": "county-participation.csv",
+      "bytes": 10156,
+      "sha256": "0815bde66ec0127b48d7d6b299ca4c0a7ea55773782088269cb82d699e848426"
+    },
+    {
+      "name": "county-results.csv",
+      "bytes": 707323,
+      "sha256": "c82e791a9f4750d9ca837af37c3ee8102538ebf6818aacbb125d43378bb27900"
+    },
+    {
+      "name": "parties.csv",
+      "bytes": 227,
+      "sha256": "b98223ba395fdef978f5b20eddc85bd7b61ce919dfb16a6ec2d40b90135ea27c"
+    },
+    {
+      "name": "pctstats.csv",
+      "bytes": 199034,
+      "sha256": "196a176eac939fc0538994c7ef221547e857c7682d2699d5c31eb421a65051eb"
+    },
+    {
+      "name": "precinct-results.csv",
+      "bytes": 27816262,
+      "sha256": "0e8e5b0c7bd8f2ec84b31d1e1d8113c56a3c8f682cd9e875e6a18454ec6274da"
+    },
+    {
+      "name": "precincts.csv",
+      "bytes": 186954,
+      "sha256": "87389812eaa17cbe39fdef50f89175fa0c440d709a38cd36c107551603c9f2dc"
+    },
+    {
+      "name": "review-minnesota-bulk-participation.py",
+      "bytes": 13652,
+      "sha256": "495af32e1c9fab5b2511114b6d26f12f2160c4f232d3b66216b14ed2fb1ed756"
+    },
+    {
+      "name": "sources.json",
+      "bytes": 3451,
+      "sha256": "88280d24ab113f82c9de81622c26fdbf6ad6b209c2f1d1d6f51a75ddcc773308"
+    },
+    {
+      "name": "statistic-component-residuals.csv",
+      "bytes": 7207,
+      "sha256": "1dd7ab39681f404eb87aa51cd5ce376eb4e15fee5a086dd956dde981b792a9ea"
+    },
+    {
+      "name": "statistic-electorate-excesses.csv",
+      "bytes": 629,
+      "sha256": "009f6f26454db9eb5d8ccb904f86e099c021905a1452d04352482e2886d33604"
+    },
+    {
+      "name": "test-review-minnesota-bulk-participation.py",
+      "bytes": 6159,
+      "sha256": "3cae09e9258f5ff6b59906f364eb3404ab2692d8877c10e685b56c7551438dfc"
+    }
+  ],
+  "maps_approved": false,
+  "rates_approved": false,
+  "scope": "Acquisition-only becomes a complete reproducible factual query, not map/rate approval. All complete native tables and literal fields survive independently of the converter. All prior county inventories, 129 native component conflicts, seven electorate excesses and all 87 estimated question-blank residuals match exactly. Partial statistics, native FIPS/update clocks/timezones, actual blank ballots, mode definitions and certification remain missing where absent. No public explorer pointer changes. Independent Census county identities, immutable full publication and separately reviewed UI integration remain required."
+}

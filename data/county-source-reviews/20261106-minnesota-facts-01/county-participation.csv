@@ -1,0 +1,88 @@
+native_county_id,county_name,native_fips,reference_precincts,reported_statistics,missing_statistics,all_statistics_reported,reported_total_number_voted_subtotal,complete_total_number_voted,complete_registered_7am,complete_registered_election_day,derived_complete_7am_plus_election_day_registrations,reported_precinct_electorate_excesses,reported_precinct_component_conflicts,eligible_for_registration_fraction_review,native_numerator_label,native_status,native_update_clock,native_timezone,maps_approved,rates_approved
+01,Aitkin,,51,51,0,true,9019,9019,12519,233,12752,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+02,Anoka,,128,0,128,false,0,,,,,0,0,false,Total Number Voted,Unofficial Results,,,false,false
+03,Becker,,47,47,0,true,16910,16910,23942,649,24591,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+04,Beltrami,,61,61,0,true,20273,20273,30227,1254,31481,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+05,Benton,,27,27,0,true,18773,18773,28200,837,29037,0,1,false,Total Number Voted,Unofficial Results,,,false,false
+06,Big Stone,,24,24,0,true,2435,2435,3396,51,3447,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+07,Blue Earth,,56,56,0,true,29937,29937,43130,2791,45921,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+08,Brown,,32,32,0,true,11838,11838,17540,412,17952,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+09,Carlton,,39,39,0,true,17604,17604,25075,636,25711,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+10,Carver,,39,1,38,false,0,,,,,0,0,false,Total Number Voted,Unofficial Results,,,false,false
+11,Cass,,71,71,0,true,16703,16703,23236,644,23880,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+12,Chippewa,,25,25,0,true,5111,5111,7542,139,7681,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+13,Chisago,,25,25,0,true,29443,29443,42459,690,43149,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+14,Clay,,56,56,0,true,27047,27047,41655,1786,43441,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+15,Clearwater,,29,29,0,true,4025,4025,5869,169,6038,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+16,Cook,,14,14,0,true,3406,3406,4016,104,4120,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+17,Cottonwood,,28,28,0,true,4859,4859,7313,165,7478,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+18,Crow Wing,,62,62,0,true,35824,35824,50289,1078,51367,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+19,Dakota,,144,144,0,true,232208,232208,313945,11073,325018,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+20,Dodge,,22,22,0,true,10424,10424,14851,423,15274,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+21,Douglas,,36,36,0,true,21615,21615,29874,751,30625,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+22,Faribault,,33,33,0,true,6478,6478,9426,225,9651,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+23,Fillmore,,37,0,37,false,0,,,,,0,0,false,Total Number Voted,Unofficial Results,,,false,false
+24,Freeborn,,43,43,0,true,13491,13491,20221,513,20734,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+25,Goodhue,,40,40,0,true,24602,24602,34013,888,34901,0,2,false,Total Number Voted,Unofficial Results,,,false,false
+26,Grant,,23,23,0,true,3108,3108,4178,108,4286,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+27,Hennepin,,395,395,0,true,669613,669613,865554,45481,911035,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+28,Houston,,27,27,0,true,9356,9356,13425,235,13660,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+29,Hubbard,,37,0,37,false,0,,,,,0,0,false,Total Number Voted,Unofficial Results,,,false,false
+30,Isanti,,19,19,0,true,20948,20948,31556,849,32405,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+31,Itasca,,75,75,0,true,22060,22060,32222,712,32934,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+32,Jackson,,28,28,0,true,4928,4928,6792,193,6985,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+33,Kanabec,,20,20,0,true,7640,7640,11601,286,11887,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+34,Kandiyohi,,48,48,0,true,19651,19651,28263,919,29182,0,2,false,Total Number Voted,Unofficial Results,,,false,false
+35,Kittson,,39,21,18,false,1377,,,,,0,0,false,Total Number Voted,Unofficial Results,,,false,false
+36,Koochiching,,23,23,0,true,5494,5494,8017,143,8160,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+37,Lac Qui Parle,,29,7,22,false,1874,,,,,0,0,false,Total Number Voted,Unofficial Results,,,false,false
+38,Lake,,19,19,0,true,6008,6008,8026,235,8261,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+39,Lake Of The Woods,,17,17,0,true,1874,1874,2795,19,2814,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+40,Le Sueur,,26,26,0,true,14473,14473,20655,452,21107,0,1,false,Total Number Voted,Unofficial Results,,,false,false
+41,Lincoln,,20,20,0,true,2557,2557,3915,89,4004,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+42,Lyon,,33,33,0,true,10499,10499,16096,506,16602,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+43,Mcleod,,29,29,0,true,17367,17367,25616,644,26260,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+44,Mahnomen,,19,19,0,true,1994,1994,3048,151,3199,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+45,Marshall,,60,60,0,true,4409,4409,6082,81,6163,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+46,Martin,,37,37,0,true,8718,8718,13188,279,13467,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+47,Meeker,,30,30,0,true,11484,11484,16323,373,16696,0,3,false,Total Number Voted,Unofficial Results,,,false,false
+48,Mille Lacs,,25,25,0,true,12117,12117,18764,507,19271,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+49,Morrison,,48,48,0,true,16409,16409,24243,315,24558,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+50,Mower,,39,39,0,true,15895,15895,24134,594,24728,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+51,Murray,,29,29,0,true,4020,4020,5627,106,5733,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+52,Nicollet,,26,26,0,true,16703,16703,22849,1153,24002,0,1,false,Total Number Voted,Unofficial Results,,,false,false
+53,Nobles,,40,40,0,true,6693,6693,10783,247,11030,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+54,Norman,,33,33,0,true,2698,2698,4117,68,4185,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+55,Olmsted,,111,111,0,true,79405,79405,111537,3085,114622,0,110,false,Total Number Voted,Unofficial Results,,,false,false
+56,Otter Tail,,91,90,1,false,31128,,,,,0,0,false,Total Number Voted,Unofficial Results,,,false,false
+57,Pennington,,31,31,0,true,5503,5503,9147,179,9326,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+58,Pine,,47,47,0,true,14153,14153,20660,616,21276,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+59,Pipestone,,22,22,0,true,4135,4135,5799,102,5901,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+60,Polk,,82,82,0,true,12040,12040,19458,435,19893,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+61,Pope,,31,31,0,true,6121,6121,8558,248,8806,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+62,Ramsey,,162,162,0,true,251221,251221,339858,16451,356309,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+63,Red Lake,,21,21,0,true,1942,1942,2624,41,2665,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+64,Redwood,,42,42,0,true,6777,6777,10150,240,10390,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+65,Renville,,37,37,0,true,6468,6468,9634,165,9799,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+66,Rice,,31,31,0,true,31371,31371,42953,2574,45527,0,3,false,Total Number Voted,Unofficial Results,,,false,false
+67,Rock,,24,24,0,true,4508,4508,6444,143,6587,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+68,Roseau,,44,44,0,true,6688,6688,10298,173,10471,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+69,St. Louis,,167,166,1,false,100546,,,,,1,2,false,Total Number Voted,Unofficial Results,,,false,false
+70,Scott,,54,54,0,true,80311,80311,110327,3275,113602,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+71,Sherburne,,35,25,10,false,37497,,,,,0,1,false,Total Number Voted,Unofficial Results,,,false,false
+72,Sibley,,25,25,0,true,7321,7321,10267,196,10463,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+73,Stearns,,99,99,0,true,75147,75147,105869,4343,110212,0,3,false,Total Number Voted,Unofficial Results,,,false,false
+74,Steele,,26,26,0,true,18192,18192,25438,814,26252,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+75,Stevens,,24,24,0,true,4515,4515,5873,474,6347,1,0,false,Total Number Voted,Unofficial Results,,,false,false
+76,Swift,,30,30,0,true,4574,4574,6190,637,6827,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+77,Todd,,40,40,0,true,11294,11294,16498,335,16833,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+78,Traverse,,20,20,0,true,1562,1562,2129,62,2191,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+79,Wabasha,,33,33,0,true,11374,11374,15877,299,16176,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+80,Wadena,,24,4,20,false,526,,,,,0,0,false,Total Number Voted,Unofficial Results,,,false,false
+81,Waseca,,23,23,0,true,8471,8471,12393,338,12731,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+82,Washington,,84,1,83,false,201,,,,,0,0,false,Total Number Voted,Unofficial Results,,,false,false
+83,Watonwan,,21,21,0,true,4094,4094,6240,134,6374,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+84,Wilkin,,32,32,0,true,2595,2595,4153,57,4210,0,0,true,Total Number Voted,Unofficial Results,,,false,false
+85,Winona,,49,49,0,true,23893,23893,32273,1601,33874,5,0,false,Total Number Voted,Unofficial Results,,,false,false
+86,Wright,,51,12,39,false,14444,,,,,0,0,false,Total Number Voted,Unofficial Results,,,false,false
+87,Yellow Medicine,,30,30,0,true,4597,4597,6496,104,6600,0,0,true,Total Number Voted,Unofficial Results,,,false,false

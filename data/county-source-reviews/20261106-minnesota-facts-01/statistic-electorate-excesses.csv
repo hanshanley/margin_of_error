@@ -1,0 +1,8 @@
+state,county_id,precinct_id,precinct_name,has_reported_statistics,registered_7am,registered_election_day,roster_signatures,regular_military_overseas_absentee,federal_only_absentee,president_only_absentee,total_number_voted,voted_minus_7am_and_election_day_registrations
+MN,69,1040,VIRGINIA P-1,1,1167,41,586,180,1,0,1331,123
+MN,75,0095,RENDSVILLE TWP.,1,94,1,77,79,0,0,156,61
+MN,85,0058,LA CRESCENT,1,103,0,69,69,0,0,138,35
+MN,85,0065,MINNEISKA,1,39,0,268,26,0,0,294,255
+MN,85,0070,MINNESOTA CITY,1,139,0,95,95,0,0,190,51
+MN,85,0075,MOUNT VERNON TWP,1,185,0,128,128,0,0,256,71
+MN,85,0120,SARATOGA TWP,1,304,0,214,214,0,0,428,124
