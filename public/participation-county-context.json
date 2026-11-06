@@ -1,11 +1,27 @@
 {
   "schema_version": 1,
-  "base_url": "/participation-county-context/20261106-07/",
-  "review_bytes": 756669,
-  "review_sha256": "66d5e403224ed08bede073f7ac68733326a396b1a206134cf112af1489fc5855",
-  "complete_download_bytes": 2215873,
-  "complete_download_sha256": "ce4d18490e8c87cb1d4f380ec6b8ce202114d00eaa1d12121eb9a12b4c445427",
+  "base_url": "/participation-county-context/20261106-08/",
+  "review_bytes": 757759,
+  "review_sha256": "d4e07379a2a7b19935cf1c8357ce0331ed44a07061fcf65e59e4df0d5daa3342",
+  "complete_download_bytes": 2216859,
+  "complete_download_sha256": "9259de53c8608354973916ac7093fcaf5bd5e3241ff7d10444768c973e400444",
   "downloads": [
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-08/county-participation-joins.csv",
+      "label": "Complete audited county participation joins: all 439 observations, including Perry, Pennsylvania (CSV)"
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-08/review.json",
+      "label": "Complete updated county identity review, exclusions and geometry qualifications (JSON)"
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-08/complete-source-records.json.gz",
+      "label": "Every county, municipal and reporting-unit container: all 911 records, preserving the previous 910 unchanged (JSON · gzip)"
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-08/complete-county-participation-context-08.zip",
+      "label": "Complete updated county participation context query, inventories, geometries and offline reproduction code (ZIP)"
+    },
     {
       "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-07/county-participation-joins.csv",
       "label": "Complete audited county participation joins: all 438 observations, including Mifflin, Pennsylvania (CSV)"

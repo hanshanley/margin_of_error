@@ -2,6 +2,27 @@
 
 ## Current verified production and next acquisition
 
+**Perry integration is locally verified; exact deployment is pending.**
+Source release **436287135** and context08 release **436291016**, at fixed
+context facts revision `3104375731fb24241864e6725770359dcefd04a4`, pass all
+entire anonymous/pinned/archive-byte checks and offline reproduction.
+Context tag/review credentials **42192338883 / 42192319476** pass.
+All **59 affected tests**, Astro check, build, Pages preparation and **seven
+local browser scenarios** pass. Full-site validation reaches only the known
+unrelated UK assertion `23 !== 16`, not a new participation failure.
+Prepared site **970,151,994 bytes**, with **106 byte-identical relocated
+downloads**, remains below the 1 GB limit. The integration preserves all
+**910 previous entire records / 438 joins / 45 native rows / 513 download
+anchors / eighteen full imports**, historical years, UF rows and candidate
+files. New context: **911 records / 439 joins / 66 native fractions / 373
+missing gray rates**; **46 native rows / 532 complete download anchors /
+528 unique URLs**. Perry's **18,064 ballots / 31,391 registrations /
+printed 57.55%** retain absent ballot modes and parties, distinct native
+clocks, parent-attributed unofficial status and non-completed reporting.
+Next: verify the exact deployed revision, original hosted artifact, all
+**278 selected entire public/hosted files**, credentials and seven production
+browser scenarios before claiming Perry live. Do not start a duplicate verifier.
+
 **November 6, 08:55 UTC: Mifflin is LIVE verified.** Revision
 `b2b8b54209fe738576ec098ee757db982f1d4a89`, Pages **42190311421 attempt 1**,
 artifact **13489417433 / 515,667,094 bytes**, SHA-256
@@ -141,8 +162,8 @@ Fresh **context08** reproduces offline: **911 complete records / 439 joins /
 The complete **29-file / 28-member** context query ZIP is **2,216,859 bytes**,
 SHA-256 `9259de53c8608354973916ac7093fcaf5bd5e3241ff7d10444768c973e400444`.
 See `20261106-perry-explorer-01/context-extension-review.json`.
-Next: fixed context publication and complete downloads, then all required
-local/exact-production checks before claiming Perry live. Native parties and
+Fixed context publication, complete downloads and local UI checks now pass
+as recorded above; exact production checks remain before claiming Perry live. Native parties and
 ballot-participation mode splits remain absent, not inferred from candidate modes.
 Preserve full original scans, full-page images, coordinates, candidates and actual
 failure observations privately; do not infer missing cells, native parties or

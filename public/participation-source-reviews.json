@@ -1,6 +1,35 @@
 {
   "reviews": [
     {
+      "id": "pennsylvania-perry-20261106-01",
+      "label": "Perry County, Pennsylvania 2026: native county/unit participation and separate complete county candidate summaries",
+      "data_directory": "data/county-source-reviews/20261106-perry-facts-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/9625ccffc7852cb9ae766c33ab693879c138fa9c/data/county-source-reviews/20261106-perry-facts-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-perry-20261106-01/complete-perry-county-native-query-01.zip",
+      "complete_download_bytes": 124233,
+      "complete_download_sha256": "5913818dbacdeb23a71819fd491d2cc800323c55b313023ec1c3fcaac890a078",
+      "review_status": "complete_scoped_county_and_unit_participation_query_reviewed_unofficial_missing_ballot_modes_and_parties",
+      "maps_approved": false,
+      "scope_note": "Complete scoped numerical query: native county Total Ballots Cast 18,064 / 31,391 registered voters, printed 57.55%, and all 31 actual unit participation rows. All four participation headers per unit agree; four separate All Precincts aggregate headers are not additional units. Both whole county choice/mode summaries and native overvote/undervote accounts agree. All 31 first unit participation headers/reporting lines, the whole summary and page23 aggregate were directly visually reviewed from unchanged full-resolution pixels; all 24 full scans were independently OCRed locally. Both PDF text engines are empty, not independent transcriptions. Unresolved unit candidate cells are explicitly outside this complete scoped query, not imputed or called absent. Native parties and ballot-mode splits are absent; ED/MI/PR candidate columns and explicit zero PR votes do not establish participation splits or zero provisional ballots. Unofficial status comes from the declaring parent, not a PDF status literal. Distinct summary 2026-11-03 22:49:06 / statement 22:30:24 clocks retain missing timezones. Reported 31 of 31 is not completed counting. All 20 entire anonymous assets, 20 pinned files and 19 ZIP members match and reproduce offline using Python's standard library; nineteen semantic rejections pass. Fixed checksums/never overwrite, not host locking. Source originals/images/templates remain private. No native FIPS, new geometry, certification, statewide completion or demographic/party turnout claim.",
+      "tables": [
+        {"file": "county-participation.csv", "label": "Perry: complete native county ballots, registrations and printed fraction (CSV)"},
+        {"file": "native-unit-participation.csv", "label": "Perry: all 31 actual unit participation rows, registrations and native fractions (CSV)"},
+        {"file": "county-candidate-results.csv", "label": "Perry: all 104 county choice/mode observations from both summaries, not participation (CSV)"},
+        {"file": "county-contest-accounting.csv", "label": "Perry: all eight separate county vote/overvote/undervote accounts (CSV)"},
+        {"file": "native-candidate-mode-totals.csv", "label": "Perry: all 32 county contest/mode candidate totals, not ballot participation (CSV)"},
+        {"file": "native-participation-mode-availability.csv", "label": "Perry: native total ballots and missing ballot-mode splits, not zero (CSV)"},
+        {"file": "native-reporting-statistics.csv", "label": "Perry: all 32 county/unit reporting observations, not completed counting (CSV)"},
+        {"file": "native-source-pages.csv", "label": "Perry: all 24 complete scan identities, distinct clocks and precise numerical scope (CSV)"},
+        {"file": "native-source-declarations.csv", "label": "Perry: both actual parent-declared General report labels and URLs (CSV)"},
+        {"file": "native-source-receipts.csv", "label": "Perry: all three complete original-source acquisition receipts (CSV)"},
+        {"file": "native-party-availability.csv", "label": "Perry: all 13 county choices with absent native party labels, not inferred parties (CSV)"},
+        {"file": "native-derived-rate-checks.csv", "label": "Perry: all 32 native printed participation fractions and separate derived checks (CSV)"},
+        {"file": "native-derived-contest-sums.csv", "label": "Perry: all four separately reconciled county contest accounts (CSV)"},
+        {"file": "native-unit-candidate-availability.csv", "label": "Perry: all 31 explicit out-of-scope unit-candidate review statuses, not missing-source claims (CSV)"}
+      ],
+      "coverage": []
+    },
+    {
       "id": "pennsylvania-mifflin-20261106-01",
       "label": "Mifflin County, Pennsylvania 2026: native ballots, full county/unit query and unavailable registration-based rate",
       "data_directory": "data/county-source-reviews/20261106-mifflin-facts-01",
