@@ -2,7 +2,45 @@
 
 ## Current verified production and next acquisition
 
-**November 6, 12:32 UTC: Lycoming participation and context14 are LIVE verified.**
+**November 6, 13:01 UTC: Minnesota participation and context15 LIVE verified.**
+Exact UI **`176200e96a836f71c247b604daeac477c10673c3`**, Pages
+**42220920528 attempt 1**, passes its original hosted artifact
+**13502919641 / 513,115,823 bytes**, SHA-256
+`f2940b0e87a8626e7403dd9bdffe438c4ea43d45b19c5750060b371ee76f8e47`.
+All **411 selected entire hosted/public files**, **189 entire relocations**,
+**seven production browser scenarios** and credential jobs
+**42220920497 / 42220920571** pass. Actual hosted preparation is
+**995,849,440 bytes**, leaving **4,150,560 bytes** below the 1 GB limit.
+The smaller **985,711,020-byte** local preparation is not substituted for
+this hosted measurement. The hosted preview matches its publication manifest,
+retaining only the qualified local-platform preview difference.
+The completed exact verifier must not be rerun.
+
+All **87 Minnesota native inventories** survive: **75 complete participant
+counts**, **12 missing complete totals**, **64 separately reviewed
+registration fractions**, and **11 complete counts with conflicting rates
+withheld**. Partial subtotals never replace complete participation or
+electorates. Missing native FIPS, update clock and timezone remain missing;
+registration is explicitly derived from native 7AM plus Election Day
+registrations, not CVAP/VAP/VEP or demographic turnout.
+Context15 contains **1,221 source records / 737 county joins / 350 usable
+rates / 387 missing gray rates**, across eighteen jurisdictions. All
+**1,134 previous source records / 269 previous native rows / 684 previous
+download anchors / 18 complete prior imports** survive. The current native
+table has **356 rows**, with **705 download anchors / 701 distinct URLs**.
+Original interactive geometry and every complete historical query remain
+intact. Context15 is fixed at **635697084ec43e996662eb5efe55d154fe187405**,
+release **436488147**; all four entire assets, 32 pinned files, 31 ZIP
+members and offline reproduction pass. Proofs:
+`20261106-minnesota-explorer-01/production-verification.json` and
+`production-browser.json`. Missing states and unreviewed rates remain missing;
+no completed counting, certification or nationwide completeness claim.
+**Next:** continue genuine county participation gaps and consolidated sources,
+including Maine, remaining Pennsylvania sources and separately scoped D.C.
+Keep schedule #5 active; do not repeat completed Minnesota publishers,
+unchanged suites or production verification.
+
+**Retained November 6, 12:32 UTC: Lycoming and context14 LIVE verified.**
 Exact UI **`1ee5b01b2cf07526c362db1aaaa221d5edaf2126`**, Pages
 **42217627965 attempt 1**, passes its original hosted artifact
 **13502496009 / 513,824,247 bytes**, SHA-256
@@ -35,14 +73,9 @@ ZIP and seventeen duplicate build-output geometries are additionally relocated
 after full-byte verification. Distinct pinned paths may share filenames;
 shared-release asset names must remain unique. Original interactive geometry,
 earlier snapshots and complete downloads remain intact.
-**Next:** publish and finish exact production verification of Minnesota's
-additive county participation extension. Its factual query, all 87 independent
-Census identities and complete context15 publication now pass below. The new
-prepared local build is **985,711,020 bytes**, with **189 entire relocations**
-verified; actual hosted capacity still requires the new deployment measurement.
-No complete downloads, original interactive geometries or historical snapshots
-are removed.
-No new unverified source may inherit this deployment's LIVE flag.
+The subsequent Minnesota publication and new hosted-size measurement are
+documented above. These older Lycoming measurements remain a historical
+baseline, not a substitute for the new exact production proof.
 See `20261106-lycoming-explorer-01`.
 
 **Retained November 6, 12:12 UTC baseline: Georgia and context13 LIVE verified.**
@@ -338,12 +371,12 @@ not a downloadable participation query. The complete portable query, publication
 and independent identity proofs above supersede the earlier acquisition-only
 stage; no Minnesota explorer or certification claim follows from acquisition.
 
-**Minnesota context15 published; explorer integration not yet LIVE:** all 87 retained
+**Minnesota context15 and explorer LIVE verified above:** all 87 retained
 2024 contextual shapes now independently match both previously verified entire
 Census inventories and the entire current public geometry bytes. All shapes are
 valid; documented generalized-boundary overlaps remain unchanged. The new native
 adapter retains all 87 literal county records, with **75 complete participant
-counts**, **12 missing complete totals**, and **64 reviewable registration
+counts**, **12 missing complete totals**, and **64 separately reviewed registration
 fractions**; the other eleven complete counties keep their supplied electorate
 but withhold rates because native statistics conflict. Missing counties are not
 replaced by their partial reported subtotals. All three adapter tests and forty
@@ -379,10 +412,10 @@ inventories, twelve partial totals, eleven held conflict rates, all earlier
 records/downloads and eighteen entire import JSONs are checked. The exact
 source-table selector includes collapsed inventories and distinguishes Lake
 from Red Lake. The temporary byte-preserving local server is stopped.
-**Next:** publish the reviewed UI and verify its exact original artifact,
-credentials, **411 entire selected hosted/public files**, actual hosted capacity
-and seven production browser scenarios. No explorer LIVE flag before this new
-production proof.
+The exact UI **176200e96a836f71c247b604daeac477c10673c3**, original hosted
+artifact, credentials, **411 entire selected hosted/public files**, actual
+**995,849,440-byte** hosted site and all seven production browser scenarios
+now pass as documented above. The completed verifier must not be rerun.
 
 **November 6, 11:09 UTC: Columbia participation is LIVE verified.**
 Exact UI `2622a0d0dd0d5549392ddab6b5c6abc6ed6f9245`, Pages **42207340056
