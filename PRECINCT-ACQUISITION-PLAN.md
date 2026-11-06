@@ -2,7 +2,18 @@
 
 ## Current verified production and next acquisition
 
-**Perry integration is locally verified; exact deployment is pending.**
+**Perry integration is locally verified; exact deployment retry is pending.**
+Exact UI revision `11afd76c091c90bb24bcb87df17af8c47989b2ee`, Pages
+**42192736194 attempt 1**, passed its build but failed the Pages deploy step
+after ten minutes in `syncing_files`, then explicitly canceled the deployment.
+The actual failure is retained in `20261106-perry-explorer-01/deployment.json`;
+it is not a live UI claim. **Attempt 2** reruns only the failed deploy job,
+reusing the same original hosted artifact and unchanged revision. Its exact
+API readiness check confirms `run_attempt: 2`, initially queued.
+The only active verifier is
+`perry-exact-failed-deploy-retry02-and-production-verification-01`.
+Do not rebuild, extend
+the platform's ten-minute deployment limit or duplicate the running verifier.
 Source release **436287135** and context08 release **436291016**, at fixed
 context facts revision `3104375731fb24241864e6725770359dcefd04a4`, pass all
 entire anonymous/pinned/archive-byte checks and offline reproduction.
@@ -67,8 +78,18 @@ Mercer **212,780 bytes**,
 Montour **81,491 bytes**,
 `d1840d2ca02a499485ba9fd7e5902f3f55cc8e6c0903a9c052c892da748a8b96`.
 See each `20261106-{juniata,mercer,montour}-facts-01` and separate primary review.
-These are prepared complete source facts, **not yet released or live**.
-Next: fixed source publication, independent Census identity, new immutable
+The complete source facts are committed on the review branch at
+`d59677eb5e05af06bccd3eeceed87057bac4e082`, as Hans author and committer,
+without attribution trailers. Whitespace and the source-credential scan pass.
+The one active source publisher is
+`three-pa-fixed-facts-releases-full-byte-and-offline-verification-01`;
+these packages are **not yet release-verified or live**.
+Both entire original Census Gazetteers and inventories independently verify
+**PA / Juniata 42067 / Mercer 42085 / Montour 42093**, with their distinct native
+2024 tab / 2026 pipe delimiters. See
+`20261106-juniata-mercer-montour-explorer-01/independent-census-identity.json`;
+these are contextual identities, not native election-source FIPS.
+Next: finish fixed source publication and pending Perry verification, then new immutable
 context09, tested integration and exact production verification. No source map,
 native FIPS, certification, completed-counting or demographic turnout is inferred.
 The fresh Maine results index differs in bytes from November 5, but its reviewed
