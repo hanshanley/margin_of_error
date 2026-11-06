@@ -1,0 +1,16 @@
+{
+  "year": 2026,
+  "state_code": "WA",
+  "county_observations": 39,
+  "native_unit_observations": 9588,
+  "independently_matched_state_county_headers": 39,
+  "county_ballots_sum": 2266746,
+  "county_registered_sum": 5170951,
+  "native_state_ballots": 0,
+  "native_state_total_voters": 5170951,
+  "unallocated_county_ballots": 601199,
+  "maps_approved": false,
+  "statewide_completion_approved": false,
+  "demographic_rates_approved": false,
+  "qualification": "The native statewide ballot field is zero, not the county ballot sum. It is preserved, not repaired, used as statewide turnout or allocated to units. County observations have distinct source timestamps and are not certified final totals."
+}

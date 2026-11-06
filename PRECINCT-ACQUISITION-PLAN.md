@@ -327,8 +327,42 @@ checks, pass. Every complete record of the thirteen prior reviewed observations,
 all fifteen additional-state full JSON fingerprints and every prior download
 anchor are unchanged. Nine new complete links give 315 unique URLs / 318 anchors.
 Proofs are under `data/county-source-reviews/20261106-adams-publication-01/`.
-The temporary preview is stopped. Publish a fresh exact UI revision and verify
-its hosted/live bytes and focused browsers before calling Adams live.
+The temporary preview is stopped. UI revision
+`9aef49edea1897daf04917d9a98ee35229b2b16c` is pushed to main and the review
+branch. One bounded verifier watches exact Pages `42159885272`, with credential
+runs `42159885323` / `42159885499`; keep its prepared `dist/` unchanged until
+it finishes. Do not duplicate the watcher or claim the UI live before its
+hosted/live byte checks and all six production browser modes pass.
+
+**Washington county participation, complete numerical review:** the frozen
+WA-02 archive already contains a bulk source for all 39 counties. The new
+`scripts/review-washington-county-participation.py` verifies its full
+45,339,062-byte SHA-256 and all forty original state/county HTTP receipts.
+Every county's election identity, 2,266,746 aggregate ballots and 5,170,951
+aggregate native electorate agree with the separate state-locality headers.
+All 9,588 complete native participation rows are retained. Their registration
+sums independently match each native county `totalVoters`; 38 county ballot
+sums also match exactly.
+
+King's 601,199 county ballots are not assigned to its all-zero native unit
+ballot fields. Those zero fields do not establish zero participation. The
+native statewide `ballotsCast` is also zero: preserve it separately rather
+than repairing it, substituting it for county participation, or claiming the
+county sum is a native statewide figure. Source status is unofficial;
+as-of, last-updated, publication and independent state-locality timestamps
+stay distinct. This approves neither maps, demographic rates nor statewide
+counting completion.
+
+The complete 39-row county and 9,588-row native-unit CSVs, all serialized
+numerical facts, audit, portable standard-library reviewer, checksums and
+full-data ZIP are under
+`data/county-source-reviews/20261106-washington-participation-01/`.
+Eight focused tests pass, including native zero/missingness, independent
+identity/count matching, strict registration accounting, duplicate rejection,
+the King-only unallocated-ballot guard and byte-identical complete offline
+reproduction. This batch is **not yet released or connected to the UI**.
+Publish and anonymously verify its complete downloads, then connect the
+county observations after Adams' current production verifier finishes.
 
 **November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated

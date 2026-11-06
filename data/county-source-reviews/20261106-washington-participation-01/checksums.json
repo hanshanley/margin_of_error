@@ -1,0 +1,22 @@
+{
+  "audit.json": {
+    "bytes": 703,
+    "sha256": "486e92a264072186ee1eeac2554250ddd162ef31a4aec541cf6df6c79dd3dd57"
+  },
+  "county-participation.csv": {
+    "bytes": 19304,
+    "sha256": "38902598f2a56d7994fe0eee23a8d847fcec33c14f3f0a1e33e12385e8a5d862"
+  },
+  "native-unit-participation.csv": {
+    "bytes": 1341640,
+    "sha256": "367ffecf764f38b66ddcba883f32e0308f13749e2503f03891289c52fd5c8f5f"
+  },
+  "review-washington-county-participation.py": {
+    "bytes": 12890,
+    "sha256": "78b9b3dcbeafd5de4f3987c9062f524ebe3c243d34c43d61499a96abfe2d1c7b"
+  },
+  "source-records.json.gz": {
+    "bytes": 146344,
+    "sha256": "6a728e3dc28f4732b43b6d68e2f9f7d91fea1ea94a20838937337899f64ec96b"
+  }
+}
