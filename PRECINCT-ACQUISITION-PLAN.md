@@ -1504,6 +1504,23 @@ all 191 selected entire hosted/public files and seven production browser
 scenarios. Do not change its prepared build or claim the UI live while
 these checks remain pending.
 
+**Verified live November 6, 2026, 08:13:15 UTC:** exact combined UI
+`f01f2b2bfa4879b89250917494d596555220a5ef`, Pages **42185289493 attempt 1**,
+completed successfully, superseding both failed e8cc10a deployments.
+Original artifact **13488045157** is **506,827,147 bytes**, SHA-256
+`a892ae6bbaff26c1751035e977832254ffc86304c209dbb05555e22813140ebb`.
+All **191 entire hosted/public files** match the original artifact, with
+the separately qualified generated preview/manifest and gzip JSON checks.
+Both exact credential runs **42185289488 / 42185289623** pass. Seven
+production scenarios pass, including desktop/mobile with and without
+JavaScript and failed/changed-source cases. Cameron, Carbon, Elk and
+Forest are now live: **908 complete records / 436 county joins /
+64 native-electorate fractions / 372 missing gray rates**, across
+15 jurisdictions; **43 reviewed native county rows / 467 download anchors /
+463 URLs**. Every earlier record and complete download is retained.
+Proofs are in `20261106-elk-forest-explorer-01`. The build is no longer
+locked by its completed verifier. This is not nationwide completion.
+
 The next primary queue also progressed without modifying this tested UI.
 Potter's actual parent declares a three-page summary and 32-page unit report.
 All 35 entire page token multisets and independently parsed complete vectors
@@ -1532,9 +1549,16 @@ and deterministic ZIP reproduces byte-identically offline with Python's
 standard library. Complete primary/package proofs are under
 `data/county-source-reviews/20261106-potter-primary-review-01/`;
 the factual package is `20261106-potter-facts-01`.
-Source publication, release verification, contextual county join and
-explorer integration remain pending; no source publication, map or UI
-approval is claimed.
+The complete source package is committed review-only at
+`10ebc01ccdf9daa0e9f1792952e9e523c3c17d78`. Fixed release **436246990**,
+tag `voter-county-pennsylvania-potter-20261106-01`, is verified:
+all **24 entire anonymous assets / 24 commit-pinned files / 23 ZIP members**
+match; the extracted complete query reproduces every file and ZIP offline.
+Exact tag credential **42185948228** and review credential **42185935336**
+pass. Complete publication proofs are in `20261106-potter-publication-01`.
+Fixed checksums/never overwrite is not host-enforced locking.
+Contextual county identity review and explorer integration remain pending;
+no Potter map or UI approval is claimed.
 McKean's actual .org parent ordinarily redirects to .gov and declares a GIS
 results viewer. That ordinary viewer connection timed out with errno 60;
 there is no HTTP status or body. This is not a denial or evidence of absent

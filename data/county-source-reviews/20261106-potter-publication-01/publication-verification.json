@@ -1,0 +1,571 @@
+{
+  "verified_at": "2026-11-06T08:11:57.452715+00:00",
+  "repository": "hanshanley/margin_of_error",
+  "facts_commit": "10ebc01ccdf9daa0e9f1792952e9e523c3c17d78",
+  "tag": "voter-county-pennsylvania-potter-20261106-01",
+  "actual_tag_commit": "10ebc01ccdf9daa0e9f1792952e9e523c3c17d78",
+  "release_id": 436246990,
+  "target_commitish": "10ebc01ccdf9daa0e9f1792952e9e523c3c17d78",
+  "host_enforced_immutable": false,
+  "policy": "Fixed checksum/never overwrite; not described as host-enforced locking.",
+  "entire_assets_and_pinned_files": [
+    {
+      "file": "audit.json",
+      "bytes": 2481,
+      "sha256": "9a3290b08c635d69d1ead5b2fc68e59cfaa73fb77efe8e49ff53c4cf7a27647d",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-potter-20261106-01/audit.json",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/45ac9f70-04e2-44d5-adc8-73dee0ae51ce",
+          "bytes": 2481,
+          "sha256": "9a3290b08c635d69d1ead5b2fc68e59cfaa73fb77efe8e49ff53c4cf7a27647d"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/audit.json",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/audit.json",
+          "bytes": 2481,
+          "sha256": "9a3290b08c635d69d1ead5b2fc68e59cfaa73fb77efe8e49ff53c4cf7a27647d"
+        }
+      ]
+    },
+    {
+      "file": "checksums.json",
+      "bytes": 3393,
+      "sha256": "0a8d91d445a23d91910c4e7ce604cc97829dd0dd6994ae47b8c0e4b841f80985",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-potter-20261106-01/checksums.json",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/47c56763-1e21-402a-ad4e-08b4caf3cddf",
+          "bytes": 3393,
+          "sha256": "0a8d91d445a23d91910c4e7ce604cc97829dd0dd6994ae47b8c0e4b841f80985"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/checksums.json",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/checksums.json",
+          "bytes": 3393,
+          "sha256": "0a8d91d445a23d91910c4e7ce604cc97829dd0dd6994ae47b8c0e4b841f80985"
+        }
+      ]
+    },
+    {
+      "file": "complete-potter-county-native-query-01.zip",
+      "bytes": 68878,
+      "sha256": "30db5d3b276da023a5d9b12387ea768e366e31835aef282de390ba484a93392d",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-potter-20261106-01/complete-potter-county-native-query-01.zip",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/7668c8aa-d13e-4087-b622-ce8e8db0175f",
+          "bytes": 68878,
+          "sha256": "30db5d3b276da023a5d9b12387ea768e366e31835aef282de390ba484a93392d"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/complete-potter-county-native-query-01.zip",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/complete-potter-county-native-query-01.zip",
+          "bytes": 68878,
+          "sha256": "30db5d3b276da023a5d9b12387ea768e366e31835aef282de390ba484a93392d"
+        }
+      ]
+    },
+    {
+      "file": "county-candidate-results.csv",
+      "bytes": 6376,
+      "sha256": "0094927f1f662b976acb4d8d3b375c339332f50281a3f52865d9a3faa7ff358b",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-potter-20261106-01/county-candidate-results.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/0fa511e4-ad75-4ce6-ac28-f54b4b058206",
+          "bytes": 6376,
+          "sha256": "0094927f1f662b976acb4d8d3b375c339332f50281a3f52865d9a3faa7ff358b"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/county-candidate-results.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/county-candidate-results.csv",
+          "bytes": 6376,
+          "sha256": "0094927f1f662b976acb4d8d3b375c339332f50281a3f52865d9a3faa7ff358b"
+        }
+      ]
+    },
+    {
+      "file": "county-contest-accounting.csv",
+      "bytes": 2067,
+      "sha256": "16fd48e56e73f403b4cb1d80b4e60cff61f5cc83b7f210454c79523952b5ea48",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-potter-20261106-01/county-contest-accounting.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/4b36d9b9-31e5-498a-8b07-29972a629d9d",
+          "bytes": 2067,
+          "sha256": "16fd48e56e73f403b4cb1d80b4e60cff61f5cc83b7f210454c79523952b5ea48"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/county-contest-accounting.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/county-contest-accounting.csv",
+          "bytes": 2067,
+          "sha256": "16fd48e56e73f403b4cb1d80b4e60cff61f5cc83b7f210454c79523952b5ea48"
+        }
+      ]
+    },
+    {
+      "file": "county-literal-party-totals.csv",
+      "bytes": 3775,
+      "sha256": "20c22f87c03839ea7b2e425b79158f64ded089a2c6cbf2eb8e5d927b96c24df3",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-potter-20261106-01/county-literal-party-totals.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/83494c5d-54bc-443a-aa92-a961f27a9400",
+          "bytes": 3775,
+          "sha256": "20c22f87c03839ea7b2e425b79158f64ded089a2c6cbf2eb8e5d927b96c24df3"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/county-literal-party-totals.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/county-literal-party-totals.csv",
+          "bytes": 3775,
+          "sha256": "20c22f87c03839ea7b2e425b79158f64ded089a2c6cbf2eb8e5d927b96c24df3"
+        }
+      ]
+    },
+    {
+      "file": "county-participation.csv",
+      "bytes": 507,
+      "sha256": "32e83977ce7b6679afbccaca04b775dad071abdb26a86497fbeebd66d132bac1",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-potter-20261106-01/county-participation.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/3037a703-c464-4f16-ade4-641ca5337b5e",
+          "bytes": 507,
+          "sha256": "32e83977ce7b6679afbccaca04b775dad071abdb26a86497fbeebd66d132bac1"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/county-participation.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/county-participation.csv",
+          "bytes": 507,
+          "sha256": "32e83977ce7b6679afbccaca04b775dad071abdb26a86497fbeebd66d132bac1"
+        }
+      ]
+    },
+    {
+      "file": "native-derived-contest-sums.csv",
+      "bytes": 2254,
+      "sha256": "85fc8714421e7fcf3043a54d6b55ce2ee7c4dd9582f78377d9a63574e558adbf",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-potter-20261106-01/native-derived-contest-sums.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/37f6c4fa-8991-4bcf-8c89-39fb50aa589d",
+          "bytes": 2254,
+          "sha256": "85fc8714421e7fcf3043a54d6b55ce2ee7c4dd9582f78377d9a63574e558adbf"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/native-derived-contest-sums.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/native-derived-contest-sums.csv",
+          "bytes": 2254,
+          "sha256": "85fc8714421e7fcf3043a54d6b55ce2ee7c4dd9582f78377d9a63574e558adbf"
+        }
+      ]
+    },
+    {
+      "file": "native-derived-rate-checks.csv",
+      "bytes": 3716,
+      "sha256": "c595197416c3e59d57784a3330a5e57c4f3c495dbc3708ebc60777170fd58a64",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-potter-20261106-01/native-derived-rate-checks.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/4ee984a0-f353-4cc3-b612-2ff2ca0d88c8",
+          "bytes": 3716,
+          "sha256": "c595197416c3e59d57784a3330a5e57c4f3c495dbc3708ebc60777170fd58a64"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/native-derived-rate-checks.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/native-derived-rate-checks.csv",
+          "bytes": 3716,
+          "sha256": "c595197416c3e59d57784a3330a5e57c4f3c495dbc3708ebc60777170fd58a64"
+        }
+      ]
+    },
+    {
+      "file": "native-mail-receipts.csv",
+      "bytes": 429,
+      "sha256": "bbda6a30fa580ce142227cb77a42b15d5b798fdff53eead83510036460375d8a",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-potter-20261106-01/native-mail-receipts.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/f829fa89-0782-42c9-bc88-c56030b622ac",
+          "bytes": 429,
+          "sha256": "bbda6a30fa580ce142227cb77a42b15d5b798fdff53eead83510036460375d8a"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/native-mail-receipts.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/native-mail-receipts.csv",
+          "bytes": 429,
+          "sha256": "bbda6a30fa580ce142227cb77a42b15d5b798fdff53eead83510036460375d8a"
+        }
+      ]
+    },
+    {
+      "file": "native-named-write-ins.csv",
+      "bytes": 19623,
+      "sha256": "102817220b9ea10e275b0c51c30eb80bb60fc46f541f4a3088452097be29d08d",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-potter-20261106-01/native-named-write-ins.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/c945a2be-0097-4488-aadd-84d0cd8883d7",
+          "bytes": 19623,
+          "sha256": "102817220b9ea10e275b0c51c30eb80bb60fc46f541f4a3088452097be29d08d"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/native-named-write-ins.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/native-named-write-ins.csv",
+          "bytes": 19623,
+          "sha256": "102817220b9ea10e275b0c51c30eb80bb60fc46f541f4a3088452097be29d08d"
+        }
+      ]
+    },
+    {
+      "file": "native-participation-modes.csv",
+      "bytes": 571,
+      "sha256": "7737ebc853be034e3f998cdc6131c248ebf74dc0fb75583959fa0965e415b014",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-potter-20261106-01/native-participation-modes.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/8b71b8ed-3baa-46da-8db7-f4d85e304f33",
+          "bytes": 571,
+          "sha256": "7737ebc853be034e3f998cdc6131c248ebf74dc0fb75583959fa0965e415b014"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/native-participation-modes.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/native-participation-modes.csv",
+          "bytes": 571,
+          "sha256": "7737ebc853be034e3f998cdc6131c248ebf74dc0fb75583959fa0965e415b014"
+        }
+      ]
+    },
+    {
+      "file": "native-reporting-statistics.csv",
+      "bytes": 637,
+      "sha256": "ca866cc9b62b6c45d4e6f19c2e0d82ee6739dfc12725bbd09c4b75e930333731",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-potter-20261106-01/native-reporting-statistics.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/90cacff6-b323-4ad0-8a5b-780923874398",
+          "bytes": 637,
+          "sha256": "ca866cc9b62b6c45d4e6f19c2e0d82ee6739dfc12725bbd09c4b75e930333731"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/native-reporting-statistics.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/native-reporting-statistics.csv",
+          "bytes": 637,
+          "sha256": "ca866cc9b62b6c45d4e6f19c2e0d82ee6739dfc12725bbd09c4b75e930333731"
+        }
+      ]
+    },
+    {
+      "file": "native-source-declarations.csv",
+      "bytes": 474,
+      "sha256": "5c39b5b39cc92121be3280f7b2c3a981fe3cc7bd2479ec05934027d5ef105113",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-potter-20261106-01/native-source-declarations.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/e3f20ddd-44e7-4042-9db5-870649587a47",
+          "bytes": 474,
+          "sha256": "5c39b5b39cc92121be3280f7b2c3a981fe3cc7bd2479ec05934027d5ef105113"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/native-source-declarations.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/native-source-declarations.csv",
+          "bytes": 474,
+          "sha256": "5c39b5b39cc92121be3280f7b2c3a981fe3cc7bd2479ec05934027d5ef105113"
+        }
+      ]
+    },
+    {
+      "file": "native-source-pages.csv",
+      "bytes": 5868,
+      "sha256": "ddd87ae40fef5ecb84f6412fe34b973efe83741823891f696c386de168bd8b00",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-potter-20261106-01/native-source-pages.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/d52f40a8-a494-4974-971b-cf8436c55432",
+          "bytes": 5868,
+          "sha256": "ddd87ae40fef5ecb84f6412fe34b973efe83741823891f696c386de168bd8b00"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/native-source-pages.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/native-source-pages.csv",
+          "bytes": 5868,
+          "sha256": "ddd87ae40fef5ecb84f6412fe34b973efe83741823891f696c386de168bd8b00"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-candidate-results.csv",
+      "bytes": 207557,
+      "sha256": "f94f15edd8ee5677309bca85f1777c841d2828e1ac231b129efba275b28ba4fb",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-potter-20261106-01/native-unit-candidate-results.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/3c8dcab3-03bd-4cc8-8c4e-1bb71e638a08",
+          "bytes": 207557,
+          "sha256": "f94f15edd8ee5677309bca85f1777c841d2828e1ac231b129efba275b28ba4fb"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/native-unit-candidate-results.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/native-unit-candidate-results.csv",
+          "bytes": 207557,
+          "sha256": "f94f15edd8ee5677309bca85f1777c841d2828e1ac231b129efba275b28ba4fb"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-contest-accounting.csv",
+      "bytes": 55732,
+      "sha256": "8069ad0ecf849e5e8620be9a2d3bfdbb95bec800ebaba22e3e260e4fba098ea3",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-potter-20261106-01/native-unit-contest-accounting.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/785bc412-0248-4cde-990a-4c481ea60cb5",
+          "bytes": 55732,
+          "sha256": "8069ad0ecf849e5e8620be9a2d3bfdbb95bec800ebaba22e3e260e4fba098ea3"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/native-unit-contest-accounting.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/native-unit-contest-accounting.csv",
+          "bytes": 55732,
+          "sha256": "8069ad0ecf849e5e8620be9a2d3bfdbb95bec800ebaba22e3e260e4fba098ea3"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-literal-party-totals.csv",
+      "bytes": 121596,
+      "sha256": "4e27a70453a6b71c5d9f49d3c33fa0880ff9ca6da4ee9eaeb2ecf7aec810445b",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-potter-20261106-01/native-unit-literal-party-totals.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/ea10561b-5b53-4010-9c4f-920edab259c9",
+          "bytes": 121596,
+          "sha256": "4e27a70453a6b71c5d9f49d3c33fa0880ff9ca6da4ee9eaeb2ecf7aec810445b"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/native-unit-literal-party-totals.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/native-unit-literal-party-totals.csv",
+          "bytes": 121596,
+          "sha256": "4e27a70453a6b71c5d9f49d3c33fa0880ff9ca6da4ee9eaeb2ecf7aec810445b"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-named-write-in-availability.csv",
+      "bytes": 21503,
+      "sha256": "b87483f37593b0c98dc70bb303b33889e5a25c8166da8ea3ac7e8e98077d6cb3",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-potter-20261106-01/native-unit-named-write-in-availability.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/49df2987-99aa-4872-a15c-a2f9bd866c66",
+          "bytes": 21503,
+          "sha256": "b87483f37593b0c98dc70bb303b33889e5a25c8166da8ea3ac7e8e98077d6cb3"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/native-unit-named-write-in-availability.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/native-unit-named-write-in-availability.csv",
+          "bytes": 21503,
+          "sha256": "b87483f37593b0c98dc70bb303b33889e5a25c8166da8ea3ac7e8e98077d6cb3"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-participation-modes.csv",
+      "bytes": 12639,
+      "sha256": "a7aa817089b80cdbbc9a2a06c38aa44d1bb267f3bfcc5f3bd252184e4a8d551c",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-potter-20261106-01/native-unit-participation-modes.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/7ed96d35-14e9-479b-89a0-dee19ceb9f77",
+          "bytes": 12639,
+          "sha256": "a7aa817089b80cdbbc9a2a06c38aa44d1bb267f3bfcc5f3bd252184e4a8d551c"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/native-unit-participation-modes.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/native-unit-participation-modes.csv",
+          "bytes": 12639,
+          "sha256": "a7aa817089b80cdbbc9a2a06c38aa44d1bb267f3bfcc5f3bd252184e4a8d551c"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-participation.csv",
+      "bytes": 3234,
+      "sha256": "7aeecff7882ef92ac573c1f80f2091dd803df4729d395012fc10daa2a0bba221",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-potter-20261106-01/native-unit-participation.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/94eb8272-1ea8-444b-8677-a007691a2cb8",
+          "bytes": 3234,
+          "sha256": "7aeecff7882ef92ac573c1f80f2091dd803df4729d395012fc10daa2a0bba221"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/native-unit-participation.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/native-unit-participation.csv",
+          "bytes": 3234,
+          "sha256": "7aeecff7882ef92ac573c1f80f2091dd803df4729d395012fc10daa2a0bba221"
+        }
+      ]
+    },
+    {
+      "file": "review-potter-county-native-query.py",
+      "bytes": 20557,
+      "sha256": "289389d3339d4f33e0c93fec0fc8778bedc5e3189c1778b376c810bac1012687",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-potter-20261106-01/review-potter-county-native-query.py",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/2be44ee4-ef52-4489-8860-3facd4dcad74",
+          "bytes": 20557,
+          "sha256": "289389d3339d4f33e0c93fec0fc8778bedc5e3189c1778b376c810bac1012687"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/review-potter-county-native-query.py",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/review-potter-county-native-query.py",
+          "bytes": 20557,
+          "sha256": "289389d3339d4f33e0c93fec0fc8778bedc5e3189c1778b376c810bac1012687"
+        }
+      ]
+    },
+    {
+      "file": "source-receipts.json",
+      "bytes": 1773,
+      "sha256": "9acd404ca9d4a5ca7e4687acfc665bdc0fbdebfde319a63444b776995d32e3c7",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-potter-20261106-01/source-receipts.json",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/7cba8b1c-15f0-459c-ae7f-6144b45b0482",
+          "bytes": 1773,
+          "sha256": "9acd404ca9d4a5ca7e4687acfc665bdc0fbdebfde319a63444b776995d32e3c7"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/source-receipts.json",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/source-receipts.json",
+          "bytes": 1773,
+          "sha256": "9acd404ca9d4a5ca7e4687acfc665bdc0fbdebfde319a63444b776995d32e3c7"
+        }
+      ]
+    },
+    {
+      "file": "source-records.json.gz",
+      "bytes": 34538,
+      "sha256": "301a83b176665f8b6dfe245393a0b200e433178d12e361e0baa8c077ff561a50",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-potter-20261106-01/source-records.json.gz",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/89c3a486-4279-4f3c-b243-7ce53182cf91",
+          "bytes": 34538,
+          "sha256": "301a83b176665f8b6dfe245393a0b200e433178d12e361e0baa8c077ff561a50"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/source-records.json.gz",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/source-records.json.gz",
+          "bytes": 34538,
+          "sha256": "301a83b176665f8b6dfe245393a0b200e433178d12e361e0baa8c077ff561a50"
+        }
+      ]
+    }
+  ],
+  "entire_assets": 24,
+  "entire_pinned_files": 24,
+  "entire_zip_members": 23,
+  "extracted_offline_verifier_stdout": "18 focused rejection cases pass.\nEvery complete table, factual input, proof, reviewer and deterministic ZIP reproduces byte-identically offline.\n",
+  "exact_entire_file_and_archive_reproduction": true,
+  "explorer_integration_and_live_verification_pending": true
+}
