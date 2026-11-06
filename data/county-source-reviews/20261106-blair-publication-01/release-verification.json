@@ -1,0 +1,156 @@
+{
+  "verified_at_utc": "2026-11-06T04:56:18.449106+00:00",
+  "revision": "ea0f149cacf38068bb21c1b82c63c6e57b799384",
+  "release_tag": "voter-county-pennsylvania-blair-20261106-01",
+  "release_id": 436114061,
+  "github_immutable": false,
+  "never_overwrite_policy": true,
+  "anonymous_requests": true,
+  "downloads": [
+    {
+      "kind": "complete_release_asset",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-blair-20261106-01/county-candidate-results.csv",
+      "file": "county-candidate-results.csv",
+      "bytes": 5138,
+      "sha256": "41773a99014725b062fbf581b62659b528b312d2570b4e70173ecb3fef72a165",
+      "status": 200
+    },
+    {
+      "kind": "complete_release_asset",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-blair-20261106-01/county-contest-accounting.csv",
+      "file": "county-contest-accounting.csv",
+      "bytes": 10564,
+      "sha256": "0a42c47717fe6db5d3360bdc10617776973509dfbd3db84ddbe9edfe8a4554b4",
+      "status": 200
+    },
+    {
+      "kind": "complete_release_asset",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-blair-20261106-01/county-literal-party-totals.csv",
+      "file": "county-literal-party-totals.csv",
+      "bytes": 3290,
+      "sha256": "c632a08817cf505fc04fcc1e848565107bc6ec42d92c7a46f6c37beaefde9b86",
+      "status": 200
+    },
+    {
+      "kind": "complete_release_asset",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-blair-20261106-01/county-participation.csv",
+      "file": "county-participation.csv",
+      "bytes": 1856,
+      "sha256": "dfbdeea4beef1ae0befd22c1fb3c0b77839fea0da825f80fe97336554b2762ac",
+      "status": 200
+    },
+    {
+      "kind": "complete_release_asset",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-blair-20261106-01/native-reporting-statements.csv",
+      "file": "native-reporting-statements.csv",
+      "bytes": 690,
+      "sha256": "404ec6893a99cab3940414a0a611ea351659d44fc62e7bbd930bc6fc00101384",
+      "status": 200
+    },
+    {
+      "kind": "complete_release_asset",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-blair-20261106-01/native-source-pages.csv",
+      "file": "native-source-pages.csv",
+      "bytes": 852,
+      "sha256": "996c3a33178507c871a12150521ca018d6b1487ac8bfa01686efb399f41f206b",
+      "status": 200
+    },
+    {
+      "kind": "complete_release_asset",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-blair-20261106-01/pre-election-zero-candidate-results.csv",
+      "file": "pre-election-zero-candidate-results.csv",
+      "bytes": 5364,
+      "sha256": "c782ebfeb1d01ecaab3d5e1d6f32dcefe4aba498fcc6e37cebb623a0829b41ff",
+      "status": 200
+    },
+    {
+      "kind": "complete_release_asset",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-blair-20261106-01/pre-election-zero-participation.csv",
+      "file": "pre-election-zero-participation.csv",
+      "bytes": 1846,
+      "sha256": "8a4e64092fcfeb186c6127f462a14847073bd593d76517d1f534b2cd4419c487",
+      "status": 200
+    },
+    {
+      "kind": "complete_release_asset",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-blair-20261106-01/source-records.json.gz",
+      "file": "source-records.json.gz",
+      "bytes": 1797,
+      "sha256": "33df68695292293a7698a9d0f4c73351452f4630cae34db7c561410755c63241",
+      "status": 200
+    },
+    {
+      "kind": "complete_release_asset",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-blair-20261106-01/complete-blair-2026-numerical-facts-01.zip",
+      "file": "complete-blair-2026-numerical-facts-01.zip",
+      "bytes": 17481,
+      "sha256": "e70aa9ceb7c0d3de3e240e73988dd19be04890a38cfa4efb96677d0f4e762b78",
+      "status": 200,
+      "complete_byte_identical_zip_members": 13
+    },
+    {
+      "kind": "commit_pinned_complete_csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ea0f149cacf38068bb21c1b82c63c6e57b799384/data/county-source-reviews/20261106-blair-facts-01/county-candidate-results.csv",
+      "file": "county-candidate-results.csv",
+      "bytes": 5138,
+      "sha256": "41773a99014725b062fbf581b62659b528b312d2570b4e70173ecb3fef72a165",
+      "status": 200
+    },
+    {
+      "kind": "commit_pinned_complete_csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ea0f149cacf38068bb21c1b82c63c6e57b799384/data/county-source-reviews/20261106-blair-facts-01/county-contest-accounting.csv",
+      "file": "county-contest-accounting.csv",
+      "bytes": 10564,
+      "sha256": "0a42c47717fe6db5d3360bdc10617776973509dfbd3db84ddbe9edfe8a4554b4",
+      "status": 200
+    },
+    {
+      "kind": "commit_pinned_complete_csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ea0f149cacf38068bb21c1b82c63c6e57b799384/data/county-source-reviews/20261106-blair-facts-01/county-literal-party-totals.csv",
+      "file": "county-literal-party-totals.csv",
+      "bytes": 3290,
+      "sha256": "c632a08817cf505fc04fcc1e848565107bc6ec42d92c7a46f6c37beaefde9b86",
+      "status": 200
+    },
+    {
+      "kind": "commit_pinned_complete_csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ea0f149cacf38068bb21c1b82c63c6e57b799384/data/county-source-reviews/20261106-blair-facts-01/county-participation.csv",
+      "file": "county-participation.csv",
+      "bytes": 1856,
+      "sha256": "dfbdeea4beef1ae0befd22c1fb3c0b77839fea0da825f80fe97336554b2762ac",
+      "status": 200
+    },
+    {
+      "kind": "commit_pinned_complete_csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ea0f149cacf38068bb21c1b82c63c6e57b799384/data/county-source-reviews/20261106-blair-facts-01/native-reporting-statements.csv",
+      "file": "native-reporting-statements.csv",
+      "bytes": 690,
+      "sha256": "404ec6893a99cab3940414a0a611ea351659d44fc62e7bbd930bc6fc00101384",
+      "status": 200
+    },
+    {
+      "kind": "commit_pinned_complete_csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ea0f149cacf38068bb21c1b82c63c6e57b799384/data/county-source-reviews/20261106-blair-facts-01/native-source-pages.csv",
+      "file": "native-source-pages.csv",
+      "bytes": 852,
+      "sha256": "996c3a33178507c871a12150521ca018d6b1487ac8bfa01686efb399f41f206b",
+      "status": 200
+    },
+    {
+      "kind": "commit_pinned_complete_csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ea0f149cacf38068bb21c1b82c63c6e57b799384/data/county-source-reviews/20261106-blair-facts-01/pre-election-zero-candidate-results.csv",
+      "file": "pre-election-zero-candidate-results.csv",
+      "bytes": 5364,
+      "sha256": "c782ebfeb1d01ecaab3d5e1d6f32dcefe4aba498fcc6e37cebb623a0829b41ff",
+      "status": 200
+    },
+    {
+      "kind": "commit_pinned_complete_csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ea0f149cacf38068bb21c1b82c63c6e57b799384/data/county-source-reviews/20261106-blair-facts-01/pre-election-zero-participation.csv",
+      "file": "pre-election-zero-participation.csv",
+      "bytes": 1846,
+      "sha256": "8a4e64092fcfeb186c6127f462a14847073bd593d76517d1f534b2cd4419c487",
+      "status": 200
+    }
+  ]
+}

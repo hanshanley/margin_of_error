@@ -646,9 +646,20 @@ arithmetically consistent changes to reviewed facts. The unpublished ordering
 defect found by offline reproduction was fixed before publication.
 Package: `20261106-blair-facts-01`, **17,481 bytes** ZIP, SHA-256
 `e70aa9ceb7c0d3de3e240e73988dd19be04890a38cfa4efb96677d0f4e762b78`.
-Next publish and anonymously byte-verify full downloads, then integrate only
-after Lebanon's exact live proof. No live UI, county/precinct map, demographic
-turnout, certification or statewide completion is claimed.
+Facts revision `ea0f149cacf38068bb21c1b82c63c6e57b799384` is published on
+the review branch. Fixed release
+`voter-county-pennsylvania-blair-20261106-01` targets that exact commit;
+all ten complete assets and eight commit-pinned full CSVs are anonymously
+downloaded and byte-verified, including every complete ZIP member.
+GitHub reports `immutable: false`; preserve the fixed checksum/never-overwrite
+policy rather than asserting host locking. Release proof is under
+`20261106-blair-publication-01`.
+The UI loader, full native-current-record regression and focused browser mode
+are prepared. All 26 focused Node tests and Astro checking pass (zero
+errors/warnings, five existing hints). Do not build until Lebanon's exact
+live proof finishes and its actual live baseline is captured. No live Blair UI,
+county/precinct map, demographic turnout, certification or statewide completion
+is claimed.
 
 **November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated
