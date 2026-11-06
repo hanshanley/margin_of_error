@@ -57,7 +57,7 @@ test('historical NC year tables use the pinned complete originals without moving
 });
 
 test('only reviewed county context archives move to their complete release assets', () => {
-	for (const version of ['01', '05', '10', '11', '12', '13', '14', '15']) {
+	for (const version of ['01', '05', '10', '11', '12', '13', '14', '15', '16']) {
 		const path = `/participation-county-context/20261106-${version}/complete-county-participation-context-${version}.zip`;
 		const url = participationDownload(path);
 		assert.equal(url, `https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-${version}/complete-county-participation-context-${version}.zip`);
@@ -69,7 +69,7 @@ test('only reviewed county context archives move to their complete release asset
 		'/participation-county-context/20261106-11/review.json',
 		'/participation-county-context/20261106-11/complete-source-records.json.gz',
 		'/participation-county-context/20261106-11/complete-county-participation-context-10.zip',
-		'/participation-county-context/20261106-16/complete-county-participation-context-16.zip',
+		'/participation-county-context/20261106-17/complete-county-participation-context-17.zip',
 		'/participation-county-context/20261107-01/complete-county-participation-context-01.zip',
 		'/participation-county-context/20261106-11/counties-PA.geojson.gz',
 	]) assert.equal(participationDownload(path), path);
@@ -84,7 +84,7 @@ test('only redundant context13 geometry copies move to fixed complete originals,
 	}
 	for (const path of [
 		'/participation-county-context/20261106-12/geometry/county-GA.geojson',
-		'/participation-county-context/20261106-16/geometry/county-GA.geojson',
+		'/participation-county-context/20261106-17/geometry/county-GA.geojson',
 		'/participation-county-context/20261106-13/geometry/county-TX.geojson',
 		'/participation-county-context/20261106-13/review.json',
 		'/participation-context/20261104T183601Z/geometry/county-GA.geojson',
@@ -105,11 +105,13 @@ test('context14 relocates only its verified complete archive and redundant geome
 		assert.equal(participationDownload(path), path);
 });
 
-test('context15 and historical context12 relocate only their independently published redundant geometry', () => {
+test('contexts15/16 and historical context12 relocate only their independently published redundant geometry', () => {
 	for (const [version, revision, codes] of [
 		['12', 'efd750acd9aa1b021b7de9c24b42b8aeecc32e1a',
 			['AL', 'AR', 'AZ', 'CA', 'DC', 'FL', 'IA', 'KY', 'MO', 'NJ', 'NV', 'OR', 'PA', 'VA', 'WA', 'WY']],
 		['15', '635697084ec43e996662eb5efe55d154fe187405',
+			['AL', 'AR', 'AZ', 'CA', 'DC', 'FL', 'GA', 'IA', 'KY', 'MN', 'MO', 'NJ', 'NV', 'OR', 'PA', 'VA', 'WA', 'WY']],
+		['16', '833c309f83efa6280eb9a5cfee7a17b2faff4211',
 			['AL', 'AR', 'AZ', 'CA', 'DC', 'FL', 'GA', 'IA', 'KY', 'MN', 'MO', 'NJ', 'NV', 'OR', 'PA', 'VA', 'WA', 'WY']],
 	]) {
 		for (const code of codes) {

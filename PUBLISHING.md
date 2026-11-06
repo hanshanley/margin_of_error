@@ -108,14 +108,14 @@ Pages artifact; `--upload` adds missing assets to the pre-created release withou
 overwriting existing files. Publication fails on any missing or changed release asset,
 or if the resulting site exceeds 1 GB.
 
-The fifteen reviewed November 6 county-context ZIPs likewise use their complete,
+The sixteen reviewed November 6 county-context ZIPs likewise use their complete,
 version-specific published release assets. Preparation downloads and verifies every
 entire archive against its original staged bytes before removing only the redundant
 build-output ZIPs. Context review JSON, source records and interactive geometry stay
 local; all historical downloads remain available. Unreviewed context versions are
 not relocated automatically.
-Context12, context13, context14 and context15 have respectively 16, 17, 17 and
-18 redundant geometry copies that use their complete originals at the respective
+Context12, context13, context14, context15 and context16 have respectively 16, 17, 17,
+18 and 18 redundant geometry copies that use their complete originals at the respective
 fixed context-source revisions. Preparation verifies every full file before removing
 only those build-output copies; the original interactive geometry, current review JSON
 and all other historical geometry copies stay local and unchanged. Each complete

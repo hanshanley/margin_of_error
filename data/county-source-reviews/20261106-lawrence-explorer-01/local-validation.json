@@ -1,0 +1,45 @@
+{
+  "scope": "Local reviewed integration, not a hosted deployment or nationwide completion claim.",
+  "focused_tests": {
+    "command": "node --test --test-reporter=dot scripts/reviewed-county-participation.test.mjs scripts/county-participation-context.test.mjs scripts/voter-participation.test.mjs scripts/additional-participation.test.mjs",
+    "passed": 89,
+    "failed": 0
+  },
+  "astro_check": {
+    "command": "npm run check",
+    "errors": 0,
+    "warnings": 0,
+    "hints": 5
+  },
+  "site_build": {
+    "command": "npm run build",
+    "exit_status": 0
+  },
+  "pages_preparation": {
+    "command": "node scripts/prepare-participation-pages.mjs",
+    "entire_relocated_downloads_byte_verified": 208,
+    "local_prepared_site_bytes": 988242982,
+    "not_a_hosted_size_measurement": true
+  },
+  "browser": {
+    "command": "../voter-participation/.venv/bin/python scripts/check-county-participation-context-browser.py --proof data/county-source-reviews/20261106-lawrence-explorer-01/local-browser.json",
+    "proof": "local-browser.json",
+    "desktop_mobile_javascript_no_javascript_modes": 4,
+    "failed_review_changed_review_failed_current_scenarios": 3,
+    "exact_county_count_matches": 738,
+    "exact_county_rate_fills": 351,
+    "missing_rates_gray": 387,
+    "previous_native_rows_unchanged": 356,
+    "current_native_rows": 357,
+    "previous_download_anchors_preserved": 705,
+    "download_anchors": 724,
+    "distinct_download_urls": 720
+  },
+  "legacy_export": {
+    "source_revision": "792e3d91609f7ee929c35b5ec15c13710db94be8",
+    "source_renderer_sha256": "b152036b660047b2f9beb7db8ebc51e98484bc34276989bbfb44e256df1f345f",
+    "adapted_renderer_bytes": 24950,
+    "adapted_renderer_sha256": "de06f11048cf3d14b34a9639f9b8a3b5cad0a5ab88fafdf3d966f19929469cde",
+    "only_generated_adapted_renderer_and_its_manifest_entry_changed": true
+  }
+}

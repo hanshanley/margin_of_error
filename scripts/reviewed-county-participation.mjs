@@ -356,6 +356,53 @@ function loadNewJerseyParticipation(reviews) {
   });
 }
 
+function loadLawrenceParticipation(reviews) {
+  const id = 'pennsylvania-lawrence-20261106-01';
+  const matches = reviews.filter(review => review.id === id);
+  if (matches.length !== 1) throw new Error(`Missing or duplicated reviewed county source: ${id}`);
+  const review = matches[0], directory = resolve(review.data_directory);
+  for (const [file, digest] of Object.entries({
+    'county-participation.csv': 'df9fea970547572e67e96351e77d256318346d310b7b4c92f8c9c0a148a562bd',
+    'native-source-pages.csv': 'a75f157fb0c1151be5d47807f070fb1c95845eb8941bc179ff162027731e2b86',
+    'native-reporting-statements.csv': '2c3f8cb21ef71dde845ec8c27a5b952cec656270193bc100253544e4d923198d',
+    'audit.json': '13aa2d243300c869fcb09b2ab35c91c10796f03e16d3b4d6004c1a90afeb0016',
+  })) {
+    if (createHash('sha256').update(readFileSync(resolve(directory, file))).digest('hex') !== digest)
+      throw new Error(`Invalid reviewed county participation: ${id} / ${file}`);
+  }
+  const rows = csv(resolve(directory, 'county-participation.csv'));
+  const pages = csv(resolve(directory, 'native-source-pages.csv'));
+  const audit = JSON.parse(readFileSync(resolve(directory, 'audit.json'), 'utf8'));
+  if (rows.length !== 1 || pages.length !== 214 || audit.maps_approved !== false
+    || audit.table_rows['native-unit-participation.csv'] !== 74)
+    throw new Error(`Incomplete reviewed county source: ${id}`);
+  const native = rows[0], ballots = Number(native.ballots_cast), denominator = Number(native.registered_voters);
+  if (native.year !== '2026' || native.state_code !== 'PA' || native.county !== 'Lawrence'
+    || native.source_report !== 'county' || native.native_status_literal !== 'UNOFFICIAL RESULTS'
+    || native.source_update_literal !== '11/03/2026 9:27 PM' || native.declared_timezone !== ''
+    || ballots !== 31401 || denominator !== 57470 || native.blank_ballots !== '2'
+    || native.election_day_ballots !== '25293' || native.mail_ballots !== '6108'
+    || native.provisional_ballots !== '0' || native.native_printed_turnout !== '54.64%'
+    || Number(native.registered_turnout_percent) !== 100 * ballots / denominator)
+    throw new Error(`Invalid reviewed county participation: ${id}`);
+  const updates = [...new Map(pages.map(row => [row.source_report, {
+    source: row.source_report, native_update_literal: row.source_update_literal,
+    declared_timezone: row.declared_timezone,
+  }])).values()];
+  return [{
+    year: 2026, state_code: 'PA', county_id: 'reviewed:PA:Lawrence', county: 'Lawrence',
+    geography_level: 'county', ballots, denominator, denominator_basis: 'native_registered_voters',
+    participation_measure_literal: 'Ballots Cast - Total', reported_pct: 100 * ballots / denominator,
+    native_printed_pct: native.native_printed_turnout, source_status_literal: native.native_status_literal,
+    reported_units: 74, total_units: 74, source_rows: 1, maps_approved: false, review_id: id,
+    native_record: native, native_source_updates: updates,
+    source_update_label: updates.map(row =>
+      `${row.source}: ${row.native_update_literal} (timezone not declared)`).join('; '),
+    source_reporting_label: audit.qualifications.join('; '), quality: audit.qualifications,
+    source_url: `${review.base_url}county-participation.csv`, complete_download_url: review.complete_download_url,
+  }];
+}
+
 export function loadReviewedCountyParticipation(reviews) {
   const observations = [], seen = new Set();
   for (const [id, ballotField, denominatorField, printedField, code, names] of profiles) {
@@ -725,5 +772,6 @@ export function loadReviewedCountyParticipation(reviews) {
   }
   return [...observations, ...loadNewJerseyParticipation(reviews),
     ...loadCaliforniaParticipation(reviews).filter(row => row.geography_level === 'county'),
-    ...loadGeorgiaParticipation(reviews).counties, ...loadReviewedMinnesotaParticipation(reviews)];
+    ...loadGeorgiaParticipation(reviews).counties, ...loadReviewedMinnesotaParticipation(reviews),
+    ...loadLawrenceParticipation(reviews)];
 }

@@ -75,8 +75,23 @@ Its **1,222 records / 738 joins / 351 usable rates / 387 missing rates** add
 only the reviewed Lawrence county fraction. The complete **32-file /
 31-member** context query passes offline verification. See
 `20261106-lawrence-explorer-01`.
-**Next:** publish and verify fixed context16, then complete runtime integration,
-focused tests, browser checks and the exact hosted deployment proof.
+Context16 fixed revision **833c309f83efa6280eb9a5cfee7a17b2faff4211**,
+release **436522479**, passes all **four entire assets / 32 pinned files /
+31 ZIP members**, extracted offline verification and byte-identical archive
+reproduction. Exact context review/tag credential jobs
+**42224212523 / 42224242878** pass; the completed publisher must not be rerun.
+Runtime registration, county adapter, pointer and fixed download routing pass
+**89 focused tests**, Astro check (**zero errors/warnings**), the site build
+and **seven local browser scenarios**. All **208 entire relocated downloads**
+match; prepared local size is **988,242,982 bytes**, not the hosted measurement.
+The local page preserves all 356 previous native rows and 705 previous anchors:
+current totals are **357 native rows / 33 Pennsylvania rows / 724 download
+anchors / 720 distinct URLs**. Only the complete context16 ZIP and eighteen
+redundant build-output geometries are additionally relocated; original data
+and every historical complete query remain intact.
+**Next:** publish the reviewed UI and verify its exact hosted revision,
+original artifact, selected full public bytes, actual hosted size,
+credential jobs and production browsers.
 Do not mark Lawrence LIVE or increment current Pennsylvania map coverage yet.
 
 The same acquisition retained Huntingdon's certificate-verification failure

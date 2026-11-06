@@ -19,14 +19,14 @@ args = parser.parse_args()
 assert not args.proof.exists()
 base = args.base_url.rstrip("/")
 root = Path(__file__).resolve().parents[1]
-facts = root / "public/participation-county-context/20261106-15"
+facts = root / "public/participation-county-context/20261106-16"
 review = json.loads((facts / "review.json").read_text())
 records = json.loads(gzip.decompress((facts / "complete-source-records.json.gz").read_bytes()))
 pointer = json.loads((root / "public/participation-county-context.json").read_text())
-previous = root / "data/county-source-reviews/20261106-minnesota-explorer-01"
+previous = root / "data/county-source-reviews/20261106-lawrence-explorer-01"
 baseline = json.loads((previous / "baseline.json").read_text())
 sources = [row for row in json.loads((root / "public/participation-source-reviews.json").read_text())["reviews"]
-           if row["id"] == "minnesota-bulk-participation-20261106-01"]
+           if row["id"] == "pennsylvania-lawrence-20261106-01"]
 assert len(sources) == 1
 source_ids = {row["id"] for row in sources}
 old_links = Counter(baseline["previous_download_urls"])
@@ -46,7 +46,7 @@ def url(name="Washington"):
 
 def check_static(page):
     observed = json.loads(page.locator("table[data-reviewed-county-participation]").get_attribute("data-reviewed-county-participation"))
-    assert observed == records[-356:]
+    assert observed == records[-357:]
     assert [row for row in observed if row["review_id"] not in source_ids] == baseline["previous_entire_reviewed_records"]
     clarion = next(row for row in observed if row["county"] == "Clarion")
     assert clarion["ballots"] == 12975 and clarion["denominator"] == 23306
@@ -74,7 +74,7 @@ def check_static(page):
         expect(row).to_contain_text("Withheld (native zero)")
         expect(row.locator("td").nth(2)).to_have_text("Withheld")
         expect(row.locator("td").nth(3)).to_have_text("Not supplied")
-    native_mn = [row for row in observed if row["review_id"] in source_ids]
+    native_mn = [row for row in observed if row["review_id"] == "minnesota-bulk-participation-20261106-01"]
     assert len(native_mn) == 87 and sum(row["ballots"] is None for row in native_mn) == 12
     for native in native_mn:
         row = page.locator("table[data-reviewed-county-participation] tbody tr").filter(
@@ -90,8 +90,15 @@ def check_static(page):
             expect(row.locator("td").nth(2)).to_have_text("Withheld")
     checksum = page.locator("#downloads a", has_text="Minnesota: complete native participation statistics").filter(
         has_text="complete data and original-source checksums")
-    assert checksum.get_attribute("href") == sources[0]["base_url"] + "checksums.sha256"
-    expect(page.locator("#county-context-review")).to_contain_text("737 whole-county participation observations")
+    mn_source = next(row for row in json.loads(
+        (root / "public/participation-source-reviews.json").read_text())["reviews"]
+        if row["id"] == "minnesota-bulk-participation-20261106-01")
+    assert checksum.get_attribute("href") == mn_source["base_url"] + "checksums.sha256"
+    lawrence = page.locator("table[data-reviewed-county-participation] tbody tr").filter(
+        has=page.get_by_role("rowheader", name="Lawrence, Pennsylvania", exact=True, include_hidden=True))
+    for text in ("31,401", "57,470", "54.64%", "UNOFFICIAL RESULTS"):
+        expect(lawrence).to_contain_text(text)
+    expect(page.locator("#county-context-review")).to_contain_text("738 whole-county participation observations")
     assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
 
 
@@ -126,7 +133,7 @@ def check_georgia_statewide(page):
 
 def check_counties(page, code):
     expected = {row["contextual_geoid"]: row for row in review["observations"] if row["state_code"] == code}
-    expect(page.locator(".substate-feature[data-context-review='20261106-15']")).to_have_count(len(expected), timeout=30000)
+    expect(page.locator(".substate-feature[data-context-review='20261106-16']")).to_have_count(len(expected), timeout=30000)
     actual = page.locator(".substate-feature[data-level='county']").evaluate_all(
         "paths => paths.map(path => Object.fromEntries([...path.attributes].map(attr => [attr.name, attr.value])))")
     assert len(actual) == review["geometry"][code]["features"]
@@ -139,7 +146,7 @@ def check_counties(page, code):
             continue
         assert path["data-source-county-id"] == native["county_id"]
         assert int(path["data-count"]) == native["ballots"]
-        assert path["data-context-review"] == "20261106-15"
+        assert path["data-context-review"] == "20261106-16"
         counts += 1
         rate = native["reported_pct"]
         if rate is None:
@@ -181,7 +188,7 @@ def check_counties(page, code):
         page.locator(".substate-feature[data-geography='13319']").dispatch_event("click")
         expect(page.locator("#current-county-detail")).to_contain_text("Native isOfficialResults=true")
     if code == "MN":
-        for native in [row for row in records if row["review_id"] in source_ids]:
+        for native in [row for row in records if row["review_id"] == "minnesota-bulk-participation-20261106-01"]:
             if native["ballots"] is None or native["reported_pct"] is None:
                 page.locator("#current-county-select").select_option(native["county_id"])
                 detail = page.locator("#current-county-detail")
@@ -200,6 +207,20 @@ def check_counties(page, code):
                      "fetch receipts are not report updates", "not inferred ballot modes"):
             expect(detail).to_contain_text(text)
     if code == "PA":
+        page.locator(".substate-feature[data-geography='42073']").dispatch_event("click")
+        expect(page.locator("#current-county-select")).to_have_value("reviewed:PA:Lawrence")
+        detail = page.locator("#current-county-detail")
+        expect(detail.locator(".selection-rate")).to_have_text("31,401")
+        for text in ("Ballots Cast - Total", "57,470 native registered voters", "54.64%",
+                     "UNOFFICIAL RESULTS", "county: 11/03/2026 9:27 PM",
+                     "mail_only: 11/03/2026 8:21 PM", "unit: 11/03/2026 9:39 PM",
+                     "timezone not declared", "0/74 complete and 74/74 partially reported",
+                     "not another all-mode county total", "usable rates are withheld",
+                     "District 50 includes only 58 reporting units"):
+            expect(detail).to_contain_text(text)
+        path = page.locator(".substate-feature[data-geography='42073']")
+        assert math.isclose(float(path.get_attribute("data-rate")), 100 * 31401 / 57470)
+        assert path.get_attribute("fill") != "#edf0f3"
         page.locator(".substate-feature[data-geography='42081']").dispatch_event("click")
         expect(page.locator("#current-county-select")).to_have_value("reviewed:PA:Lycoming")
         detail = page.locator("#current-county-detail")
@@ -365,11 +386,11 @@ with sync_playwright() as playwright:
             if code == "GA":
                 check_georgia_statewide(page)
             totals[0] += counts; totals[1] += rates
-        assert totals == [737, 350]
+        assert totals == [738, 351]
         page.locator("#state-select").select_option(label="Vermont")
         expect(page.locator("#current-county-select option")).to_have_count(248)
         expect(page.locator("#geography-note")).to_contain_text("no whole-county participation joins are approved", timeout=30000)
-        expect(page.locator(".substate-feature[data-context-review='20261106-15']")).to_have_count(0)
+        expect(page.locator(".substate-feature[data-context-review='20261106-16']")).to_have_count(0)
         page.locator("#state-select").select_option(label="New Jersey")
         page.locator("#show-current-counties").click()
         check_counties(page, "NJ")
@@ -379,8 +400,9 @@ with sync_playwright() as playwright:
         expect(page.locator("#current-county-detail")).to_contain_text("attached summary, PDF page 2")
         page.locator('button[aria-controls="methods-panel"]').click()
         check_static(page)
-        modes.append(dict(mobile=mobile, javascript=True, complete_native_records_unchanged=1134,
-                          complete_current_native_records=1221, lycoming_native_participation_verified=True,
+        modes.append(dict(mobile=mobile, javascript=True, complete_native_records_unchanged=1221,
+                          complete_current_native_records=1222, lawrence_native_participation_verified=True,
+                          lycoming_native_participation_verified=True,
                           all_87_minnesota_inventories_verified=True, complete_minnesota_counts=75,
                           missing_minnesota_totals=12, eleven_minnesota_conflict_rates_withheld=True,
                           all_58_california_native_records_verified=True,
@@ -389,7 +411,7 @@ with sync_playwright() as playwright:
                           columbia_native_participation_and_separate_mail_qualifications_verified=True,
                           separate_native_statewide_count_and_registered_fraction_verified=True,
                           previous_jefferson_clarion_cameron_carbon_elk_forest_selection_preserved=True,
-                          exact_county_count_matches=737, exact_county_rate_fills=350, missing_rates_gray=387,
+                          exact_county_count_matches=738, exact_county_rate_fills=351, missing_rates_gray=387,
                           complete_imports_unchanged=18, excluded_municipalities=286,
                           excluded_missing_county_totals=198, previous_download_anchors_preserved=sum(old_links.values()),
                           download_anchors=sum(links.values()),
@@ -409,13 +431,13 @@ with sync_playwright() as playwright:
         if scenario == "failed-current":
             page.route("**/participation-current/**", lambda route: route.abort())
         else:
-            page.route("**/participation-county-context/20261106-15/review.json",
+            page.route("**/participation-county-context/20261106-16/review.json",
                        lambda route: route.fulfill(status=503 if scenario == "failed-review" else 200,
                                                    content_type="application/json", body='{"changed":true}'))
         page.goto(url("Pennsylvania"), wait_until="domcontentloaded")
         page.locator("#show-current-counties").click()
         if scenario == "failed-current":
-            assert check_counties(page, "PA") == (32, 29)
+            assert check_counties(page, "PA") == (33, 30)
             page.locator("#state-select").select_option(label="California")
             page.locator("#show-current-counties").click()
             assert check_counties(page, "CA") == (58, 58)

@@ -1,6 +1,34 @@
 {
   "reviews": [
     {
+      "id": "pennsylvania-lawrence-20261106-01",
+      "label": "Lawrence County, Pennsylvania 2026: native ballots, registrations and complete numerical query",
+      "data_directory": "data/county-source-reviews/20261106-lawrence-facts-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/f9f46f4fe5ec2f3093d35bbdb7c23bb808cb60f0/data/county-source-reviews/20261106-lawrence-facts-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-lawrence-20261106-01/complete-lawrence-2026-numerical-facts-01.zip",
+      "complete_download_bytes": 82186,
+      "complete_download_sha256": "285fa95573dbb7e984091aac64cbf6ac4069446c44835c542f72757bdf8ccc43",
+      "review_status": "complete_numerical_query_reviewed_unofficial",
+      "maps_approved": false,
+      "scope_note": "Native 31,401 ballots / 57,470 registrations, printed 54.64%, not a CVAP/VAP/VEP or demographic rate. All 74 distinct units reconcile to county registrations, ballots, blanks and modes; 280 unit contests reconcile to five county scopes. Preserve 0/74 complete and 74/74 partially reported, three distinct native clocks without a timezone, the separate earlier mail-only snapshot, nested write-in details and two withheld unit rounding discrepancies. State Senate District 50 includes only 58 units; state House districts 8/9 partition 23/51 units. All fifteen entire release assets, fifteen pinned files and fourteen ZIP members match, with standard-library offline byte reproduction. Native FIPS is missing; separately reviewed Census county context does not certify 2026 election reporting boundaries. Original HTML/PDF templates remain private.",
+      "tables": [
+        {"file": "county-participation.csv", "label": "Lawrence: complete county ballots, registrations, blank ballots and modes (CSV)"},
+        {"file": "mail-only-participation.csv", "label": "Lawrence: separate earlier mail-only participation snapshot, not another county total (CSV)"},
+        {"file": "native-unit-participation.csv", "label": "Lawrence: all 74 native unit participation rows and withheld rate flags (CSV)"},
+        {"file": "native-candidate-results.csv", "label": "Lawrence: all 1,236 native candidate and overlapping write-in rows across three reports (CSV)"},
+        {"file": "native-contest-accounting.csv", "label": "Lawrence: all 1,130 native selection, overvote, undervote and contest-total rows (CSV)"},
+        {"file": "county-literal-party-totals.csv", "label": "Lawrence: all 44 separately scoped candidate-party mode totals, not voter participation (CSV)"},
+        {"file": "native-reporting-statements.csv", "label": "Lawrence: all 18 native county and contest reporting statements (CSV)"},
+        {"file": "native-source-pages.csv", "label": "Lawrence: complete 214-page native inventory and three distinct report clocks (CSV)"},
+        {"file": "native-turnout-checks.csv", "label": "Lawrence: all 76 printed-versus-calculated rate checks, including two unit conflicts (CSV)"},
+        {"file": "source-records.json.gz", "label": "Lawrence: complete independently extracted numerical source records (JSON · gzip)"},
+        {"file": "source-receipts.json", "label": "Lawrence: all four entire original-response receipts and byte hashes (JSON)"},
+        {"file": "review-lawrence-county-results.py", "label": "Lawrence: complete standard-library offline query reproducer (Python)"},
+        {"file": "audit.json", "label": "Lawrence: complete query reconciliation and scope qualifications (JSON)"},
+        {"file": "checksums.json", "label": "Lawrence: complete factual-query byte inventory (JSON)"}
+      ]
+    },
+    {
       "id": "minnesota-bulk-participation-20261106-01",
       "label": "Minnesota: complete native participation statistics and separate candidate/party choices",
       "data_directory": "data/county-source-reviews/20261106-minnesota-facts-01",
