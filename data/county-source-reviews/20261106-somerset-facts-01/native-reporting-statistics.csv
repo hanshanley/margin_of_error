@@ -1,0 +1,5 @@
+state_code,county,election_date,source_report,source_page,source_update_literal,declared_timezone,native_status_literal,source_url,label_literal,reported,total,native_election_day_column,native_mail_column,native_provisional_column
+PA,Somerset,2026-11-03,summary,1,11/03/2026 11:03 PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/EMS Report.pdf,Election Day Precincts Reporting,67,67,67,0,0
+PA,Somerset,2026-11-03,summary,1,11/03/2026 11:03 PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/EMS Report.pdf,Precincts Complete,0,67,0,0,0
+PA,Somerset,2026-11-03,summary,1,11/03/2026 11:03 PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/EMS Report.pdf,Precincts Partially Reported,67,67,67,0,0
+PA,Somerset,2026-11-03,summary,1,11/03/2026 11:03 PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/EMS Report.pdf,Absentee/ Early Precincts Reporting,65,67,0,67,0

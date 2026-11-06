@@ -1,0 +1,69 @@
+state_code,county,election_date,source_report,source_page,source_update_literal,declared_timezone,native_status_literal,source_url,unit_literal,registered_voters,ballots_cast,blank_ballots,native_printed_turnout
+PA,Somerset,2026-11-03,statistics,1,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Addison Borough,127,71,0,55.91%
+PA,Somerset,2026-11-03,statistics,1,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Addison Township,625,337,0,53.92%
+PA,Somerset,2026-11-03,statistics,1,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Allegheny Township,460,275,0,59.78%
+PA,Somerset,2026-11-03,statistics,1,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Benson Borough,138,78,0,56.52%
+PA,Somerset,2026-11-03,statistics,1,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Berlin Borough,1371,722,0,52.66%
+PA,Somerset,2026-11-03,statistics,1,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Black Township,604,323,0,53.48%
+PA,Somerset,2026-11-03,statistics,1,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Boswell Borough,791,403,0,50.95%
+PA,Somerset,2026-11-03,statistics,1,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Brothersvalley Township,1655,912,0,55.11%
+PA,Somerset,2026-11-03,statistics,1,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Casselman Borough,62,33,0,53.23%
+PA,Somerset,2026-11-03,statistics,1,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Central City Borough,650,344,0,52.92%
+PA,Somerset,2026-11-03,statistics,1,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Conemaugh Township No. 1,1396,904,0,64.76%
+PA,Somerset,2026-11-03,statistics,1,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Conemaugh Township No. 2,1103,690,0,62.56%
+PA,Somerset,2026-11-03,statistics,1,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Conemaugh Township No. 3,1023,584,1,57.09%
+PA,Somerset,2026-11-03,statistics,1,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Conemaugh Township No. 4,1031,661,0,64.11%
+PA,Somerset,2026-11-03,statistics,1,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Conemaugh Township No. 5,399,215,0,53.88%
+PA,Somerset,2026-11-03,statistics,1,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Confluence Borough,422,223,0,52.84%
+PA,Somerset,2026-11-03,statistics,1,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Elk Lick Township,1017,528,0,51.92%
+PA,Somerset,2026-11-03,statistics,1,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Fairhope Township,94,49,0,52.13%
+PA,Somerset,2026-11-03,statistics,1,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Garrett Borough,252,122,0,48.41%
+PA,Somerset,2026-11-03,statistics,1,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Greenville Township,410,245,0,59.76%
+PA,Somerset,2026-11-03,statistics,1,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Hooversville Borough,406,207,0,50.99%
+PA,Somerset,2026-11-03,statistics,1,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Indian Lake Borough,396,283,0,71.46%
+PA,Somerset,2026-11-03,statistics,1,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Jefferson Township,1163,728,0,62.6%
+PA,Somerset,2026-11-03,statistics,1,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Jenner Township No. 1,1330,798,0,60%
+PA,Somerset,2026-11-03,statistics,1,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Jenner Township No. 2,687,425,0,61.86%
+PA,Somerset,2026-11-03,statistics,1,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Jenner Township No. 3,561,292,0,52.05%
+PA,Somerset,2026-11-03,statistics,1,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Jennerstown Borough,517,314,0,60.74%
+PA,Somerset,2026-11-03,statistics,1,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Larimer Township,436,242,0,55.5%
+PA,Somerset,2026-11-03,statistics,1,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Lincoln Township,1124,688,0,61.21%
+PA,Somerset,2026-11-03,statistics,1,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Lower Turkeyfoot Township,338,194,0,57.4%
+PA,Somerset,2026-11-03,statistics,1,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Meyersdale Borough,1320,624,0,47.27%
+PA,Somerset,2026-11-03,statistics,1,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Middlecreek Township,634,388,0,61.2%
+PA,Somerset,2026-11-03,statistics,1,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Milford Township,1083,658,0,60.76%
+PA,Somerset,2026-11-03,statistics,2,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,New Baltimore Borough,111,58,0,52.25%
+PA,Somerset,2026-11-03,statistics,2,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,New Centerville Borough,131,95,0,72.52%
+PA,Somerset,2026-11-03,statistics,2,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Northampton Township,253,170,0,67.19%
+PA,Somerset,2026-11-03,statistics,2,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Ogle Township,366,215,0,58.74%
+PA,Somerset,2026-11-03,statistics,2,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Paint Borough,556,269,0,48.38%
+PA,Somerset,2026-11-03,statistics,2,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Paint Township No. 1,1001,581,0,58.04%
+PA,Somerset,2026-11-03,statistics,2,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Paint Township No. 2,979,575,0,58.73%
+PA,Somerset,2026-11-03,statistics,2,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Paint Township No. 3,310,181,0,58.39%
+PA,Somerset,2026-11-03,statistics,2,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Quemahoning Township,1266,688,0,54.34%
+PA,Somerset,2026-11-03,statistics,2,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Rockwood Borough,533,249,0,46.72%
+PA,Somerset,2026-11-03,statistics,2,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Salisbury Borough,528,236,0,44.7%
+PA,Somerset,2026-11-03,statistics,2,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Seven Springs Borough,13,7,0,53.85%
+PA,Somerset,2026-11-03,statistics,2,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Shade Township No. 1,453,263,0,58.06%
+PA,Somerset,2026-11-03,statistics,2,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Shade Township No. 2,586,312,0,53.24%
+PA,Somerset,2026-11-03,statistics,2,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Shade Township No. 3,699,359,0,51.36%
+PA,Somerset,2026-11-03,statistics,2,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Shanksville Borough,126,64,0,50.79%
+PA,Somerset,2026-11-03,statistics,2,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Somerset Borough East,944,348,0,36.86%
+PA,Somerset,2026-11-03,statistics,2,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Somerset Borough Northwest,1002,505,0,50.4%
+PA,Somerset,2026-11-03,statistics,2,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Somerset Borough Southwest,2073,1085,0,52.34%
+PA,Somerset,2026-11-03,statistics,2,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Somerset Township No. 1,1406,761,0,54.13%
+PA,Somerset,2026-11-03,statistics,2,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Somerset Township No. 2,1705,968,0,56.77%
+PA,Somerset,2026-11-03,statistics,2,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Somerset Township No. 3,1722,967,0,56.16%
+PA,Somerset,2026-11-03,statistics,2,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Somerset Township No. 4,1128,646,1,57.27%
+PA,Somerset,2026-11-03,statistics,2,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Southampton Township,432,259,0,59.95%
+PA,Somerset,2026-11-03,statistics,2,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Stonycreek Township,1488,828,0,55.65%
+PA,Somerset,2026-11-03,statistics,2,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Stoystown Borough,221,134,0,60.63%
+PA,Somerset,2026-11-03,statistics,2,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Summit Township,1349,726,0,53.82%
+PA,Somerset,2026-11-03,statistics,2,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Upper Turkeyfoot Township,803,497,0,61.89%
+PA,Somerset,2026-11-03,statistics,2,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Ursina Borough,148,78,0,52.7%
+PA,Somerset,2026-11-03,statistics,2,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Wellersburg Borough,142,86,0,60.56%
+PA,Somerset,2026-11-03,statistics,2,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Windber Borough No. 1,636,309,0,48.58%
+PA,Somerset,2026-11-03,statistics,2,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Windber Borough No. 2,865,440,1,50.87%
+PA,Somerset,2026-11-03,statistics,2,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Windber Borough No. 3,465,248,0,53.33%
+PA,Somerset,2026-11-03,statistics,3,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Windber Borough No. 4,513,252,0,49.12%
+PA,Somerset,2026-11-03,statistics,3,11/03/2026 11:11PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf,Totals,48578,27019,3,

@@ -1,0 +1,135 @@
+{
+  "reviewed_at_utc": "2026-11-06T15:05:00.770468+00:00",
+  "private_originals": "/Users/hanshanley/.copilot/session-state/fdbfdac0-2fcb-428c-8cec-616c510977b2/files/pa-somerset-erie-fayette-20261106-01",
+  "receipts": [
+    {
+      "file": "somerset-parent.html",
+      "url": "https://www.co.somerset.pa.us/pages/voters/electionresults.asp",
+      "parent": null,
+      "native_anchor_label": null,
+      "attempted_at_utc": "2026-11-06T15:05:00.076800+00:00",
+      "transport": "ordinary requests GET with default verified TLS; no access bypass",
+      "final_url": "https://www.co.somerset.pa.us/pages/voters/electionresults.asp",
+      "status": 200,
+      "content_type": "text/html",
+      "bytes": 20383,
+      "sha256": "05fba763340008344ca488865fa5e9099c804f50d4c156182fe2f41dba9c104b"
+    },
+    {
+      "file": "somerset-statistics.pdf",
+      "url": "https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf",
+      "parent": "https://www.co.somerset.pa.us/pages/voters/electionresults.asp",
+      "native_anchor_label": "Statistics.pdf",
+      "attempted_at_utc": "2026-11-06T15:05:00.394075+00:00",
+      "transport": "ordinary requests GET with default verified TLS; no access bypass",
+      "final_url": "https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 15239,
+      "sha256": "0ee4e44ba91bf6ee41c0b957a9581911bf8a73ec15350333fe6f09fded848e10"
+    },
+    {
+      "file": "somerset-precinct.pdf",
+      "url": "https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Precinct Breakdown.pdf",
+      "parent": "https://www.co.somerset.pa.us/pages/voters/electionresults.asp",
+      "native_anchor_label": "Precinct Breakdown.pdf",
+      "attempted_at_utc": "2026-11-06T15:05:00.419193+00:00",
+      "transport": "ordinary requests GET with default verified TLS; no access bypass",
+      "final_url": "https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Precinct%20Breakdown.pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 171298,
+      "sha256": "ca8bc9cd90cc51d2ceb853f16bec8e24a2fee0dc1c8439ac1bdbf8e8925c6335"
+    },
+    {
+      "file": "somerset-summary.pdf",
+      "url": "https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/EMS Report.pdf",
+      "parent": "https://www.co.somerset.pa.us/pages/voters/electionresults.asp",
+      "native_anchor_label": "EMS Report.pdf",
+      "attempted_at_utc": "2026-11-06T15:05:00.488169+00:00",
+      "transport": "ordinary requests GET with default verified TLS; no access bypass",
+      "final_url": "https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/EMS%20Report.pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 26083,
+      "sha256": "0e39ace7e5c406535e79aee6b8e5c2661e0cac9830c527da661818bf59ffc1b4"
+    },
+    {
+      "file": "erie-parent.html",
+      "url": "https://www.eriecountycouncilpa.gov/elections-voting/election-results",
+      "parent": null,
+      "native_anchor_label": null,
+      "attempted_at_utc": "2026-11-06T15:05:00.516188+00:00",
+      "transport": "ordinary requests GET with default verified TLS; no access bypass",
+      "final_url": "https://www.eriecountycouncilpa.gov/elections-voting/election-results",
+      "status": 403,
+      "content_type": "text/html",
+      "bytes": 6559,
+      "sha256": "e244c381f54f4773761abe68bd9338f8ea2964f2c897ea80894016b1fa7735a9"
+    },
+    {
+      "file": "fayette-parent.html",
+      "url": "https://www.fayettecountypa.org/235/Election-Results",
+      "parent": null,
+      "native_anchor_label": null,
+      "attempted_at_utc": "2026-11-06T15:05:00.598001+00:00",
+      "transport": "ordinary requests GET with default verified TLS; no access bypass",
+      "final_url": "https://www.fayettecountypa.org/235/Election-Results",
+      "status": 404,
+      "content_type": null,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "source_declarations": [
+    {
+      "county": "somerset",
+      "parent_url": "https://www.co.somerset.pa.us/pages/voters/electionresults.asp",
+      "anchor_href_literal": "../../files/voter_files/ElectionResultsUpload/Statistics.pdf",
+      "native_anchor_label": "Statistics.pdf",
+      "resolved_url": "https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Statistics.pdf",
+      "file": "somerset-statistics.pdf"
+    },
+    {
+      "county": "somerset",
+      "parent_url": "https://www.co.somerset.pa.us/pages/voters/electionresults.asp",
+      "anchor_href_literal": "../../files/voter_files/ElectionResultsUpload/Precinct Breakdown.pdf",
+      "native_anchor_label": "Precinct Breakdown.pdf",
+      "resolved_url": "https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/Precinct Breakdown.pdf",
+      "file": "somerset-precinct.pdf"
+    },
+    {
+      "county": "somerset",
+      "parent_url": "https://www.co.somerset.pa.us/pages/voters/electionresults.asp",
+      "anchor_href_literal": "../../files/voter_files/ElectionResultsUpload/EMS Report.pdf",
+      "native_anchor_label": "EMS Report.pdf",
+      "resolved_url": "https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/EMS Report.pdf",
+      "file": "somerset-summary.pdf"
+    }
+  ],
+  "numerical_review_complete": false,
+  "whole_county_participation_approved": false,
+  "query_release_created": false,
+  "maps_approved": false,
+  "qualification": "Batch transport review; the county-specific Somerset numerical review is recorded separately below. Erie returned 403 and was not bypassed or retried. Fayette returned an empty 404 response, not proof of global source absence. No batch-wide numerical, release or live UI approval is inferred. Raw source HTML and PDFs remain private.",
+  "somerset_numerical_review": {
+    "complete_query_directory": "data/county-source-reviews/20261106-somerset-facts-01",
+    "complete_pages_compared_by_two_pdf_engines": 73,
+    "native_units": 67,
+    "county_contests": 6,
+    "native_facts_sha256": "7cfc82b959ff815ee9cfc438b26303e67674a8e0271018d3c23f343d806d63bb",
+    "ballots": [27019, 23233, 3786, 0],
+    "blank_ballots_already_included": [3, 3, 0, 0],
+    "registered_voters": 48578,
+    "native_printed_turnout": "55.62%",
+    "summary_clock_literal": "11/03/2026 11:03 PM",
+    "precinct_clock_literal": "11/03/2026 11:08 PM",
+    "statistics_clock_literal": "11/03/2026 11:11PM",
+    "declared_timezone": "",
+    "native_status_literal": "UNOFFICIAL RESULTS",
+    "native_fips": null,
+    "maps_approved": false,
+    "complete_counting": false,
+    "qualification": "All supplied unit participation and candidate-mode vectors reconcile with county summaries. Preserve native 0/67 complete, 67/67 partial and 65/67 absentee reporting with 67 in the mail column. Eight statistics percentages omit trailing zeros but equal their distinct native precinct strings numerically. Native total votes cast, contest totals, overvotes and undervotes are absent, not zero. No district or mode borrows county registrations. Publication and explorer integration are not yet approved."
+  }
+}

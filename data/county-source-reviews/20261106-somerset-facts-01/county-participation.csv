@@ -1,0 +1,2 @@
+state_code,county,election_date,source_report,source_page,source_update_literal,declared_timezone,native_status_literal,source_url,native_measure_literal,ballots_cast,registered_voters,native_printed_turnout,calculated_registered_fraction,blank_ballots_already_included,source_fips,complete_counting,maps_approved
+PA,Somerset,2026-11-03,summary,1,11/03/2026 11:03 PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/EMS Report.pdf,Ballots Cast - Total,27019,48578,55.62%,0.556198279056363,3,,False,False

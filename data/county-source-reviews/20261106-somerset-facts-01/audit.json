@@ -1,0 +1,16 @@
+{
+  "complete_report_pages": 73,
+  "native_units": 67,
+  "county_contests": 6,
+  "all_county_and_unit_candidates_reconcile_all_modes": true,
+  "all_unit_registrations_ballots_and_blanks_reconcile": true,
+  "all_statistics_rows_independently_crosschecked": true,
+  "native_percentage_trailing_zero_formatting_preserved": true,
+  "blank_ballots_already_included": true,
+  "missing_accounting_is_not_zero": true,
+  "native_reporting_counter_conflicts_preserved": true,
+  "source_fips_absent": true,
+  "maps_approved": false,
+  "complete_counting": false,
+  "scope": "Complete three Somerset numerical reports, not new geography or demographic participation."
+}

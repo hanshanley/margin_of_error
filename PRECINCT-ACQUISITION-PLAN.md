@@ -53,6 +53,33 @@ map approval or metadata-only download was created. Do not retry these same
 unchanged endpoints. Continue different source-declared county/Maine alternatives;
 leave the verified context18 UI and Maine/D.C. residuals unchanged.
 
+**November 6, 15:11 UTC: Somerset complete numerical query verified locally; publication pending.**
+The official November 3 declaring page and its three complete PDFs were acquired
+with verified TLS. Two independent extractors agree on **all 73 numerical pages**:
+three EMS-summary pages, 67 precinct pages including every candidate row, and three
+statistics pages. **27,019 ballots / 48,578 registrations / printed 55.62%**;
+TOTAL / Election Day / Absentee-Mail-In / Provisional ballots are
+**27,019 / 23,233 / 3,786 / 0**, with **3 / 3 / 0 / 0** blanks already included.
+All 67 native units and six county contests reconcile in every supplied mode.
+Preserve the three distinct clocks, **11/03/2026 11:03 PM**, **11:08 PM** and
+**11:11PM**, with no supplied timezone, and UNOFFICIAL RESULTS status.
+Native **0/67 complete / 67/67 partial** and **65/67 absentee reporting with 67
+in its mail column** remain unchanged. Eight statistics percentages omit trailing
+zeros; both native strings survive and their decimal values agree exactly.
+Contest totals, total votes cast, overvotes and undervotes are absent, not zero;
+restricted contests and modes receive no borrowed registration denominator.
+The **17-file / 16-member** complete query in `20261106-somerset-facts-01`
+passes **12 isolated tests** and extracted, standard-library byte-identical
+reproduction of every file. ZIP **54,348 bytes**, SHA-256
+`c50cadbe1e29ee6c5067ff34f80c8ac1e8188addeb6f9fa7bcc08e22c25fe47e`.
+No native FIPS, geography, certification or counting completion is inferred.
+Next: publish and server-lock the complete query, then independently review
+contextual identity before any tested explorer integration. The live context18
+baseline remains unchanged. The separate Erie parent returned **403**, without
+bypass or retry; Fayette returned an empty **404**, not global absence evidence.
+Their complete receipts are retained in
+`20261106-pa-somerset-erie-fayette-acquisition-01`.
+
 **November 6, 14:41 UTC: context18 published and server-locked; UI validation in progress.**
 Release **436611038**, tag `voter-county-participation-context-20261106-18`,
 reports **immutable: true** at source revision

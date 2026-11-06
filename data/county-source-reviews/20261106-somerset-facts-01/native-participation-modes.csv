@@ -1,0 +1,5 @@
+state_code,county,election_date,source_report,source_page,source_update_literal,declared_timezone,native_status_literal,source_url,unit_literal,counting_mode_literal,ballots_cast,blank_ballots,registered_voters,native_printed_turnout
+PA,Somerset,2026-11-03,summary,1,11/03/2026 11:03 PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/EMS Report.pdf,,TOTAL,27019,3,48578,55.62%
+PA,Somerset,2026-11-03,summary,1,11/03/2026 11:03 PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/EMS Report.pdf,,Election Day,23233,3,,
+PA,Somerset,2026-11-03,summary,1,11/03/2026 11:03 PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/EMS Report.pdf,,Absentee/Mail-In,3786,0,,
+PA,Somerset,2026-11-03,summary,1,11/03/2026 11:03 PM,,UNOFFICIAL RESULTS,https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/EMS Report.pdf,,Provisional,0,0,,
