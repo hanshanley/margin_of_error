@@ -1,0 +1,34 @@
+{
+  "audit.json": {
+    "bytes": 8402,
+    "sha256": "29edcbae54c5afe5c5378bfded1ccd266ad4300ba43e4f96dd514b7aff12d244"
+  },
+  "county-participation.csv": {
+    "bytes": 46557,
+    "sha256": "ac89dddfe3b9afd20f4dbe45203022eede6e97cd02e209676a527099afe947fe"
+  },
+  "native-aggregate-participation.csv": {
+    "bytes": 13676,
+    "sha256": "57727ff1a4b0da6151391228cab6e65c128fd11180dbef385b57cccd57cf9766"
+  },
+  "native-counting-qualifications.csv": {
+    "bytes": 4112,
+    "sha256": "342cb5983e5fbf52f3f6f9aa3d5bc2018a2ade518d8ca230bc42eb7ce849e2ce"
+  },
+  "native-source-pages.csv": {
+    "bytes": 5216,
+    "sha256": "39919763d7349bd5600dbab531fd36b0d7cef860ca55dbcf8d30f5b91de11dcf"
+  },
+  "review-new-jersey-periodic-participation.py": {
+    "bytes": 20284,
+    "sha256": "427f544d8eecd71bccad648d66d93b4b24272efd6bd58a021ea5a7abc74509b2"
+  },
+  "source-receipts.json": {
+    "bytes": 10413,
+    "sha256": "d8b82505c2691d18975c5757672f95ec0269390ae38f7294618bcb6d52498c48"
+  },
+  "source-records.json.gz": {
+    "bytes": 6119,
+    "sha256": "82c1181f269573c234a91dc82903ac190e495f6542046afbbe11979e29a47e37"
+  }
+}

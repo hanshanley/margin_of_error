@@ -1,0 +1,103 @@
+{
+  "verified_at_utc": "2026-11-06T05:37:57.355991+00:00",
+  "complete_successful_source_receipts": 23,
+  "complete_identical_reviewed_county_pdfs": 21,
+  "declared_county_catalog_identical": true,
+  "html_captures": [
+    {
+      "file": "official-periodic-index.html",
+      "bytes_identical_to_prior_capture": false
+    },
+    {
+      "file": "official-2026-index.html",
+      "bytes_identical_to_prior_capture": false
+    }
+  ],
+  "pdfs": [
+    {
+      "file": "cape-may-periodic-report.pdf",
+      "bytes_identical_to_reviewed_source": true
+    },
+    {
+      "file": "hunterdon-periodic-report.pdf",
+      "bytes_identical_to_reviewed_source": true
+    },
+    {
+      "file": "hudson-periodic-report.pdf",
+      "bytes_identical_to_reviewed_source": true
+    },
+    {
+      "file": "cumberland-periodic-report.pdf",
+      "bytes_identical_to_reviewed_source": true
+    },
+    {
+      "file": "mercer-periodic-report.pdf",
+      "bytes_identical_to_reviewed_source": true
+    },
+    {
+      "file": "sussex-periodic-report.pdf",
+      "bytes_identical_to_reviewed_source": true
+    },
+    {
+      "file": "bergen-periodic-report.pdf",
+      "bytes_identical_to_reviewed_source": true
+    },
+    {
+      "file": "ocean-periodic-report.pdf",
+      "bytes_identical_to_reviewed_source": true
+    },
+    {
+      "file": "monmouth-periodic-report.pdf",
+      "bytes_identical_to_reviewed_source": true
+    },
+    {
+      "file": "salem-periodic-report.pdf",
+      "bytes_identical_to_reviewed_source": true
+    },
+    {
+      "file": "union-periodic-report.pdf",
+      "bytes_identical_to_reviewed_source": true
+    },
+    {
+      "file": "atlantic-periodic-report.pdf",
+      "bytes_identical_to_reviewed_source": true
+    },
+    {
+      "file": "somerset-periodic-report.pdf",
+      "bytes_identical_to_reviewed_source": true
+    },
+    {
+      "file": "essex-periodic-report.pdf",
+      "bytes_identical_to_reviewed_source": true
+    },
+    {
+      "file": "warren-periodic-report.pdf",
+      "bytes_identical_to_reviewed_source": true
+    },
+    {
+      "file": "morris-periodic-report.pdf",
+      "bytes_identical_to_reviewed_source": true
+    },
+    {
+      "file": "middlesex-periodic-report.pdf",
+      "bytes_identical_to_reviewed_source": true
+    },
+    {
+      "file": "camden-periodic-report.pdf",
+      "bytes_identical_to_reviewed_source": true
+    },
+    {
+      "file": "burlington-periodic-report.pdf",
+      "bytes_identical_to_reviewed_source": true
+    },
+    {
+      "file": "passaic-periodic-report.pdf",
+      "bytes_identical_to_reviewed_source": true
+    },
+    {
+      "file": "gloucester-periodic-report.pdf",
+      "bytes_identical_to_reviewed_source": true
+    }
+  ],
+  "note": "Live index HTML bytes changed; both captures and receipts remain private. All 21 selected declared links and all 21 complete PDF bytes remain identical. No source receipt was overwritten."
+}

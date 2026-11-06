@@ -1,0 +1,186 @@
+{
+  "atlantic-periodic-report.pdf": {
+    "bytes": 99290,
+    "fetched_at": "2026-11-06T05:26:22.751336+00:00",
+    "final_url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-atlantic-periodic-report.pdf",
+    "sha256": "010bd140bad96d736d9b7b0f7252161c04f848d7fa32044434d4d1a6540b1203",
+    "status": 200,
+    "url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-atlantic-periodic-report.pdf"
+  },
+  "bergen-periodic-report.pdf": {
+    "bytes": 1384498,
+    "fetched_at": "2026-11-06T05:27:01.792197+00:00",
+    "final_url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-bergen-periodic-report.pdf",
+    "sha256": "daa7cb945df449819a4b2ddce9aa99e6632b4ded0d19c2fe63e7b8db50e8c86a",
+    "status": 200,
+    "url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-bergen-periodic-report.pdf"
+  },
+  "burlington-periodic-report.pdf": {
+    "bytes": 274124,
+    "fetched_at": "2026-11-06T05:27:06.968050+00:00",
+    "final_url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-burlington-periodic-report.pdf",
+    "sha256": "06bbe17fda22133f2453a13cc55a760a241fee912089e8076b64d268ecddc10b",
+    "status": 200,
+    "url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-burlington-periodic-report.pdf"
+  },
+  "camden-periodic-report.pdf": {
+    "bytes": 126659,
+    "fetched_at": "2026-11-06T05:27:07.308714+00:00",
+    "final_url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-camden-periodic-report.pdf",
+    "sha256": "e51bfce1a9660ed688550eca7b4de676dd4d45f6d9ffac4c5ae524adcb64ec11",
+    "status": 200,
+    "url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-camden-periodic-report.pdf"
+  },
+  "cape-may-periodic-report.pdf": {
+    "bytes": 139501,
+    "fetched_at": "2026-11-06T05:27:07.702533+00:00",
+    "final_url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-capemay-periodic-report.pdf",
+    "sha256": "f1087e514eac01dceb9da0cfb71e598115e69c3cc4135ba6442619d0c8cb2b2a",
+    "status": 200,
+    "url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-capemay-periodic-report.pdf"
+  },
+  "cumberland-periodic-report.pdf": {
+    "bytes": 265249,
+    "fetched_at": "2026-11-06T05:27:08.892644+00:00",
+    "final_url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-cumberland-periodic-report.pdf",
+    "sha256": "b04c1ce6a7e78aa992e200fb385372544e36ed8243db7e2131ff6482016017fc",
+    "status": 200,
+    "url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-cumberland-periodic-report.pdf"
+  },
+  "essex-periodic-report.pdf": {
+    "bytes": 107739,
+    "fetched_at": "2026-11-06T05:27:09.228444+00:00",
+    "final_url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-essex-periodic-report.pdf",
+    "sha256": "977a4a8358c1faa86e5cc04e0912e4fb43c8204b87da2493ac5dfd4434f4adeb",
+    "status": 200,
+    "url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-essex-periodic-report.pdf"
+  },
+  "gloucester-periodic-report.pdf": {
+    "bytes": 25067,
+    "fetched_at": "2026-11-06T05:27:09.466605+00:00",
+    "final_url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-gloucester-periodic-report.pdf",
+    "sha256": "e8cf920c29aa7308ab135f5b658438ce14b236766705a709182a8c0a00bd5ff8",
+    "status": 200,
+    "url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-gloucester-periodic-report.pdf"
+  },
+  "hudson-periodic-report.pdf": {
+    "bytes": 264369,
+    "fetched_at": "2026-11-06T05:27:10.172057+00:00",
+    "final_url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-hudson-periodic-report.pdf",
+    "sha256": "0921161a3fbf5b6e26dfee7f2cc3348d15ec22acdbbea817d9f74a903ab1286e",
+    "status": 200,
+    "url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-hudson-periodic-report.pdf"
+  },
+  "hunterdon-periodic-report.pdf": {
+    "bytes": 113635,
+    "fetched_at": "2026-11-06T05:27:10.510756+00:00",
+    "final_url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-hunterdon-periodic-report.pdf",
+    "sha256": "6480a5c51262bb56966f6a670a52bd8f8b421f8a67d9f9bcb54756c99adb6d03",
+    "status": 200,
+    "url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-hunterdon-periodic-report.pdf"
+  },
+  "mercer-periodic-report.pdf": {
+    "bytes": 101646,
+    "fetched_at": "2026-11-06T05:27:10.768222+00:00",
+    "final_url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-mercer-periodic-report.pdf",
+    "sha256": "92b544237dce83e4955eebdad2686fe9ddbd7641d868c8e2281f45b60d0e3609",
+    "status": 200,
+    "url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-mercer-periodic-report.pdf"
+  },
+  "middlesex-periodic-report.pdf": {
+    "bytes": 101406,
+    "fetched_at": "2026-11-06T05:27:11.196438+00:00",
+    "final_url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-middlesex-periodic-report.pdf",
+    "sha256": "4f9ec204d8bccca7e2a8286f3f2d2e38c8a422b34202d513e669eab9cc58ee50",
+    "status": 200,
+    "url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-middlesex-periodic-report.pdf"
+  },
+  "monmouth-periodic-report.pdf": {
+    "bytes": 130111,
+    "fetched_at": "2026-11-06T05:27:11.490921+00:00",
+    "final_url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-monmouth-periodic-report.pdf",
+    "sha256": "f37e30240d54eddfbceca69c05730be0c69a0bb32b8359559571eb28da47a65e",
+    "status": 200,
+    "url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-monmouth-periodic-report.pdf"
+  },
+  "morris-periodic-report.pdf": {
+    "bytes": 380155,
+    "fetched_at": "2026-11-06T05:27:11.955076+00:00",
+    "final_url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-morris-periodic-report.pdf",
+    "sha256": "535a491de3a3a11fcb3dc70651705e1ea10df16ed78b9b950bb976079df9722b",
+    "status": 200,
+    "url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-morris-periodic-report.pdf"
+  },
+  "ocean-periodic-report.pdf": {
+    "bytes": 129470,
+    "fetched_at": "2026-11-06T05:27:12.566680+00:00",
+    "final_url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-ocean-periodic-report.pdf",
+    "sha256": "fc443d2d29a36ceba93a4b59bf0a8de552f133a41d92e17f2942b468a84d110b",
+    "status": 200,
+    "url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-ocean-periodic-report.pdf"
+  },
+  "official-2026-index.html": {
+    "bytes": 87459,
+    "fetched_at": "2026-11-06T05:25:40.992117+00:00",
+    "final_url": "https://www.nj.gov/state/elections/election-information-2026.shtml",
+    "sha256": "121e77cc1c427bb6daf97e5a46ed69c52a60656c78e2319a57f60624727e6480",
+    "status": 200,
+    "url": "https://www.nj.gov/state/elections/election-information-2026.shtml"
+  },
+  "official-periodic-index.html": {
+    "bytes": 175958,
+    "fetched_at": "2026-11-06T05:26:12.506133+00:00",
+    "final_url": "https://www.nj.gov/state/elections/election-results-information.shtml",
+    "sha256": "b0ee2dd5a27e8bd0411647d1b72eb6913388880b3ad3f3c97c9dcdaea56b9373",
+    "status": 200,
+    "url": "https://www.nj.gov/state/elections/election-results-information.shtml"
+  },
+  "passaic-periodic-report.pdf": {
+    "bytes": 114537,
+    "fetched_at": "2026-11-06T05:27:12.978792+00:00",
+    "final_url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-passaic-periodic-report.pdf",
+    "sha256": "23ca1b62df17bcbab7d7d1f748c40cee48d9b4df8001ab85213aad0991b2fddf",
+    "status": 200,
+    "url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-passaic-periodic-report.pdf"
+  },
+  "salem-periodic-report.pdf": {
+    "bytes": 106667,
+    "fetched_at": "2026-11-06T05:27:13.237545+00:00",
+    "final_url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-salem-periodic-report.pdf",
+    "sha256": "6614ad90b283612f667aa60fd91537b08b9eb22b84abf911078314e3852d4e01",
+    "status": 200,
+    "url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-salem-periodic-report.pdf"
+  },
+  "somerset-periodic-report.pdf": {
+    "bytes": 112746,
+    "fetched_at": "2026-11-06T05:27:13.587399+00:00",
+    "final_url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-somerset-periodic-report.pdf",
+    "sha256": "5d41f9ff3c5b5bf4f18757655f32396830d637ca07f7c25059b2402403576a27",
+    "status": 200,
+    "url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-somerset-periodic-report.pdf"
+  },
+  "sussex-periodic-report.pdf": {
+    "bytes": 339932,
+    "fetched_at": "2026-11-06T05:27:13.900469+00:00",
+    "final_url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-sussex-periodic-report.pdf",
+    "sha256": "ede5f20f8df0ad6b3598dc909c2a6ed0f2ef4905d9a9472009271aedcf518536",
+    "status": 200,
+    "url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-sussex-periodic-report.pdf"
+  },
+  "union-periodic-report.pdf": {
+    "bytes": 24188,
+    "fetched_at": "2026-11-06T05:27:14.173603+00:00",
+    "final_url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-union-periodic-report.pdf",
+    "sha256": "d782d84c9b5ad7776a612c8257f8b09fe77fc429178c82d1d3308dab91a42ffe",
+    "status": 200,
+    "url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-union-periodic-report.pdf"
+  },
+  "warren-periodic-report.pdf": {
+    "bytes": 112017,
+    "fetched_at": "2026-11-06T05:27:14.586695+00:00",
+    "final_url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-warren-periodic-report.pdf",
+    "sha256": "e229b48394cc2d9622a369b4fbb124c1ddb5805a854499b2e5ebcda2d4277a9b",
+    "status": 200,
+    "url": "https://www.nj.gov/state/elections/assets/pdf/periodic-report/2026/2026-1105-warren-periodic-report.pdf"
+  }
+}
