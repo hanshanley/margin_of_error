@@ -1,6 +1,7 @@
 """Exercise the built participation atlas against its saved source observations."""
 
 import argparse
+import csv
 import gzip
 import json
 import math
@@ -144,6 +145,35 @@ def check_current_participation(browser):
              "&map-color=turnout&map-level=precinct&mode=available&state=North+Carolina")
     proof = {"base_url": args.base_url, "checks": []}
     errors = []
+    pa_sources = {}
+    for review in participation_reviews:
+        if review["id"] in {"pennsylvania-centre-20261106-01", "pennsylvania-berks-20261105-01",
+                            "pennsylvania-northampton-20261105-01"}:
+            with (public.parent / review["data_directory"] / "county-participation.csv").open(newline="") as source:
+                native_rows = list(csv.DictReader(source))
+            assert len(native_rows) == 1
+            native = native_rows[0]
+            pa_sources[native["county_fips"]] = (native, review)
+    assert len(pa_sources) == 3
+
+    def pa_counties(page):
+        table = page.locator("table[data-reviewed-county-participation]")
+        observations = json.loads(table.get_attribute("data-reviewed-county-participation"))
+        assert len(observations) == 3
+        for row in observations:
+            native, review = pa_sources[row["county_id"]]
+            assert set(row["native_record"]) == set(native)
+            for key, value in native.items():
+                actual = row["native_record"][key]
+                assert ("" if actual is None else str(actual)) == value, (key, actual, value)
+            ballots = int(native.get("ballots", native.get("ballots_cast")))
+            registrations = int(native["registered_voters"])
+            assert row["ballots"] == ballots and row["denominator"] == registrations
+            assert row["reported_pct"] == 100 * ballots / registrations
+            assert row["maps_approved"] is False
+            assert row["source_url"] == review["base_url"] + "county-participation.csv"
+            assert row["complete_download_url"] == review["complete_download_url"]
+        return observations
 
     def rates(page, basis):
         paths = page.locator('.map-feature[data-state][data-rate-source="uf_estimate"]')
@@ -207,7 +237,44 @@ def check_current_participation(browser):
         rates(page, "VEP")
         proof["checks"].append({"viewport": name, "uf_state_rates": 51, "nc_county_rates": 100,
                                 "exact_url": True, "vep_and_vap": True, "default_participation": True})
+        page.goto(url + "?year=2026&state=Pennsylvania&mode=available&map-level=county&map-color=turnout")
+        expect(page.locator("#current-county-select option")).to_have_count(4)
+        expect(page.locator("#reviewed-county-overview button")).to_have_count(3)
+        expect(page.locator("#selection-panel > .selection-rate")).to_have_text(
+            f'{uf_states["Pennsylvania"]["VEP_TURNOUT_RATE"]:.2f}%')
+        observations = pa_counties(page)
+        for row in observations:
+            button = page.locator(f'#reviewed-county-overview button[data-county-id="{row["county_id"]}"]')
+            expect(button).to_contain_text(f'{row["ballots"]:,}')
+            expect(button).to_contain_text(f'{row["denominator"]:,}')
+            button.click()
+            detail = page.locator("#current-county-detail")
+            expect(detail.locator(".selection-rate")).to_have_text(f'{row["ballots"]:,}')
+            expect(detail).to_contain_text(f'{row["reported_pct"]:.1f}%')
+            expect(detail).to_contain_text(row["native_printed_pct"] or "not supplied")
+            expect(detail).to_contain_text(row["source_reporting_label"])
+            expect(detail.locator("a").first).to_have_attribute("href", row["source_url"])
+            expect(page.locator("#table-body tr")).to_have_count(1)
+            expect(page.locator("#current-unit-select")).to_have_count(0)
+        page.locator('.map-feature[data-state="Pennsylvania"]').dispatch_event("click")
+        expect(page.locator("#geography-note")).to_contain_text("County mapping is not approved")
+        expect(page.locator('.substate-feature[data-level="county"]')).to_have_count(0)
+        expect(page.locator("#show-current-counties")).to_have_count(0)
+        no_overflow(page)
+        screenshot(page, f"participation-2026-pa-counties-{name}.png")
+        proof["checks"].append({"viewport": name, "pa_source_matched_counties": 3,
+                                "complete_native_records_and_downloads": True,
+                                "printed_rates_and_counting_status_preserved": True,
+                                "no_unapproved_county_or_precinct_maps": True})
         page.close()
+        context = browser.new_context(viewport={"width": width, "height": height}, java_script_enabled=False)
+        static = context.new_page()
+        static.goto(url + "?year=2026&state=Pennsylvania")
+        pa_counties(static)
+        expect(static.locator("table[data-reviewed-county-participation] tbody tr")).to_have_count(3)
+        no_overflow(static)
+        proof["checks"].append({"viewport": name, "javascript": False, "complete_pa_county_observations": 3})
+        context.close()
 
     page = browser.new_page()
     page.on("pageerror", lambda error: errors.append(str(error)))
@@ -250,13 +317,32 @@ def check_current_participation(browser):
     rates(broken, "VEP")
     expect(broken.locator("#official-state-counts")).to_have_count(0)
     proof["checks"].append({"uf_survives_official_feed_failure": True})
+    broken.goto(url + "?year=2026&state=Pennsylvania&mode=available&map-level=county")
+    expect(broken.locator("#current-county-select option")).to_have_count(4)
+    expect(broken.locator("#reviewed-county-overview button")).to_have_count(3)
+    pa_counties(broken)
+    proof["checks"].append({"pa_counties_survive_official_feed_failure": True})
     broken.close()
+    local_failure = browser.new_page()
+    local_failure.on("pageerror", lambda error: errors.append(str(error)))
+    local_failure.route("**/participation-current/**/local.json", lambda route: route.abort())
+    local_failure.goto(url + "?year=2026&state=Pennsylvania&mode=available&map-level=county")
+    expect(local_failure.locator("#reviewed-county-overview button")).to_have_count(3)
+    pa_counties(local_failure)
+    local_failure.goto(url + exact)
+    rates(local_failure, "VEP")
+    expect(local_failure.locator("#current-local-navigation")).to_contain_text("No local counts inferred")
+    expect(local_failure.locator("#current-county-select")).to_have_count(0)
+    proof["checks"].append({"pa_counties_survive_local_file_failure": True,
+                            "no_cross_state_count_fallback": True})
+    local_failure.close()
     assert not errors, errors
     if args.proof:
         args.proof.parent.mkdir(parents=True, exist_ok=True)
         args.proof.write_text(json.dumps(proof, indent=2) + "\n")
     print("PASS: exact 2026 URL, 51 UF VEP/VAP rates, 100 NC county rates, mobile, "
-          "official/early separation, NM precinct coverage, historical CPS and candidate layers.")
+          "three source-matched PA county observations, official/early separation, NM precinct coverage, "
+          "historical CPS and candidate layers.")
 
 
 with sync_playwright() as p:

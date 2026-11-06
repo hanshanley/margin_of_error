@@ -4,7 +4,7 @@
 
 **November 6 priority: participation must be the primary display.** The user's
 exact 2026 North Carolina link showed New Mexico's partial precinct layer, while
-already-reviewed UF state turnout estimates were buried in Methods. The pending
+already-reviewed UF state turnout estimates were buried in Methods. The deployed
 fix makes participation the default map color and retains counties as default
 detail. The regular state view now exposes all 51 state/D.C. UF VEP or VAP
 estimates, keeps the national aggregate separate, and labels every value as a
@@ -21,9 +21,27 @@ explicit candidate layers, early-count separation and UF display after an
 official-feed failure. Seven participation tests, Astro check and build pass;
 Pages preparation verifies 94 downloads at 987,378,512 bytes. Four display modes
 retain the exact 288-URL / 291-anchor download multiset, all 52 UF rows, five
-historical years and 255 scope cells. Production verification is still required
-for this display change. No new demographic estimate, county acquisition,
+historical years and 255 scope cells. Revision
+`82fbc60a3d3f03fa59fbaac2a14d4f0740295054` passed Pages `42141760920`,
+credential runs `42141761131` / `42141758785`, and exact source-matched production
+checks at `2026-11-06T01:14:38.340174+00:00`. Renderer, registry and download
+manifest bytes match. See `20261106-participation-display-01`. No new demographic estimate, county acquisition,
 map-source approval or completeness claim is created.
+
+**Pennsylvania participation integration:** the existing Centre, Berks and
+Northampton county ballot/native-registration observations are now rendered in
+the main state sidebar and county selector, with all three counts visible before
+selection. Complete native records come from the already-reviewed audits and are
+checked against every field of their complete participation CSVs. Calculated
+registered-voter fractions, native printed fractions, partial counting status,
+separate update literals and complete parent packages remain separate. These
+three source reviews still do not approve mapping; no county or precinct colors
+are added. Existing official local feeds are not overwritten. Reviewed county
+counts survive a failed statewide or local-file request without being assigned
+to another state. All 288 unique downloads / 291 anchors are unchanged.
+Local browser checks pass desktop/mobile and JavaScript/no-JavaScript; exact
+production verification is required before marking this integration live.
+See `20261106-pa-participation-integration-01`.
 
 Next acquisition/integration priority is actual participation: surface existing
 verified county ballots and compatible denominators before expanding candidate

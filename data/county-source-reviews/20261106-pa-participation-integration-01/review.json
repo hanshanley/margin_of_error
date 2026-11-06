@@ -1,0 +1,23 @@
+{
+  "scope": "Presentation of three existing reviewed 2026 Pennsylvania county participation observations",
+  "year": 2026,
+  "state_code": "PA",
+  "source_review_ids": [
+    "pennsylvania-centre-20261106-01",
+    "pennsylvania-berks-20261105-01",
+    "pennsylvania-northampton-20261105-01"
+  ],
+  "input_tables": "Each registered source's complete county-participation.csv, reconciled with its unchanged audit.json",
+  "normalization": "Native ballots or ballots_cast divided by the same native county's registered_voters; no candidate votes or received-mail counts used as ballots",
+  "native_records": "Every native participation field retained and compared against the complete source CSV; no filtering or sampling",
+  "native_printed_fractions": "Separate from calculated fractions; missing native printed values remain null",
+  "counting_status": "Unofficial; preserve native counting qualifications without interpreting reporting counters as finished counting",
+  "timestamps": "Retain distinct source update literals and unestablished timezones; Centre index, PDF and API update tables remain separate",
+  "downloads": "Existing immutable full participation CSVs and complete county packages; no parent file, release asset or download URL changed",
+  "maps_approved": false,
+  "new_precinct_observations": false,
+  "demographic_turnout_approved": false,
+  "statewide_completion": false,
+  "certification_or_final_counting": false,
+  "production_status": "Requires exact revision deployment and production verification"
+}

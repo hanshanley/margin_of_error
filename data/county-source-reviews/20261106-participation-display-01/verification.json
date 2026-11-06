@@ -1,0 +1,27 @@
+{
+  "verified_at_utc": "2026-11-06T01:14:38.340174+00:00",
+  "commit": "82fbc60a3d3f03fa59fbaac2a14d4f0740295054",
+  "pages_run": 42141760920,
+  "status": "live_verified",
+  "public_bytes": [
+    {
+      "path": "/scripts/participation-explorer.js",
+      "bytes": 150477,
+      "sha256": "0fe8cedf79cf90a5ef76e708486e6de94b07133dad56402d50dbfca0bc80348b"
+    },
+    {
+      "path": "/participation-source-reviews.json",
+      "bytes": 54819,
+      "sha256": "c20a6654598b85ada6ea93c02ff43bfd67a607582e699256f82700ad8f9a1c4c"
+    },
+    {
+      "path": "/participation-downloads.json",
+      "bytes": 42128,
+      "sha256": "1b0df17b55d5e9738ff278e346e248dfc26932b8684f1551730eb57e12e19c64"
+    }
+  ],
+  "browser_receipts": "production-browser.json",
+  "download_receipts": "production-downloads.json",
+  "new_acquisition_or_completeness_claim": false,
+  "demographic_2026_rates_available": false
+}
