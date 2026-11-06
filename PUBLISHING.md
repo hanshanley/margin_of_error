@@ -108,6 +108,13 @@ Pages artifact; `--upload` adds missing assets to the pre-created release withou
 overwriting existing files. Publication fails on any missing or changed release asset,
 or if the resulting site exceeds 1 GB.
 
+New releases have server-enforced immutability. Create each as a draft, attach
+and byte-verify every complete query asset, then publish the draft; assets and
+its tag cannot be changed afterward. This applies only to future releases:
+the existing bulk release and previous complete downloads stay unchanged.
+Record the actual release `immutable` flag rather than calling older mutable
+releases server-locked.
+
 The seventeen reviewed November 6 county-context ZIPs likewise use their complete,
 version-specific published release assets. Preparation downloads and verifies every
 entire archive against its original staged bytes before removing only the redundant

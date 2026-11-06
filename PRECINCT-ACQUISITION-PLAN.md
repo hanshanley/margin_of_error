@@ -2,6 +2,44 @@
 
 ## Current verified production and next acquisition
 
+**November 6: Michigan consolidated QVF query acquired and reviewed; release pending.**
+The official dashboard's declared public report now supplies all **83 native
+county scopes**, acquired using ordinary selector/search/clear controls with
+verified TLS and complete native requests/responses. The source clock is
+**Last updated: November 06, 2026 07:27:21 AM**, with no supplied timezone.
+All seven source fields were checked against actual rendered county values;
+hidden backend values are not approved merely because a request returned them.
+**80 counties have three numeric mode values**; Alcona and Arenac retain
+**No data available** Election Day cells, and Gladwin retains its literal
+**Less than 10** suppression. None becomes zero or an inferred count.
+The complete native county totals sum to **4,131,640**, against the separate
+statewide **4,131,641**. Preserve this **one-record source-total difference
+unallocated**; never use it to reconstruct a suppressed mode or identify a voter.
+
+These are **QVF voting-history observations, not tabulator results**. Absentee
+returned does not establish accepted/tabulated ballots; three numeric modes
+do not establish finished clerk uploads, counting or certification. Native
+active-registration percentages survive literally, but exact county registration
+denominators are absent. **Zero generic rates, tabulator totals, FIPS joins or
+maps are approved.** The statewide registration card does not become a county
+denominator when selecting a county. No Michigan UI or context18 import was made.
+The complete **nine-file / eight-member** query, three reusable collection/review/
+test programs, all 83 native request/response pairs, full inventory, arithmetic
+audit and CSV are in `20261106-michigan-qvf-facts-01`.
+**Eleven focused tests** and extracted, standard-library **byte-identical
+offline reproduction of all nine files** pass. Complete ZIP: **70,179 bytes**,
+SHA-256 `4961f9743717be4f78267e80539f2d28fb03d09a8cc5d2d3c1c9e42cec13ddac`.
+The 38 completed initial scopes were retained; resumed acquisition finished
+only the remaining counties after diagnosing delayed statewide responses and
+the native search control's keyboard-event requirement.
+**Next:** freeze and publish the complete reviewed query with exact credential
+jobs and entire anonymous release/commit-pinned byte checks. Future releases
+now have server-enforced immutability; assemble and verify all assets in a draft
+before publishing. Existing releases and the last good UI stay unchanged.
+Then pursue actual county denominators/tabulator participation and the Maine,
+Pennsylvania and separately scoped D.C. gaps; do not promote this QVF query
+into generic turnout to make coverage appear complete. Schedule #5 stays active.
+
 **November 6, 14:00 UTC: Huntingdon participation and context17 LIVE verified.**
 Exact UI **`9aa7c3ea2a227ee01ca3fbf70790c91079136ac2`**, Pages
 **42228740153 attempt 1**, passes its original hosted artifact
@@ -26,8 +64,8 @@ and distinct district accounting. Native FIPS stays missing; contextual
 42061 uses unchanged 2024 Census geometry, not certified 2026 reporting boundaries.
 Context17 has **1,223 records / 739 joins / 352 usable native-registration
 fractions / 387 missing gray rates**, across eighteen jurisdictions.
-Every **1,222 previous record / 357 previous native row / 724 previous anchor /
-18 complete prior imports** survives unchanged. The native table now has
+All **1,222 previous records / 357 previous native rows / 724 previous anchors /
+18 complete prior imports** survive unchanged. The native table now has
 **358 rows / 34 Pennsylvania rows**, with **741 anchors / 737 distinct URLs**.
 Proofs: `20261106-huntingdon-explorer-01/production-verification.json`,
 `deployment-size.json` and `production-browser.json`.

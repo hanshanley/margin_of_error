@@ -1,0 +1,37 @@
+[
+  {
+    "file": "METHODS.txt",
+    "bytes": 896,
+    "sha256": "05c55d17fe38aff02fd916293deb292ba65f5813072c29c4ee8dac0db46a816e"
+  },
+  {
+    "file": "acquire-michigan-qvf-counties.py",
+    "bytes": 11605,
+    "sha256": "7379572abeb2db04681f116779214b09fc8b5bba53c17d6587fbd07a605e55dc"
+  },
+  {
+    "file": "audit.json",
+    "bytes": 1194,
+    "sha256": "0be60c793bfb015408cd5f39bd4a54bef8f53398d48b04f8bd40b256486b33e3"
+  },
+  {
+    "file": "county-participation.csv",
+    "bytes": 15843,
+    "sha256": "1337764e5d416f529f471cd82be880bae949f7ccbd43cdc7fb7dbc938149b4f3"
+  },
+  {
+    "file": "native-facts.json",
+    "bytes": 1209200,
+    "sha256": "410ea7c72ec26f0f6d0c09d248b4f3c28e3a0e3a7816b56dc3ff1c433ad6a0b0"
+  },
+  {
+    "file": "review-michigan-qvf-counties.py",
+    "bytes": 16916,
+    "sha256": "a0bf770aae25d9ae1247d9af28077b0880a6142f81d8b4d005370852500b416d"
+  },
+  {
+    "file": "test_review_michigan_qvf_counties.py",
+    "bytes": 8299,
+    "sha256": "8c64229b4046085744cad8896fc0e9a88b3101db83b6414836efe8bf6fb3b1ac"
+  }
+]

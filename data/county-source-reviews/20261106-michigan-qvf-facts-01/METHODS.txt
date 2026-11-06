@@ -1,0 +1,8 @@
+Complete Michigan QVF county observation query; not tabulator results.
+Entire native single-county requests/responses and the complete 83-county inventory are in native-facts.json, with original-byte checksums.
+Reproduce offline: python3 review-michigan-qvf-counties.py --facts native-facts.json --output REPRODUCED
+Run: python3 test_review_michigan_qvf_counties.py
+Refresh privately using installed Playwright/Chromium: python3 acquire-michigan-qvf-counties.py --output PRIVATE_DIRECTORY
+Resume only unfinished counties: add --resume with that same directory.
+The native total can be a subtotal when a mode is unavailable. Printed rates do not supply exact county registration denominators. No generic rate, tabulator ballot count, FIPS or map is approved. Missing is not zero.
+Official definitions: https://www.michigan.gov/sos/elections/election-results-and-data/voter-participation-dashboard

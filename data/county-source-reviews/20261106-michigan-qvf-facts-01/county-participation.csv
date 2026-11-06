@@ -1,0 +1,84 @@
+native_county_name,native_fips,native_update_clock,native_timezone,native_qvf_recorded_total,native_active_registered_turnout_literal,native_county_active_registration_denominator,qvf_absentee_returned,qvf_early_voting,qvf_election_day,permanent_vote_by_mail_voters,native_absentee_literal,native_early_voting_literal,native_election_day_literal,all_native_modes_numeric,all_numeric_modes_reconcile,tabulator_ballots,generic_registration_fraction,maps_approved,rates_approved,native_absentee_status,native_early_voting_status,native_election_day_status
+Alcona,,"Last updated: November 06, 2026 07:27:21 AM",,2477,26.6%,,1768,709,,2020,1768L,709L,'No data available',false,,,,false,false,reported_numeric,reported_numeric,source_no_data_available
+Alger,,"Last updated: November 06, 2026 07:27:21 AM",,2278,34.4%,,1360,423,495,1363,1360L,423L,495L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Allegan,,"Last updated: November 06, 2026 07:27:21 AM",,51448,55.2%,,20441,13792,17215,21636,20441L,13792L,17215L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Alpena,,"Last updated: November 06, 2026 07:27:21 AM",,12649,57.5%,,4665,1365,6619,4893,4665L,1365L,6619L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Antrim,,"Last updated: November 06, 2026 07:27:21 AM",,13112,62.8%,,5276,3533,4303,5546,5276L,3533L,4303L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Arenac,,"Last updated: November 06, 2026 07:27:21 AM",,2808,23.3%,,2074,734,,2277,2074L,734L,'No data available',false,,,,false,false,reported_numeric,reported_numeric,source_no_data_available
+Baraga,,"Last updated: November 06, 2026 07:27:21 AM",,3070,53.2%,,1198,503,1369,1293,1198L,503L,1369L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Barry,,"Last updated: November 06, 2026 07:27:21 AM",,25505,52.5%,,10182,6255,9068,11356,10182L,6255L,9068L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Bay,,"Last updated: November 06, 2026 07:27:21 AM",,44986,56.7%,,19786,4640,20560,21276,19786L,4640L,20560L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Benzie,,"Last updated: November 06, 2026 07:27:21 AM",,9247,58.8%,,4533,2331,2383,4690,4533L,2331L,2383L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Berrien,,"Last updated: November 06, 2026 07:27:21 AM",,51410,45.2%,,25832,8220,17358,27540,25832L,8220L,17358L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Branch,,"Last updated: November 06, 2026 07:27:21 AM",,9906,33.4%,,4815,2784,2307,5222,4815L,2784L,2307L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Calhoun,,"Last updated: November 06, 2026 07:27:21 AM",,51545,52.5%,,17153,7644,26748,18775,17153L,7644L,26748L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Cass,,"Last updated: November 06, 2026 07:27:21 AM",,17867,46.5%,,6496,3247,8124,7246,6496L,3247L,8124L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Charlevoix,,"Last updated: November 06, 2026 07:27:21 AM",,11597,53.5%,,6090,1292,4215,6167,6090L,1292L,4215L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Cheboygan,,"Last updated: November 06, 2026 07:27:21 AM",,13608,63.9%,,4844,1314,7450,5032,4844L,1314L,7450L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Chippewa,,"Last updated: November 06, 2026 07:27:21 AM",,11811,47.3%,,4924,1544,5343,5048,4924L,1544L,5343L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Clare,,"Last updated: November 06, 2026 07:27:21 AM",,11682,49.0%,,4842,1742,5098,5411,4842L,1742L,5098L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Clinton,,"Last updated: November 06, 2026 07:27:21 AM",,36460,60.4%,,17851,5941,12668,18907,17851L,5941L,12668L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Crawford,,"Last updated: November 06, 2026 07:27:21 AM",,5431,47.6%,,2472,1129,1830,2628,2472L,1129L,1830L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Delta,,"Last updated: November 06, 2026 07:27:21 AM",,10686,37.2%,,6075,2090,2521,6374,6075L,2090L,2521L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Dickinson,,"Last updated: November 06, 2026 07:27:21 AM",,9032,45.3%,,4006,1795,3231,4185,4006L,1795L,3231L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Eaton,,"Last updated: November 06, 2026 07:27:21 AM",,52485,64.0%,,23189,6465,22831,24957,23189L,6465L,22831L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Emmet,,"Last updated: November 06, 2026 07:27:21 AM",,15829,56.1%,,8110,2319,5400,8311,8110L,2319L,5400L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Genesee,,"Last updated: November 06, 2026 07:27:21 AM",,144555,47.4%,,68166,30325,46064,77669,68166L,30325L,46064L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Gladwin,,"Last updated: November 06, 2026 07:27:21 AM",,5485,27.0%,,4379,1106,,4647,4379L,1106L,'Less than 10',false,,,,false,false,reported_numeric,reported_numeric,source_suppressed_less_than_10
+Gogebic,,"Last updated: November 06, 2026 07:27:21 AM",,5800,53.3%,,1904,570,3326,1875,1904L,570L,3326L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Grand Traverse,,"Last updated: November 06, 2026 07:27:21 AM",,41614,53.6%,,24613,9425,7576,26032,24613L,9425L,7576L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Gratiot,,"Last updated: November 06, 2026 07:27:21 AM",,10570,39.0%,,4463,1336,4771,4883,4463L,1336L,4771L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Hillsdale,,"Last updated: November 06, 2026 07:27:21 AM",,11535,34.6%,,5284,1967,4284,5719,5284L,1967L,4284L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Houghton,,"Last updated: November 06, 2026 07:27:21 AM",,12456,50.0%,,4801,1945,5710,5003,4801L,1945L,5710L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Huron,,"Last updated: November 06, 2026 07:27:21 AM",,8656,36.6%,,4581,2366,1709,4728,4581L,2366L,1709L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Ingham,,"Last updated: November 06, 2026 07:27:21 AM",,123120,63.4%,,60209,22842,40069,67571,60209L,22842L,40069L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Ionia,,"Last updated: November 06, 2026 07:27:21 AM",,19697,43.3%,,8836,2368,8493,9880,8836L,2368L,8493L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Iosco,,"Last updated: November 06, 2026 07:27:21 AM",,9688,47.2%,,5307,1156,3225,5467,5307L,1156L,3225L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Iron,,"Last updated: November 06, 2026 07:27:21 AM",,4114,43.8%,,1700,1091,1323,1714,1700L,1091L,1323L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Isabella,,"Last updated: November 06, 2026 07:27:21 AM",,24930,57.4%,,8383,3653,12894,8919,8383L,3653L,12894L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Jackson,,"Last updated: November 06, 2026 07:27:21 AM",,50660,44.1%,,24676,10049,15935,28005,24676L,10049L,15935L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Kalamazoo,,"Last updated: November 06, 2026 07:27:21 AM",,94267,50.1%,,51450,17079,25738,55408,51450L,17079L,25738L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Kalkaska,,"Last updated: November 06, 2026 07:27:21 AM",,6329,41.1%,,2656,2224,1449,2934,2656L,2224L,1449L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Kent,,"Last updated: November 06, 2026 07:27:21 AM",,286342,60.2%,,119785,57664,108893,130424,119785L,57664L,108893L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Keweenaw,,"Last updated: November 06, 2026 07:27:21 AM",,866,44.6%,,454,142,270,468,454L,142L,270L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Lake,,"Last updated: November 06, 2026 07:27:21 AM",,4103,42.1%,,1743,567,1793,1963,1743L,567L,1793L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Lapeer,,"Last updated: November 06, 2026 07:27:21 AM",,38666,56.1%,,14539,9523,14604,16076,14539L,9523L,14604L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Leelanau,,"Last updated: November 06, 2026 07:27:21 AM",,14141,69.9%,,7679,2106,4356,7724,7679L,2106L,4356L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Lenawee,,"Last updated: November 06, 2026 07:27:21 AM",,34373,48.0%,,16091,4887,13395,17644,16091L,4887L,13395L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Livingston,,"Last updated: November 06, 2026 07:27:21 AM",,112607,71.9%,,46448,23057,43102,50380,46448L,23057L,43102L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Luce,,"Last updated: November 06, 2026 07:27:21 AM",,1927,46.8%,,621,242,1064,675,621L,242L,1064L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Mackinac,,"Last updated: November 06, 2026 07:27:21 AM",,4269,46.6%,,2267,319,1683,2099,2267L,319L,1683L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Macomb,,"Last updated: November 06, 2026 07:27:21 AM",,392798,59.4%,,160676,71780,160342,179172,160676L,71780L,160342L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Manistee,,"Last updated: November 06, 2026 07:27:21 AM",,10776,54.5%,,5183,1273,4320,5314,5183L,1273L,4320L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Marquette,,"Last updated: November 06, 2026 07:27:21 AM",,29569,59.3%,,13320,5159,11090,13607,13320L,5159L,11090L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Mason,,"Last updated: November 06, 2026 07:27:21 AM",,11404,49.0%,,4457,1989,4958,4636,4457L,1989L,4958L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Mecosta,,"Last updated: November 06, 2026 07:27:21 AM",,14187,47.5%,,6439,2138,5610,6817,6439L,2138L,5610L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Menominee,,"Last updated: November 06, 2026 07:27:21 AM",,5591,31.6%,,3397,722,1472,3681,3397L,722L,1472L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Midland,,"Last updated: November 06, 2026 07:27:21 AM",,42262,66.5%,,15722,5111,21429,16312,15722L,5111L,21429L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Missaukee,,"Last updated: November 06, 2026 07:27:21 AM",,7403,62.1%,,1795,717,4891,2013,1795L,717L,4891L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Monroe,,"Last updated: November 06, 2026 07:27:21 AM",,70661,59.3%,,26207,12110,32344,28870,26207L,12110L,32344L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Montcalm,,"Last updated: November 06, 2026 07:27:21 AM",,22491,47.4%,,8854,2271,11366,9698,8854L,2271L,11366L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Montmorency,,"Last updated: November 06, 2026 07:27:21 AM",,5143,61.5%,,1825,544,2774,1946,1825L,544L,2774L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Muskegon,,"Last updated: November 06, 2026 07:27:21 AM",,71995,54.1%,,31234,7466,33295,34319,31234L,7466L,33295L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Newaygo,,"Last updated: November 06, 2026 07:27:21 AM",,15002,38.5%,,6586,1682,6734,6999,6586L,1682L,6734L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Oakland,,"Last updated: November 06, 2026 07:27:21 AM",,640216,68.1%,,297275,108609,234332,317288,297275L,108609L,234332L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Oceana,,"Last updated: November 06, 2026 07:27:21 AM",,9513,46.7%,,4035,1405,4073,4115,4035L,1405L,4073L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Ogemaw,,"Last updated: November 06, 2026 07:27:21 AM",,5088,29.7%,,3270,1159,659,3561,3270L,1159L,659L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Ontonagon,,"Last updated: November 06, 2026 07:27:21 AM",,2378,49.2%,,1122,319,937,1167,1122L,319L,937L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Osceola,,"Last updated: November 06, 2026 07:27:21 AM",,7677,43.4%,,2671,1062,3944,2893,2671L,1062L,3944L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Oscoda,,"Last updated: November 06, 2026 07:27:21 AM",,2303,33.4%,,1400,544,359,1535,1400L,544L,359L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Otsego,,"Last updated: November 06, 2026 07:27:21 AM",,9945,47.8%,,4321,1860,3764,4803,4321L,1860L,3764L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Ottawa,,"Last updated: November 06, 2026 07:27:21 AM",,137513,62.2%,,60475,24991,52047,63133,60475L,24991L,52047L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Presque Isle,,"Last updated: November 06, 2026 07:27:21 AM",,4998,45.7%,,2295,1320,1383,2380,2295L,1320L,1383L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Roscommon,,"Last updated: November 06, 2026 07:27:21 AM",,12350,59.7%,,5714,2365,4271,6041,5714L,2365L,4271L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Saginaw,,"Last updated: November 06, 2026 07:27:21 AM",,72979,52.4%,,32473,5842,34664,34511,32473L,5842L,34664L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Sanilac,,"Last updated: November 06, 2026 07:27:21 AM",,13488,45.2%,,5986,1456,6046,5852,5986L,1456L,6046L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Schoolcraft,,"Last updated: November 06, 2026 07:27:21 AM",,2184,33.4%,,1141,639,404,1205,1141L,639L,404L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Shiawassee,,"Last updated: November 06, 2026 07:27:21 AM",,28278,53.9%,,11013,3861,13404,11971,11013L,3861L,13404L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+St. Clair,,"Last updated: November 06, 2026 07:27:21 AM",,71467,56.9%,,27233,16208,28026,30219,27233L,16208L,28026L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+St. Joseph,,"Last updated: November 06, 2026 07:27:21 AM",,14051,33.8%,,7306,2781,3964,7865,7306L,2781L,3964L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Tuscola,,"Last updated: November 06, 2026 07:27:21 AM",,17176,43.7%,,7127,3973,6076,7727,7127L,3973L,6076L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Van Buren,,"Last updated: November 06, 2026 07:27:21 AM",,31085,55.6%,,12109,3249,15727,13031,12109L,3249L,15727L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Washtenaw,,"Last updated: November 06, 2026 07:27:21 AM",,179534,64.9%,,87079,41728,50727,91949,87079L,41728L,50727L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Wayne,,"Last updated: November 06, 2026 07:27:21 AM",,611184,49.1%,,291139,122953,197092,335895,291139L,122953L,197092L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
+Wexford,,"Last updated: November 06, 2026 07:27:21 AM",,11252,43.0%,,4192,1342,5718,4274,4192L,1342L,5718L,true,true,,,false,false,reported_numeric,reported_numeric,reported_numeric
