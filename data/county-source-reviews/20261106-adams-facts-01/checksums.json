@@ -1,0 +1,46 @@
+{
+  "audit.json": {
+    "bytes": 3628,
+    "sha256": "cd80c29dd1ea0189fbd1041a83e06b35162c2364a02fd7f771f081bd5c74579d"
+  },
+  "county-candidate-results.csv": {
+    "bytes": 4413,
+    "sha256": "b5a3944abeff0caeaf9dca099829ba007da047e90960cb26dea97158475aeb1d"
+  },
+  "county-literal-party-totals.csv": {
+    "bytes": 2862,
+    "sha256": "121e36d5762fca01bc1486ae38a2aa75eb31362a5119be4add1937f88523a41c"
+  },
+  "county-participation.csv": {
+    "bytes": 1886,
+    "sha256": "7580c18a2aa1ac0fc2bb2ff833f5757c75164246a14f802387a2b96a97a73bd9"
+  },
+  "native-contest-accounting.csv": {
+    "bytes": 192813,
+    "sha256": "ce0f3854b2944f5da3556bae1da68476dbcb59ad5e6406e5273944b9e558ea13"
+  },
+  "native-reporting-statements.csv": {
+    "bytes": 1154,
+    "sha256": "11b684223344dcb81154043fa801a71a0dd71ae1e60adcf2305f22bed3acac2f"
+  },
+  "native-source-pages.csv": {
+    "bytes": 20746,
+    "sha256": "156d058cd401096d2987d821fbde6719674c3ba2cd434e242b3dca226d604ebd"
+  },
+  "native-unit-candidate-results.csv": {
+    "bytes": 165096,
+    "sha256": "66e95164dc3e0b5419c43e0cc3af1b19fce55e2ab5d5ec47b7d351193ec68e2b"
+  },
+  "native-unit-participation.csv": {
+    "bytes": 76487,
+    "sha256": "7bb0bd128dfa7876cb455303345b575fb86453ccba77d34a1438c0ac0127eb4a"
+  },
+  "review-adams-county-results.py": {
+    "bytes": 22769,
+    "sha256": "041bef527355c65b730edd5fdb4973555ca1232654fcd4bcdc355106541f5e31"
+  },
+  "source-records.json": {
+    "bytes": 371865,
+    "sha256": "37a5b57f01f2d39932ff891b5b066dfe998db9775e614af7afcd31fd79da28d2"
+  }
+}

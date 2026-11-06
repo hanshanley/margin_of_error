@@ -1,0 +1,37 @@
+year,state_code,county,county_fips,office_literal,party_literal,mode_literal,candidate_votes
+2026,PA,Adams,42001,Governor/Lieutenant Governor,DEM,Total,18995
+2026,PA,Adams,42001,Governor/Lieutenant Governor,DEM,Election Day,11779
+2026,PA,Adams,42001,Governor/Lieutenant Governor,DEM,Mail,7216
+2026,PA,Adams,42001,Governor/Lieutenant Governor,DEM,Provisional,0
+2026,PA,Adams,42001,Governor/Lieutenant Governor,REP,Total,22738
+2026,PA,Adams,42001,Governor/Lieutenant Governor,REP,Election Day,19828
+2026,PA,Adams,42001,Governor/Lieutenant Governor,REP,Mail,2910
+2026,PA,Adams,42001,Governor/Lieutenant Governor,REP,Provisional,0
+2026,PA,Adams,42001,Governor/Lieutenant Governor,LIB,Total,684
+2026,PA,Adams,42001,Governor/Lieutenant Governor,LIB,Election Day,576
+2026,PA,Adams,42001,Governor/Lieutenant Governor,LIB,Mail,108
+2026,PA,Adams,42001,Governor/Lieutenant Governor,LIB,Provisional,0
+2026,PA,Adams,42001,Representative in Congress,DEM,Total,16651
+2026,PA,Adams,42001,Representative in Congress,DEM,Election Day,10036
+2026,PA,Adams,42001,Representative in Congress,DEM,Mail,6615
+2026,PA,Adams,42001,Representative in Congress,DEM,Provisional,0
+2026,PA,Adams,42001,Representative in Congress,REP,Total,25773
+2026,PA,Adams,42001,Representative in Congress,REP,Election Day,22148
+2026,PA,Adams,42001,Representative in Congress,REP,Mail,3625
+2026,PA,Adams,42001,Representative in Congress,REP,Provisional,0
+2026,PA,Adams,42001,Representative in the General Assembly 91st District,DEM,Total,11245
+2026,PA,Adams,42001,Representative in the General Assembly 91st District,DEM,Election Day,6716
+2026,PA,Adams,42001,Representative in the General Assembly 91st District,DEM,Mail,4529
+2026,PA,Adams,42001,Representative in the General Assembly 91st District,DEM,Provisional,0
+2026,PA,Adams,42001,Representative in the General Assembly 91st District,REP,Total,16146
+2026,PA,Adams,42001,Representative in the General Assembly 91st District,REP,Election Day,13771
+2026,PA,Adams,42001,Representative in the General Assembly 91st District,REP,Mail,2375
+2026,PA,Adams,42001,Representative in the General Assembly 91st District,REP,Provisional,0
+2026,PA,Adams,42001,Representative in the General Assembly 193rd District,DEM,Total,5088
+2026,PA,Adams,42001,Representative in the General Assembly 193rd District,DEM,Election Day,3135
+2026,PA,Adams,42001,Representative in the General Assembly 193rd District,DEM,Mail,1953
+2026,PA,Adams,42001,Representative in the General Assembly 193rd District,DEM,Provisional,0
+2026,PA,Adams,42001,Representative in the General Assembly 193rd District,REP,Total,9936
+2026,PA,Adams,42001,Representative in the General Assembly 193rd District,REP,Election Day,8546
+2026,PA,Adams,42001,Representative in the General Assembly 193rd District,REP,Mail,1390
+2026,PA,Adams,42001,Representative in the General Assembly 193rd District,REP,Provisional,0

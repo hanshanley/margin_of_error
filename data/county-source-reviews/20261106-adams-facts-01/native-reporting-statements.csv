@@ -1,0 +1,5 @@
+year,state_code,county,county_fips,native_unit,source_report,source_page,source_url,source_update_literal,declared_timezone,native_status_literal,label_literal,reported_literal,total_literal,mode_count_literals
+2026,PA,Adams,42001,Adams,summary,1,https://www.adamscountypa.gov/getmedia/369dc41b-5483-43fc-82c1-8bbb7b187ad0/ElectionSummary2026General.pdf,11/03/2026 10:23PM,,UNOFFICIAL RESULTS,Election Day Precincts Reporting,53,53,"['53', '0', '0']"
+2026,PA,Adams,42001,Adams,summary,1,https://www.adamscountypa.gov/getmedia/369dc41b-5483-43fc-82c1-8bbb7b187ad0/ElectionSummary2026General.pdf,11/03/2026 10:23PM,,UNOFFICIAL RESULTS,Precincts Complete,0,53,"['0', '0', '0']"
+2026,PA,Adams,42001,Adams,summary,1,https://www.adamscountypa.gov/getmedia/369dc41b-5483-43fc-82c1-8bbb7b187ad0/ElectionSummary2026General.pdf,11/03/2026 10:23PM,,UNOFFICIAL RESULTS,Precincts Partially Reported,53,53,"['53', '0', '0']"
+2026,PA,Adams,42001,Adams,summary,1,https://www.adamscountypa.gov/getmedia/369dc41b-5483-43fc-82c1-8bbb7b187ad0/ElectionSummary2026General.pdf,11/03/2026 10:23PM,,UNOFFICIAL RESULTS,Absentee/ Early Precincts Reporting,53,53,"['0', '53', '0']"

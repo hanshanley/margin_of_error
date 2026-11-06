@@ -278,10 +278,32 @@ same-origin requests, with complete receipts, hashes and both independent
 extractions retained privately. Five primary-source acquisition receipts,
 without redistributing source templates, are preserved in
 `data/county-source-reviews/20261106-adams-acquisition-01/acquisition.json`.
-Independent all-count reconciliation and public numerical-facts packaging
-remain pending. No source-template redistribution grant is asserted. No new
-public participation download, registration, rate or map is approved by this
-acquisition alone.
+No source-template redistribution grant is asserted. Acquisition alone
+approves no new participation download, registration, rate or map.
+
+**Adams numerical review, November 6:** both independent PDF engines now agree
+on every numerical fact across all 109 report pages, 543 candidate/write-in
+vectors, 163 contests and 652 native accounting rows. All 53 native reporting
+units reconcile to the county's 42,660 ballots and 77,163 registrations,
+including 32,340 Election Day, 10,320 counted mail and explicit provisional
+zero; the five blank ballots remain separately classified. Every native
+candidate and accounting vector reconciles by office and mode. The 91st and
+193rd legislative districts partition the ballots, not two whole-county
+electorates. Preserve the printed 55.29%, calculated native-registration ratio,
+undeclared timezone, four separate reporting/completion statements and the
+unofficial status.
+
+`scripts/review-adams-county-results.py` produces eight complete CSV tables,
+complete native fact records and a deterministic full-data ZIP without source
+templates. Eight focused tests pass, including corruption/missingness guards
+and byte-identical offline reproduction of every package file. See
+`data/county-source-reviews/20261106-adams-facts-01/` and the separate
+`numerical-review.json` beside the acquisition receipts. This is reconciled
+facts preparation, **not live participation integration**. Next publish and
+anonymously verify a new immutable complete-facts release, register the complete
+county participation CSV with all qualifications, and verify an exact new UI
+deployment before promoting coverage. No source maps, demographic turnout or
+statewide completeness are approved.
 
 **November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated

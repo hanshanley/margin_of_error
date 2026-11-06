@@ -1,0 +1,76 @@
+{
+  "verified_at_utc": "2026-11-06T03:54:48.738391+00:00",
+  "status": "complete_reconciled_facts_not_live_participation",
+  "source_acquisition": "acquisition.json",
+  "facts_directory": "data/county-source-reviews/20261106-adams-facts-01",
+  "independent_pdf_engines": [
+    "PyMuPDF sorted text",
+    "pypdf layout"
+  ],
+  "all_page_facts_identical": true,
+  "native_source_pages": 109,
+  "native_contests": 163,
+  "candidate_and_write_in_vectors": 543,
+  "count_modes": [
+    "Total",
+    "Election Day",
+    "Mail",
+    "Provisional"
+  ],
+  "table_rows": {
+    "county-participation.csv": 1,
+    "native-unit-participation.csv": 53,
+    "county-candidate-results.csv": 13,
+    "native-unit-candidate-results.csv": 530,
+    "county-literal-party-totals.csv": 36,
+    "native-contest-accounting.csv": 652,
+    "native-reporting-statements.csv": 4,
+    "native-source-pages.csv": 109
+  },
+  "county_participation": {
+    "year": 2026,
+    "state_code": "PA",
+    "county": "Adams",
+    "county_fips": "42001",
+    "native_unit": "Adams",
+    "source_report": "summary",
+    "source_page": 1,
+    "source_url": "https://www.adamscountypa.gov/getmedia/369dc41b-5483-43fc-82c1-8bbb7b187ad0/ElectionSummary2026General.pdf",
+    "source_update_literal": "11/03/2026 10:23PM",
+    "declared_timezone": "",
+    "native_status_literal": "UNOFFICIAL RESULTS",
+    "ballots_cast": 42660,
+    "election_day_ballots": 32340,
+    "mail_ballots": 10320,
+    "provisional_ballots": 0,
+    "registered_voters": 77163,
+    "native_printed_turnout": "55.29%",
+    "registered_turnout_percent": 55.28556432487073,
+    "native_count_literals_json": "{\"registered_voters_literal\": \"77,163\", \"ballot_count_literals\": [\"42,660\", \"32,340\", \"10,320\", \"0\"], \"blank_count_literals\": [\"5\", \"1\", \"4\", \"0\"], \"printed_turnout_literal\": \"55.29%\"}",
+    "blank_ballots": 5,
+    "election_day_blank_ballots": 1,
+    "mail_blank_ballots": 4,
+    "provisional_blank_ballots": 0,
+    "county_fips_basis": "Reviewed Census identity, not a native PDF field",
+    "counting_qualifications_json": "[\"All 53 native units reconcile to county ballots, registrations, blanks, separate Election Day/mail/provisional counts and every candidate/contest vector.\", \"Native reporting is 53 of 53, but separately 0 of 53 complete and all 53 partially reported; UNOFFICIAL RESULTS is not certification.\", \"Mail ballots counted are 10,320, not the index's separately scoped 10,348 mail/absentee receipts.\", \"Blank ballots and under/overvotes are native explicit rows, not inferred candidate residuals. Native provisional zeros remain explicit.\", \"The 91st and 193rd legislative districts partition county ballots, not separate whole-county electorates.\", \"The native November 3 run time has no declared timezone. Native registered-voter fractions are not VEP/CVAP or demographic turnout.\", \"No county/precinct mapping or statewide completeness is approved. Source HTML/PDF templates and extracted presentation text remain private.\"]"
+  },
+  "focused_tests": {
+    "command": "../voter-participation/.venv/bin/python scripts/test_review_adams_county_results.py",
+    "passed": 8,
+    "full_offline_reproduction_byte_identical": true
+  },
+  "complete_package": {
+    "path": "complete-adams-2026-numerical-facts-01.zip",
+    "bytes": 50180,
+    "sha256": "555f8af979c8407b23290dd7fabcbf46d2cf1a656729b7219e4884ca16200eaa"
+  },
+  "source_templates_redistributed": false,
+  "public_pointer_registered": false,
+  "live_participation_approved": false,
+  "maps_approved": false,
+  "remaining_actions": [
+    "Publish and anonymously byte-verify a new immutable complete numerical-facts release",
+    "Register complete native participation CSV with all counting qualifiers",
+    "Verify an exact UI deployment before any live-coverage promotion"
+  ]
+}
