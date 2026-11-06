@@ -1,0 +1,120 @@
+{
+  "previous_complete_records_preserved": 903,
+  "previous_contextual_joins_preserved": 431,
+  "previous_exclusions_and_missingness_preserved": true,
+  "unchanged_geometry_inventory": 15,
+  "existing_source_map_approval_flags_unchanged": true,
+  "native_fips_invented": false,
+  "new_source_record": {
+    "year": 2026,
+    "state_code": "PA",
+    "county_id": "reviewed:PA:Clarion",
+    "county": "Clarion",
+    "geography_level": "county",
+    "ballots": 12975,
+    "denominator": 23306,
+    "participation_measure_literal": "Voters Cast",
+    "denominator_basis": "native_registered_voters",
+    "reported_pct": 55.67235904917189,
+    "native_printed_pct": "55.67%",
+    "source_status_literal": "UNOFFICIAL ELECTION RESULTS",
+    "reported_units": null,
+    "total_units": null,
+    "source_rows": 0,
+    "maps_approved": false,
+    "review_id": "pennsylvania-clarion-20261106-01",
+    "native_record": {
+      "year": "2026",
+      "state_code": "PA",
+      "county": "Clarion",
+      "native_participation_measure_literal": "Voters Cast",
+      "reported_voters_cast": "12975",
+      "registered_voters": "23306",
+      "native_printed_turnout": "55.67%",
+      "source_page": "1",
+      "source_status_literal": "UNOFFICIAL ELECTION RESULTS",
+      "source_update_literal": "11/3/2026 9:49:20 PM",
+      "declared_timezone": "",
+      "reported_precincts": "40",
+      "total_precincts": "40",
+      "election_day_count": "",
+      "mail_in_count": "",
+      "provisional_count": ""
+    },
+    "native_source_updates": [
+      {
+        "source": "county_report",
+        "native_update_literal": "11/3/2026 9:49:20 PM",
+        "declared_timezone": ""
+      }
+    ],
+    "source_update_label": "source_update_literal: 11/3/2026 9:49:20 PM; county_report: 11/3/2026 9:49:20 PM (timezone not declared)",
+    "source_reporting_label": "40 of 40 reported precincts does not establish completed ballot counting.; Election Day, mail and provisional participation are not separately reported; missing mode counts are not zero.; Foxburg referendum Times Cast 82/116 is a separate electorate, not additional county participation.; Native Total Votes excludes Unresolved Write-In; contest participation-minus-choice residuals remain unclassified.",
+    "source_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7985530b021aa51865107eed52b76722bc39c80e/data/county-source-reviews/20261106-clarion-facts-01/county-participation.csv",
+    "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-clarion-20261106-01/complete-clarion-2026-county-query-01.zip",
+    "quality": [
+      "Reviewed local snapshot, not final certification, statewide coverage, eligible-population or demographic turnout.",
+      "Source timestamps retain their native labels; unprovided timezones are not inferred. County mapping is not approved."
+    ]
+  },
+  "new_contextual_identity_join": {
+    "state_code": "PA",
+    "county_id": "reviewed:PA:Clarion",
+    "county": "Clarion",
+    "geography_level": "county",
+    "review_id": "pennsylvania-clarion-20261106-01",
+    "contextual_geoid": "42031",
+    "contextual_name": "Clarion County",
+    "boundary_year": 2024,
+    "ballots": 12975,
+    "denominator": 23306,
+    "reported_pct": 55.67235904917189,
+    "participation_measure_kind": "source_defined_participation_count",
+    "participation_measure_label": "Voters Cast",
+    "source_record_sha256": "1ff96ade6e1031cf14534f2020c1428c228857624ea14661ad6c9e901c18af6b",
+    "source_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7985530b021aa51865107eed52b76722bc39c80e/data/county-source-reviews/20261106-clarion-facts-01/county-participation.csv",
+    "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-clarion-20261106-01/complete-clarion-2026-county-query-01.zip",
+    "contextual_map_approved": true,
+    "source_map_approval_unchanged": false
+  },
+  "independently_checked_census_identities": {
+    "2024": {
+      "USPS": "PA",
+      "GEOID": "42031",
+      "ANSICODE": "01210234",
+      "NAME": "Clarion County",
+      "ALAND": "1556156937",
+      "AWATER": "23330902",
+      "ALAND_SQMI": "600.836",
+      "AWATER_SQMI": "9.008",
+      "INTPTLAT": "41.198159",
+      "INTPTLONG": "-79.420369"
+    },
+    "2026": {
+      "USPS": "PA",
+      "GEOID": "42031",
+      "GEOIDFQ": "0500000US42031",
+      "ANSICODE": "01210234",
+      "NAME": "Clarion County",
+      "ALAND": "1556156936",
+      "AWATER": "23330905",
+      "ALAND_SQMI": "600.836",
+      "AWATER_SQMI": "9.008",
+      "INTPTLAT": "41.204617",
+      "INTPTLONG": "-79.418849"
+    }
+  },
+  "counts": {
+    "complete_source_records": 904,
+    "contextual_joins": 432,
+    "jurisdictions": 15,
+    "reviewed_rates": 60,
+    "missing_rates": 372,
+    "excluded_municipalities": 286,
+    "excluded_missing_county_totals": 186
+  },
+  "frozen_review_bytes": 750118,
+  "frozen_review_sha256": "fb28ee4666ff5aa0a7546f3b2394ad7679b99e69e1130251e284911cd9926c08",
+  "complete_zip_bytes": 2211800,
+  "complete_zip_sha256": "209d71ebc9ce3b832e2fa36998e808f283bb611f9f6ab65089a89cad0e9b533f"
+}
