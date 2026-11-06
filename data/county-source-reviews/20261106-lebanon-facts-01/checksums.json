@@ -1,0 +1,50 @@
+{
+  "audit.json": {
+    "bytes": 4618,
+    "sha256": "b209dcff763c3bf180b038b968a9597d3b98d4defd7bf3d4a92e70e6b542740c"
+  },
+  "county-candidate-results.csv": {
+    "bytes": 17140,
+    "sha256": "e001fb8a40c0e2a9563d5d0c9fae9d12a58de1ee9783b8db8c9a250e72ba8ceb"
+  },
+  "county-contest-accounting.csv": {
+    "bytes": 6882,
+    "sha256": "ea087f47473a727d75e111c58fba7380f87f862c43470bab617affec3f338ffe"
+  },
+  "county-literal-party-totals.csv": {
+    "bytes": 4125,
+    "sha256": "9dd1d99a696c7251f096908f9350c3140bb2c62ddb83a25606d3e6e6e87a6042"
+  },
+  "county-participation.csv": {
+    "bytes": 2334,
+    "sha256": "34ebac371e1a544fae473edbb59b2714a4ac37a999179a7de2c1974c56caf06f"
+  },
+  "native-reporting-statements.csv": {
+    "bytes": 1206,
+    "sha256": "9b2a70495873e7dd3c25d180d8b3b6dbdce2c34a5e763c62e99f850affa5eaac"
+  },
+  "native-source-pages.csv": {
+    "bytes": 27037,
+    "sha256": "e1e0cf4a045b8727c208c806fb2007aa727bfc52cd3d5ad0af33e195585becf4"
+  },
+  "native-unit-candidate-results.csv": {
+    "bytes": 794752,
+    "sha256": "a48c0c91c27ee55dc716bde6103a6b9db2db5125ad53e6051f56a03120281a9e"
+  },
+  "native-unit-participation.csv": {
+    "bytes": 113870,
+    "sha256": "bcd6d0c6bc78e3d79c57196c2ec3927f5c803238094259950acffc73bb788c47"
+  },
+  "review-lebanon-county-results.py": {
+    "bytes": 24459,
+    "sha256": "dfc0bd5d1cdadffeb40110cb2b3ea22eb69f920d1bcc1b8c9ea3d3235371e844"
+  },
+  "source-receipts.json": {
+    "bytes": 1461,
+    "sha256": "57525ff79d0a250a84879d3d6a33bee682dc38fbd47063c8fde62016654b51f9"
+  },
+  "source-records.json.gz": {
+    "bytes": 18110,
+    "sha256": "6bde4a44fb64bb43e64409085e600d7312debeba27ccbc2aec5f14347cefeeba"
+  }
+}

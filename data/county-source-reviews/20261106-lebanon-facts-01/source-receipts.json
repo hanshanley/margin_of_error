@@ -1,0 +1,29 @@
+{
+  "county-summary.pdf": {
+    "bytes": 24110,
+    "content_type": "application/pdf",
+    "fetched_at_utc": "2026-11-06T04:43:43.809482+00:00",
+    "final_url": "https://www.lebanoncountypa.gov/getmedia/5b982a5b-faae-4cf5-bb06-d39f5aef102c/SUMMARY-WITH-WRITE-INS.pdf",
+    "sha256": "90805818f97075c2771786fbe291a9c5fe52fbad1ee1c6ffeec1ecf7698c5e41",
+    "status": 200,
+    "url": "https://www.lebanoncountypa.gov/getmedia/5b982a5b-faae-4cf5-bb06-d39f5aef102c/SUMMARY-WITH-WRITE-INS.pdf"
+  },
+  "official-index.html": {
+    "bytes": 102047,
+    "content_type": "text/html; charset=utf-8",
+    "fetched_at_utc": "2026-11-06T04:43:43.623742+00:00",
+    "final_url": "https://www.lebanoncountypa.gov/departments/voter-registration/election-results",
+    "sha256": "da7d428ff290b81361c31d93b636ed548351ed99bd5d3735a569768eab896594",
+    "status": 200,
+    "url": "https://www.lebanoncountypa.gov/departments/voter-registration/election-results"
+  },
+  "precinct-summary.pdf": {
+    "bytes": 292975,
+    "content_type": "application/pdf",
+    "fetched_at_utc": "2026-11-06T04:43:44.054723+00:00",
+    "final_url": "https://www.lebanoncountypa.gov/getmedia/d1cab2fa-f213-484e-86e9-8910e25cfed1/PRECINCT-SUMMARY-WITH-WRITE-INS.pdf",
+    "sha256": "a56bf2a23e544276ddf4893edff7fe0dd93561dad2d7bd7fd8c994143315f97e",
+    "status": 200,
+    "url": "https://www.lebanoncountypa.gov/getmedia/d1cab2fa-f213-484e-86e9-8910e25cfed1/PRECINCT-SUMMARY-WITH-WRITE-INS.pdf"
+  }
+}

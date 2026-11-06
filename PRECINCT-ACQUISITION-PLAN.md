@@ -539,6 +539,47 @@ unchanged. The production-equivalent preview is stopped. Local evidence is
 under `20261106-oregon-publication-01`; exact deployment and production proof
 remain pending. No new map, demographic-rate or statewide completion approval.
 
+**Lebanon primary acquisition and numerical review, November 6:** the saved
+67-county directory led to the actual government index and both declared general
+reports. All three complete originals and successful, SHA-bound HTTP receipts
+remain private. Lebanon is absent from both the older current-local feed and
+the reviewed participation loader; this is a genuine missing county.
+
+The county's three pages and sixty native units across 120 unit-report pages
+independently reconcile to **51,268 ballots: 40,770 Election Day, 10,498 mail/
+absentee and explicit provisional zero**, plus three blank ballots. PyMuPDF and
+independent pdfplumber coordinate-sensitive extraction agree on every page fact.
+The installed pypdf layout extractor collides wrapped write-in names with the
+next row; it was not treated as an agreeing engine or repaired by dropping names.
+Both numerical inventories retain all 51 county and 2,269 native-unit result
+lines across six county/240 unit contests. All literal parties, named/scattered/
+unassigned write-ins, explicit zeroes and native modes remain separate.
+Write-in details plus unassigned counts equal their overlapping write-in total;
+never add both detail and total as candidate votes.
+
+**Denominator withheld:** every native registration and printed turnout field is
+explicitly zero despite positive ballots. The full CSVs retain those native
+zeroes and `0.00%`, but usable registration and calculated turnout fields remain
+blank. The declaring index reports 268 provisionals still to process, not 268
+counted ballots. Reporting 60/60 is separate from zero complete/all sixty partial.
+The unit template says `Electionware County`, not Lebanon; the actual scope is
+established by the declaring government index and independently matching county
+counts. Both report run times have no supplied timezone.
+
+The House has 51,061 candidate selections including its write-in total, not
+51,268 participants. Its 207-ballot residual remains unclassified: no native
+undervote/overvote breakdown is supplied. The three state-House districts
+partition county ballots; none is a separate whole-county electorate.
+Seven focused tests pass, including corruption/scope/missingness rejection and
+standard-library-only byte-identical reproduction of every file and ZIP member.
+The eight complete tables, full numerical facts, receipts, audit, portable code
+and checksums are under `20261106-lebanon-facts-01`; source presentation templates
+are not redistributed. The complete 63,236-byte ZIP has SHA-256
+`933227c8e8eabc1ea6c831838133c33e97acafcb12ddd8fa4b30191e66f56f6f`.
+Next publish/byte-verify fixed complete downloads, then integrate the county
+ballots without converting the native unusable zero denominator into turnout.
+No live UI, new map, demographic participation or statewide completion is claimed.
+
 **November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated
 `git-filter-repo --sensitive-data-removal` rewrite removed Google API key patterns
