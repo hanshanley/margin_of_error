@@ -2,7 +2,7 @@
 
 ## Current verified production and next acquisition
 
-**November 6: consolidated Florida participation acquired and numerically reproduced; not yet LIVE.**
+**November 6: Florida context24 verified LIVE at 20:11 UTC.**
 The official `floridaelectionwatch.gov/CountyReportingStatus` page supplies
 all **67 counties**, rather than requiring 67 independent county scrapes.
 The complete **169,716-byte** original, official FAQ, declared downloads page
@@ -47,8 +47,9 @@ It adds **67 native rows / 66 distinct county joins / 67 fractions**; the old
 Monroe observation remains separately retained rather than added. Its
 **1,328 records / 833 joins / 446 fractions / 387 missing rates / 19 jurisdictions**
 reproduce from the complete query. All **116 focused importer/context/historical/
-download tests** pass, including full-input tampering and Monroe source-reconciliation
-failures. The dormant importer is not yet connected to the active registry.
+download tests** passed at the frozen-context checkpoint, including full-input
+tampering and Monroe source-reconciliation failures. The importer was dormant
+at that checkpoint; the subsequently tested UI revision connects it below.
 The **33-file / 32-member** context query passes standalone verification;
 review SHA-256 **`8c666bd06b4346c2823d22ed9a6295262a2a85e347b7937fcad5f7eb16941427`**,
 ZIP **3,026,036 bytes / SHA-256
@@ -57,7 +58,7 @@ Immutable context release **436922197**, source
 **`87e11069b0a27d62f71e187cb37cbc36c421fea8`**, passes draft and public verification:
 all four entire assets, all **33 commit-pinned files / 32 ZIP members** and
 byte-identical full offline reproduction. Exact tag/review credential jobs
-**42282334510 / 42282334713** pass. Florida UI integration is under validation
+**42282334510 / 42282334713** pass. Florida UI integration was validated
 in an isolated worktree; **117 focused tests** and Astro check
 (**zero errors / zero warnings**) pass. A fresh exact live Utah baseline retains
 all **1,261 complete source records / 396 native rows / 887 download anchors /
@@ -70,8 +71,54 @@ all **833 county counts / 446 fractions / 387 gray missing rates**, and the
 unchanged **887 previous anchors**, now **902 anchors / 897 distinct URLs**.
 Compatibility regeneration checks all **115 entire files** and retains
 all **114 unrelated manifest entries**. Source/history scanning and all six
-scanner regression tests pass. Genuine deployment and exact production
-verification remain pending; this is not yet a Florida LIVE claim.
+scanner regression tests pass.
+Exact UI **`593407da5d9fe6941c868ecfb337e1807652f70a`**, Pages
+**42284659358 / attempt1**, and both exact credential workflows
+**42284659163 / 42284657896** succeeded. At **20:11:24 UTC**, the complete
+original artifact **13536524053 / 509,741,941 bytes / SHA-256
+`8281d601d43bf049aa4fdbecdc48bea9e0e51eb219e417ca2dd3d244e37b1dd8`**
+was verified; actual hosted size is **978,025,465 bytes**, below the unchanged
+one-billion-byte limit. All **394 entire relocations**, **497 entire selected
+hosted/public bodies / all484 prior paths**, and all **seven production-browser
+scenarios** passed. Production preserves all **887 previous download anchors**
+and **18 entire imported datasets**. All **67 Florida county selectors** match
+the reviewed native table, with complete original Monroe observations and one
+reconciled selection. Durable exact production proofs are in
+`data/county-source-reviews/20261106-florida-consolidated-explorer-01/`.
+This verifies the qualified county participation extension, not statewide
+certification, demographic rates or nationwide completeness.
+
+**November 6: South Carolina and Louisiana consolidated scope checked, not promoted.**
+South Carolina's actual participation/results parents and their three declared
+responses are retained privately with verified full digests. The entire
+19,938,209-byte early-voting CSV has 1,048,576 records and 191 nonempty records.
+All **46 county totals / 12 daily columns** reconcile to **1,043,810 early votes**.
+The numerical scope audit preserves every nonempty record, including the
+unexplained **294226** cell on the last record; it is not added to totals.
+The report declares election **November 3** and report **November 2**.
+The complete one-page history PDF was visually inspected: its **2026 General
+Election row is blank**, while primary participation uses a different scope.
+The actually declared general-results route returned **202 / zero bytes**.
+No repeated challenged request, early-only substitution or all-mode rate/map
+approval was made. An earlier web variant remains separate rather than averaged
+or assumed newer; the current primary page now declares the captured PDF/CSV.
+See `data/county-source-reviews/20261106-south-carolina-consolidated-scope-01/`.
+
+Louisiana's official results/statistics parent and both post-election wrappers
+were acquired. The wrappers literally declare broken `--environment--` iframe
+hosts. The exact declared paths/queries were resolved on an independently linked
+public production statistics host, with that provenance explicitly retained.
+Both actual listings select **2026** and contain **eight complete report rows
+each**, ending with June 27; **neither lists November 3**. The official parent
+says post-election participation follows registrar crediting/auditing and may
+take up to two weeks. All five receipts and all 16 native listing rows are
+preserved in
+`data/county-source-reviews/20261106-louisiana-consolidated-scope-01/`.
+No candidate-sum or early/absentee numerator was substituted. These are bounded
+source observations, not proof that no independent official county source exists.
+Neither audit is offered as a metadata-only numerical download or changes the
+current map. Seek distinct declared all-mode statements while retaining the
+consolidated publication paths for later genuine reports.
 
 **November 6: Utah context23 verified LIVE at 19:51 UTC.**
 The actual official general-election portal's declared report menu supplies

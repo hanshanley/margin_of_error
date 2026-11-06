@@ -1,0 +1,260 @@
+{
+  "state": "LA",
+  "election_date": "2026-11-03",
+  "qualification": "Actual current 2026 statewide and parish post-election inventories contain eight files each, but none for November 3. This is a captured-inventory observation, not proof of no other official source.",
+  "receipts": [
+    {
+      "name": "official-results-statistics-index.html",
+      "requested_url": "https://www.sos.la.gov/elections-voting/election-results-statistics",
+      "final_url": "https://www.sos.la.gov/elections-voting/election-results-statistics",
+      "declared_by": null,
+      "observed_at_utc": "2026-11-06T20:03:27.699845+00:00",
+      "status": 200,
+      "bytes": 81831,
+      "sha256": "419b66494101646a1e3576fa890628d63a321e1c61bf47696baed4cfa4566809",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "name": "statewide-post-election-statistics.html",
+      "requested_url": "https://www.sos.la.gov/elections-voting/statewide-post-election-statistics",
+      "final_url": "https://www.sos.la.gov/elections-voting/statewide-post-election-statistics",
+      "declared_by": "https://www.sos.la.gov/elections-voting/election-results-statistics",
+      "observed_at_utc": "2026-11-06T20:03:28.331269+00:00",
+      "status": 200,
+      "bytes": 78116,
+      "sha256": "7ab80842e7e5a7ee91163f4b0da877664bb1c4723fee41655c46926e8ed8ce2c",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "name": "post-election-statistics-by-parish.html",
+      "requested_url": "https://www.sos.la.gov/elections-voting/post-election-statistics-by-parish",
+      "final_url": "https://www.sos.la.gov/elections-voting/post-election-statistics-by-parish",
+      "declared_by": "https://www.sos.la.gov/elections-voting/election-results-statistics",
+      "observed_at_utc": "2026-11-06T20:03:28.487553+00:00",
+      "status": 200,
+      "bytes": 78159,
+      "sha256": "5e28a8dab90af5a76e93fbb047a16c84659ff6a80ab3ccb3803af7f370132053",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "name": "statewide-post-election-statistics-listing.html",
+      "requested_url": "https://electionstatistics.sos.la.gov/default.aspx?Stats=Post_Election_Statistics&Type=Statewide",
+      "final_url": "https://electionstatistics.sos.la.gov/default.aspx?Stats=Post_Election_Statistics&Type=Statewide",
+      "provenance": {
+        "official_parent": "https://www.sos.la.gov/elections-voting/statewide-post-election-statistics",
+        "literal_declared_template": "https://electionstatistics.--environment--.sos.la.gov/default.aspx?Stats=Post_Election_Statistics&Type=Statewide",
+        "production_host_independently_declared_by": "https://electiondesk.civitassi.com/",
+        "resolution": "Use independently declared public production host with the exact official iframe path/query. This resolved URL is not falsely represented as the literal official declaration. No report filenames or dates invented; no denied resource or access control bypassed."
+      },
+      "observed_at_utc": "2026-11-06T20:04:56.059661+00:00",
+      "status": 200,
+      "bytes": 14058,
+      "sha256": "0b0abc41598c81b771fd8074aa241ddf17cd23f1b192443ccf4041560ee6236c",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "name": "post-election-statistics-by-parish-listing.html",
+      "requested_url": "https://electionstatistics.sos.la.gov/default.aspx?Stats=Post_Election_Statistics&Type=Parish",
+      "final_url": "https://electionstatistics.sos.la.gov/default.aspx?Stats=Post_Election_Statistics&Type=Parish",
+      "provenance": {
+        "official_parent": "https://www.sos.la.gov/elections-voting/post-election-statistics-by-parish",
+        "literal_declared_template": "https://electionstatistics.--environment--.sos.la.gov/default.aspx?Stats=Post_Election_Statistics&Type=Parish",
+        "production_host_independently_declared_by": "https://electiondesk.civitassi.com/",
+        "resolution": "Use independently declared public production host with the exact official iframe path/query. This resolved URL is not falsely represented as the literal official declaration. No report filenames or dates invented; no denied resource or access control bypassed."
+      },
+      "observed_at_utc": "2026-11-06T20:04:56.717553+00:00",
+      "status": 200,
+      "bytes": 13940,
+      "sha256": "4c6985b4117f076bf7d3510581954df4c59f647e83e652cb218bfbab6f43a517",
+      "content_type": "text/html; charset=utf-8"
+    }
+  ],
+  "complete_current_listing_rows": [
+    {
+      "kind": "statewide-post-election-statistics",
+      "literal_embedded_template": "https://electionstatistics.--environment--.sos.la.gov/default.aspx?Stats=Post_Election_Statistics&Type=Statewide",
+      "selected_year": "2026",
+      "all_native_report_rows": [
+        {
+          "literal_cells": [
+            "",
+            "2026_0627_sta.xls",
+            "06/27/2026",
+            "7/10/2026",
+            "1,128 KB"
+          ],
+          "literal_href": "/Data/Post_Election_Statistics/statewide/2026_0627_sta.xls"
+        },
+        {
+          "literal_cells": [
+            "",
+            "2026_0627_sta.pdf",
+            "06/27/2026",
+            "7/10/2026",
+            "793 KB"
+          ],
+          "literal_href": "/Data/Post_Election_Statistics/statewide/2026_0627_sta.pdf"
+        },
+        {
+          "literal_cells": [
+            "",
+            "2026_0516_sta.xls",
+            "05/16/2026",
+            "5/28/2026",
+            "1,144 KB"
+          ],
+          "literal_href": "/Data/Post_Election_Statistics/statewide/2026_0516_sta.xls"
+        },
+        {
+          "literal_cells": [
+            "",
+            "2026_0516_sta.pdf",
+            "05/16/2026",
+            "5/28/2026",
+            "794 KB"
+          ],
+          "literal_href": "/Data/Post_Election_Statistics/statewide/2026_0516_sta.pdf"
+        },
+        {
+          "literal_cells": [
+            "",
+            "2026_0314_sta.xls",
+            "03/14/2026",
+            "3/23/2026",
+            "104 KB"
+          ],
+          "literal_href": "/Data/Post_Election_Statistics/statewide/2026_0314_sta.xls"
+        },
+        {
+          "literal_cells": [
+            "",
+            "2026_0314_sta.pdf",
+            "03/14/2026",
+            "3/23/2026",
+            "133 KB"
+          ],
+          "literal_href": "/Data/Post_Election_Statistics/statewide/2026_0314_sta.pdf"
+        },
+        {
+          "literal_cells": [
+            "",
+            "2026_0207_sta.xls",
+            "02/07/2026",
+            "2/18/2026",
+            "152 KB"
+          ],
+          "literal_href": "/Data/Post_Election_Statistics/statewide/2026_0207_sta.xls"
+        },
+        {
+          "literal_cells": [
+            "",
+            "2026_0207_sta.pdf",
+            "02/07/2026",
+            "2/18/2026",
+            "165 KB"
+          ],
+          "literal_href": "/Data/Post_Election_Statistics/statewide/2026_0207_sta.pdf"
+        }
+      ]
+    },
+    {
+      "kind": "post-election-statistics-by-parish",
+      "literal_embedded_template": "https://electionstatistics.--environment--.sos.la.gov/default.aspx?Stats=Post_Election_Statistics&Type=Parish",
+      "selected_year": "2026",
+      "all_native_report_rows": [
+        {
+          "literal_cells": [
+            "",
+            "2026_0627_par.xls",
+            "06/27/2026",
+            "7/10/2026",
+            "3,656 KB"
+          ],
+          "literal_href": "/Data/Post_Election_Statistics/parish/2026_0627_par.xls"
+        },
+        {
+          "literal_cells": [
+            "",
+            "2026_0627_par.pdf",
+            "06/27/2026",
+            "7/10/2026",
+            "2,348 KB"
+          ],
+          "literal_href": "/Data/Post_Election_Statistics/parish/2026_0627_par.pdf"
+        },
+        {
+          "literal_cells": [
+            "",
+            "2026_0516_par.xls",
+            "05/16/2026",
+            "5/28/2026",
+            "3,680 KB"
+          ],
+          "literal_href": "/Data/Post_Election_Statistics/parish/2026_0516_par.xls"
+        },
+        {
+          "literal_cells": [
+            "",
+            "2026_0516_par.pdf",
+            "05/16/2026",
+            "5/28/2026",
+            "2,362 KB"
+          ],
+          "literal_href": "/Data/Post_Election_Statistics/parish/2026_0516_par.pdf"
+        },
+        {
+          "literal_cells": [
+            "",
+            "2026_0314_par.xls",
+            "03/14/2026",
+            "3/23/2026",
+            "160 KB"
+          ],
+          "literal_href": "/Data/Post_Election_Statistics/parish/2026_0314_par.xls"
+        },
+        {
+          "literal_cells": [
+            "",
+            "2026_0314_par.pdf",
+            "03/14/2026",
+            "3/23/2026",
+            "173 KB"
+          ],
+          "literal_href": "/Data/Post_Election_Statistics/parish/2026_0314_par.pdf"
+        },
+        {
+          "literal_cells": [
+            "",
+            "2026_0207_par.xls",
+            "02/07/2026",
+            "2/18/2026",
+            "224 KB"
+          ],
+          "literal_href": "/Data/Post_Election_Statistics/parish/2026_0207_par.xls"
+        },
+        {
+          "literal_cells": [
+            "",
+            "2026_0207_par.pdf",
+            "02/07/2026",
+            "2/18/2026",
+            "212 KB"
+          ],
+          "literal_href": "/Data/Post_Election_Statistics/parish/2026_0207_par.pdf"
+        }
+      ]
+    }
+  ],
+  "official_scope_review": "The official results/statistics page says post-election participation is published after all parish registrars credit voters and complete auditing, which may take up to two weeks. Keep this defined measure distinct from election-night candidate sums and early/absentee totals.",
+  "resolution_review": "The two official wrapper pages literally embed an unresolved --environment-- host. A separately declared public production statistics host was combined with their unchanged iframe paths/queries. This resolution is explicitly recorded, not represented as a literal official URL declaration; no denial, authentication or challenge was bypassed.",
+  "current_all_mode_numerator": null,
+  "current_all_mode_denominator": null,
+  "original_templates_private": true,
+  "new_public_download_offered": false,
+  "approvals": {
+    "all_mode_participation": false,
+    "turnout_rate": false,
+    "demographic_turnout": false,
+    "county_map": false
+  }
+}
