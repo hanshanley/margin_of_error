@@ -2,7 +2,40 @@
 
 ## Current verified production and next acquisition
 
-**November 6, 13:01 UTC: Minnesota participation and context15 LIVE verified.**
+**November 6, 13:33 UTC: Lawrence participation and context16 LIVE verified.**
+Exact UI **`debbd15acc38562cdda7d12d9210186d1a64fd1c`**, Pages
+**42225008616 attempt 1**, passes its original hosted artifact
+**13505571586 / 514,042,361 bytes**, SHA-256
+`4aca2e89da3d8aa5e77d66d722a7d75f2151ffbce75d68ab6f0d0af95fa335e6`.
+All **424 selected entire hosted/public files**, **208 entire relocations**,
+**seven production browser scenarios** and credential jobs
+**42225008528 / 42225006998** pass. Actual hosted preparation is
+**998,381,402 bytes**, leaving **1,618,598 bytes** below the 1 GB limit.
+The smaller **988,242,982-byte** local preparation is not substituted for
+this hosted measurement. The hosted preview matches its publication manifest,
+retaining only the qualified local-platform preview difference.
+The completed exact verifier must not be rerun.
+
+Lawrence retains **31,401 ballots / 57,470 native registrations / printed
+54.64%**, its three distinct clocks, missing timezone, separate earlier
+mail-only snapshot, **0/74 complete / 74/74 partially reported**, two withheld
+unit rounding conflicts and district-specific scopes. Context16 contains
+**1,222 source records / 738 county joins / 351 usable rates / 387 missing
+gray rates**, across eighteen jurisdictions. All **1,221 previous records /
+356 previous native rows / 705 previous download anchors / 18 complete prior
+imports** survive. The current native table has **357 rows / 33 Pennsylvania
+rows**, with **724 download anchors / 720 distinct URLs**.
+Original interactive geometry and every complete historical query remain intact.
+Proofs: `20261106-lawrence-explorer-01/production-verification.json`,
+`deployment-size.json` and `production-browser.json`.
+No completed counting, certification or nationwide completeness claim.
+**Next:** continue genuine county participation gaps and consolidated sources,
+including Maine, remaining Pennsylvania sources and separately scoped D.C.
+Keep schedule #5 active. Before another UI snapshot, address the actual hosted
+headroom with reviewed, full-byte-verified redundant-output relocation rather
+than removing original geometry or historical complete queries.
+
+**Retained November 6, 13:01 UTC: Minnesota participation and context15 LIVE verified.**
 Exact UI **`176200e96a836f71c247b604daeac477c10673c3`**, Pages
 **42220920528 attempt 1**, passes its original hosted artifact
 **13502919641 / 513,115,823 bytes**, SHA-256
@@ -26,7 +59,7 @@ registrations, not CVAP/VAP/VEP or demographic turnout.
 Context15 contains **1,221 source records / 737 county joins / 350 usable
 rates / 387 missing gray rates**, across eighteen jurisdictions. All
 **1,134 previous source records / 269 previous native rows / 684 previous
-download anchors / 18 complete prior imports** survive. The current native
+download anchors / 18 complete prior imports** survive. At that revision the native
 table has **356 rows**, with **705 download anchors / 701 distinct URLs**.
 Original interactive geometry and every complete historical query remain
 intact. Context15 is fixed at **635697084ec43e996662eb5efe55d154fe187405**,
@@ -40,7 +73,7 @@ including Maine, remaining Pennsylvania sources and separately scoped D.C.
 Keep schedule #5 active; do not repeat completed Minnesota publishers,
 unchanged suites or production verification.
 
-**November 6: Lawrence complete factual query published; explorer integration pending.**
+**November 6: Lawrence factual query and explorer integration LIVE verified.**
 The three exact county-declared PDFs contain **214 pages**, not the earlier
 web extraction's differing page counts or numbers. Two independent PDF engines
 agree on every parsed numerical fact. The current native summary reports
@@ -89,10 +122,10 @@ current totals are **357 native rows / 33 Pennsylvania rows / 724 download
 anchors / 720 distinct URLs**. Only the complete context16 ZIP and eighteen
 redundant build-output geometries are additionally relocated; original data
 and every historical complete query remain intact.
-**Next:** publish the reviewed UI and verify its exact hosted revision,
-original artifact, selected full public bytes, actual hosted size,
-credential jobs and production browsers.
-Do not mark Lawrence LIVE or increment current Pennsylvania map coverage yet.
+The exact hosted revision, original artifact, all selected entire public bytes,
+actual hosted size, credential jobs and production browsers now pass, as recorded
+at the top of this plan. Lawrence is one additional reviewed county, not statewide
+or nationwide completion; do not repeat its completed publishers or verifier.
 
 The same acquisition retained Huntingdon's certificate-verification failure
 without disabling TLS verification. Venango's literal declared HTTP results

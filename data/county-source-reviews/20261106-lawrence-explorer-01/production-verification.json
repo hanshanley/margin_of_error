@@ -1,0 +1,3416 @@
+{
+  "verified_at_utc": "2026-11-06T13:33:25.498708+00:00",
+  "revision": "debbd15acc38562cdda7d12d9210186d1a64fd1c",
+  "pages_run_id": 42225008616,
+  "run_attempt": 1,
+  "artifact_id": 13505571586,
+  "artifact_zip_bytes": 514042361,
+  "artifact_zip_sha256": "4aca2e89da3d8aa5e77d66d722a7d75f2151ffbce75d68ab6f0d0af95fa335e6",
+  "deployment_conclusion": "success",
+  "credential_run_ids": [
+    42225008528,
+    42225006998
+  ],
+  "files": [
+    {
+      "path": "scripts/participation-explorer.js",
+      "bytes": 161544,
+      "sha256": "49843303816459e615077b24984e8e4de911699b0718df7c95ab719dfe4f737f",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "scripts/participation-downloads.js",
+      "bytes": 3494,
+      "sha256": "bad2d8e7fd8e481ddb49e3cafda0e5a4c4f5bcec7097933fa0107796d2e3fb49",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "scripts/participation-county-context.js",
+      "bytes": 1798,
+      "sha256": "c23837f6178c121051fd5d1454f7d27690dc1002baaf7392cc4a983001865c05",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context.json",
+      "bytes": 19342,
+      "sha256": "d5a5d1073adffc8fce1f10abe8e57792581c91d1366d1a706880c0fee2a994b3",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "voter-participation/app.js",
+      "bytes": 24950,
+      "sha256": "de06f11048cf3d14b34a9639f9b8a3b5cad0a5ab88fafdf3d966f19929469cde",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "voter-participation/publication-manifest.json",
+      "bytes": 22634,
+      "sha256": "0f132d68946ac079382b21c9891798e598e18922e994ea024122334403a420f6",
+      "hosted_equals_local": false,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "voter-participation/preview.png",
+      "bytes": 65934,
+      "sha256": "8a5e5562f596d7ca10ca04ac179c82d5e69d531462aac9388cdd9ac129cc97f9",
+      "hosted_equals_local": false,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-source-reviews.json",
+      "bytes": 174786,
+      "sha256": "e902ce79fc950c1a837c2488d1dc232d497f894ac7efb78d66c86e065f678456",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-downloads.json",
+      "bytes": 90874,
+      "sha256": "aa8447699d3555de7fc808c7dc2d4fbbd33d6de5affd09db53094c10186dd1d0",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "county-results.json",
+      "bytes": 11665,
+      "sha256": "6d966d0fda05d2ab83b2ecce9324e798ac6fb8883e4e6af7e615bb78a0e6a9d4",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "county-results-overview.geojson.gz",
+      "bytes": 406528,
+      "sha256": "ca4b29a24adf5b2fca668e9ec063e7fa344b125c054bbf91f34c42af12dba0b1",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "precinct-results.json",
+      "bytes": 16908,
+      "sha256": "1284181fbf2ae8493ec3949cde08bf4b12ac7639f0a0d2d72fe1c179aab1c419",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "voter-participation/",
+      "bytes": 3018130,
+      "sha256": "218b3831ba6ce906a5ca6b9151e6fe1dc139876fca62e933fa0f9aee792bfff4",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-local/AL.json.gz",
+      "bytes": 5503,
+      "sha256": "cff6df89fe80d1dabddb1d8664e56da6da0d3cdab3eebdc38227a2e90461d006",
+      "hosted_equals_local": false,
+      "complete_json_matches_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-local/AR.json.gz",
+      "bytes": 5520,
+      "sha256": "184ca5c1e5b3913831fc881df7115383523dd1abf26bc3c109c476ea7a0bd58b",
+      "hosted_equals_local": false,
+      "complete_json_matches_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-local/AZ.json.gz",
+      "bytes": 1692,
+      "sha256": "ffef0098986d2be7aabc1c8a4b697f039481531d9e38189b870af80216d42a8f",
+      "hosted_equals_local": false,
+      "complete_json_matches_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-local/FL.json.gz",
+      "bytes": 828,
+      "sha256": "8a5fc576c62aee45de687eb5e67e9a8aff4cd6129909dddaabdb8aefd05e8d6e",
+      "hosted_equals_local": false,
+      "complete_json_matches_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-local/IA.json.gz",
+      "bytes": 802,
+      "sha256": "fdea5919f3051a3fcb9339362af5c20822caf8e9a3da189e1dc66f1c5d47cd23",
+      "hosted_equals_local": false,
+      "complete_json_matches_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-local/ID.json.gz",
+      "bytes": 66345,
+      "sha256": "55546850135b8d17cddad858c5f9de60e7d06caee08720195809aaf1ca777f10",
+      "hosted_equals_local": false,
+      "complete_json_matches_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-local/KY.json.gz",
+      "bytes": 742,
+      "sha256": "68fe96727313fa9d84276a1d6b05e024abf790b378840000a989cb3cc9c5c9e0",
+      "hosted_equals_local": false,
+      "complete_json_matches_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-local/MI.json.gz",
+      "bytes": 5548,
+      "sha256": "80e04764f9abb422428efb428bcdaacb735489d7c2ba69b48f2f8feb2a1d35a6",
+      "hosted_equals_local": false,
+      "complete_json_matches_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-local/MN.json.gz",
+      "bytes": 252815,
+      "sha256": "259748dcf74e595fa21f27399df37b51acdeebd0b679cf0eb7d5d49772447656",
+      "hosted_equals_local": false,
+      "complete_json_matches_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-local/MO.json.gz",
+      "bytes": 1423,
+      "sha256": "49efe1ee8135754e9cc2db1d15a94763021b65ccad809bb092bd2e04a9299c3a",
+      "hosted_equals_local": false,
+      "complete_json_matches_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-local/ND.json.gz",
+      "bytes": 14896,
+      "sha256": "76b26da2470abe421e539c6072eb7ec84cb12478bf86374402d6e7bdc6fd587e",
+      "hosted_equals_local": false,
+      "complete_json_matches_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-local/NV.json.gz",
+      "bytes": 996,
+      "sha256": "c47c76a566c1e9ca049ff179717732d2c5e1c18f2caf957aa94f1b7af4f9d694",
+      "hosted_equals_local": false,
+      "complete_json_matches_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-local/OR.json.gz",
+      "bytes": 4980,
+      "sha256": "a5866b8a06c20eb3f8e40986e89149d94ea5a70b4761014d05602e946b165ee4",
+      "hosted_equals_local": false,
+      "complete_json_matches_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-local/RI.json.gz",
+      "bytes": 3133,
+      "sha256": "2474afb8b425caf4d7871c14fc5a116d8f20630bc7a362db450aadb94f3cb6d4",
+      "hosted_equals_local": false,
+      "complete_json_matches_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-local/VA.json.gz",
+      "bytes": 10416,
+      "sha256": "d2e31d5c59be582b2453edebbb0c70c7a3d54b0fd6c682d4ec1d08a65c4bd14d",
+      "hosted_equals_local": false,
+      "complete_json_matches_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-local/VT.json.gz",
+      "bytes": 16933,
+      "sha256": "e8b0fac84559cc91d293fdfbca52692f47330f4dbe475838541c82dc13d35855",
+      "hosted_equals_local": false,
+      "complete_json_matches_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-local/WA.json.gz",
+      "bytes": 7301,
+      "sha256": "82d5e3398ac32056c4eedec6f42a4733401de981f52c5d5362045cc071142486",
+      "hosted_equals_local": false,
+      "complete_json_matches_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-local/WY.json.gz",
+      "bytes": 2405,
+      "sha256": "62a1e40b97441e1ce63ce24ddb52557366c756aa8dfe80265e4c923c9316e85d",
+      "hosted_equals_local": false,
+      "complete_json_matches_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-01/complete-2024-county-identities.json.gz",
+      "bytes": 144580,
+      "sha256": "f55f8c9959d056d26e9bfa6b344e9ea564cfc5688b7f7f8b8a2ce8b34f9439ac",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-01/county-participation-joins.csv",
+      "bytes": 276958,
+      "sha256": "e0af29e9b25451c96a07dfa2cac7a505684b621d918c5eb742a41585e9882584",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-01/complete-2026-county-identities.json.gz",
+      "bytes": 155774,
+      "sha256": "cd12a54467a4ad54e9213d541b5a0563655ef41f3f193ed5804c75df51bf3150",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-01/gazetteer-2024-national-counties.zip",
+      "bytes": 141679,
+      "sha256": "3c337402b5c6e8d5aa26b4278ccf4edc8989f2683765b3ffbf22296cdb2df3a0",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-01/gazetteer-2026-national-counties.zip",
+      "bytes": 139190,
+      "sha256": "6a99ca00efbc0be5112e225d4102704c51d5ce3b16e3afd6e4159460595fd12a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-01/geometry-verification.json",
+      "bytes": 107466,
+      "sha256": "4885ab9733e31d29b87bda677e635dc54abef40a70a0e50c85091e41de110ef8",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-01/source-receipts.json",
+      "bytes": 2057,
+      "sha256": "a5f2351cc8b818ee4f93ac5fbeac5a2a54ccf8792c6cd06d9beb2626dfe76662",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-01/checksums.json",
+      "bytes": 3886,
+      "sha256": "102655c233e637668436ddb6e056fe0c804efa52215b0b351badaa4d3475a6d4",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-01/review.json",
+      "bytes": 747914,
+      "sha256": "bc5cd74ffd233160386ad4766064e3f2068b9d095c5955e1a34a954699bcce19",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-01/complete-source-records.json.gz",
+      "bytes": 75858,
+      "sha256": "d623d8dfb7a02ba87dc5eb3d1ddade9bb17fde3a05385b599d75ec265028be42",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-01/public/scripts/participation-county-context.js",
+      "bytes": 1798,
+      "sha256": "c23837f6178c121051fd5d1454f7d27690dc1002baaf7392cc4a983001865c05",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-01/scripts/package-county-context-review.py",
+      "bytes": 1392,
+      "sha256": "75fa3d0b2d2825a9bfdd9372837c68f09b546dbb55ed219fa416fb349db85f75",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-01/scripts/build-county-participation-context.mjs",
+      "bytes": 12941,
+      "sha256": "d81e4047021e6c17bd0cf2ce34d89bc033c8205b720326375efa0a42f79bbc84",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-01/geometry/county-DC.geojson",
+      "bytes": 1724,
+      "sha256": "e111ef8f1b7ab1873b096c6075e63ddc5aa1ae370def71ee8523a2a7b2f3b002",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-01/geometry/county-NJ.geojson",
+      "bytes": 139257,
+      "sha256": "489eabbafe98495645d95ddb65581f5204b3bd7871b001d02d3aaa3ffa11733b",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-01/geometry/county-FL.geojson",
+      "bytes": 494363,
+      "sha256": "d8d21d51dd475bc23c1b10fa0aa151b1591f1c681dfa9c31ce8d94f1b4713f47",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-01/geometry/county-IA.geojson",
+      "bytes": 102952,
+      "sha256": "c4ae2cd4fbac01725cfcf4d9e20815d41c149044a9b73665903135d34561e8ee",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-01/geometry/county-NV.geojson",
+      "bytes": 72248,
+      "sha256": "f67a18f6d0ca4799ba9579f3628054282411310987f64378ec41cbc5fefe28c4",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-01/geometry/county-AR.geojson",
+      "bytes": 422329,
+      "sha256": "addb5be81e6694681a8edb96575c29cf014158e50ae189facbd96f76892a8e2a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-01/geometry/county-VA.geojson",
+      "bytes": 840683,
+      "sha256": "825295417afcfafdd28dd7856edda31cdc0dc8a0d7c9b00abafdac90c38176da",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-01/geometry/county-WA.geojson",
+      "bytes": 395414,
+      "sha256": "b7170c2d2ea13d6ddc1541ea184b5cae1135412be35c041149e5aa8a09eb55f8",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-01/geometry/county-AZ.geojson",
+      "bytes": 195541,
+      "sha256": "0837a91e1b1ae37535b1256afe90ab70955b50872c98f9133a4e56b843252eec",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-01/geometry/county-PA.geojson",
+      "bytes": 298398,
+      "sha256": "02c17862c97cddf64a70ade6596e11c7bd8fe5707ba83bca3910172354b9b58a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-01/geometry/county-MO.geojson",
+      "bytes": 285841,
+      "sha256": "b9b8a05f01088fdcabb2c0aaf52f1dbd325282481a76454a2bd428a33b11795c",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-01/geometry/county-AL.geojson",
+      "bytes": 370354,
+      "sha256": "67b03de3aa281430aeae575360c932074111be88289c081ec80d978067e095ec",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-01/geometry/county-KY.geojson",
+      "bytes": 844982,
+      "sha256": "f9d2e0f8bd3e72f22d7ff6a530450d6e5e5bbad83f5dd02c32648a3207ef5eac",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-01/geometry/county-OR.geojson",
+      "bytes": 297700,
+      "sha256": "86f79f21252fdeef6d5c06525f909e2578f6119c158bfe10b51fecb72609e6eb",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-01/geometry/county-WY.geojson",
+      "bytes": 96180,
+      "sha256": "19eca7f10211ad57da4589ef2969d8817a241d90381a2ff4d1b513851d8ca777",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-02/complete-2024-county-identities.json.gz",
+      "bytes": 144580,
+      "sha256": "f55f8c9959d056d26e9bfa6b344e9ea564cfc5688b7f7f8b8a2ce8b34f9439ac",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-02/county-participation-joins.csv",
+      "bytes": 277590,
+      "sha256": "1048ff81cb4c5a231a800ebb0739432811ef4a14c7cd46ce6de6abd429f32d9a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-02/complete-2026-county-identities.json.gz",
+      "bytes": 155774,
+      "sha256": "cd12a54467a4ad54e9213d541b5a0563655ef41f3f193ed5804c75df51bf3150",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-02/gazetteer-2024-national-counties.zip",
+      "bytes": 141679,
+      "sha256": "3c337402b5c6e8d5aa26b4278ccf4edc8989f2683765b3ffbf22296cdb2df3a0",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-02/gazetteer-2026-national-counties.zip",
+      "bytes": 139190,
+      "sha256": "6a99ca00efbc0be5112e225d4102704c51d5ce3b16e3afd6e4159460595fd12a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-02/geometry-verification.json",
+      "bytes": 107466,
+      "sha256": "4885ab9733e31d29b87bda677e635dc54abef40a70a0e50c85091e41de110ef8",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-02/source-receipts.json",
+      "bytes": 2057,
+      "sha256": "a5f2351cc8b818ee4f93ac5fbeac5a2a54ccf8792c6cd06d9beb2626dfe76662",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-02/checksums.json",
+      "bytes": 3886,
+      "sha256": "339ca9f5373c621f7c6c4b1089a76528d10bf62e004b91f677d1c8ada80fdd17",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-02/review.json",
+      "bytes": 749023,
+      "sha256": "f39ac2f6771f8a9e442b590b3bd41fe458da43adf320863f4de7dbe7e1e6dbfa",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-02/complete-source-records.json.gz",
+      "bytes": 76784,
+      "sha256": "09e9abc2e5dbc95da6cf380eee155e0e3678577a63d2ec6ee0607112f6affd9e",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-02/public/scripts/participation-county-context.js",
+      "bytes": 1798,
+      "sha256": "c23837f6178c121051fd5d1454f7d27690dc1002baaf7392cc4a983001865c05",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-02/scripts/package-county-context-review.py",
+      "bytes": 1536,
+      "sha256": "560ed0b19bf48a25877aab3cadaa9125cea49b0081146ec3cf844e3394dc4224",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-02/scripts/build-county-participation-context.mjs",
+      "bytes": 13215,
+      "sha256": "cfafe47c67ab020e4a7af12ce084ccba3b3e0b64be4261edb221de371cae7e76",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-02/geometry/county-DC.geojson",
+      "bytes": 1724,
+      "sha256": "e111ef8f1b7ab1873b096c6075e63ddc5aa1ae370def71ee8523a2a7b2f3b002",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-02/geometry/county-NJ.geojson",
+      "bytes": 139257,
+      "sha256": "489eabbafe98495645d95ddb65581f5204b3bd7871b001d02d3aaa3ffa11733b",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-02/geometry/county-FL.geojson",
+      "bytes": 494363,
+      "sha256": "d8d21d51dd475bc23c1b10fa0aa151b1591f1c681dfa9c31ce8d94f1b4713f47",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-02/geometry/county-IA.geojson",
+      "bytes": 102952,
+      "sha256": "c4ae2cd4fbac01725cfcf4d9e20815d41c149044a9b73665903135d34561e8ee",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-02/geometry/county-NV.geojson",
+      "bytes": 72248,
+      "sha256": "f67a18f6d0ca4799ba9579f3628054282411310987f64378ec41cbc5fefe28c4",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-02/geometry/county-AR.geojson",
+      "bytes": 422329,
+      "sha256": "addb5be81e6694681a8edb96575c29cf014158e50ae189facbd96f76892a8e2a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-02/geometry/county-VA.geojson",
+      "bytes": 840683,
+      "sha256": "825295417afcfafdd28dd7856edda31cdc0dc8a0d7c9b00abafdac90c38176da",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-02/geometry/county-WA.geojson",
+      "bytes": 395414,
+      "sha256": "b7170c2d2ea13d6ddc1541ea184b5cae1135412be35c041149e5aa8a09eb55f8",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-02/geometry/county-AZ.geojson",
+      "bytes": 195541,
+      "sha256": "0837a91e1b1ae37535b1256afe90ab70955b50872c98f9133a4e56b843252eec",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-02/geometry/county-PA.geojson",
+      "bytes": 298398,
+      "sha256": "02c17862c97cddf64a70ade6596e11c7bd8fe5707ba83bca3910172354b9b58a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-02/geometry/county-MO.geojson",
+      "bytes": 285841,
+      "sha256": "b9b8a05f01088fdcabb2c0aaf52f1dbd325282481a76454a2bd428a33b11795c",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-02/geometry/county-AL.geojson",
+      "bytes": 370354,
+      "sha256": "67b03de3aa281430aeae575360c932074111be88289c081ec80d978067e095ec",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-02/geometry/county-KY.geojson",
+      "bytes": 844982,
+      "sha256": "f9d2e0f8bd3e72f22d7ff6a530450d6e5e5bbad83f5dd02c32648a3207ef5eac",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-02/geometry/county-OR.geojson",
+      "bytes": 297700,
+      "sha256": "86f79f21252fdeef6d5c06525f909e2578f6119c158bfe10b51fecb72609e6eb",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-02/geometry/county-WY.geojson",
+      "bytes": 96180,
+      "sha256": "19eca7f10211ad57da4589ef2969d8817a241d90381a2ff4d1b513851d8ca777",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-03/complete-2024-county-identities.json.gz",
+      "bytes": 144580,
+      "sha256": "f55f8c9959d056d26e9bfa6b344e9ea564cfc5688b7f7f8b8a2ce8b34f9439ac",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-03/county-participation-joins.csv",
+      "bytes": 278208,
+      "sha256": "cbfada4aa501ea7e25ee8280b07d61580fa87b6250dd3563c57d10b245c7b52f",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-03/complete-2026-county-identities.json.gz",
+      "bytes": 155774,
+      "sha256": "cd12a54467a4ad54e9213d541b5a0563655ef41f3f193ed5804c75df51bf3150",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-03/gazetteer-2024-national-counties.zip",
+      "bytes": 141679,
+      "sha256": "3c337402b5c6e8d5aa26b4278ccf4edc8989f2683765b3ffbf22296cdb2df3a0",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-03/gazetteer-2026-national-counties.zip",
+      "bytes": 139190,
+      "sha256": "6a99ca00efbc0be5112e225d4102704c51d5ce3b16e3afd6e4159460595fd12a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-03/geometry-verification.json",
+      "bytes": 107466,
+      "sha256": "4885ab9733e31d29b87bda677e635dc54abef40a70a0e50c85091e41de110ef8",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-03/source-receipts.json",
+      "bytes": 2057,
+      "sha256": "a5f2351cc8b818ee4f93ac5fbeac5a2a54ccf8792c6cd06d9beb2626dfe76662",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-03/checksums.json",
+      "bytes": 3886,
+      "sha256": "ba7f6ff98ef37e4d6802434c1ee05da564bd369301f59facd02683e97d8cb9cc",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-03/review.json",
+      "bytes": 750118,
+      "sha256": "fb28ee4666ff5aa0a7546f3b2394ad7679b99e69e1130251e284911cd9926c08",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-03/complete-source-records.json.gz",
+      "bytes": 77091,
+      "sha256": "3364f6f0253eb68cd8dfda788fe70012cb40b7b7ab8ac4153594034f2fa9e1f3",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-03/public/scripts/participation-county-context.js",
+      "bytes": 1798,
+      "sha256": "c23837f6178c121051fd5d1454f7d27690dc1002baaf7392cc4a983001865c05",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-03/scripts/package-county-context-review.py",
+      "bytes": 1536,
+      "sha256": "560ed0b19bf48a25877aab3cadaa9125cea49b0081146ec3cf844e3394dc4224",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-03/scripts/build-county-participation-context.mjs",
+      "bytes": 13215,
+      "sha256": "cfafe47c67ab020e4a7af12ce084ccba3b3e0b64be4261edb221de371cae7e76",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-03/geometry/county-DC.geojson",
+      "bytes": 1724,
+      "sha256": "e111ef8f1b7ab1873b096c6075e63ddc5aa1ae370def71ee8523a2a7b2f3b002",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-03/geometry/county-NJ.geojson",
+      "bytes": 139257,
+      "sha256": "489eabbafe98495645d95ddb65581f5204b3bd7871b001d02d3aaa3ffa11733b",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-03/geometry/county-FL.geojson",
+      "bytes": 494363,
+      "sha256": "d8d21d51dd475bc23c1b10fa0aa151b1591f1c681dfa9c31ce8d94f1b4713f47",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-03/geometry/county-IA.geojson",
+      "bytes": 102952,
+      "sha256": "c4ae2cd4fbac01725cfcf4d9e20815d41c149044a9b73665903135d34561e8ee",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-03/geometry/county-NV.geojson",
+      "bytes": 72248,
+      "sha256": "f67a18f6d0ca4799ba9579f3628054282411310987f64378ec41cbc5fefe28c4",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-03/geometry/county-AR.geojson",
+      "bytes": 422329,
+      "sha256": "addb5be81e6694681a8edb96575c29cf014158e50ae189facbd96f76892a8e2a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-03/geometry/county-VA.geojson",
+      "bytes": 840683,
+      "sha256": "825295417afcfafdd28dd7856edda31cdc0dc8a0d7c9b00abafdac90c38176da",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-03/geometry/county-WA.geojson",
+      "bytes": 395414,
+      "sha256": "b7170c2d2ea13d6ddc1541ea184b5cae1135412be35c041149e5aa8a09eb55f8",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-03/geometry/county-AZ.geojson",
+      "bytes": 195541,
+      "sha256": "0837a91e1b1ae37535b1256afe90ab70955b50872c98f9133a4e56b843252eec",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-03/geometry/county-PA.geojson",
+      "bytes": 298398,
+      "sha256": "02c17862c97cddf64a70ade6596e11c7bd8fe5707ba83bca3910172354b9b58a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-03/geometry/county-MO.geojson",
+      "bytes": 285841,
+      "sha256": "b9b8a05f01088fdcabb2c0aaf52f1dbd325282481a76454a2bd428a33b11795c",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-03/geometry/county-AL.geojson",
+      "bytes": 370354,
+      "sha256": "67b03de3aa281430aeae575360c932074111be88289c081ec80d978067e095ec",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-03/geometry/county-KY.geojson",
+      "bytes": 844982,
+      "sha256": "f9d2e0f8bd3e72f22d7ff6a530450d6e5e5bbad83f5dd02c32648a3207ef5eac",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-03/geometry/county-OR.geojson",
+      "bytes": 297700,
+      "sha256": "86f79f21252fdeef6d5c06525f909e2578f6119c158bfe10b51fecb72609e6eb",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-03/geometry/county-WY.geojson",
+      "bytes": 96180,
+      "sha256": "19eca7f10211ad57da4589ef2969d8817a241d90381a2ff4d1b513851d8ca777",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-04/complete-2024-county-identities.json.gz",
+      "bytes": 144580,
+      "sha256": "f55f8c9959d056d26e9bfa6b344e9ea564cfc5688b7f7f8b8a2ce8b34f9439ac",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-04/county-participation-joins.csv",
+      "bytes": 279444,
+      "sha256": "7ed307bcc57a48212d89aef7c1954c510d7d71fdd483b0096d12e1f79c2257e8",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-04/complete-2026-county-identities.json.gz",
+      "bytes": 155774,
+      "sha256": "cd12a54467a4ad54e9213d541b5a0563655ef41f3f193ed5804c75df51bf3150",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-04/gazetteer-2024-national-counties.zip",
+      "bytes": 141679,
+      "sha256": "3c337402b5c6e8d5aa26b4278ccf4edc8989f2683765b3ffbf22296cdb2df3a0",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-04/gazetteer-2026-national-counties.zip",
+      "bytes": 139190,
+      "sha256": "6a99ca00efbc0be5112e225d4102704c51d5ce3b16e3afd6e4159460595fd12a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-04/geometry-verification.json",
+      "bytes": 107466,
+      "sha256": "4885ab9733e31d29b87bda677e635dc54abef40a70a0e50c85091e41de110ef8",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-04/source-receipts.json",
+      "bytes": 2057,
+      "sha256": "a5f2351cc8b818ee4f93ac5fbeac5a2a54ccf8792c6cd06d9beb2626dfe76662",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-04/checksums.json",
+      "bytes": 3886,
+      "sha256": "70e90164168cfcac2ac548a95a21bfc59d6b79af1f548532624030e1ac0f324d",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-04/review.json",
+      "bytes": 752308,
+      "sha256": "0c99fcf2de4811aa3f50c7a1aa3f85f303298f59554d17deec466d07cb41dd2d",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-04/complete-source-records.json.gz",
+      "bytes": 77890,
+      "sha256": "506456295c8c35db2608a9acd3b0804a941dfdf28947137c2106809eedbd7758",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-04/public/scripts/participation-county-context.js",
+      "bytes": 1798,
+      "sha256": "c23837f6178c121051fd5d1454f7d27690dc1002baaf7392cc4a983001865c05",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-04/scripts/package-county-context-review.py",
+      "bytes": 1536,
+      "sha256": "560ed0b19bf48a25877aab3cadaa9125cea49b0081146ec3cf844e3394dc4224",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-04/scripts/build-county-participation-context.mjs",
+      "bytes": 13215,
+      "sha256": "cfafe47c67ab020e4a7af12ce084ccba3b3e0b64be4261edb221de371cae7e76",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-04/geometry/county-DC.geojson",
+      "bytes": 1724,
+      "sha256": "e111ef8f1b7ab1873b096c6075e63ddc5aa1ae370def71ee8523a2a7b2f3b002",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-04/geometry/county-NJ.geojson",
+      "bytes": 139257,
+      "sha256": "489eabbafe98495645d95ddb65581f5204b3bd7871b001d02d3aaa3ffa11733b",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-04/geometry/county-FL.geojson",
+      "bytes": 494363,
+      "sha256": "d8d21d51dd475bc23c1b10fa0aa151b1591f1c681dfa9c31ce8d94f1b4713f47",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-04/geometry/county-IA.geojson",
+      "bytes": 102952,
+      "sha256": "c4ae2cd4fbac01725cfcf4d9e20815d41c149044a9b73665903135d34561e8ee",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-04/geometry/county-NV.geojson",
+      "bytes": 72248,
+      "sha256": "f67a18f6d0ca4799ba9579f3628054282411310987f64378ec41cbc5fefe28c4",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-04/geometry/county-AR.geojson",
+      "bytes": 422329,
+      "sha256": "addb5be81e6694681a8edb96575c29cf014158e50ae189facbd96f76892a8e2a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-04/geometry/county-VA.geojson",
+      "bytes": 840683,
+      "sha256": "825295417afcfafdd28dd7856edda31cdc0dc8a0d7c9b00abafdac90c38176da",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-04/geometry/county-WA.geojson",
+      "bytes": 395414,
+      "sha256": "b7170c2d2ea13d6ddc1541ea184b5cae1135412be35c041149e5aa8a09eb55f8",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-04/geometry/county-AZ.geojson",
+      "bytes": 195541,
+      "sha256": "0837a91e1b1ae37535b1256afe90ab70955b50872c98f9133a4e56b843252eec",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-04/geometry/county-PA.geojson",
+      "bytes": 298398,
+      "sha256": "02c17862c97cddf64a70ade6596e11c7bd8fe5707ba83bca3910172354b9b58a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-04/geometry/county-MO.geojson",
+      "bytes": 285841,
+      "sha256": "b9b8a05f01088fdcabb2c0aaf52f1dbd325282481a76454a2bd428a33b11795c",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-04/geometry/county-AL.geojson",
+      "bytes": 370354,
+      "sha256": "67b03de3aa281430aeae575360c932074111be88289c081ec80d978067e095ec",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-04/geometry/county-KY.geojson",
+      "bytes": 844982,
+      "sha256": "f9d2e0f8bd3e72f22d7ff6a530450d6e5e5bbad83f5dd02c32648a3207ef5eac",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-04/geometry/county-OR.geojson",
+      "bytes": 297700,
+      "sha256": "86f79f21252fdeef6d5c06525f909e2578f6119c158bfe10b51fecb72609e6eb",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-04/geometry/county-WY.geojson",
+      "bytes": 96180,
+      "sha256": "19eca7f10211ad57da4589ef2969d8817a241d90381a2ff4d1b513851d8ca777",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-05/complete-2024-county-identities.json.gz",
+      "bytes": 144580,
+      "sha256": "f55f8c9959d056d26e9bfa6b344e9ea564cfc5688b7f7f8b8a2ce8b34f9439ac",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-05/county-participation-joins.csv",
+      "bytes": 280661,
+      "sha256": "20e95c469b65e15af5b7346ed3668bd4de8826d0eeeb84613557f0b7c4542846",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-05/complete-2026-county-identities.json.gz",
+      "bytes": 155774,
+      "sha256": "cd12a54467a4ad54e9213d541b5a0563655ef41f3f193ed5804c75df51bf3150",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-05/gazetteer-2024-national-counties.zip",
+      "bytes": 141679,
+      "sha256": "3c337402b5c6e8d5aa26b4278ccf4edc8989f2683765b3ffbf22296cdb2df3a0",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-05/gazetteer-2026-national-counties.zip",
+      "bytes": 139190,
+      "sha256": "6a99ca00efbc0be5112e225d4102704c51d5ce3b16e3afd6e4159460595fd12a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-05/geometry-verification.json",
+      "bytes": 107466,
+      "sha256": "4885ab9733e31d29b87bda677e635dc54abef40a70a0e50c85091e41de110ef8",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-05/source-receipts.json",
+      "bytes": 2057,
+      "sha256": "a5f2351cc8b818ee4f93ac5fbeac5a2a54ccf8792c6cd06d9beb2626dfe76662",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-05/checksums.json",
+      "bytes": 3886,
+      "sha256": "2be4e2eaad4540568b3dd9a27af1c817db4735372b8390a3140921dcc686d071",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-05/review.json",
+      "bytes": 754479,
+      "sha256": "80ca5bfd63bb97edc89c9e0b92c1d3a26372f865c4196bf5d8a3826a490383ad",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-05/complete-source-records.json.gz",
+      "bytes": 78762,
+      "sha256": "74d62eece6e60b1ee9378683c74752ae0a12ee9423018d566703bf5d9ed7a9c0",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-05/public/scripts/participation-county-context.js",
+      "bytes": 1798,
+      "sha256": "c23837f6178c121051fd5d1454f7d27690dc1002baaf7392cc4a983001865c05",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-05/scripts/package-county-context-review.py",
+      "bytes": 1536,
+      "sha256": "560ed0b19bf48a25877aab3cadaa9125cea49b0081146ec3cf844e3394dc4224",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-05/scripts/build-county-participation-context.mjs",
+      "bytes": 13215,
+      "sha256": "cfafe47c67ab020e4a7af12ce084ccba3b3e0b64be4261edb221de371cae7e76",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-05/geometry/county-DC.geojson",
+      "bytes": 1724,
+      "sha256": "e111ef8f1b7ab1873b096c6075e63ddc5aa1ae370def71ee8523a2a7b2f3b002",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-05/geometry/county-NJ.geojson",
+      "bytes": 139257,
+      "sha256": "489eabbafe98495645d95ddb65581f5204b3bd7871b001d02d3aaa3ffa11733b",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-05/geometry/county-FL.geojson",
+      "bytes": 494363,
+      "sha256": "d8d21d51dd475bc23c1b10fa0aa151b1591f1c681dfa9c31ce8d94f1b4713f47",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-05/geometry/county-IA.geojson",
+      "bytes": 102952,
+      "sha256": "c4ae2cd4fbac01725cfcf4d9e20815d41c149044a9b73665903135d34561e8ee",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-05/geometry/county-NV.geojson",
+      "bytes": 72248,
+      "sha256": "f67a18f6d0ca4799ba9579f3628054282411310987f64378ec41cbc5fefe28c4",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-05/geometry/county-AR.geojson",
+      "bytes": 422329,
+      "sha256": "addb5be81e6694681a8edb96575c29cf014158e50ae189facbd96f76892a8e2a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-05/geometry/county-VA.geojson",
+      "bytes": 840683,
+      "sha256": "825295417afcfafdd28dd7856edda31cdc0dc8a0d7c9b00abafdac90c38176da",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-05/geometry/county-WA.geojson",
+      "bytes": 395414,
+      "sha256": "b7170c2d2ea13d6ddc1541ea184b5cae1135412be35c041149e5aa8a09eb55f8",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-05/geometry/county-AZ.geojson",
+      "bytes": 195541,
+      "sha256": "0837a91e1b1ae37535b1256afe90ab70955b50872c98f9133a4e56b843252eec",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-05/geometry/county-PA.geojson",
+      "bytes": 298398,
+      "sha256": "02c17862c97cddf64a70ade6596e11c7bd8fe5707ba83bca3910172354b9b58a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-05/geometry/county-MO.geojson",
+      "bytes": 285841,
+      "sha256": "b9b8a05f01088fdcabb2c0aaf52f1dbd325282481a76454a2bd428a33b11795c",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-05/geometry/county-AL.geojson",
+      "bytes": 370354,
+      "sha256": "67b03de3aa281430aeae575360c932074111be88289c081ec80d978067e095ec",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-05/geometry/county-KY.geojson",
+      "bytes": 844982,
+      "sha256": "f9d2e0f8bd3e72f22d7ff6a530450d6e5e5bbad83f5dd02c32648a3207ef5eac",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-05/geometry/county-OR.geojson",
+      "bytes": 297700,
+      "sha256": "86f79f21252fdeef6d5c06525f909e2578f6119c158bfe10b51fecb72609e6eb",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-05/geometry/county-WY.geojson",
+      "bytes": 96180,
+      "sha256": "19eca7f10211ad57da4589ef2969d8817a241d90381a2ff4d1b513851d8ca777",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-06/complete-2024-county-identities.json.gz",
+      "bytes": 144580,
+      "sha256": "f55f8c9959d056d26e9bfa6b344e9ea564cfc5688b7f7f8b8a2ce8b34f9439ac",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-06/county-participation-joins.csv",
+      "bytes": 281282,
+      "sha256": "06857df7effd5d6d3c182841246d64cd6be7e80691f4335d36f94d74f0570bff",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-06/complete-2026-county-identities.json.gz",
+      "bytes": 155774,
+      "sha256": "cd12a54467a4ad54e9213d541b5a0563655ef41f3f193ed5804c75df51bf3150",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-06/gazetteer-2024-national-counties.zip",
+      "bytes": 141679,
+      "sha256": "3c337402b5c6e8d5aa26b4278ccf4edc8989f2683765b3ffbf22296cdb2df3a0",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-06/gazetteer-2026-national-counties.zip",
+      "bytes": 139190,
+      "sha256": "6a99ca00efbc0be5112e225d4102704c51d5ce3b16e3afd6e4159460595fd12a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-06/geometry-verification.json",
+      "bytes": 107466,
+      "sha256": "4885ab9733e31d29b87bda677e635dc54abef40a70a0e50c85091e41de110ef8",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-06/source-receipts.json",
+      "bytes": 2057,
+      "sha256": "a5f2351cc8b818ee4f93ac5fbeac5a2a54ccf8792c6cd06d9beb2626dfe76662",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-06/checksums.json",
+      "bytes": 3886,
+      "sha256": "d34b1568c99f25af6c72b18945391b6399df660438a4a145e2efaa76e493b478",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-06/review.json",
+      "bytes": 755577,
+      "sha256": "976e305e2c0ff14cfb2bf8677335256ecb3d340b6887d3e0c1e407b8d64dcb5d",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-06/complete-source-records.json.gz",
+      "bytes": 79204,
+      "sha256": "37a30446e4f588181719e45b91651d243b8341e7883e5283a176396033494727",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-06/public/scripts/participation-county-context.js",
+      "bytes": 1798,
+      "sha256": "c23837f6178c121051fd5d1454f7d27690dc1002baaf7392cc4a983001865c05",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-06/scripts/package-county-context-review.py",
+      "bytes": 1536,
+      "sha256": "560ed0b19bf48a25877aab3cadaa9125cea49b0081146ec3cf844e3394dc4224",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-06/scripts/build-county-participation-context.mjs",
+      "bytes": 13215,
+      "sha256": "cfafe47c67ab020e4a7af12ce084ccba3b3e0b64be4261edb221de371cae7e76",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-06/geometry/county-DC.geojson",
+      "bytes": 1724,
+      "sha256": "e111ef8f1b7ab1873b096c6075e63ddc5aa1ae370def71ee8523a2a7b2f3b002",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-06/geometry/county-NJ.geojson",
+      "bytes": 139257,
+      "sha256": "489eabbafe98495645d95ddb65581f5204b3bd7871b001d02d3aaa3ffa11733b",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-06/geometry/county-FL.geojson",
+      "bytes": 494363,
+      "sha256": "d8d21d51dd475bc23c1b10fa0aa151b1591f1c681dfa9c31ce8d94f1b4713f47",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-06/geometry/county-IA.geojson",
+      "bytes": 102952,
+      "sha256": "c4ae2cd4fbac01725cfcf4d9e20815d41c149044a9b73665903135d34561e8ee",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-06/geometry/county-NV.geojson",
+      "bytes": 72248,
+      "sha256": "f67a18f6d0ca4799ba9579f3628054282411310987f64378ec41cbc5fefe28c4",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-06/geometry/county-AR.geojson",
+      "bytes": 422329,
+      "sha256": "addb5be81e6694681a8edb96575c29cf014158e50ae189facbd96f76892a8e2a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-06/geometry/county-VA.geojson",
+      "bytes": 840683,
+      "sha256": "825295417afcfafdd28dd7856edda31cdc0dc8a0d7c9b00abafdac90c38176da",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-06/geometry/county-WA.geojson",
+      "bytes": 395414,
+      "sha256": "b7170c2d2ea13d6ddc1541ea184b5cae1135412be35c041149e5aa8a09eb55f8",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-06/geometry/county-AZ.geojson",
+      "bytes": 195541,
+      "sha256": "0837a91e1b1ae37535b1256afe90ab70955b50872c98f9133a4e56b843252eec",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-06/geometry/county-PA.geojson",
+      "bytes": 298398,
+      "sha256": "02c17862c97cddf64a70ade6596e11c7bd8fe5707ba83bca3910172354b9b58a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-06/geometry/county-MO.geojson",
+      "bytes": 285841,
+      "sha256": "b9b8a05f01088fdcabb2c0aaf52f1dbd325282481a76454a2bd428a33b11795c",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-06/geometry/county-AL.geojson",
+      "bytes": 370354,
+      "sha256": "67b03de3aa281430aeae575360c932074111be88289c081ec80d978067e095ec",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-06/geometry/county-KY.geojson",
+      "bytes": 844982,
+      "sha256": "f9d2e0f8bd3e72f22d7ff6a530450d6e5e5bbad83f5dd02c32648a3207ef5eac",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-06/geometry/county-OR.geojson",
+      "bytes": 297700,
+      "sha256": "86f79f21252fdeef6d5c06525f909e2578f6119c158bfe10b51fecb72609e6eb",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-06/geometry/county-WY.geojson",
+      "bytes": 96180,
+      "sha256": "19eca7f10211ad57da4589ef2969d8817a241d90381a2ff4d1b513851d8ca777",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-07/complete-2024-county-identities.json.gz",
+      "bytes": 144580,
+      "sha256": "f55f8c9959d056d26e9bfa6b344e9ea564cfc5688b7f7f8b8a2ce8b34f9439ac",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-07/county-participation-joins.csv",
+      "bytes": 281889,
+      "sha256": "dc629ecea139259c434cf5049d233667869e52c750b7697d2500627846d8970b",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-07/complete-2026-county-identities.json.gz",
+      "bytes": 155774,
+      "sha256": "cd12a54467a4ad54e9213d541b5a0563655ef41f3f193ed5804c75df51bf3150",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-07/gazetteer-2024-national-counties.zip",
+      "bytes": 141679,
+      "sha256": "3c337402b5c6e8d5aa26b4278ccf4edc8989f2683765b3ffbf22296cdb2df3a0",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-07/gazetteer-2026-national-counties.zip",
+      "bytes": 139190,
+      "sha256": "6a99ca00efbc0be5112e225d4102704c51d5ce3b16e3afd6e4159460595fd12a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-07/geometry-verification.json",
+      "bytes": 107466,
+      "sha256": "4885ab9733e31d29b87bda677e635dc54abef40a70a0e50c85091e41de110ef8",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-07/source-receipts.json",
+      "bytes": 2057,
+      "sha256": "a5f2351cc8b818ee4f93ac5fbeac5a2a54ccf8792c6cd06d9beb2626dfe76662",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-07/checksums.json",
+      "bytes": 3886,
+      "sha256": "40e622d12c1f659f791cd0f9b2e1a18725f9d7d4c7100fe3a9b19655aea51ee9",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-07/review.json",
+      "bytes": 756669,
+      "sha256": "66d5e403224ed08bede073f7ac68733326a396b1a206134cf112af1489fc5855",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-07/complete-source-records.json.gz",
+      "bytes": 79649,
+      "sha256": "d2840b3cbfff828a76936d1315d7967be529d39c8912ff0ddb2132727349cdc9",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-07/public/scripts/participation-county-context.js",
+      "bytes": 1798,
+      "sha256": "c23837f6178c121051fd5d1454f7d27690dc1002baaf7392cc4a983001865c05",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-07/scripts/package-county-context-review.py",
+      "bytes": 1536,
+      "sha256": "560ed0b19bf48a25877aab3cadaa9125cea49b0081146ec3cf844e3394dc4224",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-07/scripts/build-county-participation-context.mjs",
+      "bytes": 13215,
+      "sha256": "cfafe47c67ab020e4a7af12ce084ccba3b3e0b64be4261edb221de371cae7e76",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-07/geometry/county-DC.geojson",
+      "bytes": 1724,
+      "sha256": "e111ef8f1b7ab1873b096c6075e63ddc5aa1ae370def71ee8523a2a7b2f3b002",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-07/geometry/county-NJ.geojson",
+      "bytes": 139257,
+      "sha256": "489eabbafe98495645d95ddb65581f5204b3bd7871b001d02d3aaa3ffa11733b",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-07/geometry/county-FL.geojson",
+      "bytes": 494363,
+      "sha256": "d8d21d51dd475bc23c1b10fa0aa151b1591f1c681dfa9c31ce8d94f1b4713f47",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-07/geometry/county-IA.geojson",
+      "bytes": 102952,
+      "sha256": "c4ae2cd4fbac01725cfcf4d9e20815d41c149044a9b73665903135d34561e8ee",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-07/geometry/county-NV.geojson",
+      "bytes": 72248,
+      "sha256": "f67a18f6d0ca4799ba9579f3628054282411310987f64378ec41cbc5fefe28c4",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-07/geometry/county-AR.geojson",
+      "bytes": 422329,
+      "sha256": "addb5be81e6694681a8edb96575c29cf014158e50ae189facbd96f76892a8e2a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-07/geometry/county-VA.geojson",
+      "bytes": 840683,
+      "sha256": "825295417afcfafdd28dd7856edda31cdc0dc8a0d7c9b00abafdac90c38176da",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-07/geometry/county-WA.geojson",
+      "bytes": 395414,
+      "sha256": "b7170c2d2ea13d6ddc1541ea184b5cae1135412be35c041149e5aa8a09eb55f8",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-07/geometry/county-AZ.geojson",
+      "bytes": 195541,
+      "sha256": "0837a91e1b1ae37535b1256afe90ab70955b50872c98f9133a4e56b843252eec",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-07/geometry/county-PA.geojson",
+      "bytes": 298398,
+      "sha256": "02c17862c97cddf64a70ade6596e11c7bd8fe5707ba83bca3910172354b9b58a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-07/geometry/county-MO.geojson",
+      "bytes": 285841,
+      "sha256": "b9b8a05f01088fdcabb2c0aaf52f1dbd325282481a76454a2bd428a33b11795c",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-07/geometry/county-AL.geojson",
+      "bytes": 370354,
+      "sha256": "67b03de3aa281430aeae575360c932074111be88289c081ec80d978067e095ec",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-07/geometry/county-KY.geojson",
+      "bytes": 844982,
+      "sha256": "f9d2e0f8bd3e72f22d7ff6a530450d6e5e5bbad83f5dd02c32648a3207ef5eac",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-07/geometry/county-OR.geojson",
+      "bytes": 297700,
+      "sha256": "86f79f21252fdeef6d5c06525f909e2578f6119c158bfe10b51fecb72609e6eb",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-07/geometry/county-WY.geojson",
+      "bytes": 96180,
+      "sha256": "19eca7f10211ad57da4589ef2969d8817a241d90381a2ff4d1b513851d8ca777",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-08/complete-2024-county-identities.json.gz",
+      "bytes": 144580,
+      "sha256": "f55f8c9959d056d26e9bfa6b344e9ea564cfc5688b7f7f8b8a2ce8b34f9439ac",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-08/county-participation-joins.csv",
+      "bytes": 282502,
+      "sha256": "71dbe310b27e95da3ba2130a13d1379a7c2abacd8e8c0e6fd18fac0a6d5a0f0a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-08/complete-2026-county-identities.json.gz",
+      "bytes": 155774,
+      "sha256": "cd12a54467a4ad54e9213d541b5a0563655ef41f3f193ed5804c75df51bf3150",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-08/gazetteer-2024-national-counties.zip",
+      "bytes": 141679,
+      "sha256": "3c337402b5c6e8d5aa26b4278ccf4edc8989f2683765b3ffbf22296cdb2df3a0",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-08/gazetteer-2026-national-counties.zip",
+      "bytes": 139190,
+      "sha256": "6a99ca00efbc0be5112e225d4102704c51d5ce3b16e3afd6e4159460595fd12a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-08/geometry-verification.json",
+      "bytes": 107466,
+      "sha256": "4885ab9733e31d29b87bda677e635dc54abef40a70a0e50c85091e41de110ef8",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-08/source-receipts.json",
+      "bytes": 2057,
+      "sha256": "a5f2351cc8b818ee4f93ac5fbeac5a2a54ccf8792c6cd06d9beb2626dfe76662",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-08/checksums.json",
+      "bytes": 3886,
+      "sha256": "a361eadc3e87b6f92b70776706f2289adcf7559b84123969d6425fc40ca0816e",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-08/review.json",
+      "bytes": 757759,
+      "sha256": "d4e07379a2a7b19935cf1c8357ce0331ed44a07061fcf65e59e4df0d5daa3342",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-08/complete-source-records.json.gz",
+      "bytes": 80360,
+      "sha256": "ecebbdddbe3a5baa6f9be6e7383c1d9557ff71c82b27541141e68d952b86ba4c",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-08/public/scripts/participation-county-context.js",
+      "bytes": 1798,
+      "sha256": "c23837f6178c121051fd5d1454f7d27690dc1002baaf7392cc4a983001865c05",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-08/scripts/package-county-context-review.py",
+      "bytes": 1536,
+      "sha256": "560ed0b19bf48a25877aab3cadaa9125cea49b0081146ec3cf844e3394dc4224",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-08/scripts/build-county-participation-context.mjs",
+      "bytes": 13215,
+      "sha256": "cfafe47c67ab020e4a7af12ce084ccba3b3e0b64be4261edb221de371cae7e76",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-08/geometry/county-DC.geojson",
+      "bytes": 1724,
+      "sha256": "e111ef8f1b7ab1873b096c6075e63ddc5aa1ae370def71ee8523a2a7b2f3b002",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-08/geometry/county-NJ.geojson",
+      "bytes": 139257,
+      "sha256": "489eabbafe98495645d95ddb65581f5204b3bd7871b001d02d3aaa3ffa11733b",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-08/geometry/county-FL.geojson",
+      "bytes": 494363,
+      "sha256": "d8d21d51dd475bc23c1b10fa0aa151b1591f1c681dfa9c31ce8d94f1b4713f47",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-08/geometry/county-IA.geojson",
+      "bytes": 102952,
+      "sha256": "c4ae2cd4fbac01725cfcf4d9e20815d41c149044a9b73665903135d34561e8ee",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-08/geometry/county-NV.geojson",
+      "bytes": 72248,
+      "sha256": "f67a18f6d0ca4799ba9579f3628054282411310987f64378ec41cbc5fefe28c4",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-08/geometry/county-AR.geojson",
+      "bytes": 422329,
+      "sha256": "addb5be81e6694681a8edb96575c29cf014158e50ae189facbd96f76892a8e2a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-08/geometry/county-VA.geojson",
+      "bytes": 840683,
+      "sha256": "825295417afcfafdd28dd7856edda31cdc0dc8a0d7c9b00abafdac90c38176da",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-08/geometry/county-WA.geojson",
+      "bytes": 395414,
+      "sha256": "b7170c2d2ea13d6ddc1541ea184b5cae1135412be35c041149e5aa8a09eb55f8",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-08/geometry/county-AZ.geojson",
+      "bytes": 195541,
+      "sha256": "0837a91e1b1ae37535b1256afe90ab70955b50872c98f9133a4e56b843252eec",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-08/geometry/county-PA.geojson",
+      "bytes": 298398,
+      "sha256": "02c17862c97cddf64a70ade6596e11c7bd8fe5707ba83bca3910172354b9b58a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-08/geometry/county-MO.geojson",
+      "bytes": 285841,
+      "sha256": "b9b8a05f01088fdcabb2c0aaf52f1dbd325282481a76454a2bd428a33b11795c",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-08/geometry/county-AL.geojson",
+      "bytes": 370354,
+      "sha256": "67b03de3aa281430aeae575360c932074111be88289c081ec80d978067e095ec",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-08/geometry/county-KY.geojson",
+      "bytes": 844982,
+      "sha256": "f9d2e0f8bd3e72f22d7ff6a530450d6e5e5bbad83f5dd02c32648a3207ef5eac",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-08/geometry/county-OR.geojson",
+      "bytes": 297700,
+      "sha256": "86f79f21252fdeef6d5c06525f909e2578f6119c158bfe10b51fecb72609e6eb",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-08/geometry/county-WY.geojson",
+      "bytes": 96180,
+      "sha256": "19eca7f10211ad57da4589ef2969d8817a241d90381a2ff4d1b513851d8ca777",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-09/complete-2024-county-identities.json.gz",
+      "bytes": 144580,
+      "sha256": "f55f8c9959d056d26e9bfa6b344e9ea564cfc5688b7f7f8b8a2ce8b34f9439ac",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-09/county-participation-joins.csv",
+      "bytes": 284380,
+      "sha256": "1f7bb2f0f4d6913facd7a64f5c0cff2867627c6edcbc6976f165feb2a90952f8",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-09/complete-2026-county-identities.json.gz",
+      "bytes": 155774,
+      "sha256": "cd12a54467a4ad54e9213d541b5a0563655ef41f3f193ed5804c75df51bf3150",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-09/gazetteer-2024-national-counties.zip",
+      "bytes": 141679,
+      "sha256": "3c337402b5c6e8d5aa26b4278ccf4edc8989f2683765b3ffbf22296cdb2df3a0",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-09/gazetteer-2026-national-counties.zip",
+      "bytes": 139190,
+      "sha256": "6a99ca00efbc0be5112e225d4102704c51d5ce3b16e3afd6e4159460595fd12a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-09/geometry-verification.json",
+      "bytes": 107466,
+      "sha256": "4885ab9733e31d29b87bda677e635dc54abef40a70a0e50c85091e41de110ef8",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-09/source-receipts.json",
+      "bytes": 2057,
+      "sha256": "a5f2351cc8b818ee4f93ac5fbeac5a2a54ccf8792c6cd06d9beb2626dfe76662",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-09/checksums.json",
+      "bytes": 3886,
+      "sha256": "b64cfaaad5ed9a46633df2532f00ace06a6afa479ad1755fcdc7af5f987d6d6d",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-09/review.json",
+      "bytes": 761068,
+      "sha256": "856208c37cf865cf4e86b61fbd9adebe92865276b7ce7afe61cbd87fbd530ee1",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-09/complete-source-records.json.gz",
+      "bytes": 81438,
+      "sha256": "7ae36601ad01bdacc47bf8c84d7e7b4507f4c6ba2d7d8d50d71d124c59a9bd2a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-09/public/scripts/participation-county-context.js",
+      "bytes": 1798,
+      "sha256": "c23837f6178c121051fd5d1454f7d27690dc1002baaf7392cc4a983001865c05",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-09/scripts/package-county-context-review.py",
+      "bytes": 1536,
+      "sha256": "560ed0b19bf48a25877aab3cadaa9125cea49b0081146ec3cf844e3394dc4224",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-09/scripts/build-county-participation-context.mjs",
+      "bytes": 13215,
+      "sha256": "cfafe47c67ab020e4a7af12ce084ccba3b3e0b64be4261edb221de371cae7e76",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-09/geometry/county-DC.geojson",
+      "bytes": 1724,
+      "sha256": "e111ef8f1b7ab1873b096c6075e63ddc5aa1ae370def71ee8523a2a7b2f3b002",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-09/geometry/county-NJ.geojson",
+      "bytes": 139257,
+      "sha256": "489eabbafe98495645d95ddb65581f5204b3bd7871b001d02d3aaa3ffa11733b",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-09/geometry/county-FL.geojson",
+      "bytes": 494363,
+      "sha256": "d8d21d51dd475bc23c1b10fa0aa151b1591f1c681dfa9c31ce8d94f1b4713f47",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-09/geometry/county-IA.geojson",
+      "bytes": 102952,
+      "sha256": "c4ae2cd4fbac01725cfcf4d9e20815d41c149044a9b73665903135d34561e8ee",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-09/geometry/county-NV.geojson",
+      "bytes": 72248,
+      "sha256": "f67a18f6d0ca4799ba9579f3628054282411310987f64378ec41cbc5fefe28c4",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-09/geometry/county-AR.geojson",
+      "bytes": 422329,
+      "sha256": "addb5be81e6694681a8edb96575c29cf014158e50ae189facbd96f76892a8e2a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-09/geometry/county-VA.geojson",
+      "bytes": 840683,
+      "sha256": "825295417afcfafdd28dd7856edda31cdc0dc8a0d7c9b00abafdac90c38176da",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-09/geometry/county-WA.geojson",
+      "bytes": 395414,
+      "sha256": "b7170c2d2ea13d6ddc1541ea184b5cae1135412be35c041149e5aa8a09eb55f8",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-09/geometry/county-AZ.geojson",
+      "bytes": 195541,
+      "sha256": "0837a91e1b1ae37535b1256afe90ab70955b50872c98f9133a4e56b843252eec",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-09/geometry/county-PA.geojson",
+      "bytes": 298398,
+      "sha256": "02c17862c97cddf64a70ade6596e11c7bd8fe5707ba83bca3910172354b9b58a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-09/geometry/county-MO.geojson",
+      "bytes": 285841,
+      "sha256": "b9b8a05f01088fdcabb2c0aaf52f1dbd325282481a76454a2bd428a33b11795c",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-09/geometry/county-AL.geojson",
+      "bytes": 370354,
+      "sha256": "67b03de3aa281430aeae575360c932074111be88289c081ec80d978067e095ec",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-09/geometry/county-KY.geojson",
+      "bytes": 844982,
+      "sha256": "f9d2e0f8bd3e72f22d7ff6a530450d6e5e5bbad83f5dd02c32648a3207ef5eac",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-09/geometry/county-OR.geojson",
+      "bytes": 297700,
+      "sha256": "86f79f21252fdeef6d5c06525f909e2578f6119c158bfe10b51fecb72609e6eb",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-09/geometry/county-WY.geojson",
+      "bytes": 96180,
+      "sha256": "19eca7f10211ad57da4589ef2969d8817a241d90381a2ff4d1b513851d8ca777",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-10/complete-2024-county-identities.json.gz",
+      "bytes": 144580,
+      "sha256": "f55f8c9959d056d26e9bfa6b344e9ea564cfc5688b7f7f8b8a2ce8b34f9439ac",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-10/county-participation-joins.csv",
+      "bytes": 319911,
+      "sha256": "b5c23a6d044583b23f0250524c09e285eed693c1da1275c606a1b72a90e3018e",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-10/complete-2026-county-identities.json.gz",
+      "bytes": 155774,
+      "sha256": "cd12a54467a4ad54e9213d541b5a0563655ef41f3f193ed5804c75df51bf3150",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-10/gazetteer-2024-national-counties.zip",
+      "bytes": 141679,
+      "sha256": "3c337402b5c6e8d5aa26b4278ccf4edc8989f2683765b3ffbf22296cdb2df3a0",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-10/gazetteer-2026-national-counties.zip",
+      "bytes": 139190,
+      "sha256": "6a99ca00efbc0be5112e225d4102704c51d5ce3b16e3afd6e4159460595fd12a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-10/geometry-verification.json",
+      "bytes": 113148,
+      "sha256": "949b25703f132e6229c13cc98f12fe491486f434080da4cbb5e96c133698a5d4",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-10/source-receipts.json",
+      "bytes": 2057,
+      "sha256": "a5f2351cc8b818ee4f93ac5fbeac5a2a54ccf8792c6cd06d9beb2626dfe76662",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-10/checksums.json",
+      "bytes": 4027,
+      "sha256": "7cb4c8b5788fa2b40ece590ded3ba94467b7b79c7e4ba93b55c55c2d08c296d9",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-10/review.json",
+      "bytes": 830421,
+      "sha256": "bf8a687a34cdad030ec02f4b67601e5ae13d9a63d48203f4c290cbecd750d433",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-10/complete-source-records.json.gz",
+      "bytes": 89881,
+      "sha256": "d0fb6ed5464fdf8ed8d31028b5fdac0030fa2ac26e5d1160fb0cf56bca772c3e",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-10/public/scripts/participation-county-context.js",
+      "bytes": 1798,
+      "sha256": "c23837f6178c121051fd5d1454f7d27690dc1002baaf7392cc4a983001865c05",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-10/scripts/package-county-context-review.py",
+      "bytes": 1536,
+      "sha256": "560ed0b19bf48a25877aab3cadaa9125cea49b0081146ec3cf844e3394dc4224",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-10/scripts/build-county-participation-context.mjs",
+      "bytes": 13215,
+      "sha256": "cfafe47c67ab020e4a7af12ce084ccba3b3e0b64be4261edb221de371cae7e76",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-10/geometry/county-CA.geojson",
+      "bytes": 777815,
+      "sha256": "fc167d02493b97c385eba9625bce506b9b9f93c5e0a9a69af6b9cf052b556e7a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-10/geometry/county-DC.geojson",
+      "bytes": 1724,
+      "sha256": "e111ef8f1b7ab1873b096c6075e63ddc5aa1ae370def71ee8523a2a7b2f3b002",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-10/geometry/county-NJ.geojson",
+      "bytes": 139257,
+      "sha256": "489eabbafe98495645d95ddb65581f5204b3bd7871b001d02d3aaa3ffa11733b",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-10/geometry/county-FL.geojson",
+      "bytes": 494363,
+      "sha256": "d8d21d51dd475bc23c1b10fa0aa151b1591f1c681dfa9c31ce8d94f1b4713f47",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-10/geometry/county-IA.geojson",
+      "bytes": 102952,
+      "sha256": "c4ae2cd4fbac01725cfcf4d9e20815d41c149044a9b73665903135d34561e8ee",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-10/geometry/county-NV.geojson",
+      "bytes": 72248,
+      "sha256": "f67a18f6d0ca4799ba9579f3628054282411310987f64378ec41cbc5fefe28c4",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-10/geometry/county-AR.geojson",
+      "bytes": 422329,
+      "sha256": "addb5be81e6694681a8edb96575c29cf014158e50ae189facbd96f76892a8e2a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-10/geometry/county-VA.geojson",
+      "bytes": 840683,
+      "sha256": "825295417afcfafdd28dd7856edda31cdc0dc8a0d7c9b00abafdac90c38176da",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-10/geometry/county-WA.geojson",
+      "bytes": 395414,
+      "sha256": "b7170c2d2ea13d6ddc1541ea184b5cae1135412be35c041149e5aa8a09eb55f8",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-10/geometry/county-AZ.geojson",
+      "bytes": 195541,
+      "sha256": "0837a91e1b1ae37535b1256afe90ab70955b50872c98f9133a4e56b843252eec",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-10/geometry/county-PA.geojson",
+      "bytes": 298398,
+      "sha256": "02c17862c97cddf64a70ade6596e11c7bd8fe5707ba83bca3910172354b9b58a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-10/geometry/county-MO.geojson",
+      "bytes": 285841,
+      "sha256": "b9b8a05f01088fdcabb2c0aaf52f1dbd325282481a76454a2bd428a33b11795c",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-10/geometry/county-AL.geojson",
+      "bytes": 370354,
+      "sha256": "67b03de3aa281430aeae575360c932074111be88289c081ec80d978067e095ec",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-10/geometry/county-KY.geojson",
+      "bytes": 844982,
+      "sha256": "f9d2e0f8bd3e72f22d7ff6a530450d6e5e5bbad83f5dd02c32648a3207ef5eac",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-10/geometry/county-OR.geojson",
+      "bytes": 297700,
+      "sha256": "86f79f21252fdeef6d5c06525f909e2578f6119c158bfe10b51fecb72609e6eb",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-10/geometry/county-WY.geojson",
+      "bytes": 96180,
+      "sha256": "19eca7f10211ad57da4589ef2969d8817a241d90381a2ff4d1b513851d8ca777",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-11/complete-2024-county-identities.json.gz",
+      "bytes": 144580,
+      "sha256": "f55f8c9959d056d26e9bfa6b344e9ea564cfc5688b7f7f8b8a2ce8b34f9439ac",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-11/county-participation-joins.csv",
+      "bytes": 320527,
+      "sha256": "a38eeef1854f362f5d971517617de605366880e59d7e66c4ec2c3182993746dc",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-11/complete-2026-county-identities.json.gz",
+      "bytes": 155774,
+      "sha256": "cd12a54467a4ad54e9213d541b5a0563655ef41f3f193ed5804c75df51bf3150",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-11/gazetteer-2024-national-counties.zip",
+      "bytes": 141679,
+      "sha256": "3c337402b5c6e8d5aa26b4278ccf4edc8989f2683765b3ffbf22296cdb2df3a0",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-11/gazetteer-2026-national-counties.zip",
+      "bytes": 139190,
+      "sha256": "6a99ca00efbc0be5112e225d4102704c51d5ce3b16e3afd6e4159460595fd12a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-11/geometry-verification.json",
+      "bytes": 113148,
+      "sha256": "949b25703f132e6229c13cc98f12fe491486f434080da4cbb5e96c133698a5d4",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-11/source-receipts.json",
+      "bytes": 2057,
+      "sha256": "a5f2351cc8b818ee4f93ac5fbeac5a2a54ccf8792c6cd06d9beb2626dfe76662",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-11/checksums.json",
+      "bytes": 4027,
+      "sha256": "48e954f6c52cf7d1412fa285fab13704e04550724299e4743a819d1fc7e4c98a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-11/review.json",
+      "bytes": 831514,
+      "sha256": "404370394975d3d64480eef48b75d96e53de1dd48cf88a0d5d67d1533d2b4b4a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-11/complete-source-records.json.gz",
+      "bytes": 90422,
+      "sha256": "76e3ef30367a601f45c91c0fb3bdd8d900e79ceff15f00e5b28d2303828efd2a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-11/public/scripts/participation-county-context.js",
+      "bytes": 1798,
+      "sha256": "c23837f6178c121051fd5d1454f7d27690dc1002baaf7392cc4a983001865c05",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-11/scripts/package-county-context-review.py",
+      "bytes": 1536,
+      "sha256": "560ed0b19bf48a25877aab3cadaa9125cea49b0081146ec3cf844e3394dc4224",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-11/scripts/build-county-participation-context.mjs",
+      "bytes": 13215,
+      "sha256": "cfafe47c67ab020e4a7af12ce084ccba3b3e0b64be4261edb221de371cae7e76",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-11/geometry/county-CA.geojson",
+      "bytes": 777815,
+      "sha256": "fc167d02493b97c385eba9625bce506b9b9f93c5e0a9a69af6b9cf052b556e7a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-11/geometry/county-DC.geojson",
+      "bytes": 1724,
+      "sha256": "e111ef8f1b7ab1873b096c6075e63ddc5aa1ae370def71ee8523a2a7b2f3b002",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-11/geometry/county-NJ.geojson",
+      "bytes": 139257,
+      "sha256": "489eabbafe98495645d95ddb65581f5204b3bd7871b001d02d3aaa3ffa11733b",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-11/geometry/county-FL.geojson",
+      "bytes": 494363,
+      "sha256": "d8d21d51dd475bc23c1b10fa0aa151b1591f1c681dfa9c31ce8d94f1b4713f47",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-11/geometry/county-IA.geojson",
+      "bytes": 102952,
+      "sha256": "c4ae2cd4fbac01725cfcf4d9e20815d41c149044a9b73665903135d34561e8ee",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-11/geometry/county-NV.geojson",
+      "bytes": 72248,
+      "sha256": "f67a18f6d0ca4799ba9579f3628054282411310987f64378ec41cbc5fefe28c4",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-11/geometry/county-AR.geojson",
+      "bytes": 422329,
+      "sha256": "addb5be81e6694681a8edb96575c29cf014158e50ae189facbd96f76892a8e2a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-11/geometry/county-VA.geojson",
+      "bytes": 840683,
+      "sha256": "825295417afcfafdd28dd7856edda31cdc0dc8a0d7c9b00abafdac90c38176da",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-11/geometry/county-WA.geojson",
+      "bytes": 395414,
+      "sha256": "b7170c2d2ea13d6ddc1541ea184b5cae1135412be35c041149e5aa8a09eb55f8",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-11/geometry/county-AZ.geojson",
+      "bytes": 195541,
+      "sha256": "0837a91e1b1ae37535b1256afe90ab70955b50872c98f9133a4e56b843252eec",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-11/geometry/county-PA.geojson",
+      "bytes": 298398,
+      "sha256": "02c17862c97cddf64a70ade6596e11c7bd8fe5707ba83bca3910172354b9b58a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-11/geometry/county-MO.geojson",
+      "bytes": 285841,
+      "sha256": "b9b8a05f01088fdcabb2c0aaf52f1dbd325282481a76454a2bd428a33b11795c",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-11/geometry/county-AL.geojson",
+      "bytes": 370354,
+      "sha256": "67b03de3aa281430aeae575360c932074111be88289c081ec80d978067e095ec",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-11/geometry/county-KY.geojson",
+      "bytes": 844982,
+      "sha256": "f9d2e0f8bd3e72f22d7ff6a530450d6e5e5bbad83f5dd02c32648a3207ef5eac",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-11/geometry/county-OR.geojson",
+      "bytes": 297700,
+      "sha256": "86f79f21252fdeef6d5c06525f909e2578f6119c158bfe10b51fecb72609e6eb",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-11/geometry/county-WY.geojson",
+      "bytes": 96180,
+      "sha256": "19eca7f10211ad57da4589ef2969d8817a241d90381a2ff4d1b513851d8ca777",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-12/complete-2024-county-identities.json.gz",
+      "bytes": 144580,
+      "sha256": "f55f8c9959d056d26e9bfa6b344e9ea564cfc5688b7f7f8b8a2ce8b34f9439ac",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-12/county-participation-joins.csv",
+      "bytes": 321114,
+      "sha256": "34f0b827cf752924fc76b530564ed929b5290eb88ae85f64c708a84c2ea1c5a3",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-12/complete-2026-county-identities.json.gz",
+      "bytes": 155774,
+      "sha256": "cd12a54467a4ad54e9213d541b5a0563655ef41f3f193ed5804c75df51bf3150",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-12/gazetteer-2024-national-counties.zip",
+      "bytes": 141679,
+      "sha256": "3c337402b5c6e8d5aa26b4278ccf4edc8989f2683765b3ffbf22296cdb2df3a0",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-12/gazetteer-2026-national-counties.zip",
+      "bytes": 139190,
+      "sha256": "6a99ca00efbc0be5112e225d4102704c51d5ce3b16e3afd6e4159460595fd12a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-12/geometry-verification.json",
+      "bytes": 113148,
+      "sha256": "949b25703f132e6229c13cc98f12fe491486f434080da4cbb5e96c133698a5d4",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-12/source-receipts.json",
+      "bytes": 2057,
+      "sha256": "a5f2351cc8b818ee4f93ac5fbeac5a2a54ccf8792c6cd06d9beb2626dfe76662",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-12/checksums.json",
+      "bytes": 4027,
+      "sha256": "fb5bf0860348121cd2a581c6cdc21dacc978cd4f80376a8302e179a18466c4da",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-12/review.json",
+      "bytes": 832586,
+      "sha256": "7ec3a3d4799f16fde437c61267c3e7a6283838379c66183a9e578ce71f526bb2",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-12/complete-source-records.json.gz",
+      "bytes": 90705,
+      "sha256": "9c37e8ef912b90f7672a521c77c2967da5ba23698ea0049c360208c13f4a1b68",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-12/public/scripts/participation-county-context.js",
+      "bytes": 1798,
+      "sha256": "c23837f6178c121051fd5d1454f7d27690dc1002baaf7392cc4a983001865c05",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-12/scripts/package-county-context-review.py",
+      "bytes": 1536,
+      "sha256": "560ed0b19bf48a25877aab3cadaa9125cea49b0081146ec3cf844e3394dc4224",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-12/scripts/build-county-participation-context.mjs",
+      "bytes": 13215,
+      "sha256": "cfafe47c67ab020e4a7af12ce084ccba3b3e0b64be4261edb221de371cae7e76",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-13/complete-2024-county-identities.json.gz",
+      "bytes": 144580,
+      "sha256": "f55f8c9959d056d26e9bfa6b344e9ea564cfc5688b7f7f8b8a2ce8b34f9439ac",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-13/county-participation-joins.csv",
+      "bytes": 426737,
+      "sha256": "8c6742f29c6a3aa06ecb95e3fb31b76f82a1652b3d5d9cedf7b97102720a029a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-13/complete-2026-county-identities.json.gz",
+      "bytes": 155774,
+      "sha256": "cd12a54467a4ad54e9213d541b5a0563655ef41f3f193ed5804c75df51bf3150",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-13/gazetteer-2024-national-counties.zip",
+      "bytes": 141679,
+      "sha256": "3c337402b5c6e8d5aa26b4278ccf4edc8989f2683765b3ffbf22296cdb2df3a0",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-13/gazetteer-2026-national-counties.zip",
+      "bytes": 139190,
+      "sha256": "6a99ca00efbc0be5112e225d4102704c51d5ce3b16e3afd6e4159460595fd12a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-13/geometry-verification.json",
+      "bytes": 129592,
+      "sha256": "a61fee45b181e076ada4160f8b499df9ff2d37421a20f813f646ab861ac97ebd",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-13/source-receipts.json",
+      "bytes": 2057,
+      "sha256": "a5f2351cc8b818ee4f93ac5fbeac5a2a54ccf8792c6cd06d9beb2626dfe76662",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-13/checksums.json",
+      "bytes": 4170,
+      "sha256": "3418993994786769644e10a16bcae03f5afcda68740ffd430a94d7b5c77ff6ca",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-13/review.json",
+      "bytes": 1031846,
+      "sha256": "5a57c97a69b1510bbc85e719e6ccbeeda262d52a5f5d9cdbe5173d0080fc6766",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-13/complete-source-records.json.gz",
+      "bytes": 122888,
+      "sha256": "d795bd4c9d1738e289f379d50957831824bdc7414c4700c8b59cab4f673b2387",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-13/public/scripts/participation-county-context.js",
+      "bytes": 1798,
+      "sha256": "c23837f6178c121051fd5d1454f7d27690dc1002baaf7392cc4a983001865c05",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-13/scripts/package-county-context-review.py",
+      "bytes": 1536,
+      "sha256": "560ed0b19bf48a25877aab3cadaa9125cea49b0081146ec3cf844e3394dc4224",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-13/scripts/build-county-participation-context.mjs",
+      "bytes": 13215,
+      "sha256": "cfafe47c67ab020e4a7af12ce084ccba3b3e0b64be4261edb221de371cae7e76",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-14/complete-2024-county-identities.json.gz",
+      "bytes": 144580,
+      "sha256": "f55f8c9959d056d26e9bfa6b344e9ea564cfc5688b7f7f8b8a2ce8b34f9439ac",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-14/county-participation-joins.csv",
+      "bytes": 427357,
+      "sha256": "7a4f66ce779168eed2b54a43ae8842a36ba8103948031e979186463270970b8d",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-14/complete-2026-county-identities.json.gz",
+      "bytes": 155774,
+      "sha256": "cd12a54467a4ad54e9213d541b5a0563655ef41f3f193ed5804c75df51bf3150",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-14/gazetteer-2024-national-counties.zip",
+      "bytes": 141679,
+      "sha256": "3c337402b5c6e8d5aa26b4278ccf4edc8989f2683765b3ffbf22296cdb2df3a0",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-14/gazetteer-2026-national-counties.zip",
+      "bytes": 139190,
+      "sha256": "6a99ca00efbc0be5112e225d4102704c51d5ce3b16e3afd6e4159460595fd12a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-14/geometry-verification.json",
+      "bytes": 129592,
+      "sha256": "a61fee45b181e076ada4160f8b499df9ff2d37421a20f813f646ab861ac97ebd",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-14/source-receipts.json",
+      "bytes": 2057,
+      "sha256": "a5f2351cc8b818ee4f93ac5fbeac5a2a54ccf8792c6cd06d9beb2626dfe76662",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-14/checksums.json",
+      "bytes": 4170,
+      "sha256": "8fa6d0e87edc7eb3e157db1132a37a54b5557eedeb6542dc3498565db770c721",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-14/review.json",
+      "bytes": 1032943,
+      "sha256": "7b19f2818ae7a51c991b0f05bafeddc009f616b2a584c5d95890c20c4f09270f",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-14/complete-source-records.json.gz",
+      "bytes": 123374,
+      "sha256": "7a75f12acb9318642225171ea09241d23cbfa011f5bc1f1caa95c746929e7781",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-14/public/scripts/participation-county-context.js",
+      "bytes": 1798,
+      "sha256": "c23837f6178c121051fd5d1454f7d27690dc1002baaf7392cc4a983001865c05",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-14/scripts/package-county-context-review.py",
+      "bytes": 1536,
+      "sha256": "560ed0b19bf48a25877aab3cadaa9125cea49b0081146ec3cf844e3394dc4224",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-14/scripts/build-county-participation-context.mjs",
+      "bytes": 13215,
+      "sha256": "cfafe47c67ab020e4a7af12ce084ccba3b3e0b64be4261edb221de371cae7e76",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-15/complete-2024-county-identities.json.gz",
+      "bytes": 144580,
+      "sha256": "f55f8c9959d056d26e9bfa6b344e9ea564cfc5688b7f7f8b8a2ce8b34f9439ac",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-15/county-participation-joins.csv",
+      "bytes": 476152,
+      "sha256": "77399470966623611d86cb2777d5c144e4199665bedfe0a691b4d98152981b9c",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-15/complete-2026-county-identities.json.gz",
+      "bytes": 155774,
+      "sha256": "cd12a54467a4ad54e9213d541b5a0563655ef41f3f193ed5804c75df51bf3150",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-15/gazetteer-2024-national-counties.zip",
+      "bytes": 141679,
+      "sha256": "3c337402b5c6e8d5aa26b4278ccf4edc8989f2683765b3ffbf22296cdb2df3a0",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-15/gazetteer-2026-national-counties.zip",
+      "bytes": 139190,
+      "sha256": "6a99ca00efbc0be5112e225d4102704c51d5ce3b16e3afd6e4159460595fd12a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-15/geometry-verification.json",
+      "bytes": 145055,
+      "sha256": "48b72109e0da2b07882e22be039508438869f090bfa3b142d43da07ced735e0d",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-15/source-receipts.json",
+      "bytes": 2057,
+      "sha256": "a5f2351cc8b818ee4f93ac5fbeac5a2a54ccf8792c6cd06d9beb2626dfe76662",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-15/checksums.json",
+      "bytes": 4311,
+      "sha256": "a1637f900a8e1d64f4d405340eb4e99a88d0658b680d47527e98586a80134ca5",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-15/review.json",
+      "bytes": 1138317,
+      "sha256": "02d442317b75965987485aaefb09d4f8a3bb8fa0f4b823ea3599f2cacf400ddd",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-15/complete-source-records.json.gz",
+      "bytes": 133372,
+      "sha256": "17464dca59850308b2fc7d38f7a7c3a478c8e08fec4dd2e05ac860c3be8e8007",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-15/public/scripts/participation-county-context.js",
+      "bytes": 1798,
+      "sha256": "c23837f6178c121051fd5d1454f7d27690dc1002baaf7392cc4a983001865c05",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-15/scripts/package-county-context-review.py",
+      "bytes": 1536,
+      "sha256": "560ed0b19bf48a25877aab3cadaa9125cea49b0081146ec3cf844e3394dc4224",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-15/scripts/build-county-participation-context.mjs",
+      "bytes": 13412,
+      "sha256": "e9424afece04e3390e9c3c633c323b7d00afd969d5450c279e1f45a48ea37243",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-16/complete-2024-county-identities.json.gz",
+      "bytes": 144580,
+      "sha256": "f55f8c9959d056d26e9bfa6b344e9ea564cfc5688b7f7f8b8a2ce8b34f9439ac",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-16/county-participation-joins.csv",
+      "bytes": 476776,
+      "sha256": "ff9b446545acf35b4a265007c35e9770bb06cf7b0a6f9f8686454f73d2784ae1",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-16/complete-2026-county-identities.json.gz",
+      "bytes": 155774,
+      "sha256": "cd12a54467a4ad54e9213d541b5a0563655ef41f3f193ed5804c75df51bf3150",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-16/gazetteer-2024-national-counties.zip",
+      "bytes": 141679,
+      "sha256": "3c337402b5c6e8d5aa26b4278ccf4edc8989f2683765b3ffbf22296cdb2df3a0",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-16/gazetteer-2026-national-counties.zip",
+      "bytes": 139190,
+      "sha256": "6a99ca00efbc0be5112e225d4102704c51d5ce3b16e3afd6e4159460595fd12a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-16/geometry-verification.json",
+      "bytes": 145055,
+      "sha256": "48b72109e0da2b07882e22be039508438869f090bfa3b142d43da07ced735e0d",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-16/source-receipts.json",
+      "bytes": 2057,
+      "sha256": "a5f2351cc8b818ee4f93ac5fbeac5a2a54ccf8792c6cd06d9beb2626dfe76662",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-16/checksums.json",
+      "bytes": 4311,
+      "sha256": "dbfb828a19cb8c3dd00112d1206085bb22ac033de5d1df545057f21a437c4696",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-16/review.json",
+      "bytes": 1139418,
+      "sha256": "f3eb5a8543504f14664bcbd6d34172129c15c15171316641b8e65079e78db66c",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-16/complete-source-records.json.gz",
+      "bytes": 134984,
+      "sha256": "0fa2845d60032967397f58af9deeda5641f5a376dd6e0df20709ac67687d0c3c",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-16/public/scripts/participation-county-context.js",
+      "bytes": 1798,
+      "sha256": "c23837f6178c121051fd5d1454f7d27690dc1002baaf7392cc4a983001865c05",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-16/scripts/package-county-context-review.py",
+      "bytes": 1536,
+      "sha256": "560ed0b19bf48a25877aab3cadaa9125cea49b0081146ec3cf844e3394dc4224",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-county-context/20261106-16/scripts/build-county-participation-context.mjs",
+      "bytes": 13412,
+      "sha256": "e9424afece04e3390e9c3c633c323b7d00afd969d5450c279e1f45a48ea37243",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-context/20261104T183601Z/geometry/county-AL.geojson",
+      "bytes": 370354,
+      "sha256": "67b03de3aa281430aeae575360c932074111be88289c081ec80d978067e095ec",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-context/20261104T183601Z/geometry/county-AZ.geojson",
+      "bytes": 195541,
+      "sha256": "0837a91e1b1ae37535b1256afe90ab70955b50872c98f9133a4e56b843252eec",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-context/20261104T183601Z/geometry/county-FL.geojson",
+      "bytes": 494363,
+      "sha256": "d8d21d51dd475bc23c1b10fa0aa151b1591f1c681dfa9c31ce8d94f1b4713f47",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-context/20261104T183601Z/geometry/county-MO.geojson",
+      "bytes": 285841,
+      "sha256": "b9b8a05f01088fdcabb2c0aaf52f1dbd325282481a76454a2bd428a33b11795c",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-context/20261104T183601Z/geometry/county-WY.geojson",
+      "bytes": 96180,
+      "sha256": "19eca7f10211ad57da4589ef2969d8817a241d90381a2ff4d1b513851d8ca777",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-context/20261104T183601Z/geometry/county-AR.geojson",
+      "bytes": 422329,
+      "sha256": "addb5be81e6694681a8edb96575c29cf014158e50ae189facbd96f76892a8e2a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-context/20261104T183601Z/geometry/county-VA.geojson",
+      "bytes": 840683,
+      "sha256": "825295417afcfafdd28dd7856edda31cdc0dc8a0d7c9b00abafdac90c38176da",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-context/20261104T183601Z/geometry/county-OR.geojson",
+      "bytes": 297700,
+      "sha256": "86f79f21252fdeef6d5c06525f909e2578f6119c158bfe10b51fecb72609e6eb",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-context/20261104T183601Z/geometry/county-NV.geojson",
+      "bytes": 72248,
+      "sha256": "f67a18f6d0ca4799ba9579f3628054282411310987f64378ec41cbc5fefe28c4",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-context/20261104T183601Z/geometry/county-WA.geojson",
+      "bytes": 395414,
+      "sha256": "b7170c2d2ea13d6ddc1541ea184b5cae1135412be35c041149e5aa8a09eb55f8",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-context/20261104T183601Z/geometry/county-IA.geojson",
+      "bytes": 102952,
+      "sha256": "c4ae2cd4fbac01725cfcf4d9e20815d41c149044a9b73665903135d34561e8ee",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-context/20261104T183601Z/geometry/county-KY.geojson",
+      "bytes": 844982,
+      "sha256": "f9d2e0f8bd3e72f22d7ff6a530450d6e5e5bbad83f5dd02c32648a3207ef5eac",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-context/20261104T183601Z/geometry/county-PA.geojson",
+      "bytes": 298398,
+      "sha256": "02c17862c97cddf64a70ade6596e11c7bd8fe5707ba83bca3910172354b9b58a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-context/20261104T183601Z/geometry/county-DC.geojson",
+      "bytes": 1724,
+      "sha256": "e111ef8f1b7ab1873b096c6075e63ddc5aa1ae370def71ee8523a2a7b2f3b002",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-context/20261104T183601Z/geometry/county-NJ.geojson",
+      "bytes": 139257,
+      "sha256": "489eabbafe98495645d95ddb65581f5204b3bd7871b001d02d3aaa3ffa11733b",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-context/20261104T183601Z/geometry/county-CA.geojson",
+      "bytes": 777815,
+      "sha256": "fc167d02493b97c385eba9625bce506b9b9f93c5e0a9a69af6b9cf052b556e7a",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-context/20261104T183601Z/geometry/county-GA.geojson",
+      "bytes": 846753,
+      "sha256": "6a51d15e3a8241c280ac3d95cbee1159fd03e724d667c6990a30dd22f2bbbb54",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-context/20261104T183601Z/geometry/county-MN.geojson",
+      "bytes": 295105,
+      "sha256": "f0769cb63822198d6219cbc8b759fe53c06f67b419d82d513e9612cb5ebbb00b",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    }
+  ],
+  "publication_manifest_matches_except_platform_preview": true,
+  "hosted_preview_matches_hosted_manifest": true,
+  "browser_proofs": [
+    "production-browser.json"
+  ],
+  "hosted_site_bytes": 998381402,
+  "entire_relocated_downloads": 208,
+  "scope": "All 424 entire selected hosted/public files match: runtime helpers and pointers, sixteen fixed contextual query packages excluding only byte-verified relocated build copies, eighteen original interactive geometries and eighteen complete prior imports. The hosted manifest preserves all 208 complete relocated downloads. Seven production browser scenarios verify 738 exact county counts, 351 native-registration fractions and 387 gray missing rates. Lawrence retains 31,401 ballots / 57,470 registrations and printed54.64%, not candidate votes or the separate6,108 earlier mail-only snapshot. Three native clocks, undeclared timezone, 0/74 complete and74/74 partially reported, two withheld unit rounding conflicts and district scope qualifications survive. Census contextual county42073 uses unchanged2024 geometry, not certified2026 election reporting geography. All87 Minnesota native inventories, twelve missing complete totals and eleven conflicting rates remain intact. All1221 previous source records,356 previous native rows,705 previous anchors,52 UF rows,historical years and18 entire prior imports survive. Current page has357 native county rows,724 anchors and720 distinctURLs. Desktop/mobile,JavaScript/no-JavaScript,failed-review,changed-review andfailed-current fallbacks pass. No invented native FIPS, demographic turnout, completed counting, certification or nationwide completion is claimed."
+}
