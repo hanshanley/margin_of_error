@@ -1,0 +1,2322 @@
+{
+  "verified_at_utc": "2026-11-06T20:20:02.455626+00:00",
+  "both_entire_3222_record_original_archives_equal_parsed_inventories": true,
+  "independently_checked_census_identities": [
+    {
+      "year": 2024,
+      "entire_inventory_records": 3222,
+      "receipts": [
+        {
+          "path": "public/participation-county-context/20261106-24/complete-2024-county-identities.json.gz",
+          "bytes": 144580,
+          "sha256": "f55f8c9959d056d26e9bfa6b344e9ea564cfc5688b7f7f8b8a2ce8b34f9439ac"
+        },
+        {
+          "path": "public/participation-county-context/20261106-24/gazetteer-2024-national-counties.zip",
+          "bytes": 141679,
+          "sha256": "3c337402b5c6e8d5aa26b4278ccf4edc8989f2683765b3ffbf22296cdb2df3a0"
+        }
+      ],
+      "independently_reviewed_identities": [
+        {
+          "USPS": "WI",
+          "GEOID": "55001",
+          "ANSICODE": "01581060",
+          "NAME": "Adams County",
+          "ALAND": "1672216223",
+          "AWATER": "108348983",
+          "ALAND_SQMI": "645.646",
+          "AWATER_SQMI": "41.834",
+          "INTPTLAT": "43.973757",
+          "INTPTLONG": "-89.767228"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55003",
+          "ANSICODE": "01581061",
+          "NAME": "Ashland County",
+          "ALAND": "2706458789",
+          "AWATER": "3230728302",
+          "ALAND_SQMI": "1044.97",
+          "AWATER_SQMI": "1247.391",
+          "INTPTLAT": "46.544424",
+          "INTPTLONG": "-90.679691"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55005",
+          "ANSICODE": "01581062",
+          "NAME": "Barron County",
+          "ALAND": "2235299817",
+          "AWATER": "69176084",
+          "ALAND_SQMI": "863.054",
+          "AWATER_SQMI": "26.709",
+          "INTPTLAT": "45.437192",
+          "INTPTLONG": "-91.852892"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55007",
+          "ANSICODE": "01581063",
+          "NAME": "Bayfield County",
+          "ALAND": "3827694390",
+          "AWATER": "1460283600",
+          "ALAND_SQMI": "1477.881",
+          "AWATER_SQMI": "563.819",
+          "INTPTLAT": "46.634199",
+          "INTPTLONG": "-91.177282"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55009",
+          "ANSICODE": "01581064",
+          "NAME": "Brown County",
+          "ALAND": "1372931376",
+          "AWATER": "221810753",
+          "ALAND_SQMI": "530.092",
+          "AWATER_SQMI": "85.642",
+          "INTPTLAT": "44.474024",
+          "INTPTLONG": "-87.99613"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55011",
+          "ANSICODE": "01581065",
+          "NAME": "Buffalo County",
+          "ALAND": "1750291805",
+          "AWATER": "87548524",
+          "ALAND_SQMI": "675.791",
+          "AWATER_SQMI": "33.803",
+          "INTPTLAT": "44.385633",
+          "INTPTLONG": "-91.761294"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55013",
+          "ANSICODE": "01581066",
+          "NAME": "Burnett County",
+          "ALAND": "2127924604",
+          "AWATER": "151846361",
+          "ALAND_SQMI": "821.596",
+          "AWATER_SQMI": "58.628",
+          "INTPTLAT": "45.866897",
+          "INTPTLONG": "-92.37573"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55015",
+          "ANSICODE": "01581067",
+          "NAME": "Calumet County",
+          "ALAND": "824263567",
+          "AWATER": "204161559",
+          "ALAND_SQMI": "318.25",
+          "AWATER_SQMI": "78.827",
+          "INTPTLAT": "44.07841",
+          "INTPTLONG": "-88.212132"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55017",
+          "ANSICODE": "01581068",
+          "NAME": "Chippewa County",
+          "ALAND": "2611628498",
+          "AWATER": "85233303",
+          "ALAND_SQMI": "1008.355",
+          "AWATER_SQMI": "32.909",
+          "INTPTLAT": "45.069092",
+          "INTPTLONG": "-91.283505"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55019",
+          "ANSICODE": "01581069",
+          "NAME": "Clark County",
+          "ALAND": "3133102386",
+          "AWATER": "23238613",
+          "ALAND_SQMI": "1209.698",
+          "AWATER_SQMI": "8.972",
+          "INTPTLAT": "44.739166",
+          "INTPTLONG": "-90.609909"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55021",
+          "ANSICODE": "01581070",
+          "NAME": "Columbia County",
+          "ALAND": "1982894138",
+          "AWATER": "78697071",
+          "ALAND_SQMI": "765.6",
+          "AWATER_SQMI": "30.385",
+          "INTPTLAT": "43.471882",
+          "INTPTLONG": "-89.330472"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55023",
+          "ANSICODE": "01581071",
+          "NAME": "Crawford County",
+          "ALAND": "1478377507",
+          "AWATER": "73569257",
+          "ALAND_SQMI": "570.805",
+          "AWATER_SQMI": "28.405",
+          "INTPTLAT": "43.242768",
+          "INTPTLONG": "-90.935185"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55025",
+          "ANSICODE": "01581072",
+          "NAME": "Dane County",
+          "ALAND": "3098912243",
+          "AWATER": "106204015",
+          "ALAND_SQMI": "1196.497",
+          "AWATER_SQMI": "41.006",
+          "INTPTLAT": "43.067468",
+          "INTPTLONG": "-89.417852"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55027",
+          "ANSICODE": "01581073",
+          "NAME": "Dodge County",
+          "ALAND": "2268049933",
+          "AWATER": "81331198",
+          "ALAND_SQMI": "875.699",
+          "AWATER_SQMI": "31.402",
+          "INTPTLAT": "43.429628",
+          "INTPTLONG": "-88.701939"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55029",
+          "ANSICODE": "01581074",
+          "NAME": "Door County",
+          "ALAND": "1248209716",
+          "AWATER": "4890672315",
+          "ALAND_SQMI": "481.936",
+          "AWATER_SQMI": "1888.299",
+          "INTPTLAT": "45.093417",
+          "INTPTLONG": "-87.048683"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55031",
+          "ANSICODE": "01581075",
+          "NAME": "Douglas County",
+          "ALAND": "3378048644",
+          "AWATER": "454293036",
+          "ALAND_SQMI": "1304.272",
+          "AWATER_SQMI": "175.404",
+          "INTPTLAT": "46.463218",
+          "INTPTLONG": "-91.892477"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55033",
+          "ANSICODE": "01581076",
+          "NAME": "Dunn County",
+          "ALAND": "2201902873",
+          "AWATER": "35572579",
+          "ALAND_SQMI": "850.159",
+          "AWATER_SQMI": "13.735",
+          "INTPTLAT": "44.947751",
+          "INTPTLONG": "-91.897645"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55035",
+          "ANSICODE": "01581077",
+          "NAME": "Eau Claire County",
+          "ALAND": "1652211242",
+          "AWATER": "18848551",
+          "ALAND_SQMI": "637.922",
+          "AWATER_SQMI": "7.277",
+          "INTPTLAT": "44.726355",
+          "INTPTLONG": "-91.286414"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55037",
+          "ANSICODE": "01581078",
+          "NAME": "Florence County",
+          "ALAND": "1263976516",
+          "AWATER": "24111637",
+          "ALAND_SQMI": "488.024",
+          "AWATER_SQMI": "9.31",
+          "INTPTLAT": "45.871828",
+          "INTPTLONG": "-88.406988"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55039",
+          "ANSICODE": "01581079",
+          "NAME": "Fond du Lac County",
+          "ALAND": "1863667254",
+          "AWATER": "119853822",
+          "ALAND_SQMI": "719.566",
+          "AWATER_SQMI": "46.276",
+          "INTPTLAT": "43.754722",
+          "INTPTLONG": "-88.493284"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55041",
+          "ANSICODE": "01581080",
+          "NAME": "Forest County",
+          "ALAND": "2626936117",
+          "AWATER": "83536591",
+          "ALAND_SQMI": "1014.266",
+          "AWATER_SQMI": "32.254",
+          "INTPTLAT": "45.666881",
+          "INTPTLONG": "-88.773326"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55043",
+          "ANSICODE": "01581081",
+          "NAME": "Grant County",
+          "ALAND": "2972281305",
+          "AWATER": "92642517",
+          "ALAND_SQMI": "1147.604",
+          "AWATER_SQMI": "35.769",
+          "INTPTLAT": "42.870028",
+          "INTPTLONG": "-90.694229"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55045",
+          "ANSICODE": "01581082",
+          "NAME": "Green County",
+          "ALAND": "1512667177",
+          "AWATER": "1313241",
+          "ALAND_SQMI": "584.044",
+          "AWATER_SQMI": "0.507",
+          "INTPTLAT": "42.675522",
+          "INTPTLONG": "-89.605074"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55047",
+          "ANSICODE": "01581083",
+          "NAME": "Green Lake County",
+          "ALAND": "905306376",
+          "AWATER": "79211051",
+          "ALAND_SQMI": "349.541",
+          "AWATER_SQMI": "30.584",
+          "INTPTLAT": "43.780247",
+          "INTPTLONG": "-88.97038"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55049",
+          "ANSICODE": "01581084",
+          "NAME": "Iowa County",
+          "ALAND": "1975379654",
+          "AWATER": "13870580",
+          "ALAND_SQMI": "762.698",
+          "AWATER_SQMI": "5.355",
+          "INTPTLAT": "43.001021",
+          "INTPTLONG": "-90.133691"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55051",
+          "ANSICODE": "01581085",
+          "NAME": "Iron County",
+          "ALAND": "1963763896",
+          "AWATER": "416859798",
+          "ALAND_SQMI": "758.214",
+          "AWATER_SQMI": "160.95",
+          "INTPTLAT": "46.32655",
+          "INTPTLONG": "-90.261298"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55053",
+          "ANSICODE": "01581086",
+          "NAME": "Jackson County",
+          "ALAND": "2558687748",
+          "AWATER": "32538319",
+          "ALAND_SQMI": "987.915",
+          "AWATER_SQMI": "12.563",
+          "INTPTLAT": "44.32459",
+          "INTPTLONG": "-90.79951"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55055",
+          "ANSICODE": "01581087",
+          "NAME": "Jefferson County",
+          "ALAND": "1441308987",
+          "AWATER": "67985150",
+          "ALAND_SQMI": "556.493",
+          "AWATER_SQMI": "26.249",
+          "INTPTLAT": "43.013804",
+          "INTPTLONG": "-88.773985"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55057",
+          "ANSICODE": "01581088",
+          "NAME": "Juneau County",
+          "ALAND": "1986729544",
+          "AWATER": "98638538",
+          "ALAND_SQMI": "767.081",
+          "AWATER_SQMI": "38.085",
+          "INTPTLAT": "43.932836",
+          "INTPTLONG": "-90.113984"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55059",
+          "ANSICODE": "01581089",
+          "NAME": "Kenosha County",
+          "ALAND": "704044388",
+          "AWATER": "1248872159",
+          "ALAND_SQMI": "271.833",
+          "AWATER_SQMI": "482.192",
+          "INTPTLAT": "42.587526",
+          "INTPTLONG": "-87.879996"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55061",
+          "ANSICODE": "01581090",
+          "NAME": "Kewaunee County",
+          "ALAND": "886951785",
+          "AWATER": "1921336269",
+          "ALAND_SQMI": "342.454",
+          "AWATER_SQMI": "741.832",
+          "INTPTLAT": "44.605677",
+          "INTPTLONG": "-87.448008"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55063",
+          "ANSICODE": "01581091",
+          "NAME": "La Crosse County",
+          "ALAND": "1170164969",
+          "AWATER": "73160503",
+          "ALAND_SQMI": "451.803",
+          "AWATER_SQMI": "28.247",
+          "INTPTLAT": "43.908222",
+          "INTPTLONG": "-91.111758"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55065",
+          "ANSICODE": "01581092",
+          "NAME": "Lafayette County",
+          "ALAND": "1640985417",
+          "AWATER": "2539010",
+          "ALAND_SQMI": "633.588",
+          "AWATER_SQMI": "0.98",
+          "INTPTLAT": "42.655578",
+          "INTPTLONG": "-90.130292"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55067",
+          "ANSICODE": "01581093",
+          "NAME": "Langlade County",
+          "ALAND": "2255076043",
+          "AWATER": "44299597",
+          "ALAND_SQMI": "870.69",
+          "AWATER_SQMI": "17.104",
+          "INTPTLAT": "45.254863",
+          "INTPTLONG": "-89.06707"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55069",
+          "ANSICODE": "01581094",
+          "NAME": "Lincoln County",
+          "ALAND": "2275848027",
+          "AWATER": "72729582",
+          "ALAND_SQMI": "878.71",
+          "AWATER_SQMI": "28.081",
+          "INTPTLAT": "45.333148",
+          "INTPTLONG": "-89.73224"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55071",
+          "ANSICODE": "01581095",
+          "NAME": "Manitowoc County",
+          "ALAND": "1526302545",
+          "AWATER": "2343337602",
+          "ALAND_SQMI": "589.309",
+          "AWATER_SQMI": "904.768",
+          "INTPTLAT": "44.156137",
+          "INTPTLONG": "-87.577352"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55073",
+          "ANSICODE": "01581096",
+          "NAME": "Marathon County",
+          "ALAND": "4002148704",
+          "AWATER": "80538130",
+          "ALAND_SQMI": "1545.238",
+          "AWATER_SQMI": "31.096",
+          "INTPTLAT": "44.898036",
+          "INTPTLONG": "-89.757823"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55075",
+          "ANSICODE": "01581097",
+          "NAME": "Marinette County",
+          "ALAND": "3624605661",
+          "AWATER": "389870112",
+          "ALAND_SQMI": "1399.468",
+          "AWATER_SQMI": "150.53",
+          "INTPTLAT": "45.346899",
+          "INTPTLONG": "-87.991198"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55077",
+          "ANSICODE": "01581098",
+          "NAME": "Marquette County",
+          "ALAND": "1180290400",
+          "AWATER": "22667821",
+          "ALAND_SQMI": "455.713",
+          "AWATER_SQMI": "8.752",
+          "INTPTLAT": "43.826053",
+          "INTPTLONG": "-89.409095"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55078",
+          "ANSICODE": "01581099",
+          "NAME": "Menominee County",
+          "ALAND": "926217566",
+          "AWATER": "19022479",
+          "ALAND_SQMI": "357.615",
+          "AWATER_SQMI": "7.345",
+          "INTPTLAT": "44.991304",
+          "INTPTLONG": "-88.669251"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55079",
+          "ANSICODE": "01581100",
+          "NAME": "Milwaukee County",
+          "ALAND": "625371986",
+          "AWATER": "2455452227",
+          "ALAND_SQMI": "241.457",
+          "AWATER_SQMI": "948.055",
+          "INTPTLAT": "42.912643",
+          "INTPTLONG": "-87.862312"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55081",
+          "ANSICODE": "01581101",
+          "NAME": "Monroe County",
+          "ALAND": "2333329776",
+          "AWATER": "18586766",
+          "ALAND_SQMI": "900.904",
+          "AWATER_SQMI": "7.176",
+          "INTPTLAT": "43.945175",
+          "INTPTLONG": "-90.619969"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55083",
+          "ANSICODE": "01581102",
+          "NAME": "Oconto County",
+          "ALAND": "2583453832",
+          "AWATER": "392049247",
+          "ALAND_SQMI": "997.477",
+          "AWATER_SQMI": "151.371",
+          "INTPTLAT": "44.996575",
+          "INTPTLONG": "-88.206516"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55085",
+          "ANSICODE": "01581103",
+          "NAME": "Oneida County",
+          "ALAND": "2885102804",
+          "AWATER": "317602358",
+          "ALAND_SQMI": "1113.944",
+          "AWATER_SQMI": "122.627",
+          "INTPTLAT": "45.716176",
+          "INTPTLONG": "-89.534533"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55087",
+          "ANSICODE": "01581104",
+          "NAME": "Outagamie County",
+          "ALAND": "1651266091",
+          "AWATER": "18260943",
+          "ALAND_SQMI": "637.557",
+          "AWATER_SQMI": "7.051",
+          "INTPTLAT": "44.418226",
+          "INTPTLONG": "-88.464988"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55089",
+          "ANSICODE": "01581105",
+          "NAME": "Ozaukee County",
+          "ALAND": "603495165",
+          "AWATER": "2287434584",
+          "ALAND_SQMI": "233.011",
+          "AWATER_SQMI": "883.183",
+          "INTPTLAT": "43.501807",
+          "INTPTLONG": "-87.847551"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55091",
+          "ANSICODE": "01581106",
+          "NAME": "Pepin County",
+          "ALAND": "600897313",
+          "AWATER": "43238611",
+          "ALAND_SQMI": "232.008",
+          "AWATER_SQMI": "16.695",
+          "INTPTLAT": "44.627436",
+          "INTPTLONG": "-91.83489"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55093",
+          "ANSICODE": "01581107",
+          "NAME": "Pierce County",
+          "ALAND": "1486700534",
+          "AWATER": "48452323",
+          "ALAND_SQMI": "574.018",
+          "AWATER_SQMI": "18.708",
+          "INTPTLAT": "44.725336",
+          "INTPTLONG": "-92.426279"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55095",
+          "ANSICODE": "01581108",
+          "NAME": "Polk County",
+          "ALAND": "2368076538",
+          "AWATER": "109026970",
+          "ALAND_SQMI": "914.32",
+          "AWATER_SQMI": "42.096",
+          "INTPTLAT": "45.462041",
+          "INTPTLONG": "-92.447066"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55097",
+          "ANSICODE": "01581109",
+          "NAME": "Portage County",
+          "ALAND": "2074252978",
+          "AWATER": "56835086",
+          "ALAND_SQMI": "800.874",
+          "AWATER_SQMI": "21.944",
+          "INTPTLAT": "44.476246",
+          "INTPTLONG": "-89.49807"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55099",
+          "ANSICODE": "01581110",
+          "NAME": "Price County",
+          "ALAND": "3247992766",
+          "AWATER": "62094056",
+          "ALAND_SQMI": "1254.057",
+          "AWATER_SQMI": "23.975",
+          "INTPTLAT": "45.679072",
+          "INTPTLONG": "-90.35965"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55101",
+          "ANSICODE": "01581111",
+          "NAME": "Racine County",
+          "ALAND": "861457778",
+          "AWATER": "1190182837",
+          "ALAND_SQMI": "332.611",
+          "AWATER_SQMI": "459.532",
+          "INTPTLAT": "42.780392",
+          "INTPTLONG": "-87.771599"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55103",
+          "ANSICODE": "01581112",
+          "NAME": "Richland County",
+          "ALAND": "1518120286",
+          "AWATER": "8153422",
+          "ALAND_SQMI": "586.15",
+          "AWATER_SQMI": "3.148",
+          "INTPTLAT": "43.376199",
+          "INTPTLONG": "-90.435693"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55105",
+          "ANSICODE": "01581113",
+          "NAME": "Rock County",
+          "ALAND": "1860046361",
+          "AWATER": "20694407",
+          "ALAND_SQMI": "718.168",
+          "AWATER_SQMI": "7.99",
+          "INTPTLAT": "42.66988",
+          "INTPTLONG": "-89.075284"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55107",
+          "ANSICODE": "01581114",
+          "NAME": "Rusk County",
+          "ALAND": "2365981757",
+          "AWATER": "44924197",
+          "ALAND_SQMI": "913.511",
+          "AWATER_SQMI": "17.345",
+          "INTPTLAT": "45.472734",
+          "INTPTLONG": "-91.136745"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55109",
+          "ANSICODE": "01581833",
+          "NAME": "St. Croix County",
+          "ALAND": "1870380110",
+          "AWATER": "33740109",
+          "ALAND_SQMI": "722.158",
+          "AWATER_SQMI": "13.027",
+          "INTPTLAT": "45.028959",
+          "INTPTLONG": "-92.447284"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55111",
+          "ANSICODE": "01581115",
+          "NAME": "Sauk County",
+          "ALAND": "2153800051",
+          "AWATER": "45578927",
+          "ALAND_SQMI": "831.587",
+          "AWATER_SQMI": "17.598",
+          "INTPTLAT": "43.428001",
+          "INTPTLONG": "-89.943318"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55113",
+          "ANSICODE": "01581116",
+          "NAME": "Sawyer County",
+          "ALAND": "3257170153",
+          "AWATER": "239930109",
+          "ALAND_SQMI": "1257.6",
+          "AWATER_SQMI": "92.638",
+          "INTPTLAT": "45.864999",
+          "INTPTLONG": "-91.147063"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55115",
+          "ANSICODE": "01581117",
+          "NAME": "Shawano County",
+          "ALAND": "2313441779",
+          "AWATER": "41883029",
+          "ALAND_SQMI": "893.225",
+          "AWATER_SQMI": "16.171",
+          "INTPTLAT": "44.789641",
+          "INTPTLONG": "-88.755813"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55117",
+          "ANSICODE": "01581118",
+          "NAME": "Sheboygan County",
+          "ALAND": "1324828371",
+          "AWATER": "1967670377",
+          "ALAND_SQMI": "511.519",
+          "AWATER_SQMI": "759.722",
+          "INTPTLAT": "43.738713",
+          "INTPTLONG": "-87.731531"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55119",
+          "ANSICODE": "01581119",
+          "NAME": "Taylor County",
+          "ALAND": "2525374174",
+          "AWATER": "24630990",
+          "ALAND_SQMI": "975.052",
+          "AWATER_SQMI": "9.51",
+          "INTPTLAT": "45.211656",
+          "INTPTLONG": "-90.504853"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55121",
+          "ANSICODE": "01581120",
+          "NAME": "Trempealeau County",
+          "ALAND": "1898373573",
+          "AWATER": "23331637",
+          "ALAND_SQMI": "732.966",
+          "AWATER_SQMI": "9.008",
+          "INTPTLAT": "44.30305",
+          "INTPTLONG": "-91.358867"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55123",
+          "ANSICODE": "01581121",
+          "NAME": "Vernon County",
+          "ALAND": "2050138651",
+          "AWATER": "64286576",
+          "ALAND_SQMI": "791.563",
+          "AWATER_SQMI": "24.821",
+          "INTPTLAT": "43.599366",
+          "INTPTLONG": "-90.821983"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55125",
+          "ANSICODE": "01581122",
+          "NAME": "Vilas County",
+          "ALAND": "2221459138",
+          "AWATER": "414414743",
+          "ALAND_SQMI": "857.71",
+          "AWATER_SQMI": "160.006",
+          "INTPTLAT": "46.049848",
+          "INTPTLONG": "-89.501254"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55127",
+          "ANSICODE": "01581123",
+          "NAME": "Walworth County",
+          "ALAND": "1438565987",
+          "AWATER": "54811398",
+          "ALAND_SQMI": "555.433",
+          "AWATER_SQMI": "21.163",
+          "INTPTLAT": "42.66811",
+          "INTPTLONG": "-88.541731"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55129",
+          "ANSICODE": "01581124",
+          "NAME": "Washburn County",
+          "ALAND": "2064515983",
+          "AWATER": "145563874",
+          "ALAND_SQMI": "797.114",
+          "AWATER_SQMI": "56.203",
+          "INTPTLAT": "45.892489",
+          "INTPTLONG": "-91.796422"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55131",
+          "ANSICODE": "01581125",
+          "NAME": "Washington County",
+          "ALAND": "1115362169",
+          "AWATER": "12999404",
+          "ALAND_SQMI": "430.644",
+          "AWATER_SQMI": "5.019",
+          "INTPTLAT": "43.391156",
+          "INTPTLONG": "-88.232917"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55133",
+          "ANSICODE": "01581126",
+          "NAME": "Waukesha County",
+          "ALAND": "1423780693",
+          "AWATER": "79806617",
+          "ALAND_SQMI": "549.725",
+          "AWATER_SQMI": "30.814",
+          "INTPTLAT": "43.018368",
+          "INTPTLONG": "-88.30424"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55135",
+          "ANSICODE": "01581127",
+          "NAME": "Waupaca County",
+          "ALAND": "1936538048",
+          "AWATER": "45253543",
+          "ALAND_SQMI": "747.702",
+          "AWATER_SQMI": "17.472",
+          "INTPTLAT": "44.478004",
+          "INTPTLONG": "-88.967005"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55137",
+          "ANSICODE": "01581128",
+          "NAME": "Waushara County",
+          "ALAND": "1621749747",
+          "AWATER": "29096948",
+          "ALAND_SQMI": "626.161",
+          "AWATER_SQMI": "11.234",
+          "INTPTLAT": "44.112823",
+          "INTPTLONG": "-89.239786"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55139",
+          "ANSICODE": "01581129",
+          "NAME": "Winnebago County",
+          "ALAND": "1125861149",
+          "AWATER": "372630326",
+          "ALAND_SQMI": "434.697",
+          "AWATER_SQMI": "143.873",
+          "INTPTLAT": "44.085707",
+          "INTPTLONG": "-88.668149"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55141",
+          "ANSICODE": "01581130",
+          "NAME": "Wood County",
+          "ALAND": "2053911643",
+          "AWATER": "42041349",
+          "ALAND_SQMI": "793.02",
+          "AWATER_SQMI": "16.232",
+          "INTPTLAT": "44.461413",
+          "INTPTLONG": "-90.038825"
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "entire_inventory_records": 3222,
+      "receipts": [
+        {
+          "path": "public/participation-county-context/20261106-24/complete-2026-county-identities.json.gz",
+          "bytes": 155774,
+          "sha256": "cd12a54467a4ad54e9213d541b5a0563655ef41f3f193ed5804c75df51bf3150"
+        },
+        {
+          "path": "public/participation-county-context/20261106-24/gazetteer-2026-national-counties.zip",
+          "bytes": 139190,
+          "sha256": "6a99ca00efbc0be5112e225d4102704c51d5ce3b16e3afd6e4159460595fd12a"
+        }
+      ],
+      "independently_reviewed_identities": [
+        {
+          "USPS": "WI",
+          "GEOID": "55001",
+          "GEOIDFQ": "0500000US55001",
+          "ANSICODE": "01581060",
+          "NAME": "Adams County",
+          "ALAND": "1672216223",
+          "AWATER": "108348979",
+          "ALAND_SQMI": "645.646",
+          "AWATER_SQMI": "41.834",
+          "INTPTLAT": "43.973757",
+          "INTPTLONG": "-89.767228"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55003",
+          "GEOIDFQ": "0500000US55003",
+          "ANSICODE": "01581061",
+          "NAME": "Ashland County",
+          "ALAND": "2706458763",
+          "AWATER": "3230728306",
+          "ALAND_SQMI": "1044.97",
+          "AWATER_SQMI": "1247.391",
+          "INTPTLAT": "46.544424",
+          "INTPTLONG": "-90.679691"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55005",
+          "GEOIDFQ": "0500000US55005",
+          "ANSICODE": "01581062",
+          "NAME": "Barron County",
+          "ALAND": "2235375004",
+          "AWATER": "69100894",
+          "ALAND_SQMI": "863.083",
+          "AWATER_SQMI": "26.68",
+          "INTPTLAT": "45.437192",
+          "INTPTLONG": "-91.852892"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55007",
+          "GEOIDFQ": "0500000US55007",
+          "ANSICODE": "01581063",
+          "NAME": "Bayfield County",
+          "ALAND": "3827698351",
+          "AWATER": "1460279632",
+          "ALAND_SQMI": "1477.883",
+          "AWATER_SQMI": "563.817",
+          "INTPTLAT": "46.634133",
+          "INTPTLONG": "-91.177305"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55009",
+          "GEOIDFQ": "0500000US55009",
+          "ANSICODE": "01581064",
+          "NAME": "Brown County",
+          "ALAND": "1372941323",
+          "AWATER": "221800797",
+          "ALAND_SQMI": "530.096",
+          "AWATER_SQMI": "85.638",
+          "INTPTLAT": "44.474024",
+          "INTPTLONG": "-87.99613"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55011",
+          "GEOIDFQ": "0500000US55011",
+          "ANSICODE": "01581065",
+          "NAME": "Buffalo County",
+          "ALAND": "1750291705",
+          "AWATER": "87548589",
+          "ALAND_SQMI": "675.791",
+          "AWATER_SQMI": "33.803",
+          "INTPTLAT": "44.385633",
+          "INTPTLONG": "-91.761294"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55013",
+          "GEOIDFQ": "0500000US55013",
+          "ANSICODE": "01581066",
+          "NAME": "Burnett County",
+          "ALAND": "2127924079",
+          "AWATER": "151846884",
+          "ALAND_SQMI": "821.596",
+          "AWATER_SQMI": "58.628",
+          "INTPTLAT": "45.866916",
+          "INTPTLONG": "-92.37571"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55015",
+          "GEOIDFQ": "0500000US55015",
+          "ANSICODE": "01581067",
+          "NAME": "Calumet County",
+          "ALAND": "824263569",
+          "AWATER": "204161557",
+          "ALAND_SQMI": "318.25",
+          "AWATER_SQMI": "78.827",
+          "INTPTLAT": "44.07841",
+          "INTPTLONG": "-88.212132"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55017",
+          "GEOIDFQ": "0500000US55017",
+          "ANSICODE": "01581068",
+          "NAME": "Chippewa County",
+          "ALAND": "2611822003",
+          "AWATER": "85039802",
+          "ALAND_SQMI": "1008.43",
+          "AWATER_SQMI": "32.834",
+          "INTPTLAT": "45.069092",
+          "INTPTLONG": "-91.283505"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55019",
+          "GEOIDFQ": "0500000US55019",
+          "ANSICODE": "01581069",
+          "NAME": "Clark County",
+          "ALAND": "3133102381",
+          "AWATER": "23238611",
+          "ALAND_SQMI": "1209.698",
+          "AWATER_SQMI": "8.972",
+          "INTPTLAT": "44.739166",
+          "INTPTLONG": "-90.609909"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55021",
+          "GEOIDFQ": "0500000US55021",
+          "ANSICODE": "01581070",
+          "NAME": "Columbia County",
+          "ALAND": "1982893731",
+          "AWATER": "78697463",
+          "ALAND_SQMI": "765.6",
+          "AWATER_SQMI": "30.385",
+          "INTPTLAT": "43.471882",
+          "INTPTLONG": "-89.330472"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55023",
+          "GEOIDFQ": "0500000US55023",
+          "ANSICODE": "01581071",
+          "NAME": "Crawford County",
+          "ALAND": "1478377403",
+          "AWATER": "73569364",
+          "ALAND_SQMI": "570.805",
+          "AWATER_SQMI": "28.405",
+          "INTPTLAT": "43.242768",
+          "INTPTLONG": "-90.935185"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55025",
+          "GEOIDFQ": "0500000US55025",
+          "ANSICODE": "01581072",
+          "NAME": "Dane County",
+          "ALAND": "3098910434",
+          "AWATER": "106205819",
+          "ALAND_SQMI": "1196.496",
+          "AWATER_SQMI": "41.006",
+          "INTPTLAT": "43.067468",
+          "INTPTLONG": "-89.417852"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55027",
+          "GEOIDFQ": "0500000US55027",
+          "ANSICODE": "01581073",
+          "NAME": "Dodge County",
+          "ALAND": "2268049949",
+          "AWATER": "81331197",
+          "ALAND_SQMI": "875.699",
+          "AWATER_SQMI": "31.402",
+          "INTPTLAT": "43.429628",
+          "INTPTLONG": "-88.701939"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55029",
+          "GEOIDFQ": "0500000US55029",
+          "ANSICODE": "01581074",
+          "NAME": "Door County",
+          "ALAND": "1248209712",
+          "AWATER": "4890672385",
+          "ALAND_SQMI": "481.936",
+          "AWATER_SQMI": "1888.299",
+          "INTPTLAT": "45.093417",
+          "INTPTLONG": "-87.048683"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55031",
+          "GEOIDFQ": "0500000US55031",
+          "ANSICODE": "01581075",
+          "NAME": "Douglas County",
+          "ALAND": "3378048638",
+          "AWATER": "454293052",
+          "ALAND_SQMI": "1304.272",
+          "AWATER_SQMI": "175.404",
+          "INTPTLAT": "46.463218",
+          "INTPTLONG": "-91.892477"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55033",
+          "GEOIDFQ": "0500000US55033",
+          "ANSICODE": "01581076",
+          "NAME": "Dunn County",
+          "ALAND": "2201904321",
+          "AWATER": "35571121",
+          "ALAND_SQMI": "850.16",
+          "AWATER_SQMI": "13.734",
+          "INTPTLAT": "44.947751",
+          "INTPTLONG": "-91.897645"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55035",
+          "GEOIDFQ": "0500000US55035",
+          "ANSICODE": "01581077",
+          "NAME": "Eau Claire County",
+          "ALAND": "1652211254",
+          "AWATER": "18848555",
+          "ALAND_SQMI": "637.922",
+          "AWATER_SQMI": "7.277",
+          "INTPTLAT": "44.726355",
+          "INTPTLONG": "-91.286414"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55037",
+          "GEOIDFQ": "0500000US55037",
+          "ANSICODE": "01581078",
+          "NAME": "Florence County",
+          "ALAND": "1263988295",
+          "AWATER": "24099863",
+          "ALAND_SQMI": "488.029",
+          "AWATER_SQMI": "9.305",
+          "INTPTLAT": "45.871822",
+          "INTPTLONG": "-88.40699"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55039",
+          "GEOIDFQ": "0500000US55039",
+          "ANSICODE": "01581079",
+          "NAME": "Fond du Lac County",
+          "ALAND": "1863667255",
+          "AWATER": "119853824",
+          "ALAND_SQMI": "719.566",
+          "AWATER_SQMI": "46.276",
+          "INTPTLAT": "43.754722",
+          "INTPTLONG": "-88.493284"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55041",
+          "GEOIDFQ": "0500000US55041",
+          "ANSICODE": "01581080",
+          "NAME": "Forest County",
+          "ALAND": "2626935113",
+          "AWATER": "83517438",
+          "ALAND_SQMI": "1014.265",
+          "AWATER_SQMI": "32.246",
+          "INTPTLAT": "45.666881",
+          "INTPTLONG": "-88.773326"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55043",
+          "GEOIDFQ": "0500000US55043",
+          "ANSICODE": "01581081",
+          "NAME": "Grant County",
+          "ALAND": "2972281789",
+          "AWATER": "92642048",
+          "ALAND_SQMI": "1147.604",
+          "AWATER_SQMI": "35.769",
+          "INTPTLAT": "42.870028",
+          "INTPTLONG": "-90.694229"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55045",
+          "GEOIDFQ": "0500000US55045",
+          "ANSICODE": "01581082",
+          "NAME": "Green County",
+          "ALAND": "1512667180",
+          "AWATER": "1313240",
+          "ALAND_SQMI": "584.044",
+          "AWATER_SQMI": "0.507",
+          "INTPTLAT": "42.675522",
+          "INTPTLONG": "-89.605074"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55047",
+          "GEOIDFQ": "0500000US55047",
+          "ANSICODE": "01581083",
+          "NAME": "Green Lake County",
+          "ALAND": "905306435",
+          "AWATER": "79210987",
+          "ALAND_SQMI": "349.541",
+          "AWATER_SQMI": "30.584",
+          "INTPTLAT": "43.780247",
+          "INTPTLONG": "-88.97038"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55049",
+          "GEOIDFQ": "0500000US55049",
+          "ANSICODE": "01581084",
+          "NAME": "Iowa County",
+          "ALAND": "1975379600",
+          "AWATER": "13870581",
+          "ALAND_SQMI": "762.698",
+          "AWATER_SQMI": "5.355",
+          "INTPTLAT": "43.001021",
+          "INTPTLONG": "-90.133691"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55051",
+          "GEOIDFQ": "0500000US55051",
+          "ANSICODE": "01581085",
+          "NAME": "Iron County",
+          "ALAND": "1963763895",
+          "AWATER": "416859797",
+          "ALAND_SQMI": "758.214",
+          "AWATER_SQMI": "160.95",
+          "INTPTLAT": "46.32655",
+          "INTPTLONG": "-90.261298"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55053",
+          "GEOIDFQ": "0500000US55053",
+          "ANSICODE": "01581086",
+          "NAME": "Jackson County",
+          "ALAND": "2558687751",
+          "AWATER": "32538318",
+          "ALAND_SQMI": "987.915",
+          "AWATER_SQMI": "12.563",
+          "INTPTLAT": "44.324613",
+          "INTPTLONG": "-90.799941"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55055",
+          "GEOIDFQ": "0500000US55055",
+          "ANSICODE": "01581087",
+          "NAME": "Jefferson County",
+          "ALAND": "1441311741",
+          "AWATER": "67982465",
+          "ALAND_SQMI": "556.494",
+          "AWATER_SQMI": "26.248",
+          "INTPTLAT": "43.013804",
+          "INTPTLONG": "-88.773985"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55057",
+          "GEOIDFQ": "0500000US55057",
+          "ANSICODE": "01581088",
+          "NAME": "Juneau County",
+          "ALAND": "1986729538",
+          "AWATER": "98638538",
+          "ALAND_SQMI": "767.081",
+          "AWATER_SQMI": "38.085",
+          "INTPTLAT": "43.932832",
+          "INTPTLONG": "-90.113964"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55059",
+          "GEOIDFQ": "0500000US55059",
+          "ANSICODE": "01581089",
+          "NAME": "Kenosha County",
+          "ALAND": "704057257",
+          "AWATER": "1248859284",
+          "ALAND_SQMI": "271.838",
+          "AWATER_SQMI": "482.187",
+          "INTPTLAT": "42.587526",
+          "INTPTLONG": "-87.879996"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55061",
+          "GEOIDFQ": "0500000US55061",
+          "ANSICODE": "01581090",
+          "NAME": "Kewaunee County",
+          "ALAND": "886948869",
+          "AWATER": "1921339184",
+          "ALAND_SQMI": "342.453",
+          "AWATER_SQMI": "741.833",
+          "INTPTLAT": "44.605677",
+          "INTPTLONG": "-87.448008"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55063",
+          "GEOIDFQ": "0500000US55063",
+          "ANSICODE": "01581091",
+          "NAME": "La Crosse County",
+          "ALAND": "1170172395",
+          "AWATER": "73153072",
+          "ALAND_SQMI": "451.806",
+          "AWATER_SQMI": "28.245",
+          "INTPTLAT": "43.908226",
+          "INTPTLONG": "-91.111577"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55065",
+          "GEOIDFQ": "0500000US55065",
+          "ANSICODE": "01581092",
+          "NAME": "Lafayette County",
+          "ALAND": "1640985409",
+          "AWATER": "2539010",
+          "ALAND_SQMI": "633.588",
+          "AWATER_SQMI": "0.98",
+          "INTPTLAT": "42.65901",
+          "INTPTLONG": "-90.129739"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55067",
+          "GEOIDFQ": "0500000US55067",
+          "ANSICODE": "01581093",
+          "NAME": "Langlade County",
+          "ALAND": "2255076045",
+          "AWATER": "44299595",
+          "ALAND_SQMI": "870.69",
+          "AWATER_SQMI": "17.104",
+          "INTPTLAT": "45.254863",
+          "INTPTLONG": "-89.06707"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55069",
+          "GEOIDFQ": "0500000US55069",
+          "ANSICODE": "01581094",
+          "NAME": "Lincoln County",
+          "ALAND": "2276026416",
+          "AWATER": "72551194",
+          "ALAND_SQMI": "878.779",
+          "AWATER_SQMI": "28.012",
+          "INTPTLAT": "45.333148",
+          "INTPTLONG": "-89.73224"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55071",
+          "GEOIDFQ": "0500000US55071",
+          "ANSICODE": "01581095",
+          "NAME": "Manitowoc County",
+          "ALAND": "1526302539",
+          "AWATER": "2343337597",
+          "ALAND_SQMI": "589.309",
+          "AWATER_SQMI": "904.768",
+          "INTPTLAT": "44.156137",
+          "INTPTLONG": "-87.577352"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55073",
+          "GEOIDFQ": "0500000US55073",
+          "ANSICODE": "01581096",
+          "NAME": "Marathon County",
+          "ALAND": "4002176375",
+          "AWATER": "80510469",
+          "ALAND_SQMI": "1545.249",
+          "AWATER_SQMI": "31.085",
+          "INTPTLAT": "44.898036",
+          "INTPTLONG": "-89.757823"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55075",
+          "GEOIDFQ": "0500000US55075",
+          "ANSICODE": "01581097",
+          "NAME": "Marinette County",
+          "ALAND": "3624605668",
+          "AWATER": "389870093",
+          "ALAND_SQMI": "1399.468",
+          "AWATER_SQMI": "150.53",
+          "INTPTLAT": "45.346899",
+          "INTPTLONG": "-87.991198"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55077",
+          "GEOIDFQ": "0500000US55077",
+          "ANSICODE": "01581098",
+          "NAME": "Marquette County",
+          "ALAND": "1180287719",
+          "AWATER": "22670492",
+          "ALAND_SQMI": "455.712",
+          "AWATER_SQMI": "8.753",
+          "INTPTLAT": "43.826005",
+          "INTPTLONG": "-89.409007"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55078",
+          "GEOIDFQ": "0500000US55078",
+          "ANSICODE": "01581099",
+          "NAME": "Menominee County",
+          "ALAND": "926217564",
+          "AWATER": "19022477",
+          "ALAND_SQMI": "357.615",
+          "AWATER_SQMI": "7.345",
+          "INTPTLAT": "44.991304",
+          "INTPTLONG": "-88.669251"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55079",
+          "GEOIDFQ": "0500000US55079",
+          "ANSICODE": "01581100",
+          "NAME": "Milwaukee County",
+          "ALAND": "625371988",
+          "AWATER": "2455452231",
+          "ALAND_SQMI": "241.457",
+          "AWATER_SQMI": "948.055",
+          "INTPTLAT": "42.912643",
+          "INTPTLONG": "-87.862312"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55081",
+          "GEOIDFQ": "0500000US55081",
+          "ANSICODE": "01581101",
+          "NAME": "Monroe County",
+          "ALAND": "2333331301",
+          "AWATER": "18585230",
+          "ALAND_SQMI": "900.904",
+          "AWATER_SQMI": "7.176",
+          "INTPTLAT": "43.945175",
+          "INTPTLONG": "-90.619969"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55083",
+          "GEOIDFQ": "0500000US55083",
+          "ANSICODE": "01581102",
+          "NAME": "Oconto County",
+          "ALAND": "2583460774",
+          "AWATER": "392042288",
+          "ALAND_SQMI": "997.48",
+          "AWATER_SQMI": "151.368",
+          "INTPTLAT": "44.996575",
+          "INTPTLONG": "-88.206516"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55085",
+          "GEOIDFQ": "0500000US55085",
+          "ANSICODE": "01581103",
+          "NAME": "Oneida County",
+          "ALAND": "2885105529",
+          "AWATER": "317599643",
+          "ALAND_SQMI": "1113.946",
+          "AWATER_SQMI": "122.626",
+          "INTPTLAT": "45.716176",
+          "INTPTLONG": "-89.534533"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55087",
+          "GEOIDFQ": "0500000US55087",
+          "ANSICODE": "01581104",
+          "NAME": "Outagamie County",
+          "ALAND": "1651266094",
+          "AWATER": "18260946",
+          "ALAND_SQMI": "637.557",
+          "AWATER_SQMI": "7.051",
+          "INTPTLAT": "44.418226",
+          "INTPTLONG": "-88.464988"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55089",
+          "GEOIDFQ": "0500000US55089",
+          "ANSICODE": "01581105",
+          "NAME": "Ozaukee County",
+          "ALAND": "603489982",
+          "AWATER": "2287439762",
+          "ALAND_SQMI": "233.009",
+          "AWATER_SQMI": "883.185",
+          "INTPTLAT": "43.501807",
+          "INTPTLONG": "-87.847551"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55091",
+          "GEOIDFQ": "0500000US55091",
+          "ANSICODE": "01581106",
+          "NAME": "Pepin County",
+          "ALAND": "600892931",
+          "AWATER": "43242998",
+          "ALAND_SQMI": "232.006",
+          "AWATER_SQMI": "16.696",
+          "INTPTLAT": "44.627436",
+          "INTPTLONG": "-91.83489"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55093",
+          "GEOIDFQ": "0500000US55093",
+          "ANSICODE": "01581107",
+          "NAME": "Pierce County",
+          "ALAND": "1486700533",
+          "AWATER": "48452322",
+          "ALAND_SQMI": "574.018",
+          "AWATER_SQMI": "18.708",
+          "INTPTLAT": "44.725336",
+          "INTPTLONG": "-92.426279"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55095",
+          "GEOIDFQ": "0500000US55095",
+          "ANSICODE": "01581108",
+          "NAME": "Polk County",
+          "ALAND": "2368075619",
+          "AWATER": "109027909",
+          "ALAND_SQMI": "914.319",
+          "AWATER_SQMI": "42.096",
+          "INTPTLAT": "45.468651",
+          "INTPTLONG": "-92.453747"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55097",
+          "GEOIDFQ": "0500000US55097",
+          "ANSICODE": "01581109",
+          "NAME": "Portage County",
+          "ALAND": "2074252970",
+          "AWATER": "56835076",
+          "ALAND_SQMI": "800.874",
+          "AWATER_SQMI": "21.944",
+          "INTPTLAT": "44.476246",
+          "INTPTLONG": "-89.49807"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55099",
+          "GEOIDFQ": "0500000US55099",
+          "ANSICODE": "01581110",
+          "NAME": "Price County",
+          "ALAND": "3247997088",
+          "AWATER": "62089701",
+          "ALAND_SQMI": "1254.059",
+          "AWATER_SQMI": "23.973",
+          "INTPTLAT": "45.679072",
+          "INTPTLONG": "-90.35965"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55101",
+          "GEOIDFQ": "0500000US55101",
+          "ANSICODE": "01581111",
+          "NAME": "Racine County",
+          "ALAND": "861465355",
+          "AWATER": "1190175264",
+          "ALAND_SQMI": "332.614",
+          "AWATER_SQMI": "459.529",
+          "INTPTLAT": "42.780399",
+          "INTPTLONG": "-87.771505"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55103",
+          "GEOIDFQ": "0500000US55103",
+          "ANSICODE": "01581112",
+          "NAME": "Richland County",
+          "ALAND": "1518120291",
+          "AWATER": "8153422",
+          "ALAND_SQMI": "586.15",
+          "AWATER_SQMI": "3.148",
+          "INTPTLAT": "43.376199",
+          "INTPTLONG": "-90.435693"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55105",
+          "GEOIDFQ": "0500000US55105",
+          "ANSICODE": "01581113",
+          "NAME": "Rock County",
+          "ALAND": "1860046330",
+          "AWATER": "20694405",
+          "ALAND_SQMI": "718.168",
+          "AWATER_SQMI": "7.99",
+          "INTPTLAT": "42.66988",
+          "INTPTLONG": "-89.075284"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55107",
+          "GEOIDFQ": "0500000US55107",
+          "ANSICODE": "01581114",
+          "NAME": "Rusk County",
+          "ALAND": "2365981756",
+          "AWATER": "44924199",
+          "ALAND_SQMI": "913.511",
+          "AWATER_SQMI": "17.345",
+          "INTPTLAT": "45.472734",
+          "INTPTLONG": "-91.136744"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55109",
+          "GEOIDFQ": "0500000US55109",
+          "ANSICODE": "01581833",
+          "NAME": "St. Croix County",
+          "ALAND": "1870380152",
+          "AWATER": "33740053",
+          "ALAND_SQMI": "722.158",
+          "AWATER_SQMI": "13.027",
+          "INTPTLAT": "45.028959",
+          "INTPTLONG": "-92.447284"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55111",
+          "GEOIDFQ": "0500000US55111",
+          "ANSICODE": "01581115",
+          "NAME": "Sauk County",
+          "ALAND": "2153804717",
+          "AWATER": "45574257",
+          "ALAND_SQMI": "831.589",
+          "AWATER_SQMI": "17.596",
+          "INTPTLAT": "43.428001",
+          "INTPTLONG": "-89.943318"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55113",
+          "GEOIDFQ": "0500000US55113",
+          "ANSICODE": "01581116",
+          "NAME": "Sawyer County",
+          "ALAND": "3257178036",
+          "AWATER": "239922221",
+          "ALAND_SQMI": "1257.604",
+          "AWATER_SQMI": "92.634",
+          "INTPTLAT": "45.864999",
+          "INTPTLONG": "-91.147063"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55115",
+          "GEOIDFQ": "0500000US55115",
+          "ANSICODE": "01581117",
+          "NAME": "Shawano County",
+          "ALAND": "2313441778",
+          "AWATER": "41883029",
+          "ALAND_SQMI": "893.225",
+          "AWATER_SQMI": "16.171",
+          "INTPTLAT": "44.789641",
+          "INTPTLONG": "-88.755813"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55117",
+          "GEOIDFQ": "0500000US55117",
+          "ANSICODE": "01581118",
+          "NAME": "Sheboygan County",
+          "ALAND": "1324828380",
+          "AWATER": "1967670396",
+          "ALAND_SQMI": "511.519",
+          "AWATER_SQMI": "759.722",
+          "INTPTLAT": "43.738713",
+          "INTPTLONG": "-87.731531"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55119",
+          "GEOIDFQ": "0500000US55119",
+          "ANSICODE": "01581119",
+          "NAME": "Taylor County",
+          "ALAND": "2525374175",
+          "AWATER": "24630992",
+          "ALAND_SQMI": "975.052",
+          "AWATER_SQMI": "9.51",
+          "INTPTLAT": "45.211656",
+          "INTPTLONG": "-90.504853"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55121",
+          "GEOIDFQ": "0500000US55121",
+          "ANSICODE": "01581120",
+          "NAME": "Trempealeau County",
+          "ALAND": "1898373593",
+          "AWATER": "23331636",
+          "ALAND_SQMI": "732.966",
+          "AWATER_SQMI": "9.008",
+          "INTPTLAT": "44.30305",
+          "INTPTLONG": "-91.358867"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55123",
+          "GEOIDFQ": "0500000US55123",
+          "ANSICODE": "01581121",
+          "NAME": "Vernon County",
+          "ALAND": "2050138659",
+          "AWATER": "64286578",
+          "ALAND_SQMI": "791.563",
+          "AWATER_SQMI": "24.821",
+          "INTPTLAT": "43.596139",
+          "INTPTLONG": "-90.8171"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55125",
+          "GEOIDFQ": "0500000US55125",
+          "ANSICODE": "01581122",
+          "NAME": "Vilas County",
+          "ALAND": "2221464772",
+          "AWATER": "414409086",
+          "ALAND_SQMI": "857.712",
+          "AWATER_SQMI": "160.004",
+          "INTPTLAT": "46.049848",
+          "INTPTLONG": "-89.501254"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55127",
+          "GEOIDFQ": "0500000US55127",
+          "ANSICODE": "01581123",
+          "NAME": "Walworth County",
+          "ALAND": "1438572740",
+          "AWATER": "54804585",
+          "ALAND_SQMI": "555.436",
+          "AWATER_SQMI": "21.16",
+          "INTPTLAT": "42.66811",
+          "INTPTLONG": "-88.541731"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55129",
+          "GEOIDFQ": "0500000US55129",
+          "ANSICODE": "01581124",
+          "NAME": "Washburn County",
+          "ALAND": "2064515976",
+          "AWATER": "145563861",
+          "ALAND_SQMI": "797.114",
+          "AWATER_SQMI": "56.203",
+          "INTPTLAT": "45.892489",
+          "INTPTLONG": "-91.796422"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55131",
+          "GEOIDFQ": "0500000US55131",
+          "ANSICODE": "01581125",
+          "NAME": "Washington County",
+          "ALAND": "1115362187",
+          "AWATER": "12999403",
+          "ALAND_SQMI": "430.644",
+          "AWATER_SQMI": "5.019",
+          "INTPTLAT": "43.391156",
+          "INTPTLONG": "-88.232917"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55133",
+          "GEOIDFQ": "0500000US55133",
+          "ANSICODE": "01581126",
+          "NAME": "Waukesha County",
+          "ALAND": "1423787385",
+          "AWATER": "79799928",
+          "ALAND_SQMI": "549.727",
+          "AWATER_SQMI": "30.811",
+          "INTPTLAT": "43.017695",
+          "INTPTLONG": "-88.299725"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55135",
+          "GEOIDFQ": "0500000US55135",
+          "ANSICODE": "01581127",
+          "NAME": "Waupaca County",
+          "ALAND": "1936539554",
+          "AWATER": "45252048",
+          "ALAND_SQMI": "747.702",
+          "AWATER_SQMI": "17.472",
+          "INTPTLAT": "44.478004",
+          "INTPTLONG": "-88.967004"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55137",
+          "GEOIDFQ": "0500000US55137",
+          "ANSICODE": "01581128",
+          "NAME": "Waushara County",
+          "ALAND": "1621749735",
+          "AWATER": "29096947",
+          "ALAND_SQMI": "626.161",
+          "AWATER_SQMI": "11.234",
+          "INTPTLAT": "44.112823",
+          "INTPTLONG": "-89.239786"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55139",
+          "GEOIDFQ": "0500000US55139",
+          "ANSICODE": "01581129",
+          "NAME": "Winnebago County",
+          "ALAND": "1125861120",
+          "AWATER": "372630371",
+          "ALAND_SQMI": "434.697",
+          "AWATER_SQMI": "143.873",
+          "INTPTLAT": "44.085707",
+          "INTPTLONG": "-88.668149"
+        },
+        {
+          "USPS": "WI",
+          "GEOID": "55141",
+          "GEOIDFQ": "0500000US55141",
+          "ANSICODE": "01581130",
+          "NAME": "Wood County",
+          "ALAND": "2053964485",
+          "AWATER": "41988514",
+          "ALAND_SQMI": "793.04",
+          "AWATER_SQMI": "16.212",
+          "INTPTLAT": "44.461413",
+          "INTPTLONG": "-90.038825"
+        }
+      ]
+    }
+  ],
+  "all_72_wisconsin_names_uniquely_match_both_inventories_and_contextual_geometry": true,
+  "native_rock_name_uniquely_matches_both_inventories_and_contextual_geometry": true,
+  "comparison_rule": "Remove a terminal County suffix, case-fold and ignore punctuation/spaces; no aliases or inferred codes.",
+  "joins": [
+    {
+      "native_county": "Rock County",
+      "census_name": "Rock County",
+      "contextual_geoid": "55105",
+      "native_fips": null
+    }
+  ],
+  "geometry_check": {
+    "state_code": "WI",
+    "features": 72,
+    "invalid": [],
+    "overlap_pairs": [
+      {
+        "left": "55003",
+        "right": "55051",
+        "overlap_square_degrees": 5.465105184812731e-06
+      },
+      {
+        "left": "55003",
+        "right": "55113",
+        "overlap_square_degrees": 2.6934906641691204e-05
+      },
+      {
+        "left": "55003",
+        "right": "55099",
+        "overlap_square_degrees": 3.117909928340667e-05
+      },
+      {
+        "left": "55003",
+        "right": "55007",
+        "overlap_square_degrees": 9.058875248441166e-06
+      },
+      {
+        "left": "55051",
+        "right": "55099",
+        "overlap_square_degrees": 3.183892599118666e-05
+      },
+      {
+        "left": "55051",
+        "right": "55125",
+        "overlap_square_degrees": 2.2560664618361885e-06
+      },
+      {
+        "left": "55057",
+        "right": "55001",
+        "overlap_square_degrees": 2.6643406531627786e-06
+      },
+      {
+        "left": "55035",
+        "right": "55121",
+        "overlap_square_degrees": 2.3390617076912712e-05
+      },
+      {
+        "left": "55035",
+        "right": "55053",
+        "overlap_square_degrees": 1.0167415522524852e-05
+      },
+      {
+        "left": "55035",
+        "right": "55033",
+        "overlap_square_degrees": 5.333835129292241e-06
+      },
+      {
+        "left": "55078",
+        "right": "55067",
+        "overlap_square_degrees": 7.718985008172764e-06
+      },
+      {
+        "left": "55011",
+        "right": "55091",
+        "overlap_square_degrees": 1.882231772705576e-05
+      },
+      {
+        "left": "55121",
+        "right": "55053",
+        "overlap_square_degrees": 6.506522119961554e-06
+      },
+      {
+        "left": "55075",
+        "right": "55037",
+        "overlap_square_degrees": 2.0401919268247363e-05
+      },
+      {
+        "left": "55111",
+        "right": "55021",
+        "overlap_square_degrees": 1.1991237615075063e-06
+      },
+      {
+        "left": "55111",
+        "right": "55103",
+        "overlap_square_degrees": 5.2683245295191e-07
+      },
+      {
+        "left": "55111",
+        "right": "55049",
+        "overlap_square_degrees": 1.7204970885787123e-06
+      },
+      {
+        "left": "55111",
+        "right": "55025",
+        "overlap_square_degrees": 1.4020435231712378e-06
+      },
+      {
+        "left": "55113",
+        "right": "55129",
+        "overlap_square_degrees": 2.877999997728673e-07
+      },
+      {
+        "left": "55001",
+        "right": "55141",
+        "overlap_square_degrees": 7.2740999040882e-07
+      },
+      {
+        "left": "55001",
+        "right": "55137",
+        "overlap_square_degrees": 1.2351183705477782e-08
+      },
+      {
+        "left": "55001",
+        "right": "55077",
+        "overlap_square_degrees": 2.1402942551572845e-05
+      },
+      {
+        "left": "55001",
+        "right": "55021",
+        "overlap_square_degrees": 1.77017811050517e-05
+      },
+      {
+        "left": "55099",
+        "right": "55107",
+        "overlap_square_degrees": 1.3223752123501127e-06
+      },
+      {
+        "left": "55037",
+        "right": "55041",
+        "overlap_square_degrees": 1.690806676183927e-05
+      },
+      {
+        "left": "55043",
+        "right": "55065",
+        "overlap_square_degrees": 2.1858345228363335e-05
+      },
+      {
+        "left": "55043",
+        "right": "55103",
+        "overlap_square_degrees": 1.9711800507681353e-06
+      },
+      {
+        "left": "55043",
+        "right": "55049",
+        "overlap_square_degrees": 1.1659680230456137e-05
+      },
+      {
+        "left": "55055",
+        "right": "55133",
+        "overlap_square_degrees": 5.314040574251672e-06
+      },
+      {
+        "left": "55055",
+        "right": "55127",
+        "overlap_square_degrees": 3.0114030195414708e-05
+      },
+      {
+        "left": "55055",
+        "right": "55025",
+        "overlap_square_degrees": 8.466000000097846e-07
+      },
+      {
+        "left": "55141",
+        "right": "55053",
+        "overlap_square_degrees": 1.9988945336069345e-05
+      },
+      {
+        "left": "55141",
+        "right": "55019",
+        "overlap_square_degrees": 9.116074695754621e-06
+      },
+      {
+        "left": "55141",
+        "right": "55073",
+        "overlap_square_degrees": 6.5493836415381766e-06
+      },
+      {
+        "left": "55133",
+        "right": "55101",
+        "overlap_square_degrees": 1.1409052598122503e-05
+      },
+      {
+        "left": "55119",
+        "right": "55107",
+        "overlap_square_degrees": 1.6040325126114435e-05
+      },
+      {
+        "left": "55119",
+        "right": "55017",
+        "overlap_square_degrees": 6.1351274700130204e-06
+      },
+      {
+        "left": "55119",
+        "right": "55073",
+        "overlap_square_degrees": 1.5343577368596962e-05
+      },
+      {
+        "left": "55093",
+        "right": "55091",
+        "overlap_square_degrees": 2.1919200402565171e-07
+      },
+      {
+        "left": "55093",
+        "right": "55033",
+        "overlap_square_degrees": 1.0734027424360373e-06
+      },
+      {
+        "left": "55045",
+        "right": "55065",
+        "overlap_square_degrees": 1.2828864279157917e-07
+      },
+      {
+        "left": "55045",
+        "right": "55105",
+        "overlap_square_degrees": 4.056633958724678e-06
+      },
+      {
+        "left": "55045",
+        "right": "55049",
+        "overlap_square_degrees": 5.867908375241546e-07
+      },
+      {
+        "left": "55045",
+        "right": "55025",
+        "overlap_square_degrees": 3.201677157986658e-07
+      },
+      {
+        "left": "55127",
+        "right": "55101",
+        "overlap_square_degrees": 1.4086574388162113e-06
+      },
+      {
+        "left": "55127",
+        "right": "55059",
+        "overlap_square_degrees": 2.6270080596154483e-06
+      },
+      {
+        "left": "55009",
+        "right": "55083",
+        "overlap_square_degrees": 4.0215520834625053e-07
+      },
+      {
+        "left": "55009",
+        "right": "55071",
+        "overlap_square_degrees": 6.581148994845711e-06
+      },
+      {
+        "left": "55009",
+        "right": "55015",
+        "overlap_square_degrees": 4.637501004629845e-06
+      },
+      {
+        "left": "55009",
+        "right": "55087",
+        "overlap_square_degrees": 1.2609953616095466e-05
+      },
+      {
+        "left": "55009",
+        "right": "55115",
+        "overlap_square_degrees": 3.2454479167736143e-07
+      },
+      {
+        "left": "55083",
+        "right": "55067",
+        "overlap_square_degrees": 1.2427289652194069e-06
+      },
+      {
+        "left": "55071",
+        "right": "55117",
+        "overlap_square_degrees": 9.814488781867028e-06
+      },
+      {
+        "left": "55109",
+        "right": "55033",
+        "overlap_square_degrees": 4.382428705705067e-06
+      },
+      {
+        "left": "55101",
+        "right": "55079",
+        "overlap_square_degrees": 2.4507763959659318e-05
+      },
+      {
+        "left": "55137",
+        "right": "55077",
+        "overlap_square_degrees": 8.768529445179323e-06
+      },
+      {
+        "left": "55137",
+        "right": "55097",
+        "overlap_square_degrees": 1.0093912040669858e-06
+      },
+      {
+        "left": "55137",
+        "right": "55047",
+        "overlap_square_degrees": 1.5909384894914473e-06
+      },
+      {
+        "left": "55137",
+        "right": "55135",
+        "overlap_square_degrees": 1.8724384855949312e-07
+      },
+      {
+        "left": "55053",
+        "right": "55019",
+        "overlap_square_degrees": 4.815600000283258e-06
+      },
+      {
+        "left": "55015",
+        "right": "55087",
+        "overlap_square_degrees": 3.1051386777734275e-05
+      },
+      {
+        "left": "55015",
+        "right": "55117",
+        "overlap_square_degrees": 1.214730776737787e-05
+      },
+      {
+        "left": "55005",
+        "right": "55107",
+        "overlap_square_degrees": 1.2214637595217416e-06
+      },
+      {
+        "left": "55005",
+        "right": "55017",
+        "overlap_square_degrees": 1.4446280072099242e-06
+      },
+      {
+        "left": "55005",
+        "right": "55129",
+        "overlap_square_degrees": 8.207750541014691e-06
+      },
+      {
+        "left": "55067",
+        "right": "55069",
+        "overlap_square_degrees": 3.0344208964215106e-05
+      },
+      {
+        "left": "55067",
+        "right": "55073",
+        "overlap_square_degrees": 3.535682965187935e-05
+      },
+      {
+        "left": "55131",
+        "right": "55027",
+        "overlap_square_degrees": 2.2569484303134536e-05
+      },
+      {
+        "left": "55131",
+        "right": "55039",
+        "overlap_square_degrees": 2.9176709969339483e-05
+      },
+      {
+        "left": "55077",
+        "right": "55047",
+        "overlap_square_degrees": 1.9707552977485067e-05
+      },
+      {
+        "left": "55077",
+        "right": "55021",
+        "overlap_square_degrees": 3.521192254563953e-05
+      },
+      {
+        "left": "55097",
+        "right": "55073",
+        "overlap_square_degrees": 6.502666358389685e-06
+      },
+      {
+        "left": "55047",
+        "right": "55139",
+        "overlap_square_degrees": 2.9646188380976103e-06
+      },
+      {
+        "left": "55047",
+        "right": "55039",
+        "overlap_square_degrees": 1.083852719024323e-05
+      },
+      {
+        "left": "55021",
+        "right": "55027",
+        "overlap_square_degrees": 3.914267473383472e-06
+      },
+      {
+        "left": "55103",
+        "right": "55123",
+        "overlap_square_degrees": 2.627836045239427e-06
+      },
+      {
+        "left": "55103",
+        "right": "55049",
+        "overlap_square_degrees": 7.884790839136529e-07
+      },
+      {
+        "left": "55135",
+        "right": "55087",
+        "overlap_square_degrees": 6.832687079968129e-06
+      },
+      {
+        "left": "55135",
+        "right": "55139",
+        "overlap_square_degrees": 8.443313219590754e-06
+      },
+      {
+        "left": "55087",
+        "right": "55139",
+        "overlap_square_degrees": 4.2916571343345506e-05
+      },
+      {
+        "left": "55087",
+        "right": "55115",
+        "overlap_square_degrees": 1.319615945043341e-05
+      },
+      {
+        "left": "55105",
+        "right": "55025",
+        "overlap_square_degrees": 5.246324999954491e-05
+      },
+      {
+        "left": "55049",
+        "right": "55025",
+        "overlap_square_degrees": 1.4280268369261772e-05
+      },
+      {
+        "left": "55027",
+        "right": "55025",
+        "overlap_square_degrees": 1.2741719764563547e-05
+      },
+      {
+        "left": "55027",
+        "right": "55039",
+        "overlap_square_degrees": 9.772560188181426e-06
+      },
+      {
+        "left": "55017",
+        "right": "55033",
+        "overlap_square_degrees": 2.9549959088182402e-06
+      },
+      {
+        "left": "55115",
+        "right": "55073",
+        "overlap_square_degrees": 1.4034864825620776e-06
+      },
+      {
+        "left": "55069",
+        "right": "55073",
+        "overlap_square_degrees": 5.406731124503456e-05
+      },
+      {
+        "left": "55069",
+        "right": "55085",
+        "overlap_square_degrees": 1.8624103432779677e-07
+      }
+    ],
+    "contextual_geometry_sha256": "97dde9ce8de0c4d1f7dc4539a37eca83679b457a4a37dd892cd832de12828faf",
+    "current_and_2024_identity_inventory_equal": true,
+    "live_complete_bytes_equal": true
+  },
+  "live_geometry_url": "https://www.themarginoferror.com/participation-context/20261104T183601Z/geometry/county-WI.geojson",
+  "live_geometry_receipt": {
+    "status": 200,
+    "final_url": "https://www.themarginoferror.com/participation-context/20261104T183601Z/geometry/county-WI.geojson",
+    "bytes": 181139,
+    "sha256": "97dde9ce8de0c4d1f7dc4539a37eca83679b457a4a37dd892cd832de12828faf",
+    "tls_verified": true
+  },
+  "native_feature_ids_not_used_as_census_fips": true,
+  "no_certified_2026_election_boundary_or_completed_counting_claim": true,
+  "contextual_boundary_year": 2024,
+  "native_map_approvals_unchanged": true,
+  "generic_rate_or_map_usability_review_not_implied_by_identity": true,
+  "context24_unchanged": true
+}

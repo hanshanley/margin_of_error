@@ -1,0 +1,28 @@
+{
+  "previous_complete_source_records_preserved": 1328,
+  "previous_native_source_records_preserved": 463,
+  "previous_county_map_joins_preserved": 833,
+  "previous_entire_geometry_inventory_preserved": 19,
+  "previous_exclusions_source_selections_and_missingness_preserved": true,
+  "native_approval_flags_and_missing_fips_unchanged": true,
+  "no_certified_2026_geometry_claim": true,
+  "no_native_update_clock_invented": true,
+  "new_source_records": 1,
+  "new_distinct_county_joins": 1,
+  "new_registered_fractions": 1,
+  "counts": {
+    "complete_source_records": 1329,
+    "contextual_joins": 834,
+    "jurisdictions": 20,
+    "reviewed_rates": 447,
+    "missing_rates": 387,
+    "excluded_municipalities": 286,
+    "excluded_missing_county_totals": 208,
+    "retained_duplicate_source_observations": 1
+  },
+  "frozen_review_bytes": 1268364,
+  "frozen_review_sha256": "e9ece9b8918dd3fec4ab4b5cbdfa30bfde181219bd1f6303c2c70077eb8b072e",
+  "complete_zip_bytes": 3083230,
+  "complete_zip_sha256": "0fc67ca8554e5bf98d3b56b304a0963987357f1d57211e805229aabffd2eeb44",
+  "complete_package_files": 34
+}

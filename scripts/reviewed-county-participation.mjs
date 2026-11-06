@@ -895,6 +895,63 @@ export function loadReviewedFloridaParticipation(reviews) {
   });
 }
 
+export function loadReviewedRockParticipation(reviews) {
+  const id = 'wisconsin-rock-turnout-20261106-01';
+  const matches = reviews.filter(review => review.id === id);
+  if (matches.length !== 1) throw new Error(`Missing or duplicated reviewed county source: ${id}`);
+  const review = matches[0], directory = resolve(review.data_directory);
+  const manifest = readFileSync(resolve(directory, 'checksums.json'));
+  if (createHash('sha256').update(manifest).digest('hex') !==
+    '83e0b77a2c8e5b54c670a8e8664d22146e374bb567875e744ca16b8b4457a95a')
+    throw new Error(`Invalid reviewed county participation: ${id} / checksums.json`);
+  const files = [...JSON.parse(manifest).files, { path: 'complete-query.zip', bytes: 84439,
+    sha256: '63f277b2005438861fed666497e833180960b88c73f7333fa5f0746abb8fc45f' }];
+  for (const expected of files) {
+    const body = readFileSync(resolve(directory, expected.path));
+    if (body.length !== expected.bytes || createHash('sha256').update(body).digest('hex') !== expected.sha256)
+      throw new Error(`Invalid reviewed county participation: ${id} / ${expected.path}`);
+  }
+  const rows = csv(resolve(directory, 'county-participation.csv'));
+  const source = JSON.parse(readFileSync(resolve(directory, 'source-qualification.json'), 'utf8'));
+  if (rows.length !== 1 || source.source_timezone !== null || source.native_fips !== null)
+    throw new Error(`Incomplete reviewed county source: ${id}`);
+  const native = rows[0], ballots = Number(native.reported_ballots_cast);
+  const denominator = Number(native.reported_registered_voters);
+  if (native.native_county !== 'Rock County' || native.native_state !== 'Wisconsin'
+    || native.native_fips !== '' || native.source_timezone !== ''
+    || ['analysis_rate_approved', 'map_approved', 'all_mode_definition_approved', 'certified']
+      .some(key => native[key] !== 'False')
+    || !Number.isSafeInteger(ballots) || ballots < 0
+    || !Number.isSafeInteger(denominator) || denominator <= 0 || ballots > denominator
+    || native.native_update_literal !== source.native_update_literal
+    || source.reporting_statements[0] !== 'Precincts Reporting: 106 of 106 for 100%')
+    throw new Error(`Invalid reviewed county participation: ${id}`);
+  const quality = [
+    'Native whole-county Ballots Cast snapshot, not candidate selections, receipts or processing counters; all 106 unit totals independently reconcile.',
+    'Same-report Registered Voters fraction only, not CVAP, VAP, VEP, CPS or demographic turnout. The source does not establish a separate denominator reference date.',
+    'Unofficial results; complete precinct reporting is not certification, final counting or proof of complete all-mode coverage. Ballot-mode decomposition remains unspecified.',
+    'Preserve the literal November 03, 2026 at 10:56 PM update with missing timezone; do not infer UTC or use receipt clocks.',
+    'All 65 candidate/option totals and 3648 complete unit-candidate rows remain separate. Governor selections 67418 are not the 67812 Ballots Cast count.',
+  ];
+  return [{
+    year: 2026, state_code: 'WI', county_id: 'reviewed:WI:Rock County',
+    county: 'Rock County', geography_level: 'county', ballots, denominator,
+    participation_measure_kind: 'source_defined_participation_count',
+    participation_measure_literal: 'Ballots Cast',
+    participation_measure_label: 'Native Ballots Cast (reported county snapshot)',
+    denominator_basis: 'native_registered_voters', reported_pct: 100 * ballots / denominator,
+    native_printed_pct: native.native_registered_percentage,
+    source_status_literal: source.native_heading, reported_units: 106, total_units: 106,
+    source_rows: 1, maps_approved: false, review_id: id, native_record: native,
+    native_source_updates: [{ source: 'county summary',
+      native_update_literal: source.native_update_literal, declared_timezone: null }],
+    source_update_label: `${source.native_update_literal} (timezone not declared)`,
+    source_reporting_label: `${source.reporting_statements[0]}; ${quality.join(' ')}`, quality,
+    source_url: `${review.base_url}county-participation.csv`,
+    complete_download_url: review.complete_download_url,
+  }];
+}
+
 export function loadReviewedCountyParticipation(reviews) {
   const observations = [], seen = new Set();
   for (const [id, ballotField, denominatorField, printedField, code, names] of profiles) {

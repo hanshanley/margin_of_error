@@ -1,0 +1,36 @@
+{
+  "ref": {
+    "ref": "refs/tags/voter-county-wisconsin-rock-native-turnout-20261106-01",
+    "node_id": "REF_kwDOTeY7QdoAQHJlZnMvdGFncy92b3Rlci1jb3VudHktd2lzY29uc2luLXJvY2stbmF0aXZlLXR1cm5vdXQtMjAyNjExMDYtMDE",
+    "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/refs/tags/voter-county-wisconsin-rock-native-turnout-20261106-01",
+    "object": {
+      "sha": "236392a7e7511a3f55c759fddade1f117f608c1f",
+      "type": "tag",
+      "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/tags/236392a7e7511a3f55c759fddade1f117f608c1f"
+    }
+  },
+  "tag": {
+    "node_id": "TA_kwDOTeY7QdoAKDIzNjM5MmE3ZTc1MTFhM2Y1NWM3NTlmZGRhZGUxZjExN2Y2MDhjMWY",
+    "sha": "236392a7e7511a3f55c759fddade1f117f608c1f",
+    "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/tags/236392a7e7511a3f55c759fddade1f117f608c1f",
+    "tagger": {
+      "name": "Hans Hanley",
+      "email": "hwahhanley@gmail.com",
+      "date": "2026-11-06T20:18:07Z"
+    },
+    "object": {
+      "sha": "d425711ada1abd13ba85516993a9c0a7c83e1c92",
+      "type": "commit",
+      "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/commits/d425711ada1abd13ba85516993a9c0a7c83e1c92"
+    },
+    "tag": "voter-county-wisconsin-rock-native-turnout-20261106-01",
+    "message": "Complete unofficial Rock County native numerical query; no analysis or map approval\n",
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  }
+}

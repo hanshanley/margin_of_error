@@ -9,7 +9,8 @@ import { loadReviewedCountyParticipation as loadCompleteReviewedCountyParticipat
   loadReviewedMinnesotaParticipation, loadReviewedAdditionalPennsylvaniaParticipation,
   loadReviewedSomersetParticipation, loadReviewedSusquehannaParticipation,
   loadReviewedSullivanWyomingParticipation, loadReviewedBedfordNorthumberlandParticipation,
-  loadReviewedUtahParticipation, loadReviewedFloridaParticipation } from './reviewed-county-participation.mjs';
+  loadReviewedUtahParticipation, loadReviewedFloridaParticipation,
+  loadReviewedRockParticipation } from './reviewed-county-participation.mjs';
 
 const reviews = JSON.parse(readFileSync('public/participation-source-reviews.json', 'utf8')).reviews;
 const utahId = 'utah-ballot-statistics-20261106-01';
@@ -37,6 +38,57 @@ const floridaReview = {
   base_url: 'https://raw.githubusercontent.com/hanshanley/margin_of_error/fee108411207a3c74880bf7da9e514de3fc8b4a2/data/county-source-reviews/20261106-florida-consolidated-native-01/',
   complete_download_url: 'https://github.com/hanshanley/margin_of_error/releases/download/voter-county-florida-native-turnout-20261106-01/complete-query.zip',
 };
+
+const rockReview = {
+  id: 'wisconsin-rock-turnout-20261106-01',
+  data_directory: 'data/county-source-reviews/20261106-wisconsin-rock-native-01',
+  base_url: 'https://raw.githubusercontent.com/hanshanley/margin_of_error/d425711ada1abd13ba85516993a9c0a7c83e1c92/data/county-source-reviews/20261106-wisconsin-rock-native-01/',
+  complete_download_url: 'https://github.com/hanshanley/margin_of_error/releases/download/voter-county-wisconsin-rock-native-turnout-20261106-01/complete-query.zip',
+};
+
+test('Rock preserves the qualified county snapshot, complete scope and native missing timezone', () => {
+  const rows = loadReviewedRockParticipation([rockReview]);
+  const qualification = JSON.parse(readFileSync(
+    'data/county-source-reviews/20261106-wisconsin-rock-explorer-01/county-usability-review.json'));
+  assert.deepEqual(rows, qualification.current_source_records);
+  const [row] = rows;
+  assert.equal(row.ballots, 67812);
+  assert.equal(row.denominator, 97950);
+  assert.equal(row.reported_pct, 100 * 67812 / 97950);
+  assert.equal(row.native_printed_pct, '69.23%');
+  assert.equal(row.native_record.all_mode_definition_approved, 'False');
+  assert.equal(row.native_record.analysis_rate_approved, 'False');
+  assert.equal(row.native_record.native_fips, '');
+  assert.deepEqual(row.native_source_updates, [{
+    source: 'county summary', native_update_literal: 'November 03, 2026 at 10:56 PM',
+    declared_timezone: null,
+  }]);
+  assert.match(row.source_reporting_label, /not certification, final counting or proof of complete all-mode coverage/);
+  assert.match(row.source_reporting_label, /Governor selections 67418 are not the 67812 Ballots Cast count/);
+});
+
+test('Rock rejects changed complete inputs, missing files and duplicate source registrations', () => {
+  assert.throws(() => loadReviewedRockParticipation([]), /Missing or duplicated/);
+  assert.throws(() => loadReviewedRockParticipation([rockReview, rockReview]), /Missing or duplicated/);
+  const directory = mkdtempSync(join(tmpdir(), 'reviewed-rock-participation-'));
+  try {
+    const manifest = JSON.parse(readFileSync(join(rockReview.data_directory, 'checksums.json')));
+    const names = [...manifest.files.map(row => row.path), 'checksums.json', 'complete-query.zip'];
+    for (const name of names)
+      copyFileSync(join(rockReview.data_directory, name), join(directory, name));
+    const altered = [{ ...rockReview, data_directory: directory }];
+    for (const name of names) {
+      const body = readFileSync(join(directory, name));
+      writeFileSync(join(directory, name), Buffer.concat([body, Buffer.from('\n')]));
+      assert.throws(() => loadReviewedRockParticipation(altered), /Invalid reviewed county participation/);
+      writeFileSync(join(directory, name), body);
+    }
+    rmSync(join(directory, 'source-qualification.json'));
+    assert.throws(() => loadReviewedRockParticipation(altered), /ENOENT/);
+  } finally {
+    rmSync(directory, { recursive: true, force: true });
+  }
+});
 
 test('Florida reproduces the complete qualified source while preserving unfinished flags and missing clocks', () => {
   const rows = loadReviewedFloridaParticipation([floridaReview]);

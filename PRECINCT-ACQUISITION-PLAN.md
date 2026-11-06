@@ -88,7 +88,7 @@ reconciled selection. Durable exact production proofs are in
 This verifies the qualified county participation extension, not statewide
 certification, demographic rates or nationwide completeness.
 
-**November 6: Wisconsin Rock County complete native query reproduced; not integrated.**
+**November 6: Wisconsin Rock County native query published; context25 frozen, not integrated.**
 The actual official November 3 general report returned **200 / 451,325 bytes**.
 All **53 native tables / 7,413 cells** independently agree between HTMLParser,
 BeautifulSoup and network-blocked, scripts-disabled Chromium. All **106 native
@@ -108,8 +108,26 @@ The **14-file / 13-member** query in
 passes **seven focused tests** and reproduces all 14 files byte-identically from
 the actual extracted ZIP: **84,439 bytes / SHA-256
 `63f277b2005438861fed666497e833180960b88c73f7333fa5f0746abb8fc45f`**.
-County identity/geometry/usability and explorer integration remain separate.
-No new state coverage, map or analysis-rate approval is claimed.
+Immutable native release **436962340**, source
+**`d425711ada1abd13ba85516993a9c0a7c83e1c92`**, passes draft and public verification:
+all **14 entire assets / 14 commit-pinned files / 13 ZIP members** and complete
+byte-identical reproduction. Exact credential jobs **42287180592 review /
+42287180555 tag** passed. Both entire Census inventories independently match
+all **72 Wisconsin county identities** and the complete **181,139-byte** hosted
+geometry; its **89 generalized-boundary overlap pairs** remain documented.
+Separate usability review permits one source-defined reported county snapshot
+and one same-table registration fraction, not completed all-mode counting,
+population/demographic rates, certification or a fabricated native FIPS.
+The dormant importer reproduces that separate review exactly and rejects
+every altered complete input, missing inputs and duplicate registrations.
+Frozen context25 preserves **all 1,328 previous records / 833 joins / 19 entire
+geometries / every exclusion / Monroe selection / 387 missing rates** and adds
+only Rock: **1,329 records / 834 joins / 447 fractions / 20 jurisdictions**.
+Its **34 complete files / 33 ZIP members** pass standalone offline verification;
+the complete ZIP is **3,083,230 bytes / SHA-256
+`0fc67ca8554e5bf98d3b56b304a0963987357f1d57211e805229aabffd2eeb44`**.
+Context25 publication and explorer activation remain pending. No new LIVE
+state coverage or native all-mode/map/analysis approval is claimed.
 The official MyVote election-results explainer says Wisconsin has no centralized
 unofficial election-night reporting site and points to its 72 county clerks;
 that is a legitimate county-first pipeline case, not a reason to synthesize

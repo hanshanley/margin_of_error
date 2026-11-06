@@ -1,0 +1,73 @@
+{
+  "native_numerical_revision": "d425711ada1abd13ba85516993a9c0a7c83e1c92",
+  "immutable_release": 436962340,
+  "source_native_approval_flags_unchanged": true,
+  "native_fips_invented": false,
+  "native_counties": 1,
+  "reported_participation_snapshots": 1,
+  "same_table_registration_fractions": 1,
+  "source_definition_review": "The native county report explicitly separates Ballots Cast and Registered Voters from all candidate/option selections and prints their county fraction. Every native participation unit sums to those separate county totals. This permits the source-defined reported county snapshot and its same-report registered fraction, not complete all-mode coverage, certification, final unique voters or population/demographic rates.",
+  "all_mode_definition_approval_unchanged_false": true,
+  "counting_completion_not_inferred": true,
+  "source_clock_literal_and_missing_timezone_preserved": true,
+  "no_certification_or_final_unique_voter_claim": true,
+  "no_prior_wisconsin_county_source_replaced_or_added_twice": true,
+  "current_source_records": [
+    {
+      "year": 2026,
+      "state_code": "WI",
+      "county_id": "reviewed:WI:Rock County",
+      "county": "Rock County",
+      "geography_level": "county",
+      "ballots": 67812,
+      "denominator": 97950,
+      "participation_measure_kind": "source_defined_participation_count",
+      "participation_measure_literal": "Ballots Cast",
+      "participation_measure_label": "Native Ballots Cast (reported county snapshot)",
+      "denominator_basis": "native_registered_voters",
+      "reported_pct": 69.2312404287902,
+      "native_printed_pct": "69.23%",
+      "source_status_literal": "November 3, 2026 - General Election - Unofficial Results",
+      "reported_units": 106,
+      "total_units": 106,
+      "source_rows": 1,
+      "maps_approved": false,
+      "review_id": "wisconsin-rock-turnout-20261106-01",
+      "native_record": {
+        "native_county": "Rock County",
+        "native_state": "Wisconsin",
+        "reported_ballots_cast": "67812",
+        "reported_registered_voters": "97950",
+        "native_registered_percentage": "69.23%",
+        "independently_derived_registered_fraction_percent": "69.23124042879019908116385911",
+        "native_update_literal": "November 03, 2026 at 10:56 PM",
+        "source_timezone": "",
+        "native_fips": "",
+        "all_mode_definition_approved": "False",
+        "analysis_rate_approved": "False",
+        "map_approved": "False",
+        "certified": "False"
+      },
+      "native_source_updates": [
+        {
+          "source": "county summary",
+          "native_update_literal": "November 03, 2026 at 10:56 PM",
+          "declared_timezone": null
+        }
+      ],
+      "source_update_label": "November 03, 2026 at 10:56 PM (timezone not declared)",
+      "source_reporting_label": "Precincts Reporting: 106 of 106 for 100%; Native whole-county Ballots Cast snapshot, not candidate selections, receipts or processing counters; all 106 unit totals independently reconcile. Same-report Registered Voters fraction only, not CVAP, VAP, VEP, CPS or demographic turnout. The source does not establish a separate denominator reference date. Unofficial results; complete precinct reporting is not certification, final counting or proof of complete all-mode coverage. Ballot-mode decomposition remains unspecified. Preserve the literal November 03, 2026 at 10:56 PM update with missing timezone; do not infer UTC or use receipt clocks. All 65 candidate/option totals and 3648 complete unit-candidate rows remain separate. Governor selections 67418 are not the 67812 Ballots Cast count.",
+      "quality": [
+        "Native whole-county Ballots Cast snapshot, not candidate selections, receipts or processing counters; all 106 unit totals independently reconcile.",
+        "Same-report Registered Voters fraction only, not CVAP, VAP, VEP, CPS or demographic turnout. The source does not establish a separate denominator reference date.",
+        "Unofficial results; complete precinct reporting is not certification, final counting or proof of complete all-mode coverage. Ballot-mode decomposition remains unspecified.",
+        "Preserve the literal November 03, 2026 at 10:56 PM update with missing timezone; do not infer UTC or use receipt clocks.",
+        "All 65 candidate/option totals and 3648 complete unit-candidate rows remain separate. Governor selections 67418 are not the 67812 Ballots Cast count."
+      ],
+      "source_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d425711ada1abd13ba85516993a9c0a7c83e1c92/data/county-source-reviews/20261106-wisconsin-rock-native-01/county-participation.csv",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-wisconsin-rock-native-turnout-20261106-01/complete-query.zip"
+    }
+  ],
+  "context25_built": false,
+  "explorer_promoted": false
+}

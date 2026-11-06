@@ -97,6 +97,42 @@ test('Florida rejects a changed retained source or an unreconciled statewide Mon
   }
 });
 
+test('frozen context25 adds only Rock and preserves every prior record, join, selection, exclusion and geometry', async () => {
+  const directory = new URL('../public/participation-county-context/20261106-25/', import.meta.url);
+  const priorDirectory = new URL('../20261106-24/', directory);
+  const prior = JSON.parse(readFileSync(new URL('review.json', priorDirectory)));
+  const previous = JSON.parse(gunzipSync(readFileSync(new URL('complete-source-records.json.gz', priorDirectory))));
+  const current = JSON.parse(gunzipSync(readFileSync(new URL('complete-source-records.json.gz', directory))));
+  const qualification = JSON.parse(readFileSync(
+    'data/county-source-reviews/20261106-wisconsin-rock-explorer-01/county-usability-review.json'));
+  assert.deepEqual(current, [...previous, ...qualification.current_source_records]);
+  const next = JSON.parse(readFileSync(new URL('review.json', directory)));
+  const geometry = Object.fromEntries(Object.entries(next.geometry).map(([code, entry]) =>
+    [code, JSON.parse(readFileSync(new URL(entry.file, directory)))]));
+  const checks = { geometry_checks: JSON.parse(readFileSync(new URL('geometry-verification.json', directory))) };
+  assert.deepEqual(createCountyContextReview(current, inventories, geometry, checks), next);
+  assert.deepEqual(next.counts, { complete_source_records: 1329, contextual_joins: 834, jurisdictions: 20,
+    reviewed_rates: 447, missing_rates: 387, excluded_municipalities: 286, excluded_missing_county_totals: 208,
+    retained_duplicate_source_observations: 1 });
+  assert.deepEqual(next.observations.slice(0, -1), prior.observations);
+  assert.deepEqual(next.excluded, prior.excluded);
+  assert.deepEqual(next.source_selections, prior.source_selections);
+  for (const [code, entry] of Object.entries(prior.geometry)) {
+    assert.deepEqual(next.geometry[code], entry);
+    assert.deepEqual(readFileSync(new URL(entry.file, directory)),
+      readFileSync(new URL(entry.file, priorDirectory)));
+  }
+  const mapped = await contextualCountyRows(current.filter(row => row.state_code === 'WI'),
+    next, geometry.WI, 'WI', next.context_base_url, next.geometry.WI.file);
+  assert.equal(geometry.WI.features.length, 72);
+  assert.equal(mapped.size, 1);
+  assert.equal(mapped.get('55105').ballots, 67812);
+  assert.equal(mapped.get('55105').reported_pct, 100 * 67812 / 97950);
+  assert.equal(mapped.get('55105').maps_approved, false);
+  assert.equal(mapped.get('55105').native_record.native_fips, '');
+  assert.equal(mapped.has('55079'), false);
+});
+
 test('active context24 reproduces all complete current records and preserves every earlier observation and geometry', () => {
   const directory = new URL('../public/participation-county-context/20261106-24/', import.meta.url);
   const fixture = floridaSelectionFixture();
