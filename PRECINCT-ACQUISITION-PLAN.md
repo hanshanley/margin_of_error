@@ -2,7 +2,16 @@
 
 ## Current verified production and next acquisition
 
-**Greene context12 is published and locally verified; exact UI deployment pending.**
+**November 6, 11:28 UTC: Greene participation and context12 are LIVE verified.**
+Exact UI `71ece1080c0ceca9fed062eb31e4d80cc83e7b4d`, Pages **42209566374
+attempt 1**, passed its original hosted artifact **13498791807 /
+514,448,166 bytes**, SHA-256
+`e6b82583ca11451a9bc175f617bb5199d0a79c3e9721cdb04ac486e3de3c03f0`.
+All **387 selected entire hosted/public files**, **seven production browser
+scenarios** and credential runs **42209566389 / 42209566510** pass.
+The verifier completed; do not rerun it. Platform-generated preview bytes match
+the hosted publication manifest, with the qualified local-platform difference
+retained. All other applicable entire bytes are exact.
 Both complete Census originals independently identify Greene 42059, against
 unchanged contextual geometry. The new complete package preserves every one of
 context11's 973 records, 501 joins, sixteen geometry inventories and exclusions.
@@ -28,8 +37,35 @@ The full validator retains its known unrelated UK assertion `23 !== 16` at
 `validate-build.mjs:1126`. Local browser validation uses byte-preserving static
 transport: Astro preview transcodes gzip responses expected raw by the existing
 import loaders. No production runtime workaround was added.
-The production baseline below remains authoritative until the new exact
-revision and artifact pass public-byte and browser verification.
+All previous observations and complete downloads survive. Missing rates remain
+gray; reporting completeness is not completed counting or certification.
+The Columbia production proof below remains a retained historical baseline.
+
+**Next bulk acquisition: all 159 Georgia county containers are reviewed,
+not packaged, independently export-reconciled or integrated.**
+Source-only freeze `cf04d9be2107c58ea7a9a398170aa07b028f5a99` preserves the
+complete factual native query: 159 county/declaration/registration records,
+273 contest vectors and 457 candidate-or-choice rows. All identities join
+bijectively using case-insensitive UUID comparison, never array order.
+County ballot sum **4,210,155** is derived, not a native statewide header;
+native root `ballotsCast=0` is retained as a conflicting/default field and
+never treated as actual statewide zero participation. All 159 registration
+totals match their native county `totalVoters`, totaling **7,516,484**.
+Screven **5,236/0** and Jeff Davis **4,180/0** retain missing rates.
+All 157 positive-denominator native fractions agree at two-decimal percent
+precision; five tiny serialization differences remain recorded, not silently
+corrected or misclassified as established errors. Every contest choice sum
+and choice-mode sum reconciles. Literal parties, stages, mode groups and clocks
+remain separate; these root vectors alone do not prove complete county
+candidate breakdowns. Wilkinson alone has native `isOfficialResults=true`,
+while the statewide flag is false; neither is overwritten.
+The actual app's advertised Excel blob and media export path are recorded,
+but their download bases are not guessed. Homepage/turnout-hub 403 responses
+remain private without bypass. Browser network-idle timed out after capturing
+the complete 1,332,984-byte JSON, not a successful DOM-render proof.
+See `20261106-georgia-primary-review-01/primary-review.json` and its complete
+159-row CSV. No denominator-definition, Census identity, geometry, release,
+map, rate or explorer approval is granted by this preliminary review.
 
 **November 6, 11:09 UTC: Columbia participation is LIVE verified.**
 Exact UI `2622a0d0dd0d5549392ddab6b5c6abc6ed6f9245`, Pages **42207340056
@@ -84,9 +120,8 @@ The new artifact is identified and independently digest/byte/browser verified
 as recorded above; it is not original artifact 13496136224.
 Both failure receipts and the successful exact production proofs remain intact.
 
-**Next acquisition: Bradford and Greene primary sources are acquired and
-reviewed; Greene's complete factual query is published and byte-verified,
-but neither county is integrated into the explorer yet.**
+**Bradford's complete Election Day source package is frozen and tested;
+Greene's separate query and explorer integration are LIVE verified above.**
 All five entire responses match their saved receipts and actual county-parent
 declarations. Both Bradford snapshots independently agree across pypdf and
 PyMuPDF: the later report prints **20,982 Total Ballots / 39,048 Registered
@@ -100,6 +135,24 @@ Both entire two-column Bradford report bodies now independently reconcile across
 pypdf text coordinates and PyMuPDF word positions: **eight contest snapshots /
 26 candidate-or-write-in rows**, with no unconsumed reporting/candidate lines.
 Every printed contest total and candidate/reporting fraction agrees.
+Bradford's portable factual package at
+`data/county-source-reviews/20261106-bradford-facts-01/` is frozen in
+`cf04d9be2107c58ea7a9a398170aa07b028f5a99`: all fourteen entire files reproduce,
+including eight complete CSV tables and the thirteen-member deterministic ZIP.
+Six focused tests cover scope promotion, mail receipts, missing write-in parties,
+earlier-snapshot loss, district extrapolation, candidate changes and clocks.
+Immutable source release **436422157**, tag
+`voter-county-bradford-election-day-20261106-01`, is byte-verified: fourteen entire
+anonymous release assets, fourteen entire pinned files, thirteen archive members,
+extracted offline reproduction and all six tests pass. The complete **13,402-byte**
+ZIP SHA-256 is
+`b59456ca59d26593e0c1ca06200a13dd12704317cfa34f5da87aeff78e0a7d69`.
+Both exact credential jobs **42210507594 / 42210582899** pass. The original
+verification attempt completed all asset/offline checks, then stopped because
+its selector expected one credential job rather than the actual review and tag
+jobs. That guard failure is retained; only both credential jobs were resumed,
+without recreating the release. No Bradford all-mode explorer observation is
+approved.
 Assembly 68 and 110 are different within-county scopes, not whole-county
 participation; preserve their separate reporting universes. Native write-ins
 have no printed party. See `20261106-bradford-primary-review-01/primary-review.json`.

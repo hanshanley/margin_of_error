@@ -1,0 +1,11 @@
+{
+  "status": "all_asset_and_offline_checks_passed_then_credential_selection_guard_failed",
+  "revision": "cf04d9be2107c58ea7a9a398170aa07b028f5a99",
+  "entire_pinned_files": 14,
+  "entire_release_assets": 14,
+  "entire_archive_members": 13,
+  "extracted_offline_reproduction": true,
+  "focused_tests": 6,
+  "error": "Expected one credential job; actual review-branch and tag pushes each correctly created a job.",
+  "resolution": "Identify and verify both exact jobs without recreating the release or rerunning the production verifier."
+}

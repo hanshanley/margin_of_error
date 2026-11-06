@@ -1,0 +1,158 @@
+{
+  "status": "all_entire_source_assets_and_offline_query_verified_not_explorer_integrated",
+  "verified_at_utc": "2026-11-06T11:29:57.965878+00:00",
+  "revision": "cf04d9be2107c58ea7a9a398170aa07b028f5a99",
+  "tag": "voter-county-bradford-election-day-20261106-01",
+  "release_id": 436422157,
+  "complete_assets": [
+    {
+      "file": "audit.json",
+      "bytes": 1419,
+      "sha256": "700f85c689e6548f90ed3daf239dcc11612dfe356e2891877e072d50ca2a5830",
+      "asset_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-bradford-election-day-20261106-01/audit.json",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/cf04d9be2107c58ea7a9a398170aa07b028f5a99/data/county-source-reviews/20261106-bradford-facts-01/audit.json",
+      "previous_attempt_entire_anonymous_asset_and_pinned_bytes_matched": true,
+      "resumed_native_asset_digest_matches": true
+    },
+    {
+      "file": "checksums.json",
+      "bytes": 1817,
+      "sha256": "eb28a29ba217742c82c102dc120a4efafb468f12c4bdea0499a2ac326fd70151",
+      "asset_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-bradford-election-day-20261106-01/checksums.json",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/cf04d9be2107c58ea7a9a398170aa07b028f5a99/data/county-source-reviews/20261106-bradford-facts-01/checksums.json",
+      "previous_attempt_entire_anonymous_asset_and_pinned_bytes_matched": true,
+      "resumed_native_asset_digest_matches": true
+    },
+    {
+      "file": "complete-bradford-election-day-native-query-01.zip",
+      "bytes": 13402,
+      "sha256": "b59456ca59d26593e0c1ca06200a13dd12704317cfa34f5da87aeff78e0a7d69",
+      "asset_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-bradford-election-day-20261106-01/complete-bradford-election-day-native-query-01.zip",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/cf04d9be2107c58ea7a9a398170aa07b028f5a99/data/county-source-reviews/20261106-bradford-facts-01/complete-bradford-election-day-native-query-01.zip",
+      "previous_attempt_entire_anonymous_asset_and_pinned_bytes_matched": true,
+      "resumed_native_asset_digest_matches": true
+    },
+    {
+      "file": "county-candidate-results.csv",
+      "bytes": 7217,
+      "sha256": "9ad401dbdb1a07e467a233014f5bb38351a4a062368b35e3603068101c0fdaa5",
+      "asset_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-bradford-election-day-20261106-01/county-candidate-results.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/cf04d9be2107c58ea7a9a398170aa07b028f5a99/data/county-source-reviews/20261106-bradford-facts-01/county-candidate-results.csv",
+      "previous_attempt_entire_anonymous_asset_and_pinned_bytes_matched": true,
+      "resumed_native_asset_digest_matches": true
+    },
+    {
+      "file": "county-contest-accounting.csv",
+      "bytes": 2769,
+      "sha256": "0ffb97cdc4fa3781206fd1e420915c1568929d5bbcb2104978812c5539d51ed0",
+      "asset_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-bradford-election-day-20261106-01/county-contest-accounting.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/cf04d9be2107c58ea7a9a398170aa07b028f5a99/data/county-source-reviews/20261106-bradford-facts-01/county-contest-accounting.csv",
+      "previous_attempt_entire_anonymous_asset_and_pinned_bytes_matched": true,
+      "resumed_native_asset_digest_matches": true
+    },
+    {
+      "file": "county-literal-party-totals.csv",
+      "bytes": 6789,
+      "sha256": "b57e8fd0d50094eb8201544eeaa8b14632782cdef2bd97c31e9eb2651f220e72",
+      "asset_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-bradford-election-day-20261106-01/county-literal-party-totals.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/cf04d9be2107c58ea7a9a398170aa07b028f5a99/data/county-source-reviews/20261106-bradford-facts-01/county-literal-party-totals.csv",
+      "previous_attempt_entire_anonymous_asset_and_pinned_bytes_matched": true,
+      "resumed_native_asset_digest_matches": true
+    },
+    {
+      "file": "election-day-participation.csv",
+      "bytes": 647,
+      "sha256": "d0813653fd8dcf6a7577ddf17753f66e6048600263d48cf8c2dd3986d258b76f",
+      "asset_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-bradford-election-day-20261106-01/election-day-participation.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/cf04d9be2107c58ea7a9a398170aa07b028f5a99/data/county-source-reviews/20261106-bradford-facts-01/election-day-participation.csv",
+      "previous_attempt_entire_anonymous_asset_and_pinned_bytes_matched": true,
+      "resumed_native_asset_digest_matches": true
+    },
+    {
+      "file": "native-contest-query.csv",
+      "bytes": 2014,
+      "sha256": "5849c4c70369db221834c4e85d5de16e8b33ebb2de42e1ef98e5e54d9fa10ce5",
+      "asset_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-bradford-election-day-20261106-01/native-contest-query.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/cf04d9be2107c58ea7a9a398170aa07b028f5a99/data/county-source-reviews/20261106-bradford-facts-01/native-contest-query.csv",
+      "previous_attempt_entire_anonymous_asset_and_pinned_bytes_matched": true,
+      "resumed_native_asset_digest_matches": true
+    },
+    {
+      "file": "native-source-declarations.csv",
+      "bytes": 271,
+      "sha256": "a37e595d9d637786df4b96bdd6001a4dc0d3eb0e75569c6fdb7a0913f63df776",
+      "asset_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-bradford-election-day-20261106-01/native-source-declarations.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/cf04d9be2107c58ea7a9a398170aa07b028f5a99/data/county-source-reviews/20261106-bradford-facts-01/native-source-declarations.csv",
+      "previous_attempt_entire_anonymous_asset_and_pinned_bytes_matched": true,
+      "resumed_native_asset_digest_matches": true
+    },
+    {
+      "file": "parent-processing-observations.csv",
+      "bytes": 272,
+      "sha256": "15438f93ddfc7708417bb003e5ecc34278bbd3c44b0d63d3029f3085817212b0",
+      "asset_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-bradford-election-day-20261106-01/parent-processing-observations.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/cf04d9be2107c58ea7a9a398170aa07b028f5a99/data/county-source-reviews/20261106-bradford-facts-01/parent-processing-observations.csv",
+      "previous_attempt_entire_anonymous_asset_and_pinned_bytes_matched": true,
+      "resumed_native_asset_digest_matches": true
+    },
+    {
+      "file": "review-bradford-native-query.py",
+      "bytes": 12178,
+      "sha256": "dadd5d610f26dfe24adb7e55cc4ab5f365b1530a8716a413146ff98ca1dd06ce",
+      "asset_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-bradford-election-day-20261106-01/review-bradford-native-query.py",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/cf04d9be2107c58ea7a9a398170aa07b028f5a99/data/county-source-reviews/20261106-bradford-facts-01/review-bradford-native-query.py",
+      "previous_attempt_entire_anonymous_asset_and_pinned_bytes_matched": true,
+      "resumed_native_asset_digest_matches": true
+    },
+    {
+      "file": "source-receipts.csv",
+      "bytes": 977,
+      "sha256": "8e400bb9c483cb99ad21196b26cb444895c568cde9c0b7a41eb765887e865f94",
+      "asset_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-bradford-election-day-20261106-01/source-receipts.csv",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/cf04d9be2107c58ea7a9a398170aa07b028f5a99/data/county-source-reviews/20261106-bradford-facts-01/source-receipts.csv",
+      "previous_attempt_entire_anonymous_asset_and_pinned_bytes_matched": true,
+      "resumed_native_asset_digest_matches": true
+    },
+    {
+      "file": "source-records.json.gz",
+      "bytes": 1736,
+      "sha256": "e13901f090e2b24d2900d54b563151f8a2122b486341462ea66b514ab8e6f9ed",
+      "asset_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-bradford-election-day-20261106-01/source-records.json.gz",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/cf04d9be2107c58ea7a9a398170aa07b028f5a99/data/county-source-reviews/20261106-bradford-facts-01/source-records.json.gz",
+      "previous_attempt_entire_anonymous_asset_and_pinned_bytes_matched": true,
+      "resumed_native_asset_digest_matches": true
+    },
+    {
+      "file": "test-bradford-native-query.py",
+      "bytes": 3224,
+      "sha256": "0e7b516f62d00b84faf4820e55e98ec4a69e197cac1558be9fb739f1a5897843",
+      "asset_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-bradford-election-day-20261106-01/test-bradford-native-query.py",
+      "pinned_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/cf04d9be2107c58ea7a9a398170aa07b028f5a99/data/county-source-reviews/20261106-bradford-facts-01/test-bradford-native-query.py",
+      "previous_attempt_entire_anonymous_asset_and_pinned_bytes_matched": true,
+      "resumed_native_asset_digest_matches": true
+    }
+  ],
+  "entire_pinned_files": 14,
+  "entire_release_assets": 14,
+  "entire_archive_members": 13,
+  "extracted_offline_reproduction": true,
+  "focused_tests": 6,
+  "credentials": [
+    {
+      "id": 42210507594,
+      "revision": "cf04d9be2107c58ea7a9a398170aa07b028f5a99",
+      "branch": "voter-participation-reviewed-counties-20261105-02",
+      "conclusion": "success"
+    },
+    {
+      "id": 42210582899,
+      "revision": "cf04d9be2107c58ea7a9a398170aa07b028f5a99",
+      "branch": "voter-county-bradford-election-day-20261106-01",
+      "conclusion": "success"
+    }
+  ],
+  "retained_attempt": "release-verification-attempt-01.json",
+  "resumed_scope": "Only the failed credential-selection guard and both exact credential jobs; no release recreation.",
+  "participation_scope": "Election Day only; no all-mode county participation approved",
+  "qualifications": "Source publication only; no new explorer rows, maps, rates or LIVE claims."
+}
