@@ -53,7 +53,7 @@ map approval or metadata-only download was created. Do not retry these same
 unchanged endpoints. Continue different source-declared county/Maine alternatives;
 leave the verified context18 UI and Maine/D.C. residuals unchanged.
 
-**November 6, 15:11 UTC: Somerset complete numerical query verified locally; publication pending.**
+**November 6: Somerset complete numerical query server-locked; context19 reproduced locally.**
 The official November 3 declaring page and its three complete PDFs were acquired
 with verified TLS. Two independent extractors agree on **all 73 numerical pages**:
 three EMS-summary pages, 67 precinct pages including every candidate row, and three
@@ -73,8 +73,20 @@ passes **12 isolated tests** and extracted, standard-library byte-identical
 reproduction of every file. ZIP **54,348 bytes**, SHA-256
 `c50cadbe1e29ee6c5067ff34f80c8ac1e8188addeb6f9fa7bcc08e22c25fe47e`.
 No native FIPS, geography, certification or counting completion is inferred.
-Next: publish and server-lock the complete query, then independently review
-contextual identity before any tested explorer integration. The live context18
+Facts revision **`dc1a42aa2008c40e99c96d3386620fa39dd0bf9e`**, tag
+`voter-county-somerset-20261106-01`, release **436646227**, reports
+**immutable: true**. Both exact credential jobs **42240839327 / 42240839477**
+pass. Every entire anonymous asset and pinned file matches; the actual published
+archive passes all twelve isolated tests and reproduces all seventeen files.
+Both entire Census original archives independently identify Somerset **42111**;
+production PA geometry matches unchanged contextual 2024 bytes. Context19
+preserves all **1,226 prior records / 742 joins / 18 geometries / exclusions**,
+adding only Somerset: **1,227 records / 743 joins / 356 rates / 387 missing rates**.
+Its complete **32-file / 31-member** query reproduces locally; ZIP **2,910,100
+bytes**, SHA-256
+`e9c64a0c3c6f698f34ae39ae6a8de9608c3d50ef03ec001bb96776c28881729e`.
+Next: publish and server-lock context19, then validate, deploy and verify the
+exact explorer revision. **No new UI is live yet**; the live context18
 baseline remains unchanged. The separate Erie parent returned **403**, without
 bypass or retry; Fayette returned an empty **404**, not global absence evidence.
 Their complete receipts are retained in

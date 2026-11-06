@@ -1,0 +1,219 @@
+{
+  "checked_at_utc": "2026-11-06T15:14:09.141511+00:00",
+  "revision": "dc1a42aa2008c40e99c96d3386620fa39dd0bf9e",
+  "tag": "voter-county-somerset-20261106-01",
+  "release_id": 436646227,
+  "phase": "published",
+  "immutable": true,
+  "assets": [
+    {
+      "file": "METHODS.txt",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-somerset-20261106-01/METHODS.txt",
+      "bytes": 1265,
+      "sha256": "bfc481ff5b0cc4cf91e6a5db7f317a9a9fb7430201c141f5662de9d432d99677"
+    },
+    {
+      "file": "audit.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-somerset-20261106-01/audit.json",
+      "bytes": 658,
+      "sha256": "2ac9cf0bc0285d92f9dc789cc3b7b9f391b4106772b1ad216a604a312414d359"
+    },
+    {
+      "file": "complete-query.zip",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-somerset-20261106-01/complete-query.zip",
+      "bytes": 54348,
+      "sha256": "c50cadbe1e29ee6c5067ff34f80c8ac1e8188addeb6f9fa7bcc08e22c25fe47e"
+    },
+    {
+      "file": "county-candidate-results.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-somerset-20261106-01/county-candidate-results.csv",
+      "bytes": 16200,
+      "sha256": "ff2867762a3cc71ce3e989520d77b10970af8e82d2953540367193ea44e68aa4"
+    },
+    {
+      "file": "county-contest-accounting.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-somerset-20261106-01/county-contest-accounting.csv",
+      "bytes": 5665,
+      "sha256": "14038e62f9c36ff23e1bd59d73035c0da891ef0f95ef9eb08037fc89927bdade"
+    },
+    {
+      "file": "county-literal-party-totals.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-somerset-20261106-01/county-literal-party-totals.csv",
+      "bytes": 10551,
+      "sha256": "9d4648e275304610cbe4c8c2c4247eb303112f5915c3667af5c023b7ccf633ce"
+    },
+    {
+      "file": "county-participation.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-somerset-20261106-01/county-participation.csv",
+      "bytes": 545,
+      "sha256": "2610d4549c574f6b9df139bd1b07ad000e9539b3b19ad80f56883e4e996b1ac4"
+    },
+    {
+      "file": "manifest.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-somerset-20261106-01/manifest.json",
+      "bytes": 2240,
+      "sha256": "f46ccaaaab2ea178ab8031c64cb1e8d88de21caa945f15bfceffb33ad3b5f08a"
+    },
+    {
+      "file": "native-facts.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-somerset-20261106-01/native-facts.json",
+      "bytes": 380026,
+      "sha256": "08662a7cc75e59ee007408c7952345b14fd84ad289210030886e73d88ddd2bc0"
+    },
+    {
+      "file": "native-participation-modes.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-somerset-20261106-01/native-participation-modes.csv",
+      "bytes": 964,
+      "sha256": "fa6ce43590df4a42c0f08c334c714a10c0361792ea5359621692df8b15f4544e"
+    },
+    {
+      "file": "native-reporting-statistics.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-somerset-20261106-01/native-reporting-statistics.csv",
+      "bytes": 1031,
+      "sha256": "1788497d0befb795e95ee99fed7d4af28304662b7210d02dba72fcf7615d17ff"
+    },
+    {
+      "file": "native-source-pages.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-somerset-20261106-01/native-source-pages.csv",
+      "bytes": 18167,
+      "sha256": "e6a72f101719f0ebecd2cc5ed75082b845ea14dd941dde2acf4170dab36beb52"
+    },
+    {
+      "file": "native-unit-participation.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-somerset-20261106-01/native-unit-participation.csv",
+      "bytes": 56732,
+      "sha256": "827a9ffe11a02562eb4411a7ecab56f91a3ccb10f75b2e76b5f966a4d1bcb504"
+    },
+    {
+      "file": "review-somerset.py",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-somerset-20261106-01/review-somerset.py",
+      "bytes": 23768,
+      "sha256": "49fa108f59ab23717a2c5c3aba559494d5ee9fdbe4d1f16e50342ca3bd81a041"
+    },
+    {
+      "file": "statistics-crosscheck.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-somerset-20261106-01/statistics-crosscheck.csv",
+      "bytes": 13622,
+      "sha256": "e6c54cace907c77cb30d7743aaa3b5fb437a96c9492c518323bc981603cc815e"
+    },
+    {
+      "file": "test_review_somerset.py",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-somerset-20261106-01/test_review_somerset.py",
+      "bytes": 5684,
+      "sha256": "b5da6acc5b14ac828e0712ed473d2c650976acefbd574388b3910b72ad50207d"
+    },
+    {
+      "file": "unit-candidate-results.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-somerset-20261106-01/unit-candidate-results.csv",
+      "bytes": 848045,
+      "sha256": "f598430c45b521a1c5fdaac6740e2a6172b709bb71d568277e82c03b90385e33"
+    }
+  ],
+  "commit_pinned_files": [
+    {
+      "file": "METHODS.txt",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/dc1a42aa2008c40e99c96d3386620fa39dd0bf9e/data/county-source-reviews/20261106-somerset-facts-01/METHODS.txt",
+      "bytes": 1265,
+      "sha256": "bfc481ff5b0cc4cf91e6a5db7f317a9a9fb7430201c141f5662de9d432d99677"
+    },
+    {
+      "file": "audit.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/dc1a42aa2008c40e99c96d3386620fa39dd0bf9e/data/county-source-reviews/20261106-somerset-facts-01/audit.json",
+      "bytes": 658,
+      "sha256": "2ac9cf0bc0285d92f9dc789cc3b7b9f391b4106772b1ad216a604a312414d359"
+    },
+    {
+      "file": "complete-query.zip",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/dc1a42aa2008c40e99c96d3386620fa39dd0bf9e/data/county-source-reviews/20261106-somerset-facts-01/complete-query.zip",
+      "bytes": 54348,
+      "sha256": "c50cadbe1e29ee6c5067ff34f80c8ac1e8188addeb6f9fa7bcc08e22c25fe47e"
+    },
+    {
+      "file": "county-candidate-results.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/dc1a42aa2008c40e99c96d3386620fa39dd0bf9e/data/county-source-reviews/20261106-somerset-facts-01/county-candidate-results.csv",
+      "bytes": 16200,
+      "sha256": "ff2867762a3cc71ce3e989520d77b10970af8e82d2953540367193ea44e68aa4"
+    },
+    {
+      "file": "county-contest-accounting.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/dc1a42aa2008c40e99c96d3386620fa39dd0bf9e/data/county-source-reviews/20261106-somerset-facts-01/county-contest-accounting.csv",
+      "bytes": 5665,
+      "sha256": "14038e62f9c36ff23e1bd59d73035c0da891ef0f95ef9eb08037fc89927bdade"
+    },
+    {
+      "file": "county-literal-party-totals.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/dc1a42aa2008c40e99c96d3386620fa39dd0bf9e/data/county-source-reviews/20261106-somerset-facts-01/county-literal-party-totals.csv",
+      "bytes": 10551,
+      "sha256": "9d4648e275304610cbe4c8c2c4247eb303112f5915c3667af5c023b7ccf633ce"
+    },
+    {
+      "file": "county-participation.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/dc1a42aa2008c40e99c96d3386620fa39dd0bf9e/data/county-source-reviews/20261106-somerset-facts-01/county-participation.csv",
+      "bytes": 545,
+      "sha256": "2610d4549c574f6b9df139bd1b07ad000e9539b3b19ad80f56883e4e996b1ac4"
+    },
+    {
+      "file": "manifest.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/dc1a42aa2008c40e99c96d3386620fa39dd0bf9e/data/county-source-reviews/20261106-somerset-facts-01/manifest.json",
+      "bytes": 2240,
+      "sha256": "f46ccaaaab2ea178ab8031c64cb1e8d88de21caa945f15bfceffb33ad3b5f08a"
+    },
+    {
+      "file": "native-facts.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/dc1a42aa2008c40e99c96d3386620fa39dd0bf9e/data/county-source-reviews/20261106-somerset-facts-01/native-facts.json",
+      "bytes": 380026,
+      "sha256": "08662a7cc75e59ee007408c7952345b14fd84ad289210030886e73d88ddd2bc0"
+    },
+    {
+      "file": "native-participation-modes.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/dc1a42aa2008c40e99c96d3386620fa39dd0bf9e/data/county-source-reviews/20261106-somerset-facts-01/native-participation-modes.csv",
+      "bytes": 964,
+      "sha256": "fa6ce43590df4a42c0f08c334c714a10c0361792ea5359621692df8b15f4544e"
+    },
+    {
+      "file": "native-reporting-statistics.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/dc1a42aa2008c40e99c96d3386620fa39dd0bf9e/data/county-source-reviews/20261106-somerset-facts-01/native-reporting-statistics.csv",
+      "bytes": 1031,
+      "sha256": "1788497d0befb795e95ee99fed7d4af28304662b7210d02dba72fcf7615d17ff"
+    },
+    {
+      "file": "native-source-pages.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/dc1a42aa2008c40e99c96d3386620fa39dd0bf9e/data/county-source-reviews/20261106-somerset-facts-01/native-source-pages.csv",
+      "bytes": 18167,
+      "sha256": "e6a72f101719f0ebecd2cc5ed75082b845ea14dd941dde2acf4170dab36beb52"
+    },
+    {
+      "file": "native-unit-participation.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/dc1a42aa2008c40e99c96d3386620fa39dd0bf9e/data/county-source-reviews/20261106-somerset-facts-01/native-unit-participation.csv",
+      "bytes": 56732,
+      "sha256": "827a9ffe11a02562eb4411a7ecab56f91a3ccb10f75b2e76b5f966a4d1bcb504"
+    },
+    {
+      "file": "review-somerset.py",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/dc1a42aa2008c40e99c96d3386620fa39dd0bf9e/data/county-source-reviews/20261106-somerset-facts-01/review-somerset.py",
+      "bytes": 23768,
+      "sha256": "49fa108f59ab23717a2c5c3aba559494d5ee9fdbe4d1f16e50342ca3bd81a041"
+    },
+    {
+      "file": "statistics-crosscheck.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/dc1a42aa2008c40e99c96d3386620fa39dd0bf9e/data/county-source-reviews/20261106-somerset-facts-01/statistics-crosscheck.csv",
+      "bytes": 13622,
+      "sha256": "e6c54cace907c77cb30d7743aaa3b5fb437a96c9492c518323bc981603cc815e"
+    },
+    {
+      "file": "test_review_somerset.py",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/dc1a42aa2008c40e99c96d3386620fa39dd0bf9e/data/county-source-reviews/20261106-somerset-facts-01/test_review_somerset.py",
+      "bytes": 5684,
+      "sha256": "b5da6acc5b14ac828e0712ed473d2c650976acefbd574388b3910b72ad50207d"
+    },
+    {
+      "file": "unit-candidate-results.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/dc1a42aa2008c40e99c96d3386620fa39dd0bf9e/data/county-source-reviews/20261106-somerset-facts-01/unit-candidate-results.csv",
+      "bytes": 848045,
+      "sha256": "f598430c45b521a1c5fdaac6740e2a6172b709bb71d568277e82c03b90385e33"
+    }
+  ],
+  "zip_members": 16,
+  "all_17_files_reproduce_exactly": true,
+  "focused_tests": 12
+}

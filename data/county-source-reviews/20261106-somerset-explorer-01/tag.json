@@ -1,0 +1,36 @@
+{
+  "ref": {
+    "ref": "refs/tags/voter-county-somerset-20261106-01",
+    "node_id": "REF_kwDOTeY7QdoAK3JlZnMvdGFncy92b3Rlci1jb3VudHktc29tZXJzZXQtMjAyNjExMDYtMDE",
+    "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/refs/tags/voter-county-somerset-20261106-01",
+    "object": {
+      "sha": "80dfc1d1f2b9b63733cbd46d22bdc868c3d72a97",
+      "type": "tag",
+      "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/tags/80dfc1d1f2b9b63733cbd46d22bdc868c3d72a97"
+    }
+  },
+  "tag": {
+    "node_id": "TA_kwDOTeY7QdoAKDgwZGZjMWQxZjJiOWI2MzczM2NiZDQ2ZDIyYmRjODY4YzNkNzJhOTc",
+    "sha": "80dfc1d1f2b9b63733cbd46d22bdc868c3d72a97",
+    "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/tags/80dfc1d1f2b9b63733cbd46d22bdc868c3d72a97",
+    "tagger": {
+      "name": "Hans Hanley",
+      "email": "hwahhanley@gmail.com",
+      "date": "2026-11-06T15:12:14Z"
+    },
+    "object": {
+      "sha": "dc1a42aa2008c40e99c96d3386620fa39dd0bf9e",
+      "type": "commit",
+      "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/commits/dc1a42aa2008c40e99c96d3386620fa39dd0bf9e"
+    },
+    "tag": "voter-county-somerset-20261106-01",
+    "message": "Complete Somerset 2026 numerical report query\n",
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  }
+}

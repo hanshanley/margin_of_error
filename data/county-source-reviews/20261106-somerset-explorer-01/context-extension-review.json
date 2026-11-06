@@ -1,0 +1,116 @@
+{
+  "previous_complete_records_preserved": 1226,
+  "previous_contextual_joins_preserved": 742,
+  "previous_exclusions_and_missingness_preserved": true,
+  "unchanged_geometry_inventory": 18,
+  "existing_source_map_approval_flags_unchanged": true,
+  "native_fips_invented": false,
+  "new_source_records": [
+    {
+      "year": 2026,
+      "state_code": "PA",
+      "county_id": "reviewed:PA:Somerset",
+      "county": "Somerset",
+      "geography_level": "county",
+      "ballots": 27019,
+      "denominator": 48578,
+      "denominator_basis": "native_registered_voters",
+      "participation_measure_literal": "Ballots Cast - Total",
+      "reported_pct": 55.6198279056363,
+      "native_printed_pct": "55.62%",
+      "source_status_literal": "UNOFFICIAL RESULTS",
+      "reported_units": 67,
+      "total_units": 67,
+      "source_rows": 1,
+      "maps_approved": false,
+      "review_id": "pennsylvania-somerset-20261106-01",
+      "native_record": {
+        "state_code": "PA",
+        "county": "Somerset",
+        "election_date": "2026-11-03",
+        "source_report": "summary",
+        "source_page": "1",
+        "source_update_literal": "11/03/2026 11:03 PM",
+        "declared_timezone": "",
+        "native_status_literal": "UNOFFICIAL RESULTS",
+        "source_url": "https://www.co.somerset.pa.us/files/voter_files/ElectionResultsUpload/EMS Report.pdf",
+        "native_measure_literal": "Ballots Cast - Total",
+        "ballots_cast": "27019",
+        "registered_voters": "48578",
+        "native_printed_turnout": "55.62%",
+        "calculated_registered_fraction": "0.556198279056363",
+        "blank_ballots_already_included": "3",
+        "source_fips": "",
+        "complete_counting": "False",
+        "maps_approved": "False"
+      },
+      "native_source_updates": [
+        {
+          "source": "summary",
+          "native_update_literal": "11/03/2026 11:03 PM",
+          "declared_timezone": ""
+        },
+        {
+          "source": "statement",
+          "native_update_literal": "11/03/2026 11:08 PM",
+          "declared_timezone": ""
+        },
+        {
+          "source": "statistics",
+          "native_update_literal": "11/03/2026 11:11PM",
+          "declared_timezone": ""
+        }
+      ],
+      "source_update_label": "summary: 11/03/2026 11:03 PM (timezone not declared); statement: 11/03/2026 11:08 PM (timezone not declared); statistics: 11/03/2026 11:11PM (timezone not declared)",
+      "source_reporting_label": "Election Day Precincts Reporting: 67/67; Precincts Complete: 0/67; Precincts Partially Reported: 67/67; Absentee/ Early Precincts Reporting: 65/67; Native Ballots Cast - Total and the same county report registrations; candidate selections and blank ballots are not added to the ballot total. Native registered-voter fraction, not CVAP, VAP, VEP, CPS, demographic turnout or a district/mode electorate. UNOFFICIAL RESULTS and reporting completeness do not establish completed counting or certification. Native clocks have no declared timezone; native FIPS is missing. All 73 numerical report pages, 67 native units and six county contests reconcile in every supplied mode; complete candidate and literal-party results remain separate from participation. 27,019 ballots include 23,233 Election Day, 3,786 Absentee/Mail-In and explicit zero Provisional; three blank ballots are already included. Native 0/67 complete and 67/67 partial remain unchanged; absentee reporting prints 65/67 with 67 in its mail column. These counters are not repaired or summed. Eight statistics percentages omit trailing zeros; both native strings are retained and their decimal values agree exactly. Native contest totals, total votes cast, overvotes and undervotes are absent, not zero; restricted districts and ballot modes have no borrowed registration denominator.",
+      "quality": [
+        "Native Ballots Cast - Total and the same county report registrations; candidate selections and blank ballots are not added to the ballot total.",
+        "Native registered-voter fraction, not CVAP, VAP, VEP, CPS, demographic turnout or a district/mode electorate.",
+        "UNOFFICIAL RESULTS and reporting completeness do not establish completed counting or certification. Native clocks have no declared timezone; native FIPS is missing.",
+        "All 73 numerical report pages, 67 native units and six county contests reconcile in every supplied mode; complete candidate and literal-party results remain separate from participation.",
+        "27,019 ballots include 23,233 Election Day, 3,786 Absentee/Mail-In and explicit zero Provisional; three blank ballots are already included.",
+        "Native 0/67 complete and 67/67 partial remain unchanged; absentee reporting prints 65/67 with 67 in its mail column. These counters are not repaired or summed.",
+        "Eight statistics percentages omit trailing zeros; both native strings are retained and their decimal values agree exactly.",
+        "Native contest totals, total votes cast, overvotes and undervotes are absent, not zero; restricted districts and ballot modes have no borrowed registration denominator."
+      ],
+      "source_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/dc1a42aa2008c40e99c96d3386620fa39dd0bf9e/data/county-source-reviews/20261106-somerset-facts-01/county-participation.csv",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-somerset-20261106-01/complete-query.zip"
+    }
+  ],
+  "new_contextual_identity_joins": [
+    {
+      "state_code": "PA",
+      "county_id": "reviewed:PA:Somerset",
+      "county": "Somerset",
+      "geography_level": "county",
+      "review_id": "pennsylvania-somerset-20261106-01",
+      "contextual_geoid": "42111",
+      "contextual_name": "Somerset County",
+      "boundary_year": 2024,
+      "ballots": 27019,
+      "denominator": 48578,
+      "reported_pct": 55.6198279056363,
+      "participation_measure_kind": "source_defined_participation_count",
+      "participation_measure_label": "Ballots Cast - Total",
+      "source_record_sha256": "8e0309139cbc2c1f1b1f7f416687a8b18c454ccb002b87a41be133fa159a24fb",
+      "source_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/dc1a42aa2008c40e99c96d3386620fa39dd0bf9e/data/county-source-reviews/20261106-somerset-facts-01/county-participation.csv",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-somerset-20261106-01/complete-query.zip",
+      "contextual_map_approved": true,
+      "source_map_approval_unchanged": false
+    }
+  ],
+  "counts": {
+    "complete_source_records": 1227,
+    "contextual_joins": 743,
+    "jurisdictions": 18,
+    "reviewed_rates": 356,
+    "missing_rates": 387,
+    "excluded_municipalities": 286,
+    "excluded_missing_county_totals": 198
+  },
+  "frozen_review_bytes": 1144940,
+  "frozen_review_sha256": "f6f1c8354e464868c7f235ca3479cf0e5b040800b8a13e586f36886cca6c33bb",
+  "complete_zip_bytes": 2910100,
+  "complete_zip_sha256": "e9c64a0c3c6f698f34ae39ae6a8de9608c3d50ef03ec001bb96776c28881729e",
+  "complete_package_files": 32
+}
