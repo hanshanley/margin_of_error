@@ -1,0 +1,107 @@
+source_table_ordinal,source_row_ordinal,native_unit,registered_voters,ballots_cast,native_turnout_percentage,native_fips,analysis_rate_approved,map_approved
+2,1,Town of Avon,377,264,,,False,False
+2,2,Town of Beloit Wards 1-4 & 13,1455,1096,,,False,False
+2,3,Town of Beloit Ward 5,8,7,,,False,False
+2,4,Town of Beloit Wards 6 - 8,1148,843,,,False,False
+2,5,Town of Beloit Wards 9 - 12,2234,1638,,,False,False
+2,6,Town of Bradford,635,472,,,False,False
+2,7,Town of Center,741,571,,,False,False
+2,8,Town of Clinton,573,435,,,False,False
+2,9,Town of Fulton,2714,2035,,,False,False
+2,10,Town of Harmony,1841,1397,,,False,False
+2,11,Town of Janesville Wards 1 & 6,429,350,,,False,False
+2,12,Town of Janesville Wards 2-5 & 7-10,2275,1781,,,False,False
+2,13,Town of Johnstown,500,414,,,False,False
+2,14,Town of La Prairie Ward 1,370,287,,,False,False
+2,15,Town of La Prairie Ward 2,156,113,,,False,False
+2,16,Town of Lima,748,551,,,False,False
+2,17,Town of Magnolia,463,351,,,False,False
+2,18,Town of Milton,2178,1676,,,False,False
+2,19,Town of Newark,1086,773,,,False,False
+2,20,Town of Plymouth,801,553,,,False,False
+2,21,Town of Porter,728,571,,,False,False
+2,22,Town of Rock Wards 1 - 5 & 8,1413,1006,,,False,False
+2,23,Town of Rock Wards 6 - 7,224,141,,,False,False
+2,24,Town of Spring Valley,475,332,,,False,False
+2,25,Town of Turtle Ward 1,451,349,,,False,False
+2,26,Town of Turtle Wards 2 - 4,1261,958,,,False,False
+2,27,Town of Union,1431,1108,,,False,False
+2,28,Village of Clinton,1248,849,,,False,False
+2,29,Village of Footville,524,351,,,False,False
+2,30,Village of Orfordville,953,605,,,False,False
+2,31,City of Beloit Ward 1,308,230,,,False,False
+2,32,City of Beloit Ward 2,979,653,,,False,False
+2,33,City of Beloit Ward 3,825,526,,,False,False
+2,34,City of Beloit Ward 4,766,480,,,False,False
+2,35,City of Beloit Ward 5,838,554,,,False,False
+2,36,City of Beloit Ward 6,622,389,,,False,False
+2,37,City of Beloit Ward 7,592,368,,,False,False
+2,38,City of Beloit Ward 8,578,327,,,False,False
+2,39,City of Beloit Ward 9,383,226,,,False,False
+2,40,City of Beloit Ward 10,927,619,,,False,False
+2,41,City of Beliot Ward 11,334,193,,,False,False
+2,42,City of Beloit Ward 12,765,457,,,False,False
+2,43,City of Beloit Ward 13,950,630,,,False,False
+2,44,City of Beloit Ward 14,699,425,,,False,False
+2,45,City of Beloit Ward 15,411,247,,,False,False
+2,46,City of Beloit Ward 16,577,340,,,False,False
+2,47,City of Beloit Ward 17,383,251,,,False,False
+2,48,City of Beloit Ward 18,597,412,,,False,False
+2,49,City of Beloit Ward 19,1025,717,,,False,False
+2,50,City of Beloit Ward 20,479,281,,,False,False
+2,51,City of Beloit Ward 21,470,357,,,False,False
+2,52,City of Beloit Ward 22,1207,921,,,False,False
+2,53,City of Beloit Ward 23,897,651,,,False,False
+2,54,City of Beloit Ward 24,2,2,,,False,False
+2,55,City of Beloit Ward 25,2,2,,,False,False
+2,56,City of Beloit Ward 26,0,0,,,False,False
+2,57,City of Beloit Ward 27,227,160,,,False,False
+2,58,City of Beloit Ward 28,197,154,,,False,False
+2,59,City of Beloit Ward 29,7,5,,,False,False
+2,60,City of Beloit Ward 30,3,2,,,False,False
+2,61,City of Beloit Ward 31,1,1,,,False,False
+2,62,City of Beloit Ward 32,0,0,,,False,False
+2,63,City of Brodhead Wards 7 - 8,70,43,,,False,False
+2,64,"City of Edgerton Wards 1-6, 8-9",3634,2576,,,False,False
+2,65,City of Evansville,3675,2729,,,False,False
+2,66,City of Janesville Ward 1,1520,1125,,,False,False
+2,67,City of Janesville Ward 2,1494,1014,,,False,False
+2,68,City of Janesville Ward 3,1263,825,,,False,False
+2,69,City of Janesville Ward 4,939,568,,,False,False
+2,70,City of Janesville Ward 5,1236,789,,,False,False
+2,71,City of Janesville Ward 6,1770,1343,,,False,False
+2,72,City of Janesville Ward 7,0,0,,,False,False
+2,73,City of Janesville Ward 8,1737,1236,,,False,False
+2,74,City of Janesville Ward 9,1300,856,,,False,False
+2,75,City of Janesville Ward 10,1582,1129,,,False,False
+2,76,City of Janesville Ward 11,1346,947,,,False,False
+2,77,City of Janesville Ward 12,0,0,,,False,False
+2,78,City of Janesville Ward 13,0,0,,,False,False
+2,79,City of Janesville Ward 14,1416,978,,,False,False
+2,80,City of Janesville Ward 15,1910,1451,,,False,False
+2,81,City of Janesville Ward 16,1689,1246,,,False,False
+2,82,City of Janesville Ward 17,607,424,,,False,False
+2,83,City of Janesville Ward 18,1252,987,,,False,False
+2,84,City of Janesville Ward 19,1309,1018,,,False,False
+2,85,City of Janesville Ward 20,594,458,,,False,False
+2,86,City of Janesville Ward 21,766,469,,,False,False
+2,87,City of Janesville Ward 22,1091,794,,,False,False
+2,88,City of Janesville Ward 23,720,535,,,False,False
+2,89,City of Janesville Ward 24,621,466,,,False,False
+2,90,City of Janesville Ward 25,4,0,,,False,False
+2,91,City of Janesville Ward 26,1639,1227,,,False,False
+2,92,City of Janesville Ward 27,1449,1027,,,False,False
+2,93,City of Janesville Ward 28,1122,765,,,False,False
+2,94,City of Janesville Ward 29,613,450,,,False,False
+2,95,City of Janesville Ward 30,1158,849,,,False,False
+2,96,City of Janesville Ward 31,1147,821,,,False,False
+2,97,City of Janesville Ward 32,818,616,,,False,False
+2,98,City of Janesville Ward 33,1533,1150,,,False,False
+2,99,City of Janesville Ward 34,1371,1070,,,False,False
+2,100,City of Janesville Ward 35,616,486,,,False,False
+2,101,City of Janesville Ward 36,308,231,,,False,False
+2,102,City of Janesville Ward 37,0,0,,,False,False
+2,103,City of Janesville Ward 38,1,1,,,False,False
+2,104,City of Janesville Ward 39,0,0,,,False,False
+2,105,City of Janesville Ward 40,3538,0,,,False,False
+2,106,City of Milton,3601,2656,,,False,False

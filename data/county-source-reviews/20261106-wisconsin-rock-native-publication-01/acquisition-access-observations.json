@@ -1,0 +1,81 @@
+{
+  "receipts": [
+    {
+      "name": "wisconsin-state-results-response.html",
+      "requested_url": "https://elections.wi.gov/elections/election-results",
+      "final_url": "https://elections.wi.gov/elections/election-results",
+      "observed_at_utc": "2026-11-06T20:10:28.024572+00:00",
+      "status": 403,
+      "bytes": 5517,
+      "sha256": "d5644253d8cb659a7d5e095f0bc2eb589cef954735a2e0a5ce891758fa5a9bcb",
+      "content_type": "text/html; charset=UTF-8",
+      "discovery": "Public search returned the exact official county URL; statewide URLs are directly requested primary indexes, not inferred downloadable reports."
+    },
+    {
+      "name": "texas-state-results-response.html",
+      "requested_url": "https://www.sos.state.tx.us/elections/historical/index.shtml",
+      "final_url": "https://www.sos.state.tx.us/elections/historical/index.shtml",
+      "observed_at_utc": "2026-11-06T20:10:28.394586+00:00",
+      "status": 403,
+      "bytes": 21183,
+      "sha256": "db4485658155edf7cfc1fa85acae62f308009dbac8681a1e94e09d7c3beeac87",
+      "content_type": "text/html; charset=utf-8",
+      "discovery": "Public search returned the exact official county URL; statewide URLs are directly requested primary indexes, not inferred downloadable reports."
+    },
+    {
+      "name": "milwaukee-native-results.html",
+      "requested_url": "https://county.milwaukee.gov/EN/County-Clerk/Off-Nav/Election-Results/11-3-26-General-Election--Unofficial-Results-Election-Night-Website",
+      "final_url": "https://county.milwaukee.gov/EN/County-Clerk/Off-Nav/Election-Results/11-3-26-General-Election--Unofficial-Results-Election-Night-Website",
+      "observed_at_utc": "2026-11-06T20:10:29.271163+00:00",
+      "status": 403,
+      "bytes": 5937,
+      "sha256": "5eba7c2a950b79176bd65f34c77923d94278aa961dcbec749ecce2e41e7dc1fd",
+      "content_type": "text/html; charset=UTF-8",
+      "discovery": "Public search returned the exact official county URL; statewide URLs are directly requested primary indexes, not inferred downloadable reports."
+    },
+    {
+      "name": "rock-native-results.html",
+      "requested_url": "https://elections.co.rock.wi.us/20261103.html",
+      "final_url": "https://elections.co.rock.wi.us/20261103.html",
+      "observed_at_utc": "2026-11-06T20:10:29.577608+00:00",
+      "status": 200,
+      "bytes": 451325,
+      "sha256": "34514aee9bf60081db0ca74443fc131e9d861d8b113ba2a4d238c6987c3c7522",
+      "content_type": "text/html; charset=UTF-8",
+      "discovery": "Public search returned the exact official county URL; statewide URLs are directly requested primary indexes, not inferred downloadable reports."
+    },
+    {
+      "name": "coshocton-native-summary.pdf",
+      "requested_url": "https://www.coshocton.boe.ohio.gov/wp-content/uploads/sites/5/2026/11/23-of-23-Precincts.pdf",
+      "final_url": "https://www.coshocton.boe.ohio.gov/wp-content/uploads/sites/5/2026/11/23-of-23-Precincts.pdf",
+      "observed_at_utc": "2026-11-06T20:10:30.263092+00:00",
+      "status": 403,
+      "bytes": 1252698,
+      "sha256": "3eb0247ee9b752ba23515b7cb35f47080caba11043730be558679d3e5e7aa3d7",
+      "content_type": "text/html; charset=UTF-8",
+      "discovery": "Public search returned the exact official county URL; statewide URLs are directly requested primary indexes, not inferred downloadable reports."
+    }
+  ],
+  "independent_rock_extraction": {
+    "source_sha256": "34514aee9bf60081db0ca74443fc131e9d861d8b113ba2a4d238c6987c3c7522",
+    "table_count": 53,
+    "native_cells": 7413,
+    "all_cells_agree_between_three_independent_parsers": true,
+    "source_timezone": null,
+    "native_update_literal": "November 03, 2026 at 10:56 PM",
+    "source_qualification_sha256": "33db4d5a395bda64a6223b02555e82485f1dc36dfe36f18db55f1190c64f81f4",
+    "no_public_raw_html": true
+  },
+  "portable_query": {
+    "all_14_files_reproduce_exactly_from_extracted_portable_query": true,
+    "zip_members": 13,
+    "focused_tests": 7,
+    "zip_bytes": 84439,
+    "zip_sha256": "63f277b2005438861fed666497e833180960b88c73f7333fa5f0746abb8fc45f"
+  },
+  "all_complete_original_bodies_private": true,
+  "no_denied_source_parsed_as_successful_html_or_pdf": true,
+  "no_unchanged_denied_retry_or_access_control_bypass": true,
+  "no_map_or_all_mode_scope_approval": true,
+  "not_a_metadata_only_ui_download": true
+}

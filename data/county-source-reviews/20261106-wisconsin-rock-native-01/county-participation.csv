@@ -1,0 +1,2 @@
+native_county,native_state,reported_ballots_cast,reported_registered_voters,native_registered_percentage,independently_derived_registered_fraction_percent,native_update_literal,source_timezone,native_fips,all_mode_definition_approved,analysis_rate_approved,map_approved,certified
+Rock County,Wisconsin,67812,97950,69.23%,69.23124042879019908116385911,"November 03, 2026 at 10:56 PM",,,False,False,False,False

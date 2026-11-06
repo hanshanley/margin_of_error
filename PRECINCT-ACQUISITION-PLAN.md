@@ -88,6 +88,35 @@ reconciled selection. Durable exact production proofs are in
 This verifies the qualified county participation extension, not statewide
 certification, demographic rates or nationwide completeness.
 
+**November 6: Wisconsin Rock County complete native query reproduced; not integrated.**
+The actual official November 3 general report returned **200 / 451,325 bytes**.
+All **53 native tables / 7,413 cells** independently agree between HTMLParser,
+BeautifulSoup and network-blocked, scripts-disabled Chromium. All **106 native
+participation units** sum exactly to **67,812 ballots cast / 97,950 registered
+voters / 69.23% printed fraction**. All **67 complete native vectors** and
+**66 printed percentages** reconcile across **26 summary/detail pairs**.
+The portable numerical query preserves **65 county candidate/option rows /
+3,648 complete unit-candidate rows / 65 literal party-label rows**, separately
+from ballots, and all **26 native reporting statements**. Governor selections
+are **67,418**, not 67,812 participants. Seven native zero-registration/zero-ballot
+units and two positive-registration/zero-ballot units remain literal; the
+source's `Beliot` spelling is not silently repaired. The native update is
+**November 3 at 10:56 PM**, with no declared timezone. Complete precinct reporting
+is not certification, and an explicit all-mode definition remains unapproved.
+The **14-file / 13-member** query in
+`data/county-source-reviews/20261106-wisconsin-rock-native-01/`
+passes **seven focused tests** and reproduces all 14 files byte-identically from
+the actual extracted ZIP: **84,439 bytes / SHA-256
+`63f277b2005438861fed666497e833180960b88c73f7333fa5f0746abb8fc45f`**.
+County identity/geometry/usability and explorer integration remain separate.
+No new state coverage, map or analysis-rate approval is claimed.
+The official MyVote election-results explainer says Wisconsin has no centralized
+unofficial election-night reporting site and points to its 72 county clerks;
+that is a legitimate county-first pipeline case, not a reason to synthesize
+state totals. Fresh direct Wisconsin/Texas indexes, Milwaukee's exact county
+report and Coshocton's exact PDF returned 403; all complete private responses
+and safe receipt digests are retained without challenged retries or bypass.
+
 **November 6: South Carolina and Louisiana consolidated scope checked, not promoted.**
 South Carolina's actual participation/results parents and their three declared
 responses are retained privately with verified full digests. The entire

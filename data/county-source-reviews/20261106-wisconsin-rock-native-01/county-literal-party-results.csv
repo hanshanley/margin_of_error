@@ -1,0 +1,66 @@
+native_contest,native_option,native_label,native_party,native_write_in,votes,no_cross_contest_aggregation,write_in_party_not_inferred
+Governor / Lieutenant Governor,Tom Tiffany / David Varnam,Tom Tiffany / David Varnam (Republican),Republican,False,27724,True,False
+Governor / Lieutenant Governor,David Crowley / Sarah Godlewski,David Crowley / Sarah Godlewski (Democratic),Democratic,False,39549,True,False
+Governor / Lieutenant Governor,write-in:,write-in: (NONPARTISAN),NONPARTISAN,True,145,True,True
+Attorney General,Eric Toney,Eric Toney (Republican),Republican,False,26955,True,False
+Attorney General,Josh Kaul,Josh Kaul (Democratic),Democratic,False,40001,True,False
+Attorney General,write-in:,write-in: (NONPARTISAN),NONPARTISAN,True,55,True,True
+Secretary of State,Jay Schroeder,Jay Schroeder (Republican),Republican,False,26859,True,False
+Secretary of State,JoCasta Zamarripa,JoCasta Zamarripa (Democratic),Democratic,False,37019,True,False
+Secretary of State,Pete Karas,Pete Karas (Wisconsin Green),Wisconsin Green,False,2804,True,False
+Secretary of State,write-in:,write-in: (NONPARTISAN),NONPARTISAN,True,35,True,True
+State Treasurer,John S. Leiber,John S. Leiber (Republican),Republican,False,28525,True,False
+State Treasurer,Yee Leng Xiong,Yee Leng Xiong (Democratic),Democratic,False,37343,True,False
+State Treasurer,write-in:,write-in: (NONPARTISAN),NONPARTISAN,True,63,True,True
+Representative in Congress District 1,Bryan Steil,Bryan Steil (Republican),Republican,False,20267,True,False
+Representative in Congress District 1,Mitchell Berman,Mitchell Berman (Democratic),Democratic,False,29622,True,False
+Representative in Congress District 1,write-in:,write-in: (NONPARTISAN),NONPARTISAN,True,65,True,True
+Representative in Congress District 2,Mark Pocan,Mark Pocan (Democratic),Democratic,False,11909,True,False
+Representative in Congress District 2,write-in:,write-in: (NONPARTISAN),NONPARTISAN,True,693,True,True
+State Senator District 11,Ellen Schutt,Ellen Schutt (Republican),Republican,False,1166,True,False
+State Senator District 11,Adam Duda,Adam Duda (Democratic),Democratic,False,577,True,False
+State Senator District 11,write-in:,write-in: (NONPARTISAN),NONPARTISAN,True,0,True,True
+State Senator District 15,Scott Fleming,Scott Fleming (Republican),Republican,False,24723,True,False
+State Senator District 15,Mark Spreitzer,Mark Spreitzer (Democratic),Democratic,False,37425,True,False
+State Senator District 15,Christopher Dean,Christopher Dean (Serving People Not Parties),Serving People Not Parties,False,3051,True,False
+State Senator District 15,write-in:,write-in: (NONPARTISAN),NONPARTISAN,True,24,True,True
+State Senator District 17,Howard Marklein,Howard Marklein (Republican),Republican,False,18,True,False
+State Senator District 17,Jenna Jacobson,Jenna Jacobson (Democratic),Democratic,False,24,True,False
+State Senator District 17,write-in:,write-in: (NONPARTISAN),NONPARTISAN,True,0,True,True
+Representative to the Assembly District 31,Tyler August,Tyler August (Republican),Republican,False,1051,True,False
+Representative to the Assembly District 31,John Perryman,John Perryman (Democratic),Democratic,False,655,True,False
+Representative to the Assembly District 31,write-in:,write-in: (NONPARTISAN),NONPARTISAN,True,1,True,True
+Representative to the Assembly District 43,Paul McGraw,Paul McGraw (Republican),Republican,False,8172,True,False
+Representative to the Assembly District 43,Brienne Brown,Brienne Brown (Democratic),Democratic,False,11449,True,False
+Representative to the Assembly District 43,write-in:,write-in: (NONPARTISAN),NONPARTISAN,True,16,True,True
+Representative to the Assembly District 44,Ron Woodman,Ron Woodman (Republican),Republican,False,9144,True,False
+Representative to the Assembly District 44,Ann Roe,Ann Roe (Democratic),Democratic,False,14786,True,False
+Representative to the Assembly District 44,write-in:,write-in: (NONPARTISAN),NONPARTISAN,True,23,True,True
+Representative to the Assembly District 45,Jocelyn Jordan,Jocelyn Jordan (Republican),Republican,False,8276,True,False
+Representative to the Assembly District 45,Clinton Anderson,Clinton Anderson (Democratic),Democratic,False,12831,True,False
+Representative to the Assembly District 45,write-in:,write-in: (NONPARTISAN),NONPARTISAN,True,21,True,True
+Representative to the Assembly District 50,Jon Aleckson,Jon Aleckson (Republican),Republican,False,19,True,False
+Representative to the Assembly District 50,Bill Oemichen,Bill Oemichen (Democratic),Democratic,False,24,True,False
+Representative to the Assembly District 50,write-in:,write-in: (NONPARTISAN),NONPARTISAN,True,0,True,True
+Sheriff Rock County,Curtis Fell,Curtis Fell (Democratic),Democratic,False,51809,True,False
+Sheriff Rock County,write-in:,write-in: (NONPARTISAN),NONPARTISAN,True,1601,True,True
+Clerk of Circuit Court Rock County,Amanda Nelson,Amanda Nelson (Democratic),Democratic,False,50628,True,False
+Clerk of Circuit Court Rock County,write-in:,write-in: (NONPARTISAN),NONPARTISAN,True,1464,True,True
+Partial Veto Referendum - Question 1,Yes,Yes (NONPARTISAN),NONPARTISAN,False,32086,True,False
+Partial Veto Referendum - Question 1,No,No (NONPARTISAN),NONPARTISAN,False,33188,True,False
+Freedom to Gather Referendum - Question 2,Yes,Yes (NONPARTISAN),NONPARTISAN,False,29817,True,False
+Freedom to Gather Referendum - Question 2,No,No (NONPARTISAN),NONPARTISAN,False,35776,True,False
+Discrimination Prohibited Referendum - Question 3,Yes,Yes (NONPARTISAN),NONPARTISAN,False,37451,True,False
+Discrimination Prohibited Referendum - Question 3,No,No (NONPARTISAN),NONPARTISAN,False,27684,True,False
+Development Referendum City of Janesville,Yes,Yes (NONPARTISAN),NONPARTISAN,False,16779,True,False
+Development Referendum City of Janesville,No,No (NONPARTISAN),NONPARTISAN,False,9932,True,False
+Exceed Revenue Limit School District of Delavan-Darien,Yes,Yes (NONPARTISAN),NONPARTISAN,False,19,True,False
+Exceed Revenue Limit School District of Delavan-Darien,No,No (NONPARTISAN),NONPARTISAN,False,10,True,False
+Exceed Revenue Limit Evansville Community School District,Yes,Yes (NONPARTISAN),NONPARTISAN,False,2464,True,False
+Exceed Revenue Limit Evansville Community School District,No,No (NONPARTISAN),NONPARTISAN,False,2372,True,False
+Exceed Revenue Limit School District of Fort Atkinson,Yes,Yes (NONPARTISAN),NONPARTISAN,False,2,True,False
+Exceed Revenue Limit School District of Fort Atkinson,No,No (NONPARTISAN),NONPARTISAN,False,13,True,False
+Exceed Revenue Limit School District of Janesville,Yes,Yes (NONPARTISAN),NONPARTISAN,False,13352,True,False
+Exceed Revenue Limit School District of Janesville,No,No (NONPARTISAN),NONPARTISAN,False,11731,True,False
+Exceed Revenue Limit Whitewater Unified School District,Yes,Yes (NONPARTISAN),NONPARTISAN,False,185,True,False
+Exceed Revenue Limit Whitewater Unified School District,No,No (NONPARTISAN),NONPARTISAN,False,328,True,False

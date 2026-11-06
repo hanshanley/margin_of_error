@@ -1,0 +1,10815 @@
+{
+  "schema_version": 1,
+  "source_url": "https://elections.co.rock.wi.us/20261103.html",
+  "native_title": "Rock County Wisconsin - Election Results",
+  "native_heading": "November 3, 2026 - General Election - Unofficial Results",
+  "native_update_literal": "November 03, 2026 at 10:56 PM",
+  "source_timezone": null,
+  "election_date": "2026-11-03",
+  "native_county": "Rock County",
+  "native_state": "Wisconsin",
+  "native_fips": null,
+  "scope_literal": "Votes reflect Rock County ONLY",
+  "reporting_statements": [
+    "Precincts Reporting: 106 of 106 for 100%",
+    "Precincts Reporting: 106 of 106 for 100%",
+    "Precincts Reporting: 106 of 106 for 100%",
+    "Precincts Reporting: 106 of 106 for 100%",
+    "Precincts Reporting: 106 of 106 for 100%",
+    "Precincts Reporting: 78 of 78 for 100%",
+    "Precincts Reporting: 28 of 28 for 100%",
+    "Precincts Reporting: 3 of 3 for 100%",
+    "Precincts Reporting: 102 of 102 for 100%",
+    "Precincts Reporting: 1 of 1 for 100%",
+    "Precincts Reporting: 3 of 3 for 100%",
+    "Precincts Reporting: 22 of 22 for 100%",
+    "Precincts Reporting: 35 of 35 for 100%",
+    "Precincts Reporting: 45 of 45 for 100%",
+    "Precincts Reporting: 1 of 1 for 100%",
+    "Precincts Reporting: 106 of 106 for 100%",
+    "Precincts Reporting: 106 of 106 for 100%",
+    "Precincts Reporting: 106 of 106 for 100%",
+    "Precincts Reporting: 106 of 106 for 100%",
+    "Precincts Reporting: 106 of 106 for 100%",
+    "Precincts Reporting: 40 of 40 for 100%",
+    "Precincts Reporting: 1 of 1 for 100%",
+    "Precincts Reporting: 7 of 7 for 100%",
+    "Precincts Reporting: 1 of 1 for 100%",
+    "Precincts Reporting: 40 of 40 for 100%",
+    "Precincts Reporting: 2 of 2 for 100%"
+  ],
+  "source_receipt": {
+    "name": "rock-native-results.html",
+    "requested_url": "https://elections.co.rock.wi.us/20261103.html",
+    "final_url": "https://elections.co.rock.wi.us/20261103.html",
+    "observed_at_utc": "2026-11-06T20:10:29.577608+00:00",
+    "status": 200,
+    "bytes": 451325,
+    "sha256": "34514aee9bf60081db0ca74443fc131e9d861d8b113ba2a4d238c6987c3c7522",
+    "content_type": "text/html; charset=UTF-8",
+    "discovery": "Public search returned the exact official county URL; statewide URLs are directly requested primary indexes, not inferred downloadable reports."
+  },
+  "independent_extractions": {
+    "stdlib_html_parser": true,
+    "beautifulsoup": true,
+    "chromium_dom": true,
+    "all_53_tables_agree": true,
+    "browser_scripts_disabled_and_external_requests_blocked": true
+  },
+  "tables": [
+    [
+      [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ],
+    [
+      [
+        "Voters and Ballots",
+        "",
+        "",
+        "Votes"
+      ],
+      [
+        "Registered Voters",
+        "",
+        "",
+        "97,950"
+      ],
+      [
+        "Ballots Cast",
+        "",
+        "69.23%",
+        "67,812"
+      ]
+    ],
+    [
+      [
+        "",
+        "Precinct",
+        "Registered Voters - Total",
+        "Ballots Cast - Total"
+      ],
+      [
+        "",
+        "Town of Avon",
+        "377",
+        "264"
+      ],
+      [
+        "",
+        "Town of Beloit Wards 1-4 & 13",
+        "1,455",
+        "1,096"
+      ],
+      [
+        "",
+        "Town of Beloit Ward 5",
+        "8",
+        "7"
+      ],
+      [
+        "",
+        "Town of Beloit Wards 6 - 8",
+        "1,148",
+        "843"
+      ],
+      [
+        "",
+        "Town of Beloit Wards 9 - 12",
+        "2,234",
+        "1,638"
+      ],
+      [
+        "",
+        "Town of Bradford",
+        "635",
+        "472"
+      ],
+      [
+        "",
+        "Town of Center",
+        "741",
+        "571"
+      ],
+      [
+        "",
+        "Town of Clinton",
+        "573",
+        "435"
+      ],
+      [
+        "",
+        "Town of Fulton",
+        "2,714",
+        "2,035"
+      ],
+      [
+        "",
+        "Town of Harmony",
+        "1,841",
+        "1,397"
+      ],
+      [
+        "",
+        "Town of Janesville Wards 1 & 6",
+        "429",
+        "350"
+      ],
+      [
+        "",
+        "Town of Janesville Wards 2-5 & 7-10",
+        "2,275",
+        "1,781"
+      ],
+      [
+        "",
+        "Town of Johnstown",
+        "500",
+        "414"
+      ],
+      [
+        "",
+        "Town of La Prairie Ward 1",
+        "370",
+        "287"
+      ],
+      [
+        "",
+        "Town of La Prairie Ward 2",
+        "156",
+        "113"
+      ],
+      [
+        "",
+        "Town of Lima",
+        "748",
+        "551"
+      ],
+      [
+        "",
+        "Town of Magnolia",
+        "463",
+        "351"
+      ],
+      [
+        "",
+        "Town of Milton",
+        "2,178",
+        "1,676"
+      ],
+      [
+        "",
+        "Town of Newark",
+        "1,086",
+        "773"
+      ],
+      [
+        "",
+        "Town of Plymouth",
+        "801",
+        "553"
+      ],
+      [
+        "",
+        "Town of Porter",
+        "728",
+        "571"
+      ],
+      [
+        "",
+        "Town of Rock Wards 1 - 5 & 8",
+        "1,413",
+        "1,006"
+      ],
+      [
+        "",
+        "Town of Rock Wards 6 - 7",
+        "224",
+        "141"
+      ],
+      [
+        "",
+        "Town of Spring Valley",
+        "475",
+        "332"
+      ],
+      [
+        "",
+        "Town of Turtle Ward 1",
+        "451",
+        "349"
+      ],
+      [
+        "",
+        "Town of Turtle Wards 2 - 4",
+        "1,261",
+        "958"
+      ],
+      [
+        "",
+        "Town of Union",
+        "1,431",
+        "1,108"
+      ],
+      [
+        "",
+        "Village of Clinton",
+        "1,248",
+        "849"
+      ],
+      [
+        "",
+        "Village of Footville",
+        "524",
+        "351"
+      ],
+      [
+        "",
+        "Village of Orfordville",
+        "953",
+        "605"
+      ],
+      [
+        "",
+        "City of Beloit Ward 1",
+        "308",
+        "230"
+      ],
+      [
+        "",
+        "City of Beloit Ward 2",
+        "979",
+        "653"
+      ],
+      [
+        "",
+        "City of Beloit Ward 3",
+        "825",
+        "526"
+      ],
+      [
+        "",
+        "City of Beloit Ward 4",
+        "766",
+        "480"
+      ],
+      [
+        "",
+        "City of Beloit Ward 5",
+        "838",
+        "554"
+      ],
+      [
+        "",
+        "City of Beloit Ward 6",
+        "622",
+        "389"
+      ],
+      [
+        "",
+        "City of Beloit Ward 7",
+        "592",
+        "368"
+      ],
+      [
+        "",
+        "City of Beloit Ward 8",
+        "578",
+        "327"
+      ],
+      [
+        "",
+        "City of Beloit Ward 9",
+        "383",
+        "226"
+      ],
+      [
+        "",
+        "City of Beloit Ward 10",
+        "927",
+        "619"
+      ],
+      [
+        "",
+        "City of Beliot Ward 11",
+        "334",
+        "193"
+      ],
+      [
+        "",
+        "City of Beloit Ward 12",
+        "765",
+        "457"
+      ],
+      [
+        "",
+        "City of Beloit Ward 13",
+        "950",
+        "630"
+      ],
+      [
+        "",
+        "City of Beloit Ward 14",
+        "699",
+        "425"
+      ],
+      [
+        "",
+        "City of Beloit Ward 15",
+        "411",
+        "247"
+      ],
+      [
+        "",
+        "City of Beloit Ward 16",
+        "577",
+        "340"
+      ],
+      [
+        "",
+        "City of Beloit Ward 17",
+        "383",
+        "251"
+      ],
+      [
+        "",
+        "City of Beloit Ward 18",
+        "597",
+        "412"
+      ],
+      [
+        "",
+        "City of Beloit Ward 19",
+        "1,025",
+        "717"
+      ],
+      [
+        "",
+        "City of Beloit Ward 20",
+        "479",
+        "281"
+      ],
+      [
+        "",
+        "City of Beloit Ward 21",
+        "470",
+        "357"
+      ],
+      [
+        "",
+        "City of Beloit Ward 22",
+        "1,207",
+        "921"
+      ],
+      [
+        "",
+        "City of Beloit Ward 23",
+        "897",
+        "651"
+      ],
+      [
+        "",
+        "City of Beloit Ward 24",
+        "2",
+        "2"
+      ],
+      [
+        "",
+        "City of Beloit Ward 25",
+        "2",
+        "2"
+      ],
+      [
+        "",
+        "City of Beloit Ward 26",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 27",
+        "227",
+        "160"
+      ],
+      [
+        "",
+        "City of Beloit Ward 28",
+        "197",
+        "154"
+      ],
+      [
+        "",
+        "City of Beloit Ward 29",
+        "7",
+        "5"
+      ],
+      [
+        "",
+        "City of Beloit Ward 30",
+        "3",
+        "2"
+      ],
+      [
+        "",
+        "City of Beloit Ward 31",
+        "1",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 32",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Brodhead Wards 7 - 8",
+        "70",
+        "43"
+      ],
+      [
+        "",
+        "City of Edgerton Wards 1-6, 8-9",
+        "3,634",
+        "2,576"
+      ],
+      [
+        "",
+        "City of Evansville",
+        "3,675",
+        "2,729"
+      ],
+      [
+        "",
+        "City of Janesville Ward 1",
+        "1,520",
+        "1,125"
+      ],
+      [
+        "",
+        "City of Janesville Ward 2",
+        "1,494",
+        "1,014"
+      ],
+      [
+        "",
+        "City of Janesville Ward 3",
+        "1,263",
+        "825"
+      ],
+      [
+        "",
+        "City of Janesville Ward 4",
+        "939",
+        "568"
+      ],
+      [
+        "",
+        "City of Janesville Ward 5",
+        "1,236",
+        "789"
+      ],
+      [
+        "",
+        "City of Janesville Ward 6",
+        "1,770",
+        "1,343"
+      ],
+      [
+        "",
+        "City of Janesville Ward 7",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 8",
+        "1,737",
+        "1,236"
+      ],
+      [
+        "",
+        "City of Janesville Ward 9",
+        "1,300",
+        "856"
+      ],
+      [
+        "",
+        "City of Janesville Ward 10",
+        "1,582",
+        "1,129"
+      ],
+      [
+        "",
+        "City of Janesville Ward 11",
+        "1,346",
+        "947"
+      ],
+      [
+        "",
+        "City of Janesville Ward 12",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 13",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 14",
+        "1,416",
+        "978"
+      ],
+      [
+        "",
+        "City of Janesville Ward 15",
+        "1,910",
+        "1,451"
+      ],
+      [
+        "",
+        "City of Janesville Ward 16",
+        "1,689",
+        "1,246"
+      ],
+      [
+        "",
+        "City of Janesville Ward 17",
+        "607",
+        "424"
+      ],
+      [
+        "",
+        "City of Janesville Ward 18",
+        "1,252",
+        "987"
+      ],
+      [
+        "",
+        "City of Janesville Ward 19",
+        "1,309",
+        "1,018"
+      ],
+      [
+        "",
+        "City of Janesville Ward 20",
+        "594",
+        "458"
+      ],
+      [
+        "",
+        "City of Janesville Ward 21",
+        "766",
+        "469"
+      ],
+      [
+        "",
+        "City of Janesville Ward 22",
+        "1,091",
+        "794"
+      ],
+      [
+        "",
+        "City of Janesville Ward 23",
+        "720",
+        "535"
+      ],
+      [
+        "",
+        "City of Janesville Ward 24",
+        "621",
+        "466"
+      ],
+      [
+        "",
+        "City of Janesville Ward 25",
+        "4",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 26",
+        "1,639",
+        "1,227"
+      ],
+      [
+        "",
+        "City of Janesville Ward 27",
+        "1,449",
+        "1,027"
+      ],
+      [
+        "",
+        "City of Janesville Ward 28",
+        "1,122",
+        "765"
+      ],
+      [
+        "",
+        "City of Janesville Ward 29",
+        "613",
+        "450"
+      ],
+      [
+        "",
+        "City of Janesville Ward 30",
+        "1,158",
+        "849"
+      ],
+      [
+        "",
+        "City of Janesville Ward 31",
+        "1,147",
+        "821"
+      ],
+      [
+        "",
+        "City of Janesville Ward 32",
+        "818",
+        "616"
+      ],
+      [
+        "",
+        "City of Janesville Ward 33",
+        "1,533",
+        "1,150"
+      ],
+      [
+        "",
+        "City of Janesville Ward 34",
+        "1,371",
+        "1,070"
+      ],
+      [
+        "",
+        "City of Janesville Ward 35",
+        "616",
+        "486"
+      ],
+      [
+        "",
+        "City of Janesville Ward 36",
+        "308",
+        "231"
+      ],
+      [
+        "",
+        "City of Janesville Ward 37",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 38",
+        "1",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 39",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 40",
+        "3,538",
+        "0"
+      ],
+      [
+        "",
+        "City of Milton",
+        "3,601",
+        "2,656"
+      ],
+      [
+        "",
+        "Total",
+        "97,950",
+        "67,812"
+      ]
+    ],
+    [
+      [
+        "Governor / Lieutenant Governor",
+        "Vote For 1",
+        "",
+        "Votes"
+      ],
+      [
+        "Tom Tiffany / David Varnam (Republican)",
+        "",
+        "41.12%",
+        "27,724"
+      ],
+      [
+        "David Crowley / Sarah Godlewski (Democratic)",
+        "",
+        "58.66%",
+        "39,549"
+      ],
+      [
+        "write-in: (NONPARTISAN)",
+        "",
+        "0.22%",
+        "145"
+      ]
+    ],
+    [
+      [
+        "",
+        "Governor / Lieutenant Governor",
+        "Tom Tiffany / David Varnam",
+        "David Crowley / Sarah Godlewski",
+        "write-in:"
+      ],
+      [
+        "",
+        "Town of Avon",
+        "169",
+        "94",
+        "0"
+      ],
+      [
+        "",
+        "Town of Beloit Wards 1-4 & 13",
+        "638",
+        "453",
+        "2"
+      ],
+      [
+        "",
+        "Town of Beloit Ward 5",
+        "5",
+        "2",
+        "0"
+      ],
+      [
+        "",
+        "Town of Beloit Wards 6 - 8",
+        "351",
+        "484",
+        "1"
+      ],
+      [
+        "",
+        "Town of Beloit Wards 9 - 12",
+        "813",
+        "818",
+        "1"
+      ],
+      [
+        "",
+        "Town of Bradford",
+        "291",
+        "181",
+        "0"
+      ],
+      [
+        "",
+        "Town of Center",
+        "285",
+        "282",
+        "2"
+      ],
+      [
+        "",
+        "Town of Clinton",
+        "305",
+        "129",
+        "0"
+      ],
+      [
+        "",
+        "Town of Fulton",
+        "993",
+        "1,031",
+        "3"
+      ],
+      [
+        "",
+        "Town of Harmony",
+        "657",
+        "730",
+        "2"
+      ],
+      [
+        "",
+        "Town of Janesville Wards 1 & 6",
+        "169",
+        "180",
+        "0"
+      ],
+      [
+        "",
+        "Town of Janesville Wards 2-5 & 7-10",
+        "882",
+        "885",
+        "0"
+      ],
+      [
+        "",
+        "Town of Johnstown",
+        "237",
+        "176",
+        "0"
+      ],
+      [
+        "",
+        "Town of La Prairie Ward 1",
+        "173",
+        "113",
+        "0"
+      ],
+      [
+        "",
+        "Town of La Prairie Ward 2",
+        "62",
+        "49",
+        "0"
+      ],
+      [
+        "",
+        "Town of Lima",
+        "256",
+        "290",
+        "1"
+      ],
+      [
+        "",
+        "Town of Magnolia",
+        "178",
+        "171",
+        "2"
+      ],
+      [
+        "",
+        "Town of Milton",
+        "896",
+        "764",
+        "7"
+      ],
+      [
+        "",
+        "Town of Newark",
+        "484",
+        "284",
+        "1"
+      ],
+      [
+        "",
+        "Town of Plymouth",
+        "320",
+        "231",
+        "0"
+      ],
+      [
+        "",
+        "Town of Porter",
+        "236",
+        "335",
+        "0"
+      ],
+      [
+        "",
+        "Town of Rock Wards 1 - 5 & 8",
+        "479",
+        "518",
+        "4"
+      ],
+      [
+        "",
+        "Town of Rock Wards 6 - 7",
+        "82",
+        "58",
+        "0"
+      ],
+      [
+        "",
+        "Town of Spring Valley",
+        "189",
+        "143",
+        "0"
+      ],
+      [
+        "",
+        "Town of Turtle Ward 1",
+        "200",
+        "146",
+        "1"
+      ],
+      [
+        "",
+        "Town of Turtle Wards 2 - 4",
+        "569",
+        "381",
+        "2"
+      ],
+      [
+        "",
+        "Town of Union",
+        "454",
+        "646",
+        "2"
+      ],
+      [
+        "",
+        "Village of Clinton",
+        "502",
+        "343",
+        "0"
+      ],
+      [
+        "",
+        "Village of Footville",
+        "189",
+        "159",
+        "0"
+      ],
+      [
+        "",
+        "Village of Orfordville",
+        "274",
+        "324",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 1",
+        "87",
+        "141",
+        "2"
+      ],
+      [
+        "",
+        "City of Beloit Ward 2",
+        "247",
+        "399",
+        "2"
+      ],
+      [
+        "",
+        "City of Beloit Ward 3",
+        "228",
+        "295",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 4",
+        "184",
+        "294",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 5",
+        "232",
+        "315",
+        "3"
+      ],
+      [
+        "",
+        "City of Beloit Ward 6",
+        "130",
+        "259",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 7",
+        "80",
+        "282",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 8",
+        "76",
+        "246",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 9",
+        "71",
+        "152",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 10",
+        "224",
+        "391",
+        "0"
+      ],
+      [
+        "",
+        "City of Beliot Ward 11",
+        "46",
+        "145",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 12",
+        "66",
+        "386",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 13",
+        "188",
+        "436",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 14",
+        "112",
+        "311",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 15",
+        "37",
+        "209",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 16",
+        "59",
+        "280",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 17",
+        "74",
+        "176",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 18",
+        "122",
+        "288",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 19",
+        "260",
+        "453",
+        "2"
+      ],
+      [
+        "",
+        "City of Beloit Ward 20",
+        "111",
+        "167",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 21",
+        "147",
+        "206",
+        "2"
+      ],
+      [
+        "",
+        "City of Beloit Ward 22",
+        "406",
+        "507",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 23",
+        "258",
+        "388",
+        "2"
+      ],
+      [
+        "",
+        "City of Beloit Ward 24",
+        "0",
+        "2",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 25",
+        "0",
+        "2",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 26",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 27",
+        "59",
+        "100",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 28",
+        "56",
+        "97",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 29",
+        "0",
+        "5",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 30",
+        "0",
+        "2",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 31",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 32",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Brodhead Wards 7 - 8",
+        "19",
+        "24",
+        "0"
+      ],
+      [
+        "",
+        "City of Edgerton Wards 1-6, 8-9",
+        "831",
+        "1,727",
+        "7"
+      ],
+      [
+        "",
+        "City of Evansville",
+        "795",
+        "1,907",
+        "11"
+      ],
+      [
+        "",
+        "City of Janesville Ward 1",
+        "413",
+        "701",
+        "6"
+      ],
+      [
+        "",
+        "City of Janesville Ward 2",
+        "338",
+        "665",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 3",
+        "237",
+        "579",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 4",
+        "149",
+        "415",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 5",
+        "289",
+        "492",
+        "5"
+      ],
+      [
+        "",
+        "City of Janesville Ward 6",
+        "542",
+        "788",
+        "3"
+      ],
+      [
+        "",
+        "City of Janesville Ward 7",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 8",
+        "430",
+        "783",
+        "6"
+      ],
+      [
+        "",
+        "City of Janesville Ward 9",
+        "324",
+        "526",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 10",
+        "460",
+        "666",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 11",
+        "361",
+        "582",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 12",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 13",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 14",
+        "302",
+        "661",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 15",
+        "489",
+        "948",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 16",
+        "404",
+        "826",
+        "5"
+      ],
+      [
+        "",
+        "City of Janesville Ward 17",
+        "152",
+        "266",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 18",
+        "419",
+        "563",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 19",
+        "434",
+        "573",
+        "5"
+      ],
+      [
+        "",
+        "City of Janesville Ward 20",
+        "164",
+        "292",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 21",
+        "135",
+        "330",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 22",
+        "278",
+        "510",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 23",
+        "208",
+        "323",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 24",
+        "193",
+        "268",
+        "3"
+      ],
+      [
+        "",
+        "City of Janesville Ward 25",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 26",
+        "435",
+        "786",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 27",
+        "340",
+        "675",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 28",
+        "251",
+        "507",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 29",
+        "219",
+        "230",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 30",
+        "296",
+        "541",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 31",
+        "305",
+        "507",
+        "3"
+      ],
+      [
+        "",
+        "City of Janesville Ward 32",
+        "274",
+        "339",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 33",
+        "466",
+        "674",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 34",
+        "483",
+        "582",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 35",
+        "208",
+        "274",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 36",
+        "100",
+        "130",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 37",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 38",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 39",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 40",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Milton",
+        "1,082",
+        "1,554",
+        "7"
+      ],
+      [
+        "",
+        "Total",
+        "27,724",
+        "39,549",
+        "145"
+      ]
+    ],
+    [
+      [
+        "Attorney General",
+        "Vote For 1",
+        "",
+        "Votes"
+      ],
+      [
+        "Eric Toney (Republican)",
+        "",
+        "40.22%",
+        "26,955"
+      ],
+      [
+        "Josh Kaul (Democratic)",
+        "",
+        "59.69%",
+        "40,001"
+      ],
+      [
+        "write-in: (NONPARTISAN)",
+        "",
+        "0.08%",
+        "55"
+      ]
+    ],
+    [
+      [
+        "",
+        "Attorney General",
+        "Eric Toney",
+        "Josh Kaul",
+        "write-in:"
+      ],
+      [
+        "",
+        "Town of Avon",
+        "161",
+        "101",
+        "0"
+      ],
+      [
+        "",
+        "Town of Beloit Wards 1-4 & 13",
+        "625",
+        "463",
+        "0"
+      ],
+      [
+        "",
+        "Town of Beloit Ward 5",
+        "5",
+        "2",
+        "0"
+      ],
+      [
+        "",
+        "Town of Beloit Wards 6 - 8",
+        "344",
+        "487",
+        "1"
+      ],
+      [
+        "",
+        "Town of Beloit Wards 9 - 12",
+        "801",
+        "824",
+        "0"
+      ],
+      [
+        "",
+        "Town of Bradford",
+        "277",
+        "193",
+        "0"
+      ],
+      [
+        "",
+        "Town of Center",
+        "276",
+        "288",
+        "0"
+      ],
+      [
+        "",
+        "Town of Clinton",
+        "296",
+        "137",
+        "0"
+      ],
+      [
+        "",
+        "Town of Fulton",
+        "981",
+        "1,042",
+        "1"
+      ],
+      [
+        "",
+        "Town of Harmony",
+        "633",
+        "755",
+        "0"
+      ],
+      [
+        "",
+        "Town of Janesville Wards 1 & 6",
+        "157",
+        "185",
+        "0"
+      ],
+      [
+        "",
+        "Town of Janesville Wards 2-5 & 7-10",
+        "855",
+        "913",
+        "0"
+      ],
+      [
+        "",
+        "Town of Johnstown",
+        "225",
+        "183",
+        "0"
+      ],
+      [
+        "",
+        "Town of La Prairie Ward 1",
+        "164",
+        "118",
+        "0"
+      ],
+      [
+        "",
+        "Town of La Prairie Ward 2",
+        "61",
+        "49",
+        "0"
+      ],
+      [
+        "",
+        "Town of Lima",
+        "250",
+        "296",
+        "0"
+      ],
+      [
+        "",
+        "Town of Magnolia",
+        "172",
+        "176",
+        "0"
+      ],
+      [
+        "",
+        "Town of Milton",
+        "868",
+        "796",
+        "0"
+      ],
+      [
+        "",
+        "Town of Newark",
+        "472",
+        "290",
+        "0"
+      ],
+      [
+        "",
+        "Town of Plymouth",
+        "310",
+        "240",
+        "0"
+      ],
+      [
+        "",
+        "Town of Porter",
+        "220",
+        "344",
+        "0"
+      ],
+      [
+        "",
+        "Town of Rock Wards 1 - 5 & 8",
+        "465",
+        "526",
+        "0"
+      ],
+      [
+        "",
+        "Town of Rock Wards 6 - 7",
+        "79",
+        "60",
+        "0"
+      ],
+      [
+        "",
+        "Town of Spring Valley",
+        "178",
+        "151",
+        "0"
+      ],
+      [
+        "",
+        "Town of Turtle Ward 1",
+        "195",
+        "150",
+        "1"
+      ],
+      [
+        "",
+        "Town of Turtle Wards 2 - 4",
+        "537",
+        "405",
+        "1"
+      ],
+      [
+        "",
+        "Town of Union",
+        "456",
+        "638",
+        "0"
+      ],
+      [
+        "",
+        "Village of Clinton",
+        "490",
+        "352",
+        "0"
+      ],
+      [
+        "",
+        "Village of Footville",
+        "186",
+        "158",
+        "0"
+      ],
+      [
+        "",
+        "Village of Orfordville",
+        "281",
+        "315",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 1",
+        "86",
+        "143",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 2",
+        "245",
+        "397",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 3",
+        "224",
+        "296",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 4",
+        "177",
+        "297",
+        "2"
+      ],
+      [
+        "",
+        "City of Beloit Ward 5",
+        "221",
+        "320",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 6",
+        "127",
+        "258",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 7",
+        "76",
+        "285",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 8",
+        "73",
+        "241",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 9",
+        "72",
+        "152",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 10",
+        "213",
+        "401",
+        "0"
+      ],
+      [
+        "",
+        "City of Beliot Ward 11",
+        "42",
+        "148",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 12",
+        "69",
+        "378",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 13",
+        "182",
+        "440",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 14",
+        "111",
+        "306",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 15",
+        "33",
+        "211",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 16",
+        "52",
+        "281",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 17",
+        "69",
+        "178",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 18",
+        "118",
+        "289",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 19",
+        "263",
+        "447",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 20",
+        "109",
+        "167",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 21",
+        "146",
+        "204",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 22",
+        "399",
+        "503",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 23",
+        "257",
+        "385",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 24",
+        "0",
+        "2",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 25",
+        "0",
+        "2",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 26",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 27",
+        "62",
+        "96",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 28",
+        "60",
+        "94",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 29",
+        "0",
+        "5",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 30",
+        "0",
+        "2",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 31",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 32",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Brodhead Wards 7 - 8",
+        "19",
+        "24",
+        "0"
+      ],
+      [
+        "",
+        "City of Edgerton Wards 1-6, 8-9",
+        "799",
+        "1,754",
+        "1"
+      ],
+      [
+        "",
+        "City of Evansville",
+        "767",
+        "1,919",
+        "5"
+      ],
+      [
+        "",
+        "City of Janesville Ward 1",
+        "401",
+        "707",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 2",
+        "330",
+        "669",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 3",
+        "230",
+        "582",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 4",
+        "139",
+        "420",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 5",
+        "275",
+        "508",
+        "4"
+      ],
+      [
+        "",
+        "City of Janesville Ward 6",
+        "526",
+        "801",
+        "3"
+      ],
+      [
+        "",
+        "City of Janesville Ward 7",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 8",
+        "410",
+        "801",
+        "4"
+      ],
+      [
+        "",
+        "City of Janesville Ward 9",
+        "309",
+        "539",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 10",
+        "447",
+        "674",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 11",
+        "360",
+        "573",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 12",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 13",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 14",
+        "301",
+        "655",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 15",
+        "476",
+        "953",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 16",
+        "405",
+        "818",
+        "4"
+      ],
+      [
+        "",
+        "City of Janesville Ward 17",
+        "144",
+        "273",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 18",
+        "400",
+        "569",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 19",
+        "431",
+        "575",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 20",
+        "153",
+        "301",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 21",
+        "135",
+        "327",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 22",
+        "271",
+        "515",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 23",
+        "205",
+        "328",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 24",
+        "186",
+        "274",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 25",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 26",
+        "422",
+        "790",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 27",
+        "341",
+        "675",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 28",
+        "250",
+        "506",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 29",
+        "213",
+        "231",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 30",
+        "291",
+        "548",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 31",
+        "282",
+        "526",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 32",
+        "259",
+        "349",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 33",
+        "444",
+        "682",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 34",
+        "470",
+        "586",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 35",
+        "201",
+        "278",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 36",
+        "100",
+        "131",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 37",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 38",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 39",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 40",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Milton",
+        "1,056",
+        "1,574",
+        "5"
+      ],
+      [
+        "",
+        "Total",
+        "26,955",
+        "40,001",
+        "55"
+      ]
+    ],
+    [
+      [
+        "Secretary of State",
+        "Vote For 1",
+        "",
+        "Votes"
+      ],
+      [
+        "Jay Schroeder (Republican)",
+        "",
+        "40.26%",
+        "26,859"
+      ],
+      [
+        "JoCasta Zamarripa (Democratic)",
+        "",
+        "55.49%",
+        "37,019"
+      ],
+      [
+        "Pete Karas (Wisconsin Green)",
+        "",
+        "4.20%",
+        "2,804"
+      ],
+      [
+        "write-in: (NONPARTISAN)",
+        "",
+        "0.05%",
+        "35"
+      ]
+    ],
+    [
+      [
+        "",
+        "Secretary of State",
+        "Jay Schroeder",
+        "JoCasta Zamarripa",
+        "Pete Karas",
+        "write-in:"
+      ],
+      [
+        "",
+        "Town of Avon",
+        "158",
+        "86",
+        "18",
+        "0"
+      ],
+      [
+        "",
+        "Town of Beloit Wards 1-4 & 13",
+        "613",
+        "424",
+        "46",
+        "0"
+      ],
+      [
+        "",
+        "Town of Beloit Ward 5",
+        "5",
+        "2",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "Town of Beloit Wards 6 - 8",
+        "345",
+        "450",
+        "35",
+        "0"
+      ],
+      [
+        "",
+        "Town of Beloit Wards 9 - 12",
+        "796",
+        "775",
+        "46",
+        "0"
+      ],
+      [
+        "",
+        "Town of Bradford",
+        "282",
+        "171",
+        "15",
+        "0"
+      ],
+      [
+        "",
+        "Town of Center",
+        "283",
+        "253",
+        "26",
+        "0"
+      ],
+      [
+        "",
+        "Town of Clinton",
+        "294",
+        "113",
+        "22",
+        "0"
+      ],
+      [
+        "",
+        "Town of Fulton",
+        "977",
+        "952",
+        "86",
+        "1"
+      ],
+      [
+        "",
+        "Town of Harmony",
+        "640",
+        "687",
+        "51",
+        "1"
+      ],
+      [
+        "",
+        "Town of Janesville Wards 1 & 6",
+        "155",
+        "168",
+        "19",
+        "0"
+      ],
+      [
+        "",
+        "Town of Janesville Wards 2-5 & 7-10",
+        "857",
+        "826",
+        "79",
+        "1"
+      ],
+      [
+        "",
+        "Town of Johnstown",
+        "226",
+        "165",
+        "16",
+        "0"
+      ],
+      [
+        "",
+        "Town of La Prairie Ward 1",
+        "168",
+        "105",
+        "8",
+        "0"
+      ],
+      [
+        "",
+        "Town of La Prairie Ward 2",
+        "64",
+        "43",
+        "1",
+        "0"
+      ],
+      [
+        "",
+        "Town of Lima",
+        "249",
+        "277",
+        "16",
+        "0"
+      ],
+      [
+        "",
+        "Town of Magnolia",
+        "174",
+        "154",
+        "17",
+        "0"
+      ],
+      [
+        "",
+        "Town of Milton",
+        "866",
+        "732",
+        "59",
+        "0"
+      ],
+      [
+        "",
+        "Town of Newark",
+        "471",
+        "258",
+        "29",
+        "0"
+      ],
+      [
+        "",
+        "Town of Plymouth",
+        "317",
+        "207",
+        "25",
+        "0"
+      ],
+      [
+        "",
+        "Town of Porter",
+        "225",
+        "318",
+        "16",
+        "0"
+      ],
+      [
+        "",
+        "Town of Rock Wards 1 - 5 & 8",
+        "466",
+        "494",
+        "32",
+        "1"
+      ],
+      [
+        "",
+        "Town of Rock Wards 6 - 7",
+        "77",
+        "53",
+        "9",
+        "0"
+      ],
+      [
+        "",
+        "Town of Spring Valley",
+        "178",
+        "143",
+        "5",
+        "0"
+      ],
+      [
+        "",
+        "Town of Turtle Ward 1",
+        "192",
+        "138",
+        "16",
+        "0"
+      ],
+      [
+        "",
+        "Town of Turtle Wards 2 - 4",
+        "556",
+        "361",
+        "23",
+        "0"
+      ],
+      [
+        "",
+        "Town of Union",
+        "455",
+        "601",
+        "36",
+        "2"
+      ],
+      [
+        "",
+        "Village of Clinton",
+        "480",
+        "310",
+        "46",
+        "0"
+      ],
+      [
+        "",
+        "Village of Footville",
+        "180",
+        "151",
+        "14",
+        "0"
+      ],
+      [
+        "",
+        "Village of Orfordville",
+        "268",
+        "290",
+        "32",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 1",
+        "84",
+        "137",
+        "8",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 2",
+        "246",
+        "372",
+        "21",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 3",
+        "220",
+        "278",
+        "22",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 4",
+        "172",
+        "280",
+        "23",
+        "2"
+      ],
+      [
+        "",
+        "City of Beloit Ward 5",
+        "218",
+        "297",
+        "29",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 6",
+        "123",
+        "241",
+        "20",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 7",
+        "79",
+        "267",
+        "14",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 8",
+        "71",
+        "227",
+        "17",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 9",
+        "68",
+        "142",
+        "13",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 10",
+        "205",
+        "371",
+        "38",
+        "0"
+      ],
+      [
+        "",
+        "City of Beliot Ward 11",
+        "41",
+        "137",
+        "11",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 12",
+        "65",
+        "354",
+        "30",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 13",
+        "182",
+        "407",
+        "27",
+        "2"
+      ],
+      [
+        "",
+        "City of Beloit Ward 14",
+        "107",
+        "287",
+        "20",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 15",
+        "35",
+        "198",
+        "9",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 16",
+        "56",
+        "260",
+        "20",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 17",
+        "72",
+        "169",
+        "7",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 18",
+        "119",
+        "269",
+        "15",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 19",
+        "255",
+        "425",
+        "29",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 20",
+        "114",
+        "151",
+        "13",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 21",
+        "142",
+        "194",
+        "14",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 22",
+        "399",
+        "475",
+        "24",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 23",
+        "252",
+        "353",
+        "30",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 24",
+        "1",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 25",
+        "0",
+        "2",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 26",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 27",
+        "54",
+        "94",
+        "9",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 28",
+        "55",
+        "92",
+        "5",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 29",
+        "0",
+        "4",
+        "1",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 30",
+        "0",
+        "2",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 31",
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 32",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Brodhead Wards 7 - 8",
+        "19",
+        "21",
+        "3",
+        "0"
+      ],
+      [
+        "",
+        "City of Edgerton Wards 1-6, 8-9",
+        "805",
+        "1,631",
+        "104",
+        "0"
+      ],
+      [
+        "",
+        "City of Evansville",
+        "751",
+        "1,764",
+        "147",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 1",
+        "402",
+        "644",
+        "57",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 2",
+        "331",
+        "622",
+        "44",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 3",
+        "226",
+        "547",
+        "37",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 4",
+        "141",
+        "384",
+        "34",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 5",
+        "276",
+        "459",
+        "43",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 6",
+        "529",
+        "746",
+        "48",
+        "4"
+      ],
+      [
+        "",
+        "City of Janesville Ward 7",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 8",
+        "418",
+        "732",
+        "53",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 9",
+        "309",
+        "489",
+        "49",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 10",
+        "438",
+        "621",
+        "59",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 11",
+        "352",
+        "550",
+        "35",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 12",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 13",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 14",
+        "291",
+        "610",
+        "50",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 15",
+        "469",
+        "890",
+        "54",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 16",
+        "399",
+        "771",
+        "43",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 17",
+        "142",
+        "256",
+        "19",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 18",
+        "411",
+        "534",
+        "21",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 19",
+        "433",
+        "529",
+        "41",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 20",
+        "161",
+        "274",
+        "15",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 21",
+        "122",
+        "303",
+        "37",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 22",
+        "281",
+        "485",
+        "18",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 23",
+        "208",
+        "303",
+        "18",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 24",
+        "178",
+        "262",
+        "18",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 25",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 26",
+        "421",
+        "734",
+        "50",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 27",
+        "322",
+        "650",
+        "40",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 28",
+        "242",
+        "472",
+        "35",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 29",
+        "208",
+        "222",
+        "11",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 30",
+        "288",
+        "513",
+        "38",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 31",
+        "295",
+        "473",
+        "35",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 32",
+        "257",
+        "318",
+        "28",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 33",
+        "456",
+        "633",
+        "35",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 34",
+        "467",
+        "542",
+        "38",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 35",
+        "201",
+        "261",
+        "16",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 36",
+        "102",
+        "129",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 37",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 38",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 39",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 40",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Milton",
+        "1,056",
+        "1,451",
+        "118",
+        "1"
+      ],
+      [
+        "",
+        "Total",
+        "26,859",
+        "37,019",
+        "2,804",
+        "35"
+      ]
+    ],
+    [
+      [
+        "State Treasurer",
+        "Vote For 1",
+        "",
+        "Votes"
+      ],
+      [
+        "John S. Leiber (Republican)",
+        "",
+        "43.26%",
+        "28,525"
+      ],
+      [
+        "Yee Leng Xiong (Democratic)",
+        "",
+        "56.64%",
+        "37,343"
+      ],
+      [
+        "write-in: (NONPARTISAN)",
+        "",
+        "0.10%",
+        "63"
+      ]
+    ],
+    [
+      [
+        "",
+        "State Treasurer",
+        "John S. Leiber",
+        "Yee Leng Xiong",
+        "write-in:"
+      ],
+      [
+        "",
+        "Town of Avon",
+        "171",
+        "90",
+        "0"
+      ],
+      [
+        "",
+        "Town of Beloit Wards 1-4 & 13",
+        "644",
+        "428",
+        "0"
+      ],
+      [
+        "",
+        "Town of Beloit Ward 5",
+        "5",
+        "2",
+        "0"
+      ],
+      [
+        "",
+        "Town of Beloit Wards 6 - 8",
+        "349",
+        "462",
+        "1"
+      ],
+      [
+        "",
+        "Town of Beloit Wards 9 - 12",
+        "831",
+        "771",
+        "1"
+      ],
+      [
+        "",
+        "Town of Bradford",
+        "297",
+        "169",
+        "0"
+      ],
+      [
+        "",
+        "Town of Center",
+        "300",
+        "251",
+        "2"
+      ],
+      [
+        "",
+        "Town of Clinton",
+        "316",
+        "114",
+        "0"
+      ],
+      [
+        "",
+        "Town of Fulton",
+        "1,032",
+        "962",
+        "1"
+      ],
+      [
+        "",
+        "Town of Harmony",
+        "679",
+        "687",
+        "0"
+      ],
+      [
+        "",
+        "Town of Janesville Wards 1 & 6",
+        "169",
+        "165",
+        "0"
+      ],
+      [
+        "",
+        "Town of Janesville Wards 2-5 & 7-10",
+        "928",
+        "804",
+        "1"
+      ],
+      [
+        "",
+        "Town of Johnstown",
+        "242",
+        "163",
+        "2"
+      ],
+      [
+        "",
+        "Town of La Prairie Ward 1",
+        "174",
+        "102",
+        "0"
+      ],
+      [
+        "",
+        "Town of La Prairie Ward 2",
+        "66",
+        "42",
+        "0"
+      ],
+      [
+        "",
+        "Town of Lima",
+        "264",
+        "278",
+        "0"
+      ],
+      [
+        "",
+        "Town of Magnolia",
+        "186",
+        "154",
+        "0"
+      ],
+      [
+        "",
+        "Town of Milton",
+        "931",
+        "714",
+        "0"
+      ],
+      [
+        "",
+        "Town of Newark",
+        "492",
+        "266",
+        "0"
+      ],
+      [
+        "",
+        "Town of Plymouth",
+        "328",
+        "211",
+        "1"
+      ],
+      [
+        "",
+        "Town of Porter",
+        "229",
+        "319",
+        "0"
+      ],
+      [
+        "",
+        "Town of Rock Wards 1 - 5 & 8",
+        "492",
+        "491",
+        "0"
+      ],
+      [
+        "",
+        "Town of Rock Wards 6 - 7",
+        "87",
+        "52",
+        "0"
+      ],
+      [
+        "",
+        "Town of Spring Valley",
+        "184",
+        "138",
+        "0"
+      ],
+      [
+        "",
+        "Town of Turtle Ward 1",
+        "204",
+        "139",
+        "1"
+      ],
+      [
+        "",
+        "Town of Turtle Wards 2 - 4",
+        "577",
+        "358",
+        "1"
+      ],
+      [
+        "",
+        "Town of Union",
+        "479",
+        "598",
+        "2"
+      ],
+      [
+        "",
+        "Village of Clinton",
+        "513",
+        "319",
+        "0"
+      ],
+      [
+        "",
+        "Village of Footville",
+        "195",
+        "149",
+        "0"
+      ],
+      [
+        "",
+        "Village of Orfordville",
+        "291",
+        "288",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 1",
+        "92",
+        "133",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 2",
+        "256",
+        "380",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 3",
+        "227",
+        "290",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 4",
+        "182",
+        "286",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 5",
+        "229",
+        "305",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 6",
+        "131",
+        "249",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 7",
+        "78",
+        "278",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 8",
+        "73",
+        "239",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 9",
+        "72",
+        "147",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 10",
+        "218",
+        "383",
+        "0"
+      ],
+      [
+        "",
+        "City of Beliot Ward 11",
+        "43",
+        "143",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 12",
+        "75",
+        "369",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 13",
+        "182",
+        "431",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 14",
+        "119",
+        "286",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 15",
+        "33",
+        "206",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 16",
+        "58",
+        "270",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 17",
+        "72",
+        "172",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 18",
+        "123",
+        "273",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 19",
+        "267",
+        "428",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 20",
+        "113",
+        "160",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 21",
+        "152",
+        "197",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 22",
+        "413",
+        "472",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 23",
+        "272",
+        "362",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 24",
+        "1",
+        "1",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 25",
+        "0",
+        "2",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 26",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 27",
+        "55",
+        "99",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 28",
+        "58",
+        "92",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 29",
+        "0",
+        "5",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 30",
+        "0",
+        "2",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 31",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 32",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Brodhead Wards 7 - 8",
+        "19",
+        "24",
+        "0"
+      ],
+      [
+        "",
+        "City of Edgerton Wards 1-6, 8-9",
+        "858",
+        "1,652",
+        "1"
+      ],
+      [
+        "",
+        "City of Evansville",
+        "823",
+        "1,803",
+        "4"
+      ],
+      [
+        "",
+        "City of Janesville Ward 1",
+        "430",
+        "665",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 2",
+        "349",
+        "635",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 3",
+        "242",
+        "554",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 4",
+        "152",
+        "393",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 5",
+        "297",
+        "473",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 6",
+        "574",
+        "732",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 7",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 8",
+        "434",
+        "759",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 9",
+        "320",
+        "509",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 10",
+        "471",
+        "631",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 11",
+        "375",
+        "539",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 12",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 13",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 14",
+        "324",
+        "622",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 15",
+        "511",
+        "882",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 16",
+        "416",
+        "784",
+        "3"
+      ],
+      [
+        "",
+        "City of Janesville Ward 17",
+        "154",
+        "258",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 18",
+        "420",
+        "529",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 19",
+        "457",
+        "538",
+        "3"
+      ],
+      [
+        "",
+        "City of Janesville Ward 20",
+        "166",
+        "270",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 21",
+        "144",
+        "311",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 22",
+        "291",
+        "488",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 23",
+        "227",
+        "299",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 24",
+        "191",
+        "253",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 25",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 26",
+        "469",
+        "729",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 27",
+        "344",
+        "653",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 28",
+        "262",
+        "478",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 29",
+        "216",
+        "219",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 30",
+        "313",
+        "512",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 31",
+        "316",
+        "468",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 32",
+        "286",
+        "310",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 33",
+        "479",
+        "635",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 34",
+        "506",
+        "537",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 35",
+        "220",
+        "257",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 36",
+        "103",
+        "124",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 37",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 38",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 39",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 40",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Milton",
+        "1,116",
+        "1,471",
+        "6"
+      ],
+      [
+        "",
+        "Total",
+        "28,525",
+        "37,343",
+        "63"
+      ]
+    ],
+    [
+      [
+        "Representative in Congress District 1",
+        "Vote For 1",
+        "",
+        "Votes"
+      ],
+      [
+        "Bryan Steil (Republican)",
+        "",
+        "40.57%",
+        "20,267"
+      ],
+      [
+        "Mitchell Berman (Democratic)",
+        "",
+        "59.30%",
+        "29,622"
+      ],
+      [
+        "write-in: (NONPARTISAN)",
+        "",
+        "0.13%",
+        "65"
+      ]
+    ],
+    [
+      [
+        "",
+        "Representative in Congress District 1",
+        "Bryan Steil",
+        "Mitchell Berman",
+        "write-in:"
+      ],
+      [
+        "",
+        "Town of Beloit Ward 5",
+        "5",
+        "2",
+        "0"
+      ],
+      [
+        "",
+        "Town of Beloit Wards 6 - 8",
+        "352",
+        "476",
+        "1"
+      ],
+      [
+        "",
+        "Town of Bradford",
+        "286",
+        "184",
+        "0"
+      ],
+      [
+        "",
+        "Town of Clinton",
+        "307",
+        "126",
+        "1"
+      ],
+      [
+        "",
+        "Town of Harmony",
+        "670",
+        "717",
+        "1"
+      ],
+      [
+        "",
+        "Town of Janesville Wards 2-5 & 7-10",
+        "904",
+        "861",
+        "0"
+      ],
+      [
+        "",
+        "Town of Johnstown",
+        "236",
+        "175",
+        "1"
+      ],
+      [
+        "",
+        "Town of La Prairie Ward 1",
+        "170",
+        "114",
+        "0"
+      ],
+      [
+        "",
+        "Town of Lima",
+        "258",
+        "290",
+        "0"
+      ],
+      [
+        "",
+        "Town of Milton",
+        "896",
+        "771",
+        "2"
+      ],
+      [
+        "",
+        "Town of Rock Wards 6 - 7",
+        "82",
+        "58",
+        "0"
+      ],
+      [
+        "",
+        "Town of Turtle Wards 2 - 4",
+        "566",
+        "382",
+        "2"
+      ],
+      [
+        "",
+        "Village of Clinton",
+        "497",
+        "343",
+        "2"
+      ],
+      [
+        "",
+        "City of Beloit Ward 1",
+        "89",
+        "139",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 2",
+        "256",
+        "388",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 3",
+        "228",
+        "290",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 4",
+        "184",
+        "290",
+        "2"
+      ],
+      [
+        "",
+        "City of Beloit Ward 5",
+        "225",
+        "321",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 6",
+        "125",
+        "263",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 7",
+        "83",
+        "280",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 8",
+        "79",
+        "238",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 9",
+        "70",
+        "156",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 10",
+        "218",
+        "395",
+        "0"
+      ],
+      [
+        "",
+        "City of Beliot Ward 11",
+        "44",
+        "146",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 12",
+        "65",
+        "388",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 13",
+        "189",
+        "437",
+        "2"
+      ],
+      [
+        "",
+        "City of Beloit Ward 14",
+        "114",
+        "303",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 15",
+        "36",
+        "206",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 16",
+        "62",
+        "270",
+        "2"
+      ],
+      [
+        "",
+        "City of Beloit Ward 17",
+        "76",
+        "173",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 18",
+        "121",
+        "287",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 19",
+        "273",
+        "436",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 20",
+        "123",
+        "155",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 21",
+        "151",
+        "199",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 22",
+        "410",
+        "501",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 23",
+        "258",
+        "388",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 27",
+        "56",
+        "103",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 28",
+        "57",
+        "96",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 29",
+        "0",
+        "4",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 30",
+        "0",
+        "2",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 1",
+        "412",
+        "700",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 2",
+        "349",
+        "650",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 3",
+        "234",
+        "580",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 4",
+        "147",
+        "412",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 5",
+        "288",
+        "493",
+        "3"
+      ],
+      [
+        "",
+        "City of Janesville Ward 6",
+        "565",
+        "770",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 8",
+        "445",
+        "772",
+        "3"
+      ],
+      [
+        "",
+        "City of Janesville Ward 9",
+        "334",
+        "519",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 10",
+        "466",
+        "659",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 11",
+        "372",
+        "568",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 14",
+        "324",
+        "640",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 15",
+        "513",
+        "920",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 16",
+        "412",
+        "818",
+        "4"
+      ],
+      [
+        "",
+        "City of Janesville Ward 17",
+        "156",
+        "265",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 18",
+        "425",
+        "551",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 19",
+        "451",
+        "556",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 20",
+        "170",
+        "285",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 21",
+        "134",
+        "330",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 22",
+        "292",
+        "498",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 23",
+        "224",
+        "309",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 24",
+        "196",
+        "266",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 25",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 26",
+        "443",
+        "771",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 27",
+        "340",
+        "679",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 28",
+        "259",
+        "496",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 29",
+        "216",
+        "226",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 30",
+        "298",
+        "540",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 31",
+        "315",
+        "497",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 32",
+        "287",
+        "325",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 33",
+        "479",
+        "662",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 34",
+        "494",
+        "569",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 35",
+        "213",
+        "270",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 36",
+        "101",
+        "129",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 37",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 38",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 39",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 40",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Milton",
+        "1,092",
+        "1,543",
+        "5"
+      ],
+      [
+        "",
+        "Total",
+        "20,267",
+        "29,622",
+        "65"
+      ]
+    ],
+    [
+      [
+        "Representative in Congress District 2",
+        "Vote For 1",
+        "",
+        "Votes"
+      ],
+      [
+        "Mark Pocan (Democratic)",
+        "",
+        "94.50%",
+        "11,909"
+      ],
+      [
+        "write-in: (NONPARTISAN)",
+        "",
+        "5.50%",
+        "693"
+      ]
+    ],
+    [
+      [
+        "",
+        "Representative in Congress District 2",
+        "Mark Pocan",
+        "write-in:"
+      ],
+      [
+        "",
+        "Town of Avon",
+        "162",
+        "8"
+      ],
+      [
+        "",
+        "Town of Beloit Wards 1-4 & 13",
+        "625",
+        "55"
+      ],
+      [
+        "",
+        "Town of Beloit Wards 9 - 12",
+        "1,051",
+        "64"
+      ],
+      [
+        "",
+        "Town of Center",
+        "375",
+        "20"
+      ],
+      [
+        "",
+        "Town of Fulton",
+        "1,351",
+        "97"
+      ],
+      [
+        "",
+        "Town of Janesville Wards 1 & 6",
+        "231",
+        "11"
+      ],
+      [
+        "",
+        "Town of La Prairie Ward 2",
+        "72",
+        "3"
+      ],
+      [
+        "",
+        "Town of Magnolia",
+        "231",
+        "9"
+      ],
+      [
+        "",
+        "Town of Newark",
+        "428",
+        "49"
+      ],
+      [
+        "",
+        "Town of Plymouth",
+        "341",
+        "27"
+      ],
+      [
+        "",
+        "Town of Porter",
+        "388",
+        "15"
+      ],
+      [
+        "",
+        "Town of Rock Wards 1 - 5 & 8",
+        "671",
+        "49"
+      ],
+      [
+        "",
+        "Town of Spring Valley",
+        "202",
+        "11"
+      ],
+      [
+        "",
+        "Town of Turtle Ward 1",
+        "215",
+        "18"
+      ],
+      [
+        "",
+        "Town of Union",
+        "765",
+        "55"
+      ],
+      [
+        "",
+        "Village of Footville",
+        "221",
+        "12"
+      ],
+      [
+        "",
+        "Village of Orfordville",
+        "402",
+        "31"
+      ],
+      [
+        "",
+        "City of Beloit Ward 24",
+        "2",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 25",
+        "2",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 26",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 31",
+        "1",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 32",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Brodhead Wards 7 - 8",
+        "32",
+        "1"
+      ],
+      [
+        "",
+        "City of Edgerton Wards 1-6, 8-9",
+        "2,011",
+        "74"
+      ],
+      [
+        "",
+        "City of Evansville",
+        "2,130",
+        "84"
+      ],
+      [
+        "",
+        "City of Janesville Ward 7",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 12",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 13",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "Total",
+        "11,909",
+        "693"
+      ]
+    ],
+    [
+      [
+        "State Senator District 11",
+        "Vote For 1",
+        "",
+        "Votes"
+      ],
+      [
+        "Ellen Schutt (Republican)",
+        "",
+        "66.90%",
+        "1,166"
+      ],
+      [
+        "Adam Duda (Democratic)",
+        "",
+        "33.10%",
+        "577"
+      ],
+      [
+        "write-in: (NONPARTISAN)",
+        "",
+        "0.00%",
+        "0"
+      ]
+    ],
+    [
+      [
+        "",
+        "State Senator District 11",
+        "Ellen Schutt",
+        "Adam Duda",
+        "write-in:"
+      ],
+      [
+        "",
+        "Town of Bradford",
+        "308",
+        "163",
+        "0"
+      ],
+      [
+        "",
+        "Town of Clinton",
+        "323",
+        "108",
+        "0"
+      ],
+      [
+        "",
+        "Village of Clinton",
+        "535",
+        "306",
+        "0"
+      ],
+      [
+        "",
+        "Total",
+        "1,166",
+        "577",
+        "0"
+      ]
+    ],
+    [
+      [
+        "State Senator District 15",
+        "Vote For 1",
+        "",
+        "Votes"
+      ],
+      [
+        "Scott Fleming (Republican)",
+        "",
+        "37.91%",
+        "24,723"
+      ],
+      [
+        "Mark Spreitzer (Democratic)",
+        "",
+        "57.38%",
+        "37,425"
+      ],
+      [
+        "Christopher Dean (Serving People Not Parties)",
+        "",
+        "4.68%",
+        "3,051"
+      ],
+      [
+        "write-in: (NONPARTISAN)",
+        "",
+        "0.04%",
+        "24"
+      ]
+    ],
+    [
+      [
+        "",
+        "State Senator District 15",
+        "Scott Fleming",
+        "Mark Spreitzer",
+        "Christopher Dean",
+        "write-in:"
+      ],
+      [
+        "",
+        "Town of Avon",
+        "144",
+        "98",
+        "20",
+        "0"
+      ],
+      [
+        "",
+        "Town of Beloit Wards 1-4 & 13",
+        "593",
+        "461",
+        "34",
+        "1"
+      ],
+      [
+        "",
+        "Town of Beloit Ward 5",
+        "5",
+        "2",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "Town of Beloit Wards 6 - 8",
+        "321",
+        "469",
+        "43",
+        "0"
+      ],
+      [
+        "",
+        "Town of Beloit Wards 9 - 12",
+        "759",
+        "814",
+        "51",
+        "0"
+      ],
+      [
+        "",
+        "Town of Center",
+        "262",
+        "269",
+        "30",
+        "0"
+      ],
+      [
+        "",
+        "Town of Fulton",
+        "947",
+        "978",
+        "90",
+        "0"
+      ],
+      [
+        "",
+        "Town of Harmony",
+        "620",
+        "710",
+        "53",
+        "0"
+      ],
+      [
+        "",
+        "Town of Janesville Wards 1 & 6",
+        "164",
+        "171",
+        "12",
+        "0"
+      ],
+      [
+        "",
+        "Town of Janesville Wards 2-5 & 7-10",
+        "832",
+        "865",
+        "68",
+        "0"
+      ],
+      [
+        "",
+        "Town of Johnstown",
+        "225",
+        "164",
+        "20",
+        "1"
+      ],
+      [
+        "",
+        "Town of La Prairie Ward 1",
+        "164",
+        "107",
+        "11",
+        "0"
+      ],
+      [
+        "",
+        "Town of La Prairie Ward 2",
+        "59",
+        "46",
+        "5",
+        "0"
+      ],
+      [
+        "",
+        "Town of Lima",
+        "252",
+        "276",
+        "17",
+        "0"
+      ],
+      [
+        "",
+        "Town of Magnolia",
+        "168",
+        "161",
+        "17",
+        "0"
+      ],
+      [
+        "",
+        "Town of Milton",
+        "844",
+        "750",
+        "61",
+        "0"
+      ],
+      [
+        "",
+        "Town of Newark",
+        "447",
+        "290",
+        "26",
+        "0"
+      ],
+      [
+        "",
+        "Town of Plymouth",
+        "297",
+        "217",
+        "34",
+        "0"
+      ],
+      [
+        "",
+        "Town of Porter",
+        "219",
+        "329",
+        "16",
+        "0"
+      ],
+      [
+        "",
+        "Town of Rock Wards 1 - 5 & 8",
+        "444",
+        "503",
+        "50",
+        "0"
+      ],
+      [
+        "",
+        "Town of Rock Wards 6 - 7",
+        "78",
+        "53",
+        "9",
+        "0"
+      ],
+      [
+        "",
+        "Town of Spring Valley",
+        "167",
+        "148",
+        "11",
+        "0"
+      ],
+      [
+        "",
+        "Town of Turtle Ward 1",
+        "184",
+        "144",
+        "18",
+        "0"
+      ],
+      [
+        "",
+        "Town of Turtle Wards 2 - 4",
+        "551",
+        "368",
+        "28",
+        "1"
+      ],
+      [
+        "",
+        "Town of Union",
+        "430",
+        "623",
+        "41",
+        "0"
+      ],
+      [
+        "",
+        "Village of Footville",
+        "172",
+        "152",
+        "20",
+        "0"
+      ],
+      [
+        "",
+        "Village of Orfordville",
+        "258",
+        "301",
+        "38",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 1",
+        "81",
+        "138",
+        "11",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 2",
+        "237",
+        "395",
+        "17",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 3",
+        "211",
+        "284",
+        "26",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 4",
+        "171",
+        "281",
+        "23",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 5",
+        "215",
+        "293",
+        "39",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 6",
+        "120",
+        "244",
+        "22",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 7",
+        "70",
+        "274",
+        "18",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 8",
+        "69",
+        "229",
+        "17",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 9",
+        "65",
+        "148",
+        "13",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 10",
+        "197",
+        "379",
+        "40",
+        "0"
+      ],
+      [
+        "",
+        "City of Beliot Ward 11",
+        "40",
+        "139",
+        "9",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 12",
+        "60",
+        "369",
+        "20",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 13",
+        "173",
+        "422",
+        "27",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 14",
+        "100",
+        "286",
+        "33",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 15",
+        "34",
+        "196",
+        "13",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 16",
+        "52",
+        "260",
+        "25",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 17",
+        "64",
+        "178",
+        "7",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 18",
+        "113",
+        "273",
+        "22",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 19",
+        "237",
+        "439",
+        "34",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 20",
+        "108",
+        "153",
+        "17",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 21",
+        "136",
+        "198",
+        "21",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 22",
+        "389",
+        "490",
+        "27",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 23",
+        "241",
+        "361",
+        "40",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 24",
+        "0",
+        "2",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 25",
+        "0",
+        "2",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 26",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 27",
+        "52",
+        "93",
+        "14",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 28",
+        "57",
+        "93",
+        "4",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 29",
+        "0",
+        "5",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 30",
+        "0",
+        "2",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 31",
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 32",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Edgerton Wards 1-6, 8-9",
+        "748",
+        "1,660",
+        "143",
+        "0"
+      ],
+      [
+        "",
+        "City of Evansville",
+        "705",
+        "1,862",
+        "116",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 1",
+        "379",
+        "668",
+        "60",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 2",
+        "324",
+        "629",
+        "44",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 3",
+        "207",
+        "551",
+        "56",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 4",
+        "133",
+        "387",
+        "39",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 5",
+        "255",
+        "467",
+        "63",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 6",
+        "502",
+        "755",
+        "66",
+        "3"
+      ],
+      [
+        "",
+        "City of Janesville Ward 7",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 8",
+        "396",
+        "760",
+        "62",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 9",
+        "295",
+        "503",
+        "52",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 10",
+        "422",
+        "643",
+        "56",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 11",
+        "337",
+        "552",
+        "44",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 12",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 13",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 14",
+        "288",
+        "620",
+        "54",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 15",
+        "456",
+        "912",
+        "54",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 16",
+        "382",
+        "786",
+        "50",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 17",
+        "144",
+        "255",
+        "19",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 18",
+        "380",
+        "556",
+        "32",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 19",
+        "417",
+        "540",
+        "51",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 20",
+        "152",
+        "291",
+        "10",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 21",
+        "120",
+        "304",
+        "40",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 22",
+        "261",
+        "492",
+        "32",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 23",
+        "201",
+        "306",
+        "24",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 24",
+        "172",
+        "261",
+        "27",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 25",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 26",
+        "397",
+        "756",
+        "58",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 27",
+        "311",
+        "647",
+        "55",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 28",
+        "239",
+        "479",
+        "35",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 29",
+        "202",
+        "223",
+        "17",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 30",
+        "272",
+        "525",
+        "39",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 31",
+        "273",
+        "503",
+        "33",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 32",
+        "257",
+        "326",
+        "24",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 33",
+        "441",
+        "652",
+        "41",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 34",
+        "455",
+        "557",
+        "45",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 35",
+        "195",
+        "269",
+        "17",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 36",
+        "97",
+        "129",
+        "5",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 37",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 38",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 39",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 40",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Milton",
+        "1,010",
+        "1,503",
+        "125",
+        "1"
+      ],
+      [
+        "",
+        "Total",
+        "24,723",
+        "37,425",
+        "3,051",
+        "24"
+      ]
+    ],
+    [
+      [
+        "State Senator District 17",
+        "Vote For 1",
+        "",
+        "Votes"
+      ],
+      [
+        "Howard Marklein (Republican)",
+        "",
+        "42.86%",
+        "18"
+      ],
+      [
+        "Jenna Jacobson (Democratic)",
+        "",
+        "57.14%",
+        "24"
+      ],
+      [
+        "write-in: (NONPARTISAN)",
+        "",
+        "0.00%",
+        "0"
+      ]
+    ],
+    [
+      [
+        "",
+        "State Senator District 17",
+        "Howard Marklein",
+        "Jenna Jacobson",
+        "write-in:"
+      ],
+      [
+        "",
+        "City of Brodhead Wards 7 - 8",
+        "18",
+        "24",
+        "0"
+      ],
+      [
+        "",
+        "Total",
+        "18",
+        "24",
+        "0"
+      ]
+    ],
+    [
+      [
+        "Representative to the Assembly District 31",
+        "Vote For 1",
+        "",
+        "Votes"
+      ],
+      [
+        "Tyler August (Republican)",
+        "",
+        "61.57%",
+        "1,051"
+      ],
+      [
+        "John Perryman (Democratic)",
+        "",
+        "38.37%",
+        "655"
+      ],
+      [
+        "write-in: (NONPARTISAN)",
+        "",
+        "0.06%",
+        "1"
+      ]
+    ],
+    [
+      [
+        "",
+        "Representative to the Assembly District 31",
+        "Tyler August",
+        "John Perryman",
+        "write-in:"
+      ],
+      [
+        "",
+        "Town of Bradford",
+        "275",
+        "186",
+        "0"
+      ],
+      [
+        "",
+        "Town of Clinton",
+        "299",
+        "126",
+        "0"
+      ],
+      [
+        "",
+        "Village of Clinton",
+        "477",
+        "343",
+        "1"
+      ],
+      [
+        "",
+        "Total",
+        "1,051",
+        "655",
+        "1"
+      ]
+    ],
+    [
+      [
+        "Representative to the Assembly District 43",
+        "Vote For 1",
+        "",
+        "Votes"
+      ],
+      [
+        "Paul McGraw (Republican)",
+        "",
+        "41.62%",
+        "8,172"
+      ],
+      [
+        "Brienne Brown (Democratic)",
+        "",
+        "58.30%",
+        "11,449"
+      ],
+      [
+        "write-in: (NONPARTISAN)",
+        "",
+        "0.08%",
+        "16"
+      ]
+    ],
+    [
+      [
+        "",
+        "Representative to the Assembly District 43",
+        "Paul McGraw",
+        "Brienne Brown",
+        "write-in:"
+      ],
+      [
+        "",
+        "Town of Fulton",
+        "972",
+        "1,024",
+        "1"
+      ],
+      [
+        "",
+        "Town of Harmony",
+        "633",
+        "739",
+        "0"
+      ],
+      [
+        "",
+        "Town of Johnstown",
+        "225",
+        "178",
+        "0"
+      ],
+      [
+        "",
+        "Town of Lima",
+        "255",
+        "290",
+        "0"
+      ],
+      [
+        "",
+        "Town of Milton",
+        "856",
+        "793",
+        "0"
+      ],
+      [
+        "",
+        "City of Edgerton Wards 1-6, 8-9",
+        "790",
+        "1,740",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 17",
+        "147",
+        "269",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 18",
+        "404",
+        "562",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 19",
+        "425",
+        "574",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 20",
+        "157",
+        "291",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 21",
+        "129",
+        "328",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 22",
+        "274",
+        "508",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 23",
+        "204",
+        "319",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 24",
+        "187",
+        "269",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 25",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 32",
+        "265",
+        "336",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 33",
+        "442",
+        "678",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 34",
+        "472",
+        "569",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 35",
+        "205",
+        "273",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 36",
+        "100",
+        "130",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 39",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Milton",
+        "1,030",
+        "1,579",
+        "7"
+      ],
+      [
+        "",
+        "Total",
+        "8,172",
+        "11,449",
+        "16"
+      ]
+    ],
+    [
+      [
+        "Representative to the Assembly District 44",
+        "Vote For 1",
+        "",
+        "Votes"
+      ],
+      [
+        "Ron Woodman (Republican)",
+        "",
+        "38.17%",
+        "9,144"
+      ],
+      [
+        "Ann Roe (Democratic)",
+        "",
+        "61.73%",
+        "14,786"
+      ],
+      [
+        "write-in: (NONPARTISAN)",
+        "",
+        "0.10%",
+        "23"
+      ]
+    ],
+    [
+      [
+        "",
+        "Representative to the Assembly District 44",
+        "Ron Woodman",
+        "Ann Roe",
+        "write-in:"
+      ],
+      [
+        "",
+        "Town of Center",
+        "281",
+        "282",
+        "0"
+      ],
+      [
+        "",
+        "Town of Janesville Wards 1 & 6",
+        "161",
+        "186",
+        "0"
+      ],
+      [
+        "",
+        "Town of Janesville Wards 2-5 & 7-10",
+        "841",
+        "918",
+        "0"
+      ],
+      [
+        "",
+        "Town of La Prairie Ward 1",
+        "159",
+        "125",
+        "2"
+      ],
+      [
+        "",
+        "Town of La Prairie Ward 2",
+        "63",
+        "46",
+        "0"
+      ],
+      [
+        "",
+        "Town of Plymouth",
+        "322",
+        "226",
+        "0"
+      ],
+      [
+        "",
+        "Town of Porter",
+        "227",
+        "335",
+        "0"
+      ],
+      [
+        "",
+        "Town of Rock Wards 1 - 5 & 8",
+        "458",
+        "529",
+        "0"
+      ],
+      [
+        "",
+        "Town of Rock Wards 6 - 7",
+        "79",
+        "61",
+        "0"
+      ],
+      [
+        "",
+        "Village of Footville",
+        "187",
+        "159",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 1",
+        "401",
+        "706",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 2",
+        "335",
+        "661",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 3",
+        "226",
+        "582",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 4",
+        "149",
+        "403",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 5",
+        "280",
+        "500",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 6",
+        "513",
+        "807",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 7",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 8",
+        "413",
+        "796",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 9",
+        "315",
+        "531",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 10",
+        "456",
+        "661",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 11",
+        "346",
+        "579",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 12",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 13",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 14",
+        "302",
+        "647",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 15",
+        "455",
+        "961",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 16",
+        "383",
+        "833",
+        "3"
+      ],
+      [
+        "",
+        "City of Janesville Ward 26",
+        "425",
+        "783",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 27",
+        "330",
+        "679",
+        "2"
+      ],
+      [
+        "",
+        "City of Janesville Ward 28",
+        "245",
+        "504",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 29",
+        "214",
+        "229",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 30",
+        "287",
+        "545",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 31",
+        "291",
+        "511",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 37",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 38",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 40",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "Total",
+        "9,144",
+        "14,786",
+        "23"
+      ]
+    ],
+    [
+      [
+        "Representative to the Assembly District 45",
+        "Vote For 1",
+        "",
+        "Votes"
+      ],
+      [
+        "Jocelyn Jordan (Republican)",
+        "",
+        "39.17%",
+        "8,276"
+      ],
+      [
+        "Clinton Anderson (Democratic)",
+        "",
+        "60.73%",
+        "12,831"
+      ],
+      [
+        "write-in: (NONPARTISAN)",
+        "",
+        "0.10%",
+        "21"
+      ]
+    ],
+    [
+      [
+        "",
+        "Representative to the Assembly District 45",
+        "Jocelyn Jordan",
+        "Clinton Anderson",
+        "write-in:"
+      ],
+      [
+        "",
+        "Town of Avon",
+        "158",
+        "102",
+        "0"
+      ],
+      [
+        "",
+        "Town of Beloit Wards 1-4 & 13",
+        "599",
+        "478",
+        "1"
+      ],
+      [
+        "",
+        "Town of Beloit Ward 5",
+        "5",
+        "2",
+        "0"
+      ],
+      [
+        "",
+        "Town of Beloit Wards 6 - 8",
+        "334",
+        "488",
+        "1"
+      ],
+      [
+        "",
+        "Town of Beloit Wards 9 - 12",
+        "777",
+        "835",
+        "1"
+      ],
+      [
+        "",
+        "Town of Magnolia",
+        "169",
+        "171",
+        "0"
+      ],
+      [
+        "",
+        "Town of Newark",
+        "460",
+        "294",
+        "1"
+      ],
+      [
+        "",
+        "Town of Spring Valley",
+        "176",
+        "146",
+        "0"
+      ],
+      [
+        "",
+        "Town of Turtle Ward 1",
+        "188",
+        "152",
+        "1"
+      ],
+      [
+        "",
+        "Town of Turtle Wards 2 - 4",
+        "547",
+        "387",
+        "1"
+      ],
+      [
+        "",
+        "Town of Union",
+        "438",
+        "640",
+        "1"
+      ],
+      [
+        "",
+        "Village of Orfordville",
+        "270",
+        "320",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 1",
+        "86",
+        "142",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 2",
+        "246",
+        "391",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 3",
+        "216",
+        "306",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 4",
+        "175",
+        "295",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 5",
+        "216",
+        "323",
+        "2"
+      ],
+      [
+        "",
+        "City of Beloit Ward 6",
+        "129",
+        "253",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 7",
+        "72",
+        "283",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 8",
+        "73",
+        "242",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 9",
+        "67",
+        "157",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 10",
+        "205",
+        "400",
+        "0"
+      ],
+      [
+        "",
+        "City of Beliot Ward 11",
+        "43",
+        "145",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 12",
+        "64",
+        "377",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 13",
+        "179",
+        "442",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 14",
+        "112",
+        "304",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 15",
+        "37",
+        "204",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 16",
+        "56",
+        "275",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 17",
+        "69",
+        "179",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 18",
+        "118",
+        "284",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 19",
+        "244",
+        "458",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 20",
+        "107",
+        "167",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 21",
+        "138",
+        "209",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 22",
+        "389",
+        "507",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 23",
+        "255",
+        "377",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 24",
+        "0",
+        "2",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 25",
+        "0",
+        "2",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 26",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 27",
+        "58",
+        "96",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 28",
+        "57",
+        "94",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 29",
+        "0",
+        "5",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 30",
+        "0",
+        "2",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 31",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 32",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Evansville",
+        "743",
+        "1,895",
+        "3"
+      ],
+      [
+        "",
+        "Total",
+        "8,276",
+        "12,831",
+        "21"
+      ]
+    ],
+    [
+      [
+        "Representative to the Assembly District 50",
+        "Vote For 1",
+        "",
+        "Votes"
+      ],
+      [
+        "Jon Aleckson (Republican)",
+        "",
+        "44.19%",
+        "19"
+      ],
+      [
+        "Bill Oemichen (Democratic)",
+        "",
+        "55.81%",
+        "24"
+      ],
+      [
+        "write-in: (NONPARTISAN)",
+        "",
+        "0.00%",
+        "0"
+      ]
+    ],
+    [
+      [
+        "",
+        "Representative to the Assembly District 50",
+        "Jon Aleckson",
+        "Bill Oemichen",
+        "write-in:"
+      ],
+      [
+        "",
+        "City of Brodhead Wards 7 - 8",
+        "19",
+        "24",
+        "0"
+      ],
+      [
+        "",
+        "Total",
+        "19",
+        "24",
+        "0"
+      ]
+    ],
+    [
+      [
+        "Sheriff Rock County",
+        "Vote For 1",
+        "",
+        "Votes"
+      ],
+      [
+        "Curtis Fell (Democratic)",
+        "",
+        "97.00%",
+        "51,809"
+      ],
+      [
+        "write-in: (NONPARTISAN)",
+        "",
+        "3.00%",
+        "1,601"
+      ]
+    ],
+    [
+      [
+        "",
+        "Sheriff Rock County",
+        "Curtis Fell",
+        "write-in:"
+      ],
+      [
+        "",
+        "Town of Avon",
+        "174",
+        "3"
+      ],
+      [
+        "",
+        "Town of Beloit Wards 1-4 & 13",
+        "728",
+        "23"
+      ],
+      [
+        "",
+        "Town of Beloit Ward 5",
+        "5",
+        "0"
+      ],
+      [
+        "",
+        "Town of Beloit Wards 6 - 8",
+        "637",
+        "18"
+      ],
+      [
+        "",
+        "Town of Beloit Wards 9 - 12",
+        "1,201",
+        "29"
+      ],
+      [
+        "",
+        "Town of Bradford",
+        "344",
+        "11"
+      ],
+      [
+        "",
+        "Town of Center",
+        "392",
+        "11"
+      ],
+      [
+        "",
+        "Town of Clinton",
+        "287",
+        "16"
+      ],
+      [
+        "",
+        "Town of Fulton",
+        "1,436",
+        "58"
+      ],
+      [
+        "",
+        "Town of Harmony",
+        "1,093",
+        "36"
+      ],
+      [
+        "",
+        "Town of Janesville Wards 1 & 6",
+        "246",
+        "6"
+      ],
+      [
+        "",
+        "Town of Janesville Wards 2-5 & 7-10",
+        "1,298",
+        "39"
+      ],
+      [
+        "",
+        "Town of Johnstown",
+        "295",
+        "12"
+      ],
+      [
+        "",
+        "Town of La Prairie Ward 1",
+        "206",
+        "5"
+      ],
+      [
+        "",
+        "Town of La Prairie Ward 2",
+        "78",
+        "3"
+      ],
+      [
+        "",
+        "Town of Lima",
+        "400",
+        "16"
+      ],
+      [
+        "",
+        "Town of Magnolia",
+        "250",
+        "4"
+      ],
+      [
+        "",
+        "Town of Milton",
+        "1,213",
+        "46"
+      ],
+      [
+        "",
+        "Town of Newark",
+        "485",
+        "32"
+      ],
+      [
+        "",
+        "Town of Plymouth",
+        "381",
+        "20"
+      ],
+      [
+        "",
+        "Town of Porter",
+        "416",
+        "14"
+      ],
+      [
+        "",
+        "Town of Rock Wards 1 - 5 & 8",
+        "700",
+        "35"
+      ],
+      [
+        "",
+        "Town of Rock Wards 6 - 7",
+        "102",
+        "8"
+      ],
+      [
+        "",
+        "Town of Spring Valley",
+        "216",
+        "8"
+      ],
+      [
+        "",
+        "Town of Turtle Ward 1",
+        "245",
+        "10"
+      ],
+      [
+        "",
+        "Town of Turtle Wards 2 - 4",
+        "685",
+        "22"
+      ],
+      [
+        "",
+        "Town of Union",
+        "821",
+        "28"
+      ],
+      [
+        "",
+        "Village of Clinton",
+        "596",
+        "18"
+      ],
+      [
+        "",
+        "Village of Footville",
+        "245",
+        "11"
+      ],
+      [
+        "",
+        "Village of Orfordville",
+        "436",
+        "16"
+      ],
+      [
+        "",
+        "City of Beloit Ward 1",
+        "184",
+        "5"
+      ],
+      [
+        "",
+        "City of Beloit Ward 2",
+        "501",
+        "20"
+      ],
+      [
+        "",
+        "City of Beloit Ward 3",
+        "384",
+        "19"
+      ],
+      [
+        "",
+        "City of Beloit Ward 4",
+        "367",
+        "18"
+      ],
+      [
+        "",
+        "City of Beloit Ward 5",
+        "416",
+        "25"
+      ],
+      [
+        "",
+        "City of Beloit Ward 6",
+        "305",
+        "7"
+      ],
+      [
+        "",
+        "City of Beloit Ward 7",
+        "314",
+        "10"
+      ],
+      [
+        "",
+        "City of Beloit Ward 8",
+        "269",
+        "4"
+      ],
+      [
+        "",
+        "City of Beloit Ward 9",
+        "195",
+        "2"
+      ],
+      [
+        "",
+        "City of Beloit Ward 10",
+        "495",
+        "23"
+      ],
+      [
+        "",
+        "City of Beliot Ward 11",
+        "153",
+        "3"
+      ],
+      [
+        "",
+        "City of Beloit Ward 12",
+        "387",
+        "6"
+      ],
+      [
+        "",
+        "City of Beloit Ward 13",
+        "502",
+        "22"
+      ],
+      [
+        "",
+        "City of Beloit Ward 14",
+        "350",
+        "7"
+      ],
+      [
+        "",
+        "City of Beloit Ward 15",
+        "219",
+        "2"
+      ],
+      [
+        "",
+        "City of Beloit Ward 16",
+        "294",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 17",
+        "206",
+        "5"
+      ],
+      [
+        "",
+        "City of Beloit Ward 18",
+        "330",
+        "11"
+      ],
+      [
+        "",
+        "City of Beloit Ward 19",
+        "578",
+        "11"
+      ],
+      [
+        "",
+        "City of Beloit Ward 20",
+        "210",
+        "10"
+      ],
+      [
+        "",
+        "City of Beloit Ward 21",
+        "278",
+        "9"
+      ],
+      [
+        "",
+        "City of Beloit Ward 22",
+        "689",
+        "20"
+      ],
+      [
+        "",
+        "City of Beloit Ward 23",
+        "506",
+        "22"
+      ],
+      [
+        "",
+        "City of Beloit Ward 24",
+        "2",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 25",
+        "2",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 26",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 27",
+        "121",
+        "12"
+      ],
+      [
+        "",
+        "City of Beloit Ward 28",
+        "124",
+        "2"
+      ],
+      [
+        "",
+        "City of Beloit Ward 29",
+        "4",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 30",
+        "2",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 31",
+        "1",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 32",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Brodhead Wards 7 - 8",
+        "32",
+        "1"
+      ],
+      [
+        "",
+        "City of Edgerton Wards 1-6, 8-9",
+        "2,060",
+        "50"
+      ],
+      [
+        "",
+        "City of Evansville",
+        "2,161",
+        "52"
+      ],
+      [
+        "",
+        "City of Janesville Ward 1",
+        "891",
+        "19"
+      ],
+      [
+        "",
+        "City of Janesville Ward 2",
+        "809",
+        "28"
+      ],
+      [
+        "",
+        "City of Janesville Ward 3",
+        "665",
+        "22"
+      ],
+      [
+        "",
+        "City of Janesville Ward 4",
+        "464",
+        "12"
+      ],
+      [
+        "",
+        "City of Janesville Ward 5",
+        "631",
+        "20"
+      ],
+      [
+        "",
+        "City of Janesville Ward 6",
+        "1,033",
+        "26"
+      ],
+      [
+        "",
+        "City of Janesville Ward 7",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 8",
+        "968",
+        "24"
+      ],
+      [
+        "",
+        "City of Janesville Ward 9",
+        "694",
+        "20"
+      ],
+      [
+        "",
+        "City of Janesville Ward 10",
+        "908",
+        "26"
+      ],
+      [
+        "",
+        "City of Janesville Ward 11",
+        "731",
+        "34"
+      ],
+      [
+        "",
+        "City of Janesville Ward 12",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 13",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 14",
+        "751",
+        "9"
+      ],
+      [
+        "",
+        "City of Janesville Ward 15",
+        "1,100",
+        "21"
+      ],
+      [
+        "",
+        "City of Janesville Ward 16",
+        "954",
+        "17"
+      ],
+      [
+        "",
+        "City of Janesville Ward 17",
+        "338",
+        "15"
+      ],
+      [
+        "",
+        "City of Janesville Ward 18",
+        "761",
+        "14"
+      ],
+      [
+        "",
+        "City of Janesville Ward 19",
+        "779",
+        "35"
+      ],
+      [
+        "",
+        "City of Janesville Ward 20",
+        "356",
+        "6"
+      ],
+      [
+        "",
+        "City of Janesville Ward 21",
+        "392",
+        "7"
+      ],
+      [
+        "",
+        "City of Janesville Ward 22",
+        "656",
+        "6"
+      ],
+      [
+        "",
+        "City of Janesville Ward 23",
+        "431",
+        "15"
+      ],
+      [
+        "",
+        "City of Janesville Ward 24",
+        "373",
+        "10"
+      ],
+      [
+        "",
+        "City of Janesville Ward 25",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 26",
+        "993",
+        "34"
+      ],
+      [
+        "",
+        "City of Janesville Ward 27",
+        "829",
+        "24"
+      ],
+      [
+        "",
+        "City of Janesville Ward 28",
+        "608",
+        "9"
+      ],
+      [
+        "",
+        "City of Janesville Ward 29",
+        "334",
+        "11"
+      ],
+      [
+        "",
+        "City of Janesville Ward 30",
+        "679",
+        "14"
+      ],
+      [
+        "",
+        "City of Janesville Ward 31",
+        "651",
+        "19"
+      ],
+      [
+        "",
+        "City of Janesville Ward 32",
+        "443",
+        "22"
+      ],
+      [
+        "",
+        "City of Janesville Ward 33",
+        "879",
+        "27"
+      ],
+      [
+        "",
+        "City of Janesville Ward 34",
+        "828",
+        "27"
+      ],
+      [
+        "",
+        "City of Janesville Ward 35",
+        "387",
+        "11"
+      ],
+      [
+        "",
+        "City of Janesville Ward 36",
+        "175",
+        "7"
+      ],
+      [
+        "",
+        "City of Janesville Ward 37",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 38",
+        "1",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 39",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 40",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Milton",
+        "2,065",
+        "73"
+      ],
+      [
+        "",
+        "Total",
+        "51,809",
+        "1,601"
+      ]
+    ],
+    [
+      [
+        "Clerk of Circuit Court Rock County",
+        "Vote For 1",
+        "",
+        "Votes"
+      ],
+      [
+        "Amanda Nelson (Democratic)",
+        "",
+        "97.19%",
+        "50,628"
+      ],
+      [
+        "write-in: (NONPARTISAN)",
+        "",
+        "2.81%",
+        "1,464"
+      ]
+    ],
+    [
+      [
+        "",
+        "Clerk of Circuit Court Rock County",
+        "Amanda Nelson",
+        "write-in:"
+      ],
+      [
+        "",
+        "Town of Avon",
+        "166",
+        "2"
+      ],
+      [
+        "",
+        "Town of Beloit Wards 1-4 & 13",
+        "658",
+        "30"
+      ],
+      [
+        "",
+        "Town of Beloit Ward 5",
+        "5",
+        "0"
+      ],
+      [
+        "",
+        "Town of Beloit Wards 6 - 8",
+        "607",
+        "13"
+      ],
+      [
+        "",
+        "Town of Beloit Wards 9 - 12",
+        "1,101",
+        "32"
+      ],
+      [
+        "",
+        "Town of Bradford",
+        "325",
+        "9"
+      ],
+      [
+        "",
+        "Town of Center",
+        "382",
+        "13"
+      ],
+      [
+        "",
+        "Town of Clinton",
+        "270",
+        "11"
+      ],
+      [
+        "",
+        "Town of Fulton",
+        "1,411",
+        "57"
+      ],
+      [
+        "",
+        "Town of Harmony",
+        "1,068",
+        "33"
+      ],
+      [
+        "",
+        "Town of Janesville Wards 1 & 6",
+        "240",
+        "6"
+      ],
+      [
+        "",
+        "Town of Janesville Wards 2-5 & 7-10",
+        "1,261",
+        "34"
+      ],
+      [
+        "",
+        "Town of Johnstown",
+        "289",
+        "12"
+      ],
+      [
+        "",
+        "Town of La Prairie Ward 1",
+        "197",
+        "5"
+      ],
+      [
+        "",
+        "Town of La Prairie Ward 2",
+        "74",
+        "2"
+      ],
+      [
+        "",
+        "Town of Lima",
+        "403",
+        "12"
+      ],
+      [
+        "",
+        "Town of Magnolia",
+        "244",
+        "4"
+      ],
+      [
+        "",
+        "Town of Milton",
+        "1,177",
+        "41"
+      ],
+      [
+        "",
+        "Town of Newark",
+        "457",
+        "34"
+      ],
+      [
+        "",
+        "Town of Plymouth",
+        "373",
+        "16"
+      ],
+      [
+        "",
+        "Town of Porter",
+        "403",
+        "11"
+      ],
+      [
+        "",
+        "Town of Rock Wards 1 - 5 & 8",
+        "678",
+        "34"
+      ],
+      [
+        "",
+        "Town of Rock Wards 6 - 7",
+        "98",
+        "6"
+      ],
+      [
+        "",
+        "Town of Spring Valley",
+        "206",
+        "6"
+      ],
+      [
+        "",
+        "Town of Turtle Ward 1",
+        "225",
+        "12"
+      ],
+      [
+        "",
+        "Town of Turtle Wards 2 - 4",
+        "656",
+        "24"
+      ],
+      [
+        "",
+        "Town of Union",
+        "795",
+        "35"
+      ],
+      [
+        "",
+        "Village of Clinton",
+        "580",
+        "17"
+      ],
+      [
+        "",
+        "Village of Footville",
+        "238",
+        "8"
+      ],
+      [
+        "",
+        "Village of Orfordville",
+        "418",
+        "17"
+      ],
+      [
+        "",
+        "City of Beloit Ward 1",
+        "184",
+        "2"
+      ],
+      [
+        "",
+        "City of Beloit Ward 2",
+        "492",
+        "16"
+      ],
+      [
+        "",
+        "City of Beloit Ward 3",
+        "381",
+        "15"
+      ],
+      [
+        "",
+        "City of Beloit Ward 4",
+        "355",
+        "15"
+      ],
+      [
+        "",
+        "City of Beloit Ward 5",
+        "404",
+        "25"
+      ],
+      [
+        "",
+        "City of Beloit Ward 6",
+        "307",
+        "6"
+      ],
+      [
+        "",
+        "City of Beloit Ward 7",
+        "305",
+        "8"
+      ],
+      [
+        "",
+        "City of Beloit Ward 8",
+        "270",
+        "3"
+      ],
+      [
+        "",
+        "City of Beloit Ward 9",
+        "195",
+        "2"
+      ],
+      [
+        "",
+        "City of Beloit Ward 10",
+        "490",
+        "21"
+      ],
+      [
+        "",
+        "City of Beliot Ward 11",
+        "159",
+        "2"
+      ],
+      [
+        "",
+        "City of Beloit Ward 12",
+        "395",
+        "3"
+      ],
+      [
+        "",
+        "City of Beloit Ward 13",
+        "483",
+        "23"
+      ],
+      [
+        "",
+        "City of Beloit Ward 14",
+        "349",
+        "9"
+      ],
+      [
+        "",
+        "City of Beloit Ward 15",
+        "215",
+        "4"
+      ],
+      [
+        "",
+        "City of Beloit Ward 16",
+        "295",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 17",
+        "204",
+        "4"
+      ],
+      [
+        "",
+        "City of Beloit Ward 18",
+        "325",
+        "7"
+      ],
+      [
+        "",
+        "City of Beloit Ward 19",
+        "564",
+        "11"
+      ],
+      [
+        "",
+        "City of Beloit Ward 20",
+        "205",
+        "8"
+      ],
+      [
+        "",
+        "City of Beloit Ward 21",
+        "264",
+        "11"
+      ],
+      [
+        "",
+        "City of Beloit Ward 22",
+        "647",
+        "17"
+      ],
+      [
+        "",
+        "City of Beloit Ward 23",
+        "490",
+        "21"
+      ],
+      [
+        "",
+        "City of Beloit Ward 24",
+        "2",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 25",
+        "2",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 26",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 27",
+        "121",
+        "8"
+      ],
+      [
+        "",
+        "City of Beloit Ward 28",
+        "114",
+        "3"
+      ],
+      [
+        "",
+        "City of Beloit Ward 29",
+        "5",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 30",
+        "2",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 31",
+        "1",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 32",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Brodhead Wards 7 - 8",
+        "31",
+        "1"
+      ],
+      [
+        "",
+        "City of Edgerton Wards 1-6, 8-9",
+        "2,045",
+        "43"
+      ],
+      [
+        "",
+        "City of Evansville",
+        "2,120",
+        "48"
+      ],
+      [
+        "",
+        "City of Janesville Ward 1",
+        "871",
+        "14"
+      ],
+      [
+        "",
+        "City of Janesville Ward 2",
+        "807",
+        "27"
+      ],
+      [
+        "",
+        "City of Janesville Ward 3",
+        "663",
+        "19"
+      ],
+      [
+        "",
+        "City of Janesville Ward 4",
+        "456",
+        "12"
+      ],
+      [
+        "",
+        "City of Janesville Ward 5",
+        "620",
+        "18"
+      ],
+      [
+        "",
+        "City of Janesville Ward 6",
+        "1,022",
+        "22"
+      ],
+      [
+        "",
+        "City of Janesville Ward 7",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 8",
+        "952",
+        "21"
+      ],
+      [
+        "",
+        "City of Janesville Ward 9",
+        "685",
+        "18"
+      ],
+      [
+        "",
+        "City of Janesville Ward 10",
+        "894",
+        "26"
+      ],
+      [
+        "",
+        "City of Janesville Ward 11",
+        "726",
+        "29"
+      ],
+      [
+        "",
+        "City of Janesville Ward 12",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 13",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 14",
+        "734",
+        "9"
+      ],
+      [
+        "",
+        "City of Janesville Ward 15",
+        "1,069",
+        "25"
+      ],
+      [
+        "",
+        "City of Janesville Ward 16",
+        "953",
+        "16"
+      ],
+      [
+        "",
+        "City of Janesville Ward 17",
+        "336",
+        "13"
+      ],
+      [
+        "",
+        "City of Janesville Ward 18",
+        "740",
+        "8"
+      ],
+      [
+        "",
+        "City of Janesville Ward 19",
+        "764",
+        "27"
+      ],
+      [
+        "",
+        "City of Janesville Ward 20",
+        "350",
+        "5"
+      ],
+      [
+        "",
+        "City of Janesville Ward 21",
+        "390",
+        "3"
+      ],
+      [
+        "",
+        "City of Janesville Ward 22",
+        "650",
+        "7"
+      ],
+      [
+        "",
+        "City of Janesville Ward 23",
+        "419",
+        "14"
+      ],
+      [
+        "",
+        "City of Janesville Ward 24",
+        "362",
+        "9"
+      ],
+      [
+        "",
+        "City of Janesville Ward 25",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 26",
+        "972",
+        "32"
+      ],
+      [
+        "",
+        "City of Janesville Ward 27",
+        "823",
+        "21"
+      ],
+      [
+        "",
+        "City of Janesville Ward 28",
+        "599",
+        "9"
+      ],
+      [
+        "",
+        "City of Janesville Ward 29",
+        "331",
+        "9"
+      ],
+      [
+        "",
+        "City of Janesville Ward 30",
+        "669",
+        "13"
+      ],
+      [
+        "",
+        "City of Janesville Ward 31",
+        "643",
+        "18"
+      ],
+      [
+        "",
+        "City of Janesville Ward 32",
+        "440",
+        "20"
+      ],
+      [
+        "",
+        "City of Janesville Ward 33",
+        "863",
+        "20"
+      ],
+      [
+        "",
+        "City of Janesville Ward 34",
+        "801",
+        "27"
+      ],
+      [
+        "",
+        "City of Janesville Ward 35",
+        "380",
+        "10"
+      ],
+      [
+        "",
+        "City of Janesville Ward 36",
+        "170",
+        "5"
+      ],
+      [
+        "",
+        "City of Janesville Ward 37",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 38",
+        "1",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 39",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 40",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Milton",
+        "2,047",
+        "65"
+      ],
+      [
+        "",
+        "Total",
+        "50,628",
+        "1,464"
+      ]
+    ],
+    [
+      [
+        "Partial Veto Referendum - Question 1",
+        "Vote For 1",
+        "",
+        "Votes"
+      ],
+      [
+        "Yes (NONPARTISAN)",
+        "",
+        "49.16%",
+        "32,086"
+      ],
+      [
+        "No (NONPARTISAN)",
+        "",
+        "50.84%",
+        "33,188"
+      ]
+    ],
+    [
+      [
+        "",
+        "Partial Veto Referendum - Question 1",
+        "Yes",
+        "No"
+      ],
+      [
+        "",
+        "Town of Avon",
+        "153",
+        "103"
+      ],
+      [
+        "",
+        "Town of Beloit Wards 1-4 & 13",
+        "626",
+        "415"
+      ],
+      [
+        "",
+        "Town of Beloit Ward 5",
+        "4",
+        "3"
+      ],
+      [
+        "",
+        "Town of Beloit Wards 6 - 8",
+        "427",
+        "378"
+      ],
+      [
+        "",
+        "Town of Beloit Wards 9 - 12",
+        "879",
+        "698"
+      ],
+      [
+        "",
+        "Town of Bradford",
+        "270",
+        "182"
+      ],
+      [
+        "",
+        "Town of Center",
+        "303",
+        "246"
+      ],
+      [
+        "",
+        "Town of Clinton",
+        "272",
+        "146"
+      ],
+      [
+        "",
+        "Town of Fulton",
+        "1,041",
+        "915"
+      ],
+      [
+        "",
+        "Town of Harmony",
+        "703",
+        "652"
+      ],
+      [
+        "",
+        "Town of Janesville Wards 1 & 6",
+        "191",
+        "143"
+      ],
+      [
+        "",
+        "Town of Janesville Wards 2-5 & 7-10",
+        "932",
+        "796"
+      ],
+      [
+        "",
+        "Town of Johnstown",
+        "231",
+        "174"
+      ],
+      [
+        "",
+        "Town of La Prairie Ward 1",
+        "160",
+        "113"
+      ],
+      [
+        "",
+        "Town of La Prairie Ward 2",
+        "65",
+        "46"
+      ],
+      [
+        "",
+        "Town of Lima",
+        "269",
+        "268"
+      ],
+      [
+        "",
+        "Town of Magnolia",
+        "199",
+        "144"
+      ],
+      [
+        "",
+        "Town of Milton",
+        "897",
+        "736"
+      ],
+      [
+        "",
+        "Town of Newark",
+        "431",
+        "304"
+      ],
+      [
+        "",
+        "Town of Plymouth",
+        "309",
+        "225"
+      ],
+      [
+        "",
+        "Town of Porter",
+        "241",
+        "310"
+      ],
+      [
+        "",
+        "Town of Rock Wards 1 - 5 & 8",
+        "496",
+        "473"
+      ],
+      [
+        "",
+        "Town of Rock Wards 6 - 7",
+        "78",
+        "60"
+      ],
+      [
+        "",
+        "Town of Spring Valley",
+        "174",
+        "142"
+      ],
+      [
+        "",
+        "Town of Turtle Ward 1",
+        "202",
+        "128"
+      ],
+      [
+        "",
+        "Town of Turtle Wards 2 - 4",
+        "566",
+        "364"
+      ],
+      [
+        "",
+        "Town of Union",
+        "484",
+        "586"
+      ],
+      [
+        "",
+        "Village of Clinton",
+        "505",
+        "322"
+      ],
+      [
+        "",
+        "Village of Footville",
+        "177",
+        "166"
+      ],
+      [
+        "",
+        "Village of Orfordville",
+        "320",
+        "264"
+      ],
+      [
+        "",
+        "City of Beloit Ward 1",
+        "118",
+        "108"
+      ],
+      [
+        "",
+        "City of Beloit Ward 2",
+        "300",
+        "325"
+      ],
+      [
+        "",
+        "City of Beloit Ward 3",
+        "247",
+        "252"
+      ],
+      [
+        "",
+        "City of Beloit Ward 4",
+        "241",
+        "221"
+      ],
+      [
+        "",
+        "City of Beloit Ward 5",
+        "281",
+        "256"
+      ],
+      [
+        "",
+        "City of Beloit Ward 6",
+        "184",
+        "192"
+      ],
+      [
+        "",
+        "City of Beloit Ward 7",
+        "144",
+        "211"
+      ],
+      [
+        "",
+        "City of Beloit Ward 8",
+        "133",
+        "181"
+      ],
+      [
+        "",
+        "City of Beloit Ward 9",
+        "107",
+        "113"
+      ],
+      [
+        "",
+        "City of Beloit Ward 10",
+        "293",
+        "310"
+      ],
+      [
+        "",
+        "City of Beliot Ward 11",
+        "92",
+        "94"
+      ],
+      [
+        "",
+        "City of Beloit Ward 12",
+        "116",
+        "315"
+      ],
+      [
+        "",
+        "City of Beloit Ward 13",
+        "265",
+        "342"
+      ],
+      [
+        "",
+        "City of Beloit Ward 14",
+        "178",
+        "223"
+      ],
+      [
+        "",
+        "City of Beloit Ward 15",
+        "90",
+        "153"
+      ],
+      [
+        "",
+        "City of Beloit Ward 16",
+        "142",
+        "181"
+      ],
+      [
+        "",
+        "City of Beloit Ward 17",
+        "100",
+        "138"
+      ],
+      [
+        "",
+        "City of Beloit Ward 18",
+        "191",
+        "201"
+      ],
+      [
+        "",
+        "City of Beloit Ward 19",
+        "334",
+        "363"
+      ],
+      [
+        "",
+        "City of Beloit Ward 20",
+        "143",
+        "118"
+      ],
+      [
+        "",
+        "City of Beloit Ward 21",
+        "173",
+        "172"
+      ],
+      [
+        "",
+        "City of Beloit Ward 22",
+        "461",
+        "420"
+      ],
+      [
+        "",
+        "City of Beloit Ward 23",
+        "316",
+        "309"
+      ],
+      [
+        "",
+        "City of Beloit Ward 24",
+        "2",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 25",
+        "0",
+        "2"
+      ],
+      [
+        "",
+        "City of Beloit Ward 26",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 27",
+        "86",
+        "66"
+      ],
+      [
+        "",
+        "City of Beloit Ward 28",
+        "64",
+        "90"
+      ],
+      [
+        "",
+        "City of Beloit Ward 29",
+        "1",
+        "4"
+      ],
+      [
+        "",
+        "City of Beloit Ward 30",
+        "2",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 31",
+        "1",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 32",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Brodhead Wards 7 - 8",
+        "22",
+        "19"
+      ],
+      [
+        "",
+        "City of Edgerton Wards 1-6, 8-9",
+        "981",
+        "1,500"
+      ],
+      [
+        "",
+        "City of Evansville",
+        "930",
+        "1,690"
+      ],
+      [
+        "",
+        "City of Janesville Ward 1",
+        "501",
+        "586"
+      ],
+      [
+        "",
+        "City of Janesville Ward 2",
+        "453",
+        "518"
+      ],
+      [
+        "",
+        "City of Janesville Ward 3",
+        "327",
+        "466"
+      ],
+      [
+        "",
+        "City of Janesville Ward 4",
+        "257",
+        "296"
+      ],
+      [
+        "",
+        "City of Janesville Ward 5",
+        "370",
+        "398"
+      ],
+      [
+        "",
+        "City of Janesville Ward 6",
+        "653",
+        "642"
+      ],
+      [
+        "",
+        "City of Janesville Ward 7",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 8",
+        "525",
+        "650"
+      ],
+      [
+        "",
+        "City of Janesville Ward 9",
+        "398",
+        "427"
+      ],
+      [
+        "",
+        "City of Janesville Ward 10",
+        "569",
+        "524"
+      ],
+      [
+        "",
+        "City of Janesville Ward 11",
+        "466",
+        "448"
+      ],
+      [
+        "",
+        "City of Janesville Ward 12",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 13",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 14",
+        "417",
+        "485"
+      ],
+      [
+        "",
+        "City of Janesville Ward 15",
+        "634",
+        "720"
+      ],
+      [
+        "",
+        "City of Janesville Ward 16",
+        "520",
+        "664"
+      ],
+      [
+        "",
+        "City of Janesville Ward 17",
+        "188",
+        "220"
+      ],
+      [
+        "",
+        "City of Janesville Ward 18",
+        "476",
+        "480"
+      ],
+      [
+        "",
+        "City of Janesville Ward 19",
+        "489",
+        "494"
+      ],
+      [
+        "",
+        "City of Janesville Ward 20",
+        "221",
+        "226"
+      ],
+      [
+        "",
+        "City of Janesville Ward 21",
+        "194",
+        "261"
+      ],
+      [
+        "",
+        "City of Janesville Ward 22",
+        "351",
+        "420"
+      ],
+      [
+        "",
+        "City of Janesville Ward 23",
+        "245",
+        "274"
+      ],
+      [
+        "",
+        "City of Janesville Ward 24",
+        "222",
+        "231"
+      ],
+      [
+        "",
+        "City of Janesville Ward 25",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 26",
+        "538",
+        "641"
+      ],
+      [
+        "",
+        "City of Janesville Ward 27",
+        "423",
+        "564"
+      ],
+      [
+        "",
+        "City of Janesville Ward 28",
+        "327",
+        "397"
+      ],
+      [
+        "",
+        "City of Janesville Ward 29",
+        "241",
+        "189"
+      ],
+      [
+        "",
+        "City of Janesville Ward 30",
+        "400",
+        "417"
+      ],
+      [
+        "",
+        "City of Janesville Ward 31",
+        "388",
+        "403"
+      ],
+      [
+        "",
+        "City of Janesville Ward 32",
+        "308",
+        "286"
+      ],
+      [
+        "",
+        "City of Janesville Ward 33",
+        "521",
+        "595"
+      ],
+      [
+        "",
+        "City of Janesville Ward 34",
+        "524",
+        "521"
+      ],
+      [
+        "",
+        "City of Janesville Ward 35",
+        "240",
+        "237"
+      ],
+      [
+        "",
+        "City of Janesville Ward 36",
+        "123",
+        "101"
+      ],
+      [
+        "",
+        "City of Janesville Ward 37",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 38",
+        "1",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 39",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 40",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Milton",
+        "1,233",
+        "1,336"
+      ],
+      [
+        "",
+        "Total",
+        "32,086",
+        "33,188"
+      ]
+    ],
+    [
+      [
+        "Freedom to Gather Referendum - Question 2",
+        "Vote For 1",
+        "",
+        "Votes"
+      ],
+      [
+        "Yes (NONPARTISAN)",
+        "",
+        "45.46%",
+        "29,817"
+      ],
+      [
+        "No (NONPARTISAN)",
+        "",
+        "54.54%",
+        "35,776"
+      ]
+    ],
+    [
+      [
+        "",
+        "Freedom to Gather Referendum - Question 2",
+        "Yes",
+        "No"
+      ],
+      [
+        "",
+        "Town of Avon",
+        "131",
+        "125"
+      ],
+      [
+        "",
+        "Town of Beloit Wards 1-4 & 13",
+        "582",
+        "453"
+      ],
+      [
+        "",
+        "Town of Beloit Ward 5",
+        "5",
+        "2"
+      ],
+      [
+        "",
+        "Town of Beloit Wards 6 - 8",
+        "412",
+        "402"
+      ],
+      [
+        "",
+        "Town of Beloit Wards 9 - 12",
+        "789",
+        "794"
+      ],
+      [
+        "",
+        "Town of Bradford",
+        "256",
+        "201"
+      ],
+      [
+        "",
+        "Town of Center",
+        "268",
+        "279"
+      ],
+      [
+        "",
+        "Town of Clinton",
+        "258",
+        "160"
+      ],
+      [
+        "",
+        "Town of Fulton",
+        "973",
+        "989"
+      ],
+      [
+        "",
+        "Town of Harmony",
+        "645",
+        "710"
+      ],
+      [
+        "",
+        "Town of Janesville Wards 1 & 6",
+        "172",
+        "163"
+      ],
+      [
+        "",
+        "Town of Janesville Wards 2-5 & 7-10",
+        "853",
+        "875"
+      ],
+      [
+        "",
+        "Town of Johnstown",
+        "212",
+        "193"
+      ],
+      [
+        "",
+        "Town of La Prairie Ward 1",
+        "147",
+        "130"
+      ],
+      [
+        "",
+        "Town of La Prairie Ward 2",
+        "58",
+        "51"
+      ],
+      [
+        "",
+        "Town of Lima",
+        "278",
+        "260"
+      ],
+      [
+        "",
+        "Town of Magnolia",
+        "172",
+        "167"
+      ],
+      [
+        "",
+        "Town of Milton",
+        "844",
+        "789"
+      ],
+      [
+        "",
+        "Town of Newark",
+        "421",
+        "321"
+      ],
+      [
+        "",
+        "Town of Plymouth",
+        "298",
+        "236"
+      ],
+      [
+        "",
+        "Town of Porter",
+        "236",
+        "317"
+      ],
+      [
+        "",
+        "Town of Rock Wards 1 - 5 & 8",
+        "453",
+        "522"
+      ],
+      [
+        "",
+        "Town of Rock Wards 6 - 7",
+        "64",
+        "75"
+      ],
+      [
+        "",
+        "Town of Spring Valley",
+        "177",
+        "142"
+      ],
+      [
+        "",
+        "Town of Turtle Ward 1",
+        "179",
+        "156"
+      ],
+      [
+        "",
+        "Town of Turtle Wards 2 - 4",
+        "512",
+        "412"
+      ],
+      [
+        "",
+        "Town of Union",
+        "436",
+        "636"
+      ],
+      [
+        "",
+        "Village of Clinton",
+        "496",
+        "332"
+      ],
+      [
+        "",
+        "Village of Footville",
+        "183",
+        "162"
+      ],
+      [
+        "",
+        "Village of Orfordville",
+        "313",
+        "275"
+      ],
+      [
+        "",
+        "City of Beloit Ward 1",
+        "103",
+        "122"
+      ],
+      [
+        "",
+        "City of Beloit Ward 2",
+        "296",
+        "330"
+      ],
+      [
+        "",
+        "City of Beloit Ward 3",
+        "233",
+        "265"
+      ],
+      [
+        "",
+        "City of Beloit Ward 4",
+        "223",
+        "237"
+      ],
+      [
+        "",
+        "City of Beloit Ward 5",
+        "281",
+        "256"
+      ],
+      [
+        "",
+        "City of Beloit Ward 6",
+        "159",
+        "223"
+      ],
+      [
+        "",
+        "City of Beloit Ward 7",
+        "126",
+        "229"
+      ],
+      [
+        "",
+        "City of Beloit Ward 8",
+        "123",
+        "192"
+      ],
+      [
+        "",
+        "City of Beloit Ward 9",
+        "106",
+        "115"
+      ],
+      [
+        "",
+        "City of Beloit Ward 10",
+        "279",
+        "320"
+      ],
+      [
+        "",
+        "City of Beliot Ward 11",
+        "82",
+        "103"
+      ],
+      [
+        "",
+        "City of Beloit Ward 12",
+        "109",
+        "321"
+      ],
+      [
+        "",
+        "City of Beloit Ward 13",
+        "248",
+        "363"
+      ],
+      [
+        "",
+        "City of Beloit Ward 14",
+        "176",
+        "226"
+      ],
+      [
+        "",
+        "City of Beloit Ward 15",
+        "92",
+        "152"
+      ],
+      [
+        "",
+        "City of Beloit Ward 16",
+        "128",
+        "193"
+      ],
+      [
+        "",
+        "City of Beloit Ward 17",
+        "86",
+        "153"
+      ],
+      [
+        "",
+        "City of Beloit Ward 18",
+        "164",
+        "230"
+      ],
+      [
+        "",
+        "City of Beloit Ward 19",
+        "314",
+        "389"
+      ],
+      [
+        "",
+        "City of Beloit Ward 20",
+        "126",
+        "137"
+      ],
+      [
+        "",
+        "City of Beloit Ward 21",
+        "157",
+        "193"
+      ],
+      [
+        "",
+        "City of Beloit Ward 22",
+        "419",
+        "468"
+      ],
+      [
+        "",
+        "City of Beloit Ward 23",
+        "287",
+        "344"
+      ],
+      [
+        "",
+        "City of Beloit Ward 24",
+        "0",
+        "2"
+      ],
+      [
+        "",
+        "City of Beloit Ward 25",
+        "0",
+        "2"
+      ],
+      [
+        "",
+        "City of Beloit Ward 26",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 27",
+        "74",
+        "77"
+      ],
+      [
+        "",
+        "City of Beloit Ward 28",
+        "60",
+        "92"
+      ],
+      [
+        "",
+        "City of Beloit Ward 29",
+        "0",
+        "4"
+      ],
+      [
+        "",
+        "City of Beloit Ward 30",
+        "0",
+        "2"
+      ],
+      [
+        "",
+        "City of Beloit Ward 31",
+        "0",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 32",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Brodhead Wards 7 - 8",
+        "17",
+        "24"
+      ],
+      [
+        "",
+        "City of Edgerton Wards 1-6, 8-9",
+        "888",
+        "1,599"
+      ],
+      [
+        "",
+        "City of Evansville",
+        "839",
+        "1,802"
+      ],
+      [
+        "",
+        "City of Janesville Ward 1",
+        "491",
+        "601"
+      ],
+      [
+        "",
+        "City of Janesville Ward 2",
+        "415",
+        "566"
+      ],
+      [
+        "",
+        "City of Janesville Ward 3",
+        "321",
+        "477"
+      ],
+      [
+        "",
+        "City of Janesville Ward 4",
+        "237",
+        "319"
+      ],
+      [
+        "",
+        "City of Janesville Ward 5",
+        "339",
+        "433"
+      ],
+      [
+        "",
+        "City of Janesville Ward 6",
+        "586",
+        "724"
+      ],
+      [
+        "",
+        "City of Janesville Ward 7",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 8",
+        "520",
+        "669"
+      ],
+      [
+        "",
+        "City of Janesville Ward 9",
+        "394",
+        "436"
+      ],
+      [
+        "",
+        "City of Janesville Ward 10",
+        "514",
+        "585"
+      ],
+      [
+        "",
+        "City of Janesville Ward 11",
+        "442",
+        "478"
+      ],
+      [
+        "",
+        "City of Janesville Ward 12",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 13",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 14",
+        "388",
+        "523"
+      ],
+      [
+        "",
+        "City of Janesville Ward 15",
+        "593",
+        "775"
+      ],
+      [
+        "",
+        "City of Janesville Ward 16",
+        "487",
+        "700"
+      ],
+      [
+        "",
+        "City of Janesville Ward 17",
+        "176",
+        "236"
+      ],
+      [
+        "",
+        "City of Janesville Ward 18",
+        "426",
+        "541"
+      ],
+      [
+        "",
+        "City of Janesville Ward 19",
+        "458",
+        "536"
+      ],
+      [
+        "",
+        "City of Janesville Ward 20",
+        "188",
+        "260"
+      ],
+      [
+        "",
+        "City of Janesville Ward 21",
+        "175",
+        "283"
+      ],
+      [
+        "",
+        "City of Janesville Ward 22",
+        "325",
+        "452"
+      ],
+      [
+        "",
+        "City of Janesville Ward 23",
+        "227",
+        "290"
+      ],
+      [
+        "",
+        "City of Janesville Ward 24",
+        "212",
+        "245"
+      ],
+      [
+        "",
+        "City of Janesville Ward 25",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 26",
+        "510",
+        "679"
+      ],
+      [
+        "",
+        "City of Janesville Ward 27",
+        "395",
+        "602"
+      ],
+      [
+        "",
+        "City of Janesville Ward 28",
+        "284",
+        "448"
+      ],
+      [
+        "",
+        "City of Janesville Ward 29",
+        "219",
+        "214"
+      ],
+      [
+        "",
+        "City of Janesville Ward 30",
+        "382",
+        "439"
+      ],
+      [
+        "",
+        "City of Janesville Ward 31",
+        "357",
+        "444"
+      ],
+      [
+        "",
+        "City of Janesville Ward 32",
+        "272",
+        "325"
+      ],
+      [
+        "",
+        "City of Janesville Ward 33",
+        "476",
+        "646"
+      ],
+      [
+        "",
+        "City of Janesville Ward 34",
+        "505",
+        "542"
+      ],
+      [
+        "",
+        "City of Janesville Ward 35",
+        "215",
+        "264"
+      ],
+      [
+        "",
+        "City of Janesville Ward 36",
+        "105",
+        "121"
+      ],
+      [
+        "",
+        "City of Janesville Ward 37",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 38",
+        "1",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 39",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 40",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Milton",
+        "1,164",
+        "1,428"
+      ],
+      [
+        "",
+        "Total",
+        "29,817",
+        "35,776"
+      ]
+    ],
+    [
+      [
+        "Discrimination Prohibited Referendum - Question 3",
+        "Vote For 1",
+        "",
+        "Votes"
+      ],
+      [
+        "Yes (NONPARTISAN)",
+        "",
+        "57.50%",
+        "37,451"
+      ],
+      [
+        "No (NONPARTISAN)",
+        "",
+        "42.50%",
+        "27,684"
+      ]
+    ],
+    [
+      [
+        "",
+        "Discrimination Prohibited Referendum - Question 3",
+        "Yes",
+        "No"
+      ],
+      [
+        "",
+        "Town of Avon",
+        "168",
+        "85"
+      ],
+      [
+        "",
+        "Town of Beloit Wards 1-4 & 13",
+        "695",
+        "337"
+      ],
+      [
+        "",
+        "Town of Beloit Ward 5",
+        "2",
+        "4"
+      ],
+      [
+        "",
+        "Town of Beloit Wards 6 - 8",
+        "469",
+        "338"
+      ],
+      [
+        "",
+        "Town of Beloit Wards 9 - 12",
+        "966",
+        "604"
+      ],
+      [
+        "",
+        "Town of Bradford",
+        "302",
+        "151"
+      ],
+      [
+        "",
+        "Town of Center",
+        "321",
+        "222"
+      ],
+      [
+        "",
+        "Town of Clinton",
+        "282",
+        "133"
+      ],
+      [
+        "",
+        "Town of Fulton",
+        "1,144",
+        "808"
+      ],
+      [
+        "",
+        "Town of Harmony",
+        "778",
+        "573"
+      ],
+      [
+        "",
+        "Town of Janesville Wards 1 & 6",
+        "207",
+        "127"
+      ],
+      [
+        "",
+        "Town of Janesville Wards 2-5 & 7-10",
+        "1,069",
+        "655"
+      ],
+      [
+        "",
+        "Town of Johnstown",
+        "252",
+        "147"
+      ],
+      [
+        "",
+        "Town of La Prairie Ward 1",
+        "186",
+        "86"
+      ],
+      [
+        "",
+        "Town of La Prairie Ward 2",
+        "68",
+        "39"
+      ],
+      [
+        "",
+        "Town of Lima",
+        "310",
+        "224"
+      ],
+      [
+        "",
+        "Town of Magnolia",
+        "217",
+        "119"
+      ],
+      [
+        "",
+        "Town of Milton",
+        "994",
+        "627"
+      ],
+      [
+        "",
+        "Town of Newark",
+        "459",
+        "280"
+      ],
+      [
+        "",
+        "Town of Plymouth",
+        "326",
+        "207"
+      ],
+      [
+        "",
+        "Town of Porter",
+        "272",
+        "272"
+      ],
+      [
+        "",
+        "Town of Rock Wards 1 - 5 & 8",
+        "557",
+        "406"
+      ],
+      [
+        "",
+        "Town of Rock Wards 6 - 7",
+        "80",
+        "55"
+      ],
+      [
+        "",
+        "Town of Spring Valley",
+        "182",
+        "134"
+      ],
+      [
+        "",
+        "Town of Turtle Ward 1",
+        "219",
+        "112"
+      ],
+      [
+        "",
+        "Town of Turtle Wards 2 - 4",
+        "583",
+        "334"
+      ],
+      [
+        "",
+        "Town of Union",
+        "556",
+        "496"
+      ],
+      [
+        "",
+        "Village of Clinton",
+        "561",
+        "259"
+      ],
+      [
+        "",
+        "Village of Footville",
+        "198",
+        "145"
+      ],
+      [
+        "",
+        "Village of Orfordville",
+        "368",
+        "214"
+      ],
+      [
+        "",
+        "City of Beloit Ward 1",
+        "136",
+        "89"
+      ],
+      [
+        "",
+        "City of Beloit Ward 2",
+        "352",
+        "271"
+      ],
+      [
+        "",
+        "City of Beloit Ward 3",
+        "279",
+        "214"
+      ],
+      [
+        "",
+        "City of Beloit Ward 4",
+        "268",
+        "190"
+      ],
+      [
+        "",
+        "City of Beloit Ward 5",
+        "328",
+        "211"
+      ],
+      [
+        "",
+        "City of Beloit Ward 6",
+        "203",
+        "176"
+      ],
+      [
+        "",
+        "City of Beloit Ward 7",
+        "176",
+        "178"
+      ],
+      [
+        "",
+        "City of Beloit Ward 8",
+        "174",
+        "141"
+      ],
+      [
+        "",
+        "City of Beloit Ward 9",
+        "129",
+        "90"
+      ],
+      [
+        "",
+        "City of Beloit Ward 10",
+        "343",
+        "259"
+      ],
+      [
+        "",
+        "City of Beliot Ward 11",
+        "104",
+        "80"
+      ],
+      [
+        "",
+        "City of Beloit Ward 12",
+        "166",
+        "262"
+      ],
+      [
+        "",
+        "City of Beloit Ward 13",
+        "302",
+        "308"
+      ],
+      [
+        "",
+        "City of Beloit Ward 14",
+        "208",
+        "192"
+      ],
+      [
+        "",
+        "City of Beloit Ward 15",
+        "114",
+        "128"
+      ],
+      [
+        "",
+        "City of Beloit Ward 16",
+        "171",
+        "150"
+      ],
+      [
+        "",
+        "City of Beloit Ward 17",
+        "120",
+        "117"
+      ],
+      [
+        "",
+        "City of Beloit Ward 18",
+        "233",
+        "156"
+      ],
+      [
+        "",
+        "City of Beloit Ward 19",
+        "381",
+        "318"
+      ],
+      [
+        "",
+        "City of Beloit Ward 20",
+        "171",
+        "95"
+      ],
+      [
+        "",
+        "City of Beloit Ward 21",
+        "205",
+        "141"
+      ],
+      [
+        "",
+        "City of Beloit Ward 22",
+        "525",
+        "354"
+      ],
+      [
+        "",
+        "City of Beloit Ward 23",
+        "375",
+        "257"
+      ],
+      [
+        "",
+        "City of Beloit Ward 24",
+        "1",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 25",
+        "0",
+        "2"
+      ],
+      [
+        "",
+        "City of Beloit Ward 26",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 27",
+        "78",
+        "72"
+      ],
+      [
+        "",
+        "City of Beloit Ward 28",
+        "77",
+        "76"
+      ],
+      [
+        "",
+        "City of Beloit Ward 29",
+        "2",
+        "3"
+      ],
+      [
+        "",
+        "City of Beloit Ward 30",
+        "2",
+        "0"
+      ],
+      [
+        "",
+        "City of Beloit Ward 31",
+        "0",
+        "1"
+      ],
+      [
+        "",
+        "City of Beloit Ward 32",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Brodhead Wards 7 - 8",
+        "15",
+        "27"
+      ],
+      [
+        "",
+        "City of Edgerton Wards 1-6, 8-9",
+        "1,208",
+        "1,274"
+      ],
+      [
+        "",
+        "City of Evansville",
+        "1,151",
+        "1,470"
+      ],
+      [
+        "",
+        "City of Janesville Ward 1",
+        "651",
+        "441"
+      ],
+      [
+        "",
+        "City of Janesville Ward 2",
+        "554",
+        "416"
+      ],
+      [
+        "",
+        "City of Janesville Ward 3",
+        "428",
+        "366"
+      ],
+      [
+        "",
+        "City of Janesville Ward 4",
+        "313",
+        "235"
+      ],
+      [
+        "",
+        "City of Janesville Ward 5",
+        "452",
+        "310"
+      ],
+      [
+        "",
+        "City of Janesville Ward 6",
+        "751",
+        "543"
+      ],
+      [
+        "",
+        "City of Janesville Ward 7",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 8",
+        "671",
+        "507"
+      ],
+      [
+        "",
+        "City of Janesville Ward 9",
+        "512",
+        "311"
+      ],
+      [
+        "",
+        "City of Janesville Ward 10",
+        "639",
+        "445"
+      ],
+      [
+        "",
+        "City of Janesville Ward 11",
+        "568",
+        "348"
+      ],
+      [
+        "",
+        "City of Janesville Ward 12",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 13",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 14",
+        "507",
+        "397"
+      ],
+      [
+        "",
+        "City of Janesville Ward 15",
+        "767",
+        "603"
+      ],
+      [
+        "",
+        "City of Janesville Ward 16",
+        "618",
+        "548"
+      ],
+      [
+        "",
+        "City of Janesville Ward 17",
+        "232",
+        "178"
+      ],
+      [
+        "",
+        "City of Janesville Ward 18",
+        "570",
+        "391"
+      ],
+      [
+        "",
+        "City of Janesville Ward 19",
+        "581",
+        "410"
+      ],
+      [
+        "",
+        "City of Janesville Ward 20",
+        "254",
+        "188"
+      ],
+      [
+        "",
+        "City of Janesville Ward 21",
+        "256",
+        "201"
+      ],
+      [
+        "",
+        "City of Janesville Ward 22",
+        "433",
+        "343"
+      ],
+      [
+        "",
+        "City of Janesville Ward 23",
+        "295",
+        "218"
+      ],
+      [
+        "",
+        "City of Janesville Ward 24",
+        "266",
+        "189"
+      ],
+      [
+        "",
+        "City of Janesville Ward 25",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 26",
+        "690",
+        "487"
+      ],
+      [
+        "",
+        "City of Janesville Ward 27",
+        "520",
+        "471"
+      ],
+      [
+        "",
+        "City of Janesville Ward 28",
+        "388",
+        "335"
+      ],
+      [
+        "",
+        "City of Janesville Ward 29",
+        "278",
+        "150"
+      ],
+      [
+        "",
+        "City of Janesville Ward 30",
+        "486",
+        "333"
+      ],
+      [
+        "",
+        "City of Janesville Ward 31",
+        "487",
+        "314"
+      ],
+      [
+        "",
+        "City of Janesville Ward 32",
+        "387",
+        "201"
+      ],
+      [
+        "",
+        "City of Janesville Ward 33",
+        "648",
+        "467"
+      ],
+      [
+        "",
+        "City of Janesville Ward 34",
+        "605",
+        "430"
+      ],
+      [
+        "",
+        "City of Janesville Ward 35",
+        "283",
+        "184"
+      ],
+      [
+        "",
+        "City of Janesville Ward 36",
+        "129",
+        "96"
+      ],
+      [
+        "",
+        "City of Janesville Ward 37",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 38",
+        "0",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 39",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 40",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Milton",
+        "1,444",
+        "1,131"
+      ],
+      [
+        "",
+        "Total",
+        "37,451",
+        "27,684"
+      ]
+    ],
+    [
+      [
+        "Development Referendum City of Janesville",
+        "Vote For 1",
+        "",
+        "Votes"
+      ],
+      [
+        "Yes (NONPARTISAN)",
+        "",
+        "62.82%",
+        "16,779"
+      ],
+      [
+        "No (NONPARTISAN)",
+        "",
+        "37.18%",
+        "9,932"
+      ]
+    ],
+    [
+      [
+        "",
+        "Development Referendum City of Janesville",
+        "Yes",
+        "No"
+      ],
+      [
+        "",
+        "City of Janesville Ward 1",
+        "683",
+        "425"
+      ],
+      [
+        "",
+        "City of Janesville Ward 2",
+        "627",
+        "361"
+      ],
+      [
+        "",
+        "City of Janesville Ward 3",
+        "538",
+        "267"
+      ],
+      [
+        "",
+        "City of Janesville Ward 4",
+        "391",
+        "160"
+      ],
+      [
+        "",
+        "City of Janesville Ward 5",
+        "495",
+        "274"
+      ],
+      [
+        "",
+        "City of Janesville Ward 6",
+        "777",
+        "538"
+      ],
+      [
+        "",
+        "City of Janesville Ward 7",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 8",
+        "793",
+        "401"
+      ],
+      [
+        "",
+        "City of Janesville Ward 9",
+        "593",
+        "246"
+      ],
+      [
+        "",
+        "City of Janesville Ward 10",
+        "714",
+        "387"
+      ],
+      [
+        "",
+        "City of Janesville Ward 11",
+        "662",
+        "271"
+      ],
+      [
+        "",
+        "City of Janesville Ward 12",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 13",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 14",
+        "652",
+        "294"
+      ],
+      [
+        "",
+        "City of Janesville Ward 15",
+        "868",
+        "549"
+      ],
+      [
+        "",
+        "City of Janesville Ward 16",
+        "748",
+        "447"
+      ],
+      [
+        "",
+        "City of Janesville Ward 17",
+        "245",
+        "172"
+      ],
+      [
+        "",
+        "City of Janesville Ward 18",
+        "519",
+        "449"
+      ],
+      [
+        "",
+        "City of Janesville Ward 19",
+        "591",
+        "412"
+      ],
+      [
+        "",
+        "City of Janesville Ward 20",
+        "260",
+        "185"
+      ],
+      [
+        "",
+        "City of Janesville Ward 21",
+        "342",
+        "117"
+      ],
+      [
+        "",
+        "City of Janesville Ward 22",
+        "432",
+        "351"
+      ],
+      [
+        "",
+        "City of Janesville Ward 23",
+        "293",
+        "236"
+      ],
+      [
+        "",
+        "City of Janesville Ward 24",
+        "245",
+        "212"
+      ],
+      [
+        "",
+        "City of Janesville Ward 25",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 26",
+        "789",
+        "410"
+      ],
+      [
+        "",
+        "City of Janesville Ward 27",
+        "669",
+        "340"
+      ],
+      [
+        "",
+        "City of Janesville Ward 28",
+        "443",
+        "288"
+      ],
+      [
+        "",
+        "City of Janesville Ward 29",
+        "297",
+        "142"
+      ],
+      [
+        "",
+        "City of Janesville Ward 30",
+        "532",
+        "304"
+      ],
+      [
+        "",
+        "City of Janesville Ward 31",
+        "497",
+        "310"
+      ],
+      [
+        "",
+        "City of Janesville Ward 32",
+        "392",
+        "201"
+      ],
+      [
+        "",
+        "City of Janesville Ward 33",
+        "654",
+        "473"
+      ],
+      [
+        "",
+        "City of Janesville Ward 34",
+        "641",
+        "406"
+      ],
+      [
+        "",
+        "City of Janesville Ward 35",
+        "265",
+        "207"
+      ],
+      [
+        "",
+        "City of Janesville Ward 36",
+        "132",
+        "96"
+      ],
+      [
+        "",
+        "City of Janesville Ward 37",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 38",
+        "0",
+        "1"
+      ],
+      [
+        "",
+        "City of Janesville Ward 39",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 40",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "Total",
+        "16,779",
+        "9,932"
+      ]
+    ],
+    [
+      [
+        "Exceed Revenue Limit School District of Delavan-Darien",
+        "Vote For 1",
+        "",
+        "Votes"
+      ],
+      [
+        "Yes (NONPARTISAN)",
+        "",
+        "65.52%",
+        "19"
+      ],
+      [
+        "No (NONPARTISAN)",
+        "",
+        "34.48%",
+        "10"
+      ]
+    ],
+    [
+      [
+        "",
+        "Exceed Revenue Limit School District of Delavan-Darien",
+        "Yes",
+        "No"
+      ],
+      [
+        "",
+        "Town of Bradford",
+        "19",
+        "10"
+      ],
+      [
+        "",
+        "Total",
+        "19",
+        "10"
+      ]
+    ],
+    [
+      [
+        "Exceed Revenue Limit Evansville Community School District",
+        "Vote For 1",
+        "",
+        "Votes"
+      ],
+      [
+        "Yes (NONPARTISAN)",
+        "",
+        "50.95%",
+        "2,464"
+      ],
+      [
+        "No (NONPARTISAN)",
+        "",
+        "49.05%",
+        "2,372"
+      ]
+    ],
+    [
+      [
+        "",
+        "Exceed Revenue Limit Evansville Community School District",
+        "Yes",
+        "No"
+      ],
+      [
+        "",
+        "Town of Center",
+        "157",
+        "229"
+      ],
+      [
+        "",
+        "Town of Janesville Wards 1 & 6",
+        "3",
+        "16"
+      ],
+      [
+        "",
+        "Town of Janesville Wards 2-5 & 7-10",
+        "97",
+        "128"
+      ],
+      [
+        "",
+        "Town of Magnolia",
+        "102",
+        "161"
+      ],
+      [
+        "",
+        "Town of Porter",
+        "108",
+        "129"
+      ],
+      [
+        "",
+        "Town of Union",
+        "513",
+        "524"
+      ],
+      [
+        "",
+        "City of Evansville",
+        "1,484",
+        "1,185"
+      ],
+      [
+        "",
+        "Total",
+        "2,464",
+        "2,372"
+      ]
+    ],
+    [
+      [
+        "Exceed Revenue Limit School District of Fort Atkinson",
+        "Vote For 1",
+        "",
+        "Votes"
+      ],
+      [
+        "Yes (NONPARTISAN)",
+        "",
+        "13.33%",
+        "2"
+      ],
+      [
+        "No (NONPARTISAN)",
+        "",
+        "86.67%",
+        "13"
+      ]
+    ],
+    [
+      [
+        "",
+        "Exceed Revenue Limit School District of Fort Atkinson",
+        "Yes",
+        "No"
+      ],
+      [
+        "",
+        "Town of Lima",
+        "2",
+        "13"
+      ],
+      [
+        "",
+        "Total",
+        "2",
+        "13"
+      ]
+    ],
+    [
+      [
+        "Exceed Revenue Limit School District of Janesville",
+        "Vote For 1",
+        "",
+        "Votes"
+      ],
+      [
+        "Yes (NONPARTISAN)",
+        "",
+        "53.23%",
+        "13,352"
+      ],
+      [
+        "No (NONPARTISAN)",
+        "",
+        "46.77%",
+        "11,731"
+      ]
+    ],
+    [
+      [
+        "",
+        "Exceed Revenue Limit School District of Janesville",
+        "Yes",
+        "No"
+      ],
+      [
+        "",
+        "Town of Harmony",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "Town of Janesville Wards 1 & 6",
+        "131",
+        "190"
+      ],
+      [
+        "",
+        "Town of Janesville Wards 2-5 & 7-10",
+        "265",
+        "332"
+      ],
+      [
+        "",
+        "Town of La Prairie Ward 1",
+        "46",
+        "70"
+      ],
+      [
+        "",
+        "Town of La Prairie Ward 2",
+        "41",
+        "56"
+      ],
+      [
+        "",
+        "Town of Rock Wards 1 - 5 & 8",
+        "372",
+        "534"
+      ],
+      [
+        "",
+        "Town of Rock Wards 6 - 7",
+        "42",
+        "96"
+      ],
+      [
+        "",
+        "City of Janesville Ward 1",
+        "622",
+        "482"
+      ],
+      [
+        "",
+        "City of Janesville Ward 2",
+        "543",
+        "440"
+      ],
+      [
+        "",
+        "City of Janesville Ward 3",
+        "457",
+        "346"
+      ],
+      [
+        "",
+        "City of Janesville Ward 4",
+        "314",
+        "236"
+      ],
+      [
+        "",
+        "City of Janesville Ward 5",
+        "402",
+        "365"
+      ],
+      [
+        "",
+        "City of Janesville Ward 6",
+        "701",
+        "614"
+      ],
+      [
+        "",
+        "City of Janesville Ward 7",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 8",
+        "634",
+        "552"
+      ],
+      [
+        "",
+        "City of Janesville Ward 9",
+        "423",
+        "408"
+      ],
+      [
+        "",
+        "City of Janesville Ward 10",
+        "525",
+        "571"
+      ],
+      [
+        "",
+        "City of Janesville Ward 11",
+        "464",
+        "462"
+      ],
+      [
+        "",
+        "City of Janesville Ward 12",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 13",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 14",
+        "556",
+        "372"
+      ],
+      [
+        "",
+        "City of Janesville Ward 15",
+        "802",
+        "603"
+      ],
+      [
+        "",
+        "City of Janesville Ward 16",
+        "723",
+        "466"
+      ],
+      [
+        "",
+        "City of Janesville Ward 17",
+        "206",
+        "209"
+      ],
+      [
+        "",
+        "City of Janesville Ward 18",
+        "491",
+        "477"
+      ],
+      [
+        "",
+        "City of Janesville Ward 19",
+        "534",
+        "469"
+      ],
+      [
+        "",
+        "City of Janesville Ward 20",
+        "246",
+        "204"
+      ],
+      [
+        "",
+        "City of Janesville Ward 21",
+        "278",
+        "178"
+      ],
+      [
+        "",
+        "City of Janesville Ward 22",
+        "440",
+        "341"
+      ],
+      [
+        "",
+        "City of Janesville Ward 23",
+        "257",
+        "270"
+      ],
+      [
+        "",
+        "City of Janesville Ward 24",
+        "225",
+        "233"
+      ],
+      [
+        "",
+        "City of Janesville Ward 26",
+        "655",
+        "536"
+      ],
+      [
+        "",
+        "City of Janesville Ward 27",
+        "595",
+        "400"
+      ],
+      [
+        "",
+        "City of Janesville Ward 28",
+        "385",
+        "342"
+      ],
+      [
+        "",
+        "City of Janesville Ward 30",
+        "443",
+        "388"
+      ],
+      [
+        "",
+        "City of Janesville Ward 31",
+        "414",
+        "383"
+      ],
+      [
+        "",
+        "City of Janesville Ward 36",
+        "119",
+        "106"
+      ],
+      [
+        "",
+        "City of Janesville Ward 37",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 38",
+        "1",
+        "0"
+      ],
+      [
+        "",
+        "City of Janesville Ward 40",
+        "0",
+        "0"
+      ],
+      [
+        "",
+        "Total",
+        "13,352",
+        "11,731"
+      ]
+    ],
+    [
+      [
+        "Exceed Revenue Limit Whitewater Unified School District",
+        "Vote For 1",
+        "",
+        "Votes"
+      ],
+      [
+        "Yes (NONPARTISAN)",
+        "",
+        "36.06%",
+        "185"
+      ],
+      [
+        "No (NONPARTISAN)",
+        "",
+        "63.94%",
+        "328"
+      ]
+    ],
+    [
+      [
+        "",
+        "Exceed Revenue Limit Whitewater Unified School District",
+        "Yes",
+        "No"
+      ],
+      [
+        "",
+        "Town of Johnstown",
+        "27",
+        "67"
+      ],
+      [
+        "",
+        "Town of Lima",
+        "158",
+        "261"
+      ],
+      [
+        "",
+        "Total",
+        "185",
+        "328"
+      ]
+    ]
+  ],
+  "generic_turnout_approved": false,
+  "county_fips_join_approved": false,
+  "map_approved": false,
+  "certified": false,
+  "all_mode_definition_approved": false
+}

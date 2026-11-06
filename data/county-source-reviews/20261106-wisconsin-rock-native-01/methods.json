@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "scope": "Complete numerical review of the official Rock County, Wisconsin, November 3, 2026 unofficial general-election report.",
+  "input": "All 53 source tables, including the blank layout table; 26 summary/detail pairs; all 106 participation reporting units; every candidate/option and unit vector; all 26 literal reporting statements.",
+  "independent_extraction": "Standard-library HTMLParser, BeautifulSoup and Chromium DOM independently agree on every table cell in the complete original. Browser page scripts are disabled and all external requests blocked. No third-party templates, scripts or HTML are publicly mirrored.",
+  "arithmetic": "Independently sum all 67 native unit vectors to their printed detail totals and summary counts. Compare all 65 candidate/option percentages to their contest selections, and the separate county participation percentage to registered voters, with Decimal half-up rounding to two places.",
+  "participation": "Keep the literal Ballots Cast numerator and Registered Voters denominator separate from candidate selections. Native unit zero values remain literal; source detail totals are never added a second time. No native unit percentages are declared, so those remain missing.",
+  "scope_limitations": "The county heading says unofficial results and votes reflect Rock County ONLY. Complete precinct reporting is not certification or proof of final counting. An explicit all-mode definition is not established by this numerical package. A separate scope/usability review is required before map or analysis-rate approval.",
+  "party_results": "Preserve each literal candidate/option, party label, write-in status, summary votes and complete unit vectors, scoped to its contest. Do not sum party totals across contests or infer write-in party allegiance from the literal NONPARTISAN label. The source also labels all 18 referendum options NONPARTISAN; preserve those literal labels without treating them as partisan allegiance.",
+  "clocks": "Preserve November 03, 2026 at 10:56 PM as the native update literal. No timezone is declared; do not infer one from geography, HTTP headers or acquisition time.",
+  "geography": "Preserve literal unit names, including source spelling differences. The source does not declare Census FIPS. No padded native identifiers, precinct polygons, county identity join or geometry approvals are created here.",
+  "privacy": "Complete original HTTP bodies remain private. Public input contains complete factual numerical table cells, literal reporting statements, safe receipts, methods and executable review/tests, never incidental webpage credentials.",
+  "reproduction": "Run python3 -B -I review-county.py --output /new/output/directory and python3 -B -I test_review_county.py. All numerical inputs, complete tables, audit, checksums and a deterministic full-query ZIP reproduce offline using only the standard library."
+}

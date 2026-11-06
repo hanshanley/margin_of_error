@@ -1,0 +1,65 @@
+{
+  "files": [
+    {
+      "path": "audit.json",
+      "bytes": 1186,
+      "sha256": "f1654fca0062cad685a0a3dbdffed3b6d961a158531e5c37a8d754b9b2eaa1fa"
+    },
+    {
+      "path": "county-candidate-results.csv",
+      "bytes": 8142,
+      "sha256": "3fe5a2a230048253264bda3151ee09130ade617e0751709d1f03f6e964824770"
+    },
+    {
+      "path": "county-literal-party-results.csv",
+      "bytes": 6887,
+      "sha256": "0cf445dd2b293b657b343fd86438964426fbb7260d6d13f7a3560e67086bcbff"
+    },
+    {
+      "path": "county-participation.csv",
+      "bytes": 409,
+      "sha256": "78b3d0cb01ce42dafb34eb67cb1eab2bda10811a970a99768fcf88f38207f9c8"
+    },
+    {
+      "path": "methods.json",
+      "bytes": 2931,
+      "sha256": "1d182b53150f1cc0ef0126aca3055a17ad28a85f19b6bfce4462a2d0eea65690"
+    },
+    {
+      "path": "native-reporting-statements.csv",
+      "bytes": 2562,
+      "sha256": "59aec65b665df87216448cbb80f32be6d1983690f1e00c3407c7368a10df7008"
+    },
+    {
+      "path": "native-unit-candidate-results.csv",
+      "bytes": 430728,
+      "sha256": "a37545fccb2d9245b182b9340b11d0f838b6258f5ce979cb1a36339505717833"
+    },
+    {
+      "path": "native-unit-participation.csv",
+      "bytes": 5541,
+      "sha256": "8b46e3ef17fca4b5c81849085a91053e5e71177a72c52506dac139b99ca53505"
+    },
+    {
+      "path": "review-county.py",
+      "bytes": 12877,
+      "sha256": "33d055c6461bf088a414f2c07d70ddcec312e486df7714f9f7cf0c6f3ea05c1f"
+    },
+    {
+      "path": "source-native-cells.csv",
+      "bytes": 112060,
+      "sha256": "daa96ccffac06c1ab20296887a64229eedf33e2c8e04452b7b7f917af0fdc4ab"
+    },
+    {
+      "path": "source-qualification.json",
+      "bytes": 166187,
+      "sha256": "33db4d5a395bda64a6223b02555e82485f1dc36dfe36f18db55f1190c64f81f4"
+    },
+    {
+      "path": "test_review_county.py",
+      "bytes": 6523,
+      "sha256": "47541cbe94f364f12e7b9567c371ffebbbf1f39b940f1f47159a333546663113"
+    }
+  ],
+  "scope": "Complete numerical input, tables, methods and executable query/tests; manifest and ZIP excluded to prevent self-reference."
+}

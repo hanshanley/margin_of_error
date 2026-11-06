@@ -1,0 +1,66 @@
+source_table_ordinal,source_row_ordinal,native_contest,native_option,native_label,native_party,native_write_in,votes,native_percentage,contest_reported_selections,county_ballots_cast,selections_are_participants
+3,1,Governor / Lieutenant Governor,Tom Tiffany / David Varnam,Tom Tiffany / David Varnam (Republican),Republican,False,27724,41.12%,67418,67812,False
+3,2,Governor / Lieutenant Governor,David Crowley / Sarah Godlewski,David Crowley / Sarah Godlewski (Democratic),Democratic,False,39549,58.66%,67418,67812,False
+3,3,Governor / Lieutenant Governor,write-in:,write-in: (NONPARTISAN),NONPARTISAN,True,145,0.22%,67418,67812,False
+5,1,Attorney General,Eric Toney,Eric Toney (Republican),Republican,False,26955,40.22%,67011,67812,False
+5,2,Attorney General,Josh Kaul,Josh Kaul (Democratic),Democratic,False,40001,59.69%,67011,67812,False
+5,3,Attorney General,write-in:,write-in: (NONPARTISAN),NONPARTISAN,True,55,0.08%,67011,67812,False
+7,1,Secretary of State,Jay Schroeder,Jay Schroeder (Republican),Republican,False,26859,40.26%,66717,67812,False
+7,2,Secretary of State,JoCasta Zamarripa,JoCasta Zamarripa (Democratic),Democratic,False,37019,55.49%,66717,67812,False
+7,3,Secretary of State,Pete Karas,Pete Karas (Wisconsin Green),Wisconsin Green,False,2804,4.20%,66717,67812,False
+7,4,Secretary of State,write-in:,write-in: (NONPARTISAN),NONPARTISAN,True,35,0.05%,66717,67812,False
+9,1,State Treasurer,John S. Leiber,John S. Leiber (Republican),Republican,False,28525,43.26%,65931,67812,False
+9,2,State Treasurer,Yee Leng Xiong,Yee Leng Xiong (Democratic),Democratic,False,37343,56.64%,65931,67812,False
+9,3,State Treasurer,write-in:,write-in: (NONPARTISAN),NONPARTISAN,True,63,0.10%,65931,67812,False
+11,1,Representative in Congress District 1,Bryan Steil,Bryan Steil (Republican),Republican,False,20267,40.57%,49954,67812,False
+11,2,Representative in Congress District 1,Mitchell Berman,Mitchell Berman (Democratic),Democratic,False,29622,59.30%,49954,67812,False
+11,3,Representative in Congress District 1,write-in:,write-in: (NONPARTISAN),NONPARTISAN,True,65,0.13%,49954,67812,False
+13,1,Representative in Congress District 2,Mark Pocan,Mark Pocan (Democratic),Democratic,False,11909,94.50%,12602,67812,False
+13,2,Representative in Congress District 2,write-in:,write-in: (NONPARTISAN),NONPARTISAN,True,693,5.50%,12602,67812,False
+15,1,State Senator District 11,Ellen Schutt,Ellen Schutt (Republican),Republican,False,1166,66.90%,1743,67812,False
+15,2,State Senator District 11,Adam Duda,Adam Duda (Democratic),Democratic,False,577,33.10%,1743,67812,False
+15,3,State Senator District 11,write-in:,write-in: (NONPARTISAN),NONPARTISAN,True,0,0.00%,1743,67812,False
+17,1,State Senator District 15,Scott Fleming,Scott Fleming (Republican),Republican,False,24723,37.91%,65223,67812,False
+17,2,State Senator District 15,Mark Spreitzer,Mark Spreitzer (Democratic),Democratic,False,37425,57.38%,65223,67812,False
+17,3,State Senator District 15,Christopher Dean,Christopher Dean (Serving People Not Parties),Serving People Not Parties,False,3051,4.68%,65223,67812,False
+17,4,State Senator District 15,write-in:,write-in: (NONPARTISAN),NONPARTISAN,True,24,0.04%,65223,67812,False
+19,1,State Senator District 17,Howard Marklein,Howard Marklein (Republican),Republican,False,18,42.86%,42,67812,False
+19,2,State Senator District 17,Jenna Jacobson,Jenna Jacobson (Democratic),Democratic,False,24,57.14%,42,67812,False
+19,3,State Senator District 17,write-in:,write-in: (NONPARTISAN),NONPARTISAN,True,0,0.00%,42,67812,False
+21,1,Representative to the Assembly District 31,Tyler August,Tyler August (Republican),Republican,False,1051,61.57%,1707,67812,False
+21,2,Representative to the Assembly District 31,John Perryman,John Perryman (Democratic),Democratic,False,655,38.37%,1707,67812,False
+21,3,Representative to the Assembly District 31,write-in:,write-in: (NONPARTISAN),NONPARTISAN,True,1,0.06%,1707,67812,False
+23,1,Representative to the Assembly District 43,Paul McGraw,Paul McGraw (Republican),Republican,False,8172,41.62%,19637,67812,False
+23,2,Representative to the Assembly District 43,Brienne Brown,Brienne Brown (Democratic),Democratic,False,11449,58.30%,19637,67812,False
+23,3,Representative to the Assembly District 43,write-in:,write-in: (NONPARTISAN),NONPARTISAN,True,16,0.08%,19637,67812,False
+25,1,Representative to the Assembly District 44,Ron Woodman,Ron Woodman (Republican),Republican,False,9144,38.17%,23953,67812,False
+25,2,Representative to the Assembly District 44,Ann Roe,Ann Roe (Democratic),Democratic,False,14786,61.73%,23953,67812,False
+25,3,Representative to the Assembly District 44,write-in:,write-in: (NONPARTISAN),NONPARTISAN,True,23,0.10%,23953,67812,False
+27,1,Representative to the Assembly District 45,Jocelyn Jordan,Jocelyn Jordan (Republican),Republican,False,8276,39.17%,21128,67812,False
+27,2,Representative to the Assembly District 45,Clinton Anderson,Clinton Anderson (Democratic),Democratic,False,12831,60.73%,21128,67812,False
+27,3,Representative to the Assembly District 45,write-in:,write-in: (NONPARTISAN),NONPARTISAN,True,21,0.10%,21128,67812,False
+29,1,Representative to the Assembly District 50,Jon Aleckson,Jon Aleckson (Republican),Republican,False,19,44.19%,43,67812,False
+29,2,Representative to the Assembly District 50,Bill Oemichen,Bill Oemichen (Democratic),Democratic,False,24,55.81%,43,67812,False
+29,3,Representative to the Assembly District 50,write-in:,write-in: (NONPARTISAN),NONPARTISAN,True,0,0.00%,43,67812,False
+31,1,Sheriff Rock County,Curtis Fell,Curtis Fell (Democratic),Democratic,False,51809,97.00%,53410,67812,False
+31,2,Sheriff Rock County,write-in:,write-in: (NONPARTISAN),NONPARTISAN,True,1601,3.00%,53410,67812,False
+33,1,Clerk of Circuit Court Rock County,Amanda Nelson,Amanda Nelson (Democratic),Democratic,False,50628,97.19%,52092,67812,False
+33,2,Clerk of Circuit Court Rock County,write-in:,write-in: (NONPARTISAN),NONPARTISAN,True,1464,2.81%,52092,67812,False
+35,1,Partial Veto Referendum - Question 1,Yes,Yes (NONPARTISAN),NONPARTISAN,False,32086,49.16%,65274,67812,False
+35,2,Partial Veto Referendum - Question 1,No,No (NONPARTISAN),NONPARTISAN,False,33188,50.84%,65274,67812,False
+37,1,Freedom to Gather Referendum - Question 2,Yes,Yes (NONPARTISAN),NONPARTISAN,False,29817,45.46%,65593,67812,False
+37,2,Freedom to Gather Referendum - Question 2,No,No (NONPARTISAN),NONPARTISAN,False,35776,54.54%,65593,67812,False
+39,1,Discrimination Prohibited Referendum - Question 3,Yes,Yes (NONPARTISAN),NONPARTISAN,False,37451,57.50%,65135,67812,False
+39,2,Discrimination Prohibited Referendum - Question 3,No,No (NONPARTISAN),NONPARTISAN,False,27684,42.50%,65135,67812,False
+41,1,Development Referendum City of Janesville,Yes,Yes (NONPARTISAN),NONPARTISAN,False,16779,62.82%,26711,67812,False
+41,2,Development Referendum City of Janesville,No,No (NONPARTISAN),NONPARTISAN,False,9932,37.18%,26711,67812,False
+43,1,Exceed Revenue Limit School District of Delavan-Darien,Yes,Yes (NONPARTISAN),NONPARTISAN,False,19,65.52%,29,67812,False
+43,2,Exceed Revenue Limit School District of Delavan-Darien,No,No (NONPARTISAN),NONPARTISAN,False,10,34.48%,29,67812,False
+45,1,Exceed Revenue Limit Evansville Community School District,Yes,Yes (NONPARTISAN),NONPARTISAN,False,2464,50.95%,4836,67812,False
+45,2,Exceed Revenue Limit Evansville Community School District,No,No (NONPARTISAN),NONPARTISAN,False,2372,49.05%,4836,67812,False
+47,1,Exceed Revenue Limit School District of Fort Atkinson,Yes,Yes (NONPARTISAN),NONPARTISAN,False,2,13.33%,15,67812,False
+47,2,Exceed Revenue Limit School District of Fort Atkinson,No,No (NONPARTISAN),NONPARTISAN,False,13,86.67%,15,67812,False
+49,1,Exceed Revenue Limit School District of Janesville,Yes,Yes (NONPARTISAN),NONPARTISAN,False,13352,53.23%,25083,67812,False
+49,2,Exceed Revenue Limit School District of Janesville,No,No (NONPARTISAN),NONPARTISAN,False,11731,46.77%,25083,67812,False
+51,1,Exceed Revenue Limit Whitewater Unified School District,Yes,Yes (NONPARTISAN),NONPARTISAN,False,185,36.06%,513,67812,False
+51,2,Exceed Revenue Limit Whitewater Unified School District,No,No (NONPARTISAN),NONPARTISAN,False,328,63.94%,513,67812,False

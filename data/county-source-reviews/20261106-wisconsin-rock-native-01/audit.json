@@ -1,0 +1,28 @@
+{
+  "row_counts": {
+    "county-participation.csv": 1,
+    "native-unit-participation.csv": 106,
+    "county-candidate-results.csv": 65,
+    "native-unit-candidate-results.csv": 3648,
+    "county-literal-party-results.csv": 65,
+    "source-native-cells.csv": 7413,
+    "native-reporting-statements.csv": 26
+  },
+  "county_ballots_cast": 67812,
+  "county_registered_voters": 97950,
+  "native_tables": 53,
+  "native_summary_detail_pairs": 26,
+  "all_67_native_vectors_reconcile": true,
+  "all_66_printed_percentages_reconcile": true,
+  "unit_zero_registration_and_zero_ballots": 7,
+  "unit_nonzero_registration_and_zero_ballots": 2,
+  "native_update_literal": "November 03, 2026 at 10:56 PM",
+  "source_timezone": null,
+  "no_candidate_vote_or_received_ballot_substitution": true,
+  "no_cross_contest_party_aggregation": true,
+  "write_in_party_not_inferred": true,
+  "analysis_rate_approvals": 0,
+  "map_approvals": 0,
+  "all_mode_definition_approvals": 0,
+  "scope": "Complete native numerical query, not final/certified turnout, demographic participation, an all-mode definition, Census identity or map approval, CVAP/VAP/VEP rates, a raw webpage mirror or live explorer promotion."
+}
