@@ -57,7 +57,7 @@ test('historical NC year tables use the pinned complete originals without moving
 });
 
 test('only reviewed county context archives move to their complete release assets', () => {
-	for (const version of ['01', '05', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22']) {
+	for (const version of ['01', '05', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23']) {
 		const path = `/participation-county-context/20261106-${version}/complete-county-participation-context-${version}.zip`;
 		const url = participationDownload(path);
 		assert.equal(url, `https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-${version}/complete-county-participation-context-${version}.zip`);
@@ -69,7 +69,7 @@ test('only reviewed county context archives move to their complete release asset
 		'/participation-county-context/20261106-11/review.json',
 		'/participation-county-context/20261106-11/complete-source-records.json.gz',
 		'/participation-county-context/20261106-11/complete-county-participation-context-10.zip',
-		'/participation-county-context/20261106-23/complete-county-participation-context-23.zip',
+		'/participation-county-context/20261106-24/complete-county-participation-context-24.zip',
 		'/participation-county-context/20261107-01/complete-county-participation-context-01.zip',
 		'/participation-county-context/20261106-11/counties-PA.geojson.gz',
 	]) assert.equal(participationDownload(path), path);
@@ -84,14 +84,14 @@ test('only redundant context13 geometry copies move to fixed complete originals,
 	}
 	for (const path of [
 		'/participation-county-context/20261106-12/geometry/county-GA.geojson',
-		'/participation-county-context/20261106-23/geometry/county-GA.geojson',
+		'/participation-county-context/20261106-24/geometry/county-GA.geojson',
 		'/participation-county-context/20261106-13/geometry/county-TX.geojson',
 		'/participation-county-context/20261106-13/review.json',
 		'/participation-context/20261104T183601Z/geometry/county-GA.geojson',
 	]) assert.equal(participationDownload(path), path);
 });
 
-test('context10/11 redundant copies and contexts17–21 use only their exact verified geometry inventories', () => {
+test('context10/11 redundant copies and contexts17–23 use only their exact verified geometry inventories', () => {
 	for (const [version, revision, codes] of [
 		['10', '47a0efe3e75e9498d89340a7c50e3b311f55c5dc', ['AL', 'AR', 'AZ', 'CA', 'DC', 'FL', 'IA', 'KY', 'MO', 'NJ', 'NV', 'OR', 'PA', 'VA', 'WA', 'WY']],
 		['11', '784d261600f349073d3cf74ba8d168595cf6a46e', ['AL', 'AR', 'AZ', 'CA', 'DC', 'FL', 'IA', 'KY', 'MO', 'NJ', 'NV', 'OR', 'PA', 'VA', 'WA', 'WY']],
@@ -101,6 +101,7 @@ test('context10/11 redundant copies and contexts17–21 use only their exact ver
 		['20', '7ad830f70be4a8eb47d9c95896c9c99985228467', ['AL', 'AR', 'AZ', 'CA', 'DC', 'FL', 'GA', 'IA', 'KY', 'MN', 'MO', 'NJ', 'NV', 'OR', 'PA', 'VA', 'WA', 'WY']],
 		['21', 'ed629325b3c70256304c06221228247dc92ab426', ['AL', 'AR', 'AZ', 'CA', 'DC', 'FL', 'GA', 'IA', 'KY', 'MN', 'MO', 'NJ', 'NV', 'OR', 'PA', 'VA', 'WA', 'WY']],
 		['22', '4f8c93d70a6d405519789ee4c5f7a631749e3829', ['AL', 'AR', 'AZ', 'CA', 'DC', 'FL', 'GA', 'IA', 'KY', 'MN', 'MO', 'NJ', 'NV', 'OR', 'PA', 'VA', 'WA', 'WY']],
+		['23', 'e32e64f6a5301d10df1bd72974975bc0f8cd3749', ['AL', 'AR', 'AZ', 'CA', 'DC', 'FL', 'GA', 'IA', 'KY', 'MN', 'MO', 'NJ', 'NV', 'OR', 'PA', 'UT', 'VA', 'WA', 'WY']],
 	]) {
 		for (const code of codes) {
 			const path = `/participation-county-context/20261106-${version}/geometry/county-${code}.geojson`;
@@ -109,6 +110,10 @@ test('context10/11 redundant copies and contexts17–21 use only their exact ver
 		}
 		for (const file of ['review.json', 'complete-source-records.json.gz', 'geometry/county-TX.geojson']) {
 			const path = `/participation-county-context/20261106-${version}/${file}`;
+			assert.equal(participationDownload(path), path);
+		}
+		if (version !== '23') {
+			const path = `/participation-county-context/20261106-${version}/geometry/county-UT.geojson`;
 			assert.equal(participationDownload(path), path);
 		}
 	}

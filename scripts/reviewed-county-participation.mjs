@@ -768,6 +768,77 @@ export function loadReviewedBedfordNorthumberlandParticipation(reviews) {
   });
 }
 
+export function loadReviewedUtahParticipation(reviews) {
+  const id = 'utah-ballot-statistics-20261106-01';
+  const matches = reviews.filter(review => review.id === id);
+  if (matches.length !== 1) throw new Error(`Missing or duplicated reviewed county source: ${id}`);
+  const review = matches[0], directory = resolve(review.data_directory);
+  const manifest = readFileSync(resolve(directory, 'checksums.json'));
+  if (createHash('sha256').update(manifest).digest('hex') !==
+    'c40a3b04df58c359e20724b9a5cea90cd9d6e0ed9c1df4cd25ee918a7586c1e4')
+    throw new Error(`Invalid reviewed county participation: ${id} / checksums.json`);
+  const files = [...JSON.parse(manifest).files, { path: 'complete-query.zip', bytes: 33004,
+    sha256: '6ef44592932d54e75f6a668ffa7ae2e3a2720992e3a982804d927106ccc64761' }];
+  for (const expected of files) {
+    const body = readFileSync(resolve(directory, expected.path));
+    if (body.length !== expected.bytes || createHash('sha256').update(body).digest('hex') !== expected.sha256)
+      throw new Error(`Invalid reviewed county participation: ${id} / ${expected.path}`);
+  }
+  const rows = csv(resolve(directory, 'county-participation.csv'));
+  const source = JSON.parse(readFileSync(resolve(directory, 'source-qualification.json'), 'utf8'));
+  if (rows.length !== 29 || new Set(rows.map(row => row.native_county)).size !== 29
+    || rows.filter(row => row.ballots_counted !== '').length !== 19
+    || rows.filter(row => row.ballots_counted !== '' && row.registered_voters !== '').length !== 18)
+    throw new Error(`Incomplete reviewed county source: ${id}`);
+  return rows.map(native => {
+    const qualified = native.source_scope_review === 'native_counted_total';
+    const ballots = native.ballots_counted === '' ? null : Number(native.ballots_counted);
+    const denominator = native.registered_voters === '' ? null : Number(native.registered_voters);
+    const report = native.source_ordinal === '' ? null
+      : source.reports.find(row => row.source_ordinal === Number(native.source_ordinal));
+    if (native.native_fips !== '' || native.analysis_rate_approved !== 'False'
+      || native.map_approved !== 'False' || native.source_timezone_literal !== ''
+      || qualified !== (ballots !== null)
+      || ballots !== null && (!Number.isSafeInteger(ballots) || ballots < 0)
+      || denominator !== null && (!Number.isSafeInteger(denominator) || denominator <= 0
+        || ballots !== null && ballots > denominator)
+      || report && (!report.latest_selection || report.county_literal !== native.native_county
+        || report.fields.ballots_counted !== ballots || report.fields.registered_voters !== denominator))
+      throw new Error(`Invalid reviewed county participation: ${id} / ${native.native_county}`);
+    const quality = [
+      'Source-defined county counted-ballot snapshot, not candidate selections, receipts, fully processed ballots, scans or voter-history credits.',
+      'Same-report registered-voter fraction only when both values are supplied; approximate registration labels remain approximate. Not CVAP, VAP, VEP or demographic turnout.',
+      'Counting is incomplete; no complete all-mode coverage, certification or final unique-voter count is inferred. Ballot-processing categories are not added as a partition.',
+      'November 2 registration affiliations remain separate, not substituted denominators, party votes or group-specific participation.',
+      'Literal source cutoffs retain missing years/timezones; source upload dates and portal publication clocks are not numerical update clocks.',
+      report?.qualification ?? 'No declared ballot-statistics report; missing participation is not zero.',
+    ];
+    const clock = native.source_updated_literal;
+    return {
+      year: 2026, state_code: 'UT', county_id: `reviewed:UT:${native.native_county}`,
+      county: native.native_county, geography_level: 'county', ballots, denominator,
+      participation_measure_kind: 'source_defined_participation_count',
+      participation_measure_literal: native.native_counted_label || 'County counted-ballot total not supplied',
+      participation_measure_label: qualified ? `Native ${native.native_counted_label} (counted snapshot)`
+        : 'County counted-ballot total not supplied',
+      denominator_basis: 'native_registered_voters',
+      reported_pct: ballots !== null && denominator !== null ? 100 * ballots / denominator : null,
+      native_printed_pct: null, source_status_literal: native.native_status,
+      reported_units: null, total_units: null, source_rows: report ? 1 : 0,
+      maps_approved: false, review_id: id, native_record: native,
+      native_source_updates: clock
+        ? [{ source: 'county ballot statistics', native_update_literal: clock, declared_timezone: null }] : [],
+      source_update_label: clock ? `${clock} (timezone not declared)`
+        : 'Native statistics update clock not supplied; upload and fetch clocks are not substitutes.',
+      source_reporting_label: `${native.source_scope_review}; `
+        + (native.native_denominator_label ? `Native denominator: ${native.native_denominator_label}. ` : 'Native denominator missing. ')
+        + quality.join(' '),
+      quality, source_url: `${review.base_url}county-participation.csv`,
+      complete_download_url: review.complete_download_url,
+    };
+  });
+}
+
 export function loadReviewedCountyParticipation(reviews) {
   const observations = [], seen = new Set();
   for (const [id, ballotField, denominatorField, printedField, code, names] of profiles) {
@@ -1141,5 +1212,5 @@ export function loadReviewedCountyParticipation(reviews) {
     ...loadLawrenceParticipation(reviews), ...loadHuntingdonParticipation(reviews),
     ...loadReviewedAdditionalPennsylvaniaParticipation(reviews), ...loadReviewedSomersetParticipation(reviews),
     ...loadReviewedSusquehannaParticipation(reviews), ...loadReviewedSullivanWyomingParticipation(reviews),
-    ...loadReviewedBedfordNorthumberlandParticipation(reviews)];
+    ...loadReviewedBedfordNorthumberlandParticipation(reviews), ...loadReviewedUtahParticipation(reviews)];
 }

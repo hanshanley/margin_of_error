@@ -358,6 +358,9 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 				California retains native voterTurnout, not a proved all-mode ballot count or independently deduplicated unique voters.
 				Minnesota retains native Total Number Voted: 75 complete county counts and twelve partial inventories with missing totals.
 				Its electorate explicitly sums 7AM and Election Day registrations; native statistical conflicts withhold the calculated fraction.
+				Utah retains all 29 county inventories: 19 source-defined counted snapshots and 18 same-report registered-voter fractions.
+				Six unresolved counting scopes and four absent declared reports remain missing, not zero;
+				approximate registration labels and literal report clocks are preserved.
 				New Jersey's derived early + Election Day + mail-tallied subtotals are explicitly labeled,
 				not native all-mode ballot totals; Essex and Hudson remain withheld in the full 21-county download.
 				These are not UF VEP/VAP estimates or demographic turnout.
@@ -385,8 +388,14 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 						<th scope="col">Native printed fraction</th><th scope="col">Native status</th>
 						<th scope="col">Complete data</th></tr></thead>
 					<tbody>{reviewedCounties.map(row => <tr>
-						<th scope="row">{row.county}{row.state_code === 'CA' ? ', California' : row.state_code === 'PA' ? ', Pennsylvania' : row.state_code === 'NJ' ? ', New Jersey' : row.state_code === 'GA' ? ', Georgia' : row.state_code === 'MN' ? ', Minnesota' : ' · county equivalent'}</th>
-						<td>{row.ballots === null ? 'Not supplied (incomplete native statistics)' : formatNumber(row.ballots)}{reviewedMeasure(row) && ` · ${reviewedMeasure(row)}`}</td>
+						<th scope="row">{row.county}{row.state_code === 'CA' ? ', California' : row.state_code === 'PA' ? ', Pennsylvania' : row.state_code === 'NJ' ? ', New Jersey' : row.state_code === 'GA' ? ', Georgia' : row.state_code === 'MN' ? ', Minnesota' : row.state_code === 'UT' ? ', Utah' : ' · county equivalent'}</th>
+						<td>{row.ballots === null
+							? row.native_record?.source_scope_review?.startsWith('withheld_')
+								? 'Withheld (native counting scope)'
+								: row.native_record?.source_scope_review === 'missing_declared_report'
+									? 'Not supplied (no declared county report)'
+									: 'Not supplied (incomplete native statistics)'
+							: formatNumber(row.ballots)}{reviewedMeasure(row) && ` · ${reviewedMeasure(row)}`}</td>
 						<td>{row.denominator === null ? row.native_record.native_registered_voters === '0'
 							|| row.state_code === 'GA' && Number(row.native_record.native_total_voters) === 0
 							? 'Withheld (native zero)' : 'Not supplied' : formatNumber(row.denominator)}</td>

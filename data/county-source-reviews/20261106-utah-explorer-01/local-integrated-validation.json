@@ -1,0 +1,53 @@
+{
+  "checked_at_utc": "2026-11-06T19:29:38.496307+00:00",
+  "context": "20261106-23",
+  "focused_tests_passed": 112,
+  "astro_errors": 0,
+  "astro_warnings": 0,
+  "full_build_passed": true,
+  "build_regressions_passed": 4,
+  "full_build_validator_run": false,
+  "known_unrelated_full_validator_baseline": "UK topic-card count 23 versus 16; no broad full-suite pass claimed.",
+  "complete_relocated_downloads": 374,
+  "prepared_site_bytes": 965314599,
+  "unchanged_pages_size_limit_bytes": 1000000000,
+  "browser_scenarios": 7,
+  "browser_proof": "local-integrated-browser.json",
+  "compatibility_unchanged_entries": 114,
+  "merged_main_source_revision": "611a07e566db3b65e39eb8d4e808d8fb30ab9e14",
+  "concurrent_original_backed_refreshes_preserved": {
+    "uf-turnout.json": {
+      "data_directory": "data/uf-turnout/20261106T192048Z",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7df424a6c131d06a2ffd898f96377725337012f3/data/uf-turnout/20261106T192048Z/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-uf-2026-20261106t192048z/complete-uf-turnout.zip",
+      "complete_download_bytes": 38038,
+      "complete_download_sha256": "879095f2a95c3d3a455d80206e026c7a99a90cf4398ef34c1e64c44e9b8afa94"
+    },
+    "county-results.json": {
+      "data_directory": "data/county-results/20261106T192048Z",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/b405fd3f002bac180dbc0fdf79f0a2483365355d/data/county-results/20261106T192048Z/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-2026-20261106t192048z/complete-county-results.zip",
+      "complete_download_bytes": 150792729,
+      "complete_download_sha256": "c4a924e02b6fdfe4935a8eba6639ab890d378f9288e84ebb74d3156707c537fa"
+    }
+  },
+  "validation_log_receipts": {
+    "tests": {
+      "bytes": 28913,
+      "sha256": "9226676d5f7e398e3eb06058c15e2455a43ff1dc2124202eedc44009b382fde5"
+    },
+    "check": {
+      "bytes": 1915,
+      "sha256": "b12c6b45acc9501af8780f6492aa65659cfa9bfd74bb1be6081e1399ea67a188"
+    },
+    "build": {
+      "bytes": 5781,
+      "sha256": "ff6c2d734d18679da68adbdc212c52012665fcd2a4c36b8bf4fcc2116ca961a9"
+    },
+    "preparation": {
+      "bytes": 74,
+      "sha256": "0c6c4c57ab21c6acdc6c702c204107bbfc7967a9ef918503385ae763d49a8d07"
+    }
+  },
+  "scope": "Exact final integrated local build; hosted artifact and production browser checks still required."
+}

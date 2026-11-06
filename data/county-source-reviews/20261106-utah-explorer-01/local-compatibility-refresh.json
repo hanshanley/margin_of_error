@@ -1,0 +1,11 @@
+{
+  "reviewed_at_utc": "2026-11-06T19:18:19.677Z",
+  "research_revision": "792e3d91609f7ee929c35b5ec15c13710db94be8",
+  "source_renderer_sha256": "b152036b660047b2f9beb7db8ebc51e98484bc34276989bbfb44e256df1f345f",
+  "complete_original_public_files_checked_before_and_after": 115,
+  "unchanged_manifest_entries": 114,
+  "old_generated_app_sha256": "9de545603234aba4facb3bbf4af95e07b28375c6a044e28ab7f83db16a5de154",
+  "refreshed_generated_app_bytes": 26637,
+  "refreshed_generated_app_sha256": "18adcd7ab9152b82598fe5d634c10d4361ab4815c9179de8a05c80d46274cb36",
+  "scope": "Regenerated only app.js and its manifest entry through the existing adapter and exact pinned research original for context23; every other entire file and manifest entry remains byte-identical."
+}

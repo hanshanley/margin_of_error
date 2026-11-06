@@ -1,6 +1,33 @@
 {
   "reviews": [
     {
+      "id": "utah-ballot-statistics-20261106-01",
+      "label": "Utah 2026: consolidated county counted-ballot statistics and complete numerical query",
+      "data_directory": "data/county-source-reviews/20261106-utah-native-scope-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/8b95ad4acc0f8967e82c04ffb543c6225801dd20/data/county-source-reviews/20261106-utah-native-scope-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-utah-native-statistics-20261106-01/complete-query.zip",
+      "complete_download_bytes": 33004,
+      "complete_download_sha256": "6ef44592932d54e75f6a668ffa7ae2e3a2720992e3a982804d927106ccc64761",
+      "checksums_file": "checksums.json",
+      "review_status": "complete_numerical_query_reviewed_unofficial",
+      "maps_approved": false,
+      "scope_note": "All 26 current declared originals, 25 distinct report counties and 29 native county identities reviewed. Nineteen latest source-defined counted-ballot snapshots, eighteen with same-report registrations; not final, certified, proved all-mode, CVAP/VAP/VEP or demographic turnout. Cache/Garfield/Iron/Kane/Millard/San Juan scope-withheld; Daggett/Morgan/Piute/Wasatch missing. Preserve both Davis reports without adding them, Wayne1109counted/1209credited/difference100, native source clocks including UintahNovember3morning and absent Wayneclock, missing timezones and parent registration arithmetic discrepancies. All 228 county/party affiliation rows and native absences retained separately; affiliations are not party votes and November2 registrations never replace report denominators. All13 immutable numerical assets/pinned files/12 ZIP members/nine extracted tests reproduce exactly. Source FIPS and native approval flags stay missing/false; independently reviewed contextual geometry does not certify2026 reporting boundaries. Original documents and operational/personnel worksheets remain private.",
+      "tables": [
+        {"file": "county-participation.csv", "label": "Utah: all 29 counties, native counted snapshots and missingness (CSV)"},
+        {"file": "source-native-observations.csv", "label": "Utah: all 261 reviewed native statistics and historical fields (CSV)"},
+        {"file": "source-reports.csv", "label": "Utah: all 26 report receipts, source clocks and Davis snapshots (CSV)"},
+        {"file": "county-party-registrations.csv", "label": "Utah: all 228 native registration-affiliation rows, not party votes (CSV)"},
+        {"file": "state-party-registrations.csv", "label": "Utah: native state registration totals and arithmetic differences (CSV)"},
+        {"file": "native-county-catalog.csv", "label": "Utah: complete native county identity catalog, not FIPS (CSV)"},
+        {"file": "source-qualification.json", "label": "Utah: complete reviewed numerical input, receipts and scope decisions (JSON)"},
+        {"file": "audit.json", "label": "Utah: full numerical audit and missingness (JSON)"},
+        {"file": "methods.json", "label": "Utah: complete methods, qualifications and reproduction instructions (JSON)"},
+        {"file": "checksums.json", "label": "Utah: complete numerical file inventory and hashes (JSON)"},
+        {"file": "review-counties.py", "label": "Utah: standard-library offline reproducer (Python)"},
+        {"file": "test_review_counties.py", "label": "Utah: nine portable numerical and archive tests (Python)"}
+      ]
+    },
+    {
       "id": "pennsylvania-bedford-20261106-01",
       "label": "Bedford County, Pennsylvania 2026: native participation and complete numerical query",
       "data_directory": "data/county-source-reviews/20261106-bedford-native-turnout-01",

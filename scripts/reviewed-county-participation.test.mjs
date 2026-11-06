@@ -5,12 +5,16 @@ import { join } from 'node:path';
 import test from 'node:test';
 import { parse } from 'csv-parse/sync';
 import { gunzipSync } from 'node:zlib';
-import { loadReviewedCountyParticipation as loadCurrentReviewedCountyParticipation, loadReviewedStatewideParticipation,
+import { loadReviewedCountyParticipation as loadCompleteReviewedCountyParticipation, loadReviewedStatewideParticipation,
   loadReviewedMinnesotaParticipation, loadReviewedAdditionalPennsylvaniaParticipation,
   loadReviewedSomersetParticipation, loadReviewedSusquehannaParticipation,
-  loadReviewedSullivanWyomingParticipation, loadReviewedBedfordNorthumberlandParticipation } from './reviewed-county-participation.mjs';
+  loadReviewedSullivanWyomingParticipation, loadReviewedBedfordNorthumberlandParticipation,
+  loadReviewedUtahParticipation } from './reviewed-county-participation.mjs';
 
 const reviews = JSON.parse(readFileSync('public/participation-source-reviews.json', 'utf8')).reviews;
+const utahId = 'utah-ballot-statistics-20261106-01';
+const loadCurrentReviewedCountyParticipation = sourceReviews =>
+  loadCompleteReviewedCountyParticipation(sourceReviews).filter(row => row.review_id !== utahId);
 const newCountyIds = ['pennsylvania-bedford-20261106-01', 'pennsylvania-northumberland-20261106-01'];
 const loadAllReviewedCountyParticipation = sourceReviews =>
   loadCurrentReviewedCountyParticipation(sourceReviews).filter(row => !newCountyIds.includes(row.review_id));
@@ -25,6 +29,70 @@ const loadReviewedCountyParticipation = sourceReviews =>
 const batchCounties = ['Juniata', 'Mercer', 'Montour', 'Columbia', 'Greene', 'Lycoming'];
 const isBatch = row => ['CA', 'GA', 'MN'].includes(row.state_code)
   || row.state_code === 'PA' && [...batchCounties, 'Lawrence', 'Huntingdon'].includes(row.county);
+
+test('Utah preserves every prior native record and keeps missing county totals distinct from zero', () => {
+  const rows = loadCompleteReviewedCountyParticipation(reviews);
+  const previous = JSON.parse(gunzipSync(readFileSync(
+    'public/participation-county-context/20261106-22/complete-source-records.json.gz')));
+  const priorNative = previous.filter(row => rows.some(current =>
+    current.county_id === row.county_id && current.state_code === row.state_code));
+  assert.deepEqual(rows.filter(row => row.review_id !== utahId), priorNative);
+  assert.equal(priorNative.length, 367);
+  const added = loadReviewedUtahParticipation(reviews);
+  assert.equal(added.length, 29);
+  assert.equal(added.filter(row => row.ballots !== null).length, 19);
+  assert.equal(added.filter(row => row.reported_pct !== null).length, 18);
+  const byCounty = Object.fromEntries(added.map(row => [row.county, row]));
+  assert.equal(byCounty['Davis County'].ballots, 115308);
+  assert.equal(byCounty['Box Elder County'].denominator, null);
+  assert.equal(byCounty['Box Elder County'].reported_pct, null);
+  assert.equal(byCounty['Iron County'].denominator, 32827);
+  assert.equal(byCounty['Iron County'].ballots, null);
+  assert.equal(byCounty['Iron County'].reported_pct, null);
+  for (const name of ['Cache', 'Garfield', 'Iron', 'Kane', 'Millard', 'San Juan',
+    'Daggett', 'Morgan', 'Piute', 'Wasatch'])
+    assert.equal(byCounty[`${name} County`].ballots, null);
+  assert.equal(byCounty['Wayne County'].ballots, 1109);
+  assert.equal(byCounty['Wayne County'].denominator, 1827);
+  assert.match(byCounty['Wayne County'].source_reporting_label, /1209 credited and the 100 discrepancy/);
+  assert.equal(byCounty['Wayne County'].native_source_updates.length, 0);
+  assert.match(byCounty['Uintah County'].source_update_label, /11\/03\/2026 11:18 a.m./);
+  assert.match(byCounty['Juab County'].source_reporting_label, /Approx # Active Registered Voters/);
+  for (const row of added) {
+    assert.equal(row.maps_approved, false);
+    assert.equal(row.native_record.native_fips, '');
+    assert.equal(row.native_record.analysis_rate_approved, 'False');
+    assert.equal(row.native_record.map_approved, 'False');
+    assert.match(row.source_reporting_label, /not candidate selections/);
+    assert.match(row.source_reporting_label, /not.*party votes/);
+  }
+});
+
+test('Utah rejects altered complete inputs and exposes every immutable numerical file', () => {
+  const original = reviews.find(row => row.id === utahId);
+  const publication = JSON.parse(readFileSync(
+    'data/county-source-reviews/20261106-utah-native-publication-01/published-verification.json'));
+  assert.equal(publication.immutable, true);
+  assert.equal(publication.all_13_files_reproduce_exactly, true);
+  assert.deepEqual([...original.tables.map(row => row.file), 'complete-query.zip'].sort(),
+    publication.assets.map(row => row.file).sort());
+  const directory = mkdtempSync(join(tmpdir(), 'utah-participation-'));
+  try {
+    const files = ['checksums.json', 'complete-query.zip',
+      ...JSON.parse(readFileSync(join(original.data_directory, 'checksums.json'))).files.map(row => row.path)];
+    for (const file of files) copyFileSync(join(original.data_directory, file), join(directory, file));
+    const altered = reviews.map(row => row === original ? { ...row, data_directory: directory } : row);
+    for (const file of files) {
+      writeFileSync(join(directory, file), Buffer.concat([readFileSync(join(directory, file)), Buffer.from('\n')]));
+      assert.throws(() => loadReviewedUtahParticipation(altered), /Invalid reviewed county participation/);
+      copyFileSync(join(original.data_directory, file), join(directory, file));
+    }
+    for (const registrations of [reviews.filter(row => row !== original), [...reviews, original]])
+      assert.throws(() => loadReviewedUtahParticipation(registrations), /Missing or duplicated reviewed county source/);
+  } finally {
+    rmSync(directory, { recursive: true, force: true });
+  }
+});
 
 test('Bedford/Northumberland preserve all 365 prior native records and add only genuine county participation', () => {
   const rows = loadCurrentReviewedCountyParticipation(reviews);

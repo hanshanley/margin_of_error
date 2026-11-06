@@ -5,8 +5,11 @@ import { gunzipSync } from 'node:zlib';
 import { contextualCountyRows } from '../public/scripts/participation-county-context.js';
 import { createCountyContextReview, loadCountyContextReview } from './build-county-participation-context.mjs';
 import { loadAdditionalParticipation } from './additional-participation.mjs';
-import { loadReviewedCountyParticipation as loadCurrentReviewedCountyParticipation, loadReviewedMinnesotaParticipation } from './reviewed-county-participation.mjs';
+import { loadReviewedCountyParticipation as loadCompleteReviewedCountyParticipation, loadReviewedMinnesotaParticipation } from './reviewed-county-participation.mjs';
 
+const utahId = 'utah-ballot-statistics-20261106-01';
+const loadCurrentReviewedCountyParticipation = reviews =>
+  loadCompleteReviewedCountyParticipation(reviews).filter(row => row.review_id !== utahId);
 const newCountyIds = ['pennsylvania-bedford-20261106-01', 'pennsylvania-northumberland-20261106-01'];
 const loadAllReviewedCountyParticipation = reviews =>
   loadCurrentReviewedCountyParticipation(reviews).filter(row => !newCountyIds.includes(row.review_id));
@@ -52,9 +55,6 @@ test('context22 preserves every prior record, join, exclusion and geometry while
   assert.deepEqual(next.geometry, prior.geometry);
   for (const entry of Object.values(prior.geometry))
     assert.deepEqual(readFileSync(new URL(entry.file, nextRoot)), readFileSync(new URL(entry.file, priorRoot)));
-  const loaded = loadCountyContextReview(current);
-  assert.deepEqual(loaded.coverage.PA, { counties: 43, rates: 40 });
-  assert.equal(loaded.base_url, '/participation-county-context/20261106-22/');
   assert.deepEqual(next.counts, { complete_source_records: 1232, contextual_joins: 748, jurisdictions: 18,
     reviewed_rates: 361, missing_rates: 387, excluded_municipalities: 286, excluded_missing_county_totals: 198 });
   const collection = JSON.parse(readFileSync(new URL(next.geometry.PA.file, nextRoot)));
@@ -80,6 +80,40 @@ test('context22 preserves every prior record, join, exclusion and geometry while
   assert.equal(publication.entire_assets.length, 4);
   assert.equal(publication.commit_pinned_files.length, 32);
   assert.throws(() => loadCountyContextReview(priorRecords), /complete current source records/);
+});
+
+test('context23 retains all context22 records and joins only the 19 qualified Utah counted snapshots', async () => {
+  const directory = new URL('../public/participation-county-context/20261106-23/', import.meta.url);
+  const priorDirectory = new URL('../public/participation-county-context/20261106-22/', import.meta.url);
+  const next = JSON.parse(readFileSync(new URL('review.json', directory)));
+  const prior = JSON.parse(readFileSync(new URL('review.json', priorDirectory)));
+  const current = [...loadAdditionalParticipation().counties,
+    ...loadCompleteReviewedCountyParticipation(JSON.parse(readFileSync('public/participation-source-reviews.json')).reviews)];
+  assert.deepEqual(JSON.parse(gunzipSync(readFileSync(new URL('complete-source-records.json.gz', directory)))), current);
+  assert.deepEqual(current.filter(row => row.review_id !== utahId),
+    JSON.parse(gunzipSync(readFileSync(new URL('complete-source-records.json.gz', priorDirectory)))));
+  assert.deepEqual(next.observations.filter(row => row.review_id !== utahId), prior.observations);
+  assert.deepEqual(next.excluded.filter(row => row.state_code !== 'UT'), prior.excluded);
+  for (const [code, geometry] of Object.entries(prior.geometry)) {
+    assert.deepEqual(next.geometry[code], geometry);
+    assert.deepEqual(readFileSync(new URL(geometry.file, directory)), readFileSync(new URL(geometry.file, priorDirectory)));
+  }
+  assert.deepEqual(next.counts, { complete_source_records: 1261, contextual_joins: 767, jurisdictions: 19,
+    reviewed_rates: 379, missing_rates: 388, excluded_municipalities: 286, excluded_missing_county_totals: 208 });
+  assert.equal(next.excluded.filter(row => row.state_code === 'UT' && /scope withheld/.test(row.reason)).length, 6);
+  assert.equal(next.excluded.filter(row => row.state_code === 'UT' && /no declared/.test(row.reason)).length, 4);
+  const loaded = loadCountyContextReview(current);
+  assert.deepEqual(loaded.coverage.UT, { counties: 19, rates: 18 });
+  assert.deepEqual(loaded.coverage.PA, { counties: 43, rates: 40 });
+  assert.equal(loaded.base_url, '/participation-county-context/20261106-23/');
+  const collection = JSON.parse(readFileSync(new URL(next.geometry.UT.file, directory)));
+  const matched = await contextualCountyRows(current.filter(row => row.state_code === 'UT'), next,
+    collection, 'UT', next.context_base_url, next.geometry.UT.file);
+  assert.equal(matched.size, 19);
+  assert.equal(matched.get('49011').ballots, 115308);
+  assert.equal(matched.get('49003').reported_pct, null);
+  assert.equal(matched.has('49005'), false);
+  assert.equal(matched.has('49009'), false);
 });
 
 test('Sullivan/Wyoming context21 preserves all context20 records, joins, exclusions and geometry', async () => {

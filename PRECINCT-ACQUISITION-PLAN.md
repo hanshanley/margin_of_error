@@ -2,7 +2,7 @@
 
 ## Current verified production and next acquisition
 
-**November 6: Utah consolidated numerical query reviewed; not yet LIVE.**
+**November 6: Utah numerical and context queries immutable; UI validated locally, not yet LIVE.**
 The actual official general-election portal's declared report menu supplies
 **26 current complete originals / 25 distinct counties**, without guessing
 download paths. All **19 PDFs / 20 physical pages / seven workbooks** are retained
@@ -40,7 +40,7 @@ remain documented, not certified election-boundary claims.
 The separate county-usability review permits **19 source-defined counted
 snapshots / 18 same-report registration fractions**, preserving approximate
 denominator labels, incomplete counting and original false source approvals.
-Prepared **context23** preserves every **1,232 prior complete records / 748 joins /
+Immutable **context23** preserves every **1,232 prior complete records / 748 joins /
 18 entire geometries / exclusions / missingness** and adds all 29 native
 inventories, including ten withheld/missing counties. Its **1,261 records /
 767 joins / 379 fractions / 388 missing rates / 19 jurisdictions** reproduce.
@@ -48,10 +48,37 @@ The **33-file / 32-member** context query passes standalone verification;
 review SHA-256 **`5edcb84a43125b762d2bd2f6c0d185c999fcececfcaaf9d01c7f7d77c52f5545`**,
 ZIP **3,006,684 bytes / SHA-256
 `b9bd11cdc5649d576632182353afd36ed081d6249f7ceaf6a9b26ca9c42a626c`**.
-This is not deployed; current verified production remains
+Context release **436893269**, pinned source
+**`e32e64f6a5301d10df1bd72974975bc0f8cd3749`**, passes draft and public verification:
+all four entire assets, all **33 commit-pinned files / 32 ZIP members** and
+byte-identical full offline reproduction. Both exact credential jobs pass.
+The UI pointer, immutable download router and complete native registry are
+integrated. A fresh live context22 baseline independently matches all **367
+native rows / 858 download anchors / historical years**. All **112 focused
+tests**, Astro check (**zero errors/warnings**) and the full build pass.
+Regeneration checks all **115 entire compatibility files** before/after, changes
+only the generated app and its manifest entry, and retains all **114 other
+manifest entries**. Withheld counting scopes and absent declared reports have
+distinct missing-count labels rather than zeros.
+The final integration merges all four concurrent original-backed UF/county
+refresh commits through main **`611a07e566db3b65e39eb8d4e808d8fb30ab9e14`**,
+without overwriting their pointers or dropping previous snapshots. The full
+**112-test / zero-error Astro / complete-build** checks pass again. Exact Pages
+preparation verifies all **374 whole-file relocations** and measures
+**965,314,599 local bytes**, below the unchanged **1,000,000,000-byte limit**.
+All **seven final local browser scenarios** pass, retaining every **1,232 prior
+complete records / 367 native records / 858 download anchors / 18 entire
+imports / historical years / 52 UF rows**. The resulting **887 download
+anchors / 882 distinct URLs** include the new immutable Utah files and both
+new refreshes, with all prior links preserved. All 29 Utah detail selections,
+19 counts, 18 fractions, eleven gray rate shapes, approximate denominators,
+literal clocks and the credited/count discrepancy are checked on desktop/mobile.
+Local source/archive/history scanning and all six scanner regression tests pass.
+The bounded static preview has been stopped.
+This UI is not deployed; the last fully verified production proof remains
 **context22 / `55465f323f4f63924fb999241c1f0676372a2ab6`**.
-Next: verify immutable context publication, complete integration/build/browser
-checks and measure the actual hosted artifact before claiming a live update.
+Next: deploy the genuine UI, then measure/verify the exact original hosted
+artifact, all prior public paths and seven production browsers before claiming LIVE.
 
 **November 6: Bedford/Northumberland context22 verified LIVE at 18:46UTC.**
 Both complete native numerical packages are immutable and fully verified in
