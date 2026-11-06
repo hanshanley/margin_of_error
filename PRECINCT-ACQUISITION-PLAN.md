@@ -2,6 +2,42 @@
 
 ## Current verified production and next acquisition
 
+**November 6, 14:59 UTC: Indiana, Lackawanna, Schuylkill and context18 LIVE verified.**
+Exact UI **`c49c32d96a9347accfdd9126fd758a6a091d3108`**, Pages
+**42237338660 attempt 1**, passes its original hosted artifact
+**13513132014 / 512,616,677 bytes**, SHA-256
+`e7e9d941bb8456c10662921690d40fe02a7260ac928bbd6ac6c270d5f23d492a`.
+All **418 selected entire hosted/public files**, **278 complete relocated
+downloads**, **seven production browser scenarios** and exact credential jobs
+**42237338658 / 42237339156** pass. Actual hosted preparation is
+**992,205,015 bytes**, with **7,794,985 bytes** below the 1 GB limit.
+The hosted preview matches its own manifest. A stale local compatibility export
+was regenerated using the existing adapter and unchanged pinned research source;
+exact manifest equality, including the compatibility script, was retained.
+A transient public 503 was retried with bounded backoff; explicit complete-success
+receipts avoided repeating already verified files or the successful deployment.
+
+The page preserves all **1,223 prior entire records / 358 native rows /
+741 prior anchors / 18 complete prior imports / historical years / 52 UF rows**.
+Current totals are **1,226 source records / 361 native rows / 760 anchors /
+756 distinct URLs / 742 contextual joins / 355 usable rates / 387 missing rates**.
+Pennsylvania has **37 observations / 34 usable rates**, not 67-county completeness.
+All previous geometries, exclusions, missing values and original map flags survive.
+The new county fractions retain genuine ballots and registrations, literal
+unofficial statuses and clocks, absent timezones, missing modes/accounting,
+reporting contradictions and the Schuylkill unit rounding conflict. Complete
+reporting is not certification or completed counting; contextual 2024 shapes
+are not certified 2026 reporting boundaries.
+
+Proofs are in `20261106-three-pa-summary-explorer-01`. Do not repeat the completed
+facts/context publishers, map suites or production verifier. **Next:** continue
+genuine 2026 county gaps using source-declared alternatives, including Venango's
+unacquired whole-county report; its separate Act 88 mail-process observations are
+not ballots for the whole county. Retain the Maine/D.C. accounting gaps and the
+separately frozen Michigan QVF scope, which approves no generic rates or tabulator
+totals. Nationwide coverage and external Google-owner/GitHub-Support remediation
+remain incomplete. Keep recurring schedule #5 active.
+
 **November 6, 14:41 UTC: context18 published and server-locked; UI validation in progress.**
 Release **436611038**, tag `voter-county-participation-context-20261106-18`,
 reports **immutable: true** at source revision

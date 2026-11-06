@@ -1,0 +1,37 @@
+{
+  "checked_at_utc": "2026-11-06T14:56:58.342Z",
+  "source_revision": "792e3d91609f7ee929c35b5ec15c13710db94be8",
+  "method": "Existing publicationScript generator from unchanged pinned source; only generated local app and manifest refreshed, no source/data edits or deployment rerun.",
+  "records": [
+    {
+      "root": "public/voter-participation",
+      "previous": {
+        "path": "app.js",
+        "bytes": 25456,
+        "sha256": "a5ba05b2b33fc68bbdcc8d83167f75e741f4c1eb7249e5983f74e31e500c5f15",
+        "original": false
+      },
+      "current": {
+        "path": "app.js",
+        "bytes": 25624,
+        "sha256": "e70a86e3566797319888a2b65d092ab73f475c1731b42a6fea2eeabcf9ed5ae5",
+        "original": false
+      }
+    },
+    {
+      "root": "dist/voter-participation",
+      "previous": {
+        "path": "app.js",
+        "bytes": 25456,
+        "sha256": "a5ba05b2b33fc68bbdcc8d83167f75e741f4c1eb7249e5983f74e31e500c5f15",
+        "original": false
+      },
+      "current": {
+        "path": "app.js",
+        "bytes": 25624,
+        "sha256": "e70a86e3566797319888a2b65d092ab73f475c1731b42a6fea2eeabcf9ed5ae5",
+        "original": false
+      }
+    }
+  ]
+}

@@ -102,6 +102,9 @@ copies. Original staged exports remain unchanged. Interactive JSON stays on the 
 The publishing step rewrites static download links, including no-JavaScript fallbacks;
 the native renderer also routes dynamically created links. `/participation-downloads.json`
 records every relocated path, complete file size, SHA-256 and download URL.
+Refresh the generated participation export after changing shared download routing,
+even when the pinned research revision is unchanged: its compatibility `app.js`
+embeds the router. A stale local export must not become an artifact-check exception.
 New research snapshots require a new release tag and byte-verified assets, not replacements
 of existing release files. Run the preparer after the normal build to reproduce the
 Pages artifact; `--upload` adds missing assets to the pre-created release without

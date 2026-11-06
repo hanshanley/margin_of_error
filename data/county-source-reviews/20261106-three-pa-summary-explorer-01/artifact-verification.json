@@ -1,0 +1,12 @@
+{
+  "revision": "c49c32d96a9347accfdd9126fd758a6a091d3108",
+  "pages_run_id": 42237338660,
+  "artifact_id": 13513132014,
+  "artifact_zip_bytes": 512616677,
+  "artifact_zip_sha256": "e7e9d941bb8456c10662921690d40fe02a7260ac928bbd6ac6c270d5f23d492a",
+  "original_completed_deployment_reused": true,
+  "original_cached_artifact_reused": true,
+  "local_staging_refresh": "local-staging-refresh.json",
+  "local_prepared_bytes": 982066595,
+  "scope": "Resume at original-artifact comparison without repeating deployment, credentials or full downloads; exact manifest equality retained."
+}
