@@ -78,7 +78,7 @@ Renderer, registry and download-manifest bytes match the prepared build.
 Production evidence is persisted on the review branch without another UI
 deployment; see `20261106-participation-expanded-01`.
 
-**Fulton participation, release verified and UI locally verified:** all
+**Fulton participation, release and production UI verified:** all
 fourteen county-declared November 3, 2026 reports were captured privately with
 sixteen HTTP receipts including the index and terms. All thirteen municipal
 participation observations sum to 5,085 participants and 10,155 registrations;
@@ -105,7 +105,8 @@ preparation pass at 987,433,242 bytes. Pages run `42149085447` for revision
 the deployment action's ten-minute `syncing_files` timeout. The old watcher has
 finished; it is not a pending deployment or production verification. The bulk
 integration below includes Fulton and increases the deployment timeout to thirty
-minutes. Production verification still requires that combined revision to deploy.
+minutes. Its exact revision subsequently deployed successfully and passed all
+source-matched Fulton and complete-download production checks.
 
 **Bulk participation integration, locally verified November 6:** the user's
 empty-state report exposed an integration gap: existing reviewed participation
@@ -137,8 +138,22 @@ participation regressions and four download-display modes pass. All 297 unique
 download URLs / 300 anchors remain, alongside all 52 UF rows, five historical
 years and 255 historical scope cells. Pages preparation verifies 94 byte-identical
 relocated downloads; the compressed site is **987,952,007 bytes**.
-Local proofs: `data/county-source-reviews/20261106-bulk-participation-01/`.
-Exact-revision deployment and production checks remain required.
+Revision `0a1d3f24313f6ce3f6206d39a11f720e11d809e7` passed exact Pages run
+`42151632448` and credential checks `42151632397` / `42151632479`.
+Production browser, regression and four-mode download checks all pass.
+Verification at `2026-11-06T02:45:46.873858+00:00` compares **25 live files**
+byte-for-byte with the exact successful hosted artifact `13473440612`,
+including all twelve complete gzip endpoints, renderers, registries, stylesheet,
+preview and publication manifest. All endpoint JSON bytes equal the local build;
+only gzip's OS-header byte differs (macOS 19 / Linux 3). The historical preview
+is rasterized at build time with system fonts: its PNG hash/size differs locally,
+but all **114 other manifest entries** match. The live PNG and manifest match the
+exact hosted artifact, not an unchecked exception. No source data differs.
+Local and production proofs are persisted in
+`data/county-source-reviews/20261106-bulk-participation-01/`; evidence-only
+publication goes to the review branch without another Pages deployment.
+Nationwide county acquisition remains in progress; this batch does not fill
+unreviewed maps or establish complete county coverage.
 
 **November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated

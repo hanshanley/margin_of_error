@@ -1,0 +1,231 @@
+{
+  "verified_at_utc": "2026-11-06T02:45:46.873858+00:00",
+  "revision": "0a1d3f24313f6ce3f6206d39a11f720e11d809e7",
+  "deployment_run": 42151632448,
+  "base_url": "https://www.themarginoferror.com",
+  "byte_identical_files": [
+    {
+      "path": "/scripts/participation-explorer.js",
+      "bytes": 157357,
+      "sha256": "cfbd8484026872cb7aef5062056cbe90e75c866d3662eee759414ccb91eea2a7",
+      "also_byte_identical_to_local_build": true
+    },
+    {
+      "path": "/participation-source-reviews.json",
+      "bytes": 58580,
+      "sha256": "ac5e0b052371746728b621e5100686a8652ade9faf1697aabac6d5a8f84a1147",
+      "also_byte_identical_to_local_build": true
+    },
+    {
+      "path": "/precinct-results.json",
+      "bytes": 16908,
+      "sha256": "1284181fbf2ae8493ec3949cde08bf4b12ac7639f0a0d2d72fe1c179aab1c419",
+      "also_byte_identical_to_local_build": true
+    },
+    {
+      "path": "/precinct-coverage.csv",
+      "bytes": 1152886,
+      "sha256": "38e7445976dfd75c287bc595de233de552bc4008a3ac1a666bb041d906e6a063",
+      "also_byte_identical_to_local_build": true
+    },
+    {
+      "path": "/voter-participation/publication-manifest.json",
+      "bytes": 22593,
+      "sha256": "faf69fe12266b6ce834b2186abfbd6713c1b732c4ca1df77c6863c8173da2e90",
+      "also_byte_identical_to_local_build": false
+    },
+    {
+      "path": "/voter-participation/preview.png",
+      "bytes": 65934,
+      "sha256": "8a5e5562f596d7ca10ca04ac179c82d5e69d531462aac9388cdd9ac129cc97f9",
+      "also_byte_identical_to_local_build": false
+    },
+    {
+      "path": "/voter-participation/app.js",
+      "bytes": 21994,
+      "sha256": "a3f5a12fd99fb8f06ee8c9f40d343c7643451c23abcc0d74d66754bcf74524b6",
+      "also_byte_identical_to_local_build": true
+    },
+    {
+      "path": "/voter-participation/current.js",
+      "bytes": 4691,
+      "sha256": "88561de5a79c5c4ef5cb11fe8bad4b0ecc3fa6b6e9d507c36b8f15689f437c27",
+      "also_byte_identical_to_local_build": true
+    },
+    {
+      "path": "/voter-participation/nationwide.js",
+      "bytes": 6438,
+      "sha256": "b49dc256be87b855ec45adc337cb5ccdb89c7b3e3bc23bbfe0b70c9c68952e9c",
+      "also_byte_identical_to_local_build": true
+    },
+    {
+      "path": "/voter-participation/model.js",
+      "bytes": 2437,
+      "sha256": "8a4a1b9b9e54e2fd9d5e435a0455321ca84bd9b19b26f8bd5951b76cb8b3bfee",
+      "also_byte_identical_to_local_build": true
+    },
+    {
+      "path": "/voter-participation/cps.js",
+      "bytes": 2125,
+      "sha256": "385aa4a3b12c7e6bf6d816ba87737d66c425dffe1ba5624e26e2c0fc32e32f69",
+      "also_byte_identical_to_local_build": true
+    },
+    {
+      "path": "/participation-local/AL.json.gz",
+      "bytes": 5503,
+      "sha256": "cff6df89fe80d1dabddb1d8664e56da6da0d3cdab3eebdc38227a2e90461d006",
+      "also_byte_identical_to_local_build": false,
+      "local_hosted_difference_only_gzip_os_header_byte": true,
+      "decompressed_bytes_identical_to_local_build": true,
+      "decompressed_sha256": "72de9dd3217671b05f55fb9426ed5c1af2d1d834bdbb4c9b9329f6e6021e5b36"
+    },
+    {
+      "path": "/participation-local/AZ.json.gz",
+      "bytes": 1692,
+      "sha256": "ffef0098986d2be7aabc1c8a4b697f039481531d9e38189b870af80216d42a8f",
+      "also_byte_identical_to_local_build": false,
+      "local_hosted_difference_only_gzip_os_header_byte": true,
+      "decompressed_bytes_identical_to_local_build": true,
+      "decompressed_sha256": "44fe7ff8a38805346d205fce4a1391a8c26ea60b3511d66c00af2ae9fb2ba5ad"
+    },
+    {
+      "path": "/participation-local/AR.json.gz",
+      "bytes": 5520,
+      "sha256": "184ca5c1e5b3913831fc881df7115383523dd1abf26bc3c109c476ea7a0bd58b",
+      "also_byte_identical_to_local_build": false,
+      "local_hosted_difference_only_gzip_os_header_byte": true,
+      "decompressed_bytes_identical_to_local_build": true,
+      "decompressed_sha256": "f9775a0be7cd64face771a7e83410a711e246265f9518e141ca996d5e231edc6"
+    },
+    {
+      "path": "/participation-local/VA.json.gz",
+      "bytes": 10416,
+      "sha256": "d2e31d5c59be582b2453edebbb0c70c7a3d54b0fd6c682d4ec1d08a65c4bd14d",
+      "also_byte_identical_to_local_build": false,
+      "local_hosted_difference_only_gzip_os_header_byte": true,
+      "decompressed_bytes_identical_to_local_build": true,
+      "decompressed_sha256": "f62ec208bf935f534da6f6d20999e9bd8255a2e274154719dbf741fe7bbfff72"
+    },
+    {
+      "path": "/participation-local/IA.json.gz",
+      "bytes": 802,
+      "sha256": "fdea5919f3051a3fcb9339362af5c20822caf8e9a3da189e1dc66f1c5d47cd23",
+      "also_byte_identical_to_local_build": false,
+      "local_hosted_difference_only_gzip_os_header_byte": true,
+      "decompressed_bytes_identical_to_local_build": true,
+      "decompressed_sha256": "fb2fb4beacd9ae01e3acaa6f31da2c7e88706f2407b99fd2675d9ac10c38d1e0"
+    },
+    {
+      "path": "/participation-local/KY.json.gz",
+      "bytes": 742,
+      "sha256": "68fe96727313fa9d84276a1d6b05e024abf790b378840000a989cb3cc9c5c9e0",
+      "also_byte_identical_to_local_build": false,
+      "local_hosted_difference_only_gzip_os_header_byte": true,
+      "decompressed_bytes_identical_to_local_build": true,
+      "decompressed_sha256": "a1970ac24668b4e318363b90112961550aeddb9e4b28a5d2b3239e72fa3f15e7"
+    },
+    {
+      "path": "/participation-local/MN.json.gz",
+      "bytes": 252815,
+      "sha256": "259748dcf74e595fa21f27399df37b51acdeebd0b679cf0eb7d5d49772447656",
+      "also_byte_identical_to_local_build": false,
+      "local_hosted_difference_only_gzip_os_header_byte": true,
+      "decompressed_bytes_identical_to_local_build": true,
+      "decompressed_sha256": "fd6eec4b3d7e1d489f75e3214afa89c2dfc4b791d815658b17e161be701b44df"
+    },
+    {
+      "path": "/participation-local/ND.json.gz",
+      "bytes": 14896,
+      "sha256": "76b26da2470abe421e539c6072eb7ec84cb12478bf86374402d6e7bdc6fd587e",
+      "also_byte_identical_to_local_build": false,
+      "local_hosted_difference_only_gzip_os_header_byte": true,
+      "decompressed_bytes_identical_to_local_build": true,
+      "decompressed_sha256": "f18ed48285abb9a0e2889749584d38e3853bc00cdce89c18b6cb87dd1a881a73"
+    },
+    {
+      "path": "/participation-local/ID.json.gz",
+      "bytes": 66345,
+      "sha256": "55546850135b8d17cddad858c5f9de60e7d06caee08720195809aaf1ca777f10",
+      "also_byte_identical_to_local_build": false,
+      "local_hosted_difference_only_gzip_os_header_byte": true,
+      "decompressed_bytes_identical_to_local_build": true,
+      "decompressed_sha256": "120138e724c74b5526545d2d934c6d9611d96b640518ccb62c7900110f306f69"
+    },
+    {
+      "path": "/participation-local/VT.json.gz",
+      "bytes": 16933,
+      "sha256": "e8b0fac84559cc91d293fdfbca52692f47330f4dbe475838541c82dc13d35855",
+      "also_byte_identical_to_local_build": false,
+      "local_hosted_difference_only_gzip_os_header_byte": true,
+      "decompressed_bytes_identical_to_local_build": true,
+      "decompressed_sha256": "8f864bd3453bd4bd10154196d6613e5b20f224dfcd57a0ee76def9c05796809a"
+    },
+    {
+      "path": "/participation-local/RI.json.gz",
+      "bytes": 3133,
+      "sha256": "2474afb8b425caf4d7871c14fc5a116d8f20630bc7a362db450aadb94f3cb6d4",
+      "also_byte_identical_to_local_build": false,
+      "local_hosted_difference_only_gzip_os_header_byte": true,
+      "decompressed_bytes_identical_to_local_build": true,
+      "decompressed_sha256": "dfbd8f0e51180c2f9bc3f94e46ccb56af96a6638d65f742bb46322912138d205"
+    },
+    {
+      "path": "/participation-local/MI.json.gz",
+      "bytes": 5548,
+      "sha256": "80e04764f9abb422428efb428bcdaacb735489d7c2ba69b48f2f8feb2a1d35a6",
+      "also_byte_identical_to_local_build": false,
+      "local_hosted_difference_only_gzip_os_header_byte": true,
+      "decompressed_bytes_identical_to_local_build": true,
+      "decompressed_sha256": "ad56bf13608fbcb4d34a873b8f52bba6676928a4e7a62c624d91b48a9e731d7a"
+    },
+    {
+      "path": "/_astro/BaseLayout.CEWuOCzZ.css",
+      "bytes": 17227,
+      "sha256": "f4161b19471c5935ddf24860bd2cad01dd86810e6d2b864bc149f18c3016ac99",
+      "also_byte_identical_to_local_build": true
+    },
+    {
+      "path": "/_astro/voter-participation.C7KizPp2.css",
+      "bytes": 16632,
+      "sha256": "16a2bd341fa3bb62cdb89559c50f441fa0f00fcc143fce8a1d9ebd5acb348e9d",
+      "also_byte_identical_to_local_build": true
+    }
+  ],
+  "exact_hosted_artifact": {
+    "id": 13473440612,
+    "size_in_bytes": 492269754,
+    "digest": "sha256:ec04f64cc30c11611678b707d174f7001895590fe68c498b1384edea7d6a0aa9",
+    "all_live_files_match_exact_hosted_build": true
+  },
+  "gzip_platform_metadata": "All twelve endpoints differ locally only in gzip header byte 9: 19 (macOS) versus 3 (Linux). Every other compressed byte and every decompressed JSON byte matches; live gzip bytes match the hosted artifact.",
+  "local_hosted_manifest_comparison": {
+    "identical_entries": 114,
+    "different_entries": [
+      "preview.png"
+    ],
+    "note": "The SVG preview is rasterized with sharp at build time using system fonts. Only its PNG hash/size differs between local macOS and hosted Linux builds; the live PNG and manifest match the exact successful Pages artifact.",
+    "local_preview": {
+      "path": "preview.png",
+      "bytes": 65734,
+      "sha256": "2d320ffbb0d30ee939cd93344ac41320f98679a205cf5061dbf9fa297c6c7783",
+      "original": false
+    },
+    "hosted_preview": {
+      "path": "preview.png",
+      "bytes": 65934,
+      "sha256": "8a5e5562f596d7ca10ca04ac179c82d5e69d531462aac9388cdd9ac129cc97f9",
+      "original": false
+    }
+  },
+  "new_states": 12,
+  "county_or_locality_records": 764,
+  "separate_reporting_unit_observations": 5512,
+  "nongeographic_observations": 1,
+  "new_maps_approved": false,
+  "nationwide_county_coverage_complete": false,
+  "source_matched_desktop_mobile_and_no_javascript": true,
+  "preserved_downloads": {
+    "unique_urls": 297,
+    "anchors": 300
+  }
+}

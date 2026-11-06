@@ -1,0 +1,189 @@
+{
+  "base_url": "https://www.themarginoferror.com",
+  "checks": [
+    {
+      "mobile": false,
+      "state": "AL",
+      "localities": 67,
+      "reporting_units": 0,
+      "native_records_and_missingness": true
+    },
+    {
+      "mobile": false,
+      "state": "AZ",
+      "localities": 15,
+      "reporting_units": 0,
+      "native_records_and_missingness": true
+    },
+    {
+      "mobile": false,
+      "state": "AR",
+      "localities": 75,
+      "reporting_units": 0,
+      "native_records_and_missingness": true
+    },
+    {
+      "mobile": false,
+      "state": "VA",
+      "localities": 133,
+      "reporting_units": 0,
+      "native_records_and_missingness": true
+    },
+    {
+      "mobile": false,
+      "state": "IA",
+      "localities": 1,
+      "reporting_units": 0,
+      "native_records_and_missingness": true
+    },
+    {
+      "mobile": false,
+      "state": "KY",
+      "localities": 1,
+      "reporting_units": 0,
+      "native_records_and_missingness": true
+    },
+    {
+      "mobile": false,
+      "state": "MN",
+      "localities": 87,
+      "reporting_units": 4105,
+      "native_records_and_missingness": true
+    },
+    {
+      "mobile": false,
+      "state": "ND",
+      "localities": 53,
+      "reporting_units": 358,
+      "native_records_and_missingness": true
+    },
+    {
+      "mobile": false,
+      "state": "ID",
+      "localities": 44,
+      "reporting_units": 986,
+      "native_records_and_missingness": true
+    },
+    {
+      "mobile": false,
+      "state": "VT",
+      "localities": 247,
+      "reporting_units": 0,
+      "native_records_and_missingness": true
+    },
+    {
+      "mobile": false,
+      "state": "RI",
+      "localities": 39,
+      "reporting_units": 0,
+      "native_records_and_missingness": true
+    },
+    {
+      "mobile": false,
+      "state": "MI",
+      "localities": 2,
+      "reporting_units": 63,
+      "native_records_and_missingness": true
+    },
+    {
+      "mobile": false,
+      "javascript": false,
+      "native_localities": 764,
+      "complete_state_json_links": 12
+    },
+    {
+      "mobile": true,
+      "state": "AL",
+      "localities": 67,
+      "reporting_units": 0,
+      "native_records_and_missingness": true
+    },
+    {
+      "mobile": true,
+      "state": "AZ",
+      "localities": 15,
+      "reporting_units": 0,
+      "native_records_and_missingness": true
+    },
+    {
+      "mobile": true,
+      "state": "AR",
+      "localities": 75,
+      "reporting_units": 0,
+      "native_records_and_missingness": true
+    },
+    {
+      "mobile": true,
+      "state": "VA",
+      "localities": 133,
+      "reporting_units": 0,
+      "native_records_and_missingness": true
+    },
+    {
+      "mobile": true,
+      "state": "IA",
+      "localities": 1,
+      "reporting_units": 0,
+      "native_records_and_missingness": true
+    },
+    {
+      "mobile": true,
+      "state": "KY",
+      "localities": 1,
+      "reporting_units": 0,
+      "native_records_and_missingness": true
+    },
+    {
+      "mobile": true,
+      "state": "MN",
+      "localities": 87,
+      "reporting_units": 4105,
+      "native_records_and_missingness": true
+    },
+    {
+      "mobile": true,
+      "state": "ND",
+      "localities": 53,
+      "reporting_units": 358,
+      "native_records_and_missingness": true
+    },
+    {
+      "mobile": true,
+      "state": "ID",
+      "localities": 44,
+      "reporting_units": 986,
+      "native_records_and_missingness": true
+    },
+    {
+      "mobile": true,
+      "state": "VT",
+      "localities": 247,
+      "reporting_units": 0,
+      "native_records_and_missingness": true
+    },
+    {
+      "mobile": true,
+      "state": "RI",
+      "localities": 39,
+      "reporting_units": 0,
+      "native_records_and_missingness": true
+    },
+    {
+      "mobile": true,
+      "state": "MI",
+      "localities": 2,
+      "reporting_units": 63,
+      "native_records_and_missingness": true
+    },
+    {
+      "mobile": true,
+      "javascript": false,
+      "native_localities": 764,
+      "complete_state_json_links": 12
+    },
+    {
+      "failed_state_import_explicit": true
+    }
+  ],
+  "verified_at_utc": "2026-11-06T02:43:46.372199+00:00"
+}
