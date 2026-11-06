@@ -1,0 +1,36 @@
+{
+  "ref": {
+    "ref": "refs/tags/voter-county-participation-context-20261106-18",
+    "node_id": "REF_kwDOTeY7QdoAOHJlZnMvdGFncy92b3Rlci1jb3VudHktcGFydGljaXBhdGlvbi1jb250ZXh0LTIwMjYxMTA2LTE4",
+    "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/refs/tags/voter-county-participation-context-20261106-18",
+    "object": {
+      "sha": "79cbcc83d3aa5cd60f6070fd1b2d782c555f8c20",
+      "type": "tag",
+      "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/tags/79cbcc83d3aa5cd60f6070fd1b2d782c555f8c20"
+    }
+  },
+  "tag": {
+    "node_id": "TA_kwDOTeY7QdoAKDc5Y2JjYzgzZDNhYTVjZDYwZjYwNzBmZDFiMmQ3ODJjNTU1ZjhjMjA",
+    "sha": "79cbcc83d3aa5cd60f6070fd1b2d782c555f8c20",
+    "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/tags/79cbcc83d3aa5cd60f6070fd1b2d782c555f8c20",
+    "tagger": {
+      "name": "Hans Hanley",
+      "email": "hwahhanley@gmail.com",
+      "date": "2026-11-06T14:40:27Z"
+    },
+    "object": {
+      "sha": "b3d8eb533a5ade421f569c62db9b8a7d8c4a6220",
+      "type": "commit",
+      "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/commits/b3d8eb533a5ade421f569c62db9b8a7d8c4a6220"
+    },
+    "tag": "voter-county-participation-context-20261106-18",
+    "message": "Reviewed complete county participation context 18\n",
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  }
+}

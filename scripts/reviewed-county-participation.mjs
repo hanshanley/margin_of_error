@@ -447,6 +447,75 @@ function loadHuntingdonParticipation(reviews) {
   }];
 }
 
+export function loadReviewedAdditionalPennsylvaniaParticipation(reviews) {
+  const id = 'pennsylvania-three-additional-summaries-20261106-01';
+  const matches = reviews.filter(review => review.id === id);
+  if (matches.length !== 1) throw new Error(`Missing or duplicated reviewed county source: ${id}`);
+  const review = matches[0], directory = resolve(review.data_directory);
+  const manifestBody = readFileSync(resolve(directory, 'manifest.json'));
+  if (createHash('sha256').update(manifestBody).digest('hex')
+    !== 'b2359e837f7322b93f4faf86fef021d4b36a25b44a14d65663fccf655f2143c6')
+    throw new Error(`Invalid reviewed county participation: ${id} / manifest.json`);
+  for (const file of JSON.parse(manifestBody.toString())) {
+    const body = readFileSync(resolve(directory, file.file));
+    if (body.length !== file.bytes || createHash('sha256').update(body).digest('hex') !== file.sha256)
+      throw new Error(`Invalid reviewed county participation: ${id} / ${file.file}`);
+  }
+  const rows = csv(resolve(directory, 'county-participation.csv'));
+  const reporting = csv(resolve(directory, 'native-reporting-statistics.csv'));
+  const facts = JSON.parse(readFileSync(resolve(directory, 'native-facts.json'), 'utf8'));
+  const expected = { Indiana: [28095, 49255], Lackawanna: [87067, 151015], Schuylkill: [48402, 92875] };
+  if (rows.length !== 3 || new Set(rows.map(row => row.county)).size !== 3)
+    throw new Error(`Incomplete reviewed county source: ${id}`);
+  return rows.map(native => {
+    const ballots = Number(native.ballots_cast), denominator = Number(native.registered_voters);
+    if (native.election_date !== '2026-11-03' || native.state_code !== 'PA'
+      || native.native_measure_literal !== 'Ballots Cast - Total' || native.source_fips !== ''
+      || native.native_status_literal !== 'UNOFFICIAL RESULTS' || native.declared_timezone !== ''
+      || native.maps_approved !== 'False' || native.complete_counting !== 'False'
+      || ballots !== expected[native.county]?.[0] || denominator !== expected[native.county]?.[1]
+      || Math.abs(100 * ballots / denominator - Number(native.native_printed_turnout.slice(0, -1))) > .005001)
+      throw new Error(`Invalid reviewed county participation: ${id} / ${native.county}`);
+    const county = facts.counties[native.county];
+    const updates = ['summary', 'statement'].map(role => ({
+      source: role,
+      native_update_literal: role === 'summary' ? native.source_update_literal
+        : county.unit_participation[0].source_update_literal,
+      declared_timezone: '',
+    }));
+    const nativeReporting = reporting.filter(row => row.county === native.county);
+    const reported = nativeReporting.find(row => row.label_literal === 'Election Day Precincts Reporting');
+    const quality = [
+      'Native Ballots Cast - Total and the same county report registrations; candidate selections and blank ballots are not added to the ballot total.',
+      'Native registered-voter fraction, not CVAP, VAP, VEP, CPS, demographic turnout or a district/mode electorate.',
+      'UNOFFICIAL RESULTS and reporting completeness do not establish completed counting or certification. Native clocks have no declared timezone; native FIPS is missing.',
+      'The complete download contains every county-summary numerical row plus all 357 local participation headers, not all statement candidate rows or new precinct geography.',
+      ...(native.county === 'Indiana' ? [
+        'Election Day, mail and provisional breakdowns and native overvotes/undervotes are absent, not zero. Congressional reporting denominators sum to 70, not the county 69; no disjoint geographic partition is inferred.',
+      ] : native.county === 'Lackawanna' ? [
+        'Contradictory native reporting-mode counters are retained, not repaired or summed. Carbondale and Scott question electorates are restricted; county registrations are not their denominators.',
+      ] : [
+        'Native contest totals, overvotes and undervotes are absent, not zero; candidate sums are not ballots. Native 0/125 complete and 125/125 partial remain unchanged.',
+        'Unit 137 Pine Grove Township 1st prints 55.42% against 802 ballots / 1447 registrations; the complete query flags rather than corrects this rounding conflict.',
+      ]),
+    ];
+    return {
+      year: 2026, state_code: 'PA', county_id: `reviewed:PA:${native.county}`, county: native.county,
+      geography_level: 'county', ballots, denominator, denominator_basis: 'native_registered_voters',
+      participation_measure_literal: native.native_measure_literal, reported_pct: 100 * ballots / denominator,
+      native_printed_pct: native.native_printed_turnout, source_status_literal: native.native_status_literal,
+      reported_units: Number(reported.reported), total_units: Number(reported.total), source_rows: 1,
+      maps_approved: false, review_id: id, native_record: native, native_source_updates: updates,
+      source_update_label: updates.map(row =>
+        `${row.source}: ${row.native_update_literal} (timezone not declared)`).join('; '),
+      source_reporting_label: nativeReporting.map(row =>
+        `${row.label_literal}: ${row.reported}/${row.total}`).join('; ') + '; ' + quality.join(' '),
+      quality, source_url: `${review.base_url}county-participation.csv`,
+      complete_download_url: review.complete_download_url,
+    };
+  });
+}
+
 export function loadReviewedCountyParticipation(reviews) {
   const observations = [], seen = new Set();
   for (const [id, ballotField, denominatorField, printedField, code, names] of profiles) {
@@ -817,5 +886,6 @@ export function loadReviewedCountyParticipation(reviews) {
   return [...observations, ...loadNewJerseyParticipation(reviews),
     ...loadCaliforniaParticipation(reviews).filter(row => row.geography_level === 'county'),
     ...loadGeorgiaParticipation(reviews).counties, ...loadReviewedMinnesotaParticipation(reviews),
-    ...loadLawrenceParticipation(reviews), ...loadHuntingdonParticipation(reviews)];
+    ...loadLawrenceParticipation(reviews), ...loadHuntingdonParticipation(reviews),
+    ...loadReviewedAdditionalPennsylvaniaParticipation(reviews)];
 }

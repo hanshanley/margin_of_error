@@ -5,13 +5,70 @@ import { join } from 'node:path';
 import test from 'node:test';
 import { parse } from 'csv-parse/sync';
 import { gunzipSync } from 'node:zlib';
-import { loadReviewedCountyParticipation, loadReviewedStatewideParticipation,
-  loadReviewedMinnesotaParticipation } from './reviewed-county-participation.mjs';
+import { loadReviewedCountyParticipation as loadAllReviewedCountyParticipation, loadReviewedStatewideParticipation,
+  loadReviewedMinnesotaParticipation, loadReviewedAdditionalPennsylvaniaParticipation } from './reviewed-county-participation.mjs';
 
 const reviews = JSON.parse(readFileSync('public/participation-source-reviews.json', 'utf8')).reviews;
+const additionalId = 'pennsylvania-three-additional-summaries-20261106-01';
+// Existing historical fixtures end at context17; test the complete extension separately.
+const loadReviewedCountyParticipation = sourceReviews =>
+  loadAllReviewedCountyParticipation(sourceReviews).filter(row => row.review_id !== additionalId);
 const batchCounties = ['Juniata', 'Mercer', 'Montour', 'Columbia', 'Greene', 'Lycoming'];
 const isBatch = row => ['CA', 'GA', 'MN'].includes(row.state_code)
   || row.state_code === 'PA' && [...batchCounties, 'Lawrence', 'Huntingdon'].includes(row.county);
+
+test('three new Pennsylvania counties preserve the entire context17 query and use native ballots and registrations', () => {
+  const rows = loadAllReviewedCountyParticipation(reviews);
+  const previous = JSON.parse(gunzipSync(readFileSync(
+    'public/participation-county-context/20261106-17/complete-source-records.json.gz')));
+  const priorReviewed = previous.filter(row => rows.some(current =>
+    current.county_id === row.county_id && current.state_code === row.state_code));
+  assert.deepEqual(rows.filter(row => row.review_id !== additionalId), priorReviewed);
+  assert.equal(rows.length, 361);
+  assert.equal(rows.filter(row => row.state_code === 'PA').length, 37);
+  const added = loadReviewedAdditionalPennsylvaniaParticipation(reviews);
+  const source = reviews.find(row => row.id === additionalId);
+  const native = parse(readFileSync(join(source.data_directory, 'county-participation.csv')), { columns: true });
+  assert.deepEqual(added.map(row => row.native_record), native);
+  for (const row of added) {
+    assert.equal(row.ballots, Number(row.native_record.ballots_cast));
+    assert.equal(row.denominator, Number(row.native_record.registered_voters));
+    assert.equal(row.reported_pct, 100 * row.ballots / row.denominator);
+    assert.equal(row.participation_measure_literal, 'Ballots Cast - Total');
+    assert.equal(row.native_record.source_fips, '');
+    assert.equal(row.maps_approved, false);
+    assert.ok(row.native_source_updates.every(update => update.declared_timezone === ''));
+    assert.match(row.source_reporting_label, /do not establish completed counting or certification/);
+  }
+  assert.match(added.find(row => row.county === 'Indiana').source_reporting_label, /absent, not zero/);
+  assert.match(added.find(row => row.county === 'Lackawanna').source_reporting_label, /restricted/);
+  assert.match(added.find(row => row.county === 'Schuylkill').source_reporting_label, /0\/125 complete/);
+});
+
+test('three-county participation rejects changed full inputs and missing or duplicate registrations', () => {
+  const original = reviews.find(row => row.id === additionalId);
+  const directory = mkdtempSync(join(tmpdir(), 'three-pa-summary-participation-'));
+  try {
+    const manifest = JSON.parse(readFileSync(join(original.data_directory, 'manifest.json')));
+    const files = ['manifest.json', ...manifest.map(row => row.file)];
+    for (const file of files) copyFileSync(join(original.data_directory, file), join(directory, file));
+    const altered = reviews.map(row => row === original ? { ...row, data_directory: directory } : row);
+    for (const changed of ['county-participation.csv', 'native-facts.json', 'native-reporting-statistics.csv', 'manifest.json']) {
+      writeFileSync(join(directory, changed), readFileSync(join(directory, changed), 'utf8') + '\n');
+      assert.throws(() => loadReviewedAdditionalPennsylvaniaParticipation(altered), /Invalid reviewed county participation/);
+      copyFileSync(join(original.data_directory, changed), join(directory, changed));
+    }
+    for (const registrations of [reviews.filter(row => row !== original), [...reviews, original]])
+      assert.throws(() => loadAllReviewedCountyParticipation(registrations), /Missing or duplicated reviewed county source/);
+    const publication = JSON.parse(readFileSync(
+      'data/county-source-reviews/20261106-three-pa-summary-explorer-01/release-verification.json'));
+    assert.equal(publication.immutable, true);
+    assert.deepEqual(new Set([...original.tables.map(row => row.file), 'complete-query.zip']),
+      new Set(publication.assets.map(row => row.file)));
+  } finally {
+    rmSync(directory, { recursive: true, force: true });
+  }
+});
 
 test('Minnesota preserves all 87 native inventories without treating partial subtotals as county participation', () => {
   const rows = loadReviewedMinnesotaParticipation(reviews);
@@ -737,7 +794,7 @@ test('preserves context11 and loads Greene ballots without inventing its missing
   assert.match(row.source_reporting_label, /42 of 42.*does not establish completed counting/);
 });
 
-test('loads all reviewed county participation without promoting map coverage', () => {
+test('loads all reviewed county participation through context17 without promoting map coverage', () => {
   const rows = loadReviewedCountyParticipation(reviews);
   assert.equal(rows.length, 358);
   assert.equal(rows.filter(row => row.state_code === 'PA').length, 34);

@@ -1,0 +1,48 @@
+{
+  "checked_at_utc": "2026-11-06T14:49:12.079496+00:00",
+  "facts_revision": "de6440c65eb0bc2925c9441c22d8bc8e9891739c",
+  "context_revision": "b3d8eb533a5ade421f569c62db9b8a7d8c4a6220",
+  "focused_county_context_tests": 72,
+  "renderer_import_tests": 24,
+  "astro_errors": 0,
+  "astro_warnings": 0,
+  "astro_hints": 5,
+  "production_build_passed": true,
+  "verified_full_relocations": 278,
+  "local_prepared_bytes": 982066427,
+  "local_browser_scenarios": 7,
+  "local_browser_proof": "local-browser.json",
+  "production_status": "pending exact deployment, original hosted artifact, complete public bytes and production browser checks",
+  "logs": [
+    {
+      "file": "three-pa-summary-focused-tests-01.log",
+      "bytes": 18789,
+      "sha256": "26d42fd0230713ae82d59c651cdd775c123ca44f2544a602f4879d5add4cc2cd"
+    },
+    {
+      "file": "three-pa-summary-renderer-tests-02.log",
+      "bytes": 6112,
+      "sha256": "50f32d31591e490d96b07f899baac38910995f307a0240c18d6276a205b0850b"
+    },
+    {
+      "file": "three-pa-summary-astro-check-01.log",
+      "bytes": 1915,
+      "sha256": "b3b2f92de31dd73ca784cf5ebea95e84918883da3313aafeadd9d40301dec023"
+    },
+    {
+      "file": "three-pa-summary-ui-build-01.log",
+      "bytes": 5782,
+      "sha256": "dbe689373604556bda96cfc5d5b41b0c2a55db4cd217e7efa93940508f1e6532"
+    },
+    {
+      "file": "three-pa-summary-ui-preparation-01.log",
+      "bytes": 74,
+      "sha256": "8c88aefb736a930f47d5b46c0160bd756ab00a382bd5ece69305c97fd195d12b"
+    },
+    {
+      "file": "three-pa-summary-local-browser-02.log",
+      "bytes": 3764,
+      "sha256": "87b9daf8460c0fc93c063b93df72bd4ea70f40cafd4d6f92032b4c69c25b4bc1"
+    }
+  ]
+}

@@ -115,13 +115,13 @@ the existing bulk release and previous complete downloads stay unchanged.
 Record the actual release `immutable` flag rather than calling older mutable
 releases server-locked.
 
-The seventeen reviewed November 6 county-context ZIPs likewise use their complete,
+The eighteen reviewed November 6 county-context ZIPs likewise use their complete,
 version-specific published release assets. Preparation downloads and verifies every
 entire archive against its original staged bytes before removing only the redundant
 build-output ZIPs. Context review JSON, source records and interactive geometry stay
 local; all historical downloads remain available. Unreviewed context versions are
 not relocated automatically.
-Context10 through context17 have respectively 16, 16, 16, 17, 17, 18, 18 and 18
+Context10 through context18 have respectively 16, 16, 16, 17, 17, 18, 18, 18 and 18
 redundant geometry copies that use their complete originals at the respective
 fixed context-source revisions. Preparation verifies every full file before removing
 only those build-output copies; the original interactive geometry, current review JSON
@@ -147,6 +147,12 @@ Python environment (Playwright/Chromium required):
 ```bash
 ../voter-participation/.venv/bin/python scripts/check-participation-browser.py
 ```
+
+For county-context checks reading explicit `.json.gz` downloads, use
+`python3 -m http.server 4321 --bind 127.0.0.1 --directory dist` instead.
+This matches Pages' `application/gzip` response without `Content-Encoding`.
+Astro preview adds `Content-Encoding: gzip`, causing browser auto-decompression
+before the reader's explicit gzip decoder and a preview-only fetch failure.
 
 The check covers state time-series values, map orientation, selection, zoom/pan,
 precinct counts, deep links, minimum-registration suppression, unavailable

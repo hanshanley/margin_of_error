@@ -1,6 +1,34 @@
 {
   "reviews": [
     {
+      "id": "pennsylvania-three-additional-summaries-20261106-01",
+      "label": "Indiana, Lackawanna and Schuylkill, Pennsylvania 2026: native ballots, registrations and complete summary query",
+      "data_directory": "data/county-source-reviews/20261106-three-pa-summary-facts-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/de6440c65eb0bc2925c9441c22d8bc8e9891739c/data/county-source-reviews/20261106-three-pa-summary-facts-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-three-pa-summary-20261106-01/complete-query.zip",
+      "complete_download_bytes": 52155,
+      "complete_download_sha256": "f99c8690de84a0302319504fd1eb902e54b634487f29b6c0508c4a167f0683e6",
+      "review_status": "complete_county_summary_numerical_query_reviewed_unofficial",
+      "maps_approved": false,
+      "scope_note": "Indiana 28,095 ballots / 49,255 registrations (printed 57.04%); Lackawanna 87,067 / 151,015 (57.65%); Schuylkill 48,402 / 92,875 (52.12%). Actual native ballot totals, not candidate sums, mail receipts, CVAP/VAP/VEP or demographic turnout. Every numerical row across eight county-summary pages, all 22 contests and 357 unit participation headers across 520 statement pages independently agree across two PDF engines. All unit registrations, ballots and blanks reconcile in every supplied mode. Retain Indiana absent modes and over/undervotes; Schuylkill absent contest accounting; Lackawanna contradictory reporting-mode columns and restricted question electorates; and Schuylkill unit 137 Pine Grove Township 1st printed 55.42% versus 802/1447 native rounding conflict. Source clocks have no timezone; UNOFFICIAL RESULTS and reporting completeness do not prove finished counting or certification. Not a complete statement candidate query or new precinct geometry. All fifteen entire release assets, pinned files and extracted standard-library reproduction pass thirteen tests. Release 436607554 is server-locked. Native FIPS is missing; separately reviewed Census context does not certify 2026 reporting boundaries. Original HTML/PDF templates stay private.",
+      "tables": [
+        {"file": "county-participation.csv", "label": "Three counties: complete native ballots, registrations and printed fractions (CSV)"},
+        {"file": "native-participation-modes.csv", "label": "Three counties: all supplied participation modes, missing modes not zero (CSV)"},
+        {"file": "county-candidate-results.csv", "label": "Three counties: all county-summary candidate, write-in and question mode counts (CSV)"},
+        {"file": "county-literal-party-totals.csv", "label": "Three counties: separately scoped candidate-party mode totals (CSV)"},
+        {"file": "county-contest-accounting.csv", "label": "Three counties: native and derived contest accounting, absent fields retained (CSV)"},
+        {"file": "native-reporting-statistics.csv", "label": "Three counties: all native reporting counters, contradictions retained (CSV)"},
+        {"file": "native-unit-participation.csv", "label": "Three counties: all 357 native unit participation headers and rounding flags (CSV)"},
+        {"file": "native-source-pages.csv", "label": "Three counties: complete eight-page county-summary numerical inventory (CSV)"},
+        {"file": "native-facts.json", "label": "Three counties: complete reviewed numerical inputs, original-source receipts and scopes (JSON)"},
+        {"file": "audit.json", "label": "Three counties: complete participation reconciliation and retained source conflicts (JSON)"},
+        {"file": "manifest.json", "label": "Three counties: full numerical-query byte inventory (JSON)"},
+        {"file": "METHODS.txt", "label": "Three counties: query scope, missingness and standalone reproduction instructions (text)"},
+        {"file": "review-three-additional-pa-summaries.py", "label": "Three counties: complete standard-library offline reproducer (Python)"},
+        {"file": "test_review_three_additional_pa_summaries.py", "label": "Three counties: thirteen portable scope and integrity tests (Python)"}
+      ]
+    },
+    {
       "id": "pennsylvania-huntingdon-20261106-01",
       "label": "Huntingdon County, Pennsylvania 2026: native ballots, registrations and complete numerical query",
       "data_directory": "data/county-source-reviews/20261106-huntingdon-facts-01",

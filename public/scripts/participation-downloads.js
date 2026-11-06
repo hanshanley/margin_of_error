@@ -11,15 +11,16 @@ export const participationCountyContextRoots = {
   "20261106-15": "https://raw.githubusercontent.com/hanshanley/margin_of_error/635697084ec43e996662eb5efe55d154fe187405/public/participation-county-context/20261106-15/",
   "20261106-16": "https://raw.githubusercontent.com/hanshanley/margin_of_error/833c309f83efa6280eb9a5cfee7a17b2faff4211/public/participation-county-context/20261106-16/",
   "20261106-17": "https://raw.githubusercontent.com/hanshanley/margin_of_error/62f1665b3cfec842e89682537ee288ee6cf1dce6/public/participation-county-context/20261106-17/",
+  "20261106-18": "https://raw.githubusercontent.com/hanshanley/margin_of_error/b3d8eb533a5ade421f569c62db9b8a7d8c4a6220/public/participation-county-context/20261106-18/",
 };
 
 export function participationDownload(path) {
-  const contextArchive = /^\/participation-county-context\/(20261106-(0[1-9]|1[0-7]))\/complete-county-participation-context-\2\.zip$/.exec(path);
+  const contextArchive = /^\/participation-county-context\/(20261106-(0[1-9]|1[0-8]))\/complete-county-participation-context-\2\.zip$/.exec(path);
   if (contextArchive)
     return `https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-${contextArchive[1]}/complete-county-participation-context-${contextArchive[2]}.zip`;
   const contextGeometry = /^\/participation-county-context\/(20261106-1[34])\/(geometry\/county-(?:AL|AR|AZ|CA|DC|FL|GA|IA|KY|MO|NJ|NV|OR|PA|VA|WA|WY)\.geojson)$/.exec(path)
     || /^\/participation-county-context\/(20261106-1[012])\/(geometry\/county-(?:AL|AR|AZ|CA|DC|FL|IA|KY|MO|NJ|NV|OR|PA|VA|WA|WY)\.geojson)$/.exec(path)
-    || /^\/participation-county-context\/(20261106-1[567])\/(geometry\/county-(?:AL|AR|AZ|CA|DC|FL|GA|IA|KY|MN|MO|NJ|NV|OR|PA|VA|WA|WY)\.geojson)$/.exec(path);
+    || /^\/participation-county-context\/(20261106-1[5678])\/(geometry\/county-(?:AL|AR|AZ|CA|DC|FL|GA|IA|KY|MN|MO|NJ|NV|OR|PA|VA|WA|WY)\.geojson)$/.exec(path);
   if (contextGeometry) return participationCountyContextRoots[contextGeometry[1]] + contextGeometry[2];
   if (/^\/voter-participation\/data\/nc\/\d{4}\.json$/.test(path))
     return participationHistoricalRoot + path.split("/").at(-1);

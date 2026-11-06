@@ -2,6 +2,30 @@
 
 ## Current verified production and next acquisition
 
+**November 6, 14:41 UTC: context18 published and server-locked; UI validation in progress.**
+Release **436611038**, tag `voter-county-participation-context-20261106-18`,
+reports **immutable: true** at source revision
+`b3d8eb533a5ade421f569c62db9b8a7d8c4a6220`.
+All **four entire anonymous assets / 32 pinned files / 31 ZIP members** pass;
+the extracted offline verifier and repackage reproduce all 32 original files
+exactly. Exact credential jobs **42236021453 / 42236024460** pass.
+Distinct `context-*` evidence preserves the separate facts-release proofs.
+The UI adds only Indiana, Lackawanna and Schuylkill while retaining every
+context17 record, observation, exclusion and geometry. **72 focused county/context
+tests and 24 renderer/import tests pass**; Astro reports zero errors and warnings;
+the production build and **278 complete byte-verified relocations** pass.
+Local prepared size is **982,066,427 bytes**, not the as-yet-unmeasured hosted size.
+All **seven local browser scenarios pass**: desktop/mobile JavaScript and
+no-JavaScript plus failed-review, changed-review and failed-current fallbacks.
+They verify **742 exact county counts / 355 rate colors / 387 gray missing rates**,
+all **1,223 prior entire records / 358 native rows / 741 prior anchors / 18 imports**.
+The new page contains **361 native rows / 760 anchors / 756 distinct URLs**.
+The initial Astro-preview failure was a reproduced HTTP gzip-header mismatch;
+the verified static server matches actual Pages headers, without changing
+production decoding or weakening checks. Exact Pages artifact, **418 full selected
+public files** and production browser verification remain next. Main/context17
+remains the live baseline until those production checks pass.
+
 **November 6, 14:38 UTC: three new Pennsylvania complete query server-locked; context18 locally reproduced.**
 Facts revision `de6440c65eb0bc2925c9441c22d8bc8e9891739c`, release
 **436607554**, tag `voter-county-three-pa-summary-20261106-01`, reports
