@@ -2,6 +2,34 @@
 
 ## Objective and priority
 
+**November 6 priority: participation must be the primary display.** The user's
+exact 2026 North Carolina link showed New Mexico's partial precinct layer, while
+already-reviewed UF state turnout estimates were buried in Methods. The pending
+fix makes participation the default map color and retains counties as default
+detail. The regular state view now exposes all 51 state/D.C. UF VEP or VAP
+estimates, keeps the national aggregate separate, and labels every value as a
+source estimate. Official administrative counts and their native-electorate
+ratios remain separately visible; missing denominators are gray, not invented
+rates. A county button fits the selected state's verified county observations.
+An unsupported NC precinct request never substitutes New Mexico. County/state
+values are never painted onto precincts.
+
+Local regression checks compare all 51 state colors/rates in both denominators
+and all 100 NC county colors/rates with saved sources on desktop and mobile.
+They retain the exact NM precinct values and suppression, historical CPS,
+explicit candidate layers, early-count separation and UF display after an
+official-feed failure. Seven participation tests, Astro check and build pass;
+Pages preparation verifies 94 downloads at 987,378,512 bytes. Four display modes
+retain the exact 288-URL / 291-anchor download multiset, all 52 UF rows, five
+historical years and 255 scope cells. Production verification is still required
+for this display change. No new demographic estimate, county acquisition,
+map-source approval or completeness claim is created.
+
+Next acquisition/integration priority is actual participation: surface existing
+verified county ballots and compatible denominators before expanding candidate
+download inventories. Retain the genuine Maine accounting gaps, separately
+scoped D.C., and Philadelphia source-representation restrictions below.
+
 **November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated
 `git-filter-repo --sensitive-data-removal` rewrite removed Google API key patterns
@@ -274,7 +302,7 @@ Native status is still **0 complete**, **87 partially reported** and **86 of
 or final-counting claim is approved by this private review. Alerts 1/2 remain
 open/unknown; external revocation and cached-object cleanup are unconfirmed.
 
-**Centre facts-only publication is released and byte-verified; UI is next.**
+**Centre facts-only publication and UI are live verified.**
 The county's linked copyright notice reserves the county and CivicPlus
 presentation rights. Keep the existing private web/PDF source package private;
 do not infer a source-template redistribution license or attach that ZIP.
@@ -309,8 +337,12 @@ Seven participation tests, Astro check (zero errors), build and Pages preparatio
 pass: 94 bulk downloads verified, prepared site 987,361,863 bytes. Four local modes
 pass the exact 288-URL / 291-anchor multiset, preserving all 274 previous URLs and
 their three intentional duplicates, 52 UF rows, five historical years and 255
-historical scope cells. Require the same four production modes and successful
-exact-revision deployment before marking UI live. This is a
+historical scope cells. Exact UI revision
+`0e7d687f418ddd045382d9d589ec12bb494a6406` passed Pages run `42140108699`
+and credential runs `42140108433` / `42140104997`. All four production modes
+pass the same exact multiset, 14 Centre links, 52 UF rows, five historical years
+and 255 scope cells; public registry bytes match. Production receipts are saved
+as `download-production-verification.json` in the publication audit. This was a
 download-only batch: do not repeat completed unchanged map suites or alter
 county/precinct coverage, map overrides or the Maine all-district guard.
 

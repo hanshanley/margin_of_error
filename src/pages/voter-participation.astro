@@ -152,10 +152,10 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 					<label id="county-label" hidden>County<select id="precinct-county"><option value="">All counties</option></select></label>
 					<label id="precinct-search-label" hidden>Find a precinct<input id="precinct-search" type="search" list="precinct-options" placeholder="ID or precinct name" autocomplete="off" /><datalist id="precinct-options"></datalist></label>
 					<label>Year<select id="year"></select></label>
-					<label id="map-color-label">Map color<select id="map-color"><option value="margin" selected>Election results · red / blue</option><option value="turnout">Participation</option></select></label>
+					<label id="map-color-label">Map color<select id="map-color"><option value="turnout" selected>Participation</option><option value="margin">Election results · red / blue</option></select></label>
 					<label id="map-level-label">Detail<select id="map-level"><option value="county">Counties / equivalents</option><option value="precinct">Precincts · existing coverage</option><option value="auto">As you zoom</option><option value="district">Congressional districts</option></select></label>
 					<label id="current-state-label" hidden>State<select id="current-state-select"></select></label>
-					<label id="mode-label" hidden>Reported ballots<select id="mode"></select></label>
+					<label id="mode-label" hidden>2026 measure<select id="mode"></select></label>
 					<label id="dimension-label" hidden>Compare<select id="dimension"></select></label>
 					<label id="group-label" hidden>Group<select id="group"></select></label>
 				</div>
@@ -338,10 +338,16 @@ const methodOverall: MethodRow[] = methodsPath ? JSON.parse(readFileSync(resolve
 				Each published rate uses that row’s own denominator. The United States aggregate is
 				not added to the state counts. Missing fields are not zero.</p>
 			<div class="table-wrap" tabindex="0" role="region" aria-label="All UF 2026 turnout estimates">
-				<table data-uf-turnout="2026"><caption>UF state / national turnout. Original source labels retained.</caption>
+				<table data-uf-turnout="2026" data-source-url={ufAudit.dataset_url}
+					data-source-version={ufAudit.version}
+					data-captured-at={ufAudit.receipts.find((receipt: { file: string }) => receipt.file === 'originals/turnout.csv')?.retrieved_at}>
+					<caption>UF state / national turnout. Original source labels retained.</caption>
 					<thead><tr><th scope="col">Jurisdiction</th><th scope="col">Ballots</th><th scope="col">Source status</th>
 						<th scope="col">VEP</th><th scope="col">VEP turnout</th><th scope="col">VAP turnout</th></tr></thead>
-					<tbody>{ufRows.map(row => <tr data-state-code={row.STATE_ABV}>
+					<tbody>{ufRows.map(row => <tr data-state-code={row.STATE_ABV}
+						data-ballots={row.TOTAL_BALLOTS_COUNTED} data-vep={row.VEP} data-vap={row.VAP}
+						data-vep-rate={row.VEP_TURNOUT_RATE} data-vap-rate={row.VAP_TURNOUT_RATE}
+						data-source-status={row.SOURCE} data-ballots-status={row.ballots_status}>
 						<th scope="row">{row.STATE}</th>
 						<td>{row.TOTAL_BALLOTS_COUNTED === null ? 'Not reported' : formatNumber(row.TOTAL_BALLOTS_COUNTED)}</td>
 						<td>{row.SOURCE}</td><td>{row.VEP === null ? 'Not reported' : formatNumber(row.VEP)}</td>

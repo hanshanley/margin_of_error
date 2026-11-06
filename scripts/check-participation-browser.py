@@ -4,6 +4,7 @@ import argparse
 import gzip
 import json
 import math
+import sys
 from pathlib import Path
 
 from playwright.sync_api import expect, sync_playwright
@@ -12,6 +13,8 @@ from playwright.sync_api import expect, sync_playwright
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("--base-url", default="http://127.0.0.1:4321")
 parser.add_argument("--screenshots", type=Path)
+parser.add_argument("--focus-2026-participation", action="store_true")
+parser.add_argument("--proof", type=Path)
 args = parser.parse_args()
 url = args.base_url.rstrip("/") + "/voter-participation/"
 data = Path(__file__).resolve().parents[1] / "public/voter-participation/data"
@@ -106,6 +109,15 @@ def result_color(margin):
     return "rgb(" + ",".join(map(str, rgb)) + ")"
 
 
+def participation_color(rate):
+    if rate is None:
+        return "#edf0f3"
+    t = max(0, min(1, (rate - 20) / 65))
+    rgb = [math.floor(c + t * (end - c) + .5)
+           for c, end in zip([240, 244, 249], [40, 71, 102])]
+    return "rgb(" + ",".join(map(str, rgb)) + ")"
+
+
 def check_precinct_results(page, year, code):
     coverage = precinct_results_index["coverage"][str(year)][code]
     root = public.parent / coverage.get("data_directory", precinct_results_pointer["data_directory"])
@@ -122,13 +134,142 @@ def check_precinct_results(page, year, code):
     return features
 
 
+def check_current_participation(browser):
+    uf_pointer = json.loads((public / "uf-turnout.json").read_text())
+    uf_root = public.parent / uf_pointer["data_directory"]
+    uf = json.loads((uf_root / "turnout.json").read_text())
+    uf_states = {row["STATE"]: row for row in uf if row["STATE_ABV"] != "US"}
+    nc_official = next(row for row in nationwide["reporting"] if row["state_code"] == "NC")
+    exact = ("?view=states&year=2026&basis=cvap&dimension=overall&group=All+groups"
+             "&map-color=turnout&map-level=precinct&mode=available&state=North+Carolina")
+    proof = {"base_url": args.base_url, "checks": []}
+    errors = []
+
+    def rates(page, basis):
+        paths = page.locator('.map-feature[data-state][data-rate-source="uf_estimate"]')
+        expect(paths).to_have_count(51)
+        actual = paths.evaluate_all(
+            "paths => Object.fromEntries(paths.map(p => [p.dataset.state, +p.dataset.rate]))")
+        expected = {name: row[basis + "_TURNOUT_RATE"] for name, row in uf_states.items()}
+        assert actual == expected, "State rates differ from the saved UF source"
+        actual_colors = paths.evaluate_all(
+            "paths => Object.fromEntries(paths.map(p => [p.dataset.state, p.getAttribute('fill')]))")
+        assert actual_colors == {name: participation_color(rate) for name, rate in expected.items()}
+        expect(page.locator("#selection-panel > .selection-rate")).to_have_text(
+            f'{uf_states["North Carolina"][basis + "_TURNOUT_RATE"]:.2f}%')
+        expect(page.locator("#selection-panel > .selection-basis")).to_contain_text(basis)
+        expect(page.locator("#selection-panel")).to_contain_text("Initial Estimate")
+        assert "undefined" not in page.locator("#selection-panel").inner_text()
+        assert max(page.locator("#state-history .chart-point").evaluate_all(
+            "points => points.map(p => +p.dataset.year)")) <= 2024
+
+    for width, height, name in [(1360, 1000, "desktop"), (390, 844, "mobile")]:
+        page = browser.new_page(viewport={"width": width, "height": height})
+        page.on("pageerror", lambda error: errors.append(str(error)))
+        page.goto(url + exact)
+        expect(page.locator("#title")).to_have_text("Participation across the United States")
+        rates(page, "VEP")
+        expect(page.locator("#table-body tr")).to_have_count(51)
+        expect(page.locator("#official-state-counts")).to_contain_text(f'{nc_official["ballots"]:,}')
+        expect(page.locator("#official-state-counts")).to_contain_text(
+            f'{nc_official["validated_pct"]:.1f}%')
+        expect(page.locator("#current-county-select option")).to_have_count(101)
+        expect(page.locator("#geography-note")).to_contain_text("No verified 2026 precinct")
+        expect(page.locator('.substate-feature[data-level="precinct"]')).to_have_count(0)
+        no_overflow(page)
+        screenshot(page, f"participation-2026-uf-{name}.png")
+        page.locator("#map-level").select_option("county")
+        page.locator("#mode").select_option("uf_vap")
+        rates(page, "VAP")
+        expect(page.locator("#caption")).to_contain_text("not final official")
+        page.locator("#show-current-counties").click()
+        expect(page.locator("#mode")).to_have_value("official")
+        paths = page.locator('.substate-feature[data-level="county"]')
+        expect(paths).to_have_count(100)
+        nc_counties = [row for row in current_local["counties"] if row["state_code"] == "NC"]
+        actual = paths.evaluate_all("paths => paths.map(p => [+p.dataset.rate, p.getAttribute('fill')])")
+        assert sorted(actual) == sorted(
+            [row["reported_pct"], participation_color(row["reported_pct"])] for row in nc_counties)
+        assert all(path.get_attribute("fill") == "#edf0f3" for path in
+                   page.locator('.map-feature[data-state][data-rate=""]').all())
+        expect(page.locator("#title")).to_have_text("Local participation in North Carolina")
+        expect(page.locator("#caption")).to_contain_text("not the UF state population denominator")
+        expect(page.locator("#table-body tr")).to_have_count(100)
+        page.locator("#current-county-select").select_option(label="WAKE")
+        wake = next(row for row in nc_counties if row["county"] == "WAKE")
+        expect(page.locator("#current-county-detail")).to_contain_text(f'{wake["ballots"]:,}')
+        expect(page.locator("#current-county-detail")).to_contain_text(f'{wake["reported_pct"]:.1f}%')
+        no_overflow(page)
+        screenshot(page, f"participation-2026-nc-counties-{name}.png")
+        page.goto(url)
+        expect(page.locator("#map-color")).to_have_value("turnout")
+        expect(page.locator("#map-level")).to_have_value("county")
+        rates(page, "VEP")
+        proof["checks"].append({"viewport": name, "uf_state_rates": 51, "nc_county_rates": 100,
+                                "exact_url": True, "vep_and_vap": True, "default_participation": True})
+        page.close()
+
+    page = browser.new_page()
+    page.on("pageerror", lambda error: errors.append(str(error)))
+    page.goto(url + "?state=New+Mexico&year=2026&mode=official&map-color=turnout&map-level=precinct")
+    paths = page.locator('.substate-feature[data-level="precinct"]')
+    expect(paths).to_have_count(len(current_shapes), timeout=60000)
+    expected_colored = sum(feature["properties"]["reported_pct"] is not None for feature in current_shapes)
+    actual = paths.evaluate_all(
+        "paths => Object.fromEntries(paths.map(p => [p.dataset.geography, "
+        "[p.dataset.rate === '' ? null : +p.dataset.rate, p.getAttribute('fill')]]))")
+    assert actual == {f["properties"]["key"]: [
+        f["properties"]["reported_pct"],
+        participation_color(f["properties"]["reported_pct"])] for f in current_shapes}
+    page.goto(url + "?year=2026&map-level=county&mode=in_person_early&state=Georgia")
+    early = next(row for row in nationwide["early_voting"]
+                 if row["state_code"] == "GA" and row["mode"] == "in_person_early")
+    expect(page.locator("#selection-panel > .selection-rate")).to_have_text(f'{early["ballots"]:,}')
+    expect(page.locator('[data-rate-source="uf_estimate"]')).to_have_count(0)
+    tab(page, "Demographics")
+    assert not page.locator('#mode option[value^="uf_"]').count()
+    expect(page.locator("#measure")).to_contain_text("not demographic turnout rates")
+    page.goto(url + "?year=2024&map-level=county&state=North+Carolina")
+    historical = next(row for row in states if row["state"] == "North Carolina"
+                      and row["year"] == 2024 and row["denominator"] == "cvap")
+    expect(page.locator("#selection-panel > .selection-rate")).to_have_text(
+        f'{historical["turnout_pct"]:.1f}%')
+    expect(page.locator('[data-rate-source="uf_estimate"]')).to_have_count(0)
+    page.goto(url + "?year=2026&map-color=margin&map-level=precinct&state=North+Carolina")
+    check_precinct_results(page, 2026, "NC")
+    expect(page.locator("#title")).not_to_contain_text("UF")
+    proof["checks"].append({"nm_precincts": len(current_shapes), "nm_colored_precincts": expected_colored,
+                            "early_counts_separate": True, "historical_cps_unchanged": True,
+                            "explicit_candidate_layer": True})
+    page.close()
+
+    broken = browser.new_page()
+    broken.on("pageerror", lambda error: errors.append(str(error)))
+    broken.route("**/participation-current/**/snapshot.json", lambda route: route.abort())
+    broken.goto(url + exact)
+    rates(broken, "VEP")
+    expect(broken.locator("#official-state-counts")).to_have_count(0)
+    proof["checks"].append({"uf_survives_official_feed_failure": True})
+    broken.close()
+    assert not errors, errors
+    if args.proof:
+        args.proof.parent.mkdir(parents=True, exist_ok=True)
+        args.proof.write_text(json.dumps(proof, indent=2) + "\n")
+    print("PASS: exact 2026 URL, 51 UF VEP/VAP rates, 100 NC county rates, mobile, "
+          "official/early separation, NM precinct coverage, historical CPS and candidate layers.")
+
+
 with sync_playwright() as p:
     browser = p.chromium.launch()
+    if args.focus_2026_participation:
+        check_current_participation(browser)
+        browser.close()
+        sys.exit(0)
     context = browser.new_context(viewport={"width": 1360, "height": 1000})
     page = context.new_page()
     errors = []
     page.on("pageerror", lambda error: errors.append(str(error)))
-    page.goto(url)
+    page.goto(url + "?map-color=margin&map-level=precinct")
     expect(page.locator("#year")).to_have_value("2026")
     expect(page.locator("#provisional-status")).to_be_visible()
     expect(page.locator("#map-level")).to_have_value("precinct")
@@ -563,12 +704,12 @@ with sync_playwright() as p:
     page.locator("#mode").select_option("official")
     page.locator("#state-select").select_option("North Carolina")
     official = next(row for row in nationwide["reporting"] if row["state_code"] == "NC")
-    expect(page.locator("#selection-panel .selection-rate")).to_have_text(f'{official["ballots"]:,}')
+    expect(page.locator("#selection-panel > .selection-rate")).to_have_text(f'{official["validated_pct"]:.1f}%')
     expect(page.locator("#selection-panel")).to_contain_text("not final turnout")
     expect(page.locator("#selection-panel")).to_contain_text(official["source_update_label"])
     assert all(year <= 2024 for year in page.locator("#state-history .chart-point").evaluate_all(
         "points => points.map(p => +p.dataset.year)"))
-    assert "20%" not in page.locator("#key").inner_text()
+    assert "20%" in page.locator("#key").inner_text()
     screenshot(page, "participation-refined-provisional-states.png")
     page.locator("#state-select").select_option("Georgia")
     expect(page.locator("#selection-panel .selection-rate")).to_have_text("Not reported")
@@ -670,7 +811,7 @@ with sync_playwright() as p:
 
     mobile = browser.new_page(viewport={"width": 390, "height": 844}, is_mobile=True, has_touch=True)
     mobile.on("pageerror", lambda error: errors.append(str(error)))
-    mobile.goto(url)
+    mobile.goto(url + "?map-color=margin&map-level=precinct")
     expect(mobile.locator("#year")).to_have_value("2026")
     expect(mobile.locator("#provisional-status")).to_be_visible()
     expect(mobile.locator("#map-color")).to_have_value("margin")
@@ -815,7 +956,7 @@ with sync_playwright() as p:
 
     current_page = context.new_page()
     current_page.on("pageerror", lambda error: errors.append(str(error)))
-    current_page.goto(url + "?state=New+Mexico&year=2026&mode=official&map-color=turnout")
+    current_page.goto(url + "?state=New+Mexico&year=2026&mode=official&map-color=turnout&map-level=precinct")
     expect(current_page.locator('.substate-feature[data-level="precinct"]')).to_have_count(len(current_shapes), timeout=30000)
     mapped = next(f["properties"] for f in current_shapes if f["properties"]["reported_pct"] is not None
                   and f["properties"]["county"] == "Dona Ana")
@@ -833,11 +974,12 @@ with sync_playwright() as p:
     expect(current_page.locator("#substate-detail")).to_contain_text("county boundary and reporting precinct sets differ")
     expect(current_page.locator("#substate-detail .selection-rate")).to_have_text("Not available")
     current_page.locator("#state-select").select_option("Nebraska")
-    expect(current_page.locator("#geography-note")).to_contain_text("No matched 2026 precinct participation")
-    expect(current_page.locator(".substate-feature")).to_have_count(0)
-    assert set(current_page.locator(".map-feature[data-state]").evaluate_all(
-        "paths => paths.map(p => p.getAttribute('fill'))")) == {"#d6d3cb"}
-    current_page.goto(url + "?year=2024&map-color=turnout")
+    expect(current_page.locator("#title")).to_have_text("Local participation in Nebraska")
+    expect(current_page.locator('.substate-feature[data-level="precinct"]')).to_have_count(0)
+    expect(current_page.locator('.substate-feature[data-level="county"]')).to_have_count(93)
+    expect(current_page.locator("#geography-note")).to_contain_text("0 with reported-ballot fractions")
+    assert current_page.locator('.map-feature[data-state][data-rate=""]').count() < 51
+    current_page.goto(url + "?year=2024&map-color=turnout&map-level=precinct")
     expect(current_page.locator('.substate-feature[data-level="precinct"]')).to_have_count(2656)
     expect(current_page.locator("#title")).to_have_text("Precinct participation in North Carolina")
     for name in ["NM.geojson.gz", "originals/NM-precincts-20260717.zip", "checksums.json"]:
@@ -860,7 +1002,7 @@ with sync_playwright() as p:
     expect(current_page.locator("#current-county-select")).to_have_value(nm_county["county_id"])
     expect(current_page.locator("#current-county-detail .selection-rate")).to_have_text(f'{nm_county["ballots"]:,}')
     current_page.locator("#map-reset").click()
-    expect(current_page.locator("#key")).to_contain_text("Count reported")
+    expect(current_page.locator("#key")).to_contain_text("20%")
     current_page.locator('[data-state="New Mexico"]').click()
     current_page.locator("#mode").select_option("mail_returned")
     expect(current_page.locator("#title")).not_to_have_text("Local participation in New Mexico")
@@ -888,7 +1030,7 @@ with sync_playwright() as p:
     current_page.locator("#state-select").select_option("North Carolina")
     current_page.locator("#current-county-select").select_option(label="WAKE")
     expect(current_page.locator("#current-unit-navigation")).to_contain_text("County counts only")
-    mobile.goto(url + "?state=New+Mexico&year=2026&mode=official&map-color=turnout")
+    mobile.goto(url + "?state=New+Mexico&year=2026&mode=official&map-color=turnout&map-level=precinct")
     expect(mobile.locator('.substate-feature[data-level="precinct"]')).to_have_count(len(current_shapes), timeout=30000)
     mobile.locator(f'.substate-feature[data-geography="{mapped["key"]}"]').dispatch_event("click")
     expect(mobile.locator("#current-unit-select")).to_have_value(mapped["unit_key"])
@@ -905,11 +1047,10 @@ with sync_playwright() as p:
     expect(broken_local_current.locator("#selection-panel")).to_contain_text("No local counts inferred")
     broken_precinct_current = browser.new_page()
     broken_precinct_current.route("**/NM.geojson.gz", lambda route: route.abort())
-    broken_precinct_current.goto(url + "?state=New+Mexico&year=2026&map-color=turnout")
+    broken_precinct_current.goto(url + "?state=New+Mexico&year=2026&map-color=turnout&map-level=precinct")
     expect(broken_precinct_current.locator("#geography-note")).to_contain_text("Geographic detail could not be loaded")
     expect(broken_precinct_current.locator(".substate-feature")).to_have_count(0)
-    assert set(broken_precinct_current.locator(".map-feature[data-state]").evaluate_all(
-        "paths => paths.map(p => p.getAttribute('fill'))")) == {"#d6d3cb"}
+    expect(broken_precinct_current.locator('[data-rate-source="uf_estimate"]')).to_have_count(51)
 
     offline = browser.new_page(java_script_enabled=False)
     offline.goto(url)
@@ -920,13 +1061,13 @@ with sync_playwright() as p:
     assert offline.locator('#downloads a[download]').count() == expected_downloads
     broken_precinct_results = browser.new_page()
     broken_precinct_results.route("**/2026/NM.geojson.gz", lambda route: route.abort())
-    broken_precinct_results.goto(url + "?state=New+Mexico&year=2026")
+    broken_precinct_results.goto(url + "?state=New+Mexico&year=2026&map-color=margin&map-level=precinct")
     expect(broken_precinct_results.locator("#geography-note")).to_contain_text("Geographic detail could not be loaded")
     expect(broken_precinct_results.locator(".substate-feature")).to_have_count(0)
     assert result_colors(broken_precinct_results) == expected_colors
     broken_results = browser.new_page()
     broken_results.route("**/participation-results/**/margins.json", lambda route: route.abort())
-    broken_results.goto(url)
+    broken_results.goto(url + "?map-color=margin")
     expect(broken_results.locator("#notice")).to_contain_text("previously saved result context is retained")
     assert len([color for color in result_colors(broken_results).values() if color != "#d6d3cb"]) == 50
     broken = browser.new_page()
@@ -954,8 +1095,8 @@ with sync_playwright() as p:
     broken_current.goto(url)
     expect(broken_current.locator(".map-feature[data-state]")).to_have_count(51)
     broken_current.locator("#year").select_option("2026")
-    expect(broken_current.locator("#notice")).to_contain_text("2026 observations could not be loaded")
-    expect(broken_current.locator("#selection-panel .selection-rate")).to_have_text("Not reported")
+    expect(broken_current.locator('[data-rate-source="uf_estimate"]')).to_have_count(51)
+    expect(broken_current.locator("#selection-panel > .selection-rate")).to_have_text("50.32%")
     broken_context = browser.new_page()
     broken_context.route("**/participation-context/latest.json", lambda route: route.abort())
     broken_context.goto(url)

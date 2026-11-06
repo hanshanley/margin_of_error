@@ -1,0 +1,31 @@
+{
+  "base_url": "http://127.0.0.1:4321",
+  "checks": [
+    {
+      "viewport": "desktop",
+      "uf_state_rates": 51,
+      "nc_county_rates": 100,
+      "exact_url": true,
+      "vep_and_vap": true,
+      "default_participation": true
+    },
+    {
+      "viewport": "mobile",
+      "uf_state_rates": 51,
+      "nc_county_rates": 100,
+      "exact_url": true,
+      "vep_and_vap": true,
+      "default_participation": true
+    },
+    {
+      "nm_precincts": 2177,
+      "nm_colored_precincts": 1202,
+      "early_counts_separate": true,
+      "historical_cps_unchanged": true,
+      "explicit_candidate_layer": true
+    },
+    {
+      "uf_survives_official_feed_failure": true
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "status": "complete_facts_release_verified_ui_pending",
+  "status": "complete_facts_release_and_ui_live_verified",
   "verified_at_utc": "2026-11-06T00:46:39.292797+00:00",
   "profile": "centre-complete-numerical-facts-v1",
   "data_directory": "data/county-source-reviews/20261106-centre-facts-01",
@@ -39,7 +39,22 @@
     "commit_pinned_csvs_byte_verified": 13,
     "receipts": "release-byte-verification.json"
   },
-  "ui_live_verified": false,
+  "ui_live_verified": true,
+  "production_validation": {
+    "verified_at_utc": "2026-11-06T01:02:47.190844+00:00",
+    "commit": "0e7d687f418ddd045382d9d589ec12bb494a6406",
+    "pages_run": 42140108699,
+    "pages_conclusion": "success",
+    "credential_runs": [42140108433, 42140104997],
+    "credential_conclusions": ["success", "success"],
+    "four_display_modes_verified": true,
+    "unique_download_urls": 288,
+    "download_anchors": 291,
+    "preserved_existing_url_multiset": true,
+    "uf_rows": 52,
+    "historical_scope_cells": 255,
+    "receipts": "download-production-verification.json"
+  },
   "local_validation": {
     "participation_tests_passed": 7,
     "astro_check_errors": 0,

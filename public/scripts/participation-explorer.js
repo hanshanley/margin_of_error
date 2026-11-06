@@ -34,7 +34,7 @@ const state = {
   table: [], columns: [], generation: 0, viewport: null, map: null, mapPaths: [],
   precinctRows: new Map(), precinctItems: new Map(), searchItems: new Map(), projected: [],
   loadedPrecinctYear: null, loadedCounty: "",
-  current: null, currentError: "", countState: params.get("countState") || "GA",
+  current: null, currentError: "", ufTurnout: [], countState: params.get("countState") || "GA",
   currentPath: "", currentLocal: null, currentCounty: "", currentUnit: "",
   currentPrecincts: null, currentPrecinctPath: "", currentPrecinctShapes: new Map(), currentPrecinctError: "",
   currentPrecinctSelection: "",
@@ -54,9 +54,16 @@ const fmt = value => value == null ? "—" : value.toLocaleString("en-US");
 const pct = value => value == null ? "Not available" : value.toFixed(1) + "%";
 const typeFor = year => year % 4 === 0 ? "presidential" : "midterm";
 const isProvisional = () => $("year").value === "2026" && state.view !== "precincts";
-const modeLabels = { available: "Available observations", official: "Official administrative ballots", in_person_early: "In-person early voting", mail_returned: "Returned mail ballots" };
+const modeLabels = { available: "Turnout estimates + official counts",
+  uf_vep: "Turnout · eligible population (UF)", uf_vap: "Turnout · voting-age population (UF)",
+  official: "Official administrative ballots", in_person_early: "In-person early voting", mail_returned: "Returned mail ballots" };
 const currentDimension = () => ({ sex: "gender", age: "age_range" }[$("dimension").value] || $("dimension").value);
 const unique = items => [...new Set(items)];
+const ufMode = () => isProvisional() && state.view === "states"
+  && ["available", "uf_vep", "uf_vap"].includes($("mode").value) && state.ufTurnout.length > 0;
+const ufBasis = () => $("mode").value === "uf_vap" ? "vap" : "vep";
+const participationRate = row => row?.uf_source && row.turnout_pct != null
+  ? row.turnout_pct.toFixed(2) + "%" : pct(row?.turnout_pct);
 const titleCase = text => text.toLowerCase().replace(/\b[a-z]/g, c => c.toUpperCase());
 const keyFor = row => `${row.county}|${row.precinct}`;
 const methodLabels = { election_day: "Election Day · in person", early_in_person: "Early · in person",
@@ -290,6 +297,37 @@ async function loadCurrent() {
     state.currentError = `Saved 2026 observations could not be loaded: ${error.message}.`;
   }
 }
+function loadUfTurnout() {
+  const table = document.querySelector('table[data-uf-turnout="2026"]');
+  if (!table) return;
+  state.ufTurnout = [...table.querySelectorAll("tbody tr")].map(tr => {
+    const number = name => {
+      const value = tr.getAttribute("data-" + name);
+      return value == null || value === "" ? null : Number(value);
+    };
+    return {
+      state: tr.querySelector("th").textContent.trim(), state_code: tr.dataset.stateCode,
+      ballots: number("ballots"), vep: number("vep"), vap: number("vap"),
+      vep_rate: number("vep-rate"), vap_rate: number("vap-rate"),
+      source_status: tr.dataset.sourceStatus, status: tr.dataset.ballotsStatus,
+      source_url: table.dataset.sourceUrl,
+      source_date: `UF version ${table.dataset.sourceVersion}; captured ${table.dataset.capturedAt}`,
+      uf_source: true,
+      quality: ["Source-labeled estimates, not final official ballots or Census CPS survey estimates."],
+    };
+  });
+}
+function stateParticipationRows() {
+  if (!ufMode()) return currentStateRows().map(row => ({
+    ...row, turnout_pct: row.validated_pct ?? null,
+  }));
+  const basis = ufBasis();
+  return state.ufTurnout.filter(row => row.state_code !== "US").map(row => ({
+    ...row, turnout_pct: row[basis + "_rate"], denominator: row[basis],
+    denominator_basis: basis === "vep" ? "voting-eligible population" : "voting-age population",
+    observation_type: `UF ${basis.toUpperCase()} turnout · ${row.source_status}`,
+  }));
+}
     async function currentLocal() {
       if (!state.current?.local_file) return null;
       if (!state.currentLocal) state.currentLocal = fetch(state.currentPath + state.current.local_file)
@@ -419,7 +457,7 @@ async function loadCurrent() {
             for (const other of map.detail.querySelectorAll(".selected")) other.classList.remove("selected");
             path.classList.add("selected"); fit(item.bounds);
           }, { class: "map-feature substate-feature", "data-geography": feature.properties.key,
-            "data-level": "county", tabindex: "-1" });
+            "data-level": "county", "data-rate": rate ?? "", tabindex: "-1" });
         map.detail.append(path);
       }
       map.localLayer = true;
@@ -429,7 +467,7 @@ async function loadCurrent() {
         ["reported_units", "Precincts reporting"], ["total_units", "Total precincts"], ["quality", "Notes"]]);
       header("2026 midterms · unofficial administrative counts", `Local participation in ${state.selectedState}`,
         "Reported ballots / source-defined electorate. Select a county, then a precinct or reporting row in the sidebar.",
-        "Not final turnout. 2024 Census counties provide contextual shapes, not certified 2026 election or precinct boundaries. Source electorate definitions vary by state.");
+        "Not final turnout. County colors use their own reported ballots and source electorate, not the UF state population denominator. 2024 Census counties provide contextual shapes, not certified 2026 election or precinct boundaries.");
       ramp();
       $("geography-note").textContent = `${state.selectedState} · ${fmt(counties.length)} county observations · `
         + `${fmt(observed)} uniquely name-matched county rates on 2024 contextual boundaries. `
@@ -712,8 +750,9 @@ async function drawCurrentPrecinctGeography(map, selected, code, token) {
   if (!file || !["available", "official"].includes($("mode").value)) {
     $("geography-note").textContent = state.currentPrecinctError
       || `No matched 2026 precinct participation map for ${state.selectedState} and this ballot mode. `
-        + "Other years' boundaries and county rates are not substituted. New Mexico has partial verified coverage.";
-    legend([["No matched precinct participation", "#d6d3cb"]]);
+        + "Other years' boundaries and county rates are not substituted. New Mexico has partial verified coverage. State-level rates, where available, remain a separate layer.";
+    if (map.stateRateMap) ramp();
+    else legend([["No matched precinct participation", "#d6d3cb"]]);
     return;
   }
   if (!state.currentPrecinctShapes.has(code)) {
@@ -762,7 +801,7 @@ async function drawCurrentPrecinctGeography(map, selected, code, token) {
   header("2026 midterms · unofficial precinct observations · partial coverage",
     map.full[0] / state.viewport[2] < 2.3 ? "Precinct participation · available coverage" : `Precinct participation in ${name}`,
     "Reported ballots / source-defined eligible voters. Each colored shape uses its own precinct counts.",
-    "July 2026 reference boundaries, not certified election-night geography. Gray: unmatched precinct sets, missing/inconsistent rates or fewer than 25 source-electorate voters. Other states are not assigned county or state colors.");
+    "July 2026 reference boundaries, not certified election-night geography. Gray precincts have unmatched sets, missing/inconsistent rates or fewer than 25 source-electorate voters. State-level colors underneath are separate, never assigned to precincts.");
   $("coverage-note").textContent = `${fmt(index.colored_precincts)} colored precincts across ${index.matched_counties} New Mexico counties. `
     + `All precinct shapes in ${index.unmatched_counties.join(", ")} remain neutral because reporting and boundary sets differ. `
     + "This is partial coverage, not a nationwide precinct map. NC precinct histories remain available for their supported historical years.";
@@ -1052,7 +1091,8 @@ function configure() {
   if (previousYear && previousYear !== $("year").value) state.precinct = "";
   const provisional = isProvisional();
   document.querySelector(".explorer-options").hidden = provisional;
-  options($("mode"), Object.entries(modeLabels).filter(([mode]) => state.view !== "national" || !["official", "available"].includes(mode)));
+  options($("mode"), Object.entries(modeLabels).filter(([mode]) => state.view !== "national"
+    || !["official", "available", "uf_vep", "uf_vap"].includes(mode)));
   for (const [id, visible] of [
     ["state-label", state.view === "states"], ["precinct-state-label", precincts],
     ["current-state-label", state.view === "national" && provisional], ["mode-label", provisional],
@@ -1412,26 +1452,57 @@ function stateDetail() {
   const rows = state.states.filter(row => row.state === state.selectedState && row.denominator === basis)
     .map(row => ({ ...row, series: row.state }));
   const provisional = isProvisional();
-  const selected = provisional ? currentStateRows().find(row => row.state === state.selectedState) : rows.find(row => row.year === year);
+  const selected = provisional ? stateParticipationRows().find(row => row.state === state.selectedState) : rows.find(row => row.year === year);
   const national = state.national.find(row => row.year === year && row.denominator === basis
     && row.dimension === "overall" && row.age_group === "All ages");
   const panel = $("selection-panel");
   panel.replaceChildren(html("p", "eyebrow", `${year} · ${provisional ? "provisional" : typeFor(year)}`),
     html("h3", "", state.selectedState),
     html("p", `selection-rate${selected ? "" : " selection-unavailable"}`,
-      provisional ? selected ? fmt(selected.ballots) : "Not reported" : pct(selected?.turnout_pct)),
-    html("p", "selection-basis", provisional ? `${selected ? modeFor(selected) : modeLabels[$("mode").value]} · not final turnout`
+      provisional ? selected?.turnout_pct != null ? participationRate(selected)
+        : selected ? fmt(selected.ballots) : "Not reported" : pct(selected?.turnout_pct)),
+    html("p", "selection-basis", provisional ? selected?.uf_source
+      ? `${ufBasis().toUpperCase()} turnout · UF ${selected.source_status}`
+      : `${selected ? modeFor(selected) : modeLabels[$("mode").value]} · not final turnout`
       : `of ${basis === "cvap" ? "adult citizens" : "all adult residents"} reported voting`));
   if (provisional) {
-    panel.append(html("p", "selection-note", sourceNote(selected)));
+    panel.append(html("p", "selection-note", selected?.uf_source
+      ? `${fmt(selected.ballots)} source-estimated ballots / ${fmt(selected.denominator)} ${selected.denominator_basis}. `
+        + `${selected.source_date}. Not final official counts, a CPS estimate or a demographic turnout rate.`
+      : sourceNote(selected)));
     if (selected) {
       panel.append(sourceLink(selected));
-      if (selected.validated_pct != null) panel.append(html("p", "selection-note",
-        `${selected.validated_pct.toFixed(1)}% reported ballots / ${selected.denominator_basis.replaceAll("_", " ")} (${fmt(selected.denominator)}). Not a CPS survey rate.`));
+      if (!selected.uf_source && selected.validated_pct != null) panel.append(html("p", "selection-note",
+        `${fmt(selected.ballots)} reported ballots / ${selected.denominator_basis.replaceAll("_", " ")} (${fmt(selected.denominator)}). Not a CPS survey rate.`));
+    }
+    const official = state.current?.reporting.find(row => row.state === state.selectedState);
+    if (selected?.uf_source && official) {
+      const observed = html("div", "substate-detail"); observed.id = "official-state-counts";
+      observed.append(html("h4", "", "Separate official administrative observation"),
+        html("p", "selection-basis", `${fmt(official.ballots)} reported ballots`),
+        html("p", "selection-note", official.validated_pct == null ? sourceNote(official)
+          : `${pct(official.validated_pct)} / ${official.denominator_basis.replaceAll("_", " ")} `
+            + `(${fmt(official.denominator)}). ${sourceNote(official)} Not the UF population denominator.`),
+        sourceLink(official));
+      panel.append(observed);
     }
     const navigation = html("div", "substate-detail");
     navigation.id = "current-local-navigation"; panel.append(navigation);
     currentNavigation(navigation);
+    const countyAudit = state.current?.local_audit?.find(row => row.state_code === stateCode() && row.counties > 0);
+    if (countyAudit) {
+      const button = html("button", "selection-link", `Show ${fmt(countyAudit.counties)} counties' participation`);
+      button.id = "show-current-counties"; button.type = "button";
+      button.addEventListener("click", () => {
+        $("map-level").value = "county"; $("map-color").value = "turnout"; $("mode").value = "official"; render();
+        const item = state.map?.stateItems?.get(stateCode());
+        if (item) fit(item.bounds);
+      });
+      panel.append(button);
+      if ($("map-level").value === "precinct" && !state.currentPrecincts?.states[stateCode()])
+        panel.append(html("p", "selection-note",
+          "Verified 2026 precinct geography is unavailable for this state. County counts and their own participation denominators are available instead; no state or county rate is assigned to a precinct."));
+    }
   } else if (selected?.turnout_pct != null && national?.turnout_pct != null) {
     const difference = selected.turnout_pct - national.turnout_pct;
     panel.append(html("p", "selection-note", `${Math.abs(difference).toFixed(1)} percentage points `
@@ -1468,13 +1539,26 @@ function stateDetail() {
 function statesView() {
   const year = Number($("year").value), basis = $("basis").value;
   const provisional = isProvisional();
-  const rows = provisional ? [...currentStateRows()] : state.states.filter(row => row.year === year && row.denominator === basis);
+  const rows = provisional ? stateParticipationRows() : state.states.filter(row => row.year === year && row.denominator === basis);
   const byName = new Map(rows.map(row => [row.state, row]));
-  if (provisional) {
+  const rates = provisional && rows.some(row => row.turnout_pct != null);
+  if (ufMode()) {
+    const national = state.ufTurnout.find(row => row.state_code === "US");
+    const population = ufBasis() === "vep" ? "voting-eligible population" : "all voting-age residents";
+    header("2026 midterm election · UF turnout estimates", "Participation across the United States",
+      `${participationRate({ uf_source: true, turnout_pct: national?.[ufBasis() + "_rate"] })} nationally. `
+        + `Estimated ballots / ${population}. Select a state for turnout and separate official observations.`,
+      "UF Election Lab source-labeled estimates, not final official counts or Census CPS survey rates. "
+        + "State estimates are never assigned to counties or precincts. County colors, where available, use their own administrative counts and denominator.");
+    ramp();
+    note(state.currentError);
+  } else if (provisional) {
     header("2026 midterm election · reported observations", "Participation across the United States",
-      `${modeLabels[$("mode").value]}. Select a state to see its reported count and source date.`,
-      "Provisional counts, not final turnout. Election-margin colors provide separate partisan context, not participation rates. Sources have different dates. Alaska and Hawaii are separate-scale insets.");
-    legend([["Count reported", "#718ba5"], ["Not yet available", "#edf0f3"]]);
+      `${modeLabels[$("mode").value]}. ${rates ? "Colors show reported ballots / each state's source-defined electorate; gray means no rate."
+        : "Select a state to see its reported count and source date."}`,
+      "Provisional observations, not final turnout. Electorate definitions and source dates vary by state; these are not UF population or CPS survey rates. Alaska and Hawaii are separate-scale insets.");
+    if (rates) ramp();
+    else legend([["Count reported", "#718ba5"], ["Not yet available", "#edf0f3"]]);
     note(state.currentError);
   } else {
     header(`${year} ${typeFor(year)} election · Census survey estimates`, "Participation across the United States",
@@ -1492,6 +1576,11 @@ function statesView() {
     const withData = new Set([...state.current.reporting, ...state.current.early_voting].map(row => row.state_code)).size;
     $("coverage-note").textContent = $("coverage-note").textContent.replace(/^\d+ jurisdictions/, `${withData} jurisdictions`);
   }
+  if (ufMode()) $("coverage-note").textContent =
+    `${rows.filter(row => row.turnout_pct != null).length} state / D.C. turnout rates plus a separate national estimate. `
+    + "UF VEP and VAP are distinct population denominators, not registered voters. "
+    + "Use the 2026 measure selector for official full-election counts or separate early/mail observations. "
+    + "County participation is available through the selected state's county button where verified; demographic turnout rates remain unavailable.";
   if ($("map-color").value === "margin") {
     const office = year % 4 === 0 ? "President" : "U.S. House";
     const count = state.margins.filter(row => row.year === year && row.level === "state" && row.office === office).length;
@@ -1509,7 +1598,8 @@ function statesView() {
   stateMap(byName, provisional);
   stateDetail();
   setTable(rows.sort((a, b) => a.state.localeCompare(b.state)), provisional
-    ? [["state", "State"], ["observation_type", "Observation type"], ["ballots", "Ballots reported"], ["source_date", "Source date"],
+    ? [["state", "State"], ["turnout_pct", "Turnout / source denominator"], ["denominator_basis", "Denominator definition"],
+      ["denominator", "Denominator"], ["observation_type", "Observation type"], ["ballots", ufMode() ? "Source-estimated ballots" : "Ballots reported"], ["source_date", "Source date"],
       ["source_update_label", "Source update"], ["status", "Status"], ["quality", "Notes"]]
     : [["state", "State"], ["year", "Year"], ["turnout_pct", "Turnout"], ["denominator", "Population"], ["warnings", "Notes"]]);
 }
@@ -1703,6 +1793,7 @@ function stateMap(byName, provisional = false) {
   const svg = createMap(1000, 610, `United States ${$("map-color").value === "margin" ? "red and blue election-result" : "participation"} map. Select a state for its results and participation history.`);
   state.map.stateHeading = ["subtitle", "title", "measure", "caption"].map(id => $(id).textContent);
   state.map.stateCoverage = $("coverage-note").textContent;
+  state.map.stateRateMap = provisional && [...byName.values()].some(row => row.turnout_pct != null);
   state.drillKey = ""; ++state.drillToken;
   const items = new Map(), paths = new Map();
   const labels = [], callouts = [];
@@ -1722,13 +1813,19 @@ function stateMap(byName, provisional = false) {
       };
       const election = marginRow("state", abbreviation);
       const partisan = $("map-color").value === "margin";
-      const precinctColors = $("map-level").value === "precinct" && !partisan;
+      const precinctColors = $("map-level").value === "precinct" && !partisan && !provisional;
       const path = featurePath(item, row?.turnout_pct,
         `${name} · ${$("year").value}\n${partisan ? `${election?.office || "Election"} · ${marginLabel(election)} · ${fmt(election?.contest_votes)} contest votes\nWhole-state result color; not a precinct result or participation rate`
-          : provisional ? `${fmt(row?.ballots)} ballots · ${row ? modeFor(row) : "not reported"} · provisional` : `${pct(row?.turnout_pct)} reported voting`}`,
-        select, { "data-state": name, "data-color-level": partisan ? "state" : precinctColors ? "none" : "state", tabindex: "0",
+          : provisional ? `${participationRate(row)}${row?.uf_source ? ` ${ufBasis().toUpperCase()} turnout · UF ${row.source_status}`
+            : row?.turnout_pct != null ? " / source-defined electorate" : ""}\n${fmt(row?.ballots)} ballots · ${row?.uf_source ? "source estimate" : row ? modeFor(row) : "not reported"} · provisional`
+            : `${pct(row?.turnout_pct)} reported voting`}`,
+        select, { "data-state": name, "data-color-level": partisan ? "state" : precinctColors ? "none" : "state",
+          "data-rate": row?.turnout_pct ?? "", "data-rate-source": row?.uf_source ? "uf_estimate"
+            : provisional ? "administrative" : "cps_survey",
+          tabindex: "0",
           ...(partisan ? { fill: marginFill(election?.margin_pp) }
-            : provisional ? { fill: row ? "#718ba5" : "#d6d3cb" } : {}),
+            : provisional ? { fill: row?.turnout_pct != null ? fill(row.turnout_pct)
+              : !state.map.stateRateMap && row ? "#718ba5" : "#edf0f3" } : {}),
           ...(precinctColors ? { fill: "#d6d3cb" } : {}) });
       items.set(abbreviation, item); paths.set(abbreviation, path);
       svg.append(path);
@@ -1737,7 +1834,7 @@ function stateMap(byName, provisional = false) {
       else labels.push(svgNode("text", { x, y, dy: ".35em", "text-anchor": "middle",
         class: "map-label state-label", "data-label-state": name,
         style: `fill:${precinctColors ? "#17212d" : partisan ? Math.abs(election?.margin_pp ?? 0) >= 20 ? "#fff" : "#17212d"
-          : !provisional && row?.turnout_pct >= 62 ? "#fff" : "#17212d"}` }, abbreviation));
+          : row?.turnout_pct >= 62 ? "#fff" : "#17212d"}` }, abbreviation));
     }
     const detail = svgNode("g", { class: "geographic-detail" });
     svg.append(detail);
@@ -1800,8 +1897,7 @@ function projectInside(feature, point) {
         : state.margins.some(row => row.year === year && row.state_code === code && row.level === "county")
         ? "county" : state.context?.district_result_years.includes(year) ? "district" : "county";
     if (level === "precinct" && zoomLevel < 2.3 && $("map-color").value !== "margin") {
-      if (year === 2026 && state.currentPrecincts?.states.NM) code = "NM";
-      else if (state.audits.some(row => row.year === year)) code = "NC";
+      if (year !== 2026 && state.audits.some(row => row.year === year)) code = "NC";
     }
     const selected = map.stateItems.get(code);
     const key = `${year}|${code}|${level}|${$("map-color").value}|${$("mode").value}|${zoomLevel >= 2.3}`;
@@ -1830,7 +1926,7 @@ function projectInside(feature, point) {
         return;
       }
       if ($("map-color").value === "margin") marginLegend(year % 4 === 0 ? "President" : "U.S. House aggregate");
-      else if (isProvisional()) legend([["Count reported", "#718ba5"], ["Not yet available", "#edf0f3"]]);
+      else if (isProvisional() && !map.stateRateMap) legend([["Count reported", "#718ba5"], ["Not yet available", "#edf0f3"]]);
       else ramp();
       return;
     }
@@ -1838,6 +1934,7 @@ function projectInside(feature, point) {
     const unavailable = text => {
       $("geography-note").textContent = text;
       if ($("map-color").value === "margin") marginLegend(year % 4 === 0 ? "President" : "U.S. House aggregate");
+      else if (isProvisional() && map.stateRateMap) ramp();
       else if (level === "precinct") legend([["No verified precinct participation", "#d6d3cb"]]);
     };
     if (level === "precinct" && $("map-color").value === "margin"
@@ -1849,6 +1946,18 @@ function projectInside(feature, point) {
       && !state.margins.some(row => row.year === year && row.state_code === code && row.level === level))
       return unavailable(`No verified ${year} ${level} candidate-return join for ${state.selectedState}. `
         + "Whole-state red/blue election-result colors remain; participation rates are not used as election results.");
+    if (year === 2026 && level === "precinct"
+      && !state.currentPrecincts?.states[code]
+      && state.current?.local_audit?.some(row => row.state_code === code && row.counties > 0)
+      && ["available", "official"].includes($("mode").value)) {
+      if (zoomLevel < 2.3) {
+        $("geography-note").textContent = `No verified 2026 precinct participation geography for ${state.selectedState}. `
+          + "State-level turnout remains visible; use the county participation button or select the state to see verified county observations.";
+        if (map.stateRateMap) ramp();
+        return;
+      }
+      return drawCurrentGeography(map, selected, code, token);
+    }
     if (year === 2026 && level === "precinct")
       return drawCurrentPrecinctGeography(map, selected, code, token);
     if (year === 2026 && level === "county" && $("map-color").value !== "margin" && state.current?.local_file
@@ -2143,6 +2252,7 @@ async function render() {
   }
 }
 async function main() {
+  loadUfTurnout();
   for (const button of document.querySelectorAll(".participation-nav button"))
     button.addEventListener("click", () => showView(button.dataset.view));
   $("basis").addEventListener("change", () => { configure(); render(); });
