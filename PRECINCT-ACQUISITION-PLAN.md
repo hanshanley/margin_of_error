@@ -740,6 +740,11 @@ All 106 complete relocations pass byte checks; the prepared Pages site is
 898,750,912 bytes. The local preview helper was stopped.
 Exact production deployment/live verification remains pending; no map,
 demographic turnout, certification or statewide completion is approved.
+Published UI revision is `de4fc20f1651f4cec2ce00cff335d1283756fd6f`;
+Pages `42166851928` and credential checks `42166851967` / `42166852661`
+are being checked by the single bounded
+`armstrong-exact-production-verification-01` process. Preserve its prepared
+`dist` reference until it finishes; do not duplicate the watcher.
 
 **November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated
