@@ -35,8 +35,8 @@ ZIP and seventeen duplicate build-output geometries are additionally relocated
 after full-byte verification. Distinct pinned paths may share filenames;
 shared-release asset names must remain unique. Original interactive geometry,
 earlier snapshots and complete downloads remain intact.
-**Next:** finish the frozen Minnesota complete-query publication and independent
-Census identities, then review its additive county participation extension.
+**Next:** review Minnesota's additive county participation extension; its complete
+query publication and all 87 independent Census identities now pass below.
 Allow for the actual **1,436,389-byte** hosted headroom without dropping any
 complete downloads, original interactive geometries or historical snapshots.
 No new unverified source may inherit this deployment's LIVE flag.
@@ -298,8 +298,14 @@ The **seventeen-file / sixteen-member** package reproduces completely offline,
 including the byte-identical **2,941,529-byte ZIP**, SHA-256
 `77a4813221c8f5414d05786b3f0bf569e1036ed0936758227ae536db1fbd0a6e`.
 The fixed review-only source is
-`29844f67234c8384050d857e394ed64b512b5af0`; the complete-query publisher is
-running without changing the live UI.
+`29844f67234c8384050d857e394ed64b512b5af0`. Release **436479857**, tag
+`voter-county-minnesota-native-query-20261106-01`, passes all **seventeen entire
+anonymous assets / seventeen pinned files / sixteen archive members** and
+byte-identical extracted offline reproduction. Exact review and tag credential
+jobs **42218411471 / 42218534761** pass. Both acquisition and review test files
+run explicitly (**four + six tests**); Python unittest discovery does not
+collect their hyphenated filenames. Do not rerun this completed publisher or
+overwrite the frozen query. Fixed checksums/never overwrite is not host locking.
 Six focused tests cover true reported zeros, misleading unreported zeros and
 nonzeros, county-scoped IDs, missing references, arithmetic conflicts, estimated
 question blanks and extracted-download reproduction without original HTML.
@@ -314,9 +320,16 @@ native absentee statistics are not inferred all-ballot modes.
 The **2,354,606 reported-voter subtotal** is not a complete statewide count.
 See `20261106-minnesota-facts-01` and
 `20261106-minnesota-primary-review-01/portable-validation.json`.
-**Next:** finish publishing the frozen complete factual query, independently verify
-all Census county identities, then prepare a separately reviewed additive
-context extension. No Minnesota explorer pointer, map or rate is changed.
+Both **complete 3,222-record 2024/2026 Census originals** are independently
+parsed and equal their retained inventories. All **87 native Minnesota county
+identities** match bijectively in both years, with identical Census GEOIDs and
+ANSI identities. The join uses Minnesota-only literal county names with
+case-folding and the Census County suffix removed, never a FIPS formula.
+Native county IDs and missing native FIPS remain unchanged. This verifies
+identity, not exact 2026 election reporting boundaries or rates.
+**Next:** prepare a separately reviewed additive context extension, retaining
+all existing data and complete downloads and guarding actual hosted capacity.
+No Minnesota explorer pointer, map or rate is yet changed.
 See `20261106-minnesota-acquisition-01/validation.json` for acquisition evidence,
 not a downloadable participation query. Complete offline reconciliation,
 portable query publication and independent county identity review remain pending;

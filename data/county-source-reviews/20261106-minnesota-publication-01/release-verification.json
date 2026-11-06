@@ -1,0 +1,154 @@
+{
+  "verified_at_utc": "2026-11-06T12:33:16.642431+00:00",
+  "revision": "29844f67234c8384050d857e394ed64b512b5af0",
+  "resolved_actual_tag_commit": "29844f67234c8384050d857e394ed64b512b5af0",
+  "release_id": 436479857,
+  "tag": "voter-county-minnesota-native-query-20261106-01",
+  "immutable": false,
+  "files": [
+    {
+      "file": "acquire-minnesota-bulk-participation.py",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-minnesota-native-query-20261106-01/acquire-minnesota-bulk-participation.py",
+      "bytes": 6363,
+      "sha256": "30c5c7f8331c90bac02f161c2a189f73857aab938c5981cfc8d83396ef251662",
+      "anonymous_entire_bytes_match": true,
+      "entire_pinned_bytes_match": true
+    },
+    {
+      "file": "audit.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-minnesota-native-query-20261106-01/audit.json",
+      "bytes": 3475,
+      "sha256": "969bb0d143856387675266608644d614aae036c6018d0ce75a81ba3e0d975f6c",
+      "anonymous_entire_bytes_match": true,
+      "entire_pinned_bytes_match": true
+    },
+    {
+      "file": "checksums.sha256",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-minnesota-native-query-20261106-01/checksums.sha256",
+      "bytes": 1355,
+      "sha256": "e8d266847efa73e690d1b9168c41edbc93bf6c48fca0445cfe7b284d4b669bca",
+      "anonymous_entire_bytes_match": true,
+      "entire_pinned_bytes_match": true
+    },
+    {
+      "file": "complete-minnesota-native-query.zip",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-minnesota-native-query-20261106-01/complete-minnesota-native-query.zip",
+      "bytes": 2941529,
+      "sha256": "77a4813221c8f5414d05786b3f0bf569e1036ed0936758227ae536db1fbd0a6e",
+      "anonymous_entire_bytes_match": true,
+      "entire_pinned_bytes_match": true
+    },
+    {
+      "file": "counties.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-minnesota-native-query-20261106-01/counties.csv",
+      "bytes": 1276,
+      "sha256": "ca43edea14e39d7b7f098500496921ac0ff43403b7a4ceff35daa919031acf04",
+      "anonymous_entire_bytes_match": true,
+      "entire_pinned_bytes_match": true
+    },
+    {
+      "file": "county-choice-reconciliation.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-minnesota-native-query-20261106-01/county-choice-reconciliation.csv",
+      "bytes": 586051,
+      "sha256": "286b9893b6da9cdc4fc5acc4e4b2880d24aaf055ed4d527a3c9025ee818612bc",
+      "anonymous_entire_bytes_match": true,
+      "entire_pinned_bytes_match": true
+    },
+    {
+      "file": "county-participation.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-minnesota-native-query-20261106-01/county-participation.csv",
+      "bytes": 10156,
+      "sha256": "0815bde66ec0127b48d7d6b299ca4c0a7ea55773782088269cb82d699e848426",
+      "anonymous_entire_bytes_match": true,
+      "entire_pinned_bytes_match": true
+    },
+    {
+      "file": "county-results.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-minnesota-native-query-20261106-01/county-results.csv",
+      "bytes": 707323,
+      "sha256": "c82e791a9f4750d9ca837af37c3ee8102538ebf6818aacbb125d43378bb27900",
+      "anonymous_entire_bytes_match": true,
+      "entire_pinned_bytes_match": true
+    },
+    {
+      "file": "parties.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-minnesota-native-query-20261106-01/parties.csv",
+      "bytes": 227,
+      "sha256": "b98223ba395fdef978f5b20eddc85bd7b61ce919dfb16a6ec2d40b90135ea27c",
+      "anonymous_entire_bytes_match": true,
+      "entire_pinned_bytes_match": true
+    },
+    {
+      "file": "pctstats.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-minnesota-native-query-20261106-01/pctstats.csv",
+      "bytes": 199034,
+      "sha256": "196a176eac939fc0538994c7ef221547e857c7682d2699d5c31eb421a65051eb",
+      "anonymous_entire_bytes_match": true,
+      "entire_pinned_bytes_match": true
+    },
+    {
+      "file": "precinct-results.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-minnesota-native-query-20261106-01/precinct-results.csv",
+      "bytes": 27816262,
+      "sha256": "0e8e5b0c7bd8f2ec84b31d1e1d8113c56a3c8f682cd9e875e6a18454ec6274da",
+      "anonymous_entire_bytes_match": true,
+      "entire_pinned_bytes_match": true
+    },
+    {
+      "file": "precincts.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-minnesota-native-query-20261106-01/precincts.csv",
+      "bytes": 186954,
+      "sha256": "87389812eaa17cbe39fdef50f89175fa0c440d709a38cd36c107551603c9f2dc",
+      "anonymous_entire_bytes_match": true,
+      "entire_pinned_bytes_match": true
+    },
+    {
+      "file": "review-minnesota-bulk-participation.py",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-minnesota-native-query-20261106-01/review-minnesota-bulk-participation.py",
+      "bytes": 13652,
+      "sha256": "495af32e1c9fab5b2511114b6d26f12f2160c4f232d3b66216b14ed2fb1ed756",
+      "anonymous_entire_bytes_match": true,
+      "entire_pinned_bytes_match": true
+    },
+    {
+      "file": "sources.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-minnesota-native-query-20261106-01/sources.json",
+      "bytes": 3451,
+      "sha256": "88280d24ab113f82c9de81622c26fdbf6ad6b209c2f1d1d6f51a75ddcc773308",
+      "anonymous_entire_bytes_match": true,
+      "entire_pinned_bytes_match": true
+    },
+    {
+      "file": "statistic-component-residuals.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-minnesota-native-query-20261106-01/statistic-component-residuals.csv",
+      "bytes": 7207,
+      "sha256": "1dd7ab39681f404eb87aa51cd5ce376eb4e15fee5a086dd956dde981b792a9ea",
+      "anonymous_entire_bytes_match": true,
+      "entire_pinned_bytes_match": true
+    },
+    {
+      "file": "statistic-electorate-excesses.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-minnesota-native-query-20261106-01/statistic-electorate-excesses.csv",
+      "bytes": 629,
+      "sha256": "009f6f26454db9eb5d8ccb904f86e099c021905a1452d04352482e2886d33604",
+      "anonymous_entire_bytes_match": true,
+      "entire_pinned_bytes_match": true
+    },
+    {
+      "file": "test-review-minnesota-bulk-participation.py",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-minnesota-native-query-20261106-01/test-review-minnesota-bulk-participation.py",
+      "bytes": 6159,
+      "sha256": "3cae09e9258f5ff6b59906f364eb3404ab2692d8877c10e685b56c7551438dfc",
+      "anonymous_entire_bytes_match": true,
+      "entire_pinned_bytes_match": true
+    }
+  ],
+  "complete_assets": 17,
+  "complete_pinned_files": 17,
+  "complete_archive_members": 16,
+  "extracted_offline_reproduction": true,
+  "extracted_tests_passed": 6,
+  "original_html_redistributed": false,
+  "explorer_integration_approved": false,
+  "scope": "All entire public assets, pinned files and ZIP members match, with byte-identical offline reproduction. Fixed-checksum/never-overwrite policy, not host-enforced locking."
+}
