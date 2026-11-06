@@ -93,8 +93,15 @@ ZIP **53,832 bytes**, SHA-256
 This is a complete native numerical query, not a metadata-only package.
 **Zero generic-ballot analysis approvals / zero analysis-rate approvals /
 zero map approvals** remain while the source-clock conflict is unresolved.
-Immutable publication is pending; this download-only batch does not alter the
-live UI or justify rerunning completed map suites.
+Native-query revision **`87a28ec2e71084828598010b299b35e7fcbebe3b`**, tag
+`voter-county-tioga-native-turnout-20261106-01`, release **436692867**,
+reports **immutable: true**. Both exact credential jobs pass. All **14 entire
+anonymous assets / 14 commit-pinned files / 13 ZIP members** match committed
+bytes. The actual published archive passes **nine isolated tests** and
+reproduces **all 14 files byte-identically offline**. Publication proofs are
+separate in `20261106-tioga-native-publication-01`; the frozen source package
+and its zero-approval flags are unchanged. This download-only batch does not
+alter the live UI or justify rerunning completed map suites.
 
 Warren's current ordinary declaring-page request and its exact previously
 declared official-report URL both return **HTTP 404 with empty bodies**.
