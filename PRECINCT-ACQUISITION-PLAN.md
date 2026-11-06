@@ -2,7 +2,19 @@
 
 ## Current verified production and next acquisition
 
-**Lycoming/context14 integration is locally verified, not yet LIVE.**
+**November 6, 12:32 UTC: Lycoming participation and context14 are LIVE verified.**
+Exact UI **`1ee5b01b2cf07526c362db1aaaa221d5edaf2126`**, Pages
+**42217627965 attempt 1**, passes its original hosted artifact
+**13502496009 / 513,824,247 bytes**, SHA-256
+`49f437ec12a74baec1197e1de7cf544b9af4289536d4ff8299d402c30cdc6902`.
+All **413 selected entire hosted/public files**, **seven production browser
+scenarios** and credential runs **42217627972 / 42217626090** pass.
+The exact hosted preparation is **998,563,611 bytes**, below the 1 GB limit;
+the smaller local preparation is not substituted for this hosted measurement.
+The hosted preview matches its own publication manifest, retaining only the
+qualified local-platform preview difference. The completed verifier must not
+be rerun. Missing states and unreviewed rates remain missing; this is one
+additional county, not nationwide completion.
 Factual source `e50241f5f2de734b7e8107ac6518eae19480c926` and context
 `5d2e25f80be9f9361cc37a4131eb274323c42e75` are fixed and fully published.
 Context14 release **436466921** passes all four entire anonymous assets,
@@ -23,12 +35,14 @@ ZIP and seventeen duplicate build-output geometries are additionally relocated
 after full-byte verification. Distinct pinned paths may share filenames;
 shared-release asset names must remain unique. Original interactive geometry,
 earlier snapshots and complete downloads remain intact.
-**Next:** publish this UI, verify its exact credential jobs, original Pages
-artifact, actual hosted size, all selected entire public bytes and seven
-production browser scenarios before setting any new LIVE flag.
+**Next:** finish the frozen Minnesota complete-query publication and independent
+Census identities, then review its additive county participation extension.
+Allow for the actual **1,436,389-byte** hosted headroom without dropping any
+complete downloads, original interactive geometries or historical snapshots.
+No new unverified source may inherit this deployment's LIVE flag.
 See `20261106-lycoming-explorer-01`.
 
-**November 6, 12:12 UTC: Georgia participation and context13 are LIVE verified.**
+**Retained November 6, 12:12 UTC baseline: Georgia and context13 LIVE verified.**
 Exact UI `350ea218cf97756d7c61d23aa50f542a10367d07`, Pages **42214264656
 attempt 1**, passed its original hosted artifact **13500538140 /
 512,936,145 bytes**, SHA-256
@@ -226,8 +240,9 @@ The source is now registered, context13 is extended without changing any of
 its 1,133 records or seventeen geometries, and context14 is separately released.
 The addition is one county count and one valid administrative registration
 fraction, not candidate-mode or demographic participation. Changed-UI checks,
-build, Pages preparation and local browsers pass above. Exact production
-proof and actual hosted size remain pending; no Lycoming row is yet LIVE.
+build, Pages preparation, local browsers and exact production proof pass above.
+Lycoming is LIVE at `1ee5b01b2cf07526c362db1aaaa221d5edaf2126`; its native
+qualifications, missing measures and separate candidate-mode totals remain intact.
 
 The local context14 extension now passes the complete offline verifier:
 **1,134 source records / 662 contextual joins / 286 usable registration
@@ -243,7 +258,8 @@ The fixed context14 review is **1,032,943 bytes**, SHA-256
 Do not modify this frozen package for UI convenience. Context14 release
 **436466921** is fully byte-verified, including offline reproduction and both
 credential jobs; the local pointer changes only after that proof. Changed-UI
-validation passes above; actual deployment proof remains pending.
+validation and exact deployment proof pass above; do not rerun their completed
+publishers or production verifier.
 The bounded other-parent attempts preserve Butler's **404** parent and summary
 response, and Snyder's **406** response, without bypass or approval of cached
 search text. Dauphin's already-published candidate package is not reacquired;
@@ -281,6 +297,9 @@ without pooling offices or treating estimates as actual blank ballots.
 The **seventeen-file / sixteen-member** package reproduces completely offline,
 including the byte-identical **2,941,529-byte ZIP**, SHA-256
 `77a4813221c8f5414d05786b3f0bf569e1036ed0936758227ae536db1fbd0a6e`.
+The fixed review-only source is
+`29844f67234c8384050d857e394ed64b512b5af0`; the complete-query publisher is
+running without changing the live UI.
 Six focused tests cover true reported zeros, misleading unreported zeros and
 nonzeros, county-scoped IDs, missing references, arithmetic conflicts, estimated
 question blanks and extracted-download reproduction without original HTML.
@@ -295,7 +314,7 @@ native absentee statistics are not inferred all-ballot modes.
 The **2,354,606 reported-voter subtotal** is not a complete statewide count.
 See `20261106-minnesota-facts-01` and
 `20261106-minnesota-primary-review-01/portable-validation.json`.
-**Next:** freeze and publish the complete factual query, independently verify
+**Next:** finish publishing the frozen complete factual query, independently verify
 all Census county identities, then prepare a separately reviewed additive
 context extension. No Minnesota explorer pointer, map or rate is changed.
 See `20261106-minnesota-acquisition-01/validation.json` for acquisition evidence,

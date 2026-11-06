@@ -1,0 +1,8 @@
+{
+  "revision": "1ee5b01b2cf07526c362db1aaaa221d5edaf2126",
+  "pages_run_id": 42217627965,
+  "hosted_site_bytes": 998563611,
+  "local_prepared_site_bytes": 988425191,
+  "exact_workflow_log_sha256": "438238f79a74ace31cd89e07803c4bf7e2a0cafa6d396a7c910db4aaabb7d40d",
+  "scope": "Actual site size from this exact successful hosted preparation, not inferred overhead."
+}
