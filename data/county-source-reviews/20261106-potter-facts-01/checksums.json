@@ -1,0 +1,112 @@
+[
+  {
+    "file": "audit.json",
+    "bytes": 2481,
+    "sha256": "9a3290b08c635d69d1ead5b2fc68e59cfaa73fb77efe8e49ff53c4cf7a27647d"
+  },
+  {
+    "file": "county-candidate-results.csv",
+    "bytes": 6376,
+    "sha256": "0094927f1f662b976acb4d8d3b375c339332f50281a3f52865d9a3faa7ff358b"
+  },
+  {
+    "file": "county-contest-accounting.csv",
+    "bytes": 2067,
+    "sha256": "16fd48e56e73f403b4cb1d80b4e60cff61f5cc83b7f210454c79523952b5ea48"
+  },
+  {
+    "file": "county-literal-party-totals.csv",
+    "bytes": 3775,
+    "sha256": "20c22f87c03839ea7b2e425b79158f64ded089a2c6cbf2eb8e5d927b96c24df3"
+  },
+  {
+    "file": "county-participation.csv",
+    "bytes": 507,
+    "sha256": "32e83977ce7b6679afbccaca04b775dad071abdb26a86497fbeebd66d132bac1"
+  },
+  {
+    "file": "native-derived-contest-sums.csv",
+    "bytes": 2254,
+    "sha256": "85fc8714421e7fcf3043a54d6b55ce2ee7c4dd9582f78377d9a63574e558adbf"
+  },
+  {
+    "file": "native-derived-rate-checks.csv",
+    "bytes": 3716,
+    "sha256": "c595197416c3e59d57784a3330a5e57c4f3c495dbc3708ebc60777170fd58a64"
+  },
+  {
+    "file": "native-mail-receipts.csv",
+    "bytes": 429,
+    "sha256": "bbda6a30fa580ce142227cb77a42b15d5b798fdff53eead83510036460375d8a"
+  },
+  {
+    "file": "native-named-write-ins.csv",
+    "bytes": 19623,
+    "sha256": "102817220b9ea10e275b0c51c30eb80bb60fc46f541f4a3088452097be29d08d"
+  },
+  {
+    "file": "native-participation-modes.csv",
+    "bytes": 571,
+    "sha256": "7737ebc853be034e3f998cdc6131c248ebf74dc0fb75583959fa0965e415b014"
+  },
+  {
+    "file": "native-reporting-statistics.csv",
+    "bytes": 637,
+    "sha256": "ca866cc9b62b6c45d4e6f19c2e0d82ee6739dfc12725bbd09c4b75e930333731"
+  },
+  {
+    "file": "native-source-declarations.csv",
+    "bytes": 474,
+    "sha256": "5c39b5b39cc92121be3280f7b2c3a981fe3cc7bd2479ec05934027d5ef105113"
+  },
+  {
+    "file": "native-source-pages.csv",
+    "bytes": 5868,
+    "sha256": "ddd87ae40fef5ecb84f6412fe34b973efe83741823891f696c386de168bd8b00"
+  },
+  {
+    "file": "native-unit-candidate-results.csv",
+    "bytes": 207557,
+    "sha256": "f94f15edd8ee5677309bca85f1777c841d2828e1ac231b129efba275b28ba4fb"
+  },
+  {
+    "file": "native-unit-contest-accounting.csv",
+    "bytes": 55732,
+    "sha256": "8069ad0ecf849e5e8620be9a2d3bfdbb95bec800ebaba22e3e260e4fba098ea3"
+  },
+  {
+    "file": "native-unit-literal-party-totals.csv",
+    "bytes": 121596,
+    "sha256": "4e27a70453a6b71c5d9f49d3c33fa0880ff9ca6da4ee9eaeb2ecf7aec810445b"
+  },
+  {
+    "file": "native-unit-named-write-in-availability.csv",
+    "bytes": 21503,
+    "sha256": "b87483f37593b0c98dc70bb303b33889e5a25c8166da8ea3ac7e8e98077d6cb3"
+  },
+  {
+    "file": "native-unit-participation-modes.csv",
+    "bytes": 12639,
+    "sha256": "a7aa817089b80cdbbc9a2a06c38aa44d1bb267f3bfcc5f3bd252184e4a8d551c"
+  },
+  {
+    "file": "native-unit-participation.csv",
+    "bytes": 3234,
+    "sha256": "7aeecff7882ef92ac573c1f80f2091dd803df4729d395012fc10daa2a0bba221"
+  },
+  {
+    "file": "review-potter-county-native-query.py",
+    "bytes": 20557,
+    "sha256": "289389d3339d4f33e0c93fec0fc8778bedc5e3189c1778b376c810bac1012687"
+  },
+  {
+    "file": "source-receipts.json",
+    "bytes": 1773,
+    "sha256": "9acd404ca9d4a5ca7e4687acfc665bdc0fbdebfde319a63444b776995d32e3c7"
+  },
+  {
+    "file": "source-records.json.gz",
+    "bytes": 34538,
+    "sha256": "301a83b176665f8b6dfe245393a0b200e433178d12e361e0baa8c077ff561a50"
+  }
+]

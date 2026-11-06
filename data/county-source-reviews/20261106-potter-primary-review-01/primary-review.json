@@ -1,0 +1,340 @@
+{
+  "reviewed_at_utc": "2026-11-06T08:11:14.451256+00:00",
+  "county": "Potter",
+  "state": "Pennsylvania",
+  "election_date": "2026-11-03",
+  "primary_sources": [
+    {
+      "file": "potter-parent.html",
+      "requested_url": "https://www.pottercountypa.gov/departments/voter_registration_and_elections.php",
+      "final_url": "https://www.pottercountypa.gov/departments/voter_registration_and_elections.php",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "retrieved_at_utc": "2026-11-06T07:56:34.648356+00:00",
+      "bytes": 96331,
+      "sha256": "befa4c5f333169feb2913b7d4f882fd51c1bfc6af09c04a14b3b8cc0d1357e4a",
+      "redirects": []
+    },
+    {
+      "file": "potter-summary.pdf",
+      "requested_url": "https://www.pottercountypa.gov/Documents/Departments/Voter Registration and Elections/2026/Results/Summary_Results6_11032026.pdf?t=202611041445440",
+      "final_url": "https://www.pottercountypa.gov/Documents/Departments/Voter%20Registration%20and%20Elections/2026/Results/Summary_Results6_11032026.pdf?t=202611041445440",
+      "status": 200,
+      "content_type": "application/pdf",
+      "retrieved_at_utc": "2026-11-06T07:57:25.414353+00:00",
+      "bytes": 23503,
+      "sha256": "da311d4bf39feb077e833e40e06b2275bea8e34f12893fec6c5fd3eb1cdce0bd",
+      "redirects": []
+    },
+    {
+      "file": "potter-statement.pdf",
+      "requested_url": "https://www.pottercountypa.gov/Documents/Departments/Voter Registration and Elections/2026/Results/Precinct_Summary_Results6_11032026.pdf?t=202611041446150",
+      "final_url": "https://www.pottercountypa.gov/Documents/Departments/Voter%20Registration%20and%20Elections/2026/Results/Precinct_Summary_Results6_11032026.pdf?t=202611041446150",
+      "status": 200,
+      "content_type": "application/pdf",
+      "retrieved_at_utc": "2026-11-06T07:57:25.726408+00:00",
+      "bytes": 90417,
+      "sha256": "02d73d608299fd9b17d2c7603b4cb56a0df35d565e2808cc7ea83e744cf7eda1",
+      "redirects": []
+    }
+  ],
+  "primary_declarations": [
+    {
+      "role": "summary",
+      "file": "potter-summary.pdf",
+      "label": "Potter County 2026 UNOFFICIAL Summary Results",
+      "url": "https://www.pottercountypa.gov/Documents/Departments/Voter Registration and Elections/2026/Results/Summary_Results6_11032026.pdf?t=202611041445440"
+    },
+    {
+      "role": "statement",
+      "file": "potter-statement.pdf",
+      "label": "Potter County 2026 UNOFFICIAL Precinct Results",
+      "url": "https://www.pottercountypa.gov/Documents/Departments/Voter Registration and Elections/2026/Results/Precinct_Summary_Results6_11032026.pdf?t=202611041446150"
+    }
+  ],
+  "complete_review": {
+    "county": "Potter",
+    "year": 2026,
+    "maps_approved": false,
+    "native_ballots": 6244,
+    "native_registrations": 11041,
+    "native_counting_modes": [
+      5389,
+      855,
+      0
+    ],
+    "summary_pages": 3,
+    "statement_pages": 32,
+    "native_units": 32,
+    "native_unit_contests": 96,
+    "entire_pages_dual_engine_verified": 35,
+    "source_originals_private": true,
+    "summary_clock_literal": "11/04/2026 2:44 PM",
+    "statement_clock_literal": "11/04/2026 2:45 PM",
+    "declared_timezone": "",
+    "separate_returned_mail_absentee_receipts": 871,
+    "derived_unexplained_receipt_difference": 16,
+    "all_units_partial": true,
+    "complete_units": 0,
+    "named_unit_write_in_breakdowns_reported": false,
+    "full_table_rows": {
+      "county-participation.csv": 1,
+      "county-candidate-results.csv": 40,
+      "county-literal-party-totals.csv": 28,
+      "county-contest-accounting.csv": 12,
+      "native-unit-participation.csv": 32,
+      "native-unit-participation-modes.csv": 128,
+      "native-unit-candidate-results.csv": 1280,
+      "native-unit-literal-party-totals.csv": 896,
+      "native-unit-contest-accounting.csv": 384,
+      "native-participation-modes.csv": 4,
+      "native-reporting-statistics.csv": 4,
+      "native-mail-receipts.csv": 1,
+      "native-source-pages.csv": 35,
+      "native-derived-contest-sums.csv": 12,
+      "native-derived-rate-checks.csv": 33,
+      "native-source-declarations.csv": 2,
+      "native-named-write-ins.csv": 92,
+      "native-unit-named-write-in-availability.csv": 96
+    },
+    "source_rejection_cases": [
+      "candidate total is not ballots",
+      "mail receipts are not counted mail",
+      "blank ballots already included",
+      "explicit zero provisional is not missing",
+      "no invented timezone",
+      "unofficial status retained",
+      "zero complete is not32 complete",
+      "separate source clocks",
+      "physical participation page preserved",
+      "native unit total-votes absence not zero",
+      "named unit write-ins not allocated",
+      "literal party not standardized",
+      "source declaration identity",
+      "actual source bytes",
+      "map approval not inferred",
+      "whole query not subset",
+      "same-candidate same-contest cross-unit swap",
+      "native contradictory reporting columns preserved"
+    ],
+    "scope": "Complete factual query; original HTML/PDFs and templates stay private. County named write-ins are breakdowns, not additional votes or unit assignments. No source FIPS, new geometry, demographic/party turnout, statewide completion or certification."
+  },
+  "complete_package": {
+    "county": "Potter",
+    "full_table_rows": {
+      "county-participation.csv": 1,
+      "county-candidate-results.csv": 40,
+      "county-literal-party-totals.csv": 28,
+      "county-contest-accounting.csv": 12,
+      "native-unit-participation.csv": 32,
+      "native-unit-participation-modes.csv": 128,
+      "native-unit-candidate-results.csv": 1280,
+      "native-unit-literal-party-totals.csv": 896,
+      "native-unit-contest-accounting.csv": 384,
+      "native-participation-modes.csv": 4,
+      "native-reporting-statistics.csv": 4,
+      "native-mail-receipts.csv": 1,
+      "native-source-pages.csv": 35,
+      "native-derived-contest-sums.csv": 12,
+      "native-derived-rate-checks.csv": 33,
+      "native-source-declarations.csv": 2,
+      "native-named-write-ins.csv": 92,
+      "native-unit-named-write-in-availability.csv": 96
+    },
+    "source_rejection_cases": [
+      "candidate total is not ballots",
+      "mail receipts are not counted mail",
+      "blank ballots already included",
+      "explicit zero provisional is not missing",
+      "no invented timezone",
+      "unofficial status retained",
+      "zero complete is not32 complete",
+      "separate source clocks",
+      "physical participation page preserved",
+      "native unit total-votes absence not zero",
+      "named unit write-ins not allocated",
+      "literal party not standardized",
+      "source declaration identity",
+      "actual source bytes",
+      "map approval not inferred",
+      "whole query not subset",
+      "same-candidate same-contest cross-unit swap",
+      "native contradictory reporting columns preserved"
+    ],
+    "complete_files": [
+      {
+        "file": "audit.json",
+        "bytes": 2481,
+        "sha256": "9a3290b08c635d69d1ead5b2fc68e59cfaa73fb77efe8e49ff53c4cf7a27647d"
+      },
+      {
+        "file": "checksums.json",
+        "bytes": 3393,
+        "sha256": "0a8d91d445a23d91910c4e7ce604cc97829dd0dd6994ae47b8c0e4b841f80985"
+      },
+      {
+        "file": "complete-potter-county-native-query-01.zip",
+        "bytes": 68878,
+        "sha256": "30db5d3b276da023a5d9b12387ea768e366e31835aef282de390ba484a93392d"
+      },
+      {
+        "file": "county-candidate-results.csv",
+        "bytes": 6376,
+        "sha256": "0094927f1f662b976acb4d8d3b375c339332f50281a3f52865d9a3faa7ff358b"
+      },
+      {
+        "file": "county-contest-accounting.csv",
+        "bytes": 2067,
+        "sha256": "16fd48e56e73f403b4cb1d80b4e60cff61f5cc83b7f210454c79523952b5ea48"
+      },
+      {
+        "file": "county-literal-party-totals.csv",
+        "bytes": 3775,
+        "sha256": "20c22f87c03839ea7b2e425b79158f64ded089a2c6cbf2eb8e5d927b96c24df3"
+      },
+      {
+        "file": "county-participation.csv",
+        "bytes": 507,
+        "sha256": "32e83977ce7b6679afbccaca04b775dad071abdb26a86497fbeebd66d132bac1"
+      },
+      {
+        "file": "native-derived-contest-sums.csv",
+        "bytes": 2254,
+        "sha256": "85fc8714421e7fcf3043a54d6b55ce2ee7c4dd9582f78377d9a63574e558adbf"
+      },
+      {
+        "file": "native-derived-rate-checks.csv",
+        "bytes": 3716,
+        "sha256": "c595197416c3e59d57784a3330a5e57c4f3c495dbc3708ebc60777170fd58a64"
+      },
+      {
+        "file": "native-mail-receipts.csv",
+        "bytes": 429,
+        "sha256": "bbda6a30fa580ce142227cb77a42b15d5b798fdff53eead83510036460375d8a"
+      },
+      {
+        "file": "native-named-write-ins.csv",
+        "bytes": 19623,
+        "sha256": "102817220b9ea10e275b0c51c30eb80bb60fc46f541f4a3088452097be29d08d"
+      },
+      {
+        "file": "native-participation-modes.csv",
+        "bytes": 571,
+        "sha256": "7737ebc853be034e3f998cdc6131c248ebf74dc0fb75583959fa0965e415b014"
+      },
+      {
+        "file": "native-reporting-statistics.csv",
+        "bytes": 637,
+        "sha256": "ca866cc9b62b6c45d4e6f19c2e0d82ee6739dfc12725bbd09c4b75e930333731"
+      },
+      {
+        "file": "native-source-declarations.csv",
+        "bytes": 474,
+        "sha256": "5c39b5b39cc92121be3280f7b2c3a981fe3cc7bd2479ec05934027d5ef105113"
+      },
+      {
+        "file": "native-source-pages.csv",
+        "bytes": 5868,
+        "sha256": "ddd87ae40fef5ecb84f6412fe34b973efe83741823891f696c386de168bd8b00"
+      },
+      {
+        "file": "native-unit-candidate-results.csv",
+        "bytes": 207557,
+        "sha256": "f94f15edd8ee5677309bca85f1777c841d2828e1ac231b129efba275b28ba4fb"
+      },
+      {
+        "file": "native-unit-contest-accounting.csv",
+        "bytes": 55732,
+        "sha256": "8069ad0ecf849e5e8620be9a2d3bfdbb95bec800ebaba22e3e260e4fba098ea3"
+      },
+      {
+        "file": "native-unit-literal-party-totals.csv",
+        "bytes": 121596,
+        "sha256": "4e27a70453a6b71c5d9f49d3c33fa0880ff9ca6da4ee9eaeb2ecf7aec810445b"
+      },
+      {
+        "file": "native-unit-named-write-in-availability.csv",
+        "bytes": 21503,
+        "sha256": "b87483f37593b0c98dc70bb303b33889e5a25c8166da8ea3ac7e8e98077d6cb3"
+      },
+      {
+        "file": "native-unit-participation-modes.csv",
+        "bytes": 12639,
+        "sha256": "a7aa817089b80cdbbc9a2a06c38aa44d1bb267f3bfcc5f3bd252184e4a8d551c"
+      },
+      {
+        "file": "native-unit-participation.csv",
+        "bytes": 3234,
+        "sha256": "7aeecff7882ef92ac573c1f80f2091dd803df4729d395012fc10daa2a0bba221"
+      },
+      {
+        "file": "review-potter-county-native-query.py",
+        "bytes": 20557,
+        "sha256": "289389d3339d4f33e0c93fec0fc8778bedc5e3189c1778b376c810bac1012687"
+      },
+      {
+        "file": "source-receipts.json",
+        "bytes": 1773,
+        "sha256": "9acd404ca9d4a5ca7e4687acfc665bdc0fbdebfde319a63444b776995d32e3c7"
+      },
+      {
+        "file": "source-records.json.gz",
+        "bytes": 34538,
+        "sha256": "301a83b176665f8b6dfe245393a0b200e433178d12e361e0baa8c077ff561a50"
+      }
+    ],
+    "offline_all_files_and_archive_reproduced": true,
+    "actual_parent_declarations_independently_matched": true,
+    "source_originals_private": true
+  },
+  "full_engine_observations": [
+    {
+      "source_report": "summary",
+      "engine": "pymupdf",
+      "complete_saved_text_bytes": 3064,
+      "complete_saved_text_sha256": "04bfac007327d7b6b3bce18284f487302574cd2c1999f1e661852eb22821d28d",
+      "entire_saved_pages": 3
+    },
+    {
+      "source_report": "summary",
+      "engine": "pdfplumber",
+      "complete_saved_text_bytes": 2811,
+      "complete_saved_text_sha256": "d33983cc80ce0d056aae77f0de6d558d93ce60ffb9586bee92a37c73d4b008b7",
+      "entire_saved_pages": 3
+    },
+    {
+      "source_report": "statement",
+      "engine": "pymupdf",
+      "complete_saved_text_bytes": 38510,
+      "complete_saved_text_sha256": "034c6ce39d8e7891f60bff01306faac33acaa6194b5f45fccfd31e7c8fbba832",
+      "entire_saved_pages": 32
+    },
+    {
+      "source_report": "statement",
+      "engine": "pdfplumber",
+      "complete_saved_text_bytes": 35310,
+      "complete_saved_text_sha256": "733c15297a6a4c0d7c41e5e70d1830122dbc41e810a513f7df1b77b16fae1601",
+      "entire_saved_pages": 32
+    }
+  ],
+  "checks": {
+    "actual_source_bytes_and_receipt_hashes_match": true,
+    "actual_parent_label_to_next_link_relationships_independently_match": true,
+    "all35_entire_page_token_multisets_match": true,
+    "all35_entire_independently_parsed_page_vectors_match": true,
+    "header_reading_orders_and_post_vector_wrapped_names_handled_without_dropping_tokens": true,
+    "all32_unit_participation_headers_and96_contests_reconcile": true,
+    "all_candidate_write_in_total_and_accounting_vectors_reconcile_per_mode": true,
+    "all_county_named_write_in_breakdowns_sum_to_write_in_totals": true,
+    "unit_named_write_in_breakdowns_absent_not_zero_or_allocated": true,
+    "native_reporting_total_complete0_but_election_day_column32_preserved": true,
+    "focused_rejection_cases_passed": 18,
+    "full_csv_tables": 18,
+    "complete_files": 24,
+    "zip_members": 23,
+    "every_full_file_and_archive_reproduces_offline": true,
+    "source_originals_and_templates_excluded": true,
+    "source_fips_and_geometry_not_invented": true,
+    "explorer_integration_and_release_publication_pending": true
+  }
+}

@@ -1,0 +1,13 @@
+contest_literal,counting_mode_literal,unit_rows,native_overvotes,native_undervotes,derived_sum_of_choice_votes,native_participation_header,matches_native_county_accounting,calculation_role
+Governor and Lieutenant Governor,TOTAL,32,1,22,6221,6244,True,Derived sum of observed native unit cells; absent unit Total Votes Cast/Contest Totals stay absent.
+Governor and Lieutenant Governor,Election Day,32,0,18,5371,5389,True,Derived sum of observed native unit cells; absent unit Total Votes Cast/Contest Totals stay absent.
+Governor and Lieutenant Governor,Mail,32,1,4,850,855,True,Derived sum of observed native unit cells; absent unit Total Votes Cast/Contest Totals stay absent.
+Governor and Lieutenant Governor,Provision al,32,0,0,0,0,True,Derived sum of observed native unit cells; absent unit Total Votes Cast/Contest Totals stay absent.
+Representative in Congress 15th District,TOTAL,32,0,43,6201,6244,True,Derived sum of observed native unit cells; absent unit Total Votes Cast/Contest Totals stay absent.
+Representative in Congress 15th District,Election Day,32,0,36,5353,5389,True,Derived sum of observed native unit cells; absent unit Total Votes Cast/Contest Totals stay absent.
+Representative in Congress 15th District,Mail,32,0,7,848,855,True,Derived sum of observed native unit cells; absent unit Total Votes Cast/Contest Totals stay absent.
+Representative in Congress 15th District,Provision al,32,0,0,0,0,True,Derived sum of observed native unit cells; absent unit Total Votes Cast/Contest Totals stay absent.
+Representative in the General Assembly 67th District,TOTAL,32,0,40,6204,6244,True,Derived sum of observed native unit cells; absent unit Total Votes Cast/Contest Totals stay absent.
+Representative in the General Assembly 67th District,Election Day,32,0,34,5355,5389,True,Derived sum of observed native unit cells; absent unit Total Votes Cast/Contest Totals stay absent.
+Representative in the General Assembly 67th District,Mail,32,0,6,849,855,True,Derived sum of observed native unit cells; absent unit Total Votes Cast/Contest Totals stay absent.
+Representative in the General Assembly 67th District,Provision al,32,0,0,0,0,True,Derived sum of observed native unit cells; absent unit Total Votes Cast/Contest Totals stay absent.

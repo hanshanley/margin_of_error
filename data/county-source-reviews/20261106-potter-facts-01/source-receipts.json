@@ -1,0 +1,35 @@
+[
+  {
+    "file": "potter-parent.html",
+    "requested_url": "https://www.pottercountypa.gov/departments/voter_registration_and_elections.php",
+    "final_url": "https://www.pottercountypa.gov/departments/voter_registration_and_elections.php",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "retrieved_at_utc": "2026-11-06T07:56:34.648356+00:00",
+    "bytes": 96331,
+    "sha256": "befa4c5f333169feb2913b7d4f882fd51c1bfc6af09c04a14b3b8cc0d1357e4a",
+    "redirects": []
+  },
+  {
+    "file": "potter-summary.pdf",
+    "requested_url": "https://www.pottercountypa.gov/Documents/Departments/Voter Registration and Elections/2026/Results/Summary_Results6_11032026.pdf?t=202611041445440",
+    "final_url": "https://www.pottercountypa.gov/Documents/Departments/Voter%20Registration%20and%20Elections/2026/Results/Summary_Results6_11032026.pdf?t=202611041445440",
+    "status": 200,
+    "content_type": "application/pdf",
+    "retrieved_at_utc": "2026-11-06T07:57:25.414353+00:00",
+    "bytes": 23503,
+    "sha256": "da311d4bf39feb077e833e40e06b2275bea8e34f12893fec6c5fd3eb1cdce0bd",
+    "redirects": []
+  },
+  {
+    "file": "potter-statement.pdf",
+    "requested_url": "https://www.pottercountypa.gov/Documents/Departments/Voter Registration and Elections/2026/Results/Precinct_Summary_Results6_11032026.pdf?t=202611041446150",
+    "final_url": "https://www.pottercountypa.gov/Documents/Departments/Voter%20Registration%20and%20Elections/2026/Results/Precinct_Summary_Results6_11032026.pdf?t=202611041446150",
+    "status": 200,
+    "content_type": "application/pdf",
+    "retrieved_at_utc": "2026-11-06T07:57:25.726408+00:00",
+    "bytes": 90417,
+    "sha256": "02d73d608299fd9b17d2c7603b4cb56a0df35d565e2808cc7ea83e744cf7eda1",
+    "redirects": []
+  }
+]

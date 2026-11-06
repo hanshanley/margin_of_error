@@ -1,0 +1,2 @@
+county,source_file,source_sha256,election_literal,cutoff_literal,declared_timezone,returned_mail_absentee_ballots,separately_counted_mail_ballots,derived_receipts_minus_counted_mail,accounting_role
+Potter,potter-parent.html,befa4c5f333169feb2913b7d4f882fd51c1bfc6af09c04a14b3b8cc0d1357e4a,"November, 2026, General Election",8pm,,871,855,16,"Separate returned receipts; difference16 is unexplained, not added to counted ballots."

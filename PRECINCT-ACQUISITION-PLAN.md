@@ -1494,8 +1494,15 @@ the candidate/runtime files and eighteen entire import JSONs are independently
 reverified. Separately, all 41 native rows / 429 anchors of the tested but
 unpublished e8cc10a build are preserved. The new baseline proof explicitly
 distinguishes actual production from that prepared snapshot; it never
-calls e8cc10a live. Exact new deployment/artifact/public byte comparison
-and seven production browser checks remain pending.
+calls e8cc10a live. Combined UI
+`f01f2b2bfa4879b89250917494d596555220a5ef` is published to main and the
+review branch as Hans, author and committer, without attribution trailers.
+Exact Pages **42185289493**, main credential **42185289488** and review
+credential **42185289623** are discovered for that SHA. The single active
+`elk-forest-exact-production-verification-01` checks its fresh artifact,
+all 191 selected entire hosted/public files and seven production browser
+scenarios. Do not change its prepared build or claim the UI live while
+these checks remain pending.
 
 The next primary queue also progressed without modifying this tested UI.
 Potter's actual parent declares a three-page summary and 32-page unit report.
@@ -1508,9 +1515,26 @@ provisional; two blank ballots are already included. The parent separately
 reports 871 mail-in/absentee receipts; the difference of 16 from counted mail
 is unexplained, not added to ballots. All 32 units are partial / zero complete.
 Preserve separate native November 4 report clocks, unofficial status,
-undeclared timezone and named-write-in wrapping. Cross-unit named-write-in
-identity review, rejection cases, complete portable factual query and release
-remain pending; no source publication, map or UI approval is claimed.
+undeclared timezone and named-write-in wrapping. Summary clock is
+`11/04/2026 2:44 PM`; every unit clock is `11/04/2026 2:45 PM`.
+The summary's zero total complete units but 32 in its Election Day complete
+column is preserved literally, not repaired. All county named-write-in
+breakdowns reconcile to the native write-in totals. The statement has no
+named write-in breakdowns; those identities are missing, not zero or county
+names allocated to units. Every one of the 96 unit-contest availability
+rows and all 92 county named/unassigned write-in mode cells are retained.
+The complete portable query now has **24 files / 18 full CSV tables /
+23 ZIP members**. All 18 focused rejection cases pass, including same-candidate,
+same-contest cross-unit swaps and substitutions of candidate votes, mail
+receipts, missingness, clocks, literal parties, physical pages, source
+identities and native contradictory reporting columns. Every entire file
+and deterministic ZIP reproduces byte-identically offline with Python's
+standard library. Complete primary/package proofs are under
+`data/county-source-reviews/20261106-potter-primary-review-01/`;
+the factual package is `20261106-potter-facts-01`.
+Source publication, release verification, contextual county join and
+explorer integration remain pending; no source publication, map or UI
+approval is claimed.
 McKean's actual .org parent ordinarily redirects to .gov and declares a GIS
 results viewer. That ordinary viewer connection timed out with errno 60;
 there is no HTTP status or body. This is not a denial or evidence of absent

@@ -1,0 +1,2 @@
+year,state_code,county,native_participation_measure_literal,ballots_cast,registered_voters,native_printed_turnout,election_day_ballots,mail_ballots,provisional_ballots,blank_ballots,reported_precincts,total_precincts,complete_precincts,partially_reported_precincts,source_report,source_page,native_printed_page,source_status_literal,source_update_literal,declared_timezone
+2026,PA,Potter,Ballots Cast - Total,6244,11041,56.55%,5389,855,0,2,32,32,0,32,summary,1,1 of 3,UNOFFICIAL RESULTS,11/04/2026 2:44 PM,
