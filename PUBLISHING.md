@@ -96,7 +96,7 @@ updates remain pinned to reviewed snapshots rather than following live research 
 
 The complete site exceeds GitHub Pages' 1 GB limit when bulk participation downloads
 are duplicated in its artifact. `scripts/prepare-participation-pages.mjs` verifies
-CSV/ZIP downloads and jurisdiction-detail JSON against the immutable
+CSV/ZIP downloads and jurisdiction-detail JSON against the version-pinned
 `voter-participation-data-20261104` GitHub release before removing only their build-output
 copies. Original staged exports remain unchanged. Interactive JSON stays on the website.
 The publishing step rewrites static download links, including no-JavaScript fallbacks;

@@ -1,0 +1,77 @@
+{
+  "checked_at": "2026-11-06T14:22:31.798768+00:00",
+  "revision": "436bbedd36f1a81284de6cb9c29bbe64d7e76a35",
+  "release_id": 436589958,
+  "tag": "voter-county-michigan-qvf-20261106-01",
+  "phase": "draft",
+  "immutable": false,
+  "assets": [
+    {
+      "file": "METHODS.txt",
+      "asset_id": 717411468,
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-d0479eafd5820d4585d6/METHODS.txt",
+      "bytes": 896,
+      "sha256": "05c55d17fe38aff02fd916293deb292ba65f5813072c29c4ee8dac0db46a816e"
+    },
+    {
+      "file": "acquire-michigan-qvf-counties.py",
+      "asset_id": 717411471,
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-d0479eafd5820d4585d6/acquire-michigan-qvf-counties.py",
+      "bytes": 11605,
+      "sha256": "7379572abeb2db04681f116779214b09fc8b5bba53c17d6587fbd07a605e55dc"
+    },
+    {
+      "file": "audit.json",
+      "asset_id": 717411467,
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-d0479eafd5820d4585d6/audit.json",
+      "bytes": 1194,
+      "sha256": "0be60c793bfb015408cd5f39bd4a54bef8f53398d48b04f8bd40b256486b33e3"
+    },
+    {
+      "file": "complete-query.zip",
+      "asset_id": 717411466,
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-d0479eafd5820d4585d6/complete-query.zip",
+      "bytes": 70179,
+      "sha256": "4961f9743717be4f78267e80539f2d28fb03d09a8cc5d2d3c1c9e42cec13ddac"
+    },
+    {
+      "file": "county-participation.csv",
+      "asset_id": 717411470,
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-d0479eafd5820d4585d6/county-participation.csv",
+      "bytes": 15843,
+      "sha256": "1337764e5d416f529f471cd82be880bae949f7ccbd43cdc7fb7dbc938149b4f3"
+    },
+    {
+      "file": "manifest.json",
+      "asset_id": 717411506,
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-d0479eafd5820d4585d6/manifest.json",
+      "bytes": 1044,
+      "sha256": "20a478f2905820abd1c55ebd431ef0a9d2c0cd637265a8d3330d66dc6b8dd5d9"
+    },
+    {
+      "file": "native-facts.json",
+      "asset_id": 717411507,
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-d0479eafd5820d4585d6/native-facts.json",
+      "bytes": 1209200,
+      "sha256": "410ea7c72ec26f0f6d0c09d248b4f3c28e3a0e3a7816b56dc3ff1c433ad6a0b0"
+    },
+    {
+      "file": "review-michigan-qvf-counties.py",
+      "asset_id": 717411517,
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-d0479eafd5820d4585d6/review-michigan-qvf-counties.py",
+      "bytes": 16916,
+      "sha256": "a0bf770aae25d9ae1247d9af28077b0880a6142f81d8b4d005370852500b416d"
+    },
+    {
+      "file": "test_review_michigan_qvf_counties.py",
+      "asset_id": 717411513,
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-d0479eafd5820d4585d6/test_review_michigan_qvf_counties.py",
+      "bytes": 8299,
+      "sha256": "8c64229b4046085744cad8896fc0e9a88b3101db83b6414836efe8bf6fb3b1ac"
+    }
+  ],
+  "entire_asset_count": 9,
+  "review_credential_run": 42233052101,
+  "tag_credential_run": 42233053716,
+  "no_ui_deployment": true
+}

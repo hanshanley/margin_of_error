@@ -1,0 +1,74 @@
+{
+  "id": 436589958,
+  "tag_name": "voter-county-michigan-qvf-20261106-01",
+  "draft": false,
+  "prerelease": false,
+  "immutable": true,
+  "published_at": "2026-11-06T14:22:37Z",
+  "html_url": "https://github.com/hanshanley/margin_of_error/releases/tag/voter-county-michigan-qvf-20261106-01",
+  "assets": [
+    {
+      "id": 717411471,
+      "name": "acquire-michigan-qvf-counties.py",
+      "size": 11605,
+      "digest": "sha256:7379572abeb2db04681f116779214b09fc8b5bba53c17d6587fbd07a605e55dc",
+      "browser_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-michigan-qvf-20261106-01/acquire-michigan-qvf-counties.py"
+    },
+    {
+      "id": 717411467,
+      "name": "audit.json",
+      "size": 1194,
+      "digest": "sha256:0be60c793bfb015408cd5f39bd4a54bef8f53398d48b04f8bd40b256486b33e3",
+      "browser_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-michigan-qvf-20261106-01/audit.json"
+    },
+    {
+      "id": 717411466,
+      "name": "complete-query.zip",
+      "size": 70179,
+      "digest": "sha256:4961f9743717be4f78267e80539f2d28fb03d09a8cc5d2d3c1c9e42cec13ddac",
+      "browser_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-michigan-qvf-20261106-01/complete-query.zip"
+    },
+    {
+      "id": 717411470,
+      "name": "county-participation.csv",
+      "size": 15843,
+      "digest": "sha256:1337764e5d416f529f471cd82be880bae949f7ccbd43cdc7fb7dbc938149b4f3",
+      "browser_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-michigan-qvf-20261106-01/county-participation.csv"
+    },
+    {
+      "id": 717411506,
+      "name": "manifest.json",
+      "size": 1044,
+      "digest": "sha256:20a478f2905820abd1c55ebd431ef0a9d2c0cd637265a8d3330d66dc6b8dd5d9",
+      "browser_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-michigan-qvf-20261106-01/manifest.json"
+    },
+    {
+      "id": 717411468,
+      "name": "METHODS.txt",
+      "size": 896,
+      "digest": "sha256:05c55d17fe38aff02fd916293deb292ba65f5813072c29c4ee8dac0db46a816e",
+      "browser_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-michigan-qvf-20261106-01/METHODS.txt"
+    },
+    {
+      "id": 717411507,
+      "name": "native-facts.json",
+      "size": 1209200,
+      "digest": "sha256:410ea7c72ec26f0f6d0c09d248b4f3c28e3a0e3a7816b56dc3ff1c433ad6a0b0",
+      "browser_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-michigan-qvf-20261106-01/native-facts.json"
+    },
+    {
+      "id": 717411517,
+      "name": "review-michigan-qvf-counties.py",
+      "size": 16916,
+      "digest": "sha256:a0bf770aae25d9ae1247d9af28077b0880a6142f81d8b4d005370852500b416d",
+      "browser_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-michigan-qvf-20261106-01/review-michigan-qvf-counties.py"
+    },
+    {
+      "id": 717411513,
+      "name": "test_review_michigan_qvf_counties.py",
+      "size": 8299,
+      "digest": "sha256:8c64229b4046085744cad8896fc0e9a88b3101db83b6414836efe8bf6fb3b1ac",
+      "browser_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-michigan-qvf-20261106-01/test_review_michigan_qvf_counties.py"
+    }
+  ]
+}

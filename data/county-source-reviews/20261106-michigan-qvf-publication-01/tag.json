@@ -1,0 +1,36 @@
+{
+  "ref": {
+    "ref": "refs/tags/voter-county-michigan-qvf-20261106-01",
+    "node_id": "REF_kwDOTeY7QdoAL3JlZnMvdGFncy92b3Rlci1jb3VudHktbWljaGlnYW4tcXZmLTIwMjYxMTA2LTAx",
+    "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/refs/tags/voter-county-michigan-qvf-20261106-01",
+    "object": {
+      "sha": "f0b5a098abb79d53f97a564d9f70c8313db8d79e",
+      "type": "tag",
+      "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/tags/f0b5a098abb79d53f97a564d9f70c8313db8d79e"
+    }
+  },
+  "tag": {
+    "node_id": "TA_kwDOTeY7QdoAKGYwYjVhMDk4YWJiNzlkNTNmOTdhNTY0ZDlmNzBjODMxM2RiOGQ3OWU",
+    "sha": "f0b5a098abb79d53f97a564d9f70c8313db8d79e",
+    "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/tags/f0b5a098abb79d53f97a564d9f70c8313db8d79e",
+    "tagger": {
+      "name": "Hans Hanley",
+      "email": "hwahhanley@gmail.com",
+      "date": "2026-11-06T14:20:30Z"
+    },
+    "object": {
+      "sha": "436bbedd36f1a81284de6cb9c29bbe64d7e76a35",
+      "type": "commit",
+      "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/commits/436bbedd36f1a81284de6cb9c29bbe64d7e76a35"
+    },
+    "tag": "voter-county-michigan-qvf-20261106-01",
+    "message": "Complete reviewed Michigan QVF county observations; not tabulator turnout\n",
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  }
+}

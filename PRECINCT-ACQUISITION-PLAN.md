@@ -2,7 +2,7 @@
 
 ## Current verified production and next acquisition
 
-**November 6: Michigan consolidated QVF query acquired and reviewed; release pending.**
+**November 6, 14:22 UTC: Michigan consolidated QVF complete query published and server-locked.**
 The official dashboard's declared public report now supplies all **83 native
 county scopes**, acquired using ordinary selector/search/clear controls with
 verified TLS and complete native requests/responses. The source clock is
@@ -32,11 +32,20 @@ SHA-256 `4961f9743717be4f78267e80539f2d28fb03d09a8cc5d2d3c1c9e42cec13ddac`.
 The 38 completed initial scopes were retained; resumed acquisition finished
 only the remaining counties after diagnosing delayed statewide responses and
 the native search control's keyboard-event requirement.
-**Next:** freeze and publish the complete reviewed query with exact credential
-jobs and entire anonymous release/commit-pinned byte checks. Future releases
-now have server-enforced immutability; assemble and verify all assets in a draft
-before publishing. Existing releases and the last good UI stay unchanged.
-Then pursue actual county denominators/tabulator participation and the Maine,
+Fixed revision **`436bbedd36f1a81284de6cb9c29bbe64d7e76a35`**, tag
+**`voter-county-michigan-qvf-20261106-01`**, release **436589958** now reports
+**`immutable: true`**. Every entire asset was authenticated-download verified
+before publishing its draft. All **nine anonymous entire release assets /
+nine commit-pinned files / eight archive members** pass; the actual published
+archive passes all **eleven tests** and reproduces all **nine files exactly**.
+Exact frozen-revision credential jobs **42233052101 / 42233053716** pass.
+Proofs are in `20261106-michigan-qvf-publication-01`.
+Future releases have server-enforced immutability; assemble and verify every
+asset in a draft before publishing. Previously published releases are not
+retroactively server-locked. **Main remains the exact verified Huntingdon UI
+`9aa7c3ea2a227ee01ca3fbf70790c91079136ac2`**; no Michigan UI, generic rate,
+context18, geographic join or new Pages deployment is claimed.
+**Next:** pursue actual county denominators/tabulator participation and the Maine,
 Pennsylvania and separately scoped D.C. gaps; do not promote this QVF query
 into generic turnout to make coverage appear complete. Schedule #5 stays active.
 
