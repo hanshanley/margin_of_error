@@ -1,0 +1,165 @@
+year,state_code,county,native_unit,scope,native_mode,native_participation_measure_literal,ballots_cast,blank_ballots_already_included,registered_voters,native_printed_turnout,source_status_literal,source_generation_clock_literal,declared_timezone,source_clock_precedes_election,source_fips,analysis_rates_approved,maps_approved
+2026,PA,Tioga,Bloss Township,precinct,TOTAL,Ballots Cast - Total,156,0,245,63.67,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Bloss Township,precinct,Election Day,Ballots Cast - Total,144,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Bloss Township,precinct,Absentee /Mail-in,Ballots Cast - Total,12,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Bloss Township,precinct,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Blossburg Borough,precinct,TOTAL,Ballots Cast - Total,522,1,996,52.41,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Blossburg Borough,precinct,Election Day,Ballots Cast - Total,456,1,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Blossburg Borough,precinct,Absentee /Mail-in,Ballots Cast - Total,66,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Blossburg Borough,precinct,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Brookfield Township,precinct,TOTAL,Ballots Cast - Total,154,0,259,59.46,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Brookfield Township,precinct,Election Day,Ballots Cast - Total,139,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Brookfield Township,precinct,Absentee /Mail-in,Ballots Cast - Total,15,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Brookfield Township,precinct,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Charleston Township,precinct,TOTAL,Ballots Cast - Total,1436,0,2481,57.88,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Charleston Township,precinct,Election Day,Ballots Cast - Total,1111,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Charleston Township,precinct,Absentee /Mail-in,Ballots Cast - Total,325,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Charleston Township,precinct,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Chatham Township,precinct,TOTAL,Ballots Cast - Total,278,0,469,59.28,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Chatham Township,precinct,Election Day,Ballots Cast - Total,239,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Chatham Township,precinct,Absentee /Mail-in,Ballots Cast - Total,39,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Chatham Township,precinct,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Clymer Township,precinct,TOTAL,Ballots Cast - Total,257,0,427,60.19,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Clymer Township,precinct,Election Day,Ballots Cast - Total,237,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Clymer Township,precinct,Absentee /Mail-in,Ballots Cast - Total,20,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Clymer Township,precinct,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Covington Township,precinct,TOTAL,Ballots Cast - Total,389,0,702,55.41,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Covington Township,precinct,Election Day,Ballots Cast - Total,351,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Covington Township,precinct,Absentee /Mail-in,Ballots Cast - Total,38,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Covington Township,precinct,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Deerfield Township,precinct,TOTAL,Ballots Cast - Total,236,0,412,57.28,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Deerfield Township,precinct,Election Day,Ballots Cast - Total,209,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Deerfield Township,precinct,Absentee /Mail-in,Ballots Cast - Total,27,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Deerfield Township,precinct,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Delmar Township North,precinct,TOTAL,Ballots Cast - Total,789,0,1307,60.37,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Delmar Township North,precinct,Election Day,Ballots Cast - Total,621,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Delmar Township North,precinct,Absentee /Mail-in,Ballots Cast - Total,168,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Delmar Township North,precinct,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Delmar Township South,precinct,TOTAL,Ballots Cast - Total,407,0,673,60.48,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Delmar Township South,precinct,Election Day,Ballots Cast - Total,347,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Delmar Township South,precinct,Absentee /Mail-in,Ballots Cast - Total,60,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Delmar Township South,precinct,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Duncan Township,precinct,TOTAL,Ballots Cast - Total,59,0,122,48.36,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Duncan Township,precinct,Election Day,Ballots Cast - Total,49,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Duncan Township,precinct,Absentee /Mail-in,Ballots Cast - Total,10,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Duncan Township,precinct,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Elk Township,precinct,TOTAL,Ballots Cast - Total,15,0,27,55.56,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Elk Township,precinct,Election Day,Ballots Cast - Total,14,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Elk Township,precinct,Absentee /Mail-in,Ballots Cast - Total,1,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Elk Township,precinct,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Elkland Borough,precinct,TOTAL,Ballots Cast - Total,475,0,1044,45.50,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Elkland Borough,precinct,Election Day,Ballots Cast - Total,403,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Elkland Borough,precinct,Absentee /Mail-in,Ballots Cast - Total,72,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Elkland Borough,precinct,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Farmington Township,precinct,TOTAL,Ballots Cast - Total,273,0,482,56.64,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Farmington Township,precinct,Election Day,Ballots Cast - Total,253,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Farmington Township,precinct,Absentee /Mail-in,Ballots Cast - Total,20,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Farmington Township,precinct,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Gaines Township,precinct,TOTAL,Ballots Cast - Total,242,0,387,62.53,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Gaines Township,precinct,Election Day,Ballots Cast - Total,208,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Gaines Township,precinct,Absentee /Mail-in,Ballots Cast - Total,34,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Gaines Township,precinct,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Hamilton Township,precinct,TOTAL,Ballots Cast - Total,145,0,297,48.82,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Hamilton Township,precinct,Election Day,Ballots Cast - Total,125,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Hamilton Township,precinct,Absentee /Mail-in,Ballots Cast - Total,20,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Hamilton Township,precinct,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Jackson Township,precinct,TOTAL,Ballots Cast - Total,712,0,1313,54.23,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Jackson Township,precinct,Election Day,Ballots Cast - Total,618,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Jackson Township,precinct,Absentee /Mail-in,Ballots Cast - Total,94,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Jackson Township,precinct,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Knoxville Borough,precinct,TOTAL,Ballots Cast - Total,193,0,410,47.07,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Knoxville Borough,precinct,Election Day,Ballots Cast - Total,175,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Knoxville Borough,precinct,Absentee /Mail-in,Ballots Cast - Total,18,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Knoxville Borough,precinct,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Lawrence Township,precinct,TOTAL,Ballots Cast - Total,553,0,1100,50.27,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Lawrence Township,precinct,Election Day,Ballots Cast - Total,490,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Lawrence Township,precinct,Absentee /Mail-in,Ballots Cast - Total,63,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Lawrence Township,precinct,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Lawrenceville Borough,precinct,TOTAL,Ballots Cast - Total,195,0,428,45.56,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Lawrenceville Borough,precinct,Election Day,Ballots Cast - Total,176,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Lawrenceville Borough,precinct,Absentee /Mail-in,Ballots Cast - Total,19,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Lawrenceville Borough,precinct,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Liberty Township,precinct,TOTAL,Ballots Cast - Total,440,0,715,61.54,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Liberty Township,precinct,Election Day,Ballots Cast - Total,376,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Liberty Township,precinct,Absentee /Mail-in,Ballots Cast - Total,64,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Liberty Township,precinct,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Liberty Borough,precinct,TOTAL,Ballots Cast - Total,90,0,155,58.06,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Liberty Borough,precinct,Election Day,Ballots Cast - Total,80,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Liberty Borough,precinct,Absentee /Mail-in,Ballots Cast - Total,10,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Liberty Borough,precinct,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Mansfield Borough,precinct,TOTAL,Ballots Cast - Total,647,0,1286,50.31,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Mansfield Borough,precinct,Election Day,Ballots Cast - Total,527,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Mansfield Borough,precinct,Absentee /Mail-in,Ballots Cast - Total,120,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Mansfield Borough,precinct,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Middlebury Township,precinct,TOTAL,Ballots Cast - Total,556,0,912,60.96,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Middlebury Township,precinct,Election Day,Ballots Cast - Total,495,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Middlebury Township,precinct,Absentee /Mail-in,Ballots Cast - Total,61,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Middlebury Township,precinct,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Morris Township,precinct,TOTAL,Ballots Cast - Total,274,0,405,67.65,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Morris Township,precinct,Election Day,Ballots Cast - Total,242,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Morris Township,precinct,Absentee /Mail-in,Ballots Cast - Total,32,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Morris Township,precinct,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Nelson Township,precinct,TOTAL,Ballots Cast - Total,198,0,354,55.93,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Nelson Township,precinct,Election Day,Ballots Cast - Total,185,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Nelson Township,precinct,Absentee /Mail-in,Ballots Cast - Total,13,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Nelson Township,precinct,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Osceola Township,precinct,TOTAL,Ballots Cast - Total,175,0,377,46.42,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Osceola Township,precinct,Election Day,Ballots Cast - Total,167,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Osceola Township,precinct,Absentee /Mail-in,Ballots Cast - Total,8,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Osceola Township,precinct,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Putnam Township,precinct,TOTAL,Ballots Cast - Total,137,0,260,52.69,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Putnam Township,precinct,Election Day,Ballots Cast - Total,127,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Putnam Township,precinct,Absentee /Mail-in,Ballots Cast - Total,10,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Putnam Township,precinct,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Richmond Township,precinct,TOTAL,Ballots Cast - Total,835,1,1566,53.32,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Richmond Township,precinct,Election Day,Ballots Cast - Total,703,1,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Richmond Township,precinct,Absentee /Mail-in,Ballots Cast - Total,132,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Richmond Township,precinct,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Roseville Borough,precinct,TOTAL,Ballots Cast - Total,57,0,104,54.81,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Roseville Borough,precinct,Election Day,Ballots Cast - Total,54,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Roseville Borough,precinct,Absentee /Mail-in,Ballots Cast - Total,3,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Roseville Borough,precinct,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Rutland Township,precinct,TOTAL,Ballots Cast - Total,341,0,560,60.89,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Rutland Township,precinct,Election Day,Ballots Cast - Total,309,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Rutland Township,precinct,Absentee /Mail-in,Ballots Cast - Total,32,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Rutland Township,precinct,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Shippen Township,precinct,TOTAL,Ballots Cast - Total,169,0,294,57.48,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Shippen Township,precinct,Election Day,Ballots Cast - Total,137,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Shippen Township,precinct,Absentee /Mail-in,Ballots Cast - Total,32,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Shippen Township,precinct,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Sullivan Township,precinct,TOTAL,Ballots Cast - Total,593,0,1010,58.71,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Sullivan Township,precinct,Election Day,Ballots Cast - Total,519,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Sullivan Township,precinct,Absentee /Mail-in,Ballots Cast - Total,74,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Sullivan Township,precinct,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Tioga Township,precinct,TOTAL,Ballots Cast - Total,338,0,670,50.45,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Tioga Township,precinct,Election Day,Ballots Cast - Total,294,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Tioga Township,precinct,Absentee /Mail-in,Ballots Cast - Total,44,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Tioga Township,precinct,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Tioga Borough,precinct,TOTAL,Ballots Cast - Total,173,0,372,46.51,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Tioga Borough,precinct,Election Day,Ballots Cast - Total,145,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Tioga Borough,precinct,Absentee /Mail-in,Ballots Cast - Total,28,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Tioga Borough,precinct,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Union Township,precinct,TOTAL,Ballots Cast - Total,354,0,628,56.37,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Union Township,precinct,Election Day,Ballots Cast - Total,321,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Union Township,precinct,Absentee /Mail-in,Ballots Cast - Total,33,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Union Township,precinct,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Ward Township,precinct,TOTAL,Ballots Cast - Total,88,0,163,53.99,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Ward Township,precinct,Election Day,Ballots Cast - Total,79,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Ward Township,precinct,Absentee /Mail-in,Ballots Cast - Total,9,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Ward Township,precinct,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Wellsboro Boro Ward 1,precinct,TOTAL,Ballots Cast - Total,644,0,1153,55.85,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Wellsboro Boro Ward 1,precinct,Election Day,Ballots Cast - Total,526,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Wellsboro Boro Ward 1,precinct,Absentee /Mail-in,Ballots Cast - Total,118,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Wellsboro Boro Ward 1,precinct,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Wellsboro Boro Ward 2,precinct,TOTAL,Ballots Cast - Total,699,0,1150,60.78,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Wellsboro Boro Ward 2,precinct,Election Day,Ballots Cast - Total,548,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Wellsboro Boro Ward 2,precinct,Absentee /Mail-in,Ballots Cast - Total,151,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Wellsboro Boro Ward 2,precinct,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Westfield Township,precinct,TOTAL,Ballots Cast - Total,291,0,581,50.09,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Westfield Township,precinct,Election Day,Ballots Cast - Total,267,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Westfield Township,precinct,Absentee /Mail-in,Ballots Cast - Total,24,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Westfield Township,precinct,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Westfield Borough,precinct,TOTAL,Ballots Cast - Total,260,0,578,44.98,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Westfield Borough,precinct,Election Day,Ballots Cast - Total,217,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Westfield Borough,precinct,Absentee /Mail-in,Ballots Cast - Total,43,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False
+2026,PA,Tioga,Westfield Borough,precinct,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:18 AM,,True,,False,False

@@ -1,0 +1,17 @@
+native_label,native_reporting_unit_denominator,native_mode,native_value,counting_complete
+Election Day Precincts Reporting,41,TOTAL,41,False
+Election Day Precincts Reporting,41,Election Day,41,False
+Election Day Precincts Reporting,41,Absentee /Mail-in,0,False
+Election Day Precincts Reporting,41,Provisional Ballots,0,False
+Precincts Complete,41,TOTAL,0,False
+Precincts Complete,41,Election Day,0,False
+Precincts Complete,41,Absentee /Mail-in,0,False
+Precincts Complete,41,Provisional Ballots,0,False
+Precincts Partially Reported,41,TOTAL,41,False
+Precincts Partially Reported,41,Election Day,41,False
+Precincts Partially Reported,41,Absentee /Mail-in,0,False
+Precincts Partially Reported,41,Provisional Ballots,0,False
+Absentee/ Early Precincts Reporting,41,TOTAL,41,False
+Absentee/ Early Precincts Reporting,41,Election Day,0,False
+Absentee/ Early Precincts Reporting,41,Absentee /Mail-in,41,False
+Absentee/ Early Precincts Reporting,41,Provisional Ballots,0,False

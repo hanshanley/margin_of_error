@@ -1,0 +1,42 @@
+{
+  "year": 2026,
+  "county": "Warren",
+  "source_receipts": [
+    {
+      "url": "https://www.warrencountypa.gov/1192/Elections-Voter-Registration",
+      "final_url": "https://www.warrencountypa.gov/1192/Elections-Voter-Registration",
+      "status": 404,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content_type": null,
+      "acquired_at_utc": "2026-11-06T15:41:46.703226+00:00"
+    },
+    {
+      "url": "https://www.warrencountypa.gov/DocumentCenter/View/4037/UNOFFICIAL-RESULTS-2026-GENERAL-ELECTION",
+      "final_url": "https://www.warrencountypa.gov/DocumentCenter/View/4037/UNOFFICIAL-RESULTS-2026-GENERAL-ELECTION",
+      "status": 404,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content_type": null,
+      "acquired_at_utc": "2026-11-06T15:42:10.314135+00:00"
+    },
+    {
+      "url": "https://www.warrencountypa.gov/DocumentCenter/View/4146/2026-General-Election-Official-Results",
+      "final_url": "https://www.warrencountypa.gov/DocumentCenter/View/4146/2026-General-Election-Official-Results",
+      "status": 404,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content_type": null,
+      "acquired_at_utc": "2026-11-06T15:47:33.354406+00:00"
+    }
+  ],
+  "declaring_page_url": "https://www.warrencountypa.gov/1192/Elections-Voter-Registration",
+  "prior_checkpoint_declared_official_pdf": "https://www.warrencountypa.gov/DocumentCenter/View/4146/2026-General-Election-Official-Results",
+  "unverified_legacy_path_not_declaration_evidence": "https://www.warrencountypa.gov/DocumentCenter/View/4037/UNOFFICIAL-RESULTS-2026-GENERAL-ELECTION",
+  "complete_successful_originals": 0,
+  "numerical_query_created": false,
+  "analysis_ballot_approvals": 0,
+  "analysis_rate_approvals": 0,
+  "map_approvals": 0,
+  "scope": "Current ordinary declaring-page request and exact previously declared official-report request returned HTTP 404 with empty bodies. A different unverified legacy path also returned 404 and is not declaration evidence. Do not treat indexed numerical excerpts as acquired originals. No access restriction, TLS certificate or denied host was bypassed; these specific failures do not establish global source absence. Continue distinct declared alternatives, not unchanged retries."
+}

@@ -1,0 +1,5 @@
+year,state_code,county,native_unit,scope,native_mode,native_participation_measure_literal,ballots_cast,blank_ballots_already_included,registered_voters,native_printed_turnout,source_status_literal,source_generation_clock_literal,declared_timezone,source_clock_precedes_election,source_fips,analysis_rates_approved,maps_approved
+2026,PA,Tioga,Tioga,county,TOTAL,Ballots Cast - Total,14845,2,26874,55.24,UNOFFICIAL RESULTS,08/08/2026 1:17 AM,,True,,False,False
+2026,PA,Tioga,Tioga,county,Election Day,Ballots Cast - Total,12683,2,,,UNOFFICIAL RESULTS,08/08/2026 1:17 AM,,True,,False,False
+2026,PA,Tioga,Tioga,county,Absentee /Mail-in,Ballots Cast - Total,2162,0,,,UNOFFICIAL RESULTS,08/08/2026 1:17 AM,,True,,False,False
+2026,PA,Tioga,Tioga,county,Provisional Ballots,Ballots Cast - Total,0,0,,,UNOFFICIAL RESULTS,08/08/2026 1:17 AM,,True,,False,False

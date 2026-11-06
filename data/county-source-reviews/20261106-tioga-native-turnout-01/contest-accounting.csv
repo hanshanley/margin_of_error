@@ -1,0 +1,505 @@
+year,state_code,county,native_unit,scope,native_contest,native_vote_for,native_mode,candidate_and_write_in_votes,native_contest_total,native_ballots,unclassified_contest_total_minus_votes,native_overvotes,native_undervotes,native_blank_ballots_not_added_to_contests
+2026,PA,Tioga,Tioga,county,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,14760,14845,14845,85,,,2
+2026,PA,Tioga,Tioga,county,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,12617,12683,12683,66,,,2
+2026,PA,Tioga,Tioga,county,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,2143,2162,2162,19,,,0
+2026,PA,Tioga,Tioga,county,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Tioga,county,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,14744,14845,14845,101,,,2
+2026,PA,Tioga,Tioga,county,REP IN CONGRESS 15TH DISTRICT,1,Election Day,12610,12683,12683,73,,,2
+2026,PA,Tioga,Tioga,county,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,2134,2162,2162,28,,,0
+2026,PA,Tioga,Tioga,county,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Tioga,county,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,14769,14845,14845,76,,,2
+2026,PA,Tioga,Tioga,county,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,12627,12683,12683,56,,,2
+2026,PA,Tioga,Tioga,county,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,2142,2162,2162,20,,,0
+2026,PA,Tioga,Tioga,county,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Bloss Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,155,156,156,1,,,0
+2026,PA,Tioga,Bloss Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,143,144,144,1,,,0
+2026,PA,Tioga,Bloss Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,12,12,12,0,,,0
+2026,PA,Tioga,Bloss Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Bloss Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,156,156,156,0,,,0
+2026,PA,Tioga,Bloss Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Election Day,144,144,144,0,,,0
+2026,PA,Tioga,Bloss Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,12,12,12,0,,,0
+2026,PA,Tioga,Bloss Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Bloss Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,154,156,156,2,,,0
+2026,PA,Tioga,Bloss Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,142,144,144,2,,,0
+2026,PA,Tioga,Bloss Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,12,12,12,0,,,0
+2026,PA,Tioga,Bloss Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Blossburg Borough,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,520,522,522,2,,,1
+2026,PA,Tioga,Blossburg Borough,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,455,456,456,1,,,1
+2026,PA,Tioga,Blossburg Borough,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,65,66,66,1,,,0
+2026,PA,Tioga,Blossburg Borough,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Blossburg Borough,precinct,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,517,522,522,5,,,1
+2026,PA,Tioga,Blossburg Borough,precinct,REP IN CONGRESS 15TH DISTRICT,1,Election Day,454,456,456,2,,,1
+2026,PA,Tioga,Blossburg Borough,precinct,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,63,66,66,3,,,0
+2026,PA,Tioga,Blossburg Borough,precinct,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Blossburg Borough,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,520,522,522,2,,,1
+2026,PA,Tioga,Blossburg Borough,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,454,456,456,2,,,1
+2026,PA,Tioga,Blossburg Borough,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,66,66,66,0,,,0
+2026,PA,Tioga,Blossburg Borough,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Brookfield Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,153,154,154,1,,,0
+2026,PA,Tioga,Brookfield Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,138,139,139,1,,,0
+2026,PA,Tioga,Brookfield Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,15,15,15,0,,,0
+2026,PA,Tioga,Brookfield Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Brookfield Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,151,154,154,3,,,0
+2026,PA,Tioga,Brookfield Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Election Day,137,139,139,2,,,0
+2026,PA,Tioga,Brookfield Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,14,15,15,1,,,0
+2026,PA,Tioga,Brookfield Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Brookfield Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,154,154,154,0,,,0
+2026,PA,Tioga,Brookfield Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,139,139,139,0,,,0
+2026,PA,Tioga,Brookfield Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,15,15,15,0,,,0
+2026,PA,Tioga,Brookfield Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Charleston Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,1429,1436,1436,7,,,0
+2026,PA,Tioga,Charleston Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,1107,1111,1111,4,,,0
+2026,PA,Tioga,Charleston Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,322,325,325,3,,,0
+2026,PA,Tioga,Charleston Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Charleston Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,1429,1436,1436,7,,,0
+2026,PA,Tioga,Charleston Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Election Day,1106,1111,1111,5,,,0
+2026,PA,Tioga,Charleston Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,323,325,325,2,,,0
+2026,PA,Tioga,Charleston Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Charleston Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,1429,1436,1436,7,,,0
+2026,PA,Tioga,Charleston Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,1108,1111,1111,3,,,0
+2026,PA,Tioga,Charleston Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,321,325,325,4,,,0
+2026,PA,Tioga,Charleston Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Chatham Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,273,278,278,5,,,0
+2026,PA,Tioga,Chatham Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,234,239,239,5,,,0
+2026,PA,Tioga,Chatham Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,39,39,39,0,,,0
+2026,PA,Tioga,Chatham Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Chatham Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,276,278,278,2,,,0
+2026,PA,Tioga,Chatham Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Election Day,237,239,239,2,,,0
+2026,PA,Tioga,Chatham Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,39,39,39,0,,,0
+2026,PA,Tioga,Chatham Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Chatham Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,276,278,278,2,,,0
+2026,PA,Tioga,Chatham Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,237,239,239,2,,,0
+2026,PA,Tioga,Chatham Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,39,39,39,0,,,0
+2026,PA,Tioga,Chatham Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Clymer Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,254,257,257,3,,,0
+2026,PA,Tioga,Clymer Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,234,237,237,3,,,0
+2026,PA,Tioga,Clymer Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,20,20,20,0,,,0
+2026,PA,Tioga,Clymer Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Clymer Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,256,257,257,1,,,0
+2026,PA,Tioga,Clymer Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Election Day,236,237,237,1,,,0
+2026,PA,Tioga,Clymer Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,20,20,20,0,,,0
+2026,PA,Tioga,Clymer Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Clymer Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,257,257,257,0,,,0
+2026,PA,Tioga,Clymer Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,237,237,237,0,,,0
+2026,PA,Tioga,Clymer Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,20,20,20,0,,,0
+2026,PA,Tioga,Clymer Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Covington Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,388,389,389,1,,,0
+2026,PA,Tioga,Covington Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,350,351,351,1,,,0
+2026,PA,Tioga,Covington Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,38,38,38,0,,,0
+2026,PA,Tioga,Covington Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Covington Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,387,389,389,2,,,0
+2026,PA,Tioga,Covington Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Election Day,349,351,351,2,,,0
+2026,PA,Tioga,Covington Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,38,38,38,0,,,0
+2026,PA,Tioga,Covington Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Covington Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,388,389,389,1,,,0
+2026,PA,Tioga,Covington Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,350,351,351,1,,,0
+2026,PA,Tioga,Covington Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,38,38,38,0,,,0
+2026,PA,Tioga,Covington Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Deerfield Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,234,236,236,2,,,0
+2026,PA,Tioga,Deerfield Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,207,209,209,2,,,0
+2026,PA,Tioga,Deerfield Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,27,27,27,0,,,0
+2026,PA,Tioga,Deerfield Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Deerfield Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,235,236,236,1,,,0
+2026,PA,Tioga,Deerfield Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Election Day,209,209,209,0,,,0
+2026,PA,Tioga,Deerfield Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,26,27,27,1,,,0
+2026,PA,Tioga,Deerfield Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Deerfield Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,236,236,236,0,,,0
+2026,PA,Tioga,Deerfield Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,209,209,209,0,,,0
+2026,PA,Tioga,Deerfield Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,27,27,27,0,,,0
+2026,PA,Tioga,Deerfield Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Delmar Township North,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,782,789,789,7,,,0
+2026,PA,Tioga,Delmar Township North,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,618,621,621,3,,,0
+2026,PA,Tioga,Delmar Township North,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,164,168,168,4,,,0
+2026,PA,Tioga,Delmar Township North,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Delmar Township North,precinct,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,782,789,789,7,,,0
+2026,PA,Tioga,Delmar Township North,precinct,REP IN CONGRESS 15TH DISTRICT,1,Election Day,615,621,621,6,,,0
+2026,PA,Tioga,Delmar Township North,precinct,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,167,168,168,1,,,0
+2026,PA,Tioga,Delmar Township North,precinct,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Delmar Township North,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,785,789,789,4,,,0
+2026,PA,Tioga,Delmar Township North,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,619,621,621,2,,,0
+2026,PA,Tioga,Delmar Township North,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,166,168,168,2,,,0
+2026,PA,Tioga,Delmar Township North,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Delmar Township South,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,406,407,407,1,,,0
+2026,PA,Tioga,Delmar Township South,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,346,347,347,1,,,0
+2026,PA,Tioga,Delmar Township South,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,60,60,60,0,,,0
+2026,PA,Tioga,Delmar Township South,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Delmar Township South,precinct,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,405,407,407,2,,,0
+2026,PA,Tioga,Delmar Township South,precinct,REP IN CONGRESS 15TH DISTRICT,1,Election Day,345,347,347,2,,,0
+2026,PA,Tioga,Delmar Township South,precinct,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,60,60,60,0,,,0
+2026,PA,Tioga,Delmar Township South,precinct,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Delmar Township South,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,401,407,407,6,,,0
+2026,PA,Tioga,Delmar Township South,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,342,347,347,5,,,0
+2026,PA,Tioga,Delmar Township South,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,59,60,60,1,,,0
+2026,PA,Tioga,Delmar Township South,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Duncan Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,59,59,59,0,,,0
+2026,PA,Tioga,Duncan Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,49,49,49,0,,,0
+2026,PA,Tioga,Duncan Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,10,10,10,0,,,0
+2026,PA,Tioga,Duncan Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Duncan Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,58,59,59,1,,,0
+2026,PA,Tioga,Duncan Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Election Day,48,49,49,1,,,0
+2026,PA,Tioga,Duncan Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,10,10,10,0,,,0
+2026,PA,Tioga,Duncan Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Duncan Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,56,59,59,3,,,0
+2026,PA,Tioga,Duncan Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,48,49,49,1,,,0
+2026,PA,Tioga,Duncan Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,8,10,10,2,,,0
+2026,PA,Tioga,Duncan Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Elk Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,15,15,15,0,,,0
+2026,PA,Tioga,Elk Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,14,14,14,0,,,0
+2026,PA,Tioga,Elk Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,1,1,1,0,,,0
+2026,PA,Tioga,Elk Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Elk Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,15,15,15,0,,,0
+2026,PA,Tioga,Elk Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Election Day,14,14,14,0,,,0
+2026,PA,Tioga,Elk Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,1,1,1,0,,,0
+2026,PA,Tioga,Elk Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Elk Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,15,15,15,0,,,0
+2026,PA,Tioga,Elk Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,14,14,14,0,,,0
+2026,PA,Tioga,Elk Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,1,1,1,0,,,0
+2026,PA,Tioga,Elk Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Elkland Borough,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,473,475,475,2,,,0
+2026,PA,Tioga,Elkland Borough,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,403,403,403,0,,,0
+2026,PA,Tioga,Elkland Borough,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,70,72,72,2,,,0
+2026,PA,Tioga,Elkland Borough,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Elkland Borough,precinct,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,472,475,475,3,,,0
+2026,PA,Tioga,Elkland Borough,precinct,REP IN CONGRESS 15TH DISTRICT,1,Election Day,401,403,403,2,,,0
+2026,PA,Tioga,Elkland Borough,precinct,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,71,72,72,1,,,0
+2026,PA,Tioga,Elkland Borough,precinct,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Elkland Borough,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,472,475,475,3,,,0
+2026,PA,Tioga,Elkland Borough,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,402,403,403,1,,,0
+2026,PA,Tioga,Elkland Borough,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,70,72,72,2,,,0
+2026,PA,Tioga,Elkland Borough,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Farmington Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,273,273,273,0,,,0
+2026,PA,Tioga,Farmington Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,253,253,253,0,,,0
+2026,PA,Tioga,Farmington Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,20,20,20,0,,,0
+2026,PA,Tioga,Farmington Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Farmington Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,272,273,273,1,,,0
+2026,PA,Tioga,Farmington Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Election Day,252,253,253,1,,,0
+2026,PA,Tioga,Farmington Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,20,20,20,0,,,0
+2026,PA,Tioga,Farmington Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Farmington Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,271,273,273,2,,,0
+2026,PA,Tioga,Farmington Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,251,253,253,2,,,0
+2026,PA,Tioga,Farmington Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,20,20,20,0,,,0
+2026,PA,Tioga,Farmington Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Gaines Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,241,242,242,1,,,0
+2026,PA,Tioga,Gaines Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,207,208,208,1,,,0
+2026,PA,Tioga,Gaines Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,34,34,34,0,,,0
+2026,PA,Tioga,Gaines Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Gaines Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,240,242,242,2,,,0
+2026,PA,Tioga,Gaines Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Election Day,206,208,208,2,,,0
+2026,PA,Tioga,Gaines Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,34,34,34,0,,,0
+2026,PA,Tioga,Gaines Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Gaines Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,242,242,242,0,,,0
+2026,PA,Tioga,Gaines Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,208,208,208,0,,,0
+2026,PA,Tioga,Gaines Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,34,34,34,0,,,0
+2026,PA,Tioga,Gaines Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Hamilton Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,145,145,145,0,,,0
+2026,PA,Tioga,Hamilton Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,125,125,125,0,,,0
+2026,PA,Tioga,Hamilton Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,20,20,20,0,,,0
+2026,PA,Tioga,Hamilton Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Hamilton Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,145,145,145,0,,,0
+2026,PA,Tioga,Hamilton Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Election Day,125,125,125,0,,,0
+2026,PA,Tioga,Hamilton Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,20,20,20,0,,,0
+2026,PA,Tioga,Hamilton Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Hamilton Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,145,145,145,0,,,0
+2026,PA,Tioga,Hamilton Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,125,125,125,0,,,0
+2026,PA,Tioga,Hamilton Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,20,20,20,0,,,0
+2026,PA,Tioga,Hamilton Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Jackson Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,709,712,712,3,,,0
+2026,PA,Tioga,Jackson Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,615,618,618,3,,,0
+2026,PA,Tioga,Jackson Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,94,94,94,0,,,0
+2026,PA,Tioga,Jackson Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Jackson Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,709,712,712,3,,,0
+2026,PA,Tioga,Jackson Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Election Day,616,618,618,2,,,0
+2026,PA,Tioga,Jackson Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,93,94,94,1,,,0
+2026,PA,Tioga,Jackson Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Jackson Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,709,712,712,3,,,0
+2026,PA,Tioga,Jackson Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,615,618,618,3,,,0
+2026,PA,Tioga,Jackson Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,94,94,94,0,,,0
+2026,PA,Tioga,Jackson Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Knoxville Borough,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,191,193,193,2,,,0
+2026,PA,Tioga,Knoxville Borough,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,174,175,175,1,,,0
+2026,PA,Tioga,Knoxville Borough,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,17,18,18,1,,,0
+2026,PA,Tioga,Knoxville Borough,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Knoxville Borough,precinct,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,189,193,193,4,,,0
+2026,PA,Tioga,Knoxville Borough,precinct,REP IN CONGRESS 15TH DISTRICT,1,Election Day,172,175,175,3,,,0
+2026,PA,Tioga,Knoxville Borough,precinct,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,17,18,18,1,,,0
+2026,PA,Tioga,Knoxville Borough,precinct,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Knoxville Borough,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,192,193,193,1,,,0
+2026,PA,Tioga,Knoxville Borough,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,174,175,175,1,,,0
+2026,PA,Tioga,Knoxville Borough,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,18,18,18,0,,,0
+2026,PA,Tioga,Knoxville Borough,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Lawrence Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,550,553,553,3,,,0
+2026,PA,Tioga,Lawrence Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,488,490,490,2,,,0
+2026,PA,Tioga,Lawrence Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,62,63,63,1,,,0
+2026,PA,Tioga,Lawrence Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Lawrence Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,549,553,553,4,,,0
+2026,PA,Tioga,Lawrence Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Election Day,486,490,490,4,,,0
+2026,PA,Tioga,Lawrence Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,63,63,63,0,,,0
+2026,PA,Tioga,Lawrence Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Lawrence Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,551,553,553,2,,,0
+2026,PA,Tioga,Lawrence Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,488,490,490,2,,,0
+2026,PA,Tioga,Lawrence Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,63,63,63,0,,,0
+2026,PA,Tioga,Lawrence Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Lawrenceville Borough,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,195,195,195,0,,,0
+2026,PA,Tioga,Lawrenceville Borough,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,176,176,176,0,,,0
+2026,PA,Tioga,Lawrenceville Borough,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,19,19,19,0,,,0
+2026,PA,Tioga,Lawrenceville Borough,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Lawrenceville Borough,precinct,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,195,195,195,0,,,0
+2026,PA,Tioga,Lawrenceville Borough,precinct,REP IN CONGRESS 15TH DISTRICT,1,Election Day,176,176,176,0,,,0
+2026,PA,Tioga,Lawrenceville Borough,precinct,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,19,19,19,0,,,0
+2026,PA,Tioga,Lawrenceville Borough,precinct,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Lawrenceville Borough,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,194,195,195,1,,,0
+2026,PA,Tioga,Lawrenceville Borough,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,175,176,176,1,,,0
+2026,PA,Tioga,Lawrenceville Borough,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,19,19,19,0,,,0
+2026,PA,Tioga,Lawrenceville Borough,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Liberty Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,435,440,440,5,,,0
+2026,PA,Tioga,Liberty Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,371,376,376,5,,,0
+2026,PA,Tioga,Liberty Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,64,64,64,0,,,0
+2026,PA,Tioga,Liberty Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Liberty Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,436,440,440,4,,,0
+2026,PA,Tioga,Liberty Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Election Day,374,376,376,2,,,0
+2026,PA,Tioga,Liberty Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,62,64,64,2,,,0
+2026,PA,Tioga,Liberty Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Liberty Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,435,440,440,5,,,0
+2026,PA,Tioga,Liberty Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,373,376,376,3,,,0
+2026,PA,Tioga,Liberty Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,62,64,64,2,,,0
+2026,PA,Tioga,Liberty Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Liberty Borough,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,88,90,90,2,,,0
+2026,PA,Tioga,Liberty Borough,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,78,80,80,2,,,0
+2026,PA,Tioga,Liberty Borough,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,10,10,10,0,,,0
+2026,PA,Tioga,Liberty Borough,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Liberty Borough,precinct,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,88,90,90,2,,,0
+2026,PA,Tioga,Liberty Borough,precinct,REP IN CONGRESS 15TH DISTRICT,1,Election Day,78,80,80,2,,,0
+2026,PA,Tioga,Liberty Borough,precinct,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,10,10,10,0,,,0
+2026,PA,Tioga,Liberty Borough,precinct,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Liberty Borough,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,90,90,90,0,,,0
+2026,PA,Tioga,Liberty Borough,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,80,80,80,0,,,0
+2026,PA,Tioga,Liberty Borough,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,10,10,10,0,,,0
+2026,PA,Tioga,Liberty Borough,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Mansfield Borough,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,642,647,647,5,,,0
+2026,PA,Tioga,Mansfield Borough,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,525,527,527,2,,,0
+2026,PA,Tioga,Mansfield Borough,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,117,120,120,3,,,0
+2026,PA,Tioga,Mansfield Borough,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Mansfield Borough,precinct,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,644,647,647,3,,,0
+2026,PA,Tioga,Mansfield Borough,precinct,REP IN CONGRESS 15TH DISTRICT,1,Election Day,525,527,527,2,,,0
+2026,PA,Tioga,Mansfield Borough,precinct,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,119,120,120,1,,,0
+2026,PA,Tioga,Mansfield Borough,precinct,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Mansfield Borough,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,642,647,647,5,,,0
+2026,PA,Tioga,Mansfield Borough,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,523,527,527,4,,,0
+2026,PA,Tioga,Mansfield Borough,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,119,120,120,1,,,0
+2026,PA,Tioga,Mansfield Borough,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Middlebury Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,554,556,556,2,,,0
+2026,PA,Tioga,Middlebury Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,493,495,495,2,,,0
+2026,PA,Tioga,Middlebury Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,61,61,61,0,,,0
+2026,PA,Tioga,Middlebury Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Middlebury Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,550,556,556,6,,,0
+2026,PA,Tioga,Middlebury Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Election Day,490,495,495,5,,,0
+2026,PA,Tioga,Middlebury Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,60,61,61,1,,,0
+2026,PA,Tioga,Middlebury Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Middlebury Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,553,556,556,3,,,0
+2026,PA,Tioga,Middlebury Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,492,495,495,3,,,0
+2026,PA,Tioga,Middlebury Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,61,61,61,0,,,0
+2026,PA,Tioga,Middlebury Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Morris Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,271,274,274,3,,,0
+2026,PA,Tioga,Morris Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,240,242,242,2,,,0
+2026,PA,Tioga,Morris Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,31,32,32,1,,,0
+2026,PA,Tioga,Morris Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Morris Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,265,274,274,9,,,0
+2026,PA,Tioga,Morris Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Election Day,235,242,242,7,,,0
+2026,PA,Tioga,Morris Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,30,32,32,2,,,0
+2026,PA,Tioga,Morris Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Morris Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,270,274,274,4,,,0
+2026,PA,Tioga,Morris Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,240,242,242,2,,,0
+2026,PA,Tioga,Morris Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,30,32,32,2,,,0
+2026,PA,Tioga,Morris Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Nelson Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,198,198,198,0,,,0
+2026,PA,Tioga,Nelson Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,185,185,185,0,,,0
+2026,PA,Tioga,Nelson Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,13,13,13,0,,,0
+2026,PA,Tioga,Nelson Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Nelson Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,198,198,198,0,,,0
+2026,PA,Tioga,Nelson Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Election Day,185,185,185,0,,,0
+2026,PA,Tioga,Nelson Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,13,13,13,0,,,0
+2026,PA,Tioga,Nelson Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Nelson Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,197,198,198,1,,,0
+2026,PA,Tioga,Nelson Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,184,185,185,1,,,0
+2026,PA,Tioga,Nelson Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,13,13,13,0,,,0
+2026,PA,Tioga,Nelson Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Osceola Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,174,175,175,1,,,0
+2026,PA,Tioga,Osceola Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,166,167,167,1,,,0
+2026,PA,Tioga,Osceola Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,8,8,8,0,,,0
+2026,PA,Tioga,Osceola Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Osceola Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,175,175,175,0,,,0
+2026,PA,Tioga,Osceola Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Election Day,167,167,167,0,,,0
+2026,PA,Tioga,Osceola Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,8,8,8,0,,,0
+2026,PA,Tioga,Osceola Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Osceola Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,175,175,175,0,,,0
+2026,PA,Tioga,Osceola Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,167,167,167,0,,,0
+2026,PA,Tioga,Osceola Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,8,8,8,0,,,0
+2026,PA,Tioga,Osceola Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Putnam Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,137,137,137,0,,,0
+2026,PA,Tioga,Putnam Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,127,127,127,0,,,0
+2026,PA,Tioga,Putnam Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,10,10,10,0,,,0
+2026,PA,Tioga,Putnam Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Putnam Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,136,137,137,1,,,0
+2026,PA,Tioga,Putnam Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Election Day,126,127,127,1,,,0
+2026,PA,Tioga,Putnam Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,10,10,10,0,,,0
+2026,PA,Tioga,Putnam Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Putnam Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,136,137,137,1,,,0
+2026,PA,Tioga,Putnam Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,126,127,127,1,,,0
+2026,PA,Tioga,Putnam Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,10,10,10,0,,,0
+2026,PA,Tioga,Putnam Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Richmond Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,829,835,835,6,,,1
+2026,PA,Tioga,Richmond Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,698,703,703,5,,,1
+2026,PA,Tioga,Richmond Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,131,132,132,1,,,0
+2026,PA,Tioga,Richmond Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Richmond Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,830,835,835,5,,,1
+2026,PA,Tioga,Richmond Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Election Day,701,703,703,2,,,1
+2026,PA,Tioga,Richmond Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,129,132,132,3,,,0
+2026,PA,Tioga,Richmond Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Richmond Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,832,835,835,3,,,1
+2026,PA,Tioga,Richmond Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,700,703,703,3,,,1
+2026,PA,Tioga,Richmond Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,132,132,132,0,,,0
+2026,PA,Tioga,Richmond Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Roseville Borough,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,57,57,57,0,,,0
+2026,PA,Tioga,Roseville Borough,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,54,54,54,0,,,0
+2026,PA,Tioga,Roseville Borough,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,3,3,3,0,,,0
+2026,PA,Tioga,Roseville Borough,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Roseville Borough,precinct,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,57,57,57,0,,,0
+2026,PA,Tioga,Roseville Borough,precinct,REP IN CONGRESS 15TH DISTRICT,1,Election Day,54,54,54,0,,,0
+2026,PA,Tioga,Roseville Borough,precinct,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,3,3,3,0,,,0
+2026,PA,Tioga,Roseville Borough,precinct,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Roseville Borough,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,57,57,57,0,,,0
+2026,PA,Tioga,Roseville Borough,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,54,54,54,0,,,0
+2026,PA,Tioga,Roseville Borough,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,3,3,3,0,,,0
+2026,PA,Tioga,Roseville Borough,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Rutland Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,340,341,341,1,,,0
+2026,PA,Tioga,Rutland Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,308,309,309,1,,,0
+2026,PA,Tioga,Rutland Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,32,32,32,0,,,0
+2026,PA,Tioga,Rutland Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Rutland Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,340,341,341,1,,,0
+2026,PA,Tioga,Rutland Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Election Day,308,309,309,1,,,0
+2026,PA,Tioga,Rutland Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,32,32,32,0,,,0
+2026,PA,Tioga,Rutland Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Rutland Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,341,341,341,0,,,0
+2026,PA,Tioga,Rutland Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,309,309,309,0,,,0
+2026,PA,Tioga,Rutland Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,32,32,32,0,,,0
+2026,PA,Tioga,Rutland Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Shippen Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,168,169,169,1,,,0
+2026,PA,Tioga,Shippen Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,136,137,137,1,,,0
+2026,PA,Tioga,Shippen Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,32,32,32,0,,,0
+2026,PA,Tioga,Shippen Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Shippen Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,169,169,169,0,,,0
+2026,PA,Tioga,Shippen Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Election Day,137,137,137,0,,,0
+2026,PA,Tioga,Shippen Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,32,32,32,0,,,0
+2026,PA,Tioga,Shippen Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Shippen Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,168,169,169,1,,,0
+2026,PA,Tioga,Shippen Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,136,137,137,1,,,0
+2026,PA,Tioga,Shippen Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,32,32,32,0,,,0
+2026,PA,Tioga,Shippen Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Sullivan Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,592,593,593,1,,,0
+2026,PA,Tioga,Sullivan Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,518,519,519,1,,,0
+2026,PA,Tioga,Sullivan Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,74,74,74,0,,,0
+2026,PA,Tioga,Sullivan Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Sullivan Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,592,593,593,1,,,0
+2026,PA,Tioga,Sullivan Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Election Day,518,519,519,1,,,0
+2026,PA,Tioga,Sullivan Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,74,74,74,0,,,0
+2026,PA,Tioga,Sullivan Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Sullivan Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,592,593,593,1,,,0
+2026,PA,Tioga,Sullivan Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,518,519,519,1,,,0
+2026,PA,Tioga,Sullivan Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,74,74,74,0,,,0
+2026,PA,Tioga,Sullivan Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Tioga Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,337,338,338,1,,,0
+2026,PA,Tioga,Tioga Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,293,294,294,1,,,0
+2026,PA,Tioga,Tioga Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,44,44,44,0,,,0
+2026,PA,Tioga,Tioga Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Tioga Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,337,338,338,1,,,0
+2026,PA,Tioga,Tioga Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Election Day,293,294,294,1,,,0
+2026,PA,Tioga,Tioga Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,44,44,44,0,,,0
+2026,PA,Tioga,Tioga Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Tioga Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,337,338,338,1,,,0
+2026,PA,Tioga,Tioga Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,294,294,294,0,,,0
+2026,PA,Tioga,Tioga Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,43,44,44,1,,,0
+2026,PA,Tioga,Tioga Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Tioga Borough,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,172,173,173,1,,,0
+2026,PA,Tioga,Tioga Borough,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,145,145,145,0,,,0
+2026,PA,Tioga,Tioga Borough,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,27,28,28,1,,,0
+2026,PA,Tioga,Tioga Borough,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Tioga Borough,precinct,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,172,173,173,1,,,0
+2026,PA,Tioga,Tioga Borough,precinct,REP IN CONGRESS 15TH DISTRICT,1,Election Day,144,145,145,1,,,0
+2026,PA,Tioga,Tioga Borough,precinct,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,28,28,28,0,,,0
+2026,PA,Tioga,Tioga Borough,precinct,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Tioga Borough,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,170,173,173,3,,,0
+2026,PA,Tioga,Tioga Borough,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,143,145,145,2,,,0
+2026,PA,Tioga,Tioga Borough,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,27,28,28,1,,,0
+2026,PA,Tioga,Tioga Borough,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Union Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,351,354,354,3,,,0
+2026,PA,Tioga,Union Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,318,321,321,3,,,0
+2026,PA,Tioga,Union Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,33,33,33,0,,,0
+2026,PA,Tioga,Union Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Union Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,353,354,354,1,,,0
+2026,PA,Tioga,Union Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Election Day,321,321,321,0,,,0
+2026,PA,Tioga,Union Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,32,33,33,1,,,0
+2026,PA,Tioga,Union Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Union Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,352,354,354,2,,,0
+2026,PA,Tioga,Union Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,319,321,321,2,,,0
+2026,PA,Tioga,Union Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,33,33,33,0,,,0
+2026,PA,Tioga,Union Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Ward Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,87,88,88,1,,,0
+2026,PA,Tioga,Ward Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,78,79,79,1,,,0
+2026,PA,Tioga,Ward Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,9,9,9,0,,,0
+2026,PA,Tioga,Ward Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Ward Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,84,88,88,4,,,0
+2026,PA,Tioga,Ward Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Election Day,75,79,79,4,,,0
+2026,PA,Tioga,Ward Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,9,9,9,0,,,0
+2026,PA,Tioga,Ward Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Ward Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,88,88,88,0,,,0
+2026,PA,Tioga,Ward Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,79,79,79,0,,,0
+2026,PA,Tioga,Ward Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,9,9,9,0,,,0
+2026,PA,Tioga,Ward Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Wellsboro Boro Ward 1,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,638,644,644,6,,,0
+2026,PA,Tioga,Wellsboro Boro Ward 1,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,520,526,526,6,,,0
+2026,PA,Tioga,Wellsboro Boro Ward 1,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,118,118,118,0,,,0
+2026,PA,Tioga,Wellsboro Boro Ward 1,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Wellsboro Boro Ward 1,precinct,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,638,644,644,6,,,0
+2026,PA,Tioga,Wellsboro Boro Ward 1,precinct,REP IN CONGRESS 15TH DISTRICT,1,Election Day,524,526,526,2,,,0
+2026,PA,Tioga,Wellsboro Boro Ward 1,precinct,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,114,118,118,4,,,0
+2026,PA,Tioga,Wellsboro Boro Ward 1,precinct,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Wellsboro Boro Ward 1,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,642,644,644,2,,,0
+2026,PA,Tioga,Wellsboro Boro Ward 1,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,526,526,526,0,,,0
+2026,PA,Tioga,Wellsboro Boro Ward 1,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,116,118,118,2,,,0
+2026,PA,Tioga,Wellsboro Boro Ward 1,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Wellsboro Boro Ward 2,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,697,699,699,2,,,0
+2026,PA,Tioga,Wellsboro Boro Ward 2,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,546,548,548,2,,,0
+2026,PA,Tioga,Wellsboro Boro Ward 2,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,151,151,151,0,,,0
+2026,PA,Tioga,Wellsboro Boro Ward 2,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Wellsboro Boro Ward 2,precinct,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,694,699,699,5,,,0
+2026,PA,Tioga,Wellsboro Boro Ward 2,precinct,REP IN CONGRESS 15TH DISTRICT,1,Election Day,545,548,548,3,,,0
+2026,PA,Tioga,Wellsboro Boro Ward 2,precinct,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,149,151,151,2,,,0
+2026,PA,Tioga,Wellsboro Boro Ward 2,precinct,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Wellsboro Boro Ward 2,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,695,699,699,4,,,0
+2026,PA,Tioga,Wellsboro Boro Ward 2,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,544,548,548,4,,,0
+2026,PA,Tioga,Wellsboro Boro Ward 2,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,151,151,151,0,,,0
+2026,PA,Tioga,Wellsboro Boro Ward 2,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Westfield Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,289,291,291,2,,,0
+2026,PA,Tioga,Westfield Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,265,267,267,2,,,0
+2026,PA,Tioga,Westfield Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,24,24,24,0,,,0
+2026,PA,Tioga,Westfield Township,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Westfield Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,289,291,291,2,,,0
+2026,PA,Tioga,Westfield Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Election Day,266,267,267,1,,,0
+2026,PA,Tioga,Westfield Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,23,24,24,1,,,0
+2026,PA,Tioga,Westfield Township,precinct,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Westfield Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,290,291,291,1,,,0
+2026,PA,Tioga,Westfield Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,266,267,267,1,,,0
+2026,PA,Tioga,Westfield Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,24,24,24,0,,,0
+2026,PA,Tioga,Westfield Township,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Westfield Borough,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,TOTAL,259,260,260,1,,,0
+2026,PA,Tioga,Westfield Borough,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Election Day,217,217,217,0,,,0
+2026,PA,Tioga,Westfield Borough,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Absentee /Mail-in,42,43,43,1,,,0
+2026,PA,Tioga,Westfield Borough,precinct,GOVERNOR AND LIEUTENANT GOVERNOR,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Westfield Borough,precinct,REP IN CONGRESS 15TH DISTRICT,1,TOTAL,259,260,260,1,,,0
+2026,PA,Tioga,Westfield Borough,precinct,REP IN CONGRESS 15TH DISTRICT,1,Election Day,216,217,217,1,,,0
+2026,PA,Tioga,Westfield Borough,precinct,REP IN CONGRESS 15TH DISTRICT,1,Absentee /Mail-in,43,43,43,0,,,0
+2026,PA,Tioga,Westfield Borough,precinct,REP IN CONGRESS 15TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0
+2026,PA,Tioga,Westfield Borough,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,TOTAL,260,260,260,0,,,0
+2026,PA,Tioga,Westfield Borough,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Election Day,217,217,217,0,,,0
+2026,PA,Tioga,Westfield Borough,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Absentee /Mail-in,43,43,43,0,,,0
+2026,PA,Tioga,Westfield Borough,precinct,REP IN GEN ASSEM 68TH DISTRICT,1,Provisional Ballots,0,0,0,0,,,0

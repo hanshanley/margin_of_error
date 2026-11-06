@@ -1,0 +1,50 @@
+{
+  "METHODS.txt": {
+    "bytes": 3967,
+    "sha256": "c433dc419ce83e259ac0718ec2ce2b7f616c5e25d8b351bb90cf36e07501936e"
+  },
+  "audit.json": {
+    "bytes": 1785,
+    "sha256": "845bd59cdd8095c9b9184de7e6b06d686ad7602ed85d57692441f4749d2d0ecb"
+  },
+  "candidate-results.csv": {
+    "bytes": 192666,
+    "sha256": "8e231a33624b8529a8e94597d4f8008ec02b04cfef21ead9523756ae7312b040"
+  },
+  "contest-accounting.csv": {
+    "bytes": 52535,
+    "sha256": "b9db05e1c1c33cd483a9221fb9cfa17e988da01def14d9531383185ac1c34b9d"
+  },
+  "county-participation.csv": {
+    "bytes": 850,
+    "sha256": "947fb2cdd9acf0720f07d11126dafe6aee41f04a849dad719b0af6b97d918e9d"
+  },
+  "literal-party-totals.csv": {
+    "bytes": 167301,
+    "sha256": "8c0baad03adbfa691d12ef41938834c063f4126d39b2847573276b980953ee86"
+  },
+  "native-facts.json": {
+    "bytes": 199325,
+    "sha256": "afda373b5da35142b96c609f9f81442427d6166ffe0ecf64ddf1ab5fb5e09cf5"
+  },
+  "native-source-pages.csv": {
+    "bytes": 2810,
+    "sha256": "032b5fbcc61718acfeafe62e60faedabdb364a8c4b0d3d36a9023ded296f8019"
+  },
+  "precinct-participation.csv": {
+    "bytes": 23649,
+    "sha256": "fe112cc8d6ddcde9d02e396a39014bca1ed22938c88a71877037188dc6fbf5b4"
+  },
+  "reporting-statistics.csv": {
+    "bytes": 968,
+    "sha256": "a03a4f76345ba7abf631b0edb6cc4153f95ae3452eff918df93db6637fc77488"
+  },
+  "review-tioga.py": {
+    "bytes": 19501,
+    "sha256": "20e43c08519bffb96f93bea2a98476489cfb22617a79fe60d34ed061be121e8b"
+  },
+  "test_review_tioga.py": {
+    "bytes": 3585,
+    "sha256": "6f4690bdf575aca21c98906aeb8c72be5162aa62a00ae4fbb3710578a6f91edf"
+  }
+}

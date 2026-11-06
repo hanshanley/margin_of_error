@@ -53,6 +53,59 @@ map approval or metadata-only download was created. Do not retry these same
 unchanged endpoints. Continue different source-declared county/Maine alternatives;
 leave the verified context18 UI and Maine/D.C. residuals unchanged.
 
+**November 6, 15:47 UTC: distinct Tioga native query fully reproduced; Warren remains unacquired.**
+The actual current Tioga election-results page declares **Unofficial General Nov
+3 2026**. Both complete original responses pass verified TLS, HTTP 200, complete
+byte counts and SHA-256 receipts. The entire **43-page PDF** contains two county
+summary pages and 41 named precinct pages. Its acquired numbers are
+**14,845 Ballots Cast - Total / 26,874 Registered Voters - Total / printed 55.24%**,
+with native ballot modes **12,683 Election Day / 2,162 Absentee /Mail-in /
+zero Provisional Ballots**. The **two blank ballots are already included**.
+These complete originals, not inconsistent indexed excerpts, define this snapshot.
+
+Two independent entire numerical extractions and all page token inventories
+agree. Every precinct registration, ballot, blank-ballot, candidate/write-in,
+contest and mode vector reconciles exactly to its county counterpart.
+All **42 participation percentages** reconcile. Three native candidate
+percentages differ from Decimal ROUND_HALF_UP: Lawrence Township Thompson
+**435/549, printed 79.24 versus 79.23**; Union Township Gee
+**55/352, printed 15.62 versus 15.63** (an exact half-tie); Wellsboro Boro Ward 2
+Gee **269/695, printed 38.70 versus 38.71**. Preserve both fields and the exact
+reviewed conflict inventory; do not weaken the guard for additional discrepancies.
+
+The November election title conflicts with native generation clocks
+**08/08/2026 1:17 AM** on the county summary and **08/08/2026 1:18 AM** on
+all precinct pages. No timezone is supplied. Preserve these clocks, rather than
+repairing them with acquisition time. The native **UNOFFICIAL RESULTS** and
+**41/41 reporting / zero complete / 41 partial** do not establish certification
+or completed counting. Literal DEM/REP/LIB and missing write-in affiliation,
+FIPS, separate overvotes and undervotes remain distinct. Residual contest
+counts are unclassified, not invented undervotes or demographic participation.
+
+`20261106-tioga-native-turnout-01` contains **14 complete files / 13 ZIP members**:
+all **4 county mode rows / 164 precinct mode rows / 1,680 candidate mode rows /
+1,680 literal-party mode rows / 504 accounting rows / 16 reporting rows /
+43 source-page rows**, both full extractions, executable standard-library
+parser/tests, methods, audit and checksums. **Nine isolated source tests and
+nine extracted-archive tests pass; all 14 files reproduce byte-identically**.
+ZIP **53,832 bytes**, SHA-256
+`6669cf1b4438cfe60f88c77f65fd3839a86163d3b5ec1011a2a1464d626893db`.
+This is a complete native numerical query, not a metadata-only package.
+**Zero generic-ballot analysis approvals / zero analysis-rate approvals /
+zero map approvals** remain while the source-clock conflict is unresolved.
+Immutable publication is pending; this download-only batch does not alter the
+live UI or justify rerunning completed map suites.
+
+Warren's current ordinary declaring-page request and its exact previously
+declared official-report URL both return **HTTP 404 with empty bodies**.
+A different unverified legacy PDF path also returned 404; it is not declaration
+evidence. Full response receipts and explicit scope are preserved separately in
+`20261106-warren-declared-source-probe-01`. No numerical original was acquired,
+no values from indexed excerpts were promoted, and no numerical download or
+rate/map approval was created. This does not prove global source absence.
+Do not repeat these unchanged endpoints. Somerset's exact deployment retry
+continues separately against the original successful build; it is not yet LIVE.
+
 **November 6, 15:29 UTC: consolidated Maryland native turnout query acquired and reproduced.**
 The actual State Board of Elections press-room declaration links a single
 November general-election report containing **all 24 county equivalents and a

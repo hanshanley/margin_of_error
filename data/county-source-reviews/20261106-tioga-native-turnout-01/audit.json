@@ -1,0 +1,63 @@
+{
+  "complete_numerical_pages": 43,
+  "native_county_rows": 1,
+  "native_precinct_rows": 41,
+  "entire_numerical_extractions_agree": true,
+  "all_precinct_county_vectors_reconcile": true,
+  "all_native_participation_percentages_reconcile": true,
+  "all_native_candidate_percentages_match_half_up": false,
+  "candidate_percent_conflict_columns": [
+    "physical_page",
+    "native_contest",
+    "native_label",
+    "votes",
+    "total_votes",
+    "native_printed_percent",
+    "recomputed_half_up_percent"
+  ],
+  "reviewed_candidate_percent_conflicts": [
+    [
+      21,
+      "REP IN CONGRESS 15TH DISTRICT",
+      "REP Glenn GT Thompson",
+      435,
+      549,
+      "79.24",
+      "79.23"
+    ],
+    [
+      38,
+      "REP IN GEN ASSEM 68TH DISTRICT",
+      "DEM Quentin Gee",
+      55,
+      352,
+      "15.62",
+      "15.63"
+    ],
+    [
+      41,
+      "REP IN GEN ASSEM 68TH DISTRICT",
+      "DEM Quentin Gee",
+      269,
+      695,
+      "38.70",
+      "38.71"
+    ]
+  ],
+  "source_clock_precedes_election": true,
+  "source_status_literal": "UNOFFICIAL RESULTS",
+  "generic_ballot_analysis_approvals": 0,
+  "analysis_rate_approvals": 0,
+  "map_approvals": 0,
+  "counting_complete": false,
+  "qualification": "The native November election title and August generation clocks conflict. Preserve the complete numerical query without silently correcting clocks or promoting it to analysis/maps. Reporting 41 of 41 coexists with 0 complete and 41 partial. Separate overvotes/undervotes are absent, not zero.",
+  "csv_rows": {
+    "county-participation.csv": 4,
+    "precinct-participation.csv": 164,
+    "candidate-results.csv": 1680,
+    "literal-party-totals.csv": 1680,
+    "contest-accounting.csv": 504,
+    "reporting-statistics.csv": 16,
+    "native-source-pages.csv": 43
+  }
+}

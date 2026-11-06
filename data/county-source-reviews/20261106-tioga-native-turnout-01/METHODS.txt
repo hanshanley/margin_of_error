@@ -1,0 +1,61 @@
+Complete Tioga County 2026 native numerical query, acquired November 6, 2026.
+
+The official election-results page explicitly declares "Unofficial General Nov
+3 2026". Both complete original responses were acquired with verified TLS,
+HTTP 200, complete byte counts and SHA-256 receipts. The numerical PDF contains
+two county summary pages and 41 named precinct pages. Two independent complete
+PDF extractions agree on every participation, candidate, accounting, reporting
+and native page-clock field. All extracted numerical pages are included in
+native-facts.json, not just selected totals or metadata.
+
+The source explicitly prints Ballots Cast - Total, Registered Voters - Total,
+and Voter Turnout - Total. Its county vector is 14,845 total ballots, 12,683
+Election Day, 2,162 Absentee /Mail-in, zero Provisional Ballots, 26,874
+registrations and printed 55.24%. Two blank ballots are already included in
+ballots cast. Native precinct registrations, ballots, blank ballots, all
+candidate/write-in choices, contest totals and mode vectors reconcile exactly
+to the county. Candidate percentages use contest-vote denominators, not all
+ballots. County and precinct data remain separate scopes; never sum both.
+All 42 participation percentages reconcile. Three native candidate percentages
+differ from recomputation using Decimal ROUND_HALF_UP: Lawrence Township,
+Glenn GT Thompson, 435/549, printed 79.24 versus 79.23; Union Township,
+Quentin Gee, 55/352, printed 15.62 versus 15.63 (an exact half-tie); Wellsboro
+Boro Ward 2, Quentin Gee, 269/695, printed 38.70 versus 38.71. Preserve both
+native and recomputed fields, including that rounding convention. Both complete
+extractors independently confirm every conflict. A strict exact conflict
+inventory rejects additional differences rather than relaxing all checks.
+
+The acquired PDF titles the November 3, 2026 election but prints generation
+clocks 08/08/2026 1:17 AM (county summary) and 08/08/2026 1:18 AM (precincts).
+No timezone is supplied. This pre-election-clock conflict is preserved
+literally and is not repaired using acquisition time. The actual current
+declaring-page and complete acquired PDF take precedence over inconsistent
+indexed search excerpts. No globally latest report or independently certified
+results are claimed.
+
+The report is explicitly UNOFFICIAL RESULTS. Its 41 of 41 Election Day and
+Absentee/Early reporting counters coexist with zero complete and 41 partial.
+Those are native counters, not certification or completed-counting claims.
+Literal DEM/REP/LIB labels are preserved. Write-in party affiliation is absent,
+not inferred. Candidate votes are not voter participation or party-registered
+turnout. Source FIPS, demographic denominators, separate contest overvotes and
+undervotes are absent, not zero. Contest-total-minus-vote residuals are
+unclassified; the two county blank ballots are not added into every contest.
+
+This package freezes a complete native numerical query with zero generic-ballot
+analysis approvals, zero analysis-rate approvals and zero map approvals while
+the native generation-clock conflict remains unresolved. It does not change
+the deployed page, match precinct boundaries, or establish complete county or
+national coverage. No source raw HTML, embedded provider credentials, personal
+voter data, original PDF or third-party assets are included.
+
+Offline reproduction (standard-library Python):
+  python3 -I test_review_tioga.py
+  python3 -I review-tioga.py --output /absolute/path/to/new-output-directory
+
+The output directory must not already exist. Reproduction regenerates all
+actual numerical CSVs, complete reviewed input, methods, tests, audit and
+checksums, and a deterministic complete-query.zip. The ZIP contains the full
+query and executable reproducer, not a metadata-only download. Checksums
+exclude the checksum file and ZIP to avoid circular hashes. Empty CSV cells
+mean missing or not supplied; literal zero is retained only when supplied.
