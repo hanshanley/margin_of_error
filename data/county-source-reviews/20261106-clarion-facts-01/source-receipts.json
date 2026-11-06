@@ -1,0 +1,22 @@
+[
+  {
+    "file": "clarion-index.html",
+    "url": "https://www.co.clarion.pa.us/government/departments/elections__voter_registration/index.php",
+    "status": 200,
+    "location": null,
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 124337,
+    "sha256": "f3f64ac4093587ebf2f9ed393881b73ebeca697d6f5ecf68b76bfe7d29c60b00",
+    "fetched_at_utc": "2026-11-06T06:54:16.627640+00:00"
+  },
+  {
+    "file": "clarion-summary.response",
+    "url": "https://cms9files.revize.com/clarioncountypa/calendar_app/Document%20Center/Department/Election/SummaryReport2026.pdf?t=202611032004030",
+    "status": 200,
+    "location": null,
+    "content_type": "application/pdf",
+    "bytes": 176875,
+    "sha256": "6bf8f71aaef129a91bb44b4fe37df53084c89856960ec057262f885c99797cd9",
+    "fetched_at_utc": "2026-11-06T06:54:17.208610+00:00"
+  }
+]

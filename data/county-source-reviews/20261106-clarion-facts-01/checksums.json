@@ -1,0 +1,38 @@
+{
+  "audit.json": {
+    "bytes": 1253,
+    "sha256": "f4b13e48e86bae053332529e2a200c3d93cba6b489f9591bcf5be12186edc308"
+  },
+  "county-candidate-results.csv": {
+    "bytes": 1315,
+    "sha256": "bc911e048b16c6c92e69e0b4d4c84ccda24248e6ed57b455a32e98729f4787e9"
+  },
+  "county-literal-party-totals.csv": {
+    "bytes": 512,
+    "sha256": "c2bf02bcae3b38ded7ddedbaa6945fef1d3032f881cfa6989dd710315d8541b8"
+  },
+  "county-participation.csv": {
+    "bytes": 390,
+    "sha256": "2ffea414bf7f6469e4f341efde85d6627079dbbdda02ab7f24db0e518a5bb76c"
+  },
+  "native-contest-accounting.csv": {
+    "bytes": 1148,
+    "sha256": "74b33a74fcd9a01ec476052c560bfe74625ce6fbf1af1b502111f38547b6f18e"
+  },
+  "native-source-pages.csv": {
+    "bytes": 334,
+    "sha256": "1d2a89ba763b4e9c0f987673c50d286926cf5d2f2ae599f56385b6ae49529c12"
+  },
+  "review-clarion-county-results.py": {
+    "bytes": 8970,
+    "sha256": "b48bac1faf4cd30f2ac037dcf7d1a5c2805aab81e6be546c31eb3f743298fc26"
+  },
+  "source-receipts.json": {
+    "bytes": 840,
+    "sha256": "d6b6cc09670bec07eb70c4faabdbcbc6d6a2f5a0c6387dd6f1467d6b949c4c8e"
+  },
+  "source-records.json.gz": {
+    "bytes": 1863,
+    "sha256": "bca644af1745600ecd0611dddf74b9d714ad81a5471a7ac9efc8b366a47ee0a1"
+  }
+}

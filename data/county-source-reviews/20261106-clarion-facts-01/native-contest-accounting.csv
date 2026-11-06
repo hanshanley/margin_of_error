@@ -1,0 +1,5 @@
+year,state_code,county,source_page,contest_literal,geography_scope,reported_times_cast,registered_voters,native_printed_turnout,reported_precincts,total_precincts,native_printed_reporting_pct,native_total_votes_excluding_separate_unresolved_write_in,unresolved_write_in,source_update_literal,declared_timezone,election_day_count,mail_in_count,provisional_count,native_undervotes,native_overvotes,candidate_or_option_plus_separate_unresolved_write_in,unclassified_participation_minus_all_reported_choices
+2026,PA,Clarion,1,Governor and Lieutenant Governor (Vote for 1),Clarion County,12975,23306,55.67%,40,40,100.00%,12856,11,11/3/2026 9:49:20 PM,,,,,,,12867,108
+2026,PA,Clarion,1,Representative in Congress 15th District (Vote for 1),Clarion County,12975,23306,55.67%,40,40,100.00%,12893,14,11/3/2026 9:49:20 PM,,,,,,,12907,68
+2026,PA,Clarion,2,Representative in the General Assembly 63rd District (Vote for 1),Clarion County,12975,23306,55.67%,40,40,100.00%,12840,40,11/3/2026 9:49:20 PM,,,,,,,12880,95
+2026,PA,Clarion,2,Foxburg Borough Ballot Referendum (Vote for 1),Foxburg Borough,82,116,70.69%,1,1,100.00%,79,0,11/3/2026 9:49:20 PM,,,,,,,79,3

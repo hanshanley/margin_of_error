@@ -1111,6 +1111,43 @@ repeated for this candidate/download-only merge. Combined receipts are
 Deployment is pending exact-revision, hosted-artifact, complete public-byte
 and production-browser verification; the new UI is not yet claimed live.
 
+**Clarion primary county participation review, November 6:**
+The existing 67-county source queue leads to the county-owned elections index,
+which explicitly declares its November 3 general-election summary. The full
+two-page PDF is acquired privately: **176,875 bytes**, SHA-256
+`6bf8f71aaef129a91bb44b4fe37df53084c89856960ec057262f885c99797cd9`.
+Both independent PDF engines agree on every entire page and each entire
+contest, including all numeric and literal tokens despite different layouts.
+Native **Voters Cast is 12,975 of 23,306 (55.67%)**. The report says
+`UNOFFICIAL ELECTION RESULTS`, timestamp `11/3/2026 9:49:20 PM`, without a
+declared timezone. All 40 precincts are reported; this is not a certification
+or a statement that all ballots are counted. Separate Election Day, mail and
+provisional counts are absent, not zero.
+
+The complete factual query preserves all four contests, thirteen
+candidate/write-in/ballot-option rows and seven literal-party totals.
+Native `Total Votes` excludes the separately printed unresolved write-ins:
+11 governor, 14 Congress, 40 state House and explicit zero for the referendum.
+Participation minus all named/option and unresolved choices leaves
+**108, 68, 95 and 3 unclassified**; no missing over/undervotes are invented.
+Foxburg's referendum electorate **82/116** remains distinct from the county
+electorate and is not added to it. Candidate votes never substitute for
+Voters Cast, and referendum options never become party totals.
+
+Five focused rejection checks pass. The complete eleven-file package,
+including every member of its ten-member portable ZIP, reproduces
+byte-identically using Python's standard library offline. CSVs use the
+repository's LF format. ZIP **19,108 bytes**,
+SHA-256 `0b54376406262fd7298e990e5ae65848f3d85ffa17d41bfdafdf700e8e5d03d0`.
+Facts are under `data/county-source-reviews/20261106-clarion-facts-01/`;
+original documents and presentation templates remain private. Fixed release,
+anonymous full-byte verification and later explorer integration are pending.
+No new map or turnout denominator is approved by this source-only review.
+The other newly followed queue entry, Clearfield, returns an actual empty
+HTTP 404 through the ordinary source acquisition; the browser-backed web
+reader reaches its index but reports a redirect loop at the declared summary.
+These distinct observations are retained, not repaired or bypassed.
+
 Maine's unresolved 130 votes,
 blanks/write-ins and municipal-other gap, and D.C.'s separate accounting gap,
 remain unresolved; schedule 5 continues remaining primary county acquisition.

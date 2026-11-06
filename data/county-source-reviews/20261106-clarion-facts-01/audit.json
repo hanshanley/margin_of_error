@@ -1,0 +1,31 @@
+{
+  "scope": "Complete two-page Clarion county summary: all four contests, thirteen choices and seven literal-party totals; no unit report, separate counting modes, certification or geographic approval.",
+  "table_rows": {
+    "county-participation.csv": 1,
+    "county-candidate-results.csv": 13,
+    "county-literal-party-totals.csv": 7,
+    "native-contest-accounting.csv": 4,
+    "native-source-pages.csv": 2
+  },
+  "primary_source_two_engines_agree": true,
+  "native_voters_cast": 12975,
+  "native_registrations": 23306,
+  "native_printed_turnout": "55.67%",
+  "native_measure": "Voters Cast",
+  "native_modes_not_separately_reported": true,
+  "native_status": "UNOFFICIAL ELECTION RESULTS",
+  "native_timezone_not_declared": true,
+  "native_total_votes_excludes_separate_unresolved_write_in": true,
+  "no_candidate_vote_substitution": true,
+  "no_native_undervotes_or_overvotes_supplied": true,
+  "separate_foxburg_electorate_not_added_to_county": true,
+  "participation_minus_choices_unclassified_by_contest": [
+    108,
+    68,
+    95,
+    3
+  ],
+  "maps_approved": false,
+  "no_certification_or_complete_counting_claim": true,
+  "original_documents_and_presentation_templates": "Private; not redistributed or included in this factual query."
+}
