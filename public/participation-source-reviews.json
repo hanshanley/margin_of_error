@@ -1,6 +1,29 @@
 {
   "reviews": [
     {
+      "id": "pennsylvania-cumberland-20261106-01",
+      "label": "Cumberland County, Pennsylvania 2026: complete participation and numerical candidate/option facts",
+      "data_directory": "data/county-source-reviews/20261106-cumberland-facts-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5a1069b55fbaf3c7acc345adc3bb6130e0ca2dbb/data/county-source-reviews/20261106-cumberland-facts-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-cumberland-20261106-01/complete-cumberland-2026-numerical-facts-01.zip",
+      "complete_download_bytes": 65990,
+      "complete_download_sha256": "6fc5ba543cc1db5e57af4b405547e3103de6ee331737467720601827a1da18e9",
+      "review_status": "complete_numerical_participation_facts_reviewed_unofficial",
+      "maps_approved": false,
+      "scope_note": "Cumberland County only, unofficial November 3, 2026 general election. All 118 reporting-unit participation observations sum to 117,334 ballots and 185,538 registrations, printed 63.24%, not eligible-population or demographic turnout. Election Day ballots are 89,435 and mail ballots 27,899. Every one of 1,491 candidate/option vectors across 461 contests reconciles to county by literal identity and mode. Native parties, explicit zeroes, write-ins without assigned party and both ballot-question options remain separate. Summary pages print November 4 at 12:37PM; precinct pages print 12:31PM, with no declared timezone. Both native reporting modes say 118 of 118, not final certification. Separate provisional and under/overvote counts are absent, not zero. Governor ballots minus recorded selections leave an unclassified 2,622, not invented blanks or party votes. One native unit spans congressional districts. UPPER ALLEN 6 prints 65.36% for 1,155/1,767 although the calculated rate rounds to 65.37%; the native fraction is preserved. All eight complete CSVs, every page's numerical facts, receipt digests and portable offline reviewer are included. Independent PDF engines agree on all 218 pages. The public package does not redistribute original PDF/HTML presentation templates or claim a source-template license. No new map, demographic turnout, final counting, certification or statewide completion is approved.",
+      "tables": [
+        {"file": "county-participation.csv", "label": "Cumberland County only: ballots, Election Day/mail counts, native registrations, printed fraction and source qualifications (CSV)"},
+        {"file": "native-unit-participation.csv", "label": "Cumberland County only: all 118 native reporting-unit participation observations and original printed fractions, without geometry (CSV)"},
+        {"file": "county-candidate-option-results.csv", "label": "Cumberland County only: all 30 county candidate/write-in/ballot-option rows across ten contests and every mode count (CSV)"},
+        {"file": "native-unit-candidate-option-results.csv", "label": "Cumberland County only: all 1,461 native unit candidate/write-in/ballot-option rows, literal parties and explicit zeroes (CSV)"},
+        {"file": "county-literal-party-totals.csv", "label": "Cumberland County only: all nineteen separate contest/literal-party candidate totals, not ballots or party turnout (CSV)"},
+        {"file": "native-reporting-statements.csv", "label": "Cumberland County only: both native Election Day and Absentee/ Early reporting counters, not final certification (CSV)"},
+        {"file": "native-source-pages.csv", "label": "Cumberland County only: all 218 native page identities and separate report timestamps, without inferred timezones (CSV)"},
+        {"file": "governor-unclassified-ballot-residuals.csv", "label": "Cumberland County only: all 119 county/unit governor ballot-minus-selection residuals, not invented blanks or under/overvotes (CSV)"}
+      ],
+      "coverage": []
+    },
+    {
       "id": "pennsylvania-fulton-20261106-01",
       "label": "Fulton County, Pennsylvania 2026: complete participation and numerical candidate facts",
       "data_directory": "data/county-source-reviews/20261106-fulton-facts-01",

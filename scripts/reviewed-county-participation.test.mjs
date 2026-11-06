@@ -3,14 +3,15 @@ import { copyFileSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from '
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import test from 'node:test';
+import { parse } from 'csv-parse/sync';
 import { loadReviewedCountyParticipation } from './reviewed-county-participation.mjs';
 
 const reviews = JSON.parse(readFileSync('public/participation-source-reviews.json', 'utf8')).reviews;
 
 test('loads all reviewed county participation without promoting map coverage', () => {
   const rows = loadReviewedCountyParticipation(reviews);
-  assert.equal(rows.length, 12);
-  assert.equal(rows.filter(row => row.state_code === 'PA').length, 11);
+  assert.equal(rows.length, 13);
+  assert.equal(rows.filter(row => row.state_code === 'PA').length, 12);
   assert.equal(rows.filter(row => row.state_code === 'DC').length, 1);
   assert.ok(rows.every(row => row.maps_approved === false && row.reported_units === null));
   const monroe = rows.find(row => row.county === 'Monroe');
@@ -23,6 +24,24 @@ test('loads all reviewed county participation without promoting map coverage', (
   assert.notEqual(fulton.ballots, 5050);
   assert.equal(fulton.denominator, 10155);
   assert.equal(fulton.native_printed_pct, '50.07%');
+});
+
+test('preserves complete Cumberland participation separately from selections and both report times', () => {
+  const row = loadReviewedCountyParticipation(reviews).find(row => row.county === 'Cumberland');
+  const review = reviews.find(review => review.id === row.review_id);
+  const native = parse(readFileSync(join(review.data_directory, 'county-participation.csv'), 'utf8'),
+    { columns: true })[0];
+  assert.deepEqual(row.native_record, native);
+  assert.equal(row.ballots, 117334);
+  assert.notEqual(row.ballots, 114712);
+  assert.equal(row.denominator, 185538);
+  assert.equal(row.native_printed_pct, '63.24%');
+  assert.equal(row.source_status_literal, 'UNOFFICIAL RESULTS');
+  assert.equal(row.native_source_updates.length, 2);
+  assert.match(row.source_update_label, /summary: 11\/04\/2026 12:37PM \(timezone not declared\)/);
+  assert.match(row.source_update_label, /precinct: 11\/04\/2026 12:31PM \(timezone not declared\)/);
+  assert.match(row.source_reporting_label, /Under\/overvotes and a separate provisional count are absent, not zero/);
+  assert.match(row.source_reporting_label, /UPPER ALLEN 6 prints 65.36%/);
 });
 
 test('preserves partial counting, absent status, separate timestamps and D.C. accounting', () => {

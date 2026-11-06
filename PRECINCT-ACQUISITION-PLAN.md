@@ -183,9 +183,23 @@ pass. All eight complete CSVs and twelve archive members are verified; ZIP
 65,990 bytes, SHA-256
 `6fc5ba543cc1db5e57af4b405547e3103de6ee331737467720601827a1da18e9`.
 See `20261106-cumberland-facts-01` and
-`20261106-cumberland-publication-01/source-verification.json`. Source commit,
-immutable release verification and explorer integration are next; no Cumberland
-production display or download availability is claimed yet.
+`20261106-cumberland-publication-01/source-verification.json`. Source commit
+`5a1069b55fbaf3c7acc345adc3bb6130e0ca2dbb` is published on the review branch.
+The new immutable `voter-county-pennsylvania-cumberland-20261106-01` release's
+nine complete assets and all eight commit-pinned tables are anonymously
+downloaded and byte-verified; see `release-verification.json`.
+
+The explorer now loads twelve reviewed PA observations plus separate D.C.,
+preserves every complete native record, and displays both Cumberland source
+timestamps without guessing timezones. The static county-count caption derives
+from the reviewed observations instead of a stale hardcoded number. Seventeen
+focused participation tests, Astro check (zero errors/warnings, five existing
+hints), build and 94-download Pages preparation pass at 987,966,974 bytes.
+Source-matched desktop/mobile and JavaScript/no-JavaScript browsers, plus two
+failed-feed checks, pass. All 297 previous unique download URLs remain; nine
+additions give 306 unique URLs / 309 anchors. All 52 UF rows and five historical
+years remain. See `local-browser.json`. Production deployment and verification
+are next; local success is not a Cumberland live-display claim.
 
 **November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated

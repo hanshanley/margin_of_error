@@ -12,6 +12,7 @@ const profiles = [
   ['pennsylvania-bucks-20261105-01', 'ballots_counted', 'registered_voters', 'native_printed_turnout', 'PA', ['Bucks']],
   ['pennsylvania-monroe-20261105-01', 'total_ballots_tabulated', 'eligible_registered_voters', 'native_printed_turnout_pct', 'PA', ['Monroe']],
   ['pennsylvania-fulton-20261106-01', 'accounted_ballots', 'registered_voters', 'native_printed_turnout', 'PA', ['Fulton']],
+  ['pennsylvania-cumberland-20261106-01', 'ballots_cast', 'registered_voters', 'native_printed_turnout', 'PA', ['Cumberland']],
   ['dc-delegate-county-20261105-01', 'ballots_cast', 'registered_voters', null, 'DC', ['District of Columbia']],
 ];
 const csv = path => parse(readFileSync(path, 'utf8'), { columns: true, bom: true, skip_empty_lines: true });
@@ -57,9 +58,13 @@ export function loadReviewedCountyParticipation(reviews) {
       let nativeSourceUpdates = [];
       if (id === 'pennsylvania-centre-20261106-01') {
         nativeSourceUpdates = csv(resolve(directory, 'native-source-updates.csv'));
-        updates.push(...nativeSourceUpdates.map(row =>
-          `${row.source}: ${row.native_update_literal} (${row.declared_timezone || 'timezone not declared'})`));
+      } else if (id === 'pennsylvania-cumberland-20261106-01') {
+        nativeSourceUpdates = [...new Map(csv(resolve(directory, 'native-source-pages.csv')).map(row =>
+          [row.source_report, { source: row.source_report, native_update_literal: row.source_update_literal,
+            declared_timezone: row.declared_timezone }])).values()];
       }
+      updates.push(...nativeSourceUpdates.map(row =>
+        `${row.source}: ${row.native_update_literal} (${row.declared_timezone || 'timezone not declared'})`));
       const quality = [
         'Reviewed local snapshot, not final certification, statewide coverage, eligible-population or demographic turnout.',
         'Source timestamps retain their native labels; unprovided timezones are not inferred. County mapping is not approved.',

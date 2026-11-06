@@ -1,0 +1,129 @@
+{
+  "verified_at_utc": "2026-11-06T03:02:02.523792+00:00",
+  "source_commit": "5a1069b55fbaf3c7acc345adc3bb6130e0ca2dbb",
+  "release_tag": "voter-county-pennsylvania-cumberland-20261106-01",
+  "all_asset_bytes_verified": true,
+  "release_assets": 9,
+  "commit_pinned_tables": 8,
+  "files": [
+    {
+      "location": "release",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-cumberland-20261106-01/complete-cumberland-2026-numerical-facts-01.zip",
+      "bytes": 65990,
+      "sha256": "6fc5ba543cc1db5e57af4b405547e3103de6ee331737467720601827a1da18e9",
+      "unique_members": 12
+    },
+    {
+      "location": "release",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-cumberland-20261106-01/county-candidate-option-results.csv",
+      "bytes": 9059,
+      "sha256": "99ce8acb0008f8d3c65967b417573b86b1862b28c825cf0740763ade63a413ac",
+      "rows": 30
+    },
+    {
+      "location": "release",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-cumberland-20261106-01/county-literal-party-totals.csv",
+      "bytes": 1629,
+      "sha256": "cc727ea7286f9be3c7519d57969fa1f44e92976c149796d18d8c5dd17f6dd9e9",
+      "rows": 19
+    },
+    {
+      "location": "release",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-cumberland-20261106-01/county-participation.csv",
+      "bytes": 1725,
+      "sha256": "88836d367e3682469107cf3ed4275011238964e6d4282c5dbbd459879945f0df",
+      "rows": 1
+    },
+    {
+      "location": "release",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-cumberland-20261106-01/governor-unclassified-ballot-residuals.csv",
+      "bytes": 19560,
+      "sha256": "f38d6fce65175628338720077b447d46454a6ec6a969c5801633a201be95149f",
+      "rows": 119
+    },
+    {
+      "location": "release",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-cumberland-20261106-01/native-reporting-statements.csv",
+      "bytes": 625,
+      "sha256": "feb6d4b31b3d16c50155cd3acb356ade6004a14f42e7f7d0a77a4d398b106bdf",
+      "rows": 2
+    },
+    {
+      "location": "release",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-cumberland-20261106-01/native-source-pages.csv",
+      "bytes": 39360,
+      "sha256": "f164d267c26698b584617f1089bda26d8677d4e4eebb026f640edb009989b9e0",
+      "rows": 218
+    },
+    {
+      "location": "release",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-cumberland-20261106-01/native-unit-candidate-option-results.csv",
+      "bytes": 411144,
+      "sha256": "314c5f3de03a7dbda37128b15d8d7bf211950a79eaddabe88a734416ab91741a",
+      "rows": 1461
+    },
+    {
+      "location": "release",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-cumberland-20261106-01/native-unit-participation.csv",
+      "bytes": 163001,
+      "sha256": "43269d0e36a57fcd8e70d21e72e7b4b59f8997c3fcbffc42142bff18a443b54c",
+      "rows": 118
+    },
+    {
+      "location": "raw",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5a1069b55fbaf3c7acc345adc3bb6130e0ca2dbb/data/county-source-reviews/20261106-cumberland-facts-01/county-candidate-option-results.csv",
+      "bytes": 9059,
+      "sha256": "99ce8acb0008f8d3c65967b417573b86b1862b28c825cf0740763ade63a413ac",
+      "rows": 30
+    },
+    {
+      "location": "raw",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5a1069b55fbaf3c7acc345adc3bb6130e0ca2dbb/data/county-source-reviews/20261106-cumberland-facts-01/county-literal-party-totals.csv",
+      "bytes": 1629,
+      "sha256": "cc727ea7286f9be3c7519d57969fa1f44e92976c149796d18d8c5dd17f6dd9e9",
+      "rows": 19
+    },
+    {
+      "location": "raw",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5a1069b55fbaf3c7acc345adc3bb6130e0ca2dbb/data/county-source-reviews/20261106-cumberland-facts-01/county-participation.csv",
+      "bytes": 1725,
+      "sha256": "88836d367e3682469107cf3ed4275011238964e6d4282c5dbbd459879945f0df",
+      "rows": 1
+    },
+    {
+      "location": "raw",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5a1069b55fbaf3c7acc345adc3bb6130e0ca2dbb/data/county-source-reviews/20261106-cumberland-facts-01/governor-unclassified-ballot-residuals.csv",
+      "bytes": 19560,
+      "sha256": "f38d6fce65175628338720077b447d46454a6ec6a969c5801633a201be95149f",
+      "rows": 119
+    },
+    {
+      "location": "raw",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5a1069b55fbaf3c7acc345adc3bb6130e0ca2dbb/data/county-source-reviews/20261106-cumberland-facts-01/native-reporting-statements.csv",
+      "bytes": 625,
+      "sha256": "feb6d4b31b3d16c50155cd3acb356ade6004a14f42e7f7d0a77a4d398b106bdf",
+      "rows": 2
+    },
+    {
+      "location": "raw",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5a1069b55fbaf3c7acc345adc3bb6130e0ca2dbb/data/county-source-reviews/20261106-cumberland-facts-01/native-source-pages.csv",
+      "bytes": 39360,
+      "sha256": "f164d267c26698b584617f1089bda26d8677d4e4eebb026f640edb009989b9e0",
+      "rows": 218
+    },
+    {
+      "location": "raw",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5a1069b55fbaf3c7acc345adc3bb6130e0ca2dbb/data/county-source-reviews/20261106-cumberland-facts-01/native-unit-candidate-option-results.csv",
+      "bytes": 411144,
+      "sha256": "314c5f3de03a7dbda37128b15d8d7bf211950a79eaddabe88a734416ab91741a",
+      "rows": 1461
+    },
+    {
+      "location": "raw",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5a1069b55fbaf3c7acc345adc3bb6130e0ca2dbb/data/county-source-reviews/20261106-cumberland-facts-01/native-unit-participation.csv",
+      "bytes": 163001,
+      "sha256": "43269d0e36a57fcd8e70d21e72e7b4b59f8997c3fcbffc42142bff18a443b54c",
+      "rows": 118
+    }
+  ]
+}
