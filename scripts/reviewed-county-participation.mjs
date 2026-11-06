@@ -697,6 +697,77 @@ export function loadReviewedSullivanWyomingParticipation(reviews) {
   });
 }
 
+export function loadReviewedBedfordNorthumberlandParticipation(reviews) {
+  return [
+    ['bedford', 'Bedford', '0b5d7f46f4cc3dd4a44805be5b441e8d6132c466481be04066b26ca3f14d2c43',
+      15912, '238a3290697769bc0921d6f20d561961be4ded1d832d6eaa90bc355fab918752',
+      19041, 33079, '57.56', '11/3/2026 9:53:30 PM', 40],
+    ['northumberland', 'Northumberland', '93111db0c6b298d2aff7bb0b8b8a0cddbb58817f81a997c9673161bee4ea8341',
+      16064, '8c4c76b3bc19dd8baa6d188cd25b7c72c8520d68c6da6259d1ac47f989799bc2',
+      28341, 55540, '51.03', '11/03/2026 22:18 PM', 74],
+  ].map(([slug, county, manifestHash, bytes, sha256, ballots, denominator, percentage, clock, units]) => {
+    const id = `pennsylvania-${slug}-20261106-01`;
+    const matches = reviews.filter(review => review.id === id);
+    if (matches.length !== 1) throw new Error(`Missing or duplicated reviewed county source: ${id}`);
+    const review = matches[0], directory = resolve(review.data_directory);
+    const manifest = readFileSync(resolve(directory, 'checksums.json'));
+    if (createHash('sha256').update(manifest).digest('hex') !== manifestHash)
+      throw new Error(`Invalid reviewed county participation: ${id} / checksums.json`);
+    const bedford = slug === 'bedford', parsed = JSON.parse(manifest);
+    const files = { ...(bedford ? Object.fromEntries(parsed.files.map(file => [file.path, file])) : parsed),
+      'complete-query.zip': { bytes, sha256 } };
+    for (const [file, expected] of Object.entries(files)) {
+      const body = readFileSync(resolve(directory, file));
+      if (body.length !== expected.bytes || createHash('sha256').update(body).digest('hex') !== expected.sha256)
+        throw new Error(`Invalid reviewed county participation: ${id} / ${file}`);
+    }
+    const rows = csv(resolve(directory, 'county-participation.csv')), native = rows[0];
+    if (rows.length !== 1 || native.native_county !== `${county} County`
+      || Number(bedford ? native.voters_cast : native.ballots_cast) !== ballots
+      || bedford && Number(native.cards_cast) !== ballots
+      || !bedford && native.election_date !== '2026-11-03'
+      || Number(native.registered_voters) !== denominator || native.native_turnout_pct !== percentage
+      || native.native_report_clock !== clock || native.native_status !== (bedford ? 'Unofficial' : 'UNOFFICIAL RESULTS')
+      || ['native_fips', 'native_timezone'].some(key => native[key] !== '')
+      || ['analysis_rate_approved', 'map_approved'].some(key => native[key] !== 'False'))
+      throw new Error(`Invalid reviewed county participation: ${id}`);
+    const reporting = csv(resolve(directory, 'reporting.csv'));
+    const quality = [
+      'Separately reviewed whole-county participation and the same report registrations, not candidate selections or mail-process receipts.',
+      'Native registered-voter fraction only, not CVAP, VAP, VEP, CPS or demographic turnout; individual ballot modes have no borrowed registration denominator.',
+      'Unofficial status and reported precincts do not establish completed counting or certification. Native clocks have no declared timezone.',
+      'Native FIPS and native approval flags remain unchanged; separate Census contextual identity does not certify 2026 election reporting boundaries.',
+      ...(bedford ? [
+        'Native Voters Cast and Cards Cast both 19,041; 16,138 Election Day + 2,903 Mail-In + explicit zero Provisional. Total is not a fourth additive mode.',
+        'Both complete physical pages, all 12 candidate vectors, four contests and 16 native mode-accounting rows reconcile; literal candidate parties remain separate from participation.',
+        'Native Total Votes excludes separate unresolved write-ins 8/23/34/339; do not add them again or infer their allocation to under/overvotes.',
+        'Mode registrations are missing; separately rounded native mode rates need not sum to the separately rounded aggregate.',
+      ] : [
+        'Native Ballots Cast - Total 28,341 includes 24,393 Election Day + 3,948 Mail/Absentee + explicit zero Provisional; 28 blank ballots are already included.',
+        'All three complete physical pages, 23 candidate/option vectors, six contests and 24 mode-accounting rows reconcile; native mode registrations and rates are missing.',
+        'Vote For 7 city commission totals 9,450 Contest Totals / 5,588 Total Votes Cast are not county ballots or unique city voters; subcounty electorates are not added.',
+        'All contest-total residuals are unclassified, not native undervotes, overvotes or missing people; do not subtract county blank ballots to invent an accounting category.',
+        'The mixed 11/03/2026 22:18 PM source clock is preserved literally without normalized UTC or timezone inference.',
+      ]),
+    ];
+    const updates = [{ source: 'county summary', native_update_literal: clock, declared_timezone: null }];
+    return {
+      year: 2026, state_code: 'PA', county_id: `reviewed:PA:${county}`, county,
+      geography_level: 'county', ballots, denominator, denominator_basis: 'native_registered_voters',
+      participation_measure_literal: bedford ? 'Voters Cast' : 'Ballots Cast - Total',
+      reported_pct: 100 * ballots / denominator, native_printed_pct: `${percentage}%`,
+      source_status_literal: native.native_status, reported_units: units, total_units: units,
+      source_rows: 1, maps_approved: false, review_id: id, native_record: native,
+      native_source_updates: updates,
+      source_update_label: `county summary: ${clock} (timezone not declared)`,
+      source_reporting_label: reporting.map(row =>
+        `${row.scope ?? row.native_scope}: ${row.reported}/${row.total}`).join('; ') + '; ' + quality.join(' '),
+      quality, source_url: `${review.base_url}county-participation.csv`,
+      complete_download_url: review.complete_download_url,
+    };
+  });
+}
+
 export function loadReviewedCountyParticipation(reviews) {
   const observations = [], seen = new Set();
   for (const [id, ballotField, denominatorField, printedField, code, names] of profiles) {
@@ -1069,5 +1140,6 @@ export function loadReviewedCountyParticipation(reviews) {
     ...loadGeorgiaParticipation(reviews).counties, ...loadReviewedMinnesotaParticipation(reviews),
     ...loadLawrenceParticipation(reviews), ...loadHuntingdonParticipation(reviews),
     ...loadReviewedAdditionalPennsylvaniaParticipation(reviews), ...loadReviewedSomersetParticipation(reviews),
-    ...loadReviewedSusquehannaParticipation(reviews), ...loadReviewedSullivanWyomingParticipation(reviews)];
+    ...loadReviewedSusquehannaParticipation(reviews), ...loadReviewedSullivanWyomingParticipation(reviews),
+    ...loadReviewedBedfordNorthumberlandParticipation(reviews)];
 }

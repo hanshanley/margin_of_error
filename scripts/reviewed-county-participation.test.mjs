@@ -5,12 +5,15 @@ import { join } from 'node:path';
 import test from 'node:test';
 import { parse } from 'csv-parse/sync';
 import { gunzipSync } from 'node:zlib';
-import { loadReviewedCountyParticipation as loadAllReviewedCountyParticipation, loadReviewedStatewideParticipation,
+import { loadReviewedCountyParticipation as loadCurrentReviewedCountyParticipation, loadReviewedStatewideParticipation,
   loadReviewedMinnesotaParticipation, loadReviewedAdditionalPennsylvaniaParticipation,
   loadReviewedSomersetParticipation, loadReviewedSusquehannaParticipation,
-  loadReviewedSullivanWyomingParticipation } from './reviewed-county-participation.mjs';
+  loadReviewedSullivanWyomingParticipation, loadReviewedBedfordNorthumberlandParticipation } from './reviewed-county-participation.mjs';
 
 const reviews = JSON.parse(readFileSync('public/participation-source-reviews.json', 'utf8')).reviews;
+const newCountyIds = ['pennsylvania-bedford-20261106-01', 'pennsylvania-northumberland-20261106-01'];
+const loadAllReviewedCountyParticipation = sourceReviews =>
+  loadCurrentReviewedCountyParticipation(sourceReviews).filter(row => !newCountyIds.includes(row.review_id));
 const additionalId = 'pennsylvania-three-additional-summaries-20261106-01';
 const somersetId = 'pennsylvania-somerset-20261106-01';
 const susquehannaId = 'pennsylvania-susquehanna-20261106-01';
@@ -22,6 +25,85 @@ const loadReviewedCountyParticipation = sourceReviews =>
 const batchCounties = ['Juniata', 'Mercer', 'Montour', 'Columbia', 'Greene', 'Lycoming'];
 const isBatch = row => ['CA', 'GA', 'MN'].includes(row.state_code)
   || row.state_code === 'PA' && [...batchCounties, 'Lawrence', 'Huntingdon'].includes(row.county);
+
+test('Bedford/Northumberland preserve all 365 prior native records and add only genuine county participation', () => {
+  const rows = loadCurrentReviewedCountyParticipation(reviews);
+  const previous = JSON.parse(gunzipSync(readFileSync(
+    'public/participation-county-context/20261106-21/complete-source-records.json.gz')));
+  const native = previous.filter(row => rows.some(current =>
+    current.county_id === row.county_id && current.state_code === row.state_code));
+  assert.equal(native.length, 365);
+  assert.deepEqual(rows.filter(row => !newCountyIds.includes(row.review_id)), native);
+  assert.equal(rows.length, 367);
+  assert.equal(rows.filter(row => row.state_code === 'PA').length, 43);
+  const added = loadReviewedBedfordNorthumberlandParticipation(reviews);
+  assert.deepEqual(added.map(row => [row.county, row.ballots, row.denominator, row.native_printed_pct]), [
+    ['Bedford', 19041, 33079, '57.56%'], ['Northumberland', 28341, 55540, '51.03%'],
+  ]);
+  for (const row of added) {
+    assert.equal(row.reported_pct, 100 * row.ballots / row.denominator);
+    assert.equal(row.denominator_basis, 'native_registered_voters');
+    assert.equal(row.maps_approved, false);
+    assert.equal(row.native_record.native_fips, '');
+    assert.equal(row.native_record.native_timezone, '');
+    assert.equal(row.native_record.analysis_rate_approved, 'False');
+    assert.equal(row.native_record.map_approved, 'False');
+    assert.deepEqual(row.native_source_updates.map(update => update.declared_timezone), [null]);
+    assert.match(row.source_reporting_label, /not candidate selections/);
+    assert.match(row.source_reporting_label, /do not establish completed counting or certification/);
+  }
+});
+
+test('Bedford/Northumberland retain native clocks, missingness and nonadditive contest quantities', () => {
+  const [bedford, northumberland] = loadReviewedBedfordNorthumberlandParticipation(reviews);
+  assert.equal(bedford.participation_measure_literal, 'Voters Cast');
+  assert.equal(bedford.native_record.cards_cast, '19041');
+  assert.equal(bedford.source_status_literal, 'Unofficial');
+  assert.match(bedford.source_update_label, /11\/3\/2026 9:53:30 PM \(timezone not declared\)/);
+  assert.match(bedford.source_reporting_label, /unresolved write-ins 8\/23\/34\/339; do not add them again/);
+  assert.equal(northumberland.participation_measure_literal, 'Ballots Cast - Total');
+  assert.equal(northumberland.native_record.blank_ballots, '28');
+  assert.equal(northumberland.native_record.native_undervotes, '');
+  assert.equal(northumberland.native_record.native_overvotes, '');
+  assert.equal(northumberland.source_status_literal, 'UNOFFICIAL RESULTS');
+  assert.match(northumberland.source_update_label, /11\/03\/2026 22:18 PM \(timezone not declared\)/);
+  assert.match(northumberland.source_reporting_label, /9,450 Contest Totals \/ 5,588 Total Votes Cast are not county ballots or unique city voters/);
+  assert.match(northumberland.source_reporting_label, /unclassified, not native undervotes/);
+  assert.match(northumberland.source_reporting_label, /native mode registrations and rates are missing/);
+});
+
+test('Bedford/Northumberland reject complete-input changes and expose every immutable numerical asset', () => {
+  for (const id of newCountyIds) {
+    const original = reviews.find(row => row.id === id);
+    const directory = mkdtempSync(join(tmpdir(), 'bedford-northumberland-participation-'));
+    try {
+      const manifest = JSON.parse(readFileSync(join(original.data_directory, 'checksums.json')));
+      const files = ['checksums.json', 'complete-query.zip',
+        ...(manifest.files ? manifest.files.map(row => row.path) : Object.keys(manifest))];
+      for (const file of files) copyFileSync(join(original.data_directory, file), join(directory, file));
+      const altered = reviews.map(row => row === original ? { ...row, data_directory: directory } : row);
+      for (const changed of ['county-participation.csv', 'source-inputs.json', 'candidate-results.csv',
+        'contest-accounting.csv', 'source-pages.csv', 'reporting.csv', 'checksums.json', 'complete-query.zip']) {
+        writeFileSync(join(directory, changed), Buffer.concat([readFileSync(join(directory, changed)), Buffer.from('\n')]));
+        assert.throws(() => loadReviewedBedfordNorthumberlandParticipation(altered), /Invalid reviewed county participation/);
+        copyFileSync(join(original.data_directory, changed), join(directory, changed));
+      }
+      for (const registrations of [reviews.filter(row => row !== original), [...reviews, original]])
+        assert.throws(() => loadReviewedBedfordNorthumberlandParticipation(registrations), /Missing or duplicated reviewed county source/);
+      const slug = id.split('-')[1];
+      const publication = JSON.parse(readFileSync(
+        `data/county-source-reviews/20261106-${slug}-native-publication-01/published-verification.json`));
+      assert.equal(publication.immutable, true);
+      assert.equal(publication.all_16_files_reproduce_exactly, true);
+      assert.deepEqual([...original.tables.map(row => row.file), 'complete-query.zip'].sort(),
+        publication.assets.map(row => row.file).sort());
+      assert.equal(original.complete_download_sha256,
+        publication.assets.find(row => row.file === 'complete-query.zip').sha256);
+    } finally {
+      rmSync(directory, { recursive: true, force: true });
+    }
+  }
+});
 
 test('Sullivan/Wyoming preserve all 363 prior native records and only add registered-voter fractions', () => {
   const rows = loadAllReviewedCountyParticipation(reviews);

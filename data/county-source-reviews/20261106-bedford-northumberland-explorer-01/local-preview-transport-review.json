@@ -1,0 +1,32 @@
+{
+  "checked_at_utc": "2026-11-06T18:34:50.858273+00:00",
+  "path": "participation-local/AL.json.gz",
+  "responses": [
+    {
+      "base_url": "http://127.0.0.1:7438",
+      "status": 200,
+      "content_type": "application/gzip",
+      "content_encoding": null,
+      "bytes": 5503,
+      "sha256": "5bfc72b0c112b15f09cae543fc7b81d45fcfeec308d91ea04a1bb20976992554",
+      "raw_compressed_body": true,
+      "compressed_bytes_equal_new_preparation": true,
+      "entire_decoded_json_matches_prepared": true
+    },
+    {
+      "base_url": "https://www.themarginoferror.com",
+      "status": 200,
+      "content_type": "application/gzip",
+      "content_encoding": null,
+      "bytes": 5503,
+      "sha256": "cff6df89fe80d1dabddb1d8664e56da6da0d3cdab3eebdc38227a2e90461d006",
+      "raw_compressed_body": true,
+      "compressed_bytes_equal_new_preparation": false,
+      "entire_decoded_json_matches_prepared": true
+    }
+  ],
+  "failed_astro_preview_behavior": "Astro preview adds Content-Encoding: gzip; the browser decompresses before the existing explicit DecompressionStream, causing local-only empty additional county rows.",
+  "resolution": "Use a bounded static HTTP server matching actual raw compressed Pages delivery. No application or frozen source change.",
+  "qualification": "The live compressed wrapper belongs to the previous deployed build; do not require new and old gzip wrappers to be byte-identical. Their entire decoded JSON is compared. The exact new deployment requires its own original artifact and public byte proof.",
+  "failed_browser_log_retained_privately": true
+}

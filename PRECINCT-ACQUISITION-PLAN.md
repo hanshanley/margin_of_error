@@ -2,7 +2,7 @@
 
 ## Current verified production and next acquisition
 
-**November 6: Bedford/Northumberland context22 prepared; not LIVE.**
+**November 6: Bedford/Northumberland context22 published; genuine UI validated, not LIVE.**
 Both complete native numerical packages are immutable and fully verified in
 draft and public phases. Both counties independently match both entire Census
 inventories and the unchanged previously hosted 2024 contextual geometry.
@@ -16,8 +16,35 @@ The complete **32-file / 31-member** context query passes standalone verificatio
 review SHA-256 **`dcfa7f91c7d9c6e79b5662272980a7b79aa302e0271c3c6f9f8c87f9e516e3d6`**,
 ZIP **2,914,674 bytes / SHA-256
 `25b497b65e781cb17755f9978d03a6e5127bbb2bc0bf094425b8b2314e6f38d6`**.
-Context publication and genuine UI integration are next; the frozen previous
-prepared artifact has not been rebuilt as a queue-failure workaround.
+Immutable context release **436845805**, source
+**`4f8c93d70a6d405519789ee4c5f7a631749e3829`**, passes both draft and public
+verification: all four entire release assets, all 32 commit-pinned files, 31
+actual ZIP members and byte-identical complete offline reproduction. Exact
+credential jobs **42270772234 review / 42270772394 tag** both pass.
+
+The genuine UI now retains the entire prior registry and every download while
+adding both native rows, the pinned context22 pointer/router and focused
+preservation tests. All **100 focused tests**, Astro check (**zero errors/warnings**)
+and the full build pass. Exact local preparation verifies **354 complete
+byte-identical relocations** and measures **962,572,485 bytes**; this is not yet a
+hosted-size measurement. Regeneration changes only the compatibility app and its
+manifest entry; all other **114 complete manifest entries** remain unchanged.
+All **seven local browser scenarios** pass: **1,232 complete records / 367 native
+rows / 748 county observations / 361 fractions / 387 missing rates / 858 download
+anchors / 854 distinct URLs**. Every **1,228 prior complete records / 363 prior
+native rows / 802 prior anchors / 18 entire imports / historical years / 52 UF
+rows** remains unchanged. Both new county selections retain literal source clocks,
+counting qualifications, distinct participation measures and nonadditive contest
+totals. An initial local Astro-preview failure was traced to automatic gzip
+decoding; the exact static preview matches actual raw-GZIP Pages transport and
+the entire decoded county JSON. Both failed private logs are retained; no
+application, source or artifact exception was introduced. Temporary helpers
+are stopped. The unrelated existing UK topic-card-count validator failure is
+not represented as a passing full-site suite.
+The earlier frozen artifact was not rebuilt as a queue-failure workaround.
+No new Pages run has started. Exact original hosted artifact bytes/digest,
+actual hosted size, all **470 selected entire public files / 444 prior paths**
+and seven production browsers remain required before any LIVE claim.
 
 **November 6: Sullivan/Wyoming context21 UI validated; exact deployment blocked, not LIVE.**
 Corrected native release **436805438 / `b0ae6c0`** and complete context21
@@ -60,9 +87,8 @@ public files** including all **444 previous paths**, **335 relocations** and
 **seven production browsers** before a LIVE claim. Do not rebuild prepared
 `dist/` while that verifier runs. Persist production proofs on the review branch,
 not through an audit-only main push. Context20 below remains the verified LIVE
-baseline. **Next:** preserve the Bedford source and Census proofs, review the
-newly recovered Northumberland original below, then prepare a genuine county
-integration without repeating completed source acquisitions. Schedule #5 and
+baseline. **Next:** finish the genuine context22 integration above without
+repeating completed source acquisitions or retrying this failed revision. Schedule #5 and
 external security-remediation blockers remain unchanged.
 
 **November 6: Bedford complete native query published; UI integration pending.**

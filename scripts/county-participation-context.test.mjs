@@ -5,8 +5,11 @@ import { gunzipSync } from 'node:zlib';
 import { contextualCountyRows } from '../public/scripts/participation-county-context.js';
 import { createCountyContextReview, loadCountyContextReview } from './build-county-participation-context.mjs';
 import { loadAdditionalParticipation } from './additional-participation.mjs';
-import { loadReviewedCountyParticipation as loadAllReviewedCountyParticipation, loadReviewedMinnesotaParticipation } from './reviewed-county-participation.mjs';
+import { loadReviewedCountyParticipation as loadCurrentReviewedCountyParticipation, loadReviewedMinnesotaParticipation } from './reviewed-county-participation.mjs';
 
+const newCountyIds = ['pennsylvania-bedford-20261106-01', 'pennsylvania-northumberland-20261106-01'];
+const loadAllReviewedCountyParticipation = reviews =>
+  loadCurrentReviewedCountyParticipation(reviews).filter(row => !newCountyIds.includes(row.review_id));
 const additionalId = 'pennsylvania-three-additional-summaries-20261106-01';
 const somersetId = 'pennsylvania-somerset-20261106-01';
 const susquehannaId = 'pennsylvania-susquehanna-20261106-01';
@@ -33,6 +36,52 @@ const copy = value => structuredClone(value);
 const match = (rows, candidateReview = review, code = 'AL', collection = collections[code]) =>
   contextualCountyRows(rows, candidateReview, collection, code, review.context_base_url, review.geometry[code].file);
 
+test('context22 preserves every prior record, join, exclusion and geometry while adding only two county fractions', async () => {
+  const nextRoot = new URL('../public/participation-county-context/20261106-22/', import.meta.url);
+  const priorRoot = new URL('../public/participation-county-context/20261106-21/', import.meta.url);
+  const next = JSON.parse(readFileSync(new URL('review.json', nextRoot)));
+  const prior = JSON.parse(readFileSync(new URL('review.json', priorRoot)));
+  const nextRecords = JSON.parse(gunzipSync(readFileSync(new URL('complete-source-records.json.gz', nextRoot))));
+  const priorRecords = JSON.parse(gunzipSync(readFileSync(new URL('complete-source-records.json.gz', priorRoot))));
+  const current = [...loadAdditionalParticipation().counties,
+    ...loadCurrentReviewedCountyParticipation(JSON.parse(readFileSync('public/participation-source-reviews.json')).reviews)];
+  assert.deepEqual(nextRecords, current);
+  assert.deepEqual(nextRecords.filter(row => !newCountyIds.includes(row.review_id)), priorRecords);
+  assert.deepEqual(next.observations.filter(row => !newCountyIds.includes(row.review_id)), prior.observations);
+  assert.deepEqual(next.excluded, prior.excluded);
+  assert.deepEqual(next.geometry, prior.geometry);
+  for (const entry of Object.values(prior.geometry))
+    assert.deepEqual(readFileSync(new URL(entry.file, nextRoot)), readFileSync(new URL(entry.file, priorRoot)));
+  const loaded = loadCountyContextReview(current);
+  assert.deepEqual(loaded.coverage.PA, { counties: 43, rates: 40 });
+  assert.equal(loaded.base_url, '/participation-county-context/20261106-22/');
+  assert.deepEqual(next.counts, { complete_source_records: 1232, contextual_joins: 748, jurisdictions: 18,
+    reviewed_rates: 361, missing_rates: 387, excluded_municipalities: 286, excluded_missing_county_totals: 198 });
+  const collection = JSON.parse(readFileSync(new URL(next.geometry.PA.file, nextRoot)));
+  const rows = await contextualCountyRows(current.filter(row => row.state_code === 'PA'), next,
+    collection, 'PA', next.context_base_url, next.geometry.PA.file);
+  for (const [geoid, county, ballots, denominator] of [
+    ['42009', 'Bedford', 19041, 33079], ['42097', 'Northumberland', 28341, 55540],
+  ]) {
+    const row = rows.get(geoid);
+    assert.equal(row.county, county);
+    assert.equal(row.ballots, ballots);
+    assert.equal(row.denominator, denominator);
+    assert.equal(row.reported_pct, 100 * ballots / denominator);
+    assert.equal(row.maps_approved, false);
+    assert.equal(row.native_record.native_fips, '');
+    assert.equal(row.native_record.analysis_rate_approved, 'False');
+    assert.equal(next.observations.find(row => row.contextual_geoid === geoid).boundary_year, 2024);
+  }
+  const publication = JSON.parse(readFileSync(
+    'data/county-source-reviews/20261106-bedford-northumberland-explorer-01/context22-published-verification.json'));
+  assert.equal(publication.immutable, true);
+  assert.equal(publication.all_32_files_reproduce_exactly, true);
+  assert.equal(publication.entire_assets.length, 4);
+  assert.equal(publication.commit_pinned_files.length, 32);
+  assert.throws(() => loadCountyContextReview(priorRecords), /complete current source records/);
+});
+
 test('Sullivan/Wyoming context21 preserves all context20 records, joins, exclusions and geometry', async () => {
   const nextRoot = new URL('../public/participation-county-context/20261106-21/', import.meta.url);
   const priorRoot = new URL('../public/participation-county-context/20261106-20/', import.meta.url);
@@ -49,9 +98,7 @@ test('Sullivan/Wyoming context21 preserves all context20 records, joins, exclusi
   assert.deepEqual(next.geometry, prior.geometry);
   for (const entry of Object.values(prior.geometry))
     assert.deepEqual(readFileSync(new URL(entry.file, nextRoot)), readFileSync(new URL(entry.file, priorRoot)));
-  const loaded = loadCountyContextReview(live);
-  assert.deepEqual(loaded.coverage.PA, { counties: 41, rates: 38 });
-  assert.equal(loaded.base_url, '/participation-county-context/20261106-21/');
+  assert.throws(() => loadCountyContextReview(live), /complete current source records/);
   assert.deepEqual(next.counts, { complete_source_records: 1230, contextual_joins: 746, jurisdictions: 18,
     reviewed_rates: 359, missing_rates: 387, excluded_municipalities: 286, excluded_missing_county_totals: 198 });
   const collection = JSON.parse(readFileSync(new URL(next.geometry.PA.file, nextRoot)));

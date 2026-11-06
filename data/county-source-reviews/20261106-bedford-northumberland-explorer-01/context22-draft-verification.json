@@ -1,0 +1,45 @@
+{
+  "checked_at_utc": "2026-11-06T18:27:54.609805+00:00",
+  "revision": "4f8c93d70a6d405519789ee4c5f7a631749e3829",
+  "tag": "voter-county-participation-context-20261106-22",
+  "release_id": 436845805,
+  "phase": "draft",
+  "immutable": false,
+  "entire_assets": [
+    {
+      "file": "complete-county-participation-context-22.zip",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-3d1a7f41112ffc7f987e/complete-county-participation-context-22.zip",
+      "bytes": 2914674,
+      "sha256": "25b497b65e781cb17755f9978d03a6e5127bbb2bc0bf094425b8b2314e6f38d6"
+    },
+    {
+      "file": "complete-source-records.json.gz",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-3d1a7f41112ffc7f987e/complete-source-records.json.gz",
+      "bytes": 140977,
+      "sha256": "abc223a143b49b4e03ef2055ef79c412621397a3f00b9fd175dba393e5e0d3fa"
+    },
+    {
+      "file": "county-participation-joins.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-3d1a7f41112ffc7f987e/county-participation-joins.csv",
+      "bytes": 483092,
+      "sha256": "357df7c271c45e08470369db56c7f6682f5fe3d90691bb257bf6bdab44bbca76"
+    },
+    {
+      "file": "review.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-3d1a7f41112ffc7f987e/review.json",
+      "bytes": 1150504,
+      "sha256": "dcfa7f91c7d9c6e79b5662272980a7b79aa302e0271c3c6f9f8c87f9e516e3d6"
+    }
+  ],
+  "extracted_verification": {
+    "complete_source_records": 1232,
+    "contextual_joins": 748,
+    "jurisdictions": 18,
+    "reviewed_rates": 361,
+    "missing_rates": 387,
+    "excluded_municipalities": 286,
+    "excluded_missing_county_totals": 198
+  },
+  "zip_members": 31,
+  "all_32_files_reproduce_exactly": true
+}

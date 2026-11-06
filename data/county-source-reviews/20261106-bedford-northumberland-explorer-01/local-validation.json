@@ -1,0 +1,49 @@
+{
+  "verified_at_utc": "2026-11-06T18:35:18.154058+00:00",
+  "focused_tests": [
+    {
+      "log": "bedford-northumberland-ui-native-tests-01.log",
+      "passed_tests": 58,
+      "failed_tests": 0,
+      "sha256": "d0e7c08c52fda69bb85f812b797c43e46d8bf9957631e97aa9b02b8373118366"
+    },
+    {
+      "log": "bedford-northumberland-ui-focused-tests-01.log",
+      "passed_tests": 42,
+      "failed_tests": 0,
+      "sha256": "6fb2d1c2b393725a262bb4e6a93ad41aed200b303b167ca47a5ca4b92455d72d"
+    }
+  ],
+  "astro_check": {
+    "errors": 0,
+    "warnings": 0,
+    "sha256": "1d55cfde5a0be70111f5fac058443e57a037e35bb1d032fbfd157c61fb7c084c"
+  },
+  "full_build": {
+    "passed": true,
+    "included_tests": 4,
+    "sha256": "a3a3f7be93843242809211a2646a3d174537514fae843864f4c078a118b2204a"
+  },
+  "preparation": {
+    "actual_local_bytes": 962572485,
+    "complete_byte_identical_relocations": 354,
+    "sha256": "2f6c5ed8d34a439f66f36828c5cadce65e12505914c0bebc541957177ea811f8"
+  },
+  "local_browser": {
+    "proof": "local-browser.json",
+    "scenarios": 7,
+    "prior_complete_records_preserved": 1228,
+    "complete_current_records": 1232,
+    "native_records": 367,
+    "county_observations": 748,
+    "registered_voter_fractions": 361,
+    "missing_rates": 387,
+    "prior_download_anchors_preserved": 802,
+    "complete_current_download_anchors": 858,
+    "unique_download_urls": 854
+  },
+  "transport_review": "local-preview-transport-review.json",
+  "temporary_preview_helpers_stopped": true,
+  "full_site_validator_not_rerun": "Known unrelated UK topic-card count mismatch (23 versus 16) at scripts/validate-build.mjs:1126; no claim that npm test or the broad validator passed.",
+  "scope": "Genuine two-county UI integration, not a failed-queue rebuild workaround. Neither deployment success, hosted size nor nationwide completeness is claimed. Exact original artifact and public byte/browser verification remain required."
+}
