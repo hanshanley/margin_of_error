@@ -1270,8 +1270,19 @@ is **35,176 bytes**, SHA-256
 `db524c09653ecdf29a809627d9bff724b70a0e35eb4d9a106f0c6ce6ba3ee607`.
 Full primary, private-original hash, all-file and ZIP proofs are under
 `data/county-source-reviews/20261106-cameron-primary-review-01/`.
-Cameron publication/anonymous byte checks and Carbon's full factual query
-remain pending; neither new county is released or integrated into the live UI.
+Cameron facts **`11bd5bd9db09e679dc970514b5d72f283a5bf788`** and fixed
+release `voter-county-pennsylvania-cameron-20261106-01` / **436209663**
+are published. All fifteen entire release assets, fifteen pinned files and
+fourteen complete ZIP members pass anonymous byte equality and extracted
+offline reproduction at `2026-11-06T07:21:02.633597+00:00`. The actual tag
+commit is independently verified against the facts SHA; the release's generic
+`target_commitish: main` metadata is not used as revision evidence.
+Exact tag credential run **42180182105** and review run **42180180088**
+both pass. GitHub reports `immutable:false`: fixed checksums/never overwrite,
+not host-enforced locking. Complete publication evidence is under
+`data/county-source-reviews/20261106-cameron-publication-01/`.
+Carbon's complete factual query and both county explorer integrations remain
+pending; neither new county is integrated into the live UI.
 Private acquisition and engine proofs are in
 `pa-cameron-carbon-primary-20261106-01`,
 `pa-carbon-declared-reports-20261106-01` and
