@@ -1381,7 +1381,7 @@ Maine's unresolved 130 votes,
 blanks/write-ins and municipal-other gap, and D.C.'s separate accounting gap,
 remain unresolved; schedule 5 continues remaining primary county acquisition.
 
-**November 6 Elk and Forest: complete factual queries published; context 05 prepared.**
+**November 6 Elk and Forest: complete factual queries and context 05 published.**
 The actual Elk parent declares a two-page county summary, 58-page unit
 statement and separate one-page Act 88 scan. All 60 text pages independently
 match across both PDF engines by complete token multisets and parsed vectors;
@@ -1455,8 +1455,20 @@ the full review is 754,479 bytes, SHA-256
 `80ca5bfd63bb97edc89c9e0b92c1d3a26372f865c4196bf5d8a3826a490383ad`.
 The 23 reviewed-participation loader tests pass, including exact preservation
 and rejection of candidate/receipt substitution, invented modes, completed
-counting and wrong physical page identity. Context 05 release publication and
-explorer integration remain pending; neither new county is called live.
+counting and wrong physical page identity. Context 05 facts
+`da61ba92ea153fedd3b0369ccefe5310ea4a1347` and fixed release
+`voter-county-participation-context-20261106-05` / **436233372** are
+published. At `2026-11-06T07:53:38.400534+00:00`, all four complete release
+assets, 29 commit-pinned files, 28 ZIP members and extracted offline
+verification and byte-identical archive reproduction pass. Actual tag commit
+and release target match independently. Exact credential runs **42183847483**
+(tag) and **42183789851** (review branch) pass. This is fixed-checksum and
+never-overwrite publication, not host-enforced locking. Complete release and
+credential proofs are under
+`data/county-source-reviews/20261106-elk-forest-explorer-01/`.
+All **50** affected tests and Astro check pass for the prepared UI changes;
+build and seven browser checks remain pending until the earlier production
+comparison releases its frozen build. Neither new county is called live.
 
 The earlier Cameron/Carbon UI `e8cc10a` built successfully, but Pages
 **42181777067 attempt 1** timed out after ten minutes in `syncing_files`.

@@ -1,0 +1,359 @@
+{
+  "verified_at_utc": "2026-11-06T07:53:38.400534+00:00",
+  "facts_revision": "da61ba92ea153fedd3b0369ccefe5310ea4a1347",
+  "resolved_actual_tag_commit": "da61ba92ea153fedd3b0369ccefe5310ea4a1347",
+  "release_id": 436233372,
+  "tag": "voter-county-participation-context-20261106-05",
+  "immutable": false,
+  "assets": [
+    {
+      "file": "complete-county-participation-context-05.zip",
+      "bytes": 2214466,
+      "sha256": "116c145e5459bf1fa67bb36ab4709d269729c5398487f2e9c416e9e96c6fa79a",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-05/complete-county-participation-context-05.zip",
+      "anonymous_full_bytes_equal": true
+    },
+    {
+      "file": "complete-source-records.json.gz",
+      "bytes": 78762,
+      "sha256": "74d62eece6e60b1ee9378683c74752ae0a12ee9423018d566703bf5d9ed7a9c0",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-05/complete-source-records.json.gz",
+      "anonymous_full_bytes_equal": true
+    },
+    {
+      "file": "county-participation-joins.csv",
+      "bytes": 280661,
+      "sha256": "20e95c469b65e15af5b7346ed3668bd4de8826d0eeeb84613557f0b7c4542846",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-05/county-participation-joins.csv",
+      "anonymous_full_bytes_equal": true
+    },
+    {
+      "file": "review.json",
+      "bytes": 754479,
+      "sha256": "80ca5bfd63bb97edc89c9e0b92c1d3a26372f865c4196bf5d8a3826a490383ad",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-05/review.json",
+      "anonymous_full_bytes_equal": true
+    }
+  ],
+  "pinned_files": [
+    {
+      "file": "checksums.json",
+      "bytes": 3886,
+      "sha256": "2be4e2eaad4540568b3dd9a27af1c817db4735372b8390a3140921dcc686d071",
+      "complete_commit_pinned_bytes_equal": true
+    },
+    {
+      "file": "complete-2024-county-identities.json.gz",
+      "bytes": 144580,
+      "sha256": "f55f8c9959d056d26e9bfa6b344e9ea564cfc5688b7f7f8b8a2ce8b34f9439ac",
+      "complete_commit_pinned_bytes_equal": true
+    },
+    {
+      "file": "complete-2026-county-identities.json.gz",
+      "bytes": 155774,
+      "sha256": "cd12a54467a4ad54e9213d541b5a0563655ef41f3f193ed5804c75df51bf3150",
+      "complete_commit_pinned_bytes_equal": true
+    },
+    {
+      "file": "complete-county-participation-context-05.zip",
+      "bytes": 2214466,
+      "sha256": "116c145e5459bf1fa67bb36ab4709d269729c5398487f2e9c416e9e96c6fa79a",
+      "complete_commit_pinned_bytes_equal": true
+    },
+    {
+      "file": "complete-source-records.json.gz",
+      "bytes": 78762,
+      "sha256": "74d62eece6e60b1ee9378683c74752ae0a12ee9423018d566703bf5d9ed7a9c0",
+      "complete_commit_pinned_bytes_equal": true
+    },
+    {
+      "file": "county-participation-joins.csv",
+      "bytes": 280661,
+      "sha256": "20e95c469b65e15af5b7346ed3668bd4de8826d0eeeb84613557f0b7c4542846",
+      "complete_commit_pinned_bytes_equal": true
+    },
+    {
+      "file": "gazetteer-2024-national-counties.zip",
+      "bytes": 141679,
+      "sha256": "3c337402b5c6e8d5aa26b4278ccf4edc8989f2683765b3ffbf22296cdb2df3a0",
+      "complete_commit_pinned_bytes_equal": true
+    },
+    {
+      "file": "gazetteer-2026-national-counties.zip",
+      "bytes": 139190,
+      "sha256": "6a99ca00efbc0be5112e225d4102704c51d5ce3b16e3afd6e4159460595fd12a",
+      "complete_commit_pinned_bytes_equal": true
+    },
+    {
+      "file": "geometry-verification.json",
+      "bytes": 107466,
+      "sha256": "4885ab9733e31d29b87bda677e635dc54abef40a70a0e50c85091e41de110ef8",
+      "complete_commit_pinned_bytes_equal": true
+    },
+    {
+      "file": "geometry/county-AL.geojson",
+      "bytes": 370354,
+      "sha256": "67b03de3aa281430aeae575360c932074111be88289c081ec80d978067e095ec",
+      "complete_commit_pinned_bytes_equal": true
+    },
+    {
+      "file": "geometry/county-AR.geojson",
+      "bytes": 422329,
+      "sha256": "addb5be81e6694681a8edb96575c29cf014158e50ae189facbd96f76892a8e2a",
+      "complete_commit_pinned_bytes_equal": true
+    },
+    {
+      "file": "geometry/county-AZ.geojson",
+      "bytes": 195541,
+      "sha256": "0837a91e1b1ae37535b1256afe90ab70955b50872c98f9133a4e56b843252eec",
+      "complete_commit_pinned_bytes_equal": true
+    },
+    {
+      "file": "geometry/county-DC.geojson",
+      "bytes": 1724,
+      "sha256": "e111ef8f1b7ab1873b096c6075e63ddc5aa1ae370def71ee8523a2a7b2f3b002",
+      "complete_commit_pinned_bytes_equal": true
+    },
+    {
+      "file": "geometry/county-FL.geojson",
+      "bytes": 494363,
+      "sha256": "d8d21d51dd475bc23c1b10fa0aa151b1591f1c681dfa9c31ce8d94f1b4713f47",
+      "complete_commit_pinned_bytes_equal": true
+    },
+    {
+      "file": "geometry/county-IA.geojson",
+      "bytes": 102952,
+      "sha256": "c4ae2cd4fbac01725cfcf4d9e20815d41c149044a9b73665903135d34561e8ee",
+      "complete_commit_pinned_bytes_equal": true
+    },
+    {
+      "file": "geometry/county-KY.geojson",
+      "bytes": 844982,
+      "sha256": "f9d2e0f8bd3e72f22d7ff6a530450d6e5e5bbad83f5dd02c32648a3207ef5eac",
+      "complete_commit_pinned_bytes_equal": true
+    },
+    {
+      "file": "geometry/county-MO.geojson",
+      "bytes": 285841,
+      "sha256": "b9b8a05f01088fdcabb2c0aaf52f1dbd325282481a76454a2bd428a33b11795c",
+      "complete_commit_pinned_bytes_equal": true
+    },
+    {
+      "file": "geometry/county-NJ.geojson",
+      "bytes": 139257,
+      "sha256": "489eabbafe98495645d95ddb65581f5204b3bd7871b001d02d3aaa3ffa11733b",
+      "complete_commit_pinned_bytes_equal": true
+    },
+    {
+      "file": "geometry/county-NV.geojson",
+      "bytes": 72248,
+      "sha256": "f67a18f6d0ca4799ba9579f3628054282411310987f64378ec41cbc5fefe28c4",
+      "complete_commit_pinned_bytes_equal": true
+    },
+    {
+      "file": "geometry/county-OR.geojson",
+      "bytes": 297700,
+      "sha256": "86f79f21252fdeef6d5c06525f909e2578f6119c158bfe10b51fecb72609e6eb",
+      "complete_commit_pinned_bytes_equal": true
+    },
+    {
+      "file": "geometry/county-PA.geojson",
+      "bytes": 298398,
+      "sha256": "02c17862c97cddf64a70ade6596e11c7bd8fe5707ba83bca3910172354b9b58a",
+      "complete_commit_pinned_bytes_equal": true
+    },
+    {
+      "file": "geometry/county-VA.geojson",
+      "bytes": 840683,
+      "sha256": "825295417afcfafdd28dd7856edda31cdc0dc8a0d7c9b00abafdac90c38176da",
+      "complete_commit_pinned_bytes_equal": true
+    },
+    {
+      "file": "geometry/county-WA.geojson",
+      "bytes": 395414,
+      "sha256": "b7170c2d2ea13d6ddc1541ea184b5cae1135412be35c041149e5aa8a09eb55f8",
+      "complete_commit_pinned_bytes_equal": true
+    },
+    {
+      "file": "geometry/county-WY.geojson",
+      "bytes": 96180,
+      "sha256": "19eca7f10211ad57da4589ef2969d8817a241d90381a2ff4d1b513851d8ca777",
+      "complete_commit_pinned_bytes_equal": true
+    },
+    {
+      "file": "public/scripts/participation-county-context.js",
+      "bytes": 1798,
+      "sha256": "c23837f6178c121051fd5d1454f7d27690dc1002baaf7392cc4a983001865c05",
+      "complete_commit_pinned_bytes_equal": true
+    },
+    {
+      "file": "review.json",
+      "bytes": 754479,
+      "sha256": "80ca5bfd63bb97edc89c9e0b92c1d3a26372f865c4196bf5d8a3826a490383ad",
+      "complete_commit_pinned_bytes_equal": true
+    },
+    {
+      "file": "scripts/build-county-participation-context.mjs",
+      "bytes": 13215,
+      "sha256": "cfafe47c67ab020e4a7af12ce084ccba3b3e0b64be4261edb221de371cae7e76",
+      "complete_commit_pinned_bytes_equal": true
+    },
+    {
+      "file": "scripts/package-county-context-review.py",
+      "bytes": 1536,
+      "sha256": "560ed0b19bf48a25877aab3cadaa9125cea49b0081146ec3cf844e3394dc4224",
+      "complete_commit_pinned_bytes_equal": true
+    },
+    {
+      "file": "source-receipts.json",
+      "bytes": 2057,
+      "sha256": "a5f2351cc8b818ee4f93ac5fbeac5a2a54ccf8792c6cd06d9beb2626dfe76662",
+      "complete_commit_pinned_bytes_equal": true
+    }
+  ],
+  "every_zip_member_matches": [
+    {
+      "file": "checksums.json",
+      "bytes": 3886,
+      "sha256": "2be4e2eaad4540568b3dd9a27af1c817db4735372b8390a3140921dcc686d071"
+    },
+    {
+      "file": "complete-2024-county-identities.json.gz",
+      "bytes": 144580,
+      "sha256": "f55f8c9959d056d26e9bfa6b344e9ea564cfc5688b7f7f8b8a2ce8b34f9439ac"
+    },
+    {
+      "file": "complete-2026-county-identities.json.gz",
+      "bytes": 155774,
+      "sha256": "cd12a54467a4ad54e9213d541b5a0563655ef41f3f193ed5804c75df51bf3150"
+    },
+    {
+      "file": "complete-source-records.json.gz",
+      "bytes": 78762,
+      "sha256": "74d62eece6e60b1ee9378683c74752ae0a12ee9423018d566703bf5d9ed7a9c0"
+    },
+    {
+      "file": "county-participation-joins.csv",
+      "bytes": 280661,
+      "sha256": "20e95c469b65e15af5b7346ed3668bd4de8826d0eeeb84613557f0b7c4542846"
+    },
+    {
+      "file": "gazetteer-2024-national-counties.zip",
+      "bytes": 141679,
+      "sha256": "3c337402b5c6e8d5aa26b4278ccf4edc8989f2683765b3ffbf22296cdb2df3a0"
+    },
+    {
+      "file": "gazetteer-2026-national-counties.zip",
+      "bytes": 139190,
+      "sha256": "6a99ca00efbc0be5112e225d4102704c51d5ce3b16e3afd6e4159460595fd12a"
+    },
+    {
+      "file": "geometry-verification.json",
+      "bytes": 107466,
+      "sha256": "4885ab9733e31d29b87bda677e635dc54abef40a70a0e50c85091e41de110ef8"
+    },
+    {
+      "file": "geometry/county-AL.geojson",
+      "bytes": 370354,
+      "sha256": "67b03de3aa281430aeae575360c932074111be88289c081ec80d978067e095ec"
+    },
+    {
+      "file": "geometry/county-AR.geojson",
+      "bytes": 422329,
+      "sha256": "addb5be81e6694681a8edb96575c29cf014158e50ae189facbd96f76892a8e2a"
+    },
+    {
+      "file": "geometry/county-AZ.geojson",
+      "bytes": 195541,
+      "sha256": "0837a91e1b1ae37535b1256afe90ab70955b50872c98f9133a4e56b843252eec"
+    },
+    {
+      "file": "geometry/county-DC.geojson",
+      "bytes": 1724,
+      "sha256": "e111ef8f1b7ab1873b096c6075e63ddc5aa1ae370def71ee8523a2a7b2f3b002"
+    },
+    {
+      "file": "geometry/county-FL.geojson",
+      "bytes": 494363,
+      "sha256": "d8d21d51dd475bc23c1b10fa0aa151b1591f1c681dfa9c31ce8d94f1b4713f47"
+    },
+    {
+      "file": "geometry/county-IA.geojson",
+      "bytes": 102952,
+      "sha256": "c4ae2cd4fbac01725cfcf4d9e20815d41c149044a9b73665903135d34561e8ee"
+    },
+    {
+      "file": "geometry/county-KY.geojson",
+      "bytes": 844982,
+      "sha256": "f9d2e0f8bd3e72f22d7ff6a530450d6e5e5bbad83f5dd02c32648a3207ef5eac"
+    },
+    {
+      "file": "geometry/county-MO.geojson",
+      "bytes": 285841,
+      "sha256": "b9b8a05f01088fdcabb2c0aaf52f1dbd325282481a76454a2bd428a33b11795c"
+    },
+    {
+      "file": "geometry/county-NJ.geojson",
+      "bytes": 139257,
+      "sha256": "489eabbafe98495645d95ddb65581f5204b3bd7871b001d02d3aaa3ffa11733b"
+    },
+    {
+      "file": "geometry/county-NV.geojson",
+      "bytes": 72248,
+      "sha256": "f67a18f6d0ca4799ba9579f3628054282411310987f64378ec41cbc5fefe28c4"
+    },
+    {
+      "file": "geometry/county-OR.geojson",
+      "bytes": 297700,
+      "sha256": "86f79f21252fdeef6d5c06525f909e2578f6119c158bfe10b51fecb72609e6eb"
+    },
+    {
+      "file": "geometry/county-PA.geojson",
+      "bytes": 298398,
+      "sha256": "02c17862c97cddf64a70ade6596e11c7bd8fe5707ba83bca3910172354b9b58a"
+    },
+    {
+      "file": "geometry/county-VA.geojson",
+      "bytes": 840683,
+      "sha256": "825295417afcfafdd28dd7856edda31cdc0dc8a0d7c9b00abafdac90c38176da"
+    },
+    {
+      "file": "geometry/county-WA.geojson",
+      "bytes": 395414,
+      "sha256": "b7170c2d2ea13d6ddc1541ea184b5cae1135412be35c041149e5aa8a09eb55f8"
+    },
+    {
+      "file": "geometry/county-WY.geojson",
+      "bytes": 96180,
+      "sha256": "19eca7f10211ad57da4589ef2969d8817a241d90381a2ff4d1b513851d8ca777"
+    },
+    {
+      "file": "public/scripts/participation-county-context.js",
+      "bytes": 1798,
+      "sha256": "c23837f6178c121051fd5d1454f7d27690dc1002baaf7392cc4a983001865c05"
+    },
+    {
+      "file": "review.json",
+      "bytes": 754479,
+      "sha256": "80ca5bfd63bb97edc89c9e0b92c1d3a26372f865c4196bf5d8a3826a490383ad"
+    },
+    {
+      "file": "scripts/build-county-participation-context.mjs",
+      "bytes": 13215,
+      "sha256": "cfafe47c67ab020e4a7af12ce084ccba3b3e0b64be4261edb221de371cae7e76"
+    },
+    {
+      "file": "scripts/package-county-context-review.py",
+      "bytes": 1536,
+      "sha256": "560ed0b19bf48a25877aab3cadaa9125cea49b0081146ec3cf844e3394dc4224"
+    },
+    {
+      "file": "source-receipts.json",
+      "bytes": 2057,
+      "sha256": "a5f2351cc8b818ee4f93ac5fbeac5a2a54ccf8792c6cd06d9beb2626dfe76662"
+    }
+  ],
+  "extracted_offline_standard_library_node_verification": "",
+  "standard_library_python_archive_reproduction_byte_identical": true,
+  "scope": "All four full release assets, all 29 pinned files and all 28 portable ZIP members; fixed-checksum policy, not host locking."
+}
