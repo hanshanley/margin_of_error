@@ -55,6 +55,25 @@ test('historical NC year tables use the pinned complete originals without moving
 		assert.equal(participationDownload(path), path);
 });
 
+test('only reviewed county context archives move to their complete release assets', () => {
+	for (const version of ['01', '05', '10', '11']) {
+		const path = `/participation-county-context/20261106-${version}/complete-county-participation-context-${version}.zip`;
+		const url = participationDownload(path);
+		assert.equal(url, `https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-${version}/complete-county-participation-context-${version}.zip`);
+		assert.equal(participationDownload(url), url);
+		assert.equal(rewriteDownloadHtml(`<a href="${path}" download>Full context</a>`, [{ path, url }]),
+			`<a href="${url}" download>Full context</a>`);
+	}
+	for (const path of [
+		'/participation-county-context/20261106-11/review.json',
+		'/participation-county-context/20261106-11/complete-source-records.json.gz',
+		'/participation-county-context/20261106-11/complete-county-participation-context-10.zip',
+		'/participation-county-context/20261106-12/complete-county-participation-context-12.zip',
+		'/participation-county-context/20261107-01/complete-county-participation-context-01.zip',
+		'/participation-county-context/20261106-11/counties-PA.geojson.gz',
+	]) assert.equal(participationDownload(path), path);
+});
+
 test('pinned current data must be complete and byte-identical before removing site copies', async () => {
 	const bytes = Buffer.from('{"complete":[1,2,3]}');
 	const file = { path: '/current.json', url: 'source', bytes: bytes.length,

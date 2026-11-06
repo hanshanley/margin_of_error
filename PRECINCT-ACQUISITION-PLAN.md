@@ -5,6 +5,19 @@
 **November 6: Columbia, Pennsylvania's complete numerical query is published and
 verified; context11 is published and the UI passes local validation, with exact
 production publication still pending.**
+The first UI revision `cc00bce4dd585c34b8ca98c42a0afab56247d880`,
+Pages **42202834406**, did not deploy: freshly staged CI projects made its
+prepared output **1,009,690,501 bytes**, despite the smaller local build.
+The coupled capacity fix relocates only the eleven redundant build-output
+county-context ZIPs to their existing complete version-specific release assets.
+Every entire archive is verified before removal; original staged ZIPs, all
+interactive data and all historical download URLs remain intact.
+All **69 focused tests**, Astro check, build, **117 complete remote-file byte
+checks** and **seven local browser scenarios** pass after this fix.
+The corrected local prepared site is **974,696,824 bytes**.
+The original failed deployment receipt and both local validation rounds remain
+retained; the corrected revision still requires exact production verification.
+
 The actual county parent declares both complete November 3 reports. Both entire
 PDF originals and the parent match their saved receipts. Two independent PDF
 engines consume every results-report line and produce identical complete vectors:

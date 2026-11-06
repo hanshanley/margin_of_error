@@ -1,0 +1,16 @@
+{
+  "source_renderer_sha256": "b152036b660047b2f9beb7db8ebc51e98484bc34276989bbfb44e256df1f345f",
+  "previous": {
+    "path": "app.js",
+    "bytes": 23120,
+    "sha256": "851805ba4c754ab58342f2ab316b080616a842a5a136d5f72ab0e34b1cb9a41e",
+    "original": false
+  },
+  "regenerated": {
+    "path": "app.js",
+    "bytes": 23485,
+    "sha256": "31995ae699df4c1cbd80cae14a274c6c0b944c5d5b27b941c5401eaa8bd5bfc6",
+    "original": false
+  },
+  "data_files_unchanged": true
+}

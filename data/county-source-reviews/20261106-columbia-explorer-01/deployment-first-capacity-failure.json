@@ -1,0 +1,10 @@
+{
+  "id": 42202834406,
+  "head_sha": "cc00bce4dd585c34b8ca98c42a0afab56247d880",
+  "run_attempt": 1,
+  "status": "completed",
+  "conclusion": "failure",
+  "html_url": "https://github.com/hanshanley/margin_of_error/actions/runs/42202834406",
+  "created_at": "2026-11-06T10:27:39Z",
+  "updated_at": "2026-11-06T10:32:35Z"
+}

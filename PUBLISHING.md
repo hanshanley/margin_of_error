@@ -108,6 +108,13 @@ Pages artifact; `--upload` adds missing assets to the pre-created release withou
 overwriting existing files. Publication fails on any missing or changed release asset,
 or if the resulting site exceeds 1 GB.
 
+The eleven reviewed November 6 county-context ZIPs likewise use their complete,
+version-specific published release assets. Preparation downloads and verifies every
+entire archive against its original staged bytes before removing only the redundant
+build-output ZIPs. Context review JSON, source records and interactive geometry stay
+local; all historical downloads remain available. Unreviewed context versions are
+not relocated automatically.
+
 Historical NC year-table JSON uses the complete originals in the same pinned
 research commit instead of duplicating them in Pages. Both the native and adapted
 legacy readers use the shared download routing. Preparation verifies every remote
