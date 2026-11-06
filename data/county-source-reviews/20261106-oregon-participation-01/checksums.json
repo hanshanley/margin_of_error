@@ -1,0 +1,26 @@
+{
+  "audit.json": {
+    "bytes": 842,
+    "sha256": "bd3cc37987254781d7396ee804766a45be8b85b65f5340e75cba788859032e3c"
+  },
+  "county-participation.csv": {
+    "bytes": 32572,
+    "sha256": "eac6d7e6ebfeee4eac7d00f91c1e8dc47564347ec27c0fc34c82e60c5cf4bb92"
+  },
+  "review-oregon-county-participation.py": {
+    "bytes": 11601,
+    "sha256": "15f3b36260f0c63ea949ac622c1b83e20a7206ca49f9d313f3c94d027e6d2069"
+  },
+  "source-receipts.json": {
+    "bytes": 2115,
+    "sha256": "29b34bd45a37a99145f705b577491e8c507434a38b818b3ed5c6416728bba4da"
+  },
+  "source-records.json.gz": {
+    "bytes": 2614,
+    "sha256": "631f2a06669566b7da4a1b5580a9cc17da8a24f2b5af9152d6bcab694ce5196a"
+  },
+  "statewide-observations.csv": {
+    "bytes": 415,
+    "sha256": "9c1c0ed403af9fc954dc16d2ad0f7fd39ba1ea384b81e4e4384444652c7b4dc3"
+  }
+}

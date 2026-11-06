@@ -474,6 +474,38 @@ complete links give 322 unique URLs / 325 anchors. Proofs are under
 Publish the reviewed UI and verify its exact deployed revision before calling
 this county live; no nationwide completion is claimed.
 
+**Oregon bulk participation, complete numerical review prepared, not yet live:**
+the official current-election page declares the statewide results portal, whose
+turnout chart declares its complete `GetVoterTurnoutData` endpoint. All 36 native
+county records are acquired in one response, not inferred from candidate votes
+or rounded percentages. Their 1,760,007 counted ballots and 3,109,086 active
+registrations match both independently server-rendered statewide headers; all
+36 native county IDs/names and printed fractions match the server-rendered
+turnout cards. Both headers declare November 3, 2026 General, `Unofficial`, and
+`11/5/2026 | 8:30 PM PT`. Preserve separately the literal county timestamps,
+which supply no timezone. These are counted ballots, not received ballots.
+
+The old full current-local feed has no Oregon counties or precinct observations,
+so this is a genuine integration gap, unlike the withdrawn South Dakota import.
+All 36 `IsReported: false` flags and ancillary zero fields remain in the full
+native JSON records; none erase positive `calcVoterTurnout` counts. Native
+`CountyID` is not FIPS. `Voters` means active registrations; the hidden header
+`hidVoterTotal` is instead the chart remainder (1,349,079), not another county
+registration total. Native chart declarations establish these separate meanings.
+No demographic, CVAP/VEP, final-turnout, geometry or statewide completion approval
+is created.
+
+Seven focused tests pass, including all 36 full native-record comparisons,
+missing/duplicate county rejection, incorrect election/scope/fraction/rollup,
+false-flag preservation, provenance corruption, no-overwrite guards and
+byte-identical reproduction of every file/ZIP member using standard-library-only
+Python. Complete numerical facts, both complete tables, five primary receipts
+and portable reviewer are under `20261106-oregon-participation-01`; original HTML
+presentation and chart code remain private acquisition evidence. The complete
+ZIP is 11,717 bytes, SHA-256
+`c5fe6d065cc45a7b1d62fda7882b8ca9ec560e305cf705836dcd7a257960b09f`.
+Publish and anonymously verify fixed full downloads before wiring the new state.
+
 **November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated
 `git-filter-repo --sensitive-data-removal` rewrite removed Google API key patterns

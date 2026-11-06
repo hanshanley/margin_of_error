@@ -1,0 +1,15 @@
+{
+  "year": 2026,
+  "state_code": "OR",
+  "county_observations": 36,
+  "ballots_counted": 1760007,
+  "active_registered_voters": 3109086,
+  "independent_county_fractions": 36,
+  "independent_statewide_headers": 2,
+  "false_native_reporting_flags": 36,
+  "native_fields_preserved": true,
+  "maps_approved": false,
+  "demographic_rates_approved": false,
+  "statewide_completion_approved": false,
+  "qualification": "Unofficial ballots counted, not final turnout or ballots received. Denominator is native active registrations, not CVAP/VEP or demographic registration. Preserve IsReported false and ancillary zero fields; they do not erase positive counted ballots. Native county IDs are not FIPS. County timestamps have no stated timezone; statewide update explicitly says PT. No new map, demographic rate or statewide completion approval."
+}

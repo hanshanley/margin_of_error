@@ -1,0 +1,52 @@
+[
+  {
+    "bytes": 36904,
+    "content_type": "text/html; charset=utf-8",
+    "fetched_at": "2026-11-06T04:33:46.168771+00:00",
+    "file": "official-index.html",
+    "final_url": "https://results.oregonvotes.gov/",
+    "sha256": "5dad5831e4e7448702f10c6e7b8b8be035a7910ed77634bd60860815e1fa5311",
+    "status": 200,
+    "url": "https://results.oregonvotes.gov/"
+  },
+  {
+    "bytes": 92717,
+    "content_type": "text/html; charset=utf-8",
+    "fetched_at": "2026-11-06T04:33:46.435165+00:00",
+    "file": "official-turnout.html",
+    "final_url": "https://results.oregonvotes.gov/VoterTurnoutDetails.aspx",
+    "sha256": "4acfcafd768e575412f37d625b16f73fab347fe5d37baa7b7c7cd54e2c4c3680",
+    "status": 200,
+    "url": "https://results.oregonvotes.gov/VoterTurnoutDetails.aspx"
+  },
+  {
+    "bytes": 112384,
+    "content_type": "text/html; charset=utf-8",
+    "fetched_at": "2026-11-06T04:33:46.905273+00:00",
+    "file": "official-current-election.html",
+    "final_url": "https://sos.oregon.gov/elections/pages/current-election.aspx",
+    "sha256": "6800e6736144b1af3c2fb2e76d3d11fdb15e9a15a0df28e73d976d1d043f0c25",
+    "status": 200,
+    "url": "https://sos.oregon.gov/elections/pages/current-election.aspx"
+  },
+  {
+    "bytes": 3723,
+    "content_type": "application/x-javascript",
+    "fetched_at": "2026-11-06T04:34:03.981578+00:00",
+    "file": "TurnoutCharts.js",
+    "final_url": "https://orresultswebservices.azureedge.us//Scripts/TurnoutCharts.js",
+    "sha256": "b604aca73b1d9855ca91656009730980706f6ebff09dc71f09219d3a7220eaa9",
+    "status": 200,
+    "url": "https://orresultswebservices.azureedge.us//Scripts/TurnoutCharts.js"
+  },
+  {
+    "bytes": 12999,
+    "content_type": "application/json; charset=utf-8",
+    "fetched_at": "2026-11-06T04:34:18.758725+00:00",
+    "file": "county-turnout.json",
+    "final_url": "https://orresultswebservices.azureedge.us/ResultsAjax.svc/GetVoterTurnoutData",
+    "sha256": "ac93c89355f4529dc29325a91f9a9467c860f3daadcc09bc2ba952ea6a8079e6",
+    "status": 200,
+    "url": "https://orresultswebservices.azureedge.us/ResultsAjax.svc/GetVoterTurnoutData?"
+  }
+]

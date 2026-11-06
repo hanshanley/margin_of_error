@@ -1,0 +1,3 @@
+source_file,election_date,election_type,source_status_literal,ballots_counted,active_registered_voters,native_hidden_ballots,native_hidden_remainder,native_reported_percent,source_updated_at
+official-index.html,11/3/2026,General,Unofficial,1760007,3109086,1760007,1349079,56.61%,11/5/2026 | 8:30 PM PT
+official-turnout.html,11/3/2026,General,Unofficial,1760007,3109086,1760007,1349079,56.61%,11/5/2026 | 8:30 PM PT
