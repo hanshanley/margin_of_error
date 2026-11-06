@@ -1312,8 +1312,19 @@ offline using Python's standard library. The complete LF-format ZIP is
 `ae0b7c6bb55e2dfdcf35c9579cf8a8305f4abf0a98ba673ab3f6a5df086a394a`.
 Full primary, native row-identity, all-file and ZIP proofs are under
 `data/county-source-reviews/20261106-carbon-primary-review-01/`.
-Carbon publication/anonymous byte checks and both county explorer integrations
-remain pending; neither new county is integrated into the live UI.
+Carbon facts **`70b59f20e5ab346fca4444553e43eb7a39586944`** and fixed
+release `voter-county-pennsylvania-carbon-20261106-01` / **436213882**
+are published. All fifteen entire release assets, fifteen pinned files and
+fourteen complete ZIP members pass anonymous byte equality and extracted
+offline reproduction at `2026-11-06T07:26:21.125678+00:00`. The actual tag
+commit and release target match the facts SHA independently. Exact tag
+credential run **42180833831** and review run **42180831954** both pass.
+GitHub reports `immutable:false`: fixed checksums/never overwrite, not
+host-enforced locking. Complete publication evidence is under
+`data/county-source-reviews/20261106-carbon-publication-01/`.
+Both county explorer integrations remain pending; neither new county is
+integrated into the live UI. The next batch extends, rather than overwrites,
+frozen context 03 after capturing the actual 6579e73 public baseline.
 Private acquisition and engine proofs are in
 `pa-cameron-carbon-primary-20261106-01`,
 `pa-carbon-declared-reports-20261106-01` and
