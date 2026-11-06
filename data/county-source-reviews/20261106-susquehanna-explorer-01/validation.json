@@ -1,0 +1,2319 @@
+{
+  "verified_at_utc": "2026-11-06T16:39:00.501332+00:00",
+  "native_frozen_revision": "a7fad838607bd5ded9cd543ff16a2f574396f180",
+  "context_frozen_revision": "7ad830f70be4a8eb47d9c95896c9c99985228467",
+  "source_tests": {
+    "command": "node --test scripts/reviewed-county-participation.test.mjs",
+    "passed": 53,
+    "observed_exit_code": 0
+  },
+  "context_tests": {
+    "command": "node --test scripts/county-participation-context.test.mjs scripts/voter-participation.test.mjs",
+    "passed_context_cases": 25,
+    "failed_initial_download_cases": [
+      29,
+      30
+    ],
+    "initial_failures": "Obsolete unpublished-context20 fixtures; corrected to context21."
+  },
+  "download_tests": {
+    "command": "node --test scripts/voter-participation.test.mjs",
+    "passed": 15,
+    "failed": 0
+  },
+  "total_distinct_focused_cases_passed": 93,
+  "astro_errors": 0,
+  "astro_warnings": 0,
+  "full_build_passed": true,
+  "local_browser_scenarios": 7,
+  "entire_byte_verified_relocations": 316,
+  "local_prepared_bytes": 957449254,
+  "actual_hosted_size_not_yet_verified": true,
+  "compatibility_app_sha256": "8a2a6affea0827ec5e56c3b0bf63420e89b27d5d073f820ed0ff401851c3e299",
+  "complete_download_inventory": {
+    "release": "voter-participation-data-20261104",
+    "files": [
+      {
+        "path": "/participation-context/20261104T183601Z/complete-context.zip",
+        "name": "participation-context__20261104T183601Z__complete-context.zip",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/participation-context__20261104T183601Z__complete-context.zip",
+        "bytes": 37324933,
+        "sha256": "1b6d5f2378941973381c2a7c3a213da8ee5e0e8bf52019503e3a2cf6f07c2c00"
+      },
+      {
+        "path": "/participation-context/20261104T183601Z/margins.csv",
+        "name": "participation-context__20261104T183601Z__margins.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/participation-context__20261104T183601Z__margins.csv",
+        "bytes": 282082,
+        "sha256": "2136e072145866a982b86c4bb4b2318400732e14eb492bf9b0d14860a9623f27"
+      },
+      {
+        "path": "/participation-context/20261104T183601Z/nationwide/complete-snapshot.zip",
+        "name": "participation-context__20261104T183601Z__nationwide__complete-snapshot.zip",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/participation-context__20261104T183601Z__nationwide__complete-snapshot.zip",
+        "bytes": 572424,
+        "sha256": "c4974a5961bab1cf7926141681f9539d75e0d62ee4b1c2b4d4107b860224ccf2"
+      },
+      {
+        "path": "/participation-context/20261104T183601Z/nationwide/coverage.csv",
+        "name": "participation-context__20261104T183601Z__nationwide__coverage.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/participation-context__20261104T183601Z__nationwide__coverage.csv",
+        "bytes": 6999,
+        "sha256": "dc8a2fc6b67395e749415ce64777a3d5998bc866fba0e9df942e73c746ba1a21"
+      },
+      {
+        "path": "/participation-context/20261104T183601Z/nationwide/demographics.csv",
+        "name": "participation-context__20261104T183601Z__nationwide__demographics.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/participation-context__20261104T183601Z__nationwide__demographics.csv",
+        "bytes": 32170,
+        "sha256": "c95f6fe5db408361ef4256a976c10438f28be78dafc45c658cb935af9d2bd25b"
+      },
+      {
+        "path": "/participation-context/20261104T183601Z/nationwide/early_voting.csv",
+        "name": "participation-context__20261104T183601Z__nationwide__early_voting.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/participation-context__20261104T183601Z__nationwide__early_voting.csv",
+        "bytes": 1156517,
+        "sha256": "7dafa968a0451c42935b82843d95ca6cb6614d9eaa7dd5bb17feae7dc1546594"
+      },
+      {
+        "path": "/participation-context/20261104T183601Z/nationwide/reporting.csv",
+        "name": "participation-context__20261104T183601Z__nationwide__reporting.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/participation-context__20261104T183601Z__nationwide__reporting.csv",
+        "bytes": 1902,
+        "sha256": "d59e706ac4d14d9e11e52d761e6e6164756b157b09364b99137a3c5ed4b7b71b"
+      },
+      {
+        "path": "/participation-county-context/20261106-01/complete-county-participation-context-01.zip",
+        "name": "complete-county-participation-context-01.zip",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-01/complete-county-participation-context-01.zip",
+        "bytes": 2209950,
+        "sha256": "4c8a94ccbcfd60837bbc92f70a0183311af2b1eec3aad317031e7a8e456f09cc"
+      },
+      {
+        "path": "/participation-county-context/20261106-02/complete-county-participation-context-02.zip",
+        "name": "complete-county-participation-context-02.zip",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-02/complete-county-participation-context-02.zip",
+        "bytes": 2211271,
+        "sha256": "2124cb7bd1bcf5118367fabef59ba394b9da57984a611208e1e8a410724592f3"
+      },
+      {
+        "path": "/participation-county-context/20261106-03/complete-county-participation-context-03.zip",
+        "name": "complete-county-participation-context-03.zip",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-03/complete-county-participation-context-03.zip",
+        "bytes": 2211800,
+        "sha256": "209d71ebc9ce3b832e2fa36998e808f283bb611f9f6ab65089a89cad0e9b533f"
+      },
+      {
+        "path": "/participation-county-context/20261106-04/complete-county-participation-context-04.zip",
+        "name": "complete-county-participation-context-04.zip",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-04/complete-county-participation-context-04.zip",
+        "bytes": 2212721,
+        "sha256": "edf5d8b8a7cd0b49282edc3b4ed9955c07910e1a38361fd77bd23d2e897a3f37"
+      },
+      {
+        "path": "/participation-county-context/20261106-05/complete-county-participation-context-05.zip",
+        "name": "complete-county-participation-context-05.zip",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-05/complete-county-participation-context-05.zip",
+        "bytes": 2214466,
+        "sha256": "116c145e5459bf1fa67bb36ab4709d269729c5398487f2e9c416e9e96c6fa79a"
+      },
+      {
+        "path": "/participation-county-context/20261106-06/complete-county-participation-context-06.zip",
+        "name": "complete-county-participation-context-06.zip",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-06/complete-county-participation-context-06.zip",
+        "bytes": 2215183,
+        "sha256": "cadd631917cca1a5bcd8bb8c1fb5d4d767446e59440557b841a48a1e7ae54121"
+      },
+      {
+        "path": "/participation-county-context/20261106-07/complete-county-participation-context-07.zip",
+        "name": "complete-county-participation-context-07.zip",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-07/complete-county-participation-context-07.zip",
+        "bytes": 2215873,
+        "sha256": "ce4d18490e8c87cb1d4f380ec6b8ce202114d00eaa1d12121eb9a12b4c445427"
+      },
+      {
+        "path": "/participation-county-context/20261106-08/complete-county-participation-context-08.zip",
+        "name": "complete-county-participation-context-08.zip",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-08/complete-county-participation-context-08.zip",
+        "bytes": 2216859,
+        "sha256": "9259de53c8608354973916ac7093fcaf5bd5e3241ff7d10444768c973e400444"
+      },
+      {
+        "path": "/participation-county-context/20261106-09/complete-county-participation-context-09.zip",
+        "name": "complete-county-participation-context-09.zip",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-09/complete-county-participation-context-09.zip",
+        "bytes": 2218610,
+        "sha256": "ec4fa3c615ec69d49fe38c043a979a55a48dd4e8a51317b2f24ba7917262357d"
+      },
+      {
+        "path": "/participation-county-context/20261106-10/complete-county-participation-context-10.zip",
+        "name": "complete-county-participation-context-10.zip",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-10/complete-county-participation-context-10.zip",
+        "bytes": 2466738,
+        "sha256": "44621f3f361a4202106f01230b06ebcfd09bc7845937a25e30df08758ab1a8f6"
+      },
+      {
+        "path": "/participation-county-context/20261106-10/geometry/county-AL.geojson",
+        "name": "county-AL.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/47a0efe3e75e9498d89340a7c50e3b311f55c5dc/public/participation-county-context/20261106-10/geometry/county-AL.geojson",
+        "bytes": 370354,
+        "sha256": "67b03de3aa281430aeae575360c932074111be88289c081ec80d978067e095ec"
+      },
+      {
+        "path": "/participation-county-context/20261106-10/geometry/county-AR.geojson",
+        "name": "county-AR.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/47a0efe3e75e9498d89340a7c50e3b311f55c5dc/public/participation-county-context/20261106-10/geometry/county-AR.geojson",
+        "bytes": 422329,
+        "sha256": "addb5be81e6694681a8edb96575c29cf014158e50ae189facbd96f76892a8e2a"
+      },
+      {
+        "path": "/participation-county-context/20261106-10/geometry/county-AZ.geojson",
+        "name": "county-AZ.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/47a0efe3e75e9498d89340a7c50e3b311f55c5dc/public/participation-county-context/20261106-10/geometry/county-AZ.geojson",
+        "bytes": 195541,
+        "sha256": "0837a91e1b1ae37535b1256afe90ab70955b50872c98f9133a4e56b843252eec"
+      },
+      {
+        "path": "/participation-county-context/20261106-10/geometry/county-CA.geojson",
+        "name": "county-CA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/47a0efe3e75e9498d89340a7c50e3b311f55c5dc/public/participation-county-context/20261106-10/geometry/county-CA.geojson",
+        "bytes": 777815,
+        "sha256": "fc167d02493b97c385eba9625bce506b9b9f93c5e0a9a69af6b9cf052b556e7a"
+      },
+      {
+        "path": "/participation-county-context/20261106-10/geometry/county-DC.geojson",
+        "name": "county-DC.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/47a0efe3e75e9498d89340a7c50e3b311f55c5dc/public/participation-county-context/20261106-10/geometry/county-DC.geojson",
+        "bytes": 1724,
+        "sha256": "e111ef8f1b7ab1873b096c6075e63ddc5aa1ae370def71ee8523a2a7b2f3b002"
+      },
+      {
+        "path": "/participation-county-context/20261106-10/geometry/county-FL.geojson",
+        "name": "county-FL.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/47a0efe3e75e9498d89340a7c50e3b311f55c5dc/public/participation-county-context/20261106-10/geometry/county-FL.geojson",
+        "bytes": 494363,
+        "sha256": "d8d21d51dd475bc23c1b10fa0aa151b1591f1c681dfa9c31ce8d94f1b4713f47"
+      },
+      {
+        "path": "/participation-county-context/20261106-10/geometry/county-IA.geojson",
+        "name": "county-IA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/47a0efe3e75e9498d89340a7c50e3b311f55c5dc/public/participation-county-context/20261106-10/geometry/county-IA.geojson",
+        "bytes": 102952,
+        "sha256": "c4ae2cd4fbac01725cfcf4d9e20815d41c149044a9b73665903135d34561e8ee"
+      },
+      {
+        "path": "/participation-county-context/20261106-10/geometry/county-KY.geojson",
+        "name": "county-KY.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/47a0efe3e75e9498d89340a7c50e3b311f55c5dc/public/participation-county-context/20261106-10/geometry/county-KY.geojson",
+        "bytes": 844982,
+        "sha256": "f9d2e0f8bd3e72f22d7ff6a530450d6e5e5bbad83f5dd02c32648a3207ef5eac"
+      },
+      {
+        "path": "/participation-county-context/20261106-10/geometry/county-MO.geojson",
+        "name": "county-MO.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/47a0efe3e75e9498d89340a7c50e3b311f55c5dc/public/participation-county-context/20261106-10/geometry/county-MO.geojson",
+        "bytes": 285841,
+        "sha256": "b9b8a05f01088fdcabb2c0aaf52f1dbd325282481a76454a2bd428a33b11795c"
+      },
+      {
+        "path": "/participation-county-context/20261106-10/geometry/county-NJ.geojson",
+        "name": "county-NJ.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/47a0efe3e75e9498d89340a7c50e3b311f55c5dc/public/participation-county-context/20261106-10/geometry/county-NJ.geojson",
+        "bytes": 139257,
+        "sha256": "489eabbafe98495645d95ddb65581f5204b3bd7871b001d02d3aaa3ffa11733b"
+      },
+      {
+        "path": "/participation-county-context/20261106-10/geometry/county-NV.geojson",
+        "name": "county-NV.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/47a0efe3e75e9498d89340a7c50e3b311f55c5dc/public/participation-county-context/20261106-10/geometry/county-NV.geojson",
+        "bytes": 72248,
+        "sha256": "f67a18f6d0ca4799ba9579f3628054282411310987f64378ec41cbc5fefe28c4"
+      },
+      {
+        "path": "/participation-county-context/20261106-10/geometry/county-OR.geojson",
+        "name": "county-OR.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/47a0efe3e75e9498d89340a7c50e3b311f55c5dc/public/participation-county-context/20261106-10/geometry/county-OR.geojson",
+        "bytes": 297700,
+        "sha256": "86f79f21252fdeef6d5c06525f909e2578f6119c158bfe10b51fecb72609e6eb"
+      },
+      {
+        "path": "/participation-county-context/20261106-10/geometry/county-PA.geojson",
+        "name": "county-PA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/47a0efe3e75e9498d89340a7c50e3b311f55c5dc/public/participation-county-context/20261106-10/geometry/county-PA.geojson",
+        "bytes": 298398,
+        "sha256": "02c17862c97cddf64a70ade6596e11c7bd8fe5707ba83bca3910172354b9b58a"
+      },
+      {
+        "path": "/participation-county-context/20261106-10/geometry/county-VA.geojson",
+        "name": "county-VA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/47a0efe3e75e9498d89340a7c50e3b311f55c5dc/public/participation-county-context/20261106-10/geometry/county-VA.geojson",
+        "bytes": 840683,
+        "sha256": "825295417afcfafdd28dd7856edda31cdc0dc8a0d7c9b00abafdac90c38176da"
+      },
+      {
+        "path": "/participation-county-context/20261106-10/geometry/county-WA.geojson",
+        "name": "county-WA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/47a0efe3e75e9498d89340a7c50e3b311f55c5dc/public/participation-county-context/20261106-10/geometry/county-WA.geojson",
+        "bytes": 395414,
+        "sha256": "b7170c2d2ea13d6ddc1541ea184b5cae1135412be35c041149e5aa8a09eb55f8"
+      },
+      {
+        "path": "/participation-county-context/20261106-10/geometry/county-WY.geojson",
+        "name": "county-WY.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/47a0efe3e75e9498d89340a7c50e3b311f55c5dc/public/participation-county-context/20261106-10/geometry/county-WY.geojson",
+        "bytes": 96180,
+        "sha256": "19eca7f10211ad57da4589ef2969d8817a241d90381a2ff4d1b513851d8ca777"
+      },
+      {
+        "path": "/participation-county-context/20261106-11/complete-county-participation-context-11.zip",
+        "name": "complete-county-participation-context-11.zip",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-11/complete-county-participation-context-11.zip",
+        "bytes": 2467554,
+        "sha256": "d27146d469364ba5fd78aa8c97cf943f9250ebf8bb5f6328fcda665780fb3039"
+      },
+      {
+        "path": "/participation-county-context/20261106-11/geometry/county-AL.geojson",
+        "name": "county-AL.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/784d261600f349073d3cf74ba8d168595cf6a46e/public/participation-county-context/20261106-11/geometry/county-AL.geojson",
+        "bytes": 370354,
+        "sha256": "67b03de3aa281430aeae575360c932074111be88289c081ec80d978067e095ec"
+      },
+      {
+        "path": "/participation-county-context/20261106-11/geometry/county-AR.geojson",
+        "name": "county-AR.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/784d261600f349073d3cf74ba8d168595cf6a46e/public/participation-county-context/20261106-11/geometry/county-AR.geojson",
+        "bytes": 422329,
+        "sha256": "addb5be81e6694681a8edb96575c29cf014158e50ae189facbd96f76892a8e2a"
+      },
+      {
+        "path": "/participation-county-context/20261106-11/geometry/county-AZ.geojson",
+        "name": "county-AZ.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/784d261600f349073d3cf74ba8d168595cf6a46e/public/participation-county-context/20261106-11/geometry/county-AZ.geojson",
+        "bytes": 195541,
+        "sha256": "0837a91e1b1ae37535b1256afe90ab70955b50872c98f9133a4e56b843252eec"
+      },
+      {
+        "path": "/participation-county-context/20261106-11/geometry/county-CA.geojson",
+        "name": "county-CA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/784d261600f349073d3cf74ba8d168595cf6a46e/public/participation-county-context/20261106-11/geometry/county-CA.geojson",
+        "bytes": 777815,
+        "sha256": "fc167d02493b97c385eba9625bce506b9b9f93c5e0a9a69af6b9cf052b556e7a"
+      },
+      {
+        "path": "/participation-county-context/20261106-11/geometry/county-DC.geojson",
+        "name": "county-DC.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/784d261600f349073d3cf74ba8d168595cf6a46e/public/participation-county-context/20261106-11/geometry/county-DC.geojson",
+        "bytes": 1724,
+        "sha256": "e111ef8f1b7ab1873b096c6075e63ddc5aa1ae370def71ee8523a2a7b2f3b002"
+      },
+      {
+        "path": "/participation-county-context/20261106-11/geometry/county-FL.geojson",
+        "name": "county-FL.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/784d261600f349073d3cf74ba8d168595cf6a46e/public/participation-county-context/20261106-11/geometry/county-FL.geojson",
+        "bytes": 494363,
+        "sha256": "d8d21d51dd475bc23c1b10fa0aa151b1591f1c681dfa9c31ce8d94f1b4713f47"
+      },
+      {
+        "path": "/participation-county-context/20261106-11/geometry/county-IA.geojson",
+        "name": "county-IA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/784d261600f349073d3cf74ba8d168595cf6a46e/public/participation-county-context/20261106-11/geometry/county-IA.geojson",
+        "bytes": 102952,
+        "sha256": "c4ae2cd4fbac01725cfcf4d9e20815d41c149044a9b73665903135d34561e8ee"
+      },
+      {
+        "path": "/participation-county-context/20261106-11/geometry/county-KY.geojson",
+        "name": "county-KY.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/784d261600f349073d3cf74ba8d168595cf6a46e/public/participation-county-context/20261106-11/geometry/county-KY.geojson",
+        "bytes": 844982,
+        "sha256": "f9d2e0f8bd3e72f22d7ff6a530450d6e5e5bbad83f5dd02c32648a3207ef5eac"
+      },
+      {
+        "path": "/participation-county-context/20261106-11/geometry/county-MO.geojson",
+        "name": "county-MO.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/784d261600f349073d3cf74ba8d168595cf6a46e/public/participation-county-context/20261106-11/geometry/county-MO.geojson",
+        "bytes": 285841,
+        "sha256": "b9b8a05f01088fdcabb2c0aaf52f1dbd325282481a76454a2bd428a33b11795c"
+      },
+      {
+        "path": "/participation-county-context/20261106-11/geometry/county-NJ.geojson",
+        "name": "county-NJ.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/784d261600f349073d3cf74ba8d168595cf6a46e/public/participation-county-context/20261106-11/geometry/county-NJ.geojson",
+        "bytes": 139257,
+        "sha256": "489eabbafe98495645d95ddb65581f5204b3bd7871b001d02d3aaa3ffa11733b"
+      },
+      {
+        "path": "/participation-county-context/20261106-11/geometry/county-NV.geojson",
+        "name": "county-NV.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/784d261600f349073d3cf74ba8d168595cf6a46e/public/participation-county-context/20261106-11/geometry/county-NV.geojson",
+        "bytes": 72248,
+        "sha256": "f67a18f6d0ca4799ba9579f3628054282411310987f64378ec41cbc5fefe28c4"
+      },
+      {
+        "path": "/participation-county-context/20261106-11/geometry/county-OR.geojson",
+        "name": "county-OR.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/784d261600f349073d3cf74ba8d168595cf6a46e/public/participation-county-context/20261106-11/geometry/county-OR.geojson",
+        "bytes": 297700,
+        "sha256": "86f79f21252fdeef6d5c06525f909e2578f6119c158bfe10b51fecb72609e6eb"
+      },
+      {
+        "path": "/participation-county-context/20261106-11/geometry/county-PA.geojson",
+        "name": "county-PA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/784d261600f349073d3cf74ba8d168595cf6a46e/public/participation-county-context/20261106-11/geometry/county-PA.geojson",
+        "bytes": 298398,
+        "sha256": "02c17862c97cddf64a70ade6596e11c7bd8fe5707ba83bca3910172354b9b58a"
+      },
+      {
+        "path": "/participation-county-context/20261106-11/geometry/county-VA.geojson",
+        "name": "county-VA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/784d261600f349073d3cf74ba8d168595cf6a46e/public/participation-county-context/20261106-11/geometry/county-VA.geojson",
+        "bytes": 840683,
+        "sha256": "825295417afcfafdd28dd7856edda31cdc0dc8a0d7c9b00abafdac90c38176da"
+      },
+      {
+        "path": "/participation-county-context/20261106-11/geometry/county-WA.geojson",
+        "name": "county-WA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/784d261600f349073d3cf74ba8d168595cf6a46e/public/participation-county-context/20261106-11/geometry/county-WA.geojson",
+        "bytes": 395414,
+        "sha256": "b7170c2d2ea13d6ddc1541ea184b5cae1135412be35c041149e5aa8a09eb55f8"
+      },
+      {
+        "path": "/participation-county-context/20261106-11/geometry/county-WY.geojson",
+        "name": "county-WY.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/784d261600f349073d3cf74ba8d168595cf6a46e/public/participation-county-context/20261106-11/geometry/county-WY.geojson",
+        "bytes": 96180,
+        "sha256": "19eca7f10211ad57da4589ef2969d8817a241d90381a2ff4d1b513851d8ca777"
+      },
+      {
+        "path": "/participation-county-context/20261106-12/complete-county-participation-context-12.zip",
+        "name": "complete-county-participation-context-12.zip",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-12/complete-county-participation-context-12.zip",
+        "bytes": 2468069,
+        "sha256": "ded6b1c826875838846c3d170d6adb724ed0b434dda8321bb851e5bee5ac8808"
+      },
+      {
+        "path": "/participation-county-context/20261106-12/geometry/county-AL.geojson",
+        "name": "county-AL.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/efd750acd9aa1b021b7de9c24b42b8aeecc32e1a/public/participation-county-context/20261106-12/geometry/county-AL.geojson",
+        "bytes": 370354,
+        "sha256": "67b03de3aa281430aeae575360c932074111be88289c081ec80d978067e095ec"
+      },
+      {
+        "path": "/participation-county-context/20261106-12/geometry/county-AR.geojson",
+        "name": "county-AR.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/efd750acd9aa1b021b7de9c24b42b8aeecc32e1a/public/participation-county-context/20261106-12/geometry/county-AR.geojson",
+        "bytes": 422329,
+        "sha256": "addb5be81e6694681a8edb96575c29cf014158e50ae189facbd96f76892a8e2a"
+      },
+      {
+        "path": "/participation-county-context/20261106-12/geometry/county-AZ.geojson",
+        "name": "county-AZ.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/efd750acd9aa1b021b7de9c24b42b8aeecc32e1a/public/participation-county-context/20261106-12/geometry/county-AZ.geojson",
+        "bytes": 195541,
+        "sha256": "0837a91e1b1ae37535b1256afe90ab70955b50872c98f9133a4e56b843252eec"
+      },
+      {
+        "path": "/participation-county-context/20261106-12/geometry/county-CA.geojson",
+        "name": "county-CA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/efd750acd9aa1b021b7de9c24b42b8aeecc32e1a/public/participation-county-context/20261106-12/geometry/county-CA.geojson",
+        "bytes": 777815,
+        "sha256": "fc167d02493b97c385eba9625bce506b9b9f93c5e0a9a69af6b9cf052b556e7a"
+      },
+      {
+        "path": "/participation-county-context/20261106-12/geometry/county-DC.geojson",
+        "name": "county-DC.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/efd750acd9aa1b021b7de9c24b42b8aeecc32e1a/public/participation-county-context/20261106-12/geometry/county-DC.geojson",
+        "bytes": 1724,
+        "sha256": "e111ef8f1b7ab1873b096c6075e63ddc5aa1ae370def71ee8523a2a7b2f3b002"
+      },
+      {
+        "path": "/participation-county-context/20261106-12/geometry/county-FL.geojson",
+        "name": "county-FL.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/efd750acd9aa1b021b7de9c24b42b8aeecc32e1a/public/participation-county-context/20261106-12/geometry/county-FL.geojson",
+        "bytes": 494363,
+        "sha256": "d8d21d51dd475bc23c1b10fa0aa151b1591f1c681dfa9c31ce8d94f1b4713f47"
+      },
+      {
+        "path": "/participation-county-context/20261106-12/geometry/county-IA.geojson",
+        "name": "county-IA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/efd750acd9aa1b021b7de9c24b42b8aeecc32e1a/public/participation-county-context/20261106-12/geometry/county-IA.geojson",
+        "bytes": 102952,
+        "sha256": "c4ae2cd4fbac01725cfcf4d9e20815d41c149044a9b73665903135d34561e8ee"
+      },
+      {
+        "path": "/participation-county-context/20261106-12/geometry/county-KY.geojson",
+        "name": "county-KY.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/efd750acd9aa1b021b7de9c24b42b8aeecc32e1a/public/participation-county-context/20261106-12/geometry/county-KY.geojson",
+        "bytes": 844982,
+        "sha256": "f9d2e0f8bd3e72f22d7ff6a530450d6e5e5bbad83f5dd02c32648a3207ef5eac"
+      },
+      {
+        "path": "/participation-county-context/20261106-12/geometry/county-MO.geojson",
+        "name": "county-MO.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/efd750acd9aa1b021b7de9c24b42b8aeecc32e1a/public/participation-county-context/20261106-12/geometry/county-MO.geojson",
+        "bytes": 285841,
+        "sha256": "b9b8a05f01088fdcabb2c0aaf52f1dbd325282481a76454a2bd428a33b11795c"
+      },
+      {
+        "path": "/participation-county-context/20261106-12/geometry/county-NJ.geojson",
+        "name": "county-NJ.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/efd750acd9aa1b021b7de9c24b42b8aeecc32e1a/public/participation-county-context/20261106-12/geometry/county-NJ.geojson",
+        "bytes": 139257,
+        "sha256": "489eabbafe98495645d95ddb65581f5204b3bd7871b001d02d3aaa3ffa11733b"
+      },
+      {
+        "path": "/participation-county-context/20261106-12/geometry/county-NV.geojson",
+        "name": "county-NV.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/efd750acd9aa1b021b7de9c24b42b8aeecc32e1a/public/participation-county-context/20261106-12/geometry/county-NV.geojson",
+        "bytes": 72248,
+        "sha256": "f67a18f6d0ca4799ba9579f3628054282411310987f64378ec41cbc5fefe28c4"
+      },
+      {
+        "path": "/participation-county-context/20261106-12/geometry/county-OR.geojson",
+        "name": "county-OR.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/efd750acd9aa1b021b7de9c24b42b8aeecc32e1a/public/participation-county-context/20261106-12/geometry/county-OR.geojson",
+        "bytes": 297700,
+        "sha256": "86f79f21252fdeef6d5c06525f909e2578f6119c158bfe10b51fecb72609e6eb"
+      },
+      {
+        "path": "/participation-county-context/20261106-12/geometry/county-PA.geojson",
+        "name": "county-PA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/efd750acd9aa1b021b7de9c24b42b8aeecc32e1a/public/participation-county-context/20261106-12/geometry/county-PA.geojson",
+        "bytes": 298398,
+        "sha256": "02c17862c97cddf64a70ade6596e11c7bd8fe5707ba83bca3910172354b9b58a"
+      },
+      {
+        "path": "/participation-county-context/20261106-12/geometry/county-VA.geojson",
+        "name": "county-VA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/efd750acd9aa1b021b7de9c24b42b8aeecc32e1a/public/participation-county-context/20261106-12/geometry/county-VA.geojson",
+        "bytes": 840683,
+        "sha256": "825295417afcfafdd28dd7856edda31cdc0dc8a0d7c9b00abafdac90c38176da"
+      },
+      {
+        "path": "/participation-county-context/20261106-12/geometry/county-WA.geojson",
+        "name": "county-WA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/efd750acd9aa1b021b7de9c24b42b8aeecc32e1a/public/participation-county-context/20261106-12/geometry/county-WA.geojson",
+        "bytes": 395414,
+        "sha256": "b7170c2d2ea13d6ddc1541ea184b5cae1135412be35c041149e5aa8a09eb55f8"
+      },
+      {
+        "path": "/participation-county-context/20261106-12/geometry/county-WY.geojson",
+        "name": "county-WY.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/efd750acd9aa1b021b7de9c24b42b8aeecc32e1a/public/participation-county-context/20261106-12/geometry/county-WY.geojson",
+        "bytes": 96180,
+        "sha256": "19eca7f10211ad57da4589ef2969d8817a241d90381a2ff4d1b513851d8ca777"
+      },
+      {
+        "path": "/participation-county-context/20261106-13/complete-county-participation-context-13.zip",
+        "name": "complete-county-participation-context-13.zip",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-13/complete-county-participation-context-13.zip",
+        "bytes": 2789632,
+        "sha256": "f7a16895a8d97856f391053bb006252495a698c38b3ab6dde1c51b0148d02100"
+      },
+      {
+        "path": "/participation-county-context/20261106-13/geometry/county-AL.geojson",
+        "name": "county-AL.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/70c141f45dae29980f2871a300934688035a2177/public/participation-county-context/20261106-13/geometry/county-AL.geojson",
+        "bytes": 370354,
+        "sha256": "67b03de3aa281430aeae575360c932074111be88289c081ec80d978067e095ec"
+      },
+      {
+        "path": "/participation-county-context/20261106-13/geometry/county-AR.geojson",
+        "name": "county-AR.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/70c141f45dae29980f2871a300934688035a2177/public/participation-county-context/20261106-13/geometry/county-AR.geojson",
+        "bytes": 422329,
+        "sha256": "addb5be81e6694681a8edb96575c29cf014158e50ae189facbd96f76892a8e2a"
+      },
+      {
+        "path": "/participation-county-context/20261106-13/geometry/county-AZ.geojson",
+        "name": "county-AZ.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/70c141f45dae29980f2871a300934688035a2177/public/participation-county-context/20261106-13/geometry/county-AZ.geojson",
+        "bytes": 195541,
+        "sha256": "0837a91e1b1ae37535b1256afe90ab70955b50872c98f9133a4e56b843252eec"
+      },
+      {
+        "path": "/participation-county-context/20261106-13/geometry/county-CA.geojson",
+        "name": "county-CA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/70c141f45dae29980f2871a300934688035a2177/public/participation-county-context/20261106-13/geometry/county-CA.geojson",
+        "bytes": 777815,
+        "sha256": "fc167d02493b97c385eba9625bce506b9b9f93c5e0a9a69af6b9cf052b556e7a"
+      },
+      {
+        "path": "/participation-county-context/20261106-13/geometry/county-DC.geojson",
+        "name": "county-DC.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/70c141f45dae29980f2871a300934688035a2177/public/participation-county-context/20261106-13/geometry/county-DC.geojson",
+        "bytes": 1724,
+        "sha256": "e111ef8f1b7ab1873b096c6075e63ddc5aa1ae370def71ee8523a2a7b2f3b002"
+      },
+      {
+        "path": "/participation-county-context/20261106-13/geometry/county-FL.geojson",
+        "name": "county-FL.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/70c141f45dae29980f2871a300934688035a2177/public/participation-county-context/20261106-13/geometry/county-FL.geojson",
+        "bytes": 494363,
+        "sha256": "d8d21d51dd475bc23c1b10fa0aa151b1591f1c681dfa9c31ce8d94f1b4713f47"
+      },
+      {
+        "path": "/participation-county-context/20261106-13/geometry/county-GA.geojson",
+        "name": "county-GA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/70c141f45dae29980f2871a300934688035a2177/public/participation-county-context/20261106-13/geometry/county-GA.geojson",
+        "bytes": 846753,
+        "sha256": "6a51d15e3a8241c280ac3d95cbee1159fd03e724d667c6990a30dd22f2bbbb54"
+      },
+      {
+        "path": "/participation-county-context/20261106-13/geometry/county-IA.geojson",
+        "name": "county-IA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/70c141f45dae29980f2871a300934688035a2177/public/participation-county-context/20261106-13/geometry/county-IA.geojson",
+        "bytes": 102952,
+        "sha256": "c4ae2cd4fbac01725cfcf4d9e20815d41c149044a9b73665903135d34561e8ee"
+      },
+      {
+        "path": "/participation-county-context/20261106-13/geometry/county-KY.geojson",
+        "name": "county-KY.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/70c141f45dae29980f2871a300934688035a2177/public/participation-county-context/20261106-13/geometry/county-KY.geojson",
+        "bytes": 844982,
+        "sha256": "f9d2e0f8bd3e72f22d7ff6a530450d6e5e5bbad83f5dd02c32648a3207ef5eac"
+      },
+      {
+        "path": "/participation-county-context/20261106-13/geometry/county-MO.geojson",
+        "name": "county-MO.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/70c141f45dae29980f2871a300934688035a2177/public/participation-county-context/20261106-13/geometry/county-MO.geojson",
+        "bytes": 285841,
+        "sha256": "b9b8a05f01088fdcabb2c0aaf52f1dbd325282481a76454a2bd428a33b11795c"
+      },
+      {
+        "path": "/participation-county-context/20261106-13/geometry/county-NJ.geojson",
+        "name": "county-NJ.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/70c141f45dae29980f2871a300934688035a2177/public/participation-county-context/20261106-13/geometry/county-NJ.geojson",
+        "bytes": 139257,
+        "sha256": "489eabbafe98495645d95ddb65581f5204b3bd7871b001d02d3aaa3ffa11733b"
+      },
+      {
+        "path": "/participation-county-context/20261106-13/geometry/county-NV.geojson",
+        "name": "county-NV.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/70c141f45dae29980f2871a300934688035a2177/public/participation-county-context/20261106-13/geometry/county-NV.geojson",
+        "bytes": 72248,
+        "sha256": "f67a18f6d0ca4799ba9579f3628054282411310987f64378ec41cbc5fefe28c4"
+      },
+      {
+        "path": "/participation-county-context/20261106-13/geometry/county-OR.geojson",
+        "name": "county-OR.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/70c141f45dae29980f2871a300934688035a2177/public/participation-county-context/20261106-13/geometry/county-OR.geojson",
+        "bytes": 297700,
+        "sha256": "86f79f21252fdeef6d5c06525f909e2578f6119c158bfe10b51fecb72609e6eb"
+      },
+      {
+        "path": "/participation-county-context/20261106-13/geometry/county-PA.geojson",
+        "name": "county-PA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/70c141f45dae29980f2871a300934688035a2177/public/participation-county-context/20261106-13/geometry/county-PA.geojson",
+        "bytes": 298398,
+        "sha256": "02c17862c97cddf64a70ade6596e11c7bd8fe5707ba83bca3910172354b9b58a"
+      },
+      {
+        "path": "/participation-county-context/20261106-13/geometry/county-VA.geojson",
+        "name": "county-VA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/70c141f45dae29980f2871a300934688035a2177/public/participation-county-context/20261106-13/geometry/county-VA.geojson",
+        "bytes": 840683,
+        "sha256": "825295417afcfafdd28dd7856edda31cdc0dc8a0d7c9b00abafdac90c38176da"
+      },
+      {
+        "path": "/participation-county-context/20261106-13/geometry/county-WA.geojson",
+        "name": "county-WA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/70c141f45dae29980f2871a300934688035a2177/public/participation-county-context/20261106-13/geometry/county-WA.geojson",
+        "bytes": 395414,
+        "sha256": "b7170c2d2ea13d6ddc1541ea184b5cae1135412be35c041149e5aa8a09eb55f8"
+      },
+      {
+        "path": "/participation-county-context/20261106-13/geometry/county-WY.geojson",
+        "name": "county-WY.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/70c141f45dae29980f2871a300934688035a2177/public/participation-county-context/20261106-13/geometry/county-WY.geojson",
+        "bytes": 96180,
+        "sha256": "19eca7f10211ad57da4589ef2969d8817a241d90381a2ff4d1b513851d8ca777"
+      },
+      {
+        "path": "/participation-county-context/20261106-14/complete-county-participation-context-14.zip",
+        "name": "complete-county-participation-context-14.zip",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-14/complete-county-participation-context-14.zip",
+        "bytes": 2790328,
+        "sha256": "deb56b6694bf19e28794f6f236aa30917851b32d8f7704fcc2895cce724dd163"
+      },
+      {
+        "path": "/participation-county-context/20261106-14/geometry/county-AL.geojson",
+        "name": "county-AL.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5d2e25f80be9f9361cc37a4131eb274323c42e75/public/participation-county-context/20261106-14/geometry/county-AL.geojson",
+        "bytes": 370354,
+        "sha256": "67b03de3aa281430aeae575360c932074111be88289c081ec80d978067e095ec"
+      },
+      {
+        "path": "/participation-county-context/20261106-14/geometry/county-AR.geojson",
+        "name": "county-AR.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5d2e25f80be9f9361cc37a4131eb274323c42e75/public/participation-county-context/20261106-14/geometry/county-AR.geojson",
+        "bytes": 422329,
+        "sha256": "addb5be81e6694681a8edb96575c29cf014158e50ae189facbd96f76892a8e2a"
+      },
+      {
+        "path": "/participation-county-context/20261106-14/geometry/county-AZ.geojson",
+        "name": "county-AZ.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5d2e25f80be9f9361cc37a4131eb274323c42e75/public/participation-county-context/20261106-14/geometry/county-AZ.geojson",
+        "bytes": 195541,
+        "sha256": "0837a91e1b1ae37535b1256afe90ab70955b50872c98f9133a4e56b843252eec"
+      },
+      {
+        "path": "/participation-county-context/20261106-14/geometry/county-CA.geojson",
+        "name": "county-CA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5d2e25f80be9f9361cc37a4131eb274323c42e75/public/participation-county-context/20261106-14/geometry/county-CA.geojson",
+        "bytes": 777815,
+        "sha256": "fc167d02493b97c385eba9625bce506b9b9f93c5e0a9a69af6b9cf052b556e7a"
+      },
+      {
+        "path": "/participation-county-context/20261106-14/geometry/county-DC.geojson",
+        "name": "county-DC.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5d2e25f80be9f9361cc37a4131eb274323c42e75/public/participation-county-context/20261106-14/geometry/county-DC.geojson",
+        "bytes": 1724,
+        "sha256": "e111ef8f1b7ab1873b096c6075e63ddc5aa1ae370def71ee8523a2a7b2f3b002"
+      },
+      {
+        "path": "/participation-county-context/20261106-14/geometry/county-FL.geojson",
+        "name": "county-FL.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5d2e25f80be9f9361cc37a4131eb274323c42e75/public/participation-county-context/20261106-14/geometry/county-FL.geojson",
+        "bytes": 494363,
+        "sha256": "d8d21d51dd475bc23c1b10fa0aa151b1591f1c681dfa9c31ce8d94f1b4713f47"
+      },
+      {
+        "path": "/participation-county-context/20261106-14/geometry/county-GA.geojson",
+        "name": "county-GA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5d2e25f80be9f9361cc37a4131eb274323c42e75/public/participation-county-context/20261106-14/geometry/county-GA.geojson",
+        "bytes": 846753,
+        "sha256": "6a51d15e3a8241c280ac3d95cbee1159fd03e724d667c6990a30dd22f2bbbb54"
+      },
+      {
+        "path": "/participation-county-context/20261106-14/geometry/county-IA.geojson",
+        "name": "county-IA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5d2e25f80be9f9361cc37a4131eb274323c42e75/public/participation-county-context/20261106-14/geometry/county-IA.geojson",
+        "bytes": 102952,
+        "sha256": "c4ae2cd4fbac01725cfcf4d9e20815d41c149044a9b73665903135d34561e8ee"
+      },
+      {
+        "path": "/participation-county-context/20261106-14/geometry/county-KY.geojson",
+        "name": "county-KY.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5d2e25f80be9f9361cc37a4131eb274323c42e75/public/participation-county-context/20261106-14/geometry/county-KY.geojson",
+        "bytes": 844982,
+        "sha256": "f9d2e0f8bd3e72f22d7ff6a530450d6e5e5bbad83f5dd02c32648a3207ef5eac"
+      },
+      {
+        "path": "/participation-county-context/20261106-14/geometry/county-MO.geojson",
+        "name": "county-MO.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5d2e25f80be9f9361cc37a4131eb274323c42e75/public/participation-county-context/20261106-14/geometry/county-MO.geojson",
+        "bytes": 285841,
+        "sha256": "b9b8a05f01088fdcabb2c0aaf52f1dbd325282481a76454a2bd428a33b11795c"
+      },
+      {
+        "path": "/participation-county-context/20261106-14/geometry/county-NJ.geojson",
+        "name": "county-NJ.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5d2e25f80be9f9361cc37a4131eb274323c42e75/public/participation-county-context/20261106-14/geometry/county-NJ.geojson",
+        "bytes": 139257,
+        "sha256": "489eabbafe98495645d95ddb65581f5204b3bd7871b001d02d3aaa3ffa11733b"
+      },
+      {
+        "path": "/participation-county-context/20261106-14/geometry/county-NV.geojson",
+        "name": "county-NV.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5d2e25f80be9f9361cc37a4131eb274323c42e75/public/participation-county-context/20261106-14/geometry/county-NV.geojson",
+        "bytes": 72248,
+        "sha256": "f67a18f6d0ca4799ba9579f3628054282411310987f64378ec41cbc5fefe28c4"
+      },
+      {
+        "path": "/participation-county-context/20261106-14/geometry/county-OR.geojson",
+        "name": "county-OR.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5d2e25f80be9f9361cc37a4131eb274323c42e75/public/participation-county-context/20261106-14/geometry/county-OR.geojson",
+        "bytes": 297700,
+        "sha256": "86f79f21252fdeef6d5c06525f909e2578f6119c158bfe10b51fecb72609e6eb"
+      },
+      {
+        "path": "/participation-county-context/20261106-14/geometry/county-PA.geojson",
+        "name": "county-PA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5d2e25f80be9f9361cc37a4131eb274323c42e75/public/participation-county-context/20261106-14/geometry/county-PA.geojson",
+        "bytes": 298398,
+        "sha256": "02c17862c97cddf64a70ade6596e11c7bd8fe5707ba83bca3910172354b9b58a"
+      },
+      {
+        "path": "/participation-county-context/20261106-14/geometry/county-VA.geojson",
+        "name": "county-VA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5d2e25f80be9f9361cc37a4131eb274323c42e75/public/participation-county-context/20261106-14/geometry/county-VA.geojson",
+        "bytes": 840683,
+        "sha256": "825295417afcfafdd28dd7856edda31cdc0dc8a0d7c9b00abafdac90c38176da"
+      },
+      {
+        "path": "/participation-county-context/20261106-14/geometry/county-WA.geojson",
+        "name": "county-WA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5d2e25f80be9f9361cc37a4131eb274323c42e75/public/participation-county-context/20261106-14/geometry/county-WA.geojson",
+        "bytes": 395414,
+        "sha256": "b7170c2d2ea13d6ddc1541ea184b5cae1135412be35c041149e5aa8a09eb55f8"
+      },
+      {
+        "path": "/participation-county-context/20261106-14/geometry/county-WY.geojson",
+        "name": "county-WY.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5d2e25f80be9f9361cc37a4131eb274323c42e75/public/participation-county-context/20261106-14/geometry/county-WY.geojson",
+        "bytes": 96180,
+        "sha256": "19eca7f10211ad57da4589ef2969d8817a241d90381a2ff4d1b513851d8ca777"
+      },
+      {
+        "path": "/participation-county-context/20261106-15/complete-county-participation-context-15.zip",
+        "name": "complete-county-participation-context-15.zip",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-15/complete-county-participation-context-15.zip",
+        "bytes": 2904232,
+        "sha256": "4596858fb800195759a26616ad856d2500306ae431f9fe877b6fe20f40e1eda5"
+      },
+      {
+        "path": "/participation-county-context/20261106-15/geometry/county-AL.geojson",
+        "name": "county-AL.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/635697084ec43e996662eb5efe55d154fe187405/public/participation-county-context/20261106-15/geometry/county-AL.geojson",
+        "bytes": 370354,
+        "sha256": "67b03de3aa281430aeae575360c932074111be88289c081ec80d978067e095ec"
+      },
+      {
+        "path": "/participation-county-context/20261106-15/geometry/county-AR.geojson",
+        "name": "county-AR.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/635697084ec43e996662eb5efe55d154fe187405/public/participation-county-context/20261106-15/geometry/county-AR.geojson",
+        "bytes": 422329,
+        "sha256": "addb5be81e6694681a8edb96575c29cf014158e50ae189facbd96f76892a8e2a"
+      },
+      {
+        "path": "/participation-county-context/20261106-15/geometry/county-AZ.geojson",
+        "name": "county-AZ.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/635697084ec43e996662eb5efe55d154fe187405/public/participation-county-context/20261106-15/geometry/county-AZ.geojson",
+        "bytes": 195541,
+        "sha256": "0837a91e1b1ae37535b1256afe90ab70955b50872c98f9133a4e56b843252eec"
+      },
+      {
+        "path": "/participation-county-context/20261106-15/geometry/county-CA.geojson",
+        "name": "county-CA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/635697084ec43e996662eb5efe55d154fe187405/public/participation-county-context/20261106-15/geometry/county-CA.geojson",
+        "bytes": 777815,
+        "sha256": "fc167d02493b97c385eba9625bce506b9b9f93c5e0a9a69af6b9cf052b556e7a"
+      },
+      {
+        "path": "/participation-county-context/20261106-15/geometry/county-DC.geojson",
+        "name": "county-DC.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/635697084ec43e996662eb5efe55d154fe187405/public/participation-county-context/20261106-15/geometry/county-DC.geojson",
+        "bytes": 1724,
+        "sha256": "e111ef8f1b7ab1873b096c6075e63ddc5aa1ae370def71ee8523a2a7b2f3b002"
+      },
+      {
+        "path": "/participation-county-context/20261106-15/geometry/county-FL.geojson",
+        "name": "county-FL.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/635697084ec43e996662eb5efe55d154fe187405/public/participation-county-context/20261106-15/geometry/county-FL.geojson",
+        "bytes": 494363,
+        "sha256": "d8d21d51dd475bc23c1b10fa0aa151b1591f1c681dfa9c31ce8d94f1b4713f47"
+      },
+      {
+        "path": "/participation-county-context/20261106-15/geometry/county-GA.geojson",
+        "name": "county-GA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/635697084ec43e996662eb5efe55d154fe187405/public/participation-county-context/20261106-15/geometry/county-GA.geojson",
+        "bytes": 846753,
+        "sha256": "6a51d15e3a8241c280ac3d95cbee1159fd03e724d667c6990a30dd22f2bbbb54"
+      },
+      {
+        "path": "/participation-county-context/20261106-15/geometry/county-IA.geojson",
+        "name": "county-IA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/635697084ec43e996662eb5efe55d154fe187405/public/participation-county-context/20261106-15/geometry/county-IA.geojson",
+        "bytes": 102952,
+        "sha256": "c4ae2cd4fbac01725cfcf4d9e20815d41c149044a9b73665903135d34561e8ee"
+      },
+      {
+        "path": "/participation-county-context/20261106-15/geometry/county-KY.geojson",
+        "name": "county-KY.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/635697084ec43e996662eb5efe55d154fe187405/public/participation-county-context/20261106-15/geometry/county-KY.geojson",
+        "bytes": 844982,
+        "sha256": "f9d2e0f8bd3e72f22d7ff6a530450d6e5e5bbad83f5dd02c32648a3207ef5eac"
+      },
+      {
+        "path": "/participation-county-context/20261106-15/geometry/county-MN.geojson",
+        "name": "county-MN.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/635697084ec43e996662eb5efe55d154fe187405/public/participation-county-context/20261106-15/geometry/county-MN.geojson",
+        "bytes": 295105,
+        "sha256": "f0769cb63822198d6219cbc8b759fe53c06f67b419d82d513e9612cb5ebbb00b"
+      },
+      {
+        "path": "/participation-county-context/20261106-15/geometry/county-MO.geojson",
+        "name": "county-MO.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/635697084ec43e996662eb5efe55d154fe187405/public/participation-county-context/20261106-15/geometry/county-MO.geojson",
+        "bytes": 285841,
+        "sha256": "b9b8a05f01088fdcabb2c0aaf52f1dbd325282481a76454a2bd428a33b11795c"
+      },
+      {
+        "path": "/participation-county-context/20261106-15/geometry/county-NJ.geojson",
+        "name": "county-NJ.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/635697084ec43e996662eb5efe55d154fe187405/public/participation-county-context/20261106-15/geometry/county-NJ.geojson",
+        "bytes": 139257,
+        "sha256": "489eabbafe98495645d95ddb65581f5204b3bd7871b001d02d3aaa3ffa11733b"
+      },
+      {
+        "path": "/participation-county-context/20261106-15/geometry/county-NV.geojson",
+        "name": "county-NV.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/635697084ec43e996662eb5efe55d154fe187405/public/participation-county-context/20261106-15/geometry/county-NV.geojson",
+        "bytes": 72248,
+        "sha256": "f67a18f6d0ca4799ba9579f3628054282411310987f64378ec41cbc5fefe28c4"
+      },
+      {
+        "path": "/participation-county-context/20261106-15/geometry/county-OR.geojson",
+        "name": "county-OR.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/635697084ec43e996662eb5efe55d154fe187405/public/participation-county-context/20261106-15/geometry/county-OR.geojson",
+        "bytes": 297700,
+        "sha256": "86f79f21252fdeef6d5c06525f909e2578f6119c158bfe10b51fecb72609e6eb"
+      },
+      {
+        "path": "/participation-county-context/20261106-15/geometry/county-PA.geojson",
+        "name": "county-PA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/635697084ec43e996662eb5efe55d154fe187405/public/participation-county-context/20261106-15/geometry/county-PA.geojson",
+        "bytes": 298398,
+        "sha256": "02c17862c97cddf64a70ade6596e11c7bd8fe5707ba83bca3910172354b9b58a"
+      },
+      {
+        "path": "/participation-county-context/20261106-15/geometry/county-VA.geojson",
+        "name": "county-VA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/635697084ec43e996662eb5efe55d154fe187405/public/participation-county-context/20261106-15/geometry/county-VA.geojson",
+        "bytes": 840683,
+        "sha256": "825295417afcfafdd28dd7856edda31cdc0dc8a0d7c9b00abafdac90c38176da"
+      },
+      {
+        "path": "/participation-county-context/20261106-15/geometry/county-WA.geojson",
+        "name": "county-WA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/635697084ec43e996662eb5efe55d154fe187405/public/participation-county-context/20261106-15/geometry/county-WA.geojson",
+        "bytes": 395414,
+        "sha256": "b7170c2d2ea13d6ddc1541ea184b5cae1135412be35c041149e5aa8a09eb55f8"
+      },
+      {
+        "path": "/participation-county-context/20261106-15/geometry/county-WY.geojson",
+        "name": "county-WY.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/635697084ec43e996662eb5efe55d154fe187405/public/participation-county-context/20261106-15/geometry/county-WY.geojson",
+        "bytes": 96180,
+        "sha256": "19eca7f10211ad57da4589ef2969d8817a241d90381a2ff4d1b513851d8ca777"
+      },
+      {
+        "path": "/participation-county-context/20261106-16/complete-county-participation-context-16.zip",
+        "name": "complete-county-participation-context-16.zip",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-16/complete-county-participation-context-16.zip",
+        "bytes": 2906180,
+        "sha256": "56bed7373c4e63bd7ae0abfebdc18b1de76fe238ddb1ce9c0543f5e863c58c9c"
+      },
+      {
+        "path": "/participation-county-context/20261106-16/geometry/county-AL.geojson",
+        "name": "county-AL.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/833c309f83efa6280eb9a5cfee7a17b2faff4211/public/participation-county-context/20261106-16/geometry/county-AL.geojson",
+        "bytes": 370354,
+        "sha256": "67b03de3aa281430aeae575360c932074111be88289c081ec80d978067e095ec"
+      },
+      {
+        "path": "/participation-county-context/20261106-16/geometry/county-AR.geojson",
+        "name": "county-AR.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/833c309f83efa6280eb9a5cfee7a17b2faff4211/public/participation-county-context/20261106-16/geometry/county-AR.geojson",
+        "bytes": 422329,
+        "sha256": "addb5be81e6694681a8edb96575c29cf014158e50ae189facbd96f76892a8e2a"
+      },
+      {
+        "path": "/participation-county-context/20261106-16/geometry/county-AZ.geojson",
+        "name": "county-AZ.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/833c309f83efa6280eb9a5cfee7a17b2faff4211/public/participation-county-context/20261106-16/geometry/county-AZ.geojson",
+        "bytes": 195541,
+        "sha256": "0837a91e1b1ae37535b1256afe90ab70955b50872c98f9133a4e56b843252eec"
+      },
+      {
+        "path": "/participation-county-context/20261106-16/geometry/county-CA.geojson",
+        "name": "county-CA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/833c309f83efa6280eb9a5cfee7a17b2faff4211/public/participation-county-context/20261106-16/geometry/county-CA.geojson",
+        "bytes": 777815,
+        "sha256": "fc167d02493b97c385eba9625bce506b9b9f93c5e0a9a69af6b9cf052b556e7a"
+      },
+      {
+        "path": "/participation-county-context/20261106-16/geometry/county-DC.geojson",
+        "name": "county-DC.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/833c309f83efa6280eb9a5cfee7a17b2faff4211/public/participation-county-context/20261106-16/geometry/county-DC.geojson",
+        "bytes": 1724,
+        "sha256": "e111ef8f1b7ab1873b096c6075e63ddc5aa1ae370def71ee8523a2a7b2f3b002"
+      },
+      {
+        "path": "/participation-county-context/20261106-16/geometry/county-FL.geojson",
+        "name": "county-FL.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/833c309f83efa6280eb9a5cfee7a17b2faff4211/public/participation-county-context/20261106-16/geometry/county-FL.geojson",
+        "bytes": 494363,
+        "sha256": "d8d21d51dd475bc23c1b10fa0aa151b1591f1c681dfa9c31ce8d94f1b4713f47"
+      },
+      {
+        "path": "/participation-county-context/20261106-16/geometry/county-GA.geojson",
+        "name": "county-GA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/833c309f83efa6280eb9a5cfee7a17b2faff4211/public/participation-county-context/20261106-16/geometry/county-GA.geojson",
+        "bytes": 846753,
+        "sha256": "6a51d15e3a8241c280ac3d95cbee1159fd03e724d667c6990a30dd22f2bbbb54"
+      },
+      {
+        "path": "/participation-county-context/20261106-16/geometry/county-IA.geojson",
+        "name": "county-IA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/833c309f83efa6280eb9a5cfee7a17b2faff4211/public/participation-county-context/20261106-16/geometry/county-IA.geojson",
+        "bytes": 102952,
+        "sha256": "c4ae2cd4fbac01725cfcf4d9e20815d41c149044a9b73665903135d34561e8ee"
+      },
+      {
+        "path": "/participation-county-context/20261106-16/geometry/county-KY.geojson",
+        "name": "county-KY.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/833c309f83efa6280eb9a5cfee7a17b2faff4211/public/participation-county-context/20261106-16/geometry/county-KY.geojson",
+        "bytes": 844982,
+        "sha256": "f9d2e0f8bd3e72f22d7ff6a530450d6e5e5bbad83f5dd02c32648a3207ef5eac"
+      },
+      {
+        "path": "/participation-county-context/20261106-16/geometry/county-MN.geojson",
+        "name": "county-MN.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/833c309f83efa6280eb9a5cfee7a17b2faff4211/public/participation-county-context/20261106-16/geometry/county-MN.geojson",
+        "bytes": 295105,
+        "sha256": "f0769cb63822198d6219cbc8b759fe53c06f67b419d82d513e9612cb5ebbb00b"
+      },
+      {
+        "path": "/participation-county-context/20261106-16/geometry/county-MO.geojson",
+        "name": "county-MO.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/833c309f83efa6280eb9a5cfee7a17b2faff4211/public/participation-county-context/20261106-16/geometry/county-MO.geojson",
+        "bytes": 285841,
+        "sha256": "b9b8a05f01088fdcabb2c0aaf52f1dbd325282481a76454a2bd428a33b11795c"
+      },
+      {
+        "path": "/participation-county-context/20261106-16/geometry/county-NJ.geojson",
+        "name": "county-NJ.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/833c309f83efa6280eb9a5cfee7a17b2faff4211/public/participation-county-context/20261106-16/geometry/county-NJ.geojson",
+        "bytes": 139257,
+        "sha256": "489eabbafe98495645d95ddb65581f5204b3bd7871b001d02d3aaa3ffa11733b"
+      },
+      {
+        "path": "/participation-county-context/20261106-16/geometry/county-NV.geojson",
+        "name": "county-NV.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/833c309f83efa6280eb9a5cfee7a17b2faff4211/public/participation-county-context/20261106-16/geometry/county-NV.geojson",
+        "bytes": 72248,
+        "sha256": "f67a18f6d0ca4799ba9579f3628054282411310987f64378ec41cbc5fefe28c4"
+      },
+      {
+        "path": "/participation-county-context/20261106-16/geometry/county-OR.geojson",
+        "name": "county-OR.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/833c309f83efa6280eb9a5cfee7a17b2faff4211/public/participation-county-context/20261106-16/geometry/county-OR.geojson",
+        "bytes": 297700,
+        "sha256": "86f79f21252fdeef6d5c06525f909e2578f6119c158bfe10b51fecb72609e6eb"
+      },
+      {
+        "path": "/participation-county-context/20261106-16/geometry/county-PA.geojson",
+        "name": "county-PA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/833c309f83efa6280eb9a5cfee7a17b2faff4211/public/participation-county-context/20261106-16/geometry/county-PA.geojson",
+        "bytes": 298398,
+        "sha256": "02c17862c97cddf64a70ade6596e11c7bd8fe5707ba83bca3910172354b9b58a"
+      },
+      {
+        "path": "/participation-county-context/20261106-16/geometry/county-VA.geojson",
+        "name": "county-VA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/833c309f83efa6280eb9a5cfee7a17b2faff4211/public/participation-county-context/20261106-16/geometry/county-VA.geojson",
+        "bytes": 840683,
+        "sha256": "825295417afcfafdd28dd7856edda31cdc0dc8a0d7c9b00abafdac90c38176da"
+      },
+      {
+        "path": "/participation-county-context/20261106-16/geometry/county-WA.geojson",
+        "name": "county-WA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/833c309f83efa6280eb9a5cfee7a17b2faff4211/public/participation-county-context/20261106-16/geometry/county-WA.geojson",
+        "bytes": 395414,
+        "sha256": "b7170c2d2ea13d6ddc1541ea184b5cae1135412be35c041149e5aa8a09eb55f8"
+      },
+      {
+        "path": "/participation-county-context/20261106-16/geometry/county-WY.geojson",
+        "name": "county-WY.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/833c309f83efa6280eb9a5cfee7a17b2faff4211/public/participation-county-context/20261106-16/geometry/county-WY.geojson",
+        "bytes": 96180,
+        "sha256": "19eca7f10211ad57da4589ef2969d8817a241d90381a2ff4d1b513851d8ca777"
+      },
+      {
+        "path": "/participation-county-context/20261106-17/complete-county-participation-context-17.zip",
+        "name": "complete-county-participation-context-17.zip",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-17/complete-county-participation-context-17.zip",
+        "bytes": 2907404,
+        "sha256": "afa791ae79125248ad1fedff6a9eb3d3d00dcb0f1118107f17f58770339c70a2"
+      },
+      {
+        "path": "/participation-county-context/20261106-17/geometry/county-AL.geojson",
+        "name": "county-AL.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/62f1665b3cfec842e89682537ee288ee6cf1dce6/public/participation-county-context/20261106-17/geometry/county-AL.geojson",
+        "bytes": 370354,
+        "sha256": "67b03de3aa281430aeae575360c932074111be88289c081ec80d978067e095ec"
+      },
+      {
+        "path": "/participation-county-context/20261106-17/geometry/county-AR.geojson",
+        "name": "county-AR.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/62f1665b3cfec842e89682537ee288ee6cf1dce6/public/participation-county-context/20261106-17/geometry/county-AR.geojson",
+        "bytes": 422329,
+        "sha256": "addb5be81e6694681a8edb96575c29cf014158e50ae189facbd96f76892a8e2a"
+      },
+      {
+        "path": "/participation-county-context/20261106-17/geometry/county-AZ.geojson",
+        "name": "county-AZ.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/62f1665b3cfec842e89682537ee288ee6cf1dce6/public/participation-county-context/20261106-17/geometry/county-AZ.geojson",
+        "bytes": 195541,
+        "sha256": "0837a91e1b1ae37535b1256afe90ab70955b50872c98f9133a4e56b843252eec"
+      },
+      {
+        "path": "/participation-county-context/20261106-17/geometry/county-CA.geojson",
+        "name": "county-CA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/62f1665b3cfec842e89682537ee288ee6cf1dce6/public/participation-county-context/20261106-17/geometry/county-CA.geojson",
+        "bytes": 777815,
+        "sha256": "fc167d02493b97c385eba9625bce506b9b9f93c5e0a9a69af6b9cf052b556e7a"
+      },
+      {
+        "path": "/participation-county-context/20261106-17/geometry/county-DC.geojson",
+        "name": "county-DC.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/62f1665b3cfec842e89682537ee288ee6cf1dce6/public/participation-county-context/20261106-17/geometry/county-DC.geojson",
+        "bytes": 1724,
+        "sha256": "e111ef8f1b7ab1873b096c6075e63ddc5aa1ae370def71ee8523a2a7b2f3b002"
+      },
+      {
+        "path": "/participation-county-context/20261106-17/geometry/county-FL.geojson",
+        "name": "county-FL.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/62f1665b3cfec842e89682537ee288ee6cf1dce6/public/participation-county-context/20261106-17/geometry/county-FL.geojson",
+        "bytes": 494363,
+        "sha256": "d8d21d51dd475bc23c1b10fa0aa151b1591f1c681dfa9c31ce8d94f1b4713f47"
+      },
+      {
+        "path": "/participation-county-context/20261106-17/geometry/county-GA.geojson",
+        "name": "county-GA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/62f1665b3cfec842e89682537ee288ee6cf1dce6/public/participation-county-context/20261106-17/geometry/county-GA.geojson",
+        "bytes": 846753,
+        "sha256": "6a51d15e3a8241c280ac3d95cbee1159fd03e724d667c6990a30dd22f2bbbb54"
+      },
+      {
+        "path": "/participation-county-context/20261106-17/geometry/county-IA.geojson",
+        "name": "county-IA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/62f1665b3cfec842e89682537ee288ee6cf1dce6/public/participation-county-context/20261106-17/geometry/county-IA.geojson",
+        "bytes": 102952,
+        "sha256": "c4ae2cd4fbac01725cfcf4d9e20815d41c149044a9b73665903135d34561e8ee"
+      },
+      {
+        "path": "/participation-county-context/20261106-17/geometry/county-KY.geojson",
+        "name": "county-KY.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/62f1665b3cfec842e89682537ee288ee6cf1dce6/public/participation-county-context/20261106-17/geometry/county-KY.geojson",
+        "bytes": 844982,
+        "sha256": "f9d2e0f8bd3e72f22d7ff6a530450d6e5e5bbad83f5dd02c32648a3207ef5eac"
+      },
+      {
+        "path": "/participation-county-context/20261106-17/geometry/county-MN.geojson",
+        "name": "county-MN.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/62f1665b3cfec842e89682537ee288ee6cf1dce6/public/participation-county-context/20261106-17/geometry/county-MN.geojson",
+        "bytes": 295105,
+        "sha256": "f0769cb63822198d6219cbc8b759fe53c06f67b419d82d513e9612cb5ebbb00b"
+      },
+      {
+        "path": "/participation-county-context/20261106-17/geometry/county-MO.geojson",
+        "name": "county-MO.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/62f1665b3cfec842e89682537ee288ee6cf1dce6/public/participation-county-context/20261106-17/geometry/county-MO.geojson",
+        "bytes": 285841,
+        "sha256": "b9b8a05f01088fdcabb2c0aaf52f1dbd325282481a76454a2bd428a33b11795c"
+      },
+      {
+        "path": "/participation-county-context/20261106-17/geometry/county-NJ.geojson",
+        "name": "county-NJ.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/62f1665b3cfec842e89682537ee288ee6cf1dce6/public/participation-county-context/20261106-17/geometry/county-NJ.geojson",
+        "bytes": 139257,
+        "sha256": "489eabbafe98495645d95ddb65581f5204b3bd7871b001d02d3aaa3ffa11733b"
+      },
+      {
+        "path": "/participation-county-context/20261106-17/geometry/county-NV.geojson",
+        "name": "county-NV.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/62f1665b3cfec842e89682537ee288ee6cf1dce6/public/participation-county-context/20261106-17/geometry/county-NV.geojson",
+        "bytes": 72248,
+        "sha256": "f67a18f6d0ca4799ba9579f3628054282411310987f64378ec41cbc5fefe28c4"
+      },
+      {
+        "path": "/participation-county-context/20261106-17/geometry/county-OR.geojson",
+        "name": "county-OR.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/62f1665b3cfec842e89682537ee288ee6cf1dce6/public/participation-county-context/20261106-17/geometry/county-OR.geojson",
+        "bytes": 297700,
+        "sha256": "86f79f21252fdeef6d5c06525f909e2578f6119c158bfe10b51fecb72609e6eb"
+      },
+      {
+        "path": "/participation-county-context/20261106-17/geometry/county-PA.geojson",
+        "name": "county-PA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/62f1665b3cfec842e89682537ee288ee6cf1dce6/public/participation-county-context/20261106-17/geometry/county-PA.geojson",
+        "bytes": 298398,
+        "sha256": "02c17862c97cddf64a70ade6596e11c7bd8fe5707ba83bca3910172354b9b58a"
+      },
+      {
+        "path": "/participation-county-context/20261106-17/geometry/county-VA.geojson",
+        "name": "county-VA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/62f1665b3cfec842e89682537ee288ee6cf1dce6/public/participation-county-context/20261106-17/geometry/county-VA.geojson",
+        "bytes": 840683,
+        "sha256": "825295417afcfafdd28dd7856edda31cdc0dc8a0d7c9b00abafdac90c38176da"
+      },
+      {
+        "path": "/participation-county-context/20261106-17/geometry/county-WA.geojson",
+        "name": "county-WA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/62f1665b3cfec842e89682537ee288ee6cf1dce6/public/participation-county-context/20261106-17/geometry/county-WA.geojson",
+        "bytes": 395414,
+        "sha256": "b7170c2d2ea13d6ddc1541ea184b5cae1135412be35c041149e5aa8a09eb55f8"
+      },
+      {
+        "path": "/participation-county-context/20261106-17/geometry/county-WY.geojson",
+        "name": "county-WY.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/62f1665b3cfec842e89682537ee288ee6cf1dce6/public/participation-county-context/20261106-17/geometry/county-WY.geojson",
+        "bytes": 96180,
+        "sha256": "19eca7f10211ad57da4589ef2969d8817a241d90381a2ff4d1b513851d8ca777"
+      },
+      {
+        "path": "/participation-county-context/20261106-18/complete-county-participation-context-18.zip",
+        "name": "complete-county-participation-context-18.zip",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-18/complete-county-participation-context-18.zip",
+        "bytes": 2909312,
+        "sha256": "84c0d996ab898f076962a8ce5f9278a69fd48067262c2031844a30c4c59bb64a"
+      },
+      {
+        "path": "/participation-county-context/20261106-18/geometry/county-AL.geojson",
+        "name": "county-AL.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/b3d8eb533a5ade421f569c62db9b8a7d8c4a6220/public/participation-county-context/20261106-18/geometry/county-AL.geojson",
+        "bytes": 370354,
+        "sha256": "67b03de3aa281430aeae575360c932074111be88289c081ec80d978067e095ec"
+      },
+      {
+        "path": "/participation-county-context/20261106-18/geometry/county-AR.geojson",
+        "name": "county-AR.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/b3d8eb533a5ade421f569c62db9b8a7d8c4a6220/public/participation-county-context/20261106-18/geometry/county-AR.geojson",
+        "bytes": 422329,
+        "sha256": "addb5be81e6694681a8edb96575c29cf014158e50ae189facbd96f76892a8e2a"
+      },
+      {
+        "path": "/participation-county-context/20261106-18/geometry/county-AZ.geojson",
+        "name": "county-AZ.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/b3d8eb533a5ade421f569c62db9b8a7d8c4a6220/public/participation-county-context/20261106-18/geometry/county-AZ.geojson",
+        "bytes": 195541,
+        "sha256": "0837a91e1b1ae37535b1256afe90ab70955b50872c98f9133a4e56b843252eec"
+      },
+      {
+        "path": "/participation-county-context/20261106-18/geometry/county-CA.geojson",
+        "name": "county-CA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/b3d8eb533a5ade421f569c62db9b8a7d8c4a6220/public/participation-county-context/20261106-18/geometry/county-CA.geojson",
+        "bytes": 777815,
+        "sha256": "fc167d02493b97c385eba9625bce506b9b9f93c5e0a9a69af6b9cf052b556e7a"
+      },
+      {
+        "path": "/participation-county-context/20261106-18/geometry/county-DC.geojson",
+        "name": "county-DC.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/b3d8eb533a5ade421f569c62db9b8a7d8c4a6220/public/participation-county-context/20261106-18/geometry/county-DC.geojson",
+        "bytes": 1724,
+        "sha256": "e111ef8f1b7ab1873b096c6075e63ddc5aa1ae370def71ee8523a2a7b2f3b002"
+      },
+      {
+        "path": "/participation-county-context/20261106-18/geometry/county-FL.geojson",
+        "name": "county-FL.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/b3d8eb533a5ade421f569c62db9b8a7d8c4a6220/public/participation-county-context/20261106-18/geometry/county-FL.geojson",
+        "bytes": 494363,
+        "sha256": "d8d21d51dd475bc23c1b10fa0aa151b1591f1c681dfa9c31ce8d94f1b4713f47"
+      },
+      {
+        "path": "/participation-county-context/20261106-18/geometry/county-GA.geojson",
+        "name": "county-GA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/b3d8eb533a5ade421f569c62db9b8a7d8c4a6220/public/participation-county-context/20261106-18/geometry/county-GA.geojson",
+        "bytes": 846753,
+        "sha256": "6a51d15e3a8241c280ac3d95cbee1159fd03e724d667c6990a30dd22f2bbbb54"
+      },
+      {
+        "path": "/participation-county-context/20261106-18/geometry/county-IA.geojson",
+        "name": "county-IA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/b3d8eb533a5ade421f569c62db9b8a7d8c4a6220/public/participation-county-context/20261106-18/geometry/county-IA.geojson",
+        "bytes": 102952,
+        "sha256": "c4ae2cd4fbac01725cfcf4d9e20815d41c149044a9b73665903135d34561e8ee"
+      },
+      {
+        "path": "/participation-county-context/20261106-18/geometry/county-KY.geojson",
+        "name": "county-KY.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/b3d8eb533a5ade421f569c62db9b8a7d8c4a6220/public/participation-county-context/20261106-18/geometry/county-KY.geojson",
+        "bytes": 844982,
+        "sha256": "f9d2e0f8bd3e72f22d7ff6a530450d6e5e5bbad83f5dd02c32648a3207ef5eac"
+      },
+      {
+        "path": "/participation-county-context/20261106-18/geometry/county-MN.geojson",
+        "name": "county-MN.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/b3d8eb533a5ade421f569c62db9b8a7d8c4a6220/public/participation-county-context/20261106-18/geometry/county-MN.geojson",
+        "bytes": 295105,
+        "sha256": "f0769cb63822198d6219cbc8b759fe53c06f67b419d82d513e9612cb5ebbb00b"
+      },
+      {
+        "path": "/participation-county-context/20261106-18/geometry/county-MO.geojson",
+        "name": "county-MO.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/b3d8eb533a5ade421f569c62db9b8a7d8c4a6220/public/participation-county-context/20261106-18/geometry/county-MO.geojson",
+        "bytes": 285841,
+        "sha256": "b9b8a05f01088fdcabb2c0aaf52f1dbd325282481a76454a2bd428a33b11795c"
+      },
+      {
+        "path": "/participation-county-context/20261106-18/geometry/county-NJ.geojson",
+        "name": "county-NJ.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/b3d8eb533a5ade421f569c62db9b8a7d8c4a6220/public/participation-county-context/20261106-18/geometry/county-NJ.geojson",
+        "bytes": 139257,
+        "sha256": "489eabbafe98495645d95ddb65581f5204b3bd7871b001d02d3aaa3ffa11733b"
+      },
+      {
+        "path": "/participation-county-context/20261106-18/geometry/county-NV.geojson",
+        "name": "county-NV.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/b3d8eb533a5ade421f569c62db9b8a7d8c4a6220/public/participation-county-context/20261106-18/geometry/county-NV.geojson",
+        "bytes": 72248,
+        "sha256": "f67a18f6d0ca4799ba9579f3628054282411310987f64378ec41cbc5fefe28c4"
+      },
+      {
+        "path": "/participation-county-context/20261106-18/geometry/county-OR.geojson",
+        "name": "county-OR.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/b3d8eb533a5ade421f569c62db9b8a7d8c4a6220/public/participation-county-context/20261106-18/geometry/county-OR.geojson",
+        "bytes": 297700,
+        "sha256": "86f79f21252fdeef6d5c06525f909e2578f6119c158bfe10b51fecb72609e6eb"
+      },
+      {
+        "path": "/participation-county-context/20261106-18/geometry/county-PA.geojson",
+        "name": "county-PA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/b3d8eb533a5ade421f569c62db9b8a7d8c4a6220/public/participation-county-context/20261106-18/geometry/county-PA.geojson",
+        "bytes": 298398,
+        "sha256": "02c17862c97cddf64a70ade6596e11c7bd8fe5707ba83bca3910172354b9b58a"
+      },
+      {
+        "path": "/participation-county-context/20261106-18/geometry/county-VA.geojson",
+        "name": "county-VA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/b3d8eb533a5ade421f569c62db9b8a7d8c4a6220/public/participation-county-context/20261106-18/geometry/county-VA.geojson",
+        "bytes": 840683,
+        "sha256": "825295417afcfafdd28dd7856edda31cdc0dc8a0d7c9b00abafdac90c38176da"
+      },
+      {
+        "path": "/participation-county-context/20261106-18/geometry/county-WA.geojson",
+        "name": "county-WA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/b3d8eb533a5ade421f569c62db9b8a7d8c4a6220/public/participation-county-context/20261106-18/geometry/county-WA.geojson",
+        "bytes": 395414,
+        "sha256": "b7170c2d2ea13d6ddc1541ea184b5cae1135412be35c041149e5aa8a09eb55f8"
+      },
+      {
+        "path": "/participation-county-context/20261106-18/geometry/county-WY.geojson",
+        "name": "county-WY.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/b3d8eb533a5ade421f569c62db9b8a7d8c4a6220/public/participation-county-context/20261106-18/geometry/county-WY.geojson",
+        "bytes": 96180,
+        "sha256": "19eca7f10211ad57da4589ef2969d8817a241d90381a2ff4d1b513851d8ca777"
+      },
+      {
+        "path": "/participation-county-context/20261106-19/complete-county-participation-context-19.zip",
+        "name": "complete-county-participation-context-19.zip",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-19/complete-county-participation-context-19.zip",
+        "bytes": 2910100,
+        "sha256": "e9c64a0c3c6f698f34ae39ae6a8de9608c3d50ef03ec001bb96776c28881729e"
+      },
+      {
+        "path": "/participation-county-context/20261106-19/geometry/county-AL.geojson",
+        "name": "county-AL.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/de77fd199364c95f4459cc4ba00d09500cc5843d/public/participation-county-context/20261106-19/geometry/county-AL.geojson",
+        "bytes": 370354,
+        "sha256": "67b03de3aa281430aeae575360c932074111be88289c081ec80d978067e095ec"
+      },
+      {
+        "path": "/participation-county-context/20261106-19/geometry/county-AR.geojson",
+        "name": "county-AR.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/de77fd199364c95f4459cc4ba00d09500cc5843d/public/participation-county-context/20261106-19/geometry/county-AR.geojson",
+        "bytes": 422329,
+        "sha256": "addb5be81e6694681a8edb96575c29cf014158e50ae189facbd96f76892a8e2a"
+      },
+      {
+        "path": "/participation-county-context/20261106-19/geometry/county-AZ.geojson",
+        "name": "county-AZ.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/de77fd199364c95f4459cc4ba00d09500cc5843d/public/participation-county-context/20261106-19/geometry/county-AZ.geojson",
+        "bytes": 195541,
+        "sha256": "0837a91e1b1ae37535b1256afe90ab70955b50872c98f9133a4e56b843252eec"
+      },
+      {
+        "path": "/participation-county-context/20261106-19/geometry/county-CA.geojson",
+        "name": "county-CA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/de77fd199364c95f4459cc4ba00d09500cc5843d/public/participation-county-context/20261106-19/geometry/county-CA.geojson",
+        "bytes": 777815,
+        "sha256": "fc167d02493b97c385eba9625bce506b9b9f93c5e0a9a69af6b9cf052b556e7a"
+      },
+      {
+        "path": "/participation-county-context/20261106-19/geometry/county-DC.geojson",
+        "name": "county-DC.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/de77fd199364c95f4459cc4ba00d09500cc5843d/public/participation-county-context/20261106-19/geometry/county-DC.geojson",
+        "bytes": 1724,
+        "sha256": "e111ef8f1b7ab1873b096c6075e63ddc5aa1ae370def71ee8523a2a7b2f3b002"
+      },
+      {
+        "path": "/participation-county-context/20261106-19/geometry/county-FL.geojson",
+        "name": "county-FL.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/de77fd199364c95f4459cc4ba00d09500cc5843d/public/participation-county-context/20261106-19/geometry/county-FL.geojson",
+        "bytes": 494363,
+        "sha256": "d8d21d51dd475bc23c1b10fa0aa151b1591f1c681dfa9c31ce8d94f1b4713f47"
+      },
+      {
+        "path": "/participation-county-context/20261106-19/geometry/county-GA.geojson",
+        "name": "county-GA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/de77fd199364c95f4459cc4ba00d09500cc5843d/public/participation-county-context/20261106-19/geometry/county-GA.geojson",
+        "bytes": 846753,
+        "sha256": "6a51d15e3a8241c280ac3d95cbee1159fd03e724d667c6990a30dd22f2bbbb54"
+      },
+      {
+        "path": "/participation-county-context/20261106-19/geometry/county-IA.geojson",
+        "name": "county-IA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/de77fd199364c95f4459cc4ba00d09500cc5843d/public/participation-county-context/20261106-19/geometry/county-IA.geojson",
+        "bytes": 102952,
+        "sha256": "c4ae2cd4fbac01725cfcf4d9e20815d41c149044a9b73665903135d34561e8ee"
+      },
+      {
+        "path": "/participation-county-context/20261106-19/geometry/county-KY.geojson",
+        "name": "county-KY.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/de77fd199364c95f4459cc4ba00d09500cc5843d/public/participation-county-context/20261106-19/geometry/county-KY.geojson",
+        "bytes": 844982,
+        "sha256": "f9d2e0f8bd3e72f22d7ff6a530450d6e5e5bbad83f5dd02c32648a3207ef5eac"
+      },
+      {
+        "path": "/participation-county-context/20261106-19/geometry/county-MN.geojson",
+        "name": "county-MN.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/de77fd199364c95f4459cc4ba00d09500cc5843d/public/participation-county-context/20261106-19/geometry/county-MN.geojson",
+        "bytes": 295105,
+        "sha256": "f0769cb63822198d6219cbc8b759fe53c06f67b419d82d513e9612cb5ebbb00b"
+      },
+      {
+        "path": "/participation-county-context/20261106-19/geometry/county-MO.geojson",
+        "name": "county-MO.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/de77fd199364c95f4459cc4ba00d09500cc5843d/public/participation-county-context/20261106-19/geometry/county-MO.geojson",
+        "bytes": 285841,
+        "sha256": "b9b8a05f01088fdcabb2c0aaf52f1dbd325282481a76454a2bd428a33b11795c"
+      },
+      {
+        "path": "/participation-county-context/20261106-19/geometry/county-NJ.geojson",
+        "name": "county-NJ.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/de77fd199364c95f4459cc4ba00d09500cc5843d/public/participation-county-context/20261106-19/geometry/county-NJ.geojson",
+        "bytes": 139257,
+        "sha256": "489eabbafe98495645d95ddb65581f5204b3bd7871b001d02d3aaa3ffa11733b"
+      },
+      {
+        "path": "/participation-county-context/20261106-19/geometry/county-NV.geojson",
+        "name": "county-NV.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/de77fd199364c95f4459cc4ba00d09500cc5843d/public/participation-county-context/20261106-19/geometry/county-NV.geojson",
+        "bytes": 72248,
+        "sha256": "f67a18f6d0ca4799ba9579f3628054282411310987f64378ec41cbc5fefe28c4"
+      },
+      {
+        "path": "/participation-county-context/20261106-19/geometry/county-OR.geojson",
+        "name": "county-OR.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/de77fd199364c95f4459cc4ba00d09500cc5843d/public/participation-county-context/20261106-19/geometry/county-OR.geojson",
+        "bytes": 297700,
+        "sha256": "86f79f21252fdeef6d5c06525f909e2578f6119c158bfe10b51fecb72609e6eb"
+      },
+      {
+        "path": "/participation-county-context/20261106-19/geometry/county-PA.geojson",
+        "name": "county-PA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/de77fd199364c95f4459cc4ba00d09500cc5843d/public/participation-county-context/20261106-19/geometry/county-PA.geojson",
+        "bytes": 298398,
+        "sha256": "02c17862c97cddf64a70ade6596e11c7bd8fe5707ba83bca3910172354b9b58a"
+      },
+      {
+        "path": "/participation-county-context/20261106-19/geometry/county-VA.geojson",
+        "name": "county-VA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/de77fd199364c95f4459cc4ba00d09500cc5843d/public/participation-county-context/20261106-19/geometry/county-VA.geojson",
+        "bytes": 840683,
+        "sha256": "825295417afcfafdd28dd7856edda31cdc0dc8a0d7c9b00abafdac90c38176da"
+      },
+      {
+        "path": "/participation-county-context/20261106-19/geometry/county-WA.geojson",
+        "name": "county-WA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/de77fd199364c95f4459cc4ba00d09500cc5843d/public/participation-county-context/20261106-19/geometry/county-WA.geojson",
+        "bytes": 395414,
+        "sha256": "b7170c2d2ea13d6ddc1541ea184b5cae1135412be35c041149e5aa8a09eb55f8"
+      },
+      {
+        "path": "/participation-county-context/20261106-19/geometry/county-WY.geojson",
+        "name": "county-WY.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/de77fd199364c95f4459cc4ba00d09500cc5843d/public/participation-county-context/20261106-19/geometry/county-WY.geojson",
+        "bytes": 96180,
+        "sha256": "19eca7f10211ad57da4589ef2969d8817a241d90381a2ff4d1b513851d8ca777"
+      },
+      {
+        "path": "/participation-county-context/20261106-20/complete-county-participation-context-20.zip",
+        "name": "complete-county-participation-context-20.zip",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-20/complete-county-participation-context-20.zip",
+        "bytes": 2911486,
+        "sha256": "9a18f2950aaf29643adcbea602a3f016997b39a9e88ebdcd3febae5f392f2d3d"
+      },
+      {
+        "path": "/participation-county-context/20261106-20/geometry/county-AL.geojson",
+        "name": "county-AL.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7ad830f70be4a8eb47d9c95896c9c99985228467/public/participation-county-context/20261106-20/geometry/county-AL.geojson",
+        "bytes": 370354,
+        "sha256": "67b03de3aa281430aeae575360c932074111be88289c081ec80d978067e095ec"
+      },
+      {
+        "path": "/participation-county-context/20261106-20/geometry/county-AR.geojson",
+        "name": "county-AR.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7ad830f70be4a8eb47d9c95896c9c99985228467/public/participation-county-context/20261106-20/geometry/county-AR.geojson",
+        "bytes": 422329,
+        "sha256": "addb5be81e6694681a8edb96575c29cf014158e50ae189facbd96f76892a8e2a"
+      },
+      {
+        "path": "/participation-county-context/20261106-20/geometry/county-AZ.geojson",
+        "name": "county-AZ.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7ad830f70be4a8eb47d9c95896c9c99985228467/public/participation-county-context/20261106-20/geometry/county-AZ.geojson",
+        "bytes": 195541,
+        "sha256": "0837a91e1b1ae37535b1256afe90ab70955b50872c98f9133a4e56b843252eec"
+      },
+      {
+        "path": "/participation-county-context/20261106-20/geometry/county-CA.geojson",
+        "name": "county-CA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7ad830f70be4a8eb47d9c95896c9c99985228467/public/participation-county-context/20261106-20/geometry/county-CA.geojson",
+        "bytes": 777815,
+        "sha256": "fc167d02493b97c385eba9625bce506b9b9f93c5e0a9a69af6b9cf052b556e7a"
+      },
+      {
+        "path": "/participation-county-context/20261106-20/geometry/county-DC.geojson",
+        "name": "county-DC.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7ad830f70be4a8eb47d9c95896c9c99985228467/public/participation-county-context/20261106-20/geometry/county-DC.geojson",
+        "bytes": 1724,
+        "sha256": "e111ef8f1b7ab1873b096c6075e63ddc5aa1ae370def71ee8523a2a7b2f3b002"
+      },
+      {
+        "path": "/participation-county-context/20261106-20/geometry/county-FL.geojson",
+        "name": "county-FL.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7ad830f70be4a8eb47d9c95896c9c99985228467/public/participation-county-context/20261106-20/geometry/county-FL.geojson",
+        "bytes": 494363,
+        "sha256": "d8d21d51dd475bc23c1b10fa0aa151b1591f1c681dfa9c31ce8d94f1b4713f47"
+      },
+      {
+        "path": "/participation-county-context/20261106-20/geometry/county-GA.geojson",
+        "name": "county-GA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7ad830f70be4a8eb47d9c95896c9c99985228467/public/participation-county-context/20261106-20/geometry/county-GA.geojson",
+        "bytes": 846753,
+        "sha256": "6a51d15e3a8241c280ac3d95cbee1159fd03e724d667c6990a30dd22f2bbbb54"
+      },
+      {
+        "path": "/participation-county-context/20261106-20/geometry/county-IA.geojson",
+        "name": "county-IA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7ad830f70be4a8eb47d9c95896c9c99985228467/public/participation-county-context/20261106-20/geometry/county-IA.geojson",
+        "bytes": 102952,
+        "sha256": "c4ae2cd4fbac01725cfcf4d9e20815d41c149044a9b73665903135d34561e8ee"
+      },
+      {
+        "path": "/participation-county-context/20261106-20/geometry/county-KY.geojson",
+        "name": "county-KY.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7ad830f70be4a8eb47d9c95896c9c99985228467/public/participation-county-context/20261106-20/geometry/county-KY.geojson",
+        "bytes": 844982,
+        "sha256": "f9d2e0f8bd3e72f22d7ff6a530450d6e5e5bbad83f5dd02c32648a3207ef5eac"
+      },
+      {
+        "path": "/participation-county-context/20261106-20/geometry/county-MN.geojson",
+        "name": "county-MN.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7ad830f70be4a8eb47d9c95896c9c99985228467/public/participation-county-context/20261106-20/geometry/county-MN.geojson",
+        "bytes": 295105,
+        "sha256": "f0769cb63822198d6219cbc8b759fe53c06f67b419d82d513e9612cb5ebbb00b"
+      },
+      {
+        "path": "/participation-county-context/20261106-20/geometry/county-MO.geojson",
+        "name": "county-MO.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7ad830f70be4a8eb47d9c95896c9c99985228467/public/participation-county-context/20261106-20/geometry/county-MO.geojson",
+        "bytes": 285841,
+        "sha256": "b9b8a05f01088fdcabb2c0aaf52f1dbd325282481a76454a2bd428a33b11795c"
+      },
+      {
+        "path": "/participation-county-context/20261106-20/geometry/county-NJ.geojson",
+        "name": "county-NJ.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7ad830f70be4a8eb47d9c95896c9c99985228467/public/participation-county-context/20261106-20/geometry/county-NJ.geojson",
+        "bytes": 139257,
+        "sha256": "489eabbafe98495645d95ddb65581f5204b3bd7871b001d02d3aaa3ffa11733b"
+      },
+      {
+        "path": "/participation-county-context/20261106-20/geometry/county-NV.geojson",
+        "name": "county-NV.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7ad830f70be4a8eb47d9c95896c9c99985228467/public/participation-county-context/20261106-20/geometry/county-NV.geojson",
+        "bytes": 72248,
+        "sha256": "f67a18f6d0ca4799ba9579f3628054282411310987f64378ec41cbc5fefe28c4"
+      },
+      {
+        "path": "/participation-county-context/20261106-20/geometry/county-OR.geojson",
+        "name": "county-OR.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7ad830f70be4a8eb47d9c95896c9c99985228467/public/participation-county-context/20261106-20/geometry/county-OR.geojson",
+        "bytes": 297700,
+        "sha256": "86f79f21252fdeef6d5c06525f909e2578f6119c158bfe10b51fecb72609e6eb"
+      },
+      {
+        "path": "/participation-county-context/20261106-20/geometry/county-PA.geojson",
+        "name": "county-PA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7ad830f70be4a8eb47d9c95896c9c99985228467/public/participation-county-context/20261106-20/geometry/county-PA.geojson",
+        "bytes": 298398,
+        "sha256": "02c17862c97cddf64a70ade6596e11c7bd8fe5707ba83bca3910172354b9b58a"
+      },
+      {
+        "path": "/participation-county-context/20261106-20/geometry/county-VA.geojson",
+        "name": "county-VA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7ad830f70be4a8eb47d9c95896c9c99985228467/public/participation-county-context/20261106-20/geometry/county-VA.geojson",
+        "bytes": 840683,
+        "sha256": "825295417afcfafdd28dd7856edda31cdc0dc8a0d7c9b00abafdac90c38176da"
+      },
+      {
+        "path": "/participation-county-context/20261106-20/geometry/county-WA.geojson",
+        "name": "county-WA.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7ad830f70be4a8eb47d9c95896c9c99985228467/public/participation-county-context/20261106-20/geometry/county-WA.geojson",
+        "bytes": 395414,
+        "sha256": "b7170c2d2ea13d6ddc1541ea184b5cae1135412be35c041149e5aa8a09eb55f8"
+      },
+      {
+        "path": "/participation-county-context/20261106-20/geometry/county-WY.geojson",
+        "name": "county-WY.geojson",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7ad830f70be4a8eb47d9c95896c9c99985228467/public/participation-county-context/20261106-20/geometry/county-WY.geojson",
+        "bytes": 96180,
+        "sha256": "19eca7f10211ad57da4589ef2969d8817a241d90381a2ff4d1b513851d8ca777"
+      },
+      {
+        "path": "/participation-current/20261104T220424Z/checksums.json",
+        "name": "checksums.json",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/dc81c095cec959910c6dfb82da8c9184d7a993f9/public/participation-current/20261104T220424Z/checksums.json",
+        "bytes": 1164,
+        "sha256": "78f4a9e96a21aff213736a20e372579d9cbda765d7e4a50ab70990923b22e822"
+      },
+      {
+        "path": "/participation-current/20261104T220424Z/complete-snapshot.zip",
+        "name": "complete-snapshot.zip",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/dc81c095cec959910c6dfb82da8c9184d7a993f9/public/participation-current/20261104T220424Z/complete-snapshot.zip",
+        "bytes": 1288070,
+        "sha256": "3734886ed3c5cbbc406f6adacd60dff2b1b543c42546fc39e89e46da1220dc08"
+      },
+      {
+        "path": "/participation-current/20261104T220424Z/counties.csv",
+        "name": "counties.csv",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/dc81c095cec959910c6dfb82da8c9184d7a993f9/public/participation-current/20261104T220424Z/counties.csv",
+        "bytes": 122092,
+        "sha256": "965fbf7d9748e792376e29aa6824a649575ee87ca485f64735b731b8c051fb00"
+      },
+      {
+        "path": "/participation-current/20261104T220424Z/coverage.csv",
+        "name": "coverage.csv",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/dc81c095cec959910c6dfb82da8c9184d7a993f9/public/participation-current/20261104T220424Z/coverage.csv",
+        "bytes": 6999,
+        "sha256": "dc8a2fc6b67395e749415ce64777a3d5998bc866fba0e9df942e73c746ba1a21"
+      },
+      {
+        "path": "/participation-current/20261104T220424Z/demographics.csv",
+        "name": "demographics.csv",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/dc81c095cec959910c6dfb82da8c9184d7a993f9/public/participation-current/20261104T220424Z/demographics.csv",
+        "bytes": 32170,
+        "sha256": "6725f9d6bdb246db00f03378f1e657e4bdfee3608e9ecf42b2a4851b33a1528c"
+      },
+      {
+        "path": "/participation-current/20261104T220424Z/early_voting.csv",
+        "name": "early_voting.csv",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/dc81c095cec959910c6dfb82da8c9184d7a993f9/public/participation-current/20261104T220424Z/early_voting.csv",
+        "bytes": 1156534,
+        "sha256": "628e7bbf3676374e29be8a388de487d9a5c4be77269bc9b9011df74d669f671b"
+      },
+      {
+        "path": "/participation-current/20261104T220424Z/local.json",
+        "name": "local.json",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/dc81c095cec959910c6dfb82da8c9184d7a993f9/public/participation-current/20261104T220424Z/local.json",
+        "bytes": 3444515,
+        "sha256": "0128bda2273d19a9ed9afd620a509d858374add4ec4ca84e80dfd0c69c1de04f"
+      },
+      {
+        "path": "/participation-current/20261104T220424Z/precincts.csv",
+        "name": "precincts.csv",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/dc81c095cec959910c6dfb82da8c9184d7a993f9/public/participation-current/20261104T220424Z/precincts.csv",
+        "bytes": 2003380,
+        "sha256": "a46b43b0276ee46eca45217da9e13872194316c5b9fdd9cbf1de2fad0124786c"
+      },
+      {
+        "path": "/participation-current/20261104T220424Z/reporting.csv",
+        "name": "reporting.csv",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/dc81c095cec959910c6dfb82da8c9184d7a993f9/public/participation-current/20261104T220424Z/reporting.csv",
+        "bytes": 1918,
+        "sha256": "2a10a90c0f9ec654aa49c100262f2256d0d1723d33a25a9c82089c4d58c707e7"
+      },
+      {
+        "path": "/participation-current/20261104T220424Z/snapshot.json",
+        "name": "snapshot.json",
+        "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/dc81c095cec959910c6dfb82da8c9184d7a993f9/public/participation-current/20261104T220424Z/snapshot.json",
+        "bytes": 2595019,
+        "sha256": "3686633a86c1ca71890015bf98e690ed48540e519d3312a07251bca5a5c70578"
+      },
+      {
+        "path": "/participation-methods/20261104T183000Z/complete-methods.zip",
+        "name": "participation-methods__20261104T183000Z__complete-methods.zip",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/participation-methods__20261104T183000Z__complete-methods.zip",
+        "bytes": 44477301,
+        "sha256": "bfdc5e37b76f059579176b6a0e6ccd9cd55a76432e08aea6c9ecc4675581e78d"
+      },
+      {
+        "path": "/participation-methods/20261104T183000Z/jurisdictions-2008.json",
+        "name": "participation-methods__20261104T183000Z__jurisdictions-2008.json",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/participation-methods__20261104T183000Z__jurisdictions-2008.json",
+        "bytes": 3171507,
+        "sha256": "ffc5602aa31d281e24c552d07f4dce32743979e4b8e1bd7479708101dd6ce53e"
+      },
+      {
+        "path": "/participation-methods/20261104T183000Z/jurisdictions-2010.json",
+        "name": "participation-methods__20261104T183000Z__jurisdictions-2010.json",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/participation-methods__20261104T183000Z__jurisdictions-2010.json",
+        "bytes": 3289128,
+        "sha256": "c7ace97c40de9e8ceef6e38a6c6e43ba075863b3a9838b04061fbe01b490ffec"
+      },
+      {
+        "path": "/participation-methods/20261104T183000Z/jurisdictions-2012.json",
+        "name": "participation-methods__20261104T183000Z__jurisdictions-2012.json",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/participation-methods__20261104T183000Z__jurisdictions-2012.json",
+        "bytes": 5673461,
+        "sha256": "80ae57829f3ba03885ed46865e052354901a49bda4a6ac777cada2432d389154"
+      },
+      {
+        "path": "/participation-methods/20261104T183000Z/jurisdictions-2014.json",
+        "name": "participation-methods__20261104T183000Z__jurisdictions-2014.json",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/participation-methods__20261104T183000Z__jurisdictions-2014.json",
+        "bytes": 5168320,
+        "sha256": "5f4caa83481fd52ab0f0d182e01437874fb0506112b5c0945d52c8c48137d93f"
+      },
+      {
+        "path": "/participation-methods/20261104T183000Z/jurisdictions-2016.json",
+        "name": "participation-methods__20261104T183000Z__jurisdictions-2016.json",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/participation-methods__20261104T183000Z__jurisdictions-2016.json",
+        "bytes": 5300957,
+        "sha256": "015bacfa609e3b9c22a8e40cbdf1faf114b0d6a1c8f19cd334d4ad5d20c9c9f0"
+      },
+      {
+        "path": "/participation-methods/20261104T183000Z/jurisdictions-2018.json",
+        "name": "participation-methods__20261104T183000Z__jurisdictions-2018.json",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/participation-methods__20261104T183000Z__jurisdictions-2018.json",
+        "bytes": 6527119,
+        "sha256": "63aeb2012eac3a4f8f1096092211e9e1419e1cd241530d0a446a1c0be4e85907"
+      },
+      {
+        "path": "/participation-methods/20261104T183000Z/jurisdictions-2020.json",
+        "name": "participation-methods__20261104T183000Z__jurisdictions-2020.json",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/participation-methods__20261104T183000Z__jurisdictions-2020.json",
+        "bytes": 7934214,
+        "sha256": "56534d101d9fc9254cf6ee6fc53c0c86b44645b145ec105f39662368eaf7ea2d"
+      },
+      {
+        "path": "/participation-methods/20261104T183000Z/jurisdictions-2022.json",
+        "name": "participation-methods__20261104T183000Z__jurisdictions-2022.json",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/participation-methods__20261104T183000Z__jurisdictions-2022.json",
+        "bytes": 6705427,
+        "sha256": "ad44af256d24ae20d9036d39cf39f93f8512ef410c6934570978cfcfcd7718fc"
+      },
+      {
+        "path": "/participation-methods/20261104T183000Z/jurisdictions-2024.json",
+        "name": "participation-methods__20261104T183000Z__jurisdictions-2024.json",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/participation-methods__20261104T183000Z__jurisdictions-2024.json",
+        "bytes": 7718667,
+        "sha256": "2b04bafb7e92c069646722f9e6a50dc86fe6c682c9fd12b3554ee423e2e0d8dd"
+      },
+      {
+        "path": "/participation-methods/20261104T183000Z/jurisdictions.csv",
+        "name": "participation-methods__20261104T183000Z__jurisdictions.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/participation-methods__20261104T183000Z__jurisdictions.csv",
+        "bytes": 44899748,
+        "sha256": "f9f8f2b474b6e293aca2b1c6ba44c357af727f88e8e251755a287c3136c7a497"
+      },
+      {
+        "path": "/participation-methods/20261104T183000Z/national.csv",
+        "name": "participation-methods__20261104T183000Z__national.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/participation-methods__20261104T183000Z__national.csv",
+        "bytes": 38872,
+        "sha256": "8fac7d04f1e769c9008fb82fce170e0bc9497d553473e40910dab51112ea505b"
+      },
+      {
+        "path": "/participation-methods/20261104T183000Z/states.csv",
+        "name": "participation-methods__20261104T183000Z__states.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/participation-methods__20261104T183000Z__states.csv",
+        "bytes": 549192,
+        "sha256": "46294b26381a41830d3cd3b5f55ef3b3bfcaefd0cc7f621654dc56001f1e0f7b"
+      },
+      {
+        "path": "/voter-participation/data/complete-analysis.zip",
+        "name": "voter-participation__data__complete-analysis.zip",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__complete-analysis.zip",
+        "bytes": 48017387,
+        "sha256": "aa0f43c55dcf15064043aec7b371a351f09f510b29e2686c2367f1f90d6ae951"
+      },
+      {
+        "path": "/voter-participation/data/coverage.csv",
+        "name": "voter-participation__data__coverage.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__coverage.csv",
+        "bytes": 90772,
+        "sha256": "d5eda10402fee1ad145e68301a3d408c8fad18ca43880052583b956d48a9d2c5"
+      },
+      {
+        "path": "/voter-participation/data/cps/complete-inputs.zip",
+        "name": "voter-participation__data__cps__complete-inputs.zip",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__cps__complete-inputs.zip",
+        "bytes": 25059471,
+        "sha256": "f5e71514d031583fab971ed213b573b57be1d01fb9bd7463a1536909fc78fc83"
+      },
+      {
+        "path": "/voter-participation/data/cps/joint-cells.csv",
+        "name": "voter-participation__data__cps__joint-cells.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__cps__joint-cells.csv",
+        "bytes": 2766067,
+        "sha256": "cbb626ea10ce350f09d4a186838750bb77c7e4ac6b9893f8d069b1f3671f774c"
+      },
+      {
+        "path": "/voter-participation/data/cps/marginals.csv",
+        "name": "voter-participation__data__cps__marginals.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__cps__marginals.csv",
+        "bytes": 38235,
+        "sha256": "d30f5016bad5f6aae4202775d641fe10a83d2801d456d75eb076d65fbf87e88c"
+      },
+      {
+        "path": "/voter-participation/data/cps/published-comparisons.csv",
+        "name": "voter-participation__data__cps__published-comparisons.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__cps__published-comparisons.csv",
+        "bytes": 3896,
+        "sha256": "aaeea02ce833afbf1e809e40e4e3019a3e396bf99a5677471f65b0801065c5ba"
+      },
+      {
+        "path": "/voter-participation/data/current/20261104T020104Z/complete-snapshot.zip",
+        "name": "voter-participation__data__current__20261104T020104Z__complete-snapshot.zip",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__current__20261104T020104Z__complete-snapshot.zip",
+        "bytes": 1159254,
+        "sha256": "95f3741ddd617cdf8beedc12abed4f7090dc009bd968846f8351db1608f17220"
+      },
+      {
+        "path": "/voter-participation/data/current/20261104T020104Z/demographics.csv",
+        "name": "voter-participation__data__current__20261104T020104Z__demographics.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__current__20261104T020104Z__demographics.csv",
+        "bytes": 405420,
+        "sha256": "ff9941e27a321063911977bc5187497d5fc68d322b4de21989a65c332ed276d2"
+      },
+      {
+        "path": "/voter-participation/data/current/20261104T020104Z/reporting.csv",
+        "name": "voter-participation__data__current__20261104T020104Z__reporting.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__current__20261104T020104Z__reporting.csv",
+        "bytes": 10624,
+        "sha256": "0e91a93257591324a9386a6bd5691de1a6ab545284fae703d15f0609f3410146"
+      },
+      {
+        "path": "/voter-participation/data/current/20261104T021038Z/complete-snapshot.zip",
+        "name": "voter-participation__data__current__20261104T021038Z__complete-snapshot.zip",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__current__20261104T021038Z__complete-snapshot.zip",
+        "bytes": 1159346,
+        "sha256": "c9040a7c96b8016f9a328ad87484611b3c28566af6f49d54d35fa63f1e2d94a7"
+      },
+      {
+        "path": "/voter-participation/data/current/20261104T021038Z/demographics.csv",
+        "name": "voter-participation__data__current__20261104T021038Z__demographics.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__current__20261104T021038Z__demographics.csv",
+        "bytes": 405420,
+        "sha256": "ff9941e27a321063911977bc5187497d5fc68d322b4de21989a65c332ed276d2"
+      },
+      {
+        "path": "/voter-participation/data/current/20261104T021038Z/reporting.csv",
+        "name": "voter-participation__data__current__20261104T021038Z__reporting.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__current__20261104T021038Z__reporting.csv",
+        "bytes": 10321,
+        "sha256": "1518daabad65006ec88cdc3765a1c8468552742b852c1a2d548a63be7e0680e2"
+      },
+      {
+        "path": "/voter-participation/data/current/20261104T021346Z/complete-snapshot.zip",
+        "name": "voter-participation__data__current__20261104T021346Z__complete-snapshot.zip",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__current__20261104T021346Z__complete-snapshot.zip",
+        "bytes": 1159363,
+        "sha256": "702af9c67d0dfa079883340f650b76e0dfbee4b4eb555e2fe366cbaef338f33c"
+      },
+      {
+        "path": "/voter-participation/data/current/20261104T021346Z/demographics.csv",
+        "name": "voter-participation__data__current__20261104T021346Z__demographics.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__current__20261104T021346Z__demographics.csv",
+        "bytes": 405420,
+        "sha256": "ff9941e27a321063911977bc5187497d5fc68d322b4de21989a65c332ed276d2"
+      },
+      {
+        "path": "/voter-participation/data/current/20261104T021346Z/reporting.csv",
+        "name": "voter-participation__data__current__20261104T021346Z__reporting.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__current__20261104T021346Z__reporting.csv",
+        "bytes": 10218,
+        "sha256": "ecb0b18d4a221ec9c6cab8831608f085635b881eb0f31757872b000d35af5f9b"
+      },
+      {
+        "path": "/voter-participation/data/current/20261104T093041Z/complete-snapshot.zip",
+        "name": "voter-participation__data__current__20261104T093041Z__complete-snapshot.zip",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__current__20261104T093041Z__complete-snapshot.zip",
+        "bytes": 1159236,
+        "sha256": "a460004b9e707a4757da925ed40162f1bc1662acb122d38f62aa0d1b3d4db8fb"
+      },
+      {
+        "path": "/voter-participation/data/current/20261104T093041Z/demographics.csv",
+        "name": "voter-participation__data__current__20261104T093041Z__demographics.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__current__20261104T093041Z__demographics.csv",
+        "bytes": 405420,
+        "sha256": "ff9941e27a321063911977bc5187497d5fc68d322b4de21989a65c332ed276d2"
+      },
+      {
+        "path": "/voter-participation/data/current/20261104T093041Z/reporting.csv",
+        "name": "voter-participation__data__current__20261104T093041Z__reporting.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__current__20261104T093041Z__reporting.csv",
+        "bytes": 7510,
+        "sha256": "bc2f359fe8c1cc05bbc0a8a0a28d66f934dc6308b84dfcac7df7aa8f87c405ac"
+      },
+      {
+        "path": "/voter-participation/data/current/20261104T144313Z/complete-snapshot.zip",
+        "name": "voter-participation__data__current__20261104T144313Z__complete-snapshot.zip",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__current__20261104T144313Z__complete-snapshot.zip",
+        "bytes": 1161069,
+        "sha256": "2e11871e83ba96b79825d5b5cacd261001c18fa25a709ea57af7871ef871daee"
+      },
+      {
+        "path": "/voter-participation/data/current/20261104T144313Z/demographics.csv",
+        "name": "voter-participation__data__current__20261104T144313Z__demographics.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__current__20261104T144313Z__demographics.csv",
+        "bytes": 405540,
+        "sha256": "57b86e6bb5c1be520fa58294a51ff1dba200ea61308ea57e5d469cde8c7c7011"
+      },
+      {
+        "path": "/voter-participation/data/current/20261104T144313Z/reporting.csv",
+        "name": "voter-participation__data__current__20261104T144313Z__reporting.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__current__20261104T144313Z__reporting.csv",
+        "bytes": 7511,
+        "sha256": "0b018aab88ee45a7348e820c9482de8fd1f312d36ecb3092a82a1905301f41c6"
+      },
+      {
+        "path": "/voter-participation/data/current/20261104T144357Z/complete-snapshot.zip",
+        "name": "voter-participation__data__current__20261104T144357Z__complete-snapshot.zip",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__current__20261104T144357Z__complete-snapshot.zip",
+        "bytes": 1161067,
+        "sha256": "9f8710f9105e018f3d57b59d24150027fb7fbbbe2958d5ad01e8a398c4b2b8c2"
+      },
+      {
+        "path": "/voter-participation/data/current/20261104T144357Z/demographics.csv",
+        "name": "voter-participation__data__current__20261104T144357Z__demographics.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__current__20261104T144357Z__demographics.csv",
+        "bytes": 405540,
+        "sha256": "57b86e6bb5c1be520fa58294a51ff1dba200ea61308ea57e5d469cde8c7c7011"
+      },
+      {
+        "path": "/voter-participation/data/current/20261104T144357Z/reporting.csv",
+        "name": "voter-participation__data__current__20261104T144357Z__reporting.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__current__20261104T144357Z__reporting.csv",
+        "bytes": 7511,
+        "sha256": "0b018aab88ee45a7348e820c9482de8fd1f312d36ecb3092a82a1905301f41c6"
+      },
+      {
+        "path": "/voter-participation/data/current/20261104T152627Z/complete-snapshot.zip",
+        "name": "voter-participation__data__current__20261104T152627Z__complete-snapshot.zip",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__current__20261104T152627Z__complete-snapshot.zip",
+        "bytes": 1160764,
+        "sha256": "35c4efe4fca43edcc308df5ad7a672016f46c9341439dfd44a74a108a1e516fe"
+      },
+      {
+        "path": "/voter-participation/data/current/20261104T152627Z/demographics.csv",
+        "name": "voter-participation__data__current__20261104T152627Z__demographics.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__current__20261104T152627Z__demographics.csv",
+        "bytes": 405540,
+        "sha256": "57b86e6bb5c1be520fa58294a51ff1dba200ea61308ea57e5d469cde8c7c7011"
+      },
+      {
+        "path": "/voter-participation/data/current/20261104T152627Z/reporting.csv",
+        "name": "voter-participation__data__current__20261104T152627Z__reporting.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__current__20261104T152627Z__reporting.csv",
+        "bytes": 7511,
+        "sha256": "0b018aab88ee45a7348e820c9482de8fd1f312d36ecb3092a82a1905301f41c6"
+      },
+      {
+        "path": "/voter-participation/data/model/backtests.csv",
+        "name": "voter-participation__data__model__backtests.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__model__backtests.csv",
+        "bytes": 66598,
+        "sha256": "1ba526db62ff49207dd76efde9da9f8cccb1f08d17cf14375d6f589ae3bf013a"
+      },
+      {
+        "path": "/voter-participation/data/model/complete-validation.zip",
+        "name": "voter-participation__data__model__complete-validation.zip",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__model__complete-validation.zip",
+        "bytes": 47007,
+        "sha256": "018269259d89ecbdbac4d44b8ab6e816542ee5f13c8f4b736abdb4b6e9c6b634"
+      },
+      {
+        "path": "/voter-participation/data/national.csv",
+        "name": "voter-participation__data__national.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__national.csv",
+        "bytes": 210678,
+        "sha256": "70c933b5cb221197b0fa7fac365035851651e6d168a915c3fb7dff5caed0b5ac"
+      },
+      {
+        "path": "/voter-participation/data/nationwide/20261104T143957Z/complete-snapshot.zip",
+        "name": "voter-participation__data__nationwide__20261104T143957Z__complete-snapshot.zip",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__nationwide__20261104T143957Z__complete-snapshot.zip",
+        "bytes": 420055,
+        "sha256": "5667fa2c4d1a2c74352e3db43b27d3558e489aeeab5040057d5811a98e35a814"
+      },
+      {
+        "path": "/voter-participation/data/nationwide/20261104T143957Z/coverage.csv",
+        "name": "voter-participation__data__nationwide__20261104T143957Z__coverage.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__nationwide__20261104T143957Z__coverage.csv",
+        "bytes": 7043,
+        "sha256": "217b51a5e7578aa7300f60c56aab1d60a7d9cebd948bf76b00c4d975dd7ad3a2"
+      },
+      {
+        "path": "/voter-participation/data/nationwide/20261104T143957Z/demographics.csv",
+        "name": "voter-participation__data__nationwide__20261104T143957Z__demographics.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__nationwide__20261104T143957Z__demographics.csv",
+        "bytes": 32170,
+        "sha256": "0718f7bbb0a6ba17b256e3327c9722cd9a790335624d1f14fdd7cd78ddd77d8e"
+      },
+      {
+        "path": "/voter-participation/data/nationwide/20261104T143957Z/early_voting.csv",
+        "name": "voter-participation__data__nationwide__20261104T143957Z__early_voting.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__nationwide__20261104T143957Z__early_voting.csv",
+        "bytes": 1155480,
+        "sha256": "9a5e61b35af2233d6e6a8c98c4e8d4e274c5450f603cdf953d943f694a7694fe"
+      },
+      {
+        "path": "/voter-participation/data/nationwide/20261104T143957Z/reporting.csv",
+        "name": "voter-participation__data__nationwide__20261104T143957Z__reporting.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__nationwide__20261104T143957Z__reporting.csv",
+        "bytes": 976,
+        "sha256": "0339f252084a5f9079a6f2c9a92834cd435dd049dc615e5f48c37c4a24411771"
+      },
+      {
+        "path": "/voter-participation/data/nationwide/20261104T144145Z/complete-snapshot.zip",
+        "name": "voter-participation__data__nationwide__20261104T144145Z__complete-snapshot.zip",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__nationwide__20261104T144145Z__complete-snapshot.zip",
+        "bytes": 420394,
+        "sha256": "0b203d2436e1db4360dc72b59ca9d2bbcc72f6043bb086a66d16982f9841617c"
+      },
+      {
+        "path": "/voter-participation/data/nationwide/20261104T144145Z/coverage.csv",
+        "name": "voter-participation__data__nationwide__20261104T144145Z__coverage.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__nationwide__20261104T144145Z__coverage.csv",
+        "bytes": 6999,
+        "sha256": "8644d77a949ba72d383045da18133ae7b631ce793c48af139c0b43e51dd3114f"
+      },
+      {
+        "path": "/voter-participation/data/nationwide/20261104T144145Z/demographics.csv",
+        "name": "voter-participation__data__nationwide__20261104T144145Z__demographics.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__nationwide__20261104T144145Z__demographics.csv",
+        "bytes": 32170,
+        "sha256": "13f2146f3bfa3866723069f2b2b7612cedf1d17b1950c757cdaa8a61983bd38c"
+      },
+      {
+        "path": "/voter-participation/data/nationwide/20261104T144145Z/early_voting.csv",
+        "name": "voter-participation__data__nationwide__20261104T144145Z__early_voting.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__nationwide__20261104T144145Z__early_voting.csv",
+        "bytes": 1156516,
+        "sha256": "4efffd7d49ab4600bc3421f142cb48209581b47617b946982ca1c898baa64284"
+      },
+      {
+        "path": "/voter-participation/data/nationwide/20261104T144145Z/reporting.csv",
+        "name": "voter-participation__data__nationwide__20261104T144145Z__reporting.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__nationwide__20261104T144145Z__reporting.csv",
+        "bytes": 1169,
+        "sha256": "f9f1efaf977d4e8aacdea5103f4eea3b840fe432927bdc2fe6f7fc3390aa6f8b"
+      },
+      {
+        "path": "/voter-participation/data/nationwide/20261104T144402Z/complete-snapshot.zip",
+        "name": "voter-participation__data__nationwide__20261104T144402Z__complete-snapshot.zip",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__nationwide__20261104T144402Z__complete-snapshot.zip",
+        "bytes": 420615,
+        "sha256": "6647f8cb8ea71b46fbe83937128e0c5fd3d8e80c1b0f8edd6d2ee4fefa8627d8"
+      },
+      {
+        "path": "/voter-participation/data/nationwide/20261104T144402Z/coverage.csv",
+        "name": "voter-participation__data__nationwide__20261104T144402Z__coverage.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__nationwide__20261104T144402Z__coverage.csv",
+        "bytes": 6999,
+        "sha256": "8644d77a949ba72d383045da18133ae7b631ce793c48af139c0b43e51dd3114f"
+      },
+      {
+        "path": "/voter-participation/data/nationwide/20261104T144402Z/demographics.csv",
+        "name": "voter-participation__data__nationwide__20261104T144402Z__demographics.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__nationwide__20261104T144402Z__demographics.csv",
+        "bytes": 32170,
+        "sha256": "00a7e04b2a9ef2a7ce150c75bcc28b3355f7eb68c5833ef85384bed225b165bc"
+      },
+      {
+        "path": "/voter-participation/data/nationwide/20261104T144402Z/early_voting.csv",
+        "name": "voter-participation__data__nationwide__20261104T144402Z__early_voting.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__nationwide__20261104T144402Z__early_voting.csv",
+        "bytes": 1156516,
+        "sha256": "81c543e7dfb1757dafe51400344f684c97ec42429e74e7e8ed54b084466e3fed"
+      },
+      {
+        "path": "/voter-participation/data/nationwide/20261104T144402Z/reporting.csv",
+        "name": "voter-participation__data__nationwide__20261104T144402Z__reporting.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__nationwide__20261104T144402Z__reporting.csv",
+        "bytes": 1169,
+        "sha256": "709b90880260fc28a9c0fb97e3cebe4270e631f9050e4ed43ffeb3c2da3d1494"
+      },
+      {
+        "path": "/voter-participation/data/nationwide/20261104T152630Z/complete-snapshot.zip",
+        "name": "voter-participation__data__nationwide__20261104T152630Z__complete-snapshot.zip",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__nationwide__20261104T152630Z__complete-snapshot.zip",
+        "bytes": 420231,
+        "sha256": "4f20abdc2ee4ce46cf6f01d99cbfb74a9c2cc898fbad2c6f1bd548e00a4d2070"
+      },
+      {
+        "path": "/voter-participation/data/nationwide/20261104T152630Z/coverage.csv",
+        "name": "voter-participation__data__nationwide__20261104T152630Z__coverage.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__nationwide__20261104T152630Z__coverage.csv",
+        "bytes": 6999,
+        "sha256": "8644d77a949ba72d383045da18133ae7b631ce793c48af139c0b43e51dd3114f"
+      },
+      {
+        "path": "/voter-participation/data/nationwide/20261104T152630Z/demographics.csv",
+        "name": "voter-participation__data__nationwide__20261104T152630Z__demographics.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__nationwide__20261104T152630Z__demographics.csv",
+        "bytes": 32170,
+        "sha256": "c95f6fe5db408361ef4256a976c10438f28be78dafc45c658cb935af9d2bd25b"
+      },
+      {
+        "path": "/voter-participation/data/nationwide/20261104T152630Z/early_voting.csv",
+        "name": "voter-participation__data__nationwide__20261104T152630Z__early_voting.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__nationwide__20261104T152630Z__early_voting.csv",
+        "bytes": 1156517,
+        "sha256": "7dafa968a0451c42935b82843d95ca6cb6614d9eaa7dd5bb17feae7dc1546594"
+      },
+      {
+        "path": "/voter-participation/data/nationwide/20261104T152630Z/reporting.csv",
+        "name": "voter-participation__data__nationwide__20261104T152630Z__reporting.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__nationwide__20261104T152630Z__reporting.csv",
+        "bytes": 1169,
+        "sha256": "6b957056bcee82ba6fb07f024adadb0017ac948dc4d7314ece706b6ff87a3111"
+      },
+      {
+        "path": "/voter-participation/data/nc/2002.csv",
+        "name": "voter-participation__data__nc__2002.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__nc__2002.csv",
+        "bytes": 2349975,
+        "sha256": "1518477944685011cdf20a1488e52cf2eb18351f8d5a563e4ebebcc776f437ed"
+      },
+      {
+        "path": "/voter-participation/data/nc/2002.json",
+        "name": "2002.json",
+        "url": "https://raw.githubusercontent.com/hanshanley/voter-participation/792e3d91609f7ee929c35b5ec15c13710db94be8/public/data/nc/2002.json",
+        "bytes": 6517687,
+        "sha256": "a69b7e85bc309fdf03dbf70e0295fa9fb8e4091dada5ac91ff969c5b9f637920"
+      },
+      {
+        "path": "/voter-participation/data/nc/2004.csv",
+        "name": "voter-participation__data__nc__2004.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__nc__2004.csv",
+        "bytes": 3398128,
+        "sha256": "3e77703981a0172d0d1c81a843e990e81a407cf09d6217fb5877ca08aefeb3d1"
+      },
+      {
+        "path": "/voter-participation/data/nc/2004.json",
+        "name": "2004.json",
+        "url": "https://raw.githubusercontent.com/hanshanley/voter-participation/792e3d91609f7ee929c35b5ec15c13710db94be8/public/data/nc/2004.json",
+        "bytes": 8497466,
+        "sha256": "761e06cc5c4d309a8deb6a83118f810689b2afac89a7130945f2974f73da7058"
+      },
+      {
+        "path": "/voter-participation/data/nc/2006.csv",
+        "name": "voter-participation__data__nc__2006.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__nc__2006.csv",
+        "bytes": 2779495,
+        "sha256": "4e9d28bebd9862f3475507c80034b7ffe9c5be66b0ad849228b254587440cdf0"
+      },
+      {
+        "path": "/voter-participation/data/nc/2006.json",
+        "name": "2006.json",
+        "url": "https://raw.githubusercontent.com/hanshanley/voter-participation/792e3d91609f7ee929c35b5ec15c13710db94be8/public/data/nc/2006.json",
+        "bytes": 7577467,
+        "sha256": "242fe01eeee32d194fd4d23ac300d3ec4901e7c0c5860a36ee1c669329423345"
+      },
+      {
+        "path": "/voter-participation/data/nc/2008.csv",
+        "name": "voter-participation__data__nc__2008.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__nc__2008.csv",
+        "bytes": 3059227,
+        "sha256": "192fe91d5e86c8817b008ff1f64c794dd308bc33e62fd5f136d16bbed599f825"
+      },
+      {
+        "path": "/voter-participation/data/nc/2008.json",
+        "name": "2008.json",
+        "url": "https://raw.githubusercontent.com/hanshanley/voter-participation/792e3d91609f7ee929c35b5ec15c13710db94be8/public/data/nc/2008.json",
+        "bytes": 8065756,
+        "sha256": "b908d55b4188621bf2da3b9527e69fdadac06d7dcb27b15369cdf0533d968f9a"
+      },
+      {
+        "path": "/voter-participation/data/nc/2010.csv",
+        "name": "voter-participation__data__nc__2010.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__nc__2010.csv",
+        "bytes": 2655897,
+        "sha256": "b9a6775fa575e8f888c1419b8aebdc49c53c8825e97bef3cc88911af5874cea1"
+      },
+      {
+        "path": "/voter-participation/data/nc/2010.json",
+        "name": "2010.json",
+        "url": "https://raw.githubusercontent.com/hanshanley/voter-participation/792e3d91609f7ee929c35b5ec15c13710db94be8/public/data/nc/2010.json",
+        "bytes": 7397685,
+        "sha256": "40eed0e08edaf8e59a3444e2e47e44e9aa8a462ab4cdeb56975e81efef28f454"
+      },
+      {
+        "path": "/voter-participation/data/nc/2012.csv",
+        "name": "voter-participation__data__nc__2012.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__nc__2012.csv",
+        "bytes": 2687790,
+        "sha256": "14b6f481679fab61c33824c1a21e2825ccced9785b96a028504779f1505f4692"
+      },
+      {
+        "path": "/voter-participation/data/nc/2012.json",
+        "name": "2012.json",
+        "url": "https://raw.githubusercontent.com/hanshanley/voter-participation/792e3d91609f7ee929c35b5ec15c13710db94be8/public/data/nc/2012.json",
+        "bytes": 7443047,
+        "sha256": "73f0b1e150922b58271ba11815543ce0483a9827b256c6c731930eeab14d5bdf"
+      },
+      {
+        "path": "/voter-participation/data/nc/2014.csv",
+        "name": "voter-participation__data__nc__2014.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__nc__2014.csv",
+        "bytes": 2642820,
+        "sha256": "8ded22b5b9456de2b018896dbd7e5b39d54fca480a235de3cafc0be7afe22ce0"
+      },
+      {
+        "path": "/voter-participation/data/nc/2014.json",
+        "name": "2014.json",
+        "url": "https://raw.githubusercontent.com/hanshanley/voter-participation/792e3d91609f7ee929c35b5ec15c13710db94be8/public/data/nc/2014.json",
+        "bytes": 7336143,
+        "sha256": "50f87392510af4356711394f70c38f012546b2ea19cd5ceefec15b695ac27ac7"
+      },
+      {
+        "path": "/voter-participation/data/nc/2016.csv",
+        "name": "voter-participation__data__nc__2016.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__nc__2016.csv",
+        "bytes": 2661049,
+        "sha256": "f661e9557f91499ded8f2710792ba1a720cacd29544a28e06c8024aecc71829c"
+      },
+      {
+        "path": "/voter-participation/data/nc/2016.json",
+        "name": "2016.json",
+        "url": "https://raw.githubusercontent.com/hanshanley/voter-participation/792e3d91609f7ee929c35b5ec15c13710db94be8/public/data/nc/2016.json",
+        "bytes": 7332385,
+        "sha256": "080975f5834a302b606c8b3ffc0e7e12ccf7768184f03dc5ba4503d7f5584202"
+      },
+      {
+        "path": "/voter-participation/data/nc/2018.csv",
+        "name": "voter-participation__data__nc__2018.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__nc__2018.csv",
+        "bytes": 2654625,
+        "sha256": "a45f7f82a55a7cd03222f47663c747a985c415ebad69b186f6a290177663f010"
+      },
+      {
+        "path": "/voter-participation/data/nc/2018.json",
+        "name": "2018.json",
+        "url": "https://raw.githubusercontent.com/hanshanley/voter-participation/792e3d91609f7ee929c35b5ec15c13710db94be8/public/data/nc/2018.json",
+        "bytes": 7329593,
+        "sha256": "6ac16d9e3a9c849e7020aef7ac46d363586d6bc6760af62171db08870e82095f"
+      },
+      {
+        "path": "/voter-participation/data/nc/2020.csv",
+        "name": "voter-participation__data__nc__2020.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__nc__2020.csv",
+        "bytes": 2645544,
+        "sha256": "974a65f616ed841691211baddbb30f813a160771ef18f94904b5f0c8ca6cd430"
+      },
+      {
+        "path": "/voter-participation/data/nc/2020.json",
+        "name": "2020.json",
+        "url": "https://raw.githubusercontent.com/hanshanley/voter-participation/792e3d91609f7ee929c35b5ec15c13710db94be8/public/data/nc/2020.json",
+        "bytes": 7263439,
+        "sha256": "50e11b7217846504e1e22ac81391382f93985c49f701e22e2becb9c3e6980d30"
+      },
+      {
+        "path": "/voter-participation/data/nc/2022.csv",
+        "name": "voter-participation__data__nc__2022.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__nc__2022.csv",
+        "bytes": 2629711,
+        "sha256": "755a37783e835232b682bca8bdaa0e8236c40e3262fdef4cfcfebbc2f2268927"
+      },
+      {
+        "path": "/voter-participation/data/nc/2022.json",
+        "name": "2022.json",
+        "url": "https://raw.githubusercontent.com/hanshanley/voter-participation/792e3d91609f7ee929c35b5ec15c13710db94be8/public/data/nc/2022.json",
+        "bytes": 7249837,
+        "sha256": "e50de8ec07a547c9bf3ccb10b5cda681f36ded8f288037a528461c09ef0373bb"
+      },
+      {
+        "path": "/voter-participation/data/nc/2024.csv",
+        "name": "voter-participation__data__nc__2024.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__nc__2024.csv",
+        "bytes": 2670841,
+        "sha256": "aa5c1ac72fd606e5d9d20b160455cb2efe8486484905fbdc9759839ef98dea59"
+      },
+      {
+        "path": "/voter-participation/data/nc/2024.json",
+        "name": "2024.json",
+        "url": "https://raw.githubusercontent.com/hanshanley/voter-participation/792e3d91609f7ee929c35b5ec15c13710db94be8/public/data/nc/2024.json",
+        "bytes": 7331766,
+        "sha256": "7d8e89de9fe32f1c772070fb833875228ad5ceebae4341045921431f1682f859"
+      },
+      {
+        "path": "/voter-participation/data/nc/official-reconciliation.csv",
+        "name": "voter-participation__data__nc__official-reconciliation.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__nc__official-reconciliation.csv",
+        "bytes": 4356,
+        "sha256": "c38f147f8a4ea3f5d346ebf2cba9aaa8e7b1c1fe72f17dced5d3d3f488ce1774"
+      },
+      {
+        "path": "/voter-participation/data/states.csv",
+        "name": "voter-participation__data__states.csv",
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-participation-data-20261104/voter-participation__data__states.csv",
+        "bytes": 149304,
+        "sha256": "2aea7fdfb022c1e10d341688496c0024a5d76025552e9e86a70bb47d6fe13e86"
+      }
+    ]
+  },
+  "exact_changed_inputs": {
+    "scripts/reviewed-county-participation.mjs": {
+      "bytes": 84088,
+      "sha256": "12d650d1705b1c291b6c630a06c7bc544601529febf30e25fa7ab47f00ff75d3"
+    },
+    "scripts/reviewed-county-participation.test.mjs": {
+      "bytes": 88201,
+      "sha256": "a3a1f55d2b9ef847ec7bb36398573b71e3cdcbbb63e9f2942760114f334ddb1e"
+    },
+    "scripts/county-participation-context.test.mjs": {
+      "bytes": 41677,
+      "sha256": "85587362e033674401beb7bc131701beb6381a845edcdd151c8041235c3a1840"
+    },
+    "scripts/voter-participation.test.mjs": {
+      "bytes": 15319,
+      "sha256": "f56c49a0b5e4f45b0cc70901817d1f1310266c1fe7643d95628d6774ed96d4a9"
+    },
+    "scripts/check-county-participation-context-browser.py": {
+      "bytes": 38966,
+      "sha256": "1d2c3ab4fbb0acd9bc055c4271a40beab134781e03a0773a74224bc290fb07ce"
+    },
+    "public/participation-source-reviews.json": {
+      "bytes": 191212,
+      "sha256": "883ade511eea4e7575da4bfa7e93c437ae171e00332294679241f3fcd0d58b7e"
+    },
+    "public/participation-county-context.json": {
+      "bytes": 24185,
+      "sha256": "896e7db52b0c332740c44689272dd1271ed560875cf9ccab4e5f9630b3b32811"
+    },
+    "public/scripts/participation-downloads.js": {
+      "bytes": 4537,
+      "sha256": "449c63114879213bdbae0461e0dca18187bacab5ef6c17a9e749fa1b772217bf"
+    },
+    "dist/participation-downloads.json": {
+      "bytes": 137714,
+      "sha256": "7f1f6d1f43a3edc570d2d47f64af8e58c73b47e47497e4f865c366bdedda9548"
+    }
+  },
+  "command_log_receipts": {
+    "focused-tests": {
+      "file": "susquehanna-ui-focused-tests-01.log",
+      "bytes": 12957,
+      "sha256": "3f25b95c4296ce9844699fc55cc5175f4152cf5871802db67a72c7ced9df5bba"
+    },
+    "download-tests": {
+      "file": "susquehanna-ui-download-tests-01.log",
+      "bytes": 3837,
+      "sha256": "c1a9721300745745f101560c2f5db255acecfffecad0957e5a8cb5146c2a0fb7"
+    },
+    "check": {
+      "file": "susquehanna-ui-check-01.log",
+      "bytes": 1915,
+      "sha256": "203444f5cbfba786fef8bc76118706773b83e8c7a398c59e11a527ff51f31efe"
+    },
+    "build": {
+      "file": "susquehanna-ui-build-01.log",
+      "bytes": 5781,
+      "sha256": "cc1078993db8a806a313b8570b1e5a8d5188556acc3712537c63208e472265f0"
+    },
+    "preparation": {
+      "file": "susquehanna-ui-preparation-01.log",
+      "bytes": 74,
+      "sha256": "7a5fb6862b3d5da3666172384f225e360e30f6768655400bd7c68e58f3881aa6"
+    }
+  },
+  "known_unrelated_broad_validator_failure": "UK topic-card count23vs16 at scripts/validate-build.mjs:1126; unchanged and not reported green. No redundant broad validator run for this county extension.",
+  "native_flags_and_missing_fips_preserved": true,
+  "no_certified_2026_geometry_claim": true,
+  "no_live_ui_claim": true
+}

@@ -1,11 +1,27 @@
 {
   "schema_version": 1,
-  "base_url": "/participation-county-context/20261106-19/",
-  "review_bytes": 1144940,
-  "review_sha256": "f6f1c8354e464868c7f235ca3479cf0e5b040800b8a13e586f36886cca6c33bb",
-  "complete_download_bytes": 2910100,
-  "complete_download_sha256": "e9c64a0c3c6f698f34ae39ae6a8de9608c3d50ef03ec001bb96776c28881729e",
+  "base_url": "/participation-county-context/20261106-20/",
+  "review_bytes": 1146050,
+  "review_sha256": "ffb2a4fa3b72dacc60a6bddb3bfd98d898022bf0cfbcf8f7018953e323811852",
+  "complete_download_bytes": 2911486,
+  "complete_download_sha256": "9a18f2950aaf29643adcbea602a3f016997b39a9e88ebdcd3febae5f392f2d3d",
   "downloads": [
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-20/county-participation-joins.csv",
+      "label": "Complete audited county participation joins: all 744 observations, including Susquehanna, Pennsylvania (CSV)"
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-20/review.json",
+      "label": "Complete county identity review, exclusions and native-counting qualifications (JSON)"
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-20/complete-source-records.json.gz",
+      "label": "Every county, municipal and reporting-unit inventory: all 1,228 records, preserving the previous 1,227 unchanged (JSON · gzip)"
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-20/complete-county-participation-context-20.zip",
+      "label": "Complete county participation context query, all original contextual geometries, full inventories and offline reproduction tools (ZIP)"
+    },
     {
       "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-19/county-participation-joins.csv",
       "label": "Complete audited county participation joins: all 743 observations, including Somerset, Pennsylvania (CSV)"

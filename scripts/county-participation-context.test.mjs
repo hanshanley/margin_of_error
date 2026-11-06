@@ -9,8 +9,9 @@ import { loadReviewedCountyParticipation as loadAllReviewedCountyParticipation, 
 
 const additionalId = 'pennsylvania-three-additional-summaries-20261106-01';
 const somersetId = 'pennsylvania-somerset-20261106-01';
+const susquehannaId = 'pennsylvania-susquehanna-20261106-01';
 const loadReviewedCountyParticipation = reviews =>
-  loadAllReviewedCountyParticipation(reviews).filter(row => ![additionalId, somersetId].includes(row.review_id));
+  loadAllReviewedCountyParticipation(reviews).filter(row => ![additionalId, somersetId, susquehannaId].includes(row.review_id));
 
 const root = new URL('../public/participation-county-context/20261106-14/', import.meta.url);
 const batchIds = ['pennsylvania-lycoming-20261106-01', 'georgia-bulk-participation-20261106-01', 'pennsylvania-greene-20261106-01', 'pennsylvania-columbia-20261106-01', 'california-bulk-participation-20261106-01', 'pennsylvania-juniata-20261106-01', 'pennsylvania-mercer-20261106-01',
@@ -30,6 +31,42 @@ const copy = value => structuredClone(value);
 const match = (rows, candidateReview = review, code = 'AL', collection = collections[code]) =>
   contextualCountyRows(rows, candidateReview, collection, code, review.context_base_url, review.geometry[code].file);
 
+test('Susquehanna context20 preserves every context19 record, join, exclusion and complete geometry', async () => {
+  const nextRoot = new URL('../public/participation-county-context/20261106-20/', import.meta.url);
+  const priorRoot = new URL('../public/participation-county-context/20261106-19/', import.meta.url);
+  const next = JSON.parse(readFileSync(new URL('review.json', nextRoot)));
+  const prior = JSON.parse(readFileSync(new URL('review.json', priorRoot)));
+  const nextRecords = JSON.parse(gunzipSync(readFileSync(new URL('complete-source-records.json.gz', nextRoot))));
+  const priorRecords = JSON.parse(gunzipSync(readFileSync(new URL('complete-source-records.json.gz', priorRoot))));
+  const live = [...loadAdditionalParticipation().counties,
+    ...loadAllReviewedCountyParticipation(JSON.parse(readFileSync('public/participation-source-reviews.json')).reviews)];
+  assert.deepEqual(nextRecords, live);
+  assert.deepEqual(nextRecords.filter(row => row.review_id !== susquehannaId), priorRecords);
+  assert.deepEqual(next.observations.filter(row => row.review_id !== susquehannaId), prior.observations);
+  assert.deepEqual(next.excluded, prior.excluded);
+  assert.deepEqual(next.geometry, prior.geometry);
+  for (const entry of Object.values(prior.geometry))
+    assert.deepEqual(readFileSync(new URL(entry.file, nextRoot)), readFileSync(new URL(entry.file, priorRoot)));
+  const loaded = loadCountyContextReview(live);
+  assert.deepEqual(loaded.coverage.PA, { counties: 39, rates: 36 });
+  assert.equal(loaded.base_url, '/participation-county-context/20261106-20/');
+  assert.deepEqual(next.counts, { complete_source_records: 1228, contextual_joins: 744, jurisdictions: 18,
+    reviewed_rates: 357, missing_rates: 387, excluded_municipalities: 286, excluded_missing_county_totals: 198 });
+  const collection = JSON.parse(readFileSync(new URL(next.geometry.PA.file, nextRoot)));
+  const rows = await contextualCountyRows(live.filter(row => row.state_code === 'PA'), next,
+    collection, 'PA', next.context_base_url, next.geometry.PA.file);
+  const row = rows.get('42115');
+  assert.equal(row.county, 'Susquehanna');
+  assert.equal(row.ballots, 15317);
+  assert.equal(row.denominator, 27504);
+  assert.equal(row.reported_pct, 100 * 15317 / 27504);
+  assert.equal(row.maps_approved, false);
+  assert.equal(row.native_record.source_fips, '');
+  assert.equal(row.native_record.analysis_rate_approved, 'False');
+  assert.equal(next.observations.find(row => row.contextual_geoid === '42115').boundary_year, 2024);
+  assert.throws(() => loadCountyContextReview(priorRecords), /complete current source records/);
+});
+
 test('Somerset context19 preserves all context18 records, joins, exclusions and geometry', async () => {
   const nextRoot = new URL('../public/participation-county-context/20261106-19/', import.meta.url);
   const priorRoot = new URL('../public/participation-county-context/20261106-18/', import.meta.url);
@@ -38,7 +75,8 @@ test('Somerset context19 preserves all context18 records, joins, exclusions and 
   const nextRecords = JSON.parse(gunzipSync(readFileSync(new URL('complete-source-records.json.gz', nextRoot))));
   const priorRecords = JSON.parse(gunzipSync(readFileSync(new URL('complete-source-records.json.gz', priorRoot))));
   const live = [...loadAdditionalParticipation().counties,
-    ...loadAllReviewedCountyParticipation(JSON.parse(readFileSync('public/participation-source-reviews.json')).reviews)];
+    ...loadAllReviewedCountyParticipation(JSON.parse(readFileSync('public/participation-source-reviews.json')).reviews)
+      .filter(row => row.review_id !== susquehannaId)];
   assert.deepEqual(nextRecords, live);
   assert.deepEqual(nextRecords.filter(row => row.review_id !== somersetId), priorRecords);
   assert.deepEqual(next.observations.filter(row => row.review_id !== somersetId), prior.observations);
@@ -46,9 +84,9 @@ test('Somerset context19 preserves all context18 records, joins, exclusions and 
   assert.deepEqual(next.geometry, prior.geometry);
   for (const entry of Object.values(prior.geometry))
     assert.deepEqual(readFileSync(new URL(entry.file, nextRoot)), readFileSync(new URL(entry.file, priorRoot)));
-  const loaded = loadCountyContextReview(live);
-  assert.deepEqual(loaded.coverage.PA, { counties: 38, rates: 35 });
-  assert.equal(loaded.base_url, '/participation-county-context/20261106-19/');
+  assert.throws(() => loadCountyContextReview(live), /complete current source records/);
+  assert.equal(next.observations.filter(row => row.state_code === 'PA').length, 38);
+  assert.equal(next.observations.filter(row => row.state_code === 'PA' && row.reported_pct !== null).length, 35);
   assert.deepEqual(next.counts, { complete_source_records: 1227, contextual_joins: 743, jurisdictions: 18,
     reviewed_rates: 356, missing_rates: 387, excluded_municipalities: 286, excluded_missing_county_totals: 198 });
   const collection = JSON.parse(readFileSync(new URL(next.geometry.PA.file, nextRoot)));
@@ -72,7 +110,7 @@ test('context18 preserves every context17 record and geometry while joining only
   const priorRecords = JSON.parse(gunzipSync(readFileSync(new URL('complete-source-records.json.gz', priorRoot))));
   const live = [...loadAdditionalParticipation().counties,
     ...loadAllReviewedCountyParticipation(JSON.parse(readFileSync('public/participation-source-reviews.json')).reviews)
-      .filter(row => row.review_id !== somersetId)];
+      .filter(row => ![somersetId, susquehannaId].includes(row.review_id))];
   assert.deepEqual(nextRecords, live);
   assert.deepEqual(nextRecords.filter(row => row.review_id !== additionalId), priorRecords);
   assert.deepEqual(next.observations.filter(row => row.review_id !== additionalId), prior.observations);

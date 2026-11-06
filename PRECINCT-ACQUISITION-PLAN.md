@@ -188,9 +188,36 @@ The complete **32-file / 31-member** contextual query verifies locally; ZIP
 `9a18f2950aaf29643adcbea602a3f016997b39a9e88ebdcd3febae5f392f2d3d`.
 Its separate extension proof is in `20261106-susquehanna-explorer-01`.
 
-**Next:** freeze and publish context20, verify all complete public artifacts,
-then switch the UI pointer and perform focused map tests, build/preparation and
-exact production verification. The current review changes are not deployed.
+**November 6, 16:33 UTC: context20 immutable and fully verified.**
+Revision **`7ad830f70be4a8eb47d9c95896c9c99985228467`**, tag
+`voter-county-participation-context-20261106-20`, immutable release
+**436737295** passes exact credential jobs **42253284347 (review) /
+42253285573 (tag)**. All **four complete anonymous assets / 32 complete
+commit-pinned files / 31 actual ZIP members** match. The downloaded archive
+verifies its full numerical context and reproduces all **32 files exactly**,
+including the ZIP. Original native and context packages are frozen; do not
+repeat these completed publishers or archive checks.
+
+**Local UI validation complete:** **93 distinct focused cases** pass
+(53 source / 25 context / 15 download tests), Astro check reports **zero errors
+and warnings**, the full build succeeds, and all **seven desktop/mobile,
+JavaScript/no-JavaScript and failure browser scenarios** pass. Prepared local
+site **957,449,254 bytes**, with **316 complete byte-verified relocations**;
+this is not an assertion about actual hosted size. The page preserves all
+**1,227 previous records / 362 native rows / 781 prior anchors / 18 imports /
+historical years / 52 UF rows**. Current local totals: **363 native rows /
+802 anchors / 798 distinct URLs / 39 Pennsylvania observations / 36 PA rates**.
+The first combined run exposed two obsolete download-routing fixtures treating
+newly verified context20 as unpublished; their negative cases now use unreviewed
+context21, and all fifteen targeted download tests pass. No production code was
+changed to accommodate those obsolete negative fixtures. Complete local evidence
+is in `validation.json` and `local-browser.json`.
+
+**Next:** commit/push the tested UI candidate once, then verify its own exact
+Pages revision, original hosted artifact, actual hosted size, **444 entire
+selected public files**, all **431 prior paths**, all **316 relocations** and
+seven production browser scenarios. The local preview helper is stopped.
+The current review changes are not yet deployed or verified LIVE.
 Do not repeat the completed native acquisition/publication/archive tests or
 county identity inventories. Source/context preparation does not change the
 current verified LIVE context19 coverage.
