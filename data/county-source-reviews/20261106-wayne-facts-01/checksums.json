@@ -1,0 +1,46 @@
+{
+  "audit.json": {
+    "bytes": 5450,
+    "sha256": "46a7f564cb0f52e8c3077549d246a886a317696b45eb97def09991e13e2023ed"
+  },
+  "county-candidate-results.csv": {
+    "bytes": 8621,
+    "sha256": "758df1d8cfaccea908c5dc774bb2b1daf7c16c82b0593f1ab5592bac6816893f"
+  },
+  "county-contest-accounting.csv": {
+    "bytes": 9376,
+    "sha256": "6d8bc86731fa57e766a39ed2f7e7f9378b752a509990305b6fe08620cdef127e"
+  },
+  "county-participation.csv": {
+    "bytes": 2720,
+    "sha256": "bdcdddfc04f8130e77014c3fa40f14ccf6f2a2e0be09eeaf3a88c796531e7f7f"
+  },
+  "native-contest-participation.csv": {
+    "bytes": 2604,
+    "sha256": "67da6c49fe9cbafc83c4459dcee7eb5849398af35437942ee72c5c3c7696e637"
+  },
+  "native-contest-subtotals.csv": {
+    "bytes": 2860,
+    "sha256": "aab3ec9a0f6ac3c4d6a3746968aee386974fcf063b9df360ccddfbf2b063067d"
+  },
+  "native-source-pages.csv": {
+    "bytes": 463,
+    "sha256": "5eeb87477e20ba52865055086d37bceb2cf4ac1ad042734b7be379524b3a9f74"
+  },
+  "native-source-statements.csv": {
+    "bytes": 1542,
+    "sha256": "54120bfa49f9ca750f6ae7c8f3c97be497ff2bc27f702cb4917a9e5c5e1c2d69"
+  },
+  "review-wayne-county-results.py": {
+    "bytes": 19479,
+    "sha256": "48baaaa2afa41a1d1491a74e60dbe3946e312d4b08f406a5f5298bf3d16d790b"
+  },
+  "source-receipts.json": {
+    "bytes": 1781,
+    "sha256": "575170bdff614dceb5b4ee9ece7423f2e0ad6a6d217435f0643448541f31ed38"
+  },
+  "source-records.json.gz": {
+    "bytes": 2111,
+    "sha256": "253a1668e1db3de894fbde0c5f2737bf21bd374706e3d1a579f7227473bb201c"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "scope": "Wayne whole-county header participation; six separately scoped contest denominators",
+  "maps_approved": false,
+  "demographic_turnout_approved": false,
+  "statewide_completion_approved": false,
+  "county_participation": {
+    "year": 2026,
+    "state_code": "PA",
+    "county": "Wayne",
+    "source_url": "https://www.waynecountypa.gov/DocumentCenter/View/8660/Statement-of-Votes-Cast--for-NOVEMBER_3_2026_GENERALELECTION_bdfx-34",
+    "source_page": 1,
+    "source_update_literal": "2026-11-05 15:08:51",
+    "declared_timezone": "",
+    "native_summary_scope_literal": "All Precincts, All Districts, All Counter Groups, All ScanStations, All Contests, All Boxes",
+    "native_status_literal": "",
+    "native_parent_status_literal": "2026 General Election Unofficial Results",
+    "native_participation_measure_literal": "Total Ballots Cast",
+    "ballots_cast": 21707,
+    "election_day_ballots": "",
+    "mail_ballots": "",
+    "provisional_ballots": "",
+    "registered_voters": 36885,
+    "native_printed_turnout": "58.85%",
+    "registered_turnout_percent": 58.85048122543039,
+    "precincts_reported": 35,
+    "precincts_total": 35,
+    "counting_qualifications_json": "[\"Native county header reports 21,707 Total Ballots Cast, 36,885 registered voters and printed 58.85%; candidate selections and contest ballots are separate.\", \"The governor contest reports 21,689 ballots, 18 fewer than the county header. Each pair of state legislative district ballot counts also sums to 21,689. Preserve the unexplained 18-ballot scope difference; do not overwrite the header or invent pending-ballot explanations.\", \"Congress reports 21,707 ballots. Every individual contest reconciles its own ballots with its candidate/write-in selections, overvotes and undervotes.\", \"Over voted ballots and Overvotes are separately printed descriptions of the same count in these vote-for-one contests, not two additive residuals.\", \"Literal ED, MI and PR columns contain candidate selections, not mode-level ballots or registrations; their expansions and mode participation denominators are not supplied in this report.\", \"All nineteen choice rows include six Write-in rows. Native Total includes write-ins and is not an additional candidate.\", \"Candidate parties are not supplied. Preserve missing party literals; do not infer affiliation from names or treat missing party totals as zero.\", \"Six native contest registration/ballot denominators and printed rates retain their actual district scopes; no district becomes a county denominator.\", \"Printed 35 precincts reported out of 35 total is reporting coverage, not independently certified or complete ballot counting.\", \"Parent page labels results unofficial; PDF supplies no separate result-status literal. Native 2026-11-05 15:08:51 has no declared timezone.\", \"Source notices reserve rights in county and CivicPlus content. Original HTML/PDF presentation remains private; only complete numerical facts, provenance and reproducible derived tables are redistributed.\", \"No precinct geometry, map, demographic turnout, certification or statewide completion approval.\"]"
+  },
+  "qualifications": [
+    "Native county header reports 21,707 Total Ballots Cast, 36,885 registered voters and printed 58.85%; candidate selections and contest ballots are separate.",
+    "The governor contest reports 21,689 ballots, 18 fewer than the county header. Each pair of state legislative district ballot counts also sums to 21,689. Preserve the unexplained 18-ballot scope difference; do not overwrite the header or invent pending-ballot explanations.",
+    "Congress reports 21,707 ballots. Every individual contest reconciles its own ballots with its candidate/write-in selections, overvotes and undervotes.",
+    "Over voted ballots and Overvotes are separately printed descriptions of the same count in these vote-for-one contests, not two additive residuals.",
+    "Literal ED, MI and PR columns contain candidate selections, not mode-level ballots or registrations; their expansions and mode participation denominators are not supplied in this report.",
+    "All nineteen choice rows include six Write-in rows. Native Total includes write-ins and is not an additional candidate.",
+    "Candidate parties are not supplied. Preserve missing party literals; do not infer affiliation from names or treat missing party totals as zero.",
+    "Six native contest registration/ballot denominators and printed rates retain their actual district scopes; no district becomes a county denominator.",
+    "Printed 35 precincts reported out of 35 total is reporting coverage, not independently certified or complete ballot counting.",
+    "Parent page labels results unofficial; PDF supplies no separate result-status literal. Native 2026-11-05 15:08:51 has no declared timezone.",
+    "Source notices reserve rights in county and CivicPlus content. Original HTML/PDF presentation remains private; only complete numerical facts, provenance and reproducible derived tables are redistributed.",
+    "No precinct geometry, map, demographic turnout, certification or statewide completion approval."
+  ],
+  "table_rows": {
+    "county-participation.csv": 1,
+    "county-candidate-results.csv": 19,
+    "native-contest-participation.csv": 6,
+    "native-contest-subtotals.csv": 6,
+    "county-contest-accounting.csv": 24,
+    "native-source-pages.csv": 1,
+    "native-source-statements.csv": 3
+  }
+}
