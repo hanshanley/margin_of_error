@@ -1,0 +1,5 @@
+native_counting_group,ballots_cast,blank_ballots,registered_voters,native_turnout_pct,is_aggregate,source_page
+TOTAL,28341,28,55540,51.03,True,1
+Election Day,24393,28,,,False,1
+Mail/Absentee,3948,0,,,False,1
+Provisional,0,0,,,False,1

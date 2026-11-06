@@ -1,0 +1,2 @@
+native_county,election_date,native_status,ballots_cast,registered_voters,blank_ballots,native_turnout_pct,native_report_clock,native_timezone,native_fips,native_undervotes,native_overvotes,analysis_rate_approved,map_approved,source_page
+Northumberland County,2026-11-03,UNOFFICIAL RESULTS,28341,55540,28,51.03,11/03/2026 22:18 PM,,,,,False,False,1

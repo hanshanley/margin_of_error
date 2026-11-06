@@ -1,0 +1,215 @@
+{
+  "checked_at_utc": "2026-11-06T18:11:53.434292+00:00",
+  "revision": "6a500e106b904b02b552d8dc8895894f3529cd31",
+  "tag": "voter-county-bedford-native-turnout-20261106-01",
+  "release_id": 436831941,
+  "phase": "published",
+  "immutable": true,
+  "assets": [
+    {
+      "file": "audit.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-bedford-native-turnout-20261106-01/audit.json",
+      "bytes": 1054,
+      "sha256": "6e0b9641848f4003a02e7cfe01532f9ff531b611bc132f550ad1989965f30aeb"
+    },
+    {
+      "file": "ballot-modes.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-bedford-native-turnout-20261106-01/ballot-modes.csv",
+      "bytes": 246,
+      "sha256": "d3b356ddb426b0828e83a1897ff2e0024435afd8741afc428c2a477bc45bf5e7"
+    },
+    {
+      "file": "candidate-results.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-bedford-native-turnout-20261106-01/candidate-results.csv",
+      "bytes": 1431,
+      "sha256": "d773f323fe624da60d82eb73cb6b7c71119af076d6bb3a87c0625259f3294c74"
+    },
+    {
+      "file": "checksums.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-bedford-native-turnout-20261106-01/checksums.json",
+      "bytes": 2337,
+      "sha256": "0b5d7f46f4cc3dd4a44805be5b441e8d6132c466481be04066b26ca3f14d2c43"
+    },
+    {
+      "file": "complete-query.zip",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-bedford-native-turnout-20261106-01/complete-query.zip",
+      "bytes": 15912,
+      "sha256": "238a3290697769bc0921d6f20d561961be4ded1d832d6eaa90bc355fab918752"
+    },
+    {
+      "file": "contest-accounting.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-bedford-native-turnout-20261106-01/contest-accounting.csv",
+      "bytes": 1765,
+      "sha256": "1775c539785e4eb4c0e9d14594c242e32ea39799ac5dd9811dd8932673369292"
+    },
+    {
+      "file": "contest-totals.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-bedford-native-turnout-20261106-01/contest-totals.csv",
+      "bytes": 449,
+      "sha256": "d0d73909c58317ed5f77145002fc59980730dbd0d9d2e0c548f7caed599a90a4"
+    },
+    {
+      "file": "county-participation.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-bedford-native-turnout-20261106-01/county-participation.csv",
+      "bytes": 271,
+      "sha256": "ac27921ce943259cbe1aec906fcd22493c7625ecfe99d200a64e41f3c66367a1"
+    },
+    {
+      "file": "methods.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-bedford-native-turnout-20261106-01/methods.json",
+      "bytes": 2337,
+      "sha256": "dbc53e23ab1037e2d7a6898595171b1c48eed9a410357ef41b0ef9d27fea9c03"
+    },
+    {
+      "file": "reporting.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-bedford-native-turnout-20261106-01/reporting.csv",
+      "bytes": 399,
+      "sha256": "cdd03b73e9bd2db7364f443a69fb1bf7fbc71584304c22b9ee43d4e290c990ad"
+    },
+    {
+      "file": "review-counties.py",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-bedford-native-turnout-20261106-01/review-counties.py",
+      "bytes": 14403,
+      "sha256": "9c15d88266658e09d5376f84b2cac3de816a50eea3ea0f9d42fee0a1b330da2f"
+    },
+    {
+      "file": "source-inputs.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-bedford-native-turnout-20261106-01/source-inputs.json",
+      "bytes": 9584,
+      "sha256": "d543734056219ffbb17a613bc0cdf716354588724cfd3b32c16d36f041eaebb0"
+    },
+    {
+      "file": "source-pages.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-bedford-native-turnout-20261106-01/source-pages.csv",
+      "bytes": 133,
+      "sha256": "ce47cdef10af33fa2552277957a613fdb8981353ef2a445734682cb21719ce84"
+    },
+    {
+      "file": "source-provenance.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-bedford-native-turnout-20261106-01/source-provenance.json",
+      "bytes": 2642,
+      "sha256": "8de8ed86d044cbf8786d48d1264e164d12071d37c0585282f02975593f3f05b2"
+    },
+    {
+      "file": "test_review_counties.py",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-bedford-native-turnout-20261106-01/test_review_counties.py",
+      "bytes": 7201,
+      "sha256": "bd913dbcab815015c02e70cef5ebb14c1cd042a04fc405229eabcba5b1d1bff8"
+    },
+    {
+      "file": "unresolved-write-ins.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-bedford-native-turnout-20261106-01/unresolved-write-ins.csv",
+      "bytes": 610,
+      "sha256": "e2063f853222d5f8c696c59d4bbb6c7bef31e69c335b6a7498567b4cfe5df347"
+    }
+  ],
+  "analysis_ballot_approvals": 0,
+  "analysis_rate_approvals": 0,
+  "map_approvals": 0,
+  "both_complete_physical_pages_and_independent_extractions_retained": true,
+  "all_12_candidate_vectors_and_16_mode_accounting_rows_retained": true,
+  "native_missing_parties_timezones_registration_cells_and_fips_retained": true,
+  "write_in_and_unresolved_vectors_retained_separately_and_not_added_again": true,
+  "commit_pinned_files": [
+    {
+      "file": "audit.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6a500e106b904b02b552d8dc8895894f3529cd31/data/county-source-reviews/20261106-bedford-native-turnout-01/audit.json",
+      "bytes": 1054,
+      "sha256": "6e0b9641848f4003a02e7cfe01532f9ff531b611bc132f550ad1989965f30aeb"
+    },
+    {
+      "file": "ballot-modes.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6a500e106b904b02b552d8dc8895894f3529cd31/data/county-source-reviews/20261106-bedford-native-turnout-01/ballot-modes.csv",
+      "bytes": 246,
+      "sha256": "d3b356ddb426b0828e83a1897ff2e0024435afd8741afc428c2a477bc45bf5e7"
+    },
+    {
+      "file": "candidate-results.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6a500e106b904b02b552d8dc8895894f3529cd31/data/county-source-reviews/20261106-bedford-native-turnout-01/candidate-results.csv",
+      "bytes": 1431,
+      "sha256": "d773f323fe624da60d82eb73cb6b7c71119af076d6bb3a87c0625259f3294c74"
+    },
+    {
+      "file": "checksums.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6a500e106b904b02b552d8dc8895894f3529cd31/data/county-source-reviews/20261106-bedford-native-turnout-01/checksums.json",
+      "bytes": 2337,
+      "sha256": "0b5d7f46f4cc3dd4a44805be5b441e8d6132c466481be04066b26ca3f14d2c43"
+    },
+    {
+      "file": "complete-query.zip",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6a500e106b904b02b552d8dc8895894f3529cd31/data/county-source-reviews/20261106-bedford-native-turnout-01/complete-query.zip",
+      "bytes": 15912,
+      "sha256": "238a3290697769bc0921d6f20d561961be4ded1d832d6eaa90bc355fab918752"
+    },
+    {
+      "file": "contest-accounting.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6a500e106b904b02b552d8dc8895894f3529cd31/data/county-source-reviews/20261106-bedford-native-turnout-01/contest-accounting.csv",
+      "bytes": 1765,
+      "sha256": "1775c539785e4eb4c0e9d14594c242e32ea39799ac5dd9811dd8932673369292"
+    },
+    {
+      "file": "contest-totals.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6a500e106b904b02b552d8dc8895894f3529cd31/data/county-source-reviews/20261106-bedford-native-turnout-01/contest-totals.csv",
+      "bytes": 449,
+      "sha256": "d0d73909c58317ed5f77145002fc59980730dbd0d9d2e0c548f7caed599a90a4"
+    },
+    {
+      "file": "county-participation.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6a500e106b904b02b552d8dc8895894f3529cd31/data/county-source-reviews/20261106-bedford-native-turnout-01/county-participation.csv",
+      "bytes": 271,
+      "sha256": "ac27921ce943259cbe1aec906fcd22493c7625ecfe99d200a64e41f3c66367a1"
+    },
+    {
+      "file": "methods.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6a500e106b904b02b552d8dc8895894f3529cd31/data/county-source-reviews/20261106-bedford-native-turnout-01/methods.json",
+      "bytes": 2337,
+      "sha256": "dbc53e23ab1037e2d7a6898595171b1c48eed9a410357ef41b0ef9d27fea9c03"
+    },
+    {
+      "file": "reporting.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6a500e106b904b02b552d8dc8895894f3529cd31/data/county-source-reviews/20261106-bedford-native-turnout-01/reporting.csv",
+      "bytes": 399,
+      "sha256": "cdd03b73e9bd2db7364f443a69fb1bf7fbc71584304c22b9ee43d4e290c990ad"
+    },
+    {
+      "file": "review-counties.py",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6a500e106b904b02b552d8dc8895894f3529cd31/data/county-source-reviews/20261106-bedford-native-turnout-01/review-counties.py",
+      "bytes": 14403,
+      "sha256": "9c15d88266658e09d5376f84b2cac3de816a50eea3ea0f9d42fee0a1b330da2f"
+    },
+    {
+      "file": "source-inputs.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6a500e106b904b02b552d8dc8895894f3529cd31/data/county-source-reviews/20261106-bedford-native-turnout-01/source-inputs.json",
+      "bytes": 9584,
+      "sha256": "d543734056219ffbb17a613bc0cdf716354588724cfd3b32c16d36f041eaebb0"
+    },
+    {
+      "file": "source-pages.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6a500e106b904b02b552d8dc8895894f3529cd31/data/county-source-reviews/20261106-bedford-native-turnout-01/source-pages.csv",
+      "bytes": 133,
+      "sha256": "ce47cdef10af33fa2552277957a613fdb8981353ef2a445734682cb21719ce84"
+    },
+    {
+      "file": "source-provenance.json",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6a500e106b904b02b552d8dc8895894f3529cd31/data/county-source-reviews/20261106-bedford-native-turnout-01/source-provenance.json",
+      "bytes": 2642,
+      "sha256": "8de8ed86d044cbf8786d48d1264e164d12071d37c0585282f02975593f3f05b2"
+    },
+    {
+      "file": "test_review_counties.py",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6a500e106b904b02b552d8dc8895894f3529cd31/data/county-source-reviews/20261106-bedford-native-turnout-01/test_review_counties.py",
+      "bytes": 7201,
+      "sha256": "bd913dbcab815015c02e70cef5ebb14c1cd042a04fc405229eabcba5b1d1bff8"
+    },
+    {
+      "file": "unresolved-write-ins.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/6a500e106b904b02b552d8dc8895894f3529cd31/data/county-source-reviews/20261106-bedford-native-turnout-01/unresolved-write-ins.csv",
+      "bytes": 610,
+      "sha256": "e2063f853222d5f8c696c59d4bbb6c7bef31e69c335b6a7498567b4cfe5df347"
+    }
+  ],
+  "zip_members": 15,
+  "all_16_files_reproduce_exactly": true,
+  "focused_tests": 10,
+  "archive_test_stderr": "..........\n----------------------------------------------------------------------\nRan 10 tests in 0.120s\n\nOK\n"
+}

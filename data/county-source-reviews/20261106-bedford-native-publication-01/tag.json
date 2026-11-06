@@ -1,0 +1,36 @@
+{
+  "ref": {
+    "ref": "refs/tags/voter-county-bedford-native-turnout-20261106-01",
+    "node_id": "REF_kwDOTeY7QdoAOXJlZnMvdGFncy92b3Rlci1jb3VudHktYmVkZm9yZC1uYXRpdmUtdHVybm91dC0yMDI2MTEwNi0wMQ",
+    "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/refs/tags/voter-county-bedford-native-turnout-20261106-01",
+    "object": {
+      "sha": "46d725f09805076a1b8b93a404ee33a7fdcdf7d8",
+      "type": "tag",
+      "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/tags/46d725f09805076a1b8b93a404ee33a7fdcdf7d8"
+    }
+  },
+  "tag": {
+    "node_id": "TA_kwDOTeY7QdoAKDQ2ZDcyNWYwOTgwNTA3NmExYjhiOTNhNDA0ZWUzM2E3ZmRjZGY3ZDg",
+    "sha": "46d725f09805076a1b8b93a404ee33a7fdcdf7d8",
+    "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/tags/46d725f09805076a1b8b93a404ee33a7fdcdf7d8",
+    "tagger": {
+      "name": "Hans Hanley",
+      "email": "hwahhanley@gmail.com",
+      "date": "2026-11-06T18:10:27Z"
+    },
+    "object": {
+      "sha": "6a500e106b904b02b552d8dc8895894f3529cd31",
+      "type": "commit",
+      "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/commits/6a500e106b904b02b552d8dc8895894f3529cd31"
+    },
+    "tag": "voter-county-bedford-native-turnout-20261106-01",
+    "message": "Complete reproducible Bedford native turnout query; no contextual map approval\n",
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  }
+}

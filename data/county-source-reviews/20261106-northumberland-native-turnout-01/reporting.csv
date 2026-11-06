@@ -1,0 +1,5 @@
+native_scope,reported,total,election_day,mail_absentee,provisional,source_page
+Election Day Precincts Reporting,74,74,74,0,0,1
+Precincts Complete,74,74,74,0,0,1
+Precincts Partially Reported,0,74,0,0,0,1
+Absentee/ Early Precincts Reporting,74,74,0,74,0,1

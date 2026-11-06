@@ -1,0 +1,57 @@
+{
+  "started_at_utc": "2026-11-06T18:15:34.055698+00:00",
+  "receipts": [
+    {
+      "source": "https://northumberlandcountypa.gov/",
+      "final_url": "https://northumberlandcountypa.gov/",
+      "status": 200,
+      "acquired_at_utc": "2026-11-06T18:15:34.541984+00:00",
+      "verified_tls": true,
+      "bytes": 100596,
+      "sha256": "be8cc646cfc028c2f28bc36d7104cd0ac87eb3b2bb6116741ac1e65406f727c9",
+      "redirects": [],
+      "headers": {
+        "Content-Type": "text/html; charset=UTF-8",
+        "Last-Modified": "Fri, 06 Nov 2026 18:15:34 GMT",
+        "ETag": null,
+        "Date": "Fri, 06 Nov 2026 18:15:34 GMT"
+      }
+    },
+    {
+      "source": "https://www.northumberlandcountypa.gov/htdocs/wp-content/uploads/documents/elections/2026_1103_unofficial/overall7.pdf",
+      "final_url": "https://northumberlandcountypa.gov/htdocs/wp-content/uploads/documents/elections/2026_1103_unofficial/overall7.pdf",
+      "status": 200,
+      "acquired_at_utc": "2026-11-06T18:15:34.750354+00:00",
+      "verified_tls": true,
+      "bytes": 38693,
+      "sha256": "7082a6b5deb96cc9c169e2f0c01449e2e015a3dfdb69ddf07c05bb27ae48ed0c",
+      "redirects": [
+        {
+          "status": 301,
+          "url": "https://www.northumberlandcountypa.gov/htdocs/wp-content/uploads/documents/elections/2026_1103_unofficial/overall7.pdf",
+          "location": "https://northumberlandcountypa.gov/htdocs/wp-content/uploads/documents/elections/2026_1103_unofficial/overall7.pdf"
+        }
+      ],
+      "headers": {
+        "Content-Type": "application/pdf",
+        "Last-Modified": "Wed, 04 Nov 2026 03:27:50 GMT",
+        "ETag": "\"6aeaa636-9725\"",
+        "Date": "Fri, 06 Nov 2026 18:15:34 GMT"
+      }
+    }
+  ],
+  "numerical_query_reviewed": false,
+  "public_numerical_release": false,
+  "analysis_rate_approved": false,
+  "map_approved": false,
+  "current_ui_pointer_unchanged": true,
+  "declaration": {
+    "label": "Please click here to view the unofficial election results",
+    "literal_href": "https://www.northumberlandcountypa.gov/htdocs/wp-content/uploads/documents/elections/2026_1103_unofficial/overall7.pdf",
+    "html_base": null,
+    "resolved_url": "https://www.northumberlandcountypa.gov/htdocs/wp-content/uploads/documents/elections/2026_1103_unofficial/overall7.pdf"
+  },
+  "physical_pages": 3,
+  "both_independent_extractions_retain_all_complete_pages": true,
+  "decision": "Complete original and independent extractions acquired; numerical semantics, all-page visual review, election scope and source clocks must pass before any participation approval."
+}

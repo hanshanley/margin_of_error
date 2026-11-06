@@ -1,0 +1,11 @@
+{
+  "pages_run_id": 42265950368,
+  "revision": "d15dd8930c4ee09247ba015d62d7c1d4ed7a306d",
+  "attempt": 2,
+  "status": "completed",
+  "conclusion": "failure",
+  "log_sha256": "eb45e924c6d3d97753763ab95ccd5c225ddae3d6caf107f2285bfcdace2f4598",
+  "updating_pages_mentioned": false,
+  "syncing_files_mentioned": false,
+  "automatic_retry_started": false
+}

@@ -1,0 +1,58 @@
+{
+  "audit.json": {
+    "bytes": 922,
+    "sha256": "26e0796c5f54b9a5f09834a344e19e4e951d91b4b6fd9e022bfe2a299556a1d8"
+  },
+  "ballot-modes.csv": {
+    "bytes": 234,
+    "sha256": "831b84ad6a1456cae240b769d0976c437c119bdeacc34ca7d35ee6012ea1e7c4"
+  },
+  "candidate-results.csv": {
+    "bytes": 2203,
+    "sha256": "57ce540c951e5fb36e69c89491a01ec2ca878286074c3c04ccea70a8f41fa2dd"
+  },
+  "contest-accounting.csv": {
+    "bytes": 2100,
+    "sha256": "8377fb7ca830266bc94107da8c3ec007b4d8fe9dcbd77098309f6b3bf01cdc65"
+  },
+  "contest-scope.csv": {
+    "bytes": 515,
+    "sha256": "9b487438ea1c53fb536d1b2296cb9e93bc3f0bd4285145cd46b493083458547d"
+  },
+  "contest-totals.csv": {
+    "bytes": 538,
+    "sha256": "df265804c2c5fed4ccd1134dd8f87e53a11d923b7cfe4f7d03fbeceda72c1b06"
+  },
+  "county-participation.csv": {
+    "bytes": 348,
+    "sha256": "78b381a400539888fd181949b31084eec2b1d9ef9afeb553f6730110f44cc92b"
+  },
+  "methods.json": {
+    "bytes": 2589,
+    "sha256": "f469cc93c4c59dd47a407dea944d0eee4acdf77b96427846631ac6a9e55d20e0"
+  },
+  "reporting.csv": {
+    "bytes": 254,
+    "sha256": "5aafdab0699bb4011000e7fbc2e90125d6458ee270cf3230e04990caad3c8418"
+  },
+  "review-counties.py": {
+    "bytes": 12498,
+    "sha256": "44dda412bda6431aed7b2989265e2ca2b9b8f5696d6c52cb729c44b8a1179158"
+  },
+  "source-inputs.json": {
+    "bytes": 11084,
+    "sha256": "3f8033bcd354df67046a64d46347a383ac6fd2c96a273229f79dbee12f3a2a3a"
+  },
+  "source-pages.csv": {
+    "bytes": 210,
+    "sha256": "f6dda70426681983f43fd25d135b234ee8d01838a27fc5f29ffbcaae37b05507"
+  },
+  "source-provenance.json": {
+    "bytes": 2621,
+    "sha256": "f43714bd2e7db9cc5b58cfe0d2884431313eb220423dfca9af9a1be1ccd1effb"
+  },
+  "test_review_counties.py": {
+    "bytes": 8374,
+    "sha256": "e72bc6434bb1956b8e4418c4e1db08dce888114c19ea4dde40cb1976d3ed4c67"
+  }
+}

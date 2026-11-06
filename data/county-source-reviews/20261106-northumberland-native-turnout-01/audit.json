@@ -1,0 +1,25 @@
+{
+  "row_counts": {
+    "county-participation.csv": 1,
+    "ballot-modes.csv": 4,
+    "candidate-results.csv": 23,
+    "contest-totals.csv": 6,
+    "contest-accounting.csv": 24,
+    "reporting.csv": 4,
+    "contest-scope.csv": 6,
+    "source-pages.csv": 3
+  },
+  "source_pdf_sha256": "7082a6b5deb96cc9c169e2f0c01449e2e015a3dfdb69ddf07c05bb27ae48ed0c",
+  "both_complete_independent_extractions_match": true,
+  "all_native_candidate_mode_vectors_reconcile": true,
+  "native_total_is_first_column_not_last": true,
+  "multi_vote_native_contest_totals_are_not_ballots_or_unique_voters": true,
+  "all_contest_residuals_remain_unclassified_not_native_undervotes": true,
+  "no_mode_registration_or_rate_inferred": true,
+  "no_native_party_inferred": true,
+  "native_mixed_clock_literal_not_normalized": true,
+  "native_timezone_missing": true,
+  "native_fips_missing": true,
+  "analysis_rate_approvals": 0,
+  "map_approvals": 0
+}

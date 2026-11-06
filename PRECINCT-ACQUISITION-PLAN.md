@@ -2,7 +2,7 @@
 
 ## Current verified production and next acquisition
 
-**November 6: Sullivan/Wyoming context21 UI validated; exact deployment pending, not LIVE.**
+**November 6: Sullivan/Wyoming context21 UI validated; exact deployment blocked, not LIVE.**
 Corrected native release **436805438 / `b0ae6c0`** and complete context21
 release **436809452 / `ed62932`** are immutable. Every native **16-file** and
 context **32-file** inventory, anonymous release asset, commit-pinned file,
@@ -26,18 +26,29 @@ Pages **42265950368 attempt1** built successfully, preserving original artifact
 `36ed9d761853fefe0238336096d246490b71d46d8eb9a72ec08b6ddf0149ace4`**.
 Its deploy remained `deployment_queued` before GitHub reported failure. The
 complete failure log and digest are retained. Exactly one deploy-only recovery
-was requested; attempt2 reuses that artifact, without rebuilding or pushing main.
+was requested; attempt2 reused that artifact, without rebuilding or pushing main.
+It also failed after remaining `deployment_queued`, at **18:12:58UTC**.
+The exact Pages deployment API reports **`deployment_failed`**. Both complete
+attempt logs and their digests are retained. The known verifiers
+`sullivan-wyoming-explorer-production-01` and `-02` have exited; **none is active**.
+Both exact UI credential jobs **42265950290 / 42265950530** succeeded.
 
-**Next:** verify its exact Pages
-revision, original artifact/digest, actual hosted size, all **457 selected entire
+**No third blind deploy retry, timeout increase, audit-only main push or rebuild
+of the frozen prepared artifact as a deployment workaround.** A later legitimate
+UI integration must preserve the prior complete snapshot and have its own exact
+verification; do not label this failed revision LIVE. The unmet production
+requirements remain its exact Pages revision, original artifact bytes/digest,
+actual hosted size, all **457 selected entire
 public files** including all **444 previous paths**, **335 relocations** and
 **seven production browsers** before a LIVE claim. Do not rebuild prepared
 `dist/` while that verifier runs. Persist production proofs on the review branch,
 not through an audit-only main push. Context20 below remains the verified LIVE
-baseline until these checks pass. Afterwards resume genuine remaining county
-gaps; schedule #5 and external security-remediation blockers remain unchanged.
+baseline. **Next:** preserve the Bedford source and Census proofs, review the
+newly recovered Northumberland original below, then prepare a genuine county
+integration without repeating completed source acquisitions. Schedule #5 and
+external security-remediation blockers remain unchanged.
 
-**November 6: Bedford complete native query validated; publication/context review pending.**
+**November 6: Bedford complete native query published; UI integration pending.**
 The official page declares a root HTML `<base>`; resolving its literal general
 summary against that base, rather than the page directory, recovered the complete
 **174,249-byte / two-page** original with verified TLS and full receipt. Both
@@ -57,15 +68,59 @@ assigned to under/overvotes without a source definition. Separately rounded mode
 percentages need not sum to the separately rounded aggregate. Native FIPS,
 timezone and generic rate/map approvals remain missing/false.
 
-All **ten isolated tests / ten actual extracted-archive tests / 16 byte-identical
-reproductions / 15 actual ZIP members** pass. This is native source preparation,
-not context22 or a LIVE map addition. Do not edit the current prepared `dist/`
+Immutable native release **436831941 / `6a500e106b904b02b552d8dc8895894f3529cd31`**,
+tag **`voter-county-bedford-native-turnout-20261106-01`**, retains all **16 complete
+files**, ZIP **15,912 bytes / SHA-256
+`238a3290697769bc0921d6f20d561961be4ded1d832d6eaa90bc355fab918752`**.
+Every draft/public release asset and commit-pinned file matches. All **ten
+isolated tests / ten actual extracted-archive tests / 16 byte-identical
+reproductions / 15 actual ZIP members** pass in draft and public verification.
+Exact credential jobs **42268275789 review / 42268275999 tag** pass.
+Both entire **3,222-record 2024/2026 Census inventories** equal their original
+archives and independently identify **Bedford County, PA / 42009**. Its unchanged
+2024 contextual geometry matches the complete previously verified hosted file;
+this is not an exact 2026 election-boundary assertion or a native approval change.
+
+This is a complete numerical source release, not context22 or a LIVE map addition.
+Do not edit the current prepared `dist/`
 while the exact context21 verifier runs. Beaver's declaring page identifies a
 current vendor, but its separately retained historical page supplies primary,
 not November general, reports; no vendor request or process-only ballot
 substitution was made. Fayette404/Cambria403 have complete direct receipts;
 earlier browser-only notes without retained originals are not canonical vendor
 evidence. These outcomes do not establish global source absence.
+
+**November 6: Northumberland whole-county query validated; publication pending.**
+The actual homepage's literal November general summary declares **`overall7.pdf`**.
+One ordinary request followed its declared **301** redirect and acquired the
+complete **38,693-byte / three-page** PDF, SHA-256
+**`7082a6b5deb96cc9c169e2f0c01449e2e015a3dfdb69ddf07c05bb27ae48ed0c`**,
+with verified TLS and full receipts. This is not a guessed sibling or a vendor
+challenge bypass. Both complete independent extractions and all three rendered
+pages were reviewed. Native **28,341 ballots / 55,540 registrations / 51.03%**
+retain **24,393 Election Day / 3,948 Mail/Absentee / zero Provisional**; native
+blank ballots are **28 / 28 / zero / zero**. Registration and printed percentage
+are aggregate-only; do not fill blank mode cells.
+
+All three pages retain the mixed **`11/03/2026 22:18 PM`** clock literally,
+without timezone or normalized UTC inference. Six contests include a **Vote For7**
+city commission contest: native **9,450 Contest Totals / 5,588 Total Votes Cast**
+are not county ballots or unique city voters. Preserve all candidate/option
+vectors, literal DEM/REP/LIB and missing city/write-in parties; unclassified
+contest-total residuals are not source-native undervotes or missing people.
+The two House-district native Contest Totals partition the county mode vector;
+that arithmetic is not election-boundary or map approval. The complete numerical
+query now retains **all23 candidate/option vectors / six contest totals / 24
+mode-accounting rows / four reporting scopes / six subcounty-scope records /
+three physical pages**. All **ten isolated and actual extracted-archive tests /
+15 ZIP members / 16 byte-identical reproduced files** pass. A prepublication
+test-harness self-ZIP assumption was caught and fixed before any tag or release;
+the failed private test log and candidate build are retained.
+The complete **16-file** query ZIP is **16,064 bytes / SHA-256
+`8c4c76b3bc19dd8baa6d188cd25b7c72c8520d68c6da6259d1ac47f989799bc2`**. **No
+Northumberland numerical release, generic rate or map approval yet.** Reuse the
+private complete original under `files/northumberland-native-acquisition-01/`;
+do not reacquire its unchanged parent/PDF.
 
 **November 6: Sullivan/Wyoming complete native numerical and contextual review (completed).**
 The two entire declared official PDFs were acquired at 17:31 UTC with verified

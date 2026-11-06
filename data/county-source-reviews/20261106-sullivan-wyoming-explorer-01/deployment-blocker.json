@@ -1,0 +1,55 @@
+{
+  "checked_at_utc": "2026-11-06T18:20:30.673048+00:00",
+  "revision": "d15dd8930c4ee09247ba015d62d7c1d4ed7a306d",
+  "pages_run_id": 42265950368,
+  "attempts": 2,
+  "conclusion": "failure",
+  "pages_service": {
+    "status": "deployment_failed"
+  },
+  "credentials": [
+    {
+      "id": 42265950290,
+      "head_sha": "d15dd8930c4ee09247ba015d62d7c1d4ed7a306d",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/hanshanley/margin_of_error/actions/runs/42265950290"
+    },
+    {
+      "id": 42265950530,
+      "head_sha": "d15dd8930c4ee09247ba015d62d7c1d4ed7a306d",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/hanshanley/margin_of_error/actions/runs/42265950530"
+    }
+  ],
+  "original_artifact": {
+    "id": 13526574384,
+    "node_id": "MDg6QXJ0aWZhY3QxMzUyNjU3NDM4NA==",
+    "name": "github-pages",
+    "size_in_bytes": 506893533,
+    "url": "https://api.github.com/repos/hanshanley/margin_of_error/actions/artifacts/13526574384",
+    "archive_download_url": "https://api.github.com/repos/hanshanley/margin_of_error/actions/artifacts/13526574384/zip",
+    "expired": false,
+    "digest": "sha256:36ed9d761853fefe0238336096d246490b71d46d8eb9a72ec08b6ddf0149ace4",
+    "created_at": "2026-11-06T18:01:29Z",
+    "updated_at": "2026-11-06T18:01:29Z",
+    "expires_at": "2026-11-07T18:01:06Z",
+    "workflow_run": {
+      "id": 42265950368,
+      "repository_id": 1306934081,
+      "head_repository_id": 1306934081,
+      "head_branch": "main",
+      "head_sha": "d15dd8930c4ee09247ba015d62d7c1d4ed7a306d"
+    }
+  },
+  "original_artifact_api_metadata_verified": true,
+  "original_artifact_download_and_digest_not_yet_verified": true,
+  "actual_hosted_size_not_verified": true,
+  "all_457_entire_live_files_not_verified": true,
+  "seven_production_browsers_not_verified": true,
+  "both_known_verifiers_exited": true,
+  "no_active_production_verifier": true,
+  "no_third_blind_retry": true,
+  "live_claim": false
+}

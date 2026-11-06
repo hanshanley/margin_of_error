@@ -1,0 +1,343 @@
+{
+  "checked_at_utc": "2026-11-06T18:20:31.390132+00:00",
+  "actual_live_page_bytes": 3090150,
+  "actual_live_page_sha256": "0903f6304d49550f57c26a283e97f194578a0934618c8973b3ff3abc800b7762",
+  "entire_native_records_equal_last_verified_baseline": true,
+  "entire_native_records": 363,
+  "entire_download_url_list_equal_last_verified_baseline": true,
+  "download_anchors": 802,
+  "distinct_download_urls": 798,
+  "historical_years_unchanged": true,
+  "actual_live_context": {
+    "schema_version": 1,
+    "base_url": "/participation-county-context/20261106-20/",
+    "review_bytes": 1146050,
+    "review_sha256": "ffb2a4fa3b72dacc60a6bddb3bfd98d898022bf0cfbcf8f7018953e323811852",
+    "complete_download_bytes": 2911486,
+    "complete_download_sha256": "9a18f2950aaf29643adcbea602a3f016997b39a9e88ebdcd3febae5f392f2d3d",
+    "downloads": [
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-20/county-participation-joins.csv",
+        "label": "Complete audited county participation joins: all 744 observations, including Susquehanna, Pennsylvania (CSV)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-20/review.json",
+        "label": "Complete county identity review, exclusions and native-counting qualifications (JSON)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-20/complete-source-records.json.gz",
+        "label": "Every county, municipal and reporting-unit inventory: all 1,228 records, preserving the previous 1,227 unchanged (JSON \u00b7 gzip)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-20/complete-county-participation-context-20.zip",
+        "label": "Complete county participation context query, all original contextual geometries, full inventories and offline reproduction tools (ZIP)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-19/county-participation-joins.csv",
+        "label": "Complete audited county participation joins: all 743 observations, including Somerset, Pennsylvania (CSV)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-19/review.json",
+        "label": "Complete county identity review, exclusions and native-counting qualifications (JSON)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-19/complete-source-records.json.gz",
+        "label": "Every county, municipal and reporting-unit inventory: all 1,227 records, preserving the previous 1,226 unchanged (JSON \u00b7 gzip)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-19/complete-county-participation-context-19.zip",
+        "label": "Complete county participation context query, all original contextual geometries, full inventories and offline reproduction tools (ZIP)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-18/county-participation-joins.csv",
+        "label": "Complete audited county participation joins: all 742 observations, including Indiana, Lackawanna and Schuylkill, Pennsylvania (CSV)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-18/review.json",
+        "label": "Complete county identity review, exclusions and native-counting qualifications (JSON)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-18/complete-source-records.json.gz",
+        "label": "Every county, municipal and reporting-unit inventory: all 1,226 records, preserving the previous 1,223 unchanged (JSON \u00b7 gzip)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-18/complete-county-participation-context-18.zip",
+        "label": "Complete county participation context query, all original contextual geometries, full inventories and offline reproduction tools (ZIP)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-17/county-participation-joins.csv",
+        "label": "Complete audited county participation joins: all 739 observations, including Huntingdon, Pennsylvania (CSV)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-17/review.json",
+        "label": "Complete county identity review, exclusions and native-counting qualifications (JSON)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-17/complete-source-records.json.gz",
+        "label": "Every county, municipal and reporting-unit inventory: all 1,223 records, preserving the previous 1,222 unchanged (JSON \u00b7 gzip)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-17/complete-county-participation-context-17.zip",
+        "label": "Complete county participation context query, all original contextual geometries, full inventories and offline reproduction tools (ZIP)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-16/county-participation-joins.csv",
+        "label": "Complete audited county participation joins: all 738 observations, including Lawrence, Pennsylvania (CSV)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-16/review.json",
+        "label": "Complete county identity review and exclusions, retaining all missing and conflicting Minnesota counts/rates (JSON)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-16/complete-source-records.json.gz",
+        "label": "Every county, municipal and reporting-unit inventory: all 1,222 source records, preserving the previous 1,221 unchanged (JSON \u00b7 gzip)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-16/complete-county-participation-context-16.zip",
+        "label": "Complete county participation context query, all original contextual geometries, full inventories and offline reproduction tools (ZIP)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-15/county-participation-joins.csv",
+        "label": "Complete audited county participation joins: all 737 observations, including 75 complete Minnesota counts (CSV)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-15/review.json",
+        "label": "Complete county identity review and exclusions, preserving twelve incomplete Minnesota county totals (JSON)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-15/complete-source-records.json.gz",
+        "label": "Every county, municipal and reporting-unit inventory: all 1,221 source records, preserving the previous 1,134 unchanged (JSON \u00b7 gzip)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-15/complete-county-participation-context-15.zip",
+        "label": "Complete county participation context query, all original contextual geometries, full inventories and offline reproduction tools (ZIP)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-14/county-participation-joins.csv",
+        "label": "Complete audited county participation joins: all 662 observations, including Lycoming, Pennsylvania (CSV)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-14/review.json",
+        "label": "Complete updated county identity review, exclusions and contextual geometry qualifications (JSON)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-14/complete-source-records.json.gz",
+        "label": "Every county, municipal and reporting-unit container: all 1,134 records, preserving the previous 1,133 unchanged (JSON \u00b7 gzip)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-14/complete-county-participation-context-14.zip",
+        "label": "Complete updated county participation context query, inventories, geometries and offline reproduction code (ZIP)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-13/county-participation-joins.csv",
+        "label": "Complete audited county participation joins: all 661 observations, including all 159 Georgia counties (CSV)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-13/review.json",
+        "label": "Complete updated county identity review, exclusions and contextual geometry qualifications (JSON)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-13/complete-source-records.json.gz",
+        "label": "Every county, municipal and reporting-unit container: all 1,133 records, preserving the previous 974 unchanged (JSON \u00b7 gzip)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-13/complete-county-participation-context-13.zip",
+        "label": "Complete updated county participation context query, inventories, geometries and offline reproduction code (ZIP)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-12/county-participation-joins.csv",
+        "label": "Complete audited county participation joins: all 502 observations, including Greene, Pennsylvania (CSV)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-12/review.json",
+        "label": "Complete updated county identity review, exclusions and contextual geometry qualifications (JSON)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-12/complete-source-records.json.gz",
+        "label": "Every county, municipal and reporting-unit container: all 974 records, preserving the previous 973 unchanged (JSON \u00b7 gzip)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-12/complete-county-participation-context-12.zip",
+        "label": "Complete updated county participation context query, inventories, geometries and offline reproduction code (ZIP)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-11/county-participation-joins.csv",
+        "label": "Complete audited county participation joins: all 501 observations, including Columbia, Pennsylvania (CSV)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-11/review.json",
+        "label": "Complete updated county identity review, exclusions and contextual geometry qualifications (JSON)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-11/complete-source-records.json.gz",
+        "label": "Every county, municipal and reporting-unit container: all 973 records, preserving the previous 972 unchanged (JSON \u00b7 gzip)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-11/complete-county-participation-context-11.zip",
+        "label": "Complete updated county participation context query, inventories, geometries and offline reproduction code (ZIP)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-10/county-participation-joins.csv",
+        "label": "Complete audited county participation joins: all 500 observations, including all 58 California counties (CSV)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-10/review.json",
+        "label": "Complete updated county identity review, exclusions and contextual geometry qualifications (JSON)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-10/complete-source-records.json.gz",
+        "label": "Every county, municipal and reporting-unit container: all 972 records, preserving the previous 914 unchanged (JSON \u00b7 gzip)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-10/complete-county-participation-context-10.zip",
+        "label": "Complete updated county participation context query, inventories, geometries and offline reproduction code (ZIP)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-09/county-participation-joins.csv",
+        "label": "Complete audited county participation joins: all 442 observations, including Juniata, Mercer and Montour, Pennsylvania (CSV)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-09/review.json",
+        "label": "Complete updated county identity review, exclusions and geometry qualifications (JSON)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-09/complete-source-records.json.gz",
+        "label": "Every county, municipal and reporting-unit container: all 914 records, preserving the previous 911 unchanged (JSON \u00b7 gzip)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-09/complete-county-participation-context-09.zip",
+        "label": "Complete updated county participation context query, inventories, geometries and offline reproduction code (ZIP)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-08/county-participation-joins.csv",
+        "label": "Complete audited county participation joins: all 439 observations, including Perry, Pennsylvania (CSV)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-08/review.json",
+        "label": "Complete updated county identity review, exclusions and geometry qualifications (JSON)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-08/complete-source-records.json.gz",
+        "label": "Every county, municipal and reporting-unit container: all 911 records, preserving the previous 910 unchanged (JSON \u00b7 gzip)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-08/complete-county-participation-context-08.zip",
+        "label": "Complete updated county participation context query, inventories, geometries and offline reproduction code (ZIP)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-07/county-participation-joins.csv",
+        "label": "Complete audited county participation joins: all 438 observations, including Mifflin, Pennsylvania (CSV)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-07/review.json",
+        "label": "Complete updated county identity review, exclusions and geometry qualifications (JSON)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-07/complete-source-records.json.gz",
+        "label": "Every county, municipal and reporting-unit container: all 910 records, preserving the previous 909 unchanged (JSON \u00b7 gzip)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-07/complete-county-participation-context-07.zip",
+        "label": "Complete updated county participation context query, inventories, geometries and offline reproduction code (ZIP)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-06/county-participation-joins.csv",
+        "label": "Complete audited county participation joins: all 437 observations, including Potter, Pennsylvania (CSV)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-06/review.json",
+        "label": "Complete updated county identity review, exclusions and geometry qualifications (JSON)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-06/complete-source-records.json.gz",
+        "label": "Every county, municipal and reporting-unit container: all 909 records, preserving the previous 908 unchanged (JSON \u00b7 gzip)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-06/complete-county-participation-context-06.zip",
+        "label": "Complete updated county participation context query, inventories, geometries and offline reproduction code (ZIP)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-05/county-participation-joins.csv",
+        "label": "Complete audited county participation joins: all 436 observations, including Elk and Forest, Pennsylvania (CSV)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-05/review.json",
+        "label": "Complete updated county identity review, exclusions and geometry qualifications (JSON)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-05/complete-source-records.json.gz",
+        "label": "Every county, municipal and reporting-unit container: all 908 records, preserving the previous 906 unchanged (JSON \u00b7 gzip)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-05/complete-county-participation-context-05.zip",
+        "label": "Complete updated county participation context query, inventories, geometries and offline reproduction code (ZIP)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-04/county-participation-joins.csv",
+        "label": "Complete audited county participation joins: all 434 observations, including Cameron and Carbon, Pennsylvania (CSV)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-04/review.json",
+        "label": "Complete updated county identity review, exclusions and geometry qualifications (JSON)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-04/complete-source-records.json.gz",
+        "label": "Every county, municipal and reporting-unit container: all 906 records, preserving the previous 904 unchanged (JSON \u00b7 gzip)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-04/complete-county-participation-context-04.zip",
+        "label": "Complete updated county participation context query, inventories, geometries and offline reproduction code (ZIP)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-03/county-participation-joins.csv",
+        "label": "Complete audited county participation joins: all 432 observations, including Clarion, Pennsylvania (CSV)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-03/review.json",
+        "label": "Complete updated county identity review, exclusions and geometry qualifications (JSON)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-03/complete-source-records.json.gz",
+        "label": "Every county, municipal and reporting-unit container: all 904 records, preserving the previous 903 unchanged (JSON \u00b7 gzip)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-03/complete-county-participation-context-03.zip",
+        "label": "Complete updated county participation context query, inventories, geometries and offline reproduction code (ZIP)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-02/county-participation-joins.csv",
+        "label": "Complete audited county participation joins: all 431 observations, including Jefferson, Pennsylvania (CSV)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-02/review.json",
+        "label": "Complete updated county identity review, exclusions and geometry qualifications (JSON)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-02/complete-source-records.json.gz",
+        "label": "Every county, municipal and reporting-unit container: all 903 records, preserving the previous 902 unchanged (JSON \u00b7 gzip)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-02/complete-county-participation-context-02.zip",
+        "label": "Complete updated county participation context query, inventories, geometries and offline reproduction code (ZIP)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-01/county-participation-joins.csv",
+        "label": "Complete audited county participation joins: all 430 observations (CSV)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-01/review.json",
+        "label": "Complete county identity review, exclusions and geometry qualifications (JSON)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-01/complete-source-records.json.gz",
+        "label": "Every unchanged county, municipal and reporting-unit container: all 902 records (JSON \u00b7 gzip)"
+      },
+      {
+        "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-01/complete-county-participation-context-01.zip",
+        "label": "Complete county participation context query, inventories, geometries and offline reproduction code (ZIP)"
+      }
+    ]
+  },
+  "last_fully_verified_production_revision": "6fdb6bde43fc6b961a1f1d4a3e5f7f7a47614716",
+  "scope": "Fresh complete HTML/native-record/download-list and entire pointer comparison only; not a new444-file production replay. Original full context20 production proof remains authoritative."
+}

@@ -1,0 +1,68 @@
+{
+  "pdf_receipt": {
+    "source": "https://www.northumberlandcountypa.gov/htdocs/wp-content/uploads/documents/elections/2026_1103_unofficial/overall7.pdf",
+    "final_url": "https://northumberlandcountypa.gov/htdocs/wp-content/uploads/documents/elections/2026_1103_unofficial/overall7.pdf",
+    "status": 200,
+    "acquired_at_utc": "2026-11-06T18:15:34.750354+00:00",
+    "verified_tls": true,
+    "bytes": 38693,
+    "sha256": "7082a6b5deb96cc9c169e2f0c01449e2e015a3dfdb69ddf07c05bb27ae48ed0c",
+    "redirects": [
+      {
+        "status": 301,
+        "url": "https://www.northumberlandcountypa.gov/htdocs/wp-content/uploads/documents/elections/2026_1103_unofficial/overall7.pdf",
+        "location": "https://northumberlandcountypa.gov/htdocs/wp-content/uploads/documents/elections/2026_1103_unofficial/overall7.pdf"
+      }
+    ],
+    "headers": {
+      "Content-Type": "application/pdf",
+      "Last-Modified": "Wed, 04 Nov 2026 03:27:50 GMT",
+      "ETag": "\"6aeaa636-9725\"",
+      "Date": "Fri, 06 Nov 2026 18:15:34 GMT"
+    }
+  },
+  "declaring_parent_receipt": {
+    "source": "https://northumberlandcountypa.gov/",
+    "final_url": "https://northumberlandcountypa.gov/",
+    "status": 200,
+    "acquired_at_utc": "2026-11-06T18:15:34.541984+00:00",
+    "verified_tls": true,
+    "bytes": 100596,
+    "sha256": "be8cc646cfc028c2f28bc36d7104cd0ac87eb3b2bb6116741ac1e65406f727c9",
+    "redirects": [],
+    "headers": {
+      "Content-Type": "text/html; charset=UTF-8",
+      "Last-Modified": "Fri, 06 Nov 2026 18:15:34 GMT",
+      "ETag": null,
+      "Date": "Fri, 06 Nov 2026 18:15:34 GMT"
+    }
+  },
+  "declaration": {
+    "label": "Please click here to view the unofficial election results",
+    "literal_href": "https://www.northumberlandcountypa.gov/htdocs/wp-content/uploads/documents/elections/2026_1103_unofficial/overall7.pdf",
+    "html_base": null,
+    "resolved_url": "https://www.northumberlandcountypa.gov/htdocs/wp-content/uploads/documents/elections/2026_1103_unofficial/overall7.pdf"
+  },
+  "pdf_metadata": {
+    "format": "PDF 1.4",
+    "title": "",
+    "author": "",
+    "subject": "",
+    "keywords": "",
+    "creator": "JasperReports (/Election Summary)",
+    "producer": "iText 2.1.7 by 1T3XT",
+    "creationDate": "D:20261103221853-05'00'",
+    "modDate": "D:20261103221853-05'00'",
+    "trapped": "",
+    "encryption": null
+  },
+  "visually_reviewed_physical_pages": [
+    1,
+    2,
+    3
+  ],
+  "numerical_originals_complete_and_private": true,
+  "raw_source_clock": "11/03/2026 22:18 PM",
+  "native_timezone": null,
+  "no_url_http_or_election_date_used_as_native_update_clock": true
+}

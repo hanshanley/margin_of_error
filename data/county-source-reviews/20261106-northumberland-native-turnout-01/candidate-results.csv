@@ -1,0 +1,24 @@
+contest,candidate_or_option,native_party,total,election_day,mail_absentee,provisional,native_pct,is_write_in,is_referendum_option,vote_for,source_page
+Governor & Lieutenant Governor,"JOSH SHAPIRO, Governor",DEM,11648,8876,2772,0,,False,False,1,2
+Governor & Lieutenant Governor,"STACY GARRITY, Governor",REP,15953,14842,1111,0,,False,False,1,2
+Governor & Lieutenant Governor,"KEN KRAWCHUK, Governor",LIB,521,479,42,0,,False,False,1,2
+Governor & Lieutenant Governor,Write-In Totals,,32,28,4,0,,True,False,1,2
+Representative in Congress 9th District,RACHEL WALLACE,DEM,10409,7875,2534,0,,False,False,1,2
+Representative in Congress 9th District,DAN MEUSER,REP,17662,16274,1388,0,,False,False,1,2
+Representative in Congress 9th District,Write-In Totals,,35,31,4,0,,True,False,1,2
+Representative in the General Assembly 107th District,RYAN T. COLEMAN,DEM,4168,3061,1107,0,,False,False,1,2
+Representative in the General Assembly 107th District,JOANNE STEHR,REP,8402,7649,753,0,,False,False,1,2
+Representative in the General Assembly 107th District,Write-In Totals,,29,25,4,0,,True,False,1,2
+Representative in General Assembly 108th District,AMBER L. NEIDIG,DEM,5249,3993,1256,0,,False,False,1,3
+Representative in General Assembly 108th District,MICHAEL STENDER,REP,10169,9362,807,0,,False,False,1,3
+Representative in General Assembly 108th District,Write-In Totals,,20,19,1,0,,True,False,1,3
+City of Shamokin Home Rule Charter Referendum Shamokin City,Yes,,755,671,84,0,,False,True,1,3
+City of Shamokin Home Rule Charter Referendum Shamokin City,No,,554,469,85,0,,False,True,1,3
+Commission Member Shamokin City,DANIELLE HINKLE,,764,652,112,0,,False,False,7,3
+Commission Member Shamokin City,MICHAEL MCLAUGHLIN,,838,724,114,0,,False,False,7,3
+Commission Member Shamokin City,MELISSA P. FARROW,,801,688,113,0,,False,False,7,3
+Commission Member Shamokin City,JOHN KNOWLES,,714,609,105,0,,False,False,7,3
+Commission Member Shamokin City,WENDY MANNING,,737,633,104,0,,False,False,7,3
+Commission Member Shamokin City,SUSAN WARD,,734,624,110,0,,False,False,7,3
+Commission Member Shamokin City,DAKOTA SCHUCK,,762,654,108,0,,False,False,7,3
+Commission Member Shamokin City,Write-In Totals,,238,211,27,0,,True,False,7,3
