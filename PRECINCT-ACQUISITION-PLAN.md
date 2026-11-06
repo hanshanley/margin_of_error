@@ -2,6 +2,35 @@
 
 ## Current verified production and next acquisition
 
+**Juniata / Mercer / Montour integration is locally verified, not yet live.**
+Context09 at fixed facts revision
+`b0484f6454ed202a0b8288140fd39aa31a460b50`, release **436312991**, passes all
+four anonymous assets, 29 commit-pinned files, 28 archive members and offline
+reproduction. Exact context credentials **42195459589 / 42195448520** pass.
+All **911 previous complete records / 439 joins / 46 native rows / 532 download
+anchors**, every prior geometry, exclusion and source-map flag remain unchanged.
+New totals: **914 records / 442 independent joins / 69 usable native fractions /
+373 missing gray rates**, across fifteen jurisdictions; **49 native county rows /
+29 Pennsylvania rows / 27 usable Pennsylvania rates**, **590 download anchors /
+586 unique URLs**. Three new counties each retain all seventeen complete tables
+and their entire factual query ZIP, with candidate/party totals separate from
+participation. Perry's frozen-file hash guard is now in the actual county loader,
+not the unreachable New Jersey branch; focused mutations reject changed ballots,
+source pages and audit metadata for all four counties.
+
+All **62 affected tests**, Astro checks, build and **seven local browser scenarios**
+pass. The build remains **979,118,925 bytes** after 106 byte-identical download
+relocations. Full-site validation encounters only the retained unrelated UK
+assertion `23 !== 16` at line1126. A browser-only stale aggregate expectation was
+corrected after the successful build; final proof separately confirms all runtime
+and build bytes are unchanged and all seven corrected scenarios pass. See
+`20261106-juniata-mercer-montour-explorer-01`.
+Next: publish this exact tested UI, then verify its original hosted artifact,
+**307 selected entire files**, exact credentials and seven production scenarios.
+Do not claim live or start a duplicate verifier before those checks complete.
+After this batch, 29 of the consolidated index's 67 Pennsylvania counties have
+reviewed sources; 38 need primary-source work, alongside missing jurisdictions.
+
 **November 6, 09:27 UTC: Perry is LIVE verified.**
 Pages **42192736194 attempt 2** succeeded for exact UI
 `11afd76c091c90bb24bcb87df17af8c47989b2ee`, reusing the original build.
@@ -100,8 +129,8 @@ Both entire original Census Gazetteers and inventories independently verify
 2024 tab / 2026 pipe delimiters. See
 `20261106-juniata-mercer-montour-explorer-01/independent-census-identity.json`;
 these are contextual identities, not native election-source FIPS.
-Next: new immutable
-context09, tested integration and exact production verification. No source map,
+Context09 is released and integration passes local checks; exact production
+verification remains pending. No source map,
 native FIPS, certification, completed-counting or demographic turnout is inferred.
 The fresh Maine results index differs in bytes from November 5, but its reviewed
 main headings list primary/special elections, not a new General heading.

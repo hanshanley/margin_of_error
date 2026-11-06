@@ -7,7 +7,9 @@ import { createCountyContextReview, loadCountyContextReview } from './build-coun
 import { loadAdditionalParticipation } from './additional-participation.mjs';
 import { loadReviewedCountyParticipation } from './reviewed-county-participation.mjs';
 
-const root = new URL('../public/participation-county-context/20261106-08/', import.meta.url);
+const root = new URL('../public/participation-county-context/20261106-09/', import.meta.url);
+const batchIds = ['pennsylvania-juniata-20261106-01', 'pennsylvania-mercer-20261106-01',
+  'pennsylvania-montour-20261106-01'];
 const json = file => JSON.parse(readFileSync(new URL(file, root), 'utf8'));
 const compressed = file => JSON.parse(gunzipSync(readFileSync(new URL(file, root))));
 const review = json('review.json');
@@ -26,8 +28,8 @@ test('complete county review reproduces without changing any source observations
     ...loadReviewedCountyParticipation(JSON.parse(readFileSync('public/participation-source-reviews.json')).reviews)];
   assert.deepEqual(records, liveRecords);
   assert.deepEqual(createCountyContextReview(records, inventories, collections, investigation), review);
-  assert.deepEqual(review.counts, { complete_source_records: 911, contextual_joins: 439, jurisdictions: 15,
-    reviewed_rates: 66, missing_rates: 373, excluded_municipalities: 286, excluded_missing_county_totals: 186 });
+  assert.deepEqual(review.counts, { complete_source_records: 914, contextual_joins: 442, jurisdictions: 15,
+    reviewed_rates: 69, missing_rates: 373, excluded_municipalities: 286, excluded_missing_county_totals: 186 });
   assert.ok(review.observations.every(row => row.source_map_approval_unchanged === false));
 });
 
@@ -42,7 +44,7 @@ test('independent joins use each entire unchanged record and exact contextual ge
       if (row.reported_pct !== null) rates++;
     }
   }
-  assert.equal(joined, 439); assert.equal(rates, 66);
+  assert.equal(joined, 442); assert.equal(rates, 69);
   assert.equal((await match(records.filter(row => ['VT', 'RI', 'MN', 'ND', 'ID', 'MI'].includes(row.state_code)))).size, 0);
   const nj = await match(records.filter(row => row.state_code === 'NJ'), review, 'NJ');
   assert.equal(nj.size, 19);
@@ -54,7 +56,7 @@ test('preserves the full previous immutable query while independently joining Je
   const previous = new URL('../public/participation-county-context/20261106-01/', import.meta.url);
   const oldRecords = JSON.parse(gunzipSync(readFileSync(new URL('complete-source-records.json.gz', previous))));
   const oldReview = JSON.parse(readFileSync(new URL('review.json', previous), 'utf8'));
-  const isNew = row => ['pennsylvania-jefferson-20261106-01', 'pennsylvania-clarion-20261106-01',
+  const isNew = row => [...batchIds, 'pennsylvania-jefferson-20261106-01', 'pennsylvania-clarion-20261106-01',
     'pennsylvania-cameron-20261106-01', 'pennsylvania-carbon-20261106-01',
     'pennsylvania-elk-20261106-01', 'pennsylvania-forest-20261106-01',
     'pennsylvania-potter-20261106-01', 'pennsylvania-mifflin-20261106-01',
@@ -78,7 +80,7 @@ test('preserves every full context02 record and approval while independently joi
   const previous = new URL('../public/participation-county-context/20261106-02/', import.meta.url);
   const oldRecords = JSON.parse(gunzipSync(readFileSync(new URL('complete-source-records.json.gz', previous))));
   const oldReview = JSON.parse(readFileSync(new URL('review.json', previous), 'utf8'));
-  const isNew = row => ['pennsylvania-clarion-20261106-01', 'pennsylvania-cameron-20261106-01',
+  const isNew = row => [...batchIds, 'pennsylvania-clarion-20261106-01', 'pennsylvania-cameron-20261106-01',
     'pennsylvania-carbon-20261106-01', 'pennsylvania-elk-20261106-01',
     'pennsylvania-forest-20261106-01', 'pennsylvania-potter-20261106-01',
     'pennsylvania-mifflin-20261106-01', 'pennsylvania-perry-20261106-01'].includes(row.review_id);
@@ -101,7 +103,7 @@ test('preserves every full context03 record while independently joining Cameron 
   const previous = new URL('../public/participation-county-context/20261106-03/', import.meta.url);
   const oldRecords = JSON.parse(gunzipSync(readFileSync(new URL('complete-source-records.json.gz', previous))));
   const oldReview = JSON.parse(readFileSync(new URL('review.json', previous), 'utf8'));
-  const isNew = row => ['pennsylvania-cameron-20261106-01', 'pennsylvania-carbon-20261106-01',
+  const isNew = row => [...batchIds, 'pennsylvania-cameron-20261106-01', 'pennsylvania-carbon-20261106-01',
     'pennsylvania-elk-20261106-01', 'pennsylvania-forest-20261106-01',
     'pennsylvania-potter-20261106-01', 'pennsylvania-mifflin-20261106-01',
     'pennsylvania-perry-20261106-01'].includes(row.review_id);
@@ -128,7 +130,7 @@ test('preserves every full context04 record while independently joining Elk and 
   const previous = new URL('../public/participation-county-context/20261106-04/', import.meta.url);
   const oldRecords = JSON.parse(gunzipSync(readFileSync(new URL('complete-source-records.json.gz', previous))));
   const oldReview = JSON.parse(readFileSync(new URL('review.json', previous), 'utf8'));
-  const isNew = row => ['pennsylvania-elk-20261106-01', 'pennsylvania-forest-20261106-01',
+  const isNew = row => [...batchIds, 'pennsylvania-elk-20261106-01', 'pennsylvania-forest-20261106-01',
     'pennsylvania-potter-20261106-01', 'pennsylvania-mifflin-20261106-01',
     'pennsylvania-perry-20261106-01'].includes(row.review_id);
   assert.deepEqual(records.filter(row => !isNew(row)), oldRecords);
@@ -154,7 +156,7 @@ test('preserves every full context05 record while independently joining Potter',
   const previous = new URL('../public/participation-county-context/20261106-05/', import.meta.url);
   const oldRecords = JSON.parse(gunzipSync(readFileSync(new URL('complete-source-records.json.gz', previous))));
   const oldReview = JSON.parse(readFileSync(new URL('review.json', previous), 'utf8'));
-  const isNew = row => ['pennsylvania-potter-20261106-01', 'pennsylvania-mifflin-20261106-01',
+  const isNew = row => [...batchIds, 'pennsylvania-potter-20261106-01', 'pennsylvania-mifflin-20261106-01',
     'pennsylvania-perry-20261106-01'].includes(row.review_id);
   assert.deepEqual(records.filter(row => !isNew(row)), oldRecords);
   assert.deepEqual(review.observations.filter(row => !isNew(row)), oldReview.observations);
@@ -174,7 +176,7 @@ test('preserves every full context06 record and joins Mifflin without creating a
   const previous = new URL('../public/participation-county-context/20261106-06/', import.meta.url);
   const oldRecords = JSON.parse(gunzipSync(readFileSync(new URL('complete-source-records.json.gz', previous))));
   const oldReview = JSON.parse(readFileSync(new URL('review.json', previous), 'utf8'));
-  const isNew = row => ['pennsylvania-mifflin-20261106-01', 'pennsylvania-perry-20261106-01'].includes(row.review_id);
+  const isNew = row => [...batchIds, 'pennsylvania-mifflin-20261106-01', 'pennsylvania-perry-20261106-01'].includes(row.review_id);
   assert.deepEqual(records.filter(row => !isNew(row)), oldRecords);
   assert.deepEqual(review.observations.filter(row => !isNew(row)), oldReview.observations);
   assert.deepEqual(review.excluded, oldReview.excluded);
@@ -195,7 +197,7 @@ test('preserves every full context07 record while independently joining Perry wi
   const previous = new URL('../public/participation-county-context/20261106-07/', import.meta.url);
   const oldRecords = JSON.parse(gunzipSync(readFileSync(new URL('complete-source-records.json.gz', previous))));
   const oldReview = JSON.parse(readFileSync(new URL('review.json', previous), 'utf8'));
-  const isNew = row => row.review_id === 'pennsylvania-perry-20261106-01';
+  const isNew = row => [...batchIds, 'pennsylvania-perry-20261106-01'].includes(row.review_id);
   assert.deepEqual(records.filter(row => !isNew(row)), oldRecords);
   assert.deepEqual(review.observations.filter(row => !isNew(row)), oldReview.observations);
   assert.deepEqual(review.excluded, oldReview.excluded);
@@ -211,6 +213,29 @@ test('preserves every full context07 record while independently joining Perry wi
   assert.equal(row.native_record.provisional_ballots, '');
   assert.equal(row.native_record.source_status_literal, '');
   assert.equal(row.source_status_literal, 'Unofficial');
+  assert.throws(() => loadCountyContextReview(oldRecords), /complete current source records/);
+});
+
+test('preserves context08 and independently joins all three county identities without inventing native FIPS', async () => {
+  const previous = new URL('../public/participation-county-context/20261106-08/', import.meta.url);
+  const oldRecords = JSON.parse(gunzipSync(readFileSync(new URL('complete-source-records.json.gz', previous))));
+  const oldReview = JSON.parse(readFileSync(new URL('review.json', previous), 'utf8'));
+  const isNew = row => batchIds.includes(row.review_id);
+  assert.deepEqual(records.filter(row => !isNew(row)), oldRecords);
+  assert.deepEqual(review.observations.filter(row => !isNew(row)), oldReview.observations);
+  assert.deepEqual(review.excluded, oldReview.excluded);
+  assert.deepEqual(review.geometry, oldReview.geometry);
+  const joined = await match(records.filter(row => row.state_code === 'PA'), review, 'PA');
+  for (const [geoid, county, ballots, registrations] of [
+    ['42067', 'Juniata', 8258, 14095], ['42085', 'Mercer', 39121, 72238], ['42093', 'Montour', 7008, 12418],
+  ]) {
+    const row = joined.get(geoid);
+    assert.equal(row.county, county);
+    assert.equal(row.ballots, ballots);
+    assert.equal(row.reported_pct, 100 * ballots / registrations);
+    assert.equal(row.native_record.source_fips, '');
+    assert.equal(row.maps_approved, false);
+  }
   assert.throws(() => loadCountyContextReview(oldRecords), /complete current source records/);
 });
 

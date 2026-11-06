@@ -1,0 +1,17 @@
+{
+  "verified_at_utc": "2026-11-06T09:33:47.438419+00:00",
+  "prior_validation": "local-validation.json",
+  "final_browser": "local-browser.json",
+  "final_source_sha256": {
+    "scripts/reviewed-county-participation.mjs": "77223c7d27fb5029410b77aa6b6b18cb961084ebebaa50bc51a5f1fa59933dfe",
+    "scripts/reviewed-county-participation.test.mjs": "b85a3c79b8cda94a0cc43946836ce17d835757e19a6d8ea746a7f3750854b3b2",
+    "scripts/county-participation-context.test.mjs": "97428f811cbbe576fa216775212a611abc6b63f022b8a7b0fe45895b7ce7bc45",
+    "scripts/check-county-participation-context-browser.py": "69388492e3a80013ce907fb247f35b4555403703119f0700c63e55f2691483f8",
+    "public/participation-source-reviews.json": "a5c2ce072c7165ebef3e2defae3f23072b3da15fbfaf8ff941ad53a2c6385edc",
+    "public/participation-county-context.json": "383a75bda7c3b7976b36c1dd405fd588ce07f2cc06b9a68803fd7079e7e4a82e"
+  },
+  "changed_since_successful_build": [
+    "scripts/check-county-participation-context-browser.py"
+  ],
+  "scope": "Only the browser verifier's stale aggregate expectations and proof labels changed after the successful build. All runtime, registry, pointer and unit-test bytes are unchanged. The final browser verifier passes all seven scenarios against that exact prepared build, including new county tooltips, all 442 counts, 69 rates and 590 download anchors. No unchanged build or unit suite was rerun."
+}
