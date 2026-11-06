@@ -1,0 +1,250 @@
+{
+  "previous_complete_records_preserved": 906,
+  "previous_contextual_joins_preserved": 434,
+  "previous_exclusions_and_missingness_preserved": true,
+  "unchanged_geometry_inventory": 15,
+  "existing_source_map_approval_flags_unchanged": true,
+  "native_fips_invented": false,
+  "new_source_records": [
+    {
+      "year": 2026,
+      "state_code": "PA",
+      "county_id": "reviewed:PA:Elk",
+      "county": "Elk",
+      "geography_level": "county",
+      "ballots": 11742,
+      "denominator": 20533,
+      "participation_measure_literal": "Ballots Cast - Total",
+      "denominator_basis": "native_registered_voters",
+      "reported_pct": 57.18599327911167,
+      "native_printed_pct": "57.19%",
+      "source_status_literal": "UNOFFICIAL RESULTS",
+      "reported_units": null,
+      "total_units": null,
+      "source_rows": 0,
+      "maps_approved": false,
+      "review_id": "pennsylvania-elk-20261106-01",
+      "native_record": {
+        "year": "2026",
+        "state_code": "PA",
+        "county": "Elk",
+        "native_participation_measure_literal": "Ballots Cast - Total",
+        "ballots_cast": "11742",
+        "registered_voters": "20533",
+        "native_printed_turnout": "57.19%",
+        "election_day_ballots": "9725",
+        "mail_ballots": "2017",
+        "provisional_ballots": "0",
+        "blank_ballots": "5",
+        "reported_precincts": "29",
+        "total_precincts": "29",
+        "complete_precincts": "0",
+        "partially_reported_precincts": "29",
+        "source_status_literal": "UNOFFICIAL RESULTS",
+        "source_update_literal": "11/03/2026 22:08 PM",
+        "declared_timezone": "",
+        "source_report": "summary",
+        "source_page": "1",
+        "native_printed_page": "Page 1 of 2"
+      },
+      "native_source_updates": [
+        {
+          "source": "summary",
+          "native_update_literal": "11/03/2026 22:08 PM",
+          "declared_timezone": ""
+        },
+        {
+          "source": "statement",
+          "native_update_literal": "11/03/2026 22:08 PM",
+          "declared_timezone": ""
+        },
+        {
+          "source": "act88",
+          "native_update_literal": "",
+          "declared_timezone": ""
+        }
+      ],
+      "source_update_label": "source_update_literal: 11/03/2026 22:08 PM; summary: 11/03/2026 22:08 PM (timezone not declared); statement: 11/03/2026 22:08 PM (timezone not declared); act88:  (timezone not declared)",
+      "source_reporting_label": "Native Ballots Cast - Total 11,742 = 9,725 Election Day + 2,017 Absentee/Mail-In + explicit zero Provisional; five blank ballots are already included.; All 29 units are partially reported and zero complete; reported precincts do not establish completed ballot counting.; All 29 unit headers and 87 contests reconcile; ST MARYS 4TH prints 55.10% while its 319/579 fraction rounds to 55.09%, and both remain distinct.; Separate filtered Act88 returned 2,035 / recorded 2,018 are not counted mail 2,017; differences 18/1 remain unexplained. Its election date and filename do not supply a report clock.; The index calls links Official while the reports say UNOFFICIAL RESULTS; the contradictory 11/03/2026 22:08 PM clock is preserved without repair.; Native summary overvotes/undervotes are absent; derived unit sums remain separate. The Act88 scan is visually reviewed, not a two-engine transcription.",
+      "source_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/county-participation.csv",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-elk-20261106-01/complete-elk-2026-county-query-01.zip",
+      "quality": [
+        "Reviewed local snapshot, not final certification, statewide coverage, eligible-population or demographic turnout.",
+        "Source timestamps retain their native labels; unprovided timezones are not inferred. County mapping is not approved."
+      ]
+    },
+    {
+      "year": 2026,
+      "state_code": "PA",
+      "county_id": "reviewed:PA:Forest",
+      "county": "Forest",
+      "geography_level": "county",
+      "ballots": 1877,
+      "denominator": 3275,
+      "participation_measure_literal": "Ballots Cast - Total",
+      "denominator_basis": "native_registered_voters",
+      "reported_pct": 57.31297709923664,
+      "native_printed_pct": "57.31%",
+      "source_status_literal": "UNOFFICIAL RESULTS",
+      "reported_units": null,
+      "total_units": null,
+      "source_rows": 0,
+      "maps_approved": false,
+      "review_id": "pennsylvania-forest-20261106-01",
+      "native_record": {
+        "year": "2026",
+        "state_code": "PA",
+        "county": "Forest",
+        "native_participation_measure_literal": "Ballots Cast - Total",
+        "ballots_cast": "1877",
+        "registered_voters": "3275",
+        "native_printed_turnout": "57.31%",
+        "election_day_ballots": "",
+        "mail_ballots": "",
+        "provisional_ballots": "",
+        "blank_ballots": "0",
+        "reported_precincts": "9",
+        "total_precincts": "9",
+        "complete_precincts": "0",
+        "partially_reported_precincts": "9",
+        "source_status_literal": "UNOFFICIAL RESULTS",
+        "source_update_literal": "11/03/2026 20:56 PM",
+        "declared_timezone": "",
+        "source_report": "summary",
+        "source_page": "2",
+        "native_printed_page": "Page 1 of 2"
+      },
+      "native_source_updates": [
+        {
+          "source": "summary",
+          "native_update_literal": "11/03/2026 20:56 PM",
+          "declared_timezone": ""
+        },
+        {
+          "source": "statement",
+          "native_update_literal": "11/03/2026 20:56 PM",
+          "declared_timezone": ""
+        }
+      ],
+      "source_update_label": "source_update_literal: 11/03/2026 20:56 PM; summary: 11/03/2026 20:56 PM (timezone not declared); statement: 11/03/2026 20:56 PM (timezone not declared)",
+      "source_reporting_label": "Native Ballots Cast - Total 1,877 / 3,275 registrations is on physical summary page 2, which prints Page 1 of 2; physical page 1 prints Page 2 of 2.; All nine units are partially reported and zero complete; reported precincts do not establish completed ballot counting.; Election Day, mail and provisional participation are absent, not zero; separate 311 mail-in absentee receipts by 8 p.m. are not counted mail ballots.; All eleven scanned pages and magnified choice panels were visually reviewed; both full text engines are empty, not independent transcriptions.; Native county summary has overvotes/undervotes but lacks Total Votes Cast/Contest Totals; units lack all four rows and their derived residuals remain unclassified.; The contradictory 11/03/2026 20:56 PM clock is preserved without repair or inferred timezone.",
+      "source_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/county-participation.csv",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-forest-20261106-01/complete-forest-2026-county-query-01.zip",
+      "quality": [
+        "Reviewed local snapshot, not final certification, statewide coverage, eligible-population or demographic turnout.",
+        "Source timestamps retain their native labels; unprovided timezones are not inferred. County mapping is not approved."
+      ]
+    }
+  ],
+  "new_contextual_identity_joins": [
+    {
+      "state_code": "PA",
+      "county_id": "reviewed:PA:Elk",
+      "county": "Elk",
+      "geography_level": "county",
+      "review_id": "pennsylvania-elk-20261106-01",
+      "contextual_geoid": "42047",
+      "contextual_name": "Elk County",
+      "boundary_year": 2024,
+      "ballots": 11742,
+      "denominator": 20533,
+      "reported_pct": 57.18599327911167,
+      "participation_measure_kind": "source_defined_participation_count",
+      "participation_measure_label": "Ballots Cast - Total",
+      "source_record_sha256": "996a116837ad42a7363806c5e28160b94e539d3ec4b7071e45327961320063d2",
+      "source_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/county-participation.csv",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-elk-20261106-01/complete-elk-2026-county-query-01.zip",
+      "contextual_map_approved": true,
+      "source_map_approval_unchanged": false
+    },
+    {
+      "state_code": "PA",
+      "county_id": "reviewed:PA:Forest",
+      "county": "Forest",
+      "geography_level": "county",
+      "review_id": "pennsylvania-forest-20261106-01",
+      "contextual_geoid": "42053",
+      "contextual_name": "Forest County",
+      "boundary_year": 2024,
+      "ballots": 1877,
+      "denominator": 3275,
+      "reported_pct": 57.31297709923664,
+      "participation_measure_kind": "source_defined_participation_count",
+      "participation_measure_label": "Ballots Cast - Total",
+      "source_record_sha256": "e4d04fe5e4c67efa6f8ec742c5e5e11f5c29dff2df067e52a5d7deb22274d3f3",
+      "source_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/county-participation.csv",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-forest-20261106-01/complete-forest-2026-county-query-01.zip",
+      "contextual_map_approved": true,
+      "source_map_approval_unchanged": false
+    }
+  ],
+  "independently_checked_census_identities": {
+    "2024": {
+      "42047": {
+        "USPS": "PA",
+        "GEOID": "42047",
+        "ANSICODE": "01213668",
+        "NAME": "Elk County",
+        "ALAND": "2141664026",
+        "AWATER": "12792134",
+        "ALAND_SQMI": "826.901",
+        "AWATER_SQMI": "4.939",
+        "INTPTLAT": "41.427332",
+        "INTPTLONG": "-78.653937"
+      },
+      "42053": {
+        "USPS": "PA",
+        "GEOID": "42053",
+        "ANSICODE": "01213669",
+        "NAME": "Forest County",
+        "ALAND": "1106595595",
+        "AWATER": "8369676",
+        "ALAND_SQMI": "427.259",
+        "AWATER_SQMI": "3.232",
+        "INTPTLAT": "41.513304",
+        "INTPTLONG": "-79.249705"
+      }
+    },
+    "2026": {
+      "42047": {
+        "USPS": "PA",
+        "GEOID": "42047",
+        "GEOIDFQ": "0500000US42047",
+        "ANSICODE": "01213668",
+        "NAME": "Elk County",
+        "ALAND": "2141953818",
+        "AWATER": "12791433",
+        "ALAND_SQMI": "827.013",
+        "AWATER_SQMI": "4.939",
+        "INTPTLAT": "41.427332",
+        "INTPTLONG": "-78.653937"
+      },
+      "42053": {
+        "USPS": "PA",
+        "GEOID": "42053",
+        "GEOIDFQ": "0500000US42053",
+        "ANSICODE": "01213669",
+        "NAME": "Forest County",
+        "ALAND": "1106595596",
+        "AWATER": "8369676",
+        "ALAND_SQMI": "427.259",
+        "AWATER_SQMI": "3.232",
+        "INTPTLAT": "41.513304",
+        "INTPTLONG": "-79.249705"
+      }
+    }
+  },
+  "counts": {
+    "complete_source_records": 908,
+    "contextual_joins": 436,
+    "jurisdictions": 15,
+    "reviewed_rates": 64,
+    "missing_rates": 372,
+    "excluded_municipalities": 286,
+    "excluded_missing_county_totals": 186
+  },
+  "frozen_review_bytes": 754479,
+  "frozen_review_sha256": "80ca5bfd63bb97edc89c9e0b92c1d3a26372f865c4196bf5d8a3826a490383ad",
+  "complete_zip_bytes": 2214466,
+  "complete_zip_sha256": "116c145e5459bf1fa67bb36ab4709d269729c5398487f2e9c416e9e96c6fa79a"
+}

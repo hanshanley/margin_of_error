@@ -1,0 +1,525 @@
+{
+  "verified_at": "2026-11-06T07:49:04.526643+00:00",
+  "repository": "hanshanley/margin_of_error",
+  "facts_commit": "80b06559315c69562a03a4669639f4602f7563d1",
+  "tag": "voter-county-pennsylvania-elk-20261106-01",
+  "actual_tag_commit": "80b06559315c69562a03a4669639f4602f7563d1",
+  "release_id": 436230114,
+  "target_commitish": "80b06559315c69562a03a4669639f4602f7563d1",
+  "host_enforced_immutable": false,
+  "policy": "Fixed checksum/never overwrite; not described as host-enforced locking.",
+  "entire_assets_and_pinned_files": [
+    {
+      "file": "audit.json",
+      "bytes": 3856,
+      "sha256": "b3aa21eff714afb9084fb24974aa9b761b3d64ff5c5ebd4fc414001f3b9fd076",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-elk-20261106-01/audit.json",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/a2a28807-3835-48f0-a7d4-a7cf65fba9da",
+          "bytes": 3856,
+          "sha256": "b3aa21eff714afb9084fb24974aa9b761b3d64ff5c5ebd4fc414001f3b9fd076"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/audit.json",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/audit.json",
+          "bytes": 3856,
+          "sha256": "b3aa21eff714afb9084fb24974aa9b761b3d64ff5c5ebd4fc414001f3b9fd076"
+        }
+      ]
+    },
+    {
+      "file": "checksums.json",
+      "bytes": 2828,
+      "sha256": "7001f7340deefeac19893959ca0525092f52c5341493863e03fd285cd007f400",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-elk-20261106-01/checksums.json",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/a56e480a-7b8f-47b5-80ac-af551d0f33d8",
+          "bytes": 2828,
+          "sha256": "7001f7340deefeac19893959ca0525092f52c5341493863e03fd285cd007f400"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/checksums.json",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/checksums.json",
+          "bytes": 2828,
+          "sha256": "7001f7340deefeac19893959ca0525092f52c5341493863e03fd285cd007f400"
+        }
+      ]
+    },
+    {
+      "file": "complete-elk-2026-county-query-01.zip",
+      "bytes": 438060,
+      "sha256": "22bb577a2f4c37592654dadcb351a70b945aee57fdcf9a43a43ea7967a13f7d2",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-elk-20261106-01/complete-elk-2026-county-query-01.zip",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/0ecea649-89a5-4c53-9861-ca594d0f690f",
+          "bytes": 438060,
+          "sha256": "22bb577a2f4c37592654dadcb351a70b945aee57fdcf9a43a43ea7967a13f7d2"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/complete-elk-2026-county-query-01.zip",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/complete-elk-2026-county-query-01.zip",
+          "bytes": 438060,
+          "sha256": "22bb577a2f4c37592654dadcb351a70b945aee57fdcf9a43a43ea7967a13f7d2"
+        }
+      ]
+    },
+    {
+      "file": "county-candidate-results.csv",
+      "bytes": 5670,
+      "sha256": "3adb3e87c3385b7206a26a2badd92316e6aa78ac253b252d9f9c9014ce1b6637",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-elk-20261106-01/county-candidate-results.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/1caace09-a426-4efa-8679-997964be9ea3",
+          "bytes": 5670,
+          "sha256": "3adb3e87c3385b7206a26a2badd92316e6aa78ac253b252d9f9c9014ce1b6637"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/county-candidate-results.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/county-candidate-results.csv",
+          "bytes": 5670,
+          "sha256": "3adb3e87c3385b7206a26a2badd92316e6aa78ac253b252d9f9c9014ce1b6637"
+        }
+      ]
+    },
+    {
+      "file": "county-contest-accounting.csv",
+      "bytes": 2704,
+      "sha256": "f59703d0a55e4e8bd5e200161197fa3228a07ae3995403daf92cc7c4fbac531f",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-elk-20261106-01/county-contest-accounting.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/e2e442b7-1051-433f-ae5a-ed973f84324a",
+          "bytes": 2704,
+          "sha256": "f59703d0a55e4e8bd5e200161197fa3228a07ae3995403daf92cc7c4fbac531f"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/county-contest-accounting.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/county-contest-accounting.csv",
+          "bytes": 2704,
+          "sha256": "f59703d0a55e4e8bd5e200161197fa3228a07ae3995403daf92cc7c4fbac531f"
+        }
+      ]
+    },
+    {
+      "file": "county-literal-party-totals.csv",
+      "bytes": 3099,
+      "sha256": "6da9755a8643b93898dc758302f2dabeb3102d4ed5b73c70578abd470f13f831",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-elk-20261106-01/county-literal-party-totals.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/f6efaf11-50fd-4e26-9347-a3c1ca0151d3",
+          "bytes": 3099,
+          "sha256": "6da9755a8643b93898dc758302f2dabeb3102d4ed5b73c70578abd470f13f831"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/county-literal-party-totals.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/county-literal-party-totals.csv",
+          "bytes": 3099,
+          "sha256": "6da9755a8643b93898dc758302f2dabeb3102d4ed5b73c70578abd470f13f831"
+        }
+      ]
+    },
+    {
+      "file": "county-participation.csv",
+      "bytes": 512,
+      "sha256": "9f3623d46f0df591b03a21fe759d9705228db9de0ab51e74230cd09a1fc34c65",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-elk-20261106-01/county-participation.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/29d21f19-b62c-4c76-8caa-d29081970df0",
+          "bytes": 512,
+          "sha256": "9f3623d46f0df591b03a21fe759d9705228db9de0ab51e74230cd09a1fc34c65"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/county-participation.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/county-participation.csv",
+          "bytes": 512,
+          "sha256": "9f3623d46f0df591b03a21fe759d9705228db9de0ab51e74230cd09a1fc34c65"
+        }
+      ]
+    },
+    {
+      "file": "native-derived-contest-sums.csv",
+      "bytes": 1885,
+      "sha256": "e5771cddcd6e0765748ec43dd43b698494548113d168b7e2e633292e522dfd37",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-elk-20261106-01/native-derived-contest-sums.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/458b7bb2-ac40-4884-9bff-08dab7a06dce",
+          "bytes": 1885,
+          "sha256": "e5771cddcd6e0765748ec43dd43b698494548113d168b7e2e633292e522dfd37"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/native-derived-contest-sums.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/native-derived-contest-sums.csv",
+          "bytes": 1885,
+          "sha256": "e5771cddcd6e0765748ec43dd43b698494548113d168b7e2e633292e522dfd37"
+        }
+      ]
+    },
+    {
+      "file": "native-derived-rate-checks.csv",
+      "bytes": 4831,
+      "sha256": "9e4d433b63b4b127f345872ecad7e0421a15d4632c982e93bbb3b55bbf4749bc",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-elk-20261106-01/native-derived-rate-checks.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/77921755-7a9c-457b-b04e-3dd1a802d16e",
+          "bytes": 4831,
+          "sha256": "9e4d433b63b4b127f345872ecad7e0421a15d4632c982e93bbb3b55bbf4749bc"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/native-derived-rate-checks.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/native-derived-rate-checks.csv",
+          "bytes": 4831,
+          "sha256": "9e4d433b63b4b127f345872ecad7e0421a15d4632c982e93bbb3b55bbf4749bc"
+        }
+      ]
+    },
+    {
+      "file": "native-mail-receipts.csv",
+      "bytes": 5437,
+      "sha256": "451b70c4a03b5bcf44e9d9e99c717ae57a2681d1734f894136b404bff2025ee9",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-elk-20261106-01/native-mail-receipts.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/dce337c3-19fb-4069-8cea-1d47e4dc7aa7",
+          "bytes": 5437,
+          "sha256": "451b70c4a03b5bcf44e9d9e99c717ae57a2681d1734f894136b404bff2025ee9"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/native-mail-receipts.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/native-mail-receipts.csv",
+          "bytes": 5437,
+          "sha256": "451b70c4a03b5bcf44e9d9e99c717ae57a2681d1734f894136b404bff2025ee9"
+        }
+      ]
+    },
+    {
+      "file": "native-participation-modes.csv",
+      "bytes": 498,
+      "sha256": "38d9fe050441565e418dadcd67d81b3e84aaec36b0e36e01d4f520862e6cd403",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-elk-20261106-01/native-participation-modes.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/27867774-6d28-44f7-b59f-34a8ef8d7d59",
+          "bytes": 498,
+          "sha256": "38d9fe050441565e418dadcd67d81b3e84aaec36b0e36e01d4f520862e6cd403"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/native-participation-modes.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/native-participation-modes.csv",
+          "bytes": 498,
+          "sha256": "38d9fe050441565e418dadcd67d81b3e84aaec36b0e36e01d4f520862e6cd403"
+        }
+      ]
+    },
+    {
+      "file": "native-reporting-statistics.csv",
+      "bytes": 379,
+      "sha256": "0829f02e0c98f7fa9ed752edf5d5359074827c685130024890b6207a0f025bed",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-elk-20261106-01/native-reporting-statistics.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/4e41e59e-15d6-4eeb-b6a0-4394b36c5ac0",
+          "bytes": 379,
+          "sha256": "0829f02e0c98f7fa9ed752edf5d5359074827c685130024890b6207a0f025bed"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/native-reporting-statistics.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/native-reporting-statistics.csv",
+          "bytes": 379,
+          "sha256": "0829f02e0c98f7fa9ed752edf5d5359074827c685130024890b6207a0f025bed"
+        }
+      ]
+    },
+    {
+      "file": "native-source-declarations.csv",
+      "bytes": 648,
+      "sha256": "b4d6cb2c260df31c930e7aee28e719c8f5511d65cfc97685614fca444e2c9544",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-elk-20261106-01/native-source-declarations.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/43f3e9e8-73e5-4e8e-b91b-c53f7b32d91c",
+          "bytes": 648,
+          "sha256": "b4d6cb2c260df31c930e7aee28e719c8f5511d65cfc97685614fca444e2c9544"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/native-source-declarations.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/native-source-declarations.csv",
+          "bytes": 648,
+          "sha256": "b4d6cb2c260df31c930e7aee28e719c8f5511d65cfc97685614fca444e2c9544"
+        }
+      ]
+    },
+    {
+      "file": "native-source-pages.csv",
+      "bytes": 16082,
+      "sha256": "a0e7ac0ce6e5c364896d148ee9cf131315dfd4787f01cbc04ce435ace179176f",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-elk-20261106-01/native-source-pages.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/e6c2147b-0442-4bf5-8a3b-0d59ad9fe28d",
+          "bytes": 16082,
+          "sha256": "a0e7ac0ce6e5c364896d148ee9cf131315dfd4787f01cbc04ce435ace179176f"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/native-source-pages.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/native-source-pages.csv",
+          "bytes": 16082,
+          "sha256": "a0e7ac0ce6e5c364896d148ee9cf131315dfd4787f01cbc04ce435ace179176f"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-candidate-results.csv",
+      "bytes": 164990,
+      "sha256": "f47c9971f7f0a319405bf4adb117faa0d1521930a34dffa8f59a6ced2ec2102b",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-elk-20261106-01/native-unit-candidate-results.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/07eaa018-cede-4166-b608-2b35b00af9e1",
+          "bytes": 164990,
+          "sha256": "f47c9971f7f0a319405bf4adb117faa0d1521930a34dffa8f59a6ced2ec2102b"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/native-unit-candidate-results.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/native-unit-candidate-results.csv",
+          "bytes": 164990,
+          "sha256": "f47c9971f7f0a319405bf4adb117faa0d1521930a34dffa8f59a6ced2ec2102b"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-contest-accounting.csv",
+      "bytes": 52207,
+      "sha256": "8a0545e6cc79ff6ed21e24d4d2fe0e3e32287d66880dcd80c72b7758c28a2560",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-elk-20261106-01/native-unit-contest-accounting.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/215104d3-f3d3-4d0a-8694-d0fa0d2e1655",
+          "bytes": 52207,
+          "sha256": "8a0545e6cc79ff6ed21e24d4d2fe0e3e32287d66880dcd80c72b7758c28a2560"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/native-unit-contest-accounting.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/native-unit-contest-accounting.csv",
+          "bytes": 52207,
+          "sha256": "8a0545e6cc79ff6ed21e24d4d2fe0e3e32287d66880dcd80c72b7758c28a2560"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-literal-party-totals.csv",
+      "bytes": 89045,
+      "sha256": "aad77b43a330b1bf41ea73dca5749e775251429c7dc9f33b3a2b0b74099a3ea3",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-elk-20261106-01/native-unit-literal-party-totals.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/b6520777-81b5-4fc9-90a2-2740481694f4",
+          "bytes": 89045,
+          "sha256": "aad77b43a330b1bf41ea73dca5749e775251429c7dc9f33b3a2b0b74099a3ea3"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/native-unit-literal-party-totals.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/native-unit-literal-party-totals.csv",
+          "bytes": 89045,
+          "sha256": "aad77b43a330b1bf41ea73dca5749e775251429c7dc9f33b3a2b0b74099a3ea3"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-participation-modes.csv",
+      "bytes": 9625,
+      "sha256": "7fc6322eba37b50d482f94b3d82c0676f0292dd2aec1b5037770cebdefa9b4d3",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-elk-20261106-01/native-unit-participation-modes.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/0a513556-0370-4623-bfbd-1892f3a8625d",
+          "bytes": 9625,
+          "sha256": "7fc6322eba37b50d482f94b3d82c0676f0292dd2aec1b5037770cebdefa9b4d3"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/native-unit-participation-modes.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/native-unit-participation-modes.csv",
+          "bytes": 9625,
+          "sha256": "7fc6322eba37b50d482f94b3d82c0676f0292dd2aec1b5037770cebdefa9b4d3"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-participation.csv",
+      "bytes": 2396,
+      "sha256": "b136a55f778c626581d103c507a165bbc7ef18fa4771ba031fe5a19213ad7506",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-elk-20261106-01/native-unit-participation.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/35ded4c6-51bf-43fa-8f00-16224b70e5a9",
+          "bytes": 2396,
+          "sha256": "b136a55f778c626581d103c507a165bbc7ef18fa4771ba031fe5a19213ad7506"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/native-unit-participation.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/native-unit-participation.csv",
+          "bytes": 2396,
+          "sha256": "b136a55f778c626581d103c507a165bbc7ef18fa4771ba031fe5a19213ad7506"
+        }
+      ]
+    },
+    {
+      "file": "review-pa-county-native-query.py",
+      "bytes": 26216,
+      "sha256": "fbca551c72a85277d35404fc95a846e9e803b518139ff8658dd29411fd1c5df3",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-elk-20261106-01/review-pa-county-native-query.py",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/be42d5bd-66e0-4933-a8c1-85841479fcbe",
+          "bytes": 26216,
+          "sha256": "fbca551c72a85277d35404fc95a846e9e803b518139ff8658dd29411fd1c5df3"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/review-pa-county-native-query.py",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/review-pa-county-native-query.py",
+          "bytes": 26216,
+          "sha256": "fbca551c72a85277d35404fc95a846e9e803b518139ff8658dd29411fd1c5df3"
+        }
+      ]
+    },
+    {
+      "file": "source-receipts.json",
+      "bytes": 1878,
+      "sha256": "122d58c409e45a48df6f5a8ae33e32ffc2c2e8605aa0a6638f7bf7ff8bba8c5b",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-elk-20261106-01/source-receipts.json",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/43aad408-06d9-4943-a7da-f1faf4e3fff6",
+          "bytes": 1878,
+          "sha256": "122d58c409e45a48df6f5a8ae33e32ffc2c2e8605aa0a6638f7bf7ff8bba8c5b"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/source-receipts.json",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/source-receipts.json",
+          "bytes": 1878,
+          "sha256": "122d58c409e45a48df6f5a8ae33e32ffc2c2e8605aa0a6638f7bf7ff8bba8c5b"
+        }
+      ]
+    },
+    {
+      "file": "source-records.json.gz",
+      "bytes": 40504,
+      "sha256": "5a3cf0554d87424191a8ca6129d8ce3f8a4f1e5d57672394eb3544f8b7cc4807",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-elk-20261106-01/source-records.json.gz",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/2bc9a133-6a89-4718-b308-c4c38e95a18f",
+          "bytes": 40504,
+          "sha256": "5a3cf0554d87424191a8ca6129d8ce3f8a4f1e5d57672394eb3544f8b7cc4807"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/source-records.json.gz",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-elk-facts-01/source-records.json.gz",
+          "bytes": 40504,
+          "sha256": "5a3cf0554d87424191a8ca6129d8ce3f8a4f1e5d57672394eb3544f8b7cc4807"
+        }
+      ]
+    }
+  ],
+  "entire_assets": 22,
+  "entire_pinned_files": 22,
+  "entire_zip_members": 21,
+  "extracted_offline_verifier_stdout": "Elk: 18 focused participation/provenance/identity rejection cases pass.\nEvery entire file and deterministic ZIP reproduces byte-identically offline.\n",
+  "exact_entire_file_and_archive_reproduction": true,
+  "explorer_integration_and_live_verification_pending": true
+}

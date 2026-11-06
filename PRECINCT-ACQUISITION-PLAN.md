@@ -1381,7 +1381,7 @@ Maine's unresolved 130 votes,
 blanks/write-ins and municipal-other gap, and D.C.'s separate accounting gap,
 remain unresolved; schedule 5 continues remaining primary county acquisition.
 
-**November 6 Elk and Forest: complete factual queries reviewed; publication pending.**
+**November 6 Elk and Forest: complete factual queries published; context 05 prepared.**
 The actual Elk parent declares a two-page county summary, 58-page unit
 statement and separate one-page Act 88 scan. All 60 text pages independently
 match across both PDF engines by complete token multisets and parsed vectors;
@@ -1432,8 +1432,39 @@ Full primary and package review proofs are under the respective
 `data/county-source-reviews/20261106-{elk,forest}-primary-review-01/`
 directories. Original HTML/PDFs and presentation templates remain private.
 No new geometry, source FIPS, demographic/party turnout, statewide completion
-or certification is claimed. Fixed release publication and explorer
-integration remain pending; neither county is called live.
+or certification is claimed. Source facts
+`80b06559315c69562a03a4669639f4602f7563d1` and fixed releases
+`voter-county-pennsylvania-elk-20261106-01` / **436230114** and
+`voter-county-pennsylvania-forest-20261106-01` / **436230218** are published.
+Each release independently passes anonymous equality for all 22 entire assets,
+22 commit-pinned files, 21 ZIP members and extracted full offline reproduction.
+Actual tag commits and release targets match the source facts SHA. Exact
+credential runs **42183348365** (Elk tag), **42183366676** (Forest tag) and
+**42183257116** (review branch) pass. This is fixed-checksum/never-overwrite
+publication, not host-enforced locking. Complete publication proofs are in the
+respective `20261106-{elk,forest}-publication-01` review directories.
+
+Both new identities independently match both entire saved Census inventories.
+Immutable context 05 preserves all 906 previous full records, 434 previous
+joins, exclusions, geometry and source approval flags. It adds only these two
+counties: **908 records / 436 county joins / 64 native registered-voter
+fractions / 372 unchanged missing rates / 15 jurisdictions**. All 29 files
+and 28 ZIP members reproduce offline. The ZIP is 2,214,466 bytes, SHA-256
+`116c145e5459bf1fa67bb36ab4709d269729c5398487f2e9c416e9e96c6fa79a`;
+the full review is 754,479 bytes, SHA-256
+`80ca5bfd63bb97edc89c9e0b92c1d3a26372f865c4196bf5d8a3826a490383ad`.
+The 23 reviewed-participation loader tests pass, including exact preservation
+and rejection of candidate/receipt substitution, invented modes, completed
+counting and wrong physical page identity. Context 05 release publication and
+explorer integration remain pending; neither new county is called live.
+
+The earlier Cameron/Carbon UI `e8cc10a` built successfully, but Pages
+**42181777067 attempt 1** timed out after ten minutes in `syncing_files`.
+Its failure proof is retained. Only the failed deployment job is retried as
+attempt 2, using the original artifact, frozen browser expectations and
+unchanged local prepared build. Exact production proof remains active under
+`cameron-carbon-exact-production-recovery-02`; no success or live claim is
+made from the successful build alone.
 
 **November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated

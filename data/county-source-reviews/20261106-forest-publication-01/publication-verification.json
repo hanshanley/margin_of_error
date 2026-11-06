@@ -1,0 +1,525 @@
+{
+  "verified_at": "2026-11-06T07:49:13.437889+00:00",
+  "repository": "hanshanley/margin_of_error",
+  "facts_commit": "80b06559315c69562a03a4669639f4602f7563d1",
+  "tag": "voter-county-pennsylvania-forest-20261106-01",
+  "actual_tag_commit": "80b06559315c69562a03a4669639f4602f7563d1",
+  "release_id": 436230218,
+  "target_commitish": "80b06559315c69562a03a4669639f4602f7563d1",
+  "host_enforced_immutable": false,
+  "policy": "Fixed checksum/never overwrite; not described as host-enforced locking.",
+  "entire_assets_and_pinned_files": [
+    {
+      "file": "audit.json",
+      "bytes": 3322,
+      "sha256": "fbcfe94d957be9ec41f35c459c0fb35c55629dcf89c8bc85bafff849bdc5b021",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-forest-20261106-01/audit.json",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/a8b98750-dd43-48d6-a799-12d236e596dd",
+          "bytes": 3322,
+          "sha256": "fbcfe94d957be9ec41f35c459c0fb35c55629dcf89c8bc85bafff849bdc5b021"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/audit.json",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/audit.json",
+          "bytes": 3322,
+          "sha256": "fbcfe94d957be9ec41f35c459c0fb35c55629dcf89c8bc85bafff849bdc5b021"
+        }
+      ]
+    },
+    {
+      "file": "checksums.json",
+      "bytes": 2817,
+      "sha256": "7092abf449019b6c1a4170f1bbe18ce3ce4d17406f832652b0054081d82071d5",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-forest-20261106-01/checksums.json",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/992e7247-3ed3-499d-a22c-45bb774292dc",
+          "bytes": 2817,
+          "sha256": "7092abf449019b6c1a4170f1bbe18ce3ce4d17406f832652b0054081d82071d5"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/checksums.json",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/checksums.json",
+          "bytes": 2817,
+          "sha256": "7092abf449019b6c1a4170f1bbe18ce3ce4d17406f832652b0054081d82071d5"
+        }
+      ]
+    },
+    {
+      "file": "complete-forest-2026-county-query-01.zip",
+      "bytes": 82567,
+      "sha256": "40ea85e481eab438bc65004190df794c737f307da4f626b7f14d4e7ad7cc0810",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-forest-20261106-01/complete-forest-2026-county-query-01.zip",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/fa7cb9bb-edb1-4c1e-9b8e-334847d9aa3d",
+          "bytes": 82567,
+          "sha256": "40ea85e481eab438bc65004190df794c737f307da4f626b7f14d4e7ad7cc0810"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/complete-forest-2026-county-query-01.zip",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/complete-forest-2026-county-query-01.zip",
+          "bytes": 82567,
+          "sha256": "40ea85e481eab438bc65004190df794c737f307da4f626b7f14d4e7ad7cc0810"
+        }
+      ]
+    },
+    {
+      "file": "county-candidate-results.csv",
+      "bytes": 1566,
+      "sha256": "d80af6fb5c8891ab0ba65c386f6ababd4fd3530b68c08e32d95f4a5e5f353835",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-forest-20261106-01/county-candidate-results.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/8cbf95b4-7973-492c-b028-fa36a9faf933",
+          "bytes": 1566,
+          "sha256": "d80af6fb5c8891ab0ba65c386f6ababd4fd3530b68c08e32d95f4a5e5f353835"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/county-candidate-results.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/county-candidate-results.csv",
+          "bytes": 1566,
+          "sha256": "d80af6fb5c8891ab0ba65c386f6ababd4fd3530b68c08e32d95f4a5e5f353835"
+        }
+      ]
+    },
+    {
+      "file": "county-contest-accounting.csv",
+      "bytes": 865,
+      "sha256": "d7e70597510aecdb9b5b60a6e1945be174d7e464ef877689dba0d4953afa4eec",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-forest-20261106-01/county-contest-accounting.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/492a9ef5-6bcd-4742-82cc-cf18b7c4f1e8",
+          "bytes": 865,
+          "sha256": "d7e70597510aecdb9b5b60a6e1945be174d7e464ef877689dba0d4953afa4eec"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/county-contest-accounting.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/county-contest-accounting.csv",
+          "bytes": 865,
+          "sha256": "d7e70597510aecdb9b5b60a6e1945be174d7e464ef877689dba0d4953afa4eec"
+        }
+      ]
+    },
+    {
+      "file": "county-literal-party-totals.csv",
+      "bytes": 925,
+      "sha256": "3b8883a8e4994a18cba710beb1860eaf92886ea88440abd419ea9791cc8990bf",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-forest-20261106-01/county-literal-party-totals.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/83789973-cd92-4c50-b23c-0fd8bc9bfdea",
+          "bytes": 925,
+          "sha256": "3b8883a8e4994a18cba710beb1860eaf92886ea88440abd419ea9791cc8990bf"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/county-literal-party-totals.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/county-literal-party-totals.csv",
+          "bytes": 925,
+          "sha256": "3b8883a8e4994a18cba710beb1860eaf92886ea88440abd419ea9791cc8990bf"
+        }
+      ]
+    },
+    {
+      "file": "county-participation.csv",
+      "bytes": 501,
+      "sha256": "db9870d10c5f72159ee759a3c725d98635a89a96f7854638556791cee182a8dd",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-forest-20261106-01/county-participation.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/e6c59524-fc82-4fd7-9652-87840357cd7a",
+          "bytes": 501,
+          "sha256": "db9870d10c5f72159ee759a3c725d98635a89a96f7854638556791cee182a8dd"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/county-participation.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/county-participation.csv",
+          "bytes": 501,
+          "sha256": "db9870d10c5f72159ee759a3c725d98635a89a96f7854638556791cee182a8dd"
+        }
+      ]
+    },
+    {
+      "file": "native-derived-contest-sums.csv",
+      "bytes": 647,
+      "sha256": "8158a708c7e6c6d1f56ac145febddd1094b82fb4bae85d72025e7476081d4b35",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-forest-20261106-01/native-derived-contest-sums.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/5ff960cc-a081-4ebd-b436-e8dad174b5ed",
+          "bytes": 647,
+          "sha256": "8158a708c7e6c6d1f56ac145febddd1094b82fb4bae85d72025e7476081d4b35"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/native-derived-contest-sums.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/native-derived-contest-sums.csv",
+          "bytes": 647,
+          "sha256": "8158a708c7e6c6d1f56ac145febddd1094b82fb4bae85d72025e7476081d4b35"
+        }
+      ]
+    },
+    {
+      "file": "native-derived-rate-checks.csv",
+      "bytes": 1787,
+      "sha256": "8fb05be027f66d3ddb86210dd446e426740bdbf728e9a975f0211bff5b96fada",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-forest-20261106-01/native-derived-rate-checks.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/95104aca-cb7f-4612-becd-37baec6c4f1f",
+          "bytes": 1787,
+          "sha256": "8fb05be027f66d3ddb86210dd446e426740bdbf728e9a975f0211bff5b96fada"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/native-derived-rate-checks.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/native-derived-rate-checks.csv",
+          "bytes": 1787,
+          "sha256": "8fb05be027f66d3ddb86210dd446e426740bdbf728e9a975f0211bff5b96fada"
+        }
+      ]
+    },
+    {
+      "file": "native-mail-receipts.csv",
+      "bytes": 282,
+      "sha256": "1de82556068a808bbbc6fdc301bc665f79c31b3d1ed33871aee6ea6843bcfded",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-forest-20261106-01/native-mail-receipts.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/d7fb8565-bae1-468b-88da-73edd80cf68c",
+          "bytes": 282,
+          "sha256": "1de82556068a808bbbc6fdc301bc665f79c31b3d1ed33871aee6ea6843bcfded"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/native-mail-receipts.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/native-mail-receipts.csv",
+          "bytes": 282,
+          "sha256": "1de82556068a808bbbc6fdc301bc665f79c31b3d1ed33871aee6ea6843bcfded"
+        }
+      ]
+    },
+    {
+      "file": "native-participation-modes.csv",
+      "bytes": 271,
+      "sha256": "1d39f4ea7845dbf0e0df9230757a967e102fa5bd411c60727721872183cb295f",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-forest-20261106-01/native-participation-modes.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/f69fcff1-7292-498b-a6a9-ba0314130718",
+          "bytes": 271,
+          "sha256": "1d39f4ea7845dbf0e0df9230757a967e102fa5bd411c60727721872183cb295f"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/native-participation-modes.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/native-participation-modes.csv",
+          "bytes": 271,
+          "sha256": "1d39f4ea7845dbf0e0df9230757a967e102fa5bd411c60727721872183cb295f"
+        }
+      ]
+    },
+    {
+      "file": "native-reporting-statistics.csv",
+      "bytes": 357,
+      "sha256": "6fe6b19661b8d1f4e6f82a6cbc9bd5d5b68351b09a8233d2d9ed880effbdfc52",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-forest-20261106-01/native-reporting-statistics.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/d90d9c75-9b53-4317-b079-cbdb27d3dbf7",
+          "bytes": 357,
+          "sha256": "6fe6b19661b8d1f4e6f82a6cbc9bd5d5b68351b09a8233d2d9ed880effbdfc52"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/native-reporting-statistics.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/native-reporting-statistics.csv",
+          "bytes": 357,
+          "sha256": "6fe6b19661b8d1f4e6f82a6cbc9bd5d5b68351b09a8233d2d9ed880effbdfc52"
+        }
+      ]
+    },
+    {
+      "file": "native-source-declarations.csv",
+      "bytes": 460,
+      "sha256": "61323632a7534ed9a8da561e36c576f3b56acd35c9e32999e050f5146f0cf5d0",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-forest-20261106-01/native-source-declarations.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/0ba83f10-0f89-4204-9525-16550432a882",
+          "bytes": 460,
+          "sha256": "61323632a7534ed9a8da561e36c576f3b56acd35c9e32999e050f5146f0cf5d0"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/native-source-declarations.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/native-source-declarations.csv",
+          "bytes": 460,
+          "sha256": "61323632a7534ed9a8da561e36c576f3b56acd35c9e32999e050f5146f0cf5d0"
+        }
+      ]
+    },
+    {
+      "file": "native-source-pages.csv",
+      "bytes": 3114,
+      "sha256": "cb36428e38f0ccac450b83f2b3b4622d79fa4193fa36937c99b4184278ce7604",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-forest-20261106-01/native-source-pages.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/67d5a752-29f9-4e70-b1af-48d9373a5a6e",
+          "bytes": 3114,
+          "sha256": "cb36428e38f0ccac450b83f2b3b4622d79fa4193fa36937c99b4184278ce7604"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/native-source-pages.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/native-source-pages.csv",
+          "bytes": 3114,
+          "sha256": "cb36428e38f0ccac450b83f2b3b4622d79fa4193fa36937c99b4184278ce7604"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-candidate-results.csv",
+      "bytes": 12957,
+      "sha256": "50da5087297b0846d160d3cbcb748b5c341116b848ad0fef105403460599c407",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-forest-20261106-01/native-unit-candidate-results.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/a1628f33-9f54-4f3a-ae26-566cb8d51b3a",
+          "bytes": 12957,
+          "sha256": "50da5087297b0846d160d3cbcb748b5c341116b848ad0fef105403460599c407"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/native-unit-candidate-results.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/native-unit-candidate-results.csv",
+          "bytes": 12957,
+          "sha256": "50da5087297b0846d160d3cbcb748b5c341116b848ad0fef105403460599c407"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-contest-accounting.csv",
+      "bytes": 5670,
+      "sha256": "4aa9c87dffb70c4882e383dc62c6894e421be6f9ef7f1921b0aa35df4e80ad6c",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-forest-20261106-01/native-unit-contest-accounting.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/4313342b-0550-4d96-aa11-73ddc7871372",
+          "bytes": 5670,
+          "sha256": "4aa9c87dffb70c4882e383dc62c6894e421be6f9ef7f1921b0aa35df4e80ad6c"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/native-unit-contest-accounting.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/native-unit-contest-accounting.csv",
+          "bytes": 5670,
+          "sha256": "4aa9c87dffb70c4882e383dc62c6894e421be6f9ef7f1921b0aa35df4e80ad6c"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-literal-party-totals.csv",
+      "bytes": 7204,
+      "sha256": "1e1a07f3eb52cbb51b37dbae0cbe8f568f6096d9fd80024438ee467568d31745",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-forest-20261106-01/native-unit-literal-party-totals.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/f3375f7f-8c28-4d3c-99c5-bf56c4b8c99d",
+          "bytes": 7204,
+          "sha256": "1e1a07f3eb52cbb51b37dbae0cbe8f568f6096d9fd80024438ee467568d31745"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/native-unit-literal-party-totals.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/native-unit-literal-party-totals.csv",
+          "bytes": 7204,
+          "sha256": "1e1a07f3eb52cbb51b37dbae0cbe8f568f6096d9fd80024438ee467568d31745"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-participation-modes.csv",
+      "bytes": 948,
+      "sha256": "d195a3f2da7bd5ad4ebf83378997393c901b20e675f529a65ae2d1a8edc401a9",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-forest-20261106-01/native-unit-participation-modes.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/517d5a50-f7d8-47c9-855c-107070c46076",
+          "bytes": 948,
+          "sha256": "d195a3f2da7bd5ad4ebf83378997393c901b20e675f529a65ae2d1a8edc401a9"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/native-unit-participation-modes.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/native-unit-participation-modes.csv",
+          "bytes": 948,
+          "sha256": "d195a3f2da7bd5ad4ebf83378997393c901b20e675f529a65ae2d1a8edc401a9"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-participation.csv",
+      "bytes": 872,
+      "sha256": "0a78d29597edd32846d6dd35c745ddeb1dafd8975cf12b80b97e8e3960c506b5",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-forest-20261106-01/native-unit-participation.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/1ee18b9f-f309-4ce1-9500-4b13441c5d4f",
+          "bytes": 872,
+          "sha256": "0a78d29597edd32846d6dd35c745ddeb1dafd8975cf12b80b97e8e3960c506b5"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/native-unit-participation.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/native-unit-participation.csv",
+          "bytes": 872,
+          "sha256": "0a78d29597edd32846d6dd35c745ddeb1dafd8975cf12b80b97e8e3960c506b5"
+        }
+      ]
+    },
+    {
+      "file": "review-pa-county-native-query.py",
+      "bytes": 26216,
+      "sha256": "fbca551c72a85277d35404fc95a846e9e803b518139ff8658dd29411fd1c5df3",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-forest-20261106-01/review-pa-county-native-query.py",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/8e0a4279-3d2c-4add-8924-0ceb9310bef0",
+          "bytes": 26216,
+          "sha256": "fbca551c72a85277d35404fc95a846e9e803b518139ff8658dd29411fd1c5df3"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/review-pa-county-native-query.py",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/review-pa-county-native-query.py",
+          "bytes": 26216,
+          "sha256": "fbca551c72a85277d35404fc95a846e9e803b518139ff8658dd29411fd1c5df3"
+        }
+      ]
+    },
+    {
+      "file": "source-receipts.json",
+      "bytes": 2047,
+      "sha256": "91083093b363f92527c05dc27bcbf2267fec35ef109a0bcc054f9e44ad3745ad",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-forest-20261106-01/source-receipts.json",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/6ea3d31f-fed8-4a0e-a5d2-7d1bd6896f32",
+          "bytes": 2047,
+          "sha256": "91083093b363f92527c05dc27bcbf2267fec35ef109a0bcc054f9e44ad3745ad"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/source-receipts.json",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/source-receipts.json",
+          "bytes": 2047,
+          "sha256": "91083093b363f92527c05dc27bcbf2267fec35ef109a0bcc054f9e44ad3745ad"
+        }
+      ]
+    },
+    {
+      "file": "source-records.json.gz",
+      "bytes": 6969,
+      "sha256": "4f716accd42392b185039ea0553b433b0cc92bfb0a7934ab34d606a686561eb0",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-forest-20261106-01/source-records.json.gz",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/91097d78-182b-41a8-ba0a-57646070ad10",
+          "bytes": 6969,
+          "sha256": "4f716accd42392b185039ea0553b433b0cc92bfb0a7934ab34d606a686561eb0"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/source-records.json.gz",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/80b06559315c69562a03a4669639f4602f7563d1/data/county-source-reviews/20261106-forest-facts-01/source-records.json.gz",
+          "bytes": 6969,
+          "sha256": "4f716accd42392b185039ea0553b433b0cc92bfb0a7934ab34d606a686561eb0"
+        }
+      ]
+    }
+  ],
+  "entire_assets": 22,
+  "entire_pinned_files": 22,
+  "entire_zip_members": 21,
+  "extracted_offline_verifier_stdout": "Forest: 14 focused participation/provenance/identity rejection cases pass.\nEvery entire file and deterministic ZIP reproduces byte-identically offline.\n",
+  "exact_entire_file_and_archive_reproduction": true,
+  "explorer_integration_and_live_verification_pending": true
+}
