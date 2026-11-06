@@ -1,0 +1,626 @@
+{
+  "verified_at_utc": "2026-11-06T12:39:57.221194+00:00",
+  "independent_identity_proof": "data/county-source-reviews/20261106-minnesota-primary-review-01/independent-census-identities.json",
+  "independent_identity_proof_sha256": "34652458c4c60959cd378e5e1087917cfec046f19196e7e56539aa6c3b96f8e9",
+  "original_geometry_url": "https://www.themarginoferror.com/participation-context/20261104T183601Z/geometry/county-MN.geojson",
+  "entire_geometry_bytes": 295105,
+  "entire_geometry_sha256": "f0769cb63822198d6219cbc8b759fe53c06f67b419d82d513e9612cb5ebbb00b",
+  "all_87_features_match_both_independent_census_identities": true,
+  "geometry_check": {
+    "state_code": "MN",
+    "features": 87,
+    "invalid": [],
+    "overlap_pairs": [
+      {
+        "left": "27087",
+        "right": "27119",
+        "overlap_square_degrees": 2.320467325969268e-06
+      },
+      {
+        "left": "27087",
+        "right": "27005",
+        "overlap_square_degrees": 1.3118186016704143e-05
+      },
+      {
+        "left": "27087",
+        "right": "27029",
+        "overlap_square_degrees": 1.6399032682578128e-07
+      },
+      {
+        "left": "27053",
+        "right": "27139",
+        "overlap_square_degrees": 1.2056263470292717e-07
+      },
+      {
+        "left": "27053",
+        "right": "27019",
+        "overlap_square_degrees": 1.944354310487283e-07
+      },
+      {
+        "left": "27075",
+        "right": "27137",
+        "overlap_square_degrees": 8.263208749460015e-07
+      },
+      {
+        "left": "27163",
+        "right": "27025",
+        "overlap_square_degrees": 7.500564335071985e-06
+      },
+      {
+        "left": "27163",
+        "right": "27037",
+        "overlap_square_degrees": 6.069453476382062e-07
+      },
+      {
+        "left": "27015",
+        "right": "27013",
+        "overlap_square_degrees": 1.8052774494276914e-06
+      },
+      {
+        "left": "27015",
+        "right": "27033",
+        "overlap_square_degrees": 2.0706333385446705e-05
+      },
+      {
+        "left": "27167",
+        "right": "27027",
+        "overlap_square_degrees": 2.6331451661577092e-05
+      },
+      {
+        "left": "27137",
+        "right": "27061",
+        "overlap_square_degrees": 2.391172027297646e-07
+      },
+      {
+        "left": "27137",
+        "right": "27017",
+        "overlap_square_degrees": 2.0204301983752554e-05
+      },
+      {
+        "left": "27137",
+        "right": "27001",
+        "overlap_square_degrees": 1.7787935736406116e-05
+      },
+      {
+        "left": "27119",
+        "right": "27107",
+        "overlap_square_degrees": 2.57000596741484e-06
+      },
+      {
+        "left": "27119",
+        "right": "27089",
+        "overlap_square_degrees": 2.874017734437548e-05
+      },
+      {
+        "left": "27119",
+        "right": "27125",
+        "overlap_square_degrees": 8.958861642492414e-06
+      },
+      {
+        "left": "27119",
+        "right": "27113",
+        "overlap_square_degrees": 1.4889881053537582e-05
+      },
+      {
+        "left": "27119",
+        "right": "27029",
+        "overlap_square_degrees": 2.555706392850755e-05
+      },
+      {
+        "left": "27073",
+        "right": "27023",
+        "overlap_square_degrees": 9.490817947247269e-07
+      },
+      {
+        "left": "27073",
+        "right": "27011",
+        "overlap_square_degrees": 2.505998873952061e-07
+      },
+      {
+        "left": "27073",
+        "right": "27151",
+        "overlap_square_degrees": 1.052250112608464e-06
+      },
+      {
+        "left": "27145",
+        "right": "27171",
+        "overlap_square_degrees": 3.7247480144834814e-07
+      },
+      {
+        "left": "27145",
+        "right": "27041",
+        "overlap_square_degrees": 2.433500649332072e-07
+      },
+      {
+        "left": "27145",
+        "right": "27093",
+        "overlap_square_degrees": 1.7779698588644872e-06
+      },
+      {
+        "left": "27145",
+        "right": "27067",
+        "overlap_square_degrees": 6.423677309018244e-06
+      },
+      {
+        "left": "27145",
+        "right": "27121",
+        "overlap_square_degrees": 2.0532670356395955e-05
+      },
+      {
+        "left": "27145",
+        "right": "27153",
+        "overlap_square_degrees": 1.626289538702498e-05
+      },
+      {
+        "left": "27145",
+        "right": "27009",
+        "overlap_square_degrees": 4.706150021247224e-07
+      },
+      {
+        "left": "27061",
+        "right": "27001",
+        "overlap_square_degrees": 4.327930241499405e-07
+      },
+      {
+        "left": "27061",
+        "right": "27007",
+        "overlap_square_degrees": 1.8563665370318052e-05
+      },
+      {
+        "left": "27171",
+        "right": "27085",
+        "overlap_square_degrees": 2.2580120030112928e-05
+      },
+      {
+        "left": "27171",
+        "right": "27141",
+        "overlap_square_degrees": 1.2115225459882466e-06
+      },
+      {
+        "left": "27171",
+        "right": "27019",
+        "overlap_square_degrees": 1.5550726421127818e-05
+      },
+      {
+        "left": "27127",
+        "right": "27033",
+        "overlap_square_degrees": 4.642132129483563e-08
+      },
+      {
+        "left": "27127",
+        "right": "27101",
+        "overlap_square_degrees": 1.6715253238275152e-07
+      },
+      {
+        "left": "27139",
+        "right": "27037",
+        "overlap_square_degrees": 7.211253920762247e-09
+      },
+      {
+        "left": "27139",
+        "right": "27079",
+        "overlap_square_degrees": 8.929550052009326e-06
+      },
+      {
+        "left": "27139",
+        "right": "27131",
+        "overlap_square_degrees": 5.573339313146254e-06
+      },
+      {
+        "left": "27129",
+        "right": "27023",
+        "overlap_square_degrees": 2.149077973710177e-06
+      },
+      {
+        "left": "27129",
+        "right": "27103",
+        "overlap_square_degrees": 3.0511302230309606e-05
+      },
+      {
+        "left": "27129",
+        "right": "27093",
+        "overlap_square_degrees": 1.0824133939845067e-07
+      },
+      {
+        "left": "27129",
+        "right": "27067",
+        "overlap_square_degrees": 3.3770720272168105e-06
+      },
+      {
+        "left": "27129",
+        "right": "27085",
+        "overlap_square_degrees": 5.615634438252505e-08
+      },
+      {
+        "left": "27065",
+        "right": "27095",
+        "overlap_square_degrees": 5.460910151364105e-06
+      },
+      {
+        "left": "27089",
+        "right": "27113",
+        "overlap_square_degrees": 1.6568313431961746e-06
+      },
+      {
+        "left": "27089",
+        "right": "27007",
+        "overlap_square_degrees": 1.4780999997358158e-06
+      },
+      {
+        "left": "27089",
+        "right": "27135",
+        "overlap_square_degrees": 8.408606874746704e-06
+      },
+      {
+        "left": "27023",
+        "right": "27173",
+        "overlap_square_degrees": 1.1631186141078204e-06
+      },
+      {
+        "left": "27023",
+        "right": "27067",
+        "overlap_square_degrees": 3.3344249706358807e-06
+      },
+      {
+        "left": "27051",
+        "right": "27041",
+        "overlap_square_degrees": 4.50309999965908e-06
+      },
+      {
+        "left": "27103",
+        "right": "27143",
+        "overlap_square_degrees": 4.7052484797827706e-05
+      },
+      {
+        "left": "27013",
+        "right": "27043",
+        "overlap_square_degrees": 2.161816940601924e-05
+      },
+      {
+        "left": "27013",
+        "right": "27161",
+        "overlap_square_degrees": 2.7662883807559487e-05
+      },
+      {
+        "left": "27013",
+        "right": "27079",
+        "overlap_square_degrees": 1.3496810622998407e-06
+      },
+      {
+        "left": "27013",
+        "right": "27165",
+        "overlap_square_degrees": 6.468872552920175e-06
+      },
+      {
+        "left": "27077",
+        "right": "27071",
+        "overlap_square_degrees": 1.2701885092700516e-05
+      },
+      {
+        "left": "27077",
+        "right": "27007",
+        "overlap_square_degrees": 5.452678773322499e-06
+      },
+      {
+        "left": "27149",
+        "right": "27011",
+        "overlap_square_degrees": 1.7407213325487244e-05
+      },
+      {
+        "left": "27149",
+        "right": "27155",
+        "overlap_square_degrees": 4.4678939188838124e-08
+      },
+      {
+        "left": "27149",
+        "right": "27151",
+        "overlap_square_degrees": 1.5125838213926106e-06
+      },
+      {
+        "left": "27043",
+        "right": "27047",
+        "overlap_square_degrees": 4.185480000027279e-05
+      },
+      {
+        "left": "27043",
+        "right": "27161",
+        "overlap_square_degrees": 1.6082611877240623e-05
+      },
+      {
+        "left": "27021",
+        "right": "27001",
+        "overlap_square_degrees": 1.8185531838856832e-05
+      },
+      {
+        "left": "27021",
+        "right": "27153",
+        "overlap_square_degrees": 6.472184332694209e-08
+      },
+      {
+        "left": "27021",
+        "right": "27007",
+        "overlap_square_degrees": 1.3140300031080602e-05
+      },
+      {
+        "left": "27021",
+        "right": "27159",
+        "overlap_square_degrees": 3.3883263372066166e-07
+      },
+      {
+        "left": "27035",
+        "right": "27095",
+        "overlap_square_degrees": 3.937899845398842e-06
+      },
+      {
+        "left": "27047",
+        "right": "27147",
+        "overlap_square_degrees": 2.119951190354092e-05
+      },
+      {
+        "left": "27047",
+        "right": "27161",
+        "overlap_square_degrees": 3.239803433474345e-05
+      },
+      {
+        "left": "27133",
+        "right": "27117",
+        "overlap_square_degrees": 4.072757060384866e-09
+      },
+      {
+        "left": "27133",
+        "right": "27101",
+        "overlap_square_degrees": 2.168081982022291e-07
+      },
+      {
+        "left": "27133",
+        "right": "27105",
+        "overlap_square_degrees": 3.8224859633706766e-05
+      },
+      {
+        "left": "27011",
+        "right": "27155",
+        "overlap_square_degrees": 1.1937878828757172e-05
+      },
+      {
+        "left": "27017",
+        "right": "27001",
+        "overlap_square_degrees": 8.740083242087025e-06
+      },
+      {
+        "left": "27147",
+        "right": "27039",
+        "overlap_square_degrees": 5.005656206269761e-05
+      },
+      {
+        "left": "27147",
+        "right": "27131",
+        "overlap_square_degrees": 1.785313201962046e-05
+      },
+      {
+        "left": "27003",
+        "right": "27025",
+        "overlap_square_degrees": 2.113242752987231e-06
+      },
+      {
+        "left": "27003",
+        "right": "27141",
+        "overlap_square_degrees": 2.3943732714183924e-06
+      },
+      {
+        "left": "27041",
+        "right": "27111",
+        "overlap_square_degrees": 3.4555718288672556e-05
+      },
+      {
+        "left": "27041",
+        "right": "27153",
+        "overlap_square_degrees": 1.2331999999705837e-05
+      },
+      {
+        "left": "27059",
+        "right": "27025",
+        "overlap_square_degrees": 5.936557246858065e-06
+      },
+      {
+        "left": "27059",
+        "right": "27095",
+        "overlap_square_degrees": 1.7514051247919428e-06
+      },
+      {
+        "left": "27059",
+        "right": "27141",
+        "overlap_square_degrees": 9.113376729461299e-06
+      },
+      {
+        "left": "27093",
+        "right": "27085",
+        "overlap_square_degrees": 9.015498870277147e-06
+      },
+      {
+        "left": "27117",
+        "right": "27101",
+        "overlap_square_degrees": 1.5145501994284155e-05
+      },
+      {
+        "left": "27033",
+        "right": "27063",
+        "overlap_square_degrees": 5.075757858477012e-07
+      },
+      {
+        "left": "27033",
+        "right": "27105",
+        "overlap_square_degrees": 3.734201837042027e-07
+      },
+      {
+        "left": "27001",
+        "right": "27095",
+        "overlap_square_degrees": 1.8673519302421068e-05
+      },
+      {
+        "left": "27063",
+        "right": "27091",
+        "overlap_square_degrees": 2.2723300000219524e-05
+      },
+      {
+        "left": "27063",
+        "right": "27105",
+        "overlap_square_degrees": 2.2417929240757494e-05
+      },
+      {
+        "left": "27063",
+        "right": "27165",
+        "overlap_square_degrees": 3.397544980012931e-08
+      },
+      {
+        "left": "27169",
+        "right": "27109",
+        "overlap_square_degrees": 8.108694550536358e-06
+      },
+      {
+        "left": "27099",
+        "right": "27045",
+        "overlap_square_degrees": 2.437942897027141e-06
+      },
+      {
+        "left": "27091",
+        "right": "27165",
+        "overlap_square_degrees": 3.2715240090006323e-07
+      },
+      {
+        "left": "27157",
+        "right": "27109",
+        "overlap_square_degrees": 1.1912113165266424e-05
+      },
+      {
+        "left": "27157",
+        "right": "27049",
+        "overlap_square_degrees": 1.4743400000365747e-05
+      },
+      {
+        "left": "27071",
+        "right": "27007",
+        "overlap_square_degrees": 9.926949506291647e-06
+      },
+      {
+        "left": "27067",
+        "right": "27121",
+        "overlap_square_degrees": 1.1987239486987721e-05
+      },
+      {
+        "left": "27067",
+        "right": "27151",
+        "overlap_square_degrees": 1.991702021897315e-05
+      },
+      {
+        "left": "27121",
+        "right": "27151",
+        "overlap_square_degrees": 4.6404217632981154e-05
+      },
+      {
+        "left": "27161",
+        "right": "27079",
+        "overlap_square_degrees": 8.82354539443164e-06
+      },
+      {
+        "left": "27161",
+        "right": "27131",
+        "overlap_square_degrees": 1.041962812986407e-05
+      },
+      {
+        "left": "27101",
+        "right": "27105",
+        "overlap_square_degrees": 8.31498805619281e-06
+      },
+      {
+        "left": "27113",
+        "right": "27029",
+        "overlap_square_degrees": 2.6866811538989147e-06
+      },
+      {
+        "left": "27111",
+        "right": "27153",
+        "overlap_square_degrees": 1.1063745888124536e-07
+      },
+      {
+        "left": "27111",
+        "right": "27159",
+        "overlap_square_degrees": 9.40391727964857e-06
+      },
+      {
+        "left": "27109",
+        "right": "27049",
+        "overlap_square_degrees": 1.121633467588565e-06
+      },
+      {
+        "left": "27109",
+        "right": "27045",
+        "overlap_square_degrees": 9.7225234019799e-06
+      },
+      {
+        "left": "27085",
+        "right": "27019",
+        "overlap_square_degrees": 2.148487293750911e-06
+      },
+      {
+        "left": "27009",
+        "right": "27141",
+        "overlap_square_degrees": 8.759432805559314e-06
+      },
+      {
+        "left": "27079",
+        "right": "27131",
+        "overlap_square_degrees": 3.402405000141099e-05
+      },
+      {
+        "left": "27049",
+        "right": "27131",
+        "overlap_square_degrees": 7.67483168760886e-06
+      },
+      {
+        "left": "27005",
+        "right": "27057",
+        "overlap_square_degrees": 2.3530234940679774e-06
+      },
+      {
+        "left": "27005",
+        "right": "27159",
+        "overlap_square_degrees": 1.0353179718810455e-05
+      },
+      {
+        "left": "27029",
+        "right": "27057",
+        "overlap_square_degrees": 9.302089988512966e-06
+      },
+      {
+        "left": "27029",
+        "right": "27007",
+        "overlap_square_degrees": 9.191460012046225e-06
+      },
+      {
+        "left": "27057",
+        "right": "27007",
+        "overlap_square_degrees": 4.4914499690560365e-06
+      },
+      {
+        "left": "27057",
+        "right": "27159",
+        "overlap_square_degrees": 1.8956863119479628e-06
+      },
+      {
+        "left": "27007",
+        "right": "27135",
+        "overlap_square_degrees": 7.619796967422953e-06
+      },
+      {
+        "left": "27055",
+        "right": "27045",
+        "overlap_square_degrees": 2.8495958008627e-05
+      }
+    ],
+    "contextual_geometry_sha256": "f0769cb63822198d6219cbc8b759fe53c06f67b419d82d513e9612cb5ebbb00b",
+    "current_and_2024_identity_inventory_equal": true,
+    "live_complete_bytes_equal": true
+  },
+  "no_certified_2026_election_geometry_claim": true,
+  "native_fips_invented": false
+}

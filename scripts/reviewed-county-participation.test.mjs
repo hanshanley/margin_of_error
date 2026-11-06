@@ -5,11 +5,81 @@ import { join } from 'node:path';
 import test from 'node:test';
 import { parse } from 'csv-parse/sync';
 import { gunzipSync } from 'node:zlib';
-import { loadReviewedCountyParticipation, loadReviewedStatewideParticipation } from './reviewed-county-participation.mjs';
+import { loadReviewedCountyParticipation, loadReviewedStatewideParticipation,
+  loadReviewedMinnesotaParticipation } from './reviewed-county-participation.mjs';
 
 const reviews = JSON.parse(readFileSync('public/participation-source-reviews.json', 'utf8')).reviews;
 const batchCounties = ['Juniata', 'Mercer', 'Montour', 'Columbia', 'Greene', 'Lycoming'];
 const isBatch = row => ['CA', 'GA'].includes(row.state_code) || row.state_code === 'PA' && batchCounties.includes(row.county);
+
+test('Minnesota preserves all 87 native inventories without treating partial subtotals as county participation', () => {
+  const rows = loadReviewedMinnesotaParticipation(reviews);
+  const source = reviews.find(row => row.id === 'minnesota-bulk-participation-20261106-01');
+  const native = parse(readFileSync(join(source.data_directory, 'county-participation.csv')), { columns: true });
+  assert.deepEqual(rows.map(row => row.native_record), native);
+  assert.equal(rows.filter(row => row.ballots !== null).length, 75);
+  assert.equal(rows.filter(row => row.reported_pct !== null).length, 64);
+  assert.equal(rows.filter(row => row.ballots === null).length, 12);
+  for (const row of rows) {
+    assert.equal(row.maps_approved, false);
+    assert.equal(row.native_record.native_fips, '');
+    assert.equal(row.native_printed_pct, null);
+    assert.deepEqual(row.native_source_updates, []);
+    assert.match(row.source_update_label, /fetch receipts are not report updates/);
+    assert.match(row.source_reporting_label, /not inferred ballot modes/);
+    if (row.ballots === null) {
+      assert.equal(row.denominator, null);
+      assert.equal(row.reported_pct, null);
+      assert.match(row.source_reporting_label, /partial subtotal is not the county total/);
+    } else {
+      assert.equal(row.ballots, Number(row.native_record.complete_total_number_voted));
+      assert.equal(row.denominator, Number(row.native_record.complete_registered_7am)
+        + Number(row.native_record.complete_registered_election_day));
+      if (row.reported_pct !== null)
+        assert.equal(row.reported_pct, 100 * row.ballots / row.denominator);
+    }
+  }
+});
+
+test('Minnesota keeps supplied counts and electorates but withholds fractions for native conflicts', () => {
+  const rows = loadReviewedMinnesotaParticipation(reviews);
+  const held = rows.filter(row => row.ballots !== null && row.reported_pct === null);
+  assert.equal(held.length, 11);
+  for (const row of held) {
+    assert.ok(row.denominator > 0);
+    assert.ok(Number(row.native_record.reported_precinct_component_conflicts) > 0
+      || Number(row.native_record.reported_precinct_electorate_excesses) > 0);
+    assert.match(row.source_reporting_label, /not completed ballot counting or certification/);
+  }
+  assert.deepEqual(rows.filter(row => row.ballots === null).map(row => row.county), [
+    'Anoka', 'Carver', 'Fillmore', 'Hubbard', 'Kittson', 'Lac Qui Parle', 'Otter Tail',
+    'St. Louis', 'Sherburne', 'Wadena', 'Washington', 'Wright',
+  ]);
+});
+
+test('Minnesota rejects changed whole inputs and missing or duplicate registrations while exposing every published asset', () => {
+  const original = reviews.find(row => row.id === 'minnesota-bulk-participation-20261106-01');
+  const directory = mkdtempSync(join(tmpdir(), 'minnesota-participation-'));
+  try {
+    const files = ['county-participation.csv', 'audit.json', 'sources.json'];
+    const altered = reviews.map(row => row === original ? { ...row, data_directory: directory } : row);
+    for (const changed of files) {
+      for (const file of files) copyFileSync(join(original.data_directory, file), join(directory, file));
+      writeFileSync(join(directory, changed), readFileSync(join(directory, changed), 'utf8') + '\n');
+      assert.throws(() => loadReviewedMinnesotaParticipation(altered), /Invalid reviewed county participation/);
+    }
+    assert.throws(() => loadReviewedMinnesotaParticipation(reviews.filter(row => row !== original)),
+      /Missing or duplicated reviewed county source/);
+    assert.throws(() => loadReviewedMinnesotaParticipation([...reviews, original]),
+      /Missing or duplicated reviewed county source/);
+    const release = JSON.parse(readFileSync(
+      'data/county-source-reviews/20261106-minnesota-publication-01/release-verification.json'));
+    assert.deepEqual(new Set([...original.downloads.map(row => row.file), original.complete_download_url.split('/').at(-1)]),
+      new Set(release.files.map(row => row.file)));
+  } finally {
+    rmSync(directory, { recursive: true, force: true });
+  }
+});
 
 test('adds all 159 Georgia native county observations without changing the prior 974-record query', () => {
   const rows = loadReviewedCountyParticipation(reviews);

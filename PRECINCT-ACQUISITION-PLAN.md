@@ -331,9 +331,32 @@ identity, not exact 2026 election reporting boundaries or rates.
 all existing data and complete downloads and guarding actual hosted capacity.
 No Minnesota explorer pointer, map or rate is yet changed.
 See `20261106-minnesota-acquisition-01/validation.json` for acquisition evidence,
-not a downloadable participation query. Complete offline reconciliation,
-portable query publication and independent county identity review remain pending;
-no Minnesota rate, county/precinct map or certification is approved.
+not a downloadable participation query. The complete portable query, publication
+and independent identity proofs above supersede the earlier acquisition-only
+stage; no Minnesota explorer or certification claim follows from acquisition.
+
+**Minnesota contextual integration in preparation, not LIVE:** all 87 retained
+2024 contextual shapes now independently match both previously verified entire
+Census inventories and the entire current public geometry bytes. All shapes are
+valid; documented generalized-boundary overlaps remain unchanged. The new native
+adapter retains all 87 literal county records, with **75 complete participant
+counts**, **12 missing complete totals**, and **64 reviewable registration
+fractions**; the other eleven complete counties keep their supplied electorate
+but withhold rates because native statistics conflict. Missing counties are not
+replaced by their partial reported subtotals. All three adapter tests and forty
+pre-existing adapter tests pass. The draft complete context15 query reproduces
+offline and retains all **1,134 old records / 662 old joins / 17 old geometries**
+and every prior exclusion. Its independently reviewed result is **1,221 source
+records / 737 county joins / 350 usable rates / 387 missing gray rates**, across
+eighteen jurisdictions, plus twelve new explicitly incomplete county exclusions.
+All source-map approval flags and missing native FIPS/clocks remain unchanged.
+The complete **32-file / 31-member / 2,904,232-byte** context ZIP has SHA-256
+`4596858fb800195759a26616ad856d2500306ae431f9fe877b6fe20f40e1eda5`.
+See `20261106-minnesota-explorer-01`.
+**Next:** freeze and publish the fully verified contextual query before changing
+the public pointer; then connect native nullable records with explicit partial
+table labels, preserve all historical queries and measure hosted-size capacity.
+No new explorer LIVE flag before exact deployment and production proof.
 
 **November 6, 11:09 UTC: Columbia participation is LIVE verified.**
 Exact UI `2622a0d0dd0d5549392ddab6b5c6abc6ed6f9245`, Pages **42207340056

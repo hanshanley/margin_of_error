@@ -1,6 +1,32 @@
 {
   "reviews": [
     {
+      "id": "minnesota-bulk-participation-20261106-01",
+      "title": "Minnesota: complete native participation statistics and separate candidate/party choices",
+      "data_directory": "data/county-source-reviews/20261106-minnesota-facts-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/29844f67234c8384050d857e394ed64b512b5af0/data/county-source-reviews/20261106-minnesota-facts-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-minnesota-native-query-20261106-01/complete-minnesota-native-query.zip",
+      "description": "All 4,105 native statistics records, 87 counties, 4,105 precinct references, nine literal parties, 8,285 county choices and 332,337 precinct choices. Seventy-five counties have complete statistics; twelve retain partial subtotals, not fabricated county totals. All 129 component conflicts, seven electorate excesses and 87 estimated question-blank residuals survive. Missing FIPS, update clocks, timezones and ballot-mode definitions are not inferred. Full standalone tables and the complete portable query remain available; separate contextual integration is required before mapping.",
+      "downloads": [
+        {"file": "county-participation.csv", "label": "Minnesota: all 87 complete/partial county participation inventories (CSV)"},
+        {"file": "pctstats.csv", "label": "Minnesota: all 4,105 native precinct-statistics rows and reporting flags (CSV)"},
+        {"file": "counties.csv", "label": "Minnesota: all 87 literal native county identities (CSV)"},
+        {"file": "precincts.csv", "label": "Minnesota: all 4,105 native county-scoped precinct references (CSV)"},
+        {"file": "parties.csv", "label": "Minnesota: all nine literal party codes and names (CSV)"},
+        {"file": "county-results.csv", "label": "Minnesota: all 8,285 native county candidate/question rows (CSV)"},
+        {"file": "precinct-results.csv", "label": "Minnesota: all 332,337 native precinct candidate/question rows (CSV)"},
+        {"file": "county-choice-reconciliation.csv", "label": "Minnesota: complete county-versus-precinct choice reconciliation (CSV)"},
+        {"file": "statistic-component-residuals.csv", "label": "Minnesota: all 129 literal native component conflicts (CSV)"},
+        {"file": "statistic-electorate-excesses.csv", "label": "Minnesota: all seven native precinct electorate excesses (CSV)"},
+        {"file": "sources.json", "label": "Minnesota: all eight complete original-response receipts (JSON)"},
+        {"file": "audit.json", "label": "Minnesota: full native query audit and missingness policies (JSON)"},
+        {"file": "checksums.sha256", "label": "Minnesota: complete factual-query file checksums (SHA-256)"},
+        {"file": "acquire-minnesota-bulk-participation.py", "label": "Minnesota: actual-declaration private-original acquisition pipeline (Python)"},
+        {"file": "review-minnesota-bulk-participation.py", "label": "Minnesota: complete offline native-query reproducer (Python)"},
+        {"file": "test-review-minnesota-bulk-participation.py", "label": "Minnesota: portable reporting, scope and reproduction tests (Python)"}
+      ]
+    },
+    {
       "id": "pennsylvania-lycoming-20261106-01",
       "label": "Lycoming County, Pennsylvania 2026: native ballot total, registrations and complete county factual query",
       "data_directory": "data/county-source-reviews/20261106-lycoming-facts-01",

@@ -5,7 +5,7 @@ import { gunzipSync } from 'node:zlib';
 import { contextualCountyRows } from '../public/scripts/participation-county-context.js';
 import { createCountyContextReview, loadCountyContextReview } from './build-county-participation-context.mjs';
 import { loadAdditionalParticipation } from './additional-participation.mjs';
-import { loadReviewedCountyParticipation } from './reviewed-county-participation.mjs';
+import { loadReviewedCountyParticipation, loadReviewedMinnesotaParticipation } from './reviewed-county-participation.mjs';
 
 const root = new URL('../public/participation-county-context/20261106-14/', import.meta.url);
 const batchIds = ['pennsylvania-lycoming-20261106-01', 'georgia-bulk-participation-20261106-01', 'pennsylvania-greene-20261106-01', 'pennsylvania-columbia-20261106-01', 'california-bulk-participation-20261106-01', 'pennsylvania-juniata-20261106-01', 'pennsylvania-mercer-20261106-01',
@@ -24,6 +24,29 @@ const investigation = { geometry_checks: json('geometry-verification.json') };
 const copy = value => structuredClone(value);
 const match = (rows, candidateReview = review, code = 'AL', collection = collections[code]) =>
   contextualCountyRows(rows, candidateReview, collection, code, review.context_base_url, review.geometry[code].file);
+
+test('Minnesota context15 preserves every old record and joins only complete native statistics', async () => {
+  const nextRoot = new URL('../public/participation-county-context/20261106-15/', import.meta.url);
+  const next = JSON.parse(readFileSync(new URL('review.json', nextRoot)));
+  const nextRecords = JSON.parse(gunzipSync(readFileSync(new URL('complete-source-records.json.gz', nextRoot))));
+  const native = loadReviewedMinnesotaParticipation(JSON.parse(readFileSync('public/participation-source-reviews.json')).reviews);
+  assert.deepEqual(nextRecords, [...records, ...native]);
+  assert.deepEqual(next.observations.filter(row => row.state_code !== 'MN'), review.observations);
+  assert.deepEqual(next.excluded.slice(0, review.excluded.length), review.excluded);
+  assert.deepEqual(next.counts, { complete_source_records: 1221, contextual_joins: 737, jurisdictions: 18,
+    reviewed_rates: 350, missing_rates: 387, excluded_municipalities: 286, excluded_missing_county_totals: 198 });
+  const collection = JSON.parse(readFileSync(new URL(next.geometry.MN.file, nextRoot)));
+  const matches = await contextualCountyRows(native, next, collection, 'MN',
+    next.context_base_url, next.geometry.MN.file);
+  assert.equal(collection.features.length, 87);
+  assert.equal(matches.size, 75);
+  assert.equal([...matches.values()].filter(row => row.reported_pct !== null).length, 64);
+  for (const row of native.filter(row => row.ballots === null)) {
+    assert.ok(![...matches.values()].some(match => match.county_id === row.county_id));
+    assert.match(next.excluded.find(item => item.county_id === row.county_id).reason,
+      /whole-county participation total missing: native statistics are incomplete/);
+  }
+});
 
 test('complete county review reproduces without changing any source observations or withheld rates', () => {
   const liveRecords = [...loadAdditionalParticipation().counties,

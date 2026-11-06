@@ -39,6 +39,87 @@ const profiles = [
 /** @returns {Record<string, string>[]} */
 const csv = path => parse(readFileSync(path, 'utf8'), { columns: true, bom: true, skip_empty_lines: true });
 
+export function loadReviewedMinnesotaParticipation(reviews) {
+  const id = 'minnesota-bulk-participation-20261106-01';
+  const matches = reviews.filter(review => review.id === id);
+  if (matches.length !== 1) throw new Error(`Missing or duplicated reviewed county source: ${id}`);
+  const review = matches[0], directory = resolve(review.data_directory);
+  for (const [file, digest] of Object.entries({
+    'county-participation.csv': '0815bde66ec0127b48d7d6b299ca4c0a7ea55773782088269cb82d699e848426',
+    'audit.json': '969bb0d143856387675266608644d614aae036c6018d0ce75a81ba3e0d975f6c',
+    'sources.json': '88280d24ab113f82c9de81622c26fdbf6ad6b209c2f1d1d6f51a75ddcc773308',
+  })) {
+    if (createHash('sha256').update(readFileSync(resolve(directory, file))).digest('hex') !== digest)
+      throw new Error(`Invalid reviewed county participation: ${id} / ${file}`);
+  }
+  const nativeRows = csv(resolve(directory, 'county-participation.csv'));
+  const audit = JSON.parse(readFileSync(resolve(directory, 'audit.json'), 'utf8'));
+  if (nativeRows.length !== 87 || audit.complete_native_rows.pctstats !== 4105
+    || audit.complete_native_rows.counties !== 87 || audit.reported_statistics !== 3671
+    || audit.unreported_statistics !== 434 || audit.maps_approved !== false || audit.rates_approved !== false
+    || new Set(nativeRows.map(row => row.native_county_id)).size !== 87
+    || new Set(nativeRows.map(row => row.county_name)).size !== 87
+    || nativeRows.filter(row => row.all_statistics_reported === 'true').length !== 75
+    || nativeRows.filter(row => row.eligible_for_registration_fraction_review === 'true').length !== 64
+    || nativeRows.reduce((total, row) => total + Number(row.reported_total_number_voted_subtotal), 0) !== 2354606)
+    throw new Error(`Incomplete reviewed county source: ${id}`);
+  return nativeRows.map(native => {
+    const complete = native.all_statistics_reported === 'true';
+    const eligible = native.eligible_for_registration_fraction_review === 'true';
+    const ballots = complete ? Number(native.complete_total_number_voted) : null;
+    const denominator = complete ? Number(native.derived_complete_7am_plus_election_day_registrations) : null;
+    if (native.native_numerator_label !== 'Total Number Voted' || native.native_status !== 'Unofficial Results'
+      || native.native_fips !== '' || native.native_update_clock !== '' || native.native_timezone !== ''
+      || native.maps_approved !== 'false' || native.rates_approved !== 'false'
+      || !['true', 'false'].includes(native.all_statistics_reported)
+      || !['true', 'false'].includes(native.eligible_for_registration_fraction_review)
+      || Number(native.reported_statistics) + Number(native.missing_statistics) !== Number(native.reference_precincts)
+      || complete !== (Number(native.missing_statistics) === 0)
+      || (complete ? !Number.isSafeInteger(ballots) || ballots < 0
+        || !Number.isSafeInteger(denominator) || denominator < 0
+        || denominator !== Number(native.complete_registered_7am) + Number(native.complete_registered_election_day)
+        : native.complete_total_number_voted !== '' || native.complete_registered_7am !== ''
+          || native.complete_registered_election_day !== ''
+          || native.derived_complete_7am_plus_election_day_registrations !== '' || eligible)
+      || (eligible && (denominator <= 0 || ballots > denominator
+        || Number(native.reported_precinct_electorate_excesses) !== 0
+        || Number(native.reported_precinct_component_conflicts) !== 0)))
+      throw new Error(`Invalid reviewed county participation: ${id} / ${native.county_name}`);
+    return {
+      year: 2026, state_code: 'MN', county_id: `reviewed:MN:${native.native_county_id}`,
+      county: native.county_name, geography_level: 'county', ballots, denominator,
+      participation_measure_kind: 'native_voting_statistics_total',
+      participation_measure_literal: 'Total Number Voted',
+      participation_measure_label: 'Native Total Number Voted (reported participation)',
+      denominator_basis: 'native_registered_voters',
+      reported_pct: eligible ? 100 * ballots / denominator : null,
+      native_printed_pct: null, source_status_literal: native.native_status,
+      reported_units: Number(native.reported_statistics), total_units: Number(native.reference_precincts),
+      source_rows: Number(native.reference_precincts), maps_approved: false, review_id: id,
+      native_record: native, native_source_updates: [],
+      source_update_label: 'Native update clock and timezone not supplied; fetch receipts are not report updates.',
+      source_reporting_label: `${native.reported_statistics}/${native.reference_precincts} precincts have native statistics; `
+        + `${native.missing_statistics} missing. Native reported Total Number Voted subtotal `
+        + `${Number(native.reported_total_number_voted_subtotal).toLocaleString('en-US')}. `
+        + (complete ? 'Complete native statistics, not completed ballot counting or certification. '
+          : 'County participation and complete registration totals are not supplied; the partial subtotal is not the county total. ')
+        + `${native.reported_precinct_component_conflicts} native component conflicts; `
+        + `${native.reported_precinct_electorate_excesses} precinct electorate excesses. `
+        + 'Roster signatures and three native absentee fields are not inferred ballot modes. '
+        + 'Candidate and question votes, parties and estimated question blanks remain separate.',
+      source_url: `${review.base_url}county-participation.csv`,
+      complete_download_url: review.complete_download_url,
+      quality: [
+        'Only reporting-flag1 statistics supply actual participation, including true zero. Missing statistics are not zero and governor votes are never a proxy.',
+        'The complete electorate is the explicitly derived sum of native 7AM registrations and Election Day registrations, not CVAP, VAP, VEP, CPS or demographic turnout.',
+        'Native component conflicts and electorate excesses preserve the complete participation count and supplied electorate but withhold the registration fraction.',
+        'Twelve counties remain partial; the 2,354,606 reported-voter subtotal is not a complete statewide participation count.',
+        'Native county IDs are not FIPS. No update clock, timezone, counting completion, certification or ballot-mode decomposition is inferred.',
+      ],
+    };
+  });
+}
+
 function loadCaliforniaParticipation(reviews) {
   const id = 'california-bulk-participation-20261106-01';
   const matches = reviews.filter(review => review.id === id);
