@@ -1,0 +1,57 @@
+source_report,contest_literal,literal_party,counting_mode_literal,candidate_votes,source_page
+summary,Governor and Lieutenant Governor (Vote for 1),DEM,Election Day,7957,1
+summary,Governor and Lieutenant Governor (Vote for 1),DEM,Mail-In,3178,1
+summary,Governor and Lieutenant Governor (Vote for 1),DEM,Provisional,0,1
+summary,Governor and Lieutenant Governor (Vote for 1),DEM,Total,11135,1
+summary,Governor and Lieutenant Governor (Vote for 1),REP,Election Day,11706,1
+summary,Governor and Lieutenant Governor (Vote for 1),REP,Mail-In,1106,1
+summary,Governor and Lieutenant Governor (Vote for 1),REP,Provisional,0,1
+summary,Governor and Lieutenant Governor (Vote for 1),REP,Total,12812,1
+summary,Governor and Lieutenant Governor (Vote for 1),LIB,Election Day,464,1
+summary,Governor and Lieutenant Governor (Vote for 1),LIB,Mail-In,50,1
+summary,Governor and Lieutenant Governor (Vote for 1),LIB,Provisional,0,1
+summary,Governor and Lieutenant Governor (Vote for 1),LIB,Total,514,1
+summary,Representative in Congress 7th District (Vote for 1),DEM,Election Day,6854,1
+summary,Representative in Congress 7th District (Vote for 1),DEM,Mail-In,2895,1
+summary,Representative in Congress 7th District (Vote for 1),DEM,Provisional,0,1
+summary,Representative in Congress 7th District (Vote for 1),DEM,Total,9749,1
+summary,Representative in Congress 7th District (Vote for 1),REP,Election Day,13194,1
+summary,Representative in Congress 7th District (Vote for 1),REP,Mail-In,1467,1
+summary,Representative in Congress 7th District (Vote for 1),REP,Provisional,0,1
+summary,Representative in Congress 7th District (Vote for 1),REP,Total,14661,1
+summary,Representative in the General Assembly 122nd District (Vote for 1),DEM,Election Day,7379,2
+summary,Representative in the General Assembly 122nd District (Vote for 1),DEM,Mail-In,2499,2
+summary,Representative in the General Assembly 122nd District (Vote for 1),DEM,Provisional,0,2
+summary,Representative in the General Assembly 122nd District (Vote for 1),DEM,Total,9878,2
+summary,Representative in the General Assembly 122nd District (Vote for 1),REP,Election Day,12754,2
+summary,Representative in the General Assembly 122nd District (Vote for 1),REP,Mail-In,1874,2
+summary,Representative in the General Assembly 122nd District (Vote for 1),REP,Provisional,0,2
+summary,Representative in the General Assembly 122nd District (Vote for 1),REP,Total,14628,2
+zero,Governor and Lieutenant Governor (Vote for 1),DEM,Election Day,0,1
+zero,Governor and Lieutenant Governor (Vote for 1),DEM,Mail-In,0,1
+zero,Governor and Lieutenant Governor (Vote for 1),DEM,Provisional,0,1
+zero,Governor and Lieutenant Governor (Vote for 1),DEM,Total,0,1
+zero,Governor and Lieutenant Governor (Vote for 1),REP,Election Day,0,1
+zero,Governor and Lieutenant Governor (Vote for 1),REP,Mail-In,0,1
+zero,Governor and Lieutenant Governor (Vote for 1),REP,Provisional,0,1
+zero,Governor and Lieutenant Governor (Vote for 1),REP,Total,0,1
+zero,Governor and Lieutenant Governor (Vote for 1),LIB,Election Day,0,1
+zero,Governor and Lieutenant Governor (Vote for 1),LIB,Mail-In,0,1
+zero,Governor and Lieutenant Governor (Vote for 1),LIB,Provisional,0,1
+zero,Governor and Lieutenant Governor (Vote for 1),LIB,Total,0,1
+zero,Representative in Congress 7th District (Vote for 1),DEM,Election Day,0,1
+zero,Representative in Congress 7th District (Vote for 1),DEM,Mail-In,0,1
+zero,Representative in Congress 7th District (Vote for 1),DEM,Provisional,0,1
+zero,Representative in Congress 7th District (Vote for 1),DEM,Total,0,1
+zero,Representative in Congress 7th District (Vote for 1),REP,Election Day,0,1
+zero,Representative in Congress 7th District (Vote for 1),REP,Mail-In,0,1
+zero,Representative in Congress 7th District (Vote for 1),REP,Provisional,0,1
+zero,Representative in Congress 7th District (Vote for 1),REP,Total,0,1
+zero,Representative in the General Assembly 122nd District (Vote for 1),DEM,Election Day,0,1
+zero,Representative in the General Assembly 122nd District (Vote for 1),DEM,Mail-In,0,1
+zero,Representative in the General Assembly 122nd District (Vote for 1),DEM,Provisional,0,1
+zero,Representative in the General Assembly 122nd District (Vote for 1),DEM,Total,0,1
+zero,Representative in the General Assembly 122nd District (Vote for 1),REP,Election Day,0,1
+zero,Representative in the General Assembly 122nd District (Vote for 1),REP,Mail-In,0,1
+zero,Representative in the General Assembly 122nd District (Vote for 1),REP,Provisional,0,1
+zero,Representative in the General Assembly 122nd District (Vote for 1),REP,Total,0,1

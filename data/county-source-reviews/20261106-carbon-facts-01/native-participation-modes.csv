@@ -1,0 +1,9 @@
+source_report,counting_mode_literal,voters_cast,native_mode_registered_voters,native_county_registered_voters,native_printed_turnout,source_update_literal,declared_timezone,source_page
+summary,Election Day,20375,,45896,44.39%,11/3/2026 10:36:36 PM,,1
+summary,Mail-In,4465,,45896,9.73%,11/3/2026 10:36:36 PM,,1
+summary,Provisional,0,,45896,0.00%,11/3/2026 10:36:36 PM,,1
+summary,Total,24840,45896,45896,54.12%,11/3/2026 10:36:36 PM,,1
+zero,Election Day,0,,45896,0.00%,11/3/2026 7:05:24 PM,,1
+zero,Mail-In,0,,45896,0.00%,11/3/2026 7:05:24 PM,,1
+zero,Provisional,0,,45896,0.00%,11/3/2026 7:05:24 PM,,1
+zero,Total,0,45896,45896,0.00%,11/3/2026 7:05:24 PM,,1

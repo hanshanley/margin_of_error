@@ -1,0 +1,2 @@
+year,state_code,county,native_participation_measure_literal,reported_voters_cast,registered_voters,native_printed_turnout,election_day_count,mail_in_count,provisional_count,reported_precincts,total_precincts,source_status_literal,source_update_literal,declared_timezone,source_report,source_page
+2026,PA,Carbon,Voters Cast,24840,45896,54.12%,20375,4465,0,51,51,Unofficial Results,11/3/2026 10:36:36 PM,,summary,1

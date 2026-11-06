@@ -1,0 +1,54 @@
+{
+  "audit.json": {
+    "bytes": 2550,
+    "sha256": "056db770be0a8c4cdc50f3986b0fecf9f8a87331b999b0df0f37482d64aef1c7"
+  },
+  "county-candidate-results.csv": {
+    "bytes": 13148,
+    "sha256": "1797f943d204ffbd3e0919524298e31a855f75cb14901fb239f6fa5b232d0aa3"
+  },
+  "county-literal-party-totals.csv": {
+    "bytes": 4542,
+    "sha256": "014acfa662b8713fc3c3bd70c53d2c9ccd7608b3428c83162f5be2b14c540a7d"
+  },
+  "county-participation.csv": {
+    "bytes": 413,
+    "sha256": "68ec38689b3af14ae221a3c577aa3aa3e08d05313d6cb0af39480a212642b607"
+  },
+  "native-contest-accounting.csv": {
+    "bytes": 4484,
+    "sha256": "7524695f7206c86ac766c721e466104a6bce388c53311094522b92bd29a30015"
+  },
+  "native-participation-modes.csv": {
+    "bytes": 654,
+    "sha256": "c14d8ae742996bd1acb7d6a20334773dbf7ee2b36c66f06d3d2daf033d73ee73"
+  },
+  "native-report-observations.csv": {
+    "bytes": 522,
+    "sha256": "080c357934d7c415c513fcfef5f4af4adcdd52dbdea86040a860e0577355dcc7"
+  },
+  "native-source-pages.csv": {
+    "bytes": 7061,
+    "sha256": "5cc7fc5a94e644830836ce5f75aa187c10975f621741d030919211d6bd131a2b"
+  },
+  "native-source-selection.csv": {
+    "bytes": 1156,
+    "sha256": "67940e9df6f35d32bccd3e7ed49fbaedb0e5d0631d41e9a5deb0b878e54cff4d"
+  },
+  "native-unit-participation.csv": {
+    "bytes": 5052,
+    "sha256": "fb4c821201c0b9be3d1aee48938c5981da74858795eadc3bd1a7c8cac9b48407"
+  },
+  "review-carbon-county-results.py": {
+    "bytes": 17483,
+    "sha256": "6079a1bc2190865680a9cc527039a277b56445a7a246fe2114ed12b18839e32d"
+  },
+  "source-receipts.json": {
+    "bytes": 7121,
+    "sha256": "a0a4054c3f0d4e9c7f66fb27fe55e7a8a7f057e6c3921abf7aca89a43ace5da3"
+  },
+  "source-records.json.gz": {
+    "bytes": 6495,
+    "sha256": "f7b091362f37cd103b3218665338a287022ff8fe08a13c2e6b31c6ec4b6261c7"
+  }
+}

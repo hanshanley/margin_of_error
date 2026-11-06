@@ -1281,8 +1281,39 @@ Exact tag credential run **42180182105** and review run **42180180088**
 both pass. GitHub reports `immutable:false`: fixed checksums/never overwrite,
 not host-enforced locking. Complete publication evidence is under
 `data/county-source-reviews/20261106-cameron-publication-01/`.
-Carbon's complete factual query and both county explorer integrations remain
-pending; neither new county is integrated into the live UI.
+Carbon's complete scoped factual query is independently transcribed and
+verified under `data/county-source-reviews/20261106-carbon-facts-01/`.
+Nine complete CSV tables retain the current and earlier zero-report observations
+separately: **104 mode-specific choice rows, 56 literal-party/mode totals,
+32 contest-accounting rows, eight native participation/mode rows and three
+distinct report observations**. Twenty-seven entire source pages agree between
+the two engines; corrected rotated-header reading substitutes no tokens/values.
+The numerical statement query explicitly includes participation only, not a
+claim that unit candidate tables on pages 4–23 have been transcribed.
+
+All **55 complete statement label/value rows independently match** between
+PyMuPDF sequential extraction and pdfplumber native-coordinate row pairing,
+including wrapped labels. The 51 native units sum exactly to **24,840/45,896**;
+both county footers and both Cumulative zero/N/A containers remain in the
+query without being added. Both Kidder units separately sum to **807/1,457**.
+All missing mode-specific registrations remain absent; native mode fractions
+are not reinterpreted as mode electorates. Unresolved write-ins and the
+**350/381/288/30 unclassified** participation-minus-choice residuals are
+preserved, never renamed missing overvotes/undervotes.
+
+Twelve focused rejection cases pass, including swapping unit counts while
+preserving county sums, earlier-zero substitution, erased provisional zero,
+invented mode electorates, Cumulative N/A loss, Kidder electorate substitution,
+literal-party normalization, write-in changes, residual relabelling, borrowed
+report clocks and selection of the stale primary link.
+All **fifteen entire files and fourteen ZIP members** reproduce byte-identically
+offline using Python's standard library. The complete LF-format ZIP is
+**74,268 bytes**, SHA-256
+`ae0b7c6bb55e2dfdcf35c9579cf8a8305f4abf0a98ba673ab3f6a5df086a394a`.
+Full primary, native row-identity, all-file and ZIP proofs are under
+`data/county-source-reviews/20261106-carbon-primary-review-01/`.
+Carbon publication/anonymous byte checks and both county explorer integrations
+remain pending; neither new county is integrated into the live UI.
 Private acquisition and engine proofs are in
 `pa-cameron-carbon-primary-20261106-01`,
 `pa-carbon-declared-reports-20261106-01` and

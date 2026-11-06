@@ -1,0 +1,4 @@
+source_report,observation_role,native_participation_measure_literal,voters_cast,registered_voters,native_printed_turnout,source_status_literal,source_update_literal,declared_timezone,native_reported_precincts,native_total_precincts
+summary,current_unofficial,Voters Cast,24840,45896,54.12%,Unofficial Results,11/3/2026 10:36:36 PM,,51,51
+zero,precount_zero,Voters Cast,0,45896,0.00%,Official Zero Report,11/3/2026 7:05:24 PM,,,
+statement,current_detailed_statement,Voters Cast,24840,45896,54.12%,,11/3/2026 10:19:13 PM,,,

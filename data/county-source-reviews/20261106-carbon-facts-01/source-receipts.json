@@ -1,0 +1,127 @@
+[
+  {
+    "file": "carbon-index-0.response",
+    "url": "https://www.carboncountypa.gov/services/elections_voter_registration/results/",
+    "status": 200,
+    "location": null,
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 68793,
+    "sha256": "b1db0fa51d5beee347d808d7f79b0575b9fe442272c62665f1b4a32bed55f459",
+    "fetched_at_utc": "2026-11-06T07:11:05.062299+00:00"
+  },
+  {
+    "file": "carbon-terms-0.response",
+    "url": "https://www.carboncountypa.gov/how_do_i/view/terms_of_use.php",
+    "parent_declaration": {
+      "county": "carbon",
+      "role": "terms_declaration",
+      "label": "Terms of Use",
+      "url": "https://www.carboncountypa.gov/how_do_i/view/terms_of_use.php"
+    },
+    "status": 200,
+    "location": null,
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 76504,
+    "sha256": "a7d6aa75c1fc4195d9e5dd176e7cd7d8449094354bcef6ee06b670d7aaa96814",
+    "fetched_at_utc": "2026-11-06T07:11:56.553840+00:00"
+  },
+  {
+    "file": "carbon-zero-0.response",
+    "url": "https://www.carboncountypa.gov/Document Center/Service/Elections Voter Registration/2026 General ELection Nov/2026GeneralElection_ZeroReport.pdf?t=202611031959350",
+    "parent_declaration": {
+      "county": "carbon",
+      "parent_url": "https://www.carboncountypa.gov/services/elections_voter_registration/results/",
+      "label": "View Here",
+      "url": "https://www.carboncountypa.gov/Document Center/Service/Elections Voter Registration/2026 General ELection Nov/2026GeneralElection_ZeroReport.pdf?t=202611031959350"
+    },
+    "status": 302,
+    "location": "https://cms5.revize.com/revize/carboncounty/Document Center/Service/Elections Voter Registration/2026 General ELection Nov/2026GeneralElection_ZeroReport.pdf?t=202611031959350",
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 298,
+    "sha256": "0dca6f0b447fe703ac5b2f30b6209b6695c102aa3c2200ce8ea0a1fe25e4c5f7",
+    "fetched_at_utc": "2026-11-06T07:11:56.601353+00:00"
+  },
+  {
+    "file": "carbon-summary-0.response",
+    "url": "https://www.carboncountypa.gov/Document Center/Service/Elections Voter Registration/2026 General ELection Nov/ElectionSummaryReportRPT.pdf?t=202611032219040",
+    "parent_declaration": {
+      "county": "carbon",
+      "parent_url": "https://www.carboncountypa.gov/services/elections_voter_registration/results/",
+      "label": "View Here",
+      "url": "https://www.carboncountypa.gov/Document Center/Service/Elections Voter Registration/2026 General ELection Nov/ElectionSummaryReportRPT.pdf?t=202611032219040"
+    },
+    "status": 302,
+    "location": "https://cms5.revize.com/revize/carboncounty/Document Center/Service/Elections Voter Registration/2026 General ELection Nov/ElectionSummaryReportRPT.pdf?t=202611032219040",
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 292,
+    "sha256": "caba4d5f6196efd7f0129a92f199943e810f2d6f6dd232c406d0ca5c514c8985",
+    "fetched_at_utc": "2026-11-06T07:11:56.630181+00:00"
+  },
+  {
+    "file": "carbon-statement-0.response",
+    "url": "https://www.carboncountypa.gov/Document Center/Service/Elections Voter Registration/2026 General ELection Nov/StatementOfVotesCastRPT.pdf?t=202611032232170",
+    "parent_declaration": {
+      "county": "carbon",
+      "parent_url": "https://www.carboncountypa.gov/services/elections_voter_registration/results/",
+      "label": "View Here",
+      "url": "https://www.carboncountypa.gov/Document Center/Service/Elections Voter Registration/2026 General ELection Nov/StatementOfVotesCastRPT.pdf?t=202611032232170"
+    },
+    "status": 302,
+    "location": "https://cms5.revize.com/revize/carboncounty/Document Center/Service/Elections Voter Registration/2026 General ELection Nov/StatementOfVotesCastRPT.pdf?t=202611032232170",
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 291,
+    "sha256": "7d192489adc1692b46f4e107e38b11ac8f08576b21b2d9f77c76d413ea3130a5",
+    "fetched_at_utc": "2026-11-06T07:11:56.656821+00:00"
+  },
+  {
+    "file": "carbon-zero-redirect-1.response",
+    "url": "https://cms5.revize.com/revize/carboncounty/Document Center/Service/Elections Voter Registration/2026 General ELection Nov/2026GeneralElection_ZeroReport.pdf?t=202611031959350",
+    "parent_declaration": {
+      "county": "carbon",
+      "parent_url": "https://www.carboncountypa.gov/services/elections_voter_registration/results/",
+      "label": "View Here",
+      "url": "https://www.carboncountypa.gov/Document Center/Service/Elections Voter Registration/2026 General ELection Nov/2026GeneralElection_ZeroReport.pdf?t=202611031959350"
+    },
+    "redirect_declared_by_response_url": "https://www.carboncountypa.gov/Document Center/Service/Elections Voter Registration/2026 General ELection Nov/2026GeneralElection_ZeroReport.pdf?t=202611031959350",
+    "status": 200,
+    "location": null,
+    "content_type": "application/pdf",
+    "bytes": 179117,
+    "sha256": "1ec74479aba6557864ae80ab88fb65388a9dfdd3247a3d9e53ea68d3ed953f73",
+    "fetched_at_utc": "2026-11-06T07:12:19.897039+00:00"
+  },
+  {
+    "file": "carbon-summary-redirect-1.response",
+    "url": "https://cms5.revize.com/revize/carboncounty/Document Center/Service/Elections Voter Registration/2026 General ELection Nov/ElectionSummaryReportRPT.pdf?t=202611032219040",
+    "parent_declaration": {
+      "county": "carbon",
+      "parent_url": "https://www.carboncountypa.gov/services/elections_voter_registration/results/",
+      "label": "View Here",
+      "url": "https://www.carboncountypa.gov/Document Center/Service/Elections Voter Registration/2026 General ELection Nov/ElectionSummaryReportRPT.pdf?t=202611032219040"
+    },
+    "redirect_declared_by_response_url": "https://www.carboncountypa.gov/Document Center/Service/Elections Voter Registration/2026 General ELection Nov/ElectionSummaryReportRPT.pdf?t=202611032219040",
+    "status": 200,
+    "location": null,
+    "content_type": "application/pdf",
+    "bytes": 176060,
+    "sha256": "342a3ba77d58248af19cfe68299ee0fb894483d88acb1371a56818562eab8100",
+    "fetched_at_utc": "2026-11-06T07:12:19.941724+00:00"
+  },
+  {
+    "file": "carbon-statement-redirect-1.response",
+    "url": "https://cms5.revize.com/revize/carboncounty/Document Center/Service/Elections Voter Registration/2026 General ELection Nov/StatementOfVotesCastRPT.pdf?t=202611032232170",
+    "parent_declaration": {
+      "county": "carbon",
+      "parent_url": "https://www.carboncountypa.gov/services/elections_voter_registration/results/",
+      "label": "View Here",
+      "url": "https://www.carboncountypa.gov/Document Center/Service/Elections Voter Registration/2026 General ELection Nov/StatementOfVotesCastRPT.pdf?t=202611032232170"
+    },
+    "redirect_declared_by_response_url": "https://www.carboncountypa.gov/Document Center/Service/Elections Voter Registration/2026 General ELection Nov/StatementOfVotesCastRPT.pdf?t=202611032232170",
+    "status": 200,
+    "location": null,
+    "content_type": "application/pdf",
+    "bytes": 415832,
+    "sha256": "4f0e2487c53ac170b1bf6ade70ec9109dfdf2fe62b4700ab571e39d57eae52be",
+    "fetched_at_utc": "2026-11-06T07:12:19.984168+00:00"
+  }
+]
