@@ -132,7 +132,7 @@ the exact 267-link set, retaining all prior 258 links and unchanged coverage.
 No unchanged map suite was repeated. See
 `data/county-source-reviews/20261105-berks-publication-01/`.
 
-**Provider overlap repair under validation.** Scheduled refresh `42130717845`
+**Provider overlap repair is published and live verified.** Scheduled refresh `42130717845`
 acquired all 435 district originals and reconciled all 67 Pennsylvania counties,
 but correctly stopped at the previous no-overlap guard. Exact failed-run inputs
 reproduce that failure. Provider major-party totals match Monroe, Bucks and
@@ -150,9 +150,31 @@ pipeline tests pass. The refresh also updates the Pennsylvania county ledger
 without claiming final counting and verifies uploaded ZIP bytes while the
 release is still draft. Raw provider caches and reviewed output are screened
 for copied credentials before any release operation. Full controller replay
-passes with the last-good pointer retained; Astro check and build pass, and
-the unchanged 267-download Pages artifact remains 987,335,410 bytes.
-Actual publication and changed-map local/production proof remain required. See
+passes with the last-good pointer retained. The actual draft-first publisher
+then published immutable release
+`voter-county-2026-20261105-provider-overlap-01`, data revision
+`7437b4399e5a425c6ec2b3080ca268418a59e73b` and pointer/main revision
+`f231deae3d3c9e7ab4f96c676a4c97ad06b6d56d`.
+All seven public data downloads match reviewed bytes. The 150,787,009-byte
+complete ZIP has 140 unique members and SHA256
+`62c57cffebeae0b2bb048c37dc852e1f040306857e351a0cd2e0282f24fa8cdb`.
+All payload checksums, public table/archive equality and byte-identical packaged
+offline reproduction pass. Astro check, build and Pages preparation pass;
+the prepared artifact is 987,349,424 bytes with all 94 bulk downloads verified.
+Exact Pages run `42134109124` and full-history credential run `42134109002`
+succeeded. On November 6 UTC, all four local and production display modes
+passed the exact 274-download set, retaining all prior 267 links, all 52 UF
+rows, five historical years and 255 historical cells. The full changed-map
+suite source-matched all 3,124 colorable counties and 49 state drilldowns,
+including all 67 Pennsylvania counties, with zoom, precinct priority,
+historical isolation and failure fallbacks intact. Production pointer,
+overview, county ledger, participation registry and download-manifest bytes
+match the prepared artifact; the source-precedence explanation is visible.
+County identity coverage is not final counting, ballots, turnout, demographic
+participation or statewide completion. The older three-county descriptions
+below are historical records, superseded by this verified snapshot. Continue
+primary county participation acquisition and the genuine Maine/D.C. scope gaps.
+Do not repeat this completed map suite for subsequent download-only batches. See
 `data/county-source-reviews/20261105-provider-overlap-review-01/`.
 
 **Earlier current-source cleanup (historical record).** On November 5,

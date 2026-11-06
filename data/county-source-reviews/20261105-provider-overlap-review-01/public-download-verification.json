@@ -1,0 +1,61 @@
+{
+  "verified_at_utc": "2026-11-06T00:08:24.861037+00:00",
+  "data_commit": "7437b4399e5a425c6ec2b3080ca268418a59e73b",
+  "pointer_commit": "f231deae3d3c9e7ab4f96c676a4c97ad06b6d56d",
+  "downloads": [
+    {
+      "file": "complete-county-results.zip",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-2026-20261105-provider-overlap-01/complete-county-results.zip",
+      "bytes": 150787009,
+      "sha256": "62c57cffebeae0b2bb048c37dc852e1f040306857e351a0cd2e0282f24fa8cdb",
+      "byte_identical": true
+    },
+    {
+      "file": "county-results.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7437b4399e5a425c6ec2b3080ca268418a59e73b/data/county-results/20261105-provider-overlap-01/county-results.csv",
+      "bytes": 400280,
+      "sha256": "1ebe3ec9945f6fed78178dc035b26f4675831fb5ff31b9bb734f112612f559d7",
+      "byte_identical": true
+    },
+    {
+      "file": "county-results.json.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7437b4399e5a425c6ec2b3080ca268418a59e73b/data/county-results/20261105-provider-overlap-01/county-results.json.gz",
+      "bytes": 265081,
+      "sha256": "8bbf8065c32f0db8942d2e00db8343ec3202ae761bb52de084d134a1e0dd1ffa",
+      "byte_identical": true
+    },
+    {
+      "file": "county-party-totals.csv.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7437b4399e5a425c6ec2b3080ca268418a59e73b/data/county-results/20261105-provider-overlap-01/party-votes/county-party-totals.csv.gz",
+      "bytes": 76442,
+      "sha256": "05b9e3cc3e0d80c31352a94939ebd869c900a3043bf8e9dd0f1c53dbb4978936",
+      "byte_identical": true
+    },
+    {
+      "file": "county-district-candidate-totals.csv.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7437b4399e5a425c6ec2b3080ca268418a59e73b/data/county-results/20261105-provider-overlap-01/party-votes/county-district-candidate-totals.csv.gz",
+      "bytes": 142783,
+      "sha256": "e3be13f713a0ef9c02a69846bbd6de404ea307e29f307c8aa101ac3082f045de",
+      "byte_identical": true
+    },
+    {
+      "file": "state-party-totals.csv.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7437b4399e5a425c6ec2b3080ca268418a59e73b/data/county-results/20261105-provider-overlap-01/party-votes/state-party-totals.csv.gz",
+      "bytes": 2406,
+      "sha256": "72b2f1f25144d448464841d8930e5d21b4028e07b48fb5b69fcd99ce8b487288",
+      "byte_identical": true
+    },
+    {
+      "file": "district-candidate-totals.csv.gz",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/7437b4399e5a425c6ec2b3080ca268418a59e73b/data/county-results/20261105-provider-overlap-01/party-votes/district-candidate-totals.csv.gz",
+      "bytes": 25461,
+      "sha256": "305e490dbb4344634432ac633fa89685475294d7496f00b6629bf86c4a0f7d47",
+      "byte_identical": true
+    }
+  ],
+  "unique_archive_members": 140,
+  "all_archive_payload_checksums_match": true,
+  "public_csvs_and_json_match_archive": true,
+  "packaged_merger_offline_reproduction_byte_identical": true,
+  "all_original_provider_and_official_sources_retained": true
+}
