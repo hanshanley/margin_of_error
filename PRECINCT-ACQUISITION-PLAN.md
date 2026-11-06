@@ -2,6 +2,31 @@
 
 ## Current verified production and next acquisition
 
+**November 6: Indiana, Lackawanna and Schuylkill complete numerical review passed; publication and UI pending.**
+All six declared native PDFs were acquired with verified TLS. Two independent
+PDF extractors agree on all eight county-summary pages and all 357 native unit
+participation headers across 520 statement pages. The complete county totals are
+**Indiana 28,095 ballots / 49,255 registrations (printed 57.04%)**,
+**Lackawanna 87,067 / 151,015 (57.65%)**, and
+**Schuylkill 48,402 / 92,875 (52.12%)**. Unit registrations, ballots and blanks
+reconcile in every supplied mode. Indiana supplies total-only counts; missing
+modes and missing overvotes/undervotes are not zero. Schuylkill supplies no native
+contest totals, overvotes or undervotes. Preserve Lackawanna's contradictory
+reporting-mode counters and restricted local-question electorates. Schuylkill
+unit 137 Pine Grove Township 1st prints 55.42% against 802 / 1,447
+(55.425017277125086% calculated); retain and flag this native rounding discrepancy.
+All 22 county-summary contests retain literal parties and supplied accounting.
+The query deliberately does not claim complete statement candidate results.
+The **15-file / 14-member** packet in `20261106-three-pa-summary-facts-01`
+passes **13 focused tests** and extracted standard-library byte-identical
+reproduction of every file. ZIP **52,155 bytes**, SHA-256
+`f99c8690de84a0302319504fd1eb902e54b634487f29b6c0508c4a167f0683e6`.
+Native clocks have no timezone; all three reports remain UNOFFICIAL RESULTS.
+No native FIPS, certification, completed counting or new geometry is inferred.
+Next: freeze and server-lock the complete query, independently review contextual
+identities, then integrate and verify the actual deployment. Main/context17 is
+unchanged; these three counties are not yet claimed live.
+
 **November 6, 14:22 UTC: Michigan consolidated QVF complete query published and server-locked.**
 The official dashboard's declared public report now supplies all **83 native
 county scopes**, acquired using ordinary selector/search/clear controls with

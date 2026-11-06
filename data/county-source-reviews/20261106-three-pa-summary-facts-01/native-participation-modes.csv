@@ -1,0 +1,10 @@
+county,state_code,election_date,native_status_literal,source_update_literal,declared_timezone,source_fips,source_url,counting_mode_literal,ballots_cast,blank_ballots,registered_voters
+Indiana,PA,2026-11-03,UNOFFICIAL RESULTS,11/03/2026 10:03 PM,,,https://www.indianacountypa.gov/wp-content/uploads/Summary-2.pdf,TOTAL,28095,3,49255
+Lackawanna,PA,2026-11-03,UNOFFICIAL RESULTS,11/03/2026 10:02PM,,,https://www.lackawannacounty.org/Document_center/Department/Elections/G26.SUM12.pdf?t=202611032210180,TOTAL,87067,10,151015
+Lackawanna,PA,2026-11-03,UNOFFICIAL RESULTS,11/03/2026 10:02PM,,,https://www.lackawannacounty.org/Document_center/Department/Elections/G26.SUM12.pdf?t=202611032210180,Election Day,66897,9,
+Lackawanna,PA,2026-11-03,UNOFFICIAL RESULTS,11/03/2026 10:02PM,,,https://www.lackawannacounty.org/Document_center/Department/Elections/G26.SUM12.pdf?t=202611032210180,Mail Votes,20170,1,
+Lackawanna,PA,2026-11-03,UNOFFICIAL RESULTS,11/03/2026 10:02PM,,,https://www.lackawannacounty.org/Document_center/Department/Elections/G26.SUM12.pdf?t=202611032210180,Provisional Votes,0,0,
+Schuylkill,PA,2026-11-03,UNOFFICIAL RESULTS,11/04/2026 11:01 AM,,,https://schuylkillcountypa.gov/Document_Center/Departments/Election Bureau/2026/General/2026_General_Election_Summary_Final_2.pdf?t=202611041138300,TOTAL,48402,16,92875
+Schuylkill,PA,2026-11-03,UNOFFICIAL RESULTS,11/04/2026 11:01 AM,,,https://schuylkillcountypa.gov/Document_Center/Departments/Election Bureau/2026/General/2026_General_Election_Summary_Final_2.pdf?t=202611041138300,Election Day,40247,7,
+Schuylkill,PA,2026-11-03,UNOFFICIAL RESULTS,11/04/2026 11:01 AM,,,https://schuylkillcountypa.gov/Document_Center/Departments/Election Bureau/2026/General/2026_General_Election_Summary_Final_2.pdf?t=202611041138300,Mail Votes,8155,9,
+Schuylkill,PA,2026-11-03,UNOFFICIAL RESULTS,11/04/2026 11:01 AM,,,https://schuylkillcountypa.gov/Document_Center/Departments/Election Bureau/2026/General/2026_General_Election_Summary_Final_2.pdf?t=202611041138300,Provisional,0,0,

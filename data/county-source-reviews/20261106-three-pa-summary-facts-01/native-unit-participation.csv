@@ -1,0 +1,1222 @@
+county,unit_literal,source_page,source_update_literal,declared_timezone,counting_mode_literal,ballots_cast,blank_ballots,registered_voters,native_printed_turnout,printed_turnout_rounding_conflict
+Indiana,ARMAGH,1,11/03/2026 10:04 PM,,TOTAL,31,0,51,60.78%,False
+Indiana,ARMSTRONG #1,2,11/03/2026 10:04 PM,,TOTAL,313,0,508,61.61%,False
+Indiana,ARMSTRONG #2,3,11/03/2026 10:04 PM,,TOTAL,889,0,1455,61.10%,False
+Indiana,BANKS,4,11/03/2026 10:04 PM,,TOTAL,300,0,535,56.07%,False
+Indiana,BLACKLICK,5,11/03/2026 10:04 PM,,TOTAL,533,0,825,64.61%,False
+Indiana,BLAIRSVILLE #1,6,11/03/2026 10:04 PM,,TOTAL,374,0,667,56.07%,False
+Indiana,BLAIRSVILLE #2,7,11/03/2026 10:04 PM,,TOTAL,389,0,709,54.87%,False
+Indiana,BLAIRSVILLE #3,8,11/03/2026 10:04 PM,,TOTAL,425,0,768,55.34%,False
+Indiana,BRUSH VALLEY,9,11/03/2026 10:04 PM,,TOTAL,631,0,952,66.28%,False
+Indiana,BUFFINGTON #1,10,11/03/2026 10:04 PM,,TOTAL,382,0,635,60.16%,False
+Indiana,BUFFINGTON #2,11,11/03/2026 10:04 PM,,TOTAL,109,0,187,58.29%,False
+Indiana,BURRELL #1,12,11/03/2026 10:04 PM,,TOTAL,448,0,862,51.97%,False
+Indiana,BURRELL #2,13,11/03/2026 10:04 PM,,TOTAL,731,0,1215,60.16%,False
+Indiana,CANOE,14,11/03/2026 10:04 PM,,TOTAL,425,0,825,51.52%,False
+Indiana,CENTER #1,15,11/03/2026 10:04 PM,,TOTAL,475,0,817,58.14%,False
+Indiana,CENTER #2,16,11/03/2026 10:04 PM,,TOTAL,412,0,743,55.45%,False
+Indiana,CENTER #3,17,11/03/2026 10:04 PM,,TOTAL,781,0,1387,56.31%,False
+Indiana,CHERRYHILL #1,18,11/03/2026 10:04 PM,,TOTAL,693,0,1082,64.05%,False
+Indiana,CHERRYHILL #2,19,11/03/2026 10:04 PM,,TOTAL,333,0,572,58.22%,False
+Indiana,CHERRY TREE,20,11/03/2026 10:04 PM,,TOTAL,87,0,164,53.05%,False
+Indiana,CLYMER,21,11/03/2026 10:04 PM,,TOTAL,368,1,784,46.94%,False
+Indiana,CONEMAUGH #1,22,11/03/2026 10:04 PM,,TOTAL,148,0,257,57.59%,False
+Indiana,CONEMAUGH #2,23,11/03/2026 10:04 PM,,TOTAL,406,0,683,59.44%,False
+Indiana,CONEMAUGH #3,24,11/03/2026 10:04 PM,,TOTAL,249,0,436,57.11%,False
+Indiana,CREEKSIDE,25,11/03/2026 10:04 PM,,TOTAL,92,0,189,48.68%,False
+Indiana,ERNEST,26,11/03/2026 10:04 PM,,TOTAL,103,0,257,40.08%,False
+Indiana,GLEN CAMPBELL,27,11/03/2026 10:04 PM,,TOTAL,83,0,146,56.85%,False
+Indiana,GRANT,28,11/03/2026 10:04 PM,,TOTAL,251,0,451,55.65%,False
+Indiana,GREEN #1,29,11/03/2026 10:04 PM,,TOTAL,527,0,887,59.41%,False
+Indiana,GREEN #2,30,11/03/2026 10:04 PM,,TOTAL,474,0,852,55.63%,False
+Indiana,GREEN #3,31,11/03/2026 10:04 PM,,TOTAL,194,0,377,51.46%,False
+Indiana,HOMER CITY #1,32,11/03/2026 10:04 PM,,TOTAL,397,0,682,58.21%,False
+Indiana,HOMER CITY #2,33,11/03/2026 10:04 PM,,TOTAL,232,0,412,56.31%,False
+Indiana,INDIANA #1,34,11/03/2026 10:04 PM,,TOTAL,666,0,1177,56.58%,False
+Indiana,INDIANA #2/1,35,11/03/2026 10:04 PM,,TOTAL,373,0,784,47.58%,False
+Indiana,INDIANA #2/2,36,11/03/2026 10:04 PM,,TOTAL,556,0,912,60.96%,False
+Indiana,INDIANA #3/1,37,11/03/2026 10:04 PM,,TOTAL,182,0,578,31.49%,False
+Indiana,INDIANA #3/2,38,11/03/2026 10:04 PM,,TOTAL,346,0,868,39.86%,False
+Indiana,INDIANA #3/4,39,11/03/2026 10:04 PM,,TOTAL,297,0,536,55.41%,False
+Indiana,INDIANA #4,40,11/03/2026 10:04 PM,,TOTAL,513,0,977,52.51%,False
+Indiana,EAST MAHONING,41,11/03/2026 10:04 PM,,TOTAL,360,0,621,57.97%,False
+Indiana,NORTH MAHONING,42,11/03/2026 10:04 PM,,TOTAL,371,0,601,61.73%,False
+Indiana,SOUTH MAHONING,43,11/03/2026 10:04 PM,,TOTAL,474,0,755,62.78%,False
+Indiana,WEST MAHONING,44,11/03/2026 10:04 PM,,TOTAL,154,0,266,57.89%,False
+Indiana,MARION CENTER,45,11/03/2026 10:04 PM,,TOTAL,155,0,257,60.31%,False
+Indiana,MONTGOMERY,46,11/03/2026 10:04 PM,,TOTAL,500,0,888,56.31%,False
+Indiana,PINE #1,47,11/03/2026 10:04 PM,,TOTAL,313,0,541,57.86%,False
+Indiana,PINE #2,48,11/03/2026 10:04 PM,,TOTAL,170,0,292,58.22%,False
+Indiana,PINE #3,49,11/03/2026 10:04 PM,,TOTAL,156,0,291,53.61%,False
+Indiana,PLUMVILLE,50,11/03/2026 10:04 PM,,TOTAL,75,0,146,51.37%,False
+Indiana,RAYNE,51,11/03/2026 10:04 PM,,TOTAL,1092,0,1855,58.87%,False
+Indiana,SALTSBURG,52,11/03/2026 10:04 PM,,TOTAL,288,0,476,60.50%,False
+Indiana,SHELOCTA,53,11/03/2026 10:04 PM,,TOTAL,29,0,52,55.77%,False
+Indiana,SMICKSBURG,54,11/03/2026 10:04 PM,,TOTAL,18,0,25,72.00%,False
+Indiana,WASHINGTON,55,11/03/2026 10:04 PM,,TOTAL,631,0,1137,55.50%,False
+Indiana,EAST WHEATFIELD #1,56,11/03/2026 10:04 PM,,TOTAL,495,1,917,53.98%,False
+Indiana,EAST WHEATFIELD #2,57,11/03/2026 10:04 PM,,TOTAL,312,0,542,57.56%,False
+Indiana,WEST WHEATFIELD #1,58,11/03/2026 10:04 PM,,TOTAL,379,0,672,56.40%,False
+Indiana,WEST WHEATFIELD #2,59,11/03/2026 10:04 PM,,TOTAL,398,0,675,58.96%,False
+Indiana,WHITE #1,60,11/03/2026 10:04 PM,,TOTAL,923,0,1478,62.45%,False
+Indiana,WHITE #2,61,11/03/2026 10:04 PM,,TOTAL,1319,0,2072,63.66%,False
+Indiana,WHITE #3/1,62,11/03/2026 10:04 PM,,TOTAL,811,0,1318,61.53%,False
+Indiana,WHITE #3/2,63,11/03/2026 10:04 PM,,TOTAL,760,0,1459,52.09%,False
+Indiana,WHITE #3/3,64,11/03/2026 10:04 PM,,TOTAL,667,0,1306,51.07%,False
+Indiana,WHITE #4/5,65,11/03/2026 10:04 PM,,TOTAL,840,0,1391,60.39%,False
+Indiana,WHITE #6,66,11/03/2026 10:04 PM,,TOTAL,611,0,965,63.32%,False
+Indiana,YOUNG #1,67,11/03/2026 10:04 PM,,TOTAL,301,0,581,51.81%,False
+Indiana,YOUNG #2,68,11/03/2026 10:04 PM,,TOTAL,108,0,181,59.67%,False
+Indiana,YOUNG #3,69,11/03/2026 10:04 PM,,TOTAL,167,1,291,57.39%,False
+Lackawanna,Waverly Township W-00 P-00,1,11/03/2026 10:02PM,,TOTAL,1048,0,1507,69.54%,False
+Lackawanna,Waverly Township W-00 P-00,1,11/03/2026 10:02PM,,Election Day,830,0,,,
+Lackawanna,Waverly Township W-00 P-00,1,11/03/2026 10:02PM,,Mail Votes,218,0,,,
+Lackawanna,Waverly Township W-00 P-00,1,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Archbald W-01 P-01,3,11/03/2026 10:02PM,,TOTAL,947,0,1464,64.69%,False
+Lackawanna,Archbald W-01 P-01,3,11/03/2026 10:02PM,,Election Day,716,0,,,
+Lackawanna,Archbald W-01 P-01,3,11/03/2026 10:02PM,,Mail Votes,231,0,,,
+Lackawanna,Archbald W-01 P-01,3,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Archbald W-01 P-02,5,11/03/2026 10:02PM,,TOTAL,864,0,1368,63.16%,False
+Lackawanna,Archbald W-01 P-02,5,11/03/2026 10:02PM,,Election Day,653,0,,,
+Lackawanna,Archbald W-01 P-02,5,11/03/2026 10:02PM,,Mail Votes,211,0,,,
+Lackawanna,Archbald W-01 P-02,5,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Archbald W-02 P-01,7,11/03/2026 10:02PM,,TOTAL,488,0,815,59.88%,False
+Lackawanna,Archbald W-02 P-01,7,11/03/2026 10:02PM,,Election Day,366,0,,,
+Lackawanna,Archbald W-02 P-01,7,11/03/2026 10:02PM,,Mail Votes,122,0,,,
+Lackawanna,Archbald W-02 P-01,7,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Archbald W-03 P-00,9,11/03/2026 10:02PM,,TOTAL,314,0,515,60.97%,False
+Lackawanna,Archbald W-03 P-00,9,11/03/2026 10:02PM,,Election Day,246,0,,,
+Lackawanna,Archbald W-03 P-00,9,11/03/2026 10:02PM,,Mail Votes,68,0,,,
+Lackawanna,Archbald W-03 P-00,9,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Archbald W-04 P-01,11,11/03/2026 10:02PM,,TOTAL,1009,0,1535,65.73%,False
+Lackawanna,Archbald W-04 P-01,11,11/03/2026 10:02PM,,Election Day,785,0,,,
+Lackawanna,Archbald W-04 P-01,11,11/03/2026 10:02PM,,Mail Votes,224,0,,,
+Lackawanna,Archbald W-04 P-01,11,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Archbald W-04 P-02,13,11/03/2026 10:02PM,,TOTAL,146,0,244,59.84%,False
+Lackawanna,Archbald W-04 P-02,13,11/03/2026 10:02PM,,Election Day,118,0,,,
+Lackawanna,Archbald W-04 P-02,13,11/03/2026 10:02PM,,Mail Votes,28,0,,,
+Lackawanna,Archbald W-04 P-02,13,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Benton Township W-00 P-00,15,11/03/2026 10:02PM,,TOTAL,953,0,1466,65.01%,False
+Lackawanna,Benton Township W-00 P-00,15,11/03/2026 10:02PM,,Election Day,754,0,,,
+Lackawanna,Benton Township W-00 P-00,15,11/03/2026 10:02PM,,Mail Votes,199,0,,,
+Lackawanna,Benton Township W-00 P-00,15,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Blakely W-01 P-01,17,11/03/2026 10:02PM,,TOTAL,585,1,946,61.84%,False
+Lackawanna,Blakely W-01 P-01,17,11/03/2026 10:02PM,,Election Day,495,1,,,
+Lackawanna,Blakely W-01 P-01,17,11/03/2026 10:02PM,,Mail Votes,90,0,,,
+Lackawanna,Blakely W-01 P-01,17,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Blakely W-02 P-01,19,11/03/2026 10:02PM,,TOTAL,705,0,1124,62.72%,False
+Lackawanna,Blakely W-02 P-01,19,11/03/2026 10:02PM,,Election Day,576,0,,,
+Lackawanna,Blakely W-02 P-01,19,11/03/2026 10:02PM,,Mail Votes,129,0,,,
+Lackawanna,Blakely W-02 P-01,19,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Blakely W-03 P-01,21,11/03/2026 10:02PM,,TOTAL,737,1,1186,62.14%,False
+Lackawanna,Blakely W-03 P-01,21,11/03/2026 10:02PM,,Election Day,557,0,,,
+Lackawanna,Blakely W-03 P-01,21,11/03/2026 10:02PM,,Mail Votes,180,1,,,
+Lackawanna,Blakely W-03 P-01,21,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Blakely W-03 P-02,23,11/03/2026 10:02PM,,TOTAL,997,0,1550,64.32%,False
+Lackawanna,Blakely W-03 P-02,23,11/03/2026 10:02PM,,Election Day,786,0,,,
+Lackawanna,Blakely W-03 P-02,23,11/03/2026 10:02PM,,Mail Votes,211,0,,,
+Lackawanna,Blakely W-03 P-02,23,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Carbondale W-01 P-01,25,11/03/2026 10:02PM,,TOTAL,521,0,1085,48.02%,False
+Lackawanna,Carbondale W-01 P-01,25,11/03/2026 10:02PM,,Election Day,408,0,,,
+Lackawanna,Carbondale W-01 P-01,25,11/03/2026 10:02PM,,Mail Votes,113,0,,,
+Lackawanna,Carbondale W-01 P-01,25,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Carbondale W-01 P-02,27,11/03/2026 10:02PM,,TOTAL,276,0,518,53.28%,False
+Lackawanna,Carbondale W-01 P-02,27,11/03/2026 10:02PM,,Election Day,209,0,,,
+Lackawanna,Carbondale W-01 P-02,27,11/03/2026 10:02PM,,Mail Votes,67,0,,,
+Lackawanna,Carbondale W-01 P-02,27,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Carbondale W-03 P-01,29,11/03/2026 10:02PM,,TOTAL,140,0,288,48.61%,False
+Lackawanna,Carbondale W-03 P-01,29,11/03/2026 10:02PM,,Election Day,109,0,,,
+Lackawanna,Carbondale W-03 P-01,29,11/03/2026 10:02PM,,Mail Votes,31,0,,,
+Lackawanna,Carbondale W-03 P-01,29,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Carbondale W-03 P-02,31,11/03/2026 10:02PM,,TOTAL,266,0,570,46.67%,False
+Lackawanna,Carbondale W-03 P-02,31,11/03/2026 10:02PM,,Election Day,200,0,,,
+Lackawanna,Carbondale W-03 P-02,31,11/03/2026 10:02PM,,Mail Votes,66,0,,,
+Lackawanna,Carbondale W-03 P-02,31,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Carbondale W-03 P-03,33,11/03/2026 10:02PM,,TOTAL,423,0,788,53.68%,False
+Lackawanna,Carbondale W-03 P-03,33,11/03/2026 10:02PM,,Election Day,343,0,,,
+Lackawanna,Carbondale W-03 P-03,33,11/03/2026 10:02PM,,Mail Votes,80,0,,,
+Lackawanna,Carbondale W-03 P-03,33,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Carbondale W-04 P-01,35,11/03/2026 10:02PM,,TOTAL,336,0,662,50.76%,False
+Lackawanna,Carbondale W-04 P-01,35,11/03/2026 10:02PM,,Election Day,262,0,,,
+Lackawanna,Carbondale W-04 P-01,35,11/03/2026 10:02PM,,Mail Votes,74,0,,,
+Lackawanna,Carbondale W-04 P-01,35,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Carbondale W-05 P-01,37,11/03/2026 10:02PM,,TOTAL,230,0,452,50.88%,False
+Lackawanna,Carbondale W-05 P-01,37,11/03/2026 10:02PM,,Election Day,175,0,,,
+Lackawanna,Carbondale W-05 P-01,37,11/03/2026 10:02PM,,Mail Votes,55,0,,,
+Lackawanna,Carbondale W-05 P-01,37,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Carbondale W-05 P-02,39,11/03/2026 10:02PM,,TOTAL,193,0,421,45.84%,False
+Lackawanna,Carbondale W-05 P-02,39,11/03/2026 10:02PM,,Election Day,150,0,,,
+Lackawanna,Carbondale W-05 P-02,39,11/03/2026 10:02PM,,Mail Votes,43,0,,,
+Lackawanna,Carbondale W-05 P-02,39,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Carbondale W-06 P-01,41,11/03/2026 10:02PM,,TOTAL,220,0,456,48.25%,False
+Lackawanna,Carbondale W-06 P-01,41,11/03/2026 10:02PM,,Election Day,173,0,,,
+Lackawanna,Carbondale W-06 P-01,41,11/03/2026 10:02PM,,Mail Votes,47,0,,,
+Lackawanna,Carbondale W-06 P-01,41,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Carbondale W-06 P-02,43,11/03/2026 10:02PM,,TOTAL,129,0,313,41.21%,False
+Lackawanna,Carbondale W-06 P-02,43,11/03/2026 10:02PM,,Election Day,98,0,,,
+Lackawanna,Carbondale W-06 P-02,43,11/03/2026 10:02PM,,Mail Votes,31,0,,,
+Lackawanna,Carbondale W-06 P-02,43,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Carbondale Twp. W-00 P-NE,45,11/03/2026 10:02PM,,TOTAL,194,0,341,56.89%,False
+Lackawanna,Carbondale Twp. W-00 P-NE,45,11/03/2026 10:02PM,,Election Day,165,0,,,
+Lackawanna,Carbondale Twp. W-00 P-NE,45,11/03/2026 10:02PM,,Mail Votes,29,0,,,
+Lackawanna,Carbondale Twp. W-00 P-NE,45,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Carbondale Twp. W-00 P-NW,47,11/03/2026 10:02PM,,TOTAL,126,0,185,68.11%,False
+Lackawanna,Carbondale Twp. W-00 P-NW,47,11/03/2026 10:02PM,,Election Day,104,0,,,
+Lackawanna,Carbondale Twp. W-00 P-NW,47,11/03/2026 10:02PM,,Mail Votes,22,0,,,
+Lackawanna,Carbondale Twp. W-00 P-NW,47,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Carbondale Twp. W-00 P-SO,49,11/03/2026 10:02PM,,TOTAL,173,0,283,61.13%,False
+Lackawanna,Carbondale Twp. W-00 P-SO,49,11/03/2026 10:02PM,,Election Day,147,0,,,
+Lackawanna,Carbondale Twp. W-00 P-SO,49,11/03/2026 10:02PM,,Mail Votes,26,0,,,
+Lackawanna,Carbondale Twp. W-00 P-SO,49,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Clarks Green W-00 P-00,51,11/03/2026 10:02PM,,TOTAL,885,0,1238,71.49%,False
+Lackawanna,Clarks Green W-00 P-00,51,11/03/2026 10:02PM,,Election Day,661,0,,,
+Lackawanna,Clarks Green W-00 P-00,51,11/03/2026 10:02PM,,Mail Votes,224,0,,,
+Lackawanna,Clarks Green W-00 P-00,51,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Clarks Summit W-00 P-01,53,11/03/2026 10:02PM,,TOTAL,585,0,883,66.25%,False
+Lackawanna,Clarks Summit W-00 P-01,53,11/03/2026 10:02PM,,Election Day,447,0,,,
+Lackawanna,Clarks Summit W-00 P-01,53,11/03/2026 10:02PM,,Mail Votes,138,0,,,
+Lackawanna,Clarks Summit W-00 P-01,53,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Clarks Summit W-00 P-02,55,11/03/2026 10:02PM,,TOTAL,713,0,1112,64.12%,False
+Lackawanna,Clarks Summit W-00 P-02,55,11/03/2026 10:02PM,,Election Day,552,0,,,
+Lackawanna,Clarks Summit W-00 P-02,55,11/03/2026 10:02PM,,Mail Votes,161,0,,,
+Lackawanna,Clarks Summit W-00 P-02,55,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Clarks Summit W-00 P-03,57,11/03/2026 10:02PM,,TOTAL,656,0,957,68.55%,False
+Lackawanna,Clarks Summit W-00 P-03,57,11/03/2026 10:02PM,,Election Day,486,0,,,
+Lackawanna,Clarks Summit W-00 P-03,57,11/03/2026 10:02PM,,Mail Votes,170,0,,,
+Lackawanna,Clarks Summit W-00 P-03,57,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Clarks Summit W-00 P-04,59,11/03/2026 10:02PM,,TOTAL,761,0,1083,70.27%,False
+Lackawanna,Clarks Summit W-00 P-04,59,11/03/2026 10:02PM,,Election Day,589,0,,,
+Lackawanna,Clarks Summit W-00 P-04,59,11/03/2026 10:02PM,,Mail Votes,172,0,,,
+Lackawanna,Clarks Summit W-00 P-04,59,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Clifton Township W-00 P-00,61,11/03/2026 10:02PM,,TOTAL,621,0,1181,52.58%,False
+Lackawanna,Clifton Township W-00 P-00,61,11/03/2026 10:02PM,,Election Day,477,0,,,
+Lackawanna,Clifton Township W-00 P-00,61,11/03/2026 10:02PM,,Mail Votes,144,0,,,
+Lackawanna,Clifton Township W-00 P-00,61,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Covington Township W-00 P-00,63,11/03/2026 10:02PM,,TOTAL,1124,0,1791,62.76%,False
+Lackawanna,Covington Township W-00 P-00,63,11/03/2026 10:02PM,,Election Day,942,0,,,
+Lackawanna,Covington Township W-00 P-00,63,11/03/2026 10:02PM,,Mail Votes,182,0,,,
+Lackawanna,Covington Township W-00 P-00,63,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Dalton W-00 P-00,65,11/03/2026 10:02PM,,TOTAL,708,0,1043,67.88%,False
+Lackawanna,Dalton W-00 P-00,65,11/03/2026 10:02PM,,Election Day,568,0,,,
+Lackawanna,Dalton W-00 P-00,65,11/03/2026 10:02PM,,Mail Votes,140,0,,,
+Lackawanna,Dalton W-00 P-00,65,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Dickson City W-01 P-01,67,11/03/2026 10:02PM,,TOTAL,401,0,684,58.63%,False
+Lackawanna,Dickson City W-01 P-01,67,11/03/2026 10:02PM,,Election Day,318,0,,,
+Lackawanna,Dickson City W-01 P-01,67,11/03/2026 10:02PM,,Mail Votes,83,0,,,
+Lackawanna,Dickson City W-01 P-01,67,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Dickson City W-01 P-02,69,11/03/2026 10:02PM,,TOTAL,483,0,913,52.90%,False
+Lackawanna,Dickson City W-01 P-02,69,11/03/2026 10:02PM,,Election Day,402,0,,,
+Lackawanna,Dickson City W-01 P-02,69,11/03/2026 10:02PM,,Mail Votes,81,0,,,
+Lackawanna,Dickson City W-01 P-02,69,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Dickson City W-02 P-01,71,11/03/2026 10:02PM,,TOTAL,453,1,888,51.01%,False
+Lackawanna,Dickson City W-02 P-01,71,11/03/2026 10:02PM,,Election Day,345,1,,,
+Lackawanna,Dickson City W-02 P-01,71,11/03/2026 10:02PM,,Mail Votes,108,0,,,
+Lackawanna,Dickson City W-02 P-01,71,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Dickson City W-03 P-01,73,11/03/2026 10:02PM,,TOTAL,276,0,508,54.33%,False
+Lackawanna,Dickson City W-03 P-01,73,11/03/2026 10:02PM,,Election Day,212,0,,,
+Lackawanna,Dickson City W-03 P-01,73,11/03/2026 10:02PM,,Mail Votes,64,0,,,
+Lackawanna,Dickson City W-03 P-01,73,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Dickson City W-03 P-02,75,11/03/2026 10:02PM,,TOTAL,496,0,785,63.18%,False
+Lackawanna,Dickson City W-03 P-02,75,11/03/2026 10:02PM,,Election Day,371,0,,,
+Lackawanna,Dickson City W-03 P-02,75,11/03/2026 10:02PM,,Mail Votes,125,0,,,
+Lackawanna,Dickson City W-03 P-02,75,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Dickson City W-03 P-03,77,11/03/2026 10:02PM,,TOTAL,377,0,617,61.10%,False
+Lackawanna,Dickson City W-03 P-03,77,11/03/2026 10:02PM,,Election Day,281,0,,,
+Lackawanna,Dickson City W-03 P-03,77,11/03/2026 10:02PM,,Mail Votes,96,0,,,
+Lackawanna,Dickson City W-03 P-03,77,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Dunmore W-01 P-01,79,11/03/2026 10:02PM,,TOTAL,550,0,917,59.98%,False
+Lackawanna,Dunmore W-01 P-01,79,11/03/2026 10:02PM,,Election Day,374,0,,,
+Lackawanna,Dunmore W-01 P-01,79,11/03/2026 10:02PM,,Mail Votes,176,0,,,
+Lackawanna,Dunmore W-01 P-01,79,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Dunmore W-01 P-02,81,11/03/2026 10:02PM,,TOTAL,673,0,1029,65.40%,False
+Lackawanna,Dunmore W-01 P-02,81,11/03/2026 10:02PM,,Election Day,554,0,,,
+Lackawanna,Dunmore W-01 P-02,81,11/03/2026 10:02PM,,Mail Votes,119,0,,,
+Lackawanna,Dunmore W-01 P-02,81,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Dunmore W-01 P-03,83,11/03/2026 10:02PM,,TOTAL,873,0,1307,66.79%,False
+Lackawanna,Dunmore W-01 P-03,83,11/03/2026 10:02PM,,Election Day,659,0,,,
+Lackawanna,Dunmore W-01 P-03,83,11/03/2026 10:02PM,,Mail Votes,214,0,,,
+Lackawanna,Dunmore W-01 P-03,83,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Dunmore W-02 P-01,85,11/03/2026 10:02PM,,TOTAL,505,0,948,53.27%,False
+Lackawanna,Dunmore W-02 P-01,85,11/03/2026 10:02PM,,Election Day,382,0,,,
+Lackawanna,Dunmore W-02 P-01,85,11/03/2026 10:02PM,,Mail Votes,123,0,,,
+Lackawanna,Dunmore W-02 P-01,85,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Dunmore W-02 P-02,87,11/03/2026 10:02PM,,TOTAL,631,0,992,63.61%,False
+Lackawanna,Dunmore W-02 P-02,87,11/03/2026 10:02PM,,Election Day,461,0,,,
+Lackawanna,Dunmore W-02 P-02,87,11/03/2026 10:02PM,,Mail Votes,170,0,,,
+Lackawanna,Dunmore W-02 P-02,87,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Dunmore W-03 P-01,89,11/03/2026 10:02PM,,TOTAL,528,0,887,59.53%,False
+Lackawanna,Dunmore W-03 P-01,89,11/03/2026 10:02PM,,Election Day,427,0,,,
+Lackawanna,Dunmore W-03 P-01,89,11/03/2026 10:02PM,,Mail Votes,101,0,,,
+Lackawanna,Dunmore W-03 P-01,89,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Dunmore W-03 P-02,91,11/03/2026 10:02PM,,TOTAL,366,0,627,58.37%,False
+Lackawanna,Dunmore W-03 P-02,91,11/03/2026 10:02PM,,Election Day,280,0,,,
+Lackawanna,Dunmore W-03 P-02,91,11/03/2026 10:02PM,,Mail Votes,86,0,,,
+Lackawanna,Dunmore W-03 P-02,91,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Dunmore W-05 P-00,93,11/03/2026 10:02PM,,TOTAL,331,0,595,55.63%,False
+Lackawanna,Dunmore W-05 P-00,93,11/03/2026 10:02PM,,Election Day,230,0,,,
+Lackawanna,Dunmore W-05 P-00,93,11/03/2026 10:02PM,,Mail Votes,101,0,,,
+Lackawanna,Dunmore W-05 P-00,93,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Dunmore W-06 P-01,95,11/03/2026 10:02PM,,TOTAL,377,0,609,61.90%,False
+Lackawanna,Dunmore W-06 P-01,95,11/03/2026 10:02PM,,Election Day,282,0,,,
+Lackawanna,Dunmore W-06 P-01,95,11/03/2026 10:02PM,,Mail Votes,95,0,,,
+Lackawanna,Dunmore W-06 P-01,95,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Dunmore W-06 P-02,97,11/03/2026 10:02PM,,TOTAL,524,0,773,67.79%,False
+Lackawanna,Dunmore W-06 P-02,97,11/03/2026 10:02PM,,Election Day,387,0,,,
+Lackawanna,Dunmore W-06 P-02,97,11/03/2026 10:02PM,,Mail Votes,137,0,,,
+Lackawanna,Dunmore W-06 P-02,97,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Dunmore W-06 P-03,99,11/03/2026 10:02PM,,TOTAL,465,2,792,58.71%,False
+Lackawanna,Dunmore W-06 P-03,99,11/03/2026 10:02PM,,Election Day,366,2,,,
+Lackawanna,Dunmore W-06 P-03,99,11/03/2026 10:02PM,,Mail Votes,99,0,,,
+Lackawanna,Dunmore W-06 P-03,99,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Dunmore W-06 P-04,101,11/03/2026 10:02PM,,TOTAL,396,0,595,66.55%,False
+Lackawanna,Dunmore W-06 P-04,101,11/03/2026 10:02PM,,Election Day,306,0,,,
+Lackawanna,Dunmore W-06 P-04,101,11/03/2026 10:02PM,,Mail Votes,90,0,,,
+Lackawanna,Dunmore W-06 P-04,101,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Elmhurst Township W-00 P-00,103,11/03/2026 10:02PM,,TOTAL,384,0,580,66.21%,False
+Lackawanna,Elmhurst Township W-00 P-00,103,11/03/2026 10:02PM,,Election Day,292,0,,,
+Lackawanna,Elmhurst Township W-00 P-00,103,11/03/2026 10:02PM,,Mail Votes,92,0,,,
+Lackawanna,Elmhurst Township W-00 P-00,103,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Fell Township W-00 P-01,105,11/03/2026 10:02PM,,TOTAL,319,0,531,60.08%,False
+Lackawanna,Fell Township W-00 P-01,105,11/03/2026 10:02PM,,Election Day,260,0,,,
+Lackawanna,Fell Township W-00 P-01,105,11/03/2026 10:02PM,,Mail Votes,59,0,,,
+Lackawanna,Fell Township W-00 P-01,105,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Fell Township W-00 P-02,107,11/03/2026 10:02PM,,TOTAL,267,0,534,50.00%,False
+Lackawanna,Fell Township W-00 P-02,107,11/03/2026 10:02PM,,Election Day,227,0,,,
+Lackawanna,Fell Township W-00 P-02,107,11/03/2026 10:02PM,,Mail Votes,40,0,,,
+Lackawanna,Fell Township W-00 P-02,107,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Fell Township W-00 P-03,109,11/03/2026 10:02PM,,TOTAL,205,0,416,49.28%,False
+Lackawanna,Fell Township W-00 P-03,109,11/03/2026 10:02PM,,Election Day,174,0,,,
+Lackawanna,Fell Township W-00 P-03,109,11/03/2026 10:02PM,,Mail Votes,31,0,,,
+Lackawanna,Fell Township W-00 P-03,109,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Fell Township W-00 P-04,111,11/03/2026 10:02PM,,TOTAL,101,0,164,61.59%,False
+Lackawanna,Fell Township W-00 P-04,111,11/03/2026 10:02PM,,Election Day,87,0,,,
+Lackawanna,Fell Township W-00 P-04,111,11/03/2026 10:02PM,,Mail Votes,14,0,,,
+Lackawanna,Fell Township W-00 P-04,111,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Glenburn Township W-00 P-00,113,11/03/2026 10:02PM,,TOTAL,724,0,1122,64.53%,False
+Lackawanna,Glenburn Township W-00 P-00,113,11/03/2026 10:02PM,,Election Day,570,0,,,
+Lackawanna,Glenburn Township W-00 P-00,113,11/03/2026 10:02PM,,Mail Votes,154,0,,,
+Lackawanna,Glenburn Township W-00 P-00,113,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Greenfield Township W-00 P-00,115,11/03/2026 10:02PM,,TOTAL,1087,1,1735,62.65%,False
+Lackawanna,Greenfield Township W-00 P-00,115,11/03/2026 10:02PM,,Election Day,917,1,,,
+Lackawanna,Greenfield Township W-00 P-00,115,11/03/2026 10:02PM,,Mail Votes,170,0,,,
+Lackawanna,Greenfield Township W-00 P-00,115,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Jefferson Township W-00 P-00,117,11/03/2026 10:02PM,,TOTAL,1900,0,3107,61.15%,False
+Lackawanna,Jefferson Township W-00 P-00,117,11/03/2026 10:02PM,,Election Day,1495,0,,,
+Lackawanna,Jefferson Township W-00 P-00,117,11/03/2026 10:02PM,,Mail Votes,405,0,,,
+Lackawanna,Jefferson Township W-00 P-00,117,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Jermyn W-01 P-00,119,11/03/2026 10:02PM,,TOTAL,204,0,395,51.65%,False
+Lackawanna,Jermyn W-01 P-00,119,11/03/2026 10:02PM,,Election Day,172,0,,,
+Lackawanna,Jermyn W-01 P-00,119,11/03/2026 10:02PM,,Mail Votes,32,0,,,
+Lackawanna,Jermyn W-01 P-00,119,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Jermyn W-02 P-00,121,11/03/2026 10:02PM,,TOTAL,334,0,577,57.89%,False
+Lackawanna,Jermyn W-02 P-00,121,11/03/2026 10:02PM,,Election Day,276,0,,,
+Lackawanna,Jermyn W-02 P-00,121,11/03/2026 10:02PM,,Mail Votes,58,0,,,
+Lackawanna,Jermyn W-02 P-00,121,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Jermyn W-03 P-00,123,11/03/2026 10:02PM,,TOTAL,353,0,518,68.15%,False
+Lackawanna,Jermyn W-03 P-00,123,11/03/2026 10:02PM,,Election Day,264,0,,,
+Lackawanna,Jermyn W-03 P-00,123,11/03/2026 10:02PM,,Mail Votes,89,0,,,
+Lackawanna,Jermyn W-03 P-00,123,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Jessup W-01 P-01,125,11/03/2026 10:02PM,,TOTAL,583,0,835,69.82%,False
+Lackawanna,Jessup W-01 P-01,125,11/03/2026 10:02PM,,Election Day,474,0,,,
+Lackawanna,Jessup W-01 P-01,125,11/03/2026 10:02PM,,Mail Votes,109,0,,,
+Lackawanna,Jessup W-01 P-01,125,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Jessup W-02 P-01,127,11/03/2026 10:02PM,,TOTAL,615,1,1029,59.77%,False
+Lackawanna,Jessup W-02 P-01,127,11/03/2026 10:02PM,,Election Day,508,1,,,
+Lackawanna,Jessup W-02 P-01,127,11/03/2026 10:02PM,,Mail Votes,107,0,,,
+Lackawanna,Jessup W-02 P-01,127,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Jessup W-03 P-01,129,11/03/2026 10:02PM,,TOTAL,573,0,910,62.97%,False
+Lackawanna,Jessup W-03 P-01,129,11/03/2026 10:02PM,,Election Day,449,0,,,
+Lackawanna,Jessup W-03 P-01,129,11/03/2026 10:02PM,,Mail Votes,124,0,,,
+Lackawanna,Jessup W-03 P-01,129,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Jessup W-03 P-02,131,11/03/2026 10:02PM,,TOTAL,407,0,655,62.14%,False
+Lackawanna,Jessup W-03 P-02,131,11/03/2026 10:02PM,,Election Day,314,0,,,
+Lackawanna,Jessup W-03 P-02,131,11/03/2026 10:02PM,,Mail Votes,93,0,,,
+Lackawanna,Jessup W-03 P-02,131,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,La Plume Township W-00 P-00,133,11/03/2026 10:02PM,,TOTAL,197,0,370,53.24%,False
+Lackawanna,La Plume Township W-00 P-00,133,11/03/2026 10:02PM,,Election Day,172,0,,,
+Lackawanna,La Plume Township W-00 P-00,133,11/03/2026 10:02PM,,Mail Votes,25,0,,,
+Lackawanna,La Plume Township W-00 P-00,133,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Thornhurst Twp. W-00 P-00,135,11/03/2026 10:02PM,,TOTAL,456,0,764,59.69%,False
+Lackawanna,Thornhurst Twp. W-00 P-00,135,11/03/2026 10:02PM,,Election Day,383,0,,,
+Lackawanna,Thornhurst Twp. W-00 P-00,135,11/03/2026 10:02PM,,Mail Votes,73,0,,,
+Lackawanna,Thornhurst Twp. W-00 P-00,135,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Madison Township W-00 P-00,137,11/03/2026 10:02PM,,TOTAL,1170,0,1932,60.56%,False
+Lackawanna,Madison Township W-00 P-00,137,11/03/2026 10:02PM,,Election Day,929,0,,,
+Lackawanna,Madison Township W-00 P-00,137,11/03/2026 10:02PM,,Mail Votes,241,0,,,
+Lackawanna,Madison Township W-00 P-00,137,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Mayfield W-01 P-00,139,11/03/2026 10:02PM,,TOTAL,196,0,364,53.85%,False
+Lackawanna,Mayfield W-01 P-00,139,11/03/2026 10:02PM,,Election Day,151,0,,,
+Lackawanna,Mayfield W-01 P-00,139,11/03/2026 10:02PM,,Mail Votes,45,0,,,
+Lackawanna,Mayfield W-01 P-00,139,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Mayfield W-02 P-00,141,11/03/2026 10:02PM,,TOTAL,336,0,537,62.57%,False
+Lackawanna,Mayfield W-02 P-00,141,11/03/2026 10:02PM,,Election Day,270,0,,,
+Lackawanna,Mayfield W-02 P-00,141,11/03/2026 10:02PM,,Mail Votes,66,0,,,
+Lackawanna,Mayfield W-02 P-00,141,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Mayfield W-03 P-00,143,11/03/2026 10:02PM,,TOTAL,231,0,347,66.57%,False
+Lackawanna,Mayfield W-03 P-00,143,11/03/2026 10:02PM,,Election Day,189,0,,,
+Lackawanna,Mayfield W-03 P-00,143,11/03/2026 10:02PM,,Mail Votes,42,0,,,
+Lackawanna,Mayfield W-03 P-00,143,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Moosic W-01 P-00,145,11/03/2026 10:02PM,,TOTAL,608,0,1016,59.84%,False
+Lackawanna,Moosic W-01 P-00,145,11/03/2026 10:02PM,,Election Day,456,0,,,
+Lackawanna,Moosic W-01 P-00,145,11/03/2026 10:02PM,,Mail Votes,152,0,,,
+Lackawanna,Moosic W-01 P-00,145,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Moosic W-02 P-00,147,11/03/2026 10:02PM,,TOTAL,998,0,1584,63.01%,False
+Lackawanna,Moosic W-02 P-00,147,11/03/2026 10:02PM,,Election Day,680,0,,,
+Lackawanna,Moosic W-02 P-00,147,11/03/2026 10:02PM,,Mail Votes,318,0,,,
+Lackawanna,Moosic W-02 P-00,147,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Moosic W-03 P-00,149,11/03/2026 10:02PM,,TOTAL,518,0,954,54.30%,False
+Lackawanna,Moosic W-03 P-00,149,11/03/2026 10:02PM,,Election Day,393,0,,,
+Lackawanna,Moosic W-03 P-00,149,11/03/2026 10:02PM,,Mail Votes,125,0,,,
+Lackawanna,Moosic W-03 P-00,149,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Moosic W-04 P-00,151,11/03/2026 10:02PM,,TOTAL,550,0,918,59.91%,False
+Lackawanna,Moosic W-04 P-00,151,11/03/2026 10:02PM,,Election Day,399,0,,,
+Lackawanna,Moosic W-04 P-00,151,11/03/2026 10:02PM,,Mail Votes,151,0,,,
+Lackawanna,Moosic W-04 P-00,151,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Moscow W-00 P-00,153,11/03/2026 10:02PM,,TOTAL,1040,0,1639,63.45%,False
+Lackawanna,Moscow W-00 P-00,153,11/03/2026 10:02PM,,Election Day,797,0,,,
+Lackawanna,Moscow W-00 P-00,153,11/03/2026 10:02PM,,Mail Votes,243,0,,,
+Lackawanna,Moscow W-00 P-00,153,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Newton Township W-00 P-00,155,11/03/2026 10:02PM,,TOTAL,1463,0,2260,64.73%,False
+Lackawanna,Newton Township W-00 P-00,155,11/03/2026 10:02PM,,Election Day,1158,0,,,
+Lackawanna,Newton Township W-00 P-00,155,11/03/2026 10:02PM,,Mail Votes,305,0,,,
+Lackawanna,Newton Township W-00 P-00,155,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,North Abington Twp. W-00 P-00,157,11/03/2026 10:02PM,,TOTAL,399,0,601,66.39%,False
+Lackawanna,North Abington Twp. W-00 P-00,157,11/03/2026 10:02PM,,Election Day,336,0,,,
+Lackawanna,North Abington Twp. W-00 P-00,157,11/03/2026 10:02PM,,Mail Votes,63,0,,,
+Lackawanna,North Abington Twp. W-00 P-00,157,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Old Forge W-01 P-00,159,11/03/2026 10:02PM,,TOTAL,462,0,783,59.00%,False
+Lackawanna,Old Forge W-01 P-00,159,11/03/2026 10:02PM,,Election Day,340,0,,,
+Lackawanna,Old Forge W-01 P-00,159,11/03/2026 10:02PM,,Mail Votes,122,0,,,
+Lackawanna,Old Forge W-01 P-00,159,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Old Forge W-02 P-00,161,11/03/2026 10:02PM,,TOTAL,448,0,806,55.58%,False
+Lackawanna,Old Forge W-02 P-00,161,11/03/2026 10:02PM,,Election Day,352,0,,,
+Lackawanna,Old Forge W-02 P-00,161,11/03/2026 10:02PM,,Mail Votes,96,0,,,
+Lackawanna,Old Forge W-02 P-00,161,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Old Forge W-03 P-00,163,11/03/2026 10:02PM,,TOTAL,743,0,1275,58.27%,False
+Lackawanna,Old Forge W-03 P-00,163,11/03/2026 10:02PM,,Election Day,543,0,,,
+Lackawanna,Old Forge W-03 P-00,163,11/03/2026 10:02PM,,Mail Votes,200,0,,,
+Lackawanna,Old Forge W-03 P-00,163,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Old Forge W-04 P-00,165,11/03/2026 10:02PM,,TOTAL,504,0,834,60.43%,False
+Lackawanna,Old Forge W-04 P-00,165,11/03/2026 10:02PM,,Election Day,387,0,,,
+Lackawanna,Old Forge W-04 P-00,165,11/03/2026 10:02PM,,Mail Votes,117,0,,,
+Lackawanna,Old Forge W-04 P-00,165,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Old Forge W-05 P-00,167,11/03/2026 10:02PM,,TOTAL,539,0,913,59.04%,False
+Lackawanna,Old Forge W-05 P-00,167,11/03/2026 10:02PM,,Election Day,371,0,,,
+Lackawanna,Old Forge W-05 P-00,167,11/03/2026 10:02PM,,Mail Votes,168,0,,,
+Lackawanna,Old Forge W-05 P-00,167,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Old Forge W-06 P-01,169,11/03/2026 10:02PM,,TOTAL,404,0,748,54.01%,False
+Lackawanna,Old Forge W-06 P-01,169,11/03/2026 10:02PM,,Election Day,297,0,,,
+Lackawanna,Old Forge W-06 P-01,169,11/03/2026 10:02PM,,Mail Votes,107,0,,,
+Lackawanna,Old Forge W-06 P-01,169,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Old Forge W-06 P-02,171,11/03/2026 10:02PM,,TOTAL,687,0,1072,64.09%,False
+Lackawanna,Old Forge W-06 P-02,171,11/03/2026 10:02PM,,Election Day,480,0,,,
+Lackawanna,Old Forge W-06 P-02,171,11/03/2026 10:02PM,,Mail Votes,207,0,,,
+Lackawanna,Old Forge W-06 P-02,171,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Olyphant W-01 P-00,173,11/03/2026 10:02PM,,TOTAL,370,0,620,59.68%,False
+Lackawanna,Olyphant W-01 P-00,173,11/03/2026 10:02PM,,Election Day,281,0,,,
+Lackawanna,Olyphant W-01 P-00,173,11/03/2026 10:02PM,,Mail Votes,89,0,,,
+Lackawanna,Olyphant W-01 P-00,173,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Olyphant W-02 P-00,175,11/03/2026 10:02PM,,TOTAL,378,0,723,52.28%,False
+Lackawanna,Olyphant W-02 P-00,175,11/03/2026 10:02PM,,Election Day,294,0,,,
+Lackawanna,Olyphant W-02 P-00,175,11/03/2026 10:02PM,,Mail Votes,84,0,,,
+Lackawanna,Olyphant W-02 P-00,175,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Olyphant W-03 P-01,177,11/03/2026 10:02PM,,TOTAL,240,0,419,57.28%,False
+Lackawanna,Olyphant W-03 P-01,177,11/03/2026 10:02PM,,Election Day,200,0,,,
+Lackawanna,Olyphant W-03 P-01,177,11/03/2026 10:02PM,,Mail Votes,40,0,,,
+Lackawanna,Olyphant W-03 P-01,177,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Olyphant W-03 P-02,179,11/03/2026 10:02PM,,TOTAL,510,0,749,68.09%,False
+Lackawanna,Olyphant W-03 P-02,179,11/03/2026 10:02PM,,Election Day,407,0,,,
+Lackawanna,Olyphant W-03 P-02,179,11/03/2026 10:02PM,,Mail Votes,103,0,,,
+Lackawanna,Olyphant W-03 P-02,179,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Olyphant W-04 P-01,181,11/03/2026 10:02PM,,TOTAL,544,0,818,66.50%,False
+Lackawanna,Olyphant W-04 P-01,181,11/03/2026 10:02PM,,Election Day,461,0,,,
+Lackawanna,Olyphant W-04 P-01,181,11/03/2026 10:02PM,,Mail Votes,83,0,,,
+Lackawanna,Olyphant W-04 P-01,181,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Olyphant W-04 P-02,183,11/03/2026 10:02PM,,TOTAL,317,0,572,55.42%,False
+Lackawanna,Olyphant W-04 P-02,183,11/03/2026 10:02PM,,Election Day,247,0,,,
+Lackawanna,Olyphant W-04 P-02,183,11/03/2026 10:02PM,,Mail Votes,70,0,,,
+Lackawanna,Olyphant W-04 P-02,183,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Ransom Township W-00 P-01,185,11/03/2026 10:02PM,,TOTAL,325,0,507,64.10%,False
+Lackawanna,Ransom Township W-00 P-01,185,11/03/2026 10:02PM,,Election Day,272,0,,,
+Lackawanna,Ransom Township W-00 P-01,185,11/03/2026 10:02PM,,Mail Votes,53,0,,,
+Lackawanna,Ransom Township W-00 P-01,185,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Ransom Township W-00 P-02,187,11/03/2026 10:02PM,,TOTAL,155,0,236,65.68%,False
+Lackawanna,Ransom Township W-00 P-02,187,11/03/2026 10:02PM,,Election Day,136,0,,,
+Lackawanna,Ransom Township W-00 P-02,187,11/03/2026 10:02PM,,Mail Votes,19,0,,,
+Lackawanna,Ransom Township W-00 P-02,187,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Ransom Township W-00 P-03,189,11/03/2026 10:02PM,,TOTAL,202,0,315,64.13%,False
+Lackawanna,Ransom Township W-00 P-03,189,11/03/2026 10:02PM,,Election Day,173,0,,,
+Lackawanna,Ransom Township W-00 P-03,189,11/03/2026 10:02PM,,Mail Votes,29,0,,,
+Lackawanna,Ransom Township W-00 P-03,189,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Roaring Brook Twp. W-00 P-00,191,11/03/2026 10:02PM,,TOTAL,1208,0,1793,67.37%,False
+Lackawanna,Roaring Brook Twp. W-00 P-00,191,11/03/2026 10:02PM,,Election Day,965,0,,,
+Lackawanna,Roaring Brook Twp. W-00 P-00,191,11/03/2026 10:02PM,,Mail Votes,243,0,,,
+Lackawanna,Roaring Brook Twp. W-00 P-00,191,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scott Township W-00 P-01,193,11/03/2026 10:02PM,,TOTAL,1254,0,1991,62.98%,False
+Lackawanna,Scott Township W-00 P-01,193,11/03/2026 10:02PM,,Election Day,1025,0,,,
+Lackawanna,Scott Township W-00 P-01,193,11/03/2026 10:02PM,,Mail Votes,229,0,,,
+Lackawanna,Scott Township W-00 P-01,193,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scott Township W-00 P-02,195,11/03/2026 10:02PM,,TOTAL,1210,0,1776,68.13%,False
+Lackawanna,Scott Township W-00 P-02,195,11/03/2026 10:02PM,,Election Day,889,0,,,
+Lackawanna,Scott Township W-00 P-02,195,11/03/2026 10:02PM,,Mail Votes,321,0,,,
+Lackawanna,Scott Township W-00 P-02,195,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-01 P-01,197,11/03/2026 10:02PM,,TOTAL,568,0,1174,48.38%,False
+Lackawanna,Scranton W-01 P-01,197,11/03/2026 10:02PM,,Election Day,441,0,,,
+Lackawanna,Scranton W-01 P-01,197,11/03/2026 10:02PM,,Mail Votes,127,0,,,
+Lackawanna,Scranton W-01 P-01,197,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-01 P-02,199,11/03/2026 10:02PM,,TOTAL,430,0,864,49.77%,False
+Lackawanna,Scranton W-01 P-02,199,11/03/2026 10:02PM,,Election Day,367,0,,,
+Lackawanna,Scranton W-01 P-02,199,11/03/2026 10:02PM,,Mail Votes,63,0,,,
+Lackawanna,Scranton W-01 P-02,199,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-02 P-01,201,11/03/2026 10:02PM,,TOTAL,399,0,823,48.48%,False
+Lackawanna,Scranton W-02 P-01,201,11/03/2026 10:02PM,,Election Day,306,0,,,
+Lackawanna,Scranton W-02 P-01,201,11/03/2026 10:02PM,,Mail Votes,93,0,,,
+Lackawanna,Scranton W-02 P-01,201,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-02 P-02,203,11/03/2026 10:02PM,,TOTAL,465,0,984,47.26%,False
+Lackawanna,Scranton W-02 P-02,203,11/03/2026 10:02PM,,Election Day,358,0,,,
+Lackawanna,Scranton W-02 P-02,203,11/03/2026 10:02PM,,Mail Votes,107,0,,,
+Lackawanna,Scranton W-02 P-02,203,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-02 P-03,205,11/03/2026 10:02PM,,TOTAL,270,0,574,47.04%,False
+Lackawanna,Scranton W-02 P-03,205,11/03/2026 10:02PM,,Election Day,206,0,,,
+Lackawanna,Scranton W-02 P-03,205,11/03/2026 10:02PM,,Mail Votes,64,0,,,
+Lackawanna,Scranton W-02 P-03,205,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-03 P-01,207,11/03/2026 10:02PM,,TOTAL,366,0,697,52.51%,False
+Lackawanna,Scranton W-03 P-01,207,11/03/2026 10:02PM,,Election Day,271,0,,,
+Lackawanna,Scranton W-03 P-01,207,11/03/2026 10:02PM,,Mail Votes,95,0,,,
+Lackawanna,Scranton W-03 P-01,207,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-03 P-02,209,11/03/2026 10:02PM,,TOTAL,559,0,1011,55.29%,False
+Lackawanna,Scranton W-03 P-02,209,11/03/2026 10:02PM,,Election Day,360,0,,,
+Lackawanna,Scranton W-03 P-02,209,11/03/2026 10:02PM,,Mail Votes,199,0,,,
+Lackawanna,Scranton W-03 P-02,209,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-04 P-01,211,11/03/2026 10:02PM,,TOTAL,403,0,934,43.15%,False
+Lackawanna,Scranton W-04 P-01,211,11/03/2026 10:02PM,,Election Day,331,0,,,
+Lackawanna,Scranton W-04 P-01,211,11/03/2026 10:02PM,,Mail Votes,72,0,,,
+Lackawanna,Scranton W-04 P-01,211,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-04 P-02,213,11/03/2026 10:02PM,,TOTAL,501,0,1121,44.69%,False
+Lackawanna,Scranton W-04 P-02,213,11/03/2026 10:02PM,,Election Day,407,0,,,
+Lackawanna,Scranton W-04 P-02,213,11/03/2026 10:02PM,,Mail Votes,94,0,,,
+Lackawanna,Scranton W-04 P-02,213,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-05 P-01,215,11/03/2026 10:02PM,,TOTAL,423,0,1008,41.96%,False
+Lackawanna,Scranton W-05 P-01,215,11/03/2026 10:02PM,,Election Day,325,0,,,
+Lackawanna,Scranton W-05 P-01,215,11/03/2026 10:02PM,,Mail Votes,98,0,,,
+Lackawanna,Scranton W-05 P-01,215,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-05 P-02,217,11/03/2026 10:02PM,,TOTAL,443,0,1037,42.72%,False
+Lackawanna,Scranton W-05 P-02,217,11/03/2026 10:02PM,,Election Day,359,0,,,
+Lackawanna,Scranton W-05 P-02,217,11/03/2026 10:02PM,,Mail Votes,84,0,,,
+Lackawanna,Scranton W-05 P-02,217,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-06 P-01,219,11/03/2026 10:02PM,,TOTAL,304,0,726,41.87%,False
+Lackawanna,Scranton W-06 P-01,219,11/03/2026 10:02PM,,Election Day,213,0,,,
+Lackawanna,Scranton W-06 P-01,219,11/03/2026 10:02PM,,Mail Votes,91,0,,,
+Lackawanna,Scranton W-06 P-01,219,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-07 P-01,221,11/03/2026 10:02PM,,TOTAL,407,0,1098,37.07%,False
+Lackawanna,Scranton W-07 P-01,221,11/03/2026 10:02PM,,Election Day,290,0,,,
+Lackawanna,Scranton W-07 P-01,221,11/03/2026 10:02PM,,Mail Votes,117,0,,,
+Lackawanna,Scranton W-07 P-01,221,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-09 P-01,223,11/03/2026 10:02PM,,TOTAL,500,0,1533,32.62%,False
+Lackawanna,Scranton W-09 P-01,223,11/03/2026 10:02PM,,Election Day,253,0,,,
+Lackawanna,Scranton W-09 P-01,223,11/03/2026 10:02PM,,Mail Votes,247,0,,,
+Lackawanna,Scranton W-09 P-01,223,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-09 P-02,225,11/03/2026 10:02PM,,TOTAL,382,0,1007,37.93%,False
+Lackawanna,Scranton W-09 P-02,225,11/03/2026 10:02PM,,Election Day,282,0,,,
+Lackawanna,Scranton W-09 P-02,225,11/03/2026 10:02PM,,Mail Votes,100,0,,,
+Lackawanna,Scranton W-09 P-02,225,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-10 P-01,227,11/03/2026 10:02PM,,TOTAL,497,0,905,54.92%,False
+Lackawanna,Scranton W-10 P-01,227,11/03/2026 10:02PM,,Election Day,321,0,,,
+Lackawanna,Scranton W-10 P-01,227,11/03/2026 10:02PM,,Mail Votes,176,0,,,
+Lackawanna,Scranton W-10 P-01,227,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-10 P-02,229,11/03/2026 10:02PM,,TOTAL,666,0,1286,51.79%,False
+Lackawanna,Scranton W-10 P-02,229,11/03/2026 10:02PM,,Election Day,431,0,,,
+Lackawanna,Scranton W-10 P-02,229,11/03/2026 10:02PM,,Mail Votes,235,0,,,
+Lackawanna,Scranton W-10 P-02,229,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-10 P-03,231,11/03/2026 10:02PM,,TOTAL,650,0,1168,55.65%,False
+Lackawanna,Scranton W-10 P-03,231,11/03/2026 10:02PM,,Election Day,449,0,,,
+Lackawanna,Scranton W-10 P-03,231,11/03/2026 10:02PM,,Mail Votes,201,0,,,
+Lackawanna,Scranton W-10 P-03,231,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-11 P-01,233,11/03/2026 10:02PM,,TOTAL,314,0,840,37.38%,False
+Lackawanna,Scranton W-11 P-01,233,11/03/2026 10:02PM,,Election Day,239,0,,,
+Lackawanna,Scranton W-11 P-01,233,11/03/2026 10:02PM,,Mail Votes,75,0,,,
+Lackawanna,Scranton W-11 P-01,233,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-12 P-01,235,11/03/2026 10:02PM,,TOTAL,316,0,621,50.89%,False
+Lackawanna,Scranton W-12 P-01,235,11/03/2026 10:02PM,,Election Day,239,0,,,
+Lackawanna,Scranton W-12 P-01,235,11/03/2026 10:02PM,,Mail Votes,77,0,,,
+Lackawanna,Scranton W-12 P-01,235,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-12 P-02,237,11/03/2026 10:02PM,,TOTAL,279,0,594,46.97%,False
+Lackawanna,Scranton W-12 P-02,237,11/03/2026 10:02PM,,Election Day,219,0,,,
+Lackawanna,Scranton W-12 P-02,237,11/03/2026 10:02PM,,Mail Votes,60,0,,,
+Lackawanna,Scranton W-12 P-02,237,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-12 P-03,239,11/03/2026 10:02PM,,TOTAL,516,0,728,70.88%,False
+Lackawanna,Scranton W-12 P-03,239,11/03/2026 10:02PM,,Election Day,364,0,,,
+Lackawanna,Scranton W-12 P-03,239,11/03/2026 10:02PM,,Mail Votes,152,0,,,
+Lackawanna,Scranton W-12 P-03,239,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-13 P-01,241,11/03/2026 10:02PM,,TOTAL,597,0,1092,54.67%,False
+Lackawanna,Scranton W-13 P-01,241,11/03/2026 10:02PM,,Election Day,453,0,,,
+Lackawanna,Scranton W-13 P-01,241,11/03/2026 10:02PM,,Mail Votes,144,0,,,
+Lackawanna,Scranton W-13 P-01,241,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-13 P-02,243,11/03/2026 10:02PM,,TOTAL,323,0,560,57.68%,False
+Lackawanna,Scranton W-13 P-02,243,11/03/2026 10:02PM,,Election Day,263,0,,,
+Lackawanna,Scranton W-13 P-02,243,11/03/2026 10:02PM,,Mail Votes,60,0,,,
+Lackawanna,Scranton W-13 P-02,243,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-14 P-01,245,11/03/2026 10:02PM,,TOTAL,192,0,645,29.77%,False
+Lackawanna,Scranton W-14 P-01,245,11/03/2026 10:02PM,,Election Day,128,0,,,
+Lackawanna,Scranton W-14 P-01,245,11/03/2026 10:02PM,,Mail Votes,64,0,,,
+Lackawanna,Scranton W-14 P-01,245,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-15 P-01,247,11/03/2026 10:02PM,,TOTAL,385,0,851,45.24%,False
+Lackawanna,Scranton W-15 P-01,247,11/03/2026 10:02PM,,Election Day,298,0,,,
+Lackawanna,Scranton W-15 P-01,247,11/03/2026 10:02PM,,Mail Votes,87,0,,,
+Lackawanna,Scranton W-15 P-01,247,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-15 P-02,249,11/03/2026 10:02PM,,TOTAL,429,0,941,45.59%,False
+Lackawanna,Scranton W-15 P-02,249,11/03/2026 10:02PM,,Election Day,314,0,,,
+Lackawanna,Scranton W-15 P-02,249,11/03/2026 10:02PM,,Mail Votes,115,0,,,
+Lackawanna,Scranton W-15 P-02,249,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-16 P-01,251,11/03/2026 10:02PM,,TOTAL,430,0,1149,37.42%,False
+Lackawanna,Scranton W-16 P-01,251,11/03/2026 10:02PM,,Election Day,240,0,,,
+Lackawanna,Scranton W-16 P-01,251,11/03/2026 10:02PM,,Mail Votes,190,0,,,
+Lackawanna,Scranton W-16 P-01,251,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-17 P-01,253,11/03/2026 10:02PM,,TOTAL,552,0,1227,44.99%,False
+Lackawanna,Scranton W-17 P-01,253,11/03/2026 10:02PM,,Election Day,398,0,,,
+Lackawanna,Scranton W-17 P-01,253,11/03/2026 10:02PM,,Mail Votes,154,0,,,
+Lackawanna,Scranton W-17 P-01,253,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-17 P-02,255,11/03/2026 10:02PM,,TOTAL,325,0,1224,26.55%,False
+Lackawanna,Scranton W-17 P-02,255,11/03/2026 10:02PM,,Election Day,175,0,,,
+Lackawanna,Scranton W-17 P-02,255,11/03/2026 10:02PM,,Mail Votes,150,0,,,
+Lackawanna,Scranton W-17 P-02,255,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-19 P-01,257,11/03/2026 10:02PM,,TOTAL,397,0,1005,39.50%,False
+Lackawanna,Scranton W-19 P-01,257,11/03/2026 10:02PM,,Election Day,314,0,,,
+Lackawanna,Scranton W-19 P-01,257,11/03/2026 10:02PM,,Mail Votes,83,0,,,
+Lackawanna,Scranton W-19 P-01,257,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-19 P-02,259,11/03/2026 10:02PM,,TOTAL,409,0,802,51.00%,False
+Lackawanna,Scranton W-19 P-02,259,11/03/2026 10:02PM,,Election Day,328,0,,,
+Lackawanna,Scranton W-19 P-02,259,11/03/2026 10:02PM,,Mail Votes,81,0,,,
+Lackawanna,Scranton W-19 P-02,259,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-19 P-03,261,11/03/2026 10:02PM,,TOTAL,611,0,860,71.05%,False
+Lackawanna,Scranton W-19 P-03,261,11/03/2026 10:02PM,,Election Day,468,0,,,
+Lackawanna,Scranton W-19 P-03,261,11/03/2026 10:02PM,,Mail Votes,143,0,,,
+Lackawanna,Scranton W-19 P-03,261,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-19 P-04,263,11/03/2026 10:02PM,,TOTAL,527,0,987,53.39%,False
+Lackawanna,Scranton W-19 P-04,263,11/03/2026 10:02PM,,Election Day,363,0,,,
+Lackawanna,Scranton W-19 P-04,263,11/03/2026 10:02PM,,Mail Votes,164,0,,,
+Lackawanna,Scranton W-19 P-04,263,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-20 P-01,265,11/03/2026 10:02PM,,TOTAL,464,0,1036,44.79%,False
+Lackawanna,Scranton W-20 P-01,265,11/03/2026 10:02PM,,Election Day,324,0,,,
+Lackawanna,Scranton W-20 P-01,265,11/03/2026 10:02PM,,Mail Votes,140,0,,,
+Lackawanna,Scranton W-20 P-01,265,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-20 P-02,267,11/03/2026 10:02PM,,TOTAL,352,0,797,44.17%,False
+Lackawanna,Scranton W-20 P-02,267,11/03/2026 10:02PM,,Election Day,258,0,,,
+Lackawanna,Scranton W-20 P-02,267,11/03/2026 10:02PM,,Mail Votes,94,0,,,
+Lackawanna,Scranton W-20 P-02,267,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-20 P-03,269,11/03/2026 10:02PM,,TOTAL,642,0,1291,49.73%,False
+Lackawanna,Scranton W-20 P-03,269,11/03/2026 10:02PM,,Election Day,476,0,,,
+Lackawanna,Scranton W-20 P-03,269,11/03/2026 10:02PM,,Mail Votes,166,0,,,
+Lackawanna,Scranton W-20 P-03,269,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-21 P-01,271,11/03/2026 10:02PM,,TOTAL,311,0,796,39.07%,False
+Lackawanna,Scranton W-21 P-01,271,11/03/2026 10:02PM,,Election Day,235,0,,,
+Lackawanna,Scranton W-21 P-01,271,11/03/2026 10:02PM,,Mail Votes,76,0,,,
+Lackawanna,Scranton W-21 P-01,271,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-21 P-02,273,11/03/2026 10:02PM,,TOTAL,611,0,1174,52.04%,False
+Lackawanna,Scranton W-21 P-02,273,11/03/2026 10:02PM,,Election Day,466,0,,,
+Lackawanna,Scranton W-21 P-02,273,11/03/2026 10:02PM,,Mail Votes,145,0,,,
+Lackawanna,Scranton W-21 P-02,273,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-21 P-03,275,11/03/2026 10:02PM,,TOTAL,850,0,1375,61.82%,False
+Lackawanna,Scranton W-21 P-03,275,11/03/2026 10:02PM,,Election Day,673,0,,,
+Lackawanna,Scranton W-21 P-03,275,11/03/2026 10:02PM,,Mail Votes,177,0,,,
+Lackawanna,Scranton W-21 P-03,275,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-21 P-04,277,11/03/2026 10:02PM,,TOTAL,1170,0,1777,65.84%,False
+Lackawanna,Scranton W-21 P-04,277,11/03/2026 10:02PM,,Election Day,883,0,,,
+Lackawanna,Scranton W-21 P-04,277,11/03/2026 10:02PM,,Mail Votes,287,0,,,
+Lackawanna,Scranton W-21 P-04,277,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-22 P-01,279,11/03/2026 10:02PM,,TOTAL,345,0,591,58.38%,False
+Lackawanna,Scranton W-22 P-01,279,11/03/2026 10:02PM,,Election Day,248,0,,,
+Lackawanna,Scranton W-22 P-01,279,11/03/2026 10:02PM,,Mail Votes,97,0,,,
+Lackawanna,Scranton W-22 P-01,279,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-22 P-02,281,11/03/2026 10:02PM,,TOTAL,516,0,939,54.95%,False
+Lackawanna,Scranton W-22 P-02,281,11/03/2026 10:02PM,,Election Day,377,0,,,
+Lackawanna,Scranton W-22 P-02,281,11/03/2026 10:02PM,,Mail Votes,139,0,,,
+Lackawanna,Scranton W-22 P-02,281,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-23 P-01,283,11/03/2026 10:02PM,,TOTAL,539,0,924,58.33%,False
+Lackawanna,Scranton W-23 P-01,283,11/03/2026 10:02PM,,Election Day,387,0,,,
+Lackawanna,Scranton W-23 P-01,283,11/03/2026 10:02PM,,Mail Votes,152,0,,,
+Lackawanna,Scranton W-23 P-01,283,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-23 P-02,285,11/03/2026 10:02PM,,TOTAL,495,0,959,51.62%,False
+Lackawanna,Scranton W-23 P-02,285,11/03/2026 10:02PM,,Election Day,380,0,,,
+Lackawanna,Scranton W-23 P-02,285,11/03/2026 10:02PM,,Mail Votes,115,0,,,
+Lackawanna,Scranton W-23 P-02,285,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-23 P-03,287,11/03/2026 10:02PM,,TOTAL,629,0,992,63.41%,False
+Lackawanna,Scranton W-23 P-03,287,11/03/2026 10:02PM,,Election Day,474,0,,,
+Lackawanna,Scranton W-23 P-03,287,11/03/2026 10:02PM,,Mail Votes,155,0,,,
+Lackawanna,Scranton W-23 P-03,287,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-24 P-01,289,11/03/2026 10:02PM,,TOTAL,550,0,909,60.51%,False
+Lackawanna,Scranton W-24 P-01,289,11/03/2026 10:02PM,,Election Day,423,0,,,
+Lackawanna,Scranton W-24 P-01,289,11/03/2026 10:02PM,,Mail Votes,127,0,,,
+Lackawanna,Scranton W-24 P-01,289,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Scranton W-24 P-02,291,11/03/2026 10:02PM,,TOTAL,301,0,499,60.32%,False
+Lackawanna,Scranton W-24 P-02,291,11/03/2026 10:02PM,,Election Day,223,0,,,
+Lackawanna,Scranton W-24 P-02,291,11/03/2026 10:02PM,,Mail Votes,78,0,,,
+Lackawanna,Scranton W-24 P-02,291,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,South Abington Twp. W-00 P-02,293,11/03/2026 10:02PM,,TOTAL,991,0,1587,62.44%,False
+Lackawanna,South Abington Twp. W-00 P-02,293,11/03/2026 10:02PM,,Election Day,744,0,,,
+Lackawanna,South Abington Twp. W-00 P-02,293,11/03/2026 10:02PM,,Mail Votes,247,0,,,
+Lackawanna,South Abington Twp. W-00 P-02,293,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,South Abington Twp. W-00 P-1-1,295,11/03/2026 10:02PM,,TOTAL,837,0,1330,62.93%,False
+Lackawanna,South Abington Twp. W-00 P-1-1,295,11/03/2026 10:02PM,,Election Day,642,0,,,
+Lackawanna,South Abington Twp. W-00 P-1-1,295,11/03/2026 10:02PM,,Mail Votes,195,0,,,
+Lackawanna,South Abington Twp. W-00 P-1-1,295,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,South Abington Twp. W-00 P-1-2,297,11/03/2026 10:02PM,,TOTAL,1191,0,1831,65.05%,False
+Lackawanna,South Abington Twp. W-00 P-1-2,297,11/03/2026 10:02PM,,Election Day,899,0,,,
+Lackawanna,South Abington Twp. W-00 P-1-2,297,11/03/2026 10:02PM,,Mail Votes,292,0,,,
+Lackawanna,South Abington Twp. W-00 P-1-2,297,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,South Abington Twp. W-00 P-3-1,299,11/03/2026 10:02PM,,TOTAL,859,0,1294,66.38%,False
+Lackawanna,South Abington Twp. W-00 P-3-1,299,11/03/2026 10:02PM,,Election Day,674,0,,,
+Lackawanna,South Abington Twp. W-00 P-3-1,299,11/03/2026 10:02PM,,Mail Votes,185,0,,,
+Lackawanna,South Abington Twp. W-00 P-3-1,299,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,South Abington Twp. W-00 P-3-2,301,11/03/2026 10:02PM,,TOTAL,806,0,1198,67.28%,False
+Lackawanna,South Abington Twp. W-00 P-3-2,301,11/03/2026 10:02PM,,Election Day,636,0,,,
+Lackawanna,South Abington Twp. W-00 P-3-2,301,11/03/2026 10:02PM,,Mail Votes,170,0,,,
+Lackawanna,South Abington Twp. W-00 P-3-2,301,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Springbrook Twp. W-00 P-00,303,11/03/2026 10:02PM,,TOTAL,1362,1,2128,64.00%,False
+Lackawanna,Springbrook Twp. W-00 P-00,303,11/03/2026 10:02PM,,Election Day,1080,1,,,
+Lackawanna,Springbrook Twp. W-00 P-00,303,11/03/2026 10:02PM,,Mail Votes,282,0,,,
+Lackawanna,Springbrook Twp. W-00 P-00,303,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Taylor W-01 P-00,305,11/03/2026 10:02PM,,TOTAL,354,0,636,55.66%,False
+Lackawanna,Taylor W-01 P-00,305,11/03/2026 10:02PM,,Election Day,252,0,,,
+Lackawanna,Taylor W-01 P-00,305,11/03/2026 10:02PM,,Mail Votes,102,0,,,
+Lackawanna,Taylor W-01 P-00,305,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Taylor W-02 P-00,307,11/03/2026 10:02PM,,TOTAL,386,0,746,51.74%,False
+Lackawanna,Taylor W-02 P-00,307,11/03/2026 10:02PM,,Election Day,301,0,,,
+Lackawanna,Taylor W-02 P-00,307,11/03/2026 10:02PM,,Mail Votes,85,0,,,
+Lackawanna,Taylor W-02 P-00,307,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Taylor W-03 P-00,309,11/03/2026 10:02PM,,TOTAL,499,0,936,53.31%,False
+Lackawanna,Taylor W-03 P-00,309,11/03/2026 10:02PM,,Election Day,397,0,,,
+Lackawanna,Taylor W-03 P-00,309,11/03/2026 10:02PM,,Mail Votes,102,0,,,
+Lackawanna,Taylor W-03 P-00,309,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Taylor W-04 P-00,311,11/03/2026 10:02PM,,TOTAL,710,0,1207,58.82%,False
+Lackawanna,Taylor W-04 P-00,311,11/03/2026 10:02PM,,Election Day,585,0,,,
+Lackawanna,Taylor W-04 P-00,311,11/03/2026 10:02PM,,Mail Votes,125,0,,,
+Lackawanna,Taylor W-04 P-00,311,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Taylor W-05 P-00,313,11/03/2026 10:02PM,,TOTAL,641,0,998,64.23%,False
+Lackawanna,Taylor W-05 P-00,313,11/03/2026 10:02PM,,Election Day,495,0,,,
+Lackawanna,Taylor W-05 P-00,313,11/03/2026 10:02PM,,Mail Votes,146,0,,,
+Lackawanna,Taylor W-05 P-00,313,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Throop W-01 P-00,315,11/03/2026 10:02PM,,TOTAL,703,2,1132,62.10%,False
+Lackawanna,Throop W-01 P-00,315,11/03/2026 10:02PM,,Election Day,568,2,,,
+Lackawanna,Throop W-01 P-00,315,11/03/2026 10:02PM,,Mail Votes,135,0,,,
+Lackawanna,Throop W-01 P-00,315,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Throop W-02 P-00,317,11/03/2026 10:02PM,,TOTAL,416,0,714,58.26%,False
+Lackawanna,Throop W-02 P-00,317,11/03/2026 10:02PM,,Election Day,326,0,,,
+Lackawanna,Throop W-02 P-00,317,11/03/2026 10:02PM,,Mail Votes,90,0,,,
+Lackawanna,Throop W-02 P-00,317,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Throop W-03 P-00,319,11/03/2026 10:02PM,,TOTAL,323,0,545,59.27%,False
+Lackawanna,Throop W-03 P-00,319,11/03/2026 10:02PM,,Election Day,257,0,,,
+Lackawanna,Throop W-03 P-00,319,11/03/2026 10:02PM,,Mail Votes,66,0,,,
+Lackawanna,Throop W-03 P-00,319,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Throop W-04 P-00,321,11/03/2026 10:02PM,,TOTAL,398,0,661,60.21%,False
+Lackawanna,Throop W-04 P-00,321,11/03/2026 10:02PM,,Election Day,314,0,,,
+Lackawanna,Throop W-04 P-00,321,11/03/2026 10:02PM,,Mail Votes,84,0,,,
+Lackawanna,Throop W-04 P-00,321,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,Vandling W-00 P-00,323,11/03/2026 10:02PM,,TOTAL,306,0,508,60.24%,False
+Lackawanna,Vandling W-00 P-00,323,11/03/2026 10:02PM,,Election Day,270,0,,,
+Lackawanna,Vandling W-00 P-00,323,11/03/2026 10:02PM,,Mail Votes,36,0,,,
+Lackawanna,Vandling W-00 P-00,323,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Lackawanna,West Abington Twp. W-00 P-00,325,11/03/2026 10:02PM,,TOTAL,179,0,249,71.89%,False
+Lackawanna,West Abington Twp. W-00 P-00,325,11/03/2026 10:02PM,,Election Day,161,0,,,
+Lackawanna,West Abington Twp. W-00 P-00,325,11/03/2026 10:02PM,,Mail Votes,18,0,,,
+Lackawanna,West Abington Twp. W-00 P-00,325,11/03/2026 10:02PM,,Provisional Votes,0,0,,,
+Schuylkill,002 Ashland Borough 1st,1,11/04/2026 11:02 AM,,TOTAL,354,0,803,44.08%,False
+Schuylkill,002 Ashland Borough 1st,1,11/04/2026 11:02 AM,,Election Day,286,0,,,
+Schuylkill,002 Ashland Borough 1st,1,11/04/2026 11:02 AM,,Mail Votes,68,0,,,
+Schuylkill,002 Ashland Borough 1st,1,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,005 Ashland Borough 2nd,2,11/04/2026 11:02 AM,,TOTAL,321,0,686,46.79%,False
+Schuylkill,005 Ashland Borough 2nd,2,11/04/2026 11:02 AM,,Election Day,272,0,,,
+Schuylkill,005 Ashland Borough 2nd,2,11/04/2026 11:02 AM,,Mail Votes,49,0,,,
+Schuylkill,005 Ashland Borough 2nd,2,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,006 Blythe Township,3,11/04/2026 11:02 AM,,TOTAL,311,0,570,54.56%,False
+Schuylkill,006 Blythe Township,3,11/04/2026 11:02 AM,,Election Day,259,0,,,
+Schuylkill,006 Blythe Township,3,11/04/2026 11:02 AM,,Mail Votes,52,0,,,
+Schuylkill,006 Blythe Township,3,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,008 Branch Township,4,11/04/2026 11:02 AM,,TOTAL,740,0,1277,57.95%,False
+Schuylkill,008 Branch Township,4,11/04/2026 11:02 AM,,Election Day,610,0,,,
+Schuylkill,008 Branch Township,4,11/04/2026 11:02 AM,,Mail Votes,130,0,,,
+Schuylkill,008 Branch Township,4,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,010 Butler Township Englewood,5,11/04/2026 11:02 AM,,TOTAL,244,0,402,60.70%,False
+Schuylkill,010 Butler Township Englewood,5,11/04/2026 11:02 AM,,Election Day,199,0,,,
+Schuylkill,010 Butler Township Englewood,5,11/04/2026 11:02 AM,,Mail Votes,45,0,,,
+Schuylkill,010 Butler Township Englewood,5,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,011 Butler Township Fountain Springs,6,11/04/2026 11:02 AM,,TOTAL,677,0,1116,60.66%,False
+Schuylkill,011 Butler Township Fountain Springs,6,11/04/2026 11:02 AM,,Election Day,576,0,,,
+Schuylkill,011 Butler Township Fountain Springs,6,11/04/2026 11:02 AM,,Mail Votes,101,0,,,
+Schuylkill,011 Butler Township Fountain Springs,6,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,013 Butler Township Lavelle,7,11/04/2026 11:02 AM,,TOTAL,549,0,946,58.03%,False
+Schuylkill,013 Butler Township Lavelle,7,11/04/2026 11:02 AM,,Election Day,471,0,,,
+Schuylkill,013 Butler Township Lavelle,7,11/04/2026 11:02 AM,,Mail Votes,78,0,,,
+Schuylkill,013 Butler Township Lavelle,7,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,014 Butler Township Northeast,8,11/04/2026 11:02 AM,,TOTAL,93,0,201,46.27%,False
+Schuylkill,014 Butler Township Northeast,8,11/04/2026 11:02 AM,,Election Day,72,0,,,
+Schuylkill,014 Butler Township Northeast,8,11/04/2026 11:02 AM,,Mail Votes,21,0,,,
+Schuylkill,014 Butler Township Northeast,8,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,015 Cass Township North,9,11/04/2026 11:02 AM,,TOTAL,110,0,242,45.45%,False
+Schuylkill,015 Cass Township North,9,11/04/2026 11:02 AM,,Election Day,82,0,,,
+Schuylkill,015 Cass Township North,9,11/04/2026 11:02 AM,,Mail Votes,28,0,,,
+Schuylkill,015 Cass Township North,9,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,016 Cass Township South,10,11/04/2026 11:02 AM,,TOTAL,496,0,906,54.75%,False
+Schuylkill,016 Cass Township South,10,11/04/2026 11:02 AM,,Election Day,415,0,,,
+Schuylkill,016 Cass Township South,10,11/04/2026 11:02 AM,,Mail Votes,81,0,,,
+Schuylkill,016 Cass Township South,10,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,018 Delano Township,11,11/04/2026 11:02 AM,,TOTAL,135,0,266,50.75%,False
+Schuylkill,018 Delano Township,11,11/04/2026 11:02 AM,,Election Day,108,0,,,
+Schuylkill,018 Delano Township,11,11/04/2026 11:02 AM,,Mail Votes,27,0,,,
+Schuylkill,018 Delano Township,11,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,019 East Norwegian Township,12,11/04/2026 11:02 AM,,TOTAL,403,0,717,56.21%,False
+Schuylkill,019 East Norwegian Township,12,11/04/2026 11:02 AM,,Election Day,309,0,,,
+Schuylkill,019 East Norwegian Township,12,11/04/2026 11:02 AM,,Mail Votes,94,0,,,
+Schuylkill,019 East Norwegian Township,12,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,021 Frackville Borough North,13,11/04/2026 11:02 AM,,TOTAL,373,0,805,46.34%,False
+Schuylkill,021 Frackville Borough North,13,11/04/2026 11:02 AM,,Election Day,312,0,,,
+Schuylkill,021 Frackville Borough North,13,11/04/2026 11:02 AM,,Mail Votes,61,0,,,
+Schuylkill,021 Frackville Borough North,13,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,022 Frackville Borough Middle,14,11/04/2026 11:02 AM,,TOTAL,301,0,616,48.86%,False
+Schuylkill,022 Frackville Borough Middle,14,11/04/2026 11:02 AM,,Election Day,247,0,,,
+Schuylkill,022 Frackville Borough Middle,14,11/04/2026 11:02 AM,,Mail Votes,54,0,,,
+Schuylkill,022 Frackville Borough Middle,14,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,024 Frackville Borough South,15,11/04/2026 11:02 AM,,TOTAL,574,2,1124,51.07%,False
+Schuylkill,024 Frackville Borough South,15,11/04/2026 11:02 AM,,Election Day,471,0,,,
+Schuylkill,024 Frackville Borough South,15,11/04/2026 11:02 AM,,Mail Votes,103,2,,,
+Schuylkill,024 Frackville Borough South,15,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,027 Gilberton Borough,16,11/04/2026 11:02 AM,,TOTAL,175,0,340,51.47%,False
+Schuylkill,027 Gilberton Borough,16,11/04/2026 11:02 AM,,Election Day,139,0,,,
+Schuylkill,027 Gilberton Borough,16,11/04/2026 11:02 AM,,Mail Votes,36,0,,,
+Schuylkill,027 Gilberton Borough,16,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,028 Girardville Borough,17,11/04/2026 11:02 AM,,TOTAL,345,0,744,46.37%,False
+Schuylkill,028 Girardville Borough,17,11/04/2026 11:02 AM,,Election Day,288,0,,,
+Schuylkill,028 Girardville Borough,17,11/04/2026 11:02 AM,,Mail Votes,57,0,,,
+Schuylkill,028 Girardville Borough,17,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,031 Gordon Borough,18,11/04/2026 11:02 AM,,TOTAL,317,1,541,58.60%,False
+Schuylkill,031 Gordon Borough,18,11/04/2026 11:02 AM,,Election Day,276,1,,,
+Schuylkill,031 Gordon Borough,18,11/04/2026 11:02 AM,,Mail Votes,41,0,,,
+Schuylkill,031 Gordon Borough,18,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,032 Mahanoy City Borough 1st,19,11/04/2026 11:02 AM,,TOTAL,88,0,258,34.11%,False
+Schuylkill,032 Mahanoy City Borough 1st,19,11/04/2026 11:02 AM,,Election Day,72,0,,,
+Schuylkill,032 Mahanoy City Borough 1st,19,11/04/2026 11:02 AM,,Mail Votes,16,0,,,
+Schuylkill,032 Mahanoy City Borough 1st,19,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,033 Mahanoy City Borough 2nd,20,11/04/2026 11:02 AM,,TOTAL,246,0,575,42.78%,False
+Schuylkill,033 Mahanoy City Borough 2nd,20,11/04/2026 11:02 AM,,Election Day,191,0,,,
+Schuylkill,033 Mahanoy City Borough 2nd,20,11/04/2026 11:02 AM,,Mail Votes,55,0,,,
+Schuylkill,033 Mahanoy City Borough 2nd,20,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,036 Mahanoy City Borough 3rd,21,11/04/2026 11:02 AM,,TOTAL,150,0,417,35.97%,False
+Schuylkill,036 Mahanoy City Borough 3rd,21,11/04/2026 11:02 AM,,Election Day,124,0,,,
+Schuylkill,036 Mahanoy City Borough 3rd,21,11/04/2026 11:02 AM,,Mail Votes,26,0,,,
+Schuylkill,036 Mahanoy City Borough 3rd,21,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,037 Mahanoy City Borough 4th,22,11/04/2026 11:02 AM,,TOTAL,286,0,726,39.39%,False
+Schuylkill,037 Mahanoy City Borough 4th,22,11/04/2026 11:02 AM,,Election Day,232,0,,,
+Schuylkill,037 Mahanoy City Borough 4th,22,11/04/2026 11:02 AM,,Mail Votes,54,0,,,
+Schuylkill,037 Mahanoy City Borough 4th,22,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,039 Mahanoy Township,23,11/04/2026 11:02 AM,,TOTAL,334,1,584,57.19%,False
+Schuylkill,039 Mahanoy Township,23,11/04/2026 11:02 AM,,Election Day,268,1,,,
+Schuylkill,039 Mahanoy Township,23,11/04/2026 11:02 AM,,Mail Votes,66,0,,,
+Schuylkill,039 Mahanoy Township,23,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,041 Middleport Borough,24,11/04/2026 11:02 AM,,TOTAL,129,0,259,49.81%,False
+Schuylkill,041 Middleport Borough,24,11/04/2026 11:02 AM,,Election Day,108,0,,,
+Schuylkill,041 Middleport Borough,24,11/04/2026 11:02 AM,,Mail Votes,21,0,,,
+Schuylkill,041 Middleport Borough,24,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,042 Minersville Borough 1st,25,11/04/2026 11:02 AM,,TOTAL,272,0,586,46.42%,False
+Schuylkill,042 Minersville Borough 1st,25,11/04/2026 11:02 AM,,Election Day,202,0,,,
+Schuylkill,042 Minersville Borough 1st,25,11/04/2026 11:02 AM,,Mail Votes,70,0,,,
+Schuylkill,042 Minersville Borough 1st,25,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,043 Minersville Borough 2nd,26,11/04/2026 11:02 AM,,TOTAL,316,0,832,37.98%,False
+Schuylkill,043 Minersville Borough 2nd,26,11/04/2026 11:02 AM,,Election Day,257,0,,,
+Schuylkill,043 Minersville Borough 2nd,26,11/04/2026 11:02 AM,,Mail Votes,59,0,,,
+Schuylkill,043 Minersville Borough 2nd,26,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,044 Minersville Borough 3rd,27,11/04/2026 11:02 AM,,TOTAL,283,0,668,42.37%,False
+Schuylkill,044 Minersville Borough 3rd,27,11/04/2026 11:02 AM,,Election Day,241,0,,,
+Schuylkill,044 Minersville Borough 3rd,27,11/04/2026 11:02 AM,,Mail Votes,42,0,,,
+Schuylkill,044 Minersville Borough 3rd,27,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,045 Minersville Borough 4th,28,11/04/2026 11:02 AM,,TOTAL,244,0,555,43.96%,False
+Schuylkill,045 Minersville Borough 4th,28,11/04/2026 11:02 AM,,Election Day,209,0,,,
+Schuylkill,045 Minersville Borough 4th,28,11/04/2026 11:02 AM,,Mail Votes,35,0,,,
+Schuylkill,045 Minersville Borough 4th,28,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,048 New Castle Township,29,11/04/2026 11:02 AM,,TOTAL,105,0,219,47.95%,False
+Schuylkill,048 New Castle Township,29,11/04/2026 11:02 AM,,Election Day,87,0,,,
+Schuylkill,048 New Castle Township,29,11/04/2026 11:02 AM,,Mail Votes,18,0,,,
+Schuylkill,048 New Castle Township,29,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,049 New Philadelphia Borough,30,11/04/2026 11:02 AM,,TOTAL,352,0,670,52.54%,False
+Schuylkill,049 New Philadelphia Borough,30,11/04/2026 11:02 AM,,Election Day,296,0,,,
+Schuylkill,049 New Philadelphia Borough,30,11/04/2026 11:02 AM,,Mail Votes,56,0,,,
+Schuylkill,049 New Philadelphia Borough,30,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,051 Norwegian Township Currans,31,11/04/2026 11:02 AM,,TOTAL,731,0,1223,59.77%,False
+Schuylkill,051 Norwegian Township Currans,31,11/04/2026 11:02 AM,,Election Day,622,0,,,
+Schuylkill,051 Norwegian Township Currans,31,11/04/2026 11:02 AM,,Mail Votes,109,0,,,
+Schuylkill,051 Norwegian Township Currans,31,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,052 Norwegian Township Marlin,32,11/04/2026 11:02 AM,,TOTAL,402,0,588,68.37%,False
+Schuylkill,052 Norwegian Township Marlin,32,11/04/2026 11:02 AM,,Election Day,359,0,,,
+Schuylkill,052 Norwegian Township Marlin,32,11/04/2026 11:02 AM,,Mail Votes,43,0,,,
+Schuylkill,052 Norwegian Township Marlin,32,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,053 Palo Alto Borough 1st Ward,33,11/04/2026 11:02 AM,,TOTAL,135,0,266,50.75%,False
+Schuylkill,053 Palo Alto Borough 1st Ward,33,11/04/2026 11:02 AM,,Election Day,119,0,,,
+Schuylkill,053 Palo Alto Borough 1st Ward,33,11/04/2026 11:02 AM,,Mail Votes,16,0,,,
+Schuylkill,053 Palo Alto Borough 1st Ward,33,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,054 Palo Alto Borough 2nd Ward,34,11/04/2026 11:02 AM,,TOTAL,189,0,372,50.81%,False
+Schuylkill,054 Palo Alto Borough 2nd Ward,34,11/04/2026 11:02 AM,,Election Day,160,0,,,
+Schuylkill,054 Palo Alto Borough 2nd Ward,34,11/04/2026 11:02 AM,,Mail Votes,29,0,,,
+Schuylkill,054 Palo Alto Borough 2nd Ward,34,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,055 Port Carbon Borough 1st,35,11/04/2026 11:02 AM,,TOTAL,174,0,391,44.50%,False
+Schuylkill,055 Port Carbon Borough 1st,35,11/04/2026 11:02 AM,,Election Day,148,0,,,
+Schuylkill,055 Port Carbon Borough 1st,35,11/04/2026 11:02 AM,,Mail Votes,26,0,,,
+Schuylkill,055 Port Carbon Borough 1st,35,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,056 Port Carbon Borough 2nd,36,11/04/2026 11:02 AM,,TOTAL,425,0,791,53.73%,False
+Schuylkill,056 Port Carbon Borough 2nd,36,11/04/2026 11:02 AM,,Election Day,345,0,,,
+Schuylkill,056 Port Carbon Borough 2nd,36,11/04/2026 11:02 AM,,Mail Votes,80,0,,,
+Schuylkill,056 Port Carbon Borough 2nd,36,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,057 Reilly Township,37,11/04/2026 11:02 AM,,TOTAL,237,0,435,54.48%,False
+Schuylkill,057 Reilly Township,37,11/04/2026 11:02 AM,,Election Day,217,0,,,
+Schuylkill,057 Reilly Township,37,11/04/2026 11:02 AM,,Mail Votes,20,0,,,
+Schuylkill,057 Reilly Township,37,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,058 Ryan Township,38,11/04/2026 11:02 AM,,TOTAL,664,0,1117,59.44%,False
+Schuylkill,058 Ryan Township,38,11/04/2026 11:02 AM,,Election Day,574,0,,,
+Schuylkill,058 Ryan Township,38,11/04/2026 11:02 AM,,Mail Votes,90,0,,,
+Schuylkill,058 Ryan Township,38,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,060 St. Clair Borough Middle,39,11/04/2026 11:02 AM,,TOTAL,238,0,529,44.99%,False
+Schuylkill,060 St. Clair Borough Middle,39,11/04/2026 11:02 AM,,Election Day,183,0,,,
+Schuylkill,060 St. Clair Borough Middle,39,11/04/2026 11:02 AM,,Mail Votes,55,0,,,
+Schuylkill,060 St. Clair Borough Middle,39,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,061 St. Clair Borough South,40,11/04/2026 11:02 AM,,TOTAL,368,0,756,48.68%,False
+Schuylkill,061 St. Clair Borough South,40,11/04/2026 11:02 AM,,Election Day,302,0,,,
+Schuylkill,061 St. Clair Borough South,40,11/04/2026 11:02 AM,,Mail Votes,66,0,,,
+Schuylkill,061 St. Clair Borough South,40,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,063 St. Clair Borough North,41,11/04/2026 11:02 AM,,TOTAL,308,1,592,52.03%,False
+Schuylkill,063 St. Clair Borough North,41,11/04/2026 11:02 AM,,Election Day,247,0,,,
+Schuylkill,063 St. Clair Borough North,41,11/04/2026 11:02 AM,,Mail Votes,61,1,,,
+Schuylkill,063 St. Clair Borough North,41,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,064 Shenandoah Borough 1st,42,11/04/2026 11:02 AM,,TOTAL,64,0,139,46.04%,False
+Schuylkill,064 Shenandoah Borough 1st,42,11/04/2026 11:02 AM,,Election Day,54,0,,,
+Schuylkill,064 Shenandoah Borough 1st,42,11/04/2026 11:02 AM,,Mail Votes,10,0,,,
+Schuylkill,064 Shenandoah Borough 1st,42,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,065 Shenandoah Borough 2nd,43,11/04/2026 11:02 AM,,TOTAL,130,0,380,34.21%,False
+Schuylkill,065 Shenandoah Borough 2nd,43,11/04/2026 11:02 AM,,Election Day,111,0,,,
+Schuylkill,065 Shenandoah Borough 2nd,43,11/04/2026 11:02 AM,,Mail Votes,19,0,,,
+Schuylkill,065 Shenandoah Borough 2nd,43,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,069 Shenandoah Borough 3rd,44,11/04/2026 11:02 AM,,TOTAL,254,0,699,36.34%,False
+Schuylkill,069 Shenandoah Borough 3rd,44,11/04/2026 11:02 AM,,Election Day,213,0,,,
+Schuylkill,069 Shenandoah Borough 3rd,44,11/04/2026 11:02 AM,,Mail Votes,41,0,,,
+Schuylkill,069 Shenandoah Borough 3rd,44,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,070 Shenandoah Borough 4th,45,11/04/2026 11:02 AM,,TOTAL,143,0,400,35.75%,False
+Schuylkill,070 Shenandoah Borough 4th,45,11/04/2026 11:02 AM,,Election Day,125,0,,,
+Schuylkill,070 Shenandoah Borough 4th,45,11/04/2026 11:02 AM,,Mail Votes,18,0,,,
+Schuylkill,070 Shenandoah Borough 4th,45,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,072 Shenandoah Borough 5th,46,11/04/2026 11:02 AM,,TOTAL,149,0,382,39.01%,False
+Schuylkill,072 Shenandoah Borough 5th,46,11/04/2026 11:02 AM,,Election Day,118,0,,,
+Schuylkill,072 Shenandoah Borough 5th,46,11/04/2026 11:02 AM,,Mail Votes,31,0,,,
+Schuylkill,072 Shenandoah Borough 5th,46,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,074 Shenandoah Borough 6th,47,11/04/2026 11:02 AM,,TOTAL,59,0,140,42.14%,False
+Schuylkill,074 Shenandoah Borough 6th,47,11/04/2026 11:02 AM,,Election Day,44,0,,,
+Schuylkill,074 Shenandoah Borough 6th,47,11/04/2026 11:02 AM,,Mail Votes,15,0,,,
+Schuylkill,074 Shenandoah Borough 6th,47,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,075 West Mahanoy Township Altamont,48,11/04/2026 11:02 AM,,TOTAL,305,0,566,53.89%,False
+Schuylkill,075 West Mahanoy Township Altamont,48,11/04/2026 11:02 AM,,Election Day,260,0,,,
+Schuylkill,075 West Mahanoy Township Altamont,48,11/04/2026 11:02 AM,,Mail Votes,45,0,,,
+Schuylkill,075 West Mahanoy Township Altamont,48,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,076 West Mahanoy Township 2nd,49,11/04/2026 11:02 AM,,TOTAL,457,0,876,52.17%,False
+Schuylkill,076 West Mahanoy Township 2nd,49,11/04/2026 11:02 AM,,Election Day,359,0,,,
+Schuylkill,076 West Mahanoy Township 2nd,49,11/04/2026 11:02 AM,,Mail Votes,98,0,,,
+Schuylkill,076 West Mahanoy Township 2nd,49,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,079 West Mahanoy Township 1st,50,11/04/2026 11:02 AM,,TOTAL,121,0,294,41.16%,False
+Schuylkill,079 West Mahanoy Township 1st,50,11/04/2026 11:02 AM,,Election Day,103,0,,,
+Schuylkill,079 West Mahanoy Township 1st,50,11/04/2026 11:02 AM,,Mail Votes,18,0,,,
+Schuylkill,079 West Mahanoy Township 1st,50,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,080 Auburn Borough,51,11/04/2026 11:02 AM,,TOTAL,251,0,493,50.91%,False
+Schuylkill,080 Auburn Borough,51,11/04/2026 11:02 AM,,Election Day,227,0,,,
+Schuylkill,080 Auburn Borough,51,11/04/2026 11:02 AM,,Mail Votes,24,0,,,
+Schuylkill,080 Auburn Borough,51,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,081 Coaldale Borough East,52,11/04/2026 11:02 AM,,TOTAL,306,0,737,41.52%,False
+Schuylkill,081 Coaldale Borough East,52,11/04/2026 11:02 AM,,Election Day,247,0,,,
+Schuylkill,081 Coaldale Borough East,52,11/04/2026 11:02 AM,,Mail Votes,59,0,,,
+Schuylkill,081 Coaldale Borough East,52,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,083 Coaldale Borough West,53,11/04/2026 11:02 AM,,TOTAL,314,1,726,43.25%,False
+Schuylkill,083 Coaldale Borough West,53,11/04/2026 11:02 AM,,Election Day,254,0,,,
+Schuylkill,083 Coaldale Borough West,53,11/04/2026 11:02 AM,,Mail Votes,60,1,,,
+Schuylkill,083 Coaldale Borough West,53,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,084 Deer Lake Borough,54,11/04/2026 11:02 AM,,TOTAL,338,0,536,63.06%,False
+Schuylkill,084 Deer Lake Borough,54,11/04/2026 11:02 AM,,Election Day,298,0,,,
+Schuylkill,084 Deer Lake Borough,54,11/04/2026 11:02 AM,,Mail Votes,40,0,,,
+Schuylkill,084 Deer Lake Borough,54,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,085 East Brunswick Township,55,11/04/2026 11:02 AM,,TOTAL,845,1,1374,61.50%,False
+Schuylkill,085 East Brunswick Township,55,11/04/2026 11:02 AM,,Election Day,724,0,,,
+Schuylkill,085 East Brunswick Township,55,11/04/2026 11:02 AM,,Mail Votes,121,1,,,
+Schuylkill,085 East Brunswick Township,55,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,088 East Union Township,56,11/04/2026 11:02 AM,,TOTAL,721,0,1345,53.61%,False
+Schuylkill,088 East Union Township,56,11/04/2026 11:02 AM,,Election Day,588,0,,,
+Schuylkill,088 East Union Township,56,11/04/2026 11:02 AM,,Mail Votes,133,0,,,
+Schuylkill,088 East Union Township,56,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,089 Kline Township,57,11/04/2026 11:02 AM,,TOTAL,563,0,1029,54.71%,False
+Schuylkill,089 Kline Township,57,11/04/2026 11:02 AM,,Election Day,490,0,,,
+Schuylkill,089 Kline Township,57,11/04/2026 11:02 AM,,Mail Votes,73,0,,,
+Schuylkill,089 Kline Township,57,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,091 Landingville Borough,58,11/04/2026 11:02 AM,,TOTAL,62,0,117,52.99%,False
+Schuylkill,091 Landingville Borough,58,11/04/2026 11:02 AM,,Election Day,55,0,,,
+Schuylkill,091 Landingville Borough,58,11/04/2026 11:02 AM,,Mail Votes,7,0,,,
+Schuylkill,091 Landingville Borough,58,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,092 McAdoo Borough 1st,59,11/04/2026 11:02 AM,,TOTAL,236,0,641,36.82%,False
+Schuylkill,092 McAdoo Borough 1st,59,11/04/2026 11:02 AM,,Election Day,193,0,,,
+Schuylkill,092 McAdoo Borough 1st,59,11/04/2026 11:02 AM,,Mail Votes,43,0,,,
+Schuylkill,092 McAdoo Borough 1st,59,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,093 McAdoo Borough 2nd,60,11/04/2026 11:02 AM,,TOTAL,307,0,771,39.82%,False
+Schuylkill,093 McAdoo Borough 2nd,60,11/04/2026 11:02 AM,,Election Day,256,0,,,
+Schuylkill,093 McAdoo Borough 2nd,60,11/04/2026 11:02 AM,,Mail Votes,51,0,,,
+Schuylkill,093 McAdoo Borough 2nd,60,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,096 New Ringgold Borough,61,11/04/2026 11:02 AM,,TOTAL,89,0,177,50.28%,False
+Schuylkill,096 New Ringgold Borough,61,11/04/2026 11:02 AM,,Election Day,84,0,,,
+Schuylkill,096 New Ringgold Borough,61,11/04/2026 11:02 AM,,Mail Votes,5,0,,,
+Schuylkill,096 New Ringgold Borough,61,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,097 North Union Township,62,11/04/2026 11:02 AM,,TOTAL,555,0,1028,53.99%,False
+Schuylkill,097 North Union Township,62,11/04/2026 11:02 AM,,Election Day,473,0,,,
+Schuylkill,097 North Union Township,62,11/04/2026 11:02 AM,,Mail Votes,82,0,,,
+Schuylkill,097 North Union Township,62,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,099 Port Clinton Borough,63,11/04/2026 11:02 AM,,TOTAL,94,0,181,51.93%,False
+Schuylkill,099 Port Clinton Borough,63,11/04/2026 11:02 AM,,Election Day,86,0,,,
+Schuylkill,099 Port Clinton Borough,63,11/04/2026 11:02 AM,,Mail Votes,8,0,,,
+Schuylkill,099 Port Clinton Borough,63,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,100 Ringtown Borough,64,11/04/2026 11:02 AM,,TOTAL,273,0,522,52.30%,False
+Schuylkill,100 Ringtown Borough,64,11/04/2026 11:02 AM,,Election Day,232,0,,,
+Schuylkill,100 Ringtown Borough,64,11/04/2026 11:02 AM,,Mail Votes,41,0,,,
+Schuylkill,100 Ringtown Borough,64,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,101 Rush Township East,65,11/04/2026 11:02 AM,,TOTAL,734,1,1156,63.49%,False
+Schuylkill,101 Rush Township East,65,11/04/2026 11:02 AM,,Election Day,580,0,,,
+Schuylkill,101 Rush Township East,65,11/04/2026 11:02 AM,,Mail Votes,154,1,,,
+Schuylkill,101 Rush Township East,65,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,102 Rush Township West,66,11/04/2026 11:02 AM,,TOTAL,599,0,1058,56.62%,False
+Schuylkill,102 Rush Township West,66,11/04/2026 11:02 AM,,Election Day,509,0,,,
+Schuylkill,102 Rush Township West,66,11/04/2026 11:02 AM,,Mail Votes,90,0,,,
+Schuylkill,102 Rush Township West,66,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,103 Rush Township Elixir,67,11/04/2026 11:02 AM,,TOTAL,187,0,364,51.37%,False
+Schuylkill,103 Rush Township Elixir,67,11/04/2026 11:02 AM,,Election Day,161,0,,,
+Schuylkill,103 Rush Township Elixir,67,11/04/2026 11:02 AM,,Mail Votes,26,0,,,
+Schuylkill,103 Rush Township Elixir,67,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,105 Schuylkill Township,68,11/04/2026 11:02 AM,,TOTAL,430,1,782,54.99%,False
+Schuylkill,105 Schuylkill Township,68,11/04/2026 11:02 AM,,Election Day,367,1,,,
+Schuylkill,105 Schuylkill Township,68,11/04/2026 11:02 AM,,Mail Votes,63,0,,,
+Schuylkill,105 Schuylkill Township,68,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,107 Tamaqua Borough 1st,69,11/04/2026 11:02 AM,,TOTAL,458,0,1101,41.60%,False
+Schuylkill,107 Tamaqua Borough 1st,69,11/04/2026 11:02 AM,,Election Day,393,0,,,
+Schuylkill,107 Tamaqua Borough 1st,69,11/04/2026 11:02 AM,,Mail Votes,65,0,,,
+Schuylkill,107 Tamaqua Borough 1st,69,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,109 Tamaqua Borough 2nd,70,11/04/2026 11:02 AM,,TOTAL,441,0,1159,38.05%,False
+Schuylkill,109 Tamaqua Borough 2nd,70,11/04/2026 11:02 AM,,Election Day,350,0,,,
+Schuylkill,109 Tamaqua Borough 2nd,70,11/04/2026 11:02 AM,,Mail Votes,91,0,,,
+Schuylkill,109 Tamaqua Borough 2nd,70,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,111 Tamaqua Borough 3rd,71,11/04/2026 11:02 AM,,TOTAL,513,0,1105,46.43%,False
+Schuylkill,111 Tamaqua Borough 3rd,71,11/04/2026 11:02 AM,,Election Day,411,0,,,
+Schuylkill,111 Tamaqua Borough 3rd,71,11/04/2026 11:02 AM,,Mail Votes,102,0,,,
+Schuylkill,111 Tamaqua Borough 3rd,71,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,112 Tamaqua Borough 4th,72,11/04/2026 11:02 AM,,TOTAL,324,0,788,41.12%,False
+Schuylkill,112 Tamaqua Borough 4th,72,11/04/2026 11:02 AM,,Election Day,279,0,,,
+Schuylkill,112 Tamaqua Borough 4th,72,11/04/2026 11:02 AM,,Mail Votes,45,0,,,
+Schuylkill,112 Tamaqua Borough 4th,72,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,113 Union Township,73,11/04/2026 11:02 AM,,TOTAL,536,0,917,58.45%,False
+Schuylkill,113 Union Township,73,11/04/2026 11:02 AM,,Election Day,470,0,,,
+Schuylkill,113 Union Township,73,11/04/2026 11:02 AM,,Mail Votes,66,0,,,
+Schuylkill,113 Union Township,73,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,114 Walker Township,74,11/04/2026 11:02 AM,,TOTAL,425,0,698,60.89%,False
+Schuylkill,114 Walker Township,74,11/04/2026 11:02 AM,,Election Day,375,0,,,
+Schuylkill,114 Walker Township,74,11/04/2026 11:02 AM,,Mail Votes,50,0,,,
+Schuylkill,114 Walker Township,74,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,115 West Brunswick Township North,75,11/04/2026 11:02 AM,,TOTAL,954,1,1594,59.85%,False
+Schuylkill,115 West Brunswick Township North,75,11/04/2026 11:02 AM,,Election Day,731,0,,,
+Schuylkill,115 West Brunswick Township North,75,11/04/2026 11:02 AM,,Mail Votes,223,1,,,
+Schuylkill,115 West Brunswick Township North,75,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,116 West Brunswick Township South,76,11/04/2026 11:02 AM,,TOTAL,610,1,1049,58.15%,False
+Schuylkill,116 West Brunswick Township South,76,11/04/2026 11:02 AM,,Election Day,496,1,,,
+Schuylkill,116 West Brunswick Township South,76,11/04/2026 11:02 AM,,Mail Votes,114,0,,,
+Schuylkill,116 West Brunswick Township South,76,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,117 West Penn Township 2nd,77,11/04/2026 11:02 AM,,TOTAL,466,0,747,62.38%,False
+Schuylkill,117 West Penn Township 2nd,77,11/04/2026 11:02 AM,,Election Day,422,0,,,
+Schuylkill,117 West Penn Township 2nd,77,11/04/2026 11:02 AM,,Mail Votes,44,0,,,
+Schuylkill,117 West Penn Township 2nd,77,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,118 West Penn Township 1st,78,11/04/2026 11:02 AM,,TOTAL,848,1,1514,56.01%,False
+Schuylkill,118 West Penn Township 1st,78,11/04/2026 11:02 AM,,Election Day,693,1,,,
+Schuylkill,118 West Penn Township 1st,78,11/04/2026 11:02 AM,,Mail Votes,155,0,,,
+Schuylkill,118 West Penn Township 1st,78,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,119 Barry Township,79,11/04/2026 11:02 AM,,TOTAL,399,0,629,63.43%,False
+Schuylkill,119 Barry Township,79,11/04/2026 11:02 AM,,Election Day,358,0,,,
+Schuylkill,119 Barry Township,79,11/04/2026 11:02 AM,,Mail Votes,41,0,,,
+Schuylkill,119 Barry Township,79,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,120 Cressona Borough,80,11/04/2026 11:02 AM,,TOTAL,530,0,1063,49.86%,False
+Schuylkill,120 Cressona Borough,80,11/04/2026 11:02 AM,,Election Day,465,0,,,
+Schuylkill,120 Cressona Borough,80,11/04/2026 11:02 AM,,Mail Votes,65,0,,,
+Schuylkill,120 Cressona Borough,80,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,122 Eldred Township,81,11/04/2026 11:02 AM,,TOTAL,284,0,433,65.59%,False
+Schuylkill,122 Eldred Township,81,11/04/2026 11:02 AM,,Election Day,249,0,,,
+Schuylkill,122 Eldred Township,81,11/04/2026 11:02 AM,,Mail Votes,35,0,,,
+Schuylkill,122 Eldred Township,81,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,123 Foster Township,82,11/04/2026 11:02 AM,,TOTAL,103,0,196,52.55%,False
+Schuylkill,123 Foster Township,82,11/04/2026 11:02 AM,,Election Day,87,0,,,
+Schuylkill,123 Foster Township,82,11/04/2026 11:02 AM,,Mail Votes,16,0,,,
+Schuylkill,123 Foster Township,82,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,124 Frailey Township,83,11/04/2026 11:02 AM,,TOTAL,125,0,260,48.08%,False
+Schuylkill,124 Frailey Township,83,11/04/2026 11:02 AM,,Election Day,110,0,,,
+Schuylkill,124 Frailey Township,83,11/04/2026 11:02 AM,,Mail Votes,15,0,,,
+Schuylkill,124 Frailey Township,83,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,125 Hegins Township East,84,11/04/2026 11:02 AM,,TOTAL,685,0,1159,59.10%,False
+Schuylkill,125 Hegins Township East,84,11/04/2026 11:02 AM,,Election Day,605,0,,,
+Schuylkill,125 Hegins Township East,84,11/04/2026 11:02 AM,,Mail Votes,80,0,,,
+Schuylkill,125 Hegins Township East,84,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,126 Hegins Township West,85,11/04/2026 11:02 AM,,TOTAL,650,0,1178,55.18%,False
+Schuylkill,126 Hegins Township West,85,11/04/2026 11:02 AM,,Election Day,577,0,,,
+Schuylkill,126 Hegins Township West,85,11/04/2026 11:02 AM,,Mail Votes,73,0,,,
+Schuylkill,126 Hegins Township West,85,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,127 Hubley Township,86,11/04/2026 11:02 AM,,TOTAL,313,0,498,62.85%,False
+Schuylkill,127 Hubley Township,86,11/04/2026 11:02 AM,,Election Day,273,0,,,
+Schuylkill,127 Hubley Township,86,11/04/2026 11:02 AM,,Mail Votes,40,0,,,
+Schuylkill,127 Hubley Township,86,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,128 Mechanicsville Borough,87,11/04/2026 11:02 AM,,TOTAL,151,0,277,54.51%,False
+Schuylkill,128 Mechanicsville Borough,87,11/04/2026 11:02 AM,,Election Day,128,0,,,
+Schuylkill,128 Mechanicsville Borough,87,11/04/2026 11:02 AM,,Mail Votes,23,0,,,
+Schuylkill,128 Mechanicsville Borough,87,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,129 Mount Carbon Borough,88,11/04/2026 11:02 AM,,TOTAL,32,0,66,48.48%,False
+Schuylkill,129 Mount Carbon Borough,88,11/04/2026 11:02 AM,,Election Day,29,0,,,
+Schuylkill,129 Mount Carbon Borough,88,11/04/2026 11:02 AM,,Mail Votes,3,0,,,
+Schuylkill,129 Mount Carbon Borough,88,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,130 North Manheim Township 3rd,89,11/04/2026 11:02 AM,,TOTAL,366,0,660,55.45%,False
+Schuylkill,130 North Manheim Township 3rd,89,11/04/2026 11:02 AM,,Election Day,303,0,,,
+Schuylkill,130 North Manheim Township 3rd,89,11/04/2026 11:02 AM,,Mail Votes,63,0,,,
+Schuylkill,130 North Manheim Township 3rd,89,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,131 North Manheim Township 2nd,90,11/04/2026 11:02 AM,,TOTAL,521,0,950,54.84%,False
+Schuylkill,131 North Manheim Township 2nd,90,11/04/2026 11:02 AM,,Election Day,426,0,,,
+Schuylkill,131 North Manheim Township 2nd,90,11/04/2026 11:02 AM,,Mail Votes,95,0,,,
+Schuylkill,131 North Manheim Township 2nd,90,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,132 Orwigsburg Borough 1st,91,11/04/2026 11:02 AM,,TOTAL,498,0,913,54.55%,False
+Schuylkill,132 Orwigsburg Borough 1st,91,11/04/2026 11:02 AM,,Election Day,403,0,,,
+Schuylkill,132 Orwigsburg Borough 1st,91,11/04/2026 11:02 AM,,Mail Votes,95,0,,,
+Schuylkill,132 Orwigsburg Borough 1st,91,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,133 Orwigsburg Borough 2nd,92,11/04/2026 11:02 AM,,TOTAL,669,0,1174,56.98%,False
+Schuylkill,133 Orwigsburg Borough 2nd,92,11/04/2026 11:02 AM,,Election Day,552,0,,,
+Schuylkill,133 Orwigsburg Borough 2nd,92,11/04/2026 11:02 AM,,Mail Votes,117,0,,,
+Schuylkill,133 Orwigsburg Borough 2nd,92,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,134 Pine Grove Borough North,93,11/04/2026 11:02 AM,,TOTAL,394,0,849,46.41%,False
+Schuylkill,134 Pine Grove Borough North,93,11/04/2026 11:02 AM,,Election Day,323,0,,,
+Schuylkill,134 Pine Grove Borough North,93,11/04/2026 11:02 AM,,Mail Votes,71,0,,,
+Schuylkill,134 Pine Grove Borough North,93,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,136 Pine Grove Borough South,94,11/04/2026 11:02 AM,,TOTAL,247,0,522,47.32%,False
+Schuylkill,136 Pine Grove Borough South,94,11/04/2026 11:02 AM,,Election Day,227,0,,,
+Schuylkill,136 Pine Grove Borough South,94,11/04/2026 11:02 AM,,Mail Votes,20,0,,,
+Schuylkill,136 Pine Grove Borough South,94,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,137 Pine Grove Township 1st,95,11/04/2026 11:02 AM,,TOTAL,802,0,1447,55.42%,True
+Schuylkill,137 Pine Grove Township 1st,95,11/04/2026 11:02 AM,,Election Day,649,0,,,
+Schuylkill,137 Pine Grove Township 1st,95,11/04/2026 11:02 AM,,Mail Votes,153,0,,,
+Schuylkill,137 Pine Grove Township 1st,95,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,138 Pine Grove Township 2nd,96,11/04/2026 11:02 AM,,TOTAL,731,0,1428,51.19%,False
+Schuylkill,138 Pine Grove Township 2nd,96,11/04/2026 11:02 AM,,Election Day,564,0,,,
+Schuylkill,138 Pine Grove Township 2nd,96,11/04/2026 11:02 AM,,Mail Votes,167,0,,,
+Schuylkill,138 Pine Grove Township 2nd,96,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,139 Porter Township East,97,11/04/2026 11:02 AM,,TOTAL,409,0,778,52.57%,False
+Schuylkill,139 Porter Township East,97,11/04/2026 11:02 AM,,Election Day,361,0,,,
+Schuylkill,139 Porter Township East,97,11/04/2026 11:02 AM,,Mail Votes,48,0,,,
+Schuylkill,139 Porter Township East,97,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,140 Porter Township West,98,11/04/2026 11:02 AM,,TOTAL,412,0,695,59.28%,False
+Schuylkill,140 Porter Township West,98,11/04/2026 11:02 AM,,Election Day,357,0,,,
+Schuylkill,140 Porter Township West,98,11/04/2026 11:02 AM,,Mail Votes,55,0,,,
+Schuylkill,140 Porter Township West,98,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,141 City of Pottsville 1st,99,11/04/2026 11:02 AM,,TOTAL,145,0,448,32.37%,False
+Schuylkill,141 City of Pottsville 1st,99,11/04/2026 11:02 AM,,Election Day,113,0,,,
+Schuylkill,141 City of Pottsville 1st,99,11/04/2026 11:02 AM,,Mail Votes,32,0,,,
+Schuylkill,141 City of Pottsville 1st,99,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,144 City of Pottsville 2nd,100,11/04/2026 11:02 AM,,TOTAL,315,0,720,43.75%,False
+Schuylkill,144 City of Pottsville 2nd,100,11/04/2026 11:02 AM,,Election Day,257,0,,,
+Schuylkill,144 City of Pottsville 2nd,100,11/04/2026 11:02 AM,,Mail Votes,58,0,,,
+Schuylkill,144 City of Pottsville 2nd,100,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,146 City of Pottsville 3-2,101,11/04/2026 11:02 AM,,TOTAL,148,1,366,40.44%,False
+Schuylkill,146 City of Pottsville 3-2,101,11/04/2026 11:02 AM,,Election Day,111,1,,,
+Schuylkill,146 City of Pottsville 3-2,101,11/04/2026 11:02 AM,,Mail Votes,37,0,,,
+Schuylkill,146 City of Pottsville 3-2,101,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,147 City of Pottsville 3-1,102,11/04/2026 11:02 AM,,TOTAL,343,0,686,50.00%,False
+Schuylkill,147 City of Pottsville 3-1,102,11/04/2026 11:02 AM,,Election Day,279,0,,,
+Schuylkill,147 City of Pottsville 3-1,102,11/04/2026 11:02 AM,,Mail Votes,64,0,,,
+Schuylkill,147 City of Pottsville 3-1,102,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,148 City of Pottsville 3-3,103,11/04/2026 11:02 AM,,TOTAL,241,0,377,63.93%,False
+Schuylkill,148 City of Pottsville 3-3,103,11/04/2026 11:02 AM,,Election Day,183,0,,,
+Schuylkill,148 City of Pottsville 3-3,103,11/04/2026 11:02 AM,,Mail Votes,58,0,,,
+Schuylkill,148 City of Pottsville 3-3,103,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,150 City of Pottsville 4th,104,11/04/2026 11:02 AM,,TOTAL,422,0,1056,39.96%,False
+Schuylkill,150 City of Pottsville 4th,104,11/04/2026 11:02 AM,,Election Day,326,0,,,
+Schuylkill,150 City of Pottsville 4th,104,11/04/2026 11:02 AM,,Mail Votes,96,0,,,
+Schuylkill,150 City of Pottsville 4th,104,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,153 City of Pottsville 5-1,105,11/04/2026 11:02 AM,,TOTAL,257,0,734,35.01%,False
+Schuylkill,153 City of Pottsville 5-1,105,11/04/2026 11:02 AM,,Election Day,193,0,,,
+Schuylkill,153 City of Pottsville 5-1,105,11/04/2026 11:02 AM,,Mail Votes,64,0,,,
+Schuylkill,153 City of Pottsville 5-1,105,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,155 City of Pottsville 5-2,106,11/04/2026 11:02 AM,,TOTAL,376,0,813,46.25%,False
+Schuylkill,155 City of Pottsville 5-2,106,11/04/2026 11:02 AM,,Election Day,308,0,,,
+Schuylkill,155 City of Pottsville 5-2,106,11/04/2026 11:02 AM,,Mail Votes,68,0,,,
+Schuylkill,155 City of Pottsville 5-2,106,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,157 City of Pottsville 6th,107,11/04/2026 11:02 AM,,TOTAL,368,0,756,48.68%,False
+Schuylkill,157 City of Pottsville 6th,107,11/04/2026 11:02 AM,,Election Day,291,0,,,
+Schuylkill,157 City of Pottsville 6th,107,11/04/2026 11:02 AM,,Mail Votes,77,0,,,
+Schuylkill,157 City of Pottsville 6th,107,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,159 City of Pottsville 7-1,108,11/04/2026 11:02 AM,,TOTAL,634,0,1133,55.96%,False
+Schuylkill,159 City of Pottsville 7-1,108,11/04/2026 11:02 AM,,Election Day,471,0,,,
+Schuylkill,159 City of Pottsville 7-1,108,11/04/2026 11:02 AM,,Mail Votes,163,0,,,
+Schuylkill,159 City of Pottsville 7-1,108,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,161 City of Pottsville 7-2,109,11/04/2026 11:02 AM,,TOTAL,638,0,1146,55.67%,False
+Schuylkill,161 City of Pottsville 7-2,109,11/04/2026 11:02 AM,,Election Day,513,0,,,
+Schuylkill,161 City of Pottsville 7-2,109,11/04/2026 11:02 AM,,Mail Votes,125,0,,,
+Schuylkill,161 City of Pottsville 7-2,109,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,162 Schuylkill Haven Borough North,110,11/04/2026 11:02 AM,,TOTAL,386,1,818,47.19%,False
+Schuylkill,162 Schuylkill Haven Borough North,110,11/04/2026 11:02 AM,,Election Day,348,0,,,
+Schuylkill,162 Schuylkill Haven Borough North,110,11/04/2026 11:02 AM,,Mail Votes,38,1,,,
+Schuylkill,162 Schuylkill Haven Borough North,110,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,163 Schuylkill Haven Borough East,111,11/04/2026 11:02 AM,,TOTAL,486,0,981,49.54%,False
+Schuylkill,163 Schuylkill Haven Borough East,111,11/04/2026 11:02 AM,,Election Day,420,0,,,
+Schuylkill,163 Schuylkill Haven Borough East,111,11/04/2026 11:02 AM,,Mail Votes,66,0,,,
+Schuylkill,163 Schuylkill Haven Borough East,111,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,164 Schuylkill Haven Borough South,112,11/04/2026 11:02 AM,,TOTAL,418,0,985,42.44%,False
+Schuylkill,164 Schuylkill Haven Borough South,112,11/04/2026 11:02 AM,,Election Day,342,0,,,
+Schuylkill,164 Schuylkill Haven Borough South,112,11/04/2026 11:02 AM,,Mail Votes,76,0,,,
+Schuylkill,164 Schuylkill Haven Borough South,112,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,165 Schuylkill Haven Borough West,113,11/04/2026 11:02 AM,,TOTAL,463,0,805,57.52%,False
+Schuylkill,165 Schuylkill Haven Borough West,113,11/04/2026 11:02 AM,,Election Day,418,0,,,
+Schuylkill,165 Schuylkill Haven Borough West,113,11/04/2026 11:02 AM,,Mail Votes,45,0,,,
+Schuylkill,165 Schuylkill Haven Borough West,113,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,166 South Manheim Township,114,11/04/2026 11:02 AM,,TOTAL,1218,0,2074,58.73%,False
+Schuylkill,166 South Manheim Township,114,11/04/2026 11:02 AM,,Election Day,935,0,,,
+Schuylkill,166 South Manheim Township,114,11/04/2026 11:02 AM,,Mail Votes,283,0,,,
+Schuylkill,166 South Manheim Township,114,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,167 Tower City Borough,115,11/04/2026 11:02 AM,,TOTAL,373,0,807,46.22%,False
+Schuylkill,167 Tower City Borough,115,11/04/2026 11:02 AM,,Election Day,327,0,,,
+Schuylkill,167 Tower City Borough,115,11/04/2026 11:02 AM,,Mail Votes,46,0,,,
+Schuylkill,167 Tower City Borough,115,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,169 Tremont Borough,116,11/04/2026 11:02 AM,,TOTAL,454,0,990,45.86%,False
+Schuylkill,169 Tremont Borough,116,11/04/2026 11:02 AM,,Election Day,364,0,,,
+Schuylkill,169 Tremont Borough,116,11/04/2026 11:02 AM,,Mail Votes,90,0,,,
+Schuylkill,169 Tremont Borough,116,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,171 Tremont Township,117,11/04/2026 11:02 AM,,TOTAL,82,0,150,54.67%,False
+Schuylkill,171 Tremont Township,117,11/04/2026 11:02 AM,,Election Day,72,0,,,
+Schuylkill,171 Tremont Township,117,11/04/2026 11:02 AM,,Mail Votes,10,0,,,
+Schuylkill,171 Tremont Township,117,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,172 Upper Mahantongo Township,118,11/04/2026 11:02 AM,,TOTAL,239,0,414,57.73%,False
+Schuylkill,172 Upper Mahantongo Township,118,11/04/2026 11:02 AM,,Election Day,215,0,,,
+Schuylkill,172 Upper Mahantongo Township,118,11/04/2026 11:02 AM,,Mail Votes,24,0,,,
+Schuylkill,172 Upper Mahantongo Township,118,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,174 Washington Township North,119,11/04/2026 11:02 AM,,TOTAL,606,0,1076,56.32%,False
+Schuylkill,174 Washington Township North,119,11/04/2026 11:02 AM,,Election Day,507,0,,,
+Schuylkill,174 Washington Township North,119,11/04/2026 11:02 AM,,Mail Votes,99,0,,,
+Schuylkill,174 Washington Township North,119,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,175 Washington Township South,120,11/04/2026 11:02 AM,,TOTAL,553,0,996,55.52%,False
+Schuylkill,175 Washington Township South,120,11/04/2026 11:02 AM,,Election Day,470,0,,,
+Schuylkill,175 Washington Township South,120,11/04/2026 11:02 AM,,Mail Votes,83,0,,,
+Schuylkill,175 Washington Township South,120,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,176 Wayne Township 1st,121,11/04/2026 11:02 AM,,TOTAL,731,1,1286,56.84%,False
+Schuylkill,176 Wayne Township 1st,121,11/04/2026 11:02 AM,,Election Day,597,0,,,
+Schuylkill,176 Wayne Township 1st,121,11/04/2026 11:02 AM,,Mail Votes,134,1,,,
+Schuylkill,176 Wayne Township 1st,121,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,177 Wayne Township 2nd,122,11/04/2026 11:02 AM,,TOTAL,750,0,1251,59.95%,False
+Schuylkill,177 Wayne Township 2nd,122,11/04/2026 11:02 AM,,Election Day,630,0,,,
+Schuylkill,177 Wayne Township 2nd,122,11/04/2026 11:02 AM,,Mail Votes,120,0,,,
+Schuylkill,177 Wayne Township 2nd,122,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,178 North Manheim Township 1st,123,11/04/2026 11:02 AM,,TOTAL,666,0,1110,60.00%,False
+Schuylkill,178 North Manheim Township 1st,123,11/04/2026 11:02 AM,,Election Day,527,0,,,
+Schuylkill,178 North Manheim Township 1st,123,11/04/2026 11:02 AM,,Mail Votes,139,0,,,
+Schuylkill,178 North Manheim Township 1st,123,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,179 West Penn Township 3rd,124,11/04/2026 11:02 AM,,TOTAL,648,1,1103,58.75%,False
+Schuylkill,179 West Penn Township 3rd,124,11/04/2026 11:02 AM,,Election Day,557,1,,,
+Schuylkill,179 West Penn Township 3rd,124,11/04/2026 11:02 AM,,Mail Votes,91,0,,,
+Schuylkill,179 West Penn Township 3rd,124,11/04/2026 11:02 AM,,Provisional,0,0,,,
+Schuylkill,180 Wayne Township 3rd,125,11/04/2026 11:02 AM,,TOTAL,766,0,1323,57.90%,False
+Schuylkill,180 Wayne Township 3rd,125,11/04/2026 11:02 AM,,Election Day,641,0,,,
+Schuylkill,180 Wayne Township 3rd,125,11/04/2026 11:02 AM,,Mail Votes,125,0,,,
+Schuylkill,180 Wayne Township 3rd,125,11/04/2026 11:02 AM,,Provisional,0,0,,,

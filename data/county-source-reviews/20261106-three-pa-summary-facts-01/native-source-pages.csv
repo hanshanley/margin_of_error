@@ -1,0 +1,9 @@
+county,state_code,election_date,native_status_literal,source_update_literal,declared_timezone,source_fips,source_url,source_page,native_total_pages,all_summary_data_consumed,both_engines_match
+Indiana,PA,2026-11-03,UNOFFICIAL RESULTS,11/03/2026 10:03 PM,,,https://www.indianacountypa.gov/wp-content/uploads/Summary-2.pdf,1,2,True,True
+Indiana,PA,2026-11-03,UNOFFICIAL RESULTS,11/03/2026 10:03 PM,,,https://www.indianacountypa.gov/wp-content/uploads/Summary-2.pdf,2,2,True,True
+Lackawanna,PA,2026-11-03,UNOFFICIAL RESULTS,11/03/2026 10:02PM,,,https://www.lackawannacounty.org/Document_center/Department/Elections/G26.SUM12.pdf?t=202611032210180,1,3,True,True
+Lackawanna,PA,2026-11-03,UNOFFICIAL RESULTS,11/03/2026 10:02PM,,,https://www.lackawannacounty.org/Document_center/Department/Elections/G26.SUM12.pdf?t=202611032210180,2,3,True,True
+Lackawanna,PA,2026-11-03,UNOFFICIAL RESULTS,11/03/2026 10:02PM,,,https://www.lackawannacounty.org/Document_center/Department/Elections/G26.SUM12.pdf?t=202611032210180,3,3,True,True
+Schuylkill,PA,2026-11-03,UNOFFICIAL RESULTS,11/04/2026 11:01 AM,,,https://schuylkillcountypa.gov/Document_Center/Departments/Election Bureau/2026/General/2026_General_Election_Summary_Final_2.pdf?t=202611041138300,1,3,True,True
+Schuylkill,PA,2026-11-03,UNOFFICIAL RESULTS,11/04/2026 11:01 AM,,,https://schuylkillcountypa.gov/Document_Center/Departments/Election Bureau/2026/General/2026_General_Election_Summary_Final_2.pdf?t=202611041138300,2,3,True,True
+Schuylkill,PA,2026-11-03,UNOFFICIAL RESULTS,11/04/2026 11:01 AM,,,https://schuylkillcountypa.gov/Document_Center/Departments/Election Bureau/2026/General/2026_General_Election_Summary_Final_2.pdf?t=202611041138300,3,3,True,True

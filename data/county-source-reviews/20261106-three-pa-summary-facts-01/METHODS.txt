@@ -1,0 +1,5 @@
+Complete Indiana, Lackawanna and Schuylkill 2026 county-summary query.
+All eight county-summary pages are fully parsed as numerical facts. All 357 native unit participation headers reconcile across the 520 original statement pages; their contests are outside this summary query. No precinct geography is acquired or inferred.
+Offline: python3 review-three-additional-pa-summaries.py --facts native-facts.json --output REPRODUCED
+Tests: python3 test_review_three_additional_pa_summaries.py
+Native modes, printed percentages, reporting contradictions, missing accounting, restricted contests and absent timezones/FIPS are retained. Missing is not zero. Schuylkill unit 137 Pine Grove Township 1st prints 55.42% for 802 ballots / 1447 registrations (55.425017277125086% calculated); retain and flag this native rounding discrepancy. Candidate selections do not replace ballots. Exact county registration denominators do not become district or mode denominators. Source templates are not redistributed.

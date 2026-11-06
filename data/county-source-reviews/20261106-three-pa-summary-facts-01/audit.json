@@ -1,0 +1,28 @@
+{
+  "counties": 3,
+  "complete_county_summary_pages": 8,
+  "native_unit_participation_headers": 357,
+  "original_statement_pages": 520,
+  "unit_registrations_ballots_and_blanks_reconcile_all_supplied_modes": true,
+  "county_contests": 22,
+  "literal_parties_preserved": true,
+  "indiana_modes_and_overvotes_undervotes_missing_not_zero": true,
+  "schuylkill_native_contest_totals_overvotes_undervotes_absent": true,
+  "lackawanna_reporting_mode_counter_contradictions_preserved": true,
+  "native_printed_turnout_rounding_conflicts": {
+    "Schuylkill": [
+      {
+        "unit_literal": "137 Pine Grove Township 1st",
+        "registered_voters": 1447,
+        "ballots_cast": 802,
+        "printed_turnout_literal": "55.42%",
+        "calculated_percentage": 55.425017277125086
+      }
+    ]
+  },
+  "no_candidate_vote_proxy_no_district_registration_denominators": true,
+  "native_fips_absent": true,
+  "maps_approved": false,
+  "complete_counting": false,
+  "scope": "Complete county-summary numerical query plus complete native unit participation headers, not a complete precinct-contest query or new geometry. Printed source clocks have no timezone. Complete precinct reporting does not establish certification or finished counting. Original HTML/PDF templates stay private. Blank ballots are already in county totals."
+}
