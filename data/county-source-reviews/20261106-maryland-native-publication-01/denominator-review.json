@@ -1,0 +1,466 @@
+{
+  "reviewed_at_utc": "2026-11-06T15:39:19.441481+00:00",
+  "declaration_index_url": "https://elections.maryland.gov/press_room/index.html",
+  "declaration_index_sha256": "e1b31348e5c38874174fb96c9fffc3a114f726d51f9cd2de16ba96e1a3abb98c",
+  "declarations": {
+    "pdf": {
+      "label": "By County (PDF)",
+      "url": "https://elections.maryland.gov/press_room/2026_stats/GG26/Eligible Active Voters by County - GG26.pdf"
+    },
+    "xlsx": {
+      "label": "By County (XLS)",
+      "url": "https://elections.maryland.gov/press_room/2026_stats/GG26/Eligible Active Voters by County - GG26.xlsx"
+    }
+  },
+  "sources": [
+    {
+      "url": "https://elections.maryland.gov/press_room/2026_stats/GG26/Eligible Active Voters by County - GG26.pdf",
+      "final_url": "https://elections.maryland.gov/press_room/2026_stats/GG26/Eligible%20Active%20Voters%20by%20County%20-%20GG26.pdf",
+      "status": 200,
+      "bytes": 66608,
+      "sha256": "12630a17038d4263512b71f3b0ed6a652876764c5c0c17f1d8b9dea70d956d68",
+      "content_type": "application/pdf",
+      "acquired_at_utc": "2026-11-06T15:39:04.897242+00:00"
+    },
+    {
+      "url": "https://elections.maryland.gov/press_room/2026_stats/GG26/Eligible Active Voters by County - GG26.xlsx",
+      "final_url": "https://elections.maryland.gov/press_room/2026_stats/GG26/Eligible%20Active%20Voters%20by%20County%20-%20GG26.xlsx",
+      "status": 200,
+      "bytes": 8147,
+      "sha256": "dbfff2b394a662495677de461ae6abe7954e2077085a2e53ac9791ac8bbd2685",
+      "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "acquired_at_utc": "2026-11-06T15:39:04.954922+00:00"
+    },
+    {
+      "url": "https://elections.maryland.gov/voting_system/ballot_audit_plan_automated.html",
+      "final_url": "https://elections.maryland.gov/voting_system/ballot_audit_plan_automated.html",
+      "status": 200,
+      "bytes": 64920,
+      "sha256": "e4ed8bb922f98da109acb68bb5d5cec9214d1b32b6434fb037c1a04843e09974",
+      "content_type": "text/html",
+      "acquired_at_utc": "2026-11-06T15:39:05.006985+00:00"
+    }
+  ],
+  "numerical_extractions": {
+    "pymupdf": [
+      "             Eligible Active Voters on the Precinct Register - By County\n                           Election: 2026 Gubernatorial General Election\n                                Election Date: November 3, 2026\n                                     **As of October 18, 2026\n\n\n\nCounty                  DEM       REP      GRN       OTH       UNA          WCP     TOTAL\n\nAllegany                        10,683        23,507           69          707         9,603               110        44,679\n\nAnne Arundel                  173,128      127,445          560         6,467       111,152               462       419,214\n\nBaltimore City                  299,356        29,355          911         6,801        72,759               874       410,056\n\nBaltimore County               307,840      138,572          857         9,692       128,107               802       585,870\n\nCalvert                         23,178        28,817           70         1,078        17,130                73        70,346\n\nCaroline                         5,822        11,357           35          360         5,241                42        22,857\n\nCarroll                         32,827        63,733          154         1,932        31,719               137       130,502\n\nCecil                           18,662        35,768           89         1,240        17,964               130        73,853\n\nCharles                        78,030        23,142          158         1,611        27,361               161       130,463\n\nDorchester                       9,350         9,778           25          392         4,654                39        24,238\n\nFrederick                       79,427        67,920          291         2,705        57,296               220       207,859\n\nGarrett                           3,362        14,018           24          277         3,361                23        21,065\n\nHarford                         64,554        82,467          214         3,272        47,576               257       198,340\n\nHoward                       123,760        46,522          348         3,268        66,591               169       240,658\n\nKent                             5,557         5,561           16          197         3,013                18        14,362\n\nMontgomery                   405,684        97,610         1,077         9,184       186,198               561       700,314\n\nPrince George's                452,688        40,703          879        13,377       112,945               788       621,380\n\nQueen Anne's                   11,126        20,610           48          573         9,377                46        41,780\n\nSaint Mary's                    24,978        33,340           75         1,163        19,230                93        78,879\n\nSomerset                        5,260         6,335           25          228         2,788                26        14,662\n\nTalbot                          10,466        11,659           22          408         6,312                25        28,892\n\nWashington                     29,978        44,071          139         1,536        25,420               167       101,311\n\nWicomico                       25,557        24,221           96         1,204        16,005               133        67,216\n\nWorcester                      13,386        20,553           48          747         9,746                46        44,526\n\nTOTAL                       2,214,659     1,007,064         6,230        68,419       991,548              5402     4,293,322"
+    ],
+    "pdfplumber": [
+      "Eligible Active Voters on the Precinct Register - By County\nElection: 2026 Gubernatorial General Election\nElection Date: November 3, 2026\n**As of October 18, 2026\nCounty DEM REP GRN OTH UNA WCP TOTAL\nAllegany 10,683 23,507 69 707 9,603 110 44,679\nAnne Arundel 173,128 127,445 560 6,467 111,152 462 419,214\nBaltimore City 299,356 29,355 911 6,801 72,759 874 410,056\nBaltimore County 307,840 138,572 857 9,692 128,107 802 585,870\nCalvert 23,178 28,817 70 1,078 17,130 73 70,346\nCaroline 5,822 11,357 35 360 5,241 42 22,857\nCarroll 32,827 63,733 154 1,932 31,719 137 130,502\nCecil 18,662 35,768 89 1,240 17,964 130 73,853\nCharles 78,030 23,142 158 1,611 27,361 161 130,463\nDorchester 9,350 9,778 25 392 4,654 39 24,238\nFrederick 79,427 67,920 291 2,705 57,296 220 207,859\nGarrett 3,362 14,018 24 277 3,361 23 21,065\nHarford 64,554 82,467 214 3,272 47,576 257 198,340\nHoward 123,760 46,522 348 3,268 66,591 169 240,658\nKent 5,557 5,561 16 197 3,013 18 14,362\nMontgomery 405,684 97,610 1,077 9,184 186,198 561 700,314\nPrince George's 452,688 40,703 879 13,377 112,945 788 621,380\nQueen Anne's 11,126 20,610 48 573 9,377 46 41,780\nSaint Mary's 24,978 33,340 75 1,163 19,230 93 78,879\nSomerset 5,260 6,335 25 228 2,788 26 14,662\nTalbot 10,466 11,659 22 408 6,312 25 28,892\nWashington 29,978 44,071 139 1,536 25,420 167 101,311\nWicomico 25,557 24,221 96 1,204 16,005 133 67,216\nWorcester 13,386 20,553 48 747 9,746 46 44,526\nTOTAL 2,214,659 1,007,064 6,230 68,419 991,548 5402 4,293,322"
+    ]
+  },
+  "registration_rows": [
+    {
+      "native_county": "Allegany",
+      "DEM": 10683,
+      "REP": 23507,
+      "GRN": 69,
+      "OTH": 707,
+      "UNA": 9603,
+      "WCP": 110,
+      "TOTAL": 44679
+    },
+    {
+      "native_county": "Anne Arundel",
+      "DEM": 173128,
+      "REP": 127445,
+      "GRN": 560,
+      "OTH": 6467,
+      "UNA": 111152,
+      "WCP": 462,
+      "TOTAL": 419214
+    },
+    {
+      "native_county": "Baltimore City",
+      "DEM": 299356,
+      "REP": 29355,
+      "GRN": 911,
+      "OTH": 6801,
+      "UNA": 72759,
+      "WCP": 874,
+      "TOTAL": 410056
+    },
+    {
+      "native_county": "Baltimore County",
+      "DEM": 307840,
+      "REP": 138572,
+      "GRN": 857,
+      "OTH": 9692,
+      "UNA": 128107,
+      "WCP": 802,
+      "TOTAL": 585870
+    },
+    {
+      "native_county": "Calvert",
+      "DEM": 23178,
+      "REP": 28817,
+      "GRN": 70,
+      "OTH": 1078,
+      "UNA": 17130,
+      "WCP": 73,
+      "TOTAL": 70346
+    },
+    {
+      "native_county": "Caroline",
+      "DEM": 5822,
+      "REP": 11357,
+      "GRN": 35,
+      "OTH": 360,
+      "UNA": 5241,
+      "WCP": 42,
+      "TOTAL": 22857
+    },
+    {
+      "native_county": "Carroll",
+      "DEM": 32827,
+      "REP": 63733,
+      "GRN": 154,
+      "OTH": 1932,
+      "UNA": 31719,
+      "WCP": 137,
+      "TOTAL": 130502
+    },
+    {
+      "native_county": "Cecil",
+      "DEM": 18662,
+      "REP": 35768,
+      "GRN": 89,
+      "OTH": 1240,
+      "UNA": 17964,
+      "WCP": 130,
+      "TOTAL": 73853
+    },
+    {
+      "native_county": "Charles",
+      "DEM": 78030,
+      "REP": 23142,
+      "GRN": 158,
+      "OTH": 1611,
+      "UNA": 27361,
+      "WCP": 161,
+      "TOTAL": 130463
+    },
+    {
+      "native_county": "Dorchester",
+      "DEM": 9350,
+      "REP": 9778,
+      "GRN": 25,
+      "OTH": 392,
+      "UNA": 4654,
+      "WCP": 39,
+      "TOTAL": 24238
+    },
+    {
+      "native_county": "Frederick",
+      "DEM": 79427,
+      "REP": 67920,
+      "GRN": 291,
+      "OTH": 2705,
+      "UNA": 57296,
+      "WCP": 220,
+      "TOTAL": 207859
+    },
+    {
+      "native_county": "Garrett",
+      "DEM": 3362,
+      "REP": 14018,
+      "GRN": 24,
+      "OTH": 277,
+      "UNA": 3361,
+      "WCP": 23,
+      "TOTAL": 21065
+    },
+    {
+      "native_county": "Harford",
+      "DEM": 64554,
+      "REP": 82467,
+      "GRN": 214,
+      "OTH": 3272,
+      "UNA": 47576,
+      "WCP": 257,
+      "TOTAL": 198340
+    },
+    {
+      "native_county": "Howard",
+      "DEM": 123760,
+      "REP": 46522,
+      "GRN": 348,
+      "OTH": 3268,
+      "UNA": 66591,
+      "WCP": 169,
+      "TOTAL": 240658
+    },
+    {
+      "native_county": "Kent",
+      "DEM": 5557,
+      "REP": 5561,
+      "GRN": 16,
+      "OTH": 197,
+      "UNA": 3013,
+      "WCP": 18,
+      "TOTAL": 14362
+    },
+    {
+      "native_county": "Montgomery",
+      "DEM": 405684,
+      "REP": 97610,
+      "GRN": 1077,
+      "OTH": 9184,
+      "UNA": 186198,
+      "WCP": 561,
+      "TOTAL": 700314
+    },
+    {
+      "native_county": "Prince George's",
+      "DEM": 452688,
+      "REP": 40703,
+      "GRN": 879,
+      "OTH": 13377,
+      "UNA": 112945,
+      "WCP": 788,
+      "TOTAL": 621380
+    },
+    {
+      "native_county": "Queen Anne's",
+      "DEM": 11126,
+      "REP": 20610,
+      "GRN": 48,
+      "OTH": 573,
+      "UNA": 9377,
+      "WCP": 46,
+      "TOTAL": 41780
+    },
+    {
+      "native_county": "Saint Mary's",
+      "DEM": 24978,
+      "REP": 33340,
+      "GRN": 75,
+      "OTH": 1163,
+      "UNA": 19230,
+      "WCP": 93,
+      "TOTAL": 78879
+    },
+    {
+      "native_county": "Somerset",
+      "DEM": 5260,
+      "REP": 6335,
+      "GRN": 25,
+      "OTH": 228,
+      "UNA": 2788,
+      "WCP": 26,
+      "TOTAL": 14662
+    },
+    {
+      "native_county": "Talbot",
+      "DEM": 10466,
+      "REP": 11659,
+      "GRN": 22,
+      "OTH": 408,
+      "UNA": 6312,
+      "WCP": 25,
+      "TOTAL": 28892
+    },
+    {
+      "native_county": "Washington",
+      "DEM": 29978,
+      "REP": 44071,
+      "GRN": 139,
+      "OTH": 1536,
+      "UNA": 25420,
+      "WCP": 167,
+      "TOTAL": 101311
+    },
+    {
+      "native_county": "Wicomico",
+      "DEM": 25557,
+      "REP": 24221,
+      "GRN": 96,
+      "OTH": 1204,
+      "UNA": 16005,
+      "WCP": 133,
+      "TOTAL": 67216
+    },
+    {
+      "native_county": "Worcester",
+      "DEM": 13386,
+      "REP": 20553,
+      "GRN": 48,
+      "OTH": 747,
+      "UNA": 9746,
+      "WCP": 46,
+      "TOTAL": 44526
+    },
+    {
+      "native_county": "TOTAL",
+      "DEM": 2214659,
+      "REP": 1007064,
+      "GRN": 6230,
+      "OTH": 68419,
+      "UNA": 991548,
+      "WCP": 5402,
+      "TOTAL": 4293322
+    }
+  ],
+  "all_pdf_and_workbook_fields_match": true,
+  "all_25_native_denominators_match": true,
+  "denominator_matches": [
+    {
+      "native_county": "Allegany",
+      "active_registration": 44679,
+      "turnout_eligible_voters": 44679,
+      "exact_match": true
+    },
+    {
+      "native_county": "Anne Arundel",
+      "active_registration": 419214,
+      "turnout_eligible_voters": 419214,
+      "exact_match": true
+    },
+    {
+      "native_county": "Baltimore City",
+      "active_registration": 410056,
+      "turnout_eligible_voters": 410056,
+      "exact_match": true
+    },
+    {
+      "native_county": "Baltimore County",
+      "active_registration": 585870,
+      "turnout_eligible_voters": 585870,
+      "exact_match": true
+    },
+    {
+      "native_county": "Calvert",
+      "active_registration": 70346,
+      "turnout_eligible_voters": 70346,
+      "exact_match": true
+    },
+    {
+      "native_county": "Caroline",
+      "active_registration": 22857,
+      "turnout_eligible_voters": 22857,
+      "exact_match": true
+    },
+    {
+      "native_county": "Carroll",
+      "active_registration": 130502,
+      "turnout_eligible_voters": 130502,
+      "exact_match": true
+    },
+    {
+      "native_county": "Cecil",
+      "active_registration": 73853,
+      "turnout_eligible_voters": 73853,
+      "exact_match": true
+    },
+    {
+      "native_county": "Charles",
+      "active_registration": 130463,
+      "turnout_eligible_voters": 130463,
+      "exact_match": true
+    },
+    {
+      "native_county": "Dorchester",
+      "active_registration": 24238,
+      "turnout_eligible_voters": 24238,
+      "exact_match": true
+    },
+    {
+      "native_county": "Frederick",
+      "active_registration": 207859,
+      "turnout_eligible_voters": 207859,
+      "exact_match": true
+    },
+    {
+      "native_county": "Garrett",
+      "active_registration": 21065,
+      "turnout_eligible_voters": 21065,
+      "exact_match": true
+    },
+    {
+      "native_county": "Harford",
+      "active_registration": 198340,
+      "turnout_eligible_voters": 198340,
+      "exact_match": true
+    },
+    {
+      "native_county": "Howard",
+      "active_registration": 240658,
+      "turnout_eligible_voters": 240658,
+      "exact_match": true
+    },
+    {
+      "native_county": "Kent",
+      "active_registration": 14362,
+      "turnout_eligible_voters": 14362,
+      "exact_match": true
+    },
+    {
+      "native_county": "Montgomery",
+      "active_registration": 700314,
+      "turnout_eligible_voters": 700314,
+      "exact_match": true
+    },
+    {
+      "native_county": "Prince George's",
+      "active_registration": 621380,
+      "turnout_eligible_voters": 621380,
+      "exact_match": true
+    },
+    {
+      "native_county": "Queen Anne's",
+      "active_registration": 41780,
+      "turnout_eligible_voters": 41780,
+      "exact_match": true
+    },
+    {
+      "native_county": "Saint Mary's",
+      "active_registration": 78879,
+      "turnout_eligible_voters": 78879,
+      "exact_match": true
+    },
+    {
+      "native_county": "Somerset",
+      "active_registration": 14662,
+      "turnout_eligible_voters": 14662,
+      "exact_match": true
+    },
+    {
+      "native_county": "Talbot",
+      "active_registration": 28892,
+      "turnout_eligible_voters": 28892,
+      "exact_match": true
+    },
+    {
+      "native_county": "Washington",
+      "active_registration": 101311,
+      "turnout_eligible_voters": 101311,
+      "exact_match": true
+    },
+    {
+      "native_county": "Wicomico",
+      "active_registration": 67216,
+      "turnout_eligible_voters": 67216,
+      "exact_match": true
+    },
+    {
+      "native_county": "Worcester",
+      "active_registration": 44526,
+      "turnout_eligible_voters": 44526,
+      "exact_match": true
+    },
+    {
+      "native_county": "TOTAL",
+      "active_registration": 4293322,
+      "turnout_eligible_voters": 4293322,
+      "exact_match": true
+    }
+  ],
+  "denominator_literal": "Eligible Active Voters on the Precinct Register - By County",
+  "registration_snapshot_literal": "**As of October 18, 2026",
+  "election_literal": "2026 Gubernatorial General Election",
+  "audit_qualification": "There is a known difference in how the voting system and Clear Ballot tabulate individual ballots. The voting system reads each ballot scanned, regardless of the number of pages, as 1 ballot. Clear Ballot, however, tabulates each page of a ballot as 1 card in both cards cast reports. Therefore, the total number of cards cast in a multi-page ballot as calculated by Clear Ballot will be greater than the total number of ballots cast as reported by the voting system. 2",
+  "analysis_ballot_approvals": 0,
+  "analysis_rate_approvals": 0,
+  "map_approvals": 0,
+  "scope": "The denominator is independently identified as the October 18 active registration snapshot, not VEP/VAP/CVAP or election-day registration. Audit documentation distinguishes voting-system ballots from Clear Ballot cards; it does not identify which computation produced this particular unofficial turnout PDF. Preserve all prior native-only approvals."
+}

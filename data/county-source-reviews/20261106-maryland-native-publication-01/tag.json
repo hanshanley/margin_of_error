@@ -1,0 +1,36 @@
+{
+  "ref": {
+    "ref": "refs/tags/voter-county-maryland-native-turnout-20261106-01",
+    "node_id": "REF_kwDOTeY7QdoAOnJlZnMvdGFncy92b3Rlci1jb3VudHktbWFyeWxhbmQtbmF0aXZlLXR1cm5vdXQtMjAyNjExMDYtMDE",
+    "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/refs/tags/voter-county-maryland-native-turnout-20261106-01",
+    "object": {
+      "sha": "d79bd7f562f452469566bb947c149eacdab8d80b",
+      "type": "tag",
+      "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/tags/d79bd7f562f452469566bb947c149eacdab8d80b"
+    }
+  },
+  "tag": {
+    "node_id": "TA_kwDOTeY7QdoAKGQ3OWJkN2Y1NjJmNDUyNDY5NTY2YmI5NDdjMTQ5ZWFjZGFiOGQ4MGI",
+    "sha": "d79bd7f562f452469566bb947c149eacdab8d80b",
+    "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/tags/d79bd7f562f452469566bb947c149eacdab8d80b",
+    "tagger": {
+      "name": "Hans Hanley",
+      "email": "hwahhanley@gmail.com",
+      "date": "2026-11-06T15:36:31Z"
+    },
+    "object": {
+      "sha": "a40a41a16bea5653fc48ec999e751e428721b323",
+      "type": "commit",
+      "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/commits/a40a41a16bea5653fc48ec999e751e428721b323"
+    },
+    "tag": "voter-county-maryland-native-turnout-20261106-01",
+    "message": "Complete Maryland native unofficial turnout query; no generic ballot, rate or map approval\n",
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  }
+}

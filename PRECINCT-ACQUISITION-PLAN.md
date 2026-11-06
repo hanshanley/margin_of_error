@@ -87,6 +87,32 @@ approvals** remain in force. This native numerical package is not a new mapped
 participation layer or a deployed Maryland integration. Seek applicable primary
 definitions or a separately declared ballot/registration report before promotion.
 Do not rerun the completed acquisition or offline package builds unchanged.
+Native-query revision **`a40a41a16bea5653fc48ec999e751e428721b323`**, tag
+`voter-county-maryland-native-turnout-20261106-01`, release **436671605**,
+reports **immutable: true**. Exact credential jobs **42244550830 / 42244635546**
+pass. All **ten entire anonymous assets / ten pinned files / nine ZIP members**
+match; the actual published archive passes eight isolated tests and reproduces
+all ten files byte-identically. Publication proofs are separate in
+`20261106-maryland-native-publication-01`; publication does not promote the
+withheld definitions or change the live UI.
+**15:39 UTC denominator follow-up:** the same saved declaring page explicitly
+links the general-election Eligible Active Voters by County PDF and workbook.
+Both entire originals and the current SBE automated-audit explanation were
+acquired with HTTP 200, verified TLS and complete response hashes. Both complete
+PDF extractions agree on all 25 rows and every literal affiliation count; the
+workbook independently matches every field, including all county/party sums.
+**All 24 county denominators and the statewide 4,293,322 match exactly**:
+they are **Eligible Active Voters on the Precinct Register, as of October 18,
+2026**, not a CVAP/VAP/VEP population or an election-day registration snapshot.
+The frozen native query remains unchanged; this separate follow-up resolves
+its denominator-identification gap without retrospectively changing approvals.
+The current audit explanation distinguishes voting-system ballots from Clear
+Ballot's per-page cards for multi-page ballots. It does not identify which
+computation generated this particular unofficial Crystal Reports PDF. Numerator
+interchangeability therefore remains unresolved; no generic-ballot, analysis-rate
+or map promotion is approved. Complete numerical evidence, native snapshot
+literal, original receipts and that distinction are retained in
+`20261106-maryland-native-publication-01/denominator-review.json`.
 
 **November 6: Somerset facts and context19 server-locked; explorer locally verified.**
 The official November 3 declaring page and its three complete PDFs were acquired
