@@ -25,6 +25,7 @@ const profiles = [
   ['pennsylvania-carbon-20261106-01', 'reported_voters_cast', 'registered_voters', 'native_printed_turnout', 'PA', ['Carbon']],
   ['pennsylvania-elk-20261106-01', 'ballots_cast', 'registered_voters', 'native_printed_turnout', 'PA', ['Elk']],
   ['pennsylvania-forest-20261106-01', 'ballots_cast', 'registered_voters', 'native_printed_turnout', 'PA', ['Forest']],
+  ['pennsylvania-potter-20261106-01', 'ballots_cast', 'registered_voters', 'native_printed_turnout', 'PA', ['Potter']],
   ['dc-delegate-county-20261105-01', 'ballots_cast', 'registered_voters', null, 'DC', ['District of Columbia']],
 ];
 /** @returns {Record<string, string>[]} */
@@ -146,6 +147,16 @@ export function loadReviewedCountyParticipation(reviews) {
       }
     }
     const audit = JSON.parse(readFileSync(resolve(directory, 'audit.json'), 'utf8'));
+    if (id === 'pennsylvania-potter-20261106-01') {
+      for (const [file, digest] of Object.entries({
+        'county-participation.csv': '32e83977ce7b6679afbccaca04b775dad071abdb26a86497fbeebd66d132bac1',
+        'native-source-pages.csv': 'ddd87ae40fef5ecb84f6412fe34b973efe83741823891f696c386de168bd8b00',
+        'audit.json': '9a3290b08c635d69d1ead5b2fc68e59cfaa73fb77efe8e49ff53c4cf7a27647d',
+      })) {
+        if (createHash('sha256').update(readFileSync(resolve(directory, file))).digest('hex') !== digest)
+          throw new Error(`Invalid reviewed county participation: ${id} / ${file}`);
+      }
+    }
     if (['pennsylvania-elk-20261106-01', 'pennsylvania-forest-20261106-01'].includes(id)) {
       const hashes = id === 'pennsylvania-elk-20261106-01' ? {
         'county-participation.csv': '9f3623d46f0df591b03a21fe759d9705228db9de0ab51e74230cd09a1fc34c65',
@@ -172,6 +183,7 @@ export function loadReviewedCountyParticipation(reviews) {
       const nativeCarbonSummary = id === 'pennsylvania-carbon-20261106-01';
       const nativeElkSummary = id === 'pennsylvania-elk-20261106-01';
       const nativeForestSummary = id === 'pennsylvania-forest-20261106-01';
+      const nativePotterSummary = id === 'pennsylvania-potter-20261106-01';
       const nativeVotersCast = excludesProvisionals || id === 'pennsylvania-jefferson-20261106-01'
         || nativeClarionSummary || nativeCarbonSummary;
       const nativeCountyHeader = id === 'pennsylvania-wayne-20261106-01';
@@ -236,6 +248,13 @@ export function loadReviewedCountyParticipation(reviews) {
         'All eleven scanned pages and magnified choice panels were visually reviewed; both full text engines are empty, not independent transcriptions.',
         'Native county summary has overvotes/undervotes but lacks Total Votes Cast/Contest Totals; units lack all four rows and their derived residuals remain unclassified.',
         'The contradictory 11/03/2026 20:56 PM clock is preserved without repair or inferred timezone.');
+      if (nativePotterSummary) reporting.push(
+        'Native Ballots Cast - Total 6,244 = 5,389 Election Day + 855 Mail + explicit zero Provisional; two blank ballots are already included.',
+        'All 32 units are partially reported and zero complete; the native Election Day complete column nevertheless says 32. This contradiction is preserved, not repaired or interpreted as completed ballot counting.',
+        'All 32 unit participation headers and 96 contests reconcile in every reported counting mode.',
+        'Separate 871 mail-in/absentee receipts by 8 p.m. are not counted mail 855; the difference 16 remains unexplained and unallocated. The receipt notice supplies no report clock or timezone.',
+        'County named write-ins are breakdowns within Write-In Totals, not additional votes; unit named breakdowns are absent, not zero or county names allocated to units.',
+        'Native unit Total Votes Cast and Contest Totals rows are absent; derived totals remain separate. Summary and statement clocks remain distinct without an inferred timezone.');
       for (const field of ['native_group_reporting_status_json', 'native_precinct_reporting_status_json']) {
         for (const row of JSON.parse(native[field] || '[]'))
           reporting.push(`${row.groupName.map(label => label.text).join(' / ')}: `
@@ -255,7 +274,8 @@ export function loadReviewedCountyParticipation(reviews) {
         'pennsylvania-armstrong-20261106-01', 'pennsylvania-wayne-20261106-01',
         'pennsylvania-jefferson-20261106-01', 'pennsylvania-clarion-20261106-01',
         'pennsylvania-cameron-20261106-01', 'pennsylvania-carbon-20261106-01',
-        'pennsylvania-elk-20261106-01', 'pennsylvania-forest-20261106-01'].includes(id)) {
+        'pennsylvania-elk-20261106-01', 'pennsylvania-forest-20261106-01',
+        'pennsylvania-potter-20261106-01'].includes(id)) {
         nativeSourceUpdates = [...new Map(csv(resolve(directory, 'native-source-pages.csv')).map(row =>
           [row.source_report ?? 'county_report', { source: row.source_report ?? 'county_report', native_update_literal: row.source_update_literal,
             declared_timezone: row.declared_timezone }])).values()];
@@ -283,12 +303,12 @@ export function loadReviewedCountyParticipation(reviews) {
       observations.push({
         year: 2026, state_code: code, county_id: native.county_fips || `reviewed:${code}:${county}`,
         county, geography_level: native.geography_level || 'county', ballots, denominator,
-        ...(nativeVotersCast || nativeCameronSummary || nativeElkSummary || nativeForestSummary
+        ...(nativeVotersCast || nativeCameronSummary || nativeElkSummary || nativeForestSummary || nativePotterSummary
           ? { participation_measure_literal: native.native_participation_measure_literal } : {}),
         denominator_basis: 'native_registered_voters', reported_pct: denominator === null ? null : 100 * ballots / denominator,
         native_printed_pct: printedPct, source_status_literal: nativeCountyHeader
           ? native.native_parent_status_literal : nativeClarionSummary || nativeCameronSummary || nativeCarbonSummary
-            || nativeElkSummary || nativeForestSummary
+            || nativeElkSummary || nativeForestSummary || nativePotterSummary
             ? native.source_status_literal : native.native_status_literal ?? native.result_status ?? null,
         reported_units: null, total_units: null, source_rows: 0, maps_approved: false,
         review_id: id, native_record: native, native_source_updates: nativeSourceUpdates,

@@ -1,11 +1,27 @@
 {
   "schema_version": 1,
-  "base_url": "/participation-county-context/20261106-05/",
-  "review_bytes": 754479,
-  "review_sha256": "80ca5bfd63bb97edc89c9e0b92c1d3a26372f865c4196bf5d8a3826a490383ad",
-  "complete_download_bytes": 2214466,
-  "complete_download_sha256": "116c145e5459bf1fa67bb36ab4709d269729c5398487f2e9c416e9e96c6fa79a",
+  "base_url": "/participation-county-context/20261106-06/",
+  "review_bytes": 755577,
+  "review_sha256": "976e305e2c0ff14cfb2bf8677335256ecb3d340b6887d3e0c1e407b8d64dcb5d",
+  "complete_download_bytes": 2215183,
+  "complete_download_sha256": "cadd631917cca1a5bcd8bb8c1fb5d4d767446e59440557b841a48a1e7ae54121",
   "downloads": [
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-06/county-participation-joins.csv",
+      "label": "Complete audited county participation joins: all 437 observations, including Potter, Pennsylvania (CSV)"
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-06/review.json",
+      "label": "Complete updated county identity review, exclusions and geometry qualifications (JSON)"
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-06/complete-source-records.json.gz",
+      "label": "Every county, municipal and reporting-unit container: all 909 records, preserving the previous 908 unchanged (JSON · gzip)"
+    },
+    {
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-06/complete-county-participation-context-06.zip",
+      "label": "Complete updated county participation context query, inventories, geometries and offline reproduction code (ZIP)"
+    },
     {
       "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-05/county-participation-joins.csv",
       "label": "Complete audited county participation joins: all 436 observations, including Elk and Forest, Pennsylvania (CSV)"

@@ -1577,6 +1577,28 @@ invented status, completion and missing explicit zero provisional ballots.
 The frozen contexts 01–05 are untouched. Context 06 release verification,
 build, local browsers and exact production verification remain pending.
 Last fully verified production remains `f01f2b2`; Potter is not yet live.
+
+Context 06 facts `152793bc82e66fd9ac83046473456804078d70b4` and fixed
+release **436251976**, tag `voter-county-participation-context-20261106-06`,
+are fully verified: four entire anonymous assets, all 29 pinned files,
+all 28 ZIP members, extracted offline verification and byte-identical archive
+reproduction pass. Exact credentials **42186696333 / 42186688916** pass.
+All **53 affected tests**, Astro check, build, Pages preparation and all
+**seven local browser scenarios** pass. The six UI file hashes are unchanged
+since the passing precheck. Prepared site **952,301,486 bytes**, under 1 GB;
+all 106 relocated complete bulk downloads remain byte-identical.
+Desktop/mobile checks verify all **437 county counts / 65 native-electorate
+fractions / 372 gray missing rates**, Potter's complete counting qualifiers
+and previous selections. All **908** previous entire records, **43** native
+rows, eighteen complete imports, 52 UF rows, historical years and
+**467** earlier download anchors remain unchanged. Current complete downloads
+are **490 anchors / 486 URLs**. All no-JavaScript and failed/changed-source
+fallbacks pass; the temporary local server is stopped. The general validator
+passes participation assertions and still fails only the unrelated UK
+**23 versus 16** assertion at line 1126, not a passing full-site check.
+Main ancestry is fetched and verified before the approved UI publication.
+Exact new deployment, original artifact, **220** selected entire hosted/public
+file comparisons and seven production browser scenarios remain pending.
 McKean's actual .org parent ordinarily redirects to .gov and declares a GIS
 results viewer. That ordinary viewer connection timed out with errno 60;
 there is no HTTP status or body. This is not a denial or evidence of absent

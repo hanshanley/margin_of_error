@@ -1,6 +1,39 @@
 {
   "reviews": [
     {
+      "id": "pennsylvania-potter-20261106-01",
+      "label": "Potter County, Pennsylvania 2026: native ballots, full county/unit query and separate mail receipts",
+      "data_directory": "data/county-source-reviews/20261106-potter-facts-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10ebc01ccdf9daa0e9f1792952e9e523c3c17d78/data/county-source-reviews/20261106-potter-facts-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-potter-20261106-01/complete-potter-county-native-query-01.zip",
+      "complete_download_bytes": 68878,
+      "complete_download_sha256": "30db5d3b276da023a5d9b12387ea768e366e31835aef282de390ba484a93392d",
+      "review_status": "complete_county_and_unit_query_reviewed_unofficial_partial_reporting_separate_mail_receipts",
+      "maps_approved": false,
+      "scope_note": "Complete county summary and all 32 statement pages: every native participation header, all 96 unit contests and every mode/choice/accounting vector reconcile to Ballots Cast - Total 6,244 / 11,041 registrations, printed 56.55%. Counted modes are 5,389 Election Day, 855 Mail and explicit zero Provisional; two blank ballots are already included. All 32 units are partially reported, zero complete; the contradictory native Election Day complete column says 32 and is preserved without repair. All 35 entire pages independently token/parsed-vector match across both complete PDF engines, preserving header reading order and wrapped write-in fragments before/after numeric vectors. Every county named-write-in breakdown reconciles within Write-In Totals; native unit named breakdowns are absent, not zero or county names allocated to units. Native unit Total Votes Cast/Contest Totals are absent; derived accounting remains separate. Parent notice's 871 mail-in/absentee receipts by 8 p.m. are not counted mail 855; difference 16 remains unexplained. Native UNOFFICIAL RESULTS and distinct summary 11/04/2026 2:44 PM / statement 2:45 PM remain literal, without an inferred timezone or receipt report clock. All 24 entire anonymous assets, 24 commit-pinned files and 23 ZIP members are byte-verified and reproduce offline using Python's standard library; eighteen focused rejection cases pass. Fixed checksums/never overwrite, not host locking. Source originals/templates remain private. No source FIPS, new geometry, completed counting, certification, statewide coverage or demographic/party turnout claim.",
+      "tables": [
+        {"file": "county-participation.csv", "label": "Potter: complete native ballots, registrations, counted modes and partial-reporting scope (CSV)"},
+        {"file": "county-candidate-results.csv", "label": "Potter: all 40 county candidate/write-in/mode observations and literal parties, not turnout (CSV)"},
+        {"file": "county-literal-party-totals.csv", "label": "Potter: all 28 separate county office/literal-party/mode candidate totals, not turnout (CSV)"},
+        {"file": "county-contest-accounting.csv", "label": "Potter: all twelve native county contest/mode accounting observations (CSV)"},
+        {"file": "native-unit-participation.csv", "label": "Potter: all 32 native unit participation headers, printed fractions and blank ballots (CSV)"},
+        {"file": "native-unit-participation-modes.csv", "label": "Potter: all 128 native unit/mode participation observations (CSV)"},
+        {"file": "native-unit-candidate-results.csv", "label": "Potter: all 1,280 unit candidate/write-in/mode observations from all 96 contests (CSV)"},
+        {"file": "native-unit-literal-party-totals.csv", "label": "Potter: all 896 separate unit/office/literal-party/mode candidate totals, not turnout (CSV)"},
+        {"file": "native-unit-contest-accounting.csv", "label": "Potter: all 384 unit contest/mode observations with missing native totals preserved (CSV)"},
+        {"file": "native-participation-modes.csv", "label": "Potter: all four native counted county participation modes, distinct from receipts (CSV)"},
+        {"file": "native-reporting-statistics.csv", "label": "Potter: all four native reporting rows and contradictory mode columns, zero complete and 32 partial (CSV)"},
+        {"file": "native-mail-receipts.csv", "label": "Potter: separate 871 mail-in/absentee receipts and deadline, not counted mail (CSV)"},
+        {"file": "native-source-pages.csv", "label": "Potter: all 35 physical/printed page identities, native clocks and precise review scopes (CSV)"},
+        {"file": "native-derived-contest-sums.csv", "label": "Potter: all twelve separate derived unit accounting sums, not invented native cells (CSV)"},
+        {"file": "native-derived-rate-checks.csv", "label": "Potter: all 33 native printed fractions and independent rate checks (CSV)"},
+        {"file": "native-source-declarations.csv", "label": "Potter: both actual parent-declared 2026 general report labels and URLs (CSV)"},
+        {"file": "native-named-write-ins.csv", "label": "Potter: all 92 county named/unassigned write-in mode cells, nested within totals (CSV)"},
+        {"file": "native-unit-named-write-in-availability.csv", "label": "Potter: all 96 unit-contest observations of absent named breakdowns, not zero or allocations (CSV)"}
+      ],
+      "coverage": []
+    },
+    {
       "id": "pennsylvania-forest-20261106-01",
       "label": "Forest County, Pennsylvania 2026: native ballots and complete scanned county/unit query",
       "data_directory": "data/county-source-reviews/20261106-forest-facts-01",
