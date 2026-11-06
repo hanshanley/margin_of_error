@@ -28,6 +28,35 @@ Only the failed deployment job was retried against this same artifact.
 Exact production verification remains active; do not duplicate or claim LIVE
 until all entire hosted/public bytes and seven production browser cases pass.
 
+**Next acquisition: Bradford and Greene primary sources are acquired and
+preliminarily reviewed, not yet packaged, released or integrated.**
+All five entire responses match their saved receipts and actual county-parent
+declarations. Both Bradford snapshots independently agree across pypdf and
+PyMuPDF: the later report prints **20,982 Total Ballots / 39,048 Registered
+Voters / 53.73%**, **61/61** reporting, and **11/3/2026 10:15:12 PM EST**.
+The earlier snapshot remains separate: **12,488 / 39,048 / 31.98%**, **46/61**,
+**8:45:38 PM EST**, literal status `Unoffcial Results 5`.
+Both explicitly say **Election Day**. The parent separately reports **3,346
+received mail-in/absentee ballots**; do not add receipts to reported ballots,
+infer counted mail or promote either report to all-mode county participation.
+Bradford's complete four-contest candidate parsing remains pending; do not reuse
+unverified preliminary web-extraction values.
+
+Greene's actual **All returns** summary reports **11,105 Ballots Cast - Total**
+and **5 Ballots Cast - Blank**, **42/42** reporting and
+`Unofficial Results with MI and Absentee`. Two independent parsing paths agree
+on all **15 complete rows / six sections**, including **13 candidate-or-write-in
+rows / four contests**; every printed candidate fraction reconciles.
+The four derived candidate sums are **10,990 / 10,897 / 10,548 / 10,918**.
+Their differences from ballots remain unclassified, not inferred undervotes or
+mail counts. No native registration denominator, report-update clock or turnout
+rate is present. Blank ballots are not added to the total; administrative
+pseudo-party labels are not party participation. Full reporting is not completed
+counting. See `20261106-bradford-greene-primary-review-01/primary-review.json`.
+Original HTML/PDFs stay private. Complete portable factual queries, tests and
+immutable byte-verified releases are still prerequisites to explorer integration.
+Neither acquisition changes existing map approvals or Maine/D.C. accounting gaps.
+
 The actual county parent declares both complete November 3 reports. Both entire
 PDF originals and the parent match their saved receipts. Two independent PDF
 engines consume every results-report line and produce identical complete vectors:

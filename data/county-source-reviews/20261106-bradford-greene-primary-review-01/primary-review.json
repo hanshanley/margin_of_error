@@ -1,0 +1,261 @@
+{
+  "status": "primary_sources_acquired_and_scopes_reviewed_not_packaged_or_ui_approved",
+  "original_receipts": [
+    {
+      "file": "bradford-parent.html",
+      "url": "https://www.bradfordcountypa.gov/302/Elections",
+      "final_url": "https://www.bradfordcountypa.gov/302/Elections",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 173964,
+      "sha256": "34e870150c910f49a0697575639e6897d76dfd70b063436a4add9aff4fc7a055",
+      "fetched_at_utc": "2026-11-06T10:56:29.017470+00:00"
+    },
+    {
+      "file": "bradford-election-day-final.pdf",
+      "url": "https://www.bradfordcountypa.gov/DocumentCenter/View/1735/UnofficialElectionDayFinalResults",
+      "final_url": "https://www.bradfordcountypa.gov/DocumentCenter/View/1735/UnofficialElectionDayFinalResults",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 77728,
+      "sha256": "028fb6df093fa5d0f3bd73e54273b58f5ba0f5df3c43e988b0d5aca28c22439d",
+      "fetched_at_utc": "2026-11-06T10:56:29.282053+00:00"
+    },
+    {
+      "file": "bradford-earlier-results.pdf",
+      "url": "https://www.bradfordcountypa.gov/DocumentCenter/View/1734/BradfordUnofficialResults",
+      "final_url": "https://www.bradfordcountypa.gov/DocumentCenter/View/1734/BradfordUnofficialResults",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 77744,
+      "sha256": "49c2a45e493d2b21c26bd613799a159cbfc984a12a3990b0373cb4e7f8ca9cae",
+      "fetched_at_utc": "2026-11-06T10:56:29.541391+00:00"
+    },
+    {
+      "file": "greene-parent.html",
+      "url": "https://greenecountypa.gov/elections/",
+      "final_url": "https://greenecountypa.gov/elections/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 9199,
+      "sha256": "d77e59fc2e95ece940d403c8b86c000067b2ce44c83b324ab367a83d38cdc081",
+      "fetched_at_utc": "2026-11-06T10:56:29.725468+00:00"
+    },
+    {
+      "file": "greene-all-returns.html",
+      "url": "https://greenecountypa.gov/elections/Default.aspx?PageLayout=SUMMARY&Election=30069",
+      "final_url": "https://greenecountypa.gov/elections/Default.aspx?PageLayout=SUMMARY&Election=30069",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 12992,
+      "sha256": "7134871fe0c1b970c9eda80a75d058d48bda053ab15c60a6e48235f10159bf3e",
+      "fetched_at_utc": "2026-11-06T10:56:29.809686+00:00"
+    }
+  ],
+  "actual_parent_declarations": [
+    {
+      "county": "Bradford",
+      "label": "UnofficialElectionDayFinalResults",
+      "url": "https://www.bradfordcountypa.gov/DocumentCenter/View/1735/UnofficialElectionDayFinalResults"
+    },
+    {
+      "county": "Bradford",
+      "label": "BradfordUnofficialResults",
+      "url": "https://www.bradfordcountypa.gov/DocumentCenter/View/1734/BradfordUnofficialResults"
+    },
+    {
+      "county": "Greene",
+      "label": "All returns",
+      "url": "https://greenecountypa.gov/elections/Default.aspx?PageLayout=SUMMARY&Election=30069"
+    }
+  ],
+  "bradford": {
+    "snapshots": [
+      {
+        "file": "bradford-election-day-final.pdf",
+        "registered_voters": 39048,
+        "native_total_ballots": 20982,
+        "printed_pct": "53.73",
+        "reported_precincts": 61,
+        "total_precincts": 61,
+        "source_update_literal": "11/3/2026 10:15:12 PM EST",
+        "source_status_literal": "Unofficial Final Election Day Results",
+        "voting_mode_literal": "Election Day"
+      },
+      {
+        "file": "bradford-earlier-results.pdf",
+        "registered_voters": 39048,
+        "native_total_ballots": 12488,
+        "printed_pct": "31.98",
+        "reported_precincts": 46,
+        "total_precincts": 61,
+        "source_update_literal": "11/3/2026 8:45:38 PM EST",
+        "source_status_literal": "Unoffcial Results 5",
+        "voting_mode_literal": "Election Day"
+      }
+    ],
+    "independent_pdf_engines_match": true,
+    "whole_county_participation_approved": false,
+    "qualifications": [
+      "Both reports explicitly print Election Day; neither is silently promoted to all-mode participation.",
+      "The parent separately reports 3,346 received mail-in/absentee ballots under Act 88, not counted mail ballots.",
+      "Do not add received mail to Election Day ballots or treat receipt totals as counted participation.",
+      "Preserve the earlier snapshot and literal typo Unoffcial Results 5; all candidate lines still require the complete parser."
+    ]
+  },
+  "greene": {
+    "native_ballots": 11105,
+    "native_blank_ballots": 5,
+    "native_registered_voters": null,
+    "turnout_pct": null,
+    "status_literal": "Unofficial Results with MI and Absentee",
+    "reported_precincts": 42,
+    "total_precincts": 42,
+    "native_report_update_literal": "",
+    "declared_timezone": "",
+    "complete_query_rows": [
+      {
+        "contest_literal": "Ballots Cast - Total",
+        "candidate_or_measure_literal": "Ballots Cast - Total",
+        "party_literal": "Ballots Cast Total",
+        "votes": 11105,
+        "printed_pct": "100%"
+      },
+      {
+        "contest_literal": "Ballots Cast - Blank",
+        "candidate_or_measure_literal": "Ballots Cast - Blank",
+        "party_literal": "No Party Specified",
+        "votes": 5,
+        "printed_pct": "100%"
+      },
+      {
+        "contest_literal": "Governor And Lieutenant Governor",
+        "candidate_or_measure_literal": "Dem Josh Shapiro",
+        "party_literal": "Democrat",
+        "votes": 4566,
+        "printed_pct": "41.5%"
+      },
+      {
+        "contest_literal": "Governor And Lieutenant Governor",
+        "candidate_or_measure_literal": "Rep Stacy Garrity",
+        "party_literal": "Republican",
+        "votes": 6171,
+        "printed_pct": "56.2%"
+      },
+      {
+        "contest_literal": "Governor And Lieutenant Governor",
+        "candidate_or_measure_literal": "Lib Ken Krawchuk",
+        "party_literal": "Libertarian",
+        "votes": 243,
+        "printed_pct": "2.2%"
+      },
+      {
+        "contest_literal": "Governor And Lieutenant Governor",
+        "candidate_or_measure_literal": "WRITE-IN",
+        "party_literal": "No Party Specified",
+        "votes": 10,
+        "printed_pct": "0.1%"
+      },
+      {
+        "contest_literal": "Representative In Congress 14th Congressional District",
+        "candidate_or_measure_literal": "Dem Alan Bradstock",
+        "party_literal": "Democrat",
+        "votes": 4118,
+        "printed_pct": "37.8%"
+      },
+      {
+        "contest_literal": "Representative In Congress 14th Congressional District",
+        "candidate_or_measure_literal": "Rep Guy Reschenthaler",
+        "party_literal": "Republican",
+        "votes": 6757,
+        "printed_pct": "62%"
+      },
+      {
+        "contest_literal": "Representative In Congress 14th Congressional District",
+        "candidate_or_measure_literal": "WRITE-IN",
+        "party_literal": "No Party Specified",
+        "votes": 22,
+        "printed_pct": "0.2%"
+      },
+      {
+        "contest_literal": "Senator In The General Assembly 46th Senatorial District",
+        "candidate_or_measure_literal": "Rep Camera Bartolotta",
+        "party_literal": "Republican",
+        "votes": 6556,
+        "printed_pct": "62.2%"
+      },
+      {
+        "contest_literal": "Senator In The General Assembly 46th Senatorial District",
+        "candidate_or_measure_literal": "Ind Jodi Borello",
+        "party_literal": "Independent",
+        "votes": 3887,
+        "printed_pct": "36.9%"
+      },
+      {
+        "contest_literal": "Senator In The General Assembly 46th Senatorial District",
+        "candidate_or_measure_literal": "WRITE-IN",
+        "party_literal": "No Party Specified",
+        "votes": 105,
+        "printed_pct": "1%"
+      },
+      {
+        "contest_literal": "Representative In The General Assembly 50th Legislative",
+        "candidate_or_measure_literal": "Dem Lois Bower-bjornson",
+        "party_literal": "Democrat",
+        "votes": 3391,
+        "printed_pct": "31.1%"
+      },
+      {
+        "contest_literal": "Representative In The General Assembly 50th Legislative",
+        "candidate_or_measure_literal": "Rep Ben Humble",
+        "party_literal": "Republican",
+        "votes": 7488,
+        "printed_pct": "68.6%"
+      },
+      {
+        "contest_literal": "Representative In The General Assembly 50th Legislative",
+        "candidate_or_measure_literal": "WRITE-IN",
+        "party_literal": "No Party Specified",
+        "votes": 39,
+        "printed_pct": "0.4%"
+      }
+    ],
+    "independent_full_vectors_match": true,
+    "derived_candidate_contest_totals": [
+      {
+        "contest_literal": "Governor And Lieutenant Governor",
+        "derived_candidate_sum": 10990,
+        "unclassified_ballot_minus_candidate_sum": 115
+      },
+      {
+        "contest_literal": "Representative In Congress 14th Congressional District",
+        "derived_candidate_sum": 10897,
+        "unclassified_ballot_minus_candidate_sum": 208
+      },
+      {
+        "contest_literal": "Senator In The General Assembly 46th Senatorial District",
+        "derived_candidate_sum": 10548,
+        "unclassified_ballot_minus_candidate_sum": 557
+      },
+      {
+        "contest_literal": "Representative In The General Assembly 50th Legislative",
+        "derived_candidate_sum": 10918,
+        "unclassified_ballot_minus_candidate_sum": 187
+      }
+    ],
+    "qualifications": [
+      "Native Ballots Cast - Total is a separately labeled administrative measure, not a candidate sum.",
+      "Five blank ballots are not added to the total; no denominator or turnout rate is inferred.",
+      "The county summary has no printed report clock or certification claim.",
+      "42 of 42 reporting does not establish completed counting.",
+      "No original HTML is approved for redistribution; package complete factual query and portable reviewer next.",
+      "The two Ballots Cast tables have pseudo-party labels, not observed participation by political party; only four candidate contests enter derived candidate-party totals."
+    ]
+  },
+  "maps_approved": false,
+  "ui_integration_approved": false,
+  "maine_and_dc_accounting_gaps_unchanged": true,
+  "reviewed_at_utc": "2026-11-06T11:01:10.194934+00:00",
+  "independent_review_helper_sha256": "80ddccd717193127712870f4b56c92e7525c95f7cdc7019c3a3d37c84b404483",
+  "publication_qualification": "Preliminary factual acquisition review only. No complete public reproducible package, immutable source release, map join or explorer integration is approved."
+}
