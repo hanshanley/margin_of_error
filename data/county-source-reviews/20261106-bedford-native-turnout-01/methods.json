@@ -1,0 +1,13 @@
+{
+  "purpose": "Complete, offline-reproducible Bedford County 2026 general-election native numerical query.",
+  "native_unit": "Voters Cast is explicitly printed alongside equal Cards Cast; retain both separate fields.",
+  "participation_scope": "All Contests, All Districts, All Tabulators, All Counting Groups. Election Day16,138/Mail-In2,903/Provisional0/Total19,041 are native counts. The aggregate Total row is not a fourth additive mode.",
+  "denominator": "33,079 Registered Voters is printed only on the aggregate row; the three mode-row registration blanks remain missing. Native turnout57.56%; source-native modes48.79/8.78/0.00. Separately rounded mode percentages need not sum to the separately rounded aggregate.",
+  "candidate_accounting": "All12 candidate vectors retain literal DEM/REP/LIB and missing Write-in affiliation. All four native Total Votes vectors equal named-candidate sums excluding unresolved write-ins. Native Total Votes plus native Undervotes plus native Overvotes reconcile Times Cast separately in Election Day, Mail-In, Provisional and Total for every contest.",
+  "write_ins": "The candidate Write-in row and Unresolved Write-In detail repeat the same vectors8/23/34/339. Retain both native labels without adding them again to native Total Votes or Times Cast. Do not infer whether unresolved entries are allocated to native undervotes or overvotes.",
+  "reporting": "40 of40 reported on summary and each contest is not certification or completed counting.",
+  "clocks": "Both physical pages print11/3/2026 9:53:30PM without a timezone; preserve that literal. The URL query, HTTP Last-Modified, acquisition clock and election date are not report-update clocks.",
+  "missingness": "Native county FIPS, timezone, certification, unique-person deduplication and write-in under/over allocation remain missing. Literal printed zeros remain zero, including provisional.",
+  "approvals": "Native numerical query only. Generic analysis-rate and map approval flags stay false; a later explicit independent geographic/contextual review is required for UI mapping.",
+  "reproduction": "python3 -I review-counties.py --output /new/directory; python3 -B -I -m unittest discover -s . -p test_review_counties.py. Standard library only. Complete ZIP contains15 files, not itself; generated inventory has16 files."
+}

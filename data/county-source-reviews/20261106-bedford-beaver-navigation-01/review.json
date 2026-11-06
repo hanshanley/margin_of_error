@@ -1,0 +1,685 @@
+{
+  "reviewed_at_utc": "2026-11-06T18:04:24.779725+00:00",
+  "parents": [
+    {
+      "name": "bedford-results",
+      "parent_receipt": {
+        "source": "https://www.bedfordcountypa.org/departments/elections/election_results.php",
+        "final_url": "https://www.bedfordcountypa.org/departments/elections/election_results.php",
+        "status": 200,
+        "acquired_at_utc": "2026-11-06T18:04:22.941874+00:00",
+        "verified_tls": true,
+        "bytes": 61298,
+        "sha256": "36fd662d1e242d4d22e9bdcf7cc068c22a95c2ac510a62cd204594f72547b666",
+        "headers": {
+          "Content-Type": "text/html; charset=UTF-8",
+          "Last-Modified": null,
+          "ETag": null,
+          "Date": "Fri, 06 Nov 2026 18:04:22 GMT"
+        }
+      },
+      "html_base": "https://www.bedfordcountypa.org/",
+      "declared_documents_and_navigation": [
+        {
+          "label": "2026 Election Dates",
+          "literal_href": "Elections/IMPORTANT DATES 2026.pdf",
+          "url": "https://www.bedfordcountypa.org/Elections/IMPORTANT DATES 2026.pdf"
+        },
+        {
+          "label": "Election Results",
+          "literal_href": "departments/elections/election_results.php",
+          "url": "https://www.bedfordcountypa.org/departments/elections/election_results.php"
+        },
+        {
+          "label": "2026 Election Dates",
+          "literal_href": "Elections/20260113130324022.pdf",
+          "url": "https://www.bedfordcountypa.org/Elections/20260113130324022.pdf"
+        },
+        {
+          "label": "Election Results",
+          "literal_href": "departments/elections/election_results.php",
+          "url": "https://www.bedfordcountypa.org/departments/elections/election_results.php"
+        },
+        {
+          "label": "Click HERE to see the LIVE Unofficial Election Results Dashboard",
+          "literal_href": "https://linkprotect.cudasvc.com/url?a=https%3a%2f%2fbedfordplanning.maps.arcgis.com%2fapps%2fdashboards%2fee275d760e184bcf973bce78daad64fb&c=E,1,jFUth0PIBlLpm4XM-5S3JncNPKnpFpEA66ej_yMbsHwETE0dXRJKgcCM5PuKaEaWq7xgmsJ20RX4fUWtGUXr26L-vilg3sOscaWyYmAXZg6sAQ,,&typo=1",
+          "url": "https://linkprotect.cudasvc.com/url?a=https%3a%2f%2fbedfordplanning.maps.arcgis.com%2fapps%2fdashboards%2fee275d760e184bcf973bce78daad64fb&c=E,1,jFUth0PIBlLpm4XM-5S3JncNPKnpFpEA66ej_yMbsHwETE0dXRJKgcCM5PuKaEaWq7xgmsJ20RX4fUWtGUXr26L-vilg3sOscaWyYmAXZg6sAQ,,&typo=1"
+        },
+        {
+          "label": "UNOFFICIAL General 2026 Election Summary Report",
+          "literal_href": "Elections/2026 General Election/Unofficial ElectionSummaryReportRPT.pdf?t=202611032210040",
+          "url": "https://www.bedfordcountypa.org/Elections/2026 General Election/Unofficial ElectionSummaryReportRPT.pdf?t=202611032210040"
+        },
+        {
+          "label": "ACT 88 11.03.2026",
+          "literal_href": "Act 88 Notice 11.03.26 NEED TO EDIT BEFORE UPLOADING.docx?t=202611032059590",
+          "url": "https://www.bedfordcountypa.org/Act 88 Notice 11.03.26 NEED TO EDIT BEFORE UPLOADING.docx?t=202611032059590"
+        },
+        {
+          "label": "Certified Summary Report 2026 Primary 06.08.2026",
+          "literal_href": "Certified Summary Report 2026 Primary 06.08.2026.pdf?t=202606081151310",
+          "url": "https://www.bedfordcountypa.org/Certified Summary Report 2026 Primary 06.08.2026.pdf?t=202606081151310"
+        },
+        {
+          "label": "Certified SOVC Report 2026 Primary 06.08.2026",
+          "literal_href": "Certified SOVC Report 2026 Primary 06.08.2026.pdf?t=202606081148440",
+          "url": "https://www.bedfordcountypa.org/Certified SOVC Report 2026 Primary 06.08.2026.pdf?t=202606081148440"
+        },
+        {
+          "label": "UNOFFICIAL Primary 2026 Election Summary with Write-Ins",
+          "literal_href": "Elections/2026/UNOFFICIAL ElectionSummaryReportRPT 05.29.2026.pdf?t=202606010941250",
+          "url": "https://www.bedfordcountypa.org/Elections/2026/UNOFFICIAL ElectionSummaryReportRPT 05.29.2026.pdf?t=202606010941250"
+        },
+        {
+          "label": "Act 88 05.19.2026",
+          "literal_href": "Elections/2026/Act 88 Notice 05-19-2026.docx?t=202605192141240",
+          "url": "https://www.bedfordcountypa.org/Elections/2026/Act 88 Notice 05-19-2026.docx?t=202605192141240"
+        },
+        {
+          "label": "Certified Election Results EMS 11.24.25",
+          "literal_href": "Elections/General Results 11.4.25/ElectionSummaryReportRPT.pdf 11.24.25.pdf?t=202511250949540",
+          "url": "https://www.bedfordcountypa.org/Elections/General Results 11.4.25/ElectionSummaryReportRPT.pdf 11.24.25.pdf?t=202511250949540"
+        },
+        {
+          "label": "Statement of Votes Cast Summary 11.24.25",
+          "literal_href": "Elections/General Results 11.4.25/StatementOfVotesCastRPT.pdf 11.24.25.pdf?t=202511251606500",
+          "url": "https://www.bedfordcountypa.org/Elections/General Results 11.4.25/StatementOfVotesCastRPT.pdf 11.24.25.pdf?t=202511251606500"
+        },
+        {
+          "label": "Unofficial Municipal General Results With Write Ins 11.4.2025",
+          "literal_href": "Elections/General Results 11.4.25/ElectionSummaryReportRPT.pdf state report filters.pdf?t=202511141024140",
+          "url": "https://www.bedfordcountypa.org/Elections/General Results 11.4.25/ElectionSummaryReportRPT.pdf state report filters.pdf?t=202511141024140"
+        },
+        {
+          "label": "Act 88 11.04.25",
+          "literal_href": "Elections/General Results 11.4.25/Act 88 Notice 11-04-2025.pdf?t=202511050754110",
+          "url": "https://www.bedfordcountypa.org/Elections/General Results 11.4.25/Act 88 Notice 11-04-2025.pdf?t=202511050754110"
+        },
+        {
+          "label": "Certified Elections Results 6.9.2025",
+          "literal_href": "document_center/Elections/2025 Municipal Primary/SURE Certification.pdf?t=202605192200560",
+          "url": "https://www.bedfordcountypa.org/document_center/Elections/2025 Municipal Primary/SURE Certification.pdf?t=202605192200560"
+        },
+        {
+          "label": "Certified Elections Results EMS 6.9.2025",
+          "literal_href": "document_center/Elections/Election Certification EMS.pdf?t=202605192200410",
+          "url": "https://www.bedfordcountypa.org/document_center/Elections/Election Certification EMS.pdf?t=202605192200410"
+        },
+        {
+          "label": "Unofficial Primary Results 06.03.2025",
+          "literal_href": "document_center/Elections/2025 Municipal Primary/ElectionSummaryReportRPT 6.3.2025.pdf?t=202605192200430",
+          "url": "https://www.bedfordcountypa.org/document_center/Elections/2025 Municipal Primary/ElectionSummaryReportRPT 6.3.2025.pdf?t=202605192200430"
+        },
+        {
+          "label": "Act 88 05.20.2025",
+          "literal_href": "document_center/Elections/2025 Municipal Primary/Act 88 Notice 05-20-2025.pdf?t=202605192200300",
+          "url": "https://www.bedfordcountypa.org/document_center/Elections/2025 Municipal Primary/Act 88 Notice 05-20-2025.pdf?t=202605192200300"
+        },
+        {
+          "label": "11.5.2024 Official Election Statement of Votes Cast",
+          "literal_href": "Elections/Nov 5 2024 - Official - Statement Of Votes Cast RPT.pdf?t=202411260938520",
+          "url": "https://www.bedfordcountypa.org/Elections/Nov 5 2024 - Official - Statement Of Votes Cast RPT.pdf?t=202411260938520"
+        },
+        {
+          "label": "Act 88 - 11.5.2024",
+          "literal_href": "Act 88 notice (11-5-2024).pdf?t=202411052251400",
+          "url": "https://www.bedfordcountypa.org/Act 88 notice (11-5-2024).pdf?t=202411052251400"
+        },
+        {
+          "label": "11.5.2024 Unofficial Election Statement of Votes Cast",
+          "literal_href": "Elections/11082024 - StatementOfVotesCastRPT.pdf?t=202411081604390",
+          "url": "https://www.bedfordcountypa.org/Elections/11082024 - StatementOfVotesCastRPT.pdf?t=202411081604390"
+        },
+        {
+          "label": "4.23.24 Official Primary Election Results (Precinct)",
+          "literal_href": "OfficialElectionSummaryDistrictReportRPT.pdf?t=202406201227050",
+          "url": "https://www.bedfordcountypa.org/OfficialElectionSummaryDistrictReportRPT.pdf?t=202406201227050"
+        },
+        {
+          "label": "4.23.24 Official Primary Election Results (Statement of Votes Cast)",
+          "literal_href": "OfficalPrimaryStatementOfVotesCastRPT.pdf?t=202406201228570",
+          "url": "https://www.bedfordcountypa.org/OfficalPrimaryStatementOfVotesCastRPT.pdf?t=202406201228570"
+        },
+        {
+          "label": "Elections Results Dashboard",
+          "literal_href": "https://www.arcgis.com/apps/dashboards/c51966cfc21a4c629973aa1d2ec7dcc3",
+          "url": "https://www.arcgis.com/apps/dashboards/c51966cfc21a4c629973aa1d2ec7dcc3"
+        },
+        {
+          "label": "4.23.24 Unofficial Primary Election Results",
+          "literal_href": "Unofficial Election Summary Report.pdf?t=202406201233020",
+          "url": "https://www.bedfordcountypa.org/Unofficial Election Summary Report.pdf?t=202406201233020"
+        },
+        {
+          "label": "4.23.24 Unofficial Primary Election Results with Write-Ins",
+          "literal_href": "Final_StatementOfVotesCastRPT.pdf?t=202406201234020",
+          "url": "https://www.bedfordcountypa.org/Final_StatementOfVotesCastRPT.pdf?t=202406201234020"
+        },
+        {
+          "label": "Act 88 - 11.07.2023",
+          "literal_href": "Act 88 notice (11-7-2023).pdf?t=202312111152040",
+          "url": "https://www.bedfordcountypa.org/Act 88 notice (11-7-2023).pdf?t=202312111152040"
+        },
+        {
+          "label": "11.21.23 Unofficial General Election Results",
+          "literal_href": "Unoffiical Results Summary 11.21.23.pdf?t=202312111153090",
+          "url": "https://www.bedfordcountypa.org/Unoffiical Results Summary 11.21.23.pdf?t=202312111153090"
+        },
+        {
+          "label": "11.28.23 Official General Election Results",
+          "literal_href": "ElectionSummaryReportRPT.pdf- 11212023.pdf?t=202312111152250",
+          "url": "https://www.bedfordcountypa.org/ElectionSummaryReportRPT.pdf- 11212023.pdf?t=202312111152250"
+        },
+        {
+          "label": "02.06.24 Statement of Votes Cast for 11.7.23 election by precinct",
+          "literal_href": "StatementOfVotesCastRPT.pdf-2.6.24.pdf?t=202406201236190",
+          "url": "https://www.bedfordcountypa.org/StatementOfVotesCastRPT.pdf-2.6.24.pdf?t=202406201236190"
+        },
+        {
+          "label": "Act 88 - 2023",
+          "literal_href": "Act 88 notice (5-16-2023).pdf?t=202312111152040",
+          "url": "https://www.bedfordcountypa.org/Act 88 notice (5-16-2023).pdf?t=202312111152040"
+        },
+        {
+          "label": "05.16.23 Official Summary Results General Primary",
+          "literal_href": "ElectionSummaryReportBROKENOUT.pdf?t=202312111152250",
+          "url": "https://www.bedfordcountypa.org/ElectionSummaryReportBROKENOUT.pdf?t=202312111152250"
+        },
+        {
+          "label": "05.16.23 Official Summary Results with Write Ins",
+          "literal_href": "BedfordCounty_ElectionSummaryReportOFFICIAL.pdf?t=202312111152090",
+          "url": "https://www.bedfordcountypa.org/BedfordCounty_ElectionSummaryReportOFFICIAL.pdf?t=202312111152090"
+        },
+        {
+          "label": "2022 General Primary Official Results",
+          "literal_href": "ElectionSummaryReportRPT.pdf Official.pdf?t=202312111152250",
+          "url": "https://www.bedfordcountypa.org/ElectionSummaryReportRPT.pdf Official.pdf?t=202312111152250"
+        },
+        {
+          "label": "2021 Municipal Primary Official Results with Write-ins 05.18.21",
+          "literal_href": "Official ElectionSummaryReportRPT 5.18.2021.pdf?t=202312111152450",
+          "url": "https://www.bedfordcountypa.org/Official ElectionSummaryReportRPT 5.18.2021.pdf?t=202312111152450"
+        },
+        {
+          "label": "2021 Municipal Election 11.02.2021 Official Results with Write ins",
+          "literal_href": "OfficialElectionSummaryReportRPT.pdf?t=202312111152450",
+          "url": "https://www.bedfordcountypa.org/OfficialElectionSummaryReportRPT.pdf?t=202312111152450"
+        },
+        {
+          "label": "2020 Unofficial Results with Provisionals",
+          "literal_href": "document_center/Elections/Election Summary Report 11.3.2020 with Provisionals.pdf?t=202605192200420",
+          "url": "https://www.bedfordcountypa.org/document_center/Elections/Election Summary Report 11.3.2020 with Provisionals.pdf?t=202605192200420"
+        },
+        {
+          "label": "2020 Unofficial Results",
+          "literal_href": "document_center/Elections/11_03_2020 general election summary final.pdf?t=202605192200240",
+          "url": "https://www.bedfordcountypa.org/document_center/Elections/11_03_2020 general election summary final.pdf?t=202605192200240"
+        },
+        {
+          "label": "2020 Official Results\u00a006.02.2020",
+          "literal_href": "Official 6.2.2020 StatementOf Votes Report by precinct with write in's, absentee and provisionals.xlsx?t=202312111152450",
+          "url": "https://www.bedfordcountypa.org/Official 6.2.2020 StatementOf Votes Report by precinct with write in's, absentee and provisionals.xlsx?t=202312111152450"
+        },
+        {
+          "label": "2020 Official Results 11.03.2020",
+          "literal_href": "Official statement of votes cast 11.03.2020.pdf?t=202312111152450",
+          "url": "https://www.bedfordcountypa.org/Official statement of votes cast 11.03.2020.pdf?t=202312111152450"
+        },
+        {
+          "label": "Cumulative Write In Totals for November 5, 2019 General Election",
+          "literal_href": "document_center/Elections/cumulative-wirte-ins110719.pdf?t=202605192200320",
+          "url": "https://www.bedfordcountypa.org/document_center/Elections/cumulative-wirte-ins110719.pdf?t=202605192200320"
+        },
+        {
+          "label": "November 5, 2019 General Election",
+          "literal_href": "document_center/Elections/cumulative110519.pdf?t=202605192200340",
+          "url": "https://www.bedfordcountypa.org/document_center/Elections/cumulative110519.pdf?t=202605192200340"
+        },
+        {
+          "label": "",
+          "literal_href": "document_center/Elections/cumulative110519.pdf?t=202605192200340",
+          "url": "https://www.bedfordcountypa.org/document_center/Elections/cumulative110519.pdf?t=202605192200340"
+        },
+        {
+          "label": "05.21.19 Official Election Results",
+          "literal_href": "document_center/Elections/official cumulative 052119.pdf?t=202605192200470",
+          "url": "https://www.bedfordcountypa.org/document_center/Elections/official cumulative 052119.pdf?t=202605192200470"
+        },
+        {
+          "label": "Official Election Results 05.15.18",
+          "literal_href": "document_center/Elections/precinct_finalized_052418 (1).pdf?t=202605192200540",
+          "url": "https://www.bedfordcountypa.org/document_center/Elections/precinct_finalized_052418 (1).pdf?t=202605192200540"
+        },
+        {
+          "label": "Official Election Results 11.06.18",
+          "literal_href": "Official Report General 11-06-18.pdf?t=202312111152450",
+          "url": "https://www.bedfordcountypa.org/Official Report General 11-06-18.pdf?t=202312111152450"
+        },
+        {
+          "label": "2017 Election Results",
+          "literal_href": "document_center/Elections/2017 Election Results.pdf?t=202605192200280",
+          "url": "https://www.bedfordcountypa.org/document_center/Elections/2017 Election Results.pdf?t=202605192200280"
+        },
+        {
+          "label": "11.08.16 Election",
+          "literal_href": "document_center/Elections/2016 Precinct Report.pdf?t=202605192200260",
+          "url": "https://www.bedfordcountypa.org/document_center/Elections/2016 Precinct Report.pdf?t=202605192200260"
+        },
+        {
+          "label": "",
+          "literal_href": "document_center/Elections/2016 Precinct Report.pdf?t=202605192200260",
+          "url": "https://www.bedfordcountypa.org/document_center/Elections/2016 Precinct Report.pdf?t=202605192200260"
+        },
+        {
+          "label": "04.26.16 Election",
+          "literal_href": "document_center/Elections/official 04 26 2016 precinct.pdf?t=202605192200470",
+          "url": "https://www.bedfordcountypa.org/document_center/Elections/official 04 26 2016 precinct.pdf?t=202605192200470"
+        },
+        {
+          "label": "11.03.2015 Election",
+          "literal_href": "document_center/Elections/Official Nov 3 2015 cumulative.pdf?t=202605192200490",
+          "url": "https://www.bedfordcountypa.org/document_center/Elections/Official Nov 3 2015 cumulative.pdf?t=202605192200490"
+        },
+        {
+          "label": "05.19.15 Election",
+          "literal_href": "by precinct Primary May 19 2015 report.pdf?t=202312111152110",
+          "url": "https://www.bedfordcountypa.org/by precinct Primary May 19 2015 report.pdf?t=202312111152110"
+        },
+        {
+          "label": "11.04.14 Election",
+          "literal_href": "document_center/Elections/Official Nov 4 2014 cumulative.pdf?t=202605192200490",
+          "url": "https://www.bedfordcountypa.org/document_center/Elections/Official Nov 4 2014 cumulative.pdf?t=202605192200490"
+        },
+        {
+          "label": "",
+          "literal_href": "document_center/Elections/Official Nov 4 2014 cumulative.pdf?t=202605192200490",
+          "url": "https://www.bedfordcountypa.org/document_center/Elections/Official Nov 4 2014 cumulative.pdf?t=202605192200490"
+        },
+        {
+          "label": "May 2014 Election",
+          "literal_href": "document_center/Elections/May 2014 precinct report.pdf?t=202605192200460",
+          "url": "https://www.bedfordcountypa.org/document_center/Elections/May 2014 precinct report.pdf?t=202605192200460"
+        },
+        {
+          "label": "11.05.2013 Election",
+          "literal_href": "document_center/Elections/Official Nov 5 2013 cumulative.pdf?t=202605192200510",
+          "url": "https://www.bedfordcountypa.org/document_center/Elections/Official Nov 5 2013 cumulative.pdf?t=202605192200510"
+        },
+        {
+          "label": "",
+          "literal_href": "document_center/Elections/Official Nov 5 2013 cumulative.pdf?t=202605192200510",
+          "url": "https://www.bedfordcountypa.org/document_center/Elections/Official Nov 5 2013 cumulative.pdf?t=202605192200510"
+        },
+        {
+          "label": "11.6.2012 Election",
+          "literal_href": "document_center/Elections/Official Nov 6 2012 precinct.pdf?t=202605192200510",
+          "url": "https://www.bedfordcountypa.org/document_center/Elections/Official Nov 6 2012 precinct.pdf?t=202605192200510"
+        },
+        {
+          "label": "05.07.2011 Election",
+          "literal_href": "05-17-2011 Election (for online).pdf?t=202406201238360",
+          "url": "https://www.bedfordcountypa.org/05-17-2011 Election (for online).pdf?t=202406201238360"
+        },
+        {
+          "label": "11.08.2011 Election",
+          "literal_href": "11-08-2011 Election (for online).pdf?t=202406201239390",
+          "url": "https://www.bedfordcountypa.org/11-08-2011 Election (for online).pdf?t=202406201239390"
+        },
+        {
+          "label": "11.02.2010 Election",
+          "literal_href": "11-02-2010 Election.pdf?t=202407021005520",
+          "url": "https://www.bedfordcountypa.org/11-02-2010 Election.pdf?t=202407021005520"
+        },
+        {
+          "label": "05.18.2010 Election",
+          "literal_href": "05-18-2010 Election.pdf?t=202407021100460",
+          "url": "https://www.bedfordcountypa.org/05-18-2010 Election.pdf?t=202407021100460"
+        },
+        {
+          "label": "Facebook",
+          "literal_href": "https://www.facebook.com/sharer/sharer.php?u=http://www.bedfordcountypa.org/departments/elections/election_results.php",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=http://www.bedfordcountypa.org/departments/elections/election_results.php"
+        },
+        {
+          "label": "X Corp",
+          "literal_href": "https://www.twitter.com/intent/tweet?url=http://www.bedfordcountypa.org/departments/elections/election_results.php",
+          "url": "https://www.twitter.com/intent/tweet?url=http://www.bedfordcountypa.org/departments/elections/election_results.php"
+        },
+        {
+          "label": "Reddit",
+          "literal_href": "https://www.reddit.com/submit?url=http://www.bedfordcountypa.org/departments/elections/election_results.php",
+          "url": "https://www.reddit.com/submit?url=http://www.bedfordcountypa.org/departments/elections/election_results.php"
+        },
+        {
+          "label": "Login",
+          "literal_href": "https://cms7.revize.com/revize/security/index.jsp?webspace=bedfordcounty&filename=/departments/elections/election_results.php",
+          "url": "https://cms7.revize.com/revize/security/index.jsp?webspace=bedfordcounty&filename=/departments/elections/election_results.php"
+        },
+        {
+          "label": "Read More",
+          "literal_href": "departments/elections/election_results.php#",
+          "url": "https://www.bedfordcountypa.org/departments/elections/election_results.php"
+        }
+      ],
+      "current_summary_declarations": [
+        {
+          "label": "UNOFFICIAL General 2026 Election Summary Report",
+          "literal_href": "Elections/2026 General Election/Unofficial ElectionSummaryReportRPT.pdf?t=202611032210040",
+          "url": "https://www.bedfordcountypa.org/Elections/2026 General Election/Unofficial ElectionSummaryReportRPT.pdf?t=202611032210040"
+        }
+      ]
+    },
+    {
+      "name": "beaver-results",
+      "parent_receipt": {
+        "source": "https://www.beavercountypa.gov/departments/election-bureau/election-results",
+        "final_url": "https://www.beavercountypa.gov/departments/election-bureau/election-results",
+        "status": 200,
+        "acquired_at_utc": "2026-11-06T18:04:24.441145+00:00",
+        "verified_tls": true,
+        "bytes": 73730,
+        "sha256": "8fc134d8d2da697952c3e2f3d359474fd2c5c94ae401900905a5008f0d90874d",
+        "headers": {
+          "Content-Type": "text/html; charset=utf-8",
+          "Last-Modified": null,
+          "ETag": null,
+          "Date": "Fri, 06 Nov 2026 18:04:23 GMT"
+        }
+      },
+      "html_base": null,
+      "declared_documents_and_navigation": [
+        {
+          "label": "Election Results",
+          "literal_href": "/departments/election-bureau/election-results",
+          "url": "https://www.beavercountypa.gov/departments/election-bureau/election-results"
+        },
+        {
+          "label": "Act 88 Ballots Returned Report for the 2026 General Primary (opens in a new window)",
+          "literal_href": "/getmedia/5cf2593f-9649-47a6-b35c-52278c43fbfc/Ballots-Returned-Report-FALL-2026.pdf",
+          "url": "https://www.beavercountypa.gov/getmedia/5cf2593f-9649-47a6-b35c-52278c43fbfc/Ballots-Returned-Report-FALL-2026.pdf"
+        },
+        {
+          "label": "List of Mail-in/Absentee Ballots With Observable Defects for 2026 General Election (opens in a new window)",
+          "literal_href": "/getmedia/5adeda25-19b6-4608-862a-5cfba9c90951/Listing-of-Beaver-County-Mail-or-Absentee-Ballots-with-Observable-Defects-2026-General-Election.pdf",
+          "url": "https://www.beavercountypa.gov/getmedia/5adeda25-19b6-4608-862a-5cfba9c90951/Listing-of-Beaver-County-Mail-or-Absentee-Ballots-with-Observable-Defects-2026-General-Election.pdf"
+        },
+        {
+          "label": "Election Results",
+          "literal_href": "/departments/election-bureau/election-results",
+          "url": "https://www.beavercountypa.gov/departments/election-bureau/election-results"
+        },
+        {
+          "label": "Access 2026 General Election Results",
+          "literal_href": "https://results.enr.clarityelections.com/PA/Beaver/127285/",
+          "url": "https://results.enr.clarityelections.com/PA/Beaver/127285/"
+        },
+        {
+          "label": "Historical Election Results",
+          "literal_href": "/departments/election-bureau/historical-election-results",
+          "url": "https://www.beavercountypa.gov/departments/election-bureau/historical-election-results"
+        },
+        {
+          "label": "Historical Election Results",
+          "literal_href": "/departments/election-bureau/historical-election-results",
+          "url": "https://www.beavercountypa.gov/departments/election-bureau/historical-election-results"
+        },
+        {
+          "label": "Beaver County Government Directory 2026",
+          "literal_href": "/getmedia/504f87a9-f407-434e-88ce-0b120a23cca9/2026-Final-Beaver-County-Government-Directory-(Latest-Rev-3-31-26).pdf",
+          "url": "https://www.beavercountypa.gov/getmedia/504f87a9-f407-434e-88ce-0b120a23cca9/2026-Final-Beaver-County-Government-Directory-(Latest-Rev-3-31-26).pdf"
+        },
+        {
+          "label": "Notice of Precanvass for 2026 General\u00a0Election",
+          "literal_href": "/getmedia/e99c4744-5953-4506-b73a-129993ce4d45/Precanvass-Notice-and-Observer-Guidelines-Fall-2026.pdf",
+          "url": "https://www.beavercountypa.gov/getmedia/e99c4744-5953-4506-b73a-129993ce4d45/Precanvass-Notice-and-Observer-Guidelines-Fall-2026.pdf"
+        },
+        {
+          "label": "UMOVA (Military and Overseas Voters) Notice for 2026 General\u00a0Election",
+          "literal_href": "/getmedia/390e734f-d4bb-4a7a-b66b-3d943503a167/UMOVA-Fall-2026-7-23-26.pdf",
+          "url": "https://www.beavercountypa.gov/getmedia/390e734f-d4bb-4a7a-b66b-3d943503a167/UMOVA-Fall-2026-7-23-26.pdf"
+        },
+        {
+          "label": "Offices Appearing on Ballot for 2026 General\u00a0Election",
+          "literal_href": "/getmedia/bc73b90b-124f-463e-965a-d7831aa08200/Offices-on-Ballot-7-23-26.pdf",
+          "url": "https://www.beavercountypa.gov/getmedia/bc73b90b-124f-463e-965a-d7831aa08200/Offices-on-Ballot-7-23-26.pdf"
+        },
+        {
+          "label": "OFFICIAL Listing of Candidates Appearing on\u00a02026 General Election\u00a0Ballot",
+          "literal_href": "/getmedia/80703ebc-4d72-4924-ada8-3cbf64edabd3/Official-Candidates-on-Ballot-9-14-26.pdf",
+          "url": "https://www.beavercountypa.gov/getmedia/80703ebc-4d72-4924-ada8-3cbf64edabd3/Official-Candidates-on-Ballot-9-14-26.pdf"
+        },
+        {
+          "label": "SAMPLE BALLOTS for 2026 General Election",
+          "literal_href": "/getmedia/e8e60c3d-ad9c-4f7f-8d28-01c08dcff8de/2026-General-Election-Sample-Ballots-for-Website.pdf",
+          "url": "https://www.beavercountypa.gov/getmedia/e8e60c3d-ad9c-4f7f-8d28-01c08dcff8de/2026-General-Election-Sample-Ballots-for-Website.pdf"
+        }
+      ],
+      "current_summary_declarations": []
+    },
+    {
+      "name": "beaver-historical",
+      "parent_receipt": {
+        "source": "https://www.beavercountypa.gov/departments/election-bureau/historical-election-results",
+        "final_url": "https://www.beavercountypa.gov/departments/election-bureau/historical-election-results",
+        "status": 200,
+        "acquired_at_utc": "2026-11-06T18:04:24.767097+00:00",
+        "verified_tls": true,
+        "bytes": 91891,
+        "sha256": "2c76803254a03ed860513ddc2539836645da770bb75cdf85f9d4a147ca4b1815",
+        "headers": {
+          "Content-Type": "text/html; charset=utf-8",
+          "Last-Modified": null,
+          "ETag": null,
+          "Date": "Fri, 06 Nov 2026 18:04:24 GMT"
+        }
+      },
+      "html_base": null,
+      "declared_documents_and_navigation": [
+        {
+          "label": "Election Results",
+          "literal_href": "/departments/election-bureau/election-results",
+          "url": "https://www.beavercountypa.gov/departments/election-bureau/election-results"
+        },
+        {
+          "label": "Act 88 Ballots Returned Report for the 2026 General Primary (opens in a new window)",
+          "literal_href": "/getmedia/5cf2593f-9649-47a6-b35c-52278c43fbfc/Ballots-Returned-Report-FALL-2026.pdf",
+          "url": "https://www.beavercountypa.gov/getmedia/5cf2593f-9649-47a6-b35c-52278c43fbfc/Ballots-Returned-Report-FALL-2026.pdf"
+        },
+        {
+          "label": "List of Mail-in/Absentee Ballots With Observable Defects for 2026 General Election (opens in a new window)",
+          "literal_href": "/getmedia/5adeda25-19b6-4608-862a-5cfba9c90951/Listing-of-Beaver-County-Mail-or-Absentee-Ballots-with-Observable-Defects-2026-General-Election.pdf",
+          "url": "https://www.beavercountypa.gov/getmedia/5adeda25-19b6-4608-862a-5cfba9c90951/Listing-of-Beaver-County-Mail-or-Absentee-Ballots-with-Observable-Defects-2026-General-Election.pdf"
+        },
+        {
+          "label": "Election Results",
+          "literal_href": "/departments/election-bureau/election-results",
+          "url": "https://www.beavercountypa.gov/departments/election-bureau/election-results"
+        },
+        {
+          "label": "May 19, 2026",
+          "literal_href": "#collapse-7cd21e60-ccc6-442c-b138-3dd042d9fa62",
+          "url": "https://www.beavercountypa.gov/departments/election-bureau/historical-election-results#collapse-7cd21e60-ccc6-442c-b138-3dd042d9fa62"
+        },
+        {
+          "label": "Election Results by Race",
+          "literal_href": "/getmedia/0a22ae51-7fc4-4c40-8b64-b8d75a6c622d/2026-General-Primary-Beaver-County-Summary-Report-Upload6_Certified.pdf",
+          "url": "https://www.beavercountypa.gov/getmedia/0a22ae51-7fc4-4c40-8b64-b8d75a6c622d/2026-General-Primary-Beaver-County-Summary-Report-Upload6_Certified.pdf"
+        },
+        {
+          "label": "Election Results by Precinct",
+          "literal_href": "/getmedia/e72824a5-d3a3-4ef7-ab27-43b3e8106f5c/2026-General-Primary-Beaver-County-Precinct-Report-Upload6_Certified.pdf",
+          "url": "https://www.beavercountypa.gov/getmedia/e72824a5-d3a3-4ef7-ab27-43b3e8106f5c/2026-General-Primary-Beaver-County-Precinct-Report-Upload6_Certified.pdf"
+        },
+        {
+          "label": "Election Results by Race",
+          "literal_href": "/getmedia/322131e1-9ca6-4bf7-9df5-e9034b59d5c1/Municipal-Election-Summary-Results-2025-11-26-25_Official_Final.pdf",
+          "url": "https://www.beavercountypa.gov/getmedia/322131e1-9ca6-4bf7-9df5-e9034b59d5c1/Municipal-Election-Summary-Results-2025-11-26-25_Official_Final.pdf"
+        },
+        {
+          "label": "Election Results by Precinct",
+          "literal_href": "/getmedia/4fea34c1-51a3-49c5-8d34-1ebc91ad6684/Municipal-Election-Precinct-Results-2025-11-26-25_Official_Final.pdf",
+          "url": "https://www.beavercountypa.gov/getmedia/4fea34c1-51a3-49c5-8d34-1ebc91ad6684/Municipal-Election-Precinct-Results-2025-11-26-25_Official_Final.pdf"
+        },
+        {
+          "label": "Results of Casting of Lots for Municipal Offices and Judges of Elections",
+          "literal_href": "/getmedia/a17df00b-77b8-488c-84e9-c5c4d173974a/2025-Municipal-Election-Casting-of-Lots-Results-Municipal-Offices-and-Judges-of-Election.pdf",
+          "url": "https://www.beavercountypa.gov/getmedia/a17df00b-77b8-488c-84e9-c5c4d173974a/2025-Municipal-Election-Casting-of-Lots-Results-Municipal-Offices-and-Judges-of-Election.pdf"
+        },
+        {
+          "label": "Election Results by Race",
+          "literal_href": "/getmedia/5f23eac3-2f96-4857-aa5c-8f6c45a48a09/2025-Municipal-Primary-Summary-OFFICIAL-CERTIFIED-Results.pdf",
+          "url": "https://www.beavercountypa.gov/getmedia/5f23eac3-2f96-4857-aa5c-8f6c45a48a09/2025-Municipal-Primary-Summary-OFFICIAL-CERTIFIED-Results.pdf"
+        },
+        {
+          "label": "Election Results by Precinct",
+          "literal_href": "/getmedia/29283332-1aac-43d2-a983-35248feca10e/2025-Municipal-Primary-Precinct-Level-OFFICIAL-CERTIFIED-Results.pdf",
+          "url": "https://www.beavercountypa.gov/getmedia/29283332-1aac-43d2-a983-35248feca10e/2025-Municipal-Primary-Precinct-Level-OFFICIAL-CERTIFIED-Results.pdf"
+        },
+        {
+          "label": "Official Results for Contests Appearing on both Lawrence and Beaver County Ballots",
+          "literal_href": "/getmedia/758d6d85-4632-49ce-ac3c-11dca52d64c0/Combined-2025-Primary-Results-of-Ballots-Cast-for-Contests-Appearing-on-Ballots-in-Lawrence-and-Beaver-Counties.pdf",
+          "url": "https://www.beavercountypa.gov/getmedia/758d6d85-4632-49ce-ac3c-11dca52d64c0/Combined-2025-Primary-Results-of-Ballots-Cast-for-Contests-Appearing-on-Ballots-in-Lawrence-and-Beaver-Counties.pdf"
+        },
+        {
+          "label": "Election Results by Race",
+          "literal_href": "/getmedia/cc549616-bc88-48b3-95d4-4dc02f92ac70/2024-General-Election-Summary-Report-9-FINAL-CERTIFIED-TOTALS.pdf",
+          "url": "https://www.beavercountypa.gov/getmedia/cc549616-bc88-48b3-95d4-4dc02f92ac70/2024-General-Election-Summary-Report-9-FINAL-CERTIFIED-TOTALS.pdf"
+        },
+        {
+          "label": "Election Results by Precinct",
+          "literal_href": "/getmedia/82e0b2d0-267f-4546-a9e2-0853267db4cb/2024-General-Election-Precinct-Report-9-FINAL-CERTIFIED-TOTALS.pdf",
+          "url": "https://www.beavercountypa.gov/getmedia/82e0b2d0-267f-4546-a9e2-0853267db4cb/2024-General-Election-Precinct-Report-9-FINAL-CERTIFIED-TOTALS.pdf"
+        },
+        {
+          "label": "Election Results by Race",
+          "literal_href": "/getmedia/2145b2e1-e2ae-4e76-a59e-7d5ceb30769d/April-2024-Summary-Report.pdf",
+          "url": "https://www.beavercountypa.gov/getmedia/2145b2e1-e2ae-4e76-a59e-7d5ceb30769d/April-2024-Summary-Report.pdf"
+        },
+        {
+          "label": "Election Results by Precinct",
+          "literal_href": "/getmedia/c33611c6-c839-4c90-bc66-7291f2d99ec1/April-2024-Precinct-Report.pdf",
+          "url": "https://www.beavercountypa.gov/getmedia/c33611c6-c839-4c90-bc66-7291f2d99ec1/April-2024-Precinct-Report.pdf"
+        },
+        {
+          "label": "Election Results by Race",
+          "literal_href": "/getmedia/652c0e6e-fad0-4ca0-bfc4-d252cedf5dbd/Election-Summary-11-7-23.pdf",
+          "url": "https://www.beavercountypa.gov/getmedia/652c0e6e-fad0-4ca0-bfc4-d252cedf5dbd/Election-Summary-11-7-23.pdf"
+        },
+        {
+          "label": "Election Results by Precinct",
+          "literal_href": "/getmedia/049c96a2-9684-49f1-91e5-8560e8d008e4/Precinct-Results-11-7-23.pdf",
+          "url": "https://www.beavercountypa.gov/getmedia/049c96a2-9684-49f1-91e5-8560e8d008e4/Precinct-Results-11-7-23.pdf"
+        },
+        {
+          "label": "Election Results by Race",
+          "literal_href": "/getmedia/4d7c20c6-a6c0-4230-ab23-c39722addab8/OFFICIAL-SUMMARY-RESULTS-May-16-23.pdf",
+          "url": "https://www.beavercountypa.gov/getmedia/4d7c20c6-a6c0-4230-ab23-c39722addab8/OFFICIAL-SUMMARY-RESULTS-May-16-23.pdf"
+        },
+        {
+          "label": "Election Results by Precinct",
+          "literal_href": "/getmedia/8d28de17-90e9-45c3-976e-55fdcd6dacdb/OFFICIAL-PRECINCT-RESULTS-May-16-23.pdf",
+          "url": "https://www.beavercountypa.gov/getmedia/8d28de17-90e9-45c3-976e-55fdcd6dacdb/OFFICIAL-PRECINCT-RESULTS-May-16-23.pdf"
+        },
+        {
+          "label": "Election Results by Race",
+          "literal_href": "https://www.beavercountypa.gov/getmedia/1d2fe4b2-e71e-4a72-96f4-05047b0b0003/Certified-Results-with-Lawrence-Summary-Fall-2022-Results.pdf",
+          "url": "https://www.beavercountypa.gov/getmedia/1d2fe4b2-e71e-4a72-96f4-05047b0b0003/Certified-Results-with-Lawrence-Summary-Fall-2022-Results.pdf"
+        },
+        {
+          "label": "Election Results by Precinct",
+          "literal_href": "https://www.beavercountypa.gov/getmedia/d8c60b35-7816-4314-8f39-ec3cb9e13e1d/Official-Results-for-Certification-Precinct-Level-Fall-2022-Results.pdf",
+          "url": "https://www.beavercountypa.gov/getmedia/d8c60b35-7816-4314-8f39-ec3cb9e13e1d/Official-Results-for-Certification-Precinct-Level-Fall-2022-Results.pdf"
+        },
+        {
+          "label": "Election Results by Race",
+          "literal_href": "/getmedia/beb39743-d465-4568-b85f-7419f7b6cf9b/6-13-AMENDED-OFFICIAL-SUMMARY-RESULTS-Beaver-County.pdf",
+          "url": "https://www.beavercountypa.gov/getmedia/beb39743-d465-4568-b85f-7419f7b6cf9b/6-13-AMENDED-OFFICIAL-SUMMARY-RESULTS-Beaver-County.pdf"
+        },
+        {
+          "label": "Election Results by Precinct",
+          "literal_href": "/getmedia/aa5eb993-8098-46da-8a31-668e4bf8ef64/6-13-AMENDED-OFFICIAL-PRECINCT-RESULTS-Beaver-County.pdf",
+          "url": "https://www.beavercountypa.gov/getmedia/aa5eb993-8098-46da-8a31-668e4bf8ef64/6-13-AMENDED-OFFICIAL-PRECINCT-RESULTS-Beaver-County.pdf"
+        },
+        {
+          "label": "Election Results by Race",
+          "literal_href": "/getmedia/32706371-5dab-436d-8241-c858d3bfa6bb/SummaryResults11022021.pdf",
+          "url": "https://www.beavercountypa.gov/getmedia/32706371-5dab-436d-8241-c858d3bfa6bb/SummaryResults11022021.pdf"
+        },
+        {
+          "label": "Election Results by Precinct",
+          "literal_href": "/getmedia/4d7aa18c-1249-4ee9-80be-0c3122d7523b/PrecinctsResults11022021.pdf",
+          "url": "https://www.beavercountypa.gov/getmedia/4d7aa18c-1249-4ee9-80be-0c3122d7523b/PrecinctsResults11022021.pdf"
+        },
+        {
+          "label": "Election Results by Race",
+          "literal_href": "/getmedia/e01d79ae-f8df-4a99-8a5f-7e83bffd95da/Election-Summary-(Final)-for-2021-Municipal-Primary-FOR-WEBSITE.pdf",
+          "url": "https://www.beavercountypa.gov/getmedia/e01d79ae-f8df-4a99-8a5f-7e83bffd95da/Election-Summary-(Final)-for-2021-Municipal-Primary-FOR-WEBSITE.pdf"
+        },
+        {
+          "label": "Election Results by Precinct",
+          "literal_href": "/getmedia/9d890a69-2402-438a-82f7-95d35f47602d/PrecinctsResults05182021.pdf",
+          "url": "https://www.beavercountypa.gov/getmedia/9d890a69-2402-438a-82f7-95d35f47602d/PrecinctsResults05182021.pdf"
+        },
+        {
+          "label": "Historical Election Results",
+          "literal_href": "/departments/election-bureau/historical-election-results",
+          "url": "https://www.beavercountypa.gov/departments/election-bureau/historical-election-results"
+        },
+        {
+          "label": "Beaver County Government Directory 2026",
+          "literal_href": "/getmedia/504f87a9-f407-434e-88ce-0b120a23cca9/2026-Final-Beaver-County-Government-Directory-(Latest-Rev-3-31-26).pdf",
+          "url": "https://www.beavercountypa.gov/getmedia/504f87a9-f407-434e-88ce-0b120a23cca9/2026-Final-Beaver-County-Government-Directory-(Latest-Rev-3-31-26).pdf"
+        },
+        {
+          "label": "Notice of Precanvass for 2026 General\u00a0Election",
+          "literal_href": "/getmedia/e99c4744-5953-4506-b73a-129993ce4d45/Precanvass-Notice-and-Observer-Guidelines-Fall-2026.pdf",
+          "url": "https://www.beavercountypa.gov/getmedia/e99c4744-5953-4506-b73a-129993ce4d45/Precanvass-Notice-and-Observer-Guidelines-Fall-2026.pdf"
+        },
+        {
+          "label": "UMOVA (Military and Overseas Voters) Notice for 2026 General\u00a0Election",
+          "literal_href": "/getmedia/390e734f-d4bb-4a7a-b66b-3d943503a167/UMOVA-Fall-2026-7-23-26.pdf",
+          "url": "https://www.beavercountypa.gov/getmedia/390e734f-d4bb-4a7a-b66b-3d943503a167/UMOVA-Fall-2026-7-23-26.pdf"
+        },
+        {
+          "label": "Offices Appearing on Ballot for 2026 General\u00a0Election",
+          "literal_href": "/getmedia/bc73b90b-124f-463e-965a-d7831aa08200/Offices-on-Ballot-7-23-26.pdf",
+          "url": "https://www.beavercountypa.gov/getmedia/bc73b90b-124f-463e-965a-d7831aa08200/Offices-on-Ballot-7-23-26.pdf"
+        },
+        {
+          "label": "OFFICIAL Listing of Candidates Appearing on\u00a02026 General Election\u00a0Ballot",
+          "literal_href": "/getmedia/80703ebc-4d72-4924-ada8-3cbf64edabd3/Official-Candidates-on-Ballot-9-14-26.pdf",
+          "url": "https://www.beavercountypa.gov/getmedia/80703ebc-4d72-4924-ada8-3cbf64edabd3/Official-Candidates-on-Ballot-9-14-26.pdf"
+        },
+        {
+          "label": "SAMPLE BALLOTS for 2026 General Election",
+          "literal_href": "/getmedia/e8e60c3d-ad9c-4f7f-8d28-01c08dcff8de/2026-General-Election-Sample-Ballots-for-Website.pdf",
+          "url": "https://www.beavercountypa.gov/getmedia/e8e60c3d-ad9c-4f7f-8d28-01c08dcff8de/2026-General-Election-Sample-Ballots-for-Website.pdf"
+        }
+      ],
+      "current_summary_declarations": []
+    }
+  ],
+  "public_numerical_release": false,
+  "participation_approval": false,
+  "map_approval": false,
+  "no_vendor_challenge_requests": true,
+  "no_election_date_or_parent_date_used_as_native_report_clock": true,
+  "erroneous_page_directory_resolution": {
+    "url": "https://www.bedfordcountypa.org/departments/elections/Elections/2026%20General%20Election/Unofficial%20ElectionSummaryReportRPT.pdf?t=202611032210040",
+    "not_the_declared_html_base_resolution": true,
+    "not_used_as_original_acquisition_receipt": true,
+    "not_retried": true
+  },
+  "bedford_successful_native_summary_acquisition": {
+    "resolved_using_actual_html_base": "https://www.bedfordcountypa.org/",
+    "status": 200,
+    "verified_tls": true,
+    "bytes": 174249,
+    "sha256": "590d5d9e2b717289a9979aea5f8beeffd0598432035011706dde74044d792b24",
+    "complete_receipt": "../20261106-bedford-native-turnout-01/source-provenance.json",
+    "numerical_review": "../20261106-bedford-native-turnout-01/complete-query.zip",
+    "map_approval": false
+  },
+  "raw_originals_private": "files/bedford-beaver-navigation-01",
+  "decision": "Bedford's actual root HTML base resolves its declared November general PDF; its complete native numerical query is reviewed separately. Beaver's available historical sections are not November general counts. No generic rate or map approval inferred."
+}

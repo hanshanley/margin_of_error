@@ -1,0 +1,15 @@
+{
+  "verified_at_utc": "2026-11-06T18:08:25.217360+00:00",
+  "files": 16,
+  "zip_members": 15,
+  "isolated_tests": 10,
+  "extracted_archive_tests": 10,
+  "reproduced_files": 16,
+  "entire_offline_reproduction_byte_identical": true,
+  "zip_bytes": 15912,
+  "zip_sha256": "238a3290697769bc0921d6f20d561961be4ded1d832d6eaa90bc355fab918752",
+  "numerical_source_sha256": "590d5d9e2b717289a9979aea5f8beeffd0598432035011706dde74044d792b24",
+  "publication_started": false,
+  "current_ui_pointer_unchanged": true,
+  "native_map_approval": false
+}

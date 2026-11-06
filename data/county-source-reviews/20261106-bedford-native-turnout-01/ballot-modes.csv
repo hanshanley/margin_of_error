@@ -1,0 +1,5 @@
+native_counting_group,cards_cast,voters_cast,registered_voters,native_turnout_pct,is_aggregate,source_page
+Election Day,16138,16138,,48.79,False,1
+Mail-In,2903,2903,,8.78,False,1
+Provisional,0,0,,0.00,False,1
+Total,19041,19041,33079,57.56,True,1

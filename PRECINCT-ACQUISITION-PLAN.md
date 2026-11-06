@@ -20,7 +20,15 @@ remain unchanged. Browser tests preserve all **1,228 previous complete records /
 joins / 359 fractions / 387 missing rates / 822 anchors / 818 distinct URLs**.
 Pennsylvania has **41 observations / 38 fractions**, not statewide completeness.
 
-**Next:** push only this genuine UI integration, then verify its exact Pages
+The exact UI **`d15dd8930c4ee09247ba015d62d7c1d4ed7a306d`** is pushed.
+Pages **42265950368 attempt1** built successfully, preserving original artifact
+**13526574384 / 506,893,533 bytes / SHA-256
+`36ed9d761853fefe0238336096d246490b71d46d8eb9a72ec08b6ddf0149ace4`**.
+Its deploy remained `deployment_queued` before GitHub reported failure. The
+complete failure log and digest are retained. Exactly one deploy-only recovery
+was requested; attempt2 reuses that artifact, without rebuilding or pushing main.
+
+**Next:** verify its exact Pages
 revision, original artifact/digest, actual hosted size, all **457 selected entire
 public files** including all **444 previous paths**, **335 relocations** and
 **seven production browsers** before a LIVE claim. Do not rebuild prepared
@@ -28,6 +36,36 @@ public files** including all **444 previous paths**, **335 relocations** and
 not through an audit-only main push. Context20 below remains the verified LIVE
 baseline until these checks pass. Afterwards resume genuine remaining county
 gaps; schedule #5 and external security-remediation blockers remain unchanged.
+
+**November 6: Bedford complete native query validated; publication/context review pending.**
+The official page declares a root HTML `<base>`; resolving its literal general
+summary against that base, rather than the page directory, recovered the complete
+**174,249-byte / two-page** original with verified TLS and full receipt. Both
+physical pages, two independent complete text extractions and all numerical rows
+were reviewed. Native **19,041 voters/cards cast / 33,079 registrations / 57.56%**
+retain **16,138 Election Day / 2,903 Mail-In / zero Provisional**; the aggregate
+Total is not a fourth additive mode. Both report clocks are **11/3/2026
+9:53:30PM**, with timezone missing. Reporting **40 of40** is not certification.
+
+The complete portable query retains all **12 candidate vectors / four contest
+totals / 16 mode accounting rows / four unresolved-write-in vectors / five
+reporting scopes / two source pages**. Literal DEM/REP/LIB and blank write-in
+parties remain native. Every named-candidate sum equals native Total Votes;
+native Total Votes plus native under/overvotes equals Times Cast in every mode.
+The separate unresolved write-ins **8/23/34/339** must not be added again or
+assigned to under/overvotes without a source definition. Separately rounded mode
+percentages need not sum to the separately rounded aggregate. Native FIPS,
+timezone and generic rate/map approvals remain missing/false.
+
+All **ten isolated tests / ten actual extracted-archive tests / 16 byte-identical
+reproductions / 15 actual ZIP members** pass. This is native source preparation,
+not context22 or a LIVE map addition. Do not edit the current prepared `dist/`
+while the exact context21 verifier runs. Beaver's declaring page identifies a
+current vendor, but its separately retained historical page supplies primary,
+not November general, reports; no vendor request or process-only ballot
+substitution was made. Fayette404/Cambria403 have complete direct receipts;
+earlier browser-only notes without retained originals are not canonical vendor
+evidence. These outcomes do not establish global source absence.
 
 **November 6: Sullivan/Wyoming complete native numerical and contextual review (completed).**
 The two entire declared official PDFs were acquired at 17:31 UTC with verified

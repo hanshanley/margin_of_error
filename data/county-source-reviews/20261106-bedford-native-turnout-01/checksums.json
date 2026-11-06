@@ -1,0 +1,75 @@
+{
+  "files": [
+    {
+      "path": "audit.json",
+      "bytes": 1054,
+      "sha256": "6e0b9641848f4003a02e7cfe01532f9ff531b611bc132f550ad1989965f30aeb"
+    },
+    {
+      "path": "ballot-modes.csv",
+      "bytes": 246,
+      "sha256": "d3b356ddb426b0828e83a1897ff2e0024435afd8741afc428c2a477bc45bf5e7"
+    },
+    {
+      "path": "candidate-results.csv",
+      "bytes": 1431,
+      "sha256": "d773f323fe624da60d82eb73cb6b7c71119af076d6bb3a87c0625259f3294c74"
+    },
+    {
+      "path": "contest-accounting.csv",
+      "bytes": 1765,
+      "sha256": "1775c539785e4eb4c0e9d14594c242e32ea39799ac5dd9811dd8932673369292"
+    },
+    {
+      "path": "contest-totals.csv",
+      "bytes": 449,
+      "sha256": "d0d73909c58317ed5f77145002fc59980730dbd0d9d2e0c548f7caed599a90a4"
+    },
+    {
+      "path": "county-participation.csv",
+      "bytes": 271,
+      "sha256": "ac27921ce943259cbe1aec906fcd22493c7625ecfe99d200a64e41f3c66367a1"
+    },
+    {
+      "path": "methods.json",
+      "bytes": 2337,
+      "sha256": "dbc53e23ab1037e2d7a6898595171b1c48eed9a410357ef41b0ef9d27fea9c03"
+    },
+    {
+      "path": "reporting.csv",
+      "bytes": 399,
+      "sha256": "cdd03b73e9bd2db7364f443a69fb1bf7fbc71584304c22b9ee43d4e290c990ad"
+    },
+    {
+      "path": "review-counties.py",
+      "bytes": 14403,
+      "sha256": "9c15d88266658e09d5376f84b2cac3de816a50eea3ea0f9d42fee0a1b330da2f"
+    },
+    {
+      "path": "source-inputs.json",
+      "bytes": 9584,
+      "sha256": "d543734056219ffbb17a613bc0cdf716354588724cfd3b32c16d36f041eaebb0"
+    },
+    {
+      "path": "source-pages.csv",
+      "bytes": 133,
+      "sha256": "ce47cdef10af33fa2552277957a613fdb8981353ef2a445734682cb21719ce84"
+    },
+    {
+      "path": "source-provenance.json",
+      "bytes": 2642,
+      "sha256": "8de8ed86d044cbf8786d48d1264e164d12071d37c0585282f02975593f3f05b2"
+    },
+    {
+      "path": "test_review_counties.py",
+      "bytes": 7201,
+      "sha256": "bd913dbcab815015c02e70cef5ebb14c1cd042a04fc405229eabcba5b1d1bff8"
+    },
+    {
+      "path": "unresolved-write-ins.csv",
+      "bytes": 610,
+      "sha256": "e2063f853222d5f8c696c59d4bbb6c7bef31e69c335b6a7498567b4cfe5df347"
+    }
+  ],
+  "scope": "Every factual/static query file; manifest and complete-query.zip excluded to avoid self-reference. The archive includes this manifest but never includes itself."
+}

@@ -1,0 +1,60 @@
+{
+  "reviewed_at_utc": "2026-11-06T18:02:13.460147+00:00",
+  "complete_parent_responses": [
+    {
+      "county": "Fayette",
+      "parent_receipt": {
+        "source": "https://www.fayettecountypa.org/230/Election-Bureau",
+        "final_url": "https://www.fayettecountypa.org/230/Election-Bureau",
+        "status": 404,
+        "acquired_at_utc": "2026-11-06T18:02:12.557693+00:00",
+        "verified_tls": true,
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "headers": {
+          "Content-Type": null,
+          "Last-Modified": null,
+          "ETag": null,
+          "Date": "Fri, 06 Nov 2026 18:02:12 GMT"
+        }
+      },
+      "county_ballots": null,
+      "registrations": null,
+      "usable_fraction": null,
+      "source_map_approval": false,
+      "decision": "Retain complete response; no sibling, vendor or alternate-host retry."
+    },
+    {
+      "county": "Cambria",
+      "parent_receipt": {
+        "source": "https://www.cambriacountypa.gov/election-office/",
+        "final_url": "https://www.cambriacountypa.gov/election-office/",
+        "status": 403,
+        "acquired_at_utc": "2026-11-06T18:02:13.459562+00:00",
+        "verified_tls": true,
+        "bytes": 103,
+        "sha256": "f261423d1da97890ff6bfccd31ff4ee0b74f69351cf75095fbe791cb16cbf5bd",
+        "headers": {
+          "Content-Type": "text/html",
+          "Last-Modified": null,
+          "ETag": null,
+          "Date": "Fri, 06 Nov 2026 18:02:13 GMT"
+        }
+      },
+      "county_ballots": null,
+      "registrations": null,
+      "usable_fraction": null,
+      "source_map_approval": false,
+      "decision": "Retain complete response; no sibling, vendor or alternate-host retry."
+    }
+  ],
+  "scope": "Only the two retained direct-response receipts above are verified by this review. Earlier browser-only navigation notes lack retained originals and are not source-declaration or vendor-response proof here.",
+  "no_vendor_requests_by_this_helper": true,
+  "raw_originals_private": "files/fayette-cambria-navigation-01",
+  "new_numerical_query_release": false,
+  "new_public_download": false,
+  "source_approval": false,
+  "live_pointer_changed": false,
+  "global_source_absence_claim": false,
+  "next_action": "Seek different source-declared standalone reports for remaining county gaps; do not retry these unchanged failed parents, infer vendor absence, or promote Act88 receipts to all-mode ballots."
+}

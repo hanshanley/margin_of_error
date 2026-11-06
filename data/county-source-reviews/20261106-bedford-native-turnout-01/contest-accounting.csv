@@ -1,0 +1,17 @@
+contest,counting_group,times_cast,native_total_votes,native_undervotes,native_overvotes,native_unresolved_write_in,unresolved_not_added_again,source_page
+Governor and Lieutenant Governor (Vote for 1),Election Day,16138,16030,74,34,5,True,1
+Governor and Lieutenant Governor (Vote for 1),Mail-In,2903,2835,19,49,3,True,1
+Governor and Lieutenant Governor (Vote for 1),Provisional,0,0,0,0,0,True,1
+Governor and Lieutenant Governor (Vote for 1),Total,19041,18865,93,83,8,True,1
+Representative in Congress- 13th Congressional District (Vote for 1),Election Day,16138,15993,137,8,19,True,1
+Representative in Congress- 13th Congressional District (Vote for 1),Mail-In,2903,2860,35,8,4,True,1
+Representative in Congress- 13th Congressional District (Vote for 1),Provisional,0,0,0,0,0,True,1
+Representative in Congress- 13th Congressional District (Vote for 1),Total,19041,18853,172,16,23,True,1
+Senator in the General Assembly- 32nd Senatorial District (Vote for 1),Election Day,16138,15788,350,0,32,True,2
+Senator in the General Assembly- 32nd Senatorial District (Vote for 1),Mail-In,2903,2838,65,0,2,True,2
+Senator in the General Assembly- 32nd Senatorial District (Vote for 1),Provisional,0,0,0,0,0,True,2
+Senator in the General Assembly- 32nd Senatorial District (Vote for 1),Total,19041,18626,415,0,34,True,2
+Representative in the General Assembly- 78th Legislative District (Vote for 1),Election Day,16138,14797,1341,0,233,True,2
+Representative in the General Assembly- 78th Legislative District (Vote for 1),Mail-In,2903,2059,843,1,106,True,2
+Representative in the General Assembly- 78th Legislative District (Vote for 1),Provisional,0,0,0,0,0,True,2
+Representative in the General Assembly- 78th Legislative District (Vote for 1),Total,19041,16856,2184,1,339,True,2

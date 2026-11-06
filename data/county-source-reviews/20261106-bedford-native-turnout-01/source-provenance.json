@@ -1,0 +1,64 @@
+{
+  "pdf_receipt": {
+    "declaration": {
+      "label": "UNOFFICIAL General 2026 Election Summary Report",
+      "literal_href": "Elections/2026 General Election/Unofficial ElectionSummaryReportRPT.pdf?t=202611032210040",
+      "url": "https://www.bedfordcountypa.org/Elections/2026 General Election/Unofficial ElectionSummaryReportRPT.pdf?t=202611032210040"
+    },
+    "declaring_parent": {
+      "source": "https://www.bedfordcountypa.org/departments/elections/election_results.php",
+      "final_url": "https://www.bedfordcountypa.org/departments/elections/election_results.php",
+      "status": 200,
+      "acquired_at_utc": "2026-11-06T18:04:22.941874+00:00",
+      "verified_tls": true,
+      "bytes": 61298,
+      "sha256": "36fd662d1e242d4d22e9bdcf7cc068c22a95c2ac510a62cd204594f72547b666",
+      "headers": {
+        "Content-Type": "text/html; charset=UTF-8",
+        "Last-Modified": null,
+        "ETag": null,
+        "Date": "Fri, 06 Nov 2026 18:04:22 GMT"
+      }
+    },
+    "resolved_using_actual_html_base": "https://www.bedfordcountypa.org/",
+    "status": 200,
+    "final_url": "https://www.bedfordcountypa.org/Elections/2026%20General%20Election/Unofficial%20ElectionSummaryReportRPT.pdf?t=202611032210040",
+    "acquired_at_utc": "2026-11-06T18:04:53.384153+00:00",
+    "verified_tls": true,
+    "bytes": 174249,
+    "sha256": "590d5d9e2b717289a9979aea5f8beeffd0598432035011706dde74044d792b24",
+    "headers": {
+      "Content-Type": "application/pdf",
+      "Last-Modified": "Wed, 04 Nov 2026 03:09:59 GMT",
+      "ETag": "\"7015ccf996cdd1:0\"",
+      "Date": "Fri, 06 Nov 2026 18:04:53 GMT"
+    }
+  },
+  "pdf_metadata": {
+    "format": "PDF 1.7",
+    "title": "ElectionSummaryReportRPT",
+    "author": "",
+    "subject": "",
+    "keywords": "",
+    "creator": "Microsoft Reporting Services 2019.11.0.0",
+    "producer": "Microsoft Reporting Services PDF Rendering Extension 2019.11.0.0",
+    "creationDate": "D:20261103215411-05'00'",
+    "modDate": "",
+    "trapped": "",
+    "encryption": null
+  },
+  "visual_review": {
+    "physical_pages": [
+      1,
+      2
+    ],
+    "all_numerical_pages_reviewed": true,
+    "rows_and_blank_registration_cells_reviewed": true
+  },
+  "numerical_originals_complete_and_private": true,
+  "election_scope_origin": "Official declaring page: 2026 General Election",
+  "no_election_date_or_last_modified_used_as_report_clock": true,
+  "raw_source_clock": "11/3/2026 9:53:30 PM",
+  "native_timezone": null,
+  "scope": "Literal county-declared summary using its actual root HTML base, not the erroneous page-directory resolution. No dashboard challenge or transport denial bypassed."
+}

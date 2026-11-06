@@ -1,0 +1,30 @@
+{
+  "row_counts": {
+    "county-participation.csv": 1,
+    "ballot-modes.csv": 4,
+    "candidate-results.csv": 12,
+    "contest-totals.csv": 4,
+    "contest-accounting.csv": 16,
+    "unresolved-write-ins.csv": 4,
+    "reporting.csv": 5,
+    "source-pages.csv": 2
+  },
+  "two_complete_independent_extractions_match": true,
+  "all_named_candidate_mode_vectors_reconcile": true,
+  "all_native_mode_and_accounting_vectors_reconcile": true,
+  "unresolved_write_in_totals": [
+    8,
+    23,
+    34,
+    339
+  ],
+  "unresolved_write_ins_not_added_to_native_total_votes": true,
+  "unresolved_allocation_to_under_or_overvotes_not_inferred": true,
+  "native_timezone_missing": true,
+  "native_fips_missing": true,
+  "analysis_rate_approvals": 0,
+  "map_approvals": 0,
+  "all_complete_pages_in_source_inputs": true,
+  "source_pdf_sha256": "590d5d9e2b717289a9979aea5f8beeffd0598432035011706dde74044d792b24",
+  "scope": "Complete native numerical query; no statewide, precinct-geometry, certified-turnout, unique-person deduplication, or completed-counting claim."
+}

@@ -1,0 +1,5 @@
+contest,election_day,mail_in,provisional,total,native_candidate_label,native_detail_label,is_nonadditive,allocation_to_undervotes_or_overvotes,source_page
+Governor and Lieutenant Governor (Vote for 1),5,3,0,8,Write-in,Unresolved Write-In,True,,1
+Representative in Congress- 13th Congressional District (Vote for 1),19,4,0,23,Write-in,Unresolved Write-In,True,,1
+Senator in the General Assembly- 32nd Senatorial District (Vote for 1),32,2,0,34,Write-in,Unresolved Write-In,True,,2
+Representative in the General Assembly- 78th Legislative District (Vote for 1),233,106,0,339,Write-in,Unresolved Write-In,True,,2
