@@ -1,0 +1,68 @@
+{
+  "year": 2026,
+  "version": "0.2",
+  "dataset_url": "https://election.lab.ufl.edu/dataset/2026-general-election-turnout-rates-v0-2/",
+  "csv_url": "https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.2.csv",
+  "documentation_url": "https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.1_doc.txt",
+  "rows": 52,
+  "source_labels": {
+    "Initial Estimate": 52
+  },
+  "estimate_rows": 52,
+  "receipts": [
+    {
+      "file": "originals/catalog.html",
+      "url": "https://election.lab.ufl.edu/data-archive/national/",
+      "status": 200,
+      "bytes": 71574,
+      "sha256": "ea9562a7c0991815b3db4b3321bda35d4b4fbb39ed6bff61508ceb9889b81f2f",
+      "retrieved_at": "2026-11-06T19:20:49.502275+00:00",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 19:20:48 GMT",
+        "Content-Type": "text/html; charset=UTF-8"
+      }
+    },
+    {
+      "file": "originals/dataset.html",
+      "url": "https://election.lab.ufl.edu/dataset/2026-general-election-turnout-rates-v0-2/",
+      "status": 200,
+      "bytes": 34025,
+      "sha256": "e11078b581ce4154d0e638f4e54ba066b9f8f7af06de9829c3bf4823b61ac423",
+      "retrieved_at": "2026-11-06T19:20:50.079191+00:00",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 19:20:49 GMT",
+        "Content-Type": "text/html; charset=UTF-8"
+      }
+    },
+    {
+      "file": "originals/turnout.csv",
+      "url": "https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.2.csv",
+      "status": 200,
+      "bytes": 6019,
+      "sha256": "eef37c0606cc1406e76b84bae2216c592e74e6b8cf5034d8d0733f3ab942cf2b",
+      "retrieved_at": "2026-11-06T19:20:50.301005+00:00",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 19:20:50 GMT",
+        "Last-Modified": "Fri, 06 Nov 2026 15:25:36 GMT",
+        "ETag": "\"1783-65f9d394b3c00\"",
+        "Content-Type": "text/csv"
+      }
+    },
+    {
+      "file": "originals/documentation.txt",
+      "url": "https://election.lab.ufl.edu/data-downloads/turnoutdata/Turnout_2026G_v0.1_doc.txt",
+      "status": 200,
+      "bytes": 6942,
+      "sha256": "403fee549826f57d620256fb33d42ffd67e19360bc611330a6ce9f01a79b8dcd",
+      "retrieved_at": "2026-11-06T19:20:50.483460+00:00",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 19:20:50 GMT",
+        "Last-Modified": "Sun, 01 Nov 2026 19:09:44 GMT",
+        "ETag": "\"1b1e-65f3bc5a68e00\"",
+        "Content-Type": "text/plain; charset=UTF-8"
+      }
+    }
+  ],
+  "scope": "UF state/national participation, not county candidate votes or demographic turnout. Source-labeled estimates stay estimates. Blank fields stay missing; explicit zero stays zero. US aggregate is separate and is not added to state totals. Rates use each row's own VEP/VAP.",
+  "attribution": "Michael McDonald, UF Election Lab; license and population methodology retained verbatim in originals/documentation.txt."
+}

@@ -1,0 +1,46 @@
+{
+  "audit.json": {
+    "bytes": 2881,
+    "sha256": "7006c449cbb177908c787c090d8b34241840376df67766b26d462c972a6eebce"
+  },
+  "originals/catalog.html": {
+    "bytes": 71574,
+    "sha256": "ea9562a7c0991815b3db4b3321bda35d4b4fbb39ed6bff61508ceb9889b81f2f"
+  },
+  "originals/catalog.html.receipt.json": {
+    "bytes": 384,
+    "sha256": "f5200d49f8eec746381c1f5e999f6bdc867372720f301ccf504f512c474ce7f5"
+  },
+  "originals/dataset.html": {
+    "bytes": 34025,
+    "sha256": "e11078b581ce4154d0e638f4e54ba066b9f8f7af06de9829c3bf4823b61ac423"
+  },
+  "originals/dataset.html.receipt.json": {
+    "bytes": 411,
+    "sha256": "9364cae3c456949b56e870b5bdcd0a78878f5d6827dfd1d3d22c373426366cd9"
+  },
+  "originals/documentation.txt": {
+    "bytes": 6942,
+    "sha256": "403fee549826f57d620256fb33d42ffd67e19360bc611330a6ce9f01a79b8dcd"
+  },
+  "originals/documentation.txt.receipt.json": {
+    "bytes": 512,
+    "sha256": "595102775382655b88bfca260549617f9eb957abd951f462f34337ec4d4f7855"
+  },
+  "originals/turnout.csv": {
+    "bytes": 6019,
+    "sha256": "eef37c0606cc1406e76b84bae2216c592e74e6b8cf5034d8d0733f3ab942cf2b"
+  },
+  "originals/turnout.csv.receipt.json": {
+    "bytes": 485,
+    "sha256": "ec70d05bbd7b40ad6a36497d68142bf10ee76b996576625c54017b6a9a5391ff"
+  },
+  "turnout.csv": {
+    "bytes": 5907,
+    "sha256": "939a44912b19eb6818d32055ead9d096a8eb25bacd98cbd475a119fc9eafe644"
+  },
+  "turnout.json": {
+    "bytes": 26260,
+    "sha256": "da04cb9ed7ad213b5d1aeea36f03ccd04b94851266057a9e35484089a4d66d1b"
+  }
+}
