@@ -837,7 +837,9 @@ reporting index. The actual index declares twenty-one distinct November 5
 general-election county PDFs; all twenty-one complete originals and successful
 SHA-bound HTTP receipts are acquired privately under
 `nj-2026-bulk-participation-01`. This is a genuine consolidated state source,
-not twenty-one guessed county sites. Source approval/publication is pending.
+not twenty-one guessed county sites. Complete county/aggregate review and
+anonymous full-release verification now pass; exact UI deployment remains
+pending as described below.
 Reports distinguish early-voting/Election Day votes cast, mail ballots tallied,
 issued/received/processing counts and provisional ballots issued. Registrations
 are generally absent. Blank county fields, competing congressional/municipal
@@ -848,6 +850,75 @@ Morris includes older, primary-labeled appended snapshots; do not sum them with
 its current general-election pages. Cape May appends a separately scoped
 results summary and candidate tables. Do not equate complete source acquisition
 with complete review or live statewide participation.
+
+**New Jersey consolidated participation review and reusable pipeline, November 6:**
+All twenty-one county reports are reviewed as a complete county/aggregate
+participation query, not a transcription of every municipal row or attached
+candidate table. Nineteen usable observations retain EV Votes Cast, ED Votes
+Cast and VBM Ballots Tallied. Eighteen are explicitly derived reported-mode
+subtotals, not native all-mode ballot totals or unique-voter estimates;
+registrations and turnout rates remain missing. Cape May's separately verified
+page-2 summary supplies native `Ballots Cast - Total` 41,278, registrations
+76,899 and printed 53.68%; its periodic modes remain separately on page 1.
+Issued, received, pending and provisional-issued values are never added to
+counted participation. Essex is withheld because native congressional and
+municipal ED totals disagree (133,271 versus 137,294). Hudson is withheld
+because early participation is unobserved, not a measured zero.
+Both withheld complete records remain in the full 21-row CSV.
+
+The full query preserves 65 native aggregate alternatives, 28 separately scoped
+page records and eleven source qualifications. Hunterdon's selected native
+rollup agrees in all three modes. Union's selected congressional mail tally
+includes the 405 overseas ballots explicitly excluded from its municipality
+rollup; both remain preserved. Only Morris current general pages 1-2 count;
+appended older/primary-labeled pages 3-6 remain explicitly excluded.
+Both independent PDF engines agree on all sixty machine-readable aggregate
+vectors; all five scanned Bergen vectors are directly visually reviewed and
+locally corroborated. Native timestamps retain their missing timezones.
+Original presentation and unreviewed candidate attachments stay private.
+
+`scripts/acquire-new-jersey-periodic-reports.py` follows the actual official
+parent/index declarations, selects the latest actual general report for all
+twenty-one counties, validates identities/stage/date/HTTPS/PDF destinations,
+saves full originals/HTTP receipts only to a new private directory, and stops
+with complete failure evidence instead of bypassing or retrying denials.
+Four focused pipeline tests and eight factual-review/offline-reproduction
+tests pass. Real acquisition captures all 23 declared sources successfully.
+All twenty-one selected complete PDF bodies/URLs match the original review;
+the live parent/index HTML changed between captures, and both observations
+remain separate. Pipeline proof is under
+`20261106-nj-participation-publication-01/pipeline-validation.json`.
+
+The first frozen export remains intact. Version 02 corrects Cape May page
+attribution and explicitly separates periodic and registration page references;
+every numerical fact and the complete factual gzip are unchanged. Version 01
+release notes now direct users to version 02 without replacing any asset.
+Corrected facts commit `10e22a8175a67477b7bac54b12edfddea0d8d858`, release
+`voter-county-new-jersey-participation-20261106-02` / `436137860`:
+all six complete assets, all four commit-pinned full CSVs and every one of nine
+ZIP members pass anonymous byte equality. Complete ZIP: 24,468 bytes, SHA-256
+`f7acc05d6175da4d7ea727faaa5489a169540b0345cf235e7fbfbfa9d56e8a94`.
+GitHub reports `immutable:false`: fixed checksums/never-overwrite policy,
+not host-enforced locking.
+
+The actual verified Wayne live HTML equals the prepared prior reference;
+all eighteen previous entire normalized records, eighteen full import
+fingerprints, five historical years, 52 UF rows and all 362 previous download
+anchors form the new live preservation baseline. New source-matched local
+browser checks pass all six desktop/mobile, JavaScript/no-JavaScript and
+failed-current-feed scenarios, with no overflow. All nineteen NJ native
+records equal the complete CSV, both withheld counties stay out of selectable
+combined counts, and missing rates remain missing. Cape May native totals and
+page-2 provenance, derived Bergen/Union labels and Union's overseas note are
+checked in the actual interactive details. Existing entire records/imports
+remain unchanged. There are now 37 reviewed observations, 367 anchors / 364
+unique full URLs. Thirty-two focused JS tests, twelve portable NJ tests,
+Astro checking and the build pass. All 106 complete download relocations pass
+byte checks; prepared Pages payload is 898,937,290 bytes. Preview is stopped.
+Proofs are under `20261106-nj-participation-publication-02`.
+The UI is prepared for deployment, not yet claimed live.
+No native FIPS, map join, demographic rate, statewide completion or
+certification is invented.
 
 **November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated

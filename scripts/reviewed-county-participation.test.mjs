@@ -10,9 +10,10 @@ const reviews = JSON.parse(readFileSync('public/participation-source-reviews.jso
 
 test('loads all reviewed county participation without promoting map coverage', () => {
   const rows = loadReviewedCountyParticipation(reviews);
-  assert.equal(rows.length, 18);
+  assert.equal(rows.length, 37);
   assert.equal(rows.filter(row => row.state_code === 'PA').length, 17);
   assert.equal(rows.filter(row => row.state_code === 'DC').length, 1);
+  assert.equal(rows.filter(row => row.state_code === 'NJ').length, 19);
   assert.ok(rows.every(row => row.maps_approved === false && row.reported_units === null));
   const monroe = rows.find(row => row.county === 'Monroe');
   assert.equal(monroe.county_id, 'reviewed:PA:Monroe');
@@ -205,7 +206,8 @@ test('preserves Wayne header participation, missing modes and explicitly attribu
   const rows = loadReviewedCountyParticipation(reviews);
   const baseline = JSON.parse(readFileSync(
     'data/county-source-reviews/20261106-wayne-publication-01/baseline.json', 'utf8'));
-  assert.deepEqual(rows.filter(row => row.county !== 'Wayne'), baseline.previous_reviewed_county_records);
+  assert.deepEqual(rows.filter(row => row.county !== 'Wayne' && row.state_code !== 'NJ'),
+    baseline.previous_reviewed_county_records);
   const row = rows.find(row => row.county === 'Wayne');
   const review = reviews.find(review => review.id === row.review_id);
   const native = parse(readFileSync(join(review.data_directory, 'county-participation.csv'), 'utf8'),
@@ -256,6 +258,66 @@ test('rejects missing or duplicated reviewed sources instead of silently shrinki
   assert.throws(() => loadReviewedCountyParticipation([...reviews,
     reviews.find(row => row.id === 'pennsylvania-berks-20261105-01')]),
     /Missing or duplicated reviewed county source/);
+});
+
+test('preserves New Jersey partial modes, native Cape May denominator and all previous entire records', () => {
+  const rows = loadReviewedCountyParticipation(reviews);
+  const baseline = JSON.parse(readFileSync(
+    'data/county-source-reviews/20261106-nj-participation-publication-02/baseline.json', 'utf8'));
+  assert.deepEqual(rows.filter(row => row.state_code !== 'NJ'), baseline.previous_reviewed_county_records);
+  const nj = rows.filter(row => row.state_code === 'NJ');
+  assert.equal(nj.length, 19);
+  assert.ok(nj.every(row => row.county_id === `reviewed:NJ:${row.county}` && !row.maps_approved));
+  assert.ok(!nj.some(row => ['Essex', 'Hudson'].includes(row.county)));
+  const derived = nj.filter(row => row.county !== 'Cape May');
+  assert.equal(derived.length, 18);
+  assert.ok(derived.every(row => row.denominator === null && row.reported_pct === null
+    && row.native_printed_pct === null && row.participation_measure_literal === undefined
+    && row.participation_measure_kind === 'derived_reported_mode_subtotal'
+    && row.participation_measure_label.startsWith('Derived ')));
+  for (const row of nj) {
+    assert.equal(row.ballots, Number(row.native_record.early_voting_votes_cast)
+      + Number(row.native_record.election_day_votes_cast) + Number(row.native_record.mail_ballots_tallied));
+    assert.match(row.quality.join(' '), /Issued, received and pending ballots are separate/);
+    assert.ok(row.native_source_updates.every(update => update.declared_timezone === ''));
+  }
+  const cape = nj.find(row => row.county === 'Cape May');
+  assert.equal(cape.ballots, 41278);
+  assert.equal(cape.denominator, 76899);
+  assert.equal(cape.reported_pct, 100 * 41278 / 76899);
+  assert.equal(cape.native_printed_pct, '53.68%');
+  assert.equal(cape.participation_measure_literal, 'Ballots Cast - Total');
+  assert.equal(cape.native_record.source_page, '2');
+  assert.match(cape.source_reporting_label, /attached summary, PDF page 2/);
+  assert.match(cape.source_update_label, /attached_participation_summary page 2: not supplied/);
+  assert.equal(nj.find(row => row.county === 'Bergen').ballots, 319503);
+  const union = nj.find(row => row.county === 'Union');
+  assert.equal(union.ballots, 176356);
+  assert.match(union.source_reporting_label, /405 overseas ballots tallied/);
+  assert.equal(nj.find(row => row.county === 'Hunterdon').ballots, 63031);
+});
+
+test('rejects New Jersey count substitution, invented denominators and missing/duplicate complete sources', () => {
+  const original = reviews.find(row => row.id === 'new-jersey-periodic-participation-20261106-02');
+  assert.throws(() => loadReviewedCountyParticipation(reviews.filter(row => row !== original)),
+    /Missing or duplicated reviewed county source/);
+  assert.throws(() => loadReviewedCountyParticipation([...reviews, original]),
+    /Missing or duplicated reviewed county source/);
+  const directory = mkdtempSync(join(tmpdir(), 'nj-participation-'));
+  try {
+    for (const file of ['audit.json', 'native-source-pages.csv', 'native-counting-qualifications.csv'])
+      copyFileSync(join(original.data_directory, file), join(directory, file));
+    const body = readFileSync(join(original.data_directory, 'county-participation.csv'), 'utf8');
+    const altered = reviews.map(row => row === original ? { ...row, data_directory: directory } : row);
+    for (const input of [body.replace(',319503,', ',319504,'),
+      body.replace(',76899,', ',0,'), body.replace('Derived Early Voting', 'Native all-mode total Early Voting')]) {
+      assert.notEqual(input, body);
+      writeFileSync(join(directory, 'county-participation.csv'), input);
+      assert.throws(() => loadReviewedCountyParticipation(altered), /Invalid reviewed county participation/);
+    }
+  } finally {
+    rmSync(directory, { recursive: true, force: true });
+  }
 });
 
 test('rejects missing, invalid or mismatched native counts without coercing blanks to zero', () => {

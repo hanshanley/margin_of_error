@@ -1,0 +1,92 @@
+{
+  "verified_at_utc": "2026-11-06T05:40:50.122773+00:00",
+  "revision": "10e22a8175a67477b7bac54b12edfddea0d8d858",
+  "release_id": 436137860,
+  "release_tag": "voter-county-new-jersey-participation-20261106-02",
+  "anonymous_requests": true,
+  "github_immutable": false,
+  "never_overwrite_policy": true,
+  "downloads": [
+    {
+      "kind": "complete_release_asset",
+      "file": "complete-new-jersey-2026-participation-query-02.zip",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-new-jersey-participation-20261106-02/complete-new-jersey-2026-participation-query-02.zip",
+      "status": 200,
+      "bytes": 24468,
+      "sha256": "f7acc05d6175da4d7ea727faaa5489a169540b0345cf235e7fbfbfa9d56e8a94",
+      "complete_byte_identical_zip_members": 9
+    },
+    {
+      "kind": "complete_release_asset",
+      "file": "county-participation.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-new-jersey-participation-20261106-02/county-participation.csv",
+      "status": 200,
+      "bytes": 46667,
+      "sha256": "a9e1e664ee56675219dbe69355947121b9b6e08fc81b355e899278fbddce172d"
+    },
+    {
+      "kind": "complete_release_asset",
+      "file": "native-aggregate-participation.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-new-jersey-participation-20261106-02/native-aggregate-participation.csv",
+      "status": 200,
+      "bytes": 13676,
+      "sha256": "57727ff1a4b0da6151391228cab6e65c128fd11180dbef385b57cccd57cf9766"
+    },
+    {
+      "kind": "complete_release_asset",
+      "file": "native-counting-qualifications.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-new-jersey-participation-20261106-02/native-counting-qualifications.csv",
+      "status": 200,
+      "bytes": 4112,
+      "sha256": "342cb5983e5fbf52f3f6f9aa3d5bc2018a2ade518d8ca230bc42eb7ce849e2ce"
+    },
+    {
+      "kind": "complete_release_asset",
+      "file": "native-source-pages.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-new-jersey-participation-20261106-02/native-source-pages.csv",
+      "status": 200,
+      "bytes": 5839,
+      "sha256": "36699e8025c42379ad5e7d1297777609a75dd593d88b8a63cb0bda534e22a7fe"
+    },
+    {
+      "kind": "complete_release_asset",
+      "file": "source-records.json.gz",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-new-jersey-participation-20261106-02/source-records.json.gz",
+      "status": 200,
+      "bytes": 6119,
+      "sha256": "82c1181f269573c234a91dc82903ac190e495f6542046afbbe11979e29a47e37"
+    },
+    {
+      "kind": "commit_pinned_complete_csv",
+      "file": "county-participation.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10e22a8175a67477b7bac54b12edfddea0d8d858/data/county-source-reviews/20261106-nj-participation-facts-02/county-participation.csv",
+      "status": 200,
+      "bytes": 46667,
+      "sha256": "a9e1e664ee56675219dbe69355947121b9b6e08fc81b355e899278fbddce172d"
+    },
+    {
+      "kind": "commit_pinned_complete_csv",
+      "file": "native-aggregate-participation.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10e22a8175a67477b7bac54b12edfddea0d8d858/data/county-source-reviews/20261106-nj-participation-facts-02/native-aggregate-participation.csv",
+      "status": 200,
+      "bytes": 13676,
+      "sha256": "57727ff1a4b0da6151391228cab6e65c128fd11180dbef385b57cccd57cf9766"
+    },
+    {
+      "kind": "commit_pinned_complete_csv",
+      "file": "native-counting-qualifications.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10e22a8175a67477b7bac54b12edfddea0d8d858/data/county-source-reviews/20261106-nj-participation-facts-02/native-counting-qualifications.csv",
+      "status": 200,
+      "bytes": 4112,
+      "sha256": "342cb5983e5fbf52f3f6f9aa3d5bc2018a2ade518d8ca230bc42eb7ce849e2ce"
+    },
+    {
+      "kind": "commit_pinned_complete_csv",
+      "file": "native-source-pages.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10e22a8175a67477b7bac54b12edfddea0d8d858/data/county-source-reviews/20261106-nj-participation-facts-02/native-source-pages.csv",
+      "status": 200,
+      "bytes": 5839,
+      "sha256": "36699e8025c42379ad5e7d1297777609a75dd593d88b8a63cb0bda534e22a7fe"
+    }
+  ]
+}

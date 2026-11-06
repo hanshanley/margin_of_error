@@ -1,4 +1,5 @@
 import { readFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { resolve } from 'node:path';
 import { parse } from 'csv-parse/sync';
 
@@ -20,7 +21,82 @@ const profiles = [
   ['pennsylvania-wayne-20261106-01', 'ballots_cast', 'registered_voters', 'native_printed_turnout', 'PA', ['Wayne']],
   ['dc-delegate-county-20261105-01', 'ballots_cast', 'registered_voters', null, 'DC', ['District of Columbia']],
 ];
+/** @returns {Record<string, string>[]} */
 const csv = path => parse(readFileSync(path, 'utf8'), { columns: true, bom: true, skip_empty_lines: true });
+
+function loadNewJerseyParticipation(reviews) {
+  const id = 'new-jersey-periodic-participation-20261106-02';
+  const matches = reviews.filter(review => review.id === id);
+  if (matches.length !== 1) throw new Error(`Missing or duplicated reviewed county source: ${id}`);
+  const review = matches[0], directory = resolve(review.data_directory);
+  const required = {
+    'county-participation.csv': 'a9e1e664ee56675219dbe69355947121b9b6e08fc81b355e899278fbddce172d',
+    'native-source-pages.csv': '36699e8025c42379ad5e7d1297777609a75dd593d88b8a63cb0bda534e22a7fe',
+    'native-counting-qualifications.csv': '342cb5983e5fbf52f3f6f9aa3d5bc2018a2ade518d8ca230bc42eb7ce849e2ce',
+    'audit.json': 'bf47bfe6b959e57123eec0ab0342b235354ac56e91d63e7b4c4dc0897ae48bd0',
+  };
+  for (const [file, digest] of Object.entries(required)) {
+    if (createHash('sha256').update(readFileSync(resolve(directory, file))).digest('hex') !== digest)
+      throw new Error(`Invalid reviewed county participation: ${id} / ${file}`);
+  }
+  const rows = csv(resolve(directory, 'county-participation.csv'));
+  const pages = csv(resolve(directory, 'native-source-pages.csv'));
+  const notes = csv(resolve(directory, 'native-counting-qualifications.csv'));
+  const audit = JSON.parse(readFileSync(resolve(directory, 'audit.json'), 'utf8'));
+  if (rows.length !== 21 || audit.usable_counties.length !== 19
+    || audit.withheld_counties.map(row => row.county).join('|') !== 'Essex|Hudson')
+    throw new Error(`Incomplete reviewed county source: ${id}`);
+  return rows.filter(native => audit.usable_counties.includes(native.county)).map(native => {
+    const ballots = Number(native.reported_participation_subtotal);
+    const denominator = native.registered_voters === '' ? null : Number(native.registered_voters);
+    const nativeSummary = native.county === 'Cape May';
+    const modes = ['early_voting_votes_cast', 'election_day_votes_cast', 'mail_ballots_tallied'];
+    if (native.year !== '2026' || native.state_code !== 'NJ' || native.withheld_reason !== ''
+      || !Number.isSafeInteger(ballots) || ballots <= 0
+      || modes.some(field => !/^\d+$/.test(native[field]))
+      || modes.reduce((total, field) => total + Number(native[field]), 0) !== ballots
+      || (nativeSummary ? denominator !== 76899 || native.source_page !== '2'
+        || native.registration_source_page !== '2' || native.periodic_source_page !== '1'
+        || native.native_participation_measure_literal !== 'Ballots Cast - Total'
+        : denominator !== null || native.native_participation_measure_literal !== ''))
+      throw new Error(`Invalid reviewed county participation: ${id} / ${native.county}`);
+    const nativeSourceUpdates = pages.filter(row => row.county === native.county).map(row => ({
+      source: `${row.source_role} page ${row.source_page}`, native_update_literal: row.source_update_literal,
+      other_update_literals: JSON.parse(row.other_update_literals_json), declared_timezone: row.declared_timezone,
+    }));
+    return {
+      year: 2026, state_code: 'NJ', county_id: `reviewed:NJ:${native.county}`, county: native.county,
+      geography_level: 'county', ballots, denominator, denominator_basis: 'native_registered_voters',
+      participation_measure_kind: nativeSummary ? 'native_ballot_total' : 'derived_reported_mode_subtotal',
+      ...(nativeSummary ? { participation_measure_literal: native.native_participation_measure_literal } : {
+        participation_measure_label: 'Derived EV + ED + mail-tallied subtotal; no provisional-issued counts added',
+      }),
+      reported_pct: denominator === null ? null : 100 * ballots / denominator,
+      native_printed_pct: native.native_printed_turnout || null, source_status_literal: native.native_status_literal,
+      reported_units: null, total_units: null, source_rows: 0, maps_approved: false,
+      review_id: id, native_record: native, native_source_updates: nativeSourceUpdates,
+      source_update_label: nativeSourceUpdates.map(row =>
+        `${row.source}: ${row.native_update_literal || 'not supplied'}`
+        + `${row.other_update_literals.length ? `; other native timestamps: ${row.other_update_literals.join('; ')}` : ''}`
+        + ` (${row.declared_timezone || 'timezone not declared'})`).join('; '),
+      source_reporting_label: [
+        `Periodic participation modes: PDF page ${native.periodic_source_page}.`,
+        ...(nativeSummary ? ['Native ballot total and registrations: attached summary, PDF page 2.'] : []),
+        ...notes.filter(row => row.county === native.county).map(row => `Native note (page ${row.source_page}): ${row.literal}`),
+        ...JSON.parse(native.counting_qualifications_json),
+      ].join('; '),
+      source_url: `${review.base_url}county-participation.csv`,
+      complete_download_url: review.complete_download_url,
+      quality: [
+        'Reviewed unofficial participation snapshot, not certification, completed statewide counting or demographic turnout.',
+        'Issued, received and pending ballots are separate processing measures, not additions to the counted modes.',
+        nativeSummary ? 'Native Ballots Cast - Total and registrations are separately verified on PDF page 2.'
+          : 'Derived reported mode subtotal, not a native all-mode ballot total or a unique-voter estimate. Registrations and turnout rate are not supplied.',
+        'Essex and Hudson remain withheld in the complete 21-county query. County mapping is not approved; undeclared timezones are not inferred.',
+      ],
+    };
+  });
+}
 
 export function loadReviewedCountyParticipation(reviews) {
   const observations = [], seen = new Set();
@@ -122,5 +198,5 @@ export function loadReviewedCountyParticipation(reviews) {
       });
     }
   }
-  return observations;
+  return [...observations, ...loadNewJerseyParticipation(reviews)];
 }

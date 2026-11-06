@@ -1,6 +1,25 @@
 {
   "reviews": [
     {
+      "id": "new-jersey-periodic-participation-20261106-02",
+      "label": "New Jersey 2026: complete 21-county participation query, 19 usable reported-mode subtotals",
+      "data_directory": "data/county-source-reviews/20261106-nj-participation-facts-02",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/10e22a8175a67477b7bac54b12edfddea0d8d858/data/county-source-reviews/20261106-nj-participation-facts-02/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-new-jersey-participation-20261106-02/complete-new-jersey-2026-participation-query-02.zip",
+      "complete_download_bytes": 24468,
+      "complete_download_sha256": "f7acc05d6175da4d7ea727faaa5489a169540b0345cf235e7fbfbfa9d56e8a94",
+      "review_status": "complete_county_aggregate_query_reviewed_nineteen_usable_two_withheld",
+      "maps_approved": false,
+      "scope_note": "Complete county/aggregate participation query from all 21 actual general-election reports declared by the official consolidated state index, not a transcription of every municipal row or attached candidate table. Nineteen usable observations preserve Early Voting Votes Cast, Election Day Votes Cast and Vote-by-Mail Ballots Tallied. Eighteen are explicitly derived reported-mode subtotals, not native all-mode ballot totals or unique-voter estimates; their registrations and rates remain missing. Cape May's separately verified page-2 summary supplies native Ballots Cast - Total 41,278, 76,899 registrations and printed 53.68%; its periodic modes remain separately attributed to page 1. Issued, received, pending and provisional-issued counts are not added to counted participation. Essex's conflicting ED rollups and Hudson's missing early observation withhold combined counts; both complete records remain in the full query. All 65 native aggregate alternatives, 28 native page records and 11 source qualifications remain downloadable. Union preserves the source-explained 405 overseas-ballot scope difference; Hunterdon's selected native totals agree; Morris's appended older snapshots are excluded from current counts; scanned Bergen was directly reviewed and locally corroborated. Native timestamps retain undeclared timezones. Original source presentation and unreviewed candidate attachments stay private. Twelve tests, full offline byte reproduction and real 21-report pipeline validation pass. All six full release assets, four commit-pinned CSVs and nine ZIP members are anonymously byte-verified. Version 02 corrects Cape May page attribution without changing any numerical fact or overwriting version 01. Fixed checksums/never-overwrite policy, not host locking. No statewide counting completion, demographic turnout, certification or map approval.",
+      "tables": [
+        {"file": "county-participation.csv", "label": "New Jersey: all 21 county participation records, including two withheld observations and explicitly missing rates (CSV)"},
+        {"file": "native-aggregate-participation.csv", "label": "New Jersey: all 65 native aggregate alternatives, literal columns and counting scopes (CSV)"},
+        {"file": "native-source-pages.csv", "label": "New Jersey: all 28 native page identities, roles, literal timestamps and missing timezones (CSV)"},
+        {"file": "native-counting-qualifications.csv", "label": "New Jersey: all eleven native counting qualifications and scope explanations (CSV)"}
+      ],
+      "coverage": []
+    },
+    {
       "id": "pennsylvania-wayne-20261106-01",
       "label": "Wayne County, Pennsylvania 2026: native county ballots with separate contest denominators",
       "data_directory": "data/county-source-reviews/20261106-wayne-facts-01",
