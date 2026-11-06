@@ -1,0 +1,548 @@
+{
+  "verified_at": "2026-11-06T09:25:55.745231+00:00",
+  "repository": "hanshanley/margin_of_error",
+  "facts_commit": "d59677eb5e05af06bccd3eeceed87057bac4e082",
+  "tag": "voter-county-pennsylvania-montour-20261106-01",
+  "actual_tag_commit": "d59677eb5e05af06bccd3eeceed87057bac4e082",
+  "release_id": 436309447,
+  "target_commitish": "d59677eb5e05af06bccd3eeceed87057bac4e082",
+  "host_enforced_immutable": false,
+  "policy": "Fixed checksum/never overwrite; not described as host-enforced locking.",
+  "entire_assets_and_pinned_files": [
+    {
+      "file": "audit.json",
+      "bytes": 2037,
+      "sha256": "5d831b548e66aa1c996f46765d993e126b7d6876ce3ba855e005860f7a2574bf",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-montour-20261106-01/audit.json",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/c3097ada-4baa-4c84-85bf-4aebdd438d70",
+          "bytes": 2037,
+          "sha256": "5d831b548e66aa1c996f46765d993e126b7d6876ce3ba855e005860f7a2574bf"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/audit.json",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/audit.json",
+          "bytes": 2037,
+          "sha256": "5d831b548e66aa1c996f46765d993e126b7d6876ce3ba855e005860f7a2574bf"
+        }
+      ]
+    },
+    {
+      "file": "checksums.json",
+      "bytes": 2991,
+      "sha256": "a8df2a4ebb4cea80f69178b97fd0ac66de798bcbecdefeafddb7fb4e1d77f842",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-montour-20261106-01/checksums.json",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/3652fcfe-c953-40e7-9599-d5d208f1951e",
+          "bytes": 2991,
+          "sha256": "a8df2a4ebb4cea80f69178b97fd0ac66de798bcbecdefeafddb7fb4e1d77f842"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/checksums.json",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/checksums.json",
+          "bytes": 2991,
+          "sha256": "a8df2a4ebb4cea80f69178b97fd0ac66de798bcbecdefeafddb7fb4e1d77f842"
+        }
+      ]
+    },
+    {
+      "file": "complete-montour-county-native-query-01.zip",
+      "bytes": 81491,
+      "sha256": "d1840d2ca02a499485ba9fd7e5902f3f55cc8e6c0903a9c052c892da748a8b96",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-montour-20261106-01/complete-montour-county-native-query-01.zip",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/1c384601-16cc-45c6-8ded-ed5dead4fce5",
+          "bytes": 81491,
+          "sha256": "d1840d2ca02a499485ba9fd7e5902f3f55cc8e6c0903a9c052c892da748a8b96"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/complete-montour-county-native-query-01.zip",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/complete-montour-county-native-query-01.zip",
+          "bytes": 81491,
+          "sha256": "d1840d2ca02a499485ba9fd7e5902f3f55cc8e6c0903a9c052c892da748a8b96"
+        }
+      ]
+    },
+    {
+      "file": "county-candidate-results.csv",
+      "bytes": 6102,
+      "sha256": "0b7e7bb8275ef7fee5be3a40f36cde4e8b334f5166984504c3a720a60a5279cf",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-montour-20261106-01/county-candidate-results.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/e3a66a6b-f602-42c5-b2af-4e64933327ca",
+          "bytes": 6102,
+          "sha256": "0b7e7bb8275ef7fee5be3a40f36cde4e8b334f5166984504c3a720a60a5279cf"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/county-candidate-results.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/county-candidate-results.csv",
+          "bytes": 6102,
+          "sha256": "0b7e7bb8275ef7fee5be3a40f36cde4e8b334f5166984504c3a720a60a5279cf"
+        }
+      ]
+    },
+    {
+      "file": "county-contest-accounting.csv",
+      "bytes": 2951,
+      "sha256": "65058a2a1385c3413add442b70f8cbadb71efe22203f8e3c4251046de343dff8",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-montour-20261106-01/county-contest-accounting.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/2ff1ac3c-a116-446b-9867-c12f0762e7d7",
+          "bytes": 2951,
+          "sha256": "65058a2a1385c3413add442b70f8cbadb71efe22203f8e3c4251046de343dff8"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/county-contest-accounting.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/county-contest-accounting.csv",
+          "bytes": 2951,
+          "sha256": "65058a2a1385c3413add442b70f8cbadb71efe22203f8e3c4251046de343dff8"
+        }
+      ]
+    },
+    {
+      "file": "county-literal-party-totals.csv",
+      "bytes": 3605,
+      "sha256": "70b0b608e5ae291c53c6767e79d774cb45acce64b5408793543f9e6deba4be51",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-montour-20261106-01/county-literal-party-totals.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/d4d7f517-e611-4f91-8802-66bc8b9d4ce6",
+          "bytes": 3605,
+          "sha256": "70b0b608e5ae291c53c6767e79d774cb45acce64b5408793543f9e6deba4be51"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/county-literal-party-totals.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/county-literal-party-totals.csv",
+          "bytes": 3605,
+          "sha256": "70b0b608e5ae291c53c6767e79d774cb45acce64b5408793543f9e6deba4be51"
+        }
+      ]
+    },
+    {
+      "file": "county-participation.csv",
+      "bytes": 718,
+      "sha256": "321db3b3c60d3fe917ea29ef7c67e89dda03464ccc2abd9792fa6fd873775801",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-montour-20261106-01/county-participation.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/ae771b48-69e3-47e0-a76a-029dd1597e1c",
+          "bytes": 718,
+          "sha256": "321db3b3c60d3fe917ea29ef7c67e89dda03464ccc2abd9792fa6fd873775801"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/county-participation.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/county-participation.csv",
+          "bytes": 718,
+          "sha256": "321db3b3c60d3fe917ea29ef7c67e89dda03464ccc2abd9792fa6fd873775801"
+        }
+      ]
+    },
+    {
+      "file": "native-derived-contest-sums.csv",
+      "bytes": 347,
+      "sha256": "fcdf8085755487b06231cc063c6871b2576630a12354cbfbcaacb610c6bf0dd1",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-montour-20261106-01/native-derived-contest-sums.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/4e8cb74a-e496-4acc-85ad-95ad81ce68ba",
+          "bytes": 347,
+          "sha256": "fcdf8085755487b06231cc063c6871b2576630a12354cbfbcaacb610c6bf0dd1"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/native-derived-contest-sums.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/native-derived-contest-sums.csv",
+          "bytes": 347,
+          "sha256": "fcdf8085755487b06231cc063c6871b2576630a12354cbfbcaacb610c6bf0dd1"
+        }
+      ]
+    },
+    {
+      "file": "native-derived-rate-checks.csv",
+      "bytes": 2270,
+      "sha256": "a6565dbb79de2505b9ba537d021fb5479ba4cd8ed7a29079e7f177df614178d5",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-montour-20261106-01/native-derived-rate-checks.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/56566b64-631a-4833-b050-ebce73aaa41c",
+          "bytes": 2270,
+          "sha256": "a6565dbb79de2505b9ba537d021fb5479ba4cd8ed7a29079e7f177df614178d5"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/native-derived-rate-checks.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/native-derived-rate-checks.csv",
+          "bytes": 2270,
+          "sha256": "a6565dbb79de2505b9ba537d021fb5479ba4cd8ed7a29079e7f177df614178d5"
+        }
+      ]
+    },
+    {
+      "file": "native-participation-modes.csv",
+      "bytes": 603,
+      "sha256": "6127d6739d7cce3d5058580c7cd8719898bc3f5a3fc01d10b099c12881543628",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-montour-20261106-01/native-participation-modes.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/9ef939a6-26fc-45be-8244-8f2f037204bf",
+          "bytes": 603,
+          "sha256": "6127d6739d7cce3d5058580c7cd8719898bc3f5a3fc01d10b099c12881543628"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/native-participation-modes.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/native-participation-modes.csv",
+          "bytes": 603,
+          "sha256": "6127d6739d7cce3d5058580c7cd8719898bc3f5a3fc01d10b099c12881543628"
+        }
+      ]
+    },
+    {
+      "file": "native-reporting-statistics.csv",
+      "bytes": 817,
+      "sha256": "11f2579fd67e02d853d723a696b082b89a6c60d31607a0300993fd384dc50c9f",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-montour-20261106-01/native-reporting-statistics.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/d0b09583-da94-4969-b4f0-c059882bea3d",
+          "bytes": 817,
+          "sha256": "11f2579fd67e02d853d723a696b082b89a6c60d31607a0300993fd384dc50c9f"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/native-reporting-statistics.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/native-reporting-statistics.csv",
+          "bytes": 817,
+          "sha256": "11f2579fd67e02d853d723a696b082b89a6c60d31607a0300993fd384dc50c9f"
+        }
+      ]
+    },
+    {
+      "file": "native-source-declarations.csv",
+      "bytes": 576,
+      "sha256": "f677a81a7eefccd0ab2f0dfb56222f63d4af274c5fcac9c0c2d4ff3e01ad4a74",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-montour-20261106-01/native-source-declarations.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/8f716c23-f855-43b7-ac76-78a4c55ed5a4",
+          "bytes": 576,
+          "sha256": "f677a81a7eefccd0ab2f0dfb56222f63d4af274c5fcac9c0c2d4ff3e01ad4a74"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/native-source-declarations.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/native-source-declarations.csv",
+          "bytes": 576,
+          "sha256": "f677a81a7eefccd0ab2f0dfb56222f63d4af274c5fcac9c0c2d4ff3e01ad4a74"
+        }
+      ]
+    },
+    {
+      "file": "native-source-pages.csv",
+      "bytes": 8074,
+      "sha256": "d57995255325a864cde8927813b72252c8074d6612e088ee55cf0eee19866931",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-montour-20261106-01/native-source-pages.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/e558fe9f-7c09-45b7-a52c-ede6cccf00fe",
+          "bytes": 8074,
+          "sha256": "d57995255325a864cde8927813b72252c8074d6612e088ee55cf0eee19866931"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/native-source-pages.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/native-source-pages.csv",
+          "bytes": 8074,
+          "sha256": "d57995255325a864cde8927813b72252c8074d6612e088ee55cf0eee19866931"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-candidate-results.csv",
+      "bytes": 94610,
+      "sha256": "eb0b97666b27653c770eb2bc7c5d1a4d52f32a2cf03cb3d7e10bc00e7945da68",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-montour-20261106-01/native-unit-candidate-results.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/383591a6-de7e-4a68-bd90-ce4235f32a8a",
+          "bytes": 94610,
+          "sha256": "eb0b97666b27653c770eb2bc7c5d1a4d52f32a2cf03cb3d7e10bc00e7945da68"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/native-unit-candidate-results.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/native-unit-candidate-results.csv",
+          "bytes": 94610,
+          "sha256": "eb0b97666b27653c770eb2bc7c5d1a4d52f32a2cf03cb3d7e10bc00e7945da68"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-contest-accounting.csv",
+      "bytes": 40544,
+      "sha256": "7924b80546c02707fb5f0733bd726cac4a0d460d502940bbd2daf2d86aac7680",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-montour-20261106-01/native-unit-contest-accounting.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/6348a159-aba3-4f52-bac7-8fb4f1c3d234",
+          "bytes": 40544,
+          "sha256": "7924b80546c02707fb5f0733bd726cac4a0d460d502940bbd2daf2d86aac7680"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/native-unit-contest-accounting.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/native-unit-contest-accounting.csv",
+          "bytes": 40544,
+          "sha256": "7924b80546c02707fb5f0733bd726cac4a0d460d502940bbd2daf2d86aac7680"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-literal-party-totals.csv",
+      "bytes": 55399,
+      "sha256": "891aa5e7cdf46e681b012bee206d56286a645496139234d968c9dd496c06d428",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-montour-20261106-01/native-unit-literal-party-totals.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/4522b33f-1335-4a5e-a29c-d72014e68941",
+          "bytes": 55399,
+          "sha256": "891aa5e7cdf46e681b012bee206d56286a645496139234d968c9dd496c06d428"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/native-unit-literal-party-totals.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/native-unit-literal-party-totals.csv",
+          "bytes": 55399,
+          "sha256": "891aa5e7cdf46e681b012bee206d56286a645496139234d968c9dd496c06d428"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-participation-modes.csv",
+      "bytes": 6297,
+      "sha256": "4d4d3eaffd9e8246710e08198ae7446c75881e58408e1becc38fac6dc1722753",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-montour-20261106-01/native-unit-participation-modes.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/39eae501-5336-4bca-9738-9d9c4cff824a",
+          "bytes": 6297,
+          "sha256": "4d4d3eaffd9e8246710e08198ae7446c75881e58408e1becc38fac6dc1722753"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/native-unit-participation-modes.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/native-unit-participation-modes.csv",
+          "bytes": 6297,
+          "sha256": "4d4d3eaffd9e8246710e08198ae7446c75881e58408e1becc38fac6dc1722753"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-participation.csv",
+      "bytes": 1959,
+      "sha256": "eeb1afc24cc22f08907fd6a59c270ad4ebcda950e971a3d39f8957fc9f1e3a0d",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-montour-20261106-01/native-unit-participation.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/0d7a29e2-1303-445b-a4ef-318547c94e73",
+          "bytes": 1959,
+          "sha256": "eeb1afc24cc22f08907fd6a59c270ad4ebcda950e971a3d39f8957fc9f1e3a0d"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/native-unit-participation.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/native-unit-participation.csv",
+          "bytes": 1959,
+          "sha256": "eeb1afc24cc22f08907fd6a59c270ad4ebcda950e971a3d39f8957fc9f1e3a0d"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-write-in-availability.csv",
+      "bytes": 9411,
+      "sha256": "1a0b4cea6882cd8bea22cc6be7b0280c26398e59ae93f8d51ecfeb6fd92dd8ae",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-montour-20261106-01/native-unit-write-in-availability.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/1e940214-50ea-447d-a86f-d1e43b421a41",
+          "bytes": 9411,
+          "sha256": "1a0b4cea6882cd8bea22cc6be7b0280c26398e59ae93f8d51ecfeb6fd92dd8ae"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/native-unit-write-in-availability.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/native-unit-write-in-availability.csv",
+          "bytes": 9411,
+          "sha256": "1a0b4cea6882cd8bea22cc6be7b0280c26398e59ae93f8d51ecfeb6fd92dd8ae"
+        }
+      ]
+    },
+    {
+      "file": "native-write-in-breakdowns.csv",
+      "bytes": 480519,
+      "sha256": "0a24df08a8f369906f61255193d248ee265fe32c360c74f096be60ad945f72e1",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-montour-20261106-01/native-write-in-breakdowns.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/29b02bff-ff27-409a-8766-567f2d5df1db",
+          "bytes": 480519,
+          "sha256": "0a24df08a8f369906f61255193d248ee265fe32c360c74f096be60ad945f72e1"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/native-write-in-breakdowns.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/native-write-in-breakdowns.csv",
+          "bytes": 480519,
+          "sha256": "0a24df08a8f369906f61255193d248ee265fe32c360c74f096be60ad945f72e1"
+        }
+      ]
+    },
+    {
+      "file": "review-three-pa-counties-native-query.py",
+      "bytes": 23583,
+      "sha256": "7656f7a01fe6b04d0669e00e3251277cf0e0f0d122215d5e0626a3ad180d46ae",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-montour-20261106-01/review-three-pa-counties-native-query.py",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/fba93e0b-0091-4468-8896-8abff5c1d898",
+          "bytes": 23583,
+          "sha256": "7656f7a01fe6b04d0669e00e3251277cf0e0f0d122215d5e0626a3ad180d46ae"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/review-three-pa-counties-native-query.py",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/review-three-pa-counties-native-query.py",
+          "bytes": 23583,
+          "sha256": "7656f7a01fe6b04d0669e00e3251277cf0e0f0d122215d5e0626a3ad180d46ae"
+        }
+      ]
+    },
+    {
+      "file": "source-receipts.json",
+      "bytes": 1556,
+      "sha256": "01c905db2bbb95f207601c141f108e3c14461a76835fd54b3ff06dcd00bd6771",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-montour-20261106-01/source-receipts.json",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/ffdecb0b-fca1-4870-a018-9b2d3806a88e",
+          "bytes": 1556,
+          "sha256": "01c905db2bbb95f207601c141f108e3c14461a76835fd54b3ff06dcd00bd6771"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/source-receipts.json",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/source-receipts.json",
+          "bytes": 1556,
+          "sha256": "01c905db2bbb95f207601c141f108e3c14461a76835fd54b3ff06dcd00bd6771"
+        }
+      ]
+    },
+    {
+      "file": "source-records.json.gz",
+      "bytes": 48666,
+      "sha256": "c277fdbf346232425877c5604f039b30906e372bf30468fa1a909414c8dfd5c9",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-montour-20261106-01/source-records.json.gz",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/d55b5df2-e611-495e-99f8-7f253cbec92d",
+          "bytes": 48666,
+          "sha256": "c277fdbf346232425877c5604f039b30906e372bf30468fa1a909414c8dfd5c9"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/source-records.json.gz",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-montour-facts-01/source-records.json.gz",
+          "bytes": 48666,
+          "sha256": "c277fdbf346232425877c5604f039b30906e372bf30468fa1a909414c8dfd5c9"
+        }
+      ]
+    }
+  ],
+  "entire_assets": 23,
+  "entire_pinned_files": 23,
+  "entire_zip_members": 22,
+  "extracted_offline_verifier_stdout": "Montour 19 focused rejection cases; complete offline query rendered\n",
+  "exact_entire_file_and_archive_reproduction": true,
+  "explorer_integration_and_live_verification_pending": true
+}

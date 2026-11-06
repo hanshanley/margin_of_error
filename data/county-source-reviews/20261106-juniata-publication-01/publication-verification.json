@@ -1,0 +1,548 @@
+{
+  "verified_at": "2026-11-06T09:25:34.067559+00:00",
+  "repository": "hanshanley/margin_of_error",
+  "facts_commit": "d59677eb5e05af06bccd3eeceed87057bac4e082",
+  "tag": "voter-county-pennsylvania-juniata-20261106-01",
+  "actual_tag_commit": "d59677eb5e05af06bccd3eeceed87057bac4e082",
+  "release_id": 436309141,
+  "target_commitish": "d59677eb5e05af06bccd3eeceed87057bac4e082",
+  "host_enforced_immutable": false,
+  "policy": "Fixed checksum/never overwrite; not described as host-enforced locking.",
+  "entire_assets_and_pinned_files": [
+    {
+      "file": "audit.json",
+      "bytes": 2607,
+      "sha256": "ce7feae7452169a58a5cf0e9c4a912bb547815ae89c363330c857b731e005445",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-juniata-20261106-01/audit.json",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/10e052df-9b3c-41ea-b0bc-fb69caa1d30c",
+          "bytes": 2607,
+          "sha256": "ce7feae7452169a58a5cf0e9c4a912bb547815ae89c363330c857b731e005445"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/audit.json",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/audit.json",
+          "bytes": 2607,
+          "sha256": "ce7feae7452169a58a5cf0e9c4a912bb547815ae89c363330c857b731e005445"
+        }
+      ]
+    },
+    {
+      "file": "checksums.json",
+      "bytes": 2992,
+      "sha256": "d26b726b84c82e7ed713413b02baebd23ec5854b40b84494923f2bd80448e09b",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-juniata-20261106-01/checksums.json",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/b9de10b4-9315-460f-8ec0-f226f256f75b",
+          "bytes": 2992,
+          "sha256": "d26b726b84c82e7ed713413b02baebd23ec5854b40b84494923f2bd80448e09b"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/checksums.json",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/checksums.json",
+          "bytes": 2992,
+          "sha256": "d26b726b84c82e7ed713413b02baebd23ec5854b40b84494923f2bd80448e09b"
+        }
+      ]
+    },
+    {
+      "file": "complete-juniata-county-native-query-01.zip",
+      "bytes": 71658,
+      "sha256": "a62c90a29170da195244c70fdf4005c58d2e718404e83f004b7e7e2c3876a780",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-juniata-20261106-01/complete-juniata-county-native-query-01.zip",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/c7dfaf5b-4899-420f-a057-2cab435610f5",
+          "bytes": 71658,
+          "sha256": "a62c90a29170da195244c70fdf4005c58d2e718404e83f004b7e7e2c3876a780"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/complete-juniata-county-native-query-01.zip",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/complete-juniata-county-native-query-01.zip",
+          "bytes": 71658,
+          "sha256": "a62c90a29170da195244c70fdf4005c58d2e718404e83f004b7e7e2c3876a780"
+        }
+      ]
+    },
+    {
+      "file": "county-candidate-results.csv",
+      "bytes": 9889,
+      "sha256": "42db60bf40ec6bfab07a0a30321ed2b4367a1e07c054580394e58700e73f9cf8",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-juniata-20261106-01/county-candidate-results.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/d176c617-6c65-45e5-bc98-90b2f1dc34eb",
+          "bytes": 9889,
+          "sha256": "42db60bf40ec6bfab07a0a30321ed2b4367a1e07c054580394e58700e73f9cf8"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/county-candidate-results.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/county-candidate-results.csv",
+          "bytes": 9889,
+          "sha256": "42db60bf40ec6bfab07a0a30321ed2b4367a1e07c054580394e58700e73f9cf8"
+        }
+      ]
+    },
+    {
+      "file": "county-contest-accounting.csv",
+      "bytes": 5012,
+      "sha256": "97397923485a6a10742231016913c54fa38e58f89c744c5d1dd9c040a0d0f006",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-juniata-20261106-01/county-contest-accounting.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/6cbaa276-288c-4d15-8b7d-c075cb7f7e3f",
+          "bytes": 5012,
+          "sha256": "97397923485a6a10742231016913c54fa38e58f89c744c5d1dd9c040a0d0f006"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/county-contest-accounting.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/county-contest-accounting.csv",
+          "bytes": 5012,
+          "sha256": "97397923485a6a10742231016913c54fa38e58f89c744c5d1dd9c040a0d0f006"
+        }
+      ]
+    },
+    {
+      "file": "county-literal-party-totals.csv",
+      "bytes": 5620,
+      "sha256": "6358c2e0f876d1ee80cda131b4d278a31902d124064db54ef9d6c2119aab00e1",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-juniata-20261106-01/county-literal-party-totals.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/d8a02ac6-9503-4fa4-aa2c-121b315e9061",
+          "bytes": 5620,
+          "sha256": "6358c2e0f876d1ee80cda131b4d278a31902d124064db54ef9d6c2119aab00e1"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/county-literal-party-totals.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/county-literal-party-totals.csv",
+          "bytes": 5620,
+          "sha256": "6358c2e0f876d1ee80cda131b4d278a31902d124064db54ef9d6c2119aab00e1"
+        }
+      ]
+    },
+    {
+      "file": "county-participation.csv",
+      "bytes": 718,
+      "sha256": "c01eb7c094fa96020be842202a546fd73977461dead7ad824c1738752773f3e9",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-juniata-20261106-01/county-participation.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/d0642e88-a509-4a55-84b4-938525bab885",
+          "bytes": 718,
+          "sha256": "c01eb7c094fa96020be842202a546fd73977461dead7ad824c1738752773f3e9"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/county-participation.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/county-participation.csv",
+          "bytes": 718,
+          "sha256": "c01eb7c094fa96020be842202a546fd73977461dead7ad824c1738752773f3e9"
+        }
+      ]
+    },
+    {
+      "file": "native-derived-contest-sums.csv",
+      "bytes": 561,
+      "sha256": "76ed72e76c746cb34131fa0f4124975d44ddad036b0d79e86b6340872ca1d229",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-juniata-20261106-01/native-derived-contest-sums.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/58b9dc18-e938-4f10-ae4c-50e2bf78aa84",
+          "bytes": 561,
+          "sha256": "76ed72e76c746cb34131fa0f4124975d44ddad036b0d79e86b6340872ca1d229"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/native-derived-contest-sums.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/native-derived-contest-sums.csv",
+          "bytes": 561,
+          "sha256": "76ed72e76c746cb34131fa0f4124975d44ddad036b0d79e86b6340872ca1d229"
+        }
+      ]
+    },
+    {
+      "file": "native-derived-rate-checks.csv",
+      "bytes": 2589,
+      "sha256": "d55d5c716ab33a619bd2ab2110c56482a1bc82732efdf566e26d2e266b27eade",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-juniata-20261106-01/native-derived-rate-checks.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/626f14f2-c248-48ed-955c-d66cd03ecf46",
+          "bytes": 2589,
+          "sha256": "d55d5c716ab33a619bd2ab2110c56482a1bc82732efdf566e26d2e266b27eade"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/native-derived-rate-checks.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/native-derived-rate-checks.csv",
+          "bytes": 2589,
+          "sha256": "d55d5c716ab33a619bd2ab2110c56482a1bc82732efdf566e26d2e266b27eade"
+        }
+      ]
+    },
+    {
+      "file": "native-participation-modes.csv",
+      "bytes": 606,
+      "sha256": "d04ec0abad95334c29d65d5cd04eafad84fe75e9af2f116a176eae1a89ae4a9b",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-juniata-20261106-01/native-participation-modes.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/ff1091c7-ac9c-49af-a05b-25cf40e8a5a1",
+          "bytes": 606,
+          "sha256": "d04ec0abad95334c29d65d5cd04eafad84fe75e9af2f116a176eae1a89ae4a9b"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/native-participation-modes.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/native-participation-modes.csv",
+          "bytes": 606,
+          "sha256": "d04ec0abad95334c29d65d5cd04eafad84fe75e9af2f116a176eae1a89ae4a9b"
+        }
+      ]
+    },
+    {
+      "file": "native-reporting-statistics.csv",
+      "bytes": 819,
+      "sha256": "8ce776d0ff3f24851e5571db11965084d823372ee8872a91edfe2e0cabd382ad",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-juniata-20261106-01/native-reporting-statistics.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/5f57b573-d9e9-43f7-9700-41817e313a75",
+          "bytes": 819,
+          "sha256": "8ce776d0ff3f24851e5571db11965084d823372ee8872a91edfe2e0cabd382ad"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/native-reporting-statistics.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/native-reporting-statistics.csv",
+          "bytes": 819,
+          "sha256": "8ce776d0ff3f24851e5571db11965084d823372ee8872a91edfe2e0cabd382ad"
+        }
+      ]
+    },
+    {
+      "file": "native-source-declarations.csv",
+      "bytes": 578,
+      "sha256": "26475e67224266322b36f6fd6f2bb38f92ed6cba5f6184c2ce637be4bed20cc0",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-juniata-20261106-01/native-source-declarations.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/940a38b9-3bab-4552-bde4-fab7934b2f7e",
+          "bytes": 578,
+          "sha256": "26475e67224266322b36f6fd6f2bb38f92ed6cba5f6184c2ce637be4bed20cc0"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/native-source-declarations.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/native-source-declarations.csv",
+          "bytes": 578,
+          "sha256": "26475e67224266322b36f6fd6f2bb38f92ed6cba5f6184c2ce637be4bed20cc0"
+        }
+      ]
+    },
+    {
+      "file": "native-source-pages.csv",
+      "bytes": 6674,
+      "sha256": "5bf27310c278a1335be003fada48e96eba9b8a7653e31d26fbb67b110fe3b1b3",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-juniata-20261106-01/native-source-pages.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/99c32173-2058-4d81-af1f-72c81412d551",
+          "bytes": 6674,
+          "sha256": "5bf27310c278a1335be003fada48e96eba9b8a7653e31d26fbb67b110fe3b1b3"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/native-source-pages.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/native-source-pages.csv",
+          "bytes": 6674,
+          "sha256": "5bf27310c278a1335be003fada48e96eba9b8a7653e31d26fbb67b110fe3b1b3"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-candidate-results.csv",
+      "bytes": 153727,
+      "sha256": "930ab8a5781d43d0dd1090f5b44a3ca34fe963f117f02892d9cec44191fe9369",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-juniata-20261106-01/native-unit-candidate-results.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/7e7b92df-a722-41cd-92aa-d0d60c97a282",
+          "bytes": 153727,
+          "sha256": "930ab8a5781d43d0dd1090f5b44a3ca34fe963f117f02892d9cec44191fe9369"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/native-unit-candidate-results.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/native-unit-candidate-results.csv",
+          "bytes": 153727,
+          "sha256": "930ab8a5781d43d0dd1090f5b44a3ca34fe963f117f02892d9cec44191fe9369"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-contest-accounting.csv",
+      "bytes": 67631,
+      "sha256": "b93a6a054ed5eb40e1ba3092dba7744344de778deccfac37557ac627644fe322",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-juniata-20261106-01/native-unit-contest-accounting.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/30d92b7b-9f1d-4c7b-8d2a-14083aed3498",
+          "bytes": 67631,
+          "sha256": "b93a6a054ed5eb40e1ba3092dba7744344de778deccfac37557ac627644fe322"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/native-unit-contest-accounting.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/native-unit-contest-accounting.csv",
+          "bytes": 67631,
+          "sha256": "b93a6a054ed5eb40e1ba3092dba7744344de778deccfac37557ac627644fe322"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-literal-party-totals.csv",
+      "bytes": 89833,
+      "sha256": "eda2de94b8f876fb9a63f4c6e9d3c261bcb70a306cf9310f4b9406640733c092",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-juniata-20261106-01/native-unit-literal-party-totals.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/20f3bbc9-18f0-4243-bef8-8a9e52edea47",
+          "bytes": 89833,
+          "sha256": "eda2de94b8f876fb9a63f4c6e9d3c261bcb70a306cf9310f4b9406640733c092"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/native-unit-literal-party-totals.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/native-unit-literal-party-totals.csv",
+          "bytes": 89833,
+          "sha256": "eda2de94b8f876fb9a63f4c6e9d3c261bcb70a306cf9310f4b9406640733c092"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-participation-modes.csv",
+      "bytes": 7349,
+      "sha256": "a45336db8190269d21d795f67294e3c647e142c8df45c535836a3892304b678c",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-juniata-20261106-01/native-unit-participation-modes.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/0e08dca7-e1ec-428e-ae5d-f48185714a71",
+          "bytes": 7349,
+          "sha256": "a45336db8190269d21d795f67294e3c647e142c8df45c535836a3892304b678c"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/native-unit-participation-modes.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/native-unit-participation-modes.csv",
+          "bytes": 7349,
+          "sha256": "a45336db8190269d21d795f67294e3c647e142c8df45c535836a3892304b678c"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-participation.csv",
+      "bytes": 2250,
+      "sha256": "a2d821c0a7e2e99ba46906028f9fed5fc09685be23132f1b6c951eb2058d341e",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-juniata-20261106-01/native-unit-participation.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/21206bea-11c6-48c7-ba51-dee888d14a37",
+          "bytes": 2250,
+          "sha256": "a2d821c0a7e2e99ba46906028f9fed5fc09685be23132f1b6c951eb2058d341e"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/native-unit-participation.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/native-unit-participation.csv",
+          "bytes": 2250,
+          "sha256": "a2d821c0a7e2e99ba46906028f9fed5fc09685be23132f1b6c951eb2058d341e"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-write-in-availability.csv",
+      "bytes": 15720,
+      "sha256": "db5726d17720fbf2afc4736dd3029ca9c374d968a7071648c475f5f3da9881be",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-juniata-20261106-01/native-unit-write-in-availability.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/08a4ce38-8019-4af4-b51c-94e3d0ba2951",
+          "bytes": 15720,
+          "sha256": "db5726d17720fbf2afc4736dd3029ca9c374d968a7071648c475f5f3da9881be"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/native-unit-write-in-availability.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/native-unit-write-in-availability.csv",
+          "bytes": 15720,
+          "sha256": "db5726d17720fbf2afc4736dd3029ca9c374d968a7071648c475f5f3da9881be"
+        }
+      ]
+    },
+    {
+      "file": "native-write-in-breakdowns.csv",
+      "bytes": 69376,
+      "sha256": "9fe44fe4639c1104a0cefc2ed2890833a52efa8c1ef50521e56dd20e6cb269d4",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-juniata-20261106-01/native-write-in-breakdowns.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/d53bea28-6921-43ab-ab7f-2836c2621f7f",
+          "bytes": 69376,
+          "sha256": "9fe44fe4639c1104a0cefc2ed2890833a52efa8c1ef50521e56dd20e6cb269d4"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/native-write-in-breakdowns.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/native-write-in-breakdowns.csv",
+          "bytes": 69376,
+          "sha256": "9fe44fe4639c1104a0cefc2ed2890833a52efa8c1ef50521e56dd20e6cb269d4"
+        }
+      ]
+    },
+    {
+      "file": "review-three-pa-counties-native-query.py",
+      "bytes": 23583,
+      "sha256": "7656f7a01fe6b04d0669e00e3251277cf0e0f0d122215d5e0626a3ad180d46ae",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-juniata-20261106-01/review-three-pa-counties-native-query.py",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/55f3bd4b-2176-4ccc-bda8-3fba9cc3c56d",
+          "bytes": 23583,
+          "sha256": "7656f7a01fe6b04d0669e00e3251277cf0e0f0d122215d5e0626a3ad180d46ae"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/review-three-pa-counties-native-query.py",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/review-three-pa-counties-native-query.py",
+          "bytes": 23583,
+          "sha256": "7656f7a01fe6b04d0669e00e3251277cf0e0f0d122215d5e0626a3ad180d46ae"
+        }
+      ]
+    },
+    {
+      "file": "source-receipts.json",
+      "bytes": 1569,
+      "sha256": "9ce8f68bc2abc1db3e8bed54918fa3914141cfacae712393886c5cefbea068cb",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-juniata-20261106-01/source-receipts.json",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/b0d0a1c4-e540-4a1f-9866-119402782637",
+          "bytes": 1569,
+          "sha256": "9ce8f68bc2abc1db3e8bed54918fa3914141cfacae712393886c5cefbea068cb"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/source-receipts.json",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/source-receipts.json",
+          "bytes": 1569,
+          "sha256": "9ce8f68bc2abc1db3e8bed54918fa3914141cfacae712393886c5cefbea068cb"
+        }
+      ]
+    },
+    {
+      "file": "source-records.json.gz",
+      "bytes": 37831,
+      "sha256": "40806bbddf46b45c894cd6893047795523647f0040c52ba89f2126281206c69d",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-juniata-20261106-01/source-records.json.gz",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/fb71daf7-9d65-4b34-9030-7dad5d345947",
+          "bytes": 37831,
+          "sha256": "40806bbddf46b45c894cd6893047795523647f0040c52ba89f2126281206c69d"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/source-records.json.gz",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-juniata-facts-01/source-records.json.gz",
+          "bytes": 37831,
+          "sha256": "40806bbddf46b45c894cd6893047795523647f0040c52ba89f2126281206c69d"
+        }
+      ]
+    }
+  ],
+  "entire_assets": 23,
+  "entire_pinned_files": 23,
+  "entire_zip_members": 22,
+  "extracted_offline_verifier_stdout": "Juniata 19 focused rejection cases; complete offline query rendered\n",
+  "exact_entire_file_and_archive_reproduction": true,
+  "explorer_integration_and_live_verification_pending": true
+}

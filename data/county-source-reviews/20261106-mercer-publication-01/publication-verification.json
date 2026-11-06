@@ -1,0 +1,548 @@
+{
+  "verified_at": "2026-11-06T09:25:46.462881+00:00",
+  "repository": "hanshanley/margin_of_error",
+  "facts_commit": "d59677eb5e05af06bccd3eeceed87057bac4e082",
+  "tag": "voter-county-pennsylvania-mercer-20261106-01",
+  "actual_tag_commit": "d59677eb5e05af06bccd3eeceed87057bac4e082",
+  "release_id": 436309285,
+  "target_commitish": "d59677eb5e05af06bccd3eeceed87057bac4e082",
+  "host_enforced_immutable": false,
+  "policy": "Fixed checksum/never overwrite; not described as host-enforced locking.",
+  "entire_assets_and_pinned_files": [
+    {
+      "file": "audit.json",
+      "bytes": 3522,
+      "sha256": "b633061bfbf6dd8a1cff203b95539200198e6a29f608fb28d4c7e1402e53c163",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mercer-20261106-01/audit.json",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/30f82131-55db-4f4d-9c4e-6460f5def5cc",
+          "bytes": 3522,
+          "sha256": "b633061bfbf6dd8a1cff203b95539200198e6a29f608fb28d4c7e1402e53c163"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/audit.json",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/audit.json",
+          "bytes": 3522,
+          "sha256": "b633061bfbf6dd8a1cff203b95539200198e6a29f608fb28d4c7e1402e53c163"
+        }
+      ]
+    },
+    {
+      "file": "checksums.json",
+      "bytes": 2998,
+      "sha256": "29851d4db205cb7cc51381bb3cf40b98039b7aabc72b485a880675cd49bc41f5",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mercer-20261106-01/checksums.json",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/24c3014f-122d-4259-a02f-ee9063c8c855",
+          "bytes": 2998,
+          "sha256": "29851d4db205cb7cc51381bb3cf40b98039b7aabc72b485a880675cd49bc41f5"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/checksums.json",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/checksums.json",
+          "bytes": 2998,
+          "sha256": "29851d4db205cb7cc51381bb3cf40b98039b7aabc72b485a880675cd49bc41f5"
+        }
+      ]
+    },
+    {
+      "file": "complete-mercer-county-native-query-01.zip",
+      "bytes": 212780,
+      "sha256": "33578df3dcdd8c4d8d0e8f4fa5f952ed78634db88c695a8cea779fd1e164b5d6",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mercer-20261106-01/complete-mercer-county-native-query-01.zip",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/66f3ae56-0126-4cc7-8cf2-84deba0bff2d",
+          "bytes": 212780,
+          "sha256": "33578df3dcdd8c4d8d0e8f4fa5f952ed78634db88c695a8cea779fd1e164b5d6"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/complete-mercer-county-native-query-01.zip",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/complete-mercer-county-native-query-01.zip",
+          "bytes": 212780,
+          "sha256": "33578df3dcdd8c4d8d0e8f4fa5f952ed78634db88c695a8cea779fd1e164b5d6"
+        }
+      ]
+    },
+    {
+      "file": "county-candidate-results.csv",
+      "bytes": 12125,
+      "sha256": "50d5bce9f0ab8c528b6641809d3ed1a3800d7e1ba4a7e7d601f177ebaf5ff417",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mercer-20261106-01/county-candidate-results.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/6c3a95db-061c-4529-9b03-61fc04c6e968",
+          "bytes": 12125,
+          "sha256": "50d5bce9f0ab8c528b6641809d3ed1a3800d7e1ba4a7e7d601f177ebaf5ff417"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/county-candidate-results.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/county-candidate-results.csv",
+          "bytes": 12125,
+          "sha256": "50d5bce9f0ab8c528b6641809d3ed1a3800d7e1ba4a7e7d601f177ebaf5ff417"
+        }
+      ]
+    },
+    {
+      "file": "county-contest-accounting.csv",
+      "bytes": 6736,
+      "sha256": "c55ef97a074b2f69081b75cacdad74724a12091d51093b93700d53382b9ba560",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mercer-20261106-01/county-contest-accounting.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/fd97bdd5-ad8f-450f-ade0-6de0ae0f3991",
+          "bytes": 6736,
+          "sha256": "c55ef97a074b2f69081b75cacdad74724a12091d51093b93700d53382b9ba560"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/county-contest-accounting.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/county-contest-accounting.csv",
+          "bytes": 6736,
+          "sha256": "c55ef97a074b2f69081b75cacdad74724a12091d51093b93700d53382b9ba560"
+        }
+      ]
+    },
+    {
+      "file": "county-literal-party-totals.csv",
+      "bytes": 5372,
+      "sha256": "cb23cdcb01ccd043f88f5d501bcc6f6310596fdd52210a599712d1f453804d0d",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mercer-20261106-01/county-literal-party-totals.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/d1de02b5-ed07-4d90-b787-56320d2e495d",
+          "bytes": 5372,
+          "sha256": "cb23cdcb01ccd043f88f5d501bcc6f6310596fdd52210a599712d1f453804d0d"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/county-literal-party-totals.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/county-literal-party-totals.csv",
+          "bytes": 5372,
+          "sha256": "cb23cdcb01ccd043f88f5d501bcc6f6310596fdd52210a599712d1f453804d0d"
+        }
+      ]
+    },
+    {
+      "file": "county-participation.csv",
+      "bytes": 714,
+      "sha256": "d84df1000513cc48baae68217d3afdb21e745ca0b5d352db6e58724c60d9deaa",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mercer-20261106-01/county-participation.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/dbd20267-676a-480c-a1b9-b6318831a0c9",
+          "bytes": 714,
+          "sha256": "d84df1000513cc48baae68217d3afdb21e745ca0b5d352db6e58724c60d9deaa"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/county-participation.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/county-participation.csv",
+          "bytes": 714,
+          "sha256": "d84df1000513cc48baae68217d3afdb21e745ca0b5d352db6e58724c60d9deaa"
+        }
+      ]
+    },
+    {
+      "file": "native-derived-contest-sums.csv",
+      "bytes": 704,
+      "sha256": "29cc54d64d0c98e259732029d39d29a291e7798babef77a3c7b7a06d1a60825b",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mercer-20261106-01/native-derived-contest-sums.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/3ff873e5-002f-49a2-9047-0a3a883e1533",
+          "bytes": 704,
+          "sha256": "29cc54d64d0c98e259732029d39d29a291e7798babef77a3c7b7a06d1a60825b"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/native-derived-contest-sums.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/native-derived-contest-sums.csv",
+          "bytes": 704,
+          "sha256": "29cc54d64d0c98e259732029d39d29a291e7798babef77a3c7b7a06d1a60825b"
+        }
+      ]
+    },
+    {
+      "file": "native-derived-rate-checks.csv",
+      "bytes": 11231,
+      "sha256": "99567e8979b3252f8c4c43843f3cd04bba0ecfedea885c738c783db13169539d",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mercer-20261106-01/native-derived-rate-checks.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/0f025d3a-647b-44d5-9a48-169f99c891f6",
+          "bytes": 11231,
+          "sha256": "99567e8979b3252f8c4c43843f3cd04bba0ecfedea885c738c783db13169539d"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/native-derived-rate-checks.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/native-derived-rate-checks.csv",
+          "bytes": 11231,
+          "sha256": "99567e8979b3252f8c4c43843f3cd04bba0ecfedea885c738c783db13169539d"
+        }
+      ]
+    },
+    {
+      "file": "native-participation-modes.csv",
+      "bytes": 599,
+      "sha256": "81613cc972d265c42162c11e2384d52aabfb45d9239eb187499552475da8c534",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mercer-20261106-01/native-participation-modes.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/99035484-e518-4d6e-93f6-1366fbd46c30",
+          "bytes": 599,
+          "sha256": "81613cc972d265c42162c11e2384d52aabfb45d9239eb187499552475da8c534"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/native-participation-modes.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/native-participation-modes.csv",
+          "bytes": 599,
+          "sha256": "81613cc972d265c42162c11e2384d52aabfb45d9239eb187499552475da8c534"
+        }
+      ]
+    },
+    {
+      "file": "native-reporting-statistics.csv",
+      "bytes": 799,
+      "sha256": "0943e33b3874e0494b3cae9dd7423f822b6e2a6527311265f82fc47a6d6a4af5",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mercer-20261106-01/native-reporting-statistics.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/a429bb06-5f04-40b0-b263-a9242289f150",
+          "bytes": 799,
+          "sha256": "0943e33b3874e0494b3cae9dd7423f822b6e2a6527311265f82fc47a6d6a4af5"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/native-reporting-statistics.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/native-reporting-statistics.csv",
+          "bytes": 799,
+          "sha256": "0943e33b3874e0494b3cae9dd7423f822b6e2a6527311265f82fc47a6d6a4af5"
+        }
+      ]
+    },
+    {
+      "file": "native-source-declarations.csv",
+      "bytes": 446,
+      "sha256": "42282bb847136af6c479f03fd2d9bb6015ff4582b569fe5833daa4b6765a7249",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mercer-20261106-01/native-source-declarations.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/027a91a7-3244-443f-9157-08cfb634b421",
+          "bytes": 446,
+          "sha256": "42282bb847136af6c479f03fd2d9bb6015ff4582b569fe5833daa4b6765a7249"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/native-source-declarations.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/native-source-declarations.csv",
+          "bytes": 446,
+          "sha256": "42282bb847136af6c479f03fd2d9bb6015ff4582b569fe5833daa4b6765a7249"
+        }
+      ]
+    },
+    {
+      "file": "native-source-pages.csv",
+      "bytes": 15281,
+      "sha256": "2bc7a932687a1d8ba187e2cc018a0713928f6563c82bb843791d3be6efe873ae",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mercer-20261106-01/native-source-pages.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/2de221ef-5601-4831-b798-ed99ac0ead54",
+          "bytes": 15281,
+          "sha256": "2bc7a932687a1d8ba187e2cc018a0713928f6563c82bb843791d3be6efe873ae"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/native-source-pages.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/native-source-pages.csv",
+          "bytes": 15281,
+          "sha256": "2bc7a932687a1d8ba187e2cc018a0713928f6563c82bb843791d3be6efe873ae"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-candidate-results.csv",
+      "bytes": 722765,
+      "sha256": "4aded98ce86e59d7bd57eb5fe2563cc5c50628c05f93b031174b7f35faf82efa",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mercer-20261106-01/native-unit-candidate-results.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/f567a329-7866-44b2-9f06-663abb1dccc2",
+          "bytes": 722765,
+          "sha256": "4aded98ce86e59d7bd57eb5fe2563cc5c50628c05f93b031174b7f35faf82efa"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/native-unit-candidate-results.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/native-unit-candidate-results.csv",
+          "bytes": 722765,
+          "sha256": "4aded98ce86e59d7bd57eb5fe2563cc5c50628c05f93b031174b7f35faf82efa"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-contest-accounting.csv",
+      "bytes": 328326,
+      "sha256": "72606a8018a88f61251c108c3d3d9f2265230a7297f51ffc5deafde03538bfe6",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mercer-20261106-01/native-unit-contest-accounting.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/f0806644-eb0c-4134-8bd2-b47128bf0d52",
+          "bytes": 328326,
+          "sha256": "72606a8018a88f61251c108c3d3d9f2265230a7297f51ffc5deafde03538bfe6"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/native-unit-contest-accounting.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/native-unit-contest-accounting.csv",
+          "bytes": 328326,
+          "sha256": "72606a8018a88f61251c108c3d3d9f2265230a7297f51ffc5deafde03538bfe6"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-literal-party-totals.csv",
+      "bytes": 413159,
+      "sha256": "119ea8eaa78a861bcd1053814402aa18e4671eaf2d797cdf315f9e5d1d66db43",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mercer-20261106-01/native-unit-literal-party-totals.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/7b8c9682-edd3-453e-8036-363bd32cbe3a",
+          "bytes": 413159,
+          "sha256": "119ea8eaa78a861bcd1053814402aa18e4671eaf2d797cdf315f9e5d1d66db43"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/native-unit-literal-party-totals.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/native-unit-literal-party-totals.csv",
+          "bytes": 413159,
+          "sha256": "119ea8eaa78a861bcd1053814402aa18e4671eaf2d797cdf315f9e5d1d66db43"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-participation-modes.csv",
+      "bytes": 34952,
+      "sha256": "3fa826527ccd37cc661da083635e06e05b46a741806e057a780a052d3b688e5a",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mercer-20261106-01/native-unit-participation-modes.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/f58ba396-dbaf-4391-b022-823365ee2a40",
+          "bytes": 34952,
+          "sha256": "3fa826527ccd37cc661da083635e06e05b46a741806e057a780a052d3b688e5a"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/native-unit-participation-modes.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/native-unit-participation-modes.csv",
+          "bytes": 34952,
+          "sha256": "3fa826527ccd37cc661da083635e06e05b46a741806e057a780a052d3b688e5a"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-participation.csv",
+      "bytes": 10243,
+      "sha256": "f7e7006837491eb0728c18d9190dff9a0ef54849011c2e076e0b90907d588101",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mercer-20261106-01/native-unit-participation.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/251f7ec6-3477-43d6-bc75-9d9b3e34ba89",
+          "bytes": 10243,
+          "sha256": "f7e7006837491eb0728c18d9190dff9a0ef54849011c2e076e0b90907d588101"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/native-unit-participation.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/native-unit-participation.csv",
+          "bytes": 10243,
+          "sha256": "f7e7006837491eb0728c18d9190dff9a0ef54849011c2e076e0b90907d588101"
+        }
+      ]
+    },
+    {
+      "file": "native-unit-write-in-availability.csv",
+      "bytes": 75737,
+      "sha256": "30fe6eff72614a4c5721cf0547860880e54e5672116c1741766d36465ada687d",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mercer-20261106-01/native-unit-write-in-availability.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/0cc02789-5d5b-4315-94e0-b8519141f2a8",
+          "bytes": 75737,
+          "sha256": "30fe6eff72614a4c5721cf0547860880e54e5672116c1741766d36465ada687d"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/native-unit-write-in-availability.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/native-unit-write-in-availability.csv",
+          "bytes": 75737,
+          "sha256": "30fe6eff72614a4c5721cf0547860880e54e5672116c1741766d36465ada687d"
+        }
+      ]
+    },
+    {
+      "file": "native-write-in-breakdowns.csv",
+      "bytes": 235,
+      "sha256": "9a474f9296ee6a8be8b92ccfb65f1db38c2b1a26b51d3264b23404a1414d6575",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mercer-20261106-01/native-write-in-breakdowns.csv",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/fc811c0c-151b-48ca-b3f7-abd4914ea583",
+          "bytes": 235,
+          "sha256": "9a474f9296ee6a8be8b92ccfb65f1db38c2b1a26b51d3264b23404a1414d6575"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/native-write-in-breakdowns.csv",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/native-write-in-breakdowns.csv",
+          "bytes": 235,
+          "sha256": "9a474f9296ee6a8be8b92ccfb65f1db38c2b1a26b51d3264b23404a1414d6575"
+        }
+      ]
+    },
+    {
+      "file": "review-three-pa-counties-native-query.py",
+      "bytes": 23583,
+      "sha256": "7656f7a01fe6b04d0669e00e3251277cf0e0f0d122215d5e0626a3ad180d46ae",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mercer-20261106-01/review-three-pa-counties-native-query.py",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/3947c9a6-6a3d-4b91-b7a9-24e575b709df",
+          "bytes": 23583,
+          "sha256": "7656f7a01fe6b04d0669e00e3251277cf0e0f0d122215d5e0626a3ad180d46ae"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/review-three-pa-counties-native-query.py",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/review-three-pa-counties-native-query.py",
+          "bytes": 23583,
+          "sha256": "7656f7a01fe6b04d0669e00e3251277cf0e0f0d122215d5e0626a3ad180d46ae"
+        }
+      ]
+    },
+    {
+      "file": "source-receipts.json",
+      "bytes": 1478,
+      "sha256": "887175a050a1a362aee1320ec498cd22fef5bb281925b5900d0b9ae4b1d43606",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mercer-20261106-01/source-receipts.json",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/fbceda9b-98f0-4b42-9b2c-c816917cbf53",
+          "bytes": 1478,
+          "sha256": "887175a050a1a362aee1320ec498cd22fef5bb281925b5900d0b9ae4b1d43606"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/source-receipts.json",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/source-receipts.json",
+          "bytes": 1478,
+          "sha256": "887175a050a1a362aee1320ec498cd22fef5bb281925b5900d0b9ae4b1d43606"
+        }
+      ]
+    },
+    {
+      "file": "source-records.json.gz",
+      "bytes": 134185,
+      "sha256": "d8f50a6b81e06993090fb1d820e6539bb7a007be5accc74e7ff3c67c66ec0e1e",
+      "checks": [
+        {
+          "kind": "fixed_release_asset",
+          "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-mercer-20261106-01/source-records.json.gz",
+          "status": 200,
+          "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1306934081/7b1de5a9-739b-4c9c-bfbc-df8c963164ac",
+          "bytes": 134185,
+          "sha256": "d8f50a6b81e06993090fb1d820e6539bb7a007be5accc74e7ff3c67c66ec0e1e"
+        },
+        {
+          "kind": "pinned_complete_file",
+          "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/source-records.json.gz",
+          "status": 200,
+          "final_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/d59677eb5e05af06bccd3eeceed87057bac4e082/data/county-source-reviews/20261106-mercer-facts-01/source-records.json.gz",
+          "bytes": 134185,
+          "sha256": "d8f50a6b81e06993090fb1d820e6539bb7a007be5accc74e7ff3c67c66ec0e1e"
+        }
+      ]
+    }
+  ],
+  "entire_assets": 23,
+  "entire_pinned_files": 23,
+  "entire_zip_members": 22,
+  "extracted_offline_verifier_stdout": "Mercer 20 focused rejection cases; complete offline query rendered\n",
+  "exact_entire_file_and_archive_reproduction": true,
+  "explorer_integration_and_live_verification_pending": true
+}

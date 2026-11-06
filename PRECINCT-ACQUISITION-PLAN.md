@@ -2,7 +2,17 @@
 
 ## Current verified production and next acquisition
 
-**Perry integration is locally verified; exact deployment retry is pending.**
+**November 6, 09:27 UTC: Perry is LIVE verified.**
+Pages **42192736194 attempt 2** succeeded for exact UI
+`11afd76c091c90bb24bcb87df17af8c47989b2ee`, reusing the original build.
+Artifact **13491510300 / 520,089,578 bytes**, SHA-256
+`f865ee999ab2bbb20105cf05e681ab4e1be0c75e8f06823bd16698726c50856e`.
+All **278 entire hosted/public files**, **seven production browser scenarios**
+and exact credential runs **42192736305 / 42192732879** pass.
+The successful retry and production proofs are persisted beside the retained
+failed attempt; no comparison verifier remains active.
+
+**Retained attempt 1 diagnosis.**
 Exact UI revision `11afd76c091c90bb24bcb87df17af8c47989b2ee`, Pages
 **42192736194 attempt 1**, passed its build but failed the Pages deploy step
 after ten minutes in `syncing_files`, then explicitly canceled the deployment.
@@ -10,7 +20,7 @@ The actual failure is retained in `20261106-perry-explorer-01/deployment.json`;
 it is not a live UI claim. **Attempt 2** reruns only the failed deploy job,
 reusing the same original hosted artifact and unchanged revision. Its exact
 API readiness check confirms `run_attempt: 2`, initially queued.
-The only active verifier is
+The completed retry verifier was
 `perry-exact-failed-deploy-retry02-and-production-verification-01`.
 Do not rebuild, extend
 the platform's ten-minute deployment limit or duplicate the running verifier.
@@ -30,9 +40,8 @@ missing gray rates**; **46 native rows / 532 complete download anchors /
 528 unique URLs**. Perry's **18,064 ballots / 31,391 registrations /
 printed 57.55%** retain absent ballot modes and parties, distinct native
 clocks, parent-attributed unofficial status and non-completed reporting.
-Next: verify the exact deployed revision, original hosted artifact, all
-**278 selected entire public/hosted files**, credentials and seven production
-browser scenarios before claiming Perry live. Do not start a duplicate verifier.
+These production checks now pass. Next: integrate the three reviewed counties
+against this exact public baseline, retaining every earlier complete download.
 
 **Next participation batch: Juniata, Mercer and Montour, reviewed together.**
 A consolidated Pennsylvania index declares **67 unique county result-site links**.
@@ -81,15 +90,17 @@ See each `20261106-{juniata,mercer,montour}-facts-01` and separate primary revie
 The complete source facts are committed on the review branch at
 `d59677eb5e05af06bccd3eeceed87057bac4e082`, as Hans author and committer,
 without attribution trailers. Whitespace and the source-credential scan pass.
-The one active source publisher is
-`three-pa-fixed-facts-releases-full-byte-and-offline-verification-01`;
-these packages are **not yet release-verified or live**.
+Fixed source releases **436309141 / 436309285 / 436309447** pass every
+**23 anonymous assets / 23 pinned files / 22 archive members** check per county,
+including complete offline reproduction. Exact tag credential runs
+**42194939106 / 42194958785 / 42194982947** and review **42194380060** pass.
+These complete source downloads are released; explorer integration is not yet live.
 Both entire original Census Gazetteers and inventories independently verify
 **PA / Juniata 42067 / Mercer 42085 / Montour 42093**, with their distinct native
 2024 tab / 2026 pipe delimiters. See
 `20261106-juniata-mercer-montour-explorer-01/independent-census-identity.json`;
 these are contextual identities, not native election-source FIPS.
-Next: finish fixed source publication and pending Perry verification, then new immutable
+Next: new immutable
 context09, tested integration and exact production verification. No source map,
 native FIPS, certification, completed-counting or demographic turnout is inferred.
 The fresh Maine results index differs in bytes from November 5, but its reviewed
