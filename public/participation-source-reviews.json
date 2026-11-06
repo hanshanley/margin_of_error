@@ -1,6 +1,29 @@
 {
   "reviews": [
     {
+      "id": "pennsylvania-lebanon-20261106-01",
+      "label": "Lebanon County, Pennsylvania 2026: counted ballots with native registration zero withheld",
+      "data_directory": "data/county-source-reviews/20261106-lebanon-facts-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ffc554aaf7eb30db8557e69243f5e52cc6e71858/data/county-source-reviews/20261106-lebanon-facts-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-lebanon-20261106-01/complete-lebanon-2026-numerical-facts-01.zip",
+      "complete_download_bytes": 63236,
+      "complete_download_sha256": "933227c8e8eabc1ea6c831838133c33e97acafcb12ddd8fa4b30191e66f56f6f",
+      "review_status": "complete_county_numerical_facts_reviewed_unofficial_denominator_withheld",
+      "maps_approved": false,
+      "scope_note": "Complete numerical facts from both government-declared Lebanon general-election reports. All 60 units independently reconcile to 51,268 county ballots: 40,770 Election Day, 10,498 mail/absentee and explicit provisional zero, plus three blank ballots. Native registrations and printed turnout are explicitly zero despite positive ballots; preserve them, but withhold the usable denominator and calculated fraction. The index's 268 provisionals still to process are not counted ballots. Reporting 60/60 remains separate from zero complete/all sixty partial, unofficial status and distinct report run times without timezones. The unit template literally says Electionware County; government declaration and independent county matching establish its actual scope. All 51 county and 2,269 unit result lines, literal parties, named/scattered/unassigned write-ins, modes and explicit zeroes remain available. Write-in detail overlaps its total and must not be added twice. The House's 51,061 selections and 207-ballot unclassified residual are not participation or inferred under/overvotes. Three state-House districts partition the electorate. Both independent PDF engines and complete standard-library offline reproduction agree; source presentation templates remain private. All complete assets are anonymously byte-verified at a fixed commit/checksum under the never-overwrite policy; no host-enforced lock, maps, demographic turnout, certification or statewide completion is claimed.",
+      "tables": [
+        {"file": "county-participation.csv", "label": "Lebanon: complete county ballots, modes, blanks, preserved native registration zero, withheld usable denominator and counting qualifications (CSV)"},
+        {"file": "native-unit-participation.csv", "label": "Lebanon: all 60 native participation records, separate ballot/blank modes and unusable registration zeroes (CSV)"},
+        {"file": "county-candidate-results.csv", "label": "Lebanon: every county candidate and overlapping write-in classification with literal parties and modes (CSV)"},
+        {"file": "native-unit-candidate-results.csv", "label": "Lebanon: all 2,269 native unit candidate/write-in lines including explicit zeroes (CSV)"},
+        {"file": "county-literal-party-totals.csv", "label": "Lebanon: complete named-candidate literal-party totals by office and mode, not participation (CSV)"},
+        {"file": "native-reporting-statements.csv", "label": "Lebanon: all four native reporting and separate completion statements (CSV)"},
+        {"file": "native-source-pages.csv", "label": "Lebanon: complete 123-page numerical provenance with both report times and literal template county labels (CSV)"},
+        {"file": "county-contest-accounting.csv", "label": "Lebanon: complete contest ballots, nonduplicated selections and separately unclassified residuals; missing under/overvote labels (CSV)"}
+      ],
+      "coverage": []
+    },
+    {
       "id": "oregon-counties-20261106-01",
       "label": "Oregon 2026: all 36 county ballots counted and native active registrations",
       "data_directory": "data/county-source-reviews/20261106-oregon-participation-01",

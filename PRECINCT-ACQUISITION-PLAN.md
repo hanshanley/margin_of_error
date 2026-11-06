@@ -594,9 +594,23 @@ downloaded and byte-verified, including every complete ZIP member.
 GitHub reports `immutable: false`; preserve the fixed checksum/never-overwrite
 policy rather than asserting host-enforced locking. Release proof and the
 actual verified-live Oregon baseline are under `20261106-lebanon-publication-01`.
-The ballot-only UI is being prepared without converting unusable native
-registration zero into turnout. No live UI, new map, demographic participation
-or statewide completion is claimed.
+The ballot-only UI connects **51,268** ballots and preserves the complete native
+record, both report timestamps, partial counting and pending provisionals.
+Usable denominator and calculated fraction remain null; static and dynamic
+views distinguish printed `0.00%` from genuine zero turnout. A narrowly scoped
+native-zero guard retains strict positive-denominator validation for all other
+reviewed sources and rejects fabricated repairs.
+Local validation passes 25 focused Node tests, the four build-included tests,
+Astro checking (zero errors/warnings, five existing hints) and all six browser
+modes/checks. The four desktop/mobile JavaScript/no-JavaScript modes and two
+failed-current-feed checks preserve every old record/download, all eighteen
+complete import JSONs, 52 UF rows and five historical years, with no horizontal
+overflow. There are now fifteen reviewed PA/D.C. records (fourteen PA),
+337 anchors / 334 unique full URLs, including nine complete Lebanon downloads.
+All 106 existing complete relocations pass byte checks; the prepared Pages
+site is 898,717,918 bytes. The local helper was stopped.
+Exact deployment/live verification remains pending; no new map, demographic
+participation or statewide completion is claimed.
 
 **November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated

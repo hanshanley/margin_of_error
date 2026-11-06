@@ -10,8 +10,8 @@ const reviews = JSON.parse(readFileSync('public/participation-source-reviews.jso
 
 test('loads all reviewed county participation without promoting map coverage', () => {
   const rows = loadReviewedCountyParticipation(reviews);
-  assert.equal(rows.length, 14);
-  assert.equal(rows.filter(row => row.state_code === 'PA').length, 13);
+  assert.equal(rows.length, 15);
+  assert.equal(rows.filter(row => row.state_code === 'PA').length, 14);
   assert.equal(rows.filter(row => row.state_code === 'DC').length, 1);
   assert.ok(rows.every(row => row.maps_approved === false && row.reported_units === null));
   const monroe = rows.find(row => row.county === 'Monroe');
@@ -93,6 +93,49 @@ test('preserves complete Adams ballots, native blank/provisional zeroes and part
     && update.declared_timezone === ''));
   assert.match(row.source_reporting_label, /0 of 53 complete and all 53 partially reported/);
   assert.match(row.source_reporting_label, /10,320, not the index's separately scoped 10,348/);
+});
+
+test('preserves Lebanon ballots while withholding its unusable native denominator zero', () => {
+  const row = loadReviewedCountyParticipation(reviews).find(row => row.county === 'Lebanon');
+  const review = reviews.find(review => review.id === row.review_id);
+  const native = parse(readFileSync(join(review.data_directory, 'county-participation.csv'), 'utf8'),
+    { columns: true })[0];
+  assert.deepEqual(row.native_record, native);
+  assert.equal(row.ballots, 51268);
+  assert.notEqual(row.ballots, 51061);
+  assert.equal(row.county_id, 'reviewed:PA:Lebanon');
+  assert.equal(row.denominator, null);
+  assert.equal(row.reported_pct, null);
+  assert.equal(row.native_record.native_registered_voters, '0');
+  assert.equal(row.native_record.registered_voters, '');
+  assert.equal(row.native_printed_pct, '0.00%');
+  assert.equal(row.source_status_literal, 'UNOFFICIAL RESULTS');
+  assert.equal(row.native_source_updates.length, 2);
+  assert.match(row.source_update_label, /county: 11\/05\/2026 12:16 PM \(timezone not declared\)/);
+  assert.match(row.source_update_label, /unit: 11\/05\/2026 1:02 PM \(timezone not declared\)/);
+  assert.match(row.source_reporting_label, /268 provisionals still to process/);
+  assert.match(row.source_reporting_label, /0\/60 complete and 60\/60 partially reported/);
+  assert.equal(row.maps_approved, false);
+});
+
+test('requires Lebanon native zero flags and withheld fields instead of accepting a repaired denominator', () => {
+  const original = reviews.find(row => row.id === 'pennsylvania-lebanon-20261106-01');
+  const directory = mkdtempSync(join(tmpdir(), 'lebanon-participation-'));
+  try {
+    copyFileSync(join(original.data_directory, 'audit.json'), join(directory, 'audit.json'));
+    const native = parse(readFileSync(join(original.data_directory, 'county-participation.csv'), 'utf8'),
+      { columns: true })[0];
+    const altered = reviews.map(row => row.id === original.id ? { ...row, data_directory: directory } : row);
+    for (const change of [{ registered_voters: '100000' }, { native_registered_voters: '' },
+      { registered_turnout_percent: '0' }, { native_printed_turnout: '' }, { ballots_cast: '0' }]) {
+      const row = { ...native, ...change }, fields = Object.keys(row);
+      writeFileSync(join(directory, 'county-participation.csv'), fields.join(',') + '\n'
+        + fields.map(field => `"${row[field].replaceAll('"', '""')}"`).join(',') + '\n');
+      assert.throws(() => loadReviewedCountyParticipation(altered), /Invalid reviewed county participation/);
+    }
+  } finally {
+    rmSync(directory, { recursive: true, force: true });
+  }
 });
 
 test('rejects missing or duplicated reviewed sources instead of silently shrinking coverage', () => {

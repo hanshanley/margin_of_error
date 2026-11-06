@@ -1,4 +1,4 @@
-"""Verify Adams participation and preserve every previously published native record and download."""
+"""Verify reviewed Adams or Lebanon participation and preserve previous records and downloads."""
 
 import argparse
 from collections import Counter
@@ -15,17 +15,22 @@ from playwright.sync_api import expect, sync_playwright
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("--base-url", default="http://127.0.0.1:4321")
 parser.add_argument("--proof", type=Path, required=True)
+parser.add_argument("--lebanon", action="store_true")
 args = parser.parse_args()
 assert not args.proof.exists()
 root = Path(__file__).resolve().parents[1]
 base = args.base_url.rstrip("/")
 reviews = json.loads((root / "public/participation-source-reviews.json").read_text())["reviews"]
-review = next(row for row in reviews if row["id"] == "pennsylvania-adams-20261106-01")
-baseline = json.loads((root / "data/county-source-reviews/20261106-adams-publication-01/baseline.json").read_text())
+county = "Lebanon" if args.lebanon else "Adams"
+batch = county.lower()
+review = next(row for row in reviews if row["id"] == f"pennsylvania-{batch}-20261106-01")
+baseline = json.loads((root / f"data/county-source-reviews/20261106-{batch}-publication-01/baseline.json").read_text())
+record_count = 15 if args.lebanon else 14
 added = [review["complete_download_url"]] + [review["base_url"] + table["file"] for table in review["tables"]]
 assert len(set(added)) == 9 and not set(added) & set(baseline["expected_download_urls"])
 expected_links = Counter(baseline["expected_download_urls"]) + Counter(added)
-assert len(expected_links) == 315 and sum(expected_links.values()) == 318
+assert len(expected_links) == (334 if args.lebanon else 315)
+assert sum(expected_links.values()) == (337 if args.lebanon else 318)
 with (root / review["data_directory"] / "county-participation.csv").open() as source:
     native = next(csv.DictReader(source))
 proof = {"base_url": base, "modes": [], "checks": []}
@@ -34,16 +39,23 @@ errors = []
 
 def verify_detail(page):
     select = page.locator("#current-county-select")
-    expect(select.locator("option")).to_have_count(14)
-    select.select_option("42001")
+    expect(select.locator("option")).to_have_count(record_count)
+    select.select_option("reviewed:PA:Lebanon" if args.lebanon else "42001")
     detail = page.locator("#current-county-detail")
-    expect(detail.locator(".selection-rate")).to_have_text("42,660")
-    for text in ("77,163 native registered voters", "55.29%", "UNOFFICIAL RESULTS",
+    expect(detail.locator(".selection-rate")).to_have_text("51,268" if args.lebanon else "42,660")
+    texts = ("Native printed fraction: 0.00%", "Analysis fraction withheld / not supplied",
+             "UNOFFICIAL RESULTS", "county: 11/05/2026 12:16 PM (timezone not declared)",
+             "unit: 11/05/2026 1:02 PM (timezone not declared)",
+             "268 provisionals still to process", "0/60 complete and 60/60 partially reported",
+             "registrations are explicitly zero alongside positive ballots",
+             "County mapping is not approved") if args.lebanon else (
+                 "77,163 native registered voters", "55.29%", "UNOFFICIAL RESULTS",
                  "summary: 11/03/2026 10:23PM (timezone not declared)",
                  "precinct: 11/03/2026 10:23PM (timezone not declared)",
                  "0 of 53 complete and all 53 partially reported",
                  "10,320, not the index's separately scoped 10,348",
-                 "Native provisional zeros remain explicit", "County mapping is not approved"):
+                 "Native provisional zeros remain explicit", "County mapping is not approved")
+    for text in texts:
         expect(detail).to_contain_text(text)
     for url in (review["complete_download_url"], review["base_url"] + "county-participation.csv"):
         assert detail.locator('a[href="' + url + '"]').count() == 1
@@ -62,14 +74,18 @@ with sync_playwright() as playwright:
                       wait_until="domcontentloaded")
             table = page.locator("table[data-reviewed-county-participation]")
             records = json.loads(table.get_attribute("data-reviewed-county-participation"))
-            assert len(records) == 14
-            assert [row for row in records if row["county"] != "Adams"] == baseline["previous_reviewed_county_records"]
-            adams = next(row for row in records if row["county"] == "Adams")
-            assert adams["native_record"] == native and adams["maps_approved"] is False
-            expect(table.locator("tbody tr")).to_have_count(14)
-            cells = table.locator("tbody tr").filter(has_text="Adams, Pennsylvania").locator("td").all_text_contents()
-            assert [text.strip() for text in cells[:5]] == [
+            assert len(records) == record_count
+            assert [row for row in records if row["county"] != county] == baseline["previous_reviewed_county_records"]
+            selected = next(row for row in records if row["county"] == county)
+            assert selected["native_record"] == native and selected["maps_approved"] is False
+            if args.lebanon:
+                assert selected["denominator"] is None and selected["reported_pct"] is None
+                assert selected["native_record"]["native_registered_voters"] == "0"
+            expect(table.locator("tbody tr")).to_have_count(record_count)
+            cells = table.locator("tbody tr").filter(has_text=f"{county}, Pennsylvania").locator("td").all_text_contents()
+            expected_cells = ["51,268", "Withheld (native zero)", "Withheld", "0.00%", "UNOFFICIAL RESULTS"] if args.lebanon else [
                 "42,660", "77,163", "55.29%", "55.29%", "UNOFFICIAL RESULTS"]
+            assert [text.strip() for text in cells[:5]] == expected_cells
             links = Counter(page.locator("#downloads a[download]").evaluate_all(
                 "links => links.map(link => link.getAttribute('href'))"))
             assert links == expected_links
@@ -86,14 +102,18 @@ with sync_playwright() as playwright:
                 page.locator('button[aria-controls="methods-panel"]').click()
             expect(page.locator("#downloads")).to_be_visible()
             expect(page.locator('[aria-labelledby="reviewed-county-participation-title"]')).to_contain_text(
-                "13 Pennsylvania county observations")
+                f"{record_count - 1} Pennsylvania county observations")
             assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
             proof["modes"].append({
-                "mobile": mobile, "javascript": javascript, "reviewed_native_records": 14,
-                "complete_adams_native_record_equality": True, "all_thirteen_prior_records_entirely_unchanged": True,
-                "all_fifteen_prior_import_fingerprints_unchanged": javascript,
+                "mobile": mobile, "javascript": javascript, "reviewed_native_records": record_count,
+                "county": county, "complete_native_record_equality": True,
+                "all_previous_records_entirely_unchanged": True,
+                "previous_reviewed_records": len(baseline["previous_reviewed_county_records"]),
+                "all_previous_import_fingerprints_unchanged": javascript,
+                "previous_complete_imports": len(baseline["unchanged_imports"]),
                 "unique_download_urls": len(links), "download_anchors": sum(links.values()),
-                "all_309_previous_download_anchors_preserved": True,
+                "all_previous_download_anchors_preserved": True,
+                "previous_download_anchors": len(baseline["expected_download_urls"]),
                 "uf_rows": 52, "historical_years": baseline["historical_years"], "horizontal_overflow": False,
             })
             context.close()
@@ -103,7 +123,7 @@ with sync_playwright() as playwright:
         page.goto(base + "/voter-participation/?year=2026&state=Pennsylvania&mode=available&map-level=county&map-color=turnout")
         verify_detail(page)
         assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
-        proof["checks"].append({"mobile": mobile, "failed_current_feed_keeps_adams": True})
+        proof["checks"].append({"mobile": mobile, "county": county, "failed_current_feed_keeps_county": True})
         context.close()
     browser.close()
 assert not errors, errors

@@ -1,0 +1,31 @@
+{
+  "verified_at_utc": "2026-11-06T04:51:40.908021+00:00",
+  "reference_live_revision": "087db21a50baf570c54e2cbe881b3e7dae244302",
+  "focused_node_tests_passed": 25,
+  "build_included_tests_passed": 4,
+  "astro_check": {
+    "errors": 0,
+    "warnings": 0,
+    "existing_hints": 5
+  },
+  "prepared_pages_bytes": 898717918,
+  "verified_complete_download_relocations": 106,
+  "browser_modes_passed": 4,
+  "failed_feed_checks_passed": 2,
+  "reviewed_county_records": 15,
+  "previous_reviewed_records_entirely_unchanged": 14,
+  "previous_complete_imports_entirely_unchanged": 18,
+  "lebanon_ballots": 51268,
+  "lebanon_native_registrations": "0",
+  "lebanon_usable_denominator": null,
+  "lebanon_calculated_fraction": null,
+  "lebanon_native_printed_fraction": "0.00%",
+  "lebanon_pending_provisionals_separate_from_ballots": 268,
+  "download_anchors": 337,
+  "unique_complete_download_urls": 334,
+  "previous_download_anchors_preserved": 328,
+  "historical_years_preserved": [2024, 2022, 2020, 2018, 2016],
+  "uf_rows_preserved": 52,
+  "new_map_or_demographic_approval": false,
+  "live_verified": false
+}
