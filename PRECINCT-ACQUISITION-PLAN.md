@@ -838,8 +838,8 @@ general-election county PDFs; all twenty-one complete originals and successful
 SHA-bound HTTP receipts are acquired privately under
 `nj-2026-bulk-participation-01`. This is a genuine consolidated state source,
 not twenty-one guessed county sites. Complete county/aggregate review and
-anonymous full-release verification now pass; exact UI deployment remains
-pending as described below.
+anonymous full-release verification now pass; exact UI deployment is live
+verified as described below.
 Reports distinguish early-voting/Election Day votes cast, mail ballots tallied,
 issued/received/processing counts and provisional ballots issued. Registrations
 are generally absent. Blank county fields, competing congressional/municipal
@@ -916,7 +916,16 @@ unique full URLs. Thirty-two focused JS tests, twelve portable NJ tests,
 Astro checking and the build pass. All 106 complete download relocations pass
 byte checks; prepared Pages payload is 898,937,290 bytes. Preview is stopped.
 Proofs are under `20261106-nj-participation-publication-02`.
-The UI is prepared for deployment, not yet claimed live.
+UI `c374d648d16c93a0279c92e88fd03992d0c503ee` is now live verified in
+exact Pages run `42170257919`, attempt 1. Artifact `13481116369` is
+484,841,054 bytes, SHA-256
+`029bb4efd17cf931dfd616e104fea24dc976bdd38502bf34fac18699e722ca97`.
+Both exact-revision credential runs `42170257812` / `42170258087` pass.
+All 28 entire selected hosted/public files match, including all eighteen
+full decompressed imports; all six production browser scenarios pass.
+Verification completed `2026-11-06T05:52:25.835132+00:00`. Full deployment,
+credential, preservation and browser proofs are persisted beside the local
+proofs. No previous snapshot or published asset was replaced.
 No native FIPS, map join, demographic rate, statewide completion or
 certification is invented.
 
