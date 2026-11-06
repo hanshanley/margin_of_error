@@ -1,0 +1,25 @@
+{
+  "parent.html": {
+    "bytes": 77893,
+    "chain_verified": true,
+    "fetched_at_utc": "2026-11-06T13:36:15.110075+00:00",
+    "final_url": "https://www.huntingdoncountypa.gov/",
+    "hostname_verified": true,
+    "sha256": "f8089841ee03b5fad40ec768fdb264525362fde2d7e4bfee142e61d2d0b55c67",
+    "status": 200,
+    "transport": "standard_library_urllib_with_default_system_trust",
+    "url": "https://www.huntingdoncountypa.gov/"
+  },
+  "summary.pdf": {
+    "bytes": 21140,
+    "chain_verified": true,
+    "fetched_at_utc": "2026-11-06T13:37:05.706001+00:00",
+    "final_url": "https://www.huntingdoncountypa.gov/getmedia/de181940-3a03-4f1c-8654-0fc4f445da7d/2026-Primary-Election-Summary.pdf",
+    "hostname_verified": true,
+    "response_content_disposition": "inline; filename=2026-General-Election-Summary.pdf",
+    "sha256": "4f0281121f4cac439e8d116bb8b2cd2f3993156872f66a46f7ca273d80450e57",
+    "status": 200,
+    "transport": "openssl_with_enforced_default_trust_chain",
+    "url": "https://www.huntingdoncountypa.gov/getmedia/de181940-3a03-4f1c-8654-0fc4f445da7d/2026-Primary-Election-Summary.pdf"
+  }
+}

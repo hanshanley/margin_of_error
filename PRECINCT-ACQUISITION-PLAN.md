@@ -2,6 +2,30 @@
 
 ## Current verified production and next acquisition
 
+**November 6, 13:37 UTC: Huntingdon complete native summary acquired and reviewed.**
+The county's actual declared URL contains `Primary`, but its HTTP disposition and
+both PDF pages identify the **November 3, 2026 general election**. Complete original
+bytes pass TLS-chain verification against the default OpenSSL trust store and
+independent hostname validation against the same connection's peer certificate.
+No certificate checks were disabled. Preserve the earlier ordinary browser and
+urllib child certificate failures as transport observations, not data absence.
+PyMuPDF and pdfplumber agree on all facts in the **two-page / 21,140-byte** report,
+SHA-256 `4f0281121f4cac439e8d116bb8b2cd2f3993156872f66a46f7ca273d80450e57`.
+The source supplies **16,024 ballots / 27,917 registrations / printed 57.40%**:
+13,855 Election Day, 2,169 Mail Votes, explicit provisional and blank zeros.
+Its **11/03/2026 9:56 PM** clock has no declared timezone. **UNOFFICIAL RESULTS**
+and **58/58 complete / 0/58 partially reported** do not establish certification
+or finished counting. All five contests retain literal parties, sixteen candidate/
+write-in rows, ten native accounting rows, twenty derived contest-mode checks
+and forty-four separate candidate-party totals. The two state-House accounting
+vectors sum to county ballots, not a verified geographic partition or district
+registration denominator. Seven full tables, complete factual inputs, receipts,
+audit and portable reviewer form a **13-file / 12-member** query; six focused
+tests pass, including extracted standard-library byte-identical reproduction.
+Original source HTML/PDF templates stay private; native FIPS remains missing.
+Facts: `20261106-huntingdon-facts-01`; publication and explorer integration
+remain pending. Do not call Huntingdon live until exact production verification.
+
 **November 6, 13:33 UTC: Lawrence participation and context16 LIVE verified.**
 Exact UI **`debbd15acc38562cdda7d12d9210186d1a64fd1c`**, Pages
 **42225008616 attempt 1**, passes its original hosted artifact

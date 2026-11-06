@@ -1,0 +1,48 @@
+{
+  "scope": "Huntingdon only; complete two-page numerical report, not source templates",
+  "maps_approved": false,
+  "demographic_turnout_approved": false,
+  "statewide_completion_approved": false,
+  "county_participation": {
+    "state": "Pennsylvania",
+    "county": "Huntingdon",
+    "election_date": "2026-11-03",
+    "source_fips": "",
+    "source_url": "https://www.huntingdoncountypa.gov/getmedia/de181940-3a03-4f1c-8654-0fc4f445da7d/2026-Primary-Election-Summary.pdf",
+    "source_update_literal": "11/03/2026 9:56 PM",
+    "declared_timezone": "",
+    "native_status_literal": "UNOFFICIAL RESULTS",
+    "native_participation_measure_literal": "Ballots Cast - Total",
+    "ballots_cast": 16024,
+    "election_day_ballots": 13855,
+    "mail_ballots": 2169,
+    "provisional_ballots": 0,
+    "registered_voters": 27917,
+    "blank_ballots": 0,
+    "native_printed_turnout": "57.40%",
+    "registered_turnout_percent": 57.39871762725221,
+    "native_count_literals_json": "{\"ballot_count_literals\": [\"16,024\", \"13,855\", \"2,169\", \"0\"], \"blank_count_literals\": [\"0\", \"0\", \"0\", \"0\"], \"printed_turnout_literal\": \"57.40%\", \"registered_voters_literal\": \"27,917\"}",
+    "qualifications_json": "[\"The complete two-page general-election summary supplies 16,024 ballots and 27,917 registrations; candidate selections are separate.\", \"Ballots are 13,855 Election Day + 2,169 Mail Votes + explicit provisional zero. Actual blank ballots are explicitly zero, not an inferred residual.\", \"57.40% is the native printed registered-voter fraction, not CVAP, VAP, VEP or demographic turnout.\", \"Both pages retain 11/03/2026 9:56 PM, with no supplied timezone. HTTP retrieval and Last-Modified timestamps are not election update clocks.\", \"The report is UNOFFICIAL RESULTS. Its 58/58 complete and 0/58 partially reported statements do not establish certification or finished counting.\", \"The county declares a URL containing Primary but the response disposition and every PDF page identify the November 3 general election; preserve the literal URL.\", \"Each candidate keeps its literal party and all four mode counts; write-ins have no supplied party. Overvotes and undervotes remain native accounting, not candidate votes.\", \"The first three contest accounting vectors each match county ballots. The two state-House accounting vectors sum to county ballots, but this is not a verified geographic partition.\", \"District ballot scopes are derived from supplied selections plus overvotes and undervotes; district electorates and mode registration denominators are absent, not the whole-county registrations.\", \"No native FIPS, new geometry, demographic turnout, statewide completion or redistribution permission for original HTML/PDF templates is approved.\"]"
+  },
+  "qualifications": [
+    "The complete two-page general-election summary supplies 16,024 ballots and 27,917 registrations; candidate selections are separate.",
+    "Ballots are 13,855 Election Day + 2,169 Mail Votes + explicit provisional zero. Actual blank ballots are explicitly zero, not an inferred residual.",
+    "57.40% is the native printed registered-voter fraction, not CVAP, VAP, VEP or demographic turnout.",
+    "Both pages retain 11/03/2026 9:56 PM, with no supplied timezone. HTTP retrieval and Last-Modified timestamps are not election update clocks.",
+    "The report is UNOFFICIAL RESULTS. Its 58/58 complete and 0/58 partially reported statements do not establish certification or finished counting.",
+    "The county declares a URL containing Primary but the response disposition and every PDF page identify the November 3 general election; preserve the literal URL.",
+    "Each candidate keeps its literal party and all four mode counts; write-ins have no supplied party. Overvotes and undervotes remain native accounting, not candidate votes.",
+    "The first three contest accounting vectors each match county ballots. The two state-House accounting vectors sum to county ballots, but this is not a verified geographic partition.",
+    "District ballot scopes are derived from supplied selections plus overvotes and undervotes; district electorates and mode registration denominators are absent, not the whole-county registrations.",
+    "No native FIPS, new geometry, demographic turnout, statewide completion or redistribution permission for original HTML/PDF templates is approved."
+  ],
+  "table_rows": {
+    "county-participation.csv": 1,
+    "native-source-pages.csv": 2,
+    "native-reporting-statements.csv": 4,
+    "native-candidate-results.csv": 16,
+    "native-contest-accounting.csv": 10,
+    "county-contest-accounting.csv": 20,
+    "county-literal-party-totals.csv": 44
+  }
+}

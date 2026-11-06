@@ -1,0 +1,5 @@
+state,county,election_date,source_fips,source_url,source_update_literal,declared_timezone,native_status_literal,label_literal,mode_count_literals,reported_literal,total_literal
+Pennsylvania,Huntingdon,2026-11-03,,https://www.huntingdoncountypa.gov/getmedia/de181940-3a03-4f1c-8654-0fc4f445da7d/2026-Primary-Election-Summary.pdf,11/03/2026 9:56 PM,,UNOFFICIAL RESULTS,Election Day Precincts Reporting,"['58', '0', '0']",58,58
+Pennsylvania,Huntingdon,2026-11-03,,https://www.huntingdoncountypa.gov/getmedia/de181940-3a03-4f1c-8654-0fc4f445da7d/2026-Primary-Election-Summary.pdf,11/03/2026 9:56 PM,,UNOFFICIAL RESULTS,Precincts Complete,"['58', '0', '0']",58,58
+Pennsylvania,Huntingdon,2026-11-03,,https://www.huntingdoncountypa.gov/getmedia/de181940-3a03-4f1c-8654-0fc4f445da7d/2026-Primary-Election-Summary.pdf,11/03/2026 9:56 PM,,UNOFFICIAL RESULTS,Precincts Partially Reported,"['0', '0', '0']",0,58
+Pennsylvania,Huntingdon,2026-11-03,,https://www.huntingdoncountypa.gov/getmedia/de181940-3a03-4f1c-8654-0fc4f445da7d/2026-Primary-Election-Summary.pdf,11/03/2026 9:56 PM,,UNOFFICIAL RESULTS,Absentee/ Early Precincts Reporting,"['0', '58', '0']",58,58
