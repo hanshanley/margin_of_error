@@ -1,6 +1,37 @@
 {
   "reviews": [
     {
+      "id": "pennsylvania-lycoming-20261106-01",
+      "label": "Lycoming County, Pennsylvania 2026: native ballot total, registrations and complete county factual query",
+      "data_directory": "data/county-source-reviews/20261106-lycoming-facts-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/e50241f5f2de734b7e8107ac6518eae19480c926/data/county-source-reviews/20261106-lycoming-facts-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-lycoming-20261106-01/complete-lycoming-county-native-query-01.zip",
+      "complete_download_bytes": 17047,
+      "complete_download_sha256": "5745cf2c2e9132d4ca449bb0740f9b8450e4b271b06c23c48716eb0e024e99aa",
+      "review_status": "complete_county_summary_query_reviewed_unofficial",
+      "maps_approved": false,
+      "scope_note": "Native Total Ballots Cast 40,596 / 73,009 registered voters, printed 55.60%; the calculated fraction uses this county's own administrative registration denominator, not CVAP, VAP, VEP, CPS or demographics. Native status is Unofficial Results; 80 of 80 reported precincts does not establish completed counting or certification. All six contests, sixteen choices, six totals and 48 candidate-mode cells independently reconcile. Candidate parties are absent and not inferred. ED/MI/PR are candidate counters, not county ballot-mode participation. Blank ballots and county ballot modes remain missing, not zero. Separate 5,770 Act88 received mail ballots are not added or equated to counted mail. Per-contest printed turnout retains an unspecified numerator; no district ballots are inferred. Native report clock 2026-11-05 10:37:43 has no declared timezone. Later-canvass qualifications and the native Wednesday, November 10 calendar conflict survive without fabricated correction. All seventeen entire anonymous assets, seventeen pinned files and sixteen archive members match and reproduce offline. Complete eleven-table factual query, receipts, source-derived records, portable reviewer and tests are downloadable. Original HTML/PDFs stay private. Native FIPS is missing; independently reviewed contextual county identity does not certify 2026 election geography.",
+      "tables": [
+        {"file": "county-participation.csv", "label": "Lycoming: complete county ballots, registrations, native fraction, status and clock (CSV)"},
+        {"file": "native-candidate-results.csv", "label": "Lycoming: all sixteen native choices across six separately scoped contests; parties missing (CSV)"},
+        {"file": "native-candidate-mode-results.csv", "label": "Lycoming: all 48 native candidate ED/MI/PR cells, not ballot participation modes (CSV)"},
+        {"file": "native-contests.csv", "label": "Lycoming: all six native contest scopes, registrations and printed turnout with unspecified numerator (CSV)"},
+        {"file": "native-contest-totals.csv", "label": "Lycoming: all six native choice totals and every reported candidate mode (CSV)"},
+        {"file": "native-choice-rate-checks.csv", "label": "Lycoming: all separate choice-rate checks and the unclassified whole-county residual (CSV)"},
+        {"file": "native-mail-ballot-receipts.csv", "label": "Lycoming: separate 5,770 Act88 received mail ballots, not counted mail (CSV)"},
+        {"file": "native-counting-qualifications.csv", "label": "Lycoming: all three counting/canvass qualifications, preserving the weekday/date conflict (CSV)"},
+        {"file": "native-source-declarations.csv", "label": "Lycoming: all four actual county-parent report declarations and full URLs (CSV)"},
+        {"file": "native-source-pages.csv", "label": "Lycoming: complete four-document page inventory and original byte hashes (CSV)"},
+        {"file": "source-receipts.csv", "label": "Lycoming: all five entire original-source byte receipts and separate retrieval clocks (CSV)"},
+        {"file": "source-records.json.gz", "label": "Lycoming: complete reviewed factual inputs and independent native query (JSON · gzip)"},
+        {"file": "review-lycoming-native-query.py", "label": "Lycoming: complete standard-library factual-query reproducer (Python)"},
+        {"file": "test-lycoming-native-query.py", "label": "Lycoming: complete portable query validation and semantic corruption tests (Python)"},
+        {"file": "audit.json", "label": "Lycoming: complete factual-query reconciliation and missing-field qualifications (JSON)"},
+        {"file": "checksums.json", "label": "Lycoming: complete factual-query byte inventory (JSON)"}
+      ],
+      "coverage": []
+    },
+    {
       "id": "georgia-bulk-participation-20261106-01",
       "label": "Georgia 2026: all 159 county participation observations and complete native results query",
       "data_directory": "data/county-source-reviews/20261106-georgia-facts-01",

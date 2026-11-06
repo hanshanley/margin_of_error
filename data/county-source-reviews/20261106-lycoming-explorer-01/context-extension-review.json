@@ -1,0 +1,100 @@
+{
+  "previous_complete_records_preserved": 1133,
+  "previous_contextual_joins_preserved": 661,
+  "previous_exclusions_and_missingness_preserved": true,
+  "unchanged_geometry_inventory": 17,
+  "existing_source_map_approval_flags_unchanged": true,
+  "native_fips_invented": false,
+  "new_source_records": [
+    {
+      "year": 2026,
+      "state_code": "PA",
+      "county_id": "reviewed:PA:Lycoming",
+      "county": "Lycoming",
+      "geography_level": "county",
+      "ballots": 40596,
+      "denominator": 73009,
+      "participation_measure_literal": "Total Ballots Cast",
+      "denominator_basis": "native_registered_voters",
+      "reported_pct": 55.6041036036653,
+      "native_printed_pct": "55.60%",
+      "source_status_literal": "Unofficial Results",
+      "reported_units": 80,
+      "total_units": 80,
+      "source_rows": 1,
+      "maps_approved": false,
+      "review_id": "pennsylvania-lycoming-20261106-01",
+      "native_record": {
+        "year": "2026",
+        "state_code": "PA",
+        "county": "Lycoming",
+        "native_measure_literal": "Total Ballots Cast",
+        "ballots_cast": "40596",
+        "registered_voters": "73009",
+        "native_printed_turnout_pct": "55.60",
+        "calculated_registered_turnout_pct": "55.60",
+        "blank_ballots": "",
+        "county_ballot_modes": "",
+        "native_status_literal": "Unofficial Results",
+        "source_update_literal": "2026-11-05 10:37:43",
+        "declared_timezone": "",
+        "source_fips": "",
+        "reported_precincts": "80",
+        "total_precincts": "80",
+        "counting_complete": "False",
+        "maps_approved": "False"
+      },
+      "native_source_updates": [
+        {
+          "source": "results",
+          "native_update_literal": "2026-11-05 10:37:43",
+          "declared_timezone": ""
+        }
+      ],
+      "source_update_label": "source_update_literal: 2026-11-05 10:37:43; results: 2026-11-05 10:37:43 (timezone not declared)",
+      "source_reporting_label": "Native Total Ballots Cast 40,596 / 73,009 registered voters, printed 55.60%; 80 of 80 reporting is not completed counting or certification.; Election Day, mail, provisional and blank-ballot participation are absent, not zero. ED/MI/PR are candidate-vote columns, not county ballot-mode counts.; Separate 5,770 Act88 mail receipts are not added to ballots or equated to counted mail.; All six contests, sixteen choices and 48 candidate-mode cells remain separate; native parties are missing and are not inferred.; Per-contest printed turnout has an unspecified numerator; no district ballot counts or eligible-population turnout are inferred.; Election-night results include in-person votes and most mail; remaining mail, overseas and eligible provisional ballots are subject to later canvass.; The return notice prints Wednesday, November 10; its weekday/date conflict is retained without repair or an inference of completed canvass.",
+      "source_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/e50241f5f2de734b7e8107ac6518eae19480c926/data/county-source-reviews/20261106-lycoming-facts-01/county-participation.csv",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-lycoming-20261106-01/complete-lycoming-county-native-query-01.zip",
+      "quality": [
+        "Reviewed local snapshot, not final certification, statewide coverage, eligible-population or demographic turnout.",
+        "Source timestamps retain their native labels; unprovided timezones are not inferred. County mapping is not approved."
+      ]
+    }
+  ],
+  "new_contextual_identity_joins": [
+    {
+      "state_code": "PA",
+      "county_id": "reviewed:PA:Lycoming",
+      "county": "Lycoming",
+      "geography_level": "county",
+      "review_id": "pennsylvania-lycoming-20261106-01",
+      "contextual_geoid": "42081",
+      "contextual_name": "Lycoming County",
+      "boundary_year": 2024,
+      "ballots": 40596,
+      "denominator": 73009,
+      "reported_pct": 55.6041036036653,
+      "participation_measure_kind": "source_defined_participation_count",
+      "participation_measure_label": "Total Ballots Cast",
+      "source_record_sha256": "64eb720db750473bf9b55ab7ef91d530f8be79ce40fa84c98d21c333717554ba",
+      "source_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/e50241f5f2de734b7e8107ac6518eae19480c926/data/county-source-reviews/20261106-lycoming-facts-01/county-participation.csv",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-lycoming-20261106-01/complete-lycoming-county-native-query-01.zip",
+      "contextual_map_approved": true,
+      "source_map_approval_unchanged": false
+    }
+  ],
+  "counts": {
+    "complete_source_records": 1134,
+    "contextual_joins": 662,
+    "jurisdictions": 17,
+    "reviewed_rates": 286,
+    "missing_rates": 376,
+    "excluded_municipalities": 286,
+    "excluded_missing_county_totals": 186
+  },
+  "frozen_review_bytes": 1032943,
+  "frozen_review_sha256": "7b19f2818ae7a51c991b0f05bafeddc009f616b2a584c5d95890c20c4f09270f",
+  "complete_zip_bytes": 2790328,
+  "complete_zip_sha256": "deb56b6694bf19e28794f6f236aa30917851b32d8f7704fcc2895cce724dd163",
+  "complete_package_files": 31
+}

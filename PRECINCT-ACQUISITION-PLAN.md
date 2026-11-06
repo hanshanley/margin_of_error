@@ -204,6 +204,21 @@ Then run the required changed-UI tests/build/Pages preparation and exact
 production proof, checking the actual hosted size against the current
 996,218,736-byte baseline. Source registration, context14 and explorer
 integration remain pending; no Lycoming native row, rate or map is yet live.
+
+The local context14 extension now passes the complete offline verifier:
+**1,134 source records / 662 contextual joins / 286 usable registration
+fractions / 376 missing rates / seventeen jurisdictions**. All previous
+1,133 records, 661 joins, seventeen full geometries, exclusions and approval
+flags are unchanged. The new Lycoming adapter and source registration expose
+all seventeen published query assets; **forty loader tests** pass, including
+exact context13 preservation and rejection of changed native inputs.
+The complete **31-file / thirty-member** context package is **2,790,328 bytes**,
+SHA-256 `deb56b6694bf19e28794f6f236aa30917851b32d8f7704fcc2895cce724dd163`.
+The fixed context14 review is **1,032,943 bytes**, SHA-256
+`7b19f2818ae7a51c991b0f05bafeddc009f616b2a584c5d95890c20c4f09270f`.
+Do not modify this frozen package for UI convenience. Immutable context14
+release verification remains required before changing the current pointer;
+full changed-UI validation and actual deployment proof remain pending.
 The bounded other-parent attempts preserve Butler's **404** parent and summary
 response, and Snyder's **406** response, without bypass or approval of cached
 search text. Dauphin's already-published candidate package is not reacquired;
