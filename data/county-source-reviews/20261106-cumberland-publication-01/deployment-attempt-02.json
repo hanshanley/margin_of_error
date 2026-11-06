@@ -1,0 +1,14 @@
+{
+  "id": 42154400646,
+  "head_sha": "6095ec9e13a11211d730daf3738cbce8d732bd34",
+  "run_attempt": 2,
+  "status": "completed",
+  "conclusion": "failure",
+  "html_url": "https://github.com/hanshanley/margin_of_error/actions/runs/42154400646",
+  "created_at": "2026-11-06T03:21:32Z",
+  "updated_at": "2026-11-06T03:32:06Z",
+  "build_artifact_id": 13474271138,
+  "effective_timeout_ms": 600000,
+  "production_checks_started": false,
+  "next_action": "Do not rerun this unchanged artifact again; reduce publication payload with verified immutable routing before a fresh exact-revision build."
+}

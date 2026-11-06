@@ -104,9 +104,11 @@ preparation pass at 987,433,242 bytes. Pages run `42149085447` for revision
 `7df9f41163477c3296599baf947ad187af35185e` built successfully but failed after
 the deployment action's ten-minute `syncing_files` timeout. The old watcher has
 finished; it is not a pending deployment or production verification. The bulk
-integration below includes Fulton and increases the deployment timeout to thirty
-minutes. Its exact revision subsequently deployed successfully and passed all
-source-matched Fulton and complete-download production checks.
+integration below includes Fulton and requested a thirty-minute deployment
+timeout. Its exact revision subsequently deployed successfully and passed all
+source-matched Fulton and complete-download production checks. The later
+Cumberland attempt established that deploy-pages v5 clamps this request to a
+ten-minute maximum; the bulk success did not establish a longer effective timeout.
 
 **Bulk participation integration, locally verified November 6:** the user's
 empty-state report exposed an integration gap: existing reviewed participation
@@ -198,8 +200,49 @@ hints), build and 94-download Pages preparation pass at 987,966,974 bytes.
 Source-matched desktop/mobile and JavaScript/no-JavaScript browsers, plus two
 failed-feed checks, pass. All 297 previous unique download URLs remain; nine
 additions give 306 unique URLs / 309 anchors. All 52 UF rows and five historical
-years remain. See `local-browser.json`. Production deployment and verification
-are next; local success is not a Cumberland live-display claim.
+years remain. See `local-browser.json`. Revision
+`6095ec9e13a11211d730daf3738cbce8d732bd34` built successfully in Pages run
+`42154400646`, but attempt 1 failed while `syncing_files`. The action explicitly
+clamped the requested 1,800,000 ms timeout to its enforced 600,000 ms maximum,
+then cancelled after ten minutes; the earlier thirty-minute assumption was
+incorrect. Source data and browser verification did not fail. Artifact
+`13474271138` remains unchanged and verified by its hosted digest; the existing
+live page still serves the prior bulk integration. See `deployment-attempt-01.json`.
+Attempt 2 reused the same successful build artifact and also failed after the
+enforced ten-minute deployment limit. Its bounded watcher has finished; neither
+attempt started production checks. See `deployment-attempt-02.json`. Do not retry
+this unchanged artifact or claim Cumberland live before exact-revision proof.
+
+**Pages payload recovery, locally verified November 6:** twelve historical NC
+year-table JSON files now use their complete byte-identical originals at the
+same pinned research revision `792e3d91609f7ee929c35b5ec15c13710db94be8`.
+Both native and adapted legacy readers use the shared routing helper. The
+preparer verifies each complete response before removing only its build-output
+copy; geometry, other interactive JSON and every existing complete download
+remain available. No original observations or research exports changed.
+The prepared site is 898,630,393 bytes, down 89,336,581 bytes, with 106
+verified relocations. Thirteen focused participation tests, JavaScript syntax,
+credential screening, the build's four tests and Astro check pass. Desktop and
+mobile checks verify every historical table's full response hash and original
+counts, the actual legacy reader, preserved selection, explicit failed-fetch
+handling and no overflow. All six Cumberland display/failure modes pass,
+retaining 306 unique complete-download URLs / 309 anchors and all prior URLs.
+Proofs are under `data/county-source-reviews/20261106-participation-pages-recovery-01/`.
+The local preview is stopped. This is a proposed deployment recovery, not yet
+evidence that remote Pages synchronization succeeds; publish one fresh exact
+revision and verify its hosted artifact and live browsers before promotion.
+
+**Adams primary acquisition, November 6:** ordinary Chromium navigation acquired
+the actual official index and its declared complete general summary (three
+pages) and precinct summary (106 pages), with full response receipts and two
+independent text extractions saved privately in
+`files/adams-native-20261106-01/`. The report identifies November 3, 2026 and
+unofficial results. Do not equate the index's 10,348 mail/absentee receipts
+with the summary's 10,320 counted mail ballots, or treat 53 reporting precincts
+as complete: the report separately identifies all 53 as partially reported.
+Terms/privacy acquisition, independent all-count reconciliation and public
+facts packaging remain pending. No new public download, participation
+registration, rate or map is approved by this acquisition alone.
 
 **November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated

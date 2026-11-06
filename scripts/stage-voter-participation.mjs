@@ -4,6 +4,8 @@ import { copyFile, mkdir, readdir, readFile, writeFile } from 'node:fs/promises'
 import { dirname, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
+import { participationCurrentRoot, participationHistoricalRoot, participationReleaseRoot,
+	participationDownload } from '../public/scripts/participation-downloads.js';
 
 export const sourceRevision = '792e3d91609f7ee929c35b5ec15c13710db94be8';
 const sha256 = (bytes) => createHash('sha256').update(bytes).digest('hex');
@@ -16,7 +18,7 @@ function replaceOnce(text, before, after) {
 }
 
 export function publicationScript(source) {
-	let script = replaceOnce(source, 'fetch("data/" + path)', 'fetch("/voter-participation/data/" + path)');
+	let script = replaceOnce(source, 'fetch("data/" + path)', 'fetch(participationDownload("/voter-participation/data/" + path))');
 	script = script.replaceAll('document.querySelectorAll("nav button")',
 		'document.querySelectorAll(".participation-explorer nav button")');
 	script = replaceOnce(script,
@@ -28,7 +30,10 @@ export function publicationScript(source) {
 	script = replaceOnce(script, 'year += 8)', 'year += width < 640 ? 12 : 8)');
 	script = replaceOnce(script, 'y: 440,', 'y: 385,');
 	script = replaceOnce(script, 'y1: 45, y2: 410,', 'y1: 45, y2: 350,');
-	return `(() => {\n${script}\nlet resizeTimer;\n`
+	return `(() => {\n"use strict";\nconst participationCurrentRoot = ${JSON.stringify(participationCurrentRoot)};\n`
+		+ `const participationHistoricalRoot = ${JSON.stringify(participationHistoricalRoot)};\n`
+		+ `const participationReleaseRoot = ${JSON.stringify(participationReleaseRoot)};\n`
+		+ `${participationDownload.toString()}\n${script}\nlet resizeTimer;\n`
 		+ 'window.addEventListener("resize", () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(render, 150); });\n})();\n';
 }
 
@@ -117,7 +122,7 @@ export async function stage(source, output) {
 		source_repository: 'https://github.com/hanshanley/voter-participation',
 		source_revision: revision,
 		source_renderer_sha256: sha256(script),
-		transform: 'Publication-relative fetches, scoped navigation, responsive chart, publication preview; data byte-preserved.',
+		transform: 'Publication-relative fetches with verified immutable download routing, scoped navigation, responsive chart, publication preview; data byte-preserved.',
 		files,
 	}, null, 2) + '\n');
 	console.log(`Staged ${files.length} verified participation assets from ${revision}`);

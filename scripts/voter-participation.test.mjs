@@ -1,8 +1,8 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { createHash } from 'node:crypto';
-import { previewSvg, publicationScript } from './stage-voter-participation.mjs';
-import { participationDownload } from '../public/scripts/participation-downloads.js';
+import { previewSvg, publicationScript, sourceRevision } from './stage-voter-participation.mjs';
+import { participationDownload, participationHistoricalRoot } from '../public/scripts/participation-downloads.js';
 import { rewriteDownloadHtml, verifyReleaseAssets, verifyRemoteFiles } from './prepare-participation-pages.mjs';
 import { appendPrecinctHistory } from './build-precinct-histories.mjs';
 
@@ -39,6 +39,22 @@ test('bulk download routing preserves full snapshots and leaves interactive JSON
 		[{ path, url }]), `<a href="${url}" download>Full data</a><script>fetch("${path}")</script>`);
 });
 
+test('historical NC year tables use the pinned complete originals without moving geometry or other data', () => {
+	assert.ok(participationHistoricalRoot.includes(`/${sourceRevision}/public/data/nc/`));
+	for (const year of [2002, 2004, 2022, 2024]) {
+		const path = `/voter-participation/data/nc/${year}.json`;
+		const url = participationDownload(path);
+		assert.equal(url, participationHistoricalRoot + `${year}.json`);
+		assert.equal(participationDownload(url), url);
+		assert.equal(rewriteDownloadHtml(`<a href="${path}" download>Full table</a>`, [{ path, url }]),
+			`<a href="${url}" download>Full table</a>`);
+	}
+	for (const path of ['/voter-participation/data/nc/geometry-2024.geojson',
+		'/voter-participation/data/nc/summary.json', '/voter-participation/data/states.json',
+		'/participation-local/AL.json.gz'])
+		assert.equal(participationDownload(path), path);
+});
+
 test('pinned current data must be complete and byte-identical before removing site copies', async () => {
 	const bytes = Buffer.from('{"complete":[1,2,3]}');
 	const file = { path: '/current.json', url: 'source', bytes: bytes.length,
@@ -66,7 +82,9 @@ const renderer = [
 
 test('publication renderer uses the nested data route and responsive chart without touching source', () => {
 	const published = publicationScript(renderer);
-	assert.ok(published.includes('fetch("/voter-participation/data/" + path)'));
+	assert.ok(published.includes('fetch(participationDownload("/voter-participation/data/" + path))'));
+	assert.ok(published.includes(participationDownload.toString()));
+	assert.ok(published.includes(JSON.stringify(participationHistoricalRoot)));
 	assert.ok(published.includes('document.querySelectorAll(".participation-explorer nav button")'));
 	assert.ok(published.includes('$("visualization").clientWidth'));
 	assert.ok(published.includes('window.addEventListener("resize"'));

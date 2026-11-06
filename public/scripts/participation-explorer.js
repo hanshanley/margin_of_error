@@ -83,7 +83,7 @@ function html(tag, className = "", text = "") {
   return element;
 }
 async function get(path) {
-  const response = await fetch("/voter-participation/data/" + path);
+  const response = await fetch(participationDownload("/voter-participation/data/" + path));
   if (!response.ok) throw new Error(`${path}: HTTP ${response.status}`);
   return response.json();
 }

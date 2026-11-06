@@ -108,6 +108,14 @@ Pages artifact; `--upload` adds missing assets to the pre-created release withou
 overwriting existing files. Publication fails on any missing or changed release asset,
 or if the resulting site exceeds 1 GB.
 
+Historical NC year-table JSON uses the complete originals in the same pinned
+research commit instead of duplicating them in Pages. Both the native and adapted
+legacy readers use the shared download routing. Preparation verifies every remote
+table's full byte count and SHA-256 before removing only its build-output copy;
+geometry and other interactive JSON remain local. These relocations are included
+in the existing download manifest. Pages deployment has an enforced ten-minute
+maximum; requesting a longer timeout does not extend it.
+
 After `npm run build`, serve `dist/` with `npm run preview -- --host 127.0.0.1
 --port 4321`. Run the source-matched interaction checks with the existing research
 Python environment (Playwright/Chromium required):

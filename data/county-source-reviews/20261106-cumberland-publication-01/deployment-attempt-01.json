@@ -1,0 +1,19 @@
+{
+  "id": 42154400646,
+  "head_sha": "6095ec9e13a11211d730daf3738cbce8d732bd34",
+  "run_attempt": 1,
+  "status": "completed",
+  "conclusion": "failure",
+  "html_url": "https://github.com/hanshanley/margin_of_error/actions/runs/42154400646",
+  "created_at": "2026-11-06T03:05:43Z",
+  "updated_at": "2026-11-06T03:20:18Z",
+  "recorded_at_utc": "2026-11-06T03:21:31.307908+00:00",
+  "build_succeeded": true,
+  "deployment_failure": "Pages remained syncing_files until the action cancelled at its enforced 600000ms timeout.",
+  "requested_timeout_ms": 1800000,
+  "effective_maximum_timeout_ms": 600000,
+  "artifact_id": 13474271138,
+  "artifact_size_in_bytes": 492274255,
+  "artifact_digest": "sha256:b3576994ea61121e09e8681afbde39cf72e7b37a0d7d81b2693f5537265bc405",
+  "production_checks_not_started": true
+}
