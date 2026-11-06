@@ -10,8 +10,10 @@ import { loadReviewedCountyParticipation as loadAllReviewedCountyParticipation, 
 const additionalId = 'pennsylvania-three-additional-summaries-20261106-01';
 const somersetId = 'pennsylvania-somerset-20261106-01';
 const susquehannaId = 'pennsylvania-susquehanna-20261106-01';
+const sullivanWyomingId = 'pennsylvania-sullivan-wyoming-20261106-01';
 const loadReviewedCountyParticipation = reviews =>
-  loadAllReviewedCountyParticipation(reviews).filter(row => ![additionalId, somersetId, susquehannaId].includes(row.review_id));
+  loadAllReviewedCountyParticipation(reviews).filter(row =>
+    ![additionalId, somersetId, susquehannaId, sullivanWyomingId].includes(row.review_id));
 
 const root = new URL('../public/participation-county-context/20261106-14/', import.meta.url);
 const batchIds = ['pennsylvania-lycoming-20261106-01', 'georgia-bulk-participation-20261106-01', 'pennsylvania-greene-20261106-01', 'pennsylvania-columbia-20261106-01', 'california-bulk-participation-20261106-01', 'pennsylvania-juniata-20261106-01', 'pennsylvania-mercer-20261106-01',
@@ -31,6 +33,51 @@ const copy = value => structuredClone(value);
 const match = (rows, candidateReview = review, code = 'AL', collection = collections[code]) =>
   contextualCountyRows(rows, candidateReview, collection, code, review.context_base_url, review.geometry[code].file);
 
+test('Sullivan/Wyoming context21 preserves all context20 records, joins, exclusions and geometry', async () => {
+  const nextRoot = new URL('../public/participation-county-context/20261106-21/', import.meta.url);
+  const priorRoot = new URL('../public/participation-county-context/20261106-20/', import.meta.url);
+  const next = JSON.parse(readFileSync(new URL('review.json', nextRoot)));
+  const prior = JSON.parse(readFileSync(new URL('review.json', priorRoot)));
+  const nextRecords = JSON.parse(gunzipSync(readFileSync(new URL('complete-source-records.json.gz', nextRoot))));
+  const priorRecords = JSON.parse(gunzipSync(readFileSync(new URL('complete-source-records.json.gz', priorRoot))));
+  const live = [...loadAdditionalParticipation().counties,
+    ...loadAllReviewedCountyParticipation(JSON.parse(readFileSync('public/participation-source-reviews.json')).reviews)];
+  assert.deepEqual(nextRecords, live);
+  assert.deepEqual(nextRecords.filter(row => row.review_id !== sullivanWyomingId), priorRecords);
+  assert.deepEqual(next.observations.filter(row => row.review_id !== sullivanWyomingId), prior.observations);
+  assert.deepEqual(next.excluded, prior.excluded);
+  assert.deepEqual(next.geometry, prior.geometry);
+  for (const entry of Object.values(prior.geometry))
+    assert.deepEqual(readFileSync(new URL(entry.file, nextRoot)), readFileSync(new URL(entry.file, priorRoot)));
+  const loaded = loadCountyContextReview(live);
+  assert.deepEqual(loaded.coverage.PA, { counties: 41, rates: 38 });
+  assert.equal(loaded.base_url, '/participation-county-context/20261106-21/');
+  assert.deepEqual(next.counts, { complete_source_records: 1230, contextual_joins: 746, jurisdictions: 18,
+    reviewed_rates: 359, missing_rates: 387, excluded_municipalities: 286, excluded_missing_county_totals: 198 });
+  const collection = JSON.parse(readFileSync(new URL(next.geometry.PA.file, nextRoot)));
+  const rows = await contextualCountyRows(live.filter(row => row.state_code === 'PA'), next,
+    collection, 'PA', next.context_base_url, next.geometry.PA.file);
+  for (const [geoid, county, ballots, denominator] of [
+    ['42113', 'Sullivan', 2712, 4501], ['42131', 'Wyoming', 10542, 18565],
+  ]) {
+    const row = rows.get(geoid);
+    assert.equal(row.county, county);
+    assert.equal(row.reported_pct, 100 * ballots / denominator);
+    assert.equal(row.maps_approved, false);
+    assert.equal(row.native_record.source_fips, '');
+    assert.equal(row.native_record.analysis_rate_approved, 'False');
+    assert.equal(row.native_record.native_timezone, '');
+    assert.equal(next.observations.find(row => row.contextual_geoid === geoid).boundary_year, 2024);
+  }
+  const publication = JSON.parse(readFileSync(
+    'data/county-source-reviews/20261106-sullivan-wyoming-explorer-01/context21-published-verification.json'));
+  assert.equal(publication.immutable, true);
+  assert.equal(publication.all_32_files_reproduce_exactly, true);
+  assert.equal(publication.entire_assets.length, 4);
+  assert.equal(publication.commit_pinned_files.length, 32);
+  assert.throws(() => loadCountyContextReview(priorRecords), /complete current source records/);
+});
+
 test('Susquehanna context20 preserves every context19 record, join, exclusion and complete geometry', async () => {
   const nextRoot = new URL('../public/participation-county-context/20261106-20/', import.meta.url);
   const priorRoot = new URL('../public/participation-county-context/20261106-19/', import.meta.url);
@@ -39,7 +86,8 @@ test('Susquehanna context20 preserves every context19 record, join, exclusion an
   const nextRecords = JSON.parse(gunzipSync(readFileSync(new URL('complete-source-records.json.gz', nextRoot))));
   const priorRecords = JSON.parse(gunzipSync(readFileSync(new URL('complete-source-records.json.gz', priorRoot))));
   const live = [...loadAdditionalParticipation().counties,
-    ...loadAllReviewedCountyParticipation(JSON.parse(readFileSync('public/participation-source-reviews.json')).reviews)];
+    ...loadAllReviewedCountyParticipation(JSON.parse(readFileSync('public/participation-source-reviews.json')).reviews)
+      .filter(row => row.review_id !== sullivanWyomingId)];
   assert.deepEqual(nextRecords, live);
   assert.deepEqual(nextRecords.filter(row => row.review_id !== susquehannaId), priorRecords);
   assert.deepEqual(next.observations.filter(row => row.review_id !== susquehannaId), prior.observations);
@@ -47,9 +95,9 @@ test('Susquehanna context20 preserves every context19 record, join, exclusion an
   assert.deepEqual(next.geometry, prior.geometry);
   for (const entry of Object.values(prior.geometry))
     assert.deepEqual(readFileSync(new URL(entry.file, nextRoot)), readFileSync(new URL(entry.file, priorRoot)));
-  const loaded = loadCountyContextReview(live);
-  assert.deepEqual(loaded.coverage.PA, { counties: 39, rates: 36 });
-  assert.equal(loaded.base_url, '/participation-county-context/20261106-20/');
+  assert.throws(() => loadCountyContextReview(live), /complete current source records/);
+  assert.equal(next.observations.filter(row => row.state_code === 'PA').length, 39);
+  assert.equal(next.observations.filter(row => row.state_code === 'PA' && row.reported_pct !== null).length, 36);
   assert.deepEqual(next.counts, { complete_source_records: 1228, contextual_joins: 744, jurisdictions: 18,
     reviewed_rates: 357, missing_rates: 387, excluded_municipalities: 286, excluded_missing_county_totals: 198 });
   const collection = JSON.parse(readFileSync(new URL(next.geometry.PA.file, nextRoot)));
@@ -76,7 +124,7 @@ test('Somerset context19 preserves all context18 records, joins, exclusions and 
   const priorRecords = JSON.parse(gunzipSync(readFileSync(new URL('complete-source-records.json.gz', priorRoot))));
   const live = [...loadAdditionalParticipation().counties,
     ...loadAllReviewedCountyParticipation(JSON.parse(readFileSync('public/participation-source-reviews.json')).reviews)
-      .filter(row => row.review_id !== susquehannaId)];
+      .filter(row => ![susquehannaId, sullivanWyomingId].includes(row.review_id))];
   assert.deepEqual(nextRecords, live);
   assert.deepEqual(nextRecords.filter(row => row.review_id !== somersetId), priorRecords);
   assert.deepEqual(next.observations.filter(row => row.review_id !== somersetId), prior.observations);
@@ -110,7 +158,7 @@ test('context18 preserves every context17 record and geometry while joining only
   const priorRecords = JSON.parse(gunzipSync(readFileSync(new URL('complete-source-records.json.gz', priorRoot))));
   const live = [...loadAdditionalParticipation().counties,
     ...loadAllReviewedCountyParticipation(JSON.parse(readFileSync('public/participation-source-reviews.json')).reviews)
-      .filter(row => ![somersetId, susquehannaId].includes(row.review_id))];
+      .filter(row => ![somersetId, susquehannaId, sullivanWyomingId].includes(row.review_id))];
   assert.deepEqual(nextRecords, live);
   assert.deepEqual(nextRecords.filter(row => row.review_id !== additionalId), priorRecords);
   assert.deepEqual(next.observations.filter(row => row.review_id !== additionalId), prior.observations);

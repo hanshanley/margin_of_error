@@ -2,7 +2,34 @@
 
 ## Current verified production and next acquisition
 
-**November 6: Sullivan/Wyoming complete native numerical query prepared; not yet LIVE.**
+**November 6: Sullivan/Wyoming context21 UI validated; exact deployment pending, not LIVE.**
+Corrected native release **436805438 / `b0ae6c0`** and complete context21
+release **436809452 / `ed62932`** are immutable. Every native **16-file** and
+context **32-file** inventory, anonymous release asset, commit-pinned file,
+actual ZIP member and complete offline reproduction passes. Original
+failed-harness release **436802509** is retained and is not the integrated source.
+
+All **96 focused tests**, Astro check (**zero errors/warnings**), the full build,
+**seven local browser scenarios** and **335 complete byte-verified relocations**
+pass. Actual local prepared output is **960,005,618 bytes**; this is not yet a
+hosted-size measurement. The compatibility app was regenerated from the exact
+pinned research original before building; all other **114 manifest entries**
+remain unchanged. Browser tests preserve all **1,228 previous complete records /
+363 native rows / 802 prior anchors / 18 entire imports / historical years /
+52 UF rows**. Current totals are **1,230 records / 365 native rows / 746 county
+joins / 359 fractions / 387 missing rates / 822 anchors / 818 distinct URLs**.
+Pennsylvania has **41 observations / 38 fractions**, not statewide completeness.
+
+**Next:** push only this genuine UI integration, then verify its exact Pages
+revision, original artifact/digest, actual hosted size, all **457 selected entire
+public files** including all **444 previous paths**, **335 relocations** and
+**seven production browsers** before a LIVE claim. Do not rebuild prepared
+`dist/` while that verifier runs. Persist production proofs on the review branch,
+not through an audit-only main push. Context20 below remains the verified LIVE
+baseline until these checks pass. Afterwards resume genuine remaining county
+gaps; schedule #5 and external security-remediation blockers remain unchanged.
+
+**November 6: Sullivan/Wyoming complete native numerical and contextual review (completed).**
 The two entire declared official PDFs were acquired at 17:31 UTC with verified
 TLS, complete redirect/size/hash receipts and all four physical pages reviewed.
 Sullivan reports **2,712 ballots / 4,501 registrations / 60.25%** at native
@@ -38,9 +65,9 @@ false. Context21 is prepared with all **1,228 previous records / 744 prior joins
 18 entire geometries / exclusions / missingness** unchanged. Its **1,230 records /
 746 joins / 359 fractions / 387 missing rates / 18 jurisdictions** add only the two
 registered-voter fractions. All **55 focused native-loader tests** pass.
-**Next:** publish and verify the full immutable context21 package, update its pinned
-pointer/router, and complete UI/check/build/preparation/exact production proof
-before any new LIVE claim. The successful context20 deployment below needs no retry.
+Context21 publication and local integration subsequently passed, as recorded
+above. Require exact production proof before a new LIVE claim; the successful
+context20 deployment below needs no retry.
 
 **November 6, 17:27 UTC: Susquehanna/context20 LIVE; exact deploy-only recovery verified.**
 Exact UI **`6fdb6bde43fc6b961a1f1d4a3e5f7f7a47614716`**, Pages

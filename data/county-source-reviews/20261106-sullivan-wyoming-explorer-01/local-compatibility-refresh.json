@@ -1,0 +1,11 @@
+{
+  "reviewed_at_utc": "2026-11-06T17:49:21.277Z",
+  "research_revision": "792e3d91609f7ee929c35b5ec15c13710db94be8",
+  "source_renderer_sha256": "b152036b660047b2f9beb7db8ebc51e98484bc34276989bbfb44e256df1f345f",
+  "complete_original_public_files_checked_before_and_after": 115,
+  "unchanged_manifest_entries": 114,
+  "old_generated_app_sha256": "8133d06961f43f5eac03fd8e53b20cd3f826f77ba18d5366c48835f439424bf3",
+  "refreshed_generated_app_bytes": 26142,
+  "refreshed_generated_app_sha256": "e117f512f72f5d9e0b9479643babe77560578ae647e3e3f46c5b778a402ed399",
+  "scope": "Regenerated only local app.js and its manifest entry through the existing adapter and exact pinned research original before the context21 build. Every other complete source and manifest entry is unchanged; production must still verify the entire original artifact and public bytes."
+}

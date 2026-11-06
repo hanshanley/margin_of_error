@@ -57,7 +57,7 @@ test('historical NC year tables use the pinned complete originals without moving
 });
 
 test('only reviewed county context archives move to their complete release assets', () => {
-	for (const version of ['01', '05', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20']) {
+	for (const version of ['01', '05', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21']) {
 		const path = `/participation-county-context/20261106-${version}/complete-county-participation-context-${version}.zip`;
 		const url = participationDownload(path);
 		assert.equal(url, `https://github.com/hanshanley/margin_of_error/releases/download/voter-county-participation-context-20261106-${version}/complete-county-participation-context-${version}.zip`);
@@ -69,7 +69,7 @@ test('only reviewed county context archives move to their complete release asset
 		'/participation-county-context/20261106-11/review.json',
 		'/participation-county-context/20261106-11/complete-source-records.json.gz',
 		'/participation-county-context/20261106-11/complete-county-participation-context-10.zip',
-		'/participation-county-context/20261106-21/complete-county-participation-context-21.zip',
+		'/participation-county-context/20261106-22/complete-county-participation-context-22.zip',
 		'/participation-county-context/20261107-01/complete-county-participation-context-01.zip',
 		'/participation-county-context/20261106-11/counties-PA.geojson.gz',
 	]) assert.equal(participationDownload(path), path);
@@ -84,20 +84,22 @@ test('only redundant context13 geometry copies move to fixed complete originals,
 	}
 	for (const path of [
 		'/participation-county-context/20261106-12/geometry/county-GA.geojson',
-		'/participation-county-context/20261106-21/geometry/county-GA.geojson',
+		'/participation-county-context/20261106-22/geometry/county-GA.geojson',
 		'/participation-county-context/20261106-13/geometry/county-TX.geojson',
 		'/participation-county-context/20261106-13/review.json',
 		'/participation-context/20261104T183601Z/geometry/county-GA.geojson',
 	]) assert.equal(participationDownload(path), path);
 });
 
-test('context10/11 redundant copies and contexts17–19 use only their exact verified geometry inventories', () => {
+test('context10/11 redundant copies and contexts17–21 use only their exact verified geometry inventories', () => {
 	for (const [version, revision, codes] of [
 		['10', '47a0efe3e75e9498d89340a7c50e3b311f55c5dc', ['AL', 'AR', 'AZ', 'CA', 'DC', 'FL', 'IA', 'KY', 'MO', 'NJ', 'NV', 'OR', 'PA', 'VA', 'WA', 'WY']],
 		['11', '784d261600f349073d3cf74ba8d168595cf6a46e', ['AL', 'AR', 'AZ', 'CA', 'DC', 'FL', 'IA', 'KY', 'MO', 'NJ', 'NV', 'OR', 'PA', 'VA', 'WA', 'WY']],
 		['17', '62f1665b3cfec842e89682537ee288ee6cf1dce6', ['AL', 'AR', 'AZ', 'CA', 'DC', 'FL', 'GA', 'IA', 'KY', 'MN', 'MO', 'NJ', 'NV', 'OR', 'PA', 'VA', 'WA', 'WY']],
 		['18', 'b3d8eb533a5ade421f569c62db9b8a7d8c4a6220', ['AL', 'AR', 'AZ', 'CA', 'DC', 'FL', 'GA', 'IA', 'KY', 'MN', 'MO', 'NJ', 'NV', 'OR', 'PA', 'VA', 'WA', 'WY']],
 		['19', 'de77fd199364c95f4459cc4ba00d09500cc5843d', ['AL', 'AR', 'AZ', 'CA', 'DC', 'FL', 'GA', 'IA', 'KY', 'MN', 'MO', 'NJ', 'NV', 'OR', 'PA', 'VA', 'WA', 'WY']],
+		['20', '7ad830f70be4a8eb47d9c95896c9c99985228467', ['AL', 'AR', 'AZ', 'CA', 'DC', 'FL', 'GA', 'IA', 'KY', 'MN', 'MO', 'NJ', 'NV', 'OR', 'PA', 'VA', 'WA', 'WY']],
+		['21', 'ed629325b3c70256304c06221228247dc92ab426', ['AL', 'AR', 'AZ', 'CA', 'DC', 'FL', 'GA', 'IA', 'KY', 'MN', 'MO', 'NJ', 'NV', 'OR', 'PA', 'VA', 'WA', 'WY']],
 	]) {
 		for (const code of codes) {
 			const path = `/participation-county-context/20261106-${version}/geometry/county-${code}.geojson`;
