@@ -1,0 +1,246 @@
+{
+  "verified_at_utc": "2026-11-06T05:28:50.393497+00:00",
+  "revision": "77ef430db67d266613e37b6582c37b6df92c096e",
+  "pages_run_id": 42168004599,
+  "run_attempt": 1,
+  "artifact_id": 13480306799,
+  "artifact_zip_bytes": 484839252,
+  "artifact_zip_sha256": "7831aee4e9a641e9e3ec8042a77c914d420c6f3243d1d8bcb71b1335d84cddd3",
+  "deployment_conclusion": "success",
+  "credential_run_ids": [
+    42168004679,
+    42168004897
+  ],
+  "files": [
+    {
+      "path": "voter-participation/",
+      "bytes": 503766,
+      "sha256": "d9249841456eb7af34feb28468630f6b3e11364b96b722278902aee3f478b16d",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "scripts/participation-explorer.js",
+      "bytes": 157638,
+      "sha256": "d27f5276e76bd2ab3cc1de82c7cd043f37ead38d2832cc4d159db45878e2ee57",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "scripts/participation-downloads.js",
+      "bytes": 1635,
+      "sha256": "effc1f197e60bf95dfe943d00d8a3fa4076e4028ae449e2818c1bc1de683ac2d",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "voter-participation/app.js",
+      "bytes": 23120,
+      "sha256": "851805ba4c754ab58342f2ab316b080616a842a5a136d5f72ab0e34b1cb9a41e",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "voter-participation/publication-manifest.json",
+      "bytes": 22634,
+      "sha256": "c1fddcc1378e79b8ae710fa60a191423866bfffe1f5632a72a9e03575b020dcf",
+      "hosted_equals_local": false,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "voter-participation/preview.png",
+      "bytes": 65934,
+      "sha256": "8a5e5562f596d7ca10ca04ac179c82d5e69d531462aac9388cdd9ac129cc97f9",
+      "hosted_equals_local": false,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-source-reviews.json",
+      "bytes": 89607,
+      "sha256": "0855a7f0b6c4311e36fcfbe8baf3d61384eb238bde209dcc1dbc3f490879bcaa",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-downloads.json",
+      "bytes": 46328,
+      "sha256": "54fe6ccfc6dcd04125af0ea16bb5218da2ad4b58ff9c96285c08dbf1fbf80c86",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "county-results.json",
+      "bytes": 9452,
+      "sha256": "52c612532e24a7f33295f0624407a31a4b28386ada53e670e30c835452360ca8",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "precinct-results.json",
+      "bytes": 16908,
+      "sha256": "1284181fbf2ae8493ec3949cde08bf4b12ac7639f0a0d2d72fe1c179aab1c419",
+      "hosted_equals_local": true,
+      "complete_json_matches_local": null,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-local/AL.json.gz",
+      "bytes": 5503,
+      "sha256": "cff6df89fe80d1dabddb1d8664e56da6da0d3cdab3eebdc38227a2e90461d006",
+      "hosted_equals_local": false,
+      "complete_json_matches_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-local/AZ.json.gz",
+      "bytes": 1692,
+      "sha256": "ffef0098986d2be7aabc1c8a4b697f039481531d9e38189b870af80216d42a8f",
+      "hosted_equals_local": false,
+      "complete_json_matches_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-local/AR.json.gz",
+      "bytes": 5520,
+      "sha256": "184ca5c1e5b3913831fc881df7115383523dd1abf26bc3c109c476ea7a0bd58b",
+      "hosted_equals_local": false,
+      "complete_json_matches_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-local/VA.json.gz",
+      "bytes": 10416,
+      "sha256": "d2e31d5c59be582b2453edebbb0c70c7a3d54b0fd6c682d4ec1d08a65c4bd14d",
+      "hosted_equals_local": false,
+      "complete_json_matches_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-local/IA.json.gz",
+      "bytes": 802,
+      "sha256": "fdea5919f3051a3fcb9339362af5c20822caf8e9a3da189e1dc66f1c5d47cd23",
+      "hosted_equals_local": false,
+      "complete_json_matches_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-local/KY.json.gz",
+      "bytes": 742,
+      "sha256": "68fe96727313fa9d84276a1d6b05e024abf790b378840000a989cb3cc9c5c9e0",
+      "hosted_equals_local": false,
+      "complete_json_matches_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-local/MN.json.gz",
+      "bytes": 252815,
+      "sha256": "259748dcf74e595fa21f27399df37b51acdeebd0b679cf0eb7d5d49772447656",
+      "hosted_equals_local": false,
+      "complete_json_matches_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-local/ND.json.gz",
+      "bytes": 14896,
+      "sha256": "76b26da2470abe421e539c6072eb7ec84cb12478bf86374402d6e7bdc6fd587e",
+      "hosted_equals_local": false,
+      "complete_json_matches_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-local/ID.json.gz",
+      "bytes": 66345,
+      "sha256": "55546850135b8d17cddad858c5f9de60e7d06caee08720195809aaf1ca777f10",
+      "hosted_equals_local": false,
+      "complete_json_matches_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-local/VT.json.gz",
+      "bytes": 16933,
+      "sha256": "e8b0fac84559cc91d293fdfbca52692f47330f4dbe475838541c82dc13d35855",
+      "hosted_equals_local": false,
+      "complete_json_matches_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-local/RI.json.gz",
+      "bytes": 3133,
+      "sha256": "2474afb8b425caf4d7871c14fc5a116d8f20630bc7a362db450aadb94f3cb6d4",
+      "hosted_equals_local": false,
+      "complete_json_matches_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-local/MI.json.gz",
+      "bytes": 5548,
+      "sha256": "80e04764f9abb422428efb428bcdaacb735489d7c2ba69b48f2f8feb2a1d35a6",
+      "hosted_equals_local": false,
+      "complete_json_matches_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-local/FL.json.gz",
+      "bytes": 828,
+      "sha256": "8a5fc576c62aee45de687eb5e67e9a8aff4cd6129909dddaabdb8aefd05e8d6e",
+      "hosted_equals_local": false,
+      "complete_json_matches_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-local/MO.json.gz",
+      "bytes": 1423,
+      "sha256": "49efe1ee8135754e9cc2db1d15a94763021b65ccad809bb092bd2e04a9299c3a",
+      "hosted_equals_local": false,
+      "complete_json_matches_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-local/WY.json.gz",
+      "bytes": 2405,
+      "sha256": "62a1e40b97441e1ce63ce24ddb52557366c756aa8dfe80265e4c923c9316e85d",
+      "hosted_equals_local": false,
+      "complete_json_matches_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-local/WA.json.gz",
+      "bytes": 7301,
+      "sha256": "82d5e3398ac32056c4eedec6f42a4733401de981f52c5d5362045cc071142486",
+      "hosted_equals_local": false,
+      "complete_json_matches_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-local/NV.json.gz",
+      "bytes": 996,
+      "sha256": "c47c76a566c1e9ca049ff179717732d2c5e1c18f2caf957aa94f1b7af4f9d694",
+      "hosted_equals_local": false,
+      "complete_json_matches_local": true,
+      "live_equals_hosted": true
+    },
+    {
+      "path": "participation-local/OR.json.gz",
+      "bytes": 4980,
+      "sha256": "a5866b8a06c20eb3f8e40986e89149d94ea5a70b4761014d05602e946b165ee4",
+      "hosted_equals_local": false,
+      "complete_json_matches_local": true,
+      "live_equals_hosted": true
+    }
+  ],
+  "publication_manifest_matches_except_platform_preview": true,
+  "hosted_preview_matches_hosted_manifest": true,
+  "browser_proofs": [
+    "production-browser.json"
+  ],
+  "scope": "Wayne's complete county header retains 21,707 ballots and 36,885 registrations, printed 58.85%, explicitly attributed unofficial parent status and separate missing PDF status. The unexplained 18-ballot governor/header difference, missing parties and missing mode participation remain separate from candidate selections. All 18 reviewed records are present, all 17 previous records and 18 entire import JSONs unchanged; all 354 previous download anchors preserved, 362 anchors/359 complete URLs. No new map, demographic-rate or statewide completion approval."
+}

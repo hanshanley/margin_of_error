@@ -814,14 +814,40 @@ There are now eighteen reviewed records (seventeen PA plus D.C.),
 362 anchors / 359 unique full URLs, including eight added full Wayne downloads.
 All 106 complete relocations pass byte checks; the prepared Pages site is
 898,767,354 bytes. The local preview helper was stopped.
-Exact production deployment/live verification remains pending; no new map,
-demographic turnout, certification or statewide completion is approved.
-Published UI revision is `77ef430db67d266613e37b6582c37b6df92c096e`;
-Pages `42168004599` and credential checks `42168004679` / `42168004897`
-are being checked by the single bounded
-`wayne-exact-production-verification-01` process. Its exact watcher started
-and build was confirmed in progress. Preserve its prepared `dist` reference
-until it finishes; do not duplicate the watcher.
+Exact production verification passed at `2026-11-06T05:28:50.393497+00:00`:
+UI revision `77ef430db67d266613e37b6582c37b6df92c096e`, Pages `42168004599`
+and credential checks `42168004679` / `42168004897`. All 28 selected hosted/live
+files match, including all eighteen complete decompressed import JSONs.
+Artifact `13480306799`, 484,839,252 bytes, has SHA-256
+`7831aee4e9a641e9e3ec8042a77c914d420c6f3243d1d8bcb71b1335d84cddd3`.
+All six source-matched production browser modes/checks pass; the JavaScript
+modes also compare every prior full import fingerprint. The sole verifier
+finished and removed its temporary artifact download. Proof is persisted under
+`20261106-wayne-publication-01` without another UI deployment.
+No new map, demographic turnout, certification or statewide completion is
+approved.
+
+**Consolidated-source acquisition, November 6:** New York's Flateau state
+declaration, dashboard and declared downloads target returned HTTP 403 under
+ordinary DOM-ready Chromium navigation. Preserve the earlier network-idle
+timeout and all three later SHA-bound denial receipts privately; do not infer
+that 2026 data are absent, repeat denied requests or bypass access controls.
+New Jersey's official 2026 election page declares its consolidated periodic
+reporting index. The actual index declares twenty-one distinct November 5
+general-election county PDFs; all twenty-one complete originals and successful
+SHA-bound HTTP receipts are acquired privately under
+`nj-2026-bulk-participation-01`. This is a genuine consolidated state source,
+not twenty-one guessed county sites. Source approval/publication is pending.
+Reports distinguish early-voting/Election Day votes cast, mail ballots tallied,
+issued/received/processing counts and provisional ballots issued. Registrations
+are generally absent. Blank county fields, competing congressional/municipal
+subtotals, native negative processing values and overseas-ballot qualifications
+must remain separate. Bergen is scanned; direct visual review and local Apple
+Vision OCR recover the actual source without an external OCR service.
+Morris includes older, primary-labeled appended snapshots; do not sum them with
+its current general-election pages. Cape May appends a separately scoped
+results summary and candidate tables. Do not equate complete source acquisition
+with complete review or live statewide participation.
 
 **November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated
