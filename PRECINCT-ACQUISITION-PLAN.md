@@ -389,8 +389,20 @@ state-import fingerprints, 52 UF rows, five historical years and 318 previous
 download anchors remain. Three new complete links give 318 unique URLs /
 321 anchors. The temporary production-equivalent preview is stopped.
 Proofs are under `20261106-washington-publication-01`.
-This UI is **locally verified, not yet deployed**; publish one fresh exact
-revision and verify its hosted/live bytes and focused browsers next.
+UI revision `4e3c51908095cb5cf7201eb10d94dd6bc87503cf` passed exact Pages
+`42160838185` and credential runs `42160838259` / `42160838302`.
+At `2026-11-06T04:16:55.447014+00:00`, artifact `13476293610` passed its
+484,808,597-byte hosted ZIP digest
+`3df85178a7ad8a2fd97895364a021679130f8ea0f528a4a16c2008bb68dd88e2`.
+All 26 selected hosted/live files match, including all sixteen complete
+state imports; every import's decompressed JSON equals the local reference.
+The platform-dependent preview matches its own hosted manifest, whose other
+entries equal the local build. All seven production browser checks pass:
+every Washington county selection and complete native record, desktop/mobile
+static tables, explicit import failure and all prior full-record/download
+preservation. The known bounded watcher finished successfully and was read.
+**Washington county participation is now live verified.** Persist production
+receipts on the review branch without another main deployment.
 
 **November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated
