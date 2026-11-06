@@ -53,7 +53,7 @@ map approval or metadata-only download was created. Do not retry these same
 unchanged endpoints. Continue different source-declared county/Maine alternatives;
 leave the verified context18 UI and Maine/D.C. residuals unchanged.
 
-**November 6: Somerset complete numerical query server-locked; context19 reproduced locally.**
+**November 6: Somerset facts and context19 server-locked; explorer locally verified.**
 The official November 3 declaring page and its three complete PDFs were acquired
 with verified TLS. Two independent extractors agree on **all 73 numerical pages**:
 three EMS-summary pages, 67 precinct pages including every candidate row, and three
@@ -85,9 +85,24 @@ adding only Somerset: **1,227 records / 743 joins / 356 rates / 387 missing rate
 Its complete **32-file / 31-member** query reproduces locally; ZIP **2,910,100
 bytes**, SHA-256
 `e9c64a0c3c6f698f34ae39ae6a8de9608c3d50ef03ec001bb96776c28881729e`.
-Next: publish and server-lock context19, then validate, deploy and verify the
-exact explorer revision. **No new UI is live yet**; the live context18
-baseline remains unchanged. The separate Erie parent returned **403**, without
+Context revision **`de77fd199364c95f4459cc4ba00d09500cc5843d`**, tag
+`voter-county-participation-context-20261106-19`, release **436651456**, reports
+**immutable: true**. Exact credential jobs **42241622154 / 42241622295** pass.
+All four entire anonymous assets, all 32 pinned files and all 31 archive members
+match; the extracted query reproduces every file byte-identically.
+The pending explorer preserves all prior records and downloads and passes
+**90 focused county/context/router tests / nine additional import-renderer
+tests / Astro check / full build / seven local browser scenarios**. Astro reports
+zero errors and warnings, with five existing hints. Local Pages preparation
+verifies **297 entire relocated downloads** and measures **984,607,948 bytes**.
+The generated compatibility renderer was refreshed with the existing adapter and
+unchanged pinned research source, not exempted from manifest equality.
+The page has **362 native rows / 781 anchors / 777 distinct URLs**; Pennsylvania
+has **38 observations / 35 usable rates**, not complete statewide coverage.
+Next: deploy and verify the exact explorer revision against its original hosted
+artifact, actual hosted size, complete public bytes and production browsers.
+**No new UI is live yet**; the live context18 baseline remains unchanged.
+The separate Erie parent returned **403**, without
 bypass or retry; Fayette returned an empty **404**, not global absence evidence.
 Their complete receipts are retained in
 `20261106-pa-somerset-erie-fayette-acquisition-01`.

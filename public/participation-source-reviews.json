@@ -1,6 +1,37 @@
 {
   "reviews": [
     {
+      "id": "pennsylvania-somerset-20261106-01",
+      "label": "Somerset County, Pennsylvania 2026: native ballots, registrations and complete three-report numerical query",
+      "data_directory": "data/county-source-reviews/20261106-somerset-facts-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/dc1a42aa2008c40e99c96d3386620fa39dd0bf9e/data/county-source-reviews/20261106-somerset-facts-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-somerset-20261106-01/complete-query.zip",
+      "complete_download_bytes": 54348,
+      "complete_download_sha256": "c50cadbe1e29ee6c5067ff34f80c8ac1e8188addeb6f9fa7bcc08e22c25fe47e",
+      "checksums_file": "manifest.json",
+      "review_status": "complete_three_report_numerical_query_reviewed_unofficial",
+      "maps_approved": false,
+      "scope_note": "Native 27,019 ballots / 48,578 registrations, printed 55.62%, not candidate selections, CVAP/VAP/VEP or demographic turnout. All 73 numerical pages across the EMS summary, 67-unit precinct breakdown and statistics report independently match across two PDF engines. All registrations, ballots, blanks and six county-contest candidate/party vectors reconcile in every supplied mode. Preserve 23,233 Election Day, 3,786 Absentee/Mail-In and explicit zero Provisional ballots; three blank ballots are already included. Keep 0/67 complete, 67/67 partial, and absentee reporting 65/67 with 67 in its mail column, three distinct clocks without timezones, native spelling and eight trailing-zero formatting differences. Native contest totals, total votes cast, overvotes and undervotes are absent, not zero; restricted districts and modes have no borrowed electorate. All seventeen entire release assets, pinned files, sixteen ZIP members and twelve isolated tests pass byte-identical offline reproduction. Release 436646227 is server-locked. Native FIPS is missing; separately reviewed Census context does not certify 2026 election reporting boundaries. Unofficial results do not prove finished counting or certification. Original HTML/PDF templates stay private.",
+      "tables": [
+        {"file": "county-participation.csv", "label": "Somerset: complete native county ballots, registrations and printed fraction (CSV)"},
+        {"file": "native-participation-modes.csv", "label": "Somerset: all county participation modes, blank ballots already included (CSV)"},
+        {"file": "native-unit-participation.csv", "label": "Somerset: all 67 native unit registrations, ballots, blanks and modes (CSV)"},
+        {"file": "county-candidate-results.csv", "label": "Somerset: every county candidate and write-in mode count across six contests (CSV)"},
+        {"file": "unit-candidate-results.csv", "label": "Somerset: every native unit candidate and write-in mode count (CSV)"},
+        {"file": "county-literal-party-totals.csv", "label": "Somerset: separately scoped native candidate-party mode totals, not participation (CSV)"},
+        {"file": "county-contest-accounting.csv", "label": "Somerset: all contest-mode accounting, absent fields and electorates retained (CSV)"},
+        {"file": "native-reporting-statistics.csv", "label": "Somerset: all native reporting counters and contradictory mode columns (CSV)"},
+        {"file": "statistics-crosscheck.csv", "label": "Somerset: all independent statistics crosschecks and native percentage strings (CSV)"},
+        {"file": "native-source-pages.csv", "label": "Somerset: complete 73-page numerical inventory and three distinct clocks (CSV)"},
+        {"file": "native-facts.json", "label": "Somerset: complete independently extracted numerical inputs and source receipts (JSON)"},
+        {"file": "audit.json", "label": "Somerset: full participation and candidate reconciliation, retained qualifications (JSON)"},
+        {"file": "manifest.json", "label": "Somerset: complete numerical-query byte inventory (JSON)"},
+        {"file": "METHODS.txt", "label": "Somerset: numerical scope, missingness and standalone reproduction instructions (text)"},
+        {"file": "review-somerset.py", "label": "Somerset: complete standard-library offline query reproducer (Python)"},
+        {"file": "test_review_somerset.py", "label": "Somerset: twelve portable numerical scope and integrity tests (Python)"}
+      ]
+    },
+    {
       "id": "pennsylvania-three-additional-summaries-20261106-01",
       "label": "Indiana, Lackawanna and Schuylkill, Pennsylvania 2026: native ballots, registrations and complete summary query",
       "data_directory": "data/county-source-reviews/20261106-three-pa-summary-facts-01",

@@ -1,0 +1,50 @@
+{
+  "checked_at_utc": "2026-11-06T15:25:56.135818+00:00",
+  "facts_revision": "dc1a42aa2008c40e99c96d3386620fa39dd0bf9e",
+  "context_revision": "de77fd199364c95f4459cc4ba00d09500cc5843d",
+  "focused_county_context_and_router_tests": 90,
+  "additional_import_renderer_tests": 9,
+  "astro_errors": 0,
+  "astro_warnings": 0,
+  "astro_hints": 5,
+  "production_build_passed": true,
+  "verified_full_relocations": 297,
+  "local_prepared_bytes": 984607948,
+  "local_browser_scenarios": 7,
+  "local_browser_proof": "local-browser.json",
+  "compatibility_renderer_sha256": "8a2a6affea0827ec5e56c3b0bf63420e89b27d5d073f820ed0ff401851c3e299",
+  "unchanged_research_revision": "792e3d91609f7ee929c35b5ec15c13710db94be8",
+  "production_status": "pending exact deployment, original hosted artifact, complete public bytes and production browser checks",
+  "logs": [
+    {
+      "file": "somerset-focused-tests-01.log",
+      "bytes": 23286,
+      "sha256": "9bc3618341c84515c0a0fccba5c86bff49e5ca87514f83eeb67834c171e61aeb"
+    },
+    {
+      "file": "somerset-additional-renderer-tests-01.log",
+      "bytes": 2357,
+      "sha256": "c068c33485580162ee7dfeda0fb1e1421e3bff2bfcabc4b48200ef08e437a482"
+    },
+    {
+      "file": "somerset-astro-check-01.log",
+      "bytes": 1915,
+      "sha256": "072ff9a0f6294ff6896a8188deee83893f0542757f9791817a8a37520077cb3e"
+    },
+    {
+      "file": "somerset-build-01.log",
+      "bytes": 5782,
+      "sha256": "0dfa8e7525ad706f45ee35953651ed51d2efdb5fcaf4c487b6f10ace1694bc89"
+    },
+    {
+      "file": "somerset-pages-preparation-01.log",
+      "bytes": 74,
+      "sha256": "5be4c48071f7f7b21a30d5669ab2e50db95ff3c4b0d723d7a0367639dfc5e587"
+    },
+    {
+      "file": "somerset-local-browser-check-01.log",
+      "bytes": 4149,
+      "sha256": "2a831ca0a6b75ea091982e544fa51a79c3ca3c155e7ff0884117a765bb7b0aac"
+    }
+  ]
+}

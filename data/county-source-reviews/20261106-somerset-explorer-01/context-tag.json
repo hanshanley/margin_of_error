@@ -1,0 +1,36 @@
+{
+  "ref": {
+    "ref": "refs/tags/voter-county-participation-context-20261106-19",
+    "node_id": "REF_kwDOTeY7QdoAOHJlZnMvdGFncy92b3Rlci1jb3VudHktcGFydGljaXBhdGlvbi1jb250ZXh0LTIwMjYxMTA2LTE5",
+    "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/refs/tags/voter-county-participation-context-20261106-19",
+    "object": {
+      "sha": "4787c4f49363052d97a62bbec09ce3358a166c67",
+      "type": "tag",
+      "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/tags/4787c4f49363052d97a62bbec09ce3358a166c67"
+    }
+  },
+  "tag": {
+    "node_id": "TA_kwDOTeY7QdoAKDQ3ODdjNGY0OTM2MzA1MmQ5N2E2MmJiZWMwOWNlMzM1OGExNjZjNjc",
+    "sha": "4787c4f49363052d97a62bbec09ce3358a166c67",
+    "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/tags/4787c4f49363052d97a62bbec09ce3358a166c67",
+    "tagger": {
+      "name": "Hans Hanley",
+      "email": "hwahhanley@gmail.com",
+      "date": "2026-11-06T15:17:10Z"
+    },
+    "object": {
+      "sha": "de77fd199364c95f4459cc4ba00d09500cc5843d",
+      "type": "commit",
+      "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/commits/de77fd199364c95f4459cc4ba00d09500cc5843d"
+    },
+    "tag": "voter-county-participation-context-20261106-19",
+    "message": "Complete contextual county participation query19 with Somerset\n",
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  }
+}

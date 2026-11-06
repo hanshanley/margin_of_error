@@ -516,6 +516,61 @@ export function loadReviewedAdditionalPennsylvaniaParticipation(reviews) {
   });
 }
 
+export function loadReviewedSomersetParticipation(reviews) {
+  const id = 'pennsylvania-somerset-20261106-01';
+  const matches = reviews.filter(review => review.id === id);
+  if (matches.length !== 1) throw new Error(`Missing or duplicated reviewed county source: ${id}`);
+  const review = matches[0], directory = resolve(review.data_directory);
+  const manifestBody = readFileSync(resolve(directory, 'manifest.json'));
+  if (createHash('sha256').update(manifestBody).digest('hex')
+    !== 'f46ccaaaab2ea178ab8031c64cb1e8d88de21caa945f15bfceffb33ad3b5f08a')
+    throw new Error(`Invalid reviewed county participation: ${id} / manifest.json`);
+  for (const file of JSON.parse(manifestBody.toString())) {
+    const body = readFileSync(resolve(directory, file.file));
+    if (body.length !== file.bytes || createHash('sha256').update(body).digest('hex') !== file.sha256)
+      throw new Error(`Invalid reviewed county participation: ${id} / ${file.file}`);
+  }
+  const rows = csv(resolve(directory, 'county-participation.csv'));
+  const reporting = csv(resolve(directory, 'native-reporting-statistics.csv'));
+  const facts = JSON.parse(readFileSync(resolve(directory, 'native-facts.json'), 'utf8'));
+  const native = rows[0], ballots = Number(native?.ballots_cast), denominator = Number(native?.registered_voters);
+  if (rows.length !== 1 || native.county !== 'Somerset' || native.state_code !== 'PA'
+    || native.election_date !== '2026-11-03' || native.native_measure_literal !== 'Ballots Cast - Total'
+    || native.source_fips !== '' || native.native_status_literal !== 'UNOFFICIAL RESULTS'
+    || native.declared_timezone !== '' || native.maps_approved !== 'False' || native.complete_counting !== 'False'
+    || ballots !== 27019 || denominator !== 48578 || native.blank_ballots_already_included !== '3'
+    || native.native_printed_turnout !== '55.62%'
+    || Number(native.calculated_registered_fraction) !== ballots / denominator)
+    throw new Error(`Invalid reviewed county participation: ${id}`);
+  const updates = ['summary', 'statement', 'statistics'].map(role => ({
+    source: role, native_update_literal: facts.reports[role][0].source_update_literal, declared_timezone: '',
+  }));
+  const quality = [
+    'Native Ballots Cast - Total and the same county report registrations; candidate selections and blank ballots are not added to the ballot total.',
+    'Native registered-voter fraction, not CVAP, VAP, VEP, CPS, demographic turnout or a district/mode electorate.',
+    'UNOFFICIAL RESULTS and reporting completeness do not establish completed counting or certification. Native clocks have no declared timezone; native FIPS is missing.',
+    'All 73 numerical report pages, 67 native units and six county contests reconcile in every supplied mode; complete candidate and literal-party results remain separate from participation.',
+    '27,019 ballots include 23,233 Election Day, 3,786 Absentee/Mail-In and explicit zero Provisional; three blank ballots are already included.',
+    'Native 0/67 complete and 67/67 partial remain unchanged; absentee reporting prints 65/67 with 67 in its mail column. These counters are not repaired or summed.',
+    'Eight statistics percentages omit trailing zeros; both native strings are retained and their decimal values agree exactly.',
+    'Native contest totals, total votes cast, overvotes and undervotes are absent, not zero; restricted districts and ballot modes have no borrowed registration denominator.',
+  ];
+  return [{
+    year: 2026, state_code: 'PA', county_id: 'reviewed:PA:Somerset', county: 'Somerset',
+    geography_level: 'county', ballots, denominator, denominator_basis: 'native_registered_voters',
+    participation_measure_literal: native.native_measure_literal, reported_pct: 100 * ballots / denominator,
+    native_printed_pct: native.native_printed_turnout, source_status_literal: native.native_status_literal,
+    reported_units: 67, total_units: 67, source_rows: 1, maps_approved: false, review_id: id,
+    native_record: native, native_source_updates: updates,
+    source_update_label: updates.map(row =>
+      `${row.source}: ${row.native_update_literal} (timezone not declared)`).join('; '),
+    source_reporting_label: reporting.map(row =>
+      `${row.label_literal}: ${row.reported}/${row.total}`).join('; ') + '; ' + quality.join(' '),
+    quality, source_url: `${review.base_url}county-participation.csv`,
+    complete_download_url: review.complete_download_url,
+  }];
+}
+
 export function loadReviewedCountyParticipation(reviews) {
   const observations = [], seen = new Set();
   for (const [id, ballotField, denominatorField, printedField, code, names] of profiles) {
@@ -887,5 +942,5 @@ export function loadReviewedCountyParticipation(reviews) {
     ...loadCaliforniaParticipation(reviews).filter(row => row.geography_level === 'county'),
     ...loadGeorgiaParticipation(reviews).counties, ...loadReviewedMinnesotaParticipation(reviews),
     ...loadLawrenceParticipation(reviews), ...loadHuntingdonParticipation(reviews),
-    ...loadReviewedAdditionalPennsylvaniaParticipation(reviews)];
+    ...loadReviewedAdditionalPennsylvaniaParticipation(reviews), ...loadReviewedSomersetParticipation(reviews)];
 }
