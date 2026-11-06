@@ -404,6 +404,45 @@ preservation. The known bounded watcher finished successfully and was read.
 **Washington county participation is now live verified.** Persist production
 receipts on the review branch without another main deployment.
 
+**South Dakota duplicate-import correction:** checking the live explorer,
+not just the additional-state loader's inventory, confirms all 66 South Dakota
+counties already appear through the older current-local feed. All 66 native
+county IDs and their separate ballot totals were browser-verified live against
+the reviewed reconciliation. The attempted extra import was withdrawn before
+publication; it is not new coverage and must not replace the existing reporting
+units or vote-center identities. Full source ZIP and pinned numerical sources
+were anonymously byte-verified again. Private receipts are
+`files/south-dakota-existing-live-feed-proof-01.json` and
+`files/south-dakota-existing-feed-source-verification-01.json`.
+
+**Washoe County participation, numerical review prepared, not yet live:**
+the genuine missing Nevada county feed is reproduced in the live explorer.
+The full retained 553,410-byte, 23-page native report has SHA-256
+`ac8d43ad5b41e41ccb1ac6ddac54cb37630f00b979c44ba2067e4330ad35c63b`.
+Independent PDF engines agree on the county participation header.
+`scripts/review-washoe-county-participation.py` checks all 23 native page
+identities and source timestamps, the county header, independent six-mode
+summary and both first/last-page Times Cast vectors. They agree on 191,830
+ballots and 329,777 registrations, native printed 58.17%. The six modes are
+54,762 Early Vote, 35,133 Election Day, 101,935 Mail and three distinct native
+zeroes. Mode percentages use the same entire county registration; never sum
+those repeated denominators or assign modes to precincts.
+
+House CD2 is separately reconciled by candidate and every mode:
+189,752 candidate votes, 1,954 native undervotes and 124 native overvotes.
+Literal parties remain DEM 111,162, IAP 8,325 and REP 70,265, not party turnout
+or substitutes for participation. Other contests' facts remain in the full
+native numerical transcript without new reconciliation claims. Preserve the
+literal `REPORT 6 - UNOFFICIAL RESULTS` and native PDF generation timestamp
+`11/4/2026 6:13:35 PM`; do not replace it with the dashboard's later 6:20 PM
+update or infer a timezone. Registration cutoff and final counting are not
+established. County map joins, demographic rates and statewide completeness
+remain unapproved. The public package contains all three complete CSVs,
+all 23 pages' numerical facts, original receipt digests and a portable
+standard-library offline reviewer, not the original PDF presentation template.
+The full acquired PDF remains privately retained at its recorded primary URL.
+Publish and anonymously byte-verify a fixed release before wiring this source.
+
 **November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated
 `git-filter-repo --sensitive-data-removal` rewrite removed Google API key patterns

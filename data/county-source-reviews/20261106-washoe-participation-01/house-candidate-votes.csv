@@ -1,0 +1,4 @@
+year,state_code,county,contest,native_candidate_name_json,candidate_name,party_literal,Early Vote,Election Day,Mail,Prov-Election Day,Prov-Early Vote,ICX,candidate_votes,native_reported_percent
+2026,NV,Washoe,REPRESENTATIVE IN CONGRESS DISTRICT 2,"""Benitez-Thompson, Teresa \nF.""","Benitez-Thompson, Teresa F.",DEM,30765,18278,62119,0,0,0,111162,58.58%
+2026,NV,Washoe,REPRESENTATIVE IN CONGRESS DISTRICT 2,"""Chapman, Lynn""","Chapman, Lynn",IAP,1908,1994,4423,0,0,0,8325,4.39%
+2026,NV,Washoe,REPRESENTATIVE IN CONGRESS DISTRICT 2,"""Flippo, David""","Flippo, David",REP,21820,14511,33934,0,0,0,70265,37.03%

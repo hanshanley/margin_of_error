@@ -1,0 +1,23 @@
+{
+  "year": 2026,
+  "state_code": "NV",
+  "county": "Washoe",
+  "county_observations": 1,
+  "ballots": 191830,
+  "registrations": 329777,
+  "native_counting_groups": 6,
+  "house_candidate_votes": 189752,
+  "house_undervotes": 1954,
+  "house_overvotes": 124,
+  "house_party_votes": {
+    "DEM": 111162,
+    "IAP": 8325,
+    "REP": 70265
+  },
+  "original_pdf_pages": 23,
+  "source_status_literal": "REPORT 6 - UNOFFICIAL RESULTS",
+  "source_generated_at": "11/4/2026 6:13:35 PM",
+  "maps_approved": false,
+  "statewide_completion_approved": false,
+  "demographic_rates_approved": false
+}
