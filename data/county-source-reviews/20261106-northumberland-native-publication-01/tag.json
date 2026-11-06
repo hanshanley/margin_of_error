@@ -1,0 +1,36 @@
+{
+  "ref": {
+    "ref": "refs/tags/voter-county-northumberland-native-turnout-20261106-01",
+    "node_id": "REF_kwDOTeY7QdoAQHJlZnMvdGFncy92b3Rlci1jb3VudHktbm9ydGh1bWJlcmxhbmQtbmF0aXZlLXR1cm5vdXQtMjAyNjExMDYtMDE",
+    "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/refs/tags/voter-county-northumberland-native-turnout-20261106-01",
+    "object": {
+      "sha": "c12278bca131daf7d204b0c9cec05c15f699aaed",
+      "type": "tag",
+      "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/tags/c12278bca131daf7d204b0c9cec05c15f699aaed"
+    }
+  },
+  "tag": {
+    "node_id": "TA_kwDOTeY7QdoAKGMxMjI3OGJjYTEzMWRhZjdkMjA0YjBjOWNlYzA1YzE1ZjY5OWFhZWQ",
+    "sha": "c12278bca131daf7d204b0c9cec05c15f699aaed",
+    "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/tags/c12278bca131daf7d204b0c9cec05c15f699aaed",
+    "tagger": {
+      "name": "Hans Hanley",
+      "email": "hwahhanley@gmail.com",
+      "date": "2026-11-06T18:21:15Z"
+    },
+    "object": {
+      "sha": "c0ede784884015cfc465d5dbe195d464b3ec65db",
+      "type": "commit",
+      "url": "https://api.github.com/repos/hanshanley/margin_of_error/git/commits/c0ede784884015cfc465d5dbe195d464b3ec65db"
+    },
+    "tag": "voter-county-northumberland-native-turnout-20261106-01",
+    "message": "Complete native Northumberland county participation and six-contest query\n",
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  }
+}

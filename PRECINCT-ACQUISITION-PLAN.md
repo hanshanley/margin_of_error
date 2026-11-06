@@ -2,6 +2,23 @@
 
 ## Current verified production and next acquisition
 
+**November 6: Bedford/Northumberland context22 prepared; not LIVE.**
+Both complete native numerical packages are immutable and fully verified in
+draft and public phases. Both counties independently match both entire Census
+inventories and the unchanged previously hosted 2024 contextual geometry.
+Context22 retains every **1,230 previous complete records / 746 county joins /
+18 entire geometries / exclusions / missingness**, adding only the two reviewed
+registered-voter fractions. Its **1,232 records / 367 native rows / 748 joins /
+361 fractions / 387 missing rates / 18 jurisdictions** preserve the failed
+context21's data without falsely calling that revision LIVE.
+Pennsylvania has **43 observations / 40 fractions**, not statewide completeness.
+The complete **32-file / 31-member** context query passes standalone verification;
+review SHA-256 **`dcfa7f91c7d9c6e79b5662272980a7b79aa302e0271c3c6f9f8c87f9e516e3d6`**,
+ZIP **2,914,674 bytes / SHA-256
+`25b497b65e781cb17755f9978d03a6e5127bbb2bc0bf094425b8b2314e6f38d6`**.
+Context publication and genuine UI integration are next; the frozen previous
+prepared artifact has not been rebuilt as a queue-failure workaround.
+
 **November 6: Sullivan/Wyoming context21 UI validated; exact deployment blocked, not LIVE.**
 Corrected native release **436805438 / `b0ae6c0`** and complete context21
 release **436809452 / `ed62932`** are immutable. Every native **16-file** and
@@ -90,7 +107,7 @@ substitution was made. Fayette404/Cambria403 have complete direct receipts;
 earlier browser-only notes without retained originals are not canonical vendor
 evidence. These outcomes do not establish global source absence.
 
-**November 6: Northumberland whole-county query validated; publication pending.**
+**November 6: Northumberland whole-county query published; UI integration pending.**
 The actual homepage's literal November general summary declares **`overall7.pdf`**.
 One ordinary request followed its declared **301** redirect and acquired the
 complete **38,693-byte / three-page** PDF, SHA-256
@@ -117,8 +134,15 @@ three physical pages**. All **ten isolated and actual extracted-archive tests /
 test-harness self-ZIP assumption was caught and fixed before any tag or release;
 the failed private test log and candidate build are retained.
 The complete **16-file** query ZIP is **16,064 bytes / SHA-256
-`8c4c76b3bc19dd8baa6d188cd25b7c72c8520d68c6da6259d1ac47f989799bc2`**. **No
-Northumberland numerical release, generic rate or map approval yet.** Reuse the
+`8c4c76b3bc19dd8baa6d188cd25b7c72c8520d68c6da6259d1ac47f989799bc2`**.
+Immutable release **436841116 / `c0ede784884015cfc465d5dbe195d464b3ec65db`**,
+tag **`voter-county-northumberland-native-turnout-20261106-01`**, passes all
+**16 entire anonymous assets / 16 pinned files / 15 actual ZIP members / ten
+actual extracted tests / 16 byte-identical reproduced files** in draft and
+public phases. Credential jobs **42269930943 review / 42269931353 tag** pass.
+Both entire Census inventories and original archives independently identify
+**Northumberland County, PA / 42097**; its exact previously hosted 2024 contextual
+geometry is unchanged. **No native approval flags changed or LIVE addition yet.** Reuse the
 private complete original under `files/northumberland-native-acquisition-01/`;
 do not reacquire its unchanged parent/PDF.
 

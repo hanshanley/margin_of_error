@@ -1,0 +1,120 @@
+{
+  "checked_at_utc": "2026-11-06T18:22:31.339694+00:00",
+  "revision": "c0ede784884015cfc465d5dbe195d464b3ec65db",
+  "tag": "voter-county-northumberland-native-turnout-20261106-01",
+  "release_id": 436841116,
+  "phase": "draft",
+  "immutable": false,
+  "assets": [
+    {
+      "file": "audit.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-737fd97a591623b5b978/audit.json",
+      "bytes": 922,
+      "sha256": "26e0796c5f54b9a5f09834a344e19e4e951d91b4b6fd9e022bfe2a299556a1d8"
+    },
+    {
+      "file": "ballot-modes.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-737fd97a591623b5b978/ballot-modes.csv",
+      "bytes": 234,
+      "sha256": "831b84ad6a1456cae240b769d0976c437c119bdeacc34ca7d35ee6012ea1e7c4"
+    },
+    {
+      "file": "candidate-results.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-737fd97a591623b5b978/candidate-results.csv",
+      "bytes": 2203,
+      "sha256": "57ce540c951e5fb36e69c89491a01ec2ca878286074c3c04ccea70a8f41fa2dd"
+    },
+    {
+      "file": "checksums.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-737fd97a591623b5b978/checksums.json",
+      "bytes": 1830,
+      "sha256": "93111db0c6b298d2aff7bb0b8b8a0cddbb58817f81a997c9673161bee4ea8341"
+    },
+    {
+      "file": "complete-query.zip",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-737fd97a591623b5b978/complete-query.zip",
+      "bytes": 16064,
+      "sha256": "8c4c76b3bc19dd8baa6d188cd25b7c72c8520d68c6da6259d1ac47f989799bc2"
+    },
+    {
+      "file": "contest-accounting.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-737fd97a591623b5b978/contest-accounting.csv",
+      "bytes": 2100,
+      "sha256": "8377fb7ca830266bc94107da8c3ec007b4d8fe9dcbd77098309f6b3bf01cdc65"
+    },
+    {
+      "file": "contest-scope.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-737fd97a591623b5b978/contest-scope.csv",
+      "bytes": 515,
+      "sha256": "9b487438ea1c53fb536d1b2296cb9e93bc3f0bd4285145cd46b493083458547d"
+    },
+    {
+      "file": "contest-totals.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-737fd97a591623b5b978/contest-totals.csv",
+      "bytes": 538,
+      "sha256": "df265804c2c5fed4ccd1134dd8f87e53a11d923b7cfe4f7d03fbeceda72c1b06"
+    },
+    {
+      "file": "county-participation.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-737fd97a591623b5b978/county-participation.csv",
+      "bytes": 348,
+      "sha256": "78b381a400539888fd181949b31084eec2b1d9ef9afeb553f6730110f44cc92b"
+    },
+    {
+      "file": "methods.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-737fd97a591623b5b978/methods.json",
+      "bytes": 2589,
+      "sha256": "f469cc93c4c59dd47a407dea944d0eee4acdf77b96427846631ac6a9e55d20e0"
+    },
+    {
+      "file": "reporting.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-737fd97a591623b5b978/reporting.csv",
+      "bytes": 254,
+      "sha256": "5aafdab0699bb4011000e7fbc2e90125d6458ee270cf3230e04990caad3c8418"
+    },
+    {
+      "file": "review-counties.py",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-737fd97a591623b5b978/review-counties.py",
+      "bytes": 12498,
+      "sha256": "44dda412bda6431aed7b2989265e2ca2b9b8f5696d6c52cb729c44b8a1179158"
+    },
+    {
+      "file": "source-inputs.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-737fd97a591623b5b978/source-inputs.json",
+      "bytes": 11084,
+      "sha256": "3f8033bcd354df67046a64d46347a383ac6fd2c96a273229f79dbee12f3a2a3a"
+    },
+    {
+      "file": "source-pages.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-737fd97a591623b5b978/source-pages.csv",
+      "bytes": 210,
+      "sha256": "f6dda70426681983f43fd25d135b234ee8d01838a27fc5f29ffbcaae37b05507"
+    },
+    {
+      "file": "source-provenance.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-737fd97a591623b5b978/source-provenance.json",
+      "bytes": 2621,
+      "sha256": "f43714bd2e7db9cc5b58cfe0d2884431313eb220423dfca9af9a1be1ccd1effb"
+    },
+    {
+      "file": "test_review_counties.py",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-737fd97a591623b5b978/test_review_counties.py",
+      "bytes": 8374,
+      "sha256": "e72bc6434bb1956b8e4418c4e1db08dce888114c19ea4dde40cb1976d3ed4c67"
+    }
+  ],
+  "analysis_ballot_approvals": 0,
+  "analysis_rate_approvals": 0,
+  "map_approvals": 0,
+  "complete_physical_pages_and_independent_extractions_retained": true,
+  "physical_pages": 3,
+  "complete_candidate_vectors": 23,
+  "complete_mode_accounting_rows": 24,
+  "native_missing_parties_timezones_registration_cells_and_fips_retained": true,
+  "all_native_write_in_vectors_retained_without_invented_affiliations": true,
+  "multi_vote_totals_not_county_ballots": true,
+  "zip_members": 15,
+  "all_16_files_reproduce_exactly": true,
+  "focused_tests": 10,
+  "archive_test_stderr": "..........\n----------------------------------------------------------------------\nRan 10 tests in 0.129s\n\nOK\n"
+}
