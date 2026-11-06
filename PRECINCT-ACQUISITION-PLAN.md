@@ -274,7 +274,7 @@ Native status is still **0 complete**, **87 partially reported** and **86 of
 or final-counting claim is approved by this private review. Alerts 1/2 remain
 open/unknown; external revocation and cached-object cleanup are unconfirmed.
 
-**Centre facts-only publication is built and verified; release/UI are next.**
+**Centre facts-only publication is released and byte-verified; UI is next.**
 The county's linked copyright notice reserves the county and CivicPlus
 presentation rights. Keep the existing private web/PDF source package private;
 do not infer a source-template redistribution license or attach that ZIP.
@@ -296,13 +296,21 @@ All 23 archive members and checksums pass, with byte-identical packaged offline
 replay and no unredacted service/telemetry patterns. Candidate archive
 `complete-centre-2026-native-facts-01.zip` is 91,415 bytes, SHA256
 `7c32bc66a43932b95d2bc6f43cfd49419ceb7cba70df0b1c46930e6f31e9d39a`.
-Complete data are staged under
+Complete data are committed at `ea4cb1dfbfd522f7706431ea8717250eae1e7a9c` under
 `data/county-source-reviews/20261106-centre-facts-01/`; publication status is in
 `data/county-source-reviews/20261106-centre-publication-01/verification.json`.
-Next commit the complete facts, create a new immutable release and byte-verify
-the ZIP plus all 13 CSVs, then add all 14 download links while preserving the
-existing 274. Require check/build/Pages preparation and the exact 288-link set
-in four local and production display modes before marking UI live. This is a
+The immutable `voter-county-pennsylvania-centre-20261106-01` release now contains
+the complete ZIP and all 13 CSVs. All draft assets were downloaded and byte-verified
+before publication; all 14 public assets and 13 commit-pinned raw CSVs were then
+independently downloaded and byte-verified. Keep the exact native CSV CRLFs and
+API response whitespace rather than normalizing verified source bytes.
+The registry now adds all 14 download links while preserving the existing 274.
+Seven participation tests, Astro check (zero errors), build and Pages preparation
+pass: 94 bulk downloads verified, prepared site 987,361,863 bytes. Four local modes
+pass the exact 288-URL / 291-anchor multiset, preserving all 274 previous URLs and
+their three intentional duplicates, 52 UF rows, five historical years and 255
+historical scope cells. Require the same four production modes and successful
+exact-revision deployment before marking UI live. This is a
 download-only batch: do not repeat completed unchanged map suites or alter
 county/precinct coverage, map overrides or the Maine all-district guard.
 

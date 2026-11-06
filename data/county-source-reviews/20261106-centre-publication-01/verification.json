@@ -1,5 +1,5 @@
 {
-  "status": "complete_facts_verified_release_and_ui_pending",
+  "status": "complete_facts_release_verified_ui_pending",
   "verified_at_utc": "2026-11-06T00:46:39.292797+00:00",
   "profile": "centre-complete-numerical-facts-v1",
   "data_directory": "data/county-source-reviews/20261106-centre-facts-01",
@@ -28,8 +28,34 @@
     "inaccessible_child_metadata_used_as_election_data": false
   },
   "tests_passed": 16,
-  "release_verified": false,
+  "release_verified": true,
+  "release": {
+    "tag": "voter-county-pennsylvania-centre-20261106-01",
+    "target_commit": "ea4cb1dfbfd522f7706431ea8717250eae1e7a9c",
+    "id": 435944334,
+    "verified_at_utc": "2026-11-06T00:49:42.892277+00:00",
+    "draft_assets_byte_verified_before_publication": true,
+    "public_assets_byte_verified": 14,
+    "commit_pinned_csvs_byte_verified": 13,
+    "receipts": "release-byte-verification.json"
+  },
   "ui_live_verified": false,
+  "local_validation": {
+    "participation_tests_passed": 7,
+    "astro_check_errors": 0,
+    "build_passed": true,
+    "pages_bulk_downloads_verified": 94,
+    "prepared_pages_bytes": 987361863,
+    "four_display_modes_verified": true,
+    "unique_download_urls": 288,
+    "download_anchors": 291,
+    "preserved_existing_url_multiset": true,
+    "uf_rows": 52,
+    "historical_years": [2024, 2022, 2020, 2018, 2016],
+    "historical_scope_cells": 255,
+    "unchanged_map_suites_repeated": false,
+    "receipts": "download-local-verification.json"
+  },
   "limitations": [
     "The public profile reproduces all complete numerical facts, not omitted original web or PDF presentation bytes.",
     "The original source PDF extraction and complete source responses remain independently verified in the private review.",

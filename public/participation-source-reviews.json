@@ -1,6 +1,34 @@
 {
   "reviews": [
     {
+      "id": "pennsylvania-centre-20261106-01",
+      "label": "Centre County, Pennsylvania 2026: complete numerical participation and candidate facts; unofficial and partial",
+      "data_directory": "data/county-source-reviews/20261106-centre-facts-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ea4cb1dfbfd522f7706431ea8717250eae1e7a9c/data/county-source-reviews/20261106-centre-facts-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-centre-20261106-01/complete-centre-2026-native-facts-01.zip",
+      "complete_download_bytes": 91415,
+      "complete_download_sha256": "7c32bc66a43932b95d2bc6f43cfd49419ceb7cba70df0b1c46930e6f31e9d39a",
+      "review_status": "complete_numerical_facts_reviewed_counting_partial",
+      "maps_approved": false,
+      "scope_note": "Centre County only, unofficial November 3, 2026 general election. The index update November 4 at 12:44 am, PDF report stamp November 4 at 12:40AM and distinct API edit timestamps remain separate; no index/PDF timezone is declared. All 87 native precincts and 261 API records reconcile to 57,125 ballots and 103,270 native registrations, with a printed 55.32% registered-voter ratio, not eligible-population or demographic turnout. Election Day ballots are 43,125, absentee/mail 14,000 and provisional an explicit zero. House candidate votes are separate: 56,804 total, DEM 32,234, REP 24,503 and 67 write-ins with unassigned party. The 321-ballot House residual stays unclassified. Five contests, 16 county option lines, 870 precinct option rows and 354 separate write-in annotations are retained; annotations are never extra votes. Primary PDF headings establish the three state-House scopes. API precinct codes differ from printed IDs in 63 precincts: join by the full native label and preserve both IDs. Mail/Provisional registrations remain null. The API's 240 provisional blanks conflict with zero provisional ballots and are unusable accounting; the primary PDFs independently report zero provisional blanks and six total blanks. Two printed precinct rates differ from calculated ratios by 0.01 percentage point; both values remain. Native status is zero complete, 87 partially reported and 86 of 87 absentee/early precincts reporting. All 13 full CSVs, five unchanged native API data responses, complete derived primary numerical facts, original capture receipt digests and portable offline reviewer are included. The public profile reproduces captured numerical facts, not omitted original web/PDF presentation bytes; no source-template redistribution license is claimed. No new map, demographic turnout, certification, final counting or statewide completion is approved; existing maps are unchanged.",
+      "tables": [
+        {"file": "county-participation.csv", "label": "Centre County only: separate ballots, native registrations, printed registered-voter ratio and counting qualifications (CSV)"},
+        {"file": "county-ballot-methods.csv", "label": "Centre County only: all Election Day, absentee/mail and provisional ballot and blank vectors, including explicit zeroes (CSV)"},
+        {"file": "county-contest-option-results.csv", "label": "Centre County only: all 16 candidate/write-in option lines across five contests and every method vector (CSV)"},
+        {"file": "county-contest-party-totals.csv", "label": "Centre County only: all 11 contest/literal-party totals; unassigned write-ins stay separate, not party turnout (CSV)"},
+        {"file": "county-contest-totals.csv", "label": "Centre County only: all five contest totals, explicit native scopes and unclassified ballot residuals (CSV)"},
+        {"file": "native-api-observations.csv", "label": "Centre County only: all 261 original API records, including null method registrations and the provisional blank conflict (CSV)"},
+        {"file": "native-precinct-participation.csv", "label": "Centre County only: all 87 primary precinct participation vectors and printed versus calculated rates, without new geometry (CSV)"},
+        {"file": "native-precinct-option-results.csv", "label": "Centre County only: all 870 primary precinct option rows and explicit zeroes within PDF-established contest scopes (CSV)"},
+        {"file": "native-pdf-write-in-breakdown.csv", "label": "Centre County only: all 354 native write-in annotations, separate from option totals and never additional votes (CSV)"},
+        {"file": "native-precinct-identity-crosswalk.csv", "label": "Centre County only: all 87 native labels, API codes, printed IDs and explicit state-House scopes; 63 ID differences retained (CSV)"},
+        {"file": "native-printed-rate-differences.csv", "label": "Centre County only: both printed versus calculated precinct-rate discrepancies, without inferred causes (CSV)"},
+        {"file": "native-source-conflicts.csv", "label": "Centre County only: retained API provisional blank240 versus ballot0 contradiction and independent primary PDF values (CSV)"},
+        {"file": "native-source-updates.csv", "label": "Centre County only: separate index, PDF and API update observations and timezone qualifications (CSV)"}
+      ],
+      "coverage": []
+    },
+    {
       "id": "pennsylvania-berks-20261105-01",
       "label": "Berks County, Pennsylvania 2026: complete native participation and candidate tables; unofficial",
       "data_directory": "data/county-source-reviews/20261105-berks-reviewed-01",

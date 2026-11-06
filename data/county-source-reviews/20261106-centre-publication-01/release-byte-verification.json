@@ -1,0 +1,216 @@
+{
+  "verified_at_utc": "2026-11-06T00:49:42.892277+00:00",
+  "tag": "voter-county-pennsylvania-centre-20261106-01",
+  "target_commit": "ea4cb1dfbfd522f7706431ea8717250eae1e7a9c",
+  "release_id": 435944334,
+  "draft_assets_verified_before_publication": true,
+  "release_published": true,
+  "release_assets": [
+    {
+      "name": "complete-centre-2026-native-facts-01.zip",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-centre-20261106-01/complete-centre-2026-native-facts-01.zip",
+      "status": 200,
+      "bytes": 91415,
+      "sha256": "7c32bc66a43932b95d2bc6f43cfd49419ceb7cba70df0b1c46930e6f31e9d39a"
+    },
+    {
+      "name": "county-ballot-methods.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-centre-20261106-01/county-ballot-methods.csv",
+      "status": 200,
+      "bytes": 269,
+      "sha256": "2703b135fc0385de85172d83dd36ef69ab6491a68f4f4276dcbf8b9c28ea0142"
+    },
+    {
+      "name": "county-contest-option-results.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-centre-20261106-01/county-contest-option-results.csv",
+      "status": 200,
+      "bytes": 2650,
+      "sha256": "274ef8ee3088321d01fecfcd3469591bfbe28a35d372d7451d9d6cf4f87341dc"
+    },
+    {
+      "name": "county-contest-party-totals.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-centre-20261106-01/county-contest-party-totals.csv",
+      "status": 200,
+      "bytes": 613,
+      "sha256": "8caeb96b1714047dbbd4b48d3d0a8af24016df9ec8157041f6fcc2b09b9d001a"
+    },
+    {
+      "name": "county-contest-totals.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-centre-20261106-01/county-contest-totals.csv",
+      "status": 200,
+      "bytes": 412,
+      "sha256": "5ab06eb2413cd5683d37f1134417ce5c2d83b4d25b82ab33e6cfd0d3f87e6c33"
+    },
+    {
+      "name": "county-participation.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-centre-20261106-01/county-participation.csv",
+      "status": 200,
+      "bytes": 322,
+      "sha256": "e8f82ac6d1e6c82c9a365df044e741aef7de86e359b484de1b742bae772e6c6a"
+    },
+    {
+      "name": "native-api-observations.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-centre-20261106-01/native-api-observations.csv",
+      "status": 200,
+      "bytes": 52804,
+      "sha256": "05fd39901e8d392a8a15adff11b86941adde3f4a5ed056ec337f07f341d68b55"
+    },
+    {
+      "name": "native-pdf-write-in-breakdown.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-centre-20261106-01/native-pdf-write-in-breakdown.csv",
+      "status": 200,
+      "bytes": 22158,
+      "sha256": "004e8a65a740c75dca66f765863c8ba01f319237b84437929c12f8694c2a368c"
+    },
+    {
+      "name": "native-precinct-identity-crosswalk.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-centre-20261106-01/native-precinct-identity-crosswalk.csv",
+      "status": 200,
+      "bytes": 3734,
+      "sha256": "1a9f5ddb5d1eac6bae2b8b3159e3043692a13f09e493b3dbbb531e63c1b5441c"
+    },
+    {
+      "name": "native-precinct-option-results.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-centre-20261106-01/native-precinct-option-results.csv",
+      "status": 200,
+      "bytes": 135289,
+      "sha256": "cbbf09d25175ef736f6a5d9cfa64018e9734497848381f53ad8a9e9e26cef967"
+    },
+    {
+      "name": "native-precinct-participation.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-centre-20261106-01/native-precinct-participation.csv",
+      "status": 200,
+      "bytes": 9224,
+      "sha256": "42c9106358f862b1c4f93df6dd48309267b85ceb7aef51099697b3a55cc60b84"
+    },
+    {
+      "name": "native-printed-rate-differences.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-centre-20261106-01/native-printed-rate-differences.csv",
+      "status": 200,
+      "bytes": 175,
+      "sha256": "299f10a6b93de89e480b86e971afbe047bc51acfd59cc092c403347dca83c5c0"
+    },
+    {
+      "name": "native-source-conflicts.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-centre-20261106-01/native-source-conflicts.csv",
+      "status": 200,
+      "bytes": 233,
+      "sha256": "5533017577dc58ff1927bb9faf504d1c147646693bb32080007bf40e51fbe04c"
+    },
+    {
+      "name": "native-source-updates.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-centre-20261106-01/native-source-updates.csv",
+      "status": 200,
+      "bytes": 319,
+      "sha256": "1a1e9935503845a2338ca212922f61e378abbb199b8f27ce4445da7fbe4241a8"
+    }
+  ],
+  "commit_pinned_csvs": [
+    {
+      "name": "county-contest-party-totals.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ea4cb1dfbfd522f7706431ea8717250eae1e7a9c/data/county-source-reviews/20261106-centre-facts-01/county-contest-party-totals.csv",
+      "status": 200,
+      "bytes": 613,
+      "sha256": "8caeb96b1714047dbbd4b48d3d0a8af24016df9ec8157041f6fcc2b09b9d001a",
+      "cors_origin": "*"
+    },
+    {
+      "name": "county-participation.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ea4cb1dfbfd522f7706431ea8717250eae1e7a9c/data/county-source-reviews/20261106-centre-facts-01/county-participation.csv",
+      "status": 200,
+      "bytes": 322,
+      "sha256": "e8f82ac6d1e6c82c9a365df044e741aef7de86e359b484de1b742bae772e6c6a",
+      "cors_origin": "*"
+    },
+    {
+      "name": "native-source-conflicts.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ea4cb1dfbfd522f7706431ea8717250eae1e7a9c/data/county-source-reviews/20261106-centre-facts-01/native-source-conflicts.csv",
+      "status": 200,
+      "bytes": 233,
+      "sha256": "5533017577dc58ff1927bb9faf504d1c147646693bb32080007bf40e51fbe04c",
+      "cors_origin": "*"
+    },
+    {
+      "name": "native-precinct-participation.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ea4cb1dfbfd522f7706431ea8717250eae1e7a9c/data/county-source-reviews/20261106-centre-facts-01/native-precinct-participation.csv",
+      "status": 200,
+      "bytes": 9224,
+      "sha256": "42c9106358f862b1c4f93df6dd48309267b85ceb7aef51099697b3a55cc60b84",
+      "cors_origin": "*"
+    },
+    {
+      "name": "native-pdf-write-in-breakdown.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ea4cb1dfbfd522f7706431ea8717250eae1e7a9c/data/county-source-reviews/20261106-centre-facts-01/native-pdf-write-in-breakdown.csv",
+      "status": 200,
+      "bytes": 22158,
+      "sha256": "004e8a65a740c75dca66f765863c8ba01f319237b84437929c12f8694c2a368c",
+      "cors_origin": "*"
+    },
+    {
+      "name": "county-contest-option-results.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ea4cb1dfbfd522f7706431ea8717250eae1e7a9c/data/county-source-reviews/20261106-centre-facts-01/county-contest-option-results.csv",
+      "status": 200,
+      "bytes": 2650,
+      "sha256": "274ef8ee3088321d01fecfcd3469591bfbe28a35d372d7451d9d6cf4f87341dc",
+      "cors_origin": "*"
+    },
+    {
+      "name": "county-contest-totals.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ea4cb1dfbfd522f7706431ea8717250eae1e7a9c/data/county-source-reviews/20261106-centre-facts-01/county-contest-totals.csv",
+      "status": 200,
+      "bytes": 412,
+      "sha256": "5ab06eb2413cd5683d37f1134417ce5c2d83b4d25b82ab33e6cfd0d3f87e6c33",
+      "cors_origin": "*"
+    },
+    {
+      "name": "native-printed-rate-differences.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ea4cb1dfbfd522f7706431ea8717250eae1e7a9c/data/county-source-reviews/20261106-centre-facts-01/native-printed-rate-differences.csv",
+      "status": 200,
+      "bytes": 175,
+      "sha256": "299f10a6b93de89e480b86e971afbe047bc51acfd59cc092c403347dca83c5c0",
+      "cors_origin": "*"
+    },
+    {
+      "name": "county-ballot-methods.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ea4cb1dfbfd522f7706431ea8717250eae1e7a9c/data/county-source-reviews/20261106-centre-facts-01/county-ballot-methods.csv",
+      "status": 200,
+      "bytes": 269,
+      "sha256": "2703b135fc0385de85172d83dd36ef69ab6491a68f4f4276dcbf8b9c28ea0142",
+      "cors_origin": "*"
+    },
+    {
+      "name": "native-source-updates.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ea4cb1dfbfd522f7706431ea8717250eae1e7a9c/data/county-source-reviews/20261106-centre-facts-01/native-source-updates.csv",
+      "status": 200,
+      "bytes": 319,
+      "sha256": "1a1e9935503845a2338ca212922f61e378abbb199b8f27ce4445da7fbe4241a8",
+      "cors_origin": "*"
+    },
+    {
+      "name": "native-precinct-identity-crosswalk.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ea4cb1dfbfd522f7706431ea8717250eae1e7a9c/data/county-source-reviews/20261106-centre-facts-01/native-precinct-identity-crosswalk.csv",
+      "status": 200,
+      "bytes": 3734,
+      "sha256": "1a9f5ddb5d1eac6bae2b8b3159e3043692a13f09e493b3dbbb531e63c1b5441c",
+      "cors_origin": "*"
+    },
+    {
+      "name": "native-precinct-option-results.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ea4cb1dfbfd522f7706431ea8717250eae1e7a9c/data/county-source-reviews/20261106-centre-facts-01/native-precinct-option-results.csv",
+      "status": 200,
+      "bytes": 135289,
+      "sha256": "cbbf09d25175ef736f6a5d9cfa64018e9734497848381f53ad8a9e9e26cef967",
+      "cors_origin": "*"
+    },
+    {
+      "name": "native-api-observations.csv",
+      "url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/ea4cb1dfbfd522f7706431ea8717250eae1e7a9c/data/county-source-reviews/20261106-centre-facts-01/native-api-observations.csv",
+      "status": 200,
+      "bytes": 52804,
+      "sha256": "05fd39901e8d392a8a15adff11b86941adde3f4a5ed056ec337f07f341d68b55",
+      "cors_origin": "*"
+    }
+  ],
+  "release_asset_count": 14,
+  "commit_pinned_csv_count": 13
+}
