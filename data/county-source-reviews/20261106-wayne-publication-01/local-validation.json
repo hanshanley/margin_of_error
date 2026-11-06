@@ -1,0 +1,22 @@
+{
+  "scope": "Wayne whole-county header participation; no new map, demographic turnout, certification or statewide completion approval",
+  "source_fact_tests": 7,
+  "complete_standard_library_offline_reproduction": true,
+  "focused_node_tests": 30,
+  "astro_check": {"errors": 0, "warnings": 0, "existing_hints": 5},
+  "build_included_tests": 4,
+  "pages_preparation": {"complete_byte_verified_relocations": 106, "prepared_site_bytes": 898767354},
+  "browser_proof": "local-browser.json",
+  "browser_modes_and_checks": 6,
+  "reviewed_records": 18,
+  "pennsylvania_reviewed_records": 17,
+  "previous_entire_records_preserved": 17,
+  "previous_complete_import_fingerprints_preserved_in_javascript_modes": 18,
+  "previous_download_anchors_preserved": 354,
+  "download_anchors": 362,
+  "unique_complete_download_urls": 359,
+  "uf_rows": 52,
+  "historical_years": [2024, 2022, 2020, 2018, 2016],
+  "temporary_preview_stopped": true,
+  "exact_production_verification": "pending"
+}

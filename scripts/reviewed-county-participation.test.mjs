@@ -10,8 +10,8 @@ const reviews = JSON.parse(readFileSync('public/participation-source-reviews.jso
 
 test('loads all reviewed county participation without promoting map coverage', () => {
   const rows = loadReviewedCountyParticipation(reviews);
-  assert.equal(rows.length, 17);
-  assert.equal(rows.filter(row => row.state_code === 'PA').length, 16);
+  assert.equal(rows.length, 18);
+  assert.equal(rows.filter(row => row.state_code === 'PA').length, 17);
   assert.equal(rows.filter(row => row.state_code === 'DC').length, 1);
   assert.ok(rows.every(row => row.maps_approved === false && row.reported_units === null));
   const monroe = rows.find(row => row.county === 'Monroe');
@@ -191,6 +191,55 @@ test('rejects Armstrong relabeling or an invented provisional participation zero
     const altered = reviews.map(row => row.id === original.id ? { ...row, data_directory: directory } : row);
     for (const change of [{ native_participation_measure_literal: 'Ballots Cast' },
       { provisional_voters_cast: '0' }, { native_status_literal: 'Official Results' }]) {
+      const row = { ...native, ...change }, fields = Object.keys(row);
+      writeFileSync(join(directory, 'county-participation.csv'), fields.join(',') + '\n'
+        + fields.map(field => `"${row[field].replaceAll('"', '""')}"`).join(',') + '\n');
+      assert.throws(() => loadReviewedCountyParticipation(altered), /Invalid reviewed county participation/);
+    }
+  } finally {
+    rmSync(directory, { recursive: true, force: true });
+  }
+});
+
+test('preserves Wayne header participation, missing modes and explicitly attributed parent status', () => {
+  const rows = loadReviewedCountyParticipation(reviews);
+  const baseline = JSON.parse(readFileSync(
+    'data/county-source-reviews/20261106-wayne-publication-01/baseline.json', 'utf8'));
+  assert.deepEqual(rows.filter(row => row.county !== 'Wayne'), baseline.previous_reviewed_county_records);
+  const row = rows.find(row => row.county === 'Wayne');
+  const review = reviews.find(review => review.id === row.review_id);
+  const native = parse(readFileSync(join(review.data_directory, 'county-participation.csv'), 'utf8'),
+    { columns: true })[0];
+  assert.deepEqual(row.native_record, native);
+  assert.equal(row.ballots, 21707);
+  assert.notEqual(row.ballots, 21689);
+  assert.notEqual(row.ballots, 21612);
+  assert.equal(row.denominator, 36885);
+  assert.equal(row.reported_pct, 100 * 21707 / 36885);
+  assert.equal(row.native_printed_pct, '58.85%');
+  assert.equal(row.source_status_literal, '2026 General Election Unofficial Results');
+  assert.equal(row.native_record.native_status_literal, '');
+  assert.match(row.quality.join(' '), /Result status comes from the declaring county page/);
+  assert.match(row.source_update_label, /county_report: 2026-11-05 15:08:51 \(timezone not declared\)/);
+  for (const field of ['election_day_ballots', 'mail_ballots', 'provisional_ballots'])
+    assert.equal(row.native_record[field], '');
+  assert.match(row.source_reporting_label, /18-ballot scope difference/);
+  assert.match(row.source_reporting_label, /Party affiliations|Candidate parties are not supplied/);
+  assert.equal(row.maps_approved, false);
+});
+
+test('rejects Wayne contest-count substitution, invented mode participation and status relabeling', () => {
+  const original = reviews.find(row => row.id === 'pennsylvania-wayne-20261106-01');
+  const directory = mkdtempSync(join(tmpdir(), 'wayne-participation-'));
+  try {
+    copyFileSync(join(original.data_directory, 'audit.json'), join(directory, 'audit.json'));
+    const native = parse(readFileSync(join(original.data_directory, 'county-participation.csv'), 'utf8'),
+      { columns: true })[0];
+    const altered = reviews.map(row => row.id === original.id ? { ...row, data_directory: directory } : row);
+    for (const change of [{ ballots_cast: '21689' }, { ballots_cast: '21612' },
+      { provisional_ballots: '85' }, { election_day_ballots: '16242' }, { mail_ballots: '0' },
+      { native_status_literal: 'Official Results' }, { native_parent_status_literal: 'Official Results' },
+      { registered_voters: '36886' }]) {
       const row = { ...native, ...change }, fields = Object.keys(row);
       writeFileSync(join(directory, 'county-participation.csv'), fields.join(',') + '\n'
         + fields.map(field => `"${row[field].replaceAll('"', '""')}"`).join(',') + '\n');

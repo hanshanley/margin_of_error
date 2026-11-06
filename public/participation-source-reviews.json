@@ -1,6 +1,28 @@
 {
   "reviews": [
     {
+      "id": "pennsylvania-wayne-20261106-01",
+      "label": "Wayne County, Pennsylvania 2026: native county ballots with separate contest denominators",
+      "data_directory": "data/county-source-reviews/20261106-wayne-facts-01",
+      "base_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/5ff1f5dde0e442fa2847472b57114b4c9fa758a7/data/county-source-reviews/20261106-wayne-facts-01/",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-wayne-20261106-01/complete-wayne-2026-numerical-facts-01.zip",
+      "complete_download_bytes": 17952,
+      "complete_download_sha256": "4de3aee45c9a9ad0705185077074e8e9214fc9ac051adeb1de4582b200af0060",
+      "review_status": "complete_county_numerical_facts_reviewed_unofficial_separate_contest_denominators",
+      "maps_approved": false,
+      "scope_note": "Complete numerical facts from the government-declared one-page November 3, 2026 county statement. The county header reports 21,707 ballots cast, 36,885 registered voters and printed 58.85%. Governor ballots are separately 21,689, eighteen fewer; each pair of state legislative district ballot counts also sums to 21,689. Preserve the unexplained scope difference instead of replacing county participation or inventing pending-ballot explanations. Congress reports 21,707 ballots. All six contests reconcile their own ballots, candidate/write-in selections, overvotes and undervotes. Native Over voted ballots and Overvotes describe the same vote-for-one count, not additive residuals. All thirteen named choices and six write-in rows retain their literal ED/MI/PR selection vectors, printed shares and explicit zeroes; native Total already includes write-ins. These mode columns are not participation denominators and their expansions are not declared in this report. Party affiliations are absent, not inferred or zero. All six native contest registration/ballot denominators retain their own scopes. Reporting 35/35 precincts does not certify finished counting. Unofficial status comes from the declaring page; the PDF has no separate status literal. Native 2026-11-05 15:08:51 has no declared timezone. Both PDF engines and complete standard-library offline reproduction agree on every fact and ZIP member. Original source templates remain private. All full assets are anonymously byte-verified at fixed commit/checksums under the never-overwrite policy; no host locking, map, demographic turnout, certification or statewide completion is claimed.",
+      "tables": [
+        {"file": "county-participation.csv", "label": "Wayne: complete native county header ballots, registrations, printed fraction, reporting counts and qualifications (CSV)"},
+        {"file": "county-candidate-results.csv", "label": "Wayne: all nineteen candidate/write-in vectors, literal mode labels, printed shares and explicitly missing party affiliations (CSV)"},
+        {"file": "native-contest-participation.csv", "label": "Wayne: all six separately scoped contest ballot/registration denominators, printed fractions and native accounting (CSV)"},
+        {"file": "native-contest-subtotals.csv", "label": "Wayne: all six native candidate-selection subtotals, including write-ins and not additional votes (CSV)"},
+        {"file": "county-contest-accounting.csv", "label": "Wayne: all twenty-four scoped accounting rows, missing mode denominators and unexplained eighteen-ballot header difference (CSV)"},
+        {"file": "native-source-pages.csv", "label": "Wayne: complete native page scope and timestamp, separate declaring-page status and absent PDF status/timezone (CSV)"},
+        {"file": "native-source-statements.csv", "label": "Wayne: all native reporting totals and explicitly sourced declaring-page result status (CSV)"}
+      ],
+      "coverage": []
+    },
+    {
       "id": "pennsylvania-armstrong-20261106-01",
       "label": "Armstrong County, Pennsylvania 2026: native Voters Cast, explicitly excluding provisional participation",
       "data_directory": "data/county-source-reviews/20261106-armstrong-facts-01",

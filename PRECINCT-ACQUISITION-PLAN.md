@@ -799,9 +799,23 @@ policy, not a host-locking claim. The actual verified Armstrong live HTML was
 required to equal its prepared reference before any new build; all seventeen
 entire previous records, eighteen full import fingerprints, five historical
 years and 354 old download anchors form the Wayne preservation baseline.
-Explorer integration and exact production verification remain pending.
-No new map, demographic turnout, certification or statewide completion is
-approved.
+Explorer integration uses the native county header and rejects substituting
+governor ballots or congressional selections, inventing mode-level ballot
+counts, changing the source denominator or relabeling status. The displayed
+unofficial status is explicitly attributed to the declaring county page;
+the complete native record preserves the PDF's absent status separately.
+All seventeen previous normalized records remain entirely unchanged.
+All 30 focused Node tests, the four build-included tests and Astro checking
+pass (zero errors/warnings, five existing hints). All six local browser
+modes/checks pass desktop/mobile, JavaScript/no-JavaScript and failed-feed
+fallbacks with no horizontal overflow. All previous records, eighteen full
+imports, five historical years, 52 UF rows and 354 old anchors are preserved.
+There are now eighteen reviewed records (seventeen PA plus D.C.),
+362 anchors / 359 unique full URLs, including eight added full Wayne downloads.
+All 106 complete relocations pass byte checks; the prepared Pages site is
+898,767,354 bytes. The local preview helper was stopped.
+Exact production deployment/live verification remains pending; no new map,
+demographic turnout, certification or statewide completion is approved.
 
 **November 5 security escalation: rewritten history is live verified.** The
 user explicitly requested fixing security and continuing acquisition. An isolated
