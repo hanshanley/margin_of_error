@@ -1322,9 +1322,25 @@ credential run **42180833831** and review run **42180831954** both pass.
 GitHub reports `immutable:false`: fixed checksums/never overwrite, not
 host-enforced locking. Complete publication evidence is under
 `data/county-source-reviews/20261106-carbon-publication-01/`.
-Both county explorer integrations remain pending; neither new county is
-integrated into the live UI. The next batch extends, rather than overwrites,
-frozen context 03 after capturing the actual 6579e73 public baseline.
+Both county explorer integrations are in progress; neither new county is
+yet integrated into the live UI. The actual 6579e73 public baseline is
+captured with all 39 entire native records, 405 anchors / 401 URLs, all
+eighteen full import JSONs and exact candidate/runtime bytes reverified.
+Both new county identities independently match both complete Census
+inventories. New immutable context 04 reproduces with 906 complete source
+records, 434 county joins, 62 native-electorate fractions and 372 unchanged
+missing rates across the same fifteen jurisdictions. All 904 previous
+records, 432 previous joins, exclusions, geometries and source map flags
+remain identical. The full portable query has 29 files / 28 ZIP members;
+the ZIP is 2,212,721 bytes, SHA-256
+`edf5d8b8a7cd0b49282edc3b4ed9955c07910e1a38361fd77bd23d2e897a3f37`.
+Full review is 752,308 bytes, SHA-256
+`0c99fcf2de4811aa3f50c7a1aa3f85f303298f59554d17deec466d07cb41dd2d`.
+All 21 source-loader tests pass, including whole context 03 native-record
+preservation and rejection of candidate/zero substitution, invented modes
+or changed native statuses for both new counties. Context 04 facts/release,
+exact credential checks, source-matched browsers and exact production
+deployment must still be verified before any live integration claim.
 Private acquisition and engine proofs are in
 `pa-cameron-carbon-primary-20261106-01`,
 `pa-carbon-declared-reports-20261106-01` and

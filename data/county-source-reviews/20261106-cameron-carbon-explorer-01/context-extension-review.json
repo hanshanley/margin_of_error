@@ -1,0 +1,245 @@
+{
+  "previous_complete_records_preserved": 904,
+  "previous_contextual_joins_preserved": 432,
+  "previous_exclusions_and_missingness_preserved": true,
+  "unchanged_geometry_inventory": 15,
+  "existing_source_map_approval_flags_unchanged": true,
+  "native_fips_invented": false,
+  "new_source_records": [
+    {
+      "year": 2026,
+      "state_code": "PA",
+      "county_id": "reviewed:PA:Cameron",
+      "county": "Cameron",
+      "geography_level": "county",
+      "ballots": 1624,
+      "denominator": 2885,
+      "participation_measure_literal": "Ballots Cast - Total",
+      "denominator_basis": "native_registered_voters",
+      "reported_pct": 56.29116117850953,
+      "native_printed_pct": "56.29%",
+      "source_status_literal": "UNOFFICIAL RESULTS",
+      "reported_units": null,
+      "total_units": null,
+      "source_rows": 0,
+      "maps_approved": false,
+      "review_id": "pennsylvania-cameron-20261106-01",
+      "native_record": {
+        "year": "2026",
+        "state_code": "PA",
+        "county": "Cameron",
+        "native_participation_measure_literal": "Ballots Cast - Total",
+        "ballots_cast": "1624",
+        "registered_voters": "2885",
+        "native_printed_turnout": "56.29%",
+        "election_day_ballots": "1305",
+        "mail_ballots": "319",
+        "provisional_ballots": "",
+        "blank_ballots": "1",
+        "reported_precincts": "10",
+        "total_precincts": "10",
+        "complete_precincts": "0",
+        "partially_reported_precincts": "10",
+        "source_status_literal": "UNOFFICIAL RESULTS",
+        "source_update_literal": "11/03/2026 9:13 PM",
+        "declared_timezone": "",
+        "source_report": "summary",
+        "source_page": "1"
+      },
+      "native_source_updates": [
+        {
+          "source": "summary",
+          "native_update_literal": "11/03/2026 9:13 PM",
+          "declared_timezone": ""
+        },
+        {
+          "source": "act88",
+          "native_update_literal": "",
+          "declared_timezone": ""
+        }
+      ],
+      "source_update_label": "source_update_literal: 11/03/2026 9:13 PM; summary: 11/03/2026 9:13 PM (timezone not declared); act88:  (timezone not declared)",
+      "source_reporting_label": "Native Ballots Cast - Total 1,624 = 1,305 Election Day + 319 Mail; provisional participation is absent, not zero.; 10 of 10 Election Day and Absentee/Early precincts reported; zero complete and ten partially reported does not establish completed ballot counting.; Separate Act88 returned 324 / recorded 320 are not counted Mail 319; differences remain unexplained and unallocated.; The Act88 Federal Voter filter is preserved; its source supplies no report clock or timezone, and the 12:01 link label does not supply one.; Not Assigned is nested within Write-In Totals, not additional votes; one blank ballot is already within Ballots Cast.",
+      "source_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/11bd5bd9db09e679dc970514b5d72f283a5bf788/data/county-source-reviews/20261106-cameron-facts-01/county-participation.csv",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-cameron-20261106-01/complete-cameron-2026-county-query-01.zip",
+      "quality": [
+        "Reviewed local snapshot, not final certification, statewide coverage, eligible-population or demographic turnout.",
+        "Source timestamps retain their native labels; unprovided timezones are not inferred. County mapping is not approved."
+      ]
+    },
+    {
+      "year": 2026,
+      "state_code": "PA",
+      "county_id": "reviewed:PA:Carbon",
+      "county": "Carbon",
+      "geography_level": "county",
+      "ballots": 24840,
+      "denominator": 45896,
+      "participation_measure_literal": "Voters Cast",
+      "denominator_basis": "native_registered_voters",
+      "reported_pct": 54.12236360467143,
+      "native_printed_pct": "54.12%",
+      "source_status_literal": "Unofficial Results",
+      "reported_units": null,
+      "total_units": null,
+      "source_rows": 0,
+      "maps_approved": false,
+      "review_id": "pennsylvania-carbon-20261106-01",
+      "native_record": {
+        "year": "2026",
+        "state_code": "PA",
+        "county": "Carbon",
+        "native_participation_measure_literal": "Voters Cast",
+        "reported_voters_cast": "24840",
+        "registered_voters": "45896",
+        "native_printed_turnout": "54.12%",
+        "election_day_count": "20375",
+        "mail_in_count": "4465",
+        "provisional_count": "0",
+        "reported_precincts": "51",
+        "total_precincts": "51",
+        "source_status_literal": "Unofficial Results",
+        "source_update_literal": "11/3/2026 10:36:36 PM",
+        "declared_timezone": "",
+        "source_report": "summary",
+        "source_page": "1"
+      },
+      "native_source_updates": [
+        {
+          "source": "summary",
+          "native_update_literal": "11/3/2026 10:36:36 PM",
+          "declared_timezone": ""
+        },
+        {
+          "source": "zero",
+          "native_update_literal": "11/3/2026 7:05:24 PM",
+          "declared_timezone": ""
+        },
+        {
+          "source": "statement",
+          "native_update_literal": "11/3/2026 10:19:13 PM",
+          "declared_timezone": ""
+        }
+      ],
+      "source_update_label": "source_update_literal: 11/3/2026 10:36:36 PM; summary: 11/3/2026 10:36:36 PM (timezone not declared); zero: 11/3/2026 7:05:24 PM (timezone not declared); statement: 11/3/2026 10:19:13 PM (timezone not declared)",
+      "source_reporting_label": "Native Voters Cast 24,840 = 20,375 Election Day + 4,465 Mail-In + explicit zero Provisional.; 51 of 51 reported precincts does not establish completed ballot counting; the earlier Official Zero Report is a separate observation, not current participation.; All 51 statement units reconcile to the county; both county footers and both Cumulative zero/N/A containers remain separate and are not added.; Kidder referendum Times Cast 807/1,457 is a separate electorate, not additional county participation.; Mode-specific registrations and native overvotes/undervotes are absent; 350/381/288/30 participation-minus-choice residuals remain unclassified.",
+      "source_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/70b59f20e5ab346fca4444553e43eb7a39586944/data/county-source-reviews/20261106-carbon-facts-01/county-participation.csv",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-carbon-20261106-01/complete-carbon-2026-county-query-01.zip",
+      "quality": [
+        "Reviewed local snapshot, not final certification, statewide coverage, eligible-population or demographic turnout.",
+        "Source timestamps retain their native labels; unprovided timezones are not inferred. County mapping is not approved."
+      ]
+    }
+  ],
+  "new_contextual_identity_joins": [
+    {
+      "state_code": "PA",
+      "county_id": "reviewed:PA:Cameron",
+      "county": "Cameron",
+      "geography_level": "county",
+      "review_id": "pennsylvania-cameron-20261106-01",
+      "contextual_geoid": "42023",
+      "contextual_name": "Cameron County",
+      "boundary_year": 2024,
+      "ballots": 1624,
+      "denominator": 2885,
+      "reported_pct": 56.29116117850953,
+      "participation_measure_kind": "source_defined_participation_count",
+      "participation_measure_label": "Ballots Cast - Total",
+      "source_record_sha256": "d59a3fbeaa9fa947756dda376806e10f8295bab2895dd54532b0664b495f7770",
+      "source_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/11bd5bd9db09e679dc970514b5d72f283a5bf788/data/county-source-reviews/20261106-cameron-facts-01/county-participation.csv",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-cameron-20261106-01/complete-cameron-2026-county-query-01.zip",
+      "contextual_map_approved": true,
+      "source_map_approval_unchanged": false
+    },
+    {
+      "state_code": "PA",
+      "county_id": "reviewed:PA:Carbon",
+      "county": "Carbon",
+      "geography_level": "county",
+      "review_id": "pennsylvania-carbon-20261106-01",
+      "contextual_geoid": "42025",
+      "contextual_name": "Carbon County",
+      "boundary_year": 2024,
+      "ballots": 24840,
+      "denominator": 45896,
+      "reported_pct": 54.12236360467143,
+      "participation_measure_kind": "source_defined_participation_count",
+      "participation_measure_label": "Voters Cast",
+      "source_record_sha256": "1d80491d818557bf176dcc7e93eec421d6720a3dd1f3c5d461fe77a5f8d16e21",
+      "source_url": "https://raw.githubusercontent.com/hanshanley/margin_of_error/70b59f20e5ab346fca4444553e43eb7a39586944/data/county-source-reviews/20261106-carbon-facts-01/county-participation.csv",
+      "complete_download_url": "https://github.com/hanshanley/margin_of_error/releases/download/voter-county-pennsylvania-carbon-20261106-01/complete-carbon-2026-county-query-01.zip",
+      "contextual_map_approved": true,
+      "source_map_approval_unchanged": false
+    }
+  ],
+  "independently_checked_census_identities": {
+    "2024": {
+      "42023": {
+        "USPS": "PA",
+        "GEOID": "42023",
+        "ANSICODE": "01213663",
+        "NAME": "Cameron County",
+        "ALAND": "1026241974",
+        "AWATER": "5651188",
+        "ALAND_SQMI": "396.234",
+        "AWATER_SQMI": "2.182",
+        "INTPTLAT": "41.438291",
+        "INTPTLONG": "-78.198323"
+      },
+      "42025": {
+        "USPS": "PA",
+        "GEOID": "42025",
+        "ANSICODE": "01213664",
+        "NAME": "Carbon County",
+        "ALAND": "987706484",
+        "AWATER": "15918751",
+        "ALAND_SQMI": "381.356",
+        "AWATER_SQMI": "6.146",
+        "INTPTLAT": "40.918367",
+        "INTPTLONG": "-75.705039"
+      }
+    },
+    "2026": {
+      "42023": {
+        "USPS": "PA",
+        "GEOID": "42023",
+        "GEOIDFQ": "0500000US42023",
+        "ANSICODE": "01213663",
+        "NAME": "Cameron County",
+        "ALAND": "1025862878",
+        "AWATER": "5652701",
+        "ALAND_SQMI": "396.088",
+        "AWATER_SQMI": "2.183",
+        "INTPTLAT": "41.438316",
+        "INTPTLONG": "-78.198262"
+      },
+      "42025": {
+        "USPS": "PA",
+        "GEOID": "42025",
+        "GEOIDFQ": "0500000US42025",
+        "ANSICODE": "01213664",
+        "NAME": "Carbon County",
+        "ALAND": "987706474",
+        "AWATER": "15918752",
+        "ALAND_SQMI": "381.356",
+        "AWATER_SQMI": "6.146",
+        "INTPTLAT": "40.918464",
+        "INTPTLONG": "-75.704971"
+      }
+    }
+  },
+  "counts": {
+    "complete_source_records": 906,
+    "contextual_joins": 434,
+    "jurisdictions": 15,
+    "reviewed_rates": 62,
+    "missing_rates": 372,
+    "excluded_municipalities": 286,
+    "excluded_missing_county_totals": 186
+  },
+  "frozen_review_bytes": 752308,
+  "frozen_review_sha256": "0c99fcf2de4811aa3f50c7a1aa3f85f303298f59554d17deec466d07cb41dd2d",
+  "complete_zip_bytes": 2212721,
+  "complete_zip_sha256": "edf5d8b8a7cd0b49282edc3b4ed9955c07910e1a38361fd77bd23d2e897a3f37"
+}
