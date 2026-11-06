@@ -1,0 +1,28 @@
+{
+  "county": "Greene",
+  "year": 2026,
+  "source_summary_rows": 15,
+  "administrative_measure_rows": 2,
+  "candidate_choice_rows": 13,
+  "candidate_contests": 4,
+  "ballots_cast": 11105,
+  "blank_ballots": 5,
+  "native_registered_voters": null,
+  "turnout_rate": null,
+  "native_report_update_literal": "",
+  "native_declared_timezone": "",
+  "counting_complete": false,
+  "maps_approved": false,
+  "original_html_redistributed": false,
+  "native_query_complete": true,
+  "qualifications": [
+    "The complete factual county summary is reproduced, not the original HTML template.",
+    "Blank ballots are retained separately and are not added to total ballots.",
+    "No registration denominator, turnout rate, timezone or report-update clock is inferred.",
+    "42 of 42 reporting is not completed counting or certification.",
+    "Administrative pseudo-party labels are excluded from candidate-party tables.",
+    "Candidate-party choices are not voter participation by party.",
+    "Ballot-minus-candidate residuals are unclassified; legislative scopes are not extrapolated.",
+    "No exact election geometry, demographic turnout or nationwide completion is approved."
+  ]
+}

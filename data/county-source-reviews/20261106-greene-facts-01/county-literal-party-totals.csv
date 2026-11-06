@@ -1,0 +1,14 @@
+year,state_code,county,contest_literal,party_literal,votes,scope
+2026,PA,Greene,Governor And Lieutenant Governor,Democrat,4566,candidate_choice_votes_not_party_participation
+2026,PA,Greene,Governor And Lieutenant Governor,Republican,6171,candidate_choice_votes_not_party_participation
+2026,PA,Greene,Governor And Lieutenant Governor,Libertarian,243,candidate_choice_votes_not_party_participation
+2026,PA,Greene,Governor And Lieutenant Governor,No Party Specified,10,candidate_choice_votes_not_party_participation
+2026,PA,Greene,Representative In Congress 14th Congressional District,Democrat,4118,candidate_choice_votes_not_party_participation
+2026,PA,Greene,Representative In Congress 14th Congressional District,Republican,6757,candidate_choice_votes_not_party_participation
+2026,PA,Greene,Representative In Congress 14th Congressional District,No Party Specified,22,candidate_choice_votes_not_party_participation
+2026,PA,Greene,Senator In The General Assembly 46th Senatorial District,Republican,6556,candidate_choice_votes_not_party_participation
+2026,PA,Greene,Senator In The General Assembly 46th Senatorial District,Independent,3887,candidate_choice_votes_not_party_participation
+2026,PA,Greene,Senator In The General Assembly 46th Senatorial District,No Party Specified,105,candidate_choice_votes_not_party_participation
+2026,PA,Greene,Representative In The General Assembly 50th Legislative,Democrat,3391,candidate_choice_votes_not_party_participation
+2026,PA,Greene,Representative In The General Assembly 50th Legislative,Republican,7488,candidate_choice_votes_not_party_participation
+2026,PA,Greene,Representative In The General Assembly 50th Legislative,No Party Specified,39,candidate_choice_votes_not_party_participation

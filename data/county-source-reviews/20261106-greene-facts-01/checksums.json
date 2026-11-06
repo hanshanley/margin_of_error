@@ -1,0 +1,62 @@
+[
+  {
+    "file": "audit.json",
+    "bytes": 1179,
+    "sha256": "0660c64fa605450a2d6154b5e7138ec7abcd51fe5b9d6be7271bea9827f462f7"
+  },
+  {
+    "file": "county-candidate-results.csv",
+    "bytes": 1590,
+    "sha256": "5ce3b1e19e3b347b1ad7b8e7d1818ba24dfc043619780cdb1d22e202cc56ac03"
+  },
+  {
+    "file": "county-contest-accounting.csv",
+    "bytes": 837,
+    "sha256": "25bb167905edfd6ed50bab81aeb04a5fd651675e67dd1c8c708f0d02b36e78cb"
+  },
+  {
+    "file": "county-literal-party-totals.csv",
+    "bytes": 1735,
+    "sha256": "edb998f54a04409d55f72bb287cb6cb118b5a8201a318b41c5a527186d6bed3f"
+  },
+  {
+    "file": "county-participation.csv",
+    "bytes": 426,
+    "sha256": "81f1b0f00db8dc60a32c641455df55e4ec682096ac7f6ae3a6043966520820e8"
+  },
+  {
+    "file": "native-reporting-statistics.csv",
+    "bytes": 172,
+    "sha256": "8cd492f4a6e8fed3fb8e762e419891d3023f89df0bb6fe0d15e37b11fc29ddd7"
+  },
+  {
+    "file": "native-source-declarations.csv",
+    "bytes": 120,
+    "sha256": "9fb9e044d9a07ae19d4a607fd4d9578b494b85bbc9b56c8638e70f4c8c1a3297"
+  },
+  {
+    "file": "native-summary-query.csv",
+    "bytes": 1357,
+    "sha256": "0d6b73692f7ff2efccec1fee2f67005f882be0952516d15b3d1aedada8603cad"
+  },
+  {
+    "file": "review-greene-county-native-query.py",
+    "bytes": 10765,
+    "sha256": "c4568259f7224d7c0cbadbc59f39970f8c47be97b487e4d74fab1c1d2af5d2d9"
+  },
+  {
+    "file": "source-receipts.csv",
+    "bytes": 619,
+    "sha256": "63299cff1ee1874f4f25eba750a53867bb4ca64fe56fced7689a111a620421b2"
+  },
+  {
+    "file": "source-records.json.gz",
+    "bytes": 1169,
+    "sha256": "df7d99aa3e1750d5915d4dfb61186d1047fd5a1dd5a47e73c00b91daea83aaf3"
+  },
+  {
+    "file": "test-greene-native-query.py",
+    "bytes": 3997,
+    "sha256": "67b0fe62e9c78633b0563aaafb8a29d1aba057223ac161ab4c3a5659c3e9d18c"
+  }
+]

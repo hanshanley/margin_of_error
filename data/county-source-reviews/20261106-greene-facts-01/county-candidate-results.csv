@@ -1,0 +1,14 @@
+year,state_code,county,contest_literal,candidate_or_measure_literal,party_literal,votes,printed_pct,kind
+2026,PA,Greene,Governor And Lieutenant Governor,Dem Josh Shapiro,Democrat,4566,41.5%,candidate
+2026,PA,Greene,Governor And Lieutenant Governor,Rep Stacy Garrity,Republican,6171,56.2%,candidate
+2026,PA,Greene,Governor And Lieutenant Governor,Lib Ken Krawchuk,Libertarian,243,2.2%,candidate
+2026,PA,Greene,Governor And Lieutenant Governor,WRITE-IN,No Party Specified,10,0.1%,write_in_total
+2026,PA,Greene,Representative In Congress 14th Congressional District,Dem Alan Bradstock,Democrat,4118,37.8%,candidate
+2026,PA,Greene,Representative In Congress 14th Congressional District,Rep Guy Reschenthaler,Republican,6757,62%,candidate
+2026,PA,Greene,Representative In Congress 14th Congressional District,WRITE-IN,No Party Specified,22,0.2%,write_in_total
+2026,PA,Greene,Senator In The General Assembly 46th Senatorial District,Rep Camera Bartolotta,Republican,6556,62.2%,candidate
+2026,PA,Greene,Senator In The General Assembly 46th Senatorial District,Ind Jodi Borello,Independent,3887,36.9%,candidate
+2026,PA,Greene,Senator In The General Assembly 46th Senatorial District,WRITE-IN,No Party Specified,105,1%,write_in_total
+2026,PA,Greene,Representative In The General Assembly 50th Legislative,Dem Lois Bower-bjornson,Democrat,3391,31.1%,candidate
+2026,PA,Greene,Representative In The General Assembly 50th Legislative,Rep Ben Humble,Republican,7488,68.6%,candidate
+2026,PA,Greene,Representative In The General Assembly 50th Legislative,WRITE-IN,No Party Specified,39,0.4%,write_in_total

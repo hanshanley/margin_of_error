@@ -1,0 +1,5 @@
+year,state_code,county,contest_literal,vote_for,derived_candidate_sum,native_ballots,unclassified_ballot_minus_candidate_sum,qualifications
+2026,PA,Greene,Governor And Lieutenant Governor,,10990,11105,115,"Candidate sum is derived, not an administrative ballot measure; residual is unclassified."
+2026,PA,Greene,Representative In Congress 14th Congressional District,,10897,11105,208,"Candidate sum is derived, not an administrative ballot measure; residual is unclassified."
+2026,PA,Greene,Senator In The General Assembly 46th Senatorial District,,10548,11105,557,"Candidate sum is derived, not an administrative ballot measure; residual is unclassified."
+2026,PA,Greene,Representative In The General Assembly 50th Legislative,,10918,11105,187,"Candidate sum is derived, not an administrative ballot measure; residual is unclassified."

@@ -29,16 +29,21 @@ Only the failed deployment job was retried against this same artifact.
 throughout; both failed receipts are retained. The verifier stopped at its
 deployment guard, before claiming any production-byte or browser success.
 Do not repeat unchanged retries against this cancelled deployment ID.
-A fresh evidence-only publication revision will create a distinct Pages
-deployment ID and newly built artifact; this tests the cancelled-ID reuse
-hypothesis, not a proven size diagnosis. The validated application is unchanged.
+A fresh evidence-only publication revision
+`2622a0d0dd0d5549392ddab6b5c6abc6ed6f9245`, Pages **42207340056**,
+is building a distinct deployment ID and new artifact; this tests the
+cancelled-ID reuse hypothesis, not a proven size diagnosis. Exact credential
+runs are **42207339907 / 42207340201**. The known active verifier is
+`columbia-fresh-exact-production-01`; do not duplicate it.
+The validated application is unchanged.
 California's successful hosted site was larger than this failed prepared site.
 The new artifact must be identified and independently digest/byte/browser
 verified; never relabel it as original artifact 13496136224. Do not claim LIVE
 until all entire hosted/public bytes and seven production browser cases pass.
 
 **Next acquisition: Bradford and Greene primary sources are acquired and
-preliminarily reviewed, not yet packaged, released or integrated.**
+reviewed; Greene's complete factual query reproduces locally, but neither
+county is released or integrated yet.**
 All five entire responses match their saved receipts and actual county-parent
 declarations. Both Bradford snapshots independently agree across pypdf and
 PyMuPDF: the later report prints **20,982 Total Ballots / 39,048 Registered
@@ -65,6 +70,16 @@ counting. See `20261106-bradford-greene-primary-review-01/primary-review.json`.
 Original HTML/PDFs stay private. Complete portable factual queries, tests and
 immutable byte-verified releases are still prerequisites to explorer integration.
 Neither acquisition changes existing map approvals or Maine/D.C. accounting gaps.
+Greene's **14-file / eight-CSV / 13-member** factual package now reproduces
+every file and its entire archive offline, including from the extracted archive.
+All **four focused test groups / sixteen semantic corruption cases** pass;
+the corruptions run beyond the complete-input hash guard. All fifteen exported
+query rows independently equal the reconciled original-source vectors.
+ZIP **11,776 bytes**, SHA-256
+`400682808f1ea7b1ba68e7cefa66f31f9e487a4e06c78e12384b5a52860d4774`.
+The original HTML templates are not redistributed. See `20261106-greene-facts-01`.
+Immutable release publication and explorer registration remain separate pending
+steps; no new native county row, rate or map join is claimed.
 
 The actual county parent declares both complete November 3 reports. Both entire
 PDF originals and the parent match their saved receipts. Two independent PDF

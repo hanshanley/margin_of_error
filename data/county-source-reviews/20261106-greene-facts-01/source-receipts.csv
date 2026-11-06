@@ -1,0 +1,3 @@
+file,url,final_url,status,content_type,bytes,sha256,fetched_at_utc
+greene-parent.html,https://greenecountypa.gov/elections/,https://greenecountypa.gov/elections/,200,text/html; charset=utf-8,9199,d77e59fc2e95ece940d403c8b86c000067b2ce44c83b324ab367a83d38cdc081,2026-11-06T10:56:29.725468+00:00
+greene-all-returns.html,https://greenecountypa.gov/elections/Default.aspx?PageLayout=SUMMARY&Election=30069,https://greenecountypa.gov/elections/Default.aspx?PageLayout=SUMMARY&Election=30069,200,text/html; charset=utf-8,12992,7134871fe0c1b970c9eda80a75d058d48bda053ab15c60a6e48235f10159bf3e,2026-11-06T10:56:29.809686+00:00

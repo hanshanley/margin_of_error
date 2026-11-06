@@ -1,0 +1,2 @@
+year,state_code,county,native_participation_measure_literal,ballots_cast,blank_ballots,registered_voters,native_printed_turnout,registered_turnout_pct,source_status_literal,source_update_literal,declared_timezone,reported_precincts,total_precincts,native_reporting_percent,counting_complete,source_fips,maps_approved
+2026,PA,Greene,Ballots Cast - Total,11105,5,,,,Unofficial Results with MI and Absentee,,,42,42,,False,,False
