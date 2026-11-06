@@ -40,6 +40,41 @@ including Maine, remaining Pennsylvania sources and separately scoped D.C.
 Keep schedule #5 active; do not repeat completed Minnesota publishers,
 unchanged suites or production verification.
 
+**November 6: Lawrence complete factual query validated; not yet in the explorer.**
+The three exact county-declared PDFs contain **214 pages**, not the earlier
+web extraction's differing page counts or numbers. Two independent PDF engines
+agree on every parsed numerical fact. The current native summary reports
+**31,401 ballots / 57,470 registrations / printed 54.64%**:
+25,293 Election Day, 6,108 Mail Vote and explicit provisional zero, with
+two native blank ballots. All 74 distinct native unit rows reconcile to
+county registrations, ballots, blanks and modes; all 280 unit contest scopes
+reconcile to the five county contests. Preserve the separate 8:21 PM mail-only,
+9:27 PM county and 9:39 PM unit clocks, with no supplied timezone.
+The source explicitly reports **0/74 complete / 74/74 partially reported**.
+State Senate District 50 includes only 58 units; state House districts 8/9
+partition 23/51 units. Two unit printed-rate rounding discrepancies retain
+both native and calculated values with usable rates withheld.
+Seven focused tests pass, including complete standard-library offline
+byte-for-byte reproduction of **15 files / 14 ZIP members** and exclusive
+output protection. The nine-table query preserves candidate/party choices,
+overlapping write-in details, native accounting, reporting and every page;
+original HTML/PDF templates remain private. See
+`20261106-lawrence-primary-review-01` and `20261106-lawrence-facts-01`.
+**Next:** publish and verify the fixed factual release, independently review
+county identity/context, then integrate only the approved county fraction.
+Do not mark Lawrence LIVE or increment current Pennsylvania map coverage yet.
+
+The same acquisition retained Huntingdon's certificate-verification failure
+without disabling TLS verification. Venango's literal declared HTTP results
+link reset the connection; the separate Act 88 scanned PDF was acquired and
+visually reviewed. It reports **3,150 mail ballots returned / 3,106 Votes
+Recorded**, not whole-county participation. Its application types, voter-party
+categories, filters, repeated totals and unclassified 44-count difference
+remain separate from candidate choices and all-mode ballots. Complete
+receipts and scoped observations are in
+`20261106-pa-huntingdon-lawrence-venango-acquisition-01`; seek declared
+alternatives rather than retrying failed endpoints unchanged.
+
 **Retained November 6, 12:32 UTC: Lycoming and context14 LIVE verified.**
 Exact UI **`1ee5b01b2cf07526c362db1aaaa221d5edaf2126`**, Pages
 **42217627965 attempt 1**, passes its original hosted artifact

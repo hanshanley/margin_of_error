@@ -1,0 +1,41 @@
+{
+  "reviewed_at_utc": "2026-11-06T13:11:47.790494+00:00",
+  "private_originals": "/Users/hanshanley/.copilot/session-state/fdbfdac0-2fcb-428c-8cec-616c510977b2/files/pa-huntingdon-lawrence-venango-20261106-02",
+  "scope": "All numerical facts from all three county-declared Lawrence reports",
+  "independent_pdf_engines": [
+    "PyMuPDF sorted text",
+    "pdfplumber default coordinate-sensitive extraction"
+  ],
+  "independent_facts_equal": true,
+  "reviewed_native_pages": 214,
+  "distinct_native_units": 74,
+  "native_contest_scopes": 290,
+  "qualifications": [
+    "The saved originals report 31,401 ballots and 57,470 registered voters, not the differing preliminary web extraction.",
+    "All 74 distinct native unit participation rows reconcile to county registrations, ballots, blank ballots and modes.",
+    "The current total is 25,293 Election Day + 6,108 Mail Vote + an explicit provisional zero; blank ballots are separately 0 + 2 + 0.",
+    "The separate 8:21 PM mail-only report is 6,108 mail ballots, not another all-mode county total or zero Election Day participation.",
+    "Current county, mail-only and unit clocks are respectively 9:27 PM, 8:21 PM and 9:39 PM on November 3; no timezone is supplied.",
+    "The current report declares 74/74 Election Day and absentee/early reporting, 0/74 complete and 74/74 partially reported; unofficial is not certified or finished counting.",
+    "The calculated registered-voter fraction and native printed 54.64% are separate, not CVAP/VAP/VEP or demographic turnout.",
+    "Two native unit printed rates differ from the calculated fraction by just over half a final printed decimal point; their usable rates are withheld and both values remain in the rate-check table.",
+    "Native candidate selections, literal parties, write-in totals and overlapping write-in details stay separate from participation and from one another.",
+    "State Senate District 50 includes only 58 reporting units; the two state-House districts partition the 74 units. Do not assign each district the whole-county electorate.",
+    "Unit reports supply overvotes, undervotes and contest totals; county summaries do not. Unit-derived district electorates are explicitly derived, not native county-summary denominators.",
+    "No native FIPS, new precinct geometry, demographic turnout, statewide completion or certification approval. Original HTML/PDF presentation templates remain private."
+  ],
+  "arithmetic_checks": [
+    "74 unique unit registration vectors sum to 57,470 county registrations.",
+    "74 unique ballot, blank-ballot and ballot-mode vectors equal the county summary.",
+    "All 280 native unit contest vectors reconcile to the five county contest scopes.",
+    "State Senate District 50 includes 58 units; state House districts 8 and 9 contain disjoint 23 and 51 units.",
+    "Separate earlier mail-only candidate vectors equal the current summary's mail column without adding another county total.",
+    "Write-in details reconcile to Write-In Totals without being counted twice.",
+    "Every unit's selections + native overvotes + native undervotes equal its native contest ballot total.",
+    "The current county printed rate reconciles; two unit rounding discrepancies retain both values and withhold usable rates."
+  ],
+  "maps_approved": false,
+  "contextual_geometry_review_pending": true,
+  "original_html_or_pdf_redistributed": false,
+  "explorer_integration_approved": false
+}

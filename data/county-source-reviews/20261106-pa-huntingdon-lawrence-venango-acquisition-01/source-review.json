@@ -1,0 +1,118 @@
+{
+  "reviewed_at_utc": "2026-11-06T13:11:47.790494+00:00",
+  "private_originals": "/Users/hanshanley/.copilot/session-state/fdbfdac0-2fcb-428c-8cec-616c510977b2/files/pa-huntingdon-lawrence-venango-20261106-02",
+  "original_response_receipts": [
+    {
+      "file": "huntingdon-parent.html",
+      "url": "https://www.huntingdoncountypa.gov/",
+      "parent": null,
+      "fetched_at_utc": "2026-11-06T13:06:01.339434+00:00",
+      "transport": "native_curl_with_default_certificate_verification",
+      "exit_code": 60,
+      "status": null,
+      "error": "curl: (60) SSL certificate problem: unable to get local issuer certificate\nMore details here: https://curl.se/docs/sslcerts.html\n\ncurl failed to verify the legitimacy of the server and therefore could not\nestablish a secure connection to it. To learn more about this situation and\nhow to fix it, please visit the web page mentioned above.\n"
+    },
+    {
+      "file": "lawrence-parent.html",
+      "url": "https://www.lawrencecountypa.gov/departments/voter-elections/election-results",
+      "parent": null,
+      "fetched_at_utc": "2026-11-06T13:06:01.442042+00:00",
+      "final_url": "https://www.lawrencecountypa.gov/departments/voter-elections/election-results",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 74153,
+      "sha256": "f44c11d83dd29a0b6fc87992c5e51bfd894105cc92f40cb76e27a5e595b07844"
+    },
+    {
+      "file": "venango-parent.html",
+      "url": "https://www.venangocountypa.gov/",
+      "parent": null,
+      "fetched_at_utc": "2026-11-06T13:06:02.254525+00:00",
+      "final_url": "https://www.venangocountypa.gov/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 205360,
+      "sha256": "d358633e46b5b1414dcdddcf56d1288ecde308d5815fcb9ff5a9adc18ec82ead"
+    },
+    {
+      "file": "lawrence-mail-summary.pdf",
+      "url": "https://www.lawrencecountypa.gov/getmedia/90d467d8-6de9-435f-9e8c-6dad2c70f93d/2026-General-Election-Unoffical-Mail-in-Results.pdf",
+      "parent": "https://www.lawrencecountypa.gov/departments/voter-elections/election-results",
+      "fetched_at_utc": "2026-11-06T13:06:02.769648+00:00",
+      "final_url": "https://www.lawrencecountypa.gov/getmedia/90d467d8-6de9-435f-9e8c-6dad2c70f93d/2026-General-Election-Unoffical-Mail-in-Results.pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 40665,
+      "sha256": "06b008488dbaeb0e65caba8a3d87165a945ef5ea8313fe571af7e0978771a9f5",
+      "native_anchor_labels": [
+        "2026 General Election Unofficial Mail-In Results"
+      ]
+    },
+    {
+      "file": "lawrence-summary.pdf",
+      "url": "https://www.lawrencecountypa.gov/getmedia/4e14f6c4-9bae-435d-af0b-a7fb38adec3c/2026-General-Election-Unofficial-First-Drop.pdf",
+      "parent": "https://www.lawrencecountypa.gov/departments/voter-elections/election-results",
+      "fetched_at_utc": "2026-11-06T13:06:02.811508+00:00",
+      "final_url": "https://www.lawrencecountypa.gov/getmedia/4e14f6c4-9bae-435d-af0b-a7fb38adec3c/2026-General-Election-Unofficial-First-Drop.pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 40858,
+      "sha256": "297c129003670334b40df85e5c6e846559803ed2f3edd00f5d1c0ea079692699",
+      "native_anchor_labels": [
+        "2026 General Election Unofficial Results"
+      ]
+    },
+    {
+      "file": "lawrence-precinct.pdf",
+      "url": "https://www.lawrencecountypa.gov/getmedia/d4fc72b7-2447-44e9-bec5-79a0084d9e78/2026-General-Election-Unofficial-Precinct-Report.pdf",
+      "parent": "https://www.lawrencecountypa.gov/departments/voter-elections/election-results",
+      "fetched_at_utc": "2026-11-06T13:06:02.849729+00:00",
+      "final_url": "https://www.lawrencecountypa.gov/getmedia/d4fc72b7-2447-44e9-bec5-79a0084d9e78/2026-General-Election-Unofficial-Precinct-Report.pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 1270911,
+      "sha256": "112d50a55997b1f1de0969df8e4e0fa246a3f0e118e3eaa0a1377db7a0eb571f",
+      "native_anchor_labels": [
+        "2026 General Election Unofficial Precinct Report"
+      ]
+    },
+    {
+      "file": "venango-declared-results.pdf",
+      "url": "http://venangopa.us/vcresults/ElectionDay.pdf",
+      "parent": "https://www.venangocountypa.gov/",
+      "fetched_at_utc": "2026-11-06T13:06:03.058045+00:00",
+      "status": null,
+      "error_type": "ConnectionError",
+      "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))",
+      "native_anchor_labels": [
+        "2026 General Election Results"
+      ]
+    },
+    {
+      "file": "venango-act88.pdf",
+      "url": "https://www.venangocountypa.gov/Act%2088%202026-11-03%2020_06_42.pdf",
+      "parent": "https://www.venangocountypa.gov/",
+      "fetched_at_utc": "2026-11-06T13:06:03.243529+00:00",
+      "final_url": "https://www.venangocountypa.gov/Act%2088%202026-11-03%2020_06_42.pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 681130,
+      "sha256": "8891d4acb0220f42b90548d3bd6d829e9ffb1145564f6acf75495433c813e24d",
+      "native_anchor_labels": [
+        "Act 88 Absentee/Mail-In Ballots Summary"
+      ]
+    }
+  ],
+  "transport_qualifications": [
+    "The first private helper stopped before persisting receipts because the saved Venango anchor was literal HTTP, not the web-rendered HTTPS URL. Its bodies remain private and are not used as the frozen-query provenance.",
+    "The corrected acquisition saved a receipt after every response, used the exact declared Venango HTTP link, and recaptured Lawrence originals with complete receipts.",
+    "Huntingdon failed both Python certificate verification and native curl default certificate verification. No insecure TLS option or child download was used.",
+    "Venango's literal declared results link reset the ordinary connection; this is not a 403, proof of absence, or authority to bypass it.",
+    "Venango's separately declared Act 88 scanned PDF was acquired and visually read; it is mail-process data, not whole-county participation or candidate-party voting."
+  ],
+  "lawrence_originals_independently_reviewed": true,
+  "huntingdon_participation_acquired": false,
+  "venango_complete_participation_acquired": false,
+  "maps_approved": false,
+  "statewide_completion_approved": false
+}

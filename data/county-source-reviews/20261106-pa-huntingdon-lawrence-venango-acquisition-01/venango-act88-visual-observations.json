@@ -1,0 +1,243 @@
+{
+  "reviewed_at_utc": "2026-11-06T13:11:47.790494+00:00",
+  "source_receipt": {
+    "file": "venango-act88.pdf",
+    "url": "https://www.venangocountypa.gov/Act%2088%202026-11-03%2020_06_42.pdf",
+    "parent": "https://www.venangocountypa.gov/",
+    "fetched_at_utc": "2026-11-06T13:06:03.243529+00:00",
+    "final_url": "https://www.venangocountypa.gov/Act%2088%202026-11-03%2020_06_42.pdf",
+    "status": 200,
+    "content_type": "application/pdf",
+    "bytes": 681130,
+    "sha256": "8891d4acb0220f42b90548d3bd6d829e9ffb1145564f6acf75495433c813e24d",
+    "native_anchor_labels": [
+      "Act 88 Absentee/Mail-In Ballots Summary"
+    ]
+  },
+  "review_method": "Direct visual reading of the entire one-page scanned PDF; application and party sums independently recomputed",
+  "native_election_literal": "2026 GENERAL ELECTION",
+  "native_date_literal": "Tuesday, November 3, 2026",
+  "source_update_literal": null,
+  "declared_timezone": null,
+  "native_filter_literal": "Election ID (N) IS 2026 GENERAL ELECTION AND Federal Voter (Y) IS 0 AND Valid Voter (Y) IS 1",
+  "native_column_literals": [
+    "App Issued",
+    "App Returned",
+    "Ballots Sent",
+    "Ballot Returned",
+    "Votes Recorded"
+  ],
+  "overall_summary": [
+    {
+      "label_literal": "CIVILIAN OVERSEAS",
+      "counts": [
+        20,
+        20,
+        19,
+        17,
+        17
+      ]
+    },
+    {
+      "label_literal": "EMERGENCY",
+      "counts": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ]
+    },
+    {
+      "label_literal": "MAIL-IN",
+      "counts": [
+        2805,
+        2805,
+        2707,
+        2590,
+        2550
+      ]
+    },
+    {
+      "label_literal": "MILITARY",
+      "counts": [
+        13,
+        13,
+        11,
+        5,
+        5
+      ]
+    },
+    {
+      "label_literal": "ONLINE MAIL-IN NOT VERIFIED",
+      "counts": [
+        312,
+        312,
+        303,
+        275,
+        273
+      ]
+    },
+    {
+      "label_literal": "ONLINE MAIL-IN VERIFIED",
+      "counts": [
+        320,
+        320,
+        319,
+        237,
+        235
+      ]
+    },
+    {
+      "label_literal": "ONLINE REGULAR ABSENTEE NOT VERIFIED",
+      "counts": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "label_literal": "ONLINE REGULAR ABSENTEE VERIFIED",
+      "counts": [
+        8,
+        8,
+        8,
+        8,
+        8
+      ]
+    },
+    {
+      "label_literal": "Regular Absentee",
+      "counts": [
+        8,
+        8,
+        8,
+        7,
+        7
+      ]
+    }
+  ],
+  "summary_by_ballot_style": [
+    {
+      "label_literal": "",
+      "counts": [
+        3497,
+        3497,
+        3386,
+        3150,
+        3106
+      ]
+    }
+  ],
+  "summary_by_political_party": [
+    {
+      "label_literal": "NON-PARTISAN",
+      "counts": [
+        31,
+        31,
+        31,
+        29,
+        29
+      ]
+    },
+    {
+      "label_literal": "NO AFFILIATION",
+      "counts": [
+        239,
+        239,
+        233,
+        206,
+        203
+      ]
+    },
+    {
+      "label_literal": "DEMOCRATIC",
+      "counts": [
+        1844,
+        1844,
+        1783,
+        1689,
+        1672
+      ]
+    },
+    {
+      "label_literal": "REPUBLICAN",
+      "counts": [
+        1309,
+        1309,
+        1268,
+        1161,
+        1137
+      ]
+    },
+    {
+      "label_literal": "INDEPENDENT",
+      "counts": [
+        60,
+        60,
+        57,
+        54,
+        54
+      ]
+    },
+    {
+      "label_literal": "LIBERTARIAN",
+      "counts": [
+        8,
+        8,
+        8,
+        5,
+        5
+      ]
+    },
+    {
+      "label_literal": "AMERICAN",
+      "counts": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "label_literal": "OTHER",
+      "counts": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "label_literal": "GREEN",
+      "counts": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    }
+  ],
+  "election_totals": [
+    3497,
+    3497,
+    3386,
+    3150,
+    3106
+  ],
+  "repeated_totals_are_not_additive": true,
+  "mail_received_minus_votes_recorded": 44,
+  "difference_is_not_classified_as_rejected_or_pending": true,
+  "whole_county_ballots": null,
+  "whole_county_registration_denominator": null,
+  "whole_county_turnout": null,
+  "party_is_application_or_voter_category_not_candidate_choice": true,
+  "maps_approved": false,
+  "explorer_integration_approved": false,
+  "next_action": "Seek a separately declared reachable all-mode participation report without retrying the failed URL unchanged."
+}

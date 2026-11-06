@@ -1,0 +1,55 @@
+{
+  "lawrence-mail-summary.pdf": {
+    "bytes": 40665,
+    "content_type": "application/pdf",
+    "fetched_at_utc": "2026-11-06T13:06:02.769648+00:00",
+    "file": "lawrence-mail-summary.pdf",
+    "final_url": "https://www.lawrencecountypa.gov/getmedia/90d467d8-6de9-435f-9e8c-6dad2c70f93d/2026-General-Election-Unoffical-Mail-in-Results.pdf",
+    "native_anchor_labels": [
+      "2026 General Election Unofficial Mail-In Results"
+    ],
+    "parent": "https://www.lawrencecountypa.gov/departments/voter-elections/election-results",
+    "sha256": "06b008488dbaeb0e65caba8a3d87165a945ef5ea8313fe571af7e0978771a9f5",
+    "status": 200,
+    "url": "https://www.lawrencecountypa.gov/getmedia/90d467d8-6de9-435f-9e8c-6dad2c70f93d/2026-General-Election-Unoffical-Mail-in-Results.pdf"
+  },
+  "lawrence-parent.html": {
+    "bytes": 74153,
+    "content_type": "text/html; charset=utf-8",
+    "fetched_at_utc": "2026-11-06T13:06:01.442042+00:00",
+    "file": "lawrence-parent.html",
+    "final_url": "https://www.lawrencecountypa.gov/departments/voter-elections/election-results",
+    "parent": null,
+    "sha256": "f44c11d83dd29a0b6fc87992c5e51bfd894105cc92f40cb76e27a5e595b07844",
+    "status": 200,
+    "url": "https://www.lawrencecountypa.gov/departments/voter-elections/election-results"
+  },
+  "lawrence-precinct.pdf": {
+    "bytes": 1270911,
+    "content_type": "application/pdf",
+    "fetched_at_utc": "2026-11-06T13:06:02.849729+00:00",
+    "file": "lawrence-precinct.pdf",
+    "final_url": "https://www.lawrencecountypa.gov/getmedia/d4fc72b7-2447-44e9-bec5-79a0084d9e78/2026-General-Election-Unofficial-Precinct-Report.pdf",
+    "native_anchor_labels": [
+      "2026 General Election Unofficial Precinct Report"
+    ],
+    "parent": "https://www.lawrencecountypa.gov/departments/voter-elections/election-results",
+    "sha256": "112d50a55997b1f1de0969df8e4e0fa246a3f0e118e3eaa0a1377db7a0eb571f",
+    "status": 200,
+    "url": "https://www.lawrencecountypa.gov/getmedia/d4fc72b7-2447-44e9-bec5-79a0084d9e78/2026-General-Election-Unofficial-Precinct-Report.pdf"
+  },
+  "lawrence-summary.pdf": {
+    "bytes": 40858,
+    "content_type": "application/pdf",
+    "fetched_at_utc": "2026-11-06T13:06:02.811508+00:00",
+    "file": "lawrence-summary.pdf",
+    "final_url": "https://www.lawrencecountypa.gov/getmedia/4e14f6c4-9bae-435d-af0b-a7fb38adec3c/2026-General-Election-Unofficial-First-Drop.pdf",
+    "native_anchor_labels": [
+      "2026 General Election Unofficial Results"
+    ],
+    "parent": "https://www.lawrencecountypa.gov/departments/voter-elections/election-results",
+    "sha256": "297c129003670334b40df85e5c6e846559803ed2f3edd00f5d1c0ea079692699",
+    "status": 200,
+    "url": "https://www.lawrencecountypa.gov/getmedia/4e14f6c4-9bae-435d-af0b-a7fb38adec3c/2026-General-Election-Unofficial-First-Drop.pdf"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "scope": "Lawrence only; complete numerical facts, not source presentation templates",
+  "maps_approved": false,
+  "demographic_turnout_approved": false,
+  "statewide_completion_approved": false,
+  "county_participation": {
+    "year": 2026,
+    "state_code": "PA",
+    "county": "Lawrence",
+    "native_unit": "Lawrence",
+    "source_report": "county",
+    "source_page": 1,
+    "source_url": "https://www.lawrencecountypa.gov/getmedia/4e14f6c4-9bae-435d-af0b-a7fb38adec3c/2026-General-Election-Unofficial-First-Drop.pdf",
+    "source_update_literal": "11/03/2026 9:27 PM",
+    "declared_timezone": "",
+    "native_status_literal": "UNOFFICIAL RESULTS",
+    "ballots_cast": 31401,
+    "election_day_ballots": 25293,
+    "mail_ballots": 6108,
+    "provisional_ballots": 0,
+    "registered_voters": 57470,
+    "native_printed_turnout": "54.64%",
+    "registered_turnout_percent": 54.63894205672525,
+    "blank_ballots": 2,
+    "native_count_literals_json": "{\"ballot_count_literals\": [\"31,401\", \"25,293\", \"6,108\", \"0\"], \"blank_count_literals\": [\"2\", \"0\", \"2\", \"0\"], \"printed_turnout_literal\": \"54.64%\", \"registered_voters_literal\": \"57,470\"}",
+    "qualifications_json": "[\"The saved originals report 31,401 ballots and 57,470 registered voters, not the differing preliminary web extraction.\", \"All 74 distinct native unit participation rows reconcile to county registrations, ballots, blank ballots and modes.\", \"The current total is 25,293 Election Day + 6,108 Mail Vote + an explicit provisional zero; blank ballots are separately 0 + 2 + 0.\", \"The separate 8:21 PM mail-only report is 6,108 mail ballots, not another all-mode county total or zero Election Day participation.\", \"Current county, mail-only and unit clocks are respectively 9:27 PM, 8:21 PM and 9:39 PM on November 3; no timezone is supplied.\", \"The current report declares 74/74 Election Day and absentee/early reporting, 0/74 complete and 74/74 partially reported; unofficial is not certified or finished counting.\", \"The calculated registered-voter fraction and native printed 54.64% are separate, not CVAP/VAP/VEP or demographic turnout.\", \"Two native unit printed rates differ from the calculated fraction by just over half a final printed decimal point; their usable rates are withheld and both values remain in the rate-check table.\", \"Native candidate selections, literal parties, write-in totals and overlapping write-in details stay separate from participation and from one another.\", \"State Senate District 50 includes only 58 reporting units; the two state-House districts partition the 74 units. Do not assign each district the whole-county electorate.\", \"Unit reports supply overvotes, undervotes and contest totals; county summaries do not. Unit-derived district electorates are explicitly derived, not native county-summary denominators.\", \"No native FIPS, new precinct geometry, demographic turnout, statewide completion or certification approval. Original HTML/PDF presentation templates remain private.\"]"
+  },
+  "qualifications": [
+    "The saved originals report 31,401 ballots and 57,470 registered voters, not the differing preliminary web extraction.",
+    "All 74 distinct native unit participation rows reconcile to county registrations, ballots, blank ballots and modes.",
+    "The current total is 25,293 Election Day + 6,108 Mail Vote + an explicit provisional zero; blank ballots are separately 0 + 2 + 0.",
+    "The separate 8:21 PM mail-only report is 6,108 mail ballots, not another all-mode county total or zero Election Day participation.",
+    "Current county, mail-only and unit clocks are respectively 9:27 PM, 8:21 PM and 9:39 PM on November 3; no timezone is supplied.",
+    "The current report declares 74/74 Election Day and absentee/early reporting, 0/74 complete and 74/74 partially reported; unofficial is not certified or finished counting.",
+    "The calculated registered-voter fraction and native printed 54.64% are separate, not CVAP/VAP/VEP or demographic turnout.",
+    "Two native unit printed rates differ from the calculated fraction by just over half a final printed decimal point; their usable rates are withheld and both values remain in the rate-check table.",
+    "Native candidate selections, literal parties, write-in totals and overlapping write-in details stay separate from participation and from one another.",
+    "State Senate District 50 includes only 58 reporting units; the two state-House districts partition the 74 units. Do not assign each district the whole-county electorate.",
+    "Unit reports supply overvotes, undervotes and contest totals; county summaries do not. Unit-derived district electorates are explicitly derived, not native county-summary denominators.",
+    "No native FIPS, new precinct geometry, demographic turnout, statewide completion or certification approval. Original HTML/PDF presentation templates remain private."
+  ],
+  "table_rows": {
+    "county-participation.csv": 1,
+    "mail-only-participation.csv": 1,
+    "native-unit-participation.csv": 74,
+    "native-candidate-results.csv": 1236,
+    "native-contest-accounting.csv": 1130,
+    "county-literal-party-totals.csv": 44,
+    "native-reporting-statements.csv": 18,
+    "native-source-pages.csv": 214,
+    "native-turnout-checks.csv": 76
+  }
+}
