@@ -1,0 +1,18 @@
+{
+  "release_id": 436802509,
+  "tag": "voter-county-sullivan-wyoming-native-turnout-20261106-01",
+  "revision": "a1006865b8a5f6eaa7ca55bf0eba2157720767da",
+  "immutable_release_preserved": true,
+  "whole_anonymous_assets_verified_before_failure": 16,
+  "whole_commit_pinned_files_verified_before_failure": 16,
+  "exact_zip_members_verified_before_failure": 15,
+  "failed_stage": "Isolated tests run from the actual public ZIP extraction",
+  "test_result": "Nine numerical/scope tests passed; the archive-rebuild test raised FileNotFoundError for complete-query.zip in the extracted input directory.",
+  "cause": "The ZIP intentionally does not recursively contain itself. The test incorrectly required that absent input ZIP while comparing rebuilt files.",
+  "numerical_inputs_changed": false,
+  "analysis_ballot_approvals": 0,
+  "analysis_rate_approvals": 0,
+  "map_approvals": 0,
+  "ui_integrated": false,
+  "recovery": "Preserve the immutable first release. Correct only the standalone test harness and snapshot ID in a new -02 numerical package using the same frozen source bytes. Require isolated archive tests and all-file reproduction during draft verification as well as after publication."
+}

@@ -1,0 +1,111 @@
+{
+  "checked_at_utc": "2026-11-06T17:39:29.757113+00:00",
+  "revision": "a1006865b8a5f6eaa7ca55bf0eba2157720767da",
+  "tag": "voter-county-sullivan-wyoming-native-turnout-20261106-01",
+  "release_id": 436802509,
+  "phase": "draft",
+  "immutable": false,
+  "assets": [
+    {
+      "file": "audit.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-4f9fa9e618f790d96d84/audit.json",
+      "bytes": 4845,
+      "sha256": "1ccbb56236b05c75be50cda609ee777bf0d28363e751f393b985cb8a4eba3df0"
+    },
+    {
+      "file": "candidate-results.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-4f9fa9e618f790d96d84/candidate-results.csv",
+      "bytes": 5775,
+      "sha256": "717a3572777c695844e05e577907d1cfa3a190d56c775763cae5947a4ecaf474"
+    },
+    {
+      "file": "checksums.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-4f9fa9e618f790d96d84/checksums.json",
+      "bytes": 1847,
+      "sha256": "fc34d3d6397fac37fc56388a0a310c371bf022c57ea50b4b5acb581f2000ef4b"
+    },
+    {
+      "file": "complete-query.zip",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-4f9fa9e618f790d96d84/complete-query.zip",
+      "bytes": 19898,
+      "sha256": "e16136dc13df78d3537ac40105a7380c633673ed5a730d13454401f88e1d6985"
+    },
+    {
+      "file": "contest-accounting.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-4f9fa9e618f790d96d84/contest-accounting.csv",
+      "bytes": 2168,
+      "sha256": "f88c3d1e49b4c123a3538ea116160eb0e1d6c6070b34592b9dfb0b3cfa743f13"
+    },
+    {
+      "file": "contest-totals.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-4f9fa9e618f790d96d84/contest-totals.csv",
+      "bytes": 2209,
+      "sha256": "cb25ee1d885316185597b1df1f1e715b843f7f479c7e5d6f09aa99c91fdb1bba"
+    },
+    {
+      "file": "county-participation.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-4f9fa9e618f790d96d84/county-participation.csv",
+      "bytes": 1131,
+      "sha256": "5a82c7a4b3ec9c6d480bc3529cf32d3bc2a98c3cc9ed7f8ad15d8d2e5075e2d4"
+    },
+    {
+      "file": "methods.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-4f9fa9e618f790d96d84/methods.json",
+      "bytes": 2541,
+      "sha256": "02ae618eed95f1b39ab3ef1604f2fe10ac6f407d8193bd0eab774b43f74e2a7a"
+    },
+    {
+      "file": "reporting.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-4f9fa9e618f790d96d84/reporting.csv",
+      "bytes": 612,
+      "sha256": "ddc048a32227763c73cf72fdcf8590a7d50c4a95774fbcc21afba733de77a1e5"
+    },
+    {
+      "file": "review-counties.py",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-4f9fa9e618f790d96d84/review-counties.py",
+      "bytes": 15691,
+      "sha256": "4b1149596f4699f5cc8962a7aa1cde6d20ee6d07c70de368dca53edbbd02d542"
+    },
+    {
+      "file": "source-inputs.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-4f9fa9e618f790d96d84/source-inputs.json",
+      "bytes": 11008,
+      "sha256": "4b2106f351aa7e2451bfccd256ecdad72e821e1db9e23b30a33c6aaf96b366b0"
+    },
+    {
+      "file": "source-pages.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-4f9fa9e618f790d96d84/source-pages.csv",
+      "bytes": 490,
+      "sha256": "72a88ef7e2f443f6a8baaef723bd17eb8399617d36898714d787bc2c01bbc308"
+    },
+    {
+      "file": "source-provenance.json",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-4f9fa9e618f790d96d84/source-provenance.json",
+      "bytes": 3957,
+      "sha256": "02429b936f09c76bfd4eee2bbef83285ca58073d3d753990e3390601ee4b1c42"
+    },
+    {
+      "file": "test_review_counties.py",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-4f9fa9e618f790d96d84/test_review_counties.py",
+      "bytes": 5178,
+      "sha256": "49392fabf4ef11466bc09153d37ce7e2d869b05b163fe87a6d573a7574dea735"
+    },
+    {
+      "file": "write-in-matrix.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-4f9fa9e618f790d96d84/write-in-matrix.csv",
+      "bytes": 4444,
+      "sha256": "9299702e24f04536b41f18dd6a8039ecf0313e5edd32f4497932c8d485134cfd"
+    },
+    {
+      "file": "write-in-reconciliation.csv",
+      "url": "https://github.com/hanshanley/margin_of_error/releases/download/untagged-4f9fa9e618f790d96d84/write-in-reconciliation.csv",
+      "bytes": 744,
+      "sha256": "97eddc54a87386cbd4a4c477a3e1464e49910a9fa859f37875737c9f5f1bb1dc"
+    }
+  ],
+  "analysis_ballot_approvals": 0,
+  "analysis_rate_approvals": 0,
+  "map_approvals": 0,
+  "all_four_physical_pages_and_full_944_matrix_cells_retained": true,
+  "native_missing_parties_timezones_and_write_in_shortfalls_retained": true
+}

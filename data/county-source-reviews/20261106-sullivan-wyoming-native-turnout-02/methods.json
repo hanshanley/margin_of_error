@@ -1,0 +1,18 @@
+{
+  "snapshot": "20261106-sullivan-wyoming-native-turnout-02",
+  "election_date": "2026-11-03",
+  "scope": "Complete native numerical query; no analysis, rate, geographic identity or map approval yet.",
+  "native_ballots": "Total Ballots Cast; registered-voter fractions, not candidate votes, CVAP/VAP/VEP or demographic participation.",
+  "reporting": "Wyoming 28/28 reporting is not certification or completed counting. Sullivan reporting is missing, not inferred from 15 listing columns.",
+  "modes": "ED / MI / PR are literal candidate-vote columns without an expanded native key; not ballot-mode counts. Totals and repeated contest denominators are not additive.",
+  "parties": "No party labels are printed. Every affiliation remains missing; no party totals or cross-source identities are manufactured.",
+  "clocks": "November 6 summary clocks have no native timezone. The write-in listing prints an election date, not an update date; it receives no invented summary clock.",
+  "status": "Sullivan UNOFFICIAL Election Results is printed on physical page 2, not page 1. Wyoming unofficial status comes from the declared file name, not a printed PDF status.",
+  "accounting": "Sullivan differences 41/32/396 are unclassified, not undervotes. Wyoming native over-voted ballots plus undervotes reconcile each contest; do not double count overvotes. Blank ballots remain missing.",
+  "write_ins": "All 59 rows and 944 locality/total cells retained: 841 blanks are missing, 16 printed zeros are numeric zero. Named listings 1/1/48 differ from summary write-ins 1/5/73; gaps 0/4/25 are unallocated, not additional voters. Page 3 continues the Assembly table; absent native headers remain missing.",
+  "percentages": "Native strings retained and verified with Decimal ROUND_HALF_UP. Sullivan candidate percentages are absent; never replace with derived shares.",
+  "geography": "Native FIPS and summary office districts are missing. Listing districts 9th/84th remain separately scoped. No geography or precinct coverage is approved.",
+  "source_originals": "All four physical PDF pages visually reviewed against full saved rasters, assisted by complete macOS Vision page and numeric-column OCR. OCR has missing or corrupted glyphs and is not an authoritative independent complete parse. Original PDF bytes and complete OCR remain private; this is the complete factual numerical transcription, not a facsimile.",
+  "reproduction": "python3 -I review-counties.py --output /new/empty/directory",
+  "tests": "python3 -I test_review_counties.py"
+}

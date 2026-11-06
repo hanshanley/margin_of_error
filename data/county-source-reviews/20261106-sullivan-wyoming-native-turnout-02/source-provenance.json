@@ -1,0 +1,98 @@
+[
+  {
+    "county": "sullivan",
+    "parent": {
+      "source_url": "https://www.sullivancountypa.gov/offices/election-bureau",
+      "final_url": "https://www.sullivancountypa.gov/offices/election-bureau",
+      "acquired_at_utc": "2026-11-06T17:31:13.832116+00:00",
+      "status": 200,
+      "verified_tls": true,
+      "bytes": 276775,
+      "sha256": "91e9ba0c544299c577e8b96ed038082f14bd0a7ab32772056d70555dc8bb7295",
+      "headers": {
+        "Content-Type": "text/html;charset=utf-8",
+        "Content-Length": "38554",
+        "Date": "Fri, 06 Nov 2026 17:31:13 GMT",
+        "Last-Modified": null,
+        "ETag": "W/\"2915458f90d07c7b3fa80c0570507ec1\""
+      },
+      "redirects": []
+    },
+    "declared_link": {
+      "text": "SULLIVAN COUNTY TOTAL",
+      "url": "https://www.sullivancountypa.gov/s/UNOFFICIAL-Results-General-2026-11626.pdf"
+    },
+    "source": {
+      "source_url": "https://www.sullivancountypa.gov/s/UNOFFICIAL-Results-General-2026-11626.pdf",
+      "final_url": "https://static1.squarespace.com/static/59492851f5e231b1ec7b4bc4/t/6aedfd7418ec4864524dd095/1793981812231/UNOFFICIAL+Results+General+2026+11.6.26.pdf",
+      "acquired_at_utc": "2026-11-06T17:31:14.458304+00:00",
+      "status": 200,
+      "verified_tls": true,
+      "bytes": 483343,
+      "sha256": "b0bb2c4d4c16183237ff898d5aff42ff3ec4e844a26be7b6e9e3dbc74c02c2b5",
+      "headers": {
+        "Content-Type": "application/pdf",
+        "Content-Length": "483343",
+        "Date": "Fri, 06 Nov 2026 17:31:14 GMT",
+        "Last-Modified": null,
+        "ETag": null
+      },
+      "redirects": [
+        {
+          "status": 302,
+          "url": "https://www.sullivancountypa.gov/s/UNOFFICIAL-Results-General-2026-11626.pdf",
+          "location": "https://static1.squarespace.com/static/59492851f5e231b1ec7b4bc4/t/6aedfd7418ec4864524dd095/1793981812231/UNOFFICIAL+Results+General+2026+11.6.26.pdf"
+        }
+      ]
+    },
+    "document_acquired": true,
+    "pages": 3,
+    "extraction_bytes": 153,
+    "extraction_sha256": "90c0dd4109620435fd10fad5493cd89a5d3da35a6dc27f55682b4185c0e30d83"
+  },
+  {
+    "county": "wyoming",
+    "parent": {
+      "source_url": "https://wyomingcountypa.gov/elections/results/",
+      "final_url": "https://wyomingcountypa.gov/elections/results/",
+      "acquired_at_utc": "2026-11-06T17:31:15.747736+00:00",
+      "status": 200,
+      "verified_tls": true,
+      "bytes": 421571,
+      "sha256": "57deaaa4b8adc75f5fbd9eef86d96af9957efa1e6d7901ad7ea6411edf60721e",
+      "headers": {
+        "Content-Type": "text/html; charset=UTF-8",
+        "Content-Length": null,
+        "Date": "Fri, 06 Nov 2026 17:31:15 GMT",
+        "Last-Modified": null,
+        "ETag": null
+      },
+      "redirects": []
+    },
+    "declared_link": {
+      "text": "Wyoming-County-PA-Unofficial-General-Election-Results November 3-2026",
+      "url": "https://wyomingcountypa.gov/wp-content/uploads/Wyoming-County-PA-Unofficial-General-Election-Results-November-3-2026.pdf"
+    },
+    "source": {
+      "source_url": "https://wyomingcountypa.gov/wp-content/uploads/Wyoming-County-PA-Unofficial-General-Election-Results-November-3-2026.pdf",
+      "final_url": "https://wyomingcountypa.gov/wp-content/uploads/Wyoming-County-PA-Unofficial-General-Election-Results-November-3-2026.pdf",
+      "acquired_at_utc": "2026-11-06T17:31:16.388048+00:00",
+      "status": 200,
+      "verified_tls": true,
+      "bytes": 257897,
+      "sha256": "37a98318288b3f264c3354cff9798cb7baf3dc3e897a86d0d4f6968cb0721c1c",
+      "headers": {
+        "Content-Type": "application/pdf",
+        "Content-Length": "257897",
+        "Date": "Fri, 06 Nov 2026 17:31:15 GMT",
+        "Last-Modified": "Fri, 06 Nov 2026 17:24:39 GMT",
+        "ETag": null
+      },
+      "redirects": []
+    },
+    "document_acquired": true,
+    "pages": 1,
+    "extraction_bytes": 53120,
+    "extraction_sha256": "5cbcbd218ff8e67b05bf3586f55d6960c623a02b7547964022fa8e286466d031"
+  }
+]

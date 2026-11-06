@@ -22,10 +22,14 @@ undervotes. Wyoming's native over-voted ballots plus undervotes reconcile each
 contest; overvotes are not counted twice. Native candidate affiliations, summary
 office districts, ballot-mode counts and blank ballots remain missing.
 
-Ten focused tests pass, including byte-identical complete offline archive replay,
-missing-versus-zero, continuation pages, stale snapshot rejection and native
-accounting guards. Original native approval flags and FIPS remain unchanged.
-**Next:** freeze and verify the full immutable numerical release, separately review
+The first immutable release **436802509 / a100686** passed local numerical tests
+but its actual public archive exposed a standalone test-harness bug: it incorrectly
+required the ZIP inside its own extraction. Preserve that release and its failure
+receipt; it is not approved or integrated. The corrected **-02** package retains
+the identical source inputs and original receipts, fixes archive self-reference,
+and must pass full isolated replay in both draft and public verification.
+Original native approval flags and FIPS remain unchanged.
+**Next:** freeze and verify the corrected full immutable numerical release, separately review
 both county identities/fractions, and extend context20 losslessly before any UI
 LIVE claim. The successful context20 deployment below needs no retry.
 
