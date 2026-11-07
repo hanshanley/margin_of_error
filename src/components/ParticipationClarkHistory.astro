@@ -1,0 +1,74 @@
+---
+import { readFileSync } from 'node:fs';
+const base = '/participation-clark-history/20261107-01/';
+type Mode = 'Election Day' | 'Early Vote' | 'Mail';
+type Observation = {
+	year: number; native_contest: string; native_reporting_units: number;
+	native_turnout: number; summed_native_registration_once_per_unit: number;
+	native_footer: Record<Mode, { native_turnout: number }>;
+	turnout_exceeds_registration_units: number;
+};
+const analysis: { observations: Observation[] } = JSON.parse(readFileSync(`public${base}summary.json`, 'utf8'));
+const integer = (value: number) => value.toLocaleString('en-US');
+---
+
+<section id="participation-clark-history" class="participation-current" aria-labelledby="clark-history-title">
+	<header class="section-intro">
+		<p class="kicker">Historical participation · Clark County, Nevada · 2020 / 2022 / 2024</p>
+		<h2 id="clark-history-title">Historical precinct participation, with each statement kept separate</h2>
+		<p>These are the native <strong>Turnout</strong> fields in four Clark County election
+			statements, not candidate vote totals. The complete download contains all 3,894
+			selected precinct-by-contest observations and their Election Day, early and mail counts.</p>
+	</header>
+	<div class="table-wrap" tabindex="0" role="region" aria-label="Clark historical native statement participation">
+		<table>
+			<caption>Selected statements, not an independently established common electorate.
+				Native registration is summed once per reporting unit; its timing and eligibility
+				definition are not qualified turnout-rate denominators.</caption>
+			<thead><tr><th scope="col">Year / statement</th><th scope="col">Native units</th>
+				<th scope="col">Native registration</th><th scope="col">Native Turnout</th>
+				<th scope="col">Election Day</th><th scope="col">Early Vote</th><th scope="col">Mail</th>
+				<th scope="col">Units above registration</th></tr></thead>
+			<tbody>{analysis.observations.map(row => <tr data-clark-observation={`${row.year}-${row.native_contest}`}>
+				<th scope="row">{row.year} / {row.native_contest === 'PRESIDENT' ? 'President' : 'U.S. Senate'}</th>
+				<td data-clark-count="native_reporting_units">{integer(row.native_reporting_units)}</td>
+				<td data-clark-count="summed_native_registration_once_per_unit">{integer(row.summed_native_registration_once_per_unit)}</td>
+				<td data-clark-count="native_turnout">{integer(row.native_turnout)}</td>
+				{(['Election Day', 'Early Vote', 'Mail'] as Mode[]).map(mode =>
+					<td data-clark-mode={mode}>{integer(row.native_footer[mode].native_turnout)}</td>)}
+				<td data-clark-count="turnout_exceeds_registration_units">{integer(row.turnout_exceeds_registration_units)}</td>
+			</tr>)}</tbody>
+		</table>
+	</div>
+	<p><strong>The two 2024 statements are not interchangeable.</strong> Their 915 shared
+		unit participation vectors agree, but the presidential statement also includes unit
+		<code>9996</code>: 42 native registrations and 40 mail participants, absent from the
+		Senate statement. We do not infer why, allocate those participants or add the contests.</p>
+	<p><strong>No turnout rates, cross-year precinct map or voter transitions.</strong>
+		Units above registration are retained, not corrected or dropped. Matching precinct codes
+		does not establish unchanged boundaries or the same people. These historical counts
+		are not 2026 participation, demographic turnout, switching or measured staying home.</p>
+	<details class="explorer-notes"><summary>Originals, source checks and complete reproduction</summary>
+		<p>The source is the Clark County Election Department. All eight selected PDF/Data originals,
+			their full source receipts and original inventory, every selected count, CSV, exact code,
+			tests and methods are included. Suppressed candidate fields stay unchanged in the originals;
+			they are neither extracted nor reconstructed. Native footer percentages are preserved but unused.</p>
+		<p>A separate offline check matched all 3,894 selected unit vectors and 11,682 mode counts
+			to the PDFs and their printed grand controls. This is agreement between two representations
+			of the same source, not independent outcome evidence. The included receipt records that
+			check; rebuilding the package does not rerun it. Registration timing, a full-county ballot
+			universe and cross-year geographic identity remain unqualified.</p>
+		<p>The package reproduces the complete selected native-count extraction without network access.
+			The original full historical collection remains available separately and unchanged.
+			No personal voter records, demographic joint cells or individual scores are included.</p>
+	</details>
+	<div class="download-links">
+		<a href={`${base}complete-analysis.zip`} download>Complete Clark selected originals + precinct counts + code + results (ZIP)</a>
+		<a href={`${base}summary.json`} download>Clark historical statement summary + qualifications (JSON)</a>
+		<a href={`${base}download.json`} download>Clark archive bytes and SHA-256</a>
+	</div>
+</section>
+
+<style>
+	#participation-clark-history { min-width: 0; margin-block: 1.5rem 2rem; }
+</style>
